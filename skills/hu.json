@@ -1,0 +1,7851 @@
+{
+ "_comment": "Source of truth for the hu skill registry (ROADMAP 125; format: docs/skill-tagging-spec.md). Edit this file, not content/<course>/indexes/skill-registry.json: scripts/build_skill_registry.py generates those, grammar-titles.json and skill-prereqs.json from it. Adding, removing, merging, splitting or renaming a skill also needs an entry in skills/frozen-hu.json (the user's sign-off). \"retired\" slugs are not skills: they stay only until the read-through retags their exercises.",
+ "language": "hu",
+ "courses": [
+  "hu"
+ ],
+ "skills": {
+  "3rd-person-possessive": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "possession",
+   "title": "the third-person possessive -a/-e/-ja/-je",
+   "taught_in": "a2-12-a-gr",
+   "requires": [
+    "possessive-suffixes"
+   ],
+   "aliases": [
+    "executive-governance",
+    "mi-a-panasza"
+   ]
+  },
+  "a1-buying-food-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "food-drink",
+    "shopping"
+   ],
+   "title": "Buying Food",
+   "unit": "buying-food",
+   "aliases": [
+    "a1-unit21-vocab"
+   ]
+  },
+  "a1-cafe-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "food-drink"
+   ],
+   "title": "At the Café",
+   "unit": "cafe",
+   "aliases": [
+    "a1-unit23-vocab"
+   ]
+  },
+  "a1-city-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "town-places"
+   ],
+   "title": "The City",
+   "unit": "city",
+   "aliases": [
+    "a1-unit27-vocab"
+   ]
+  },
+  "a1-clothes-appearance-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "shopping",
+    "body"
+   ],
+   "title": "Clothes & Appearance",
+   "unit": "clothes-appearance",
+   "aliases": [
+    "a1-unit26-vocab"
+   ]
+  },
+  "a1-daily-routine-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "daily-life"
+   ],
+   "title": "Daily Routine",
+   "unit": "daily-routine",
+   "aliases": [
+    "a1-unit15-vocab"
+   ]
+  },
+  "a1-describing-people-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "body",
+    "feelings-character"
+   ],
+   "title": "Describing People",
+   "unit": "describing-people",
+   "aliases": [
+    "a1-unit07-vocab"
+   ]
+  },
+  "a1-everyday-actions-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "daily-life"
+   ],
+   "title": "Everyday Actions",
+   "unit": "everyday-actions",
+   "aliases": [
+    "a1-unit13-vocab"
+   ]
+  },
+  "a1-everyday-hungarian-review-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "daily-life"
+   ],
+   "title": "Everyday Hungarian Review",
+   "unit": "everyday-hungarian-review",
+   "aliases": [
+    "a1-unit20-vocab"
+   ]
+  },
+  "a1-family-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "relationships"
+   ],
+   "title": "Family",
+   "unit": "family",
+   "aliases": [
+    "a1-unit06-vocab"
+   ]
+  },
+  "a1-food-drink-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "food-drink"
+   ],
+   "title": "Food & Drink",
+   "unit": "food-drink",
+   "aliases": [
+    "a1-unit19-vocab"
+   ]
+  },
+  "a1-foundations-review-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "relationships",
+    "basics"
+   ],
+   "title": "Foundations Review",
+   "unit": "foundations-review",
+   "aliases": [
+    "a1-unit10-vocab"
+   ]
+  },
+  "a1-frequency-word-order-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "daily-life"
+   ],
+   "title": "Frequency & Word Order",
+   "unit": "frequency-word-order",
+   "aliases": [
+    "a1-unit17-vocab"
+   ]
+  },
+  "a1-friends-making-plans-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "relationships",
+    "leisure"
+   ],
+   "title": "Friends & Making Plans",
+   "unit": "friends-making-plans",
+   "aliases": [
+    "a1-unit30-vocab"
+   ]
+  },
+  "a1-going-places-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "town-places",
+    "travel"
+   ],
+   "title": "Going Places",
+   "unit": "going-places",
+   "aliases": [
+    "a1-unit12-vocab"
+   ]
+  },
+  "a1-greetings-basic-interaction-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "basics"
+   ],
+   "title": "Greetings & Basic Interaction",
+   "unit": "greetings-basic-interaction",
+   "aliases": [
+    "a1-unit02-vocab"
+   ]
+  },
+  "a1-hobbies-free-time-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "leisure"
+   ],
+   "title": "Hobbies & Free Time",
+   "unit": "hobbies-free-time",
+   "aliases": [
+    "a1-unit29-vocab"
+   ]
+  },
+  "a1-home-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "housing"
+   ],
+   "title": "At Home",
+   "unit": "home",
+   "aliases": [
+    "a1-unit18-vocab"
+   ]
+  },
+  "a1-introducing-yourself-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "personal-identity"
+   ],
+   "title": "Introducing Yourself",
+   "unit": "introducing-yourself",
+   "aliases": [
+    "a1-unit03-vocab"
+   ]
+  },
+  "a1-languages-manner-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "language"
+   ],
+   "title": "Languages & Manner: The Essive-Modal",
+   "unit": "languages-manner",
+   "aliases": [
+    "a1-unit32-vocab"
+   ]
+  },
+  "a1-market-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "food-drink",
+    "shopping"
+   ],
+   "title": "At the Market",
+   "unit": "market",
+   "aliases": [
+    "a1-unit22-vocab"
+   ]
+  },
+  "a1-numbers-personal-information-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "basics",
+    "personal-identity"
+   ],
+   "title": "Numbers & Personal Information",
+   "unit": "numbers-personal-information",
+   "aliases": [
+    "a1-unit04-vocab"
+   ]
+  },
+  "a1-objects-locations-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "housing"
+   ],
+   "title": "Objects & Locations",
+   "unit": "objects-locations",
+   "aliases": [
+    "a1-unit05-vocab"
+   ]
+  },
+  "a1-origin-cases-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "town-places"
+   ],
+   "title": "Coming from Places: Origin Cases",
+   "unit": "origin-cases",
+   "aliases": [
+    "a1-unit31-vocab"
+   ]
+  },
+  "a1-plurals-quantities-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "basics"
+   ],
+   "title": "Plurals & Quantities",
+   "unit": "plurals-quantities",
+   "aliases": [
+    "a1-unit08-vocab"
+   ]
+  },
+  "a1-possession-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "personal-identity"
+   ],
+   "title": "Possession",
+   "unit": "possession",
+   "aliases": [
+    "a1-unit09-vocab"
+   ]
+  },
+  "a1-postpositions-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "town-places",
+    "housing"
+   ],
+   "title": "Where Things Are: Postpositions",
+   "unit": "postpositions",
+   "aliases": [
+    "a1-unit33-vocab"
+   ]
+  },
+  "a1-questions-negation-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "basics"
+   ],
+   "title": "Questions & Negation",
+   "unit": "questions-negation",
+   "aliases": [
+    "a1-unit14-vocab"
+   ]
+  },
+  "a1-reading-hungarian-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "basics"
+   ],
+   "title": "Learning to Read Hungarian",
+   "unit": "reading-hungarian",
+   "aliases": [
+    "a1-unit01-vocab"
+   ]
+  },
+  "a1-restaurant-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "food-drink"
+   ],
+   "title": "At the Restaurant",
+   "unit": "restaurant",
+   "aliases": [
+    "a1-unit24-vocab"
+   ]
+  },
+  "a1-shopping-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "shopping"
+   ],
+   "title": "Shopping",
+   "unit": "shopping",
+   "aliases": [
+    "a1-unit25-vocab"
+   ]
+  },
+  "a1-time-dates-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "basics"
+   ],
+   "title": "Time & Dates",
+   "unit": "time-dates",
+   "aliases": [
+    "a1-unit16-vocab"
+   ]
+  },
+  "a1-transport-directions-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "travel",
+    "town-places"
+   ],
+   "title": "Transport & Directions",
+   "unit": "transport-directions",
+   "aliases": [
+    "a1-unit28-vocab"
+   ]
+  },
+  "a1-where-things-are-vocab": {
+   "kind": "vocabulary",
+   "level": "A1",
+   "family": [
+    "housing",
+    "town-places"
+   ],
+   "title": "Where Things Are",
+   "unit": "where-things-are",
+   "aliases": [
+    "a1-unit11-vocab"
+   ]
+  },
+  "a2-ability-possibility-permission-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "leisure"
+   ],
+   "title": "Ability, Possibility & Permission",
+   "unit": "ability-possibility-permission",
+   "aliases": [
+    "a2-unit33-vocab"
+   ]
+  },
+  "a2-banking-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "services",
+    "economy"
+   ],
+   "title": "Banking, Payments & ATM Services",
+   "unit": "banking",
+   "aliases": [
+    "a2-unit43-vocab"
+   ]
+  },
+  "a2-cooking-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "food-drink"
+   ],
+   "title": "Cooking",
+   "unit": "cooking",
+   "aliases": [
+    "a2-unit20-vocab"
+   ]
+  },
+  "a2-culture-going-out-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "leisure",
+    "arts"
+   ],
+   "title": "Culture & Going Out",
+   "unit": "culture-going-out",
+   "aliases": [
+    "a2-unit22-vocab"
+   ]
+  },
+  "a2-daily-life-routines-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "daily-life"
+   ],
+   "title": "Daily Life & Routines",
+   "unit": "daily-life-routines",
+   "aliases": [
+    "a2-unit11-vocab"
+   ]
+  },
+  "a2-essive-formal-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "work"
+   ],
+   "title": "Roles & Capacities: The Essive-Formal",
+   "unit": "essive-formal",
+   "aliases": [
+    "a2-unit46-vocab"
+   ]
+  },
+  "a2-family-life-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "relationships"
+   ],
+   "title": "Family & Family Life",
+   "unit": "family-life",
+   "aliases": [
+    "a2-unit13-vocab"
+   ]
+  },
+  "a2-food-eating-habits-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "food-drink"
+   ],
+   "title": "Food & Eating Habits",
+   "unit": "food-eating-habits",
+   "aliases": [
+    "a2-unit19-vocab"
+   ]
+  },
+  "a2-friends-relationships-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "relationships"
+   ],
+   "title": "Friends & Relationships",
+   "unit": "friends-relationships",
+   "aliases": [
+    "a2-unit15-vocab"
+   ]
+  },
+  "a2-future-plans-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "work",
+    "travel"
+   ],
+   "title": "Future Plans",
+   "unit": "future-plans",
+   "aliases": [
+    "a2-unit37-vocab"
+   ]
+  },
+  "a2-health-body-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "health",
+    "body"
+   ],
+   "title": "Health & the Body",
+   "unit": "health-body",
+   "aliases": [
+    "a2-unit27-vocab"
+   ]
+  },
+  "a2-healthy-living-advice-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "health"
+   ],
+   "title": "Healthy Living & Advice",
+   "unit": "healthy-living-advice",
+   "aliases": [
+    "a2-unit28-vocab"
+   ]
+  },
+  "a2-home-housing-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "housing"
+   ],
+   "title": "Home & Housing",
+   "unit": "home-housing",
+   "aliases": [
+    "a2-unit16-vocab"
+   ]
+  },
+  "a2-hotels-accommodation-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "travel"
+   ],
+   "title": "Hotels & Accommodation",
+   "unit": "hotels-accommodation",
+   "aliases": [
+    "a2-unit26-vocab"
+   ]
+  },
+  "a2-inflected-infinitives-necessity-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "daily-life",
+    "services"
+   ],
+   "title": "Inflected Infinitives & Necessity",
+   "unit": "inflected-infinitives-necessity",
+   "aliases": []
+  },
+  "a2-inflected-postpositions-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "relationships"
+   ],
+   "title": "Inflected Postpositions: Personal Relations",
+   "unit": "inflected-postpositions",
+   "aliases": []
+  },
+  "a2-lak-lek-suffix-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "relationships",
+    "feelings-character"
+   ],
+   "title": "The -lak/-lek Verbal Suffix",
+   "unit": "lak-lek-suffix",
+   "aliases": []
+  },
+  "a2-leisure-hobbies-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "leisure"
+   ],
+   "title": "Leisure & Hobbies",
+   "unit": "leisure-hobbies",
+   "aliases": [
+    "a2-unit21-vocab"
+   ]
+  },
+  "a2-living-in-hungarian-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "daily-life",
+    "housing"
+   ],
+   "title": "Living in Hungarian",
+   "unit": "living-in-hungarian",
+   "aliases": [
+    "a2-unit42-vocab"
+   ]
+  },
+  "a2-neighbourhood-city-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "town-places"
+   ],
+   "title": "Neighbourhood & City",
+   "unit": "neighbourhood-city",
+   "aliases": [
+    "a2-unit17-vocab"
+   ]
+  },
+  "a2-opinions-preferences-comparisons-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "ideas"
+   ],
+   "title": "Opinions, Preferences & Comparisons",
+   "unit": "opinions-preferences-comparisons",
+   "aliases": [
+    "a2-unit39-vocab"
+   ]
+  },
+  "a2-people-personality-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "feelings-character",
+    "body"
+   ],
+   "title": "People & Personality",
+   "unit": "people-personality",
+   "aliases": [
+    "a2-unit14-vocab"
+   ]
+  },
+  "a2-pharmacy-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "health",
+    "services"
+   ],
+   "title": "Pharmacy, Medication & Medical Triage",
+   "unit": "pharmacy",
+   "aliases": [
+    "a2-unit44-vocab"
+   ]
+  },
+  "a2-plural-possessed-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "relationships"
+   ],
+   "title": "Possessions in the Plural: The Plural Possessed",
+   "unit": "plural-possessed",
+   "aliases": []
+  },
+  "a2-post-office-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "services"
+   ],
+   "title": "Post Office, Mail & Parcel Lockers",
+   "unit": "post-office",
+   "aliases": []
+  },
+  "a2-problems-requests-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "housing",
+    "services"
+   ],
+   "title": "Problems, Requests & Everyday Communication",
+   "unit": "problems-requests",
+   "aliases": [
+    "a2-unit41-vocab"
+   ]
+  },
+  "a2-pronouns-internal-surface-cases-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "feelings-character"
+   ],
+   "title": "Declined Pronouns: Internal & Surface Cases",
+   "unit": "pronouns-internal-surface-cases",
+   "aliases": []
+  },
+  "a2-pronouns-proximity-motion-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "relationships"
+   ],
+   "title": "Declined Pronouns: Proximity & Motion",
+   "unit": "pronouns-proximity-motion",
+   "aliases": []
+  },
+  "a2-review-life-leisure-health-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "leisure",
+    "health"
+   ],
+   "title": "Review 1: Life, Leisure & Health",
+   "unit": "review-life-leisure-health",
+   "aliases": [
+    "a2-unit30-vocab"
+   ]
+  },
+  "a2-review-work-past-opinions-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "work"
+   ],
+   "title": "Review 2: Work, Past & Opinions",
+   "unit": "review-work-past-opinions",
+   "aliases": [
+    "a2-unit40-vocab"
+   ]
+  },
+  "a2-school-language-learning-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "education",
+    "language"
+   ],
+   "title": "School & Language Learning",
+   "unit": "school-language-learning",
+   "aliases": [
+    "a2-unit29-vocab"
+   ]
+  },
+  "a2-shopping-prices-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "shopping"
+   ],
+   "title": "Shopping & Prices",
+   "unit": "shopping-prices",
+   "aliases": [
+    "a2-unit18-vocab"
+   ]
+  },
+  "a2-sociocultural-pragmatics-customs-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "relationships",
+    "language"
+   ],
+   "title": "Sociocultural Pragmatics & Customs",
+   "unit": "sociocultural-pragmatics-customs",
+   "aliases": [
+    "a2-unit47-vocab"
+   ]
+  },
+  "a2-suggestions-conditional-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "relationships"
+   ],
+   "title": "Suggestions & Conditional",
+   "unit": "suggestions-conditional",
+   "aliases": [
+    "a2-unit38-vocab"
+   ]
+  },
+  "a2-telling-stories-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "daily-life",
+    "feelings-character"
+   ],
+   "title": "Telling Stories",
+   "unit": "telling-stories",
+   "aliases": [
+    "a2-unit36-vocab"
+   ]
+  },
+  "a2-the-past-1-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "daily-life"
+   ],
+   "title": "Talking About the Past I",
+   "unit": "the-past-1",
+   "aliases": [
+    "a2-unit34-vocab"
+   ]
+  },
+  "a2-the-past-2-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "shopping"
+   ],
+   "title": "Talking About the Past II",
+   "unit": "the-past-2",
+   "aliases": [
+    "a2-unit35-vocab"
+   ]
+  },
+  "a2-time-dates-schedules-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "basics"
+   ],
+   "title": "Time, Dates & Schedules",
+   "unit": "time-dates-schedules",
+   "aliases": [
+    "a2-unit12-vocab"
+   ]
+  },
+  "a2-translative-case-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "ideas"
+   ],
+   "title": "Change of State: The Translative Case",
+   "unit": "translative-case",
+   "aliases": [
+    "a2-unit45-vocab"
+   ]
+  },
+  "a2-transport-getting-around-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "travel"
+   ],
+   "title": "Transport & Getting Around",
+   "unit": "transport-getting-around",
+   "aliases": [
+    "a2-unit24-vocab"
+   ]
+  },
+  "a2-travel-holidays-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "travel"
+   ],
+   "title": "Travel & Holidays",
+   "unit": "travel-holidays",
+   "aliases": [
+    "a2-unit25-vocab"
+   ]
+  },
+  "a2-verb-prefixes-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "travel",
+    "daily-life"
+   ],
+   "title": "Verb Prefixes",
+   "unit": "verb-prefixes",
+   "aliases": [
+    "a2-unit32-vocab"
+   ]
+  },
+  "a2-weather-seasons-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "geography-nature"
+   ],
+   "title": "Weather & Seasons",
+   "unit": "weather-seasons",
+   "aliases": [
+    "a2-unit23-vocab"
+   ]
+  },
+  "a2-work-professions-vocab": {
+   "kind": "vocabulary",
+   "level": "A2",
+   "family": [
+    "work"
+   ],
+   "title": "Work & Professions",
+   "unit": "work-professions",
+   "aliases": [
+    "a2-unit31-vocab"
+   ]
+  },
+  "acc-poss": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "possession",
+   "title": "accusative -t on possessed nouns",
+   "taught_in": "a2-104-b-gr",
+   "requires": [
+    "how-the-accusative-t-works",
+    "3rd-person-possessive"
+   ],
+   "aliases": [
+    "bizonyitvany-usage",
+    "changing-perspectives",
+    "commemoration-speeches",
+    "presidential-functions",
+    "state-institutional-roles",
+    "utiterv-usage"
+   ]
+  },
+  "additive-connectors": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "discourse-markers",
+   "title": "discourse connectors and argument signposts",
+   "taught_in": "b1-32-01-b-gr",
+   "requires": [],
+   "aliases": [
+    "conversational-turn-taking",
+    "polite-assertiveness",
+    "synthesizing-opinions"
+   ]
+  },
+  "adjective-order-before-the-noun": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "adjectives",
+   "title": "adjectives before the noun",
+   "taught_in": "a1-34-b-gr",
+   "requires": [],
+   "aliases": [
+    "contrasting-two-qualities-de",
+    "describing-things-adjective-noun",
+    "fronting-an-adjective-for-emphasis",
+    "linking-adjectives-with-es",
+    "making-colour-words-the-suffix-es",
+    "meret-tul",
+    "nuances-and-shades-of-meaning",
+    "s-suffix-amenities",
+    "vicces-recycled"
+   ]
+  },
+  "adversative-contrast": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "coordination",
+   "title": "adversative connectors azonban, viszont and ezzel szemben",
+   "taught_in": "b1-32-03-a-gr",
+   "requires": [],
+   "aliases": [
+    "adversative-and-compromise",
+    "concluding-lessons",
+    "es-and-de-and-but",
+    "nuanced-agreement"
+   ]
+  },
+  "agentless-constructions": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "voice",
+   "title": "saying what happened without naming the doer",
+   "taught_in": "b2-15-01-a-gr",
+   "requires": [
+    "mediopassive-verbs-odik"
+   ],
+   "aliases": [
+    "b2-agent-backgrounding",
+    "c1-adv-passive-substitute-phrases",
+    "c1-passive-avoidance",
+    "c1-passive-computational-impersonals",
+    "c1-passive-institutional-impersonals"
+   ]
+  },
+  "ahol-amikor": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "relative-clauses",
+   "title": "relative adverbs ahol and amikor",
+   "taught_in": "b1-arpadhaz-04-ahol-amikor-gr",
+   "requires": [
+    "relative-clauses-aki-ami-amely"
+   ],
+   "aliases": [
+    "c1-complex-locative-correlatives"
+   ]
+  },
+  "akar-tervez-infinitive": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "modality",
+   "title": "wanting and planning with akar and tervez + infinitive",
+   "taught_in": "a1-147-a-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni"
+   ],
+   "aliases": [
+    "tervez-infinitive",
+    "wanting-to-meet-akar-infinitive"
+   ]
+  },
+  "an-en-adverb": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "adverbs",
+   "title": "manner adverbs in -an/-en",
+   "taught_in": "a2-94-a-gr",
+   "requires": [
+    "adjective-order-before-the-noun"
+   ],
+   "aliases": [
+    "breakthrough-kibontakozas",
+    "fluency-degree-adverbs",
+    "jol-and-rosszul",
+    "jol-rosszul-tud",
+    "modal-particles-bizonyara",
+    "predictive-registers",
+    "unfolding-verbs"
+   ]
+  },
+  "annyira-hogy": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "cause-purpose-result",
+   "title": "result clauses with annyira ..., hogy",
+   "taught_in": "b2-32-01-a-gr",
+   "requires": [
+    "hogy-clauses"
+   ],
+   "aliases": [
+    "b2-consecutive-degree"
+   ]
+  },
+  "azert-hogy-purpose": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "cause-purpose-result",
+   "title": "purpose clauses with azért, hogy + subjunctive",
+   "taught_in": "b1-03-04-a-gr",
+   "requires": [
+    "hogy-jon-jen"
+   ],
+   "aliases": [
+    "causal-consequence-treaty",
+    "check-purpose",
+    "colloquial-idioms",
+    "emotional-historical-register",
+    "exam-collocations",
+    "minority-rights-discourse",
+    "overtime-and-limits",
+    "passive-avoidance-treaty",
+    "purpose-azert-hogy",
+    "purpose-clauses",
+    "purpose-clauses-liberation",
+    "purpose-potential",
+    "purpose-subjunctive",
+    "purpose-translation",
+    "unity-across-borders"
+   ]
+  },
+  "b1-18th-century-rebuilding-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The 18th Century: Rebuilding",
+   "unit": "18th-century-rebuilding",
+   "aliases": [
+    "b1-mariaterezia-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-angevin-kings-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The Angevin & Later Medieval Kings",
+   "unit": "angevin-kings",
+   "aliases": [
+    "b1-anjouk-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-arpad-dynasty-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The Árpád Dynasty",
+   "unit": "arpad-dynasty",
+   "aliases": [
+    "b1-arpadhaz-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-austria-hungary-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "Austria-Hungary",
+   "unit": "austria-hungary",
+   "aliases": [
+    "b1-monarchia-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-being-hungarian-citizen-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Being a Hungarian Citizen",
+   "unit": "being-hungarian-citizen",
+   "aliases": [
+    "b1-allampolgarsag-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-carpathian-basin-before-magyars-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history",
+    "geography-nature"
+   ],
+   "title": "The Carpathian Basin Before the Magyars",
+   "unit": "carpathian-basin-before-magyars",
+   "aliases": [
+    "b1-karpatmedence-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-change-development-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "ideas"
+   ],
+   "title": "Change & Development",
+   "unit": "change-development",
+   "aliases": [
+    "b1-25-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-cities-communities-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "town-places"
+   ],
+   "title": "Cities & Communities",
+   "unit": "cities-communities",
+   "aliases": [
+    "b1-11-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-complex-opinions-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "ideas"
+   ],
+   "title": "Complex Opinions",
+   "unit": "complex-opinions",
+   "aliases": [
+    "b1-34-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-compromise-1867-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The Compromise of 1867",
+   "unit": "compromise-1867",
+   "aliases": [
+    "b1-kiegyezes-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-connecting-ideas-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "language"
+   ],
+   "title": "Connecting Ideas",
+   "unit": "connecting-ideas",
+   "aliases": [
+    "b1-32-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-culture-entertainment-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "arts",
+    "leisure"
+   ],
+   "title": "Culture & Entertainment",
+   "unit": "culture-entertainment",
+   "aliases": [
+    "b1-15-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-culture-language-society-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "language"
+   ],
+   "title": "Culture, Language & Society",
+   "unit": "culture-language-society",
+   "aliases": [
+    "b1-30-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-driving-out-ottomans-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "Driving Out the Ottomans",
+   "unit": "driving-out-ottomans",
+   "aliases": [
+    "b1-torokkiuzese-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-education-learning-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "education"
+   ],
+   "title": "Education & Learning",
+   "unit": "education-learning",
+   "aliases": [
+    "b1-07-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-environment-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "geography-nature"
+   ],
+   "title": "The Environment",
+   "unit": "environment",
+   "aliases": [
+    "b1-16-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-experiences-memories-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "feelings-character"
+   ],
+   "title": "Experiences & Memories",
+   "unit": "experiences-memories",
+   "aliases": [
+    "b1-02-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-food-lifestyle-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "food-drink"
+   ],
+   "title": "Food & Lifestyle",
+   "unit": "food-lifestyle",
+   "aliases": [
+    "b1-12-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-fundamental-law-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "The Constitution: Alaptörvény",
+   "unit": "fundamental-law",
+   "aliases": [
+    "b1-alaptorveny-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-future-society-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "The Future of Society",
+   "unit": "future-society",
+   "aliases": [
+    "b1-31-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-giving-advice-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "ideas"
+   ],
+   "title": "Giving Advice",
+   "unit": "giving-advice",
+   "aliases": [
+    "b1-04-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-government-institutions-today-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Government & Institutions Today",
+   "unit": "government-institutions-today",
+   "aliases": [
+    "b1-allamszervezet-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-health-wellbeing-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "health"
+   ],
+   "title": "Health & Wellbeing",
+   "unit": "health-wellbeing",
+   "aliases": [
+    "b1-09-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-home-housing-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "housing"
+   ],
+   "title": "Home & Housing",
+   "unit": "home-housing",
+   "aliases": [
+    "b1-10-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-honfoglalas-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The Honfoglalás (895)",
+   "unit": "honfoglalas",
+   "aliases": [],
+   "track": "citizenship"
+  },
+  "b1-how-things-work-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "science-technology"
+   ],
+   "title": "Processes & How Things Work",
+   "unit": "how-things-work",
+   "aliases": [
+    "b1-24-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-hungarian-culture-science-heritage-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "arts",
+    "science-technology"
+   ],
+   "title": "Hungarian Culture, Science & Heritage",
+   "unit": "hungarian-culture-science-heritage",
+   "aliases": [
+    "b1-nemzetiertekek-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-hungarians-abroad-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Hungarians Across the World & International Relations",
+   "unit": "hungarians-abroad",
+   "aliases": [
+    "b1-magyarsag-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-hungary-today-land-symbols-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "geography-nature",
+    "society-politics"
+   ],
+   "title": "Hungary Today: Land & Symbols",
+   "unit": "hungary-today-land-symbols",
+   "aliases": [
+    "b1-orszagma-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-hypotheticals-possibilities-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "ideas"
+   ],
+   "title": "Hypotheticals & Possibilities",
+   "unit": "hypotheticals-possibilities",
+   "aliases": [
+    "b1-35-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-independent-hungarian-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "language"
+   ],
+   "title": "Independent Hungarian",
+   "unit": "independent-hungarian",
+   "aliases": [
+    "b1-36-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-interwar-years-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The Interwar Years",
+   "unit": "interwar-years",
+   "aliases": [
+    "b1-horthykorszak-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-kadar-era-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The Kádár Era & Goulash Communism",
+   "unit": "kadar-era",
+   "aliases": [
+    "b1-kadarkorszak-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-kormanyablak-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "services",
+    "society-politics"
+   ],
+   "title": "Public Administration & Kormányablak",
+   "unit": "kormanyablak",
+   "aliases": [],
+   "track": "citizenship"
+  },
+  "b1-kossuth-petofi-national-cause-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "Kossuth, Petőfi & the National Cause",
+   "unit": "kossuth-petofi-national-cause",
+   "aliases": [
+    "b1-nemzetiugy-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-literary-musical-canon-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "arts"
+   ],
+   "title": "European & Hungarian Literary and Musical Canon",
+   "unit": "literary-musical-canon",
+   "aliases": [
+    "b1-europaiorokseg-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-local-governments-public-administration-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Local Governments & Public Administration",
+   "unit": "local-governments-public-administration",
+   "aliases": [
+    "b1-onkormanyzat-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-longer-stories-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "language"
+   ],
+   "title": "Telling a Longer Story",
+   "unit": "longer-stories",
+   "aliases": [
+    "b1-01-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-making-decisions-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "ideas"
+   ],
+   "title": "Making Decisions",
+   "unit": "making-decisions",
+   "aliases": [
+    "b1-23-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-matthias-corvinus-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "Matthias Corvinus & the Renaissance Court",
+   "unit": "matthias-corvinus",
+   "aliases": [
+    "b1-matyas-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-media-information-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "media"
+   ],
+   "title": "Media & Information",
+   "unit": "media-information",
+   "aliases": [
+    "b1-13-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-migration-identity-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "society-politics",
+    "personal-identity"
+   ],
+   "title": "Migration & Identity",
+   "unit": "migration-identity",
+   "aliases": [
+    "b1-29-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-modern-democratic-hungary-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history",
+    "society-politics"
+   ],
+   "title": "Modern Democratic Hungary & Euro-Atlantic Integration",
+   "unit": "modern-democratic-hungary",
+   "aliases": [
+    "b1-demokracia-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-mohacs-1526-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The Battle of Mohács (1526)",
+   "unit": "mohacs-1526",
+   "aliases": [
+    "b1-mohacs-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-money-economy-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "economy"
+   ],
+   "title": "Money & the Economy",
+   "unit": "money-economy",
+   "aliases": [
+    "b1-19-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-mongol-invasion-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The Mongol Invasion (1241–42)",
+   "unit": "mongol-invasion",
+   "aliases": [
+    "b1-tatarjaras-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-national-holidays-remembrance-days-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "National Holidays & Remembrance Days",
+   "unit": "national-holidays-remembrance-days",
+   "aliases": [
+    "b1-nemzetiunnepek-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-national-symbols-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "National Symbols",
+   "unit": "national-symbols",
+   "aliases": [
+    "b1-nemzetijelkepek-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-opinions-arguments-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "ideas"
+   ],
+   "title": "Opinions & Arguments",
+   "unit": "opinions-arguments",
+   "aliases": [
+    "b1-21-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-plans-ambitions-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "feelings-character"
+   ],
+   "title": "Plans & Ambitions",
+   "unit": "plans-ambitions",
+   "aliases": [
+    "b1-03-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-politics-public-life-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Politics & Public Life",
+   "unit": "politics-public-life",
+   "aliases": [
+    "b1-18-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-possibilities-predictions-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "ideas"
+   ],
+   "title": "Possibilities & Predictions",
+   "unit": "possibilities-predictions",
+   "aliases": [
+    "b1-22-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-problems-solutions-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "ideas"
+   ],
+   "title": "Problems & Solutions",
+   "unit": "problems-solutions",
+   "aliases": [
+    "b1-20-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-rakoczi-war-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "Rákóczi's War of Independence (1703–11)",
+   "unit": "rakoczi-war",
+   "aliases": [
+    "b1-rakoczi-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-rakosi-era-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The Communist Takeover & Rákosi Era",
+   "unit": "rakosi-era",
+   "aliases": [
+    "b1-rakosikorszak-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-reform-age-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The Reform Age",
+   "unit": "reform-age",
+   "aliases": [
+    "b1-reformkor-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-regime-change-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The Regime Change: From Communism to Democracy",
+   "unit": "regime-change",
+   "aliases": [
+    "b1-rendszervaltas-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-relationships-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "relationships"
+   ],
+   "title": "Relationships",
+   "unit": "relationships",
+   "aliases": [
+    "b1-05-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-reported-speech-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "language",
+    "media"
+   ],
+   "title": "Reported Speech",
+   "unit": "reported-speech",
+   "aliases": [
+    "b1-33-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-revolution-1848-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The 1848–49 Revolution",
+   "unit": "revolution-1848",
+   "aliases": [
+    "b1-forradalom-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-revolution-1956-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The 1956 Revolution",
+   "unit": "revolution-1956",
+   "aliases": [
+    "b1-otvenhat-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-rules-rights-responsibilities-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Rules, Rights & Responsibilities",
+   "unit": "rules-rights-responsibilities",
+   "aliases": [
+    "b1-28-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-saint-stephen-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "Saint Stephen & the Founding of the State (1000)",
+   "unit": "saint-stephen",
+   "aliases": [
+    "b1-istvankiraly-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-social-life-communication-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "relationships",
+    "language"
+   ],
+   "title": "Social Life & Communication",
+   "unit": "social-life-communication",
+   "aliases": [
+    "b1-27-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-society-inequality-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Society & Inequality",
+   "unit": "society-inequality",
+   "aliases": [
+    "b1-17-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-technology-communication-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "science-technology",
+    "media"
+   ],
+   "title": "Technology & Communication",
+   "unit": "technology-communication",
+   "aliases": [
+    "b1-14-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-tenancy-contracts-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "housing",
+    "services"
+   ],
+   "title": "Residential Tenancy & Housing Contracts",
+   "unit": "tenancy-contracts",
+   "aliases": [
+    "b1-alberlet-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-three-part-hungary-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "Three Parts of Hungary",
+   "unit": "three-part-hungary",
+   "aliases": [
+    "b1-haromresz-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-transylvania-golden-age-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "Transylvania's Golden Age",
+   "unit": "transylvania-golden-age",
+   "aliases": [
+    "b1-erdelyaranykora-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-travel-mobility-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "travel"
+   ],
+   "title": "Travel & Mobility",
+   "unit": "travel-mobility",
+   "aliases": [
+    "b1-08-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-trianon-1920-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "The Treaty of Trianon (1920)",
+   "unit": "trianon-1920",
+   "aliases": [
+    "b1-trianon-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-work-ambition-balance-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "work"
+   ],
+   "title": "Work, Ambition & Balance",
+   "unit": "work-ambition-balance",
+   "aliases": [
+    "b1-26-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-work-professional-life-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "work"
+   ],
+   "title": "Work & Professional Life",
+   "unit": "work-professional-life",
+   "aliases": [
+    "b1-06-vocab"
+   ],
+   "track": "core"
+  },
+  "b1-world-war-1-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "World War I & Collapse",
+   "unit": "world-war-1",
+   "aliases": [
+    "b1-vilaghaboru-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b1-world-war-2-vocab": {
+   "kind": "vocabulary",
+   "level": "B1",
+   "family": [
+    "history"
+   ],
+   "title": "World War II in Hungary",
+   "unit": "world-war-2",
+   "aliases": [
+    "b1-masodikvh-vocab"
+   ],
+   "track": "citizenship"
+  },
+  "b2-aesthetics-vision-creative-obsession-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "arts"
+   ],
+   "title": "Aesthetics, Vision & Creative Obsession",
+   "unit": "aesthetics-vision-creative-obsession",
+   "aliases": [
+    "b2-06-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-bartok-kodaly-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "arts"
+   ],
+   "title": "Bartók, Kodály & the Ethnomusicological Revolution",
+   "unit": "bartok-kodaly",
+   "aliases": [
+    "b2-bartokkodaly-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-borders-kinship-transborder-identity-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Borders, Kinship & Transborder Identity",
+   "unit": "borders-kinship-transborder-identity",
+   "aliases": [
+    "b2-27-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-cataphoric-clauses": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "complement-clauses",
+   "title": "cataphoric demonstrative anchors with complement clauses in Hungarian",
+   "taught_in": "b2-18-01-a-gr",
+   "requires": [
+    "hogy-clauses",
+    "demonstratives-ez-az"
+   ],
+   "aliases": []
+  },
+  "b2-censorship-ambiguity-indirect-expression-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics",
+    "language"
+   ],
+   "title": "Censorship, Ambiguity & Indirect Expression",
+   "unit": "censorship-ambiguity-indirect-expression",
+   "aliases": [
+    "b2-15-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-civic-participation-advocacy-public-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Civic Participation, Advocacy & Public Institutions",
+   "unit": "civic-participation-advocacy-public",
+   "aliases": [
+    "b2-30-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-cleft-identification": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "word-order",
+   "title": "cleft identificational clauses in philosophical and academic prose",
+   "taught_in": "b2-33-01-a-gr",
+   "requires": [
+    "b2-focus-inversion",
+    "relative-clauses-aki-ami-amely"
+   ],
+   "aliases": [
+    "c1-adv-syntactic-focus-clefting"
+   ]
+  },
+  "b2-competition-mastery-peak-performance-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "leisure"
+   ],
+   "title": "Competition, Mastery & Peak Performance",
+   "unit": "competition-mastery-peak-performance",
+   "aliases": [
+    "b2-32-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-constitutional-history-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics",
+    "history"
+   ],
+   "title": "From the Historical Constitution to Constitutional Review",
+   "unit": "constitutional-history",
+   "aliases": [
+    "b2-alkotmanytortenet-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-contrastive-topic": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "word-order",
+   "title": "contrastive topic framing and perspective shifts in Hungarian",
+   "taught_in": "b2-kavehazikultura-01-a-gr",
+   "requires": [
+    "basic-hungarian-word-order"
+   ],
+   "aliases": [
+    "c1-polemical-topicalization"
+   ]
+  },
+  "b2-danube-dams-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "geography-nature",
+    "society-politics"
+   ],
+   "title": "The Blue Danube: Ecology, Dams & Civic Awakening",
+   "unit": "danube-dams",
+   "aliases": [
+    "b2-kornyezetpolitika-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-demographics-generations-life-course-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics",
+    "relationships"
+   ],
+   "title": "Demographics, Generations & the Life Course",
+   "unit": "demographics-generations-life-course",
+   "aliases": [
+    "b2-22-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-diplomacy-alliances-sovereignty-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Diplomacy, Alliances & Sovereignty",
+   "unit": "diplomacy-alliances-sovereignty",
+   "aliases": [
+    "b2-29-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-ecology-infrastructure-stewardship-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "geography-nature",
+    "science-technology"
+   ],
+   "title": "Ecology, Infrastructure & Stewardship",
+   "unit": "ecology-infrastructure-stewardship",
+   "aliases": [
+    "b2-24-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-economic-cycles-crisis-adaptation-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "economy"
+   ],
+   "title": "Economic Cycles, Crisis & Adaptation",
+   "unit": "economic-cycles-crisis-adaptation",
+   "aliases": [
+    "b2-21-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-elite-education-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "education"
+   ],
+   "title": "The Fasori & Eötvös Tradition: Elite Education",
+   "unit": "elite-education",
+   "aliases": [
+    "b2-gimnaziumok-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-emigre-waves-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics",
+    "history"
+   ],
+   "title": "Global Hungarians: Émigré Waves & Returnees",
+   "unit": "emigre-waves",
+   "aliases": [
+    "b2-diaszpora-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-exile-emigration-global-networks-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Exile, Emigration & Global Networks",
+   "unit": "exile-emigration-global-networks",
+   "aliases": [
+    "b2-28-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-family-policy-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Demographics, Family Policy & Generational Shifts",
+   "unit": "family-policy",
+   "aliases": [
+    "b2-demografia-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-figurative-preverbs": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "aspect",
+   "title": "figurative preverb contrasts for integration, motion, and change",
+   "taught_in": "b2-28-01-a-gr",
+   "requires": [
+    "meg-meaning"
+   ],
+   "aliases": []
+  },
+  "b2-fin-de-siecle-budapest-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "arts",
+    "history"
+   ],
+   "title": "Fin-de-Siècle Budapest & Hungarian Secession",
+   "unit": "fin-de-siecle-budapest",
+   "aliases": [
+    "b2-szecesszio-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-focus-inversion": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "word-order",
+   "title": "focus word order and preverb inversion in Hungarian",
+   "taught_in": "b2-01-02-a-gr",
+   "requires": [
+    "prefix-word-order"
+   ],
+   "aliases": [
+    "c1-adv-contrastive-focus-inversion"
+   ]
+  },
+  "b2-frequentative-verbs": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "aspect",
+   "title": "frequentative and iterative verb forms in Hungarian",
+   "taught_in": "b2-05-01-a-gr",
+   "requires": [
+    "meg-meaning"
+   ],
+   "aliases": []
+  },
+  "b2-gastronomy-conviviality-cultural-rituals-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "food-drink"
+   ],
+   "title": "Gastronomy, Conviviality & Cultural Rituals",
+   "unit": "gastronomy-conviviality-cultural-rituals",
+   "aliases": [
+    "b2-31-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-goulash-to-single-market-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "economy",
+    "history"
+   ],
+   "title": "From Goulash Socialism to the European Single Market",
+   "unit": "goulash-to-single-market",
+   "aliases": [
+    "b2-gazdasagiatmenet-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-housing-estates-renewal-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "housing",
+    "town-places"
+   ],
+   "title": "Courtyards, Panel Estates & Urban Renewal",
+   "unit": "housing-estates-renewal",
+   "aliases": [
+    "b2-lakhatas-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-hungarian-cinema-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "arts"
+   ],
+   "title": "Allegory on Screen: A Century of Hungarian Cinema",
+   "unit": "hungarian-cinema",
+   "aliases": [
+    "b2-magyarfilm-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-hungarians-carpathian-basin-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Hungarian Communities Across the Carpathian Basin Today",
+   "unit": "hungarians-carpathian-basin",
+   "aliases": [
+    "b2-hatarontul-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-ideological-debates-public-polemics-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Ideological Debates & Public Polemics",
+   "unit": "ideological-debates-public-polemics",
+   "aliases": [
+    "b2-16-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-information-overload-rumor-verification-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "media"
+   ],
+   "title": "Information Overload, Rumor & Verification",
+   "unit": "information-overload-rumor-verification",
+   "aliases": [
+    "b2-17-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-ingenuity-design-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "science-technology"
+   ],
+   "title": "Ingenuity, Design & Practical Problem-Solving",
+   "unit": "ingenuity-design",
+   "aliases": [
+    "b2-12-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-irony-satire-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "language"
+   ],
+   "title": "Irony, Satire & Reading Between the Lines",
+   "unit": "irony-satire",
+   "aliases": [
+    "b2-13-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-kempelen-to-rubik-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "science-technology"
+   ],
+   "title": "From Kempelen's Chess Turk to Rubik's Cube",
+   "unit": "kempelen-to-rubik",
+   "aliases": [
+    "b2-talalmanyok-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-knowledge-economy-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "science-technology",
+    "economy"
+   ],
+   "title": "Hungary in the 21st-Century Knowledge Economy",
+   "unit": "knowledge-economy",
+   "aliases": [
+    "b2-tudomanyjovo-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-landscape-belonging-regional-character-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "geography-nature"
+   ],
+   "title": "Landscape, Belonging & Regional Character",
+   "unit": "landscape-belonging-regional-character",
+   "aliases": [
+    "b2-19-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-language-reform-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "language",
+    "history"
+   ],
+   "title": "The Language Reform & the Politics of Hungarian",
+   "unit": "language-reform",
+   "aliases": [
+    "b2-nyelvujitas-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-language-style-word-formation-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "language"
+   ],
+   "title": "Language, Style & Word Formation",
+   "unit": "language-style-word-formation",
+   "aliases": [
+    "b2-03-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-law-justice-constitutional-principles-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Law, Justice & Constitutional Principles",
+   "unit": "law-justice-constitutional-principles",
+   "aliases": [
+    "b2-25-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-logic-paradox-abstract-reasoning-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "religion-philosophy",
+    "ideas"
+   ],
+   "title": "Logic, Paradox & Abstract Reasoning",
+   "unit": "logic-paradox-abstract-reasoning",
+   "aliases": [
+    "b2-09-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-mastery-voice-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "language"
+   ],
+   "title": "Mastery & Voice: Upper-Intermediate Synthesis",
+   "unit": "mastery-voice",
+   "aliases": [
+    "b2-36-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-mathematics-chess-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "science-technology",
+    "leisure"
+   ],
+   "title": "Non-Euclidean Worlds: Hungarian Mathematics & Chess",
+   "unit": "mathematics-chess",
+   "aliases": [
+    "b2-matematikasakk-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-medical-pioneers-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "health",
+    "science-technology"
+   ],
+   "title": "Semmelweis, Szent-Györgyi & Medical Pioneers",
+   "unit": "medical-pioneers",
+   "aliases": [
+    "b2-semmelweis-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-medicine-ethics-responsibility-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "health",
+    "religion-philosophy"
+   ],
+   "title": "Medicine, Ethics & Responsibility",
+   "unit": "medicine-ethics-responsibility",
+   "aliases": [
+    "b2-08-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-memory-nostalgia-sensory-description-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "feelings-character"
+   ],
+   "title": "Memory, Nostalgia & Sensory Description",
+   "unit": "memory-nostalgia-sensory-description",
+   "aliases": [
+    "b2-02-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-mentorship-discipline-intellectual-growth-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "education"
+   ],
+   "title": "Mentorship, Discipline & Intellectual Growth",
+   "unit": "mentorship-discipline-intellectual-growth",
+   "aliases": [
+    "b2-10-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-monuments-political-memory-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "history",
+    "town-places"
+   ],
+   "title": "Public Memory, Monuments & Political Rhetoric",
+   "unit": "monuments-political-memory",
+   "aliases": [
+    "b2-politikairetorika-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-national-theatre-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "arts"
+   ],
+   "title": "The National Stage: Theatre, Censorship & Politics",
+   "unit": "national-theatre",
+   "aliases": [
+    "b2-szinhazmuveszet-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-nationalities-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Thirteen Nationalities & Shared Cultural Heritage",
+   "unit": "nationalities",
+   "aliases": [
+    "b2-nemzetisegek-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-nuance-focus-emphasis-narrative-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "feelings-character"
+   ],
+   "title": "Nuance, Focus & Emphasis in Narrative",
+   "unit": "nuance-focus-emphasis-narrative",
+   "aliases": [
+    "b2-01-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-nyugat-coffeehouses-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "arts",
+    "media"
+   ],
+   "title": "The Coffeehouse Republic: Nyugat & Print Culture",
+   "unit": "nyugat-coffeehouses",
+   "aliases": [
+    "b2-kavehazikultura-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-ombudsman-civic-rights-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics",
+    "services"
+   ],
+   "title": "Public Administration, Ombudsman & Civic Rights",
+   "unit": "ombudsman-civic-rights",
+   "aliases": [
+    "b2-jogvedelem-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-paprika-tokaj-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "food-drink",
+    "history"
+   ],
+   "title": "Paprika, Tokaj & Terroir: A Cultural History of Hungarian Cuisine",
+   "unit": "paprika-tokaj",
+   "aliases": [
+    "b2-borkultura-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-performance-drama-persuasion-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "language",
+    "arts"
+   ],
+   "title": "Performance, Drama & Persuasion",
+   "unit": "performance-drama-persuasion",
+   "aliases": [
+    "b2-04-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-pesti-humor-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "arts"
+   ],
+   "title": "The Pesti Humor: Cabaret, Satire & Survival",
+   "unit": "pesti-humor",
+   "aliases": [
+    "b2-pestihumor-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-pluralism-heritage-minority-perspectives-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Pluralism, Heritage & Minority Perspectives",
+   "unit": "pluralism-heritage-minority-perspectives",
+   "aliases": [
+    "b2-26-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-political-philosophy-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "religion-philosophy",
+    "society-politics"
+   ],
+   "title": "Political Philosophy, Freedom & Historical Hysteria",
+   "unit": "political-philosophy",
+   "aliases": [
+    "b2-33-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-political-thought-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "religion-philosophy",
+    "society-politics"
+   ],
+   "title": "Central European Political Thought: Széchenyi, Eötvös, Polányi, Bibó",
+   "unit": "political-thought",
+   "aliases": [
+    "b2-eszmetortenet-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-proportional-rates": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "numbers-quantity",
+   "title": "proportional multiples and quantitative rate expressions in Hungarian",
+   "taught_in": "b2-21-01-a-gr",
+   "requires": [
+    "szor-szer-multiplicatives"
+   ],
+   "aliases": []
+  },
+  "b2-psychoanalysis-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "science-technology",
+    "feelings-character"
+   ],
+   "title": "The Budapest School of Psychoanalysis & the Mind",
+   "unit": "psychoanalysis",
+   "aliases": [
+    "b2-pszichoanalizis-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-public-sphere-history-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "media"
+   ],
+   "title": "From the Town Crier to the Digital Public Sphere",
+   "unit": "public-sphere-history",
+   "aliases": [
+    "b2-mediatortenet-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-regional-identities-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "geography-nature"
+   ],
+   "title": "Alföld, Dunántúl & Felföld: Regional Identities",
+   "unit": "regional-identities",
+   "aliases": [
+    "b2-tajegysegek-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-relational-compounds": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "prepositions-postpositions",
+   "title": "compound relational postpositions for social and economic analysis",
+   "taught_in": "b2-20-05-a-gr",
+   "requires": [
+    "postpositions-altal-reven"
+   ],
+   "aliases": [
+    "b2-relational-postpositions"
+   ]
+  },
+  "b2-relative-postpositions": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "relative-clauses",
+   "title": "complex relative clauses with postpositions and possessive chains",
+   "taught_in": "b2-23-02-a-gr",
+   "requires": [
+    "vonatkozoi-nevmas-esetei",
+    "inflected-postpositions"
+   ],
+   "aliases": []
+  },
+  "b2-rhetoric-framing-mass-persuasion-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "language",
+    "media"
+   ],
+   "title": "Rhetoric, Framing & Mass Persuasion",
+   "unit": "rhetoric-framing-mass-persuasion",
+   "aliases": [
+    "b2-18-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-roots-tradition-collective-memory-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "history"
+   ],
+   "title": "Roots, Tradition & Collective Memory",
+   "unit": "roots-tradition-collective-memory",
+   "aliases": [
+    "b2-05-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-scientific-discovery-hypothesis-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "science-technology"
+   ],
+   "title": "Scientific Discovery & Hypothesis",
+   "unit": "scientific-discovery-hypothesis",
+   "aliases": [
+    "b2-07-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-slang-register-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "language"
+   ],
+   "title": "Slang, Register Shifting & Living Language",
+   "unit": "slang-register",
+   "aliases": [
+    "b2-34-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-social-mobility-class-opportunity-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Social Mobility, Class & Opportunity",
+   "unit": "social-mobility-class-opportunity",
+   "aliases": [
+    "b2-20-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-spatial-postpositions": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "prepositions-postpositions",
+   "title": "advanced spatial and directional postpositions in Hungarian",
+   "taught_in": "b2-19-01-a-gr",
+   "requires": [
+    "inflected-postpositions"
+   ],
+   "aliases": [
+    "c1-adv-spatial-geometric-connectors"
+   ]
+  },
+  "b2-speaking-hungarian-today-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "language",
+    "arts"
+   ],
+   "title": "Synthesis: What It Means to Speak and Understand Hungarian Today",
+   "unit": "speaking-hungarian-today",
+   "aliases": [
+    "b2-magyaridentitas-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-sport-national-identity-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "leisure",
+    "history"
+   ],
+   "title": "From Alfréd Hajós to the Aranycsapat: Sport & National Identity",
+   "unit": "sport-national-identity",
+   "aliases": [
+    "b2-sporttortenet-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-technology-futurism-human-agency-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "science-technology"
+   ],
+   "title": "Technology, Futurism & Human Agency",
+   "unit": "technology-futurism-human-agency",
+   "aliases": [
+    "b2-35-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-temporal-framing": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "time-clauses",
+   "title": "temporal framing postpositions and anteriority clauses in Hungarian",
+   "taught_in": "b2-22-01-a-gr",
+   "requires": [
+    "temporal-postpositions",
+    "miutan-mielott"
+   ],
+   "aliases": [
+    "c1-adv-temporal-succession-chains",
+    "c1-adv-temporal-successive-aspect",
+    "c1-complex-adverbials"
+   ]
+  },
+  "b2-the-martians-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "science-technology"
+   ],
+   "title": "The 'Martians' of Budapest: Physics & Computing",
+   "unit": "the-martians",
+   "aliases": [
+    "b2-marslakok-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-three-ts-censorship-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics",
+    "arts"
+   ],
+   "title": "The Three Ts: Censorship, Aczél's Cultural Policy & Samizdat",
+   "unit": "three-ts-censorship",
+   "aliases": [
+    "b2-szamizdat-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-unconscious-dreams-inner-conflict-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "feelings-character"
+   ],
+   "title": "The Unconscious, Dreams & Inner Conflict",
+   "unit": "unconscious-dreams-inner-conflict",
+   "aliases": [
+    "b2-11-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-urban-space-architecture-coexistence-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "town-places"
+   ],
+   "title": "Urban Space, Architecture & Coexistence",
+   "unit": "urban-space-architecture-coexistence",
+   "aliases": [
+    "b2-23-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-urbanists-populists-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Great Intellectual Debates: Urbanists vs. Populists",
+   "unit": "urbanists-populists",
+   "aliases": [
+    "b2-urbanusnepi-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-village-change-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "town-places",
+    "history"
+   ],
+   "title": "The Changing Hungarian Village: From Tanya to Today",
+   "unit": "village-change",
+   "aliases": [
+    "b2-falutortenet-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-visegrad-geopolitics-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Central European Geopolitics & Visegrád Cooperation",
+   "unit": "visegrad-geopolitics",
+   "aliases": [
+    "b2-kulpolitika-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-visual-arts-modernism-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "arts"
+   ],
+   "title": "Light, Myth & Modernism: Hungarian Visual Arts",
+   "unit": "visual-arts-modernism",
+   "aliases": [
+    "b2-festeszet-vocab"
+   ],
+   "track": "culture"
+  },
+  "b2-visual-storytelling-perspective-time-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "arts",
+    "language"
+   ],
+   "title": "Visual Storytelling, Perspective & Time",
+   "unit": "visual-storytelling-perspective-time",
+   "aliases": [
+    "b2-14-vocab"
+   ],
+   "track": "core"
+  },
+  "b2-youth-culture-vocab": {
+   "kind": "vocabulary",
+   "level": "B2",
+   "family": [
+    "leisure",
+    "arts"
+   ],
+   "title": "Beats, Festivals & Living Slang: Youth Culture Since the 1960s",
+   "unit": "youth-culture",
+   "aliases": [
+    "b2-ifjusagikultura-vocab"
+   ],
+   "track": "culture"
+  },
+  "ban-ben-in": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "cases",
+   "title": "the -ban/-ben case",
+   "taught_in": "a1-23-a-gr",
+   "requires": [
+    "vowel-harmony"
+   ],
+   "aliases": [
+    "ban-ben-review-in-a-room",
+    "etteremben-in-the-restaurant",
+    "folktale-narration",
+    "hol-and-living",
+    "inessive-location-chunks",
+    "itt-ott-and-residence-chunks",
+    "location-with-ban-ben",
+    "mikor-and-ban-ben-in-a-month",
+    "review-of-location",
+    "stylistic-anaphora",
+    "szabadido-possessive",
+    "workplace-climate"
+   ]
+  },
+  "barcsak-wish": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "conditional",
+   "title": "wishes with bárcsak and szeretném, ha + conditional",
+   "taught_in": "b1-03-01-b-gr",
+   "requires": [
+    "nek-conditional"
+   ],
+   "aliases": [
+    "regret-barcsak",
+    "szeretnem-ha-persons",
+    "szeretnem-ha-wish"
+   ]
+  },
+  "basic-hungarian-word-order": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "word-order",
+   "title": "focus position before the verb",
+   "taught_in": "a1-20-b-gr",
+   "requires": [],
+   "aliases": [
+    "adding-another-item-with-is-x-es-y-is-itt-van",
+    "also-too-the-word-is",
+    "continuing-with-es-and-what-about",
+    "doing-things-together-egyutt",
+    "putting-the-object-first-en-a-focit-szeretem",
+    "then-together-akkor-and-egyutt",
+    "what-comes-right-before-the-verb",
+    "word-order-focus-and-is"
+   ]
+  },
+  "building-the-infinitive-the-suffix-ni": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "non-finite",
+   "title": "forming the infinitive in -ni",
+   "taught_in": "a1-143-b-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "az-embernek-translation",
+    "check-levezetni",
+    "feszultseg-context",
+    "from-verb-to-infinitive-fut-uszik-tancol",
+    "work-free-time-review"
+   ]
+  },
+  "c1-academic-autonomy-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "science-technology",
+    "education"
+   ],
+   "title": "Epistemology of Research, Academic Autonomy & Scientific Discovery",
+   "unit": "academic-autonomy",
+   "aliases": [
+    "c1-24-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-ai-ethics-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "science-technology"
+   ],
+   "title": "AI Ethics, Neural Networks & Technological Sovereignty",
+   "unit": "ai-ethics",
+   "aliases": [
+    "c1-mestersegesintelligencia-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-argument-cohesion-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "language"
+   ],
+   "title": "The Architecture of Argument & Logical Cohesion",
+   "unit": "argument-cohesion",
+   "aliases": [
+    "c1-01-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-artificial-intelligence-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "science-technology"
+   ],
+   "title": "Artificial Intelligence, Cognitive Systems & Algorithmic Reason",
+   "unit": "artificial-intelligence",
+   "aliases": [
+    "c1-15-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-bioethics-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "religion-philosophy",
+    "health"
+   ],
+   "title": "Bioethics, Human Dignity & Moral Quandaries",
+   "unit": "bioethics",
+   "aliases": [
+    "c1-09-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-centre-periphery-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Center vs. Periphery: Spatial Inequalities & Rural Transformations",
+   "unit": "centre-periphery",
+   "aliases": [
+    "c1-tarsadalmireteg-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-civic-resistance-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics",
+    "religion-philosophy"
+   ],
+   "title": "Civic Resistance, Dissent & Legal Philosophy",
+   "unit": "civic-resistance",
+   "aliases": [
+    "c1-12-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-civil-disobedience-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Civil Disobedience & Democratic Checks",
+   "unit": "civil-disobedience",
+   "aliases": [
+    "c1-polgariengedetlenseg-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-civil-society-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "The Democratic Minimum: Civil Society, Resistance & The European Horizon",
+   "unit": "civil-society",
+   "aliases": [
+    "c1-magyarjovo-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-computational-linguistics-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "science-technology",
+    "language"
+   ],
+   "title": "Computational Linguistics, Algorithmic Thought & Small-Language Survival",
+   "unit": "computational-linguistics",
+   "aliases": [
+    "c1-22-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-constitutional-breakdown-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Constitutional Breakdown: The Fundamental Law, Decrees & Institutional Capture",
+   "unit": "constitutional-breakdown",
+   "aliases": [
+    "c1-alkotmanyjog-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-contracts-negotiation-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "economy"
+   ],
+   "title": "Contractual Precision, Ambiguity & Negotiation Register",
+   "unit": "contracts-negotiation",
+   "aliases": [
+    "c1-10-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-corporate-law-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "economy",
+    "society-politics"
+   ],
+   "title": "Commercial Negotiation & Corporate Law in Hungary",
+   "unit": "corporate-law",
+   "aliases": [
+    "c1-szerzodesek-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-cultural-policy-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "arts",
+    "society-politics"
+   ],
+   "title": "Cultural Policy Hegemony, the PKÜ Monopoly & the Plight of Independent Theatres",
+   "unit": "cultural-policy",
+   "aliases": [
+    "c1-kulturalisorokseg-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-cyber-warfare-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "science-technology"
+   ],
+   "title": "Cyber Warfare, Critical Infrastructure Protection & Citizen Resilience",
+   "unit": "cyber-warfare",
+   "aliases": [
+    "c1-kiberbiztonsag-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-democratic-tradition-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics",
+    "history"
+   ],
+   "title": "The Architecture of Liberty: Deák, Eötvös, Bibó & The Democratic Tradition",
+   "unit": "democratic-tradition",
+   "aliases": [
+    "c1-36-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-digital-ethics-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "science-technology"
+   ],
+   "title": "Information Theory, Digital Ethics & Algorithmic Society",
+   "unit": "digital-ethics",
+   "aliases": [
+    "c1-35-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-digital-sovereignty-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "science-technology",
+    "society-politics"
+   ],
+   "title": "Digital Sovereignty, Algorithmic Surveillance & Information Security",
+   "unit": "digital-sovereignty",
+   "aliases": [
+    "c1-18-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-drying-alfold-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "geography-nature"
+   ],
+   "title": "Ecological Fragility, The Drying Alföld & Environmental Causality",
+   "unit": "drying-alfold",
+   "aliases": [
+    "c1-20-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-dual-labour-market-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "work",
+    "economy"
+   ],
+   "title": "The Dual Labor Market: Guest Workers, Gig Economy & Wage Convergence",
+   "unit": "dual-labour-market",
+   "aliases": [
+    "c1-munkaeropiac-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-east-west-geopolitics-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Geopolitics, East vs. West & The Carpathian Basin Horizon",
+   "unit": "east-west-geopolitics",
+   "aliases": [
+    "c1-30-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-energy-transition-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "geography-nature",
+    "science-technology"
+   ],
+   "title": "Ecological System Dynamics, Energy Transition & Green Taxonomy",
+   "unit": "energy-transition",
+   "aliases": [
+    "c1-14-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-epidemiology-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "health",
+    "science-technology"
+   ],
+   "title": "Clinical Empiricism, Epidemiology & Medical Ethics",
+   "unit": "epidemiology",
+   "aliases": [
+    "c1-27-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-forint-eurozone-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "economy"
+   ],
+   "title": "Monetary Sovereignty, the Forint & the Eurozone Dilemma",
+   "unit": "forint-eurozone",
+   "aliases": [
+    "c1-monetaris-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-fundamental-rights-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Constitutional Jurisprudence & Fundamental Rights",
+   "unit": "fundamental-rights",
+   "aliases": [
+    "c1-32-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-healthcare-crisis-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "health",
+    "work"
+   ],
+   "title": "Healthcare in Crisis: Doctor Wage Reforms, Nurse Shortages & Chamber Control",
+   "unit": "healthcare-crisis",
+   "aliases": [
+    "c1-egeszsegugy-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-hedging-evidentials-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "language"
+   ],
+   "title": "Epistemic Hedging, Probability & Evidential Stance",
+   "unit": "hedging-evidentials",
+   "aliases": [
+    "c1-03-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-historical-revisionism-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "history",
+    "society-politics"
+   ],
+   "title": "The House of Terror, 1956 Revisionism & Historical Revisionism",
+   "unit": "historical-revisionism",
+   "aliases": [
+    "c1-emlekezetpolitika-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-historical-trauma-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "religion-philosophy",
+    "history"
+   ],
+   "title": "Philosophy of History, Historical Trauma & Post-Communist Memory",
+   "unit": "historical-trauma",
+   "aliases": [
+    "c1-31-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-human-rights-law-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Human Rights, Minority Protections & International Law",
+   "unit": "human-rights-law",
+   "aliases": [
+    "c1-11-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-hungarian-essay-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "arts",
+    "language"
+   ],
+   "title": "The Golden Age of the Hungarian Essay",
+   "unit": "hungarian-essay",
+   "aliases": [
+    "c1-esszemuveszet-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-hungarian-metaphors-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "language"
+   ],
+   "title": "The Metaphorical Landscape of Hungarian",
+   "unit": "hungarian-metaphors",
+   "aliases": [
+    "c1-metaforak-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-irony-understatement-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "language"
+   ],
+   "title": "Irony, Understatement & Sarcastic Register Shifting",
+   "unit": "irony-understatement",
+   "aliases": [
+    "c1-05-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-judicial-independence-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "The Dismantling of Independent Judiciary & Rule of Law Breakdown",
+   "unit": "judicial-independence",
+   "aliases": [
+    "c1-biroifuggetlenseg-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-labour-economics-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "economy",
+    "work"
+   ],
+   "title": "Labor Economics, Technological Displacement & Collective Bargaining",
+   "unit": "labour-economics",
+   "aliases": [
+    "c1-21-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-language-worldview-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "language",
+    "religion-philosophy"
+   ],
+   "title": "Language as Worldview: Humboldt, Kosztolányi & Cognitive Linguistics",
+   "unit": "language-worldview",
+   "aliases": [
+    "c1-nyelvfilozofia-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-legal-language-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics",
+    "language"
+   ],
+   "title": "Legal Syntactic Architecture & Normative Modality",
+   "unit": "legal-language",
+   "aliases": [
+    "c1-07-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-literary-canon-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "arts",
+    "education"
+   ],
+   "title": "The Battle for the Literary Canon: NAT, Textbooks & Blacklists",
+   "unit": "literary-canon",
+   "aliases": [
+    "c1-irodalmielet-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-literary-modernism-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "arts"
+   ],
+   "title": "Hungarian Literary Modernism, Poetic Semiotics & Textual Hermeneutics",
+   "unit": "literary-modernism",
+   "aliases": [
+    "c1-33-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-macroeconomics-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "economy"
+   ],
+   "title": "Macroeconomic Architecture, Fiscal Policy & Monetary Stance",
+   "unit": "macroeconomics",
+   "aliases": [
+    "c1-13-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-media-capture-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "media",
+    "society-politics"
+   ],
+   "title": "Media Capture: The KESMA Empire, State Propaganda & Digital Resistance",
+   "unit": "media-capture",
+   "aliases": [
+    "c1-mediaszabadsag-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-media-pluralism-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "media"
+   ],
+   "title": "Media Pluralism, Algorithmic Filters & Information Integrity",
+   "unit": "media-pluralism",
+   "aliases": [
+    "c1-mediakritika-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-metaphor-idiom-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "language",
+    "feelings-character"
+   ],
+   "title": "Metaphor, Idiomatic Resonance & Conceptual Blending",
+   "unit": "metaphor-idiom",
+   "aliases": [
+    "c1-06-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-minority-protections-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Universal Human Rights & Minority Protections",
+   "unit": "minority-protections",
+   "aliases": [
+    "c1-emberijogok-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-mta-ceu-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "education",
+    "science-technology"
+   ],
+   "title": "The Stripping of MTA Research Institutes & The CEU Expulsion",
+   "unit": "mta-ceu",
+   "aliases": [
+    "c1-tudomanyosszabadsag-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-museums-monuments-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "arts",
+    "history"
+   ],
+   "title": "Museology, Monument Preservation & National Cultural Memory",
+   "unit": "museums-monuments",
+   "aliases": [
+    "c1-29-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-paks-nuclear-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "science-technology",
+    "geography-nature"
+   ],
+   "title": "Nuclear Energy, the Paks Dilemma & Renewables in the Carpathian Basin",
+   "unit": "paks-nuclear",
+   "aliases": [
+    "c1-energetika-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-paradigm-shifts-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "science-technology",
+    "religion-philosophy"
+   ],
+   "title": "Epistemology & Scientific Paradigm Shifts",
+   "unit": "paradigm-shifts",
+   "aliases": [
+    "c1-tudomanyelmelet-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-passive-avoidance-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Institutional Impersonalization & Passive Avoidance",
+   "unit": "passive-avoidance",
+   "aliases": [
+    "c1-08-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-patient-rights-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "health",
+    "religion-philosophy"
+   ],
+   "title": "Ethics in Medicine, Biotechnology & Patient Rights",
+   "unit": "patient-rights",
+   "aliases": [
+    "c1-bioetika-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-pegasus-scandal-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "science-technology",
+    "society-politics"
+   ],
+   "title": "The Pegasus Surveillance Scandal & State Cyber-Espionage",
+   "unit": "pegasus-scandal",
+   "aliases": [
+    "c1-megfigyeles-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-pendulum-politics-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Pendulum Politics, Strategic Neutrality & Euro-Atlantic Crisis",
+   "unit": "pendulum-politics",
+   "aliases": [
+    "c1-geopolitika-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-philosophy-of-science-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "religion-philosophy",
+    "science-technology"
+   ],
+   "title": "Philosophy of Science, Epistemic Rigor & Discovery",
+   "unit": "philosophy-of-science",
+   "aliases": [
+    "c1-34-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-polemics-refutation-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "language"
+   ],
+   "title": "The Mechanics of Polemics & Rhetorical Refutation",
+   "unit": "polemics-refutation",
+   "aliases": [
+    "c1-04-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-press-freedom-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "media"
+   ],
+   "title": "Media Ecology, Freedom of the Press & The Public Sphere",
+   "unit": "press-freedom",
+   "aliases": [
+    "c1-26-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-public-debate-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "history",
+    "society-politics"
+   ],
+   "title": "The Art of Hungarian Public Debate",
+   "unit": "public-debate",
+   "aliases": [
+    "c1-vitakultura-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-public-sphere-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics",
+    "media"
+   ],
+   "title": "Public Sphere, Rhetorical Framing & Deliberative Communication",
+   "unit": "public-sphere",
+   "aliases": [
+    "c1-16-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-railway-decay-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "travel",
+    "society-politics"
+   ],
+   "title": "Railway Decay vs. Highway Megaprojects: The MÁV Crisis, Branch Closures & Concessions",
+   "unit": "railway-decay",
+   "aliases": [
+    "c1-kozlekedespolitika-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-railway-modernization-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "travel"
+   ],
+   "title": "Transport Geography, Railway Modernization & Modal Infrastructure",
+   "unit": "railway-modernization",
+   "aliases": [
+    "c1-28-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-regional-geopolitics-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Regional Geopolitics, Diplomatic Strategy & Transnational Coalitions",
+   "unit": "regional-geopolitics",
+   "aliases": [
+    "c1-17-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-rule-of-law-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "The Rule of Law & Constitutional Evolution",
+   "unit": "rule-of-law",
+   "aliases": [
+    "c1-jogallamisag-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-separation-of-powers-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Constitutionalism, Separation of Powers & The Hierarchy of Legal Norms",
+   "unit": "separation-of-powers",
+   "aliases": [
+    "c1-25-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-small-language-ai-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "science-technology",
+    "language"
+   ],
+   "title": "Artificial Intelligence, Digital Sovereignty & Small-Language Ecology",
+   "unit": "small-language-ai",
+   "aliases": [
+    "c1-mestersegesnyelv-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-social-stratification-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "Sociological Stratification, Class Structures & Social Mobility",
+   "unit": "social-stratification",
+   "aliases": [
+    "c1-19-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-syntactic-compression-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "language"
+   ],
+   "title": "Syntactic Compression & Dense Participial Modification",
+   "unit": "syntactic-compression",
+   "aliases": [
+    "c1-02-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-transparency-redress-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "services",
+    "society-politics"
+   ],
+   "title": "Public Administration, Transparency & Civic Redress",
+   "unit": "transparency-redress",
+   "aliases": [
+    "c1-kozszolgalat-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-university-model-change-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "education"
+   ],
+   "title": "The University in Turmoil: Model Change, Autonomy & The European Horizon",
+   "unit": "university-model-change",
+   "aliases": [
+    "c1-felsooktatas-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-urban-preservation-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "town-places",
+    "arts"
+   ],
+   "title": "Spatial Urban Geometry, Historic Preservation & Architectural Semiotics",
+   "unit": "urban-preservation",
+   "aliases": [
+    "c1-23-vocab"
+   ],
+   "track": "core"
+  },
+  "c1-urban-satire-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "arts",
+    "society-politics"
+   ],
+   "title": "Urban Satire as Political Defense",
+   "unit": "urban-satire",
+   "aliases": [
+    "c1-pesti-ironia-vocab",
+    "c1-pestiironia-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-urban-sprawl-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "town-places"
+   ],
+   "title": "Urbanism in Crisis: Agglomeration Sprawl, Transit & Brownfield Renewal",
+   "unit": "urban-sprawl",
+   "aliases": [
+    "c1-varosfejlesztes-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-visegrad-group-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "society-politics"
+   ],
+   "title": "The Visegrád Group (V4), Regional Alliances & European Cohesion",
+   "unit": "visegrad-group",
+   "aliases": [
+    "c1-visegrad-vocab"
+   ],
+   "track": "culture"
+  },
+  "c1-water-management-vocab": {
+   "kind": "vocabulary",
+   "level": "C1",
+   "family": [
+    "geography-nature"
+   ],
+   "title": "Water Management, Drought Crises & Wetland Restoration",
+   "unit": "water-management",
+   "aliases": [
+    "c1-vizgazdalkodas-vocab"
+   ],
+   "track": "culture"
+  },
+  "cardinal-numbers": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "numbers-quantity",
+   "title": "cardinal numbers",
+   "taught_in": "a1-16b-gr",
+   "requires": [],
+   "aliases": [
+    "numbers-11-100",
+    "short-factual-answers"
+   ]
+  },
+  "case-inflected-pronouns": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "pronouns",
+   "title": "personal pronouns with case endings like nálam and tőled",
+   "taught_in": "a2-163-a-gr",
+   "requires": [
+    "good-for-me-nekem-jo",
+    "three-locatives"
+   ],
+   "aliases": [
+    "ablative-pronouns",
+    "adessive-pronouns",
+    "allative-pronouns",
+    "delative-pronouns-trio",
+    "inessive-pronouns",
+    "past-instrumental-object",
+    "sublative-pronouns",
+    "superessive-pronouns"
+   ]
+  },
+  "causal-postpositions": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "cause-purpose-result",
+   "title": "causal postpositions miatt and következtében",
+   "taught_in": "b1-mohacs-01-gr",
+   "requires": [
+    "mert-because",
+    "postpositions-basic"
+   ],
+   "aliases": [
+    "abortive-actions",
+    "b2-causal-purposive-chains",
+    "c1-adv-clinical-epidemiological-causality",
+    "c1-adv-environmental-causal-chains",
+    "c1-causal-constitutional-precedent-ratio",
+    "c1-correlative-causal-adverbials",
+    "causal-economic-connectors",
+    "causal-precipitating",
+    "causality-preconditions",
+    "destruction-and-liberation",
+    "emiatt-kovetkezteben",
+    "panaszt-tesz",
+    "passive-catastrophe",
+    "persecution-and-rescue"
+   ]
+  },
+  "causative-verbal-derivations": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "voice",
+   "title": "causative verbs in -tat/-tet",
+   "taught_in": "b2-10-04-a-gr",
+   "requires": [
+    "definite-vs-indefinite-conjugation"
+   ],
+   "aliases": [
+    "b2-causative-agents",
+    "c1-complex-sociological-causatives"
+   ]
+  },
+  "comparative-bb": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "comparison",
+   "title": "comparative adjectives in -bb with mint",
+   "taught_in": "a2-64-b-gr",
+   "requires": [
+    "adjective-order-before-the-noun"
+   ],
+   "aliases": [
+    "comparative-rooms",
+    "comparing-things",
+    "correlative-annyi-mint",
+    "egyforman",
+    "inkabb-rather",
+    "integrated-review-11-19",
+    "intensifiers",
+    "olyan-mint-termekek",
+    "responding-to-suggestions",
+    "similar-different",
+    "weather-seasons-review"
+   ]
+  },
+  "concessive-annak-ellenere": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "concession",
+   "title": "concessive clauses with bár, habár and annak ellenére, hogy",
+   "taught_in": "b1-05-04-a-gr",
+   "requires": [
+    "hogy-clauses"
+   ],
+   "aliases": [
+    "annak-ellenere-hogy",
+    "c1-adv-adversative-concessive-clauses",
+    "c1-adv-adversative-ecological-concessives",
+    "c1-adv-concessive-spatial-correlatives",
+    "c1-adv-economic-concession-markers",
+    "c1-concessive-adversative-connectors",
+    "c1-concessive-clauses",
+    "c1-concessive-stipulative-clauses",
+    "compromise-register",
+    "concession-frustration",
+    "concession-in-opinion",
+    "concessive-bar-habar",
+    "concessive-clauses",
+    "concessive-clauses-habar",
+    "concessive-comp",
+    "concessive-hiaba",
+    "empathy-and-tact",
+    "public-speaking",
+    "stipulations-and-reservations"
+   ]
+  },
+  "concessive-indefinites": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "concession",
+   "title": "concessive indefinites like bárki and akármi + is",
+   "taught_in": "b2-09-01-a-gr",
+   "requires": [
+    "concessive-annak-ellenere"
+   ],
+   "aliases": [
+    "b2-concessive-indefinites",
+    "c1-subjunctive-concessives"
+   ]
+  },
+  "concessive-postpositions": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "concession",
+   "title": "concessive postpositions ellenére and dacára",
+   "taught_in": "b1-29-01-b-gr",
+   "requires": [
+    "concessive-annak-ellenere"
+   ],
+   "aliases": [
+    "concessive-contrast-dacara",
+    "retrospective-evaluations"
+   ]
+  },
+  "conclusive-markers": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "discourse-markers",
+   "title": "concluding markers like összességében and végső soron",
+   "taught_in": "c1-visegrad-05-a-gr",
+   "requires": [
+    "additive-connectors"
+   ],
+   "aliases": [
+    "c1-adv-conclusive-canon-pluralism",
+    "c1-adv-conclusive-cultural-renewal-synthesis",
+    "c1-adv-conclusive-democratic-horizon",
+    "c1-adv-conclusive-democratic-safeguards",
+    "c1-adv-conclusive-digital-privacy-restitution",
+    "c1-adv-conclusive-environmental-synthesis",
+    "c1-adv-conclusive-epistemic-freedom",
+    "c1-adv-conclusive-european-destiny-synthesis",
+    "c1-adv-conclusive-free-press-defense",
+    "c1-adv-conclusive-green-transit-synthesis",
+    "c1-adv-conclusive-historical-justice-synthesis",
+    "c1-adv-conclusive-public-health-synthesis",
+    "c1-adv-conclusive-rule-of-law-restitution",
+    "c1-adv-conclusive-scientific-synthesis",
+    "c1-adv-conclusive-synthesis-markers",
+    "c1-adv-conclusive-urban-synthesis",
+    "c1-adv-discourse-summation-particles",
+    "c1-adv-synthetic-collective-evaluatives",
+    "c1-adv-synthetic-cultural-preservation"
+   ]
+  },
+  "containers-and-measures": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "numbers-quantity",
+   "title": "quantifiers and measure nouns",
+   "taught_in": "a1-93-b-gr",
+   "requires": [
+    "singular-after-numbers"
+   ],
+   "aliases": [
+    "csomag-packets-and-containers",
+    "darab-counting-by-the-piece",
+    "ert-kerul",
+    "talking-about-forint-prices"
+   ]
+  },
+  "contrastive-discourse-markers": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "discourse-markers",
+   "title": "contrast and counter-argument in discourse",
+   "taught_in": "b2-16-02-a-gr",
+   "requires": [
+    "adversative-contrast"
+   ],
+   "aliases": [
+    "b2-polemical-connectors",
+    "c1-adv-adversative-modal-shift",
+    "c1-adv-adversative-rhetorical-refutation",
+    "c1-adv-contrastive-academic-adversatives",
+    "c1-adv-contrastive-restrictive-markers",
+    "c1-adv-contrastive-stylistic-antithesis",
+    "c1-adv-counter-dogmatic-adversatives",
+    "c1-adv-counter-hysteria-adversatives",
+    "c1-adv-counter-isolation-adversatives",
+    "c1-adv-counter-pastiche-adversatives",
+    "c1-adv-restrictive-legislative-scope",
+    "c1-adversative-resumptive-markers",
+    "c1-discourse-divergence-markers",
+    "c1-discourse-polarization-antithesis",
+    "c1-discourse-polarizing-contrastives",
+    "c1-rhetorical-sociodemographic-adversatives"
+   ]
+  },
+  "correlative-minel-annal": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "comparison",
+   "title": "proportional comparisons with minél... annál",
+   "taught_in": "b1-matyas-02-gr",
+   "requires": [
+    "comparative-bb"
+   ],
+   "aliases": [
+    "b2-proportional-correlatives",
+    "c1-adv-proportional-academic-exclusion-isolation",
+    "c1-adv-proportional-academic-mobility",
+    "c1-adv-proportional-advertising-distortion",
+    "c1-adv-proportional-civic-resistance-renewal",
+    "c1-adv-proportional-climate-correlatives",
+    "c1-adv-proportional-concession-deficits",
+    "c1-adv-proportional-cultural-correlatives",
+    "c1-adv-proportional-cultural-defunding",
+    "c1-adv-proportional-cultural-patronage-polarization",
+    "c1-adv-proportional-cyber-secrecy-erosion",
+    "c1-adv-proportional-eu-infringement-measures",
+    "c1-adv-proportional-exculpatory-narratives",
+    "c1-adv-proportional-judicial-independence",
+    "c1-adv-proportional-nurse-shortage",
+    "c1-adv-proportional-threat-correlatives",
+    "c1-adv-proportional-urban-mobility",
+    "c1-adv-proportional-veto-diplomacy",
+    "c1-adv-sociological-comparative-proportions",
+    "c1-complex-proportional-correlatives",
+    "correlative-comparative",
+    "financial-verbs",
+    "macro-trends",
+    "proportional-minel-annal",
+    "superlative-degree"
+   ]
+  },
+  "definite-article-a-az": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "articles-demonstratives",
+   "title": "the definite articles a and az",
+   "taught_in": "a1-23-b-gr",
+   "requires": [],
+   "aliases": [
+    "a-or-az-furniture-and-the-definite-article",
+    "the-definite-article-a-az"
+   ]
+  },
+  "definite-past": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "past",
+   "title": "definite past tense conjugation",
+   "taught_in": "a2-118-b-gr",
+   "requires": [
+    "past-tense-indefinite",
+    "definite-vs-indefinite-conjugation"
+   ],
+   "aliases": [
+    "democratic-legitimacy",
+    "lat-past-definite",
+    "lat-past-indefinite",
+    "negative-reporting",
+    "past-tense-1-unit24",
+    "past-tense-basics",
+    "past-tense-review",
+    "vesz-past-definite",
+    "vesz-past-indefinite",
+    "weekend-verbs-past"
+   ]
+  },
+  "definite-vs-indefinite-conjugation": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "verb-forms",
+   "title": "definite vs indefinite verb conjugation",
+   "taught_in": "a1-102-def-gr",
+   "requires": [
+    "present-tense-routine-language",
+    "how-the-accusative-t-works"
+   ],
+   "aliases": [
+    "administrative-procedures",
+    "battle-clash-defeat",
+    "defensive-fortifications",
+    "definite-indefinite",
+    "ertem-and-nem-ertem",
+    "heraldic-symbolism",
+    "hozom-i-ll-bring-it",
+    "i-m-wearing-it-definite-viselem-vs-indefinite-viselek",
+    "ismer",
+    "keres",
+    "lekesi-usage",
+    "modern-testimony",
+    "musical-milestones",
+    "poetic-legacy",
+    "regional-coordination",
+    "social-portrayal",
+    "synthesis",
+    "talal-vasarol",
+    "tanul-definite",
+    "troubleshooting-verbs",
+    "valaszt-biztos"
+   ]
+  },
+  "delative-rol-rel": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "cases",
+   "title": "the delative -ról/-ről",
+   "taught_in": "a1-152-a-gr",
+   "requires": [
+    "elative-bol-bel"
+   ],
+   "aliases": [
+    "delative-topic-mirol"
+   ]
+  },
+  "demonstratives-ez-az": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "articles-demonstratives",
+   "title": "demonstratives ez and az",
+   "taught_in": "a1-03-b-gr",
+   "requires": [],
+   "aliases": [
+    "ez-az-egy",
+    "ez-az-this-that",
+    "ezt-azt-this-one-that-one",
+    "foundations-review-50",
+    "integrated-communication-50",
+    "this-and-that-ez-az",
+    "this-is-that-is-ez-az",
+    "this-one-that-one-contrasting-ez-and-az"
+   ]
+  },
+  "diplomatic-softening": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "politeness-address",
+   "title": "diplomatic softening and polite dissent",
+   "taught_in": "b2-29-01-a-gr",
+   "requires": [
+    "nek-conditional",
+    "formal-address-on"
+   ],
+   "aliases": [
+    "b2-diplomatic-conditionals",
+    "c1-diplomatic-hedging-conditional",
+    "c1-negotiation-hedging",
+    "c1-stylistic-politeness",
+    "c1-subtle-disclaimer"
+   ]
+  },
+  "direction-adverbs-jobbra-balra": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "adverbs",
+   "title": "direction adverbs jobbra, balra and egyenesen",
+   "taught_in": "a1-140-a-gr",
+   "requires": [],
+   "aliases": [
+    "directions-egyenesen-jobbra-balra",
+    "hataros-egtajak",
+    "left-and-right-bal-jobb"
+   ]
+  },
+  "directional-preverbs": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "aspect",
+   "title": "directional preverbs like fel-, le-, be- and ki-",
+   "taught_in": "a1-139-a-gr",
+   "requires": [
+    "movement-with-ba-be"
+   ],
+   "aliases": [
+    "be-ki-meaning",
+    "fel-le-meaning",
+    "fel-le-szall",
+    "getting-on-and-off-fel-and-le"
+   ]
+  },
+  "discourse-particles": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "discourse-markers",
+   "title": "discourse particles like hiszen, ugyan and bezzeg",
+   "taught_in": "b2-13-02-a-gr",
+   "requires": [],
+   "aliases": [
+    "b2-discourse-particles",
+    "c1-adv-emphatic-scalar-particles",
+    "c1-adv-evaluative-polarization-particles",
+    "c1-discourse-limiting-particles",
+    "c1-ironic-particles"
+   ]
+  },
+  "distributive-nkent": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "cases",
+   "title": "the distributive suffix -nként",
+   "taught_in": "b1-17-02-a-gr",
+   "requires": [
+    "cardinal-numbers"
+   ],
+   "aliases": [
+    "nkent",
+    "nkent-suffix",
+    "temporal-adverbs-kent"
+   ]
+  },
+  "egymas": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "voice",
+   "title": "reciprocal pronouns with egymás",
+   "taught_in": "a2-23-b-gr",
+   "requires": [
+    "personal-pronouns"
+   ],
+   "aliases": [
+    "b2-reciprocal-distributive",
+    "camaraderie-and-solidarity",
+    "cause-effect-mechanisms",
+    "flow-and-circulation",
+    "friendship-summary",
+    "ismerkedik",
+    "kijon-egymassal",
+    "reciprocal-egymast",
+    "reciprocal-relations",
+    "relationships-synthesis",
+    "segitenek-egymasnak"
+   ]
+  },
+  "egyreszt-masreszt": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "coordination",
+   "title": "paired connectors egyrészt... másrészt and nem csak... hanem",
+   "taught_in": "a2-21-b-gr",
+   "requires": [],
+   "aliases": [
+    "adversative-connectors",
+    "asking-either-or-vagy",
+    "c1-correlative-balance",
+    "celebratory-commemorative",
+    "correlative-balance",
+    "dual-statehood",
+    "dual-structures",
+    "expressive-focal-inversion",
+    "historical-evaluation",
+    "not-only-but-also",
+    "offering-a-choice-with-vagy",
+    "spontaneous-repairs",
+    "superlatives-scale",
+    "urban-transformation",
+    "weighing-pros-cons"
+   ]
+  },
+  "egyutt-together": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "adverbs",
+   "title": "adverbial együtt with plural verbs",
+   "taught_in": "a1-30-b-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": []
+  },
+  "elative-bol-bel": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "cases",
+   "title": "the elative -ból/-ből",
+   "taught_in": "a1-151-a-gr",
+   "requires": [
+    "ban-ben-in"
+   ],
+   "aliases": [
+    "composition-all-vmibol",
+    "consequential-syntax",
+    "elkesik-past",
+    "origin-and-roots",
+    "origin-cases-review",
+    "preservation-of-language",
+    "three-way-source-cases"
+   ]
+  },
+  "epistemic-hedging": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "discourse-markers",
+   "title": "hedging and degrees of certainty",
+   "taught_in": "c1-01-04-a-gr",
+   "requires": [
+    "evidentials"
+   ],
+   "aliases": [
+    "c1-adv-epistemic-discursive-truth",
+    "c1-adv-epistemic-methodological-evaluation",
+    "c1-adv-epistemic-probability-markers",
+    "c1-adv-epistemic-tacit-knowledge",
+    "c1-adv-evaluative-parentheticals",
+    "c1-epistemic-academic-uncertainty",
+    "c1-epistemic-constitutional-incompatibility",
+    "c1-epistemic-debt-trap-exposure",
+    "c1-epistemic-discourse",
+    "c1-epistemic-ecological-uncertainty",
+    "c1-epistemic-geopolitical-megaproject-critique",
+    "c1-epistemic-hedging",
+    "c1-epistemic-ideological-canon-polarization",
+    "c1-epistemic-ideological-whitewashing",
+    "c1-epistemic-labor-market-projections",
+    "c1-epistemic-linguistic-uncertainty",
+    "c1-epistemic-patient-safety-risk",
+    "c1-epistemic-propaganda-stigmatization",
+    "c1-epistemic-skepticism",
+    "c1-epistemic-uncertainty-markers",
+    "c1-epistemic-urbanistic-uncertainty",
+    "c1-modal-distancing"
+   ]
+  },
+  "epistemic-modality": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "modality",
+   "title": "epistemic modality for must be and might be",
+   "taught_in": "c1-22-01-a-gr",
+   "requires": [
+    "kell-infinitive",
+    "potential-hat-het"
+   ],
+   "aliases": [
+    "c1-deontic-epistemic-distinction",
+    "c1-modal-probabilistic-modifiers",
+    "c1-modal-speculative-futurism"
+   ]
+  },
+  "erdekel-construction": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "verb-patterns",
+   "title": "expressing likes and interest with szeret, ízlik and érdekel",
+   "taught_in": "a1-95-b-gr",
+   "requires": [
+    "good-for-me-nekem-jo"
+   ],
+   "aliases": [
+    "asking-what-someone-likes-szeretsz",
+    "hianyzik",
+    "hobby-infinitive",
+    "liking-a-specific-thing-szeretem",
+    "liking-an-activity-szeret-infinitive",
+    "sharing-and-expressing-preferences",
+    "szeret-utal-infinitive"
+   ]
+  },
+  "essay-oratory-style": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "register-style",
+   "title": "essay and oratory style",
+   "taught_in": "c1-01-05-a-gr",
+   "requires": [
+    "conclusive-markers"
+   ],
+   "aliases": [
+    "c1-essayistic-register",
+    "c1-essayistic-synthesis",
+    "c1-persuasive-oratory"
+   ]
+  },
+  "essive-formal-kent": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "cases",
+   "title": "the essive-formal suffix -ként",
+   "taught_in": "a2-176-a-gr",
+   "requires": [],
+   "aliases": [
+    "administrative-framing",
+    "descriptive-essive-kent",
+    "essive-designation",
+    "essive-formal-intro",
+    "essive-formal-review",
+    "laws-and-epithets",
+    "life-stages-kent",
+    "metaphorical-stronghold",
+    "purpose-kent",
+    "role-contrasts"
+   ]
+  },
+  "eszik-iszik": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "verb-forms",
+   "title": "irregular verbs eszik, iszik and alszik",
+   "taught_in": "a2-41-a-gr",
+   "requires": [
+    "ik-verbs-dolgozom-not-dolgozok"
+   ],
+   "aliases": []
+  },
+  "evaluative-stance": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "discourse-markers",
+   "title": "evaluative stance adverbials",
+   "taught_in": "c1-26-04-a-gr",
+   "requires": [],
+   "aliases": [
+    "c1-adv-academic-expulsion-critique",
+    "c1-adv-constitutional-norm-control",
+    "c1-adv-grassroots-municipal-autonomy-critique",
+    "c1-adv-human-dignity-absoluteness",
+    "c1-adv-information-entropy-cybernetics",
+    "c1-adv-institutional-monopolization-critique",
+    "c1-adv-metahistorical-trauma-analysis",
+    "c1-adv-museological-authenticity-provenance",
+    "c1-adv-rule-of-law-constitutional-tradition",
+    "c1-adv-semiotic-literary-hermeneutics",
+    "c1-adv-textbook-monopoly-critique",
+    "c1-adv-unconstrained-wiretap-authorization-critique",
+    "c1-ethical-stance-markers",
+    "c1-evaluative-adverbial-stance",
+    "c1-modal-aesthetic-evaluatives",
+    "c1-modal-deliberative-public-sphere",
+    "c1-syntax-democratic-renewal-manifesto",
+    "c1-syntax-hermeneutic-canon-synthesis",
+    "c1-syntax-von-neumann-technological-synthesis"
+   ],
+   "dissolve_at_read": true
+  },
+  "even-if-ha-is": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "concession",
+   "title": "even if with ha ... is and még ha",
+   "taught_in": "b2-27-01-a-gr",
+   "requires": [
+    "ha-clause",
+    "is-placing-also-too"
+   ],
+   "aliases": [
+    "b2-concessive-conditionals"
+   ]
+  },
+  "evidentials": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "discourse-markers",
+   "title": "hearsay and source with állítólag, szerint and úgy tűnik",
+   "taught_in": "b1-13-03-a-gr",
+   "requires": [],
+   "aliases": [
+    "advocacy-stating-opinion",
+    "b2-evidential-framing",
+    "belief-verbs",
+    "c1-assertive-evidential-markers",
+    "c1-evidentiality-markers",
+    "c1-modal-epistemic-distancing",
+    "epistemic-doubt",
+    "epistemic-probability",
+    "evaluating-credibility",
+    "evidential-allitolag",
+    "hearsay-evidentiality",
+    "indirect-reference",
+    "lehet-hogy",
+    "quoting-sources",
+    "reported-chronicles",
+    "respectful-discourse",
+    "szamitasok-szerint",
+    "szerintem-recap"
+   ]
+  },
+  "faj-construction": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "verb-patterns",
+   "title": "expressing pain and symptoms with fáj and van",
+   "taught_in": "a2-82-b-gr",
+   "requires": [
+    "possessive-suffixes"
+   ],
+   "aliases": [
+    "erzed-magad",
+    "pharmacy-synthesis"
+   ]
+  },
+  "felteve-hogy-kiveve-ha": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "conditional",
+   "title": "conditions and exceptions with feltéve, hogy and kivéve, ha",
+   "taught_in": "c1-07-03-a-gr",
+   "requires": [
+    "ha-clause"
+   ],
+   "aliases": [
+    "c1-legal-conditions",
+    "c1-restrictive-exceptive-adverbials"
+   ]
+  },
+  "fog-infinitive": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "future",
+   "title": "future tense with fog + infinitive",
+   "taught_in": "a2-131-a-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni"
+   ],
+   "aliases": [
+    "fog-jovo",
+    "fog-plural",
+    "future-auxiliary",
+    "future-plans-and-reflection",
+    "future-review",
+    "future-tense-review",
+    "future-tense-unit27",
+    "planning-synthesis"
+   ]
+  },
+  "formal-address-on": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "politeness-address",
+   "title": "formal address with ön and polite formulas",
+   "taught_in": "a1-124-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "name-order-titles",
+    "polite-questions-addressing-someone-as-on",
+    "pragmatics-review",
+    "sajnos-decline",
+    "tetszik-politeness"
+   ]
+  },
+  "formal-obligation": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "modality",
+   "title": "formal obligation with köteles and kénytelen",
+   "taught_in": "b1-10-03-gr",
+   "requires": [
+    "kell-infinitive",
+    "future-participle-ando"
+   ],
+   "aliases": [
+    "b2-legal-normative-register",
+    "c1-adv-juridical-normative-obligation",
+    "c1-complex-modal-contingency",
+    "c1-infinitive-predicative-necessity",
+    "c1-modal-bioethical-imperatives",
+    "c1-modal-conservation-deontics",
+    "c1-modal-deontic-academic-freedom",
+    "c1-modal-deontic-aesthetic-humanism",
+    "c1-modal-deontic-artistic-autonomy",
+    "c1-modal-deontic-chamber-autonomy",
+    "c1-modal-deontic-digital-privacy-ethics",
+    "c1-modal-deontic-digital-sovereignty",
+    "c1-modal-deontic-emergency-decrees",
+    "c1-modal-deontic-energy-security",
+    "c1-modal-deontic-environmental-sovereignty",
+    "c1-modal-deontic-epistemic-rigor",
+    "c1-modal-deontic-intellectual-dissent",
+    "c1-modal-deontic-intellectual-honesty",
+    "c1-modal-deontic-journalistic-source-protection",
+    "c1-modal-deontic-judicial-integrity",
+    "c1-modal-deontic-labor-rights",
+    "c1-modal-deontic-public-broadcasting",
+    "c1-modal-deontic-public-mobility-rights",
+    "c1-modal-deontic-senate-autonomy-defense",
+    "c1-modal-deontic-ten-commandments-freedom",
+    "c1-modal-deontic-treaty-predicates",
+    "c1-modal-statutory-urban-zoning",
+    "c1-normative-modality",
+    "c1-regulatory-compliance-syntax",
+    "c1-statutory-predicates",
+    "contractual-clauses",
+    "expressing-obligation-modal",
+    "hardship-obligation",
+    "impersonal-modal-forms",
+    "modal-auxiliaries-muszaj-kell",
+    "permissive-exceptions",
+    "pragmatic-opinion-hedges",
+    "tenancy-conditions"
+   ]
+  },
+  "formal-purpose": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "cause-purpose-result",
+   "title": "formal purpose with érdekében and céljából",
+   "taught_in": "b1-erdelyaranykora-04-gr",
+   "requires": [
+    "azert-hogy-purpose"
+   ],
+   "aliases": [
+    "c1-modal-teleological-alliance-commitments",
+    "c1-modal-teleological-canon-formation",
+    "c1-modal-teleological-checks-balances",
+    "c1-modal-teleological-historical-catharsis",
+    "c1-modal-teleological-labor-policy",
+    "c1-modal-teleological-network-planning",
+    "c1-modal-teleological-policy-syntax",
+    "c1-modal-teleological-scientific-inquiry",
+    "diplomatic-intentions",
+    "expressing-risks-causes"
+   ]
+  },
+  "fractions": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "numbers-quantity",
+   "title": "fractions with fél, negyed and harmad",
+   "taught_in": "a1-76-b-gr",
+   "requires": [
+    "cardinal-numbers"
+   ],
+   "aliases": [
+    "fel-and-negyed-halves-and-quarters",
+    "fel-half-of-a-unit",
+    "fractions-percentages"
+   ]
+  },
+  "framing-markers": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "discourse-markers",
+   "title": "framing a problem in commentary",
+   "taught_in": "c1-tarsadalmireteg-01-a-gr",
+   "requires": [],
+   "aliases": [
+    "c1-discourse-academic-asset-stripping-framing",
+    "c1-discourse-canon-indoctrination-framing",
+    "c1-discourse-civil-disobedience-framing",
+    "c1-discourse-constitutional-crisis-framing",
+    "c1-discourse-cultural-hegemony-framing",
+    "c1-discourse-cyber-surveillance-scandal-framing",
+    "c1-discourse-ecological-threat-framing",
+    "c1-discourse-healthcare-inequity-framing",
+    "c1-discourse-historical-revisionism-framing",
+    "c1-discourse-institutional-threat-framing",
+    "c1-discourse-judicial-subjugation-framing",
+    "c1-discourse-media-capture-framing",
+    "c1-discourse-pendulum-politics-framing",
+    "c1-discourse-railway-crisis-framing",
+    "c1-discourse-spatial-disparity-markers",
+    "c1-discourse-technological-threat-framing",
+    "c1-discourse-threat-framing",
+    "c1-discourse-urban-conflict-framing"
+   ],
+   "dissolve_at_read": true
+  },
+  "future-participle-ando": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "non-finite",
+   "title": "future passive participles in -andó/-endő",
+   "taught_in": "b1-14-01-a-gr",
+   "requires": [
+    "present-participle"
+   ],
+   "aliases": [
+    "b2-obligatory-participle",
+    "c1-normative-participles",
+    "future-participle",
+    "honorific-hierarchy",
+    "instrumental-subordination",
+    "participle-obligations",
+    "potential-feasibility",
+    "temporal-geopolitics",
+    "verbal-participle-ando-endo"
+   ]
+  },
+  "good-for-me-nekem-jo": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "pronouns",
+   "title": "dative pronouns nekem, neked and neki",
+   "taught_in": "a1-148-a-gr",
+   "requires": [
+    "personal-pronouns"
+   ],
+   "aliases": [
+    "directed-kellene",
+    "exam-support-pronouns",
+    "hosting-visiting-integrated",
+    "izlik-kedvenc",
+    "pronoun-contrast-internal-surface",
+    "unit33-pronouns-review",
+    "unit34-proximity-review"
+   ]
+  },
+  "ha-clause": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "conditional",
+   "title": "conditional sentences with ha and amennyiben",
+   "taught_in": "a2-65-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": []
+  },
+  "having-s": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "word-formation",
+   "title": "forming adjectives with -s/-os/-es/-ös",
+   "taught_in": "a2-16-b-gr",
+   "requires": [
+    "adjective-order-before-the-noun"
+   ],
+   "aliases": []
+  },
+  "historical-routines": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "past",
+   "title": "habitual past with szokás volt + infinitive",
+   "taught_in": "b1-haromresz-04-gr",
+   "requires": [
+    "past-tense-indefinite",
+    "building-the-infinitive-the-suffix-ni"
+   ],
+   "aliases": []
+  },
+  "hogy-clauses": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "complement-clauses",
+   "title": "that-clauses with hogy",
+   "taught_in": "a2-88-b-gr",
+   "requires": [],
+   "aliases": [
+    "attol-fugg",
+    "backing-up-arguments",
+    "elkepzelheto",
+    "formal-declarative",
+    "minden-bizonnyal",
+    "refuting-counterarguments",
+    "reinforcing-certainty",
+    "statutory-decrees",
+    "talan-esetleg"
+   ]
+  },
+  "hogy-jon-jen": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "subjunctive",
+   "title": "subjunctive clauses with hogy + -jon/-jen/-jön",
+   "taught_in": "b1-03-03-b-gr",
+   "requires": [
+    "imperative-indefinite",
+    "hogy-clauses"
+   ],
+   "aliases": [
+    "autonomous-expression",
+    "azt-javaslom-hogy",
+    "c1-subjunctive-regulatory-mandates",
+    "celkituzes-expression",
+    "conditional-troubleshooting",
+    "historical-assessment",
+    "ideal-home-synthesis",
+    "jon-jen-formation",
+    "kivancsisag-usage",
+    "reformist-imperatives-kell",
+    "register-modulation",
+    "roundtable-negotiations",
+    "subjunctive-manifesto",
+    "subordination-synthesis"
+   ]
+  },
+  "how-the-accusative-t-works": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "cases",
+   "title": "the accusative -t",
+   "taught_in": "a1-102-a-gr",
+   "requires": [],
+   "aliases": [
+    "accusative-quantities-and-measures",
+    "accusative-without-a-linking-vowel",
+    "adjective-accusative-object",
+    "asking-for-food-kerek-accusative",
+    "asking-for-things-the-accusative-t",
+    "describing-what-you-re-choosing",
+    "diaspora-preservation",
+    "discourse-signposts",
+    "economic-reforms",
+    "erdemjegy-usage",
+    "felir-prescribe",
+    "fundamental-rights-syntax",
+    "gyogyulast-acc",
+    "idopontot-modositani",
+    "kerek-masikat",
+    "kilo-and-liter-as-units",
+    "lehetoseg-usage",
+    "long-and-short-hosszu-rovid-and-probal",
+    "more-than-one-thing-the-plural-accusative-ket",
+    "orat-duration",
+    "ordering-a-full-meal",
+    "ordering-more-than-one-thing",
+    "ordering-several-items-with-units",
+    "pointing-at-the-object-ezt-azt",
+    "proclamation-formulas",
+    "state-ceremony-verbs",
+    "szervezet-usage",
+    "travel-mishaps",
+    "wearing-something-visel"
+   ]
+  },
+  "hoz-suffix": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "cases",
+   "title": "the allative -hoz/-hez/-höz",
+   "taught_in": "a2-31-a-gr",
+   "requires": [
+    "nal-nel"
+   ],
+   "aliases": [
+    "kozel-hoz"
+   ]
+  },
+  "hungarian-consonant-sounds": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "sounds-spelling",
+   "title": "Hungarian consonant sounds",
+   "taught_in": "a1-01-b-gr",
+   "requires": [],
+   "aliases": []
+  },
+  "hungarian-vowels": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "sounds-spelling",
+   "title": "short and long Hungarian vowels",
+   "taught_in": "a1-01-a-gr",
+   "requires": [],
+   "aliases": [
+    "hoz-vowel-harmony"
+   ]
+  },
+  "hypothetical-ha-conditional": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "conditional",
+   "title": "hypothetical clauses with ha and the conditional",
+   "taught_in": "b1-04-01-b-gr",
+   "requires": [
+    "ha-clause",
+    "nek-conditional"
+   ],
+   "aliases": [
+    "conditional-deliberation",
+    "conditional-review",
+    "conditional-risks",
+    "dilemma-expressions",
+    "forgatokonyv-eshetoseg",
+    "ha-akkor",
+    "ha-lennek-helyedben",
+    "helyedben-advice",
+    "jobb-lenne-ha",
+    "polite-clarifications"
+   ]
+  },
+  "ik-verbs-dolgozom-not-dolgozok": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "verb-forms",
+   "title": "present conjugation of -ik verbs",
+   "taught_in": "a1-85-b-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "an-ik-verb-on-the-move-utazik",
+    "diplomatic-coordination",
+    "izgul",
+    "playing-too-jatszik-and-the-placement-of-is"
+   ]
+  },
+  "imperative-definite": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "imperative",
+   "title": "definite imperative verb forms",
+   "taught_in": "a2-49-a-gr",
+   "requires": [
+    "imperative-indefinite",
+    "definite-vs-indefinite-conjugation"
+   ],
+   "aliases": []
+  },
+  "imperative-indefinite": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "imperative",
+   "title": "indefinite imperative forms",
+   "taught_in": "a2-48-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "automation-and-outcomes",
+    "giving-a-direction-the-imperative-of-megy",
+    "imperative-general",
+    "instructing-processes",
+    "public-politeness",
+    "recipe-summary",
+    "steadfast-adverbs",
+    "translation-osszpontosit"
+   ]
+  },
+  "indefinite-article-egy": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "articles-demonstratives",
+   "title": "the indefinite article egy",
+   "taught_in": "a1-22-a-gr",
+   "requires": [],
+   "aliases": [
+    "naming-objects-with-egy"
+   ]
+  },
+  "indirect-questions": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "reported-speech",
+   "title": "indirect questions with hogy and -e",
+   "taught_in": "b1-13-02-a-gr",
+   "requires": [
+    "reported-speech-statements"
+   ],
+   "aliases": [
+    "embedded-polar-questions",
+    "embedded-wh-questions",
+    "reported-speech-questions",
+    "resolving-misunderstandings",
+    "rhetorical-emphasis"
+   ]
+  },
+  "inflected-infinitives": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "non-finite",
+   "title": "inflected infinitives with personal endings",
+   "taught_in": "a2-201-b-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni",
+    "possessive-suffixes",
+    "kell-infinitive"
+   ],
+   "aliases": [
+    "kell-szemelyes-infinitivus"
+   ]
+  },
+  "inflected-postpositions": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "prepositions-postpositions",
+   "title": "personal inflected forms of postpositions",
+   "taught_in": "a2-196-a-gr",
+   "requires": [
+    "postpositions-basic",
+    "possessive-suffixes"
+   ],
+   "aliases": [
+    "interior-postpositions"
+   ]
+  },
+  "irregular-nek-conditional": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "conditional",
+   "title": "irregular conditional forms lenne, menne and enne",
+   "taught_in": "a2-137-b-gr",
+   "requires": [
+    "nek-conditional"
+   ],
+   "aliases": []
+  },
+  "irregular-past": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "past",
+   "title": "irregular past forms like ment, jött, evett and ivott",
+   "taught_in": "a2-120-b-gr",
+   "requires": [
+    "past-tense-indefinite"
+   ],
+   "aliases": [
+    "megy-jon-eszik-iszik-past",
+    "proverb-fatalism"
+   ]
+  },
+  "is-placing-also-too": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "word-order",
+   "title": "word order with is",
+   "taught_in": "a1-83-a-gr",
+   "requires": [
+    "basic-hungarian-word-order"
+   ],
+   "aliases": []
+  },
+  "itt-ott-here-there": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "adverbs",
+   "title": "location with itt and ott",
+   "taught_in": "a1-24-b-gr",
+   "requires": [],
+   "aliases": []
+  },
+  "jar-iskolaba": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "aspect",
+   "title": "habitual attendance with jár",
+   "taught_in": "a2-91-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": []
+  },
+  "junk-suggestion": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "imperative",
+   "title": "first-person plural suggestions in -junk/-jünk",
+   "taught_in": "a2-136-a-gr",
+   "requires": [
+    "imperative-indefinite"
+   ],
+   "aliases": [
+    "lets-cook",
+    "sequential-instruction",
+    "suggestion-junk-junk"
+   ]
+  },
+  "kell-infinitive": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "modality",
+   "title": "obligation with kell and muszáj + infinitive",
+   "taught_in": "a1-118-b-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni"
+   ],
+   "aliases": [
+    "check-kell",
+    "dativ-kell",
+    "foglalas-collocation",
+    "kell-an-impersonal-need",
+    "kell-hozza",
+    "modal-kell"
+   ]
+  },
+  "kellene": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "modality",
+   "title": "giving advice with kellene, érdemes and ajánlott",
+   "taught_in": "a2-87-a-gr",
+   "requires": [
+    "kell-infinitive",
+    "nek-conditional"
+   ],
+   "aliases": [
+    "advisory-concept",
+    "advisory-erdemes",
+    "ajanlott-usage",
+    "indirect-invitations",
+    "recommending-places",
+    "recommending-structures"
+   ]
+  },
+  "kellett-volna": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "modality",
+   "title": "past obligation with kellett volna and lehetett volna",
+   "taught_in": "b1-20-02-a-gr",
+   "requires": [
+    "kellene",
+    "past-tense-indefinite"
+   ],
+   "aliases": [
+    "b2-past-modals",
+    "expressing-regret-kellett-volna",
+    "missed-opportunities-lehetett-volna",
+    "past-advisability",
+    "past-obligation-kellett-volna"
+   ]
+  },
+  "kent-vs-mint": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "cases",
+   "title": "contrasting -ként and mint",
+   "taught_in": "b1-17-01-b-gr",
+   "requires": [
+    "essive-formal-kent",
+    "olyan-mint"
+   ],
+   "aliases": []
+  },
+  "kepest": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "comparison",
+   "title": "comparing with -hoz/-hez/-höz képest",
+   "taught_in": "b1-02-05-gr",
+   "requires": [
+    "comparative-bb",
+    "hoz-suffix"
+   ],
+   "aliases": [
+    "comparing-experiences-synthesis"
+   ]
+  },
+  "kerek-vs-szeretnek": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "politeness-address",
+   "title": "polite requests with kérek and szeretnék",
+   "taught_in": "a1-94-a-gr",
+   "requires": [
+    "nek-conditional"
+   ],
+   "aliases": [
+    "cafe-review-kerem-szeretnek",
+    "ker-reporting-what-someone-asks-for",
+    "ker-vs-kerek",
+    "legy-szives-and-szivesen",
+    "making-requests",
+    "reporting-verbs",
+    "vasarlas-osszefoglalas"
+   ]
+  },
+  "keresztul": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "prepositions-postpositions",
+   "title": "the postposition keresztül with -n/-on/-en/-ön",
+   "taught_in": "a2-22-b-gr",
+   "requires": [
+    "on-en-on",
+    "postpositions-basic"
+   ],
+   "aliases": [
+    "check-keresztul",
+    "erdon-keresztul",
+    "keresztul-intro",
+    "temporal-durations"
+   ]
+  },
+  "ki-and-mi": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "questions",
+   "title": "questions with ki and mi",
+   "taught_in": "a1-03-a-gr",
+   "requires": [],
+   "aliases": [
+    "asking-how-the-question-word-mivel",
+    "basic-personal-information-exchange",
+    "integrated-question-patterns",
+    "ki-and-mi-12",
+    "ki-o-asking-who-someone-is",
+    "mi-a-baj-questions",
+    "mi-a-foglalkozasod",
+    "mi-micsoda-what",
+    "personal-information-questions",
+    "short-personal-questions",
+    "unit-1-negation-review",
+    "unit-1-pattern-review"
+   ]
+  },
+  "kinship-possessives": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "possession",
+   "title": "family and kinship nouns with possessive suffixes",
+   "taught_in": "a1-26-b-gr",
+   "requires": [
+    "possessive-suffixes"
+   ],
+   "aliases": [
+    "baty-ocs-nover-hug-older-and-younger",
+    "family-words",
+    "ferj-feleseg-nagymama-nagypapa",
+    "more-my-words-testver-fiu-lany-gyerek"
+   ]
+  },
+  "kor-time": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "cases",
+   "title": "telling time with -kor",
+   "taught_in": "a1-147-b-gr",
+   "requires": [
+    "cardinal-numbers"
+   ],
+   "aliases": [
+    "at-seven-o-clock-the-suffix-kor",
+    "hany-ora-van-telling-the-time",
+    "kezdodik-vegzodik",
+    "telling-time-ora-and-mikor",
+    "time-references"
+   ]
+  },
+  "lak-lek-suffix": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "verb-forms",
+   "title": "the -lak and -lek verbal suffix for you",
+   "taught_in": "a2-187-b-gr",
+   "requires": [
+    "definite-vs-indefinite-conjugation"
+   ],
+   "aliases": []
+  },
+  "lehet-infinitive": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "modality",
+   "title": "impersonal possibility with lehet + infinitive",
+   "taught_in": "a1-149-b-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni"
+   ],
+   "aliases": [
+    "business-modal-structures",
+    "lehet-cserelni",
+    "lehet-frequency",
+    "lehet-question",
+    "maybe-lehet-and-being-free-raer",
+    "nem-tud-vs-nem-lehet",
+    "possibility-permission-review"
+   ]
+  },
+  "litotes-understatement": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "register-style",
+   "title": "understatement, litotes and irony",
+   "taught_in": "c1-05-02-a-gr",
+   "requires": [
+    "negation-with-nem"
+   ],
+   "aliases": [
+    "c1-antiphrasis-understatement"
+   ]
+  },
+  "majd-adverb": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "future",
+   "title": "present tense for future plans with majd",
+   "taught_in": "a2-95-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "future-present",
+    "present-future-time",
+    "solemn-oath-formulas",
+    "sorrend-tortenelemben"
+   ]
+  },
+  "mar-experiential": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "past",
+   "title": "past experience with már and még soha nem",
+   "taught_in": "b1-02-01-b-gr",
+   "requires": [
+    "past-tense-indefinite"
+   ],
+   "aliases": [
+    "demonstrative-periods",
+    "first-time-framing",
+    "meg-soha-nem-past",
+    "past-narrative-connectors",
+    "rapid-sequence",
+    "recipe-sequencing",
+    "structuring-arguments"
+   ]
+  },
+  "mediopassive-verbs-odik": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "voice",
+   "title": "mediopassive and reflexive verbs in -ódik and -ik",
+   "taught_in": "b1-06-02-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "alszik-conjugation",
+    "b2-reflexive-middle",
+    "getting-ready-verbs",
+    "impersonal-process",
+    "mediopassive-destruction",
+    "megold-megoldodik",
+    "middle-verbs",
+    "passive-avoidance-odik",
+    "passive-cultural-status"
+   ]
+  },
+  "meg-meaning": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "aspect",
+   "title": "aspectual and separable verbal prefixes",
+   "taught_in": "a2-109-a-gr",
+   "requires": [
+    "directional-preverbs"
+   ],
+   "aliases": [
+    "authoritarian-takeover",
+    "coercion-and-internment",
+    "command-economy-dogma",
+    "concessive-balance",
+    "constitutional-sovereignty",
+    "el-be-meaning",
+    "homage-and-reverence",
+    "insurgent-demands",
+    "insurgent-warfare",
+    "invasion-and-pleas",
+    "legislative-referendum",
+    "martyrdom-and-legacy",
+    "maturation-and-adaptation",
+    "planning-concept",
+    "preparatory-prefixes",
+    "preverbal-problem-solving",
+    "reverent-passive-doctrine",
+    "show-trial-accusations",
+    "temporal-clauses-during",
+    "three-ts-censorship",
+    "totalitarian-discourse"
+   ]
+  },
+  "megy-jon": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "verb-forms",
+   "title": "motion verbs megy and jön",
+   "taught_in": "a1-136-b-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "coming-the-irregular-verb-jon",
+    "going-somewhere-the-irregular-verb-megy",
+    "going-the-irregular-verb-megy",
+    "indul-erkezik",
+    "koltozik",
+    "lakik-koltozik",
+    "movement-verbs",
+    "when-does-it-leave-indul-and-erkezik"
+   ]
+  },
+  "mert-because": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "cause-purpose-result",
+   "title": "causal clauses with mert, mivel and ezért",
+   "taught_in": "a1-119-b-gr",
+   "requires": [],
+   "aliases": [
+    "azert-mert",
+    "azert-mert-opinion",
+    "consequence-connectors",
+    "drawing-conclusions",
+    "ezert-linking",
+    "narrative-result-connectors",
+    "opinion-plus-mert",
+    "resultative-subordination",
+    "unit-review-preferences-and-reasons"
+   ]
+  },
+  "metaphor": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "register-style",
+   "title": "metaphor and figurative meaning",
+   "taught_in": "c1-nyelvfilozofia-04-a-gr",
+   "requires": [],
+   "aliases": [
+    "c1-cognitive-metaphor",
+    "c1-conceptual-blending",
+    "c1-embodied-spatial-metaphor"
+   ]
+  },
+  "mig-egyidejuseg": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "time-clauses",
+   "title": "simultaneous events with míg and miközben",
+   "taught_in": "b1-karpatmedence-03-mig-egyidejuseg-gr",
+   "requires": [],
+   "aliases": [
+    "b2-simultaneity-conjunctions",
+    "contrast-mig-ezzel-szemben",
+    "decline-and-revival",
+    "past-present-contrasts",
+    "pedig-a-soft-and-on-the-other-hand",
+    "tobb-szereplo-mig"
+   ]
+  },
+  "mindig-and-gyakran-frequency-adverbs": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "adverbs",
+   "title": "frequency adverbs mindig, gyakran, néha and ritkán",
+   "taught_in": "a1-82-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "dietary-frequency",
+    "naming-habits-and-their-verbs",
+    "neha-and-ritkan-the-low-end-of-the-scale"
+   ]
+  },
+  "mintha": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "comparison",
+   "title": "as-if comparisons with mintha",
+   "taught_in": "b2-31-02-a-gr",
+   "requires": [
+    "nek-conditional"
+   ],
+   "aliases": [
+    "b2-resultative-similes",
+    "c1-adv-manner-comparative-similes"
+   ]
+  },
+  "mit-csinaljak": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "subjunctive",
+   "title": "deliberative subjunctive questions like mit csináljak",
+   "taught_in": "a2-87-b-gr",
+   "requires": [
+    "imperative-indefinite"
+   ],
+   "aliases": []
+  },
+  "miutan-mielott": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "time-clauses",
+   "title": "time clauses with miután, mielőtt and amint",
+   "taught_in": "b1-01-03-b-gr",
+   "requires": [
+    "past-tense-indefinite"
+   ],
+   "aliases": [
+    "amikor-background-deepened",
+    "mielott-past",
+    "military-narrative",
+    "miutan-mielott-clauses",
+    "temporal-sequencing-war",
+    "tobb-szereplo-miutan-mielott"
+   ]
+  },
+  "mixed-conditionals": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "conditional",
+   "title": "mixed conditionals and mintha clauses",
+   "taught_in": "b1-35-02-a-gr",
+   "requires": [
+    "past-conditional-volna"
+   ],
+   "aliases": [
+    "alternate-scenarios-maskulonben",
+    "hypothetical-comparisons-mintha",
+    "speculative-past-modals"
+   ]
+  },
+  "movement-with-ba-be": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "cases",
+   "title": "movement into with -ba/-be",
+   "taught_in": "a1-56-a-gr",
+   "requires": [
+    "ban-ben-in"
+   ],
+   "aliases": [
+    "be-ki-case",
+    "bele",
+    "movement-with-ba-be-57",
+    "movement-with-ba-be-58",
+    "movement-with-ba-be-59",
+    "movement-with-ba-be-60",
+    "promulgation",
+    "review-of-destination",
+    "transit-translation"
+   ]
+  },
+  "nagyon-very": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "adverbs",
+   "title": "degree adverbs nagyon, elég and túl",
+   "taught_in": "a1-35-a-gr",
+   "requires": [],
+   "aliases": []
+  },
+  "nal-nel": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "cases",
+   "title": "location at with -nál/-nél",
+   "taught_in": "a2-13-b-gr",
+   "requires": [
+    "ban-ben-in"
+   ],
+   "aliases": [
+    "at-someones-place",
+    "kinel-dolgozol"
+   ]
+  },
+  "negation-with-nem": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "negation",
+   "title": "negation with nem",
+   "taught_in": "a1-04-b-gr",
+   "requires": [],
+   "aliases": [
+    "negation-with-nem-67",
+    "negation-with-nem-68",
+    "negation-with-nem-69",
+    "negation-with-nem-70",
+    "nem",
+    "saying-no-nem-as-an-answer"
+   ]
+  },
+  "nehogy-purpose": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "cause-purpose-result",
+   "title": "negative purpose and warnings with nehogy + subjunctive",
+   "taught_in": "b1-03-04-b-gr",
+   "requires": [
+    "azert-hogy-purpose"
+   ],
+   "aliases": [
+    "b2-nehogy-subjunctive",
+    "nehogy-warning",
+    "prevention-modalities"
+   ]
+  },
+  "nek-conditional": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "conditional",
+   "title": "present conditional in -na/-ne/-ná/-né",
+   "taught_in": "a1-112-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "2sg-conditional-advice",
+    "advice-synthesis",
+    "conditional-in-agreements",
+    "conditional-unit28",
+    "full-conditional-paradigm",
+    "hat-het-suggestion",
+    "i-would-like-szeretnek-vs-szeretne",
+    "inkabb-mint-suggestion",
+    "ketlem-hogy",
+    "restaurant-etiquette",
+    "saying-what-you-d-like-to-do-szeretnem-infinitive",
+    "szeretne-asking-what-someone-else-would-like",
+    "szeretnek-reklamalni",
+    "szeretnek-the-conditional-ending-nek",
+    "szeretnem-def-indef",
+    "tudna-segiteni",
+    "veletlen-szeszelye",
+    "would-you-like-to-szeretnetek"
+   ]
+  },
+  "nem-vs-nincs-two-kinds-of-negation": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "being-becoming",
+   "title": "nem vs nincs",
+   "taught_in": "a1-28-b-gr",
+   "requires": [
+    "negation-with-nem",
+    "van-and-nincs-there-is-there-isn-t"
+   ],
+   "aliases": []
+  },
+  "nominalization": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "word-formation",
+   "title": "verbal nouns in -ás/-és",
+   "taught_in": "b1-16-04-b-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "as-es-val-vel",
+    "atkeles-translation",
+    "b2-nominalization-chains",
+    "c1-action-nominalization",
+    "c1-nominal-compound-geopolitical-syntax",
+    "c1-nominal-compression"
+   ]
+  },
+  "nominalizing-processes": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "aspect",
+   "title": "progressive state in -óban/-őben van",
+   "taught_in": null,
+   "requires": [
+    "nominalization"
+   ],
+   "aliases": [
+    "trend-narration"
+   ]
+  },
+  "noun-compounds": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "word-formation",
+   "title": "possessive and compound nouns",
+   "taught_in": "b1-16-02-b-gr",
+   "requires": [
+    "3rd-person-possessive"
+   ],
+   "aliases": []
+  },
+  "nta-productive": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "cases",
+   "title": "distributive time expressions in -nta/-nte",
+   "taught_in": "a2-54-b-gr",
+   "requires": [
+    "cardinal-numbers"
+   ],
+   "aliases": []
+  },
+  "official-register": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "register-style",
+   "title": "official and contractual register",
+   "taught_in": "c1-08-03-a-gr",
+   "requires": [
+    "agentless-constructions",
+    "formal-obligation"
+   ],
+   "aliases": [
+    "c1-bureaucratic-distancing",
+    "c1-contractual-stipulations"
+   ]
+  },
+  "olyan-mint": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "comparison",
+   "title": "comparisons of equality with olyan... mint",
+   "taught_in": "a2-18-b-gr",
+   "requires": [
+    "comparative-bb"
+   ],
+   "aliases": []
+  },
+  "on-en-on": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "cases",
+   "title": "the superessive -n/-on/-en/-ön",
+   "taught_in": "a2-26-a-gr",
+   "requires": [
+    "vowel-harmony"
+   ],
+   "aliases": [
+    "alagut-case",
+    "check-megbukik",
+    "constitutional-principles",
+    "days-superessive",
+    "exam-case-governance",
+    "hagon-context",
+    "hol-dolgozol",
+    "instrument-on",
+    "making-a-simple-plan",
+    "measuring-efficiency",
+    "megbukik-usage",
+    "nevet-past",
+    "on-the-square-the-locative-suffix-n",
+    "on-vs-ban",
+    "parliamentary-powers",
+    "pass-exam-phrase",
+    "penteken-szombaton-vasarnap-finishing-the-week",
+    "polite-invitations",
+    "potlobusz-context",
+    "regional-locatives",
+    "review-of-days-and-frequency",
+    "rol-rel",
+    "saying-a-date",
+    "spatial-internet-postpositions",
+    "verbal-prefixes-telecom",
+    "where-are-we-meeting-reviewing-location-suffixes",
+    "which-week"
+   ]
+  },
+  "optative-subjunctive": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "subjunctive",
+   "title": "wishes and deliberation with the subjunctive and hadd",
+   "taught_in": "c1-mestersegesintelligencia-04-a-gr",
+   "requires": [
+    "hogy-jon-jen"
+   ],
+   "aliases": [
+    "c1-subjunctive-deliberative-optatives"
+   ]
+  },
+  "ordinal-numbers": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "numbers-quantity",
+   "title": "ordinal numbers in -dik",
+   "taught_in": "a2-07-a-gr",
+   "requires": [
+    "cardinal-numbers"
+   ],
+   "aliases": [
+    "hanyas",
+    "ordinal-floors"
+   ]
+  },
+  "ota-duration": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "time-clauses",
+   "title": "duration up to the present with óta and -ja/-je",
+   "taught_in": "a2-83-b-gr",
+   "requires": [
+    "3rd-person-possessive"
+   ],
+   "aliases": [
+    "commemorative-synthesis",
+    "duration-napja",
+    "looking-back-framing",
+    "ota-since"
+   ]
+  },
+  "participial-clauses": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "non-finite",
+   "title": "participial clauses before the noun",
+   "taught_in": "b2-szecesszio-02-a-gr",
+   "requires": [
+    "present-participle",
+    "past-participle-adjective"
+   ],
+   "aliases": [
+    "b2-participial-clauses",
+    "c1-dense-participles",
+    "c1-participle-algorithmic-determinism",
+    "c1-participle-architectural-epithets",
+    "c1-participle-collective-guilt-exculpation",
+    "c1-participle-constitutional-subordination",
+    "c1-participle-epistemological-chains",
+    "c1-participle-historical-region-divergence",
+    "c1-participle-manipulative-framing",
+    "c1-participle-monument-preservation-ethics",
+    "c1-participle-multimodal-connectivity",
+    "c1-participle-passive-resistance-ethos",
+    "c1-participle-polyphonic-textual-polysemy",
+    "c1-participle-prophylactic-intervention",
+    "c1-participle-proportionality-test",
+    "c1-participle-scientific-falsificationism",
+    "c1-rhetorical-causal-participles"
+   ]
+  },
+  "participle-actions": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "non-finite",
+   "title": "adverbial participles in -va/-ve",
+   "taught_in": "b1-nemzetiugy-01-gr",
+   "requires": [
+    "past-tense-indefinite"
+   ],
+   "aliases": [
+    "b2-adverbial-participles",
+    "c1-adv-circumstantial-participial-clauses",
+    "c1-hypothetical-counterfactual-participles",
+    "c1-participle-passive-resultative-state",
+    "c1-participle-temporal-anteriority",
+    "ceremonial-citizenship",
+    "complex-adverbial-participle",
+    "dedication-purpose",
+    "feeling-at-home",
+    "gradual-transition",
+    "judicial-independence",
+    "longitudinal-timeframes",
+    "nyitva-zarva",
+    "rhetorical-imperative",
+    "symbolic-attributive"
+   ]
+  },
+  "past-conditional-volna": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "conditional",
+   "title": "past counterfactual conditional with volna",
+   "taught_in": "b1-rakoczi-02-gr",
+   "requires": [
+    "hypothetical-ha-conditional",
+    "past-tense-indefinite"
+   ],
+   "aliases": [
+    "b2-speculative-conditionals",
+    "c1-complex-hypothetical-counterfactuals",
+    "c1-complex-hypothetical-linguistic-counterfactuals",
+    "c1-counterfactual-syntax",
+    "c1-syntax-invisible-constitution-doctrine",
+    "c1-syntax-republic-of-science-deduction",
+    "commemorating-sacrifice",
+    "epochal-change",
+    "evaluating-effectiveness",
+    "homefront-necessity",
+    "irreal-wishes-barcsak",
+    "mindset-collocations",
+    "overcoming-obstacles",
+    "past-counterfactual-history",
+    "proclamation-register",
+    "proposing-solutions",
+    "retrospective-reflection",
+    "unfulfilled-conditions"
+   ]
+  },
+  "past-participle-adjective": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "non-finite",
+   "title": "past participles in -t/-ott/-ett/-ött as modifiers",
+   "taught_in": "b1-02-03-a-gr",
+   "requires": [
+    "past-tense-indefinite"
+   ],
+   "aliases": [
+    "alapitott-intezmenyek",
+    "igenev-cim",
+    "kezeles-context",
+    "koronazott-kiraly",
+    "participle-adjective-extended",
+    "participle-descriptions",
+    "participles-tragedy",
+    "szentte-avatott"
+   ]
+  },
+  "past-tense-indefinite": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "past",
+   "title": "indefinite past tense conjugation",
+   "taught_in": "a2-116-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "compromise-and-pardon",
+    "cultural-flourishing",
+    "day-in-hungary-review",
+    "elromlik-past",
+    "elveszit-past-indefinite",
+    "family-friends-home-review",
+    "inevitability-and-fate",
+    "mishap-comprehension",
+    "mult-hetvegen",
+    "multi-clause-narrative",
+    "narrative-synthesis",
+    "past-tense-questions",
+    "past-tense-unit24-25",
+    "rebuilding-settlement",
+    "shopping-eating-review",
+    "storytelling-review",
+    "tobb-szereplo-mult",
+    "utazik-past",
+    "warning-and-threat"
+   ]
+  },
+  "personal-pronouns": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "pronouns",
+   "title": "subject pronouns",
+   "taught_in": "a1-11-a-gr",
+   "requires": [],
+   "aliases": []
+  },
+  "plural-nouns-k": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "nouns",
+   "title": "plural nouns with -k",
+   "taught_in": "a1-22-b-gr",
+   "requires": [
+    "vowel-harmony"
+   ],
+   "aliases": [
+    "plural-nouns-with-k",
+    "plural-nouns-with-k-37",
+    "plural-nouns-with-k-38",
+    "plural-nouns-with-k-39",
+    "plural-nouns-with-k-40"
+   ]
+  },
+  "plural-possessive": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "possession",
+   "title": "plural possessed nouns in -i",
+   "taught_in": "a2-191-b-gr",
+   "requires": [
+    "3rd-person-possessive"
+   ],
+   "aliases": [
+    "plural-possessed-nouns"
+   ]
+  },
+  "plural-predicate-adjectives-k": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "adjectives",
+   "title": "plural predicate adjectives in -ak/-ek",
+   "taught_in": "a1-31-b-gr",
+   "requires": [
+    "plural-nouns-k",
+    "van-zero-copula"
+   ],
+   "aliases": [
+    "concluding-cultural-reflections"
+   ]
+  },
+  "possessive-pronouns-enyem": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "possession",
+   "title": "possessive pronouns like enyém and tiéd",
+   "taught_in": "a1-43-a-gr",
+   "requires": [
+    "possessive-suffixes"
+   ],
+   "aliases": [
+    "possessive-suffixes-44"
+   ]
+  },
+  "possessive-suffixes": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "possession",
+   "title": "possessive suffixes across persons",
+   "taught_in": "a1-26-b-gr",
+   "requires": [
+    "vowel-harmony"
+   ],
+   "aliases": [
+    "at-the-end-a-possessive-ending-meaning-its-end",
+    "civic-duties-syntax",
+    "compound-economic-nouns",
+    "duration-sentence",
+    "finalizing-decisions",
+    "foundations-review-49",
+    "integrated-communication-49",
+    "kedvenc-possessive",
+    "literary-attribution",
+    "my-plan-the-possessive-suffix-m",
+    "my-possessive-endings",
+    "our-ticket-the-possessive-suffix-unk-unk",
+    "poss-suffix-work",
+    "possessive-m-om-em-om-my-family",
+    "possessive-suffixes-42",
+    "possessive-suffixes-43",
+    "possessive-suffixes-45",
+    "van-symptom"
+   ]
+  },
+  "postposition-fele": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "prepositions-postpositions",
+   "title": "directional postpositions felé and felől",
+   "taught_in": "b1-08-01-a-gr",
+   "requires": [
+    "postpositions-basic"
+   ],
+   "aliases": [
+    "check-fele",
+    "felol-usage",
+    "motion-fele",
+    "motion-postpositions",
+    "public-transport-terms"
+   ]
+  },
+  "postpositions-altal-reven": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "prepositions-postpositions",
+   "title": "postpositions of means által, révén and helyett",
+   "taught_in": "a2-88-a-gr",
+   "requires": [
+    "postpositions-basic"
+   ],
+   "aliases": [
+    "adversative-ugyanakkor",
+    "atszallas-sentence",
+    "commemorative-dates",
+    "commemorative-register",
+    "concluding-syntheses",
+    "contrast-connectors",
+    "cultural-comparison-contrast",
+    "ellen-against",
+    "epithets-apposition",
+    "helyett",
+    "mutual-respect-and-tolerance",
+    "onkepzes-context",
+    "temporal-pre-revolution"
+   ]
+  },
+  "postpositions-basic": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "prepositions-postpositions",
+   "title": "postpositions like alatt, mellett, előtt and között",
+   "taught_in": "a1-89-a-gr",
+   "requires": [],
+   "aliases": [
+    "cultural-mediation",
+    "decision-verbs",
+    "deliberative-valasztas",
+    "egyensuly-case",
+    "kozott-between-two-things",
+    "linking-evidence",
+    "mellett-elott-mogott-postpositions",
+    "menetrend-usage",
+    "next-to-something-the-postposition-mellett",
+    "postpositions-alatt-felett",
+    "postpositions-kozott-utan",
+    "postpositions-mellett-elott-mogott",
+    "postpositions-review",
+    "postpositions-search-integrated",
+    "utan-and-kell",
+    "values-and-worldview",
+    "vizsgalat-context",
+    "work-life-balance"
+   ]
+  },
+  "potential-hat-het": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "modality",
+   "title": "the potential suffix -hat/-het",
+   "taught_in": "a2-115-b-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "causal-conditional-linkages",
+    "hat-het-preview",
+    "hat-het-warning",
+    "lifelong-concept",
+    "potential-check"
+   ]
+  },
+  "prefix-word-order": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "word-order",
+   "title": "separation and placement of verbal prefixes",
+   "taught_in": "a2-110-a-gr",
+   "requires": [
+    "directional-preverbs",
+    "basic-hungarian-word-order"
+   ],
+   "aliases": [
+    "check-kivalt",
+    "fel-hozzaad",
+    "fog-negation",
+    "fog-question",
+    "nem-ertek-egyet",
+    "poetic-and-prayer-syntax",
+    "verb-prefixes-review",
+    "verb-prefixes-unit22"
+   ]
+  },
+  "present-participle": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "non-finite",
+   "title": "present participles in -ó/-ő",
+   "taught_in": "b1-06-01-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "contrastive-evaluations",
+    "elethosszig-translation",
+    "evaluating-films-plays"
+   ]
+  },
+  "present-tense-routine-language": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "verb-forms",
+   "title": "present tense verb conjugation",
+   "taught_in": "a1-61-a-gr",
+   "requires": [
+    "personal-pronouns"
+   ],
+   "aliases": [
+    "finishing-the-purchase-fizet",
+    "jegyzetel-conjugation",
+    "new-words-targy-lakas-szoba-kulcs",
+    "present-tense-ok-ek-ok",
+    "present-tense-ok-ek-ok-62",
+    "present-tense-ok-ek-ok-63",
+    "present-tense-ok-ek-ok-64",
+    "present-tense-ok-ek-ok-65",
+    "present-tense-routine-language-72",
+    "present-tense-routine-language-73",
+    "present-tense-routine-language-74",
+    "present-tense-routine-language-75",
+    "review-of-present-tense-verbs"
+   ]
+  },
+  "quantity-choice-questions-mennyi-melyik": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "questions",
+   "title": "questions with milyen, mennyi and melyik",
+   "taught_in": "a1-31-a-gr",
+   "requires": [
+    "ki-and-mi"
+   ],
+   "aliases": [
+    "asking-about-size-and-price-milyen-mennyi",
+    "meg-one-more-another",
+    "mennyi-asking-how-much",
+    "mennyi-vs-hany",
+    "milyen-asking-what-someone-is-like",
+    "which-one-melyik"
+   ]
+  },
+  "ra-re": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "cases",
+   "title": "movement onto with -ra/-re",
+   "taught_in": "a2-29-a-gr",
+   "requires": [
+    "on-en-on",
+    "movement-with-ba-be"
+   ],
+   "aliases": [
+    "atszall-vonal",
+    "effective-study-verbs",
+    "going-to-a-place-hova-and-the-suffix-ra-re",
+    "heritage-tradition-expressions",
+    "historical-legacy",
+    "jar-infinitive",
+    "jegyre-ra",
+    "nights-ra-re",
+    "obligation-kell",
+    "pihenesre-case",
+    "ra-re-duration",
+    "receptre-case",
+    "traditional-festive-verbs",
+    "vagany-usage"
+   ]
+  },
+  "relative-clauses-aki-ami-amely": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "relative-clauses",
+   "title": "relative clauses with aki, ami and amely",
+   "taught_in": "a2-19-a-gr",
+   "requires": [
+    "ki-and-mi",
+    "how-the-accusative-t-works"
+   ],
+   "aliases": [
+    "aki-amely",
+    "aki-relative",
+    "aki-relative-friendship",
+    "aki-vonatkozoi-mellekmondat",
+    "ami-clause",
+    "border-opening-events",
+    "c1-correlative-rights",
+    "chained-relative-clauses",
+    "complex-relatives",
+    "culinary-tradition",
+    "describing-someone",
+    "diplomatic-compromise",
+    "inflected-relatives",
+    "relative-pronouns-advanced",
+    "relative-pronouns-amely-amelyik",
+    "relative-pronouns-housing"
+   ]
+  },
+  "reported-commands": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "reported-speech",
+   "title": "reported commands and requests with hogy + subjunctive",
+   "taught_in": "b1-27-03-a-gr",
+   "requires": [
+    "reported-speech-statements",
+    "hogy-jon-jen"
+   ],
+   "aliases": [
+    "confidentiality-and-trust",
+    "reported-requests",
+    "reported-speech-imperatives",
+    "reported-speech-quoting"
+   ]
+  },
+  "reported-speech-statements": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "reported-speech",
+   "title": "reported statements with azt mondta, hogy",
+   "taught_in": "b1-13-01-a-gr",
+   "requires": [
+    "hogy-clauses",
+    "past-tense-indefinite"
+   ],
+   "aliases": [
+    "affective-anticipation",
+    "attributive-reporting",
+    "direct-to-indirect",
+    "formal-declarations",
+    "hogy-clause",
+    "mond-past",
+    "national-avowal",
+    "nested-opinion-clauses",
+    "pronoun-person-shifts",
+    "reporting-agreements",
+    "subjunctive-fear-hope",
+    "subordinate-hope-cl",
+    "threats-and-fortifications"
+   ]
+  },
+  "rhetorical-argument": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "register-style",
+   "title": "antithesis, refutation and reductio",
+   "taught_in": "c1-01-03-a-gr",
+   "requires": [
+    "contrastive-discourse-markers"
+   ],
+   "aliases": [
+    "c1-antithesis-structuring",
+    "c1-reductio-argumentation",
+    "c1-rhetorical-antithetical-parallelism",
+    "c1-rhetorical-refutation"
+   ]
+  },
+  "rhetorical-questions": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "questions",
+   "title": "rhetorical questions",
+   "taught_in": "c1-16-02-a-gr",
+   "requires": [
+    "yes-no-questions",
+    "nek-conditional"
+   ],
+   "aliases": [
+    "c1-rhetorical-hypothetical-questions"
+   ]
+  },
+  "sag-seg-nouns": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "word-formation",
+   "title": "abstract nouns in -ság/-ség",
+   "taught_in": "c1-06-02-a-gr",
+   "requires": [
+    "nominalization"
+   ],
+   "aliases": [
+    "c1-deadjectival-abstraction"
+   ]
+  },
+  "sajat": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "possession",
+   "title": "emphatic possession with saját",
+   "taught_in": "a2-25-b-gr",
+   "requires": [
+    "possessive-suffixes"
+   ],
+   "aliases": [
+    "sajat-elet"
+   ]
+  },
+  "satire-parody": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "register-style",
+   "title": "satire and parody",
+   "taught_in": "c1-pestiironia-02-a-gr",
+   "requires": [
+    "litotes-understatement"
+   ],
+   "aliases": [
+    "c1-parodic-inversion",
+    "c1-satirical-discourse"
+   ]
+  },
+  "scalar-adverbs": {
+   "kind": "grammar",
+   "level": "C1",
+   "family": "adverbs",
+   "title": "scalar and degree adverbs in formal prose",
+   "taught_in": "c1-19-05-a-gr",
+   "requires": [
+    "comparative-bb",
+    "an-en-adverb"
+   ],
+   "aliases": [
+    "c1-adv-comparative-cybernetic-cognition",
+    "c1-adv-comparative-democratic-compromise",
+    "c1-adv-comparative-intertextuality-scalar",
+    "c1-adv-comparative-paradigmatic-shift",
+    "c1-adv-geopolitical-determinism-buffer",
+    "c1-adv-infrastructural-efficiency-logistics",
+    "c1-adv-scalar-bibo-political-realism",
+    "c1-adv-scalar-cultural-enlightenment",
+    "c1-adv-scalar-depletion-markers",
+    "c1-adv-scalar-evaluative-adverbials",
+    "c1-adv-scalar-ferry-country-destiny",
+    "c1-adv-scalar-journalistic-integrity",
+    "c1-adv-scalar-linguistic-erosion",
+    "c1-adv-scalar-macroeconomic-integration",
+    "c1-adv-scalar-medical-breakthrough",
+    "c1-adv-scalar-rule-of-law",
+    "c1-adv-scalar-scientific-significance",
+    "c1-adv-scalar-urban-density",
+    "c1-adv-scalar-wage-disparities"
+   ]
+  },
+  "sequencing-elobb-aztan-utana-vegul": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "adverbs",
+   "title": "sequencing events with először, aztán and végül",
+   "taught_in": "a2-02-b-gr",
+   "requires": [],
+   "aliases": [
+    "combining-schedule",
+    "elobb-aztan-vegul",
+    "miutan-past",
+    "sequencing-a-day",
+    "sequencing-a-day-72",
+    "sequencing-a-day-73",
+    "sequencing-a-day-74",
+    "sequencing-a-day-75",
+    "sequencing-connectors-deepened",
+    "temporal-sequencing-news"
+   ]
+  },
+  "singular-after-numbers": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "numbers-quantity",
+   "title": "singular nouns after numbers and quantifiers",
+   "taught_in": "a1-30-a-gr",
+   "requires": [
+    "cardinal-numbers"
+   ],
+   "aliases": [
+    "counting-food-items",
+    "numbers-0-10-asking-hany",
+    "plural-descriptions-and-quantities",
+    "plural-descriptions-and-quantities-37",
+    "plural-descriptions-and-quantities-38",
+    "plural-descriptions-and-quantities-39",
+    "plural-descriptions-and-quantities-40",
+    "plural-nouns-after-quantifiers",
+    "sok-egy-singular-noun",
+    "szamok-11"
+   ]
+  },
+  "soha-needs-nem-negative-concord": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "negation",
+   "title": "double negation with soha nem",
+   "taught_in": "a1-82-b-gr",
+   "requires": [
+    "negation-with-nem"
+   ],
+   "aliases": []
+  },
+  "sokat-eleget": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "numbers-quantity",
+   "title": "quantity adverbs sokat, keveset and eleget",
+   "taught_in": "a2-86-a-gr",
+   "requires": [
+    "how-the-accusative-t-works"
+   ],
+   "aliases": []
+  },
+  "spatial-belonging-beli": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "word-formation",
+   "title": "forming relational adjectives in -beli",
+   "taught_in": "b1-11-02-gr",
+   "requires": [
+    "having-s",
+    "ban-ben-in"
+   ],
+   "aliases": []
+  },
+  "spatial-questions-hol-hova": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "questions",
+   "title": "spatial questions with hol, hova and honnan",
+   "taught_in": "a1-13-a-gr",
+   "requires": [
+    "ki-and-mi"
+   ],
+   "aliases": [
+    "asking-where-something-is-hol-van",
+    "eljut-hogyan",
+    "here-there",
+    "hol",
+    "hova-movement",
+    "hova-movement-57",
+    "hova-movement-58",
+    "hova-movement-59",
+    "hova-movement-60"
+   ]
+  },
+  "subject-pronouns-omission": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "pronouns",
+   "title": "subject pronouns and pronoun omission",
+   "taught_in": "a1-61-b-gr",
+   "requires": [
+    "personal-pronouns",
+    "present-tense-routine-language"
+   ],
+   "aliases": [
+    "en-te-o",
+    "general-subject-ember",
+    "nevesitett-alanyok",
+    "panaszkodott-recall",
+    "subject-omission",
+    "subject-omission-62",
+    "subject-omission-63",
+    "subject-omission-64",
+    "subject-omission-65"
+   ]
+  },
+  "superlative": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "comparison",
+   "title": "superlative adjectives with leg-...-bb",
+   "taught_in": "a2-76-b-gr",
+   "requires": [
+    "comparative-bb"
+   ],
+   "aliases": [
+    "canonical-influence",
+    "mertek-concept",
+    "superlatives-history"
+   ]
+  },
+  "szabad-infinitive": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "modality",
+   "title": "permission and prohibition with szabad and tilos",
+   "taught_in": "a2-114-b-gr",
+   "requires": [
+    "kell-infinitive"
+   ],
+   "aliases": [
+    "ability-permission-unit23",
+    "ability-tud-review",
+    "check-tilos",
+    "impersonal-necessity-rules",
+    "nem-szabad-prohibition",
+    "nem-szabad-translation",
+    "rule-adherence-verbs",
+    "szabad-tilos-intro",
+    "tilos-usage",
+    "tud-lehet-szabad-combined"
+   ]
+  },
+  "szerintem": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "complement-clauses",
+   "title": "stating opinions with szerintem and azt hiszem, hogy",
+   "taught_in": "a2-141-b-gr",
+   "requires": [
+    "hogy-clauses"
+   ],
+   "aliases": [
+    "azt-hiszem",
+    "degree-and-nuance-adverbs",
+    "gondolom",
+    "opinions-comparisons-review",
+    "opinions-unit29"
+   ]
+  },
+  "szokott-infinitive-habitual-actions": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "aspect",
+   "title": "habitual actions with szokott + infinitive",
+   "taught_in": "a1-81-b-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni"
+   ],
+   "aliases": []
+  },
+  "szor-szer-multiplicatives": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "numbers-quantity",
+   "title": "how many times with -szor/-szer/-ször",
+   "taught_in": "a2-04-a-gr",
+   "requires": [
+    "cardinal-numbers"
+   ],
+   "aliases": [
+    "frequency-eszik-iszik"
+   ]
+  },
+  "temporal-postpositions": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "time-clauses",
+   "title": "time postpositions előtt, után and közben",
+   "taught_in": "a1-164-a-gr",
+   "requires": [
+    "postpositions-basic"
+   ],
+   "aliases": [
+    "dual-anniversary-syntax",
+    "miutan-mielott-combined",
+    "school-postpositions",
+    "sorrend-mellekmondatokkal",
+    "temporal-clauses"
+   ]
+  },
+  "terminative-case-ig": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "cases",
+   "title": "the terminative -ig",
+   "taught_in": "b1-08-03-gr",
+   "requires": [
+    "tol-tol"
+   ],
+   "aliases": [
+    "check-ig",
+    "ig-destination-limit",
+    "ig-duration",
+    "meddig-tart-translation",
+    "until-ig"
+   ]
+  },
+  "three-locatives": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "cases",
+   "title": "three-way spatial case contrasts",
+   "taught_in": "a2-28-b-gr",
+   "requires": [
+    "ban-ben-in",
+    "on-en-on",
+    "nal-nel"
+   ],
+   "aliases": [
+    "airport-location-case",
+    "case-contrast",
+    "getting-around-review",
+    "neighbourhood-summary",
+    "verbs-of-relocation"
+   ]
+  },
+  "tol-tol": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "cases",
+   "title": "starting points with -tól/-től and -tól ... -ig",
+   "taught_in": "a2-05-a-gr",
+   "requires": [
+    "nal-nel"
+   ],
+   "aliases": [
+    "from-to-tol-ig",
+    "from-tol-tol",
+    "ig-spatial",
+    "reggeltol-estig",
+    "verbal-prefixes-motion"
+   ]
+  },
+  "translative-morphology": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "cases",
+   "title": "the translative -vá/-vé and assimilation",
+   "taught_in": "a2-171-b-gr",
+   "requires": [
+    "val-vel"
+   ],
+   "aliases": [
+    "nature-translative",
+    "translative-case",
+    "translative-idioms"
+   ]
+  },
+  "tud-infinitive-skills": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "modality",
+   "title": "personal ability with tud + infinitive",
+   "taught_in": "a2-111-a-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni"
+   ],
+   "aliases": [
+    "nem-tud-mert",
+    "tud-conjugation"
+   ]
+  },
+  "twin-words-colloquial": {
+   "kind": "grammar",
+   "level": "B2",
+   "family": "register-style",
+   "title": "twin words and colloquial register",
+   "taught_in": "b2-34-01-a-gr",
+   "requires": [],
+   "aliases": [
+    "b2-twin-words-register"
+   ]
+  },
+  "ul-ul-essive-modal": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "cases",
+   "title": "languages and manner with -ul/-ül",
+   "taught_in": "a1-159-a-gr",
+   "requires": [],
+   "aliases": [
+    "essive-modal-languages",
+    "essive-modal-review",
+    "manner-adverbs-essive",
+    "mediopassive-cooking",
+    "passive-mediopassive",
+    "school-language-review",
+    "tud-nyelvet",
+    "ul-ul-adverb"
+   ]
+  },
+  "val-vel": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "cases",
+   "title": "the instrumental -val/-vel and assimilation",
+   "taught_in": "a1-136-a-gr",
+   "requires": [
+    "vowel-harmony"
+   ],
+   "aliases": [
+    "baratkozik",
+    "civic-participation-synthesis",
+    "elegedett-val-vel",
+    "fizetes-val-vel",
+    "instrumental-agency",
+    "kartya-or-keszpenz-paying-at-the-end",
+    "kesessel-context",
+    "kijon",
+    "latnivalokkal-context",
+    "price-fluctuations",
+    "remembrance-and-warnings",
+    "scientific-discoveries",
+    "travelling-by-the-suffix-val-vel",
+    "val-vel-transport"
+   ]
+  },
+  "valik-verb": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "being-becoming",
+   "title": "válik and tesz with -vá/-vé",
+   "taught_in": "a2-172-a-gr",
+   "requires": [
+    "translative-morphology"
+   ],
+   "aliases": [
+    "anticipating-struggle",
+    "ceremonial-coronation",
+    "comparing-past-present-tech",
+    "heritage-designation",
+    "living-standards",
+    "supranational-integration",
+    "tesz-factitive",
+    "transformative-valik",
+    "translative-review",
+    "treaty-commitments",
+    "trend-expressions",
+    "valik-tesz",
+    "valora-valik",
+    "verbs-of-becoming"
+   ]
+  },
+  "van-and-nincs-there-is-there-isn-t": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "being-becoming",
+   "title": "van and nincs for existence",
+   "taught_in": "a1-24-a-gr",
+   "requires": [
+    "van-zero-copula"
+   ],
+   "aliases": [
+    "existential-questions-van-itt",
+    "foundations-review-47",
+    "foundations-review-48",
+    "hol-asking-where",
+    "hol-van",
+    "integrated-communication-47",
+    "integrated-communication-48",
+    "integrated-review-of-a1",
+    "is-there-a-van-itt-x",
+    "itt-van-here-s-the-menu",
+    "near-and-far-kozel-messze-with-van",
+    "no-turning-back",
+    "putting-unit-5-together",
+    "saying-where-furniture-is",
+    "van-for-existence-sok-arus-van",
+    "van-nincs-problem",
+    "van-vannak-locative",
+    "what-s-available-van-with-lists"
+   ]
+  },
+  "van-past": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "past",
+   "title": "past tense forms volt and voltak",
+   "taught_in": "a2-119-a-gr",
+   "requires": [
+    "van-zero-copula"
+   ],
+   "aliases": []
+  },
+  "van-possessive-to-have": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "possession",
+   "title": "van with possessive suffixes for having",
+   "taught_in": "a1-27-b-gr",
+   "requires": [
+    "possessive-suffixes",
+    "van-and-nincs-there-is-there-isn-t"
+   ],
+   "aliases": [
+    "describing-hair-van-possessive",
+    "the-hungarian-have-construction",
+    "the-hungarian-have-construction-42",
+    "the-hungarian-have-construction-43",
+    "the-hungarian-have-construction-44",
+    "the-hungarian-have-construction-45"
+   ]
+  },
+  "van-zero-copula": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "being-becoming",
+   "title": "van and the zero copula",
+   "taught_in": "a1-02-b-gr",
+   "requires": [
+    "personal-pronouns"
+   ],
+   "aliases": [
+    "city-adjectives",
+    "combining-identity-and-location",
+    "describing-a-room-no-van-needed",
+    "describing-feelings-about-food",
+    "draga-and-olcso-expensive-and-cheap",
+    "ehes-vagyok-i-am-hungry",
+    "foundations-review",
+    "historical-sayings",
+    "hogy-vagy-asking-how-someone-is",
+    "identity-and-personal-information",
+    "integrated-communication",
+    "listing-several-adjectives",
+    "oreg-szep-more-predicate-adjectives",
+    "predicate-adjectives-zero-copula",
+    "putting-unit-7-together",
+    "reacting-to-new-experiences",
+    "simple-nominal-identification",
+    "the-present-forms-of-lenni",
+    "vagyok-vagy-and-where-van-goes",
+    "x-vagyok",
+    "zero-copula-review-meleg-a-kave"
+   ]
+  },
+  "verb-government-ban-ben": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "verb-patterns",
+   "title": "verbs and adjectives governing -ban/-ben",
+   "taught_in": "b1-11-05-gr",
+   "requires": [
+    "ban-ben-in"
+   ],
+   "aliases": [
+    "citizenship-acquisition",
+    "civic-participation",
+    "cultural-valencies",
+    "jo-vmiben",
+    "passive-reflexive-reszul",
+    "self-fulfillment-loyalty",
+    "taplalkozas-case"
+   ]
+  },
+  "verb-government-bol-bol": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "verb-patterns",
+   "title": "verbs governing -ból/-ből",
+   "taught_in": "b1-orszagma-03-bol-bol-all-gr",
+   "requires": [
+    "elative-bol-bel"
+   ],
+   "aliases": [
+    "bol-bol-all"
+   ]
+  },
+  "verb-government-ert": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "verb-patterns",
+   "title": "verbs and nouns governing -ért",
+   "taught_in": "a2-38-b-gr",
+   "requires": [],
+   "aliases": [
+    "completed-tasks-preverbs",
+    "compromise-connectors",
+    "evaluative-justice",
+    "kin-state-responsibility",
+    "mayoral-powers",
+    "taking-responsibility",
+    "transnational-responsibility"
+   ]
+  },
+  "verb-government-hoz-hez": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "verb-patterns",
+   "title": "verbs and adjectives governing -hoz/-hez/-höz",
+   "taught_in": "b1-07-03-gr",
+   "requires": [
+    "hoz-suffix"
+   ],
+   "aliases": [
+    "cardinal-review",
+    "civic-duties",
+    "debt-and-decline",
+    "dual-identity-constructions",
+    "expressing-belonging",
+    "fundamental-rights",
+    "kezeles-recall",
+    "manner-illeszkedes",
+    "modszer-usage",
+    "rights-and-duties"
+   ]
+  },
+  "verb-government-nak-nek": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "verb-patterns",
+   "title": "verbs governing the dative -nak/-nek",
+   "taught_in": "a2-59-a-gr",
+   "requires": [
+    "good-for-me-nekem-jo"
+   ],
+   "aliases": [
+    "ad-dative-accusative",
+    "ajanl-dative",
+    "economic-boom",
+    "enduring-legacy",
+    "epochal-milestones",
+    "professional-qualifications",
+    "vocation-and-calling"
+   ]
+  },
+  "verb-government-ra-re": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "verb-patterns",
+   "title": "verbs and adjectives governing -ra/-re",
+   "taught_in": "b1-02-04-b-gr",
+   "requires": [
+    "ra-re"
+   ],
+   "aliases": [
+    "career-advancement",
+    "case-osszpontosit",
+    "case-panaszkodik",
+    "cause-result-ezert",
+    "check-government",
+    "job-applications",
+    "karos-context",
+    "narrating-investigations",
+    "nyitott",
+    "panaszkodik-usage",
+    "personal-habits",
+    "recognition-and-reward",
+    "recreation-and-recovery",
+    "suitability-requirements",
+    "szuksegem-van",
+    "verb-government",
+    "visszatekint-case-government"
+   ]
+  },
+  "verb-government-rol-rel": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "verb-patterns",
+   "title": "verbs governing -ról/-ről",
+   "taught_in": "b1-05-03-a-gr",
+   "requires": [
+    "delative-rol-rel"
+   ],
+   "aliases": [
+    "municipal-competence",
+    "reflexive-support-verbs",
+    "szokasokrol-case"
+   ]
+  },
+  "verb-government-val-vel": {
+   "kind": "grammar",
+   "level": "A2",
+   "family": "verb-patterns",
+   "title": "verbs governing -val/-vel",
+   "taught_in": "a2-144-a-gr",
+   "requires": [
+    "val-vel"
+   ],
+   "aliases": [
+    "egyetert-val-vel",
+    "kibekul-megbocsat",
+    "meeting-up-talalkozik-and-hetvegen",
+    "meetings-collaboration",
+    "osszevesz-veszekedik",
+    "seeking-justice-and-redress",
+    "talalkozik-past"
+   ]
+  },
+  "verbal-adjectives-hatatlan-hetetlen": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "word-formation",
+   "title": "negative potential adjectives in -hatatlan/-hetetlen",
+   "taught_in": "b1-30-02-b-gr",
+   "requires": [
+    "potential-hat-het",
+    "present-participle"
+   ],
+   "aliases": []
+  },
+  "vonatkozoi-nevmas-esetei": {
+   "kind": "grammar",
+   "level": "B1",
+   "family": "relative-clauses",
+   "title": "case-inflected relative pronouns",
+   "taught_in": "b1-arpadhaz-03-vonatkozoi-nevmas-esetei-gr",
+   "requires": [
+    "relative-clauses-aki-ami-amely"
+   ],
+   "aliases": []
+  },
+  "vowel-harmony": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "sounds-spelling",
+   "title": "vowel harmony in suffixes",
+   "taught_in": "a1-05-vh-gr",
+   "requires": [
+    "hungarian-vowels"
+   ],
+   "aliases": []
+  },
+  "yes-no-questions": {
+   "kind": "grammar",
+   "level": "A1",
+   "family": "questions",
+   "title": "yes/no questions and negation",
+   "taught_in": "a1-04-a-gr",
+   "requires": [],
+   "aliases": [
+    "questions-and-transformations",
+    "questions-and-transformations-67",
+    "questions-and-transformations-68",
+    "questions-and-transformations-69",
+    "questions-and-transformations-70"
+   ]
+  }
+ },
+ "retired": {
+  "b2-abstract-case-government": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "dissolve",
+   "title": "abstract verb case government in institutional Hungarian",
+   "aliases": []
+  },
+  "b2-mastery-synthesis": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "catch-all",
+   "title": "integrated B2 syntax, discourse cohesion, and stylistic nuance",
+   "aliases": []
+  },
+  "c1-administrative-remedy": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "administrative litigation and civic redress procedural framing",
+   "aliases": []
+  },
+  "c1-adv-nominal-appositive-structures": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "dissolve",
+   "title": "complex appositive noun phrases with clarifying discourse markers",
+   "aliases": []
+  },
+  "c1-biomedical-discourse": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "biomedical discourse and medical humanities stylistic registers",
+   "aliases": []
+  },
+  "c1-circular-economy-syntax": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "circular economy resource loops and lifecycle assessment terminology",
+   "aliases": []
+  },
+  "c1-civic-transparency": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "freedom of information public administration transparency discourse",
+   "aliases": []
+  },
+  "c1-collective-responsibility": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "moral accounting collective responsibility and historical reckoning",
+   "aliases": []
+  },
+  "c1-constitutional-discourse": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "constitutional jurisprudence and historic legal evolution",
+   "aliases": []
+  },
+  "c1-corporate-governance": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "corporate governance company law and statutory compliance register",
+   "aliases": []
+  },
+  "c1-cultural-semiotics": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "cultural semiotics and idiomatic world models",
+   "aliases": []
+  },
+  "c1-dissent-deliberation": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "dissenting opinions and public justification in constitutional deliberation",
+   "aliases": []
+  },
+  "c1-ecological-system-dynamics": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "ecological system dynamics environmental degradation and resilience predicates",
+   "aliases": []
+  },
+  "c1-energy-transition-clauses": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "decarbonization pathways renewable energy penetration and grid balancing",
+   "aliases": []
+  },
+  "c1-ethical-quandaries": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "moral quandaries and bioethical dilemma argumentation structures",
+   "aliases": []
+  },
+  "c1-eu-harmonization": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "european union commercial harmonization and cross border business law",
+   "aliases": []
+  },
+  "c1-fiscal-counterbalancing": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "fiscal policy counterbalancing budgetary deficits and debt path stabilization",
+   "aliases": []
+  },
+  "c1-green-taxonomy-criteria": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "sustainable finance environmental taxonomy and non financial reporting standards",
+   "aliases": []
+  },
+  "c1-growth-model-synthesis": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "structural macroeconomic growth models balance of payments and external equilibrium",
+   "aliases": []
+  },
+  "c1-idiomatic-compounding": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "advanced idiomatic compound nouns and metaphoric expressions",
+   "aliases": []
+  },
+  "c1-inflationary-expectations": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "inflationary expectations core consumer pricing and price wage spiral modeling",
+   "aliases": []
+  },
+  "c1-international-treaty-framing": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "international treaty integration and constitutional rights hierarchy",
+   "aliases": []
+  },
+  "c1-legitimacy-vs-legality": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "tensions between democratic legitimacy and formal positive legality",
+   "aliases": []
+  },
+  "c1-liability-exemption": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "liability limitation indemnity clauses and force majeure framing",
+   "aliases": []
+  },
+  "c1-linguistic-relativity": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "linguistic relativity and philosophical discourse",
+   "aliases": []
+  },
+  "c1-macroeconomic-indicators": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "macroeconomic indicators nominal trends and quantitative metric relations",
+   "aliases": []
+  },
+  "c1-minority-protection-clauses": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "linguistic minority rights and cultural autonomy legal framing",
+   "aliases": []
+  },
+  "c1-monetary-tightening-clauses": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "monetary policy transmission central bank rate setting and quantitative tightening",
+   "aliases": []
+  },
+  "c1-nuclear-governance": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "nuclear safety regulatory licensing and long term radioactive waste management",
+   "aliases": []
+  },
+  "c1-parliamentary-debate": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "formal parliamentary debate phrasing and procedural rhetoric",
+   "aliases": []
+  },
+  "c1-patient-autonomy": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "patient autonomy end of life jurisprudence and self determination",
+   "aliases": []
+  },
+  "c1-radbruch-formula-syntax": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "statutory injustice and supra-statutory law legal phrasing",
+   "aliases": []
+  },
+  "c1-scientific-paradigm-discourse": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "scientific paradigm discourse and academic reasoning",
+   "aliases": []
+  },
+  "c1-universal-jurisdiction": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "topic",
+   "title": "international humanitarian law and universal human rights discourse",
+   "aliases": []
+  },
+  "contractual-tenancy-clauses": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "function-or-vocabulary",
+   "title": "residential lease agreements and utility meter declarations",
+   "aliases": []
+  },
+  "financial-transactions-pragmatics": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "function-or-vocabulary",
+   "title": "banking operations and payment methods in everyday life",
+   "aliases": []
+  },
+  "light-verb-collocations": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "function-or-vocabulary",
+   "title": "light-verb constructions and workplace idioms",
+   "aliases": [
+    "appointments",
+    "banking-collocations",
+    "career-reflections",
+    "check-panasz",
+    "civic-kinship",
+    "collocation-levezet",
+    "deadlines-solutions",
+    "expressing-preferences-taste",
+    "generational-transmission",
+    "living-in-hungarian-review",
+    "mit-szolsz",
+    "mostantol-habit",
+    "nem-mukodik",
+    "opinion-exchange",
+    "perspective-aspects",
+    "priorities-and-scheduling",
+    "problem-report",
+    "workday-schedules"
+   ]
+  },
+  "medical-triage-instructions": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "function-or-vocabulary",
+   "title": "pharmacy consultations and medication dosage instructions",
+   "aliases": []
+  },
+  "official-administrative-procedures": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "function-or-vocabulary",
+   "title": "official document applications and administrative procedures at government windows",
+   "aliases": []
+  },
+  "public-service-interactions": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "function-or-vocabulary",
+   "title": "polite requests and procedural transactions at postal counters",
+   "aliases": []
+  },
+  "weather-verbs-esik-sut": {
+   "kind": "grammar",
+   "retired": true,
+   "reason": "function-or-vocabulary",
+   "title": "weather expressions with esik, süt and meleg van",
+   "aliases": [
+    "meleg-hideg",
+    "sut-fuj"
+   ]
+  }
+ }
+}
