@@ -1,6 +1,6 @@
 # Grammar families: draft for approval (ROADMAP 125, step 1)
 
-Status: **draft, 2026-10-04. Not in `skill-registry.json` yet.** One shared
+Status: **family list approved 2026-10-04 (see "Decided" at the end); the skill mapping is a draft. Not in `skill-registry.json` yet.** One shared
 list of grammar families for every language, the grammar half of the
 format in [skill-tagging-spec.md](skill-tagging-spec.md). The vocabulary
 half is [skill-families-draft.md](skill-families-draft.md). Every
@@ -144,15 +144,15 @@ settled. None of them is changed yet.
   have dozens of exercises, so the 6-exercise minimum isn't the issue
   there. A map cell per lesson-topic would be.
 
-## Open questions for the user
+## Decided (2026-10-04)
 
-1. **37 families, or fewer?** Merging the four clause families (`time`,
-   `cause-purpose-result`, `concession`, `complement`) into one
-   "subordinate clauses" family gives 34, but makes one very large region
-   on the map (about 110 Spanish skills today).
-2. **`register-style`.** C1 genuinely teaches register and rhetoric
-   (litotes, essay structure, protocol formulas). It isn't grammar and it
-   isn't unit vocabulary. Keep it as a family of `kind: grammar` skills,
-   or add a third `kind` (`register`)?
-3. **The five display groups**: keep them for the map, or show the
-   families flat?
+1. **Keep all 37 families.** The four clause families stay separate, so
+   no map region gets too large.
+2. **`register-style` skills are `kind: grammar`**, in their own family.
+   No third kind.
+3. **Keep the five display groups** as the skill map's top layer. They're
+   stored only on the family list.
+
+The skill-by-skill mapping still needs review: the flags in
+[grammar-families-mapping.md](grammar-families-mapping.md) are settled
+skill by skill in step 2.
