@@ -116,6 +116,7 @@ Left out on purpose, so they aren't proposed again: hearts and energy, leagues, 
   - Progressive enhancement: richer animations, media, and interactive elements load only when supported and must never become dependencies of the core.
 - **Offline First**: The app shell and visited content are precached via Service Worker (`sw.js`) and PWA manifest (`manifest.webmanifest`). Local state updates immediately in `localStorage`; background sync must never block UI.
 - **Roadmap Logging Discipline**: Every new feature, architectural enhancement, content addition, and meaningful fix must be logged directly upon completion (active items in `ROADMAP.md`, completed work archived to `ACHIEVED.md`).
+- **Claude Code guardrail mods** (added 2026-10-04): three mods in `.claude/skills/` load automatically in every Claude Code session in this repo (Antigravity doesn't run them). `content-guard` validates each content JSON file as Claude writes it and blocks hand edits to generated files. `commit-gate` blocks a commit when `validate-content.py --changed` fails, when `styles/`/`engine/` changed without a `sw.js` `CACHE_VERSION` bump, or when schemas/validator/audit scripts changed without a guide (AGENTS.md, CLAUDE.md, `content/*/guides/`, `HU_Content_Authoring_Template.md`; `[no-guide]` in the message skips that check). `token-saver` blocks whole-file reads over 60 KB and shows context use in the status line. Next: an Antigravity watcher mod (check its commits, flag its ROADMAP ideas for review).
 
 ### Modularity & Content Authoring Rules
 
