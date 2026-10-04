@@ -1,8 +1,10 @@
 import type { Register } from 'claude-code'
 
-const COMMIT = /\bgit\b[^|;&]*\bcommit\b/
+// (?<!-)...(?!-) so a path like commit-gate/ or a word like pre-commit doesn't
+// falsely look like the git subcommand "commit".
+const COMMIT = /\bgit\b[^|;&]*(?<!-)\bcommit\b(?!-)/
 // The command stages files itself (git add ... && git commit, or commit -a/-am)
-const STAGES_TOO = /\bgit\s+add\b|\bcommit\b[^|;&]*\s-[a-zA-Z]*a/
+const STAGES_TOO = /\bgit\s+add\b|(?<!-)\bcommit\b(?!-)[^|;&]*\s-[a-zA-Z]*a/
 
 const SHELL_ASSET = /^(styles|engine)\/.+\.(css|js)$/
 // Files that define how content must be written ...
@@ -16,10 +18,10 @@ async function toBeStaged(command: string, git: (...args: string[]) => Promise<s
     .split('\n')
     .filter(Boolean)
     .map(l => ({ isTracked: !l.startsWith('??'), path: l.slice(3).replace(/^.* -> /, '').replace(/^"|"$/g, '') }))
-  const args = (/\bgit\s+add\s+([^|;&]*)/.exec(command)?.[1] ?? '').match(/"[^"]*"|'[^']*'|\S+/g) ?? []
+  const args = (/\bgit\s+add\s+([^|;&\r\n]*)/.exec(command)?.[1] ?? '').match(/"[^"]*"|'[^']*'|\S+/g) ?? []
   const paths = args.map(a => a.replace(/^["']|["']$/g, '').replace(/^\.\//, '').replace(/\/$/, ''))
   const isAll = paths.some(p => ['-A', '--all', '.', '*'].includes(p))
-  const isCommitA = /\bcommit\b[^|;&]*\s-[a-zA-Z]*a/.test(command)
+  const isCommitA = /(?<!-)\bcommit\b(?!-)[^|;&\r\n]*\s-[a-zA-Z]*a/.test(command)
   return status
     .filter(
       s =>
