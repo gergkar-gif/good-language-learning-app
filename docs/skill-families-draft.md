@@ -2,8 +2,9 @@
 
 Status: **draft, 2026-10-04. Not enforced and not in `skill-registry.json` yet.**
 Decided 2026-10-04: keep all five added families (21–25), and allow up to
-two families per unit, the main one first. One more family (26, `ideas`)
-is proposed below and still needs a decision. The unit-by-unit mapping is in
+two families per unit, the main one first. Family 26, `ideas`, was approved
+the same day. The full tagging format is in
+[skill-tagging-spec.md](skill-tagging-spec.md). The unit-by-unit mapping is in
 [skill-families-mapping.md](skill-families-mapping.md).
 Once approved, each unit vocabulary skill (`a1-unit05-vocab`,
 `b1-orszagma-vocab`, …) gets one or more of these as its `family` in the
@@ -53,7 +54,7 @@ justification comes from.
 | 23 | `language` | language and language learning | not a notion area | **language** | — |
 | 24 | `history` | history | not a notion area. PCIC covers it under *Referentes culturales*, not the notions. | — | — |
 | 25 | `basics` | greetings, numbers and time | not a notion area. PCIC covers these as *Funciones* and *Nociones generales* (quantity, time), not as topics. | — | — |
-| 26 | `ideas` | ideas, opinions and reasoning *(proposed after the mapping, not yet approved)* | not a notion area. PCIC covers these words under *Nociones generales* (existence, evaluation, mental relations), not as topics. | — | — |
+| 26 | `ideas` | ideas, opinions and reasoning *(added after the mapping, approved 2026-10-04)* | not a notion area. PCIC covers these words under *Nociones generales* (existence, evaluation, mental relations), not as topics. | — | — |
 
 **Decided (2026-10-04):** keep all five added families, and allow up to two
 families per unit, the main one first.
