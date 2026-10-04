@@ -331,7 +331,7 @@ def _track_for(stem, level, lang):
     else."""
     if level == "C1" and lang == "hu":
         if _SLUG_RE.match(stem):
-            return "discourse"
+            return "culture"
         if _UNIT_RE.match(stem) or _LESSON_ACROSS_LEVEL_RE.match(stem):
             return "core"
         return None

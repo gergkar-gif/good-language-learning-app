@@ -282,37 +282,37 @@ assert(!cardNonTech.classList.contains('hidden'), 'Non-tech card should be visib
 assert(!cardTech.querySelector('.story-card-topic-match'), 'Match badges should be removed upon search clear');
 console.log('[PASS] Search clear cleanly restores recommendations and all story cards.');
 
-console.log('\n--- Test 8: Hungarian C1 Discourse Shelf and Browsability Filtering ---');
+console.log('\n--- Test 8: Hungarian C1 Culture Shelf and Browsability Filtering ---');
 const huManifestPath = path.resolve(__dirname, '../../content/hu/stories/manifest.json');
 const huManifestData = JSON.parse(fs.readFileSync(huManifestPath, 'utf8'));
 const huC1Stories = huManifestData.stories.filter(s => s.level === 'C1');
 
 assert(huC1Stories.length >= 80, `Expected at least 80 C1 stories in Hungarian manifest, got ${huC1Stories.length}`);
 const browsableC1 = huC1Stories.filter(s => Reader._isBrowsableStory(s));
-assert.strictEqual(browsableC1.length, 24, `Expected exactly 24 browsable C1 stories (12 classics + 12 discourse), got ${browsableC1.length}`);
+assert.strictEqual(browsableC1.length, 72, `Expected exactly 72 browsable C1 stories (36 classics + one whole-unit reading per 36 culture-track units), got ${browsableC1.length}`);
 
 const shelfKeys = new Set(browsableC1.map(s => Reader._trackShelfKey(s) || s.type || s.source || 'original'));
-assert.deepStrictEqual(Array.from(shelfKeys).sort(), ['classics', 'track-discourse'].sort(), 'Expected only classics and track-discourse shelves for C1');
+assert.deepStrictEqual(Array.from(shelfKeys).sort(), ['classics', 'track-culture'].sort(), 'Expected only classics and track-culture shelves for C1');
 
 const classicsGroup = browsableC1.filter(s => (Reader._trackShelfKey(s) || s.type) === 'classics');
-assert.strictEqual(classicsGroup.length, 12, 'Expected 12 classics stories');
+assert.strictEqual(classicsGroup.length, 36, 'Expected 36 classics stories');
 
-const discourseGroup = browsableC1.filter(s => Reader._trackShelfKey(s) === 'track-discourse');
-assert.strictEqual(discourseGroup.length, 12, 'Expected 12 discourse track stories');
-for (const s of discourseGroup) {
-    assert(s.unit, `Discourse story ${s.id} must have a resolved unit`);
-    assert.strictEqual(s.unit.track, 'discourse', `Story ${s.id} unit track must be discourse`);
+const cultureGroup = browsableC1.filter(s => Reader._trackShelfKey(s) === 'track-culture');
+assert.strictEqual(cultureGroup.length, 36, 'Expected 36 culture track stories, one per unit');
+assert.strictEqual(new Set(cultureGroup.map(s => s.unit && s.unit.label)).size, 36, 'Expected each culture unit to have exactly one whole-unit reading');
+for (const s of cultureGroup) {
+    assert(s.unit, `Culture story ${s.id} must have a resolved unit`);
+    assert.strictEqual(s.unit.track, 'culture', `Story ${s.id} unit track must be culture`);
     assert(s.unit.title, `Story ${s.id} must have a unit title`);
     assert(s.unit.label, `Story ${s.id} must have a unit label`);
 }
-console.log('[PASS] Hungarian C1 properly isolates 12 classics and 12 discourse stories, filtering out all lesson segments.');
+console.log('[PASS] Hungarian C1 properly isolates 36 classics and 36 culture stories, filtering out all lesson segments.');
 
 console.log('\n--- Test 9: Track Shelf Label Mapping ---');
-assert.strictEqual(Reader.TRACK_SHELF_LABELS['discourse'], 'Culture', 'the C1 discourse track shows as the "Culture" shelf, like B2');
 assert.strictEqual(Reader.TRACK_SHELF_LABELS['culture'], 'Culture', 'culture track must map to "Culture"');
 assert.strictEqual(Reader.TRACK_SHELF_LABELS['citizenship'], 'Citizenship', 'citizenship track must map to "Citizenship"');
 assert.strictEqual(Reader.TRACK_SHELF_LABELS['latam'], 'Latin America', 'latam track must map to "Latin America"');
-console.log('[PASS] Track shelf labels correctly include discourse, culture, citizenship, and latam.');
+console.log('[PASS] Track shelf labels correctly include culture, citizenship, and latam.');
 
 console.log('\n--- Test 10: Topic Tagging on All Hungarian C1 Stories for Discovery ---');
 for (const s of browsableC1) {

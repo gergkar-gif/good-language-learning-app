@@ -204,8 +204,8 @@ LEVEL_TRACKS = {
         ],
         "c1": [
             {"id": "core", "title": "Core Hungarian"},
-            {"id": "discourse", "title": "Public Discourse & Society",
-             "description": "How Hungarians argue about public life, in the language of the press."},
+            {"id": "culture", "title": "Culture, Society & Public Life",
+             "description": "Hungarian public life, law, science and culture, in the language of the press and the essay."},
         ],
     },
 }

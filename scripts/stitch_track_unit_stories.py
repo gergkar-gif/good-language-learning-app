@@ -191,7 +191,7 @@ def main():
     stitch_language_track("es-latam", "b2", "latam", "es")
     stitch_language_track("es-latam", "b2", "regional", "es")
     # C1 tracks
-    stitch_language_track("hu", "c1", "discourse", "hu")
+    stitch_language_track("hu", "c1", "culture", "hu")
 
 
 if __name__ == "__main__":

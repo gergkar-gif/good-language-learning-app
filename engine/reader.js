@@ -560,8 +560,7 @@ const TRACK_SHELF_LABELS = {
     citizenship: 'Citizenship',
     cultura: 'Cultura y Ciudadanía',
     regional: 'Regional',
-    culture: 'Culture',
-    discourse: 'Culture'
+    culture: 'Culture'
 };
 
 // Shelf key for a story in a dual-track level's non-core track, else null.
