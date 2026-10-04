@@ -584,16 +584,24 @@ const Sync = (function () {
 
         let state = gatherSnapshot();
         let mergedRemote = false;
-        const cloud = await status({ timeoutMs: 8000 });
-        const cloudAt = (cloud && cloud.updatedAt) ? new Date(cloud.updatedAt).getTime() : 0;
         const lastSynced = Number(localStorage.getItem(LAST_SYNCED_KEY) || '0');
-        if (cloud && cloud.state && cloudAt > lastSynced) {
-            state = mergeSnapshots(state, cloud.state);
-            applySnapshot(state);
-            mergedRemote = true;
+        // A save sent as the page closes (keepalive) must start its request
+        // straight away: the page is gone before a read-then-merge finishes.
+        // It sends the cloud version it last saw instead, and the worker
+        // refuses it (409) if another device has saved since; the data stays
+        // local and is merged next session.
+        const leaving = !!options.keepalive;
+        if (!leaving) {
+            const cloud = await status({ timeoutMs: 8000 });
+            const cloudAt = (cloud && cloud.updatedAt) ? new Date(cloud.updatedAt).getTime() : 0;
+            if (cloud && cloud.state && cloudAt > lastSynced) {
+                state = mergeSnapshots(state, cloud.state);
+                applySnapshot(state);
+                mergedRemote = true;
+            }
         }
 
-        const body = JSON.stringify({ state });
+        const body = JSON.stringify(leaving ? { state, baseUpdatedAt: lastSynced } : { state });
         const fetchInit = {
             method: 'POST',
             headers: {

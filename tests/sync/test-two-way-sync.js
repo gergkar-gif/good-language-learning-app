@@ -70,9 +70,11 @@ function createMockEnvironment(initialStorage = {}) {
 
     let lastFetchCall = null;
     let mockFetchResponse = null;
+    const fetchCalls = [];
 
     const mockFetch = async (url, options) => {
         lastFetchCall = { url, options };
+        fetchCalls.push(lastFetchCall);
         return mockFetchResponse;
     };
 
@@ -108,7 +110,8 @@ function createMockEnvironment(initialStorage = {}) {
         storage,
         eventListeners,
         setFetchResponse: (resp) => { mockFetchResponse = resp; },
-        getLastFetchCall: () => lastFetchCall
+        getLastFetchCall: () => lastFetchCall,
+        getFetchCalls: () => fetchCalls
     };
 }
 
@@ -262,7 +265,7 @@ console.log('\n--- Test 7: Startup Sync Automatic Pull & Apply ---');
     const storedProg = JSON.parse(testEnv.storage.get('es:progress'));
     assert(storedProg['lesson.b1.01.01'], 'Remote lesson must be applied to local storage');
     console.log('[PASS] Startup sync automatically detected newer cloud data and updated local storage.');
-})().then(() => {
+})().then(async () => {
     console.log('\n--- Test 8: Save-on-Leave Lifecycle Hooks ---');
     const testEnv = createMockEnvironment({
         syncToken: 'test-token'
@@ -284,11 +287,30 @@ console.log('\n--- Test 7: Startup Sync Automatic Pull & Apply ---');
 
     pagehideHandlers[0]();
 
-    // Verify fetch was invoked with keepalive: true
-    const lastCall = testEnv.getLastFetchCall();
-    assert(lastCall, 'Fetch must be called on pagehide');
+    // The upload must start synchronously, inside the pagehide handler: a
+    // read-then-merge first would never finish before the page is gone.
+    const calls = testEnv.getFetchCalls();
+    assert.strictEqual(calls.length, 1, 'pagehide must send exactly one request, without reading the cloud first');
+    const lastCall = calls[0];
+    assert.strictEqual(lastCall.options.method, 'POST', 'pagehide request must be the upload');
     assert.strictEqual(lastCall.options.keepalive, true, 'pagehide save must specify keepalive: true');
-    console.log('[PASS] Leaving the app/tab triggers immediate flush with keepalive: true.');
+    const leaveBody = JSON.parse(lastCall.options.body);
+    assert.strictEqual(typeof leaveBody.baseUpdatedAt, 'number', 'leave-save must say which cloud version it is based on');
+    console.log('[PASS] Leaving the app/tab starts the upload at once, with keepalive and baseUpdatedAt.');
+
+    console.log('\n--- Test 9: Normal Save Still Reads Before Writing ---');
+    const normalEnv = createMockEnvironment({ syncToken: 'test-token' });
+    normalEnv.setFetchResponse({
+        ok: true,
+        json: async () => ({ ok: true, updatedAt: 9999, state: null })
+    });
+    await normalEnv.Sync.backup();
+    const normalCalls = normalEnv.getFetchCalls();
+    assert.strictEqual(normalCalls.length, 2, 'a normal save reads the cloud, then uploads');
+    assert.notStrictEqual((normalCalls[0].options || {}).method, 'POST', 'first request must be the read');
+    assert.strictEqual(normalCalls[1].options.method, 'POST', 'second request must be the upload');
+    assert.strictEqual(JSON.parse(normalCalls[1].options.body).baseUpdatedAt, undefined, 'a normal save sends no baseUpdatedAt');
+    console.log('[PASS] A normal save reads and merges the cloud copy before uploading.');
 
     console.log('\n==========================================================');
     console.log('ALL TWO-WAY SYNC & SAVE-ON-LEAVE TESTS PASSED');

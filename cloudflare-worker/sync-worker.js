@@ -360,6 +360,19 @@ async function handlePostState(request, env, cors) {
     }
 
     const updatedAt = Date.now();
+    // A save sent while the page closes can't read the cloud first, so it
+    // says which cloud version it was based on. Write only if nobody has
+    // saved since; otherwise refuse, and the device merges next session.
+    if (typeof payload.baseUpdatedAt === 'number') {
+        const result = await env.DB.prepare(
+            'UPDATE users SET state_json = ?, updated_at = ? WHERE id = ? AND (updated_at IS NULL OR updated_at <= ?)'
+        ).bind(JSON.stringify(payload.state), updatedAt, session.sub, payload.baseUpdatedAt).run();
+        if (!result.meta || !result.meta.changes) {
+            return json({ error: 'Cloud copy is newer', conflict: true }, 409, cors);
+        }
+        return json({ ok: true, updatedAt }, 200, cors);
+    }
+
     await env.DB.prepare('UPDATE users SET state_json = ?, updated_at = ? WHERE id = ?')
         .bind(JSON.stringify(payload.state), updatedAt, session.sub).run();
 
