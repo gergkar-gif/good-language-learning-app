@@ -1,13 +1,13 @@
 import type { Register } from 'claude-code'
 
-const INSTRUCTION = `next-options: when your reply finishes a task (you changed, built, fixed, reviewed or researched something — not a clarifying question, not a mid-task check-in, not a one-line factual answer), end it with exactly this block, after any summary:
+const INSTRUCTION = `next-options: when your reply finishes a task (you changed, built, fixed, reviewed or researched something — not a clarifying question, not a mid-task check-in, not a one-line factual answer), end it with a "**What next?**" block of exactly three numbered options, after any summary.
 
-**What next?**
-1. **Polish** — <one concrete step that makes something that already exists correct and complete: a bug, gap, inconsistency, unverified edge case or rough content you saw during this task>
-2. **Next step** — <the natural next feature or capability that builds directly on what just shipped>
-3. **Long shot** — <a bigger plan or large content effort worth doing eventually>
+Fill the three slots strictly by priority, not one per tier:
+- First, Polish: making existing functionality or content correct and complete (bugs, gaps, inconsistencies, unverified edge cases, rough content you saw during this task or know of). If there are three real polish items, all three options are polish.
+- Only when polish runs out, Next step: the logical next feature or capability building on what exists.
+- Only when both run out, Long shot: bigger plans and large content work.
 
-Rules: always that order (perfecting existing work comes first, then logical next steps, then big/long-shot work). One line each, specific to this project and this task — name the file, unit, feature or ROADMAP.md queue item, never generic advice. If ROADMAP.md's "Current priority queue" already lists a fitting item, point to it by number rather than inventing a new one. Don't start any of them; the user picks.`
+Label each option with its tier, e.g. "1. **Polish** — …". Order them by that priority. One line each, specific to this project — name the file, unit, feature or ROADMAP.md queue item, never generic advice; don't pad a tier with weak items just to reach a lower one or to avoid it. If ROADMAP.md's "Current priority queue" already lists a fitting item, point to it by number rather than inventing a new one. Don't start any of them; the user picks.`
 
 export const register: Register = on => {
   on('prompt.submit', ($, e, next) => {
