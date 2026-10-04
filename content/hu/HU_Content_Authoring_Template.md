@@ -216,6 +216,8 @@ driller does, and only after separate wiring.
 
 **`teaches` (required for all non-reading exercises):** exactly one `teaches` slug from the frozen skill list in `skills/<lang>.json` (chosen by what a wrong answer shows; full rules in AGENTS.md § "Exercise metadata" and docs/skill-tagging-spec.md). A tested form gets its grammar skill (`["vowel-harmony"]`, `["how-the-accusative-t-works"]`); a tested word gets the unit's vocabulary skill, `<level>-<unit id>-vocab` (`["a1-family-vocab"]`). Never add a skill yourself: the list is frozen, and a new skill needs the user's sign-off (`skills/frozen-hu.json`). `skill-registry.json` and `grammar-titles.json` are generated; don't edit them. Omit `teaches` on `category: "reading"` exercises; they only make sense right after that lesson's own story.
 
+**`distractor_skills` (grammar choice items):** when a wrong option is a well-formed form of another grammar skill, record it by option index (0-based, as written in the file), e.g. `"____ egy tea."` with options `["Ez", "Ki", "Mi"]` gets `"distractor_skills": {"1": "ki-and-mi", "2": "ki-and-mi"}`. Random or ungrammatical wrong options get no entry. Allowed on `multiple-choice`, `dialogue-complete`, `substitution` and `listening-choice`.
+
 **Answer-checking behavior to write for:** `fill-blank`/`dictation` compare
 with accents, punctuation and case stripped — but Hungarian accents (á, é, í,
 ó, ö, ő, ú, ü, ű) are *meaningful*, not decorative, so **do not rely on

@@ -4,7 +4,7 @@
     {
       "id": "a1-05-review-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which asks about a thing?",
       "options": [
         "Ki?",
@@ -14,7 +14,7 @@
       "correct": 1,
       "stage": "review",
       "teaches": [
-        "a1-reading-hungarian-vocab"
+        "ki-and-mi"
       ]
     },
     {
@@ -47,6 +47,10 @@
       "teaches": [
         "demonstratives-ez-az"
       ],
+      "distractor_skills": {
+        "1": "ki-and-mi",
+        "2": "van-zero-copula"
+      },
       "stage": "introduce"
     },
     {
@@ -61,7 +65,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula"
+        "yes-no-questions"
       ],
       "stage": "introduce"
     },
@@ -111,6 +115,10 @@
       "teaches": [
         "demonstratives-ez-az"
       ],
+      "distractor_skills": {
+        "1": "ki-and-mi",
+        "2": "ki-and-mi"
+      },
       "stage": "controlled"
     },
     {
@@ -129,8 +137,7 @@
       ],
       "english": "I am Meg.",
       "teaches": [
-        "van-zero-copula",
-        "negation-with-nem"
+        "van-zero-copula"
       ],
       "stage": "practice"
     },
@@ -146,7 +153,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "demonstratives-ez-az"
+        "ki-and-mi"
       ],
       "stage": "practice"
     },
@@ -170,7 +177,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ki-and-mi"
+        "yes-no-questions"
       ]
     },
     {
@@ -207,8 +214,7 @@
         }
       ],
       "teaches": [
-        "van-zero-copula",
-        "negation-with-nem"
+        "a1-reading-hungarian-vocab"
       ]
     },
     {
@@ -222,7 +228,6 @@
         }
       ],
       "teaches": [
-        "van-zero-copula",
         "negation-with-nem"
       ]
     },
@@ -240,6 +245,10 @@
       "teaches": [
         "demonstratives-ez-az"
       ],
+      "distractor_skills": {
+        "1": "ki-and-mi",
+        "2": "personal-pronouns"
+      },
       "stage": "check"
     },
     {
@@ -254,8 +263,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula",
-        "negation-with-nem"
+        "ki-and-mi"
       ],
       "stage": "check"
     },
@@ -302,20 +310,114 @@
       ],
       "correct": 0,
       "teaches": [
-        "demonstratives-ez-az"
+        "yes-no-questions"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-05-practice-fill",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Mi ez? Ez egy ____. (book)",
       "answer": "könyv",
       "teaches": [
-        "ki-and-mi"
+        "a1-reading-hungarian-vocab"
       ],
       "stage": "practice"
+    },
+    {
+      "id": "a1-05-vh-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which are all back vowels?",
+      "options": [
+        "e, i, ö",
+        "a, o, u",
+        "é, ü, ő"
+      ],
+      "correct": 1,
+      "teaches": [
+        "vowel-harmony"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-05-vh-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which family do the vowels in asztal belong to?",
+      "options": [
+        "back",
+        "front"
+      ],
+      "correct": 0,
+      "teaches": [
+        "vowel-harmony"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-05-vh-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which family do the vowels in szék belong to?",
+      "options": [
+        "back",
+        "front"
+      ],
+      "correct": 1,
+      "teaches": [
+        "vowel-harmony"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-05-vh-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which word has only front vowels?",
+      "options": [
+        "ház",
+        "asztal",
+        "könyv"
+      ],
+      "correct": 2,
+      "teaches": [
+        "vowel-harmony"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-05-vh-5",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "asztal → asztalok. szék → ____",
+      "options": [
+        "székek",
+        "székok",
+        "székök"
+      ],
+      "correct": 0,
+      "teaches": [
+        "vowel-harmony"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-05-vh-6",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "asztal → asztalok. sör → ____",
+      "options": [
+        "sörok",
+        "sörök",
+        "sörak"
+      ],
+      "correct": 1,
+      "teaches": [
+        "vowel-harmony"
+      ],
+      "stage": "controlled"
     }
   ]
 }

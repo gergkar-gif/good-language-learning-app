@@ -14,9 +14,12 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
-      ]
+        "demonstratives-ez-az"
+      ],
+      "distractor_skills": {
+        "1": "personal-pronouns",
+        "2": "ki-and-mi"
+      }
     },
     {
       "id": "a1-04-review-2",
@@ -31,9 +34,12 @@
       "correct": 1,
       "stage": "review",
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
-      ]
+        "personal-pronouns"
+      ],
+      "distractor_skills": {
+        "0": "demonstratives-ez-az",
+        "2": "demonstratives-ez-az"
+      }
     },
     {
       "id": "a1-04-intro-1",
@@ -47,15 +53,18 @@
       ],
       "correct": 0,
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
+        "yes-no-questions"
       ],
+      "distractor_skills": {
+        "1": "ki-and-mi",
+        "2": "ki-and-mi"
+      },
       "stage": "introduce"
     },
     {
       "id": "a1-04-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means “yes”?",
       "options": [
         "Nem.",
@@ -64,8 +73,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
+        "a1-reading-hungarian-vocab"
       ],
       "stage": "introduce"
     },
@@ -81,8 +89,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
+        "van-zero-copula"
       ],
       "stage": "controlled"
     },
@@ -97,8 +104,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
+        "yes-no-questions"
       ],
       "stage": "controlled"
     },
@@ -114,7 +120,6 @@
       ],
       "correct": 0,
       "teaches": [
-        "yes-no-questions",
         "negation-with-nem"
       ],
       "stage": "controlled"
@@ -122,7 +127,7 @@
     {
       "id": "a1-04-controlled-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Kávé ez? — Nem, ez ____.",
       "options": [
         "tea",
@@ -131,23 +136,21 @@
       ],
       "correct": 0,
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
+        "a1-reading-hungarian-vocab"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-04-practice-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Te Meg vagy? ____ . (yes/no)",
       "answers": [
         "Igen",
         "Nem"
       ],
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
+        "a1-reading-hungarian-vocab"
       ],
       "stage": "practice"
     },
@@ -163,7 +166,6 @@
       ],
       "correct": 0,
       "teaches": [
-        "yes-no-questions",
         "negation-with-nem"
       ],
       "stage": "practice"
@@ -186,8 +188,7 @@
       ],
       "english": "Are you Meg?",
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
+        "yes-no-questions"
       ],
       "stage": "practice"
     },
@@ -211,8 +212,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
+        "yes-no-questions"
       ]
     },
     {
@@ -235,8 +235,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
+        "yes-no-questions"
       ]
     },
     {
@@ -250,8 +249,7 @@
         }
       ],
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
+        "yes-no-questions"
       ]
     },
     {
@@ -265,7 +263,6 @@
         }
       ],
       "teaches": [
-        "yes-no-questions",
         "negation-with-nem"
       ]
     },
@@ -281,7 +278,6 @@
       ],
       "correct": 1,
       "teaches": [
-        "yes-no-questions",
         "negation-with-nem"
       ],
       "stage": "check"
@@ -298,9 +294,12 @@
       ],
       "correct": 1,
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
+        "yes-no-questions"
       ],
+      "distractor_skills": {
+        "0": "ki-and-mi",
+        "2": "ki-and-mi"
+      },
       "stage": "check"
     },
     {
@@ -346,8 +345,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "yes-no-questions",
-        "negation-with-nem"
+        "yes-no-questions"
       ],
       "stage": "practice"
     }

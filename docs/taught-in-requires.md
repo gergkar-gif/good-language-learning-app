@@ -479,7 +479,7 @@ Machine-readable: [taught-in-requires.json](taught-in-requires.json).
 | skill | level | taught in | requires |
 |---|---|---|---|
 | `good-for-me-nekem-jo` | A1 | `a1-148-a-gr`, *Good For Me: nekem + jó* | `personal-pronouns` |
-| `personal-pronouns` | A1 | `a1-11-a-gr`, *Personal pronouns* | *(none)* |
+| `personal-pronouns` | A1 | `a1-02-a-gr`, *Én, te, ő* | *(none)* |
 | `subject-pronouns-omission` | A1 | `a1-61-b-gr`, *Subject omission* | `personal-pronouns`, `present-tense-routine-language` |
 | `case-inflected-pronouns` | A2 | `a2-163-a-gr`, *Sublative Personal Pronouns: rám, rád, rá...* | `good-for-me-nekem-jo`, `three-locatives` |
 

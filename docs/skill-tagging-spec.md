@@ -111,7 +111,35 @@ frozen list in the same commit.
   real form belonging to another skill, record it by option index, e.g.
   `"distractor_skills": {"1": "ser"}`. Random wrong words get no entry. It
   lets the learner model tell "mislearned: uses X where Y is needed" apart
-  from "doesn't know Y yet".
+  from "doesn't know Y yet". The index is 0-based, into `options` as written
+  in the file (the app shuffles on render).
+
+### Read-through conventions (settled on HU A1 unit 1, 2026-10-05)
+
+So every unit is tagged the same way:
+
+- **Word meaning is vocabulary.** "Which means …?", "Which word is a
+  greeting?", matching pairs and fill-blanks that supply a noun get the unit
+  vocabulary skill, even when the word is a pronoun or question word (*te*,
+  *ki*). A choice between whole sentences whose options differ in a form
+  ("Which means *You are Meg*?": *Te Meg vagy* / *Én Meg vagyok* / *Ő Meg
+  van*) gets the grammar skill.
+- **A choice between paradigm members** (*én / te / ő*, *ki / mi*) gets that
+  paradigm's grammar skill.
+- **Category follows the tag** on choice, fill-blank and builder items: a
+  vocabulary tag means `category: vocabulary`, a grammar tag `grammar`.
+  `dialogue`, `writing` and `listening` keep their category whatever the tag.
+- **An item any answer passes** (a fill-blank accepting both *Igen* and
+  *Nem*) and **open writing with no single target** take the unit vocabulary
+  skill.
+- **Review items keep the skill they review**, not the lesson's new skill.
+- `distractor_skills` only for a wrong option that is a well-formed form of
+  another grammar skill; an ungrammatical option (*Nem van Meg*) gets none.
+- Applying a unit's decisions: write `{"<exercise id>": {"teaches": "<slug>",
+  "category": "<only if it changes>", "ds": {...}}}` for every exercise in
+  the unit and run `python scripts/apply_tags.py <course> <level>
+  <decisions.json>`; it refuses a file with an exercise left undecided. Then
+  `lock_tags.py`.
 
 ## Coverage
 

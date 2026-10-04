@@ -68,6 +68,22 @@
             "cafe-food-drinks"
           ]
         ]
+      },
+      "distractor_skills": {
+        "type": "object",
+        "propertyNames": {
+          "pattern": "^[0-9]+$"
+        },
+        "additionalProperties": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "description": "Grammar choice items only: wrong options that are real forms of another grammar skill, keyed by option index (0-based, in source order), e.g. {\"1\": \"ser\"}. Random wrong words get no entry. Lets the learner model tell 'uses X where Y is needed' apart from 'doesn't know Y yet'. See docs/skill-tagging-spec.md.",
+        "examples": [
+          {
+            "1": "ser"
+          }
+        ]
       }
     },
     "exercise": {
@@ -187,6 +203,9 @@
         },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"
+        },
+        "distractor_skills": {
+          "$ref": "#/definitions/baseFields/distractor_skills"
         }
       }
     },
@@ -413,6 +432,9 @@
         },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"
+        },
+        "distractor_skills": {
+          "$ref": "#/definitions/baseFields/distractor_skills"
         }
       }
     },
@@ -502,6 +524,9 @@
         },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"
+        },
+        "distractor_skills": {
+          "$ref": "#/definitions/baseFields/distractor_skills"
         }
       },
       "examples": [
@@ -682,6 +707,9 @@
         },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"
+        },
+        "distractor_skills": {
+          "$ref": "#/definitions/baseFields/distractor_skills"
         }
       }
     },

@@ -4,7 +4,7 @@
     {
       "id": "a1-01-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word is a greeting?",
       "options": [
         "szia",
@@ -13,15 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "a1-reading-hungarian-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a1-01-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means “thank you”?",
       "options": [
         "szia",
@@ -30,8 +29,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "a1-reading-hungarian-vocab"
       ],
       "stage": "introduce"
     },
@@ -77,8 +75,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "hungarian-vowels"
       ],
       "stage": "controlled"
     },
@@ -94,7 +91,6 @@
       ],
       "correct": 0,
       "teaches": [
-        "hungarian-vowels",
         "hungarian-consonant-sounds"
       ],
       "stage": "controlled"
@@ -102,12 +98,11 @@
     {
       "id": "a1-01-controlled-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "____, Meg! (hi)",
       "answer": "szia",
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "a1-reading-hungarian-vocab"
       ],
       "stage": "controlled"
     },
@@ -145,7 +140,7 @@
     {
       "id": "a1-01-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "tiles": [
         "Szia",
         ",",
@@ -160,30 +155,28 @@
       ],
       "english": "Hi, Meg!",
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "a1-reading-hungarian-vocab"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-01-practice-3",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Kávét kérsz? (Do you want coffee?) ____.",
       "answers": [
         "Igen",
         "Nem"
       ],
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "a1-reading-hungarian-vocab"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-01-practice-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "You hear “Szia!”. What is the natural reply?",
       "options": [
         "Szia!",
@@ -192,8 +185,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "a1-reading-hungarian-vocab"
       ],
       "stage": "practice"
     },
@@ -217,8 +209,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "a1-reading-hungarian-vocab"
       ]
     },
     {
@@ -242,8 +233,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "a1-reading-hungarian-vocab"
       ]
     },
     {
@@ -257,8 +247,7 @@
         }
       ],
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "a1-reading-hungarian-vocab"
       ]
     },
     {
@@ -272,14 +261,13 @@
         }
       ],
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "a1-reading-hungarian-vocab"
       ]
     },
     {
       "id": "a1-01-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means “no / not”?",
       "options": [
         "igen",
@@ -288,8 +276,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "a1-reading-hungarian-vocab"
       ],
       "stage": "check"
     },
@@ -305,8 +292,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "hungarian-vowels"
       ],
       "stage": "check"
     },
@@ -330,10 +316,89 @@
       ],
       "correct": 0,
       "teaches": [
-        "hungarian-vowels",
-        "hungarian-consonant-sounds"
+        "a1-reading-hungarian-vocab"
       ],
       "stage": "practice"
+    },
+    {
+      "id": "a1-01-sounds-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "What sound does Hungarian s (on its own) represent?",
+      "options": [
+        "English s",
+        "English sh",
+        "English z"
+      ],
+      "correct": 1,
+      "teaches": [
+        "hungarian-consonant-sounds"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-01-sounds-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "What sound does Hungarian cs represent?",
+      "options": [
+        "English ts",
+        "English sh",
+        "English ch"
+      ],
+      "correct": 2,
+      "teaches": [
+        "hungarian-consonant-sounds"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-01-sounds-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Hungarian c sounds like…",
+      "options": [
+        "the ts in “cats”",
+        "the k in “cat”",
+        "the s in “see”"
+      ],
+      "correct": 0,
+      "teaches": [
+        "hungarian-consonant-sounds"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-01-sounds-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Hungarian j sounds like…",
+      "options": [
+        "the j in “jam”",
+        "the y in “yes”",
+        "the h in “hat”"
+      ],
+      "correct": 1,
+      "teaches": [
+        "hungarian-consonant-sounds"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-01-sounds-5",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Hungarian zs sounds like…",
+      "options": [
+        "the z in “zoo”",
+        "the sh in “ship”",
+        "the s in “measure”"
+      ],
+      "correct": 2,
+      "teaches": [
+        "hungarian-consonant-sounds"
+      ],
+      "stage": "controlled"
     }
   ]
 }

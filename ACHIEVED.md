@@ -2712,3 +2712,10 @@ A speaking or challenge step missed in a lesson used to be re-served at the end 
 
 ### "Finish Lesson" no longer dead-ends — Done 2026-10-04
 Finishing a lesson ran several unguarded steps (checklist save, progress/XP writes, the curriculum re-render, the async summary lookups); if any threw, `Finish Lesson` silently did nothing. `finishLesson()` in `engine/lessons.js` now isolates each stage, ignores a repeat tap while it runs, and falls back to a plain "Lesson complete" screen with a Done button if the full summary fails. Failures log to the console with the stage name. The exact throwing step wasn't reproduced; check the console if a learner still reports it.
+
+## Skill-tag read-through log (ROADMAP 125 step 3)
+
+One entry per locked unit: what was read, what changed, what was found.
+
+### HU A1 `reading-hungarian` (a1-01–a1-05) — locked 2026-10-05
+All 92 exercises were read and given one tag each. 29 now carry the unit vocabulary skill: word-meaning questions, greetings and any-answer items. Fourteen exercises changed `category` to follow their tag. The rest carry one of `hungarian-vowels`, `hungarian-consonant-sounds`, `personal-pronouns`, `van-zero-copula`, `ki-and-mi`, `demonstratives-ez-az`, `yes-no-questions` and `negation-with-nem`. Nine choice items got `distractor_skills`, mostly *ki/mi* offered where *ez/az* is needed. Review items now carry the skill they review, not the lesson's new skill: a1-05 had *Ki ő?* items tagged `negation-with-nem`. Thin skills were filled. Five consonant-sound items were added to a1-01, taking `hungarian-consonant-sounds` from 1 to 6. Six vowel-harmony items were added to a1-05, a new "Vowel Harmony" group, taking `vowel-harmony` from 0 to 6. `personal-pronouns` now has `taught_in` `a1-02-a-gr` (*Én, te, ő*), the screen that first teaches it, instead of a1-11's re-teach. Found while locking: the exercise schemas didn't allow `distractor_skills`, so it was added to every choice type in all three courses. Content noticed but not changed: `a1-05-practice-dialogue` uses *nagy*, *ház* and *ez a ház*, none of them taught yet. `a1-04-practice-1` accepts both *Igen* and *Nem*, so it tests nothing.
