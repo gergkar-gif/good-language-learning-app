@@ -361,3 +361,32 @@ The check script no longer flags *térben*. *Digitális térben* and
 
 Block 5 only, in a fresh chat, then stop and report. Keep the worksheet
 for every hint you make English-only.
+
+---
+
+# Round 7: review of C1 block 5 (ROADMAP 120, 2026-10-04)
+
+Commits `f1ba1345`, `bcf1bffc`. **The best block so far.** No correct
+answers changed, and the report says so accurately. The worksheet was
+kept up, questions were logged, and the dialogue wrong options follow
+section 16 (*térbe / térben / térre*, *letörésével / letörésére /
+letörését*). Every one of the 49 changed dialogues was read. Only 4
+needed a fix, all made by the reviewer:
+
+- `c1-29-01-dialogue-6`: the marked answer *reverzibilisen* was wrong
+  (*… reverzibilis és azonosítható maradjon* needs the adjective), and
+  your "wrong" option *reverzibilis* was right. Swapped. R2 protects
+  correct answers, not wrong ones: if the marked answer is wrong
+  Hungarian, fix it and say so.
+- `c1-26-04-dialogue-6` *nem térhetne el* and `c1-nyelvfilozofia-05.ex07`
+  *Igen, ha nem építenénk* are correct Hungarian, so each exercise had two
+  right answers. **A conditional is not automatically wrong.** Replaced
+  with *térheti* and *építjük* (definite form with an indefinite object).
+- `c1-pestiironia-02-dialogue-5`: a capital letter mid-sentence
+  (*Elismerésnek*).
+
+## 18. Going on
+
+Block 6, the last one, in a fresh chat, then stop and report. Don't
+change the " / " correct options in check items yet. That is a separate
+pass for all levels (ROADMAP 126).
