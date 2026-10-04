@@ -1,0 +1,60 @@
+"""Find choice exercises whose correct option gives itself away with " / " (ROADMAP 126).
+
+The pattern: the correct option is two phrases joined by " / "
+("hypocrisy / sanctimony") while every wrong option is a single phrase
+("generous charity"), so a learner can pick the answer by shape alone.
+
+Usage:
+    python imports/review/check-slash-giveaway.py                # counts per course/level
+    python imports/review/check-slash-giveaway.py --list         # every hit: id, file
+    python imports/review/check-slash-giveaway.py hu b2 --list   # one course, one level
+
+Exit code 1 if any hit remains in the selected scope.
+Files c1-21-* and c1-22-* (Hungarian) are being rewritten under ROADMAP 127
+and are skipped here.
+"""
+import glob
+import json
+import os
+import sys
+from collections import Counter
+
+COURSES = ("hu", "es-es", "es-latam")
+SKIP_PREFIXES = ("c1-21-", "c1-22-")
+
+
+def hits(courses, levels):
+    for course in courses:
+        for f in sorted(glob.glob(f"content/{course}/exercises/*/*.json")):
+            level = os.path.basename(os.path.dirname(f))
+            if levels and level not in levels:
+                continue
+            if course == "hu" and os.path.basename(f).startswith(SKIP_PREFIXES):
+                continue
+            data = json.load(open(f, encoding="utf-8"))
+            for e in data.get("exercises", []) if isinstance(data, dict) else []:
+                o, k = e.get("options"), e.get("correct")
+                if not (isinstance(o, list) and all(isinstance(x, str) for x in o)
+                        and isinstance(k, int) and 0 <= k < len(o)):
+                    continue
+                if " / " in o[k] and not any(" / " in x for j, x in enumerate(o) if j != k):
+                    yield course, level, e.get("id"), f.replace(os.sep, "/")
+
+
+def main():
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    courses = [a for a in args if a in COURSES] or list(COURSES)
+    levels = [a for a in args if a not in COURSES]
+    found = list(hits(courses, levels))
+    counts = Counter((c, l) for c, l, _, _ in found)
+    for (c, l), n in sorted(counts.items()):
+        print(f"{c:9} {l:3} {n}")
+    print(f"total: {len(found)}")
+    if "--list" in sys.argv:
+        for c, l, i, f in found:
+            print(f"  {i}   ({f})")
+    sys.exit(1 if found else 0)
+
+
+if __name__ == "__main__":
+    main()
