@@ -266,8 +266,10 @@ correlatives can't be hinted in English:
 For these, give a Hungarian hint: `(az + -nak)`, `(correlative of
 arra)`, `(minél … ___)`.
 
-Do the whole list: `imports/review/c1-english-hint-recheck.txt` (id,
-sentence, answer), 199 fill-blanks from blocks 1-3 with an English-only
+Do the whole list: `imports/review/c1-english-hint-recheck.txt`, a
+worksheet. Write a `decision:` for every item (format at the top of the
+file) before you change that exercise, and commit the filled-in
+worksheet with the fixes. It holds 199 fill-blanks from blocks 1-3 with an English-only
 hint and one accepted answer. Some really have only one answer (*Párizsi*,
 *jogosult*): leave those. The rest get synonyms in `answers`, or a
 Hungarian hint.
@@ -298,7 +300,9 @@ Two replies with a second right answer:
 ## 15. Going on
 
 Fix sections 13 and 14 first, in one commit with a body. Then do
-**block 4 only** and stop. Back to one block at a time until a block
+**block 4 only** and stop. From block 4 on, every hint you make English-only gets
+an entry in the same worksheet (append it, with its `decision:`), so the
+reviewer can see you considered the other correct words. Back to one block at a time until a block
 comes back without these problems. Every commit needs a body: counts by
 type, hints rewritten, synonyms added, correct answers changed (ids),
 questions logged. If you log no questions for a whole block, explain
