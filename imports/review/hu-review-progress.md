@@ -1408,47 +1408,47 @@ Units in review order (a numbered unit, then a topic unit). **Stop after block 1
 - [x] content/hu/exercises/c1/c1-biroifuggetlenseg-05-ex.json
 - [x] content/hu/exercises/c1/c1-biroifuggetlenseg-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-04-01-ex.json
-- [ ] content/hu/exercises/c1/c1-04-02-ex.json
-- [ ] content/hu/exercises/c1/c1-04-03-ex.json
-- [ ] content/hu/exercises/c1/c1-04-04-ex.json
-- [ ] content/hu/exercises/c1/c1-04-05-ex.json
-- [ ] content/hu/exercises/c1/c1-04-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-04-01-ex.json
+- [x] content/hu/exercises/c1/c1-04-02-ex.json
+- [x] content/hu/exercises/c1/c1-04-03-ex.json
+- [x] content/hu/exercises/c1/c1-04-04-ex.json
+- [x] content/hu/exercises/c1/c1-04-05-ex.json
+- [x] content/hu/exercises/c1/c1-04-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-egeszsegugy-01-ex.json
-- [ ] content/hu/exercises/c1/c1-egeszsegugy-02-ex.json
-- [ ] content/hu/exercises/c1/c1-egeszsegugy-03-ex.json
-- [ ] content/hu/exercises/c1/c1-egeszsegugy-04-ex.json
-- [ ] content/hu/exercises/c1/c1-egeszsegugy-05-ex.json
-- [ ] content/hu/exercises/c1/c1-egeszsegugy-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-egeszsegugy-01-ex.json
+- [x] content/hu/exercises/c1/c1-egeszsegugy-02-ex.json
+- [x] content/hu/exercises/c1/c1-egeszsegugy-03-ex.json
+- [x] content/hu/exercises/c1/c1-egeszsegugy-04-ex.json
+- [x] content/hu/exercises/c1/c1-egeszsegugy-05-ex.json
+- [x] content/hu/exercises/c1/c1-egeszsegugy-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-05-01-ex.json
-- [ ] content/hu/exercises/c1/c1-05-02-ex.json
-- [ ] content/hu/exercises/c1/c1-05-03-ex.json
-- [ ] content/hu/exercises/c1/c1-05-04-ex.json
-- [ ] content/hu/exercises/c1/c1-05-05-ex.json
-- [ ] content/hu/exercises/c1/c1-05-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-05-01-ex.json
+- [x] content/hu/exercises/c1/c1-05-02-ex.json
+- [x] content/hu/exercises/c1/c1-05-03-ex.json
+- [x] content/hu/exercises/c1/c1-05-04-ex.json
+- [x] content/hu/exercises/c1/c1-05-05-ex.json
+- [x] content/hu/exercises/c1/c1-05-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-emberijogok-01-ex.json
-- [ ] content/hu/exercises/c1/c1-emberijogok-02-ex.json
-- [ ] content/hu/exercises/c1/c1-emberijogok-03-ex.json
-- [ ] content/hu/exercises/c1/c1-emberijogok-04-ex.json
-- [ ] content/hu/exercises/c1/c1-emberijogok-05-ex.json
-- [ ] content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-emberijogok-01-ex.json
+- [x] content/hu/exercises/c1/c1-emberijogok-02-ex.json
+- [x] content/hu/exercises/c1/c1-emberijogok-03-ex.json
+- [x] content/hu/exercises/c1/c1-emberijogok-04-ex.json
+- [x] content/hu/exercises/c1/c1-emberijogok-05-ex.json
+- [x] content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-06-01-ex.json
-- [ ] content/hu/exercises/c1/c1-06-02-ex.json
-- [ ] content/hu/exercises/c1/c1-06-03-ex.json
-- [ ] content/hu/exercises/c1/c1-06-04-ex.json
-- [ ] content/hu/exercises/c1/c1-06-05-ex.json
-- [ ] content/hu/exercises/c1/c1-06-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-06-01-ex.json
+- [x] content/hu/exercises/c1/c1-06-02-ex.json
+- [x] content/hu/exercises/c1/c1-06-03-ex.json
+- [x] content/hu/exercises/c1/c1-06-04-ex.json
+- [x] content/hu/exercises/c1/c1-06-05-ex.json
+- [x] content/hu/exercises/c1/c1-06-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-emlekezetpolitika-01-ex.json
-- [ ] content/hu/exercises/c1/c1-emlekezetpolitika-02-ex.json
-- [ ] content/hu/exercises/c1/c1-emlekezetpolitika-03-ex.json
-- [ ] content/hu/exercises/c1/c1-emlekezetpolitika-04-ex.json
-- [ ] content/hu/exercises/c1/c1-emlekezetpolitika-05-ex.json
-- [ ] content/hu/exercises/c1/c1-emlekezetpolitika-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-emlekezetpolitika-01-ex.json
+- [x] content/hu/exercises/c1/c1-emlekezetpolitika-02-ex.json
+- [x] content/hu/exercises/c1/c1-emlekezetpolitika-03-ex.json
+- [x] content/hu/exercises/c1/c1-emlekezetpolitika-04-ex.json
+- [x] content/hu/exercises/c1/c1-emlekezetpolitika-05-ex.json
+- [x] content/hu/exercises/c1/c1-emlekezetpolitika-consolidation-ex.json
 
 ### Block 2
 
