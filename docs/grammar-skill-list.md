@@ -1,5 +1,7 @@
 # Grammar skill list: proposed frozen list (ROADMAP 125, step 2)
 
+> **Built 2026-10-04.** The live list is now `skills/es.json` and `skills/hu.json` (with `skills/frozen-<lang>.json`); this page is the approval record. Since approval, 40 titles were reworded to the house style (no colons or parentheses) and HU `vowel-harmony` was added with the user's sign-off. Levels there follow each skill's `taught_in` screen ([taught-in-requires.md](taught-in-requires.md)).
+
 Status: **approved by the user 2026-10-04**, with all six calls below
 accepted as proposed. Not yet in `skill-registry.json` (ROADMAP 125 step 2). This is the frozen grammar skill list
 ([skill-tagging-spec.md](skill-tagging-spec.md) § "Frozen list"), and
