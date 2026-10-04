@@ -1,9 +1,13 @@
 # Skill tagging spec (ROADMAP 125)
 
-Status: **decided with the user 2026-10-04, not yet enforced.** This is the
-language-independent format every course (es, hu, and any future language)
-must follow. Once the validator checks land, `scripts/validate-content.py`
-enforces it and AGENTS.md § "Exercise metadata" points here.
+Status: **decided with the user 2026-10-04; built and enforced the same day**
+(ROADMAP 125 step 2). This is the language-independent format every course
+(es, hu, and any future language) must follow. `scripts/validate-content.py`
+enforces it for every author, and AGENTS.md § "Exercise metadata" points here.
+Rules the existing exercises can't meet until the read-through (step 3) are
+warnings for now and become errors for each unit once it's locked: one tag
+per exercise, no skill above the exercise's level, no retired slug, at least
+6 exercises per skill.
 
 Goal: tag once, correctly, and never redo it. Every rule below is chosen so a
 new language can reproduce it mechanically and a bulk pass can't silently
@@ -22,7 +26,15 @@ Three things describe what an exercise teaches:
 Anything that can be derived is not hand-written on exercises, so it can't
 drift.
 
-## Registry (`content/<language>/indexes/skill-registry.json`)
+## Registry (`skills/<language>.json`)
+
+The source of truth is `skills/<language>.json`, with the shared families in
+`skills/families.json` and the frozen list in `skills/frozen-<language>.json`.
+`scripts/build_skill_registry.py` generates each course's
+`indexes/skill-registry.json`, `grammar-titles.json` and `skill-prereqs.json`
+from it, and the validator fails if they drift. Old slugs live on as
+`aliases`; slugs that aren't skills (topics, functions, catch-alls) are kept
+under `retired` only until the read-through retags their exercises.
 
 One registry per **language**, not per course. Spanish has one registry for
 es-es and es-latam. A skill that only one variant uses carries
@@ -111,9 +123,11 @@ written, not merged away.
 ## Locking
 
 When a unit has been reviewed, its `teaches` and `distractor_skills` go into
-a generated `content/<language>/indexes/tags.lock.json`. The validator fails
-any change to a locked tag unless the lock is updated in the same commit
-with a reason line. New content enters unlocked and is locked once reviewed.
+`content/<course>/indexes/tags.lock.json`, written by
+`python scripts/lock_tags.py <course> <level>/<unit id> --reason "..."`,
+which refuses a unit that still breaks a rule. The validator fails any change
+to a locked tag that isn't recorded there (re-locking takes `--update` and a
+reason). New content enters unlocked and is locked once reviewed.
 
 ## What this enables: the skill map
 
@@ -137,9 +151,13 @@ fails a course folder that has content but none of these.
 
 - All renames happen in this pass; each old slug becomes an alias.
 - es-es and es-latam registries merge into one Spanish registry.
-- Learner skill stats reset after the switch (XP, word decks, lesson
-  completion and My Dictionary stay). Old stats were partly computed from
-  wrong tags.
+- Learner skill stats: decided as a reset, built as alias folding
+  (2026-10-04). Skill mastery is computed from exercise-level history joined
+  through the *current* tags, so it rebuilds itself on the new skills as
+  exercises are retagged, and wrong-tag noise disappears with it. The few
+  stores keyed by skill slug (production evidence, level-test flags) map old
+  slugs to their canonical skill through the aliases. A literal wipe would be
+  undone by cloud sync, which merges stores key by key.
 - Every exercise in es-es, es-latam and hu (~48,000) is read and given its
   single tag and its `distractor_skills`, in unit-sized batches, A1 first,
   then locked.

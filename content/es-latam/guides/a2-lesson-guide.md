@@ -1,4 +1,4 @@
-> **Exercise metadata rule (`es-latam` and `es-es`):** Every exercise in `exercises/a2/*.json` must specify `category` (`vocabulary | grammar | reading | dialogue | writing | listening`), and every non-`reading` exercise must have a non-empty `teaches` array whose slugs exist in `content/<course>/indexes/skill-registry.json`.
+> **Exercise metadata rule (`es-latam` and `es-es`):** Every exercise in `exercises/a2/*.json` must specify `category` (`vocabulary | grammar | reading | dialogue | writing | listening`), and every non-`reading` exercise must have exactly one `teaches` slug from the frozen skill list in `skills/<lang>.json` (chosen by what a wrong answer shows; full rules in AGENTS.md § "Exercise metadata" and docs/skill-tagging-spec.md).
 
 Unit 1: Talking About Your Trip
 

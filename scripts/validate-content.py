@@ -192,6 +192,231 @@ def load_skill_registry(lang_dir):
         return None, {}, {}
 
 
+# ---------------------------------------------------------------------------
+# Skill system (ROADMAP 125; docs/skill-tagging-spec.md). The source of truth is
+# skills/<lang>.json; the per-course registry, grammar-titles.json and
+# skill-prereqs.json are generated from it by scripts/build_skill_registry.py.
+# Rules existing content can't meet until the read-through (one tag per
+# exercise, a skill no higher than the exercise's level, retired slugs, at
+# least 6 exercises per skill) are warnings, and errors for a locked unit.
+# ---------------------------------------------------------------------------
+
+LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"]
+SLUG_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
+MIN_EXERCISES_PER_SKILL = 6
+WARNINGS = {}          # lang -> {kind: [message, ...]}
+
+
+def warn(lang, kind, msg):
+    WARNINGS.setdefault(lang, {}).setdefault(kind, []).append(msg)
+
+
+def load_skill_sources():
+    """{lang: source dict} for every skills/<lang>.json, plus the families file."""
+    skills_dir = ROOT / "skills"
+    if not skills_dir.is_dir():
+        return {}, None
+    families = json.loads((skills_dir / "families.json").read_text(encoding="utf-8"))
+    sources = {}
+    for path in sorted(skills_dir.glob("*.json")):
+        if path.name == "families.json" or path.name.startswith("frozen-"):
+            continue
+        sources[path.stem] = json.loads(path.read_text(encoding="utf-8"))
+    return sources, families
+
+
+def course_language(course, sources):
+    for lang, src in sources.items():
+        if course in src.get("courses", []):
+            return lang
+    return None
+
+
+def unit_tables(course):
+    """{(LEVEL, unit id): unit entry} for one course, plus duplicate-id errors."""
+    units, errors = {}, []
+    for path in sorted((ROOT / "content" / course / "curriculum" / "units").glob("*.json")):
+        level = path.stem.upper()
+        try:
+            table = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        for entry in table:
+            uid = entry.get("id")
+            if not uid:
+                continue  # the units schema reports a missing id
+            if (level, uid) in units:
+                errors.append(f"{path.relative_to(ROOT).as_posix()}: unit id {uid!r} is used twice in {level}")
+            units[(level, uid)] = entry
+    return units, errors
+
+
+def validate_skill_sources(sources, families):
+    """Errors in skills/*.json: fields, families, levels, taught_in, requires, units, frozen list."""
+    errors = []
+    if not sources:
+        return errors
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("build_skill_registry", ROOT / "scripts" / "build_skill_registry.py")
+    bsr = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(bsr)
+    gfam = {f["slug"] for f in families["grammar"]}
+    vfam = {f["slug"] for f in families["vocabulary"]}
+    for lang, src in sources.items():
+        rel = f"skills/{lang}.json"
+        skills = src.get("skills", {})
+        retired = src.get("retired", {})
+        courses = src.get("courses", [])
+        # generated course files must match the source
+        for course in courses:
+            for name, text in bsr.course_files(src).items():
+                out = ROOT / "content" / course / name
+                if not out.is_file() or out.read_text(encoding="utf-8") != text:
+                    errors.append(f"content/{course}/{name}: out of date with {rel} -- run python scripts/build_skill_registry.py "
+                                  f"(never edit it by hand)")
+        # aliases
+        seen = {}
+        for slug, s in {**skills, **retired}.items():
+            if not SLUG_RE.match(slug):
+                errors.append(f"{rel} :: {slug}\n      invalid slug")
+            for a in s.get("aliases", []):
+                if a in skills or a in retired:
+                    errors.append(f"{rel} :: {slug}\n      alias {a!r} is also a skill")
+                elif a in seen:
+                    errors.append(f"{rel} :: {slug}\n      alias {a!r} also belongs to {seen[a]!r}")
+                seen[a] = slug
+        units = {}
+        for course in courses:
+            u, unit_errs = unit_tables(course)
+            errors.extend(unit_errs)
+            units.update({k: (course, v) for k, v in u.items()})
+        vocab_by_unit = {}
+        for slug, s in skills.items():
+            where = f"{rel} :: {slug}"
+            kind, level = s.get("kind"), s.get("level")
+            if kind not in ("grammar", "vocabulary"):
+                errors.append(f"{where}\n      kind must be 'grammar' or 'vocabulary'")
+                continue
+            if level not in LEVELS:
+                errors.append(f"{where}\n      level {level!r} is not one of {', '.join(LEVELS)}")
+            if not s.get("title"):
+                errors.append(f"{where}\n      missing title")
+            if kind == "grammar":
+                if s.get("family") not in gfam:
+                    errors.append(f"{where}\n      grammar family {s.get('family')!r} is not in skills/families.json")
+                reason = check_title_style(slug, s.get("title"))
+                if reason:
+                    errors.append(f"{where}\n      title {s.get('title')!r} violates style: {reason}")
+                screen = s.get("taught_in")
+                if not screen:
+                    warn(lang, "grammar skill with no taught_in screen", f"{slug} (write a grammar screen that teaches it)")
+                elif not any(any((ROOT / "content" / c).glob(f"grammar/*/{screen}.json")) for c in courses):
+                    errors.append(f"{where}\n      taught_in screen {screen!r} does not exist in {', '.join(courses)}")
+                for req in s.get("requires", []):
+                    r = skills.get(req)
+                    if not r or r.get("kind") != "grammar":
+                        errors.append(f"{where}\n      requires {req!r}, which is not a grammar skill in {rel}")
+                    elif level in LEVELS and r.get("level") in LEVELS and LEVELS.index(r["level"]) > LEVELS.index(level):
+                        errors.append(f"{where}\n      requires {req!r} ({r['level']}), above this skill's level ({level})")
+            else:
+                fam = s.get("family")
+                if not isinstance(fam, list) or not 1 <= len(fam) <= 2 or any(f not in vfam for f in fam):
+                    errors.append(f"{where}\n      vocabulary family must be a list of 1-2 families from skills/families.json, got {fam!r}")
+                uid = s.get("unit")
+                if (level, uid) not in units:
+                    errors.append(f"{where}\n      unit {uid!r} is not a unit id in any {level} unit table of {', '.join(courses)}")
+                elif slug != f"{level.lower()}-{uid}-vocab":
+                    errors.append(f"{where}\n      a unit's vocabulary skill must be named {level.lower()}-{uid}-vocab")
+                if (level, uid) in vocab_by_unit:
+                    errors.append(f"{where}\n      unit {level}/{uid} already has vocabulary skill {vocab_by_unit[(level, uid)]!r}")
+                vocab_by_unit[(level, uid)] = slug
+        for (level, uid), (course, _) in sorted(units.items()):
+            if (level, uid) not in vocab_by_unit:
+                errors.append(f"content/{course}/curriculum/units/{level.lower()}.json :: {uid}\n      unit has no vocabulary skill "
+                              f"{level.lower()}-{uid}-vocab in {rel}")
+        # requires must not loop
+        state = {}
+
+        def visit(n, path):
+            if state.get(n) == 1:
+                errors.append(f"{rel}: requires loop {' -> '.join(path + [n])}")
+                return
+            if state.get(n) == 2:
+                return
+            state[n] = 1
+            for m in skills.get(n, {}).get("requires", []):
+                visit(m, path + [n])
+            state[n] = 2
+
+        for n in skills:
+            visit(n, [])
+        # frozen list
+        frozen_path = ROOT / "skills" / f"frozen-{lang}.json"
+        frozen = set(json.loads(frozen_path.read_text(encoding="utf-8")).get("skills", {})) if frozen_path.is_file() else set()
+        for slug in sorted(set(skills) - frozen):
+            errors.append(f"{rel} :: {slug}\n      skill is not in skills/frozen-{lang}.json -- adding, merging, splitting or "
+                          f"renaming a skill needs the user's sign-off and an entry there (ROADMAP 125)")
+        for slug in sorted(frozen - set(skills)):
+            errors.append(f"skills/frozen-{lang}.json :: {slug}\n      frozen skill is missing from {rel} -- removing or renaming "
+                          f"a skill needs the user's sign-off and the frozen list updated")
+    return errors
+
+
+def load_tag_lock(lang_dir):
+    path = lang_dir / "indexes" / "tags.lock.json"
+    if not path.is_file():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8")).get("exercises", {})
+
+
+def check_exercise_skills(data, path, lang, course_src, lock, counts):
+    """Skill-system checks for one exercise file. Returns errors; records warnings and per-skill counts."""
+    errs = []
+    if not course_src:
+        return errs
+    skills = course_src.get("skills", {})
+    retired = course_src.get("retired", {})
+    ex_level = path.parent.name.upper()
+    for idx, ex in enumerate(data.get("exercises", [])):
+        ex_id = ex.get("id", f"exercises[{idx}]")
+        where = f"exercises/{idx} ({ex_id})"
+        teaches = ex.get("teaches") if isinstance(ex.get("teaches"), list) else []
+        locked = lock.get(ex_id)
+        if locked is not None:
+            now = {"teaches": teaches, "distractor_skills": ex.get("distractor_skills") or {}}
+            then = {"teaches": locked.get("teaches", []), "distractor_skills": locked.get("distractor_skills") or {}}
+            if now != then:
+                errs.append((where, f"locked tags changed (was {then}) -- a reviewed exercise's tags change only with "
+                                    f"scripts/lock_tags.py and a reason (indexes/tags.lock.json)"))
+        if len(teaches) > 1:
+            (errs.append((where, f"teaches {len(teaches)} skills; exactly one is allowed")) if locked is not None
+             else warn(lang, "exercise teaches more than one skill", f"{path.name} :: {ex_id}"))
+        for slug in teaches:
+            if slug in retired:
+                warn(lang, "exercise uses a retired slug", f"{path.name} :: {ex_id} ({slug})")
+                continue
+            s = skills.get(slug)
+            if not s:
+                continue  # reported by validate_exercise_metadata
+            counts[slug] = counts.get(slug, 0) + 1
+            if ex_level in LEVELS and s.get("level") in LEVELS and LEVELS.index(s["level"]) > LEVELS.index(ex_level):
+                msg = f"{path.name} :: {ex_id} ({slug} is {s['level']}, exercise is {ex_level})"
+                (errs.append((where, f"skill {slug!r} is {s['level']}, above this exercise's level ({ex_level})"))
+                 if locked is not None else warn(lang, "skill above the exercise's level", msg))
+        ds = ex.get("distractor_skills")
+        if ds is not None:
+            n_opts = len(ex.get("options") or [])
+            if not isinstance(ds, dict):
+                errs.append((where, "distractor_skills must map an option index to a skill slug"))
+            else:
+                for k, v in ds.items():
+                    if not str(k).isdigit() or int(k) >= n_opts:
+                        errs.append((where, f"distractor_skills key {k!r} is not an option index"))
+                    if v not in skills or skills[v].get("kind") != "grammar":
+                        errs.append((where, f"distractor_skills value {v!r} is not a grammar skill"))
+    return errs
+
+
 def validate_exercise_metadata(data, lang, skill_registry, alias_map=None, kind_map=None):
     meta_errors = []
     alias_map = alias_map or {}
@@ -384,7 +609,7 @@ def course_setup_errors(lang_dir):
     return errors
 
 
-def validate_language(lang, only=None):
+def validate_language(lang, only=None, sources=None):
     lang_dir = ROOT / "content" / lang
     if not has_course_content(lang_dir):
         return 0, 0, []  # an empty or placeholder course folder has nothing to check yet
@@ -395,6 +620,9 @@ def validate_language(lang, only=None):
 
     schemas = load_schemas(lang_dir)
     skill_registry, alias_map, kind_map = load_skill_registry(lang_dir)
+    course_src = (sources or {}).get(course_language(lang, sources or {}))
+    lock = load_tag_lock(lang_dir)
+    skill_counts = {}
     enforce_metadata = METADATA_ENFORCED_EVERYWHERE or (only is not None)
     failures = []
     passed = failed = 0
@@ -444,6 +672,7 @@ def validate_language(lang, only=None):
             meta_errors = []
             if name == "exercises" and enforce_metadata:
                 meta_errors = validate_exercise_metadata(data, lang, skill_registry, alias_map, kind_map)
+                meta_errors += check_exercise_skills(data, path, lang, course_src, lock, skill_counts)
             elif name == "story" and enforce_metadata:
                 meta_errors = validate_story_metadata(data, path)
             elif name == "units" and enforce_metadata:
@@ -464,6 +693,15 @@ def validate_language(lang, only=None):
     if skipped:
         print(f"{lang}: skipped {skipped} unfinished CCSE file(s)")
 
+    # coverage only means something over the whole course, not a --changed subset
+    if course_src and only is None and enforce_metadata:
+        for slug, s in sorted(course_src.get("skills", {}).items()):
+            if s.get("variant") and s["variant"] != lang:
+                continue
+            n = skill_counts.get(slug, 0)
+            if n < MIN_EXERCISES_PER_SKILL:
+                warn(lang, f"skill with fewer than {MIN_EXERCISES_PER_SKILL} exercises", f"{slug} ({n})")
+
     return passed, failed, failures
 
 
@@ -473,11 +711,23 @@ def main():
     if "--changed" in args:
         args.remove("--changed")
         only = changed_files()
+    show_warnings = "--warnings" in args
+    if show_warnings:
+        args.remove("--warnings")
     langs = args or [p.name for p in (ROOT / "content").iterdir() if p.is_dir()]
 
     total_failed = 0
+    sources, families = load_skill_sources()
+    skill_paths = ("/skills/", "/indexes/", "/curriculum/units/", "/grammar/")
+    if only is None or any(any(s in p.as_posix() for s in skill_paths) for p in only):
+        src_errors = validate_skill_sources(sources, families)
+        if src_errors:
+            print(f"\nskills: {len(src_errors)} error(s)")
+            for e in src_errors:
+                print(f"  - {e}")
+            total_failed += len(src_errors)
     for lang in sorted(langs):
-        passed, failed, failures = validate_language(lang, only)
+        passed, failed, failures = validate_language(lang, only, sources)
         if passed == failed == 0:
             continue
 
@@ -485,6 +735,15 @@ def main():
         for failure in failures:
             print(f"  - {failure}")
         total_failed += failed
+
+    for lang, kinds in sorted(WARNINGS.items()):
+        print(f"\n{lang}: warnings (allowed until the unit is read and locked, ROADMAP 125)")
+        for kind, msgs in sorted(kinds.items()):
+            print(f"  ~ {kind}: {len(msgs)}")
+            for m in (msgs if show_warnings else msgs[:3]):
+                print(f"      {m}")
+        if not show_warnings:
+            print("    (run with --warnings to list them all)")
 
     print()
     if total_failed:

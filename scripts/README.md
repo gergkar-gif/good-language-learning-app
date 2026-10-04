@@ -16,6 +16,8 @@ Run everything from the repository root (`python scripts/<name>.py`).
 | `triage-teaching-order.py`, `triage-teaching-order-hu.py` | Split the audit's teaching-order flags into real gaps versus noise. |
 | `audit-reading-quality.py` | Paragraph typing, dialogue speakers and other reading-quality rules. |
 | `audit_exercise_metadata.py` | Per-course, per-level report of missing `category` / `teaches`. |
+| `resolve_skill_aliases.py` | After an approved skill merge or rename in `skills/<lang>.json`, rewrites alias slugs to the canonical skill in exercises (`teaches`, `distractor_skills`), tests, `targetSkills` and `verb-tense-skills.json`, keeping each file's formatting. `--dry` counts only. |
+| `lock_tags.py` | Locks a read and reviewed unit's exercise tags in `indexes/tags.lock.json` (`lock_tags.py <course> <level>/<unit id> --reason "..."`); refuses a unit that still breaks a tagging rule. ROADMAP 125. |
 | `fill-dictionary-gaps.py` | Fills the gaps the audit finds without spending tokens: `export hu\|es` writes batches for ChatGPT to `imports/dictionary/gap-batches/` (default: words seen 3+ times; `--dry-run` counts), `import <reply.txt> hu\|es` validates the reply and merges it into the dictionary via `imports/dictionary/additions-<lang>.json`, `merge` re-applies the additions after a dictionary re-import (Spanish verbs that share a headword with an adjective go to `spanish-verb-homographs.json`). Words ChatGPT calls non-words are remembered in `coverage-ignore.json`. `pull-ai hu\|es` downloads the Reader's cached AI glosses for review (see `docs/SERVICES.md`, "Word gloss"). |
 | `audit-reader-coverage.js` | Runs every story word through the Reader's own `Lexicon.lookup()` (headless) and reports the words that would show "Not in the dictionary yet", plus any that make the lookup throw. `node scripts/audit-reader-coverage.js [hu\|es-es\|es-latam\|all] [--out report.json] [--markdown summary.md]`. Takes seconds. Runs in CI as a report only (`.github/workflows/reader-coverage.yml`); words to skip go in `imports/dictionary/coverage-ignore.json` (`all`, `hu`, `es`). |
 
@@ -26,6 +28,7 @@ and the story manifests. These scripts build the indexes the engine reads:
 
 | Script | Output feeds |
 |---|---|
+| `build_skill_registry.py` | Each course's `skill-registry.json`, `grammar-titles.json` and `skill-prereqs.json`, from the source `skills/<lang>.json` (never edit the outputs by hand). `--check` exits 1 if they're out of date. |
 | `build_grammar_guide_index.py` | Grammar Guide global search |
 | `build_grammar_index.py` | Workshop Grammar Driller (skill to exercise lookup) |
 | `build_translation_index.py` | Translation Driller and Vocabulary Driller context mode |

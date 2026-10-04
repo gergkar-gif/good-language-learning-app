@@ -9,22 +9,31 @@ read them before generating content. In short:
 - `category`: one of `vocabulary | grammar | reading | dialogue | writing |
   listening`. Hungarian lesson stages (`practice`, `controlled`, …) go in
   `stage`, never in `category`.
-- `teaches`: required unless `category` is `reading`. Use existing canonical
-  slugs from `content/<course>/indexes/skill-registry.json`; vocabulary
-  exercises get the unit's vocabulary-theme slug, not a grammar skill. Add
-  a new slug only for a genuinely new reusable skill, never a unit- or
-  topic-specific one (`past-tense-unit24`), and give a new grammar skill a
-  title in `grammar-titles.json` in the house style.
+- `teaches`: exactly one slug, required unless `category` is `reading`,
+  chosen by what a wrong answer shows: a tested form gets its grammar skill,
+  a tested word gets the unit's vocabulary skill (`<level>-<unit id>-vocab`).
+- **The skill list is frozen** (ROADMAP 125, docs/skill-tagging-spec.md).
+  The source of truth is `skills/<lang>.json`; the course registries,
+  `grammar-titles.json` and `skill-prereqs.json` are generated from it by
+  `python scripts/build_skill_registry.py`, so never edit those by hand.
+  Never add, merge, split or rename a skill without the user's sign-off and
+  an entry in `skills/frozen-<lang>.json`; the validator fails otherwise.
+- Grammar choice items get `distractor_skills` where a wrong option is a
+  real form of another skill. A read and reviewed unit is locked with
+  `scripts/lock_tags.py`; its tags then can't change silently.
 
 `python scripts/validate-content.py --changed` checks all of this. Run it
 before committing a unit, not only at push time, so a missing tag is caught
-before a whole unit has been written without it.
+before a whole unit has been written without it. Rules the existing content
+can't meet until the read-through (one tag, level, retired slugs, coverage)
+are warnings; `--warnings` lists them.
 
 **Starting a new language** (Polish, Czech, Slovak, French, German, …):
-follow AGENTS.md § "Adding a new course" *before* writing content. The new
-course copies the reference schemas, gets its own `skill-registry.json`,
-and is held to exactly the same metadata rules. The validator fails a
-course folder that has content but no schemas or tag registry.
+follow AGENTS.md § "Adding a new course" *before* writing content: unit ids
+and `skills/<lang>.json` (families, levels, `taught_in`, `requires`, frozen
+list) come first. The new course is held to exactly the same rules, and the
+validator fails a course folder that has content but no schemas or tag
+registry.
 
 ## Keep ROADMAP.md current
 

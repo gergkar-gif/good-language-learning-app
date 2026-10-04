@@ -197,7 +197,10 @@ const LearnerModel = (function () {
         if (typeof LevelTest === 'undefined' || typeof LEVEL_ORDER === 'undefined') return flags;
         LEVEL_ORDER.forEach(level => {
             const result = LevelTest.resultFor(level);
-            (result && result.weakest || []).forEach(id => flags.add(id));
+            // Stored results name skills as they were tagged then; map an
+            // old (merged or renamed) slug to its canonical skill so a past
+            // result still counts after a registry change (ROADMAP 125).
+            (result && result.weakest || []).forEach(id => flags.add(_canonicalSkill(id)));
         });
         return flags;
     }
@@ -251,6 +254,7 @@ const LearnerModel = (function () {
     // is the actual gap this module closes; today's code silently drops a
     // level-test miss unless recycle evidence also happens to exist.
     async function weakSkills(limit) {
+        await _ensureAliasesLoaded();
         const bySkill = await _skillRefs();
         if (!bySkill) return [];
         const schedule = (typeof loadRecycleSchedule === 'function') ? loadRecycleSchedule() : {};

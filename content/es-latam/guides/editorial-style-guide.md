@@ -64,7 +64,7 @@ Every exercise should test a learning objective.
 Avoid exercises that exist only to increase lesson length.
 
 - Every exercise must specify `category` (`vocabulary | grammar | reading | dialogue | writing | listening`).
-- Every non-`reading` exercise must carry a non-empty `teaches` array of lowercase-hyphenated skill slugs present in `content/<course>/indexes/skill-registry.json` (applies to both `es-latam` and `es-es`).
+- Every non-`reading` exercise must carry exactly one `teaches` slug from the frozen skill list in `skills/<lang>.json` (chosen by what a wrong answer shows; full rules in AGENTS.md § "Exercise metadata" and docs/skill-tagging-spec.md) (applies to both `es-latam` and `es-es`).
 
 ---
 

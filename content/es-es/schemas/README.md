@@ -41,7 +41,7 @@ reads `generated/indexes/grammar-index.json` rather than scanning content
 live. Run it whenever a lesson's exercises change, same as `build-manifest.py`.
 
 **Exercise metadata (`category` + `teaches`) is mandatory:**
-Every exercise in `exercises/*/*.json` must carry `category` (`vocabulary | grammar | reading | dialogue | writing | listening`), and every non-`reading` exercise must carry a non-empty `teaches` array of lowercase-hyphenated skill slugs present in `content/es-es/indexes/skill-registry.json`. (Peninsular Spanish lessons also follow the shared Spanish authoring guides under `content/es-latam/guides/`.)
+Every exercise in `exercises/*/*.json` must carry `category` (`vocabulary | grammar | reading | dialogue | writing | listening`), and every non-`reading` exercise must carry exactly one `teaches` slug from the frozen skill list in `skills/<lang>.json` (chosen by what a wrong answer shows; full rules in AGENTS.md § "Exercise metadata" and docs/skill-tagging-spec.md). (Peninsular Spanish lessons also follow the shared Spanish authoring guides under `content/es-latam/guides/`.)
 
 Likewise, any grammar file's `examples` items or `sentence-builder` exercise
 with an `english` field automatically becomes drillable in the Translation

@@ -147,8 +147,10 @@ CURRICULUM_META = {
 # grouping are a curriculum decision (which topic sits where) that can't be
 # derived from lesson filenames alone, so it lives in
 # content/<lang>/curriculum/units/<level>.json (schema:
-# content/<lang>/schemas/units.schema.json) -- one file per level that has
-# an explicit table, an ordered array of {title, stems, track?}. Adding a
+# content/<lang>/schemas/units.schema.json) -- one file per level, an ordered
+# array of {id, title, stems, track?}. `id` is the unit's permanent id
+# (ROADMAP 125); it's written to curriculum.json as the unit's "slug", while
+# "id" there stays the positional unit.<level>.<nn> that learner data uses. Adding a
 # unit to an already-tabled level means appending one entry to that JSON
 # file; no code change needed. A level with no such file falls back to
 # auto_group_units() below (plain-numbered lesson files, e.g. Hungarian
@@ -211,106 +213,12 @@ LEVEL_TRACKS = {
 }
 
 # Unit titles, in order, for a lang/level using auto_group_units() (no
-# content/<lang>/curriculum/units/<level>.json). This is the ONE thing auto-grouping can't derive
-# from the files themselves — a unit's thematic name ("Greetings & Basic
-# Interaction") only ever existed in that content package's own
-# UNIT_N_MANIFEST.json, which isn't part of the committed repo. Add one
-# title here, in position, when a new unit's lessons land. Forgetting costs
-# a generic "Unit N" label (auto_group_units() falls back to that), not a
-# unit silently missing lessons or vanishing from the count — unlike the
-# old stems-table approach, where a missed/mistyped entry meant
-# curriculum.json quietly kept reporting the previous lesson total.
-LANG_UNIT_TITLES = {
-    "hu": {
-        "a1": [
-            "Learning to Read Hungarian",
-            "Greetings & Basic Interaction",
-            "Introducing Yourself",
-            "Numbers & Personal Information",
-            # Units 5-20 shipped with no UNIT_N_MANIFEST.json (unlike 1-4),
-            # so these titles are inferred from each unit's own lesson
-            # titles/grammar fields and consolidation goals rather than
-            # sourced from the content package itself — check with whoever
-            # is generating the content if a more authoritative title exists.
-            "Objects & Locations",
-            "Family",
-            "Describing People",
-            "Plurals & Quantities",
-            "Possession",
-            "Foundations Review",
-            "Where Things Are",
-            "Going Places",
-            "Everyday Actions",
-            "Questions & Negation",
-            "Daily Routine",
-            "Time & Dates",
-            "Frequency & Word Order",
-            "At Home",
-            "Food & Drink",
-            "Everyday Hungarian Review",
-            # Units 21-30 shipped with real UNIT_N_MANIFEST.json titles.
-            "Buying Food",
-            "At the Market",
-            "At the Café",
-            "At the Restaurant",
-            "Shopping",
-            "Clothes & Appearance",
-            "The City",
-            "Transport & Directions",
-            "Hobbies & Free Time",
-            "Friends & Making Plans",
-            "Coming from Places: Origin Cases",
-            "Languages & Manner: The Essive-Modal",
-            "Where Things Are: Postpositions",
-        ],
-        "a2": [
-            "Daily Life & Routines",
-            "Time, Dates & Schedules",
-            "Family & Family Life",
-            "People & Personality",
-            "Friends & Relationships",
-            "Home & Housing",
-            "Neighbourhood & City",
-            "Shopping & Prices",
-            "Food & Eating Habits",
-            "Cooking",
-            "Leisure & Hobbies",
-            "Culture & Going Out",
-            "Weather & Seasons",
-            "Transport & Getting Around",
-            "Travel & Holidays",
-            "Hotels & Accommodation",
-            "Health & the Body",
-            "Healthy Living & Advice",
-            "School & Language Learning",
-            "Review 1: Life, Leisure & Health",
-            "Work & Professions",
-            "Verb Prefixes",
-            "Ability, Possibility & Permission",
-            "Talking About the Past I",
-            "Talking About the Past II",
-            "Telling Stories",
-            "Future Plans",
-            "Suggestions & Conditional",
-            "Opinions, Preferences & Comparisons",
-            "Review 2: Work, Past & Opinions",
-            "Problems, Requests & Everyday Communication",
-            "Living in Hungarian",
-            "Declined Pronouns: Internal & Surface Cases",
-            "Declined Pronouns: Proximity & Motion",
-            "Change of State: The Translative Case",
-            "Roles & Capacities: The Essive-Formal",
-            "Sociocultural Pragmatics & Customs",
-            "The -lak/-lek Verbal Suffix",
-            "Possessions in the Plural: The Plural Possessed",
-            "Inflected Postpositions: Personal Relations",
-            "Inflected Infinitives & Necessity",
-            "Post Office, Mail & Parcel Lockers",
-            "Banking, Payments & ATM Services",
-            "Pharmacy, Medication & Medical Triage",
-        ],
-    },
-}
+# content/<lang>/curriculum/units/<level>.json). Empty since 2026-10-04: every
+# level of every course now has a unit table, which also carries each unit's
+# permanent id (ROADMAP 125); Hungarian A1/A2's titles moved there. Only a
+# brand-new level with no table yet would fall back to auto_group_units(),
+# and gets a generic "Unit N" label until its table is written.
+LANG_UNIT_TITLES = {}
 
 
 def auto_group_units(lang, level_id, level_path):
@@ -468,6 +376,7 @@ def build_curriculum(lang="es"):
                                else f"unit.{level_id}.{position:02d}")
                     unit = {
                         "id": unit_id,
+                        "slug": entry["id"],
                         "label": str(position),
                         "title": title,
                         "lessons": lessons

@@ -16,6 +16,8 @@ on:
     branches: [master]
     paths:
       - 'content/**'
+      - 'skills/**'
+      - 'scripts/build_skill_registry.py'
       - 'imports/verbs/**'
       - 'build-manifest.py'
       - 'scripts/build_grammar_index.py'
@@ -54,6 +56,11 @@ jobs:
       # are a human/Claude problem to fix, not something the generators
       # below should paper over — fail loudly here instead of silently
       # committing derived files built from broken source content.
+      # skills/<lang>.json is the source of truth for every course's
+      # skill-registry.json, grammar-titles.json and skill-prereqs.json.
+      - name: Regenerate skill registry files
+        run: python3 scripts/build_skill_registry.py
+
       - name: Validate content schemas
         run: python3 scripts/validate-content.py
 
