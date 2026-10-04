@@ -51,6 +51,9 @@ const LevelTest = (function () {
         if (norm === 'B2') {
             return lang === 'es-latam';
         }
+        if (norm === 'C1') {
+            return lang === 'hu';
+        }
         return false;
     }
 

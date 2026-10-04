@@ -33,7 +33,9 @@ const Journey = (function () {
         { id: 'level-a1',      label: 'A1 complete',              test: d => !!d.levelDone.A1 },
         { id: 'test-a1',       label: 'A1 Level Test passed',     test: d => !!(d.levelTests && d.levelTests.A1 && d.levelTests.A1.passed) },
         { id: 'test-a2',       label: 'A2 Level Test passed',     test: d => !!(d.levelTests && d.levelTests.A2 && d.levelTests.A2.passed) },
-        { id: 'test-b1',       label: 'B1 Level Test passed',     test: d => !!(d.levelTests && d.levelTests.B1 && d.levelTests.B1.passed) }
+        { id: 'test-b1',       label: 'B1 Level Test passed',     test: d => !!(d.levelTests && d.levelTests.B1 && d.levelTests.B1.passed) },
+        { id: 'test-b2',       label: 'B2 Level Test passed',     test: d => !!(d.levelTests && d.levelTests.B2 && d.levelTests.B2.passed) },
+        { id: 'test-c1',       label: 'C1 Level Test passed',     test: d => !!(d.levelTests && d.levelTests.C1 && d.levelTests.C1.passed) }
     ];
 
     // Categories a lesson's exercises fall into, mapped to the skill each one
