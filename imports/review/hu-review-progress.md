@@ -1627,47 +1627,47 @@ Units in review order (a numbered unit, then a topic unit). **Stop after block 1
 ### Block 4
 
 
-- [ ] content/hu/exercises/c1/c1-19-01-ex.json
-- [ ] content/hu/exercises/c1/c1-19-02-ex.json
-- [ ] content/hu/exercises/c1/c1-19-03-ex.json
-- [ ] content/hu/exercises/c1/c1-19-04-ex.json
-- [ ] content/hu/exercises/c1/c1-19-05-ex.json
-- [ ] content/hu/exercises/c1/c1-19-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-19-01-ex.json
+- [x] content/hu/exercises/c1/c1-19-02-ex.json
+- [x] content/hu/exercises/c1/c1-19-03-ex.json
+- [x] content/hu/exercises/c1/c1-19-04-ex.json
+- [x] content/hu/exercises/c1/c1-19-05-ex.json
+- [x] content/hu/exercises/c1/c1-19-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-mediaszabadsag-01-ex.json
-- [ ] content/hu/exercises/c1/c1-mediaszabadsag-02-ex.json
-- [ ] content/hu/exercises/c1/c1-mediaszabadsag-03-ex.json
-- [ ] content/hu/exercises/c1/c1-mediaszabadsag-04-ex.json
-- [ ] content/hu/exercises/c1/c1-mediaszabadsag-05-ex.json
-- [ ] content/hu/exercises/c1/c1-mediaszabadsag-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-mediaszabadsag-01-ex.json
+- [x] content/hu/exercises/c1/c1-mediaszabadsag-02-ex.json
+- [x] content/hu/exercises/c1/c1-mediaszabadsag-03-ex.json
+- [x] content/hu/exercises/c1/c1-mediaszabadsag-04-ex.json
+- [x] content/hu/exercises/c1/c1-mediaszabadsag-05-ex.json
+- [x] content/hu/exercises/c1/c1-mediaszabadsag-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-20-01-ex.json
-- [ ] content/hu/exercises/c1/c1-20-02-ex.json
-- [ ] content/hu/exercises/c1/c1-20-03-ex.json
-- [ ] content/hu/exercises/c1/c1-20-04-ex.json
-- [ ] content/hu/exercises/c1/c1-20-05-ex.json
-- [ ] content/hu/exercises/c1/c1-20-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-20-01-ex.json
+- [x] content/hu/exercises/c1/c1-20-02-ex.json
+- [x] content/hu/exercises/c1/c1-20-03-ex.json
+- [x] content/hu/exercises/c1/c1-20-04-ex.json
+- [x] content/hu/exercises/c1/c1-20-05-ex.json
+- [x] content/hu/exercises/c1/c1-20-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-megfigyeles-01-ex.json
-- [ ] content/hu/exercises/c1/c1-megfigyeles-02-ex.json
-- [ ] content/hu/exercises/c1/c1-megfigyeles-03-ex.json
-- [ ] content/hu/exercises/c1/c1-megfigyeles-04-ex.json
-- [ ] content/hu/exercises/c1/c1-megfigyeles-05-ex.json
-- [ ] content/hu/exercises/c1/c1-megfigyeles-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-megfigyeles-01-ex.json
+- [x] content/hu/exercises/c1/c1-megfigyeles-02-ex.json
+- [x] content/hu/exercises/c1/c1-megfigyeles-03-ex.json
+- [x] content/hu/exercises/c1/c1-megfigyeles-04-ex.json
+- [x] content/hu/exercises/c1/c1-megfigyeles-05-ex.json
+- [x] content/hu/exercises/c1/c1-megfigyeles-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-21-01-ex.json
-- [ ] content/hu/exercises/c1/c1-21-02-ex.json
-- [ ] content/hu/exercises/c1/c1-21-03-ex.json
-- [ ] content/hu/exercises/c1/c1-21-04-ex.json
-- [ ] content/hu/exercises/c1/c1-21-05-ex.json
-- [ ] content/hu/exercises/c1/c1-21-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-21-01-ex.json
+- [x] content/hu/exercises/c1/c1-21-02-ex.json
+- [x] content/hu/exercises/c1/c1-21-03-ex.json
+- [x] content/hu/exercises/c1/c1-21-04-ex.json
+- [x] content/hu/exercises/c1/c1-21-05-ex.json
+- [x] content/hu/exercises/c1/c1-21-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-mestersegesintelligencia-01-ex.json
-- [ ] content/hu/exercises/c1/c1-mestersegesintelligencia-02-ex.json
-- [ ] content/hu/exercises/c1/c1-mestersegesintelligencia-03-ex.json
-- [ ] content/hu/exercises/c1/c1-mestersegesintelligencia-04-ex.json
-- [ ] content/hu/exercises/c1/c1-mestersegesintelligencia-05-ex.json
-- [ ] content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-mestersegesintelligencia-01-ex.json
+- [x] content/hu/exercises/c1/c1-mestersegesintelligencia-02-ex.json
+- [x] content/hu/exercises/c1/c1-mestersegesintelligencia-03-ex.json
+- [x] content/hu/exercises/c1/c1-mestersegesintelligencia-04-ex.json
+- [x] content/hu/exercises/c1/c1-mestersegesintelligencia-05-ex.json
+- [x] content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json
 
 - [ ] content/hu/exercises/c1/c1-22-01-ex.json
 - [ ] content/hu/exercises/c1/c1-22-02-ex.json
