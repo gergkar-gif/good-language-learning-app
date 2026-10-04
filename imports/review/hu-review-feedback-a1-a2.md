@@ -224,3 +224,82 @@ report, with the same report as before. Keep the pace and the questions
 file exactly as in block 1. Don't apply your own proposed changes from
 the questions file before the native speaker answers
 (`c1-05-04-controlled-2` already says *depressing*).
+
+---
+
+# Round 5: review of C1 blocks 2-3 (ROADMAP 120, 2026-10-04)
+
+Commits `810dd6c6` … `abc24a66`. Section 11 is fixed well: the new
+*holott* options, the two rebuilt replies and the block 1 synonyms are
+all good. Blocks 2-3 are mechanically clean (0 errors, 0 suspects in
+reviewed files), and most new wrong options are good near misses
+(*hatályon kívül / érvényen felül*, *kivéve ha / tekintettel arra hogy*).
+
+But the quality dropped in two places, the same way as at A1-B1: the
+half-blocks came 6-17 minutes apart (about 1-2 seconds per exercise),
+**no questions were logged** in 216 files, and three of the four commits
+have no body.
+
+## 13. English-only hints: the main problem (199 to recheck)
+
+In blocks 2-3 you removed the Hungarian from 172 hints but added a
+second accepted answer to only 21. In a sample of 30, about 12 were
+wrong. Two kinds:
+
+**a) A correct synonym is marked wrong.** *nyomán*: *következtében*.
+*bármi*: *akármi*. *éppúgy*: *ugyanúgy*. *valószínűsíthetően*:
+*valószínűleg*. *annak függvényében, hogy*: *attól függően, hogy*.
+*zöldrefestés*: *zöldre festés*, *zöldmosás*. *Aggasztó (módon)*:
+*Nyugtalanító*, *Riasztó*. *Miként … akként*: *Amint*. For every
+English-only hint, ask: what else would a good C1 learner write here?
+Put every correct word in `answers`.
+
+**b) The English hint can't lead to the answer.** Function words and
+correlatives can't be hinted in English:
+- `c1-16-01-practice-4` *_____ dacára, hogy* (In spite of) → *Annak*.
+  "In spite of" is already *dacára*.
+- `c1-17-02-practice-4` *_____ … arra kell* (Where) → *Amerre*. "Where"
+  suggests *Ahol*.
+- `c1-kozlekedespolitika-consolidation-7` *Minél több …, _____ kevesebb*
+  (the more) → *annál*. The English is wrong: it is "the less".
+
+For these, give a Hungarian hint: `(az + -nak)`, `(correlative of
+arra)`, `(minél … ___)`.
+
+Do the whole list: `imports/review/c1-english-hint-recheck.txt` (id,
+sentence, answer), 199 fill-blanks from blocks 1-3 with an English-only
+hint and one accepted answer. Some really have only one answer (*Párizsi*,
+*jogosult*): leave those. The rest get synonyms in `answers`, or a
+Hungarian hint.
+
+## 14. Correct answers (R2 again), and two replies (R1)
+
+Three of the eight changed correct answers are wrong. Restore or rewrite:
+- `c1-16-01-introduce-1`: *Mit jelent a 'deliberatív demokrácia'?* is now
+  answered with *Az ellenfél érveinek elismerése mellett a saját álláspont
+  finom hangsúlyozására*, another exercise's options pasted in (the same
+  mistake as `c1-01-01-practice-9`). Restore the original answer and
+  write two wrong options about democracy models.
+- `c1-16-01-dialogue-6`: *érvelési fegyelem* was right and natural;
+  *érvelési kompromisszum* is not a phrase. Restore *fegyelem*.
+- `c1-geopolitika-01-introduce-1`: *hintapolitika* means swinging
+  tactically between two great powers. That was the old answer. The new
+  one (*az euroatlanti elköteleződés feladása a keleti autoriter
+  rezsimek felé történő közeledésért*) is a political judgement, not a
+  definition. Restore the original.
+
+Two replies with a second right answer:
+- `c1-mediakritika-02-dialogue-6`: *mindenkinek megvan a maga (saját)
+  igazsága* is a stock phrase and fits. Replace *igazsága*.
+- `c1-14-03-dialogue-6`: *az uniós irányelvnek való megfelelés* is fine
+  Hungarian and makes sense. Use a form error (*taxonómiához*,
+  *taxonómiával*) instead.
+
+## 15. Going on
+
+Fix sections 13 and 14 first, in one commit with a body. Then do
+**block 4 only** and stop. Back to one block at a time until a block
+comes back without these problems. Every commit needs a body: counts by
+type, hints rewritten, synonyms added, correct answers changed (ids),
+questions logged. If you log no questions for a whole block, explain
+why in the report.
