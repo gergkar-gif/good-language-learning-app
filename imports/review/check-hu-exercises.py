@@ -13,6 +13,9 @@ message; they are patterns, not proof):
   - dont-know: "Nem tudom." / "Nem értem." as a wrong option (answers anything)
   - case: a noun that takes -n/-ra/-ról used with -ban/-ba/-ból
     (postába, állomásban, a helyben, ...). "helyben" meaning "locally" is fine.
+  - hint-leak: a fill-blank's answer appears word for word in its hint
+    (a bracket in `sentence`, or `hint`). Fine only when the answer is
+    itself the dictionary form, e.g. `(olvas + she)` -> `olvas`.
 """
 import glob, json, re, sys
 from pathlib import Path
@@ -23,6 +26,7 @@ DONT_KNOW = {'nem tudom', 'nem értem'}
 ON_NOUNS = r'(posta|állomás|pályaudvar|piac|egyetem|repülőtér|repülőtere|munkahely|hely|tér|tere|sziget|strand|' \
            r'Budapest|Magyarország|koncert|előadás|tanfolyam|meccs|kirándulás|konferencia|értekezlet)'
 CASE = re.compile(r'\b' + ON_NOUNS + r'(ba|be|ban|ben|ból|ből)\b', re.I)
+PAREN = re.compile(r'\(([^)]*)\)')
 CHOICE = ('multiple-choice', 'dialogue-complete', 'listening-choice')
 
 
@@ -66,6 +70,14 @@ def main():
                         suspects.append(f'giveaway   {i}')
                     if any(norm(x) in DONT_KNOW for x in wrong):
                         suspects.append(f'dont-know  {i}')
+                if e.get('type') == 'fill-blank':
+                    ans = e.get('answers') or [e.get('answer')]
+                    hints = PAREN.findall(e.get('sentence') or e.get('question') or '')
+                    if isinstance(e.get('hint'), str):
+                        hints.append(e['hint'])
+                    if any(isinstance(a, str) and a and re.search(r'(?<!\w)' + re.escape(a.lower()) + r'(?!\w)', h.lower())
+                           for a in ans for h in hints):
+                        suspects.append(f'hint-leak  {i}')
                 for t in texts(e):
                     m = CASE.search(t)
                     if m:

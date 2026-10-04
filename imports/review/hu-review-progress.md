@@ -1358,7 +1358,12 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b2/b2-urbanusnepi-04-ex.json
 - [x] content/hu/exercises/b2/b2-urbanusnepi-05-ex.json
 - [x] content/hu/exercises/b2/b2-urbanusnepi-consolidation-ex.json
-## C1 (12 files, 144 exercises)
+## C1 (432 files, 3691 exercises)
+
+Units in review order (a numbered unit, then a topic unit). **Stop after block 1** (the first 12 units) for review.
+
+
+### Block 1
 
 
 - [ ] content/hu/exercises/c1/c1-01-01-ex.json
@@ -1367,9 +1372,515 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [ ] content/hu/exercises/c1/c1-01-04-ex.json
 - [ ] content/hu/exercises/c1/c1-01-05-ex.json
 - [ ] content/hu/exercises/c1/c1-01-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-alkotmanyjog-01-ex.json
+- [ ] content/hu/exercises/c1/c1-alkotmanyjog-02-ex.json
+- [ ] content/hu/exercises/c1/c1-alkotmanyjog-03-ex.json
+- [ ] content/hu/exercises/c1/c1-alkotmanyjog-04-ex.json
+- [ ] content/hu/exercises/c1/c1-alkotmanyjog-05-ex.json
+- [ ] content/hu/exercises/c1/c1-alkotmanyjog-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-02-01-ex.json
+- [ ] content/hu/exercises/c1/c1-02-02-ex.json
+- [ ] content/hu/exercises/c1/c1-02-03-ex.json
+- [ ] content/hu/exercises/c1/c1-02-04-ex.json
+- [ ] content/hu/exercises/c1/c1-02-05-ex.json
+- [ ] content/hu/exercises/c1/c1-02-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-bioetika-01-ex.json
+- [ ] content/hu/exercises/c1/c1-bioetika-02-ex.json
+- [ ] content/hu/exercises/c1/c1-bioetika-03-ex.json
+- [ ] content/hu/exercises/c1/c1-bioetika-04-ex.json
+- [ ] content/hu/exercises/c1/c1-bioetika-05-ex.json
+- [ ] content/hu/exercises/c1/c1-bioetika-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-03-01-ex.json
+- [ ] content/hu/exercises/c1/c1-03-02-ex.json
+- [ ] content/hu/exercises/c1/c1-03-03-ex.json
+- [ ] content/hu/exercises/c1/c1-03-04-ex.json
+- [ ] content/hu/exercises/c1/c1-03-05-ex.json
+- [ ] content/hu/exercises/c1/c1-03-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-biroifuggetlenseg-01-ex.json
+- [ ] content/hu/exercises/c1/c1-biroifuggetlenseg-02-ex.json
+- [ ] content/hu/exercises/c1/c1-biroifuggetlenseg-03-ex.json
+- [ ] content/hu/exercises/c1/c1-biroifuggetlenseg-04-ex.json
+- [ ] content/hu/exercises/c1/c1-biroifuggetlenseg-05-ex.json
+- [ ] content/hu/exercises/c1/c1-biroifuggetlenseg-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-04-01-ex.json
+- [ ] content/hu/exercises/c1/c1-04-02-ex.json
+- [ ] content/hu/exercises/c1/c1-04-03-ex.json
+- [ ] content/hu/exercises/c1/c1-04-04-ex.json
+- [ ] content/hu/exercises/c1/c1-04-05-ex.json
+- [ ] content/hu/exercises/c1/c1-04-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-egeszsegugy-01-ex.json
+- [ ] content/hu/exercises/c1/c1-egeszsegugy-02-ex.json
+- [ ] content/hu/exercises/c1/c1-egeszsegugy-03-ex.json
+- [ ] content/hu/exercises/c1/c1-egeszsegugy-04-ex.json
+- [ ] content/hu/exercises/c1/c1-egeszsegugy-05-ex.json
+- [ ] content/hu/exercises/c1/c1-egeszsegugy-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-05-01-ex.json
+- [ ] content/hu/exercises/c1/c1-05-02-ex.json
+- [ ] content/hu/exercises/c1/c1-05-03-ex.json
+- [ ] content/hu/exercises/c1/c1-05-04-ex.json
+- [ ] content/hu/exercises/c1/c1-05-05-ex.json
+- [ ] content/hu/exercises/c1/c1-05-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-emberijogok-01-ex.json
+- [ ] content/hu/exercises/c1/c1-emberijogok-02-ex.json
+- [ ] content/hu/exercises/c1/c1-emberijogok-03-ex.json
+- [ ] content/hu/exercises/c1/c1-emberijogok-04-ex.json
+- [ ] content/hu/exercises/c1/c1-emberijogok-05-ex.json
+- [ ] content/hu/exercises/c1/c1-emberijogok-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-06-01-ex.json
+- [ ] content/hu/exercises/c1/c1-06-02-ex.json
+- [ ] content/hu/exercises/c1/c1-06-03-ex.json
+- [ ] content/hu/exercises/c1/c1-06-04-ex.json
+- [ ] content/hu/exercises/c1/c1-06-05-ex.json
+- [ ] content/hu/exercises/c1/c1-06-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-emlekezetpolitika-01-ex.json
+- [ ] content/hu/exercises/c1/c1-emlekezetpolitika-02-ex.json
+- [ ] content/hu/exercises/c1/c1-emlekezetpolitika-03-ex.json
+- [ ] content/hu/exercises/c1/c1-emlekezetpolitika-04-ex.json
+- [ ] content/hu/exercises/c1/c1-emlekezetpolitika-05-ex.json
+- [ ] content/hu/exercises/c1/c1-emlekezetpolitika-consolidation-ex.json
+
+### Block 2
+
+
+- [ ] content/hu/exercises/c1/c1-07-01-ex.json
+- [ ] content/hu/exercises/c1/c1-07-02-ex.json
+- [ ] content/hu/exercises/c1/c1-07-03-ex.json
+- [ ] content/hu/exercises/c1/c1-07-04-ex.json
+- [ ] content/hu/exercises/c1/c1-07-05-ex.json
+- [ ] content/hu/exercises/c1/c1-07-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-energetika-01-ex.json
+- [ ] content/hu/exercises/c1/c1-energetika-02-ex.json
+- [ ] content/hu/exercises/c1/c1-energetika-03-ex.json
+- [ ] content/hu/exercises/c1/c1-energetika-04-ex.json
+- [ ] content/hu/exercises/c1/c1-energetika-05-ex.json
+- [ ] content/hu/exercises/c1/c1-energetika-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-08-01-ex.json
+- [ ] content/hu/exercises/c1/c1-08-02-ex.json
+- [ ] content/hu/exercises/c1/c1-08-03-ex.json
+- [ ] content/hu/exercises/c1/c1-08-04-ex.json
+- [ ] content/hu/exercises/c1/c1-08-05-ex.json
+- [ ] content/hu/exercises/c1/c1-08-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-esszemuveszet-01-ex.json
+- [ ] content/hu/exercises/c1/c1-esszemuveszet-02-ex.json
+- [ ] content/hu/exercises/c1/c1-esszemuveszet-03-ex.json
+- [ ] content/hu/exercises/c1/c1-esszemuveszet-04-ex.json
+- [ ] content/hu/exercises/c1/c1-esszemuveszet-05-ex.json
+- [ ] content/hu/exercises/c1/c1-esszemuveszet-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-09-01-ex.json
+- [ ] content/hu/exercises/c1/c1-09-02-ex.json
+- [ ] content/hu/exercises/c1/c1-09-03-ex.json
+- [ ] content/hu/exercises/c1/c1-09-04-ex.json
+- [ ] content/hu/exercises/c1/c1-09-05-ex.json
+- [ ] content/hu/exercises/c1/c1-09-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-felsooktatas-01-ex.json
+- [ ] content/hu/exercises/c1/c1-felsooktatas-02-ex.json
+- [ ] content/hu/exercises/c1/c1-felsooktatas-03-ex.json
+- [ ] content/hu/exercises/c1/c1-felsooktatas-04-ex.json
+- [ ] content/hu/exercises/c1/c1-felsooktatas-05-ex.json
+- [ ] content/hu/exercises/c1/c1-felsooktatas-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-10-01-ex.json
+- [ ] content/hu/exercises/c1/c1-10-02-ex.json
+- [ ] content/hu/exercises/c1/c1-10-03-ex.json
+- [ ] content/hu/exercises/c1/c1-10-04-ex.json
+- [ ] content/hu/exercises/c1/c1-10-05-ex.json
+- [ ] content/hu/exercises/c1/c1-10-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-geopolitika-01-ex.json
+- [ ] content/hu/exercises/c1/c1-geopolitika-02-ex.json
+- [ ] content/hu/exercises/c1/c1-geopolitika-03-ex.json
+- [ ] content/hu/exercises/c1/c1-geopolitika-04-ex.json
+- [ ] content/hu/exercises/c1/c1-geopolitika-05-ex.json
+- [ ] content/hu/exercises/c1/c1-geopolitika-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-11-01-ex.json
+- [ ] content/hu/exercises/c1/c1-11-02-ex.json
+- [ ] content/hu/exercises/c1/c1-11-03-ex.json
+- [ ] content/hu/exercises/c1/c1-11-04-ex.json
+- [ ] content/hu/exercises/c1/c1-11-05-ex.json
+- [ ] content/hu/exercises/c1/c1-11-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-irodalmielet-01-ex.json
+- [ ] content/hu/exercises/c1/c1-irodalmielet-02-ex.json
+- [ ] content/hu/exercises/c1/c1-irodalmielet-03-ex.json
+- [ ] content/hu/exercises/c1/c1-irodalmielet-04-ex.json
+- [ ] content/hu/exercises/c1/c1-irodalmielet-05-ex.json
+- [ ] content/hu/exercises/c1/c1-irodalmielet-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-12-01-ex.json
+- [ ] content/hu/exercises/c1/c1-12-02-ex.json
+- [ ] content/hu/exercises/c1/c1-12-03-ex.json
+- [ ] content/hu/exercises/c1/c1-12-04-ex.json
+- [ ] content/hu/exercises/c1/c1-12-05-ex.json
+- [ ] content/hu/exercises/c1/c1-12-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-jogallamisag-01-ex.json
+- [ ] content/hu/exercises/c1/c1-jogallamisag-02-ex.json
+- [ ] content/hu/exercises/c1/c1-jogallamisag-03-ex.json
+- [ ] content/hu/exercises/c1/c1-jogallamisag-04-ex.json
+- [ ] content/hu/exercises/c1/c1-jogallamisag-05-ex.json
+- [ ] content/hu/exercises/c1/c1-jogallamisag-consolidation-ex.json
+
+### Block 3
+
+
+- [ ] content/hu/exercises/c1/c1-13-01-ex.json
+- [ ] content/hu/exercises/c1/c1-13-02-ex.json
+- [ ] content/hu/exercises/c1/c1-13-03-ex.json
+- [ ] content/hu/exercises/c1/c1-13-04-ex.json
+- [ ] content/hu/exercises/c1/c1-13-05-ex.json
+- [ ] content/hu/exercises/c1/c1-13-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-kiberbiztonsag-01-ex.json
+- [ ] content/hu/exercises/c1/c1-kiberbiztonsag-02-ex.json
+- [ ] content/hu/exercises/c1/c1-kiberbiztonsag-03-ex.json
+- [ ] content/hu/exercises/c1/c1-kiberbiztonsag-04-ex.json
+- [ ] content/hu/exercises/c1/c1-kiberbiztonsag-05-ex.json
+- [ ] content/hu/exercises/c1/c1-kiberbiztonsag-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-14-01-ex.json
+- [ ] content/hu/exercises/c1/c1-14-02-ex.json
+- [ ] content/hu/exercises/c1/c1-14-03-ex.json
+- [ ] content/hu/exercises/c1/c1-14-04-ex.json
+- [ ] content/hu/exercises/c1/c1-14-05-ex.json
+- [ ] content/hu/exercises/c1/c1-14-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-kozlekedespolitika-01-ex.json
+- [ ] content/hu/exercises/c1/c1-kozlekedespolitika-02-ex.json
+- [ ] content/hu/exercises/c1/c1-kozlekedespolitika-03-ex.json
+- [ ] content/hu/exercises/c1/c1-kozlekedespolitika-04-ex.json
+- [ ] content/hu/exercises/c1/c1-kozlekedespolitika-05-ex.json
+- [ ] content/hu/exercises/c1/c1-kozlekedespolitika-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-15-01-ex.json
+- [ ] content/hu/exercises/c1/c1-15-02-ex.json
+- [ ] content/hu/exercises/c1/c1-15-03-ex.json
+- [ ] content/hu/exercises/c1/c1-15-04-ex.json
+- [ ] content/hu/exercises/c1/c1-15-05-ex.json
+- [ ] content/hu/exercises/c1/c1-15-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-kozszolgalat-01-ex.json
+- [ ] content/hu/exercises/c1/c1-kozszolgalat-02-ex.json
+- [ ] content/hu/exercises/c1/c1-kozszolgalat-03-ex.json
+- [ ] content/hu/exercises/c1/c1-kozszolgalat-04-ex.json
+- [ ] content/hu/exercises/c1/c1-kozszolgalat-05-ex.json
+- [ ] content/hu/exercises/c1/c1-kozszolgalat-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-16-01-ex.json
+- [ ] content/hu/exercises/c1/c1-16-02-ex.json
+- [ ] content/hu/exercises/c1/c1-16-03-ex.json
+- [ ] content/hu/exercises/c1/c1-16-04-ex.json
+- [ ] content/hu/exercises/c1/c1-16-05-ex.json
+- [ ] content/hu/exercises/c1/c1-16-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-kulturalisorokseg-01-ex.json
+- [ ] content/hu/exercises/c1/c1-kulturalisorokseg-02-ex.json
+- [ ] content/hu/exercises/c1/c1-kulturalisorokseg-03-ex.json
+- [ ] content/hu/exercises/c1/c1-kulturalisorokseg-04-ex.json
+- [ ] content/hu/exercises/c1/c1-kulturalisorokseg-05-ex.json
+- [ ] content/hu/exercises/c1/c1-kulturalisorokseg-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-17-01-ex.json
+- [ ] content/hu/exercises/c1/c1-17-02-ex.json
+- [ ] content/hu/exercises/c1/c1-17-03-ex.json
+- [ ] content/hu/exercises/c1/c1-17-04-ex.json
+- [ ] content/hu/exercises/c1/c1-17-05-ex.json
+- [ ] content/hu/exercises/c1/c1-17-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-magyarjovo-01-ex.json
+- [ ] content/hu/exercises/c1/c1-magyarjovo-02-ex.json
+- [ ] content/hu/exercises/c1/c1-magyarjovo-03-ex.json
+- [ ] content/hu/exercises/c1/c1-magyarjovo-04-ex.json
+- [ ] content/hu/exercises/c1/c1-magyarjovo-05-ex.json
+- [ ] content/hu/exercises/c1/c1-magyarjovo-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-18-01-ex.json
+- [ ] content/hu/exercises/c1/c1-18-02-ex.json
+- [ ] content/hu/exercises/c1/c1-18-03-ex.json
+- [ ] content/hu/exercises/c1/c1-18-04-ex.json
+- [ ] content/hu/exercises/c1/c1-18-05-ex.json
+- [ ] content/hu/exercises/c1/c1-18-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-mediakritika-01-ex.json
+- [ ] content/hu/exercises/c1/c1-mediakritika-02-ex.json
+- [ ] content/hu/exercises/c1/c1-mediakritika-03-ex.json
+- [ ] content/hu/exercises/c1/c1-mediakritika-04-ex.json
+- [ ] content/hu/exercises/c1/c1-mediakritika-05-ex.json
+- [ ] content/hu/exercises/c1/c1-mediakritika-consolidation-ex.json
+
+### Block 4
+
+
+- [ ] content/hu/exercises/c1/c1-19-01-ex.json
+- [ ] content/hu/exercises/c1/c1-19-02-ex.json
+- [ ] content/hu/exercises/c1/c1-19-03-ex.json
+- [ ] content/hu/exercises/c1/c1-19-04-ex.json
+- [ ] content/hu/exercises/c1/c1-19-05-ex.json
+- [ ] content/hu/exercises/c1/c1-19-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-mediaszabadsag-01-ex.json
+- [ ] content/hu/exercises/c1/c1-mediaszabadsag-02-ex.json
+- [ ] content/hu/exercises/c1/c1-mediaszabadsag-03-ex.json
+- [ ] content/hu/exercises/c1/c1-mediaszabadsag-04-ex.json
+- [ ] content/hu/exercises/c1/c1-mediaszabadsag-05-ex.json
+- [ ] content/hu/exercises/c1/c1-mediaszabadsag-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-20-01-ex.json
+- [ ] content/hu/exercises/c1/c1-20-02-ex.json
+- [ ] content/hu/exercises/c1/c1-20-03-ex.json
+- [ ] content/hu/exercises/c1/c1-20-04-ex.json
+- [ ] content/hu/exercises/c1/c1-20-05-ex.json
+- [ ] content/hu/exercises/c1/c1-20-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-megfigyeles-01-ex.json
+- [ ] content/hu/exercises/c1/c1-megfigyeles-02-ex.json
+- [ ] content/hu/exercises/c1/c1-megfigyeles-03-ex.json
+- [ ] content/hu/exercises/c1/c1-megfigyeles-04-ex.json
+- [ ] content/hu/exercises/c1/c1-megfigyeles-05-ex.json
+- [ ] content/hu/exercises/c1/c1-megfigyeles-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-21-01-ex.json
+- [ ] content/hu/exercises/c1/c1-21-02-ex.json
+- [ ] content/hu/exercises/c1/c1-21-03-ex.json
+- [ ] content/hu/exercises/c1/c1-21-04-ex.json
+- [ ] content/hu/exercises/c1/c1-21-05-ex.json
+- [ ] content/hu/exercises/c1/c1-21-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-mestersegesintelligencia-01-ex.json
+- [ ] content/hu/exercises/c1/c1-mestersegesintelligencia-02-ex.json
+- [ ] content/hu/exercises/c1/c1-mestersegesintelligencia-03-ex.json
+- [ ] content/hu/exercises/c1/c1-mestersegesintelligencia-04-ex.json
+- [ ] content/hu/exercises/c1/c1-mestersegesintelligencia-05-ex.json
+- [ ] content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-22-01-ex.json
+- [ ] content/hu/exercises/c1/c1-22-02-ex.json
+- [ ] content/hu/exercises/c1/c1-22-03-ex.json
+- [ ] content/hu/exercises/c1/c1-22-04-ex.json
+- [ ] content/hu/exercises/c1/c1-22-05-ex.json
+- [ ] content/hu/exercises/c1/c1-22-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-mestersegesnyelv-01-ex.json
+- [ ] content/hu/exercises/c1/c1-mestersegesnyelv-02-ex.json
+- [ ] content/hu/exercises/c1/c1-mestersegesnyelv-03-ex.json
+- [ ] content/hu/exercises/c1/c1-mestersegesnyelv-04-ex.json
+- [ ] content/hu/exercises/c1/c1-mestersegesnyelv-05-ex.json
+- [ ] content/hu/exercises/c1/c1-mestersegesnyelv-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-23-01-ex.json
+- [ ] content/hu/exercises/c1/c1-23-02-ex.json
+- [ ] content/hu/exercises/c1/c1-23-03-ex.json
+- [ ] content/hu/exercises/c1/c1-23-04-ex.json
+- [ ] content/hu/exercises/c1/c1-23-05-ex.json
+- [ ] content/hu/exercises/c1/c1-23-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-metaforak-01-ex.json
+- [ ] content/hu/exercises/c1/c1-metaforak-02-ex.json
+- [ ] content/hu/exercises/c1/c1-metaforak-03-ex.json
+- [ ] content/hu/exercises/c1/c1-metaforak-04-ex.json
+- [ ] content/hu/exercises/c1/c1-metaforak-05-ex.json
+- [ ] content/hu/exercises/c1/c1-metaforak-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-24-01-ex.json
+- [ ] content/hu/exercises/c1/c1-24-02-ex.json
+- [ ] content/hu/exercises/c1/c1-24-03-ex.json
+- [ ] content/hu/exercises/c1/c1-24-04-ex.json
+- [ ] content/hu/exercises/c1/c1-24-05-ex.json
+- [ ] content/hu/exercises/c1/c1-24-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-monetaris-01-ex.json
+- [ ] content/hu/exercises/c1/c1-monetaris-02-ex.json
+- [ ] content/hu/exercises/c1/c1-monetaris-03-ex.json
+- [ ] content/hu/exercises/c1/c1-monetaris-04-ex.json
+- [ ] content/hu/exercises/c1/c1-monetaris-05-ex.json
+- [ ] content/hu/exercises/c1/c1-monetaris-consolidation-ex.json
+
+### Block 5
+
+
+- [ ] content/hu/exercises/c1/c1-25-01-ex.json
+- [ ] content/hu/exercises/c1/c1-25-02-ex.json
+- [ ] content/hu/exercises/c1/c1-25-03-ex.json
+- [ ] content/hu/exercises/c1/c1-25-04-ex.json
+- [ ] content/hu/exercises/c1/c1-25-05-ex.json
+- [ ] content/hu/exercises/c1/c1-25-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-munkaeropiac-01-ex.json
+- [ ] content/hu/exercises/c1/c1-munkaeropiac-02-ex.json
+- [ ] content/hu/exercises/c1/c1-munkaeropiac-03-ex.json
+- [ ] content/hu/exercises/c1/c1-munkaeropiac-04-ex.json
+- [ ] content/hu/exercises/c1/c1-munkaeropiac-05-ex.json
+- [ ] content/hu/exercises/c1/c1-munkaeropiac-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-26-01-ex.json
+- [ ] content/hu/exercises/c1/c1-26-02-ex.json
+- [ ] content/hu/exercises/c1/c1-26-03-ex.json
+- [ ] content/hu/exercises/c1/c1-26-04-ex.json
+- [ ] content/hu/exercises/c1/c1-26-05-ex.json
+- [ ] content/hu/exercises/c1/c1-26-consolidation-ex.json
+
 - [ ] content/hu/exercises/c1/c1-nyelvfilozofia-01-ex.json
 - [ ] content/hu/exercises/c1/c1-nyelvfilozofia-02-ex.json
 - [ ] content/hu/exercises/c1/c1-nyelvfilozofia-03-ex.json
 - [ ] content/hu/exercises/c1/c1-nyelvfilozofia-04-ex.json
 - [ ] content/hu/exercises/c1/c1-nyelvfilozofia-05-ex.json
 - [ ] content/hu/exercises/c1/c1-nyelvfilozofia-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-27-01-ex.json
+- [ ] content/hu/exercises/c1/c1-27-02-ex.json
+- [ ] content/hu/exercises/c1/c1-27-03-ex.json
+- [ ] content/hu/exercises/c1/c1-27-04-ex.json
+- [ ] content/hu/exercises/c1/c1-27-05-ex.json
+- [ ] content/hu/exercises/c1/c1-27-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-pestiironia-01-ex.json
+- [ ] content/hu/exercises/c1/c1-pestiironia-02-ex.json
+- [ ] content/hu/exercises/c1/c1-pestiironia-03-ex.json
+- [ ] content/hu/exercises/c1/c1-pestiironia-04-ex.json
+- [ ] content/hu/exercises/c1/c1-pestiironia-05-ex.json
+- [ ] content/hu/exercises/c1/c1-pestiironia-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-28-01-ex.json
+- [ ] content/hu/exercises/c1/c1-28-02-ex.json
+- [ ] content/hu/exercises/c1/c1-28-03-ex.json
+- [ ] content/hu/exercises/c1/c1-28-04-ex.json
+- [ ] content/hu/exercises/c1/c1-28-05-ex.json
+- [ ] content/hu/exercises/c1/c1-28-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-polgariengedetlenseg-01-ex.json
+- [ ] content/hu/exercises/c1/c1-polgariengedetlenseg-02-ex.json
+- [ ] content/hu/exercises/c1/c1-polgariengedetlenseg-03-ex.json
+- [ ] content/hu/exercises/c1/c1-polgariengedetlenseg-04-ex.json
+- [ ] content/hu/exercises/c1/c1-polgariengedetlenseg-05-ex.json
+- [ ] content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-29-01-ex.json
+- [ ] content/hu/exercises/c1/c1-29-02-ex.json
+- [ ] content/hu/exercises/c1/c1-29-03-ex.json
+- [ ] content/hu/exercises/c1/c1-29-04-ex.json
+- [ ] content/hu/exercises/c1/c1-29-05-ex.json
+- [ ] content/hu/exercises/c1/c1-29-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-szerzodesek-01-ex.json
+- [ ] content/hu/exercises/c1/c1-szerzodesek-02-ex.json
+- [ ] content/hu/exercises/c1/c1-szerzodesek-03-ex.json
+- [ ] content/hu/exercises/c1/c1-szerzodesek-04-ex.json
+- [ ] content/hu/exercises/c1/c1-szerzodesek-05-ex.json
+- [ ] content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-30-01-ex.json
+- [ ] content/hu/exercises/c1/c1-30-02-ex.json
+- [ ] content/hu/exercises/c1/c1-30-03-ex.json
+- [ ] content/hu/exercises/c1/c1-30-04-ex.json
+- [ ] content/hu/exercises/c1/c1-30-05-ex.json
+- [ ] content/hu/exercises/c1/c1-30-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-tarsadalmireteg-01-ex.json
+- [ ] content/hu/exercises/c1/c1-tarsadalmireteg-02-ex.json
+- [ ] content/hu/exercises/c1/c1-tarsadalmireteg-03-ex.json
+- [ ] content/hu/exercises/c1/c1-tarsadalmireteg-04-ex.json
+- [ ] content/hu/exercises/c1/c1-tarsadalmireteg-05-ex.json
+- [ ] content/hu/exercises/c1/c1-tarsadalmireteg-consolidation-ex.json
+
+### Block 6
+
+
+- [ ] content/hu/exercises/c1/c1-31-01-ex.json
+- [ ] content/hu/exercises/c1/c1-31-02-ex.json
+- [ ] content/hu/exercises/c1/c1-31-03-ex.json
+- [ ] content/hu/exercises/c1/c1-31-04-ex.json
+- [ ] content/hu/exercises/c1/c1-31-05-ex.json
+- [ ] content/hu/exercises/c1/c1-31-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-tudomanyelmelet-01-ex.json
+- [ ] content/hu/exercises/c1/c1-tudomanyelmelet-02-ex.json
+- [ ] content/hu/exercises/c1/c1-tudomanyelmelet-03-ex.json
+- [ ] content/hu/exercises/c1/c1-tudomanyelmelet-04-ex.json
+- [ ] content/hu/exercises/c1/c1-tudomanyelmelet-05-ex.json
+- [ ] content/hu/exercises/c1/c1-tudomanyelmelet-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-32-01-ex.json
+- [ ] content/hu/exercises/c1/c1-32-02-ex.json
+- [ ] content/hu/exercises/c1/c1-32-03-ex.json
+- [ ] content/hu/exercises/c1/c1-32-04-ex.json
+- [ ] content/hu/exercises/c1/c1-32-05-ex.json
+- [ ] content/hu/exercises/c1/c1-32-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-tudomanyosszabadsag-01-ex.json
+- [ ] content/hu/exercises/c1/c1-tudomanyosszabadsag-02-ex.json
+- [ ] content/hu/exercises/c1/c1-tudomanyosszabadsag-03-ex.json
+- [ ] content/hu/exercises/c1/c1-tudomanyosszabadsag-04-ex.json
+- [ ] content/hu/exercises/c1/c1-tudomanyosszabadsag-05-ex.json
+- [ ] content/hu/exercises/c1/c1-tudomanyosszabadsag-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-33-01-ex.json
+- [ ] content/hu/exercises/c1/c1-33-02-ex.json
+- [ ] content/hu/exercises/c1/c1-33-03-ex.json
+- [ ] content/hu/exercises/c1/c1-33-04-ex.json
+- [ ] content/hu/exercises/c1/c1-33-05-ex.json
+- [ ] content/hu/exercises/c1/c1-33-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-varosfejlesztes-01-ex.json
+- [ ] content/hu/exercises/c1/c1-varosfejlesztes-02-ex.json
+- [ ] content/hu/exercises/c1/c1-varosfejlesztes-03-ex.json
+- [ ] content/hu/exercises/c1/c1-varosfejlesztes-04-ex.json
+- [ ] content/hu/exercises/c1/c1-varosfejlesztes-05-ex.json
+- [ ] content/hu/exercises/c1/c1-varosfejlesztes-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-34-01-ex.json
+- [ ] content/hu/exercises/c1/c1-34-02-ex.json
+- [ ] content/hu/exercises/c1/c1-34-03-ex.json
+- [ ] content/hu/exercises/c1/c1-34-04-ex.json
+- [ ] content/hu/exercises/c1/c1-34-05-ex.json
+- [ ] content/hu/exercises/c1/c1-34-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-visegrad-01-ex.json
+- [ ] content/hu/exercises/c1/c1-visegrad-02-ex.json
+- [ ] content/hu/exercises/c1/c1-visegrad-03-ex.json
+- [ ] content/hu/exercises/c1/c1-visegrad-04-ex.json
+- [ ] content/hu/exercises/c1/c1-visegrad-05-ex.json
+- [ ] content/hu/exercises/c1/c1-visegrad-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-35-01-ex.json
+- [ ] content/hu/exercises/c1/c1-35-02-ex.json
+- [ ] content/hu/exercises/c1/c1-35-03-ex.json
+- [ ] content/hu/exercises/c1/c1-35-04-ex.json
+- [ ] content/hu/exercises/c1/c1-35-05-ex.json
+- [ ] content/hu/exercises/c1/c1-35-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-vitakultura-01-ex.json
+- [ ] content/hu/exercises/c1/c1-vitakultura-02-ex.json
+- [ ] content/hu/exercises/c1/c1-vitakultura-03-ex.json
+- [ ] content/hu/exercises/c1/c1-vitakultura-04-ex.json
+- [ ] content/hu/exercises/c1/c1-vitakultura-05-ex.json
+- [ ] content/hu/exercises/c1/c1-vitakultura-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-36-01-ex.json
+- [ ] content/hu/exercises/c1/c1-36-02-ex.json
+- [ ] content/hu/exercises/c1/c1-36-03-ex.json
+- [ ] content/hu/exercises/c1/c1-36-04-ex.json
+- [ ] content/hu/exercises/c1/c1-36-05-ex.json
+- [ ] content/hu/exercises/c1/c1-36-consolidation-ex.json
+
+- [ ] content/hu/exercises/c1/c1-vizgazdalkodas-01-ex.json
+- [ ] content/hu/exercises/c1/c1-vizgazdalkodas-02-ex.json
+- [ ] content/hu/exercises/c1/c1-vizgazdalkodas-03-ex.json
+- [ ] content/hu/exercises/c1/c1-vizgazdalkodas-04-ex.json
+- [ ] content/hu/exercises/c1/c1-vizgazdalkodas-05-ex.json
+- [ ] content/hu/exercises/c1/c1-vizgazdalkodas-consolidation-ex.json
