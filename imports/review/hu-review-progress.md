@@ -1540,47 +1540,47 @@ Units in review order (a numbered unit, then a topic unit). **Stop after block 1
 ### Block 3
 
 
-- [ ] content/hu/exercises/c1/c1-13-01-ex.json
-- [ ] content/hu/exercises/c1/c1-13-02-ex.json
-- [ ] content/hu/exercises/c1/c1-13-03-ex.json
-- [ ] content/hu/exercises/c1/c1-13-04-ex.json
-- [ ] content/hu/exercises/c1/c1-13-05-ex.json
-- [ ] content/hu/exercises/c1/c1-13-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-13-01-ex.json
+- [x] content/hu/exercises/c1/c1-13-02-ex.json
+- [x] content/hu/exercises/c1/c1-13-03-ex.json
+- [x] content/hu/exercises/c1/c1-13-04-ex.json
+- [x] content/hu/exercises/c1/c1-13-05-ex.json
+- [x] content/hu/exercises/c1/c1-13-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-kiberbiztonsag-01-ex.json
-- [ ] content/hu/exercises/c1/c1-kiberbiztonsag-02-ex.json
-- [ ] content/hu/exercises/c1/c1-kiberbiztonsag-03-ex.json
-- [ ] content/hu/exercises/c1/c1-kiberbiztonsag-04-ex.json
-- [ ] content/hu/exercises/c1/c1-kiberbiztonsag-05-ex.json
-- [ ] content/hu/exercises/c1/c1-kiberbiztonsag-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-kiberbiztonsag-01-ex.json
+- [x] content/hu/exercises/c1/c1-kiberbiztonsag-02-ex.json
+- [x] content/hu/exercises/c1/c1-kiberbiztonsag-03-ex.json
+- [x] content/hu/exercises/c1/c1-kiberbiztonsag-04-ex.json
+- [x] content/hu/exercises/c1/c1-kiberbiztonsag-05-ex.json
+- [x] content/hu/exercises/c1/c1-kiberbiztonsag-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-14-01-ex.json
-- [ ] content/hu/exercises/c1/c1-14-02-ex.json
-- [ ] content/hu/exercises/c1/c1-14-03-ex.json
-- [ ] content/hu/exercises/c1/c1-14-04-ex.json
-- [ ] content/hu/exercises/c1/c1-14-05-ex.json
-- [ ] content/hu/exercises/c1/c1-14-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-14-01-ex.json
+- [x] content/hu/exercises/c1/c1-14-02-ex.json
+- [x] content/hu/exercises/c1/c1-14-03-ex.json
+- [x] content/hu/exercises/c1/c1-14-04-ex.json
+- [x] content/hu/exercises/c1/c1-14-05-ex.json
+- [x] content/hu/exercises/c1/c1-14-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-kozlekedespolitika-01-ex.json
-- [ ] content/hu/exercises/c1/c1-kozlekedespolitika-02-ex.json
-- [ ] content/hu/exercises/c1/c1-kozlekedespolitika-03-ex.json
-- [ ] content/hu/exercises/c1/c1-kozlekedespolitika-04-ex.json
-- [ ] content/hu/exercises/c1/c1-kozlekedespolitika-05-ex.json
-- [ ] content/hu/exercises/c1/c1-kozlekedespolitika-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-kozlekedespolitika-01-ex.json
+- [x] content/hu/exercises/c1/c1-kozlekedespolitika-02-ex.json
+- [x] content/hu/exercises/c1/c1-kozlekedespolitika-03-ex.json
+- [x] content/hu/exercises/c1/c1-kozlekedespolitika-04-ex.json
+- [x] content/hu/exercises/c1/c1-kozlekedespolitika-05-ex.json
+- [x] content/hu/exercises/c1/c1-kozlekedespolitika-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-15-01-ex.json
-- [ ] content/hu/exercises/c1/c1-15-02-ex.json
-- [ ] content/hu/exercises/c1/c1-15-03-ex.json
-- [ ] content/hu/exercises/c1/c1-15-04-ex.json
-- [ ] content/hu/exercises/c1/c1-15-05-ex.json
-- [ ] content/hu/exercises/c1/c1-15-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-15-01-ex.json
+- [x] content/hu/exercises/c1/c1-15-02-ex.json
+- [x] content/hu/exercises/c1/c1-15-03-ex.json
+- [x] content/hu/exercises/c1/c1-15-04-ex.json
+- [x] content/hu/exercises/c1/c1-15-05-ex.json
+- [x] content/hu/exercises/c1/c1-15-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-kozszolgalat-01-ex.json
-- [ ] content/hu/exercises/c1/c1-kozszolgalat-02-ex.json
-- [ ] content/hu/exercises/c1/c1-kozszolgalat-03-ex.json
-- [ ] content/hu/exercises/c1/c1-kozszolgalat-04-ex.json
-- [ ] content/hu/exercises/c1/c1-kozszolgalat-05-ex.json
-- [ ] content/hu/exercises/c1/c1-kozszolgalat-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-kozszolgalat-01-ex.json
+- [x] content/hu/exercises/c1/c1-kozszolgalat-02-ex.json
+- [x] content/hu/exercises/c1/c1-kozszolgalat-03-ex.json
+- [x] content/hu/exercises/c1/c1-kozszolgalat-04-ex.json
+- [x] content/hu/exercises/c1/c1-kozszolgalat-05-ex.json
+- [x] content/hu/exercises/c1/c1-kozszolgalat-consolidation-ex.json
 
 - [ ] content/hu/exercises/c1/c1-16-01-ex.json
 - [ ] content/hu/exercises/c1/c1-16-02-ex.json
