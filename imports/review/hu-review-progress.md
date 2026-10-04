@@ -1453,47 +1453,47 @@ Units in review order (a numbered unit, then a topic unit). **Stop after block 1
 ### Block 2
 
 
-- [ ] content/hu/exercises/c1/c1-07-01-ex.json
-- [ ] content/hu/exercises/c1/c1-07-02-ex.json
-- [ ] content/hu/exercises/c1/c1-07-03-ex.json
-- [ ] content/hu/exercises/c1/c1-07-04-ex.json
-- [ ] content/hu/exercises/c1/c1-07-05-ex.json
-- [ ] content/hu/exercises/c1/c1-07-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-07-01-ex.json
+- [x] content/hu/exercises/c1/c1-07-02-ex.json
+- [x] content/hu/exercises/c1/c1-07-03-ex.json
+- [x] content/hu/exercises/c1/c1-07-04-ex.json
+- [x] content/hu/exercises/c1/c1-07-05-ex.json
+- [x] content/hu/exercises/c1/c1-07-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-energetika-01-ex.json
-- [ ] content/hu/exercises/c1/c1-energetika-02-ex.json
-- [ ] content/hu/exercises/c1/c1-energetika-03-ex.json
-- [ ] content/hu/exercises/c1/c1-energetika-04-ex.json
-- [ ] content/hu/exercises/c1/c1-energetika-05-ex.json
-- [ ] content/hu/exercises/c1/c1-energetika-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-energetika-01-ex.json
+- [x] content/hu/exercises/c1/c1-energetika-02-ex.json
+- [x] content/hu/exercises/c1/c1-energetika-03-ex.json
+- [x] content/hu/exercises/c1/c1-energetika-04-ex.json
+- [x] content/hu/exercises/c1/c1-energetika-05-ex.json
+- [x] content/hu/exercises/c1/c1-energetika-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-08-01-ex.json
-- [ ] content/hu/exercises/c1/c1-08-02-ex.json
-- [ ] content/hu/exercises/c1/c1-08-03-ex.json
-- [ ] content/hu/exercises/c1/c1-08-04-ex.json
-- [ ] content/hu/exercises/c1/c1-08-05-ex.json
-- [ ] content/hu/exercises/c1/c1-08-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-08-01-ex.json
+- [x] content/hu/exercises/c1/c1-08-02-ex.json
+- [x] content/hu/exercises/c1/c1-08-03-ex.json
+- [x] content/hu/exercises/c1/c1-08-04-ex.json
+- [x] content/hu/exercises/c1/c1-08-05-ex.json
+- [x] content/hu/exercises/c1/c1-08-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-esszemuveszet-01-ex.json
-- [ ] content/hu/exercises/c1/c1-esszemuveszet-02-ex.json
-- [ ] content/hu/exercises/c1/c1-esszemuveszet-03-ex.json
-- [ ] content/hu/exercises/c1/c1-esszemuveszet-04-ex.json
-- [ ] content/hu/exercises/c1/c1-esszemuveszet-05-ex.json
-- [ ] content/hu/exercises/c1/c1-esszemuveszet-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-esszemuveszet-01-ex.json
+- [x] content/hu/exercises/c1/c1-esszemuveszet-02-ex.json
+- [x] content/hu/exercises/c1/c1-esszemuveszet-03-ex.json
+- [x] content/hu/exercises/c1/c1-esszemuveszet-04-ex.json
+- [x] content/hu/exercises/c1/c1-esszemuveszet-05-ex.json
+- [x] content/hu/exercises/c1/c1-esszemuveszet-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-09-01-ex.json
-- [ ] content/hu/exercises/c1/c1-09-02-ex.json
-- [ ] content/hu/exercises/c1/c1-09-03-ex.json
-- [ ] content/hu/exercises/c1/c1-09-04-ex.json
-- [ ] content/hu/exercises/c1/c1-09-05-ex.json
-- [ ] content/hu/exercises/c1/c1-09-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-09-01-ex.json
+- [x] content/hu/exercises/c1/c1-09-02-ex.json
+- [x] content/hu/exercises/c1/c1-09-03-ex.json
+- [x] content/hu/exercises/c1/c1-09-04-ex.json
+- [x] content/hu/exercises/c1/c1-09-05-ex.json
+- [x] content/hu/exercises/c1/c1-09-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-felsooktatas-01-ex.json
-- [ ] content/hu/exercises/c1/c1-felsooktatas-02-ex.json
-- [ ] content/hu/exercises/c1/c1-felsooktatas-03-ex.json
-- [ ] content/hu/exercises/c1/c1-felsooktatas-04-ex.json
-- [ ] content/hu/exercises/c1/c1-felsooktatas-05-ex.json
-- [ ] content/hu/exercises/c1/c1-felsooktatas-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-felsooktatas-01-ex.json
+- [x] content/hu/exercises/c1/c1-felsooktatas-02-ex.json
+- [x] content/hu/exercises/c1/c1-felsooktatas-03-ex.json
+- [x] content/hu/exercises/c1/c1-felsooktatas-04-ex.json
+- [x] content/hu/exercises/c1/c1-felsooktatas-05-ex.json
+- [x] content/hu/exercises/c1/c1-felsooktatas-consolidation-ex.json
 
 - [ ] content/hu/exercises/c1/c1-10-01-ex.json
 - [ ] content/hu/exercises/c1/c1-10-02-ex.json
