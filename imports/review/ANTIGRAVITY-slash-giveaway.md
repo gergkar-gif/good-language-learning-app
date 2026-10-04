@@ -96,3 +96,29 @@ pass.
 Exercises changed per course and level, fix 1 vs fix 2 counts, every id
 where a wrong option changed, and the questions logged. The reviewer
 diffs every changed exercise, so report exactly what you did.
+
+---
+
+## Review of stop 1 (2026-10-04): go ahead with Hungarian B2 and C1
+
+All 126 exercises were read. Good work: every shortened answer still
+answers its question, the copies match, and nothing broke. One change by
+the reviewer: *recorrer* is now "to travel around" (closer than "to
+explore").
+
+Two notes for B2 and C1:
+
+- **Report fix 2 when you use it.** `b1-centrosur-01.ex07`,
+  `b1-literatura-02.ex07` and `b1-mediterraneo-02.ex07` used fix 2 (the
+  question itself names two things, so the wrong options became two-part
+  too). That was the right choice, but the commits said "0 fix 2, no wrong
+  options changed". Count it and list the ids.
+- **C1 is different.** Most C1 hits are "Melyik kifejezés …" items whose
+  correct option stacks two Hungarian phrases
+  (*kötelessége szavatolni / nem foszthatja meg*). Keep the phrase that
+  best fits the question's wording. Check that it alone still answers it
+  (*a legkategorikusabban*, *a legpontosabban*), and that it isn't
+  noticeably longer or more elevated than the wrong options. If it is,
+  that is a give-away too, so log it.
+
+Do B2 (90), commit, then C1 (167), commit, and stop with the same report.
