@@ -1,7 +1,7 @@
 # Grammar skill list: proposed frozen list (ROADMAP 125, step 2)
 
-Status: **proposed 2026-10-04, waiting for the user's sign-off.** Once
-approved, this becomes the frozen grammar skill list
+Status: **approved by the user 2026-10-04**, with all six calls below
+accepted as proposed. Not yet in `skill-registry.json` (ROADMAP 125 step 2). This is the frozen grammar skill list
 ([skill-tagging-spec.md](skill-tagging-spec.md) § "Frozen list"), and
 any later addition, merge, split or rename has to be recorded on purpose.
 Machine-readable: [grammar-skill-list.json](grammar-skill-list.json).
@@ -49,7 +49,7 @@ Every old grammar slug was handled by one of these rules, in order:
 Skills under 6 exercises are flagged ⚠ and get exercises written during
 the read-through (spec § "Coverage"), not merged away.
 
-## Calls I made that you may want to overrule
+## Calls made (all accepted 2026-10-04)
 
 1. **Spanish verbs of change are one skill** (`verbs-of-change`, 8 slugs
    merged). Textbooks teach *ponerse / volverse / hacerse / quedarse /
