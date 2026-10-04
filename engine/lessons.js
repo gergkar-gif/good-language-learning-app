@@ -35,6 +35,10 @@ let originalStepCount = 0;
 // correctly treated as a fresh, gradable attempt.
 let gradedStepIndices = new Set();
 
+// Speaking/challenge steps already sent back for their one end-of-lesson
+// retry, so a second miss on the retry doesn't queue them again.
+let requeuedMicSteps = new Set();
+
 // Feeds the end-of-lesson summary screen. lessonStartTime is a wall-clock
 // timestamp so the elapsed time survives a tab switch mid-lesson the same
 // way progress does. lessonStats counts every graded interaction across the
@@ -536,6 +540,7 @@ async function startLesson(lessonId) {
         lessonStartTime = Date.now();
         lessonStats = { total: 0, correctFirstTry: 0 };
         gradedStepIndices = new Set();
+        requeuedMicSteps = new Set();
         lessonNewDeckWords = 0;
 
         // A lesson can be opened from the level list or from Home's continue
@@ -678,6 +683,7 @@ function teardownLesson() {
     missedSteps = [];
     originalStepCount = 0;
     gradedStepIndices = new Set();
+    requeuedMicSteps = new Set();
     lessonStartTime = null;
     lessonStats = { total: 0, correctFirstTry: 0 };
     lastLessonChecklist = null;
@@ -1155,6 +1161,7 @@ function failStep(message) {
     gradedStepIndices.add(currentStepIndex);
 
     noteRecycleResult(false);
+    queueForRemediationIfMissed();
     lessonStats.total++;
     noteListeningOutcome(false);
     return true;
@@ -1165,8 +1172,19 @@ function failStep(message) {
 // unless it's a recycle-block item, which already has its own SM-2 schedule
 // outside this lesson and shouldn't be graded twice for one sitting.
 function queueForRemediationIfMissed() {
-    if (!stepState.wasMissed || stepState.gaveUp) return;
+    if (!stepState.wasMissed) return;
     if (!stepState.sourceStep || stepState.sourceStep.isRecycle) return;
+
+    // Speaking steps come back exactly once, even when the learner ran out of
+    // tries: speech is slow to get right, so a second miss isn't a loop to
+    // trap them in. Every attempt is already saved by recordProduction() in
+    // lessonCheckSpeaking(), so the learner model returns to it later.
+    if (_stepRequiresMic(stepState.sourceStep)) {
+        if (requeuedMicSteps.has(stepState.sourceStep)) return;
+        requeuedMicSteps.add(stepState.sourceStep);
+    } else if (stepState.gaveUp) {
+        return;
+    }
     missedSteps.push(stepState.sourceStep);
 
     // Only said here, where it's true: a step revealed after three tries
