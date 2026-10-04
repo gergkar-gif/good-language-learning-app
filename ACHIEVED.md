@@ -2695,3 +2695,6 @@ Deck reviews done on a laptop never reached the phone. The Worker stores whateve
 
 ### Speaking steps return once, never loop — Done 2026-10-04
 A speaking or challenge step missed in a lesson used to be re-served at the end and, if missed again on the retry, queued again, so it never went away until answered right. Now it comes back exactly once (including when the learner ran out of tries the first time); a second miss moves on. Every attempt was already saved by `LearnerModel.recordProduction()`, so a weak oral skill still surfaces in later recommendations. `engine/lessons.js` (`requeuedMicSteps`, `queueForRemediationIfMissed`, `failStep`). Non-speaking exercises keep the old remediation behaviour.
+
+### "Finish Lesson" no longer dead-ends — Done 2026-10-04
+Finishing a lesson ran several unguarded steps (checklist save, progress/XP writes, the curriculum re-render, the async summary lookups); if any threw, `Finish Lesson` silently did nothing. `finishLesson()` in `engine/lessons.js` now isolates each stage, ignores a repeat tap while it runs, and falls back to a plain "Lesson complete" screen with a Done button if the full summary fails. Failures log to the console with the stage name. The exact throwing step wasn't reproduced; check the console if a learner still reports it.

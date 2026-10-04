@@ -2224,7 +2224,9 @@ function nextLessonStep() {
         lessonSaveSrsChoices();
     }
     if (stepState.sourceStep && stepState.sourceStep.type === 'checklist') {
-        lessonSaveChecklistChoices();
+        // Saving the self-check must never stop the lesson from finishing.
+        try { lessonSaveChecklistChoices(); }
+        catch (error) { console.error('Saving checklist failed:', error); }
     }
 
     currentStepIndex++;
@@ -2285,28 +2287,78 @@ function prevLessonStep() {
     renderStep();
 }
 
+// Every stage below is awaited or called from a button click with nothing
+// to catch a throw, so one failing stage (a progress/XP write, the curriculum
+// re-render markLessonComplete() triggers, a summary lookup) used to leave
+// "Finish Lesson" doing nothing at all. Each stage is now isolated, and a
+// failed summary falls back to a plain completion screen.
+let _finishingLesson = false;
+
 async function finishLesson() {
-    if (typeof ParlourTTS !== 'undefined') {
-        ParlourTTS.stop();
+    // A second tap while the summary is still being built would otherwise
+    // run the whole completion again (and count as a redo).
+    if (_finishingLesson) return;
+    _finishingLesson = true;
+    try {
+        if (typeof ParlourTTS !== 'undefined') {
+            ParlourTTS.stop();
+        }
+        clearLessonResume();
+        const lessonId = currentLesson.id;
+        // Fixed reward: a long lesson isn't worth more than a short one, and
+        // scaling by step count rewarded lesson length rather than learning.
+        let firstTime = true;
+        try {
+            if (typeof markLessonComplete === 'function') firstTime = markLessonComplete(lessonId);
+        } catch (error) {
+            console.error('Marking lesson complete failed:', error);
+        }
+
+        // Captured before recordLessonCompleted() awards this lesson's XP, so
+        // the summary can tell whether finishing THIS lesson is what pushed
+        // the rank over a threshold — recordLessonCompleted() already updates
+        // the shared xpData by the time renderLessonSummary() reads it.
+        let rankBefore = null;
+        try { rankBefore = (typeof getRank === 'function') ? getRank().rank : null; }
+        catch (error) { rankBefore = null; }
+
+        try {
+            if (typeof recordLessonCompleted === 'function') recordLessonCompleted(firstTime);
+        } catch (error) {
+            console.error('Recording lesson XP failed:', error);
+        }
+
+        try {
+            await renderLessonSummary(firstTime, rankBefore);
+        } catch (error) {
+            console.error('Lesson summary failed:', error);
+            renderLessonSummaryFallback();
+        }
+    } finally {
+        _finishingLesson = false;
     }
-    clearLessonResume();
-    // Fixed reward: a long lesson isn't worth more than a short one, and
-    // scaling by step count rewarded lesson length rather than learning.
-    const firstTime = typeof markLessonComplete === 'function'
-        ? markLessonComplete(currentLesson.id)
-        : true;
+}
 
-    // Captured before recordLessonCompleted() awards this lesson's XP, so
-    // the summary can tell whether finishing THIS lesson is what pushed
-    // the rank over a threshold — recordLessonCompleted() already updates
-    // the shared xpData by the time renderLessonSummary() reads it.
-    const rankBefore = (typeof getRank === 'function') ? getRank().rank : null;
-
-    if (typeof recordLessonCompleted === 'function') {
-        recordLessonCompleted(firstTime);
+// Minimal "you finished" screen for when the full summary can't be built, so
+// the learner always gets a way out rather than a dead button.
+function renderLessonSummaryFallback() {
+    const container = document.getElementById('lesson-content');
+    if (!container) return;
+    container.innerHTML = `
+        <div class="lsn-summary">
+            <p class="lsn-summary-eyebrow">Lesson complete</p>
+            <h2 class="lsn-summary-title">Congratulations!</h2>
+        </div>
+    `;
+    const backBtn = document.getElementById('lesson-back-btn');
+    if (backBtn) backBtn.disabled = true;
+    const nextBtn = document.getElementById('lesson-next-btn');
+    if (nextBtn) {
+        nextBtn.textContent = 'Done ✓';
+        nextBtn.disabled = false;
+        nextBtn.classList.remove('is-locked');
+        nextBtn.onclick = closeLesson;
     }
-
-    await renderLessonSummary(firstTime, rankBefore);
 }
 
 // Which of My Journey's milestones this exact completion just crossed —
