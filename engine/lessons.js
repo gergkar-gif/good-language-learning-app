@@ -2299,6 +2299,17 @@ async function finishLesson() {
     // run the whole completion again (and count as a redo).
     if (_finishingLesson) return;
     _finishingLesson = true;
+    // The summary awaits several lookups, which can take a moment on a slow
+    // connection — show that something is happening instead of a dead button.
+    const loadingBtn = document.getElementById('lesson-next-btn');
+    if (loadingBtn) {
+        loadingBtn.innerHTML = '<span class="lsn-btn-spinner"></span>Finishing…';
+        loadingBtn.disabled = true;
+    }
+    const loadingContent = document.getElementById('lesson-content');
+    if (loadingContent) {
+        loadingContent.innerHTML = '<div class="lsn-finishing" role="status"><div class="lsn-spinner"></div><p>Wrapping up your lesson…</p></div>';
+    }
     try {
         if (typeof ParlourTTS !== 'undefined') {
             ParlourTTS.stop();

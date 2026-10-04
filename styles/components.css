@@ -8956,3 +8956,9 @@
 #journey-root { max-width: 34em; }
 .jr-mt { max-width: none; }
 .jr-dgrid { max-width: none; }
+
+/* Lesson finishing: shown while the summary screen is being built */
+.lsn-finishing { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 56px 0; color: var(--muted); font-size: 14px; }
+.lsn-spinner { width: 28px; height: 28px; border: 3px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: boot-spin .9s linear infinite; }
+.lsn-btn-spinner { display: inline-block; width: 12px; height: 12px; margin-right: 8px; vertical-align: -1px; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: boot-spin .9s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .lsn-spinner, .lsn-btn-spinner { animation-duration: 3s; } }
