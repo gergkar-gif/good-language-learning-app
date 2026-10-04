@@ -1756,47 +1756,47 @@ Units in review order (a numbered unit, then a topic unit). **Stop after block 1
 - [x] content/hu/exercises/c1/c1-pestiironia-05-ex.json
 - [x] content/hu/exercises/c1/c1-pestiironia-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-28-01-ex.json
-- [ ] content/hu/exercises/c1/c1-28-02-ex.json
-- [ ] content/hu/exercises/c1/c1-28-03-ex.json
-- [ ] content/hu/exercises/c1/c1-28-04-ex.json
-- [ ] content/hu/exercises/c1/c1-28-05-ex.json
-- [ ] content/hu/exercises/c1/c1-28-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-28-01-ex.json
+- [x] content/hu/exercises/c1/c1-28-02-ex.json
+- [x] content/hu/exercises/c1/c1-28-03-ex.json
+- [x] content/hu/exercises/c1/c1-28-04-ex.json
+- [x] content/hu/exercises/c1/c1-28-05-ex.json
+- [x] content/hu/exercises/c1/c1-28-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-polgariengedetlenseg-01-ex.json
-- [ ] content/hu/exercises/c1/c1-polgariengedetlenseg-02-ex.json
-- [ ] content/hu/exercises/c1/c1-polgariengedetlenseg-03-ex.json
-- [ ] content/hu/exercises/c1/c1-polgariengedetlenseg-04-ex.json
-- [ ] content/hu/exercises/c1/c1-polgariengedetlenseg-05-ex.json
-- [ ] content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-polgariengedetlenseg-01-ex.json
+- [x] content/hu/exercises/c1/c1-polgariengedetlenseg-02-ex.json
+- [x] content/hu/exercises/c1/c1-polgariengedetlenseg-03-ex.json
+- [x] content/hu/exercises/c1/c1-polgariengedetlenseg-04-ex.json
+- [x] content/hu/exercises/c1/c1-polgariengedetlenseg-05-ex.json
+- [x] content/hu/exercises/c1/c1-polgariengedetlenseg-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-29-01-ex.json
-- [ ] content/hu/exercises/c1/c1-29-02-ex.json
-- [ ] content/hu/exercises/c1/c1-29-03-ex.json
-- [ ] content/hu/exercises/c1/c1-29-04-ex.json
-- [ ] content/hu/exercises/c1/c1-29-05-ex.json
-- [ ] content/hu/exercises/c1/c1-29-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-29-01-ex.json
+- [x] content/hu/exercises/c1/c1-29-02-ex.json
+- [x] content/hu/exercises/c1/c1-29-03-ex.json
+- [x] content/hu/exercises/c1/c1-29-04-ex.json
+- [x] content/hu/exercises/c1/c1-29-05-ex.json
+- [x] content/hu/exercises/c1/c1-29-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-szerzodesek-01-ex.json
-- [ ] content/hu/exercises/c1/c1-szerzodesek-02-ex.json
-- [ ] content/hu/exercises/c1/c1-szerzodesek-03-ex.json
-- [ ] content/hu/exercises/c1/c1-szerzodesek-04-ex.json
-- [ ] content/hu/exercises/c1/c1-szerzodesek-05-ex.json
-- [ ] content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-szerzodesek-01-ex.json
+- [x] content/hu/exercises/c1/c1-szerzodesek-02-ex.json
+- [x] content/hu/exercises/c1/c1-szerzodesek-03-ex.json
+- [x] content/hu/exercises/c1/c1-szerzodesek-04-ex.json
+- [x] content/hu/exercises/c1/c1-szerzodesek-05-ex.json
+- [x] content/hu/exercises/c1/c1-szerzodesek-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-30-01-ex.json
-- [ ] content/hu/exercises/c1/c1-30-02-ex.json
-- [ ] content/hu/exercises/c1/c1-30-03-ex.json
-- [ ] content/hu/exercises/c1/c1-30-04-ex.json
-- [ ] content/hu/exercises/c1/c1-30-05-ex.json
-- [ ] content/hu/exercises/c1/c1-30-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-30-01-ex.json
+- [x] content/hu/exercises/c1/c1-30-02-ex.json
+- [x] content/hu/exercises/c1/c1-30-03-ex.json
+- [x] content/hu/exercises/c1/c1-30-04-ex.json
+- [x] content/hu/exercises/c1/c1-30-05-ex.json
+- [x] content/hu/exercises/c1/c1-30-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-tarsadalmireteg-01-ex.json
-- [ ] content/hu/exercises/c1/c1-tarsadalmireteg-02-ex.json
-- [ ] content/hu/exercises/c1/c1-tarsadalmireteg-03-ex.json
-- [ ] content/hu/exercises/c1/c1-tarsadalmireteg-04-ex.json
-- [ ] content/hu/exercises/c1/c1-tarsadalmireteg-05-ex.json
-- [ ] content/hu/exercises/c1/c1-tarsadalmireteg-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-tarsadalmireteg-01-ex.json
+- [x] content/hu/exercises/c1/c1-tarsadalmireteg-02-ex.json
+- [x] content/hu/exercises/c1/c1-tarsadalmireteg-03-ex.json
+- [x] content/hu/exercises/c1/c1-tarsadalmireteg-04-ex.json
+- [x] content/hu/exercises/c1/c1-tarsadalmireteg-05-ex.json
+- [x] content/hu/exercises/c1/c1-tarsadalmireteg-consolidation-ex.json
 
 ### Block 6
 
