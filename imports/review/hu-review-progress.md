@@ -1669,47 +1669,47 @@ Units in review order (a numbered unit, then a topic unit). **Stop after block 1
 - [x] content/hu/exercises/c1/c1-mestersegesintelligencia-05-ex.json
 - [x] content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-22-01-ex.json
-- [ ] content/hu/exercises/c1/c1-22-02-ex.json
-- [ ] content/hu/exercises/c1/c1-22-03-ex.json
-- [ ] content/hu/exercises/c1/c1-22-04-ex.json
-- [ ] content/hu/exercises/c1/c1-22-05-ex.json
-- [ ] content/hu/exercises/c1/c1-22-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-22-01-ex.json
+- [x] content/hu/exercises/c1/c1-22-02-ex.json
+- [x] content/hu/exercises/c1/c1-22-03-ex.json
+- [x] content/hu/exercises/c1/c1-22-04-ex.json
+- [x] content/hu/exercises/c1/c1-22-05-ex.json
+- [x] content/hu/exercises/c1/c1-22-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-mestersegesnyelv-01-ex.json
-- [ ] content/hu/exercises/c1/c1-mestersegesnyelv-02-ex.json
-- [ ] content/hu/exercises/c1/c1-mestersegesnyelv-03-ex.json
-- [ ] content/hu/exercises/c1/c1-mestersegesnyelv-04-ex.json
-- [ ] content/hu/exercises/c1/c1-mestersegesnyelv-05-ex.json
-- [ ] content/hu/exercises/c1/c1-mestersegesnyelv-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-mestersegesnyelv-01-ex.json
+- [x] content/hu/exercises/c1/c1-mestersegesnyelv-02-ex.json
+- [x] content/hu/exercises/c1/c1-mestersegesnyelv-03-ex.json
+- [x] content/hu/exercises/c1/c1-mestersegesnyelv-04-ex.json
+- [x] content/hu/exercises/c1/c1-mestersegesnyelv-05-ex.json
+- [x] content/hu/exercises/c1/c1-mestersegesnyelv-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-23-01-ex.json
-- [ ] content/hu/exercises/c1/c1-23-02-ex.json
-- [ ] content/hu/exercises/c1/c1-23-03-ex.json
-- [ ] content/hu/exercises/c1/c1-23-04-ex.json
-- [ ] content/hu/exercises/c1/c1-23-05-ex.json
-- [ ] content/hu/exercises/c1/c1-23-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-23-01-ex.json
+- [x] content/hu/exercises/c1/c1-23-02-ex.json
+- [x] content/hu/exercises/c1/c1-23-03-ex.json
+- [x] content/hu/exercises/c1/c1-23-04-ex.json
+- [x] content/hu/exercises/c1/c1-23-05-ex.json
+- [x] content/hu/exercises/c1/c1-23-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-metaforak-01-ex.json
-- [ ] content/hu/exercises/c1/c1-metaforak-02-ex.json
-- [ ] content/hu/exercises/c1/c1-metaforak-03-ex.json
-- [ ] content/hu/exercises/c1/c1-metaforak-04-ex.json
-- [ ] content/hu/exercises/c1/c1-metaforak-05-ex.json
-- [ ] content/hu/exercises/c1/c1-metaforak-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-metaforak-01-ex.json
+- [x] content/hu/exercises/c1/c1-metaforak-02-ex.json
+- [x] content/hu/exercises/c1/c1-metaforak-03-ex.json
+- [x] content/hu/exercises/c1/c1-metaforak-04-ex.json
+- [x] content/hu/exercises/c1/c1-metaforak-05-ex.json
+- [x] content/hu/exercises/c1/c1-metaforak-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-24-01-ex.json
-- [ ] content/hu/exercises/c1/c1-24-02-ex.json
-- [ ] content/hu/exercises/c1/c1-24-03-ex.json
-- [ ] content/hu/exercises/c1/c1-24-04-ex.json
-- [ ] content/hu/exercises/c1/c1-24-05-ex.json
-- [ ] content/hu/exercises/c1/c1-24-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-24-01-ex.json
+- [x] content/hu/exercises/c1/c1-24-02-ex.json
+- [x] content/hu/exercises/c1/c1-24-03-ex.json
+- [x] content/hu/exercises/c1/c1-24-04-ex.json
+- [x] content/hu/exercises/c1/c1-24-05-ex.json
+- [x] content/hu/exercises/c1/c1-24-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-monetaris-01-ex.json
-- [ ] content/hu/exercises/c1/c1-monetaris-02-ex.json
-- [ ] content/hu/exercises/c1/c1-monetaris-03-ex.json
-- [ ] content/hu/exercises/c1/c1-monetaris-04-ex.json
-- [ ] content/hu/exercises/c1/c1-monetaris-05-ex.json
-- [ ] content/hu/exercises/c1/c1-monetaris-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-monetaris-01-ex.json
+- [x] content/hu/exercises/c1/c1-monetaris-02-ex.json
+- [x] content/hu/exercises/c1/c1-monetaris-03-ex.json
+- [x] content/hu/exercises/c1/c1-monetaris-04-ex.json
+- [x] content/hu/exercises/c1/c1-monetaris-05-ex.json
+- [x] content/hu/exercises/c1/c1-monetaris-consolidation-ex.json
 
 ### Block 5
 

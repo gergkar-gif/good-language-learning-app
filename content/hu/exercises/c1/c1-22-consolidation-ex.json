@@ -24,7 +24,7 @@
       "stage": "recognize",
       "question": "Melyik kifejezés testesít meg formális intézményi-algoritmikus szenvedő alakot?",
       "options": [
-        "a szövegek tokenekké bontatnak és matematikai térben reprezentáltatnak",
+        "a szövegek tokenekké bontatnak és matematikai reprezentációként kódoltatnak",
         "a mérnök megírta a kódot a számítógépen",
         "amikor a laptop akkumulátora lemerült"
       ],
@@ -69,7 +69,7 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A kis nyelvek gépi perifériára szorulását és elfelejtődését _____ nevezzük. (digital language extinction / digitális nyelvkihalásnak)",
+      "sentence": "A kis nyelvek gépi perifériára szorulását és elfelejtődését _____ nevezzük. (digital language extinction / digitális nyelvkihalás + -nak)",
       "answer": "digitális nyelvkihalásnak",
       "english": "The marginalization and forgetting of small languages in machine domains is called digital language extinction.",
       "teaches": [
@@ -81,11 +81,15 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A gépi modellek tanításához szükséges hatalmas szövegmennyiség a _____. (training corpus / tanítókorpusz)",
-      "answer": "tanítókorpusz",
+      "sentence": "A gépi modellek tanításához szükséges hatalmas szövegmennyiség a _____. (training corpus)",
       "english": "The enormous volume of text needed to train machine models is the training corpus.",
       "teaches": [
         "c1-22-vocab"
+      ],
+      "answers": [
+        "tanítókorpusz",
+        "tanító korpusz",
+        "tréningkorpusz"
       ]
     },
     {
@@ -93,7 +97,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A mesterséges intelligencia _____ forradalmasítja az emberi kommunikációt. (undoubtedly / kétségtelenül)",
+      "sentence": "A mesterséges intelligencia _____ forradalmasítja az emberi kommunikációt. (undoubtedly / kétségtelen + -ül)",
       "answer": "kétségtelenül",
       "english": "Artificial intelligence undoubtedly revolutionizes human communication.",
       "teaches": [
@@ -105,7 +109,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "Ha nem építenénk magyar modellt, anyanyelvünk digitális perifériára _____. (would be relegated / szorulna)",
+      "sentence": "Ha nem építenénk magyar modellt, anyanyelvünk digitális perifériára _____. (would be relegated / szorul + -na)",
       "answer": "szorulna",
       "english": "If we did not build a Hungarian model, our mother tongue would be relegated to the digital periphery.",
       "teaches": [
@@ -117,11 +121,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "context",
-      "sentence": "A ritka anyanyelvi kifejezések _____ ütemben kopnak ki az internetes beszédből. (at an alarming / aggasztó)",
-      "answer": "aggasztó",
+      "sentence": "A ritka anyanyelvi kifejezések _____ ütemben kopnak ki az internetes beszédből. (at an alarming)",
       "english": "Rare mother-tongue expressions wear off from internet speech at an alarming rate.",
       "teaches": [
         "c1-adv-scalar-linguistic-erosion"
+      ],
+      "answers": [
+        "aggasztó",
+        "riasztó",
+        "nyugtalanító"
       ]
     },
     {
