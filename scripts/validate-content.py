@@ -326,6 +326,25 @@ def stray_script_errors(path):
     return errs
 
 
+def duplicate_story_id_errors(lang_dir):
+    """Two story files with the same id: the Library lists both under one id
+    (shared reading progress) and the manifest keeps whichever it reads last.
+    Happens when a rewrite adds new files without deleting the old ones."""
+    seen = {}
+    for path in sorted(lang_dir.glob("stories/**/*.json")):
+        if path.name in SKIP:
+            continue
+        try:
+            story_id = json.loads(path.read_text(encoding="utf-8")).get("id")
+        except (json.JSONDecodeError, AttributeError):
+            continue
+        if story_id:
+            seen.setdefault(story_id, []).append(path.relative_to(ROOT).as_posix())
+    return [f"duplicate story id {sid!r} in: {', '.join(paths)}\n      keep the file a lesson references "
+            f"(\"ref\" in content/<course>/lessons) and delete or re-id the other"
+            for sid, paths in seen.items() if len(paths) > 1]
+
+
 def changed_files(ref="origin/master"):
     """Absolute paths of files that differ from `ref`, plus untracked ones."""
     def git(*args):
@@ -391,6 +410,13 @@ def validate_language(lang, only=None):
                 failures.extend(title_errs)
             elif (lang_dir / "indexes" / "grammar-titles.json").is_file():
                 passed += 1
+
+    stories_dir = str((lang_dir / "stories").resolve())
+    if only is None or any(str(p).startswith(stories_dir) for p in only):
+        dup_errs = duplicate_story_id_errors(lang_dir)
+        if dup_errs:
+            failed += 1
+            failures.extend(dup_errs)
 
     for name, pattern in TARGETS.items():
         if name not in schemas:

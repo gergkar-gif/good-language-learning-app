@@ -16,6 +16,11 @@ another script (Cyrillic, Arabic, Hebrew, Thai, Japanese, Chinese, Korean).
 Generated text sometimes slips them in mid-word (`reдукció`, `Mキシco`).
 Retype the word in the course's own alphabet.
 
+It also fails when two story files in a course share an `id`. That happens
+when a rewrite adds new story files without deleting the old ones. Lessons
+load stories by file path (`"ref"`), so keep the file a lesson references
+and delete the other (or give it its own id if both are wanted).
+
 Why: the "Sync generated content" GitHub workflow runs the same validator as
 its first step. If it fails, nothing is regenerated and the repo owner gets a
 failure email per push. A `pre-push` hook in `.githooks/` runs it for you
