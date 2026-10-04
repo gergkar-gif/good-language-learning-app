@@ -9,6 +9,9 @@ option is at least twice as long as the longest wrong option (and at least
 15 characters longer), e.g. a full explanatory sentence beside two short
 fragments (ROADMAP 130).
 
+An exercise that is identical in es-es and es-latam is counted once, as
+"es-both"; fix it once and apply the same change to both files.
+
 Usage:
     python imports/review/check-slash-giveaway.py                # counts per course/level
     python imports/review/check-slash-giveaway.py --list         # every hit: id, file
@@ -52,7 +55,7 @@ def hits(courses, levels, length=False):
                         and len(o) > 1 and isinstance(k, int) and 0 <= k < len(o)):
                     continue
                 if gives_away(o, k, length):
-                    yield course, level, e.get("id"), f.replace(os.sep, "/")
+                    yield course, level, e.get("id"), f.replace(os.sep, "/"), e
 
 
 def main():
@@ -60,6 +63,19 @@ def main():
     courses = [a for a in args if a in COURSES] or list(COURSES)
     levels = [a for a in args if a not in COURSES]
     found = list(hits(courses, levels, "--length" in sys.argv))
+    # es-es and es-latam share A1/A2 and much of B1. An es-latam hit identical
+    # to the es-es exercise in the same file is listed once, as "es-both":
+    # fix it once and copy the fix to the other course.
+    by = {(c, l, os.path.basename(f), i): e for c, l, i, f, e in found}
+    merged = []
+    for c, l, i, f, e in found:
+        other = {"es-es": "es-latam", "es-latam": "es-es"}.get(c)
+        if other and by.get((other, l, os.path.basename(f), i)) == e:
+            if c == "es-latam":
+                continue
+            c, f = "es-both", f + " + es-latam copy"
+        merged.append((c, l, i, f))
+    found = merged
     counts = Counter((c, l) for c, l, _, _ in found)
     for (c, l), n in sorted(counts.items()):
         print(f"{c:9} {l:3} {n}")
