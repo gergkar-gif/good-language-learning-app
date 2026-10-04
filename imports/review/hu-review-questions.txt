@@ -108,3 +108,29 @@ answer: rozsdaövezet
 proposed:
 Az elhanyagolt egykori gyári területek elnevezése az urbanisztikában a _____. (brownfield)
 answers: ["rozsdaövezet", "barnaövezet"]
+
+### c1-visegrad-05-dialogue-6   (content/hu/exercises/c1/c1-visegrad-05-ex.json)
+why: Postposition syntax: 'révén' governs bare/possessive stem, not instrumental case (-val/-vel).
+current:
+Filozófus: Hogyan oldható fel Ady 'kompország' tragédiája?
+Történész: Végleges és egyértelmű nyugati intézményi és kulturális _____ révén.
+* elköteleződéssel
+- lebegéssel
+- tagadással
+proposed:
+Filozófus: Hogyan oldható fel Ady 'kompország' tragédiája?
+Történész: Végleges és egyértelmű nyugati intézményi és kulturális _____.
+* elköteleződéssel
+- elköteleződéshez
+- elköteleződésről
+note: Preserved marked answer 'elköteleződéssel' (0 correct answers changed) by dropping 'révén' from prompt so the instrumental phrase directly answers 'Hogyan?'. Alternatively, could keep 'révén' in prompt and change options to 'elköteleződés' / 'elköteleződést' / 'elköteleződésnek'.
+
+### c1-vizgazdalkodas-04-practice-4   (content/hu/exercises/c1/c1-vizgazdalkodas-04-ex.json)
+why: Epistemic adverb synonyms in environmental forecasting ('feltételezhetően' vs 'vélhetően' / 'valószínűleg')
+current:
+A klímamodellek alapján _____ elkerülhetetlen lesz a szigorú lakossági vízkorlátozás. (presumably / feltételezhetően)
+answer: feltételezhetően
+proposed:
+A klímamodellek alapján _____ elkerülhetetlen lesz a szigorú lakossági vízkorlátozás. (presumably)
+answers: ["feltételezhetően", "vélhetően", "valószínűleg"]
+

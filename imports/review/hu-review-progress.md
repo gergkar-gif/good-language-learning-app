@@ -1843,44 +1843,45 @@ Units in review order (a numbered unit, then a topic unit). **Stop after block 1
 - [x] content/hu/exercises/c1/c1-varosfejlesztes-05-ex.json
 - [x] content/hu/exercises/c1/c1-varosfejlesztes-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-34-01-ex.json
-- [ ] content/hu/exercises/c1/c1-34-02-ex.json
-- [ ] content/hu/exercises/c1/c1-34-03-ex.json
-- [ ] content/hu/exercises/c1/c1-34-04-ex.json
-- [ ] content/hu/exercises/c1/c1-34-05-ex.json
-- [ ] content/hu/exercises/c1/c1-34-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-34-01-ex.json
+- [x] content/hu/exercises/c1/c1-34-02-ex.json
+- [x] content/hu/exercises/c1/c1-34-03-ex.json
+- [x] content/hu/exercises/c1/c1-34-04-ex.json
+- [x] content/hu/exercises/c1/c1-34-05-ex.json
+- [x] content/hu/exercises/c1/c1-34-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-visegrad-01-ex.json
-- [ ] content/hu/exercises/c1/c1-visegrad-02-ex.json
-- [ ] content/hu/exercises/c1/c1-visegrad-03-ex.json
-- [ ] content/hu/exercises/c1/c1-visegrad-04-ex.json
-- [ ] content/hu/exercises/c1/c1-visegrad-05-ex.json
-- [ ] content/hu/exercises/c1/c1-visegrad-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-visegrad-01-ex.json
+- [x] content/hu/exercises/c1/c1-visegrad-02-ex.json
+- [x] content/hu/exercises/c1/c1-visegrad-03-ex.json
+- [x] content/hu/exercises/c1/c1-visegrad-04-ex.json
+- [x] content/hu/exercises/c1/c1-visegrad-05-ex.json
+- [x] content/hu/exercises/c1/c1-visegrad-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-35-01-ex.json
-- [ ] content/hu/exercises/c1/c1-35-02-ex.json
-- [ ] content/hu/exercises/c1/c1-35-03-ex.json
-- [ ] content/hu/exercises/c1/c1-35-04-ex.json
-- [ ] content/hu/exercises/c1/c1-35-05-ex.json
-- [ ] content/hu/exercises/c1/c1-35-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-35-01-ex.json
+- [x] content/hu/exercises/c1/c1-35-02-ex.json
+- [x] content/hu/exercises/c1/c1-35-03-ex.json
+- [x] content/hu/exercises/c1/c1-35-04-ex.json
+- [x] content/hu/exercises/c1/c1-35-05-ex.json
+- [x] content/hu/exercises/c1/c1-35-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-vitakultura-01-ex.json
-- [ ] content/hu/exercises/c1/c1-vitakultura-02-ex.json
-- [ ] content/hu/exercises/c1/c1-vitakultura-03-ex.json
-- [ ] content/hu/exercises/c1/c1-vitakultura-04-ex.json
-- [ ] content/hu/exercises/c1/c1-vitakultura-05-ex.json
-- [ ] content/hu/exercises/c1/c1-vitakultura-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-vitakultura-01-ex.json
+- [x] content/hu/exercises/c1/c1-vitakultura-02-ex.json
+- [x] content/hu/exercises/c1/c1-vitakultura-03-ex.json
+- [x] content/hu/exercises/c1/c1-vitakultura-04-ex.json
+- [x] content/hu/exercises/c1/c1-vitakultura-05-ex.json
+- [x] content/hu/exercises/c1/c1-vitakultura-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-36-01-ex.json
-- [ ] content/hu/exercises/c1/c1-36-02-ex.json
-- [ ] content/hu/exercises/c1/c1-36-03-ex.json
-- [ ] content/hu/exercises/c1/c1-36-04-ex.json
-- [ ] content/hu/exercises/c1/c1-36-05-ex.json
-- [ ] content/hu/exercises/c1/c1-36-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-36-01-ex.json
+- [x] content/hu/exercises/c1/c1-36-02-ex.json
+- [x] content/hu/exercises/c1/c1-36-03-ex.json
+- [x] content/hu/exercises/c1/c1-36-04-ex.json
+- [x] content/hu/exercises/c1/c1-36-05-ex.json
+- [x] content/hu/exercises/c1/c1-36-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-vizgazdalkodas-01-ex.json
-- [ ] content/hu/exercises/c1/c1-vizgazdalkodas-02-ex.json
-- [ ] content/hu/exercises/c1/c1-vizgazdalkodas-03-ex.json
-- [ ] content/hu/exercises/c1/c1-vizgazdalkodas-04-ex.json
-- [ ] content/hu/exercises/c1/c1-vizgazdalkodas-05-ex.json
-- [ ] content/hu/exercises/c1/c1-vizgazdalkodas-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-vizgazdalkodas-01-ex.json
+- [x] content/hu/exercises/c1/c1-vizgazdalkodas-02-ex.json
+- [x] content/hu/exercises/c1/c1-vizgazdalkodas-03-ex.json
+- [x] content/hu/exercises/c1/c1-vizgazdalkodas-04-ex.json
+- [x] content/hu/exercises/c1/c1-vizgazdalkodas-05-ex.json
+- [x] content/hu/exercises/c1/c1-vizgazdalkodas-consolidation-ex.json
+
