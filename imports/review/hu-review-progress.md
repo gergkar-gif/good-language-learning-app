@@ -1582,47 +1582,47 @@ Units in review order (a numbered unit, then a topic unit). **Stop after block 1
 - [x] content/hu/exercises/c1/c1-kozszolgalat-05-ex.json
 - [x] content/hu/exercises/c1/c1-kozszolgalat-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-16-01-ex.json
-- [ ] content/hu/exercises/c1/c1-16-02-ex.json
-- [ ] content/hu/exercises/c1/c1-16-03-ex.json
-- [ ] content/hu/exercises/c1/c1-16-04-ex.json
-- [ ] content/hu/exercises/c1/c1-16-05-ex.json
-- [ ] content/hu/exercises/c1/c1-16-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-16-01-ex.json
+- [x] content/hu/exercises/c1/c1-16-02-ex.json
+- [x] content/hu/exercises/c1/c1-16-03-ex.json
+- [x] content/hu/exercises/c1/c1-16-04-ex.json
+- [x] content/hu/exercises/c1/c1-16-05-ex.json
+- [x] content/hu/exercises/c1/c1-16-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-kulturalisorokseg-01-ex.json
-- [ ] content/hu/exercises/c1/c1-kulturalisorokseg-02-ex.json
-- [ ] content/hu/exercises/c1/c1-kulturalisorokseg-03-ex.json
-- [ ] content/hu/exercises/c1/c1-kulturalisorokseg-04-ex.json
-- [ ] content/hu/exercises/c1/c1-kulturalisorokseg-05-ex.json
-- [ ] content/hu/exercises/c1/c1-kulturalisorokseg-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-kulturalisorokseg-01-ex.json
+- [x] content/hu/exercises/c1/c1-kulturalisorokseg-02-ex.json
+- [x] content/hu/exercises/c1/c1-kulturalisorokseg-03-ex.json
+- [x] content/hu/exercises/c1/c1-kulturalisorokseg-04-ex.json
+- [x] content/hu/exercises/c1/c1-kulturalisorokseg-05-ex.json
+- [x] content/hu/exercises/c1/c1-kulturalisorokseg-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-17-01-ex.json
-- [ ] content/hu/exercises/c1/c1-17-02-ex.json
-- [ ] content/hu/exercises/c1/c1-17-03-ex.json
-- [ ] content/hu/exercises/c1/c1-17-04-ex.json
-- [ ] content/hu/exercises/c1/c1-17-05-ex.json
-- [ ] content/hu/exercises/c1/c1-17-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-17-01-ex.json
+- [x] content/hu/exercises/c1/c1-17-02-ex.json
+- [x] content/hu/exercises/c1/c1-17-03-ex.json
+- [x] content/hu/exercises/c1/c1-17-04-ex.json
+- [x] content/hu/exercises/c1/c1-17-05-ex.json
+- [x] content/hu/exercises/c1/c1-17-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-magyarjovo-01-ex.json
-- [ ] content/hu/exercises/c1/c1-magyarjovo-02-ex.json
-- [ ] content/hu/exercises/c1/c1-magyarjovo-03-ex.json
-- [ ] content/hu/exercises/c1/c1-magyarjovo-04-ex.json
-- [ ] content/hu/exercises/c1/c1-magyarjovo-05-ex.json
-- [ ] content/hu/exercises/c1/c1-magyarjovo-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-magyarjovo-01-ex.json
+- [x] content/hu/exercises/c1/c1-magyarjovo-02-ex.json
+- [x] content/hu/exercises/c1/c1-magyarjovo-03-ex.json
+- [x] content/hu/exercises/c1/c1-magyarjovo-04-ex.json
+- [x] content/hu/exercises/c1/c1-magyarjovo-05-ex.json
+- [x] content/hu/exercises/c1/c1-magyarjovo-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-18-01-ex.json
-- [ ] content/hu/exercises/c1/c1-18-02-ex.json
-- [ ] content/hu/exercises/c1/c1-18-03-ex.json
-- [ ] content/hu/exercises/c1/c1-18-04-ex.json
-- [ ] content/hu/exercises/c1/c1-18-05-ex.json
-- [ ] content/hu/exercises/c1/c1-18-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-18-01-ex.json
+- [x] content/hu/exercises/c1/c1-18-02-ex.json
+- [x] content/hu/exercises/c1/c1-18-03-ex.json
+- [x] content/hu/exercises/c1/c1-18-04-ex.json
+- [x] content/hu/exercises/c1/c1-18-05-ex.json
+- [x] content/hu/exercises/c1/c1-18-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-mediakritika-01-ex.json
-- [ ] content/hu/exercises/c1/c1-mediakritika-02-ex.json
-- [ ] content/hu/exercises/c1/c1-mediakritika-03-ex.json
-- [ ] content/hu/exercises/c1/c1-mediakritika-04-ex.json
-- [ ] content/hu/exercises/c1/c1-mediakritika-05-ex.json
-- [ ] content/hu/exercises/c1/c1-mediakritika-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-mediakritika-01-ex.json
+- [x] content/hu/exercises/c1/c1-mediakritika-02-ex.json
+- [x] content/hu/exercises/c1/c1-mediakritika-03-ex.json
+- [x] content/hu/exercises/c1/c1-mediakritika-04-ex.json
+- [x] content/hu/exercises/c1/c1-mediakritika-05-ex.json
+- [x] content/hu/exercises/c1/c1-mediakritika-consolidation-ex.json
 
 ### Block 4
 
