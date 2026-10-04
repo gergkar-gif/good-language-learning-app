@@ -311,6 +311,21 @@ def validate_unit_tracks(data, path):
     return meta_errors
 
 
+# Generated text sometimes slips in letters from another script mid-word
+# (Cyrillic "reдукció", katakana "Mキシco", CJK "匿名"). No course content
+# uses these scripts, so any occurrence is a generation error.
+STRAY_SCRIPT = re.compile(r"[Ѐ-ӿ֐-ۿ฀-๿぀-ヿ㐀-鿿가-힯]+")
+
+
+def stray_script_errors(path):
+    errs = []
+    for n, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        m = STRAY_SCRIPT.search(line)
+        if m:
+            errs.append((f"line {n}", f"stray non-Latin characters {m.group(0)!r}: {line.strip()[:100]}"))
+    return errs
+
+
 def changed_files(ref="origin/master"):
     """Absolute paths of files that differ from `ref`, plus untracked ones."""
     def git(*args):
@@ -407,6 +422,7 @@ def validate_language(lang, only=None):
                 meta_errors = validate_story_metadata(data, path)
             elif name == "units" and enforce_metadata:
                 meta_errors = validate_unit_tracks(data, path)
+            meta_errors += stray_script_errors(path)
 
             if not errors and not meta_errors:
                 passed += 1

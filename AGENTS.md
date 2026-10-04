@@ -11,6 +11,11 @@ python scripts/validate-content.py --changed
 `--changed` checks only files that differ from `origin/master` (seconds).
 `python scripts/validate-content.py` checks everything (several minutes).
 
+Besides the schemas, it fails any content file containing letters from
+another script (Cyrillic, Arabic, Hebrew, Thai, Japanese, Chinese, Korean).
+Generated text sometimes slips them in mid-word (`reдукció`, `Mキシco`).
+Retype the word in the course's own alphabet.
+
 Why: the "Sync generated content" GitHub workflow runs the same validator as
 its first step. If it fails, nothing is regenerated and the repo owner gets a
 failure email per push. A `pre-push` hook in `.githooks/` runs it for you
