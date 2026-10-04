@@ -22,9 +22,13 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szalagmunkástól feltétlen fegyelem és maximális rugalmasság _____ meg a multinacionális vállalatnál. (is demanded / követel + -tetik)",
-      "answer": "követeltetik",
-      "english": "From the assembly worker unconditional discipline and maximum flexibility is demanded at the multinational company.",
+      "sentence": "Egy régi gyári rendtartás így fogalmaz: „A munkástól feltétlen engedelmesség követeltetik.” Mai nyelven: A munkástól feltétlen engedelmességet _____. (követel, 3pl)",
+      "answers": [
+        "követelnek",
+        "követelnek meg",
+        "megkövetelnek"
+      ],
+      "english": "An old set of factory rules puts it like this: 'Unconditional obedience is demanded of the worker.' In modern Hungarian: they demand unconditional obedience of the worker.",
       "teaches": [
         "c1-passive-institutional-impersonals"
       ]
@@ -61,9 +65,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A bértárgyalások megkezdése határozottan _____ a vezérigazgatóság által. (is rejected / elutasít + -tatik)",
-      "answer": "elutasíttatik",
-      "english": "The commencement of wage negotiations is resolutely rejected by the general directorate.",
+      "sentence": "A régi gyári rendtartás szerint munkaidő alatt a beszélgetés szigorúan _____. (tilt, archaic passive)",
+      "answer": "tiltatik",
+      "english": "According to the old factory rules, talking during working hours is strictly forbidden.",
       "teaches": [
         "c1-passive-institutional-impersonals"
       ]
@@ -75,25 +79,31 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "maximális",
-        "erőfeszítés",
-        "elvárásként",
-        "támasztatik",
-        "minden",
-        "dolgozóval",
-        "szemben."
+        "béremelési",
+        "kérelmet",
+        "a",
+        "vezetőség",
+        "elutasította."
       ],
-      "solution": [
-        "A",
-        "maximális",
-        "erőfeszítés",
-        "elvárásként",
-        "támasztatik",
-        "minden",
-        "dolgozóval",
-        "szemben."
+      "solutions": [
+        [
+          "A",
+          "béremelési",
+          "kérelmet",
+          "a",
+          "vezetőség",
+          "elutasította."
+        ],
+        [
+          "A",
+          "vezetőség",
+          "a",
+          "béremelési",
+          "kérelmet",
+          "elutasította."
+        ]
       ],
-      "english": "Maximum effort is posed as an expectation toward every worker.",
+      "english": "Management rejected the pay-rise request. (The modern way to say 'a béremelési kérelem elutasíttatott'.)",
       "teaches": [
         "c1-passive-institutional-impersonals"
       ]
@@ -105,18 +115,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Üzemi tanácstag",
-          "text": "Hogyan fogadta a vezetőség a béremelési követelést?"
+          "speaker": "Történész",
+          "text": "Mit írt elő a gyár régi rendtartása a késésről?"
         },
         {
-          "speaker": "Munkavédelmi képviselő",
-          "text": "Minden kérés azonnal elutasíttatott, és fegyelmi vizsgálat _____ a szervezők ellen."
+          "speaker": "Levéltáros",
+          "text": "Azt, hogy a késve érkező munkás napi bére a felével _____."
         }
       ],
       "options": [
-        "rendeltetett el",
-        "rendeltetett volna",
-        "rendelendő el"
+        "csökkentetik",
+        "csökkentet",
+        "csökkenti"
       ],
       "correct": 0,
       "teaches": [
@@ -130,8 +140,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence describing institutional corporate pressure using a passive verb in '-atik/-etik'.",
-          "answer": "A futószalagon dolgozóktól embertelen munkatempó követeltetik meg, miközben a pihenőidő minimálisra szűkíttetik a gyártási normák fenntartása érdekében."
+          "prompt": "Rewrite this line from an old factory rule in modern Hungarian: 'A béremelési kérelem a vezetőség által elutasíttatott.'",
+          "answer": "A vezetőség elutasította a béremelési kérelmet."
         }
       ],
       "teaches": [
@@ -143,11 +153,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik igealak testesíti meg az intézményi szenvedő szerkezetet a munkaügyi zsargonban?",
+      "question": "Hol találkozik ma egy olvasó leginkább a „követeltetik” típusú szenvedő igealakkal?",
       "options": [
-        "követeltetik / elutasíttatik",
-        "követelni fognak",
-        "követelhetnének"
+        "Régi törvényekben és gyári rendtartásokban",
+        "Mai munkaszerződésekben és álláshirdetésekben",
+        "A hétköznapi beszélt nyelvben"
       ],
       "correct": 0,
       "teaches": [

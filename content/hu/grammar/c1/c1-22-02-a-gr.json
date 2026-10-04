@@ -1,34 +1,41 @@
 {
   "id": "grammar.c1.22.02.passive-computational-impersonals",
-  "title": "Impersonal Passive Structures Conveying Algorithmic Automation and Computational Processing",
+  "title": "Describing Automated Processes in Modern Hungarian",
   "sections": [
     {
       "type": "text",
-      "title": "The Structural Mechanism",
-      "content": "Passive forms in `-atik/-etik` express the detached, systematic, and non-human agency of algorithmic pipelines: `feldolgoztatik` (is processed), `tároltatik` (is stored), `előállíttatik` (is generated/produced), `elemzésnek vettetik alá` (is subjected to analysis)."
-    },
-    {
-      "type": "text",
-      "title": "Rhetorical Application & Stance",
-      "content": "Example: `A digitális szövegek milliárdjai tokenekké bontatnak, majd többdimenziós matematikai térben reprezentáltatnak az algoritmusok által`."
+      "title": "No passive needed",
+      "content": "English technical prose is full of passives: 'the text is split into tokens', 'the answer is generated'. Modern Hungarian rarely translates them with a passive. It makes the machine the subject (*a modell tokenekre bontja a szöveget*), uses the third person plural with no subject when people do the work (*az adatokat szervereken tárolják*), uses an intransitive verb where one exists (*a mondat vektorrá alakul*, 'turns into a vector'), or uses *-va/-ve* + *van* for a resulting state (*az adatok titkosítva vannak*)."
     },
     {
       "type": "table",
-      "title": "Patterns in Context",
+      "title": "English passive → modern Hungarian",
       "rows": [
         [
-          "Minden beírt mondat azonnal numerikus vektorokká alakíttatik át.",
-          "Every typed sentence is immediately transformed into numerical vectors."
+          "A modell tokenekre bontja a szöveget.",
+          "The text is split into tokens (by the model)."
         ],
         [
-          "A hatalmas tanítókorpusz szervereken tároltatik a modell betanításához.",
-          "The enormous training corpus is stored on servers for model training."
+          "Az adatokat szervereken tárolják.",
+          "The data is stored on servers."
         ],
         [
-          "A gépi válasz valószínűségi számítások alapján állíttatik elő másodpercek alatt.",
-          "The machine response is generated based on probability calculations within seconds."
+          "Minden mondat vektorrá alakul.",
+          "Each sentence is turned into a vector."
+        ],
+        [
+          "A válasz másodpercek alatt elkészül.",
+          "The answer is generated in seconds."
+        ],
+        [
+          "A fájlok titkosítva vannak.",
+          "The files are encrypted."
         ]
       ]
+    },
+    {
+      "type": "tip",
+      "content": "Don't reach for the *-tatik* passive from unit 21 here: *a szöveg feldolgoztatik* sounds like a 19th-century decree in a modern technical text. Don't build the meaning with *által* either: *a szöveg a modell által kerül feldolgozásra* is officialese. Say *a modell feldolgozza a szöveget*."
     }
   ]
 }

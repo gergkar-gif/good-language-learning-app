@@ -22,9 +22,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A nyers szövegállomány neurális hálózatok által _____ fel és elemeztetik. (is processed / dolgoz + -tatik fel (feldolgoz))",
-      "answer": "dolgoztatik",
-      "english": "The raw text corpus is processed and analyzed by neural networks.",
+      "sentence": "A neurális hálózat másodpercek alatt _____ a nyers szöveget. (feldolgoz, 3sg)",
+      "answer": "feldolgozza",
+      "english": "The neural network processes the raw text in seconds. (English would say: the raw text is processed by the neural network.)",
       "teaches": [
         "c1-passive-computational-impersonals"
       ]
@@ -61,9 +61,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A szintetikus válaszok automatikusan _____ elő a felhasználó kérdése nyomán. (are generated / állít + -tatnak elő (előállít))",
-      "answer": "állíttatnak",
-      "english": "Synthetic answers are generated automatically in the wake of the user's prompt.",
+      "sentence": "A modellben minden beírt mondat számsorrá _____. (turns into, intransitive)",
+      "answers": [
+        "alakul",
+        "alakul át",
+        "változik",
+        "változik át"
+      ],
+      "english": "In the model, every typed sentence is turned into a sequence of numbers.",
       "teaches": [
         "c1-passive-computational-impersonals"
       ]
@@ -74,26 +79,22 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "szöveg",
-        "többdimenziós",
-        "vektorokká",
-        "alakíttatik",
-        "át",
-        "a",
-        "modellben."
+        "Az",
+        "adatokat",
+        "titkosított",
+        "szervereken",
+        "tárolják."
       ],
-      "solution": [
-        "A",
-        "szöveg",
-        "többdimenziós",
-        "vektorokká",
-        "alakíttatik",
-        "át",
-        "a",
-        "modellben."
+      "solutions": [
+        [
+          "Az",
+          "adatokat",
+          "titkosított",
+          "szervereken",
+          "tárolják."
+        ]
       ],
-      "english": "The text is transformed into multidimensional vectors in the model.",
+      "english": "The data is stored on encrypted servers.",
       "teaches": [
         "c1-passive-computational-impersonals"
       ]
@@ -110,13 +111,13 @@
         },
         {
           "speaker": "Algoritmusfejlesztő",
-          "text": "A bemeneti mondat tokenekre bontatik, majd a célszöveg statisztikai valószínűségek alapján _____ meg."
+          "text": "Először tokenekre bontja a bemeneti mondatot, aztán valószínűségek alapján _____ meg a célnyelvi szöveget."
         }
       ],
       "options": [
-        "fogalmaztatik",
-        "fogalmaztatott",
-        "fogalmazandó"
+        "fogalmazza",
+        "fogalmaz",
+        "fogalmaztatik"
       ],
       "correct": 0,
       "teaches": [
@@ -130,8 +131,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence describing an algorithmic data process using a passive verb in '-atik/-etik'.",
-          "answer": "A felhasználói adatok milliói másodpercek alatt elemeztetnek és matematikai vektorokká alakíttatnak át a generatív modellek finomhangolása céljából."
+          "prompt": "Rewrite this sentence in natural modern Hungarian, without the archaic passive: 'A felhasználói adatok elemeztetnek és vektorokká alakíttatnak.'",
+          "answer": "A rendszer elemzi a felhasználói adatokat, és vektorokká alakítja őket."
         }
       ],
       "teaches": [
@@ -143,11 +144,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik mondat alkalmaz szenvedő intézményi-technológiai igét helyesen?",
+      "question": "Melyik mondat hangzik természetesen egy mai informatikai szövegben?",
       "options": [
-        "A szövegkorpusz digitálisan archiváltatik és biztonságosan tároltatik a szerveren.",
-        "A fejlesztők digitális korpuszt archiválnak a biztonságos szerveren.",
-        "A szerveren futó program folyamatosan elemzi az adatokat."
+        "A szerver éjszakánként archiválja a szövegkorpuszt.",
+        "A szövegkorpusz éjszakánként archiváltatik a szerveren.",
+        "A szövegkorpusz éjszakánként a szerver által archiváltatott."
       ],
       "correct": 0,
       "teaches": [
