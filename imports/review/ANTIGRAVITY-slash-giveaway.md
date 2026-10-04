@@ -122,3 +122,26 @@ Two notes for B2 and C1:
   that is a give-away too, so log it.
 
 Do B2 (90), commit, then C1 (167), commit, and stop with the same report.
+
+---
+
+## Review of stop 2 (2026-10-04): done
+
+All 257 B2 and C1 exercises were read and accepted, and the check reports
+`total: 0` for every course. The fix-1/fix-2 counts were right this time.
+Ten small changes by the reviewer:
+
+- Three C1 consolidation questions asked "Milyen kifejezésekkel" (plural)
+  over an answer that is now one phrase. They now say "kifejezéssel".
+  When fix 1 leaves one phrase, check that the question doesn't still ask
+  for several.
+- Four essay-closing items kept the stiffer half (*Végső konklúzióként*,
+  *Konklúzióként levonható*). They now keep the natural one
+  (*Mindent összegezve* / *összevetve*).
+- `c1-egeszsegugy-05-check-8`: the kept phrase was lower-case while its
+  distractors are capitalised. It is now capitalised.
+- Two B2 glosses were changed: *mulasztás* is now "omission" (not
+  "negligence"), and *élcelődik* is now "to banter" (not "to tease
+  sardonically").
+
+ROADMAP item 126 is closed (ACHIEVED.md).
