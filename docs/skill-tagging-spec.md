@@ -62,7 +62,8 @@ explanations. Too fine = two skills share one explanation.
 - **Grammar:** one shared backbone of grammar areas (verb tenses, noun cases,
   pronouns, word order, clauses, …), drafted from the Council of Europe
   Reference Level Descriptions. Each language uses the subset it needs. A
-  language-only family needs the user's sign-off. *Still to be drafted.*
+  language-only family needs the user's sign-off. Draft: 37 families,
+  `docs/grammar-families-draft.md`, with the rules for choosing one.
 
 Families get display names alongside `grammar-titles.json`.
 
