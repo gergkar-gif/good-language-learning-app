@@ -168,3 +168,59 @@ now correct and get marked wrong: *(consent)* → *beleegyezését* or
   different but grammatical word order (*Rádöbbentem a vonat indulása
   után.* for *Mikor döbbentél rá?*). If the lesson is about focus, the
   wrong option must break the focus rule unambiguously.
+
+---
+
+# Round 4: review of C1 block 1 (ROADMAP 120, 2026-10-04)
+
+Commits `976ca84b` and `2767a529`. **The best round so far.** 333
+exercises changed in 72 files. Checks are clean, every commit was
+pushed, structure is intact, and you logged 4 good questions. The absurd
+wrong options (*aranyból készítik a kilincseket*) are now real near
+misses on the content or form. Good models to repeat: `c1-03-02-dialogue-6`
+(the blank carries the hedge, and the rest of the line rules out the
+other options), `c1-03-01-dialogue-6` (*tanúsága szerint / tanúságával /
+tanúságát tekintve*), `c1-04-01-dialogue-6`, and the fix in
+`c1-03-05-practice-6` (*válasznál*). The lemma + ending hints
+(`tanúság + -a`, `ragaszkodik, inf 3pl`) are clear.
+
+## 11. Fix in block 1
+
+- **`c1-01-01-practice-9`: wrong options pasted in.** The question is still
+  *Why is 'holott' chosen instead of 'jóllehet' …?* but all three options
+  were replaced with the options of `c1-01-05-practice-9` (*By
+  methodically anticipating objections …*). The marked answer no longer
+  answers the question. Write three options about *holott* vs *jóllehet*:
+  the correct one (it stresses the contradiction between knowing and
+  staying silent, with a note of blame) and two near misses about
+  register or meaning. Whenever you replace every option of an exercise,
+  read its question again before saving.
+- **Two replies with more than one right answer (R1):**
+  `c1-03-04-dialogue-6` (*Megbízhatunk a mérési adatokban?*: *Minden
+  kétséget kizáróan megbízhatunk bennük …* and *Egyáltalán nem bízhatunk
+  bennük …* are both sensible replies) and `c1-06-01-dialogue-6`
+  (*Hogyan értékeli a választási eredményt?*: *kizárólag átmeneti
+  kompromisszum* is as good an assessment as *egyértelmű vízválasztó*).
+  Rebuild them like `c1-03-02-dialogue-6`: put the taught expression in
+  the blank and give the line a second half that only it fits.
+- **Synonyms missing from `answers`.** When the hint is English only, list
+  every word a C1 learner could correctly write. Missed in the sample:
+  `c1-02-consolidation-8` *tükrében*: add *fényében* (taught in
+  `c1-01-04`). `c1-emlekezetpolitika-05-controlled-2` *elengedhetetlen*:
+  add *nélkülözhetetlen*. `c1-06-02-practice-4` *tartás*: add *gerinc*.
+  `c1-03-04-practice-4` *némiképp, valamelyest*: add *némileg*, *kissé*.
+  `c1-03-consolidation-4` *minden bizonnyal*: add *valószínűleg*, as you
+  did in `c1-03-02-practice-4`. Check every English-only hint in block 1
+  again. That is about 70 exercises, and these five came from a sample
+  of about 13.
+- **A small one:** `c1-egeszsegugy-02-practice-4` *nem _____ meg* with
+  the hint `megfoszt + -hatja` suggests *megfoszthatja*, but *meg* is
+  already in the sentence. Give `foszt + -hatja (megfoszt)` instead.
+
+## 12. Going on
+
+Fix section 11, then do **blocks 2 and 3** and stop after block 3 to
+report, with the same report as before. Keep the pace and the questions
+file exactly as in block 1. Don't apply your own proposed changes from
+the questions file before the native speaker answers
+(`c1-05-04-controlled-2` already says *depressing*).
