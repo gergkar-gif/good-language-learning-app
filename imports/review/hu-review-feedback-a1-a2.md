@@ -307,3 +307,57 @@ comes back without these problems. Every commit needs a body: counts by
 type, hints rewritten, synonyms added, correct answers changed (ids),
 questions logged. If you log no questions for a whole block, explain
 why in the report.
+
+---
+
+# Round 6: review of the section 13-14 fixes and C1 block 4 (ROADMAP 120, 2026-10-04)
+
+Commits `94c7d54d`, `83196001`, `1cc21eb3`. **The worksheet worked.** All
+302 items have a reasoned decision, they match the exercise files, and
+in a sample of 38 only one decision was wrong (*függvényeként* is not a
+variant of *függvényében*). The section 14 fixes are right, the
+hints in block 4 are good (`szabad + -na`, `(minél … ___)`, synonyms like
+*mindamellett, mindazonáltal, ennek ellenére*), every commit has a
+body, and you logged 4 questions. Keep all of that.
+
+## 16. Never break a correct answer (fixed by the reviewer this time)
+
+In **8 block 4 dialogues** a correct answer that fit was replaced by
+three forms of a different word that doesn't fit the sentence, so
+**none of the options was correct Hungarian**:
+
+    Ámbár a hozamok emelkedtek, _____ szabad szemet hunyni …
+    was:  * mégsem          now:  * dacára / dacáért / dacában
+    A nyilvánosság szisztematikus _____ nyomán …
+    was:  * centralizálása  now:  * felborulásához / felborulását / felborulásával
+    … nyilvánvalóan _____ jelleggel íródtak …
+    was:  * megbélyegző     now:  * ellehetetlenítve / … (needs -ő: ellehetetlenítő)
+
+Also `c1-20-01` (*folytán* → *válságot*), `c1-20-02` (*eltemetve* →
+*kényszerítve*), `c1-mediaszabadsag-03` (*annál* → *hárul*),
+`c1-mediaszabadsag-05` (*záloga* → *nélkülözhetetlen*),
+`c1-megfigyeles-04` (*elkerülését* → *nyilvánvalóbbá*). The commit
+messages said "Correct answers changed: 0". That was wrong: ten correct
+answers changed. The reviewer restored all eight and gave them form-error
+wrong options (`centralizálása / centralizálását / centralizálásával`).
+
+Rules, from now on:
+- In a dialogue whose wrong options are give-aways, **keep the correct
+  option** and build the wrong options as forms of **that same word**.
+- Before saving, **read the full line with each option in the blank.**
+  The marked one must be correct Hungarian. The others must be wrong.
+- Count correct-answer changes honestly. The reviewer diffs every one.
+
+Also in block 4, two wrong options were still correct (fixed by the
+reviewer): archaic *eredményezvén* is a valid adverbial participle
+(`c1-21-03-dialogue-6`, now *eredményezésével*); past *kulminált* fits a
+question in the past tense (`c1-23-01-dialogue-6`, now *kulminálva*).
+Archaic or past forms are not automatically wrong.
+
+The check script no longer flags *térben*. *Digitális térben* and
+*matematikai térben* were correct, and you didn't need to rewrite them.
+
+## 17. Going on
+
+Block 5 only, in a fresh chat, then stop and report. Keep the worksheet
+for every hint you make English-only.

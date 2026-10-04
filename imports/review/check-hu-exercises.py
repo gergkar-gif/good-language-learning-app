@@ -13,6 +13,8 @@ message; they are patterns, not proof):
   - dont-know: "Nem tudom." / "Nem értem." as a wrong option (answers anything)
   - case: a noun that takes -n/-ra/-ról used with -ban/-ba/-ból
     (postába, állomásban, a helyben, ...). "helyben" meaning "locally" is fine.
+    "tér" is not checked: "térben" (in space) is correct, only "a téren"
+    (on the square) differs.
   - hint-leak: a fill-blank's answer appears word for word in its hint
     (a bracket in `sentence`, or `hint`). Fine only when the answer is
     itself the dictionary form, e.g. `(olvas + she)` -> `olvas`.
@@ -23,7 +25,7 @@ from pathlib import Path
 TIME = re.compile(r'\b(tegnap|holnap|tegnapelőtt|holnapután|tavaly|jövőre)\b', re.I)
 DONT_KNOW = {'nem tudom', 'nem értem'}
 # nouns that take the superessive family (-n/-ra/-ról), not -ban/-ba/-ból
-ON_NOUNS = r'(posta|állomás|pályaudvar|piac|egyetem|repülőtér|repülőtere|munkahely|hely|tér|tere|sziget|strand|' \
+ON_NOUNS = r'(posta|állomás|pályaudvar|piac|egyetem|repülőtér|repülőtere|munkahely|hely|sziget|strand|' \
            r'Budapest|Magyarország|koncert|előadás|tanfolyam|meccs|kirándulás|konferencia|értekezlet)'
 CASE = re.compile(r'\b' + ON_NOUNS + r'(ba|be|ban|ben|ból|ből)\b', re.I)
 PAREN = re.compile(r'\(([^)]*)\)')
