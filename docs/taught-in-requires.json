@@ -1,0 +1,3146 @@
+{
+ "_comment": "DRAFT (ROADMAP 125 step 2), 2026-10-04, for review: taught_in (the grammar screen that teaches each approved grammar skill) and requires (direct prerequisites). level = the level of the taught_in screen.",
+ "es": {
+  "articles": {
+   "family": "articles-demonstratives",
+   "level": "A1",
+   "taught_in": "a1-03-01-indefinite-gr",
+   "requires": []
+  },
+  "demonstratives": {
+   "family": "articles-demonstratives",
+   "level": "A1",
+   "taught_in": "a1-demonstrative-01-este-gr",
+   "requires": []
+  },
+  "lo-neutro-abstraccion": {
+   "family": "articles-demonstratives",
+   "level": "B1",
+   "taught_in": "b1-40-03-gr",
+   "requires": [
+    "articles",
+    "adjective-agreement"
+   ],
+   "practised_from": "A1"
+  },
+  "gender": {
+   "family": "nouns",
+   "level": "A1",
+   "taught_in": "a1-03-02-gender-gr",
+   "requires": []
+  },
+  "plural": {
+   "family": "nouns",
+   "level": "A1",
+   "taught_in": "a1-03c-03-plural-gr",
+   "requires": [
+    "gender"
+   ]
+  },
+  "adjective-agreement": {
+   "family": "adjectives",
+   "level": "A1",
+   "taught_in": "a1-03-04-adjectives-gr",
+   "requires": [
+    "gender",
+    "plural"
+   ]
+  },
+  "possessives": {
+   "family": "possession",
+   "level": "A1",
+   "taught_in": "a1-05-02-possessives-gr",
+   "requires": [
+    "subject-pronouns"
+   ]
+  },
+  "tener": {
+   "family": "possession",
+   "level": "A1",
+   "taught_in": "a1-05-01-tener-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "numbers": {
+   "family": "numbers-quantity",
+   "level": "A1",
+   "taught_in": "a1-12-01-numbers-gr",
+   "requires": []
+  },
+  "subject-pronouns": {
+   "family": "pronouns",
+   "level": "A1",
+   "taught_in": "a1-02-02-pronouns-ser-gr",
+   "requires": []
+  },
+  "objeto-directo": {
+   "family": "pronouns",
+   "level": "A2",
+   "taught_in": "a2-12-01-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "objeto-indirecto": {
+   "family": "pronouns",
+   "level": "A2",
+   "taught_in": "a2-pronombrescliticos-01-gr",
+   "requires": [
+    "objeto-directo"
+   ]
+  },
+  "pronombres-combinados": {
+   "family": "pronouns",
+   "level": "A2",
+   "taught_in": "a2-pronombrescliticos-03-gr",
+   "requires": [
+    "objeto-directo",
+    "objeto-indirecto"
+   ],
+   "practised_from": "A1"
+  },
+  "indefinidos-negativos": {
+   "family": "pronouns",
+   "level": "A2",
+   "taught_in": "a2-indefinidosnegacion-01-gr",
+   "requires": [
+    "negation"
+   ]
+  },
+  "intensificadores-y-grado": {
+   "family": "adverbs",
+   "level": "A1",
+   "taught_in": "a1-doler-03-intensidad-gr",
+   "requires": [
+    "adjective-agreement"
+   ]
+  },
+  "frequency-adverbs": {
+   "family": "adverbs",
+   "level": "B1",
+   "taught_in": "b1-12-01-habits-and-frequency-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "comparatives": {
+   "family": "comparison",
+   "level": "A2",
+   "taught_in": "a2-06-01-gr",
+   "requires": [
+    "adjective-agreement"
+   ]
+  },
+  "superlatives": {
+   "family": "comparison",
+   "level": "B1",
+   "taught_in": "b1-gastronomia-01-superlativo-relativo-proporcion-gr",
+   "requires": [
+    "comparatives"
+   ],
+   "screen_only_in": "es-es"
+  },
+  "cuanto-mas-tanto-mas": {
+   "family": "comparison",
+   "level": "B1",
+   "taught_in": "b1-eeuu-03-cuanto-mas-gr",
+   "requires": [
+    "comparatives"
+   ]
+  },
+  "manner-clauses": {
+   "family": "comparison",
+   "level": "B2",
+   "taught_in": "b2-32-04-a-gr",
+   "requires": [
+    "relative-clauses"
+   ]
+  },
+  "como-si": {
+   "family": "comparison",
+   "level": "B2",
+   "taught_in": "b2-32-05-a-gr",
+   "requires": [
+    "imperfect-subjunctive-forms"
+   ]
+  },
+  "a-personal": {
+   "family": "prepositions-postpositions",
+   "level": "A1",
+   "taught_in": "a1-abilities-04-a-personal-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "preposiciones-movimiento": {
+   "family": "prepositions-postpositions",
+   "level": "A1",
+   "taught_in": "a1-directions-02-movement-prepositions-gr",
+   "requires": [
+    "ir"
+   ]
+  },
+  "por-vs-para": {
+   "family": "prepositions-postpositions",
+   "level": "A2",
+   "taught_in": "a2-porpara-01-gr",
+   "requires": []
+  },
+  "prepositional-phrases": {
+   "family": "prepositions-postpositions",
+   "level": "B1",
+   "taught_in": "b1-cortes-05-mediante-y-a-traves-de-gr",
+   "requires": [
+    "por-vs-para"
+   ],
+   "screen_only_in": "es-es"
+  },
+  "present-tense": {
+   "family": "verb-forms",
+   "level": "A1",
+   "taught_in": "a1-06-01-present-introduction-gr",
+   "requires": [
+    "subject-pronouns"
+   ]
+  },
+  "ar-verbs": {
+   "family": "verb-forms",
+   "level": "A1",
+   "taught_in": "a1-06-02-ar-verbs-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "er-ir-verbs": {
+   "family": "verb-forms",
+   "level": "A1",
+   "taught_in": "a1-06-03-er-ir-verbs-gr",
+   "requires": [
+    "ar-verbs"
+   ]
+  },
+  "stem-changes": {
+   "family": "verb-forms",
+   "level": "A1",
+   "taught_in": "a1-reflexive-02-cambio-radical-gr",
+   "requires": [
+    "er-ir-verbs"
+   ]
+  },
+  "ir": {
+   "family": "verb-forms",
+   "level": "A1",
+   "taught_in": "a1-directions-01-movement-location-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "vosotros-indicativo": {
+   "family": "verb-forms",
+   "level": "A2",
+   "taught_in": "a2-vosotrospeninsular-01-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "voseo-rioplatense-reconocimiento": {
+   "family": "verb-forms",
+   "level": "B2",
+   "taught_in": "b2-argentinaba-02-a-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "ser": {
+   "family": "being-becoming",
+   "level": "A1",
+   "taught_in": "a1-01-04-origin-gr",
+   "requires": [
+    "subject-pronouns"
+   ]
+  },
+  "estar": {
+   "family": "being-becoming",
+   "level": "A1",
+   "taught_in": "a1-07-03-estar-location-gr",
+   "requires": [
+    "ser"
+   ]
+  },
+  "hay": {
+   "family": "being-becoming",
+   "level": "A1",
+   "taught_in": "a1-07-04-hay-estar-gr",
+   "requires": [
+    "estar"
+   ]
+  },
+  "resultar-adjective": {
+   "family": "being-becoming",
+   "level": "B1",
+   "taught_in": "b1-15-02-evaluation-gr",
+   "requires": [
+    "ser",
+    "gustar"
+   ]
+  },
+  "verbs-of-change": {
+   "family": "being-becoming",
+   "level": "B1",
+   "taught_in": "b1-39-01-gr",
+   "requires": [
+    "reflexives",
+    "estar"
+   ],
+   "practised_from": "A1"
+  },
+  "gustar": {
+   "family": "verb-patterns",
+   "level": "A1",
+   "taught_in": "a1-gustar-01-me-gusta-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "doler": {
+   "family": "verb-patterns",
+   "level": "A1",
+   "taught_in": "a1-doler-01-duele-gr",
+   "requires": [
+    "gustar"
+   ]
+  },
+  "verbos-regimen-preposicional": {
+   "family": "verb-patterns",
+   "level": "B1",
+   "taught_in": "b1-40-01-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "saber-vs-conocer": {
+   "family": "verb-patterns",
+   "level": "A1",
+   "taught_in": "a1-abilities-03-saber-conocer-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "preterito-indefinido": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-11-01-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "preterite-irregular-stems": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-11-02-gr",
+   "requires": [
+    "preterito-indefinido"
+   ]
+  },
+  "imperfect": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-imperfectobasico-01-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "preterite-vs-imperfect": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-imperfectocontraste-01-gr",
+   "requires": [
+    "preterito-indefinido",
+    "imperfect"
+   ]
+  },
+  "preterito-perfecto": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-01-01-participles-gr",
+   "requires": [
+    "past-participles"
+   ]
+  },
+  "past-participles": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-01-01-participles-gr",
+   "requires": [
+    "ar-verbs",
+    "er-ir-verbs"
+   ]
+  },
+  "participios-irregulares-dobles": {
+   "family": "past",
+   "level": "B2",
+   "taught_in": "b2-20-04-a-gr",
+   "requires": [
+    "past-participles",
+    "ser-passive"
+   ]
+  },
+  "preterito-perfecto-vs-indefinido": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-17-03-gr",
+   "requires": [
+    "preterito-perfecto",
+    "preterito-indefinido"
+   ]
+  },
+  "imperfect-vs-present-perfect": {
+   "family": "past",
+   "level": "B1",
+   "taught_in": "b1-11-02-change-over-time-gr",
+   "requires": [
+    "imperfect",
+    "preterito-perfecto"
+   ]
+  },
+  "ya-todavia-no": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-02-03-gr",
+   "requires": [
+    "preterito-perfecto"
+   ]
+  },
+  "alguna-vez": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-09-05-gr",
+   "requires": [
+    "preterito-perfecto"
+   ]
+  },
+  "pluscuamperfecto": {
+   "family": "past",
+   "level": "B1",
+   "taught_in": "b1-01-03-pluscuamperfecto-gr",
+   "requires": [
+    "imperfect",
+    "past-participles"
+   ]
+  },
+  "secuencia-narrativa": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-11-04-gr",
+   "requires": [
+    "preterito-indefinido"
+   ]
+  },
+  "verbos-cambio-significado-pasado": {
+   "family": "past",
+   "level": "B2",
+   "taught_in": "b2-02-03-a-gr",
+   "requires": [
+    "preterite-vs-imperfect"
+   ]
+  },
+  "ir-infinitive": {
+   "family": "future",
+   "level": "A1",
+   "taught_in": "a1-future-01-ir-a-infinitive-gr",
+   "requires": [
+    "ir"
+   ]
+  },
+  "futuro-simple": {
+   "family": "future",
+   "level": "A2",
+   "taught_in": "a2-19-01-gr",
+   "requires": [
+    "ir-infinitive"
+   ]
+  },
+  "future-probability": {
+   "family": "future",
+   "level": "B1",
+   "taught_in": "b1-22-01-future-for-probability-gr",
+   "requires": [
+    "futuro-simple",
+    "condicional-regular"
+   ]
+  },
+  "futuro-perfecto": {
+   "family": "future",
+   "level": "B1",
+   "taught_in": "b1-nacionalismo-03-futuro-perfecto-gr",
+   "requires": [
+    "futuro-simple",
+    "past-participles"
+   ]
+  },
+  "condicional-regular": {
+   "family": "conditional",
+   "level": "A2",
+   "taught_in": "a2-condicionalsimple-01-gr",
+   "requires": [
+    "futuro-simple"
+   ]
+  },
+  "condicional-irregular": {
+   "family": "conditional",
+   "level": "A2",
+   "taught_in": "a2-condicionalsimple-02-gr",
+   "requires": [
+    "condicional-regular"
+   ]
+  },
+  "condicional-consejos": {
+   "family": "conditional",
+   "level": "A2",
+   "taught_in": "a2-condicionalsimple-04-gr",
+   "requires": [
+    "condicional-regular"
+   ]
+  },
+  "si-clauses": {
+   "family": "conditional",
+   "level": "B1",
+   "taught_in": "b1-08-04-conditional-structures-gr",
+   "requires": [
+    "futuro-simple"
+   ]
+  },
+  "hypothetical-structures": {
+   "family": "conditional",
+   "level": "B1",
+   "taught_in": "b1-14-04-hypothetical-structures-gr",
+   "requires": [
+    "si-clauses",
+    "condicional-regular"
+   ]
+  },
+  "pluscuamperfecto-subjuntivo-si": {
+   "family": "conditional",
+   "level": "B2",
+   "taught_in": "b2-nicaragua-03-a-gr",
+   "requires": [
+    "hypothetical-structures",
+    "pluscuamperfecto"
+   ],
+   "screen_only_in": "es-latam",
+   "practised_from": "B1"
+  },
+  "mixed-conditionals": {
+   "family": "conditional",
+   "level": "B2",
+   "taught_in": "b2-11-01-a-gr",
+   "requires": [
+    "pluscuamperfecto-subjuntivo-si"
+   ]
+  },
+  "conditional-conjunctions": {
+   "family": "conditional",
+   "level": "B1",
+   "taught_in": "b1-cortes-03-en-caso-de-que-subjuntivo-gr",
+   "requires": [
+    "subjuntivo-morfologia"
+   ],
+   "screen_only_in": "es-es"
+  },
+  "implicit-conditionals": {
+   "family": "conditional",
+   "level": "B2",
+   "taught_in": "b2-16-03-a-gr",
+   "requires": [
+    "pluscuamperfecto-subjuntivo-si"
+   ]
+  },
+  "apodosis-condicional-literaria": {
+   "family": "conditional",
+   "level": "B2",
+   "taught_in": "b2-10-02-a-gr",
+   "requires": [
+    "pluscuamperfecto-subjuntivo-si"
+   ]
+  },
+  "inversiones-condicionales-de-haber": {
+   "family": "conditional",
+   "level": "B2",
+   "taught_in": "b2-10-05-a-gr",
+   "requires": [
+    "pluscuamperfecto-subjuntivo-si"
+   ]
+  },
+  "counterfactual-wishes": {
+   "family": "conditional",
+   "level": "B2",
+   "taught_in": "b2-33-05-a-gr",
+   "requires": [
+    "subjuntivo-deseos",
+    "pluperfect-subjunctive-forms"
+   ]
+  },
+  "regrets-reproaches": {
+   "family": "conditional",
+   "level": "B2",
+   "taught_in": "b2-10-03-a-gr",
+   "requires": [
+    "pluscuamperfecto-subjuntivo-si"
+   ]
+  },
+  "subjuntivo-morfologia": {
+   "family": "subjunctive",
+   "level": "A2",
+   "taught_in": "a2-subjuntivobasico-01-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "subjunctive-influence": {
+   "family": "subjunctive",
+   "level": "B1",
+   "taught_in": "b1-04-03-subjuntivo-recomendaciones-gr",
+   "requires": [
+    "subjuntivo-morfologia"
+   ],
+   "practised_from": "A2"
+  },
+  "subjuntivo-deseos": {
+   "family": "subjunctive",
+   "level": "A2",
+   "taught_in": "a2-subjuntivobasico-02-gr",
+   "requires": [
+    "subjuntivo-morfologia"
+   ]
+  },
+  "subjunctive-emotion": {
+   "family": "subjunctive",
+   "level": "A2",
+   "taught_in": "a2-subjuntivobasico-05-gr",
+   "requires": [
+    "subjuntivo-morfologia"
+   ]
+  },
+  "subjunctive-value-judgments": {
+   "family": "subjunctive",
+   "level": "A2",
+   "taught_in": "a2-subjuntivobasico-03-gr",
+   "requires": [
+    "subjuntivo-morfologia"
+   ]
+  },
+  "subjunctive-doubt": {
+   "family": "subjunctive",
+   "level": "B1",
+   "taught_in": "b1-34-02-subjunctive-doubt-possibility-gr",
+   "requires": [
+    "subjuntivo-morfologia"
+   ]
+  },
+  "subjuntivo-perfecto": {
+   "family": "subjunctive",
+   "level": "B1",
+   "taught_in": "b1-37-01-gr",
+   "requires": [
+    "subjuntivo-morfologia",
+    "preterito-perfecto"
+   ]
+  },
+  "imperfect-subjunctive-forms": {
+   "family": "subjunctive",
+   "level": "B2",
+   "taught_in": "b2-15-01-a-gr",
+   "requires": [
+    "preterito-indefinido",
+    "subjuntivo-morfologia"
+   ]
+  },
+  "subjuntivo-imperfecto-estilistico-ra": {
+   "family": "subjunctive",
+   "level": "B2",
+   "taught_in": "b2-15-05-a-gr",
+   "requires": [
+    "imperfect-subjunctive-forms",
+    "pluscuamperfecto"
+   ]
+  },
+  "pluperfect-subjunctive-forms": {
+   "family": "subjunctive",
+   "level": "B2",
+   "taught_in": "b2-16-01-a-gr",
+   "requires": [
+    "imperfect-subjunctive-forms",
+    "past-participles"
+   ]
+  },
+  "correlacion-temporal-subjuntivo": {
+   "family": "subjunctive",
+   "level": "B1",
+   "taught_in": "b1-38-01-gr",
+   "requires": [
+    "subjunctive-influence",
+    "preterito-indefinido"
+   ]
+  },
+  "conectores-con-subjuntivo": {
+   "family": "subjunctive",
+   "level": "B1",
+   "taught_in": "b1-36-03-cause-consequence-solutions-gr",
+   "requires": [
+    "subjuntivo-morfologia"
+   ]
+  },
+  "imperativo-afirmativo": {
+   "family": "imperative",
+   "level": "A1",
+   "taught_in": "a1-kitchen-04-imperatives-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "imperativo-afirmativo-irregular": {
+   "family": "imperative",
+   "level": "A2",
+   "taught_in": "a2-imperativoafirmativo-02-gr",
+   "requires": [
+    "imperativo-afirmativo"
+   ]
+  },
+  "imperativo-formal-usted": {
+   "family": "imperative",
+   "level": "A2",
+   "taught_in": "a2-imperativoafirmativo-03-gr",
+   "requires": [
+    "imperativo-afirmativo",
+    "subjuntivo-morfologia"
+   ]
+  },
+  "imperativo-negativo": {
+   "family": "imperative",
+   "level": "A2",
+   "taught_in": "a2-imperativonegativo-01-gr",
+   "requires": [
+    "imperativo-afirmativo",
+    "subjuntivo-morfologia"
+   ]
+  },
+  "imperativo-negativo-irregular": {
+   "family": "imperative",
+   "level": "A2",
+   "taught_in": "a2-imperativonegativo-02-gr",
+   "requires": [
+    "imperativo-negativo"
+   ]
+  },
+  "posicion-pronombres-imperativo": {
+   "family": "imperative",
+   "level": "A2",
+   "taught_in": "a2-imperativonegativo-04-gr",
+   "requires": [
+    "imperativo-negativo",
+    "objeto-directo"
+   ]
+  },
+  "vosotros-imperativo": {
+   "family": "imperative",
+   "level": "A2",
+   "taught_in": "a2-vosotrospeninsular-02-gr",
+   "requires": [
+    "imperativo-afirmativo",
+    "vosotros-indicativo"
+   ]
+  },
+  "progressive": {
+   "family": "aspect",
+   "level": "A1",
+   "taught_in": "a1-continuous-01-ando-gr",
+   "requires": [
+    "estar"
+   ]
+  },
+  "acabar-de": {
+   "family": "aspect",
+   "level": "A2",
+   "taught_in": "a2-perifrasisduracion-01-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "volver-a-infinitivo": {
+   "family": "aspect",
+   "level": "B2",
+   "taught_in": "b2-23-04-a-gr",
+   "requires": [
+    "present-tense"
+   ],
+   "screen_only_in": "es-latam",
+   "practised_from": "A2"
+  },
+  "seguir-gerundio": {
+   "family": "aspect",
+   "level": "A2",
+   "taught_in": "a2-perifrasisverbales-02-gr",
+   "requires": [
+    "progressive"
+   ]
+  },
+  "llevar-tiempo-gerundio": {
+   "family": "aspect",
+   "level": "A2",
+   "taught_in": "a2-perifrasisduracion-02-gr",
+   "requires": [
+    "progressive"
+   ]
+  },
+  "perifrasis-verbales": {
+   "family": "aspect",
+   "level": "A2",
+   "taught_in": "a2-perifrasisverbales-05-gr",
+   "requires": [
+    "acabar-de"
+   ]
+  },
+  "dejar-de-infinitivo": {
+   "family": "aspect",
+   "level": "B1",
+   "taught_in": "b1-industrializacion-03-no-dejar-de-gr",
+   "requires": [
+    "perifrasis-verbales"
+   ]
+  },
+  "estar-a-punto-de": {
+   "family": "aspect",
+   "level": "B1",
+   "taught_in": "b1-revolucioncubana-04-a-punto-de-gr",
+   "requires": [
+    "estar"
+   ]
+  },
+  "terminar-por-infinitivo": {
+   "family": "aspect",
+   "level": "B2",
+   "taught_in": "b2-25-03-a-gr",
+   "requires": [
+    "perifrasis-verbales"
+   ],
+   "practised_from": "B1"
+  },
+  "habitos-soler": {
+   "family": "aspect",
+   "level": "B1",
+   "taught_in": "b1-09-03-habitos-soler-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "gerundio-acciones-paralelas": {
+   "family": "aspect",
+   "level": "B1",
+   "taught_in": "b1-precolombina-04-daily-life-gerund-gr",
+   "requires": [
+    "progressive"
+   ]
+  },
+  "gerund-periphrases": {
+   "family": "aspect",
+   "level": "B2",
+   "taught_in": "b2-mexiconorte-01-a-gr",
+   "requires": [
+    "progressive",
+    "seguir-gerundio"
+   ]
+  },
+  "inceptive-periphrases": {
+   "family": "aspect",
+   "level": "B2",
+   "taught_in": "b2-23-01-a-gr",
+   "requires": [
+    "perifrasis-verbales"
+   ]
+  },
+  "perifrasis-llegar-a-infinitivo": {
+   "family": "aspect",
+   "level": "B2",
+   "taught_in": "b2-25-04-a-gr",
+   "requires": [
+    "perifrasis-verbales"
+   ]
+  },
+  "perifrasis-pasar-a": {
+   "family": "aspect",
+   "level": "B2",
+   "taught_in": "b2-23-05-a-gr",
+   "requires": [
+    "perifrasis-verbales"
+   ]
+  },
+  "perifrasis-dar-por-participio": {
+   "family": "aspect",
+   "level": "B2",
+   "taught_in": "b2-25-05-a-gr",
+   "requires": [
+    "past-participles"
+   ]
+  },
+  "tener-que": {
+   "family": "modality",
+   "level": "A1",
+   "taught_in": "a1-work-02-tener-que-gr",
+   "requires": [
+    "tener"
+   ]
+  },
+  "hay-que": {
+   "family": "modality",
+   "level": "A1",
+   "taught_in": "a1-work-03-hay-que-gr",
+   "requires": [
+    "hay"
+   ]
+  },
+  "querer-poder": {
+   "family": "modality",
+   "level": "A1",
+   "taught_in": "a1-abilities-01-poder-gr",
+   "requires": [
+    "stem-changes"
+   ]
+  },
+  "saber-infinitivo": {
+   "family": "modality",
+   "level": "A1",
+   "taught_in": "a1-abilities-02-saber-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "deber-vs-tener-que": {
+   "family": "modality",
+   "level": "B1",
+   "taught_in": "b1-04-01-deber-tener-que-imperatives-gr",
+   "requires": [
+    "tener-que"
+   ]
+  },
+  "perifrasis-deber-obligacion-conjetura": {
+   "family": "modality",
+   "level": "B2",
+   "taught_in": "b2-26-01-a-gr",
+   "requires": [
+    "deber-vs-tener-que"
+   ]
+  },
+  "perifrasis-haber-de-infinitivo": {
+   "family": "modality",
+   "level": "B2",
+   "taught_in": "b2-26-02-a-gr",
+   "requires": [
+    "perifrasis-deber-obligacion-conjetura"
+   ]
+  },
+  "perifrasis-modales-probabilidad-epistemica": {
+   "family": "modality",
+   "level": "B2",
+   "taught_in": "b2-amazoniapan-04-a-gr",
+   "requires": [
+    "perifrasis-deber-obligacion-conjetura",
+    "future-probability"
+   ]
+  },
+  "reflexives": {
+   "family": "voice",
+   "level": "A1",
+   "taught_in": "a1-06-04-reflexive-verbs-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "contraste-reflexivo": {
+   "family": "voice",
+   "level": "A1",
+   "taught_in": "a1-reflexive-04-contraste-gr",
+   "requires": [
+    "reflexives"
+   ]
+  },
+  "pasiva-refleja": {
+   "family": "voice",
+   "level": "B1",
+   "taught_in": "b1-constitucion-01-se-pasiva-constitucional-gr",
+   "requires": [
+    "reflexives"
+   ],
+   "screen_only_in": "es-es",
+   "practised_from": "A2"
+  },
+  "ser-passive": {
+   "family": "voice",
+   "level": "B1",
+   "taught_in": "b1-civilizaciones-01-mayas-passive-gr",
+   "requires": [
+    "ser",
+    "past-participles"
+   ],
+   "screen_only_in": "es-latam",
+   "practised_from": "A2"
+  },
+  "pasiva-estado-estar-participio": {
+   "family": "voice",
+   "level": "B2",
+   "taught_in": "b2-20-03-a-gr",
+   "requires": [
+    "ser-passive",
+    "estar"
+   ]
+  },
+  "choosing-passive-type": {
+   "family": "voice",
+   "level": "B2",
+   "taught_in": "b2-20-05-a-gr",
+   "requires": [
+    "ser-passive",
+    "pasiva-estado-estar-participio",
+    "pasiva-refleja"
+   ]
+  },
+  "se-impersonal": {
+   "family": "voice",
+   "level": "B1",
+   "taught_in": "b1-07-02-impersonal-constructions-gr",
+   "requires": [
+    "pasiva-refleja"
+   ]
+  },
+  "se-pasivo-vs-impersonal": {
+   "family": "voice",
+   "level": "B2",
+   "taught_in": "b2-19-02-a-gr",
+   "requires": [
+    "se-impersonal",
+    "pasiva-refleja"
+   ]
+  },
+  "desambiguacion-valores-se": {
+   "family": "voice",
+   "level": "B2",
+   "taught_in": "b2-19-05-a-gr",
+   "requires": [
+    "se-pasivo-vs-impersonal",
+    "contraste-reflexivo"
+   ]
+  },
+  "impersonal-tercera-plural-uno": {
+   "family": "voice",
+   "level": "B2",
+   "taught_in": "b2-21-01-a-gr",
+   "requires": [
+    "se-impersonal"
+   ]
+  },
+  "nominalizacion-despersonalizacion": {
+   "family": "voice",
+   "level": "B2",
+   "taught_in": "b2-21-03-a-gr",
+   "requires": [
+    "nominalization",
+    "se-impersonal"
+   ]
+  },
+  "gerundios-irregulares": {
+   "family": "non-finite",
+   "level": "A1",
+   "taught_in": "a1-continuous-03-irregulares-gr",
+   "requires": [
+    "progressive"
+   ]
+  },
+  "participios-absolutos-narrativos": {
+   "family": "non-finite",
+   "level": "B2",
+   "taught_in": "b2-argentinaba-03-a-gr",
+   "requires": [
+    "past-participles"
+   ]
+  },
+  "negation": {
+   "family": "negation",
+   "level": "A2",
+   "taught_in": "a2-indefinidosnegacion-05-gr",
+   "requires": [],
+   "practised_from": "A1"
+  },
+  "questions": {
+   "family": "questions",
+   "level": "A1",
+   "taught_in": "a1-01-03-questions-gr",
+   "requires": []
+  },
+  "inversion-enfasis-fronting": {
+   "family": "word-order",
+   "level": "B2",
+   "taught_in": "b2-01-03-a-gr",
+   "requires": []
+  },
+  "oraciones-hendidas-enfasis": {
+   "family": "word-order",
+   "level": "B2",
+   "taught_in": "b2-01-01-a-gr",
+   "requires": [
+    "relative-clauses",
+    "lo-neutro-abstraccion"
+   ]
+  },
+  "connectors": {
+   "family": "coordination",
+   "level": "A1",
+   "taught_in": "a1-10-04-integracion-gr",
+   "requires": []
+  },
+  "sino-vs-pero": {
+   "family": "coordination",
+   "level": "B1",
+   "taught_in": "b1-40-02-gr",
+   "requires": [
+    "connectors",
+    "negation"
+   ]
+  },
+  "correlativos-no-solo-sino": {
+   "family": "coordination",
+   "level": "B1",
+   "taught_in": "b1-cambiosocial-05-no-solo-sino-tambien-gr",
+   "requires": [
+    "sino-vs-pero"
+   ]
+  },
+  "relative-clauses": {
+   "family": "relative-clauses",
+   "level": "B1",
+   "taught_in": "b1-10-01-relative-clauses-gr",
+   "requires": []
+  },
+  "relativas-preposicion-el-que": {
+   "family": "relative-clauses",
+   "level": "B1",
+   "taught_in": "b1-20-01-describing-problems-gr",
+   "requires": [
+    "relative-clauses"
+   ]
+  },
+  "relativo-posesivo-cuyo": {
+   "family": "relative-clauses",
+   "level": "B1",
+   "taught_in": "b1-gobierno-04-cuya-funcion-es-gr",
+   "requires": [
+    "relative-clauses"
+   ],
+   "screen_only_in": "es-es"
+  },
+  "relativas-subjuntivo": {
+   "family": "relative-clauses",
+   "level": "B2",
+   "taught_in": "b2-13-03-a-gr",
+   "requires": [
+    "relative-clauses",
+    "subjuntivo-morfologia"
+   ],
+   "screen_only_in": "es-latam",
+   "practised_from": "B1"
+  },
+  "relativas-universales-quiera": {
+   "family": "relative-clauses",
+   "level": "B2",
+   "taught_in": "b2-14-04-a-gr",
+   "requires": [
+    "relativas-subjuntivo"
+   ]
+  },
+  "giving-opinions": {
+   "family": "complement-clauses",
+   "level": "B1",
+   "taught_in": "b1-15-01-preferences-and-opinions-gr",
+   "requires": []
+  },
+  "opinion-verbs-mood": {
+   "family": "complement-clauses",
+   "level": "B1",
+   "taught_in": "b1-07-03-opinion-indicative-subjunctive-gr",
+   "requires": [
+    "giving-opinions",
+    "subjuntivo-morfologia"
+   ]
+  },
+  "infinitive-vs-que-subjunctive": {
+   "family": "complement-clauses",
+   "level": "B2",
+   "taught_in": "b2-04-04-a-gr",
+   "requires": [
+    "subjunctive-influence"
+   ],
+   "screen_only_in": "es-latam",
+   "practised_from": "A2"
+  },
+  "el-hecho-de-que-subjuntivo": {
+   "family": "complement-clauses",
+   "level": "B2",
+   "taught_in": "b2-06-04-a-gr",
+   "requires": [
+    "opinion-verbs-mood"
+   ]
+  },
+  "cuando-mientras": {
+   "family": "time-clauses",
+   "level": "A2",
+   "taught_in": "a2-13-02-gr",
+   "requires": [
+    "imperfect",
+    "preterito-indefinido"
+   ]
+  },
+  "cuando-subjuntivo": {
+   "family": "time-clauses",
+   "level": "B1",
+   "taught_in": "b1-gobierno-05-hasta-que-subjuntivo-gr",
+   "requires": [
+    "cuando-mientras",
+    "subjuntivo-morfologia"
+   ],
+   "screen_only_in": "es-es",
+   "practised_from": "A2"
+  },
+  "antes-despues-de-que": {
+   "family": "time-clauses",
+   "level": "B2",
+   "taught_in": "b2-guatemala-02-a-gr",
+   "requires": [
+    "antes-despues-infinitive",
+    "cuando-subjuntivo"
+   ]
+  },
+  "antes-despues-infinitive": {
+   "family": "time-clauses",
+   "level": "A2",
+   "taught_in": "a2-04-02-gr",
+   "requires": []
+  },
+  "desde-desde-hace": {
+   "family": "time-clauses",
+   "level": "A2",
+   "taught_in": "a2-07-04-gr",
+   "requires": [
+    "present-tense"
+   ]
+  },
+  "por-que-y-porque": {
+   "family": "cause-purpose-result",
+   "level": "A1",
+   "taught_in": "a1-02-03-porque-gr",
+   "requires": [
+    "questions"
+   ]
+  },
+  "porque-y-por-eso": {
+   "family": "cause-purpose-result",
+   "level": "A2",
+   "taught_in": "a2-15-03-gr",
+   "requires": [
+    "por-que-y-porque"
+   ]
+  },
+  "formal-cause-connectors": {
+   "family": "cause-purpose-result",
+   "level": "B1",
+   "taught_in": "b1-independencia-04-republicas-gr",
+   "requires": [
+    "porque-y-por-eso"
+   ]
+  },
+  "consecutivas-de-tal-manera": {
+   "family": "cause-purpose-result",
+   "level": "B2",
+   "taught_in": "b2-nicaragua-01-a-gr",
+   "requires": [
+    "porque-y-por-eso"
+   ]
+  },
+  "consequence-markers": {
+   "family": "cause-purpose-result",
+   "level": "B2",
+   "taught_in": "b2-31-02-a-gr",
+   "requires": [
+    "porque-y-por-eso"
+   ]
+  },
+  "subjuntivo-de-finalidad-para-que": {
+   "family": "cause-purpose-result",
+   "level": "B1",
+   "taught_in": "b1-32-04-purpose-gr",
+   "requires": [
+    "por-vs-para",
+    "subjuntivo-morfologia"
+   ]
+  },
+  "purpose-connectors": {
+   "family": "cause-purpose-result",
+   "level": "B2",
+   "taught_in": "b2-27-03-a-gr",
+   "requires": [
+    "subjuntivo-de-finalidad-para-que"
+   ],
+   "practised_from": "B1"
+  },
+  "concesivas-aunque": {
+   "family": "concession",
+   "level": "A2",
+   "taught_in": "a2-perifrasisverbales-04-gr",
+   "requires": [
+    "connectors"
+   ]
+  },
+  "concesivas-por-mas-que": {
+   "family": "concession",
+   "level": "B2",
+   "taught_in": "b2-mexicosur-02-a-gr",
+   "requires": [
+    "concesivas-aunque"
+   ]
+  },
+  "a-pesar-de": {
+   "family": "concession",
+   "level": "B1",
+   "taught_in": "b1-industrializacion-05-pese-a-que-gr",
+   "requires": [
+    "concesivas-aunque"
+   ]
+  },
+  "concesivas-si-bien": {
+   "family": "concession",
+   "level": "B2",
+   "taught_in": "b2-guatemala-03-a-gr",
+   "requires": [
+    "concesivas-aunque"
+   ]
+  },
+  "concesivas-aun-cuando": {
+   "family": "concession",
+   "level": "B2",
+   "taught_in": "b2-nicaragua-04-a-gr",
+   "requires": [
+    "concesivas-aunque"
+   ]
+  },
+  "contrast-concession-connectors": {
+   "family": "concession",
+   "level": "B1",
+   "taught_in": "b1-21-02-contrast-and-concession-gr",
+   "requires": [
+    "connectors"
+   ]
+  },
+  "reduplicated-subjunctive": {
+   "family": "concession",
+   "level": "B2",
+   "taught_in": "b2-08-05-a-gr",
+   "requires": [
+    "concesivas-aunque",
+    "subjuntivo-morfologia"
+   ]
+  },
+  "estilo-indirecto": {
+   "family": "reported-speech",
+   "level": "B1",
+   "taught_in": "b1-13-02-reported-speech-foundations-gr",
+   "requires": [
+    "preterito-indefinido",
+    "imperfect"
+   ]
+  },
+  "estilo-indirecto-informacion": {
+   "family": "reported-speech",
+   "level": "B1",
+   "taught_in": "b1-13-01-reporting-information-gr",
+   "requires": [
+    "estilo-indirecto"
+   ]
+  },
+  "estilo-indirecto-ordenes": {
+   "family": "reported-speech",
+   "level": "B1",
+   "taught_in": "b1-38-02-gr",
+   "requires": [
+    "estilo-indirecto",
+    "subjunctive-influence"
+   ]
+  },
+  "discurso-indirecto-interrogativas": {
+   "family": "reported-speech",
+   "level": "B2",
+   "taught_in": "b2-17-02-a-gr",
+   "requires": [
+    "estilo-indirecto"
+   ]
+  },
+  "discurso-indirecto-deicticos": {
+   "family": "reported-speech",
+   "level": "B2",
+   "taught_in": "b2-17-04-a-gr",
+   "requires": [
+    "estilo-indirecto"
+   ]
+  },
+  "discurso-indirecto-libre": {
+   "family": "reported-speech",
+   "level": "B2",
+   "taught_in": "b2-17-05-a-gr",
+   "requires": [
+    "estilo-indirecto"
+   ]
+  },
+  "reporting-verbs": {
+   "family": "reported-speech",
+   "level": "B2",
+   "taught_in": "b2-salvadorhonduras-02-a-gr",
+   "requires": [
+    "estilo-indirecto"
+   ]
+  },
+  "ordering-markers": {
+   "family": "discourse-markers",
+   "level": "A2",
+   "taught_in": "a2-perifrasisverbales-03-gr",
+   "requires": [
+    "connectors"
+   ]
+  },
+  "argument-markers": {
+   "family": "discourse-markers",
+   "level": "B1",
+   "taught_in": "b1-15-05-connected-opinion-writing-gr",
+   "requires": [
+    "ordering-markers"
+   ]
+  },
+  "marcadores-digresion": {
+   "family": "discourse-markers",
+   "level": "B2",
+   "taught_in": "b2-28-02-a-gr",
+   "requires": [
+    "ordering-markers"
+   ]
+  },
+  "reformulation-markers": {
+   "family": "discourse-markers",
+   "level": "B2",
+   "taught_in": "b2-29-01-a-gr",
+   "requires": [
+    "ordering-markers"
+   ]
+  },
+  "contrast-markers": {
+   "family": "discourse-markers",
+   "level": "B2",
+   "taught_in": "b2-brasilsudeste-01-a-gr",
+   "requires": [
+    "contrast-concession-connectors"
+   ]
+  },
+  "hedging": {
+   "family": "discourse-markers",
+   "level": "B2",
+   "taught_in": "b2-21-05-a-gr",
+   "requires": [
+    "subjunctive-doubt"
+   ]
+  },
+  "stance-adverbs": {
+   "family": "discourse-markers",
+   "level": "B2",
+   "taught_in": "b2-brasilsudeste-04-a-gr",
+   "requires": [
+    "intensificadores-y-grado"
+   ]
+  },
+  "refutacion-no-es-que-sino": {
+   "family": "discourse-markers",
+   "level": "B2",
+   "taught_in": "b2-05-03-a-gr",
+   "requires": [
+    "sino-vs-pero",
+    "subjunctive-doubt"
+   ]
+  },
+  "polite-softening": {
+   "family": "politeness-address",
+   "level": "A2",
+   "taught_in": "a2-condicionalsimple-03-gr",
+   "requires": [],
+   "practised_from": "A1"
+  },
+  "sociolinguistica-tratamiento-cortesia": {
+   "family": "politeness-address",
+   "level": "B2",
+   "taught_in": "b2-34-01-a-gr",
+   "requires": [
+    "polite-softening"
+   ]
+  },
+  "formal-register": {
+   "family": "register-style",
+   "level": "B2",
+   "taught_in": "b2-14-05-a-gr",
+   "requires": [
+    "nominalization"
+   ]
+  },
+  "essay-style": {
+   "family": "register-style",
+   "level": "B2",
+   "taught_in": "b2-35-05-a-gr",
+   "requires": [
+    "argument-markers"
+   ]
+  },
+  "rhetorical-devices": {
+   "family": "register-style",
+   "level": "B2",
+   "taught_in": "b2-36-04-a-gr",
+   "requires": []
+  },
+  "nominalization": {
+   "family": "word-formation",
+   "level": "B2",
+   "taught_in": "b2-35-01-a-gr",
+   "requires": [],
+   "screen_only_in": "es-latam",
+   "practised_from": "B1"
+  }
+ },
+ "hu": {
+  "hungarian-vowels": {
+   "family": "sounds-spelling",
+   "level": "A1",
+   "taught_in": "a1-01-a-gr",
+   "requires": []
+  },
+  "hungarian-consonant-sounds": {
+   "family": "sounds-spelling",
+   "level": "A1",
+   "taught_in": "a1-01-b-gr",
+   "requires": []
+  },
+  "nominalization": {
+   "family": "word-formation",
+   "level": "B1",
+   "taught_in": "b1-16-04-b-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "practised_from": "A2"
+  },
+  "sag-seg-nouns": {
+   "family": "word-formation",
+   "level": "C1",
+   "taught_in": "c1-06-02-a-gr",
+   "requires": [
+    "nominalization"
+   ]
+  },
+  "having-s": {
+   "family": "word-formation",
+   "level": "A2",
+   "taught_in": "a2-16-b-gr",
+   "requires": [
+    "adjective-order-before-the-noun"
+   ]
+  },
+  "spatial-belonging-beli": {
+   "family": "word-formation",
+   "level": "B1",
+   "taught_in": "b1-11-02-gr",
+   "requires": [
+    "having-s",
+    "ban-ben-in"
+   ]
+  },
+  "verbal-adjectives-hatatlan-hetetlen": {
+   "family": "word-formation",
+   "level": "B1",
+   "taught_in": "b1-30-02-b-gr",
+   "requires": [
+    "potential-hat-het",
+    "present-participle"
+   ]
+  },
+  "noun-compounds": {
+   "family": "word-formation",
+   "level": "B1",
+   "taught_in": "b1-16-02-b-gr",
+   "requires": [
+    "3rd-person-possessive"
+   ]
+  },
+  "plural-nouns-k": {
+   "family": "nouns",
+   "level": "A1",
+   "taught_in": "a1-22-b-gr",
+   "requires": [
+    "hungarian-vowels"
+   ]
+  },
+  "definite-article-a-az": {
+   "family": "articles-demonstratives",
+   "level": "A1",
+   "taught_in": "a1-23-b-gr",
+   "requires": []
+  },
+  "indefinite-article-egy": {
+   "family": "articles-demonstratives",
+   "level": "A1",
+   "taught_in": "a1-22-a-gr",
+   "requires": []
+  },
+  "demonstratives-ez-az": {
+   "family": "articles-demonstratives",
+   "level": "A1",
+   "taught_in": "a1-03-b-gr",
+   "requires": []
+  },
+  "possessive-suffixes": {
+   "family": "possession",
+   "level": "A1",
+   "taught_in": "a1-26-b-gr",
+   "requires": [
+    "hungarian-vowels"
+   ]
+  },
+  "3rd-person-possessive": {
+   "family": "possession",
+   "level": "A2",
+   "taught_in": "a2-12-a-gr",
+   "requires": [
+    "possessive-suffixes"
+   ]
+  },
+  "kinship-possessives": {
+   "family": "possession",
+   "level": "A1",
+   "taught_in": "a1-26-b-gr",
+   "requires": [
+    "possessive-suffixes"
+   ]
+  },
+  "possessive-pronouns-enyem": {
+   "family": "possession",
+   "level": "A1",
+   "taught_in": "a1-43-a-gr",
+   "requires": [
+    "possessive-suffixes"
+   ]
+  },
+  "van-possessive-to-have": {
+   "family": "possession",
+   "level": "A1",
+   "taught_in": "a1-27-b-gr",
+   "requires": [
+    "possessive-suffixes",
+    "van-and-nincs-there-is-there-isn-t"
+   ]
+  },
+  "acc-poss": {
+   "family": "possession",
+   "level": "A2",
+   "taught_in": "a2-104-b-gr",
+   "requires": [
+    "how-the-accusative-t-works",
+    "3rd-person-possessive"
+   ]
+  },
+  "plural-possessive": {
+   "family": "possession",
+   "level": "A2",
+   "taught_in": "a2-191-b-gr",
+   "requires": [
+    "3rd-person-possessive"
+   ]
+  },
+  "sajat": {
+   "family": "possession",
+   "level": "A2",
+   "taught_in": "a2-25-b-gr",
+   "requires": [
+    "possessive-suffixes"
+   ]
+  },
+  "cardinal-numbers": {
+   "family": "numbers-quantity",
+   "level": "A1",
+   "taught_in": "a1-16b-gr",
+   "requires": []
+  },
+  "ordinal-numbers": {
+   "family": "numbers-quantity",
+   "level": "A2",
+   "taught_in": "a2-07-a-gr",
+   "requires": [
+    "cardinal-numbers"
+   ]
+  },
+  "fractions": {
+   "family": "numbers-quantity",
+   "level": "A1",
+   "taught_in": "a1-76-b-gr",
+   "requires": [
+    "cardinal-numbers"
+   ]
+  },
+  "containers-and-measures": {
+   "family": "numbers-quantity",
+   "level": "A1",
+   "taught_in": "a1-93-b-gr",
+   "requires": [
+    "singular-after-numbers"
+   ]
+  },
+  "singular-after-numbers": {
+   "family": "numbers-quantity",
+   "level": "A1",
+   "taught_in": "a1-30-a-gr",
+   "requires": [
+    "cardinal-numbers"
+   ]
+  },
+  "szor-szer-multiplicatives": {
+   "family": "numbers-quantity",
+   "level": "A2",
+   "taught_in": "a2-04-a-gr",
+   "requires": [
+    "cardinal-numbers"
+   ]
+  },
+  "sokat-eleget": {
+   "family": "numbers-quantity",
+   "level": "A2",
+   "taught_in": "a2-86-a-gr",
+   "requires": [
+    "how-the-accusative-t-works"
+   ]
+  },
+  "b2-proportional-rates": {
+   "family": "numbers-quantity",
+   "level": "B2",
+   "taught_in": "b2-21-01-a-gr",
+   "requires": [
+    "szor-szer-multiplicatives"
+   ]
+  },
+  "personal-pronouns": {
+   "family": "pronouns",
+   "level": "A1",
+   "taught_in": "a1-11-a-gr",
+   "requires": []
+  },
+  "subject-pronouns-omission": {
+   "family": "pronouns",
+   "level": "A1",
+   "taught_in": "a1-61-b-gr",
+   "requires": [
+    "personal-pronouns",
+    "present-tense-routine-language"
+   ]
+  },
+  "good-for-me-nekem-jo": {
+   "family": "pronouns",
+   "level": "A1",
+   "taught_in": "a1-148-a-gr",
+   "requires": [
+    "personal-pronouns"
+   ]
+  },
+  "case-inflected-pronouns": {
+   "family": "pronouns",
+   "level": "A2",
+   "taught_in": "a2-163-a-gr",
+   "requires": [
+    "good-for-me-nekem-jo",
+    "three-locatives"
+   ]
+  },
+  "adjective-order-before-the-noun": {
+   "family": "adjectives",
+   "level": "A1",
+   "taught_in": "a1-34-b-gr",
+   "requires": []
+  },
+  "plural-predicate-adjectives-k": {
+   "family": "adjectives",
+   "level": "A1",
+   "taught_in": "a1-31-b-gr",
+   "requires": [
+    "plural-nouns-k",
+    "van-zero-copula"
+   ]
+  },
+  "an-en-adverb": {
+   "family": "adverbs",
+   "level": "A2",
+   "taught_in": "a2-94-a-gr",
+   "requires": [
+    "adjective-order-before-the-noun"
+   ],
+   "practised_from": "A1"
+  },
+  "direction-adverbs-jobbra-balra": {
+   "family": "adverbs",
+   "level": "A1",
+   "taught_in": "a1-140-a-gr",
+   "requires": []
+  },
+  "egyutt-together": {
+   "family": "adverbs",
+   "level": "A1",
+   "taught_in": "a1-30-b-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ]
+  },
+  "itt-ott-here-there": {
+   "family": "adverbs",
+   "level": "A1",
+   "taught_in": "a1-24-b-gr",
+   "requires": []
+  },
+  "mindig-and-gyakran-frequency-adverbs": {
+   "family": "adverbs",
+   "level": "A1",
+   "taught_in": "a1-82-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ]
+  },
+  "nagyon-very": {
+   "family": "adverbs",
+   "level": "A1",
+   "taught_in": "a1-35-a-gr",
+   "requires": []
+  },
+  "sequencing-elobb-aztan-utana-vegul": {
+   "family": "adverbs",
+   "level": "A2",
+   "taught_in": "a2-02-b-gr",
+   "requires": [],
+   "practised_from": "A1"
+  },
+  "scalar-adverbs": {
+   "family": "adverbs",
+   "level": "C1",
+   "taught_in": "c1-19-05-a-gr",
+   "requires": [
+    "comparative-bb",
+    "an-en-adverb"
+   ]
+  },
+  "comparative-bb": {
+   "family": "comparison",
+   "level": "A2",
+   "taught_in": "a2-64-b-gr",
+   "requires": [
+    "adjective-order-before-the-noun"
+   ]
+  },
+  "superlative": {
+   "family": "comparison",
+   "level": "A2",
+   "taught_in": "a2-76-b-gr",
+   "requires": [
+    "comparative-bb"
+   ]
+  },
+  "olyan-mint": {
+   "family": "comparison",
+   "level": "A2",
+   "taught_in": "a2-18-b-gr",
+   "requires": [
+    "comparative-bb"
+   ]
+  },
+  "kepest": {
+   "family": "comparison",
+   "level": "B1",
+   "taught_in": "b1-02-05-gr",
+   "requires": [
+    "comparative-bb",
+    "hoz-suffix"
+   ]
+  },
+  "correlative-minel-annal": {
+   "family": "comparison",
+   "level": "B1",
+   "taught_in": "b1-matyas-02-gr",
+   "requires": [
+    "comparative-bb"
+   ]
+  },
+  "mintha": {
+   "family": "comparison",
+   "level": "B2",
+   "taught_in": "b2-31-02-a-gr",
+   "requires": [
+    "nek-conditional"
+   ]
+  },
+  "how-the-accusative-t-works": {
+   "family": "cases",
+   "level": "A1",
+   "taught_in": "a1-102-a-gr",
+   "requires": []
+  },
+  "ban-ben-in": {
+   "family": "cases",
+   "level": "A1",
+   "taught_in": "a1-23-a-gr",
+   "requires": [
+    "hungarian-vowels"
+   ]
+  },
+  "elative-bol-bel": {
+   "family": "cases",
+   "level": "A1",
+   "taught_in": "a1-151-a-gr",
+   "requires": [
+    "ban-ben-in"
+   ]
+  },
+  "delative-rol-rel": {
+   "family": "cases",
+   "level": "A1",
+   "taught_in": "a1-152-a-gr",
+   "requires": [
+    "elative-bol-bel"
+   ]
+  },
+  "movement-with-ba-be": {
+   "family": "cases",
+   "level": "A1",
+   "taught_in": "a1-56-a-gr",
+   "requires": [
+    "ban-ben-in"
+   ]
+  },
+  "on-en-on": {
+   "family": "cases",
+   "level": "A2",
+   "taught_in": "a2-26-a-gr",
+   "requires": [
+    "hungarian-vowels"
+   ],
+   "practised_from": "A1"
+  },
+  "ra-re": {
+   "family": "cases",
+   "level": "A2",
+   "taught_in": "a2-29-a-gr",
+   "requires": [
+    "on-en-on",
+    "movement-with-ba-be"
+   ],
+   "practised_from": "A1"
+  },
+  "val-vel": {
+   "family": "cases",
+   "level": "A1",
+   "taught_in": "a1-136-a-gr",
+   "requires": [
+    "hungarian-vowels"
+   ]
+  },
+  "kor-time": {
+   "family": "cases",
+   "level": "A1",
+   "taught_in": "a1-147-b-gr",
+   "requires": [
+    "cardinal-numbers"
+   ]
+  },
+  "nal-nel": {
+   "family": "cases",
+   "level": "A2",
+   "taught_in": "a2-13-b-gr",
+   "requires": [
+    "ban-ben-in"
+   ]
+  },
+  "hoz-suffix": {
+   "family": "cases",
+   "level": "A2",
+   "taught_in": "a2-31-a-gr",
+   "requires": [
+    "nal-nel"
+   ]
+  },
+  "tol-tol": {
+   "family": "cases",
+   "level": "A2",
+   "taught_in": "a2-05-a-gr",
+   "requires": [
+    "nal-nel"
+   ]
+  },
+  "terminative-case-ig": {
+   "family": "cases",
+   "level": "B1",
+   "taught_in": "b1-08-03-gr",
+   "requires": [
+    "tol-tol"
+   ],
+   "practised_from": "A2"
+  },
+  "translative-morphology": {
+   "family": "cases",
+   "level": "A2",
+   "taught_in": "a2-171-b-gr",
+   "requires": [
+    "val-vel"
+   ]
+  },
+  "essive-formal-kent": {
+   "family": "cases",
+   "level": "A2",
+   "taught_in": "a2-176-a-gr",
+   "requires": []
+  },
+  "ul-ul-essive-modal": {
+   "family": "cases",
+   "level": "A1",
+   "taught_in": "a1-159-a-gr",
+   "requires": []
+  },
+  "distributive-nkent": {
+   "family": "cases",
+   "level": "B1",
+   "taught_in": "b1-17-02-a-gr",
+   "requires": [
+    "cardinal-numbers"
+   ],
+   "practised_from": "A2"
+  },
+  "nta-productive": {
+   "family": "cases",
+   "level": "A2",
+   "taught_in": "a2-54-b-gr",
+   "requires": [
+    "cardinal-numbers"
+   ]
+  },
+  "three-locatives": {
+   "family": "cases",
+   "level": "A2",
+   "taught_in": "a2-28-b-gr",
+   "requires": [
+    "ban-ben-in",
+    "on-en-on",
+    "nal-nel"
+   ]
+  },
+  "kent-vs-mint": {
+   "family": "cases",
+   "level": "B1",
+   "taught_in": "b1-17-01-b-gr",
+   "requires": [
+    "essive-formal-kent",
+    "olyan-mint"
+   ]
+  },
+  "postpositions-basic": {
+   "family": "prepositions-postpositions",
+   "level": "A1",
+   "taught_in": "a1-89-a-gr",
+   "requires": []
+  },
+  "keresztul": {
+   "family": "prepositions-postpositions",
+   "level": "A2",
+   "taught_in": "a2-22-b-gr",
+   "requires": [
+    "on-en-on",
+    "postpositions-basic"
+   ]
+  },
+  "postpositions-altal-reven": {
+   "family": "prepositions-postpositions",
+   "level": "A2",
+   "taught_in": "a2-88-a-gr",
+   "requires": [
+    "postpositions-basic"
+   ]
+  },
+  "postposition-fele": {
+   "family": "prepositions-postpositions",
+   "level": "B1",
+   "taught_in": "b1-08-01-a-gr",
+   "requires": [
+    "postpositions-basic"
+   ]
+  },
+  "inflected-postpositions": {
+   "family": "prepositions-postpositions",
+   "level": "A2",
+   "taught_in": "a2-196-a-gr",
+   "requires": [
+    "postpositions-basic",
+    "possessive-suffixes"
+   ]
+  },
+  "b2-spatial-postpositions": {
+   "family": "prepositions-postpositions",
+   "level": "B2",
+   "taught_in": "b2-19-01-a-gr",
+   "requires": [
+    "inflected-postpositions"
+   ]
+  },
+  "b2-relational-compounds": {
+   "family": "prepositions-postpositions",
+   "level": "B2",
+   "taught_in": "b2-20-05-a-gr",
+   "requires": [
+    "postpositions-altal-reven"
+   ]
+  },
+  "present-tense-routine-language": {
+   "family": "verb-forms",
+   "level": "A1",
+   "taught_in": "a1-61-a-gr",
+   "requires": [
+    "personal-pronouns"
+   ]
+  },
+  "definite-vs-indefinite-conjugation": {
+   "family": "verb-forms",
+   "level": "A1",
+   "taught_in": "a1-102-def-gr",
+   "requires": [
+    "present-tense-routine-language",
+    "how-the-accusative-t-works"
+   ]
+  },
+  "ik-verbs-dolgozom-not-dolgozok": {
+   "family": "verb-forms",
+   "level": "A1",
+   "taught_in": "a1-85-b-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ]
+  },
+  "megy-jon": {
+   "family": "verb-forms",
+   "level": "A1",
+   "taught_in": "a1-136-b-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ]
+  },
+  "eszik-iszik": {
+   "family": "verb-forms",
+   "level": "A2",
+   "taught_in": "a2-41-a-gr",
+   "requires": [
+    "ik-verbs-dolgozom-not-dolgozok"
+   ]
+  },
+  "lak-lek-suffix": {
+   "family": "verb-forms",
+   "level": "A2",
+   "taught_in": "a2-187-b-gr",
+   "requires": [
+    "definite-vs-indefinite-conjugation"
+   ]
+  },
+  "van-zero-copula": {
+   "family": "being-becoming",
+   "level": "A1",
+   "taught_in": "a1-02-b-gr",
+   "requires": [
+    "personal-pronouns"
+   ]
+  },
+  "van-and-nincs-there-is-there-isn-t": {
+   "family": "being-becoming",
+   "level": "A1",
+   "taught_in": "a1-24-a-gr",
+   "requires": [
+    "van-zero-copula"
+   ]
+  },
+  "nem-vs-nincs-two-kinds-of-negation": {
+   "family": "being-becoming",
+   "level": "A1",
+   "taught_in": "a1-28-b-gr",
+   "requires": [
+    "negation-with-nem",
+    "van-and-nincs-there-is-there-isn-t"
+   ]
+  },
+  "valik-verb": {
+   "family": "being-becoming",
+   "level": "A2",
+   "taught_in": "a2-172-a-gr",
+   "requires": [
+    "translative-morphology"
+   ]
+  },
+  "erdekel-construction": {
+   "family": "verb-patterns",
+   "level": "A1",
+   "taught_in": "a1-95-b-gr",
+   "requires": [
+    "good-for-me-nekem-jo"
+   ]
+  },
+  "faj-construction": {
+   "family": "verb-patterns",
+   "level": "A2",
+   "taught_in": "a2-82-b-gr",
+   "requires": [
+    "possessive-suffixes"
+   ]
+  },
+  "verb-government-ra-re": {
+   "family": "verb-patterns",
+   "level": "B1",
+   "taught_in": "b1-02-04-b-gr",
+   "requires": [
+    "ra-re"
+   ],
+   "practised_from": "A2"
+  },
+  "verb-government-ban-ben": {
+   "family": "verb-patterns",
+   "level": "B1",
+   "taught_in": "b1-11-05-gr",
+   "requires": [
+    "ban-ben-in"
+   ],
+   "practised_from": "A2"
+  },
+  "verb-government-val-vel": {
+   "family": "verb-patterns",
+   "level": "A2",
+   "taught_in": "a2-144-a-gr",
+   "requires": [
+    "val-vel"
+   ],
+   "practised_from": "A1"
+  },
+  "verb-government-hoz-hez": {
+   "family": "verb-patterns",
+   "level": "B1",
+   "taught_in": "b1-07-03-gr",
+   "requires": [
+    "hoz-suffix"
+   ]
+  },
+  "verb-government-rol-rel": {
+   "family": "verb-patterns",
+   "level": "B1",
+   "taught_in": "b1-05-03-a-gr",
+   "requires": [
+    "delative-rol-rel"
+   ]
+  },
+  "verb-government-ert": {
+   "family": "verb-patterns",
+   "level": "A2",
+   "taught_in": "a2-38-b-gr",
+   "requires": [],
+   "practised_from": "B1"
+  },
+  "verb-government-nak-nek": {
+   "family": "verb-patterns",
+   "level": "A2",
+   "taught_in": "a2-59-a-gr",
+   "requires": [
+    "good-for-me-nekem-jo"
+   ]
+  },
+  "verb-government-bol-bol": {
+   "family": "verb-patterns",
+   "level": "B1",
+   "taught_in": "b1-orszagma-03-bol-bol-all-gr",
+   "requires": [
+    "elative-bol-bel"
+   ]
+  },
+  "past-tense-indefinite": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-116-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ]
+  },
+  "definite-past": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-118-b-gr",
+   "requires": [
+    "past-tense-indefinite",
+    "definite-vs-indefinite-conjugation"
+   ]
+  },
+  "van-past": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-119-a-gr",
+   "requires": [
+    "van-zero-copula"
+   ]
+  },
+  "irregular-past": {
+   "family": "past",
+   "level": "A2",
+   "taught_in": "a2-120-b-gr",
+   "requires": [
+    "past-tense-indefinite"
+   ]
+  },
+  "mar-experiential": {
+   "family": "past",
+   "level": "B1",
+   "taught_in": "b1-02-01-b-gr",
+   "requires": [
+    "past-tense-indefinite"
+   ],
+   "practised_from": "A2"
+  },
+  "historical-routines": {
+   "family": "past",
+   "level": "B1",
+   "taught_in": "b1-haromresz-04-gr",
+   "requires": [
+    "past-tense-indefinite",
+    "building-the-infinitive-the-suffix-ni"
+   ]
+  },
+  "fog-infinitive": {
+   "family": "future",
+   "level": "A2",
+   "taught_in": "a2-131-a-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni"
+   ],
+   "practised_from": "A1"
+  },
+  "majd-adverb": {
+   "family": "future",
+   "level": "A2",
+   "taught_in": "a2-95-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ]
+  },
+  "nek-conditional": {
+   "family": "conditional",
+   "level": "A1",
+   "taught_in": "a1-112-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ]
+  },
+  "irregular-nek-conditional": {
+   "family": "conditional",
+   "level": "A2",
+   "taught_in": "a2-137-b-gr",
+   "requires": [
+    "nek-conditional"
+   ]
+  },
+  "ha-clause": {
+   "family": "conditional",
+   "level": "A2",
+   "taught_in": "a2-65-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ]
+  },
+  "hypothetical-ha-conditional": {
+   "family": "conditional",
+   "level": "B1",
+   "taught_in": "b1-04-01-b-gr",
+   "requires": [
+    "ha-clause",
+    "nek-conditional"
+   ],
+   "practised_from": "A2"
+  },
+  "past-conditional-volna": {
+   "family": "conditional",
+   "level": "B1",
+   "taught_in": "b1-rakoczi-02-gr",
+   "requires": [
+    "hypothetical-ha-conditional",
+    "past-tense-indefinite"
+   ]
+  },
+  "mixed-conditionals": {
+   "family": "conditional",
+   "level": "B1",
+   "taught_in": "b1-35-02-a-gr",
+   "requires": [
+    "past-conditional-volna"
+   ]
+  },
+  "barcsak-wish": {
+   "family": "conditional",
+   "level": "B1",
+   "taught_in": "b1-03-01-b-gr",
+   "requires": [
+    "nek-conditional"
+   ]
+  },
+  "felteve-hogy-kiveve-ha": {
+   "family": "conditional",
+   "level": "C1",
+   "taught_in": "c1-07-03-a-gr",
+   "requires": [
+    "ha-clause"
+   ]
+  },
+  "hogy-jon-jen": {
+   "family": "subjunctive",
+   "level": "B1",
+   "taught_in": "b1-03-03-b-gr",
+   "requires": [
+    "imperative-indefinite",
+    "hogy-clauses"
+   ],
+   "practised_from": "A2"
+  },
+  "mit-csinaljak": {
+   "family": "subjunctive",
+   "level": "A2",
+   "taught_in": "a2-87-b-gr",
+   "requires": [
+    "imperative-indefinite"
+   ]
+  },
+  "optative-subjunctive": {
+   "family": "subjunctive",
+   "level": "C1",
+   "taught_in": "c1-mestersegesintelligencia-04-a-gr",
+   "requires": [
+    "hogy-jon-jen"
+   ]
+  },
+  "imperative-indefinite": {
+   "family": "imperative",
+   "level": "A2",
+   "taught_in": "a2-48-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "practised_from": "A1"
+  },
+  "imperative-definite": {
+   "family": "imperative",
+   "level": "A2",
+   "taught_in": "a2-49-a-gr",
+   "requires": [
+    "imperative-indefinite",
+    "definite-vs-indefinite-conjugation"
+   ]
+  },
+  "junk-suggestion": {
+   "family": "imperative",
+   "level": "A2",
+   "taught_in": "a2-136-a-gr",
+   "requires": [
+    "imperative-indefinite"
+   ]
+  },
+  "meg-meaning": {
+   "family": "aspect",
+   "level": "A2",
+   "taught_in": "a2-109-a-gr",
+   "requires": [
+    "directional-preverbs"
+   ]
+  },
+  "directional-preverbs": {
+   "family": "aspect",
+   "level": "A1",
+   "taught_in": "a1-139-a-gr",
+   "requires": [
+    "movement-with-ba-be"
+   ]
+  },
+  "b2-figurative-preverbs": {
+   "family": "aspect",
+   "level": "B2",
+   "taught_in": "b2-28-01-a-gr",
+   "requires": [
+    "meg-meaning"
+   ]
+  },
+  "szokott-infinitive-habitual-actions": {
+   "family": "aspect",
+   "level": "A1",
+   "taught_in": "a1-81-b-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni"
+   ]
+  },
+  "jar-iskolaba": {
+   "family": "aspect",
+   "level": "A2",
+   "taught_in": "a2-91-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ]
+  },
+  "nominalizing-processes": {
+   "family": "aspect",
+   "level": "B1",
+   "taught_in": null,
+   "requires": [
+    "nominalization"
+   ]
+  },
+  "b2-frequentative-verbs": {
+   "family": "aspect",
+   "level": "B2",
+   "taught_in": "b2-05-01-a-gr",
+   "requires": [
+    "meg-meaning"
+   ]
+  },
+  "kell-infinitive": {
+   "family": "modality",
+   "level": "A1",
+   "taught_in": "a1-118-b-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni"
+   ]
+  },
+  "lehet-infinitive": {
+   "family": "modality",
+   "level": "A1",
+   "taught_in": "a1-149-b-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni"
+   ]
+  },
+  "tud-infinitive-skills": {
+   "family": "modality",
+   "level": "A2",
+   "taught_in": "a2-111-a-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni"
+   ]
+  },
+  "potential-hat-het": {
+   "family": "modality",
+   "level": "A2",
+   "taught_in": "a2-115-b-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ]
+  },
+  "szabad-infinitive": {
+   "family": "modality",
+   "level": "A2",
+   "taught_in": "a2-114-b-gr",
+   "requires": [
+    "kell-infinitive"
+   ]
+  },
+  "akar-tervez-infinitive": {
+   "family": "modality",
+   "level": "A1",
+   "taught_in": "a1-147-a-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni"
+   ]
+  },
+  "kellene": {
+   "family": "modality",
+   "level": "A2",
+   "taught_in": "a2-87-a-gr",
+   "requires": [
+    "kell-infinitive",
+    "nek-conditional"
+   ]
+  },
+  "kellett-volna": {
+   "family": "modality",
+   "level": "B1",
+   "taught_in": "b1-20-02-a-gr",
+   "requires": [
+    "kellene",
+    "past-tense-indefinite"
+   ]
+  },
+  "formal-obligation": {
+   "family": "modality",
+   "level": "B1",
+   "taught_in": "b1-10-03-gr",
+   "requires": [
+    "kell-infinitive",
+    "future-participle-ando"
+   ]
+  },
+  "epistemic-modality": {
+   "family": "modality",
+   "level": "C1",
+   "taught_in": "c1-22-01-a-gr",
+   "requires": [
+    "kell-infinitive",
+    "potential-hat-het"
+   ]
+  },
+  "mediopassive-verbs-odik": {
+   "family": "voice",
+   "level": "B1",
+   "taught_in": "b1-06-02-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ],
+   "practised_from": "A2"
+  },
+  "causative-verbal-derivations": {
+   "family": "voice",
+   "level": "B2",
+   "taught_in": "b2-10-04-a-gr",
+   "requires": [
+    "definite-vs-indefinite-conjugation"
+   ],
+   "practised_from": "B1"
+  },
+  "agentless-constructions": {
+   "family": "voice",
+   "level": "B2",
+   "taught_in": "b2-15-01-a-gr",
+   "requires": [
+    "mediopassive-verbs-odik"
+   ]
+  },
+  "egymas": {
+   "family": "voice",
+   "level": "A2",
+   "taught_in": "a2-23-b-gr",
+   "requires": [
+    "personal-pronouns"
+   ]
+  },
+  "building-the-infinitive-the-suffix-ni": {
+   "family": "non-finite",
+   "level": "A1",
+   "taught_in": "a1-143-b-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ]
+  },
+  "inflected-infinitives": {
+   "family": "non-finite",
+   "level": "A2",
+   "taught_in": "a2-201-b-gr",
+   "requires": [
+    "building-the-infinitive-the-suffix-ni",
+    "possessive-suffixes",
+    "kell-infinitive"
+   ]
+  },
+  "participle-actions": {
+   "family": "non-finite",
+   "level": "B1",
+   "taught_in": "b1-nemzetiugy-01-gr",
+   "requires": [
+    "past-tense-indefinite"
+   ],
+   "practised_from": "A2"
+  },
+  "present-participle": {
+   "family": "non-finite",
+   "level": "B1",
+   "taught_in": "b1-06-01-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ]
+  },
+  "past-participle-adjective": {
+   "family": "non-finite",
+   "level": "B1",
+   "taught_in": "b1-02-03-a-gr",
+   "requires": [
+    "past-tense-indefinite"
+   ]
+  },
+  "future-participle-ando": {
+   "family": "non-finite",
+   "level": "B1",
+   "taught_in": "b1-14-01-a-gr",
+   "requires": [
+    "present-participle"
+   ]
+  },
+  "participial-clauses": {
+   "family": "non-finite",
+   "level": "B2",
+   "taught_in": "b2-szecesszio-02-a-gr",
+   "requires": [
+    "present-participle",
+    "past-participle-adjective"
+   ]
+  },
+  "negation-with-nem": {
+   "family": "negation",
+   "level": "A1",
+   "taught_in": "a1-04-b-gr",
+   "requires": []
+  },
+  "soha-needs-nem-negative-concord": {
+   "family": "negation",
+   "level": "A1",
+   "taught_in": "a1-82-b-gr",
+   "requires": [
+    "negation-with-nem"
+   ]
+  },
+  "ki-and-mi": {
+   "family": "questions",
+   "level": "A1",
+   "taught_in": "a1-03-a-gr",
+   "requires": []
+  },
+  "spatial-questions-hol-hova": {
+   "family": "questions",
+   "level": "A1",
+   "taught_in": "a1-13-a-gr",
+   "requires": [
+    "ki-and-mi"
+   ]
+  },
+  "quantity-choice-questions-mennyi-melyik": {
+   "family": "questions",
+   "level": "A1",
+   "taught_in": "a1-31-a-gr",
+   "requires": [
+    "ki-and-mi"
+   ]
+  },
+  "yes-no-questions": {
+   "family": "questions",
+   "level": "A1",
+   "taught_in": "a1-04-a-gr",
+   "requires": []
+  },
+  "rhetorical-questions": {
+   "family": "questions",
+   "level": "C1",
+   "taught_in": "c1-16-02-a-gr",
+   "requires": [
+    "yes-no-questions",
+    "nek-conditional"
+   ]
+  },
+  "basic-hungarian-word-order": {
+   "family": "word-order",
+   "level": "A1",
+   "taught_in": "a1-20-b-gr",
+   "requires": []
+  },
+  "is-placing-also-too": {
+   "family": "word-order",
+   "level": "A1",
+   "taught_in": "a1-83-a-gr",
+   "requires": [
+    "basic-hungarian-word-order"
+   ]
+  },
+  "prefix-word-order": {
+   "family": "word-order",
+   "level": "A2",
+   "taught_in": "a2-110-a-gr",
+   "requires": [
+    "directional-preverbs",
+    "basic-hungarian-word-order"
+   ]
+  },
+  "b2-focus-inversion": {
+   "family": "word-order",
+   "level": "B2",
+   "taught_in": "b2-01-02-a-gr",
+   "requires": [
+    "prefix-word-order"
+   ]
+  },
+  "b2-contrastive-topic": {
+   "family": "word-order",
+   "level": "B2",
+   "taught_in": "b2-kavehazikultura-01-a-gr",
+   "requires": [
+    "basic-hungarian-word-order"
+   ]
+  },
+  "b2-cleft-identification": {
+   "family": "word-order",
+   "level": "B2",
+   "taught_in": "b2-33-01-a-gr",
+   "requires": [
+    "b2-focus-inversion",
+    "relative-clauses-aki-ami-amely"
+   ]
+  },
+  "egyreszt-masreszt": {
+   "family": "coordination",
+   "level": "A2",
+   "taught_in": "a2-21-b-gr",
+   "requires": [],
+   "practised_from": "A1"
+  },
+  "adversative-contrast": {
+   "family": "coordination",
+   "level": "B1",
+   "taught_in": "b1-32-03-a-gr",
+   "requires": [],
+   "practised_from": "A1"
+  },
+  "relative-clauses-aki-ami-amely": {
+   "family": "relative-clauses",
+   "level": "A2",
+   "taught_in": "a2-19-a-gr",
+   "requires": [
+    "ki-and-mi",
+    "how-the-accusative-t-works"
+   ]
+  },
+  "ahol-amikor": {
+   "family": "relative-clauses",
+   "level": "B1",
+   "taught_in": "b1-arpadhaz-04-ahol-amikor-gr",
+   "requires": [
+    "relative-clauses-aki-ami-amely"
+   ]
+  },
+  "vonatkozoi-nevmas-esetei": {
+   "family": "relative-clauses",
+   "level": "B1",
+   "taught_in": "b1-arpadhaz-03-vonatkozoi-nevmas-esetei-gr",
+   "requires": [
+    "relative-clauses-aki-ami-amely"
+   ]
+  },
+  "b2-relative-postpositions": {
+   "family": "relative-clauses",
+   "level": "B2",
+   "taught_in": "b2-23-02-a-gr",
+   "requires": [
+    "vonatkozoi-nevmas-esetei",
+    "inflected-postpositions"
+   ]
+  },
+  "hogy-clauses": {
+   "family": "complement-clauses",
+   "level": "A2",
+   "taught_in": "a2-88-b-gr",
+   "requires": []
+  },
+  "b2-cataphoric-clauses": {
+   "family": "complement-clauses",
+   "level": "B2",
+   "taught_in": "b2-18-01-a-gr",
+   "requires": [
+    "hogy-clauses",
+    "demonstratives-ez-az"
+   ]
+  },
+  "szerintem": {
+   "family": "complement-clauses",
+   "level": "A2",
+   "taught_in": "a2-141-b-gr",
+   "requires": [
+    "hogy-clauses"
+   ]
+  },
+  "mig-egyidejuseg": {
+   "family": "time-clauses",
+   "level": "B1",
+   "taught_in": "b1-karpatmedence-03-mig-egyidejuseg-gr",
+   "requires": [],
+   "practised_from": "A1"
+  },
+  "miutan-mielott": {
+   "family": "time-clauses",
+   "level": "B1",
+   "taught_in": "b1-01-03-b-gr",
+   "requires": [
+    "past-tense-indefinite"
+   ]
+  },
+  "temporal-postpositions": {
+   "family": "time-clauses",
+   "level": "A1",
+   "taught_in": "a1-164-a-gr",
+   "requires": [
+    "postpositions-basic"
+   ]
+  },
+  "ota-duration": {
+   "family": "time-clauses",
+   "level": "A2",
+   "taught_in": "a2-83-b-gr",
+   "requires": [
+    "3rd-person-possessive"
+   ]
+  },
+  "b2-temporal-framing": {
+   "family": "time-clauses",
+   "level": "B2",
+   "taught_in": "b2-22-01-a-gr",
+   "requires": [
+    "temporal-postpositions",
+    "miutan-mielott"
+   ]
+  },
+  "mert-because": {
+   "family": "cause-purpose-result",
+   "level": "A1",
+   "taught_in": "a1-119-b-gr",
+   "requires": []
+  },
+  "azert-hogy-purpose": {
+   "family": "cause-purpose-result",
+   "level": "B1",
+   "taught_in": "b1-03-04-a-gr",
+   "requires": [
+    "hogy-jon-jen"
+   ]
+  },
+  "formal-purpose": {
+   "family": "cause-purpose-result",
+   "level": "B1",
+   "taught_in": "b1-erdelyaranykora-04-gr",
+   "requires": [
+    "azert-hogy-purpose"
+   ]
+  },
+  "nehogy-purpose": {
+   "family": "cause-purpose-result",
+   "level": "B1",
+   "taught_in": "b1-03-04-b-gr",
+   "requires": [
+    "azert-hogy-purpose"
+   ]
+  },
+  "causal-postpositions": {
+   "family": "cause-purpose-result",
+   "level": "B1",
+   "taught_in": "b1-mohacs-01-gr",
+   "requires": [
+    "mert-because",
+    "postpositions-basic"
+   ]
+  },
+  "annyira-hogy": {
+   "family": "cause-purpose-result",
+   "level": "B2",
+   "taught_in": "b2-32-01-a-gr",
+   "requires": [
+    "hogy-clauses"
+   ]
+  },
+  "concessive-annak-ellenere": {
+   "family": "concession",
+   "level": "B1",
+   "taught_in": "b1-05-04-a-gr",
+   "requires": [
+    "hogy-clauses"
+   ]
+  },
+  "concessive-postpositions": {
+   "family": "concession",
+   "level": "B1",
+   "taught_in": "b1-29-01-b-gr",
+   "requires": [
+    "concessive-annak-ellenere"
+   ]
+  },
+  "concessive-indefinites": {
+   "family": "concession",
+   "level": "B2",
+   "taught_in": "b2-09-01-a-gr",
+   "requires": [
+    "concessive-annak-ellenere"
+   ]
+  },
+  "even-if-ha-is": {
+   "family": "concession",
+   "level": "B2",
+   "taught_in": "b2-27-01-a-gr",
+   "requires": [
+    "ha-clause",
+    "is-placing-also-too"
+   ]
+  },
+  "reported-speech-statements": {
+   "family": "reported-speech",
+   "level": "B1",
+   "taught_in": "b1-13-01-a-gr",
+   "requires": [
+    "hogy-clauses",
+    "past-tense-indefinite"
+   ],
+   "practised_from": "A2"
+  },
+  "reported-commands": {
+   "family": "reported-speech",
+   "level": "B1",
+   "taught_in": "b1-27-03-a-gr",
+   "requires": [
+    "reported-speech-statements",
+    "hogy-jon-jen"
+   ]
+  },
+  "indirect-questions": {
+   "family": "reported-speech",
+   "level": "B1",
+   "taught_in": "b1-13-02-a-gr",
+   "requires": [
+    "reported-speech-statements"
+   ]
+  },
+  "additive-connectors": {
+   "family": "discourse-markers",
+   "level": "B1",
+   "taught_in": "b1-32-01-b-gr",
+   "requires": []
+  },
+  "evidentials": {
+   "family": "discourse-markers",
+   "level": "B1",
+   "taught_in": "b1-13-03-a-gr",
+   "requires": [],
+   "practised_from": "A2"
+  },
+  "discourse-particles": {
+   "family": "discourse-markers",
+   "level": "B2",
+   "taught_in": "b2-13-02-a-gr",
+   "requires": []
+  },
+  "epistemic-hedging": {
+   "family": "discourse-markers",
+   "level": "C1",
+   "taught_in": "c1-01-04-a-gr",
+   "requires": [
+    "evidentials"
+   ]
+  },
+  "conclusive-markers": {
+   "family": "discourse-markers",
+   "level": "C1",
+   "taught_in": "c1-visegrad-05-a-gr",
+   "requires": [
+    "additive-connectors"
+   ]
+  },
+  "contrastive-discourse-markers": {
+   "family": "discourse-markers",
+   "level": "B2",
+   "taught_in": "b2-16-02-a-gr",
+   "requires": [
+    "adversative-contrast"
+   ]
+  },
+  "framing-markers": {
+   "family": "discourse-markers",
+   "level": "C1",
+   "taught_in": "c1-tarsadalmireteg-01-a-gr",
+   "requires": []
+  },
+  "evaluative-stance": {
+   "family": "discourse-markers",
+   "level": "C1",
+   "taught_in": "c1-26-04-a-gr",
+   "requires": []
+  },
+  "formal-address-on": {
+   "family": "politeness-address",
+   "level": "A1",
+   "taught_in": "a1-124-a-gr",
+   "requires": [
+    "present-tense-routine-language"
+   ]
+  },
+  "kerek-vs-szeretnek": {
+   "family": "politeness-address",
+   "level": "A1",
+   "taught_in": "a1-94-a-gr",
+   "requires": [
+    "nek-conditional"
+   ]
+  },
+  "diplomatic-softening": {
+   "family": "politeness-address",
+   "level": "B2",
+   "taught_in": "b2-29-01-a-gr",
+   "requires": [
+    "nek-conditional",
+    "formal-address-on"
+   ]
+  },
+  "litotes-understatement": {
+   "family": "register-style",
+   "level": "C1",
+   "taught_in": "c1-05-02-a-gr",
+   "requires": [
+    "negation-with-nem"
+   ]
+  },
+  "rhetorical-argument": {
+   "family": "register-style",
+   "level": "C1",
+   "taught_in": "c1-01-03-a-gr",
+   "requires": [
+    "contrastive-discourse-markers"
+   ]
+  },
+  "metaphor": {
+   "family": "register-style",
+   "level": "C1",
+   "taught_in": "c1-nyelvfilozofia-04-a-gr",
+   "requires": []
+  },
+  "essay-oratory-style": {
+   "family": "register-style",
+   "level": "C1",
+   "taught_in": "c1-01-05-a-gr",
+   "requires": [
+    "conclusive-markers"
+   ]
+  },
+  "satire-parody": {
+   "family": "register-style",
+   "level": "C1",
+   "taught_in": "c1-pestiironia-02-a-gr",
+   "requires": [
+    "litotes-understatement"
+   ]
+  },
+  "twin-words-colloquial": {
+   "family": "register-style",
+   "level": "B2",
+   "taught_in": "b2-34-01-a-gr",
+   "requires": []
+  },
+  "official-register": {
+   "family": "register-style",
+   "level": "C1",
+   "taught_in": "c1-08-03-a-gr",
+   "requires": [
+    "agentless-constructions",
+    "formal-obligation"
+   ]
+  }
+ }
+}
