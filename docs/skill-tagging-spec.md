@@ -44,9 +44,20 @@ Every skill has:
 
 ### Vocabulary skills
 
-Exactly one per unit, slug `<level>-unitNN-vocab`, with NN as the real unit
-number. Generated from the curriculum, so a new course produces them
-mechanically. No named slugs (`b1-orszagma-vocab`), no per-lesson skills.
+Exactly one per unit, slug `<level>-<unit id>-vocab`, e.g.
+`a1-greetings-introductions-vocab`. Generated from the curriculum, so a
+new course produces them mechanically. No per-lesson skills.
+
+**Every unit has a permanent `id`** in `curriculum/units/<level>.json`: a
+short kebab-case name for its topic (`greetings-introductions`), unique
+within the level. It's set once and never changes, even if the unit moves
+or its title is reworded. A unit's position in the list is *not* its
+identity. Unit-number slugs (`a1-unit07-vocab`, `b1-01-vocab`) are
+banned: inserting or moving a unit silently changes what they mean, and a
+wrong tag can't be spotted by reading it. With a topic slug,
+`a1-greetings-introductions-vocab` on a weather sentence is visibly wrong.
+The old slugs become aliases. The validator fails a unit with no `id`, a
+duplicate `id`, and a unit without exactly one vocabulary skill.
 
 ### Grammar skills: how fine
 
@@ -116,8 +127,9 @@ known"). The map screen is a separate build (ROADMAP 131).
 
 ## A new language
 
-Before any content: families (reuse the shared lists), the registry with
-one vocabulary skill per planned unit, grammar skills with `level`,
+Before any content: families (reuse the shared lists), a permanent `id`
+on every planned unit, the registry with one vocabulary skill per unit,
+grammar skills with `level`,
 `family`, `taught_in` and `requires`, and the frozen list. The validator
 fails a course folder that has content but none of these.
 
