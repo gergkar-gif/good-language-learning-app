@@ -22,13 +22,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Egy régi gyári rendtartás így fogalmaz: „A munkástól feltétlen engedelmesség követeltetik.” Mai nyelven: A munkástól feltétlen engedelmességet _____. (követel, 3pl)",
-      "answers": [
-        "követelnek",
-        "követelnek meg",
-        "megkövetelnek"
-      ],
-      "english": "An old set of factory rules puts it like this: 'Unconditional obedience is demanded of the worker.' In modern Hungarian: they demand unconditional obedience of the worker.",
+      "sentence": "A gazdasági válság miatt tavaly háromszáz dolgozót _____ el a gyárból. (elbocsát, 3pl past)",
+      "answer": "bocsátottak",
+      "english": "Because of the economic crisis, three hundred workers were laid off from the factory last year.",
       "teaches": [
         "c1-passive-institutional-impersonals"
       ]
@@ -65,9 +61,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A régi gyári rendtartás szerint munkaidő alatt a beszélgetés szigorúan _____. (tilt, archaic passive)",
-      "answer": "tiltatik",
-      "english": "According to the old factory rules, talking during working hours is strictly forbidden.",
+      "sentence": "A sztrájk idején a gyár kapui le vannak _____. (lezár, -va/-ve form)",
+      "answer": "zárva",
+      "english": "During the strike, the factory gates are locked.",
       "teaches": [
         "c1-passive-institutional-impersonals"
       ]
@@ -79,31 +75,21 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "béremelési",
-        "kérelmet",
-        "a",
-        "vezetőség",
-        "elutasította."
+        "béreket",
+        "egy",
+        "évre",
+        "befagyasztották."
       ],
       "solutions": [
         [
           "A",
-          "béremelési",
-          "kérelmet",
-          "a",
-          "vezetőség",
-          "elutasította."
-        ],
-        [
-          "A",
-          "vezetőség",
-          "a",
-          "béremelési",
-          "kérelmet",
-          "elutasította."
+          "béreket",
+          "egy",
+          "évre",
+          "befagyasztották."
         ]
       ],
-      "english": "Management rejected the pay-rise request. (The modern way to say 'a béremelési kérelem elutasíttatott'.)",
+      "english": "Wages were frozen for a year.",
       "teaches": [
         "c1-passive-institutional-impersonals"
       ]
@@ -115,18 +101,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Történész",
-          "text": "Mit írt elő a gyár régi rendtartása a késésről?"
+          "speaker": "Újságíró",
+          "text": "Mi lett a dolgozók túlórapénzével?"
         },
         {
-          "speaker": "Levéltáros",
-          "text": "Azt, hogy a késve érkező munkás napi bére a felével _____."
+          "speaker": "Szakszervezeti titkár",
+          "text": "A vezetőség szerint már mindent _____, de a dolgozók egy fillért sem láttak belőle."
         }
       ],
       "options": [
-        "csökkentetik",
-        "csökkentet",
-        "csökkenti"
+        "kifizettek",
+        "kifizették",
+        "kifizetésre"
       ],
       "correct": 0,
       "teaches": [
@@ -140,8 +126,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Rewrite this line from an old factory rule in modern Hungarian: 'A béremelési kérelem a vezetőség által elutasíttatott.'",
-          "answer": "A vezetőség elutasította a béremelési kérelmet."
+          "prompt": "Write a news sentence about layoffs at a company without saying who did the laying off.",
+          "answer": "Az év végén ötszáz dolgozót bocsátottak el a cégtől."
         }
       ],
       "teaches": [
@@ -153,11 +139,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Hol találkozik ma egy olvasó leginkább a „követeltetik” típusú szenvedő igealakkal?",
+      "question": "Melyik a természetes mai magyar megfelelője ennek: 'The strike was banned.'?",
       "options": [
-        "Régi törvényekben és gyári rendtartásokban",
-        "Mai munkaszerződésekben és álláshirdetésekben",
-        "A hétköznapi beszélt nyelvben"
+        "Betiltották a sztrájkot.",
+        "A sztrájk betiltotta.",
+        "A sztrájk betiltva lett."
       ],
       "correct": 0,
       "teaches": [
