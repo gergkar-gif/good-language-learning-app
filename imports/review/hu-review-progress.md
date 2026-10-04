@@ -1495,47 +1495,47 @@ Units in review order (a numbered unit, then a topic unit). **Stop after block 1
 - [x] content/hu/exercises/c1/c1-felsooktatas-05-ex.json
 - [x] content/hu/exercises/c1/c1-felsooktatas-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-10-01-ex.json
-- [ ] content/hu/exercises/c1/c1-10-02-ex.json
-- [ ] content/hu/exercises/c1/c1-10-03-ex.json
-- [ ] content/hu/exercises/c1/c1-10-04-ex.json
-- [ ] content/hu/exercises/c1/c1-10-05-ex.json
-- [ ] content/hu/exercises/c1/c1-10-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-10-01-ex.json
+- [x] content/hu/exercises/c1/c1-10-02-ex.json
+- [x] content/hu/exercises/c1/c1-10-03-ex.json
+- [x] content/hu/exercises/c1/c1-10-04-ex.json
+- [x] content/hu/exercises/c1/c1-10-05-ex.json
+- [x] content/hu/exercises/c1/c1-10-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-geopolitika-01-ex.json
-- [ ] content/hu/exercises/c1/c1-geopolitika-02-ex.json
-- [ ] content/hu/exercises/c1/c1-geopolitika-03-ex.json
-- [ ] content/hu/exercises/c1/c1-geopolitika-04-ex.json
-- [ ] content/hu/exercises/c1/c1-geopolitika-05-ex.json
-- [ ] content/hu/exercises/c1/c1-geopolitika-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-geopolitika-01-ex.json
+- [x] content/hu/exercises/c1/c1-geopolitika-02-ex.json
+- [x] content/hu/exercises/c1/c1-geopolitika-03-ex.json
+- [x] content/hu/exercises/c1/c1-geopolitika-04-ex.json
+- [x] content/hu/exercises/c1/c1-geopolitika-05-ex.json
+- [x] content/hu/exercises/c1/c1-geopolitika-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-11-01-ex.json
-- [ ] content/hu/exercises/c1/c1-11-02-ex.json
-- [ ] content/hu/exercises/c1/c1-11-03-ex.json
-- [ ] content/hu/exercises/c1/c1-11-04-ex.json
-- [ ] content/hu/exercises/c1/c1-11-05-ex.json
-- [ ] content/hu/exercises/c1/c1-11-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-11-01-ex.json
+- [x] content/hu/exercises/c1/c1-11-02-ex.json
+- [x] content/hu/exercises/c1/c1-11-03-ex.json
+- [x] content/hu/exercises/c1/c1-11-04-ex.json
+- [x] content/hu/exercises/c1/c1-11-05-ex.json
+- [x] content/hu/exercises/c1/c1-11-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-irodalmielet-01-ex.json
-- [ ] content/hu/exercises/c1/c1-irodalmielet-02-ex.json
-- [ ] content/hu/exercises/c1/c1-irodalmielet-03-ex.json
-- [ ] content/hu/exercises/c1/c1-irodalmielet-04-ex.json
-- [ ] content/hu/exercises/c1/c1-irodalmielet-05-ex.json
-- [ ] content/hu/exercises/c1/c1-irodalmielet-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-irodalmielet-01-ex.json
+- [x] content/hu/exercises/c1/c1-irodalmielet-02-ex.json
+- [x] content/hu/exercises/c1/c1-irodalmielet-03-ex.json
+- [x] content/hu/exercises/c1/c1-irodalmielet-04-ex.json
+- [x] content/hu/exercises/c1/c1-irodalmielet-05-ex.json
+- [x] content/hu/exercises/c1/c1-irodalmielet-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-12-01-ex.json
-- [ ] content/hu/exercises/c1/c1-12-02-ex.json
-- [ ] content/hu/exercises/c1/c1-12-03-ex.json
-- [ ] content/hu/exercises/c1/c1-12-04-ex.json
-- [ ] content/hu/exercises/c1/c1-12-05-ex.json
-- [ ] content/hu/exercises/c1/c1-12-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-12-01-ex.json
+- [x] content/hu/exercises/c1/c1-12-02-ex.json
+- [x] content/hu/exercises/c1/c1-12-03-ex.json
+- [x] content/hu/exercises/c1/c1-12-04-ex.json
+- [x] content/hu/exercises/c1/c1-12-05-ex.json
+- [x] content/hu/exercises/c1/c1-12-consolidation-ex.json
 
-- [ ] content/hu/exercises/c1/c1-jogallamisag-01-ex.json
-- [ ] content/hu/exercises/c1/c1-jogallamisag-02-ex.json
-- [ ] content/hu/exercises/c1/c1-jogallamisag-03-ex.json
-- [ ] content/hu/exercises/c1/c1-jogallamisag-04-ex.json
-- [ ] content/hu/exercises/c1/c1-jogallamisag-05-ex.json
-- [ ] content/hu/exercises/c1/c1-jogallamisag-consolidation-ex.json
+- [x] content/hu/exercises/c1/c1-jogallamisag-01-ex.json
+- [x] content/hu/exercises/c1/c1-jogallamisag-02-ex.json
+- [x] content/hu/exercises/c1/c1-jogallamisag-03-ex.json
+- [x] content/hu/exercises/c1/c1-jogallamisag-04-ex.json
+- [x] content/hu/exercises/c1/c1-jogallamisag-05-ex.json
+- [x] content/hu/exercises/c1/c1-jogallamisag-consolidation-ex.json
 
 ### Block 3
 
