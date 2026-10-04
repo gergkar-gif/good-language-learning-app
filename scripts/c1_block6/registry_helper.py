@@ -36,10 +36,19 @@ def register_unit(unit_num: int, core_title: str, core_stems: list, disc_title: 
             "track": "core"
         })
     if disc_stems[0] not in existing_stems:
-        units.append({
+        disc_entry = {
             "title": disc_title,
             "stems": disc_stems,
             "track": "discourse"
-        })
+        }
+        core_idx = None
+        for i, u in enumerate(units):
+            if u.get("stems", []) == core_stems:
+                core_idx = i
+                break
+        if core_idx is not None:
+            units.insert(core_idx + 1, disc_entry)
+        else:
+            units.append(disc_entry)
     u_path.write_text(json.dumps(units, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Updated curriculum/units/c1.json for Unit {unit_num}")

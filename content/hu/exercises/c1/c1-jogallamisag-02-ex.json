@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Hogyan éltek vissza az OBH kinevezési jogköreivel a bírói pályázatok során?",
+      "question": "Mit jelentett a 'történeti alkotmány' fogalma a magyar jogfejlődésben?",
       "options": [
-        "A nyertes szakmai pályázatokat indokolás nélkül érvénytelenítették, és a bírói kar akarata ellenére lojális ideiglenes megbízottakat ültettek a bíróságok élére.",
-        "Minden bíró fizetését megháromszorozták anélkül hogy kérték volna.",
-        "Sorsolással választották ki a Kúria tagjait."
+        "Íratlan, törvényekből és szokásjogból szervesen építkező alkotmányos rendszert.",
+        "Egyetlen nap alatt írt modern alkotmánykönyvet.",
+        "Kizárólag külföldi törvények átvételét."
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az elnök átláthatatlan módon _____ érvénytelenítette a legmagasabb pontszámot kapott bíró pályázatát. (acting / eljárva)",
-      "answer": "eljárva",
-      "english": "Acting in an untransparent manner the president annulled the application of the judge who received the highest score.",
+      "sentence": "A magyar közjog felfogásában a Szent Korona nem ékszer, hanem az állami szuverenitást megtestesítő jogi _____. (entity / személyiség)",
+      "answer": "személyiség",
+      "english": "In the conception of Hungarian public law, the Holy Crown is not a jewel, but a legal personality embodying state sovereignty.",
       "teaches": [
-        "c1-adv-institutional-monopolization-critique"
+        "c1-constitutional-discourse"
       ]
     },
     {
@@ -36,20 +36,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Országos Bírósági Hivatal",
-          "a bíróságok központi igazgatását ellátó intézmény"
+          "történeti alkotmány",
+          "historic constitution"
         ],
         [
-          "hatalomkoncentráció",
-          "a döntési jogkörök egyetlen személy kezében való összpontosulása"
+          "szokásjog",
+          "customary law"
         ],
         [
-          "pályázat érvénytelenítése",
-          "a szakmai bírálat önkényes félresöprése indokolás nélkül"
+          "jogfolytonosság",
+          "legal continuity"
         ],
         [
-          "kirendelés",
-          "bírák ideiglenes áthelyezése a vezetői posztok pályázat nélküli betöltésére"
+          "alaptörvény",
+          "fundamental law"
         ]
       ],
       "teaches": [
@@ -58,106 +58,69 @@
     },
     {
       "id": "c1-jogallamisag-02-practice-4",
-      "type": "fill-blank",
-      "category": "grammar",
-      "stage": "practice",
-      "sentence": "A kinevezéseket rendszerszinten _____ az igazgatás kizárta a kollegiális kontrollt. (centralizing / centralizálva)",
-      "answer": "centralizálva",
-      "english": "Centralizing appointments at a systemic level the administration excluded collegial control.",
-      "teaches": [
-        "c1-adv-institutional-monopolization-critique"
-      ]
-    },
-    {
-      "id": "c1-jogallamisag-02-practice-5",
       "type": "sentence-builder",
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "OBH",
-        "elnöke",
-        "önkényesen",
-        "felszámolta",
+        "A",
+        "Szent",
+        "Korona-tan",
         "a",
-        "bírói",
-        "önigazgatás",
-        "garanciáit."
+        "király",
+        "és",
+        "a",
+        "nemzet",
+        "szerves",
+        "egységét",
+        "hirdette."
       ],
       "solution": [
-        "Az",
-        "OBH",
-        "elnöke",
-        "önkényesen",
-        "felszámolta",
+        "A",
+        "Szent",
+        "Korona-tan",
         "a",
-        "bírói",
-        "önigazgatás",
-        "garanciáit."
+        "király",
+        "és",
+        "a",
+        "nemzet",
+        "szerves",
+        "egységét",
+        "hirdette."
       ],
-      "english": "The president of the OBH arbitrarily dismantled the guarantees of judicial self-governance.",
+      "english": "The Doctrine of the Holy Crown proclaimed the organic unity of king and nation.",
       "teaches": [
-        "c1-adv-institutional-monopolization-critique"
+        "c1-constitutional-discourse"
       ]
     },
     {
-      "id": "c1-jogallamisag-02-dialogue-6",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "stage": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Bíró",
-          "text": "Miért tiltakozott a bírói kar a pályázatok önkényes kezelése ellen?"
-        },
-        {
-          "speaker": "Kollégiumvezető",
-          "text": "Mert az elnök átláthatatlan módon kirendelve a megbízottakat teljesen elsorvasztotta a bírósági _____."
-        },
-        {
-          "speaker": "Bíró",
-          "text": "Ez a személyi függőség közvetlen megteremtése volt."
-        }
-      ],
-      "options": [
-        "autonómiát",
-        "épületet",
-        "iratokat"
-      ],
-      "correct": 0,
-      "teaches": [
-        "c1-adv-institutional-monopolization-critique"
-      ]
-    },
-    {
-      "id": "c1-jogallamisag-02-production-7",
+      "id": "c1-jogallamisag-02-production-5",
       "type": "structured-writing",
       "category": "writing",
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critique of judicial centralization using an evaluative adverbial.",
-          "answer": "Az OBH elnöke átláthatatlan módon eljárva és a törvényes pályázatokat önkényesen érvénytelenítve rendszerszinten centralizálta a kinevezési jogköröket a független bírói testületek rovására."
+          "prompt": "Contrast the historic unwritten constitution with a codified written constitution.",
+          "answer": "Míg a kartális alkotmány egyetlen írott alaptörvényben rögzíti a közjogi kereteket, addig a történeti alkotmány évszázadok törvényeinek és szokásjogának szerves folytonosságára épül."
         }
       ],
       "teaches": [
-        "c1-adv-institutional-monopolization-critique"
+        "c1-constitutional-discourse"
       ]
     },
     {
-      "id": "c1-jogallamisag-02-check-8",
+      "id": "c1-jogallamisag-02-check-6",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik szerkezet leplezi le az igazgatási hatalomkoncentrációt a legpontosabban?",
+      "question": "Melyik állítás határozza meg legpontosabban a jogfolytonosság szerepét?",
       "options": [
-        "önkényesen érvénytelenítve a pályázatokat / rendszerszinten centralizálva az igazgatást",
-        "új számítógépeket vásárolva a bírósági irodába",
-        "tárgyalási jegyzőkönyvet gépelve délután"
+        "A jogállami átmenetek során biztosítja az intézmények és jogszabályok törvényes működését és stabilitását.",
+        "Azt jelenti, hogy soha semmilyen törvényen nem szabad változtatni.",
+        "A jogfolytonosság a forradalmi zűrzavar előidézését jelenti."
       ],
       "correct": 0,
       "teaches": [
-        "c1-adv-institutional-monopolization-critique"
+        "c1-constitutional-discourse"
       ]
     }
   ]

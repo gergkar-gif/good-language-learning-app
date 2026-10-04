@@ -19,7 +19,7 @@ def generate_unit_32():
     
     new_skills = {
         "c1-32-vocab": {"kind": "vocabulary"},
-        "c1-jogallamisag-vocab": {"kind": "vocabulary"},
+        "c1-biroifuggetlenseg-vocab": {"kind": "vocabulary"},
         "c1-adv-constitutional-norm-control": {"kind": "grammar"},
         "c1-participle-proportionality-test": {"kind": "grammar"},
         "c1-adv-human-dignity-absoluteness": {"kind": "grammar"},
@@ -33,7 +33,7 @@ def generate_unit_32():
     }
     new_titles = {
         "c1-32-vocab": "reading",
-        "c1-jogallamisag-vocab": "reading",
+        "c1-biroifuggetlenseg-vocab": "reading",
         "c1-adv-constitutional-norm-control": "evaluative adverbials formulating abstract constitutional norm control and review",
         "c1-participle-proportionality-test": "participial constructions framing fundamental rights collision and proportionality tests",
         "c1-adv-human-dignity-absoluteness": "modal adverbials asserting human dignity as an absolute mother right",
@@ -49,7 +49,7 @@ def generate_unit_32():
     core_title = "Constitutional Jurisprudence & Fundamental Rights"
     core_stems = [f"c1-32-0{i}" for i in range(1, 6)] + ["c1-32-consolidation"]
     disc_title = "The Dismantling of Independent Judiciary & Rule of Law Breakdown"
-    slug = "jogallamisag"
+    slug = "biroifuggetlenseg"
     disc_stems = [f"c1-{slug}-0{i}" for i in range(1, 6)] + [f"c1-{slug}-consolidation"]
     
     register_unit(32, core_title, core_stems, disc_title, disc_stems, new_skills, new_titles)
@@ -757,7 +757,7 @@ def generate_unit_32():
 
     # Combined World Story
     write_json(
-        f"stories/world/c1/c1-{slug}-biroi-fuggetlenseg-jogallamisag.json",
+        f"stories/world/c1/c1-{slug}-biroi-fuggetlenseg.json",
         {
             "id": f"story.c1.{slug}.combined",
             "title": "A bírói függetlenség és a jogállamiság küzdelme Magyarországon",

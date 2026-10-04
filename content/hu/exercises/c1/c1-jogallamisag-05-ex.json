@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen kulcsfontosságú jogköröket kapott az Országos Bírói Tanács a 2023-as igazságügyi reform során?",
+      "question": "Melyik fogalom jelöli a hatalmi ágak elválasztását és kölcsönös ellenőrzését?",
       "options": [
-        "Kötelező erejű vétójogot és érdemi ellenőrzési jogkört az OBH elnökének kinevezési döntései felett, felszámolva az adminisztratív önkényt.",
-        "Kizárólag tanácsadói szerepet a bíróságok takarítási szerződéseiben.",
-        "Jogot a parlamenti választások elhalasztására."
+        "fékek és ellensúlyok rendszere",
+        "egyszemélyi döntéshozatal",
+        "állami monopólium"
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A jogállam helyreállításához fundamentálisan _____ az intézményi garanciák megerősítése. (required / megkövetelt)",
-      "answer": "megkövetelt",
-      "english": "For the restitution of the rule of law the strengthening of institutional safeguards is fundamentally required.",
+      "sentence": "A modern európai jogállam működésének elengedhetetlen feltétele a bírói _____ védelme a végrehajtó hatalommal szemben. (independence / függetlenség)",
+      "answer": "függetlenség",
+      "english": "The indispensable condition of modern European rule-of-law functioning is the protection of judicial independence against executive power.",
       "teaches": [
-        "c1-adv-conclusive-rule-of-law-restitution"
+        "c1-constitutional-discourse"
       ]
     },
     {
@@ -36,20 +36,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "fékek és egyensúlyok",
-          "a hatalmi ágak kölcsönös ellenőrzésének demokratikus rendszere"
+          "alkotmányos identitás",
+          "constitutional identity"
         ],
         [
-          "alkotmányos helyreállítás",
-          "a felszámolt jogállami garanciák újraépítése a törvényhozásban"
+          "szuverenitás",
+          "sovereignty"
         ],
         [
-          "igazságügyi reform",
-          "a bírósági függetlenséget visszaállító átfogó jogszabálycsomag"
+          "bírói függetlenség",
+          "judicial independence"
         ],
         [
-          "független ítélkezés",
-          "minden külső és belső nyomástól mentes bírói döntéshozatal"
+          "fékek és ellensúlyok",
+          "checks and balances"
         ]
       ],
       "teaches": [
@@ -58,106 +58,63 @@
     },
     {
       "id": "c1-jogallamisag-05-practice-4",
-      "type": "fill-blank",
-      "category": "grammar",
-      "stage": "practice",
-      "sentence": "A hatalommegosztás garanciái értelemszerűen _____ a demokrácia fenntartásához. (indispensable / elengedhetetlenek)",
-      "answer": "elengedhetetlenek",
-      "english": "The guarantees of the separation of powers are naturally indispensable for maintaining democracy.",
-      "teaches": [
-        "c1-adv-conclusive-rule-of-law-restitution"
-      ]
-    },
-    {
-      "id": "c1-jogallamisag-05-practice-5",
       "type": "sentence-builder",
       "category": "grammar",
       "stage": "practice",
       "tiles": [
         "A",
-        "fékek",
-        "és",
-        "egyensúlyok",
-        "értelemszerűen",
-        "elengedhetetlenek",
+        "demokrácia",
+        "lényege",
         "a",
-        "demokratikus",
-        "rendben."
+        "hatalom",
+        "átláthatósága",
+        "és",
+        "elszámoltathatósága."
       ],
       "solution": [
         "A",
-        "fékek",
-        "és",
-        "egyensúlyok",
-        "értelemszerűen",
-        "elengedhetetlenek",
+        "demokrácia",
+        "lényege",
         "a",
-        "demokratikus",
-        "rendben."
+        "hatalom",
+        "átláthatósága",
+        "és",
+        "elszámoltathatósága."
       ],
-      "english": "Checks and balances are naturally indispensable in the democratic order.",
+      "english": "The essence of democracy is the transparency and accountability of power.",
       "teaches": [
-        "c1-adv-conclusive-rule-of-law-restitution"
+        "c1-constitutional-discourse"
       ]
     },
     {
-      "id": "c1-jogallamisag-05-dialogue-6",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "stage": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Kutató",
-          "text": "Hogyan garantálható a bírói függetlenség hosszú távú megmaradása?"
-        },
-        {
-          "speaker": "Bíró",
-          "text": "Úgy, hogy fundamentálisan megkövetelt az intézményi fékek és egyensúlyok szigorú _____."
-        },
-        {
-          "speaker": "Kutató",
-          "text": "Ez a joguralom legfőbb tanulsága."
-        }
-      ],
-      "options": [
-        "védelme",
-        "eltörlése",
-        "feledése"
-      ],
-      "correct": 0,
-      "teaches": [
-        "c1-adv-conclusive-rule-of-law-restitution"
-      ]
-    },
-    {
-      "id": "c1-jogallamisag-05-production-7",
+      "id": "c1-jogallamisag-05-production-5",
       "type": "structured-writing",
       "category": "writing",
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a conclusive sentence on constitutional restitution.",
-          "answer": "A bíróságok szervezeti autonómiájának védelme értelemszerűen elengedhetetlen és fundamentálisan megkövetelt feltétele a jogállamiság teljes körű alkotmányos helyreállításának."
+          "prompt": "Formulate a balanced perspective on national sovereignty vs. European legal integration.",
+          "answer": "A sikeres integráció záloga a tagállami alkotmányos önazonosság tiszteletben tartása mellett a közös európai jogállami normák és a bírói függetlenség megkérdőjelezhetetlen védelme."
         }
       ],
       "teaches": [
-        "c1-adv-conclusive-rule-of-law-restitution"
+        "c1-constitutional-discourse"
       ]
     },
     {
-      "id": "c1-jogallamisag-05-check-8",
+      "id": "c1-jogallamisag-05-check-6",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik kifejezés szintetizálja a jogállami helyreállítás elkerülhetetlenségét?",
+      "question": "Mi a magyar alkotmányos hagyomány legfontosabb üzenete a modern kor számára?",
       "options": [
-        "értelemszerűen elengedhetetlen / fundamentálisan megkövetelt / ebből fakadóan kikerülhetetlen",
-        "ha van kedvünk, akkor megváltoztatjuk a törvényt",
-        "talán jobb lenne mindent úgy hagyni ahogy van"
+        "A hatalom intézményes korlátozása és az egyéni méltóság védelme a magyar történelmi identitás szerves része.",
+        "A hatalmat soha nem szabad ellenőrizni.",
+        "A jogállamiság csak felesleges akadály a kormányzás útjában."
       ],
       "correct": 0,
       "teaches": [
-        "c1-adv-conclusive-rule-of-law-restitution"
+        "c1-constitutional-discourse"
       ]
     }
   ]

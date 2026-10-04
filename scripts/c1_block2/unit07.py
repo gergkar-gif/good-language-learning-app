@@ -613,7 +613,12 @@ def generate_unit_7():
             "id": f"story.c1.world.{slug}",
             "title": "A magyar jogállamiság és alkotmányfejlődés krónikája",
             "level": "C1",
+            "lesson": 5,
+            "order": 7,
             "type": "world",
+            "estimatedMinutes": 8,
+            "grammar": ["c1-constitutional-discourse"],
+            "vocabularyTopics": ["The Rule of Law & Constitutional Evolution"],
             "summary": "Comprehensive eight-century chronicle of Hungarian constitutionalism: from the Golden Bull (1222), the Historic Constitution and Holy Crown doctrine through the 1848 April Laws, Sólyom's Constitutional Court to contemporary European rule of law debates.",
             "paragraphs": [
                 {"type": "narration", "text": "A magyar alkotmányos fejlődés Európa egyik legősibb és legkülönlegesebb közjogi hagyománya. 1222-ben, mindössze hét évvel az angol Magna Charta után megszületett az Aranybulla, amely a királyi önkénnyel szemben a fegyveres ellenállás törvényes jogát garantálta a nemességnek."},
