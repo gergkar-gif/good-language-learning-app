@@ -9,8 +9,8 @@
       "question": "Mire szolgálnak az evidencialitási jelölők a tudományos stílusban?",
       "options": [
         "A közölt információ forrásának és megbízhatóságának pontos megjelölésére.",
-        "A mondatok hosszának növelésére.",
-        "A nyelvhelyességi hibák elfedésére."
+        "A szerző személyes érzelmi felindultságának kifejezésére.",
+        "A retorikai kérdések kötelező lezárására."
       ],
       "correct": 0,
       "teaches": [
@@ -22,7 +22,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A korabeli dokumentumok _____ szerint a döntés már hónapokkal korábban megszületett. (testimony of / tanúsága)",
+      "sentence": "A korabeli dokumentumok _____ szerint a döntés már hónapokkal korábban megszületett. (testimony / tanúság + -a)",
       "answer": "tanúsága",
       "english": "According to the testimony of contemporary documents, the decision had been made months earlier.",
       "teaches": [
@@ -61,11 +61,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A kézirat _____ évszázadokon át egy kolostor könyvtárában rejtőzött. (allegedly / állítólag)",
-      "answer": "állítólag",
+      "sentence": "A kézirat _____ évszázadokon át egy kolostor könyvtárában rejtőzött. (allegedly)",
       "english": "Allegedly, the manuscript hid in a monastery library for centuries.",
       "teaches": [
         "c1-evidentiality-markers"
+      ],
+      "answers": [
+        "állítólag",
+        "úgy hírlik"
       ]
     },
     {
@@ -114,13 +117,13 @@
         },
         {
           "speaker": "Professzor",
-          "text": "_____"
+          "text": "Igen, a levéltári források _____, az esemény pontos dátuma vitathatatlan."
         }
       ],
       "options": [
         "tanúsága szerint",
-        "kitalációja szerint",
-        "hiánya miatt"
+        "tanúságával",
+        "tanúságát tekintve"
       ],
       "correct": 0,
       "teaches": [
@@ -150,7 +153,7 @@
       "question": "Melyik kifejezés fejezi ki a legmagasabb tudományos megbízhatóságot?",
       "options": [
         "A primer források filológiai vizsgálata alapján",
-        "Úgy hallottam valakitől a folyosón",
+        "A szóbeli visszaemlékezések bizonytalan utalásai szerint",
         "Állítólag így történt régen"
       ],
       "correct": 0,

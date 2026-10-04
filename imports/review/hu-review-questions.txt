@@ -33,3 +33,20 @@ current:
 - Közvetlen járat van, de mégis át kell szállnod rá.
 proposed:
 KEEP
+
+### c1-01-01-controlled-4   (content/hu/exercises/c1/c1-01-01-ex.json)
+why: Multiple elevated concessive conjunctions (noha, jóllehet, ámbár) are equally natural in this context
+current:
+A kutató kitartott az elmélete mellett, _____ a kísérleti eredmények nem igazolták azt. (although / even though)
+answer: noha
+proposed:
+A kutató kitartott az elmélete mellett, _____ a kísérleti eredmények nem igazolták azt. (although / even though)
+answers: ["noha", "jóllehet", "ámbár"]
+
+### c1-alkotmanyjog-02-dialogue-6   (content/hu/exercises/c1/c1-alkotmanyjog-02-ex.json)
+why: Prescriptively controversial double negation in prompt ('anélkül, hogy ne sérült volna' vs 'anélkül, hogy sérült volna')
+current:
+A parlamenti többség nem vonhatta volna meg a normakontroll lehetőségét anélkül, hogy ne sérült volna a jogbiztonság.
+proposed:
+A parlamenti többség nem vonhatta volna meg a normakontroll lehetőségét anélkül, hogy sérült volna a jogbiztonság.
+
