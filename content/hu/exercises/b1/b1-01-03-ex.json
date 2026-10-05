@@ -5,7 +5,7 @@
       "id": "b1-01-03-intro-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word means \"before\" and is followed by past tense in both clauses?",
+      "question": "Which word means \"before\"?",
       "options": [
         "mielőtt",
         "miután",
@@ -20,7 +20,7 @@
     {
       "id": "b1-01-03-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"turning point\"?",
       "options": [
         "fordulópont",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "miutan-mielott"
+        "b1-longer-stories-vocab"
       ],
       "stage": "introduce"
     },
@@ -76,9 +76,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "Mielőtt lefeküdtem, ____ az ablakot. (I closed)",
-      "answer": "bezártam",
+      "answers": [
+        "bezártam",
+        "becsuktam"
+      ],
       "teaches": [
-        "miutan-mielott"
+        "definite-past"
       ],
       "stage": "controlled"
     },
@@ -162,14 +165,14 @@
       ],
       "english": "After he finished work, before he went home, he still popped into the shop.",
       "teaches": [
-        "temporal-postpositions"
+        "miutan-mielott"
       ],
       "stage": "practice"
     },
     {
       "id": "b1-01-03-practice-3",
       "type": "substitution",
-      "category": "grammar",
+      "category": "vocabulary",
       "base_sentence": "Mielőtt elköszönt, még megölelt mindenkit.",
       "base_word": "megölelt",
       "base_gloss": "Before he said goodbye, he still hugged everyone.",
@@ -188,14 +191,14 @@
         }
       ],
       "teaches": [
-        "miutan-mielott"
+        "b1-longer-stories-vocab"
       ],
       "stage": "practice"
     },
     {
       "id": "b1-01-03-practice-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "A hős rájött, hogy... — what does this mean?",
       "options": [
         "The hero realized that...",
@@ -204,7 +207,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "miutan-mielott"
+        "b1-longer-stories-vocab"
       ],
       "stage": "practice"
     },
@@ -229,7 +232,10 @@
       "correct": 0,
       "teaches": [
         "miutan-mielott"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-01-03-dialogue-2",
@@ -251,8 +257,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "miutan-mielott"
-      ]
+        "irregular-past"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-01-03-writing-1",
@@ -279,7 +288,7 @@
         }
       ],
       "teaches": [
-        "temporal-postpositions"
+        "miutan-mielott"
       ]
     },
     {
@@ -302,10 +311,10 @@
       "id": "b1-01-03-check-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A történetnek volt egy fontos ____. (turning point)",
+      "sentence": "A történetnek volt egy fontos ____. (its turning point)",
       "answer": "fordulópontja",
       "teaches": [
-        "miutan-mielott"
+        "3rd-person-possessive"
       ],
       "stage": "check"
     }

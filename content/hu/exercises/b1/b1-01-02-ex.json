@@ -5,7 +5,7 @@
       "id": "b1-01-02-intro-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word means \"after\" and is followed by past tense in both clauses?",
+      "question": "Which word means \"after\"?",
       "options": [
         "miután",
         "mielőtt",
@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "miutan-mielott"
       ],
       "stage": "introduce"
     },
     {
       "id": "b1-01-02-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"meanwhile\"?",
       "options": [
         "eközben",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "b1-longer-stories-vocab"
       ],
       "stage": "introduce"
     },
@@ -67,7 +67,7 @@
       "sentence": "____ megérkeztünk, elmentünk sétálni. (After)",
       "answer": "Miután",
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "miutan-mielott"
       ],
       "stage": "controlled"
     },
@@ -78,7 +78,7 @@
       "sentence": "Miután végzett a munkával, ____. (he went home)",
       "answer": "hazament",
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "irregular-past"
       ],
       "stage": "controlled"
     },
@@ -94,8 +94,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "definite-past"
       ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "past-tense-indefinite"
+      },
       "stage": "controlled"
     },
     {
@@ -120,14 +124,14 @@
       ],
       "english": "After we arrived, we went for a walk.",
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "miutan-mielott"
       ],
       "stage": "practice"
     },
     {
       "id": "b1-01-02-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "tiles": [
         "Én",
         "főztem",
@@ -152,14 +156,14 @@
       ],
       "english": "I was cooking, meanwhile Károly set the table.",
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "b1-longer-stories-vocab"
       ],
       "stage": "practice"
     },
     {
       "id": "b1-01-02-practice-3",
       "type": "substitution",
-      "category": "grammar",
+      "category": "vocabulary",
       "base_sentence": "Miután Anna felhívott, azonnal elindultam.",
       "base_word": "felhívott",
       "base_gloss": "After Anna called me, I set off right away.",
@@ -178,14 +182,14 @@
         }
       ],
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "b1-longer-stories-vocab"
       ],
       "stage": "practice"
     },
     {
       "id": "b1-01-02-practice-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which sentence uses eközben correctly?",
       "options": [
         "Én főztem, eközben Károly megterítette az asztalt.",
@@ -194,7 +198,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "b1-longer-stories-vocab"
       ],
       "stage": "practice"
     },
@@ -218,8 +222,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
-      ]
+        "miutan-mielott"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-01-02-dialogue-2",
@@ -241,7 +248,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "b1-longer-stories-vocab"
       ]
     },
     {
@@ -255,7 +262,7 @@
         }
       ],
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "miutan-mielott"
       ]
     },
     {
@@ -269,7 +276,7 @@
         }
       ],
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "b1-longer-stories-vocab"
       ]
     },
     {
@@ -284,18 +291,21 @@
       ],
       "correct": 0,
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "miutan-mielott"
       ],
       "stage": "check"
     },
     {
       "id": "b1-01-02-check-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "A ____ héten korán felkeltünk. (next)",
-      "answer": "következő",
+      "answers": [
+        "következő",
+        "jövő"
+      ],
       "teaches": [
-        "sequencing-elobb-aztan-utana-vegul"
+        "b1-longer-stories-vocab"
       ],
       "stage": "check"
     }

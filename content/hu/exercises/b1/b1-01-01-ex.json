@@ -94,8 +94,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "miutan-mielott"
+        "past-tense-indefinite"
       ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "fog-infinitive"
+      },
       "stage": "controlled"
     },
     {
@@ -127,7 +131,7 @@
     {
       "id": "b1-01-01-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "tiles": [
         "Amikor",
         "gyerek",
@@ -152,7 +156,7 @@
       ],
       "english": "When I was a child, we lived in a small village.",
       "teaches": [
-        "miutan-mielott"
+        "b1-longer-stories-vocab"
       ],
       "stage": "practice"
     },
@@ -218,8 +222,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-longer-stories-vocab"
-      ]
+        "van-past"
+      ],
+      "distractor_skills": {
+        "1": "van-zero-copula"
+      }
     },
     {
       "id": "b1-01-01-dialogue-2",
@@ -269,7 +276,7 @@
         }
       ],
       "teaches": [
-        "miutan-mielott"
+        "van-past"
       ]
     },
     {
@@ -291,11 +298,11 @@
     {
       "id": "b1-01-01-check-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "____ a nagyapám fiatal volt, korábban egészen más volt itt az élet. (When)",
       "answer": "Amikor",
       "teaches": [
-        "miutan-mielott"
+        "b1-longer-stories-vocab"
       ],
       "stage": "check"
     }
