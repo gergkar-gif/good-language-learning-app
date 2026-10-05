@@ -1,5 +1,16 @@
 # Project instructions
 
+## Work in your own worktree, not the Google Drive folder
+
+Antigravity edits files in the main checkout (the Google Drive folder)
+while Claude sessions run, and has wiped Claude's uncommitted work there
+before. Claude edits and commits in its own worktree, `C:/dev/parlour-claude`.
+Use absolute paths there even when the session opened in the Drive folder.
+A second Claude session running at the same time makes its own:
+`git worktree add --detach C:/dev/parlour-<task> origin/master`. Commit there,
+then `git pull --rebase origin master` and `git push origin HEAD:master`.
+commit-gate blocks git writes in the main checkout.
+
 ## Exercise metadata is required on all generated content
 
 Every exercise you write or edit must carry the metadata the learner model
