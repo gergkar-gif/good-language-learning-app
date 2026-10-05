@@ -36,7 +36,7 @@
     {
       "id": "a1-20-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which question asks for age?",
       "options": [
         "Hány éves vagy?",
@@ -45,8 +45,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ki-and-mi",
-        "basic-hungarian-word-order"
+        "a1-numbers-personal-information-vocab"
       ],
       "stage": "introduce"
     },
@@ -62,9 +61,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "ki-and-mi",
-        "basic-hungarian-word-order"
+        "spatial-questions-hol-hova"
       ],
+      "distractor_skills": {
+        "2": "ki-and-mi"
+      },
       "stage": "introduce"
     },
     {
@@ -108,11 +109,20 @@
         "hét",
         "nyolc",
         "kilenc",
-        "tíz"
+        "tíz",
+        "két",
+        "húsz",
+        "harminc",
+        "negyven",
+        "ötven",
+        "hatvan",
+        "hetven",
+        "nyolcvan",
+        "kilencven",
+        "száz"
       ],
       "teaches": [
-        "ki-and-mi",
-        "basic-hungarian-word-order"
+        "cardinal-numbers"
       ],
       "stage": "controlled"
     },
@@ -128,15 +138,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "ki-and-mi",
-        "basic-hungarian-word-order"
+        "spatial-questions-hol-hova"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-20-controlled-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which answer matches Mi a telefonszámod?",
       "options": [
         "06 30 123 4567.",
@@ -145,8 +154,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ki-and-mi",
-        "basic-hungarian-word-order"
+        "a1-numbers-personal-information-vocab"
       ],
       "stage": "controlled"
     },
@@ -180,7 +188,7 @@
     {
       "id": "a1-20-practice-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which answer matches Hol laksz?",
       "options": [
         "Budapesten lakom.",
@@ -189,8 +197,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ki-and-mi",
-        "basic-hungarian-word-order"
+        "a1-numbers-personal-information-vocab"
       ],
       "stage": "practice"
     },
@@ -203,8 +210,7 @@
         "vagy"
       ],
       "teaches": [
-        "ki-and-mi",
-        "basic-hungarian-word-order"
+        "van-zero-copula"
       ],
       "stage": "practice"
     },
@@ -226,7 +232,6 @@
       ],
       "english": "How old are you?",
       "teaches": [
-        "ki-and-mi",
         "basic-hungarian-word-order"
       ],
       "stage": "practice"
@@ -251,8 +256,7 @@
         }
       ],
       "teaches": [
-        "ki-and-mi",
-        "basic-hungarian-word-order"
+        "a1-numbers-personal-information-vocab"
       ],
       "stage": "practice"
     },
@@ -276,8 +280,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ki-and-mi",
-        "basic-hungarian-word-order"
+        "a1-numbers-personal-information-vocab"
       ]
     },
     {
@@ -300,8 +303,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ki-and-mi",
-        "basic-hungarian-word-order"
+        "a1-numbers-personal-information-vocab"
       ]
     },
     {
@@ -315,14 +317,13 @@
         }
       ],
       "teaches": [
-        "ki-and-mi",
-        "basic-hungarian-word-order"
+        "a1-numbers-personal-information-vocab"
       ]
     },
     {
       "id": "a1-20-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which question asks for an address?",
       "options": [
         "Mi a címed?",
@@ -331,8 +332,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ki-and-mi",
-        "basic-hungarian-word-order"
+        "a1-numbers-personal-information-vocab"
       ],
       "stage": "check"
     },
@@ -347,8 +347,7 @@
         }
       ],
       "teaches": [
-        "ki-and-mi",
-        "basic-hungarian-word-order"
+        "spatial-questions-hol-hova"
       ]
     },
     {
@@ -363,7 +362,6 @@
       ],
       "correct": 0,
       "teaches": [
-        "ki-and-mi",
         "basic-hungarian-word-order"
       ],
       "stage": "check"
