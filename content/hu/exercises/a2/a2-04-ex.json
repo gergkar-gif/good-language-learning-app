@@ -4,7 +4,7 @@
     {
       "id": "a2-04-intro-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which means “twice”?",
       "options": [
         "kétszer",
@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-daily-life-routines-vocab"
+        "szor-szer-multiplicatives"
       ],
       "stage": "introduce"
     },
     {
       "id": "a2-04-intro-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which means “never”?",
       "options": [
         "soha",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-daily-life-routines-vocab"
+        "mindig-and-gyakran-frequency-adverbs"
       ],
       "stage": "introduce"
     },
@@ -63,18 +63,18 @@
     {
       "id": "a2-04-controlled-2",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentence": "Soha ____ dolgozom vasárnap.",
       "answer": "nem",
       "teaches": [
-        "a2-daily-life-routines-vocab"
+        "soha-needs-nem-negative-concord"
       ],
       "stage": "controlled"
     },
     {
       "id": "a2-04-controlled-3",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which means “daily”?",
       "options": [
         "naponta",
@@ -83,7 +83,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-daily-life-routines-vocab"
+        "nta-productive"
       ],
       "stage": "controlled"
     },
@@ -117,18 +117,18 @@
     {
       "id": "a2-04-controlled-5",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ egyszer moziba megyek.",
+      "category": "grammar",
+      "sentence": "____ egyszer moziba megyek. (once a month)",
       "answer": "Havonta",
       "teaches": [
-        "a2-daily-life-routines-vocab"
+        "nta-productive"
       ],
       "stage": "controlled"
     },
     {
       "id": "a2-04-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which means “yearly”?",
       "options": [
         "évente",
@@ -137,14 +137,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-daily-life-routines-vocab"
+        "nta-productive"
       ],
       "stage": "practice"
     },
     {
       "id": "a2-04-practice-2",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
       "tiles": [
         "Hetente",
         "kétszer",
@@ -159,14 +159,14 @@
       ],
       "english": "I do sports twice a week.",
       "teaches": [
-        "a2-daily-life-routines-vocab"
+        "szor-szer-multiplicatives"
       ],
       "stage": "practice"
     },
     {
       "id": "a2-04-practice-3",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
       "tiles": [
         "Naponta",
         "reggelizem",
@@ -179,7 +179,7 @@
       ],
       "english": "I have breakfast every day.",
       "teaches": [
-        "a2-daily-life-routines-vocab"
+        "nta-productive"
       ],
       "stage": "practice"
     },
@@ -203,8 +203,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-daily-life-routines-vocab"
-      ]
+        "nta-productive"
+      ],
+      "distractor_skills": {
+        "1": "on-en-on"
+      }
     },
     {
       "id": "a2-04-dialogue-2",
@@ -226,8 +229,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-daily-life-routines-vocab"
-      ]
+        "nta-productive"
+      ],
+      "distractor_skills": {
+        "1": "kor-time"
+      }
     },
     {
       "id": "a2-04-writing-1",
@@ -240,7 +246,7 @@
         }
       ],
       "teaches": [
-        "a2-daily-life-routines-vocab"
+        "soha-needs-nem-negative-concord"
       ]
     },
     {
@@ -254,13 +260,13 @@
         }
       ],
       "teaches": [
-        "a2-daily-life-routines-vocab"
+        "nta-productive"
       ]
     },
     {
       "id": "a2-04-check-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which means “three times”?",
       "options": [
         "háromszor",
@@ -269,14 +275,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-daily-life-routines-vocab"
+        "szor-szer-multiplicatives"
       ],
+      "distractor_skills": {
+        "1": "cardinal-numbers"
+      },
       "stage": "check"
     },
     {
       "id": "a2-04-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which means “weekly”?",
       "options": [
         "hetente",
@@ -285,7 +294,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-daily-life-routines-vocab"
+        "nta-productive"
       ],
       "stage": "check"
     }

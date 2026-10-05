@@ -20,7 +20,7 @@
     {
       "id": "a2-07-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means “what's the date?”?",
       "options": [
         "Hányadika van?",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on"
+        "a2-time-dates-schedules-vocab"
       ],
       "stage": "introduce"
     },
@@ -101,11 +101,11 @@
     {
       "id": "a2-07-controlled-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Hányad____ van ma?",
       "answer": "ika",
       "teaches": [
-        "on-en-on"
+        "a2-time-dates-schedules-vocab"
       ],
       "stage": "controlled"
     },
@@ -155,7 +155,7 @@
     {
       "id": "a2-07-practice-3",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "tiles": [
         "Hányadika",
         "van",
@@ -170,7 +170,7 @@
       ],
       "english": "What's the date today?",
       "teaches": [
-        "on-en-on"
+        "a2-time-dates-schedules-vocab"
       ],
       "stage": "practice"
     },
@@ -241,7 +241,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ordinal-numbers"
+        "on-en-on"
       ]
     },
     {
@@ -255,7 +255,7 @@
         }
       ],
       "teaches": [
-        "on-en-on"
+        "a2-time-dates-schedules-vocab"
       ]
     },
     {
@@ -286,6 +286,9 @@
       "teaches": [
         "on-en-on"
       ],
+      "distractor_skills": {
+        "1": "ordinal-numbers"
+      },
       "stage": "check"
     },
     {
@@ -302,6 +305,10 @@
       "teaches": [
         "ordinal-numbers"
       ],
+      "distractor_skills": {
+        "1": "on-en-on",
+        "2": "cardinal-numbers"
+      },
       "stage": "check"
     }
   ]
