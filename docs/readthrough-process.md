@@ -67,23 +67,25 @@ Work in `C:/dev/parlour-claude` (see CLAUDE.md), never the Drive checkout.
 ## Checks `readthrough_check.py` should run
 
 Errors/warnings the subagent must clear before reporting. The ones marked
-*(to add)* were reviewer corrections in HU A2; implement them before the next
-level:
+*(to add)* were reviewer corrections in HU A2; all were added 2026-10-05 for HU B1
+(matching and the `ds` rules are errors, the rest warnings), along with two B1
+needs: `category: reading` items may stay untagged (`"teaches": null`) and the
+category check skips them:
 
 - unknown/retired slug, skill above level, every exercise decided (exists)
 - category follows the tag on choice/fill-blank/builder/matching, including
   items whose category is `dialogue`/`writing` (exists)
-- matching pairs tagged anything but vocabulary *(to add)*
-- `ds` naming the item's own `teaches`, or a vocabulary skill *(to add)*
+- matching pairs tagged anything but vocabulary
+- `ds` naming the item's own `teaches`, or a vocabulary skill
 - `ds` on an item whose options are suffix names or patterns rather than word
-  forms *(to add)*
+  forms
 - a wrong option beginning *Nem,* while the right one begins *Igen,* (or the
-  reverse) not tagged `yes-no-questions` *(to add, warning)*
+  reverse) not tagged `yes-no-questions`
 - `ik-verbs-dolgozom-not-dolgozok` on an answer that isn't a 1st-person
-  singular *-m* form *(to add, warning)*
-- the answer printed in the prompt or sentence *(to add)*
+  singular *-m* form
+- the answer printed in the prompt or sentence
 - a fill-blank whose answer carries a possessive or person ending but whose
-  hint names no person *(to add, warning)*
+  hint names no person
 
 ## Cost reference (HU A2)
 

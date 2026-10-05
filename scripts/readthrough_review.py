@@ -52,7 +52,7 @@ def main():
 
     out = subprocess.run([sys.executable, str(ROOT / "scripts" / "readthrough_check.py"), lang, level, uid, dec_path],
                          capture_output=True, text=True, encoding="utf-8").stdout
-    flagged = set(re.findall(r"^(?:warn|error)\s+(\S+?):", out, re.M))
+    flagged = set(re.findall(r"^(?:warn|error)\s+(\S+?):", out, re.M | re.I))
 
     cnt, hidden = Counter(), 0
     for stem in unit["stems"]:
@@ -62,8 +62,8 @@ def main():
         lines = []
         for e in load(p)["exercises"]:
             d = dec[e["id"]]
-            tag = d["teaches"]
-            cnt[tag] += 1
+            tag = d.get("teaches")
+            cnt[tag or "(reading, untagged)"] += 1
             old = (e.get("teaches") or [None])[0]
             is_vocab = reg.get(tag, {}).get("kind") != "grammar"
             boring = is_vocab and tag == old and not d.get("ds") and e["id"] not in flagged

@@ -234,7 +234,6 @@ def course_language(course, sources):
 
 # (language, skill, prerequisite) pairs the prerequisite-order check skips, each with its queue item.
 KNOWN_PREREQ_ORDER = {
-    ("hu", "mixed-conditionals", "past-conditional-volna"): "ROADMAP 139: past conditional is taught only on the citizenship track",
     # Spanish pairs found when the check was added (2026-10-05), awaiting the user's decisions: ROADMAP 140
     ("es", "cuando-mientras", "imperfect"): "ROADMAP 140",
     ("es", "imperativo-formal-usted", "subjuntivo-morfologia"): "ROADMAP 140",

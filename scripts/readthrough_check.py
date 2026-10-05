@@ -6,9 +6,14 @@
 Errors: an exercise without a decision (or a decision for one outside the
 unit), an unknown or retired slug, a skill above the unit's level, a
 `distractor_skills` index that isn't a wrong option or names a non-grammar
-skill. Warnings: a grammar skill whose screen comes after the exercise's
-lesson, a category that doesn't follow the tag, and identical exercises
-given different tags.
+skill, a matching exercise tagged with anything but a vocabulary skill.
+Warnings: a grammar skill whose screen comes after the exercise's
+lesson, a category that doesn't follow the tag, identical exercises
+given different tags, `distractor_skills` on a question about suffix names,
+an Igen/Nem contradiction not tagged `yes-no-questions`,
+`ik-verbs-dolgozom-not-dolgozok` on an answer that isn't a 1st-person -m form,
+the answer printed in the prompt, and a fill-blank hint that names no person
+for a person- or possessor-marked answer.
 """
 import json
 import re
@@ -19,11 +24,32 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"]
 FOLLOWS = {"multiple-choice", "fill-blank", "sentence-builder", "matching"}
+PERSON_WORDS = re.compile(r"\b(I|you|he|she|it|we|they|my|your|his|her|its|our|their|one's|yours|mine|ours|theirs|me|us|them|him)\b", re.I)
+PERSON_END = re.compile(r"(om|em|öm|am|ad|ed|od|öd|unk|ünk|atok|etek|otok|ötök|uk|ük|tok|tek|tök|nk|ja|je|ják|jük|juk|ják|jék)$", re.I)
 CONTENT_KEYS = ("question", "sentence", "options", "pairs", "solution", "prompt", "template", "answer", "answers")
 
 
 def load(p):
     return json.loads(Path(p).read_text(encoding="utf-8"))
+
+
+def words(t):
+    return re.findall(r"[^\W\d_]+", (t or "").lower())
+
+
+def answer_text(e):
+    """The accepted answer as a string, for the item types that have one."""
+    opts = e.get("options") or []
+    if isinstance(e.get("correct"), int) and opts and isinstance(opts[e["correct"]], str):
+        return opts[e["correct"]]
+    a = e.get("answers") or e.get("answer")
+    return (a[0] if isinstance(a, list) else a) if a else ""
+
+
+def prompt_text(e):
+    if e.get("type") == "dialogue-complete":
+        return " ".join(l.get("text", "") for l in e.get("prompt") or [] if "_" not in l.get("text", ""))
+    return e.get("sentence") or e.get("question") or ""
 
 
 def lesson_no(ref):
@@ -51,6 +77,8 @@ def main():
                 errors.append(f"{eid}: no decision")
                 continue
             slug = d.get("teaches")
+            if not slug and (d.get("category") or e.get("category")) == "reading":
+                continue  # reading comprehension stays untagged (spec: teaches not required)
             sk = reg.get(slug)
             if not sk or sk.get("retired"):
                 errors.append(f"{eid}: unknown or retired slug {slug!r}")
@@ -62,9 +90,31 @@ def main():
                 if sk["level"] == level.upper() and t and here and t > here:
                     warns.append(f"{eid}: {slug} is taught at {sk['taught_in']}, after this lesson")
             cat = d.get("category") or e.get("category")
-            if (e.get("type") in FOLLOWS or cat in ("vocabulary", "grammar")) and cat != sk["kind"]:
+            if (e.get("type") in FOLLOWS or cat in ("vocabulary", "grammar")) and cat not in ("reading", "listening") and cat != sk["kind"]:
                 warns.append(f"{eid}: category {cat} but tag is {sk['kind']}")
             opts = e.get("options") or []
+            if e.get("type") == "matching" and sk["kind"] != "vocabulary":
+                errors.append(f"{eid}: matching is always vocabulary, not {slug}")
+            ans, ptxt = answer_text(e), prompt_text(e)
+            if e.get("type") in ("multiple-choice", "dialogue-complete") and len(opts) > 1 and opts and all(isinstance(o, str) for o in opts):
+                if (d.get("ds") or {}) and sum(o.lstrip().startswith("-") for o in opts) * 2 > len(opts):
+                    warns.append(f"{eid}: ds on options that are suffix names, not word forms")
+                right, wrong = opts[e["correct"]].lower(), [o.lower() for i, o in enumerate(opts) if i != e["correct"]]
+                if (right.startswith("igen,") and any(w.startswith("nem,") for w in wrong)
+                        or right.startswith("nem,") and any(w.startswith("igen,") for w in wrong)) and slug != "yes-no-questions":
+                    warns.append(f"{eid}: Igen/Nem contradiction, tag is {slug}, not yes-no-questions")
+            if slug == "ik-verbs-dolgozom-not-dolgozok" and ans and not re.search(r"m$", ans.strip(" .!?").split()[-1] if ans.split() else "", re.I):
+                warns.append(f"{eid}: ik-verbs tag but answer {ans!r} is not a 1st-person -m form")
+            aw = words(ans)
+            if len("".join(aw)) >= 4 and e.get("type") in ("fill-blank", "multiple-choice", "dialogue-complete", "structured-writing") and ptxt:
+                pw = words(re.sub(r"\([^)]*\)", " ", ptxt))
+                if any(pw[i:i + len(aw)] == aw for i in range(len(pw) - len(aw) + 1)):
+                    warns.append(f"{eid}: the answer {ans!r} is printed in the prompt")
+            if e.get("type") == "fill-blank" and ans:
+                hint = " ".join(re.findall(r"\(([^)]*)\)", ptxt))
+                last = (words(ans) or [""])[-1]
+                if PERSON_END.search(last) and len(last) > 4 and hint and not PERSON_WORDS.search(hint):
+                    warns.append(f"{eid}: answer {ans!r} carries a person/possessor ending but hint ({hint}) names no person")
             for i, s2 in (d.get("ds") or {}).items():
                 if not str(i).isdigit() or int(i) >= len(opts) or int(i) == e.get("correct"):
                     errors.append(f"{eid}: ds index {i} is not a wrong option")

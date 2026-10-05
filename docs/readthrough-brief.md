@@ -1,101 +1,97 @@
 # Skill-tag read-through: subagent rule sheet (ROADMAP 125 step 3)
 
-> **Status:** the HU A2 brief as used, with its review notes appended. Before the next
-> level, condense it into a one-page rule sheet per [readthrough-process.md](readthrough-process.md)
-> (fold the review notes into the rules, drop step 1's spec/log reading, make it
-> course- and level-neutral, and switch to two units per subagent).
+This is the only rules document you read. You get two units. For every exercise in them
+you decide one skill tag, fix real content defects, and report. Work only in
+`C:/dev/parlour-claude` (absolute paths); never touch the Google Drive checkout; no git
+writes; set `PYTHONIOENCODING=utf-8` on every python command. Never run `apply_tags.py`
+or `lock_tags.py`.
 
-You read every exercise of the units you're given and decide each one's single skill tag.
-Work only in the repo `C:/dev/parlour-claude` (absolute paths). Never touch the
-Google Drive checkout. Never run git write commands (no add/commit/stash/checkout/reset).
-Set `PYTHONIOENCODING=utf-8` for every python command.
+## Steps (per unit)
 
-## Steps
-
-1. Read this sheet; it holds every rule you need.
-2. Dump the unit: `python scripts/readthrough_dump.py <course> <level> <unit id> > <scratch>/<unit id>.txt`
-   and read ALL of it: grammar screens, vocabulary, every exercise, and the skill lists at the end.
-3. For every exercise decide `teaches` (one slug), category if it must change, and
-   `distractor_skills` (`ds`, option index → slug) for wrong options that are a
-   well-formed form of another GRAMMAR skill.
-4. Write `<scratch>/<unit id>.decisions.json`:
+1. `python scripts/readthrough_dump.py <course> <level> <unit id> > <scratch>/<unit id>.txt`
+   and read ALL of it: grammar screens, vocabulary, every exercise, and the skill lists at
+   the end (the only slugs you may use).
+2. Decide `teaches` (one slug), `category` (only if it must change) and `ds`
+   (`distractor_skills`: option index → slug) for every exercise; none skipped. Write
+   `<scratch>/<unit id>.decisions.json`:
    `{"<exercise id>": {"teaches": "<slug>", "category": "<only if it changes>", "ds": {"1": "<slug>"}}}`
-   — every exercise in the unit, none skipped.
-5. Run `python scripts/readthrough_check.py <course> <level> <unit id> <scratch>/<unit id>.decisions.json`.
-   Fix every error. Warnings: fix, or explain in your report why they stand
-   ("taught later" is acceptable when the lesson's own grammar screen already teaches the
-   form but the registry's `taught_in` points later — name the screen).
-6. Content fixes: while reading, fix real defects directly in the unit's own files under
-   `content/<course>/exercises/<level>/`, `content/hu/grammar/...` or vocabulary files of this unit
-   (keep JSON formatting, 2-space indent, UTF-8, no other changes). Defects worth fixing:
-   - a choice/dialogue item with two acceptable answers (make the wrong option clearly wrong);
-   - a fill-blank that accepts one answer where several fit (add an English hint in a trailing
-     parenthetical in `sentence`, e.g. `(on Tuesday)`, or add the alternatives via an
-     `answers` array replacing `answer`);
-   - the answer printed in the prompt; a wrong gloss; a wrong "correct" answer;
-   - an item whose answer needs grammar or words not yet taught by that point (rewrite with taught material);
-   - a consolidation item that copies a lesson item you fixed: apply the same fix to the copy.
-   Don't rewrite items that merely could be better. Don't touch tags in the files — the
-   decisions file carries them (`apply_tags.py` is run later by the reviewer).
-   After editing, check the JSON still parses and re-run step 5.
-7. Do NOT run apply_tags.py or lock_tags.py.
+3. `python scripts/readthrough_check.py <course> <level> <unit id> <that file>`. Fix every
+   error. Fix each warning or say in the report why it stands.
+4. Fix content defects (below) in the unit's own files under
+   `content/<course>/exercises/<level>/`, its grammar screens or vocabulary files (2-space
+   indent, UTF-8, nothing else changed). Don't touch `teaches` in the files; the decisions
+   file carries tags. Re-run step 3 after editing.
 
-## Rules (summary; the spec wins)
+## Tagging rules
 
-- Tag by **what a wrong answer shows**. Word meaning → the unit vocabulary skill
-  (`<level>-<unit id>-vocab`). A choice between paradigm members (all options are forms of one
-  paradigm: persons of a verb, case endings of one noun, *-ban/-ba/-ból*) → that grammar skill.
-  A gloss against mixed words stays vocabulary.
-- Review items keep the skill they review (an earlier unit's vocab skill, or the grammar skill),
-  not the lesson's new skill. In a review unit, matching takes the vocab skill of the unit its
+- **Tag by what a wrong answer shows.** A word's meaning → the unit vocabulary skill
+  (`<level>-<unit id>-vocab`). A choice between members of one paradigm (persons of a verb,
+  case endings of one noun, *-ban/-ba/-ból*, harmony variants of a suffix) → that grammar
+  skill. A gloss against mixed words stays vocabulary. A fill-blank that produces the whole
+  suffixed word → the suffix's own skill; a choice between its harmony variants →
+  `vowel-harmony`.
+- **Review units and review items** keep the skill they review (the earlier unit's
+  vocabulary skill, or the grammar skill), not the lesson's new skill.
+- **Category follows the tag** on multiple-choice, fill-blank, sentence-builder,
+  sentence-order and substitution: vocabulary tag → `vocabulary`, grammar tag → `grammar`,
+  even when the old category was `dialogue` or `writing`. `dialogue-complete`,
+  `structured-writing`, `dictation` and `listening-choice` keep their category.
+- **Matching is always vocabulary** (the checker errors otherwise), even when the pairs are
+  two forms of a sentence. In a review unit it takes the vocabulary skill of the unit the
   words come from.
-- Category follows the tag on multiple-choice, fill-blank, sentence-builder and matching:
-  vocabulary tag → `vocabulary`, grammar tag → `grammar`. `dialogue`, `writing`, `listening`,
-  `reading` keep their category.
-- An any-answer item or open writing with no single target → unit vocabulary skill.
-- `ds` only for a well-formed form of another grammar skill; an ungrammatical option gets none;
-  never point `ds` at a vocabulary skill or at the item's own `teaches`.
-- Only use slugs from the lists at the end of the dump (A1/A2 grammar, this and earlier
-  units' vocabulary). The skill list is frozen: never invent or rename a skill. If no skill
-  fits a grammar point, use the unit vocabulary skill and say so in the report.
-- The old tags came from bulk retags and are often wrong; don't trust them.
+- **Reading** (`category: reading`, comprehension questions about a story) stays untagged:
+  `{"teaches": null}`. If a reading item actually tests a form or a word, change its
+  `category` and tag it as usual.
+- An item any answer passes, and open writing with no single target → the unit vocabulary
+  skill.
+- **Dialogues:** a wrong reply that answers a different question, or contradicts the
+  prompt in meaning, fails on meaning → unit vocabulary skill; a wrong reply differing in a
+  FORM (person, tense, case) → that form's skill. A wrong *Nem, …* that affirms (or *Igen, …*
+  that denies) → `yes-no-questions`.
+- **`ds`** only for a wrong option that is a well-formed form of another GRAMMAR skill (a
+  present form where the past is needed, another case's suffix); an ungrammatical option
+  gets none. Never `ds` at a vocabulary skill or the item's own tag; none when the options
+  are suffix names or patterns ("Which suffix?"); if unsure of the owning skill, leave it out.
+- **Wrong-person options** generally → `present-tense-routine-language`, not the skill the
+  sentence happens to contain. `ik-verbs-dolgozom-not-dolgozok` is only the 1st-person
+  singular *-m* form (*dolgozom*).
+- Thin skills are fine: don't stretch a tag to reach 6. A wrong tag isn't.
+- **Slugs only from the lists at the end of the dump.** The list is frozen: never invent or
+  rename a skill. A grammar point with no skill → the unit vocabulary skill, said in the
+  report. The old tags came from bulk retags and are often wrong; don't trust them.
+- **B1 has two tracks** (`core`, `citizenship`). A unit's vocabulary skill is its own;
+  citizenship history/civics comprehension is `reading` (untagged) or vocabulary, never a
+  grammar skill it doesn't test. "Taught later" means the skill's `taught_in` screen comes
+  after this lesson: if one of this unit's own screens teaches it, say which in the report
+  (the reviewer fixes the registry).
+- A skill above the unit's level is an error (a B2 slug on a B1 item): retag by what the
+  item really tests.
 
-## Report (your final message, under 400 words)
+## Content defects worth fixing
 
-- Tag counts (slug: n), category changes count, `ds` count.
-- Judgment calls a reviewer should check (with exercise ids).
-- Content fixes made (id: what and why, one line each).
-- Defects left alone and why.
-- Remaining check warnings and why they stand.
+- a choice/dialogue item with two acceptable answers (make the wrong option clearly wrong);
+- a fill-blank accepting one answer where several fit: add alternatives via an `answers`
+  array replacing `answer`, or pin it with an English hint in a trailing parenthetical that
+  names the person for a conjugated or possessed form (`(his family)`, `(I closed)`);
+- the answer printed in the prompt (the checker warns), a wrong gloss, a wrong "correct"
+  answer, a "which means X?" whose options include another form of the same word;
+- an item whose answer needs grammar or words not yet taught, or that asks about the
+  lesson's story before the learner reaches it (rewrite it to test material already shown);
+- a consolidation item that copies a lesson item you fixed: apply the same fix to the copy.
 
-## Notes from reviewing earlier A2 units
+Don't rewrite items that merely could be better.
 
-- `-ig` items use `tol-tol` (`terminative-case-ig` is B1).
-- No `ds` on meta-questions whose options are suffix names rather than word forms.
-- `ds` must name the skill that actually owns that form; if unsure, leave it out.
-- A dialogue or choice whose wrong option is also a sensible answer is a defect to fix.
-- A fill-blank hint must pin the person too when the blank is a possessed or conjugated
-  form (`(his family)`, `(I have a cousin)`), not just the bare word.
-- A "Which means X?" whose wrong options include the `-s`/possessive/plural form of the same
-  word is the grammar skill of that form, consistently across the unit.
-- The *-ik* skill (`ik-verbs-dolgozom-not-dolgozok`) is only for the 1st-person singular
-  *-m* form (*dolgozom*, *barátkozom*); other persons of an *-ik* verb are
-  `present-tense-routine-language`. Wrong-person options generally →
-  `present-tense-routine-language`, not the skill the sentence happens to contain.
-- Don't stretch a tag to reach 6 exercises; a thin skill is fine, a wrong tag isn't.
-- *ide/oda/innen/onnan* (the here/there series) → `itt-ott-here-there`; question words
-  *hol/hová/honnan* → `spatial-questions-hol-hova`.
-- Choosing the harmony variant of a suffix (*-hoz/-hez/-höz* as options, or *rendőrséghoz*
-  as a wrong option on a choice) → `vowel-harmony`; a plain fill-blank producing the whole
-  suffixed word → the suffix's own skill.
-- "Which means *to eat*?" against other verbs is a gloss → vocabulary. A dialogue whose
-  wrong option swaps in a different verb (*iszom* for *eszem*) fails on meaning →
-  vocabulary; only a wrong form of the same verb points to its grammar skill.
-- A dialogue whose wrong reply is a non-sequitur (answers a different question) fails on
-  meaning → unit vocabulary skill, even when the right reply contains a grammar point.
-  Only a wrong reply that differs in a FORM points to a grammar skill.
-- An Igen/Nem contradiction in a dialogue (wrong reply "Nem, …" that affirms) → `yes-no-questions`.
-- Matching pairs are always vocabulary, even when the pairs are two forms of a sentence.
-- A multiple-choice/fill-blank/builder item whose category is `dialogue` or `writing` still
-  follows the tag (set `category` to the tag's kind) — the check warns otherwise. Only
-  dialogue-complete, structured-writing and listening TYPES keep their category.
+## Report (final message, under 400 words, per unit)
+
+Tag counts (slug: n), category changes, `ds` count; judgment calls to check (exercise ids);
+content fixes (id: what and why); defects left alone and why; warnings that stand and why.
+
+## Worked examples
+
+- *Which means "back then"?* `akkoriban / később / most` → unit vocab skill, category
+  `vocabulary`.
+- A choice whose options are *megy / menjen / ment* for "(that) he go(es)" → the
+  `-jon/-jen` grammar skill, with `ds` on the present and past options.
+- Dialogue reply "Igen, utálok főzni." against "Nem, utálok főzni." → `yes-no-questions`.
+- Pairs of Hungarian sentence and English → matching → unit vocab skill.
+- *Which suffix …?* with options `-ban / -ból` → grammar skill, no `ds`.
