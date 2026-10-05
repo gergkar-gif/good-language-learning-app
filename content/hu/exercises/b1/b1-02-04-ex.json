@@ -4,7 +4,7 @@
     {
       "id": "b1-02-04-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"since then\"?",
       "options": [
         "azóta",
@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "ota-duration"
+        "b1-experiences-memories-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "b1-02-04-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"to look back\"?",
       "options": [
         "visszatekint",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "verb-government-ra-re"
+        "b1-experiences-memories-vocab"
       ],
       "stage": "introduce"
     },
@@ -63,11 +63,11 @@
     {
       "id": "b1-02-04-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "____ féltem az új helyzetektől. (Before that)",
       "answer": "Azelőtt",
       "teaches": [
-        "ota-duration"
+        "b1-experiences-memories-vocab"
       ],
       "stage": "controlled"
     },
@@ -76,9 +76,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "Sokat ____ a városunk az elmúlt tíz évben. (has changed)",
-      "answer": "megváltozott",
+      "answers": [
+        "megváltozott",
+        "változott"
+      ],
       "teaches": [
-        "ota-duration"
+        "past-tense-indefinite"
       ],
       "stage": "controlled"
     },
@@ -101,7 +104,7 @@
     {
       "id": "b1-02-04-practice-1",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "tiles": [
         "Azelőtt",
         "féltem",
@@ -128,7 +131,7 @@
       ],
       "english": "Before, I was afraid of new situations; since then, I've changed a lot.",
       "teaches": [
-        "ota-duration"
+        "b1-experiences-memories-vocab"
       ],
       "stage": "practice"
     },
@@ -194,7 +197,7 @@
         }
       ],
       "teaches": [
-        "ota-duration"
+        "past-tense-indefinite"
       ],
       "stage": "practice"
     },
@@ -212,6 +215,10 @@
       "teaches": [
         "verb-government-ra-re"
       ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "ban-ben-in"
+      },
       "stage": "practice"
     },
     {
@@ -234,7 +241,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ota-duration"
+        "b1-experiences-memories-vocab"
       ]
     },
     {
@@ -257,7 +264,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "verb-government-ra-re"
+        "present-tense-routine-language"
       ]
     },
     {
@@ -271,7 +278,7 @@
         }
       ],
       "teaches": [
-        "ota-duration"
+        "b1-experiences-memories-vocab"
       ]
     },
     {
@@ -291,7 +298,7 @@
     {
       "id": "b1-02-04-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word points back to before the change you're currently discussing?",
       "options": [
         "azelőtt",
@@ -300,7 +307,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ota-duration"
+        "b1-experiences-memories-vocab"
       ],
       "stage": "check"
     },
@@ -311,7 +318,7 @@
       "sentence": "Sokkal ____ lettem, mint azelőtt voltam. (more mature)",
       "answer": "érettebb",
       "teaches": [
-        "ota-duration"
+        "comparative-bb"
       ],
       "stage": "check"
     }
