@@ -90,11 +90,11 @@
     {
       "id": "a2-72-controlled-3",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "A vonat Bécsből ____, és Rómába érkezik. (departs)",
       "answer": "indul",
       "teaches": [
-        "megy-jon"
+        "a2-travel-holidays-vocab"
       ],
       "stage": "controlled"
     },
@@ -105,14 +105,14 @@
       "sentence": "A jegyem csak Győr____ szól. (as far as)",
       "answer": "ig",
       "teaches": [
-        "terminative-case-ig"
+        "tol-tol"
       ],
       "stage": "controlled"
     },
     {
       "id": "a2-72-practice-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which verb pairs with -ba/-be to say where a train is arriving?",
       "options": [
         "érkezik",
@@ -121,7 +121,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "megy-jon"
+        "a2-travel-holidays-vocab"
       ],
       "stage": "practice"
     },
@@ -172,7 +172,7 @@
       ],
       "english": "The train departs from Vienna.",
       "teaches": [
-        "megy-jon"
+        "elative-bol-bel"
       ],
       "stage": "practice"
     },
@@ -198,7 +198,7 @@
       ],
       "english": "My ticket is only valid as far as Győr.",
       "teaches": [
-        "terminative-case-ig"
+        "tol-tol"
       ],
       "stage": "practice"
     },
@@ -222,9 +222,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "megy-jon",
-        "a2-travel-holidays-vocab"
-      ]
+        "delative-rol-rel"
+      ],
+      "distractor_skills": {
+        "1": "ra-re"
+      }
     },
     {
       "id": "a2-72-dialogue-2",
@@ -246,7 +248,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "terminative-case-ig"
+        "a2-travel-holidays-vocab"
       ]
     },
     {
@@ -260,7 +262,7 @@
         }
       ],
       "teaches": [
-        "megy-jon"
+        "a2-travel-holidays-vocab"
       ]
     },
     {
@@ -274,8 +276,7 @@
         }
       ],
       "teaches": [
-        "a2-travel-holidays-vocab",
-        "megy-jon"
+        "delative-rol-rel"
       ]
     },
     {
@@ -306,7 +307,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "terminative-case-ig"
+        "tol-tol"
       ],
       "stage": "check"
     }

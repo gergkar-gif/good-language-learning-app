@@ -90,22 +90,22 @@
     {
       "id": "a2-73-controlled-3",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentence": "A kapunál meg kell mutatni az ____. (passport)",
       "answer": "útlevelet",
       "teaches": [
-        "a2-travel-holidays-vocab"
+        "how-the-accusative-t-works"
       ],
       "stage": "controlled"
     },
     {
       "id": "a2-73-controlled-4",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Nem találom a ____. (my luggage)",
-      "answer": "poggyászomat",
+      "category": "grammar",
+      "sentence": "Nem találom a ____. (the luggage)",
+      "answer": "poggyászt",
       "teaches": [
-        "a2-travel-holidays-vocab"
+        "how-the-accusative-t-works"
       ],
       "stage": "controlled"
     },
@@ -198,7 +198,7 @@
       ],
       "english": "I'm at gate seven.",
       "teaches": [
-        "three-locatives"
+        "nal-nel"
       ],
       "stage": "practice"
     },
@@ -223,7 +223,10 @@
       "correct": 0,
       "teaches": [
         "three-locatives"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "hoz-suffix"
+      }
     },
     {
       "id": "a2-73-dialogue-2",
@@ -245,7 +248,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "kell-infinitive"
+        "a2-travel-holidays-vocab"
       ]
     },
     {
@@ -268,12 +271,12 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say you can't find your luggage.",
-          "answer": "Nem találom a poggyászomat."
+          "prompt": "Say you can't find the luggage.",
+          "answer": "Nem találom a poggyászt."
         }
       ],
       "teaches": [
-        "a2-travel-holidays-vocab"
+        "how-the-accusative-t-works"
       ]
     },
     {
