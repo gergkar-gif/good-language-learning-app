@@ -66,12 +66,16 @@
       "correct": 0,
       "teaches": [
         "nek-conditional"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperative-definite",
+        "2": "akar-tervez-infinitive"
+      }
     },
     {
       "id": "b1-12-05-controlled-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Mit jelent a 'borravaló' szokása?",
       "options": [
         "Önkéntes pénzbeli elismerés az udvarias és figyelmes kiszolgálásért (általában 10–15%).",
@@ -80,7 +84,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "nek-conditional"
+        "b1-food-lifestyle-vocab"
       ]
     },
     {
@@ -96,22 +100,22 @@
       "correct": 0,
       "teaches": [
         "nek-conditional"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperative-indefinite"
+      }
     },
     {
       "id": "b1-12-05-controlled-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "reading",
       "question": "Hány fogásból áll egy klasszikus háromfogásos magyar vasárnapi ebéd?",
       "options": [
         "Háromból: levesből (előétel), főételből és desszertből.",
         "Egyetlen szelet kenyérből.",
         "Húsz különböző italból."
       ],
-      "correct": 0,
-      "teaches": [
-        "nek-conditional"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-12-05-practice-1",
@@ -120,7 +124,7 @@
       "sentence": "A kitűnő vacsora és a figyelmes kiszolgálás után tíz százalék ____ adtunk a pincérnek. (tip)",
       "answer": "borravalót",
       "teaches": [
-        "nek-conditional"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -130,7 +134,7 @@
       "sentence": "Fő____ rántott csirkemellet rendeltünk petrezselymes burgonyával és uborkasalátával. (course, essive)",
       "answer": "fogásként",
       "teaches": [
-        "nek-conditional"
+        "essive-formal-kent"
       ]
     },
     {
@@ -160,47 +164,53 @@
     {
       "id": "b1-12-05-dialogue-1",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "— Jó estét kívánok! Választottak már?\n— Igen, a ______ ajánlatából a harcsapaprikást szeretnénk kérni túrós csuszával.",
       "options": [
         "pincér",
         "főbérlő",
         "defterdár"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-food-lifestyle-vocab"
+      ]
     },
     {
       "id": "b1-12-05-dialogue-2",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "— Hozhatom a kávét a desszerthez?\n— Igen, köszönjük, és utána a ______ is kérnénk szépen.",
       "options": [
         "számlát",
         "fogyókúrát",
         "vilajetet"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-food-lifestyle-vocab"
+      ]
     },
     {
       "id": "b1-12-05-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "vocabulary",
       "sentence": "Legyen ____, hozna még két pohár ásványvizet? (polite request)",
       "answer": "szíves",
       "stage": "production",
       "teaches": [
-        "nek-conditional"
+        "b1-food-lifestyle-vocab"
       ]
     },
     {
       "id": "b1-12-05-writing-2",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A vacsora végén a pincér kihozta az elszámoló ____. (számla, accusative)",
       "answer": "számlát",
       "stage": "production",
       "teaches": [
-        "nek-conditional"
+        "how-the-accusative-t-works"
       ]
     },
     {

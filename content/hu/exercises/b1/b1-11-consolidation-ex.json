@@ -107,7 +107,11 @@
       "correct": 0,
       "teaches": [
         "spatial-belonging-beli"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "ra-re"
+      }
     },
     {
       "id": "b1-11-consolidation-6",
@@ -121,8 +125,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "postpositions-altal-reven"
-      ]
+        "verb-government-ban-ben"
+      ],
+      "distractor_skills": {
+        "1": "hoz-suffix",
+        "2": "verb-government-ert"
+      }
     },
     {
       "id": "b1-11-consolidation-7",
@@ -131,17 +139,17 @@
       "sentence": "A nagyvárosban sok a kulturális program, ____ vidéken békésebb a mindennapi élet. (while / whereas)",
       "answer": "míg",
       "teaches": [
-        "kellene"
+        "adversative-contrast"
       ]
     },
     {
       "id": "b1-11-consolidation-8",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A helyi lakosok szívesen járulnak hozzá a lakókörnyezetük szép____. (making it prettier - translative)",
-      "answer": "tételéhez",
+      "sentence": "A helyi lakosok szívesen járulnak ____ a közösségi rendezvény megszervezéséhez. (to it / contribute)",
+      "answer": "hozzá",
       "teaches": [
-        "verb-government-ban-ben"
+        "verb-government-hoz-hez"
       ]
     },
     {
@@ -151,20 +159,23 @@
       "sentence": "Ha a Dunakanyarban jársz, mindenképpen ____ meglátogatni Visegrád fellegvárát. (worth)",
       "answer": "érdemes",
       "teaches": [
-        "relative-clauses-aki-ami-amely"
+        "kellene"
       ]
     },
     {
       "id": "b1-11-consolidation-10",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "Mit jelent a közösség 'összetartása' a mindennapi életben?",
       "options": [
         "Egymás támogatását, a közös programokat és a felelősségérzetet a lakókörnyezetért.",
         "A lakások eladását.",
         "A rendőrségi büntetéseket."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-cities-communities-vocab"
+      ]
     },
     {
       "id": "b1-11-consolidation-11",

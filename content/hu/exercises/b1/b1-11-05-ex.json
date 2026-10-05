@@ -66,7 +66,11 @@
       "correct": 0,
       "teaches": [
         "verb-government-ban-ben"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "verb-government-hoz-hez",
+        "2": "elative-bol-bel"
+      }
     },
     {
       "id": "b1-11-05-controlled-2",
@@ -80,7 +84,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "verb-government-ban-ben"
+        "verb-government-hoz-hez"
       ]
     },
     {
@@ -95,13 +99,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "verb-government-ban-ben"
-      ]
+        "verb-government-val-vel"
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "hoz-suffix"
+      }
     },
     {
       "id": "b1-11-05-controlled-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Mi a szerepe a helyi 'önkormányzatnak' egy településen?",
       "options": [
         "A helyi közügyek (iskolák, utak, tisztaság, fejlesztések) demokratikus irányítása és intézése.",
@@ -110,7 +118,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "verb-government-ban-ben"
+        "b1-cities-communities-vocab"
       ]
     },
     {
@@ -120,7 +128,7 @@
       "sentence": "A felújított művelődési ház modern ____ vált a fiatalok számára. (tér, translative)",
       "answer": "térré",
       "teaches": [
-        "verb-government-ban-ben"
+        "translative-morphology"
       ]
     },
     {
@@ -130,7 +138,7 @@
       "sentence": "A lakók önkéntes munkával járulnak ____ a park megtisztításához. (to it / contribute)",
       "answer": "hozzá",
       "teaches": [
-        "verb-government-ban-ben"
+        "verb-government-hoz-hez"
       ]
     },
     {
@@ -160,47 +168,53 @@
     {
       "id": "b1-11-05-dialogue-1",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "— Ki szervezi a hétvégi falunapot?\n— A helyi ______ a civil egyesületekkel közösen rendezi meg.",
       "options": [
         "önkormányzat",
         "zsoldos",
         "szultán"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-cities-communities-vocab"
+      ]
     },
     {
       "id": "b1-11-05-dialogue-2",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "— Részt veszel a holnapi faültetésen?\n— Természetesen, szívesen hozzájárulok a környékünk szebbé ______.",
       "options": [
         "tételéhez",
         "rombolásához",
         "eladásihoz"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-cities-communities-vocab"
+      ]
     },
     {
       "id": "b1-11-05-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "vocabulary",
       "sentence": "A sport____ célja, hogy minden gyermek számára biztosítsa a mozgás örömét. (association / club)",
       "answer": "egyesület",
       "stage": "production",
       "teaches": [
-        "verb-government-ban-ben"
+        "b1-cities-communities-vocab"
       ]
     },
     {
       "id": "b1-11-05-writing-2",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A múlt hétvégi kulturális ____ több ezer érdeklődő látogatott el. (to the event)",
       "answer": "rendezvényre",
       "stage": "production",
       "teaches": [
-        "verb-government-ban-ben"
+        "ra-re"
       ]
     },
     {

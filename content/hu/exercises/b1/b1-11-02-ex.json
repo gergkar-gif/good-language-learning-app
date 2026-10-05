@@ -60,13 +60,17 @@
       "question": "Hogyan képezzük a 'környék' szóból az ottani lakókra utaló melléknevet?",
       "options": [
         "környékbeli",
-        "környéki",
+        "környékben",
         "környékből"
       ],
       "correct": 0,
       "teaches": [
         "spatial-belonging-beli"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "elative-bol-bel"
+      }
     },
     {
       "id": "b1-11-02-controlled-2",
@@ -86,7 +90,7 @@
     {
       "id": "b1-11-02-controlled-3",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Melyik kifejezés jelenti a környék biztonsági állapotát?",
       "options": [
         "közbiztonság",
@@ -95,32 +99,29 @@
       ],
       "correct": 0,
       "teaches": [
-        "spatial-belonging-beli"
+        "b1-cities-communities-vocab"
       ]
     },
     {
       "id": "b1-11-02-controlled-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "reading",
       "question": "Melyik állítás igaz a magyarországi lakótelepekre?",
       "options": [
         "Sok lakótelepen az utóbbi években szigetelték a panelházakat és zöld parkokat alakítottak ki.",
         "Egy lakótelepen sincs villany vagy víz.",
         "A lakótelepek kizárólag földszintes családi házakból állnak."
       ],
-      "correct": 0,
-      "teaches": [
-        "spatial-belonging-beli"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-11-02-practice-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "A házak között egy árnyas fás ____ húzódik játszótérrel és sétánnyal. (green belt)",
       "answer": "zöldövezet",
       "teaches": [
-        "spatial-belonging-beli"
+        "b1-cities-communities-vocab"
       ]
     },
     {
@@ -160,42 +161,48 @@
     {
       "id": "b1-11-02-dialogue-1",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "— Nem félsz este egyedül hazasétálni?\n— Nem, nálunk nagyon jó a ______, a rendőrség gyakran járőrözik.",
       "options": [
         "közbiztonság",
         "megtorlás",
         "vilajet"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-cities-communities-vocab"
+      ]
     },
     {
       "id": "b1-11-02-dialogue-2",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "— Milyen a hangulat a házatokban?\n— Kiváló, igazi szomszédi ______ van, mindig számíthatunk egymásra.",
       "options": [
         "összetartás",
         "széthúzás",
         "zsoldoshiány"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-cities-communities-vocab"
+      ]
     },
     {
       "id": "b1-11-02-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A barátunk egy felújított óbudai ____ lakik a Duna közelében. (housing estate / complex)",
       "answer": "lakótelepen",
       "stage": "production",
       "teaches": [
-        "spatial-belonging-beli"
+        "on-en-on"
       ]
     },
     {
       "id": "b1-11-02-writing-2",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A hely____ lakosság büszke a város gazdag történelmi emlékeire. (local)",
       "answer": "beli",
       "stage": "production",
@@ -206,7 +213,7 @@
     {
       "id": "b1-11-02-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Mit jelent az 'összetartás' szó?",
       "options": [
         "Cohesion",
@@ -215,13 +222,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "spatial-belonging-beli"
+        "b1-cities-communities-vocab"
       ]
     },
     {
       "id": "b1-11-02-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Melyik szó jelöli a sok lakásból álló paneltömböket?",
       "options": [
         "lakótelep",
@@ -230,7 +237,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "spatial-belonging-beli"
+        "b1-cities-communities-vocab"
       ]
     }
   ]
