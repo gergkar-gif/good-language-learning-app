@@ -24,8 +24,8 @@ Clara: Claro, por eso los vio como gigantes.
 - Porque los molinos lo atacaron primero.
 * Porque había leído tantas historias de caballeros que imaginaba aventuras en todas partes.
 - Porque leerá historias de caballeros.
-decision:
-why:
+decision: match: Porque creía que los campesinos del lugar corrían peligro cerca de las máquinas. || Porque pensaba que el dueño de las tierras le había robado su caballo esa noche.
+why: Dialogue requires matching full past-tense explanations; removes tense clash and matches length.
 
 ### b1-02-05.ex13   teaches: ['pluscuamperfecto']
 files: content/es-es/exercises/b1/b1-02-05-ex.json, content/es-latam/exercises/b1/b1-02-05-ex.json
@@ -33,8 +33,8 @@ El relato lo conmovió porque mostraba cómo una decisión pequeña podía cambi
 * The tale moved him because a small decision could change a life.
 - The tale will change tomorrow.
 - The tale was only about a place.
-decision:
-why:
+decision: match: The tale confused him because a small decision could not affect other people. || The tale bored him because the story only showed daily life in a quiet place.
+why: Translation item requires full sentence; wrong options match length and avoid tense clash.
 
 ### b1-03-05.ex12   teaches: None
 files: content/es-es/exercises/b1/b1-03-05-ex.json, content/es-latam/exercises/b1/b1-03-05-ex.json
@@ -43,8 +43,8 @@ files: content/es-es/exercises/b1/b1-03-05-ex.json, content/es-latam/exercises/b
 - Porque no conocía ningún destino.
 - Porque no tenía intención de viajar.
 - Porque no había tomado una decisión.
-decision:
-why:
+decision: shorten: Porque creían que no terminaría a tiempo.
+why: Reading comprehension; cuts verbose clause to key point matching distractor length.
 
 ### b1-04-04.ex02   teaches: ['porque-y-por-eso']
 files: content/es-es/exercises/b1/b1-04-04-ex.json, content/es-latam/exercises/b1/b1-04-04-ex.json
@@ -52,8 +52,8 @@ Which sentence gives advice and explains a consequence? [¿Cuál da un consejo y
 * Deberías hablar con él porque así evitarás un problema mayor. [You should speak to him because that way you will avoid a bigger problem.]
 - Habla con él. [Speak to him.]
 - Hablaste con él en la reunión. [You spoke to him in the meeting.]
-decision:
-why:
+decision: match: Deberías hablar con él mañana por la mañana en la sala de reuniones. [You should speak to him tomorrow morning in the meeting room.] || Tuviste un problema mayor con él porque no hablaste a tiempo en la reunión. [You had a bigger problem with him because you did not speak in time in the meeting.]
+why: Advice plus consequence item; wrong options match length using advice alone and consequence alone.
 
 ### b1-04-05.ex16   teaches: ['condicional-consejos']
 files: content/es-es/exercises/b1/b1-04-05-ex.json, content/es-latam/exercises/b1/b1-04-05-ex.json
@@ -61,8 +61,8 @@ Which recommendation is the most complete? [¿Cuál recomendación está más co
 * Te recomiendo que revises el plan para que puedas evitar un riesgo innecesario. [I recommend that you review the plan so that you can avoid an unnecessary risk.]
 - Revisa el plan. [Review the plan.]
 - Tienes que revisar el plan. [You have to review the plan.]
-decision:
-why:
+decision: match: Revisa el plan inmediatamente en la oficina antes de tomar una decisión. [Review the plan immediately in the office before making a decision.] || Tienes que revisar el plan con el equipo durante la reunión de esta tarde. [You have to review the plan with the team during this afternoon's meeting.]
+why: Complete recommendation item; wrong options match length using direct imperative and obligation.
 
 ### b1-05-05.ex11   teaches: None
 files: content/es-es/exercises/b1/b1-05-05-ex.json, content/es-latam/exercises/b1/b1-05-05-ex.json
@@ -70,8 +70,8 @@ What had changed between Jo and Meg over the years? [¿Qué había cambiado entr
 * They had become closer in some ways and understood each other better. [Se habían acercado en algunos aspectos y se entendían mejor.]
 - They had stopped being sisters. [Habían dejado de ser hermanas.]
 - They had never spoken again. [No habían vuelto a hablar.]
-decision:
-why:
+decision: shorten: They understood each other better. [Se entendían mejor.]
+why: Reading comprehension; shortens to key point matching wrong options' length.
 
 ### b1-06-05.ex02   teaches: ['b1-work-professional-life-vocab']
 files: content/es-es/exercises/b1/b1-06-05-ex.json, content/es-latam/exercises/b1/b1-06-05-ex.json
@@ -79,8 +79,8 @@ Which is the clearest professional refusal? [¿Cuál es la negativa profesional 
 * No puedo aceptar el cambio de plazo porque tengo que terminar otro proyecto. [I cannot accept the change to the deadline because I have to finish another project.]
 - No. [No.]
 - No quiero. [I don't want to.]
-decision:
-why:
+decision: match: No voy a hacerlo porque no me apetece asumir más responsabilidades ahora. [I am not going to do it because I don't feel like taking on more responsibilities now.] || No quiero ese cambio porque simplemente no me parece una buena idea. [I don't want that change because it simply doesn't seem like a good idea to me.]
+why: Professional refusal item; wrong options match length while remaining informal and unprofessional.
 
 ### b1-06-05.ex09   teaches: None
 files: content/es-es/exercises/b1/b1-06-05-ex.json, content/es-latam/exercises/b1/b1-06-05-ex.json
@@ -88,8 +88,8 @@ What was Bartleby's position? [¿Cuál era el puesto de Bartleby?]
 * He was a copyist in a law office. [Era copista en una oficina de abogados.]
 - He was a lawyer. [Era abogado.]
 - He was a manager. [Era gerente.]
-decision:
-why:
+decision: shorten: He was a copyist. [Era copista.]
+why: Reading comprehension; shortens occupation to single title matching distractors.
 
 ### b1-06-05.ex16   teaches: ['b1-work-professional-life-vocab']
 files: content/es-es/exercises/b1/b1-06-05-ex.json, content/es-latam/exercises/b1/b1-06-05-ex.json
@@ -97,8 +97,8 @@ Which response is most appropriate in a professional context? [¿Cuál es más a
 * Entiendo la petición, pero necesito más información antes de decidir. [I understand the request, but I need more information before deciding.]
 - No. [No.]
 - No me importa. [I don't care.]
-decision:
-why:
+decision: match: No me interesa esa propuesta porque tengo cosas más importantes que hacer. [I am not interested in that proposal because I have more important things to do.] || No voy a responder a eso porque ese tema no tiene nada que ver conmigo. [I am not going to answer that because that topic has nothing to do with me.]
+why: Pragmatic professional response; wrong options match length while remaining uncooperative.
 
 ### b1-07-05.ex02   teaches: ['giving-opinions']
 files: content/es-es/exercises/b1/b1-07-05-ex.json, content/es-latam/exercises/b1/b1-07-05-ex.json
@@ -106,8 +106,8 @@ Which response best defends an opinion? [¿Cuál defiende mejor una opinión?]
 * Creo que la práctica es esencial porque permite aplicar lo aprendido. [I think practice is essential because it allows you to apply what you have learned.]
 - Creo que sí. [I think so.]
 - No sé. [I don't know.]
-decision:
-why:
+decision: match: Creo que es un tema interesante, pero prefiero no hablar de mis preferencias. [I think it is an interesting topic, but I prefer not to talk about my preferences.] || La práctica dura dos horas todos los días según el horario oficial del curso. [Practice lasts two hours every day according to the official schedule of the course.]
+why: Defending an opinion item; wrong options match length without defending an opinion.
 
 ### b1-08-05.ex09   teaches: None
 files: content/es-es/exercises/b1/b1-08-05-ex.json, content/es-latam/exercises/b1/b1-08-05-ex.json
@@ -115,8 +115,8 @@ Why did Odysseus look for an alternative? [¿Por qué buscó Odiseo una alternat
 * Because the delay and breakdown made the original plan impossible. [Porque el retraso y la avería hicieron imposible el plan original.]
 - Because he wanted to leave Ithaca. [Porque quería salir de Ítaca.]
 - Because he had no destination. [Porque no tenía destino.]
-decision:
-why:
+decision: shorten: Because the breakdown ruined the original plan. [Porque la avería arruinó el plan original.]
+why: Reading comprehension; shortens to key cause matching distractor style and length.
 
 ### b1-09-05.ex09   teaches: None
 files: content/es-es/exercises/b1/b1-09-05-ex.json, content/es-latam/exercises/b1/b1-09-05-ex.json
@@ -124,8 +124,8 @@ What does the text suggest about health? [¿Qué sugiere el texto sobre la salud
 * It can be affected by both physical conditions and the circumstances in which someone lives. [Puede verse afectada tanto por las condiciones físicas como por las circunstancias en las que vive una persona.]
 - It depends only on medical treatment. [Depende solamente del tratamiento médico.]
 - It is unrelated to daily habits. [No está relacionada con los hábitos diarios.]
-decision:
-why:
+decision: shorten: It depends on physical and living conditions. [Depende de las condiciones físicas y de vida.]
+why: Reading comprehension; shortens verbose phrasing to concise parallel structure.
 
 ### b1-10-05.ex08   teaches: None
 files: content/es-es/exercises/b1/b1-10-05-ex.json, content/es-latam/exercises/b1/b1-10-05-ex.json
@@ -133,8 +133,8 @@ What makes the ideal home suitable? [¿Qué hace que la vivienda ideal sea adecu
 * It combines comfort, tranquillity and a good relationship with the neighbourhood. [Combina comodidad, tranquilidad y una buena relación con el barrio.]
 - It is necessarily very large. [Necesariamente es muy grande.]
 - It is isolated from all neighbours. [Está aislada de todos los vecinos.]
-decision:
-why:
+decision: shorten: It combines comfort, quiet and a good neighbourhood. [Combina comodidad, tranquilidad y un buen barrio.]
+why: Reading comprehension; cuts verbose relative clause to concise parallel noun phrase.
 
 ### b1-10-consolidation.ex15   teaches: ['hypothetical-structures']
 files: content/es-es/exercises/b1/b1-10-consolidation-ex.json, content/es-latam/exercises/b1/b1-10-consolidation-ex.json
@@ -142,8 +142,8 @@ Which description combines evaluation and reason? [¿Cuál combina una valoraci�
 * Prefiero una vivienda funcional porque necesito espacio para trabajar. [I prefer a functional home because I need space to work.]
 - Prefiero una vivienda funcional. [I prefer a functional home.]
 - La vivienda tiene dos habitaciones. [The home has two bedrooms.]
-decision:
-why:
+decision: match: Prefiero vivir en una casa amplia y luminosa situada cerca del centro histórico. [I prefer living in a bright and spacious house located near the historic centre.] || La vivienda tiene tres habitaciones exteriores, dos baños completos y una terraza grande. [The home has three exterior bedrooms, two full bathrooms and a large terrace.]
+why: Evaluation plus reason item; wrong options match length with evaluation alone and description alone.
 
 ### b1-11-05.ex13   teaches: ['subjunctive-influence']
 files: content/es-es/exercises/b1/b1-11-05-ex.json, content/es-latam/exercises/b1/b1-11-05-ex.json
@@ -151,8 +151,8 @@ Which response moves a discussion forward? [¿Qué respuesta hace avanzar la dis
 * Estoy de acuerdo con la propuesta, aunque creo que necesitamos más información. [I agree with the proposal, although I think we need more information.]
 - Sí. [Yes.]
 - No sé. [I don't know.]
-decision:
-why:
+decision: match: Sí, me parece bien todo lo que han propuesto y no tengo nada más que añadir ahora. [Yes, everything they proposed seems fine to me and I have nothing more to add now.] || No sé qué decir sobre el asunto porque todavía no he pensado en ninguna solución. [I don't know what to say about the matter because I haven't thought of any solution yet.]
+why: Moving discussion forward item; wrong options match length while explicitly not contributing further.
 
 ### b1-12-03.ex09   teaches: ['subjunctive-influence']
 files: content/es-es/exercises/b1/b1-12-03-ex.json, content/es-latam/exercises/b1/b1-12-03-ex.json
@@ -160,8 +160,8 @@ Es importante que comas de forma equilibrada, aunque no tienes que cambiarlo tod
 * It is important that you eat a balanced diet, although you do not have to change everything at once.
 - You must change every food habit immediately.
 - It is unimportant how you eat if you cook at home.
-decision:
-why:
+decision: match: It is urgent that you change all your food habits right now without waiting any longer. || It is not important what you eat each day, as long as you cook all your meals at home.
+why: Translation item requires full sentence; wrong options match length and sentence structure.
 
 ### b1-12-04.ex02   teaches: ['contrast-concession-connectors']
 files: content/es-es/exercises/b1/b1-12-04-ex.json, content/es-latam/exercises/b1/b1-12-04-ex.json
@@ -169,8 +169,8 @@ Which sentence makes a comparison? [¿Cuál hace una comparación?]
 * La comida casera suele ser más barata que comer fuera. [Homemade food is usually cheaper than eating out.]
 - La comida casera es barata. [Homemade food is cheap.]
 - Como comida casera. [I eat homemade food.]
-decision:
-why:
+decision: match: La comida casera suele ser bastante saludable para toda la familia. [Homemade food is usually quite healthy for the whole family.] || Preparo comida casera todas las noches después de volver del trabajo. [I prepare homemade food every night after returning from work.]
+why: Comparative grammar item; wrong options match length without containing a comparative structure.
 
 ### b1-12-05.ex02   teaches: ['preterite-vs-imperfect']
 files: content/es-es/exercises/b1/b1-12-05-ex.json, content/es-latam/exercises/b1/b1-12-05-ex.json
@@ -178,8 +178,8 @@ Which sentence describes a change over time? [¿Cuál describe un cambio con el 
 * Con el tiempo aprendí a preparar platos más equilibrados. [Over time I learned to prepare more balanced dishes.]
 - Siempre cocino lo mismo. [I always cook the same thing.]
 - Hoy preparo la cena. [Today I prepare dinner.]
-decision:
-why:
+decision: match: Todos los fines de semana cocino los mismos platos tradicionales en casa. [Every weekend I cook the same traditional dishes at home.] || Hoy preparo una cena especial para celebrar el cumpleaños de mi hermano. [Today I prepare a special dinner to celebrate my brother's birthday.]
+why: Change over time item; wrong options match length using habitual and single-event sentences.
 
 ### b1-12-consolidation.ex02   teaches: ['frequency-adverbs']
 files: content/es-es/exercises/b1/b1-12-consolidation-ex.json, content/es-latam/exercises/b1/b1-12-consolidation-ex.json
@@ -187,8 +187,8 @@ Which sentence combines a habit with a contrast? [¿Cuál combina un hábito con
 * Normalmente desayuno temprano, aunque los fines de semana como más tarde. [I normally have breakfast early, although at weekends I eat later.]
 - Normalmente desayuno temprano. [I normally have breakfast early.]
 - Los fines de semana como más tarde. [At weekends I eat later.]
-decision:
-why:
+decision: match: Normalmente desayuno temprano en la cocina antes de salir para la oficina. [I normally have breakfast early in the kitchen before leaving for the office.] || Los fines de semana siempre como más tarde porque no tengo que madrugar. [At weekends I always eat later because I don't have to get up early.]
+why: Habit plus contrast item; wrong options match length using habit alone and cause alone.
 
 ### b1-12-consolidation.ex16   teaches: ['preterite-vs-imperfect']
 files: content/es-es/exercises/b1/b1-12-consolidation-ex.json, content/es-latam/exercises/b1/b1-12-consolidation-ex.json
@@ -196,8 +196,8 @@ Which sentence combines comparison and contrast? [¿Cuál combina comparación y
 * Comer en casa suele ser más barato que comer fuera, aunque requiere más tiempo. [Eating at home is usually cheaper than eating out, although it requires more time.]
 - Comer en casa suele ser barato. [Eating at home is usually cheap.]
 - Comer fuera requiere tiempo. [Eating out requires time.]
-decision:
-why:
+decision: match: Comer en casa suele ser mucho más barato que salir a almorzar a un restaurante. [Eating at home is usually much cheaper than going out to lunch at a restaurant.] || Comer en casa resulta muy saludable, aunque requiere bastante tiempo preparar todo. [Eating at home is very healthy, although it requires quite a lot of time to prepare everything.]
+why: Comparison plus contrast item; wrong options match length with comparison alone and contrast alone.
 
 ### b1-13-01.ex02   teaches: ['estilo-indirecto-informacion']
 files: content/es-es/exercises/b1/b1-13-01-ex.json, content/es-latam/exercises/b1/b1-13-01-ex.json
@@ -205,8 +205,8 @@ Which expression identifies the source of reported information? [¿Qué expresi�
 * Según la fuente oficial [According to the official source]
 - En mi opinión [In my opinion]
 - Tal vez [Perhaps]
-decision:
-why:
+decision: match: Desde mi punto de vista [From my point of view] || A mi modo de ver [In my way of looking at it]
+why: Source marker question; wrong options match length using personal-opinion markers.
 
 ### b1-13-05.ex22   teaches: None
 files: content/es-es/exercises/b1/b1-13-05-ex.json, content/es-latam/exercises/b1/b1-13-05-ex.json
@@ -214,8 +214,8 @@ files: content/es-es/exercises/b1/b1-13-05-ex.json, content/es-latam/exercises/b
 * La diferencia entre lo que se afirma y lo que se puede comprobar.
 - Una lista de fechas históricas.
 - Una descripción del clima.
-decision:
-why:
+decision: shorten: La diferencia entre afirmaciones y pruebas.
+why: Reading comprehension; shortens verbose relative clause to concise noun phrase.
 
 ### b1-13-consolidation.ex02   teaches: ['estilo-indirecto-informacion']
 files: content/es-es/exercises/b1/b1-13-consolidation-ex.json, content/es-latam/exercises/b1/b1-13-consolidation-ex.json
@@ -223,8 +223,8 @@ Which sentence clearly reports information from a source? [¿Cuál informa clara
 * Según la fuente oficial, el suceso ocurrió durante la noche. [According to the official source, the incident happened during the night.]
 - Me parece extraño. [It seems strange to me.]
 - No creo que sea posible. [I do not think it is possible.]
-decision:
-why:
+decision: match: A mí me parece muy extraño todo lo que explicaron los vecinos sobre el caso. [To me everything the neighbours explained about the case seems very strange.] || No creo que sea posible que ocurriera algo así sin que nadie pudiera verlo. [I do not think it is possible that something like that happened without anyone seeing it.]
+why: Source-reporting function; wrong options match length while expressing personal reaction and doubt.
 
 ### b1-13-consolidation.ex16   teaches: ['argument-markers']
 files: content/es-es/exercises/b1/b1-13-consolidation-ex.json, content/es-latam/exercises/b1/b1-13-consolidation-ex.json
@@ -232,8 +232,8 @@ Which sentence combines summary with evaluation? [¿Cuál combina resumen y eval
 * En resumen, hay testimonios, pero no creo que la información sea completamente fiable. [In summary, there are testimonies, but I do not think the information is completely reliable.]
 - Hay testimonios. [There are testimonies.]
 - La fuente informó de un vídeo. [The source reported a video.]
-decision:
-why:
+decision: match: En resumen, los periodistas publicaron los primeros datos a primera hora del día. [In summary, the journalists published the initial details early in the day.] || La fuente oficial informó de la existencia de un vídeo grabado por varios vecinos. [The official source reported the existence of a video recorded by several neighbours.]
+why: Summary plus evaluation item; wrong options match length without combining summary marker and evaluation.
 
 ### b1-14-05.ex22   teaches: None
 files: content/es-es/exercises/b1/b1-14-05-ex.json, content/es-latam/exercises/b1/b1-14-05-ex.json
@@ -241,8 +241,8 @@ files: content/es-es/exercises/b1/b1-14-05-ex.json, content/es-latam/exercises/b
 * La idea de que una conversación presencial puede ser tan eficaz como una videollamada.
 - Una descripción del clima de la ciudad.
 - Una lista de aplicaciones nuevas.
-decision:
-why:
+decision: shorten: La eficacia de hablar en persona frente a una videollamada.
+why: Reading comprehension; shortens clause to parallel noun phrase matching option length.
 
 ### b1-14-consolidation.ex06   teaches: ['argument-markers']
 files: content/es-es/exercises/b1/b1-14-consolidation-ex.json, content/es-latam/exercises/b1/b1-14-consolidation-ex.json
@@ -250,8 +250,8 @@ Which structure is hypothetical? [¿Qué estructura es hipotética?]
 * Si no tuviéramos internet, dependeríamos más del teléfono. [If we did not have internet, we would depend more on the telephone.]
 - Tenemos internet. [We have internet.]
 - Hemos usado internet. [We have used internet.]
-decision:
-why:
+decision: match: Hoy en día tenemos internet de alta velocidad en todos los hogares y oficinas. [Nowadays we have high-speed internet in all homes and offices.] || Hemos usado internet durante toda la mañana para enviar los informes al equipo. [We have used internet all morning to send the reports to the team.]
+why: Hypothetical structure question; wrong options match length using indicative factual statements.
 
 ### b1-14-consolidation.ex16   teaches: ['argument-markers']
 files: content/es-es/exercises/b1/b1-14-consolidation-ex.json, content/es-latam/exercises/b1/b1-14-consolidation-ex.json
@@ -259,8 +259,8 @@ Which sentence combines comparison and hypothetical language? [¿Cuál combina c
 * Si utilizáramos menos pantallas, quizá una conversación presencial sería más frecuente que ahora. [If we used screens less, perhaps an in-person conversation would be more frequent than now.]
 - La pantalla es grande. [The screen is large.]
 - He actualizado mi dispositivo. [I have updated my device.]
-decision:
-why:
+decision: match: Una conversación presencial siempre resulta mucho más agradable y cercana que un mensaje breve. [An in-person conversation is always much more pleasant and close than a short message.] || Si comprara un dispositivo nuevo hoy mismo, podría trabajar sin ninguna interrupción técnica. [If I bought a new device today, I could work without any technical interruption.]
+why: Comparison plus hypothetical item; wrong options match length with comparison alone and hypothetical alone.
 
 ### b1-15-01.ex02   teaches: ['giving-opinions']
 files: content/es-es/exercises/b1/b1-15-01-ex.json, content/es-latam/exercises/b1/b1-15-01-ex.json
@@ -268,8 +268,8 @@ Which sentence expresses a preference? [¿Cuál expresa una preferencia?]
 * Prefiero las novelas porque puedo imaginar mejor a los personajes. [I prefer novels because I can imagine the characters better.]
 - La novela tiene tres capítulos. [The novel has three chapters.]
 - La película dura dos horas. [The film lasts two hours.]
-decision:
-why:
+decision: shorten: Prefiero las novelas a las películas. [I prefer novels to films.]
+why: Preference expression item; shortens to core preference matching exact distractor length.
 
 ### b1-15-04.ex02   teaches: ['relative-clauses']
 files: content/es-es/exercises/b1/b1-15-04-ex.json, content/es-latam/exercises/b1/b1-15-04-ex.json
@@ -277,8 +277,8 @@ Which sentence uses a relative clause? [¿Cuál usa una oración de relativo?]
 * Es una obra que presenta una visión muy diferente. [It is a work that presents a very different view.]
 - La obra es diferente. [The work is different.]
 - La obra es interesante. [The work is interesting.]
-decision:
-why:
+decision: match: Esta obra teatral resulta sumamente interesante para el público. [This play turns out to be extremely interesting to the audience.] || La nueva novela del autor parece bastante compleja a primera vista. [The author's new novel seems quite complex at first glance.]
+why: Relative clause syntax item; wrong options match length using simple sentences with descriptive adjectives.
 
 ### b1-15-consolidation.ex02   teaches: ['giving-opinions']
 files: content/es-es/exercises/b1/b1-15-consolidation-ex.json, content/es-latam/exercises/b1/b1-15-consolidation-ex.json
@@ -286,8 +286,8 @@ Which sentence expresses a preference and a reason? [¿Cuál expresa una prefere
 * Prefiero las novelas porque puedo imaginar mejor a los personajes. [I prefer novels because I can imagine the characters better.]
 - La novela tiene tres capítulos. [The novel has three chapters.]
 - La película dura dos horas. [The film lasts two hours.]
-decision:
-why:
+decision: match: Esta novela clásica tiene más de cuatrocientos capítulos en total. [This classic novel has more than four hundred chapters in total.] || La película adaptada dura casi tres horas en la versión original. [The adapted film lasts almost three hours in the original version.]
+why: Preference plus reason function; wrong options match length using factual statements without preference or reason.
 
 ### b1-15-consolidation.ex06   teaches: ['argument-markers']
 files: content/es-es/exercises/b1/b1-15-consolidation-ex.json, content/es-latam/exercises/b1/b1-15-consolidation-ex.json
@@ -295,8 +295,8 @@ Which sentence contains a relative clause? [¿Cuál contiene una oración de rel
 * Es una obra que presenta una visión diferente. [It is a work that presents a different view.]
 - La obra es diferente. [The work is different.]
 - La obra es original. [The work is original.]
-decision:
-why:
+decision: match: Esta obra teatral resulta interesante para el público. [This play turns out to be interesting to the audience.] || La nueva producción parece original y creativa. [The new production seems original and creative.]
+why: Relative clause syntax item; wrong options match length using simple descriptive clauses.
 
 ### b1-15-consolidation.ex16   teaches: ['argument-markers']
 files: content/es-es/exercises/b1/b1-15-consolidation-ex.json, content/es-latam/exercises/b1/b1-15-consolidation-ex.json
@@ -304,8 +304,8 @@ Which sentence combines evaluation and recommendation? [¿Cuál combina evaluaci
 * La película me parece original, y te recomiendo que la veas. [The film seems original to me, and I recommend that you watch it.]
 - La película dura dos horas. [The film lasts two hours.]
 - La novela tiene tres capítulos. [The novel has three chapters.]
-decision:
-why:
+decision: match: La película adaptada dura casi tres horas en la versión original. [The adapted film lasts almost three hours in the original version.] || Esta novela clásica tiene más de cuatrocientos capítulos en total. [This classic novel has more than four hundred chapters in total.]
+why: Evaluation plus recommendation question; wrong options match length using descriptive factual statements.
 
 ### b1-16-consolidation.ex16   teaches: ['subjunctive-influence']
 files: content/es-es/exercises/b1/b1-16-consolidation-ex.json, content/es-latam/exercises/b1/b1-16-consolidation-ex.json
@@ -313,8 +313,8 @@ Which sentence combines a problem, cause and solution? [¿Cuál combina problema
 * La contaminación aumenta porque producimos demasiados residuos; por eso, es necesario que reciclemos más. [Pollution increases because we produce too much waste; therefore, it is necessary that we recycle more.]
 - La contaminación aumenta. [Pollution increases.]
 - Reciclamos más. [We recycle more.]
-decision:
-why:
+decision: match: La contaminación atmosférica aumenta cada año porque producimos demasiados residuos plásticos. [Air pollution increases every year because we produce too much plastic waste.] || Es fundamental que todos reciclemos más envases y reduzcamos el consumo de energía en casa. [It is fundamental that we all recycle more containers and reduce energy consumption at home.]
+why: Problem, cause and solution triad; wrong options match length by giving only two elements or one element.
 
 ### b1-17-04.ex02   teaches: ['giving-opinions']
 files: content/es-es/exercises/b1/b1-17-04-ex.json, content/es-latam/exercises/b1/b1-17-04-ex.json
@@ -322,8 +322,8 @@ Which sentence clearly states an opinion? [¿Cuál expresa claramente una opini�
 * Creo que la educación puede reducir la desigualdad. [I think education can reduce inequality.]
 - La educación existe. [Education exists.]
 - Hay escuelas. [There are schools.]
-decision:
-why:
+decision: match: La educación obligatoria dura diez años en este país. [Compulsory education lasts ten years in this country.] || Hay muchas escuelas primarias construidas en la región. [There are many primary schools built in the region.]
+why: Opinion vs fact item; wrong options match length using factual statements without opinion markers.
 
 ### b1-17-consolidation.ex16   teaches: ['argument-markers']
 files: content/es-es/exercises/b1/b1-17-consolidation-ex.json, content/es-latam/exercises/b1/b1-17-consolidation-ex.json
@@ -331,8 +331,8 @@ Which sentence combines cause, opinion and social responsibility? [¿Cuál combi
 * La desigualdad tiene varias causas; creo que la sociedad tiene una responsabilidad compartida. [Inequality has several causes; I think society has a shared responsibility.]
 - La desigualdad existe. [Inequality exists.]
 - Hay recursos. [There are resources.]
-decision:
-why:
+decision: match: La desigualdad económica tiene varias causas estructurales según los últimos informes oficiales. [Economic inequality has several structural causes according to the latest official reports.] || Existen suficientes recursos económicos en el país para ayudar a las familias más vulnerables. [Sufficient economic resources exist in the country to help the most vulnerable families.]
+why: Triad function question; wrong options match length without combining cause, opinion and social responsibility.
 
 ### b1-18-03.ex10   teaches: ['giving-opinions']
 files: content/es-es/exercises/b1/b1-18-03-ex.json, content/es-latam/exercises/b1/b1-18-03-ex.json
@@ -340,8 +340,8 @@ Me parece preocupante que el servicio sea tan caro.
 * It seems worrying to me that the service is so expensive.
 - The service is free.
 - The service has closed.
-decision:
-why:
+decision: match: It seems convenient to me that the service has no cost at all. || It seems surprising to me that the service has already closed.
+why: Translation item requires full sentence; wrong options match parallel evaluation structure and length.
 
 ### b1-18-consolidation.ex16   teaches: ['subjunctive-value-judgments']
 files: content/es-es/exercises/b1/b1-18-consolidation-ex.json, content/es-latam/exercises/b1/b1-18-consolidation-ex.json
@@ -349,8 +349,8 @@ Which sentence combines opinion, contrast and recommendation? [¿Cuál combina o
 * Creo que la propuesta es positiva; sin embargo, es necesario que estudiemos su coste. [I think the proposal is positive; however, it is necessary that we study its cost.]
 - La propuesta existe. [The proposal exists.]
 - Se publica una ley. [A law is published.]
-decision:
-why:
+decision: match: Creo que la propuesta es bastante positiva; sin embargo, genera dudas entre los miembros del equipo. [I think the proposal is quite positive; however, it creates doubts among team members.] || Es necesario que estudiemos detenidamente el coste económico antes de aprobar la nueva ley. [It is necessary that we carefully study the economic cost before passing the new law.]
+why: Triad function question; wrong options match length with opinion-contrast alone and recommendation alone.
 
 ### b1-19-03.ex02   teaches: ['porque-y-por-eso']
 files: content/es-es/exercises/b1/b1-19-03-ex.json, content/es-latam/exercises/b1/b1-19-03-ex.json
@@ -358,8 +358,8 @@ Which sentence gives a cause? [¿Cuál da una causa?]
 * Los precios suben porque hay mucha demanda. [Prices rise because there is high demand.]
 - Los precios suben. [Prices rise.]
 - Los precios son altos. [Prices are high.]
-decision:
-why:
+decision: match: Los precios de la vivienda suben de forma continua. [Housing prices rise continuously.] || Los precios de los billetes de tren son bastante altos. [Train ticket prices are quite high.]
+why: Cause marker question; wrong options match length using descriptive statements without causal connectors.
 
 ### b1-19-03.ex06   teaches: ['porque-y-por-eso']
 files: content/es-es/exercises/b1/b1-19-03-ex.json, content/es-latam/exercises/b1/b1-19-03-ex.json
@@ -367,8 +367,8 @@ Which expression means «as a consequence»? [¿Qué expresión significa «como
 * como consecuencia [as a consequence]
 - debido a [due to]
 - porque [because]
-decision:
-why:
+decision: match: debido a que [due to the fact that] || a causa de que [on account of the fact that]
+why: Connector meaning question; wrong options match length using multi-word causal connectors.
 
 ### b1-19-04.ex02   teaches: ['hypothetical-structures']
 files: content/es-es/exercises/b1/b1-19-04-ex.json, content/es-latam/exercises/b1/b1-19-04-ex.json
@@ -376,8 +376,8 @@ Which sentence describes a hypothetical situation? [¿Cuál describe una situaci
 * Si tuviera más dinero, invertiría una parte. [If I had more money, I would invest part of it.]
 - Tengo más dinero. [I have more money.]
 - Tengo menos dinero. [I have less money.]
-decision:
-why:
+decision: match: Tengo suficiente dinero para comprar una vivienda este año. [I have enough money to buy a home this year.] || Tengo menos gastos fijos desde que cambié de trabajo en junio. [I have fewer fixed expenses since I changed jobs in June.]
+why: Hypothetical conditional question; wrong options match length using indicative factual statements.
 
 ### b1-19-05.ex02   teaches: ['giving-opinions']
 files: content/es-es/exercises/b1/b1-19-05-ex.json, content/es-latam/exercises/b1/b1-19-05-ex.json
@@ -385,8 +385,8 @@ Which sentence describes an economic trend? [¿Cuál describe una tendencia econ
 * Se observa que los precios están aumentando. [It can be observed that prices are increasing.]
 - Los precios existen. [Prices exist.]
 - Hay un mercado. [There is a market.]
-decision:
-why:
+decision: match: Los precios oficiales están fijados por el ministerio. [Official prices are set by the ministry.] || Hay un mercado cubierto en el centro del barrio. [There is a covered market in the neighbourhood centre.]
+why: Economic trend function; wrong options match length using static descriptive sentences without trend verbs.
 
 ### b1-19-consolidation.ex16   teaches: ['giving-opinions']
 files: content/es-es/exercises/b1/b1-19-consolidation-ex.json, content/es-latam/exercises/b1/b1-19-consolidation-ex.json
@@ -394,8 +394,8 @@ Which sentence combines trend, cause and consequence? [¿Cuál combina tendencia
 * Los precios están aumentando porque hay mucha demanda; por eso, algunas familias gastan menos. [Prices are increasing because there is high demand; therefore, some families spend less.]
 - Los precios existen. [Prices exist.]
 - Hay un mercado. [There is a market.]
-decision:
-why:
+decision: match: Los precios de los alimentos están aumentando rápidamente porque hay una gran escasez. [Food prices are increasing rapidly because there is a severe shortage.] || Existe un mercado competitivo en la ciudad; por eso, los consumidores comparan todas las tarifas. [A competitive market exists in the city; therefore, consumers compare all rates.]
+why: Triad function question; wrong options match length by including only trend-cause or market-consequence.
 
 ### b1-20-01.ex02   teaches: ['relativas-preposicion-el-que']
 files: content/es-es/exercises/b1/b1-20-01-ex.json, content/es-latam/exercises/b1/b1-20-01-ex.json
@@ -403,8 +403,8 @@ Which sentence describes a specific problem and its effect? [¿Cuál describe un
 * El fallo afecta a un servicio del que dependen muchas personas. [The fault affects a service on which many people depend.]
 - El servicio existe. [The service exists.]
 - Muchas personas trabajan. [Many people work.]
-decision:
-why:
+decision: match: El servicio público de transporte funciona con normalidad en toda la capital. [The public transport service operates normally throughout the entire capital.] || Muchas personas trabajan en el mantenimiento de las vías durante toda la noche. [Many people work on track maintenance throughout the entire night.]
+why: Problem and effect question; wrong options match length using factual statements without problem or effect.
 
 ### b1-20-01.ex09   teaches: ['relativas-preposicion-el-que']
 files: content/es-es/exercises/b1/b1-20-01-ex.json, content/es-latam/exercises/b1/b1-20-01-ex.json
@@ -412,8 +412,8 @@ El fallo afecta a un servicio del que dependen muchas personas.
 * The fault affects a service on which many people depend.
 - The fault has disappeared.
 - The service affects nobody.
-decision:
-why:
+decision: match: The fault has completely disappeared from all the public systems. || The service operates perfectly without affecting any citizens at all.
+why: Translation item requires full sentence; wrong options match length and sentence structure.
 
 ### b1-20-01.ex10   teaches: ['relativas-preposicion-el-que']
 files: content/es-es/exercises/b1/b1-20-01-ex.json, content/es-latam/exercises/b1/b1-20-01-ex.json
@@ -421,8 +421,8 @@ Hay un atasco que impide que los autobuses lleguen a tiempo.
 * There is a traffic jam that prevents buses from arriving on time.
 - There is no traffic.
 - The buses arrive early.
-decision:
-why:
+decision: match: There is no traffic on the road so buses can travel without delays. || The buses always arrive early because the streets remain completely clear.
+why: Translation item requires full sentence; wrong options match length and complex sentence structure.
 
 ### b1-20-02.ex02   teaches: ['porque-y-por-eso']
 files: content/es-es/exercises/b1/b1-20-02-ex.json, content/es-latam/exercises/b1/b1-20-02-ex.json
@@ -430,8 +430,8 @@ Which sentence identifies a cause? [¿Cuál identifica una causa?]
 * La falta de mantenimiento desencadenó varios fallos. [The lack of maintenance triggered several failures.]
 - El problema es grave. [The problem is serious.]
 - El puente es largo. [The bridge is long.]
-decision:
-why:
+decision: match: El problema principal de la línea es bastante grave. [The main problem on the line is quite serious.] || El puente colgante de la autopista es bastante largo. [The suspension bridge on the highway is quite long.]
+why: Causal verb item; wrong options match length using descriptive statements without causal predicates.
 
 ### b1-20-05.ex02   teaches: ['porque-y-por-eso']
 files: content/es-es/exercises/b1/b1-20-05-ex.json, content/es-latam/exercises/b1/b1-20-05-ex.json
@@ -439,8 +439,8 @@ Which sentence moves from a problem to a consequence? [¿Cuál pasa del problema
 * El problema afecta a muchas personas, por eso debemos actuar pronto. [The problem affects many people, so we must act quickly.]
 - El problema existe. [The problem exists.]
 - Hay una solución. [There is a solution.]
-decision:
-why:
+decision: match: El problema técnico en las instalaciones afecta diariamente a muchas personas. [The technical problem in the facilities affects many people daily.] || Existe una solución muy adecuada para modernizar toda la red de transporte. [A very suitable solution exists to modernise the entire transport network.]
+why: Problem-consequence structure; wrong options match length by giving problem alone or solution alone.
 
 ### b1-20-05.ex09   teaches: ['porque-y-por-eso']
 files: content/es-es/exercises/b1/b1-20-05-ex.json, content/es-latam/exercises/b1/b1-20-05-ex.json
@@ -448,8 +448,8 @@ El problema afecta a muchas personas, por eso debemos actuar pronto.
 * The problem affects many people, so we must act quickly.
 - The problem affects nobody.
 - We should wait indefinitely.
-decision:
-why:
+decision: match: The problem affects nobody in the city, so we do not need to intervene. || The situation is completely calm, so we should wait indefinitely for news.
+why: Translation item requires full sentence; wrong options match coordinate consequence structure and length.
 
 ### b1-20-consolidation.ex02   teaches: ['relativas-preposicion-el-que']
 files: content/es-es/exercises/b1/b1-20-consolidation-ex.json, content/es-latam/exercises/b1/b1-20-consolidation-ex.json
@@ -457,8 +457,8 @@ Which sentence combines a problem with a relative clause? [¿Cuál combina un pr
 * Hay un atasco que impide que los autobuses lleguen a tiempo. [There is a traffic jam that prevents buses from arriving on time.]
 - Hay un atasco. [There is a traffic jam.]
 - Los autobuses llegan. [The buses arrive.]
-decision:
-why:
+decision: match: Hay un atasco enorme en la avenida principal debido a las obras del metro. [There is a huge traffic jam on the main avenue due to the metro works.] || Los autobuses urbanos llegan con puntualidad a todas las paradas del centro. [City buses arrive punctually at all stops in the city centre.]
+why: Problem plus relative clause syntax; wrong options match length without combining both elements.
 
 ### b1-20-consolidation.ex16   teaches: ['porque-y-por-eso']
 files: content/es-es/exercises/b1/b1-20-consolidation-ex.json, content/es-latam/exercises/b1/b1-20-consolidation-ex.json
@@ -466,8 +466,8 @@ Which sentence combines problem, cause and response? [¿Cuál combina problema, 
 * El problema se agravó porque no se actuó a tiempo, por eso es necesario que abordemos su causa. [The problem got worse because action was not taken in time, so it is necessary that we address its cause.]
 - El problema existe. [The problem exists.]
 - Hay una solución. [There is a solution.]
-decision:
-why:
+decision: match: El problema del tráfico se agravó rápidamente porque no se tomaron medidas oportunas. [The traffic problem got worse rapidly because timely measures were not taken.] || Es absolutamente necesario que abordemos todas las dificultades técnicas en el servicio. [It is absolutely necessary that we address all technical difficulties in the service.]
+why: Problem, cause and response triad; wrong options match length with problem-cause alone and response alone.
 
 ### b1-21-02.ex02   teaches: ['contrast-concession-connectors']
 files: content/es-es/exercises/b1/b1-21-02-ex.json, content/es-latam/exercises/b1/b1-21-02-ex.json
@@ -475,8 +475,8 @@ Which sentence acknowledges another point before maintaining a different positio
 * Aunque admito sus ventajas, no considero que sea la mejor opción. [Although I admit its advantages, I do not consider it the best option.]
 - La opción es una opción. [The option is an option.]
 - Estoy de acuerdo. [I agree.]
-decision:
-why:
+decision: match: Considero que esta propuesta representa sin duda la mejor opción disponible. [I consider that this proposal undoubtedly represents the best available option.] || Estoy completamente de acuerdo con todas las conclusiones de los expertos. [I completely agree with all the conclusions of the experts.]
+why: Concession plus counter-stance item; wrong options match length using single stance or agreement without concession.
 
 ### b1-21-04.ex02   teaches: ['porque-y-por-eso']
 files: content/es-es/exercises/b1/b1-21-04-ex.json, content/es-latam/exercises/b1/b1-21-04-ex.json
@@ -484,8 +484,8 @@ Which sentence gives a claim and a justification? [¿Cuál presenta una afirmaci
 * Apoyo la medida porque podría reducir el problema a largo plazo. [I support the measure because it could reduce the problem in the long term.]
 - Apoyo la medida. [I support the measure.]
 - La medida existe. [The measure exists.]
-decision:
-why:
+decision: match: Apoyo la nueva medida económica aprobada recientemente por el parlamento. [I support the new economic measure recently approved by parliament.] || La medida oficial fue publicada en el boletín informativo del ministerio. [The official measure was published in the ministry's newsletter.]
+why: Claim plus justification item; wrong options match length with claim alone or factual statement without justification.
 
 ### b1-21-05.ex02   teaches: ['argument-markers']
 files: content/es-es/exercises/b1/b1-21-05-ex.json, content/es-latam/exercises/b1/b1-21-05-ex.json
@@ -493,8 +493,8 @@ Which sentence contains a sustained argument with concession and justification? 
 * Aunque tiene algunas limitaciones, sus ventajas son importantes porque responde a una necesidad real. [Although it has some limitations, its advantages are important because it responds to a real need.]
 - La propuesta es interesante. [The proposal is interesting.]
 - No me gusta. [I do not like it.]
-decision:
-why:
+decision: match: Aunque la propuesta tiene varias limitaciones técnicas, resulta bastante interesante. [Although the proposal has several technical limitations, it turns out quite interesting.] || No me gusta nada este nuevo proyecto porque genera costes excesivos para el municipio. [I do not like this new project at all because it generates excessive costs for the municipality.]
+why: Concession plus justification argument; wrong options match length with concession alone and justification alone.
 
 ### b1-21-05.ex09   teaches: ['argument-markers']
 files: content/es-es/exercises/b1/b1-21-05-ex.json, content/es-latam/exercises/b1/b1-21-05-ex.json
@@ -502,8 +502,8 @@ En mi opinión, la propuesta merece apoyo porque ofrece una solución práctica.
 * In my opinion, the proposal deserves support because it offers a practical solution.
 - The proposal should never be discussed.
 - The proposal has no practical value.
-decision:
-why:
+decision: match: In my view, the proposal needs further debate because it presents several major doubts. || From my perspective, the idea lacks support because it creates a financial burden.
+why: Translation item requires full sentence; wrong options match length, opinion-justification structure and eliminate absolutes.
 
 ### b1-21-05.ex10   teaches: ['argument-markers']
 files: content/es-es/exercises/b1/b1-21-05-ex.json, content/es-latam/exercises/b1/b1-21-05-ex.json
@@ -511,8 +511,8 @@ Aunque tiene algunas limitaciones, sus ventajas son importantes para la comunida
 * Although it has some limitations, its advantages are important for the community.
 - The proposal has no limitations.
 - The community rejects all advantages.
-decision:
-why:
+decision: match: Although it offers clear advantages, its limitations remain concerning for residents. || Even though the project is very limited, the community still supports its initial goals.
+why: Translation item requires full sentence; wrong options match concessive structure, eliminate absolutes and match length.
 
 ### b1-21-05.ex22   teaches: None
 files: content/es-es/exercises/b1/b1-21-05-ex.json, content/es-latam/exercises/b1/b1-21-05-ex.json
@@ -520,8 +520,8 @@ files: content/es-es/exercises/b1/b1-21-05-ex.json, content/es-latam/exercises/b
 * La distinción entre una opinión que molesta y una acción que perjudica.
 - Una lista de leyes antiguas.
 - Una descripción de otro país.
-decision:
-why:
+decision: shorten: La diferencia entre ofensa y perjuicio.
+why: Reading comprehension; shortens relative clauses to concise noun phrase matching option style.
 
 ### b1-21-05.ex23   teaches: None
 files: content/es-es/exercises/b1/b1-21-05-ex.json, content/es-latam/exercises/b1/b1-21-05-ex.json
@@ -529,8 +529,8 @@ files: content/es-es/exercises/b1/b1-21-05-ex.json, content/es-latam/exercises/b
 * Un buen debate requiere escuchar argumentos y reconocer los límites de la evidencia.
 - Los desacuerdos siempre deben evitarse.
 - Solo una opinión puede ser correcta.
-decision:
-why:
+decision: shorten: Un buen debate requiere escuchar argumentos.
+why: Reading comprehension; shortens compound conclusion to core principle, matching option length.
 
 ### b1-21-consolidation.ex02   teaches: ['giving-opinions']
 files: content/es-es/exercises/b1/b1-21-consolidation-ex.json, content/es-latam/exercises/b1/b1-21-consolidation-ex.json
@@ -538,8 +538,8 @@ Which sentence combines an opinion with a reason? [¿Cuál combina una opinión 
 * Creo que esta propuesta es útil porque responde a un problema real. [I think this proposal is useful because it responds to a real problem.]
 - Esta propuesta existe. [This proposal exists.]
 - El problema terminó. [The problem ended.]
-decision:
-why:
+decision: match: Esta propuesta legislativa fue presentada formalmente ante el parlamento. [This legislative proposal was formally presented before parliament.] || El problema del tráfico terminó después de la inauguración del nuevo puente. [The traffic problem ended after the opening of the new bridge.]
+why: Opinion plus reason function; wrong options match length using factual statements without opinion or reason.
 
 ### b1-21-consolidation.ex16   teaches: ['argument-markers']
 files: content/es-es/exercises/b1/b1-21-consolidation-ex.json, content/es-latam/exercises/b1/b1-21-consolidation-ex.json
@@ -547,8 +547,8 @@ Which sentence combines concession, justification and opinion? [¿Cuál combina 
 * Aunque tiene algunas limitaciones, considero que merece apoyo porque ofrece una solución práctica. [Although it has some limitations, I consider that it deserves support because it offers a practical solution.]
 - La propuesta merece apoyo. [The proposal deserves support.]
 - La propuesta tiene limitaciones. [The proposal has limitations.]
-decision:
-why:
+decision: match: Considero que esta medida merece apoyo popular porque ofrece una solución inmediata. [I consider that this measure deserves popular support because it offers an immediate solution.] || Aunque la propuesta tiene algunas limitaciones técnicas, fue aprobada por la mayoría. [Although the proposal has some technical limitations, it was approved by the majority.]
+why: Triad function question; wrong options match length with opinion-justification alone and concession-fact alone.
 
 ### b1-22-04.ex09   teaches: ['hypothetical-structures']
 files: content/es-es/exercises/b1/b1-22-04-ex.json, content/es-latam/exercises/b1/b1-22-04-ex.json
@@ -556,8 +556,8 @@ Si viviéramos en otro lugar, quizá tendríamos una vida diferente.
 * If we lived somewhere else, perhaps we would have a different life.
 - We live somewhere else now.
 - We definitely have the same life.
-decision:
-why:
+decision: match: Even if we lived somewhere else, our daily routine would always stay the same. || Because we live somewhere else now, we definitely have a completely different life.
+why: Translation item requires full sentence; wrong options match length and complex sentence structure.
 
 ### b1-22-05.ex09   teaches: ['futuro-simple']
 files: content/es-es/exercises/b1/b1-22-05-ex.json, content/es-latam/exercises/b1/b1-22-05-ex.json
@@ -565,8 +565,8 @@ Según la tendencia actual, los precios subirán el año que viene.
 * According to the current trend, prices will rise next year.
 - Prices fell last year.
 - There is no trend.
-decision:
-why:
+decision: match: In contrast to previous years, general prices fell last year. || Based on the official report, there is no noticeable trend.
+why: Translation item requires full sentence; wrong options match introductory phrase structure and length.
 
 ### b1-22-05.ex10   teaches: ['futuro-simple']
 files: content/es-es/exercises/b1/b1-22-05-ex.json, content/es-latam/exercises/b1/b1-22-05-ex.json
@@ -574,8 +574,8 @@ Es posible que la tendencia continúe, aunque no podemos estar seguros.
 * It is possible that the trend will continue, although we cannot be sure.
 - The trend will definitely continue.
 - The trend has already ended.
-decision:
-why:
+decision: match: It is certain that the trend will continue, so everyone is completely sure. || Although the situation changed rapidly, the trend has already ended today.
+why: Translation item requires full sentence; wrong options match complex sentence structure and length.
 
 ### b1-22-05.ex12   teaches: ['futuro-simple']
 files: content/es-es/exercises/b1/b1-22-05-ex.json, content/es-latam/exercises/b1/b1-22-05-ex.json
@@ -583,8 +583,8 @@ Sin embargo, quizá el resultado sea diferente si cambia la situación.
 * However, perhaps the outcome will be different if the situation changes.
 - The outcome cannot change.
 - The situation has already changed.
-decision:
-why:
+decision: match: However, the final outcome cannot change even if the situation evolves. || In any case, the situation has already changed despite the initial results.
+why: Translation item requires full sentence; wrong options match connector and conditional structure length.
 
 ### b1-22-consolidation.ex02   teaches: ['future-probability']
 files: content/es-es/exercises/b1/b1-22-consolidation-ex.json, content/es-latam/exercises/b1/b1-22-consolidation-ex.json
@@ -592,8 +592,8 @@ Which sentence uses the future for probability? [¿Cuál usa el futuro para expr
 * Estará en casa, pero no estoy seguro. [He/She is probably at home, but I am not sure.]
 - Estuvo en casa. [He/She was at home.]
 - Está en casa. [He/She is at home.]
-decision:
-why:
+decision: shorten: Estará en casa. [He/She is probably at home.]
+why: Future of probability item; shortens to parallel single-clause verb form matching distractors.
 
 ### b1-22-consolidation.ex16   teaches: ['futuro-simple']
 files: content/es-es/exercises/b1/b1-22-consolidation-ex.json, content/es-latam/exercises/b1/b1-22-consolidation-ex.json
@@ -601,8 +601,8 @@ Which sentence combines prediction, uncertainty and a hypothetical situation? [�
 * Si apareciera un problema inesperado, probablemente tendríamos que cambiar el plan. [If an unexpected problem appeared, we would probably have to change the plan.]
 - El plan existe. [The plan exists.]
 - El problema ya ocurrió. [The problem already happened.]
-decision:
-why:
+decision: match: El plan de contingencia para la empresa ya existe y está disponible en la oficina. [The contingency plan for the company already exists and is available in the office.] || El problema técnico ya ocurrió durante la primera fase de desarrollo del proyecto. [The technical problem already happened during the first phase of project development.]
+why: Triad function question; wrong options match length using indicative factual sentences without hypothetical structure.
 
 ### b1-23-02.ex02   teaches: ['ordering-markers']
 files: content/es-es/exercises/b1/b1-23-02-ex.json, content/es-latam/exercises/b1/b1-23-02-ex.json
@@ -610,8 +610,8 @@ Which sentence clearly presents two sides of a decision? [¿Cuál presenta clara
 * Por un lado, esta opción es barata; por otro lado, es menos práctica. [On the one hand, this option is cheap; on the other hand, it is less practical.]
 - Esta opción es barata. [This option is cheap.]
 - Esta opción fue elegida. [This option was chosen.]
-decision:
-why:
+decision: match: Esta opción parece bastante barata en comparación con los otros presupuestos. [This option seems quite cheap in comparison with the other budgets.] || Esta opción fue elegida por la mayoría del comité tras varias reuniones largas. [This option was chosen by the majority of the committee after several long meetings.]
+why: Two-sided discourse marker item; wrong options match length by presenting only one attribute or a past decision.
 
 ### b1-23-consolidation.ex09   teaches: ['si-clauses']
 files: content/es-es/exercises/b1/b1-23-consolidation-ex.json, content/es-latam/exercises/b1/b1-23-consolidation-ex.json
@@ -619,8 +619,8 @@ Which sentence combines contrast, evaluation and a decision? [¿Cuál combina co
 * La primera es más barata; sin embargo, la segunda es más segura. Por lo tanto, creo que debemos elegir la segunda. [The first is cheaper; however, the second is safer. Therefore, I think we should choose the second.]
 - La primera es barata. [The first is cheap.]
 - La segunda es segura. [The second is safe.]
-decision:
-why:
+decision: match: La primera propuesta parece bastante barata en el presupuesto inicial que nos presentaron. [The first proposal seems quite cheap in the initial budget that they presented to us.] || La segunda alternativa resulta completamente segura para todos los trabajadores de la fábrica. [The second alternative turns out completely safe for all workers in the factory.]
+why: Triad function question; wrong options match length using single evaluations without contrast and decision connectors.
 
 ### b1-23-consolidation.ex16   teaches: ['comparatives']
 files: content/es-es/exercises/b1/b1-23-consolidation-ex.json, content/es-latam/exercises/b1/b1-23-consolidation-ex.json
@@ -628,8 +628,8 @@ Which sentence gives a justified final decision? [¿Cuál presenta una decisión
 * Por lo tanto, creo que merece la pena elegir la segunda porque la seguridad es nuestra prioridad. [Therefore, I think it is worth choosing the second because safety is our priority.]
 - Elegimos la segunda porque sí. [We choose the second because yes.]
 - La segunda es una decisión. [The second is a decision.]
-decision:
-why:
+decision: match: Elegimos la segunda opción simplemente por costumbre sin revisar los otros informes. [We choose the second option simply out of habit without reviewing the other reports.] || Tomar la segunda alternativa representa una decisión difícil para todo nuestro equipo. [Taking the second alternative represents a difficult decision for our entire team.]
+why: Justified decision question; wrong options match length using arbitrary reasons or descriptive statements without justification.
 
 ### b1-24-05.ex02   teaches: ['pasiva-refleja']
 files: content/es-es/exercises/b1/b1-24-05-ex.json, content/es-latam/exercises/b1/b1-24-05-ex.json
@@ -637,8 +637,8 @@ Which sentence gives a complete process explanation? [¿Cuál da una explicació
 * Primero se prepara el material y se comprueba que está limpio. [First the material is prepared and it is checked that it is clean.]
 - El material existe. [The material exists.]
 - La máquina es grande. [The machine is large.]
-decision:
-why:
+decision: match: Todo el material necesario para el proyecto está almacenado en el taller principal. [All the necessary material for the project is stored in the main workshop.] || La máquina industrial es bastante grande y necesita una revisión técnica periódica. [The industrial machine is quite large and needs a periodic technical inspection.]
+why: Process explanation function; wrong options match length using descriptive statements about materials and machinery.
 
 ### b1-24-05.ex23   teaches: None
 files: content/es-es/exercises/b1/b1-24-05-ex.json, content/es-latam/exercises/b1/b1-24-05-ex.json
@@ -646,8 +646,8 @@ files: content/es-es/exercises/b1/b1-24-05-ex.json, content/es-latam/exercises/b
 * Seguir las instrucciones en orden permite que el proceso funcione bien.
 - El orden de los pasos no importa.
 - Gulliver nunca entendió el proceso.
-decision:
-why:
+decision: shorten: Seguir el orden permite que el proceso funcione.
+why: Reading comprehension; cuts wordy phrasing to concise principle matching distractor length.
 
 ### b1-24-consolidation.ex09   teaches: ['pasiva-refleja']
 files: content/es-es/exercises/b1/b1-24-consolidation-ex.json, content/es-latam/exercises/b1/b1-24-consolidation-ex.json
@@ -655,8 +655,8 @@ Which sentence gives a clear process sequence? [¿Cuál presenta una secuencia c
 * Primero se prepara el material, después se corta y finalmente se comprueba. [First the material is prepared, then it is cut and finally it is checked.]
 - El material es interesante. [The material is interesting.]
 - El proceso existe. [The process exists.]
-decision:
-why:
+decision: match: Todo el material utilizado en el taller resulta muy interesante y resistente. [All the material used in the workshop turns out very interesting and resistant.] || El proceso técnico de fabricación se repite todos los días a primera hora. [The technical manufacturing process is repeated every day first thing.]
+why: Process sequence item; wrong options match length using descriptive statements without sequencing markers.
 
 ### b1-24-consolidation.ex16   teaches: ['pasiva-refleja']
 files: content/es-es/exercises/b1/b1-24-consolidation-ex.json, content/es-latam/exercises/b1/b1-24-consolidation-ex.json
@@ -664,8 +664,8 @@ Which answer gives the clearest complete process explanation? [¿Cuál da la exp
 * Primero se prepara el material, después se introduce en la máquina y por último se comprueba el resultado. [First the material is prepared, then it is inserted into the machine and lastly the result is checked.]
 - Se hace una cosa. [Something is done.]
 - El proceso es bueno. [The process is good.]
-decision:
-why:
+decision: match: Se realiza un control de calidad detallado antes de enviar los paquetes al almacén. [A detailed quality control is carried out before sending the packages to the warehouse.] || El nuevo proceso de producción resulta bastante bueno para reducir los costes del taller. [The new production process turns out quite good for reducing workshop costs.]
+why: Process explanation question; wrong options match length using single passive action or process evaluation without sequencing.
 
 ### b1-25-02.ex02   teaches: ['contrast-concession-connectors']
 files: content/es-es/exercises/b1/b1-25-02-ex.json, content/es-latam/exercises/b1/b1-25-02-ex.json
@@ -673,8 +673,8 @@ Which sentence clearly contrasts past and present? [¿Cuál contrasta claramente
 * Antes, la comunicación era más lenta; actualmente, es mucho más rápida. [Before, communication was slower; currently, it is much faster.]
 - La comunicación es rápida. [Communication is fast.]
 - La comunicación existe. [Communication exists.]
-decision:
-why:
+decision: match: Actualmente, los medios modernos de comunicación son increíblemente rápidos. [Currently, modern means of communication are incredibly fast.] || La comunicación abierta entre compañeros resulta esencial en cualquier empresa. [Open communication between colleagues is essential in any company.]
+why: Past vs present contrast; wrong options match length using present-only and general statements.
 
 ### b1-25-05.ex02   teaches: ['futuro-simple']
 files: content/es-es/exercises/b1/b1-25-05-ex.json, content/es-latam/exercises/b1/b1-25-05-ex.json
@@ -682,8 +682,8 @@ Which sentence integrates past, present and future change? [¿Cuál integra camb
 * Antes la situación era diferente, actualmente ha cambiado y probablemente seguirá evolucionando. [The situation was different before, it has changed now and it will probably continue evolving.]
 - La situación es diferente. [The situation is different.]
 - La situación cambiará en el futuro. [The situation will change in the future.]
-decision:
-why:
+decision: match: En el pasado la situación laboral era muy diferente y ahora ha mejorado bastante. [In the past the work situation was very different and now it has improved a lot.] || La situación económica del país probablemente cambiará de forma notable en el futuro. [The economic situation of the country will probably change noticeably in the future.]
+why: Past, present and future triad; wrong options match length with past-present alone and future alone.
 
 ### b1-25-consolidation.ex09   teaches: ['futuro-simple']
 files: content/es-es/exercises/b1/b1-25-consolidation-ex.json, content/es-latam/exercises/b1/b1-25-consolidation-ex.json
@@ -691,8 +691,8 @@ Which sentence integrates change, prediction and evaluation? [¿Cuál integra ca
 * El mundo ha cambiado, probablemente seguirá cambiando y es necesario que nos adaptemos. [The world has changed, it will probably continue changing and it is necessary for us to adapt.]
 - El mundo existe. [The world exists.]
 - El mundo cambió mucho en el pasado. [The world changed a lot in the past.]
-decision:
-why:
+decision: match: Vivimos en un mundo globalizado y conectado donde la tecnología avanza cada día. [We live in a globalised and connected world where technology advances every day.] || El mundo laboral cambió de manera radical durante las últimas décadas del siglo pasado. [The world of work changed radically during the last decades of the past century.]
+why: Change, prediction and evaluation triad; wrong options match length using general facts and past change alone.
 
 ### b1-25-consolidation.ex16   teaches: ['futuro-simple']
 files: content/es-es/exercises/b1/b1-25-consolidation-ex.json, content/es-latam/exercises/b1/b1-25-consolidation-ex.json
@@ -700,8 +700,8 @@ Which answer gives a complete evaluation of change? [¿Cuál evalúa el cambio d
 * El cambio presenta desafíos, pero también oportunidades; por eso es importante adaptarse. [Change presents challenges, but also opportunities; therefore it is important to adapt.]
 - El cambio es cambio. [Change is change.]
 - El cambio traerá cambios en el futuro. [Change will bring changes in the future.]
-decision:
-why:
+decision: match: Todo cambio requiere tiempo y paciencia porque modificar los hábitos nunca es sencillo. [Every change requires time and patience because changing habits is never simple.] || Cualquier cambio tecnológico importante traerá nuevas transformaciones en el futuro próximo. [Any major technological change will bring new transformations in the near future.]
+why: Evaluation of change item; wrong options match length without combining balanced evaluation and adaptive recommendation.
 
 ### b1-26-05.ex02   teaches: ['subjunctive-value-judgments']
 files: content/es-es/exercises/b1/b1-26-05-ex.json, content/es-latam/exercises/b1/b1-26-05-ex.json
@@ -709,8 +709,8 @@ Which sentence gives an integrated argument? [¿Cuál presenta un argumento inte
 * El equilibrio es importante porque permite tener tiempo para otras cosas. [Balance is important because it allows us to have time for other things.]
 - El equilibrio existe. [Balance exists.]
 - El trabajo es trabajo. [Work is work.]
-decision:
-why:
+decision: match: El equilibrio entre la vida personal y laboral depende de la organización de cada uno. [Balance between personal and work life depends on the organisation of each person.] || El trabajo en equipo requiere una comunicación abierta y constante entre compañeros. [Teamwork requires open and constant communication between colleagues.]
+why: Integrated argument item; wrong options match length using descriptive statements without causal argumentation.
 
 ### b1-26-05.ex23   teaches: None
 files: content/es-es/exercises/b1/b1-26-05-ex.json, content/es-latam/exercises/b1/b1-26-05-ex.json
@@ -718,8 +718,8 @@ files: content/es-es/exercises/b1/b1-26-05-ex.json, content/es-latam/exercises/b
 * El equilibrio significa elegir mejor cómo utilizar el tiempo, no trabajar menos por principio.
 - El bienestar depende solamente del dinero.
 - Cambiar de prioridades es siempre imposible.
-decision:
-why:
+decision: shorten: El equilibrio significa usar mejor el tiempo.
+why: Reading comprehension; shortens extended conclusion to core thesis, matching distractor length.
 
 ### b1-26-consolidation.ex09   teaches: ['opinion-verbs-mood']
 files: content/es-es/exercises/b1/b1-26-consolidation-ex.json, content/es-latam/exercises/b1/b1-26-consolidation-ex.json
@@ -727,8 +727,8 @@ Which sentence best integrates the unit? [¿Cuál integra mejor la unidad?]
 * Si tuviera más tiempo, buscaría un mejor equilibrio porque creo que la satisfacción importa tanto como el éxito. [If I had more time, I would look for a better balance because I think fulfilment matters as much as success.]
 - Tengo trabajo. [I have work.]
 - El éxito existe. [Success exists.]
-decision:
-why:
+decision: match: Si tuviera un trabajo más flexible, pasaría todas las tardes descansando en mi casa. [If I had a more flexible job, I would spend every afternoon resting at home.] || Creo firmemente que el éxito profesional depende del esfuerzo constante de cada persona. [I firmly believe that professional success depends on the constant effort of each person.]
+why: Unit integration item; wrong options match length using single conditional and single opinion sentences.
 
 ### b1-26-consolidation.ex16   teaches: ['subjunctive-value-judgments']
 files: content/es-es/exercises/b1/b1-26-consolidation-ex.json, content/es-latam/exercises/b1/b1-26-consolidation-ex.json
@@ -736,8 +736,8 @@ Which statement gives a balanced evaluation? [¿Cuál presenta una evaluación e
 * El éxito profesional puede ser valioso, pero una buena vida también necesita tiempo, satisfacción y equilibrio. [Professional success can be valuable, but a good life also needs time, fulfilment and balance.]
 - El éxito siempre es perfecto. [Success is always perfect.]
 - El trabajo no importa nunca. [Work never matters.]
-decision:
-why:
+decision: match: El éxito profesional es el objetivo más importante para conseguir estabilidad económica. [Professional success is the most important objective for achieving economic stability.] || Tener tiempo libre para la familia resulta mucho más agradable que pasar horas en la oficina. [Having free time for family is much more pleasant than spending hours in the office.]
+why: Balanced evaluation item; wrong options match length using one-sided perspectives and eliminate absolutes.
 
 ### b1-27-consolidation.ex09   teaches: ['pronombres-combinados']
 files: content/es-es/exercises/b1/b1-27-consolidation-ex.json, content/es-latam/exercises/b1/b1-27-consolidation-ex.json
@@ -745,8 +745,8 @@ Which sentence best integrates the unit? [¿Cuál integra mejor la unidad?]
 * Pensé que estaba enfadada, pero explicó lo que quería decir y aclaramos el malentendido. [I thought she was angry, but she explained what she meant and we clarified the misunderstanding.]
 - Hablamos. [We spoke.]
 - El mensaje existe. [The message exists.]
-decision:
-why:
+decision: match: Ayer por la tarde hablamos durante varias horas sobre la reunión del lunes. [Yesterday afternoon we spoke for several hours about Monday's meeting.] || El mensaje electrónico que me enviaste llegó tarde debido a un problema técnico. [The electronic message you sent me arrived late due to a technical problem.]
+why: Narrative resolution question; wrong options match length using single factual actions without conflict resolution.
 
 ### b1-28-05.ex02   teaches: ['opinion-verbs-mood']
 files: content/es-es/exercises/b1/b1-28-05-ex.json, content/es-latam/exercises/b1/b1-28-05-ex.json
@@ -754,8 +754,8 @@ Which sentence defends a position? [¿Cuál defiende una posición?]
 * Creo que esta regla es necesaria porque protege a todos. [I think this rule is necessary because it protects everyone.]
 - Esta regla existe. [This rule exists.]
 - La regla está aquí. [The rule is here.]
-decision:
-why:
+decision: match: Esta regla oficial de convivencia existe en todos los edificios residenciales. [This official rule of coexistence exists in all residential buildings.] || El texto completo de la nueva normativa está disponible en el tablón de anuncios. [The full text of the new regulation is available on the notice board.]
+why: Defending a position question; wrong options match length using descriptive statements about rules without argumentative defence.
 
 ### b1-28-05.ex13   teaches: ['opinion-verbs-mood']
 files: content/es-es/exercises/b1/b1-28-05-ex.json, content/es-latam/exercises/b1/b1-28-05-ex.json
@@ -764,8 +764,8 @@ B: _____
 * Depende de la situación, pero es importante que las normas sean justas. [It depends on the situation, but it is important that rules are fair.]
 - Sí, porque sí. [Yes, because yes.]
 - No, las normas deben ser injustas. [No, rules should be unfair.]
-decision:
-why:
+decision: match: Sí, simplemente porque las reglas siempre se han aplicado de esa misma manera. [Yes, simply because the rules have always been applied in that same way.] || No, porque las normas generales no deberían tener importancia para nadie. [No, because general rules should not have importance for anyone.]
+why: Dialogue response item; wrong options match length using simplistic or dismissive justifications.
 
 ### b1-28-05.ex21   teaches: None
 files: content/es-es/exercises/b1/b1-28-05-ex.json, content/es-latam/exercises/b1/b1-28-05-ex.json
@@ -773,8 +773,8 @@ files: content/es-es/exercises/b1/b1-28-05-ex.json, content/es-latam/exercises/b
 * Se permite el acceso en coche en casos de emergencia si se justifica la situación.
 - Está prohibido caminar por la plaza.
 - La regla solo afecta a los turistas.
-decision:
-why:
+decision: shorten: Se permite el acceso en casos de emergencia.
+why: Reading comprehension; shortens conditional clause down to core fact matching distractor length.
 
 ### b1-28-consolidation.ex09   teaches: ['subjunctive-value-judgments']
 files: content/es-es/exercises/b1/b1-28-consolidation-ex.json, content/es-latam/exercises/b1/b1-28-consolidation-ex.json
@@ -782,8 +782,8 @@ Which sentence best integrates the unit? [¿Cuál integra mejor la unidad?]
 * Creo que esta regla es necesaria porque protege los derechos de todos, aunque debemos considerar sus consecuencias. [I think this rule is necessary because it protects everyone's rights, although we must consider its consequences.]
 - La regla existe. [The rule exists.]
 - Tenemos derechos. [We have rights.]
-decision:
-why:
+decision: match: Esta regla oficial de convivencia existe en todos los edificios residenciales y se aplica a cada vecino. [This official rule of coexistence exists in all residential buildings and applies to each neighbour.] || Todos los ciudadanos tenemos derechos fundamentales reconocidos en la constitución del país desde su aprobación. [All citizens have fundamental rights recognised in the country's constitution since its approval.]
+why: Unit integration item; wrong options match length using single factual statements about rules and rights.
 
 ### b1-28-consolidation.ex16   teaches: ['opinion-verbs-mood']
 files: content/es-es/exercises/b1/b1-28-consolidation-ex.json, content/es-latam/exercises/b1/b1-28-consolidation-ex.json
@@ -791,8 +791,8 @@ Which statement best connects rights and responsibilities? [¿Cuál relaciona me
 * Los derechos son importantes, pero también tenemos la responsabilidad de respetar los derechos de los demás. [Rights are important, but we also have a responsibility to respect other people's rights.]
 - Los derechos eliminan todas las responsabilidades. [Rights eliminate all responsibilities.]
 - Las responsabilidades no tienen consecuencias. [Responsibilities have no consequences.]
-decision:
-why:
+decision: match: Tener derechos garantizados significa que nadie debe asumir ninguna responsabilidad social. [Having guaranteed rights means that no one has to take on any social responsibility.] || Las responsabilidades individuales no tienen ninguna relación con las leyes del estado. [Individual responsibilities do not have any relationship with the laws of the state.]
+why: Rights and responsibilities connection item; wrong options match length while maintaining incorrect separation of the concepts.
 
 ### b1-29-03.ex02   teaches: ['verbos-regimen-preposicional']
 files: content/es-es/exercises/b1/b1-29-03-ex.json, content/es-latam/exercises/b1/b1-29-03-ex.json
@@ -800,8 +800,8 @@ Which sentence describes adaptation as a process? [¿Cuál describe la adaptaci�
 * Poco a poco me adapté a la nueva ciudad. [Little by little I adapted to the new city.]
 - La ciudad es nueva. [The city is new.]
 - Estoy en la ciudad. [I am in the city.]
-decision:
-why:
+decision: match: La ciudad donde vivo ahora es completamente nueva para mí. [The city where I live now is completely new to me.] || Actualmente vivo en el centro histórico de la ciudad. [Currently I live in the historic centre of the city.]
+why: Adaptation process item; wrong options match length using static descriptions of city life.
 
 ### b1-29-05.ex02   teaches: ['relative-clauses']
 files: content/es-es/exercises/b1/b1-29-05-ex.json, content/es-latam/exercises/b1/b1-29-05-ex.json
@@ -809,8 +809,8 @@ Which sentence expresses two identities? [¿Cuál expresa dos identidades?]
 * Tengo dos identidades que forman parte de mi vida. [I have two identities that are part of my life.]
 - Tengo una identidad. [I have one identity.]
 - No tengo identidad. [I have no identity.]
-decision:
-why:
+decision: shorten: Tengo dos identidades. [I have two identities.]
+why: Identity number question; shortens to simple clause matching the exact structure and length of distractors.
 
 ### b1-29-05.ex14   teaches: ['relative-clauses']
 files: content/es-es/exercises/b1/b1-29-05-ex.json, content/es-latam/exercises/b1/b1-29-05-ex.json
@@ -819,8 +819,8 @@ B: _____
 * Puedo mantener mis tradiciones y participar en la nueva comunidad. [I can maintain my traditions and participate in the new community.]
 - Puedo olvidar todo. [I can forget everything.]
 - No puedo mantener nada. [I cannot maintain anything.]
-decision:
-why:
+decision: match: Creo que debo olvidar las costumbres del pasado para poder vivir aquí con tranquilidad. [I think I must forget the customs of the past to be able to live here peacefully.] || Prefiero no participar en las actividades locales y quedarme siempre dentro de mi casa. [I prefer not to participate in local activities and always stay inside my house.]
+why: Dialogue response item; wrong options match length using plausible positions of complete assimilation or withdrawal.
 
 ### b1-29-consolidation.ex09   teaches: ['verbos-regimen-preposicional']
 files: content/es-es/exercises/b1/b1-29-consolidation-ex.json, content/es-latam/exercises/b1/b1-29-consolidation-ex.json
@@ -828,8 +828,8 @@ Which sentence best integrates the unit? [¿Cuál integra mejor la unidad?]
 * Puedo mantener mis tradiciones, adaptarme a una nueva comunidad y sentirme parte de más de un lugar. [I can maintain my traditions, adapt to a new community and feel part of more than one place.]
 - Me mudé. [I moved.]
 - Tengo una casa. [I have a house.]
-decision:
-why:
+decision: match: El año pasado me mudé de país con toda mi familia para buscar mejores oportunidades de trabajo. [Last year I moved country with my whole family to look for better job opportunities.] || Actualmente tengo una casa propia en un barrio tranquilo donde viven personas de muchos lugares. [Currently I have my own house in a quiet neighbourhood where people from many places live.]
+why: Unit integration item; wrong options match length using factual statements about moving and housing.
 
 ### b1-29-consolidation.ex14   teaches: ['verbos-regimen-preposicional']
 files: content/es-es/exercises/b1/b1-29-consolidation-ex.json, content/es-latam/exercises/b1/b1-29-consolidation-ex.json
@@ -838,8 +838,8 @@ B: _____
 * Puede aprender nuevas costumbres y participar en la comunidad. [They can learn new customs and participate in the community.]
 - Puede olvidar todo. [They can forget everything.]
 - Puede no conocer a nadie. [They can know nobody.]
-decision:
-why:
+decision: match: Puede olvidar por completo las costumbres antiguas del país donde nació. [They can completely forget the old customs of the country where they were born.] || Puede quedarse aislada en casa sin intentar conocer a ningún vecino nuevo. [They can remain isolated at home without trying to meet any new neighbour.]
+why: Dialogue response item; wrong options match length with plausible positions of total assimilation or isolation.
 
 ### b1-30-04.ex02   teaches: ['contrast-concession-connectors']
 files: content/es-es/exercises/b1/b1-30-04-ex.json, content/es-latam/exercises/b1/b1-30-04-ex.json
@@ -847,8 +847,8 @@ Which sentence expresses contrast? [¿Cuál expresa contraste?]
 * Aunque son diferentes, tienen algo en común. [Although they are different, they have something in common.]
 - Son diferentes. [They are different.]
 - Son similares. [They are similar.]
-decision:
-why:
+decision: match: Ambas culturas son diferentes en sus tradiciones. [Both cultures are different in their traditions.] || Los dos idiomas son similares en su gramática. [The two languages are similar in their grammar.]
+why: Contrast sentence item; wrong options match length using single descriptive claims without contrast markers.
 
 ### b1-30-05.ex02   teaches: ['opinion-verbs-mood']
 files: content/es-es/exercises/b1/b1-30-05-ex.json, content/es-latam/exercises/b1/b1-30-05-ex.json
@@ -856,8 +856,8 @@ Which sentence expresses a sustained opinion? [¿Cuál expresa una opinión desa
 * Creo que las diferencias culturales pueden ser una oportunidad para aprender. [I think cultural differences can be an opportunity to learn.]
 - La cultura existe. [Culture exists.]
 - Hay diferencias. [There are differences.]
-decision:
-why:
+decision: match: La cultura tradicional de cada región se transmite de generación en generación. [The traditional culture of each region is passed from generation to generation.] || Existen notables diferencias lingüísticas entre las distintas comunidades del país. [Notable linguistic differences exist between the different communities of the country.]
+why: Sustained opinion item; wrong options match length using factual statements about culture without opinion verbs.
 
 ### b1-30-consolidation.ex09   teaches: ['subjunctive-value-judgments']
 files: content/es-es/exercises/b1/b1-30-consolidation-ex.json, content/es-latam/exercises/b1/b1-30-consolidation-ex.json
@@ -865,8 +865,8 @@ Which statement best integrates the unit? [¿Cuál integra mejor la unidad?]
 * Las diferencias culturales pueden ser una oportunidad para aprender si escuchamos otras perspectivas. [Cultural differences can be an opportunity to learn if we listen to other perspectives.]
 - Las culturas son diferentes. [Cultures are different.]
 - Hablo español. [I speak Spanish.]
-decision:
-why:
+decision: match: Las diferentes culturas del mundo tienen normas sociales y tradiciones muy diversas. [Different cultures of the world have very diverse social norms and traditions.] || Hablo español con bastante fluidez después de vivir dos años enteros en la capital. [I speak Spanish quite fluently after living two whole years in the capital.]
+why: Unit integration item; wrong options match length using factual descriptive statements about cultures and languages.
 
 ### b1-31-03.ex02   teaches: ['hypothetical-structures']
 files: content/es-es/exercises/b1/b1-31-03-ex.json, content/es-latam/exercises/b1/b1-31-03-ex.json
@@ -874,8 +874,8 @@ Which sentence expresses a hypothetical situation? [¿Cuál expresa una situaci�
 * Si cambiara la sociedad, tendríamos que adaptarnos. [If society changed, we would have to adapt.]
 - La sociedad cambiará. [Society will change.]
 - La sociedad ha cambiado. [Society has changed.]
-decision:
-why:
+decision: match: La sociedad moderna cambiará durante los próximos años. [Modern society will change over the coming years.] || La estructura social ha cambiado de manera importante. [Social structure has changed significantly.]
+why: Hypothetical conditional item; wrong options match length using indicative future and perfect statements.
 
 ### b1-31-05.ex02   teaches: ['subjunctive-doubt']
 files: content/es-es/exercises/b1/b1-31-05-ex.json, content/es-latam/exercises/b1/b1-31-05-ex.json
@@ -883,8 +883,8 @@ Which sentence combines prediction and uncertainty? [¿Cuál combina predicción
 * Creo que habrá cambios, aunque no sabemos exactamente cuáles. [I think there will be changes, although we do not know exactly which ones.]
 - Habrá cambios. [There will be changes.]
 - No hay cambios. [There are no changes.]
-decision:
-why:
+decision: match: Habrá importantes cambios en la organización del trabajo según todos los expertos. [There will be important changes in work organisation according to all experts.] || Actualmente no hay ningún cambio visible en las costumbres diarias de la población. [Currently there is no visible change in the daily habits of the population.]
+why: Prediction plus uncertainty item; wrong options match length using assertive prediction and present statement.
 
 ### b1-31-05.ex10   teaches: ['subjunctive-doubt']
 files: content/es-es/exercises/b1/b1-31-05-ex.json, content/es-latam/exercises/b1/b1-31-05-ex.json
@@ -892,8 +892,8 @@ Creo que habrá cambios, aunque no sabemos exactamente cuáles.
 * I think there will be changes, although we do not know exactly which ones.
 - I know exactly what will happen.
 - I think nothing will change.
-decision:
-why:
+decision: match: I know exactly what will happen in the near future because the plan is clear. || I firmly believe that nothing will ever change despite the current predictions.
+why: Translation item requires full sentence; wrong options match length and subordinate clause structure.
 
 ### b1-31-05.ex23   teaches: None
 files: content/es-es/exercises/b1/b1-31-05-ex.json, content/es-latam/exercises/b1/b1-31-05-ex.json
@@ -901,8 +901,8 @@ files: content/es-es/exercises/b1/b1-31-05-ex.json, content/es-latam/exercises/b
 * Adaptarse a los cambios y prepararse para varias posibilidades es más útil que predecir un único futuro.
 - Es mejor ignorar los posibles cambios futuros.
 - La sociedad no cambiará en los próximos años.
-decision:
-why:
+decision: shorten: Adaptarse al cambio es más útil que intentar predecirlo.
+why: Reading comprehension; shortens comparative conclusion to core thesis matching distractor length.
 
 ### b1-31-consolidation.ex09   teaches: ['hypothetical-structures']
 files: content/es-es/exercises/b1/b1-31-consolidation-ex.json, content/es-latam/exercises/b1/b1-31-consolidation-ex.json
@@ -910,8 +910,8 @@ Which sentence best integrates the unit? [¿Cuál integra mejor la unidad?]
 * Probablemente habrá cambios, y es importante que nos preparemos para diferentes escenarios. [There will probably be changes, and it is important that we prepare for different scenarios.]
 - Habrá cambios. [There will be changes.]
 - El futuro existe. [The future exists.]
-decision:
-why:
+decision: match: Habrá importantes cambios en la organización del trabajo según todos los expertos. [There will be important changes in work organisation according to all experts.] || El futuro de las próximas generaciones depende directamente de las decisiones de hoy. [The future of the next generations depends directly on the decisions of today.]
+why: Unit integration item; wrong options match length using single prediction and general statement about the future.
 
 ### b1-31-consolidation.ex16   teaches: ['subjunctive-doubt']
 files: content/es-es/exercises/b1/b1-31-consolidation-ex.json, content/es-latam/exercises/b1/b1-31-consolidation-ex.json
@@ -919,8 +919,8 @@ Which statement best combines prediction and preparation? [¿Cuál combina mejor
 * Aunque no sabemos exactamente qué ocurrirá, es importante que nos preparemos. [Although we do not know exactly what will happen, it is important that we prepare.]
 - Sabemos exactamente qué ocurrirá. [We know exactly what will happen.]
 - No necesitamos prepararnos nunca. [We never need to prepare.]
-decision:
-why:
+decision: match: Sabemos exactamente qué ocurrirá en los próximos años gracias a las estadísticas. [We know exactly what will happen in the coming years thanks to statistics.] || No resulta necesario preparar ningún plan especial porque las cosas no van a cambiar. [It does not turn out necessary to prepare any special plan because things are not going to change.]
+why: Prediction plus preparation item; wrong options match length and eliminate absolutes.
 
 ### b1-32-05.ex02   teaches: ['ordering-markers']
 files: content/es-es/exercises/b1/b1-32-05-ex.json, content/es-latam/exercises/b1/b1-32-05-ex.json
@@ -928,8 +928,8 @@ Which sentence builds an argument with more than one connector? [¿Cuál constru
 * La medida es útil porque reduce los costes; además, protege el medio ambiente. [The measure is useful because it reduces costs; furthermore, it protects the environment.]
 - La medida es útil. [The measure is useful.]
 - La medida reduce los costes. [The measure reduces costs.]
-decision:
-why:
+decision: match: La medida aprobada por el ayuntamiento es verdaderamente útil para los ciudadanos. [The measure approved by the city council is truly useful for citizens.] || La nueva propuesta económica reduce notablemente los costes de transporte público. [The new economic proposal notably reduces public transport costs.]
+why: Multiple connector argument item; wrong options match length using single declarative clauses without multiple connectors.
 
 ### b1-32-consolidation.ex06   teaches: ['ordering-markers']
 files: content/es-es/exercises/b1/b1-32-consolidation-ex.json, content/es-latam/exercises/b1/b1-32-consolidation-ex.json
@@ -937,8 +937,8 @@ Which sentence combines contrast and consequence? [¿Cuál combina contraste y c
 * Era caro; sin embargo, lo compramos, por eso tuvimos que ahorrar. [It was expensive; however, we bought it, so we had to save.]
 - Era caro. [It was expensive.]
 - Lo compramos. [We bought it.]
-decision:
-why:
+decision: match: El coche era bastante caro; sin embargo, decidimos pedir un préstamo al banco. [The car was quite expensive; however, we decided to ask the bank for a loan.] || Compramos una casa en las afueras, por eso tuvimos que ahorrar durante años. [We bought a house on the outskirts, so we had to save for years.]
+why: Contrast plus consequence item; wrong options match length with contrast alone and consequence alone.
 
 ### b1-32-consolidation.ex09   teaches: ['contrast-concession-connectors']
 files: content/es-es/exercises/b1/b1-32-consolidation-ex.json, content/es-latam/exercises/b1/b1-32-consolidation-ex.json
@@ -946,8 +946,8 @@ Which sentence best integrates the unit? [¿Cuál integra mejor la unidad?]
 * El proyecto es necesario porque hay un problema; sin embargo, debe ser económico para que pueda funcionar. [The project is necessary because there is a problem; however, it must be economical so that it can work.]
 - El proyecto existe. [The project exists.]
 - Hay un problema. [There is a problem.]
-decision:
-why:
+decision: match: El proyecto de renovación urbana ya existe y cuenta con el apoyo del ayuntamiento. [The urban renewal project already exists and has the support of the city council.] || Hay un problema grave de congestión vehicular en las avenidas principales del centro. [There is a serious problem of vehicular congestion on the main avenues of the centre.]
+why: Unit integration item; wrong options match length using single factual statements about projects and problems.
 
 ### b1-32-consolidation.ex14   teaches: ['contrast-concession-connectors']
 files: content/es-es/exercises/b1/b1-32-consolidation-ex.json, content/es-latam/exercises/b1/b1-32-consolidation-ex.json
@@ -956,8 +956,8 @@ B: _____
 * Como resultado, tuvimos que cambiar de plan. [As a result, we had to change our plan.]
 - Debido a resultado. [Due to result.]
 - Aunque resultado. [Although result.]
-decision:
-why:
+decision: match: Porque tuvimos que cambiar de plan ayer. [Because we had to change our plan yesterday.] || Aunque tuvimos que cambiar de plan al final. [Although we had to change our plan in the end.]
+why: Dialogue result question; wrong options match length using causal and concessive connectors that do not answer the question.
 
 ### b1-32-consolidation.ex16   teaches: ['ordering-markers']
 files: content/es-es/exercises/b1/b1-32-consolidation-ex.json, content/es-latam/exercises/b1/b1-32-consolidation-ex.json
@@ -965,8 +965,8 @@ Which sentence best shows a balanced argument? [¿Cuál muestra mejor un argumen
 * La solución es cara; sin embargo, puede lograr buenos resultados y proteger el entorno. [The solution is expensive; however, it can achieve good results and protect the environment.]
 - La solución es cara, por eso es mala. [The solution is expensive, so it is bad.]
 - La solución es buena. [The solution is good.]
-decision:
-why:
+decision: match: La solución propuesta resulta excesivamente cara, por eso consideramos que es muy mala. [The proposed solution turns out excessively expensive, so we consider it very bad.] || La solución aprobada por el comité técnico es simplemente buena y muy conveniente. [The solution approved by the technical committee is simply good and very convenient.]
+why: Balanced argument question; wrong options match length using one-sided negative or positive judgments.
 
 ### b1-33-05.ex02   teaches: ['estilo-indirecto-informacion']
 files: content/es-es/exercises/b1/b1-33-05-ex.json, content/es-latam/exercises/b1/b1-33-05-ex.json
@@ -974,8 +974,8 @@ Which sentence combines a reported statement and a reported question? [¿Cuál c
 * El testigo explicó que había visto al hombre y preguntó si alguien había llamado a la policía. [The witness explained that he had seen the man and asked if anyone had called the police.]
 - El testigo vio al hombre. [The witness saw the man.]
 - El testigo preguntó. [The witness asked.]
-decision:
-why:
+decision: match: El testigo presencial explicó ante el juez que había visto al sospechoso en la plaza. [The eyewitness explained before the judge that he had seen the suspect in the plaza.] || El testigo preguntó a los policías si alguien había llamado inmediatamente a una ambulancia. [The witness asked the police officers if someone had immediately called an ambulance.]
+why: Reported statement plus reported question item; wrong options match length using reported statement alone and reported question alone.
 
 ### b1-33-05.ex13   teaches: ['estilo-indirecto-informacion']
 files: content/es-es/exercises/b1/b1-33-05-ex.json, content/es-latam/exercises/b1/b1-33-05-ex.json
@@ -984,8 +984,8 @@ B: _____
 * Preguntó si alguien había llamado a la policía. [He asked if someone had called the police.]
 - Dijo si alguien. [He said if someone.]
 - Explicó si policía. [He explained if police.]
-decision:
-why:
+decision: match: Dijo que alguien había llamado a la policía. [He said that someone had called the police.] || Explicó por qué la policía estaba en la calle. [He explained why the police were in the street.]
+why: Reported speech reporting verbs; wrong options match length using declarative and explanatory reporting verbs.
 
 ### b1-33-consolidation.ex09   teaches: ['questions']
 files: content/es-es/exercises/b1/b1-33-consolidation-ex.json, content/es-latam/exercises/b1/b1-33-consolidation-ex.json
@@ -993,8 +993,8 @@ Which sentence best integrates reported speech? [¿Cuál integra mejor el estilo
 * Explicó que había visto al hombre y preguntó si alguien lo conocía. [He explained that he had seen the man and asked if anyone knew him.]
 - Vio al hombre. [He saw the man.]
 - Preguntó. [He asked.]
-decision:
-why:
+decision: match: Ayer por la tarde vio al hombre sospechoso caminando rápidamente por la calle. [Yesterday afternoon he saw the suspicious man walking quickly down the street.] || Preguntó directamente a todos los vecinos del edificio sobre el incidente de ayer. [He asked all the neighbours in the building directly about yesterday's incident.]
+why: Reported speech integration item; wrong options match length using direct action sentences without indirect reporting.
 
 ### b1-33-consolidation.ex16   teaches: ['estilo-indirecto-informacion']
 files: content/es-es/exercises/b1/b1-33-consolidation-ex.json, content/es-latam/exercises/b1/b1-33-consolidation-ex.json
@@ -1002,8 +1002,8 @@ Which sentence best combines reporting, a question and a tense change? [¿Cuál 
 * Dijo que vivía allí y preguntó si alguien había llegado. [He said that he lived there and asked if someone had arrived.]
 - Dijo que vive aquí. [He said that he lives here.]
 - Preguntó. [He asked.]
-decision:
-why:
+decision: match: Dijo que vivía allí desde hacía varios años con su familia. [He said that he lived there for several years with his family.] || Preguntó a los presentes si alguien había visto al nuevo vecino. [He asked those present if someone had seen the new neighbour.]
+why: Reported statement plus question item; wrong options match length using reported statement alone and reported question alone.
 
 ### b1-34-05.ex02   teaches: ['opinion-verbs-mood']
 files: content/es-es/exercises/b1/b1-34-05-ex.json, content/es-latam/exercises/b1/b1-34-05-ex.json
@@ -1011,8 +1011,8 @@ Which sentence presents a nuanced opinion? [¿Cuál presenta una opinión matiza
 * No creo que la solución sea perfecta, aunque estoy seguro de que puede ayudar. [I don't think the solution is perfect, although I am sure it can help.]
 - La solución es perfecta. [The solution is perfect.]
 - La solución es mala. [The solution is bad.]
-decision:
-why:
+decision: match: La solución técnica propuesta por el equipo de ingenieros es totalmente perfecta. [The technical solution proposed by the engineering team is totally perfect.] || La nueva propuesta resulta completamente mala y generará grandes inconvenientes. [The new proposal turns out completely bad and will generate major drawbacks.]
+why: Nuanced opinion item; wrong options match length using categorical absolute statements.
 
 ### b1-34-05.ex12   teaches: ['opinion-verbs-mood']
 files: content/es-es/exercises/b1/b1-34-05-ex.json, content/es-latam/exercises/b1/b1-34-05-ex.json
@@ -1021,8 +1021,8 @@ B: _____
 * No creo que sea perfecta, aunque estoy seguro de que puede ayudar. [I don't think it is perfect, although I am sure it can help.]
 - Creo que sea perfecta. [I believe that it be perfect.]
 - No creo si es perfecta. [I don't think if it is perfect.]
-decision:
-why:
+decision: shorten: No creo que sea perfecta. [I don't think it is perfect.]
+why: Opinion verb mood item; shortens to direct reply matching distractor structure and mood contrast.
 
 ### b1-34-consolidation.ex09   teaches: ['subjunctive-doubt']
 files: content/es-es/exercises/b1/b1-34-consolidation-ex.json, content/es-latam/exercises/b1/b1-34-consolidation-ex.json
@@ -1030,8 +1030,8 @@ Which sentence best integrates certainty, doubt and evaluation? [¿Cuál integra
 * Estoy seguro de que puede ayudar, pero no creo que sea suficiente y es importante que estudiemos otras opciones. [I am sure it can help, but I don't think it is enough and it is important that we study other options.]
 - Puede ayudar. [It can help.]
 - No sé. [I don't know.]
-decision:
-why:
+decision: match: Estoy completamente seguro de que esta propuesta técnica puede ayudar a solucionar el problema. [I am completely sure that this technical proposal can help solve the problem.] || No sé con certeza cuál es la mejor alternativa porque todavía no conocemos todos los detalles. [I do not know with certainty which is the best alternative because we still do not know all the details.]
+why: Triad integration item; wrong options match length using single certainty and single doubt expressions.
 
 ### b1-34-consolidation.ex16   teaches: ['opinion-verbs-mood']
 files: content/es-es/exercises/b1/b1-34-consolidation-ex.json, content/es-latam/exercises/b1/b1-34-consolidation-ex.json
@@ -1039,8 +1039,8 @@ Which sentence gives a balanced opinion? [¿Cuál da una opinión equilibrada?]
 * No creo que la solución sea perfecta, aunque estoy convencido de que puede ayudar. [I don't think the solution is perfect, although I am convinced it can help.]
 - La solución es perfecta. [The solution is perfect.]
 - La solución no sirve. [The solution is useless.]
-decision:
-why:
+decision: match: La solución técnica propuesta por el equipo de ingenieros es totalmente perfecta. [The technical solution proposed by the engineering team is totally perfect.] || La nueva propuesta resulta completamente inútil y no sirve para resolver nada. [The new proposal turns out completely useless and is of no use for solving anything.]
+why: Balanced opinion item; wrong options match length using one-sided positive and negative assertions.
 
 ### b1-35-02.ex02   teaches: ['si-clauses']
 files: content/es-es/exercises/b1/b1-35-02-ex.json, content/es-latam/exercises/b1/b1-35-02-ex.json
@@ -1048,8 +1048,8 @@ Which sentence describes a hypothetical consequence? [¿Cuál describe una conse
 * Si cambiara el plan, ocurriría algo diferente. [If the plan changed, something different would happen.]
 - El plan cambia. [The plan changes.]
 - El plan cambió. [The plan changed.]
-decision:
-why:
+decision: match: El plan de contingencia cambia según las necesidades. [The contingency plan changes according to needs.] || El plan inicial cambió tras la decisión del director. [The initial plan changed following the director's decision.]
+why: Hypothetical consequence item; wrong options match length using indicative present and past sentences.
 
 ### b1-35-05.ex02   teaches: ['si-clauses']
 files: content/es-es/exercises/b1/b1-35-05-ex.json, content/es-latam/exercises/b1/b1-35-05-ex.json
@@ -1057,8 +1057,8 @@ Which sentence best expresses reflection on a past alternative? [¿Cuál expresa
 * Si hubiera tomado otro camino, mi vida habría sido diferente. [If I had taken another path, my life would have been different.]
 - Tomo otro camino. [I take another path.]
 - Tomé otro camino. [I took another path.]
-decision:
-why:
+decision: match: Todos los días tomo otro camino para volver a mi casa después de trabajar. [Every day I take another path to return home after working.] || Ayer por la tarde tomé otro camino diferente para evitar las obras de la calle. [Yesterday afternoon I took a different path to avoid road works.]
+why: Past alternative reflection item; wrong options match length using indicative present and preterite statements.
 
 ### b1-35-consolidation.ex09   teaches: ['pluscuamperfecto-subjuntivo-si']
 files: content/es-es/exercises/b1/b1-35-consolidation-ex.json, content/es-latam/exercises/b1/b1-35-consolidation-ex.json
@@ -1066,8 +1066,8 @@ Which sentence best integrates hypothetical language? [¿Cuál integra mejor el 
 * Si tuviera otra oportunidad, cambiaría mi decisión, pero si hubiera tenido más información, quizá habría elegido otra opción. [If I had another opportunity, I would change my decision, but if I had had more information, I might have chosen another option.]
 - Tengo una decisión. [I have a decision.]
 - Elegí una opción. [I chose an option.]
-decision:
-why:
+decision: match: Actualmente tengo una decisión importante que tomar sobre mi futuro profesional y necesito consultarlo con mi familia. [Currently I have an important decision to make regarding my professional future and need to consult it with my family.] || Ayer finalmente elegí una opción muy conveniente entre todas las alternativas disponibles después de comparar los costes. [Yesterday I finally chose a very convenient option among all the available alternatives after comparing costs.]
+why: Hypothetical language integration item; wrong options match length using indicative present and preterite statements.
 
 ### b1-36-05.ex02   teaches: ['comparatives']
 files: content/es-es/exercises/b1/b1-36-05-ex.json, content/es-latam/exercises/b1/b1-36-05-ex.json
@@ -1075,8 +1075,8 @@ Which sentence best shows cumulative B1 communication? [¿Cuál muestra mejor un
 * No creo que sea perfecto, pero es posible que ayude si lo hacemos juntos. [I don't think it is perfect, but it may help if we do it together.]
 - Es perfecto. [It is perfect.]
 - Quizá. [Perhaps.]
-decision:
-why:
+decision: match: Este nuevo plan de trabajo es absolutamente perfecto para todos los miembros del grupo. [This new work plan is absolutely perfect for all group members.] || Quizá podamos reunirnos mañana por la mañana en la oficina para hablar del asunto. [Perhaps we can meet tomorrow morning in the office to discuss the matter.]
+why: Cumulative communication item; wrong options match length using single assertion and single probability clause.
 
 ### b1-36-05.ex23   teaches: None
 files: content/es-es/exercises/b1/b1-36-05-ex.json, content/es-latam/exercises/b1/b1-36-05-ex.json
@@ -1084,8 +1084,8 @@ files: content/es-es/exercises/b1/b1-36-05-ex.json, content/es-latam/exercises/b
 * Marta ve que ya puede narrar, defender una postura y hablar de posibilidades con más confianza.
 - Marta piensa que no ha aprendido nada nuevo.
 - Marta decide dejar de estudiar español.
-decision:
-why:
+decision: shorten: Marta ve que ahora se expresa con más confianza.
+why: Reading comprehension; shortens catalogue of skills to summary of communicative confidence matching option length.
 
 ### b1-36-consolidation.ex09   teaches: ['conectores-con-subjuntivo']
 files: content/es-es/exercises/b1/b1-36-consolidation-ex.json, content/es-latam/exercises/b1/b1-36-consolidation-ex.json
@@ -1093,8 +1093,8 @@ Which sentence best connects cause, consequence and solution? [¿Cuál conecta m
 * El problema existe porque falta información, por eso debemos mejorar la comunicación. [The problem exists because there is a lack of information, therefore we should improve communication.]
 - El problema existe. [The problem exists.]
 - La comunicación es buena. [Communication is good.]
-decision:
-why:
+decision: match: El problema principal existe porque todavía nos falta información detallada sobre el caso. [The main problem exists because we still lack detailed information about the case.] || La comunicación entre todos los departamentos de la empresa suele ser bastante buena. [Communication between all company departments is usually quite good.]
+why: Triad connection question; wrong options match length using problem-cause alone and general descriptive statement.
 
 ### b1-36-consolidation.ex16   teaches: ['comparatives']
 files: content/es-es/exercises/b1/b1-36-consolidation-ex.json, content/es-latam/exercises/b1/b1-36-consolidation-ex.json
@@ -1102,8 +1102,8 @@ Which response best demonstrates independent B1 communication? [¿Cuál demuestr
 * El problema tiene varias causas. No creo que exista una solución perfecta, pero es posible que podamos mejorar la situación si trabajamos juntos. [The problem has several causes. I don't think there is a perfect solution, but we may be able to improve the situation if we work together.]
 - Problema. [Problem.]
 - Sí. [Yes.]
-decision:
-why:
+decision: match: El problema es bastante grave y afecta a muchos departamentos, pero no sé cómo podemos solucionarlo ahora. [The problem is quite serious and affects many departments, but I don't know how we can solve it now.] || Sí, me parece una buena propuesta y creo que todos deberíamos apoyarla sin hacer ninguna otra pregunta. [Yes, it seems like a good proposal to me and I think we should all support it without asking any other questions.]
+why: B1 discourse complexity item; wrong options match length using simple problem statement and unnuanced agreement.
 
 ### b1-37.cons.ex05   teaches: ['subjuntivo-perfecto']
 files: content/es-es/exercises/b1/b1-37-consolidation-ex.json, content/es-latam/exercises/b1/b1-37-consolidation-ex.json
@@ -1111,8 +1111,8 @@ Es fantástico que hayáis podido resolver el problema tan rápidamente.
 * Elogia la rapidez con que resolvieron el problema.
 - Se queja de la tardanza.
 - No sabe si se resolvió.
-decision:
-why:
+decision: shorten: Elogia la rapidez de la solución.
+why: Pragmatic interpretation item; shortens relative clause to concise noun phrase matching distractor style and length.
 
 ### b1-38-05.ex07   teaches: ['estilo-indirecto-ordenes']
 files: content/es-es/exercises/b1/b1-38-05-ex.json, content/es-latam/exercises/b1/b1-38-05-ex.json
@@ -1120,8 +1120,8 @@ Ayer nos avisaron de que cancelarían el vuelo y nos pidieron que fuéramos al m
 * Informaron de la cancelación y dieron una instrucción.
 - El vuelo salió a tiempo.
 - Llegaron sin avisar.
-decision:
-why:
+decision: match: Avisaron de que el vuelo saldría con total puntualidad. || Cancelaron el viaje sin dar ninguna explicación a nadie.
+why: Pragmatic interpretation item; wrong options match length and structure of reported communication.
 
 ### b1-38.cons.ex07   teaches: ['estilo-indirecto-ordenes']
 files: content/es-es/exercises/b1/b1-38-consolidation-ex.json, content/es-latam/exercises/b1/b1-38-consolidation-ex.json
@@ -1130,8 +1130,8 @@ Antonio: ____.
 * Me pidió que revisara los contratos pendientes.
 - Me pidió que reviso.
 - Me dice que revisara.
-decision:
-why:
+decision: match: Me pidió que reviso los contratos pendientes. || Me dice que revisara los contratos pendientes.
+why: Reported orders grammar item; wrong options complete the sentence with identical direct object, isolating verb form contrast.
 
 ### b1-39-01.ex10   teaches: ['verbs-of-change']
 files: content/es-es/exercises/b1/b1-39-01-ex.json, content/es-latam/exercises/b1/b1-39-01-ex.json
@@ -1140,8 +1140,8 @@ Alumno: ____.
 * Me puse rojo de vergüenza porque no sabía la respuesta.
 - Me quedé rojo.
 - Me hice rojo.
-decision:
-why:
+decision: match: Me quedé rojo de vergüenza porque no sabía la respuesta. || Me hice rojo de vergüenza porque no sabía la respuesta.
+why: Verbs of change in dialogue; wrong options match the full natural reply, isolating the choice of change verb.
 
 ### b1-39-04.ex10   teaches: ['verbs-of-change']
 files: content/es-es/exercises/b1/b1-39-04-ex.json, content/es-latam/exercises/b1/b1-39-04-ex.json
@@ -1150,8 +1150,8 @@ Sara: ____.
 * ¡Increíble! En pocos días se convirtió en un éxito total.
 - Se puso un éxito.
 - Se hizo un éxito.
-decision:
-why:
+decision: match: ¡Increíble! En pocos días se puso en un éxito total. || ¡Increíble! En pocos días se hizo un éxito total.
+why: Verbs of change in dialogue; wrong options match full exclamation and timeframe, isolating the verb collocation.
 
 ### b1-39-05.ex10   teaches: ['verbs-of-change']
 files: content/es-es/exercises/b1/b1-39-05-ex.json, content/es-latam/exercises/b1/b1-39-05-ex.json
@@ -1160,8 +1160,8 @@ Marta: ____.
 * Se convirtió en un hermoso hotel boutique.
 - Se puso un hotel.
 - Se hizo en un hotel.
-decision:
-why:
+decision: match: Se puso en un hermoso hotel para turistas. || Se hizo en un hermoso hotel para turistas.
+why: Verbs of change in dialogue; wrong options match full sentence structure and length, testing the change verb.
 
 ### b1-40-03.ex07   teaches: ['lo-neutro-abstraccion']
 files: content/es-es/exercises/b1/b1-40-03-ex.json, content/es-latam/exercises/b1/b1-40-03-ex.json
@@ -1169,8 +1169,8 @@ Lo interesante del debate fue la variedad de puntos de vista.
 * Destaca la diversidad de opiniones en el debate.
 - El debate fue aburrido.
 - Nadie quiso participar.
-decision:
-why:
+decision: shorten: Destaca la diversidad de opiniones.
+why: Interpretation item; cuts redundant phrase from correct option matching distractor length.
 
 
 ########## BLOCK: es-es b1 (159 exercises) ##########
