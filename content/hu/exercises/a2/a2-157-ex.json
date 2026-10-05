@@ -90,11 +90,11 @@
     {
       "id": "a2-157-controlled-3",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A szüleim egy kis házban ____, ahol szép kert van. (live)",
+      "category": "grammar",
+      "sentence": "A szüleim egy kis házban ____, ahol szép kert van. (they live)",
       "answer": "laknak",
       "teaches": [
-        "a2-living-in-hungarian-vocab"
+        "present-tense-routine-language"
       ],
       "stage": "controlled"
     },
@@ -112,7 +112,7 @@
     {
       "id": "a2-157-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which sentence correctly says \"close to his friends\"?",
       "options": [
         "közel a barátaihoz",
@@ -121,8 +121,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-living-in-hungarian-vocab"
+        "hoz-suffix"
       ],
+      "distractor_skills": {
+        "1": "acc-poss",
+        "2": "val-vel"
+      },
       "stage": "practice"
     },
     {
@@ -132,7 +136,7 @@
       "sentence": "Múlt hétvégén Ildikónál ____, ahol az egész család összejött. (we were)",
       "answer": "voltunk",
       "teaches": [
-        "past-tense-indefinite"
+        "van-past"
       ],
       "stage": "practice"
     },
@@ -226,7 +230,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "past-tense-indefinite"
+        "a2-living-in-hungarian-vocab"
       ]
     },
     {
@@ -249,7 +253,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "past-tense-indefinite"
+        "yes-no-questions"
       ]
     },
     {
@@ -263,7 +267,7 @@
         }
       ],
       "teaches": [
-        "past-tense-indefinite"
+        "a2-living-in-hungarian-vocab"
       ]
     },
     {
@@ -277,7 +281,7 @@
         }
       ],
       "teaches": [
-        "past-tense-indefinite"
+        "nal-nel"
       ]
     },
     {
@@ -308,8 +312,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "past-tense-indefinite"
+        "van-past"
       ],
+      "distractor_skills": {
+        "1": "van-zero-copula"
+      },
       "stage": "check"
     }
   ]

@@ -90,11 +90,11 @@
     {
       "id": "a2-155-controlled-3",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Végül minden ____. (got solved)",
       "answer": "megoldódott",
       "teaches": [
-        "mediopassive-verbs-odik"
+        "a2-problems-requests-vocab"
       ],
       "stage": "controlled"
     },
@@ -112,7 +112,7 @@
     {
       "id": "a2-155-practice-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which verb needs someone doing the solving as its subject?",
       "options": [
         "megold",
@@ -121,7 +121,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "mediopassive-verbs-odik"
+        "a2-problems-requests-vocab"
       ],
       "stage": "practice"
     },
@@ -155,7 +155,7 @@
     {
       "id": "a2-155-practice-3",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "tiles": [
         "Károly",
         "gyorsan",
@@ -174,7 +174,7 @@
       ],
       "english": "Károly solved the problem quickly.",
       "teaches": [
-        "mediopassive-verbs-odik"
+        "a2-problems-requests-vocab"
       ],
       "stage": "practice"
     },
@@ -253,7 +253,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "mediopassive-verbs-odik"
+        "yes-no-questions"
       ]
     },
     {
@@ -267,7 +267,7 @@
         }
       ],
       "teaches": [
-        "mediopassive-verbs-odik"
+        "a2-problems-requests-vocab"
       ]
     },
     {
@@ -303,7 +303,7 @@
     {
       "id": "a2-155-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which correctly completes: \"A probléma ____, mert a recepciós azonnal segített.\" (\"The problem got solved, because the receptionist helped immediately.\")?",
       "options": [
         "megoldódott",
@@ -312,8 +312,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "mediopassive-verbs-odik"
+        "a2-problems-requests-vocab"
       ],
+      "distractor_skills": {
+        "1": "definite-past",
+        "2": "definite-vs-indefinite-conjugation"
+      },
       "stage": "check"
     }
   ]
