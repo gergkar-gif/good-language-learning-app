@@ -24,14 +24,14 @@
         ]
       ],
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "a1-directions-vocab"
       ]
     },
     {
       "id": "a1.directions.05.ex02",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "¿Cómo se dice \"how\"?",
+      "question": "Which word means \"how\"?",
       "options": [
         "cómo",
         "cuándo",
@@ -39,7 +39,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "a1-directions-vocab"
       ]
     },
     {
@@ -54,7 +54,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "a1-directions-vocab"
       ]
     },
     {
@@ -69,7 +69,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "full-directions"
+        "questions"
       ]
     },
     {
@@ -84,7 +84,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "full-directions"
+        "questions"
       ]
     },
     {
@@ -92,12 +92,14 @@
       "category": "grammar",
       "type": "fill-blank",
       "sentence": "__ al centro y gira a la derecha.",
-      "answer": "Ve",
       "teaches": [
-        "full-directions",
         "imperativo-afirmativo"
       ],
-      "english": "Go to the centre and turn right."
+      "english": "Go to the centre and turn right.",
+      "answers": [
+        "Ve",
+        "Vaya"
+      ]
     },
     {
       "id": "a1.directions.05.ex07",
@@ -106,8 +108,7 @@
       "sentence": "La farmacia está __ la izquierda.",
       "answer": "a",
       "teaches": [
-        "full-directions",
-        "estar"
+        "preposiciones-movimiento"
       ],
       "english": "The pharmacy is on the left."
     },
@@ -131,7 +132,7 @@
       ],
       "english": "How do I get to the museum?",
       "teaches": [
-        "full-directions"
+        "questions"
       ]
     },
     {
@@ -142,13 +143,15 @@
       "options": [
         "Está cerca.",
         "Voy al mercado.",
-        "Hay una farmacia."
+        "Hay allí."
       ],
       "correct": 0,
       "teaches": [
-        "full-directions",
         "estar"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ir"
+      }
     },
     {
       "id": "a1.directions.05.ex10",
@@ -171,8 +174,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "full-directions",
-        "estar"
+        "a1-directions-vocab"
       ]
     },
     {
@@ -196,7 +198,6 @@
       ],
       "correct": 0,
       "teaches": [
-        "full-directions",
         "imperativo-afirmativo"
       ]
     },
@@ -216,12 +217,11 @@
       ],
       "options": [
         "Sigue recto.",
-        "Sigues recto.",
+        "Sigo recto.",
         "Está recto."
       ],
       "correct": 0,
       "teaches": [
-        "full-directions",
         "imperativo-afirmativo"
       ]
     },
@@ -244,9 +244,7 @@
         }
       ],
       "teaches": [
-        "full-directions",
-        "imperativo-afirmativo",
-        "estar"
+        "a1-directions-vocab"
       ]
     },
     {
@@ -321,9 +319,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "full-directions",
         "estar"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ir"
+      }
     }
   ]
 }
