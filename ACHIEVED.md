@@ -3078,3 +3078,9 @@ All 48 exercises (one 8-item template copied into all five lessons) read by a So
 
 ### HU B1 `compromise-1867` (b1-kiegyezes-01–05 + consolidation) — locked 2026-10-05
 All 48 exercises (same template shape) read by a Sonnet subagent and reviewed. Tags now: unit vocabulary 20, eight reading items untagged, `azert-hogy-purpose` 5, `concessive-annak-ellenere` 5, `verb-government-nak-nek` 4, `definite-past` 3, `past-tense-indefinite` 2, `how-the-accusative-t-works` 1; 5 `ds`. Content fixes: the lesson 1–3 copies asked about later-lesson material (*bürokrácia*, *passzív ellenállás*, *tárgyalási alap*, *koronázási eskü*, the Húsvéti cikk), so `ex03`–`ex08` were rewritten for each lesson. Left: the `ex02` stem names Deák before his lesson-2 vocabulary introduces him (the answer does not depend on it).
+
+### HU B1 `problems-solutions` (b1-20-01–b1-20-05 + consolidation) — locked 2026-10-05
+All 48 exercises (the shared 8-item template) read by a Sonnet subagent. Tags now: unit vocabulary 19, `past-conditional-volna` 12, `kellett-volna` 5, `how-the-accusative-t-works` 5 (*megoldást, javaslatát*), `acc-poss` 1, six reading items untagged. No content fixes. Left: lessons 01–02 test *megoldás* and *felelősségvállalás* before they are taught, and `consolidation.ex08` asks about a Karinthy story the unit never shows (the same template issue as the other late units); `consolidation.ex04` keeps a "volna printed in the prompt" warning (a two-clause conditional needs it in both clauses).
+
+### HU B1 `world-war-1` (b1-vilaghaboru-01–05 + consolidation) — locked 2026-10-05
+All 48 exercises read by a Sonnet subagent. Tags now: unit vocabulary 22, `past-conditional-volna` 10, `how-the-accusative-t-works` 5, `delative-rol-rel` 1, ten reading items untagged. No content fixes. Left: the template tests *jegyrendszer*, *forradalom* and the aster flower before they are taught; warnings stand for the printed *volna* and a false possessor-ending hit on *forradalom*.
