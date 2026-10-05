@@ -3126,3 +3126,9 @@ All 48 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabula
 
 ### HU B1 `regime-change` (b1-rendszervaltas-01–05 + consolidation) — locked 2026-10-06
 All 48 exercises read by a Sonnet subagent and reviewed. Tags now: 19 reading items untagged (history facts), unit vocabulary 12, `how-the-accusative-t-works` 5, `acc-poss` 5, `past-tense-indefinite` 3, and `hogy-jon-jen`, `van-past`, `postpositions-basic`, `plural-possessive` once each. Content fixes: `b1-rendszervaltas-01.ex07` keyed *tak* where the form needs *ottak* (*jutottak*); `b1-rendszervaltas-02.ex07`'s hint said "(its opening)" for a plain accusative.
+
+### HU B1 `rules-rights-responsibilities` (b1-28-01–b1-28-05 + consolidation) — locked 2026-10-06
+All 48 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabulary 22, `formal-obligation` 4, `verb-government-ra-re` 3, `future-participle-ando` 3, `verb-government-ert` 2, `past-tense-indefinite` 2, and nine single-item skills; four reading items untagged; 5 `ds`. Content fix: `b1-28-04.ex04` offered *Hacsak nem* as a second acceptable conditional (now *Habár / noha*).
+
+### HU B1 `modern-democratic-hungary` (b1-demokracia-01–05 + consolidation) — locked 2026-10-06
+All 48 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabulary 17, 14 reading items untagged (civics facts), `acc-poss` 4, `valik-verb` 2, `ban-ben-in` 2, and nine single-item skills (including `participle-actions` for *alá vannak rendelve*). *nyugszik* has no skill (vocabulary). Content fix: `b1-demokracia-05.ex05`'s hint pins "(remaining, accusative)".
