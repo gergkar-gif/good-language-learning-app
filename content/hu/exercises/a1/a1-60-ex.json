@@ -14,14 +14,16 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
-      ]
+        "movement-with-ba-be"
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     },
     {
       "id": "a1-60-review-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which question asks where someone is going?",
       "options": [
         "Hová?",
@@ -31,8 +33,11 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-going-places-vocab"
-      ]
+        "spatial-questions-hol-hova"
+      ],
+      "distractor_skills": {
+        "2": "ki-and-mi"
+      }
     },
     {
       "id": "a1-60-intro-1",
@@ -46,9 +51,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
+        "movement-with-ba-be"
       ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      },
       "stage": "introduce"
     },
     {
@@ -63,9 +70,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
+        "ban-ben-in"
       ],
+      "distractor_skills": {
+        "1": "movement-with-ba-be"
+      },
       "stage": "introduce"
     },
     {
@@ -99,11 +108,10 @@
       "id": "a1-60-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Károly az ____ megy. (to the road)",
-      "answer": "útba",
+      "sentence": "Károly a ____ megy. (to the centre)",
+      "answer": "központba",
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
+        "movement-with-ba-be"
       ],
       "stage": "controlled"
     },
@@ -113,15 +121,17 @@
       "category": "grammar",
       "question": "Which is the correct destination form?",
       "options": [
-        "a kijáratba",
-        "a kijáratban",
-        "a kijárat"
+        "a központba",
+        "a központban",
+        "a központ"
       ],
       "correct": 0,
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
+        "movement-with-ba-be"
       ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      },
       "stage": "controlled"
     },
     {
@@ -136,9 +146,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
+        "movement-with-ba-be"
       ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      },
       "stage": "controlled"
     },
     {
@@ -180,22 +192,23 @@
       ],
       "correct": 0,
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
+        "movement-with-ba-be"
       ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      },
       "stage": "practice"
     },
     {
       "id": "a1-60-practice-3",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Hová ____ Károly?",
+      "category": "vocabulary",
+      "sentence": "Hová ____ Károly? (goes)",
       "answers": [
         "megy"
       ],
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
+        "a1-going-places-vocab"
       ],
       "stage": "practice"
     },
@@ -206,21 +219,20 @@
       "tiles": [
         "Károly",
         "a",
-        "kijáratba",
+        "központba",
         "megy",
         "."
       ],
       "solution": [
         "Károly",
         "a",
-        "kijáratba",
+        "központba",
         "megy",
         "."
       ],
-      "english": "Károly is going to the exit.",
+      "english": "Károly is going to the centre.",
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
+        "movement-with-ba-be"
       ],
       "stage": "practice"
     },
@@ -244,9 +256,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
+        "movement-with-ba-be"
       ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      },
       "stage": "practice"
     },
     {
@@ -264,15 +278,17 @@
         }
       ],
       "options": [
-        "a kijáratban",
-        "a kijáratba",
-        "a kijárat"
+        "a központban",
+        "a központba",
+        "a központ"
       ],
       "correct": 0,
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
-      ]
+        "ban-ben-in"
+      ],
+      "distractor_skills": {
+        "1": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-60-dialogue-2",
@@ -295,9 +311,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
-      ]
+        "movement-with-ba-be"
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     },
     {
       "id": "a1-60-writing-1",
@@ -306,12 +324,11 @@
       "template": [
         {
           "prompt": "Write two short Hungarian sentences using Movement Review.",
-          "answer": "A központba megyek. A helyre megyek."
+          "answer": "A központba megyek. A moziba megyek."
         }
       ],
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
+        "movement-with-ba-be"
       ]
     },
     {
@@ -321,12 +338,11 @@
       "template": [
         {
           "prompt": "Write one short Hungarian response to a practical question from today's lesson.",
-          "answer": "A kijáratba megyek."
+          "answer": "A központba megyek."
         }
       ],
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
+        "movement-with-ba-be"
       ]
     },
     {
@@ -341,9 +357,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "movement-with-ba-be",
-        "spatial-questions-hol-hova"
+        "movement-with-ba-be"
       ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      },
       "stage": "check"
     },
     {
@@ -358,7 +376,6 @@
       ],
       "correct": 0,
       "teaches": [
-        "movement-with-ba-be",
         "spatial-questions-hol-hova"
       ],
       "stage": "check"
