@@ -4,7 +4,7 @@
     {
       "id": "a2-218-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'étkezés után bő vízzel vegye be' instruct?",
       "options": [
         "Take it after meals with plenty of water.",
@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "medical-triage-instructions"
+        "a2-pharmacy-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a2-218-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What is the meaning of 'Gyermekektől elzárva tartandó' on medicine boxes?",
       "options": [
         "Keep out of reach of children.",
@@ -29,19 +29,19 @@
       ],
       "correct": 0,
       "teaches": [
-        "medical-triage-instructions"
+        "a2-pharmacy-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a2-218-controlled-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "A tablettát reggel éh____ (on an empty stomach) kell bevenni egy pohár vízzel.",
       "answer": "gyomorra",
       "english": "The tablet must be taken in the morning on an empty stomach with a glass of water.",
       "teaches": [
-        "medical-triage-instructions"
+        "a2-pharmacy-vocab"
       ],
       "stage": "controlled"
     },
@@ -53,7 +53,7 @@
       "answer": "tájékoztatót",
       "english": "Please read the patient information leaflet in the box carefully!",
       "teaches": [
-        "medical-triage-instructions"
+        "how-the-accusative-t-works"
       ],
       "stage": "controlled"
     },
@@ -87,7 +87,7 @@
     {
       "id": "a2-218-controlled-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What warning is given if a medicine causes drowsiness?",
       "options": [
         "Gépjárművet vezetni tilos vagy óvatosságot igényel.",
@@ -96,14 +96,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "medical-triage-instructions"
+        "a2-pharmacy-vocab"
       ],
       "stage": "controlled"
     },
     {
       "id": "a2-218-practice-1",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "tiles": [
         "Naponta",
         "kétszer",
@@ -128,19 +128,19 @@
       ],
       "english": "Take one tablet twice daily after meals!",
       "teaches": [
-        "medical-triage-instructions"
+        "a2-pharmacy-vocab"
       ],
       "stage": "practice"
     },
     {
       "id": "a2-218-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Nem szabad bevenni a készítményt a lejárati ____ (time/date) után.",
       "answer": "idő",
       "english": "You must not take the preparation after the expiration date.",
       "teaches": [
-        "medical-triage-instructions"
+        "a2-pharmacy-vocab"
       ],
       "stage": "practice"
     },
@@ -168,7 +168,7 @@
       "answer": "hatást",
       "english": "If you experience any unusual side effect, stop taking the medication!",
       "teaches": [
-        "medical-triage-instructions"
+        "how-the-accusative-t-works"
       ],
       "stage": "practice"
     },
@@ -193,9 +193,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "medical-triage-instructions",
-        "a2-pharmacy-vocab"
+        "imperative-indefinite"
       ],
+      "distractor_skills": {
+        "2": "junk-suggestion"
+      },
       "stage": "dialogue"
     },
     {
@@ -219,7 +221,6 @@
       ],
       "correct": 0,
       "teaches": [
-        "medical-triage-instructions",
         "a2-pharmacy-vocab"
       ],
       "stage": "dialogue"
@@ -227,19 +228,19 @@
     {
       "id": "a2-218-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A betegtájékoztatóban leírtak szerint a gyógyszert szobahőmérsékleten, száraz helyen kell ____ (tárol, for us).",
       "answer": "tárolnunk",
       "english": "According to what is written in the leaflet, we have to store the medicine at room temperature in a dry place.",
       "teaches": [
-        "medical-triage-instructions"
+        "inflected-infinitives"
       ],
       "stage": "production"
     },
     {
       "id": "a2-218-writing-2",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "vocabulary",
       "tiles": [
         "Mindig",
         "tartsd",
@@ -262,14 +263,14 @@
       ],
       "english": "Always adhere to the exact medical dosage!",
       "teaches": [
-        "medical-triage-instructions"
+        "a2-pharmacy-vocab"
       ],
       "stage": "production"
     },
     {
       "id": "a2-218-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What is the consequence of exceeding the maximum recommended daily dose?",
       "options": [
         "Túladagolási mérgezés vagy súlyos mellékhatás alakulhat ki.",
@@ -278,7 +279,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "medical-triage-instructions"
+        "a2-pharmacy-vocab"
       ],
       "stage": "check"
     },
@@ -290,7 +291,7 @@
       "answer": "venni",
       "english": "It is forbidden to take the tablet with alcohol!",
       "teaches": [
-        "medical-triage-instructions"
+        "szabad-infinitive"
       ],
       "stage": "check"
     }

@@ -9,18 +9,22 @@
       "options": [
         "Készpénzzel vagy kártyával fizet?",
         "Készpénzben vagy kártyában fizet?",
-        "Készpénzzel vagy kártyával fizetsz?"
+        "Készpénzzel vagy kártyával fizetek?"
       ],
       "correct": 0,
       "teaches": [
-        "financial-transactions-pragmatics"
+        "val-vel"
       ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "present-tense-routine-language"
+      },
       "stage": "introduce"
     },
     {
       "id": "a2-213-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'Tartsa meg a visszajárót' mean?",
       "options": [
         "Keep the change.",
@@ -29,7 +33,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "financial-transactions-pragmatics"
+        "a2-banking-vocab"
       ],
       "stage": "introduce"
     },
@@ -41,7 +45,7 @@
       "answer": "alatt",
       "english": "You don't need to enter the PIN code because the purchase amount is under fifteen thousand forints.",
       "teaches": [
-        "financial-transactions-pragmatics"
+        "postpositions-basic"
       ],
       "stage": "controlled"
     },
@@ -53,7 +57,7 @@
       "answer": "terminálhoz",
       "english": "Please tap your card on the terminal!",
       "teaches": [
-        "financial-transactions-pragmatics"
+        "hoz-suffix"
       ],
       "stage": "controlled"
     },
@@ -87,7 +91,7 @@
     {
       "id": "a2-213-controlled-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What is an 'áfás számla' needed for?",
       "options": [
         "Company accounting and tax deduction.",
@@ -96,7 +100,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "financial-transactions-pragmatics"
+        "a2-banking-vocab"
       ],
       "stage": "controlled"
     },
@@ -126,19 +130,19 @@
       ],
       "english": "Do you wish to pay in cash or with a bank card for lunch?",
       "teaches": [
-        "financial-transactions-pragmatics"
+        "val-vel"
       ],
       "stage": "practice"
     },
     {
       "id": "a2-213-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Az étteremben a szerviz____ (charge) már benne van a végösszegben, nem szükséges külön borravalót hagyni.",
       "answer": "díj",
       "english": "In the restaurant the service charge is already included in the total, it is not necessary to leave a separate tip.",
       "teaches": [
-        "financial-transactions-pragmatics"
+        "a2-banking-vocab"
       ],
       "stage": "practice"
     },
@@ -166,7 +170,7 @@
       "answer": "számlát",
       "english": "Thank you, I'll put the receipt in my pocket, I don't need a VAT invoice.",
       "teaches": [
-        "financial-transactions-pragmatics"
+        "how-the-accusative-t-works"
       ],
       "stage": "practice"
     },
@@ -191,7 +195,6 @@
       ],
       "correct": 0,
       "teaches": [
-        "financial-transactions-pragmatics",
         "a2-banking-vocab"
       ],
       "stage": "dialogue"
@@ -217,7 +220,6 @@
       ],
       "correct": 0,
       "teaches": [
-        "financial-transactions-pragmatics",
         "a2-banking-vocab"
       ],
       "stage": "dialogue"
@@ -225,19 +227,19 @@
     {
       "id": "a2-213-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A boltban készpénzzel fizettem, és a pénztáros pontosan visszaadta a ____ (visszajáró, accusative).",
       "answer": "visszajárót",
       "english": "In the shop I paid in cash, and the cashier accurately returned the change.",
       "teaches": [
-        "financial-transactions-pragmatics"
+        "how-the-accusative-t-works"
       ],
       "stage": "production"
     },
     {
       "id": "a2-213-writing-2",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "A",
         "telefonoddal",
@@ -260,14 +262,14 @@
       ],
       "english": "You can pay with your phone at the checkout too.",
       "teaches": [
-        "financial-transactions-pragmatics"
+        "tud-infinitive-skills"
       ],
       "stage": "production"
     },
     {
       "id": "a2-213-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What Hungarian cash rounding rule applies if a total ends in 8 forints?",
       "options": [
         "It rounds up to 10 forints.",
@@ -276,7 +278,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "financial-transactions-pragmatics"
+        "a2-banking-vocab"
       ],
       "stage": "check"
     },
@@ -288,7 +290,7 @@
       "answer": "minálhoz",
       "english": "Please tap your phone or watch to the terminal!",
       "teaches": [
-        "financial-transactions-pragmatics"
+        "hoz-suffix"
       ],
       "stage": "check"
     }
