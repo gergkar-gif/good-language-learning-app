@@ -36,7 +36,7 @@
     {
       "id": "a1-135-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'közel' mean?",
       "options": [
         "near",
@@ -45,15 +45,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "a1-city-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a1-135-introduce-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'jobb' mean?",
       "options": [
         "right",
@@ -62,27 +61,25 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "a1-city-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a1-135-controlled-1",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A múzeum ____ van.",
-      "answer": "jobb",
+      "category": "vocabulary",
+      "sentence": "A múzeum ____ van. (on the right)",
+      "answer": "jobbra",
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "a1-city-vocab"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-135-controlled-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Choose the word for 'far'.",
       "options": [
         "messze",
@@ -91,8 +88,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "a1-city-vocab"
       ],
       "stage": "controlled"
     },
@@ -126,15 +122,15 @@
     {
       "id": "a1-135-controlled-4",
       "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "A park bal van.",
-      "base_word": "bal",
+      "category": "vocabulary",
+      "base_sentence": "A park balra van.",
+      "base_word": "balra",
       "base_gloss": "The park is on the left.",
       "options": [
         {
-          "word": "jobb",
-          "inflected": "jobb",
-          "sentence": "A park jobb van.",
+          "word": "jobbra",
+          "inflected": "jobbra",
+          "sentence": "A park jobbra van.",
           "gloss": "on the right"
         },
         {
@@ -145,8 +141,7 @@
         }
       ],
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "a1-city-vocab"
       ],
       "stage": "controlled"
     },
@@ -162,20 +157,21 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "on-en-on"
       ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      },
       "stage": "practice"
     },
     {
       "id": "a1-135-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A könyvtár a ____ van.",
+      "sentence": "A könyvtár a ____ van. (square)",
       "answer": "téren",
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "on-en-on"
       ],
       "stage": "practice"
     },
@@ -213,7 +209,7 @@
     {
       "id": "a1-135-practice-4",
       "type": "substitution",
-      "category": "grammar",
+      "category": "vocabulary",
       "base_sentence": "Az étterem a téren van.",
       "base_word": "étterem",
       "base_gloss": "The restaurant is on the square.",
@@ -232,8 +228,7 @@
         }
       ],
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "a1-city-vocab"
       ],
       "stage": "practice"
     },
@@ -257,8 +252,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "a1-city-vocab"
       ],
       "stage": "practice"
     },
@@ -282,8 +276,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "a1-city-vocab"
       ]
     },
     {
@@ -306,8 +299,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "a1-city-vocab"
       ]
     },
     {
@@ -321,8 +313,7 @@
         }
       ],
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "on-en-on"
       ]
     },
     {
@@ -332,18 +323,17 @@
       "template": [
         {
           "prompt": "Say the park is on the left.",
-          "answer": "A park bal van."
+          "answer": "A park balra van."
         }
       ],
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "a1-city-vocab"
       ]
     },
     {
       "id": "a1-135-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Choose the correct word for 'near'.",
       "options": [
         "közel",
@@ -352,15 +342,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "a1-city-vocab"
       ],
       "stage": "check"
     },
     {
       "id": "a1-135-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Choose the correct word for 'left'.",
       "options": [
         "bal",
@@ -369,8 +358,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on",
-        "direction-adverbs-jobbra-balra"
+        "a1-city-vocab"
       ],
       "stage": "check"
     }
