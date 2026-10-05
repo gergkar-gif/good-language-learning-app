@@ -67,10 +67,10 @@ const Workshop = (function () {
         {
             id: 'listening',
             icon: 'listening',
-            title: 'Listening Driller',
-            sub: () => `Decode spoken ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'}, by ear.`,
-            containerId: 'listening-driller-root',
-            category: 'foundations'
+            title: 'Listening Studio',
+            sub: () => `Decoding drills and CEFR listening comprehension.`,
+            containerId: 'listening-studio-root',
+            category: 'studios'
         },
         {
             id: 'grammar',
@@ -233,7 +233,9 @@ const Workshop = (function () {
             grammar: typeof GrammarDriller !== 'undefined' ? GrammarDriller : null,
             translation: typeof TranslationDriller !== 'undefined' ? TranslationDriller : null,
             vocabulary: typeof VocabularyDriller !== 'undefined' ? VocabularyDriller : null,
-            listening: typeof ListeningDriller !== 'undefined' ? ListeningDriller : null,
+            listening: typeof ListeningStudio !== 'undefined' ? ListeningStudio : (typeof ListeningDriller !== 'undefined' ? ListeningDriller : null),
+            'listening-studio': typeof ListeningStudio !== 'undefined' ? ListeningStudio : null,
+            'listening-driller': typeof ListeningDriller !== 'undefined' ? ListeningDriller : null,
             speaking: typeof SpeakingDriller !== 'undefined' ? SpeakingDriller : null,
             writing: typeof WritingDriller !== 'undefined' ? WritingDriller : null,
             'hu-verb-studio': typeof HuVerbStudio !== 'undefined' ? HuVerbStudio : null,
@@ -319,6 +321,18 @@ const Workshop = (function () {
             _active = 'writing';
             _activeOptions = Object.assign({ activeTab: 'translation' }, options);
             return _renderAndHideLoader('Writing Studio');
+        }
+
+        // Transparent routing for listening sub-drillers into Listening Studio
+        if (id === 'listening-driller' || id === 'listening-decoding') {
+            _active = 'listening';
+            _activeOptions = Object.assign({ activeTab: 'decoding' }, options);
+            return _renderAndHideLoader('Listening Studio');
+        }
+        if (id === 'listening-comprehension' || id === 'listening-studio') {
+            _active = 'listening';
+            _activeOptions = Object.assign({ activeTab: 'comprehension' }, options);
+            return _renderAndHideLoader('Listening Studio');
         }
 
 

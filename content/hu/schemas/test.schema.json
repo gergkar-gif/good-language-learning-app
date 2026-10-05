@@ -175,9 +175,133 @@
           }
         }
       }
+    },
+    "listeningSection": {
+      "type": "object",
+      "description": "An unseen audio passage with CEFR-style listening comprehension questions. Supports single monologue or multi-speaker dialogue turns. No teaches tag — listening questions test auditory comprehension.",
+      "required": ["id", "title", "audio", "questions"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context": {
+          "type": "string",
+          "description": "Optional scenario background (e.g. 'Vas a escuchar una conversación en una cafetería.')."
+        },
+        "audio": {
+          "type": "object",
+          "required": ["turns"],
+          "additionalProperties": false,
+          "properties": {
+            "audioUrl": {
+              "type": "string",
+              "description": "Optional URL or local path to pre-recorded audio file."
+            },
+            "turns": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": ["text"],
+                "additionalProperties": false,
+                "properties": {
+                  "speaker": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": ["male", "female"]
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "previewSeconds": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 60,
+          "description": "Seconds allowed to preview questions before audio starts. Default is 30."
+        },
+        "source": {
+          "type": "string",
+          "description": "Optional attribution line shown below the task."
+        },
+        "questions": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 8,
+          "items": {
+            "$ref": "#/definitions/listeningQuestion"
+          }
+        }
+      }
     }
   },
   "definitions": {
+    "listeningQuestion": {
+      "oneOf": [
+        {
+          "title": "listening-mc",
+          "description": "Standard multiple-choice question about the audio passage. Options shuffled at runtime.",
+          "type": "object",
+          "required": ["id", "type", "question", "options", "correct"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+            "type": { "const": "listening-mc" },
+            "question": { "type": "string", "minLength": 1 },
+            "options": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 4,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "correct": { "type": "integer", "minimum": 0 },
+            "evidence": {
+              "type": "string",
+              "description": "Transcript excerpt justifying the answer, displayed during post-assessment review."
+            },
+            "explanation": {
+              "type": "string",
+              "description": "Pedagogical explanation of why this answer is correct."
+            }
+          }
+        },
+        {
+          "title": "true-false-not-stated",
+          "description": "CEFR standard TFNS: learner listens and picks True (0) / False (1) / Not stated in the audio (2). Options are in fixed order.",
+          "type": "object",
+          "required": ["id", "type", "statement", "correct"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+            "type": { "const": "true-false-not-stated" },
+            "statement": { "type": "string", "minLength": 1 },
+            "correct": { "type": "integer", "enum": [0, 1, 2] },
+            "evidence": {
+              "type": "string",
+              "description": "Transcript excerpt justifying the answer."
+            },
+            "explanation": {
+              "type": "string",
+              "description": "Pedagogical explanation of why this answer is correct."
+            }
+          }
+        }
+      ]
+    },
     "readingQuestion": {
       "oneOf": [
         {

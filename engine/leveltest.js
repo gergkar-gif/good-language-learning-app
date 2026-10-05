@@ -25,8 +25,17 @@ const LevelTest = (function () {
     let order = {};         // question id -> shuffled options, fixed per sitting
     let readingAnswers = {}; // reading question id -> chosen option text or index string
     let readingOrder = {};  // reading question id -> shuffled options (reading-mc, gapped-text only)
-    let writingText = '';   // Part 2 writing text
-    let speakingTranscript = ''; // Part 3 speaking transcript or typed text
+    let listeningAnswers = {}; // listening question id -> chosen option text or index string
+    let listeningOrder = {};   // listening question id -> shuffled options
+    let listeningPass = 0;     // number of passes completed (0, 1, 2)
+    let listeningPlaying = false; // audio currently playing flag
+    let listeningIntermission = false; // inter-pass pause countdown active
+    let listeningCountdown = 0; // seconds left in countdown
+    let listeningTimer = null; // countdown interval handle
+    let listeningTurnIdx = 0;  // active turn being spoken
+    let listeningTranscriptShown = false; // review mode transcript reveal toggle
+    let writingText = '';   // Part writing text
+    let speakingTranscript = ''; // Part speaking transcript or typed text
     let speakingAudioUrl = null; // Part 3 audio recording blob url
     let isRecording = false; // Part 3 microphone recording flag
     let mediaRecorder = null;
@@ -251,8 +260,44 @@ const LevelTest = (function () {
             } catch (e) {}
         }
 
-        const totalEarned = part1Correct + readingCorrect + writingScore + speakingScore;
-        const totalPossible = test.questions.length + readingMax + writingMax + speakingMax;
+        // Listening comprehension section scoring
+        let listeningCorrect = 0;
+        let listeningMax = 0;
+        let listeningBreakdown = null;
+        if (test.listeningSection) {
+            listeningMax = test.listeningSection.questions.length;
+            test.listeningSection.questions.forEach(q => {
+                const chosen = listeningAnswers[q.id];
+                let isRight = false;
+                if (q.type === 'true-false-not-stated') {
+                    isRight = chosen === String(q.correct);
+                } else {
+                    isRight = chosen === q.options[q.correct];
+                }
+                if (isRight) listeningCorrect++;
+            });
+            listeningBreakdown = { correct: listeningCorrect, total: listeningMax };
+
+            try {
+                const lsKey = (typeof Lang !== 'undefined' && Lang.key)
+                    ? Lang.key('listeningScores') : 'listeningScores';
+                const allLS = JSON.parse(localStorage.getItem(lsKey) || '{}');
+                const prevLS = allLS[test.level];
+                const pct = listeningCorrect / listeningMax;
+                const prevPct = prevLS ? prevLS.correct / prevLS.total : -1;
+                if (pct > prevPct) {
+                    allLS[test.level] = {
+                        correct: listeningCorrect,
+                        total: listeningMax,
+                        takenAt: new Date().toISOString()
+                    };
+                    localStorage.setItem(lsKey, JSON.stringify(allLS));
+                }
+            } catch (e) {}
+        }
+
+        const totalEarned = part1Correct + readingCorrect + listeningCorrect + writingScore + speakingScore;
+        const totalPossible = test.questions.length + readingMax + listeningMax + writingMax + speakingMax;
         const score = totalEarned / totalPossible;
         const jumpAhead = score >= JUMP_AHEAD_MARK;
 
@@ -268,6 +313,7 @@ const LevelTest = (function () {
                 total: test.questions.length
             },
             reading: readingBreakdown,
+            listening: listeningBreakdown,
             writing: writingBreakdown,
             speaking: speakingBreakdown,
             weakest: Object.keys(wrongBy).sort((a, b) => wrongBy[b] - wrongBy[a]),
@@ -496,13 +542,17 @@ const LevelTest = (function () {
     // Renders the full "Part 2: Reading Comprehension" block.
     // Part 1 question count is passed so question numbering is sequential.
     // ----------------------------------------
-    function readingSectionHtml(part1Count) {
+    // ----------------------------------------
+    // READING SECTION HTML
+    // Renders the full Reading Comprehension block.
+    // ----------------------------------------
+    function readingSectionHtml(part1Count, partNum) {
         if (!test.readingSection) return '';
         const rs = test.readingSection;
 
         return `
             <div class="lt-section lt-section-reading">
-                <h3 class="lt-section-title">Part 2: Reading Comprehension</h3>
+                <h3 class="lt-section-title">Part ${partNum || 2}: Reading Comprehension</h3>
                 <div class="lt-task-card">
                     <div class="lt-task-head">
                         <h4>${esc(rs.title)}</h4>
@@ -519,7 +569,330 @@ const LevelTest = (function () {
         `;
     }
 
-    function writingSectionHtml() {
+    // ----------------------------------------
+    // LISTENING SECTION AUDIO & CONTROLS
+    // ----------------------------------------
+    function stopListeningAudio() {
+        listeningPlaying = false;
+        if (listeningTimer) {
+            clearInterval(listeningTimer);
+            listeningTimer = null;
+        }
+        listeningIntermission = false;
+        if (typeof ParlourTTS !== 'undefined' && ParlourTTS.stop) {
+            ParlourTTS.stop();
+        }
+    }
+
+    function playListeningPass(passNum) {
+        if (!test || !test.listeningSection) return;
+        const ls = test.listeningSection;
+        const turns = ls.audio && ls.audio.turns ? ls.audio.turns : [];
+        if (turns.length === 0) return;
+
+        stopListeningAudio();
+        listeningPlaying = true;
+        listeningTurnIdx = 0;
+        updateListeningConsole();
+
+        const lang = (typeof Lang !== 'undefined' && typeof Lang.current === 'function')
+            ? Lang.current()
+            : ((typeof Lang !== 'undefined' && typeof Lang.code === 'function') ? Lang.code() : 'es');
+
+        if (typeof ParlourTTS !== 'undefined' && ParlourTTS.preload) {
+            turns.forEach(t => {
+                ParlourTTS.preload({
+                    text: t.text,
+                    gender: t.gender || 'male',
+                    character: t.speaker,
+                    language: lang
+                });
+            });
+        }
+
+        function playTurn() {
+            if (!listeningPlaying) return;
+            if (listeningTurnIdx >= turns.length) {
+                finishListeningPass(passNum);
+                return;
+            }
+
+            const current = turns[listeningTurnIdx];
+            updateListeningConsole();
+
+            if (typeof ParlourTTS !== 'undefined' && ParlourTTS.speak) {
+                ParlourTTS.speak({
+                    text: current.text,
+                    gender: current.gender || 'male',
+                    character: current.speaker,
+                    language: lang,
+                    onEnded: () => {
+                        if (!listeningPlaying) return;
+                        listeningTurnIdx++;
+                        setTimeout(playTurn, 450);
+                    }
+                });
+            } else {
+                listeningPlaying = false;
+                updateListeningConsole();
+            }
+        }
+
+        playTurn();
+    }
+
+    function finishListeningPass(passNum) {
+        listeningPlaying = false;
+        listeningPass = Math.max(listeningPass, passNum);
+
+        if (listeningPass === 1 && !marked) {
+            listeningIntermission = true;
+            listeningCountdown = 15;
+            updateListeningConsole();
+
+            if (listeningTimer) clearInterval(listeningTimer);
+            listeningTimer = setInterval(() => {
+                listeningCountdown--;
+                if (listeningCountdown <= 0) {
+                    clearInterval(listeningTimer);
+                    listeningTimer = null;
+                    listeningIntermission = false;
+                    playListeningPass(2);
+                } else {
+                    updateListeningConsole();
+                }
+            }, 1000);
+        } else {
+            listeningIntermission = false;
+            updateListeningConsole();
+        }
+    }
+
+    function listeningConsoleContentHtml(ls) {
+        const turns = ls.audio && ls.audio.turns ? ls.audio.turns : [];
+        let statusLabel = '';
+        let statusDetail = '';
+        let controls = '';
+
+        if (marked) {
+            statusLabel = 'Listening Assessment Completed';
+            statusDetail = 'Review your score and check audio evidence below.';
+            controls = `
+                <button type="button" class="btn-secondary lt-audio-btn-sm" data-lis-start="1">
+                    ↻ Replay Audio
+                </button>
+            `;
+        } else if (listeningPlaying) {
+            const currentSpeaker = (turns[listeningTurnIdx] && turns[listeningTurnIdx].speaker) ? turns[listeningTurnIdx].speaker : 'Speaker';
+            statusLabel = `Playing Pass ${listeningPass + 1} of 2…`;
+            statusDetail = `Speaking: ${esc(currentSpeaker)} (turn ${listeningTurnIdx + 1} of ${turns.length})`;
+            controls = `
+                <button type="button" class="lt-audio-btn lt-audio-btn-stop" data-lis-stop="1">
+                    ⏹ Stop Audio
+                </button>
+            `;
+        } else if (listeningIntermission) {
+            statusLabel = 'Pass 1 complete. Paused before Pass 2';
+            statusDetail = `Pass 2 begins automatically in ${listeningCountdown}s — review questions now.`;
+            controls = `
+                <button type="button" class="btn-primary lt-audio-btn" data-lis-start="2">
+                    ▶ Start Pass 2 Now (${listeningCountdown}s)
+                </button>
+                <button type="button" class="btn-secondary lt-audio-btn-sm" data-lis-stop="1">
+                    ⏹ Cancel Pause
+                </button>
+            `;
+        } else if (listeningPass >= 2) {
+            statusLabel = 'Audio complete (2 of 2 passes played)';
+            statusDetail = 'Answer the comprehension questions below.';
+            controls = `
+                <span class="lt-audio-badge-done">✓ 2 passes played</span>
+                <button type="button" class="btn-secondary lt-audio-btn-sm" data-lis-start="1">
+                    ↻ Replay (Extra)
+                </button>
+            `;
+        } else if (listeningPass === 1) {
+            statusLabel = 'Pass 1 of 2 finished';
+            statusDetail = 'Ready to begin second playback.';
+            controls = `
+                <button type="button" class="btn-primary lt-audio-btn" data-lis-start="2">
+                    ▶ Play Pass 2 of 2
+                </button>
+            `;
+        } else {
+            statusLabel = 'CEFR 2-Pass Audio Protocol';
+            statusDetail = `${turns.length} dialogue turns · You will hear this recording twice with a pause in between.`;
+            controls = `
+                <button type="button" class="btn-primary lt-audio-btn" data-lis-start="1">
+                    ▶ Start Listening (Pass 1 of 2)
+                </button>
+            `;
+        }
+
+        return `
+            <div class="lt-audio-console-top">
+                <span class="lt-audio-icon">🎧</span>
+                <div class="lt-audio-status-wrap">
+                    <span class="lt-audio-status-label">${statusLabel}</span>
+                    <span class="lt-audio-status-detail">${statusDetail}</span>
+                </div>
+            </div>
+            <div class="lt-audio-controls">
+                ${controls}
+            </div>
+        `;
+    }
+
+    function updateListeningConsole() {
+        const host = document.getElementById('leveltest-root');
+        if (!host || !test || !test.listeningSection) return;
+        const consoleEl = host.querySelector('.lt-audio-console');
+        if (!consoleEl) return;
+        consoleEl.innerHTML = listeningConsoleContentHtml(test.listeningSection);
+        bindListeningConsoleButtons(consoleEl);
+    }
+
+    function bindListeningConsoleButtons(consoleEl) {
+        if (!consoleEl) return;
+        const startBtns = consoleEl.querySelectorAll('[data-lis-start]');
+        startBtns.forEach(btn => {
+            btn.onclick = function () {
+                const pass = parseInt(btn.getAttribute('data-lis-start') || '1', 10);
+                playListeningPass(pass);
+            };
+        });
+        const stopBtn = consoleEl.querySelector('[data-lis-stop]');
+        if (stopBtn) {
+            stopBtn.onclick = function () {
+                stopListeningAudio();
+                updateListeningConsole();
+            };
+        }
+    }
+
+    function listeningQuestionHtml(q, index) {
+        if (q.type === 'true-false-not-stated') {
+            const labels = ['Verdadero', 'Falso', 'No se menciona'];
+            const chosen = listeningAnswers[q.id];
+            const right = String(q.correct);
+            const isRight = chosen === right;
+
+            let state = '';
+            if (marked) {
+                state = isRight
+                    ? '<span class="lt-mark lt-right">✓</span>'
+                    : `<span class="lt-mark lt-wrong">✗ ${esc(labels[q.correct])}</span>`;
+            }
+
+            return `
+                <li class="lt-question lt-q-tfns${marked ? (isRight ? ' is-right' : ' is-wrong') : ''}">
+                    <span class="lt-num">${index + 1}</span>
+                    <div class="lt-choice-body">
+                        <p class="lt-choice-prompt">${esc(q.statement)}${state}</p>
+                        <div class="lt-options">
+                            ${labels.map((label, i) => `
+                                <button type="button" class="lt-opt-btn ${chosen === String(i) ? 'is-selected' : ''} ${marked ? (String(i) === right ? 'is-correct-opt' : (chosen === String(i) ? 'is-wrong-opt' : '')) : ''}"
+                                        data-lq="${esc(q.id)}" data-lopt="${i}" ${marked ? 'disabled' : ''}>
+                                    ${esc(label)}
+                                </button>
+                            `).join('')}
+                        </div>
+                        ${marked && (q.evidence || q.explanation) ? `
+                            <div class="lt-evidence-box">
+                                ${q.evidence ? `<p class="lt-evidence-quote"><strong>Evidence:</strong> "${esc(q.evidence)}"</p>` : ''}
+                                ${q.explanation ? `<p class="lt-evidence-expl">${esc(q.explanation)}</p>` : ''}
+                            </div>
+                        ` : ''}
+                    </div>
+                </li>
+            `;
+        }
+
+        if (!listeningOrder[q.id]) listeningOrder[q.id] = shuffle(q.options);
+        const chosen = listeningAnswers[q.id];
+        const right = q.options[q.correct];
+        const isRight = chosen === right;
+
+        let state = '';
+        if (marked) {
+            state = isRight
+                ? '<span class="lt-mark lt-right">✓</span>'
+                : `<span class="lt-mark lt-wrong">✗ ${esc(right)}</span>`;
+        }
+
+        return `
+            <li class="lt-question lt-q-lmc${marked ? (isRight ? ' is-right' : ' is-wrong') : ''}">
+                <span class="lt-num">${index + 1}</span>
+                <div class="lt-choice-body">
+                    <p class="lt-choice-prompt">${esc(q.question)}${state}</p>
+                    <div class="lt-options">
+                        ${listeningOrder[q.id].map(opt => `
+                            <button type="button" class="lt-opt-btn ${chosen === opt ? 'is-selected' : ''} ${marked ? (opt === right ? 'is-correct-opt' : (chosen === opt ? 'is-wrong-opt' : '')) : ''}"
+                                    data-lq="${esc(q.id)}" data-lopt="${esc(opt)}" ${marked ? 'disabled' : ''}>
+                                ${esc(opt)}
+                            </button>
+                        `).join('')}
+                    </div>
+                    ${marked && (q.evidence || q.explanation) ? `
+                        <div class="lt-evidence-box">
+                            ${q.evidence ? `<p class="lt-evidence-quote"><strong>Evidence:</strong> "${esc(q.evidence)}"</p>` : ''}
+                            ${q.explanation ? `<p class="lt-evidence-expl">${esc(q.explanation)}</p>` : ''}
+                        </div>
+                    ` : ''}
+                </div>
+            </li>
+        `;
+    }
+
+    function listeningSectionHtml(partOffset, partNum) {
+        if (!test.listeningSection) return '';
+        const ls = test.listeningSection;
+
+        return `
+            <div class="lt-section lt-section-listening">
+                <h3 class="lt-section-title">Part ${partNum}: Listening Comprehension</h3>
+                <div class="lt-task-card">
+                    <div class="lt-task-head">
+                        <h4>${esc(ls.title)}</h4>
+                        <span class="lt-task-badge">CEFR 2-pass protocol</span>
+                    </div>
+                    ${ls.context ? `<p class="lt-task-context"><em>${esc(ls.context)}</em></p>` : ''}
+                    
+                    <div class="lt-audio-console">
+                        ${listeningConsoleContentHtml(ls)}
+                    </div>
+
+                    ${marked ? `
+                        <div class="lt-transcript-toggle-bar">
+                            <button type="button" class="lt-transcript-toggle-btn" data-lis-transcript-toggle="1">
+                                ${listeningTranscriptShown ? '▲ Hide Audio Transcript' : '▼ View Audio Transcript'}
+                            </button>
+                        </div>
+                        ${listeningTranscriptShown ? `
+                            <div class="lt-transcript-card">
+                                <h5 class="lt-transcript-title">Audio Transcript</h5>
+                                <div class="lt-transcript-dialogue">
+                                    ${(ls.audio && ls.audio.turns ? ls.audio.turns : []).map(t => `
+                                        <div class="lt-turn">
+                                            <span class="lt-turn-speaker">${esc(t.speaker || 'Speaker')}:</span>
+                                            <span class="lt-turn-text">${esc(t.text)}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                    ` : ''}
+
+                    <ol class="lt-questions lt-listening-questions">
+                        ${ls.questions.map((q, i) => listeningQuestionHtml(q, partOffset + i)).join('')}
+                    </ol>
+                    ${ls.source ? `<p class="lt-passage-source">${esc(ls.source)}</p>` : ''}
+                </div>
+            </div>
+        `;
+    }
+
+    function writingSectionHtml(partNum) {
         if (!test.writingTask) return '';
         const t = test.writingTask;
         const wCount = countWords(writingText);
@@ -527,7 +900,7 @@ const LevelTest = (function () {
 
         return `
             <div class="lt-section lt-section-writing">
-                <h3 class="lt-section-title">Part 2: Short Written Production</h3>
+                <h3 class="lt-section-title">Part ${partNum || 3}: Short Written Production</h3>
                 <div class="lt-task-card">
                     <div class="lt-task-head">
                         <h4>${esc(t.title)}</h4>
@@ -556,13 +929,13 @@ const LevelTest = (function () {
         `;
     }
 
-    function speakingSectionHtml() {
+    function speakingSectionHtml(partNum) {
         if (!test.speakingTask) return '';
         const t = test.speakingTask;
 
         return `
             <div class="lt-section lt-section-speaking">
-                <h3 class="lt-section-title">Part 3: Short Spoken Production</h3>
+                <h3 class="lt-section-title">Part ${partNum || 4}: Short Spoken Production</h3>
                 <div class="lt-task-card">
                     <div class="lt-task-head">
                         <h4>${esc(t.title)}</h4>
@@ -623,15 +996,21 @@ const LevelTest = (function () {
                             <span class="lt-breakdown-val">${result.reading.correct} / ${result.reading.total}</span>
                         </div>
                     ` : ''}
+                    ${result.listening ? `
+                        <div class="lt-breakdown-row">
+                            <span class="lt-breakdown-label">Part ${result.reading ? '3' : '2'}: Listening Comprehension</span>
+                            <span class="lt-breakdown-val">${result.listening.correct} / ${result.listening.total}</span>
+                        </div>
+                    ` : ''}
                     ${result.writing ? `
                         <div class="lt-breakdown-row">
-                            <span class="lt-breakdown-label">Part ${result.reading ? '3' : '2'}: Written Production</span>
+                            <span class="lt-breakdown-label">Part ${1 + (result.reading ? 1 : 0) + (result.listening ? 1 : 0) + 1}: Written Production</span>
                             <span class="lt-breakdown-val">${result.writing.score} / ${result.writing.max} (${result.writing.words} words, ${result.writing.matchedKeywords.length} targets)</span>
                         </div>
                     ` : ''}
                     ${result.speaking ? `
                         <div class="lt-breakdown-row">
-                            <span class="lt-breakdown-label">Part ${result.reading && result.writing ? '4' : result.reading ? '3' : '3'}: Spoken Production</span>
+                            <span class="lt-breakdown-label">Part ${1 + (result.reading ? 1 : 0) + (result.listening ? 1 : 0) + (result.writing ? 1 : 0) + 1}: Spoken Production</span>
                             <span class="lt-breakdown-val">${result.speaking.score} / ${result.speaking.max} (${result.speaking.hasAudio ? 'audio recorded' : 'transcript'}, ${result.speaking.matchedKeywords.length} targets)</span>
                         </div>
                     ` : ''}
@@ -648,6 +1027,9 @@ const LevelTest = (function () {
 
         if (!test || test.level !== level) {
             answers = {}; order = {}; readingAnswers = {}; readingOrder = {}; marked = false;
+            listeningAnswers = {}; listeningOrder = {}; listeningPass = 0; listeningPlaying = false;
+            listeningIntermission = false; listeningTranscriptShown = false;
+            stopListeningAudio();
             await load(level);
         }
         if (!test) {
@@ -744,13 +1126,26 @@ const LevelTest = (function () {
             ? test.readingSection.questions.filter(q => readingAnswers[q.id] !== undefined).length
             : 0;
 
+        const listeningTotal = test.listeningSection ? test.listeningSection.questions.length : 0;
+        const listeningAnswered = test.listeningSection
+            ? test.listeningSection.questions.filter(q => listeningAnswers[q.id] !== undefined).length
+            : 0;
+
         const isReady = answered === test.questions.length &&
             readingAnswered === readingTotal &&
+            listeningAnswered === listeningTotal &&
             (!test.writingTask || countWords(writingText) >= 5) &&
             (!test.speakingTask || speakingTranscript.trim().length > 0 || speakingAudioUrl);
 
-        const totalItems = test.questions.length + readingTotal;
-        const totalAnswered = answered + readingAnswered;
+        const totalItems = test.questions.length + readingTotal + listeningTotal;
+        const totalAnswered = answered + readingAnswered + listeningAnswered;
+
+        let partCounter = 1;
+        const part1Num = partCounter++;
+        const readingPartNum = test.readingSection ? partCounter++ : null;
+        const listeningPartNum = test.listeningSection ? partCounter++ : null;
+        const writingPartNum = test.writingTask ? partCounter++ : null;
+        const speakingPartNum = test.speakingTask ? partCounter++ : null;
 
         host.innerHTML = `
             <button class="dk-back" data-close-test="1">← Back to lessons</button>
@@ -763,16 +1158,17 @@ const LevelTest = (function () {
             ${marked ? resultHtml(mark.lastResult) : ''}
             
             <div class="lt-section lt-section-context">
-                <h3 class="lt-section-title">Part 1: Language in Context</h3>
+                <h3 class="lt-section-title">Part ${part1Num}: Language in Context</h3>
                 <ol class="lt-questions">
                     ${test.questions.map(questionHtml).join('')}
                 </ol>
             </div>
 
-            ${readingSectionHtml(test.questions.length)}
+            ${readingSectionHtml(test.questions.length, readingPartNum)}
+            ${listeningSectionHtml(test.questions.length + readingTotal, listeningPartNum)}
 
-            ${writingSectionHtml()}
-            ${speakingSectionHtml()}
+            ${writingSectionHtml(writingPartNum)}
+            ${speakingSectionHtml(speakingPartNum)}
 
             ${marked ? '' : `
                 <div class="lt-actions">
@@ -887,10 +1283,15 @@ const LevelTest = (function () {
                 ? test.readingSection.questions.filter(q => readingAnswers[q.id] !== undefined).length
                 : 0;
             const rTotal = test.readingSection ? test.readingSection.questions.length : 0;
-            const totalA = ansCount + rAnsCount;
-            const totalT = test.questions.length + rTotal;
+            const lAnsCount = test.listeningSection
+                ? test.listeningSection.questions.filter(q => listeningAnswers[q.id] !== undefined).length
+                : 0;
+            const lTotal = test.listeningSection ? test.listeningSection.questions.length : 0;
+            const totalA = ansCount + rAnsCount + lAnsCount;
+            const totalT = test.questions.length + rTotal + lTotal;
             const ready = ansCount === test.questions.length &&
                 rAnsCount === rTotal &&
+                lAnsCount === lTotal &&
                 (!test.writingTask || countWords(writingText) >= 5) &&
                 (!test.speakingTask || speakingTranscript.trim().length > 0 || speakingAudioUrl);
 
@@ -915,9 +1316,38 @@ const LevelTest = (function () {
             };
         });
 
+        // Bind listening option buttons (data-lq / data-lopt)
+        host.querySelectorAll('[data-lq]').forEach(btn => {
+            btn.onclick = function () {
+                if (marked) return;
+                const qId = btn.getAttribute('data-lq');
+                listeningAnswers[qId] = btn.getAttribute('data-lopt');
+                const parent = btn.closest('.lt-options');
+                if (parent) {
+                    parent.querySelectorAll('.lt-opt-btn').forEach(b => b.classList.remove('is-selected'));
+                    btn.classList.add('is-selected');
+                }
+                updateCheckButton();
+            };
+        });
+
+        // Bind listening audio console buttons
+        const consoleEl = host.querySelector('.lt-audio-console');
+        if (consoleEl) bindListeningConsoleButtons(consoleEl);
+
+        // Bind listening transcript toggle button
+        const transcriptToggle = host.querySelector('[data-lis-transcript-toggle]');
+        if (transcriptToggle) {
+            transcriptToggle.onclick = function () {
+                listeningTranscriptShown = !listeningTranscriptShown;
+                render(level);
+            };
+        }
+
         const check = host.querySelector('[data-check]');
         if (check) check.onclick = function () {
             if (isRecording) stopRecording(host);
+            stopListeningAudio();
             mark.lastResult = mark();
             marked = true;
             render(level);
@@ -926,6 +1356,9 @@ const LevelTest = (function () {
         const retake = host.querySelector('[data-retake]');
         if (retake) retake.onclick = function () {
             answers = {}; order = {}; readingAnswers = {}; readingOrder = {}; marked = false;
+            listeningAnswers = {}; listeningOrder = {}; listeningPass = 0; listeningPlaying = false;
+            listeningIntermission = false; listeningTranscriptShown = false;
+            stopListeningAudio();
             writingText = ''; speakingTranscript = ''; speakingAudioUrl = null;
             render(level);
         };
@@ -999,6 +1432,7 @@ const LevelTest = (function () {
     }
 
     function stop() {
+        stopListeningAudio();
         isRecording = false;
         if (mediaRecorder && mediaRecorder.state !== 'inactive') {
             try { mediaRecorder.stop(); } catch (e) {}

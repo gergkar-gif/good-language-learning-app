@@ -382,5 +382,104 @@
         "correct": 2
       }
     ]
+  },
+  "listeningSection": {
+    "id": "ls-a1-es-es",
+    "title": "Comprensión auditiva: En la cafetería",
+    "context": "Vas a escuchar una conversación entre un camarero y una clienta en una cafetería. Escucharás la grabación dos veces.",
+    "previewSeconds": 30,
+    "audio": {
+      "turns": [
+        {
+          "speaker": "Camarero",
+          "gender": "male",
+          "text": "Buenos días. ¿Qué desea tomar?"
+        },
+        {
+          "speaker": "Elena",
+          "gender": "female",
+          "text": "Hola. Para mí un café con leche y una tostada con aceite y tomate, por favor."
+        },
+        {
+          "speaker": "Camarero",
+          "gender": "male",
+          "text": "Muy bien. ¿El café con azúcar o sin azúcar?"
+        },
+        {
+          "speaker": "Elena",
+          "gender": "female",
+          "text": "Con azúcar, gracias. ¿Y cuánto cuesta todo?"
+        },
+        {
+          "speaker": "Camarero",
+          "gender": "male",
+          "text": "Son tres euros con cincuenta céntimos."
+        },
+        {
+          "speaker": "Elena",
+          "gender": "female",
+          "text": "Aquí tiene cuatro euros. Quédese con el cambio."
+        },
+        {
+          "speaker": "Camarero",
+          "gender": "male",
+          "text": "Muchas gracias. Ahora mismo se lo traigo a la mesa tres."
+        }
+      ]
+    },
+    "questions": [
+      {
+        "id": "ls-a1-ee-01",
+        "type": "listening-mc",
+        "question": "¿Qué pide Elena para desayunar?",
+        "options": [
+          "Un café con leche y una tostada",
+          "Un té verde y un cruasán",
+          "Un zumo de naranja y una tostada"
+        ],
+        "correct": 0,
+        "evidence": "Para mí un café con leche y una tostada con aceite y tomate, por favor.",
+        "explanation": "Elena pide directamente un café con leche y una tostada."
+      },
+      {
+        "id": "ls-a1-ee-02",
+        "type": "listening-mc",
+        "question": "¿Cómo prefiere el café Elena?",
+        "options": [
+          "Con azúcar",
+          "Sin azúcar",
+          "Con hielo"
+        ],
+        "correct": 0,
+        "evidence": "Con azúcar, gracias.",
+        "explanation": "Elena contesta 'Con azúcar, gracias' a la pregunta del camarero."
+      },
+      {
+        "id": "ls-a1-ee-03",
+        "type": "listening-mc",
+        "question": "¿Cuánto cuesta el desayuno en total?",
+        "options": [
+          "Tres euros con cincuenta",
+          "Cuatro euros",
+          "Dos euros con cincuenta"
+        ],
+        "correct": 0,
+        "evidence": "Son tres euros con cincuenta céntimos.",
+        "explanation": "El precio total son 3,50 €. Los 4 € es el dinero que entrega Elena."
+      },
+      {
+        "id": "ls-a1-ee-04",
+        "type": "listening-mc",
+        "question": "¿Dónde se sienta Elena?",
+        "options": [
+          "En la mesa tres",
+          "En la mesa cuatro",
+          "En la terraza"
+        ],
+        "correct": 0,
+        "evidence": "Ahora mismo se lo traigo a la mesa tres.",
+        "explanation": "El camarero confirma que le llevará el pedido a la mesa tres."
+      }
+    ]
   }
 }

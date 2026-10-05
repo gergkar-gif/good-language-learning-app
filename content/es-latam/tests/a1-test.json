@@ -382,5 +382,91 @@
         "correct": 1
       }
     ]
+  },
+  "listeningSection": {
+    "id": "ls-a1-panaderia-barrio",
+    "title": "En la panadería del barrio",
+    "context": "Vas a escuchar una conversación entre una clienta (Camila) y el vendedor en una panadería.",
+    "previewSeconds": 30,
+    "audio": {
+      "turns": [
+        {
+          "speaker": "Vendedor",
+          "gender": "male",
+          "text": "¡Buenos días! ¿Qué le puedo ofrecer hoy?"
+        },
+        {
+          "speaker": "Camila",
+          "gender": "female",
+          "text": "Buenos días. Quisiera medio kilo de pan dulce y dos empanadas de queso, por favor."
+        },
+        {
+          "speaker": "Vendedor",
+          "gender": "male",
+          "text": "Con mucho gusto. Las empanadas están recién horneadas. ¿Desea también algo para tomar?"
+        },
+        {
+          "speaker": "Camila",
+          "gender": "female",
+          "text": "Sí, un jugo de naranja natural sin azúcar. ¿Cuánto es en total?"
+        },
+        {
+          "speaker": "Vendedor",
+          "gender": "male",
+          "text": "Son ochenta y cinco pesos en total."
+        },
+        {
+          "speaker": "Camila",
+          "gender": "female",
+          "text": "Aquí tiene cien pesos. ¿Puede darme el cambio?"
+        },
+        {
+          "speaker": "Vendedor",
+          "gender": "male",
+          "text": "Claro que sí, aquí tiene sus quince pesos de cambio y su pedido. ¡Que tenga un lindo día!"
+        }
+      ]
+    },
+    "questions": [
+      {
+        "id": "ls-a1-latam-01",
+        "type": "listening-mc",
+        "question": "¿Qué pide Camila para comer?",
+        "options": [
+          "Medio kilo de pan dulce y dos empanadas de queso",
+          "Un kilo de pan y tres empanadas de carne",
+          "Dos panes y un pastel de chocolate"
+        ],
+        "correct": 0,
+        "evidence": "Quisiera medio kilo de pan dulce y dos empanadas de queso, por favor.",
+        "explanation": "Camila solicita medio kilo de pan dulce y dos empanadas de queso."
+      },
+      {
+        "id": "ls-a1-latam-02",
+        "type": "listening-mc",
+        "question": "¿Cómo prefiere el jugo de naranja?",
+        "options": [
+          "Natural y sin azúcar",
+          "Con hielo y leche",
+          "Embotellado y muy dulce"
+        ],
+        "correct": 0,
+        "evidence": "Sí, un jugo de naranja natural sin azúcar.",
+        "explanation": "Camila indica específicamente que prefiere el jugo natural y sin endulzar."
+      },
+      {
+        "id": "ls-a1-latam-03",
+        "type": "listening-mc",
+        "question": "¿Cuánto recibe Camila de cambio?",
+        "options": [
+          "Quince pesos",
+          "Ochenta y cinco pesos",
+          "Veinticinco pesos"
+        ],
+        "correct": 0,
+        "evidence": "...aquí tiene sus quince pesos de cambio...",
+        "explanation": "La cuenta es de 85 pesos; al pagar con 100 pesos, recibe 15 pesos de cambio."
+      }
+    ]
   }
 }

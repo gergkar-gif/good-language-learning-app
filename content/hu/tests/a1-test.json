@@ -435,5 +435,99 @@
         "correct": 0
       }
     ]
+  },
+  "listeningSection": {
+    "id": "ls-a1-kavezo-budapest",
+    "title": "A kávézóban",
+    "context": "Egy budapesti kávézóban Anna rendel a pincértől.",
+    "previewSeconds": 30,
+    "audio": {
+      "turns": [
+        {
+          "speaker": "Pincér",
+          "gender": "male",
+          "text": "Jó napot kívánok! Mit hozhatok Önnek?"
+        },
+        {
+          "speaker": "Anna",
+          "gender": "female",
+          "text": "Jó napot! Egy kapucsínót és egy szénsavmentes ásványvizet kérek szépen."
+        },
+        {
+          "speaker": "Pincér",
+          "gender": "male",
+          "text": "Rendben van. Cukorral kéri a kávét?"
+        },
+        {
+          "speaker": "Anna",
+          "gender": "female",
+          "text": "Cukor nélkül, köszönöm. És egy szelet túrós rétest is kérek."
+        },
+        {
+          "speaker": "Pincér",
+          "gender": "male",
+          "text": "Összesen kétezer-négyszáz forint lesz. Kártyával vagy készpénzzel fizet?"
+        },
+        {
+          "speaker": "Anna",
+          "gender": "female",
+          "text": "Kártyával fizetek, köszönöm."
+        }
+      ]
+    },
+    "questions": [
+      {
+        "id": "ls-a1-hu-01",
+        "type": "listening-mc",
+        "question": "Mit rendel Anna inni?",
+        "options": [
+          "Egy kapucsínót és szénsavmentes ásványvizet",
+          "Egy fekete teát és almalevet",
+          "Egy forró csokoládét"
+        ],
+        "correct": 0,
+        "evidence": "Egy kapucsínót és egy szénsavmentes ásványvizet kérek szépen.",
+        "explanation": "Anna egyértelműen kapucsínót és szénsavmentes ásványvizet rendel."
+      },
+      {
+        "id": "ls-a1-hu-02",
+        "type": "listening-mc",
+        "question": "Hogyan kéri Anna a kávét?",
+        "options": [
+          "Cukor nélkül",
+          "Két cukorral és tejszínhabbal",
+          "Mézzel és fahéjjal"
+        ],
+        "correct": 0,
+        "evidence": "Cukor nélkül, köszönöm.",
+        "explanation": "Anna kifejezetten úgy válaszol, hogy cukor nélkül kéri a kávéját."
+      },
+      {
+        "id": "ls-a1-hu-03",
+        "type": "listening-mc",
+        "question": "Milyen süteményt választ a vendég?",
+        "options": [
+          "Egy szelet túrós rétest",
+          "Egy almás pitét",
+          "Egy csokoládés tortát"
+        ],
+        "correct": 0,
+        "evidence": "És egy szelet túrós rétest is kérek.",
+        "explanation": "Anna túrós rétest rendel a sütemények közül."
+      },
+      {
+        "id": "ls-a1-hu-04",
+        "type": "listening-mc",
+        "question": "Milyen fizetési módot választ Anna?",
+        "options": [
+          "Bankkártyával fizet",
+          "Készpénzzel fizet",
+          "Utalvánnyal fizet"
+        ],
+        "correct": 0,
+        "evidence": "Kártyával fizetek, köszönöm.",
+        "explanation": "Anna azt válaszolja a pincérnek, hogy kártyával fizet."
+      }
+    ]
   }
 }

@@ -1,0 +1,260 @@
+{
+  "language": "hu",
+  "tasks": [
+    {
+      "id": "ls-hu-a1-kavezo",
+      "level": "A1",
+      "title": "A kávézóban",
+      "topic": "Rendelés és mindennapi helyzetek",
+      "format": "dialogue",
+      "context": "Egy kávézóban Anna rendel a pincértől Budapesten.",
+      "previewSeconds": 30,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Pincér",
+            "gender": "male",
+            "text": "Jó napot kívánok! Mit hozhatok Önnek?",
+            "textEn": "Good day! What can I bring you?"
+          },
+          {
+            "speaker": "Anna",
+            "gender": "female",
+            "text": "Jó napot! Egy kapucsínót és egy szénsavmentes ásványvizet kérek szépen.",
+            "textEn": "Good day! A cappuccino and a still mineral water, please."
+          },
+          {
+            "speaker": "Pincér",
+            "gender": "male",
+            "text": "Rendben van. Cukorral vagy édesítőszerrel kéri a kávét?",
+            "textEn": "All right. Would you like the coffee with sugar or sweetener?"
+          },
+          {
+            "speaker": "Anna",
+            "gender": "female",
+            "text": "Cukor nélkül, köszönöm. És van friss süteményük?",
+            "textEn": "Without sugar, thank you. And do you have fresh pastries?"
+          },
+          {
+            "speaker": "Pincér",
+            "gender": "male",
+            "text": "Igen, a szilvás pite és a túrós rétes ma reggel készült.",
+            "textEn": "Yes, the plum pie and the cottage cheese strudel were made this morning."
+          },
+          {
+            "speaker": "Anna",
+            "gender": "female",
+            "text": "Akkor egy szelet túrós rétest is kérek. Mennyibe kerül összesen?",
+            "textEn": "Then I would also like a slice of cottage cheese strudel. How much is it in total?"
+          },
+          {
+            "speaker": "Pincér",
+            "gender": "male",
+            "text": "Összesen kétezer-négyszáz forint lesz. Kártyával vagy készpénzzel fizet?",
+            "textEn": "It will be two thousand four hundred forints in total. Are you paying by card or cash?"
+          },
+          {
+            "speaker": "Anna",
+            "gender": "female",
+            "text": "Kártyával fizetek, köszönöm.",
+            "textEn": "I will pay by card, thank you."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "type": "listening-mc",
+          "question": "Milyen italt rendel Anna?",
+          "options": [
+            "Kapucsínót és szénsavmentes ásványvizet",
+            "Fekete teát és narancslevet",
+            "Eszpresszót és szénsavas ásványvizet"
+          ],
+          "correct": 0,
+          "evidence": "Egy kapucsínót és egy szénsavmentes ásványvizet kérek szépen.",
+          "explanation": "Anna pontosan egy kapucsínót és szénsavmentes vizet kér a pincértől."
+        },
+        {
+          "id": "q2",
+          "type": "listening-mc",
+          "question": "Hogyan kéri Anna a kávét?",
+          "options": [
+            "Cukor nélkül",
+            "Sok cukorral és tejszínnel",
+            "Édesítőszerrel és mézzel"
+          ],
+          "correct": 0,
+          "evidence": "Cukor nélkül, köszönöm.",
+          "explanation": "Anna egyértelműen jelzi, hogy cukor nélkül kéri a kapucsínót."
+        },
+        {
+          "id": "q3",
+          "type": "listening-mc",
+          "question": "Milyen süteményt választ a vendég?",
+          "options": [
+            "Egy szelet túrós rétest",
+            "Egy szelet szilvás pitét",
+            "Egy csokoládétortát"
+          ],
+          "correct": 0,
+          "evidence": "Akkor egy szelet túrós rétest is kérek.",
+          "explanation": "Anna a túrós rétes mellett dönt a felkínált friss sütemények közül."
+        },
+        {
+          "id": "q4",
+          "type": "listening-mc",
+          "question": "Mivel fizet Anna?",
+          "options": [
+            "Bankkártyával",
+            "Készpénzzel",
+            "Ajándékutalvánnyal"
+          ],
+          "correct": 0,
+          "evidence": "Kártyával fizetek, köszönöm.",
+          "explanation": "Anna a bankkártyás fizetési módot választja."
+        }
+      ]
+    },
+    {
+      "id": "ls-hu-a2-palyaudvar",
+      "level": "A2",
+      "title": "A Nyugati pályaudvaron",
+      "topic": "Közlekedés és tájékozódás",
+      "format": "announcement",
+      "context": "Vasúti tájékoztató hangosbemondó a budapesti Nyugati pályaudvaron.",
+      "previewSeconds": 25,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Hangosbemondó",
+            "gender": "female",
+            "text": "Figyelem! A Debrecenbe közlekedő InterCity vonat tíz perc késéssel indul a hetedik vágányról.",
+            "textEn": "Attention! The InterCity train running to Debrecen will depart with a ten minute delay from track seven."
+          },
+          {
+            "speaker": "Hangosbemondó",
+            "gender": "female",
+            "text": "Kérjük az utasokat, hogy a helyjegyeiket tartsák előkészítve a felszálláshoz.",
+            "textEn": "We request passengers to have their seat reservations ready for boarding."
+          },
+          {
+            "speaker": "Hangosbemondó",
+            "gender": "female",
+            "text": "A vonaton étkezőkocsi nem közlekedik, hideg italok a kalauznál vásárolhatók. Megértésüket köszönjük.",
+            "textEn": "There is no dining car on the train; cold drinks can be purchased from the conductor. Thank you for your understanding."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "type": "listening-mc",
+          "question": "Hová közlekedik a bemondott InterCity vonat?",
+          "options": [
+            "Debrecenbe",
+            "Szegedre",
+            "Pécsre"
+          ],
+          "correct": 0,
+          "evidence": "A Debrecenbe közlekedő InterCity vonat...",
+          "explanation": "A bemondás világosan jelzi, hogy a vonat célállomása Debrecen."
+        },
+        {
+          "id": "q2",
+          "type": "listening-mc",
+          "question": "Hány perc késéssel és melyik vágányról indul a vonat?",
+          "options": [
+            "Tíz perc késéssel a hetedik vágányról",
+            "Húsz perc késéssel az ötödik vágányról",
+            "Pontosan indul a harmadik vágányról"
+          ],
+          "correct": 0,
+          "evidence": "...tíz perc késéssel indul a hetedik vágányról.",
+          "explanation": "A hangosbemondó 10 perces késést és a 7-es vágányt jelöli meg."
+        },
+        {
+          "id": "q3",
+          "type": "true-false-not-stated",
+          "statement": "A vonaton van meleg ételeket felszolgáló étkezőkocsi.",
+          "correct": 1,
+          "evidence": "A vonaton étkezőkocsi nem közlekedik...",
+          "explanation": "Hamis: a hangosbemondó szerint nem közlekedik étkezőkocsi a szerelvényben."
+        }
+      ]
+    },
+    {
+      "id": "ls-hu-b1-balaton",
+      "level": "B1",
+      "title": "Rádióinterjú: Balatoni gasztronómia",
+      "topic": "Hagyomány és modern gasztronómia",
+      "format": "dialogue",
+      "context": "Részlet egy kulturális rádióműsorból egy balatoni étteremtulajdonossal.",
+      "previewSeconds": 35,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Riporter",
+            "gender": "male",
+            "text": "Köszöntöm a hallgatókat! Vendégünk Varga Tamás séf, aki a Balaton északi partján vezet egy családi bisztrót. Tamás, hogyan változott meg a balatoni vendéglátás az utóbbi években?",
+            "textEn": "Welcome listeners! Our guest is chef Tamás Varga, who runs a family bistro on the northern shore of Lake Balaton. Tamás, how has Balaton hospitality changed in recent years?"
+          },
+          {
+            "speaker": "Tamás",
+            "gender": "male",
+            "text": "Üdvözlöm a hallgatókat! A legfontosabb változás, hogy túlléptünk a hagyományos sült hekk és lángos világán. Az emberek ma már keresik a helyi alapanyagokat: a környékbeli sajtokat, a badacsonyi borokat és a friss balatoni halakat.",
+            "textEn": "Welcome listeners! The most important change is that we have moved beyond the traditional fried hake and lángos world. People today look for local ingredients: nearby cheeses, Badacsony wines, and fresh Balaton fish."
+          },
+          {
+            "speaker": "Riporter",
+            "gender": "male",
+            "text": "Sikerül az éttermet egész évben nyitva tartani, vagy még mindig a nyári szezon dominál?",
+            "textEn": "Do you manage to keep the restaurant open all year, or does the summer season still dominate?"
+          },
+          {
+            "speaker": "Tamás",
+            "gender": "male",
+            "text": "Ez volt a legnagyobb kihívás, de az összefogás segített. Létrehoztunk egy téli gasztro-útvonalat más vendéglátókkal, így a kirándulók novembertől márciusig is megtalálják a minőségi konyhát nálunk.",
+            "textEn": "That was our biggest challenge, but cooperation helped. We created a winter gastro-trail with other restaurateurs, so hikers find quality food with us from November to March too."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "type": "listening-mc",
+          "question": "Tamás szerint mi a legfőbb változás a balatoni gasztronómiában?",
+          "options": [
+            "A vendégek a helyi és minőségi alapanyagokat keresik a gyorsételek helyett",
+            "A nemzetközi gyorséttermek vették át a vezető szerepet",
+            "Az árak jelentősen csökkentek az északi parton"
+          ],
+          "correct": 0,
+          "evidence": "Az emberek ma már keresik a helyi alapanyagokat: a környékbeli sajtokat, a badacsonyi borokat...",
+          "explanation": "A séf kiemeli a helyi alapanyagok és a minőség felértékelődését a tipikus strandételekkel szemben."
+        },
+        {
+          "id": "q2",
+          "type": "listening-mc",
+          "question": "Hogyan oldották meg a téli időszak látogatottságát?",
+          "options": [
+            "Közös téli gasztronómiai útvonalat hoztak létre más vendéglátókkal",
+            "Csak hétvégén nyitottak ki és ingyenes szállást kínáltak",
+            "Házhozszállításra álltak át a fővárosba"
+          ],
+          "correct": 0,
+          "evidence": "Létrehoztunk egy téli gasztro-útvonalat más vendéglátókkal...",
+          "explanation": "Együttműködésben téli gasztro-útvonalat alakítottak ki a kirándulók vonzására."
+        },
+        {
+          "id": "q3",
+          "type": "true-false-not-stated",
+          "statement": "Tamás étterme a Balaton déli partján, Siófokon található.",
+          "correct": 1,
+          "evidence": "...aki a Balaton északi partján vezet egy családi bisztrót.",
+          "explanation": "Hamis: a riporter felvezetőjében elhangzik, hogy az északi parton található a bisztró."
+        }
+      ]
+    }
+  ]
+}

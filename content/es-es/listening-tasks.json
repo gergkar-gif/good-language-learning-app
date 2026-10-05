@@ -1,0 +1,491 @@
+{
+  "language": "es",
+  "tasks": [
+    {
+      "id": "ls-es-a1-cafe",
+      "level": "A1",
+      "title": "En la cafetería",
+      "topic": "Pedir comida y bebida",
+      "format": "dialogue",
+      "context": "Vas a escuchar una conversación entre una clienta (Elena) y un camarero en una cafetería en Madrid.",
+      "previewSeconds": 30,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Camarero",
+            "gender": "male",
+            "text": "¡Hola! Buenas tardes. ¿Qué le pongo?",
+            "textEn": "Hello! Good afternoon. What can I get you?"
+          },
+          {
+            "speaker": "Elena",
+            "gender": "female",
+            "text": "Hola. Para mí un café con leche y una tostada con aceite y tomate, por favor.",
+            "textEn": "Hello. For me, a white coffee and toast with olive oil and tomato, please."
+          },
+          {
+            "speaker": "Camarero",
+            "gender": "male",
+            "text": "Muy bien. ¿El café con azúcar o sin azúcar?",
+            "textEn": "Very well. Coffee with sugar or without sugar?"
+          },
+          {
+            "speaker": "Elena",
+            "gender": "female",
+            "text": "Con azúcar, gracias. ¿Y cuánto cuesta todo?",
+            "textEn": "With sugar, thank you. And how much is everything?"
+          },
+          {
+            "speaker": "Camarero",
+            "gender": "male",
+            "text": "Son tres euros con cincuenta céntimos.",
+            "textEn": "It is three euros and fifty cents."
+          },
+          {
+            "speaker": "Elena",
+            "gender": "female",
+            "text": "Aquí tiene cuatro euros. Quédese con el cambio.",
+            "textEn": "Here is four euros. Keep the change."
+          },
+          {
+            "speaker": "Camarero",
+            "gender": "male",
+            "text": "Muchas gracias. Ahora mismo se lo traigo a la mesa tres.",
+            "textEn": "Thank you very much. I will bring it right away to table three."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "type": "listening-mc",
+          "question": "¿Qué pide Elena para desayunar?",
+          "options": [
+            "Un café con leche y una tostada",
+            "Un té verde y un cruasán",
+            "Un zumo de naranja y un bocadillo"
+          ],
+          "correct": 0,
+          "evidence": "Para mí un café con leche y una tostada con aceite y tomate, por favor.",
+          "explanation": "Elena pide directamente un café con leche y una tostada con tomate y aceite."
+        },
+        {
+          "id": "q2",
+          "type": "listening-mc",
+          "question": "¿Cómo prefiere el café Elena?",
+          "options": [
+            "Con azúcar",
+            "Sin azúcar",
+            "Con hielo"
+          ],
+          "correct": 0,
+          "evidence": "Con azúcar, gracias.",
+          "explanation": "Elena contesta afirmativamente cuando el camarero pregunta si desea azúcar."
+        },
+        {
+          "id": "q3",
+          "type": "listening-mc",
+          "question": "¿Cuánto cuesta el desayuno en total?",
+          "options": [
+            "Tres euros con cincuenta",
+            "Cuatro euros",
+            "Dos euros con cincuenta"
+          ],
+          "correct": 0,
+          "evidence": "Son tres euros con cincuenta céntimos.",
+          "explanation": "El camarero confirma que la cuenta total asciende a 3,50 €."
+        },
+        {
+          "id": "q4",
+          "type": "listening-mc",
+          "question": "¿Dónde se sentará la clienta?",
+          "options": [
+            "En la mesa tres",
+            "En la mesa cuatro",
+            "En la barra"
+          ],
+          "correct": 0,
+          "evidence": "Ahora mismo se lo traigo a la mesa tres.",
+          "explanation": "El camarero indica que le servirá el pedido en la mesa número tres."
+        }
+      ]
+    },
+    {
+      "id": "ls-es-a1-atocha",
+      "level": "A1",
+      "title": "Aviso en la estación de tren",
+      "topic": "Transporte y avisos públicos",
+      "format": "announcement",
+      "context": "Vas a escuchar un anuncio por megafonía en la estación de tren de Atocha en Madrid.",
+      "previewSeconds": 25,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Megafonía",
+            "gender": "female",
+            "text": "Atención, señores pasajeros. El tren de alta velocidad con destino a Barcelona saldrá a las diez y cuarto por la vía cinco.",
+            "textEn": "Attention passengers. The high-speed train to Barcelona will depart at quarter past ten from platform five."
+          },
+          {
+            "speaker": "Megafonía",
+            "gender": "female",
+            "text": "Rogamos a los señores pasajeros que tengan preparado su billete y su documento de identidad antes de embarcar.",
+            "textEn": "We kindly ask passengers to have their ticket and identity document ready before boarding."
+          },
+          {
+            "speaker": "Megafonía",
+            "gender": "female",
+            "text": "El tren tiene previsto llegar a la estación de Sants a las doce y cuarenta y cinco. Buen viaje.",
+            "textEn": "The train is scheduled to arrive at Sants station at twelve forty-five. Have a good trip."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "type": "listening-mc",
+          "question": "¿Hacia dónde viaja el tren anunciado?",
+          "options": [
+            "A Barcelona",
+            "A Sevilla",
+            "A Valencia"
+          ],
+          "correct": 0,
+          "evidence": "El tren de alta velocidad con destino a Barcelona...",
+          "explanation": "El anuncio especifica con claridad que el destino del tren es Barcelona."
+        },
+        {
+          "id": "q2",
+          "type": "listening-mc",
+          "question": "¿A qué hora saldrá el tren?",
+          "options": [
+            "A las diez y cuarto (10:15)",
+            "A las diez y media (10:30)",
+            "A las once en punto (11:00)"
+          ],
+          "correct": 0,
+          "evidence": "...saldrá a las diez y cuarto por la vía cinco.",
+          "explanation": "La megafonía indica las 10:15 ('diez y cuarto') como hora de salida."
+        },
+        {
+          "id": "q3",
+          "type": "listening-mc",
+          "question": "¿Por qué vía saldrá el tren?",
+          "options": [
+            "Por la vía cinco",
+            "Por la vía cuatro",
+            "Por la vía ocho"
+          ],
+          "correct": 0,
+          "evidence": "...por la vía cinco.",
+          "explanation": "El tren efectúa su salida desde la vía número cinco."
+        }
+      ]
+    },
+    {
+      "id": "ls-es-a2-planes",
+      "level": "A2",
+      "title": "Planes para el sábado",
+      "topic": "Ocio y vida cotidiana",
+      "format": "dialogue",
+      "context": "Vas a escuchar una conversación entre dos amigos, Marcos y Sofía, decidiendo qué hacer el fin de semana.",
+      "previewSeconds": 30,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Marcos",
+            "gender": "male",
+            "text": "Hola, Sofía. ¿Tienes planes para este sábado? Iba a proponerte ir a ver la nueva exposición de pintura en el centro.",
+            "textEn": "Hi Sofia. Do you have plans for this Saturday? I was going to suggest going to see the new painting exhibition downtown."
+          },
+          {
+            "speaker": "Sofía",
+            "gender": "female",
+            "text": "¡Hola, Marcos! Me parece una idea estupenda, pero por la mañana tengo clase de guitarra hasta la una.",
+            "textEn": "Hi Marcos! That sounds like a wonderful idea, but in the morning I have guitar class until one."
+          },
+          {
+            "speaker": "Marcos",
+            "gender": "male",
+            "text": "No pasa nada. Podemos quedar a comer juntos a las dos en la plaza mayor y entrar al museo sobre las cuatro.",
+            "textEn": "No problem. We can meet for lunch together at two in the main square and enter the museum around four."
+          },
+          {
+            "speaker": "Sofía",
+            "gender": "female",
+            "text": "Perfecto. ¿Compramos las entradas por internet antes para evitar la cola?",
+            "textEn": "Perfect. Shall we buy tickets online beforehand to avoid the line?"
+          },
+          {
+            "speaker": "Marcos",
+            "gender": "male",
+            "text": "Sí, buena idea. Yo las compro esta noche y luego te mando el justificante.",
+            "textEn": "Yes, good idea. I will buy them tonight and send you the confirmation afterwards."
+          },
+          {
+            "speaker": "Sofía",
+            "gender": "female",
+            "text": "Genial, muchas gracias Marcos. ¡Nos vemos el sábado a las dos!",
+            "textEn": "Great, thank you very much Marcos. See you on Saturday at two!"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "type": "listening-mc",
+          "question": "¿Qué actividad propone Marcos inicialmente?",
+          "options": [
+            "Visitar una exposición de pintura",
+            "Ir a un concierto de guitarra",
+            "Hacer una excursión a la montaña"
+          ],
+          "correct": 0,
+          "evidence": "...ir a ver la nueva exposición de pintura en el centro.",
+          "explanation": "Marcos invita a Sofía a ver la nueva exposición de arte en el centro de la ciudad."
+        },
+        {
+          "id": "q2",
+          "type": "listening-mc",
+          "question": "¿Por qué no puede quedar Sofía por la mañana?",
+          "options": [
+            "Tiene clase de guitarra hasta la una",
+            "Tiene que trabajar en la oficina",
+            "Tiene una cita médica"
+          ],
+          "correct": 0,
+          "evidence": "...por la mañana tengo clase de guitarra hasta la una.",
+          "explanation": "Sofía explica que está ocupada con su clase de guitarra hasta las 13:00."
+        },
+        {
+          "id": "q3",
+          "type": "listening-mc",
+          "question": "¿A qué hora y dónde se encontrarán para comer?",
+          "options": [
+            "A las dos en la plaza mayor",
+            "A la una en la cafetería",
+            "A las cuatro en el museo"
+          ],
+          "correct": 0,
+          "evidence": "Podemos quedar a comer juntos a las dos en la plaza mayor...",
+          "explanation": "Acuerdan reunirse a las 14:00 en la plaza mayor para comer juntos."
+        },
+        {
+          "id": "q4",
+          "type": "listening-mc",
+          "question": "¿Quién se encargará de comprar las entradas?",
+          "options": [
+            "Marcos las comprará por internet",
+            "Sofía las comprará en taquilla",
+            "Las comprarán juntos al llegar"
+          ],
+          "correct": 0,
+          "evidence": "Yo las compro esta noche y luego te mando el justificante.",
+          "explanation": "Marcos se ofrece a adquirirlas online esa misma noche."
+        }
+      ]
+    },
+    {
+      "id": "ls-es-a2-farmacia",
+      "level": "A2",
+      "title": "En la farmacia",
+      "topic": "Salud y bienestar",
+      "format": "dialogue",
+      "context": "Vas a escuchar a un cliente pidiendo consejo a una farmacéutica para aliviar un resfriado leve.",
+      "previewSeconds": 30,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Farmacéutica",
+            "gender": "female",
+            "text": "Buenos días, dígame en qué puedo ayudarle.",
+            "textEn": "Good morning, tell me how I can help you."
+          },
+          {
+            "speaker": "Cliente",
+            "gender": "male",
+            "text": "Hola, buenos días. Llevo un par de días con dolor de garganta y congestión nasal. No tengo fiebre, pero me siento bastante cansado.",
+            "textEn": "Hello, good morning. I've had a sore throat and nasal congestion for a couple of days. I don't have a fever, but I feel quite tired."
+          },
+          {
+            "speaker": "Farmacéutica",
+            "gender": "female",
+            "text": "Comprendo. Le puedo dar unas pastillas de própolis para la garganta y este espray nasal con agua marina para despejar la nariz.",
+            "textEn": "I understand. I can give you some propolis throat lozenges and this seawater nasal spray to clear your nose."
+          },
+          {
+            "speaker": "Cliente",
+            "gender": "male",
+            "text": "¿Cómo debo tomar las pastillas?",
+            "textEn": "How should I take the pills?"
+          },
+          {
+            "speaker": "Farmacéutica",
+            "gender": "female",
+            "text": "Disuelva una pastilla en la boca cada seis u ocho horas, después de comer. Y recuerde beber mucho líquido caliente.",
+            "textEn": "Dissolve one lozenge in your mouth every six to eight hours, after meals. And remember to drink plenty of warm liquids."
+          },
+          {
+            "speaker": "Cliente",
+            "gender": "male",
+            "text": "De acuerdo. ¿Tiene también pañuelos de papel?",
+            "textEn": "Understood. Do you also have paper tissues?"
+          },
+          {
+            "speaker": "Farmacéutica",
+            "gender": "female",
+            "text": "Sí, aquí tiene un paquete. En total son nueve euros con veinte.",
+            "textEn": "Yes, here is a pack. Total comes to nine euros and twenty cents."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "type": "listening-mc",
+          "question": "¿Cuáles son los síntomas principales del cliente?",
+          "options": [
+            "Dolor de garganta y congestión nasal",
+            "Fiebre alta y dolor de estómago",
+            "Tos fuerte y mareos constantes"
+          ],
+          "correct": 0,
+          "evidence": "Llevo un par de días con dolor de garganta y congestión nasal.",
+          "explanation": "El cliente menciona explícitamente dolor de garganta y congestión, y aclara que no tiene fiebre."
+        },
+        {
+          "id": "q2",
+          "type": "listening-mc",
+          "question": "¿Con qué frecuencia debe tomar las pastillas?",
+          "options": [
+            "Cada seis u ocho horas",
+            "Una vez al día antes de dormir",
+            "Cada dos horas con agua fría"
+          ],
+          "correct": 0,
+          "evidence": "Disuelva una pastilla en la boca cada seis u ocho horas...",
+          "explanation": "La farmacéutica pauta tomar una pastilla disuelta en la boca cada 6 u 8 horas."
+        },
+        {
+          "id": "q3",
+          "type": "true-false-not-stated",
+          "statement": "El cliente tiene fiebre alta desde hace dos días.",
+          "correct": 1,
+          "evidence": "No tengo fiebre, pero me siento bastante cansado.",
+          "explanation": "Es Falso: el cliente afirma expresamente que no tiene fiebre."
+        },
+        {
+          "id": "q4",
+          "type": "listening-mc",
+          "question": "¿Qué producto adicional añade el cliente a su compra?",
+          "options": [
+            "Un paquete de pañuelos de papel",
+            "Un termómetro digital",
+            "Vitamina C en comprimidos"
+          ],
+          "correct": 0,
+          "evidence": "¿Tiene también pañuelos de papel? Sí, aquí tiene un paquete.",
+          "explanation": "Al final de la consulta, el cliente solicita un paquete de pañuelos desechables."
+        }
+      ]
+    },
+    {
+      "id": "ls-es-b1-radio-turismo",
+      "level": "B1",
+      "title": "Entrevista: Turismo rural en Asturias",
+      "topic": "Sociedad y viajes sostenibles",
+      "format": "dialogue",
+      "context": "Vas a escuchar un fragmento de una entrevista radiofónica con Lucía, propietaria de una casa rural en los Picos de Europa.",
+      "previewSeconds": 35,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Entrevistador",
+            "gender": "male",
+            "text": "Bienvenidos al programa 'Rutas de España'. Hoy conversamos con Lucía Menéndez, quien hace cinco años dejó la gran ciudad para abrir un alojamiento ecológico en una pequeña aldea asturiana. Lucía, ¿qué motiva a los viajeros de hoy a elegir el campo?",
+            "textEn": "Welcome to 'Routes of Spain'. Today we talk with Lucía Menéndez, who left the big city five years ago to open an eco-lodge in a small Asturian village. Lucía, what motivates travelers today to choose the countryside?"
+          },
+          {
+            "speaker": "Lucía",
+            "gender": "female",
+            "text": "Hola, Javier. Sobre todo buscan desconectar del ritmo acelerado de las urbes. Quieren silencio, aire limpio y, sobre todo, autenticidad. No buscan hoteles masificados con lujos artificiales, sino compartir una cena con ingredientes de nuestra propia huerta.",
+            "textEn": "Hello Javier. Above all, they seek to disconnect from the fast pace of cities. They want silence, clean air, and authenticity. They don't look for crowded luxury hotels, but rather sharing dinner with produce from our own garden."
+          },
+          {
+            "speaker": "Entrevistador",
+            "gender": "male",
+            "text": "¿Cómo ha influido la llegada de estos visitantes en la economía local de la comarca?",
+            "textEn": "How has the arrival of these visitors influenced the local economy of the region?"
+          },
+          {
+            "speaker": "Lucía",
+            "gender": "female",
+            "text": "Ha sido muy positivo. Colaboramos estrechamente con artesanos de la zona y con guías de montaña locales. Sin embargo, nuestro mayor reto sigue siendo la estacionalidad: casi todos vienen en julio y agosto, mientras que en invierno el pueblo queda casi vacío.",
+            "textEn": "It has been very positive. We collaborate closely with local artisans and mountain guides. However, our biggest challenge remains seasonality: nearly everyone visits in July and August, while in winter the village remains almost empty."
+          },
+          {
+            "speaker": "Entrevistador",
+            "gender": "male",
+            "text": "¿Y qué iniciativas están desarrollando para atraer visitantes fuera de temporada alta?",
+            "textEn": "And what initiatives are you developing to attract visitors outside peak season?"
+          },
+          {
+            "speaker": "Lucía",
+            "gender": "female",
+            "text": "Estamos promoviendo talleres de fotografía de paisajes otoñales y jornadas micológicas de recogida de setas en noviembre. Quienes vienen en otoño descubren un bosque lleno de magia y colores únicos.",
+            "textEn": "We are promoting autumn landscape photography workshops and mushroom foraging days in November. Those who come in autumn discover a forest full of magic and unique colors."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "type": "listening-mc",
+          "question": "Según Lucía, ¿qué buscan principalmente los viajeros que visitan su alojamiento?",
+          "options": [
+            "Desconectar del estrés urbano y vivir experiencias auténticas",
+            "Servicios de lujo y comodidades de alta tecnología",
+            "Ahorrar dinero respecto a los hoteles convencionales"
+          ],
+          "correct": 0,
+          "evidence": "Sobre todo buscan desconectar del ritmo acelerado de las urbes. Quieren silencio, aire limpio y, sobre todo, autenticidad.",
+          "explanation": "Lucía enfatiza que buscan silencio, aire puro, contacto con la naturaleza y autenticidad sobre el lujo."
+        },
+        {
+          "id": "q2",
+          "type": "listening-mc",
+          "question": "¿Cuál es la principal dificultad económica mencionada por Lucía?",
+          "options": [
+            "La estacionalidad concentrada en los meses de verano",
+            "La falta de productos frescos en la huerta",
+            "Los altos impuestos municipales a las casas rurales"
+          ],
+          "correct": 0,
+          "evidence": "Sin embargo, nuestro mayor reto sigue siendo la estacionalidad: casi todos vienen en julio y agosto...",
+          "explanation": "El reto fundamental es que la afluencia de clientes se concentra en verano y desciende drásticamente en invierno."
+        },
+        {
+          "id": "q3",
+          "type": "listening-mc",
+          "question": "¿Qué actividades organizan para fomentar las visitas en otoño?",
+          "options": [
+            "Talleres de fotografía y recogida de setas",
+            "Cursos de escalada invernal extrema",
+            "Conciertos de música electrónica"
+          ],
+          "correct": 0,
+          "evidence": "Estamos promoviendo talleres de fotografía de paisajes otoñales y jornadas micológicas de recogida de setas en noviembre.",
+          "explanation": "Organizan talleres fotográficos de paisajes y jornadas micológicas durante noviembre."
+        },
+        {
+          "id": "q4",
+          "type": "true-false-not-stated",
+          "statement": "El alojamiento rural colabora con guías de montaña y artesanos de la comarca.",
+          "correct": 0,
+          "evidence": "Colaboramos estrechamente con artesanos de la zona y con guías de montaña locales.",
+          "explanation": "Es Verdadero: Lucía confirma que trabajan en estrecha cooperación con artesanos y guías locales."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+{
+  "language": "es-latam",
+  "tasks": [
+    {
+      "id": "ls-latam-a1-panaderia",
+      "level": "A1",
+      "title": "En la panadería del barrio",
+      "topic": "Compras cotidianas",
+      "format": "dialogue",
+      "context": "Vas a escuchar una conversación entre una clienta (Camila) y el vendedor en una panadería tradicional.",
+      "previewSeconds": 30,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Vendedor",
+            "gender": "male",
+            "text": "¡Buenos días! ¿Qué le puedo ofrecer hoy?",
+            "textEn": "Good morning! What can I offer you today?"
+          },
+          {
+            "speaker": "Camila",
+            "gender": "female",
+            "text": "Buenos días. Quisiera medio kilo de pan dulce y dos empanadas de queso, por favor.",
+            "textEn": "Good morning. I would like half a kilo of sweet bread and two cheese empanadas, please."
+          },
+          {
+            "speaker": "Vendedor",
+            "gender": "male",
+            "text": "Con mucho gusto. Las empanadas están recién horneadas. ¿Desea también algo para tomar?",
+            "textEn": "With pleasure. The empanadas are freshly baked. Would you also like something to drink?"
+          },
+          {
+            "speaker": "Camila",
+            "gender": "female",
+            "text": "Sí, un jugo de naranja natural sin azúcar. ¿Cuánto es en total?",
+            "textEn": "Yes, a fresh orange juice without sugar. How much is the total?"
+          },
+          {
+            "speaker": "Vendedor",
+            "gender": "male",
+            "text": "Son ochenta y cinco pesos en total.",
+            "textEn": "That is eighty-five pesos in total."
+          },
+          {
+            "speaker": "Camila",
+            "gender": "female",
+            "text": "Aquí tiene cien pesos. ¿Puede darme el cambio?",
+            "textEn": "Here is one hundred pesos. Can you give me the change?"
+          },
+          {
+            "speaker": "Vendedor",
+            "gender": "male",
+            "text": "Claro que sí, aquí tiene sus quince pesos de cambio y su pedido. ¡Que tenga un lindo día!",
+            "textEn": "Of course, here is your fifteen pesos change and your order. Have a nice day!"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "type": "listening-mc",
+          "question": "¿Qué productos de comida pide Camila?",
+          "options": [
+            "Medio kilo de pan dulce y dos empanadas de queso",
+            "Un kilo de pan integral y dos medialunas",
+            "Tres empanadas de carne y un café"
+          ],
+          "correct": 0,
+          "evidence": "Quisiera medio kilo de pan dulce y dos empanadas de queso, por favor.",
+          "explanation": "Camila solicita medio kilo de pan dulce y dos empanadas de queso."
+        },
+        {
+          "id": "q2",
+          "type": "listening-mc",
+          "question": "¿Cómo prefiere Camila el jugo de naranja?",
+          "options": [
+            "Natural y sin azúcar",
+            "Con hielo y miel",
+            "Embotellado y frío"
+          ],
+          "correct": 0,
+          "evidence": "Sí, un jugo de naranja natural sin azúcar.",
+          "explanation": "Camila especifica que quiere su jugo natural y sin azúcar añadida."
+        },
+        {
+          "id": "q3",
+          "type": "listening-mc",
+          "question": "¿Cuánto dinero de cambio recibe Camila?",
+          "options": [
+            "Quince pesos",
+            "Veinticinco pesos",
+            "Ochenta y cinco pesos"
+          ],
+          "correct": 0,
+          "evidence": "...aquí tiene sus quince pesos de cambio...",
+          "explanation": "Paga con 100 pesos una cuenta de 85 pesos, por lo que recibe 15 pesos de cambio."
+        }
+      ]
+    },
+    {
+      "id": "ls-latam-a2-cumpleanos",
+      "level": "A2",
+      "title": "Organizando el cumpleaños",
+      "topic": "Celebraciones y reuniones",
+      "format": "dialogue",
+      "context": "Vas a escuchar a Mateo y Valentina coordinando los preparativos para la fiesta sorpresa de su amiga Mariana.",
+      "previewSeconds": 30,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Mateo",
+            "gender": "male",
+            "text": "Hola, Valentina. Ya hablé con el restaurante mexicano. Nos reservaron una mesa grande en la terraza para el viernes a las ocho.",
+            "textEn": "Hi Valentina. I already talked to the Mexican restaurant. They reserved a big table on the terrace for Friday at eight."
+          },
+          {
+            "speaker": "Valentina",
+            "gender": "female",
+            "text": "¡Buenísimo, Mateo! ¿Y cuántas personas confirmaron hasta ahora?",
+            "textEn": "Awesome, Mateo! And how many people have confirmed so far?"
+          },
+          {
+            "speaker": "Mateo",
+            "gender": "male",
+            "text": "Somos diez personas en total. Recuerda que Lucas es vegetariano, así que pedí que incluyan opciones sin carne.",
+            "textEn": "We are ten people in total. Remember that Lucas is vegetarian, so I asked them to include meatless options."
+          },
+          {
+            "speaker": "Valentina",
+            "gender": "female",
+            "text": "Excelente detalle. Yo me encargo de encargar la torta de chocolate en la pastelería central. La paso a buscar a las seis de la tarde.",
+            "textEn": "Great detail. I will take care of ordering the chocolate cake at the central bakery. I'll pick it up at six in the evening."
+          },
+          {
+            "speaker": "Mateo",
+            "gender": "male",
+            "text": "Perfecto. Le dijimos a Mariana que solo saldríamos a tomar un café, así que no sospecha nada.",
+            "textEn": "Perfect. We told Mariana that we would only go out for a coffee, so she doesn't suspect anything."
+          },
+          {
+            "speaker": "Valentina",
+            "gender": "female",
+            "text": "Va a ser una sorpresa increíble. ¡Nos encontramos allá a las siete y media para esperarla!",
+            "textEn": "It's going to be an incredible surprise. Let's meet there at seven thirty to wait for her!"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "type": "listening-mc",
+          "question": "¿Para qué día y hora reservó Mateo la mesa?",
+          "options": [
+            "Para el viernes a las ocho de la noche",
+            "Para el sábado a las nueve de la noche",
+            "Para el domingo a mediodía"
+          ],
+          "correct": 0,
+          "evidence": "...una mesa grande en la terraza para el viernes a las ocho.",
+          "explanation": "Mateo indica que la reserva está hecha para el viernes a las 20:00."
+        },
+        {
+          "id": "q2",
+          "type": "listening-mc",
+          "question": "¿Por qué solicitaron platos sin carne?",
+          "options": [
+            "Porque uno de los invitados (Lucas) es vegetariano",
+            "Porque a Mariana no le gusta la carne",
+            "Porque la comida vegetariana era más económica"
+          ],
+          "correct": 0,
+          "evidence": "Recuerda que Lucas es vegetariano, así que pedí que incluyan opciones sin carne.",
+          "explanation": "Lucas es vegetariano y por ello solicitaron alternativas adecuadas para él."
+        },
+        {
+          "id": "q3",
+          "type": "true-false-not-stated",
+          "statement": "Mariana ya sabe que le están preparando una fiesta sorpresa.",
+          "correct": 1,
+          "evidence": "Le dijimos a Mariana que solo saldríamos a tomar un café, así que no sospecha nada.",
+          "explanation": "Es Falso: Mariana no sospecha nada porque piensa que solo saldrán a tomar un café."
+        },
+        {
+          "id": "q4",
+          "type": "listening-mc",
+          "question": "¿De qué sabor será el pastel o torta que comprará Valentina?",
+          "options": [
+            "De chocolate",
+            "De dulce de leche",
+            "De vainilla y frutilla"
+          ],
+          "correct": 0,
+          "evidence": "Yo me encargo de encargar la torta de chocolate...",
+          "explanation": "Valentina afirma que comprará una torta de chocolate en la pastelería central."
+        }
+      ]
+    },
+    {
+      "id": "ls-latam-b1-conservacion",
+      "level": "B1",
+      "title": "Podcast: Conservación y comunidades",
+      "topic": "Medio ambiente y desarrollo",
+      "format": "dialogue",
+      "context": "Vas a escuchar un fragmento de un podcast ambiental sobre proyectos de reforestación comunitaria.",
+      "previewSeconds": 35,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Conductor",
+            "gender": "male",
+            "text": "Bienvenidos a 'Planeta Vivo'. Hoy nos acompaña la bióloga colombiana Andrea Ramírez, directora de una iniciativa comunitaria de protección de cuencas de agua. Andrea, ¿cuál es el pilar fundamental de su proyecto?",
+            "textEn": "Welcome to 'Living Planet'. Today we are joined by Colombian biologist Andrea Ramírez, director of a community watershed protection initiative. Andrea, what is the core foundation of your project?"
+          },
+          {
+            "speaker": "Andrea",
+            "gender": "female",
+            "text": "Hola, Camilo. Durante años, muchas iniciativas fracasaron porque se diseñaban en oficinas lejanas sin consultar a quienes habitan el territorio. Nuestro pilar es la gobernanza comunitaria: las familias campesinas son las líderes y protectoras del bosque nativo.",
+            "textEn": "Hello Camilo. For years, many initiatives failed because they were designed in distant offices without consulting those living in the territory. Our pillar is community governance: peasant families are the leaders and protectors of the native forest."
+          },
+          {
+            "speaker": "Conductor",
+            "gender": "male",
+            "text": "¿Y cómo logran armonizar la conservación ecológica con las necesidades económicas cotidianas de los agricultores?",
+            "textEn": "And how do you manage to balance ecological conservation with the daily economic needs of farmers?"
+          },
+          {
+            "speaker": "Andrea",
+            "gender": "female",
+            "text": "Implementamos sistemas agroforestales. En lugar de talar bosque para sembrar monocultivos, los agricultores cultivan café y cacao bajo la sombra de árboles nativos. Así obtienen cosechas de altísima calidad con precios justos y protegen el suelo.",
+            "textEn": "We implement agroforestry systems. Instead of clearing forest for monocultures, farmers grow coffee and cocoa under the canopy of native trees. Thus they obtain high quality crops with fair prices and protect the soil."
+          },
+          {
+            "speaker": "Conductor",
+            "gender": "male",
+            "text": "¿Qué resultados han medido en la calidad del agua de los ríos locales?",
+            "textEn": "What results have you measured in the water quality of local rivers?"
+          },
+          {
+            "speaker": "Andrea",
+            "gender": "female",
+            "text": "En los últimos tres años, la turbidez del agua se redujo en un cuarenta por ciento, y varias especies de aves migratorias han regresado a anidar en los corredores biológicos.",
+            "textEn": "In the last three years, water turbidity decreased by forty percent, and several species of migratory birds have returned to nest in the biological corridors."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "type": "listening-mc",
+          "question": "¿Por qué fracasaban proyectos ambientales anteriores según Andrea?",
+          "options": [
+            "Porque se creaban desde oficinas sin involucrar a las comunidades locales",
+            "Porque no contaban con fondos de organizaciones internacionales",
+            "Porque los agricultores no tenían interés en proteger la naturaleza"
+          ],
+          "correct": 0,
+          "evidence": "...fracasaron porque se diseñaban en oficinas lejanas sin consultar a quienes habitan el territorio.",
+          "explanation": "Andrea destaca que los proyectos pasados ignoraban a los campesinos y sus realidades territoriales."
+        },
+        {
+          "id": "q2",
+          "type": "listening-mc",
+          "question": "¿En qué consiste el sistema agroforestal que aplican?",
+          "options": [
+            "Cultivar café y cacao bajo la sombra de árboles nativos",
+            "Construir grandes invernaderos hidropónicos",
+            "Sustituir los cultivos tradicionales por plantas medicinales únicamente"
+          ],
+          "correct": 0,
+          "evidence": "...los agricultores cultivan café y cacao bajo la sombra de árboles nativos.",
+          "explanation": "El sistema combina la siembra de café y cacao integrados con el dosel de los árboles nativos."
+        },
+        {
+          "id": "q3",
+          "type": "true-false-not-stated",
+          "statement": "La turbidez del agua de los ríos disminuyó un cuarenta por ciento en tres años.",
+          "correct": 0,
+          "evidence": "En los últimos tres años, la turbidez del agua se redujo en un cuarenta por ciento...",
+          "explanation": "Es Verdadero: Andrea cita una reducción del 40% en la turbidez del agua como resultado directo."
+        },
+        {
+          "id": "q4",
+          "type": "listening-mc",
+          "question": "¿Qué otro impacto biológico positivo destaca la científica?",
+          "options": [
+            "El regreso de aves migratorias que vuelven a anidar",
+            "La aparición de nuevas especies de insectos marinos",
+            "El aumento del caudal del río durante la sequía"
+          ],
+          "correct": 0,
+          "evidence": "...varias especies de aves migratorias han regresado a anidar en los corredores biológicos.",
+          "explanation": "Se constató el retorno y nidificación de diversas especies de aves migratorias."
+        }
+      ]
+    }
+  ]
+}

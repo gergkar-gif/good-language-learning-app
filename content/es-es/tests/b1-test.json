@@ -486,5 +486,94 @@
         "correct": 0
       }
     ]
+  },
+  "listeningSection": {
+    "id": "ls-b1-radio-turismo-rural",
+    "title": "Entrevista: Turismo rural en Asturias",
+    "context": "Vas a escuchar un fragmento de una entrevista radiofónica sobre turismo rural sostenible en Asturias.",
+    "previewSeconds": 35,
+    "audio": {
+      "turns": [
+        {
+          "speaker": "Entrevistador",
+          "gender": "male",
+          "text": "Bienvenidos a 'Rutas de España'. Hoy conversamos con Lucía Menéndez, quien hace cinco años abrió un alojamiento ecológico en una aldea asturiana. Lucía, ¿qué motiva a los viajeros de hoy a elegir el campo?"
+        },
+        {
+          "speaker": "Lucía",
+          "gender": "female",
+          "text": "Hola, Javier. Sobre todo buscan desconectar del ritmo acelerado de las urbes. Quieren silencio, aire limpio y autenticidad. No buscan hoteles masificados, sino compartir una cena con ingredientes de nuestra propia huerta."
+        },
+        {
+          "speaker": "Entrevistador",
+          "gender": "male",
+          "text": "¿Cómo ha influido la llegada de estos visitantes en la economía local de la comarca?"
+        },
+        {
+          "speaker": "Lucía",
+          "gender": "female",
+          "text": "Ha sido muy positivo. Colaboramos estrechamente con artesanos de la zona y con guías de montaña locales. Sin embargo, nuestro mayor reto sigue siendo la estacionalidad: casi todos vienen en julio y agosto, mientras que en invierno el pueblo queda casi vacío."
+        },
+        {
+          "speaker": "Entrevistador",
+          "gender": "male",
+          "text": "¿Y qué iniciativas están desarrollando para atraer visitantes fuera de temporada alta?"
+        },
+        {
+          "speaker": "Lucía",
+          "gender": "female",
+          "text": "Estamos promoviendo talleres de fotografía de paisajes otoñales y jornadas micológicas de recogida de setas en noviembre. Quienes vienen en otoño descubren un bosque lleno de magia y colores únicos."
+        }
+      ]
+    },
+    "questions": [
+      {
+        "id": "ls-b1-ee-01",
+        "type": "listening-mc",
+        "question": "Según Lucía, ¿qué buscan principalmente los viajeros que eligen su casa rural?",
+        "options": [
+          "Desconectar del estrés urbano y vivir experiencias auténticas",
+          "Servicios de lujo y tecnología punta",
+          "Ahorrar dinero respecto a los hoteles de playa"
+        ],
+        "correct": 0,
+        "evidence": "Sobre todo buscan desconectar del ritmo acelerado de las urbes. Quieren silencio, aire limpio y autenticidad.",
+        "explanation": "Lucía subraya la búsqueda de tranquilidad, contacto natural y autenticidad sobre el lujo."
+      },
+      {
+        "id": "ls-b1-ee-02",
+        "type": "listening-mc",
+        "question": "¿Cuál es la principal dificultad económica mencionada por Lucía?",
+        "options": [
+          "La estacionalidad concentrada en los meses de verano",
+          "La escasez de alimentos en la huerta local",
+          "Los costes elevados de transporte hacia la aldea"
+        ],
+        "correct": 0,
+        "evidence": "Sin embargo, nuestro mayor reto sigue siendo la estacionalidad: casi todos vienen en julio y agosto...",
+        "explanation": "El desafío primordial radica en que la actividad decae fuertemente fuera del periodo estival."
+      },
+      {
+        "id": "ls-b1-ee-03",
+        "type": "listening-mc",
+        "question": "¿Qué actividades promueven para atraer visitantes en otoño?",
+        "options": [
+          "Talleres de fotografía y jornadas micológicas",
+          "Competiciones deportivas de alta montaña",
+          "Festivales de música tradicional"
+        ],
+        "correct": 0,
+        "evidence": "Estamos promoviendo talleres de fotografía de paisajes otoñales y jornadas micológicas de recogida de setas en noviembre.",
+        "explanation": "Desarrollan cursos de fotografía otoñal y recogida guiada de setas en noviembre."
+      },
+      {
+        "id": "ls-b1-ee-04",
+        "type": "true-false-not-stated",
+        "statement": "El alojamiento rural colabora con guías de montaña y artesanos locales.",
+        "correct": 0,
+        "evidence": "Colaboramos estrechamente con artesanos de la zona y con guías de montaña locales.",
+        "explanation": "Es Verdadero: Lucía confirma la cooperación activa con artesanos y guías de la zona."
+      }
+    ]
   }
 }

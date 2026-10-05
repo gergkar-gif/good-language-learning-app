@@ -424,5 +424,99 @@
         "correct": 0
       }
     ]
+  },
+  "listeningSection": {
+    "id": "ls-a2-planes-fin-de-semana",
+    "title": "Planes para el sábado",
+    "context": "Vas a escuchar una conversación entre dos amigos, Marcos y Sofía, sobre qué hacer el sábado.",
+    "previewSeconds": 30,
+    "audio": {
+      "turns": [
+        {
+          "speaker": "Marcos",
+          "gender": "male",
+          "text": "Hola, Sofía. ¿Tienes planes para este sábado? Iba a proponerte ir a ver la nueva exposición de pintura en el centro."
+        },
+        {
+          "speaker": "Sofía",
+          "gender": "female",
+          "text": "¡Hola, Marcos! Me parece una idea estupenda, pero por la mañana tengo clase de guitarra hasta la una."
+        },
+        {
+          "speaker": "Marcos",
+          "gender": "male",
+          "text": "No pasa nada. Podemos quedar a comer juntos a las dos en la plaza mayor y entrar al museo sobre las cuatro."
+        },
+        {
+          "speaker": "Sofía",
+          "gender": "female",
+          "text": "Perfecto. ¿Compramos las entradas por internet antes para evitar la cola?"
+        },
+        {
+          "speaker": "Marcos",
+          "gender": "male",
+          "text": "Sí, buena idea. Yo las compro esta noche y luego te mando el justificante."
+        },
+        {
+          "speaker": "Sofía",
+          "gender": "female",
+          "text": "Genial, muchas gracias Marcos. ¡Nos vemos el sábado a las dos!"
+        }
+      ]
+    },
+    "questions": [
+      {
+        "id": "ls-a2-ee-01",
+        "type": "listening-mc",
+        "question": "¿Qué actividad propone Marcos inicialmente?",
+        "options": [
+          "Visitar una exposición de pintura",
+          "Ir a un concierto de guitarra",
+          "Hacer una excursión al campo"
+        ],
+        "correct": 0,
+        "evidence": "Iba a proponerte ir a ver la nueva exposición de pintura en el centro.",
+        "explanation": "Marcos propone acudir a una exposición de pintura que acaban de inaugurar en el centro."
+      },
+      {
+        "id": "ls-a2-ee-02",
+        "type": "listening-mc",
+        "question": "¿Por qué no puede Sofía quedar por la mañana?",
+        "options": [
+          "Tiene clase de guitarra hasta la una",
+          "Tiene que trabajar en la tienda",
+          "Tiene una visita médica"
+        ],
+        "correct": 0,
+        "evidence": "...por la mañana tengo clase de guitarra hasta la una.",
+        "explanation": "Sofía tiene clase de guitarra hasta las 13:00."
+      },
+      {
+        "id": "ls-a2-ee-03",
+        "type": "listening-mc",
+        "question": "¿A qué hora y dónde se encontrarán para comer?",
+        "options": [
+          "A las dos en la plaza mayor",
+          "A la una en la cafetería",
+          "A las cuatro en el museo"
+        ],
+        "correct": 0,
+        "evidence": "Podemos quedar a comer juntos a las dos en la plaza mayor...",
+        "explanation": "Acuerdan reunirse a las 14:00 en la plaza mayor para almorzar."
+      },
+      {
+        "id": "ls-a2-ee-04",
+        "type": "listening-mc",
+        "question": "¿Quién comprará las entradas para el museo?",
+        "options": [
+          "Marcos por internet",
+          "Sofía en la taquilla",
+          "Las comprarán juntos al entrar"
+        ],
+        "correct": 0,
+        "evidence": "Yo las compro esta noche y luego te mando el justificante.",
+        "explanation": "Marcos se ofrece a comprarlas por internet esa noche."
+      }
+    ]
   }
 }

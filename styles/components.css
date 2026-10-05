@@ -5373,6 +5373,138 @@
 .lt-breakdown-label { color: var(--text); }
 .lt-breakdown-val { font-weight: 600; color: var(--primary); font-variant-numeric: tabular-nums; }
 
+/* ---- Level Test: Listening Section ---- */
+.lt-section-listening .lt-task-card {
+  border-left: 3px solid var(--primary);
+}
+.lt-audio-console {
+  background: var(--wash);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin: 12px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lt-audio-console-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.lt-audio-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+.lt-audio-status-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.lt-audio-status-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+.lt-audio-status-detail {
+  font-size: 12px;
+  color: var(--muted);
+}
+.lt-audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.lt-audio-btn {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.lt-audio-btn-stop {
+  background: var(--surface);
+  border: 1px solid var(--accent-dark, #dc4e2e);
+  color: var(--accent-dark, #dc4e2e);
+}
+.lt-audio-btn-sm {
+  font: inherit;
+  font-size: 12px;
+  padding: 5px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.lt-audio-badge-done {
+  font-size: 12px;
+  color: var(--success, #2e7d32);
+  font-weight: 600;
+  background: rgba(46, 125, 50, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.lt-transcript-toggle-bar {
+  margin: 10px 0;
+}
+.lt-transcript-toggle-btn {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--primary);
+  background: none;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.lt-transcript-card {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin: 10px 0 16px;
+}
+.lt-transcript-title {
+  margin: 0 0 8px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.lt-transcript-dialogue {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.lt-turn-speaker {
+  font-weight: 600;
+  color: var(--primary);
+  margin-right: 6px;
+}
+.lt-evidence-box {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(46, 125, 50, 0.08);
+  border-left: 3px solid var(--success, #2e7d32);
+  border-radius: 0 4px 4px 0;
+  font-size: 13px;
+}
+.lt-evidence-quote {
+  margin: 0 0 4px;
+  color: var(--text);
+}
+.lt-evidence-expl {
+  margin: 0;
+  color: var(--muted);
+}
+
 
 /* ============================================
    HOME

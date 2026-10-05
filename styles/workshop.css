@@ -4599,3 +4599,227 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 }
 /* The paragraph being read aloud gets a lighter wash than the player, so the two never merge. */
 .story-paragraph.is-narrating, [data-theme="dark"] .story-paragraph.is-narrating { background: color-mix(in srgb, var(--wash) 45%, transparent); }
+
+
+/* ============================================
+   LISTENING STUDIO & CEFR PASSAGE COMPREHENSION
+   ============================================ */
+.ls-task-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-standard), box-shadow var(--dur-fast) var(--ease-standard);
+}
+.ls-task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.ls-task-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-light, rgba(0,0,0,0.06));
+}
+.ls-format-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  background: var(--wash);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.ls-task-arrow {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.ls-exam-protocol-banner {
+  background: var(--wash);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 14px 16px;
+  margin: 16px 0 20px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text);
+}
+.ls-protocol-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.ls-preview-questions-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin: 16px 0;
+}
+.ls-preview-header {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.ls-preview-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ls-preview-q-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-light, rgba(0,0,0,0.05));
+}
+.ls-preview-q-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.ls-preview-num {
+  font-weight: 700;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+.ls-q-title {
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.ls-preview-options-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+.ls-preview-opt-chip {
+  font-size: 12px;
+  background: var(--wash);
+  color: var(--text-muted, var(--muted));
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.ls-session-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.ls-session-badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--wash);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.ls-results-banner {
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  margin: 16px 0 20px;
+  text-align: center;
+}
+.ls-banner-pass {
+  background: rgba(46, 125, 50, 0.08);
+  border: 1px solid rgba(46, 125, 50, 0.25);
+}
+.ls-banner-retry {
+  background: rgba(220, 78, 46, 0.08);
+  border: 1px solid rgba(220, 78, 46, 0.25);
+}
+.ls-results-score {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text);
+}
+.ls-results-pct {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 4px 0 8px;
+}
+.ls-results-desc {
+  font-size: 14px;
+  color: var(--text);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.ls-review-section {
+  margin-top: 24px;
+}
+.ls-review-header {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.lt-card-correct {
+  border-left: 3px solid var(--success, #2e7d32);
+}
+.lt-card-wrong {
+  border-left: 3px solid var(--accent-dark, #dc4e2e);
+}
+.lt-review-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.lt-badge-correct {
+  color: var(--success, #2e7d32);
+  background: rgba(46, 125, 50, 0.1);
+}
+.lt-badge-wrong {
+  color: var(--accent-dark, #dc4e2e);
+  background: rgba(220, 78, 46, 0.1);
+}
+.lt-review-answers-box {
+  background: var(--wash);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+.lt-ans-row {
+  display: flex;
+  gap: 8px;
+}
+.lt-ans-lbl {
+  color: var(--muted);
+  min-width: 100px;
+}
+.lt-ans-val {
+  font-weight: 600;
+}
+.lt-ans-correct {
+  color: var(--success, #2e7d32);
+}
+.lt-ans-wrong {
+  color: var(--accent-dark, #dc4e2e);
+}
