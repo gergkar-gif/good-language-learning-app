@@ -31,6 +31,10 @@
       "teaches": [
         "lak-lek-suffix"
       ],
+      "distractor_skills": {
+        "1": "definite-vs-indefinite-conjugation",
+        "2": "definite-vs-indefinite-conjugation"
+      },
       "stage": "introduce"
     },
     {
@@ -50,7 +54,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "Olyan régen találkoztunk, gyere ide, ____ (I hug you)!",
-      "answer": "megölellek",
+      "answers": [
+        "megölellek",
+        "átölellek"
+      ],
       "english": "We met so long ago, come here, I give you a hug!",
       "teaches": [
         "lak-lek-suffix"
@@ -98,6 +105,10 @@
       "teaches": [
         "lak-lek-suffix"
       ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "present-tense-routine-language"
+      },
       "stage": "controlled"
     },
     {
@@ -187,9 +198,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "lak-lek-suffix",
-        "a2-lak-lek-suffix-vocab"
+        "lak-lek-suffix"
       ],
+      "distractor_skills": {
+        "1": "definite-vs-indefinite-conjugation",
+        "2": "present-tense-routine-language"
+      },
       "stage": "dialogue"
     },
     {
@@ -213,17 +227,23 @@
       ],
       "correct": 0,
       "teaches": [
-        "lak-lek-suffix",
-        "a2-lak-lek-suffix-vocab"
+        "lak-lek-suffix"
       ],
+      "distractor_skills": {
+        "1": "definite-vs-indefinite-conjugation",
+        "2": "present-tense-routine-language"
+      },
       "stage": "dialogue"
     },
     {
       "id": "a2-190-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "Kedves barátom, a pályaudvar kijáratánál ____ (I will wait for you), ne siess.",
-      "answer": "megvárlak",
+      "answers": [
+        "megvárlak",
+        "várlak"
+      ],
       "english": "Dear friend, I will wait for you at the station exit, don't hurry.",
       "teaches": [
         "lak-lek-suffix"
@@ -233,7 +253,7 @@
     {
       "id": "a2-190-writing-2",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "Amint",
         "megérkezel",
@@ -270,13 +290,17 @@
       "teaches": [
         "lak-lek-suffix"
       ],
+      "distractor_skills": {
+        "1": "definite-vs-indefinite-conjugation",
+        "2": "present-tense-routine-language"
+      },
       "stage": "check"
     },
     {
       "id": "a2-190-check-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Itt integetek a vonat mellett, nem ____ (don't you see me: látsz)? Én már tisztán ____ (I see you)!",
+      "sentence": "Itt integetek a vonat mellett, nem látsz? Én már tisztán ____ (I see you)!",
       "answer": "látlak",
       "english": "I'm waving here next to the train, don't you see me? I already see you clearly!",
       "teaches": [

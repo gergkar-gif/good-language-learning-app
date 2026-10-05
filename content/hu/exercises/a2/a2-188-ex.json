@@ -13,7 +13,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "lak-lek-suffix"
+        "prefix-word-order"
       ],
       "stage": "introduce"
     },
@@ -31,6 +31,10 @@
       "teaches": [
         "lak-lek-suffix"
       ],
+      "distractor_skills": {
+        "1": "definite-vs-indefinite-conjugation",
+        "2": "present-tense-routine-language"
+      },
       "stage": "introduce"
     },
     {
@@ -92,12 +96,16 @@
       "options": [
         "Nem értelek.",
         "Nem értek.",
-        "Nem értem téged."
+        "Nem érted."
       ],
       "correct": 0,
       "teaches": [
         "lak-lek-suffix"
       ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "definite-vs-indefinite-conjugation"
+      },
       "stage": "controlled"
     },
     {
@@ -185,9 +193,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "lak-lek-suffix",
-        "a2-lak-lek-suffix-vocab"
+        "lak-lek-suffix"
       ],
+      "distractor_skills": {
+        "1": "definite-vs-indefinite-conjugation",
+        "2": "present-tense-routine-language"
+      },
       "stage": "dialogue"
     },
     {
@@ -211,15 +222,18 @@
       ],
       "correct": 1,
       "teaches": [
-        "lak-lek-suffix",
-        "a2-lak-lek-suffix-vocab"
+        "present-tense-routine-language"
       ],
+      "distractor_skills": {
+        "0": "lak-lek-suffix",
+        "2": "definite-vs-indefinite-conjugation"
+      },
       "stage": "dialogue"
     },
     {
       "id": "a2-188-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "Amint megérkezik a vonatom, azonnal ____ (I will call you) telefonon.",
       "answer": "felhívlak",
       "english": "As soon as my train arrives, I will call you immediately on the phone.",
@@ -231,7 +245,7 @@
     {
       "id": "a2-188-writing-2",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "A",
         "bejáratnál",
@@ -250,7 +264,7 @@
       ],
       "english": "At the entrance, it is here that I will wait for you.",
       "teaches": [
-        "lak-lek-suffix"
+        "prefix-word-order"
       ],
       "stage": "production"
     },
@@ -266,7 +280,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "lak-lek-suffix"
+        "prefix-word-order"
       ],
       "stage": "check"
     },
