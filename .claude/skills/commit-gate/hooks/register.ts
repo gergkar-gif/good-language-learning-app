@@ -12,6 +12,25 @@ const RULES = /^content\/[^/]+\/schemas\/(?!README\.md$)|^scripts\/(validate-con
 // ... and the guides that describe it to whoever writes content next.
 const GUIDES = /^(AGENTS|CLAUDE)\.md$|^content\/[^/]+\/guides\/|^content\/hu\/HU_Content_Authoring_Template\.md$|^content\/[^/]+\/schemas\/README\.md$/
 
+// Git commands that change the index, HEAD or working files. In the main
+// checkout these touch Antigravity's uncommitted work too (it stashed,
+// rebased and deleted ours on 2026-10-01 and 2026-10-03), so Claude does them
+// in its own worktree instead. Read-only commands, fetch and push stay allowed.
+const TREE_WRITE =
+  /\bgit\b(?:\s+-[Cc]\s+(?:"[^"]*"|'[^']*'|\S+))*\s+(commit|add|stash|reset|rebase|pull|merge|checkout|switch|restore|clean|cherry-pick|revert|am|rm|mv)\b(?!-)/
+const CLAUDE_WORKTREE = 'C:/dev/parlour-claude'
+
+// The directory a command's git runs in: a `git -C <dir>`, else the last
+// `cd <dir>` before it, else the session's cwd (undefined).
+function gitDir(command: string): string | undefined {
+  const at = TREE_WRITE.exec(command)?.index ?? command.search(/\bgit\b/)
+  const unquote = (s: string) => s.replace(/^["']|["']$/g, '')
+  const c = /\bgit\s+-C\s+("[^"]*"|'[^']*'|\S+)/.exec(command.slice(at))
+  if (c) return unquote(c[1])
+  const cds = [...command.slice(0, Math.max(at, 0)).matchAll(/(?:^|[;&|(]\s*)cd\s+("[^"]*"|'[^']*'|[^\s;&|]+)/g)]
+  return cds.length ? unquote(cds[cds.length - 1][1]) : undefined
+}
+
 // What `git add ...` / `commit -a` in the command will stage, from git status.
 async function toBeStaged(command: string, git: (...args: string[]) => Promise<string>) {
   const status = (await git('status', '--porcelain', '--untracked-files=all'))
@@ -35,9 +54,25 @@ async function toBeStaged(command: string, git: (...args: string[]) => Promise<s
 
 export const register: Register = on => {
   on('tool.call', { tool: 'Bash' }, async ($, e, next) => {
+    if (!TREE_WRITE.test(e.command)) return next(e)
+
+    const dir = gitDir(e.command)
+    const git = (...args: string[]) =>
+      $.process.run(['git', ...(dir ? ['-C', dir] : []), ...args]).then(r => r.stdout, () => '')
+
+    const [gitDirPath, commonDir] = (await git('rev-parse', '--path-format=absolute', '--git-dir', '--git-common-dir'))
+      .trim()
+      .split('\n')
+    if (gitDirPath && gitDirPath === commonDir && !e.command.includes('[shared-ok]')) {
+      const isOurs = await $.fs.stat(`${gitDirPath}/../scripts/validate-content.py`).then(() => true, () => false)
+      if (isOurs)
+        return {
+          deny: `commit-gate: this is the main checkout, which Antigravity shares. Git commands that change files or the index here can sweep up or wipe its uncommitted work. Do it in your own worktree: cd ${CLAUDE_WORKTREE} (commit there, then \`git pull --rebase origin master\` and \`git push origin HEAD:master\`). Put [shared-ok] in the command only if the user asked for this in the main checkout.`,
+        }
+    }
+
     if (!COMMIT.test(e.command)) return next(e)
 
-    const git = (...args: string[]) => $.process.run(['git', ...args]).then(r => r.stdout, () => '')
     const root = (await git('rev-parse', '--show-toplevel')).trim()
     const isRepo = root && (await $.fs.stat(`${root}/scripts/validate-content.py`).then(() => true, () => false))
     if (!isRepo) return next(e)
