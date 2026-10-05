@@ -13,7 +13,16 @@ given different tags, `distractor_skills` on a question about suffix names,
 an Igen/Nem contradiction not tagged `yes-no-questions`,
 `ik-verbs-dolgozom-not-dolgozok` on an answer that isn't a 1st-person -m form,
 the answer printed in the prompt, and a fill-blank hint that names no person
-for a person- or possessor-marked answer.
+for a person- or possessor-marked answer (the Hungarian-only checks, Igen/Nem,
+-ik verbs and person endings, run for `hu` only).
+
+Spanish (es-es / es-latam share skills/es.json and exercise ids): the same
+decisions file covers both courses. It is an error if the two courses' units
+hold different exercise ids, and a warning for each exercise whose content
+differs between them (so the reviewer checks the tag fits both). "Taught later"
+compares table positions (unit order, then lesson order), not lesson numbers,
+because Spanish stems like `a1-directions-01` carry no number. A vocabulary tag
+that belongs to another unit warns.
 """
 import json
 import re
@@ -52,9 +61,22 @@ def prompt_text(e):
     return e.get("sentence") or e.get("question") or ""
 
 
-def lesson_no(ref):
-    m = re.match(r"[a-z]\d-(\d+)", ref or "")
-    return int(m.group(1)) if m else None
+def positions(course, level):
+    """stem -> index in table order; grammar screen id -> stem that references it."""
+    order, screen = {}, {}
+    for u in load(course / "curriculum" / "units" / f"{level}.json"):
+        for stem in u["stems"]:
+            order[stem] = len(order)
+            lp = course / "lessons" / level / f"{stem}.json"
+            if lp.exists():
+                for sec in load(lp).get("sections", []):
+                    if sec.get("type") == "grammar" and sec.get("ref"):
+                        screen.setdefault(Path(sec["ref"]).stem, stem)
+    return order, screen
+
+
+def other_course(lang):
+    return {"es-es": "es-latam", "es-latam": "es-es"}.get(lang)
 
 
 def main():
@@ -65,6 +87,15 @@ def main():
     dec = load(dec_path)
     errors, warns = [], []
     seen, by_content = set(), defaultdict(set)
+    order, screen = positions(course, level)
+    oc = other_course(lang)
+    other = {}
+    if oc:
+        for stem in unit["stems"]:
+            op = ROOT / "content" / oc / "exercises" / level / f"{stem}-ex.json"
+            if op.exists():
+                for e in load(op)["exercises"]:
+                    other[e["id"]] = e
     for stem in unit["stems"]:
         ep = course / "exercises" / level / f"{stem}-ex.json"
         if not ep.exists():
@@ -72,6 +103,12 @@ def main():
         for e in load(ep)["exercises"]:
             eid = e["id"]
             seen.add(eid)
+            if oc:
+                o = other.get(eid)
+                if o is None:
+                    errors.append(f"{eid}: missing from {oc}")
+                elif any(o.get(k) != e.get(k) for k in CONTENT_KEYS):
+                    warns.append(f"{eid}: content differs between {lang} and {oc}; the tag must fit both")
             d = dec.get(eid)
             if not d:
                 errors.append(f"{eid}: no decision")
@@ -86,9 +123,11 @@ def main():
             if LEVELS.index(sk["level"]) > LEVELS.index(level.upper()):
                 errors.append(f"{eid}: {slug} is {sk['level']}")
             if sk["kind"] == "grammar":
-                t, here = lesson_no(sk.get("taught_in")), lesson_no(stem)
-                if sk["level"] == level.upper() and t and here and t > here:
+                t = order.get(screen.get(sk.get("taught_in")))
+                if sk["level"] == level.upper() and t is not None and t > order[stem]:
                     warns.append(f"{eid}: {slug} is taught at {sk['taught_in']}, after this lesson")
+            elif sk.get("unit") and sk["unit"] != uid:
+                warns.append(f"{eid}: vocabulary tag {slug} belongs to unit {sk['unit']}, not {uid} (fine for a review item)")
             cat = d.get("category") or e.get("category")
             if (e.get("type") in FOLLOWS or cat in ("vocabulary", "grammar")) and cat not in ("reading", "listening") and cat != sk["kind"]:
                 warns.append(f"{eid}: category {cat} but tag is {sk['kind']}")
@@ -100,17 +139,17 @@ def main():
                 if (d.get("ds") or {}) and sum(o.lstrip().startswith("-") for o in opts) * 2 > len(opts):
                     warns.append(f"{eid}: ds on options that are suffix names, not word forms")
                 right, wrong = opts[e["correct"]].lower(), [o.lower() for i, o in enumerate(opts) if i != e["correct"]]
-                if (right.startswith("igen,") and any(w.startswith("nem,") for w in wrong)
+                if lang == "hu" and (right.startswith("igen,") and any(w.startswith("nem,") for w in wrong)
                         or right.startswith("nem,") and any(w.startswith("igen,") for w in wrong)) and slug != "yes-no-questions":
                     warns.append(f"{eid}: Igen/Nem contradiction, tag is {slug}, not yes-no-questions")
-            if slug == "ik-verbs-dolgozom-not-dolgozok" and ans and not re.search(r"m$", ans.strip(" .!?").split()[-1] if ans.split() else "", re.I):
+            if lang == "hu" and slug == "ik-verbs-dolgozom-not-dolgozok" and ans and not re.search(r"m$", ans.strip(" .!?").split()[-1] if ans.split() else "", re.I):
                 warns.append(f"{eid}: ik-verbs tag but answer {ans!r} is not a 1st-person -m form")
             aw = words(ans)
             if len("".join(aw)) >= 4 and e.get("type") in ("fill-blank", "multiple-choice", "dialogue-complete", "structured-writing") and ptxt:
                 pw = words(re.sub(r"\([^)]*\)", " ", ptxt))
                 if any(pw[i:i + len(aw)] == aw for i in range(len(pw) - len(aw) + 1)):
                     warns.append(f"{eid}: the answer {ans!r} is printed in the prompt")
-            if e.get("type") == "fill-blank" and ans:
+            if lang == "hu" and e.get("type") == "fill-blank" and ans:
                 hint = " ".join(re.findall(r"\(([^)]*)\)", ptxt))
                 last = (words(ans) or [""])[-1]
                 if PERSON_END.search(last) and len(last) > 4 and hint and not PERSON_WORDS.search(hint):
@@ -122,6 +161,8 @@ def main():
                     errors.append(f"{eid}: ds slug {s2!r} must be another grammar skill")
             key = json.dumps({k: e.get(k) for k in CONTENT_KEYS if k in e}, ensure_ascii=False, sort_keys=True)
             by_content[key].add((eid, slug))
+    for eid in sorted(set(other) - seen):
+        errors.append(f"{eid}: in {oc} but not in {lang}")
     for eid in set(dec) - seen:
         errors.append(f"{eid}: decision for an exercise outside the unit")
     for group in by_content.values():

@@ -6,7 +6,10 @@
 Shows the unit's grammar screens and lesson vocabulary, then every exercise
 with its current tags, followed by the skills a tag may use: the course's
 grammar skills at or below the level (with the screen that teaches each) and
-the vocabulary skills of this and earlier units.
+the vocabulary skills of this and earlier units. Each grammar skill is marked
+[taught in this unit] or [taught LATER] by table position. For es-es / es-latam
+(one registry, shared exercise ids) it ends with the exercises whose content
+differs between the two courses, since one decision covers both.
 """
 import json
 import sys
@@ -20,6 +23,19 @@ HIDE = {"id", "teaches", "category", "distractor_skills", "stage", "explanation"
 
 def load(p):
     return json.loads(Path(p).read_text(encoding="utf-8"))
+
+
+def stem_positions(course, level):
+    order, screen = {}, {}
+    for u in load(course / "curriculum" / "units" / f"{level}.json"):
+        for stem in u["stems"]:
+            order[stem] = len(order)
+            lp = course / "lessons" / level / f"{stem}.json"
+            if lp.exists():
+                for sec in load(lp).get("sections", []):
+                    if sec.get("type") == "grammar" and sec.get("ref"):
+                        screen.setdefault(Path(sec["ref"]).stem, stem)
+    return order, screen
 
 
 def main():
@@ -71,13 +87,39 @@ def main():
     print("## Grammar skills at or below this level (slug | taught_in | title)")
     rows = [(k, v) for k, v in reg.items()
             if v.get("kind") == "grammar" and v.get("level") in upto and not v.get("retired")]
-    for k, v in sorted(rows, key=lambda kv: (LEVELS.index(kv[1]["level"]), kv[1].get("taught_in") or "")):
-        print(f"  {k} | {v.get('taught_in')} | {v.get('title')}")
+    order, screen = stem_positions(course, level)
+    mine = {order[s] for s in unit["stems"]}
+    for k, v in sorted(rows, key=lambda kv: (LEVELS.index(kv[1]["level"]), order.get(screen.get(kv[1].get("taught_in")), 999), kv[1].get("taught_in") or "")):
+        pos = order.get(screen.get(v.get("taught_in")))
+        mark = "" if pos is None or v["level"] != level.upper() else (" [taught in this unit]" if pos in mine else (" [taught LATER]" if pos > max(mine) else ""))
+        print(f"  {k} | {v.get('taught_in')} | {v.get('title')}{mark}")
     print("\n## Vocabulary skills of this and earlier units")
     earlier = {u["id"] for u in table[: idx + 1]}
     for k, v in reg.items():
         if v.get("kind") == "vocabulary" and v.get("unit") in earlier and v.get("level") == level.upper():
             print(f"  {k}")
+
+    other = {"es-es": "es-latam", "es-latam": "es-es"}.get(lang)
+    if other:
+        print(f"\n## Exercises whose content differs between {lang} and {other} (one decision covers both; the tag must fit both)")
+        n = 0
+        for stem in unit["stems"]:
+            a = course / "exercises" / level / f"{stem}-ex.json"
+            b = ROOT / "content" / other / "exercises" / level / f"{stem}-ex.json"
+            if not (a.exists() and b.exists()):
+                continue
+            theirs = {e["id"]: e for e in load(b).get("exercises", [])}
+            for e in load(a).get("exercises", []):
+                o = theirs.get(e["id"])
+                mine = {k: v for k, v in e.items() if k not in HIDE}
+                if o is None:
+                    print(f"{e['id']}: ONLY in {lang}")
+                elif mine != {k: v for k, v in o.items() if k not in HIDE}:
+                    n += 1
+                    print(e["id"])
+                    print(f"   {lang}: {json.dumps(mine, ensure_ascii=False)}")
+                    print(f"   {other}: {json.dumps({k: v for k, v in o.items() if k not in HIDE}, ensure_ascii=False)}")
+        print(f"({n} differ)")
 
 
 if __name__ == "__main__":

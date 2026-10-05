@@ -48,6 +48,7 @@ def main():
     course = ROOT / "content" / lang
     unit = next(u for u in load(course / "curriculum" / "units" / f"{level}.json") if u["id"] == uid)
     reg = load(ROOT / "skills" / f"{lang.split('-')[0]}.json")["skills"]
+    alias = {a: k for k, v in reg.items() for a in v.get("aliases", [])}
     dec = load(dec_path)
 
     out = subprocess.run([sys.executable, str(ROOT / "scripts" / "readthrough_check.py"), lang, level, uid, dec_path],
@@ -65,6 +66,7 @@ def main():
             tag = d.get("teaches")
             cnt[tag or "(reading, untagged)"] += 1
             old = (e.get("teaches") or [None])[0]
+            old = alias.get(old, old)
             is_vocab = reg.get(tag, {}).get("kind") != "grammar"
             boring = is_vocab and tag == old and not d.get("ds") and e["id"] not in flagged
             if boring and not show_all:
