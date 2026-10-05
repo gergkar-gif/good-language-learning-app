@@ -162,7 +162,7 @@
       "answer": "dolgaimat",
       "english": "I quickly pack my things and leave.",
       "teaches": [
-        "plural-possessive"
+        "acc-poss"
       ],
       "stage": "practice"
     },
@@ -182,14 +182,16 @@
       ],
       "options": [
         "barátaim",
-        "barátom",
+        "barátomok",
         "barátunk"
       ],
       "correct": 0,
       "teaches": [
-        "plural-possessive",
-        "a2-plural-possessed-vocab"
+        "plural-possessive"
       ],
+      "distractor_skills": {
+        "2": "possessive-suffixes"
+      },
       "stage": "dialogue"
     },
     {
@@ -213,15 +215,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "plural-possessive",
-        "a2-plural-possessed-vocab"
+        "acc-poss"
       ],
+      "distractor_skills": {
+        "2": "plural-possessive"
+      },
       "stage": "dialogue"
     },
     {
       "id": "a2-191-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "Hétvégén vidékre utazom, mert a ____ (my parents) ott várnak rám.",
       "answer": "szüleim",
       "english": "On the weekend I travel to the countryside because my parents are waiting for me there.",
@@ -233,7 +237,7 @@
     {
       "id": "a2-191-writing-2",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "Minden",
         "fontos",

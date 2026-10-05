@@ -15,6 +15,9 @@
       "teaches": [
         "inflected-infinitives"
       ],
+      "distractor_skills": {
+        "2": "imperative-indefinite"
+      },
       "stage": "introduce"
     },
     {
@@ -177,7 +180,7 @@
         },
         {
           "speaker": "Bálint",
-          "text": "Szívesen maradnék, de sajnos ____ kell az irodába."
+          "text": "Szívesen maradnék, de sajnos nekem ____ kell az irodába."
         }
       ],
       "options": [
@@ -187,9 +190,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "inflected-infinitives",
-        "a2-inflected-infinitives-necessity-vocab"
+        "inflected-infinitives"
       ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni"
+      },
       "stage": "dialogue"
     },
     {
@@ -203,7 +208,7 @@
         },
         {
           "speaker": "Dániel",
-          "text": "Még be kell fejeznem a leckét, holnapra kész kell ____."
+          "text": "Még be kell fejeznem a leckét, holnapra nekem kész kell ____."
         }
       ],
       "options": [
@@ -213,15 +218,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "inflected-infinitives",
-        "a2-inflected-infinitives-necessity-vocab"
+        "inflected-infinitives"
       ],
       "stage": "dialogue"
     },
     {
       "id": "a2-201-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "Hétvégén nem kell korán ____ (for me to wake up), végre kipihenhetem magam.",
       "answer": "kelnem",
       "english": "On the weekend I don't have to wake up early, I can finally get some rest.",
@@ -233,7 +237,7 @@
     {
       "id": "a2-201-writing-2",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "A",
         "diákoknak",

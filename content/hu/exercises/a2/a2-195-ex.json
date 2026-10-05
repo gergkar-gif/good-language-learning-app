@@ -13,8 +13,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "plural-possessive"
+        "acc-poss"
       ],
+      "distractor_skills": {
+        "1": "plural-possessive"
+      },
       "stage": "introduce"
     },
     {
@@ -41,7 +44,7 @@
       "answer": "irataimat",
       "english": "Before leaving for the airport, I check my documents.",
       "teaches": [
-        "plural-possessive"
+        "acc-poss"
       ],
       "stage": "controlled"
     },
@@ -53,7 +56,7 @@
       "answer": "táskáidat",
       "english": "Don't leave your bags in the train compartment!",
       "teaches": [
-        "plural-possessive"
+        "acc-poss"
       ],
       "stage": "controlled"
     },
@@ -124,7 +127,7 @@
       ],
       "english": "I carefully pack my clothes into the suitcase.",
       "teaches": [
-        "plural-possessive"
+        "acc-poss"
       ],
       "stage": "practice"
     },
@@ -189,9 +192,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "plural-possessive",
-        "a2-plural-possessed-vocab"
+        "plural-possessive"
       ],
+      "distractor_skills": {
+        "1": "possessive-suffixes"
+      },
       "stage": "dialogue"
     },
     {
@@ -211,31 +216,33 @@
       "options": [
         "barátaimmal",
         "barátaim",
-        "barátommal"
+        "barátaimal"
       ],
       "correct": 0,
       "teaches": [
-        "plural-possessive",
-        "a2-plural-possessed-vocab"
+        "val-vel"
       ],
+      "distractor_skills": {
+        "1": "plural-possessive"
+      },
       "stage": "dialogue"
     },
     {
       "id": "a2-195-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "Mielőtt elhagyom a szállodai szobát, átnézem a fiókokat, hogy ne felejtsem ott a ____ (dolog, my, plural, accusative).",
       "answer": "dolgaimat",
       "english": "Before leaving the hotel room, I check the drawers so that I don't leave my belongings there.",
       "teaches": [
-        "plural-possessive"
+        "acc-poss"
       ],
       "stage": "production"
     },
     {
       "id": "a2-195-writing-2",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "Mindig",
         "nagyon",
@@ -272,7 +279,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "plural-possessive"
+        "acc-poss"
       ],
       "stage": "check"
     },
@@ -284,7 +291,7 @@
       "answer": "iratainkat",
       "english": "At the hotel reception we presented our documents.",
       "teaches": [
-        "plural-possessive"
+        "acc-poss"
       ],
       "stage": "check"
     }

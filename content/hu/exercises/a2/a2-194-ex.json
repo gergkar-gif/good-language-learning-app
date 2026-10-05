@@ -13,7 +13,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "plural-possessive"
+        "val-vel"
       ],
       "stage": "introduce"
     },
@@ -31,6 +31,10 @@
       "teaches": [
         "plural-possessive"
       ],
+      "distractor_skills": {
+        "1": "hoz-suffix",
+        "2": "val-vel"
+      },
       "stage": "introduce"
     },
     {
@@ -41,7 +45,7 @@
       "answer": "barátaimmal",
       "english": "On Friday evening I am having dinner in town with my friends.",
       "teaches": [
-        "plural-possessive"
+        "val-vel"
       ],
       "stage": "controlled"
     },
@@ -96,7 +100,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "plural-possessive"
+        "val-vel"
       ],
       "stage": "controlled"
     },
@@ -122,7 +126,7 @@
       ],
       "english": "I frequently meet with my old friends.",
       "teaches": [
-        "plural-possessive"
+        "val-vel"
       ],
       "stage": "practice"
     },
@@ -134,7 +138,7 @@
       "answer": "barátaiddal",
       "english": "Have you spoken with your friends about the weekend trip?",
       "teaches": [
-        "plural-possessive"
+        "val-vel"
       ],
       "stage": "practice"
     },
@@ -183,13 +187,15 @@
       "options": [
         "barátaimmal",
         "barátaim",
-        "barátommal"
+        "barátaimal"
       ],
       "correct": 0,
       "teaches": [
-        "plural-possessive",
-        "a2-plural-possessed-vocab"
+        "val-vel"
       ],
+      "distractor_skills": {
+        "1": "plural-possessive"
+      },
       "stage": "dialogue"
     },
     {
@@ -213,15 +219,18 @@
       ],
       "correct": 0,
       "teaches": [
-        "plural-possessive",
-        "a2-plural-possessed-vocab"
+        "plural-possessive"
       ],
+      "distractor_skills": {
+        "1": "val-vel",
+        "2": "acc-poss"
+      },
       "stage": "dialogue"
     },
     {
       "id": "a2-194-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "Mindig számíthatok a családomra és a hűséges ____ (barát, my, plural, sublative).",
       "answer": "barátaimra",
       "english": "I can always count on my family and my loyal friends.",
@@ -233,7 +242,7 @@
     {
       "id": "a2-194-writing-2",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "A",
         "szüleimmel",
@@ -254,7 +263,7 @@
       ],
       "english": "We celebrate Christmas together with my parents.",
       "teaches": [
-        "plural-possessive"
+        "val-vel"
       ],
       "stage": "production"
     },
@@ -270,7 +279,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "plural-possessive"
+        "val-vel"
       ],
       "stage": "check"
     },
@@ -282,7 +291,7 @@
       "answer": "rokonaimhoz",
       "english": "In the summer I visit my relatives in the countryside.",
       "teaches": [
-        "plural-possessive"
+        "hoz-suffix"
       ],
       "stage": "check"
     }
