@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "elative-bol-bel"
+        "vowel-harmony"
       ],
       "stage": "introduce"
     },
@@ -112,6 +112,10 @@
       "teaches": [
         "elative-bol-bel"
       ],
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "ban-ben-in"
+      },
       "stage": "practice"
     },
     {
@@ -150,6 +154,9 @@
       "teaches": [
         "elative-bol-bel"
       ],
+      "distractor_skills": {
+        "2": "delative-rol-rel"
+      },
       "stage": "practice"
     },
     {
@@ -182,7 +189,7 @@
     {
       "id": "a1-151-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "—Honnan jössz? —A ____ jövök.",
       "options": [
         "boltból",
@@ -192,12 +199,16 @@
       "correct": 0,
       "teaches": [
         "elative-bol-bel"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "on-en-on"
+      }
     },
     {
       "id": "a1-151-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "—Károly a szobában van? —Nem, most jött ki a ____ (ház + out of).",
       "answer": "házból",
       "teaches": [
@@ -207,7 +218,7 @@
     {
       "id": "a1-151-production-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "Kijövök a ____ (kert + from/out of).",
       "answer": "kertből",
       "teaches": [
@@ -217,7 +228,7 @@
     {
       "id": "a1-151-production-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'I come from the bank.'",
       "options": [
         "A bankból jövök.",
@@ -227,7 +238,11 @@
       "correct": 0,
       "teaches": [
         "elative-bol-bel"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "a1-151-check-1",
@@ -243,6 +258,9 @@
       "teaches": [
         "elative-bol-bel"
       ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      },
       "stage": "check"
     },
     {

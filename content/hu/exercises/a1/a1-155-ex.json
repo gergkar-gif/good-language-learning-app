@@ -4,7 +4,7 @@
     {
       "id": "a1-155-introduce-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "What does 'repülőtérről' mean?",
       "options": [
         "from the airport",
@@ -13,7 +13,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-origin-cases-vocab"
+        "delative-rol-rel"
       ],
       "stage": "introduce"
     },
@@ -21,7 +21,7 @@
       "id": "a1-155-introduce-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What did Anna bring from the market in the story?",
+      "question": "What was brought in 'Finom paprikát hoztam Szegedről'?",
       "options": [
         "paprika",
         "chocolate",
@@ -36,22 +36,22 @@
     {
       "id": "a1-155-controlled-1",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentence": "Meg a ____ (repülőtér + from) érkezett.",
       "answer": "repülőtérről",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "delative-rol-rel"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-155-controlled-2",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentence": "Anna ____ (Szeged + from) jön.",
       "answer": "Szegedről",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "delative-rol-rel"
       ],
       "stage": "controlled"
     },
@@ -86,7 +86,7 @@
       "id": "a1-155-controlled-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Where did Meg take the chocolate out from?",
+      "question": "Meg takes the chocolate out of her bag (táska), not her pocket (zseb). Which phrase means 'out of her bag'?",
       "options": [
         "a táskájából",
         "a zsebéből",
@@ -101,7 +101,7 @@
     {
       "id": "a1-155-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Translate: 'A gift from Pécs':",
       "options": [
         "Egy ajándék Pécsről",
@@ -110,29 +110,33 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-origin-cases-vocab"
+        "delative-rol-rel"
       ],
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "on-en-on"
+      },
       "stage": "practice"
     },
     {
       "id": "a1-155-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentence": "A busz a ____ (belváros + from) indul.",
       "answer": "belvárosból",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "elative-bol-bel"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-155-practice-3",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Meg hozott egy ajándékot ____ (Bécs + from).",
-      "answer": "Bécsből",
+      "category": "grammar",
+      "sentence": "Meg hozott egy bort ____ (Tokaj + from).",
+      "answer": "Tokajból",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "elative-bol-bel"
       ],
       "stage": "practice"
     },
@@ -182,7 +186,7 @@
     {
       "id": "a1-155-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "—Honnan jöttök? —A ____ jövünk.",
       "options": [
         "vasútállomásról",
@@ -191,33 +195,33 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-origin-cases-vocab"
+        "delative-rol-rel"
       ]
     },
     {
       "id": "a1-155-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "—Mit hoztál? —Hoztam egy könyvet a ____ (bolt + from).",
       "answer": "boltból",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "elative-bol-bel"
       ]
     },
     {
       "id": "a1-155-production-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A vonat megérkezett ____ (Szeged + from).",
       "answer": "Szegedről",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "delative-rol-rel"
       ]
     },
     {
       "id": "a1-155-production-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'We are arriving from the airport.'",
       "options": [
         "A repülőtérről érkezünk.",
@@ -226,13 +230,16 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-origin-cases-vocab"
-      ]
+        "delative-rol-rel"
+      ],
+      "distractor_skills": {
+        "2": "on-en-on"
+      }
     },
     {
       "id": "a1-155-check-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which case is used for 'from the airport' (repülőtérről)?",
       "options": [
         "delative (-ról/-ről)",
@@ -241,18 +248,22 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-origin-cases-vocab"
+        "delative-rol-rel"
       ],
+      "distractor_skills": {
+        "1": "elative-bol-bel",
+        "2": "on-en-on"
+      },
       "stage": "check"
     },
     {
       "id": "a1-155-check-2",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentence": "Anna a ____ (piac + from) hozott paprikát.",
       "answer": "piacról",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "delative-rol-rel"
       ],
       "stage": "check"
     }

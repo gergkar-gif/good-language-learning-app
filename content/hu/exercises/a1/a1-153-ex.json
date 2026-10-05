@@ -4,7 +4,7 @@
     {
       "id": "a1-153-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'Miről beszéltek?' mean?",
       "options": [
         "What are you talking about?",
@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "delative-rol-rel"
+        "a1-origin-cases-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a1-153-introduce-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means 'about whom?'",
       "options": [
         "kiről",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "delative-rol-rel"
+        "a1-origin-cases-vocab"
       ],
       "stage": "introduce"
     },
@@ -96,6 +96,9 @@
       "teaches": [
         "delative-rol-rel"
       ],
+      "distractor_skills": {
+        "1": "elative-bol-bel"
+      },
       "stage": "controlled"
     },
     {
@@ -112,6 +115,9 @@
       "teaches": [
         "delative-rol-rel"
       ],
+      "distractor_skills": {
+        "1": "on-en-on"
+      },
       "stage": "practice"
     },
     {
@@ -139,7 +145,7 @@
     {
       "id": "a1-153-practice-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What is the meaning of 'Kiről beszél a pincér?'",
       "options": [
         "Whom is the waiter talking about?",
@@ -148,7 +154,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "delative-rol-rel"
+        "a1-origin-cases-vocab"
       ],
       "stage": "practice"
     },
@@ -182,7 +188,7 @@
     {
       "id": "a1-153-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "—Miről beszéltek? —A holnapi ____ beszélünk.",
       "options": [
         "programról",
@@ -192,12 +198,15 @@
       "correct": 0,
       "teaches": [
         "delative-rol-rel"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "a1-153-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "—Kiről mesélsz? —A régi ____ (barát + about) mesélek.",
       "answer": "barátról",
       "teaches": [
@@ -207,7 +216,7 @@
     {
       "id": "a1-153-production-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "Sokat beszélünk a magyar ____ (nyelv + about).",
       "answer": "nyelvről",
       "teaches": [
@@ -217,7 +226,7 @@
     {
       "id": "a1-153-production-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'We are talking about the trip.'",
       "options": [
         "Az utazásról beszélünk.",
@@ -227,7 +236,10 @@
       "correct": 0,
       "teaches": [
         "delative-rol-rel"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "a1-153-check-1",
@@ -249,7 +261,7 @@
       "id": "a1-153-check-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "____ (About whom) beszéltek tegnap?",
+      "sentence": "____ (About whom) beszéltetek tegnap?",
       "answer": "Kiről",
       "teaches": [
         "delative-rol-rel"

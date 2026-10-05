@@ -4,7 +4,7 @@
     {
       "id": "a1-154-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What suffix is used for coming from a person (e.g. the doctor)?",
       "options": [
         "-tól/-től",
@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "elative-bol-bel"
+        "a1-origin-cases-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a1-154-introduce-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'otthonról' mean?",
       "options": [
         "from home",
@@ -29,18 +29,18 @@
       ],
       "correct": 0,
       "teaches": [
-        "elative-bol-bel"
+        "a1-origin-cases-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a1-154-controlled-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Péter most jön az ____ (orvos + from).",
       "answer": "orvostól",
       "teaches": [
-        "elative-bol-bel"
+        "a1-origin-cases-vocab"
       ],
       "stage": "controlled"
     },
@@ -51,7 +51,7 @@
       "sentence": "A vonat ____ (Budapest + from) érkezik.",
       "answer": "Budapestről",
       "teaches": [
-        "elative-bol-bel"
+        "delative-rol-rel"
       ],
       "stage": "controlled"
     },
@@ -96,6 +96,9 @@
       "teaches": [
         "elative-bol-bel"
       ],
+      "distractor_skills": {
+        "1": "delative-rol-rel"
+      },
       "stage": "controlled"
     },
     {
@@ -112,34 +115,37 @@
       "teaches": [
         "elative-bol-bel"
       ],
+      "distractor_skills": {
+        "1": "delative-rol-rel"
+      },
       "stage": "practice"
     },
     {
       "id": "a1-154-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Károly a ____ (barát + from) jön.",
       "answer": "baráttól",
       "teaches": [
-        "elative-bol-bel"
+        "a1-origin-cases-vocab"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-154-practice-3",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "A turisták ____ (from afar) érkeztek.",
       "answer": "messziről",
       "teaches": [
-        "elative-bol-bel"
+        "a1-origin-cases-vocab"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-154-practice-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Translate: 'from close by / up close':",
       "options": [
         "közelről",
@@ -148,7 +154,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "elative-bol-bel"
+        "a1-origin-cases-vocab"
       ],
       "stage": "practice"
     },
@@ -182,7 +188,7 @@
     {
       "id": "a1-154-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "vocabulary",
       "question": "—Honnan jössz ilyen későn? —Az ____ jövök.",
       "options": [
         "orvostól",
@@ -191,13 +197,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "elative-bol-bel"
+        "a1-origin-cases-vocab"
       ]
     },
     {
       "id": "a1-154-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "—Hozol vizet? —Igen, hozok a ____ (bolt + from/out of).",
       "answer": "boltból",
       "teaches": [
@@ -207,7 +213,7 @@
     {
       "id": "a1-154-production-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "Meg most jön ki a ____ (szoba + from/out of).",
       "answer": "szobából",
       "teaches": [
@@ -217,7 +223,7 @@
     {
       "id": "a1-154-production-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "vocabulary",
       "question": "Translate: 'I came from home.'",
       "options": [
         "Otthonról jöttem.",
@@ -226,7 +232,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "elative-bol-bel"
+        "a1-origin-cases-vocab"
       ]
     },
     {
@@ -243,6 +249,9 @@
       "teaches": [
         "elative-bol-bel"
       ],
+      "distractor_skills": {
+        "1": "delative-rol-rel"
+      },
       "stage": "check"
     },
     {

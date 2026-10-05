@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "delative-rol-rel"
+        "spatial-questions-hol-hova"
       ],
       "stage": "introduce"
     },
@@ -94,7 +94,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "delative-rol-rel"
+        "vowel-harmony"
       ],
       "stage": "controlled"
     },
@@ -110,7 +110,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "delative-rol-rel"
+        "spatial-questions-hol-hova"
       ],
       "stage": "practice"
     },
@@ -150,6 +150,10 @@
       "teaches": [
         "delative-rol-rel"
       ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "elative-bol-bel"
+      },
       "stage": "practice"
     },
     {
@@ -182,7 +186,7 @@
     {
       "id": "a1-152-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "—Honnan jössz? —____ jövök, vonattal.",
       "options": [
         "Szegedről",
@@ -192,12 +196,15 @@
       "correct": 0,
       "teaches": [
         "delative-rol-rel"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "on-en-on"
+      }
     },
     {
       "id": "a1-152-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "—Hol van a könyv? —Elvettem az ____ (asztal + off/from).",
       "answer": "asztalról",
       "teaches": [
@@ -207,7 +214,7 @@
     {
       "id": "a1-152-production-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "Anna ____ (Budapest + from) utazik Szegedre.",
       "answer": "Budapestről",
       "teaches": [
@@ -217,7 +224,7 @@
     {
       "id": "a1-152-production-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'The phone is falling off the shelf.'",
       "options": [
         "A telefon leesik a polcról.",
@@ -227,7 +234,10 @@
       "correct": 0,
       "teaches": [
         "delative-rol-rel"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "on-en-on"
+      }
     },
     {
       "id": "a1-152-check-1",
@@ -243,6 +253,10 @@
       "teaches": [
         "delative-rol-rel"
       ],
+      "distractor_skills": {
+        "1": "elative-bol-bel",
+        "2": "ban-ben-in"
+      },
       "stage": "check"
     },
     {
