@@ -216,3 +216,51 @@ Not yours to fix (outside this task, noted for the queue):
 `b1-37.cons.ex05` has *hayáis* (vosotros) in the es-latam copy;
 `b1-19-03.ex06` and `b1-29-05.ex02` give the answer away in the question
 text itself.
+
+### Block 2 (es-es B1), reviewed 2026-10-05
+
+Commits `2a2f220b` (block 1 fixes) and `b2d5ff08` (block 2). The four
+block 1 fixes are applied exactly. Block 2's mechanics are right again:
+all 159 decisions applied as written, in every listed copy (lesson and
+consolidation copies have identical options), nothing else changed, no
+block 2 id still flagged, counts correct (141 shorten / 18 match / 0 log).
+Most shortenings are clean.
+
+**Fix these first, in a separate commit before block 3** (worksheet too):
+
+1. `b1-ciudadesautonomas-02.ex02` (and its consolidation copy):
+   **the new correct option is false.** The question asks why Melilla's
+   20th-century city centre stands out; the text (and the exercise's own
+   `explanation`) says: the second city in Spain for modernist and
+   art déco buildings, after Barcelona. *Por su recinto amurallado
+   medieval completo* is not that, and it isn't true. Use
+   *Por sus numerosos edificios modernistas y art déco.* Rule 1: the
+   shortened option must say the same thing as the original, only less.
+   Re-read the original option before writing each `shorten`; never
+   write the new one from memory of the topic.
+2. `b1-documentacion-03.ex05`: the original said *el encargado del
+   Registro Civil*; the new option says *el juez del Registro Civil*,
+   which is no longer accurate (the Registro Civil isn't run by judges
+   since 2021) and is a detail you added. Use
+   *Ante el encargado del Registro Civil, el alcalde o un notario.*
+   Rule 2: when shortening, only remove; don't swap in new facts.
+3. `b1-sanidad-01.ex05`: *El INGESA (Sanidad)* reads oddly. Use
+   *El INGESA*. The wrong options are institution names too.
+4. `b1-sanidad-04.ex06`: *national organ transplant program* is close
+   enough to *National Transplant Organization* to be argued for. Use a
+   wrong option that is plainly a different thing, e.g.
+   *national blood donation service*.
+
+**For the next blocks:** blocks 3 and 4 are es-latam, where much of the
+content is history and civics of real countries. Fact errors like item 1
+are the worst outcome of this whole pass, so for every `shorten` compare
+the new text with the original word by word: what did you drop, and is
+anything new?
+
+Not yours to fix (outside this task, noted for the queue):
+`b1-fiestas-01.ex05` has *Los tamborradas* (should be *Las*);
+`b1-gastronomia-05.ex02` names the restaurant *Can Roca* in the question,
+so *Los hermanos Roca* is given away; `b1-historiaantigua-03.ex04` asks
+for a port in Huelva, but none of the wrong options is in Huelva. Many
+es-es civics (CCSE) items have absurd distractors (*Solo los martes y
+jueves*, *En Bruselas*), which is a separate give-away for a later pass.
