@@ -3144,3 +3144,9 @@ All 48 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabula
 
 ### HU B1 `national-symbols` (b1-nemzetijelkepek-01–05 + consolidation) — locked 2026-10-06
 All 48 exercises read by a Sonnet subagent and reviewed. Tags now: 17 reading items untagged (history and citizenship facts), unit vocabulary 14, `meg-meaning` 7 (lexical prefix fills), `definite-vs-indefinite-conjugation` 4, `definite-past` 3, `past-tense-indefinite` 2, and `how-the-accusative-t-works`, `essive-formal-kent`, `kell-infinitive` once each. Content fix: `b1-nemzetijelkepek-05.ex07` accepts *muszáj*. Left: several items name facts the lesson text never shows (the *lyukas zászló*, the 1978 return of the Holy Crown).
+
+### HU B1 `culture-language-society` (b1-30-01–b1-30-05 + consolidation) — locked 2026-10-06
+All 48 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabulary 21 (all sentence-builders), `relative-clauses-aki-ami-amely` 4, `verbal-adjectives-hatatlan-hetetlen` 3, `postpositions-basic` 3 (*számára*), `3rd-person-possessive` 3, `ra-re` 2, `how-the-accusative-t-works` 2, and `ban-ben-in`, `tol-tol` once each; five reading items untagged. Content fixes: `b1-30-03.ex05` and `b1-30-05.ex07` hints said "(for them)" for *a család* and *mindenki*. Left: `04.ex02` blanks only the final *-t* of *nyit* (vocabulary).
+
+### HU B1 `national-holidays-remembrance-days` (b1-nemzetiunnepek-01–05 + consolidation) — locked 2026-10-06
+All 48 exercises read by a Sonnet subagent and reviewed. Tags now: 16 reading items untagged (history and civics facts), unit vocabulary 12, `how-the-accusative-t-works` 5, `3rd-person-possessive` 3, `ra-re` 3, `meg-meaning` 3, `present-tense-routine-language` 3 (*-ik* plural forms), `past-tense-indefinite` 2, `ban-ben-in` and `postpositions-basic` once each. Content fix: `b1-nemzetiunnepek-03.ex07` keyed *számík* (now *számít*). No skill covers the commemorative postpositions (*alkalmából, tiszteletére*).
