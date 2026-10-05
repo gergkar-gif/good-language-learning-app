@@ -3162,3 +3162,9 @@ All 48 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabula
 
 ### HU B1 `government-institutions-today` (b1-allamszervezet-01–05 + consolidation) — locked 2026-10-06
 All 48 exercises read by a Sonnet subagent and reviewed. Tags now: 20 reading items untagged (civics facts), unit vocabulary 12, `acc-poss` 6, `how-the-accusative-t-works` 3, `3rd-person-possessive` 2, `definite-vs-indefinite-conjugation` 2, and `on-en-on`, `verb-government-rol-rel`, `postpositions-basic`, `ban-ben-in`, `participle-actions`, `inflected-postpositions` once each. Content fix: `b1-allamszervezet-05.ex02`'s hint pins "(they adopt it)". Left: `01.ex05` probably also accepts *-ra* besides *-ról*.
+
+### HU B1 `complex-opinions` (b1-34-01–b1-34-05 + consolidation) — locked 2026-10-06
+All 42 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabulary 21, `concessive-annak-ellenere` 4, `hogy-clauses` 2, `adversative-contrast` 2, `egyreszt-masreszt` 2, `how-the-accusative-t-works` 2, and `an-en-adverb`, `ha-clause`, `present-tense-routine-language`, `val-vel`, `ban-ben-in`, `szerintem` once each; one reading item untagged; 1 `ds`. Content fix: `b1-34-04.ex05` also accepts *-sel* (*meggyőződéssel*).
+
+### HU B1 `hungarian-culture-science-heritage` (b1-nemzetiertekek-01–05 + consolidation) — locked 2026-10-06
+All 42 exercises read by a Sonnet subagent and reviewed. Tags now: 14 reading items untagged (facts), unit vocabulary 10, `how-the-accusative-t-works` 4, `definite-past` 3, `essive-formal-kent` 2, `3rd-person-possessive` 2, and `verb-government-ban-ben`, `-hoz-hez`, `superlative`, `translative-morphology` once each. Content fixes: hints of `05.ex05` and `consolidation.ex05` now say "(masterpiece of)", "(cornerstone of)" to pin the possessed form. `essive-formal-kent` and `translative-morphology` are also taught by this unit's own screens (registered at a2-176-a, a2-171-b, earlier).
