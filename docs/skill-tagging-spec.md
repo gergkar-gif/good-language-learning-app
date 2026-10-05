@@ -142,6 +142,21 @@ So every unit is tagged the same way:
 - **Review items keep the skill they review**, not the lesson's new skill.
 - `distractor_skills` only for a wrong option that is a well-formed form of
   another grammar skill; an ungrammatical option (*Nem van Meg*) gets none.
+- **Dialogues** (settled on HU A2): a wrong reply that answers a different question,
+  or contradicts itself in meaning, fails on meaning, so the item takes the unit
+  vocabulary skill; a wrong reply that differs from the right one in a form (person,
+  tense, case) takes that form's skill. A wrong *Nem, …* that actually affirms is
+  `yes-no-questions`.
+- **Matching** is always vocabulary, even when the pairs are two forms of a sentence.
+- A choice, fill-blank or builder item whose category is `dialogue` or `writing` still
+  follows its tag; only the dialogue-complete, structured-writing and listening types
+  keep their category.
+- A choice between harmony variants of one suffix (*-hoz/-hez/-höz*) is `vowel-harmony`;
+  a fill-blank producing the whole suffixed word is the suffix's own skill.
+- A wrong option in another tense or mood (present where the past is needed, *fog* +
+  infinitive where the present is) gets `ds` for that form's skill.
+- An item asking about the lesson's story before the learner reaches the story is a
+  content defect: rewrite it to test something already shown.
 - Applying a unit's decisions: write `{"<exercise id>": {"teaches": "<slug>",
   "category": "<only if it changes>", "ds": {...}}}` for every exercise in
   the unit and run `python scripts/apply_tags.py <course> <level>
