@@ -62,7 +62,7 @@ def main():
                 if sk["level"] == level.upper() and t and here and t > here:
                     warns.append(f"{eid}: {slug} is taught at {sk['taught_in']}, after this lesson")
             cat = d.get("category") or e.get("category")
-            if e.get("type") in FOLLOWS and cat != sk["kind"]:
+            if (e.get("type") in FOLLOWS or cat in ("vocabulary", "grammar")) and cat != sk["kind"]:
                 warns.append(f"{eid}: category {cat} but tag is {sk['kind']}")
             opts = e.get("options") or []
             for i, s2 in (d.get("ds") or {}).items():

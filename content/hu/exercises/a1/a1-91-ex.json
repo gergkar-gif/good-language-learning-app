@@ -14,13 +14,13 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-food-drink-vocab"
+        "a1-family-vocab"
       ]
     },
     {
       "id": "a1-91-review-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which is the \"in the room\" form of szoba?",
       "options": [
         "szobában",
@@ -30,8 +30,12 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-food-drink-vocab"
-      ]
+        "ban-ben-in"
+      ],
+      "distractor_skills": {
+        "1": "plural-nouns-k",
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "a1-91-intro-1",
@@ -106,7 +110,7 @@
     {
       "id": "a1-91-controlled-3",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which sentence correctly asks for bread using the accusative?",
       "options": [
         "Kérek kenyeret.",
@@ -115,25 +119,25 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-91-controlled-4",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentence": "Kérek ____. (water, accusative)",
       "answer": "vizet",
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-91-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which suffix marks the object of kérek?",
       "options": [
         "-t",
@@ -142,18 +146,21 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      },
       "stage": "practice"
     },
     {
       "id": "a1-91-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentence": "Kérek ____. (tea, accusative)",
       "answer": "teát",
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
       "stage": "practice"
     },
@@ -187,7 +194,7 @@
     {
       "id": "a1-91-practice-4",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
       "tiles": [
         "Kérek",
         "kenyeret",
@@ -200,14 +207,14 @@
       ],
       "english": "I'd like bread.",
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-91-practice-5",
       "type": "substitution",
-      "category": "vocabulary",
+      "category": "grammar",
       "base_sentence": "Kérek kenyeret.",
       "base_word": "kenyeret",
       "base_gloss": "I'd like bread.",
@@ -226,7 +233,7 @@
         }
       ],
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
       "stage": "practice"
     },
@@ -250,7 +257,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -269,11 +276,11 @@
       ],
       "options": [
         "Igen, van vaj, sajt és tej.",
-        "Igen, vaj van."
+        "Igen, van vajat."
       ],
       "correct": 0,
       "teaches": [
-        "a1-food-drink-vocab"
+        "van-and-nincs-there-is-there-isn-t"
       ]
     },
     {
@@ -287,7 +294,7 @@
         }
       ],
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -301,7 +308,7 @@
         }
       ],
       "teaches": [
-        "a1-food-drink-vocab"
+        "van-and-nincs-there-is-there-isn-t"
       ]
     },
     {
@@ -323,7 +330,7 @@
     {
       "id": "a1-91-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "How do you say \"I'd like water\"?",
       "options": [
         "Kérek vizet.",
@@ -332,7 +339,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
       "stage": "check"
     }
