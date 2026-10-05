@@ -20,7 +20,7 @@
     {
       "id": "a2-178-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'példaként említi' mean?",
       "options": [
         "mentions as an example",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "essive-formal-kent"
+        "a2-essive-formal-vocab"
       ],
       "stage": "introduce"
     },
@@ -96,12 +96,16 @@
       "teaches": [
         "essive-formal-kent"
       ],
+      "distractor_skills": {
+        "1": "translative-morphology",
+        "2": "ra-re"
+      },
       "stage": "controlled"
     },
     {
       "id": "a2-178-practice-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'emlékként megőriz' mean?",
       "options": [
         "keeps as a souvenir/memory",
@@ -110,7 +114,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "essive-formal-kent"
+        "a2-essive-formal-vocab"
       ],
       "stage": "practice"
     },
@@ -150,6 +154,10 @@
       "teaches": [
         "essive-formal-kent"
       ],
+      "distractor_skills": {
+        "1": "translative-morphology",
+        "2": "ra-re"
+      },
       "stage": "practice"
     },
     {
@@ -182,22 +190,26 @@
     {
       "id": "a2-178-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "—Gyönyörű ez a váza! Honnan van? —A nagymamámtól kaptam ____.",
       "options": [
         "emlékként",
         "emlékké",
-        "emléket"
+        "emlékkel"
       ],
       "correct": 0,
       "teaches": [
         "essive-formal-kent"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "translative-morphology",
+        "2": "val-vel"
+      }
     },
     {
       "id": "a2-178-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "—Hozhatok valamit vacsorára? —Egy üveg bort hozz ____ (as a gift: ajándék)!",
       "answer": "ajándékként",
       "teaches": [
@@ -207,7 +219,7 @@
     {
       "id": "a2-178-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A tanár a saját tapasztalatát hozta fel ____ (as an example: példa).",
       "answer": "példaként",
       "teaches": [
@@ -217,17 +229,21 @@
     {
       "id": "a2-178-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'He kept the ticket as a keepsake.'",
       "options": [
         "A jegyet emlékként őrizte meg.",
-        "A jegyet emléknek őrizte meg.",
-        "A jegyet emlékbe őrizte meg."
+        "A jegyet emlékké őrizte meg.",
+        "A jegyet emlékkel őrizte meg."
       ],
       "correct": 0,
       "teaches": [
         "essive-formal-kent"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "translative-morphology",
+        "2": "val-vel"
+      }
     },
     {
       "id": "a2-178-check-1",
@@ -243,6 +259,10 @@
       "teaches": [
         "essive-formal-kent"
       ],
+      "distractor_skills": {
+        "1": "translative-morphology",
+        "2": "ul-ul-essive-modal"
+      },
       "stage": "check"
     },
     {
@@ -252,7 +272,7 @@
       "sentence": "A régi dobozt irattartóként ____ (használ, we, definite).",
       "answer": "használjuk",
       "teaches": [
-        "essive-formal-kent"
+        "definite-vs-indefinite-conjugation"
       ],
       "stage": "check"
     }

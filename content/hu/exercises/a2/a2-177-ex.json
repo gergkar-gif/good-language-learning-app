@@ -20,7 +20,7 @@
     {
       "id": "a2-177-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'felnőttként' mean?",
       "options": [
         "as an adult",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "essive-formal-kent"
+        "a2-essive-formal-vocab"
       ],
       "stage": "introduce"
     },
@@ -96,6 +96,10 @@
       "teaches": [
         "essive-formal-kent"
       ],
+      "distractor_skills": {
+        "1": "translative-morphology",
+        "2": "val-vel"
+      },
       "stage": "controlled"
     },
     {
@@ -150,6 +154,10 @@
       "teaches": [
         "essive-formal-kent"
       ],
+      "distractor_skills": {
+        "1": "translative-morphology",
+        "2": "val-vel"
+      },
       "stage": "practice"
     },
     {
@@ -182,7 +190,7 @@
     {
       "id": "a2-177-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "—Mikor tanultál meg úszni? —Még ____, ötödik osztályos koromban.",
       "options": [
         "gyerekként",
@@ -192,12 +200,16 @@
       "correct": 0,
       "teaches": [
         "essive-formal-kent"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "val-vel",
+        "2": "translative-morphology"
+      }
     },
     {
       "id": "a2-177-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "—Hogy érezted magad Magyarországon? —____ (As a foreigner: külföldi) nagyon kedvesnek találtam az embereket.",
       "answer": "Külföldiként",
       "teaches": [
@@ -207,17 +219,17 @@
     {
       "id": "a2-177-writing-1",
       "type": "fill-blank",
-      "category": "writing",
-      "sentence": "____ (As a beginner) nyelvtanulóként sok türelemre van szükség.",
+      "category": "vocabulary",
+      "sentence": "____ (beginner: kezdő) nyelvtanulóként sok türelemre van szükség.",
       "answer": "Kezdő",
       "teaches": [
-        "essive-formal-kent"
+        "a2-essive-formal-vocab"
       ]
     },
     {
       "id": "a2-177-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'As a friend, you can trust me.'",
       "options": [
         "Barátként bízhatsz bennem.",
@@ -227,7 +239,10 @@
       "correct": 0,
       "teaches": [
         "essive-formal-kent"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "translative-morphology"
+      }
     },
     {
       "id": "a2-177-check-1",
@@ -243,16 +258,20 @@
       "teaches": [
         "essive-formal-kent"
       ],
+      "distractor_skills": {
+        "1": "translative-morphology",
+        "2": "val-vel"
+      },
       "stage": "check"
     },
     {
       "id": "a2-177-check-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Gyerekként sokat ____ (played) a szabadban.",
+      "sentence": "Gyerekként sokat ____ (he/she played) a szabadban.",
       "answer": "játszott",
       "teaches": [
-        "essive-formal-kent"
+        "past-tense-indefinite"
       ],
       "stage": "check"
     }

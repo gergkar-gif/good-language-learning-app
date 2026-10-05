@@ -112,6 +112,10 @@
       "teaches": [
         "translative-morphology"
       ],
+      "distractor_skills": {
+        "1": "elative-bol-bel",
+        "2": "how-the-accusative-t-works"
+      },
       "stage": "practice"
     },
     {
@@ -182,7 +186,7 @@
     {
       "id": "a2-171-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "—Mi történt a hóval a napon? —Gyorsan ____ olvadt.",
       "options": [
         "vízzé",
@@ -192,12 +196,16 @@
       "correct": 0,
       "teaches": [
         "translative-morphology"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "val-vel",
+        "2": "movement-with-ba-be"
+      }
     },
     {
       "id": "a2-171-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "—Mi szeretnél lenni? —Sikeres ____ (into a lawyer: ügyvéd) szeretnék válni.",
       "answer": "ügyvéddé",
       "teaches": [
@@ -207,17 +215,17 @@
     {
       "id": "a2-171-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "vocabulary",
       "sentence": "A régi ház modern lakássá ____ (changed).",
       "answer": "változott",
       "teaches": [
-        "translative-morphology"
+        "a2-translative-case-vocab"
       ]
     },
     {
       "id": "a2-171-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'It became dark.'",
       "options": [
         "Sötétté vált.",
@@ -227,7 +235,11 @@
       "correct": 0,
       "teaches": [
         "translative-morphology"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "ra-re"
+      }
     },
     {
       "id": "a2-171-check-1",
@@ -252,7 +264,7 @@
       "sentence": "Az ötlet valósággá ____ (válik, past).",
       "answer": "vált",
       "teaches": [
-        "translative-morphology"
+        "valik-verb"
       ],
       "stage": "check"
     }

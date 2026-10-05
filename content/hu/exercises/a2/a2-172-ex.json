@@ -4,7 +4,7 @@
     {
       "id": "a2-172-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which verb means 'to become' and takes -vá/-vé?",
       "options": [
         "válik",
@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "valik-verb"
+        "a2-translative-case-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a2-172-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'valósággá vált' mean?",
       "options": [
         "became reality",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "valik-verb"
+        "a2-translative-case-vocab"
       ],
       "stage": "introduce"
     },
@@ -38,11 +38,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "Az álma valósággá ____ (became).",
-      "answer": "vált",
       "teaches": [
         "valik-verb"
       ],
-      "stage": "controlled"
+      "stage": "controlled",
+      "answers": [
+        "vált",
+        "lett"
+      ]
     },
     {
       "id": "a2-172-controlled-2",
@@ -51,7 +54,7 @@
       "sentence": "A helyzet hirtelen ____ (into dangerous: veszélyes) vált.",
       "answer": "veszélyessé",
       "teaches": [
-        "valik-verb"
+        "translative-morphology"
       ],
       "stage": "controlled"
     },
@@ -96,6 +99,10 @@
       "teaches": [
         "valik-verb"
       ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "present-tense-routine-language"
+      },
       "stage": "controlled"
     },
     {
@@ -110,8 +117,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "valik-verb"
+        "translative-morphology"
       ],
+      "distractor_skills": {
+        "1": "van-past",
+        "2": "ra-re"
+      },
       "stage": "practice"
     },
     {
@@ -119,11 +130,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "Idővel jó barátokká ____ (we became).",
-      "answer": "váltunk",
       "teaches": [
         "valik-verb"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "answers": [
+        "váltunk",
+        "lettünk"
+      ]
     },
     {
       "id": "a2-172-practice-3",
@@ -132,7 +146,7 @@
       "sentence": "A séta napi ____ (into a habit: szokás) vált.",
       "answer": "szokássá",
       "teaches": [
-        "valik-verb"
+        "translative-morphology"
       ],
       "stage": "practice"
     },
@@ -148,8 +162,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "valik-verb"
+        "translative-morphology"
       ],
+      "distractor_skills": {
+        "1": "val-vel",
+        "2": "hoz-suffix"
+      },
       "stage": "practice"
     },
     {
@@ -182,7 +200,7 @@
     {
       "id": "a2-172-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "—Hogy alakult a vállalkozás? —Nagyon ____ vált a városban!",
       "options": [
         "híressé",
@@ -191,33 +209,39 @@
       ],
       "correct": 0,
       "teaches": [
-        "valik-verb"
-      ]
+        "translative-morphology"
+      ],
+      "distractor_skills": {
+        "2": "ra-re"
+      }
     },
     {
       "id": "a2-172-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "—Megértetted a feladatot? —Igen, most már minden ____ (into clear: világos) vált.",
       "answer": "világossá",
       "teaches": [
-        "valik-verb"
+        "translative-morphology"
       ]
     },
     {
       "id": "a2-172-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A kis kávézó népszerű találkozóhellyé ____ (became).",
-      "answer": "vált",
       "teaches": [
         "valik-verb"
+      ],
+      "answers": [
+        "vált",
+        "lett"
       ]
     },
     {
       "id": "a2-172-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'You (sg) became very patient.'",
       "options": [
         "Nagyon türelmessé váltál.",
@@ -226,8 +250,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "valik-verb"
-      ]
+        "translative-morphology"
+      ],
+      "distractor_skills": {
+        "1": "van-past",
+        "2": "ra-re"
+      }
     },
     {
       "id": "a2-172-check-1",
@@ -250,11 +278,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A terv valósággá ____ (became).",
-      "answer": "vált",
       "teaches": [
         "valik-verb"
       ],
-      "stage": "check"
+      "stage": "check",
+      "answers": [
+        "vált",
+        "lett"
+      ]
     }
   ]
 }

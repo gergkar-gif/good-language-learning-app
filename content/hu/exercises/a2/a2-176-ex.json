@@ -96,6 +96,9 @@
       "teaches": [
         "essive-formal-kent"
       ],
+      "distractor_skills": {
+        "1": "translative-morphology"
+      },
       "stage": "controlled"
     },
     {
@@ -150,6 +153,10 @@
       "teaches": [
         "essive-formal-kent"
       ],
+      "distractor_skills": {
+        "1": "translative-morphology",
+        "2": "ul-ul-essive-modal"
+      },
       "stage": "practice"
     },
     {
@@ -182,7 +189,7 @@
     {
       "id": "a2-176-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "—Mivel foglalkozol mostanában? —Egy nyelviskolában dolgozom ____.",
       "options": [
         "tanárként",
@@ -192,12 +199,16 @@
       "correct": 0,
       "teaches": [
         "essive-formal-kent"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "translative-morphology",
+        "2": "ul-ul-essive-modal"
+      }
     },
     {
       "id": "a2-176-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "—Hogy kerültél a táborba? —Egy barátom hívott el ____ (as a helper: segítő).",
       "answer": "segítőként",
       "teaches": [
@@ -207,7 +218,7 @@
     {
       "id": "a2-176-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "Fiatal ____ (as an artist: művész) sok kiállításon vett részt.",
       "answer": "művészként",
       "teaches": [
@@ -217,7 +228,7 @@
     {
       "id": "a2-176-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'As a friend, I tell you the truth.'",
       "options": [
         "Barátként mondom el az igazat.",
@@ -227,7 +238,10 @@
       "correct": 0,
       "teaches": [
         "essive-formal-kent"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "translative-morphology"
+      }
     },
     {
       "id": "a2-176-check-1",
@@ -252,7 +266,7 @@
       "sentence": "Orvosként fontos a betegek ____ (bizalom, possessive).",
       "answer": "bizalma",
       "teaches": [
-        "essive-formal-kent"
+        "3rd-person-possessive"
       ],
       "stage": "check"
     }

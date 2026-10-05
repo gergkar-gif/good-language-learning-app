@@ -21,7 +21,7 @@
       "id": "a2-180-intro-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "In the story, in what capacity did Carlos and Eszter help at the camp?",
+      "question": "Earlier in this lesson: 'Bár mérnök vagyok, a hétvégén ____ segítek a táborban.' Which word fills the blank?",
       "options": [
         "önkéntesként (as volunteers)",
         "orvosként (as doctors)",
@@ -101,7 +101,7 @@
     {
       "id": "a2-180-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Translate: 'As an adult, this is a completely different experience.'",
       "options": [
         "Felnőttként egészen más élmény.",
@@ -110,18 +110,22 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-essive-formal-vocab"
+        "essive-formal-kent"
       ],
+      "distractor_skills": {
+        "1": "translative-morphology",
+        "2": "val-vel"
+      },
       "stage": "practice"
     },
     {
       "id": "a2-180-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentence": "Carlos ____ (as a child: gyerek) sokszor volt táborban.",
       "answer": "gyerekként",
       "teaches": [
-        "a2-essive-formal-vocab"
+        "essive-formal-kent"
       ],
       "stage": "practice"
     },
@@ -182,7 +186,7 @@
     {
       "id": "a2-180-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "—Szereted a táboroztatást? —Igen, nagyon jó érzés ____ segíteni a fiataloknak!",
       "options": [
         "vezetőként",
@@ -192,12 +196,15 @@
       "correct": 0,
       "teaches": [
         "essive-formal-kent"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "translative-morphology"
+      }
     },
     {
       "id": "a2-180-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "—Mit csinálsz a hétvégén? —A helyi menhelyen dolgozom ____ (as a volunteer: önkéntes).",
       "answer": "önkéntesként",
       "teaches": [
@@ -207,7 +214,7 @@
     {
       "id": "a2-180-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A tanácsomat baráti ____ (as advice: tanács) fogadd el!",
       "answer": "tanácsként",
       "teaches": [
@@ -217,7 +224,7 @@
     {
       "id": "a2-180-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'He works as an engineer, but studies as a student.'",
       "options": [
         "Mérnökként dolgozik, de diákként tanul.",
@@ -227,7 +234,11 @@
       "correct": 0,
       "teaches": [
         "essive-formal-kent"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "translative-morphology",
+        "2": "val-vel"
+      }
     },
     {
       "id": "a2-180-check-1",
@@ -243,16 +254,20 @@
       "teaches": [
         "essive-formal-kent"
       ],
+      "distractor_skills": {
+        "1": "translative-morphology",
+        "2": "val-vel"
+      },
       "stage": "check"
     },
     {
       "id": "a2-180-check-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A rajzot szép emlékként ____ (megőriz, past, definite).",
+      "sentence": "A rajzot szép emlékként ____ (megőriz, past, definite, he/she).",
       "answer": "megőrizte",
       "teaches": [
-        "essive-formal-kent"
+        "definite-past"
       ],
       "stage": "check"
     }
