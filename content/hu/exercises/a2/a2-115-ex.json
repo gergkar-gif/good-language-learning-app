@@ -102,7 +102,7 @@
       "id": "a2-115-controlled-4",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A tónál lehet ____, mert sok hal van benne.",
+      "sentence": "A tónál lehet ____, mert sok hal van benne. (to fish)",
       "answer": "horgászni",
       "teaches": [
         "a2-ability-possibility-permission-vocab"
@@ -123,6 +123,10 @@
       "teaches": [
         "szabad-infinitive"
       ],
+      "distractor_skills": {
+        "1": "tud-infinitive-skills",
+        "2": "lehet-infinitive"
+      },
       "stage": "practice"
     },
     {
@@ -172,7 +176,7 @@
       ],
       "english": "What can we do today?",
       "teaches": [
-        "szabad-infinitive"
+        "tud-infinitive-skills"
       ],
       "stage": "practice"
     },
@@ -226,7 +230,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "potential-hat-het"
+        "a2-ability-possibility-permission-vocab"
       ]
     },
     {
@@ -249,7 +253,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "szabad-infinitive"
+        "a2-ability-possibility-permission-vocab"
       ]
     },
     {
@@ -287,13 +291,16 @@
       "question": "Mehetek means the same thing as which longer phrase?",
       "options": [
         "Lehet mennem.",
-        "Tudok menni.",
+        "Kell mennem.",
         "Szabad vagyok menni."
       ],
       "correct": 0,
       "teaches": [
         "potential-hat-het"
       ],
+      "distractor_skills": {
+        "1": "kell-infinitive"
+      },
       "stage": "check"
     },
     {
@@ -310,6 +317,9 @@
       "teaches": [
         "szabad-infinitive"
       ],
+      "distractor_skills": {
+        "1": "tud-infinitive-skills"
+      },
       "stage": "check"
     }
   ]
