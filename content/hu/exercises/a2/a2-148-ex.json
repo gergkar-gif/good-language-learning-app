@@ -4,7 +4,7 @@
     {
       "id": "a2-148-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"yesterday\"?",
       "options": [
         "tegnap",
@@ -13,15 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past",
-        "past-tense-indefinite"
+        "a2-the-past-1-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a2-148-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which connector means \"then, after that\"?",
       "options": [
         "aztán",
@@ -30,8 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past",
-        "past-tense-indefinite"
+        "a2-telling-stories-vocab"
       ],
       "stage": "introduce"
     },
@@ -58,7 +56,7 @@
         ]
       ],
       "teaches": [
-        "a2-review-work-past-opinions-vocab"
+        "a2-the-past-1-vocab"
       ],
       "stage": "controlled"
     },
@@ -85,7 +83,7 @@
         ]
       ],
       "teaches": [
-        "a2-review-work-past-opinions-vocab"
+        "a2-telling-stories-vocab"
       ],
       "stage": "controlled"
     },
@@ -96,8 +94,7 @@
       "sentence": "Tegnap este ____ néztem. (a film, indefinite)",
       "answer": "filmet",
       "teaches": [
-        "definite-past",
-        "past-tense-indefinite"
+        "how-the-accusative-t-works"
       ],
       "stage": "controlled"
     },
@@ -108,8 +105,7 @@
       "sentence": "____ egy szép kabátot a boltban. (I bought, indefinite)",
       "answer": "Vettem",
       "teaches": [
-        "definite-past",
-        "past-tense-indefinite"
+        "irregular-past"
       ],
       "stage": "controlled"
     },
@@ -125,9 +121,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past",
-        "past-tense-indefinite"
+        "definite-past"
       ],
+      "distractor_skills": {
+        "1": "past-tense-indefinite",
+        "2": "eszik-iszik"
+      },
       "stage": "practice"
     },
     {
@@ -137,8 +136,7 @@
       "sentence": "Hol ____ tegnap este? (were you)",
       "answer": "voltál",
       "teaches": [
-        "definite-past",
-        "past-tense-indefinite"
+        "van-past"
       ],
       "stage": "practice"
     },
@@ -165,7 +163,7 @@
         ]
       ],
       "teaches": [
-        "a2-review-work-past-opinions-vocab"
+        "a2-the-past-1-vocab"
       ],
       "stage": "practice"
     },
@@ -199,8 +197,7 @@
       ],
       "english": "First I did the shopping, then I met Petra, finally I went home.",
       "teaches": [
-        "definite-past",
-        "past-tense-indefinite"
+        "sequencing-elobb-aztan-utana-vegul"
       ],
       "stage": "practice"
     },
@@ -224,9 +221,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past",
         "past-tense-indefinite"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ik-verbs-dolgozom-not-dolgozok"
+      }
     },
     {
       "id": "a2-148-dialogue-2",
@@ -248,8 +247,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past",
-        "past-tense-indefinite"
+        "van-past"
       ]
     },
     {
@@ -258,12 +256,11 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say you traveled to Vienna last summer.",
+          "prompt": "Say that we traveled to Vienna last summer.",
           "answer": "Tavaly nyáron Bécsbe utaztunk."
         }
       ],
       "teaches": [
-        "definite-past",
         "past-tense-indefinite"
       ]
     },
@@ -278,8 +275,7 @@
         }
       ],
       "teaches": [
-        "definite-past",
-        "past-tense-indefinite"
+        "a2-telling-stories-vocab"
       ]
     },
     {
@@ -294,15 +290,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past",
-        "past-tense-indefinite"
+        "definite-past"
       ],
       "stage": "check"
     },
     {
       "id": "a2-148-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which pair correctly frames a whole story from start to end?",
       "options": [
         "az elején ... a végén",
@@ -311,8 +306,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past",
-        "past-tense-indefinite"
+        "a2-telling-stories-vocab"
       ],
       "stage": "check"
     }

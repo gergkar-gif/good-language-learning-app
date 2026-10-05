@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-review-work-past-opinions-vocab"
+        "a2-work-professions-vocab"
       ],
       "stage": "recognize"
     },
     {
       "id": "a2-150-consolidation-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"allowed\" (by a rule)?",
       "options": [
         "szabad",
@@ -29,14 +29,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "szabad-infinitive"
+        "a2-ability-possibility-permission-vocab"
       ],
       "stage": "recognize"
     },
     {
       "id": "a2-150-consolidation-3",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"to plan\"?",
       "options": [
         "tervez",
@@ -45,7 +45,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "fog-infinitive"
+        "a2-future-plans-vocab"
       ],
       "stage": "recognize"
     },
@@ -67,7 +67,7 @@
       "sentence": "Tegnap sokat ____. (I worked)",
       "answer": "dolgoztam",
       "teaches": [
-        "definite-past"
+        "past-tense-indefinite"
       ],
       "stage": "recall"
     },
@@ -102,8 +102,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-review-work-past-opinions-vocab"
+        "irregular-past"
       ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      },
       "stage": "context"
     },
     {
@@ -126,7 +129,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-review-work-past-opinions-vocab"
+        "past-tense-indefinite"
       ],
       "stage": "context"
     },
@@ -177,8 +180,7 @@
         }
       ],
       "teaches": [
-        "a2-review-work-past-opinions-vocab",
-        "prefix-word-order"
+        "a2-review-work-past-opinions-vocab"
       ],
       "stage": "produce"
     },
@@ -197,8 +199,7 @@
         }
       ],
       "teaches": [
-        "szabad-infinitive",
-        "definite-past"
+        "a2-review-work-past-opinions-vocab"
       ],
       "stage": "produce"
     },
@@ -221,9 +222,7 @@
         }
       ],
       "teaches": [
-        "fog-infinitive",
-        "nek-conditional",
-        "szerintem"
+        "a2-review-work-past-opinions-vocab"
       ],
       "stage": "produce"
     }

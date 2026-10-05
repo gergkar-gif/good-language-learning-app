@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-review-work-past-opinions-vocab"
+        "a2-ability-possibility-permission-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a2-147-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"forbidden\"?",
       "options": [
         "tilos",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "szabad-infinitive"
+        "a2-ability-possibility-permission-vocab"
       ],
       "stage": "introduce"
     },
@@ -56,7 +56,7 @@
         ]
       ],
       "teaches": [
-        "a2-review-work-past-opinions-vocab"
+        "a2-ability-possibility-permission-vocab"
       ],
       "stage": "controlled"
     },
@@ -83,7 +83,7 @@
         ]
       ],
       "teaches": [
-        "a2-review-work-past-opinions-vocab"
+        "a2-ability-possibility-permission-vocab"
       ],
       "stage": "controlled"
     },
@@ -94,8 +94,7 @@
       "sentence": "Nem tudok úszni, mert sosem ____. (I learned)",
       "answer": "tanultam",
       "teaches": [
-        "szabad-infinitive",
-        "negation-with-nem"
+        "past-tense-indefinite"
       ],
       "stage": "controlled"
     },
@@ -122,8 +121,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "szabad-infinitive"
+        "tud-infinitive-skills"
       ],
+      "distractor_skills": {
+        "1": "lehet-infinitive",
+        "2": "szabad-infinitive"
+      },
       "stage": "practice"
     },
     {
@@ -133,8 +136,7 @@
       "sentence": "Jól ____ főzni, de rosszul zongorázom. (I can, ability)",
       "answer": "tudok",
       "teaches": [
-        "szabad-infinitive",
-        "lehet-infinitive"
+        "tud-infinitive-skills"
       ],
       "stage": "practice"
     },
@@ -161,7 +163,7 @@
         ]
       ],
       "teaches": [
-        "a2-review-work-past-opinions-vocab"
+        "a2-ability-possibility-permission-vocab"
       ],
       "stage": "practice"
     },
@@ -205,8 +207,7 @@
       ],
       "english": "Petra can swim, but today it's not possible, because the pool is closed.",
       "teaches": [
-        "szabad-infinitive",
-        "lehet-infinitive"
+        "tud-infinitive-skills"
       ],
       "stage": "practice"
     },
@@ -230,7 +231,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "szabad-infinitive"
+        "a2-ability-possibility-permission-vocab"
       ]
     },
     {
@@ -253,7 +254,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "szabad-infinitive"
+        "a2-ability-possibility-permission-vocab"
       ]
     },
     {
@@ -267,8 +268,7 @@
         }
       ],
       "teaches": [
-        "szabad-infinitive",
-        "lehet-infinitive"
+        "tud-infinitive-skills"
       ]
     },
     {
@@ -282,8 +282,7 @@
         }
       ],
       "teaches": [
-        "szabad-infinitive",
-        "lehet-infinitive"
+        "szabad-infinitive"
       ]
     },
     {
@@ -298,8 +297,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "szabad-infinitive"
+        "lehet-infinitive"
       ],
+      "distractor_skills": {
+        "1": "tud-infinitive-skills",
+        "2": "szabad-infinitive"
+      },
       "stage": "check"
     },
     {
@@ -314,9 +317,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "szabad-infinitive",
-        "lehet-infinitive"
+        "potential-hat-het"
       ],
+      "distractor_skills": {
+        "1": "lehet-infinitive",
+        "2": "kell-infinitive"
+      },
       "stage": "check"
     }
   ]
