@@ -4,7 +4,7 @@
     {
       "id": "a2-117-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means \"last weekend\"?",
       "options": [
         "múlt hétvégén",
@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "past-tense-indefinite"
+        "a2-the-past-1-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a2-117-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means \"last year\"?",
       "options": [
         "tavaly",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "past-tense-indefinite"
+        "a2-the-past-1-vocab"
       ],
       "stage": "introduce"
     },
@@ -94,7 +94,7 @@
       "sentence": "Múlt hétvégén sokat ____. (we hiked)",
       "answer": "kirándultunk",
       "teaches": [
-        "definite-past"
+        "past-tense-indefinite"
       ],
       "stage": "controlled"
     },
@@ -105,7 +105,7 @@
       "sentence": "Károly és Ildikó a parkban ____. (had a picnic)",
       "answer": "piknikeztek",
       "teaches": [
-        "definite-past"
+        "past-tense-indefinite"
       ],
       "stage": "controlled"
     },
@@ -170,7 +170,7 @@
       ],
       "english": "We went hiking last weekend.",
       "teaches": [
-        "definite-past"
+        "past-tense-indefinite"
       ],
       "stage": "practice"
     },
@@ -194,7 +194,7 @@
       ],
       "english": "Zsófia and Tamás played sports.",
       "teaches": [
-        "definite-past"
+        "past-tense-indefinite"
       ],
       "stage": "practice"
     },
@@ -218,8 +218,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past"
-      ]
+        "past-tense-indefinite"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "a2-117-dialogue-2",
@@ -241,9 +244,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past",
         "past-tense-indefinite"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "a2-117-writing-1",
@@ -256,7 +261,6 @@
         }
       ],
       "teaches": [
-        "definite-past",
         "past-tense-indefinite"
       ]
     },
@@ -271,7 +275,6 @@
         }
       ],
       "teaches": [
-        "definite-past",
         "past-tense-indefinite"
       ]
     },
@@ -287,18 +290,22 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past"
+        "past-tense-indefinite"
       ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "present-tense-routine-language"
+      },
       "stage": "check"
     },
     {
       "id": "a2-117-check-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Utoljára ____ kirándultunk. (last year)",
       "answer": "tavaly",
       "teaches": [
-        "past-tense-indefinite"
+        "a2-the-past-1-vocab"
       ],
       "stage": "check"
     }

@@ -4,7 +4,7 @@
     {
       "id": "a2-118-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means \"with whom\"?",
       "options": [
         "kivel",
@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "past-tense-indefinite"
+        "a2-the-past-1-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a2-118-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which verb means \"to eat up, to finish eating\"?",
       "options": [
         "megeszik",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past"
+        "a2-the-past-1-vocab"
       ],
       "stage": "introduce"
     },
@@ -94,7 +94,7 @@
       "sentence": "Levest ____. (I ate — some soup)",
       "answer": "ettem",
       "teaches": [
-        "definite-past"
+        "irregular-past"
       ],
       "stage": "controlled"
     },
@@ -105,7 +105,7 @@
       "sentence": "____ a levest. (I ate up — this particular soup)",
       "answer": "Megettem",
       "teaches": [
-        "definite-past"
+        "meg-meaning"
       ],
       "stage": "controlled"
     },
@@ -123,6 +123,10 @@
       "teaches": [
         "definite-past"
       ],
+      "distractor_skills": {
+        "1": "past-tense-indefinite",
+        "2": "present-tense-routine-language"
+      },
       "stage": "practice"
     },
     {
@@ -194,7 +198,7 @@
       ],
       "english": "I ate up the soup.",
       "teaches": [
-        "definite-past"
+        "meg-meaning"
       ],
       "stage": "practice"
     },
@@ -219,7 +223,10 @@
       "correct": 0,
       "teaches": [
         "past-tense-indefinite"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "a2-118-dialogue-2",
@@ -241,8 +248,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past"
-      ]
+        "irregular-past"
+      ],
+      "distractor_skills": {
+        "1": "eszik-iszik"
+      }
     },
     {
       "id": "a2-118-writing-1",
@@ -269,7 +279,7 @@
         }
       ],
       "teaches": [
-        "definite-past"
+        "meg-meaning"
       ]
     },
     {
@@ -286,6 +296,10 @@
       "teaches": [
         "definite-past"
       ],
+      "distractor_skills": {
+        "1": "past-tense-indefinite",
+        "2": "present-tense-routine-language"
+      },
       "stage": "check"
     },
     {

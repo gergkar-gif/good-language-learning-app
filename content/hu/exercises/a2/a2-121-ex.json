@@ -98,7 +98,7 @@
       "sentence": "Tegnap egy szép kabátot ____ a boltban. (I bought)",
       "answer": "vettem",
       "teaches": [
-        "definite-past"
+        "past-tense-indefinite"
       ],
       "stage": "controlled"
     },
@@ -127,6 +127,9 @@
       "teaches": [
         "definite-past"
       ],
+      "distractor_skills": {
+        "1": "past-tense-indefinite"
+      },
       "stage": "practice"
     },
     {
@@ -210,7 +213,7 @@
       ],
       "english": "What did you buy at the store?",
       "teaches": [
-        "definite-past"
+        "past-tense-indefinite"
       ],
       "stage": "practice"
     },
@@ -234,7 +237,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past"
+        "a2-the-past-2-vocab"
       ]
     },
     {
@@ -257,7 +260,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "definite-past"
+        "a2-the-past-2-vocab"
       ]
     },
     {
@@ -271,7 +274,7 @@
         }
       ],
       "teaches": [
-        "definite-past"
+        "past-tense-indefinite"
       ]
     },
     {
@@ -295,13 +298,17 @@
       "question": "Which is correct for \"I bought it\" (one specific coat you both know about)?",
       "options": [
         "Megvettem.",
-        "Vettem.",
+        "Vettem egy kabátot.",
         "Veszek."
       ],
       "correct": 0,
       "teaches": [
         "definite-past"
       ],
+      "distractor_skills": {
+        "1": "past-tense-indefinite",
+        "2": "present-tense-routine-language"
+      },
       "stage": "check"
     },
     {
