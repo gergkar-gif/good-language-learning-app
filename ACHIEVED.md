@@ -3120,3 +3120,9 @@ All 48 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabula
 
 ### HU B1 `rakosi-era` (b1-rakosikorszak-01–05 + consolidation) — locked 2026-10-06
 All 48 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabulary 25, 13 reading items untagged (history-fact questions), `meg-meaning` 5, `prefix-word-order` 3, `how-the-accusative-t-works` 1, `past-tense-indefinite` 1. Content fixes: `consolidation.ex03`'s hint no longer prints the abbreviation; lessons 01–04 template copies that tested later-lesson material were rewritten (`b1-rakosikorszak-01.ex03`–`ex08`, `02.ex04`–`ex08`, `03.ex06`–`ex08`, `04.ex07`–`ex08`). Four "answer carries a possessor ending" warnings stand (false positives on *állam*).
+
+### HU B1 `work-ambition-balance` (b1-26-01–b1-26-05 + consolidation) — locked 2026-10-06
+All 48 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabulary 29 (all sentence-builders), `verb-government-ra-re` 2, `-ban-ben` 2, `-hoz-hez` 2, `-nak-nek` 1, and `definite-past`, `present-tense-routine-language`, `val-vel`, `past-tense-indefinite`, `acc-poss` once each; one reading item untagged; 2 `ds`. Content fixes: `b1-26-02.ex07` also accepts *re* (*joguk van a pihenésre*); `b1-26-04.ex07`'s hint pins "(they received)".
+
+### HU B1 `regime-change` (b1-rendszervaltas-01–05 + consolidation) — locked 2026-10-06
+All 48 exercises read by a Sonnet subagent and reviewed. Tags now: 19 reading items untagged (history facts), unit vocabulary 12, `how-the-accusative-t-works` 5, `acc-poss` 5, `past-tense-indefinite` 3, and `hogy-jon-jen`, `van-past`, `postpositions-basic`, `plural-possessive` once each. Content fixes: `b1-rendszervaltas-01.ex07` keyed *tak* where the form needs *ottak* (*jutottak*); `b1-rendszervaltas-02.ex07`'s hint said "(its opening)" for a plain accusative.
