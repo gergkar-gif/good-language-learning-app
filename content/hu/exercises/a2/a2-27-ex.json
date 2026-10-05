@@ -20,7 +20,7 @@
     {
       "id": "a2-27-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means “wardrobe, cupboard”?",
       "options": [
         "szekrény",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on"
+        "a2-home-housing-vocab"
       ],
       "stage": "introduce"
     },
@@ -63,11 +63,11 @@
     {
       "id": "a2-27-controlled-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A lámpa a mennyezet____ van.",
+      "category": "grammar",
+      "sentence": "A lámpa a mennyezet____ van. (on)",
       "answer": "en",
       "teaches": [
-        "a2-home-housing-vocab"
+        "on-en-on"
       ],
       "stage": "controlled"
     },
@@ -78,7 +78,7 @@
       "sentence": "A ruha a szekrény____ van. (in)",
       "answer": "ben",
       "teaches": [
-        "on-en-on"
+        "ban-ben-in"
       ],
       "stage": "controlled"
     },
@@ -128,7 +128,7 @@
     {
       "id": "a2-27-practice-2",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
       "tiles": [
         "A",
         "polc",
@@ -147,7 +147,7 @@
       ],
       "english": "The shelf is on the wall.",
       "teaches": [
-        "a2-home-housing-vocab"
+        "on-en-on"
       ],
       "stage": "practice"
     },
@@ -173,14 +173,14 @@
       ],
       "english": "The clothes are in the wardrobe.",
       "teaches": [
-        "on-en-on"
+        "ban-ben-in"
       ],
       "stage": "practice"
     },
     {
       "id": "a2-27-practice-4",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
       "tiles": [
         "Sok",
         "könyv",
@@ -199,7 +199,7 @@
       ],
       "english": "There are a lot of books on the shelf.",
       "teaches": [
-        "a2-home-housing-vocab"
+        "on-en-on"
       ],
       "stage": "practice"
     },
@@ -219,12 +219,15 @@
       ],
       "options": [
         "A polc a falon van.",
-        "A polc a szekrényben van."
+        "A polc a falra van."
       ],
       "correct": 0,
       "teaches": [
-        "a2-home-housing-vocab"
-      ]
+        "on-en-on"
+      ],
+      "distractor_skills": {
+        "1": "ra-re"
+      }
     },
     {
       "id": "a2-27-dialogue-2",
@@ -246,8 +249,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on"
-      ]
+        "ban-ben-in"
+      ],
+      "distractor_skills": {
+        "1": "ra-re"
+      }
     },
     {
       "id": "a2-27-writing-1",
@@ -260,7 +266,7 @@
         }
       ],
       "teaches": [
-        "a2-home-housing-vocab"
+        "on-en-on"
       ]
     },
     {
@@ -274,7 +280,7 @@
         }
       ],
       "teaches": [
-        "on-en-on"
+        "ban-ben-in"
       ]
     },
     {
@@ -305,7 +311,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on"
+        "ban-ben-in"
       ],
       "stage": "check"
     }

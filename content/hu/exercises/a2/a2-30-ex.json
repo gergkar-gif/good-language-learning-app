@@ -63,29 +63,29 @@
     {
       "id": "a2-30-controlled-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A könyveket a polc____ tesszük, a ruhákat a szekrénybe.",
+      "category": "grammar",
+      "sentence": "A könyveket a polc____ tesszük, a ruhákat a szekrénybe. (onto)",
       "answer": "ra",
       "teaches": [
-        "a2-home-housing-vocab"
+        "ra-re"
       ],
       "stage": "controlled"
     },
     {
       "id": "a2-30-controlled-3",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A házban van garázs és pince ____.",
+      "category": "grammar",
+      "sentence": "A házban van garázs és pince ____. (too)",
       "answer": "is",
       "teaches": [
-        "a2-home-housing-vocab"
+        "is-placing-also-too"
       ],
       "stage": "controlled"
     },
     {
       "id": "a2-30-controlled-4",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which sentence means “I take the old boxes off the table, and put them on the floor”?",
       "options": [
         "Leveszem a régi dobozokat az asztalról, és a padlóra teszem őket.",
@@ -94,8 +94,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-home-housing-vocab"
+        "ra-re"
       ],
+      "distractor_skills": {
+        "1": "delative-rol-rel",
+        "2": "on-en-on"
+      },
       "stage": "controlled"
     },
     {
@@ -128,7 +132,7 @@
     {
       "id": "a2-30-practice-2",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
       "tiles": [
         "A",
         "könyveket",
@@ -157,14 +161,14 @@
       ],
       "english": "We put the books onto the shelf, the clothes into the wardrobe.",
       "teaches": [
-        "a2-home-housing-vocab"
+        "ra-re"
       ],
       "stage": "practice"
     },
     {
       "id": "a2-30-practice-3",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
       "tiles": [
         "A",
         "házban",
@@ -187,14 +191,14 @@
       ],
       "english": "There's a garage and a cellar too in the building.",
       "teaches": [
-        "a2-home-housing-vocab"
+        "is-placing-also-too"
       ],
       "stage": "practice"
     },
     {
       "id": "a2-30-practice-4",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
       "tiles": [
         "Leveszem",
         "a",
@@ -215,7 +219,7 @@
       ],
       "english": "I take the old boxes off the table.",
       "teaches": [
-        "a2-home-housing-vocab"
+        "delative-rol-rel"
       ],
       "stage": "practice"
     },
@@ -239,8 +243,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-home-housing-vocab"
-      ]
+        "ra-re"
+      ],
+      "distractor_skills": {
+        "1": "on-en-on"
+      }
     },
     {
       "id": "a2-30-dialogue-2",
@@ -276,7 +283,7 @@
         }
       ],
       "teaches": [
-        "a2-home-housing-vocab"
+        "ra-re"
       ]
     },
     {
@@ -290,7 +297,7 @@
         }
       ],
       "teaches": [
-        "a2-home-housing-vocab"
+        "is-placing-also-too"
       ]
     },
     {
@@ -312,7 +319,7 @@
     {
       "id": "a2-30-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which suffix means motion off a surface?",
       "options": [
         "-ról/-ről",
@@ -321,7 +328,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a2-home-housing-vocab"
+        "delative-rol-rel"
       ],
       "stage": "check"
     }

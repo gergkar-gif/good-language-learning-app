@@ -4,7 +4,7 @@
     {
       "id": "a2-29-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means “to rent”?",
       "options": [
         "bérel",
@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "ra-re"
+        "a2-home-housing-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a2-29-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means “to put, to place”?",
       "options": [
         "tesz",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ra-re"
+        "a2-home-housing-vocab"
       ],
       "stage": "introduce"
     },
@@ -78,7 +78,7 @@
       "sentence": "Leveszem a könyvet a polc____. (off)",
       "answer": "ról",
       "teaches": [
-        "on-en-on"
+        "delative-rol-rel"
       ],
       "stage": "controlled"
     },
@@ -96,6 +96,10 @@
       "teaches": [
         "ra-re"
       ],
+      "distractor_skills": {
+        "1": "delative-rol-rel",
+        "2": "on-en-on"
+      },
       "stage": "controlled"
     },
     {
@@ -173,14 +177,14 @@
       ],
       "english": "I take the book off the shelf.",
       "teaches": [
-        "on-en-on"
+        "delative-rol-rel"
       ],
       "stage": "practice"
     },
     {
       "id": "a2-29-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "tiles": [
         "Üres",
         "a",
@@ -205,7 +209,7 @@
       ],
       "english": "The flat is empty, but the view is nice.",
       "teaches": [
-        "ra-re"
+        "a2-home-housing-vocab"
       ],
       "stage": "practice"
     },
@@ -229,7 +233,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ra-re"
+        "a2-home-housing-vocab"
       ]
     },
     {
@@ -253,7 +257,10 @@
       "correct": 0,
       "teaches": [
         "ra-re"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "delative-rol-rel"
+      }
     },
     {
       "id": "a2-29-writing-1",
@@ -280,13 +287,13 @@
         }
       ],
       "teaches": [
-        "on-en-on"
+        "delative-rol-rel"
       ]
     },
     {
       "id": "a2-29-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means “empty”?",
       "options": [
         "üres",
@@ -295,14 +302,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "ra-re"
+        "a2-home-housing-vocab"
       ],
       "stage": "check"
     },
     {
       "id": "a2-29-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means “view”?",
       "options": [
         "kilátás",
@@ -311,7 +318,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ra-re"
+        "a2-home-housing-vocab"
       ],
       "stage": "check"
     }
