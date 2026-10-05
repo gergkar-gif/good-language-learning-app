@@ -330,3 +330,28 @@ longer fit the question they answer.
   every clause complete, every *tan* / *tanto* with its *que*.
 - "Some people did X" questions: a wrong option must be false for
   everyone the question could mean.
+
+### Block 4 (es-latam B2), reviewed 2026-10-06
+
+Commits `7ebe25bb` (block 3 fixes) and `3f825a03` (block 4). All seven
+block 3 fixes are applied exactly. Block 4's mechanics are right: all 32
+decisions applied as written, nothing else changed, counts correct
+(22 shorten / 10 match / 0 log), and no exercise in es-es B1, es-latam B1
+or es-latam B2 is flagged any more. The new wrong options all fit their
+questions this time; the block 3 notes worked.
+
+**Two last fixes** (one commit, worksheet too); after that the Spanish
+B1/B2 part of ROADMAP 130 is finished:
+
+1. `b2-integracion-01.ex04`: the question says *tratado fundacional de
+   1991*, and the shortened correct option is now the only one with
+   *1991* (*El Tratado de Asunción de 1991.*), so the year gives it away.
+   Drop the year from every option: *El Tratado de Asunción.* /
+   *El Tratado de Montevideo.* / *El Protocolo de Ushuaia.* /
+   *El Acuerdo de Cartagena.*
+2. `b2-11-consolidation.ex06`: the new wrong option *Martín Santomé vive
+   resignado a una rutina burocrática predecible…* is true of the novel
+   (that is how *La tregua* begins), so it can be argued for. Replace
+   it with something false about the book, e.g. *Martín Santomé vive
+   satisfecho con su vida de oficina: nunca ha deseado otra cosa ni ha
+   conocido el amor en su madurez.*
