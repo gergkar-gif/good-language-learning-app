@@ -49,11 +49,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A lámpa az asztal ____ (above) van.",
-      "answer": "felett",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "controlled"
+      "stage": "controlled",
+      "answers": [
+        "felett",
+        "fölött"
+      ]
     },
     {
       "id": "a1-161-controlled-3",
@@ -102,7 +105,7 @@
       "id": "a1-161-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Translate: 'The shoes are under the bed.'",
+      "question": "Translate: 'The shoe is under the bed.'",
       "options": [
         "A cipő az ágy alatt van.",
         "A cipő az ágy felett van.",
@@ -112,6 +115,9 @@
       "teaches": [
         "postpositions-basic"
       ],
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      },
       "stage": "practice"
     },
     {
@@ -119,11 +125,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A kép az ágy ____ (above) lóg a falon.",
-      "answer": "felett",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "answers": [
+        "felett",
+        "fölött"
+      ]
     },
     {
       "id": "a1-161-practice-3",
@@ -182,8 +191,8 @@
     {
       "id": "a1-161-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "—Hol van a táskám? —Az asztal ____ van.",
+      "category": "grammar",
+      "question": "—Hol van a táskám? (It is under the table.) —Az asztal ____ van.",
       "options": [
         "alatt",
         "felett",
@@ -197,17 +206,20 @@
     {
       "id": "a1-161-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "—Hol van a tükör? —A mosdó ____ (above) van.",
-      "answer": "felett",
       "teaches": [
         "postpositions-basic"
+      ],
+      "answers": [
+        "felett",
+        "fölött"
       ]
     },
     {
       "id": "a1-161-production-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A labda a szék ____ (under) van.",
       "answer": "alatt",
       "teaches": [
@@ -217,7 +229,7 @@
     {
       "id": "a1-161-production-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'The birds fly above the city.'",
       "options": [
         "A madarak a város felett repülnek.",
@@ -227,7 +239,10 @@
       "correct": 0,
       "teaches": [
         "postpositions-basic"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "a1-161-check-1",

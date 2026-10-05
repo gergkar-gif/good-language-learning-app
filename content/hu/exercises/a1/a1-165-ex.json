@@ -4,7 +4,7 @@
     {
       "id": "a1-165-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What was Meg looking for in the story?",
       "options": [
         "a vonatjegyet",
@@ -13,7 +13,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "postpositions-basic"
+        "a1-postpositions-vocab"
       ],
       "stage": "introduce"
     },
@@ -40,7 +40,7 @@
       "sentence": "Nem találom a ____ (ticket).",
       "answer": "jegyet",
       "teaches": [
-        "postpositions-basic"
+        "how-the-accusative-t-works"
       ],
       "stage": "controlled"
     },
@@ -85,7 +85,7 @@
     {
       "id": "a1-165-controlled-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'keres' mean?",
       "options": [
         "to look for",
@@ -94,7 +94,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "postpositions-basic"
+        "a1-postpositions-vocab"
       ],
       "stage": "controlled"
     },
@@ -112,6 +112,9 @@
       "teaches": [
         "postpositions-basic"
       ],
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      },
       "stage": "practice"
     },
     {
@@ -128,11 +131,11 @@
     {
       "id": "a1-165-practice-3",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Végre ____ (megtalál + I) a szemüvegem.",
       "answer": "megtaláltam",
       "teaches": [
-        "postpositions-basic"
+        "a1-postpositions-vocab"
       ],
       "stage": "practice"
     },
@@ -182,11 +185,11 @@
     {
       "id": "a1-165-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "—Hol a kulcs? —A lámpa ____ van az asztalon.",
       "options": [
         "mellett",
-        "alatt",
+        "között",
         "után"
       ],
       "correct": 0,
@@ -197,17 +200,17 @@
     {
       "id": "a1-165-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "vocabulary",
       "sentence": "—Megtaláltad a jegyet? —Igen, ____ (megtalál + I).",
       "answer": "megtaláltam",
       "teaches": [
-        "postpositions-basic"
+        "a1-postpositions-vocab"
       ]
     },
     {
       "id": "a1-165-production-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A macska a kanapé ____ (behind) alszik.",
       "answer": "mögött",
       "teaches": [
@@ -217,7 +220,7 @@
     {
       "id": "a1-165-production-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'The phone is under the paper.'",
       "options": [
         "A telefon a papír alatt van.",
@@ -227,7 +230,10 @@
       "correct": 0,
       "teaches": [
         "postpositions-basic"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "a1-165-check-1",
@@ -249,8 +255,8 @@
       "id": "a1-165-check-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A jegy az asztal ____ (on top / surface) volt.",
-      "answer": "tetején",
+      "sentence": "A jegy a doboz ____ (behind) volt.",
+      "answer": "mögött",
       "teaches": [
         "postpositions-basic"
       ],
