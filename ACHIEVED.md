@@ -3054,3 +3054,15 @@ All 48 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabula
 
 ### HU B1 `18th-century-rebuilding` (b1-mariaterezia-01–05 + consolidation) — locked 2026-10-05
 All 53 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabulary 36, 11 untagged reading, `postpositions-altal-reven` 3, `val-vel`, `formal-obligation`, `concessive-postpositions` once each. Content fixes: `b1-mariaterezia-01.ex03` and `consolidation.ex04` accept *által* as well as *révén*; `b1-mariaterezia-04.ex04` accepts *dacára*. Left: `consolidation.ex03` (*sanguinem*, a Latin motto) keeps a possessor-hint warning, a false positive.
+
+### HU B1 `culture-entertainment` (b1-15-01–b1-15-05 + consolidation) — locked 2026-10-05
+All 48 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabulary 26, five reading items untagged, `correlative-minel-annal` 3, `3rd-person-possessive` 3, `superlative` 2, and `kellene`, `irregular-nek-conditional`, `nek-conditional`, `past-participle-adjective`, `how-the-accusative-t-works`, `verb-government-hoz-hez`, `-val-vel`, `plural-nouns-k` once each. Content fixes: three hints pin the possessor ("its venue", "its director", "its lead actor"); `consolidation.ex07` had a wrong gloss ("performers" for *főszereplők*). `correlative-minel-annal` is taught here (b1-15-01-a) but registered at citizenship b1-matyas-02: registry follow-up.
+
+### HU B1 `reform-age` (b1-reformkor-01–05 + consolidation) — locked 2026-10-05
+All 53 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabulary 31, 17 untagged reading (history-fact questions), `evidentials` 3 (*kétségkívül*, the nearest skill), `valik-verb` 1, `how-the-accusative-t-works` 1. Content fixes: `b1-reformkor-02.ex04` and `-04.ex04` accept equivalent answers (*kétségtelenül*, *lett*).
+
+### HU B1 `environment` (b1-16-01–b1-16-05 + consolidation) — locked 2026-10-05
+All 48 exercises (a repeated 8-item template per lesson) read by a Sonnet subagent and reviewed. Tags now: unit vocabulary 24, `mert-because` 10 (the *ezért* choice and fill-blank of each lesson), `causal-postpositions` 5 (*aminek következtében*), `kell-infinitive` 1, `azert-hogy-purpose` 1, six reading items untagged. Content fixes (main session): `ex04` of lessons 01–05 accepts *emiatt* and *tehát* as well as *ezért*; `b1-16-01.ex06` and `.ex07` used *következtében* and *szempontjából*, which only lesson 2 teaches (now a *kell* fill-blank and a sentence from the 01-b screen); `b1-16-consolidation.ex08` asked about an invented Gárdonyi novella and is now a plain question about protecting nature. `causal-postpositions` is taught here (b1-16-02-a) but registered at citizenship b1-mohacs-01: registry follow-up.
+
+### HU B1 `revolution-1848` (b1-17-01–b1-17-05 + consolidation) — locked 2026-10-05
+All 48 exercises read by a Sonnet subagent and reviewed. Tags now: unit vocabulary 28, `hogy-jon-jen` 5, `hogy-clauses` 5, seven reading items untagged. No content fixes needed. *nélkül* has no skill (vocabulary); *államként* stays vocabulary because `kent-vs-mint` is taught later (b1-17).
