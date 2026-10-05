@@ -160,3 +160,59 @@ a correct option was changed (all `shorten` ids).
 
 (The reviewer adds notes here after each stop. Read them before starting
 the next block.)
+
+### Block 1 (es-both B1), reviewed 2026-10-05
+
+Commit `c7a78634`. The mechanics are right: all 127 decisions are applied
+exactly as written, in every listed copy; the copies are identical;
+nothing outside the worksheet changed; no block 1 id is still flagged; the
+validator passes; the counts in the report (21 shorten / 106 match / 0 log)
+are correct. Most rewrites are good. Rewriting grammar distractors as
+"one half of the correct answer" (feature A alone, feature B alone) works
+well, so keep doing it.
+
+**Fix these four first, in a separate commit before you start block 2**
+(edit the worksheet entry as well, so it still matches the files):
+
+1. `b1-39-01.ex10`: *Me quedé rojo de vergüenza …* is correct Spanish
+   (*quedarse rojo* is common), so it is now a second right answer.
+   Replace it with a change verb that really is wrong here, e.g.
+   *Me convertí en rojo de vergüenza porque no sabía la respuesta.*
+   Lesson: when a distractor tests a word choice, check that the wrong
+   word really is wrong in the full sentence you wrote, not only in the
+   short original.
+2. `b1-28-05.ex21`: the shortened *Se permite el acceso en casos de
+   emergencia.* dropped the fact the text gives (access **by car**).
+   Next to *Está prohibido caminar por la plaza*, it now suggests that
+   any access is restricted. Use
+   *Se permite entrar en coche en una emergencia.* Rule 1: shortening
+   must keep the fact the question asks about.
+3. `b1-39-05.ex10`: the correct option ends *hotel boutique*, but both
+   wrong ones end *hotel para turistas*, so the correct one is the odd one
+   out. Make all three identical apart from the verb:
+   *Se puso en un hermoso hotel boutique.* / *Se hizo en un hermoso hotel
+   boutique.*
+4. `b1-04-05.ex16` ("most complete recommendation"): the new wrong option
+   *Revisa el plan inmediatamente en la oficina antes de tomar una
+   decisión* is complete enough to argue for. Keep the wrong options as
+   long as they are, but make them plainly less complete: no purpose and no
+   reason, only time and place details, e.g. *Revisa el plan esta tarde en
+   la oficina con tus compañeros.*
+
+**For the next blocks:**
+
+- In `shorten`, aim for about 1.3× or less. A few block 1 results stay
+  near 1.5× (`b1-14-05.ex22`, `b1-40-03.ex07`) with distractors of 20
+  characters, so the correct option is still the longest by a visible
+  margin. Acceptable here, but don't stop at 1.5×.
+- In dialogue items, read the line *before* the blank and check that
+  each new wrong reply really fails to answer it (`b1-33-05.ex13` does
+  this well: *Dijo que …* doesn't answer *¿Qué preguntó…?*).
+- Absolutes in wrong options are fine **when the question is about
+  nuance** (`b1-34-05.ex02`: categorical vs nuanced opinion). Elsewhere
+  rule 3 still applies.
+
+Not yours to fix (outside this task, noted for the queue):
+`b1-37.cons.ex05` has *hayáis* (vosotros) in the es-latam copy;
+`b1-19-03.ex06` and `b1-29-05.ex02` give the answer away in the question
+text itself.
