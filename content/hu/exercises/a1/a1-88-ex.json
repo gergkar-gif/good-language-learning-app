@@ -20,7 +20,7 @@
     {
       "id": "a1-88-review-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which article is correct for ágy?",
       "options": [
         "az",
@@ -30,13 +30,13 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-home-vocab"
+        "definite-article-a-az"
       ]
     },
     {
       "id": "a1-88-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"lamp\"?",
       "options": [
         "lámpa",
@@ -45,14 +45,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "possessive-suffixes"
+        "a1-home-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a1-88-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"window\"?",
       "options": [
         "ablak",
@@ -61,7 +61,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "possessive-suffixes"
+        "a1-home-vocab"
       ],
       "stage": "introduce"
     },
@@ -99,7 +99,7 @@
       "sentence": "____ ablak nyitva van. (the — vowel-initial article)",
       "answer": "Az",
       "teaches": [
-        "possessive-suffixes"
+        "definite-article-a-az"
       ],
       "stage": "controlled"
     },
@@ -115,7 +115,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "possessive-suffixes"
+        "definite-article-a-az"
       ],
       "stage": "controlled"
     },
@@ -126,7 +126,7 @@
       "sentence": "A lámpa a tükör ____ van. (in front of)",
       "answer": "előtt",
       "teaches": [
-        "possessive-suffixes"
+        "postpositions-basic"
       ],
       "stage": "controlled"
     },
@@ -144,6 +144,9 @@
       "teaches": [
         "possessive-suffixes"
       ],
+      "distractor_skills": {
+        "2": "plural-nouns-k"
+      },
       "stage": "practice"
     },
     {
@@ -153,7 +156,7 @@
       "sentence": "Az ajtó az ablak ____ van. (next to)",
       "answer": "mellett",
       "teaches": [
-        "possessive-suffixes"
+        "postpositions-basic"
       ],
       "stage": "practice"
     },
@@ -208,7 +211,7 @@
       ],
       "english": "The lamp is in front of the mirror.",
       "teaches": [
-        "possessive-suffixes"
+        "postpositions-basic"
       ],
       "stage": "practice"
     },
@@ -232,8 +235,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-home-vocab",
-        "possessive-suffixes"
+        "postpositions-basic"
       ],
       "stage": "practice"
     },
@@ -257,14 +259,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-home-vocab",
-        "possessive-suffixes"
+        "postpositions-basic"
       ]
     },
     {
       "id": "a1-88-dialogue-2",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "Choose the natural reply to \"Hol van a tükör?\"",
       "options": [
         "A tükör az ajtó mellett van.",
@@ -273,8 +274,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-home-vocab",
-        "possessive-suffixes"
+        "postpositions-basic"
       ]
     },
     {
@@ -288,8 +288,7 @@
         }
       ],
       "teaches": [
-        "a1-home-vocab",
-        "possessive-suffixes"
+        "postpositions-basic"
       ]
     },
     {
@@ -303,14 +302,13 @@
         }
       ],
       "teaches": [
-        "a1-home-vocab",
         "possessive-suffixes"
       ]
     },
     {
       "id": "a1-88-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"mirror\"?",
       "options": [
         "tükör",
@@ -319,7 +317,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "possessive-suffixes"
+        "a1-home-vocab"
       ],
       "stage": "check"
     },
