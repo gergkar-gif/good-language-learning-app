@@ -103,3 +103,11 @@ same or better quality.
 - Never `git add` by a guessed file prefix: a unit's exercise files are named after its stems (`b1-otvenhat-*`, not the unit id), and one failed pathspec aborts the whole `git add`. Read the stems from the unit table, and confirm with `git status` that no applied-and-locked file is left uncommitted (a locked tag that disagrees with the committed file is not caught until the next push).
 - Count the subagents that are running before launching: the limit of two applies to launches made while earlier ones are still in flight.
 - Check coverage at the end: every exercise id in the level must be in `tags.lock.json` (a unit skipped by a pairing mistake showed up only this way).
+
+## Added after ES A1 (26 units, 2,504 exercises per course, 2026-10-06)
+
+- Spanish needs three script adaptations the Hungarian runs did not: "taught later" by table position (stems like `a1-directions-01` carry no number), a comparison of es-es and es-latam text in the dump and the check (one decisions file covers both), and a warning when a vocabulary tag belongs to another unit (the registry's `a1-unit01-vocab` alias had spread to 271 exercises).
+- Run the coverage check per course at the end: every exercise id under `exercises/<level>/` must be in `tags.lock.json`. It found 32 orphan exercises (lessons outside the unit table) that no pairing would have reached.
+- Spanish exercise ids come in several shapes (`a1-02-04.ex15`, `a1.05.02.ex11`, `a1-03c-03-d02`, `a1.cafe.01.ex09`) and subagent reports abbreviate them (`03-d02`). Use a small helper that finds an exercise by id across the level's files and keeps each file's line endings before applying fixes.
+- Tell subagents that "starts this exchange" items are a defect template, and that fill-blanks with the subject dropped need a person in the hint. Both were the commonest content fixes.
+- Cost: about 115k subagent tokens per pair, 8–12 minutes per pair; reviewing every line took roughly 10k main-session tokens per unit.

@@ -9,13 +9,11 @@
       "options": [
         "sabe",
         "conoce",
-        "puede"
+        "sabes"
       ],
       "correct": 0,
       "teaches": [
-        "saber-infinitivo",
-        "querer-poder",
-        "present-tense"
+        "saber-infinitivo"
       ]
     },
     {
@@ -25,9 +23,7 @@
       "sentence": "¿_____ (poder, tú) repetir la explicación?",
       "answer": "Puedes",
       "teaches": [
-        "querer-poder",
-        "saber-infinitivo",
-        "present-tense"
+        "querer-poder"
       ],
       "english": "Can you repeat the explanation?"
     },
@@ -77,7 +73,7 @@
       ],
       "english": "Can you help me with this?",
       "teaches": [
-        "pedir-favores"
+        "querer-poder"
       ]
     },
     {
@@ -93,7 +89,10 @@
       "correct": 0,
       "teaches": [
         "saber-infinitivo"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "querer-poder"
+      }
     },
     {
       "id": "a1.abi.cons.ex07",
@@ -102,9 +101,7 @@
       "sentence": "Nosotros _____ (poder) hablar con el profesor.",
       "answer": "podemos",
       "teaches": [
-        "querer-poder",
-        "a-personal",
-        "articles"
+        "querer-poder"
       ],
       "english": "We can speak with the teacher."
     },
@@ -164,7 +161,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Carlos, ¿conoces a alguien que sepa tocar la guitarra?"
+          "text": "Carlos, ¿conoces a un buen profesor de guitarra?"
         },
         {
           "speaker": "Carlos",
@@ -178,9 +175,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "saber-vs-conocer",
-        "pedir-favores",
-        "present-tense"
+        "a1-skills-abilities-vocab"
       ]
     },
     {
@@ -204,9 +199,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "pedir-favores",
-        "a-personal",
-        "ser"
+        "a1-skills-abilities-vocab"
       ]
     },
     {
