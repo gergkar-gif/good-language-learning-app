@@ -13,8 +13,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "personal-pronouns",
-        "van-zero-copula"
+        "personal-pronouns"
       ],
       "stage": "consolidation"
     },
@@ -30,9 +29,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "ki-and-mi",
-        "van-zero-copula"
+        "ki-and-mi"
       ],
+      "distractor_skills": {
+        "2": "spatial-questions-hol-hova"
+      },
       "stage": "consolidation"
     },
     {
@@ -47,9 +48,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "spatial-questions-hol-hova",
-        "ban-ben-in"
+        "ki-and-mi"
       ],
+      "distractor_skills": {
+        "2": "spatial-questions-hol-hova"
+      },
       "stage": "consolidation"
     },
     {
@@ -64,9 +67,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula",
-        "ki-and-mi"
+        "spatial-questions-hol-hova"
       ],
+      "distractor_skills": {
+        "1": "ki-and-mi",
+        "2": "ki-and-mi"
+      },
       "stage": "consolidation"
     },
     {
@@ -97,8 +103,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "personal-pronouns",
-        "van-zero-copula"
+        "personal-pronouns"
       ],
       "stage": "consolidation"
     },
@@ -109,7 +114,6 @@
       "sentence": "Én Meg ____.",
       "answer": "vagyok",
       "teaches": [
-        "personal-pronouns",
         "van-zero-copula"
       ],
       "stage": "consolidation"
@@ -121,8 +125,7 @@
       "sentence": "Ki ___? (he/she)",
       "answer": "ő",
       "teaches": [
-        "ki-and-mi",
-        "van-zero-copula"
+        "personal-pronouns"
       ],
       "stage": "consolidation"
     },
@@ -133,8 +136,7 @@
       "sentence": "____ laksz? (where)",
       "answer": "Hol",
       "teaches": [
-        "spatial-questions-hol-hova",
-        "ban-ben-in"
+        "spatial-questions-hol-hova"
       ],
       "stage": "consolidation"
     },
@@ -156,8 +158,7 @@
       ],
       "english": "He/she is a person.",
       "teaches": [
-        "van-zero-copula",
-        "ki-and-mi"
+        "van-zero-copula"
       ],
       "stage": "consolidation"
     },
@@ -177,7 +178,6 @@
       ],
       "english": "Who are you?",
       "teaches": [
-        "van-zero-copula",
         "ki-and-mi"
       ],
       "stage": "consolidation"
@@ -200,7 +200,6 @@
       ],
       "english": "I am Meg.",
       "teaches": [
-        "personal-pronouns",
         "van-zero-copula"
       ],
       "stage": "consolidation"
@@ -211,21 +210,20 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Anna itt van?"
+          "speaker": "Károly",
+          "text": "Te Anna vagy?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Anna",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, itt van.",
-        "Nem, én vagyok."
+        "Igen, Anna vagyok.",
+        "Igen, Anna vagy."
       ],
       "correct": 0,
       "teaches": [
-        "personal-pronouns",
         "van-zero-copula"
       ],
       "stage": "consolidation"
@@ -250,8 +248,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ki-and-mi",
-        "van-zero-copula"
+        "a1-introducing-yourself-vocab"
       ],
       "stage": "consolidation"
     },
@@ -275,8 +272,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "spatial-questions-hol-hova",
-        "ban-ben-in"
+        "yes-no-questions"
       ],
       "stage": "consolidation"
     },
@@ -296,12 +292,11 @@
       ],
       "options": [
         "Igen, ő egy barát.",
-        "Nem, ő nem barát."
+        "Igen, ő nem barát."
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula",
-        "ki-and-mi"
+        "yes-no-questions"
       ],
       "stage": "consolidation"
     },
@@ -316,7 +311,6 @@
         }
       ],
       "teaches": [
-        "personal-pronouns",
         "van-zero-copula"
       ],
       "stage": "consolidation"
@@ -332,8 +326,7 @@
         }
       ],
       "teaches": [
-        "ki-and-mi",
-        "van-zero-copula"
+        "ki-and-mi"
       ],
       "stage": "consolidation"
     },
@@ -348,8 +341,7 @@
         }
       ],
       "teaches": [
-        "spatial-questions-hol-hova",
-        "ban-ben-in"
+        "spatial-questions-hol-hova"
       ],
       "stage": "consolidation"
     },
@@ -364,8 +356,7 @@
         }
       ],
       "teaches": [
-        "van-zero-copula",
-        "ki-and-mi"
+        "van-zero-copula"
       ],
       "stage": "consolidation"
     }

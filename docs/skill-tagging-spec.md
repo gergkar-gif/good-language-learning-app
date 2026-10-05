@@ -126,6 +126,10 @@ So every unit is tagged the same way:
   van*) gets the grammar skill.
 - **A choice between paradigm members** (*én / te / ő*, *ki / mi*) gets that
   paradigm's grammar skill.
+  This holds for a "Which means …?" item too when every option belongs to the
+  paradigm ("Which means *I*?" *én / te / ő*; "Which means *where*?" *hol /
+  ki / mi*); a gloss against mixed words (*barát / ember / nő*) stays
+  vocabulary. Settled on HU A1 unit 3.
 - **Category follows the tag** on choice, fill-blank and builder items: a
   vocabulary tag means `category: vocabulary`, a grammar tag `grammar`.
   `dialogue`, `writing` and `listening` keep their category whatever the tag.
