@@ -4,7 +4,7 @@
     {
       "id": "a2-162-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'rajtam van' mean in clothing context?",
       "options": [
         "I am wearing it (it is on me)",
@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "case-inflected-pronouns"
+        "a2-pronouns-internal-surface-cases-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a2-162-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'Rajtad múlik' mean?",
       "options": [
         "It depends on you",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "case-inflected-pronouns"
+        "a2-pronouns-internal-surface-cases-vocab"
       ],
       "stage": "introduce"
     },
@@ -89,8 +89,8 @@
       "question": "Translate: 'Help them out!'",
       "options": [
         "Segíts rajtuk!",
-        "Segíts nekik!",
-        "Segíts velük!"
+        "Segíts bennük!",
+        "Segíts rájuk!"
       ],
       "correct": 0,
       "teaches": [
@@ -101,7 +101,7 @@
     {
       "id": "a2-162-practice-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does 'Mi van rajtad?' mean?",
       "options": [
         "What are you wearing?",
@@ -110,7 +110,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "case-inflected-pronouns"
+        "a2-pronouns-internal-surface-cases-vocab"
       ],
       "stage": "practice"
     },
@@ -182,8 +182,8 @@
     {
       "id": "a2-162-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "—Ki következik a játékban? —Most ____ van a sor!",
+      "category": "grammar",
+      "question": "—Mikor jövök én? —Most ____ van a sor!",
       "options": [
         "rajtad",
         "rajtam",
@@ -197,7 +197,7 @@
     {
       "id": "a2-162-dialogue-2",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "—Fázol? —Nem, mert meleg pulóver van ____ (on me).",
       "answer": "rajtam",
       "teaches": [
@@ -207,7 +207,7 @@
     {
       "id": "a2-162-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A tanár segített ____ (on them).",
       "answer": "rajtuk",
       "teaches": [
@@ -217,7 +217,7 @@
     {
       "id": "a2-162-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'Everything depends on you.'",
       "options": [
         "Minden rajtad múlik.",
@@ -227,7 +227,10 @@
       "correct": 0,
       "teaches": [
         "case-inflected-pronouns"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "good-for-me-nekem-jo"
+      }
     },
     {
       "id": "a2-162-check-1",
@@ -248,11 +251,11 @@
     {
       "id": "a2-162-check-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Most rajtunk a ____ (turn)!",
       "answer": "sor",
       "teaches": [
-        "case-inflected-pronouns"
+        "a2-pronouns-internal-surface-cases-vocab"
       ],
       "stage": "check"
     }
