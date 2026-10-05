@@ -36,8 +36,8 @@
     {
       "id": "a1-72-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the waking-up sentence.",
+      "category": "vocabulary",
+      "question": "Which sentence means “I wake up in the morning”?",
       "options": [
         "Reggel felébredek.",
         "Este felébredek.",
@@ -45,15 +45,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "a1-daily-routine-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a1-72-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which expression means “at night”?",
       "options": [
         "éjjel",
@@ -62,8 +61,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "a1-daily-routine-vocab"
       ],
       "stage": "introduce"
     },
@@ -101,15 +99,14 @@
       "sentence": "Reggel _____. (I have breakfast)",
       "answer": "reggelizem",
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "present-tense-routine-language"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-72-controlled-3",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means “to get up”?",
       "options": [
         "felkelni",
@@ -118,8 +115,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "a1-daily-routine-vocab"
       ],
       "stage": "controlled"
     },
@@ -127,7 +123,7 @@
       "id": "a1-72-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence fits a daily routine?",
+      "question": "Which sentence means “I wake up in the morning”?",
       "options": [
         "Reggel felébredek.",
         "Reggel felébredni.",
@@ -135,9 +131,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "present-tense-routine-language"
       ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni"
+      },
       "stage": "controlled"
     },
     {
@@ -179,9 +177,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "present-tense-routine-language"
       ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni"
+      },
       "stage": "practice"
     },
     {
@@ -191,8 +191,7 @@
       "sentence": "Éjjel _____. (I go to bed)",
       "answer": "lefekszem",
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "present-tense-routine-language"
       ],
       "stage": "practice"
     },
@@ -212,8 +211,7 @@
       ],
       "english": "I wake up in the morning.",
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "present-tense-routine-language"
       ],
       "stage": "practice"
     },
@@ -237,9 +235,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "present-tense-routine-language"
       ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni"
+      },
       "stage": "practice"
     },
     {
@@ -249,7 +249,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Mikor?"
+          "text": "Mikor alszol?"
         },
         {
           "speaker": "Meg",
@@ -259,12 +259,11 @@
       "options": [
         "éjjel",
         "reggel",
-        "este"
+        "délben"
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "a1-daily-routine-vocab"
       ]
     },
     {
@@ -288,9 +287,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
-      ]
+        "present-tense-routine-language"
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni"
+      }
     },
     {
       "id": "a1-72-writing-1",
@@ -299,12 +300,11 @@
       "template": [
         {
           "prompt": "Write two short Hungarian sentences using Meals and Work.",
-          "answer": "Éjjel alszom. Reggelizek."
+          "answer": "Éjjel alszom. Reggelizem."
         }
       ],
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "a1-daily-routine-vocab"
       ]
     },
     {
@@ -318,15 +318,14 @@
         }
       ],
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "a1-daily-routine-vocab"
       ]
     },
     {
       "id": "a1-72-check-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence is correct?",
+      "question": "Which sentence means “I get up in the morning”?",
       "options": [
         "Reggel felkelek.",
         "Reggel felkelni.",
@@ -334,15 +333,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "present-tense-routine-language"
       ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni"
+      },
       "stage": "check"
     },
     {
       "id": "a1-72-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which expression means “every day”?",
       "options": [
         "minden nap",
@@ -351,8 +352,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language",
-        "sequencing-elobb-aztan-utana-vegul"
+        "a1-daily-routine-vocab"
       ],
       "stage": "check"
     }
