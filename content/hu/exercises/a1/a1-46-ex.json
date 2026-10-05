@@ -4,7 +4,7 @@
     {
       "id": "a1-46-review-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which sentence is correct?",
       "options": [
         "Ki vagy?",
@@ -14,13 +14,13 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-foundations-review-vocab"
+        "basic-hungarian-word-order"
       ]
     },
     {
       "id": "a1-46-review-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which question asks “Where do you live?”",
       "options": [
         "Hol laksz?",
@@ -30,8 +30,12 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-foundations-review-vocab"
-      ]
+        "spatial-questions-hol-hova"
+      ],
+      "distractor_skills": {
+        "1": "ki-and-mi",
+        "2": "ki-and-mi"
+      }
     },
     {
       "id": "a1-46-intro-1",
@@ -45,7 +49,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "possessive-suffixes"
+        "ki-and-mi"
       ],
       "stage": "introduce"
     },
@@ -72,7 +76,7 @@
         ]
       ],
       "teaches": [
-        "a1-foundations-review-vocab"
+        "a1-reading-hungarian-vocab"
       ],
       "stage": "introduce"
     },
@@ -90,6 +94,9 @@
       "teaches": [
         "spatial-questions-hol-hova"
       ],
+      "distractor_skills": {
+        "1": "ki-and-mi"
+      },
       "stage": "controlled"
     },
     {
@@ -98,10 +105,11 @@
       "category": "grammar",
       "sentence": "Mi ____ itt?",
       "answers": [
-        "ez"
+        "ez",
+        "az"
       ],
       "teaches": [
-        "van-zero-copula"
+        "demonstratives-ez-az"
       ],
       "stage": "controlled"
     },
@@ -128,7 +136,7 @@
         ]
       ],
       "teaches": [
-        "a1-foundations-review-vocab"
+        "a1-objects-locations-vocab"
       ],
       "stage": "controlled"
     },
@@ -144,8 +152,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "possessive-suffixes"
+        "plural-nouns-k"
       ],
+      "distractor_skills": {
+        "2": "possessive-suffixes"
+      },
       "stage": "controlled"
     },
     {
@@ -171,7 +182,7 @@
         ]
       ],
       "teaches": [
-        "a1-foundations-review-vocab"
+        "a1-objects-locations-vocab"
       ],
       "stage": "practice"
     },
@@ -187,8 +198,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula"
+        "plural-nouns-k"
       ],
+      "distractor_skills": {
+        "2": "possessive-suffixes"
+      },
       "stage": "practice"
     },
     {
@@ -198,7 +212,7 @@
       "sentence": "Ez a ____. (my book)",
       "answer": "könyvem",
       "teaches": [
-        "demonstratives-ez-az"
+        "possessive-suffixes"
       ],
       "stage": "practice"
     },
@@ -222,7 +236,7 @@
       ],
       "english": "The friends are here.",
       "teaches": [
-        "van-zero-copula"
+        "plural-nouns-k"
       ],
       "stage": "practice"
     },
@@ -257,7 +271,7 @@
       "sentence": "A ____ itt vannak. (friends, plural)",
       "answer": "barátok",
       "teaches": [
-        "van-zero-copula"
+        "plural-nouns-k"
       ],
       "stage": "practice"
     },
@@ -273,7 +287,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "demonstratives-ez-az"
+        "possessive-pronouns-enyem"
       ],
       "stage": "practice"
     },
@@ -320,7 +334,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "demonstratives-ez-az"
+        "possessive-pronouns-enyem"
       ]
     },
     {
@@ -348,7 +362,7 @@
         }
       ],
       "teaches": [
-        "van-zero-copula"
+        "possessive-pronouns-enyem"
       ]
     },
     {
@@ -363,8 +377,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "spatial-questions-hol-hova"
+        "ki-and-mi"
       ],
+      "distractor_skills": {
+        "1": "spatial-questions-hol-hova"
+      },
       "stage": "check"
     },
     {
@@ -379,7 +396,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "demonstratives-ez-az"
+        "possessive-pronouns-enyem"
       ],
       "stage": "check"
     }

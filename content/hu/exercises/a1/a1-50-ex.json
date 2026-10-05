@@ -14,13 +14,13 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-foundations-review-vocab"
+        "a1-greetings-basic-interaction-vocab"
       ]
     },
     {
       "id": "a1-50-review-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which question asks “Where do you live?”",
       "options": [
         "Hol laksz?",
@@ -30,13 +30,17 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-foundations-review-vocab"
-      ]
+        "spatial-questions-hol-hova"
+      ],
+      "distractor_skills": {
+        "1": "ki-and-mi",
+        "2": "ki-and-mi"
+      }
     },
     {
       "id": "a1-50-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which question asks someone's age?",
       "options": [
         "Hány éves vagy?",
@@ -45,7 +49,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik"
+        "a1-numbers-personal-information-vocab"
       ],
       "stage": "introduce"
     },
@@ -79,7 +83,7 @@
     {
       "id": "a1-50-controlled-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which is the reply to being thanked?",
       "options": [
         "Kérem.",
@@ -88,18 +92,18 @@
       ],
       "correct": 0,
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik"
+        "a1-greetings-basic-interaction-vocab"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-50-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "A kávé ____. (good)",
       "answer": "jó",
       "teaches": [
-        "van-zero-copula"
+        "a1-foundations-review-vocab"
       ],
       "stage": "controlled"
     },
@@ -142,8 +146,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula"
+        "plural-nouns-k"
       ],
+      "distractor_skills": {
+        "2": "possessive-suffixes"
+      },
       "stage": "controlled"
     },
     {
@@ -185,8 +192,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula"
+        "plural-nouns-k"
       ],
+      "distractor_skills": {
+        "2": "possessive-suffixes"
+      },
       "stage": "practice"
     },
     {
@@ -196,7 +206,7 @@
       "sentence": "Ez a ____. (my key)",
       "answer": "kulcsom",
       "teaches": [
-        "demonstratives-ez-az"
+        "possessive-suffixes"
       ],
       "stage": "practice"
     },
@@ -220,7 +230,7 @@
       ],
       "english": "The friends are together.",
       "teaches": [
-        "van-zero-copula"
+        "egyutt-together"
       ],
       "stage": "practice"
     },
@@ -240,11 +250,11 @@
       ],
       "options": [
         "Igen, együtt megyünk.",
-        "Nem, egyedül megyek."
+        "Nem, együtt megyünk."
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula"
+        "yes-no-questions"
       ],
       "stage": "practice"
     },
@@ -255,7 +265,7 @@
       "sentence": "A barátok ____ vannak. (together)",
       "answer": "együtt",
       "teaches": [
-        "van-zero-copula"
+        "egyutt-together"
       ],
       "stage": "practice"
     },
@@ -271,7 +281,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "demonstratives-ez-az"
+        "possessive-pronouns-enyem"
       ],
       "stage": "practice"
     },
@@ -295,7 +305,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula"
+        "a1-greetings-basic-interaction-vocab"
       ]
     },
     {
@@ -318,7 +328,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "demonstratives-ez-az"
+        "a1-foundations-review-vocab"
       ]
     },
     {
@@ -346,13 +356,13 @@
         }
       ],
       "teaches": [
-        "van-zero-copula"
+        "egyutt-together"
       ]
     },
     {
       "id": "a1-50-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word greets someone?",
       "options": [
         "Szia!",
@@ -361,7 +371,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula"
+        "a1-greetings-basic-interaction-vocab"
       ],
       "stage": "check"
     },
@@ -377,7 +387,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "demonstratives-ez-az"
+        "possessive-pronouns-enyem"
       ],
       "stage": "check"
     }

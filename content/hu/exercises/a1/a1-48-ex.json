@@ -4,23 +4,23 @@
     {
       "id": "a1-48-review-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which question asks \"What is this?\"",
       "options": [
         "Mi ez?",
         "Ez egy könyv.",
-        "Ez mi?"
+        "Ki ez?"
       ],
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-foundations-review-vocab"
+        "ki-and-mi"
       ]
     },
     {
       "id": "a1-48-review-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which question asks “Where do you live?”",
       "options": [
         "Hol laksz?",
@@ -30,8 +30,12 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-foundations-review-vocab"
-      ]
+        "spatial-questions-hol-hova"
+      ],
+      "distractor_skills": {
+        "1": "ki-and-mi",
+        "2": "ki-and-mi"
+      }
     },
     {
       "id": "a1-48-intro-1",
@@ -45,8 +49,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t"
+        "plural-nouns-k"
       ],
+      "distractor_skills": {
+        "1": "plural-predicate-adjectives-k"
+      },
       "stage": "introduce"
     },
     {
@@ -88,8 +95,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "ki-and-mi"
+        "indefinite-article-egy"
       ],
+      "distractor_skills": {
+        "1": "plural-nouns-k"
+      },
       "stage": "controlled"
     },
     {
@@ -99,7 +109,7 @@
       "sentence": "Sok ____ van itt. (table)",
       "answer": "asztal",
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t"
+        "singular-after-numbers"
       ],
       "stage": "controlled"
     },
@@ -142,8 +152,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula"
+        "plural-nouns-k"
       ],
+      "distractor_skills": {
+        "2": "possessive-suffixes"
+      },
       "stage": "controlled"
     },
     {
@@ -169,7 +182,7 @@
         ]
       ],
       "teaches": [
-        "a1-foundations-review-vocab"
+        "a1-objects-locations-vocab"
       ],
       "stage": "practice"
     },
@@ -185,8 +198,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula"
+        "plural-nouns-k"
       ],
+      "distractor_skills": {
+        "2": "possessive-suffixes"
+      },
       "stage": "practice"
     },
     {
@@ -196,7 +212,7 @@
       "sentence": "Ez az ____. (my table)",
       "answer": "asztalom",
       "teaches": [
-        "demonstratives-ez-az"
+        "possessive-suffixes"
       ],
       "stage": "practice"
     },
@@ -220,7 +236,7 @@
       ],
       "english": "The objects are here.",
       "teaches": [
-        "van-zero-copula"
+        "plural-nouns-k"
       ],
       "stage": "practice"
     },
@@ -240,11 +256,11 @@
       ],
       "options": [
         "Igen, sok könyv van.",
-        "Nem, kevés könyv van."
+        "Igen, sok könyvek vannak."
       ],
       "correct": 0,
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t"
+        "singular-after-numbers"
       ],
       "stage": "practice"
     },
@@ -255,7 +271,7 @@
       "sentence": "A ____ itt vannak. (tables, plural)",
       "answer": "asztalok",
       "teaches": [
-        "van-zero-copula"
+        "plural-nouns-k"
       ],
       "stage": "practice"
     },
@@ -271,7 +287,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "demonstratives-ez-az"
+        "possessive-suffixes"
       ],
       "stage": "practice"
     },
@@ -318,8 +334,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik"
-      ]
+        "van-and-nincs-there-is-there-isn-t"
+      ],
+      "distractor_skills": {
+        "1": "van-zero-copula"
+      }
     },
     {
       "id": "a1-48-writing-1",
@@ -346,7 +365,7 @@
         }
       ],
       "teaches": [
-        "van-zero-copula"
+        "singular-after-numbers"
       ]
     },
     {
@@ -357,7 +376,7 @@
       "options": [
         "Mi ez?",
         "Ez egy könyv.",
-        "Ez mi?"
+        "Ki ez?"
       ],
       "correct": 0,
       "teaches": [
@@ -377,7 +396,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "demonstratives-ez-az"
+        "possessive-suffixes"
       ],
       "stage": "check"
     }

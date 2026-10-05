@@ -4,7 +4,7 @@
     {
       "id": "a1-67-review-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which means “I do not work”?",
       "options": [
         "Nem dolgozom.",
@@ -14,7 +14,7 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-questions-negation-vocab"
+        "negation-with-nem"
       ]
     },
     {
@@ -45,15 +45,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "negation-with-nem"
       ],
       "stage": "introduce"
     },
     {
       "id": "a1-67-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which question word means “where”?",
       "options": [
         "Hol?",
@@ -62,8 +61,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ],
       "stage": "introduce"
     },
@@ -101,8 +99,7 @@
       "sentence": "Nem ____ magyarul. (I don't study)",
       "answer": "tanulok",
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "present-tense-routine-language"
       ],
       "stage": "controlled"
     },
@@ -118,15 +115,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
         "yes-no-questions"
       ],
+      "distractor_skills": {
+        "1": "negation-with-nem"
+      },
       "stage": "controlled"
     },
     {
       "id": "a1-67-controlled-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means “really”?",
       "options": [
         "tényleg",
@@ -135,8 +134,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ],
       "stage": "controlled"
     },
@@ -170,7 +168,7 @@
     {
       "id": "a1-67-practice-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which answer fits Miért nem tanulsz?",
       "options": [
         "Mert beteg vagyok.",
@@ -179,8 +177,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ],
       "stage": "practice"
     },
@@ -191,8 +188,7 @@
       "sentence": "Hol ____? (do you study)",
       "answer": "tanulsz",
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "present-tense-routine-language"
       ],
       "stage": "practice"
     },
@@ -214,8 +210,7 @@
       ],
       "english": "Why don't you work?",
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "negation-with-nem"
       ],
       "stage": "practice"
     },
@@ -235,12 +230,11 @@
       ],
       "options": [
         "Persze.",
-        "Talán nem."
+        "Nem, kérdés."
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ],
       "stage": "practice"
     },
@@ -264,8 +258,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ]
     },
     {
@@ -284,12 +277,11 @@
       ],
       "options": [
         "Talán.",
-        "Persze nem."
+        "Igen, hamis."
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ]
     },
     {
@@ -303,8 +295,7 @@
         }
       ],
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ]
     },
     {
@@ -318,8 +309,7 @@
         }
       ],
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ]
     },
     {
@@ -334,15 +324,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "negation-with-nem"
       ],
       "stage": "check"
     },
     {
       "id": "a1-67-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means “perhaps”?",
       "options": [
         "talán",
@@ -351,8 +340,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ],
       "stage": "check"
     }

@@ -4,7 +4,7 @@
     {
       "id": "a1-68-review-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which means “I do not work”?",
       "options": [
         "Nem dolgozom.",
@@ -14,7 +14,7 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-questions-negation-vocab"
+        "negation-with-nem"
       ]
     },
     {
@@ -45,15 +45,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "negation-with-nem"
       ],
       "stage": "introduce"
     },
     {
       "id": "a1-68-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which question word means “what”?",
       "options": [
         "Mit?",
@@ -62,8 +61,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ],
       "stage": "introduce"
     },
@@ -101,8 +99,7 @@
       "sentence": "Nem ____ magyarul. (I don't read)",
       "answer": "olvasok",
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "present-tense-routine-language"
       ],
       "stage": "controlled"
     },
@@ -118,15 +115,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
         "yes-no-questions"
       ],
+      "distractor_skills": {
+        "1": "negation-with-nem"
+      },
       "stage": "controlled"
     },
     {
       "id": "a1-68-controlled-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means “why”?",
       "options": [
         "miért",
@@ -135,8 +134,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ],
       "stage": "controlled"
     },
@@ -170,7 +168,7 @@
     {
       "id": "a1-68-practice-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which answer fits Miért nem dolgozik Károly?",
       "options": [
         "Mert beteg.",
@@ -179,8 +177,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ],
       "stage": "practice"
     },
@@ -191,8 +188,7 @@
       "sentence": "Hol ____? (do you work)",
       "answer": "dolgozol",
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "present-tense-routine-language"
       ],
       "stage": "practice"
     },
@@ -216,8 +212,7 @@
       ],
       "english": "Why doesn't Károly study?",
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "negation-with-nem"
       ],
       "stage": "practice"
     },
@@ -241,8 +236,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ],
       "stage": "practice"
     },
@@ -266,8 +260,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "spatial-questions-hol-hova"
       ]
     },
     {
@@ -277,7 +270,7 @@
       "prompt": [
         {
           "speaker": "Mariann",
-          "text": "Hogyan vagy?"
+          "text": "Hogy vagy?"
         },
         {
           "speaker": "Meg",
@@ -290,8 +283,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ]
     },
     {
@@ -305,8 +297,7 @@
         }
       ],
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ]
     },
     {
@@ -320,8 +311,7 @@
         }
       ],
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ]
     },
     {
@@ -336,15 +326,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "negation-with-nem"
       ],
       "stage": "check"
     },
     {
       "id": "a1-68-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which question asks “how”?",
       "options": [
         "Hogyan?",
@@ -353,8 +342,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "negation-with-nem",
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ],
       "stage": "check"
     }

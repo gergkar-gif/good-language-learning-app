@@ -4,7 +4,7 @@
     {
       "id": "a1-47-review-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which sentence correctly avoids a copula for identity?",
       "options": [
         "Ő Károly.",
@@ -14,13 +14,13 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-foundations-review-vocab"
+        "van-zero-copula"
       ]
     },
     {
       "id": "a1-47-review-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which question asks “Where do you live?”",
       "options": [
         "Hol laksz?",
@@ -30,8 +30,12 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-foundations-review-vocab"
-      ]
+        "spatial-questions-hol-hova"
+      ],
+      "distractor_skills": {
+        "1": "ki-and-mi",
+        "2": "ki-and-mi"
+      }
     },
     {
       "id": "a1-47-intro-1",
@@ -45,7 +49,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t"
+        "egyutt-together"
       ],
       "stage": "introduce"
     },
@@ -88,15 +92,18 @@
       ],
       "correct": 0,
       "teaches": [
-        "spatial-questions-hol-hova"
+        "van-zero-copula"
       ],
+      "distractor_skills": {
+        "1": "egyutt-together"
+      },
       "stage": "controlled"
     },
     {
       "id": "a1-47-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Van egy ____. (sibling)",
+      "sentence": "Van egy ____. (my sibling)",
       "answer": "testvérem",
       "teaches": [
         "kinship-possessives"
@@ -142,8 +149,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "kinship-possessives"
+        "plural-nouns-k"
       ],
+      "distractor_skills": {
+        "2": "kinship-possessives"
+      },
       "stage": "controlled"
     },
     {
@@ -185,8 +195,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula"
+        "plural-nouns-k"
       ],
+      "distractor_skills": {
+        "2": "possessive-suffixes"
+      },
       "stage": "practice"
     },
     {
@@ -196,7 +209,7 @@
       "sentence": "Ő a ____. (my friend)",
       "answer": "barátom",
       "teaches": [
-        "van-zero-copula"
+        "possessive-suffixes"
       ],
       "stage": "practice"
     },
@@ -220,7 +233,7 @@
       ],
       "english": "The siblings are here.",
       "teaches": [
-        "van-zero-copula"
+        "plural-nouns-k"
       ],
       "stage": "practice"
     },
@@ -244,7 +257,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "kinship-possessives"
+        "ki-and-mi"
       ],
       "stage": "practice"
     },
@@ -255,7 +268,7 @@
       "sentence": "A ____ itt vannak. (acquaintances, plural)",
       "answer": "ismerősök",
       "teaches": [
-        "van-zero-copula"
+        "plural-nouns-k"
       ],
       "stage": "practice"
     },
@@ -291,11 +304,11 @@
       ],
       "options": [
         "Igen, ismerős.",
-        "Nem, nem ismerős."
+        "Igen, nem ismerős."
       ],
       "correct": 0,
       "teaches": [
-        "van-zero-copula"
+        "yes-no-questions"
       ]
     },
     {
@@ -314,7 +327,7 @@
       ],
       "options": [
         "Itt van a család.",
-        "Nincs itt a család."
+        "Ő a család."
       ],
       "correct": 0,
       "teaches": [
@@ -346,7 +359,7 @@
         }
       ],
       "teaches": [
-        "van-zero-copula"
+        "plural-nouns-k"
       ]
     },
     {
@@ -377,7 +390,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "demonstratives-ez-az"
+        "kinship-possessives"
       ],
       "stage": "check"
     }
