@@ -4835,8 +4835,8 @@ Lector: Un conmovedor testimonio sobre la fragilidad de la felicidad cotidiana.
 * Martín Santomé vive atrapado en una condicional mixta desgarradora: si el amor de Laura no hubiera iluminado su tedio burocrático, hoy sería un anciano amargado sin memoria luminosa.
 - Los tranvías de Montevideo circulaban por la avenida 18 de Julio hasta la medianoche.
 - El puerto comercial del Río de la Plata conecta con las rutas fluviales del Paraná.
-decision:
-why:
+decision: match: Martín Santomé vive resignado a una rutina burocrática predecible: la monotonía de su oficina amortigua las emociones y aleja la posibilidad de una vida diferente. || Martín Santomé cree que el azar decide el curso de las vidas grises: las circunstancias cotidianas pesan más en su ánimo que las ilusiones de un porvenir feliz.
+why: Dialogue synthesis; wrong options provide alternative literary interpretations of destiny matching length and register without mixed conditionals or absolutes.
 
 ### b2-28-02.ex06   teaches: None
 files: content/es-latam/exercises/b2/b2-28-02-ex.json
@@ -4845,8 +4845,8 @@ files: content/es-latam/exercises/b2/b2-28-02-ex.json
 * Porque querían que la imagen perteneciera al pueblo y permaneciera libre en la cima del cerro desafiando a las autoridades.
 - Porque el obispo les exigía pagar un tributo de oro.
 - Porque preferían venderla a un coleccionista extranjero.
-decision:
-why:
+decision: shorten: Porque querían que perteneciera al pueblo y permaneciera libre en el cerro.
+why: Reading comprehension; trims image noun phrase and authority defiance clause to match distractor length while preserving communal ownership and freedom on the hill.
 
 ### b2-29-02.ex06   teaches: None
 files: content/es-latam/exercises/b2/b2-29-02-ex.json
@@ -4855,8 +4855,8 @@ files: content/es-latam/exercises/b2/b2-29-02-ex.json
 * Ojos de resaca marina, que atraían hacia el fondo como la marea del mar
 - Ojos de águila serrana
 - Ojos de obsidiana volcánica
-decision:
-why:
+decision: shorten: Ojos de resaca marina
+why: Reading comprehension; drops the explanatory relative clause to match the distractor format and length while naming Machado de Assis's famous metaphor.
 
 ### b2-29-03.ex01   teaches: ['reformulation-markers']
 files: content/es-latam/exercises/b2/b2-29-03-ex.json
@@ -4865,8 +4865,8 @@ files: content/es-latam/exercises/b2/b2-29-03-ex.json
 * Restar trascendencia a objeciones previas para reafirmar la tesis principal con independencia de ellas.
 - Solicitar la palabra en un tribunal de justicia.
 - Introducir un agradecimiento formal.
-decision:
-why:
+decision: match: Introducir una rectificación tajante que modifica el argumento expuesto con anterioridad. || Cerrar la argumentación mediante una síntesis ordenada de los puntos principales del debate. || Expresar una adhesión entusiasta a la postura defendida por el interlocutor en su turno previo.
+why: Discourse marker function; wrong options match length and syntactic style with plausible formal debate functions.
 
 ### b2-29-03.ex06   teaches: None
 files: content/es-latam/exercises/b2/b2-29-03-ex.json
@@ -4875,8 +4875,8 @@ files: content/es-latam/exercises/b2/b2-29-03-ex.json
 * El dolor desconsolado de Capitu ante el cadáver de Escobar y el asombroso parecido de su hijo con el difunto amigo.
 - La confesión pública del párroco en misa mayor.
 - Una condena judicial por estafa en los tribunales.
-decision:
-why:
+decision: shorten: El dolor de Capitu ante el cadáver de Escobar y el parecido de su hijo.
+why: Reading comprehension; drops modifying adjectives and relative clause to match distractor length while retaining Capitu's grief and the son's resemblance.
 
 ### b2-29-04.ex06   teaches: None
 files: content/es-latam/exercises/b2/b2-29-04-ex.json
@@ -4885,8 +4885,8 @@ files: content/es-latam/exercises/b2/b2-29-04-ex.json
 * Porque todo el relato procede de la memoria obsesiva y celosa de Bento, sin que el lector pueda verificar si el adulterio existió realmente.
 - Porque fue prohibida por los censores del imperio de Pedro II.
 - Porque el narrador finge ser un fantasma del siglo dieciséis.
-decision:
-why:
+decision: shorten: Porque el relato procede de la memoria de Bento, sin poder verificar el adulterio.
+why: Reading comprehension; trims adjective modifiers to match distractor length while keeping Bento's subjective memory and the unverifiable adultery.
 
 ### b2-31-05.ex01   teaches: ['formal-cause-connectors']
 files: content/es-latam/exercises/b2/b2-31-05-ex.json
@@ -4895,8 +4895,8 @@ files: content/es-latam/exercises/b2/b2-31-05-ex.json
 * Introducir una justificación, pretexto o excusa atenuante ante una pregunta o reproche previo.
 - Formular una pregunta retórica impersonal.
 - Indicar el inicio de un cántico litúrgico.
-decision:
-why:
+decision: match: Expresar un mandato firme que exige el cumplimiento inmediato de una directiva. || Formular una pregunta retórica orientada a guiar la deliberación en un intercambio. || Manifestar una deferencia protocolar para concluir amablemente una conversación.
+why: Discourse marker function; wrong options match length and formal syntactic style with plausible pragmatic functions.
 
 ### b2-32-02.ex01   teaches: ['concesivas-aun-cuando']
 files: content/es-latam/exercises/b2/b2-32-02-ex.json
@@ -4905,8 +4905,8 @@ files: content/es-latam/exercises/b2/b2-32-02-ex.json
 * Modo subjuntivo obligatorio, al expresar contingencia o peligro no consumado.
 - Condicional compuesto exclusivamente.
 - Gerundio compuesto.
-decision:
-why:
+decision: shorten: Modo subjuntivo obligatorio.
+why: Grammar rule; trims the causal clause explaining contingency to match the distractor format and length.
 
 ### b2-32-03.ex01   teaches: ['reduplicated-subjunctive']
 files: content/es-latam/exercises/b2/b2-32-03-ex.json
@@ -4915,8 +4915,8 @@ files: content/es-latam/exercises/b2/b2-32-03-ex.json
 - El uso exclusivo de verbos impersonales en pasado.
 - La obligación de colocar una negación doble.
 - La necesidad de conjugar el verbo en futuro de subjuntivo.
-decision:
-why:
+decision: shorten: La repetición del mismo verbo en subjuntivo unido por un relativo.
+why: Grammar rule; trims adverbial modifiers and purpose clause to match distractor length while preserving the reduplicated verbal structure.
 
 ### b2-32-05.ex01   teaches: ['como-si']
 files: content/es-latam/exercises/b2/b2-32-05-ex.json
@@ -4925,8 +4925,8 @@ files: content/es-latam/exercises/b2/b2-32-05-ex.json
 * Pretérito imperfecto o pluscuamperfecto de subjuntivo
 - Futuro de indicativo
 - Presente de indicativo
-decision:
-why:
+decision: match: Presente o pretérito perfecto de subjuntivo || Futuro simple o condicional de indicativo || Presente o pretérito perfecto de indicativo
+why: Verbal mood syntax; wrong options pair tenses in indicative and subjunctive moods to match length and structure.
 
 ### b2-32-05.ex04   teaches: None
 files: content/es-latam/exercises/b2/b2-32-05-ex.json
@@ -4935,8 +4935,8 @@ files: content/es-latam/exercises/b2/b2-32-05-ex.json
 - Porque el verbo saber no tiene subjuntivo.
 - Porque 'como si' solo puede ir con indicativo.
 - Porque debe llevar la preposición de delante.
-decision:
-why:
+decision: shorten: Porque 'como si' exige tiempos de subjuntivo del pasado.
+why: Grammar explanation; trims parenthetical examples and semantic rationale to match distractor length while stating the tense constraint.
 
 ### b2-33-03.ex04   teaches: None
 files: content/es-latam/exercises/b2/b2-33-03-ex.json
@@ -4945,8 +4945,8 @@ files: content/es-latam/exercises/b2/b2-33-03-ex.json
 * La muerte silenciosa del pequeño Rocamadour en la buhardilla durante una reunión del Club.
 - La quiebra de una galería de arte moderno.
 - Un duelo a espada en las orillas del Sena.
-decision:
-why:
+decision: shorten: La muerte del pequeño Rocamadour en la buhardilla.
+why: Reading comprehension; trims atmospheric adjectives and meeting clause to match distractor length while naming the tragic event in Rayuela.
 
 ### b2-33-04.ex01   teaches: ['conditional-conjunctions']
 files: content/es-latam/exercises/b2/b2-33-04-ex.json
@@ -4955,8 +4955,8 @@ files: content/es-latam/exercises/b2/b2-33-04-ex.json
 * Un matiz enfático de advertencia, admonición o amenaza de consecuencias perjudiciales
 - Una duda retórica sin consecuencias
 - Un agradecimiento formal protocolar
-decision:
-why:
+decision: shorten: Un matiz enfático de advertencia o amenaza
+why: Grammar rule; trims synonymous nouns and prepositional modifier to match distractor length while describing the pragmatic nuance.
 
 ### b2-34-01.ex04   teaches: None
 files: content/es-latam/exercises/b2/b2-34-01-ex.json
@@ -4965,8 +4965,8 @@ En 'Redoble por Rancas' de Manuel Scorza, ¿a qué entidad colosal se enfrentan 
 * A la corporación minera multinacional Cerro de Pasco Corporation y el cerco de alambre de púas
 - A una epidemia tropical en la selva del Manu
 - A un litigio fronterizo con el Ecuador
-decision:
-why:
+decision: shorten: A la corporación Cerro de Pasco y su cerco de alambre
+why: Reading comprehension; trims multinacional and descriptive modifiers to match distractor length while identifying the corporation and the barbed wire fence.
 
 ### b2-36-04.ex01   teaches: ['rhetorical-devices']
 files: content/es-latam/exercises/b2/b2-36-04-ex.json
@@ -4975,8 +4975,8 @@ files: content/es-latam/exercises/b2/b2-36-04-ex.json
 * Como una estructura cognitiva que proyecta significado coherente y fuerza persuasiva a lo largo de la argumentación.
 - Como un error sintáctico que debe corregirse de inmediato.
 - Como una traducción literal de refranes anglosajones.
-decision:
-why:
+decision: shorten: Como una estructura cognitiva que proyecta coherencia y persuasión.
+why: Cognitive linguistics definition; trims modifying clauses to match distractor length while retaining the cognitive structure and rhetorical role.
 
 ### b2-36-consolidation.ex04   teaches: None
 files: content/es-latam/exercises/b2/b2-36-consolidation-ex.json
@@ -4985,8 +4985,8 @@ En el universo literario borgeano, ¿qué valor universal encarna el Aleph?
 * El símbolo supremo del infinito y la metáfora de la literatura como espejo donde el universo entero se contempla a sí mismo.
 - Un truco de magia óptica para engañar a los incautos.
 - Un talismán para ganar juegos de azar en los salones porteños.
-decision:
-why:
+decision: shorten: El símbolo del infinito y la literatura donde el universo se contempla a sí mismo.
+why: Reading comprehension; trims superlative adjectives and mirror metaphor to match distractor length while retaining the infinite literary symbol.
 
 ### b2-colombiaandina-consolidation.ex06   teaches: ['colombia-medellin-innovacion-social']
 files: content/es-latam/exercises/b2/b2-colombiaandina-consolidation-ex.json
@@ -4996,8 +4996,8 @@ Historiador: Una síntesis formidable de dignidad y esperanza compartida.
 * Haber demostrado que no existe abismo geográfico ni herida histórica que las comunidades no puedan superar mediante el arte, la educación y la solidaridad.
 - El cultivo de café arábico lavado requiere suelos volcánicos fértiles.
 - Las flotas de transporte intermunicipal operan desde terminales terrestres.
-decision:
-why:
+decision: match: Haber concentrado el esfuerzo regional en el desarrollo industrial y comercial por encima de los programas culturales y de la participación barrial. || Haber confiado la resolución de sus tensiones sociales a instituciones estatales centralizadas sin involucrar a las organizaciones comunitarias.
+why: Dialogue synthesis; wrong options match infinitive structure and conversational length with plausible alternative civic lessons.
 
 ### b2-futuro-01.ex04   teaches: None
 files: content/es-latam/exercises/b2/b2-futuro-01-ex.json
@@ -5006,8 +5006,8 @@ files: content/es-latam/exercises/b2/b2-futuro-01-ex.json
 * La conjunción entre leyes de fomento audiovisual, formación técnica rigurosa y un compromiso insobornable con la memoria histórica y la descolonización de la mirada.
 - La prohibición de emitir películas extranjeras en los cines nacionales.
 - El doblaje obligatorio de todas las películas al inglés.
-decision:
-why:
+decision: shorten: Leyes de fomento audiovisual, formación técnica y compromiso con la memoria histórica.
+why: Reading comprehension; trims rhetorical modifiers to match distractor length while preserving the three key industry pillars.
 
 ### b2-futuro-02.ex04   teaches: None
 files: content/es-latam/exercises/b2/b2-futuro-02-ex.json
@@ -5016,8 +5016,8 @@ files: content/es-latam/exercises/b2/b2-futuro-02-ex.json
 * Utilizando el terror gótico y el thriller psicológico para explorar los horrores reales de las dictaduras, la desigualdad y la degradación ambiental.
 - Celebrando el consumismo suntuario de las élites.
 - Ignorando por completo la realidad sociopolítica de sus países.
-decision:
-why:
+decision: shorten: Utilizando el terror y el thriller para explorar las dictaduras y la desigualdad.
+why: Reading comprehension; drops adjective modifiers and environmental clause to match distractor length while keeping genre and sociopolitical themes.
 
 ### b2-futuro-03.ex04   teaches: None
 files: content/es-latam/exercises/b2/b2-futuro-03-ex.json
@@ -5026,8 +5026,8 @@ files: content/es-latam/exercises/b2/b2-futuro-03-ex.json
 * Superar el modelo extractivista primario mediante cadenas de valor industrial, innovación científica y protección estricta de las cuencas andinas.
 - Cerrar todas las universidades de ingeniería de la región.
 - Prohibir el uso de automóviles eléctricos en el continente.
-decision:
-why:
+decision: shorten: Superar el modelo extractivista mediante cadenas de valor y protección de las cuencas.
+why: Reading comprehension; trims adjective modifiers to match distractor length while retaining industrial value chains and environmental protection.
 
 ### b2-futuro-04.ex04   teaches: None
 files: content/es-latam/exercises/b2/b2-futuro-04-ex.json
@@ -5036,8 +5036,8 @@ files: content/es-latam/exercises/b2/b2-futuro-04-ex.json
 * Articulando movilizaciones horizontales que combinan arte callejero, música contestataria, demandas feministas y activismo digital en defensa de los bienes comunes.
 - Exigiendo el retorno a gobiernos dictatoriales del siglo XX.
 - Clausurando las bibliotecas universitarias públicas.
-decision:
-why:
+decision: shorten: Articulando movilizaciones que combinan arte callejero y activismo digital.
+why: Reading comprehension; trims adjective modifiers and specific movement names to match distractor length while describing contemporary youth protest tactics.
 
 ### b2-integracion-01.ex04   teaches: None
 files: content/es-latam/exercises/b2/b2-integracion-01-ex.json
@@ -5046,8 +5046,8 @@ files: content/es-latam/exercises/b2/b2-integracion-01-ex.json
 * El Tratado de Asunción, firmado por Argentina, Brasil, Paraguay y Uruguay.
 - El Protocolo de Ushuaia de 1998.
 - El Acuerdo de Cartagena de 1969.
-decision:
-why:
+decision: shorten: El Tratado de Asunción de 1991.
+why: Reading comprehension; trims signatory country list to match the treaty name and year format of the distractors.
 
 ### b2-integracion-02.ex01   teaches: ['inversiones-condicionales-de-haber']
 files: content/es-latam/exercises/b2/b2-integracion-02-ex.json
@@ -5056,8 +5056,8 @@ files: content/es-latam/exercises/b2/b2-integracion-02-ex.json
 * Concesión enfática o determinación irrenunciable equivalente a 'por más que cueste'
 - Causa real pasada
 - Consecuencia indeseada
-decision:
-why:
+decision: shorten: Concesión enfática
+why: Grammar rule; trims synonym and gloss clause to match distractor length while defining the syntactic value.
 
 ### b2-integracion-04.ex04   teaches: None
 files: content/es-latam/exercises/b2/b2-integracion-04-ex.json
@@ -5066,8 +5066,8 @@ files: content/es-latam/exercises/b2/b2-integracion-04-ex.json
 * Itaipú (Brasil-Paraguay) y Yacyretá (Argentina-Paraguay).
 - Salto Grande y El Chocón.
 - Tres Gargantas y Asuán.
-decision:
-why:
+decision: shorten: Itaipú y Yacyretá.
+why: Reading comprehension; trims country annotations to match distractor length and format while naming both hydroelectric dams.
 
 ### b2-mexicocentro-01.ex02   teaches: None
 files: content/es-latam/exercises/b2/b2-mexicocentro-01-ex.json
@@ -5075,8 +5075,8 @@ Según el texto de esta lección, ¿cuál es la idea central de 'La cuenca lacus
 * Análisis geográfico e hidrográfico de la cuenca endorreica del Valle de México, el anillo volcánico y el fenómeno contemporáneo del hundimiento del terreno.
 - La región no contaba con ningún asentamiento humano relevante.
 - El clima árido impidió el desarrollo de cualquier tecnología o arte.
-decision:
-why:
+decision: match: El impacto del comercio marítimo internacional en los puertos costeros y la construcción de canales navegables para conectar la capital con ambos océanos. || La explotación de yacimientos mineros de plata en las sierras del norte y la escasez crónica de agua potable para el abastecimiento de las fundiciones.
+why: Reading comprehension; wrong options match length and noun-phrase structure with plausible geographical studies of Mexico.
 
 ### b2-mexicocentro-03.ex02   teaches: None
 files: content/es-latam/exercises/b2/b2-mexicocentro-03-ex.json
@@ -5084,8 +5084,8 @@ Según el texto de esta lección, ¿cuál es la idea central de 'La corte virrei
 * La vida cultural de la capital de Nueva España en el siglo XVII, el sistema de castas y la defensa del saber femenino en el convento de San Jerónimo.
 - La región no contaba con ningún asentamiento humano relevante.
 - El clima árido impidió el desarrollo de cualquier tecnología o arte.
-decision:
-why:
+decision: match: Las campañas militares de pacificación fronteriza en el norte del virreinato y la fundación de misiones franciscanas para la conversión de nómadas. || El auge de los obrajes textiles mecanizados en Puebla y la organización de los primeros gremios artesanales bajo la supervisión directa del virrey.
+why: Reading comprehension; wrong options match length and syntax with plausible colonial historical themes that are false for Sor Juana's cultural world.
 
 ### b2-mexicocentro-04.ex02   teaches: None
 files: content/es-latam/exercises/b2/b2-mexicocentro-04-ex.json
@@ -5093,8 +5093,8 @@ Según el texto de esta lección, ¿cuál es la idea central de 'Muros que educa
 * El proyecto educativo de José Vasconcelos tras la Revolución Mexicana, los andamios del Palacio Nacional y la pintura mural como discurso cívico.
 - La región no contaba con ningún asentamiento humano relevante.
 - El clima árido impidió el desarrollo de cualquier tecnología o arte.
-decision:
-why:
+decision: match: La difusión de la pintura de caballete en salones aristocráticos del Porfiriato y la imitación de los modelos académicos de las galerías parisinas. || La construcción de teatros de ópera en las ciudades provinciales y el patrocinio de compañías extranjeras mediante subsidios del ministerio de hacienda.
+why: Reading comprehension; wrong options match length and syntax with plausible Mexican cultural history themes that contrast with revolutionary public muralism.
 
 ### b2-mexicocentro-05.ex02   teaches: None
 files: content/es-latam/exercises/b2/b2-mexicocentro-05-ex.json
@@ -5102,8 +5102,8 @@ Según el texto de esta lección, ¿cuál es la idea central de 'El despertar c�
 * La masacre estudiantil de Tlatelolco en 1968, la solidaridad ciudadana tras el terremoto de 1985 y la conquista de la autonomía democrática en la CDMX.
 - La región no contaba con ningún asentamiento humano relevante.
 - El clima árido impidió el desarrollo de cualquier tecnología o arte.
-decision:
-why:
+decision: match: El impulso a la industrialización pesada en el norte del país durante el llamado milagro mexicano y la expansión urbana hacia las zonas desérticas. || La firma de tratados comerciales con países sudamericanos y la modernización de los sistemas aduaneros para agilizar el transporte transfronterizo.
+why: Reading comprehension; wrong options match length and syntax with plausible 20th-century Mexican developments that are false for Mexico City's civic movements.
 
 ### b2-migracion-02.ex04   teaches: None
 files: content/es-latam/exercises/b2/b2-migracion-02-ex.json
@@ -5112,8 +5112,8 @@ files: content/es-latam/exercises/b2/b2-migracion-02-ex.json
 * Las condiciones orográficas extremas en páramos andinos y la proliferación de pasos irregulares no habilitados.
 - La sobreabundancia de billetes de tren gratuitos.
 - El exceso de hoteles cinco estrellas desocupados.
-decision:
-why:
+decision: shorten: Las condiciones orográficas extremas y los pasos irregulares.
+why: Reading comprehension; trims prepositional phrases and descriptive modifiers to match distractor length while preserving the two key transit challenges.
 
 ### b2-nicaragua-consolidation.ex03   teaches: ['pluscuamperfecto-subjuntivo-si']
 files: content/es-latam/exercises/b2/b2-nicaragua-consolidation-ex.json
@@ -5121,8 +5121,8 @@ files: content/es-latam/exercises/b2/b2-nicaragua-consolidation-ex.json
 * Porque la cláusula introducida por 'si' en una hipótesis irreal sobre el pasado exige pretérito pluscuamperfecto de subjuntivo (hubiera sabido), nunca condicional.
 - Porque el verbo 'saber' es defectivo en tiempos compuestos.
 - Porque 'Sandino' es un nombre propio y exige artículo definido.
-decision:
-why:
+decision: shorten: Porque la cláusula con 'si' exige pluscuamperfecto de subjuntivo, no condicional.
+why: Grammar rule; trims introductory and parenthetical clauses to match distractor length while stating the tense requirement.
 
 ### b2-pluralismo-03.ex04   teaches: None
 files: content/es-latam/exercises/b2/b2-pluralismo-03-ex.json
@@ -5131,8 +5131,8 @@ files: content/es-latam/exercises/b2/b2-pluralismo-03-ex.json
 * El cuerpo colegiado de guardianes del río Atrato, integrado por delegados del Estado y líderes comunitarios.
 - Un tribunal militar de alta montaña.
 - La Cámara de Comercio de Bogotá exclusivamente.
-decision:
-why:
+decision: shorten: El cuerpo colegiado de guardianes del río Atrato.
+why: Civics reading comprehension; trims the composition clause to match distractor length while naming the official body protecting the river's rights.
 
 ### b2-salvadorhonduras-03.ex05   teaches: ['contrast-markers']
 files: content/es-latam/exercises/b2/b2-salvadorhonduras-03-ex.json
@@ -5142,5 +5142,5 @@ Historiador: Su legado ético fue el pilar moral que hizo posible el pacto de pa
 * Muchos temían que su asesinato aniquilara la esperanza; no obstante, su martirio fortaleció la conciencia democrática hasta alcanzar los Acuerdos de Chapultepec.
 - El puerto de La Unión en el golfo de Fonseca dispone de grúas para contenedores.
 - La pupusa tradicional salvadoreña se elabora con masa de maíz o de arroz.
-decision:
-why:
+decision: match: Varios sectores pensaban que su prédica uniría a las partes; por el contrario, la confrontación armada se intensificó durante años y aplazó el diálogo político. || Casi todos asumían que su muerte pondría fin a las disputas; por consiguiente, las delegaciones oficiales firmaron un armisticio definitivo pocas semanas después.
+why: Dialogue synthesis; wrong options match length and multi-clause structure with plausible historical accounts of the Salvadoran conflict without off-topic distractors or absolutes.
