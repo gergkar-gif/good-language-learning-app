@@ -264,3 +264,69 @@ so *Los hermanos Roca* is given away; `b1-historiaantigua-03.ex04` asks
 for a port in Huelva, but none of the wrong options is in Huelva. Many
 es-es civics (CCSE) items have absurd distractors (*Solo los martes y
 jueves*, *En Bruselas*), which is a separate give-away for a later pass.
+
+### Block 3 (es-latam B1), reviewed 2026-10-05
+
+Commits `5f4748b3` (block 2 fixes) and `ead28c80` (block 3). The four
+block 2 fixes are applied exactly. Block 3's mechanics are right: all 224
+decisions applied as written in every copy, nothing else changed, no
+block 3 id still flagged, counts correct (66 shorten / 158 match / 0 log).
+No false facts this time, and the shortened history answers keep their
+key point. The problems are in the new **wrong** options: several no
+longer fit the question they answer.
+
+**Fix these first, in a separate commit before block 4** (worksheet too):
+
+1. `b1-represionpolitica-consolidation.ex12`: the two new wrong options
+   are **in English** in a Spanish item (*Although civilian courts
+   investigated…*, *Because state censorship was lifted…*). They give the
+   answer away and don't answer *¿Por qué es importante la memoria
+   histórica?* Write two Spanish *Porque …* options that give a wrong
+   reason, e.g. *Porque permite cerrar los casos sin investigar a los
+   responsables.* / *Porque sustituye a los tribunales en la búsqueda de
+   culpables.*
+2. `b1-guerrafria-consolidation.ex11`: the question asks what
+   *injerencia* means; the new wrong options (*Fortalecieron el consenso
+   democrático…*, *Garantizaron la independencia judicial…*) are plural
+   verbs with no subject and define nothing. Use definitions that are
+   wrong: *Es la neutralidad de un país frente a las dos superpotencias.*
+   / *Es un acuerdo comercial entre países con el mismo sistema
+   político.*
+3. `b1-guerrafria-consolidation.ex12`: *¿Qué ocurrió con los conflictos
+   internos?* is not a yes/no question, but one wrong option starts
+   *Sí, …*, and neither wrong option is about internal conflicts. Use
+   e.g. *Desaparecieron porque las superpotencias se negaron a
+   intervenir.* / *Se resolvieron siempre mediante acuerdos entre los
+   partidos nacionales.*
+4. `b1-economiasexportacion-03.ex05`: the shortened option is broken:
+   *…llegó a controlar una porción tan grande de la industria.* (*tan
+   grande* without *que…*, and which industry?). Use *Un empresario
+   británico que llegó a controlar gran parte de la industria del
+   salitre.*
+5. `b1-latamnoventa-03.ex02`: *Entró en vigor el TLCAN y el levantamiento
+   en Chiapas* says the uprising "came into force". Use *Entró en vigor
+   el TLCAN y estalló un levantamiento en Chiapas.*
+6. `b1-conquista-consolidation.ex08`: *¿Cómo actuaron algunos pueblos?*:
+   the new wrong options (*Aceptando someterse de inmediato, entregaron
+   sus tierras.* / *Evitando cualquier contacto, huyeron hacia las
+   montañas.*) describe things some peoples really did, so they can be
+   argued for. Use options that are false for any people, e.g.
+   *Esperando instrucciones de Europa, eligieron a un rey español.* /
+   *Uniéndose todos en un solo imperio, expulsaron a los españoles.*
+   If you can't find two clean ones, log it.
+7. `b1-sociedadcolonial-02.ex03`: the shortened option lost its subject
+   and most of its content (*demostraba que no descendía de judíos*).
+   Use *Un documento que probaba que la persona no descendía de judíos
+   ni musulmanes; se exigía para cargos públicos.*
+
+**For block 4:**
+
+- **Check every new wrong option against the question, not only
+  against the correct option.** A wrong option must be a possible answer
+  to *that* question: same language, same grammatical shape (a
+  definition for *¿Qué significa…?*, a reason for *¿Por qué…?*, no
+  *Sí/No* for an open question). Items 1–3 above all fail this.
+- After shortening, read the new option as a sentence on its own:
+  every clause complete, every *tan* / *tanto* with its *que*.
+- "Some people did X" questions: a wrong option must be false for
+  everyone the question could mean.
