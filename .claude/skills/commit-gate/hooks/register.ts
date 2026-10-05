@@ -21,13 +21,20 @@ const TREE_WRITE =
 const CLAUDE_WORKTREE = 'C:/dev/parlour-claude'
 
 // The directory a command's git runs in: a `git -C <dir>`, else the last
-// `cd <dir>` before it, else the session's cwd (undefined).
+// `cd <dir>` (or PowerShell Set-Location / Push-Location) before it, else the
+// session's cwd (undefined).
 function gitDir(command: string): string | undefined {
   const at = TREE_WRITE.exec(command)?.index ?? command.search(/\bgit\b/)
   const unquote = (s: string) => s.replace(/^["']|["']$/g, '')
   const c = /\bgit\s+-C\s+("[^"]*"|'[^']*'|\S+)/.exec(command.slice(at))
   if (c) return unquote(c[1])
-  const cds = [...command.slice(0, Math.max(at, 0)).matchAll(/(?:^|[;&|(]\s*)cd\s+("[^"]*"|'[^']*'|[^\s;&|]+)/g)]
+  const cds = [
+    ...command
+      .slice(0, Math.max(at, 0))
+      .matchAll(
+        /(?:^|[;&|(\n]\s*)(?:cd|pushd|sl|set-location|push-location)\s+(?:-(?:literal)?path\s+)?("[^"]*"|'[^']*'|[^\s;&|]+)/gi,
+      ),
+  ]
   return cds.length ? unquote(cds[cds.length - 1][1]) : undefined
 }
 
@@ -53,7 +60,7 @@ async function toBeStaged(command: string, git: (...args: string[]) => Promise<s
 }
 
 export const register: Register = on => {
-  on('tool.call', { tool: 'Bash' }, async ($, e, next) => {
+  on('tool.call', { tool: ['Bash', 'PowerShell'] }, async ($, e, next) => {
     if (!TREE_WRITE.test(e.command)) return next(e)
 
     const dir = gitDir(e.command)
