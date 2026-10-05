@@ -101,11 +101,11 @@
     {
       "id": "a2-135-controlled-4",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Jövő héten meglátogatjuk Ildikót és Gábort, aztán egy egész ____ nyugodtan fogunk pihenni. (month)",
+      "category": "grammar",
+      "sentence": "Jövő héten meglátogatjuk Ildikót és Gábort, aztán egy egész ____ nyugodtan fogunk pihenni. (for a whole month)",
       "answer": "hónapig",
       "teaches": [
-        "a2-future-plans-vocab"
+        "tol-tol"
       ],
       "stage": "controlled"
     },
@@ -121,7 +121,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "fog-infinitive"
+        "akar-tervez-infinitive"
       ],
       "stage": "practice"
     },
@@ -183,7 +183,7 @@
     {
       "id": "a2-135-practice-4",
       "type": "sentence-order",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentences": [
         "Jövő héten meglátogatjuk Ildikót és Gábort.",
         "Tervezünk sokat pihenni és beszélni velük.",
@@ -197,7 +197,7 @@
         3
       ],
       "teaches": [
-        "fog-infinitive"
+        "a2-future-plans-vocab"
       ],
       "stage": "practice"
     },
@@ -221,7 +221,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "majd-adverb"
+        "a2-future-plans-vocab"
       ]
     },
     {
@@ -244,7 +244,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "majd-adverb"
+        "present-tense-routine-language"
       ]
     },
     {
@@ -272,7 +272,7 @@
         }
       ],
       "teaches": [
-        "fog-infinitive"
+        "akar-tervez-infinitive"
       ]
     },
     {
@@ -287,14 +287,18 @@
       ],
       "correct": 0,
       "teaches": [
-        "fog-infinitive"
+        "majd-adverb"
       ],
+      "distractor_skills": {
+        "1": "fog-infinitive",
+        "2": "akar-tervez-infinitive"
+      },
       "stage": "check"
     },
     {
       "id": "a2-135-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which best captures majd's meaning?",
       "options": [
         "later, at some vague point",
@@ -303,7 +307,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "majd-adverb"
+        "a2-future-plans-vocab"
       ],
       "stage": "check"
     }

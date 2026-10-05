@@ -15,6 +15,10 @@
       "teaches": [
         "junk-suggestion"
       ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "irregular-past"
+      },
       "stage": "recognize"
     },
     {
@@ -31,6 +35,10 @@
       "teaches": [
         "nek-conditional"
       ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "past-tense-indefinite"
+      },
       "stage": "recognize"
     },
     {
@@ -106,11 +114,11 @@
     {
       "id": "a2-140-consolidation-6",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Pihennél egy ____? (a little)",
       "answer": "kicsit",
       "teaches": [
-        "nek-conditional"
+        "a2-suggestions-conditional-vocab"
       ],
       "stage": "recall"
     },
@@ -182,7 +190,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-ha-conditional"
+        "a2-suggestions-conditional-vocab"
       ],
       "stage": "context"
     },
@@ -192,7 +200,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Ask a friend (informal) if they'd like to go to the cinema tonight, as a suggestion.",
+          "prompt": "Suggest to a friend that the two of you go to the cinema tonight, as a question.",
           "answer": "Menjünk moziba ma este?"
         }
       ],
@@ -227,7 +235,7 @@
         }
       ],
       "teaches": [
-        "hypothetical-ha-conditional"
+        "nek-conditional"
       ],
       "stage": "produce"
     }
