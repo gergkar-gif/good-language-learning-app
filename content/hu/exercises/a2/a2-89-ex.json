@@ -4,7 +4,7 @@
     {
       "id": "a2-89-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means \"to be able to, to know how to\"?",
       "options": [
         "tud",
@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "tud-infinitive-skills"
+        "a2-healthy-living-advice-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a2-89-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means \"it's possible, one may\"?",
       "options": [
         "lehet",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "lehet-infinitive"
+        "a2-healthy-living-advice-vocab"
       ],
       "stage": "introduce"
     },
@@ -103,7 +103,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "Nem ____ dohányozni a kórházban. (it's allowed)",
-      "answer": "lehet",
+      "answers": [
+        "lehet",
+        "szabad"
+      ],
       "teaches": [
         "lehet-infinitive"
       ],
@@ -123,6 +126,10 @@
       "teaches": [
         "tud-infinitive-skills"
       ],
+      "distractor_skills": {
+        "1": "szabad-infinitive",
+        "2": "lehet-infinitive"
+      },
       "stage": "practice"
     },
     {
@@ -230,7 +237,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "tud-infinitive-skills"
+        "a2-healthy-living-advice-vocab"
       ]
     },
     {
@@ -253,7 +260,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "lehet-infinitive"
+        "a2-healthy-living-advice-vocab"
       ]
     },
     {
@@ -287,7 +294,7 @@
     {
       "id": "a2-89-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means \"to swim\"?",
       "options": [
         "úszik",
@@ -296,7 +303,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "tud-infinitive-skills"
+        "a2-healthy-living-advice-vocab"
       ],
       "stage": "check"
     },
@@ -314,6 +321,10 @@
       "teaches": [
         "lehet-infinitive"
       ],
+      "distractor_skills": {
+        "1": "kell-infinitive",
+        "2": "tud-infinitive-skills"
+      },
       "stage": "check"
     }
   ]
