@@ -72,7 +72,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "tol-tol"
+        "terminative-case-ig"
       ],
       "stage": "controlled"
     },
@@ -90,7 +90,7 @@
     {
       "id": "b1-08-03-controlled-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which sentence expresses travel duration?",
       "options": [
         "Az utazás időtartama három óra volt.",
@@ -99,7 +99,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "possessive-suffixes"
+        "b1-travel-mobility-vocab"
       ],
       "stage": "controlled"
     },
@@ -152,7 +152,7 @@
       "category": "grammar",
       "sentence": "Reggeltől ____ tartott a kimerítő buszozás a hegyekben. (until evening)",
       "teaches": [
-        "tol-tol"
+        "terminative-case-ig"
       ],
       "answer": "estig",
       "stage": "practice"
@@ -160,7 +160,7 @@
     {
       "id": "b1-08-03-practice-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Mit jelent: 'Meddig tart az út?'",
       "options": [
         "How long does the trip take?",
@@ -169,14 +169,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "terminative-case-ig"
+        "b1-travel-mobility-vocab"
       ],
       "stage": "practice"
     },
     {
       "id": "b1-08-03-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Mennyi a vonat várható késése?\n— ...",
       "options": [
         "Körülbelül huszonöt perc a műszaki hiba miatt.",
@@ -185,13 +185,16 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-travel-mobility-vocab"
-      ]
+        "causal-postpositions"
+      ],
+      "distractor_skills": {
+        "1": "postposition-fele"
+      }
     },
     {
       "id": "b1-08-03-dialogue-2",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Meddig érvényes a bérleted?\n— ...",
       "options": [
         "A hónap utolsó napjáig érvényes.",
@@ -200,13 +203,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-travel-mobility-vocab"
-      ]
+        "terminative-case-ig"
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "nal-nel"
+      }
     },
     {
       "id": "b1-08-03-writing-1",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "How do you say: 'We travelled as far as Lake Balaton.'?",
       "options": [
         "A Balatonig utaztunk.",
@@ -215,14 +222,18 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-travel-mobility-vocab"
+        "terminative-case-ig"
       ],
+      "distractor_skills": {
+        "1": "delative-rol-rel",
+        "2": "ban-ben-in"
+      },
       "stage": "production"
     },
     {
       "id": "b1-08-03-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "vocabulary",
       "question": "How do you say: 'What is the estimated time of arrival?'?",
       "options": [
         "Mikorra várható az érkezés?",

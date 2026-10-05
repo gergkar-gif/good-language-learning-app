@@ -63,7 +63,7 @@
     {
       "id": "b1-07-03-controlled-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "A diák a nehéz feladatra ...",
       "options": [
         "összpontosít",
@@ -72,17 +72,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "verb-government-ra-re"
+        "b1-education-learning-vocab"
       ],
       "stage": "controlled"
     },
     {
       "id": "b1-07-03-controlled-3",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "A sikeres tanuláshoz jó ____ szükséges. (method)",
       "teaches": [
-        "verb-government-hoz-hez"
+        "b1-education-learning-vocab"
       ],
       "answer": "módszer",
       "stage": "controlled"
@@ -160,7 +160,7 @@
     {
       "id": "b1-07-03-practice-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Mit jelent: 'Összpontosíts a vizsgára!'?",
       "options": [
         "Focus on the exam!",
@@ -169,14 +169,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperative-indefinite"
+        "b1-education-learning-vocab"
       ],
       "stage": "practice"
     },
     {
       "id": "b1-07-03-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Nem bírom megjegyezni ezt a sok szabályt!\n— ...",
       "options": [
         "Próbálj meg sémákat rajzolni és rendszeresen ismételni!",
@@ -185,28 +185,31 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-education-learning-vocab"
-      ]
+        "imperative-indefinite"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-07-03-dialogue-2",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Szoktál jegyzetelni az órákon?\n— ...",
       "options": [
         "Igen, mert a leírt gondolatokra jobban tudok emlékezni.",
-        "Nem, mert a leírt gondolatokra mindig emlékszem.",
+        "Nem, mert a leírt gondolatokra jobban tudok emlékezni.",
         "Igen, mert a leírt gondolatokra sosem emlékszem."
       ],
       "correct": 0,
       "teaches": [
-        "b1-education-learning-vocab"
+        "yes-no-questions"
       ]
     },
     {
       "id": "b1-07-03-writing-1",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "vocabulary",
       "question": "How do you say: 'I cannot concentrate because of the noise.'?",
       "options": [
         "A zaj miatt nem tudok összpontosítani.",
@@ -222,7 +225,7 @@
     {
       "id": "b1-07-03-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "vocabulary",
       "question": "How do you say: 'Which method do you find most effective?'?",
       "options": [
         "Melyik módszert találod a leghatékonyabbnak?",
@@ -265,6 +268,10 @@
       "teaches": [
         "verb-government-ra-re"
       ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "delative-rol-rel"
+      },
       "stage": "check"
     }
   ]

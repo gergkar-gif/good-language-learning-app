@@ -15,6 +15,10 @@
       "teaches": [
         "postposition-fele"
       ],
+      "distractor_skills": {
+        "1": "postpositions-basic",
+        "2": "temporal-postpositions"
+      },
       "stage": "introduce"
     },
     {
@@ -74,15 +78,18 @@
       "teaches": [
         "postposition-fele"
       ],
+      "distractor_skills": {
+        "2": "temporal-postpositions"
+      },
       "stage": "controlled"
     },
     {
       "id": "b1-08-01-controlled-3",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "A ____ szerint a gyorsvonat tíz percen belül indul. (schedule / timetable)",
       "teaches": [
-        "postpositions-basic"
+        "b1-travel-mobility-vocab"
       ],
       "answer": "menetrend",
       "stage": "controlled"
@@ -99,7 +106,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "postpositions-altal-reven"
+        "postpositions-basic"
       ],
       "stage": "controlled"
     },
@@ -160,7 +167,7 @@
     {
       "id": "b1-08-01-practice-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Mit jelent: 'Ez a vonat közvetlenül a célállomásra megy'?",
       "options": [
         "This train goes directly to the destination without transfers.",
@@ -169,14 +176,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "movement-with-ba-be"
+        "b1-travel-mobility-vocab"
       ],
       "stage": "practice"
     },
     {
       "id": "b1-08-01-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Van közvetlen járat Pécsre, vagy átszállással kell menni?\n— ...",
       "options": [
         "Szerencsére van egy közvetlen InterCity, nem kell átszállnod.",
@@ -185,13 +192,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-travel-mobility-vocab"
+        "inflected-infinitives"
       ]
     },
     {
       "id": "b1-08-01-dialogue-2",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Megnézted a menetrendet az interneten?\n— ...",
       "options": [
         "Igen, a vonat pontosan 14:25-kor indul a Déli pályaudvarról.",
@@ -200,13 +207,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-travel-mobility-vocab"
+        "yes-no-questions"
       ]
     },
     {
       "id": "b1-08-01-writing-1",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "How do you say: 'We are travelling towards the capital.'?",
       "options": [
         "A főváros felé utazunk.",
@@ -215,14 +222,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-travel-mobility-vocab"
+        "postposition-fele"
       ],
       "stage": "production"
     },
     {
       "id": "b1-08-01-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "vocabulary",
       "question": "How do you say: 'Where is the ticket validation machine?'?",
       "options": [
         "Hol van a jegykezelő automata?",
@@ -249,6 +256,9 @@
       "teaches": [
         "postposition-fele"
       ],
+      "distractor_skills": {
+        "2": "postpositions-basic"
+      },
       "stage": "check"
     },
     {

@@ -20,7 +20,7 @@
     {
       "id": "b1-07-04-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which phrase means 'to pass an exam'?",
       "options": [
         "átmegy a vizsgán",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on"
+        "b1-education-learning-vocab"
       ],
       "stage": "introduce"
     },
@@ -63,7 +63,7 @@
     {
       "id": "b1-07-04-controlled-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Péter kitűnő ... kapott a dolgozatára.",
       "options": [
         "érdemjegyet",
@@ -72,7 +72,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "how-the-accusative-t-works"
+        "b1-education-learning-vocab"
       ],
       "stage": "controlled"
     },
@@ -101,6 +101,10 @@
       "teaches": [
         "on-en-on"
       ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "ban-ben-in"
+      },
       "stage": "controlled"
     },
     {
@@ -152,7 +156,7 @@
       "category": "grammar",
       "sentence": "Sokat tanultam, ezért biztosan nem ____ meg a vizsgán. (I fail)",
       "teaches": [
-        "on-en-on"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
       "answer": "bukom",
       "stage": "practice"
@@ -176,7 +180,7 @@
     {
       "id": "b1-07-04-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Hogy sikerült a szóbeli vizsgád?\n— ...",
       "options": [
         "Nagyon jól, ötöst kaptam a tanár úrtól!",
@@ -185,13 +189,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-education-learning-vocab"
+        "present-tense-routine-language"
       ]
     },
     {
       "id": "b1-07-04-dialogue-2",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Mikor kapjátok meg a bizonyítványt?\n— ...",
       "options": [
         "Június végén, a tanévzáró ünnepségen.",
@@ -200,13 +204,16 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-education-learning-vocab"
-      ]
+        "on-en-on"
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     },
     {
       "id": "b1-07-04-writing-1",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "vocabulary",
       "question": "How do you say: 'I passed both the written and oral exams.'?",
       "options": [
         "Az írásbeli és a szóbeli vizsgán is átmentem.",
@@ -222,7 +229,7 @@
     {
       "id": "b1-07-04-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "vocabulary",
       "question": "How do you say: 'He received a good grade on his essay.'?",
       "options": [
         "Jó érdemjegyet kapott az esszéjére.",
@@ -254,8 +261,8 @@
     {
       "id": "b1-07-04-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which verb pairs with 'meg a vizsgán' to mean fail?",
+      "category": "vocabulary",
+      "question": "Which verb pairs with 'a vizsgán' to mean fail?",
       "options": [
         "megbukik",
         "megy",
@@ -263,7 +270,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on"
+        "b1-education-learning-vocab"
       ],
       "stage": "check"
     }

@@ -15,6 +15,9 @@
       "teaches": [
         "keresztul"
       ],
+      "distractor_skills": {
+        "1": "postpositions-altal-reven"
+      },
       "stage": "introduce"
     },
     {
@@ -74,15 +77,18 @@
       "teaches": [
         "on-en-on"
       ],
+      "distractor_skills": {
+        "2": "ra-re"
+      },
       "stage": "controlled"
     },
     {
       "id": "b1-08-02-controlled-3",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentence": "Gyalog mentünk végig a szép Duna-____. (on the riverbank)",
       "teaches": [
-        "b1-travel-mobility-vocab"
+        "on-en-on"
       ],
       "answer": "folyóparton",
       "stage": "controlled"
@@ -101,6 +107,10 @@
       "teaches": [
         "keresztul"
       ],
+      "distractor_skills": {
+        "1": "temporal-postpositions",
+        "2": "postposition-fele"
+      },
       "stage": "controlled"
     },
     {
@@ -160,7 +170,7 @@
     {
       "id": "b1-08-02-practice-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Mit jelent az 'átkelés'?",
       "options": [
         "Crossing over.",
@@ -169,14 +179,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "nominalization"
+        "b1-travel-mobility-vocab"
       ],
       "stage": "practice"
     },
     {
       "id": "b1-08-02-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Merre vezet a legrövidebb út a völgybe?\n— ...",
       "options": [
         "A hegyen keresztül, az erdős hágón át.",
@@ -185,13 +195,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-travel-mobility-vocab"
+        "on-en-on"
       ]
     },
     {
       "id": "b1-08-02-dialogue-2",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Van nálad térkép a környékről?\n— ...",
       "options": [
         "Igen, a telefonomon letöltöttem a részletes turistatérképet.",
@@ -200,13 +210,16 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-travel-mobility-vocab"
-      ]
+        "definite-past"
+      ],
+      "distractor_skills": {
+        "2": "yes-no-questions"
+      }
     },
     {
       "id": "b1-08-02-writing-1",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "vocabulary",
       "question": "How do you say: 'The road leads through a dark tunnel.'?",
       "options": [
         "Az út egy sötét alagúton keresztül vezet.",
@@ -222,7 +235,7 @@
     {
       "id": "b1-08-02-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "vocabulary",
       "question": "How do you say: 'We walked along the riverbank.'?",
       "options": [
         "A folyópart mentén sétáltunk.",

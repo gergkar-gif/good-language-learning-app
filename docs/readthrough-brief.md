@@ -42,6 +42,8 @@ or `lock_tags.py`.
 - **Reading** (`category: reading`, comprehension questions about a story) stays untagged:
   `{"teaches": null}`. If a reading item actually tests a form or a word, change its
   `category` and tag it as usual.
+- **History/civics fact questions** (citizenship track: who, when, why) are `category: reading` and untagged, like any
+  comprehension question; only an item that defines or glosses a unit word is vocabulary.
 - An item any answer passes, and open writing with no single target → the unit vocabulary
   skill.
 - **Dialogues:** a wrong reply that answers a different question, or contradicts the

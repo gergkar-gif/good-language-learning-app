@@ -68,8 +68,7 @@
       "correct": 0,
       "stage": "recognize",
       "teaches": [
-        "potential-hat-het",
-        "temporal-postpositions"
+        "potential-hat-het"
       ]
     },
     {
@@ -86,7 +85,11 @@
       "stage": "recall",
       "teaches": [
         "azert-hogy-purpose"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "megy-jon",
+        "2": "irregular-past"
+      }
     },
     {
       "id": "b1-07-consolidation-5",
@@ -96,7 +99,7 @@
       "answer": "összpontosítanunk",
       "stage": "recall",
       "teaches": [
-        "ra-re"
+        "inflected-infinitives"
       ]
     },
     {
@@ -118,7 +121,7 @@
     {
       "id": "b1-07-consolidation-7",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "A gimnázium után a diákok egyetemi képzésre ...",
       "options": [
         "jelentkezhetnek",
@@ -128,7 +131,7 @@
       "correct": 0,
       "stage": "in-context",
       "teaches": [
-        "b1-education-learning-vocab"
+        "present-tense-routine-language"
       ]
     },
     {
@@ -139,7 +142,7 @@
       "answer": "fejlessze",
       "stage": "in-context",
       "teaches": [
-        "azert-hogy-purpose"
+        "hogy-jon-jen"
       ]
     },
     {
@@ -161,7 +164,7 @@
     {
       "id": "b1-07-consolidation-10",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "vocabulary",
       "question": "Translate: 'Anyone can study in state schools.'",
       "options": [
         "Bárki tanulhat az állami iskolákban.",
@@ -177,7 +180,7 @@
     {
       "id": "b1-07-consolidation-11",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "Translate: 'I take notes attentively during the lecture.'",
       "options": [
         "Figyelmesen jegyzetelek az előadás alatt.",
@@ -187,14 +190,13 @@
       "correct": 0,
       "stage": "produce",
       "teaches": [
-        "potential-hat-het",
         "temporal-postpositions"
       ]
     },
     {
       "id": "b1-07-consolidation-12",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "vocabulary",
       "question": "Translate: 'We passed both the oral and written examinations.'",
       "options": [
         "A szóbeli és az írásbeli vizsgán is átmentünk.",
@@ -204,7 +206,7 @@
       "correct": 0,
       "stage": "produce",
       "teaches": [
-        "azert-hogy-purpose"
+        "b1-education-learning-vocab"
       ]
     }
   ]

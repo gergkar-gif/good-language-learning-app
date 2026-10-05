@@ -41,7 +41,9 @@ def main():
                 if k == "category" and dd.get("category"):
                     v = dd["category"]
                 if k == "teaches":
-                    v = [dd["teaches"]] if dd.get("teaches") else []
+                    if not dd.get("teaches"):
+                        continue  # reading items stay untagged: no key, not []
+                    v = [dd["teaches"]]
                 out[k] = v
                 if k == "teaches" and dd.get("ds"):
                     out["distractor_skills"] = dd["ds"]
