@@ -47,6 +47,11 @@ def main():
                 out[k] = v
                 if k == "teaches" and dd.get("ds"):
                     out["distractor_skills"] = dd["ds"]
+            if "teaches" not in out and dd.get("teaches"):
+                # item had no teaches key (e.g. a reading item now tagged): add it
+                out["teaches"] = [dd["teaches"]]
+                if dd.get("ds"):
+                    out["distractor_skills"] = dd["ds"]
             new_exs.append(out)
         d["exercises"] = new_exs
         nl = "\r\n" if "\r\n" in raw else "\n"
