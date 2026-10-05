@@ -24,7 +24,7 @@
         ]
       ],
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "a1-kitchen-vocab"
       ]
     },
     {
@@ -39,7 +39,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "a1-kitchen-vocab"
       ]
     },
     {
@@ -54,12 +54,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "a1-kitchen-vocab"
       ]
     },
     {
       "id": "a1.kitchen.05.ex04",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "multiple-choice",
       "question": "Which word normally starts the first step?",
       "options": [
@@ -69,7 +69,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo"
+        "a1-kitchen-vocab"
       ]
     },
     {
@@ -85,7 +85,7 @@
     },
     {
       "id": "a1.kitchen.05.ex06",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "multiple-choice",
       "question": "Which sentence gives the next step?",
       "options": [
@@ -95,7 +95,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo"
+        "a1-kitchen-vocab"
       ]
     },
     {
@@ -125,7 +125,7 @@
     },
     {
       "id": "a1.kitchen.05.ex08",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "multiple-choice",
       "question": "Which sequence is logical?",
       "options": [
@@ -135,7 +135,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo"
+        "a1-kitchen-vocab"
       ]
     },
     {
@@ -159,7 +159,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo"
+        "a1-kitchen-vocab"
       ]
     },
     {
@@ -183,7 +183,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo"
+        "a1-kitchen-vocab"
       ]
     },
     {
@@ -210,7 +210,7 @@
     },
     {
       "id": "a1.kitchen.05.ex12",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "multiple-choice",
       "question": "Which word means \"next / then\"?",
       "options": [
@@ -220,19 +220,22 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo"
+        "a1-kitchen-vocab"
       ]
     },
     {
       "id": "a1.kitchen.05.ex13",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "fill-blank",
       "sentence": "__ , abre la botella.",
-      "answer": "Luego",
       "teaches": [
-        "imperativo-afirmativo"
+        "a1-kitchen-vocab"
       ],
-      "english": "Then, open the bottle."
+      "english": "Then, open the bottle.",
+      "answers": [
+        "Luego",
+        "Después"
+      ]
     },
     {
       "id": "a1.kitchen.05.ex14",
@@ -247,13 +250,16 @@
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ar-verbs"
+      }
     },
     {
       "id": "a1.kitchen.05.ex15",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which comes after \"primero\" in a simple sequence?",
+      "question": "Which comes right after \"primero\" in a simple sequence?",
       "options": [
         "después",
         "finalmente",
@@ -261,7 +267,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo"
+        "a1-kitchen-vocab"
       ]
     },
     {
@@ -277,7 +283,10 @@
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ar-verbs"
+      }
     },
     {
       "id": "a1.kitchen.05.ex17",
@@ -316,7 +325,10 @@
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ar-verbs"
+      }
     }
   ]
 }
