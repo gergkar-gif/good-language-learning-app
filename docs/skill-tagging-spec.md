@@ -51,7 +51,12 @@ Every skill has:
 - Grammar only: `taught_in`, the grammar screen that teaches it
   (`a1-05-a-gr`). Every grammar skill is taught somewhere.
 - Grammar only: `requires`, the direct prerequisites. Each one must be at the
-  same or a lower level, and the graph must have no cycles.
+  same or a lower level, taught no later than the skill (its `taught_in` screen
+  comes at or before this skill's in the unit tables), not only on a track this
+  skill isn't on, and the graph must have no cycles. A prerequisite that the
+  curriculum only teaches later isn't one: drop it. The validator enforces all
+  of this; known exceptions are listed in `KNOWN_PREREQ_ORDER` in
+  `scripts/validate-content.py`, each with its ROADMAP item.
 - Optional: `variant`.
 
 ### Vocabulary skills

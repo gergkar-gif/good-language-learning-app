@@ -232,6 +232,47 @@ def course_language(course, sources):
     return None
 
 
+# (language, skill, prerequisite) pairs the prerequisite-order check skips, each with its queue item.
+KNOWN_PREREQ_ORDER = {
+    ("hu", "mixed-conditionals", "past-conditional-volna"): "ROADMAP 139: past conditional is taught only on the citizenship track",
+    # Spanish pairs found when the check was added (2026-10-05), awaiting the user's decisions: ROADMAP 140
+    ("es", "cuando-mientras", "imperfect"): "ROADMAP 140",
+    ("es", "imperativo-formal-usted", "subjuntivo-morfologia"): "ROADMAP 140",
+    ("es", "imperativo-negativo", "subjuntivo-morfologia"): "ROADMAP 140",
+    ("es", "indefinidos-negativos", "negation"): "ROADMAP 140",
+    ("es", "perifrasis-verbales", "acabar-de"): "ROADMAP 140",
+    ("es", "formal-register", "nominalization"): "ROADMAP 140",
+    ("es", "nominalizacion-despersonalizacion", "nominalization"): "ROADMAP 140",
+    ("es", "apodosis-condicional-literaria", "pluscuamperfecto-subjuntivo-si"): "ROADMAP 140",
+    ("es", "implicit-conditionals", "pluscuamperfecto-subjuntivo-si"): "ROADMAP 140",
+    ("es", "inversiones-condicionales-de-haber", "pluscuamperfecto-subjuntivo-si"): "ROADMAP 140",
+    ("es", "mixed-conditionals", "pluscuamperfecto-subjuntivo-si"): "ROADMAP 140",
+    ("es", "regrets-reproaches", "pluscuamperfecto-subjuntivo-si"): "ROADMAP 140",
+}
+
+
+def screen_positions(course):
+    """{grammar screen id: ((level, unit position, lesson position), track)} from a course's unit tables."""
+    pos = {}
+    for path in (ROOT / "content" / course / "curriculum" / "units").glob("*.json"):
+        level = path.stem.upper()
+        if level not in LEVELS:
+            continue
+        try:
+            table = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        stem_at = {}
+        for ui, entry in enumerate(table):
+            for si, stem in enumerate(entry.get("stems", [])):
+                stem_at[stem] = ((LEVELS.index(level), ui, si), entry.get("track") or "core")
+        for screen in (ROOT / "content" / course / "grammar" / level.lower()).glob("*.json"):
+            stem = re.sub(r"(-[a-z])?-gr$", "", screen.stem)
+            if stem in stem_at:
+                pos[screen.stem] = stem_at[stem]
+    return pos
+
+
 def unit_tables(course):
     """{(LEVEL, unit id): unit entry} for one course, plus duplicate-id errors."""
     units, errors = {}, []
@@ -350,6 +391,23 @@ def validate_skill_sources(sources, families):
 
         for n in skills:
             visit(n, [])
+        # a prerequisite must be taught no later than the skill, and not only on a track the skill isn't on
+        for course in courses:
+            pos = screen_positions(course)
+            for slug, s in skills.items():
+                me = pos.get(s.get("taught_in"))
+                if not me:
+                    continue
+                for req in s.get("requires", []):
+                    them = pos.get(skills.get(req, {}).get("taught_in"))
+                    if not them or (lang, slug, req) in KNOWN_PREREQ_ORDER:
+                        continue
+                    if them[0] > me[0]:
+                        errors.append(f"{rel} :: {slug}\n      requires {req!r}, taught at {skills[req]['taught_in']} in {course}, "
+                                      f"after this skill's {s['taught_in']} -- drop the requirement or fix taught_in")
+                    elif them[1] not in ("core", me[1]):
+                        errors.append(f"{rel} :: {slug}\n      requires {req!r}, taught only on the {them[1]!r} track "
+                                      f"({skills[req]['taught_in']}) in {course}, but this skill is on {me[1]!r}")
         # frozen list
         frozen_path = ROOT / "skills" / f"frozen-{lang}.json"
         frozen = set(json.loads(frozen_path.read_text(encoding="utf-8")).get("skills", {})) if frozen_path.is_file() else set()
