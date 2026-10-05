@@ -74,16 +74,20 @@
       "teaches": [
         "kellene"
       ],
+      "distractor_skills": {
+        "1": "szabad-infinitive",
+        "2": "szabad-infinitive"
+      },
       "stage": "controlled"
     },
     {
       "id": "b1-09-05-controlled-3",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "A helyes orvosi ____ meghozta a várt eredményt. (treatment / nom)",
       "answer": "kezelés",
       "teaches": [
-        "past-participle-adjective"
+        "b1-health-wellbeing-vocab"
       ],
       "stage": "controlled"
     },
@@ -176,7 +180,7 @@
     {
       "id": "b1-09-05-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Hallom, beteg voltál a múlt héten. Hogy vagy most?\n— ...",
       "options": [
         "Köszönöm, a kezelés után már sokkal jobban vagyok, túl vagyok a nehezén.",
@@ -185,13 +189,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-health-wellbeing-vocab"
+        "present-tense-routine-language"
       ]
     },
     {
       "id": "b1-09-05-dialogue-2",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Mit tanácsolsz a megfázás ellen?\n— ...",
       "options": [
         "Érdemes forró mézes teát inni és sok C-vitamint szedni.",
@@ -200,13 +204,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-health-wellbeing-vocab"
+        "kellene"
       ]
     },
     {
       "id": "b1-09-05-writing-1",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "vocabulary",
       "question": "How do you say: 'I wish you a speedy recovery.'?",
       "options": [
         "Mielőbbi gyógyulást kívánok neked.",
@@ -222,7 +226,7 @@
     {
       "id": "b1-09-05-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "How do you say: 'It is recommended to rest a lot.'?",
       "options": [
         "Ajánlott sokat pihenni.",
@@ -231,8 +235,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-health-wellbeing-vocab"
+        "kellene"
       ],
+      "distractor_skills": {
+        "1": "szabad-infinitive",
+        "2": "szabad-infinitive"
+      },
       "stage": "production"
     },
     {
@@ -245,10 +253,7 @@
         "Egy gyógyszergyárba.",
         "A budai színházba."
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-health-wellbeing-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-09-05-reading-2",
@@ -260,10 +265,7 @@
         "Hogy azonnal kórházba kell feküdnie.",
         "Hogy elvesztette a receptjét."
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-health-wellbeing-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-09-05-reading-3",
@@ -275,10 +277,7 @@
         "Erős altatót a patikából.",
         "Szigorú kórházi diétát."
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-health-wellbeing-vocab"
-      ]
+      "correct": 0
     }
   ]
 }

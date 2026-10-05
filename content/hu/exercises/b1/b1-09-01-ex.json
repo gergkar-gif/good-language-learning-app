@@ -4,7 +4,7 @@
     {
       "id": "b1-09-01-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which noun phrase expresses generic 'one' or 'people in general'?",
       "options": [
         "az ember",
@@ -13,7 +13,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "subject-pronouns-omission"
+        "b1-health-wellbeing-vocab"
       ],
       "stage": "introduce"
     },
@@ -64,7 +64,7 @@
       "id": "b1-09-01-controlled-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Ha fáradt az ember, sokat ... aludnia.",
+      "question": "Ha fáradt az ember, sokat ... aludnia. (must)",
       "options": [
         "kell",
         "tilos",
@@ -74,6 +74,10 @@
       "teaches": [
         "kell-infinitive"
       ],
+      "distractor_skills": {
+        "1": "szabad-infinitive",
+        "2": "szabad-infinitive"
+      },
       "stage": "controlled"
     },
     {
@@ -153,14 +157,14 @@
       "sentence": "A zöldségek és gyümölcsök fontos szerepet játszanak az egészséges ____. (nutrition / inessive)",
       "answer": "táplálkozásban",
       "teaches": [
-        "verb-government-ban-ben"
+        "ban-ben-in"
       ],
       "stage": "practice"
     },
     {
       "id": "b1-09-01-practice-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Mit jelent: 'Az embernek vigyáznia kell az egészségére'?",
       "options": [
         "One must take care of one's health.",
@@ -169,14 +173,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "building-the-infinitive-the-suffix-ni"
+        "b1-health-wellbeing-vocab"
       ],
       "stage": "practice"
     },
     {
       "id": "b1-09-01-dialogue-1",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Mit teszel az egészséged megőrzéséért?\n— ...",
       "options": [
         "Figyelek a táplálkozásra és heti háromszor úszni járok.",
@@ -185,13 +189,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-health-wellbeing-vocab"
+        "present-tense-routine-language"
       ]
     },
     {
       "id": "b1-09-01-dialogue-2",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "— Nem érzed magad fáradtnak mostanában?\n— ...",
       "options": [
         "De igen, úgy érzem, az embernek néha kötelező pihennie.",
@@ -200,13 +204,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-health-wellbeing-vocab"
+        "present-tense-routine-language"
       ]
     },
     {
       "id": "b1-09-01-writing-1",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "vocabulary",
       "question": "How do you say: 'Prevention is better than cure.'?",
       "options": [
         "A megelőzés jobb, mint a gyógyítás.",
@@ -222,7 +226,7 @@
     {
       "id": "b1-09-01-writing-2",
       "type": "multiple-choice",
-      "category": "writing",
+      "category": "grammar",
       "question": "How do you say: 'One must drink plenty of fluids.'?",
       "options": [
         "Az embernek sok folyadékot kell innia.",
@@ -231,8 +235,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-health-wellbeing-vocab"
+        "kell-infinitive"
       ],
+      "distractor_skills": {
+        "1": "lehet-infinitive"
+      },
       "stage": "production"
     },
     {
@@ -265,6 +272,10 @@
       "teaches": [
         "kell-infinitive"
       ],
+      "distractor_skills": {
+        "1": "szabad-infinitive",
+        "2": "szabad-infinitive"
+      },
       "stage": "check"
     }
   ]

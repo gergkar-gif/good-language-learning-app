@@ -65,8 +65,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "translative-morphology",
-        "valik-verb"
+        "translative-morphology"
       ]
     },
     {
@@ -81,8 +80,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "translative-morphology",
-        "valik-verb"
+        "translative-morphology"
       ]
     },
     {
@@ -97,7 +95,6 @@
       ],
       "correct": 0,
       "teaches": [
-        "translative-morphology",
         "valik-verb"
       ]
     },
@@ -113,8 +110,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "translative-morphology",
-        "valik-verb"
+        "translative-morphology"
       ]
     },
     {
@@ -124,8 +120,7 @@
       "sentence": "Az új lámpák sokkal melegebbé és barátságosabbá teszik a lakás ____. (atmosphere)",
       "answer": "hangulatát",
       "teaches": [
-        "translative-morphology",
-        "valik-verb"
+        "acc-poss"
       ]
     },
     {
@@ -135,14 +130,13 @@
       "sentence": "A tulajdonosok az egykori padlást hangulatos vendégszobá____ alakították át. (into - translative)",
       "answer": "vá",
       "teaches": [
-        "translative-morphology",
-        "valik-verb"
+        "translative-morphology"
       ]
     },
     {
       "id": "b1-10-01-practice-3",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "Mire utal a mondat: „A felújítás során lecserélték a teljes villanyhálózatot és a világítást.”?",
       "options": [
         "Korszerűsítették az áramvezetékeket és a lámpatesteket.",
@@ -154,7 +148,7 @@
     {
       "id": "b1-10-01-practice-4",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "Mi a különbség a 'felújítás' és az 'átalakítás' között?",
       "options": [
         "A felújítás a meglévő állapot megújítását, az átalakítás pedig a funkció vagy térszerkezet megváltoztatását jelenti.",
@@ -166,7 +160,7 @@
     {
       "id": "b1-10-01-dialogue-1",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "grammar",
       "question": "— Sikerült már befejeznetek a felújítást?\n— Igen, a múlt héten végeztünk, és a nappali végre kellemes, világos térré ______.",
       "options": [
         "vált",
@@ -178,7 +172,7 @@
     {
       "id": "b1-10-01-dialogue-2",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "— Mitől olyan otthonos ez a sarok?\n— A lágy rejtett ______ és a kényelmes fotel teszi azzá.",
       "options": [
         "világítás",
@@ -190,24 +184,25 @@
     {
       "id": "b1-10-01-writing-1",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A házaspár a régi parasztházat gyönyörű nyaraló____ varázsolta. (into a summer house)",
       "answer": "vá",
       "stage": "production",
       "teaches": [
-        "translative-morphology",
-        "valik-verb"
+        "translative-morphology"
       ]
     },
     {
       "id": "b1-10-01-writing-2",
       "type": "fill-blank",
-      "category": "writing",
+      "category": "grammar",
       "sentence": "A modern szigetelés révén az ingatlan jóval energiatakarékosabbá ____. (became)",
-      "answer": "vált",
+      "answers": [
+        "vált",
+        "lett"
+      ],
       "stage": "production",
       "teaches": [
-        "translative-morphology",
         "valik-verb"
       ]
     },
@@ -223,9 +218,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "translative-morphology",
-        "valik-verb"
-      ]
+        "translative-morphology"
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "delative-rol-rel"
+      }
     },
     {
       "id": "b1-10-01-check-2",
@@ -239,9 +237,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "translative-morphology",
-        "valik-verb"
-      ]
+        "translative-morphology"
+      ],
+      "distractor_skills": {
+        "2": "val-vel"
+      }
     }
   ]
 }
