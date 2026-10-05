@@ -34,7 +34,7 @@
     {
       "id": "a1-24-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means 'here'?",
       "options": [
         "itt",
@@ -43,14 +43,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
+        "a1-objects-locations-vocab"
       ]
     },
     {
       "id": "a1-24-introduce-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means 'there'?",
       "options": [
         "ott",
@@ -59,8 +58,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
+        "a1-objects-locations-vocab"
       ]
     },
     {
@@ -83,8 +81,7 @@
       ],
       "english": "There is a phone here.",
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
+        "van-and-nincs-there-is-there-isn-t"
       ]
     },
     {
@@ -94,7 +91,6 @@
       "sentence": "____ van egy asztal. (there)",
       "answer": "Ott",
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
         "itt-ott-here-there"
       ]
     },
@@ -142,8 +138,7 @@
       ],
       "english": "There is no lamp here.",
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
+        "van-and-nincs-there-is-there-isn-t"
       ]
     },
     {
@@ -158,9 +153,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
-      ]
+        "van-and-nincs-there-is-there-isn-t"
+      ],
+      "distractor_skills": {
+        "1": "negation-with-nem"
+      }
     },
     {
       "id": "a1-24-practice-2",
@@ -169,8 +166,7 @@
       "sentence": "A könyv a konyhában ____. (is / there is)",
       "answer": "van",
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
+        "van-and-nincs-there-is-there-isn-t"
       ]
     },
     {
@@ -219,17 +215,16 @@
       ],
       "english": "There is a book here.",
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
+        "van-and-nincs-there-is-there-isn-t"
       ]
     },
     {
       "id": "a1-24-practice-5",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which sentence starts this exchange?",
+      "question": "Meg: ____ Károly: Itt van.",
       "options": [
-        "Itt van.",
+        "Ki ő?",
         "Hol van a lámpa?",
         "Köszönöm."
       ],
@@ -250,8 +245,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
+        "van-and-nincs-there-is-there-isn-t"
       ]
     },
     {
@@ -261,7 +255,6 @@
       "sentence": "Hol van a telefon? ____ van. (here)",
       "answer": "Itt",
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
         "itt-ott-here-there"
       ]
     },
@@ -285,8 +278,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
+        "a1-objects-locations-vocab"
       ]
     },
     {
@@ -309,8 +301,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
+        "a1-objects-locations-vocab"
       ]
     },
     {
@@ -324,8 +315,7 @@
         }
       ],
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
+        "van-and-nincs-there-is-there-isn-t"
       ]
     },
     {
@@ -339,8 +329,7 @@
         }
       ],
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
+        "van-and-nincs-there-is-there-isn-t"
       ]
     },
     {
@@ -355,9 +344,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
-      ]
+        "van-and-nincs-there-is-there-isn-t"
+      ],
+      "distractor_skills": {
+        "1": "van-zero-copula",
+        "2": "van-zero-copula"
+      }
     },
     {
       "id": "a1-24-check-2",
@@ -371,9 +363,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t",
-        "itt-ott-here-there"
-      ]
+        "van-and-nincs-there-is-there-isn-t"
+      ],
+      "distractor_skills": {
+        "1": "negation-with-nem",
+        "2": "negation-with-nem"
+      }
     }
   ]
 }

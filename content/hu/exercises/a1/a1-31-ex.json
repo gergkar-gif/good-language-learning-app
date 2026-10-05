@@ -14,13 +14,13 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-describing-people-vocab"
+        "a1-family-vocab"
       ]
     },
     {
       "id": "a1-31-review-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which correctly means \"The family is together\"?",
       "options": [
         "A család együtt van.",
@@ -30,13 +30,13 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "a1-describing-people-vocab"
+        "egyutt-together"
       ]
     },
     {
       "id": "a1-31-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"tall\"?",
       "options": [
         "magas",
@@ -45,15 +45,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
-        "plural-predicate-adjectives-k"
+        "a1-describing-people-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a1-31-introduce-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word asks \"what is ... like?\"",
       "options": [
         "milyen",
@@ -62,8 +61,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
-        "plural-predicate-adjectives-k"
+        "a1-describing-people-vocab"
       ],
       "stage": "introduce"
     },
@@ -97,12 +95,11 @@
     {
       "id": "a1-31-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Milyen ő? Ő ____. (tall)",
       "answer": "magas",
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
-        "plural-predicate-adjectives-k"
+        "a1-describing-people-vocab"
       ],
       "stage": "controlled"
     },
@@ -118,20 +115,18 @@
       ],
       "correct": 0,
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
-        "plural-predicate-adjectives-k"
+        "van-zero-copula"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-31-controlled-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Milyen a fiú? ____. (young)",
       "answer": "Fiatal",
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
-        "plural-predicate-adjectives-k"
+        "a1-describing-people-vocab"
       ],
       "stage": "controlled"
     },
@@ -147,7 +142,6 @@
       ],
       "correct": 0,
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
         "plural-predicate-adjectives-k"
       ],
       "stage": "practice"
@@ -159,7 +153,6 @@
       "sentence": "Ő magas, de ők ____. (tall, plural)",
       "answer": "magasak",
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
         "plural-predicate-adjectives-k"
       ],
       "stage": "practice"
@@ -207,7 +200,6 @@
       ],
       "english": "They are tall.",
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
         "plural-predicate-adjectives-k"
       ],
       "stage": "practice"
@@ -216,18 +208,20 @@
       "id": "a1-31-practice-5",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence starts this exchange?",
+      "question": "Which sentence comes just before the reply \"Ő magas.\"?",
       "options": [
         "Milyen ő?",
         "Ő magas.",
-        "Milyen a fiú?",
+        "Ki ő?",
         "Fiatal."
       ],
       "correct": 0,
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
-        "plural-predicate-adjectives-k"
+        "quantity-choice-questions-mennyi-melyik"
       ],
+      "distractor_skills": {
+        "2": "ki-and-mi"
+      },
       "stage": "practice"
     },
     {
@@ -242,7 +236,6 @@
       ],
       "correct": 0,
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
         "plural-predicate-adjectives-k"
       ],
       "stage": "practice"
@@ -262,8 +255,7 @@
         }
       ],
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
-        "plural-predicate-adjectives-k"
+        "quantity-choice-questions-mennyi-melyik"
       ],
       "stage": "practice"
     },
@@ -287,8 +279,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
-        "plural-predicate-adjectives-k"
+        "van-zero-copula"
       ]
     },
     {
@@ -311,8 +302,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
-        "plural-predicate-adjectives-k"
+        "van-zero-copula"
       ]
     },
     {
@@ -326,8 +316,7 @@
         }
       ],
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
-        "plural-predicate-adjectives-k"
+        "a1-describing-people-vocab"
       ]
     },
     {
@@ -341,14 +330,13 @@
         }
       ],
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
         "plural-predicate-adjectives-k"
       ]
     },
     {
       "id": "a1-31-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"short\"?",
       "options": [
         "alacsony",
@@ -357,8 +345,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
-        "plural-predicate-adjectives-k"
+        "a1-describing-people-vocab"
       ],
       "stage": "check"
     },
@@ -374,7 +361,6 @@
       ],
       "correct": 0,
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik",
         "plural-predicate-adjectives-k"
       ],
       "stage": "check"
