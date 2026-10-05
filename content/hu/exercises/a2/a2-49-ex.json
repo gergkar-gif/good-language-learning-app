@@ -4,7 +4,7 @@
     {
       "id": "a2-49-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means \"to bake, to fry\"?",
       "options": [
         "süt",
@@ -13,14 +13,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperative-definite"
+        "a2-cooking-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a2-49-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means \"to put, to place\"?",
       "options": [
         "tesz",
@@ -29,7 +29,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperative-definite"
+        "a2-cooking-vocab"
       ],
       "stage": "introduce"
     },
@@ -96,12 +96,15 @@
       "teaches": [
         "prefix-word-order"
       ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      },
       "stage": "controlled"
     },
     {
       "id": "a2-49-practice-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means \"to add (something to something)\"?",
       "options": [
         "hozzáad",
@@ -110,7 +113,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "prefix-word-order"
+        "a2-cooking-vocab"
       ],
       "stage": "practice"
     },
@@ -205,12 +208,15 @@
       ],
       "options": [
         "Vágd fel a hagymát!",
-        "Vágj hagymát!"
+        "Vágok hagymát."
       ],
       "correct": 0,
       "teaches": [
-        "prefix-word-order"
-      ]
+        "imperative-definite"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "a2-49-dialogue-2",
@@ -232,7 +238,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperative-definite"
+        "a2-cooking-vocab"
       ]
     },
     {
@@ -266,7 +272,7 @@
     {
       "id": "a2-49-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means \"up\" (as in \"cut it up\")?",
       "options": [
         "fel",
@@ -275,7 +281,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "prefix-word-order"
+        "a2-cooking-vocab"
       ],
       "stage": "check"
     },
@@ -293,6 +299,10 @@
       "teaches": [
         "imperative-definite"
       ],
+      "distractor_skills": {
+        "1": "imperative-indefinite",
+        "2": "present-tense-routine-language"
+      },
       "stage": "check"
     }
   ]
