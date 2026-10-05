@@ -729,9 +729,13 @@ const LevelTest = (function () {
             `;
         }
 
+        const audioIconHtml = (typeof Art !== 'undefined' && Art.icon)
+            ? Art.icon('listening')
+            : '<svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false"><line class="ink-line" x1="4" y1="10" x2="4" y2="14"/><line class="ink-line" x1="8" y1="7" x2="8" y2="17"/><line class="ink-line" x1="12" y1="4" x2="12" y2="20"/><line class="ink-line" x1="16" y1="8" x2="16" y2="16"/><line class="ink-line" x1="20" y1="11" x2="20" y2="13"/></svg>';
+
         return `
             <div class="lt-audio-console-top">
-                <span class="lt-audio-icon">🎧</span>
+                <span class="lt-audio-icon ${listeningPlaying ? 'is-playing' : ''}">${audioIconHtml}</span>
                 <div class="lt-audio-status-wrap">
                     <span class="lt-audio-status-label">${statusLabel}</span>
                     <span class="lt-audio-status-detail">${statusDetail}</span>

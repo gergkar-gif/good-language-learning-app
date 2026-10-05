@@ -669,9 +669,13 @@ const ListeningStudio = (function () {
             `;
         }
 
+        const audioIconHtml = (typeof Art !== 'undefined' && Art.icon)
+            ? Art.icon('listening')
+            : '<svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false"><line class="ink-line" x1="4" y1="10" x2="4" y2="14"/><line class="ink-line" x1="8" y1="7" x2="8" y2="17"/><line class="ink-line" x1="12" y1="4" x2="12" y2="20"/><line class="ink-line" x1="16" y1="8" x2="16" y2="16"/><line class="ink-line" x1="20" y1="11" x2="20" y2="13"/></svg>';
+
         consoleEl.innerHTML = `
             <div class="lt-audio-console-top">
-                <div class="lt-audio-icon" aria-hidden="true">${_isPlaying ? '🔊' : (_intermissionTimer ? '⏳' : '🎧')}</div>
+                <div class="lt-audio-icon ${_isPlaying ? 'is-playing' : ''}" aria-hidden="true">${audioIconHtml}</div>
                 <div class="lt-audio-status-wrap">
                     <span class="lt-audio-status-label">${_esc(statusTitle)}</span>
                     <span class="lt-audio-status-detail">${_esc(statusSub)}</span>
