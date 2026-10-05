@@ -95,3 +95,11 @@ review every line. The setup above (one rule sheet, two units per subagent,
 filtered review, registry fixed first, more checks) targets roughly 35–40%
 fewer subagent tokens, half the review cost and ~40% less wall time at the
 same or better quality.
+
+## Added after HU B1 (75 units, 4,333 exercises, 2026-10-06)
+
+- Subagents often can't write content files (the harness blocks their edit scripts). Tell them to list exact fixes (id, type, full new content) in the report and apply them in the main session with a small `edit()` helper that rewrites the file as JSON, keeping its line endings.
+- Late units (B1 and later) repeat one 8-item template across lessons 01–05; the copies test later lessons' words. Ask subagents to rewrite them per lesson, and run the check again after.
+- Never `git add` by a guessed file prefix: a unit's exercise files are named after its stems (`b1-otvenhat-*`, not the unit id), and one failed pathspec aborts the whole `git add`. Read the stems from the unit table, and confirm with `git status` that no applied-and-locked file is left uncommitted (a locked tag that disagrees with the committed file is not caught until the next push).
+- Count the subagents that are running before launching: the limit of two applies to launches made while earlier ones are still in flight.
+- Check coverage at the end: every exercise id in the level must be in `tags.lock.json` (a unit skipped by a pairing mistake showed up only this way).
