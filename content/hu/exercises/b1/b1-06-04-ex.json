@@ -4,7 +4,7 @@
     {
       "id": "b1-06-04-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which verb means \"to coordinate / align with someone\"?",
       "options": [
         "egyeztet",
@@ -13,7 +13,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "verb-government-val-vel"
+        "b1-work-professional-life-vocab"
       ],
       "stage": "introduce"
     },
@@ -29,8 +29,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "light-verb-collocations"
+        "ban-ben-in"
       ],
+      "distractor_skills": {
+        "1": "verb-government-ert",
+        "2": "val-vel"
+      },
       "stage": "introduce"
     },
     {
@@ -67,7 +71,7 @@
       "sentence": "Holnap fontos ____ tartunk az irodában. (meeting - accusative)",
       "answer": "megbeszélést",
       "teaches": [
-        "verb-government-val-vel"
+        "how-the-accusative-t-works"
       ],
       "stage": "controlled"
     },
@@ -78,7 +82,7 @@
       "sentence": "Mindenképpen be kell tartanunk a kitűzött ____. (deadline - accusative)",
       "answer": "határidőt",
       "teaches": [
-        "light-verb-collocations"
+        "how-the-accusative-t-works"
       ],
       "stage": "controlled"
     },
@@ -148,25 +152,25 @@
       ],
       "english": "Unfortunately we are two days behind schedule.",
       "teaches": [
-        "light-verb-collocations"
+        "ban-ben-in"
       ],
       "stage": "practice"
     },
     {
       "id": "b1-06-04-practice-3",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentence": "A kedves ____ mindig készségesen segítenek. (colleagues)",
       "answer": "kollégák",
       "teaches": [
-        "b1-work-professional-life-vocab"
+        "plural-nouns-k"
       ],
       "stage": "practice"
     },
     {
       "id": "b1-06-04-practice-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which phrase means \"to request an extension from the client\"?",
       "options": [
         "halasztást kér az ügyféltől",
@@ -175,7 +179,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "light-verb-collocations"
+        "b1-work-professional-life-vocab"
       ],
       "stage": "practice"
     },
@@ -199,7 +203,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "light-verb-collocations"
+        "present-tense-routine-language"
       ]
     },
     {
@@ -222,7 +226,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "verb-government-val-vel"
+        "present-tense-routine-language"
       ]
     },
     {
@@ -231,12 +235,12 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say that tomorrow you are holding an important meeting.",
+          "prompt": "Say that tomorrow we are holding an important meeting.",
           "answer": "Holnap fontos megbeszélést tartunk."
         }
       ],
       "teaches": [
-        "verb-government-val-vel"
+        "b1-work-professional-life-vocab"
       ]
     },
     {
@@ -250,7 +254,7 @@
         }
       ],
       "teaches": [
-        "light-verb-collocations"
+        "b1-work-professional-life-vocab"
       ]
     },
     {
@@ -267,6 +271,10 @@
       "teaches": [
         "verb-government-val-vel"
       ],
+      "distractor_skills": {
+        "1": "hoz-suffix",
+        "2": "tol-tol"
+      },
       "stage": "check"
     },
     {
@@ -276,7 +284,7 @@
       "sentence": "Sajnos kicsit ____ vagyunk a projekt befejezésével. (behind schedule)",
       "answer": "késésben",
       "teaches": [
-        "light-verb-collocations"
+        "ban-ben-in"
       ],
       "stage": "check"
     }

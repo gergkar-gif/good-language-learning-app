@@ -74,11 +74,11 @@
     {
       "id": "b1-06-02-controlled-3",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Én vagyok a ____ ezért a munkáért. (responsible person)",
       "answer": "felelős",
       "teaches": [
-        "verb-government-ert"
+        "b1-work-professional-life-vocab"
       ],
       "stage": "controlled"
     },
@@ -96,6 +96,9 @@
       "teaches": [
         "mediopassive-verbs-odik"
       ],
+      "distractor_skills": {
+        "1": "definite-vs-indefinite-conjugation"
+      },
       "stage": "controlled"
     },
     {
@@ -157,7 +160,7 @@
       "sentence": "Már ____ az összes hivatalos papírt. (I arranged / sorted out)",
       "answer": "elintéztem",
       "teaches": [
-        "verb-government-ert"
+        "definite-past"
       ],
       "stage": "practice"
     },
@@ -165,7 +168,7 @@
       "id": "b1-06-02-practice-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which verb form completes: \"Az értekezlet pontosan tizenegykor _____.\"?",
+      "question": "Which verb form completes: \"A megbeszélés pontosan tizenegykor _____.\"?",
       "options": [
         "kezdődik",
         "kezdi",
@@ -175,6 +178,10 @@
       "teaches": [
         "mediopassive-verbs-odik"
       ],
+      "distractor_skills": {
+        "1": "definite-vs-indefinite-conjugation",
+        "2": "present-participle"
+      },
       "stage": "practice"
     },
     {
@@ -265,6 +272,9 @@
       "teaches": [
         "mediopassive-verbs-odik"
       ],
+      "distractor_skills": {
+        "1": "definite-vs-indefinite-conjugation"
+      },
       "stage": "check"
     },
     {
@@ -274,7 +284,7 @@
       "sentence": "Ez a pozíció óriási ____ jár. (with responsibility - instrumental: -val)",
       "answer": "felelősséggel",
       "teaches": [
-        "verb-government-ert"
+        "val-vel"
       ],
       "stage": "check"
     }
