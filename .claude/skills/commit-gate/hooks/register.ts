@@ -67,7 +67,7 @@ export const register: Register = on => {
       const isOurs = await $.fs.stat(`${gitDirPath}/../scripts/validate-content.py`).then(() => true, () => false)
       if (isOurs)
         return {
-          deny: `commit-gate: this is the main checkout, which Antigravity shares. Git commands that change files or the index here can sweep up or wipe its uncommitted work. Do it in your own worktree: cd ${CLAUDE_WORKTREE} (commit there, then \`git pull --rebase origin master\` and \`git push origin HEAD:master\`). Put [shared-ok] in the command only if the user asked for this in the main checkout.`,
+          deny: `commit-gate: this is the main checkout, which Antigravity shares. Git commands that change files or the index here can sweep up or wipe its uncommitted work. Work in a worktree of your own, one per Claude session: ${CLAUDE_WORKTREE} if this session already uses it, otherwise \`git worktree add --detach C:/dev/parlour-<task> origin/master\` and move your uncommitted files there. Commit there, then \`git pull --rebase origin master\` and \`git push origin HEAD:master\`. Put [shared-ok] in the command only if the user asked for this in the main checkout.`,
         }
     }
 
