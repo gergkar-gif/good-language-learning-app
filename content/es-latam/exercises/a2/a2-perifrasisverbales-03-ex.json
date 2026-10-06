@@ -15,7 +15,10 @@
       "correct": 0,
       "teaches": [
         "ordering-markers"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "porque-y-por-eso"
+      }
     },
     {
       "id": "a2.perifrasisverbales.03.ex02",
@@ -24,23 +27,26 @@
       "question": "El restaurante tiene buena comida y, _____, los precios son muy económicos.",
       "options": [
         "además",
-        "sin embargo",
+        "porque",
         "aunque",
         "por lo tanto"
       ],
       "correct": 0,
       "teaches": [
         "ordering-markers"
-      ]
+      ],
+      "distractor_skills": {
+        "3": "porque-y-por-eso"
+      }
     },
     {
       "id": "a2.perifrasisverbales.03.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Salimos a dar un paseo _____ (aunque) estaba lloviendo un poco.",
+      "sentence": "Salimos a dar un paseo _____ (although) estaba lloviendo un poco.",
       "answer": "aunque",
       "teaches": [
-        "ordering-markers"
+        "concesivas-aunque"
       ],
       "english": "We went out for a walk even though it was raining a little."
     },
@@ -51,13 +57,13 @@
       "sentence": "No había vuelos directos; por lo _____, tuvimos que hacer escala en Madrid.",
       "answer": "tanto",
       "teaches": [
-        "ordering-markers"
+        "porque-y-por-eso"
       ],
       "english": "There were no direct flights; therefore, we had to have a layover in Madrid."
     },
     {
       "id": "a2.perifrasisverbales.03.ex05",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -78,7 +84,7 @@
         ]
       ],
       "teaches": [
-        "ordering-markers"
+        "a2-connecting-ideas-habits-vocab"
       ]
     },
     {
@@ -124,15 +130,16 @@
       ],
       "options": [
         "El argumento es interesante; sin embargo, en mi opinión hay riesgos.",
-        "El argumento es interesante; además, en mi opinión hay riesgos.",
+        "El argumento es interesante; aunque, en mi opinión hay riesgos.",
         "El argumento es interesante; por lo tanto, en mi opinión no hay riesgos."
       ],
       "correct": 0,
       "teaches": [
-        "ordering-markers",
-        "a1-greetings-introductions-vocab",
-        "por-que-y-porque"
-      ]
+        "ordering-markers"
+      ],
+      "distractor_skills": {
+        "2": "porque-y-por-eso"
+      }
     },
     {
       "id": "a2.perifrasisverbales.03.ex08",
@@ -155,8 +162,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ordering-markers",
-        "a1-greetings-introductions-vocab"
+        "ordering-markers"
       ]
     },
     {
@@ -174,9 +180,7 @@
         }
       ],
       "teaches": [
-        "ordering-markers",
-        "a1-greetings-introductions-vocab",
-        "porque-y-por-eso"
+        "ordering-markers"
       ]
     },
     {
@@ -192,9 +196,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ordering-markers",
-        "a1-greetings-introductions-vocab",
-        "por-que-y-porque"
+        "a2-connecting-ideas-habits-vocab"
       ]
     },
     {
@@ -203,8 +205,7 @@
       "type": "dictation",
       "sentence": "El argumento era claro; en cambio, la consecuencia fue inesperada.",
       "teaches": [
-        "ordering-markers",
-        "a1-greetings-introductions-vocab"
+        "ordering-markers"
       ],
       "english": "The argument was clear; in contrast, the consequence was unexpected."
     }
