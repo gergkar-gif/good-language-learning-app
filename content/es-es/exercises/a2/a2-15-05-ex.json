@@ -27,67 +27,75 @@
       "id": "a2.15.05.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which word means 'because'?",
+      "teaches": [
+        "porque-y-por-eso"
+      ],
+      "question": "Which word gives the reason in «Se fue de la estación porque recibió un mensaje»?",
       "options": [
         "porque",
         "por eso",
         "después"
       ],
-      "correct": 0,
-      "teaches": [
-        "porque-y-por-eso"
-      ]
+      "correct": 0
     },
     {
       "id": "a2.15.05.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "answer": "porque",
       "teaches": [
         "porque-y-por-eso"
       ],
-      "sentence": "Se fue __ recibió una noticia.",
-      "english": "She left because she received some news."
+      "sentence": "Se quedó en la estación __ recibió una noticia.",
+      "answer": "porque",
+      "english": "She stayed at the station because she received some news."
     },
     {
       "id": "a2.15.05.ex04",
       "category": "grammar",
       "type": "sentence-builder",
-      "english": "She left because she received some news.",
       "teaches": [
         "porque-y-por-eso"
       ],
+      "english": "She received a message, so she left the station.",
       "tiles": [
-        "Se",
+        "Recibió",
+        "un",
+        "mensaje",
+        "por",
+        "eso",
+        "se",
         "fue",
-        "porque",
-        "recibió",
-        "una",
-        "noticia"
+        "de",
+        "la",
+        "estación"
       ],
       "solution": [
-        "Se",
+        "Recibió",
+        "un",
+        "mensaje",
+        "por",
+        "eso",
+        "se",
         "fue",
-        "porque",
-        "recibió",
-        "una",
-        "noticia"
+        "de",
+        "la",
+        "estación"
       ]
     },
     {
       "id": "a2.15.05.ex05",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence correctly gives a reason?",
-      "options": [
-        "Lloró porque entendió la situación.",
-        "Lloró por eso entendió la situación.",
-        "Lloró porque por eso entendió."
-      ],
-      "correct": 0,
       "teaches": [
         "porque-y-por-eso"
-      ]
+      ],
+      "question": "Which sentence correctly gives a reason?",
+      "options": [
+        "Lloró en la estación porque recibió un mensaje.",
+        "Lloró en la estación porque por eso recibió un mensaje.",
+        "Lloró en la estación por eso porque recibió un mensaje."
+      ],
+      "correct": 0
     },
     {
       "id": "a2.15.05.ex06",
@@ -111,52 +119,58 @@
       "id": "a2.15.05.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "answer": "porque",
       "teaches": [
         "porque-y-por-eso"
       ],
-      "sentence": "Lloró __ entendió la situación.",
-      "english": "She cried because she understood the situation."
+      "sentence": "Recibió una noticia en la estación, __ lloró.",
+      "answer": "por eso",
+      "english": "She received some news at the station, so she cried."
     },
     {
       "id": "a2.15.05.ex08",
       "category": "grammar",
       "type": "sentence-builder",
-      "english": "She left because she received a message.",
       "teaches": [
         "porque-y-por-eso"
       ],
+      "english": "We said goodbye at the station because the trip ended.",
       "tiles": [
-        "Se",
-        "fue",
+        "Nos",
+        "despedimos",
+        "en",
+        "la",
+        "estación",
         "porque",
-        "recibió",
-        "un",
-        "mensaje"
+        "terminó",
+        "el",
+        "viaje"
       ],
       "solution": [
-        "Se",
-        "fue",
+        "Nos",
+        "despedimos",
+        "en",
+        "la",
+        "estación",
         "porque",
-        "recibió",
-        "un",
-        "mensaje"
+        "terminó",
+        "el",
+        "viaje"
       ]
     },
     {
       "id": "a2.15.05.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which connector introduces a reason?",
-      "options": [
-        "porque",
-        "por eso",
-        "después"
-      ],
-      "correct": 0,
       "teaches": [
         "porque-y-por-eso"
-      ]
+      ],
+      "question": "Which sentence is correct?",
+      "options": [
+        "Terminó el viaje, por eso nos despedimos en la estación.",
+        "Terminó el viaje, porque por eso nos despedimos en la estación.",
+        "Terminó el viaje, por eso porque nos despedimos en la estación."
+      ],
+      "correct": 0
     },
     {
       "id": "a2.15.05.ex10",
@@ -237,10 +251,13 @@
       "id": "a2.15.05.ex16",
       "category": "dialogue",
       "type": "dialogue-complete",
+      "teaches": [
+        "porque-y-por-eso"
+      ],
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Por qué se fue?"
+          "text": "¿Por qué lloró en la estación?"
         },
         {
           "speaker": "Meg",
@@ -248,14 +265,11 @@
         }
       ],
       "options": [
-        "Se fue porque recibió una noticia.",
-        "Se fue por eso recibió una noticia.",
-        "Se fue porque por eso recibió una noticia."
+        "Lloró porque recibió una noticia.",
+        "Lloró porque por eso recibió una noticia.",
+        "Lloró por eso porque recibió una noticia."
       ],
-      "correct": 0,
-      "teaches": [
-        "porque-y-por-eso"
-      ]
+      "correct": 0
     },
     {
       "id": "a2.15.05.ex17",
