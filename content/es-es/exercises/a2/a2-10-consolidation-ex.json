@@ -14,7 +14,10 @@
       "correct": 0,
       "teaches": [
         "preterito-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.10.consolidation.ex02",
@@ -22,7 +25,7 @@
       "type": "fill-blank",
       "answer": "he",
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto"
       ],
       "sentence": "Ya __ contestado el mensaje.",
       "english": "I have already answered the message."
@@ -109,6 +112,7 @@
       "teaches": [
         "ya-todavia-no"
       ],
+      "english": "I have not sent the message yet.",
       "tiles": [
         "Todavía",
         "no",
@@ -138,9 +142,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "ya-todavia-no",
-        "por-que-y-porque"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "present-tense"
+      }
     },
     {
       "id": "a2.10.consolidation.ex09",
@@ -170,7 +177,7 @@
       "type": "fill-blank",
       "answer": "he",
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto"
       ],
       "sentence": "Todavía no __ llamado a mi familia.",
       "english": "I have not called my family yet."
@@ -196,8 +203,7 @@
       "type": "sentence-builder",
       "english": "I have not called yet because I am busy.",
       "teaches": [
-        "ya-todavia-no",
-        "por-que-y-porque"
+        "ya-todavia-no"
       ],
       "tiles": [
         "Todavía",
@@ -220,7 +226,7 @@
     },
     {
       "id": "a2.10.consolidation.ex13",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -237,8 +243,7 @@
         ]
       ],
       "teaches": [
-        "ya-todavia-no",
-        "por-que-y-porque"
+        "a2-keeping-touch-vocab"
       ]
     },
     {
@@ -262,7 +267,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto"
       ]
     },
     {
@@ -306,12 +311,11 @@
       "options": [
         "Todavía no he llamado porque estoy ocupado.",
         "Ya no llamo porque estoy ocupado.",
-        "Todavía no llamo porque estoy ocupado."
+        "Todavía no llamado porque estoy ocupado."
       ],
       "correct": 0,
       "teaches": [
-        "ya-todavia-no",
-        "por-que-y-porque"
+        "ya-todavia-no"
       ]
     },
     {
@@ -333,9 +337,7 @@
         }
       ],
       "teaches": [
-        "ya-todavia-no",
-        "por-que-y-porque",
-        "preterito-perfecto"
+        "ya-todavia-no"
       ]
     },
     {
@@ -348,7 +350,7 @@
           "answer": "¿Ya ha llamado tu madre?"
         },
         {
-          "prompt": "Ask whether they have answered the message yet.",
+          "prompt": "Ask whether they still haven't answered the message.",
           "answer": "¿Todavía no has contestado el mensaje?"
         },
         {
@@ -357,8 +359,7 @@
         }
       ],
       "teaches": [
-        "ya-todavia-no",
-        "por-que-y-porque"
+        "ya-todavia-no"
       ]
     },
     {
@@ -374,8 +375,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "por-que-y-porque",
-        "preterito-perfecto"
+        "a2-keeping-touch-vocab"
       ]
     },
     {
@@ -384,8 +384,7 @@
       "type": "dictation",
       "sentence": "Todavía no he contestado.",
       "teaches": [
-        "ya-todavia-no",
-        "preterito-perfecto"
+        "ya-todavia-no"
       ],
       "english": "I have not answered yet."
     }
