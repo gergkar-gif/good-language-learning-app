@@ -3,7 +3,7 @@
 
     python scripts/readthrough_check.py hu a1 objects-locations decisions.json
 
-Errors: an exercise without a decision (or a decision for one outside the
+Errors: a multiple-choice question that refers to "this exchange / conversation" with none shown, an exercise without a decision (or a decision for one outside the
 unit), an unknown or retired slug, a skill above the unit's level, a
 `distractor_skills` index that isn't a wrong option or names a non-grammar
 skill, a matching exercise tagged with anything but a vocabulary skill.
@@ -35,6 +35,7 @@ LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"]
 FOLLOWS = {"multiple-choice", "fill-blank", "sentence-builder", "matching"}
 PERSON_WORDS = re.compile(r"\b(I|you|he|she|it|we|they|my|your|his|her|its|our|their|one's|yours|mine|ours|theirs|me|us|them|him)\b", re.I)
 PERSON_END = re.compile(r"(om|em|öm|am|ad|ed|od|öd|unk|ünk|atok|etek|otok|ötök|uk|ük|tok|tek|tök|nk|ja|je|ják|jük|juk|ják|jék)$", re.I)
+EXCHANGE = re.compile(r"\b((starts?|begins?|opens?|continues?|follows?|ends?|finishes) (this|the|that) (exchange|conversation|dialogue)|this exchange)\b", re.I)
 CONTENT_KEYS = ("question", "sentence", "options", "pairs", "solution", "prompt", "template", "answer", "answers")
 
 
@@ -135,6 +136,8 @@ def main():
             if e.get("type") == "matching" and sk["kind"] != "vocabulary":
                 errors.append(f"{eid}: matching is always vocabulary, not {slug}")
             ans, ptxt = answer_text(e), prompt_text(e)
+            if e.get("type") == "multiple-choice" and EXCHANGE.search(e.get("question") or ""):
+                errors.append(f"{eid}: the question refers to an exchange or conversation that is not shown ({e['question']!r}); rewrite it to stand alone")
             if e.get("type") in ("multiple-choice", "dialogue-complete") and len(opts) > 1 and opts and all(isinstance(o, str) for o in opts):
                 if (d.get("ds") or {}) and sum(o.lstrip().startswith("-") for o in opts) * 2 > len(opts):
                     warns.append(f"{eid}: ds on options that are suffix names, not word forms")
