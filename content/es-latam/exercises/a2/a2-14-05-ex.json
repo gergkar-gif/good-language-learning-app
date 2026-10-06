@@ -27,11 +27,11 @@
       "id": "a2.14.05.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which word means 'what'?",
+      "question": "Which word means 'where'?",
       "options": [
-        "qué",
         "dónde",
-        "quién"
+        "cuándo",
+        "cuál"
       ],
       "correct": 0,
       "teaches": [
@@ -42,29 +42,33 @@
       "id": "a2.14.05.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "answer": "Qué",
+      "answer": "Dónde",
       "teaches": [
         "questions"
       ],
-      "sentence": "¿__ pasó?",
-      "english": "What happened?"
+      "sentence": "¿__ conoció la periodista al artesano?",
+      "english": "Where did the journalist meet the craftsperson?"
     },
     {
       "id": "a2.14.05.ex04",
       "category": "grammar",
       "type": "sentence-builder",
-      "english": "What happened?",
+      "english": "How did the conversation begin?",
       "teaches": [
         "questions"
       ],
       "tiles": [
-        "¿Qué",
-        "pasó",
+        "¿Cómo",
+        "empezó",
+        "la",
+        "conversación",
         "?"
       ],
       "solution": [
-        "¿Qué",
-        "pasó",
+        "¿Cómo",
+        "empezó",
+        "la",
+        "conversación",
         "?"
       ]
     },
@@ -74,9 +78,9 @@
       "type": "multiple-choice",
       "question": "Which direct question is correct?",
       "options": [
-        "¿Dónde trabajaste?",
-        "¿Dónde trabajas ayer?",
-        "¿Dónde trabajar ayer?"
+        "¿Quién usó la herramienta ayer?",
+        "¿Quién usa la herramienta ayer?",
+        "¿Quién usar la herramienta ayer?"
       ],
       "correct": 0,
       "teaches": [
@@ -108,12 +112,12 @@
       "id": "a2.14.05.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "answer": "qué",
+      "answer": "quién",
       "teaches": [
         "questions"
       ],
-      "sentence": "Preguntó __ pasó.",
-      "english": "She asked what happened."
+      "sentence": "Quiso saber __ usó la herramienta.",
+      "english": "She wanted to know who used the tool."
     },
     {
       "id": "a2.14.05.ex08",
@@ -122,16 +126,20 @@
       "teaches": [
         "questions"
       ],
-      "english": "She asked where you worked.",
+      "english": "She asked how the craft began.",
       "tiles": [
         "Preguntó",
-        "dónde",
-        "trabajaste"
+        "cómo",
+        "empezó",
+        "el",
+        "oficio"
       ],
       "solution": [
         "Preguntó",
-        "dónde",
-        "trabajaste"
+        "cómo",
+        "empezó",
+        "el",
+        "oficio"
       ]
     },
     {
@@ -140,9 +148,9 @@
       "type": "multiple-choice",
       "question": "Which is an indirect question?",
       "options": [
-        "Preguntó qué pasó.",
-        "¿Qué pasó?",
-        "¿Dónde trabajaste?"
+        "Preguntó dónde empezó la conversación.",
+        "¿Dónde empezó la conversación?",
+        "¿Quién usó la herramienta?"
       ],
       "correct": 0,
       "teaches": [
@@ -231,7 +239,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Qué preguntó la periodista?"
+          "text": "¿Qué explicó el artesano sobre la herramienta?"
         },
         {
           "speaker": "Meg",
@@ -239,9 +247,9 @@
         }
       ],
       "options": [
-        "Preguntó qué pasó.",
-        "Preguntó ¿qué pasó?.",
-        "Preguntó qué pasar."
+        "Explicó cómo usó la herramienta.",
+        "Explicó ¿cómo usó la herramienta?.",
+        "Explicó cómo usa ayer la herramienta."
       ],
       "correct": 0,
       "teaches": [
