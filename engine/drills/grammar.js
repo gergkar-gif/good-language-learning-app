@@ -173,17 +173,21 @@ const GrammarDriller = (function () {
         return kept.length ? kept : entries;
     }
 
+    const SUPPORTED_TYPES = new Set(['multiple-choice', 'fill-blank', 'fill-in-blank', 'dialogue-complete', 'error-correction']);
+
     function _lessonPoolSize(skillId) {
         const canonical = _canonicalSkill(skillId);
         const entries = (_index && _index.bySkill && (_index.bySkill[canonical] || _index.bySkill[skillId])) || [];
-        const reached = _reachedOnly(entries);
+        const valid = entries.filter(e => !e.type || SUPPORTED_TYPES.has(e.type));
+        const reached = _reachedOnly(valid);
         return reached ? reached.length : 0;
     }
 
     function _totalLessonPoolSize(skillId) {
         const canonical = _canonicalSkill(skillId);
         const entries = (_index && _index.bySkill && (_index.bySkill[canonical] || _index.bySkill[skillId])) || [];
-        return entries.length;
+        const valid = entries.filter(e => !e.type || SUPPORTED_TYPES.has(e.type));
+        return valid.length;
     }
 
     function _getLearnedSkillIds() {
@@ -244,12 +248,10 @@ const GrammarDriller = (function () {
             case 'dialogue-complete':
                 return 1; // Recognise
             case 'fill-blank':
-                return 2; // Manipulate / retrieve
-            case 'sentence-builder':
             case 'error-correction':
-                return 3; // Produce
+                return 2; // Produce / Retrieve
             default:
-                return 4;
+                return 3;
         }
     }
 
@@ -306,17 +308,6 @@ const GrammarDriller = (function () {
                     skillId: canonical,
                     skillTitle: title
                 };
-            case 'sentence-builder':
-                return {
-                    kind: 'sentence-builder',
-                    tiles: ex.tiles,
-                    solution: ex.solution,
-                    english: ex.english,
-                    explanation: ex.explanation,
-                    distractor_skills: null,
-                    skillId: canonical,
-                    skillTitle: title
-                };
             case 'error-correction':
                 return {
                     kind: 'error-correction',
@@ -338,11 +329,12 @@ const GrammarDriller = (function () {
                     skillId: canonical,
                     skillTitle: title
                 };
+            case 'sentence-builder':
             case 'sentence-order':
             case 'matching':
             default:
-                // Dropped: sentence-order tests word order rather than grammar skill;
-                // matching was converting vocabulary into artificial MCQ questions.
+                // Dropped: sentence-builder and sentence-order test word/tile ordering
+                // rather than targeted grammar selection; matching converts vocab to MCQ.
                 return null;
         }
     }
@@ -378,7 +370,8 @@ const GrammarDriller = (function () {
     async function _resolveSkillPool(skillId) {
         const canonical = _canonicalSkill(skillId);
         const rawEntries = (_index && _index.bySkill && (_index.bySkill[canonical] || _index.bySkill[skillId])) || [];
-        const entries = _reachedOnly(rawEntries);
+        const valid = rawEntries.filter(e => !e.type || SUPPORTED_TYPES.has(e.type));
+        const entries = _reachedOnly(valid);
 
         const lessonItems = await _resolveLessonEntries(entries, canonical);
 
@@ -389,22 +382,19 @@ const GrammarDriller = (function () {
 
         const combined = lessonItems.concat(bankItems);
 
-        // Sort into progression buckets: recognise -> manipulate -> produce
+        // Sort into progression buckets: recognise (MCQ/dialogue) -> retrieve/produce (fill-blank/error-correction)
         const rank1 = [];
         const rank2 = [];
-        const rank3 = [];
 
         combined.forEach(item => {
             const rank = _exerciseProgressionRank(item.kind);
             if (rank === 1) rank1.push(item);
-            else if (rank === 2) rank2.push(item);
-            else rank3.push(item);
+            else rank2.push(item);
         });
 
         return [
             ..._shuffled(rank1),
-            ..._shuffled(rank2),
-            ..._shuffled(rank3)
+            ..._shuffled(rank2)
         ];
     }
 
@@ -648,7 +638,15 @@ const GrammarDriller = (function () {
         try {
             ruleData = await Content.json(Lang.content(ref));
         } catch (e) {
-            ruleData = null;
+            if (typeof Lang !== 'undefined' && Lang.code() === 'es-latam') {
+                try {
+                    ruleData = await Content.json('content/es-es/' + ref);
+                } catch (e2) {
+                    ruleData = null;
+                }
+            } else {
+                ruleData = null;
+            }
         }
 
         const overlay = document.createElement('div');
@@ -664,7 +662,13 @@ const GrammarDriller = (function () {
                 bodyHtml = _renderRuleSectionsFallback(ruleData.sections);
             }
         } else {
-            bodyHtml = `<p class="lsn-text text-muted">A dedicated reference card is not yet available for this topic. The rule is covered in lesson lessons.</p>`;
+            bodyHtml = `
+                <div style="padding: 12px 0;">
+                    <p class="lsn-text"><strong>${_escapeHtml(info.title)}</strong></p>
+                    <p class="lsn-text text-muted" style="margin-top:6px;">Level ${info.level} · ${_escapeHtml(info.family)}</p>
+                    <p class="lsn-text" style="margin-top:10px;">A standalone reference card is not yet authored for this topic. Practice exercises test this structure directly.</p>
+                </div>
+            `;
         }
 
         overlay.innerHTML = `
@@ -699,8 +703,8 @@ const GrammarDriller = (function () {
     function _closeRuleModal() {
         if (_activeRuleModal) {
             document.removeEventListener('keydown', _activeRuleModal.onKeyDown);
-            if (_activeRuleModal.overlay && _activeRuleModal.overlay.parentNode) {
-                _activeRuleModal.overlay.parentNode.removeChild(_activeRuleModal.overlay.parentNode);
+            if (_activeRuleModal.overlay) {
+                _activeRuleModal.overlay.remove();
             }
             _activeRuleModal = null;
         }
@@ -750,7 +754,7 @@ const GrammarDriller = (function () {
             } else if (_isCleanState && _weakCandidates.length > 0) {
                 tabContentHtml = `
                     <div class="gd-clean-state">
-                        <div class="gd-clean-icon">✓</div>
+                        <div class="gd-clean-icon">${(typeof Art !== 'undefined') ? Art.icon('check') : ''}</div>
                         <h3 class="gd-clean-title">No weak areas detected!</h3>
                         <p class="gd-clean-desc">Your grammar accuracy has been solid across completed lessons. Reinforce recently learned concepts or pick any skill to drill deliberately.</p>
                         <div class="gd-clean-actions">
@@ -778,7 +782,7 @@ const GrammarDriller = (function () {
                                         </label>
                                     </div>
                                     ${c.taught_in ? `
-                                        <button type="button" class="gd-rule-link-btn" data-rule-skill="${c.skillId}" title="Review rule">Rule 📖</button>
+                                        <button type="button" class="gd-rule-link-btn" data-rule-skill="${c.skillId}" title="Review rule">Review rule</button>
                                     ` : ''}
                                 </div>
                             `).join('')}
@@ -870,7 +874,7 @@ const GrammarDriller = (function () {
                             </div>
                         </div>
                         ${selectedInfo.taught_in ? `
-                            <button type="button" class="gd-rule-link-btn" data-rule-skill="${selectedInfo.id}">Review rule 📖</button>
+                            <button type="button" class="gd-rule-link-btn" data-rule-skill="${selectedInfo.id}">Review rule</button>
                         ` : ''}
                     </div>
                 ` : ''}
@@ -1072,7 +1076,7 @@ const GrammarDriller = (function () {
             <div class="gd-hud-subline">
                 <span class="gd-hud-skill-tag">${_escapeHtml(currentItem.skillTitle || currentInfo.title)}</span>
                 ${currentInfo.taught_in ? `
-                    <button type="button" class="gd-hud-rule-btn" data-rule-skill="${currentItem.skillId}">Review Rule 📖</button>
+                    <button type="button" class="gd-hud-rule-btn" data-rule-skill="${currentItem.skillId}">Review rule</button>
                 ` : ''}
             </div>
             <div class="gd-exercise"></div>
@@ -1208,7 +1212,7 @@ const GrammarDriller = (function () {
                                     ${distractorNote}
                                 </div>
                                 ${stat.taught_in ? `
-                                    <button type="button" class="gd-rule-link-btn" data-rule-skill="${sid}">Review Rule 📖</button>
+                                    <button type="button" class="gd-rule-link-btn" data-rule-skill="${sid}">Review rule</button>
                                 ` : ''}
                             </div>
                         `;
