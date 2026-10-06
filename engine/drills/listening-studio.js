@@ -261,14 +261,35 @@ const ListeningStudio = (function () {
         }
     }
 
+    // TTS options for one turn. Only `gender` picks the voice: ParlourTTS's
+    // `character` is a Chirp3-HD voice name (e.g. 'Charon'), not a speaker
+    // name, and passing 'Camarero' there asks Google for a voice that
+    // doesn't exist, so every turn failed.
+    function _turnTtsOptions(turn) {
+        return {
+            text: turn.text,
+            type: 'listening',
+            gender: turn.gender || 'male'
+        };
+    }
+
+    function _preloadTurns() {
+        if (!_selectedTask || !_selectedTask.audio || !_selectedTask.audio.turns) return;
+        if (typeof ParlourTTS === 'undefined' || !ParlourTTS.preload) return;
+        _selectedTask.audio.turns.forEach(turn => ParlourTTS.preload(_turnTtsOptions(turn)));
+    }
+
     function _startPass(passNumber) {
         if (!_selectedTask || !_selectedTask.audio || !_selectedTask.audio.turns) return;
         _stopAudio();
         _currentPass = passNumber;
         _isPlaying = true;
         _currentTurnIndex = 0;
+        _preloadTurns();
         _playTurnSequence();
     }
+
+    let _turnToken = 0;
 
     function _playTurnSequence() {
         if (!_isPlaying || !_selectedTask || !_selectedTask.audio || !_selectedTask.audio.turns) return;
@@ -290,30 +311,30 @@ const ListeningStudio = (function () {
         _updateAudioConsole();
 
         if (typeof ParlourTTS !== 'undefined' && ParlourTTS.speak) {
-            let finished = false;
-            const onDone = () => {
-                if (finished) return;
-                finished = true;
-                if (!_isPlaying) return;
+            const token = ++_turnToken;
+            const isCurrent = () => token === _turnToken && _isPlaying;
+            const advance = () => {
+                if (!isCurrent()) return;
+                _turnToken++; // any late callback for this turn is now stale
+                if (_turnTimer) { clearTimeout(_turnTimer); _turnTimer = null; }
                 _currentTurnIndex++;
-                _turnTimer = setTimeout(() => {
-                    _playTurnSequence();
-                }, 450); // Natural conversational pause
+                _turnTimer = setTimeout(_playTurnSequence, 450); // natural conversational pause
             };
 
-            ParlourTTS.speak({
-                text: turn.text,
-                type: 'listening',
+            const started = ParlourTTS.speak(Object.assign(_turnTtsOptions(turn), {
                 speed: _playbackSpeed,
-                character: turn.speaker,
-                gender: turn.gender,
-                onEnd: onDone,
-                onError: onDone
-            });
+                onEnded: advance
+            }));
 
-            // Safeguard timeout based on speech length
-            const estDurationMs = Math.max(2200, (turn.text.length / 10) * 1000 * (1 / _playbackSpeed));
-            _turnTimer = setTimeout(onDone, estDurationMs + 1200);
+            // speak() resolves once audio has started (true) or nothing could
+            // play (false). Arm the safety net only after that, so a slow
+            // network fetch can't cut a turn off before it's even begun.
+            Promise.resolve(started).then(ok => {
+                if (!isCurrent()) return;
+                if (!ok) { advance(); return; }
+                const estMs = Math.max(2500, turn.text.length * 110) / _playbackSpeed;
+                _turnTimer = setTimeout(advance, estMs + 4000);
+            }, () => advance());
         } else {
             // Fallback if no TTS
             _turnTimer = setTimeout(() => {
@@ -353,13 +374,7 @@ const ListeningStudio = (function () {
         if (!turn) return;
 
         if (typeof ParlourTTS !== 'undefined' && ParlourTTS.speak) {
-            ParlourTTS.speak({
-                text: turn.text,
-                type: 'listening',
-                speed: _playbackSpeed,
-                character: turn.speaker,
-                gender: turn.gender
-            });
+            ParlourTTS.speak(Object.assign(_turnTtsOptions(turn), { speed: _playbackSpeed }));
         }
     }
 

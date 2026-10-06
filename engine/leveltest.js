@@ -604,7 +604,6 @@ const LevelTest = (function () {
                 ParlourTTS.preload({
                     text: t.text,
                     gender: t.gender || 'male',
-                    character: t.speaker,
                     language: lang
                 });
             });
@@ -624,7 +623,6 @@ const LevelTest = (function () {
                 ParlourTTS.speak({
                     text: current.text,
                     gender: current.gender || 'male',
-                    character: current.speaker,
                     language: lang,
                     onEnded: () => {
                         if (!listeningPlaying) return;

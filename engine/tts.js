@@ -224,7 +224,14 @@ const ParlourTTS = (function () {
         if (activeAudio) activeAudio.playbackRate = rate;
     }
 
+    // Bumped by every stop() (and so by every speak()). A speak() that is
+    // still awaiting IndexedDB or the cloud when it's superseded checks this
+    // after each await and gives up, instead of starting to play late on top
+    // of (or after) whatever replaced it.
+    let generation = 0;
+
     function stop() {
+        generation++;
         if (activeSource) {
             try {
                 activeSource.onended = null;
@@ -252,6 +259,8 @@ const ParlourTTS = (function () {
 
     async function speak({ text, language, type, voiceName, character, gender, speed, onEnded, triggerBtn } = {}) {
         stop();
+        const myGeneration = generation;
+        const superseded = () => myGeneration !== generation;
 
         const lang = language || (typeof Lang !== 'undefined' ? Lang.code() : 'es');
         const said = (typeof Speech !== 'undefined') ? Speech.sayable(text) : String(text || '').trim();
@@ -297,6 +306,12 @@ const ParlourTTS = (function () {
                     }
                 }
             }
+        }
+
+        // Stopped, or replaced by another speak(), while we were loading.
+        if (superseded()) {
+            if (btn) btn.classList.remove('is-loading', 'is-playing');
+            return false;
         }
 
         // Fast path: Play pre-decoded Web Audio PCM buffer in <0.02ms with zero main-thread blocking
