@@ -64,6 +64,24 @@ const Workshop = (function () {
             category: 'exams'
         },
         {
+            id: 'es-dele-b1-exam',
+            icon: 'es-dele-exam',
+            title: 'DELE B1 Exam Prep',
+            sub: 'Prueba DELE B1 · Instituto Cervantes. Entrenamiento por tareas oficiales: lectura, audición, escritura y conversación.',
+            containerId: 'es-dele-b1-exam-root',
+            langs: ['es', 'es-latam', 'es-es'],
+            category: 'exams'
+        },
+        {
+            id: 'hu-ecl-b1-exam',
+            icon: 'hu-ecl-exam',
+            title: 'ECL B1 Exam Prep',
+            sub: 'ECL B1 nyelvvizsga · Pécsi Tudományegyetem. Olvasásértés, hallásértés, írásbeli és szóbeli készségek feladatonként.',
+            containerId: 'hu-ecl-b1-exam-root',
+            langs: ['hu'],
+            category: 'exams'
+        },
+        {
             id: 'verbs',
             icon: 'verbs',
             title: 'Verb Driller',
@@ -154,7 +172,11 @@ const Workshop = (function () {
         // a dome/arch crowned with an accent jewel — Hungarian Cultural Exam
         'hu-cultural-exam': '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M26 70V48a24 24 0 0 1 48 0v22Z" class="ps-ink"/><circle cx="50" cy="20" r="7" class="ps-accent"/>',
         // classical pillars supporting an arch with a royal crown jewel — Spanish CCSE Exam
-        'es-ccse-exam': '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M25 72h50v-5H25v5Zm6-9h6V34h-6v29Zm16 0h6V34h-6v29Zm16 0h6V34h-6v29ZM22 30h56l-28-13-28 13Z" class="ps-ink"/><circle cx="50" cy="21" r="5" class="ps-accent"/>'
+        'es-ccse-exam': '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M25 72h50v-5H25v5Zm6-9h6V34h-6v29Zm16 0h6V34h-6v29Zm16 0h6V34h-6v29ZM22 30h56l-28-13-28 13Z" class="ps-ink"/><circle cx="50" cy="21" r="5" class="ps-accent"/>',
+        // diploma parchment with ribbon seal — Spanish DELE Exam
+        'es-dele-exam': '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M28 26h44v48H28z" class="ps-ink"/><line x1="36" y1="36" x2="64" y2="36" class="ps-wash" stroke="currentColor" stroke-width="2.5"/><line x1="36" y1="44" x2="64" y2="44" class="ps-wash" stroke="currentColor" stroke-width="2.5"/><circle cx="50" cy="62" r="7" class="ps-accent"/><polygon points="46,67 43,77 50,73 57,77 54,67" class="ps-accent"/>',
+        // geometric academic laurel seal — Hungarian ECL Exam
+        'hu-ecl-exam': '<circle cx="50" cy="50" r="42" class="ps-wash"/><polygon points="50,22 58,36 74,38 62,50 65,66 50,58 35,66 38,50 26,38 42,36" class="ps-ink"/><circle cx="50" cy="45" r="7" class="ps-accent"/>'
     };
 
     function _drillerIcon(id) {
@@ -244,6 +266,8 @@ const Workshop = (function () {
             'hu-verb-studio': typeof HuVerbStudio !== 'undefined' ? HuVerbStudio : null,
             'hu-cultural-exam': typeof HuCulturalExam !== 'undefined' ? HuCulturalExam : null,
             'es-ccse-exam': typeof CcseExam !== 'undefined' ? CcseExam : null,
+            'es-dele-b1-exam': typeof DeleB1Exam !== 'undefined' ? DeleB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleB1Exam : null),
+            'hu-ecl-b1-exam': typeof EclB1Exam !== 'undefined' ? EclB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.EclB1Exam : null),
             'hu-verb': typeof HuVerbDriller !== 'undefined' ? HuVerbDriller : null,
             'hu-suffix': typeof HuSuffixDriller !== 'undefined' ? HuSuffixDriller : null,
             'hu-prefix': typeof HuPrefixDriller !== 'undefined' ? HuPrefixDriller : null,

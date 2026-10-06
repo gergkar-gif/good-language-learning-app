@@ -1,0 +1,328 @@
+{
+  "id": "hu-ecl-b1-exam",
+  "board": "Pécsi Tudományegyetem / Nemzetközi ECL Központ",
+  "level": "B1",
+  "title": "ECL B1 Nyelvvizsga",
+  "subtitle": "Európai Közös Referenciakeret (KER) · B1 szintű komplex nyelvvizsga-felkészítő",
+  "passingScorePercentage": 60,
+  "skills": {
+    "reading": {
+      "id": "reading",
+      "name": "Olvasásértés",
+      "officialTimeMinutes": 45,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-reading-t1",
+          "tareaNum": 1,
+          "type": "gapped-text",
+          "title": "1. rész: Szövegkiegészítés (Kihagyott mondatok)",
+          "instructions": "Olvasd el az alábbi cikket, amelyből 5 mondatot kihagytunk. Válaszd ki a megadott opciók (A-G) közül a hiányzó mondatokat. Két opció felesleges.",
+          "passage": "Ökoturizmus és hagyományőrzés a Balaton-felvidéken\n\nA Balaton-felvidék az elmúlt évtizedben Magyarország egyik legkedveltebb pihenőhelyévé vált a csendre vágyó utazók körében. A látogatókat nem a zajos strandok, hanem a vulkanikus tanúhegyek, a történelmi falvak és a levendulamezők vonzzák. [___1___] A helyi gazdák és kézművesek gyorsan felismerték, hogy a városi emberek valódi élményekre és tiszta élelmiszerekre vágynak.\n\nSorra nyílnak a kis családi pincészetek és biogazdaságok, ahol a vendégek nemcsak kóstolhatnak, hanem be is kapcsolódhatnak a munkába. [___2___] A szüretelés vagy a kecskesajtkészítés olyan közös élmény, amely felnőtteknek és gyerekeknek egyaránt felejthetetlen emléket nyújt.\n\nA vendéglátók kiemelt figyelmet fordítanak a környezet megóvására. Kerülik az egyszer használatos műanyagokat, és igyekeznek kizárólag a környéken megtermelt alapanyagokból főzni. [___3___] Ezáltal nemcsak a szén-dioxid-kibocsátás csökken, hanem a környékbeli termelők megélhetése is biztosítottá válik.\n\nA kerékpáros turizmus szintén óriási lendületet kapott az új kiépített utaknak köszönhetően. [___4___] Akik két keréken járják be a dombokat, közvetlenebb kapcsolatba kerülnek a tájjal és a helyi lakosokkal.\n\nA szakemberek szerint a jövő záloga a fenntarthatóság és a minőség megőrzése. [___5___] Ha sikerül megőrizni ezt a békés egyensúlyt, a Balaton-felvidék még sokáig a természetközeli felüdülés jelképe marad.",
+          "gaps": [
+            { "id": "gap-1", "num": 1, "correct": "C" },
+            { "id": "gap-2", "num": 2, "correct": "A" },
+            { "id": "gap-3", "num": 3, "correct": "E" },
+            { "id": "gap-4", "num": 4, "correct": "B" },
+            { "id": "gap-5", "num": 5, "correct": "D" }
+          ],
+          "options": [
+            { "letter": "A", "text": "Sokan szívesen próbálják ki a szőlőszedést vagy a hagyományos kenyérsütést." },
+            { "letter": "B", "text": "Egyre több falu között jön létre biztonságos, kitáblázott bicikliút." },
+            { "letter": "C", "text": "A térség egyedi hangulata a természet és az emberi kultúra harmóniáján alapul." },
+            { "letter": "D", "text": "Fontos, hogy a növekvő látogatószám ne tegye tönkre a falvak nyugalmát." },
+            { "letter": "E", "text": "A legtöbb étterem étlapján a legfeljebb harminc kilométerről származó hozzávalók szerepelnek." },
+            { "letter": "F", "text": "Minden évben nemzetközi autóversenyt rendeznek a hegyi utakon." },
+            { "letter": "G", "text": "A kormány elrendelte az összes magánszálláshely azonnali bezárását." }
+          ]
+        },
+        {
+          "id": "hu-reading-t2",
+          "tareaNum": 2,
+          "type": "reading-mc",
+          "title": "2. rész: Cikkértés és feleletválasztás",
+          "instructions": "Olvasd el az alábbi cikket a városi közösségi kertekről, majd válaszolj a kérdésekre a helyes opció (A, B vagy C) kiválasztásával.",
+          "passage": "Közösségi kertek Budapest szívében\n\nEgyre több budapesti dönt úgy, hogy a zsúfolt társasházi lakásból kilépve saját maga termeli meg a salátát, a paradicsomot és a fűszernövényeket. A fővárosban ma már több mint harminc közösségi kert működik, többnyire korábban elhagyatott foghíjtelkeken vagy lakótelepi parkok szélén.\n\nA kertek tagjai havonta vagy évente szerény tagdíjat fizetnek, cserébe egy saját kis ágyást gondozhatnak. Azonban a kertészek egybehangzó véleménye szerint a közösségi kertek legnagyobb értéke nem az anyagi megtakarításban rejlik. Egy belvárosi kerületben élő család ritkán találkozik a szomszédaival; a kertben viszont természetes módon alakulnak ki barátságok. Idősek és fiatalok, egyetemisták és kisgyerekes szülők segítik egymást tanácsokkal és szerszámokkal.\n\nA közös gazdálkodás természetesen szabályokat is követel. Tilos a vegyszerek használata: a kártevők ellen természetes módszerekkel, például csalánlével vagy katicabogarak betelepítésével védekeznek. A közös területek – a fészer, a pihenőpadok és a komposztáló – rendben tartása pedig közös felelősség.\n\nA kertek nemcsak a tagoknak nyújtanak örömet, hanem a városi mikroklímát is javítják: zöld szigetet képeznek az aszfaltrengetegben, hűtik a környező levegőt és menedéket adnak a beporzó rovaroknak.",
+          "questions": [
+            {
+              "id": "hu-rt2-q1",
+              "question": "1. Hol létesülnek leggyakrabban a budapesti közösségi kertek?",
+              "options": [
+                "Korábban üresen álló, elhanyagolt telkeken és parkok szélén.",
+                "Kizárólag luxusszállodák tetőteraszain a belvárosban.",
+                "A városon kívüli nagyipari mezőgazdasági területeken."
+              ],
+              "correct": 0,
+              "evidence": "többnyire korábban elhagyatott foghíjtelkeken vagy lakótelepi parkok szélén.",
+              "explanation": "A szöveg szerint a kertek elhanyagolt foghíjtelkeken és parkok szélén jönnek létre."
+            },
+            {
+              "id": "hu-rt2-q2",
+              "question": "2. Mi a tagok szerint a közösségi kertészkedés legfontosabb haszna?",
+              "options": [
+                "A zöldségek piaci áron történő eladása és a meggazdagodás.",
+                "A társas kapcsolatok és az emberi közösség megerősödése.",
+                "A kötelező társadalmi munka elvégzése az önkormányzatnak."
+              ],
+              "correct": 1,
+              "evidence": "Azonban a kertészek egybehangzó véleménye szerint a közösségi kertek legnagyobb értéke nem az anyagi megtakarításban rejlik... természetes módon alakulnak ki barátságok.",
+              "explanation": "A tagok a szociális kapcsolatok épülését tartják a legnagyobb előnynek."
+            },
+            {
+              "id": "hu-rt2-q3",
+              "question": "3. Hogyan védekeznek a kertekben a növényi kártevők ellen?",
+              "options": [
+                "Ipari permetezőszerekkel minden második héten.",
+                "Környezetbarát, vegyszermentes módszerekkel.",
+                "Mesterséges műanyag fóliákkal borítják be az összes ágyást."
+              ],
+              "correct": 1,
+              "evidence": "Tilos a vegyszerek használata: a kártevők ellen természetes módszerekkel...",
+              "explanation": "A kertekben szigorúan tilos a vegyszerhasználat; természetes szerekkel védekeznek."
+            },
+            {
+              "id": "hu-rt2-q4",
+              "question": "4. Milyen környezeti haszonnal járnak a kertek a város számára?",
+              "options": [
+                "Hűtik a levegőt és zöld oázist nyújtanak a rovaroknak.",
+                "Teljesen megszüntetik a városi autóforgalmat a kerületben.",
+                "Megakadályozzák az esőzéseket az aszfaltozott utcákon."
+              ],
+              "correct": 0,
+              "evidence": "zöld szigetet képeznek az aszfaltrengetegben, hűtik a környező levegőt és menedéket adnak a beporzó rovaroknak.",
+              "explanation": "Javítják a mikroklímát, csökkentik a hőséget és élőhelyet nyújtanak."
+            }
+          ]
+        }
+      ]
+    },
+    "listening": {
+      "id": "listening",
+      "name": "Hallásértés",
+      "officialTimeMinutes": 35,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-listening-t1",
+          "tareaNum": 1,
+          "type": "audio-mc",
+          "title": "1. rész: Rövid hírek és felhívások",
+          "instructions": "Négy rövid szöveget fogsz hallani. Válaszd ki a helyes opciót (A, B vagy C). 30 másodperced van elolvasni a kérdéseket.",
+          "previewSeconds": 30,
+          "items": [
+            {
+              "id": "hu-l1-q1",
+              "num": 1,
+              "situation": "Közlekedési tájékoztató a rádióban.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Hírolvasó",
+                    "gender": "female",
+                    "text": "Figyelem, közlekedési hír: a fővárosban a négyes és hatos villamosok helyett pótlóbuszok közlekednek a Széll Kálmán tér és az Oktogon között pályafelújítás miatt. A munkálatok várhatóan ma este nyolc óráig tartanak. Kérjük az utasokat, hogy utazásuk megtervezésekor számoljanak tíz-tizenöt perces késéssel."
+                  }
+                ]
+              },
+              "question": "Miért járnak pótlóbuszok a villamosvonalon?",
+              "options": [
+                "Pályafelújítási munkálatok miatt.",
+                "Egy váratlan áramszünet miatt a belvárosban.",
+                "Mert a villamosok vezetői sztrájkolnak."
+              ],
+              "correct": 0,
+              "evidence": "a négyes és hatos villamosok helyett pótlóbuszok közlekednek a Széll Kálmán tér és az Oktogon között pályafelújítás miatt.",
+              "explanation": "Pályafelújítás zajlik a vonalon, ezért jár pótlóbusz."
+            },
+            {
+              "id": "hu-l1-q2",
+              "num": 2,
+              "situation": "Üzenet a telefonos hangpostán.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Orvosi rendelő",
+                    "gender": "female",
+                    "text": "Jó napot kívánok, Kovács úr! A fogorvosi rendelőből hívom. Értesíteni szeretném, hogy Dr. Nagy Tamás holnap délelőtt sajnos nem rendel egy váratlan konferencia miatt. Az Ön időpontját át tudnánk tenni csütörtök délután négy órára, vagy péntek reggel kilencre. Kérem, hívjon vissza minket a megadott számon!"
+                  }
+                ]
+              },
+              "question": "Mi a hangpostaüzenet célja?",
+              "options": [
+                "Új időpontot egyeztetni a pácienssel a fogorvos távolléte miatt.",
+                "Emlékeztetni a pácienst a holnap délelőtti vizsgálatra.",
+                "Felszólítani a pácienst a számla azonnali befizetésére."
+              ],
+              "correct": 0,
+              "evidence": "Értesíteni szeretném, hogy Dr. Nagy Tamás holnap délelőtt sajnos nem rendel... Az Ön időpontját át tudnánk tenni...",
+              "explanation": "Az orvos nem rendel, ezért új időpontot kell egyeztetni a beteggel."
+            }
+          ]
+        },
+        {
+          "id": "hu-listening-t2",
+          "tareaNum": 2,
+          "type": "audio-interview",
+          "title": "2. rész: Interjú egy fiatal pékségtulajdonossal",
+          "instructions": "Egy interjút fogsz hallani egy kovászos pékség alapítójával. Válaszolj a kérdésekre a helyes opció kiválasztásával. A szöveget kétszer hallgatod meg.",
+          "previewSeconds": 30,
+          "audio": {
+            "turns": [
+              {
+                "speaker": "Riporter",
+                "gender": "male",
+                "text": "Üdvözlöm a hallgatókat! Mai vendégünk Tóth Dániel, aki informatikus karrierjét hagyta ott, hogy hagyományos kovászos pékséget nyisson. Dani, mi vett rá egy ilyen radikális váltásra?"
+              },
+              {
+                "speaker": "Dániel",
+                "gender": "male",
+                "text": "Szervusz! Tíz évet töltöttem a számítógép előtt programozóként. Szerettem a munkám, de hiányzott az, hogy valami kézzelfogható dolgot hozzak létre. Amikor otthon elkezdtem kísérletezni a kovásszal, lenyűgözött a folyamat egyszerűsége és tisztasága: csak liszt, víz, só és idő kell hozzá."
+              },
+              {
+                "speaker": "Riporter",
+                "gender": "male",
+                "text": "Miben különbözik az igazi kovászos kenyér a bolti ipari péksüteményektől?"
+              },
+              {
+                "speaker": "Dániel",
+                "gender": "male",
+                "text": "A legfontosabb az idő. Az ipari kenyér két óra alatt elkészül mesterséges adalékanyagok és élesztő segítségével. A mi kenyerünk tizenhat-húsz órán át kel lassan, hideg kamrában. Ezalatt a gabona fehérjéi lebomlanak, így a kenyér sokkal könnyebben emészthetővé válik, és napokig friss marad száradás vagy penészedés nélkül."
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "hu-l2-q1",
+              "question": "1. Miért hagyta el Dániel a korábbi munkahelyét?",
+              "options": [
+                "Mert kézzelfogható, alkotó munkára vágyott a gép előtt ülés helyett.",
+                "Mert elbocsátották a szoftverfejlesztő cégtől gazdasági okokból.",
+                "Mert a családja generációk óta malmot üzemeltetett a vidéken."
+              ],
+              "correct": 0,
+              "evidence": "hiányzott az, hogy valami kézzelfogható dolgot hozzak létre.",
+              "explanation": "Kézzelfogható fizikai terméket szeretett volna készíteni."
+            },
+            {
+              "id": "hu-l2-q2",
+              "question": "2. Mi a kovászos kenyér készítésének legfontosabb tényezője Dániel szerint?",
+              "options": [
+                "A drága külföldi vegyszerek használata.",
+                "A hosszú kelesztési idő, ami könnyebb emészthetőséget ad.",
+                "A gyors sütés nagyüzemi forró kemencékben."
+              ],
+              "correct": 1,
+              "evidence": "A legfontosabb az idő... tizenhat-húsz órán át kel lassan, hideg kamrában. Ezalatt a gabona fehérjéi lebomlanak, így a kenyér sokkal könnyebben emészthetővé válik...",
+              "explanation": "A lassú kelesztési idő teszi emészthetővé és tartóssá a kenyeret."
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "id": "writing",
+      "name": "Írásbeli kommunikáció",
+      "officialTimeMinutes": 45,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-writing-t1",
+          "tareaNum": 1,
+          "title": "1. rész: Baráti levél / Email",
+          "prompt": "Magyar barátod, Bence meghívott a születésnapi bulijára, amit a hétvégén tart a Balatonon.\n\nÍrj neki egy választ (100–120 szóban), amelyben:\n- Megköszönöd a meghívást és örömmel elfogadod.\n- Megkérdezed, mikor kezdődik a parti és hány emberre számít.\n- Érdeklődsz, hogy mit vigyél ajándékba, vagy hozzál-e enni-innivalót.\n- Megírod, hogy mivel és mikor tervezel leutazni.",
+          "minWords": 100,
+          "maxWords": 120,
+          "targetKeywords": [
+            "köszönöm a meghívást",
+            "nagyon örülök",
+            "mikor kezdődik",
+            "szeretnék hozni",
+            "vonattal tervezek"
+          ]
+        },
+        {
+          "id": "hu-writing-t2",
+          "tareaNum": 2,
+          "title": "2. rész: Véleménykifejtés (Blogbejegyzés)",
+          "prompt": "Egy internetes ifjúsági fórumon a városi biciklizésről és a fenntartható közlekedésről olvasol. Írd meg a véleményedet (100–120 szóban)!\n\nSzempontok:\n- Milyen közlekedési eszközt használsz a mindennapokban és miért?\n- Milyen előnyei és veszélyei vannak a városi kerékpározásnak?\n- Milyen fejlesztéseket javasolnál a biztonságosabb közlekedésért?",
+          "minWords": 100,
+          "maxWords": 120,
+          "targetKeywords": [
+            "véleményem szerint",
+            "egyrészt",
+            "másrészt",
+            "fontosnak tartom",
+            "összességében"
+          ]
+        }
+      ]
+    },
+    "speaking": {
+      "id": "speaking",
+      "name": "Szóbeli kommunikáció",
+      "officialTimeMinutes": 15,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-speaking-t1",
+          "tareaNum": 1,
+          "title": "1. rész: Irányított beszélgetés (Szabadidő és utazás)",
+          "prompt": "Beszélj a szabadidődről, a hobbijaidról és egy emlékezetes utazásodról!\n\nSzempontok:\n- Mit csinálsz legszívesebben a hétvégén?\n- Hol voltál legutóbb nyaralni, kivel és mivel utaztál?\n- Milyen volt a szállás és mi volt a legérdekesebb élményed?",
+          "bulletPoints": [
+            "Szabadidős szokások bemutatása",
+            "Legutóbbi utazás részletei",
+            "Kiemelkedő élmény és személyes értékelés"
+          ]
+        },
+        {
+          "id": "hu-speaking-t2",
+          "tareaNum": 2,
+          "title": "2. rész: Képleírás és önálló témakifejtés",
+          "prompt": "Képzelj el egy fotót: Egy forgalmas, modern belvárosi sétálóutca kávézókkal, valamint összehasonlításként egy csendes vidéki falu zöld kerttel.\n\nSzempontok:\n- Hasonlítsd össze a nagyvárosi és a falusi élet előnyeit és hátrányait!\n- Te hol élsz most, és hol szeretnél élni a jövőben? Miért?",
+          "bulletPoints": [
+            "Város és falu összehasonlítása",
+            "Saját lakóhely és jövőbeli tervek indoklással"
+          ]
+        }
+      ]
+    }
+  },
+  "strategies": {
+    "title": "Stratégiák és tippek az ECL B1 vizsgához",
+    "structure": [
+      {
+        "prueba": "Olvasásértés (45 perc · 2 feladat)",
+        "tip": "Először olvasd át a teljes szöveget vázlatosan a fő gondolat megértéséért. A mondatbeillesztésnél figyelj a névmásokra és a kötőszavakra a rés előtt és után."
+      },
+      {
+        "prueba": "Hallásértés (35 perc · 2 feladat)",
+        "tip": "Használd ki a 30 másodperces előzetes időt a kérdések átolvasására. Az első hallgatáskor a lényeget ragadd meg, a másodiknál ellenőrizd a részleteket."
+      },
+      {
+        "prueba": "Írásbeli kommunikáció (45 perc · 2 feladat)",
+        "tip": "Minden megadott irányítási szempontot érints. Ügyelj a szószám betartására (100–120 szó), és hagyj pár percet az igeragozás és a toldalékok ellenőrzésére."
+      },
+      {
+        "prueba": "Szóbeli kommunikáció (15 perc)",
+        "tip": "Ne tanulj be merev szövegeket kívülről; törekedj a természetes kommunikációra. Ha nem értettél valamit, bátran kérdezz vissza udvariasan."
+      }
+    ],
+    "connectors": [
+      {
+        "category": "Gondolatmenet felépítése",
+        "examples": ["Először is", "Egyrészt / másrészt", "Továbbá", "Végül"]
+      },
+      {
+        "category": "Ellentét kifejezése",
+        "examples": ["Azonban", "Ennek ellenére", "Bár", "Ugyanakkor"]
+      },
+      {
+        "category": "Ok és következmény",
+        "examples": ["Ezért", "Mivel", "Ennek következtében", "Így"]
+      },
+      {
+        "category": "Véleménykifejtés",
+        "examples": ["Véleményem szerint", "Úgy gondolom, hogy", "Szerintem", "Meglátásom szerint"]
+      }
+    ]
+  }
+}

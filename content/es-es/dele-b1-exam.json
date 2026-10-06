@@ -1,0 +1,788 @@
+{
+  "id": "es-dele-b1-exam",
+  "board": "Instituto Cervantes",
+  "level": "B1",
+  "title": "Prueba DELE B1",
+  "subtitle": "Diplomas de Español como Lengua Extranjera · Modelo Oficial B1",
+  "passingScorePercentage": 60,
+  "skills": {
+    "reading": {
+      "id": "reading",
+      "name": "Comprensión de lectura",
+      "officialTimeMinutes": 70,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "reading-t1",
+          "tareaNum": 1,
+          "type": "matching-notices",
+          "title": "Tarea 1: Tablón de anuncios y necesidades",
+          "instructions": "Relaciona las 6 personas (1-6) con los 10 textos del tablón de anuncios (A-J). Hay 4 textos que no corresponden a ninguna persona.",
+          "people": [
+            {
+              "id": "p1",
+              "name": "1. Elena",
+              "text": "Busca un taller de cocina donde aprender recetas vegetarianas prácticas los sábados por la mañana.",
+              "correctNoticeId": "not-c"
+            },
+            {
+              "id": "p2",
+              "name": "2. Carlos",
+              "text": "Necesita clases intensivas individuales de inglés oral para preparar una entrevista de trabajo en dos semanas.",
+              "correctNoticeId": "not-f"
+            },
+            {
+              "id": "p3",
+              "name": "3. Sofía",
+              "text": "Quiere alquilar una bicicleta de montaña en buen estado para realizar una ruta de un día por senderos naturales.",
+              "correctNoticeId": "not-h"
+            },
+            {
+              "id": "p4",
+              "name": "4. Miguel",
+              "text": "Busca un espacio cerrado para celebrar el cumpleaños de su hija de siete años con monitores infantiles y merienda.",
+              "correctNoticeId": "not-b"
+            },
+            {
+              "id": "p5",
+              "name": "5. Lucía",
+              "text": "Desea comprar muebles de madera antiguos y restaurados a mano para decorar su nuevo salón.",
+              "correctNoticeId": "not-i"
+            },
+            {
+              "id": "p6",
+              "name": "6. David",
+              "text": "Quiere participar como voluntario en actividades de reforestación y cuidado de bosques los fines de semana.",
+              "correctNoticeId": "not-e"
+            }
+          ],
+          "notices": [
+            {
+              "id": "not-a",
+              "letter": "A",
+              "title": "Academia Lingua Mundi",
+              "text": "Cursos semestrales de idiomas en grupos reducidos de hasta 10 alumnos. Niveles de A1 a C1 en horario de tarde (lunes a jueves)."
+            },
+            {
+              "id": "not-b",
+              "letter": "B",
+              "title": "El Reino Mágico · Fiestas y Eventos",
+              "text": "Salón climatizado para celebraciones infantiles. Incluye juegos organizados por educadores, disfraces, merienda saludable y tarta casera."
+            },
+            {
+              "id": "not-c",
+              "letter": "C",
+              "title": "Espacio Gastronómico Sabor Verde",
+              "text": "Cursos prácticos de fin de semana (sábados de 10:00 a 13:30). Aprende a elaborar platos vegetarianos y de temporada, equilibrados y deliciosos."
+            },
+            {
+              "id": "not-d",
+              "letter": "D",
+              "title": "Reparación Rápida de Ordenadores",
+              "text": "Solucionamos averías de hardware y software en menos de 24 horas. Servicio técnico oficial para portátiles y equipos de sobremesa."
+            },
+            {
+              "id": "not-e",
+              "letter": "E",
+              "title": "Asociación Bosque Vivo",
+              "text": "Iniciativas de voluntariado ambiental los sábados. Plantamos árboles autóctonos y limpiamos senderos en la reserva forestal comarcal."
+            },
+            {
+              "id": "not-f",
+              "letter": "F",
+              "title": "English Express · Coaching Individual",
+              "text": "Sesiones particulares intensivas de simulación de entrevistas laborales y reuniones en inglés. Horarios flexibles y progreso acelerado en 15 días."
+            },
+            {
+              "id": "not-g",
+              "letter": "G",
+              "title": "Diseño y Confección Textil",
+              "text": "Confeccionamos ropa a medida para eventos formales y trajes de fiesta. Arreglos y adaptaciones con cita previa."
+            },
+            {
+              "id": "not-h",
+              "letter": "H",
+              "title": "Rutas & Ruedas",
+              "text": "Alquiler por jornada de bicicletas de montaña y cascos de protección. Disponemos de mapas detallados con itinerarios por caminos rurales."
+            },
+            {
+              "id": "not-i",
+              "letter": "I",
+              "title": "Taller El Roble Centenario",
+              "text": "Venta y recuperación de piezas de mobiliario clásico, cómodas, aparadores y mesas de madera maciza restauradas artesanalmente."
+            },
+            {
+              "id": "not-j",
+              "letter": "J",
+              "title": "Peluquería Canina Peludos Felices",
+              "text": "Cuidado e higiene para mascotas con productos naturales hipoalergénicos. Baño, corte de pelo y cepillado profesional."
+            }
+          ]
+        },
+        {
+          "id": "reading-t2",
+          "tareaNum": 2,
+          "type": "reading-mc",
+          "title": "Tarea 2: Comprensión de un texto complejo",
+          "instructions": "Lee el siguiente artículo sobre una iniciativa medioambiental y responde a las 6 preguntas seleccionando la opción correcta (A, B o C).",
+          "passage": "El renacer de los huertos comunitarios en las ciudades españolas\n\nEn los últimos años, un número creciente de ciudades en España ha visto florecer una iniciativa que une naturaleza y vecindad: los huertos urbanos comunitarios. Lo que empezó hace dos décadas como proyectos aislados en solares abandonados se ha transformado en una política municipal planificada. En ciudades como Madrid, Valencia o Sevilla, los ayuntamientos facilitan parcelas públicas a colectivos vecinales para que cultiven hortalizas y plantas aromáticas siguiendo métodos ecológicos.\n\nPara muchos participantes, el valor primordial de estos espacios no reside en la cantidad de tomates o lechugas que recolectan al final de la temporada, sino en el impacto social que generan en el barrio. Según un estudio reciente de la Universidad de Zaragoza, el ochenta por ciento de los usuarios destaca que el huerto les ha permitido conocer a vecinos de diferentes edades y nacionalidades con los que antes nunca habían conversado. Personas mayores jubiladas comparten sus conocimientos agrícolas tradicionales con jóvenes estudiantes que apenas distinguían un calabacín de un pepino.\n\nSin embargo, la gestión cotidiana de estos espacios no está exenta de dificultades. El mantenimiento regular exige un compromiso constante de riego, limpieza y control natural de plagas, tareas que a menudo recaen sobre un grupo reducido de voluntarios cuando disminuye el entusiasmo inicial de los nuevos inscritos. Además, el acceso al agua durante los calurosos meses de verano representa un desafío técnico importante, lo que ha llevado a instalar depósitos de recogida de lluvia y sistemas de goteo de bajo consumo.\n\nA pesar de estos obstáculos, el modelo sigue extendiéndose y ya se vincula con proyectos educativos en colegios del entorno, donde los escolares aprenden sobre nutrición y respeto por la biodiversidad. Lejos de ser una moda pasajera, los huertos urbanos demuestran que es posible construir entornos urbanos más sostenibles, solidarios y habitables mediante la cooperación ciudadana.",
+          "questions": [
+            {
+              "id": "rt2-q1",
+              "question": "1. Según el primer párrafo, ¿cómo comenzaron los huertos urbanos en España?",
+              "options": [
+                "Como proyectos espontáneos en terrenos urbanos en desuso.",
+                "Como programas obligatorios financiados por el gobierno central.",
+                "Como granjas comerciales dedicadas a la exportación de verduras."
+              ],
+              "correct": 0,
+              "evidence": "Lo que empezó hace dos décadas como proyectos aislados en solares abandonados se ha transformado en una política municipal planificada.",
+              "explanation": "El texto explica que en su origen eran iniciativas puntuales en solares abandonados, no planes oficiales."
+            },
+            {
+              "id": "rt2-q2",
+              "question": "2. ¿Qué beneficio valoran más los participantes según el estudio universitario?",
+              "options": [
+                "El ahorro de dinero en la compra semanal de comida.",
+                "El fortalecimiento de los vínculos vecinales e intergeneracionales.",
+                "La posibilidad de vender hortalizas ecológicas a restaurantes locales."
+              ],
+              "correct": 1,
+              "evidence": "el ochenta por ciento de los usuarios destaca que el huerto les ha permitido conocer a vecinos de diferentes edades y nacionalidades...",
+              "explanation": "La mayoría de participantes aprecia el aspecto social y la convivencia entre generaciones y procedencias diversas."
+            },
+            {
+              "id": "rt2-q3",
+              "question": "3. ¿Cuál es uno de los problemas habituales en la organización diaria del huerto?",
+              "options": [
+                "Las quejas constantes por ruidos nocturnos de los vecinos cercanos.",
+                "La falta de constancia de algunos miembros tras el entusiasmo inicial.",
+                "La prohibición municipal de cultivar plantas aromáticas."
+              ],
+              "correct": 1,
+              "evidence": "tareas que a menudo recaen sobre un grupo reducido de voluntarios cuando disminuye el entusiasmo inicial de los nuevos inscritos.",
+              "explanation": "El compromiso decae tras el arranque y el trabajo diario recae sobre pocos voluntarios activos."
+            },
+            {
+              "id": "rt2-q4",
+              "question": "4. ¿Qué solución se ha adoptado frente a la escasez de agua estival?",
+              "options": [
+                "Suspender el cultivo durante los tres meses de verano.",
+                "Instalar sistemas de riego por goteo y depósitos de agua pluvial.",
+                "Comprar agua embotellada para regar las plantas ornamentales."
+              ],
+              "correct": 1,
+              "evidence": "...lo que ha llevado a instalar depósitos de recogida de lluvia y sistemas de goteo de bajo consumo.",
+              "explanation": "Se han introducido depósitos de lluvia y riego por goteo eficiente para gestionar el agua en verano."
+            },
+            {
+              "id": "rt2-q5",
+              "question": "5. ¿Cómo colaboran los huertos con la comunidad educativa?",
+              "options": [
+                "Vendiendo meriendas ecológicas en los comedores escolares.",
+                "Enseñando a los alumnos sobre nutrición y respeto por la naturaleza.",
+                "Sustituyendo a los profesores de ciencias naturales en las aulas."
+              ],
+              "correct": 1,
+              "evidence": "...se vincula con proyectos educativos en colegios del entorno, donde los escolares aprenden sobre nutrición y respeto por la biodiversidad.",
+              "explanation": "Los colegios usan los huertos para educar a los niños en alimentación sana y biodiversidad."
+            },
+            {
+              "id": "rt2-q6",
+              "question": "6. ¿Cuál es la conclusión principal del autor sobre los huertos urbanos?",
+              "options": [
+                "Son una moda temporal que desaparecerá con la llegada del invierno.",
+                "Constituyen una herramienta eficaz para favorecer ciudades más humanas y ecológicas.",
+                "Resultan demasiado costosos para justificar el esfuerzo voluntario."
+              ],
+              "correct": 1,
+              "evidence": "Lejos de ser una moda pasajera, los huertos urbanos demuestran que es posible construir entornos urbanos más sostenibles, solidarios y habitables...",
+              "explanation": "El autor concluye que fomentan la sostenibilidad, solidaridad y calidad de vida en las ciudades."
+            }
+          ]
+        },
+        {
+          "id": "reading-t3",
+          "tareaNum": 3,
+          "type": "person-matching",
+          "title": "Tarea 3: Relacionar experiencias y opiniones",
+          "instructions": "Lee las breves opiniones de tres personas (A, B y C) sobre su experiencia viviendo en el extranjero y relaciona cada una de las 6 afirmaciones con la persona correspondiente.",
+          "people": [
+            {
+              "letter": "A",
+              "name": "Marcos (Viena)",
+              "text": "Me mudé a Austria hace dos años por una beca de investigación. Lo más difícil al principio fue el clima invernal y acostumbrarme a cenar a las seis de la tarde. Sin embargo, el transporte público es impecable y la oferta cultural de conciertos y museos es inagotable. He aprendido a valorar la puntualidad y el silencio, aunque echo de menos la espontaneidad y las sobremesas largas de España."
+            },
+            {
+              "letter": "B",
+              "name": "Valeria (Edimburgo)",
+              "text": "Llegué a Escocia para perfeccionar mi inglés y acabé abriendo una pequeña librería infantil. La calidez de los vecinos me sorprendió desde el primer día: siempre están dispuestos a ayudar con una sonrisa. La comida rápida y el cielo gris constante fueron duros los primeros meses, pero los paisajes verdes de los alrededores y la tranquilidad para criar a mis hijos compensan cualquier sacrificio."
+            },
+            {
+              "letter": "C",
+              "name": "Andrés (Montreal)",
+              "text": "Trabajo en el sector del diseño gráfico y elegí Canadá por su dinamismo laboral y su ambiente multicultural. Dominar el francés y el inglés al mismo tiempo fue un reto agotador, pero me ha abierto muchísimas puertas profesionales. Las temperaturas bajo cero son extremas en enero, pero la ciudad está perfectamente acondicionada con galerías subterráneas calefactadas."
+            }
+          ],
+          "statements": [
+            {
+              "id": "rt3-s1",
+              "text": "1. Destaca que la amabilidad de la gente local facilitó su adaptación.",
+              "correctPerson": "B",
+              "explanation": "Valeria subraya que la calidez de los vecinos la sorprendió desde el primer día."
+            },
+            {
+              "id": "rt3-s2",
+              "text": "2. Señala que el aprendizaje simultáneo de dos idiomas supuso un gran esfuerzo.",
+              "correctPerson": "C",
+              "explanation": "Andrés menciona el reto de dominar a la vez el francés y el inglés en Montreal."
+            },
+            {
+              "id": "rt3-s3",
+              "text": "3. Echa de menos las costumbres españolas de sobremesa y conversación distendida.",
+              "correctPerson": "A",
+              "explanation": "Marcos afirma que extraña la espontaneidad y las sobremesas largas de su país."
+            },
+            {
+              "id": "rt3-s4",
+              "text": "4. Valora positivamente las infraestructuras que permiten protegerse del frío extremo.",
+              "correctPerson": "C",
+              "explanation": "Andrés elogia las galerías subterráneas calefactadas de la ciudad canadiense."
+            },
+            {
+              "id": "rt3-s5",
+              "text": "5. Considera que la ciudad es un lugar ideal y sereno para la vida familiar con niños.",
+              "correctPerson": "B",
+              "explanation": "Valeria destaca la tranquilidad de Edimburgo para criar a sus hijos."
+            },
+            {
+              "id": "rt3-s6",
+              "text": "6. Admira la gran variedad de actividades musicales y artísticas que ofrece la ciudad.",
+              "correctPerson": "A",
+              "explanation": "Marcos elogia la oferta cultural inagotable de conciertos y museos en Viena."
+            }
+          ]
+        },
+        {
+          "id": "reading-t4",
+          "tareaNum": 4,
+          "type": "gapped-text",
+          "title": "Tarea 4: Texto con fragmentos omitidos",
+          "instructions": "Lee el siguiente texto del que se han extraído 6 oraciones. Elige para cada hueco (1-6) la opción correcta (A-H). Hay dos opciones que no debes usar.",
+          "passage": "El renacimiento de la artesanía textil en los pueblos de montaña\n\nDurante siglos, los telares manuales fueron el motor económico de numerosas comarcas montañosas de la península ibérica. Con la llegada de la industrialización masiva en el siglo veinte, la mayoría de los talleres tradicionales cerraron sus puertas ante la imposibilidad de competir en precios. [___1___] Sin embargo, en la última década ha surgido una nueva corriente de jóvenes artesanos que han decidido recuperar estas técnicas ancestrales.\n\nEstos nuevos creadores no buscan la producción en masa, sino la excelencia en cada detalle. Utilizan lanas autóctonas obtenidas de pastores locales mediante esquila respetuosa con los animales. [___2___] Este enfoque sostenible ha atraído a un público consciente que prefiere pagar un precio justo por una manta o una bufanda única antes que consumir ropa desechable.\n\nPara poner en marcha sus negocios, muchos han tenido que aprender el oficio directamente de los últimos ancianos del lugar. [___3___] Este diálogo entre generaciones ha permitido salvar de la desaparición patrones geométricos y técnicas de tintado con plantas silvestres que nunca se habían documentado en libros.\n\nAdemás del valor cultural, el impacto en la economía local es muy palpable. Varios pueblos que se encontraban en riesgo de despoblación han ganado nuevos habitantes permanentes. [___4___] Familias jóvenes con niños han devuelto la vida a las escuelas rurales y han dinamizado tiendas y panaderías del vecindario.\n\nEl comercio electrónico ha sido una herramienta decisiva para el éxito del proyecto. Aunque los talleres están ubicados en aldeas remotas, los artesanos gestionan pedidos internacionales a través de sus páginas web y redes sociales. [___5___] Así, una bufanda tejida a mano en un pueblo de quinientos habitantes puede acabar en el armario de un comprador en Tokio o Copenhague.\n\nEl futuro del sector parece prometedor, siempre que se mantenga el equilibrio entre autenticidad y modernidad. [___6___] Como afirma una de las tejedoras veteranas: 'No vendemos sólo lana; vendemos historia, tiempo y dedicación'.",
+          "gaps": [
+            { "id": "gap-1", "num": 1, "correct": "C" },
+            { "id": "gap-2", "num": 2, "correct": "F" },
+            { "id": "gap-3", "num": 3, "correct": "A" },
+            { "id": "gap-4", "num": 4, "correct": "G" },
+            { "id": "gap-5", "num": 5, "correct": "D" },
+            { "id": "gap-6", "num": 6, "correct": "B" }
+          ],
+          "options": [
+            { "letter": "A", "text": "Los veteranos compartieron generosamente secretos de hilado transmitidos de padres a hijos durante siglos." },
+            { "letter": "B", "text": "La clave reside en no renunciar a la calidad artesanal para acelerar los tiempos de entrega." },
+            { "letter": "C", "text": "Parecía el fin definitivo de una tradición milenaria que definía la identidad comunitaria." },
+            { "letter": "D", "text": "Las ventas digitales han superado ampliamente los ingresos procedentes de las ferias comarcales." },
+            { "letter": "E", "text": "Todos los telares automáticos fueron importados de fábricas textiles alemanas." },
+            { "letter": "F", "text": "Además, tiñen las fibras empleando pigmentos naturales como cáscaras de nuez y flores de retama." },
+            { "letter": "G", "text": "La llegada de estos profesionales ha reactivado los servicios básicos de la zona." },
+            { "letter": "H", "text": "El gobierno regional decidió prohibir el pastoreo en las zonas de alta montaña." }
+          ]
+        },
+        {
+          "id": "reading-t5",
+          "tareaNum": 5,
+          "type": "cloze-mc",
+          "title": "Tarea 5: Cloze gramatical y léxico",
+          "instructions": "Lee el siguiente texto y completa los 6 huecos seleccionando la opción gramatical correcta (A, B o C) para cada uno.",
+          "passage": "Ayer por la tarde asistí a una conferencia fascinante sobre la conservación marina en el Mediterráneo. El ponente insistió en que es fundamental que todos nosotros [___1___] medidas urgentes para reducir el uso de plásticos de un solo uso en nuestra vida diaria. Aunque muchas personas piensan que sus acciones individuales no importan, el biólogo demostró que los pequeños cambios cotidianos son [___2___] que realmente transforman la sociedad a largo plazo. Al finalizar la charla, varios asistentes nos quedamos conversando [___3___] el experto sobre proyectos locales de limpieza de costas. Me alegro mucho de [___4___] a este encuentro, ya que conocí a gente muy comprometida con [___5___] comparto las mismas inquietudes ecológicas. Sin duda, recomendaré a mis amigos que [___6___] a la próxima sesión.",
+          "items": [
+            {
+              "id": "cloze-1",
+              "num": 1,
+              "options": ["tomemos", "tomamos", "tomaríamos"],
+              "correct": 0,
+              "explanation": "Requiere presente de subjuntivo ('es fundamental que nosotros tomemos') tras estructura impersonal de valoración."
+            },
+            {
+              "id": "cloze-2",
+              "num": 2,
+              "options": ["los", "las", "lo"],
+              "correct": 0,
+              "explanation": "Concuerda en género masculino plural con 'los pequeños cambios' ('son los que realmente transforman')."
+            },
+            {
+              "id": "cloze-3",
+              "num": 3,
+              "options": ["con", "de", "para"],
+              "correct": 0,
+              "explanation": "Régimen preposicional: 'conversar con alguien' sobre un tema."
+            },
+            {
+              "id": "cloze-4",
+              "num": 4,
+              "options": ["haber ido", "haya ido", "fui"],
+              "correct": 0,
+              "explanation": "Infinitivo compuesto ('alegrarse de + infinitivo') cuando el sujeto coincide ('Yo me alegro de haber ido')."
+            },
+            {
+              "id": "cloze-5",
+              "num": 5,
+              "options": ["quienes", "la cual", "la que"],
+              "correct": 0,
+              "explanation": "Pronombre relativo precedido de preposición con antecedente de persona ('gente con quienes comparto' o plural referencial)."
+            },
+            {
+              "id": "cloze-6",
+              "num": 6,
+              "options": ["asistan", "asisten", "asistirán"],
+              "correct": 0,
+              "explanation": "Subjuntivo tras verbo de influencia o consejo ('recomendar que asistan')."
+            }
+          ]
+        }
+      ]
+    },
+    "listening": {
+      "id": "listening",
+      "name": "Comprensión auditiva",
+      "officialTimeMinutes": 40,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "listening-t1",
+          "tareaNum": 1,
+          "type": "audio-mc",
+          "title": "Tarea 1: Mensajes y avisos breves",
+          "instructions": "Escucharás 6 mensajes breves. Para cada pregunta, selecciona la opción correcta (A, B o C). Dispones de 30 segundos para leer las preguntas.",
+          "previewSeconds": 30,
+          "items": [
+            {
+              "id": "l1-q1",
+              "num": 1,
+              "situation": "Mensaje en el contestador de un taller mecánico.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Mecánico",
+                    "gender": "male",
+                    "text": "Buenos días, señor Morales. Le llamo del taller AutoSur para informarle de que ya hemos cambiado las pastillas de freno de su vehículo. Las piezas encargadas llegaron a primera hora y el coche está totalmente listo para circular. Puede pasar a recogerlo hoy mismo antes de las ocho de la tarde, o si lo prefiere, mañana sábado de diez a una."
+                  }
+                ]
+              },
+              "question": "¿Por qué motivo llama el mecánico al señor Morales?",
+              "options": [
+                "Para avisarle de que su coche ya está reparado y listo para recoger.",
+                "Para pedirle permiso para cambiar una pieza imprevista del motor.",
+                "Para comunicarle que el taller cerrará durante todo el fin de semana."
+              ],
+              "correct": 0,
+              "evidence": "el coche está totalmente listo para circular. Puede pasar a recogerlo hoy mismo...",
+              "explanation": "El mecánico le comunica que el vehículo está reparado y los horarios para recogerlo."
+            },
+            {
+              "id": "l1-q2",
+              "num": 2,
+              "situation": "Aviso por megafonía en una estación de tren.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Megafonía",
+                    "gender": "female",
+                    "text": "Atención, señores pasajeros. El tren de Media Distancia con destino a Zaragoza y Barcelona previsto para las doce y cuarto efectuará su salida con cuarenta minutos de demora debido a una incidencia técnica en las vías. Rogamos a los viajeros que permanezcan en la sala de espera hasta nuevo aviso. Disculpen las molestias."
+                  }
+                ]
+              },
+              "question": "¿Qué anuncia el mensaje de megafonía?",
+              "options": [
+                "Un cambio en la vía de salida del tren.",
+                "Un retraso de cuarenta minutos por problemas técnicos.",
+                "La cancelación definitiva del viaje a Zaragoza."
+              ],
+              "correct": 1,
+              "evidence": "efectuará su salida con cuarenta minutos de demora debido a una incidencia técnica en las vías.",
+              "explanation": "Se comunica una demora de 40 minutos en la salida del tren por una avería en la vía."
+            },
+            {
+              "id": "l1-q3",
+              "num": 3,
+              "situation": "Mensaje de voz de una compañera de trabajo.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Marta",
+                    "gender": "female",
+                    "text": "Hola, Javier. Oye, te llamaba porque el director ha pedido adelantar la reunión del equipo de marketing al jueves a las diez, en lugar del viernes por la tarde. Como sé que tienes una visita médica ese día, quería confirmar si te viene bien o si prefieres que le pida trasladarla a las doce. Llámame cuando escuches esto, por favor."
+                  }
+                ]
+              },
+              "question": "¿Cuál es el propósito del mensaje de Marta?",
+              "options": [
+                "Preguntar a Javier si puede asistir a la reunión en el nuevo horario propuesto.",
+                "Avisar a Javier de que la reunión ha quedado definitivamente cancelada.",
+                "Pedirle a Javier que asista en su lugar a una cita médica el jueves."
+              ],
+              "correct": 0,
+              "evidence": "quería confirmar si te viene bien o si prefieres que le pida trasladarla a las doce.",
+              "explanation": "Marta quiere saber si el nuevo horario del jueves le conviene a Javier antes de fijarlo."
+            },
+            {
+              "id": "l1-q4",
+              "num": 4,
+              "situation": "Anuncio publicitario en la radio local.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Locutor",
+                    "gender": "male",
+                    "text": "Llega la primavera a tu hogar con Muebles Alameda. Durante toda esta semana, renueva tu dormitorio o comedor con un veinte por ciento de descuento directo y entrega gratuita a domicilio en pedidos superiores a trescientos euros. Visítanos en nuestra tienda del polígono industrial o haz tu compra cómodamente en alameda.es."
+                  }
+                ]
+              },
+              "question": "¿Qué oferta especial ofrece la tienda Muebles Alameda?",
+              "options": [
+                "Un descuento del veinte por ciento y envío gratis a partir de cierta cantidad.",
+                "Muebles de segunda mano a mitad de precio por liquidación de temporada.",
+                "Financiación sin intereses sólo para compras realizadas en la tienda física."
+              ],
+              "correct": 0,
+              "evidence": "un veinte por ciento de descuento directo y entrega gratuita a domicilio en pedidos superiores a trescientos euros.",
+              "explanation": "Ofrecen un 20% de descuento y transporte sin coste superando los 300 euros."
+            },
+            {
+              "id": "l1-q5",
+              "num": 5,
+              "situation": "Conversación entre dos amigos en la calle.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Raquel",
+                    "gender": "female",
+                    "text": "¿Qué tal, Daniel? Oye, ¿al final vas a apuntarte a las clases de escalada de los martes?"
+                  },
+                  {
+                    "speaker": "Daniel",
+                    "gender": "male",
+                    "text": "Me encantaría, pero los martes tengo clase de violín hasta las siete. He hablado con el monitor del polideportivo y me ha dicho que abren un grupo nuevo los jueves por la tarde. Seguramente me inscriba en ese."
+                  }
+                ]
+              },
+              "question": "¿Por qué no irá Daniel a escalar los martes?",
+              "options": [
+                "Porque no le gusta el monitor de ese horario.",
+                "Porque coincide con su clase de violín.",
+                "Porque el polideportivo está cerrado los martes."
+              ],
+              "correct": 1,
+              "evidence": "pero los martes tengo clase de violín hasta las siete.",
+              "explanation": "Daniel tiene su clase de violín los martes y por eso cambiará al grupo de los jueves."
+            },
+            {
+              "id": "l1-q6",
+              "num": 6,
+              "situation": "Aviso en un centro cultural sobre una exposición.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Coordinadora",
+                    "gender": "female",
+                    "text": "Les recordamos a todos los socios que este viernes es el último día para visitar la exposición fotográfica 'Miradas de Andalucía'. La muestra estará abierta ininterrumpidamente de diez de la mañana a nueve de la noche, con visitas guiadas gratuitas a las doce y a las seis de la tarde a cargo del propio fotógrafo."
+                  }
+                ]
+              },
+              "question": "¿Qué oportunidad ofrece la exposición este viernes?",
+              "options": [
+                "Comprar las fotografías expuestas a precio reducido.",
+                "Participar en visitas guiadas explicadas por el autor de las fotos.",
+                "Entrar gratis únicamente durante la tarde a partir de las seis."
+              ],
+              "correct": 1,
+              "evidence": "con visitas guiadas gratuitas a las doce y a las seis de la tarde a cargo del propio fotógrafo.",
+              "explanation": "El fotógrafo en persona guiará dos visitas gratuitas durante la última jornada."
+            }
+          ]
+        },
+        {
+          "id": "listening-t2",
+          "tareaNum": 2,
+          "type": "audio-interview",
+          "title": "Tarea 2: Entrevista radiofónica",
+          "instructions": "Escucharás una entrevista con Patricia Navarro, fundadora de una iniciativa de huertos escolares ecológicos. Responderás a 6 preguntas de opción múltiple (A, B o C). Escucharás la audición dos veces.",
+          "previewSeconds": 30,
+          "audio": {
+            "turns": [
+              {
+                "speaker": "Entrevistador",
+                "gender": "male",
+                "text": "Bienvenidos a 'Planeta Sostenible'. Hoy nos acompaña Patricia Navarro, ingeniera agrónoma y creadora del proyecto 'Semillas en el Aula', que lleva huertos ecológicos a decenas de colegios públicos. Patricia, ¿cómo nació la idea de llevar la agricultura a los patios escolares?"
+              },
+              {
+                "speaker": "Patricia",
+                "gender": "female",
+                "text": "Hola, David. Todo surgió hace seis años, cuando visité el colegio de mis sobrinos y me di cuenta de que muchos niños creían que los tomates nacían en bandejas de plástico del supermercado. Había una desconexión total con la tierra. Pensé que sembrar una semilla, cuidarla y verla crecer era la mejor lección práctica de paciencia, ecología y nutrición que podíamos darles."
+              },
+              {
+                "speaker": "Entrevistador",
+                "gender": "male",
+                "text": "¿Fue difícil convencer a los equipos directivos y a los profesores al principio?"
+              },
+              {
+                "speaker": "Patricia",
+                "gender": "female",
+                "text": "Al principio hubo cierto temor a que supusiera una carga de trabajo inasumible para los docentes. Pero cuando les mostramos que el huerto no era una asignatura extra, sino una herramienta transversal para enseñar matemáticas midiendo parcelas, ciencias naturales observando insectos y lengua escribiendo diarios de cultivo, el entusiasmo fue unánime."
+              },
+              {
+                "speaker": "Entrevistador",
+                "gender": "male",
+                "text": "¿Cómo responden los propios alumnos cuando tienen que mancharse las manos de tierra?"
+              },
+              {
+                "speaker": "Patricia",
+                "gender": "female",
+                "text": "Les fascina. Incluso los alumnos más inquietos en el aula tradicional muestran una concentración asombrosa cuando están regando o plantando habas. Y lo más gratificante es ver cómo niños que antes rechazaban las verduras en casa ahora prueban con orgullo lechugas o zanahorias porque las han cultivado ellos mismos."
+              },
+              {
+                "speaker": "Entrevistador",
+                "gender": "male",
+                "text": "¿Y qué ocurre con los huertos durante las vacaciones de verano, cuando las escuelas cierran?"
+              },
+              {
+                "speaker": "Patricia",
+                "gender": "female",
+                "text": "Ese era nuestro mayor quebradero de cabeza. Lo solucionamos creando 'turnos de familias voluntarias': en julio y agosto, grupos de padres y madres se turnan para regar y cosechar los frutos. Se ha convertido en un punto de encuentro vecinal precioso durante los meses estivales."
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "l2-q1",
+              "question": "1. ¿Qué motivó a Patricia a crear 'Semillas en el Aula'?",
+              "options": [
+                "El desconocimiento de muchos niños sobre el origen de los alimentos.",
+                "La falta de presupuesto escolar para comprar fruta en los colegios.",
+                "Un concurso internacional convocado por el Ministerio de Educación."
+              ],
+              "correct": 0,
+              "evidence": "me di cuenta de que muchos niños creían que los tomates nacían en bandejas de plástico del supermercado. Había una desconexión total con la tierra.",
+              "explanation": "Comprobó que los niños desconocían de dónde proceden las hortalizas y estaban desconectados del campo."
+            },
+            {
+              "id": "l2-q2",
+              "question": "2. ¿Qué recelo inicial expresaron algunos profesores?",
+              "options": [
+                "Que el huerto fuera peligroso para los alumnos pequeños.",
+                "Que cuidar el huerto representara un exceso de trabajo adicional.",
+                "Que el colegio tuviera que contratar a jardineros profesionales."
+              ],
+              "correct": 1,
+              "evidence": "Al principio hubo cierto temor a que supusiera una carga de trabajo inasumible para los docentes.",
+              "explanation": "Los docentes temían que el mantenimiento del huerto supusiera demasiado trabajo extra."
+            },
+            {
+              "id": "l2-q3",
+              "question": "3. ¿De qué manera se integró el huerto en el plan pedagógico?",
+              "options": [
+                "Como una actividad obligatoria exclusivamente fuera del horario escolar.",
+                "Como recurso interdisciplinar para apoyar materias como matemáticas o lengua.",
+                "Como examen final para evaluar la conducta de los estudiantes."
+              ],
+              "correct": 1,
+              "evidence": "el huerto no era una asignatura extra, sino una herramienta transversal para enseñar matemáticas... ciencias y lengua...",
+              "explanation": "Se utiliza de forma transversal para practicar distintas asignaturas del currículo escolar."
+            },
+            {
+              "id": "l2-q4",
+              "question": "4. Según Patricia, ¿qué cambio de actitud muestran los alumnos en la alimentación?",
+              "options": [
+                "Comienzan a comer verduras que antes rechazaban por haberlas cultivado ellos.",
+                "Prefieren comer sólo ensaladas crudas en los comedores.",
+                "Deciden estudiar agronomía al terminar la educación primaria."
+              ],
+              "correct": 0,
+              "evidence": "niños que antes rechazaban las verduras en casa ahora prueban con orgullo lechugas o zanahorias porque las han cultivado ellos mismos.",
+              "explanation": "Al cosecharlas ellos mismos, superan la aversión a consumir verduras."
+            },
+            {
+              "id": "l2-q5",
+              "question": "5. ¿Cómo resolvieron el mantenimiento del huerto durante el verano?",
+              "options": [
+                "Instalando robots de riego automático financiados por el ayuntamiento.",
+                "Organizando cuadrillas de padres y madres voluntarios para regar y cosechar.",
+                "Cerrando el huerto y arrancando las plantas antes de finalizar junio."
+              ],
+              "correct": 1,
+              "evidence": "creando 'turnos de familias voluntarias': en julio y agosto, grupos de padres y madres se turnan para regar y cosechar...",
+              "explanation": "Las familias de los alumnos se turnan voluntariamente para cuidar las plantas en julio y agosto."
+            },
+            {
+              "id": "l2-q6",
+              "question": "6. ¿Qué conclusión transmite la entrevistada sobre el proyecto?",
+              "options": [
+                "Que el huerto enseña valores ecológicos y crea comunidad vecinal duradera.",
+                "Que el modelo sólo puede funcionar en pueblos pequeños y no en grandes ciudades.",
+                "Que los huertos deberían sustituir a las clases teóricas en todas las escuelas."
+              ],
+              "correct": 0,
+              "evidence": "Se ha convertido en un punto de encuentro vecinal precioso durante los meses estivales.",
+              "explanation": "Patricia subraya tanto el aprendizaje infantil como la cohesión comunitaria que genera."
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "id": "writing",
+      "name": "Expresión e interacción escritas",
+      "officialTimeMinutes": 60,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "writing-t1",
+          "tareaNum": 1,
+          "title": "Tarea 1: Interacción escrita · Correo electrónico",
+          "prompt": "Has recibido este correo electrónico de tu amigo español Mateo:\n\n'¡Hola! ¿Cómo estás? Te escribo porque el mes que viene mi familia y yo vamos a pasar quince días en nuestra casa de la playa en Nerja (Málaga), y nos encantaría que vinieras a pasar unos días con nosotros. ¿Podrías venir la segunda semana de julio? Cuéntame qué días te vendrían bien, cómo piensas viajar y qué te gustaría que hiciéramos juntos. ¡Y acuérdate de traer la receta de ese postre tan rico que preparaste la última vez!\nUn abrazo muy fuerte,\nMateo.'\n\nEscribe una respuesta a Mateo (entre 100 y 120 palabras) en la que debes:\n- Saludar y agradecer efusivamente la invitación.\n- Confirmar los días exactos en los que puedes visitarle y explicar cómo vas a viajar.\n- Proponer dos actividades que te apetece hacer en la playa o por la zona.\n- Confirmar que llevarás la receta prometida y despedirte afectuosamente.",
+          "minWords": 100,
+          "maxWords": 120,
+          "targetKeywords": [
+            "gracias por la invitación",
+            "me encantaría",
+            "en cuanto a",
+            "tengo pensado",
+            "además",
+            "un abrazo"
+          ],
+          "rubricGuide": "Cumplir todos los puntos guía, mantener un registro informal coherente con un amigo, utilizar conectores para enlazar ideas y emplear tiempos verbales de futuro, condicional o presente de subjuntivo con precisión."
+        },
+        {
+          "id": "writing-t2",
+          "tareaNum": 2,
+          "title": "Tarea 2: Expresión escrita · Redacción de opinión o anécdota",
+          "options": [
+            {
+              "optionLetter": "A",
+              "title": "Opción A: Anécdota personal sobre un viaje o celebración inolvidable",
+              "prompt": "Escribe un texto (entre 130 y 150 palabras) para publicar en una revista digital de estudiantes sobre un viaje o una celebración que recuerdes con especial cariño.\n\nEn tu texto debes:\n- Describir dónde y cuándo ocurrió el acontecimiento y con quién estabas.\n- Explicar detalladamente una anécdota o imprevisto curioso que sucedió.\n- Valorar por qué ese recuerdo sigue siendo tan especial para ti hoy en día.",
+              "minWords": 130,
+              "maxWords": 150,
+              "targetKeywords": [
+                "recuerdo cuando",
+                "de repente",
+                "mientras",
+                "sin embargo",
+                "lo que más me gustó"
+              ]
+            },
+            {
+              "optionLetter": "B",
+              "title": "Opción B: Artículo de opinión sobre el impacto de la tecnología en la comunicación",
+              "prompt": "Escribe una entrada de blog (entre 130 y 150 palabras) debatiendo sobre cómo los teléfonos inteligentes y las redes sociales han cambiado nuestra forma de relacionarnos.\n\nEn tu texto debes:\n- Exponer tu punto de vista general sobre el uso diario de los móviles.\n- Mencionar una ventaja clara y un inconveniente importante en la comunicación con amigos o familia.\n- Proponer una recomendación sensata para lograr un uso equilibrado de la tecnología.",
+              "minWords": 130,
+              "maxWords": 150,
+              "targetKeywords": [
+                "en mi opinión",
+                "por un lado",
+                "por otro lado",
+                "no creo que sea",
+                "es importante que"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "speaking": {
+      "id": "speaking",
+      "name": "Expresión e interacción orales",
+      "officialTimeMinutes": 15,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "speaking-t1",
+          "tareaNum": 1,
+          "title": "Tarea 1: Monólogo breve preparado (2-3 minutos)",
+          "prepSeconds": 60,
+          "speakSeconds": 180,
+          "prompt": "Vas a hablar durante 2 a 3 minutos sobre una afición, deporte o actividad artística que practiques habitualmente o que te gustaría aprender.\n\nPuntos guía que debes desarrollar:\n- En qué consiste la actividad y cuándo o cómo empezaste a interesarte por ella.\n- Con qué frecuencia la practicas y qué materiales o lugares necesitas.\n- Por qué te resulta gratificante y qué beneficios te aporta física o mentalmente.\n- Una anécdota o momento especial que hayas vivido practicándola.",
+          "bulletPoints": [
+            "Presentar la actividad y origen del interés",
+            "Frecuencia, lugar y equipamiento necesario",
+            "Beneficios personales y satisfacción",
+            "Anécdota o recuerdo destacado"
+          ]
+        },
+        {
+          "id": "speaking-t2",
+          "tareaNum": 2,
+          "title": "Tarea 2: Conversación sobre el monólogo (3-4 minutos)",
+          "prompt": "El entrevistador te hará preguntas para profundizar sobre el tema que has expuesto en la Tarea 1. Debes justificar tus opiniones y responder con naturalidad.",
+          "sampleQuestions": [
+            "¿Crees que hoy en día la gente dedica suficiente tiempo libre a sus aficiones?",
+            "Si tuvieras más tiempo o presupuesto, ¿qué otra habilidad te gustaría aprender?",
+            "¿Prefieres realizar actividades en solitario o en equipo? ¿Por qué?"
+          ]
+        },
+        {
+          "id": "speaking-t3",
+          "tareaNum": 3,
+          "title": "Tarea 3: Descripción de una situación y fotografía (2-3 minutos)",
+          "prompt": "Observa mentalmente la siguiente escena: 'Una plaza céntrica en una ciudad española durante una tarde soleada de primavera. Hay familias sentadas en las terrazas de los cafés, músicos callejeros tocando la guitarra, niños jugando en una fuente y personas paseando con sus bicicletas.'\n\nDebes:\n- Describir con detalle lo que se ve en la imagen y qué ambiente transmite.\n- Imaginar qué han hecho las personas antes o qué planes tienen para después.\n- Expresar tu opinión sobre cómo se vive el espacio público y la calle en España comparado con tu país de origen.",
+          "bulletPoints": [
+            "Descripción física de personas, acciones y ambiente",
+            "Hipótesis sobre el pasado reciente o planes inmediatos (uso de futuros y probabilidad)",
+            "Comparación cultural sobre el ocio en el espacio público"
+          ]
+        },
+        {
+          "id": "speaking-t4",
+          "tareaNum": 4,
+          "title": "Tarea 4: Diálogo en situación simulada (2-3 minutos)",
+          "prompt": "Tú y el examinador sois dos amigos que estáis planeando organizar una fiesta sorpresa para el cumpleaños de un amigo común.\n\nDebéis poneros de acuerdo sobre:\n- El lugar de la fiesta (¿en casa de alguien, en un parque o en un restaurante reservado?).\n- La comida y la bebida (¿cocinar entre todos o encargar catering?).\n- El regalo conjunto y el presupuesto por persona.\n- Cómo vais a avisar a los invitados sin que el homenajeado se entere.",
+          "bulletPoints": [
+            "Proponer alternativas y justificar preferencias",
+            "Reaccionar ante las propuestas del interlocutor aceptando o negociando",
+            "Llegar a un acuerdo final concreto y cordial"
+          ]
+        }
+      ]
+    }
+  },
+  "strategies": {
+    "title": "Guía oficial y estrategias para superar el DELE B1",
+    "structure": [
+      {
+        "prueba": "Prueba 1: Comprensión de lectura (70 min · 5 tareas · 30 preguntas)",
+        "tip": "No te detengas en palabras desconocidas si no impiden entender la idea global. En la Tarea 1, busca palabras clave y sinónimos en los anuncios. En la Tarea 4 (huecos), fíjate en los pronombres y conectores justo antes y después del hueco."
+      },
+      {
+        "prueba": "Prueba 2: Comprensión auditiva (40 min · 5 tareas · 30 preguntas)",
+        "tip": "Aprovecha siempre los 30 segundos previos para leer con atención las preguntas y opciones antes de escuchar. En la primera audición capta el sentido general; en la segunda confirma los detalles y descarta distractores."
+      },
+      {
+        "prueba": "Prueba 3: Expresión e interacción escritas (60 min · 2 tareas)",
+        "tip": "Planifica 5 minutos antes de escribir un esquema con los puntos obligatorios. Respeta escrupulosamente los límites de palabras (100-120 en Tarea 1; 130-150 en Tarea 2). Reserva los últimos 5 minutos para revisar concordancias de género, número y acentos."
+      },
+      {
+        "prueba": "Prueba 4: Expresión e interacción orales (15 min + 15 min de preparación)",
+        "tip": "En la preparación escribe sólo palabras clave o esquemas, nunca frases enteras para leer. Si no entiendes una pregunta del examinador, usa fórmulas naturales de aclaración ('¿Podría repetir la pregunta, por favor?'). Demuestra variedad de conectores."
+      }
+    ],
+    "connectors": [
+      {
+        "category": "Organizar el discurso",
+        "examples": ["En primer lugar", "Por una parte / por otra parte", "Para empezar", "A continuación", "Finalmente / Para terminar"]
+      },
+      {
+        "category": "Expresar contraste u oposición",
+        "examples": ["Sin embargo", "No obstante", "En cambio", "A pesar de que", "Aunque"]
+      },
+      {
+        "category": "Causa y consecuencia",
+        "examples": ["Por lo tanto", "Así que", "Dado que", "Ya que", "De modo que"]
+      },
+      {
+        "category": "Expresar opinión y valoración",
+        "examples": ["Desde mi punto de vista", "En mi opinión", "Considero que", "Me parece fundamental que (+ subjuntivo)", "No creo que (+ subjuntivo)"]
+      }
+    ]
+  }
+}
