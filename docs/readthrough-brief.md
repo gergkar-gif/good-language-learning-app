@@ -112,6 +112,8 @@ es-latam-only units); stems are irregular (`a1-03c-01`, `a1-directions-01`,
 `a1-reflexive-01`), the table order is the teaching order, and the dump marks each grammar
 skill `[taught in this unit]` or `[taught LATER]` by that order.
 
+- **A2 (added 2026-10-06).** Unit 33 `vosotros` exists only in `es-es`: the check's "missing from es-latam" error is expected there, so say so and continue. A2 vocabulary skills are `a2-<unit id>-vocab`. All verbal periphrases (*empezar a, dejar de, seguir + gerundio, llevar + tiempo + gerundio, acabar de, ponerse a, al + infinitivo*) are one skill, `perifrasis-verbales`; *cuando* + subjunctive is `cuando-subjuntivo`. Units 1–20 repeat a small set of tenses across many units (*pretérito perfecto, indefinido, ya / todavía*): tag by the form the wrong answer gets wrong (`preterito-perfecto`, `past-participles`, `ya-todavia-no`, `preterito-indefinido`), not by the unit's story. If an item tests something no A2 skill covers, tag the nearest skill, list it under judgment calls and do not invent a slug.
+
 - **Paradigms.** A choice between persons or forms of one verb gets that verb's skill (`ser`,
   `estar`, `tener`, `ir`, `doler`, `gustar`, `querer-poder`, …); regular verbs get `ar-verbs`
   / `er-ir-verbs`; stem-changing verbs once taught get `stem-changes`. `present-tense`
