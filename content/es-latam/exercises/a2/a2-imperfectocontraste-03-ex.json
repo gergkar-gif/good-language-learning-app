@@ -8,7 +8,7 @@
       "sentence": "_____ (estar, imp) muy nervioso cuando entré al examen.",
       "answer": "Estaba",
       "teaches": [
-        "preterite-vs-imperfect"
+        "imperfect"
       ],
       "english": "I was very nervous when I entered the exam."
     },
@@ -19,7 +19,7 @@
       "sentence": "Estaba muy nervioso cuando _____ (entrar, ind) al examen.",
       "answer": "entré",
       "teaches": [
-        "preterite-vs-imperfect"
+        "preterito-indefinido"
       ],
       "english": "I was very nervous when I entered the exam."
     },
@@ -30,7 +30,7 @@
       "sentence": "_____ (tener, imp) mucho frío, así que compré un abrigo.",
       "answer": "Tenía",
       "teaches": [
-        "preterite-vs-imperfect"
+        "imperfect"
       ],
       "english": "I was very cold, so I bought a coat."
     },
@@ -41,7 +41,7 @@
       "sentence": "Tenía mucho frío, así que _____ (comprar, ind) un abrigo.",
       "answer": "compré",
       "teaches": [
-        "preterite-vs-imperfect"
+        "preterito-indefinido"
       ],
       "english": "I was very cold, so I bought a coat."
     },
@@ -49,7 +49,7 @@
       "id": "a2.imperfectocontraste.03.ex05",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which correctly combines a state and an event?",
+      "question": "Which correctly combines a background state (no end in view) and an event?",
       "options": [
         "Estaba cansada pero fui al trabajo.",
         "Estuve cansada pero fui al trabajo.",
@@ -59,11 +59,14 @@
       "correct": 0,
       "teaches": [
         "preterite-vs-imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterite-irregular-stems"
+      }
     },
     {
       "id": "a2.imperfectocontraste.03.ex06",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -96,7 +99,7 @@
         ]
       ],
       "teaches": [
-        "preterite-vs-imperfect"
+        "a2-imperfect-vs-preterite-vocab"
       ]
     },
     {
@@ -153,7 +156,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "a2-imperfect-vs-preterite-vocab"
       ]
     },
     {
@@ -162,7 +165,7 @@
       "type": "dictation",
       "sentence": "Tenía miedo de caminar solo de noche.",
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "imperfect"
       ],
       "english": "I was afraid of walking alone at night."
     },
@@ -173,7 +176,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Cómo te sentiste al ver a todos tus amigos?"
+          "text": "¿Cómo te sentías cuando viste a todos tus amigos?"
         },
         {
           "speaker": "Carlos",
@@ -187,8 +190,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-greetings-introductions-vocab"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "preterite-irregular-stems",
+        "2": "estar"
+      }
     },
     {
       "id": "a2.imperfectocontraste.03.ex12",
@@ -211,8 +218,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-greetings-introductions-vocab"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "preterite-irregular-stems",
+        "2": "estar"
+      }
     }
   ]
 }

@@ -52,7 +52,7 @@
     },
     {
       "id": "a2.imperfectobasico.02.ex05",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -77,7 +77,7 @@
         ]
       ],
       "teaches": [
-        "imperfect"
+        "a2-imperfect-tense-vocab"
       ]
     },
     {
@@ -104,27 +104,23 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab",
-        "er-ir-verbs"
+        "imperfect"
       ]
     },
     {
       "id": "a2.imperfectobasico.02.ex08",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "Cuando vivía en Madrid, comía en ese restaurante.",
+      "sentence": "Cuando vivíamos en Valencia, cenábamos muy tarde.",
       "options": [
-        "When I lived in Madrid, I used to eat at that restaurant.",
-        "When I live in Madrid, I will eat at that restaurant.",
-        "I lived in Madrid and ate at home yesterday.",
-        "I want to live in Madrid and eat tapas."
+        "When we lived in Valencia, we used to eat dinner very late.",
+        "When we live in Valencia, we will eat dinner early.",
+        "We lived in Valencia and ate dinner at home yesterday.",
+        "We want to live in Valencia and eat tapas."
       ],
       "correct": 0,
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab",
-        "er-ir-verbs"
+        "imperfect"
       ]
     },
     {
@@ -133,8 +129,7 @@
       "type": "dictation",
       "sentence": "Nosotros leíamos libros antes de dormir.",
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab"
+        "imperfect"
       ],
       "english": "We used to read books before going to sleep."
     },
@@ -154,14 +149,17 @@
       ],
       "options": [
         "Vivía en un apartamento pequeño cerca del centro.",
-        "Viví en un apartamento pequeño cerca del centro.",
+        "Ayer viví en un apartamento pequeño cerca del centro.",
         "Vivo en un apartamento pequeño cerca del centro."
       ],
       "correct": 0,
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab"
-      ]
+        "imperfect"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "er-ir-verbs"
+      }
     },
     {
       "id": "a2.imperfectobasico.02.ex11",
@@ -184,9 +182,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab"
-      ]
+        "imperfect"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.imperfectobasico.02.ex12",
@@ -203,8 +203,7 @@
         }
       ],
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab"
+        "imperfect"
       ]
     }
   ]

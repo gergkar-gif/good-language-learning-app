@@ -14,8 +14,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterite-irregular-stems"
-      ]
+        "imperfect"
+      ],
+      "distractor_skills": {
+        "1": "condicional-irregular",
+        "3": "ser"
+      }
     },
     {
       "id": "a2.imperfectobasico.03.ex02",
@@ -24,7 +28,7 @@
       "sentence": "De niño, mi padre _____ (ser) muy deportista.",
       "answer": "era",
       "teaches": [
-        "preterite-irregular-stems"
+        "imperfect"
       ],
       "english": "As a child, my father was very athletic."
     },
@@ -35,7 +39,7 @@
       "sentence": "Nosotros siempre _____ (ir) a la playa en agosto.",
       "answer": "íbamos",
       "teaches": [
-        "preterite-irregular-stems"
+        "imperfect"
       ],
       "english": "We always went to the beach in August."
     },
@@ -46,13 +50,13 @@
       "sentence": "Ellos _____ (ver) las noticias cada noche.",
       "answer": "veían",
       "teaches": [
-        "preterite-irregular-stems"
+        "imperfect"
       ],
       "english": "They watched the news every night."
     },
     {
       "id": "a2.imperfectobasico.03.ex05",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -77,7 +81,7 @@
         ]
       ],
       "teaches": [
-        "preterite-irregular-stems"
+        "a2-imperfect-tense-vocab"
       ]
     },
     {
@@ -87,7 +91,7 @@
       "sentence": "Cuando era niño, yo íba al parque todos los días.",
       "solution": "Cuando era niño, yo iba al parque todos los días.",
       "teaches": [
-        "preterite-irregular-stems"
+        "imperfect"
       ],
       "explanation": "'iba' does not have a written accent. Only íbamos (nosotros) does."
     },
@@ -104,25 +108,23 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab"
+        "a2-imperfect-tense-vocab"
       ]
     },
     {
       "id": "a2.imperfectobasico.03.ex08",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "En aquella época el pueblo era muy tranquilo y antiguo.",
+      "sentence": "De niña, mi abuela vivía en una casa muy antigua.",
       "options": [
-        "In that era, the town was very quiet and old.",
-        "In this city, life is quiet and modern.",
-        "The town was loud and different yesterday.",
-        "We visited a quiet and old town tomorrow."
+        "As a girl, my grandmother lived in a very old house.",
+        "My grandmother lives in a very modern flat.",
+        "My grandmother bought a different house yesterday.",
+        "We will visit my grandmother's old house tomorrow."
       ],
       "correct": 0,
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab"
+        "a2-imperfect-tense-vocab"
       ]
     },
     {
@@ -131,9 +133,7 @@
       "type": "dictation",
       "sentence": "Cuando era joven, Carlos era muy tímido.",
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab",
-        "ser"
+        "imperfect"
       ],
       "english": "When he was young, Carlos was very shy."
     },
@@ -153,14 +153,17 @@
       ],
       "options": [
         "Siempre iba a la casa de mis tíos en la montaña.",
-        "Siempre fui a la casa de mis tíos en la montaña.",
+        "Ayer fui a la casa de mis tíos en la montaña.",
         "Siempre voy a la casa de mis tíos en la montaña."
       ],
       "correct": 0,
       "teaches": [
-        "imperfect",
-        "ir"
-      ]
+        "imperfect"
+      ],
+      "distractor_skills": {
+        "1": "preterite-irregular-stems",
+        "2": "ir"
+      }
     },
     {
       "id": "a2.imperfectobasico.03.ex11",
@@ -183,9 +186,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab"
-      ]
+        "imperfect"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.imperfectobasico.03.ex12",
@@ -202,8 +207,7 @@
         }
       ],
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab"
+        "imperfect"
       ]
     }
   ]

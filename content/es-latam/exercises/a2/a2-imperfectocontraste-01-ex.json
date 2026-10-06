@@ -5,7 +5,7 @@
       "id": "a2.imperfectocontraste.01.ex01",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which tense goes in the blank? 'Hacía frío cuando _____ (salir) de casa.'",
+      "question": "Which tense goes in the blank? 'Hacía frío cuando _____ (salir) de casa.' (one completed event)",
       "options": [
         "salí",
         "salía",
@@ -15,13 +15,18 @@
       "correct": 0,
       "teaches": [
         "preterite-vs-imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "futuro-simple",
+        "3": "present-tense"
+      }
     },
     {
       "id": "a2.imperfectocontraste.01.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "'_____ (llover) cuando el partido empezó.' Which form of llover?",
+      "question": "'_____ (llover) cuando el partido empezó.' Which form of llover, as background weather?",
       "options": [
         "Llovía",
         "Llovió",
@@ -31,7 +36,12 @@
       "correct": 0,
       "teaches": [
         "preterite-vs-imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "stem-changes",
+        "3": "futuro-simple"
+      }
     },
     {
       "id": "a2.imperfectocontraste.01.ex03",
@@ -40,7 +50,7 @@
       "sentence": "Carlos _____ (caminar, imp) por la calle cuando vio a Ana.",
       "answer": "caminaba",
       "teaches": [
-        "preterite-vs-imperfect"
+        "imperfect"
       ],
       "english": "Carlos was walking down the street when he saw Ana."
     },
@@ -51,7 +61,7 @@
       "sentence": "Carlos caminaba por la calle cuando _____ (ver, ind) a Ana.",
       "answer": "vio",
       "teaches": [
-        "preterite-vs-imperfect"
+        "preterito-indefinido"
       ],
       "english": "Carlos was walking down the street when he saw Ana."
     },
@@ -62,7 +72,7 @@
       "sentence": "_____ (ser, imp) una tarde tranquila. De repente empezó a llover.",
       "answer": "Era",
       "teaches": [
-        "preterite-vs-imperfect"
+        "imperfect"
       ],
       "english": "It was a quiet afternoon. Suddenly it started to rain."
     },
@@ -73,13 +83,13 @@
       "sentence": "Era una tarde tranquila. De repente _____ (empezar, ind) a llover.",
       "answer": "empezó",
       "teaches": [
-        "preterite-vs-imperfect"
+        "preterito-indefinido"
       ],
       "english": "It was a quiet afternoon. Suddenly it started to rain."
     },
     {
       "id": "a2.imperfectocontraste.01.ex07",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -104,7 +114,7 @@
         ]
       ],
       "teaches": [
-        "preterite-vs-imperfect"
+        "a2-imperfect-vs-preterite-vocab"
       ]
     },
     {
@@ -145,9 +155,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterite-vs-imperfect",
-        "a1-greetings-introductions-vocab",
-        "preterito-indefinido"
+        "preterite-vs-imperfect"
       ]
     },
     {
@@ -156,8 +164,7 @@
       "type": "dictation",
       "sentence": "En ese momento sonó el teléfono y me levanté.",
       "teaches": [
-        "preterite-vs-imperfect",
-        "a1-greetings-introductions-vocab"
+        "preterito-indefinido"
       ],
       "english": "At that moment, the phone rang and I got up."
     },
@@ -182,9 +189,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterite-vs-imperfect",
-        "a1-greetings-introductions-vocab"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "ar-verbs"
+      }
     },
     {
       "id": "a2.imperfectocontraste.01.ex12",
@@ -207,10 +217,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterite-vs-imperfect",
-        "secuencia-narrativa",
-        "a1-greetings-introductions-vocab"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "ar-verbs",
+        "2": "hay"
+      }
     },
     {
       "id": "a2.imperfectocontraste.01.ex13",
@@ -227,9 +239,7 @@
         }
       ],
       "teaches": [
-        "preterite-vs-imperfect",
-        "a1-greetings-introductions-vocab",
-        "imperfect"
+        "preterite-vs-imperfect"
       ]
     }
   ]

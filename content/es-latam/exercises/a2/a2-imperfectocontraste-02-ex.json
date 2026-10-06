@@ -19,7 +19,7 @@
       "sentence": "Mientras me duchaba, alguien _____ (llamar, ind) a la puerta.",
       "answer": "llamó",
       "teaches": [
-        "imperfect"
+        "preterito-indefinido"
       ],
       "english": "While I was taking a shower, someone knocked on the door."
     },
@@ -58,8 +58,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "futuro-simple",
+        "3": "ar-verbs"
+      }
     },
     {
       "id": "a2.imperfectocontraste.02.ex06",
@@ -84,13 +89,13 @@
         "casa"
       ],
       "teaches": [
-        "imperfect"
+        "preterite-vs-imperfect"
       ],
       "english": "While I was sleeping, someone entered the house"
     },
     {
       "id": "a2.imperfectocontraste.02.ex07",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -103,7 +108,7 @@
         ],
         [
           "Mientras esperaba, leí un libro.",
-          "While waiting, I read a book. (both ongoing/habitual)"
+          "While waiting, I read a book. (background + event)"
         ],
         [
           "Me llamó mientras trabajaba.",
@@ -115,7 +120,7 @@
         ]
       ],
       "teaches": [
-        "imperfect"
+        "a2-imperfect-vs-preterite-vocab"
       ]
     },
     {
@@ -131,8 +136,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab"
+        "preterite-vs-imperfect"
       ]
     },
     {
@@ -141,8 +145,7 @@
       "type": "dictation",
       "sentence": "Dormía profundamente cuando de golpe me desperté.",
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab"
+        "preterite-vs-imperfect"
       ],
       "english": "I was sleeping deeply when suddenly I woke up."
     },
@@ -167,9 +170,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "ar-verbs"
+      }
     },
     {
       "id": "a2.imperfectocontraste.02.ex11",
@@ -187,14 +193,17 @@
       ],
       "options": [
         "Estudiaba en la biblioteca y un ruido me interrumpió.",
-        "Estudié en la biblioteca y un ruido me interrumpió.",
+        "Estudié en la biblioteca y un ruido me interrumpía.",
         "Estudio en la biblioteca y un ruido me interrumpió."
       ],
       "correct": 0,
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "ar-verbs"
+      }
     },
     {
       "id": "a2.imperfectocontraste.02.ex12",
@@ -211,8 +220,7 @@
         }
       ],
       "teaches": [
-        "imperfect",
-        "a1-greetings-introductions-vocab"
+        "preterite-vs-imperfect"
       ]
     }
   ]
