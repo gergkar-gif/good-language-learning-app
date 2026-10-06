@@ -370,7 +370,9 @@ def validate_skill_sources(sources, families):
                 if (level, uid) in vocab_by_unit:
                     errors.append(f"{where}\n      unit {level}/{uid} already has vocabulary skill {vocab_by_unit[(level, uid)]!r}")
                 vocab_by_unit[(level, uid)] = slug
-        for (level, uid), (course, _) in sorted(units.items()):
+        for (level, uid), (course, entry) in sorted(units.items()):
+            if entry.get("vocabulary") is False:
+                continue  # a unit with no vocabulary of its own (grammar practice and reading only) opts out
             if (level, uid) not in vocab_by_unit:
                 errors.append(f"content/{course}/curriculum/units/{level.lower()}.json :: {uid}\n      unit has no vocabulary skill "
                               f"{level.lower()}-{uid}-vocab in {rel}")
