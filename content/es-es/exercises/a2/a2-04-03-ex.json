@@ -260,10 +260,13 @@
       "id": "a2.04.03.ex15",
       "category": "dialogue",
       "type": "dialogue-complete",
+      "teaches": [
+        "antes-despues-infinitive"
+      ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Qué han hecho después de cocinar?"
+          "text": "¿Qué han hecho antes de cocinar?"
         },
         {
           "speaker": "Carlos",
@@ -271,14 +274,11 @@
         }
       ],
       "options": [
-        "Hemos probado la comida.",
-        "Hemos probar la comida.",
-        "Hemos probado la comida antes de cocinar."
+        "Hemos cortado las verduras.",
+        "Hemos cortar las verduras.",
+        "Hemos cortado las verduras después de cocinar."
       ],
-      "correct": 0,
-      "teaches": [
-        "antes-despues-infinitive"
-      ]
+      "correct": 0
     },
     {
       "id": "a2.04.03.ex16",

@@ -119,12 +119,12 @@
       "id": "a2.05.05.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "answer": "por eso",
       "teaches": [
         "porque-y-por-eso"
       ],
-      "sentence": "Nos hemos mojado, __ hemos vuelto.",
-      "english": "We have got wet, so we have returned."
+      "sentence": "Ha cambiado la ruta, __ hemos visto otro paisaje.",
+      "answer": "por eso",
+      "english": "The route has changed, so we have seen another landscape."
     },
     {
       "id": "a2.05.05.ex08",
@@ -167,22 +167,22 @@
       "id": "a2.05.05.ex10",
       "category": "vocabulary",
       "type": "matching",
-      "pairs": [
-        [
-          "porque ha llovido",
-          "because it has rained"
-        ],
-        [
-          "por eso hemos vuelto",
-          "that is why we have returned"
-        ],
-        [
-          "porque nos hemos mojado",
-          "because we have got wet"
-        ]
-      ],
       "teaches": [
         "a2-giving-reasons-opinions-vocab"
+      ],
+      "pairs": [
+        [
+          "porque ha cambiado la ruta",
+          "because the route has changed"
+        ],
+        [
+          "por eso hemos visto otro paisaje",
+          "that is why we have seen another landscape"
+        ],
+        [
+          "porque ha sido inesperado",
+          "because it has been unexpected"
+        ]
       ]
     },
     {
@@ -249,10 +249,13 @@
       "id": "a2.05.05.ex16",
       "category": "dialogue",
       "type": "dialogue-complete",
+      "teaches": [
+        "porque-y-por-eso"
+      ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Por qué han cambiado la ruta?"
+          "text": "¿Por qué ha sido inesperada la excursión?"
         },
         {
           "speaker": "Carlos",
@@ -260,23 +263,23 @@
         }
       ],
       "options": [
-        "Porque ha llovido.",
-        "Por eso ha llovido.",
-        "Porque ha llover."
+        "Porque ha cambiado la ruta.",
+        "Por eso ha cambiado la ruta.",
+        "Porque ha cambiar la ruta."
       ],
-      "correct": 0,
-      "teaches": [
-        "porque-y-por-eso"
-      ]
+      "correct": 0
     },
     {
       "id": "a2.05.05.ex17",
       "category": "dialogue",
       "type": "dialogue-complete",
+      "teaches": [
+        "porque-y-por-eso"
+      ],
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "Ha llovido."
+          "text": "Ha cambiado la ruta."
         },
         {
           "speaker": "Meg",
@@ -284,14 +287,11 @@
         }
       ],
       "options": [
-        "Por eso hemos cambiado la ruta.",
-        "Porque hemos cambiado la ruta.",
-        "Por eso hemos cambiar la ruta."
+        "Por eso hemos visto otro paisaje.",
+        "Porque hemos visto otro paisaje.",
+        "Por eso hemos ver otro paisaje."
       ],
-      "correct": 0,
-      "teaches": [
-        "porque-y-por-eso"
-      ]
+      "correct": 0
     },
     {
       "id": "a2.05.05.ex18",
