@@ -10,6 +10,7 @@ occurrence stays; later non-consolidation occurrences are the ones to rewrite.
 Consolidation lessons are meant to recycle earlier items and are never listed.
 """
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -19,7 +20,8 @@ CK = ("question", "sentence", "options", "pairs", "solution", "prompt", "templat
 
 
 def key(e):
-    return json.dumps({k: e.get(k) for k in CK if k in e}, ensure_ascii=False, sort_keys=True)
+    s = json.dumps({k: e.get(k) for k in CK if k in e}, ensure_ascii=False, sort_keys=True)
+    return re.sub(r"\s*\((?:Lesson|Lecke|Lección) ?\d+\)", "", s)  # "(Lesson 3)" labels do not make an item new
 
 
 def copies(course, level, unit):
