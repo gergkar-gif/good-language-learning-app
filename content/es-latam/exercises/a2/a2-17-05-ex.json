@@ -35,8 +35,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "imperfect"
+      }
     },
     {
       "id": "a2.17.05.ex03",
@@ -44,7 +48,7 @@
       "type": "fill-blank",
       "answer": "he aprendido",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "sentence": "Este año __ mucho. (aprender)",
       "english": "This year I have learned a lot."
@@ -55,7 +59,7 @@
       "type": "sentence-builder",
       "english": "I have learned a lot this year.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "tiles": [
         "He",
@@ -84,8 +88,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "pasiva-refleja"
-      ]
+        "preterito-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.17.05.ex06",
@@ -111,7 +118,7 @@
       "type": "fill-blank",
       "answer": "aprendí",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-indefinido"
       ],
       "sentence": "El año pasado __ mucho. (aprender)",
       "english": "Last year I learned a lot."
@@ -120,8 +127,9 @@
       "id": "a2.17.05.ex08",
       "category": "grammar",
       "type": "sentence-builder",
+      "english": "We have finished the course.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "tiles": [
         "Hemos",
@@ -148,7 +156,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "pasiva-refleja"
+        "preterito-indefinido"
       ]
     },
     {
@@ -248,7 +256,10 @@
       "correct": 0,
       "teaches": [
         "preterito-perfecto-vs-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.17.05.ex17",
@@ -272,7 +283,10 @@
       "correct": 0,
       "teaches": [
         "preterito-perfecto-vs-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.17.05.ex18",
@@ -281,7 +295,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Qué han hecho muchos amigos?"
+          "text": "¿Qué han hecho muchos amigos este año?"
         },
         {
           "speaker": "Meg",
@@ -290,14 +304,17 @@
       ],
       "options": [
         "Han intercambiado teléfonos.",
-        "Intercambiaron teléfonos ayer.",
+        "Intercambiaron teléfonos el año pasado.",
         "Van a intercambiar teléfonos mañana."
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto",
-        "preterito-indefinido"
-      ]
+        "preterito-perfecto-vs-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "ir-infinitive"
+      }
     },
     {
       "id": "a2.17.05.ex19",
@@ -347,7 +364,7 @@
       "type": "dictation",
       "sentence": "Todos se divirtieron mucho en el concurso.",
       "teaches": [
-        "alguna-vez"
+        "preterito-indefinido"
       ],
       "english": "Everyone had a lot of fun in the competition."
     }

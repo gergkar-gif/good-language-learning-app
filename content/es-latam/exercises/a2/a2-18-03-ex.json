@@ -40,7 +40,11 @@
       "correct": 0,
       "teaches": [
         "ir-infinitive"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.18.03.ex03",
@@ -59,7 +63,7 @@
       "type": "sentence-builder",
       "english": "I am going to prepare the suitcase.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "ir-infinitive"
       ],
       "tiles": [
         "Voy",
@@ -124,8 +128,9 @@
       "id": "a2.18.03.ex08",
       "category": "grammar",
       "type": "sentence-builder",
+      "english": "We are going to prepare the suitcases.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "ir-infinitive"
       ],
       "tiles": [
         "Vamos",
@@ -154,7 +159,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "ir-infinitive"
       ]
     },
     {
@@ -164,7 +169,7 @@
       "question": "¿Qué significa «el viaje»?",
       "options": [
         "trip",
-        "journey",
+        "suitcase",
         "goodbye"
       ],
       "correct": 0,
@@ -178,7 +183,7 @@
       "type": "fill-blank",
       "answer": "he viajado",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "sentence": "Este año __ mucho.",
       "english": "This year I have travelled a lot."
@@ -195,8 +200,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "ir-infinitive"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "ir-infinitive"
+      }
     },
     {
       "id": "a2.18.03.ex13",
@@ -204,7 +213,7 @@
       "type": "sentence-builder",
       "english": "We have visited several cities.",
       "teaches": [
-        "alguna-vez"
+        "preterito-perfecto"
       ],
       "tiles": [
         "Hemos",
@@ -225,7 +234,7 @@
       "type": "fill-blank",
       "answer": "Has",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "sentence": "¿__ conocido un lugar nuevo?",
       "english": "Have you discovered a new place?"
@@ -251,8 +260,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "ir-infinitive"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "ir-infinitive"
+      }
     },
     {
       "id": "a2.18.03.ex16",
@@ -261,7 +274,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Has visitado varias ciudades?"
+          "text": "¿Has visitado varias ciudades este año?"
         },
         {
           "speaker": "Carlos",
@@ -275,8 +288,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "ir-infinitive"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "ir-infinitive"
+      }
     },
     {
       "id": "a2.18.03.ex17",
@@ -293,8 +310,7 @@
         }
       ],
       "teaches": [
-        "preterito-perfecto",
-        "ir-infinitive"
+        "preterito-perfecto"
       ]
     },
     {
@@ -310,7 +326,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "alguna-vez"
+        "preterito-perfecto"
       ]
     },
     {
@@ -319,8 +335,7 @@
       "type": "dictation",
       "sentence": "He visitado varias ciudades.",
       "teaches": [
-        "preterito-perfecto",
-        "ir-infinitive"
+        "preterito-perfecto"
       ],
       "english": "I have visited several cities."
     }

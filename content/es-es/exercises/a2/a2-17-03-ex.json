@@ -39,8 +39,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "imperfect"
+      }
     },
     {
       "id": "a2.17.03.ex03",
@@ -48,7 +52,7 @@
       "type": "fill-blank",
       "answer": "he aprendido",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "sentence": "Este año __ mucho. (aprender)",
       "english": "This year I have learned a lot."
@@ -59,7 +63,7 @@
       "type": "sentence-builder",
       "english": "I have learned a lot this year.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "tiles": [
         "He",
@@ -88,8 +92,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "pasiva-refleja"
-      ]
+        "preterito-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.17.03.ex06",
@@ -115,7 +122,7 @@
       "type": "fill-blank",
       "answer": "aprendí",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-indefinido"
       ],
       "sentence": "El año pasado __ mucho. (aprender)",
       "english": "Last year I learned a lot."
@@ -124,8 +131,9 @@
       "id": "a2.17.03.ex08",
       "category": "grammar",
       "type": "sentence-builder",
+      "english": "We have finished the course.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "tiles": [
         "Hemos",
@@ -152,7 +160,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "pasiva-refleja"
+        "preterito-indefinido"
       ]
     },
     {
@@ -176,7 +184,7 @@
       "type": "fill-blank",
       "answer": "he aprendido",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "sentence": "Este año __ mucho. (aprender)",
       "english": "This year I have learned a lot."
@@ -189,7 +197,7 @@
       "options": [
         "He aprendido mucho este año. / Aprendí mucho el año pasado.",
         "Aprendí mucho este año. / He aprendido mucho el año pasado.",
-        "Aprendo mucho este año. / Aprendí mucho ayer."
+        "Aprendo mucho ayer. / Aprendí mucho el año pasado."
       ],
       "correct": 0,
       "teaches": [
@@ -202,7 +210,7 @@
       "type": "sentence-builder",
       "english": "We finished the course yesterday.",
       "teaches": [
-        "pasiva-refleja"
+        "preterito-indefinido"
       ],
       "tiles": [
         "Terminamos",
@@ -223,7 +231,7 @@
       "type": "fill-blank",
       "answer": "he",
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto"
       ],
       "sentence": "Ya __ terminado el curso. (yo)",
       "english": "I have already finished the course."
@@ -235,7 +243,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Has terminado el course este year?"
+          "text": "¿Has terminado el curso este año?"
         },
         {
           "speaker": "Meg",
@@ -244,13 +252,16 @@
       ],
       "options": [
         "Sí, he terminado el curso.",
-        "Sí, terminé el curso ayer.",
+        "Sí, terminé el curso el año pasado.",
         "Sí, termino el curso mañana."
       ],
       "correct": 0,
       "teaches": [
-        "pasiva-refleja"
-      ]
+        "preterito-perfecto-vs-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.17.03.ex16",
@@ -268,13 +279,16 @@
       ],
       "options": [
         "Lo terminé ayer.",
-        "Lo he terminado este año.",
+        "Lo he terminado ayer.",
         "Lo termino mañana."
       ],
       "correct": 0,
       "teaches": [
         "preterito-perfecto-vs-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.17.03.ex17",
@@ -299,8 +313,7 @@
         }
       ],
       "teaches": [
-        "preterito-perfecto",
-        "preterito-indefinido"
+        "preterito-perfecto-vs-indefinido"
       ]
     },
     {
@@ -316,7 +329,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto-vs-indefinido"
       ]
     },
     {
@@ -325,7 +338,7 @@
       "type": "dictation",
       "sentence": "Terminé el curso ayer.",
       "teaches": [
-        "pasiva-refleja"
+        "preterito-indefinido"
       ],
       "english": "I finished the course yesterday."
     }

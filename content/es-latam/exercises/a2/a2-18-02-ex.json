@@ -40,7 +40,11 @@
       "correct": 0,
       "teaches": [
         "ir-infinitive"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.18.02.ex03",
@@ -59,7 +63,7 @@
       "type": "sentence-builder",
       "english": "I am going to prepare the suitcase.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "ir-infinitive"
       ],
       "tiles": [
         "Voy",
@@ -124,8 +128,9 @@
       "id": "a2.18.02.ex08",
       "category": "grammar",
       "type": "sentence-builder",
+      "english": "We are going to prepare the suitcases.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "ir-infinitive"
       ],
       "tiles": [
         "Vamos",
@@ -154,7 +159,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "ir-infinitive"
       ]
     },
     {
@@ -178,7 +183,7 @@
       "type": "fill-blank",
       "answer": "llegamos",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-indefinido"
       ],
       "sentence": "Ayer __ al aeropuerto temprano.",
       "english": "Yesterday we arrived at the airport early."
@@ -195,8 +200,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "ir-infinitive"
-      ]
+        "preterito-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "ir-infinitive",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "a2.18.02.ex13",
@@ -204,7 +213,7 @@
       "type": "sentence-builder",
       "english": "The plane took off at eight.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-indefinido"
       ],
       "tiles": [
         "El",
@@ -229,7 +238,7 @@
       "type": "fill-blank",
       "answer": "volvieron",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-indefinido"
       ],
       "sentence": "El domingo __ a Hanói.",
       "english": "On Sunday they returned to Hanoi."
@@ -251,12 +260,16 @@
       "options": [
         "Llegamos al aeropuerto temprano.",
         "Vamos a llegar al aeropuerto mañana.",
-        "Hemos llegado recientemente."
+        "Hemos llegado ayer."
       ],
       "correct": 0,
       "teaches": [
-        "ir-infinitive"
-      ]
+        "preterito-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "ir-infinitive",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.18.02.ex16",
@@ -275,11 +288,11 @@
       "options": [
         "El domingo.",
         "Mañana.",
-        "Este año."
+        "El año que viene."
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "a2-travel-goodbyes-vocab"
       ]
     },
     {
@@ -297,8 +310,7 @@
         }
       ],
       "teaches": [
-        "preterito-indefinido",
-        "ir-infinitive"
+        "preterito-indefinido"
       ]
     },
     {
@@ -314,7 +326,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-indefinido"
       ]
     },
     {
@@ -323,8 +335,7 @@
       "type": "dictation",
       "sentence": "El avión despegó a las ocho.",
       "teaches": [
-        "preterito-indefinido",
-        "ir-infinitive"
+        "preterito-indefinido"
       ],
       "english": "The plane took off at eight."
     }
