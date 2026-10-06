@@ -23,7 +23,7 @@ differs between them (so the reviewer checks the tag fits both). "Taught later"
 compares table positions (unit order, then lesson order), not lesson numbers,
 because Spanish stems like `a1-directions-01` carry no number. A vocabulary tag
 that belongs to another unit warns. Spanish-only warnings (A2): a fill-blank whose answer is a *haber* form
-with no person in the hint, sentence or English line, and a wrong option that swaps two adjacent words of the answer.
+with no person in the hint, sentence or English line, a wrong option that swaps two adjacent words of the answer, and (all courses) a fill-blank whose parenthesised hint is the answer.
 """
 import json
 import re
@@ -170,6 +170,10 @@ def main():
                     diff = [k for k in range(len(cw)) if len(ow) == len(cw) and ow[k] != cw[k]]
                     if i != e["correct"] and len(diff) == 2 and diff[1] == diff[0] + 1 and ow[diff[0]] == cw[diff[1]] and ow[diff[1]] == cw[diff[0]]:
                         warns.append(f"{eid}: option {o!r} is a swap of two adjacent words in the answer; check it is really ungrammatical (Spanish word order is free)")
+            if e.get("type") == "fill-blank" and ans:
+                for h in re.findall(r"\(([^)]*)\)", ptxt):
+                    if words(h) and words(h) == words(ans):
+                        warns.append(f"{eid}: the hint ({h}) is the answer {ans!r}; give an English hint instead")
             for i, s2 in (d.get("ds") or {}).items():
                 if not str(i).isdigit() or int(i) >= len(opts) or int(i) == e.get("correct"):
                     errors.append(f"{eid}: ds index {i} is not a wrong option")
