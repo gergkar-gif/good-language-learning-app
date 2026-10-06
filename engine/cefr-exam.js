@@ -705,9 +705,13 @@ const CefrExam = (function () {
         }
 
         function _formatGappedPassage(text) {
+            const isHu = _id.includes('hu');
             return (text || '').split('\n\n').map(p => {
                 const escaped = _esc(p);
-                const withTokens = escaped.replace(/\[___(\d+)___\]/g, '<span class="cefr-inline-gap-token">[ Hueco $1 ]</span>');
+                const tokenHtml = isHu
+                    ? '<span class="cefr-inline-gap-token">[ $1. ]</span>'
+                    : '<span class="cefr-inline-gap-token">[ Hueco $1 ]</span>';
+                const withTokens = escaped.replace(/\[___(\d+)___\]/g, tokenHtml);
                 return `<p class="cefr-passage-paragraph">${withTokens}</p>`;
             }).join('');
         }
@@ -870,15 +874,21 @@ const CefrExam = (function () {
                     </div>
                 `;
             } else if (tarea.type === 'gapped-text') {
+                const gapsCount = (tarea.gaps || []).length;
+                const optLetterRange = (tarea.options && tarea.options.length)
+                    ? `(${tarea.options[0].letter}–${tarea.options[tarea.options.length - 1].letter})`
+                    : '';
                 stimulusTitle = isHu ? 'Szöveg' : 'Texto principal';
-                stimulusSubtitle = isHu ? 'Figyeld meg a 6 hiányzó mondat helyét a szövegben' : 'Observa la posición de los 6 fragmentos omitidos';
+                stimulusSubtitle = isHu
+                    ? 'Figyeld meg a hiányzó mondatok helyét a szövegben'
+                    : `Observa la posición de los ${gapsCount || 6} fragmentos omitidos`;
                 stimulusHtml = `
                     <div class="cefr-passage-editorial-wrap">
                         ${_formatGappedPassage(tarea.passage || '')}
                     </div>
 
                     <div class="cefr-gaps-options-pool-wrap">
-                        <h5 class="cefr-gaps-pool-title">${isHu ? 'Hiányzó mondatok (A-H)' : 'Opciones de oraciones para los huecos (A-H)'}</h5>
+                        <h5 class="cefr-gaps-pool-title">${isHu ? `Hiányzó mondatok ${optLetterRange}`.trim() : `Opciones de oraciones para los huecos ${optLetterRange}`.trim()}</h5>
                         <div class="cefr-gaps-options-pool">
                             ${(tarea.options || []).map(o => `
                                 <div class="cefr-gap-pool-item">
@@ -890,8 +900,9 @@ const CefrExam = (function () {
                     </div>
                 `;
 
-                questionsTitle = isHu ? 'Hiányzó részek kitöltése (1-6)' : 'Completar los huecos (1-6)';
-                questionsSubtitle = isHu ? 'Válaszd ki a megfelelő mondatot minden réshez' : 'Selecciona la oración correcta para cada posición';
+                const gapNumRange = gapsCount ? `(1–${gapsCount})` : '';
+                questionsTitle = isHu ? `Hiányzó mondatok beillesztése ${gapNumRange}`.trim() : `Completar los huecos ${gapNumRange}`.trim();
+                questionsSubtitle = isHu ? 'Válaszd ki a megfelelő mondatot az egyes helyekre' : 'Selecciona la oración correcta para cada posición';
                 questionsHtml = `
                     <div class="cefr-gaps-rows-stack">
                         ${(tarea.gaps || []).map(g => {
@@ -902,9 +913,9 @@ const CefrExam = (function () {
 
                             return `
                                 <div class="cefr-gap-row-card ${isCorrect ? 'is-correct' : (isWrong ? 'is-wrong' : '')}">
-                                    <span class="cefr-gap-row-label">${isHu ? 'Rés' : 'Hueco'} [___${g.num}___]:</span>
+                                    <span class="cefr-gap-row-label">${isHu ? `[ ${g.num}. ]` : `Hueco [___${g.num}___]:`}</span>
                                     <select class="cefr-select" data-gap-qid="${_esc(g.id)}" ${isSubmitted ? 'disabled' : ''}>
-                                        <option value="">-- ${isHu ? 'Válassz betűt' : 'Selecciona letra'} --</option>
+                                        <option value="">-- ${isHu ? 'Válassz megoldást' : 'Selecciona letra'} --</option>
                                         ${(tarea.options || []).map(o => `
                                             <option value="${_esc(o.letter)}" ${chosen === o.letter ? 'selected' : ''}>
                                                 [${_esc(o.letter)}] ${_esc(o.text.substring(0, 60))}...
@@ -922,6 +933,8 @@ const CefrExam = (function () {
                     </div>
                 `;
             } else if (tarea.type === 'cloze-mc') {
+                const itemsCount = (tarea.items || []).length;
+                const itemNumRange = itemsCount ? `(1–${itemsCount})` : '';
                 stimulusTitle = isHu ? 'Szöveg' : 'Texto con huecos gramaticales';
                 stimulusSubtitle = isHu ? 'Olvasd el a szöveget és válaszd ki a helyes alakokat' : 'Lee el texto y completa los huecos con la opción correcta';
                 stimulusHtml = `
@@ -930,8 +943,8 @@ const CefrExam = (function () {
                     </div>
                 `;
 
-                questionsTitle = isHu ? 'Nyelvtani és lexikai opciók (1-6)' : 'Opciones de gramática y léxico (1-6)';
-                questionsSubtitle = isHu ? 'Válaszd ki a helyes alakot minden réshez' : 'Selecciona la forma correcta para cada hueco';
+                questionsTitle = isHu ? `Nyelvtani és lexikai opciók ${itemNumRange}`.trim() : `Opciones de gramática y léxico ${itemNumRange}`.trim();
+                questionsSubtitle = isHu ? 'Válaszd ki a helyes alakot az egyes helyekre' : 'Selecciona la forma correcta para cada hueco';
                 questionsHtml = `
                     <div class="cefr-cloze-grid">
                         ${(tarea.items || []).map(item => {
@@ -942,7 +955,7 @@ const CefrExam = (function () {
 
                             return `
                                 <div class="cefr-q-card ${isCorrect ? 'is-correct' : (isWrong ? 'is-wrong' : '')}">
-                                    <div class="cefr-q-title">${isHu ? 'Rés' : 'Hueco'} [___${item.num}___]</div>
+                                    <div class="cefr-q-title">${isHu ? `[ ${item.num}. ]` : `Hueco [___${item.num}___]`}</div>
                                     <div class="cefr-options-list">
                                         ${(item.options || []).map((opt, optIdx) => `
                                             <button type="button" class="cefr-opt-btn ${chosen === optIdx ? 'is-selected' : ''} ${isSubmitted && optIdx === item.correct ? 'is-correct-target' : ''}" data-cloze-qid="${_esc(item.id)}" data-cloze-idx="${optIdx}" ${isSubmitted ? 'disabled' : ''}>
