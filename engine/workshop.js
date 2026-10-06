@@ -180,28 +180,11 @@ const Workshop = (function () {
 
     function _pickerHtml() {
         const available = DRILLERS.filter(_available);
-        const studios = available.filter(d => d.category === 'studios');
-        const foundations = available.filter(d => d.category === 'foundations');
-        const exams = available.filter(d => d.category === 'exams');
+        const sorted = available.slice().sort((a, b) => a.title.localeCompare(b.title));
         return `
-            ${studios.length ? `
-                <div class="wk-section-heading">Studios</div>
-                <div class="wk-picker">
-                    ${_renderCards(studios)}
-                </div>
-            ` : ''}
-            ${foundations.length ? `
-                <div class="wk-section-heading">Foundations</div>
-                <div class="wk-picker">
-                    ${_renderCards(foundations)}
-                </div>
-            ` : ''}
-            ${exams.length ? `
-                <div class="wk-section-heading">Exam Preparation</div>
-                <div class="wk-picker">
-                    ${_renderCards(exams)}
-                </div>
-            ` : ''}
+            <div class="wk-picker">
+                ${_renderCards(sorted)}
+            </div>
         `;
     }
 
