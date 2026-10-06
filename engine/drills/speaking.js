@@ -143,7 +143,7 @@ const SpeakingDriller = (function () {
 
     async function _loadProdPrompts() {
         const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
-        if (_prodPrompts && _prodLoadedLang === lang) return;
+        if (_prodPrompts && _prodPrompts.length > 0 && _prodLoadedLang === lang) return;
         try {
             const data = await Content.json(Lang.content('speaking-prompts.json'));
             _prodPrompts = (data && data.prompts) ? data.prompts : [];
@@ -166,7 +166,7 @@ const SpeakingDriller = (function () {
 
     async function _loadScenarios() {
         const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
-        if (_scenarios && _scenariosLoadedLang === lang) return;
+        if (_scenarios && _scenarios.length > 0 && _scenariosLoadedLang === lang) return;
         try {
             const data = await Content.json(Lang.content('conversation-scenarios.json'));
             _scenarios = (data && data.scenarios) ? data.scenarios : [];

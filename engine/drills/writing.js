@@ -63,7 +63,7 @@ const WritingDriller = (function () {
 
     async function _loadPrompts() {
         const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
-        if (_promptsData && _loadedLang === lang) return;
+        if (_promptsData && _promptsData.length > 0 && _loadedLang === lang) return;
         try {
             const data = await Content.json(Lang.content('writing-prompts.json'));
             _promptsData = data && data.prompts ? data.prompts : [];
@@ -86,7 +86,7 @@ const WritingDriller = (function () {
 
     async function _loadExchanges() {
         const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
-        if (_exchanges && _exchangesLoadedLang === lang) return;
+        if (_exchanges && _exchanges.length > 0 && _exchangesLoadedLang === lang) return;
         try {
             const data = await Content.json(Lang.content('writing-exchanges.json'));
             _exchanges = (data && data.scenarios) ? data.scenarios : [];

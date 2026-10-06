@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-10-06-workshop-exams-last';
+const CACHE_VERSION = 'v2026-10-06-prompts-parity';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -70,6 +70,7 @@ const PRECACHE_ASSETS = [
     'engine/drills/hu-morphology.js',
     'engine/drills/hu-verb.js',
     'engine/drills/hu-verb-studio.js',
+    'engine/ccse-exam.js',
     'engine/workshop.js',
     'engine/exercise-audio.js',
     'engine/lessons.js',
