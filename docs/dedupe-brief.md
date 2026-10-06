@@ -43,3 +43,7 @@ Work only in `C:/dev/parlour-claude` (absolute paths); no git writes; set
    `python scripts/validate-content.py --changed` once at the end and report any error.
 7. Report: unit, number of copies replaced, any copy you left (and why), anything
    in the first occurrences that looked wrong, validator result.
+
+## Sentence-builders with a natural alternative order (added 2026-10-06)
+
+Spanish and Hungarian word order is flexible, and the engine accepts every tile order listed in an item's `solutions` array (the grader reads `solutions`, falling back to the single `solution`). When a new or rewritten sentence-builder has a natural alternative order (adverb position: *Ya hemos recorrido…* / *Hemos ya recorrido…*; a dropped or moved subject), keep `solution` as the first, canonical order and add every natural alternative to `solutions`, all using the same tiles. Existing builders are not retrofitted in this pass (ROADMAP 144(9)).
