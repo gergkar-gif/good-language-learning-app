@@ -15,7 +15,12 @@
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperativo-negativo",
+        "2": "imperativo-formal-usted",
+        "3": "ar-verbs"
+      }
     },
     {
       "id": "a2.imperativoafirmativo.05.ex02",
@@ -30,8 +35,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo"
-      ]
+        "imperativo-formal-usted"
+      ],
+      "distractor_skills": {
+        "1": "imperativo-afirmativo",
+        "2": "ar-verbs"
+      }
     },
     {
       "id": "a2.imperativoafirmativo.05.ex03",
@@ -51,13 +60,13 @@
       "sentence": "_____ (calentar, usted) el aceite en la sartén a fuego medio.",
       "answer": "Caliente",
       "teaches": [
-        "imperativo-afirmativo"
+        "imperativo-formal-usted"
       ],
       "english": "Heat the oil in the frying pan over medium heat."
     },
     {
       "id": "a2.imperativoafirmativo.05.ex05",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -78,7 +87,7 @@
         ]
       ],
       "teaches": [
-        "imperativo-afirmativo"
+        "a2-giving-instructions-directions-vocab"
       ]
     },
     {
@@ -115,21 +124,20 @@
         "Una sopa de verduras",
         "Un pastel de manzana"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-greetings-introductions-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a2.imperativoafirmativo.05.ex08",
       "category": "reading",
-      "type": "fill-blank",
-      "sentence": "La abuela les dice que tengan cuidado al _____ (dar) la vuelta a la tortilla.",
-      "answer": "dar",
-      "teaches": [
-        "a1-greetings-introductions-vocab"
+      "type": "multiple-choice",
+      "question": "¿Qué le dice la abuela a Carlos que haga al darle la vuelta a la tortilla?",
+      "options": [
+        "Que tenga cuidado",
+        "Que baje el fuego",
+        "Que añada más sal",
+        "Que espere media hora"
       ],
-      "english": "The grandmother tells them to be careful when flipping the omelette."
+      "correct": 0
     },
     {
       "id": "a2.imperativoafirmativo.05.ex09",
@@ -147,13 +155,12 @@
       ],
       "options": [
         "Corta las patatas y calienta un poco de aceite en la sartén.",
-        "Cortas las patatas y calientas un poco de aceite en la sartén.",
+        "Cortes las patatas y calientes un poco de aceite en la sartén.",
         "Cortó las patatas y calentó un poco de aceite en la sartén."
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo",
-        "a1-greetings-introductions-vocab"
+        "imperativo-afirmativo"
       ]
     },
     {
@@ -172,13 +179,12 @@
       ],
       "options": [
         "Mezcla bien todo, añade una pizca de sal y baja el fuego.",
-        "Mezclas bien todo, añades una pizca de sal y bajas el fuego.",
+        "Mezcles bien todo, añadas una pizca de sal y bajes el fuego.",
         "Mezcló bien todo, añadió una pizca de sal y bajó el fuego."
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo",
-        "a1-greetings-introductions-vocab"
+        "imperativo-afirmativo"
       ]
     },
     {
@@ -187,17 +193,16 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give instructions to heat oil in the frying pan and add the ingredients.",
+          "prompt": "Give instructions (tú) to heat oil in the frying pan and add the ingredients.",
           "answer": "Calienta el aceite en la sartén y añade los ingredientes."
         },
         {
-          "prompt": "Give instructions to mix with a pinch of salt and serve immediately.",
+          "prompt": "Give instructions (tú) to mix with a pinch of salt and serve immediately.",
           "answer": "Mezcla con una pizca de sal y sirve caliente."
         }
       ],
       "teaches": [
-        "imperativo-afirmativo",
-        "a1-greetings-introductions-vocab"
+        "imperativo-afirmativo"
       ]
     },
     {
@@ -213,8 +218,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo",
-        "a1-greetings-introductions-vocab"
+        "a2-giving-instructions-directions-vocab"
       ]
     },
     {
@@ -223,8 +227,7 @@
       "type": "dictation",
       "sentence": "Corta las verduras, añade sal y sirve el plato.",
       "teaches": [
-        "imperativo-afirmativo",
-        "a1-greetings-introductions-vocab"
+        "imperativo-afirmativo"
       ],
       "english": "Cut the vegetables, add salt, and serve the dish."
     }

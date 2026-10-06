@@ -5,17 +5,22 @@
       "id": "a2.imperativonegativo.05.ex01",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "En el dormitorio del hostel, ¡no _____ (hacer) ruido de noche!",
+      "question": "En el dormitorio del hostel, ¡no _____ (hacer, tú) ruido de noche!",
       "options": [
-        "hagáis",
+        "hagas",
         "haces",
         "hace",
         "hagan"
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo"
-      ]
+        "imperativo-negativo-irregular"
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "present-tense",
+        "3": "imperativo-formal-usted"
+      }
     },
     {
       "id": "a2.imperativonegativo.05.ex02",
@@ -30,17 +35,21 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo"
-      ]
+        "imperativo-formal-usted"
+      ],
+      "distractor_skills": {
+        "1": "imperativo-afirmativo",
+        "2": "imperativo-negativo"
+      }
     },
     {
       "id": "a2.imperativonegativo.05.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "No _____ (dejar) platos sucios en el fregadero de la cocina.",
+      "sentence": "No _____ (dejar, tú) platos sucios en el fregadero de la cocina.",
       "answer": "dejes",
       "teaches": [
-        "imperativo-afirmativo"
+        "imperativo-negativo"
       ],
       "english": "Don't leave dirty dishes in the kitchen sink."
     },
@@ -48,16 +57,16 @@
       "id": "a2.imperativonegativo.05.ex04",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "_____ (guardar) silencio en los pasillos a partir de las diez.",
+      "sentence": "_____ (guardar, usted) silencio en los pasillos a partir de las diez.",
       "answer": "Guarde",
       "teaches": [
-        "imperativo-afirmativo"
+        "imperativo-formal-usted"
       ],
       "english": "Keep quiet in the hallways after ten o'clock."
     },
     {
       "id": "a2.imperativonegativo.05.ex05",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -78,7 +87,7 @@
         ]
       ],
       "teaches": [
-        "imperativo-afirmativo"
+        "a2-setting-rules-warnings-vocab"
       ]
     },
     {
@@ -103,7 +112,7 @@
       ],
       "english": "Take off your shoes before entering.",
       "teaches": [
-        "imperativo-afirmativo"
+        "posicion-pronombres-imperativo"
       ]
     },
     {
@@ -117,21 +126,20 @@
         "A las ocho de la tarde",
         "A las nueve de la noche"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-greetings-introductions-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a2.imperativonegativo.05.ex08",
       "category": "reading",
-      "type": "fill-blank",
-      "sentence": "Los huéspedes deben quitarse los _____ (zapatos) antes de entrar al salón.",
-      "answer": "zapatos",
-      "teaches": [
-        "a1-greetings-introductions-vocab"
+      "type": "multiple-choice",
+      "question": "¿Qué no deben dejar los huéspedes en la cocina común?",
+      "options": [
+        "Platos sucios",
+        "Platos limpios",
+        "Bolsas de comida",
+        "Sus llaves"
       ],
-      "english": "Guests must take off their shoes before entering the living room."
+      "correct": 0
     },
     {
       "id": "a2.imperativonegativo.05.ex09",
@@ -154,7 +162,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "imperativo-formal-usted"
       ]
     },
     {
@@ -173,12 +181,12 @@
       ],
       "options": [
         "No dejes platos sucios en el fregadero; mantén todo limpio.",
-        "No dejas platos sucios en el fregadero; mantienes todo limpio.",
+        "Dejes platos sucios en el fregadero; mantengas todo limpio.",
         "No dejó platos sucios en el fregadero; mantuvo todo limpio."
       ],
       "correct": 0,
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "imperativo-negativo"
       ]
     },
     {
@@ -187,16 +195,16 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Write a room rule: Turn off the lights when leaving the room; do not leave them on.",
+          "prompt": "Write a room rule (usted): Turn off the lights when leaving the room; do not leave them on.",
           "answer": "Apague las luces al salir de la habitación; no las deje encendidas."
         },
         {
-          "prompt": "Write a hostel rule: Respect other guests and keep the common areas clean.",
+          "prompt": "Write a hostel rule (usted): Respect other guests and keep the common areas clean.",
           "answer": "Respete las normas del albergue y mantenga los espacios limpios."
         }
       ],
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "imperativo-formal-usted"
       ]
     },
     {
@@ -212,7 +220,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "a2-setting-rules-warnings-vocab"
       ]
     },
     {
@@ -221,7 +229,7 @@
       "type": "dictation",
       "sentence": "Respeta las normas del albergue y mantén la habitación limpia.",
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "imperativo-afirmativo"
       ],
       "english": "Respect the hostel rules and keep the room clean."
     }

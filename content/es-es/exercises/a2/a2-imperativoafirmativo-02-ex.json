@@ -10,18 +10,23 @@
         "haz",
         "hace",
         "haga",
-        "hazlo"
+        "hagas"
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo-irregular"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "imperativo-formal-usted",
+        "3": "imperativo-negativo"
+      }
     },
     {
       "id": "a2.imperativoafirmativo.02.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¡_____ (poner) los libros sobre la mesa!",
+      "question": "¡_____ (poner, tú) los libros sobre la mesa!",
       "options": [
         "Pon",
         "Pone",
@@ -31,7 +36,12 @@
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo-irregular"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "imperativo-formal-usted",
+        "3": "present-tense"
+      }
     },
     {
       "id": "a2.imperativoafirmativo.02.ex03",
@@ -48,7 +58,7 @@
       "id": "a2.imperativoafirmativo.02.ex04",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "¡_____ (tener) cuidado con el suelo mojado!",
+      "sentence": "¡_____ (tener, tú) cuidado con el suelo mojado!",
       "answer": "Ten",
       "teaches": [
         "imperativo-afirmativo-irregular"
@@ -57,7 +67,7 @@
     },
     {
       "id": "a2.imperativoafirmativo.02.ex05",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -78,7 +88,7 @@
         ]
       ],
       "teaches": [
-        "imperativo-afirmativo-irregular"
+        "a2-giving-instructions-directions-vocab"
       ]
     },
     {
@@ -120,14 +130,12 @@
       ],
       "options": [
         "Ten cuidado y dime la verdad.",
-        "Tienes cuidado y me dices la verdad.",
+        "Tengas cuidado y me digas la verdad.",
         "Tuvo cuidado y me dijo la verdad."
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo-irregular",
-        "tener",
-        "a1-greetings-introductions-vocab"
+        "imperativo-afirmativo-irregular"
       ]
     },
     {
@@ -146,13 +154,12 @@
       ],
       "options": [
         "Ven a las cinco y sal con tiempo de casa.",
-        "Vienes a las cinco y sales con tiempo de casa.",
+        "Vengas a las cinco y salgas con tiempo de casa.",
         "Vino a las cinco y salió con tiempo de casa."
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo-irregular",
-        "a1-greetings-introductions-vocab"
+        "imperativo-afirmativo-irregular"
       ]
     },
     {
@@ -161,20 +168,16 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Tell someone to do their homework and be nice.",
+          "prompt": "Tell a friend to do their homework and be nice.",
           "answer": "Haz tu tarea y sé amable con todos."
         },
         {
-          "prompt": "Tell someone to go now and put the books on the table.",
+          "prompt": "Tell a friend to go now and put the books on the table.",
           "answer": "Ve ahora y pon los libros en la mesa."
         }
       ],
       "teaches": [
-        "imperativo-afirmativo-irregular",
-        "hacer",
-        "a1-greetings-introductions-vocab",
-        "ser",
-        "ir"
+        "imperativo-afirmativo-irregular"
       ]
     },
     {
@@ -190,9 +193,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperativo-afirmativo-irregular",
-        "tener",
-        "a1-greetings-introductions-vocab"
+        "imperativo-afirmativo-irregular"
       ]
     },
     {
@@ -201,9 +202,7 @@
       "type": "dictation",
       "sentence": "Ven aquí, haz tu tarea y sal temprano.",
       "teaches": [
-        "imperativo-afirmativo-irregular",
-        "a1-greetings-introductions-vocab",
-        "hacer"
+        "imperativo-afirmativo-irregular"
       ],
       "english": "Come here, do your homework, and leave early."
     }
