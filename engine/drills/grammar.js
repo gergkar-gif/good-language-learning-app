@@ -161,6 +161,7 @@ const GrammarDriller = (function () {
         _selectedSkill = null;
         _weakCandidates = [];
         _checkedWeakSkills.clear();
+        _activeTab = TAB.WEAK;
         _closeRuleModal();
     });
 
@@ -188,6 +189,24 @@ const GrammarDriller = (function () {
         const entries = (_index && _index.bySkill && (_index.bySkill[canonical] || _index.bySkill[skillId])) || [];
         const valid = entries.filter(e => !e.type || SUPPORTED_TYPES.has(e.type));
         return valid.length;
+    }
+
+    function _bankPoolSize(skillId) {
+        const canonical = _canonicalSkill(skillId);
+        return ((_bank && _bank.items) || [])
+            .filter(i => _canonicalSkill(i.module) === canonical)
+            .length;
+    }
+
+    function _effectivePoolSize(skillId, isLearned) {
+        const canonical = _canonicalSkill(skillId);
+        const bankCount = _bankPoolSize(canonical);
+        const lessonCount = _lessonPoolSize(canonical);
+        const totalLesson = _totalLessonPoolSize(canonical);
+        if (isLearned) {
+            return lessonCount + bankCount;
+        }
+        return (lessonCount || totalLesson) + bankCount;
     }
 
     function _getLearnedSkillIds() {
@@ -479,7 +498,7 @@ const GrammarDriller = (function () {
         for (const t of trouble) {
             const sid = _canonicalSkill(t.skillId);
             if (seenSkills.has(sid)) continue;
-            if (_lessonPoolSize(sid) > 0) {
+            if (_effectivePoolSize(sid, true) > 0) {
                 seenSkills.add(sid);
                 const info = _skillInfo(sid);
                 candidates.push({
@@ -500,7 +519,7 @@ const GrammarDriller = (function () {
             for (const w of weak) {
                 const sid = _canonicalSkill(w.skillId);
                 if (seenSkills.has(sid)) continue;
-                if (_lessonPoolSize(sid) > 0) {
+                if (_effectivePoolSize(sid, true) > 0) {
                     seenSkills.add(sid);
                     const info = _skillInfo(sid);
                     const isWeak = w.state === 'weak';
@@ -523,7 +542,7 @@ const GrammarDriller = (function () {
             _isCleanState = true;
             const learnedIds = Array.from(_getLearnedSkillIds()).reverse();
             for (const sid of learnedIds) {
-                if (_lessonPoolSize(sid) > 0) {
+                if (_effectivePoolSize(sid, true) > 0) {
                     const info = _skillInfo(sid);
                     candidates.push({
                         skillId: sid,
@@ -550,8 +569,8 @@ const GrammarDriller = (function () {
         const skillsDict = (_registry && _registry.skills) || {};
         const learnedSet = _getLearnedSkillIds();
 
-        // Include skills from registry with kind === 'grammar', or fallback from index
-        let skillIds = Object.keys(skillsDict).filter(id => skillsDict[id].kind === 'grammar');
+        // Include skills from registry with kind === 'grammar' and NOT retired, or fallback from index
+        let skillIds = Object.keys(skillsDict).filter(id => skillsDict[id].kind === 'grammar' && !skillsDict[id].retired);
         if (!skillIds.length && _index && _index.bySkill) {
             skillIds = Object.keys(_index.bySkill);
         }
@@ -561,10 +580,13 @@ const GrammarDriller = (function () {
 
         skillIds.forEach(id => {
             const canonical = _canonicalSkill(id);
+            const totalSize = _totalLessonPoolSize(canonical) + _bankPoolSize(canonical);
+            // Hide skills that have 0 exercises available in this course
+            if (totalSize === 0) return;
+
             const info = _skillInfo(canonical);
-            const poolSize = _lessonPoolSize(canonical);
-            const totalSize = _totalLessonPoolSize(canonical);
             const isLearned = learnedSet.has(canonical);
+            const poolSize = _effectivePoolSize(canonical, isLearned);
 
             const item = {
                 id: canonical,
@@ -750,7 +772,16 @@ const GrammarDriller = (function () {
         if (_activeTab === TAB.WEAK) {
             // Tab 1: Fix weak areas
             if (_weakCandidates.length === 0) {
-                tabContentHtml = `<div class="gd-loading">Checking your recent progress…</div>`;
+                tabContentHtml = `
+                    <div class="gd-clean-state">
+                        <div class="gd-clean-icon">${(typeof Art !== 'undefined') ? Art.icon('sparkles') : '✦'}</div>
+                        <h3 class="gd-clean-title">No practice history yet!</h3>
+                        <p class="gd-clean-desc">Complete lessons to track concepts you find challenging, or pick any grammar skill to practice directly.</p>
+                        <div class="gd-clean-actions">
+                            <button type="button" class="vbtn vbtn-primary" data-action="switch-to-skill-tab">Browse All Skills</button>
+                        </div>
+                    </div>
+                `;
             } else if (_isCleanState && _weakCandidates.length > 0) {
                 tabContentHtml = `
                     <div class="gd-clean-state">
@@ -836,13 +867,19 @@ const GrammarDriller = (function () {
                 }).join('');
             };
 
+            const isNewLearner = catalogue.taught.length === 0;
             const taughtListHtml = filteredTaught.length
                 ? renderSkillGroup(filteredTaught)
-                : '<div class="gd-skill-empty">No matching taught skills.</div>';
+                : (isNewLearner && !q ? '' : '<div class="gd-skill-empty">No matching taught skills.</div>');
 
             const untaughtListHtml = filteredUntaught.length
                 ? renderSkillGroup(filteredUntaught)
                 : '<div class="gd-skill-empty">No matching untaught skills.</div>';
+
+            const untaughtOpen = q || isNewLearner;
+            const untaughtTitle = isNewLearner
+                ? `All skills (${catalogue.untaught.length} skills)`
+                : `Not taught yet (${catalogue.untaught.length} skills)`;
 
             tabContentHtml = `
                 <div class="gd-skill-browser-wrap">
@@ -855,8 +892,8 @@ const GrammarDriller = (function () {
                         ${taughtListHtml}
 
                         ${catalogue.untaught.length ? `
-                            <details class="gd-untaught-section" ${q ? 'open' : ''}>
-                                <summary class="gd-untaught-summary">Not taught yet (${catalogue.untaught.length} skills)</summary>
+                            <details class="gd-untaught-section" ${untaughtOpen ? 'open' : ''}>
+                                <summary class="gd-untaught-summary">${untaughtTitle}</summary>
                                 <div class="gd-untaught-list" style="margin-top:8px;">
                                     ${untaughtListHtml}
                                 </div>
@@ -880,7 +917,8 @@ const GrammarDriller = (function () {
                 ` : ''}
 
                 ${countSelectorHtml}
-                <button class="vbtn vbtn-primary vbtn-block" data-action="start-skill">Start Practice</button>
+                <button class="vbtn vbtn-primary vbtn-block" data-action="start-skill"
+                    ${!_selectedSkill ? 'disabled style="opacity:0.5;"' : ''}>Start Practice</button>
             `;
         }
 
@@ -1347,6 +1385,9 @@ const GrammarDriller = (function () {
 
                 await _startSession();
             } else {
+                if (_weakCandidates.length === 0 && _getLearnedSkillIds().size === 0) {
+                    _activeTab = TAB.SKILL;
+                }
                 await _renderSettings();
             }
         } else if (_phase === PHASE.SESSION) {

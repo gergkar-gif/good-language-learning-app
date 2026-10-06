@@ -69,6 +69,17 @@ const WritingDriller = (function () {
             _promptsData = data && data.prompts ? data.prompts : [];
             _loadedLang = lang;
         } catch (e) {
+            const fallbackPath = lang === 'es-es'
+                ? 'content/es-latam/writing-prompts.json'
+                : (lang === 'es-latam' ? 'content/es-es/writing-prompts.json' : null);
+            if (fallbackPath) {
+                try {
+                    const fallback = await Content.json(fallbackPath);
+                    _promptsData = fallback && fallback.prompts ? fallback.prompts : [];
+                    _loadedLang = lang;
+                    return;
+                } catch (e2) {}
+            }
             _promptsData = [];
         }
     }

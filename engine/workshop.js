@@ -55,6 +55,15 @@ const Workshop = (function () {
             category: 'exams'
         },
         {
+            id: 'es-ccse-exam',
+            icon: 'es-ccse-exam',
+            title: 'Spanish CCSE Exam',
+            sub: 'Prueba CCSE · Conocimientos Constitucionales y Socioculturales de España (Instituto Cervantes). 5 tareas, 25 preguntas y simulacros.',
+            containerId: 'es-ccse-exam-root',
+            langs: ['es-es'],
+            category: 'exams'
+        },
+        {
             id: 'verbs',
             icon: 'verbs',
             title: 'Verb Driller',
@@ -143,7 +152,9 @@ const Workshop = (function () {
         // Spanish Verb Driller's since only one of the two ever shows
         'hu-verb': '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M50 92 50 8A42 42 0 0 1 50 92Z" class="ps-ink"/><rect x="60" y="60" width="16" height="16" class="ps-accent"/>',
         // a dome/arch crowned with an accent jewel — Hungarian Cultural Exam
-        'hu-cultural-exam': '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M26 70V48a24 24 0 0 1 48 0v22Z" class="ps-ink"/><circle cx="50" cy="20" r="7" class="ps-accent"/>'
+        'hu-cultural-exam': '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M26 70V48a24 24 0 0 1 48 0v22Z" class="ps-ink"/><circle cx="50" cy="20" r="7" class="ps-accent"/>',
+        // classical pillars supporting an arch with a royal crown jewel — Spanish CCSE Exam
+        'es-ccse-exam': '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M25 72h50v-5H25v5Zm6-9h6V34h-6v29Zm16 0h6V34h-6v29Zm16 0h6V34h-6v29ZM22 30h56l-28-13-28 13Z" class="ps-ink"/><circle cx="50" cy="21" r="5" class="ps-accent"/>'
     };
 
     function _drillerIcon(id) {
@@ -232,6 +243,7 @@ const Workshop = (function () {
             writing: typeof WritingDriller !== 'undefined' ? WritingDriller : null,
             'hu-verb-studio': typeof HuVerbStudio !== 'undefined' ? HuVerbStudio : null,
             'hu-cultural-exam': typeof HuCulturalExam !== 'undefined' ? HuCulturalExam : null,
+            'es-ccse-exam': typeof CcseExam !== 'undefined' ? CcseExam : null,
             'hu-verb': typeof HuVerbDriller !== 'undefined' ? HuVerbDriller : null,
             'hu-suffix': typeof HuSuffixDriller !== 'undefined' ? HuSuffixDriller : null,
             'hu-prefix': typeof HuPrefixDriller !== 'undefined' ? HuPrefixDriller : null,

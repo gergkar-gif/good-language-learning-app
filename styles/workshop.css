@@ -4652,6 +4652,10 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 .hce-match-tile.is-matched { box-shadow: inset 0 0 0 2px var(--success); background: var(--success-bg); }
 .hce-match-tile.is-wrong { box-shadow: inset 0 0 0 2px var(--danger); background: var(--danger-bg); }
 
+/* SPANISH CCSE EXAM (Workshop > Exam Preparation) */
+#ccse-timer-display.is-warning { color: var(--danger); font-weight: 700; }
+.ccse-task-header { margin: 28px 0 14px; padding: 10px 14px; background: var(--wash); border-left: 3px solid var(--primary); border-radius: var(--radius-sm); }
+
 /* WRITING STUDIO session, and the .vbtn buttons used by the drillers */
 .vbtn, .vbtn-primary, .vbtn-secondary { border-radius: var(--radius-sm); box-shadow: none; }
 .vbtn-primary { background: var(--primary); color: var(--bg); border: 0; }
