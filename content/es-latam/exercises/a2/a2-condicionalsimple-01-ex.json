@@ -8,20 +8,24 @@
       "question": "A mí me _____ (gustar) visitar Machu Picchu algún día.",
       "options": [
         "gustaría",
-        "gustará",
+        "gustarían",
         "gustaba",
         "gustó"
       ],
       "correct": 0,
       "teaches": [
         "condicional-regular"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "imperfect",
+        "3": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.condicionalsimple.01.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Tú _____ (vivir) en una ciudad pequeña o en una gran capital?",
+      "question": "¿Tú _____ (vivir) en una ciudad pequeña o en una gran capital si pudieras elegir?",
       "options": [
         "vivirías",
         "vivías",
@@ -31,7 +35,12 @@
       "correct": 0,
       "teaches": [
         "condicional-regular"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "present-tense",
+        "3": "futuro-simple"
+      }
     },
     {
       "id": "a2.condicionalsimple.01.ex03",
@@ -57,7 +66,7 @@
     },
     {
       "id": "a2.condicionalsimple.01.ex05",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -78,7 +87,7 @@
         ]
       ],
       "teaches": [
-        "condicional-regular"
+        "a2-asking-politely-giving-advice-vocab"
       ]
     },
     {
@@ -127,11 +136,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "condicional-regular",
-        "gustar",
-        "a1-greetings-introductions-vocab",
-        "futuro-simple"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.condicionalsimple.01.ex08",
@@ -154,9 +164,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "condicional-regular",
-        "a1-greetings-introductions-vocab"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.condicionalsimple.01.ex09",
@@ -164,18 +177,16 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say that you would like to work in another country: I would work there.",
+          "prompt": "Say that you would like to work in another country and live a new experience.",
           "answer": "Me gustaría trabajar en otro país y vivir una nueva experiencia."
         },
         {
-          "prompt": "Say that it is your dream: In the future I would like to buy a house.",
+          "prompt": "Say that in the future you would buy a house if it were possible.",
           "answer": "En el futuro compraría una casa si fuera posible."
         }
       ],
       "teaches": [
-        "condicional-regular",
-        "a1-greetings-introductions-vocab",
-        "futuro-simple"
+        "condicional-regular"
       ]
     },
     {
@@ -191,9 +202,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "condicional-regular",
-        "futuro-simple",
-        "a1-greetings-introductions-vocab"
+        "condicional-regular"
       ]
     },
     {
@@ -202,9 +211,7 @@
       "type": "dictation",
       "sentence": "Sería posible comprar esa casa en el futuro.",
       "teaches": [
-        "condicional-regular",
-        "a1-greetings-introductions-vocab",
-        "futuro-simple"
+        "condicional-regular"
       ],
       "english": "It would be possible to buy that house in the future."
     }

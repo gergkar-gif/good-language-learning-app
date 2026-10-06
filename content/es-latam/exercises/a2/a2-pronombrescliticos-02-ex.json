@@ -14,8 +14,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "objeto-indirecto"
-      ]
+        "objeto-directo"
+      ],
+      "distractor_skills": {
+        "1": "objeto-indirecto"
+      }
     },
     {
       "id": "a2.pronombrescliticos.02.ex02",
@@ -31,7 +34,11 @@
       "correct": 0,
       "teaches": [
         "objeto-indirecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "objeto-directo",
+        "2": "objeto-directo"
+      }
     },
     {
       "id": "a2.pronombrescliticos.02.ex03",
@@ -40,7 +47,7 @@
       "sentence": "Compré unos zapatos nuevos y _____ (los zapatos) estrené ayer.",
       "answer": "los",
       "teaches": [
-        "objeto-indirecto"
+        "objeto-directo"
       ],
       "english": "I bought new shoes and wore them for the first time yesterday."
     },
@@ -57,7 +64,7 @@
     },
     {
       "id": "a2.pronombrescliticos.02.ex05",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -78,7 +85,7 @@
         ]
       ],
       "teaches": [
-        "objeto-indirecto"
+        "a2-pronouns-vocab"
       ]
     },
     {
@@ -127,9 +134,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "objeto-indirecto",
-        "a1-greetings-introductions-vocab"
-      ]
+        "objeto-directo"
+      ],
+      "distractor_skills": {
+        "1": "objeto-indirecto"
+      }
     },
     {
       "id": "a2.pronombrescliticos.02.ex08",
@@ -152,9 +161,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "objeto-indirecto",
-        "a1-greetings-introductions-vocab"
-      ]
+        "objeto-indirecto"
+      ],
+      "distractor_skills": {
+        "1": "objeto-directo",
+        "2": "objeto-directo"
+      }
     },
     {
       "id": "a2.pronombrescliticos.02.ex09",
@@ -163,7 +175,7 @@
       "template": [
         {
           "prompt": "Say that you buy the book and show it to your friend.",
-          "answer": "Compro el libro y se lo enseño a mi amigo."
+          "answer": "Compro el libro y lo enseño a mi amigo."
         },
         {
           "prompt": "Say that they sell fruit and take it to the market.",
@@ -171,8 +183,7 @@
         }
       ],
       "teaches": [
-        "objeto-indirecto",
-        "a1-greetings-introductions-vocab"
+        "objeto-directo"
       ]
     },
     {
@@ -188,8 +199,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "objeto-indirecto",
-        "a1-greetings-introductions-vocab"
+        "a2-pronouns-vocab"
       ]
     },
     {
@@ -198,8 +208,7 @@
       "type": "dictation",
       "sentence": "Te traje esta carta y te di la noticia.",
       "teaches": [
-        "objeto-indirecto",
-        "a1-greetings-introductions-vocab"
+        "objeto-indirecto"
       ],
       "english": "I brought you this letter and gave you the news."
     }

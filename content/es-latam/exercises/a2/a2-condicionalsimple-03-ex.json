@@ -8,14 +8,19 @@
       "question": "Buenas tardes, ¿_____ (desear, usted) ver la carta de postres?",
       "options": [
         "desearía",
-        "deseaba",
-        "desea",
-        "deseará"
+        "desearon",
+        "deseas",
+        "desearás"
       ],
       "correct": 0,
       "teaches": [
         "polite-softening"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "present-tense",
+        "3": "futuro-simple"
+      }
     },
     {
       "id": "a2.condicionalsimple.03.ex02",
@@ -25,13 +30,16 @@
       "options": [
         "podría",
         "pueda",
-        "podías",
+        "podrías",
         "pudo"
       ],
       "correct": 0,
       "teaches": [
         "polite-softening"
-      ]
+      ],
+      "distractor_skills": {
+        "3": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.condicionalsimple.03.ex03",
@@ -57,7 +65,7 @@
     },
     {
       "id": "a2.condicionalsimple.03.ex05",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -78,7 +86,7 @@
         ]
       ],
       "teaches": [
-        "polite-softening"
+        "a2-asking-politely-giving-advice-vocab"
       ]
     },
     {
@@ -129,8 +137,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "polite-softening",
-        "a1-greetings-introductions-vocab"
+        "a2-asking-politely-giving-advice-vocab"
       ]
     },
     {
@@ -154,9 +161,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "polite-softening",
-        "a1-greetings-introductions-vocab"
-      ]
+        "polite-softening"
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.condicionalsimple.03.ex09",
@@ -173,9 +183,7 @@
         }
       ],
       "teaches": [
-        "polite-softening",
-        "preterito-perfecto",
-        "a1-greetings-introductions-vocab"
+        "polite-softening"
       ]
     },
     {
@@ -191,8 +199,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "polite-softening",
-        "a1-greetings-introductions-vocab"
+        "a2-asking-politely-giving-advice-vocab"
       ]
     },
     {
@@ -201,9 +208,7 @@
       "type": "dictation",
       "sentence": "¿Podría reservar una mesa para probar este plato?",
       "teaches": [
-        "polite-softening",
-        "preterito-perfecto",
-        "a1-greetings-introductions-vocab"
+        "polite-softening"
       ],
       "english": "Could I reserve a table to try this dish?"
     }

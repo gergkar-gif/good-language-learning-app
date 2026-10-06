@@ -8,14 +8,17 @@
       "question": "Disculpe, ¿_____ (poder, usted) decirme qué hora es?",
       "options": [
         "podría",
-        "podía",
+        "podían",
         "pudo",
-        "puede"
+        "podrías"
       ],
       "correct": 0,
       "teaches": [
         "condicional-irregular"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.condicionalsimple.02.ex02",
@@ -24,14 +27,19 @@
       "question": "En tu lugar, yo _____ (hacer) una lista de prioridades.",
       "options": [
         "haría",
-        "hacía",
+        "hacías",
         "haré",
         "hice"
       ],
       "correct": 0,
       "teaches": [
         "condicional-irregular"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "futuro-simple",
+        "3": "preterite-irregular-stems"
+      }
     },
     {
       "id": "a2.condicionalsimple.02.ex03",
@@ -57,7 +65,7 @@
     },
     {
       "id": "a2.condicionalsimple.02.ex05",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -78,7 +86,7 @@
         ]
       ],
       "teaches": [
-        "condicional-irregular"
+        "a2-asking-politely-giving-advice-vocab"
       ]
     },
     {
@@ -129,11 +137,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "condicional-irregular",
-        "a1-greetings-introductions-vocab",
-        "por-que-y-porque",
-        "tener"
-      ]
+        "condicional-irregular"
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterite-irregular-stems"
+      }
     },
     {
       "id": "a2.condicionalsimple.02.ex08",
@@ -151,14 +160,17 @@
       ],
       "options": [
         "Saldría muy temprano y pondría todo en una sola maleta.",
-        "Salgo muy temprano y pongo todo en una sola maleta.",
+        "Salía muy temprano y ponía todo en una sola maleta.",
         "Salí muy temprano y puse todo en una sola maleta."
       ],
       "correct": 0,
       "teaches": [
-        "condicional-irregular",
-        "a1-greetings-introductions-vocab"
-      ]
+        "condicional-irregular"
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.condicionalsimple.02.ex09",
@@ -166,7 +178,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say what you could do in their place: In your place, I would make a reservation.",
+          "prompt": "Say what you could do in their place: In your place, I could make a reservation in advance.",
           "answer": "En tu lugar, yo podría hacer una reserva con tiempo."
         },
         {
@@ -175,11 +187,7 @@
         }
       ],
       "teaches": [
-        "condicional-irregular",
-        "a1-greetings-introductions-vocab",
-        "hacer",
-        "por-que-y-porque",
-        "tener"
+        "condicional-irregular"
       ]
     },
     {
@@ -195,8 +203,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "condicional-irregular",
-        "a1-greetings-introductions-vocab"
+        "condicional-irregular"
       ]
     },
     {
@@ -205,9 +212,7 @@
       "type": "dictation",
       "sentence": "En mi opinión, podríamos visitar otro lugar mañana.",
       "teaches": [
-        "condicional-irregular",
-        "por-que-y-porque",
-        "a1-greetings-introductions-vocab"
+        "condicional-irregular"
       ],
       "english": "In my opinion, we could visit another place tomorrow."
     }

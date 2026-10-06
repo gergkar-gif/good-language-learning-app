@@ -5,7 +5,7 @@
       "id": "a2.condicionalsimple.05.ex01",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Con más dinero, Carlos y Meg _____ (viajar) por toda Sudamérica.",
+      "question": "Si tuvieran más dinero, Carlos y Meg _____ (viajar) por toda Sudamérica.",
       "options": [
         "viajarían",
         "viajaban",
@@ -14,14 +14,19 @@
       ],
       "correct": 0,
       "teaches": [
-        "condicional-consejos"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterito-indefinido",
+        "3": "present-tense"
+      }
     },
     {
       "id": "a2.condicionalsimple.05.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Qué lugar te _____ (gustar) más visitar?",
+      "question": "Si pudieras viajar a cualquier sitio, ¿qué lugar te _____ (gustar) más visitar?",
       "options": [
         "gustaría",
         "gustaba",
@@ -30,8 +35,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "condicional-consejos"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "present-tense",
+        "3": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.condicionalsimple.05.ex03",
@@ -40,7 +50,7 @@
       "sentence": "Nosotros _____ (alquilar) una furgoneta para recorrer la costa.",
       "answer": "alquilaríamos",
       "teaches": [
-        "condicional-consejos"
+        "condicional-regular"
       ],
       "english": "We would rent a van to travel along the coast."
     },
@@ -51,13 +61,13 @@
       "sentence": "Ese viaje por los Andes _____ (ser) una experiencia inolvidable.",
       "answer": "sería",
       "teaches": [
-        "condicional-consejos"
+        "condicional-regular"
       ],
       "english": "That trip through the Andes would be an unforgettable experience."
     },
     {
       "id": "a2.condicionalsimple.05.ex05",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -78,7 +88,7 @@
         ]
       ],
       "teaches": [
-        "condicional-consejos"
+        "a2-asking-politely-giving-advice-vocab"
       ]
     },
     {
@@ -103,7 +113,7 @@
       ],
       "english": "I would love to camp under the stars.",
       "teaches": [
-        "condicional-consejos"
+        "condicional-regular"
       ]
     },
     {
@@ -117,19 +127,16 @@
         "Por Argentina",
         "Por Chile"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-greetings-introductions-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a2.condicionalsimple.05.ex08",
-      "category": "reading",
+      "category": "vocabulary",
       "type": "fill-blank",
-      "sentence": "Meg dice que deberían empezar a _____ (ahorrar) dinero para el viaje.",
+      "sentence": "Meg dice que deberían empezar a _____ (to save) dinero para el viaje.",
       "answer": "ahorrar",
       "teaches": [
-        "a1-greetings-introductions-vocab"
+        "a2-asking-politely-giving-advice-vocab"
       ],
       "english": "Meg says that they should start saving money for the trip."
     },
@@ -154,10 +161,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "condicional-consejos",
-        "a1-greetings-introductions-vocab",
-        "preterito-indefinido"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.condicionalsimple.05.ex10",
@@ -166,7 +175,7 @@
       "prompt": [
         {
           "speaker": "Daniela",
-          "text": "¿Qué te pareció la idea de hacer una expedición a la selva?"
+          "text": "¿Cómo sería para ti una expedición a la selva?"
         },
         {
           "speaker": "Meg",
@@ -175,14 +184,17 @@
       ],
       "options": [
         "Sería una aventura maravillosa con paisajes inolvidables.",
-        "Es una aventura maravillosa con paisajes inolvidables.",
+        "Era una aventura maravillosa con paisajes inolvidables.",
         "Fue una aventura maravillosa con paisajes inolvidables."
       ],
       "correct": 0,
       "teaches": [
-        "condicional-consejos",
-        "a1-greetings-introductions-vocab"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.condicionalsimple.05.ex11",
@@ -199,9 +211,7 @@
         }
       ],
       "teaches": [
-        "condicional-consejos",
-        "a1-greetings-introductions-vocab",
-        "preterito-indefinido"
+        "condicional-regular"
       ]
     },
     {
@@ -217,8 +227,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "condicional-consejos",
-        "a1-greetings-introductions-vocab"
+        "a2-asking-politely-giving-advice-vocab"
       ]
     },
     {
@@ -227,9 +236,7 @@
       "type": "dictation",
       "sentence": "Disfrutar de la playa y la cultura sería una experiencia inolvidable.",
       "teaches": [
-        "condicional-consejos",
-        "a1-greetings-introductions-vocab",
-        "preterito-indefinido"
+        "condicional-regular"
       ],
       "english": "Enjoying the beach and the culture would be an unforgettable experience."
     }
