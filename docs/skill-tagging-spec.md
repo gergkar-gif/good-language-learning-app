@@ -169,6 +169,8 @@ So every unit is tagged the same way:
   <decisions.json>`; it refuses a file with an exercise left undecided. Then
   `lock_tags.py`.
 
+- **A unit's own contrast outranks the Sí/No rule (ES A2, decided with the user 2026-10-06).** In a dialogue whose wrong replies differ in the contrast the unit teaches (*Sí, todavía no…* beside *Sí, ya…*; *desde hace* vs *desde enero*), tag that grammar skill, because a learner who picks the wrong reply has confused that contrast and should be routed to its practice. Use the unit vocabulary skill only when the wrong replies differ just by Sí/No or an infinitive.
+
 ## Coverage
 
 Every skill should have at least **6 exercises** (per variant for Spanish),
