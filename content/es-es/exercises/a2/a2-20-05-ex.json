@@ -27,7 +27,7 @@
       "id": "a2.20.05.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence uses the target form correctly?",
+      "question": "Which sentence uses the pretérito perfecto correctly?",
       "options": [
         "Hemos aprendido mucho.",
         "Aprendimos mañana.",
@@ -36,7 +36,10 @@
       "correct": 0,
       "teaches": [
         "preterito-perfecto-vs-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.20.05.ex03",
@@ -44,7 +47,7 @@
       "type": "fill-blank",
       "answer": "Hemos",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "sentence": "__ aprendido mucho este año.",
       "english": "We have learned a lot this year."
@@ -55,7 +58,7 @@
       "type": "sentence-builder",
       "english": "We have shared many memories.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "tiles": [
         "Hemos",
@@ -82,7 +85,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "past-participles"
       ]
     },
     {
@@ -107,19 +110,22 @@
       "id": "a2.20.05.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "answer": "Has",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "sentence": "¿__ terminado el curso?",
-      "english": "Have you finished the course?"
+      "english": "Have you finished the course?",
+      "answers": [
+        "Has",
+        "Ha"
+      ]
     },
     {
       "id": "a2.20.05.ex08",
       "category": "grammar",
       "type": "sentence-builder",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "tiles": [
         "Hemos",
@@ -144,7 +150,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ]
     },
     {
@@ -229,7 +235,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Qué hizo Daniela?"
+          "text": "¿Qué hizo Daniela la semana pasada?"
         },
         {
           "speaker": "Meg",
@@ -243,8 +249,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
-      ]
+        "preterito-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.20.05.ex17",
@@ -267,8 +277,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "ir-infinitive"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "ir-infinitive"
+      }
     },
     {
       "id": "a2.20.05.ex18",
@@ -292,7 +306,11 @@
       "correct": 0,
       "teaches": [
         "ir-infinitive"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.20.05.ex19",
@@ -317,7 +335,7 @@
         }
       ],
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "a2-looking-back-moving-forward-vocab"
       ]
     },
     {
@@ -333,8 +351,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "ir-infinitive",
+        "3": "futuro-simple"
+      }
     },
     {
       "id": "a2.20.05.ex21",
@@ -342,7 +365,7 @@
       "type": "dictation",
       "sentence": "Recordé muchos buenos momentos.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-indefinido"
       ],
       "english": "I remembered many good moments."
     }

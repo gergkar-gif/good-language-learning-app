@@ -35,7 +35,7 @@
       "id": "a2.20.01.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence uses the target form correctly?",
+      "question": "Which sentence uses the pretérito perfecto correctly?",
       "options": [
         "Hemos aprendido mucho.",
         "Aprendimos mañana.",
@@ -44,7 +44,10 @@
       "correct": 0,
       "teaches": [
         "preterito-perfecto-vs-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.20.01.ex03",
@@ -52,7 +55,7 @@
       "type": "fill-blank",
       "answer": "Hemos",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "sentence": "__ aprendido mucho este año.",
       "english": "We have learned a lot this year."
@@ -63,7 +66,7 @@
       "type": "sentence-builder",
       "english": "We have shared many memories.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "tiles": [
         "Hemos",
@@ -90,7 +93,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "past-participles"
       ]
     },
     {
@@ -115,19 +118,22 @@
       "id": "a2.20.01.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "answer": "Has",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "sentence": "¿__ terminado el curso?",
-      "english": "Have you finished the course?"
+      "english": "Have you finished the course?",
+      "answers": [
+        "Has",
+        "Ha"
+      ]
     },
     {
       "id": "a2.20.01.ex08",
       "category": "grammar",
       "type": "sentence-builder",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "tiles": [
         "Hemos",
@@ -152,7 +158,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ]
     },
     {
@@ -176,9 +182,9 @@
       "type": "fill-blank",
       "answer": "han conocido",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
-      "sentence": "Carlos y Meg __ a personas increíbles.",
+      "sentence": "Carlos y Meg __ a personas increíbles. (conocer)",
       "english": "Carlos and Meg have met incredible people."
     },
     {
@@ -193,12 +199,16 @@
       ],
       "correct": 0,
       "teaches": [
-        "ir-infinitive"
-      ]
+        "preterito-perfecto-vs-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "ir-infinitive"
+      }
     },
     {
       "id": "a2.20.01.ex13",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -219,7 +229,7 @@
         ]
       ],
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "a2-looking-back-moving-forward-vocab"
       ]
     },
     {
@@ -243,8 +253,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.20.01.ex15",
@@ -267,8 +280,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "ir-infinitive"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.20.01.ex16",
@@ -285,8 +301,7 @@
         }
       ],
       "teaches": [
-        "preterito-perfecto",
-        "a2-looking-back-moving-forward-vocab"
+        "preterito-perfecto"
       ]
     },
     {
@@ -302,8 +317,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "alguna-vez"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "ir-infinitive",
+        "3": "present-tense"
+      }
     },
     {
       "id": "a2.20.01.ex18",
@@ -311,8 +331,7 @@
       "type": "dictation",
       "sentence": "He aprendido mucho este año.",
       "teaches": [
-        "preterito-perfecto",
-        "a2-looking-back-moving-forward-vocab"
+        "preterito-perfecto"
       ],
       "english": "I have learnt a lot this year."
     }

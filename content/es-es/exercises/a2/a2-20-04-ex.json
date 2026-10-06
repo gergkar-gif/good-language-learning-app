@@ -31,7 +31,7 @@
       "id": "a2.20.04.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence uses the target form correctly?",
+      "question": "Which sentence uses the pretérito perfecto correctly?",
       "options": [
         "Hemos aprendido mucho.",
         "Aprendimos mañana.",
@@ -40,7 +40,10 @@
       "correct": 0,
       "teaches": [
         "preterito-perfecto-vs-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.20.04.ex03",
@@ -48,7 +51,7 @@
       "type": "fill-blank",
       "answer": "Hemos",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "sentence": "__ aprendido mucho este año.",
       "english": "We have learned a lot this year."
@@ -59,7 +62,7 @@
       "type": "sentence-builder",
       "english": "We have shared many memories.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "tiles": [
         "Hemos",
@@ -86,7 +89,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "past-participles"
       ]
     },
     {
@@ -111,19 +114,22 @@
       "id": "a2.20.04.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "answer": "Has",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "sentence": "¿__ terminado el curso?",
-      "english": "Have you finished the course?"
+      "english": "Have you finished the course?",
+      "answers": [
+        "Has",
+        "Ha"
+      ]
     },
     {
       "id": "a2.20.04.ex08",
       "category": "grammar",
       "type": "sentence-builder",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ],
       "tiles": [
         "Hemos",
@@ -148,7 +154,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-perfecto"
       ]
     },
     {
@@ -172,9 +178,9 @@
       "type": "fill-blank",
       "answer": "será",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "futuro-simple"
       ],
-      "sentence": "El futuro __ diferente.",
+      "sentence": "El futuro __ diferente. (ser)",
       "english": "The future will be different."
     },
     {
@@ -189,8 +195,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "ser-passive"
-      ]
+        "futuro-simple"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.20.04.ex13",
@@ -198,7 +208,7 @@
       "type": "sentence-builder",
       "english": "We will achieve our goals.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "futuro-simple"
       ],
       "tiles": [
         "Lograremos",
@@ -217,9 +227,9 @@
       "type": "fill-blank",
       "answer": "volverán",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "futuro-simple"
       ],
-      "sentence": "Probablemente __ algún día.",
+      "sentence": "Probablemente __ algún día. (volver)",
       "english": "They will probably return someday."
     },
     {
@@ -243,8 +253,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "ser-passive"
-      ]
+        "futuro-simple"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.20.04.ex16",
@@ -267,8 +281,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
-      ]
+        "futuro-simple"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.20.04.ex17",
@@ -305,8 +323,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
-      ]
+        "futuro-simple"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "preterito-perfecto",
+        "3": "present-tense"
+      }
     },
     {
       "id": "a2.20.04.ex19",
@@ -314,7 +337,7 @@
       "type": "dictation",
       "sentence": "Lograremos nuestros objetivos.",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "futuro-simple"
       ],
       "english": "We will achieve our goals."
     }
