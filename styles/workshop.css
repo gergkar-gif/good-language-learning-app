@@ -191,22 +191,54 @@
 }
 
 .gd-settings {
-    max-width: 480px;
+    max-width: 540px;
     margin: 0 auto;
     padding: 16px;
 }
 
 .gd-title {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     color: var(--primary);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+}
+
+/* ---- Tab Switcher ---- */
+.gd-tab-switcher {
+    display: flex;
+    gap: 20px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 20px;
+}
+
+.gd-tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    padding: 10px 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color var(--dur-fast) var(--ease-standard),
+                border-color var(--dur-fast) var(--ease-standard);
+}
+
+.gd-tab-btn:hover {
+    color: var(--text);
+}
+
+.gd-tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
 }
 
 .gd-setting {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
     margin-bottom: 20px;
 }
 
@@ -218,118 +250,227 @@
     letter-spacing: 0.03em;
 }
 
-.gd-hint {
-    font-size: 0.85rem;
-    color: var(--muted);
-    margin: -8px 0 16px;
+/* ---- Question Count Chips ---- */
+.gd-count-chips {
+    display: flex;
+    gap: 8px;
 }
 
-.gd-custom-select {
-    position: relative;
-    width: 100%;
-}
-
-.gd-select-trigger {
-    width: 100%;
-    min-height: 48px;
-    padding: 10px 14px;
-    background: var(--bg);
+.gd-chip {
+    flex: 1;
+    padding: 9px 0;
+    background: var(--surface, var(--bg));
     border: 1.5px solid var(--border);
     border-radius: var(--radius-sm);
     color: var(--text);
     font-family: inherit;
-    font-size: 1rem;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
-    transition: border-color 0.15s ease;
+    text-align: center;
+    transition: all var(--dur-fast) var(--ease-standard);
 }
 
-@media (hover: hover) {
-  .gd-select-trigger:hover {
-    border-color: var(--primary-mid);
-}
+.gd-chip:hover {
+    border-color: var(--primary-mid, var(--primary));
 }
 
-.gd-select-trigger:focus-visible {
-    outline: 2px solid var(--primary);
-    outline-offset: 1px;
+.gd-chip.active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
 }
 
-.gd-trigger-main {
-    flex: 1 1 auto;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+/* ---- Tab 1: Fix Weak Areas ---- */
+.gd-focus-card {
+    background: var(--surface, #fff);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm, 6px);
+    padding: 16px;
+    margin-bottom: 20px;
 }
 
-.gd-trigger-title {
-    font-weight: 500;
+.gd-focus-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
 }
 
-.gd-trigger-badge {
-    flex: 0 0 auto;
+.gd-focus-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
 }
 
-.gd-trigger-arrow {
-    flex: 0 0 auto;
-    width: 10px;
-    height: 6px;
-    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23102A47'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.2s ease;
+.gd-focus-sub {
+    font-size: 12px;
+    color: var(--muted);
 }
 
-[data-theme="dark"] .gd-trigger-arrow,
-:root:not([data-theme="light"]) .gd-trigger-arrow {
-    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23F5F1E8'/%3E%3C/svg%3E");
-}
-
-.gd-select-trigger[aria-expanded="true"] .gd-trigger-arrow {
-    transform: rotate(180deg);
-}
-
-.gd-select-panel {
-    position: absolute;
-    top: calc(100% + 4px);
-    left: 0;
-    right: 0;
-    background: var(--bg);
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius-sm);
-    z-index: 50;
-    padding: 8px;
+.gd-weak-list {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    box-shadow: none;
-    outline: 1px solid var(--border);
 }
 
-.gd-select-panel[hidden] {
-    display: none;
+.gd-weak-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    transition: border-color var(--dur-fast);
+}
+
+.gd-weak-item.is-checked {
+    border-color: var(--border-dark, var(--border));
+}
+
+.gd-weak-item-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.gd-weak-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.gd-weak-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.gd-weak-skill-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text);
+}
+
+.gd-weak-reason {
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.gd-weak-reason.is-trouble {
+    background: var(--danger-bg, #FAEDE9);
+    color: var(--danger, #B23A22);
+}
+
+.gd-weak-reason.is-weak {
+    background: var(--warning-bg, #FEF7E6);
+    color: var(--warning, #B07204);
+}
+
+.gd-weak-reason.is-developing {
+    background: var(--bg-subtle, #efefef);
+    color: var(--secondary, #555);
+}
+
+.gd-weak-reason.is-recent {
+    background: var(--primary-subtle, #eef5f8);
+    color: var(--primary);
+}
+
+.gd-rule-link-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--primary);
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all var(--dur-fast);
+}
+
+.gd-rule-link-btn:hover {
+    background: var(--primary-subtle, #f0f7f9);
+    border-color: var(--primary);
+}
+
+/* Empty/clean state when no weak spots detected */
+.gd-clean-state {
+    text-align: center;
+    padding: 28px 18px;
+    background: var(--surface, #fff);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 20px;
+}
+
+.gd-clean-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+    color: var(--success, #2F7A4D);
+}
+
+.gd-clean-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 6px;
+}
+
+.gd-clean-desc {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 380px;
+    margin: 0 auto 18px;
+    line-height: 1.5;
+}
+
+.gd-clean-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ---- Tab 2: Practise a Skill ---- */
+.gd-skill-browser-wrap {
+    margin-bottom: 16px;
 }
 
 .gd-search-wrap {
     position: relative;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .gd-skill-filter {
     width: 100%;
-    padding: 8px 12px;
-    font-size: 0.9rem;
+    padding: 10px 14px;
+    font-size: 0.95rem;
     background: var(--surface, var(--bg));
-    border: 1px solid var(--border);
+    border: 1.5px solid var(--border);
     border-radius: var(--radius-sm);
     color: var(--text);
     outline: none;
+    font-family: inherit;
     transition: border-color 0.15s ease;
 }
 
@@ -337,86 +478,143 @@
     border-color: var(--primary);
 }
 
-.gd-skill-list {
-    max-height: 240px;
+.gd-skill-browser {
+    max-height: 320px;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 8px;
+    background: var(--surface, #fff);
 }
 
-.gd-skill-group-head {
+.gd-level-header {
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--muted);
-    padding: 8px 10px 4px;
-    border-top: 1px solid var(--border-subtle, var(--border));
-    margin-top: 4px;
+    padding: 8px 6px 4px;
+    border-bottom: 1px solid var(--border-subtle, #eee);
+    margin-bottom: 6px;
+}
+
+.gd-level-header:not(:first-child) {
+    margin-top: 10px;
+}
+
+.gd-skill-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    color: var(--text);
+    margin-bottom: 4px;
+    transition: background var(--dur-fast), border-color var(--dur-fast);
+}
+
+.gd-skill-row:hover {
+    background: var(--bg-hover, #f5f5f5);
+}
+
+.gd-skill-row.is-selected {
+    background: var(--wash, #f0f7f9);
+    border-color: var(--primary);
+}
+
+.gd-skill-row-main {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+    flex: 1;
+}
+
+.gd-skill-row-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+}
+
+.gd-skill-row-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--muted);
+    flex-wrap: wrap;
+}
+
+.gd-family-tag {
+    background: var(--bg-subtle, #f0f0f0);
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
+.gd-exercise-count {
+    color: var(--muted);
+}
+
+.gd-skill-row-badges {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
-.gd-skill-group-head:first-child {
-    border-top: none;
-    margin-top: 0;
-    padding-top: 4px;
+.gd-untaught-section {
+    border-top: 1px dashed var(--border);
+    margin-top: 12px;
+    padding-top: 8px;
 }
 
-.gd-skill-group-head .art.icon {
-    width: 14px;
-    height: 14px;
-}
-
-.gd-skill-item {
-    width: 100%;
-    padding: 8px 10px;
-    background: none;
-    border: none;
-    border-radius: var(--radius-sm);
-    color: var(--text);
-    font-family: inherit;
+.gd-untaught-summary {
     font-size: 13px;
-    text-align: left;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 6px 4px;
+    user-select: none;
+}
+
+.gd-untaught-summary:hover {
+    color: var(--text);
+}
+
+.gd-selected-summary {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    cursor: pointer;
-    transition: background 0.12s ease;
+    gap: 12px;
 }
 
-@media (hover: hover) {
-  .gd-skill-item:hover {
-    background: var(--border);
-}
-}
-
-.gd-skill-item.is-selected {
-    background: var(--wash);
-    color: var(--primary);
-    font-weight: 600;
-}
-
-.gd-skill-item-title {
-    flex: 1 1 auto;
+.gd-selected-summary-left {
     min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
-.gd-skill-item-count {
-    color: var(--muted);
-    font-weight: 400;
+.gd-selected-skill-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+
+.gd-selected-skill-info {
     font-size: 12px;
-    margin-left: 4px;
-}
-
-.gd-skill-item.is-selected .gd-skill-item-count {
-    color: var(--primary-mid, var(--primary));
+    color: var(--muted);
 }
 
 .gd-badge-new {
@@ -443,15 +641,22 @@
 }
 
 .gd-badge-status.gd-status-practiced {
-    color: var(--text);
+    color: var(--success, #2F7A4D);
+    font-weight: 600;
 }
 
 .gd-badge-status.gd-status-review {
-    color: var(--primary);
+    color: var(--danger, #B23A22);
+    font-weight: 600;
 }
 
 .gd-badge-status.gd-status-developing {
     color: var(--muted);
+}
+
+.gd-badge-status.gd-status-untaught {
+    color: var(--muted);
+    opacity: 0.7;
 }
 
 .gd-skill-empty {
@@ -528,22 +733,158 @@
 }
 }
 
-/* Tier 2 cross-link — same treatment as its Reader sibling
-   (.wp-lesson-link), just matching this driller's own centred HUD width
-   instead of theirs. Decks had the same link once too, but it was
-   removed 2026-09-02 — decks stayed a straightforward review place. */
-.gd-word-lesson-link {
-    display: block;
+/* HUD subline for active skill tag & review rule button */
+.gd-hud-subline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
     max-width: 480px;
-    margin: -8px auto 16px;
+    margin: -8px auto 14px;
     padding: 0 16px;
+}
+
+.gd-hud-skill-tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+    background: var(--wash, #f0f7f9);
+    padding: 3px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 320px;
+}
+
+.gd-hud-rule-btn {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--primary);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 8px;
+    cursor: pointer;
+    transition: all var(--dur-fast);
+}
+
+.gd-hud-rule-btn:hover {
+    background: var(--wash, #f0f7f9);
+    border-color: var(--primary);
+}
+
+/* Rule Reference Modal Sheet */
+.gd-rule-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(16, 42, 71, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 16px;
+}
+
+.gd-rule-modal {
+    background: var(--surface, #fff);
+    border-radius: var(--radius, 8px);
+    max-width: 620px;
+    width: 100%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.gd-rule-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.gd-rule-header h3 {
+    margin: 2px 0 0;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--text);
+}
+
+.gd-rule-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.gd-rule-footer {
+    padding: 12px 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Results: Per-Skill Breakdown */
+.gd-skill-breakdown {
+    margin: 20px 0;
     text-align: left;
 }
 
-@media (hover: hover) {
-  .gd-change-skill:hover {
+.gd-skill-breakdown-title {
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 17px;
     color: var(--primary);
+    margin: 0 0 10px;
 }
+
+.gd-skill-breakdown-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.gd-skill-breakdown-card {
+    background: var(--surface, #fff);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm, 6px);
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.gd-skill-breakdown-left {
+    min-width: 0;
+    flex: 1;
+}
+
+.gd-skill-breakdown-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.gd-skill-breakdown-score {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+}
+
+.gd-distractor-note {
+    font-size: 12px;
+    color: var(--warning, #B07204);
+    background: var(--warning-bg, #FEF7E6);
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-top: 6px;
+    line-height: 1.4;
 }
 
 .gd-exercise {

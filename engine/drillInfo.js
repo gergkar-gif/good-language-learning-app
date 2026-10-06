@@ -56,8 +56,8 @@ const DrillInfo = (function () {
         grammar: {
             title: 'About the Grammar Driller',
             body: [
-                "This pulls questions from every grammar point your lessons have actually covered, weighted toward whatever you've been getting wrong — it's spaced review, not new material.",
-                "If a question catches you out, that's the point: it means it's worth another pass before it's forgotten for good."
+                "Targeted grammar practice built around your course skills. 'Fix weak areas' prioritises concepts you've recently missed, while 'Practise a skill' lets you drill any grammar point in the course.",
+                "Exercises progress from recognition to active production, with on-demand rule reviews whenever you need a quick reminder."
             ]
         },
         vocabulary: {
