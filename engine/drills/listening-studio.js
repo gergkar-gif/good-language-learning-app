@@ -527,7 +527,10 @@ const ListeningStudio = (function () {
 
         mount.innerHTML = `
             <div class="sp-driller-wrap">
-                <button type="button" class="wk-back" data-action="back-to-picker">← All Passages</button>
+                <button type="button" class="wk-back" data-action="back-to-picker" aria-label="All Passages">
+                    <svg class="art icon wk-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="15 18 9 12 15 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>All Passages</span>
+                </button>
 
                 <div class="sp-setup-head">
                     <div class="sp-prompt-card-head" style="margin-bottom:8px;">
@@ -599,7 +602,10 @@ const ListeningStudio = (function () {
         mount.innerHTML = `
             <div class="sp-driller-wrap">
                 <div class="ls-session-header">
-                    <button type="button" class="wk-back" data-action="abandon-session">← Exit Task</button>
+                    <button type="button" class="wk-back" data-action="abandon-session" aria-label="Exit Task">
+                        <svg class="art icon wk-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="15 18 9 12 15 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span>Exit Task</span>
+                    </button>
                     <div class="ls-session-badge">${_esc(_selectedTask.level)} · ${_esc(_selectedTask.title)}</div>
                 </div>
 

@@ -132,4 +132,14 @@ const indexContent = fs.readFileSync(INDEX_PATH, 'utf-8');
 assert(indexContent.includes('src="engine/cefr-exam.js'), 'index.html must load engine/cefr-exam.js');
 console.log('[PASS] index.html script tag verified.');
 
+// 7. Validate Option 1 Reading layout & Listening runner fixes in engine/cefr-exam.js
+assert(engineRaw.includes('cefr-reading-stack'), 'cefr-exam.js must implement Option 1 cefr-reading-stack');
+assert(engineRaw.includes('cefr-reading-stimulus-card'), 'cefr-exam.js must include stimulus card');
+assert(engineRaw.includes('cefr-reading-questions-block'), 'cefr-exam.js must include questions block below');
+assert(!engineRaw.includes('cefr-dual-pane'), 'cefr-exam.js must not retain old cefr-dual-pane');
+assert(engineRaw.includes('ParlourTTS.speak({\n                    text: text') || engineRaw.includes('ParlourTTS.speak({'), 'ParlourTTS.speak must be called with options object');
+assert(engineRaw.includes('play-single-item'), 'cefr-exam.js must support discrete listening item play');
+assert(engineRaw.includes('cefr-back-icon') && engineRaw.includes('polyline'), 'cefr-exam.js back button must use vector SVG chevron');
+console.log('[PASS] Option 1 reading stack, TTS playback signatures, and vector back button verified.');
+
 console.log('\n[ALL PASS] CEFR Exam Module verification suite completed successfully.');

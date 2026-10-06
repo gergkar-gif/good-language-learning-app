@@ -540,7 +540,10 @@ const Art = (function () {
         'hu-prefix': 'prefix',
         'hu-morphology': 'disc',
         'hu-verb': 'bars',
-        'hu-cultural-exam': 'exam'
+        'hu-cultural-exam': 'exam',
+        'es-ccse-exam': 'exam',
+        'es-dele-exam': 'exam',
+        'hu-ecl-exam': 'exam'
     };
 
     function thumb(id, opts) {

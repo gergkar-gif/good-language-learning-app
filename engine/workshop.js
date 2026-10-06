@@ -233,7 +233,10 @@ const Workshop = (function () {
 
     function _activeHtml(driller) {
         return `
-            <button class="wk-back" data-action="back">← Workshop</button>
+            <button type="button" class="wk-back" data-action="back" aria-label="Back to Workshop">
+                <svg class="art icon wk-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="15 18 9 12 15 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Workshop</span>
+            </button>
             <div id="${driller.containerId}"></div>
         `;
     }
