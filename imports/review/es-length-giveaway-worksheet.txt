@@ -4835,8 +4835,8 @@ Lector: Un conmovedor testimonio sobre la fragilidad de la felicidad cotidiana.
 * Martín Santomé vive atrapado en una condicional mixta desgarradora: si el amor de Laura no hubiera iluminado su tedio burocrático, hoy sería un anciano amargado sin memoria luminosa.
 - Los tranvías de Montevideo circulaban por la avenida 18 de Julio hasta la medianoche.
 - El puerto comercial del Río de la Plata conecta con las rutas fluviales del Paraná.
-decision: match: Martín Santomé vive resignado a una rutina burocrática predecible: la monotonía de su oficina amortigua las emociones y aleja la posibilidad de una vida diferente. || Martín Santomé cree que el azar decide el curso de las vidas grises: las circunstancias cotidianas pesan más en su ánimo que las ilusiones de un porvenir feliz.
-why: Dialogue synthesis; wrong options provide alternative literary interpretations of destiny matching length and register without mixed conditionals or absolutes.
+decision: match: Martín Santomé vive satisfecho con su vida de oficina: nunca ha deseado otra cosa ni ha conocido el amor en su madurez. || Martín Santomé cree que el azar decide el curso de las vidas grises: las circunstancias cotidianas pesan más en su ánimo que las ilusiones de un porvenir feliz.
+why: Dialogue synthesis; wrong options provide alternative literary interpretations matching length and register, with claims false about the novel and without mixed conditionals.
 
 ### b2-28-02.ex06   teaches: None
 files: content/es-latam/exercises/b2/b2-28-02-ex.json
@@ -5046,8 +5046,8 @@ files: content/es-latam/exercises/b2/b2-integracion-01-ex.json
 * El Tratado de Asunción, firmado por Argentina, Brasil, Paraguay y Uruguay.
 - El Protocolo de Ushuaia de 1998.
 - El Acuerdo de Cartagena de 1969.
-decision: shorten: El Tratado de Asunción de 1991.
-why: Reading comprehension; trims signatory country list to match the treaty name and year format of the distractors.
+decision: shorten: El Tratado de Asunción.
+why: Reading comprehension; trims signatory countries and drops the year across all options so 1991 does not give away the answer.
 
 ### b2-integracion-02.ex01   teaches: ['inversiones-condicionales-de-haber']
 files: content/es-latam/exercises/b2/b2-integracion-02-ex.json
