@@ -420,6 +420,7 @@ async function buildSteps(lesson) {
                     : {};
                 steps.push({
                     type: 'story',
+                    storyId: story.id || section.ref,
                     title: section.title || story.title,
                     // Story files use `paragraphs` (same schema the Library
                     // reader consumes), not a separate bilingual `lines` shape.
@@ -2332,6 +2333,28 @@ async function finishLesson() {
         let rankBefore = null;
         try { rankBefore = (typeof getRank === 'function') ? getRank().rank : null; }
         catch (error) { rankBefore = null; }
+
+        // Stories inside lessons count as daily reading: learners who read the
+        // unit story during their lesson have satisfied both Learn and Read.
+        const storyStep = (currentLesson.steps || []).find(s => s.type === 'story');
+        if (storyStep) {
+            try {
+                let firstStoryTime = false;
+                const storyId = storyStep.storyId;
+                if (storyId) {
+                    if (typeof markStoryRead === 'function') {
+                        firstStoryTime = markStoryRead(storyId);
+                    } else if (typeof Reader !== 'undefined' && typeof Reader.markStoryRead === 'function') {
+                        firstStoryTime = Reader.markStoryRead(storyId);
+                    }
+                }
+                if (typeof recordStoryCompleted === 'function') {
+                    recordStoryCompleted(firstStoryTime);
+                }
+            } catch (error) {
+                console.error('Recording lesson story reading failed:', error);
+            }
+        }
 
         try {
             if (typeof recordLessonCompleted === 'function') recordLessonCompleted(firstTime);
@@ -4304,6 +4327,9 @@ if (typeof module !== 'undefined' && module.exports) {
         normalise,
         baseChar,
         generateAnswerDiff,
-        contentCache
+        contentCache,
+        finishLesson,
+        setCurrentLesson: (l) => { currentLesson = l; },
+        getCurrentLesson: () => currentLesson
     };
 }

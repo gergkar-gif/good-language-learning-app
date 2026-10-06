@@ -511,6 +511,11 @@ function markStoryRead(storyId) {
     return true;
 }
 
+if (typeof window !== 'undefined') {
+    window.markStoryRead = markStoryRead;
+    window.getReadStoryIds = getReadStoryIds;
+}
+
 // ============================================
 // READING POSITION (how far into an unfinished story the learner got)
 // ============================================
@@ -1069,6 +1074,19 @@ window.Reader = {
     _matchesTerm: _matchesTerm,
     assignCharacterVoices: assignCharacterVoices,
     inferCharacterGender: inferCharacterGender,
+    markStoryRead: markStoryRead,
+    getReadStoryIds: getReadStoryIds,
+    allStoriesReadInCurrentLevel() {
+        if (!this.stories || !this.stories.length) return false;
+        const currentLvl = (typeof LearnerPath !== 'undefined' && typeof LearnerPath.currentLevel === 'function')
+            ? (LearnerPath.currentLevel() || 'A1').toUpperCase()
+            : 'A1';
+        const browsable = this.stories.filter(_isBrowsableStory);
+        const levelStories = browsable.filter(s => (s.level || '').toUpperCase() === currentLvl);
+        if (!levelStories.length) return false;
+        const readIds = (typeof getReadStoryIds === 'function') ? getReadStoryIds() : [];
+        return levelStories.every(s => readIds.includes(s.id));
+    },
     // Resolved on every read rather than captured at load. The course can
     // change after this file runs — startup falls back to the default when
     // the chosen one has no content — and a value frozen here would leave the
@@ -1464,50 +1482,63 @@ window.Reader = {
         const unread = browsable.filter(s => !readIds.includes(s.id));
         const pool = unread.length > 0 ? unread : browsable;
 
+        const currentLevelStories = browsable.filter(s => (s.level || '').toUpperCase() === currentLvl);
+        const unreadInCurrentLevel = currentLevelStories.filter(s => !readIds.includes(s.id));
+        const allLevelRead = currentLevelStories.length > 0 && unreadInCurrentLevel.length === 0;
+
         // 1. SELECT COMFORTABLE READ (i + 0, fluency, completed units or accessible consolidation)
         let comfortable = null;
         let comfortableReason = '';
+        let isReRead = false;
 
-        // Priority 1A: An unread story with withinReach (unit just completed!)
-        const withinReachStory = pool.find(s => this.isStoryWithinReach(s, readIds));
-        if (withinReachStory) {
-            comfortable = withinReachStory;
-            comfortableReason = withinReachStory.unit && withinReachStory.unit.title
-                ? `Builds on your completed "${withinReachStory.unit.title}" unit`
-                : 'Consolidates vocabulary and patterns from your completed lessons';
-        }
-
-        // Priority 1B: An unread story in the current level from a lower/equal unit
-        if (!comfortable) {
-            const currentLevelStories = pool.filter(s => (s.level || '').toUpperCase() === currentLvl);
-            // Prefer carrying on a series the learner has already started.
-            const nextInSeries = currentLevelStories.find(s => /^Next in /.test(this._specificReason(s, readIds) || ''));
-            if (nextInSeries) {
-                comfortable = nextInSeries;
-            } else if (currentLevelStories.length > 0) {
-                // Prefer shorter duration (2-4 min)
-                comfortable = currentLevelStories.slice().sort((a, b) => (a.estimatedMinutes || 3) - (b.estimatedMinutes || 3))[0];
-                comfortableReason = `Reinforces ${currentLvl} vocabulary at a comfortable pace`;
+        if (allLevelRead) {
+            // Learner has completed every story at their current level — recommend a re-read / listen-through
+            // for fluency rather than prematurely jumping ahead.
+            comfortable = currentLevelStories.slice().sort((a, b) => (a.estimatedMinutes || 3) - (b.estimatedMinutes || 3))[0];
+            comfortableReason = 'Re-read for fluency and listening practice · Re-reads count toward your daily streak';
+            isReRead = true;
+        } else {
+            // Priority 1A: An unread story with withinReach (unit just completed!)
+            const withinReachStory = pool.find(s => this.isStoryWithinReach(s, readIds));
+            if (withinReachStory) {
+                comfortable = withinReachStory;
+                comfortableReason = withinReachStory.unit && withinReachStory.unit.title
+                    ? `Builds on your completed "${withinReachStory.unit.title}" unit`
+                    : 'Consolidates vocabulary and patterns from your completed lessons';
             }
-        }
 
-        // Priority 1C: If learner is in A2/B1/etc., look at previous level
-        if (!comfortable) {
-            const lvlIdx = CEFR_LEVELS.indexOf(currentLvl);
-            if (lvlIdx > 0) {
-                const prevLvl = CEFR_LEVELS[lvlIdx - 1];
-                const prevLevelStories = pool.filter(s => (s.level || '').toUpperCase() === prevLvl);
-                if (prevLevelStories.length > 0) {
-                    comfortable = prevLevelStories[0];
-                    comfortableReason = `Smooth, confidence-building consolidation in ${prevLvl}`;
+            // Priority 1B: An unread story in the current level from a lower/equal unit
+            if (!comfortable) {
+                const unreadCurrent = pool.filter(s => (s.level || '').toUpperCase() === currentLvl);
+                // Prefer carrying on a series the learner has already started.
+                const nextInSeries = unreadCurrent.find(s => /^Next in /.test(this._specificReason(s, readIds) || ''));
+                if (nextInSeries) {
+                    comfortable = nextInSeries;
+                } else if (unreadCurrent.length > 0) {
+                    // Prefer shorter duration (2-4 min)
+                    comfortable = unreadCurrent.slice().sort((a, b) => (a.estimatedMinutes || 3) - (b.estimatedMinutes || 3))[0];
+                    comfortableReason = `Reinforces ${currentLvl} vocabulary at a comfortable pace`;
                 }
             }
-        }
 
-        // Fallback for comfortable
-        if (!comfortable) {
-            comfortable = pool[0];
-            comfortableReason = 'Accessible reading practice tailored for your level';
+            // Priority 1C: If learner is in A2/B1/etc., look at previous level
+            if (!comfortable) {
+                const lvlIdx = CEFR_LEVELS.indexOf(currentLvl);
+                if (lvlIdx > 0) {
+                    const prevLvl = CEFR_LEVELS[lvlIdx - 1];
+                    const prevLevelStories = pool.filter(s => (s.level || '').toUpperCase() === prevLvl);
+                    if (prevLevelStories.length > 0) {
+                        comfortable = prevLevelStories[0];
+                        comfortableReason = `Smooth, confidence-building consolidation in ${prevLvl}`;
+                    }
+                }
+            }
+
+            // Fallback for comfortable
+            if (!comfortable) {
+                comfortable = pool[0];
+                comfortableReason = 'Accessible reading practice tailored for your level';
+            }
         }
 
         // 2. SELECT CHALLENGING READ (i + 1, stretch vocabulary, literary or upper level)
@@ -1552,15 +1583,19 @@ window.Reader = {
 
         // A concrete reason beats a generic one. The "within reach" reason
         // (names the unit just finished) is already concrete, so it stays.
-        if (!withinReachStory || comfortable !== withinReachStory) {
-            comfortableReason = this._specificReason(comfortable, readIds) || comfortableReason;
+        if (!allLevelRead) {
+            const withinReachStory = pool.find(s => this.isStoryWithinReach(s, readIds));
+            if (!withinReachStory || comfortable !== withinReachStory) {
+                comfortableReason = this._specificReason(comfortable, readIds) || comfortableReason;
+            }
         }
         challengingReason = this._specificReason(challenging, readIds) || challengingReason;
 
         return {
             comfortable: {
                 story: comfortable,
-                reason: comfortableReason
+                reason: comfortableReason,
+                isReRead: isReRead || readIds.includes(comfortable.id)
             },
             challenging: {
                 story: challenging,
@@ -1622,6 +1657,10 @@ window.Reader = {
         const comfMin = comf.estimatedMinutes ? `${comf.estimatedMinutes} min` : '';
         const challMin = chall.estimatedMinutes ? `${chall.estimatedMinutes} min` : '';
 
+        const isComfReRead = !!(recs.comfortable && recs.comfortable.isReRead);
+        const comfBadge = isComfReRead ? 'Re-read · Fluency' : 'Comfortable Read';
+        const comfBtnText = isComfReRead ? 'Re-read story →' : 'Read Now →';
+
         return `
             <div class="lib-recs-container">
                 <div class="lib-recs-header">
@@ -1631,14 +1670,14 @@ window.Reader = {
                 <div class="lib-recs-grid">
                     <div class="lib-rec-card lib-rec-comfortable" data-rec-story="${this.escapeHtml(comf.id)}">
                         <div class="lib-rec-top">
-                            <span class="lib-rec-badge badge-comfortable">Comfortable Read</span>
+                            <span class="lib-rec-badge badge-comfortable">${this.escapeHtml(comfBadge)}</span>
                             <span class="lib-rec-meta">${this.escapeHtml(comf.level || '')}${comfMin ? ' · ' + comfMin : ''}</span>
                         </div>
                         <h4 class="lib-rec-title">${this.escapeHtml(comf.title)}</h4>
                         <p class="lib-rec-reason">${this.escapeHtml(comfReason)}</p>
                         <div class="lib-rec-action">
                             <button type="button" class="vbtn vbtn-primary lib-rec-btn" data-rec-story="${this.escapeHtml(comf.id)}">
-                                Read Now →
+                                ${this.escapeHtml(comfBtnText)}
                             </button>
                         </div>
                     </div>
@@ -2669,5 +2708,7 @@ if (typeof module !== 'undefined' && module.exports) {
     window.Reader._isBrowsableStory = _isBrowsableStory;
     window.Reader._trackShelfKey = _trackShelfKey;
     window.Reader.TRACK_SHELF_LABELS = TRACK_SHELF_LABELS;
+    window.Reader.markStoryRead = markStoryRead;
+    window.Reader.getReadStoryIds = getReadStoryIds;
     module.exports = window.Reader;
 }

@@ -65,7 +65,15 @@ function getDay(dateStr) {
 
 function loadXP() {
     const saved = localStorage.getItem('spanishApp_xp');
-    if (!saved) return;
+    if (!saved) {
+        xpData = {
+            total: 0,
+            history: {},
+            dailyNewWords: {},
+            importedStreak: null
+        };
+        return;
+    }
 
     try {
         const parsed = JSON.parse(saved);
@@ -312,21 +320,85 @@ function renderRankUpCard(rankAfter) {
 // ============================================
 // DAILY ACTIVITIES & STREAK
 // ============================================
+// Count due cards across the entire SRS deck.
+function getCardsDueCount() {
+    const deck = (typeof srsDeck !== 'undefined' && Array.isArray(srsDeck)) ? srsDeck : [];
+    if (!deck.length) return 0;
+    const now = Date.now();
+    let due = 0;
+    deck.forEach(card => {
+        if (!card.nextReview) { due++; return; }
+        const at = new Date(card.nextReview).getTime();
+        if (at <= now) due++;
+    });
+    return due;
+}
+
 // The streak is about showing up, not about points — two of the three
 // activities keeps it, all three makes the day perfect.
+// Review goal dynamically adjusts to "20 or everything due, whichever is
+// smaller", so users with small decks or empty review queues aren't forced
+// to over-read just to keep their streak.
 function getDailyActivities(dateStr) {
-    const day = getDay(dateStr || getTodayString());
+    const isToday = !dateStr || dateStr === getTodayString();
+    const day = isToday ? dayEntry(getTodayString()) : getDay(dateStr);
+
+    let reviewGoal = DAILY_GOALS.reviews;
+    let reviewDone = false;
+
+    if (isToday) {
+        const remainingDue = getCardsDueCount();
+        const reviewsDone = day.reviewsDone || 0;
+        reviewGoal = Math.min(DAILY_GOALS.reviews, reviewsDone + remainingDue);
+        reviewDone = !!day.reviewGoalMet || (reviewsDone >= reviewGoal);
+        day.reviewGoal = reviewGoal;
+        if (reviewDone) day.reviewGoalMet = true;
+    } else {
+        if (day.reviewGoalMet !== undefined) {
+            reviewDone = !!day.reviewGoalMet;
+            reviewGoal = day.reviewGoal != null ? day.reviewGoal : DAILY_GOALS.reviews;
+        } else {
+            reviewGoal = day.reviewGoal != null ? day.reviewGoal : DAILY_GOALS.reviews;
+            reviewDone = (day.reviewsDone || 0) >= reviewGoal;
+        }
+    }
+
+    const allLevelRead = (typeof Reader !== 'undefined' && typeof Reader.allStoriesReadInCurrentLevel === 'function')
+        ? Reader.allStoriesReadInCurrentLevel()
+        : false;
 
     // Icons name a section of the app, so they are ids in the art registry
     // rather than emoji: the three chips sit on Home now, next to the same
     // marks drawn in the nav, and a colour emoji beside them reads as a
     // different app.
     const list = [
-        { key: 'review', icon: 'decks', label: 'Review', count: day.reviewsDone, goal: DAILY_GOALS.reviews },
-        { key: 'reading', icon: 'reader', label: 'Read', count: day.storiesDone, goal: DAILY_GOALS.stories },
-        { key: 'learn', icon: 'lessons', label: 'Learn', count: day.lessonsDone, goal: DAILY_GOALS.lessons }
+        {
+            key: 'review',
+            icon: 'decks',
+            label: 'Review',
+            count: day.reviewsDone || 0,
+            goal: reviewGoal,
+            done: reviewDone,
+            nothingDue: (day.reviewsDone || 0) === 0 && reviewGoal === 0
+        },
+        {
+            key: 'reading',
+            icon: 'reader',
+            label: 'Read',
+            count: day.storiesDone || 0,
+            goal: DAILY_GOALS.stories,
+            done: (day.storiesDone || 0) >= DAILY_GOALS.stories,
+            reReadsCount: allLevelRead
+        },
+        {
+            key: 'learn',
+            icon: 'lessons',
+            label: 'Learn',
+            count: day.lessonsDone || 0,
+            goal: DAILY_GOALS.lessons,
+            done: (day.lessonsDone || 0) >= DAILY_GOALS.lessons
+        }
     ];
-    list.forEach(activity => { activity.done = activity.count >= activity.goal; });
 
     const completed = list.filter(activity => activity.done).length;
 
@@ -471,8 +543,14 @@ function updateXPHeader() {
                 : activity.goal > 1 ? activity.count + '/' + activity.goal
                 : '✗';
             const iconHtml = (typeof Art !== 'undefined') ? Art.icon(activity.icon) : '';
+            let tooltip = '';
+            if (activity.nothingDue) {
+                tooltip = ' title="Nothing due"';
+            } else if (activity.key === 'reading' && activity.reReadsCount) {
+                tooltip = ' title="Re-reads count toward your streak"';
+            }
             return `
-                <button class="daily-activity${activity.done ? ' is-done' : ''}" data-trio-activity="${activity.key}" type="button">
+                <button class="daily-activity${activity.done ? ' is-done' : ''}" data-trio-activity="${activity.key}" type="button"${tooltip}>
                     <span class="daily-activity-icon">${iconHtml}</span>
                     <span class="daily-activity-label">${activity.label}</span>
                     <span class="daily-activity-mark">${mark}</span>
@@ -532,6 +610,10 @@ if (typeof module !== 'undefined' && module.exports) {
         renderRankUpCard,
         updateXPHeader,
         getDailyActivities,
+        getCardsDueCount,
+        recordLessonCompleted,
+        recordStoryCompleted,
+        recordReview,
         loadXP,
         saveXP,
         xpData: () => xpData

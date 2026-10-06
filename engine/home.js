@@ -455,13 +455,19 @@ const Home = (function () {
         const reviewFact = due
             ? `<span class="hm-figure">${due}</span><small>due today</small>`
             : (deck && deck.size ? '<small>nothing due</small>' : '');
+        const allLevelRead = (typeof Reader !== 'undefined' && typeof Reader.allStoriesReadInCurrentLevel === 'function')
+            ? Reader.allStoriesReadInCurrentLevel()
+            : false;
+        const readFact = allLevelRead ? '<small>re-reads count</small>' : '';
         return `
             <h2 class="hm-sec">Explore</h2>
             <div class="hm-rows">
                 ${row(due ? 'data-review-all="1"' : 'data-go="review"', 'Review',
                     due ? 'Words that have come due' : 'Your deck, and its decks',
                     reviewFact, thumb('review', { due: !!due }), due ? 'is-due' : '')}
-                ${row('data-go="reader"', 'Read', 'Stories and your own texts', '', thumb('read'))}
+                ${row('data-go="reader"', 'Read',
+                    allLevelRead ? 'Re-read for fluency or explore new stories' : 'Stories and your own texts',
+                    readFact, thumb('read'))}
                 ${row('data-go="drills"', 'Practise', 'Speak, write, drill a skill', '', thumb('practise'))}
             </div>
         `;
@@ -649,6 +655,10 @@ const Home = (function () {
     async function render() {
         const host = document.getElementById('home-root');
         if (!host) return;
+
+        if (typeof Reader !== 'undefined' && typeof Reader.ensureStories === 'function') {
+            try { await Reader.ensureStories(); } catch (err) {}
+        }
 
         const step = LearnerPath.nextStep();
         const deck = deckStanding();
