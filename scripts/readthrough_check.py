@@ -22,7 +22,8 @@ hold different exercise ids, and a warning for each exercise whose content
 differs between them (so the reviewer checks the tag fits both). "Taught later"
 compares table positions (unit order, then lesson order), not lesson numbers,
 because Spanish stems like `a1-directions-01` carry no number. A vocabulary tag
-that belongs to another unit warns.
+that belongs to another unit warns. Spanish-only warnings (A2): a fill-blank whose answer is a *haber* form
+with no person in the hint, sentence or English line, and a wrong option that swaps two adjacent words of the answer.
 """
 import json
 import re
@@ -35,6 +36,8 @@ LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"]
 FOLLOWS = {"multiple-choice", "fill-blank", "sentence-builder", "matching"}
 PERSON_WORDS = re.compile(r"\b(I|you|he|she|it|we|they|my|your|his|her|its|our|their|one's|yours|mine|ours|theirs|me|us|them|him)\b", re.I)
 PERSON_END = re.compile(r"(om|em|öm|am|ad|ed|od|öd|unk|ünk|atok|etek|otok|ötök|uk|ük|tok|tek|tök|nk|ja|je|ják|jük|juk|ják|jék)$", re.I)
+ES_PERSON = re.compile(r"\b(yo|t[uú]|[eé]l|ella|usted|nosotros|nosotras|vosotros|vosotras|ellos|ellas|ustedes|I|you|he|she|we|they)\b", re.I)
+ES_AUX = {"he", "has", "ha", "hemos", "habéis", "han"}
 EXCHANGE = re.compile(r"\b((starts?|begins?|opens?|continues?|follows?|ends?|finishes) (this|the|that) (exchange|conversation|dialogue)|this exchange)\b", re.I)
 CONTENT_KEYS = ("question", "sentence", "options", "pairs", "solution", "prompt", "template", "answer", "answers")
 
@@ -157,6 +160,16 @@ def main():
                 last = (words(ans) or [""])[-1]
                 if PERSON_END.search(last) and len(last) > 4 and hint and not PERSON_WORDS.search(hint):
                     warns.append(f"{eid}: answer {ans!r} carries a person/possessor ending but hint ({hint}) names no person")
+            if lang != "hu" and e.get("type") == "fill-blank" and ans and words(ans) and words(ans)[-1] in ES_AUX:
+                if not ES_PERSON.search(" ".join(re.findall(r"\(([^)]*)\)", ptxt)) + " " + (e.get("english") or "") + " " + re.sub(r"\([^)]*\)", " ", ptxt)):
+                    warns.append(f"{eid}: answer {ans!r} fits several persons but the hint and sentence name none; add a person to the hint")
+            if lang != "hu" and e.get("type") == "multiple-choice" and len(opts) > 1 and all(isinstance(o, str) for o in opts):
+                cw = words(opts[e["correct"]])
+                for i, o in enumerate(opts):
+                    ow = words(o)
+                    diff = [k for k in range(len(cw)) if len(ow) == len(cw) and ow[k] != cw[k]]
+                    if i != e["correct"] and len(diff) == 2 and diff[1] == diff[0] + 1 and ow[diff[0]] == cw[diff[1]] and ow[diff[1]] == cw[diff[0]]:
+                        warns.append(f"{eid}: option {o!r} is a swap of two adjacent words in the answer; check it is really ungrammatical (Spanish word order is free)")
             for i, s2 in (d.get("ds") or {}).items():
                 if not str(i).isdigit() or int(i) >= len(opts) or int(i) == e.get("correct"):
                     errors.append(f"{eid}: ds index {i} is not a wrong option")

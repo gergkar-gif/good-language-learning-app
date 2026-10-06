@@ -131,6 +131,7 @@ skill `[taught in this unit]` or `[taught LATER]` by that order.
   unit, tag the unit vocabulary skill. If it asks the learner to choose between forms of a
   skill that is `[taught LATER]` (*me gusta / me gustan*), the item is ahead of the course:
   tag the skill, list it under judgment calls.
+- **Exception to the Sí/No rule: a unit's own contrast.** When the wrong replies in a dialogue differ in the contrast the unit teaches (*Sí, todavía no…* beside *Sí, ya…* in a *ya / todavía no* unit; *desde hace* vs *desde enero* in a *desde* unit), the item tests that grammar skill: tag the skill. Use the vocabulary skill only when the wrong replies differ just by Sí/No or an infinitive.
 - **No Sí/No skill.** A wrong *No, …* that affirms (or *Sí, …* that denies) fails on meaning →
   unit vocabulary skill.
 - **Pronunciation has no skill yet** (ROADMAP 133). A spelling or sound item → unit vocabulary

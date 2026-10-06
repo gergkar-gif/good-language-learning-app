@@ -111,3 +111,9 @@ same or better quality.
 - Spanish exercise ids come in several shapes (`a1-02-04.ex15`, `a1.05.02.ex11`, `a1-03c-03-d02`, `a1.cafe.01.ex09`) and subagent reports abbreviate them (`03-d02`). Use a small helper that finds an exercise by id across the level's files and keeps each file's line endings before applying fixes.
 - Tell subagents that "starts this exchange" items are a defect template, and that fill-blanks with the subject dropped need a person in the hint. Both were the commonest content fixes.
 - Cost: about 115k subagent tokens per pair, 8–12 minutes per pair; reviewing every line took roughly 10k main-session tokens per unit.
+
+## Added during ES A2 (units 1–8, 2026-10-06)
+
+- `readthrough_check.py` now also warns (Spanish) on a fill-blank whose answer is a *haber* form with no person in the hint, sentence or English line, and on a wrong option that swaps two adjacent words of the answer. The second finds the most common A2 defect, a free-word-order distractor (*He ya visto*) that is also correct. Review every such warning; most real hits are second correct answers.
+- Units that repeat one eight-item template in every lesson (unit 8 `making-responding-invitations`) are a content defect, not a tagging one: list it as a follow-up and keep the copies' tags identical.
+- Use Windows-style paths (`C:/Users/...`) inside Python; Git Bash `/c/...` paths only work as command arguments.
