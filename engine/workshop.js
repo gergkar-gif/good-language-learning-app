@@ -178,9 +178,18 @@ const Workshop = (function () {
         `).join('');
     }
 
+    function _isExam(d) {
+        return d.category === 'exams' || (d.id && (d.id.includes('exam') || d.id.includes('ccse')));
+    }
+
     function _pickerHtml() {
         const available = DRILLERS.filter(_available);
-        const sorted = available.slice().sort((a, b) => a.title.localeCompare(b.title));
+        const sorted = available.slice().sort((a, b) => {
+            const aExam = _isExam(a);
+            const bExam = _isExam(b);
+            if (aExam !== bExam) return aExam ? 1 : -1;
+            return a.title.localeCompare(b.title);
+        });
         return `
             <div class="wk-picker">
                 ${_renderCards(sorted)}
