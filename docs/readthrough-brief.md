@@ -140,7 +140,7 @@ skill `[taught in this unit]` or `[taught LATER]` by that order.
   exercises outside unit 1 from an old bulk tag. Use this unit's own `a1-<unit id>-vocab`; the
   check warns when a vocabulary tag belongs to another unit (fine only for a true review item).
   The 2–6 old tags on an exercise are noise: decide one.
-- **Sentence-builders with a natural alternative order** (*Ya hemos…* / *Hemos ya…*): list every natural order in the item's `solutions` (same tiles); the grader accepts all of them. Missing alternatives are a defect: the learner builds a correct sentence and is told it is wrong.
+- **Sentence-builders with a natural alternative order** (*Ya hemos…* / *Hemos ya…*): replace `solution` with `solutions` listing every natural order (same tiles; never keep both keys, the schema rejects it); the grader accepts all of them. Missing alternatives are a defect: the learner builds a correct sentence and is told it is wrong.
 - **Fill-blank pinning.** Spanish drops the subject, so a blank like *___ en casa* may accept
   several persons: add the missing forms to `answers`, or pin it with an English hint naming the
   person (`(I am)`). *Tú/usted* and *vosotros/ustedes* variants both count when the course allows
