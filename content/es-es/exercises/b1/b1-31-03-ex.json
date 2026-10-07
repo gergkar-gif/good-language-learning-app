@@ -36,18 +36,25 @@
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "b1-31-03.ex03",
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "Si ___ menos recursos, habría más problemas. (haber) [If there were fewer resources, there would be more problems.]",
-      "answer": "hubiera",
       "teaches": [
         "hypothetical-structures"
       ],
-      "english": "If there were fewer resources, there would be more problems."
+      "english": "If there were fewer resources, there would be more problems.",
+      "answers": [
+        "hubiera",
+        "hubiese"
+      ]
     },
     {
       "id": "b1-31-03.ex04",
@@ -81,9 +88,9 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "Si hubiera menos recursos, habría más problemas. [If there were fewer resources, there would be more problems.]",
-        "Tendríamos que adaptarnos. [We would have to adapt.]",
-        "Si cambiara la sociedad, tendríamos que adaptarnos. [If society changed, we would have to adapt.]"
+        "Primero, la sociedad cambiaría mucho. [First, society would change a lot.]",
+        "Después, habría más problemas. [Then there would be more problems.]",
+        "Finalmente, tendríamos que adaptarnos. [Finally, we would have to adapt.]"
       ],
       "solution": [
         0,
@@ -91,13 +98,13 @@
         2
       ],
       "teaches": [
-        "hypothetical-structures"
+        "ordering-markers"
       ]
     },
     {
       "id": "b1-31-03.ex06",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means «scenario»? [¿Qué palabra significa «escenario»?]",
       "options": [
         "escenario [scenario]",
@@ -106,17 +113,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
+        "b1-future-society-vocab"
       ]
     },
     {
       "id": "b1-31-03.ex07",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Es un ___ posible para el futuro. (escenario) [It is a possible scenario for the future.]",
+      "category": "vocabulary",
+      "sentence": "Es un ___ posible para el futuro. (scenario) [It is a possible scenario for the future.]",
       "answer": "escenario",
       "teaches": [
-        "hypothetical-structures"
+        "b1-future-society-vocab"
       ],
       "english": "It is a possible scenario for the future."
     },
@@ -257,7 +264,10 @@
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-31-03.ex15",

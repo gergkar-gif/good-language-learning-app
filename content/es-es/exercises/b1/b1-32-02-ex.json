@@ -36,18 +36,25 @@
       "correct": 0,
       "teaches": [
         "porque-y-por-eso"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "concesivas-aunque"
+      }
     },
     {
       "id": "b1-32-02.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Había poco tiempo, ___ salimos temprano. (por eso) [There was little time, so we left early.]",
-      "answer": "por eso",
+      "sentence": "Había poco tiempo, ___ salimos temprano. (so) [There was little time, so we left early.]",
       "teaches": [
         "porque-y-por-eso"
       ],
-      "english": "There was little time, so we left early."
+      "english": "There was little time, so we left early.",
+      "answers": [
+        "por eso",
+        "así que",
+        "por lo tanto"
+      ]
     },
     {
       "id": "b1-32-02.ex04",
@@ -85,9 +92,9 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "El precio subió. [The price went up.]",
-        "Cambiamos de plan. [We changed our plan.]",
-        "Como resultado, cambiamos de plan. [As a result, we changed our plan.]"
+        "Primero, el precio subió. [First, the price went up.]",
+        "Después, cambiamos de plan. [Then we changed our plan.]",
+        "Finalmente, ahorramos dinero. [Finally, we saved money.]"
       ],
       "solution": [
         0,
@@ -95,13 +102,13 @@
         2
       ],
       "teaches": [
-        "porque-y-por-eso"
+        "ordering-markers"
       ]
     },
     {
       "id": "b1-32-02.ex06",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which phrase means «therefore»? [¿Qué expresión significa «por lo tanto»?]",
       "options": [
         "por lo tanto [therefore]",
@@ -110,19 +117,23 @@
       ],
       "correct": 0,
       "teaches": [
-        "porque-y-por-eso"
+        "b1-connecting-ideas-vocab"
       ]
     },
     {
       "id": "b1-32-02.ex07",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El proyecto era caro; ___, podía crear otros problemas. (por lo tanto) [The project was expensive; therefore, it could create other problems.]",
-      "answer": "por lo tanto",
+      "sentence": "El proyecto era caro; ___, podía crear otros problemas. (therefore) [The project was expensive; therefore, it could create other problems.]",
       "teaches": [
         "porque-y-por-eso"
       ],
-      "english": "The project was expensive; therefore, it could create other problems."
+      "english": "The project was expensive; therefore, it could create other problems.",
+      "answers": [
+        "por lo tanto",
+        "por eso",
+        "como resultado"
+      ]
     },
     {
       "id": "b1-32-02.ex08",
@@ -198,7 +209,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué pasó después de que subiera el precio?"
+          "text": "¿Qué pasó después de que subió el precio?"
         },
         {
           "speaker": "B",
@@ -236,7 +247,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "porque-y-por-eso"
+        "b1-connecting-ideas-vocab"
       ]
     },
     {
@@ -260,7 +271,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "porque-y-por-eso"
+        "tener-que"
       ]
     },
     {
