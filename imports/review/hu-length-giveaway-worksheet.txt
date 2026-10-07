@@ -731,8 +731,8 @@ Károly: Van folytatása a történetnek?
 Meg: _____
 * Igen, jövőre visszamegyünk, szóval biztosan lesz folytatása.
 - Nem, ez sosem történt meg.
-decision: 
-why: 
+decision: match: Nem, a szerző itt lezárta a történetet, nincs folytatása.
+why: Plausible negative reply of matching length (57 vs 62 chars) explaining that the author concluded the story, removing the absolute 'sosem'.
 
 ### b1-04-03-dialogue-1   teaches: ['b1-giving-advice-vocab']
 files: content/hu/exercises/b1/b1-04-03-ex.json
@@ -741,8 +741,8 @@ Petra: Melyik állást fogadjam el — a biztosat vagy az izgalmasabbat?
 Meg: _____
 * Egyrészt a biztos állás nyugodtabb, másrészt az izgalmasabb sokkal érdekesebb lenne.
 - Tegnap már elfogadtam az egyik állást.
-decision: 
-why: 
+decision: match: Én is beadtam a jelentkezésemet, de engem még nem hívtak be a felvételi beszélgetésre.
+why: Conversational reply discussing own application that does not advise Petra on her dilemma, matching length (85 vs 85 chars) and eliminating the past 'tegnap' giveaway.
 
 ### b1-04-03-intro-2   teaches: ['inkabb-mint']
 files: content/hu/exercises/b1/b1-04-03-ex.json
@@ -751,8 +751,8 @@ Which pattern lets you gently state you'd rather choose one option than another?
 * inkább... mint... + conditional
 - kell... hogy...
 - már... mint...
-decision: 
-why: 
+decision: shorten: inkább... mint...
+why: Drops '+ conditional' to match the pattern name format of distractors (17 vs 15, 14 chars), directly identifying the rather-than pattern.
 
 ### b1-04-03-practice-4   teaches: ['nek-conditional']
 files: content/hu/exercises/b1/b1-04-03-ex.json
@@ -761,8 +761,8 @@ Which sentence correctly states a gentle preference between two options?
 * A te helyedben inkább várnék egy kicsit, mint azonnal döntenék.
 - A te helyedben te inkább vársz.
 - A te helyedben inkább vártál.
-decision: 
-why: 
+decision: match: A te helyedben inkább vársz egy kicsit, mint azonnal döntesz. || A te helyedben inkább vártál egy kicsit, mint azonnal döntöttél.
+why: Completes both comparative clauses with present indicative and past indicative instead of conditional, breaking the gentle preference pattern (60, 63 vs 63 chars).
 
 ### b1-04-05-dialogue-1   teaches: ['b1-giving-advice-vocab']
 files: content/hu/exercises/b1/b1-04-05-ex.json
@@ -771,8 +771,8 @@ Petra: Nem tudom, elfogadjam-e az ajánlatot. Teljesen tanácstalan vagyok.
 Meg: _____
 * A helyedben én mérlegelném az előnyöket és a hátrányokat, mielőtt döntesz.
 - A helyedben te már döntöttél.
-decision: 
-why: 
+decision: match: A helyedben te is mérlegelnéd az ajánlatot, mielőtt végleges választ adsz.
+why: Preserves the person mismatch error ('A helyedben te...') of the original distractor while expanding to a full advice clause matching length (74 vs 74 chars).
 
 ### b1-04-consolidation-9   teaches: ['b1-giving-advice-vocab']
 files: content/hu/exercises/b1/b1-04-consolidation-ex.json
@@ -781,8 +781,8 @@ Petra: Nem tudom, melyik utat válasszam.
 Meg: _____
 * Egyrészt a rövidebb út gyorsabb, másrészt a szebbik sokkal élvezetesebb lenne.
 - Tegnap már végigmentem a rövidebb úton.
-decision: 
-why: 
+decision: match: Nekem mindegy, merre megyünk a hétvégén, csak érjünk oda időben a vacsorára.
+why: Conversational response expressing indifference about the route that fails to weigh options or advise Petra, eliminating the past 'tegnap' giveaway (76 vs 78 chars).
 
 ### b1-05-04-dialogue-2   teaches: ['b1-relationships-vocab']
 files: content/hu/exercises/b1/b1-05-04-ex.json
@@ -791,8 +791,8 @@ Károly: Milyen a legjobb barátod?
 Anna: _____
 * Olyan hűséges barátom van, aki mindig mellettem áll.
 - Nincs is barátom.
-decision: 
-why: 
+decision: match: Hétvégén szoktunk találkozni a belvárosban egy közös kávéra.
+why: Answers when and where they meet rather than describing the friend's character or qualities, matching conversational register and length (59 vs 52 chars).
 
 ### b1-05-05-dialogue-1   teaches: ['b1-relationships-vocab']
 files: content/hu/exercises/b1/b1-05-05-ex.json
@@ -801,8 +801,8 @@ Petra: Szerinted mi kell egy jó kapcsolathoz?
 Anna: _____
 * Bizalom, kompromisszum, és az, hogy törődjünk egymással.
 - Tegnap este moziban voltam.
-decision: 
-why: 
+decision: match: Gyakran járunk együtt moziba és színházba a hétvégi estéken.
+why: Describes leisure activities rather than essential relationship qualities, eliminating the 'tegnap' giveaway and matching length (59 vs 56 chars).
 
 ### b1-05-05-dialogue-2   teaches: ['b1-relationships-vocab']
 files: content/hu/exercises/b1/b1-05-05-ex.json
@@ -811,8 +811,8 @@ Károly: Hogy maradtatok ilyen közel egymáshoz annyi év után?
 Anna: _____
 * Annak ellenére, hogy messze élünk egymástól, mindig közeledünk egymáshoz, ha találkozunk.
 - Mert sosem beszélünk egymással.
-decision: 
-why: 
+decision: match: Mert mindketten nagyon elfoglaltak vagyunk, és ritkán jut időnk a személyes találkozókra.
+why: Explains drifting apart rather than staying close, eliminating the absolute 'sosem' and perfectly matching length (89 vs 89 chars).
 
 ### b1-05-consolidation-9   teaches: ['b1-relationships-vocab']
 files: content/hu/exercises/b1/b1-05-consolidation-ex.json
@@ -821,8 +821,8 @@ Petra: Miért nem beszélsz Zsófival? Régen olyan jóban voltatok.
 Meg: _____
 * Annak ellenére, hogy összevesztünk, remélem, hogy egyszer kibékülünk.
 - Sosem voltunk barátok.
-decision: 
-why: 
+decision: match: Mert teljesen más lett az érdeklődési körünk, és már alig van közös témánk.
+why: Natural explanation for growing apart that acknowledges their past friendship, eliminating the absolute 'sosem' (75 vs 69 chars).
 
 ### b1-08-01-intro-2   teaches: ['b1-travel-mobility-vocab']
 files: content/hu/exercises/b1/b1-08-01-ex.json
@@ -831,8 +831,8 @@ What is 'célállomás' in English?
 * destination (final station)
 - timetable
 - ticket price
-decision: 
-why: 
+decision: shorten: destination
+why: Drops parenthetical clarification to match single English term glosses of distractors (11 vs 9, 12 chars).
 
 ### b1-08-01-practice-2   teaches: ['b1-travel-mobility-vocab']
 files: content/hu/exercises/b1/b1-08-01-ex.json
@@ -841,8 +841,8 @@ Hol kell érvényesíteni a menetjegyet felszállás előtt?
 * A jegykezelő automatánál a peronon vagy a járművön.
 - A szálloda recepcióján.
 - A hegyi hágónál.
-decision: 
-why: 
+decision: shorten: A jegykezelő automatánál.
+why: Shortens to the core location phrase, balancing length with distractors (25 vs 23, 16 chars).
 
 ### b1-08-02-practice-2   teaches: ['b1-travel-mobility-vocab']
 files: content/hu/exercises/b1/b1-08-02-ex.json
@@ -851,8 +851,8 @@ Miért van szükség térképre a hegyekben való túrázáshoz?
 * Hogy megtaláljuk a helyes ösvényt és a hágókat, és ne tévedjünk el.
 - Hogy lefényképezzük a fákat.
 - Hogy megvegyük a vonatjegyet.
-decision: 
-why: 
+decision: shorten: Hogy megtaláljuk a helyes ösvényt.
+why: Cuts compound explanation down to the primary navigational purpose of a map, matching distractor lengths (34 vs 28, 29 chars).
 
 ### b1-08-04-intro-2   teaches: ['b1-travel-mobility-vocab']
 files: content/hu/exercises/b1/b1-08-04-ex.json
@@ -861,8 +861,8 @@ What is a 'pótlóbusz'?
 * replacement bus (when trains/trams are halted)
 - express train
 - airport taxi
-decision: 
-why: 
+decision: shorten: replacement bus
+why: Drops parenthetical definition to match noun phrase distractors (15 vs 13, 12 chars).
 
 ### b1-08-04-practice-4   teaches: ['b1-travel-mobility-vocab']
 files: content/hu/exercises/b1/b1-08-04-ex.json
@@ -871,8 +871,8 @@ Mit jelent a 'vágányzár'?
 * Track closure (service suspended on that railway line).
 - Opening of a new station.
 - Buying tickets in cash.
-decision: 
-why: 
+decision: shorten: Closure of a railway track.
+why: Shortens to concise noun phrase definition, perfectly matching distractor lengths (27 vs 25, 23 chars).
 
 ### b1-08-05-practice-2   teaches: ['b1-travel-mobility-vocab']
 files: content/hu/exercises/b1/b1-08-05-ex.json
@@ -881,8 +881,8 @@ Miért hasznos útitervet készíteni egy utazás előtt?
 * Hogy optimálisan beosszuk az időnket és ne maradjunk le a legszebb helyekről.
 - Hogy több pénzt fizessünk a vasúton.
 - Hogy otthon felejtsük a csomagot.
-decision: 
-why: 
+decision: shorten: Hogy jól beosszuk az utazás idejét.
+why: Cuts secondary clause to focus on time planning, matching distractor lengths (35 vs 36, 33 chars).
 
 ### b1-08-05-reading-3   teaches: None
 files: content/hu/exercises/b1/b1-08-05-ex.json
@@ -891,8 +891,8 @@ Hogyan utaznak a szereplők Mikszáth regényrészletében?
 * Postakocsin, sáros és nehezen járható hegyi utakon.
 - Modern gyorsvonattal.
 - Folyami gőzhajón.
-decision: 
-why: 
+decision: shorten: Postakocsin a hegyi utakon.
+why: Shortens setting description while preserving vehicle and terrain, balancing lengths (27 vs 21, 17 chars).
 
 ### b1-08-consolidation-9   teaches: ['b1-travel-mobility-vocab']
 files: content/hu/exercises/b1/b1-08-consolidation-ex.json
@@ -901,8 +901,8 @@ Mit jelent az 'útiterv' egy utazó számára?
 * A megtekinteni kívánt helyek és időpontok pontos listáját.
 - A vonatjegy árát.
 - A poggyász súlyát.
-decision: 
-why: 
+decision: match: A megvásárolt menetjegyek és bérletek árát. || A feladott poggyászok megengedett súlyát.
+why: Expands distractors into complete descriptive noun phrases in the accusative matching the head noun style (44, 43 vs 58 chars).
 
 ### b1-09-03-controlled-4   teaches: ['b1-health-wellbeing-vocab']
 files: content/hu/exercises/b1/b1-09-03-ex.json
@@ -911,8 +911,8 @@ Hol lehet kiváltani a felírt orvosságot?
 * A legközelebbi gyógyszertárban.
 - A postán.
 - A könyvtárban.
-decision: 
-why: 
+decision: shorten: A gyógyszertárban.
+why: Drops superlative adjective 'legközelebbi' to leave the base institution name, balancing length with distractors (18 vs 9, 14 chars).
 
 ### b1-09-03-intro-2   teaches: ['b1-health-wellbeing-vocab']
 files: content/hu/exercises/b1/b1-09-03-ex.json
@@ -921,8 +921,8 @@ What does an Hungarian doctor do with a 'recept'?
 * felírja (prescribes it)
 - megeszi
 - eltépi
-decision: 
-why: 
+decision: shorten: felírja
+why: Drops English gloss to match bare Hungarian verb distractors (7 vs 7, 6 chars).
 
 ### b1-09-04-practice-4   teaches: ['b1-health-wellbeing-vocab']
 files: content/hu/exercises/b1/b1-09-04-ex.json
@@ -931,8 +931,8 @@ Mit jelent az 'aktív kikapcsolódás'?
 * Recreation through movement, sports, or nature walks.
 - Turning off the lights.
 - Drinking coffee at night.
-decision: 
-why: 
+decision: shorten: Active recreation through sports.
+why: Streamlines definition to concise activity phrase, balancing length with distractors (33 vs 23, 25 chars).
 
 ### b1-09-05-practice-2   teaches: ['b1-health-wellbeing-vocab']
 files: content/hu/exercises/b1/b1-09-05-ex.json
@@ -941,8 +941,8 @@ Hogyan segíthetjük a szervezet természetes gyógyulását?
 * Bőséges folyadékfogyasztással, nyugalommal és az orvosi tanácsok betartásával.
 - Kemény éjszakai munkával.
 - Gyógyszerek elutasításával.
-decision: 
-why: 
+decision: shorten: Bőséges folyadékkal és pihenéssel.
+why: Retains core recovery recommendations (fluids and rest) in the instrumental, matching distractor lengths (34 vs 25, 27 chars).
 
 ### b1-09-05-reading-1   teaches: None
 files: content/hu/exercises/b1/b1-09-05-ex.json
@@ -951,8 +951,8 @@ Kosztolányi elbeszélésében hová látogat el Esti Kornél?
 * Egy híres belgyógyász idős professzor csendes rendelőjébe.
 - Egy gyógyszergyárba.
 - A budai színházba.
-decision: 
-why: 
+decision: shorten: Egy budai orvos rendelőjébe.
+why: Shortens to key location while preserving the setting from the text, balancing length with distractors (28 vs 20, 18 chars).
 
 ### b1-09-05-reading-3   teaches: None
 files: content/hu/exercises/b1/b1-09-05-ex.json
@@ -961,8 +961,8 @@ Milyen különleges 'gyógyszert' ír fel a professzor Estinek?
 * Napi két óra sétát a friss levegőn és belső békét.
 - Erős altatót a patikából.
 - Szigorú kórházi diétát.
-decision: 
-why: 
+decision: shorten: Napi két óra sétát és belső békét.
+why: Shortens to the exact text written on the prescription in the story, matching distractor lengths (34 vs 25, 23 chars).
 
 ### b1-10-01-practice-4   teaches: ['b1-home-housing-vocab']
 files: content/hu/exercises/b1/b1-10-01-ex.json
@@ -971,8 +971,8 @@ Mi a különbség a 'felújítás' és az 'átalakítás' között?
 * A felújítás a meglévő állapot megújítását, az átalakítás pedig a funkció vagy térszerkezet megváltoztatását jelenti.
 - Semmi különbség nincs, a két szó pontosan azonos.
 - Az átalakítás csak kerti munkát jelent.
-decision: 
-why: 
+decision: match: A felújítás a teljes épület lebontását, az átalakítás pedig az új bútorok vásárlását jelenti. || A felújítás a bérleti szerződés felbontását, az átalakítás pedig a lakás eladását jelenti.
+why: Expands distractors into contrasting definition sentences of balanced length (94, 90 vs 116 chars), eliminating the absolutes 'semmi' and 'csak'.
 
 ### b1-10-02-controlled-3   teaches: ['relative-clauses-aki-ami-amely']
 files: content/hu/exercises/b1/b1-10-02-ex.json
@@ -981,8 +981,8 @@ Mikor használjuk igényes magyar szövegben az 'amely' névmást az 'ami' helye
 * Amikor pontosan meghatározott, konkrét főnévre utalunk vissza.
 - Csak személyek esetében.
 - Kizárólag kérdő mondatokban.
-decision: 
-why: 
+decision: match: Amikor egy teljes korábbi tagmondat gondolatára utalunk vissza. || Amikor emberi személyekre vagy élő szereplőkre utalunk vissza.
+why: Replaces absolutes ('csak', 'kizárólag') with the genuine linguistic conditions for 'ami' (clause reference) and 'aki' (human referent) of identical length (63, 62 vs 62 chars).
 
 ### b1-10-02-practice-4   teaches: None
 files: content/hu/exercises/b1/b1-10-02-ex.json
@@ -991,8 +991,8 @@ Milyen előnyökkel jár egy társasházi lakás a családi házzal szemben?
 * A közös költség tartalmazhatja a lépcsőház takarítását és karbantartását, kevesebb kerti munka hárul a lakóra.
 - Soha nem kell semmilyen számlát fizetni.
 - Minden lakó maga építi az épület tetejét.
-decision: 
-why: 
+decision: match: A társasházakban sokkal nagyobb a csend és a nyugalom, mint a kertvárosi családi házakban. || A lakók önállóan dönthetnek a homlokzat átalakításáról a többi tulajdonos megkérdezése nélkül.
+why: Replaces extreme absolutes and cartoonish claims with plausible housing misconceptions of matched length (92, 100 vs 110 chars).
 
 ### b1-10-03-controlled-1   teaches: ['formal-obligation']
 files: content/hu/exercises/b1/b1-10-03-ex.json
@@ -1001,8 +1001,8 @@ Mit követel a szerződéses 'köteles' segédszó?
 * Főnévi igenevet (pl. köteles megfizetni).
 - Tárgyragos főnevet.
 - Birtokos ragot.
-decision: 
-why: 
+decision: shorten: Főnévi igenevet.
+why: Drops parenthetical example to match bare grammatical term distractors (16 vs 19, 15 chars).
 
 ### b1-10-03-controlled-3   teaches: None
 files: content/hu/exercises/b1/b1-10-03-ex.json
@@ -1011,8 +1011,8 @@ Melyik állítás helyes a kaucióról Magyarországon?
 * A kaució általában kéthavi vagy egyhavi bérleti díjnak megfelelő összeg, amit kiköltözéskor visszakap a bérlő, ha nincs kár.
 - A kaució egy vissza nem térítendő adó.
 - A kauciót az önkormányzatnak kell befizetni.
-decision: 
-why: 
+decision: shorten: Kiköltözéskor visszajár, ha nincs kár a lakásban.
+why: Focuses on the core refundable nature of the deposit upon moving out, balancing length with distractors (49 vs 44, 38 chars).
 
 ### b1-10-03-practice-3   teaches: ['b1-home-housing-vocab']
 files: content/hu/exercises/b1/b1-10-03-ex.json
@@ -1021,8 +1021,8 @@ Mit tartalmaz általában a lakás rezsiköltsége?
 * A víz-, gáz-, villanyszámlát, a fűtést, a szemétszállítást és a közös költséget.
 - Kizárólag a televízió előfizetést.
 - A bútorok árát.
-decision: 
-why: 
+decision: match: A lakás vásárlásakor felvett banki hitel törlesztőrészletét és kamatait. || A bútorok, szőnyegek és konyhai háztartási gépek megvásárlásának árát.
+why: Replaces absolute 'kizárólag' and short fragment with realistic non-utility housing expense categories of matched length (72, 70 vs 80 chars).
 
 ### b1-10-03-practice-4   teaches: ['b1-home-housing-vocab']
 files: content/hu/exercises/b1/b1-10-03-ex.json
@@ -1031,8 +1031,8 @@ Mi az a 'felmondási idő' a bérleti jogviszonyban?
 * Az az időtartam (általában 30 vagy 60 nap), amelynek el kell telnie a felmondás közlése és a kiköltözés között.
 - A kulcsok átadásának perce.
 - A kaució visszafizetésének végső határideje.
-decision: 
-why: 
+decision: shorten: A felmondás és a kiköltözés közötti időtartam.
+why: Condenses definition to essential timeframe concept, balancing length with distractors (45 vs 27, 44 chars).
 
 ### b1-10-04-practice-3   teaches: ['b1-home-housing-vocab']
 files: content/hu/exercises/b1/b1-10-04-ex.json
@@ -1041,8 +1041,8 @@ Mit értünk a lakás 'elrendezésén'?
 * A helyiségek alaprajzi elhelyezkedését, kapcsolatait és a bútorok térbeli rendjét.
 - A ház festésének színét.
 - A lakók névsorát.
-decision: 
-why: 
+decision: match: A homlokzat, a lépcsőház és a bejárati ajtók festésének pontos színét. || A társasházban hivatalosan bejelentett összes lakó pontos névsorát.
+why: Expands distractors into descriptive noun phrases in the accusative matching the head noun style (70, 67 vs 82 chars).
 
 ### b1-10-05-controlled-1   teaches: ['hogy-jon-jen']
 files: content/hu/exercises/b1/b1-10-05-ex.json
@@ -1051,8 +1051,8 @@ Melyik szerkezet fejezi ki legválasztékosabban a személyes prioritást?
 * Számomra az a legfontosabb szempont, hogy a környék csendes és biztonságos legyen.
 - Nekem kell a csendes környék lenni.
 - Számomra fontos környék csendben van.
-decision: 
-why: 
+decision: match: Számomra az a legfontosabb szempont, hogy a környék csendes és biztonságos lenne. || Számomra az a legfontosabb szempont, hogy a környék csendes és biztonságos volt.
+why: Contrasts the required subjunctive 'legyen' with conditional 'lenne' and past indicative 'volt' in the subordinate clause, matching length (81, 79 vs 82 chars).
 
 ### b1-10-05-practice-3   teaches: ['b1-home-housing-vocab']
 files: content/hu/exercises/b1/b1-10-05-ex.json
@@ -1061,8 +1061,8 @@ Mitől válik egy lakókörnyezet igazán 'élhetővé' a városlakók számára
 * Jó közlekedéstől, tiszta levegőtől, zöld parkoktól és közeli szolgáltatásoktól (boltok, orvos, iskola).
 - A sűrű kamionforgalomtól és a gyárak közelségétől.
 - A teljes sötétségtől.
-decision: 
-why: 
+decision: match: A sűrű kamionforgalomtól, a zajos gyáraktól és a poros ipari létesítményektől. || A drága bevásárlóközpontoktól, a felhőkarcolóktól és a nagy parkolóktól.
+why: Expands distractors into plausible urban environment features in the ablative (-tól/-től), removing absurd 'teljes sötétségtől' (78, 72 vs 103 chars).
 
 ### b1-10-05-reading-2   teaches: None
 files: content/hu/exercises/b1/b1-10-05-ex.json
@@ -1071,8 +1071,8 @@ Milyen benyomást tett a lakás Annára, amikor belépett az előszobába?
 * Rendkívül tiszta és fényes volt, a lakkozott parketta úgy csillogott, mint a tükör.
 - Piszkos és elhanyagolt volt.
 - Üres volt minden bútor nélkül.
-decision: 
-why: 
+decision: shorten: Rendkívül tiszta és csillogó volt.
+why: Retains the impression of dazzling cleanliness while matching the predicate adjective structure of distractors (34 vs 28, 30 chars).
 
 ### b1-10-consolidation-10   teaches: None
 files: content/hu/exercises/b1/b1-10-consolidation-ex.json
@@ -1081,8 +1081,8 @@ Mit kell tisztázni a bérleti szerződésben a beköltözés előtt?
 * A havi bérleti díjat, a kaució összegét, a rezsi fizetésének módját és a felmondási időt.
 - Csak a főbérlő kedvenc színét.
 - Semmit, elég egy kézfogás.
-decision: 
-why: 
+decision: match: A lakásvásárlási hitel havi kamatait és az ingatlan öröklési feltételeit. || A szomszédok pontos munkahelyét és a közös képviselő magánéleti adatait.
+why: Replaces absurd joke options ('kedvenc színét', 'semmit') with plausible non-lease legal/personal details of matched length (72, 77 vs 89 chars).
 
 ### b1-11-01-practice-3   teaches: None
 files: content/hu/exercises/b1/b1-11-01-ex.json
@@ -1091,8 +1091,8 @@ Milyen szolgáltatásokat igényel egy modern település lakossága?
 * Egészségügyi ellátást, jó tömegközlekedést, iskolákat, üzleteket és banki szolgáltatásokat.
 - Kizárólag lovas hintókat.
 - Csak külföldi televíziós csatornákat.
-decision: 
-why: 
+decision: match: Katonai laktanyákat, repülőgépgyárakat és nehézipari vegyi üzemeket. || Luxusszállodákat, kaszinókat és nemzetközi magánrepülőtereket.
+why: Replaces absolutes ('kizárólag', 'csak') with plausible non-essential municipal infrastructure in the accusative (69, 62 vs 91 chars).
 
 ### b1-11-01-practice-4   teaches: ['b1-cities-communities-vocab']
 files: content/hu/exercises/b1/b1-11-01-ex.json
@@ -1101,8 +1101,8 @@ Mit jelent a 'fejlett infrastruktúra' kifejezés?
 * Korszerű utakat, csatornázást, gyors internetet és megbízható villamoshálózatot.
 - Csak a régi városháza épületét.
 - A sűrű erdőket utak nélkül.
-decision: 
-why: 
+decision: match: A régi műemlék épületek felújítását és a belvárosi szobrok tisztítását. || A sűrű, érintetlen természeti erdőket és a hegyi gyalogos túraösvényeket.
+why: Replaces absolute 'csak' and short fragment with full accusative descriptions of heritage and nature (73, 73 vs 80 chars).
 
 ### b1-11-02-controlled-2   teaches: ['spatial-belonging-beli']
 files: content/hu/exercises/b1/b1-11-02-ex.json
@@ -1111,8 +1111,8 @@ Mit fejez ki a '-beli' képző?
 * Térbeli vagy közösségi hovatartozást (pl. falubeli, helybeli).
 - Időbeli jövőt.
 - Tagadást.
-decision: 
-why: 
+decision: match: Időbeli befejezettséget vagy múltbeli történést (pl. múltkori). || Mondattani tagadást vagy tiltó felszólítást (pl. sehol, sehova).
+why: Expands distractors to match the exact definition + parenthetical example pattern of the target answer (64, 60 vs 62 chars).
 
 ### b1-11-02-practice-4   teaches: None
 files: content/hu/exercises/b1/b1-11-02-ex.json
@@ -1121,8 +1121,8 @@ Milyen tényezők növelik egy környék közbiztonságát?
 * A jó közvilágítás, a rendszeres rendőri jelenlét és a figyelmes szomszédok.
 - A sötét, elhagyatott utcák.
 - Az utcai kamerák kikapcsolása.
-decision: 
-why: 
+decision: shorten: A jó közvilágítás és a rendőri jelenlét.
+why: Cuts third coordinate item to retain the key municipal safety measures, balancing length with distractors (40 vs 27, 30 chars).
 
 ### b1-11-03-controlled-3   teaches: ['b1-cities-communities-vocab']
 files: content/hu/exercises/b1/b1-11-03-ex.json
@@ -1131,8 +1131,8 @@ Mit jelent az 'ingázás' fogalma?
 * Rendszeres napi vagy heti utazást a lakóhely és a munkahely vagy iskola között.
 - Egyszeri nyaralást a tengerpartra.
 - Költözést külföldre.
-decision: 
-why: 
+decision: match: Egyszeri nyári üdülést vagy kirándulást egy távoli tengerparti üdülőhelyre. || Végleges elköltözést és letelepedést egy másik európai országban.
+why: Expands distractors into full descriptive travel concepts in the accusative matching the head phrase style (75, 66 vs 79 chars).
 
 ### b1-11-03-practice-3   teaches: None
 files: content/hu/exercises/b1/b1-11-03-ex.json
@@ -1141,8 +1141,8 @@ Milyen előnyei vannak a vidéki életnek a városival szemben?
 * Kisebb a zaj, közelebb van a természet, nagyobb a privát tér és gyakran alacsonyabbak a lakásárak.
 - Minden sarkon metróállomás található.
 - Soha nem kell semmilyen fűtést fizetni.
-decision: 
-why: 
+decision: match: Minden utcában sűrű éjszakai buszjáratok és metróállomások találhatók. || Sokkal több a kulturális program, a színházi előadás és a nagy egyetem.
+why: Replaces extreme absolute 'soha nem kell semmilyen' with genuine urban amenities that do not apply to country living (69, 72 vs 98 chars).
 
 ### b1-11-03-practice-4   teaches: ['b1-cities-communities-vocab']
 files: content/hu/exercises/b1/b1-11-03-ex.json
@@ -1151,8 +1151,8 @@ Mit értünk az 'életminőség' mutatói alatt?
 * Az egészségi állapotot, az anyagi biztonságot, a környezet tisztaságát és a szabadidő mennyiségét.
 - Csak a televízió képernyőjének méretét.
 - Kizárólag az autók márkáját.
-decision: 
-why: 
+decision: match: Az országos valutatartalékok összegét és a nehézipari termelés növekedési ütemét. || A hivatalos államhatárok hosszát és a belföldi vasútvonalak kilométerben mért számát.
+why: Replaces absolutes ('csak', 'kizárólag') and consumer trivia with macro-economic and geographical indicators in the accusative (81, 86 vs 98 chars).
 
 ### b1-11-04-controlled-4   teaches: ['kellene']
 files: content/hu/exercises/b1/b1-11-04-ex.json
@@ -1161,8 +1161,8 @@ Melyik mondat ajánl egy úti célt a legválasztékosabban?
 * Ha Pécsre látogatsz, szívből ajánlom a Zsolnay Kulturális Negyedet.
 - Menj Pécsre és ne csinálj semmit.
 - Pécs nem érdekel senkit.
-decision: 
-why: 
+decision: match: Ha Pécsre látogatsz, kötelezően meg kell venned a legdrágább belépőt. || Ha Pécsre látogatsz, jobb lesz a szállodában maradnod egész nap.
+why: Matches sentence frame 'Ha Pécsre látogatsz...' with rigid obligation and unhelpful advice instead of polite recommendation (69, 64 vs 67 chars).
 
 ### b1-11-04-practice-4   teaches: ['b1-cities-communities-vocab']
 files: content/hu/exercises/b1/b1-11-04-ex.json
@@ -1171,8 +1171,8 @@ Mit jelent a minőségi 'vendéglátás' a turizmusban?
 * Finom ételeket, udvarias kiszolgálást, tiszta szállást és meleg szívű fogadtatást.
 - Csak a drága éttermek étlapját.
 - A külföldi turisták elkerülését.
-decision: 
-why: 
+decision: match: A vendégek sietős kiszolgálását és a borravaló kötelező követelését. || A hivatalos utazási okmányok ellenőrzését a nemzetközi repülőtereken.
+why: Replaces absolute 'csak' with realistic but contrary service practices and unrelated border control functions in the accusative (73, 76 vs 82 chars).
 
 ### b1-11-05-controlled-1   teaches: ['verb-government-ban-ben']
 files: content/hu/exercises/b1/b1-11-05-ex.json
@@ -1181,8 +1181,8 @@ Milyen vonzattal áll a 'részt vesz' ige a mondatban: „A lakók részt veszne
 * rendezvényen (vagy rendezvényben)
 - rendezvényhez
 - rendezvényből
-decision: 
-why: 
+decision: shorten: rendezvényen
+why: Drops parenthetical alternate form to leave the natural superessive form used in the grammar guide, balancing length with distractors (12 vs 13, 13 chars).
 
 ### b1-11-05-controlled-4   teaches: ['b1-cities-communities-vocab']
 files: content/hu/exercises/b1/b1-11-05-ex.json
@@ -1191,8 +1191,8 @@ Mi a szerepe a helyi 'önkormányzatnak' egy településen?
 * A helyi közügyek (iskolák, utak, tisztaság, fejlesztések) demokratikus irányítása és intézése.
 - Kizárólag külföldi nagykövetségek fenntartása.
 - Csak a katonai sorozás lebonyolítása.
-decision: 
-why: 
+decision: match: Az országos külpolitikai kapcsolatok és a külföldi nagykövetségek fenntartása. || A határellenőrzés működtetése és a katonai sorozás országos lebonyolítása.
+why: Replaces absolutes ('kizárólag', 'csak') with national-level state responsibilities that are outside local municipal competence (79, 76 vs 94 chars).
 
 ### b1-11-05-reading-1   teaches: None
 files: content/hu/exercises/b1/b1-11-05-ex.json
@@ -1201,8 +1201,8 @@ Hol játszódik a Móricz Zsigmond-részlet (Légy jó mindhalálig)?
 * Debrecenben, a patinás református kollégium és a Nagytemplom városában.
 - Egy osztrák hegyi faluban.
 - A budai várnegyedben.
-decision: 
-why: 
+decision: shorten: Debrecenben, a kollégiumban.
+why: Shortens appositive clause to core setting of the Debrecen college, balancing lengths (28 vs 26, 21 chars).
 
 ### b1-11-05-reading-2   teaches: None
 files: content/hu/exercises/b1/b1-11-05-ex.json
@@ -1211,8 +1211,8 @@ Kihez ment felolvasni Nyilas Misi délutánonként?
 * A vak Pósalaky úrhoz a lutri számait és az újságot felolvasni.
 - A polgármesterhez zongorázni.
 - Az egri várkapitányhoz.
-decision: 
-why: 
+decision: shorten: A vak Pósalaky úrhoz.
+why: Drops repetitive verb complement to name the person directly, balancing length with distractors (21 vs 29, 23 chars).
 
 ### b1-11-05-reading-3   teaches: None
 files: content/hu/exercises/b1/b1-11-05-ex.json
@@ -1221,8 +1221,8 @@ Milyen érzés töltötte el Misit a debreceni utcákon sétálva?
 * Átérezte, milyen felelősségteljes dolog egy igazi közösség hasznos tagjává válni.
 - Nagyon unatkozott és haza akart szökni.
 - Haragudott az összes emberre.
-decision: 
-why: 
+decision: shorten: Hogy hasznos tagja lett a közösségnek.
+why: Condenses clause to core civic feeling of belonging, matching distractor lengths (38 vs 39, 29 chars).
 
 ### b1-11-consolidation-10   teaches: ['b1-cities-communities-vocab']
 files: content/hu/exercises/b1/b1-11-consolidation-ex.json
@@ -1231,8 +1231,8 @@ Mit jelent a közösség 'összetartása' a mindennapi életben?
 * Egymás támogatását, a közös programokat és a felelősségérzetet a lakókörnyezetért.
 - A lakások eladását.
 - A rendőrségi büntetéseket.
-decision: 
-why: 
+decision: match: A lakások gyors eladását és a szomszédok elkerülését a házban. || A szigorú rendőrségi büntetéseket és a folyamatos hatósági bírságokat.
+why: Expands distractors into descriptive noun phrases in the accusative of balanced length (63, 67 vs 82 chars).
 
 ### b1-11-consolidation-12   teaches: None
 files: content/hu/exercises/b1/b1-11-consolidation-ex.json
@@ -1241,8 +1241,8 @@ Miért fontos a jó infrastruktúra egy fejlődő település számára?
 * Mert vonzóvá teszi a helyet a családok és a munkahelyteremtő vállalkozások számára.
 - Mert elriasztja a turistákat.
 - Mert megszünteti a boltokat.
-decision: 
-why: 
+decision: shorten: Mert vonzóvá teszi a helyet a családoknak.
+why: Focuses on residential attraction, balancing length with distractors (42 vs 29, 28 chars).
 
 ### b1-12-01-controlled-4   teaches: ['b1-food-lifestyle-vocab']
 files: content/hu/exercises/b1/b1-12-01-ex.json
@@ -1251,8 +1251,8 @@ Mit jelent az 'alapanyag' szó a konyhaművészetben?
 * The raw, foundational ingredient (e.g. flour, meat)
 - The cookbook
 - The kitchen knife
-decision: 
-why: 
+decision: shorten: The raw ingredient
+why: Drops descriptive appositives and parenthetical examples to match concise noun phrase distractors (18 vs 12, 17 chars).
 
 ### b1-12-01-practice-3   teaches: ['b1-food-lifestyle-vocab']
 files: content/hu/exercises/b1/b1-12-01-ex.json
@@ -1261,8 +1261,8 @@ Mi a konyhai 'előkészítés' lényege?
 * A zöldségek megmosása, meghámozása, felaprítása és a hozzávalók kimérése a főzés előtt.
 - Az ételek elfogyasztása a vendégekkel.
 - A tányérok elmosása az ebéd után.
-decision: 
-why: 
+decision: shorten: A hozzávalók megtisztítása a főzés előtt.
+why: Retains core prep concept before cooking, matching distractor lengths (41 vs 38, 33 chars).
 
 ### b1-12-01-practice-4   teaches: None
 files: content/hu/exercises/b1/b1-12-01-ex.json
@@ -1271,8 +1271,8 @@ Melyek a leggyakoribb hagyományos magyar fűszerek?
 * A fűszerpaprika, a majoránna, a köménymag, a feketebors és a fokhagyma.
 - A curry és a wasabi.
 - Kizárólag a fehér kristálycukor.
-decision: 
-why: 
+decision: match: A curry, a gyömbér, a kurkuma, a chili és a japán wasabi. || A fahéj, a vanília, a szegfűszeg, a kardamom és a szerecsendió.
+why: Replaces absolute 'kizárólag' with authentic lists of Asian and sweet baking spices that are not typical savory Hungarian staples (56, 63 vs 71 chars).
 
 ### b1-12-02-practice-4   teaches: None
 files: content/hu/exercises/b1/b1-12-02-ex.json
@@ -1281,8 +1281,8 @@ Milyen tényezők befolyásolják egy ember táplálkozási szokásait?
 * A családi hagyományok, a kultúra, az életkor, a fizikai aktivitás és az egészségi állapot.
 - Csak a cipőméret.
 - Kizárólag a lakás fűtési rendszere.
-decision: 
-why: 
+decision: match: A személyi igazolvány száma és a mobiltelefon képernyőjének mérete. || A lakóhely postai irányítószáma és a ház építésének pontos éve.
+why: Replaces absolutes ('csak', 'kizárólag') and cartoonish claims with full administrative/housing descriptors (68, 65 vs 90 chars).
 
 ### b1-12-03-controlled-2   teaches: ['b1-food-lifestyle-vocab']
 files: content/hu/exercises/b1/b1-12-03-ex.json
@@ -1291,8 +1291,8 @@ Hogyan mondjuk: 'cooking / baking time'?
 * sütési idő (főzési idő)
 - sütőóra
 - időjárás
-decision: 
-why: 
+decision: shorten: sütési idő
+why: Drops parenthetical alternative to match single compound noun distractors (10 vs 7, 8 chars).
 
 ### b1-12-03-controlled-4   teaches: ['b1-food-lifestyle-vocab']
 files: content/hu/exercises/b1/b1-12-03-ex.json
@@ -1301,8 +1301,8 @@ Mit jelent az 'adag' szó az étlapokon vagy receptekben?
 * Egy személyre szabott ételmennyiség (portion).
 - Az étel ára.
 - A szakács neve.
-decision: 
-why: 
+decision: match: Az elkészített étel forintban megadott ára. || A konyhán dolgozó főszakács teljes neve.
+why: Expands distractors into descriptive noun phrases clarifying price and chef's name to balance length (43, 40 vs 46 chars).
 
 ### b1-12-03-practice-4   teaches: None
 files: content/hu/exercises/b1/b1-12-03-ex.json
@@ -1311,8 +1311,8 @@ Hány adagra szólnak általában a családi receptek?
 * Általában négy vagy hat személyre (adagra).
 - Száz adagra.
 - Fél adagra.
-decision: 
-why: 
+decision: shorten: Négy vagy hat adagra.
+why: Cuts introductory adverb and parenthetical to match the numerical phrasing of distractors (21 vs 12, 11 chars).
 
 ### b1-12-04-controlled-1   teaches: ['b1-food-lifestyle-vocab']
 files: content/hu/exercises/b1/b1-12-04-ex.json
@@ -1321,8 +1321,8 @@ Mi a 'hungarikum' hivatalos definíciója?
 * Olyan megkülönböztetésre méltó érték, amely a magyarságra jellemző csúcsteljesítményt képvisel.
 - Bármilyen külföldről behozott áru.
 - Egy műanyag konyhai eszköz.
-decision: 
-why: 
+decision: match: Olyan importált külföldi fogyasztási cikk, amelyet hazai boltokban árusítanak. || Olyan modern ipari műanyag termék, amelyet gyárakban állítanak elő olcsón.
+why: Replaces absolute 'bármilyen' and trivial object claim with complete definition sentences matching register and length (79, 74 vs 95 chars).
 
 ### b1-12-04-controlled-3   teaches: None
 files: content/hu/exercises/b1/b1-12-04-ex.json
@@ -1331,8 +1331,8 @@ Mely ételek számítanak hungarikumnak a gasztronómiában?
 * A gulyásleves, a csabai kolbász, a kalocsai fűszerpaprika és a karcagi birkapörkölt.
 - A pizza és a hamburger.
 - A sushi és a paella.
-decision: 
-why: 
+decision: match: A nápolyi pizza, az amerikai hamburger, a hot dog és a sült burgonya. || A japán sushi, a spanyol paella, a francia croissant és a belga gofri.
+why: Expands short foreign dish pairs into parallel lists of four renowned international foods (69, 70 vs 84 chars).
 
 ### b1-12-04-controlled-4   teaches: ['b1-food-lifestyle-vocab']
 files: content/hu/exercises/b1/b1-12-04-ex.json
@@ -1341,8 +1341,8 @@ Mit jelent a 'hagyományőrzés' a konyhában?
 * A generációkon át öröklődő receptek, alapanyagok és elkészítési technikák ápolását.
 - Minden régi recept elégetését.
 - Kizárólag konzerv ételek fogyasztását.
-decision: 
-why: 
+decision: match: A régi családi receptek elvetését és a modern gyorsételek átvételét a konyhában. || A félkész ipari konzervek és mélyhűtött ételek mindennapi fogyasztását otthon.
+why: Replaces absolute 'kizárólag' and cartoonish burning claim with full accusative descriptions of modern processed food habits (77, 76 vs 83 chars).
 
 ### b1-12-05-controlled-2   teaches: ['b1-food-lifestyle-vocab']
 files: content/hu/exercises/b1/b1-12-05-ex.json
@@ -1351,8 +1351,8 @@ Mit jelent a 'borravaló' szokása?
 * Önkéntes pénzbeli elismerés az udvarias és figyelmes kiszolgálásért (általában 10–15%).
 - A bor palackjának ára.
 - A pincér köténye.
-decision: 
-why: 
+decision: match: Az asztalra rendelt minőségi bor palackjának külön kiszámlázott ára. || Az éttermi felszolgáló személyzet tiszta munkaruhája és köténye.
+why: Expands short noun fragments into full descriptive noun phrases of matching style (69, 64 vs 87 chars).
 
 ### b1-12-05-controlled-4   teaches: None
 files: content/hu/exercises/b1/b1-12-05-ex.json
@@ -1361,8 +1361,8 @@ Hány fogásból áll egy klasszikus háromfogásos magyar vasárnapi ebéd?
 * Háromból: levesből (előétel), főételből és desszertből.
 - Egyetlen szelet kenyérből.
 - Húsz különböző italból.
-decision: 
-why: 
+decision: shorten: Levesből, főételből és desszertből.
+why: Drops numeral prefix and parenthetical gloss to name the three courses directly in the elative (-ból/-ből), matching distractor lengths (36 vs 26, 23 chars).
 
 ### b1-12-05-practice-3   teaches: None
 files: content/hu/exercises/b1/b1-12-05-ex.json
@@ -1371,8 +1371,8 @@ Mit kérdez a pincér a vacsora végén?
 * „Együtt vagy külön fizetnek? Készpénzzel vagy kártyával óhajtanak fizetni?”
 - „Mikor mennek haza gyalog?”
 - „Hány óra van a telefonjukon?”
-decision: 
-why: 
+decision: match: „Sikerült már választaniuk az étlapról, vagy kérnek még néhány percet?” || „Ízlett az étel, vagy ajánlhatok még egy kis desszertet a kávé mellé?”
+why: Replaces absurd questions with authentic waiter phrases from earlier stages of the meal (ordering and dessert check), matching length (73, 72 vs 75 chars).
 
 ### b1-12-05-practice-4   teaches: None
 files: content/hu/exercises/b1/b1-12-05-ex.json
@@ -1381,8 +1381,8 @@ Mit jelent, ha a számla már tartalmazza a 'szervizdíjat'?
 * A kiszolgálás díja már benne van a végösszegben, így nem szükséges külön borravalót adni.
 - Az asztalt meg kell venni a vacsora után.
 - A konyhai gépek javítását a vendég fizeti.
-decision: 
-why: 
+decision: match: A vendégnek kötelező külön borravalót fizetnie a számla teljes összegén felül. || Az étteremben elfogyasztott ételek árát a helyi önkormányzat utólag megtéríti.
+why: Replaces absurd joke options with the common service-charge misconception (tipping on top) and municipal reimbursement, matching length (80, 80 vs 89 chars).
 
 ### b1-12-05-reading-1   teaches: None
 files: content/hu/exercises/b1/b1-12-05-ex.json
@@ -1391,8 +1391,8 @@ Hol játszódik a Krúdy Gyula-részlet (Szindbád)?
 * Egy békés, ódon óbudai kiskocsmában a vasárnapi ebéd idején.
 - Egy tengerparti kikötőben.
 - A bécsi császári operaházban.
-decision: 
-why: 
+decision: shorten: Egy ódon óbudai kiskocsmában.
+why: Cuts temporal setting to leave the core tavern location, perfectly matching distractor lengths (29 vs 26, 29 chars).
 
 ### b1-12-05-reading-2   teaches: None
 files: content/hu/exercises/b1/b1-12-05-ex.json
@@ -1401,8 +1401,8 @@ Mit rendelt Szindbád a vendéglőstől a kiskocsmában?
 * Forró húslevest aranyló velős csonttal, pirítóssal és fokhagymával.
 - Hideg tejet és száraz kenyeret.
 - Sült halat krumplival.
-decision: 
-why: 
+decision: shorten: Forró húslevest velős csonttal.
+why: Retains the famous marrow-bone soup order while dropping extra side dishes, matching distractor lengths (32 vs 31, 22 chars).
 
 ### b1-12-05-reading-3   teaches: None
 files: content/hu/exercises/b1/b1-12-05-ex.json
@@ -1411,8 +1411,8 @@ Milyen életérzést fejez ki Szindbád gasztronómiai élvezete Krúdynál?
 * Hogy az élet minden költészete és szépsége egyetlen tökéletesen megfőzött falatban és pillanatban összpontosul.
 - Hogy a sietség és a gyorsétkezés a legfontosabb.
 - Hogy a vendéglőkbe csak felesleges pénzkidobás járni.
-decision: 
-why: 
+decision: match: Hogy a modern ember számára a sietős gyorsétkezés és az időmegtakarítás a legfontosabb érték. || Hogy az étkezés pusztán biológiai kötelesség, amelyre kár sok időt és figyelmet fordítani.
+why: Replaces absolute 'csak' with fully developed philosophical counter-attitudes (fast food efficiency vs chore) matching length (97, 95 vs 111 chars).
 
 ### b1-12-consolidation-11   teaches: None
 files: content/hu/exercises/b1/b1-12-consolidation-ex.json
@@ -1421,8 +1421,8 @@ Milyen hagyományos magyar ételek ismertek hungarikumként?
 * A gulyásleves, a csabai kolbász, a kürtőskalács és a bajai halászlé.
 - A bécsi szelet és a spagetti.
 - A hot dog és a sült krumpli.
-decision: 
-why: 
+decision: shorten: A gulyásleves és a csabai kolbász.
+why: Shortens four-item dish list to two iconic hungarikum items, matching distractor lengths (34 vs 29, 28 chars).
 
 ### b1-14-consolidation.ex06   teaches: ['b1-technology-communication-vocab']
 files: content/hu/exercises/b1/b1-14-consolidation-ex.json
@@ -1431,8 +1431,8 @@ Miért hasznos a mobil üzenetküldés a mindennapokban?
 * Mert gyors és rugalmas kapcsolattartást tesz lehetővé a családdal és kollégákkal.
 - Mert elnémítja a rádiót a szobában.
 - Mert helyettesíti a napi testmozgást.
-decision: 
-why: 
+decision: match: Mert hivatalos bírósági iratok kézbesítésére szolgál a postahivatalban. || Mert harminc napos kötelező válaszadási határidőt ír elő a címzettnek.
+why: Replaces absurd claims (radio mute, physical exercise) with formal postal/administrative communication rules matching length (72, 73 vs 81 chars).
 
 ### b1-15-01.ex08   teaches: ['superlative']
 files: content/hu/exercises/b1/b1-15-01-ex.json
@@ -1441,8 +1441,8 @@ Melyik szófajképzővel képezzük a felsőfokot a melléknevekből?
 * a 'leg-' előtaggal (legszebb, legérdekesebb)
 - a '-ság' utótaggal
 - a '-kodik' igeképzővel
-decision: 
-why: 
+decision: shorten: a 'leg-' előtaggal
+why: Drops parenthetical examples to match concise morpheme-and-label format of distractors (18 vs 18, 22 chars).
 
 ### b1-15-05.ex08   teaches: None
 files: content/hu/exercises/b1/b1-15-05-ex.json
@@ -1451,8 +1451,8 @@ Miért tekinthető Jókai Mór 'A kőszívű ember fiai' című regénye a magya
 * Mert lenyűgöző stílusban, mély emberi drámával és hazaszeretettel mutatja be az 1848-as szabadságharc korát.
 - Mert receptkönyvként is használható a konyhában.
 - Mert mindössze három oldalból áll a teljes történet.
-decision: 
-why: 
+decision: match: Mert egyetlen este alatt játszódik egy falusi házban, modern szatirikus stílusban. || Mert szigorú gazdasági szakszövegként a 19. századi agrárstatisztikákat elemzi.
+why: Replaces cartoonish distractors (cookbook, three pages long) with plausible literary/academic mischaracterizations (87, 85 vs 108 chars).
 
 ### b1-15-consolidation.ex08   teaches: None
 files: content/hu/exercises/b1/b1-15-consolidation-ex.json
@@ -1461,8 +1461,8 @@ Hogyan ábrázolta Jókai Mór a Baradlay fivérek bécsi színházi estéjét?
 * A császárvárosi pompa, a zene és az elragadó művészet élményén keresztül, amely mögött felsejlik a haza sorsa.
 - Egy unalmas tanóraként a gimnáziumban.
 - Egy katonai börtön hideg cellájában.
-decision: 
-why: 
+decision: match: Egy rideg katonai börtön fagyos cellájában, fegyveres őrök szigorú felügyelete alatt. || Egy vidéki gimnázium poros tantermében, egy szigorú latin tanóra keretében.
+why: Expands short classroom and prison distractors into rich atmospheric descriptions matching the imperial theater setting (86, 81 vs 110 chars).
 
 ### b1-17-consolidation.ex06   teaches: ['b1-society-inequality-vocab']
 files: content/hu/exercises/b1/b1-17-consolidation-ex.json
@@ -1471,8 +1471,8 @@ Mit jelent az önkéntes munka kifejezés?
 * Olyan segítő tevékenységet, amelyet valaki anyagi ellenszolgáltatás nélkül, szabad akaratából végez a közösségért.
 - Kényszermunkát, amit kötelezően elrendel a hatóság.
 - Egy vállalat napi irodai fizetett túlóráját.
-decision: 
-why: 
+decision: match: Olyan kötelező kényszermunkát, amelyet az állami bíróság büntetésként rendel el. || Olyan mindennapi hivatali munkát, amelyet az alkalmazott havi fizetésért végez.
+why: Expands distractors into parallel relative-clause definitions in the accusative matching the head noun structure (80, 81 vs 114 chars).
 
 ### b1-23-03.ex01   teaches: ['b1-making-decisions-vocab']
 files: content/hu/exercises/b1/b1-23-03-ex.json
@@ -1481,8 +1481,8 @@ Mi az a 'dilemma'?
 * Olyan nehéz helyzet, amelyben két egyformán nehéz vagy kellemetlen lehetőség közül kell választani.
 - Egy orvosi gyógyszer neve lázcsillapításra.
 - Egy zenei ritmus a reneszánsz táncokban.
-decision: 
-why: 
+decision: shorten: Választás két egyformán nehéz lehetőség közül.
+why: Shortens to the essential definition of choosing between two difficult options, matching distractor lengths (46 vs 43, 40 chars).
 
 ### b1-24-01.ex01   teaches: ['b1-how-things-work-vocab']
 files: content/hu/exercises/b1/b1-24-01-ex.json
@@ -1491,8 +1491,8 @@ Mit jelent a 'gépezet' szó tágabb értelemben?
 * Egy összetett műszaki vagy szervezeti rendszer működési mechanizmusát.
 - Egyetlen egyszerű fa evőeszközt.
 - Egy erdőben található turistautat.
-decision: 
-why: 
+decision: shorten: Egy összetett rendszer működési mechanizmusát.
+why: Cuts coordinate adjectives to leave core abstract mechanism definition, balancing lengths (46 vs 32, 34 chars).
 
 ### b1-24-01.ex04   teaches: ['b1-how-things-work-vocab']
 files: content/hu/exercises/b1/b1-24-01-ex.json
@@ -1501,8 +1501,8 @@ Mit jelent a 'szabályozás' egy gépi folyamatban?
 * A paraméterek és a működés pontos irányítását, korlátok között tartását.
 - A gép teljes lekapcsolását örökre.
 - A műszerfal lefestését új színre.
-decision: 
-why: 
+decision: match: A gép áramtalanítását és a hálózatról való időszakos lekapcsolását. || A burkolat és a külső felületek megtisztítását a lerakódott portól.
+why: Replaces absolute 'örökre' and trivial paint claim with realistic mechanical actions in the accusative (67, 67 vs 72 chars).
 
 ### b1-24-consolidation.ex08   teaches: None
 files: content/hu/exercises/b1/b1-24-consolidation-ex.json
@@ -1511,8 +1511,8 @@ Milyen 'gépezetet' kell kiismerniük a diákoknak Ottlik Géza 'Iskola a határ
 * A katonaiskola szigorú, kíméletlen és zárt intézményi rendszerét, megtanulva megőrizni belső szabadságukat.
 - Egy gőzmozdony gépészeti meghibásodását az állomáson.
 - A kőszegi óragyár harangjátékának fogaskerekeit.
-decision: 
-why: 
+decision: shorten: A katonaiskola szigorú és zárt intézményi rendszerét.
+why: Drops participial clause to state the core institutional metaphor directly, perfectly matching distractor lengths (53 vs 53, 48 chars).
 
 ### b1-26-01.ex01   teaches: ['b1-work-ambition-balance-vocab']
 files: content/hu/exercises/b1/b1-26-01-ex.json
@@ -1521,8 +1521,8 @@ Mit jelent a 'hivatás' szó a puszta munkahelyhez képest?
 * Olyan szakmai tevékenységet, amelyet valaki belső elhivatottságból, szívvel-lélekkel végez.
 - Egy ideiglenes diákmunkát a nyári szünetben.
 - A havi fizetési papír átvételét a pénztárnál.
-decision: 
-why: 
+decision: shorten: Belső elhivatottságból végzett szakmai tevékenységet.
+why: Shortens relative clause to a concise participial phrase in the accusative, matching distractor lengths (52 vs 44, 45 chars).
 
 ### b1-27-01.ex01   teaches: ['b1-social-life-communication-vocab']
 files: content/hu/exercises/b1/b1-27-01-ex.json
@@ -1531,8 +1531,8 @@ Mit jelent az 'összejövetel' szó egy társasági környezetben?
 * Barátok, rokonok vagy ismerősök kötetlen találkozóját, társasági összejövetelt.
 - Egy zárt katonai hadgyakorlatot.
 - A közlekedési lámpa pirosra váltását.
-decision: 
-why: 
+decision: shorten: Barátok vagy ismerősök kötetlen találkozóját.
+why: Drops redundant appositive restatement ('társasági összejövetelt'), balancing length with distractors (45 vs 32, 37 chars).
 
 ### b1-27-03.ex06   teaches: ['b1-social-life-communication-vocab']
 files: content/hu/exercises/b1/b1-27-03-ex.json
@@ -1541,8 +1541,8 @@ Mit jelent az, ha valaki 'visszaél a bizalommal'?
 * Kihasználja és elárulja a másik jóhiszeműségét és titkát a saját előnyére.
 - Dupla adag kávét főz a vendégének.
 - Kölcsönad egy könyvet a könyvtárból.
-decision: 
-why: 
+decision: match: Őszintén megosztja a személyes problémáit a legközelebbi barátaival. || Minden helyzetben pontosan betartja a korábban tett szóbeli ígéretét.
+why: Replaces absurd joke options (brewing extra coffee, lending library book) with positive trust-related actions of balanced length (68, 70 vs 74 chars).
 
 ### b1-27-05.ex01   teaches: ['b1-social-life-communication-vocab']
 files: content/hu/exercises/b1/b1-27-05-ex.json
@@ -1551,8 +1551,8 @@ Mit jelent az 'empátia' fogalma?
 * A képességet arra, hogy beleéljük magunkat a másik ember lelkiállapotába és megértsük érzéseit.
 - A gyors számolási készséget pénztárnál.
 - A külföldi utazások iránti olthatatlan vágyat.
-decision: 
-why: 
+decision: shorten: Mások érzéseinek és helyzetének átérzését.
+why: Condenses definition to core ability to understand others' feelings, perfectly matching distractor lengths (42 vs 39, 46 chars).
 
 ### b1-28-01.ex06   teaches: ['b1-rules-rights-responsibilities-vocab']
 files: content/hu/exercises/b1/b1-28-01-ex.json
@@ -1561,8 +1561,8 @@ Mit jelent az 'áthágja a szabályt' kifejezés?
 * Megszegi, figyelmen kívül hagyja vagy megsérti az érvényes előírást.
 - Lépcsőn megy fel az emeletre.
 - Átlép egy pocsolyán az utcán.
-decision: 
-why: 
+decision: shorten: Megszegi az érvényes előírást.
+why: Drops repetitive synonymous verbs ('figyelmen kívül hagyja vagy megsérti') to state core violation concisely (31 vs 29, 29 chars).
 
 ### b1-28-02.ex06   teaches: ['b1-rules-rights-responsibilities-vocab']
 files: content/hu/exercises/b1/b1-28-02-ex.json
@@ -1571,8 +1571,8 @@ Mit jelent a 'számonkérés' a munkahelyen?
 * Annak ellenőrzését és felülvizsgálatát, hogy valaki pontosan teljesítette-e a rábízott feladatokat.
 - A telefonkönyvben való lapozgatást.
 - A matekfeladat összeadását.
-decision: 
-why: 
+decision: match: A kollégák szabadidős programjainak és magánéletének részletes feljegyzését. || Az új irodai számítógépek és telefonok raktári sorszámának ellenőrzését.
+why: Replaces absurd literal counting jokes (phone book, math problem) with workplace administrative activities in the accusative (76, 73 vs 99 chars).
 
 ### b1-28-03.ex06   teaches: ['b1-rules-rights-responsibilities-vocab']
 files: content/hu/exercises/b1/b1-28-03-ex.json
@@ -1581,8 +1581,8 @@ Mit jelent a 'kivételt tesz' kifejezés?
 * Egyedi esetben eltekint az általános szabály szigorú alkalmazásától.
 - Kiveszi a pénzt a zsebéből.
 - Kiteszi a virágot az erkélyre.
-decision: 
-why: 
+decision: shorten: Eltekint a szabály alkalmazásától.
+why: Streamlines definition to core action of waiving the rule, matching distractor lengths (34 vs 27, 30 chars).
 
 ### b1-28-04.ex06   teaches: ['b1-rules-rights-responsibilities-vocab']
 files: content/hu/exercises/b1/b1-28-04-ex.json
@@ -1591,8 +1591,8 @@ Mit jelent a 'kötelezettségvállalás' fogalma?
 * Hivatalos és kötelező ígéretet egy feladat elvégzésére vagy fizetés teljesítésére.
 - A vállfára akasztott kabát felvételét.
 - A munkahelyről való korai távozást.
-decision: 
-why: 
+decision: shorten: Hivatalos ígéretet egy feladat elvégzésére.
+why: Drops coordinate clause to define official commitment concisely in the accusative, matching distractor lengths (43 vs 38, 35 chars).
 
 ### b1-28-05.ex01   teaches: ['b1-rules-rights-responsibilities-vocab']
 files: content/hu/exercises/b1/b1-28-05-ex.json
@@ -1601,8 +1601,8 @@ Mit jelent a 'jogorvoslat' fogalma a magyar közigazgatásban?
 * A polgár törvényes lehetőségét arra, hogy panasszal vagy fellebbezéssel éljen egy jogsértő határozat ellen.
 - Az orvos által felírt recept beváltását a patikában.
 - A tornatermi gyógytornát.
-decision: 
-why: 
+decision: match: A hatósági eljárásban kiszabott pénzbírság azonnali befizetését a postán. || A polgármesteri hivatalban dolgozó köztisztviselők kötelező orvosi szűrését.
+why: Replaces medical puns with administrative payment and municipal procedures in the accusative (73, 75 vs 107 chars).
 
 ### b1-28-05.ex06   teaches: None
 files: content/hu/exercises/b1/b1-28-05-ex.json
@@ -1611,8 +1611,8 @@ Mit ismert fel végül Wibra György, amikor megismerte a tisztaszívű Veronká
 * Hogy a szerelem, az emberség és a boldogság sokkal értékesebb minden kapzsi örökséghajszolásnál.
 - Hogy jobb lett volna katonának állni.
 - Hogy az esernyő fabatkát sem ér.
-decision: 
-why: 
+decision: shorten: Hogy a szerelem értékesebb az örökségnél.
+why: Condenses moral realization to love surpassing material inheritance, balancing length with distractors (41 vs 37, 32 chars).
 
 ### b1-28-consolidation.ex04   teaches: None
 files: content/hu/exercises/b1/b1-28-consolidation-ex.json
@@ -1621,8 +1621,8 @@ Hogyan oldódik fel a jogi és anyagi érdekek konfliktusa Mikszáth 'Szent Pét
 * A kapzsi vagyonszerzés helyét a tiszta szerelem, a méltányosság és az emberi tisztesség veszi át.
 - Minden vagyont felgyújtanak a haragos rokonok.
 - A bíróság börtönbe zárja Glogova összes lakóját.
-decision: 
-why: 
+decision: shorten: A vagyonszerzés helyét a szerelem és tisztesség veszi át.
+why: Streamlines coordinate virtues to retain core moral shift from greed to love, matching distractor lengths (57 vs 46, 48 chars).
 
 ### b1-28-consolidation.ex08   teaches: None
 files: content/hu/exercises/b1/b1-28-consolidation-ex.json
@@ -1631,8 +1631,8 @@ Milyen csodatevő tárgy köré épül a felvidéki Glogova falu meggazdagodás�
 * Egy ócska, vörös színű esernyő köré, amit a legenda szerint maga Szent Péter borított a kis árvára.
 - Egy aranyból készült csodálatos korona köré.
 - Egy varázserejű kard köré.
-decision: 
-why: 
+decision: shorten: Egy ócska, vörös színű esernyő köré.
+why: Drops relative clause legend backstory to name the titular red umbrella object, matching distractor lengths (36 vs 44, 26 chars).
 
 ### b1-29-02.ex01   teaches: ['b1-migration-identity-vocab']
 files: content/hu/exercises/b1/b1-29-02-ex.json
@@ -1641,8 +1641,8 @@ Mit jelent a társadalmi 'beilleszkedés' folyamata egy új országban?
 * A helyi nyelv elsajátítását, a szokások megértését és az új közösség egyenrangú tagjává válást.
 - A teljes elszigetelődést a szomszédoktól.
 - A bőröndök kicsomagolásának elhalasztását.
-decision: 
-why: 
+decision: match: A teljes elszigetelődést a helyi lakosságtól és a kapcsolatok kerülését. || A mindennapi hivatali ügyintézés és a nyelvtanulás tartós elhalasztását.
+why: Expands short and trivial distractors into parallel accusative noun phrases describing isolation and avoidance (73, 76 vs 95 chars).
 
 ### b1-29-03.ex06   teaches: ['b1-migration-identity-vocab']
 files: content/hu/exercises/b1/b1-29-03-ex.json
@@ -1651,8 +1651,8 @@ Mit jelent a 'szülőföld' fogalma?
 * Azt a vidéket vagy hazát, ahol az ember született, és ahol a gyökerei találhatók.
 - A veteményeskertbe hozott fekete földet.
 - A játszótéri homokozót.
-decision: 
-why: 
+decision: match: Azt a mezőgazdasági termőföldet, amelyet növénytermesztésre használnak. || Azt az ideiglenes szálláshelyet, ahol az ember rövid nyaralást tölt el.
+why: Replaces literal playground/garden dirt jokes with full relative clauses in the accusative matching the head clause structure (71, 74 vs 81 chars).
 
 ### b1-29-05.ex01   teaches: ['b1-migration-identity-vocab']
 files: content/hu/exercises/b1/b1-29-05-ex.json
@@ -1661,8 +1661,8 @@ Mit jelent a valódi 'otthonérzet' egy ember számára?
 * Azt a mély belső nyugalmat és biztonságot, amikor valaki elfogadottnak és megbecsültnek érzi magát.
 - A bútorok megvásárlását az áruházban.
 - A ház kulcsának zsebben tartását.
-decision: 
-why: 
+decision: match: A modern bútorok és drága háztartási berendezések megvásárlását a boltban. || A lakás bejárati ajtajának bezárását és a lakcímkártya fizikai birtoklását.
+why: Expands trivial physical details into complete descriptive noun phrases in the accusative (73, 76 vs 99 chars).
 
 ### b1-29-consolidation.ex08   teaches: None
 files: content/hu/exercises/b1/b1-29-consolidation-ex.json
@@ -1671,8 +1671,8 @@ Mit jelent az a felismerés, hogy az ember igazi hazája az anyanyelve?
 * Azt, hogy a határok vagy az országhatárok változhatnak, de a nyelv által hordozott gondolatok és emlékek elvehetetlenek.
 - Azt, hogy az embernek nem kell sehol laknia.
 - Azt, hogy nem szükséges idegen nyelveket tanulni.
-decision: 
-why: 
+decision: match: Azt, hogy az embernek nincs szüksége állandó otthonra, és sehol sem érdemes letelepednie. || Azt, hogy egyetlen idegen nyelvet sem érdemes megtanulni a nemzetközi kapcsolatok során.
+why: Expands short and simplistic dismissals into full subordinate clauses matching the philosophical register of Márai (90, 89 vs 120 chars).
 
 ### b1-30-01.ex01   teaches: ['b1-culture-language-society-vocab']
 files: content/hu/exercises/b1/b1-30-01-ex.json
@@ -1681,8 +1681,8 @@ Mit jelent a 'sajátosság' kifejezés?
 * Egy olyan egyedi, megkülönböztető tulajdonságot, amely csak az adott dologra vagy kultúrára jellemző.
 - A cipőfűző bekötésének módját.
 - Egy eldobott műanyag palackot.
-decision: 
-why: 
+decision: shorten: Egyedi, megkülönböztető tulajdonságot.
+why: Drops relative clause to leave core definition phrase in the accusative, matching distractor lengths (37 vs 30, 30 chars).
 
 ### b1-30-01.ex06   teaches: ['b1-culture-language-society-vocab']
 files: content/hu/exercises/b1/b1-30-01-ex.json
@@ -1691,8 +1691,8 @@ Mit jelent a 'jellegzetesség' szó?
 * Olyan szembetűnő vonást, amelyről valami vagy valaki könnyen felismerhető.
 - A bolt zárva tartását ünnepnapokon.
 - Egy autópálya-matricát.
-decision: 
-why: 
+decision: shorten: Szembetűnő, könnyen felismerhető vonást.
+why: Shortens relative clause to a concise participial adjective phrase in the accusative, balancing lengths (40 vs 35, 23 chars).
 
 ### b1-30-02.ex01   teaches: ['b1-culture-language-society-vocab']
 files: content/hu/exercises/b1/b1-30-02-ex.json
@@ -1701,8 +1701,8 @@ Mit értünk egy nyelv 'kifejezőerején'?
 * Azt a képességet, hogy gondolatainkat, érzelmeinket finoman, pontosan és érzékletesen tudjuk megfogalmazni.
 - A szavak hangerejét mikrofonban.
 - A betűk nyomtatási méretét az újságban.
-decision: 
-why: 
+decision: match: A kimondott szavak fizikai hangerejét a hangerősítő berendezésekben. || A nyomtatott betűk tipográfiai méretét az újságok és könyvek oldalain.
+why: Expands literal volume and font-size distractors into complete descriptive noun phrases in the accusative (67, 72 vs 107 chars).
 
 ### b1-30-02.ex04   teaches: ['verbal-adjectives-hatatlan-hetetlen']
 files: content/hu/exercises/b1/b1-30-02-ex.json
@@ -1711,8 +1711,8 @@ Mit fejez ki a '-hatatlan/-hetetlen' fosztóképzős melléknév?
 * Olyan tulajdonságot, amely el nem múló, meg nem változtatható (pl. megingathatatlan, pótolhatatlan).
 - A cselekvés gyorsaságát a jövőben.
 - A színek fényességét a festményen.
-decision: 
-why: 
+decision: match: A cselekvés gyorsaságát vagy hirtelen befejezését (pl. pillanatnyi, azonnali). || A tárgyak vizuális intenzitását és fényességét (pl. ragyogó, világos).
+why: Expands distractors to follow the same definition + parenthetical example pattern as the target answer (73, 72 vs 100 chars).
 
 ### b1-30-03.ex06   teaches: ['b1-culture-language-society-vocab']
 files: content/hu/exercises/b1/b1-30-03-ex.json
@@ -1721,8 +1721,8 @@ Mit jelent a 'nemzedék' szó?
 * A nagyjából egy időben született, hasonló történelmi és társadalmi élményeket átélő korosztályt.
 - Egy háromnapos kirándulást a hegyekbe.
 - A vasúti menetrendet.
-decision: 
-why: 
+decision: match: Egy munkahelyen egyidejűleg dolgozó munkatársak szűk szakmai csoportját. || Egy többnapos hegyi túrán együtt utazó kirándulók alkalmi társaságát.
+why: Replaces absurd trip/timetable jokes with authentic sociological groupings in the accusative (73, 71 vs 96 chars).
 
 ### b1-30-04.ex01   teaches: ['b1-culture-language-society-vocab']
 files: content/hu/exercises/b1/b1-30-04-ex.json
@@ -1731,8 +1731,8 @@ Mit jelent a kulturális 'sokszínűség' értéke?
 * Különböző hagyományok, nyelvek és látásmódok békés és gazdagító együttélését a társadalomban.
 - Kizárólag színes ruhák viselését tavasszal.
 - A televíziós csatornák gyakori váltogatását.
-decision: 
-why: 
+decision: match: Különböző színű ruhadarabok és divatos kiegészítők viselését a tavaszi időszakban. || A kereskedelmi televíziós csatornák és műsorok gyors váltogatását a nappaliban.
+why: Replaces absolute 'kizárólag' and expands literal color/channel jokes into full accusative phrases (82, 81 vs 93 chars).
 
 ### b1-30-05.ex01   teaches: ['b1-culture-language-society-vocab']
 files: content/hu/exercises/b1/b1-30-05-ex.json
@@ -1741,8 +1741,8 @@ Mit jelent a társadalmi 'értékrend' fogalma?
 * Azoknak az erkölcsi és szellemi elveknek az összességét, amelyek vezérlik döntéseinket és cselekedeteinket.
 - A banki árfolyamok listáját a kijelzőn.
 - Az élelmiszerbolt árcéduláinak sorrendjét.
-decision: 
-why: 
+decision: match: A nemzetközi valuták napi banki árfolyamának hivatalos jegyzékét a kijelzőn. || A szupermarketek polcain elhelyezett élelmiszerek forintban mért árcéduláit.
+why: Expands monetary price puns into full descriptive financial/retail noun phrases in the accusative (77, 78 vs 107 chars).
 
 ### b1-30-05.ex04   teaches: None
 files: content/hu/exercises/b1/b1-30-05-ex.json
@@ -1751,8 +1751,8 @@ Ki volt valójában 'Abigél' Szabó Magda híres regényében?
 * Kőnig tanár úr, a látszólag szelíd latin tanár, aki titokban emberéleteket mentett.
 - Egy életre kelt kerti kőszobor.
 - A Matula leányintézet igazgatónője.
-decision: 
-why: 
+decision: shorten: Kőnig tanár úr, a szelíd latin tanár.
+why: Drops relative clause to identify Kőnig by profession, balancing length with distractors (37 vs 31, 35 chars).
 
 ### b1-30-05.ex06   teaches: None
 files: content/hu/exercises/b1/b1-30-05-ex.json
@@ -1761,8 +1761,8 @@ Mit tanul meg Vitay Gina a Matula zárt intézetében töltött hónapok alatt?
 * Hogy az önzés helyét az összetartásnak, a bajtársiasságnak és az igaz emberi jóságnak kell átvennie.
 - Hogy jobb lett volna megszöknie Amerikába.
 - Hogy a latin nyelv felesleges tantárgy.
-decision: 
-why: 
+decision: shorten: Hogy az önzés helyét az összetartásnak kell átvennie.
+why: Focuses on core moral transformation from selfishness to solidarity, balancing lengths (52 vs 42, 39 chars).
 
 ### b1-31-02.ex01   teaches: ['b1-future-society-vocab']
 files: content/hu/exercises/b1/b1-31-02-ex.json
@@ -1771,8 +1771,8 @@ Mit jelent a 'digitalizáció' a modern társadalomban?
 * Az információk, adatok és szolgáltatások digitális rendszerekbe való átültetését.
 - Kézzel írott levelek postai feladását.
 - A papírgyártás növelését az erdőkben.
-decision: 
-why: 
+decision: match: A kézzel írott hivatalos levelek postai feladását a hivatalban. || A papíralapú könyvnyomtatás és újságkiadás fenntartását a városban.
+why: Expands short analog postal and paper manufacturing distractors into complete accusative noun phrases (65, 68 vs 81 chars).
 
 ### b1-31-02.ex06   teaches: ['b1-future-society-vocab']
 files: content/hu/exercises/b1/b1-31-02-ex.json
@@ -1781,8 +1781,8 @@ Mit jelent a 'társadalmi tendencia' kifejezés?
 * Olyan tartós irányzatot vagy fejlődési vonalat, amely a társadalom nagy részét érinti.
 - Egy egyszeri divathóbortot a ruházkodásban.
 - Egy gyorsan elmúló pletykát az újságokban.
-decision: 
-why: 
+decision: shorten: Tartós, a társadalom nagy részét érintő irányzatot.
+why: Shortens relative clause to a concise participial phrase in the accusative, matching distractor lengths (51 vs 43, 42 chars).
 
 ### b1-31-03.ex01   teaches: ['b1-future-society-vocab']
 files: content/hu/exercises/b1/b1-31-03-ex.json
@@ -1791,8 +1791,8 @@ Mit fejez ki a 'fenntarthatóság' elve?
 * Hogy a jelen igényeit úgy elégítsük ki, hogy ne veszélyeztessük a jövő nemzedékek életfeltételeit.
 - Hogy minden épületet betonból kell felépíteni.
 - Hogy nem szabad új dolgokat tanulni az iskolában.
-decision: 
-why: 
+decision: shorten: Hogy ne veszélyeztessük a jövő nemzedékek életfeltételeit.
+why: Condenses definition to core principle of safeguarding future generations, matching distractor lengths (57 vs 46, 49 chars).
 
 ### b1-31-05.ex06   teaches: None
 files: content/hu/exercises/b1/b1-31-05-ex.json
@@ -1801,8 +1801,8 @@ Mit üzen az Úr Ádámnak Madách Imre 'Az ember tragédiája' című művének
 * Hogy a küzdelem maga a cél, és a hitet, a reményt soha nem szabad elveszíteni: 'Mondottam, ember: küzdj és bízva bízzál!'
 - Hogy Lucifernek volt igaza minden történelmi kérdésben.
 - Hogy hagyja el a Földet, és költözzön a Marsra.
-decision: 
-why: 
+decision: shorten: Hogy a küzdelem a cél: 'küzdj és bízva bízzál!'
+why: Retains core philosophical message and iconic final quote, matching distractor lengths (47 vs 55, 47 chars).
 
 ### b1-31-consolidation.ex08   teaches: None
 files: content/hu/exercises/b1/b1-31-consolidation-ex.json
@@ -1811,8 +1811,8 @@ Miért számít Madách Imre Tragédiája az emberi társadalom jövőjének ala
 * Mert bemutatja az emberiség történelmi korszakait és lehetséges jövőbeli tévútjait, miközben az erkölcsi küzdelem és remény örök parancsát hirdeti.
 - Mert pontos műszaki leírást ad a 19. századi gőzgépekről.
 - Mert kizárólag a párizsi divatról szól.
-decision: 
-why: 
+decision: match: Mert részletes műszaki leírást nyújt a 19. századi ipari forradalom gőzgépeiről és vasútjairól. || Mert a korabeli európai arisztokrácia mindennapi társasági és divatos szokásait mutatja be.
+why: Replaces absolute 'kizárólag' and expands technical/fashion claims into full explanatory clauses (88, 86 vs 147 chars).
 
 ### b1-32-04.ex06   teaches: ['b1-connecting-ideas-vocab']
 files: content/hu/exercises/b1/b1-32-04-ex.json
@@ -1821,8 +1821,8 @@ Mi az 'engedmény' egy tárgyalási folyamatban?
 * Olyan kompromisszumos lépés, amikor valaki lemond bizonyos követelésekről a megállapodás érdekében.
 - Egy áruházi kedvezményes kupon.
 - A gépkocsi sebességének csökkentése a kanyarban.
-decision: 
-why: 
+decision: shorten: Kompromisszumos lemondás bizonyos követelésekről.
+why: Shortens relative clause to a concise noun phrase definition, matching distractor lengths (49 vs 31, 48 chars).
 
 ### b1-32-05.ex06   teaches: None
 files: content/hu/exercises/b1/b1-32-05-ex.json
@@ -1831,8 +1831,8 @@ Miért dönt úgy Timár Mihály Jókai Mór 'Az arany ember' című regényéne
 * Mert rádöbben, hogy a gazdagság és a társadalmi dicsőség nem hozott lelki békét, s az igaz szerelmet és tiszta boldogságot Noémi mellett, a természetben találta meg.
 - Mert elveszítette az összes pénzét egy szerencsejátékon Bécsben.
 - Mert elromlott a Szent Borbála gőzhajó kormánya a Dunán.
-decision: 
-why: 
+decision: shorten: Mert az igaz szerelmet és lelki békét Noémi mellett találta meg.
+why: Cuts introductory philosophical realization to focus on finding true love and peace with Noémi, perfectly matching distractor lengths (63 vs 64, 56 chars).
 
 ### b1-32-consolidation.ex08   teaches: None
 files: content/hu/exercises/b1/b1-32-consolidation-ex.json
@@ -1841,8 +1841,8 @@ Milyen erkölcsi tanulságot hordoz Timár Mihály története Jókai remekműv�
 * Hogy a vagyon önmagában nem hoz boldogságot; a lelkiismeret tisztasága és a szeretet sokkal értékesebb minden földi kincsnél.
 - Hogy a dunai hajózás veszélytelen vállalkozás.
 - Hogy mindig a legdrágább ruhákat kell megvenni a piacon.
-decision: 
-why: 
+decision: match: Hogy a dunai kereskedelmi hajózás teljesen kockázatmentes és békés vállalkozás a folyón. || Hogy a legdrágább ruhák és a társadalmi rang megszerzése az emberi élet egyetlen célja.
+why: Replaces absolute 'mindig' and trivial claims with full thematic statements on commerce and social vanity (88, 94 vs 125 chars).
 
 ### b1-33-03.ex04   teaches: ['indirect-questions']
 files: content/hu/exercises/b1/b1-33-03-ex.json
@@ -1851,8 +1851,8 @@ Helyes-e kitenni az '-e' partikulát ebben: 'Azt kérdezte, hogy hol van a köny
 * Nem, mert nyitott kérdőszós (hol) mondatban nem használunk '-e' partikulát.
 - Igen, kötelező: 'hol-e van'.
 - Csak tagadásban használható.
-decision: 
-why: 
+decision: match: Igen, mert minden függő kérdő mondatban kötelező kitenni az '-e' partikulát. || Igen, mert a kérdőszavak (hol, hova) közvetlenül megkívánják az '-e' partikulát.
+why: Replaces absolute 'csak' and brief fragment with fully reasoned affirmative grammatical claims of balanced length (76, 80 vs 75 chars).
 
 ### b1-33-04.ex01   teaches: ['reported-commands']
 files: content/hu/exercises/b1/b1-33-04-ex.json
@@ -1861,8 +1861,8 @@ Milyen igemódot használ a magyar a parancsok és kérések függő beszédbe a
 * Felszólító módot (-jon/-jen/-jön) a hogy kötőszó után.
 - Csak feltételes módot.
 - Kizárólag főnévi igenevet.
-decision: 
-why: 
+decision: match: Feltételes módot (-na/-ne/-ná/-né) a hogy kötőszó után. || Főnévi igenevet (-ni) a mellékmondat állítmányaként.
+why: Replaces absolutes ('csak', 'kizárólag') with matching mood descriptions and suffix examples (55, 52 vs 54 chars).
 
 ### b1-33-05.ex04   teaches: None
 files: content/hu/exercises/b1/b1-33-05-ex.json
@@ -1871,8 +1871,8 @@ Mit rejtett valójában az öreg Gregorics Pál az esernyő fanyelébe?
 * A titkos bankutalványokat és az örökséget.
 - A falu régi térképét.
 - Egy szent imakönyvet.
-decision: 
-why: 
+decision: shorten: A bankutalványokat.
+why: Shortens to the essential physical item hidden in the handle, perfectly matching distractor lengths (19 vs 21, 21 chars).
 
 ### b1-35-04.ex06   teaches: ['b1-hypotheticals-possibilities-vocab']
 files: content/hu/exercises/b1/b1-35-04-ex.json
@@ -1881,8 +1881,8 @@ Mit fejez ki a 'vélhetően' szó?
 * Valószínűleg, a rendelkezésre álló adatok alapján
 - Teljesen kizárt módon
 - Véletlenül és váratlanul
-decision: 
-why: 
+decision: shorten: Valószínűleg, a jelek szerint
+why: Replaces long clause with concise adverbial phrase matching distractor lengths (29 vs 21, 24 chars).
 
 ### b1-alaptorveny-01.ex04   teaches: ['b1-fundamental-law-vocab']
 files: content/hu/exercises/b1/b1-alaptorveny-01-ex.json
@@ -1891,8 +1891,8 @@ Mit jelent a 'történeti alkotmány' kifejezés a magyar jogtörténetben?
 * Az évszázadok során kialakult szokásjog és törvények íratlan, de kötelező összességét.
 - Egy ókori görög törvénykönyv másolatát.
 - A mai napilapok jogi rovatát.
-decision: 
-why: 
+decision: shorten: A szokásjog és a törvények történelmi összességét.
+why: Retains the core customary law and historical statutory synthesis while balancing length with distractors (49 vs 39, 29 chars).
 
 ### b1-alaptorveny-02.ex06   teaches: None
 files: content/hu/exercises/b1/b1-alaptorveny-02-ex.json
@@ -1901,8 +1901,8 @@ Mit ismer el az Alaptörvény a hazánkban élő nemzetiségekkel kapcsolatban?
 * Hogy a velünk élő nemzetiségek a magyar politikai közösség részei és államalkotó tényezők.
 - Hogy csak vendégek Magyarországon.
 - Hogy nem beszélhetik a saját anyanyelvüket.
-decision: 
-why: 
+decision: match: Hogy csupán ideiglenes vendégek az országban, állampolgári jogok nélkül. || Hogy a közéletben és az iskolákban nem használhatják saját anyanyelvüket.
+why: Expands short distractors into complete subordinate clauses describing legal/linguistic restrictions, eliminating 'csak' (72, 74 vs 90 chars).
 
 ### b1-alaptorveny-04.ex01   teaches: None
 files: content/hu/exercises/b1/b1-alaptorveny-04-ex.json
@@ -1911,8 +1911,8 @@ Melyik elv alapján oszlik meg a magyar állami főhatalom?
 * A hatalmi ágak megosztásának elve alapján (törvényhozás, végrehajtás, igazságszolgáltatás).
 - Egyetlen uralkodó korlátlan parancsa alapján.
 - A polgármesterek sorsolása alapján.
-decision: 
-why: 
+decision: shorten: A hatalmi ágak megosztásának elve alapján.
+why: Drops parenthetical enumeration to leave the core constitutional principle, perfectly matching distractor lengths (42 vs 45, 35 chars).
 
 ### b1-alaptorveny-05.ex04   teaches: None
 files: content/hu/exercises/b1/b1-alaptorveny-05-ex.json
@@ -1921,8 +1921,8 @@ Milyen törvényeket nevezünk 'sarkalatos törvényeknek'?
 * Olyan kiemelkedő fontosságú törvényeket, amelyek elfogadásához a jelen lévő képviselők kétharmadának szavazata szükséges.
 - Olyan rendeleteket, amelyeket csak télen alkalmaznak.
 - A sarkvidéki kutatásokról szóló megállapodásokat.
-decision: 
-why: 
+decision: shorten: Kétharmados parlamenti többséggel elfogadott törvényeket.
+why: Condenses definition to the essential two-thirds majority requirement, perfectly matching distractor lengths (56 vs 53, 49 chars).
 
 ### b1-alaptorveny-05.ex06   teaches: None
 files: content/hu/exercises/b1/b1-alaptorveny-05-ex.json
@@ -1931,8 +1931,8 @@ Kihez fordulhat az az állampolgár, aki a hatóságok jogsértő eljárását t
 * Az alapvető jogok biztosához (ombudsmanhoz) vagy alkotmányjogi panasszal az Alkotmánybírósághoz.
 - A legközelebbi vasútállomás pénztárához.
 - Csak külföldi nagykövetségekhez.
-decision: 
-why: 
+decision: match: A vasútállomás ügyfélszolgálati pénztárához vagy a postai levélfiókhoz. || A Magyarországon működő külföldi államok diplomáciai követségeihez.
+why: Replaces absolute 'csak' and absurd railway ticket counter with complete institutional destinations in the allative (-hoz/-hez/-höz) (69, 71 vs 96 chars).
 
 ### b1-alaptorveny-consolidation.ex04   teaches: None
 files: content/hu/exercises/b1/b1-alaptorveny-consolidation-ex.json
@@ -1941,8 +1941,8 @@ Mit garantál az Alkotmánybíróság döntése a jogrendszer számára?
 * Hogy egyetlen jogszabály sem lehet ellentétes az Alaptörvény rendelkezéseivel és szellemével.
 - Hogy minden törvényt évente újra kell írni.
 - Hogy a bíróságok nem hozhatnak ítéletet.
-decision: 
-why: 
+decision: match: Hogy minden hatályos törvényt és rendeletet évente újra kell írni a parlamentben. || Hogy a rendes bíróságok nem hozhatnak önálló ítéletet a kormány jóváhagyása nélkül.
+why: Expands short legislative/judicial distractors into full subordinate clauses matching the head clause structure (81, 83 vs 93 chars).
 
 ### b1-alaptorveny-consolidation.ex08   teaches: None
 files: content/hu/exercises/b1/b1-alaptorveny-consolidation-ex.json
@@ -1951,8 +1951,8 @@ Mely három hatalmi ágra oszlik a demokratikus magyar államszervezet?
 * Törvényhozás (Országgyűlés), végrehajtás (Kormány) és igazságszolgáltatás (Bíróságok).
 - Rendőrség, posta és vasút.
 - Egyház, sajtó és egyetemek.
-decision: 
-why: 
+decision: match: Rendvédelem (Rendőrség), hírközlés (Posta) és közlekedés (Vasút). || Hitélet (Egyház), tájékoztatás (Sajtó) és felsőoktatás (Egyetemek).
+why: Expands distractors into parallel branch + parenthetical institution triplets matching the canonical three-branches format (65, 67 vs 86 chars).
 
 ### b1-allampolgarsag-02.ex06   teaches: None
 files: content/hu/exercises/b1/b1-allampolgarsag-02-ex.json
@@ -1961,8 +1961,8 @@ Kik szavazhatnak az Európai Parlament magyar képviselőire?
 * A választójoggal rendelkező magyar állampolgárok és az EU Magyarországon élő polgárai
 - Kizárólag az egyetemi tanárok
 - Csak azok, akik Brüsszelben dolgoznak
-decision: 
-why: 
+decision: match: Az egyetemi diplomával rendelkező tanárok és a Tudományos Akadémia tagjai || A brüsszeli uniós intézményekben hivatalosan alkalmazott magyar diplomaták
+why: Replaces absolutes ('kizárólag', 'csak') with specific professional categories of voters matching length (75, 75 vs 85 chars).
 
 ### b1-allampolgarsag-04.ex06   teaches: None
 files: content/hu/exercises/b1/b1-allampolgarsag-04-ex.json
@@ -1971,8 +1971,8 @@ Miben különbözik az állampolgársági fogadalom az eskütől?
 * A fogadalom világi szövegű, és nem tartalmazza az 'Isten engem úgy segéljen' záradékot
 - A fogadalom után kevesebb adót kell fizetni
 - A fogadalmat csak gyerekek tehetik le
-decision: 
-why: 
+decision: match: A fogadalom letétele után jelentősen kevesebb jövedelemadót kell fizetni || A fogadalmat a kiskorú gyermekek, az esküt pedig a felnőtt polgárok teszik le
+why: Replaces absolute 'csak' with plausible administrative/demographic distinctions of balanced length (76, 80 vs 86 chars).
 
 ### b1-allampolgarsag-05.ex06   teaches: ['b1-being-hungarian-citizen-vocab']
 files: content/hu/exercises/b1/b1-allampolgarsag-05-ex.json
@@ -1981,8 +1981,8 @@ Melyik állítás fejezi ki a sikeres B1 és állampolgársági kurzus befejezé
 * Magyarország hű polgáraként büszkén beszélem a nyelvet és ismerem a nemzet történelmét!
 - Csak véletlenül jártam ezen az órán.
 - Semmit sem értek az államszervezetből.
-decision: 
-why: 
+decision: match: Véletlenül iratkoztam be erre az órára, és nem tervezem a vizsga letételét. || Túl nehéznek találtam az anyagot, ezért úgy döntöttem, hogy abbahagyom a tanulást.
+why: Replaces absolutes ('csak', 'semmit') with realistic student course-outcome statements of balanced length (77, 83 vs 87 chars).
 
 ### b1-allampolgarsag-consolidation.ex04   teaches: None
 files: content/hu/exercises/b1/b1-allampolgarsag-consolidation-ex.json
@@ -1991,8 +1991,8 @@ Milyen jogok illetik meg a magyar állampolgárokat?
 * Választójog, gyülekezési jog, petíciós jog, véleménynyilvánítás szabadsága és konzuli védelem
 - Kizárólag a magyar zászló használatának joga
 - Csak adófizetési jogok jogorvoslat nélkül
-decision: 
-why: 
+decision: match: A nemzeti zászló használatának joga és a kulturális műemlékek ingyenes látogatása || Az adófizetési kötelezettség joga mindenféle jogorvoslat és fellebbezés nélkül
+why: Replaces absolutes ('kizárólag', 'csak') with complete noun-phrase catalogs of rights/duties matching length (81, 79 vs 93 chars).
 
 ### b1-allampolgarsag-consolidation.ex06   teaches: None
 files: content/hu/exercises/b1/b1-allampolgarsag-consolidation-ex.json
@@ -2001,8 +2001,8 @@ Mit jelképez a Szent István király által megalapozott ezeréves magyar álla
 * A magyar nemzet európai, keresztény és demokratikus történelmi folytonosságát
 - Egy rövid, jelentéktelen korszakot
 - Kizárólag egy régi pénzérme nevét
-decision: 
-why: 
+decision: match: Egy átmeneti és elszigetelt korszakot a kora középkori Kárpát-medencében || Egy régi ezüstpénz nevét és a királyi kincstár pénzverési kiváltságát
+why: Replaces absolute 'kizárólag' and dismissive tone with historiographical and numismatic descriptions in the accusative (73, 71 vs 77 chars).
 
 ### b1-allamszervezet-04.ex04   teaches: None
 files: content/hu/exercises/b1/b1-allamszervezet-04-ex.json
@@ -2011,8 +2011,8 @@ Mi az ügyészség legfontosabb feladata a büntetőeljárásokban?
 * A közvád képviselete a bíróság előtt és a nyomozás törvényességének felügyelete.
 - A vádlottak felmentése a büntetés alól.
 - Az elítéltek börtönőrzése.
-decision: 
-why: 
+decision: shorten: A közvád képviselete a bíróság előtt.
+why: Retains core constitutional function of public prosecution, matching distractor lengths (37 vs 39, 26 chars).
 
 ### b1-allamszervezet-04.ex06   teaches: None
 files: content/hu/exercises/b1/b1-allamszervezet-04-ex.json
@@ -2021,8 +2021,8 @@ Lehet-e politikai párt tagja egy magyar bíró?
 * Nem, az Alaptörvény szerint a bírák nem lehetnek pártok tagjai és nem folytathatnak politikai tevékenységet.
 - Igen, ha a kormánypárthoz tartoznak.
 - Igen, de csak szabadidejükben.
-decision: 
-why: 
+decision: shorten: Nem, a bírák nem lehetnek pártok tagjai.
+why: Cuts secondary prohibition clause to answer the specific party-membership question directly, matching distractor lengths (40 vs 36, 30 chars).
 
 ### b1-allamszervezet-05.ex06   teaches: None
 files: content/hu/exercises/b1/b1-allamszervezet-05-ex.json
@@ -2031,8 +2031,8 @@ Ki nyújthat be törvényjavaslatot az Országgyűléshez?
 * A köztársasági elnök, a Kormány, az országgyűlési bizottságok és bármely képviselő.
 - Bármely külföldi turista.
 - Csak a legfelsőbb bíróság elnöke.
-decision: 
-why: 
+decision: match: Bármely Magyarországra érkező külföldi turista vagy nemzetközi utazó. || A Kúria elnöke és az Alkotmánybíróság hivatalban lévő bírái.
+why: Replaces absolute 'csak' and brief fragment with full lists of non-legislative actors (68, 59 vs 83 chars).
 
 ### b1-allamszervezet-consolidation.ex01   teaches: None
 files: content/hu/exercises/b1/b1-allamszervezet-consolidation-ex.json
@@ -2041,8 +2041,8 @@ Melyik állítás írja le helyesen a magyar államformát?
 * Magyarország parlamentáris köztársaság, ahol a hatalom megoszlik a törvényhozás, végrehajtás és bíróságok között.
 - Magyarország abszolút monarchia egy király vezetésével.
 - Magyarország szövetségi állam autonóm tartományokkal.
-decision: 
-why: 
+decision: shorten: Magyarország parlamentáris köztársaság.
+why: Shortens to the essential constitutional definition of the state form, balancing lengths (39 vs 55, 53 chars).
 
 ### b1-anjouk-01.ex02   teaches: None
 files: content/hu/exercises/b1/b1-anjouk-01-ex.json
@@ -2051,8 +2051,8 @@ Ki volt Károly Róbert, és melyik dinasztiából származott?
 * Az Anjou-házból származó magyar király, aki helyreállította az ország rendjét.
 - A Habsburg-ház első császára.
 - Az utolsó Árpád-házi uralkodó.
-decision: 
-why: 
+decision: shorten: Az Anjou-házból származó magyar király.
+why: Drops relative clause to leave dynasty and royal title, balancing length with distractors (40 vs 29, 30 chars).
 
 ### b1-anjouk-01.ex06   teaches: None
 files: content/hu/exercises/b1/b1-anjouk-01-ex.json
@@ -2061,8 +2061,8 @@ Miért fontos a honosítási vizsgán Károly Róbert gazdasági reformja?
 * Mert a virágzó bányászat és az aranyforint révén Magyarország gazdasági hatalommá vált.
 - Mert ő hozta létre az Európai Uniót.
 - Mert megszüntette a hadsereget.
-decision: 
-why: 
+decision: shorten: Mert bevezette a stabil aranyforintot.
+why: Condenses economic reform explanation to the introduction of the stable gold florin, matching distractor lengths (38 vs 36, 31 chars).
 
 ### b1-anjouk-01.ex07   teaches: None
 files: content/hu/exercises/b1/b1-anjouk-01-ex.json
@@ -2071,8 +2071,8 @@ Kiket hívtak 'kiskirályoknak' a 14. század elején?
 * A hatalmaskodó tartományurakat, akik nem engedelmeskedtek a központi királyi hatalomnak.
 - A király gyermekeit.
 - A szomszédos országok uralkodóit.
-decision: 
-why: 
+decision: shorten: A hatalmaskodó tartományurakat.
+why: Drops relative clause to name the provincial oligarchs directly in the accusative, matching distractor lengths (31 vs 20, 33 chars).
 
 ### b1-anjouk-01.ex08   teaches: None
 files: content/hu/exercises/b1/b1-anjouk-01-ex.json
@@ -2081,8 +2081,8 @@ Milyen hatással volt a nemesfémbányászat a királyi kincstárra?
 * Jelentősen megnövelte a kincstár bevételeit és stabil valutát biztosított.
 - Tönkretette az állami pénzügyeket.
 - Bezárta a városi piacokat.
-decision: 
-why: 
+decision: shorten: Megnövelte a kincstár bevételeit.
+why: Cuts coordinate clause to state the increase in treasury revenue directly, matching distractor lengths (33 vs 34, 26 chars).
 
 ### b1-anjouk-02.ex08   teaches: None
 files: content/hu/exercises/b1/b1-anjouk-02-ex.json
@@ -2091,8 +2091,8 @@ Hol fogadta Károly Róbert a vendég uralkodókat?
 * A visegrádi királyi palotában.
 - A budai várban.
 - Esztergomban.
-decision: 
-why: 
+decision: shorten: A visegrádi palotában.
+why: Drops modifier 'királyi' to match castle/city distractor phrasing, balancing length (22 vs 15, 13 chars).
 
 ### b1-anjouk-05.ex03   teaches: None
 files: content/hu/exercises/b1/b1-anjouk-05-ex.json
@@ -2101,8 +2101,8 @@ Ki vezette a magyar felmentő sereget Nándorfehérvár védelmében?
 * Hunyadi János kormányzó és Kapisztrán János keresztesei.
 - Szent István király.
 - Károly Róbert király.
-decision: 
-why: 
+decision: shorten: Hunyadi János kormányzó.
+why: Drops crusader mention to focus on the primary military leader, matching the name-and-title structure of distractors (24 vs 20, 21 chars).
 
 ### b1-anjouk-05.ex06   teaches: None
 files: content/hu/exercises/b1/b1-anjouk-05-ex.json
@@ -2111,8 +2111,8 @@ Mire emlékeztet a templomok déli harangszója mind a mai napig?
 * A nándorfehérvári diadalra és a hős védők imádságos helytállására.
 - A tatárjárás végére.
 - A trianoni békére.
-decision: 
-why: 
+decision: shorten: A nándorfehérvári diadalra.
+why: Retains the historic triumph directly in the sublative (-ra/-re), matching distractor lengths (27 vs 20, 18 chars).
 
 ### b1-anjouk-05.ex07   teaches: None
 files: content/hu/exercises/b1/b1-anjouk-05-ex.json
@@ -2121,8 +2121,8 @@ Milyen szultán vezette a török ostromot Nándorfehérvárnál?
 * II. Mehmed szultán, Konstantinápoly hódítója.
 - Szulejmán szultán.
 - Batu kán.
-decision: 
-why: 
+decision: shorten: II. Mehmed szultán.
+why: Drops appositive epithet to match the ruler-and-title structure of distractors (19 vs 18, 9 chars).
 
 ### b1-anjouk-consolidation.ex06   teaches: ['b1-angevin-kings-vocab']
 files: content/hu/exercises/b1/b1-anjouk-consolidation-ex.json
@@ -2131,8 +2131,8 @@ Mit jelent az 'ősiség' kifejezés?
 * A nemesi birtok a nemzetségen belül öröklődik, eladni nem szabad.
 - A legrégebbi falu joga.
 - A királyi aranybányák adója.
-decision: 
-why: 
+decision: match: A legrégebbi falvak polgárai nem fizetnek adót a királyi kincstárnak. || A királyi aranybányák után fizetendő különadó a városok kincstárába jár.
+why: Expands short noun fragments into full declarative clauses matching the head definition sentence (69, 72 vs 65 chars).
 
 ### b1-anjouk-consolidation.ex09   teaches: None
 files: content/hu/exercises/b1/b1-anjouk-consolidation-ex.json
@@ -2141,8 +2141,8 @@ Milyen szövetség viseli ma a visegrádi királytalálkozó nevét?
 * A Visegrádi Négyek (V4).
 - A NATO.
 - Az OECD.
-decision: 
-why: 
+decision: match: A Nyugat-európai Unió (NYEU). || Az Észak-atlanti Szövetség (NATO).
+why: Expands bare acronym distractors to full institutional names with parenthetical abbreviations matching the target format (29, 34 vs 24 chars).
 
 ### b1-anjouk-consolidation.ex14   teaches: None
 files: content/hu/exercises/b1/b1-anjouk-consolidation-ex.json
@@ -2151,8 +2151,8 @@ Melyik törvény megerősítését jelentették az 1351-es dekrétumok?
 * Az 1222-es Aranybulla megerősítését.
 - A vérszerződését.
 - A trianoni békéét.
-decision: 
-why: 
+decision: shorten: Az Aranybulláét.
+why: Drops year and redundant head noun to match the possessive anaphoric form (-ét) of distractors (16 vs 17, 18 chars).
 
 ### b1-anjouk-consolidation.ex15   teaches: None
 files: content/hu/exercises/b1/b1-anjouk-consolidation-ex.json
@@ -2161,8 +2161,8 @@ Hány évre állította meg az oszmán terjeszkedést a nándorfehérvári diada
 * Körülbelül hetven évre (1521-ig).
 - Egyetlen hétre.
 - Ötszáz évre.
-decision: 
-why: 
+decision: shorten: Körülbelül hetven évre.
+why: Drops parenthetical year boundary to match the approximate time spans of distractors (23 vs 15, 12 chars).
 
 ### b1-arpadhaz-02.ex05   teaches: None
 files: content/hu/exercises/b1/b1-arpadhaz-02-ex.json
@@ -2171,8 +2171,8 @@ Mit biztosított a nemeseknek az ellenállási jog?
 * Hogy fegyverrel is szembeszállhattak a királlyal, ha az megszegte a törvényt.
 - Hogy adót vethettek ki a parasztokra.
 - Hogy szabadon külföldre költözhettek.
-decision: 
-why: 
+decision: shorten: Hogy fegyverrel is szembeszállhattak a királlyal.
+why: Cuts conditional clause to state the core right of armed resistance against the king, matching distractor lengths (49 vs 37, 37 chars).
 
 ### b1-arpadhaz-03.ex07   teaches: None
 files: content/hu/exercises/b1/b1-arpadhaz-03-ex.json
@@ -2182,8 +2182,8 @@ Márk: _____
 * Mongol seregek törtek be, és elpusztították az ország nagy részét.
 - II. András kiadta az Aranybullát.
 - Az Árpád-ház fiúága kihalt.
-decision: 
-why: 
+decision: shorten: Mongol seregek törtek be az országba.
+why: Cuts coordinate clause to state the Mongol invasion of 1241 directly, matching distractor lengths (37 vs 33, 27 chars).
 
 ### b1-arpadhaz-04.ex07   teaches: None
 files: content/hu/exercises/b1/b1-arpadhaz-04-ex.json
@@ -2193,8 +2193,8 @@ Márk: _____
 * Éltek és dolgoztak ott, könyveket másoltak és oktattak.
 - Csak hadjáratokat vezettek.
 - Vármegyéket igazgattak.
-decision: 
-why: 
+decision: match: Katonai hadjáratokat vezettek a szomszédos országokba. || Királyi vármegyéket és bíróságokat igazgattak a határon.
+why: Replaces absolute 'csak' with complete past-tense sentences describing noble/military functions, matching length (54, 56 vs 55 chars).
 
 ### b1-arpadhaz-consolidation.ex15   teaches: ['b1-arpad-dynasty-vocab']
 files: content/hu/exercises/b1/b1-arpadhaz-consolidation-ex.json
@@ -2204,8 +2204,8 @@ B: _____
 * Egy 1222-es törvény, amely korlátozta a király hatalmát és biztosította a nemesek jogait.
 - Egy vármegye neve a Kárpát-medencében.
 - Egy kolostor Pannonhalmán.
-decision: 
-why: 
+decision: shorten: Egy 1222-es törvény a nemesek jogairól.
+why: Condenses definition to date and core subject matter, matching noun phrase distractor lengths (39 vs 38, 26 chars).
 
 ### b1-demokracia-01.ex06   teaches: None
 files: content/hu/exercises/b1/b1-demokracia-01-ex.json
@@ -2214,8 +2214,8 @@ Mi az alapvető jogok biztosának (ombudsman) legfőbb feladata?
 * A polgárok alapvető jogainak védelme a hatóságok esetleges jogsértéseivel szemben.
 - A költségvetési adók beszedése.
 - A parlamenti ülések levezetése.
-decision: 
-why: 
+decision: shorten: A polgárok alapvető jogainak védelme.
+why: Drops secondary qualifying prepositional phrase to name the core constitutional protection role, matching distractor lengths (37 vs 31, 31 chars).
 
 
 ########## Block 3: hu b1 (second half) (148 exercises) ##########
