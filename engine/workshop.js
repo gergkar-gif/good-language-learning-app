@@ -236,7 +236,6 @@ const Workshop = (function () {
     let _active = null; // null | 'verbs' | 'grammar'
     let _activeOptions = null; // passed through to the open driller's render(), e.g. { skill }
     let _activeTab = 'practice'; // 'practice' | 'exams'
-    let _activeLevel = 'all'; // 'all' | 'a1' | 'a2' | 'b1' | 'b2' | 'c1'
 
     function _esc(text) {
         const d = document.createElement('div');
@@ -274,41 +273,16 @@ const Workshop = (function () {
 
         let contentHtml = '';
         if (_activeTab === 'exams') {
-            const levels = ['all', 'a1', 'a2', 'b1', 'b2', 'c1'];
-            const levelPillsHtml = `
-                <div class="wk-level-pills" role="group" aria-label="Filter by level">
-                    ${levels.map(lvl => `
-                        <button type="button" class="wk-level-pill ${_activeLevel.toLowerCase() === lvl ? 'is-active' : ''}" data-exam-level="${lvl}">
-                            ${lvl === 'all' ? 'All Levels' : lvl.toUpperCase()}
-                        </button>
-                    `).join('')}
-                </div>
-            `;
-
-            let filteredExams = examItems;
-            if (_activeLevel !== 'all') {
-                filteredExams = examItems.filter(d => {
-                    const dLvl = (d.level || '').toLowerCase();
-                    return dLvl === _activeLevel.toLowerCase();
-                });
-            }
-
-            let examsListHtml = '';
-            if (filteredExams.length > 0) {
-                examsListHtml = `<div class="wk-cards-list">${_renderCards(filteredExams)}</div>`;
+            if (examItems.length > 0) {
+                contentHtml = `<div class="wk-cards-list">${_renderCards(examItems)}</div>`;
             } else {
-                examsListHtml = `
+                contentHtml = `
                     <div class="wk-empty-level">
-                        <h4>${_activeLevel.toUpperCase()} Official Exam Preparation</h4>
-                        <p>Official ${_activeLevel.toUpperCase()} exam models and training modules for this language are currently in development.</p>
+                        <h4>Official Exam Preparation</h4>
+                        <p>Official exam models and training modules for this language are currently in development.</p>
                     </div>
                 `;
             }
-
-            contentHtml = `
-                ${levelPillsHtml}
-                ${examsListHtml}
-            `;
         } else {
             contentHtml = `
                 <div class="wk-cards-list">
@@ -352,13 +326,6 @@ const Workshop = (function () {
         root.querySelectorAll('[data-wk-tab]').forEach(tabBtn => {
             tabBtn.addEventListener('click', () => {
                 _activeTab = tabBtn.dataset.wkTab;
-                render();
-            });
-        });
-
-        root.querySelectorAll('[data-exam-level]').forEach(lvlBtn => {
-            lvlBtn.addEventListener('click', () => {
-                _activeLevel = lvlBtn.dataset.examLevel;
                 render();
             });
         });
@@ -491,23 +458,13 @@ const Workshop = (function () {
         if (id === 'exam-prep' || id === 'exams') {
             _active = null;
             _activeTab = 'exams';
-            if (options && options.level) {
-                _activeLevel = options.level.toLowerCase();
-            }
             render();
             return;
         }
 
         const driller = DRILLERS.find(d => d.id === id);
         if (driller) {
-            if (_isExam(driller)) {
-                _activeTab = 'exams';
-                if (driller.level) {
-                    _activeLevel = driller.level.toLowerCase();
-                }
-            } else {
-                _activeTab = 'practice';
-            }
+            _activeTab = _isExam(driller) ? 'exams' : 'practice';
         }
 
         if (driller && driller.langs && typeof Lang !== 'undefined' && !driller.langs.includes(Lang.code())) {
@@ -556,12 +513,7 @@ const Workshop = (function () {
         }
     }
 
-    function setExamLevel(level) {
-        _activeLevel = (level || 'all').toLowerCase();
-        if (!_active && _activeTab === 'exams') render();
-    }
-
-    return { render, open, close, activeDriller, isAvailable, setTab, setExamLevel };
+    return { render, open, close, activeDriller, isAvailable, setTab };
 })();
 
 if (typeof window !== 'undefined') {

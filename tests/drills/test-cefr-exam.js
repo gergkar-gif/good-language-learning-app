@@ -291,12 +291,9 @@ assert(workshopContent.includes("'hu-ecl-a2-exam':"), 'workshop.js _moduleFor mu
 assert(workshopContent.includes("'hu-ecl-b1-exam':"), 'workshop.js _moduleFor must map hu-ecl-b1-exam');
 assert(workshopContent.includes('data-wk-tab="exams"'), 'workshop.js must include Exam Preparation tab button');
 assert(workshopContent.includes('data-wk-tab="practice"'), 'workshop.js must include Practice tab button');
-assert(workshopContent.includes('data-exam-level='), 'workshop.js must include level filter pills');
-assert(workshopContent.includes("['all', 'a1', 'a2', 'b1', 'b2', 'c1']"), 'workshop.js must define all, a1, a2, b1, b2, c1 levels');
-assert(workshopContent.includes('data-exam-level="${lvl}"'), 'workshop.js must generate data-exam-level pills');
+assert(!workshopContent.includes('wk-level-pills'), 'workshop.js must not include pill filters');
 assert(workshopContent.includes('setTab'), 'workshop.js must export setTab');
-assert(workshopContent.includes('setExamLevel'), 'workshop.js must export setExamLevel');
-console.log('[PASS] engine/workshop.js integration and Exam Preparation level filter tabs verified.');
+console.log('[PASS] engine/workshop.js integration and Exam Preparation tab verified.');
 
 // 11. Validate index.html script inclusion
 const indexContent = fs.readFileSync(INDEX_PATH, 'utf-8');
