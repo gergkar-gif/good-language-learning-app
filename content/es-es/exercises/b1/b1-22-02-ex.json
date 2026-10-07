@@ -36,18 +36,26 @@
       "correct": 0,
       "teaches": [
         "subjunctive-doubt"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ser",
+        "2": "ser"
+      }
     },
     {
       "id": "b1-22-02.ex03",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "fill-blank",
-      "sentence": "__ llegue mañana. (quizá) [Perhaps he/she will arrive tomorrow.]",
-      "answer": "Quizá",
+      "sentence": "__ llegue mañana. (perhaps) [Perhaps he/she will arrive tomorrow.]",
       "teaches": [
-        "subjunctive-doubt"
+        "b1-possibilities-predictions-vocab"
       ],
-      "english": "Perhaps he/she will arrive tomorrow."
+      "english": "Perhaps he/she will arrive tomorrow.",
+      "answers": [
+        "Quizá",
+        "Quizás",
+        "Tal vez"
+      ]
     },
     {
       "id": "b1-22-02.ex04",
@@ -81,9 +89,9 @@
       "category": "grammar",
       "type": "sentence-order",
       "sentences": [
-        "Quizá llegue mañana. [Perhaps he/she will arrive tomorrow.]",
-        "Es posible que llegue mañana. [It is possible that he/she will arrive tomorrow.]",
-        "Posiblemente llegará mañana. [He/She will possibly arrive tomorrow.]"
+        "Primero, no tenemos noticias de Marta. [First, we have no news of Marta.]",
+        "Después, pensamos: quizá llegue mañana. [Then we think: perhaps she will arrive tomorrow.]",
+        "Finalmente, es posible que nos llame esta noche. [Finally, it is possible that she will call us tonight.]"
       ],
       "solution": [
         0,
@@ -107,18 +115,22 @@
       "correct": 0,
       "teaches": [
         "subjunctive-doubt"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ser",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-22-02.ex07",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "fill-blank",
-      "sentence": "__ que necesitemos más información. (posiblemente) [Possibly we will need more information.]",
-      "answer": "Posiblemente",
+      "sentence": "Es __ que necesitemos más información. (possible) [It is possible that we will need more information.]",
+      "answer": "posible",
       "teaches": [
-        "subjunctive-doubt"
+        "b1-possibilities-predictions-vocab"
       ],
-      "english": "Possibly we will need more information."
+      "english": "It is possible that we will need more information."
     },
     {
       "id": "b1-22-02.ex08",
@@ -219,7 +231,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "subjunctive-doubt"
+        "b1-possibilities-predictions-vocab"
       ]
     },
     {
@@ -268,7 +280,11 @@
       "correct": 0,
       "teaches": [
         "subjunctive-doubt"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ar-verbs",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-22-02.ex16",

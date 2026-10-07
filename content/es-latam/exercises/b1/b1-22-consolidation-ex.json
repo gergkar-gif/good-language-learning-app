@@ -40,18 +40,26 @@
       "correct": 0,
       "teaches": [
         "future-probability"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "estar"
+      }
     },
     {
       "id": "b1-22-consolidation.ex03",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "fill-blank",
-      "sentence": "__ que necesitemos más información. (quizá) [Perhaps we will need more information.]",
-      "answer": "Quizá",
+      "sentence": "__ necesitemos más información. (perhaps) [Perhaps we will need more information.]",
       "teaches": [
-        "subjunctive-doubt"
+        "b1-possibilities-predictions-vocab"
       ],
-      "english": "Perhaps we will need more information."
+      "english": "Perhaps we will need more information.",
+      "answers": [
+        "Quizá",
+        "Quizás",
+        "Tal vez"
+      ]
     },
     {
       "id": "b1-22-consolidation.ex04",
@@ -95,7 +103,7 @@
         2
       ],
       "teaches": [
-        "hypothetical-structures"
+        "porque-y-por-eso"
       ]
     },
     {
@@ -106,21 +114,25 @@
       "options": [
         "Si tuviéramos más información, podríamos decidir mejor. [If we had more information, we could decide better.]",
         "Si tendríamos más información, podríamos decidir mejor. [If we had more information, we could decide better.]",
-        "Si tenemos más información, podríamos decidir mejor. [If we had more information, we could decide better.]"
+        "Si tengamos más información, podríamos decidir mejor. [If we have (subjunctive) more information, we could decide better.]"
       ],
       "correct": 0,
       "teaches": [
-        "futuro-simple"
-      ]
+        "hypothetical-structures"
+      ],
+      "distractor_skills": {
+        "1": "condicional-irregular",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-22-consolidation.ex07",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "fill-blank",
-      "sentence": "Según la __ actual, la demanda crecerá. (tendencia) [According to the current trend, demand will grow.]",
+      "sentence": "Según la __ actual, la demanda crecerá. (trend) [According to the current trend, demand will grow.]",
       "answer": "tendencia",
       "teaches": [
-        "future-probability"
+        "b1-possibilities-predictions-vocab"
       ],
       "english": "According to the current trend, demand will grow."
     },
@@ -150,7 +162,7 @@
       ],
       "english": "In that situation, a new problem could arise.",
       "teaches": [
-        "subjunctive-doubt"
+        "condicional-irregular"
       ]
     },
     {
@@ -166,7 +178,10 @@
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-22-consolidation.ex10",
@@ -180,7 +195,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
+        "subjunctive-doubt"
       ]
     },
     {
@@ -195,7 +210,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "futuro-simple"
+        "hypothetical-structures"
       ]
     },
     {
@@ -204,7 +219,7 @@
       "type": "dictation",
       "sentence": "Es posible que el resultado sea diferente.",
       "teaches": [
-        "future-probability"
+        "subjunctive-doubt"
       ],
       "english": "It is possible that the result will be different."
     },
@@ -229,8 +244,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "subjunctive-doubt"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "hypothetical-structures"
+      }
     },
     {
       "id": "b1-22-consolidation.ex14",
@@ -253,8 +272,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
-      ]
+        "futuro-simple"
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-22-consolidation.ex15",
@@ -277,8 +300,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-22-consolidation.ex16",
@@ -292,7 +319,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "futuro-simple"
+        "hypothetical-structures"
       ]
     },
     {
@@ -306,7 +333,6 @@
         }
       ],
       "teaches": [
-        "hypothetical-structures",
         "futuro-simple"
       ]
     },
@@ -321,8 +347,7 @@
         }
       ],
       "teaches": [
-        "future-probability",
-        "futuro-simple"
+        "hypothetical-structures"
       ]
     }
   ]
