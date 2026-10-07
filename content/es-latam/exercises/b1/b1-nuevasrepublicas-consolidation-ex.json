@@ -43,7 +43,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "se-impersonal"
+        "pasiva-refleja"
       ]
     },
     {
@@ -51,11 +51,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "Las fronteras _____ discutidas durante años. (ser)",
-      "answer": "fueron",
       "teaches": [
         "ser-passive"
       ],
-      "english": "The borders were disputed for years."
+      "english": "The borders were disputed for years.",
+      "answers": [
+        "fueron",
+        "eran"
+      ]
     },
     {
       "id": "b1-nuevasrepublicas-consolidation.ex04",
@@ -98,17 +101,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "porque-y-por-eso"
+        "formal-cause-connectors"
       ]
     },
     {
       "id": "b1-nuevasrepublicas-consolidation.ex06",
       "type": "sentence-order",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentences": [
-        "Las nuevas repúblicas heredaron territorios diversos.",
-        "Los gobiernos intentaron crear instituciones comunes.",
-        "Los conflictos regionales dificultaron la consolidación."
+        "Primero, las nuevas repúblicas heredaron territorios diversos.",
+        "Después, los gobiernos intentaron crear instituciones comunes.",
+        "Finalmente, los conflictos regionales dificultaron la consolidación."
       ],
       "solution": [
         0,
@@ -116,7 +119,7 @@
         2
       ],
       "teaches": [
-        "b1-new-republics-vocab"
+        "ordering-markers"
       ]
     },
     {
@@ -137,7 +140,7 @@
     {
       "id": "b1-nuevasrepublicas-consolidation.ex08",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -149,14 +152,11 @@
         }
       ],
       "options": [
-        "Porque había que crear instituciones, conseguir recursos y obtener apoyo político mientras continuaban los conflictos regionales.",
+        "Porque las flamantes repúblicas carecían de ministerios eficientes y sistemas tributarios modernos, y sus capitales estaban lejos y mal comunicadas.",
         "Porque las nuevas repúblicas carecían de territorio reconocido y sus fronteras cambiaban cada semana por invasiones externas.",
         "Porque todas las facciones políticas compartían exactamente los mismos intereses y rechazaban cualquier debate sobre leyes."
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-new-republics-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-nuevasrepublicas-consolidation.ex09",
@@ -186,11 +186,11 @@
     {
       "id": "b1-nuevasrepublicas-consolidation.ex11",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Eran iguales todos los liberales y conservadores de América Latina?"
+          "text": "¿Pertenecían liberales y conservadores a sectores sociales opuestos?"
         },
         {
           "speaker": "B",
@@ -198,14 +198,11 @@
         }
       ],
       "options": [
-        "No, sus posiciones variaban según el país, el momento y los intereses de los grupos.",
-        "Sí, tenían exactamente las mismas ideas en todos los países.",
-        "No, porque no existían debates políticos."
+        "No, ambos pertenecían a la misma élite letrada y terrateniente, aunque sostenían proyectos de nación antagónicos.",
+        "Sí, los liberales eran todos campesinos y los conservadores todos militares.",
+        "No, porque no existían partidos políticos en el siglo diecinueve."
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-new-republics-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-nuevasrepublicas-consolidation.ex12",
@@ -219,7 +216,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "porque-y-por-eso"
+        "formal-cause-connectors"
       ]
     },
     {
@@ -258,7 +255,7 @@
     {
       "id": "b1-nuevasrepublicas-consolidation.ex14",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -270,14 +267,11 @@
         }
       ],
       "options": [
-        "La inestabilidad podía impedir que los gobiernos mantuvieran reformas y reglas durante suficiente tiempo.",
+        "Sin instituciones consolidadas la inestabilidad se volvía la norma, y la rotación constante de gobiernos impedía sostener políticas de largo plazo.",
         "La inestabilidad hacía que las instituciones fueran automáticamente más fuertes.",
         "No había ninguna relación entre ambos procesos."
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-new-republics-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-nuevasrepublicas-consolidation.ex15",
@@ -325,7 +319,7 @@
     {
       "id": "b1-nuevasrepublicas-consolidation.ex18",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -341,10 +335,7 @@
         "La proclamación de la independencia resolvió de inmediato las disputas territoriales y estableció un orden constitucional pacífico en todo el continente.",
         "Los nuevos gobiernos heredaron administraciones coloniales perfectamente estables que funcionaron sin necesidad de redactar nuevas leyes republicanas."
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-new-republics-vocab"
-      ]
+      "correct": 0
     }
   ]
 }

@@ -54,8 +54,11 @@
         "ser-passive"
       ],
       "sentence": "Los recursos _____ distribuidos por redes de patronazgo. (ser)",
-      "answer": "eran",
-      "english": "Resources were distributed through patronage networks."
+      "english": "Resources were distributed through patronage networks.",
+      "answers": [
+        "eran",
+        "fueron"
+      ]
     },
     {
       "id": "b1-caudillismo-consolidation.ex04",
@@ -106,14 +109,14 @@
     {
       "id": "b1-caudillismo-consolidation.ex06",
       "type": "sentence-order",
-      "category": "vocabulary",
+      "category": "grammar",
       "teaches": [
-        "b1-caudillismo-vocab"
+        "ordering-markers"
       ],
       "sentences": [
-        "Las instituciones nacionales eran débiles.",
-        "Los líderes regionales reunían apoyos diferentes.",
-        "La relación entre poder local y Estado era compleja."
+        "Primero, las instituciones nacionales eran débiles.",
+        "Después, los líderes regionales reunían apoyos diferentes.",
+        "Finalmente, la relación entre poder local y Estado era compleja."
       ],
       "solution": [
         0,
@@ -139,10 +142,7 @@
     {
       "id": "b1-caudillismo-consolidation.ex08",
       "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "b1-caudillismo-vocab"
-      ],
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -167,11 +167,11 @@
       "teaches": [
         "b1-caudillismo-vocab"
       ],
-      "sentence": "Un pronunciamiento podía cambiar el gobierno, aunque su resultado dependiera del apoyo recibido.",
+      "sentence": "Los caudillos reunían fuerzas rápidamente cuando la situación lo exigía.",
       "options": [
-        "A military uprising could change the government, although its outcome depended on the support it received.",
-        "A military uprising always guaranteed political stability, so civilian institutions supported every general.",
-        "A pronunciamiento required international approval, although local factions rarely participated in rebellions."
+        "Caudillos gathered forces quickly when the situation demanded it.",
+        "Caudillos kept a permanent paid army in barracks.",
+        "Caudillos never used armed force."
       ],
       "correct": 0
     },
@@ -188,14 +188,11 @@
     {
       "id": "b1-caudillismo-consolidation.ex11",
       "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "b1-caudillismo-vocab"
-      ],
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Todos los caudillos tenían el mismo tipo de poder?"
+          "text": "¿Dejó el caudillismo el mismo resultado en todos los países?"
         },
         {
           "speaker": "B",
@@ -203,9 +200,9 @@
         }
       ],
       "options": [
-        "No, su poder dependía de las instituciones, las regiones y los grupos que los apoyaban.",
-        "Sí, todos tenían exactamente el mismo apoyo.",
-        "Sí, todos controlaban el país entero."
+        "No, en algunos lugares, como Chile, la estabilidad institucional limitó a los caudillos; en otros, como Bolivia, el patrón personalista se prolongó.",
+        "Sí, el resultado fue idéntico en todos los países de la región.",
+        "Sí, en todos los países los caudillos desaparecieron en 1830."
       ],
       "correct": 0
     },
@@ -214,7 +211,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "teaches": [
-        "porque-y-por-eso"
+        "formal-cause-connectors"
       ],
       "question": "¿Qué oración expresa una consecuencia?",
       "options": [
@@ -229,7 +226,7 @@
       "type": "sentence-builder",
       "category": "grammar",
       "teaches": [
-        "por-que-y-porque"
+        "porque-y-por-eso"
       ],
       "tiles": [
         "El",
@@ -260,10 +257,7 @@
     {
       "id": "b1-caudillismo-consolidation.ex14",
       "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "b1-caudillismo-vocab"
-      ],
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -275,7 +269,7 @@
         }
       ],
       "options": [
-        "Porque podían mantener autoridad en regiones donde el Estado tenía poca capacidad de control.",
+        "Porque mantenían el orden mediante la lealtad directa de sus hombres armados, y sus defensores destacan que Rosas mantuvo la cohesión de la confederación.",
         "Porque promovían asambleas populares en cada pueblo para limitar la intervención de los terratenientes.",
         "Porque subordinaban sus tropas locales a las decisiones exclusivas de los jueces del tribunal superior."
       ],
@@ -327,10 +321,7 @@
     {
       "id": "b1-caudillismo-consolidation.ex18",
       "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "b1-caudillismo-vocab"
-      ],
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
