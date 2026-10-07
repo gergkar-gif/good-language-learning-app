@@ -93,6 +93,8 @@ def main():
     seen, by_content = set(), defaultdict(set)
     order, screen = positions(course, level)
     oc = other_course(lang)
+    if oc and not any(u["id"] == uid for u in load(ROOT / "content" / oc / "curriculum" / "units" / f"{level}.json")):
+        oc = None  # a track-only unit (ES B1 cultura / latam, the es-es A2 vosotros unit): nothing to pair with
     other = {}
     if oc:
         for stem in unit["stems"]:
