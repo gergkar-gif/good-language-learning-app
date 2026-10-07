@@ -8,14 +8,19 @@
       "question": "Carlos me dijo: «Estaré en la estación a las seis». Carlos me dijo que _____ en la estación a las seis.",
       "options": [
         "estaría",
-        "estará",
+        "estaré",
         "estaba",
         "estuviera"
       ],
       "correct": 0,
       "teaches": [
-        "estilo-indirecto-ordenes"
-      ]
+        "estilo-indirecto"
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "imperfect",
+        "3": "correlacion-temporal-subjuntivo"
+      }
     },
     {
       "id": "b1-38-03.ex02",
@@ -23,9 +28,9 @@
       "type": "fill-blank",
       "sentence": "Ella me comentó que no _____ tiempo para hablar aquel día.",
       "answer": "tenía",
-      "english": "She told me that she didn't have time to talk that day.",
+      "english": "She told me that she didn't have time to talk that day (she said: «No tengo tiempo»).",
       "teaches": [
-        "estilo-indirecto-ordenes"
+        "estilo-indirecto"
       ]
     },
     {
@@ -41,30 +46,41 @@
         "siguiente",
         "."
       ],
-      "solution": [
-        "Dijo",
-        "que",
-        "vendría",
-        "al",
-        "día",
-        "siguiente",
-        "."
-      ],
       "english": "He said that he would come the following day.",
       "teaches": [
-        "estilo-indirecto-ordenes"
+        "estilo-indirecto"
+      ],
+      "solutions": [
+        [
+          "Dijo",
+          "que",
+          "vendría",
+          "al",
+          "día",
+          "siguiente",
+          "."
+        ],
+        [
+          "Dijo",
+          "que",
+          "al",
+          "día",
+          "siguiente",
+          "vendría",
+          "."
+        ]
       ]
     },
     {
       "id": "b1-38-03.ex04",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Nos vimos en el aeropuerto justo _____ de su partida.",
+      "question": "Marta dijo el lunes: «Viajo mañana». Dijo que viajaría _____, es decir, el martes.",
       "options": [
-        "el día anterior",
-        "aquel día",
         "al día siguiente",
-        "afirmación"
+        "el día anterior",
+        "afirmación",
+        "declaración"
       ],
       "correct": 0,
       "teaches": [
@@ -75,16 +91,16 @@
       "id": "b1-38-03.ex05",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Los directores anunciaron que la empresa _____ abrir una nueva sede.",
+      "sentence": "Los directores anunciaron que la empresa _____ una nueva sede.",
       "answer": "abriría",
-      "english": "The directors announced that the company would open a new branch.",
+      "english": "The directors announced that the company would open a new branch (they said: «Abriremos una nueva sede»).",
       "teaches": [
-        "estilo-indirecto-ordenes"
+        "estilo-indirecto"
       ]
     },
     {
       "id": "b1-38-03.ex06",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
         [
@@ -105,7 +121,7 @@
         ]
       ],
       "teaches": [
-        "estilo-indirecto-ordenes"
+        "b1-sequence-of-tenses-vocab"
       ]
     },
     {
@@ -120,7 +136,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "estilo-indirecto-ordenes"
+        "b1-sequence-of-tenses-vocab"
       ]
     },
     {
@@ -130,7 +146,7 @@
       "sentence": "Él nos dijo que compraría las entradas al día siguiente.",
       "english": "He told us that he would buy the tickets the following day.",
       "teaches": [
-        "estilo-indirecto-ordenes"
+        "estilo-indirecto"
       ]
     },
     {
@@ -154,7 +170,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "estilo-indirecto-ordenes"
+        "estilo-indirecto"
       ]
     },
     {
@@ -178,7 +194,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "estilo-indirecto-ordenes"
+        "estilo-indirecto"
       ]
     },
     {
@@ -192,7 +208,7 @@
         }
       ],
       "teaches": [
-        "estilo-indirecto-ordenes"
+        "estilo-indirecto"
       ]
     }
   ]
