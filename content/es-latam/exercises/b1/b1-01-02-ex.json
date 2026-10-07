@@ -39,7 +39,7 @@
       ],
       "correct": 2,
       "teaches": [
-        "imperfect"
+        "preterite-vs-imperfect"
       ]
     },
     {
@@ -66,14 +66,25 @@
         "estaba",
         "vacía."
       ],
-      "solution": [
-        "Hacía",
-        "frío",
-        "y",
-        "la",
-        "calle",
-        "estaba",
-        "vacía."
+      "solutions": [
+        [
+          "Hacía",
+          "frío",
+          "y",
+          "la",
+          "calle",
+          "estaba",
+          "vacía."
+        ],
+        [
+          "la",
+          "calle",
+          "estaba",
+          "vacía.",
+          "y",
+          "Hacía",
+          "frío"
+        ]
       ],
       "english": "It was cold and the street was empty.",
       "teaches": [
@@ -123,7 +134,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
+        "preterite-vs-imperfect"
       ]
     },
     {
@@ -150,13 +161,13 @@
       "answer": "solía",
       "english": "As a child, I used to play football in the park with my cousins.",
       "teaches": [
-        "imperfect"
+        "habitos-soler"
       ]
     },
     {
       "id": "b1-01-02.ex09",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "Estábamos",
         "charlando",
@@ -165,17 +176,35 @@
         "el",
         "teléfono."
       ],
-      "solution": [
-        "Estábamos",
-        "charlando",
-        "cuando",
-        "sonó",
-        "el",
-        "teléfono."
+      "solutions": [
+        [
+          "Estábamos",
+          "charlando",
+          "cuando",
+          "sonó",
+          "el",
+          "teléfono."
+        ],
+        [
+          "cuando",
+          "sonó",
+          "el",
+          "teléfono.",
+          "Estábamos",
+          "charlando"
+        ],
+        [
+          "Estábamos",
+          "charlando",
+          "cuando",
+          "el",
+          "teléfono.",
+          "sonó"
+        ]
       ],
       "english": "We were chatting when the phone rang.",
       "teaches": [
-        "imperfect"
+        "preterite-vs-imperfect"
       ]
     },
     {
@@ -229,12 +258,16 @@
       "correct": 2,
       "teaches": [
         "imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "preterito-indefinido",
+        "1": "present-tense"
+      }
     },
     {
       "id": "b1-01-02.ex13",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "Completa la historia: «Ana leía en el sofá cuando…»",
       "options": [
         "…alguien llamó a la puerta.",
@@ -243,13 +276,16 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-01-02.ex14",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "Todos los domingos, mi abuela __ una sopa enorme para toda la familia. (preparar)",
       "answer": "preparaba",
       "english": "Every Sunday, my grandmother used to make a huge soup for the whole family.",
@@ -276,8 +312,7 @@
         }
       ],
       "teaches": [
-        "imperfect",
-        "preterito-indefinido"
+        "imperfect"
       ]
     },
     {

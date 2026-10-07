@@ -36,7 +36,10 @@
       "correct": 0,
       "teaches": [
         "ir-infinitive"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      }
     },
     {
       "id": "b1-03-04.ex03",
@@ -64,26 +67,50 @@
         "en",
         "agosto."
       ],
-      "solution": [
-        "Creo",
-        "que",
-        "el",
-        "viaje",
-        "será",
-        "más",
-        "caro",
-        "en",
-        "agosto."
-      ],
       "english": "Build a prediction rather than an existing plan.",
       "teaches": [
-        "ir-infinitive"
+        "futuro-simple"
+      ],
+      "solutions": [
+        [
+          "Creo",
+          "que",
+          "el",
+          "viaje",
+          "será",
+          "más",
+          "caro",
+          "en",
+          "agosto."
+        ],
+        [
+          "Creo",
+          "que",
+          "en",
+          "agosto",
+          "el",
+          "viaje",
+          "será",
+          "más",
+          "caro"
+        ],
+        [
+          "En",
+          "agosto",
+          "creo",
+          "que",
+          "el",
+          "viaje",
+          "será",
+          "más",
+          "caro"
+        ]
       ]
     },
     {
       "id": "b1-03-04.ex05",
       "type": "sentence-order",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentences": [
         "Ya he elegido el destino.",
         "Voy a reservar el alojamiento.",
@@ -95,7 +122,7 @@
         2
       ],
       "teaches": [
-        "ir-infinitive"
+        "b1-plans-ambitions-vocab"
       ]
     },
     {
@@ -123,8 +150,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ir-infinitive",
-        "verbos-regimen-preposicional"
+        "ir-infinitive"
       ]
     },
     {
@@ -150,15 +176,14 @@
       "sentence": "El resultado __ del tiempo que tengamos. (depender)",
       "answer": "dependerá",
       "teaches": [
-        "futuro-simple",
-        "verbos-regimen-preposicional"
+        "futuro-simple"
       ],
       "english": "The result will depend on how much time we have."
     },
     {
       "id": "b1-03-04.ex09",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "Vamos",
         "a",
@@ -187,7 +212,7 @@
       ],
       "english": "Build a changed plan with a reason.",
       "teaches": [
-        "present-tense"
+        "ir-infinitive"
       ]
     },
     {
@@ -211,7 +236,7 @@
       "category": "listening",
       "sentence": "El resultado dependerá del tiempo que tengamos.",
       "teaches": [
-        "ir-infinitive"
+        "b1-plans-ambitions-vocab"
       ],
       "english": "The result will depend on how much time we have."
     },
@@ -235,20 +260,23 @@
       ],
       "options": [
         "Sí, voy a salir el viernes, aunque el plan dependerá del tiempo.",
-        "Sí, saldré el viernes porque ya he tomado la decisión.",
+        "Sí, creo que saldré el viernes, pero todavía no he decidido nada.",
         "Sí, salía el viernes aunque el horario cambiará."
       ],
       "correct": 0,
       "teaches": [
-        "ir-infinitive",
-        "verbos-regimen-preposicional"
-      ]
+        "ir-infinitive"
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-03-04.ex13",
       "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué opción combina correctamente plan y prediction?",
+      "category": "grammar",
+      "question": "¿Qué opción combina correctamente plan y predicción?",
       "options": [
         "Voy a reservar hoy porque creo que el precio subirá mañana.",
         "Reservaré hoy porque ya he reservado ayer.",
@@ -257,29 +285,30 @@
       "correct": 0,
       "teaches": [
         "ir-infinitive"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      }
     },
     {
       "id": "b1-03-04.ex14a",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "vocabulary",
       "sentence": "Mi __ es viajar en tren, aunque el destino dependerá del precio. (decision)",
       "answer": "decisión",
       "teaches": [
-        "b1-plans-ambitions-vocab",
-        "ir-infinitive"
+        "b1-plans-ambitions-vocab"
       ],
       "english": "My decision is to travel by train, although the destination will depend on the price."
     },
     {
       "id": "b1-03-04.ex14b",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "Mi decisión es viajar en tren, aunque el destino __ del precio. (depender)",
       "answer": "dependerá",
       "teaches": [
-        "b1-plans-ambitions-vocab",
-        "ir-infinitive"
+        "futuro-simple"
       ],
       "english": "My decision is to travel by train, although the destination will depend on the price."
     },
@@ -316,8 +345,7 @@
         }
       ],
       "teaches": [
-        "b1-plans-ambitions-vocab",
-        "ir-infinitive"
+        "b1-plans-ambitions-vocab"
       ]
     }
   ]

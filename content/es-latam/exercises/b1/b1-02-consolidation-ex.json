@@ -36,6 +36,10 @@
       "teaches": [
         "imperfect"
       ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "futuro-simple"
+      },
       "category": "grammar"
     },
     {
@@ -122,8 +126,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterite-vs-imperfect"
+        "preterito-indefinido"
       ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      },
       "category": "dialogue"
     },
     {
@@ -137,7 +144,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "porque-y-por-eso"
+        "secuencia-narrativa"
       ],
       "category": "listening"
     },
@@ -146,7 +153,7 @@
       "type": "dictation",
       "sentence": "A medida que escuchaba el relato, el rey se conmovía más.",
       "teaches": [
-        "pluscuamperfecto"
+        "cuanto-mas-tanto-mas"
       ],
       "english": "As he listened to the story, the king became more and more moved.",
       "category": "listening"
@@ -161,7 +168,7 @@
         }
       ],
       "teaches": [
-        "imperfect"
+        "b1-experiences-memories-vocab"
       ],
       "category": "writing"
     },
@@ -176,9 +183,9 @@
       ],
       "correct": 0,
       "teaches": [
-        "connectors"
+        "b1-experiences-memories-vocab"
       ],
-      "category": "grammar"
+      "category": "vocabulary"
     },
     {
       "id": "b1-02-consolidation.ex11",
@@ -204,19 +211,31 @@
         "del",
         "debate."
       ],
-      "solution": [
-        "Aunque",
-        "tenía",
-        "miedo,",
-        "presencié",
-        "el",
-        "final",
-        "del",
-        "debate."
+      "solutions": [
+        [
+          "Aunque",
+          "tenía",
+          "miedo,",
+          "presencié",
+          "el",
+          "final",
+          "del",
+          "debate."
+        ],
+        [
+          "presencié",
+          "el",
+          "final",
+          "del",
+          "debate.",
+          "Aunque",
+          "tenía",
+          "miedo,"
+        ]
       ],
       "english": "Although I was afraid, I witnessed the end of the debate.",
       "teaches": [
-        "preterito-indefinido"
+        "preterite-vs-imperfect"
       ],
       "category": "grammar"
     },
@@ -234,7 +253,7 @@
         2
       ],
       "teaches": [
-        "pluscuamperfecto"
+        "secuencia-narrativa"
       ],
       "category": "grammar"
     },
@@ -262,8 +281,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "pluscuamperfecto"
+        "preterito-indefinido"
       ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      },
       "category": "dialogue"
     },
     {
@@ -291,8 +313,7 @@
         }
       ],
       "teaches": [
-        "pluscuamperfecto",
-        "b1-experiences-memories-vocab"
+        "pluscuamperfecto"
       ],
       "category": "writing"
     },
@@ -331,6 +352,9 @@
       "teaches": [
         "preterite-vs-imperfect"
       ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      },
       "category": "grammar"
     }
   ]

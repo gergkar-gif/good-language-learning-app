@@ -45,11 +45,11 @@
     {
       "id": "b1-04-01.ex03",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Deberías __ con alguien que conozca bien el problema. [You should speak to someone who knows the problem well.] (hablar)",
+      "category": "vocabulary",
+      "sentence": "Deberías __ con alguien que conozca bien el problema. [You should speak to someone who knows the problem well.] (speak)",
       "answer": "hablar",
       "teaches": [
-        "deber-vs-tener-que"
+        "b1-giving-advice-vocab"
       ],
       "english": "You should speak to someone who knows the problem well."
     },
@@ -87,7 +87,7 @@
     {
       "id": "b1-04-01.ex05",
       "type": "sentence-order",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentences": [
         "Primero deberías leer las instrucciones. [First you should read the instructions.]",
         "Después tienes que comprobar los datos. [Then you have to check the data.]",
@@ -99,7 +99,7 @@
         2
       ],
       "teaches": [
-        "b1-giving-advice-vocab"
+        "ordering-markers"
       ]
     },
     {
@@ -128,7 +128,10 @@
       "correct": 0,
       "teaches": [
         "deber-vs-tener-que"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-04-01.ex07",
@@ -148,13 +151,16 @@
     {
       "id": "b1-04-01.ex08",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Tienes que __ los datos antes de decidir. [You have to check the data before deciding.] (revisar)",
-      "answer": "revisar",
+      "category": "vocabulary",
+      "sentence": "Tienes que __ los datos antes de decidir. [You have to check the data before deciding.] (check)",
       "teaches": [
-        "deber-vs-tener-que"
+        "b1-giving-advice-vocab"
       ],
-      "english": "You have to check the data before deciding."
+      "english": "You have to check the data before deciding.",
+      "answers": [
+        "revisar",
+        "comprobar"
+      ]
     },
     {
       "id": "b1-04-01.ex09",
@@ -182,7 +188,7 @@
       ],
       "english": "Be careful because the road may be dangerous.",
       "teaches": [
-        "deber-vs-tener-que"
+        "imperativo-afirmativo-irregular"
       ]
     },
     {
@@ -206,7 +212,7 @@
       "category": "listening",
       "sentence": "Tienes que revisar los datos antes de tomar una decisión.",
       "teaches": [
-        "deber-vs-tener-que"
+        "b1-giving-advice-vocab"
       ],
       "english": "You have to review the data before making a decision."
     },
@@ -236,7 +242,11 @@
       "correct": 0,
       "teaches": [
         "deber-vs-tener-que"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-04-01.ex13",
@@ -251,7 +261,10 @@
       "correct": 0,
       "teaches": [
         "deber-vs-tener-que"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "condicional-consejos"
+      }
     },
     {
       "id": "b1-04-01.ex14",
@@ -260,7 +273,7 @@
       "sentence": "No __ tan rápido, aunque tengas prisa. [Do not go so fast, even if you are in a hurry.] (correr)",
       "answer": "corras",
       "teaches": [
-        "deber-vs-tener-que"
+        "imperativo-negativo"
       ],
       "english": "Do not go so fast, even if you are in a hurry."
     },
@@ -297,8 +310,7 @@
         }
       ],
       "teaches": [
-        "deber-vs-tener-que",
-        "condicional-consejos"
+        "deber-vs-tener-que"
       ]
     }
   ]

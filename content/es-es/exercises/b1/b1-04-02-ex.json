@@ -35,7 +35,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
+        "condicional-consejos"
       ]
     },
     {
@@ -45,7 +45,7 @@
       "sentence": "Si yo fuera tú, __ con ella antes de decidir. [If I were you, I would speak to her before deciding.] (hablar)",
       "answer": "hablaría",
       "teaches": [
-        "hypothetical-structures"
+        "condicional-regular"
       ],
       "english": "If I were you, I would speak to her before deciding."
     },
@@ -64,26 +64,39 @@
         "más",
         "segura."
       ],
-      "solution": [
-        "Si",
-        "yo",
-        "fuera",
-        "tú,",
-        "buscaría",
-        "una",
-        "alternativa",
-        "más",
-        "segura."
-      ],
       "english": "If I were you, I would look for a safer alternative.",
       "teaches": [
         "hypothetical-structures"
+      ],
+      "solutions": [
+        [
+          "Si",
+          "yo",
+          "fuera",
+          "tú,",
+          "buscaría",
+          "una",
+          "alternativa",
+          "más",
+          "segura."
+        ],
+        [
+          "Buscaría",
+          "una",
+          "alternativa",
+          "más",
+          "segura",
+          "si",
+          "yo",
+          "fuera",
+          "tú"
+        ]
       ]
     },
     {
       "id": "b1-04-02.ex05",
       "type": "sentence-order",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentences": [
         "Primero pensaría en las consecuencias. [First I would think about the consequences.]",
         "Después compararía las opciones. [Then I would compare the options.]",
@@ -95,7 +108,7 @@
         2
       ],
       "teaches": [
-        "b1-giving-advice-vocab"
+        "ordering-markers"
       ]
     },
     {
@@ -129,7 +142,7 @@
     {
       "id": "b1-04-02.ex07",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does «convendría esperar» mean? [¿Qué significa «convendría esperar»?]",
       "options": [
         "It would be advisable to wait. [Sería aconsejable esperar.]",
@@ -138,7 +151,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "condicional-consejos"
+        "b1-giving-advice-vocab"
       ]
     },
     {
@@ -148,7 +161,7 @@
       "sentence": "En tu lugar, __ antes de responder. [In your position, I would wait before answering.] (esperar)",
       "answer": "esperaría",
       "teaches": [
-        "hypothetical-structures"
+        "condicional-regular"
       ],
       "english": "In your position, I would wait before answering."
     },
@@ -165,18 +178,29 @@
         "más",
         "información."
       ],
-      "solution": [
-        "Yo",
-        "no",
-        "me",
-        "arriesgaría",
-        "sin",
-        "más",
-        "información."
-      ],
       "english": "I would not take the risk without more information.",
       "teaches": [
-        "hypothetical-structures"
+        "condicional-consejos"
+      ],
+      "solutions": [
+        [
+          "Yo",
+          "no",
+          "me",
+          "arriesgaría",
+          "sin",
+          "más",
+          "información."
+        ],
+        [
+          "Sin",
+          "más",
+          "información",
+          "yo",
+          "no",
+          "me",
+          "arriesgaría"
+        ]
       ]
     },
     {
@@ -200,7 +224,7 @@
       "category": "listening",
       "sentence": "En tu lugar, buscaría una alternativa más prudente.",
       "teaches": [
-        "hypothetical-structures"
+        "b1-giving-advice-vocab"
       ],
       "english": "In your place, I would look for a more cautious alternative."
     },
@@ -229,8 +253,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-04-02.ex13",
@@ -244,7 +272,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
+        "condicional-consejos"
       ]
     },
     {
@@ -254,7 +282,7 @@
       "sentence": "Conviene pensar antes de actuar; en tu lugar, yo __. [It is advisable to think before acting; in your position, I would wait.] (esperar)",
       "answer": "esperaría",
       "teaches": [
-        "hypothetical-structures"
+        "condicional-regular"
       ],
       "english": "It is advisable to think before acting; in your position, I would wait."
     },
@@ -291,8 +319,7 @@
         }
       ],
       "teaches": [
-        "hypothetical-structures",
-        "condicional-consejos"
+        "b1-giving-advice-vocab"
       ]
     }
   ]

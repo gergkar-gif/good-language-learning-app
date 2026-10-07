@@ -31,15 +31,15 @@
       "id": "b1-01-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "En «Don Quijote caminaba por La Mancha cuando vio unos molinos», ¿qué verbo describe la escena de fondo?",
+      "question": "En «Don Quijote ___ por La Mancha cuando vio unos molinos», ¿qué forma describe la escena de fondo?",
       "options": [
-        "vio",
+        "caminó",
         "caminaba",
-        "ninguno de los dos"
+        "había caminado"
       ],
       "correct": 1,
       "teaches": [
-        "pluscuamperfecto"
+        "preterite-vs-imperfect"
       ]
     },
     {
@@ -50,7 +50,7 @@
       "answer": "intentaba",
       "english": "While Sancho was trying to explain the truth to him, Don Quijote advanced towards the windmills.",
       "teaches": [
-        "pluscuamperfecto"
+        "imperfect"
       ]
     },
     {
@@ -67,15 +67,27 @@
         "de",
         "caballeros."
       ],
-      "solution": [
-        "De",
-        "niño",
-        "había",
-        "leído",
-        "muchas",
-        "historias",
-        "de",
-        "caballeros."
+      "solutions": [
+        [
+          "De",
+          "niño",
+          "había",
+          "leído",
+          "muchas",
+          "historias",
+          "de",
+          "caballeros."
+        ],
+        [
+          "había",
+          "leído",
+          "muchas",
+          "historias",
+          "de",
+          "caballeros.",
+          "De",
+          "niño"
+        ]
       ],
       "english": "As a child he had read many stories about knights.",
       "teaches": [
@@ -125,7 +137,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "pluscuamperfecto"
+        "b1-telling-stories-vocab"
       ]
     },
     {
@@ -165,10 +177,7 @@
         "Unos molinos, pero creyó que eran gigantes.",
         "Un pueblo lleno de caballeros."
       ],
-      "correct": 1,
-      "teaches": [
-        "b1-telling-stories-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "b1-01-05.ex10",
@@ -180,10 +189,7 @@
         "Huyó y dejó solo a Don Quijote.",
         "Intentó explicar que eran molinos."
       ],
-      "correct": 2,
-      "teaches": [
-        "b1-telling-stories-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "b1-01-05.ex11",
@@ -195,10 +201,7 @@
         "Porque un mago se lo había pedido.",
         "Porque Sancho le había contado una historia."
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-telling-stories-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-01-05.ex12",
@@ -210,10 +213,7 @@
         "Dijo que Sancho había tenido razón.",
         "Dijo que un mago había cambiado los gigantes por molinos."
       ],
-      "correct": 2,
-      "teaches": [
-        "b1-telling-stories-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "b1-01-05.ex13",
@@ -227,7 +227,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "pluscuamperfecto"
+        "preterite-vs-imperfect"
       ]
     },
     {
@@ -271,7 +271,7 @@
     {
       "id": "b1-01-05.ex16",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "Tu amigo pregunta: «¿Y qué pasó cuando Don Quijote atacó?». ¿Qué respuesta encaja?",
       "options": [
         "Una de las aspas lo golpeaba todos los días.",
@@ -281,12 +281,16 @@
       "correct": 2,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "imperfect",
+        "1": "pluscuamperfecto"
+      }
     },
     {
       "id": "b1-01-05.ex17",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "Antes de llegar a los molinos, Don Quijote ya __ que sería una gran batalla. (decidir)",
       "answer": "había decidido",
       "english": "Before reaching the windmills, Don Quijote had already decided it would be a great battle.",
@@ -313,7 +317,7 @@
         }
       ],
       "teaches": [
-        "pluscuamperfecto"
+        "b1-telling-stories-vocab"
       ]
     },
     {
@@ -335,8 +339,7 @@
         }
       ],
       "teaches": [
-        "pluscuamperfecto",
-        "porque-y-por-eso"
+        "b1-telling-stories-vocab"
       ]
     }
   ]

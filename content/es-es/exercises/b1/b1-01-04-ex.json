@@ -39,15 +39,22 @@
       ],
       "correct": 1,
       "teaches": [
-        "porque-y-por-eso"
-      ]
+        "contrast-concession-connectors"
+      ],
+      "distractor_skills": {
+        "0": "porque-y-por-eso",
+        "2": "ordering-markers"
+      }
     },
     {
       "id": "b1-01-04.ex03",
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "No tenía dinero para el autobús; __ volví a casa a pie. (that's why)",
-      "answer": "por eso",
+      "answers": [
+        "por eso",
+        "así que"
+      ],
       "english": "I had no money for the bus; that's why I walked home.",
       "teaches": [
         "porque-y-por-eso"
@@ -111,7 +118,7 @@
       "prompt": [
         {
           "speaker": "Elena",
-          "text": "¿Y no te preocupaste?"
+          "text": "¿Y no te preocupaste cuando perdiste la cartera?"
         },
         {
           "speaker": "Tú",
@@ -129,8 +136,12 @@
       ],
       "correct": 2,
       "teaches": [
-        "porque-y-por-eso"
-      ]
+        "contrast-concession-connectors"
+      ],
+      "distractor_skills": {
+        "0": "porque-y-por-eso",
+        "1": "ordering-markers"
+      }
     },
     {
       "id": "b1-01-04.ex07",
@@ -156,13 +167,13 @@
       "answer": "además",
       "english": "I arrived late to the meeting; what's more, I forgot the documents.",
       "teaches": [
-        "porque-y-por-eso"
+        "ordering-markers"
       ]
     },
     {
       "id": "b1-01-04.ex09",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "Al",
         "final,",
@@ -173,19 +184,41 @@
         "la",
         "cartera."
       ],
-      "solution": [
-        "Al",
-        "final,",
-        "un",
-        "vecino",
-        "me",
-        "devolvió",
-        "la",
-        "cartera."
+      "solutions": [
+        [
+          "Al",
+          "final,",
+          "un",
+          "vecino",
+          "me",
+          "devolvió",
+          "la",
+          "cartera."
+        ],
+        [
+          "un",
+          "vecino",
+          "me",
+          "devolvió",
+          "la",
+          "cartera.",
+          "Al",
+          "final,"
+        ],
+        [
+          "Al",
+          "final,",
+          "me",
+          "devolvió",
+          "la",
+          "cartera.",
+          "un",
+          "vecino"
+        ]
       ],
       "english": "In the end, a neighbour gave me back my wallet.",
       "teaches": [
-        "porque-y-por-eso"
+        "secuencia-narrativa"
       ]
     },
     {
@@ -200,7 +233,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "porque-y-por-eso"
+        "contrast-concession-connectors"
       ]
     },
     {
@@ -238,13 +271,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "secuencia-narrativa"
-      ]
+        "preterito-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-01-04.ex13",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "¿Qué frase usa bien el conector?",
       "options": [
         "Llovía mucho; sin embargo, nos quedamos en casa por la lluvia.",
@@ -254,17 +291,23 @@
       "correct": 1,
       "teaches": [
         "porque-y-por-eso"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "contrast-concession-connectors"
+      }
     },
     {
       "id": "b1-01-04.ex14",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "Había mucho tráfico; __, llegamos a tiempo. (however)",
-      "answer": "sin embargo",
+      "answers": [
+        "sin embargo",
+        "no obstante"
+      ],
       "english": "There was a lot of traffic; however, we arrived on time.",
       "teaches": [
-        "porque-y-por-eso"
+        "contrast-concession-connectors"
       ]
     },
     {
@@ -286,7 +329,7 @@
         }
       ],
       "teaches": [
-        "porque-y-por-eso"
+        "b1-telling-stories-vocab"
       ]
     },
     {
@@ -308,7 +351,7 @@
         }
       ],
       "teaches": [
-        "porque-y-por-eso"
+        "b1-telling-stories-vocab"
       ]
     }
   ]

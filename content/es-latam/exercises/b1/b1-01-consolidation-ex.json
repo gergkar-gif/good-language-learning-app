@@ -8,6 +8,10 @@
       "teaches": [
         "imperfect"
       ],
+      "distractor_skills": {
+        "0": "preterito-indefinido",
+        "2": "pluscuamperfecto"
+      },
       "question": "Completa: «Mientras ___ la cena, sonó el teléfono.» (preparar)",
       "options": [
         "preparé",
@@ -30,7 +34,7 @@
     {
       "id": "b1-01-consolidation.ex03",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "Mientras",
         "dormía,",
@@ -40,18 +44,29 @@
         "la",
         "puerta."
       ],
-      "solution": [
-        "Mientras",
-        "dormía,",
-        "alguien",
-        "llamó",
-        "a",
-        "la",
-        "puerta."
+      "solutions": [
+        [
+          "Mientras",
+          "dormía,",
+          "alguien",
+          "llamó",
+          "a",
+          "la",
+          "puerta."
+        ],
+        [
+          "alguien",
+          "llamó",
+          "a",
+          "la",
+          "puerta.",
+          "Mientras",
+          "dormía,"
+        ]
       ],
       "english": "While I was sleeping, someone knocked at the door.",
       "teaches": [
-        "pluscuamperfecto"
+        "preterite-vs-imperfect"
       ]
     },
     {
@@ -106,7 +121,11 @@
       "correct": 2,
       "teaches": [
         "pluscuamperfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "futuro-simple",
+        "1": "present-tense"
+      }
     },
     {
       "id": "b1-01-consolidation.ex06",
@@ -120,7 +139,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "imperfect"
+        "habitos-soler"
       ]
     },
     {
@@ -152,7 +171,7 @@
     {
       "id": "b1-01-consolidation.ex09",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "Cuando",
         "llegamos,",
@@ -162,14 +181,25 @@
         "había",
         "empezado."
       ],
-      "solution": [
-        "Cuando",
-        "llegamos,",
-        "la",
-        "película",
-        "ya",
-        "había",
-        "empezado."
+      "solutions": [
+        [
+          "Cuando",
+          "llegamos,",
+          "la",
+          "película",
+          "ya",
+          "había",
+          "empezado."
+        ],
+        [
+          "la",
+          "película",
+          "ya",
+          "había",
+          "empezado.",
+          "Cuando",
+          "llegamos,"
+        ]
       ],
       "english": "When we arrived, the film had already started.",
       "teaches": [
@@ -227,8 +257,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "pluscuamperfecto"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "b1-01-consolidation.ex12",
@@ -252,6 +285,10 @@
       "teaches": [
         "pluscuamperfecto"
       ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterito-perfecto"
+      },
       "question": "Completa: «Marta no quiso ir al cine porque ya ___ la película la semana anterior.» (ver)",
       "options": [
         "había visto",
@@ -266,7 +303,7 @@
       "category": "grammar",
       "sentence": "Cuando era pequeña, mi familia __ en un pueblo cerca del mar. (vivir)",
       "answer": "vivía",
-      "english": "When I was little, my family lived in a village near the sea.",
+      "english": "When I was little, my family used to live in a village near the sea.",
       "teaches": [
         "imperfect"
       ]
@@ -274,7 +311,7 @@
     {
       "id": "b1-01-consolidation.ex15",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "Estaba",
         "lloviendo;",
@@ -295,7 +332,7 @@
       ],
       "english": "It was raining; however, we went out for a walk.",
       "teaches": [
-        "porque-y-por-eso"
+        "contrast-concession-connectors"
       ]
     },
     {
@@ -349,7 +386,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "porque-y-por-eso"
+        "b1-telling-stories-vocab"
       ]
     },
     {

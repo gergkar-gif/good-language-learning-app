@@ -36,7 +36,11 @@
       "correct": 0,
       "teaches": [
         "futuro-simple"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ir-infinitive",
+        "2": "subjuntivo-deseos"
+      }
     },
     {
       "id": "b1-03-02.ex03",
@@ -63,26 +67,37 @@
         "salimos",
         "ahora."
       ],
-      "solution": [
-        "Creo",
-        "que",
-        "llegaremos",
-        "a",
-        "tiempo",
-        "si",
-        "salimos",
-        "ahora."
-      ],
       "english": "Build a prediction with a condition.",
       "teaches": [
-        "futuro-simple",
-        "si-clauses"
+        "futuro-simple"
+      ],
+      "solutions": [
+        [
+          "Creo",
+          "que",
+          "llegaremos",
+          "a",
+          "tiempo",
+          "si",
+          "salimos",
+          "ahora."
+        ],
+        [
+          "Creo",
+          "que",
+          "si",
+          "salimos",
+          "ahora",
+          "llegaremos",
+          "a",
+          "tiempo"
+        ]
       ]
     },
     {
       "id": "b1-03-02.ex05",
       "type": "sentence-order",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentences": [
         "Primero terminaremos esta parte.",
         "Después revisaremos los resultados.",
@@ -94,7 +109,7 @@
         2
       ],
       "teaches": [
-        "b1-plans-ambitions-vocab"
+        "ordering-markers"
       ]
     },
     {
@@ -122,7 +137,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "subjunctive-doubt"
+        "futuro-simple"
       ]
     },
     {
@@ -155,18 +170,8 @@
     {
       "id": "b1-03-02.ex09",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
-        "Encontraremos",
-        "una",
-        "solución",
-        "aunque",
-        "el",
-        "problema",
-        "sea",
-        "difícil."
-      ],
-      "solution": [
         "Encontraremos",
         "una",
         "solución",
@@ -179,6 +184,28 @@
       "english": "Build a reassuring prediction with a contrast clause.",
       "teaches": [
         "futuro-simple"
+      ],
+      "solutions": [
+        [
+          "Encontraremos",
+          "una",
+          "solución",
+          "aunque",
+          "el",
+          "problema",
+          "sea",
+          "difícil."
+        ],
+        [
+          "Aunque",
+          "el",
+          "problema",
+          "sea",
+          "difícil",
+          "encontraremos",
+          "una",
+          "solución"
+        ]
       ]
     },
     {
@@ -187,14 +214,17 @@
       "category": "listening",
       "sentence": "Si no llueve, llegaremos antes de las seis.",
       "options": [
-        "Que no llueva.",
-        "Que lleguen después de las seis.",
-        "Que hayan terminado el trabajo."
+        "Si hace buen tiempo, llegaremos antes de las seis.",
+        "Llegaremos después de las seis aunque no llueva.",
+        "Ayer llegamos antes de las seis porque no llovió."
       ],
       "correct": 0,
       "teaches": [
-        "present-tense"
-      ]
+        "futuro-simple"
+      ],
+      "distractor_skills": {
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-03-02.ex11",
@@ -202,7 +232,7 @@
       "category": "listening",
       "sentence": "Creo que encontraremos una solución si seguimos trabajando.",
       "teaches": [
-        "present-tense"
+        "b1-plans-ambitions-vocab"
       ],
       "english": "I think we will find a solution if we keep working."
     },
@@ -231,14 +261,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "futuro-simple",
-        "si-clauses"
-      ]
+        "futuro-simple"
+      ],
+      "distractor_skills": {
+        "1": "condicional-irregular",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-03-02.ex13",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "Elige la continuación más natural: «Creo que el viaje...»",
       "options": [
         "será más largo de lo previsto porque hay obras.",
@@ -253,7 +286,7 @@
     {
       "id": "b1-03-02.ex14",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "No te preocupes: __ una solución antes de que termine el día. (encontrar)",
       "answer": "encontraremos",
       "teaches": [
@@ -276,8 +309,7 @@
         }
       ],
       "teaches": [
-        "futuro-simple",
-        "si-clauses"
+        "futuro-simple"
       ]
     },
     {
@@ -295,8 +327,7 @@
         }
       ],
       "teaches": [
-        "b1-plans-ambitions-vocab",
-        "futuro-simple"
+        "b1-plans-ambitions-vocab"
       ]
     }
   ]

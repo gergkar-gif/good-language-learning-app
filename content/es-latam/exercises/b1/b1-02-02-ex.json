@@ -36,7 +36,11 @@
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-02-02.ex03",
@@ -62,14 +66,25 @@
         "a",
         "preguntar."
       ],
-      "solution": [
-        "Por",
-        "primera",
-        "vez,",
-        "me",
-        "atreví",
-        "a",
-        "preguntar."
+      "solutions": [
+        [
+          "Por",
+          "primera",
+          "vez,",
+          "me",
+          "atreví",
+          "a",
+          "preguntar."
+        ],
+        [
+          "me",
+          "atreví",
+          "a",
+          "preguntar.",
+          "Por",
+          "primera",
+          "vez,"
+        ]
       ],
       "english": "For the first time, I dared to ask.",
       "teaches": [
@@ -120,7 +135,10 @@
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      }
     },
     {
       "id": "b1-02-02.ex07",
@@ -159,8 +177,7 @@
         }
       ],
       "teaches": [
-        "preterito-indefinido",
-        "b1-experiences-memories-vocab"
+        "preterito-indefinido"
       ]
     },
     {
@@ -214,12 +231,15 @@
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      }
     },
     {
       "id": "b1-02-02.ex13",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "¿Cuál es una respuesta plausible a «¿Qué experiencia tuviste allí?»?",
       "options": [
         "Presencié el final del festival, aunque llegué cuando ya había empezado.",
@@ -228,14 +248,16 @@
       ],
       "correct": 0,
       "teaches": [
-        "preterito-indefinido",
-        "pluscuamperfecto"
-      ]
+        "preterito-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      }
     },
     {
       "id": "b1-02-02.ex14",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "Cuando el guía hizo una pregunta, yo __ responder. (atreverse)",
       "answer": "me atreví a",
       "teaches": [
@@ -258,8 +280,7 @@
         }
       ],
       "teaches": [
-        "preterito-indefinido",
-        "b1-experiences-memories-vocab"
+        "preterito-indefinido"
       ]
     },
     {
@@ -277,8 +298,7 @@
         }
       ],
       "teaches": [
-        "preterito-indefinido",
-        "pluscuamperfecto"
+        "preterito-indefinido"
       ]
     }
   ]

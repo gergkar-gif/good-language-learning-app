@@ -40,7 +40,10 @@
       "correct": 0,
       "teaches": [
         "deber-vs-tener-que"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "condicional-consejos"
+      }
     },
     {
       "id": "b1-04-consolidation.ex03",
@@ -49,7 +52,7 @@
       "sentence": "Si yo fuera tú, __ antes de decidir. [If I were you, I would wait before deciding.] (esperar)",
       "answer": "esperaría",
       "teaches": [
-        "hypothetical-structures"
+        "condicional-regular"
       ],
       "english": "If I were you, I would wait before deciding."
     },
@@ -87,7 +90,7 @@
     {
       "id": "b1-04-consolidation.ex05",
       "type": "sentence-order",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentences": [
         "Deberías identificar el problema. [You should identify the problem.]",
         "Después deberías comparar las alternativas. [Then you should compare the alternatives.]",
@@ -99,7 +102,7 @@
         2
       ],
       "teaches": [
-        "b1-giving-advice-vocab"
+        "ordering-markers"
       ]
     },
     {
@@ -143,7 +146,10 @@
       "correct": 0,
       "teaches": [
         "deber-vs-tener-que"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "condicional-consejos"
+      }
     },
     {
       "id": "b1-04-consolidation.ex08",
@@ -152,7 +158,7 @@
       "sentence": "Deberías comparar las opciones porque así __ problemas. [You should compare the options because that way you will avoid problems.] (evitar)",
       "answer": "evitarás",
       "teaches": [
-        "porque-y-por-eso"
+        "futuro-simple"
       ],
       "english": "You should compare the options because that way you will avoid problems."
     },
@@ -172,27 +178,41 @@
         "menos",
         "esfuerzo."
       ],
-      "solution": [
-        "Si",
-        "sigues",
-        "este",
-        "consejo,",
-        "resolverás",
-        "el",
-        "problema",
-        "con",
-        "menos",
-        "esfuerzo."
-      ],
       "english": "If you follow this advice, you will solve the problem with less effort.",
       "teaches": [
-        "porque-y-por-eso"
+        "futuro-simple"
+      ],
+      "solutions": [
+        [
+          "Si",
+          "sigues",
+          "este",
+          "consejo,",
+          "resolverás",
+          "el",
+          "problema",
+          "con",
+          "menos",
+          "esfuerzo."
+        ],
+        [
+          "Resolverás",
+          "el",
+          "problema",
+          "con",
+          "menos",
+          "esfuerzo",
+          "si",
+          "sigues",
+          "este",
+          "consejo"
+        ]
       ]
     },
     {
       "id": "b1-04-consolidation.ex10",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "What does «convendría» express? [¿Qué expresa «convendría»?]",
       "options": [
         "It would be advisable. [Sería aconsejable.]",
@@ -201,7 +221,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
+        "b1-giving-advice-vocab"
       ]
     },
     {
@@ -216,7 +236,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "condicional-consejos"
+        "subjunctive-influence"
       ]
     },
     {
@@ -225,7 +245,7 @@
       "category": "listening",
       "sentence": "Tienes que actuar con precaución porque podrías asumir un riesgo innecesario.",
       "teaches": [
-        "condicional-consejos"
+        "b1-giving-advice-vocab"
       ],
       "english": "You have to act cautiously because you could take an unnecessary risk."
     },
@@ -254,8 +274,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures",
-        "porque-y-por-eso"
+        "hypothetical-structures"
       ]
     },
     {
@@ -276,13 +295,16 @@
     {
       "id": "b1-04-consolidation.ex15",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Tienes que actuar con __ para reducir el riesgo. [You have to act with caution to reduce the risk.] (precaución)",
-      "answer": "precaución",
+      "category": "vocabulary",
+      "sentence": "Tienes que actuar con __ para reducir el riesgo. [You have to act with caution to reduce the risk.] (caution)",
       "teaches": [
-        "deber-vs-tener-que"
+        "b1-giving-advice-vocab"
       ],
-      "english": "You have to act with caution to reduce the risk."
+      "english": "You have to act with caution to reduce the risk.",
+      "answers": [
+        "precaución",
+        "cuidado"
+      ]
     },
     {
       "id": "b1-04-consolidation.ex16",
@@ -316,7 +338,7 @@
       ],
       "english": "You should look for an alternative so that the result is safer.",
       "teaches": [
-        "porque-y-por-eso"
+        "subjuntivo-de-finalidad-para-que"
       ]
     },
     {
@@ -334,8 +356,7 @@
         }
       ],
       "teaches": [
-        "hypothetical-structures",
-        "porque-y-por-eso"
+        "hypothetical-structures"
       ]
     },
     {
@@ -353,9 +374,7 @@
         }
       ],
       "teaches": [
-        "subjunctive-influence",
-        "deber-vs-tener-que",
-        "condicional-consejos"
+        "subjunctive-influence"
       ]
     }
   ]

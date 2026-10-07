@@ -40,7 +40,11 @@
       "correct": 1,
       "teaches": [
         "pluscuamperfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "preterito-indefinido",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-01-03.ex03",
@@ -67,15 +71,27 @@
         "puerta",
         "abierta."
       ],
-      "solution": [
-        "Descubrí",
-        "que",
-        "alguien",
-        "había",
-        "dejado",
-        "la",
-        "puerta",
-        "abierta."
+      "solutions": [
+        [
+          "Descubrí",
+          "que",
+          "alguien",
+          "había",
+          "dejado",
+          "la",
+          "puerta",
+          "abierta."
+        ],
+        [
+          "Descubrí",
+          "que",
+          "alguien",
+          "había",
+          "dejado",
+          "abierta.",
+          "la",
+          "puerta"
+        ]
       ],
       "english": "I discovered that someone had left the door open.",
       "teaches": [
@@ -126,7 +142,10 @@
       "correct": 1,
       "teaches": [
         "pluscuamperfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "futuro-simple"
+      }
     },
     {
       "id": "b1-01-03.ex07",
@@ -158,7 +177,7 @@
     {
       "id": "b1-01-03.ex09",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "Todavía",
         "no",
@@ -167,13 +186,23 @@
         "cuando",
         "llegaron."
       ],
-      "solution": [
-        "Todavía",
-        "no",
-        "habíamos",
-        "cenado",
-        "cuando",
-        "llegaron."
+      "solutions": [
+        [
+          "Todavía",
+          "no",
+          "habíamos",
+          "cenado",
+          "cuando",
+          "llegaron."
+        ],
+        [
+          "cuando",
+          "llegaron.",
+          "Todavía",
+          "no",
+          "habíamos",
+          "cenado"
+        ]
       ],
       "english": "We hadn't had dinner yet when they arrived.",
       "teaches": [
@@ -231,12 +260,16 @@
       "correct": 0,
       "teaches": [
         "pluscuamperfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-01-03.ex13",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "Ayer estabas muy cansado. ¿Por qué? Elige la respuesta más natural.",
       "options": [
         "No dormiré bien esta noche.",
@@ -246,12 +279,16 @@
       "correct": 1,
       "teaches": [
         "pluscuamperfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "futuro-simple",
+        "2": "present-tense"
+      }
     },
     {
       "id": "b1-01-03.ex14",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "Cuando volví a casa, descubrí que alguien __ la ventana. (romper)",
       "answer": "había roto",
       "english": "When I got home, I discovered that someone had broken the window.",

@@ -36,7 +36,10 @@
       "correct": 0,
       "teaches": [
         "subjunctive-influence"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-04-03.ex03",
@@ -81,7 +84,7 @@
     {
       "id": "b1-04-03.ex05",
       "type": "sentence-order",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentences": [
         "Te recomiendo que leas el contrato. [I recommend that you read the contract.]",
         "Así podrás identificar los problemas. [That way you will be able to identify the problems.]",
@@ -93,7 +96,7 @@
         2
       ],
       "teaches": [
-        "b1-giving-advice-vocab"
+        "ordering-markers"
       ]
     },
     {
@@ -127,7 +130,7 @@
     {
       "id": "b1-04-03.ex07",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which means «recommendation»? [¿Cuál significa «recommendation»?]",
       "options": [
         "recomendación [recommendation]",
@@ -136,7 +139,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "condicional-consejos"
+        "b1-giving-advice-vocab"
       ]
     },
     {
@@ -202,7 +205,7 @@
       "category": "listening",
       "sentence": "Te recomiendo que hables con alguien que conozca bien el problema.",
       "teaches": [
-        "subjunctive-influence"
+        "b1-giving-advice-vocab"
       ],
       "english": "I recommend that you talk to someone who knows the problem well."
     },
@@ -293,8 +296,7 @@
         }
       ],
       "teaches": [
-        "subjunctive-influence",
-        "condicional-consejos"
+        "subjunctive-influence"
       ]
     }
   ]

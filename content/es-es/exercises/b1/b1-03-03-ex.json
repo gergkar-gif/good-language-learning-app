@@ -36,7 +36,11 @@
       "correct": 0,
       "teaches": [
         "subjuntivo-deseos"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "present-tense"
+      }
     },
     {
       "id": "b1-03-03.ex03",
@@ -81,7 +85,7 @@
     {
       "id": "b1-03-03.ex05",
       "type": "sentence-order",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentences": [
         "Quiero que llegues temprano.",
         "Espero que podamos hablar.",
@@ -93,7 +97,7 @@
         2
       ],
       "teaches": [
-        "subjuntivo-deseos"
+        "b1-plans-ambitions-vocab"
       ]
     },
     {
@@ -122,7 +126,11 @@
       "correct": 0,
       "teaches": [
         "subjuntivo-deseos"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "ir-infinitive"
+      }
     },
     {
       "id": "b1-03-03.ex07",
@@ -154,18 +162,8 @@
     {
       "id": "b1-03-03.ex09",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
-        "Espero",
-        "que",
-        "el",
-        "plan",
-        "funcione",
-        "aunque",
-        "sea",
-        "difícil."
-      ],
-      "solution": [
         "Espero",
         "que",
         "el",
@@ -178,6 +176,28 @@
       "english": "Build a hope with a contrast clause.",
       "teaches": [
         "subjuntivo-deseos"
+      ],
+      "solutions": [
+        [
+          "Espero",
+          "que",
+          "el",
+          "plan",
+          "funcione",
+          "aunque",
+          "sea",
+          "difícil."
+        ],
+        [
+          "Aunque",
+          "sea",
+          "difícil",
+          "espero",
+          "que",
+          "el",
+          "plan",
+          "funcione"
+        ]
       ]
     },
     {
@@ -192,7 +212,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "subjuntivo-morfologia"
+        "b1-plans-ambitions-vocab"
       ]
     },
     {
@@ -201,7 +221,7 @@
       "category": "listening",
       "sentence": "Espero que todo salga bien porque hemos preparado el viaje.",
       "teaches": [
-        "subjuntivo-morfologia"
+        "b1-plans-ambitions-vocab"
       ],
       "english": "I hope everything goes well because we have prepared for the trip."
     },
@@ -236,7 +256,7 @@
     {
       "id": "b1-03-03.ex13",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "Completa: «Ojalá el proyecto __ a tiempo, porque tenemos una fecha límite.»",
       "options": [
         "termine",
@@ -251,7 +271,7 @@
     {
       "id": "b1-03-03.ex14",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "Espero que tú __ bien cuando termine el viaje. (estar)",
       "answer": "estés",
       "teaches": [
@@ -292,8 +312,7 @@
         }
       ],
       "teaches": [
-        "b1-plans-ambitions-vocab",
-        "subjuntivo-deseos"
+        "b1-plans-ambitions-vocab"
       ]
     }
   ]

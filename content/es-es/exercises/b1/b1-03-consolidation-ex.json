@@ -40,7 +40,11 @@
       "correct": 0,
       "teaches": [
         "ir-infinitive"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "subjuntivo-deseos"
+      }
     },
     {
       "id": "b1-03-consolidation.ex03",
@@ -67,20 +71,31 @@
         "seguimos",
         "trabajando."
       ],
-      "solution": [
-        "Creo",
-        "que",
-        "encontraremos",
-        "una",
-        "solución",
-        "si",
-        "seguimos",
-        "trabajando."
-      ],
       "english": "Build the prediction.",
       "teaches": [
-        "futuro-simple",
-        "si-clauses"
+        "futuro-simple"
+      ],
+      "solutions": [
+        [
+          "Creo",
+          "que",
+          "encontraremos",
+          "una",
+          "solución",
+          "si",
+          "seguimos",
+          "trabajando."
+        ],
+        [
+          "Creo",
+          "que",
+          "si",
+          "seguimos",
+          "trabajando",
+          "encontraremos",
+          "una",
+          "solución"
+        ]
       ]
     },
     {
@@ -126,8 +141,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "subjuntivo-deseos",
-        "futuro-simple"
+        "subjuntivo-deseos"
       ]
     },
     {
@@ -143,7 +157,11 @@
       "correct": 0,
       "teaches": [
         "futuro-simple"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ir-infinitive",
+        "2": "subjuntivo-deseos"
+      }
     },
     {
       "id": "b1-03-consolidation.ex08",
@@ -152,8 +170,7 @@
       "sentence": "Si todo sale bien, __ la meta antes del plazo. (alcanzar)",
       "answer": "alcanzaremos",
       "teaches": [
-        "futuro-simple",
-        "si-clauses"
+        "futuro-simple"
       ],
       "english": "If everything goes well, we will reach the goal before the deadline."
     },
@@ -214,7 +231,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "present-tense"
+        "ir-infinitive"
       ]
     },
     {
@@ -223,7 +240,7 @@
       "category": "listening",
       "sentence": "Espero que el viaje sea tranquilo aunque seguramente habrá algún retraso.",
       "teaches": [
-        "stem-changes"
+        "b1-plans-ambitions-vocab"
       ],
       "english": "I hope the journey will be peaceful although there will probably be some delay."
     },
@@ -252,14 +269,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "ir-infinitive",
-        "verbos-regimen-preposicional"
+        "ir-infinitive"
       ]
     },
     {
       "id": "b1-03-consolidation.ex14",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "Completa: «Deseo que todos __ la oportunidad de participar, porque...»",
       "options": [
         "tengan",
@@ -285,19 +301,8 @@
     {
       "id": "b1-03-consolidation.ex16",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "vocabulary",
       "tiles": [
-        "Mi",
-        "intención",
-        "es",
-        "alcanzar",
-        "esta",
-        "meta",
-        "aunque",
-        "sea",
-        "difícil."
-      ],
-      "solution": [
         "Mi",
         "intención",
         "es",
@@ -310,7 +315,31 @@
       ],
       "english": "Build a connected statement of intention.",
       "teaches": [
-        "subjuntivo-morfologia"
+        "b1-plans-ambitions-vocab"
+      ],
+      "solutions": [
+        [
+          "Mi",
+          "intención",
+          "es",
+          "alcanzar",
+          "esta",
+          "meta",
+          "aunque",
+          "sea",
+          "difícil."
+        ],
+        [
+          "Aunque",
+          "sea",
+          "difícil",
+          "mi",
+          "intención",
+          "es",
+          "alcanzar",
+          "esta",
+          "meta"
+        ]
       ]
     },
     {
@@ -328,8 +357,7 @@
         }
       ],
       "teaches": [
-        "ir-infinitive",
-        "futuro-simple"
+        "ir-infinitive"
       ]
     },
     {
@@ -347,9 +375,7 @@
         }
       ],
       "teaches": [
-        "subjuntivo-deseos",
-        "futuro-simple",
-        "si-clauses"
+        "subjuntivo-deseos"
       ]
     }
   ]

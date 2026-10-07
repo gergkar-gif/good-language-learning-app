@@ -39,7 +39,7 @@
       ],
       "correct": 1,
       "teaches": [
-        "preterito-indefinido"
+        "preterite-vs-imperfect"
       ]
     },
     {
@@ -65,13 +65,31 @@
         "la",
         "luz."
       ],
-      "solution": [
-        "De",
-        "repente,",
-        "se",
-        "fue",
-        "la",
-        "luz."
+      "solutions": [
+        [
+          "De",
+          "repente,",
+          "se",
+          "fue",
+          "la",
+          "luz."
+        ],
+        [
+          "De",
+          "repente,",
+          "la",
+          "luz.",
+          "se",
+          "fue"
+        ],
+        [
+          "se",
+          "fue",
+          "la",
+          "luz.",
+          "De",
+          "repente,"
+        ]
       ],
       "english": "Suddenly, the power went out.",
       "teaches": [
@@ -115,14 +133,17 @@
         }
       ],
       "options": [
-        "Se va la luz y no encuentro la linterna.",
+        "Ahora mismo se va la luz y no encuentro la linterna.",
         "Se fue la luz y no encontré la linterna en la oscuridad.",
         "Se había ido la luz la semana que viene."
       ],
       "correct": 1,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "present-tense"
+      }
     },
     {
       "id": "b1-01-01.ex07",
@@ -154,7 +175,7 @@
     {
       "id": "b1-01-01.ex09",
       "type": "sentence-builder",
-      "category": "writing",
+      "category": "grammar",
       "tiles": [
         "Enseguida",
         "oímos",
@@ -164,14 +185,34 @@
         "la",
         "escalera."
       ],
-      "solution": [
-        "Enseguida",
-        "oímos",
-        "un",
-        "ruido",
-        "en",
-        "la",
-        "escalera."
+      "solutions": [
+        [
+          "Enseguida",
+          "oímos",
+          "un",
+          "ruido",
+          "en",
+          "la",
+          "escalera."
+        ],
+        [
+          "oímos",
+          "Enseguida",
+          "un",
+          "ruido",
+          "en",
+          "la",
+          "escalera."
+        ],
+        [
+          "oímos",
+          "un",
+          "ruido",
+          "en",
+          "la",
+          "escalera.",
+          "Enseguida"
+        ]
       ],
       "english": "Right away we heard a noise on the stairs.",
       "teaches": [
@@ -229,12 +270,16 @@
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-01-01.ex13",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "Tu amiga pregunta: «¿Y qué hiciste después?». ¿Qué respuesta encaja?",
       "options": [
         "Llamaba a mi hermano cada domingo.",
@@ -244,12 +289,16 @@
       "correct": 2,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "imperfect",
+        "1": "ir-infinitive"
+      }
     },
     {
       "id": "b1-01-01.ex14",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "Al final, todo __ bien y nos reímos mucho. (salir)",
       "answer": "salió",
       "english": "In the end, everything turned out well and we laughed a lot.",
@@ -276,8 +325,7 @@
         }
       ],
       "teaches": [
-        "preterito-indefinido",
-        "b1-telling-stories-vocab"
+        "preterito-indefinido"
       ]
     },
     {

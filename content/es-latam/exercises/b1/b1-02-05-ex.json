@@ -34,7 +34,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "pluscuamperfecto"
+        "preterite-vs-imperfect"
       ],
       "category": "grammar"
     },
@@ -62,19 +62,31 @@
         "una",
         "enseñanza."
       ],
-      "solution": [
-        "El",
-        "relato",
-        "lo",
-        "conmovió",
-        "porque",
-        "mostraba",
-        "una",
-        "enseñanza."
+      "solutions": [
+        [
+          "El",
+          "relato",
+          "lo",
+          "conmovió",
+          "porque",
+          "mostraba",
+          "una",
+          "enseñanza."
+        ],
+        [
+          "porque",
+          "mostraba",
+          "una",
+          "enseñanza.",
+          "El",
+          "relato",
+          "lo",
+          "conmovió"
+        ]
       ],
       "english": "The tale moved him because it showed a lesson.",
       "teaches": [
-        "pluscuamperfecto"
+        "preterite-vs-imperfect"
       ],
       "category": "grammar"
     },
@@ -122,6 +134,9 @@
       "teaches": [
         "pluscuamperfecto"
       ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      },
       "category": "grammar"
     },
     {
@@ -209,7 +224,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "pluscuamperfecto"
+        "preterite-vs-imperfect"
       ],
       "category": "listening"
     },
@@ -218,7 +233,7 @@
       "type": "dictation",
       "sentence": "Desde entonces, el rey escuchaba con atención antes de tomar una decisión.",
       "teaches": [
-        "porque-y-por-eso"
+        "b1-experiences-memories-vocab"
       ],
       "english": "From then on, the king listened carefully before making a decision.",
       "category": "listening"
@@ -247,15 +262,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "pluscuamperfecto",
-        "b1-experiences-memories-vocab"
+        "preterite-vs-imperfect"
       ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      },
       "category": "dialogue"
     },
     {
       "id": "b1-02-05.ex16",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "grammar",
       "question": "Elige la continuación más natural.",
       "options": [
         "Aunque había oído la historia antes, me conmovió cuando entendí la enseñanza.",
@@ -270,7 +287,7 @@
     {
       "id": "b1-02-05.ex17",
       "type": "fill-blank",
-      "category": "dialogue",
+      "category": "grammar",
       "sentence": "Cuando ella terminó de hablar, todos __ en silencio. (quedarse)",
       "answer": "se quedaron",
       "teaches": [
@@ -293,7 +310,7 @@
         }
       ],
       "teaches": [
-        "pluscuamperfecto"
+        "b1-experiences-memories-vocab"
       ]
     },
     {
@@ -311,8 +328,7 @@
         }
       ],
       "teaches": [
-        "b1-experiences-memories-vocab",
-        "porque-y-por-eso"
+        "b1-experiences-memories-vocab"
       ]
     }
   ]

@@ -39,7 +39,7 @@ PERSON_END = re.compile(r"(om|em|öm|am|ad|ed|od|öd|unk|ünk|atok|etek|otok|öt
 ES_PERSON = re.compile(r"\b(yo|t[uú]|[eé]l|ella|usted|nosotros|nosotras|vosotros|vosotras|ellos|ellas|ustedes|I|you|he|she|we|they)\b", re.I)
 ES_AUX = {"he", "has", "ha", "hemos", "habéis", "han"}
 EXCHANGE = re.compile(r"\b((starts?|begins?|opens?|continues?|follows?|ends?|finishes) (this|the|that) (exchange|conversation|dialogue)|this exchange)\b", re.I)
-CONTENT_KEYS = ("question", "sentence", "options", "pairs", "solution", "prompt", "template", "answer", "answers")
+CONTENT_KEYS = ("question", "sentence", "options", "pairs", "solution", "solutions", "sentences", "tiles", "prompt", "template", "answer", "answers")
 
 
 def load(p):
