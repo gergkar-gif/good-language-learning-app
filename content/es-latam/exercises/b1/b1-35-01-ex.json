@@ -83,9 +83,9 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "Tuviera la opción. [I had the option.]",
-        "Elegiría otra. [I would choose another.]",
-        "Si tuviera la opción, elegiría otra. [If I had the option, I would choose another one.]"
+        "Primero, Marta piensa en una decisión difícil. [First, Marta thinks about a difficult decision.]",
+        "Después, imagina que tiene otra opción. [Then she imagines that she has another option.]",
+        "Finalmente, dice: «Si tuviera la opción, elegiría otra». [Finally, she says: “If I had the option, I would choose another one.”]"
       ],
       "solution": [
         0,
@@ -99,26 +99,26 @@
     {
       "id": "b1-35-01.ex06",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means «option»? [¿Qué palabra significa «opción»?]",
       "options": [
         "opción [option]",
         "decisión [decision]",
-        "camino [path]"
+        "preferir [to prefer]"
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
+        "b1-hypotheticals-possibilities-vocab"
       ]
     },
     {
       "id": "b1-35-01.ex07",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Si pudiera ___, preferiría esperar. (decidir) [If I could decide, I would prefer to wait.]",
+      "category": "vocabulary",
+      "sentence": "Si pudiera ___, preferiría esperar. (to decide) [If I could decide, I would prefer to wait.]",
       "answer": "decidir",
       "teaches": [
-        "hypothetical-structures"
+        "b1-hypotheticals-possibilities-vocab"
       ],
       "english": "If I could decide, I would prefer to wait."
     },
@@ -201,13 +201,16 @@
       ],
       "options": [
         "Elegiría otra. [I would choose another one.]",
-        "Elijo otra. [I choose another one.]",
+        "Elegiera otra. [I chose (subjunctive) another one.]",
         "Elegí otra. [I chose another one.]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-35-01.ex13",
@@ -225,13 +228,16 @@
       ],
       "options": [
         "Preferiría esperar. [I would prefer to wait.]",
-        "Preferiré esperar. [I will prefer to wait.]",
+        "Preferí esperar. [I preferred to wait.]",
         "Prefiera esperar. [I prefer (subjunctive) to wait.]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-35-01.ex14",
@@ -255,7 +261,10 @@
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-35-01.ex15",
