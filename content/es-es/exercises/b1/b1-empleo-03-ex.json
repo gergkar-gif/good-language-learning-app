@@ -4,7 +4,7 @@
     {
       "id": "b1-empleo-03.ex01",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "¿Cómo se llama en España a la persona que realiza una actividad económica o profesional de forma habitual, personal y directa por cuenta propia, sin estar sujeta a un contrato de trabajo con un jefe?",
       "options": [
         "Trabajador autónomo (o por cuenta propia)",
@@ -12,7 +12,10 @@
         "Pensionista pasivo",
         "Trabajador por cuenta ajena"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-labour-market-social-security-vocab"
+      ]
     },
     {
       "id": "b1-empleo-03.ex02",
@@ -30,7 +33,7 @@
     {
       "id": "b1-empleo-03.ex03",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "¿Qué significan las siglas mercantiles «S. L.» que acompañan al nombre de muchas pequeñas y medianas empresas españolas?",
       "options": [
         "Sociedad Limitada",
@@ -38,7 +41,10 @@
         "Servicio Local",
         "Sector Laboral"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-labour-market-social-security-vocab"
+      ]
     },
     {
       "id": "b1-empleo-03.ex04",
@@ -59,18 +65,15 @@
     {
       "id": "b1-empleo-03.ex05",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "reading",
       "question": "¿Cómo declara habitualmente un trabajador autónomo el IVA de sus facturas ante la Agencia Tributaria?",
       "options": [
-        "Mediante declaraciones trimestrales y un resumen anual",
+        "Mediante declaraciones trimestrales ante Hacienda",
         "Una sola vez cada diez años",
         "Pagándolo en efectivo al alcalde de su pueblo",
         "Los autónomos nunca cobran ni declaran IVA"
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-labour-market-social-security-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-empleo-03.ex06",
@@ -110,7 +113,7 @@
       "category": "vocabulary",
       "sentence": "Quien trabaja de forma independiente sin jefe ni empresa empleadora es un trabajador ___ o por cuenta propia.",
       "answer": "autónomo",
-      "english": "Someone who works independently without a boss or employing company is a self-employed worker (autónomo).",
+      "english": "Someone who works independently without a boss or employing company is a self-employed worker.",
       "teaches": [
         "b1-labour-market-social-security-vocab"
       ]
@@ -120,8 +123,11 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "sentence": "Las pequeñas y medianas empresas se conocen en España con la palabra formada por sus siglas: ___.",
-      "answer": "pymes",
-      "english": "Small and medium-sized enterprises are known in Spain by the word formed from their acronym: pymes.",
+      "answers": [
+        "pymes",
+        "pyme"
+      ],
+      "english": "Small and medium-sized enterprises are known in Spain by the word formed from their acronym.",
       "teaches": [
         "b1-labour-market-social-security-vocab"
       ]
