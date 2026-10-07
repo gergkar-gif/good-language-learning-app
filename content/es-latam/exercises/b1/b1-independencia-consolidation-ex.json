@@ -53,7 +53,7 @@
       "sentence": "_____ organizaron levantamientos contra las autoridades coloniales. (pronoun)",
       "answer": "Se",
       "teaches": [
-        "se-impersonal"
+        "pasiva-refleja"
       ],
       "english": "Uprisings against the colonial authorities were organised."
     },
@@ -98,7 +98,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "porque-y-por-eso"
+        "formal-cause-connectors"
       ]
     },
     {
@@ -106,9 +106,9 @@
       "type": "sentence-order",
       "category": "vocabulary",
       "sentences": [
-        "Las ideas de la Ilustración circularon.",
-        "Algunos grupos cuestionaron la autoridad.",
-        "Se organizaron movimientos de independencia."
+        "Primero, las ideas de la Ilustración circularon entre lectores criollos.",
+        "Después, en 1808, Napoleón invadió España y capturó al rey Fernando VII.",
+        "Finalmente, se organizaron levantamientos contra las autoridades coloniales."
       ],
       "solution": [
         0,
@@ -137,7 +137,7 @@
     {
       "id": "b1-independencia-consolidation.ex08",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -153,10 +153,7 @@
         "Sí, porque todos los problemas desaparecieron inmediatamente.",
         "No, porque no hubo ningún cambio institucional."
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-independence-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-independencia-consolidation.ex09",
@@ -186,7 +183,7 @@
     {
       "id": "b1-independencia-consolidation.ex11",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -202,10 +199,7 @@
         "Porque las operaciones militares se decidieron exclusivamente en gabinetes diplomáticos europeos sin combates locales.",
         "Porque los enfrentamientos armados se limitaron a escaramuzas fronterizas que no alteraron la administración colonial."
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-independence-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-independencia-consolidation.ex12",
@@ -220,7 +214,10 @@
       "correct": 0,
       "teaches": [
         "gerundio-acciones-paralelas"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "progressive"
+      }
     },
     {
       "id": "b1-independencia-consolidation.ex13",
@@ -248,13 +245,13 @@
       ],
       "english": "As a result of independence, constitutions were approved.",
       "teaches": [
-        "porque-y-por-eso"
+        "formal-cause-connectors"
       ]
     },
     {
       "id": "b1-independencia-consolidation.ex14",
       "type": "multiple-choice",
-      "category": "dialogue",
+      "category": "vocabulary",
       "question": "¿Qué significa preguntar «¿independencia para quién?»?",
       "options": [
         "Significa examinar quién obtuvo ciudadanía y participación política y quién continuó excluido.",
@@ -269,7 +266,7 @@
     {
       "id": "b1-independencia-consolidation.ex15",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -285,10 +282,7 @@
         "Sí, las nuevas autoridades republicanas establecieron administraciones sólidas que evitaron cualquier disputa territorial.",
         "Todas las provincias aceptaron de inmediato gobiernos unitarios centralizados sin oponer resistencia política."
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-independence-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-independencia-consolidation.ex16",
