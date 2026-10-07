@@ -43,11 +43,14 @@
       "category": "grammar",
       "type": "fill-blank",
       "sentence": "Si __ más dinero, invertiría una parte. (tener) [If I had more money, I would invest part of it.]",
-      "answer": "tuviera",
       "teaches": [
         "hypothetical-structures"
       ],
-      "english": "If I had more money, I would invest part of it."
+      "english": "If I had more money, I would invest part of it.",
+      "answers": [
+        "tuviera",
+        "tuviese"
+      ]
     },
     {
       "id": "b1-19-04.ex04",
@@ -62,18 +65,29 @@
         "salario",
         "mayor."
       ],
-      "solution": [
-        "Ahorraría",
-        "más",
-        "si",
-        "tuviera",
-        "un",
-        "salario",
-        "mayor."
-      ],
       "english": "I would save more if I had a higher salary.",
       "teaches": [
         "hypothetical-structures"
+      ],
+      "solutions": [
+        [
+          "Ahorraría",
+          "más",
+          "si",
+          "tuviera",
+          "un",
+          "salario",
+          "mayor."
+        ],
+        [
+          "si",
+          "tuviera",
+          "un",
+          "salario",
+          "mayor.",
+          "Ahorraría",
+          "más"
+        ]
       ]
     },
     {
@@ -81,9 +95,9 @@
       "category": "grammar",
       "type": "sentence-order",
       "sentences": [
-        "Ahorraría más si tuviera un salario mayor. [I would save more if I had a higher salary.]",
-        "Si tuviera más dinero, invertiría una parte. [If I had more money, I would invest part of it.]",
-        "No arriesgaría todo mi dinero. [I would not risk all my money.]"
+        "Primero, si tuviera más dinero, ahorraría una parte. [First, if I had more money, I would save part of it.]",
+        "Después, invertiría otra parte. [Then I would invest another part.]",
+        "Finalmente, no arriesgaría todo mi dinero. [Finally, I would not risk all my money.]"
       ],
       "solution": [
         0,
@@ -91,23 +105,27 @@
         2
       ],
       "teaches": [
-        "hypothetical-structures"
+        "ordering-markers"
       ]
     },
     {
       "id": "b1-19-04.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which form follows «si» in this hypothetical structure? [¿Qué forma sigue a «si»?]",
+      "question": "Which form completes «Si ___ más dinero, invertiría una parte»? [¿Qué forma completa la frase?]",
       "options": [
         "tuviera [had]",
         "tendría [would have]",
-        "tengo [have]"
+        "tuve [had (preterite)]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "condicional-irregular",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-19-04.ex07",
@@ -116,7 +134,7 @@
       "sentence": "¿Qué __ si perdieras tu trabajo? (hacer) [What would you do if you lost your job?]",
       "answer": "harías",
       "teaches": [
-        "hypothetical-structures"
+        "condicional-irregular"
       ],
       "english": "What would you do if you lost your job?"
     },
@@ -140,7 +158,7 @@
       ],
       "english": "I would not risk all my money.",
       "teaches": [
-        "hypothetical-structures"
+        "condicional-regular"
       ]
     },
     {
@@ -170,7 +188,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
+        "condicional-regular"
       ]
     },
     {
@@ -219,8 +237,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-19-04.ex14",
@@ -243,8 +265,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-19-04.ex15",
@@ -267,8 +293,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-19-04.ex16",
@@ -295,7 +325,7 @@
         }
       ],
       "teaches": [
-        "hypothetical-structures"
+        "condicional-regular"
       ]
     }
   ]

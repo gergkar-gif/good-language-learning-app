@@ -45,7 +45,7 @@
       "sentence": "Si tuviéramos más tiempo, __ otra medida. (aplicar) [If we had more time, we would implement another measure.]",
       "answer": "aplicaríamos",
       "teaches": [
-        "hypothetical-structures"
+        "condicional-regular"
       ],
       "english": "If we had more time, we would implement another measure."
     },
@@ -71,7 +71,7 @@
       ],
       "english": "A viable solution would reduce the problem.",
       "teaches": [
-        "hypothetical-structures"
+        "condicional-regular"
       ]
     },
     {
@@ -79,9 +79,9 @@
       "category": "grammar",
       "type": "sentence-order",
       "sentences": [
-        "Buscaría una alternativa si la primera solución no funcionara. [I would look for an alternative if the first solution did not work.]",
-        "Una solución viable reduciría el problema. [A viable solution would reduce the problem.]",
-        "¿Qué harías si esta propuesta no fuera viable? [What would you do if this proposal were not feasible?]"
+        "Primero, una solución viable reduciría el problema. [First, a viable solution would reduce the problem.]",
+        "Después, buscaría una alternativa si la primera solución no funcionara. [Then I would look for an alternative if the first solution did not work.]",
+        "Finalmente, si tuviéramos más tiempo, aplicaríamos otra medida. [Finally, if we had more time, we would implement another measure.]"
       ],
       "solution": [
         0,
@@ -89,23 +89,27 @@
         2
       ],
       "teaches": [
-        "hypothetical-structures"
+        "ordering-markers"
       ]
     },
     {
       "id": "b1-20-04.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which form follows «si» in this hypothetical structure? [¿Qué forma sigue a «si»?]",
+      "question": "Which form completes «Buscaría una alternativa si la primera solución no ___»? [¿Qué forma completa la frase?]",
       "options": [
         "funcionara [worked]",
         "funcionaría [would work]",
-        "funciona [works]"
+        "funcione [works (subjunctive)]"
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-structures"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "condicional-regular",
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-20-04.ex07",
@@ -114,7 +118,7 @@
       "sentence": "¿Qué __ si esta propuesta no fuera viable? (hacer) [What would you do if this proposal were not feasible?]",
       "answer": "harías",
       "teaches": [
-        "hypothetical-structures"
+        "condicional-irregular"
       ],
       "english": "What would you do if this proposal were not feasible?"
     },
@@ -133,20 +137,33 @@
         "no",
         "funcionara."
       ],
-      "solution": [
-        "Buscaría",
-        "una",
-        "alternativa",
-        "si",
-        "la",
-        "primera",
-        "solución",
-        "no",
-        "funcionara."
-      ],
       "english": "I would look for an alternative if the first solution did not work.",
       "teaches": [
         "hypothetical-structures"
+      ],
+      "solutions": [
+        [
+          "Buscaría",
+          "una",
+          "alternativa",
+          "si",
+          "la",
+          "primera",
+          "solución",
+          "no",
+          "funcionara."
+        ],
+        [
+          "si",
+          "la",
+          "primera",
+          "solución",
+          "no",
+          "funcionara.",
+          "Buscaría",
+          "una",
+          "alternativa"
+        ]
       ]
     },
     {
@@ -176,7 +193,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
+        "condicional-regular"
       ]
     },
     {
@@ -225,8 +242,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-20-04.ex14",
@@ -249,8 +270,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "preterite-irregular-stems"
+      }
     },
     {
       "id": "b1-20-04.ex15",
@@ -259,7 +284,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué haríais con más tiempo?"
+          "text": "¿Qué harían con más tiempo?"
         },
         {
           "speaker": "B",
@@ -268,13 +293,17 @@
       ],
       "options": [
         "Aplicaríamos otra medida. [We would implement another measure.]",
-        "Apliquemos otra medida. [We implement (subjunctive) another measure.]",
+        "Aplique otra medida. [Implement another measure. (command)]",
         "Aplicábamos otra medida. [We used to implement another measure.]"
       ],
       "correct": 0,
       "teaches": [
-        "hypothetical-structures"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "imperativo-formal-usted",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-20-04.ex16",
