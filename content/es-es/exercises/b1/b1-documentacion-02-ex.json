@@ -4,7 +4,7 @@
     {
       "id": "b1-documentacion-02.ex01",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "¿Qué significan las siglas NIE en la documentación oficial española?",
       "options": [
         "Número de Identidad de Extranjero",
@@ -12,12 +12,15 @@
         "Núcleo Industrial Español",
         "Notificación de Impuestos Especiales"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-identity-documents-vocab"
+      ]
     },
     {
       "id": "b1-documentacion-02.ex02",
       "type": "multiple-choice",
-      "category": "reading",
+      "category": "vocabulary",
       "question": "¿Cómo se llama la tarjeta física con fotografía y huella dactilar que acredita la residencia legal en España de los extranjeros no comunitarios por más de seis meses?",
       "options": [
         "La Tarjeta de Identidad de Extranjero (TIE)",
@@ -25,7 +28,10 @@
         "El carné de familia numerosa",
         "El pasaporte diplomático"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-identity-documents-vocab"
+      ]
     },
     {
       "id": "b1-documentacion-02.ex03",
@@ -43,23 +49,20 @@
     {
       "id": "b1-documentacion-02.ex04",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Cuando un residente extranjero adquiere finalmente la nacionalidad española, ¿qué documento de identidad pasa a tener en lugar de su TIE?",
+      "category": "reading",
+      "question": "¿En qué plazo debe solicitar personalmente la TIE un ciudadano extracomunitario que ha obtenido una autorización para residir en España más de seis meses?",
       "options": [
-        "El Documento Nacional de Identidad (DNI) y el Pasaporte español",
-        "El carné de turista internacional",
-        "Un segundo NIE con la letra W",
-        "Ningún documento de identidad"
+        "En el plazo de un mes desde su entrada o concesión",
+        "Solo después de cinco años de residencia continuada",
+        "Nunca: la TIE no se solicita personalmente",
+        "En el plazo de veinticuatro horas"
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-identity-documents-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-documentacion-02.ex05",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "reading",
       "question": "¿Cambia el número de NIE de un residente extranjero cada vez que renueva su tarjeta TIE o cambia de domicilio en España?",
       "options": [
         "No, el NIE es personal, único e invariable",
@@ -67,10 +70,7 @@
         "Sí, cambia cada vez que se muda de barrio",
         "Sí, cambia al cambiar de empresa"
       ],
-      "correct": 0,
-      "teaches": [
-        "b1-identity-documents-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-documentacion-02.ex06",
@@ -110,7 +110,7 @@
       "category": "vocabulary",
       "sentence": "El código alfanumérico personal que identifica a los residentes extranjeros en España es el ___ (Número de Identidad de Extranjero).",
       "answer": "NIE",
-      "english": "The personal alphanumeric code that identifies foreign residents in Spain is the NIE (Foreigner Identity Number).",
+      "english": "The personal alphanumeric code that identifies foreign residents in Spain is the [acronym] (Foreigner Identity Number).",
       "teaches": [
         "b1-identity-documents-vocab"
       ]
@@ -121,7 +121,7 @@
       "category": "vocabulary",
       "sentence": "La tarjeta física con fotografía que acredita la residencia legal de ciudadanos extracomunitarios es la ___ (Tarjeta de Identidad de Extranjero).",
       "answer": "TIE",
-      "english": "The physical card with a photograph that certifies the legal residence of non-EU citizens is the TIE (Foreigner Identity Card).",
+      "english": "The physical card with a photograph that certifies the legal residence of non-EU citizens is the [acronym] (Foreigner Identity Card).",
       "teaches": [
         "b1-identity-documents-vocab"
       ]
