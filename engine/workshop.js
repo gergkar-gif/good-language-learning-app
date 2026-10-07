@@ -96,6 +96,16 @@ const Workshop = (function () {
             level: 'B1'
         },
         {
+            id: 'es-dele-b2-exam',
+            icon: 'es-dele-exam',
+            title: 'DELE B2 Exam Prep',
+            sub: 'Prueba DELE B2 · Instituto Cervantes. Entrenamiento por tareas oficiales: lectura, audición, escritura y conversación.',
+            containerId: 'es-dele-b2-exam-root',
+            langs: ['es', 'es-latam', 'es-es'],
+            category: 'exams',
+            level: 'B2'
+        },
+        {
             id: 'hu-ecl-a1-exam',
             icon: 'hu-ecl-exam',
             title: 'ECL A1 Exam Prep',
@@ -124,6 +134,16 @@ const Workshop = (function () {
             langs: ['hu'],
             category: 'exams',
             level: 'B1'
+        },
+        {
+            id: 'hu-ecl-b2-exam',
+            icon: 'hu-ecl-exam',
+            title: 'ECL B2 Exam Prep',
+            sub: 'ECL B2 nyelvvizsga · Pécsi Tudományegyetem. Olvasásértés, hallásértés, írásbeli és szóbeli készségek feladatonként.',
+            containerId: 'hu-ecl-b2-exam-root',
+            langs: ['hu'],
+            category: 'exams',
+            level: 'B2'
         },
         {
             id: 'verbs',
@@ -356,9 +376,11 @@ const Workshop = (function () {
             'es-dele-a1-exam': typeof DeleA1Exam !== 'undefined' ? DeleA1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleA1Exam : null),
             'es-dele-a2-exam': typeof DeleA2Exam !== 'undefined' ? DeleA2Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleA2Exam : null),
             'es-dele-b1-exam': typeof DeleB1Exam !== 'undefined' ? DeleB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleB1Exam : null),
+            'es-dele-b2-exam': typeof DeleB2Exam !== 'undefined' ? DeleB2Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleB2Exam : null),
             'hu-ecl-a1-exam': typeof EclA1Exam !== 'undefined' ? EclA1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.EclA1Exam : null),
             'hu-ecl-a2-exam': typeof EclA2Exam !== 'undefined' ? EclA2Exam : (typeof CefrExam !== 'undefined' ? CefrExam.EclA2Exam : null),
             'hu-ecl-b1-exam': typeof EclB1Exam !== 'undefined' ? EclB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.EclB1Exam : null),
+            'hu-ecl-b2-exam': typeof EclB2Exam !== 'undefined' ? EclB2Exam : (typeof CefrExam !== 'undefined' ? CefrExam.EclB2Exam : null),
             'hu-verb': typeof HuVerbDriller !== 'undefined' ? HuVerbDriller : null,
             'hu-suffix': typeof HuSuffixDriller !== 'undefined' ? HuSuffixDriller : null,
             'hu-prefix': typeof HuPrefixDriller !== 'undefined' ? HuPrefixDriller : null,

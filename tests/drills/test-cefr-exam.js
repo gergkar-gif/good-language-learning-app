@@ -1,5 +1,5 @@
 // tests/drills/test-cefr-exam.js
-// Automated verification suite for CEFR Exam modules (DELE A1, DELE A2, DELE B1, ECL A1, ECL A2, ECL B1)
+// Automated verification suite for CEFR Exam modules (DELE A1, DELE A2, DELE B1, DELE B2, ECL A1, ECL A2, ECL B1, ECL B2)
 
 const assert = require('assert');
 const fs = require('fs');
@@ -9,16 +9,19 @@ const ROOT = path.resolve(__dirname, '../..');
 const DELE_A1_PATH = path.join(ROOT, 'content/es-es/dele-a1-exam.json');
 const DELE_A2_PATH = path.join(ROOT, 'content/es-es/dele-a2-exam.json');
 const DELE_B1_PATH = path.join(ROOT, 'content/es-es/dele-b1-exam.json');
+const DELE_B2_PATH = path.join(ROOT, 'content/es-es/dele-b2-exam.json');
 const ECL_A1_PATH = path.join(ROOT, 'content/hu/ecl-a1-exam.json');
 const ECL_A2_PATH = path.join(ROOT, 'content/hu/ecl-a2-exam.json');
 const ECL_B1_PATH = path.join(ROOT, 'content/hu/ecl-b1-exam.json');
+const ECL_B2_PATH = path.join(ROOT, 'content/hu/ecl-b2-exam.json');
 const LATAM_A1_PATH = path.join(ROOT, 'content/es-latam/dele-a1-exam.json');
 const LATAM_A2_PATH = path.join(ROOT, 'content/es-latam/dele-a2-exam.json');
+const LATAM_B2_PATH = path.join(ROOT, 'content/es-latam/dele-b2-exam.json');
 const ENGINE_PATH = path.join(ROOT, 'engine/cefr-exam.js');
 const WORKSHOP_PATH = path.join(ROOT, 'engine/workshop.js');
 const INDEX_PATH = path.join(ROOT, 'index.html');
 
-console.log('Testing CEFR Exam Modules (DELE A1, DELE A2, DELE B1, ECL A1, ECL A2, ECL B1)...');
+console.log('Testing CEFR Exam Modules (DELE A1, DELE A2, DELE B1, DELE B2, ECL A1, ECL A2, ECL B1, ECL B2)...');
 
 // 1. Emoji ban check
 const EMOJI_REGEX = /[\u{1F300}-\u{1F6FF}\u{1F900}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/u;
@@ -31,21 +34,27 @@ function assertZeroEmojis(filePath, content) {
 const deleA1Raw = fs.readFileSync(DELE_A1_PATH, 'utf-8');
 const deleA2Raw = fs.readFileSync(DELE_A2_PATH, 'utf-8');
 const deleB1Raw = fs.readFileSync(DELE_B1_PATH, 'utf-8');
+const deleB2Raw = fs.readFileSync(DELE_B2_PATH, 'utf-8');
 const eclA1Raw = fs.readFileSync(ECL_A1_PATH, 'utf-8');
 const eclA2Raw = fs.readFileSync(ECL_A2_PATH, 'utf-8');
 const eclB1Raw = fs.readFileSync(ECL_B1_PATH, 'utf-8');
+const eclB2Raw = fs.readFileSync(ECL_B2_PATH, 'utf-8');
 const latamA1Raw = fs.readFileSync(LATAM_A1_PATH, 'utf-8');
 const latamA2Raw = fs.readFileSync(LATAM_A2_PATH, 'utf-8');
+const latamB2Raw = fs.readFileSync(LATAM_B2_PATH, 'utf-8');
 const engineRaw = fs.readFileSync(ENGINE_PATH, 'utf-8');
 
 assertZeroEmojis('content/es-es/dele-a1-exam.json', deleA1Raw);
 assertZeroEmojis('content/es-es/dele-a2-exam.json', deleA2Raw);
 assertZeroEmojis('content/es-es/dele-b1-exam.json', deleB1Raw);
+assertZeroEmojis('content/es-es/dele-b2-exam.json', deleB2Raw);
 assertZeroEmojis('content/hu/ecl-a1-exam.json', eclA1Raw);
 assertZeroEmojis('content/hu/ecl-a2-exam.json', eclA2Raw);
 assertZeroEmojis('content/hu/ecl-b1-exam.json', eclB1Raw);
+assertZeroEmojis('content/hu/ecl-b2-exam.json', eclB2Raw);
 assertZeroEmojis('content/es-latam/dele-a1-exam.json', latamA1Raw);
 assertZeroEmojis('content/es-latam/dele-a2-exam.json', latamA2Raw);
+assertZeroEmojis('content/es-latam/dele-b2-exam.json', latamB2Raw);
 assertZeroEmojis('engine/cefr-exam.js', engineRaw);
 console.log('[PASS] Strict zero emojis verified across content and engine files.');
 
@@ -233,7 +242,84 @@ assert.strictEqual(huSpeakingA2.length, 2, 'ECL A2 speaking has 2 tareas');
 
 console.log('[PASS] ECL A2 Hungarian exam data verified.');
 
-// 8. Validate Latin American Spanish model (no vosotros)
+// 8. Validate DELE B2 data
+const deleB2Data = JSON.parse(deleB2Raw);
+assert.strictEqual(deleB2Data.id, 'es-dele-b2-exam');
+assert.strictEqual(deleB2Data.level, 'B2');
+assert.strictEqual(deleB2Data.board, 'Instituto Cervantes');
+assert(deleB2Data.skills, 'DELE B2 must have skills object');
+
+requiredSkills.forEach(sk => {
+    assert(deleB2Data.skills[sk], `DELE B2 must include ${sk} skill`);
+    assert(Array.isArray(deleB2Data.skills[sk].tareas) && deleB2Data.skills[sk].tareas.length >= 2, `DELE B2 ${sk} must have at least 2 tareas`);
+});
+
+const readingTareasB2 = deleB2Data.skills.reading.tareas;
+assert.strictEqual(readingTareasB2.length, 4, 'DELE B2 reading must have 4 official tareas');
+assert.strictEqual(readingTareasB2[0].type, 'reading-mc', 'Reading T1 must be reading-mc');
+assert.strictEqual(readingTareasB2[0].questions.length, 6, 'Reading T1 must have 6 questions');
+assert.strictEqual(readingTareasB2[1].type, 'person-matching', 'Reading T2 must be person-matching');
+assert.strictEqual(readingTareasB2[1].people.length, 4, 'Reading T2 must have 4 people');
+assert.strictEqual(readingTareasB2[1].statements.length, 10, 'Reading T2 must have 10 statements');
+assert.strictEqual(readingTareasB2[2].type, 'gapped-text', 'Reading T3 must be gapped-text');
+assert.strictEqual(readingTareasB2[2].gaps.length, 6, 'Reading T3 must have 6 gaps');
+assert.strictEqual(readingTareasB2[2].options.length, 8, 'Reading T3 must have 8 options');
+assert.strictEqual(readingTareasB2[3].type, 'cloze-mc', 'Reading T4 must be cloze-mc');
+assert.strictEqual(readingTareasB2[3].items.length, 6, 'Reading T4 must have 6 items');
+
+const listeningTareasB2 = deleB2Data.skills.listening.tareas;
+assert.strictEqual(listeningTareasB2.length, 2, 'DELE B2 listening must have 2 tareas');
+assert.strictEqual(listeningTareasB2[0].type, 'audio-mc');
+assert.strictEqual(listeningTareasB2[0].items.length, 6, 'Listening T1 must have 6 audio items');
+assert.strictEqual(listeningTareasB2[1].type, 'audio-interview');
+assert.strictEqual(listeningTareasB2[1].questions.length, 6, 'Listening T2 must have 6 questions');
+
+const writingTareasB2 = deleB2Data.skills.writing.tareas;
+assert.strictEqual(writingTareasB2.length, 2, 'DELE B2 writing must have 2 tareas');
+assert.strictEqual(writingTareasB2[0].minWords, 150, 'DELE B2 writing T1 minWords must be 150');
+assert.strictEqual(writingTareasB2[0].maxWords, 180, 'DELE B2 writing T1 maxWords must be 180');
+assert(Array.isArray(writingTareasB2[1].options) && writingTareasB2[1].options.length === 2, 'DELE B2 writing T2 must have 2 options');
+
+const speakingTareasB2 = deleB2Data.skills.speaking.tareas;
+assert.strictEqual(speakingTareasB2.length, 3, 'DELE B2 speaking must have 3 tareas');
+
+console.log('[PASS] Full DELE B2 skills and tasks structure verified.');
+
+// 9. Validate ECL B2 data
+const eclB2Data = JSON.parse(eclB2Raw);
+assert.strictEqual(eclB2Data.id, 'hu-ecl-b2-exam');
+assert.strictEqual(eclB2Data.level, 'B2');
+assert.strictEqual(eclB2Data.board, 'Pécsi Tudományegyetem / Nemzetközi ECL Központ');
+requiredSkills.forEach(sk => {
+    assert(eclB2Data.skills[sk], `ECL B2 must include ${sk} skill`);
+    assert(Array.isArray(eclB2Data.skills[sk].tareas) && eclB2Data.skills[sk].tareas.length >= 2, `ECL B2 ${sk} must have at least 2 tareas`);
+});
+
+const huReadingB2 = eclB2Data.skills.reading.tareas;
+assert.strictEqual(huReadingB2.length, 2, 'ECL B2 reading has 2 tareas');
+assert.strictEqual(huReadingB2[0].type, 'gapped-text');
+assert.strictEqual(huReadingB2[0].gaps.length, 5);
+assert.strictEqual(huReadingB2[0].options.length, 7);
+assert.strictEqual(huReadingB2[1].type, 'reading-mc');
+assert.strictEqual(huReadingB2[1].questions.length, 5);
+
+const huListeningB2 = eclB2Data.skills.listening.tareas;
+assert.strictEqual(huListeningB2.length, 2, 'ECL B2 listening has 2 tareas');
+assert.strictEqual(huListeningB2[0].items.length, 5);
+assert.strictEqual(huListeningB2[1].questions.length, 5);
+
+const huWritingB2 = eclB2Data.skills.writing.tareas;
+assert.strictEqual(huWritingB2.length, 2, 'ECL B2 writing has 2 tareas');
+assert.strictEqual(huWritingB2[0].minWords, 150);
+assert.strictEqual(huWritingB2[0].maxWords, 180);
+assert(Array.isArray(huWritingB2[1].options) && huWritingB2[1].options.length === 2);
+
+const huSpeakingB2 = eclB2Data.skills.speaking.tareas;
+assert.strictEqual(huSpeakingB2.length, 2, 'ECL B2 speaking has 2 tareas');
+
+console.log('[PASS] ECL B2 Hungarian exam data verified.');
+
+// 10. Validate Latin American Spanish model (no vosotros)
 assert(!latamA1Raw.includes('vosotros'), 'es-latam dele-a1-exam.json must not include vosotros');
 assert(!latamA1Raw.includes('podéis'), 'es-latam dele-a1-exam.json must not include podéis');
 assert(!latamA1Raw.includes('confirmad'), 'es-latam dele-a1-exam.json must not include confirmad');
@@ -241,9 +327,13 @@ assert(!latamA2Raw.includes('vosotros'), 'es-latam dele-a2-exam.json must not in
 assert(!latamA2Raw.includes('podéis'), 'es-latam dele-a2-exam.json must not include podéis');
 assert(!latamA2Raw.includes('confirmad'), 'es-latam dele-a2-exam.json must not include confirmad');
 assert(!latamA2Raw.includes('sabéis'), 'es-latam dele-a2-exam.json must not include sabéis');
+assert(!latamB2Raw.includes('vosotros'), 'es-latam dele-b2-exam.json must not include vosotros');
+assert(!latamB2Raw.includes('podéis'), 'es-latam dele-b2-exam.json must not include podéis');
+assert(!latamB2Raw.includes('confirmad'), 'es-latam dele-b2-exam.json must not include confirmad');
+assert(!latamB2Raw.includes('sabéis'), 'es-latam dele-b2-exam.json must not include sabéis');
 console.log('[PASS] Latin American Spanish variants conform strictly to no-vosotros rule.');
 
-// 9. Validate engine exports
+// 11. Validate engine exports
 const CefrExam = require(ENGINE_PATH);
 assert(typeof CefrExam === 'object', 'CefrExam must be exported as an object');
 assert(typeof CefrExam.createModule === 'function', 'CefrExam.createModule must be a function');
@@ -260,6 +350,10 @@ assert(typeof CefrExam.DeleB1Exam === 'object', 'DeleB1Exam must be exported');
 assert(typeof CefrExam.DeleB1Exam.render === 'function', 'DeleB1Exam.render must be a function');
 assert(typeof CefrExam.DeleB1Exam.stop === 'function', 'DeleB1Exam.stop must be a function');
 
+assert(typeof CefrExam.DeleB2Exam === 'object', 'DeleB2Exam must be exported');
+assert(typeof CefrExam.DeleB2Exam.render === 'function', 'DeleB2Exam.render must be a function');
+assert(typeof CefrExam.DeleB2Exam.stop === 'function', 'DeleB2Exam.stop must be a function');
+
 assert(typeof CefrExam.EclA1Exam === 'object', 'EclA1Exam must be exported');
 assert(typeof CefrExam.EclA1Exam.render === 'function', 'EclA1Exam.render must be a function');
 assert(typeof CefrExam.EclA1Exam.stop === 'function', 'EclA1Exam.stop must be a function');
@@ -271,31 +365,39 @@ assert(typeof CefrExam.EclA2Exam.stop === 'function', 'EclA2Exam.stop must be a 
 assert(typeof CefrExam.EclB1Exam === 'object', 'EclB1Exam must be exported');
 assert(typeof CefrExam.EclB1Exam.render === 'function', 'EclB1Exam.render must be a function');
 assert(typeof CefrExam.EclB1Exam.stop === 'function', 'EclB1Exam.stop must be a function');
-console.log('[PASS] engine/cefr-exam.js factory and 6 module exports verified.');
 
-// 10. Validate Workshop integration
+assert(typeof CefrExam.EclB2Exam === 'object', 'EclB2Exam must be exported');
+assert(typeof CefrExam.EclB2Exam.render === 'function', 'EclB2Exam.render must be a function');
+assert(typeof CefrExam.EclB2Exam.stop === 'function', 'EclB2Exam.stop must be a function');
+console.log('[PASS] engine/cefr-exam.js factory and 8 module exports verified.');
+
+// 12. Validate Workshop integration
 const workshopContent = fs.readFileSync(WORKSHOP_PATH, 'utf-8');
 assert(workshopContent.includes("id: 'es-dele-a1-exam'"), 'workshop.js must register es-dele-a1-exam');
 assert(workshopContent.includes("id: 'es-dele-a2-exam'"), 'workshop.js must register es-dele-a2-exam');
 assert(workshopContent.includes("id: 'es-dele-b1-exam'"), 'workshop.js must register es-dele-b1-exam');
+assert(workshopContent.includes("id: 'es-dele-b2-exam'"), 'workshop.js must register es-dele-b2-exam');
 assert(workshopContent.includes("id: 'hu-ecl-a1-exam'"), 'workshop.js must register hu-ecl-a1-exam');
 assert(workshopContent.includes("id: 'hu-ecl-a2-exam'"), 'workshop.js must register hu-ecl-a2-exam');
 assert(workshopContent.includes("id: 'hu-ecl-b1-exam'"), 'workshop.js must register hu-ecl-b1-exam');
+assert(workshopContent.includes("id: 'hu-ecl-b2-exam'"), 'workshop.js must register hu-ecl-b2-exam');
 assert(workshopContent.includes("'es-dele-exam':"), 'workshop.js must include es-dele-exam icon');
 assert(workshopContent.includes("'hu-ecl-exam':"), 'workshop.js must include hu-ecl-exam icon');
 assert(workshopContent.includes("'es-dele-a1-exam':"), 'workshop.js _moduleFor must map es-dele-a1-exam');
 assert(workshopContent.includes("'es-dele-a2-exam':"), 'workshop.js _moduleFor must map es-dele-a2-exam');
 assert(workshopContent.includes("'es-dele-b1-exam':"), 'workshop.js _moduleFor must map es-dele-b1-exam');
+assert(workshopContent.includes("'es-dele-b2-exam':"), 'workshop.js _moduleFor must map es-dele-b2-exam');
 assert(workshopContent.includes("'hu-ecl-a1-exam':"), 'workshop.js _moduleFor must map hu-ecl-a1-exam');
 assert(workshopContent.includes("'hu-ecl-a2-exam':"), 'workshop.js _moduleFor must map hu-ecl-a2-exam');
 assert(workshopContent.includes("'hu-ecl-b1-exam':"), 'workshop.js _moduleFor must map hu-ecl-b1-exam');
+assert(workshopContent.includes("'hu-ecl-b2-exam':"), 'workshop.js _moduleFor must map hu-ecl-b2-exam');
 assert(workshopContent.includes('data-wk-tab="exams"'), 'workshop.js must include Exam Preparation tab button');
 assert(workshopContent.includes('data-wk-tab="practice"'), 'workshop.js must include Practice tab button');
 assert(!workshopContent.includes('wk-level-pills'), 'workshop.js must not include pill filters');
 assert(workshopContent.includes('setTab'), 'workshop.js must export setTab');
 console.log('[PASS] engine/workshop.js integration and Exam Preparation tab verified.');
 
-// 11. Validate index.html script inclusion
+// 13. Validate index.html script inclusion
 const indexContent = fs.readFileSync(INDEX_PATH, 'utf-8');
 assert(indexContent.includes('src="engine/cefr-exam.js'), 'index.html must load engine/cefr-exam.js');
 console.log('[PASS] index.html script tag verified.');

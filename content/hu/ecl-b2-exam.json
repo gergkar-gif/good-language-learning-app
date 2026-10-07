@@ -1,0 +1,480 @@
+{
+  "id": "hu-ecl-b2-exam",
+  "board": "Pécsi Tudományegyetem / Nemzetközi ECL Központ",
+  "level": "B2",
+  "title": "ECL B2 Nyelvvizsga",
+  "subtitle": "Európai Közös Referenciakeret (KER) · B2 szintű komplex nyelvvizsga-felkészítő",
+  "passingScorePercentage": 60,
+  "skills": {
+    "reading": {
+      "id": "reading",
+      "name": "Olvasásértés",
+      "officialTimeMinutes": 45,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-reading-t1",
+          "tareaNum": 1,
+          "type": "gapped-text",
+          "title": "1. rész: Szövegkiegészítés (Kihagyott bekezdések / mondatok)",
+          "instructions": "Olvasd el az alábbi cikket az ipari örökség és a rozsdaövezetek újrahasznosításáról, amelyből 5 mondatot kihagytunk. Válaszd ki a megadott opciók (A-G) közül a hiányzó részeket. Két opció felesleges.",
+          "passage": "Rozsdaövezetek újjászületése: az ipari örökség modern funkcióváltása\n\nA 19. és 20. század során Közép-Európa nagyvárosaiban virágzó nehézipari és gyáripari komplexumok mára jelentős mértékben elveszítették eredeti gazdasági rendeltetésüket. A bezárt gyárak, vasúti csomópontok és raktárépületek évtizedeken át elhanyagolt sebhelyként éktelenkedtek a városképen. [___1___] A modern várostervezés felismerte, hogy a bontás helyett az építészeti átértelmezés és a kulturális újrahasznosítás teremt valódi értéket.\n\nBudapesten és több vidéki iparvárosban ma már látványos példákat találunk erre az átalakulásra. Egykori gázgyárak, malomépületek és szerelőcsarnokok alakulnak át kreatív technológiai központokká, startup-irodákká és kortárs művészeti galériákká. [___2___] A masszív téglafalak, a hatalmas belmagasság és az acélszerkezetek olyan tágas tereket biztosítanak, amelyeket a modern irodaházakban lehetetlen lenne reprodukálni.\n\nA fenntarthatósági szempontok szintén a meglévő épületállomány megőrzése mellett szólnak. Az építőipar felelős a globális szén-dioxid-kibocsátás és a hulladéktermelés tekintélyes hányadáért. [___3___] Egy meglévő vasbeton vagy tégla szerkezet felújítása nagyságrendekkel kevesebb nyersanyagot és energiát igényel, mint az alapoktól történő új építkezés.\n\nUgyanakkor a műemlékvédelem és a korszerű energetikai követelmények összehangolása komoly mérnöki kihívás. [___4___] A szakembereknek olyan kompromisszumos megoldásokat kell találniuk, amelyek úgy biztosítják a fűtési és szigetelési hatékonyságot, hogy közben a védett homlokzatok és díszítőelemek sértetlenek maradnak.\n\nA legsikeresebb projektek közös vonása a közösségi beágyazottság. Nem elegendő pusztán fizikai falakat renoválni; élettel és társadalmi funkciókkal kell megtölteni az új tereket. [___5___] Ha a zöldfelületek, kávézók és közösségi műhelyek a környéken élő lakosság számára is nyitottak, a hajdani ipari zónák a város legélhetőbb és legdinamikusabb negyedeivé válhatnak.",
+          "gaps": [
+            { "id": "gap-1", "num": 1, "correct": "E" },
+            { "id": "gap-2", "num": 2, "correct": "B" },
+            { "id": "gap-3", "num": 3, "correct": "G" },
+            { "id": "gap-4", "num": 4, "correct": "A" },
+            { "id": "gap-5", "num": 5, "correct": "D" }
+          ],
+          "options": [
+            { "letter": "A", "text": "A történelmi homlokzatok utólagos hőszigetelése gyakran ütközik a szigorú örökségvédelmi előírásokkal." },
+            { "letter": "B", "text": "Az ipari terek monumentális arányai és karakteres nyers felületei különleges vonzerőt jelentenek a fiatal vállalkozóknak." },
+            { "letter": "C", "text": "Az önkormányzatok minden esetben elrendelték a történelmi gyártelepek teljes és azonnali lebontását." },
+            { "letter": "D", "text": "A revitalizáció valódi sikere azon múlik, hogy a helyi közösség mindennapi találkozóhelyévé válik-e a terület." },
+            { "letter": "E", "text": "Az elmúlt évtizedben azonban gyökeres szemléletváltás tanúi lehettünk az építészek és döntéshozók körében." },
+            { "letter": "F", "text": "A gyárak tulajdonosai megtiltották a látogatóknak a zöldfelületek és sétányok használatát." },
+            { "letter": "G", "text": "A körforgásos gazdaság elvei szerint a már beépített anyagok megmentése a leghatékonyabb klímavédelmi lépés." }
+          ]
+        },
+        {
+          "id": "hu-reading-t2",
+          "tareaNum": 2,
+          "type": "reading-mc",
+          "title": "2. rész: Cikkértés és feleletválasztás (Publicisztikai szövegelemzés)",
+          "instructions": "Olvasd el az alábbi elemzést a digitális túlterheltségről és a figyelem gazdaságtanáról, majd válaszolj az 5 kérdésre a helyes opció (A, B vagy C) kiválasztásával.",
+          "passage": "A figyelem gazdaságtana és a mély munka alkonya\n\nA 21. századi információs társadalomban a legritkább és legértékesebb erőforrássá nem az információ maga vált – hiszen abból korlátlan bőség áll rendelkezésre –, hanem az emberi figyelem. Herbert Simon közgazdász már évtizedekkel ezelőtt megfogalmazta a tételt: az információbőség a figyelem szűkösségét vonja maga után. Napjainkban a technológiai óriáscégek üzleti modellje kifejezetten arra épül, hogy a felhasználók minél több idejét kössék le a képernyők előtt. Ezt a jelenséget a szociológia 'figyelemgazdaságnak' nevezi.\n\nA folyamatos értesítések, a villogó üzenetek és a hírfolyamok végtelen görgetése azonban súlyos árat követel az intellektuális teljesítménytől. Cal Newport professzor kutatásai rávilágítanak arra, hogy az úgynevezett 'mély munka' – vagyis a zavartalan, elmélyült szellemi koncentráció – képessége rohamosan erodálódik. Amikor valaki tízpercenként megszakítja a munkáját egy bejövő email vagy üzenet miatt, az agy nem tud azonnal visszatérni az eredeti feladat mélységébe. A kognitív pszichológia ezt 'figyelem-maradványnak' nevezi: a gondolatok egy része még a félbehagyott interakciónál ragad, ami drasztikusan rontja a problémamegoldás minőségét és növeli a hibák arányát.\n\nA jelenség társadalmi szinten is érezteti a hatását. A felszínes információfogyasztás következtében egyre nehezebbé válik az összetett összefüggések átlátása, a hosszú irodalmi vagy tudományos szövegek feldolgozása. A döntéshozók és a munkavállalók egyaránt hajlamosak a gyors, azonnali, de felszínes reakciókat előnyben részesíteni a megfontolt, hosszú távú stratégiai gondolkodással szemben.\n\nA megoldás nem a technológia teljes elutasításában rejlik, hanem a digitális tudatosság és a szándékos korlátok kialakításában. Egyre több vállalat vezeti be a belső szabályzatában a 'csendes órákat', amikor tilos üzeneteket küldeni vagy megbeszéléseket tartani. Egyéni szinten pedig felértékelődik a digitális minimalizmus: az értesítések szelektív kikapcsolása és a figyelem szuverenitásának visszaszerzése az autonóm ember legfontosabb erényévé válik.",
+          "questions": [
+            {
+              "id": "hu-rt2-q1",
+              "question": "1. Miért vált a figyelem a legértékesebb kinccsé a modern társadalomban?",
+              "options": [
+                "Mert az információ korlátlan bősége miatt a befogadási kapacitás korlátozottá vált.",
+                "Mert a digitális eszközök ára megfizethetetlenné vált az átlagos felhasználók számára.",
+                "Mert az állami törvények szigorúan büntetik az interneten töltött felesleges időt."
+              ],
+              "correct": 0,
+              "evidence": "az információbőség a figyelem szűkösségét vonja maga után... a felhasználók minél több idejét kössék le a képernyők előtt.",
+              "explanation": "A szöveg Herbert Simon tételére hivatkozva kifejti, hogy a bőséges információ miatt az emberi figyelem szűkös és értékes erőforrás lett."
+            },
+            {
+              "id": "hu-rt2-q2",
+              "question": "2. Mit jelent a szövegben említett 'figyelem-maradvány' jelensége?",
+              "options": [
+                "Azt, hogy a számítógép memóriája automatikusan törli a félbehagyott fájlokat.",
+                "Azt, hogy a megszakítás után az agy kapacitásának egy része az előző ingerhez kötve marad.",
+                "Azt, hogy az emberi szem képtelen tíz percnél tovább a monitorra fókuszálni."
+              ],
+              "correct": 1,
+              "evidence": "A kognitív pszichológia ezt 'figyelem-maradványnak' nevezi: a gondolatok egy része még a félbehagyott interakciónál ragad...",
+              "explanation": "A figyelem-maradvány arra utal, hogy a megszakítás után az elme nem tud teljes kapacitással visszatérni az eredeti feladathoz."
+            },
+            {
+              "id": "hu-rt2-q3",
+              "question": "3. Milyen negatív következménnyel jár a figyelem fragmentálódása társadalmi téren?",
+              "options": [
+                "A munkavállalók teljesen elfelejtenek magyarul olvasni és írni.",
+                "A hosszú távú stratégiai gondolkodás háttérbe szorul a gyors, felületes válaszok javára.",
+                "Minden egyetemi hallgató azonnal abbahagyja a tanulmányait a vizsgaidőszakban."
+              ],
+              "correct": 1,
+              "evidence": "hajlamosak a gyors, azonnali, de felszínes reakciókat előnyben részesíteni a megfontolt, hosszú távú stratégiai gondolkodással szemben.",
+              "explanation": "A társadalmi következmény a komplex összefüggések és a hosszú távú megfontoltság elvesztése a kapkodó reakciókkal szemben."
+            },
+            {
+              "id": "hu-rt2-q4",
+              "question": "4. Milyen szervezeti intézkedést vezetnek be egyes cégek a probléma kezelésére?",
+              "options": [
+                "Tilos mindenféle elektronikus eszközt bevinni a vállalat területére.",
+                "Üzenetmentes és értekezletmentes időszakokat határoznak meg az elmélyült munkára.",
+                "Levonják a fizetését annak, aki munkanapokon emailt olvas."
+              ],
+              "correct": 1,
+              "evidence": "Egyre több vállalat vezeti be a belső szabályzatában a 'csendes órákat', amikor tilos üzeneteket küldeni vagy megbeszéléseket tartani.",
+              "explanation": "Csendes órákat jelölnek ki a zavartalan koncentráció védelmében, megbeszélések és emailek nélkül."
+            },
+            {
+              "id": "hu-rt2-q5",
+              "question": "5. Mi a szerző legfontosabb konklúziója az egyén szintjén?",
+              "options": [
+                "A technológia démonizálása és az internet azonnali lekapcsolása minden háztartásban.",
+                "A tudatos digitális határok kijelölése és a figyelem feletti önrendelkezés visszaszerzése.",
+                "Az összes munkahelyi feladat átadása a mesterséges intelligenciának."
+              ],
+              "correct": 1,
+              "evidence": "felértékelődik a digitális minimalizmus: az értesítések szelektív kikapcsolása és a figyelem szuverenitásának visszaszerzése az autonóm ember legfontosabb erényévé válik.",
+              "explanation": "A cikk szerint a digitális minimalizmus és a figyelem feletti tudatos kontroll adja meg a valódi autonómiát."
+            }
+          ]
+        }
+      ]
+    },
+    "listening": {
+      "id": "listening",
+      "name": "Hallásértés",
+      "officialTimeMinutes": 40,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-listening-t1",
+          "tareaNum": 1,
+          "type": "audio-mc",
+          "title": "1. rész: Rövid hírek és tudósítások",
+          "instructions": "Öt rövid szöveget fogsz hallani. Válaszd ki a helyes opciót (A, B vagy C). 30 másodperced van átolvasni a kérdéseket.",
+          "previewSeconds": 30,
+          "items": [
+            {
+              "id": "hu-l1-q1",
+              "num": 1,
+              "situation": "Környezetvédelmi hír a rádióban az új visszaváltási rendszerről.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Hírolvasó",
+                    "gender": "female",
+                    "text": "Jelentős mérföldkőhöz érkezett a hazai hulladékgazdálkodás: a legfrissebb minisztériumi adatok szerint az új, kötelező visszaváltási rendszer elindítása óta a lakosság már több mint százmillió alumíniumdobozt és műanyag palackot váltott vissza a szupermarketek automatáinál. A szakemberek hangsúlyozzák, hogy a visszagyűjtött alapanyagok tisztasága lehetővé teszi a százszázalékos belföldi újrahasznosítást, radikálisan csökkentve az illegális hulladéklerakást."
+                  }
+                ]
+              },
+              "question": "Mi a legfőbb környezeti haszna az új visszaváltási rendszernek a hír szerint?",
+              "options": [
+                "A visszagyűjtött tiszta csomagolóanyagok teljes körű újrahasznosítása a hazai iparban.",
+                "Az élelmiszerárak azonnali és jelentős csökkenése a szupermarketekben.",
+                "A műanyag csomagolások azonnali hatályú betiltása minden üzletben."
+              ],
+              "correct": 0,
+              "evidence": "A szakemberek hangsúlyozzák, hogy a visszagyűjtött alapanyagok tisztasága lehetővé teszi a százszázalékos belföldi újrahasznosítást...",
+              "explanation": "A tiszta visszagyűjtés révén az alapanyagok teljes mértékben újrahasznosulnak belföldön."
+            },
+            {
+              "id": "hu-l1-q2",
+              "num": 2,
+              "situation": "Beszámoló egy egyetemi kutatócsoport műholdas fejlesztéséről.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Tudósító",
+                    "gender": "male",
+                    "text": "A Műszaki Egyetem űrkutatói által kifejlesztett miniatűr műhold sikeresen pályára állt. A berendezés fő feladata a Kárpát-medence termőföldjeinek és erdőségeinek hőtérképezése, amely kulcsfontosságú az aszálykárok megelőzésében és a korai erdőtüzek azonnali detektálásában. A műhold valós időben továbbítja az adatokat a katasztrófavédelem és az agrárkutatók közös szervereire."
+                  }
+                ]
+              },
+              "question": "Mire használják fel az egyetemi műhold által gyűjtött adatokat?",
+              "options": [
+                "Katonai védelmi manőverek koordinálására a határokon.",
+                "Az aszály és a tűzesetek korai előrejelzésére és felmérésére.",
+                "A városi mobiltelefon-hálózatok sebességének növelésére."
+              ],
+              "correct": 1,
+              "evidence": "kulcsfontosságú az aszálykárok megelőzésében és a korai erdőtüzek azonnali detektálásában.",
+              "explanation": "A műhold a szárazság és a tűzesetek időben történő felismerését szolgálja hőtérképezéssel."
+            },
+            {
+              "id": "hu-l1-q3",
+              "num": 3,
+              "situation": "Közlekedési tájékoztató egy felújított vasútvonalról.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "MÁV-szóvivő",
+                    "gender": "female",
+                    "text": "Örömmel értesítjük a kirándulókat, hogy befejeződött a dunakanyari vasútvonal korszerűsítése. A hétvégétől óránként indulnak a modern, alacsonypadlós motorvonatok, amelyeken kibővített kerékpárszállító kapacitást biztosítunk. A kerékpárjegyek elővételben, a mobilalkalmazáson keresztül húsz százalékos kedvezménnyel vásárolhatók meg."
+                  }
+                ]
+              },
+              "question": "Milyen kedvezményt vehetnek igénybe az utazók a mobilalkalmazásban?",
+              "options": [
+                "Ingyenes büféfogyasztást a vasúti kocsikban.",
+                "Húsz százalékkal olcsóbb kerékpárjegyet előzetes megváltás esetén.",
+                "Díjmentes utazást minden nyugdíjas és diák számára."
+              ],
+              "correct": 1,
+              "evidence": "A kerékpárjegyek elővételben, a mobilalkalmazáson keresztül húsz százalékos kedvezménnyel vásárolhatók meg.",
+              "explanation": "A biciklijegyre 20%-os kedvezmény jár az applikációban történő elővételkor."
+            },
+            {
+              "id": "hu-l1-q4",
+              "num": 4,
+              "situation": "Interjúrészlet egy független színházi társulat rendezőjével.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Rendező",
+                    "gender": "male",
+                    "text": "A független színházak helyzete ma kétségkívül bizonytalan, de ez a kényszerhelyzet rendkívüli kreativitásra sarkall bennünket. Mivel nem engedhetünk meg magunknak költséges díszleteket, a színészi játék intenzitására, a fizikai színházra és a rendhagyó helyszínekre támaszkodunk: elhagyott gyárcsarnokokban, udvarokban és pincékben játszunk, ahol a közönség szinte testközelből éli át a drámát."
+                  }
+                ]
+              },
+              "question": "Hogyan reagál a társulat az anyagi források szűkösségére?",
+              "options": [
+                "Külföldi sztárszínészeket szerződtetnek a jegybevételek növelésére.",
+                "Rendhagyó terekben, minimális díszlettel és intenzív színészi játékkal állítanak színpadra műveket.",
+                "Kizárólag ingyenes online videókat készítenek a próbákról."
+              ],
+              "correct": 1,
+              "evidence": "a színészi játék intenzitására, a fizikai színházra és a rendhagyó helyszínekre támaszkodunk: elhagyott gyárcsarnokokban, udvarokban és pincékben játszunk...",
+              "explanation": "A díszletek hiányát rendhagyó helyszínekkel és intenzív színpadi játékkal ellensúlyozzák."
+            },
+            {
+              "id": "hu-l1-q5",
+              "num": 5,
+              "situation": "Hír az élelmiszer-mentő hálózat eredményeiről.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Tudósító",
+                    "gender": "female",
+                    "text": "Közel tízezer tonna fogyasztható élelmiszert mentett meg a megsemmisítéstől az Élelmiszerbank az elmúlt évben. A kereskedelmi áruházláncokkal együttműködve a még szavatossági időn belüli, de esztétikai hiba miatt eladhatatlan zöldségeket, gyümölcsöket és pékárukat juttatják el rászoruló családokhoz és szociális intézményekhez. A kezdeményezéshez idén újabb vidéki kistermelők is csatlakoztak."
+                  }
+                ]
+              },
+              "question": "Milyen típusú élelmiszereket juttat el a szervezet a rászorulóknak?",
+              "options": [
+                "Lejárt szavatosságú és romlott konzerv ételeket.",
+                "Jó minőségű, fogyasztható, de esztétikai hiba miatt kimaradt élelmiszereket.",
+                "Kizárólag drága külföldi déligyümölcsöket."
+              ],
+              "correct": 1,
+              "evidence": "a még szavatossági időn belüli, de esztétikai hiba miatt eladhatatlan zöldségeket, gyümölcsöket és pékárukat juttatják el...",
+              "explanation": "Olyan élelmiszereket mentenek meg, amelyek még fogyaszthatók és épek, csak apróbb esztétikai hibájuk van."
+            }
+          ]
+        },
+        {
+          "id": "hu-listening-t2",
+          "tareaNum": 2,
+          "type": "audio-interview",
+          "title": "2. rész: Rádiós mélyinterjú szakértővel",
+          "instructions": "Egy interjút fogsz hallani egy tájökológussal a városi vadvilágról és a biodiverzitásról. Válaszolj az 5 kérdésre a helyes opció (A, B vagy C) kiválasztásával. A szöveget kétszer hallgatod meg.",
+          "previewSeconds": 30,
+          "audio": {
+            "turns": [
+              {
+                "speaker": "Riporter",
+                "gender": "female",
+                "text": "Üdvözlöm hallgatóinkat! Mai vendégünk Dr. Horváth Zoltán ökológus, a Városi Természet Projekt vezető kutatója. Zoltán, a köztudatban a modern nagyváros még mindig a természet ellentéteként, mesterséges betonrengetegként él. Valóban ennyire kietlen a városi környezet a vadvilág számára?"
+              },
+              {
+                "speaker": "Dr. Horváth",
+                "gender": "male",
+                "text": "Jó napot kívánok! Ez egy elterjedt sztereotípia, de a valóságban sokkal összetettebb a kép. Paradox módon számos európai nagyvárosban magasabb a faji sokféleség, a biodiverzitás, mint a környező vidéki tájakon. Ennek az az oka, hogy a modern nagyüzemi mezőgazdaság a végtelen monokultúráival és a kiterjedt vegyszerhasználatával biológiai sivataggá változtatta a szántóföldeket. Ezzel szemben a város egy mozaikos mikroélőhely-rendszer: kertek, parkok, temetők, vasúti töltések és zöldtetők váltják egymást, ahol a rovarok és madarak vegyszermentes táplálékra lelnek."
+              },
+              {
+                "speaker": "Riporter",
+                "gender": "female",
+                "text": "Sokan mégis megdöbbennek, amikor sünökkel, denevérekkel vagy rókákkal találkoznak a belvárosi parkokban."
+              },
+              {
+                "speaker": "Dr. Horváth",
+                "gender": "male",
+                "text": "Pedig az alkalmazkodás lenyűgöző folyamatának vagyunk szemtanúi. Az állatok megtanulták kihasználni a városi hősziget hatását: a telek enyhébbek, a közvilágítás meghosszabbítja a rovarok aktivitását, a hulladék pedig állandó táplálékforrást nyújt. Ugyanakkor feladatunk is van: a steril, állandóan tövig nyírt gyep helyett 'méhlegelőket', vadvirágos sávokat kell kialakítanunk, mert a beporzók nélkül a városi növényzet sem képes megújulni."
+              },
+              {
+                "speaker": "Riporter",
+                "gender": "female",
+                "text": "Gyakori kifogás a lakosság részéről, hogy a vadvirágos gyepek elhanyagoltnak, gazosnak tűnnek."
+              },
+              {
+                "speaker": "Dr. Horváth",
+                "gender": "male",
+                "text": "Itt egy kulturális szemléletváltásra van szükségünk. Meg kell értenünk, hogy az angolgyep egy ökológiai sivatag, ami ráadásul hatalmas mennyiségű öntözővizet emészt fel. A természetközeli parkfenntartás nem igénytelenség, hanem a túlélés záloga a klímaváltozás korában. Ha tájékoztató táblákkal elmagyarázzuk a lakosoknak, hogy az a virágos folt miért hűti a levegőt és miért nyújt menedéket a katicáknak, az emberek zöme nemcsak elfogadja, hanem büszke is lesz rá."
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "hu-l2-q1",
+              "question": "1. Miért gazdagabb sok esetben a városi biodiverzitás a vidéki szántóföldeknél?",
+              "options": [
+                "Mert a mezőgazdasági monokultúrák és a vegyszerek elszegényítették a vidéki élőhelyeket.",
+                "Mert a városi állatkertekből rendszeresen szabadon engedik a vadállatokat.",
+                "Mert a nagyvárosokban tilos bármilyen építkezést vagy felújítást végezni."
+              ],
+              "correct": 0,
+              "evidence": "a modern nagyüzemi mezőgazdaság a végtelen monokultúráival és a kiterjedt vegyszerhasználatával biológiai sivataggá változtatta a szántóföldeket. Ezzel szemben a város egy mozaikos mikroélőhely-rendszer...",
+              "explanation": "A vidéki intenzív mezőgazdaság elszegényítette a természetet, miközben a város mozaikos, vegyszermentes élőhelyeket kínál."
+            },
+            {
+              "id": "hu-l2-q2",
+              "question": "2. Milyen előnyöket élveznek a vadvilág képviselői a városi környezetben?",
+              "options": [
+                "A folyamatos emberi gondoskodást és az ingyenes állatorvosi ellátást.",
+                "Az enyhébb téli hőmérsékletet és az állandó táplálékbázist.",
+                "A csendes, forgalommentes utcákat az éjszakai órákban."
+              ],
+              "correct": 1,
+              "evidence": "kihasználni a városi hősziget hatását: a telek enyhébbek, a közvilágítás meghosszabbítja a rovarok aktivitását, a hulladék pedig állandó táplálékforrást nyújt.",
+              "explanation": "A hősziget miatti melegebb tél és a rendelkezésre álló táplálék segíti az állatok boldogulását."
+            },
+            {
+              "id": "hu-l2-q3",
+              "question": "3. Mit javasol a szakértő a steril, tövig nyírt gyepek helyett?",
+              "options": [
+                "Műfüves szőnyegek leterítését a közterületeken.",
+                "Vadvirágos méhlegelők és természetes zöldsávok fenntartását.",
+                "A parkok teljes lezárását a lakosság elől."
+              ],
+              "correct": 1,
+              "evidence": "a steril, állandóan tövig nyírt gyep helyett 'méhlegelőket', vadvirágos sávokat kell kialakítanunk...",
+              "explanation": "A beporzók megóvása érdekében vadvirágos felületek és méhlegelők kialakítását szorgalmazza."
+            },
+            {
+              "id": "hu-l2-q4",
+              "question": "4. Mi a legfőbb ökológiai hátránya a hagyományos angolgyepnek a professzor szerint?",
+              "options": [
+                "Rendkívül drága a fűmag beszerzése a külföldi piacokról.",
+                "Biológiai szempontból értéktelen és aránytalanul sok öntözővizet pazarol el.",
+                "Veszélyes ragadozókat vonz a lakóházak közvetlen közelébe."
+              ],
+              "correct": 1,
+              "evidence": "az angolgyep egy ökológiai sivatag, ami ráadásul hatalmas mennyiségű öntözővizet emészt fel.",
+              "explanation": "Az angolgyep alig nyújt élőhelyet, és rengeteg vizet fogyaszt a nyári kánikulában."
+            },
+            {
+              "id": "hu-l2-q5",
+              "question": "5. Hogyan érhető el a lakosság támogatása a vadvirágos parkok iránt?",
+              "options": [
+                "Bírságok kiszabásával mindenkire, aki panaszt mer tenni a fűre.",
+                "Tájékoztató táblákkal, amelyek bemutatják a rét klímavédelmi és élővilági hasznát.",
+                "A parkok éjszakai kivilágításának teljes megszüntetésével."
+              ],
+              "correct": 1,
+              "evidence": "Ha tájékoztató táblákkal elmagyarázzuk a lakosoknak, hogy az a virágos folt miért hűti a levegőt... az emberek zöme nemcsak elfogadja, hanem büszke is lesz rá.",
+              "explanation": "A megfelelő ismeretterjesztés és tájékoztatás révén a lakosság megérti és megszereti a természetes parkokat."
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "id": "writing",
+      "name": "Írásbeli kommunikáció",
+      "officialTimeMinutes": 75,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-writing-t1",
+          "tareaNum": 1,
+          "title": "1. rész: Hivatalos levél / Panasz és javaslattétel a Városfejlesztési Főosztálynak",
+          "prompt": "Tudomásodra jutott, hogy a kerületedben a helyi önkormányzat egy kedvelt, zöld park és közösségi játszótér helyén többszintes mélygarázst és bevásárlóudvart kíván létesíteni.\n\nÍrj hivatalos levelet a Fővárosi Városfejlesztési Főosztály vezetőjének (150–180 szóban), amelyben:\n- Megszólítod a címzettet a hivatalos protokollnak megfelelően, és ismerteted a levélírás célját.\n- Érvelsz a zöldfelület megőrzésének környezeti, egészségügyi és közösségi fontossága mellett.\n- Két alternatív, észszerű megoldást javasolsz a parkolási nehézségek kezelésére anélkül, hogy a fák kivágására sor kerülne.\n- Kéred a döntés felülvizsgálatát, lakossági fórum összehívását, és hivatalos udvariassági formulával búcsúzol.",
+          "minWords": 150,
+          "maxWords": 180,
+          "targetKeywords": [
+            "azért fordulok Önhöz",
+            "mély aggodalommal",
+            "környezeti szempontból",
+            "tekintettel arra, hogy",
+            "javasoljuk továbbá",
+            "tisztelettel"
+          ],
+          "rubricGuide": "Formális megszólítás és udvariassági formulák (Ön/Önök), logikus érvelés B2 kötőszavakkal, irányítási szempontok maradéktalan kifejtése, pontos toldalékolás és stílus egysége."
+        },
+        {
+          "id": "hu-writing-t2",
+          "tareaNum": 2,
+          "title": "2. rész: Érvelő esszé / Publicisztikai véleménykifejtés vitatémáról",
+          "options": [
+            {
+              "optionLetter": "A",
+              "title": "Opción A: Érvelő esszé a négynapos munkahét bevezetéséről",
+              "prompt": "Írj egy érvelő esszét (150–180 szóban) egy gazdasági-társadalmi folyóirat számára a négynapos munkahét lehetséges bevezetésének hatásairól.\n\nSzempontok:\n- Milyen előnyei lehetnek a rövidített munkahétnek a munkavállalók mentális egészségére és a munka-magánélet egyensúlyára nézve?\n- Milyen gazdasági, szervezési kockázatokkal és kihívásokkal kell számolniuk a munkáltatóknak?\n- Milyen feltételek mellett tartod életképesnek a modell általános bevezetését a hazai munkaerőpiacon?",
+              "minWords": 150,
+              "maxWords": 180,
+              "targetKeywords": [
+                "véleményem szerint",
+                "egyrészt",
+                "másrészt",
+                "mindazonáltal",
+                "figyelembe véve",
+                "összességében"
+              ]
+            },
+            {
+              "optionLetter": "B",
+              "title": "Opción B: Cikk a mesterséges intelligencia oktatási szerepéről",
+              "prompt": "Írj egy véleménycikket (150–180 szóban) egy ifjúsági oktatási portál számára arról, hogyan alakítja át a mesterséges intelligencia a középiskolai és egyetemi tanulást.\n\nSzempontok:\n- Milyen területeken nyújthat hasznos segítséget a mesterséges intelligencia a diákoknak és oktatóknak?\n- Milyen etikai veszélyeket rejt a kritikai gondolkodás és az önálló feladatmegoldás szempontjából a technológia túlzott használata?\n- Hogyan kellene az iskoláknak reagálniuk: tiltással vagy a tudatos, kritikus alkalmazás tanításával?",
+              "minWords": 150,
+              "maxWords": 180,
+              "targetKeywords": [
+                "álláspontom szerint",
+                "kétségkívül",
+                "ugyanakkor",
+                "ennek következtében",
+                "fontos hangsúlyozni",
+                "végső soron"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "speaking": {
+      "id": "speaking",
+      "name": "Szóbeli kommunikáció",
+      "officialTimeMinutes": 20,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "speaking-t1",
+          "tareaNum": 1,
+          "title": "1. rész: Irányított beszélgetés összetett témáról (Munka világa és technológia)",
+          "prompt": "Beszélgess a vizsgáztatóval a munkaerőpiac átalakulásáról, az automatizációról és a jövőbeli hivatásokról!\n\nSzempontok:\n- Milyen hagyományos szakmákat veszélyeztet leginkább a technológiai fejlődés, és milyen új készségek válnak nélkülözhetetlenné?\n- Mennyire tartod fontosnak az élethosszig tartó tanulást és a rugalmas szakmaváltást napjainkban?\n- Milyen szerepe marad az emberi empátiának, kreativitásnak és szociális érzéknek a gépek korában?",
+          "bulletPoints": [
+            "Munkaerőpiaci tendenciák és a technológia hatásai",
+            "Élethosszig tartó tanulás és adaptációs képesség",
+            "Pótolhatatlan emberi képességek és jövőkép"
+          ]
+        },
+        {
+          "id": "speaking-t2",
+          "tareaNum": 2,
+          "title": "2. rész: Képleírás és önálló vitaindítás (Fogyasztói szokások és fenntarthatóság)",
+          "prompt": "Hasonlíts össze két különböző életformát: egy zsúfolt, fogyasztásközpontú bevásárlóközpontot akciós leárazásokkal, valamint egy hulladékmentes (zero waste), helyi termelői piacot!\n\nSzempontok:\n- Milyen pszichológiai és reklámhatások ösztönzik az embereket a felesleges cikkek felhalmozására?\n- Milyen nehézségekbe ütközik az, aki megpróbál tudatosan, környezetkímélő módon vásárolni a mindennapokban?\n- Milyen törvényi vagy oktatási intézkedésekkel lehetne elősegíteni a fenntarthatóbb fogyasztási kultúrát?",
+          "bulletPoints": [
+            "A túlfogyasztás okai és pszichológiai mozgatórugói",
+            "A tudatos vásárlás gyakorlati akadályai és előnyei",
+            "Javaslatok a fenntartható életmód támogatására"
+          ]
+        }
+      ]
+    }
+  },
+  "strategies": {
+    "title": "Stratégiák és tippek az ECL B2 komplex vizsgához",
+    "structure": [
+      {
+        "prueba": "Olvasásértés (45 perc · 2 feladat · 25 pont)",
+        "tip": "Az 1. feladatnál (mondatbeillesztés) a kihagyott részek előtti és utáni kötőszavakat, névmásokat és az alany egyeztetését vizsgáld. A 2. feladatnál (feleletválasztás) vigyázz a disztraktorokra: a szöveg szavait szó szerint tartalmazó opció gyakran csapda, keresd a szinonimákat és a tartalmi parafrázisokat."
+      },
+      {
+        "prueba": "Hallásértés (40 perc · 2 feladat · 25 pont)",
+        "tip": "Használd ki tudatosan a felkészülési másodperceket a kérdések és az opciók kulcsszavainak beazonosítására. Az első meghallgatás során az átfogó gondolatmenetre és az álláspontokra összpontosíts; a második hallgatásnál ellenőrizd az apróbb részleteket és a félrevezető árnyalatokat."
+      },
+      {
+        "prueba": "Írásbeli kommunikáció (75 perc · 2 feladat · 25 pont)",
+        "tip": "Készíts 5 perces vázlatot a szövegalkotás előtt. Az 1. feladatnál ügyelj a formális stílus egységére (ne keverd a tegezést és magázást). A 2. feladatnál törekedj a logikus bekezdésekre (bevezetés, érvek, ellenérvek és saját záró következtetés). A B2 szint megköveteli az összetett kötőszavak változatos használatát."
+      },
+      {
+        "prueba": "Szóbeli kommunikáció (20 perc · 25 pont)",
+        "tip": "Ne elégedj meg tőmondatokkal; minden állításodat indokold meg konkrét példákkal. Használj B2 szintű véleménykifejező kifejezéseket ('meglátásom szerint', 'figyelembe véve, hogy'). Ha bizonytalan vagy, természetes fordulatokkal kérdezz vissza a vizsgáztatótól."
+      }
+    ],
+    "connectors": [
+      {
+        "category": "Gondolatmenet felépítése és tagolása",
+        "examples": ["Elsőként érdemes kiemelni", "Egyrészt / másfelől", "Továbbá", "Mindenekelőtt", "Végezetül"]
+      },
+      {
+        "category": "Ellentét és engedmény kifejezése",
+        "examples": ["Mindazonáltal", "Ennek ellenére", "Jóllehet", "Ugyanakkor", "Viszont", "Annak dacára, hogy"]
+      },
+      {
+        "category": "Ok, következmény és logikai összefüggés",
+        "examples": ["Következésképpen", "Tekintettel arra, hogy", "Ebből fakadóan", "Ennek következtében", "Így tehát"]
+      },
+      {
+        "category": "Állásfoglalás és határozott véleménykifejtés",
+        "examples": ["Meglátásom szerint", "Úgy vélem, hogy", "Határozott álláspontom, hogy", "Kétségbevonhatatlan, hogy", "Fontos hangsúlyozni"]
+      }
+    ]
+  }
+}

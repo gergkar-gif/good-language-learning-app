@@ -1,0 +1,702 @@
+{
+  "id": "es-dele-b2-exam",
+  "board": "Instituto Cervantes",
+  "level": "B2",
+  "title": "Prueba DELE B2",
+  "subtitle": "Diplomas de Español como Lengua Extranjera · Modelo Oficial B2",
+  "passingScorePercentage": 60,
+  "skills": {
+    "reading": {
+      "id": "reading",
+      "name": "Comprensión de lectura",
+      "officialTimeMinutes": 70,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "reading-t1",
+          "tareaNum": 1,
+          "type": "reading-mc",
+          "title": "Tarea 1: Comprensión de un texto complejo y detallado",
+          "instructions": "Lea el siguiente artículo sobre la aplicación de la inteligencia artificial a la recuperación del patrimonio lingüístico y responda a las 6 preguntas seleccionando la opción correcta (A, B o C).",
+          "passage": "Algoritmos y humanismo: el rescate tecnológico de las lenguas amenazadas\n\nEn las últimas décadas, la lingüística aplicada se ha enfrentado a un dilema desalentador: según los informes de la UNESCO, más de la mitad de los siete mil idiomas vivos en el planeta corren el riesgo de extinguirse antes del término del presente siglo. Frente a esta pérdida irreparable de cosmovisiones y memoria colectiva, un consorcio internacional de universidades e institutos de computación ha puesto en marcha iniciativas pioneras que integran redes neuronales y aprendizaje profundo para la preservación lingüística. Lejos de concebir la tecnología como un sustituto de los hablantes, los investigadores defienden que estas herramientas representan un soporte decisivo para acelerar el registro y la sistematización de lenguas orales que carecen de tradición escrita formal.\n\nEl núcleo del proyecto reside en la creación de modelos de lenguaje ajustados a datos limitados. Los sistemas convencionales de procesamiento del lenguaje natural precisan de miles de horas de audio y millones de páginas digitalizadas para entrenar algoritmos de reconocimiento de voz. En cambio, para una lengua minoritaria con apenas un centenar de ancianos que la conservan fluidamente, semejante volumen de datos resulta inalcanzable. Para superar esta barrera, los ingenieros recurren al aprendizaje por transferencia translingüística: entrenan los cimientos de la arquitectura informática con idiomas con abundantes recursos y posteriormente recalibran las capas superficiales utilizando escasas grabaciones comunitarias y relatos orales.\n\nSin embargo, la implementación de estos recursos no está exenta de controversia metodológica. Diversos antropólogos han advertido sobre el riesgo del 'extractivismo digital', una práctica en la que equipos externos recogen grabaciones folclóricas de comunidades indígenas sin garantizar que los avances computacionales reviertan en su beneficio directo o respeten sus nociones sobre la propiedad sagrada de determinados cantos y leyendas. Para responder a esta legítima inquietud, el protocolo exige ahora que los ancianos y líderes locales mantengan el control soberano sobre los archivos sonoros, decidiendo qué materiales pueden compartirse abiertamente en repositorios educativos y cuáles deben preservarse exclusivamente en el ámbito interno.\n\nA pesar de los avances técnicos, los especialistas coinciden en que la inteligencia artificial no puede por sí sola revitalizar una lengua. La vitalidad idiomática no emana de la perfección de un algoritmo en la nube, sino del uso cotidiano en el hogar, el patio de la escuela y las asambleas ciudadanas. Las aplicaciones pedagógicas y los transcriptores automáticos son meros facilitadores que proporcionan a las generaciones jóvenes herramientas contemporáneas para recuperar su orgullo identitario, pero la supervivencia real del idioma dependerá siempre de la voluntad política y del afecto vivo de su comunidad de hablantes.",
+          "questions": [
+            {
+              "id": "rt1-q1",
+              "question": "1. Según el primer párrafo, ¿cuál es el objetivo primordial del consorcio tecnológico?",
+              "options": [
+                "Reemplazar el contacto humano por modelos de conversación sintética.",
+                "Ofrecer un instrumento ágil para inventariar y respaldar lenguas en riesgo sin escritura reglada.",
+                "Obligar a las comunidades orales a adoptar alfabetos internacionales normalizados."
+              ],
+              "correct": 1,
+              "evidence": "estas herramientas representan un soporte decisivo para acelerar el registro y la sistematización de lenguas orales que carecen de tradición escrita formal.",
+              "explanation": "El texto subraya que los algoritmos sirven de apoyo para documentar con rapidez lenguas orales amenazadas, sin pretender sustituir a los hablantes."
+            },
+            {
+              "id": "rt1-q2",
+              "question": "2. ¿Qué obstáculo específico plantea el entrenamiento algorítmico en lenguas minoritarias?",
+              "options": [
+                "La escasez extrema de muestras sonoras y documentos escritos para alimentar sistemas habituales.",
+                "La negativa tajante de los ingenieros a colaborar con especialistas de las humanidades.",
+                "El coste económico inasumible de los equipos informáticos en zonas de difícil acceso."
+              ],
+              "correct": 0,
+              "evidence": "Los sistemas convencionales... precisan de miles de horas de audio... semejante volumen de datos resulta inalcanzable.",
+              "explanation": "Los métodos tradicionales requieren volúmenes gigantescos de datos que no existen para comunidades con pocos hablantes."
+            },
+            {
+              "id": "rt1-q3",
+              "question": "3. ¿En qué consiste la técnica de aprendizaje por transferencia translingüística mencionada?",
+              "options": [
+                "En traducir de inmediato todo el vocabulario indígena al inglés o al español.",
+                "En utilizar la base de lenguas mayoritarias y afinar el modelo con las pocas grabaciones existentes.",
+                "En obligar a los informantes a pronunciar frases sintéticas generadas por ordenador."
+              ],
+              "correct": 1,
+              "evidence": "entrenan los cimientos de la arquitectura informática con idiomas con abundantes recursos y posteriormente recalibran las capas superficiales utilizando escasas grabaciones...",
+              "explanation": "Aprovechan el entrenamiento de lenguas con muchos datos para después ajustar el sistema con escasas muestras de la lengua en peligro."
+            },
+            {
+              "id": "rt1-q4",
+              "question": "4. ¿A qué se refieren las críticas sobre el 'extractivismo digital' en este contexto?",
+              "options": [
+                "Al consumo desmedido de energía eléctrica que generan los centros de datos masivos.",
+                "A la recopilación de material cultural sin consentimiento ético ni beneficio para la comunidad emisora.",
+                "A la venta comercial de dispositivos móviles defectuosos en asentamientos rurales."
+              ],
+              "correct": 1,
+              "evidence": "equipos externos recogen grabaciones... sin garantizar que los avances computacionales reviertan en su beneficio directo o respeten sus nociones sobre la propiedad sagrada...",
+              "explanation": "La objeción señala que a menudo se sustraía material lingüístico sin retribución local ni respeto hacia las tradiciones comunitarias."
+            },
+            {
+              "id": "rt1-q5",
+              "question": "5. ¿Qué medida ética se ha incorporado para subsanar los conflictos con los pueblos originarios?",
+              "options": [
+                "Conceder a los guardianes tradicionales la potestad para decidir el destino y acceso de cada archivo.",
+                "Clasificar de forma confidencial y secreta la totalidad de los datos recogidos.",
+                "Remunerar a cada hablante con salarios fijados por organismos bancarios internacionales."
+              ],
+              "correct": 0,
+              "evidence": "el protocolo exige ahora que los ancianos y líderes locales mantengan el control soberano sobre los archivos sonoros, decidiendo qué materiales pueden compartirse...",
+              "explanation": "Se garantiza la soberanía de la propia comunidad para autorizar o restringir la difusión de sus relatos y cantos."
+            },
+            {
+              "id": "rt1-q6",
+              "question": "6. ¿Cuál es la conclusión definitiva del artículo respecto a la salvación de un idioma?",
+              "options": [
+                "Que las herramientas digitales son autosuficientes para revitalizar lenguas abandonadas.",
+                "Que la pervivencia lingüística reside inevitablemente en la práctica social y el compromiso colectivo.",
+                "Que es preferible priorizar la documentación informática antes que la enseñanza presencial."
+              ],
+              "correct": 1,
+              "evidence": "La vitalidad idiomática no emana de la perfección de un algoritmo... sino del uso cotidiano en el hogar... la supervivencia real del idioma dependerá siempre de la voluntad política y del afecto vivo...",
+              "explanation": "El autor concluye que la tecnología es un medio auxiliar, pero la verdadera salvaguarda proviene del uso real y diario entre las personas."
+            }
+          ]
+        },
+        {
+          "id": "reading-t2",
+          "tareaNum": 2,
+          "type": "person-matching",
+          "title": "Tarea 2: Relacionar perspectivas y enfoques profesionales",
+          "instructions": "Lea los testimonios de 4 profesionales sobre la transición ecológica en el urbanismo contemporáneo (A, B, C y D) y relacione las 10 afirmaciones con la persona correspondiente.",
+          "people": [
+            {
+              "letter": "A",
+              "name": "Clara Morales (Arquitecta bioclimática, Sevilla)",
+              "text": "Defiendo la rehabilitación integral del caserío histórico antes que la edificación de nuevos desarrollos residenciales. Tradicionalmente, la arquitectura mediterránea integraba patios umbríos, muros gruesos de cal y ventilaciones cruzadas que hacían innecesario el aire acondicionado constante. Recuperar esta sabiduría vernácula no es un anhelo nostálgico, sino la respuesta más barata y duradera frente a las olas de calor que azotan el sur peninsular."
+            },
+            {
+              "letter": "B",
+              "name": "Roberto Méndez (Consultor en movilidad, Bilbao)",
+              "text": "Las ciudades cometen el error de creer que electrificar los automóviles privados solucionará el colapso vial y la contaminación atmosférica. Si sustituimos doscientos mil vehículos de gasolina por doscientos mil coches eléctricos, el atasco y la ocupación del espacio público seguirán intactos. La verdadera revolución urbana consiste en restringir el acceso del vehículo particular, ensanchar aceras y vertebrar el transporte colectivo mediante tranvías y redes de cercanías de alta frecuencia."
+            },
+            {
+              "letter": "C",
+              "name": "Irene Sanabria (Ecóloga urbana y paisajista, Vigo)",
+              "text": "La vegetación urbana no puede diseñarse como un mero adorno estético o un fondo fotográfico. Es imprescindible concebir las zonas verdes como infraestructuras biológicas activas que atraigan fauna polinizadora, amortigüen inundaciones mediante pavimentos drenantes y reduzcan el estrés psicológico de la vecindad. Apostar por especies autóctonas adaptadas a las precipitaciones locales ahorra millones en riego y mantenimiento artificial."
+            },
+            {
+              "letter": "D",
+              "name": "Gonzalo Peñalba (Sociólogo y planificador, Valencia)",
+              "text": "Cualquier plan de regeneración verde debe vigilar de cerca el fenómeno de la eco-gentrificación. A menudo, ajardinar un barrio humilde y peatonalizar sus calles provoca una escalada inmediata de los alquileres que expulsa a los vecinos de toda la vida y atrae franquicias turísticas. La sostenibilidad ecológica carece de sentido moral si no va ligada a la protección del tejido comercial de barrio y a la regulación de los precios habitacionales."
+            }
+          ],
+          "statements": [
+            {
+              "id": "rt2-s1",
+              "text": "1. Advierte de que las mejoras ambientales pueden desencadenar la expulsión de la población residente vulnerable.",
+              "correctPerson": "D",
+              "explanation": "Gonzalo explica que la eco-gentrificación eleva los alquileres y desplaza a los residentes tradicionales."
+            },
+            {
+              "id": "rt2-s2",
+              "text": "2. Sostiene que la tecnología del vehículo privado con batería no resuelve los problemas de congestión y ocupación urbana.",
+              "correctPerson": "B",
+              "explanation": "Roberto señala que sustituir coches térmicos por eléctricos no elimina los atascos ni libera espacio público."
+            },
+            {
+              "id": "rt2-s3",
+              "text": "3. Reivindica la vigencia técnica de las técnicas constructivas tradicionales para afrontar las altas temperaturas.",
+              "correctPerson": "A",
+              "explanation": "Clara elogia los muros de cal, patios y ventilación vernácula para mitigar el calor sin excesivo consumo energético."
+            },
+            {
+              "id": "rt2-s4",
+              "text": "4. Plantea que las zonas verdes deben funcionar como sistemas ecológicos funcionales y no como simple ornamento.",
+              "correctPerson": "C",
+              "explanation": "Irene aboga por parques concebidos como infraestructuras vivas para la biodiversidad y la absorción hídrica."
+            },
+            {
+              "id": "rt2-s5",
+              "text": "5. Enfatiza que la prioridad debe centrarse en restaurar construcciones ya existentes en lugar de expandir la ciudad.",
+              "correctPerson": "A",
+              "explanation": "Clara antepone la rehabilitación del parque edificado a la construcción en nuevos suelos."
+            },
+            {
+              "id": "rt2-s6",
+              "text": "6. Subraya que la selección de plantas propias del entorno abarata notablemente los costes hídricos y de cuidado.",
+              "correctPerson": "C",
+              "explanation": "Irene resalta el ahorro económico en riego y cuidados al elegir vegetación autóctona adaptada al clima."
+            },
+            {
+              "id": "rt2-s7",
+              "text": "7. Considera indispensable combinar las medidas medioambientales con políticas que salvaguarden el comercio local.",
+              "correctPerson": "D",
+              "explanation": "Gonzalo afirma que la sostenibilidad urbana exige defender a los pequeños comerciantes y el acceso a la vivienda."
+            },
+            {
+              "id": "rt2-s8",
+              "text": "8. Propone priorizar decididamente los ferrocarriles urbanos y la ampliación de zonas peatonales frente al tráfico particular.",
+              "correctPerson": "B",
+              "explanation": "Roberto apuesta por ganar espacio peatonal y potenciar tranvías y trenes de cercanías frecuentes."
+            },
+            {
+              "id": "rt2-s9",
+              "text": "9. Señala los efectos positivos de la naturaleza cercana sobre el equilibrio emocional de los ciudadanos.",
+              "correctPerson": "C",
+              "explanation": "Irene menciona la reducción del estrés psicológico de los habitantes gracias a la presencia de áreas naturales."
+            },
+            {
+              "id": "rt2-s10",
+              "text": "10. Critica la paradoja de que intervenciones ecológicas bienintencionadas favorezcan la proliferación de cadenas turísticas.",
+              "correctPerson": "D",
+              "explanation": "Gonzalo denuncia cómo la transformación verde atrae franquicias y destruye la identidad vecinal sin control institucional."
+            }
+          ]
+        },
+        {
+          "id": "reading-t3",
+          "tareaNum": 3,
+          "type": "gapped-text",
+          "title": "Tarea 3: Texto con fragmentos omitidos",
+          "instructions": "Lea el siguiente texto del que se han extraído 6 fragmentos. Elija para cada hueco (1-6) la opción correcta (A-H). Hay dos opciones que no debe utilizar.",
+          "passage": "El renacimiento de los mercados de abasto frente a la inmediatez digital\n\nEn la era de las plataformas de comercio electrónico y la entrega de alimentos en menos de quince minutos, una institución centenaria está protagonizando un inesperado resurgimiento en el corazón de las urbes: los mercados tradicionales de abasto. Durante décadas, estas plazas comerciales sufrieron un declive continuo provocado por la implantación masiva de hipermercados en las periferias y el cambio en los hábitos de compra de las familias trabajadoras. [___1___] Frente a ese panorama adverso, muchos puestos cerraron sus persianas y los edificios históricos amenazaban con convertirse en galerías desiertas.\n\nSin embargo, en el último lustro se ha consolidado una transformación sustancial impulsada tanto por el relevo generacional como por una creciente concienciación ciudadana. [___2___] Los consumidores han comenzado a cuestionar la huella ecológica de los productos sobreenvasados en plástico procedentes de otros continentes y valoran de nuevo el asesoramiento personalizado que ofrece el tendero del puesto.\n\nEste renacer no implica un rechazo dogmático a las herramientas tecnológicas, sino una inteligente hibridación con ellas. [___3___] Muchos comerciantes han incorporado pedidos a través de mensajería instantánea y reparto conjunto en bicicletas de carga para abastecer a aquellos clientes que no pueden acudir presencialmente durante el horario laboral diurno.\n\nAsimismo, los ayuntamientos han emprendido ambiciosos proyectos de modernización arquitectónica sin menoscabar la esencia social de estos recintos. [___4___] Esta integración de actividades culinarias en vivo ha convertido a los mercados en polos de dinamización cultural y encuentro vecinal donde confluyen diferentes estratos sociales.\n\nNo obstante, la convivencia entre la clientela cotidiana y el visitante ocasional requiere equilibrios delicados. [___5___] Si los puestos de fruta, pescado fresco y legumbres son sustituidos de forma acelerada por barras gastronómicas exclusivas, el mercado pierde su condición de servicio público primario y se aliena de su entorno barrial inmediato.\n\nEn última instancia, el éxito de los mercados de abasto demuestra que el acto de alimentarse trasciende la mera logística de adquirir nutrientes al menor coste posible. [___6___] Como señalan los sociólogos del consumo, comprar en el mercado es un ejercicio de ciudadanía activa que preserva la identidad territorial y fortalece los lazos comunitarios.",
+          "gaps": [
+            { "id": "gap-1", "num": 1, "correct": "E" },
+            { "id": "gap-2", "num": 2, "correct": "B" },
+            { "id": "gap-3", "num": 3, "correct": "G" },
+            { "id": "gap-4", "num": 4, "correct": "A" },
+            { "id": "gap-5", "num": 5, "correct": "H" },
+            { "id": "gap-6", "num": 6, "correct": "D" }
+          ],
+          "options": [
+            { "letter": "A", "text": "Las reformas estructurales han habilitado espacios para talleres formativos de cocina de temporada y degustaciones populares." },
+            { "letter": "B", "text": "El interés por los productos de proximidad, ecológicos y con trazabilidad clara ha devuelto el dinamismo a los pasillos." },
+            { "letter": "C", "text": "Las grandes cadenas de supermercados lograron monopolizar la producción agrícola regional en apenas tres años." },
+            { "letter": "D", "text": "Comprar cara a cara representa un ritual de confianza y cohesión que ninguna pantalla táctil puede emular." },
+            { "letter": "E", "text": "La comodidad de adquirir todos los víveres bajo un mismo techo refrigerado parecía haber sentenciado su desaparición." },
+            { "letter": "F", "text": "Todos los vendedores acordaron cerrar sus establecimientos físicos para operar exclusivamente en almacenes subterráneos." },
+            { "letter": "G", "text": "La digitalización de los cobros y la logística de última milla han permitido competir eficazmente con las grandes aplicaciones." },
+            { "letter": "H", "text": "Existe el peligro de que una excesiva turistificación desplace a la compra doméstica que da sentido a la plaza." }
+          ]
+        },
+        {
+          "id": "reading-t4",
+          "tareaNum": 4,
+          "type": "cloze-mc",
+          "title": "Tarea 4: Cloze léxico-gramatical de nivel avanzado",
+          "instructions": "Lea el siguiente texto y complete los 6 huecos seleccionando la opción gramatical y léxica correcta (A, B o C) para cada uno.",
+          "passage": "En una sociedad permanentemente bombardeada por estímulos sensoriales y notificaciones digitales, la búsqueda deliberada del silencio se ha transformado en un bien preciado. Cada vez son más los psicólogos que insisten [___1___] la necesidad urgente de reservar franjas cotidianas de desconexión absoluta para preservar la salud mental. No basta con apagar las pantallas unos minutos; es imprescindible que [___2___] estrategias activas de introspección, tales como la lectura pausada o el paseo por entornos naturales. De hecho, los estudios de neurobiología demuestran que el cerebro solo activa sus circuitos de memoria profunda y pensamiento creativo en momentos de calma apacible, [___3___] no median presiones de rendimiento inmediato. Conviene subrayar que, [___4___] se adopten medidas colectivas en los entornos laborales para limitar el envío de correos fuera del horario estipulado, el agotamiento crónico seguirá propagándose como una epidemia silenciosa. [___5___], la recuperación de la serenidad individual no atañe únicamente al ámbito privado, sino que exige un debate estructural en el seno de las organizaciones. Tan pronto como [___6___] a valorar el descanso no como una debilidad improductiva, sino como la base de la dignidad humana, podremos edificar comunidades más equilibradas y empáticas.",
+          "items": [
+            {
+              "id": "cloze-1",
+              "num": 1,
+              "options": ["en", "de", "con"],
+              "correct": 0,
+              "explanation": "Régimen preposicional estricto: el verbo 'insistir' rige la preposición 'en' ('insistir en algo')."
+            },
+            {
+              "id": "cloze-2",
+              "num": 2,
+              "options": ["desarrollemos", "desarrollamos", "desarrollaríamos"],
+              "correct": 0,
+              "explanation": "Subjuntivo obligatorio tras estructura impersonal de juicio de valor y necesidad ('es imprescindible que + presente de subjuntivo')."
+            },
+            {
+              "id": "cloze-3",
+              "num": 3,
+              "options": ["en los que", "a los cuales", "de los que"],
+              "correct": 0,
+              "explanation": "Pronombre relativo compuesto con valor locativo o temporal ('momentos en los que no median presiones')."
+            },
+            {
+              "id": "cloze-4",
+              "num": 4,
+              "options": ["a menos que", "dado que", "a condición de"],
+              "correct": 0,
+              "explanation": "Locución conjuntiva condicional-negativa ('a menos que + subjuntivo') con el sentido de 'a no ser que'."
+            },
+            {
+              "id": "cloze-5",
+              "num": 5,
+              "options": ["Por consiguiente", "No obstante", "Al contrario"],
+              "correct": 0,
+              "explanation": "Conector consecutivo de nivel B2 ('Por consiguiente') que introduce la conclusión lógica del razonamiento precedente."
+            },
+            {
+              "id": "cloze-6",
+              "num": 6,
+              "options": ["comencemos", "comenzamos", "comenzaríamos"],
+              "correct": 0,
+              "explanation": "Subjuntivo en oración subordinada temporal con valor de futuro introducida por 'Tan pronto como'."
+            }
+          ]
+        }
+      ]
+    },
+    "listening": {
+      "id": "listening",
+      "name": "Comprensión auditiva",
+      "officialTimeMinutes": 40,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "listening-t1",
+          "tareaNum": 1,
+          "type": "audio-mc",
+          "title": "Tarea 1: Avisos y comunicaciones orales breves",
+          "instructions": "Escuchará 6 comunicaciones breves. Para cada una, seleccione la opción correcta (A, B o C). Dispone de 30 segundos para leer las preguntas.",
+          "previewSeconds": 30,
+          "items": [
+            {
+              "id": "l1-q1",
+              "num": 1,
+              "situation": "Noticia radiofónica sobre un acuerdo laboral en el sector tecnológico.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Periodista",
+                    "gender": "male",
+                    "text": "La patronal y los sindicatos mayoritarios del sector del software acaban de sellar un convenio colectivo pionero. El texto consagra el derecho efectivo a la desconexión digital mediante la desconexión automática de los servidores de mensajería corporativa a partir de las seis y media de la tarde. Asimismo, se fijan compensaciones obligatorias para aquellos empleados que realicen guardias técnicas fuera del horario de oficina."
+                  }
+                ]
+              },
+              "question": "¿Cuál es la medida central pactada en el nuevo convenio laboral?",
+              "options": [
+                "La eliminación voluntaria del trabajo a distancia para puestos de alta dirección.",
+                "La restricción técnica de los canales internos para asegurar la desconexión de los empleados.",
+                "El incremento salarial automático supeditado a la realización de horas extraordinarias."
+              ],
+              "correct": 1,
+              "evidence": "El texto consagra el derecho efectivo a la desconexión digital mediante la desconexión automática de los servidores de mensajería corporativa...",
+              "explanation": "Se acuerda el apagado técnico de servidores para garantizar que no se reciban mensajes tras la jornada."
+            },
+            {
+              "id": "l1-q2",
+              "num": 2,
+              "situation": "Mensaje en el contestador de una empresa de reformas.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Jefe de obra",
+                    "gender": "female",
+                    "text": "Estimado señor Gómez, le telefoneo en relación con la instalación del suelo radiante en su vivienda. El perito de la compañía de gas nos ha notificado que la presión en la caldera actual no cumple la normativa técnica de seguridad vigente. Para evitar demoras en la entrega de la obra, necesitamos que nos autorice por escrito la sustitución de la válvula reguladora antes del jueves."
+                  }
+                ]
+              },
+              "question": "¿Por qué motivo se pone en contacto la jefa de obra con el cliente?",
+              "options": [
+                "Para solicitar su consentimiento formal ante una intervención técnica imprescindible.",
+                "Para comunicarle la cancelación temporal del contrato de reforma por falta de materiales.",
+                "Para exigir el abono de una sanción impuesta por la compañía suministradora de gas."
+              ],
+              "correct": 0,
+              "evidence": "necesitamos que nos autorice por escrito la sustitución de la válvula reguladora antes del jueves.",
+              "explanation": "Se le solicita una autorización por escrito para cambiar una pieza obligatoria y no retrasar los plazos."
+            },
+            {
+              "id": "l1-q3",
+              "num": 3,
+              "situation": "Comunicado en un festival internacional de cine.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Portavoz del festival",
+                    "gender": "male",
+                    "text": "Rogamos la atención de los asistentes. Por causas de fuerza mayor relacionadas con la huelga en los aeropuertos franceses, la directora invitada no podrá asistir a la mesa redonda programada para esta tarde en el auditorio central. No obstante, la proyección del largometraje se mantendrá en el horario previsto, y el posterior coloquio se retransmitirá telemáticamente con traducción simultánea."
+                  }
+                ]
+              },
+              "question": "¿Qué alteración experimentará el programa del festival cinematográfico?",
+              "options": [
+                "La suspensión definitiva de la película y la devolución inmediata de las entradas.",
+                "El aplazamiento de la proyección hasta la jornada de clausura del fin de semana.",
+                "La celebración de la charla con la realizadora a través de conexión digital."
+              ],
+              "correct": 2,
+              "evidence": "la proyección del largometraje se mantendrá... y el posterior coloquio se retransmitirá telemáticamente...",
+              "explanation": "La película se proyecta igual, pero el debate con la directora se efectuará por videoconferencia."
+            },
+            {
+              "id": "l1-q4",
+              "num": 4,
+              "situation": "Conversación entre dos directores de departamento.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Andrés",
+                    "gender": "male",
+                    "text": "¿Has podido revisar los perfiles de los candidatos para el puesto de analista financiero?"
+                  },
+                  {
+                    "speaker": "Beatriz",
+                    "gender": "female",
+                    "text": "Sí, y la verdad es que la mayoría posee un currículum técnico intachable. Sin embargo, me preocupa que casi ninguno demuestre experiencia gestionando crisis en equipos multidisciplinares. En esta fase de expansión internacional, la empatía y la capacidad de negociación valen tanto como el dominio de los gráficos bursátiles."
+                  }
+                ]
+              },
+              "question": "¿Qué cualidad echa en falta Beatriz entre los aspirantes evaluados?",
+              "options": [
+                "Conocimientos avanzados en contabilidad internacional e informática aplicada.",
+                "Habilidades interpersonales y competencia para desenvolverse en situaciones tensas.",
+                "Disponibilidad horaria para trasladarse permanentemente al extranjero."
+              ],
+              "correct": 1,
+              "evidence": "me preocupa que casi ninguno demuestre experiencia gestionando crisis... la empatía y la capacidad de negociación valen tanto...",
+              "explanation": "Beatriz prioriza las habilidades blandas, la gestión de crisis y el trato personal sobre la pura titulación técnica."
+            },
+            {
+              "id": "l1-q5",
+              "num": 5,
+              "situation": "Anuncio de una agencia de protección ambiental.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Locutora",
+                    "gender": "female",
+                    "text": "El Parque Nacional Sierra de Guadarrama informa de que, debido al riesgo extremo de incendios forestales derivado de la persistente sequía, queda terminantemente prohibido el acceso de vehículos a motor a las pistas forestales no asfaltadas. Los senderistas deberán registrar previamente su ruta mediante la aplicación oficial del parque para facilitar posibles tareas de rescate y control de aforo."
+                  }
+                ]
+              },
+              "question": "¿Qué requisito deberán cumplir los senderistas que visiten la sierra?",
+              "options": [
+                "Contratar un seguro privado de rescate en montaña en la oficina del parque.",
+                "Formalizar una notificación digital anticipada del itinerario que prevén recorrer.",
+                "Hacerse acompañar por un guía acreditado durante toda la excursión."
+              ],
+              "correct": 1,
+              "evidence": "Los senderistas deberán registrar previamente su ruta mediante la aplicación oficial del parque...",
+              "explanation": "Es obligatorio registrar con antelación el itinerario a través de la aplicación oficial para labores de seguridad."
+            },
+            {
+              "id": "l1-q6",
+              "num": 6,
+              "situation": "Mensaje en un buzón de voz universitario.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Coordinador de posgrado",
+                    "gender": "male",
+                    "text": "Hola, Laura. Me pongo en contacto contigo desde la comisión evaluadora de becas doctorales. Tu propuesta de investigación sobre economía circular ha obtenido una calificación sobresaliente, pero el tribunal considera que la metodología descrita abarca un marco temporal excesivamente amplio. Te concedemos un plazo de diez días hábiles para acotar el universo muestral y remitir la versión corregida."
+                  }
+                ]
+              },
+              "question": "¿Qué instrucción recibe Laura respecto a su solicitud doctoral?",
+              "options": [
+                "Debe reducir el alcance de su trabajo de investigación dentro de un plazo estipulado.",
+                "Debe renunciar a su actual director de tesis para optar a la financiación económica.",
+                "Debe cambiar por completo el tema de estudio hacia un área científica prioritaria."
+              ],
+              "correct": 0,
+              "evidence": "Te concedemos un plazo de diez días hábiles para acotar el universo muestral y remitir la versión corregida.",
+              "explanation": "Se le concede un plazo de diez días para delimitar mejor el marco temporal y la muestra de su investigación."
+            }
+          ]
+        },
+        {
+          "id": "listening-t2",
+          "tareaNum": 2,
+          "type": "audio-interview",
+          "title": "Tarea 2: Entrevista radiofónica en profundidad",
+          "instructions": "Escuchará una entrevista con la doctora Elena Velasco sobre el impacto de la tecnología en la atención y la memoria humana. Responderá a 6 preguntas de opción múltiple (A, B o C). Escuchará la grabación dos veces.",
+          "previewSeconds": 30,
+          "audio": {
+            "turns": [
+              {
+                "speaker": "Presentador",
+                "gender": "male",
+                "text": "Buenas tardes y bienvenidos a 'Fronteras del Conocimiento'. Hoy nos acompaña la doctora Elena Velasco, investigadora en el Instituto de Neurociencias de Alicante y autora del ensayo 'Mentes Fragmentadas'. Doctora Velasco, existe una preocupación generalizada de que los teléfonos inteligentes están destruyendo nuestra memoria a corto plazo. ¿Hasta qué punto avala la ciencia empírica esta alarma social?"
+              },
+              {
+                "speaker": "Dra. Velasco",
+                "gender": "female",
+                "text": "Buenas tardes, Carlos. Es tentador caer en el catastrofismo, pero la evidencia científica revela un fenómeno más sutil que una mera degradación biológica: lo que está transformándose es la arquitectura funcional de nuestros hábitos cognitivos. La mente humana siempre ha externalizado funciones. Cuando se inventó la escritura, filósofos como Platón temían que la memoria se atrofiaría porque la gente confiaría en los rollos de papiro. Hoy delegamos en el móvil el almacenamiento de números telefónicos o fechas de cumpleaños, pero liberamos energía para procesar información abstracta."
+              },
+              {
+                "speaker": "Presentador",
+                "gender": "male",
+                "text": "Sin embargo, muchos docentes señalan que a los estudiantes universitarios les cuesta cada vez más mantener la concentración en lecturas densas durante más de quince minutos continuados."
+              },
+              {
+                "speaker": "Dra. Velasco",
+                "gender": "female",
+                "text": "Ese es el verdadero foco de atención clínica. No es un problema de retención memorística, sino de resistencia atencional. Las interfaces digitales están deliberadamente diseñadas con sistemas de recompensa variable: notificaciones, colores vibrantes y desplazamiento infinito que activan pequeñas descargas de dopamina. Si acostumbramos al cerebro a recompensas inmediatas cada tres minutos, cualquier tarea que requiera esfuerzo sostenido, como descifrar un texto filosófico o redactar un informe exhaustivo, se percibe como una experiencia intolerablemente tediosa."
+              },
+              {
+                "speaker": "Presentador",
+                "gender": "male",
+                "text": "¿Significa eso que la multitarea digital es un mito fisiológico?"
+              },
+              {
+                "speaker": "Dra. Velasco",
+                "gender": "female",
+                "text": "Rotundamente sí. El cerebro humano carece de procesadores en paralelo para actividades cognitivas complejas. Lo que vulgarmente llamamos 'multitarea' no es más que una alternancia vertiginosa de la atención entre un foco y otro. Cada salto implica un coste metabólico: se pierden décimas de segundo en reorientar la mente y se dispara la probabilidad de cometer errores inadvertidos. Trabajar respondiendo correos mientras se asiste a una videoconferencia no multiplica la productividad; la pulveriza."
+              },
+              {
+                "speaker": "Presentador",
+                "gender": "male",
+                "text": "¿Qué medidas prácticas propone usted en su libro para recuperar el control de nuestro tiempo mental?"
+              },
+              {
+                "speaker": "Dra. Velasco",
+                "gender": "female",
+                "text": "No se trata de refugiarse en un ascetismo tecnológico absurdo, sino de establecer 'cortafuegos ambientales'. Por ejemplo, desterrar las pantallas del dormitorio, silenciar las notificaciones no esenciales por defecto y crear bloques de dos horas de trabajo en modo avión. El silencio y el aburrimiento no son fallos del sistema; son los espacios biológicos necesarios para que el cerebro sintetice lo aprendido y madure ideas originales."
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "l2-q1",
+              "question": "1. Según la doctora Velasco, ¿cómo debe interpretarse el impacto de los móviles en la memoria?",
+              "options": [
+                "Como una patología neurológica irreversible que daña la estructura del hipocampo.",
+                "Como una reorganización funcional de tareas mentales similar a otros hitos históricos.",
+                "Como un deterioro incuestionable que confirma los peores temores de la sociedad."
+              ],
+              "correct": 1,
+              "evidence": "lo que está transformándose es la arquitectura funcional de nuestros hábitos cognitivos. La mente humana siempre ha externalizado funciones.",
+              "explanation": "Explica que delegar ciertos datos en soportes externos es una adaptación histórica normal del cerebro, comparable a la llegada de la escritura."
+            },
+            {
+              "id": "l2-q2",
+              "question": "2. ¿A qué atribuye la investigadora las dificultades de los estudiantes para leer textos extensos?",
+              "options": [
+                "Al condicionamiento dopaminérgico provocado por el diseño de las aplicaciones digitales.",
+                "A una deficiencia pedagógica grave en la enseñanza de la gramática durante la infancia.",
+                "A la excesiva complejidad técnica que presentan los programas de estudio universitarios."
+              ],
+              "correct": 0,
+              "evidence": "Las interfaces digitales están deliberadamente diseñadas con sistemas de recompensa variable... Si acostumbramos al cerebro a recompensas inmediatas... el esfuerzo sostenido se percibe como tedioso.",
+              "explanation": "Señala que los algoritmos acostumbran al cerebro a gratificaciones instantáneas, mermando la capacidad de perseverar en esfuerzos continuados."
+            },
+            {
+              "id": "l2-q3",
+              "question": "3. ¿Cuál es el dictamen de la neurocientífica sobre la llamada 'multitarea'?",
+              "options": [
+                "Es una habilidad que las generaciones jóvenes han logrado dominar gracias a los videojuegos.",
+                "Es una falacia neurobiológica que fragmenta la atención y eleva la tasa de equivocaciones.",
+                "Resulta muy beneficiosa para fomentar la agilidad mental en puestos de alta responsabilidad."
+              ],
+              "correct": 1,
+              "evidence": "Lo que vulgarmente llamamos 'multitarea' no es más que una alternancia vertiginosa de la atención... Cada salto implica un coste metabólico... y se dispara la probabilidad de cometer errores...",
+              "explanation": "Afirma categóricamente que no existe procesamiento paralelo en tareas complejas, sino un cambio constante de foco que resta eficacia."
+            },
+            {
+              "id": "l2-q4",
+              "question": "4. ¿Qué coste oculto conlleva alternar tareas constantemente según el texto?",
+              "options": [
+                "La pérdida de facultades auditivas por el uso prolongado de auriculares.",
+                "Un gasto metabólico adicional y una merma considerable en el rendimiento intelectual.",
+                "La incapacidad absoluta para conciliar el sueño durante los días laborables."
+              ],
+              "correct": 1,
+              "evidence": "Cada salto implica un coste metabólico: se pierden décimas de segundo... no multiplica la productividad; la pulveriza.",
+              "explanation": "Cambiar de foco continuamente desgasta energía cerebral y deteriora la calidad del trabajo producido."
+            },
+            {
+              "id": "l2-q5",
+              "question": "5. ¿Qué estrategia recomienda la doctora para contrarrestar la dispersión tecnológica?",
+              "options": [
+                "Sustituir el teléfono inteligente por cartas manuscritas en la correspondencia diaria.",
+                "Diseñar rutinas con límites físicos definidos y periodos de desconexión planificada.",
+                "Medicarse con suplementos alimenticios para reforzar la memoria a largo plazo."
+              ],
+              "correct": 1,
+              "evidence": "establecer 'cortafuegos ambientales'. Por ejemplo, desterrar las pantallas del dormitorio... y crear bloques de dos horas de trabajo en modo avión.",
+              "explanation": "Aconseja pautas concretas de aislamiento espacial y temporal de los dispositivos para proteger la concentración."
+            },
+            {
+              "id": "l2-q6",
+              "question": "6. ¿Qué valor positivo otorga la entrevistada al aburrimiento y al silencio?",
+              "options": [
+                "Representan momentos improductivos que conviene reducir al mínimo indispensable.",
+                "Constituyen el entorno biológico imprescindible para la consolidación de ideas y recuerdos.",
+                "Son síntomas de agotamiento físico que exigen atención médica inmediata."
+              ],
+              "correct": 1,
+              "evidence": "El silencio y el aburrimiento no son fallos del sistema; son los espacios biológicos necesarios para que el cerebro sintetice lo aprendido y madure ideas originales.",
+              "explanation": "Concluye que la quietud y la ausencia de estímulos resultan vitales para asimilar conceptos y generar creatividad genuina."
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "id": "writing",
+      "name": "Expresión e interacción escritas",
+      "officialTimeMinutes": 80,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "writing-t1",
+          "tareaNum": 1,
+          "title": "Tarea 1: Interacción escrita formal · Carta de reclamación y propuesta institucional",
+          "prompt": "Usted ha recibido una notificación de la Concejalía de Medio Ambiente y Urbanismo de su municipio en la que se anuncia la tala inminente de un arbolado centenario en la avenida principal para construir un nuevo vial de circulación rodada.\n\nEscriba una carta formal dirigida a la Concejala de Urbanismo (entre 150 y 180 palabras) en la que debe:\n- Saludar con el tratamiento formal protocolario y manifestar el motivo de su escrito.\n- Exponer de manera argumentada las consecuencias negativas de la tala para la calidad ambiental y la salud comunitaria del barrio.\n- Proponer dos alternativas viables de ordenación del tráfico que eviten la destrucción del patrimonio vegetal.\n- Solicitar formalmente una reunión pública de consulta con las asociaciones de vecinos antes de iniciar las obras y despedirse con la debida cortesía.",
+          "minWords": 150,
+          "maxWords": 180,
+          "targetKeywords": [
+            "me dirijo a usted con el propósito de",
+            "en lo relativo a",
+            "resulta inadmisible que",
+            "por consiguiente",
+            "cabe proponer como alternativa",
+            "agradezco de antemano su atención",
+            "atentamente"
+          ],
+          "rubricGuide": "Mantener un registro formal riguroso y uniforme (uso exclusivo de usted/su), articular argumentos sólidos con conectores de causa y consecuencia de nivel B2, y formular propuestas constructivas respetando los límites de palabras (150-180)."
+        },
+        {
+          "id": "writing-t2",
+          "tareaNum": 2,
+          "title": "Tarea 2: Expresión escrita argumentativa · Artículo de opinión o reseña crítica",
+          "options": [
+            {
+              "optionLetter": "A",
+              "title": "Opción A: Artículo de opinión sobre el impacto del teletrabajo en las relaciones laborales",
+              "prompt": "Escriba un artículo de opinión (entre 150 y 180 palabras) para una revista de actualidad social y laboral sobre las transformaciones y dilemas asociados a la consolidación del trabajo a distancia.\n\nEn su texto debe:\n- Introducir el debate contextualizando cómo el teletrabajo ha alterado la frontera entre vida privada y actividad profesional.\n- Analizar de forma equilibrada una ventaja relevante (conciliación, autonomía) y un riesgo evidente (aislamiento, jornadas ilimitadas).\n- Exponer su valoración personal fundamentada sobre qué modelo organizativo (híbrido, presencial o remoto) considera más sostenible a largo plazo.",
+              "minWords": 150,
+              "maxWords": 180,
+              "targetKeywords": [
+                "a mi modo de ver",
+                "por una parte",
+                "por otra parte",
+                "no cabe duda de que",
+                "si bien es cierto que",
+                "en definitiva"
+              ]
+            },
+            {
+              "optionLetter": "B",
+              "title": "Opción B: Reseña crítica de un ensayo o documental de temática medioambiental",
+              "prompt": "Escriba una reseña crítica (entre 150 y 180 palabras) para el suplemento cultural de un diario digital sobre un documental o libro de investigación que analice la crisis climática o la pérdida de biodiversidad.\n\nEn su reseña debe:\n- Sintetizar la tesis principal y los aspectos temáticos clave abordados por la obra.\n- Evaluar críticamente los puntos fuertes del enfoque (rigor testimonial, claridad divulgativa) y posibles carencias (falta de soluciones prácticas, tono excesivamente alarmista).\n- Concluir recomendando razonadamente a qué tipo de público va dirigida la obra y qué reflexión suscita.",
+              "minWords": 150,
+              "maxWords": 180,
+              "targetKeywords": [
+                "la obra pone de relieve",
+                "conviene destacar que",
+                "a pesar de que",
+                "desde una perspectiva crítica",
+                "resulta muy esclarecedor",
+                "recomiendo encarecidamente"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "speaking": {
+      "id": "speaking",
+      "name": "Expresión e interacción orales",
+      "officialTimeMinutes": 20,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "speaking-t1",
+          "tareaNum": 1,
+          "title": "Tarea 1: Valoración de propuestas y resolución de problemas (3-4 minutos)",
+          "prepSeconds": 60,
+          "speakSeconds": 240,
+          "prompt": "Imagine que forma parte de una comisión ciudadana encargada de proponer soluciones frente al encarecimiento desmedido de la vivienda de alquiler en los centros urbanos. Va a exponer durante 3 a 4 minutos su análisis sobre las siguientes medidas posibles:\n\n1. Regular por ley el precio máximo del metro cuadrado en zonas declaradas de mercado tensionado.\n2. Incentivar fiscalmente a los propietarios que firmen contratos de arrendamiento de larga duración a precios asequibles.\n3. Limitar drásticamente la concesión de licencias para viviendas de uso turístico en distritos residenciales.\n\nEn su monólogo debe:\n- Exponer las ventajas e inconvenientes de cada una de las tres propuestas.\n- Defender cuál de ellas considera prioritaria y justificar su postura con argumentos concretos.\n- Plantear una medida adicional que complemente las opciones anteriores.",
+          "bulletPoints": [
+            "Análisis equilibrado de pros y contras de cada propuesta",
+            "Justificación fundamentada de la medida más eficaz a corto y largo plazo",
+            "Aportación de una solución complementaria original",
+            "Uso variado de conectores de causa, consecuencia y matización (B2)"
+          ]
+        },
+        {
+          "id": "speaking-t2",
+          "tareaNum": 2,
+          "title": "Tarea 2: Conversación y debate sobre las propuestas (3-4 minutos)",
+          "prompt": "El entrevistador mantendrá una conversación formal con usted a partir de las opiniones que ha expuesto en la Tarea 1. El examinador pondrá a prueba sus argumentos, presentará objeciones o contraejemplos y le solicitará precisiones sobre la viabilidad de sus propuestas.",
+          "sampleQuestions": [
+            "¿No cree usted que topar los precios del alquiler podría provocar la retirada masiva de pisos del mercado formal?",
+            "¿Hasta qué punto es legítimo que la administración pública restrinja la libertad de un propietario para destinar su vivienda al turismo vacacional?",
+            "Si usted tuviera que financiar la construcción de vivienda pública, ¿de qué partidas presupuestarias recortaría fondos?"
+          ]
+        },
+        {
+          "id": "speaking-t3",
+          "tareaNum": 3,
+          "title": "Tarea 3: Opinión sobre una encuesta de opinión pública (2-3 minutos)",
+          "prompt": "Se le presenta el resumen de una encuesta sociológica reciente: 'El sesenta y cinco por ciento de los jóvenes de entre dieciocho y treinta años declara que prefiere invertir su dinero en experiencias de viaje y ocio formativo antes que endeudarse en una hipoteca bancaria para adquirir un inmueble.'\n\nDebe hablar durante 2 a 3 minutos sobre:\n- Su interpretación sobre qué factores económicos y culturales explican este cambio de mentalidad generacional.\n- La comparación entre los valores de las generaciones anteriores y las prioridades de la juventud actual.\n- Su perspectiva personal sobre si esta tendencia favorece la autonomía o genera precariedad e incertidumbre futura.",
+          "bulletPoints": [
+            "Interpretación sociológica del titular y factores explicativos",
+            "Contraste entre valores tradicionales y pautas contemporáneas",
+            "Posicionamiento crítico argumentado con ejemplos propios"
+          ]
+        }
+      ]
+    }
+  },
+  "strategies": {
+    "title": "Guía oficial y estrategias para superar el DELE B2",
+    "structure": [
+      {
+        "prueba": "Prueba 1: Comprensión de lectura (70 min · 4 tareas · 36 preguntas)",
+        "tip": "En la Tarea 1 busque ideas implícitas y matices argumentativos, no solo palabras literales. En la Tarea 2 asigne primero los enunciados más inequívocos para descartar opciones. En la Tarea 3 (fragmentos omitidos) rastree pronombres anafóricos, marcadores de causa-efecto y la lógica del párrafo anterior y posterior. En el cloze, atienda al régimen preposicional y las estructuras que rigen subjuntivo."
+      },
+      {
+        "prueba": "Prueba 2: Comprensión auditiva (40 min · 5 tareas · 30 preguntas)",
+        "tip": "Aproveche con rigor los 30 segundos previos para identificar palabras interrogativas clave y prever posibles trampas. Durante la primera escucha capte el posicionamiento global del hablante; en la segunda verifique los matices que descartan los distractores comunes."
+      },
+      {
+        "prueba": "Prueba 3: Expresión e interacción escritas (80 min · 2 tareas)",
+        "tip": "Dedique 8-10 minutos al esquema previo. En la Tarea 1 mantenga con pulcritud el registro formal ('usted'), evitando mezclas con el tuteo. En la Tarea 2 elija la opción cuyo léxico específico domine mejor y distribuya el texto en cuatro párrafos canónicos: introducción, argumentos a favor/análisis, contraargumentos/puntos débiles y conclusión fundamentada."
+      },
+      {
+        "prueba": "Prueba 4: Expresión e interacción orales (20 min + 20 min de preparación)",
+        "tip": "Aproveche los 20 minutos de preparación para diseñar un mapa conceptual de ideas, nunca para redactar frases completas de lectura. Demuestre riqueza léxica usando perífrasis verbales, subjuntivo de opinión y conectores contrastivos. Si el examinador contraargumenta, acepte parcialmente su punto antes de matizar con firmeza ('Entiendo su objeción, sin embargo...')."
+      }
+    ],
+    "connectors": [
+      {
+        "category": "Organizar y jerarquizar el discurso",
+        "examples": ["En primer término", "Por una parte / por otra parte", "En lo que respecta a", "Conviene puntualizar que", "Para concluir / En definitiva"]
+      },
+      {
+        "category": "Contraargumentar, matizar y conceder",
+        "examples": ["No obstante", "Sin embargo", "A pesar de que", "Si bien es cierto que", "Pese a ello", "Por más que (+ subjuntivo)"]
+      },
+      {
+        "category": "Causa, consecuencia y deducción",
+        "examples": ["Por consiguiente", "En consecuencia", "De ahí que (+ subjuntivo)", "Dado que", "Puesto que", "En virtud de lo expuesto"]
+      },
+      {
+        "category": "Manifestar certeza, duda o valoración crítica",
+        "examples": ["Es indudable que", "Cabe la posibilidad de que (+ subjuntivo)", "Resulta cuestionable que (+ subjuntivo)", "Desde mi punto de vista", "A mi juicio"]
+      }
+    ]
+  }
+}
