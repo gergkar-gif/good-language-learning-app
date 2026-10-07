@@ -3,7 +3,7 @@
 // ============================================
 // Complete written production hub for Parlour:
 //
-// 1. Composition Studio:
+// 1. Written Production:
 //    - Longer-form open-ended production driller with CEFR formative assessment.
 //    - Evaluates writing against curriculum standards, provides multi-dimensional
 //      feedback, and feeds production evidence into the Learner Model.
@@ -154,7 +154,7 @@ const WritingDriller = (function () {
             <div class="sp-studio-wrap">
                 <div class="sp-studio-nav" role="tablist">
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.COMPOSITION ? 'active' : ''}" data-studio-tab="composition" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.COMPOSITION}">
-                        Composition Studio
+                        Written Production
                     </button>
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.EXCHANGES ? 'active' : ''}" data-studio-tab="exchanges" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.EXCHANGES}">
                         Written Exchanges
@@ -258,7 +258,7 @@ const WritingDriller = (function () {
         body.innerHTML = `
             <div class="sp-driller-wrap">
                 <div class="sp-setup-head">
-                    <h2 class="sp-setup-title">Composition Studio</h2>
+                    <h2 class="sp-setup-title">Written Production</h2>
                     ${typeof DrillInfo !== 'undefined' ? DrillInfo.buttonHtml('writing') : ''}
                     <p class="sp-setup-sub">Write open-ended texts in ${langName} and receive CEFR-aligned formative feedback.</p>
                 </div>

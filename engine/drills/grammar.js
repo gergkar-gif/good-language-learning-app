@@ -687,7 +687,7 @@ const GrammarDriller = (function () {
             bodyHtml = `
                 <div style="padding: 12px 0;">
                     <p class="lsn-text"><strong>${_escapeHtml(info.title)}</strong></p>
-                    <p class="lsn-text text-muted" style="margin-top:6px;">Level ${info.level} · ${_escapeHtml(info.family)}</p>
+                    <p class="lsn-text text-muted" style="margin-top:6px;">Level ${info.level}</p>
                     <p class="lsn-text" style="margin-top:10px;">A standalone reference card is not yet authored for this topic. Practice exercises test this structure directly.</p>
                 </div>
             `;
@@ -854,8 +854,7 @@ const GrammarDriller = (function () {
                                 <div class="gd-skill-row-main">
                                     <span class="gd-skill-row-title">${_escapeHtml(s.title)}</span>
                                     <div class="gd-skill-row-meta">
-                                        <span class="gd-family-tag">${_escapeHtml(s.family)}</span>
-                                        <span class="gd-exercise-count">(${s.poolSize} ${s.poolSize === 1 ? 'exercise' : 'exercises'})</span>
+                                        <span class="gd-exercise-count">${s.poolSize} ${s.poolSize === 1 ? 'exercise' : 'exercises'}</span>
                                     </div>
                                 </div>
                                 <div class="gd-skill-row-badges">
@@ -907,7 +906,7 @@ const GrammarDriller = (function () {
                         <div class="gd-selected-summary-left">
                             <div class="gd-selected-skill-name">${_escapeHtml(selectedInfo.title)}</div>
                             <div class="gd-selected-skill-info">
-                                Level ${selectedInfo.level} · ${_escapeHtml(selectedInfo.family)} · ${selectedInfo.poolSize} exercises available
+                                Level ${selectedInfo.level} · ${selectedInfo.poolSize} exercises available
                             </div>
                         </div>
                         ${selectedInfo.taught_in ? `

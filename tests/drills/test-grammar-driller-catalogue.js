@@ -99,8 +99,10 @@ function createDrillerEnv(langCode) {
     // 2. Must not contain "0 exercises available"
     assert.ok(!html.includes('0 exercises available'),
         'Selected skill card must not show 0 exercises available');
-    assert.ok(!html.includes('(0 exercises)'),
-        'List must not contain (0 exercises)');
+    assert.ok(!html.match(/\b0 exercises\b/),
+        'List must not contain 0 exercises');
+    assert.ok(!html.includes('gd-family-tag'),
+        'Skill rows must not display gd-family-tag brown badges');
 
     // 3. Brand new learner starts on Practise a skill tab (TAB.SKILL active)
     assert.ok(html.includes('data-tab="skill" role="tab" aria-selected="true"'),
@@ -148,8 +150,10 @@ function createDrillerEnv(langCode) {
 
     assert.ok(!huHtml.includes('0 exercises available'),
         'hu: Selected skill card must not show 0 exercises available');
-    assert.ok(!huHtml.includes('(0 exercises)'),
-        'hu: List must not contain (0 exercises)');
+    assert.ok(!huHtml.match(/\b0 exercises\b/),
+        'hu: List must not contain 0 exercises');
+    assert.ok(!huHtml.includes('gd-family-tag'),
+        'hu: Skill rows must not display gd-family-tag brown badges');
     assert.ok(huHtml.includes('data-tab="skill" role="tab" aria-selected="true"'),
         'hu: Practise a skill tab must be active for new learner');
     console.log('✓ hu: retired slugs excluded, 0-exercise skills hidden, and clean greeting for new learners');

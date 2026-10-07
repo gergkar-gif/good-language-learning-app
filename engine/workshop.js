@@ -32,7 +32,7 @@ const Workshop = (function () {
             id: 'writing',
             icon: 'writing',
             title: 'Writing Studio',
-            sub: () => `Sentence translation and open-ended composition with CEFR grading.`,
+            sub: () => `Sentence translation and open-ended written production with CEFR grading.`,
             containerId: 'writing-driller-root',
             category: 'studios'
         },
