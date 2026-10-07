@@ -30,7 +30,7 @@
     {
       "id": "b1-27-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which sentence means «we keep in touch»? [¿Cuál significa «nos mantenemos en contacto»?]",
       "options": [
         "Nos mantenemos en contacto por correo. [We keep in touch by email.]",
@@ -39,14 +39,14 @@
       ],
       "correct": 0,
       "teaches": [
-        "verbos-regimen-preposicional"
+        "b1-social-life-communication-vocab"
       ]
     },
     {
       "id": "b1-27-01.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Hablé __ Ana ayer. (con) [I spoke with Ana yesterday.]",
+      "sentence": "Hablé __ Ana ayer. (with) [I spoke with Ana yesterday.]",
       "answer": "con",
       "teaches": [
         "verbos-regimen-preposicional"
@@ -56,7 +56,7 @@
     {
       "id": "b1-27-01.ex04",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "tiles": [
         "Nos",
         "mantenemos",
@@ -65,17 +65,27 @@
         "por",
         "correo."
       ],
-      "solution": [
-        "Nos",
-        "mantenemos",
-        "en",
-        "contacto",
-        "por",
-        "correo."
+      "solutions": [
+        [
+          "Nos",
+          "mantenemos",
+          "en",
+          "contacto",
+          "por",
+          "correo."
+        ],
+        [
+          "por",
+          "correo.",
+          "Nos",
+          "mantenemos",
+          "en",
+          "contacto"
+        ]
       ],
       "english": "We keep in touch by email.",
       "teaches": [
-        "verbos-regimen-preposicional"
+        "b1-social-life-communication-vocab"
       ]
     },
     {
@@ -83,9 +93,9 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "Le mandé un mensaje. [I sent him/her a message.]",
-        "A mi hermano. [To my brother.]",
-        "Le mandé un mensaje a mi hermano. [I sent my brother a message.]"
+        "Primero escribí un mensaje. [First I wrote a message.]",
+        "Después le mandé el mensaje a mi hermano. [Then I sent the message to my brother.]",
+        "Finalmente mi hermano me contestó. [Finally my brother answered me.]"
       ],
       "solution": [
         0,
@@ -93,13 +103,13 @@
         2
       ],
       "teaches": [
-        "verbos-regimen-preposicional"
+        "objeto-indirecto"
       ]
     },
     {
       "id": "b1-27-01.ex06",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which verb means «to communicate»? [¿Qué verbo significa «comunicarse»?]",
       "options": [
         "comunicarse [to communicate]",
@@ -108,17 +118,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "verbos-regimen-preposicional"
+        "b1-social-life-communication-vocab"
       ]
     },
     {
       "id": "b1-27-01.ex07",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Voy a __ con Marta mañana. (contactar) [I am going to contact Marta tomorrow.]",
+      "category": "vocabulary",
+      "sentence": "Voy a __ con Marta mañana. (to contact) [I am going to contact Marta tomorrow.]",
       "answer": "contactar",
       "teaches": [
-        "verbos-regimen-preposicional"
+        "b1-social-life-communication-vocab"
       ],
       "english": "I am going to contact Marta tomorrow."
     },
@@ -135,18 +145,29 @@
         "mi",
         "hermano."
       ],
-      "solution": [
-        "Le",
-        "mandé",
-        "un",
-        "mensaje",
-        "a",
-        "mi",
-        "hermano."
+      "solutions": [
+        [
+          "Le",
+          "mandé",
+          "un",
+          "mensaje",
+          "a",
+          "mi",
+          "hermano."
+        ],
+        [
+          "a",
+          "mi",
+          "hermano.",
+          "Le",
+          "mandé",
+          "un",
+          "mensaje"
+        ]
       ],
       "english": "I sent my brother a message.",
       "teaches": [
-        "verbos-regimen-preposicional"
+        "objeto-indirecto"
       ]
     },
     {
@@ -161,7 +182,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "verbos-regimen-preposicional"
+        "b1-social-life-communication-vocab"
       ]
     },
     {
@@ -176,7 +197,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "verbos-regimen-preposicional"
+        "b1-social-life-communication-vocab"
       ]
     },
     {
@@ -185,7 +206,7 @@
       "category": "listening",
       "sentence": "Le mandé un mensaje a mi hermano.",
       "teaches": [
-        "verbos-regimen-preposicional"
+        "objeto-indirecto"
       ],
       "english": "I sent my brother a message."
     },
@@ -210,7 +231,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "verbos-regimen-preposicional"
+        "b1-social-life-communication-vocab"
       ]
     },
     {
@@ -258,8 +279,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "verbos-regimen-preposicional"
-      ]
+        "objeto-indirecto"
+      ],
+      "distractor_skills": {
+        "1": "objeto-directo"
+      }
     },
     {
       "id": "b1-27-01.ex15",
@@ -272,7 +296,7 @@
         }
       ],
       "teaches": [
-        "verbos-regimen-preposicional"
+        "b1-social-life-communication-vocab"
       ]
     },
     {
@@ -286,7 +310,7 @@
         }
       ],
       "teaches": [
-        "verbos-regimen-preposicional"
+        "b1-social-life-communication-vocab"
       ]
     }
   ]

@@ -35,8 +35,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-29-02.ex03",
@@ -45,7 +49,7 @@
       "sentence": "En 2020 me ___ a otra ciudad. (mudarse) [In 2020 I moved to another city.]",
       "answer": "mudé",
       "teaches": [
-        "imperfect"
+        "preterito-indefinido"
       ],
       "english": "In 2020 I moved to another city."
     },
@@ -62,18 +66,29 @@
         "otro",
         "país."
       ],
-      "solution": [
-        "En",
-        "2018",
-        "me",
-        "mudé",
-        "a",
-        "otro",
-        "país."
-      ],
       "english": "In 2018 I moved to another country.",
       "teaches": [
         "imperfect"
+      ],
+      "solutions": [
+        [
+          "En",
+          "2018",
+          "me",
+          "mudé",
+          "a",
+          "otro",
+          "país."
+        ],
+        [
+          "me",
+          "mudé",
+          "a",
+          "otro",
+          "país.",
+          "En",
+          "2018"
+        ]
       ]
     },
     {
@@ -91,13 +106,13 @@
         2
       ],
       "teaches": [
-        "imperfect"
+        "secuencia-narrativa"
       ]
     },
     {
       "id": "b1-29-02.ex06",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which verb means «to emigrate»? [¿Qué verbo significa «emigrar»?]",
       "options": [
         "emigrar [to emigrate]",
@@ -106,17 +121,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
+        "b1-migration-identity-vocab"
       ]
     },
     {
       "id": "b1-29-02.ex07",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "La ___ fue difícil, pero importante. (llegada) [The arrival was difficult, but important.]",
+      "category": "vocabulary",
+      "sentence": "La ___ fue difícil, pero importante. (arrival) [The arrival was difficult, but important.]",
       "answer": "llegada",
       "teaches": [
-        "imperfect"
+        "b1-migration-identity-vocab"
       ],
       "english": "The arrival was difficult, but important."
     },
@@ -132,17 +147,27 @@
         "a",
         "nadie."
       ],
-      "solution": [
-        "Al",
-        "principio",
-        "no",
-        "conocía",
-        "a",
-        "nadie."
-      ],
       "english": "At first I did not know anyone.",
       "teaches": [
         "imperfect"
+      ],
+      "solutions": [
+        [
+          "Al",
+          "principio",
+          "no",
+          "conocía",
+          "a",
+          "nadie."
+        ],
+        [
+          "no",
+          "conocía",
+          "a",
+          "nadie.",
+          "Al",
+          "principio"
+        ]
       ]
     },
     {
@@ -157,7 +182,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
+        "preterito-indefinido"
       ]
     },
     {
@@ -172,7 +197,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
+        "b1-migration-identity-vocab"
       ]
     },
     {
@@ -181,7 +206,7 @@
       "category": "listening",
       "sentence": "Después conocí a mis vecinos.",
       "teaches": [
-        "imperfect"
+        "b1-migration-identity-vocab"
       ],
       "english": "Later I met my neighbours."
     },
@@ -202,12 +227,16 @@
       "options": [
         "Me mudé en 2020. [I moved in 2020.]",
         "Me mudaba en 2020. [I was moving in 2020.]",
-        "Me haya mudado en 2020. [I have (subjunctive) moved in 2020.]"
+        "Me mudaré en 2020. [I will move in 2020.]"
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "preterito-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-29-02.ex13",
@@ -225,13 +254,16 @@
       ],
       "options": [
         "No, no conocía a nadie. [No, I did not know anyone.]",
-        "Sí, haya conocido a alguien. [Yes, I have (subjunctive) known someone.]",
+        "Sí, conoceré a alguien. [Yes, I will know someone.]",
         "No, me mudé a nadie. [No, I moved nobody.]"
       ],
       "correct": 0,
       "teaches": [
         "imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      }
     },
     {
       "id": "b1-29-02.ex14",
@@ -250,12 +282,16 @@
       "options": [
         "Fue difícil, pero interesante. [It was difficult, but interesting.]",
         "Sea difícil, pero interesante. [It be (subjunctive) difficult, but interesting.]",
-        "Haya sido difícil, pero interesante. [It has (subjunctive) been difficult, but interesting.]"
+        "Será difícil, pero interesante. [It will be difficult, but interesting.]"
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "preterito-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-29-02.ex15",
@@ -268,7 +304,7 @@
         }
       ],
       "teaches": [
-        "imperfect"
+        "preterito-indefinido"
       ]
     },
     {
@@ -296,7 +332,7 @@
         }
       ],
       "teaches": [
-        "imperfect"
+        "preterite-vs-imperfect"
       ]
     }
   ]
