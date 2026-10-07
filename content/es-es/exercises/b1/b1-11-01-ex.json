@@ -46,7 +46,7 @@
       "id": "b1-11-01.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "La calle __ vivo está cerca de una estación. (donde) [The street where I live is near a station.]",
+      "sentence": "La calle __ vivo está cerca de una estación. (where) [The street where I live is near a station.]",
       "answer": "donde",
       "teaches": [
         "relative-clauses"
@@ -67,23 +67,37 @@
         "los",
         "vecinos",
         "se",
-        "reúnen."
-      ],
-      "solution": [
-        "Hay",
-        "una",
-        "plaza",
-        "en",
-        "la",
-        "que",
-        "los",
-        "vecinos",
-        "se",
-        "reúnen."
+        "reúnen"
       ],
       "english": "There is a square where the neighbours meet.",
       "teaches": [
         "relative-clauses"
+      ],
+      "solutions": [
+        [
+          "Hay",
+          "una",
+          "plaza",
+          "en",
+          "la",
+          "que",
+          "los",
+          "vecinos",
+          "se",
+          "reúnen"
+        ],
+        [
+          "Hay",
+          "una",
+          "plaza",
+          "en",
+          "la",
+          "que",
+          "se",
+          "reúnen",
+          "los",
+          "vecinos"
+        ]
       ]
     },
     {
@@ -93,7 +107,7 @@
       "sentences": [
         "Vivo en un barrio que tiene una plaza tranquila. [I live in a neighbourhood that has a quiet square.]",
         "La plaza está cerca de mi casa. [The square is near my home.]",
-        "Los vecinos se reúnen allí los domingos. [The neighbours meet there on Sundays.]"
+        "Finalmente, los vecinos se reúnen allí los domingos. [Finally, the neighbours meet there on Sundays.]"
       ],
       "solution": [
         0,
@@ -101,7 +115,7 @@
         2
       ],
       "teaches": [
-        "relative-clauses"
+        "ordering-markers"
       ]
     },
     {
@@ -111,22 +125,25 @@
       "question": "Which form completes «Hay una plaza en la que los vecinos ___ los domingos»? [¿Qué forma completa la frase?]",
       "options": [
         "se reúnen [meet]",
-        "se reunirán [will meet]",
+        "se reúne [meets (singular)]",
         "se reúnan [meet (subjunctive)]"
       ],
       "correct": 0,
       "teaches": [
         "relative-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-11-01.ex07",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "fill-blank",
-      "sentence": "El edificio que está al final de la calle está __ junto al parque. (ubicado) [The building at the end of the street is located next to the park.]",
+      "sentence": "El edificio que está al final de la calle está __ junto al parque. (located) [The building at the end of the street is located next to the park.]",
       "answer": "ubicado",
       "teaches": [
-        "relative-clauses"
+        "b1-cities-communities-vocab"
       ],
       "english": "The building at the end of the street is located next to the park."
     },
@@ -240,7 +257,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Hay algún lugar donde podáis reuniros?"
+          "text": "¿Hay algún lugar donde puedan reunirse ustedes?"
         },
         {
           "speaker": "B",
@@ -282,7 +299,7 @@
         }
       ],
       "teaches": [
-        "relative-clauses"
+        "b1-cities-communities-vocab"
       ]
     }
   ]
