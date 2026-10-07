@@ -31,12 +31,16 @@
       "options": [
         "Cuando éramos pequeños, solíamos reunirnos los domingos. [When we were children, we used to get together on Sundays.]",
         "El fin de semana pasado nos reunimos a las cinco. [Last weekend we met at five.]",
-        "Todos los domingos nos reunimos a las cinco de la tarde. [Every Sunday we meet at five in the afternoon.]"
+        "Todos los domingos nos reuniremos a las cinco de la tarde. [Every Sunday we will meet at five in the afternoon.]"
       ],
       "correct": 0,
       "teaches": [
         "imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-05-02.ex03",
@@ -45,7 +49,7 @@
       "sentence": "Cuando éramos pequeños, __ reunirnos en casa de nuestros abuelos. [When we were children, we used to get together at our grandparents' house.] (soler)",
       "answer": "solíamos",
       "teaches": [
-        "imperfect"
+        "habitos-soler"
       ],
       "english": "When we were children, we used to get together at our grandparents' house."
     },
@@ -95,7 +99,7 @@
         2
       ],
       "teaches": [
-        "imperfect"
+        "ordering-markers"
       ]
     },
     {
@@ -105,7 +109,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué hacíais durante las vacaciones?"
+          "text": "¿Qué hacían durante las vacaciones?"
         },
         {
           "speaker": "B",
@@ -113,7 +117,7 @@
         },
         {
           "speaker": "A",
-          "text": "Parece que pasabais mucho tiempo juntos."
+          "text": "Parece que pasaban mucho tiempo juntos."
         }
       ],
       "options": [
@@ -124,7 +128,11 @@
       "correct": 0,
       "teaches": [
         "imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "b1-05-02.ex07",
@@ -182,8 +190,7 @@
       ],
       "english": "Every summer we used to visit our neighbours who lived nearby.",
       "teaches": [
-        "imperfect",
-        "relative-clauses"
+        "imperfect"
       ]
     },
     {
@@ -207,7 +214,7 @@
       "category": "listening",
       "sentence": "Antes discutíamos por cosas pequeñas, pero después hablábamos.",
       "teaches": [
-        "imperfect"
+        "b1-relationships-vocab"
       ],
       "english": "We used to argue about small things, but then we would talk."
     },
@@ -218,7 +225,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Cómo pasabais los domingos?"
+          "text": "¿Cómo pasaban los domingos?"
         },
         {
           "speaker": "B",
@@ -226,7 +233,7 @@
         },
         {
           "speaker": "A",
-          "text": "Eso explica por qué estabais tan unidos."
+          "text": "Eso explica por qué estaban tan unidos."
         }
       ],
       "options": [
@@ -237,7 +244,11 @@
       "correct": 0,
       "teaches": [
         "imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-05-02.ex13",
@@ -251,8 +262,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "habitos-soler"
+      }
     },
     {
       "id": "b1-05-02.ex14",
@@ -298,8 +313,7 @@
         }
       ],
       "teaches": [
-        "imperfect",
-        "relative-clauses"
+        "habitos-soler"
       ]
     }
   ]

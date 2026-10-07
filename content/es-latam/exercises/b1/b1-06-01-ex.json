@@ -30,7 +30,7 @@
     {
       "id": "b1-06-01.ex02",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which sentence gives a professional description? [¿Cuál da una descripción profesional?]",
       "options": [
         "Soy responsable de coordinar un equipo pequeño. [I am responsible for coordinating a small team.]",
@@ -39,14 +39,18 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-work-professional-life-vocab"
-      ]
+        "present-tense"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-06-01.ex03",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Tengo cinco años de __ profesional. [I have five years of professional experience.] (experiencia)",
+      "sentence": "Tengo cinco años de __ profesional. [I have five years of professional experience.] (experience)",
       "answer": "experiencia",
       "teaches": [
         "b1-work-professional-life-vocab"
@@ -89,7 +93,7 @@
     {
       "id": "b1-06-01.ex05",
       "type": "sentence-order",
-      "category": "vocabulary",
+      "category": "grammar",
       "sentences": [
         "Primero digo cuál es mi puesto. [First I say what my position is.]",
         "Después explico de qué soy responsable. [Then I explain what I am responsible for.]",
@@ -101,13 +105,13 @@
         2
       ],
       "teaches": [
-        "b1-work-professional-life-vocab"
+        "ordering-markers"
       ]
     },
     {
       "id": "b1-06-01.ex06",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "grammar",
       "prompt": [
         {
           "speaker": "A",
@@ -125,8 +129,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-work-professional-life-vocab"
-      ]
+        "present-tense"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-06-01.ex07",
@@ -147,7 +155,7 @@
       "id": "b1-06-01.ex08",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Mi __ consiste en analizar información y preparar informes. [My position involves analysing information and preparing reports.] (puesto)",
+      "sentence": "Mi __ consiste en analizar información y preparar informes. [My position involves analysing information and preparing reports.] (position)",
       "answer": "puesto",
       "teaches": [
         "b1-work-professional-life-vocab"
@@ -197,7 +205,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-work-professional-life-vocab"
+        "present-tense"
       ]
     },
     {
@@ -213,7 +221,7 @@
     {
       "id": "b1-06-01.ex12",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "grammar",
       "prompt": [
         {
           "speaker": "A",
@@ -227,12 +235,16 @@
       "options": [
         "Tengo cinco años de experiencia en este sector. [I have five years of experience in this sector.]",
         "Tuve cinco años de experiencia en este sector hace tiempo. [I had five years of experience in this sector some time ago.]",
-        "Tendré cinco años de experiencia en este sector el próximo año. [I will have five years of experience in this sector next year.]"
+        "Tendré mucha experiencia en este sector algún día. [I will have a lot of experience in this sector some day.]"
       ],
       "correct": 0,
       "teaches": [
-        "b1-work-professional-life-vocab"
-      ]
+        "present-tense"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-06-01.ex13",
@@ -253,7 +265,7 @@
       "id": "b1-06-01.ex14",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Soy __ de coordinar el proyecto. [I am responsible for coordinating the project.] (responsable)",
+      "sentence": "Soy __ de coordinar el proyecto. [I am responsible for coordinating the project.] (responsible)",
       "answer": "responsable",
       "teaches": [
         "b1-work-professional-life-vocab"

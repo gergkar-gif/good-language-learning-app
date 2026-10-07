@@ -49,7 +49,7 @@
       "sentence": "Cuando éramos pequeños, __ reunirnos los domingos. [When we were children, we used to get together on Sundays.] (soler)",
       "answer": "solíamos",
       "teaches": [
-        "imperfect"
+        "habitos-soler"
       ],
       "english": "When we were children, we used to get together on Sundays."
     },
@@ -77,7 +77,7 @@
       ],
       "english": "Lately we have become closer because we talk more.",
       "teaches": [
-        "past-participles"
+        "preterito-perfecto"
       ]
     },
     {
@@ -95,8 +95,7 @@
         2
       ],
       "teaches": [
-        "imperfect",
-        "past-participles"
+        "ordering-markers"
       ]
     },
     {
@@ -135,12 +134,16 @@
       "options": [
         "Todos los veranos visitábamos a nuestros vecinos. [Every summer we used to visit our neighbours.]",
         "El fin de semana pasado visitamos a nuestros vecinos. [Last weekend we visited our neighbours.]",
-        "Todos los veranos visitamos a nuestros vecinos. [Every summer we visit our neighbours.]"
+        "Todos los veranos visitaremos a nuestros vecinos. [Every summer we will visit our neighbours.]"
       ],
       "correct": 0,
       "teaches": [
         "imperfect"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-05-consolidation.ex08",
@@ -149,7 +152,7 @@
       "sentence": "Nuestra relación __ mucho desde que empezamos a hablar más. [Our relationship has changed a lot since we started talking more.] (cambiar)",
       "answer": "ha cambiado",
       "teaches": [
-        "past-participles"
+        "preterito-perfecto"
       ],
       "english": "Our relationship has changed a lot since we started talking more."
     },
@@ -196,8 +199,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect",
-        "past-participles"
+        "imperfect-vs-present-perfect"
       ]
     },
     {
@@ -212,8 +214,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "relative-clauses",
-        "reflexives"
+        "relative-clauses"
       ]
     },
     {
@@ -222,8 +223,7 @@
       "category": "listening",
       "sentence": "Antes discutíamos mucho, pero últimamente nos hemos acercado.",
       "teaches": [
-        "imperfect",
-        "past-participles"
+        "b1-relationships-vocab"
       ],
       "english": "We used to argue a lot, but lately we have grown closer."
     },
@@ -252,9 +252,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "contrast-concession-connectors",
-        "reflexives"
-      ]
+        "preterito-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "b1-05-consolidation.ex14",
@@ -274,11 +277,11 @@
     {
       "id": "b1-05-consolidation.ex15",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Después del __, decidieron hablar y reconciliarse. [After the misunderstanding, they decided to talk and make up.] (malentendido)",
+      "category": "vocabulary",
+      "sentence": "Después del __, decidieron hablar y reconciliarse. [After the misunderstanding, they decided to talk and make up.] (misunderstanding)",
       "answer": "malentendido",
       "teaches": [
-        "contrast-concession-connectors"
+        "b1-relationships-vocab"
       ],
       "english": "After the misunderstanding, they decided to talk and make up."
     },
@@ -314,8 +317,7 @@
       ],
       "english": "Although we have grown somewhat distant, we still trust one another.",
       "teaches": [
-        "past-participles",
-        "reflexives"
+        "preterito-perfecto"
       ]
     },
     {
@@ -333,9 +335,7 @@
         }
       ],
       "teaches": [
-        "imperfect",
-        "past-participles",
-        "relative-clauses"
+        "imperfect-vs-present-perfect"
       ]
     },
     {
@@ -353,10 +353,7 @@
         }
       ],
       "teaches": [
-        "contrast-concession-connectors",
-        "relative-clauses",
-        "imperfect",
-        "reflexives"
+        "b1-relationships-vocab"
       ]
     }
   ]

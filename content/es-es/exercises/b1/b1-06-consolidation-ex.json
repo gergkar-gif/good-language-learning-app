@@ -30,7 +30,7 @@
     {
       "id": "b1-06-consolidation.ex02",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which sentence gives a current professional description? [¿Cuál da una descripción profesional actual?]",
       "options": [
         "Actualmente trabajo con clientes y me encargo de preparar informes. [I currently work with clients and I am in charge of preparing reports.]",
@@ -39,8 +39,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-work-professional-life-vocab"
-      ]
+        "present-tense"
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-06-consolidation.ex03",
@@ -49,7 +53,7 @@
       "sentence": "Antes __ en una empresa pequeña, pero ahora trabajo por mi cuenta. [I used to work at a small company, but now I work for myself.] (trabajar)",
       "answer": "trabajaba",
       "teaches": [
-        "contrast-concession-connectors"
+        "imperfect"
       ],
       "english": "I used to work at a small company, but now I work for myself."
     },
@@ -95,13 +99,13 @@
         2
       ],
       "teaches": [
-        "porque-y-por-eso"
+        "ordering-markers"
       ]
     },
     {
       "id": "b1-06-consolidation.ex06",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "vocabulary",
       "prompt": [
         {
           "speaker": "A",
@@ -119,13 +123,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "porque-y-por-eso"
+        "b1-work-professional-life-vocab"
       ]
     },
     {
       "id": "b1-06-consolidation.ex07",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Which sentence expresses obligation? [¿Cuál expresa obligación?]",
       "options": [
         "Tenemos que cumplir el plazo. [We have to meet the deadline.]",
@@ -134,14 +138,18 @@
       ],
       "correct": 0,
       "teaches": [
-        "b1-work-professional-life-vocab"
-      ]
+        "tener-que"
+      ],
+      "distractor_skills": {
+        "1": "querer-poder",
+        "2": "querer-poder"
+      }
     },
     {
       "id": "b1-06-consolidation.ex08",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "No puedo __ la propuesta sin más información. [I cannot refuse the proposal without more information.] (rechazar)",
+      "sentence": "No puedo __ la propuesta sin más información. [I cannot refuse the proposal without more information.] (to refuse)",
       "answer": "rechazar",
       "teaches": [
         "b1-work-professional-life-vocab"
@@ -222,7 +230,7 @@
     {
       "id": "b1-06-consolidation.ex13",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "vocabulary",
       "prompt": [
         {
           "speaker": "A",
@@ -255,19 +263,22 @@
       ],
       "correct": 0,
       "teaches": [
-        "pasiva-refleja"
+        "se-impersonal"
       ]
     },
     {
       "id": "b1-06-consolidation.ex15",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Debido a un __ en el informe, tuvimos que repetir el análisis. [Because of an error in the report, we had to repeat the analysis.]",
-      "answer": "error",
-      "teaches": [
-        "porque-y-por-eso"
+      "category": "vocabulary",
+      "sentence": "Debido a un __ en el informe, tuvimos que repetir el análisis. [Because of a mistake in the report, we had to repeat the analysis.]",
+      "answers": [
+        "error",
+        "fallo"
       ],
-      "english": "Because of an error in the report, we had to repeat the analysis."
+      "teaches": [
+        "b1-work-professional-life-vocab"
+      ],
+      "english": "Because of a mistake in the report, we had to repeat the analysis."
     },
     {
       "id": "b1-06-consolidation.ex16",
@@ -315,7 +326,6 @@
         }
       ],
       "teaches": [
-        "porque-y-por-eso",
         "b1-work-professional-life-vocab"
       ]
     },
@@ -334,8 +344,7 @@
         }
       ],
       "teaches": [
-        "b1-work-professional-life-vocab",
-        "pasiva-refleja"
+        "b1-work-professional-life-vocab"
       ]
     }
   ]
