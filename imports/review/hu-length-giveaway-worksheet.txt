@@ -98,8 +98,8 @@ How do you say 'I have' in Hungarian?
 * van + possessive suffix
 - habok
 - vagyok
-decision: match: habok + accusative suffix || vagyok + possessive suffix
-why: Preserves distractor_skills for option 2 (van-zero-copula) by keeping 1st person copula vagyok; balanced grammatical descriptors (25, 26 vs 23 chars).
+decision: match: van + accusative suffix || vagyok + possessive suffix
+why: Replaces non-word 'habok' with real Hungarian form 'van + accusative suffix', testing the transitive case error while preserving distractor_skills for vagyok (23, 26 vs 23 chars).
 
 ### a1-42-practice-1   teaches: ['possessive-suffixes']
 files: content/hu/exercises/a1/a1-42-ex.json
@@ -108,8 +108,8 @@ Why does szoba lengthen its final -a to -á before the possessive suffix?
 * vowel-final stems shift shape slightly before the suffix
 - it never changes
 - it's a random exception
-decision: match: vowel-final stems never change when suffixes attach || it is a completely irregular spelling exception
-why: Expands the two false grammatical claims into full parallel explanation clauses of balanced length (49, 47 vs 56 chars).
+decision: match: vowel-final stems keep their basic dictionary form before suffixes || it is an isolated historical exception found in older texts
+why: Replaces extreme absolutes ('never', 'completely') with plausible morphological hypotheses of balanced length (66, 60 vs 56 chars).
 
 ### a1-68-dialogue-1   teaches: ['spatial-questions-hol-hova']
 files: content/hu/exercises/a1/a1-68-ex.json
@@ -158,8 +158,8 @@ Meg: Mióta tanulsz magyarul?
 Ildikó: _____
 * Két éve tanulok, és minden nap gyakorlok egy kicsit.
 - Sajnos nem tudok jönni.
-decision: match: Sajnos ma nem tudok jönni a magyar nyelvórára.
-why: Declining to attend today's class does not answer 'Mióta tanulsz magyarul?'; natural A2 Hungarian matching length (46 vs 52 chars).
+decision: match: Egy nyelviskolában tanulok a belvárosban a barátommal.
+why: Stating where and with whom one studies fails to answer 'Mióta tanulsz magyarul?'; natural positive A2 sentence matching length (53 vs 52 chars).
 
 ### a2-100-dialogue-2   teaches: ['a2-review-life-leisure-health-vocab']
 files: content/hu/exercises/a2/a2-100-ex.json
@@ -178,8 +178,8 @@ Petra: Mi a foglalkozásod?
 Meg: _____
 * Tanár vagyok, egy iskolában dolgozom.
 - Ma nincs vizsgám.
-decision: match: Ma sajnos nincs vizsgám az egyetemen.
-why: Saying one has no university exam today does not state a profession; correct A2 vocabulary matching length (36 vs 37 chars).
+decision: match: Hétfőtől péntekig egy irodában dolgozom.
+why: Answering working days and location does not answer what one's profession is; natural A2 Hungarian matching length (39 vs 37 chars).
 
 ### a2-123-dialogue-2   teaches: ['a2-the-past-2-vocab']
 files: content/hu/exercises/a2/a2-123-ex.json
@@ -198,8 +198,8 @@ Petra: Mesélj! Mi történt aznap?
 Meg: _____
 * Előbb bevásároltam, aztán találkoztam Tamással, végül hazamentem.
 - Sosem vásárolok a piacon.
-decision: match: Általában otthon maradok, és sosem vásárolok a piacon.
-why: Present-tense habitual statement fails to answer what happened on that specific past day; correct A2 Hungarian (54 vs 65 chars).
+decision: match: Általában otthon vagyok délután, és ritkán járok a piacra.
+why: Drops absolute 'sosem' in favor of natural habitual routine ('ritkán'), failing to answer what happened that day (57 vs 65 chars).
 
 ### a2-127-dialogue-1   teaches: ['a2-telling-stories-vocab']
 files: content/hu/exercises/a2/a2-127-ex.json
@@ -208,8 +208,8 @@ Petra: Miért nevettél?
 Meg: _____
 * Károly elmesélt egy nagyon vicces történetet.
 - Elromlott az autóm.
-decision: match: Sajnos tegnap délután elromlott az autóm.
-why: A broken car does not explain why one was laughing; grammatically correct past tense sentence matching length (41 vs 45 chars).
+decision: match: Károly mutatott egy új könyvet a könyvtárban.
+why: Showing a new book in the library does not explain why one was laughing; neutral everyday statement matching length (45 vs 45 chars).
 
 ### a2-127-dialogue-2   teaches: ['a2-telling-stories-vocab']
 files: content/hu/exercises/a2/a2-127-ex.json
@@ -218,8 +218,8 @@ Meg: Milyen volt a vicc?
 Károly: _____
 * Egy kicsit nevetséges volt, de nagyon vicces.
 - Nagyon drága volt.
-decision: match: Egyáltalán nem tetszett, mert nagyon drága volt.
-why: Describing something as 'very expensive' does not describe a joke; natural past tense Hungarian matching length (48 vs 45 chars).
+decision: match: Péter mesélte tegnap este a vacsora közben.
+why: Stating who told the joke and when gives no opinion about what the joke was like, properly failing to answer 'Milyen volt a vicc?' (43 vs 45 chars).
 
 ### a2-130-dialogue-1   teaches: ['a2-telling-stories-vocab']
 files: content/hu/exercises/a2/a2-130-ex.json
@@ -228,8 +228,8 @@ Petra: Mesélj a bécsi utatokról!
 Meg: _____
 * Az elején esett az eső, de a végén gyönyörű volt az idő.
 - Sosem voltam még Bécsben.
-decision: match: Sajnos még sosem voltam Bécsben, és nem ismerem a várost.
-why: Denying ever having been to Vienna directly contradicts Petra's premise about their trip; natural A2 Hungarian (56 vs 56 chars).
+decision: match: Bécs egy nagyon szép város, és sok híres múzeum van ott.
+why: Giving a general tourist fact about Vienna does not tell about their trip; positive neutral statement matching length (56 vs 56 chars).
 
 ### a2-146-dialogue-1   teaches: ['a2-work-professions-vocab']
 files: content/hu/exercises/a2/a2-146-ex.json
@@ -238,8 +238,8 @@ Petra: Mi a foglalkozásod?
 Meg: _____
 * Tanár vagyok, egy budapesti iskolában.
 - Sajnos nincs időm.
-decision: match: Sajnos ma délután egyáltalán nincs időm.
-why: Having no time this afternoon does not answer what one's profession is; natural idiomatic Hungarian matching length (39 vs 38 chars).
+decision: match: Egy budapesti cégnél dolgozom az irodában.
+why: Stating workplace does not answer what one's profession is; natural A2 Hungarian matching length (42 vs 38 chars).
 
 ### a2-157-dialogue-1   teaches: ['a2-living-in-hungarian-vocab']
 files: content/hu/exercises/a2/a2-157-ex.json
@@ -248,8 +248,8 @@ Petra: Hol laknak a szüleid?
 Meg: _____
 * Egy kis házban laknak a város szélén, ahol szép kert van.
 - Sajnos elromlott a mosógép.
-decision: match: Sajnos tegnap este elromlott a mosógép a fürdőszobában.
-why: A broken washing machine does not answer where one's parents live; natural past tense Hungarian matching length (54 vs 57 chars).
+decision: match: Gyakran meglátogatom őket hétvégén egy közös ebédre.
+why: Saying how often one visits parents does not answer where they live; natural pleasant Hungarian matching length (52 vs 57 chars).
 
 ### a2-160-consolidation-1   teaches: ['sequencing-elobb-aztan-utana-vegul']
 files: content/hu/exercises/a2/a2-160-consolidation-ex.json
@@ -278,8 +278,8 @@ What is the difference between 'például' and 'példaként'?
 * 'például' is 'for example', 'példaként' is 'as an example'
 - 'például' is a verb
 - They mean the opposite
-decision: match: 'például' is an inflected verb, while 'példaként' is a noun || They have completely opposite meanings in everyday speech
-why: Both false grammatical/semantic explanations are expanded into full English sentences of matching length (59, 57 vs 58 chars).
+decision: match: 'például' is used in writing, while 'példaként' is spoken only || 'például' introduces causes, while 'példaként' shows results
+why: Replaces 'completely opposite' with plausible register and functional distinctions of balanced length (63, 61 vs 58 chars).
 
 ### a2-180-intro-1   teaches: ['essive-formal-kent']
 files: content/hu/exercises/a2/a2-180-ex.json
@@ -288,8 +288,8 @@ What is the difference between 'Tanár vagyok' and 'Tanárként dolgozom'?
 * 'Tanár vagyok' states identity, 'tanárként dolgozom' describes one's current role
 - They mean completely opposite things
 - There is no difference
-decision: match: 'Tanár vagyok' and 'tanárként dolgozom' mean completely opposite things || There is no difference between them in either meaning or grammar usage
-why: Expands the two false contrastive claims into full clear English sentences of matching length (71, 70 vs 81 chars).
+decision: match: 'Tanár vagyok' is past tense, while 'tanárként dolgozom' expresses the present || 'Tanár vagyok' is formal speech, while 'tanárként dolgozom' is informal slang
+why: Replaces 'completely opposite' with plausible tense and register contrasts of matching length (81, 79 vs 81 chars).
 
 ### a2-181-practice-4   teaches: ['formal-address-on']
 files: content/hu/exercises/a2/a2-181-ex.json
@@ -378,8 +378,8 @@ What document must you present to pick up a registered parcel addressed to you a
 * Személyi igazolványt vagy útlevelet és a lakcímkártyát.
 - Bármilyen boltos blokkot.
 - Egy metróbérletet.
-decision: match: Csak egy érvényes diákigazolványt vagy könyvtári jegyet. || Bármilyen boltos pénztárgépi blokkot és egy számlát.
-why: Expands absurd distractors into full, plausible alternative document combinations of matching length (55, 52 vs 55 chars).
+decision: match: Egy érvényes diákigazolványt és az egyetemi leckekönyvet. || A banki átutalási bizonylatot és a postai feladóvevényt.
+why: Replaces 'csak' and 'bármilyen' with plausible real Hungarian document pairs in accusative case (57, 56 vs 55 chars).
 
 ### a2-210-intro-2   teaches: ['a2-post-office-vocab']
 files: content/hu/exercises/a2/a2-210-ex.json
@@ -388,8 +388,8 @@ What is an 'értesítő' in postal terms?
 * A paper notice left by the mail carrier when nobody answered the door.
 - A bill you must pay immediately.
 - A coupon for free stamps.
-decision: match: An urgent utility bill that you must pay immediately at the post office. || A promotional postal coupon for receiving free envelopes and stamps.
-why: Both wrong options are full English definitions of postal paperwork, matching the structure of the correct answer (72, 68 vs 70 chars).
+decision: match: An official receipt confirming that the recipient paid for the delivery. || A customs declaration form attached to packages arriving from abroad.
+why: Replaces promotional coupon / urgent bill with real postal document definitions of matching length (73, 70 vs 70 chars).
 
 ### a2-211-check-1   teaches: ['a2-banking-vocab']
 files: content/hu/exercises/a2/a2-211-ex.json
@@ -398,8 +398,8 @@ What is an 'adóazonosító jel' in Hungary?
 * A 10-digit tax identification number on your tax card.
 - A bank account password.
 - A phone number.
-decision: match: A secret security password used for your bank account. || A permanent Hungarian telephone number for the bank.
-why: Both wrong options define banking security/contact items in full English noun phrases of matching length (54, 52 vs 54 chars).
+decision: match: The central postal code of your registered Hungarian address. || The nine-digit social security number on your health card.
+why: Replaces bank password with real Hungarian administrative identification numbers (62, 58 vs 54 chars).
 
 ### a2-211-intro-1   teaches: ['a2-banking-vocab']
 files: content/hu/exercises/a2/a2-211-ex.json
@@ -408,8 +408,8 @@ Which set of documents is required to open a bank account in Hungary?
 * Személyi igazolvány (vagy útlevél), lakcímkártya és adókártya.
 - Csak egy könyvtári olvasójegy.
 - Egy metrójegy és egy számla.
-decision: match: Kizárólag egy könyvtári olvasójegy és egy érvényes diákigazolvány. || Csak egy érvényes BKV-metrójegy és egy korábbi villanyszámla.
-why: Expands distractors into full document phrases in correct Hungarian accusative/nominative structures (66, 61 vs 62 chars).
+decision: match: Egy érvényes diákigazolvány és az egyetemi jogviszony-igazolás. || A munkahelyi belépőkártya és az előző havi villanyszámla.
+why: Replaces 'kizárólag' and 'csak' with plausible document combinations in natural Hungarian (63, 57 vs 62 chars).
 
 ### a2-212-check-1   teaches: ['a2-banking-vocab']
 files: content/hu/exercises/a2/a2-212-ex.json
@@ -418,8 +418,8 @@ What should you do immediately if the ATM does not dispense cash after debiting 
 * Azonnal fel kell hívni a bank telefonos ügyfélszolgálatát.
 - El kell sétálni csendben.
 - Meg kell ütni a gépet.
-decision: match: Csendben el kell menni, és várni a következő bankszámlakivonatra. || Azonnal újra be kell dugni egy másik bankkártyát ugyanabba a gépbe.
-why: Replaces absurd distractors with non-violent alternative procedures in correct Hungarian (65, 67 vs 58 chars).
+decision: match: Meg kell várni a következő havi hivatalos bankszámlakivonatot. || Újra meg kell kísérelni a pénzfelvételt egy kisebb összeggel.
+why: Replaces 'csendben elsétálni' with realistic procedural mistakes ATM users make (62, 61 vs 58 chars).
 
 ### a2-214-check-1   teaches: ['a2-banking-vocab']
 files: content/hu/exercises/a2/a2-214-ex.json
@@ -428,8 +428,8 @@ What should you do if an unknown caller asks for your internet banking SMS code?
 * Soha nem szabad megadni, azonnal le kell tenni a telefont!
 - Meg kell adni nekik.
 - El kell küldeni e-mailben.
-decision: match: Nyugodtan meg kell adni nekik a kért biztonsági SMS-kódot. || Kérés nélkül el kell küldeni nekik a kódot hivatalos e-mailben.
-why: Both wrong options describe dangerous security mistakes in parallel normative sentence structures (57, 63 vs 58 chars).
+decision: match: Be kell olvasni a telefonba a kapott hatjegyű biztonsági kódot. || SMS-ben vissza kell küldeni a kódot a megadott telefonszámra.
+why: Replaces 'nyugodtan' with realistic scam-victim actions in normative Hungarian sentence structures (62, 61 vs 58 chars).
 
 ### a2-214-controlled-4   teaches: ['a2-banking-vocab']
 files: content/hu/exercises/a2/a2-214-ex.json
@@ -438,8 +438,8 @@ What does 'kétlépcsős azonosítás' protect against?
 * Unauthorized access and fraud in internet banking.
 - Forgetting your wallet.
 - Losing physical cash.
-decision: match: Accidentally leaving your physical wallet at home. || Physically dropping coins or banknotes on the tram.
-why: Both wrong options are parallel English gerund phrases describing physical loss, distinct from online fraud (50, 51 vs 50 chars).
+decision: match: Unintentional bank card loss while paying in local shops. || Overpaying monthly utility fees through recurring orders.
+why: Replaces cartoonish wallet dropping with real banking risk scenarios of matching length (58, 58 vs 50 chars).
 
 ### a2-214-intro-1   teaches: ['a2-banking-vocab']
 files: content/hu/exercises/a2/a2-214-ex.json
@@ -448,8 +448,8 @@ What is 'közlemény' in a Hungarian bank transfer?
 * The reference field where you write the purpose of payment.
 - The secret bank password.
 - The bank branch address.
-decision: match: The secret master password used to log in to online banking. || The full street address of the local bank branch that you use.
-why: Both wrong options define other banking details in full noun phrases of matching length (60, 62 vs 59 chars).
+decision: match: The domestic bank identifier code of the recipient's branch. || The international account number used for foreign currencies.
+why: Replaces master password / street address with real bank transfer fields (BIC, IBAN) (61, 61 vs 59 chars).
 
 ### a2-215-check-1   teaches: ['a2-banking-vocab']
 files: content/hu/exercises/a2/a2-215-ex.json
@@ -458,8 +458,8 @@ Where can you freeze your bank card instantly without calling anyone?
 * Közvetlenül a mobilbankos alkalmazásban egy gombnyomással.
 - Csak a rendőrségen.
 - A postahivatalban.
-decision: match: Kizárólag a legközelebbi rendőrségen, személyes bejelentéssel. || Bármelyik postahivatalban a sárga csekkek befizetése közben.
-why: Both wrong options state false alternative locations for freezing cards in natural Hungarian (62, 60 vs 58 chars).
+decision: match: A helyi rendőrkapitányságon egy hivatalos jegyzőkönyvvel. || A legközelebbi postahivatalban az ügyfélszolgálati pultnál.
+why: Replaces 'kizárólag' and 'bármelyik' with realistic alternative administrative locations in natural Hungarian (58, 59 vs 58 chars).
 
 ### a2-215-controlled-4   teaches: ['a2-banking-vocab']
 files: content/hu/exercises/a2/a2-215-ex.json
@@ -478,8 +478,8 @@ What must you do first if you lose your bank card in Budapest?
 * Azonnal le kell tiltani a kártyát az applikációban vagy telefonon.
 - Várni kell egy hetet.
 - Új pénztárcát kell venni.
-decision: match: Nyugodtan várni kell legalább egy teljes hetet a tiltás előtt. || Azonnal venni kell egy új pénztárcát a legközelebbi plázában.
-why: Expands distractors into complete modal sentences in correct Hungarian of matching length (62, 60 vs 66 chars).
+decision: match: Meg kell várni a következő munkanapi személyes bankfióki nyitást. || Személyesen be kell menni a legközelebbi rendőrkapitányságra.
+why: Replaces 'nyugodtan' and buying a wallet with plausible administrative mistakes people make (66, 60 vs 66 chars).
 
 ### a2-216-controlled-4   teaches: ['a2-pharmacy-vocab']
 files: content/hu/exercises/a2/a2-216-ex.json
@@ -508,8 +508,8 @@ What document do you present to collect an electronic prescription in Hungary?
 * A TAJ-kártyát és a személyi igazolványt.
 - Egy boltos blokkot.
 - A bankkártyát.
-decision: match: Bármilyen boltos pénztárgépi blokkot. || Egy érvényes bankkártyát vagy bérletet.
-why: Both wrong options list alternative documents in correct Hungarian accusative case of matching length (36, 39 vs 40 chars).
+decision: match: A lakcímkártyát és a diákigazolványt. || Az adókártyát és az oltási könyvet.
+why: Replaces 'bármilyen' store receipts with real Hungarian personal document pairs in accusative case (37, 36 vs 40 chars).
 
 ### a2-217-intro-2   teaches: ['a2-pharmacy-vocab']
 files: content/hu/exercises/a2/a2-217-ex.json
@@ -518,8 +518,8 @@ What does 'vényköteles gyógyszer' mean?
 * Medication that can only be dispensed with an official doctor's prescription.
 - Medication that is free of charge.
 - Herbal tea.
-decision: match: Medication that is provided completely free of charge to all citizens. || Herbal tea and natural remedies available without any restriction.
-why: Both wrong options define other medication/remedy categories in full English sentences of matching length (70, 66 vs 77 chars).
+decision: match: Medication that can be bought over the counter at any local pharmacy. || Vitamin supplements and pain relievers subsidized by health insurance.
+why: Replaces 'completely free' with real pharmaceutical distribution categories in English (70, 72 vs 77 chars).
 
 ### a2-218-check-1   teaches: ['a2-pharmacy-vocab']
 files: content/hu/exercises/a2/a2-218-ex.json
@@ -528,8 +528,8 @@ What is the consequence of exceeding the maximum recommended daily dose?
 * Túladagolási mérgezés vagy súlyos mellékhatás alakulhat ki.
 - Gyorsabb gyógyulás.
 - Semmi baj nem történik.
-decision: match: Sokkal gyorsabb és hatékonyabb gyógyulás várható. || Semmilyen kellemetlen mellékhatás nem történik a szervezetben.
-why: Both wrong options are complete sentences describing false consequences in correct Hungarian (50, 62 vs 59 chars).
+decision: match: A hatóanyag gyorsabban és tartósabban fejti ki a hatását. || A gyógyszer hatása változatlan marad a következő napig.
+why: Replaces 'semmilyen' with plausible pharmacodynamic misconceptions in natural Hungarian (57, 55 vs 59 chars).
 
 ### a2-218-controlled-4   teaches: ['a2-pharmacy-vocab']
 files: content/hu/exercises/a2/a2-218-ex.json
@@ -538,8 +538,8 @@ What warning is given if a medicine causes drowsiness?
 * Gépjárművet vezetni tilos vagy óvatosságot igényel.
 - Sportolni kötelező.
 - Sokat kell kávézni.
-decision: match: Nehéz fizikai sportot űzni szigorúan kötelező a nap folyamán. || Nagy mennyiségű feketekávét kell fogyasztani a bevétel után.
-why: Both wrong options describe false behavioral rules in natural, idiomatic Hungarian of matching length (61, 60 vs 51 chars).
+decision: match: A gyógyszert étkezés előtt, éhgyomorra kell bevenni. || A tablettát bőséges meleg teával ajánlott lenyelni.
+why: Replaces caricature 'szigorúan kötelező sport' with realistic package-leaflet instructions (53, 51 vs 51 chars).
 
 ### a2-219-controlled-4   teaches: ['a2-pharmacy-vocab']
 files: content/hu/exercises/a2/a2-219-ex.json
@@ -558,8 +558,8 @@ What is the standard workplace rule when falling sick in Hungary?
 * Már az első napon értesíteni kell a munkáltatót és fel kell hívni a háziorvost.
 - Nem kell szólni senkinek két hétig.
 - Csak a rendőrségnek kell szólni.
-decision: match: Egyáltalán nem kell szólni senkinek sem a munkahelyen az első két hétben. || Kizárólag a helyi rendőrségnek kell hivatalos bejelentést tenni azonnal.
-why: Both wrong options state false workplace sickness notification rules in correct Hungarian (73, 72 vs 79 chars).
+decision: match: Elég a gyógyulás után, a munkába állás napján bemutatni az orvosi papírt. || A táppénzes papírt a munkahelyi üzemorvosnak kell eljuttatni egy héten belül.
+why: Replaces 'egyáltalán nem' and 'kizárólag' with realistic Hungarian labor notification misconceptions (74, 78 vs 79 chars).
 
 ### a2-220-controlled-4   teaches: ['a2-pharmacy-vocab']
 files: content/hu/exercises/a2/a2-220-ex.json
@@ -568,8 +568,8 @@ What medical advice does a doctor give for acute flu?
 * Szigorú ágynyugalom és sok meleg folyadék.
 - Nehéz fizikai munka.
 - Hideg fagyizás.
-decision: match: Intenzív szabadtéri sport és nehéz fizikai munka. || Hideg fagylalt fogyasztása és jeges fürdőzés.
-why: Both wrong options describe harmful activities for acute flu in correct Hungarian noun phrases of matching length (50, 45 vs 42 chars).
+decision: match: Rendszeres séta a friss levegőn és diéta. || Könnyű torna és hideg vizes borogatás.
+why: Replaces cartoonish ice cream / ice bath with plausible general health remedies of balanced length (41, 39 vs 42 chars).
 
 ### a2-46-dialogue-1   teaches: ['a2-cooking-vocab']
 files: content/hu/exercises/a2/a2-46-ex.json
@@ -578,8 +578,8 @@ Károly: Mennyi hozzávaló kell egy recepthez?
 Meg: _____
 * Sok hozzávaló és sok fűszer kell hozzá.
 - Nincs itt semmi só.
-decision: match: A konyhában sajnos nincs semmi só és bors.
-why: Noting missing salt and pepper in the kitchen does not answer how many ingredients are needed for a recipe; natural Hungarian (42 vs 39 chars).
+decision: match: Egy óra alatt elkészül ez az egyszerű ebéd.
+why: Stating cooking preparation time does not answer how many ingredients are needed; natural Hungarian matching length (43 vs 39 chars).
 
 ### a2-50-controlled-4   teaches: ['movement-with-ba-be']
 files: content/hu/exercises/a2/a2-50-ex.json
@@ -588,8 +588,8 @@ vele, hozzá, bele — what do all three have in common?
 * They're all a case suffix (-val/-vel, -hoz/-hez/-höz, -ba/-be) glued onto "it"
 - They're all irregular imperative forms
 - They're all new, unrelated words
-decision: match: They're all irregular imperative verb forms used in direct commands || They're all completely new, unrelated root words with no suffixes
-why: Both wrong options are full, parallel grammatical descriptions of verb forms and root words (67, 65 vs 78 chars).
+decision: match: They are compound conjunctions used to connect dependent clauses || They are independent adverbs formed without any case inflection
+why: Replaces extreme claim ('completely new') with plausible alternative grammatical categories in English (66, 64 vs 78 chars).
 
 ### a2-51-dialogue-1   teaches: ['a2-leisure-hobbies-vocab']
 files: content/hu/exercises/a2/a2-51-ex.json
@@ -608,8 +608,8 @@ Károly: Mit csinálsz szabadidődben?
 Ildikó: _____
 * Szabadidőmben festek és kertészkedem.
 - Nincs autóm.
-decision: match: Sajnos nincs autóm, így busszal járok.
-why: Talking about taking the bus does not answer what one does in free time; natural idiomatic Hungarian matching length (38 vs 37 chars).
+decision: match: Villamossal járok dolgozni az iskolába.
+why: Describing one's daily commute does not answer what one does in free time; natural everyday Hungarian matching length (39 vs 37 chars).
 
 ### a2-55-consolidation-7   teaches: ['a2-leisure-hobbies-vocab']
 files: content/hu/exercises/a2/a2-55-consolidation-ex.json
@@ -628,8 +628,8 @@ Ildikó: Hogyan jutok el a szállodához innen?
 Károly: _____
 * Előbb villamosra szállsz, aztán a Deák térnél átszállsz a metróra, végül gyalog mész.
 - Nem szeretek utazni.
-decision: match: Egyáltalán nem szeretek egyedül utazni a zsúfolt városi tömegközlekedéssel.
-why: Expressing dislike of crowded public transit fails to provide directions to the hotel; natural Hungarian (75 vs 85 chars).
+decision: match: A szálloda előtt van egy nagy parkoló, ahol kényelmesen meg lehet állni autóval.
+why: Drops 'egyáltalán nem szeretek' and remarks on hotel parking instead of giving transit directions (81 vs 85 chars).
 
 ### a2-73-dialogue-2   teaches: ['a2-travel-holidays-vocab']
 files: content/hu/exercises/a2/a2-73-ex.json
@@ -638,8 +638,8 @@ Károly: Mit kell csinálni a repülőtéren?
 Meg: _____
 * Be kell csekkolni, és meg kell mutatni az útlevelet.
 - A jegy csak Győrig szól.
-decision: match: A megvásárolt vonatjegy sajnos csak Győrig érvényes.
-why: A comment about train ticket validity does not answer what must be done at the airport; natural Hungarian matching length (52 vs 52 chars).
+decision: match: A megvásárolt vonatjegy a Keleti pályaudvarig érvényes.
+why: Stating train ticket validity does not answer what must be done at the airport; neutral statement matching length (55 vs 52 chars).
 
 ### a2-75-consolidation-8   teaches: ['a2-travel-holidays-vocab']
 files: content/hu/exercises/a2/a2-75-consolidation-ex.json
@@ -648,8 +648,8 @@ Meg: Mit kell csinálni a repülőtéren?
 Károly: _____
 * Be kell csekkolni, és meg kell mutatni a beszállókártyát.
 - Imádok új helyeket látni.
-decision: match: Egyszerűen imádok új városokat és szép helyeket látni.
-why: Expressing a love for seeing new places does not answer what must be done at the airport; natural Hungarian matching length (54 vs 57 chars).
+decision: match: Érdemes korán megvenni a repülőjegyet az interneten.
+why: Drops 'egyszerűen imádok' stock phrase; online booking advice does not answer what must be done at the airport (52 vs 57 chars).
 
 ### a2-80-consolidation-7   teaches: ['a2-hotels-accommodation-vocab']
 files: content/hu/exercises/a2/a2-80-consolidation-ex.json
@@ -658,8 +658,8 @@ Recepciós: Foglalása van?
 Vendég: _____
 * Igen, két éjszakára foglaltam egy kétágyas szobát.
 - Nem működik a klíma.
-decision: match: A második emeleti szobában sajnos nem működik a klíma.
-why: Complaining about room air conditioning does not answer whether one has a reservation; natural Hungarian matching length (53 vs 50 chars).
+decision: match: Lehet bankkártyával fizetni a szálloda recepcióján?
+why: Asking about reception payment method does not answer whether one has a reservation; standard polite inquiry (51 vs 50 chars).
 
 ### a2-89-dialogue-2   teaches: ['a2-healthy-living-advice-vocab']
 files: content/hu/exercises/a2/a2-89-ex.json
@@ -668,8 +668,8 @@ Tamás: Lehet itt a parkban futni?
 Károly: _____
 * Igen, itt lehet futni és úszni is.
 - Nem tudok úszni.
-decision: match: Sajnos én egyáltalán nem tudok úszni.
-why: Stating that one cannot swim does not answer whether running is allowed in the park; natural Hungarian matching length (37 vs 34 chars).
+decision: match: A park kapuja reggel hatkor nyit ki.
+why: Stating when the park gate opens does not answer whether running is permitted; natural neutral sentence (36 vs 34 chars).
 
 ### a2-90-consolidation-7   teaches: ['a2-healthy-living-advice-vocab']
 files: content/hu/exercises/a2/a2-90-consolidation-ex.json
@@ -678,8 +678,8 @@ Meg: Nagyon fáradt vagyok, alig alszom mostanában.
 Károly: _____
 * Azt javaslom, hogy próbálj korábban lefeküdni, mert sokkal jobban leszel.
 - Itt lehet dohányozni.
-decision: match: Ebben az étteremben és a teraszon nyugodtan lehet dohányozni egész este.
-why: Smoking rules in a restaurant do not offer health advice for sleeplessness; natural Hungarian matching length (72 vs 73 chars).
+decision: match: A héten sok feladatot kaptunk az irodában, és mindannyian elfáradtunk.
+why: Drops random smoking and absolute 'nyugodtan'; commiserating about office fatigue fails to give health advice (70 vs 73 chars).
 
 ### a2-92-dialogue-1   teaches: ['a2-school-language-learning-vocab']
 files: content/hu/exercises/a2/a2-92-ex.json
@@ -688,8 +688,8 @@ Tamás: Milyen tantárgyban vagy jó?
 Meg: _____
 * Nagyon jó vagyok irodalomban.
 - Ma nincs órám.
-decision: match: Ma sajnos nincs órám az iskolában.
-why: Not having class today does not answer what subject one is good at; natural A2 Hungarian matching length (34 vs 29 chars).
+decision: match: Délután van órám az iskolában.
+why: Stating when one has class does not answer what subject one is good at; natural A2 Hungarian matching length (30 vs 29 chars).
 
 ### a2-95-consolidation-8   teaches: ['a2-school-language-learning-vocab']
 files: content/hu/exercises/a2/a2-95-consolidation-ex.json
@@ -708,8 +708,8 @@ Károly: Szeretsz kertészkedni?
 Ildikó: _____
 * Igen, nagyon szeretek, és időnként fényképezek is a kertben.
 - Sajnos zárva van a kiállítás.
-decision: match: Sajnos ma délután zárva van az új fotókiállítás a városban.
-why: A closed photo exhibition does not answer whether one likes gardening; natural Hungarian matching length (59 vs 60 chars).
+decision: match: A hétvégén virágokat vettem a belvárosi virágboltban.
+why: Buying flowers at the florist on the weekend does not answer whether one likes gardening; natural Hungarian (53 vs 60 chars).
 
 ### a2-97-dialogue-2   teaches: ['a2-transport-getting-around-vocab']
 files: content/hu/exercises/a2/a2-97-ex.json
@@ -718,8 +718,8 @@ Ildikó: Hogyan jutok el a pályaudvarra?
 Meg: _____
 * Szállj fel a hetes buszra, és a végállomásnál szállj le.
 - Sajnos nem tudok jönni.
-decision: match: Sajnos ma délután nem tudok veled menni az állomásra.
-why: Declining to go along does not provide travel directions to the station; natural Hungarian matching length (53 vs 56 chars).
+decision: match: A pályaudvarról óránként indulnak vonatok Bécs felé.
+why: Stating train departure schedules from the station does not give directions on how to get there (52 vs 56 chars).
 
 
 ########## Block 2: hu b1 (first half) (149 exercises) ##########
