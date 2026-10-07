@@ -107,20 +107,23 @@
         "ser-passive"
       ],
       "sentence": "Muchas experiencias _____ registradas desde perspectivas diferentes.",
-      "answer": "fueron",
-      "english": "Many experiences were recorded from different perspectives."
+      "english": "Many experiences were recorded from different perspectives.",
+      "answers": [
+        "fueron",
+        "eran"
+      ]
     },
     {
       "id": "b1-conquista-consolidation.ex07",
       "type": "sentence-order",
       "category": "grammar",
       "teaches": [
-        "ser-passive"
+        "pasiva-refleja"
       ],
       "sentences": [
-        "Se establecieron nuevas autoridades.",
-        "Se produjeron resistencias.",
-        "El proceso continuó durante décadas."
+        "Primero, se establecieron nuevas autoridades.",
+        "Después se produjeron resistencias.",
+        "Más tarde, el proceso continuó durante décadas."
       ],
       "solution": [
         0,
@@ -131,10 +134,7 @@
     {
       "id": "b1-conquista-consolidation.ex08",
       "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "pasiva-refleja"
-      ],
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -155,9 +155,9 @@
     {
       "id": "b1-conquista-consolidation.ex09",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "teaches": [
-        "gerundio-acciones-paralelas"
+        "b1-conquest-vocab"
       ],
       "question": "¿Qué expresión significa 'as a result of'?",
       "options": [
@@ -197,10 +197,7 @@
     {
       "id": "b1-conquista-consolidation.ex11",
       "type": "multiple-choice",
-      "category": "dialogue",
-      "teaches": [
-        "ser-passive"
-      ],
+      "category": "reading",
       "question": "¿Por qué es útil comparar fuentes?",
       "options": [
         "Porque fueron producidas desde perspectivas diferentes.",
@@ -214,7 +211,7 @@
       "type": "listening-choice",
       "category": "listening",
       "teaches": [
-        "ser-passive"
+        "b1-conquest-vocab"
       ],
       "sentence": "Tenochtitlan fue conquistada en 1521.",
       "options": [
@@ -229,7 +226,7 @@
       "type": "listening-choice",
       "category": "listening",
       "teaches": [
-        "pasiva-refleja"
+        "b1-conquest-vocab"
       ],
       "sentence": "Se establecieron nuevas autoridades.",
       "options": [
@@ -252,10 +249,7 @@
     {
       "id": "b1-conquista-consolidation.ex15",
       "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "porque-y-por-eso"
-      ],
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -296,7 +290,7 @@
       "type": "structured-writing",
       "category": "writing",
       "teaches": [
-        "ser-passive"
+        "formal-cause-connectors"
       ],
       "template": [
         {
@@ -308,11 +302,8 @@
     {
       "id": "b1-conquista-consolidation.ex18",
       "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "pasiva-refleja"
-      ],
-      "question": "¿Qué frase best shows historical interpretation?",
+      "category": "reading",
+      "question": "¿Qué frase muestra mejor una interpretación histórica?",
       "options": [
         "Las fuentes deben compararse porque cada una presenta una perspectiva.",
         "Una fuente siempre contiene toda la verdad.",

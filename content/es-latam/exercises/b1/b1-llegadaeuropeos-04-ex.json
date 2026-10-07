@@ -59,7 +59,7 @@
       "category": "reading",
       "question": "¿Qué productos viajaron de América hacia Europa, y cuáles en la dirección contraria?",
       "options": [
-        "De América a Europa: maíz, papa, tomate, cacao; de Europa a América: caballo, vaca, cerdo, trigo.",
+        "De América a Europa y Asia: maíz, papa, tomate, cacao, tabaco; de Europa a América: caballos, vacas, trigo.",
         "Todos los productos mencionados viajaron únicamente de Europa hacia América.",
         "El intercambio fue exclusivamente de animales, sin ningún tipo de planta."
       ],
@@ -82,19 +82,23 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "La población indígena no tenía ninguna inmunidad, ___ estos patógenos habían evolucionado junto a los animales de Eurasia. (since)",
-      "answer": "ya que",
       "teaches": [
-        "porque-y-por-eso"
+        "formal-cause-connectors"
       ],
-      "english": "The Indigenous population had no immunity, since these pathogens had evolved alongside the animals of Eurasia."
+      "english": "The Indigenous population had no immunity, [reason connector] these pathogens had evolved alongside the animals of Eurasia.",
+      "answers": [
+        "ya que",
+        "debido a que",
+        "porque"
+      ]
     },
     {
       "id": "b1-llegadaeuropeos-04.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "¿Qué hipótesis científica reciente relaciona la catástrofe demográfica americana con el clima global?",
+      "question": "¿Qué hipótesis científica relaciona la catástrofe demográfica americana con el clima global?",
       "options": [
-        "Que tierras de cultivo volvieron a cubrirse de bosque, contribuyendo a la Pequeña Edad de Hielo.",
+        "Que millones de hectáreas de tierras de cultivo volvieron a cubrirse de bosque, provocando una alteración climática global en el siglo diecisiete.",
         "Que la catástrofe demográfica no tuvo ningún efecto medible sobre el clima global.",
         "Que el clima global causó directamente la llegada de los europeos a América."
       ],
@@ -156,7 +160,7 @@
       "prompt": [
         {
           "speaker": "Marta",
-          "text": "¿Por qué fue tan importante la reintroducción del caballo en América?"
+          "text": "¿Por qué se propagaron tan rápido enfermedades como la viruela entre la población indígena?"
         },
         {
           "speaker": "Pablo",
@@ -164,9 +168,9 @@
         }
       ],
       "options": [
-        "Porque se había extinguido en el continente antes de la llegada de los europeos, y al reintroducirse transformó la forma de cazar y desplazarse de varios pueblos indígenas.",
-        "Porque los conquistadores dependieron exclusivamente de este animal para explorar las selvas tropicales y transportar cañones pesados.",
-        "Porque las civilizaciones andinas ya criaban especies equinas semejantes mucho antes de cualquier contacto con exploradores europeos."
+        "Porque no tenía ninguna inmunidad, ya que esos patógenos habían evolucionado junto a los animales domesticados de Eurasia.",
+        "Porque los indígenas ya habían convivido con esos mismos patógenos en América durante siglos.",
+        "Porque los europeos llevaron las enfermedades solo a las islas pequeñas y nunca al continente."
       ],
       "correct": 0
     },
@@ -182,7 +186,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "porque-y-por-eso"
+        "b1-arrival-of-europeans-vocab"
       ]
     }
   ]
