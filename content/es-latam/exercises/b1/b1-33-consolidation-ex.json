@@ -39,7 +39,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "estilo-indirecto"
+        "estilo-indirecto-informacion"
       ]
     },
     {
@@ -49,7 +49,7 @@
       "teaches": [
         "estilo-indirecto-informacion"
       ],
-      "sentence": "Ella explicó ___ vivía allí. (que) [She explained that she lived there.]",
+      "sentence": "Ella explicó ___ vivía allí. (that) [She explained that she lived there.]",
       "answer": "que",
       "english": "She explained that she lived there."
     },
@@ -58,7 +58,7 @@
       "type": "sentence-builder",
       "category": "grammar",
       "teaches": [
-        "questions"
+        "preguntas-indirectas"
       ],
       "tiles": [
         "Preguntó",
@@ -77,9 +77,9 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "«¿Dónde vives?» [“Where do you live?”]",
-        "Me preguntó. [She asked me.]",
-        "Me preguntó dónde vivía. [She asked me where I lived.]"
+        "Primero, ella dijo: «¿Dónde vives?» [First, she said: “Where do you live?”]",
+        "Después, yo recordé la pregunta. [Then I remembered the question.]",
+        "Finalmente, conté que me preguntó dónde vivía. [Finally, I said that she asked me where I lived.]"
       ],
       "solution": [
         0,
@@ -87,7 +87,7 @@
         2
       ],
       "teaches": [
-        "estilo-indirecto"
+        "preguntas-indirectas"
       ]
     },
     {
@@ -102,8 +102,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "estilo-indirecto-informacion"
-      ]
+        "estilo-indirecto"
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-33-consolidation.ex07",
@@ -113,8 +117,11 @@
         "estilo-indirecto"
       ],
       "sentence": "Él me dijo que no ___ tiempo. (tener) [He told me that he did not have time.]",
-      "answer": "tenía",
-      "english": "He told me that he did not have time."
+      "english": "He told me that he did not have time.",
+      "answers": [
+        "tenía",
+        "tuvo"
+      ]
     },
     {
       "id": "b1-33-consolidation.ex08",
@@ -140,7 +147,7 @@
       ],
       "english": "The witness asked if someone had called.",
       "teaches": [
-        "estilo-indirecto-informacion"
+        "preguntas-indirectas"
       ]
     },
     {
@@ -155,7 +162,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "questions"
+        "estilo-indirecto-informacion"
       ]
     },
     {
@@ -185,7 +192,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "estilo-indirecto-informacion"
+        "preguntas-indirectas"
       ]
     },
     {
@@ -194,7 +201,7 @@
       "category": "listening",
       "sentence": "El detective preguntó si alguien había llamado a la policía.",
       "teaches": [
-        "estilo-indirecto"
+        "b1-reported-speech-vocab"
       ],
       "english": "The detective asked whether anyone had called the police."
     },
@@ -267,7 +274,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "estilo-indirecto"
+        "b1-reported-speech-vocab"
       ]
     },
     {
@@ -296,7 +303,6 @@
         }
       ],
       "teaches": [
-        "estilo-indirecto",
         "estilo-indirecto-informacion"
       ]
     },
@@ -311,8 +317,7 @@
         }
       ],
       "teaches": [
-        "estilo-indirecto",
-        "estilo-indirecto-informacion"
+        "b1-reported-speech-vocab"
       ]
     }
   ]

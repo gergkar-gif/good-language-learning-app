@@ -36,18 +36,25 @@
       "correct": 0,
       "teaches": [
         "estilo-indirecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "b1-33-04.ex03",
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "«Estoy aquí» → Dijo que ___ allí. (estar) [“I am here” → He said that he was there.]",
-      "answer": "estaba",
       "teaches": [
         "estilo-indirecto"
       ],
-      "english": "“I am here” → He said that he was there."
+      "english": "“I am here” → He said that he was there.",
+      "answers": [
+        "estaba",
+        "estuvo"
+      ]
     },
     {
       "id": "b1-33-04.ex04",
@@ -75,9 +82,9 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "«Mañana voy». [“I am going tomorrow.”]",
-        "Dijo que al día siguiente iba. [He said that he was going the next day.]",
-        "El cambio afecta al tiempo. [The change affects the time expression.]"
+        "Primero, Ana dijo: «Mañana voy». [First, Ana said: “I am going tomorrow.”]",
+        "Después, Luis escuchó a Ana. [Then Luis listened to Ana.]",
+        "Finalmente, Luis contó que Ana iba al día siguiente. [Finally, Luis said that Ana was going the next day.]"
       ],
       "solution": [
         0,
@@ -91,7 +98,7 @@
     {
       "id": "b1-33-04.ex06",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means «perspective»? [¿Qué palabra significa «perspectiva»?]",
       "options": [
         "perspectiva [perspective]",
@@ -100,24 +107,24 @@
       ],
       "correct": 0,
       "teaches": [
-        "estilo-indirecto"
+        "b1-reported-speech-vocab"
       ]
     },
     {
       "id": "b1-33-04.ex07",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Cada testigo tenía una ___ diferente. (perspectiva) [Each witness had a different perspective.]",
+      "category": "vocabulary",
+      "sentence": "Cada testigo tenía una ___ diferente. (perspective) [Each witness had a different perspective.]",
       "answer": "perspectiva",
       "teaches": [
-        "estilo-indirecto"
+        "b1-reported-speech-vocab"
       ],
       "english": "Each witness had a different perspective."
     },
     {
       "id": "b1-33-04.ex08",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "tiles": [
         "La",
         "conversación",
@@ -134,7 +141,7 @@
       ],
       "english": "The conversation changed perspective.",
       "teaches": [
-        "estilo-indirecto"
+        "b1-reported-speech-vocab"
       ]
     },
     {
@@ -173,7 +180,7 @@
       "category": "listening",
       "sentence": "Cada testigo tenía una perspectiva diferente.",
       "teaches": [
-        "estilo-indirecto"
+        "b1-reported-speech-vocab"
       ],
       "english": "Each witness had a different perspective."
     },
@@ -246,7 +253,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "estilo-indirecto"
+        "b1-reported-speech-vocab"
       ]
     },
     {

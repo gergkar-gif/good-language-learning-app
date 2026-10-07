@@ -37,7 +37,7 @@
         "Ella dijo que estaba cansada. [She said that she was tired.]",
         "Ella está cansada. [She is tired.]"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "estilo-indirecto"
       ]
@@ -47,11 +47,14 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "Ella dijo que ___ cansada. (estar) [She said that she was tired.]",
-      "answer": "estaba",
       "teaches": [
         "estilo-indirecto"
       ],
-      "english": "She said that she was tired."
+      "english": "She said that she was tired.",
+      "answers": [
+        "estaba",
+        "estuvo"
+      ]
     },
     {
       "id": "b1-33-01.ex04",
@@ -81,9 +84,9 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "Ella dijo: «Estoy cansada». [She said: “I am tired.”]",
-        "Ella estaba cansada. [She was tired.]",
-        "Ella dijo que estaba cansada. [She said that she was tired.]"
+        "Primero, ella dijo: «Estoy cansada». [First, she said: “I am tired.”]",
+        "Después, su madre llegó a casa. [Then her mother came home.]",
+        "Finalmente, yo le dije que ella estaba cansada. [Finally, I told her mother that she was tired.]"
       ],
       "solution": [
         0,
@@ -97,7 +100,7 @@
     {
       "id": "b1-33-01.ex06",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which verb means «to state»? [¿Qué verbo significa «afirmar»?]",
       "options": [
         "afirmar [to state]",
@@ -106,17 +109,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "estilo-indirecto"
+        "b1-reported-speech-vocab"
       ]
     },
     {
       "id": "b1-33-01.ex07",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El testigo ___ que había visto a un hombre. (afirmar) [The witness stated that he had seen a man.]",
+      "sentence": "El testigo ___ que había visto a un hombre. (afirmar, preterite) [The witness stated that he had seen a man.]",
       "answer": "afirmó",
       "teaches": [
-        "estilo-indirecto"
+        "preterito-indefinido"
       ],
       "english": "The witness stated that he had seen a man."
     },
@@ -183,7 +186,7 @@
       "category": "listening",
       "sentence": "Ella explicó que estaba en la calle.",
       "teaches": [
-        "estilo-indirecto"
+        "b1-reported-speech-vocab"
       ],
       "english": "She explained that she was on the street."
     },
