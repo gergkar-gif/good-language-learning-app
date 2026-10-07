@@ -814,6 +814,18 @@ function assignCharacterVoices(story) {
     return assigned;
 }
 
+// Scramble multiple-choice options dynamically at render time so that
+// authoring-order conventions (e.g. correct answer authored first) do not
+// leave the answer predictably in the same position on screen.
+function _shuffled(list) {
+    const copy = (list || []).slice();
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+}
+
 const StoryAudioPlayer = {
     story: null,
     paragraphs: [],
@@ -1072,6 +1084,7 @@ window.StoryAudioPlayer = StoryAudioPlayer;
 window.Reader = {
     _normSearch: _normSearch,
     _matchesTerm: _matchesTerm,
+    _shuffled: _shuffled,
     assignCharacterVoices: assignCharacterVoices,
     inferCharacterGender: inferCharacterGender,
     markStoryRead: markStoryRead,
@@ -2243,21 +2256,23 @@ window.Reader = {
                     prevBadge +
                 '</div>' +
                 '<div class="story-comp-list">' +
-                    qs.map((q, qIdx) =>
-                        '<div class="story-comp-item" data-comp-idx="' + qIdx + '">' +
+                    qs.map((q, qIdx) => {
+                        const indexedOptions = (q.options || []).map((opt, oIdx) => ({ text: opt, originalIdx: oIdx }));
+                        const shuffledOpts = _shuffled(indexedOptions);
+                        return '<div class="story-comp-item" data-comp-idx="' + qIdx + '">' +
                             '<p class="story-comp-q">' + self.escapeHtml(q.question) + '</p>' +
                             '<div class="story-comp-options">' +
-                                q.options.map((opt, oIdx) =>
-                                    '<button type="button" class="story-comp-opt" data-q="' + qIdx + '" data-opt="' + oIdx + '" data-correct="' + q.correctIndex + '">' +
-                                        self.escapeHtml(opt) +
+                                shuffledOpts.map(item =>
+                                    '<button type="button" class="story-comp-opt" data-q="' + qIdx + '" data-opt="' + item.originalIdx + '" data-correct="' + q.correctIndex + '">' +
+                                        self.escapeHtml(item.text) +
                                     '</button>'
                                 ).join('') +
                             '</div>' +
                             '<div class="story-comp-explanation" id="comp-exp-' + qIdx + '" hidden>' +
                                 self.escapeHtml(q.explanation || '') +
                             '</div>' +
-                        '</div>'
-                    ).join('') +
+                        '</div>';
+                    }).join('') +
                 '</div>' +
             '</div>';
         }
@@ -2710,5 +2725,6 @@ if (typeof module !== 'undefined' && module.exports) {
     window.Reader.TRACK_SHELF_LABELS = TRACK_SHELF_LABELS;
     window.Reader.markStoryRead = markStoryRead;
     window.Reader.getReadStoryIds = getReadStoryIds;
+    window.Reader._shuffled = _shuffled;
     module.exports = window.Reader;
 }
