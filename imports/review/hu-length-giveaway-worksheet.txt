@@ -761,8 +761,8 @@ Which sentence correctly states a gentle preference between two options?
 * A te helyedben inkább várnék egy kicsit, mint azonnal döntenék.
 - A te helyedben te inkább vársz.
 - A te helyedben inkább vártál.
-decision: match: A te helyedben inkább vársz egy kicsit, mint azonnal döntesz. || A te helyedben inkább vártál egy kicsit, mint azonnal döntöttél.
-why: Completes both comparative clauses with present indicative and past indicative instead of conditional, breaking the gentle preference pattern (60, 63 vs 63 chars).
+decision: match: A te helyedben te inkább vársz egy kicsit, mint azonnal döntesz. || A te helyedben inkább vártál egy kicsit, mint azonnal döntöttél.
+why: Completes both comparative clauses with present indicative (with wrong person 'te') and past indicative instead of conditional, breaking the gentle preference pattern (63, 63 vs 63 chars).
 
 ### b1-04-05-dialogue-1   teaches: ['b1-giving-advice-vocab']
 files: content/hu/exercises/b1/b1-04-05-ex.json
@@ -771,8 +771,8 @@ Petra: Nem tudom, elfogadjam-e az ajánlatot. Teljesen tanácstalan vagyok.
 Meg: _____
 * A helyedben én mérlegelném az előnyöket és a hátrányokat, mielőtt döntesz.
 - A helyedben te már döntöttél.
-decision: match: A helyedben te is mérlegelnéd az ajánlatot, mielőtt végleges választ adsz.
-why: Preserves the person mismatch error ('A helyedben te...') of the original distractor while expanding to a full advice clause matching length (74 vs 74 chars).
+decision: match: A helyedben te már régen eldöntötted, hogy elfogadod-e az új ajánlatot.
+why: Expands the original person/tense error ('A helyedben te már...') into a full clause that clearly cannot serve as advice and contradicts Petra's indecision (71 vs 74 chars).
 
 ### b1-04-consolidation-9   teaches: ['b1-giving-advice-vocab']
 files: content/hu/exercises/b1/b1-04-consolidation-ex.json
@@ -821,8 +821,8 @@ Petra: Miért nem beszélsz Zsófival? Régen olyan jóban voltatok.
 Meg: _____
 * Annak ellenére, hogy összevesztünk, remélem, hogy egyszer kibékülünk.
 - Sosem voltunk barátok.
-decision: match: Mert teljesen más lett az érdeklődési körünk, és már alig van közös témánk.
-why: Natural explanation for growing apart that acknowledges their past friendship, eliminating the absolute 'sosem' (75 vs 69 chars).
+decision: match: Tavaly nyáron beszéltünk utoljára, amikor együtt voltunk a Balatonnál.
+why: Natural statement answering when they last spoke rather than giving a reason for not talking, eliminating the absolute 'sosem' and matching length (69 vs 69 chars).
 
 ### b1-08-01-intro-2   teaches: ['b1-travel-mobility-vocab']
 files: content/hu/exercises/b1/b1-08-01-ex.json
@@ -991,8 +991,8 @@ Milyen előnyökkel jár egy társasházi lakás a családi házzal szemben?
 * A közös költség tartalmazhatja a lépcsőház takarítását és karbantartását, kevesebb kerti munka hárul a lakóra.
 - Soha nem kell semmilyen számlát fizetni.
 - Minden lakó maga építi az épület tetejét.
-decision: match: A társasházakban sokkal nagyobb a csend és a nyugalom, mint a kertvárosi családi házakban. || A lakók önállóan dönthetnek a homlokzat átalakításáról a többi tulajdonos megkérdezése nélkül.
-why: Replaces extreme absolutes and cartoonish claims with plausible housing misconceptions of matched length (92, 100 vs 110 chars).
+decision: match: A társasházakban a szomszédok miatt gyakran nagyobb a zaj, és jóval kevesebb a nyugalom. || A lakók önállóan dönthetnek a homlokzat átalakításáról a többi tulajdonos megkérdezése nélkül.
+why: Replaces extreme absolutes with a clear disadvantage (noise from neighbors) and an unauthorized alteration claim of matched length (89, 95 vs 110 chars).
 
 ### b1-10-03-controlled-1   teaches: ['formal-obligation']
 files: content/hu/exercises/b1/b1-10-03-ex.json
@@ -1051,8 +1051,8 @@ Melyik szerkezet fejezi ki legválasztékosabban a személyes prioritást?
 * Számomra az a legfontosabb szempont, hogy a környék csendes és biztonságos legyen.
 - Nekem kell a csendes környék lenni.
 - Számomra fontos környék csendben van.
-decision: match: Számomra az a legfontosabb szempont, hogy a környék csendes és biztonságos lenne. || Számomra az a legfontosabb szempont, hogy a környék csendes és biztonságos volt.
-why: Contrasts the required subjunctive 'legyen' with conditional 'lenne' and past indicative 'volt' in the subordinate clause, matching length (81, 79 vs 82 chars).
+decision: match: Számomra az a legfontosabb szempont, hogy a környék csendes és biztonságos lenni. || Számomra az a legfontosabb szempont, hogy a környék csendes és biztonságos volt.
+why: Contrasts the required subjunctive 'legyen' with the ungrammatical infinitive 'lenni' and past indicative 'volt' in the subordinate clause, matching length (81, 79 vs 82 chars).
 
 ### b1-10-05-practice-3   teaches: ['b1-home-housing-vocab']
 files: content/hu/exercises/b1/b1-10-05-ex.json
@@ -1271,8 +1271,8 @@ Melyek a leggyakoribb hagyományos magyar fűszerek?
 * A fűszerpaprika, a majoránna, a köménymag, a feketebors és a fokhagyma.
 - A curry és a wasabi.
 - Kizárólag a fehér kristálycukor.
-decision: match: A curry, a gyömbér, a kurkuma, a chili és a japán wasabi. || A fahéj, a vanília, a szegfűszeg, a kardamom és a szerecsendió.
-why: Replaces absolute 'kizárólag' with authentic lists of Asian and sweet baking spices that are not typical savory Hungarian staples (56, 63 vs 71 chars).
+decision: match: A curry, a gyömbér, a kurkuma, a chili és a japán wasabi. || A bazsalikom, az oregánó, a római kömény, a koriander és a csillagánizs.
+why: Replaces absolute 'kizárólag' with authentic lists of Asian and Mediterranean/exotic herbs and spices that are not traditional Hungarian spices (56, 72 vs 71 chars).
 
 ### b1-12-02-practice-4   teaches: None
 files: content/hu/exercises/b1/b1-12-02-ex.json
@@ -1371,8 +1371,8 @@ Mit kérdez a pincér a vacsora végén?
 * „Együtt vagy külön fizetnek? Készpénzzel vagy kártyával óhajtanak fizetni?”
 - „Mikor mennek haza gyalog?”
 - „Hány óra van a telefonjukon?”
-decision: match: „Sikerült már választaniuk az étlapról, vagy kérnek még néhány percet?” || „Ízlett az étel, vagy ajánlhatok még egy kis desszertet a kávé mellé?”
-why: Replaces absurd questions with authentic waiter phrases from earlier stages of the meal (ordering and dessert check), matching length (73, 72 vs 75 chars).
+decision: match: „Sikerült már választaniuk az étlapról, vagy kérnek még néhány percet?” || „Minden rendben van az ételekkel, hozhatok még egy kis kenyeret vagy vizet?”
+why: Replaces absurd questions with authentic waiter phrases from earlier stages of the meal (start/ordering and middle of the meal), matching length (73, 76 vs 75 chars).
 
 ### b1-12-05-practice-4   teaches: None
 files: content/hu/exercises/b1/b1-12-05-ex.json
