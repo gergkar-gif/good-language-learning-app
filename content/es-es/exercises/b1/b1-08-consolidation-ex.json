@@ -40,7 +40,11 @@
       "correct": 0,
       "teaches": [
         "ir-infinitive"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "pluscuamperfecto"
+      }
     },
     {
       "id": "b1-08-consolidation.ex03",
@@ -81,7 +85,7 @@
         "avería."
       ],
       "teaches": [
-        "preposiciones-movimiento"
+        "preterite-vs-imperfect"
       ]
     },
     {
@@ -89,9 +93,9 @@
       "category": "grammar",
       "type": "sentence-order",
       "sentences": [
-        "Salimos del hotel. [We left the hotel.]",
-        "Caminamos por el casco antiguo. [We walked through the old town.]",
-        "Llegamos hasta la estación. [We reached the station.]"
+        "Primero salimos del hotel. [First we left the hotel.]",
+        "Después caminamos por el casco antiguo. [Then we walked through the old town.]",
+        "Finalmente llegamos hasta la estación. [Finally we reached the station.]"
       ],
       "solution": [
         0,
@@ -99,7 +103,7 @@
         2
       ],
       "teaches": [
-        "si-clauses"
+        "secuencia-narrativa"
       ]
     },
     {
@@ -114,7 +118,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "tener"
+        "preposiciones-movimiento"
       ]
     },
     {
@@ -124,7 +128,7 @@
       "sentence": "Si __ el tren, cogeremos el siguiente. [If we miss the train, we will take the next one.] (perder)",
       "answer": "perdemos",
       "teaches": [
-        "ir-infinitive"
+        "si-clauses"
       ],
       "english": "If we miss the train, we will take the next one."
     },
@@ -156,7 +160,7 @@
         "alojamiento."
       ],
       "teaches": [
-        "imperfect"
+        "hypothetical-structures"
       ]
     },
     {
@@ -171,7 +175,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "preposiciones-movimiento"
+        "pluscuamperfecto"
       ]
     },
     {
@@ -201,7 +205,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "tener"
+        "preposiciones-movimiento"
       ]
     },
     {
@@ -210,7 +214,7 @@
       "type": "dictation",
       "sentence": "Si tuviera más tiempo, viajaría por la costa.",
       "teaches": [
-        "ir-infinitive"
+        "hypothetical-structures"
       ],
       "english": "If I had more time, I would travel along the coast."
     },
@@ -221,7 +225,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué haréis si el tren se retrasa?"
+          "text": "¿Qué harán si el tren se retrasa?"
         },
         {
           "speaker": "B",
@@ -235,8 +239,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "futuro-simple"
+      ],
+      "distractor_skills": {
+        "2": "pluscuamperfecto"
+      }
     },
     {
       "id": "b1-08-consolidation.ex14",
@@ -245,7 +252,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Por qué llegasteis tarde?"
+          "text": "¿Por qué llegaron tarde?"
         },
         {
           "speaker": "B",
@@ -259,8 +266,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "preposiciones-movimiento"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      }
     },
     {
       "id": "b1-08-consolidation.ex15",
@@ -274,17 +284,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
+        "hypothetical-structures"
       ]
     },
     {
       "id": "b1-08-consolidation.ex16",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "fill-blank",
-      "sentence": "La __ fue difícil, pero conseguimos superar los problemas. [The journey was difficult, but we managed to overcome the problems.] (travesía)",
+      "sentence": "La __ fue difícil, pero conseguimos superar los problemas. [The journey was difficult, but we managed to overcome the problems.] (journey)",
       "answer": "travesía",
       "teaches": [
-        "tener"
+        "b1-travel-mobility-vocab"
       ],
       "english": "The journey was difficult, but we managed to overcome the problems."
     },
@@ -299,8 +309,7 @@
         }
       ],
       "teaches": [
-        "si-clauses",
-        "tener"
+        "b1-travel-mobility-vocab"
       ]
     },
     {
@@ -314,8 +323,7 @@
         }
       ],
       "teaches": [
-        "ir-infinitive",
-        "tener"
+        "b1-travel-mobility-vocab"
       ]
     }
   ]

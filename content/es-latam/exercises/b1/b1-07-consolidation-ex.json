@@ -39,8 +39,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "preterito-indefinido"
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "present-tense"
+      }
     },
     {
       "id": "b1-07-consolidation.ex03",
@@ -65,17 +69,27 @@
         "enseñar",
         "bien."
       ],
-      "solution": [
-        "Se",
-        "necesita",
-        "paciencia",
-        "para",
-        "enseñar",
-        "bien."
-      ],
       "english": "Patience is needed to teach well.",
       "teaches": [
         "se-impersonal"
+      ],
+      "solutions": [
+        [
+          "Se",
+          "necesita",
+          "paciencia",
+          "para",
+          "enseñar",
+          "bien."
+        ],
+        [
+          "Para",
+          "enseñar",
+          "bien",
+          "se",
+          "necesita",
+          "paciencia."
+        ]
       ]
     },
     {
@@ -93,7 +107,7 @@
         2
       ],
       "teaches": [
-        "giving-opinions"
+        "ordering-markers"
       ]
     },
     {
@@ -138,11 +152,11 @@
     {
       "id": "b1-07-consolidation.ex08",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Esta técnica resulta más __ que la tradicional. [This technique turns out to be more useful than the traditional one.] (útil)",
+      "category": "vocabulary",
+      "sentence": "Esta técnica resulta más __ que la tradicional. [This technique turns out to be more useful than the traditional one.] (useful)",
       "answer": "útil",
       "teaches": [
-        "comparatives"
+        "b1-education-learning-vocab"
       ],
       "english": "This technique turns out to be more useful than the traditional one."
     },
@@ -237,7 +251,11 @@
       "correct": 0,
       "teaches": [
         "se-impersonal"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-07-consolidation.ex14",
@@ -251,17 +269,17 @@
       ],
       "correct": 0,
       "teaches": [
-        "comparatives"
+        "superlatives"
       ]
     },
     {
       "id": "b1-07-consolidation.ex15",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Tengo un buen __ para defender mi opinión. [I have a good argument to defend my opinion.] (argumento)",
+      "category": "vocabulary",
+      "sentence": "Tengo un buen __ para defender mi opinión. [I have a good argument to defend my opinion.] (argument)",
       "answer": "argumento",
       "teaches": [
-        "giving-opinions"
+        "b1-education-learning-vocab"
       ],
       "english": "I have a good argument to defend my opinion."
     },
@@ -291,7 +309,7 @@
       ],
       "english": "I think observing is as important as practising.",
       "teaches": [
-        "giving-opinions"
+        "comparatives"
       ]
     },
     {
@@ -305,7 +323,7 @@
         }
       ],
       "teaches": [
-        "preterite-vs-imperfect"
+        "b1-education-learning-vocab"
       ]
     },
     {
@@ -313,7 +331,6 @@
       "type": "structured-writing",
       "category": "writing",
       "teaches": [
-        "giving-opinions",
         "comparatives"
       ],
       "template": [

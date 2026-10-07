@@ -36,7 +36,10 @@
       "correct": 0,
       "teaches": [
         "si-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "hypothetical-structures"
+      }
     },
     {
       "id": "b1-08-04.ex03",
@@ -106,19 +109,25 @@
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
-      ]
+        "hypothetical-structures"
+      ],
+      "distractor_skills": {
+        "1": "si-clauses"
+      }
     },
     {
       "id": "b1-08-04.ex07",
       "category": "grammar",
       "type": "fill-blank",
       "sentence": "Si __ la conexión, tendríamos que buscar otro alojamiento. [If we missed the connection, we would have to find other accommodation.] (perder)",
-      "answer": "perdiéramos",
       "teaches": [
-        "si-clauses"
+        "hypothetical-structures"
       ],
-      "english": "If we missed the connection, we would have to find other accommodation."
+      "english": "If we missed the connection, we would have to find other accommodation.",
+      "answers": [
+        "perdiéramos",
+        "perdiésemos"
+      ]
     },
     {
       "id": "b1-08-04.ex08",
@@ -148,7 +157,7 @@
         "alojamiento."
       ],
       "teaches": [
-        "si-clauses"
+        "hypothetical-structures"
       ]
     },
     {
@@ -178,7 +187,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
+        "hypothetical-structures"
       ]
     },
     {
@@ -187,7 +196,7 @@
       "type": "dictation",
       "sentence": "Si perdiéramos la conexión, tendríamos que buscar otro alojamiento.",
       "teaches": [
-        "si-clauses"
+        "hypothetical-structures"
       ],
       "english": "If we missed the connection, we would have to find somewhere else to stay."
     },
@@ -213,7 +222,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué haréis si perdéis el tren?"
+          "text": "¿Qué harán si pierden el tren?"
         },
         {
           "speaker": "B",
@@ -227,8 +236,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
-      ]
+        "futuro-simple"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-08-04.ex14",
@@ -251,8 +263,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
-      ]
+        "condicional-regular"
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-08-04.ex15",
@@ -303,7 +319,7 @@
         }
       ],
       "teaches": [
-        "si-clauses"
+        "hypothetical-structures"
       ]
     }
   ]

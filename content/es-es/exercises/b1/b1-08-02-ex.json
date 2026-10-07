@@ -35,8 +35,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "b1-08-02.ex03",
@@ -77,7 +81,7 @@
         "avería."
       ],
       "teaches": [
-        "imperfect"
+        "preterite-vs-imperfect"
       ]
     },
     {
@@ -85,9 +89,9 @@
       "category": "grammar",
       "type": "sentence-order",
       "sentences": [
-        "Llegamos a la estación. [We arrived at the station.]",
-        "Descubrimos que había una avería. [We discovered that there was a breakdown.]",
-        "El tren salió con retraso. [The train left late.]"
+        "Primero llegamos a la estación. [First we arrived at the station.]",
+        "Después descubrimos que había una avería. [Then we discovered that there was a breakdown.]",
+        "Finalmente el tren salió con retraso. [Finally the train left late.]"
       ],
       "solution": [
         0,
@@ -95,7 +99,7 @@
         2
       ],
       "teaches": [
-        "imperfect"
+        "secuencia-narrativa"
       ]
     },
     {
@@ -110,8 +114,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "pluscuamperfecto"
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-08-02.ex07",
@@ -140,19 +148,32 @@
         "el",
         "mensaje."
       ],
-      "solution": [
-        "Ya",
-        "habíamos",
-        "comprado",
-        "otro",
-        "billete",
-        "cuando",
-        "llegó",
-        "el",
-        "mensaje."
-      ],
       "teaches": [
-        "imperfect"
+        "pluscuamperfecto"
+      ],
+      "solutions": [
+        [
+          "Ya",
+          "habíamos",
+          "comprado",
+          "otro",
+          "billete",
+          "cuando",
+          "llegó",
+          "el",
+          "mensaje."
+        ],
+        [
+          "Habíamos",
+          "comprado",
+          "ya",
+          "otro",
+          "billete",
+          "cuando",
+          "llegó",
+          "el",
+          "mensaje."
+        ]
       ]
     },
     {
@@ -167,7 +188,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
+        "preterite-vs-imperfect"
       ]
     },
     {
@@ -191,7 +212,7 @@
       "type": "dictation",
       "sentence": "Ya habíamos comprado otro billete cuando llegó el mensaje.",
       "teaches": [
-        "imperfect"
+        "pluscuamperfecto"
       ],
       "english": "We had already bought another ticket when the message arrived."
     },
@@ -217,7 +238,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué pasó cuando llegasteis?"
+          "text": "¿Qué pasó cuando llegaron?"
         },
         {
           "speaker": "B",
@@ -231,8 +252,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "present-tense"
+      }
     },
     {
       "id": "b1-08-02.ex14",
@@ -251,12 +276,15 @@
       "options": [
         "Porque ya había una avería y anunciaron un retraso. [Because there was already a breakdown and they announced a delay.]",
         "Porque habrá una avería y anunciarán un retraso. [Because there will be a breakdown and they will announce a delay.]",
-        "Porque ya hay una avería y anuncian un retraso. [Because there is already a breakdown and they announce a delay.]"
+        "Porque ya haya una avería y anuncien un retraso. [Because there be (subjunctive) already a breakdown and they announce (subjunctive) a delay.]"
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple"
+      }
     },
     {
       "id": "b1-08-02.ex15",
@@ -279,8 +307,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "imperfect"
-      ]
+        "preterite-vs-imperfect"
+      ],
+      "distractor_skills": {
+        "1": "futuro-simple",
+        "2": "imperfect"
+      }
     },
     {
       "id": "b1-08-02.ex16",
@@ -293,7 +325,7 @@
         }
       ],
       "teaches": [
-        "imperfect"
+        "preterite-vs-imperfect"
       ]
     },
     {
@@ -307,7 +339,7 @@
         }
       ],
       "teaches": [
-        "imperfect"
+        "pluscuamperfecto"
       ]
     }
   ]
