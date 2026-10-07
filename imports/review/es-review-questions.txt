@@ -1,0 +1,26 @@
+# Spanish review: questions for the reviewer
+#
+# Exercises where the agent was not sure enough to change anything.
+# Each entry shows the exercise as it is now and a proposed version.
+# The reviewer edits the "proposed" block (or writes KEEP) and applies it later.
+# Lines starting with # are ignored.
+#
+# Format:
+#   ### <exercise id>   (<file>)
+#   why: one line - what looks wrong
+#   current:
+#   <the prompt / sentence>
+#   * correct option
+#   - wrong option
+#   proposed:
+#   <same shape, with the change>
+
+### a2.15.03.ex02   (content/es-es/exercises/a2/a2-15-03-ex.json + es-latam copy)
+why: Metalinguistic identification of parts of a quoted sentence; options cannot be balanced by length without changing the stimulus sentence itself.
+current:
+In "Lloró porque entendió la situación", which part is the cause?
+* entendió la situación
+- Lloró
+- porque
+proposed:
+Change stimulus to e.g. 'Lloró de tristeza porque entendió la situación' so main clause ('Lloró de tristeza', 17 chars) matches cause ('entendió la situación', 21 chars).

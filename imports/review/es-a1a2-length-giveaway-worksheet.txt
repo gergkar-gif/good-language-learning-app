@@ -1,0 +1,509 @@
+# ROADMAP 130: length give-aways in Spanish A1/A2 choice exercises — worksheet
+#
+# One entry per exercise. Identical copies (es-es + es-latam, lesson +
+# consolidation) are ONE entry; `files:` lists every copy, and every copy
+# gets the same change.
+#
+# Fill in `decision:` for EVERY entry in a block BEFORE you edit that block,
+# with one of:
+#   shorten: <the new correct option, in full>
+#   match: <each new wrong option, in full, separated by " || ">
+#   log                -> you are unsure; add it to es-review-questions.txt, change nothing
+# then one short line `why:` saying why the result has exactly one right
+# answer. An empty decision means the entry was not reviewed. The reviewer
+# reads this file and diffs every changed option against it.
+
+
+########## BLOCK: es-both a1 (35 exercises) ##########
+
+### a1-02-05.ex11   teaches: None
+files: content/es-es/exercises/a1/a1-02-05-ex.json, content/es-latam/exercises/a1/a1-02-05-ex.json
+What do Carlos and the others talk about in the story?
+* They meet Meg's friends and talk about why Carlos is learning Spanish.
+- They buy train tickets.
+- They cook dinner.
+decision: shorten: They talk about learning Spanish.
+why: Reading comprehension; shortens to key topic matching distractor length and verb-object shape.
+
+### a1.10.05.ex07   teaches: None
+files: content/es-es/exercises/a1/a1-10-05-ex.json, content/es-latam/exercises/a1/a1-10-05-ex.json
+What is inside Meg's present?
+* A notebook for writing new Spanish words in
+- A camera for the trip
+- A map of Vietnam
+decision: shorten: A notebook for new words
+why: Reading comprehension; shortens to concise object phrase matching distractor length.
+
+### a1.10.consolidation.ex10   teaches: ['a1-birthdays-celebrations-vocab']
+files: content/es-es/exercises/a1/a1-10-consolidation-ex.json, content/es-latam/exercises/a1/a1-10-consolidation-ex.json
+Kaylee: ¿Cuántos años tienes y cuándo es tu cumpleaños?
+Lauren: _____
+* Tengo veintiocho años y mi cumpleaños es el nueve de julio.
+- Soy veintiocho años en julio.
+- Tengo un viaje en julio.
+decision: match: Soy veintiocho años y mi cumpleaños es el nueve de julio. || Tengo veintiocho años y viajo a España el nueve de julio.
+why: Compound question requires two clauses; wrong options match length using age verb error (ser vs tener) and irrelevant travel detail.
+
+### a1.abi.01.ex11   teaches: ['a1-skills-abilities-vocab']
+files: content/es-es/exercises/a1/a1-abilities-01-ex.json, content/es-latam/exercises/a1/a1-abilities-01-ex.json
+Carlos: ¿Puedes venir a cenar esta noche?
+Meg: _____
+* Sí, puedo llegar a las ocho después de clase.
+- Tengo dolor de pies.
+- Vivo en Sudáfrica.
+decision: match: Sí, puedes llegar a las ocho después de clase. || Sí, sabes llegar a las ocho después de clase.
+why: Dialogue reply; wrong options match length using person error (puedes) and verb error (saber vs poder), removing off-topic lines.
+
+### a1.abi.02.ex11   teaches: ['a1-skills-abilities-vocab']
+files: content/es-es/exercises/a1/a1-abilities-02-ex.json, content/es-latam/exercises/a1/a1-abilities-02-ex.json
+Carlos: ¿Sabes nadar, Meg?
+Meg: _____
+* Sí, sé nadar muy bien; en Sudáfrica iba mucho a la playa.
+- No tengo hambre.
+- Mañana es lunes.
+decision: match: Sí, sabes nadar muy bien cuando vas a la playa. || No, no conozco nadar muy bien en la piscina grande.
+why: Dialogue reply; wrong options match length using person error (sabes) and verb error (conocer + inf vs saber), removing off-topic lines.
+
+### a1.abi.03.ex10   teaches: ['a1-skills-abilities-vocab']
+files: content/es-es/exercises/a1/a1-abilities-03-ex.json, content/es-latam/exercises/a1/a1-abilities-03-ex.json
+Meg: Carlos, ¿conoces Ciudad del Cabo?
+Carlos: _____
+* No, todavía no conozco Sudáfrica, pero me encantaría ir.
+- Tengo hambre.
+- Hace sol hoy.
+decision: match: No, todavía no sé Sudáfrica, pero quiero viajar pronto. || Sí, conoces Sudáfrica porque tus amigos viven allí.
+why: Dialogue reply; wrong options match length using saber vs conocer for places and person error (conoces), removing off-topic lines.
+
+### a1.abi.04.ex10   teaches: ['a1-skills-abilities-vocab']
+files: content/es-es/exercises/a1/a1-abilities-04-ex.json, content/es-latam/exercises/a1/a1-abilities-04-ex.json
+Carlos: Meg, ¿conoces a Lucía?
+Meg: _____
+* Sí, conozco a Lucía; es una estudiante muy simpática.
+- El libro es rojo.
+- Son las tres.
+decision: match: Sí, sé a Lucía; es una estudiante muy simpática. || Sí, conoces a Lucía; es una estudiante muy simpática.
+why: Dialogue reply; wrong options match length using saber vs conocer for people and person agreement error (conoces), removing off-topic lines.
+
+### a1.abi.04.ex11   teaches: ['a1-skills-abilities-vocab']
+files: content/es-es/exercises/a1/a1-abilities-04-ex.json, content/es-latam/exercises/a1/a1-abilities-04-ex.json
+Meg: ¿A quién estás llamando?
+Carlos: _____
+* Estoy llamando a mi mamá para avisarle que llego tarde.
+- No me gusta el frío.
+- Vivo en Sudáfrica.
+decision: match: Estás llamando a tu mamá para decirle que llegas tarde. || Estoy llamando en la cafetería porque tengo mi teléfono.
+why: Dialogue reply; wrong options match length using person error (estás) and location instead of person called, removing off-topic lines.
+
+### a1.abi.cons.ex11   teaches: ['a1-skills-abilities-vocab']
+files: content/es-es/exercises/a1/a1-abilities-consolidation-ex.json, content/es-latam/exercises/a1/a1-abilities-consolidation-ex.json
+Meg: Carlos, ¿conoces a un buen profesor de guitarra?
+Carlos: _____
+* Sí, conozco a un profesor de música excelente.
+- El café está caliente.
+- Son las cuatro.
+decision: match: Sí, sé a un profesor de música excelente. || Sí, conoces a un profesor de música excelente.
+why: Dialogue reply; wrong options match length using saber vs conocer for people and person agreement error (conoces), removing off-topic lines.
+
+### a1.cafe.05.ex09   teaches: ['a1-ordering-cafe-vocab']
+files: content/es-es/exercises/a1/a1-cafe-05-ex.json, content/es-latam/exercises/a1/a1-cafe-05-ex.json
+Which answer fits "¿Qué quiere?"
+* Quiero un té y un sándwich, por favor.
+- ¿Algo más?
+- Eso es todo.
+decision: match: ¿Desea algo más para tomar hoy? || Eso es todo lo que tenemos hoy.
+why: Ordering question requires customer order clause; wrong options match length using waiter questions, removing brevity giveaway.
+
+### a1.cont.01.ex11   teaches: ['a1-present-continuous-vocab']
+files: content/es-es/exercises/a1/a1-continuous-01-ex.json, content/es-latam/exercises/a1/a1-continuous-01-ex.json
+Carlos: ¿Puedes hablar un momento?
+Meg: _____
+* Ahora mismo estoy estudiando, ¿te llamo después?
+- No me gusta el helado.
+- Vivo en Hanói.
+decision: match: Ahora mismo estás estudiando, ¿te llamo después? || Ayer estuve estudiando mucho para el examen final.
+why: Dialogue reply; wrong options match length using person error (estás) and preterite tense clash, removing off-topic lines.
+
+### a1.cont.02.ex11   teaches: ['a1-present-continuous-vocab']
+files: content/es-es/exercises/a1/a1-continuous-02-ex.json, content/es-latam/exercises/a1/a1-continuous-02-ex.json
+Meg: ¿Qué estás escribiendo en tu cuaderno?
+Carlos: _____
+* Estoy escribiendo un resumen de la clase de hoy.
+- Me gusta el fútbol.
+- Es la una y media.
+decision: match: Estás escribiendo un resumen de la clase de hoy. || Escribo cartas en mi cuaderno todos los domingos.
+why: Dialogue reply; wrong options match length using person error (estás) and habitual present vs progressive, removing off-topic lines.
+
+### a1.cont.03.ex11   teaches: ['a1-present-continuous-vocab']
+files: content/es-es/exercises/a1/a1-continuous-03-ex.json, content/es-latam/exercises/a1/a1-continuous-03-ex.json
+Carlos: ¿Podemos hablar con Juan?
+Meg: _____
+* No ahora; está durmiendo porque trabaja de noche.
+- Tengo diez dólares.
+- Hace mucho calor.
+decision: match: No ahora; estás durmiendo porque es muy temprano. || No ahora; ellos están durmiendo en la habitación.
+why: Dialogue reply; wrong options match length using person error (estás) and plural subject error (ellos), removing off-topic lines.
+
+### a1.cont.04.ex10   teaches: ['a1-present-continuous-vocab']
+files: content/es-es/exercises/a1/a1-continuous-04-ex.json, content/es-latam/exercises/a1/a1-continuous-04-ex.json
+Meg: Carlos, ¿a qué te dedicas?
+Carlos: _____
+* Soy profesor, pero en este momento estoy de vacaciones.
+- Tengo frío.
+- Son las doce.
+decision: match: Eres profesor, pero en este momento estás descansando. || Vivo cerca de aquí, pero en este momento voy al parque.
+why: Dialogue reply; wrong options match length using person error (eres/estás) and non-profession statement, removing off-topic lines.
+
+### a1.cont.04.ex11   teaches: ['a1-present-continuous-vocab']
+files: content/es-es/exercises/a1/a1-continuous-04-ex.json, content/es-latam/exercises/a1/a1-continuous-04-ex.json
+Carlos: ¿Siempre tomas café por la tarde?
+Meg: _____
+* Casi siempre, pero hoy estoy tomando té verde.
+- No sé bailar tango.
+- Vivo en Sudáfrica.
+decision: match: Casi siempre, pero hoy estás tomando té caliente. || Casi siempre, pero ayer tomé té negro en mi casa.
+why: Dialogue reply; wrong options match length using person error (estás) and past tense clash, removing off-topic lines.
+
+### a1.cont.05.ex10   teaches: ['a1-present-continuous-vocab']
+files: content/es-es/exercises/a1/a1-continuous-05-ex.json, content/es-latam/exercises/a1/a1-continuous-05-ex.json
+Meg: Hola Carlos, ¿dónde estás? Estoy en la puerta del museo.
+Carlos: _____
+* ¡Hola Meg! Estoy saliendo del hotel, llego en cinco minutos.
+- Tengo fiebre alta.
+- Me gusta el verano.
+decision: match: ¡Hola Meg! Estás saliendo del hotel y vas al museo ahora. || ¡Hola Meg! El museo abre a las nueve y cierra a las seis.
+why: Dialogue reply; wrong options match length using person error (estás) and museum opening hours, removing off-topic lines.
+
+### a1.cont.cons.ex12   teaches: ['a1-present-continuous-vocab']
+files: content/es-es/exercises/a1/a1-continuous-consolidation-ex.json, content/es-latam/exercises/a1/a1-continuous-consolidation-ex.json
+Meg: ¿Qué hace la gente en la plaza?
+Carlos: _____
+* Muchos están bailando y otros están tomando fotos.
+- Son las siete en punto.
+- Me llamo Carlos.
+decision: match: Muchos comen en su casa y otros duermen en el hotel. || La plaza es muy grande y tiene muchos árboles verdes.
+why: Dialogue reply; wrong options match length using non-progressive/off-site routine and descriptive statement, removing off-topic lines.
+
+### a1.dem.02.ex10   teaches: ['a1-demonstratives-vocab']
+files: content/es-es/exercises/a1/a1-demonstrative-02-ex.json, content/es-latam/exercises/a1/a1-demonstrative-02-ex.json
+Meg: Carlos, ¿puedes mostrarme ese mapa?
+Carlos: _____
+* Sí, claro, aquí tienes ese mapa.
+- Tengo hambre.
+- Hace sol.
+decision: match: Sí, claro, tú puedes mostrar ese mapa. || Sí, claro, esa mapa está en la mesa.
+why: Dialogue reply; wrong options match length using person reversal (tú puedes) and gender error (esa mapa), removing off-topic lines.
+
+### a1.dem.04.ex10   teaches: ['a1-demonstratives-vocab']
+files: content/es-es/exercises/a1/a1-demonstrative-04-ex.json, content/es-latam/exercises/a1/a1-demonstrative-04-ex.json
+Meg: Carlos, mira en el plato. ¿Qué es esto?
+Carlos: _____
+* Esto es un postre tradicional vietnamita de arroz.
+- Mañana es martes.
+- Yo me llamo Carlos.
+decision: match: Esta es un postre tradicional vietnamita de arroz. || Estos son un postre tradicional vietnamita de arroz.
+why: Dialogue reply; wrong options match length using demonstrative gender error (esta) and number error (estos), removing off-topic lines.
+
+### a1.dem.05.ex11   teaches: ['a1-demonstratives-vocab']
+files: content/es-es/exercises/a1/a1-demonstrative-05-ex.json, content/es-latam/exercises/a1/a1-demonstrative-05-ex.json
+Carlos: ¿Compramos estos mangos o aquellos melones?
+Meg: _____
+* Compremos estos mangos, se ven muy frescos.
+- No tengo frío.
+- Vivo en Sudáfrica.
+decision: match: Compremos estas mangos, se ven muy frescos. || Compremos este mangos, se ven muy frescos.
+why: Dialogue reply; wrong options match length using demonstrative gender error (estas) and number error (este), removing off-topic lines.
+
+### a1.dem.cons.ex12   teaches: ['a1-demonstratives-vocab']
+files: content/es-es/exercises/a1/a1-demonstrative-consolidation-ex.json, content/es-latam/exercises/a1/a1-demonstrative-consolidation-ex.json
+Vendedora: ¿Le pongo esta fruta en una bolsa?
+Carlos: _____
+* Sí, por favor, me llevo esta fruta y esa también.
+- No sé cocinar.
+- Mi hermana se llama Ana.
+decision: match: Sí, por favor, me llevo este fruta y ese también. || Sí, por favor, le pongo esta fruta y esa también.
+why: Dialogue reply; wrong options match length using demonstrative gender error (este fruta) and speaker role reversal (le pongo), removing off-topic lines.
+
+### a1.directions.05.ex17   teaches: None
+files: content/es-es/exercises/a1/a1-directions-05-ex.json, content/es-latam/exercises/a1/a1-directions-05-ex.json
+What helps the character navigate?
+* Simple directions and town landmarks.
+- A timetable.
+- A café menu.
+decision: shorten: Town landmarks.
+why: Reading comprehension; shortens to landmark noun phrase matching distractor length.
+
+### a1.dol.01.ex10   teaches: ['a1-what-hurts-vocab']
+files: content/es-es/exercises/a1/a1-doler-01-ex.json, content/es-latam/exercises/a1/a1-doler-01-ex.json
+Meg: Carlos, ¿estás bien? Te ves cansado.
+Carlos: _____
+* No mucho; me duele bastante la cabeza.
+- Tengo tres gatos.
+- Hoy es jueves.
+decision: match: No mucho; me duelen bastante la cabeza. || No mucho; te duele bastante la cabeza.
+why: Dialogue reply; wrong options match length using doler agreement error (me duelen la cabeza) and pronoun error (te duele), removing off-topic lines.
+
+### a1.dol.01.ex11   teaches: ['a1-what-hurts-vocab']
+files: content/es-es/exercises/a1/a1-doler-01-ex.json, content/es-latam/exercises/a1/a1-doler-01-ex.json
+Carlos: ¿Quieres caminar al museo ahora?
+Meg: _____
+* Prefiero descansar; me duelen mucho los pies.
+- Me gusta el fútbol.
+- Vivo en Sudáfrica.
+decision: match: Prefiero descansar; me duele mucho los pies. || Prefiero descansar; te duelen mucho los pies.
+why: Dialogue reply; wrong options match length using doler agreement error (me duele los pies) and pronoun error (te duelen), removing off-topic lines.
+
+### a1.dol.03.ex10   teaches: ['a1-what-hurts-vocab']
+files: content/es-es/exercises/a1/a1-doler-03-ex.json, content/es-latam/exercises/a1/a1-doler-03-ex.json
+Meg: Carlos, ¿te duele el pie todavía?
+Carlos: _____
+* Solo me duele un poco cuando camino rápido.
+- Tengo una manzana.
+- El café está frío.
+decision: match: Solo me duelen un poco cuando camino rápido. || Solo te duele un poco cuando caminas rápido.
+why: Dialogue reply; wrong options match length using doler agreement error (me duelen el pie) and person error (te duele), removing off-topic lines.
+
+### a1.dol.03.ex11   teaches: ['a1-what-hurts-vocab']
+files: content/es-es/exercises/a1/a1-doler-03-ex.json, content/es-latam/exercises/a1/a1-doler-03-ex.json
+Carlos: Meg, ¿estás bien? Te veo pálida.
+Meg: _____
+* Estoy un poco mareada por el calor; necesito sentarme.
+- Compré un sombrero.
+- Son las tres en punto.
+decision: match: Estoy un poco mareada por el calor; necesito sentarme. || Estás un poco mareada por el calor; necesitas sentarte.
+why: Dialogue reply; wrong options match length using gender agreement error (mareado) and person error (estás/necesitas), removing off-topic lines.
+
+### a1.dol.04.ex11   teaches: ['a1-what-hurts-vocab']
+files: content/es-es/exercises/a1/a1-doler-04-ex.json, content/es-latam/exercises/a1/a1-doler-04-ex.json
+Carlos: ¿Cómo debo tomar estas pastillas?
+Farmacéutica: _____
+* Tome una pastilla cada ocho horas después de comer.
+- El tren sale a las nueve.
+- Hablo español.
+decision: match: Tomo una pastilla cada ocho horas después de comer. || Estas pastillas cuestan diez euros en la farmacia hoy.
+why: Dialogue reply; wrong options match length using indicative 1st person instead of imperative (tomo) and price statement, removing off-topic lines.
+
+### a1.dol.cons.ex12   teaches: ['a1-what-hurts-vocab']
+files: content/es-es/exercises/a1/a1-doler-consolidation-ex.json, content/es-latam/exercises/a1/a1-doler-consolidation-ex.json
+Farmacéutica: ¿En qué puedo ayudarle?
+Meg: _____
+* Me duele mucho la garganta y tengo tos.
+- Me llamo Meg.
+- Soy sudafricana.
+decision: match: Me duelen mucho la garganta y tengo tos. || Le duele mucho la garganta y tiene tos.
+why: Dialogue reply; wrong options match length using doler agreement error (me duelen la garganta) and 3rd person pronoun (le duele), removing off-topic lines.
+
+### a1.future.05.ex17   teaches: None
+files: content/es-es/exercises/a1/a1-future-05-ex.json, content/es-latam/exercises/a1/a1-future-05-ex.json
+What do they have to do before the trip?
+* Reserve the hotel and arrive early.
+- Buy a new car.
+- Study Spanish.
+decision: shorten: Reserve the hotel.
+why: Reading comprehension; shortens to concise infinitive phrase matching distractor length.
+
+### a1.gustar.cons.ex11   teaches: ['a1-likes-dislikes-vocab']
+files: content/es-es/exercises/a1/a1-gustar-consolidation-ex.json, content/es-latam/exercises/a1/a1-gustar-consolidation-ex.json
+Carlos: ¿Qué música te gusta escuchar?
+Meg: _____
+* Me gusta el jazz y la música latina.
+- Soy estudiante.
+- No vivo aquí.
+decision: match: Te gusta el jazz y la música clásica. || Yo gusto el jazz y la música latina.
+why: Dialogue reply; wrong options match length using pronoun error (te gusta) and anglicism transfer error (yo gusto), removing off-topic lines.
+
+### a1.refl.01.ex10   teaches: ['a1-daily-routine-reflexive-verbs-vocab']
+files: content/es-es/exercises/a1/a1-reflexive-01-ex.json, content/es-latam/exercises/a1/a1-reflexive-01-ex.json
+Meg: Carlos, ¿a qué hora te levantas normalmente?
+Carlos: _____
+* Me levanto a las siete de la mañana.
+- Tengo una hermana.
+- Es de noche.
+decision: match: Te levantas a las siete de la mañana. || Me levanta a las siete de la mañana.
+why: Dialogue reply; wrong options match length using pronoun person error (te levantas) and verb agreement error (me levanta), removing off-topic lines.
+
+### a1.refl.01.ex11   teaches: ['a1-daily-routine-reflexive-verbs-vocab']
+files: content/es-es/exercises/a1/a1-reflexive-01-ex.json, content/es-latam/exercises/a1/a1-reflexive-01-ex.json
+Carlos: ¿Te duchas por la mañana o por la noche?
+Meg: _____
+* Me ducho por la mañana antes del desayuno.
+- No me gusta el café.
+- Vivo en Hanói.
+decision: match: Te duchas por la mañana antes del desayuno. || Me ducha por la mañana antes del desayuno.
+why: Dialogue reply; wrong options match length using pronoun person error (te duchas) and verb agreement error (me ducha), removing off-topic lines.
+
+### a1.refl.02.ex10   teaches: ['a1-daily-routine-reflexive-verbs-vocab']
+files: content/es-es/exercises/a1/a1-reflexive-02-ex.json, content/es-latam/exercises/a1/a1-reflexive-02-ex.json
+Meg: Carlos, ¿siempre te acuestas tan tarde?
+Carlos: _____
+* Sí, normalmente me acuesto a medianoche.
+- Tengo dolor de pies.
+- El libro es azul.
+decision: match: Sí, normalmente te acuestas a medianoche. || Sí, normalmente me acuesta a medianoche.
+why: Dialogue reply; wrong options match length using pronoun person error (te acuestas) and verb agreement error (me acuesta), removing off-topic lines.
+
+### a1.refl.03.ex10   teaches: ['a1-daily-routine-reflexive-verbs-vocab']
+files: content/es-es/exercises/a1/a1-reflexive-03-ex.json, content/es-latam/exercises/a1/a1-reflexive-03-ex.json
+Meg: ¿Qué te pones para la fiesta?
+Carlos: _____
+* Me pongo una camisa azul y pantalones negros.
+- Son las tres en punto.
+- Tengo que estudiar.
+decision: match: Te pones una camisa azul y pantalones negros. || Me pone una camisa azul y pantalones negros.
+why: Dialogue reply; wrong options match length using pronoun person error (te pones) and verb agreement error (me pone), removing off-topic lines.
+
+### a1.refl.cons.ex11   teaches: ['a1-daily-routine-reflexive-verbs-vocab']
+files: content/es-es/exercises/a1/a1-reflexive-consolidation-ex.json, content/es-latam/exercises/a1/a1-reflexive-consolidation-ex.json
+Meg: ¿Siempre te despiertas tan temprano, Carlos?
+Carlos: _____
+* Sí, me despierto a las seis, pero me quedo diez minutos en la cama.
+- El metro está cerrado.
+- No me gusta el té verde.
+decision: match: Sí, te despiertas a las seis, pero te quedas diez minutos en la cama. || Sí, me despierta a las seis, pero me queda diez minutos en la cama.
+why: Dialogue reply; wrong options match length using pronoun person error (te despiertas/te quedas) and verb agreement errors (me despierta/me queda), removing off-topic lines.
+
+########## BLOCK: es-both a2 (16 exercises) ##########
+
+### a2.06.05.ex11   teaches: None
+files: content/es-es/exercises/a2/a2-06-05-ex.json, content/es-latam/exercises/a2/a2-06-05-ex.json
+¿Qué compran antes de subir al tren?
+* Algunos recuerdos para sus familias.
+- Un hotel nuevo.
+- Una bicicleta.
+decision: shorten: Algunos recuerdos.
+why: Reading comprehension; shortens to core noun phrase matching distractor length.
+
+### a2.08.05.ex15   teaches: None
+files: content/es-es/exercises/a2/a2-08-05-ex.json, content/es-latam/exercises/a2/a2-08-05-ex.json
+¿Qué hacen los amigos antes de irse?
+* Dan las gracias a Lucía por la invitación.
+- Preparan otra cena.
+- Compran una bebida.
+decision: shorten: Dan las gracias a Lucía.
+why: Reading comprehension; shortens to key action matching distractor length and verb-object shape.
+
+### a2.10.03.ex12   teaches: ['por-que-y-porque']
+files: content/es-es/exercises/a2/a2-10-03-ex.json, content/es-latam/exercises/a2/a2-10-03-ex.json
+Which sentence gives a reason?
+* He contestado porque he recibido una noticia.
+- He contestado ya.
+- He contestado todavía.
+decision: match: He contestado a todos los mensajes esta mañana. || He contestado desde la oficina antes de comer.
+why: Grammar item requires reason clause; wrong options match length using time and location details without giving a reason.
+
+### a2.11.05.ex15   teaches: None
+files: content/es-es/exercises/a2/a2-11-05-ex.json, content/es-latam/exercises/a2/a2-11-05-ex.json
+¿Qué hizo Kaylee?
+* Participó en un juego tradicional y ganó un premio.
+- Compró una novela.
+- Habló con los artistas.
+decision: shorten: Participó en un juego.
+why: Reading comprehension; shortens to single event in preterite matching distractor length.
+
+### a2.13.05.ex12   teaches: None
+files: content/es-es/exercises/a2/a2-13-05-ex.json, content/es-latam/exercises/a2/a2-13-05-ex.json
+¿Qué hicieron cuando llegaron?
+* Recibieron guantes, bolsas y una explicación.
+- Compraron flores.
+- Volvieron a casa.
+decision: shorten: Recibieron guantes.
+why: Reading comprehension; shortens to single item received matching distractor length.
+
+### a2.15.03.ex02   teaches: ['porque-y-por-eso']
+files: content/es-es/exercises/a2/a2-15-03-ex.json, content/es-latam/exercises/a2/a2-15-03-ex.json
+In «Lloró porque entendió la situación», which part is the cause?
+* entendió la situación
+- Lloró
+- porque
+decision: log
+why: Question asks to identify a quoted clause from a fixed sentence; options cannot be balanced without rewriting the stimulus sentence itself.
+
+### a2.16.05.ex12   teaches: None
+files: content/es-es/exercises/a2/a2-16-05-ex.json, content/es-latam/exercises/a2/a2-16-05-ex.json
+¿Dónde se reunieron para escribir las cartas?
+* En el apartamento de Carlos y Meg.
+- En una estación.
+- En un hotel.
+decision: shorten: En el apartamento.
+why: Reading comprehension; shortens location to simple prepositional phrase matching distractor length.
+
+### a2.16.05.ex13   teaches: None
+files: content/es-es/exercises/a2/a2-16-05-ex.json, content/es-latam/exercises/a2/a2-16-05-ex.json
+¿Sobre qué escribieron las cartas?
+* Sobre momentos felices en Hanói y sus planes.
+- Sobre una receta.
+- Sobre una entrevista.
+decision: shorten: Sobre sus recuerdos y planes.
+why: Reading comprehension; shortens to parallel noun phrase matching distractor length.
+
+### a2.17.05.ex13   teaches: None
+files: content/es-es/exercises/a2/a2-17-05-ex.json, content/es-latam/exercises/a2/a2-17-05-ex.json
+¿Qué hicieron después de las actividades?
+* Un pequeño concurso por equipos.
+- Una excursión.
+- Una entrevista.
+decision: shorten: Un concurso.
+why: Reading comprehension; shortens activity to single noun matching distractor length.
+
+### a2.17.05.ex15   teaches: None
+files: content/es-es/exercises/a2/a2-17-05-ex.json, content/es-latam/exercises/a2/a2-17-05-ex.json
+¿Qué intercambiaron muchos de los amigos?
+* Teléfonos y direcciones de correo electrónico.
+- Regalos y cartas.
+- Billetes de tren.
+decision: shorten: Teléfonos y correos.
+why: Reading comprehension; shortens exchanged items to concise noun phrase matching distractor length.
+
+### a2.18.05.ex15   teaches: None
+files: content/es-es/exercises/a2/a2-18-05-ex.json, content/es-latam/exercises/a2/a2-18-05-ex.json
+¿Cómo se sintieron los amigos después de salir del aeropuerto?
+* Tristes, pero también felices por todo lo que han vivido.
+- Enfadados y cansados.
+- Sorprendidos por el vuelo.
+decision: shorten: Tristes, pero también felices.
+why: Reading comprehension; shortens emotion description to core adjective phrase matching distractor length.
+
+### a2.19.03.ex15   teaches: ['futuro-simple']
+files: content/es-es/exercises/a2/a2-19-03-ex.json, content/es-latam/exercises/a2/a2-19-03-ex.json
+Carlos: ¿Qué crees que pasará?
+Meg: _____
+* Probablemente sucederá pronto.
+- Sucedió ayer.
+- Sucede ayer.
+decision: shorten: Sucederá pronto.
+why: Dialogue reply; shortens to future verb + adverb matching distractor length.
+
+### a2.19.05.ex13   teaches: None
+files: content/es-es/exercises/a2/a2-19-05-ex.json, content/es-latam/exercises/a2/a2-19-05-ex.json
+¿Qué espera hacer Lauren?
+* Encontrar un nuevo trabajo y seguir estudiando español.
+- Viajar a Chile.
+- Comprar una casa.
+decision: shorten: Encontrar un nuevo trabajo.
+why: Reading comprehension; shortens to single future aspiration matching distractor length.
+
+### a2.19.consolidation.ex08   teaches: ['futuro-simple']
+files: content/es-es/exercises/a2/a2-19-consolidation-ex.json, content/es-latam/exercises/a2/a2-19-consolidation-ex.json
+Which sentence expresses a prediction?
+* Probablemente sucederá pronto.
+- Sucedió ayer.
+- Sucede ayer.
+decision: shorten: Sucederá pronto.
+why: Grammar prediction item; shortens to future verb + adverb matching distractor length.
+
+### a2.20.05.ex14   teaches: None
+files: content/es-es/exercises/a2/a2-20-05-ex.json, content/es-latam/exercises/a2/a2-20-05-ex.json
+¿Qué recordaron mientras caminaban?
+* Su primera conversación en el intercambio de idiomas.
+- Su primer viaje a Chile.
+- Su última clase de cocina.
+decision: shorten: Su primera conversación.
+why: Reading comprehension; shortens remembered event to noun phrase matching distractor length.
+
+### a2.20.05.ex15   teaches: None
+files: content/es-es/exercises/a2/a2-20-05-ex.json, content/es-latam/exercises/a2/a2-20-05-ex.json
+¿Qué hicieron antes de despedirse?
+* Hicieron una última fotografía junto al lago.
+- Prepararon una maleta.
+- Escribieron una carta.
+decision: shorten: Hicieron una fotografía.
+why: Reading comprehension; shortens final action to simple verb + noun phrase matching distractor length.
