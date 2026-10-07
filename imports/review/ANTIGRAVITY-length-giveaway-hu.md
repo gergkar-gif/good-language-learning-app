@@ -264,3 +264,52 @@ plausible but false. **Carry this standard into block 2:** each wrong
 option should be a different real fact, document, step or form, in the
 same tone as the correct one, never an absolute, never a stock "bad news"
 line.
+
+### Block 2 (B1, first half), reviewed 2026-10-07
+
+Commit `0e2aef36`. The mechanics are right: all 149 decisions (76 shorten /
+73 match / 0 log) are applied exactly as written; the 149 changed exercise
+copies are all in the worksheet; no `teaches`, `category`, `stage` or
+`correct` value moved, and in every `shorten` the wrong options are
+untouched; the validator passes; no block 2 id is still flagged. The
+shortenings keep the fact asked for (checked against the stories, e.g.
+*budai* in b1-09-05-reading-1 is in the Esti Kornél text). The "false, not
+extreme" standard from block 1 held: no *Sajnos*-style tell, few absolutes.
+
+**Fix these seven first, in a separate commit before you start block 3**
+(edit the worksheet entries as well). Each is a new wrong option that is
+arguably a second right answer (rule 3):
+
+1. `b1-05-consolidation-9` (*Miért nem beszélsz Zsófival?*): the new wrong
+   option *Mert teljesen más lett az érdeklődési körünk …* is a perfectly
+   good answer to the question. Use a reply that does not give a reason for
+   not talking to her.
+2. `b1-12-05-practice-3` (*Mit kérdez a pincér a vacsora végén?*): *Ízlett
+   az étel, vagy ajánlhatok még egy kis desszertet a kávé mellé?* is
+   something a waiter really says near the end of a dinner. Use a question
+   that belongs to the start or middle of a meal.
+3. `b1-12-01-practice-4` (traditional Hungarian spices): *A fahéj, a
+   vanília, a szegfűszeg, a kardamom és a szerecsendió* are all used in
+   Hungarian baking. Use a list that is clearly not traditional Hungarian
+   (as the other wrong option already is).
+4. `b1-10-02-practice-4` (advantages of a condo): *a társasházakban sokkal
+   nagyobb a csend és a nyugalom …* can be argued as an advantage. Make the
+   claim clearly false or clearly a disadvantage.
+5. `b1-10-05-controlled-1`: *… biztonságos lenne* can pass as a polite
+   conditional after *az a legfontosabb szempont, hogy*. Keep *volt* (clearly
+   wrong tense) and replace *lenne* with a form that is plainly wrong there.
+6. `b1-04-05-dialogue-1`: *A helyedben te is mérlegelnéd …* ("you too")
+   reads as nearly correct advice. Use a version whose error is clear, or a
+   reply that is not advice.
+7. `b1-04-03-practice-4`: *… inkább vársz egy kicsit, mint azonnal döntesz*
+   is a blunt present-tense preference and could pass as correct. Keep the
+   past-tense wrong option and make the other one clearly wrong (for example
+   the wrong mood or wrong person).
+
+Also, no action needed but keep in mind for block 3: in `shorten` entries
+the correct option is sometimes still the shortest-but-noticeably-fuller
+one (`b1-12-03-practice-4`: 21 characters against 12 and 11). That is under
+the threshold, so leave it, but when you can pick a version closer in
+length, do.
+
+The wrong options in the 7 entries above are the only ones to change.
