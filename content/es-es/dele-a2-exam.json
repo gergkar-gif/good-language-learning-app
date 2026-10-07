@@ -1,0 +1,764 @@
+{
+  "id": "es-dele-a2-exam",
+  "board": "Instituto Cervantes",
+  "level": "A2",
+  "title": "Prueba DELE A2",
+  "subtitle": "Diplomas de Español como Lengua Extranjera · Modelo Oficial A2",
+  "passingScorePercentage": 60,
+  "skills": {
+    "reading": {
+      "id": "reading",
+      "name": "Comprensión de lectura",
+      "officialTimeMinutes": 60,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "reading-t1",
+          "tareaNum": 1,
+          "type": "reading-mc",
+          "title": "Tarea 1: Correo electrónico de un compañero de trabajo",
+          "instructions": "Lee el siguiente correo electrónico de Marcos a sus compañeros de oficina sobre la despedida de una compañera. Después, responde a las 5 preguntas seleccionando la opción correcta (A, B o C).",
+          "passage": "Estimados compañeros:\n\nComo ya sabéis, a finales de este mes nuestra compañera Teresa se jubila después de trabajar más de veinte años en la empresa. Para agradecerle su dedicación y celebrar todos estos años juntos, estamos organizando una cena especial de despedida el próximo viernes 24 de noviembre.\n\nHemos reservado una mesa amplia en el restaurante La Tagliatella, en la plaza Mayor, a las nueve y media de la noche. El menú incluye entrantes variados para compartir, un plato principal a elegir entre carne o pescado, postre de la casa y bebida por veintidós euros por persona.\n\nAdemás, queremos comprarle un regalo entre todos: una cámara fotográfica digital compacta, porque sabemos que le apasiona viajar. Para el regalo, cada uno de nosotros aportará diez euros voluntarios. Podéis darle el dinero en efectivo a Elena antes del próximo martes o enviarle una transferencia bancaria a su número de cuenta.\n\nPor favor, confirmad vuestra asistencia antes del jueves 16 respondiendo directamente a este correo para avisar al restaurante con el número definitivo de comensales. Si tenéis alguna alergia alimentaria o necesitáis un menú vegetariano, indicadlo también en vuestro mensaje.\n\n¡Esperamos contar con todos vosotros para darle a Teresa una despedida inolvidable!\n\nUn cordial saludo,\nMarcos Gómez\nDepartamento de Recursos Humanos",
+          "questions": [
+            {
+              "id": "rt1-q1",
+              "question": "1. ¿Por qué se organiza la cena del próximo viernes 24?",
+              "options": [
+                "Para celebrar el aniversario de fundación de la empresa.",
+                "Para despedir a una compañera que se jubila.",
+                "Para dar la bienvenida al nuevo equipo de Recursos Humanos."
+              ],
+              "correct": 1,
+              "evidence": "nuestra compañera Teresa se jubila después de trabajar más de veinte años en la empresa. Para agradecerle su dedicación y celebrar todos estos años juntos, estamos organizando una cena especial de despedida",
+              "explanation": "El correo explica que el motivo es celebrar la jubilación de Teresa tras veinte años en la compañía."
+            },
+            {
+              "id": "rt1-q2",
+              "question": "2. ¿Qué incluye el menú reservado en el restaurante?",
+              "options": [
+                "Solo bebida y aperitivos ligeros de pie.",
+                "Entrantes, plato principal de carne o pescado, postre y bebida.",
+                "Un bufé libre de platos vegetarianos sin bebida."
+              ],
+              "correct": 1,
+              "evidence": "El menú incluye entrantes variados para compartir, un plato principal a elegir entre carne o pescado, postre de la casa y bebida",
+              "explanation": "Marcos detalla que el menú consta de entrantes para compartir, segundo plato a elegir, postre y bebida."
+            },
+            {
+              "id": "rt1-q3",
+              "question": "3. ¿Qué regalo han pensado comprar entre todos los compañeros?",
+              "options": [
+                "Un billete de avión para viajar a Italia.",
+                "Un reloj de oro grabado con su nombre.",
+                "Una cámara de fotos digital compacta."
+              ],
+              "correct": 2,
+              "evidence": "queremos comprarle un regalo entre todos: una cámara fotográfica digital compacta, porque sabemos que le apasiona viajar.",
+              "explanation": "Han elegido una cámara fotográfica digital compacta porque a Teresa le apasiona viajar."
+            },
+            {
+              "id": "rt1-q4",
+              "question": "4. ¿Cómo pueden pagar los compañeros su parte del regalo?",
+              "options": [
+                "En efectivo a Elena o mediante transferencia bancaria antes del martes.",
+                "Únicamente con tarjeta de crédito en la recepción de la empresa.",
+                "Directamente en el restaurante al camarero la noche de la cena."
+              ],
+              "correct": 0,
+              "evidence": "Podéis darle el dinero en efectivo a Elena antes del próximo martes o enviarle una transferencia bancaria a su número de cuenta.",
+              "explanation": "El dinero del regalo se entrega en efectivo a Elena o por transferencia antes del martes."
+            },
+            {
+              "id": "rt1-q5",
+              "question": "5. ¿Qué deben hacer quienes deseen asistir a la cena?",
+              "options": [
+                "Llamar por teléfono al restaurante para reservar plaza individual.",
+                "Responder al correo antes del jueves 16 avisando de posibles alergias.",
+                "Comprar el regalo de Teresa antes del viernes al mediodía."
+              ],
+              "correct": 1,
+              "evidence": "Por favor, confirmad vuestra asistencia antes del jueves 16 respondiendo directamente a este correo... Si tenéis alguna alergia alimentaria o necesitáis un menú vegetariano, indicadlo también",
+              "explanation": "Es necesario contestar al correo antes del jueves 16 y mencionar cualquier alergia alimentaria o necesidad de menú especial."
+            }
+          ]
+        },
+        {
+          "id": "reading-t2",
+          "tareaNum": 2,
+          "type": "matching-notices",
+          "title": "Tarea 2: Tablón de anuncios y necesidades cotidianas",
+          "instructions": "Relaciona a las 6 personas (1-6) con los 10 anuncios del tablón (A-J). Hay 4 anuncios que no corresponden a ninguna persona.",
+          "people": [
+            {
+              "id": "p1",
+              "name": "1. Alberto",
+              "text": "Busca un curso de italiano de conversación en grupo reducido dos tardes por semana después de las siete.",
+              "correctNoticeId": "not-b"
+            },
+            {
+              "id": "p2",
+              "name": "2. Valeria",
+              "text": "Necesita una tintorería rápida para limpiar en seco y planchar un vestido de fiesta en menos de veinticuatro horas.",
+              "correctNoticeId": "not-j"
+            },
+            {
+              "id": "p3",
+              "name": "3. Sergio",
+              "text": "Quiere participar en una ruta guiada de senderismo por la montaña para principiantes con bastones y seguro incluidos el domingo.",
+              "correctNoticeId": "not-a"
+            },
+            {
+              "id": "p4",
+              "name": "4. Beatriz",
+              "text": "Desea comprar muebles de madera antiguos restaurados y lámparas clásicas para decorar su nuevo salón.",
+              "correctNoticeId": "not-h"
+            },
+            {
+              "id": "p5",
+              "name": "5. Tomás",
+              "text": "Tiene un dolor de muelas urgente y necesita una clínica dental que atienda los sábados por la mañana sin cita previa.",
+              "correctNoticeId": "not-e"
+            },
+            {
+              "id": "p6",
+              "name": "6. Elena",
+              "text": "Busca un servicio técnico informático para cambiar la pantalla rota de su tableta y sustituir la batería el mismo día.",
+              "correctNoticeId": "not-c"
+            }
+          ],
+          "notices": [
+            {
+              "id": "not-a",
+              "letter": "A",
+              "title": "Senderos del Valle · Rutas Guiadas",
+              "text": "Excursiones dominicales de nivel iniciación por el parque natural. Incluye guía titulado, bastones de marcha y seguro de accidentes para todos los asistentes."
+            },
+            {
+              "id": "not-b",
+              "letter": "B",
+              "title": "Centro de Idiomas Dante",
+              "text": "Clases prácticas de conversación en italiano para adultos. Grupos de máximo seis personas los martes y jueves de 19:30 a 21:00 horas en el centro."
+            },
+            {
+              "id": "not-c",
+              "letter": "C",
+              "title": "Doctor Pantalla · Reparación Exprés",
+              "text": "Sustitución inmediata de pantallas y baterías en tabletas, móviles y ordenadores portátiles. Reparaciones en el mismo día con garantía de seis meses."
+            },
+            {
+              "id": "not-d",
+              "letter": "D",
+              "title": "Alfarería y Cerámica Artesanal El Torno",
+              "text": "Venta directa de vajillas hechas a mano, tazas y jarrones decorativos. Cursos intensivos de torno los fines de semana para todas las edades."
+            },
+            {
+              "id": "not-e",
+              "letter": "E",
+              "title": "Clínica Dental Sanitas Urgencias",
+              "text": "Atención odontológica para urgencias e infecciones dentales. Abrimos los sábados de 9:00 a 14:00 horas sin necesidad de cita previa."
+            },
+            {
+              "id": "not-f",
+              "letter": "F",
+              "title": "Autoescuela Rápida Vial",
+              "text": "Cursos teóricos intensivos de fin de semana para el permiso de conducir B. Prácticas en circuito cerrado y vehículos automáticos nuevos."
+            },
+            {
+              "id": "not-g",
+              "letter": "G",
+              "title": "Guardería Canina Cuatro Patas",
+              "text": "Alojamiento y paseo diario para perros durante tus vacaciones o jornadas de trabajo. Amplias zonas verdes y supervisión veterinaria continua."
+            },
+            {
+              "id": "not-h",
+              "letter": "H",
+              "title": "Antigüedades & Estilo Vintage",
+              "text": "Exposición y venta de muebles antiguos recuperados artesanalmente, cómodas de madera maciza, espejos dorados y lámparas de época."
+            },
+            {
+              "id": "not-i",
+              "letter": "I",
+              "title": "Restaurante Menú Casero La Abuela",
+              "text": "Comida tradicional mediterránea para llevar o comer en el local. Platos del día equilibrados a precios económicos de lunes a viernes."
+            },
+            {
+              "id": "not-j",
+              "letter": "J",
+              "title": "Tintorería Exprés Relámpago",
+              "text": "Limpieza en seco y planchado profesional de trajes, abrigos y vestidos de fiesta en veinticuatro horas. Servicio urgente y entrega a domicilio."
+            }
+          ]
+        },
+        {
+          "id": "reading-t3",
+          "tareaNum": 3,
+          "type": "person-matching",
+          "title": "Tarea 3: Hábitos y cambios de vida",
+          "instructions": "Tres personas (A, B y C) explican los cambios que han hecho en su estilo de vida durante el último año. Lee los textos y relaciona las 6 frases (1-6) con la persona correcta.",
+          "people": [
+            {
+              "id": "person-a",
+              "letter": "A",
+              "name": "Persona A: Rodrigo",
+              "text": "Hace un año decidí dejar mi empleo en el centro financiero porque pasaba dos horas diarias en atascos de tráfico y me sentía agotado. Conseguí un trabajo remoto como contable y me mudé a una casa pequeña con jardín en un pueblo a cuarenta kilómetros de la capital. Ahora me levanto temprano para pasear por el campo antes de encender el ordenador. He empezado a cultivar mis propios tomates y lechugas en el huerto, y los fines de semana salgo a correr por caminos de tierra. He ganado en tranquilidad y duermo mucho mejor."
+            },
+            {
+              "id": "person-b",
+              "letter": "B",
+              "name": "Persona B: Marta",
+              "text": "Durante muchos años comía cualquier cosa en la oficina delante de la pantalla y apenas me movía del escritorio. Tras una revisión médica en la que el doctor me recomendó cuidar mi salud, me inscribí en una escuela de natación cerca de mi casa. Ahora voy a nadar tres mañanas por semana antes de entrar a trabajar, a las siete de la mañana. Además, los domingos cocino para toda la semana con recetas saludables llenas de verduras y legumbres. Me siento con mucha más energía a lo largo del día y he conocido a gente estupenda en la piscina."
+            },
+            {
+              "id": "person-c",
+              "letter": "C",
+              "name": "Persona C: Gonzalo",
+              "text": "Siempre me había gustado la artesanía, pero nunca encontraba tiempo por culpa de mis obligaciones diarias. El pasado invierno me matriculé en un taller de cerámica tradicional que imparte un artesano jubilado los sábados por la mañana. Trabajar con el barro con mis propias manos me ayuda a desconectar completamente de las pantallas del teléfono y de las preocupaciones del trabajo. En casa ya no tengo televisión en el salón; en su lugar, he creado un pequeño rincón de lectura donde escucho música clásica y leo novelas históricas."
+            }
+          ],
+          "statements": [
+            {
+              "id": "st-1",
+              "num": 1,
+              "text": "Ha cambiado su residencia habitual para vivir en el campo y tener un huerto.",
+              "correctPerson": 0
+            },
+            {
+              "id": "st-2",
+              "num": 2,
+              "text": "Practica un deporte acuático a primera hora de la mañana antes de ir a su trabajo.",
+              "correctPerson": 1
+            },
+            {
+              "id": "st-3",
+              "num": 3,
+              "text": "Aprende una actividad manual los sábados para alejarse de la tecnología.",
+              "correctPerson": 2
+            },
+            {
+              "id": "st-4",
+              "num": 4,
+              "text": "Dedica el domingo a preparar platos sanos para toda la semana laboral.",
+              "correctPerson": 1
+            },
+            {
+              "id": "st-5",
+              "num": 5,
+              "text": "Trabaja a distancia desde su domicilio y realiza ejercicio corriendo por la naturaleza.",
+              "correctPerson": 0
+            },
+            {
+              "id": "st-6",
+              "num": 6,
+              "text": "Ha eliminado el televisor de su vivienda para dedicar más tiempo a la lectura tranquila.",
+              "correctPerson": 2
+            }
+          ]
+        },
+        {
+          "id": "reading-t4",
+          "tareaNum": 4,
+          "type": "cloze-mc",
+          "title": "Tarea 4: Artículo sobre un mercado tradicional",
+          "instructions": "Lee el siguiente texto sobre un mercado gastronómico histórico. Selecciona la opción correcta (A, B o C) para cada uno de los 6 huecos (1-6).",
+          "passage": "El Mercado Central de Valencia es uno de los edificios modernistas más bellos y representativos de la ciudad. Inaugurado en 1928, este gran espacio [___1___] una superficie de más de ocho mil metros cuadrados donde se combinan tradición arquitectónica y vida cotidiana.\n\nEn su interior, más de trescientos puestos ofrecen cada día productos frescos de la mejor calidad. Los visitantes pueden encontrar frutas y verduras de la huerta, pescados recién traídos [___2___] puerto, quesos artesanales y carnes selectas. Por las mañanas, el mercado se llena de vecinos que compran los ingredientes para sus comidas familiares, pero también [___3___] muchos turistas que se acercan para admirar su cúpula de cristal y hierro.\n\nEn los últimos años, el mercado se ha modernizado sin perder su esencia. Muchos comerciantes [___4___] servicios de entrega a domicilio para que los clientes puedan hacer sus pedidos por internet. Además, en los pequeños bares situados en las esquinas es posible degustar deliciosas tapas elaboradas [___5___] los mismos ingredientes que se venden en los mostradores.\n\nSi viajáis a Valencia, os recomendamos visitar el mercado a primera hora [___6___] la mañana, cuando el ambiente es más animado y auténtico.",
+          "items": [
+            {
+              "id": "cloze-1",
+              "num": 1,
+              "options": ["ocupa", "ocupan", "ocupando"],
+              "correct": 0
+            },
+            {
+              "id": "cloze-2",
+              "num": 2,
+              "options": ["del", "por", "en"],
+              "correct": 0
+            },
+            {
+              "id": "cloze-3",
+              "num": 3,
+              "options": ["de", "con", "a"],
+              "correct": 0
+            },
+            {
+              "id": "cloze-4",
+              "num": 4,
+              "options": ["ofrecen", "ofrecemos", "ofrecieron"],
+              "correct": 0
+            },
+            {
+              "id": "cloze-5",
+              "num": 5,
+              "options": ["con", "sin", "sobre"],
+              "correct": 0
+            },
+            {
+              "id": "cloze-6",
+              "num": 6,
+              "options": ["de", "por", "en"],
+              "correct": 0
+            }
+          ]
+        }
+      ]
+    },
+    "listening": {
+      "id": "listening",
+      "name": "Comprensión auditiva",
+      "officialTimeMinutes": 35,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "listening-t1",
+          "tareaNum": 1,
+          "type": "audio-mc",
+          "title": "Tarea 1: Mensajes breves y avisos de la vida cotidiana",
+          "instructions": "Escucharás seis audios breves. Para cada pregunta, selecciona la opción correcta (A, B o C). Dispones de 30 segundos para leer las preguntas.",
+          "previewSeconds": 30,
+          "items": [
+            {
+              "id": "l1-q1",
+              "num": 1,
+              "situation": "Aviso por megafonía en unos grandes almacenes.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Locutora",
+                    "gender": "female",
+                    "text": "Atención señores clientes. Con motivo de la inauguración de nuestra nueva planta de deportes, durante el día de hoy ofrecemos un treinta por ciento de descuento directo en todo el calzado de montaña y zapatillas de correr. Les recordamos que nuestro horario habitual es ininterrumpido hasta las nueve de la noche."
+                  }
+                ]
+              },
+              "question": "1. ¿Qué artículos tienen descuento hoy en los grandes almacenes?",
+              "options": [
+                "Toda la ropa de esquí y chaquetas de abrigo.",
+                "Las zapatillas de correr y el calzado de montaña.",
+                "Todos los artículos de la sección infantil."
+              ],
+              "correct": 1,
+              "evidence": "ofrecemos un treinta por ciento de descuento directo en todo el calzado de montaña y zapatillas de correr",
+              "explanation": "El aviso anuncia el descuento en calzado de montaña y zapatillas de correr por la apertura de la planta de deportes."
+            },
+            {
+              "id": "l1-q2",
+              "num": 2,
+              "situation": "Anuncio en una estación de autobuses.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Locutor",
+                    "gender": "male",
+                    "text": "Pasajeros con destino a Granada en el servicio exprés de las catorce treinta: por motivos técnicos, la salida del autobús se realizará desde el andén número doce en lugar del andén ocho previsto. Rogamos a los viajeros que tengan su billete preparado para el control de acceso."
+                  }
+                ]
+              },
+              "question": "2. ¿Qué cambio se anuncia para el autobús hacia Granada?",
+              "options": [
+                "Se retrasa su salida media hora.",
+                "Saldrá desde el andén número doce.",
+                "Se cancela el viaje por motivos meteorológicos."
+              ],
+              "correct": 1,
+              "evidence": "la salida del autobús se realizará desde el andén número doce en lugar del andén ocho previsto",
+              "explanation": "El autobús hacia Granada cambia de andén y saldrá por el doce."
+            },
+            {
+              "id": "l1-q3",
+              "num": 3,
+              "situation": "Mensaje en el contestador telefónico de una clínica médica.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Recepcionista",
+                    "gender": "female",
+                    "text": "Hola, señor Navarro. Le llamamos desde el centro de salud San Rafael para recordarle su cita con la oftalmóloga, la doctora Morales, el próximo jueves 15 a las diez y cuarto de la mañana. Por favor, recuerde traer su tarjeta sanitaria y sus gafas habituales para la revisión. Gracias."
+                  }
+                ]
+              },
+              "question": "3. ¿Qué debe llevar el paciente a su cita médica?",
+              "options": [
+                "Un informe médico reciente del hospital.",
+                "Sus gafas habituales y la tarjeta sanitaria.",
+                "El dinero en efectivo para pagar la consulta."
+              ],
+              "correct": 1,
+              "evidence": "Por favor, recuerde traer su tarjeta sanitaria y sus gafas habituales para la revisión.",
+              "explanation": "La recepcionista le pide que acuda con su tarjeta sanitaria y sus gafas habituales."
+            },
+            {
+              "id": "l1-q4",
+              "num": 4,
+              "situation": "Aviso informativo en la entrada de un museo de arte.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Guía",
+                    "gender": "female",
+                    "text": "Les informamos de que a las doce del mediodía comenzará una visita guiada gratuita por la exposición temporal de pintura renacentista. La visita dura aproximadamente cuarenta y cinco minutos y el punto de encuentro es junto a la taquilla principal. Las plazas son limitadas a veinte personas."
+                  }
+                ]
+              },
+              "question": "4. ¿Qué característica tiene la visita guiada al museo?",
+              "options": [
+                "Es gratuita y comienza a las doce en la taquilla.",
+                "Cuesta cinco euros adicionales por visitante.",
+                "Dura dos horas completas por todo el edificio."
+              ],
+              "correct": 0,
+              "evidence": "a las doce del mediodía comenzará una visita guiada gratuita por la exposición temporal... el punto de encuentro es junto a la taquilla",
+              "explanation": "La visita es gratuita, dura cuarenta y cinco minutos y se inicia a las doce junto a la taquilla."
+            },
+            {
+              "id": "l1-q5",
+              "num": 5,
+              "situation": "Comunicado en las instalaciones de un polideportivo municipal.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Locutor",
+                    "gender": "male",
+                    "text": "Estimados usuarios: les comunicamos que a partir del próximo lunes la piscina climatizada permanecerá cerrada durante cinco días debido a trabajos anuales de mantenimiento y desinfección de los filtros. La sala de musculación y las pistas de tenis continuarán abiertas en su horario habitual."
+                  }
+                ]
+              },
+              "question": "5. ¿Qué instalación del polideportivo estará cerrada el próximo lunes?",
+              "options": [
+                "La sala de musculación.",
+                "Las pistas de tenis al aire libre.",
+                "La piscina climatizada."
+              ],
+              "correct": 2,
+              "evidence": "a partir del próximo lunes la piscina climatizada permanecerá cerrada durante cinco días debido a trabajos anuales de mantenimiento",
+              "explanation": "La piscina cubierta cerrará cinco días por tareas de mantenimiento."
+            },
+            {
+              "id": "l1-q6",
+              "num": 6,
+              "situation": "Pronóstico del tiempo en un informativo de radio local.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Meteoróloga",
+                    "gender": "female",
+                    "text": "Y ahora la previsión del tiempo para este fin de semana: el sábado tendremos cielos cubiertos con lluvias intermitentes durante la tarde y temperaturas en descenso. Sin embargo, el domingo lucirá el sol en toda la región y las temperaturas subirán hasta alcanzar los veintidós grados, ideal para pasear al aire libre."
+                  }
+                ]
+              },
+              "question": "6. ¿Qué tiempo se espera para la jornada del domingo?",
+              "options": [
+                "Lluvias intensas con fuerte viento del norte.",
+                "Cielos soleados y subida de temperaturas.",
+                "Nieve en las montañas y niebla densa en el valle."
+              ],
+              "correct": 1,
+              "evidence": "el domingo lucirá el sol en toda la región y las temperaturas subirán hasta alcanzar los veintidós grados",
+              "explanation": "El domingo se prevé tiempo soleado con ascenso térmico hasta los 22 grados."
+            }
+          ]
+        },
+        {
+          "id": "listening-t2",
+          "tareaNum": 2,
+          "type": "audio-interview",
+          "title": "Tarea 2: Entrevista sobre un cambio de vida en el campo",
+          "instructions": "Escucharás una entrevista a Laura, una diseñadora gráfica que decidió mudarse de la ciudad a un pueblo de montaña. Responde a las 6 preguntas seleccionando la opción correcta (A, B o C). Dispones de 45 segundos para leer las preguntas.",
+          "previewSeconds": 45,
+          "audio": {
+            "turns": [
+              {
+                "speaker": "Periodista",
+                "gender": "male",
+                "text": "Bienvenidos a 'Vidas Nuevas'. Hoy nos acompaña Laura Martín, diseñadora gráfica que hace dos años dejó su piso en Madrid para instalarse en un pequeño pueblo de la sierra de Gredos. Hola, Laura, gracias por acompañarnos."
+              },
+              {
+                "speaker": "Laura",
+                "gender": "female",
+                "text": "Hola, Javier. Es un placer estar aquí con vosotros."
+              },
+              {
+                "speaker": "Periodista",
+                "gender": "male",
+                "text": "Laura, ¿cuál fue el principal motivo que te impulsó a dar un giro tan radical a tu vida profesional y personal?"
+              },
+              {
+                "speaker": "Laura",
+                "gender": "female",
+                "text": "Pues la verdad es que en la ciudad vivía con prisas constantes. El trabajo me apasionaba, pero el ruido, el tráfico y pasar horas en el metro me generaban mucho estrés. Quería respirar aire puro, ver árboles por la ventana y disponer de más tiempo libre para mí."
+              },
+              {
+                "speaker": "Periodista",
+                "gender": "male",
+                "text": "¿Y cómo reaccionaron tus familiares y amigos cuando les anunciaste tu decisión?"
+              },
+              {
+                "speaker": "Laura",
+                "gender": "female",
+                "text": "Al principio mis padres se preocuparon bastante; pensaban que me iba a aburrir o que perdería a mis clientes. Sin embargo, mis amigos me apoyaron desde el primer momento, y ahora son ellos los que vienen a visitarme casi todos los fines de semana."
+              },
+              {
+                "speaker": "Periodista",
+                "gender": "male",
+                "text": "¿Te resultó difícil adaptarte al teletrabajo desde una zona rural?"
+              },
+              {
+                "speaker": "Laura",
+                "gender": "female",
+                "text": "Al principio temía que la conexión a internet fuera lenta o inestable, pero hace tres años instalaron fibra óptica en el pueblo, así que la conexión es excelente. Gracias a eso mantengo reuniones virtuales con clientes de España y del extranjero sin ningún problema."
+              },
+              {
+                "speaker": "Periodista",
+                "gender": "male",
+                "text": "¿Cómo es un día habitual en tu vida actual en el pueblo?"
+              },
+              {
+                "speaker": "Laura",
+                "gender": "female",
+                "text": "Me despierto sobre las siete y media, desayuno tranquilamente y trabajo de ocho a dos en mi estudio. Por las tardes salgo a caminar con mi perro por el bosque o cuido mi pequeño huerto. He descubierto que estar en contacto con la tierra me relaja muchísimo."
+              },
+              {
+                "speaker": "Periodista",
+                "gender": "male",
+                "text": "¿Qué es lo que más valoras de la relación con los vecinos del pueblo?"
+              },
+              {
+                "speaker": "Laura",
+                "gender": "female",
+                "text": "La solidaridad y la cercanía. En Madrid apenas conocía a los vecinos de mi escalera. Aquí todo el mundo te saluda por la calle, la vecina te trae higos recién cogidos y, si necesitas ayuda con cualquier avería, siempre hay alguien dispuesto a echarte una mano."
+              },
+              {
+                "speaker": "Periodista",
+                "gender": "male",
+                "text": "Para terminar, Laura, ¿qué consejo darías a alguien que esté pensando en dar el mismo paso?"
+              },
+              {
+                "speaker": "Laura",
+                "gender": "female",
+                "text": "Les diría que no lo hagan a ciegas: es conveniente alquilar una casa primero durante unos meses, sobre todo en invierno, para comprobar si realmente les gusta la tranquilidad antes de tomar una decisión definitiva."
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "l2-q1",
+              "question": "1. ¿Qué motivo principal llevó a Laura a mudarse al campo?",
+              "options": [
+                "El deseo de buscar un nuevo empleo en la hostelería.",
+                "El estrés diario ocasionado por el tráfico y las prisas en la ciudad.",
+                "La necesidad de cuidar la salud de sus padres."
+              ],
+              "correct": 1,
+              "evidence": "el ruido, el tráfico y pasar horas en el metro me generaban mucho estrés. Quería respirar aire puro, ver árboles por la ventana y disponer de más tiempo libre para mí.",
+              "explanation": "Laura explica que el tráfico, el ruido y el estrés urbano fueron el factor determinante para su traslado."
+            },
+            {
+              "id": "l2-q2",
+              "question": "2. ¿Cómo reaccionaron los amigos de Laura ante su cambio de vida?",
+              "options": [
+                "Se opusieron firmemente porque pensaban que fracasaría.",
+                "La apoyaron desde el principio y la visitan los fines de semana.",
+                "Decidieron mudarse todos juntos con ella al mismo pueblo."
+              ],
+              "correct": 1,
+              "evidence": "mis amigos me apoyaron desde el primer momento, y ahora son ellos los que vienen a visitarme casi todos los fines de semana.",
+              "explanation": "Sus amigos la respaldaron inmediatamente y van a verla con frecuencia los fines de semana."
+            },
+            {
+              "id": "l2-q3",
+              "question": "3. ¿Por qué Laura puede trabajar por internet sin dificultades desde el pueblo?",
+              "options": [
+                "Porque utiliza una antena por satélite muy costosa.",
+                "Porque viaja a Madrid dos días por semana para enviar proyectos.",
+                "Porque instalaron fibra óptica en el pueblo y la conexión es excelente."
+              ],
+              "correct": 2,
+              "evidence": "hace tres años instalaron fibra óptica en el pueblo, así que la conexión es excelente.",
+              "explanation": "La existencia de fibra óptica en la localidad le permite trabajar con velocidad y estabilidad."
+            },
+            {
+              "id": "l2-q4",
+              "question": "4. ¿Qué actividad realiza Laura habitualmente por las tardes?",
+              "options": [
+                "Trabaja como voluntaria en la biblioteca municipal.",
+                "Pasea con su perro por el bosque y cuida su huerto.",
+                "Viaja a la capital para hacer compras en grandes centros comerciales."
+              ],
+              "correct": 1,
+              "evidence": "Por las tardes salgo a caminar con mi perro por el bosque o cuido mi pequeño huerto.",
+              "explanation": "Laura camina por el bosque con su perro y atiende su huerto tras la jornada laboral."
+            },
+            {
+              "id": "l2-q5",
+              "question": "5. ¿Qué destaca la entrevistada sobre los habitantes de su pueblo?",
+              "options": [
+                "Que son personas independientes que evitan hablar con forasteros.",
+                "Que son muy amables, cercanos y siempre están dispuestos a ayudar.",
+                "Que todos trabajan en el sector del diseño gráfico y el arte."
+              ],
+              "correct": 1,
+              "evidence": "La solidaridad y la cercanía... Aquí todo el mundo te saluda por la calle, la vecina te trae higos recién cogidos y, si necesitas ayuda... siempre hay alguien dispuesto",
+              "explanation": "Subraya la cercanía, amabilidad y predisposición vecinal a colaborar en cualquier situación."
+            },
+            {
+              "id": "l2-q6",
+              "question": "6. ¿Qué recomendación ofrece Laura a quienes deseen irse a vivir al campo?",
+              "options": [
+                "Alquilar una vivienda unos meses antes de decidirse definitivamente.",
+                "Comprar una finca grande de inmediato sin consultar con nadie.",
+                "Esperar a la jubilación antes de plantearse un cambio de residencia."
+              ],
+              "correct": 0,
+              "evidence": "es conveniente alquilar una casa primero durante unos meses, sobre todo en invierno, para comprobar si realmente les gusta la tranquilidad",
+              "explanation": "Sugiere alquilar primero temporalmente, en especial en invierno, para probar la experiencia antes de comprar."
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "id": "writing",
+      "name": "Expresión e interacción escritas",
+      "officialTimeMinutes": 45,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "writing-t1",
+          "tareaNum": 1,
+          "title": "Tarea 1: Mensaje o correo electrónico a un amigo",
+          "prompt": "Tu amigo Andrés te ha invitado a pasar el próximo fin de semana en su casa de la sierra, pero no puedes asistir en esas fechas.\n\nEscribe un correo electrónico a Andrés (50–65 palabras) en el que debes:\n- Agradecer sinceramente su invitación y disculparte por no poder ir.\n- Explicar el motivo por el que estás ocupado (un compromiso familiar o de trabajo).\n- Proponer una nueva fecha durante el próximo mes para hacer la visita.\n- Despedirte de manera afectuosa.",
+          "minWords": 50,
+          "maxWords": 65,
+          "targetKeywords": [
+            "muchas gracias por",
+            "lo siento pero",
+            "tengo que",
+            "el próximo mes",
+            "un abrazo"
+          ],
+          "rubricGuide": "Cumplir todos los puntos comunicativos, mantener un tono informal adecuado, utilizar conectores de nivel A2 y respetar el límite de 50 a 65 palabras con buena concordancia gramatical."
+        },
+        {
+          "id": "writing-t2",
+          "tareaNum": 2,
+          "title": "Tarea 2: Redacción narrativa o descriptiva",
+          "options": [
+            {
+              "optionLetter": "A",
+              "title": "Opción A: Un viaje especial que recuerdo con cariño",
+              "prompt": "Escribe un texto (65–80 palabras) para una revista de estudiantes sobre un viaje especial que hiciste el año pasado:\n- Explica a dónde fuiste, con quién viajaste y qué medio de transporte utilizaste.\n- Describe qué lugares visitaste y qué tiempo hizo durante la estancia.\n- Cuenta una anécdota o acontecimiento curioso que viviste.\n- Explica por qué ese recuerdo sigue siendo tan especial para ti.",
+              "minWords": 65,
+              "maxWords": 80
+            },
+            {
+              "optionLetter": "B",
+              "title": "Opción B: Mi rutina diaria y mis aficiones de fin de semana",
+              "prompt": "Escribe una entrada en tu blog personal (65–80 palabras) describiendo tu día a día:\n- Explica tu horario habitual de lunes a viernes (trabajo o estudios, comidas).\n- Describe qué sueles hacer por las tardes al terminar tus obligaciones.\n- Menciona tu pasatiempo favorito de fin de semana y con quién lo compartes.\n- Cuenta qué cambio te gustaría introducir en tu rutina en el futuro.",
+              "minWords": 65,
+              "maxWords": 80
+            }
+          ],
+          "minWords": 65,
+          "maxWords": 80,
+          "targetKeywords": [
+            "el año pasado",
+            "por la mañana",
+            "normalmente",
+            "después de",
+            "lo que más me gusta"
+          ]
+        }
+      ]
+    },
+    "speaking": {
+      "id": "speaking",
+      "name": "Expresión e interacción orales",
+      "officialTimeMinutes": 12,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "speaking-t1",
+          "tareaNum": 1,
+          "title": "Tarea 1: Monólogo breve preparado (2-3 minutos)",
+          "prepSeconds": 60,
+          "speakSeconds": 150,
+          "prompt": "Vas a hablar durante dos minutos sobre tus últimas vacaciones o un fin de semana especial que hayas pasado fuera de casa.\n\nPuntos guía que debes desarrollar:\n- Adónde fuiste y por qué motivo elegiste ese destino concreto.\n- Con quién viajaste y qué medio de transporte utilizaste para llegar.\n- Qué actividades realizaste cada día y qué lugares interesantes visitaste.\n- Qué comida típica probaste y tu valoración personal de la experiencia.",
+          "bulletPoints": [
+            "Destino elegido y motivo del viaje",
+            "Acompañantes y medio de transporte utilizado",
+            "Actividades realizadas y lugares visitados",
+            "Gastronomía probada y valoración personal"
+          ]
+        },
+        {
+          "id": "speaking-t2",
+          "tareaNum": 2,
+          "title": "Tarea 2: Descripción de una fotografía cotidiana (2 minutos)",
+          "prepSeconds": 45,
+          "speakSeconds": 120,
+          "prompt": "Observa mentalmente la siguiente escena: 'Un grupo de cuatro amigos preparando una paella y ensaladas en una terraza luminosa durante un domingo de primavera'.\n\nDebes describir con detalle:\n- Quiénes son las personas, cómo van vestidas y qué hace cada una de ellas.\n- Qué alimentos, utensilios y bebidas se ven sobre la mesa y en la terraza.\n- Cómo es el entorno, qué tiempo hace y qué ambiente transmite la escena.",
+          "bulletPoints": [
+            "Descripción física de las personas, ropa y acciones",
+            "Comida, bebida y objetos visibles en la terraza",
+            "Clima, entorno y ambiente general que transmite la imagen"
+          ]
+        },
+        {
+          "id": "speaking-t3",
+          "tareaNum": 3,
+          "title": "Tarea 3: Conversación simulada en una agencia inmobiliaria (2-3 minutos)",
+          "prepSeconds": 45,
+          "speakSeconds": 150,
+          "prompt": "Vas a mantener una conversación con el examinador, que actúa como agente inmobiliario. Buscas alquilar un piso para vivir durante seis meses.\n\nDebes acordar con el examinador:\n- Saludar y explicar qué tipo de vivienda necesitas (número de habitaciones, barrio y presupuesto mensual máximo).\n- Preguntar si el piso está amueblado y si los gastos de comunidad e internet están incluidos en el precio.\n- Preguntar por las conexiones de transporte público cercanas y los comercios del barrio.\n- Acordar un día y una hora concretos para visitar el piso.",
+          "bulletPoints": [
+            "Tipo de vivienda deseada y presupuesto mensual",
+            "Condiciones del alquiler (muebles y gastos incluidos)",
+            "Ubicación, transporte público y servicios del barrio",
+            "Fijar fecha y hora para realizar la visita"
+          ]
+        }
+      ]
+    }
+  },
+  "strategies": {
+    "title": "Estrategias y consejos para la prueba DELE A2",
+    "structure": [
+      {
+        "prueba": "Prueba 1: Comprensión de lectura (60 min · 4 tareas · 25 preguntas)",
+        "tip": "Comienza leyendo las preguntas y palabras clave antes de abordar los textos largos. En la Tarea 2 (tablón), subraya la necesidad exacta de cada persona para descartar anuncios trampas. En la Tarea 4 (huecos), fíjate en las preposiciones y concordancias de los verbos."
+      },
+      {
+        "prueba": "Prueba 2: Comprensión auditiva (35 min · 2 tareas · 12 preguntas)",
+        "tip": "Aprovecha los segundos de lectura previa para anticipar el vocabulario que vas a escuchar. En el primer pase céntrate en la idea general de cada mensaje; en el segundo confirma los datos numéricos, andenes o fechas concretas."
+      },
+      {
+        "prueba": "Prueba 3: Expresión e interacción escritas (45 min · 2 tareas)",
+        "tip": "Escribe con frases claras y bien conectadas. En la Tarea 1 responde a todos los puntos guía sin omitir ninguno. Respeta el número de palabras indicado (50–65 en T1 y 65–80 en T2) y reserva tres minutos finales para revisar concordancias de género, número y acentos."
+      },
+      {
+        "prueba": "Prueba 4: Expresión e interacción orales (12 min + 15 min de preparación)",
+        "tip": "Durante la preparación previa anota esquemas y palabras clave, no frases completas. Habla con calma y naturalidad. Si no entiendes algo dicho por el entrevistador, pide una aclaración cortésmente ('¿Puede repetir la pregunta, por favor?')."
+      }
+    ],
+    "connectors": [
+      {
+        "category": "Relaciones temporales y orden",
+        "examples": ["primero", "luego", "después", "al final", "mientras", "cuando"]
+      },
+      {
+        "category": "Causa y consecuencia",
+        "examples": ["porque", "por eso", "como"]
+      },
+      {
+        "category": "Contraste sencillo",
+        "examples": ["pero", "sin embargo", "aunque"]
+      },
+      {
+        "category": "Adición y enlace",
+        "examples": ["y", "también", "además"]
+      },
+      {
+        "category": "Fórmulas de cortesía y correspondencia",
+        "examples": ["Estimado/a", "Hola", "Muchas gracias", "Un cordial saludo", "Un abrazo", "Hasta pronto"]
+      }
+    ]
+  }
+}

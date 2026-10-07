@@ -1,0 +1,686 @@
+{
+  "id": "es-dele-a1-exam",
+  "board": "Instituto Cervantes",
+  "level": "A1",
+  "title": "Prueba DELE A1",
+  "subtitle": "Diplomas de Español como Lengua Extranjera · Modelo Oficial A1",
+  "passingScorePercentage": 60,
+  "skills": {
+    "reading": {
+      "id": "reading",
+      "name": "Comprensión de lectura",
+      "officialTimeMinutes": 45,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "reading-t1",
+          "tareaNum": 1,
+          "type": "reading-mc",
+          "title": "Tarea 1: Correo personal de una amiga",
+          "instructions": "Lee el siguiente correo electrónico de Lucía a su amigo Javier. Después, responde a las 5 preguntas seleccionando la opción correcta (A, B o C).",
+          "passage": "¡Hola, Javier!\n\n¿Cómo estás? Te escribo desde mi nuevo apartamento en Sevilla. La ciudad es muy bonita y la gente es muy amable. Mi apartamento es pequeño pero luminoso. Tiene un dormitorio, una sala con sofá azul y una cocina moderna.\n\nVivo cerca de mi trabajo. Trabajo en una librería en el centro histórico, de lunes a viernes, de nueve a dos de la tarde. Por las tardes, estudio español y salgo a pasear por el parque.\n\nLos fines de semana cocino con mis amigos. El próximo sábado voy a preparar comida en casa. ¿Quieres venir a visitarme? Puedes viajar en tren desde Madrid el viernes por la noche.\n\nUn abrazo muy fuerte,\nLucía",
+          "questions": [
+            {
+              "id": "rt1-q1",
+              "question": "1. ¿Dónde vive Lucía ahora?",
+              "options": [
+                "En un apartamento en Sevilla.",
+                "En una casa de campo cerca de Madrid.",
+                "En un hotel del centro histórico."
+              ],
+              "correct": 0,
+              "evidence": "Te escribo desde mi nuevo apartamento en Sevilla.",
+              "explanation": "Lucía dice claramente que vive en su nuevo apartamento en Sevilla."
+            },
+            {
+              "id": "rt1-q2",
+              "question": "2. ¿Cómo es el apartamento de Lucía?",
+              "options": [
+                "Grande y oscuro.",
+                "Pequeño pero con mucha luz.",
+                "Antiguo y sin cocina."
+              ],
+              "correct": 1,
+              "evidence": "Mi apartamento es pequeño pero luminoso.",
+              "explanation": "El texto indica que es pequeño pero luminoso (con mucha luz)."
+            },
+            {
+              "id": "rt1-q3",
+              "question": "3. ¿Cuál es el horario de trabajo de Lucía?",
+              "options": [
+                "Trabaja por las tardes y los fines de semana.",
+                "Trabaja de lunes a viernes por las mañanas.",
+                "Trabaja todos los días por la noche."
+              ],
+              "correct": 1,
+              "evidence": "de lunes a viernes, de nueve a dos de la tarde.",
+              "explanation": "Su horario es de 9:00 a 14:00 (por las mañanas), de lunes a viernes."
+            },
+            {
+              "id": "rt1-q4",
+              "question": "4. ¿Qué actividad hace Lucía los fines de semana?",
+              "options": [
+                "Cocina con sus amigos.",
+                "Trabaja en la librería del centro.",
+                "Viaja en tren a Madrid."
+              ],
+              "correct": 0,
+              "evidence": "Los fines de semana cocino con mis amigos.",
+              "explanation": "Lucía explica que cocina con sus amigos los fines de semana."
+            },
+            {
+              "id": "rt1-q5",
+              "question": "5. ¿Por qué escribe Lucía a Javier?",
+              "options": [
+                "Para pedirle dinero.",
+                "Para invitarle a visitarla en Sevilla.",
+                "Para buscar un nuevo trabajo."
+              ],
+              "correct": 1,
+              "evidence": "¿Quieres venir a visitarme? Puedes viajar en tren desde Madrid el viernes por la noche.",
+              "explanation": "Lucía le invita a visitarla el próximo fin de semana."
+            }
+          ]
+        },
+        {
+          "id": "reading-t2",
+          "tareaNum": 2,
+          "type": "matching-notices",
+          "title": "Tarea 2: Tablón de anuncios y necesidades cotidianas",
+          "instructions": "Relaciona a las 6 personas (1-6) con los 10 anuncios del tablón (A-J). Hay 4 anuncios que no corresponden a ninguna persona.",
+          "people": [
+            {
+              "id": "p1",
+              "name": "1. Mateo",
+              "text": "Busca comprar pan caliente y dulces artesanales por la mañana temprano antes de ir a su oficina.",
+              "correctNoticeId": "not-d"
+            },
+            {
+              "id": "p2",
+              "name": "2. Clara",
+              "text": "Quiere aprender a tocar la guitarra con clases individuales para principiantes.",
+              "correctNoticeId": "not-g"
+            },
+            {
+              "id": "p3",
+              "name": "3. Andrés",
+              "text": "Necesita reparar su reloj de pulsera porque no funciona bien.",
+              "correctNoticeId": "not-b"
+            },
+            {
+              "id": "p4",
+              "name": "4. Carmen",
+              "text": "Desea comprar fruta y verdura fresca de temporada los sábados por la mañana.",
+              "correctNoticeId": "not-i"
+            },
+            {
+              "id": "p5",
+              "name": "5. Pablo",
+              "text": "Busca un centro deportivo con piscina climatizada para nadar por las tardes.",
+              "correctNoticeId": "not-e"
+            },
+            {
+              "id": "p6",
+              "name": "6. Sara",
+              "text": "Quiere enviar una carta urgente y un paquete postal a su familia.",
+              "correctNoticeId": "not-a"
+            }
+          ],
+          "notices": [
+            {
+              "id": "not-a",
+              "letter": "A",
+              "title": "Oficina Central de Correos",
+              "text": "Envío rápido de cartas certificadas y paquetería nacional e internacional. Venta de estampillas y cajas."
+            },
+            {
+              "id": "not-b",
+              "letter": "B",
+              "title": "Taller de Relojería Cronos",
+              "text": "Reparación de relojes de pulsera, despertadores y cambio de pilas. Presupuesto sin compromiso."
+            },
+            {
+              "id": "not-c",
+              "letter": "C",
+              "title": "Tintorería y Lavandería El Sol",
+              "text": "Limpieza y planchado de trajes, camisas y vestidos en 24 horas. Servicio rápido."
+            },
+            {
+              "id": "not-d",
+              "letter": "D",
+              "title": "Panadería y Pastelería La Espiga",
+              "text": "Pan recién horneado, empanadas y pasteles artesanales desde las siete de la mañana todos los días."
+            },
+            {
+              "id": "not-e",
+              "letter": "E",
+              "title": "Centro Deportivo Acqua",
+              "text": "Instalaciones con piscina cubierta climatizada, cursos de natación y sala de ejercicios."
+            },
+            {
+              "id": "not-f",
+              "letter": "F",
+              "title": "Taller Mecánico AutoRápido",
+              "text": "Cambio de neumáticos, frenos y revisiones de autos y motocicletas. Cita previa por teléfono."
+            },
+            {
+              "id": "not-g",
+              "letter": "G",
+              "title": "Escuela de Música Sonidos",
+              "text": "Clases particulares de guitarra clásica, piano y canto. Profesores con experiencia para principiantes."
+            },
+            {
+              "id": "not-h",
+              "letter": "H",
+              "title": "Peluquería Estilo Moderno",
+              "text": "Cortes de pelo para hombre y mujer sin cita previa. Precios económicos y productos naturales."
+            },
+            {
+              "id": "not-i",
+              "letter": "I",
+              "title": "Frutería Huerta Real",
+              "text": "Frutas y verduras frescas del campo todos los días. Variedad ecológica de temporada a buen precio."
+            },
+            {
+              "id": "not-j",
+              "letter": "J",
+              "title": "Agencia de Viajes Horizonte",
+              "text": "Venta de boletos de avión, tren y paquetes de vacaciones para familias y parejas."
+            }
+          ]
+        },
+        {
+          "id": "reading-t3",
+          "tareaNum": 3,
+          "type": "person-matching",
+          "title": "Tarea 3: Preferencias y fines de semana",
+          "instructions": "Tres personas (A, B y C) explican qué hacen durante su tiempo libre el fin de semana. Lee los textos y relaciona las 6 frases (1-6) con la persona correcta.",
+          "people": [
+            {
+              "id": "person-a",
+              "letter": "A",
+              "name": "Persona A: Roberto",
+              "text": "Los sábados me levanto temprano, sobre las siete, porque me encanta montar en bicicleta por la montaña. Salgo con dos amigos del club ciclista y hacemos una ruta de cuarenta kilómetros. Al mediodía volvemos al pueblo y comemos en el campo. Los domingos prefiero descansar en casa, escuchar música tranquila y leer libros sobre naturaleza."
+            },
+            {
+              "id": "person-b",
+              "letter": "B",
+              "name": "Persona B: Daniela",
+              "text": "Para mí el fin de semana es el momento ideal para estar en familia. El sábado por la mañana voy con mis hijos al mercado central para comprar pescado y verduras frescas. Por la tarde cocinamos todos juntos y vemos una película divertida en la televisión. El domingo por la mañana nos gusta visitar algún museo gratuito de la ciudad o pasear por el parque con nuestro perro."
+            },
+            {
+              "id": "person-c",
+              "letter": "C",
+              "name": "Persona C: Marcos",
+              "text": "Trabajo toda la semana en una oficina delante de una computadora, así que el sábado duermo hasta tarde. Por la tarde suelo quedar con mis compañeros de trabajo para jugar un partido de fútbol en las canchas del barrio. Por la noche cenamos en una pizzería o en un restaurante. El domingo me dedico a limpiar mi apartamento y preparar la ropa para el lunes."
+            }
+          ],
+          "statements": [
+            {
+              "id": "st-1",
+              "num": 1,
+              "text": "Le gusta practicar deporte al aire libre en la naturaleza los sábados por la mañana.",
+              "correctPerson": 0
+            },
+            {
+              "id": "st-2",
+              "num": 2,
+              "text": "Pasa tiempo con sus hijos cocinando y viendo la televisión.",
+              "correctPerson": 1
+            },
+            {
+              "id": "st-3",
+              "num": 3,
+              "text": "Juega al fútbol con sus compañeros de trabajo los sábados.",
+              "correctPerson": 2
+            },
+            {
+              "id": "st-4",
+              "num": 4,
+              "text": "Prefiere levantarse tarde los sábados porque está cansado del trabajo.",
+              "correctPerson": 2
+            },
+            {
+              "id": "st-5",
+              "num": 5,
+              "text": "Pasa el domingo descansando en casa y escuchando música tranquila.",
+              "correctPerson": 0
+            },
+            {
+              "id": "st-6",
+              "num": 6,
+              "text": "Visita museos o pasea con su mascota los domingos por la mañana.",
+              "correctPerson": 1
+            }
+          ]
+        },
+        {
+          "id": "reading-t4",
+          "tareaNum": 4,
+          "type": "cloze-mc",
+          "title": "Tarea 4: Mensaje sobre una fiesta de cumpleaños",
+          "instructions": "Lee el siguiente mensaje sobre una fiesta. Selecciona la opción correcta (A, B o C) para cada uno de los 6 huecos (1-6).",
+          "passage": "Queridos amigos:\n\nEl próximo sábado es mi cumpleaños y quiero celebrarlo con todos ustedes en mi casa nueva. La fiesta [___1___] a las ocho de la tarde. Mi casa está muy [___2___] del centro, a solo cinco minutos de la estación de metro.\n\nPara cenar voy a preparar comida deliciosa, como empanadas y bocadillos. Además, mi hermana va a hacer una tarta de [___3___] riquísima. No tienen que traer comida, pero [___4___] traer refrescos o jugos si quieren.\n\nDespués de cenar podemos escuchar música y charlar en la sala. Si no hace frío, también podemos salir [___5___] jardín.\n\nPor favor, confirmen su asistencia antes del jueves [___6___] mensaje o por teléfono.\n\n¡Espero verlos a todos!\nCarlos",
+          "items": [
+            {
+              "id": "cloze-1",
+              "num": 1,
+              "options": ["empieza", "empezamos", "empezar"],
+              "correct": 0
+            },
+            {
+              "id": "cloze-2",
+              "num": 2,
+              "options": ["cerca", "lejos", "entre"],
+              "correct": 0
+            },
+            {
+              "id": "cloze-3",
+              "num": 3,
+              "options": ["chocolate", "cuchillo", "tenedor"],
+              "correct": 0
+            },
+            {
+              "id": "cloze-4",
+              "num": 4,
+              "options": ["pueden", "puedo", "podemos"],
+              "correct": 0
+            },
+            {
+              "id": "cloze-5",
+              "num": 5,
+              "options": ["al", "del", "en"],
+              "correct": 0
+            },
+            {
+              "id": "cloze-6",
+              "num": 6,
+              "options": ["por", "sin", "con"],
+              "correct": 0
+            }
+          ]
+        }
+      ]
+    },
+    "listening": {
+      "id": "listening",
+      "name": "Comprensión auditiva",
+      "officialTimeMinutes": 25,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "listening-t1",
+          "tareaNum": 1,
+          "type": "audio-mc",
+          "title": "Tarea 1: Avisos breves y mensajes cotidianos",
+          "instructions": "Escucharás seis audios breves. Para cada pregunta, selecciona la opción correcta (A, B o C). Dispones de 30 segundos para leer las preguntas.",
+          "previewSeconds": 30,
+          "items": [
+            {
+              "id": "l1-q1",
+              "num": 1,
+              "situation": "Aviso por megafonía en un supermercado.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Locutor",
+                    "gender": "male",
+                    "text": "Atención señores clientes. Hoy tenemos una oferta especial en la sección de frutería: todas las naranjas y plátanos tienen un veinte por ciento de descuento. Además, en la panadería disponemos de pan recién horneado."
+                  }
+                ]
+              },
+              "question": "¿Qué productos tienen descuento hoy en el supermercado?",
+              "options": [
+                "Las naranjas y los plátanos.",
+                "El pan y los pasteles.",
+                "Todos los productos lácteos."
+              ],
+              "correct": 0,
+              "evidence": "todas las naranjas y plátanos tienen un veinte por ciento de descuento.",
+              "explanation": "El aviso informa de descuento en naranjas y plátanos."
+            },
+            {
+              "id": "l1-q2",
+              "num": 2,
+              "situation": "Anuncio en una estación de tren.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Megafonía",
+                    "gender": "female",
+                    "text": "Informamos a los señores pasajeros de que el tren con destino a Valencia tiene su salida prevista a las diez y media por la vía número cuatro. Por favor, tengan preparados sus boletos."
+                  }
+                ]
+              },
+              "question": "¿Por qué vía sale el tren hacia Valencia?",
+              "options": [
+                "Por la vía número dos.",
+                "Por la vía número cuatro.",
+                "Por la vía número diez."
+              ],
+              "correct": 1,
+              "evidence": "el tren con destino a Valencia tiene su salida prevista a las diez y media por la vía número cuatro.",
+              "explanation": "El tren sale por la vía 4."
+            },
+            {
+              "id": "l1-q3",
+              "num": 3,
+              "situation": "Mensaje en el contestador telefónico de un centro médico.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Recepcionista",
+                    "gender": "female",
+                    "text": "Buenos días, señor Martín. Le llamamos de la consulta médica para recordar su cita con la doctora López mañana martes a las once de la mañana. Si no puede asistir, llámenos para cambiar la fecha."
+                  }
+                ]
+              },
+              "question": "¿A qué hora es la cita médica del señor Martín?",
+              "options": [
+                "A las diez de la mañana.",
+                "A las once de la mañana.",
+                "A las doce del mediodía."
+              ],
+              "correct": 1,
+              "evidence": "recordar su cita con la doctora López mañana martes a las once de la mañana.",
+              "explanation": "La cita es a las once de la mañana."
+            },
+            {
+              "id": "l1-q4",
+              "num": 4,
+              "situation": "Conversación breve en una cafetería.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Camarero",
+                    "gender": "male",
+                    "text": "Buenas tardes. El menú del día incluye sopa o ensalada de primero, pollo al horno o pescado de segundo, pan, bebida y postre. El precio total es de once dólares."
+                  }
+                ]
+              },
+              "question": "¿Cuánto cuesta el menú del día en la cafetería?",
+              "options": [
+                "Nueve dólares.",
+                "Once dólares.",
+                "Quince dólares."
+              ],
+              "correct": 1,
+              "evidence": "El precio total es de once dólares.",
+              "explanation": "El camarero dice que el menú cuesta once dólares."
+            },
+            {
+              "id": "l1-q5",
+              "num": 5,
+              "situation": "Aviso en una terminal de aeropuerto.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Locutora",
+                    "gender": "female",
+                    "text": "Última llamada para los pasajeros del vuelo IB320 con destino a Buenos Aires. Embarque inmediato por la puerta B12. Rogamos presenten su pase de abordar y pasaporte."
+                  }
+                ]
+              },
+              "question": "¿Cuál es la puerta de embarque del vuelo?",
+              "options": [
+                "La puerta A10.",
+                "La puerta B12.",
+                "La puerta C20."
+              ],
+              "correct": 1,
+              "evidence": "Embarque inmediato por la puerta B12.",
+              "explanation": "El embarque se realiza por la puerta B12."
+            },
+            {
+              "id": "l1-q6",
+              "num": 6,
+              "situation": "Mensaje de voz de un amigo en el teléfono móvil.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Amigo",
+                    "gender": "male",
+                    "text": "Hola, ¿qué tal? Mira, hoy salgo de clase a las cinco. Si te apetece, podemos vernos a las seis en la puerta del cine para tomar algo y luego entrar a ver la película. Dime si puedes."
+                  }
+                ]
+              },
+              "question": "¿A qué hora propone quedar el amigo en el cine?",
+              "options": [
+                "A las cinco de la tarde.",
+                "A las seis de la tarde.",
+                "A las siete de la tarde."
+              ],
+              "correct": 1,
+              "evidence": "podemos vernos a las seis en la puerta del cine para tomar algo",
+              "explanation": "Propone encontrarse a las seis de la tarde."
+            }
+          ]
+        },
+        {
+          "id": "listening-t2",
+          "tareaNum": 2,
+          "type": "audio-interview",
+          "title": "Tarea 2: Conversación en una oficina de turismo",
+          "instructions": "Escucharás una conversación entre un visitante y la informadora de una oficina de turismo. Selecciona la opción correcta (A, B o C).",
+          "previewSeconds": 30,
+          "audio": {
+            "turns": [
+              {
+                "speaker": "Visitante",
+                "gender": "male",
+                "text": "Buenos días. Quisiera información sobre el autobús turístico de la ciudad, por favor."
+              },
+              {
+                "speaker": "Informadora",
+                "gender": "female",
+                "text": "Buenos días. Sí, claro. El autobús turístico hace una ruta por los principales monumentos históricos. Sale cada veinte minutos desde la plaza central."
+              },
+              {
+                "speaker": "Visitante",
+                "gender": "male",
+                "text": "¿Cuánto dura el recorrido completo y cuál es el precio del boleto?"
+              },
+              {
+                "speaker": "Informadora",
+                "gender": "female",
+                "text": "El recorrido completo dura una hora y cuarto. El boleto cuesta diez dólares para adultos y cinco dólares para niños menores de doce años. El boleto es válido durante todo el día."
+              },
+              {
+                "speaker": "Visitante",
+                "gender": "male",
+                "text": "Muy bien. ¿Se puede pagar con tarjeta de crédito?"
+              },
+              {
+                "speaker": "Informadora",
+                "gender": "female",
+                "text": "Sí, puede pagar con tarjeta o en efectivo directamente con el conductor al subir al autobús."
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "l2-q1",
+              "question": "1. ¿Desde dónde sale el autobús turístico?",
+              "options": [
+                "Desde la plaza central.",
+                "Desde la estación de tren.",
+                "Desde el puerto marítimo."
+              ],
+              "correct": 0,
+              "evidence": "Sale cada veinte minutos desde la plaza central.",
+              "explanation": "La informadora indica que sale desde la plaza central."
+            },
+            {
+              "id": "l2-q2",
+              "question": "2. ¿Con qué frecuencia pasa el autobús turístico?",
+              "options": [
+                "Cada diez minutos.",
+                "Cada veinte minutos.",
+                "Cada media hora."
+              ],
+              "correct": 1,
+              "evidence": "Sale cada veinte minutos desde la plaza central.",
+              "explanation": "Sale cada veinte minutos."
+            },
+            {
+              "id": "l2-q3",
+              "question": "3. ¿Cuánto cuesta el boleto para un adulto?",
+              "options": [
+                "Cinco dólares.",
+                "Diez dólares.",
+                "Quince dólares."
+              ],
+              "correct": 1,
+              "evidence": "El boleto cuesta diez dólares para adultos",
+              "explanation": "El precio para adultos es de diez dólares."
+            },
+            {
+              "id": "l2-q4",
+              "question": "4. ¿Cómo puede pagar el boleto el visitante?",
+              "options": [
+                "Solo en efectivo antes de viajar.",
+                "Solo por internet en la página web.",
+                "Con tarjeta o en efectivo al subir al autobús."
+              ],
+              "correct": 2,
+              "evidence": "puede pagar con tarjeta o en efectivo directamente con el conductor al subir",
+              "explanation": "Se puede pagar con tarjeta o en efectivo con el conductor."
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "id": "writing",
+      "name": "Expresión e interacción escritas",
+      "officialTimeMinutes": 25,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "writing-t1",
+          "tareaNum": 1,
+          "title": "Tarea 1: Correo breve a un amigo",
+          "prompt": "Tu amigo Diego te ha enviado un mensaje para invitarte a comer este domingo en su casa.\n\nEscribe una respuesta breve (30–40 palabras) en la que:\n- Agradeces la invitación y confirmas que vas.\n- Preguntas a qué hora es la comida.\n- Ofreces llevar el postre o una bebida.\n- Te despides cordialmente.",
+          "minWords": 30,
+          "maxWords": 40,
+          "targetKeywords": [
+            "muchas gracias",
+            "a qué hora",
+            "puedo llevar",
+            "un abrazo"
+          ]
+        },
+        {
+          "id": "writing-t2",
+          "tareaNum": 2,
+          "title": "Tarea 2: Descripción breve (Presentación o Mi casa)",
+          "options": [
+            {
+              "optionLetter": "A",
+              "title": "Opción A: Presentación personal y mi familia",
+              "prompt": "Escribe un breve texto para un foro de estudiantes de español (35–45 palabras) en el que te presentas:\n- Di tu nombre, tu edad y de dónde eres.\n- Explica tu trabajo o tus estudios.\n- Menciona a tu familia y qué te gusta hacer en tu tiempo libre.",
+              "minWords": 35,
+              "maxWords": 45
+            },
+            {
+              "optionLetter": "B",
+              "title": "Opción B: Mi casa y mi barrio",
+              "prompt": "Escribe un mensaje breve en un blog describiendo tu vivienda (35–45 palabras):\n- Explica cómo es tu casa (habitaciones, muebles).\n- Describe tu barrio (tiendas, parques, transporte).\n- Di qué es lo que más te gusta de vivir allí.",
+              "minWords": 35,
+              "maxWords": 45
+            }
+          ],
+          "minWords": 35,
+          "maxWords": 45,
+          "targetKeywords": [
+            "me llamo",
+            "vivo en",
+            "me gusta",
+            "mi casa",
+            "cerca de"
+          ]
+        }
+      ]
+    },
+    "speaking": {
+      "id": "speaking",
+      "name": "Expresión e interacción orales",
+      "officialTimeMinutes": 12,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "speaking-t1",
+          "tareaNum": 1,
+          "title": "Tarea 1: Presentación personal",
+          "prompt": "Habla sobre ti mismo de forma clara durante dos minutos.\n\nAspectos a incluir:\n- Nombre, edad y nacionalidad.\n- Tu profesión o tus estudios.\n- Dónde vives y cómo es tu ciudad.\n- Idiomas que hablas y tus aficiones favoritas.",
+          "bulletPoints": [
+            "Nombre, edad y lugar de origen",
+            "Ocupación y lugar de residencia",
+            "Idiomas y aficiones de tiempo libre"
+          ]
+        },
+        {
+          "id": "speaking-t2",
+          "tareaNum": 2,
+          "title": "Tarea 2: Descripción de una situación cotidiana",
+          "prompt": "Imagina una fotografía: Una familia de cuatro personas desayunando junta en una cocina luminosa por la mañana.\n\nAspectos a incluir:\n- ¿Quiénes son y qué hacen en la imagen?\n- ¿Qué comida y bebida hay sobre la mesa?\n- ¿Cómo es la habitación y qué objetos ves?",
+          "bulletPoints": [
+            "Personas y acciones",
+            "Alimentos y bebidas en la mesa",
+            "Descripción de la cocina y el ambiente"
+          ]
+        },
+        {
+          "id": "speaking-t3",
+          "tareaNum": 3,
+          "title": "Tarea 3: Conversación simulada en un restaurante",
+          "prompt": "Estás en un restaurante tradicional con el examinador (que actúa como mesero).\n\nAspectos a incluir:\n- Saluda y pide una mesa para dos personas.\n- Pregunta por los platos del día y pide la comida y la bebida.\n- Pregunta el precio y pide la cuenta de forma educada.",
+          "bulletPoints": [
+            "Saludo y petición de mesa",
+            "Elección de platos y bebidas",
+            "Pedir la cuenta y pagar"
+          ]
+        }
+      ]
+    }
+  },
+  "strategies": {
+    "title": "Estrategias y consejos para la prueba DELE A1",
+    "structure": [
+      {
+        "prueba": "Comprensión de lectura (45 min · 4 tareas)",
+        "tip": "Lee primero las preguntas antes de leer los textos. Fíjate en las palabras clave y no te preocupes si no entiendes todas las palabras."
+      },
+      {
+        "prueba": "Comprensión auditiva (25 min · 2 tareas)",
+        "tip": "Aprovecha los 30 segundos previos para leer con atención las opciones. En la primera escucha concéntrate en la idea general, y en la segunda confirma los detalles numéricos o nombres."
+      },
+      {
+        "prueba": "Expresión escrita (25 min · 2 tareas)",
+        "tip": "Escribe frases cortas y claras con sujeto y verbo. Cumple el número de palabras pedido (30–45 palabras) y revisa la concordancia de género y número."
+      },
+      {
+        "prueba": "Expresión oral (12 min)",
+        "tip": "Habla con tranquilidad. Saluda educadamente, utiliza fórmulas sencillas y, si no entiendes una pregunta, puedes decir amablemente: ¿Puede repetir, por favor?"
+      }
+    ],
+    "connectors": [
+      {
+        "category": "Unión y adición",
+        "examples": ["y", "también", "además"]
+      },
+      {
+        "category": "Contraste sencillo",
+        "examples": ["pero", "sin embargo"]
+      },
+      {
+        "category": "Causa y explicación",
+        "examples": ["porque", "por eso"]
+      },
+      {
+        "category": "Saludos y despedidas",
+        "examples": ["¡Hola!", "Buenos días", "Muchas gracias", "Un abrazo", "Hasta pronto"]
+      }
+    ]
+  }
+}

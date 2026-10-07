@@ -509,19 +509,43 @@ const CefrExam = (function () {
 
             // Connectors & cohesion (up to 6 pts)
             const isHu = _id.includes('hu');
-            const b1Connectors = isHu ? [
-                'véleményem szerint', 'úgy gondolom, hogy', 'szerintem', 'meglátásom szerint',
-                'egyrészt', 'másrészt', 'először is', 'továbbá', 'végül',
-                'azonban', 'ennek ellenére', 'bár', 'ugyanakkor', 'viszont',
-                'ezért', 'mivel', 'ennek következtében', 'így', 'tehát',
-                'nagyon köszönöm', 'üdvözlettel', 'remélem', 'fontos, hogy'
-            ] : [
-                'sin embargo', 'por lo tanto', 'en mi opinión', 'por un lado', 'por otro lado',
-                'en cuanto a', 'además', 'me encantaría', 'gracias por', 'un abrazo', 'aunque',
-                'de modo que', 'así que', 'dado que', 'es importante que', 'no creo que'
-            ];
+            const isA1 = (_data && _data.level === 'A1') || _id.includes('a1');
+            const isA2 = (_data && _data.level === 'A2') || _id.includes('a2');
+            const examConnectors = isHu ? (
+                isA1 ? [
+                    'és', 'de', 'mert', 'is', 'szintén', 'vagy',
+                    'szia', 'sziasztok', 'jó napot', 'köszönöm', 'nagyon köszönöm',
+                    'üdvözlettel', 'szép napot', 'viszlát', 'ezért'
+                ] : (isA2 ? [
+                    'és', 'de', 'mert', 'is', 'szintén', 'vagy', 'ezért',
+                    'után', 'aztán', 'amikor', 'ha', 'szerintem', 'például',
+                    'szia', 'sziasztok', 'kedves', 'köszönöm', 'nagyon köszönöm',
+                    'üdvözlettel', 'remélem', 'viszlát'
+                ] : [
+                    'véleményem szerint', 'úgy gondolom, hogy', 'szerintem', 'meglátásom szerint',
+                    'egyrészt', 'másrészt', 'először is', 'továbbá', 'végül',
+                    'azonban', 'ennek ellenére', 'bár', 'ugyanakkor', 'viszont',
+                    'ezért', 'mivel', 'ennek következtében', 'így', 'tehát',
+                    'nagyon köszönöm', 'üdvözlettel', 'remélem', 'fontos, hogy'
+                ])
+            ) : (
+                isA1 ? [
+                    'y', 'pero', 'porque', 'también', 'además', 'o',
+                    'hola', 'buenos días', 'gracias', 'muchas gracias',
+                    'un saludo', 'un abrazo', 'hasta pronto', 'saludos', 'por eso'
+                ] : (isA2 ? [
+                    'y', 'pero', 'porque', 'también', 'además', 'o', 'por eso',
+                    'cuando', 'después', 'luego', 'entonces', 'primero',
+                    'hola', 'buenos días', 'estimado', 'gracias', 'muchas gracias',
+                    'un saludo', 'un abrazo', 'hasta pronto', 'saludos', 'si', 'aunque'
+                ] : [
+                    'sin embargo', 'por lo tanto', 'en mi opinión', 'por un lado', 'por otro lado',
+                    'en cuanto a', 'además', 'me encantaría', 'gracias por', 'un abrazo', 'aunque',
+                    'de modo que', 'así que', 'dado que', 'es importante que', 'no creo que'
+                ])
+            );
             const lowerText = text.toLowerCase();
-            const foundConnectors = b1Connectors.filter(c => lowerText.includes(c));
+            const foundConnectors = examConnectors.filter(c => lowerText.includes(c));
             const cohesionScore = Math.min(6, Math.max(2, foundConnectors.length * 2));
 
             // Punctuation & paragraphs (up to 6 pts)
@@ -560,10 +584,16 @@ const CefrExam = (function () {
             let lengthScore = (wordCount >= 60 || hasAudio) ? 7 : (wordCount >= 30 ? 4 : 2);
             const lowerText = text.toLowerCase();
             const isHu = _id.includes('hu');
-            const b1Connectors = isHu
-                ? ['véleményem szerint', 'szerintem', 'úgy gondolom', 'először is', 'például', 'ugyanakkor', 'azonban', 'ezért', 'másrészt', 'egyrészt']
-                : ['en primer lugar', 'por ejemplo', 'en mi opinión', 'además', 'por eso'];
-            const foundConnectors = b1Connectors.filter(c => lowerText.includes(c));
+            const isA1 = (_data && _data.level === 'A1') || _id.includes('a1');
+            const isA2 = (_data && _data.level === 'A2') || _id.includes('a2');
+            const speakingConnectors = isHu
+                ? (isA1 ? ['és', 'mert', 'is', 'de', 'szintén', 'szerintem']
+                    : (isA2 ? ['és', 'mert', 'is', 'de', 'szintén', 'szerintem', 'ezért', 'például', 'aztán']
+                    : ['véleményem szerint', 'szerintem', 'úgy gondolom', 'először is', 'például', 'ugyanakkor', 'azonban', 'ezért', 'másrészt', 'egyrészt']))
+                : (isA1 ? ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo']
+                    : (isA2 ? ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo', 'por eso', 'después', 'entonces']
+                    : ['en primer lugar', 'por ejemplo', 'en mi opinión', 'además', 'por eso']));
+            const foundConnectors = speakingConnectors.filter(c => lowerText.includes(c));
             const cohesionScore = Math.min(6, Math.max(2, foundConnectors.length * 2));
 
             const totalScore = Math.min(25, lengthScore + cohesionScore + (hasAudio ? 6 : 3) + 6);
@@ -1197,7 +1227,7 @@ const CefrExam = (function () {
                     ${_state.writingResult ? `
                         <div class="cefr-writing-results-card">
                             <div class="cefr-res-header">
-                                <h4>${isHu ? 'B1 Értékelési jelentés' : 'Informe de evaluación B1'}</h4>
+                                <h4>${isHu ? `${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'))} Értékelési jelentés` : `Informe de evaluación ${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'))}`}</h4>
                                 <span class="cefr-score-badge">${_state.writingResult.totalScore} / 25 ${isHu ? 'pont' : 'puntos'}</span>
                             </div>
                             <div class="cefr-rubric-breakdown">
@@ -1220,7 +1250,7 @@ const CefrExam = (function () {
                             </div>
                             ${_state.writingResult.foundConnectors.length > 0 ? `
                                 <div class="cefr-detected-connectors">
-                                    <span>${isHu ? 'Használt B1 kötőszavak:' : 'Conectores B1 empleados:'}</span>
+                                    <span>${isHu ? `Használt ${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'))} kötőszavak:` : `Conectores ${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'))} empleados:`}</span>
                                     <em>${_esc(_state.writingResult.foundConnectors.join(', '))}</em>
                                 </div>
                             ` : ''}
@@ -1281,7 +1311,7 @@ const CefrExam = (function () {
                     ${_state.speakingResult ? `
                         <div class="cefr-speaking-results-card">
                             <div class="cefr-res-header">
-                                <h4>${isHu ? 'B1 Szóbeli értékelés' : 'Informe oral B1'}</h4>
+                                <h4>${isHu ? `${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'))} Szóbeli értékelés` : `Informe oral ${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'))}`}</h4>
                                 <span class="cefr-score-badge">${_state.speakingResult.totalScore} / 25 ${isHu ? 'pont' : 'puntos'}</span>
                             </div>
                             <p>${isHu ? 'Kimondott szavak száma:' : 'Palabras producidas:'} <strong>${_state.speakingResult.wordCount}</strong></p>
@@ -1312,7 +1342,7 @@ const CefrExam = (function () {
                     </div>
 
                     <div class="cefr-connectors-section">
-                        <h4>${isHu ? 'Kötőszavak és szövegösszekötők (B1 szint)' : 'Conectores y marcadores del discurso (Nivel B1)'}</h4>
+                        <h4>${isHu ? `Kötőszavak és szövegösszekötők (${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'))} szint)` : `Conectores y marcadores del discurso (Nivel ${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'))})`}</h4>
                         <div class="cefr-connectors-grid">
                             ${(s.connectors || []).map(cat => `
                                 <div class="cefr-connector-card">
@@ -1331,26 +1361,37 @@ const CefrExam = (function () {
         // Mocks Tab
         function _renderMocksTab() {
             const isHu = _id.includes('hu');
+            const lvl = (_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'));
+            const title = (_data && _data.title) || (isHu ? `ECL ${lvl} Nyelvvizsga` : `Prueba DELE ${lvl}`);
+            const rTime = (_data && _data.skills && _data.skills.reading && _data.skills.reading.officialTimeMinutes) || 45;
+            const wTime = (_data && _data.skills && _data.skills.writing && _data.skills.writing.officialTimeMinutes) || 45;
+            const lTime = (_data && _data.skills && _data.skills.listening && _data.skills.listening.officialTimeMinutes) || 30;
+            const sTime = (_data && _data.skills && _data.skills.speaking && _data.skills.speaking.officialTimeMinutes) || 15;
+            const rTasks = (_data && _data.skills && _data.skills.reading && _data.skills.reading.tareas && _data.skills.reading.tareas.length) || 2;
+            const wTasks = (_data && _data.skills && _data.skills.writing && _data.skills.writing.tareas && _data.skills.writing.tareas.length) || 2;
+            const lTasks = (_data && _data.skills && _data.skills.listening && _data.skills.listening.tareas && _data.skills.listening.tareas.length) || 2;
+            const sTasks = (_data && _data.skills && _data.skills.speaking && _data.skills.speaking.tareas && _data.skills.speaking.tareas.length) || 2;
+
             if (isHu) {
                 return `
                     <div class="cefr-mocks-wrapper">
                         <div class="cefr-mock-intro-card">
-                            <h3>Hivatalos ECL B1 komplex próbavizsga (4 készség)</h3>
+                            <h3>Hivatalos ${_esc(title)} komplex próbavizsga (4 készség)</h3>
                             <p>A nemzetközi ECL vizsga négy különálló készséget mér fel, két fő vizsgarészre bontva:</p>
                             <div class="cefr-blocks-spec">
                                 <div class="cefr-spec-card">
                                     <strong>1. rész: Írásbeli vizsga (50 pont)</strong>
                                     <ul>
-                                        <li>Olvasásértés (45 perc · 2 feladat · 25 pont)</li>
-                                        <li>Írásbeli kommunikáció (45 perc · 2 feladat · 25 pont)</li>
+                                        <li>Olvasásértés (${rTime} perc · ${rTasks} feladat · 25 pont)</li>
+                                        <li>Írásbeli kommunikáció (${wTime} perc · ${wTasks} feladat · 25 pont)</li>
                                     </ul>
                                     <span class="cefr-pass-pill">Megfelelt: Legalább 30 / 50 pont (60%)</span>
                                 </div>
                                 <div class="cefr-spec-card">
                                     <strong>2. rész: Szóbeli vizsga (50 pont)</strong>
                                     <ul>
-                                        <li>Hallásértés (35 perc · 2 feladat · 25 pont)</li>
-                                        <li>Szóbeli kommunikáció (15 perc · 25 pont)</li>
+                                        <li>Hallásértés (${lTime} perc · ${lTasks} feladat · 25 pont)</li>
+                                        <li>Szóbeli kommunikáció (${sTime} perc · ${sTasks} feladat · 25 pont)</li>
                                     </ul>
                                     <span class="cefr-pass-pill">Megfelelt: Legalább 30 / 50 pont (60%)</span>
                                 </div>
@@ -1367,22 +1408,22 @@ const CefrExam = (function () {
             return `
                 <div class="cefr-mocks-wrapper">
                     <div class="cefr-mock-intro-card">
-                        <h3>Simulacro oficial completo (4 Destrezas)</h3>
+                        <h3>Simulacro oficial ${_esc(title)} completo (4 Destrezas)</h3>
                         <p>El examen oficial evalúa las cuatro destrezas divididas en dos bloques eliminatorios:</p>
                         <div class="cefr-blocks-spec">
                             <div class="cefr-spec-card">
                                 <strong>Bloque 1: Destrezas escritas (50 pts)</strong>
                                 <ul>
-                                    <li>Comprensión de lectura (70 min · 25 pts)</li>
-                                    <li>Expresión escrita (60 min · 25 pts)</li>
+                                    <li>Comprensión de lectura (${rTime} min · 25 pts)</li>
+                                    <li>Expresión escrita (${wTime} min · 25 pts)</li>
                                 </ul>
                                 <span class="cefr-pass-pill">Apto: Mínimo 30 / 50 pts</span>
                             </div>
                             <div class="cefr-spec-card">
                                 <strong>Bloque 2: Destrezas orales (50 pts)</strong>
                                 <ul>
-                                    <li>Comprensión auditiva (40 min · 25 pts)</li>
-                                    <li>Expresión oral (15 min · 25 pts)</li>
+                                    <li>Comprensión auditiva (${lTime} min · 25 pts)</li>
+                                    <li>Expresión oral (${sTime} min · 25 pts)</li>
                                 </ul>
                                 <span class="cefr-pass-pill">Apto: Mínimo 30 / 50 pts</span>
                             </div>
@@ -1807,11 +1848,39 @@ const CefrExam = (function () {
         };
     }
 
+    const DeleA1Exam = createModule({
+        id: 'es-dele-a1-exam',
+        dataFile: 'dele-a1-exam.json',
+        title: 'Prueba DELE A1',
+        subtitle: 'Diplomas de Español como Lengua Extranjera · Modelo Oficial A1'
+    });
+
+    const DeleA2Exam = createModule({
+        id: 'es-dele-a2-exam',
+        dataFile: 'dele-a2-exam.json',
+        title: 'Prueba DELE A2',
+        subtitle: 'Diplomas de Español como Lengua Extranjera · Modelo Oficial A2'
+    });
+
     const DeleB1Exam = createModule({
         id: 'es-dele-b1-exam',
         dataFile: 'dele-b1-exam.json',
         title: 'Prueba DELE B1',
         subtitle: 'Diplomas de Español como Lengua Extranjera · Modelo Oficial B1'
+    });
+
+    const EclA1Exam = createModule({
+        id: 'hu-ecl-a1-exam',
+        dataFile: 'ecl-a1-exam.json',
+        title: 'ECL A1 Nyelvvizsga',
+        subtitle: 'Európai Közös Referenciakeret (KER) · A1 szintű komplex nyelvvizsga-felkészítő'
+    });
+
+    const EclA2Exam = createModule({
+        id: 'hu-ecl-a2-exam',
+        dataFile: 'ecl-a2-exam.json',
+        title: 'ECL A2 Nyelvvizsga',
+        subtitle: 'Európai Közös Referenciakeret (KER) · A2 szintű komplex nyelvvizsga-felkészítő'
     });
 
     const EclB1Exam = createModule({
@@ -1823,7 +1892,11 @@ const CefrExam = (function () {
 
     return {
         createModule: createModule,
+        DeleA1Exam: DeleA1Exam,
+        DeleA2Exam: DeleA2Exam,
         DeleB1Exam: DeleB1Exam,
+        EclA1Exam: EclA1Exam,
+        EclA2Exam: EclA2Exam,
         EclB1Exam: EclB1Exam
     };
 })();
@@ -1831,7 +1904,11 @@ const CefrExam = (function () {
 // Export globally and for CommonJS tests
 if (typeof window !== 'undefined') {
     window.CefrExam = CefrExam;
+    window.DeleA1Exam = CefrExam.DeleA1Exam;
+    window.DeleA2Exam = CefrExam.DeleA2Exam;
     window.DeleB1Exam = CefrExam.DeleB1Exam;
+    window.EclA1Exam = CefrExam.EclA1Exam;
+    window.EclA2Exam = CefrExam.EclA2Exam;
     window.EclB1Exam = CefrExam.EclB1Exam;
 }
 if (typeof module !== 'undefined' && module.exports) {

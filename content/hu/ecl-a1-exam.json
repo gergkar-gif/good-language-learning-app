@@ -1,0 +1,518 @@
+{
+  "id": "hu-ecl-a1-exam",
+  "board": "Pécsi Tudományegyetem / Nemzetközi ECL Központ",
+  "level": "A1",
+  "title": "ECL A1 Nyelvvizsga",
+  "subtitle": "Európai Közös Referenciakeret (KER) · A1 szintű komplex nyelvvizsga-felkészítő",
+  "passingScorePercentage": 60,
+  "skills": {
+    "reading": {
+      "id": "reading",
+      "name": "Olvasásértés",
+      "officialTimeMinutes": 35,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-reading-t1",
+          "tareaNum": 1,
+          "type": "matching-notices",
+          "title": "1. rész: Hirdetések és mindennapi szükségletek",
+          "instructions": "Párosítsd a 6 személyt (1-6) a 10 hirdetéssel (A-J). Négy hirdetés felesleges.",
+          "people": [
+            {
+              "id": "p1",
+              "name": "1. Tamás",
+              "text": "Friss kenyeret, péksüteményt és meleg kávét szeretne vásárolni reggel hét órakor a munkahelye felé menet.",
+              "correctNoticeId": "not-c"
+            },
+            {
+              "id": "p2",
+              "name": "2. Éva",
+              "text": "Kerékpárt szeretne bérelni egy napra, hogy körbebiciklizze a szigetet a barátaival.",
+              "correctNoticeId": "not-f"
+            },
+            {
+              "id": "p3",
+              "name": "3. Gábor",
+              "text": "Spanyolul szeretne tanulni kezdő szinten, kis létszámú csoportban, hétköznap esténként.",
+              "correctNoticeId": "not-a"
+            },
+            {
+              "id": "p4",
+              "name": "4. Zsuzsa",
+              "text": "Hagyományos magyar ételeket keres egy csendes belvárosi étteremben vasárnapi családi ebédhez.",
+              "correctNoticeId": "not-h"
+            },
+            {
+              "id": "p5",
+              "name": "5. Bence",
+              "text": "Használt könyveket szeretne vásárolni olcsón egy megbízható antikváriumban.",
+              "correctNoticeId": "not-e"
+            },
+            {
+              "id": "p6",
+              "name": "6. Dóra",
+              "text": "Úszóbérletet szeretne venni egy fedett uszodában a kora reggeli sportoláshoz.",
+              "correctNoticeId": "not-b"
+            }
+          ],
+          "notices": [
+            {
+              "id": "not-a",
+              "letter": "A",
+              "title": "Viva Spanyol Nyelviskola",
+              "text": "Kezdő és haladó spanyol nyelvtanfolyamok délutáni és esti időpontokban. Kis csoportok, anyanyelvi tanárok a belvárosban."
+            },
+            {
+              "id": "not-b",
+              "letter": "B",
+              "title": "Hullám Városi Uszoda",
+              "text": "Ötvenméteres fedett medence, szauna és reggeli úszójegyek minden nap reggel hattól este tízig."
+            },
+            {
+              "id": "not-c",
+              "letter": "C",
+              "title": "Pékműhely & Kávézó",
+              "text": "Helyben sütött ropogós kenyerek, péksütemények, szendvicsek és forró kávék már reggel fél héttől."
+            },
+            {
+              "id": "not-d",
+              "letter": "D",
+              "title": "Autószerviz Expressz",
+              "text": "Gyors olajcsere, műszaki vizsga felkészítés és gumiabroncs csere bejelentkezés nélkül hétköznapokon."
+            },
+            {
+              "id": "not-e",
+              "letter": "E",
+              "title": "Bagoly Antikvárium",
+              "text": "Régi és használt könyvek, térképek és folyóiratok hatalmas választéka kedvező áron. Nyitva hétfőtől szombatig."
+            },
+            {
+              "id": "not-f",
+              "letter": "F",
+              "title": "BringaPont Kölcsönző",
+              "text": "Városi és túrakerékpárok bérlése óradíjjal vagy egész napra. Gyerekülések és védősisakok ingyenesen."
+            },
+            {
+              "id": "not-g",
+              "letter": "G",
+              "title": "Gyors Cipőjavító Műhely",
+              "text": "Sarkalás, talpalás és táskajavítás megvárható formában a metróállomás kijáratánál."
+            },
+            {
+              "id": "not-h",
+              "letter": "H",
+              "title": "Kárpátia Vendéglő",
+              "text": "Házias magyaros fogások, gulyásleves, frissensültek és somlói galuska kellemes, családbarát környezetben."
+            },
+            {
+              "id": "not-i",
+              "letter": "I",
+              "title": "Szabóság és Ruhajavítás",
+              "text": "Nadrágfelvarrás, cipzárcsere és zakók méretre igazítása rövid határidővel, precíz munkával."
+            },
+            {
+              "id": "not-j",
+              "letter": "J",
+              "title": "Napfény Utazási Iroda",
+              "text": "Repülőjegyek, tengerparti nyaralások és szervezett buszos városnézések előfoglalási akciókkal."
+            }
+          ]
+        },
+        {
+          "id": "hu-reading-t2",
+          "tareaNum": 2,
+          "type": "reading-mc",
+          "title": "2. rész: Rövid személyes email",
+          "instructions": "Olvasd el Dániel levelét a barátjának, majd válaszolj az 5 kérdésre a helyes opció (A, B vagy C) kiválasztásával.",
+          "passage": "Szia, Martin!\n\nHogy vagy? Én már két hete Budapesten lakom, és nagyon jól érzem magam itt. Találtam egy szép, világos lakást a hetedik kerületben, a belvárosban. A lakás a második emeleten van, van benne egy nagy szoba, egy kis konyha és egy fürdőszoba.\n\nA munkahelyem nincs messze: egy nemzetközi cégnél dolgozom informatikusként. Minden reggel metróval járok dolgozni, az út csak tizenöt perc. Hétfőtől péntekig nyolctól négyig dolgozom.\n\nDélutánonként gyakran sétálok a Duna-parton, vagy beülök egy csendes kávézóba olvasni. Hétvégén szeretnék főzni valamit a barátaimnak. Van kedved eljönni hozzám szombaton vacsorára?\n\nVárom a válaszodat!\nÜdvözlettel,\nDániel",
+          "questions": [
+            {
+              "id": "hu-rt2-q1",
+              "question": "1. Mióta lakik Dániel Budapesten?",
+              "options": [
+                "Két hete.",
+                "Két hónapja.",
+                "Két éve."
+              ],
+              "correct": 0,
+              "evidence": "Én már két hete Budapesten lakom",
+              "explanation": "A levél első mondata szerint Dániel két hete él a fővárosban."
+            },
+            {
+              "id": "hu-rt2-q2",
+              "question": "2. Milyen Dániel lakása?",
+              "options": [
+                "Nagy és sötét a földszinten.",
+                "Szép és világos, egy nagy szobával a második emeleten.",
+                "Háromszobás kertes ház a külvárosban."
+              ],
+              "correct": 1,
+              "evidence": "Találtam egy szép, világos lakást a hetedik kerületben... A lakás a második emeleten van, van benne egy nagy szoba",
+              "explanation": "A lakás a 2. emeleten van, szép, világos és egy nagy szobája van."
+            },
+            {
+              "id": "hu-rt2-q3",
+              "question": "3. Mivel jár Dániel a munkahelyére reggelente?",
+              "options": [
+                "Saját autóval.",
+                "Biciklivel a Duna mentén.",
+                "Metróval."
+              ],
+              "correct": 2,
+              "evidence": "Minden reggel metróval járok dolgozni, az út csak tizenöt perc.",
+              "explanation": "A szöveg szerint minden reggel metróval közlekedik."
+            },
+            {
+              "id": "hu-rt2-q4",
+              "question": "4. Mit csinál Dániel a munka után a szabadidejében?",
+              "options": [
+                "A Duna-parton sétál vagy kávézóban olvas.",
+                "Minden délután az uszodában edz.",
+                "Késő estig dolgozik a munkahelyén."
+              ],
+              "correct": 0,
+              "evidence": "Délutánonként gyakran sétálok a Duna-parton, vagy beülök egy csendes kávézóba olvasni.",
+              "explanation": "Délutánonként sétál a folyóparton vagy kávézóban olvas."
+            },
+            {
+              "id": "hu-rt2-q5",
+              "question": "5. Miért ír Dániel Martinnak?",
+              "options": [
+                "Hogy meghívja őt szombati vacsorára az új lakásába.",
+                "Hogy pénzt kérjen tőle új bútorokra.",
+                "Hogy közösen keressenek új albérletet."
+              ],
+              "correct": 0,
+              "evidence": "Van kedved eljönni hozzám szombaton vacsorára?",
+              "explanation": "Dániel szombati vacsorára hívja meg barátját."
+            }
+          ]
+        }
+      ]
+    },
+    "listening": {
+      "id": "listening",
+      "name": "Hallásértés",
+      "officialTimeMinutes": 25,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-listening-t1",
+          "tareaNum": 1,
+          "type": "audio-mc",
+          "title": "1. rész: Rövid közlések és felhívások",
+          "instructions": "Négy rövid szöveget fogsz hallani. Válaszd ki a helyes opciót (A, B vagy C). 30 másodperced van a kérdések átolvasására.",
+          "previewSeconds": 30,
+          "items": [
+            {
+              "id": "hu-l1-q1",
+              "num": 1,
+              "situation": "Hangosbemondó a vasútállomáson.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Hangosbemondó",
+                    "gender": "female",
+                    "text": "Figyelem! A Bécsbe közlekedő EuroCity vonat tíz perc késéssel érkezik a hatodik vágányra. Kérjük a vágány mellett várakozó utasokat, vigyázzanak a poggyászaikra!"
+                  }
+                ]
+              },
+              "question": "Hányas vágányra érkezik a bécsi vonat?",
+              "options": [
+                "A negyedik vágányra.",
+                "A hatodik vágányra.",
+                "A tizedik vágányra."
+              ],
+              "correct": 1,
+              "evidence": "A Bécsbe közlekedő EuroCity vonat tíz perc késéssel érkezik a hatodik vágányra.",
+              "explanation": "A bemondás szerint a vonat a hatodik vágányra érkezik."
+            },
+            {
+              "id": "hu-l1-q2",
+              "num": 2,
+              "situation": "Tájékoztató egy élelmiszerboltban.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Üzletvezető",
+                    "gender": "male",
+                    "text": "Kedves vásárlóink! Mai akciónk keretében minden friss gyümölcs és zöldség húsz százalék kedvezménnyel kapható a zöldségpultnál. Jó vásárlást kívánunk!"
+                  }
+                ]
+              },
+              "question": "Milyen termékekre érvényes a mai húsz százalékos kedvezmény?",
+              "options": [
+                "A gyümölcsökre és zöldségekre.",
+                "A tejtermékekre és sajtokra.",
+                "A csokoládékra és édességekre."
+              ],
+              "correct": 0,
+              "evidence": "minden friss gyümölcs és zöldség húsz százalék kedvezménnyel kapható",
+              "explanation": "A friss zöldségek és gyümölcsök akciósak."
+            },
+            {
+              "id": "hu-l1-q3",
+              "num": 3,
+              "situation": "Telefonos hangpostaüzenet egy orvosi rendelőből.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Asszisztens",
+                    "gender": "female",
+                    "text": "Jó napot kívánok! A háziorvosi rendelőből hívom. Tájékoztatjuk, hogy Dr. Szabó Péter holnapi rendelése továbbképzés miatt nem reggel nyolckor, hanem délután kettőkor kezdődik."
+                  }
+                ]
+              },
+              "question": "Mikor kezdődik holnap a háziorvosi rendelés?",
+              "options": [
+                "Reggel nyolc órakor.",
+                "Délelőtt tíz órakor.",
+                "Délután kettő órakor."
+              ],
+              "correct": 2,
+              "evidence": "nem reggel nyolckor, hanem délután kettőkor kezdődik.",
+              "explanation": "A rendelés délután kettőkor (14:00) indul."
+            },
+            {
+              "id": "hu-l1-q4",
+              "num": 4,
+              "situation": "Rendelés egy kávézóban.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Felszolgáló",
+                    "gender": "male",
+                    "text": "Parancsoljon! Egy kapucsínó és egy ásványvíz. Összesen ezerötszáz forint lesz. Készpénzzel vagy bankkártyával szeretne fizetni?"
+                  }
+                ]
+              },
+              "question": "Mennyibe kerül a kávé és az ásványvíz összesen?",
+              "options": [
+                "Ezerkétszáz forintba.",
+                "Ezerötszáz forintba.",
+                "Kétezer forintba."
+              ],
+              "correct": 1,
+              "evidence": "Összesen ezerötszáz forint lesz.",
+              "explanation": "A számla összege pontosan 1500 forint."
+            }
+          ]
+        },
+        {
+          "id": "hu-listening-t2",
+          "tareaNum": 2,
+          "type": "audio-interview",
+          "title": "2. rész: Beszélgetés az információs pultnál",
+          "instructions": "Egy párbeszédet fogsz hallani egy turista és a belvárosi információs iroda munkatársa között. Válaszolj a kérdésekre a helyes opció kiválasztásával.",
+          "previewSeconds": 30,
+          "audio": {
+            "turns": [
+              {
+                "speaker": "Turista",
+                "gender": "male",
+                "text": "Jó napot kívánok! Érdeklődni szeretnék, hogy merre van a legközelebbi posta?"
+              },
+              {
+                "speaker": "Informátor",
+                "gender": "female",
+                "text": "Jó napot kívánok! Menjen egyenesen ezen az utcán a templomig, majd forduljon jobbra. A posta körülbelül három perc sétára van, a tér jobb oldalán."
+              },
+              {
+                "speaker": "Turista",
+                "gender": "male",
+                "text": "Köszönöm szépen! És meddig van nyitva a posta ma délután?"
+              },
+              {
+                "speaker": "Informátor",
+                "gender": "female",
+                "text": "Hétköznap este hat óráig tart nyitva. A bélyegek mellett képeslapokat is tud ott vásárolni."
+              },
+              {
+                "speaker": "Turista",
+                "gender": "male",
+                "text": "Nagyszerű! És a villamosmegállót hol találom?"
+              },
+              {
+                "speaker": "Informátor",
+                "gender": "female",
+                "text": "A negyvenhetes és negyvenkilences villamos megállója pont a posta előtt van."
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "hu-l2-q1",
+              "question": "1. Merre kell mennie a turistának a postához a templom után?",
+              "options": [
+                "Jobbra kell fordulnia.",
+                "Balra kell mennie a folyó felé.",
+                "Vissza kell fordulnia a pályaudvarhoz."
+              ],
+              "correct": 0,
+              "evidence": "Menjen egyenesen ezen az utcán a templomig, majd forduljon jobbra.",
+              "explanation": "A templom után jobbra kell fordulni."
+            },
+            {
+              "id": "hu-l2-q2",
+              "question": "2. Meddig van nyitva a posta hétköznap délután?",
+              "options": [
+                "Délután négy óráig.",
+                "Este hat óráig.",
+                "Este nyolc óráig."
+              ],
+              "correct": 1,
+              "evidence": "Hétköznap este hat óráig tart nyitva.",
+              "explanation": "Este hat óráig (18:00) van nyitva."
+            },
+            {
+              "id": "hu-l2-q3",
+              "question": "3. Mit tud vásárolni a posta épületében a turista?",
+              "options": [
+                "Bélyegeket és képeslapokat.",
+                "Csak vonatjegyeket.",
+                "Kizárólag újságokat és könyveket."
+              ],
+              "correct": 0,
+              "evidence": "A bélyegek mellett képeslapokat is tud ott vásárolni.",
+              "explanation": "Bélyeget és képeslapot is lehet ott kapni."
+            },
+            {
+              "id": "hu-l2-q4",
+              "question": "4. Melyik villamosok állnak meg a posta előtt?",
+              "options": [
+                "A négyes és hatos villamos.",
+                "A kettős és huszonnégyes villamos.",
+                "A negyvenhetes és negyvenkilences villamos."
+              ],
+              "correct": 2,
+              "evidence": "A negyvenhetes és negyvenkilences villamos megállója pont a posta előtt van.",
+              "explanation": "A 47-es és 49-es villamos áll meg a posta előtt."
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "id": "writing",
+      "name": "Írásbeli kommunikáció",
+      "officialTimeMinutes": 35,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-writing-t1",
+          "tareaNum": 1,
+          "title": "1. rész: Rövid baráti levél / email",
+          "prompt": "Barátod, Zoltán meghívott a hétvégi kirándulásra a hegyekbe.\n\nÍrj neki egy rövid választ (30–40 szóban), amelyben:\n- Megköszönöd a meghívást és örömmel elfogadod.\n- Megkérdezed, mikor és hol találkoztok.\n- Megkérdezed, hogy hozzál-e szendvicset vagy innivalót.\n- Elköszönsz tőle barátságosan.",
+          "minWords": 30,
+          "maxWords": 40,
+          "targetKeywords": [
+            "köszönöm a meghívást",
+            "mikor találkozunk",
+            "szívesen megyek",
+            "szia"
+          ]
+        },
+        {
+          "id": "hu-writing-t2",
+          "tareaNum": 2,
+          "title": "2. rész: Rövid bemutató szöveg",
+          "options": [
+            {
+              "optionLetter": "A",
+              "title": "Opció A: Bemutatkozás és a családom",
+              "prompt": "Írj egy rövid bemutatkozást egy internetes oldalra (35–45 szóban):\n- Írd meg a nevedet, életkorodat és lakóhelyedet.\n- Írd le, mit dolgozol vagy tanulsz.\n- Említsd meg a családodat és a kedvenc hobbijaidat.",
+              "minWords": 35,
+              "maxWords": 45
+            },
+            {
+              "optionLetter": "B",
+              "title": "Opció B: A lakásom és a szobám",
+              "prompt": "Írj egy rövid bejegyzést a lakásodról vagy a szobádról (35–45 szóban):\n- Hol található a lakás és hány szobás?\n- Milyen bútorok vannak a szobádban?\n- Miért szeretsz ott lakni?",
+              "minWords": 35,
+              "maxWords": 45
+            }
+          ],
+          "minWords": 35,
+          "maxWords": 45,
+          "targetKeywords": [
+            "a nevem",
+            "élek",
+            "szeretek",
+            "a lakásom",
+            "a szobámban"
+          ]
+        }
+      ]
+    },
+    "speaking": {
+      "id": "speaking",
+      "name": "Szóbeli kommunikáció",
+      "officialTimeMinutes": 12,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-speaking-t1",
+          "tareaNum": 1,
+          "title": "1. rész: Önálló bemutatkozás",
+          "prompt": "Beszélj magadról önállóan körülbelül másfél-két percben!\n\nSzempontok:\n- Név, életkor, nemzetiség és lakóhely.\n- Foglalkozás vagy tanulmányok.\n- Milyen nyelveket tanulsz és mit csinálsz a szabadidődben?",
+          "bulletPoints": [
+            "Személyes adatok és származás",
+            "Foglalkozás és lakóhely",
+            "Nyelvtudás és szabadidős tevékenységek"
+          ]
+        },
+        {
+          "id": "hu-speaking-t2",
+          "tareaNum": 2,
+          "title": "2. rész: Képleírás és mindennapi szokások",
+          "prompt": "Képzelj el egy fényképet: Egy baráti társaság ül egy hangulatos kávézó teraszán napsütésben, és kávét isznak süteménnyel.\n\nSzempontok:\n- Mit látsz a képen, milyen az időjárás?\n- Mit csinálnak az emberek a képen?\n- Te hol és mikor szoktál találkozni a barátaiddal?",
+          "bulletPoints": [
+            "Kép leírása és környezet",
+            "Tevékenységek a képen",
+            "Saját szokások és szabadidős programok"
+          ]
+        }
+      ]
+    }
+  },
+  "strategies": {
+    "title": "Stratégiák és tippek az ECL A1 vizsgához",
+    "structure": [
+      {
+        "prueba": "Olvasásértés (35 perc · 2 feladat)",
+        "tip": "Először olvasd át a kérdéseket. Keresd meg a kulcsszavakat a szövegben. Nem szükséges minden szót értened a helyes válaszhoz."
+      },
+      {
+        "prueba": "Hallásértés (25 perc · 2 feladat)",
+        "tip": "Használd ki a 30 másodperces felkészülési időt a kérdések és válaszlehetőségek áttekintésére. Az első hallgatáskor a lényeget figyeld, a másodiknál a számokat és neveket ellenőrizd."
+      },
+      {
+        "prueba": "Írásbeli kommunikáció (35 perc · 2 feladat)",
+        "tip": "Írj egyszerű, tiszta tőmondatokat alannyal és állítmánnyal. Ügyelj a megadott szószám betartására (30–45 szó) és a helyesírás ellenőrzésére."
+      },
+      {
+        "prueba": "Szóbeli kommunikáció (12 perc)",
+        "tip": "Beszélj nyugodtan és érthetően. Ha nem értettél egy kérdést a vizsgáztatótól, kérdezz vissza udvariasan: Megismételné, kérem?"
+      }
+    ],
+    "connectors": [
+      {
+        "category": "Gondolatok összekötése",
+        "examples": ["és", "is", "szintén"]
+      },
+      {
+        "category": "Ellentét és magyarázat",
+        "examples": ["de", "viszont", "mert", "ezért"]
+      },
+      {
+        "category": "Köszönések és elköszönések",
+        "examples": ["Szia!", "Sziasztok!", "Jó napot kívánok!", "Viszontlátásra!", "Szép napot!"]
+      },
+      {
+        "category": "Udvariassági kifejezések",
+        "examples": ["Köszönöm szépen", "Szívesen", "Kérem", "Elnézést"]
+      }
+    ]
+  }
+}

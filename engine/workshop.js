@@ -52,7 +52,8 @@ const Workshop = (function () {
             sub: 'Magyar kulturális ismereti vizsga · 6 official categories, explained artifacts, matching & 3 mock exams.',
             containerId: 'hu-cultural-exam-root',
             langs: ['hu'],
-            category: 'exams'
+            category: 'exams',
+            level: 'B1'
         },
         {
             id: 'es-ccse-exam',
@@ -61,7 +62,28 @@ const Workshop = (function () {
             sub: 'Prueba CCSE · Conocimientos Constitucionales y Socioculturales de España (Instituto Cervantes). 5 tareas, 25 preguntas y simulacros.',
             containerId: 'es-ccse-exam-root',
             langs: ['es-es'],
-            category: 'exams'
+            category: 'exams',
+            level: 'A2'
+        },
+        {
+            id: 'es-dele-a1-exam',
+            icon: 'es-dele-exam',
+            title: 'DELE A1 Exam Prep',
+            sub: 'Prueba DELE A1 · Instituto Cervantes. Entrenamiento por tareas oficiales: lectura, audición, escritura y conversación.',
+            containerId: 'es-dele-a1-exam-root',
+            langs: ['es', 'es-latam', 'es-es'],
+            category: 'exams',
+            level: 'A1'
+        },
+        {
+            id: 'es-dele-a2-exam',
+            icon: 'es-dele-exam',
+            title: 'DELE A2 Exam Prep',
+            sub: 'Prueba DELE A2 · Instituto Cervantes. Entrenamiento por tareas oficiales: lectura, audición, escritura y conversación.',
+            containerId: 'es-dele-a2-exam-root',
+            langs: ['es', 'es-latam', 'es-es'],
+            category: 'exams',
+            level: 'A2'
         },
         {
             id: 'es-dele-b1-exam',
@@ -70,7 +92,28 @@ const Workshop = (function () {
             sub: 'Prueba DELE B1 · Instituto Cervantes. Entrenamiento por tareas oficiales: lectura, audición, escritura y conversación.',
             containerId: 'es-dele-b1-exam-root',
             langs: ['es', 'es-latam', 'es-es'],
-            category: 'exams'
+            category: 'exams',
+            level: 'B1'
+        },
+        {
+            id: 'hu-ecl-a1-exam',
+            icon: 'hu-ecl-exam',
+            title: 'ECL A1 Exam Prep',
+            sub: 'ECL A1 nyelvvizsga · Pécsi Tudományegyetem. Olvasásértés, hallásértés, írásbeli és szóbeli készségek feladatonként.',
+            containerId: 'hu-ecl-a1-exam-root',
+            langs: ['hu'],
+            category: 'exams',
+            level: 'A1'
+        },
+        {
+            id: 'hu-ecl-a2-exam',
+            icon: 'hu-ecl-exam',
+            title: 'ECL A2 Exam Prep',
+            sub: 'ECL A2 nyelvvizsga · Pécsi Tudományegyetem. Olvasásértés, hallásértés, írásbeli és szóbeli készségek feladatonként.',
+            containerId: 'hu-ecl-a2-exam-root',
+            langs: ['hu'],
+            category: 'exams',
+            level: 'A2'
         },
         {
             id: 'hu-ecl-b1-exam',
@@ -79,7 +122,8 @@ const Workshop = (function () {
             sub: 'ECL B1 nyelvvizsga · Pécsi Tudományegyetem. Olvasásértés, hallásértés, írásbeli és szóbeli készségek feladatonként.',
             containerId: 'hu-ecl-b1-exam-root',
             langs: ['hu'],
-            category: 'exams'
+            category: 'exams',
+            level: 'B1'
         },
         {
             id: 'verbs',
@@ -191,6 +235,8 @@ const Workshop = (function () {
 
     let _active = null; // null | 'verbs' | 'grammar'
     let _activeOptions = null; // passed through to the open driller's render(), e.g. { skill }
+    let _activeTab = 'practice'; // 'practice' | 'exams'
+    let _activeLevel = 'all'; // 'all' | 'a1' | 'a2' | 'b1' | 'b2' | 'c1'
 
     function _esc(text) {
         const d = document.createElement('div');
@@ -203,7 +249,7 @@ const Workshop = (function () {
             <button class="wk-card" data-driller="${d.id}">
                 ${_drillerIcon(d.icon)}
                 <span class="wk-card-body">
-                    <span class="wk-card-title">${_esc(d.title)}</span>
+                    <span class="wk-card-title">${d.level ? `<span class="wk-badge">${_esc(d.level)}</span>` : ''}${_esc(d.title)}</span>
                     <span class="wk-card-sub">${_esc(typeof d.sub === 'function' ? d.sub() : d.sub)}</span>
                 </span>
                 <span class="wk-card-arrow geo-triangle" aria-hidden="true"></span>
@@ -217,19 +263,76 @@ const Workshop = (function () {
 
     function _pickerHtml() {
         const available = DRILLERS.filter(_available);
-        const sorted = available.slice().sort((a, b) => {
-            const aExam = _isExam(a);
-            const bExam = _isExam(b);
-            if (aExam !== bExam) return aExam ? 1 : -1;
+        const practiceItems = available.filter(d => !_isExam(d)).sort((a, b) => a.title.localeCompare(b.title));
+        const examItems = available.filter(d => _isExam(d)).sort((a, b) => {
+            const levelOrder = ['a1', 'a2', 'b1', 'b2', 'c1'];
+            const aIdx = a.level ? levelOrder.indexOf(a.level.toLowerCase()) : 99;
+            const bIdx = b.level ? levelOrder.indexOf(b.level.toLowerCase()) : 99;
+            if (aIdx !== bIdx) return aIdx - bIdx;
             return a.title.localeCompare(b.title);
         });
+
+        let contentHtml = '';
+        if (_activeTab === 'exams') {
+            const levels = ['all', 'a1', 'a2', 'b1', 'b2', 'c1'];
+            const levelPillsHtml = `
+                <div class="wk-level-pills" role="group" aria-label="Filter by level">
+                    ${levels.map(lvl => `
+                        <button type="button" class="wk-level-pill ${_activeLevel.toLowerCase() === lvl ? 'is-active' : ''}" data-exam-level="${lvl}">
+                            ${lvl === 'all' ? 'All Levels' : lvl.toUpperCase()}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+
+            let filteredExams = examItems;
+            if (_activeLevel !== 'all') {
+                filteredExams = examItems.filter(d => {
+                    const dLvl = (d.level || '').toLowerCase();
+                    return dLvl === _activeLevel.toLowerCase();
+                });
+            }
+
+            let examsListHtml = '';
+            if (filteredExams.length > 0) {
+                examsListHtml = `<div class="wk-cards-list">${_renderCards(filteredExams)}</div>`;
+            } else {
+                examsListHtml = `
+                    <div class="wk-empty-level">
+                        <h4>${_activeLevel.toUpperCase()} Official Exam Preparation</h4>
+                        <p>Official ${_activeLevel.toUpperCase()} exam models and training modules for this language are currently in development.</p>
+                    </div>
+                `;
+            }
+
+            contentHtml = `
+                ${levelPillsHtml}
+                ${examsListHtml}
+            `;
+        } else {
+            contentHtml = `
+                <div class="wk-cards-list">
+                    ${_renderCards(practiceItems)}
+                </div>
+            `;
+        }
+
         return `
             <div class="wk-picker">
-                ${_renderCards(sorted)}
+                <div class="wk-tabs-bar" role="tablist">
+                    <button type="button" class="wk-tab ${_activeTab === 'practice' ? 'is-active' : ''}" data-wk-tab="practice" role="tab" aria-selected="${_activeTab === 'practice'}">
+                        Practice
+                    </button>
+                    <button type="button" class="wk-tab ${_activeTab === 'exams' ? 'is-active' : ''}" data-wk-tab="exams" role="tab" aria-selected="${_activeTab === 'exams'}">
+                        Exam Preparation
+                    </button>
+                </div>
+                <div class="wk-tab-content">
+                    ${contentHtml}
+                </div>
             </div>
         `;
     }
-
 
     function _activeHtml(driller) {
         return `
@@ -244,6 +347,20 @@ const Workshop = (function () {
     function _attachPickerEvents(root) {
         root.querySelectorAll('[data-driller]').forEach(btn => {
             btn.addEventListener('click', () => open(btn.dataset.driller));
+        });
+
+        root.querySelectorAll('[data-wk-tab]').forEach(tabBtn => {
+            tabBtn.addEventListener('click', () => {
+                _activeTab = tabBtn.dataset.wkTab;
+                render();
+            });
+        });
+
+        root.querySelectorAll('[data-exam-level]').forEach(lvlBtn => {
+            lvlBtn.addEventListener('click', () => {
+                _activeLevel = lvlBtn.dataset.examLevel;
+                render();
+            });
         });
     }
 
@@ -269,7 +386,11 @@ const Workshop = (function () {
             'hu-verb-studio': typeof HuVerbStudio !== 'undefined' ? HuVerbStudio : null,
             'hu-cultural-exam': typeof HuCulturalExam !== 'undefined' ? HuCulturalExam : null,
             'es-ccse-exam': typeof CcseExam !== 'undefined' ? CcseExam : null,
+            'es-dele-a1-exam': typeof DeleA1Exam !== 'undefined' ? DeleA1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleA1Exam : null),
+            'es-dele-a2-exam': typeof DeleA2Exam !== 'undefined' ? DeleA2Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleA2Exam : null),
             'es-dele-b1-exam': typeof DeleB1Exam !== 'undefined' ? DeleB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleB1Exam : null),
+            'hu-ecl-a1-exam': typeof EclA1Exam !== 'undefined' ? EclA1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.EclA1Exam : null),
+            'hu-ecl-a2-exam': typeof EclA2Exam !== 'undefined' ? EclA2Exam : (typeof CefrExam !== 'undefined' ? CefrExam.EclA2Exam : null),
             'hu-ecl-b1-exam': typeof EclB1Exam !== 'undefined' ? EclB1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.EclB1Exam : null),
             'hu-verb': typeof HuVerbDriller !== 'undefined' ? HuVerbDriller : null,
             'hu-suffix': typeof HuSuffixDriller !== 'undefined' ? HuSuffixDriller : null,
@@ -367,7 +488,28 @@ const Workshop = (function () {
         }
 
 
+        if (id === 'exam-prep' || id === 'exams') {
+            _active = null;
+            _activeTab = 'exams';
+            if (options && options.level) {
+                _activeLevel = options.level.toLowerCase();
+            }
+            render();
+            return;
+        }
+
         const driller = DRILLERS.find(d => d.id === id);
+        if (driller) {
+            if (_isExam(driller)) {
+                _activeTab = 'exams';
+                if (driller.level) {
+                    _activeLevel = driller.level.toLowerCase();
+                }
+            } else {
+                _activeTab = 'practice';
+            }
+        }
+
         if (driller && driller.langs && typeof Lang !== 'undefined' && !driller.langs.includes(Lang.code())) {
             Lang.set(driller.langs[0]);
         }
@@ -407,7 +549,19 @@ const Workshop = (function () {
         return !driller || _available(driller);
     }
 
-    return { render, open, close, activeDriller, isAvailable };
+    function setTab(tab) {
+        if (tab === 'practice' || tab === 'exams') {
+            _activeTab = tab;
+            if (!_active) render();
+        }
+    }
+
+    function setExamLevel(level) {
+        _activeLevel = (level || 'all').toLowerCase();
+        if (!_active && _activeTab === 'exams') render();
+    }
+
+    return { render, open, close, activeDriller, isAvailable, setTab, setExamLevel };
 })();
 
 if (typeof window !== 'undefined') {

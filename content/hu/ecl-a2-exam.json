@@ -1,0 +1,584 @@
+{
+  "id": "hu-ecl-a2-exam",
+  "board": "Pécsi Tudományegyetem / Nemzetközi ECL Központ",
+  "level": "A2",
+  "title": "ECL A2 Nyelvvizsga",
+  "subtitle": "Európai Közös Referenciakeret (KER) · A2 szintű komplex nyelvvizsga-felkészítő",
+  "passingScorePercentage": 60,
+  "skills": {
+    "reading": {
+      "id": "reading",
+      "name": "Olvasásértés",
+      "officialTimeMinutes": 40,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-reading-t1",
+          "tareaNum": 1,
+          "type": "matching-notices",
+          "title": "1. rész: Hirdetések és mindennapi szükségletek",
+          "instructions": "Párosítsd a 6 személyt (1-6) a 10 hirdetéssel (A-J). Négy hirdetés felesleges.",
+          "people": [
+            {
+              "id": "p1",
+              "name": "1. Balázs",
+              "text": "Kerékpártúrát tervez a Dunakanyarban szombatra, és megbízható túrabiciklit szeretne bérelni sisakkal és szervizcsomaggal.",
+              "correctNoticeId": "not-a"
+            },
+            {
+              "id": "p2",
+              "name": "2. Katalin",
+              "text": "Spanyol nyelvtanfolyamot keres heti két alkalommal munka után, kis csoportban a belvárosban.",
+              "correctNoticeId": "not-b"
+            },
+            {
+              "id": "p3",
+              "name": "3. Norbert",
+              "text": "Tönkrement a laptopja kijelzője, és gyors szervizt keres, ahol huszonnégy órán belül megjavítják.",
+              "correctNoticeId": "not-c"
+            },
+            {
+              "id": "p4",
+              "name": "4. Anna",
+              "text": "Egyedi, kézzel készített kerámiabögréket és tálakat szeretne vásárolni ajándékba közvetlenül a készítőtől.",
+              "correctNoticeId": "not-d"
+            },
+            {
+              "id": "p5",
+              "name": "5. Zoltán",
+              "text": "Erős fogfájása van, és olyan fogorvosi rendelőt keres, amely szombaton délelőtt is fogad sürgős eseteket bejelentkezés nélkül.",
+              "correctNoticeId": "not-e"
+            },
+            {
+              "id": "p6",
+              "name": "6. Boglárka",
+              "text": "Hétvégi természetfotós alapozó tanfolyamra szeretne jelentkezni kezdőknek, szabadtéri terepgyakorlattal.",
+              "correctNoticeId": "not-f"
+            }
+          ],
+          "notices": [
+            {
+              "id": "not-a",
+              "letter": "A",
+              "title": "Dunakanyar BringaPont Kölcsönző",
+              "text": "Túrakerékpárok és elektromos biciklik bérlése védősisakkal, részletes térképpel és javítókészlettel hétvégi kirándulásokhoz."
+            },
+            {
+              "id": "not-b",
+              "letter": "B",
+              "title": "Viva Idiomas Nyelviskola",
+              "text": "Gyakorlati spanyol és olasz nyelvórák felnőtteknek heti kétszer 18:00 és 20:00 óra között négy-hat fős csoportokban az Oktogonnál."
+            },
+            {
+              "id": "not-c",
+              "letter": "C",
+              "title": "Laptop & Mobil Expressz Szerviz",
+              "text": "Kijelzőcsere, akkumulátorcsere és gyors hibaelhárítás hordozható számítógépeken egy munkanapon belül, fél év garanciával."
+            },
+            {
+              "id": "not-d",
+              "letter": "D",
+              "title": "Agyagműves Kerámiaműhely",
+              "text": "Kézműves használati tárgyak, kávésbögrék, vázák és dísztálak árusítása a belvárosi műhelyben keddtől szombatig."
+            },
+            {
+              "id": "not-e",
+              "letter": "E",
+              "title": "Dentál Plusz Fogászati Ügyelet",
+              "text": "Hétvégi és szombat délelőtti fogorvosi ellátás 8:00 és 13:00 óra között, akut panaszok soron kívüli kezelése."
+            },
+            {
+              "id": "not-f",
+              "letter": "F",
+              "title": "Fény & Természet Fotósuli",
+              "text": "Kétnapos intenzív fotótanfolyam kezdőknek a budai hegyekben. Fényképezőgép-használat, kompozíció és szabadtéri gyakorlatok."
+            },
+            {
+              "id": "not-g",
+              "letter": "G",
+              "title": "Kutyakozmetika & Panzió",
+              "text": "Teljes körű szőrápolás, fürdetés és hétvégi megőrzés kistestű és nagytestű kutyáknak zöldövezeti kertes házban."
+            },
+            {
+              "id": "not-h",
+              "letter": "H",
+              "title": "Antik Bútor Restaurálás",
+              "text": "Régi faasztalok, székek és komódok felújítása, kárpitozás hagyományos alapanyagokkal és szakértelemmel."
+            },
+            {
+              "id": "not-i",
+              "letter": "I",
+              "title": "Házias Ízek Étkezde",
+              "text": "Hagyományos magyar ételek, friss levesek és főzelékek helyben fogyasztásra vagy elvitelre kedvező áron."
+            },
+            {
+              "id": "not-j",
+              "letter": "J",
+              "title": "Patyolat Gyorsmosoda",
+              "text": "Takarók, kabátok és öltönyök vegytisztítása és vasalása három munkanapos határidővel a metróállomásnál."
+            }
+          ]
+        },
+        {
+          "id": "hu-reading-t2",
+          "tareaNum": 2,
+          "type": "reading-mc",
+          "title": "2. rész: Cikkértés · Életmódváltás és kézműves pékség",
+          "instructions": "Olvasd el az alábbi cikket Kovács Péter balatoni pékségéről, majd válaszolj az 5 kérdésre a helyes opció (A, B vagy C) kiválasztásával.",
+          "passage": "Kovács Péter tíz évig dolgozott informatikusként egy budapesti irodában. Bár szerette a kollégáit és a fizetése is jó volt, a folyamatos ülőmunka és a monitor előtti hosszú órák miatt egyre fáradtabbnak érezte magát. Két évvel ezelőtt úgy döntött, hogy teljesen megváltoztatja az életét: felmondott a munkahelyén, és a Balaton-felvidékre, egy csendes kis faluba költözött.\n\nMindig is érdekelte a gasztronómia, ezért elvégzett egy pék tanfolyamot, majd megnyitotta saját kézműves pékségét a falu főterén. A kenyereket hagyományos módon, természetes kovásszal és helyi malomból vásárolt lisztből készíti, adalékanyagok nélkül. Minden hajnalban négy órakor kel, hogy reggel hétre már friss, ropogós kenyér és meleg péksütemény várja a vásárlókat.\n\nA helyiek eleinte kíváncsian figyelték az új üzletet, de hamar megkedvelték Péter finomságait. Ma már nemcsak a falu lakói, hanem a szomszédos településekről érkező turisták is nála vásárolnak. Hétvégenként kenyérsütő műhelyeket is tart felnőtteknek és gyerekeknek, ahol a résztvevők megtanulhatják a tésztadagasztás és a kelesztés alapjait.\n\nPéter szerint a korai ébredés ellenére sokkal boldogabb és kiegyensúlyozottabb, mint a fővárosban. Úgy érzi, a kétkezi munka igazi örömet szerez neki, és a helyi közösség megbecsülése mindennél többet ér.",
+          "questions": [
+            {
+              "id": "hu-rt2-q1",
+              "question": "1. Miért hagyta ott Péter a korábbi budapesti munkahelyét?",
+              "options": [
+                "Mert elbocsátották a leépítések miatt.",
+                "Mert a monoton ülőmunka kimerítette, és életmódot akart váltani.",
+                "Mert a fizetéséből nem tudott megélni a fővárosban."
+              ],
+              "correct": 1,
+              "evidence": "a folyamatos ülőmunka és a monitor előtti hosszú órák miatt egyre fáradtabbnak érezte magát. Két évvel ezelőtt úgy döntött, hogy teljesen megváltoztatja az életét",
+              "explanation": "A cikk szerint a folyamatos monitor előtti ülőmunka miatti fáradtság motiválta a változtatásra."
+            },
+            {
+              "id": "hu-rt2-q2",
+              "question": "2. Milyen alapanyagokat használ Péter a kenyérkészítéshez?",
+              "options": [
+                "Természetes kovászt és helyi malomból származó tiszta lisztet.",
+                "Gyorsfagyasztott félkész termékeket és mesterséges ízfokozókat.",
+                "Kizárólag külföldről behozott speciális tésztakeverékeket."
+              ],
+              "correct": 0,
+              "evidence": "A kenyereket hagyományos módon, természetes kovásszal és helyi malomból vásárolt lisztből készíti, adalékanyagok nélkül.",
+              "explanation": "Hagyományos kovásszal és a közeli malomból származó liszttel dolgozik, mesterséges adalékok nélkül."
+            },
+            {
+              "id": "hu-rt2-q3",
+              "question": "3. Mikor kezdődik Péter munkanapja a pékségben?",
+              "options": [
+                "Minden reggel pontosan nyolc órakor.",
+                "Hajnali négy órakor kel a sütéshez.",
+                "Csak délutánonként készíti el a másnapi árut."
+              ],
+              "correct": 1,
+              "evidence": "Minden hajnalban négy órakor kel, hogy reggel hétre már friss, ropogós kenyér és meleg péksütemény várja a vásárlókat.",
+              "explanation": "Négy órakor kel, hogy reggel hét órára elkészüljön a friss áru."
+            },
+            {
+              "id": "hu-rt2-q4",
+              "question": "4. Milyen programot szervez Péter a hétvégéken a pékségben?",
+              "options": [
+                "Bicikliversenyt a falu körül.",
+                "Kenyérsütő tanfolyamokat érdeklődőknek.",
+                "Zenei koncerteket a helyi zenekarral."
+              ],
+              "correct": 1,
+              "evidence": "Hétvégenként kenyérsütő műhelyeket is tart felnőtteknek és gyerekeknek, ahol a résztvevők megtanulhatják a tésztadagasztás és a kelesztés alapjait.",
+              "explanation": "Kenyérsütő foglalkozásokat tart felnőtteknek és gyerekeknek."
+            },
+            {
+              "id": "hu-rt2-q5",
+              "question": "5. Hogyan érzi magát Péter az új szakmájában a jelenlegi lakóhelyén?",
+              "options": [
+                "Kiegyensúlyozottabb és boldogabb a fizikai munka és a közösség miatt.",
+                "Megbánta a döntését, és hamarosan visszatér a budapesti irodába.",
+                "Magányosnak érzi magát, mert a falusiak nem állnak szóba vele."
+              ],
+              "correct": 0,
+              "evidence": "Péter szerint a korai ébredés ellenére sokkal boldogabb és kiegyensúlyozottabb, mint a fővárosban. Úgy érzi, a kétkezi munka igazi örömet szerez neki",
+              "explanation": "Sokkal boldogabb és kiegyensúlyozottabb, örömet jelent számára a kézműves munka és a közösség megbecsülése."
+            }
+          ]
+        }
+      ]
+    },
+    "listening": {
+      "id": "listening",
+      "name": "Hallásértés",
+      "officialTimeMinutes": 25,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-listening-t1",
+          "tareaNum": 1,
+          "type": "audio-mc",
+          "title": "1. rész: Rövid rádiós hírek és közlemények",
+          "instructions": "Öt rövid szöveget fogsz hallani. Válaszd ki a helyes opciót (A, B vagy C). 30 másodperced van elolvasni a kérdéseket.",
+          "previewSeconds": 30,
+          "items": [
+            {
+              "id": "hu-l1-q1",
+              "num": 1,
+              "situation": "Közlekedési tájékoztató a rádióban.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Hírolvasó",
+                    "gender": "male",
+                    "text": "Figyelem, közlekedési hír: a kisföldalatti, vagyis az M1-es metró vonalán pályakarbantartás miatt szombaton és vasárnap egész nap pótlóbuszok közlekednek a Deák Ferenc tér és a Hősök tere között. A járatok ötpercenként indulnak, de a megnövekedett forgalom miatt kérjük, induljanak el időben."
+                  }
+                ]
+              },
+              "question": "1. Milyen változás lép életbe a kisföldalatti vonalán a hétvégén?",
+              "options": [
+                "A vonatok ritkábban, húszpercenként járnak majd.",
+                "Pótlóbuszok közlekednek a Deák tér és a Hősök tere között.",
+                "A metróvonal teljesen zárva tart és nincsen pótlás."
+              ],
+              "correct": 1,
+              "evidence": "szombaton és vasárnap egész nap pótlóbuszok közlekednek a Deák Ferenc tér és a Hősök tere között",
+              "explanation": "Pótlóbuszok szállítják az utasokat a megadott szakaszon a hétvégi felújítás miatt."
+            },
+            {
+              "id": "hu-l1-q2",
+              "num": 2,
+              "situation": "Vásárlói tájékoztató egy bevásárlóközpontban.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Bemondó",
+                    "gender": "female",
+                    "text": "Kedves vásárlóink! Az első emeleten található Hegyvidék Sportboltban ma délután hat óráig minden futócipőre és túrahátizsákra huszonöt százalékos azonnali kedvezményt biztosítunk. Érvényesítse törzsvásárlói kártyáját a kasszáknál további ajándékpontokért!"
+                  }
+                ]
+              },
+              "question": "2. Milyen termékekre vonatkozik a sportbolt kedvezménye?",
+              "options": [
+                "A téli kabátokra és sícipőkre.",
+                "A futócipőkre és a túrahátizsákokra.",
+                "Valamennyi felnőtt kerékpárra."
+              ],
+              "correct": 1,
+              "evidence": "minden futócipőre és túrahátizsákra huszonöt százalékos azonnali kedvezményt biztosítunk",
+              "explanation": "A futócipők és túrahátizsákok vásárolhatók meg 25% árengedménnyel."
+            },
+            {
+              "id": "hu-l1-q3",
+              "num": 3,
+              "situation": "Üzenet a háziorvosi rendelő telefonos rögzítőjén.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Asszisztens",
+                    "gender": "female",
+                    "text": "Üdvözöljük! Tájékoztatjuk kedves pácienseinket, hogy Dr. Molnár Gábor háziorvos ezen a héten továbbképzésen vesz részt. A sürgős eseteket Dr. Szabó Judit helyettesíti a harmadik emelet tizenkettes szobában, hétfőtől péntekig reggel nyolctól tizenkét óráig. Időpontfoglalás a recepción lehetséges."
+                  }
+                ]
+              },
+              "question": "3. Milyen időpontban érhető el a helyettesítő háziorvos?",
+              "options": [
+                "Hétköznap délelőtt nyolctól délig.",
+                "Csak kedden és csütörtökön délután.",
+                "Minden nap folyamatosan éjjel-nappal."
+              ],
+              "correct": 0,
+              "evidence": "Dr. Szabó Judit helyettesíti... hétfőtől péntekig reggel nyolctól tizenkét óráig",
+              "explanation": "A helyettesítés hétköznapokon reggel 8 és 12 óra között zajlik."
+            },
+            {
+              "id": "hu-l1-q4",
+              "num": 4,
+              "situation": "Rádiós időjárás-jelentés a hétvégére.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Meteorológus",
+                    "gender": "male",
+                    "text": "Következik az időjárás: szombaton az ország nagy részén kellemes, napos időre számíthatunk huszonnégy fok körüli csúcshőmérséklettel. Vasárnap délután azonban északnyugat felől erős széllel záporok és zivatarok érkeznek, és a levegő jelentősen lehűl."
+                  }
+                ]
+              },
+              "question": "4. Milyen időjárásra kell készülni vasárnap délután?",
+              "options": [
+                "Tartós hőségre harminc fok feletti hőmérséklettel.",
+                "Erős szélre, záporokra és hirtelen lehűlésre.",
+                "Teljesen felhőtlen, száraz és nyugodt időre."
+              ],
+              "correct": 1,
+              "evidence": "Vasárnap délután azonban északnyugat felől erős széllel záporok és zivatarok érkeznek, és a levegő jelentősen lehűl.",
+              "explanation": "Vasárnap szeles, csapadékos idő és lehűlés várható."
+            },
+            {
+              "id": "hu-l1-q5",
+              "num": 5,
+              "situation": "Kulturális központ programajánlója.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Műsorvezető",
+                    "gender": "female",
+                    "text": "A hétvégi kulturális ajánlatunk: szombat este hét órakor ingyenes szabadtéri jazzkoncertet rendeznek a Várkert Bazárban a Dunára néző teraszon. Eső esetén a koncertet a belső díszteremben tartják meg. A belépés díjtalan, de a helyeket érkezési sorrendben lehet elfoglalni."
+                  }
+                ]
+              },
+              "question": "5. Hol tartják meg a szombat esti jazzkoncertet rossz idő esetén?",
+              "options": [
+                "Egy közeli templom kertjében.",
+                "A belső díszteremben.",
+                "Elhalasztják a következő hónapra."
+              ],
+              "correct": 1,
+              "evidence": "Eső esetén a koncertet a belső díszteremben tartják meg.",
+              "explanation": "Esőben a belső díszterem biztosítja a helyszínt."
+            }
+          ]
+        },
+        {
+          "id": "hu-listening-t2",
+          "tareaNum": 2,
+          "type": "audio-interview",
+          "title": "2. rész: Beszélgetés egy fiatal bükki túravezetővel",
+          "instructions": "Beszélgetést hallasz Somogyi Dórával, aki túrákat szervez a Bükki Nemzeti Parkban. Válaszolj az 5 kérdésre a helyes opció (A, B vagy C) kiválasztásával. 45 másodperced van elolvasni a kérdéseket.",
+          "previewSeconds": 45,
+          "audio": {
+            "turns": [
+              {
+                "speaker": "Riporter",
+                "gender": "male",
+                "text": "Mai vendégünk Somogyi Dóra túravezető és környezetvédő, aki évek óta kalauzol kirándulókat a Bükk csodálatos ösvényein. Szia, Dóra! Mikor kezdődött a természet iránti szenvedélyed?"
+              },
+              {
+                "speaker": "Dóra",
+                "gender": "female",
+                "text": "Szia, Gábor! Gyerekkoromban a szüleimmel minden hétvégén kirándultunk a hegyekben. Akkor szerettem meg az erdő csendjét, a madarak hangját és a tiszta hegyi levegőt. Az egyetemen biológusnak tanultam, és már akkor tudtam, hogy az erdőben szeretnék dolgozni."
+              },
+              {
+                "speaker": "Riporter",
+                "gender": "male",
+                "text": "Milyen felszerelést javasolsz azoknak a kezdőknek, akik most indulnak el először egy hosszabb hegyi túrára?"
+              },
+              {
+                "speaker": "Dóra",
+                "gender": "female",
+                "text": "A legfontosabb a megfelelő, kényelmes és vízálló túrabakancs, amely jól tartja a bokát a köves talajon. Emellett elengedhetetlen egy réteges öltözet, legalább másfél liter ivóvíz, egy kis szendvics vagy aszalt gyümölcs, és egy feltöltött mobiltelefon offline térképpel."
+              },
+              {
+                "speaker": "Riporter",
+                "gender": "male",
+                "text": "Melyik évszakot tartod a legszebbnek és legalkalmasabbnak a túrázásra a Bükkben?"
+              },
+              {
+                "speaker": "Dóra",
+                "gender": "female",
+                "text": "Bár a tavasz a virágzó rétek miatt varázslatos, számomra az ősz a legkülönlegesebb. Októberben a fák levelei ezer színben pompáznak, a levegő kellemesen hűvös, és nincsenek zavaró rovarok. Ilyenkor a legkellemesebb hosszabb távokat megtenni."
+              },
+              {
+                "speaker": "Riporter",
+                "gender": "male",
+                "text": "Milyen állatokkal vagy növényritkaságokkal találkozhatnak a túrázók az út során?"
+              },
+              {
+                "speaker": "Dóra",
+                "gender": "female",
+                "text": "Ha csendben járunk az ösvényeken, gyakran láthatunk őzeket, szarvasokat vagy fekete gólyát. A virágok közül a tavaszi hóvirág és a védett kosborfélék a legkedveltebbek. Mindig emlékeztetem a csoportokat, hogy a természet védelme közös feladatunk: semmit ne szedjünk le és ne hagyjunk szemetet magunk után."
+              },
+              {
+                "speaker": "Riporter",
+                "gender": "male",
+                "text": "Végezetül, Dóra: milyen tanácsot adnál azoknak, akik félnek eltévedni az ismeretlen hegyekben?"
+              },
+              {
+                "speaker": "Dóra",
+                "gender": "female",
+                "text": "Azt javaslom, hogy mindig a jól jelzett turistaútvonalakon maradjanak, indulás előtt tájékozódjanak a túra hosszáról és szintkülönbségéről, és soha ne induljanak el késő délután, hogy még sötétedés előtt visszaérjenek a faluba."
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "hu-l2-q1",
+              "question": "1. Honnan ered Dóra természetszeretete és elkötelezettsége?",
+              "options": [
+                "Egy televíziós természetfilm-sorozatból.",
+                "A gyerekkori családi hegyi kirándulásokból.",
+                "Egy külföldi sítábor élményeiből."
+              ],
+              "correct": 1,
+              "evidence": "Gyerekkoromban a szüleimmel minden hétvégén kirándultunk a hegyekben. Akkor szerettem meg az erdő csendjét",
+              "explanation": "Gyermekkorában a szüleivel töltött heti kirándulások alapozták meg természet iránti rajongását."
+            },
+            {
+              "id": "hu-l2-q2",
+              "question": "2. Mit tart Dóra a legfontosabb felszerelésnek a kezdő túrázók számára?",
+              "options": [
+                "Egy drága fényképezőgépet és távcsövet.",
+                "A kényelmes, vízálló és bokát tartó túrabakancsot.",
+                "Egy nehéz kempingsátrat és hálózsákot."
+              ],
+              "correct": 1,
+              "evidence": "A legfontosabb a megfelelő, kényelmes és vízálló túrabakancs, amely jól tartja a bokát a köves talajon.",
+              "explanation": "Kiemeli a kényelmes, stabil és vízhatlan lábbeli fontosságát."
+            },
+            {
+              "id": "hu-l2-q3",
+              "question": "3. Miért az őszt tartja Dóra a legkedvezőbb évszaknak a kirándulásra?",
+              "options": [
+                "Mert akkor a legolcsóbbak a szállások a környéken.",
+                "Mert a színes erdő, a hűvös levegő és a rovarmentes környezet ideális.",
+                "Mert ősszel nincsenek más látogatók a hegyekben."
+              ],
+              "correct": 1,
+              "evidence": "Októberben a fák levelei ezer színben pompáznak, a levegő kellemesen hűvös, és nincsenek zavaró rovarok.",
+              "explanation": "Az őszi erdő színei, az enyhe időjárás és a rovarok hiánya teszik ideálissá a szezont."
+            },
+            {
+              "id": "hu-l2-q4",
+              "question": "4. Milyen alapszabályt hangsúlyoz Dóra a környezetvédelemmel kapcsolatban?",
+              "options": [
+                "Csak kijelölt helyen szabad tüzet gyújtani a fák alatt.",
+                "Tilos letépni a védett növényeket és szemetet hagyni az erdőben.",
+                "Minden vadon élő állatot meg kell etetni kenyérrel."
+              ],
+              "correct": 1,
+              "evidence": "semmit ne szedjünk le és ne hagyjunk szemetet magunk után.",
+              "explanation": "Hangsúlyozza, hogy semmit se tépjenek le és szemetet se hagyjanak maguk után a kirándulók."
+            },
+            {
+              "id": "hu-l2-q5",
+              "question": "5. Mit tanácsol Dóra az eltévedés elkerülése érdekében?",
+              "options": [
+                "Maradjanak a jelzett turistautakon és érjenek vissza sötétedés előtt.",
+                "Kizárólag autóval közlekedjenek az erdészeti utakon.",
+                "Csak éjszaka túrázzanak csillagászati tájolással."
+              ],
+              "correct": 0,
+              "evidence": "mindig a jól jelzett turistaútvonalakon maradjanak... és soha ne induljanak el késő délután, hogy még sötétedés előtt visszaérjenek",
+              "explanation": "A jelzett utak követését és a sötétedés előtti visszaérkezést javasolja."
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "id": "writing",
+      "name": "Írásbeli kommunikáció",
+      "officialTimeMinutes": 40,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-writing-t1",
+          "tareaNum": 1,
+          "title": "1. rész: Rövid személyes email barátnak",
+          "prompt": "A barátod, Bence meghívott a születésnapi kerti partijára a hétvégére, de egy korábbi családi program miatt késve tudsz csak megérkezni.\n\nÍrj egy rövid emailt (50–65 szó) Bencének, amelyben:\n- Megköszönöd a meghívást és felköszöntöd születésnapja alkalmából.\n- Elmagyarázod, miért érkezel két órával később (családi ebéd a nagyszülőknél).\n- Megkérdezed, milyen ételt vagy italt vigyél magaddal a partira.\n- Barátságosan elköszönsz tőle.",
+          "minWords": 50,
+          "maxWords": 65,
+          "targetKeywords": [
+            "köszönöm a meghívást",
+            "boldog születésnapot",
+            "azért kések",
+            "mit hozzak",
+            "üdvözlettel"
+          ],
+          "rubricGuide": "Minden tartalmi szempont megválaszolása, természetes és baráti hangvétel, megfelelő A2 szintű kötőszavak és szótagszám (50–65 szó) helyes nyelvtannal."
+        },
+        {
+          "id": "hu-writing-t2",
+          "tareaNum": 2,
+          "title": "2. rész: Rövid fogalmazás adott témáról",
+          "options": [
+            {
+              "optionLetter": "A",
+              "title": "A opció: Egy emlékezetes kirándulás vagy nyaralás",
+              "prompt": "Írj egy fogalmazást (60–80 szó) a magyar nyelvtanuló blogodra egy emlékezetes kirándulásról vagy utazásról:\n- Írd meg, hová utaztál, kivel voltál és milyen közlekedési eszközzel mentél.\n- Mutasd be, milyen érdekes helyeket vagy látnivalókat néztetek meg.\n- Mesélj el egy szórakoztató vagy emlékezetes élményt az útról.\n- Indokold meg, miért tetszett neked annyira ez a kirándulás.",
+              "minWords": 60,
+              "maxWords": 80
+            },
+            {
+              "optionLetter": "B",
+              "title": "B opció: A lakóhelyem és a kedvenc helyem a városban",
+              "prompt": "Írj egy rövid bemutatót (60–80 szó) a lakókörnyezetedről és kedvenc helyedről:\n- Mutasd be röviden a lakóhelyedet (városrész, lakás, közlekedés).\n- Írd le a kedvenc helyedet a környéken (egy park, kávézó vagy folyópart).\n- Magyarázd el, miért szeretsz oda járni és mit szoktál ott csinálni.\n- Írd le, milyen változtatást szeretnél a lakókörnyezetedben a jövőben.",
+              "minWords": 60,
+              "maxWords": 80
+            }
+          ],
+          "minWords": 60,
+          "maxWords": 80,
+          "targetKeywords": [
+            "a múlt nyáron",
+            "nagyon tetszett",
+            "szerintem",
+            "mert",
+            "ezért"
+          ]
+        }
+      ]
+    },
+    "speaking": {
+      "id": "speaking",
+      "name": "Szóbeli kommunikáció",
+      "officialTimeMinutes": 15,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "hu-speaking-t1",
+          "tareaNum": 1,
+          "title": "1. rész: Irányított beszélgetés a vizsgáztatóval (3-4 perc)",
+          "prepSeconds": 45,
+          "speakSeconds": 150,
+          "prompt": "Beszélgess a vizsgáztatóval a mindennapi szokásaidról, a munkádról vagy tanulmányaidról és a szabadidődről.\n\nSzempontok:\n- Mivel foglalkozol hétköznapokon és milyen a napi beosztásod.\n- Mit szoktál csinálni munka vagy tanulás után délutánonként.\n- Milyen hobbijaid vannak és hogyan töltöd a hétvégéket.\n- Milyen idegen nyelveket tanulsz és milyen terveid vannak a jövőben.",
+          "bulletPoints": [
+            "Napi beosztás és szokások",
+            "Délutáni szabadidő és kikapcsolódás",
+            "Hétvégi programok és kedvenc hobbik",
+            "Nyelvtanulás és jövőbeli célok"
+          ]
+        },
+        {
+          "id": "hu-speaking-t2",
+          "tareaNum": 2,
+          "title": "2. rész: Képleírás és szituációs feladat (3-4 perc)",
+          "prepSeconds": 45,
+          "speakSeconds": 150,
+          "prompt": "Képzelj el egy fényképet: 'Egy négyfős baráti társaság piknikezik egy füves, virágos parkban egy nagy fa árnyékában egy kellemes tavaszi délutánon'.\n\nSzempontok:\n- Kik láthatók a képen, milyen ruhát viselnek és mit csinálnak?\n- Milyen ételek, italok és tárgyak vannak a pokrócon?\n- Milyen az időjárás, a hangulat és a környezet?",
+          "bulletPoints": [
+            "Személyek leírása, öltözet és cselekvések",
+            "Ételek, italok és tárgyak a pokrócon",
+            "Környezet, időjárás és általános hangulat"
+          ]
+        }
+      ]
+    }
+  },
+  "strategies": {
+    "title": "ECL A2 Nyelvvizsga-stratégiák és felkészülési tanácsok",
+    "structure": [
+      {
+        "prueba": "1. rész: Olvasásértés (40 perc · 2 feladat · 25 pont)",
+        "tip": "Először fusd át a kérdéseket és kulcsszavakat, mielőtt elolvasod a teljes szöveget. Az 1. feladatban (hirdetések) figyeld meg az apró részleteket (nyitvatartás, helyszín, feltételek). A 2. feladatban keresd meg a szövegbeli bizonyítékot a válaszodhoz."
+      },
+      {
+        "prueba": "2. rész: Hallásértés (25 perc · 2 feladat · 25 pont)",
+        "tip": "Használd ki az előzetes olvasási időt az opciók megértésére. Az első hallgatás során a lényegre és a szituációra összpontosíts; a második hallgatáskor ellenőrizd a konkrét adatokat és zárd ki a megtévesztő válaszokat."
+      },
+      {
+        "prueba": "3. rész: Írásbeli kommunikáció (40 perc · 2 feladat · 25 pont)",
+        "tip": "Írj egyszerű, de világos mondatokat. Válaszolj valamennyi megadott szempontra. Tartsd be a szószámot (1. feladat: 50–65 szó, 2. feladat: 60–80 szó), és hagyj pár percet az igeragok, toldalékok és helyesírás ellenőrzésére."
+      },
+      {
+        "prueba": "4. rész: Szóbeli kommunikáció (15 perc · 2 feladat · 25 pont)",
+        "tip": "Beszélj érthetően és természetesen. Használj kötőszavakat mondataid összekapcsolására. Ha nem értesz egy kérdést, nyugodtan kérdezz vissza udvariasan: 'Megismételné kérem a kérdést?'"
+      }
+    ],
+    "connectors": [
+      {
+        "category": "Időbeli kifejezések és sorrend",
+        "examples": ["először", "aztán", "később", "végül", "amikor", "után"]
+      },
+      {
+        "category": "Ok és magyarázat",
+        "examples": ["mert", "ezért", "mivel"]
+      },
+      {
+        "category": "Ellentét és kapcsolat",
+        "examples": ["és", "de", "azonban", "is", "szintén"]
+      },
+      {
+        "category": "Vélemény kifejezése",
+        "examples": ["szerintem", "úgy gondolom", "véleményem szerint", "nekem tetszik"]
+      },
+      {
+        "category": "Megszólítások és elköszönések",
+        "examples": ["Kedves...", "Szia!", "Köszönöm szépen", "Üdvözlettel", "Viszlát!"]
+      }
+    ]
+  }
+}
