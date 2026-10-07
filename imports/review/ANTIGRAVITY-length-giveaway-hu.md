@@ -313,3 +313,58 @@ the threshold, so leave it, but when you can pick a version closer in
 length, do.
 
 The wrong options in the 7 entries above are the only ones to change.
+
+### Block 3 (B1, second half), reviewed 2026-10-08
+
+Commit `70db33b3`. The mechanics match the worksheet: all 148 decisions
+(48 shorten / 100 match / 0 log) are applied as written, nothing outside
+the worksheet changed, no `teaches` / `category` / `stage` / `correct`
+value moved, the validator passes and no block 3 id is still flagged. The
+history and civics distractors are good: real, different, false facts, no
+absolutes, no stock lines. Most shortenings keep the fact asked for.
+
+**But one pair is broken, and the worksheet itself was wrong, so a
+worksheet-versus-files check cannot catch it.** Two decisions were swapped
+between neighbouring entries:
+
+- `b1-honfoglalas-04.ex07` (*Miért volt jó hely az Alföld a magyaroknak?*)
+  now has the correct option *Árpád fejedelemmel.*, which does not answer
+  the question.
+- `b1-honfoglalas-03.ex07` (*Kicsoda Árpád?*) now has wrong options
+  *Mert a sűrű erdőségek elzárták …* and *Mert közvetlen tengerparti
+  kijáratot …*, which are answers to *Miért*, not *Kicsoda*.
+
+**Fix these four first, in a separate commit before you start block 4**
+(edit the worksheet entries as well):
+
+1. `b1-honfoglalas-04.ex07`: restore the correct option to an answer to
+   *Miért* in the style of the wrong ones (*Mert füves, legelőkben gazdag
+   terület volt.* or the original sentence). Keep the two wrong options
+   (*Mert sűrű erdő borította.*, *Mert ott voltak a legnagyobb városok.*).
+2. `b1-honfoglalas-03.ex07`: two wrong options that answer *Kicsoda
+   Árpád?* with a person, same length as the correct one and clearly
+   wrong (for example a different real figure of the period, described
+   in the same style).
+3. `b1-matyas-05.ex06` (*Miért fontos Mátyás kora …?*): the shortened
+   correct option lost its *Mert*, while both wrong options start with it,
+   so it now stands out. Start it with *Mert*.
+4. `b1-honfoglalas-consolidation.ex06` (*Melyik mondat kapcsol össze
+   helyesen több szereplőt egy miután-tagmondattal?*): the new wrong
+   option *Miután átkeltek a Kárpátokon, Árpád vezetésével vérszerződést
+   kötöttek a pusztán.* is a grammatically correct *miután* sentence, so it
+   is a second right answer to a grammar question. Make it wrong in the
+   grammar (wrong conjunction use or wrong tense sequence), not in the
+   history.
+
+Also fix `b1-haromresz-05.ex08` (*Hogyan maradhatott fenn …?*): its
+unchanged wrong option *Mert a török szultán kötelezővé tette a magyar
+nyelvet.* starts with *Mert* under a *Hogyan* question, which is a tell
+against the two other options. Rewrite it as a *how* answer that is false.
+
+**New rule for blocks 4 and 5 (rule 13).** After you fill in a block's
+decisions and again before you commit, read each new option next to **its
+own question**: does a *Miért* question have only *Mert…* answers, a
+*Kicsoda* question only people, a *Hány/Melyik évben* question only
+numbers or years, a dialogue reply a reply to **that** line? Decisions
+moved to the neighbouring entry are exactly the mistake the diff against
+the worksheet cannot see.
