@@ -34,10 +34,7 @@
     {
       "id": "b1-nacionnacionalismo-consolidation.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "argument-markers"
-      ],
+      "category": "reading",
       "question": "¿Qué oración define la nación de manera más completa?",
       "options": [
         "Una nación no consiste solamente en un territorio, sino que también incluye una población y una identidad compartida.",
@@ -54,8 +51,11 @@
         "subjunctive-value-judgments"
       ],
       "sentence": "Era importante que la población _____ ciertos símbolos como propios. (reconocer)",
-      "answer": "reconociera",
-      "english": "It was important for the population to recognise certain symbols as their own."
+      "english": "It was important for the population to recognise certain symbols as their own.",
+      "answers": [
+        "reconociera",
+        "reconociese"
+      ]
     },
     {
       "id": "b1-nacionnacionalismo-consolidation.ex04",
@@ -105,6 +105,10 @@
       "teaches": [
         "concesivas-aunque"
       ],
+      "distractor_skills": {
+        "1": "porque-y-por-eso",
+        "2": "porque-y-por-eso"
+      },
       "question": "¿Qué conector introduce concesión?",
       "options": [
         "Aunque",
@@ -116,14 +120,14 @@
     {
       "id": "b1-nacionnacionalismo-consolidation.ex06",
       "type": "sentence-order",
-      "category": "vocabulary",
+      "category": "grammar",
       "teaches": [
-        "b1-nation-nationalism-vocab"
+        "ordering-markers"
       ],
       "sentences": [
-        "Se adoptaron símbolos nacionales.",
-        "Se promovieron relatos históricos.",
-        "Se construyó una idea de identidad compartida."
+        "Primero, se adoptaron símbolos nacionales.",
+        "Después, se promovieron relatos históricos.",
+        "Finalmente, se construyó una idea de identidad compartida."
       ],
       "solution": [
         0,
@@ -149,10 +153,7 @@
     {
       "id": "b1-nacionnacionalismo-consolidation.ex08",
       "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "b1-nation-nationalism-vocab"
-      ],
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -198,10 +199,7 @@
     {
       "id": "b1-nacionnacionalismo-consolidation.ex11",
       "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "b1-nation-nationalism-vocab"
-      ],
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -226,6 +224,10 @@
       "teaches": [
         "porque-y-por-eso"
       ],
+      "distractor_skills": {
+        "1": "concesivas-aunque",
+        "2": "concesivas-aunque"
+      },
       "question": "¿Qué oración expresa una consecuencia?",
       "options": [
         "Por eso, el nacionalismo debe entenderse como una construcción histórica.",
@@ -239,7 +241,7 @@
       "type": "sentence-builder",
       "category": "grammar",
       "teaches": [
-        "tener-que"
+        "deber-vs-tener-que"
       ],
       "tiles": [
         "El",
@@ -276,10 +278,7 @@
     {
       "id": "b1-nacionnacionalismo-consolidation.ex14",
       "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "b1-nation-nationalism-vocab"
-      ],
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -343,10 +342,7 @@
     {
       "id": "b1-nacionnacionalismo-consolidation.ex18",
       "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "b1-nation-nationalism-vocab"
-      ],
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
