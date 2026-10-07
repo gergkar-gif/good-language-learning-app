@@ -253,3 +253,14 @@ twice).
 
 The wrong options in the 14 + 24 entries above are the only ones to
 change. Don't touch the rest of block 1.
+
+### Block 1 fixes, reviewed 2026-10-07
+
+Commit `18762204`. All 40 changed exercise copies match the worksheet, no
+correct option or non-option field changed, and the checker is back to the
+logged `a1-09-dialogue-1` plus the 14 excluded ids. The rewrites are good:
+no more *Sajnos* tell, and the post, bank and pharmacy distractors are now
+plausible but false. **Carry this standard into block 2:** each wrong
+option should be a different real fact, document, step or form, in the
+same tone as the correct one, never an absolute, never a stock "bad news"
+line.
