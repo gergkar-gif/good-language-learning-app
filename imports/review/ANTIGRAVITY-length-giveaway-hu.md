@@ -198,3 +198,58 @@ Do not edit ROADMAP.md or ACHIEVED.md. The reviewer does.
 
 (The reviewer adds notes here after each stop. Read them before starting
 the next block.)
+
+### Block 1 (A1 + A2), reviewed 2026-10-07
+
+Commit `a1471d26`. The mechanics are right: all 70 decisions are applied
+exactly as written in every listed copy (74 exercise copies changed, all
+identical where they are the same exercise); nothing outside the worksheet
+changed; no `teaches`, `category`, `stage` or `correct` value moved; no
+block 1 id is still flagged except `a1-09-dialogue-1` (logged) and the 14
+excluded `a1-121…150` ids; the validator passes; the counts in the report
+(4 shorten / 65 match / 1 log) are correct. The four shortenings are good,
+and so are the grammar near misses (*Két szobák van.*, *A sport vagyok
+jó.*, *A konyhába megyek.* for *Hol vagy?*). Keep doing that.
+
+**Fix these in a separate commit before you start block 2** (edit the
+worksheet entry as well, so it still matches the files, and log nothing
+twice).
+
+1. **"Sajnos" is now a tell.** 14 new wrong options contain *Sajnos* (an
+   unhappy off-topic reply) and none of the correct options does:
+   a2-100-dialogue-1, a2-101-dialogue-1, a2-127-dialogue-1,
+   a2-130-dialogue-1, a2-146-dialogue-1, a2-157-dialogue-1, a2-46-dialogue-1,
+   a2-51-dialogue-2, a2-73-dialogue-2, a2-80-consolidation-7,
+   a2-89-dialogue-2, a2-92-dialogue-1, a2-96-dialogue-2, a2-97-dialogue-2.
+   Rewrite them without *Sajnos*, and not as another stock "bad news"
+   line. Prefer what rule 2 says: the correct reply with one point broken,
+   or a reply that answers a neighbouring question (*Mi a foglalkozásod?*
+   → *Hétfőtől péntekig dolgozom.* style, same tone as the correct
+   option). Across the whole of block 2 onward, don't let one opener or one
+   mood mark the wrong option.
+2. **Absolutes and absurd lines (rule 4).** These new wrong options give
+   themselves away by *csak / kizárólag / bármilyen / egyáltalán nem /
+   semmilyen / nyugodtan / completely / never*, or by being cartoonish.
+   Replace each with a plausible near miss that is wrong because it is
+   **false**, not because it is extreme (a different real document, a
+   different real step, a neighbouring fact): a1-42-practice-1,
+   a2-50-controlled-4, a2-180-consolidation-14, a2-180-intro-1,
+   a2-210-intro-1, a2-211-intro-1, a2-214-check-1, a2-214-controlled-4,
+   a2-215-check-1, a2-215-intro-1, a2-217-intro-1, a2-217-intro-2,
+   a2-218-check-1, a2-218-controlled-4, a2-220-check-1, a2-220-controlled-4
+   (*jeges fürdőzés*, *hideg fagylalt*), a2-210-intro-2, a2-211-check-1,
+   a2-214-intro-1, a2-212-check-1, a2-125-dialogue-1 (*sosem*),
+   a2-70-dialogue-2, a2-75-consolidation-8, a2-90-consolidation-7.
+   Dialogue ones need only lose the absolute or the stock phrase.
+3. **a2-127-dialogue-2** (*Milyen volt a vicc?*): *Egyáltalán nem tetszett,
+   mert nagyon drága volt.* is an opinion about the joke, so it arguably
+   answers the question. Use a reply that gives no opinion about the joke.
+4. **a1-27-practice-1**: *habok* is not a Hungarian word. Use a real form
+   (a real verb or suffix that is wrong for "I have"), or `log`.
+5. **a1-09-dialogue-1** is logged correctly, but its entry in
+   `hu-review-questions.txt` says `proposed: KEEP`. Write a real proposal
+   there (a prompt Meg plausibly did not catch, or a marked answer that
+   answers *hogy vagy*), per `hu-review-feedback-a1-a2.md` § 2.
+
+The wrong options in the 14 + 24 entries above are the only ones to
+change. Don't touch the rest of block 1.
