@@ -152,3 +152,13 @@ skill `[taught in this unit]` or `[taught LATER]` by that order.
   (`tienen / tiene / tengo`) → `tener`, no `ds` (every option is a form of `tener`); *Ella __ en
   casa* (`está / es`) → `estar`, `ds` `{"1": "ser"}` only if `es` is a well-formed answer to
   another question, which here it is not, so none.
+
+### B1 folds (user decision 2026-10-07: no new skills for these patterns)
+
+Tag an item testing one of these with the existing skill, never a new slug:
+
+- *deber de* + infinitive (probability): `deber-vs-tener-que`.
+- *derecho a*, *deber de* as a noun phrase, *obligación de*, *derecho/deber + preposition*: `prepositional-phrases`.
+- *al* + infinitive ("when / on doing"): `antes-despues-infinitive`.
+- *lo* + adjective + *que* ("how ... it is"): `lo-neutro-abstraccion`.
+- *sin que*, *de ahí que*, *no es que* (skill `conectores-con-subjuntivo` is retired): the unit vocabulary skill, or `conditional-conjunctions` / `contrast-concession-connectors` where the unit contrasts them.
