@@ -34,48 +34,48 @@
     {
       "id": "b1-crisisdeuda-consolidation.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "reading",
       "question": "¿Qué contribuyó a la crisis?",
       "options": [
         "El aumento del coste del servicio de la deuda cuando cambiaron las condiciones financieras.",
         "La rápida desaparición de los acreedores internacionales durante las negociaciones de pago.",
         "La eliminación completa de las tasas de interés en todos los contratos bancarios vigentes."
       ],
-      "correct": 0,
-      "teaches": [
-        "ser-passive"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-consolidation.ex03",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "La ___ permitió renegociar obligaciones cuando el pago inmediato era difícil.",
-      "answer": "refinanciación",
       "teaches": [
-        "pasiva-refleja"
+        "b1-debt-crisis-vocab"
       ],
-      "english": "Refinancing made it possible to renegotiate obligations when immediate payment was difficult."
+      "english": "Refinancing made it possible to renegotiate obligations when immediate payment was difficult.",
+      "answers": [
+        "refinanciación",
+        "refinanciamiento"
+      ]
     },
     {
       "id": "b1-crisisdeuda-consolidation.ex04",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Se aplicaron políticas de ___ para contener el gasto.",
       "answer": "austeridad",
       "teaches": [
-        "pasiva-refleja"
+        "b1-debt-crisis-vocab"
       ],
       "english": "Austerity policies were implemented to contain spending."
     },
     {
       "id": "b1-crisisdeuda-consolidation.ex05",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "La ___ de la deuda limitó el margen financiero.",
       "answer": "carga",
       "teaches": [
-        "gerundio-acciones-paralelas"
+        "b1-debt-crisis-vocab"
       ],
       "english": "The debt burden limited financial room for manoeuvre."
     },
@@ -91,8 +91,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "concesivas-aunque"
-      ]
+        "gerundio-acciones-paralelas"
+      ],
+      "distractor_skills": {
+        "1": "progressive",
+        "2": "perifrasis-verbales"
+      }
     },
     {
       "id": "b1-crisisdeuda-consolidation.ex07",
@@ -129,9 +133,9 @@
       "type": "sentence-order",
       "category": "grammar",
       "sentences": [
-        "Los tipos de interés aumentaron. [Interest rates increased.]",
-        "La deuda se hizo más costosa. [Debt became more expensive.]",
-        "Varios países buscaron refinanciación. [Several countries sought refinancing.]"
+        "Primero, los tipos de interés aumentaron. [First, interest rates increased.]",
+        "Después, la deuda se hizo más costosa. [Then, debt became more expensive.]",
+        "Finalmente, varios países buscaron refinanciación. [Finally, several countries sought refinancing.]"
       ],
       "solution": [
         0,
@@ -139,7 +143,7 @@
         2
       ],
       "teaches": [
-        "pasiva-refleja"
+        "ordering-markers"
       ]
     },
     {
@@ -170,23 +174,20 @@
       ],
       "english": "Despite the recovery, some social consequences persisted.",
       "teaches": [
-        "gerundio-acciones-paralelas"
+        "a-pesar-de"
       ]
     },
     {
       "id": "b1-crisisdeuda-consolidation.ex11",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Por qué los efectos sociales variaron?",
+      "category": "reading",
+      "question": "¿Por qué se necesitaba un ajuste, según el relato?",
       "options": [
-        "Porque las estructuras económicas y las políticas no fueron idénticas.",
-        "Porque todos los países tenían la misma economía.",
-        "Porque la deuda solo afectó a bancos."
+        "Porque el Estado tenía menos margen financiero.",
+        "Porque los salarios habían crecido demasiado.",
+        "Porque los bancos habían cancelado toda la deuda."
       ],
-      "correct": 0,
-      "teaches": [
-        "concesivas-aunque"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-consolidation.ex12",
@@ -200,38 +201,38 @@
       ],
       "correct": 0,
       "teaches": [
-        "ser-passive"
+        "b1-debt-crisis-vocab"
       ]
     },
     {
       "id": "b1-crisisdeuda-consolidation.ex13",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Se aplicaron medidas de austeridad mientras se negociaban nuevas condiciones.",
+      "sentence": "Se aplicaron medidas de austeridad mientras se negociaban nuevos acuerdos financieros.",
       "options": [
-        "Austerity measures were applied while new conditions were negotiated.",
+        "Austerity measures were applied while new financial agreements were negotiated.",
         "Social spending was increased while foreign lenders cancelled external debts.",
         "Public wages were raised while international trade agreements were ratified."
       ],
       "correct": 0,
       "teaches": [
-        "pasiva-refleja"
+        "b1-debt-crisis-vocab"
       ]
     },
     {
       "id": "b1-crisisdeuda-consolidation.ex14",
       "type": "dictation",
       "category": "listening",
-      "sentence": "A pesar de la recuperación posterior, algunas consecuencias sociales persistieron.",
+      "sentence": "A pesar de la recuperación posterior, las consecuencias sociales no desaparecieron inmediatamente.",
       "teaches": [
-        "pasiva-refleja"
+        "b1-debt-crisis-vocab"
       ],
-      "english": "Despite the subsequent recovery, some social consequences persisted."
+      "english": "Despite the subsequent recovery, the social consequences did not disappear immediately."
     },
     {
       "id": "b1-crisisdeuda-consolidation.ex15",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -247,15 +248,12 @@
         "Los ingresos por exportaciones crecieron rápidamente en toda la región, por lo que los gobiernos cancelaron sus compromisos bancarios. [Export revenues grew rapidly across the region, so governments paid off their banking commitments.]",
         "Las tasas de interés internacionales disminuyeron drásticamente en 1982, por lo que los préstamos externos resultaron muy accesibles. [International interest rates fell drastically in 1982, so foreign loans were very accessible.]"
       ],
-      "correct": 0,
-      "teaches": [
-        "gerundio-acciones-paralelas"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-consolidation.ex16",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "reading",
       "prompt": [
         {
           "speaker": "A",
@@ -271,10 +269,7 @@
         "En la mayoría de los países creció el empleo industrial, mientras las familias mejoraban notablemente su calidad de vida. [In most countries industrial employment grew, while families significantly improved their quality of life.]",
         "Las reformas económicas fortalecieron los ingresos de los trabajadores, mientras el comercio exterior registraba un crecimiento continuo. [Economic reforms strengthened workers' incomes, while foreign trade recorded continuous growth.]"
       ],
-      "correct": 0,
-      "teaches": [
-        "concesivas-aunque"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-consolidation.ex17",
@@ -287,7 +282,7 @@
         }
       ],
       "teaches": [
-        "ser-passive"
+        "b1-debt-crisis-vocab"
       ]
     },
     {
@@ -301,7 +296,7 @@
         }
       ],
       "teaches": [
-        "pasiva-refleja"
+        "b1-debt-crisis-vocab"
       ]
     }
   ]
