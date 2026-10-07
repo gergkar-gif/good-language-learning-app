@@ -31,7 +31,7 @@
       "options": [
         "Si elegimos esta opción, ahorraremos tiempo. [If we choose this option, we will save time.]",
         "Si elegiríamos esta opción, ahorraríamos tiempo. [If we would choose this option, we would save time.]",
-        "Si elegimos esta opción, ahorraríamos tiempo. [If we choose this option, we would save time.]"
+        "Si eligiéramos esta opción, ahorraremos tiempo. [If we chose this option, we will save time.]"
       ],
       "correct": 0,
       "teaches": [
@@ -64,20 +64,33 @@
         "ser",
         "diferente."
       ],
-      "solution": [
-        "Si",
-        "asumimos",
-        "ese",
-        "riesgo",
-        "el",
-        "resultado",
-        "podría",
-        "ser",
-        "diferente."
-      ],
       "english": "If we take that risk, the outcome could be different.",
       "teaches": [
         "si-clauses"
+      ],
+      "solutions": [
+        [
+          "Si",
+          "asumimos",
+          "ese",
+          "riesgo",
+          "el",
+          "resultado",
+          "podría",
+          "ser",
+          "diferente."
+        ],
+        [
+          "el",
+          "resultado",
+          "podría",
+          "ser",
+          "diferente.",
+          "Si",
+          "asumimos",
+          "ese",
+          "riesgo"
+        ]
       ]
     },
     {
@@ -85,9 +98,9 @@
       "category": "grammar",
       "type": "sentence-order",
       "sentences": [
-        "Si elegimos esta opción. [If we choose this option.]",
-        "Ahorraremos tiempo. [We will save time.]",
-        "Si elegimos esta opción, ahorraremos tiempo. [If we choose this option, we will save time.]"
+        "Primero, pensamos en las consecuencias. [First, we think about the consequences.]",
+        "Después, vemos que si elegimos esta opción, ahorraremos tiempo. [Then, we see that if we choose this option, we will save time.]",
+        "Finalmente, tomamos la decisión. [Finally, we make the decision.]"
       ],
       "solution": [
         0,
@@ -100,7 +113,7 @@
     },
     {
       "id": "b1-23-03.ex06",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "multiple-choice",
       "question": "Which word means «consequence»? [¿Qué palabra significa «consecuencia»?]",
       "options": [
@@ -110,7 +123,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
+        "b1-making-decisions-vocab"
       ]
     },
     {
@@ -120,7 +133,7 @@
       "sentence": "Si eligiéramos esta opción, __ tiempo. (ahorrar) [If we chose this option, we would save time.]",
       "answer": "ahorraríamos",
       "teaches": [
-        "si-clauses"
+        "hypothetical-structures"
       ],
       "english": "If we chose this option, we would save time."
     },
@@ -136,17 +149,27 @@
         "ahorraríamos",
         "tiempo."
       ],
-      "solution": [
-        "Si",
-        "eligiéramos",
-        "esta",
-        "opción",
-        "ahorraríamos",
-        "tiempo."
-      ],
       "english": "If we chose this option, we would save time.",
       "teaches": [
-        "si-clauses"
+        "hypothetical-structures"
+      ],
+      "solutions": [
+        [
+          "Si",
+          "eligiéramos",
+          "esta",
+          "opción",
+          "ahorraríamos",
+          "tiempo."
+        ],
+        [
+          "ahorraríamos",
+          "tiempo.",
+          "Si",
+          "eligiéramos",
+          "esta",
+          "opción"
+        ]
       ]
     },
     {
@@ -176,7 +199,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
+        "hypothetical-structures"
       ]
     },
     {
@@ -226,7 +249,10 @@
       "correct": 0,
       "teaches": [
         "si-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-23-03.ex14",
@@ -249,8 +275,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
-      ]
+        "hypothetical-structures"
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-23-03.ex15",
@@ -273,7 +302,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
+        "b1-making-decisions-vocab"
       ]
     },
     {
@@ -301,7 +330,7 @@
         }
       ],
       "teaches": [
-        "si-clauses"
+        "hypothetical-structures"
       ]
     }
   ]

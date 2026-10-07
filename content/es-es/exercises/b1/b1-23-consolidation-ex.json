@@ -46,7 +46,7 @@
       "id": "b1-23-consolidation.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Por un lado, esta opción es barata; por __ lado, es menos práctica. (otro) [On the one hand, this option is cheap; on the other hand, it is less practical.]",
+      "sentence": "Por un lado, esta opción es barata; por __ lado, es menos práctica. (other) [On the one hand, this option is cheap; on the other hand, it is less practical.]",
       "answer": "otro",
       "teaches": [
         "ordering-markers"
@@ -65,17 +65,27 @@
         "ahorraremos",
         "tiempo."
       ],
-      "solution": [
-        "Si",
-        "elegimos",
-        "esta",
-        "opción",
-        "ahorraremos",
-        "tiempo."
-      ],
       "english": "If we choose this option, we will save time.",
       "teaches": [
         "si-clauses"
+      ],
+      "solutions": [
+        [
+          "Si",
+          "elegimos",
+          "esta",
+          "opción",
+          "ahorraremos",
+          "tiempo."
+        ],
+        [
+          "ahorraremos",
+          "tiempo.",
+          "Si",
+          "elegimos",
+          "esta",
+          "opción"
+        ]
       ]
     },
     {
@@ -83,9 +93,9 @@
       "category": "grammar",
       "type": "sentence-order",
       "sentences": [
-        "Es mejor esperar. [It is better to wait.]",
-        "Tenemos poca información. [We have little information.]",
-        "Es mejor esperar porque tenemos poca información. [It is better to wait because we have little information.]"
+        "Primero, tenemos poca información. [First, we have little information.]",
+        "Después, creemos que es mejor esperar. [Then, we think that it is better to wait.]",
+        "Por último, esperamos una semana. [Lastly, we wait a week.]"
       ],
       "solution": [
         0,
@@ -108,17 +118,20 @@
       ],
       "correct": 0,
       "teaches": [
-        "comparatives"
-      ]
+        "hypothetical-structures"
+      ],
+      "distractor_skills": {
+        "1": "si-clauses"
+      }
     },
     {
       "id": "b1-23-consolidation.ex07",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "fill-blank",
-      "sentence": "El ahorro debe ser nuestro __ principal. (objetivo) [Saving should be our main goal.]",
+      "sentence": "El ahorro debe ser nuestro __ principal. (goal) [Saving should be our main goal.]",
       "answer": "objetivo",
       "teaches": [
-        "comparatives"
+        "b1-making-decisions-vocab"
       ],
       "english": "Saving should be our main goal."
     },
@@ -137,20 +150,33 @@
         "de",
         "decidir."
       ],
-      "solution": [
-        "Es",
-        "conveniente",
-        "que",
-        "revisemos",
-        "los",
-        "costes",
-        "antes",
-        "de",
-        "decidir."
-      ],
       "english": "It is advisable that we review the costs before deciding.",
       "teaches": [
-        "ordering-markers"
+        "subjunctive-value-judgments"
+      ],
+      "solutions": [
+        [
+          "Es",
+          "conveniente",
+          "que",
+          "revisemos",
+          "los",
+          "costes",
+          "antes",
+          "de",
+          "decidir."
+        ],
+        [
+          "antes",
+          "de",
+          "decidir.",
+          "Es",
+          "conveniente",
+          "que",
+          "revisemos",
+          "los",
+          "costes"
+        ]
       ]
     },
     {
@@ -165,7 +191,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
+        "contrast-concession-connectors"
       ]
     },
     {
@@ -180,7 +206,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "subjunctive-value-judgments"
+        "concesivas-aunque"
       ]
     },
     {
@@ -195,7 +221,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "comparatives"
+        "si-clauses"
       ]
     },
     {
@@ -204,7 +230,7 @@
       "type": "dictation",
       "sentence": "Tras evaluar las alternativas, tomamos una decisión final.",
       "teaches": [
-        "comparatives"
+        "b1-making-decisions-vocab"
       ],
       "english": "After evaluating the alternatives, we made a final decision."
     },
@@ -229,7 +255,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ordering-markers"
+        "comparatives"
       ]
     },
     {
@@ -253,8 +279,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "si-clauses"
-      ]
+        "hypothetical-structures"
+      ],
+      "distractor_skills": {
+        "1": "subjuntivo-morfologia"
+      }
     },
     {
       "id": "b1-23-consolidation.ex15",
@@ -292,7 +321,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "comparatives"
+        "argument-markers"
       ]
     },
     {
@@ -306,7 +335,6 @@
         }
       ],
       "teaches": [
-        "subjunctive-value-judgments",
         "comparatives"
       ]
     },
@@ -321,7 +349,7 @@
         }
       ],
       "teaches": [
-        "comparatives"
+        "si-clauses"
       ]
     }
   ]
