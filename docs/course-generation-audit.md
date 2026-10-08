@@ -190,6 +190,8 @@ Calibration step before relying on it: run it over HU and ES A1–B1, which have
 
 ## 6. Decisions needed *(sign-off)*
 
+**Decided by the user 2026-10-08:** 1 yes (HU staged shape with the Spanish counts on top), 3 yes, 5 yes: the hint goes in exercise metadata, a typed `hint` field, never in `sentence`; 6 yes, 7 yes. **Still open:** 2 (number table; measured shipped averages and a proposal were given) and 4 (2× or 1.3×).
+
 1. **One lesson shape for new courses.** I'd suggest the Hungarian staged groups (Introduce, Controlled, Practice, Dialogue, Production, Check). They build the recognise → manipulate → produce progression into the shape. The Spanish block rules (≥5 types, Dialogue and Writing present) would sit on top as counts. Existing Spanish and Hungarian lessons stay as they are.
 2. **One number table per level:** new words per unit, exercises per lesson, story length, stories per unit. I'll propose values from what shipped lessons actually average, for you to adjust.
 3. **Gate policy:** the new checks fail new courses and changed files only, and stay a report on existing content.
