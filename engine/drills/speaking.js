@@ -149,9 +149,8 @@ const SpeakingDriller = (function () {
             _prodPrompts = (data && data.prompts) ? data.prompts : [];
             _prodLoadedLang = lang;
         } catch (e) {
-            const fallbackPath = lang === 'es-es'
-                ? 'content/es-latam/speaking-prompts.json'
-                : (lang === 'es-latam' ? 'content/es-es/speaking-prompts.json' : null);
+            const sibling = (typeof Lang !== 'undefined' && typeof Lang.contentFallback === 'function') ? Lang.contentFallback() : null;
+            const fallbackPath = sibling ? 'content/' + sibling + '/speaking-prompts.json' : null;
             if (fallbackPath) {
                 try {
                     const fallback = await Content.json(fallbackPath);

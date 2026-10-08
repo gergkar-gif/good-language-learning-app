@@ -130,6 +130,7 @@ const Lang = (function () {
             courseName: 'Spanish (Spain)',
             voices: ['es-ES', 'es'],
             sttLocale: 'es-ES',
+            contentFallback: 'es-latam',
             tests: ['A1', 'A2', 'B1'],
             diacritics: { a: ['á'], e: ['é'], i: ['í'], o: ['ó'], u: ['ú', 'ü'], n: ['ñ'] },
             openers: { '?': '¿', '!': '¡' },

@@ -69,9 +69,8 @@ const WritingDriller = (function () {
             _promptsData = data && data.prompts ? data.prompts : [];
             _loadedLang = lang;
         } catch (e) {
-            const fallbackPath = lang === 'es-es'
-                ? 'content/es-latam/writing-prompts.json'
-                : (lang === 'es-latam' ? 'content/es-es/writing-prompts.json' : null);
+            const sibling = (typeof Lang !== 'undefined' && typeof Lang.contentFallback === 'function') ? Lang.contentFallback() : null;
+            const fallbackPath = sibling ? 'content/' + sibling + '/writing-prompts.json' : null;
             if (fallbackPath) {
                 try {
                     const fallback = await Content.json(fallbackPath);
@@ -113,12 +112,10 @@ const WritingDriller = (function () {
     }
 
     function _getDiacritics(langCode) {
-        const lang = (langCode || (typeof Lang !== 'undefined' ? Lang.code() : 'es')).toLowerCase();
-        if (lang.startsWith('es')) {
-            return ['á', 'é', 'í', 'ó', 'ú', 'ñ', '¿', '¡'];
-        }
-        if (lang.startsWith('hu')) {
-            return ['á', 'é', 'í', 'ó', 'ö', 'ő', 'ú', 'ü', 'ű'];
+        if (typeof Lang !== 'undefined' && typeof Lang.diacritics === 'function') {
+            const accents = [].concat(...Object.values(Lang.diacritics(langCode)));
+            const openers = Object.values(Lang.openers(langCode));
+            return accents.concat(openers);
         }
         return ['á', 'é', 'í', 'ó', 'ú', 'ñ'];
     }
