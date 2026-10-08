@@ -316,9 +316,13 @@ const SpeakingRunner = (function () {
                 }
 
                 // If recognition failed or not supported, offer self-eval
-                if (err === 'permission-denied') {
-                    _setFeedback(false, 'Microphone permission was denied. Please allow microphone access in your browser settings.');
-                    _offerSelfEvaluation('Microphone permission denied.');
+                if (err === 'permission-denied' || err === 'service-not-allowed' || err === 'insecure-context' || err === 'device-busy') {
+                    const msg = (err === 'insecure-context') ? 'Microphone requires HTTPS.'
+                              : (err === 'device-busy') ? 'Microphone is in use by another app.'
+                              : (err === 'service-not-allowed') ? 'Speech recognition was restricted by iOS.'
+                              : 'Microphone permission was denied or restricted.';
+                    _setFeedback(false, msg);
+                    _offerSelfEvaluation(msg);
                 } else if (!SpeechInput.isRecognitionSupported() || err === 'recognition-failed' || err === 'no-speech' || err === 'stt-failed') {
                     _offerSelfEvaluation(err === 'no-speech' ? 'No voice heard. Did you speak into the microphone?' : null);
                 } else {

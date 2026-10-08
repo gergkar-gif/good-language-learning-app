@@ -883,6 +883,7 @@ const SpeakingDriller = (function () {
 
         if (typeof SpeechInput !== 'undefined') {
             SpeechInput.startListening({
+                preferRecording: true,
                 manualStop: true,
                 maxDurationMs: _prodMaxSeconds * 1000,
                 onInterim: (text) => {
@@ -2112,6 +2113,7 @@ const SpeakingDriller = (function () {
 
         if (typeof SpeechInput !== 'undefined') {
             SpeechInput.startListening({
+                preferRecording: true,
                 lang: langCode,
                 onInterim: (text) => {
                     _scenarioTranscript = text;

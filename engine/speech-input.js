@@ -217,6 +217,7 @@ const SpeechInput = (function () {
 
     let _sessionToken = 0;
     let _streamIdleTimer = null;
+    let _currentRecognitionStarter = null;
 
     function _clearStreamIdleTimer() {
         if (_streamIdleTimer) {
@@ -377,10 +378,20 @@ const SpeechInput = (function () {
             })
             .catch(err => {
                 console.warn('SpeechInput: audio recording stream unavailable:', err);
+                if (!options._triedNativeFallback && !options._triedCloudFallback && typeof _currentRecognitionStarter === 'function') {
+                    console.log('SpeechInput: audio recording unavailable, falling back to native SpeechRecognition');
+                    options._triedNativeFallback = true;
+                    _isCloudSttSession = false;
+                    _currentRecognitionStarter();
+                    return;
+                }
                 if (!isRecognitionSupported() || !_activeRecognition) {
                     _isListening = false;
+                    const errCode = (err && err.name === 'SecurityError') ? 'insecure-context'
+                                  : (err && err.name === 'NotReadableError') ? 'device-busy'
+                                  : 'permission-denied';
                     const onError = options.onError || (() => {});
-                    onError('permission-denied');
+                    onError(errCode);
                 }
             });
     }
@@ -519,174 +530,195 @@ const SpeechInput = (function () {
 
         _isCloudSttSession = useCloudStt;
 
-        // 1. Primary: Native SpeechRecognition Engine
-        if (RecognitionClass && !_isCloudSttSession) {
-            function _startRecognitionInstance() {
-                if (!_isListening) return;
-                try {
-                    const recognition = new RecognitionClass();
-                    recognition.lang = lang;
-                    recognition.continuous = !isMobile;
-                    recognition.interimResults = true;
-                    recognition.maxAlternatives = 1;
+        function _startRecognitionInstance() {
+            if (!_isListening) return;
+            try {
+                const recognition = new RecognitionClass();
+                recognition.lang = lang;
+                recognition.continuous = !isMobile;
+                recognition.interimResults = true;
+                recognition.maxAlternatives = 1;
 
-                    recognition.onstart = () => {
-                        _isListening = true;
-                    };
+                recognition.onstart = () => {
+                    _isListening = true;
+                };
 
-                    recognition.onresult = event => {
-                        if (!_isListening) return;
+                recognition.onresult = event => {
+                    if (!_isListening) return;
 
-                        let interim = '';
-                        for (let i = event.resultIndex; i < event.results.length; ++i) {
-                            const item = event.results[i];
-                            if (item && item[0]) {
-                                if (item.isFinal) {
-                                    const text = item[0].transcript.trim();
-                                    if (text) {
-                                        _accumulatedFinal += (_accumulatedFinal ? ' ' : '') + text;
-                                    }
-                                } else {
-                                    interim += item[0].transcript;
+                    let interim = '';
+                    for (let i = event.resultIndex; i < event.results.length; ++i) {
+                        const item = event.results[i];
+                        if (item && item[0]) {
+                            if (item.isFinal) {
+                                const text = item[0].transcript.trim();
+                                if (text) {
+                                    _accumulatedFinal += (_accumulatedFinal ? ' ' : '') + text;
                                 }
+                            } else {
+                                interim += item[0].transcript;
                             }
                         }
-                        _currentInterim = interim;
-                        const rawCombined = (_accumulatedFinal + ' ' + _currentInterim).trim();
-                        const combined = (target && rawCombined) ? canonicalizeTranscript(target, rawCombined) : rawCombined;
+                    }
+                    _currentInterim = interim;
+                    const rawCombined = (_accumulatedFinal + ' ' + _currentInterim).trim();
+                    const combined = (target && rawCombined) ? canonicalizeTranscript(target, rawCombined) : rawCombined;
 
-                        if (combined) {
-                            _hasSpoken = true;
-                            _bestTranscript = combined;
-                            if (_initialSilenceTimeout) {
-                                clearTimeout(_initialSilenceTimeout);
-                                _initialSilenceTimeout = null;
-                            }
-
-                            onInterim(combined);
-                            if (onAudioLevel) {
-                                onAudioLevel(0.5 + Math.random() * 0.45);
-                            }
-
-                            // Auto-stop recording immediately if learner hits 100% accuracy on target
-                            if (target) {
-                                const targetList = Array.isArray(target) ? target : [target];
-                                const fullMatch = targetList.some(tgt => isFullTargetMatch(tgt, combined));
-                                if (fullMatch) {
-                                    stopListening();
-                                    return;
-                                }
-                            }
-
-                            // Silence buffer: automatically finish 2.8s after learner stops speaking (in auto mode only)
-                            if (!manualStop) {
-                                if (_finishTimeout) clearTimeout(_finishTimeout);
-                                _finishTimeout = setTimeout(() => {
-                                    stopListening();
-                                }, 2800);
-                            }
+                    if (combined) {
+                        _hasSpoken = true;
+                        _bestTranscript = combined;
+                        if (_initialSilenceTimeout) {
+                            clearTimeout(_initialSilenceTimeout);
+                            _initialSilenceTimeout = null;
                         }
-                    };
 
-                    recognition.onerror = event => {
-                        console.warn('SpeechInput recognition error:', event.error);
-                        const combined = (_accumulatedFinal + ' ' + _currentInterim).trim() || _bestTranscript || '';
-                        const isFatal = event.error === 'not-allowed' || event.error === 'service-not-allowed';
+                        onInterim(combined);
+                        if (onAudioLevel) {
+                            onAudioLevel(0.5 + Math.random() * 0.45);
+                        }
 
-                        // Manual mode (Verbal Production, up to 5 minutes) only ends on
-                        // Finish or the max-duration timeout -- once the learner has
-                        // started speaking, a transient recognition error (aborted,
-                        // no-speech, network) is routine mid-session, not the end of
-                        // their turn. Restart instead of committing early (same as
-                        // onend below), or a long recording gets cut off at whatever
-                        // point the browser's recognition session happens to hiccup.
-                        if (manualStop && _hasSpoken && !isFatal) {
-                            try {
-                                _startRecognitionInstance();
+                        // Auto-stop recording immediately if learner hits 100% accuracy on target
+                        if (target) {
+                            const targetList = Array.isArray(target) ? target : [target];
+                            const fullMatch = targetList.some(tgt => isFullTargetMatch(tgt, combined));
+                            if (fullMatch) {
+                                stopListening();
                                 return;
-                            } catch (e) {
-                                console.warn('SpeechInput: recognition restart threw:', e);
                             }
                         }
 
-                        // If the learner already spoke or a transcript was captured, any subsequent silence / no-speech
-                        // error from the OS simply marks the end of their speech — never report an error!
-                        if (_hasSpoken || combined) {
-                            stopListening();
+                        // Silence buffer: automatically finish 2.8s after learner stops speaking (in auto mode only)
+                        if (!manualStop) {
+                            if (_finishTimeout) clearTimeout(_finishTimeout);
+                            _finishTimeout = setTimeout(() => {
+                                stopListening();
+                            }, 2800);
+                        }
+                    }
+                };
+
+                recognition.onerror = event => {
+                    console.warn('SpeechInput recognition error:', event.error);
+                    const combined = (_accumulatedFinal + ' ' + _currentInterim).trim() || _bestTranscript || '';
+                    const isFatal = event.error === 'not-allowed' || event.error === 'service-not-allowed';
+
+                    // Manual mode (Verbal Production, up to 5 minutes) only ends on
+                    // Finish or the max-duration timeout -- once the learner has
+                    // started speaking, a transient recognition error (aborted,
+                    // no-speech, network) is routine mid-session, not the end of
+                    // their turn. Restart instead of committing early (same as
+                    // onend below), or a long recording gets cut off at whatever
+                    // point the browser's recognition session happens to hiccup.
+                    if (manualStop && _hasSpoken && !isFatal) {
+                        try {
+                            _startRecognitionInstance();
+                            return;
+                        } catch (e) {
+                            console.warn('SpeechInput: recognition restart threw:', e);
+                        }
+                    }
+
+                    // If the learner already spoke or a transcript was captured, any subsequent silence / no-speech
+                    // error from the OS simply marks the end of their speech — never report an error!
+                    if (_hasSpoken || combined) {
+                        stopListening();
+                        return;
+                    }
+
+                    if (event.error === 'no-speech') {
+                        if (manualStop) return;
+
+                        // If learner hasn't spoken yet and still within initial grace period, keep waiting
+                        if (Date.now() - _listenStartTime < 10000) {
                             return;
                         }
-
-                        if (event.error === 'no-speech') {
-                            if (manualStop) return;
-
-                            // If learner hasn't spoken yet and still within initial grace period, keep waiting
-                            if (Date.now() - _listenStartTime < 10000) {
-                                return;
-                            }
-                            stopListening();
-                            onError('no-speech');
-                        } else if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
-                            stopListening();
-                            onError('permission-denied');
-                        } else if (event.error === 'aborted') {
-                            stopListening();
-                        } else if (event.error === 'network') {
-                            stopListening();
-                            onError('network');
-                        } else {
-                            stopListening();
-                            onError(event.error || 'recognition-failed');
-                        }
-                    };
-
-                    recognition.onend = () => {
-                        if (!_isListening || _activeRecognition !== recognition) return;
-
-                        const combined = (_accumulatedFinal + ' ' + _currentInterim).trim() || _bestTranscript || '';
-
-                        // Manual mode only ends on Finish/max-duration -- native
-                        // recognition sessions commonly end on their own well before
-                        // then (most browsers cap a single continuous session at
-                        // roughly a minute, or end after a short pause), so this is
-                        // not "the learner is done." Restart instead of committing.
-                        if (manualStop && _hasSpoken) {
-                            try {
-                                _startRecognitionInstance();
-                                return;
-                            } catch (e) {
-                                console.warn('SpeechInput: recognition restart threw:', e);
-                            }
-                        }
-
-                        // If learner already spoke, their utterance has completed — commit the answer immediately
-                        if (_hasSpoken || combined) {
-                            stopListening();
-                            return;
-                        }
-
-                        // If learner hasn't spoken yet and still within initial grace period, keep listening
-                        if (Date.now() - _listenStartTime < (manualStop ? 30000 : 10000)) {
-                            try {
-                                _startRecognitionInstance();
-                                return;
-                            } catch (e) {
-                                console.warn('SpeechInput: recognition restart threw:', e);
-                            }
-                        }
-
-                        // Grace period expired without speech
                         stopListening();
                         onError('no-speech');
-                    };
+                    } else if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+                        if (!options._triedCloudFallback && !options._triedNativeFallback && isCloudSttAvailable() && isRecordingSupported()) {
+                            console.log('SpeechInput: native recognition ' + event.error + ', falling back to Cloud STT recording');
+                            options._triedCloudFallback = true;
+                            _cleanupRecognition();
+                            _isCloudSttSession = true;
+                            _startRecordingStream(options);
+                            return;
+                        }
+                        stopListening();
+                        onError(event.error === 'service-not-allowed' ? 'service-not-allowed' : 'permission-denied');
+                    } else if (event.error === 'aborted') {
+                        stopListening();
+                    } else if (event.error === 'network') {
+                        stopListening();
+                        onError('network');
+                    } else {
+                        stopListening();
+                        onError(event.error || 'recognition-failed');
+                    }
+                };
 
-                    _activeRecognition = recognition;
-                    recognition.start();
-                } catch (e) {
-                    console.warn('SpeechInput: recognition start threw:', e);
-                    _activeRecognition = null;
+                recognition.onend = () => {
+                    if (!_isListening || _activeRecognition !== recognition) return;
+
+                    const combined = (_accumulatedFinal + ' ' + _currentInterim).trim() || _bestTranscript || '';
+
+                    // Manual mode only ends on Finish/max-duration -- native
+                    // recognition sessions commonly end on their own well before
+                    // then (most browsers cap a single continuous session at
+                    // roughly a minute, or end after a short pause), so this is
+                    // not "the learner is done." Restart instead of committing.
+                    if (manualStop && _hasSpoken) {
+                        try {
+                            _startRecognitionInstance();
+                            return;
+                        } catch (e) {
+                            console.warn('SpeechInput: recognition restart threw:', e);
+                        }
+                    }
+
+                    // If learner already spoke, their utterance has completed — commit the answer immediately
+                    if (_hasSpoken || combined) {
+                        stopListening();
+                        return;
+                    }
+
+                    // If learner hasn't spoken yet and still within initial grace period, keep listening
+                    if (Date.now() - _listenStartTime < (manualStop ? 30000 : 10000)) {
+                        try {
+                            _startRecognitionInstance();
+                            return;
+                        } catch (e) {
+                            console.warn('SpeechInput: recognition restart threw:', e);
+                        }
+                    }
+
+                    // Grace period expired without speech
+                    stopListening();
+                    onError('no-speech');
+                };
+
+                _activeRecognition = recognition;
+                recognition.start();
+            } catch (e) {
+                console.warn('SpeechInput: recognition start threw:', e);
+                _activeRecognition = null;
+                if (!options._triedCloudFallback && !options._triedNativeFallback && isCloudSttAvailable() && isRecordingSupported()) {
+                    console.log('SpeechInput: recognition start threw, falling back to Cloud STT recording');
+                    options._triedCloudFallback = true;
+                    _isCloudSttSession = true;
+                    _startRecordingStream(options);
+                    return;
                 }
             }
+        }
 
+        if (RecognitionClass) {
+            _currentRecognitionStarter = _startRecognitionInstance;
+        } else {
+            _currentRecognitionStarter = null;
+        }
+
+        // 1. Primary: Native SpeechRecognition Engine
+        if (RecognitionClass && !_isCloudSttSession) {
             _startRecognitionInstance();
         }
 
@@ -715,6 +747,7 @@ const SpeechInput = (function () {
         const wasListening = _isListening;
         const isCloud = _isCloudSttSession;
         _isListening = false;
+        _currentRecognitionStarter = null;
         _cleanupTimers();
         _cleanupRecognition();
 

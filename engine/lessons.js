@@ -1914,6 +1914,13 @@ const stepRenderers = {
                 <div class="sp-live-transcript hidden" id="lesson-live-transcript" aria-live="polite"></div>
             </div>
             <div class="sp-reveal hidden" id="lesson-sp-reveal"></div>
+            <div class="sp-self-eval hidden" id="lesson-sp-self-eval" style="margin-top:12px; text-align:center;">
+                <p style="font-size:0.9rem; margin-bottom:8px; color:var(--text-muted, #555);">How did your pronunciation sound?</p>
+                <div style="display:flex; justify-content:center; gap:8px;">
+                    <button type="button" class="btn" style="font-size:0.85rem; padding:6px 14px;" onclick="lessonSelfEvalGood()">✓ Sounded Good</button>
+                    <button type="button" class="btn ghost" style="font-size:0.85rem; padding:6px 14px;" onclick="lessonSelfEvalRetry()">✗ Try Again</button>
+                </div>
+            </div>
             ${feedbackHtml()}
             <div style="text-align: center; margin-top: 12px;">
                 <button type="button" class="sp-cant-speak-btn" onclick="lessonSkipSpeaking()">Can't speak right now</button>
@@ -2055,6 +2062,13 @@ const stepRenderers = {
             </div>
 
             <div class="sp-reveal hidden" id="lesson-challenge-reveal" style="margin-top:14px;"></div>
+            <div class="sp-self-eval hidden" id="lesson-challenge-self-eval" style="margin-top:12px; text-align:center;">
+                <p style="font-size:0.9rem; margin-bottom:8px; color:var(--text-muted, #555);">How did your response sound?</p>
+                <div style="display:flex; justify-content:center; gap:8px;">
+                    <button type="button" class="btn" style="font-size:0.85rem; padding:6px 14px;" onclick="lessonSelfEvalGood()">✓ Spoke It Out Loud</button>
+                    <button type="button" class="btn ghost" style="font-size:0.85rem; padding:6px 14px;" onclick="lessonSelfEvalRetry()">✗ Try Again</button>
+                </div>
+            </div>
             ${feedbackHtml()}
             <div style="text-align: center; margin-top: 12px;">
                 <button type="button" class="sp-cant-speak-btn" onclick="lessonSkipSpeaking()">Can't speak right now</button>
@@ -3666,6 +3680,9 @@ let _lessonSpeakingRecording = false;
 function lessonToggleSpeaking(btn) {
     if (stepState.solved) return;
 
+    if (typeof ParlourTTS !== 'undefined' && typeof ParlourTTS.stop === 'function') {
+        ParlourTTS.stop();
+    }
     if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
         window.speechSynthesis.cancel();
     }
@@ -3812,8 +3829,19 @@ function lessonToggleSpeaking(btn) {
                     return;
                 }
 
-                if (err === 'permission-denied') {
-                    setFeedback(false, 'Microphone access is blocked in your browser settings. Tap "Can\'t speak right now" below to continue without speaking.');
+                if (err === 'permission-denied' || err === 'service-not-allowed' || err === 'insecure-context' || err === 'device-busy') {
+                    let errMsg = 'Microphone access is unavailable. You can self-evaluate below:';
+                    if (err === 'insecure-context') {
+                        errMsg = 'Microphone requires HTTPS on iOS. You can self-evaluate below:';
+                    } else if (err === 'device-busy') {
+                        errMsg = 'Microphone is currently in use by another app. You can self-evaluate below:';
+                    } else if (err === 'service-not-allowed') {
+                        errMsg = 'iOS Speech Recognition was restricted. You can self-evaluate below:';
+                    } else {
+                        errMsg = 'Microphone was denied or restricted. You can self-evaluate below:';
+                    }
+                    setFeedback(false, errMsg);
+                    _offerLessonSpeakingSelfEval();
                     const cantBtn = document.querySelector('.sp-cant-speak-btn');
                     if (cantBtn) {
                         try { cantBtn.focus({ preventScroll: true }); } catch (e) {}
@@ -3828,6 +3856,29 @@ function lessonToggleSpeaking(btn) {
             }
         });
     }
+}
+
+function _offerLessonSpeakingSelfEval() {
+    const evalEl = document.getElementById('lesson-sp-self-eval') || document.getElementById('lesson-challenge-self-eval');
+    if (evalEl) evalEl.classList.remove('hidden');
+}
+
+function lessonSelfEvalGood() {
+    if (stepState.solved) return;
+    const target = stepState.target || '';
+    stepState.transcript = target;
+    setFeedback(true, 'Pronunciation self-evaluated as correct! ✓');
+    solveStep(target);
+    stepState.checkDisabled = false;
+    updateFooterButton();
+}
+
+function lessonSelfEvalRetry() {
+    const evalEl = document.getElementById('lesson-sp-self-eval') || document.getElementById('lesson-challenge-self-eval');
+    if (evalEl) evalEl.classList.add('hidden');
+    const statusEl = document.getElementById('lesson-mic-status');
+    if (statusEl) statusEl.textContent = 'Tap to speak';
+    setFeedback(null, '');
 }
 
 let _lessonUserAudioPlayer = null;
