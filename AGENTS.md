@@ -34,6 +34,18 @@ python scripts/validate-content.py --changed
 `--changed` checks only files that differ from `origin/master` (seconds).
 `python scripts/validate-content.py` checks everything (several minutes).
 
+Then the content checks, on the units you changed:
+
+```
+python scripts/check-content.py --changed
+```
+
+It fails only on problems your change adds (a give-away option, a hint that
+is the answer, a missing `english`, a form used before its screen…); findings
+already in the content stay a report. `python scripts/check-content.py
+<course> [level] [unit id]` lists everything for one scope, `--summary`
+counts it. The pre-push hook runs both checks.
+
 Besides the schemas, it fails any content file containing letters from
 another script (Cyrillic, Arabic, Hebrew, Thai, Japanese, Chinese, Korean).
 Generated text sometimes slips them in mid-word (`reдукció`, `Mキシco`).

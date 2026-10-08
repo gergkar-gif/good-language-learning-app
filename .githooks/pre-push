@@ -21,3 +21,12 @@ if ! "$PY" scripts/validate-content.py --changed; then
   echo "pre-push: push blocked. Fix the schema errors above (or see AGENTS.md)."
   exit 1
 fi
+
+# Content checks (scripts/check-content.py): fails only on problems the pushed
+# change introduces in the units it touches; old findings stay a report.
+echo "pre-push: checking changed units..."
+if ! "$PY" scripts/check-content.py --changed; then
+  echo ""
+  echo "pre-push: push blocked. Fix the new errors above (rules: docs/course-generation-brief.md)."
+  exit 1
+fi

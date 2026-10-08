@@ -146,7 +146,7 @@ One file per lesson: `exercises/<level>/<lesson>-ex.json`, shape `{"lesson": "<l
 
 ### 6.1 Types
 
-Only these nine render in lessons. Never use `error-correction` or `substitution` in a lesson.
+Use only these nine in lessons. `error-correction` doesn't render at all; `substitution` renders but is not used in new lessons (`check-content.py` fails both).
 
 | Type | Fields | Rules |
 |---|---|---|
@@ -226,19 +226,16 @@ Full rules: [skill-tagging-spec.md](skill-tagging-spec.md). In short:
 
 ### 8.1 Scripts
 
-Run these after each unit and fix everything they report:
+Run these after each unit:
 
 ```
 python scripts/validate-content.py --changed
 python scripts/check-content.py <course> <level> <unit id>
 ```
 
-`check-content.py` is being built (ROADMAP 149). Until it exists, also run:
-- `python scripts/dup_report.py <course> <level> <unit id>`
-- `python imports/review/check-slash-giveaway.py --length <course> <level> --list`
-- for Hungarian, `python imports/review/check-hu-exercises.py <level> --list`
+`check-content.py` prints **ERROR** lines and **suspect** lines. Fix every error: on a new course the script fails until there are none, and the pre-push hook blocks any push that adds one. A suspect is a pattern a reader confirms (an opener, the answer printed in the prompt, a vocabulary word it couldn't find in an exercise): fix it, or say in the hand-back why it stays. On a new course it also checks the lesson and consolidation shape of § 2.
 
-Paste their output into the hand-back.
+Paste both outputs into the hand-back.
 
 ### 8.2 The read
 
@@ -277,7 +274,7 @@ Each appendix holds only what differs from the rules above.
 - **The two courses share skills** (`skills/es.json`) and most A1–B1 exercises. A shared exercise is identical in both files: apply every change to both.
 - **es-latam:** no *vosotros* anywhere (readings, screens, examples, exercises). Use *ustedes*. Shared items avoid words that differ by region (*zumo/jugo*), or list both in `answers`. Pronunciation items avoid c/z.
 - **es-es:** *vosotros* is taught and may be used once taught.
-- **Pin the person** when the subject is dropped, especially *haber* forms (`(tú)`, `(estar, nosotros)`).
+- **Pin the person** when the subject is dropped, especially *haber* forms: put it in `hint` (`tú`, `estar, nosotros`) or the sentence.
 - **Clitics:** *lo/la/los/las* are first taught at `a2-12-01-gr`. Before that, repeat the noun.
 - **Close contrasts:** ser/estar/hay, preterite/imperfect, present/*ir a*/future. A wrong option must be clearly ungrammatical or contradict a cue in the item (a time marker, "one completed event").
 
