@@ -191,65 +191,6 @@ const Lang = (function () {
                 B2: ['véleményem szerint', 'úgy vélem', 'meglátásom szerint', 'elsőként', 'például', 'ugyanakkor', 'mindazonáltal', 'ennek következtében', 'másrészt', 'egyrészt', 'összességében']
             },
             informalTextingNote: "When Hungarian people text, accents are often left out — these exchanges simulate that, so don't be surprised if they're missing."
-        },
-        fr: {
-            code: 'fr',
-            baseCode: 'fr',
-            name: 'French',
-            courseName: 'French',
-            voices: ['fr-FR', 'fr-CA', 'fr'],
-            sttLocale: 'fr-FR',
-            tests: ['A1', 'A2'],
-            diacritics: { a: ['à', 'â'], c: ['ç'], e: ['é', 'è', 'ê', 'ë'], i: ['î', 'ï'], o: ['ô', 'œ'], u: ['ù', 'û', 'ü'] },
-            openers: {},
-            numberWords: {
-                '1': ['un', 'une'], '2': ['deux'], '3': ['trois'], '4': ['quatre'], '5': ['cinq'],
-                '6': ['six'], '7': ['sept'], '8': ['huit'], '9': ['neuf'], '10': ['dix']
-            },
-            examLabels: {
-                trueFalseNotStated: ['Vrai', 'Faux', 'Non mentionné dans le texte']
-            },
-            canDoCues: {
-                city: 'Paris',
-                monthsExamples: 'janvier, février, mars...',
-                monthInEvent: 'State when an event or your birthday is using "en" (e.g. "En octobre..." or "En décembre...")',
-                daysExamples: 'lundi, mardi...',
-                dayInEvent: 'Say which day you do an activity (e.g. le lundi, le vendredi)',
-                cafeGreeting: 'Polite greeting (Bonjour / Bonsoir)',
-                cafeOrder: 'Order a drink or snack (e.g. "Un café au lait, s\'il vous plaît")',
-                cafeBill: 'Conclude politely or ask for the bill ("L\'addition, s\'il vous plaît" / "Merci beaucoup")',
-                restaurantGreeting: 'Greeting and request a table ("Une table pour deux, s\'il vous plaît")',
-                restaurantOrder: 'Order food and drinks ("En entrée, nous aimerions... et en plat...")',
-                restaurantBill: 'Ask for the bill ("L\'addition, s\'il vous plaît")',
-                directionsInterruption: 'Polite opening (Excusez-moi / Pardon)',
-                directionsAsk: 'Ask for directions (e.g. "Où se trouve la gare ?")',
-                directionsThanks: 'Thank the person (Merci beaucoup)'
-            },
-            paradigm: {
-                hasVosotros: false,
-                persons: {
-                    je: { key: 'je', label: "je / j'" },
-                    tu: { key: 'tu', label: 'tu' },
-                    il: { key: 'il', label: 'il / elle / on' },
-                    nous: { key: 'nous', label: 'nous' },
-                    vous: { key: 'vous', label: 'vous' },
-                    ils: { key: 'ils', label: 'ils / elles' }
-                },
-                defaultPersons: ['je', 'tu', 'il', 'nous', 'vous', 'ils'],
-                tenses: [
-                    { value: 'indicatif.present', label: 'Présent' },
-                    { value: 'indicatif.imparfait', label: 'Imparfait' },
-                    { value: 'indicatif.passe_compose', label: 'Passé composé' },
-                    { value: 'indicatif.futur_simple', label: 'Futur simple' },
-                    { value: 'all', label: 'All Tenses' }
-                ]
-            },
-            discourseConnectors: {
-                A1: ['et', 'mais', 'parce que', 'aussi', 'par exemple'],
-                A2: ['donc', 'alors', 'puis', 'cependant', 'par conséquent'],
-                B1: ['à mon avis', 'selon moi', 'd\'abord', 'en effet', 'pourtant'],
-                B2: ['en premier lieu', 'néanmoins', 'toutefois', 'd\'une part', 'd\'autre part']
-            }
         }
     };
 
