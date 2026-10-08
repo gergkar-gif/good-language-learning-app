@@ -93,10 +93,15 @@
           "minItems": 1,
           "items": {
             "type": "object",
-            "required": ["spanish", "english"],
+            "required": ["english"],
+            "anyOf": [
+              { "required": ["spanish"] },
+              { "required": ["target"] }
+            ],
             "additionalProperties": false,
             "properties": {
               "spanish": { "type": "string", "minLength": 1 },
+              "target": { "type": "string", "minLength": 1 },
               "english": { "type": "string", "minLength": 1 }
             }
           }

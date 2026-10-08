@@ -35,18 +35,35 @@ const Verbs = (function () {
     };
 
     // ---- Helpers ----
+    function _getTenseOptions() {
+        var p = (typeof Lang !== 'undefined' && Lang.paradigm) ? Lang.paradigm() : null;
+        if (p && p.tenses && p.tenses.length) return p.tenses;
+        return TENSE_OPTIONS;
+    }
+
+    function _getRealTenses() {
+        return _getTenseOptions().filter(function (t) { return t.value !== 'all'; });
+    }
+
     function _getPersons() {
+        var p = (typeof Lang !== 'undefined' && Lang.paradigm) ? Lang.paradigm() : null;
+        if (p) {
+            if (_state.includeVosotros && p.vosotrosPersons) return p.vosotrosPersons.slice();
+            return (p.defaultPersons || Object.keys(p.persons || {})).slice();
+        }
         return _state.includeVosotros
             ? PERSONS_WITH_VOSOTROS.slice()
             : PERSONS_WITHOUT_VOSOTROS.slice();
     }
 
     function _getTenseLabel() {
-        for (var i = 0; i < TENSE_OPTIONS.length; i++) {
-            if (TENSE_OPTIONS[i].value === _state.tense) return TENSE_OPTIONS[i].label;
+        var opts = _getTenseOptions();
+        for (var i = 0; i < opts.length; i++) {
+            if (opts[i].value === _state.tense) return opts[i].label;
         }
         return _state.tense;
     }
+
 
     function _shuffle(arr) {
         for (var i = arr.length - 1; i > 0; i--) {
@@ -75,7 +92,8 @@ const Verbs = (function () {
         if (_state.tense !== 'all') {
             return { path: _state.tense, label: _getTenseLabel() };
         }
-        var pick = REAL_TENSES[Math.floor(Math.random() * REAL_TENSES.length)];
+        var realTenses = _getRealTenses();
+        var pick = realTenses[Math.floor(Math.random() * realTenses.length)];
         return { path: pick.value, label: pick.label };
     }
 
@@ -100,11 +118,17 @@ const Verbs = (function () {
     // ================================================================
     //  RENDERING — Main shell (mode switcher + shared settings)
     // ================================================================
+    function _stateHasVosotros() {
+        var p = (typeof Lang !== 'undefined' && Lang.paradigm) ? Lang.paradigm() : null;
+        return !p || p.hasVosotros;
+    }
+
     function _buildShellHtml() {
         // Tense options
         var tenseOptions = '';
-        for (var i = 0; i < TENSE_OPTIONS.length; i++) {
-            var t = TENSE_OPTIONS[i];
+        var opts = _getTenseOptions();
+        for (var i = 0; i < opts.length; i++) {
+            var t = opts[i];
             var sel = _state.tense === t.value ? ' selected' : '';
             tenseOptions += '<option value="' + t.value + '"' + sel + '>' + _escapeHtml(t.label) + '</option>';
         }
@@ -130,7 +154,7 @@ const Verbs = (function () {
             +       '<label for="vb-tense">Tense</label>'
             +       '<select id="vb-tense" class="vb-select">' + tenseOptions + '</select>'
             +     '</div>'
-            +     '<div class="vb-setting vb-setting-row">'
+            +     '<div class="vb-setting vb-setting-row"' + (_stateHasVosotros() ? '' : ' style="display:none;"') + '>'
             +       '<label id="vb-vosotros-label">Include vosotros</label>'
             +       '<button class="geo-toggle"'
             +         ' data-action="toggle-vosotros" role="switch"'
@@ -239,7 +263,7 @@ const Verbs = (function () {
             var speedOpts = {
                 tense:        _state.tense,
                 tenseLabel:   _getTenseLabel(),
-                tenseOptions: REAL_TENSES,
+                tenseOptions: _getRealTenses(),
                 persons:      _getPersons(),
                 verbList:     _state.verbList
             };

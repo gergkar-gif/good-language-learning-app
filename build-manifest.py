@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import re
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -836,7 +837,13 @@ def build_decks(lang="es", curriculum=None):
     # Spanish dictionary) was the later mistake this replaced: it silently
     # produced Spanish frequency decks for every language.
     frequency_decks = []
-    sources = FREQUENCY_SOURCES.get(lang.split("-")[0])   # es-es and es-latam share "es"
+    base_lang = lang.split("-")[0]
+    sources = FREQUENCY_SOURCES.get(base_lang)
+    if not sources:
+        candidate_freq = ROOT / "content" / lang / "indexes" / "frequency.json"
+        candidate_dict = ROOT / "imports" / "dictionary" / f"{base_lang}-en.json"
+        if candidate_freq.exists() and candidate_dict.exists():
+            sources = (candidate_freq, candidate_dict)
 
     if sources and sources[0].exists() and sources[1].exists():
         ranks_path, dict_path = sources
@@ -952,10 +959,29 @@ def validate_lessons(lang="es"):
 
     return issues
 
+def discover_languages():
+    """Discover courses dynamically from content/ directory.
+    Matches subdirectories that contain course content (curriculum, lessons, stories, or schemas).
+    Preserves a predictable sort order, with es-latam, es-es first if present."""
+    content_dir = Path("content")
+    if not content_dir.exists():
+        return ["es-latam", "es-es", "hu", "fr"]
+    courses = [
+        p.name for p in content_dir.iterdir()
+        if p.is_dir() and not p.name.startswith(".") and any(
+            (p / sub).exists() for sub in ("curriculum", "lessons", "stories", "schemas")
+        )
+    ]
+    preferred_order = ["es-latam", "es-es"]
+    head = [c for c in preferred_order if c in courses]
+    tail = sorted(c for c in courses if c not in preferred_order)
+    return head + tail or ["es-latam", "es-es", "hu", "fr"]
+
 def main():
     generated = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
-    LANGUAGES = ["es-latam", "es-es", "hu", "fr"]
+    cli_langs = [arg for arg in sys.argv[1:] if not arg.startswith("-")]
+    LANGUAGES = cli_langs if cli_langs else discover_languages()
 
     # Build curriculum.json for each language first — this is what the Learn
     # tab actually reads (engine/curriculum.js, engine/init.js), generated

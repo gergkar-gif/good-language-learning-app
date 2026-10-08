@@ -137,7 +137,7 @@ const SpeakingDriller = (function () {
     async function _load() {
         if (_pairs && _loadedLang === Lang.code()) return;
         const index = await Content.json(Lang.content('indexes/translation-index.json')).catch(() => ({ pairs: [] }));
-        _pairs = (index.pairs || []).filter(p => (p.spanish || p.hungarian || p.target) && (p.english || p.translation));
+        _pairs = (index.pairs || []).filter(p => (typeof Lang !== 'undefined' && Lang.targetText ? Lang.targetText(p) : (p.spanish || p.hungarian || p.target)) && (p.english || p.translation));
         _loadedLang = Lang.code();
     }
 
@@ -304,10 +304,12 @@ const SpeakingDriller = (function () {
             if (kind === DRILL_TYPE.ALL) {
                 kind = (idx % 2 === 0) ? DRILL_TYPE.READ_REPEAT : DRILL_TYPE.PROMPT_SPEAK;
             }
+            const targetText = (typeof Lang !== 'undefined' && Lang.targetText) ? Lang.targetText(pair) : (pair.spanish || pair.hungarian || pair.target);
             return {
                 id: pair.id,
                 kind,
-                spanish: pair.spanish || pair.hungarian || pair.target,
+                target: targetText,
+                spanish: targetText,
                 english: pair.english || pair.translation,
                 level: pair.level,
                 topic: pair.topic,

@@ -53,6 +53,22 @@ const Lexicon = (function () {
         '2-plural': '2nd person plural', '3-plural': '3rd person plural'
     };
 
+    const _morphologyProviders = Object.create(null);
+
+    function registerMorphology(langCode, provider) {
+        if (langCode && provider) {
+            _morphologyProviders[langCode] = provider;
+        }
+    }
+
+    function getMorphology(langCode) {
+        const code = langCode || _lang || (typeof Lang !== 'undefined' ? Lang.code() : null);
+        if (code && _morphologyProviders[code]) return _morphologyProviders[code];
+        const base = code ? code.split('-')[0] : '';
+        if (base && _morphologyProviders[base]) return _morphologyProviders[base];
+        return null;
+    }
+
     document.addEventListener('language-changed', () => {
         _verbIndex = null;
         _wordIndex = null;
@@ -72,21 +88,37 @@ const Lexicon = (function () {
         _dictionary = null;
         _frequency = null;
         _foldAll = _foldDict = null;
-        const sources = _lang === 'hu'
-            ? [
+
+        let sources;
+        if (_lang === 'hu') {
+            sources = [
                 Promise.resolve({}),   // no separate verb index — see file header
-                fetch(Lang.content('indexes/word-index.json')).then(r => r.ok ? r.json() : {}),
-                fetch('imports/dictionary/hungarian-en.json').then(r => r.ok ? r.json() : {}),
-                fetch(Lang.content('indexes/frequency.json')).then(r => r.ok ? r.json() : []),
+                fetch(Lang.content('indexes/word-index.json')).then(r => r.ok ? r.json() : {}).catch(() => ({})),
+                fetch('imports/dictionary/hungarian-en.json').then(r => r.ok ? r.json() : {}).catch(() => ({})),
+                fetch(Lang.content('indexes/frequency.json')).then(r => r.ok ? r.json() : []).catch(() => []),
                 Promise.resolve({})
-            ]
-            : [
-                fetch('generated/indexes/verb-index.json').then(r => r.ok ? r.json() : {}),
-                fetch('generated/indexes/word-index.json').then(r => r.ok ? r.json() : {}),
-                fetch('imports/dictionary/spanish-en.json').then(r => r.ok ? r.json() : {}),
-                fetch('generated/indexes/frequency.json').then(r => r.ok ? r.json() : []),
-                fetch('imports/dictionary/spanish-verb-homographs.json').then(r => r.ok ? r.json() : {})
             ];
+        } else if (_lang && _lang.startsWith('es')) {
+            sources = [
+                fetch('generated/indexes/verb-index.json').then(r => r.ok ? r.json() : {}).catch(() => ({})),
+                fetch('generated/indexes/word-index.json').then(r => r.ok ? r.json() : {}).catch(() => ({})),
+                fetch('imports/dictionary/spanish-en.json').then(r => r.ok ? r.json() : {}).catch(() => ({})),
+                fetch('generated/indexes/frequency.json').then(r => r.ok ? r.json() : []).catch(() => []),
+                fetch('imports/dictionary/spanish-verb-homographs.json').then(r => r.ok ? r.json() : {}).catch(() => ({}))
+            ];
+        } else {
+            // Generic course (e.g. fr, pl, de)
+            const baseLang = _lang ? _lang.split('-')[0] : _lang;
+            const dictName = (typeof Lang !== 'undefined' && Lang.profile(_lang).name ? Lang.profile(_lang).name : baseLang).toLowerCase();
+            sources = [
+                fetch(Lang.content('indexes/verb-index.json')).then(r => r.ok ? r.json() : {}).catch(() => ({})),
+                fetch(Lang.content('indexes/word-index.json')).then(r => r.ok ? r.json() : {}).catch(() => ({})),
+                fetch(`imports/dictionary/${dictName}-en.json`).then(r => r.ok ? r.json() : {})
+                    .catch(() => fetch(`imports/dictionary/${_lang}-en.json`).then(r => r.ok ? r.json() : {}).catch(() => ({}))),
+                fetch(Lang.content('indexes/frequency.json')).then(r => r.ok ? r.json() : []).catch(() => []),
+                Promise.resolve({})
+            ];
+        }
 
         // Prototype-less copies: a tapped word like "constructor" must not
         // resolve to Object.prototype.constructor (a function) and throw.
@@ -513,6 +545,16 @@ const Lexicon = (function () {
     }
 
     function lookup(word) {
+        const morph = getMorphology(_lang);
+        if (morph && typeof morph.lookup === 'function') {
+            return morph.lookup(word, {
+                normalise: normalise,
+                dictionary: _dictionary,
+                wordIndex: _wordIndex,
+                verbIndex: _verbIndex,
+                frequency: _frequency
+            });
+        }
         if (_lang === 'hu') return lookupHungarian(word);
 
         const key = normalise(word);
@@ -520,9 +562,10 @@ const Lexicon = (function () {
 
         const readings = [];
         const seen = new Set();
+        const isSpanish = Boolean(_lang && _lang.startsWith('es'));
 
         function add(lemma, pos, analysis) {
-            if (!_dictionary[lemma] && /(ar|er|ir)se$/.test(lemma) && _dictionary[lemma.slice(0, -2)]) {
+            if (isSpanish && !_dictionary[lemma] && /(ar|er|ir)se$/.test(lemma) && _dictionary[lemma.slice(0, -2)]) {
                 lemma = lemma.slice(0, -2);
             }
             // a verb reading of a headword the dictionary files under another part of speech
@@ -540,13 +583,22 @@ const Lexicon = (function () {
         }
 
         // "del" / "al": the contraction leads, ahead of any homograph headword
-        const contraction = CONTRACTIONS[key];
-        if (contraction) {
+        if (isSpanish) {
+            const contraction = CONTRACTIONS[key];
+            if (contraction) {
+                readings.push({
+                    lemma: contraction.lemma, pos: 'contraction', gender: undefined,
+                    translation: contraction.translation, analysis: contraction.analysis
+                });
+            }
+        } else if (morph && morph.contractions && morph.contractions[key]) {
+            const contraction = morph.contractions[key];
             readings.push({
                 lemma: contraction.lemma, pos: 'contraction', gender: undefined,
                 translation: contraction.translation, analysis: contraction.analysis
             });
         }
+
         // the word is already a dictionary headword
         if (_dictionary[key]) add(key, null, '');
         // ...and its verb reading when the headword is also a verb (circular)
@@ -556,23 +608,25 @@ const Lexicon = (function () {
         // conjugated verb
         (_verbIndex[key] || []).forEach(a => add(a.lemma, 'verb', describeVerb(a)));
 
+        const activeMorph = morph || (isSpanish && typeof SpanishMorphology !== 'undefined' ? SpanishMorphology : null);
+
         // Nothing direct — try peeling one or two attached pronouns off and
         // looking up what's left, itself either a conjugated form (gerunds,
         // commands — checked first) or, failing that, a bare dictionary
         // headword. Whichever finds it, not both: the infinitive form of
         // "conocer" is in *both* the dictionary and the verb index, and
         // without this the two would add the same reading twice.
-        if (!readings.length) {
+        if (isSpanish && !readings.length) {
             for (const stem of encliticStems(key)) {
                 const verbForms = _verbIndex[stem] || [];
                 if (verbForms.length) {
                     verbForms.forEach(a => add(a.lemma, 'verb', describeVerb(a) + ' + pronoun'));
                 } else if (_dictionary[stem]) {
                     add(stem, null, 'infinitive + pronoun');
-                } else if (typeof SpanishMorphology !== 'undefined') {
+                } else if (activeMorph && typeof activeMorph.analyze === 'function') {
                     // a verb outside the verb index (gerund or infinitive of
                     // any dictionary verb) still resolves by rule
-                    SpanishMorphology.analyze(stem, _dictionary, _verbExtra)
+                    activeMorph.analyze(stem, _dictionary, _verbExtra)
                         .forEach(a => add(a.lemma, 'verb', describeVerb(a) + ' + pronoun'));
                 }
             }
@@ -584,8 +638,8 @@ const Lexicon = (function () {
         // and stem-vowel changes, irregular-root inheritance) so any verb
         // that's actually in the dictionary still resolves, same idea as
         // HungarianMorphology above.
-        if (!readings.length && typeof SpanishMorphology !== 'undefined') {
-            SpanishMorphology.analyze(key, _dictionary, _verbExtra).forEach(a => add(a.lemma, 'verb', describeVerb(a)));
+        if (!readings.length && activeMorph && typeof activeMorph.analyze === 'function') {
+            activeMorph.analyze(key, _dictionary, _verbExtra).forEach(a => add(a.lemma, 'verb', describeVerb(a)));
         }
 
         // Same idea for noun/adjective plural and gender forms: word-index
@@ -602,22 +656,24 @@ const Lexicon = (function () {
         // inflectional, so a coincidental o/a-shaped noun pair (casa
         // "house" / caso "case") is never offered as a false alternate
         // reading of the same word.
-        if (!readings.some(r => r.pos === 'adjective') && typeof SpanishMorphology !== 'undefined') {
-            SpanishMorphology.analyzeWord(key, _dictionary).forEach(a => add(a.lemma, a.pos, describeWord(key, a.lemma)));
+        if (!readings.some(r => r.pos === 'adjective') && activeMorph && typeof activeMorph.analyzeWord === 'function') {
+            activeMorph.analyzeWord(key, _dictionary).forEach(a => add(a.lemma, a.pos, describeWord(key, a.lemma)));
         }
 
         // Feminine / plural participle ("fundada", "liderados"): the verb
         // index only has the masculine singular, so add that reading with
         // the gender/number of the tapped form. Merged alongside whatever
         // adjective readings exist, since most such words are both.
-        const pg = participleGender(key);
-        if (pg && !readings.some(r => /^Past participle/.test(r.analysis))) {
-            const base = _verbIndex[pg.masculine] || [];
-            let parts = base.filter(a => a.form === 'participle');
-            if (!parts.length && typeof SpanishMorphology !== 'undefined') {
-                parts = SpanishMorphology.analyze(pg.masculine, _dictionary, _verbExtra).filter(a => a.form === 'participle');
+        if (isSpanish) {
+            const pg = participleGender(key);
+            if (pg && !readings.some(r => /^Past participle/.test(r.analysis))) {
+                const base = _verbIndex[pg.masculine] || [];
+                let parts = base.filter(a => a.form === 'participle');
+                if (!parts.length && activeMorph && typeof activeMorph.analyze === 'function') {
+                    parts = activeMorph.analyze(pg.masculine, _dictionary, _verbExtra).filter(a => a.form === 'participle');
+                }
+                parts.forEach(a => add(a.lemma, 'verb', 'Past participle (' + pg.label + ')'));
             }
-            parts.forEach(a => add(a.lemma, 'verb', 'Past participle (' + pg.label + ')'));
         }
 
         // Rank the readings so the likeliest one leads. Proper nouns sink
@@ -688,7 +744,11 @@ const Lexicon = (function () {
     // HungarianMorphology's own lookup/analyse path, which reads the raw
     // (possibly multi-sense) entry itself rather than going through here.
     function bestSense(entry) {
-        return (typeof HungarianMorphology !== 'undefined') ? HungarianMorphology.anySense(entry) : entry;
+        const morph = getMorphology(_lang);
+        if (morph && typeof morph.bestSense === 'function') return morph.bestSense(entry);
+        if (morph && typeof morph.anySense === 'function') return morph.anySense(entry);
+        if (typeof HungarianMorphology !== 'undefined' && _lang === 'hu') return HungarianMorphology.anySense(entry);
+        return entry;
     }
 
     /** Best dictionary sense for an exact lemma, or null if unavailable. */
@@ -783,6 +843,11 @@ const Lexicon = (function () {
     ]);
 
     function article(lemma) {
+        const morph = getMorphology(_lang);
+        if (morph && typeof morph.article === 'function') {
+            return morph.article(lemma, define(lemma));
+        }
+        if (!_lang || !_lang.startsWith('es')) return null;
         const entry = define(lemma);
         if (!entry || entry.type !== 'noun') return null;
         if (entry.gender === 'm') return 'el';
@@ -804,6 +869,11 @@ const Lexicon = (function () {
     // gender isn't known, so graders don't demand an article nobody can
     // check.
     function acceptedArticles(lemma) {
+        const morph = getMorphology(_lang);
+        if (morph && typeof morph.acceptedArticles === 'function') {
+            return morph.acceptedArticles(lemma, define(lemma));
+        }
+        if (!_lang || !_lang.startsWith('es')) return null;
         const a = article(lemma);
         if (!a) return null;
         if (a === 'la') return ['la', 'una'];
@@ -823,6 +893,18 @@ const Lexicon = (function () {
         load: load, lookup: lookup, isLoaded: isLoaded, article: article,
         withArticle: withArticle, acceptedArticles: acceptedArticles, frequencyRank: frequencyRank,
         define: define, findPhrase: findPhrase, search: search,
-        shortGloss: shortGloss, stripExplanatoryClauses: stripExplanatoryClauses
+        shortGloss: shortGloss, stripExplanatoryClauses: stripExplanatoryClauses,
+        registerMorphology: registerMorphology, getMorphology: getMorphology
     };
 })();
+
+if (typeof HungarianMorphology !== 'undefined') {
+    Lexicon.registerMorphology('hu', HungarianMorphology);
+}
+if (typeof SpanishMorphology !== 'undefined') {
+    Lexicon.registerMorphology('es', SpanishMorphology);
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = Lexicon;
+}

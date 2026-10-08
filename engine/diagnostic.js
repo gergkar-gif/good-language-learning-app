@@ -442,9 +442,11 @@ const DiagnosticTest = (function () {
         const lang = (typeof Lang !== 'undefined' && typeof Lang.current === 'function')
             ? Lang.current() : ((typeof Lang !== 'undefined' && typeof Lang.code === 'function') ? Lang.code() : 'es');
 
-        const tfnsLabels = lang === 'hu'
-            ? ['Igaz', 'Hamis', 'A szöveg nem tartalmaz ilyen információt']
-            : ['Verdadero', 'Falso', 'No se menciona en el texto'];
+        const tfnsLabels = (typeof Lang !== 'undefined' && typeof Lang.examLabels === 'function' && Lang.examLabels(lang).trueFalseNotStated)
+            ? Lang.examLabels(lang).trueFalseNotStated
+            : (lang === 'hu'
+                ? ['Igaz', 'Hamis', 'A szöveg nem tartalmaz ilyen információt']
+                : ['Verdadero', 'Falso', 'No se menciona en el texto']);
 
         let allAnswered = true;
         rs.questions.forEach(rq => {
@@ -767,9 +769,11 @@ const DiagnosticTest = (function () {
         const lang = (typeof Lang !== 'undefined' && typeof Lang.current === 'function')
             ? Lang.current() : ((typeof Lang !== 'undefined' && typeof Lang.code === 'function') ? Lang.code() : 'es');
 
-        const tfnsLabels = lang === 'hu'
-            ? ['Igaz', 'Hamis', 'A szöveg nem tartalmaz ilyen információt']
-            : ['Verdadero', 'Falso', 'No se menciona en el texto'];
+        const tfnsLabels = (typeof Lang !== 'undefined' && typeof Lang.examLabels === 'function' && Lang.examLabels(lang).trueFalseNotStated)
+            ? Lang.examLabels(lang).trueFalseNotStated
+            : (lang === 'hu'
+                ? ['Igaz', 'Hamis', 'A szöveg nem tartalmaz ilyen információt']
+                : ['Verdadero', 'Falso', 'No se menciona en el texto']);
 
         return _tierResults.map(tr => {
             const tierDef = tiers.find(t => t.level === tr.level) || {};

@@ -87,7 +87,7 @@ const Decks = (function () {
     }
 
     function cardFor(lemma) {
-        return srsDeck.find(card => card.spanish === lemma);
+        return srsDeck.find(card => ((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(card) : card.spanish) === lemma);
     }
 
     // decks.json stores each word once in a shared table and each deck refers
@@ -171,13 +171,13 @@ const Decks = (function () {
     // across two screens.
     function myDeck() {
         const reviewing = srsDeck.map(card => ({
-            lemma: card.spanish,
+            lemma: (typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(card) : card.spanish,
             translation: card.english,
             pos: card.type,
             source: card.source
         }));
         const known = (typeof knownWords !== 'undefined' ? knownWords : []).map(w => ({
-            lemma: w.spanish,
+            lemma: (typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(w) : w.spanish,
             translation: w.english,
             pos: w.type,
             source: w.source,
@@ -1525,8 +1525,8 @@ const Decks = (function () {
         const label = deck.name || 'this deck';
         if (!confirm(`Reset progress for all ${lemmas.size} word${lemmas.size === 1 ? '' : 's'} in "${label}"? Their review history and known status will be cleared — every other deck is untouched.`)) return;
 
-        srsDeck = srsDeck.filter(card => !lemmas.has(card.spanish));
-        knownWords = knownWords.filter(w => !lemmas.has(w.spanish));
+        srsDeck = srsDeck.filter(card => !lemmas.has((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(card) : card.spanish));
+        knownWords = knownWords.filter(w => !lemmas.has((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(w) : w.spanish));
         saveDeck();
         saveKnownWords();
         if (typeof UI !== 'undefined' && UI.toast) UI.toast(`Progress reset for "${label}".`, 'info');
@@ -1535,7 +1535,7 @@ const Decks = (function () {
 
     function removeFromAllWords(lemma) {
         if (!confirm(`Remove "${lemma}" from your deck? This deletes its review history.`)) return;
-        srsDeck = srsDeck.filter(card => card.spanish !== lemma);
+        srsDeck = srsDeck.filter(card => ((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(card) : card.spanish) !== lemma);
         saveDeck();
         render();
     }

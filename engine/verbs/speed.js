@@ -41,6 +41,12 @@ const VerbsSpeed = (function () {
     var _busy           = false;   // true while feedback is showing
 
     // ---- Helpers ----
+    function _getPersonLabel(key) {
+        var p = (typeof Lang !== 'undefined' && Lang.paradigm) ? Lang.paradigm() : null;
+        if (p && p.persons && p.persons[key]) return p.persons[key].label;
+        return PERSON_LABELS[key] || key;
+    }
+
     function _escapeHtml(text) {
         return (typeof UI !== 'undefined' && UI.escape)
             ? UI.escape(text)
@@ -147,7 +153,7 @@ const VerbsSpeed = (function () {
 
         // Pick a random person
         var person = _pickRandom(_persons);
-        var personLabel = PERSON_LABELS[person];
+        var personLabel = _getPersonLabel(person);
 
         // Pick a tense
         var tensePath, tenseLabel;

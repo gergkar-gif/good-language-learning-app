@@ -525,7 +525,22 @@ const Workshop = (function () {
     // driller that open() would only bounce back to the picker.
     function isAvailable(id) {
         const driller = DRILLERS.find(d => d.id === id);
-        return !driller || _available(driller);
+        return driller ? _available(driller) : false;
+    }
+
+    function getDriller(id) {
+        return DRILLERS.find(d => d.id === id) || null;
+    }
+
+    function drillers() {
+        return DRILLERS.slice();
+    }
+
+    function registerDriller(def) {
+        if (!def || !def.id) return;
+        const idx = DRILLERS.findIndex(d => d.id === def.id);
+        if (idx >= 0) DRILLERS[idx] = def;
+        else DRILLERS.push(def);
     }
 
     function setTab(tab) {
@@ -535,7 +550,7 @@ const Workshop = (function () {
         }
     }
 
-    return { render, open, close, activeDriller, isAvailable, setTab };
+    return { render, open, close, activeDriller, isAvailable, setTab, getDriller, drillers, registerDriller };
 })();
 
 if (typeof window !== 'undefined') {

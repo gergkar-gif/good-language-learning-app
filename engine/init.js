@@ -275,10 +275,28 @@ async function initialiseApp() {
         if (langParam && Lang.available().includes(langParam)) {
             Lang.set(langParam);
         } else if (minigameParam) {
-            if (minigameParam.startsWith('hu-') && Lang.code() !== 'hu') {
-                Lang.set('hu');
-            } else if (minigameParam === 'verbs' && !Lang.code().startsWith('es')) {
-                Lang.set(Lang.defaultCode());
+            let handled = false;
+            if (typeof Workshop !== 'undefined' && typeof Workshop.getDriller === 'function') {
+                const driller = Workshop.getDriller(minigameParam);
+                if (driller && driller.langs && driller.langs.length) {
+                    const currentLang = Lang.code();
+                    if (!driller.langs.some(l => l === currentLang || currentLang.startsWith(l + '-'))) {
+                        const targetLang = driller.langs[0];
+                        if (targetLang && Lang.available().includes(targetLang)) {
+                            Lang.set(targetLang);
+                        } else if (targetLang === 'es' && Lang.available().includes(Lang.defaultCode())) {
+                            Lang.set(Lang.defaultCode());
+                        }
+                    }
+                    handled = true;
+                }
+            }
+            if (!handled) {
+                if (minigameParam.startsWith('hu-') && Lang.code() !== 'hu') {
+                    Lang.set('hu');
+                } else if (minigameParam === 'verbs' && !Lang.code().startsWith('es')) {
+                    Lang.set(Lang.defaultCode());
+                }
             }
         }
     }

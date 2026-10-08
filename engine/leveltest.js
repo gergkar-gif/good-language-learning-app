@@ -50,6 +50,12 @@ const LevelTest = (function () {
     function hasTest(level) {
         if (!level || typeof level !== 'string') return false;
         const norm = level.toUpperCase();
+        if (typeof Lang !== 'undefined' && typeof Lang.profile === 'function') {
+            const p = Lang.profile();
+            if (p && Array.isArray(p.tests)) {
+                return p.tests.includes(norm);
+            }
+        }
         if (norm === 'A1' || norm === 'A2') return true;
         const lang = (typeof Lang !== 'undefined' && typeof Lang.current === 'function')
             ? Lang.current()

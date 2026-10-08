@@ -102,10 +102,17 @@
           "minItems": 1,
           "items": {
             "type": "object",
-            "required": ["spanish", "english"],
+            "required": ["english"],
+            "anyOf": [
+              { "required": ["spanish"] },
+              { "required": ["hungarian"] },
+              { "required": ["target"] }
+            ],
             "additionalProperties": false,
             "properties": {
               "spanish": { "type": "string", "minLength": 1 },
+              "hungarian": { "type": "string", "minLength": 1 },
+              "target": { "type": "string", "minLength": 1 },
               "english": { "type": "string", "minLength": 1 }
             }
           }

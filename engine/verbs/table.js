@@ -18,6 +18,12 @@ const VerbsTable = (function () {
     var _allCorrect = false;
 
     // ---- Helpers ----
+    function _getPersonLabel(key) {
+        var p = (typeof Lang !== 'undefined' && Lang.paradigm) ? Lang.paradigm() : null;
+        if (p && p.persons && p.persons[key]) return p.persons[key].label;
+        return PERSON_LABELS[key] || key;
+    }
+
     function _escapeHtml(text) {
         return (typeof UI !== 'undefined' && UI.escape)
             ? UI.escape(text)
@@ -80,11 +86,11 @@ const VerbsTable = (function () {
                 : (correct && typeof Speech !== 'undefined' ? Speech.button(correct) : '');
             rows += ''
                 + '<div class="vtable-row">'
-                +   '<label class="vtable-label" for="vtable-' + p + '">' + PERSON_LABELS[p] + '</label>'
+                +   '<label class="vtable-label" for="vtable-' + p + '">' + _getPersonLabel(p) + '</label>'
                 +   '<input id="vtable-' + p + '" class="vtable-input" type="text"'
                 +     ' autocomplete="off" autocapitalize="off" spellcheck="false"'
                 +     ' data-person="' + p + '" data-correct="' + _escapeHtml(correct) + '"'
-                +     ' aria-label="' + PERSON_LABELS[p] + '">'
+                +     ' aria-label="' + _getPersonLabel(p) + '">'
                 +   '<span class="vtable-correction hidden" aria-live="polite"></span>'
                 +   rowAudio
                 + '</div>';
@@ -197,7 +203,7 @@ const VerbsTable = (function () {
             } else {
                 input.classList.add('vtable-wrong');
                 var p = input.dataset.person;
-                if (p && PERSON_LABELS[p]) missedLabels.push(PERSON_LABELS[p]);
+                if (p && _getPersonLabel(p)) missedLabels.push(_getPersonLabel(p));
                 if (corr) {
                     corr.textContent = 'Correct: ' + correctAnswer;
                     corr.classList.remove('hidden');

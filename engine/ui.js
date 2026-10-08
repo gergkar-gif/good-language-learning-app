@@ -306,14 +306,20 @@ if (typeof document !== 'undefined') {
         const typed = target.value[start - 1];
         const lower = typed.toLowerCase();
 
-        const letterVariants = (UI.DIACRITIC_VARIANTS[langCode] || {})[lower];
+        const variantsMap = (typeof Lang !== 'undefined' && typeof Lang.diacritics === 'function')
+            ? Lang.diacritics(langCode)
+            : (UI.DIACRITIC_VARIANTS[langCode] || UI.DIACRITIC_VARIANTS[langCode.split('-')[0]] || {});
+        const letterVariants = variantsMap[lower];
         if (letterVariants) {
             const cased = typed === lower ? letterVariants : letterVariants.map(ch => ch.toUpperCase());
             showDiacPopover(target, bar, typed, cased, 'replace');
             return;
         }
 
-        const opener = (UI.DIACRITIC_OPENERS[langCode] || {})[typed];
+        const openersMap = (typeof Lang !== 'undefined' && typeof Lang.openers === 'function')
+            ? Lang.openers(langCode)
+            : (UI.DIACRITIC_OPENERS[langCode] || UI.DIACRITIC_OPENERS[langCode.split('-')[0]] || {});
+        const opener = openersMap[typed];
         if (opener) {
             showDiacPopover(target, bar, typed, [opener], 'sentence-start');
             return;

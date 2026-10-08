@@ -8,6 +8,12 @@ let currentWord = null;
 let currentWordTranslation = null;
 let currentWordPos = null;
 
+function cardLemma(card) {
+    if (!card) return '';
+    if (typeof card === 'string') return card;
+    return (typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(card) : (card.target || card.lemma || card.spanish || card.hungarian || '');
+}
+
 function loadDeck() {
     const saved = localStorage.getItem(Lang.key('srsDeck'));
     if (saved) {
@@ -21,7 +27,7 @@ function loadDeck() {
         // Enrich cards that were added before dictionary loaded
         for (const card of srsDeck) {
             if (card.english === 'unknown' || !card.english) {
-                const entry = (typeof Lexicon !== 'undefined' && typeof Lexicon.define === 'function') ? Lexicon.define(card.spanish) : null;
+                const entry = (typeof Lexicon !== 'undefined' && typeof Lexicon.define === 'function') ? Lexicon.define(cardLemma(card)) : null;
                 if (entry) {
                     card.english = entry.en;
                     card.type = entry.type;
@@ -73,13 +79,14 @@ function saveKnownWords() {
 }
 
 function isKnown(lemma) {
-    return knownWords.some(w => w.spanish === lemma);
+    return knownWords.some(w => cardLemma(w) === lemma);
 }
 
 function addKnownWord(spanish, english, type, source) {
     if (!spanish || isKnown(spanish)) return false;
-    srsDeck = srsDeck.filter(card => card.spanish !== spanish);
+    srsDeck = srsDeck.filter(card => cardLemma(card) !== spanish);
     knownWords.push({
+        target: spanish,
         spanish: spanish,
         english: english || 'unknown',
         type: type || 'unknown',
@@ -108,12 +115,13 @@ async function creditTestedOutWords(lessonIds) {
     }));
     if (Lang.code() !== course) return 0; // course switched mid-fetch
 
-    const inDeck = new Set(srsDeck.map(card => card.spanish));
+    const inDeck = new Set(srsDeck.map(card => cardLemma(card)));
     const added = new Date().toISOString();
     let count = 0;
     vocab.flat().forEach(word => {
         if (!word.lemma || inDeck.has(word.lemma) || isKnown(word.lemma)) return;
         knownWords.push({
+            target: word.lemma,
             spanish: word.lemma,
             english: word.translation || 'unknown',
             type: word.pos || 'unknown',
@@ -130,10 +138,11 @@ async function creditTestedOutWords(lessonIds) {
 // restoring whatever schedule it had before — a word retired long enough ago
 // to need pulling back deserves to start over, not resume mid-interval.
 function moveKnownToReview(spanish) {
-    const word = knownWords.find(w => w.spanish === spanish);
+    const word = knownWords.find(w => cardLemma(w) === spanish);
     if (!word) return;
-    knownWords = knownWords.filter(w => w.spanish !== spanish);
+    knownWords = knownWords.filter(w => cardLemma(w) !== spanish);
     srsDeck.push(Object.assign({
+        target: word.target || word.spanish,
         spanish: word.spanish,
         english: word.english,
         type: word.type,
@@ -154,11 +163,13 @@ const GRADUATION_MIN_INTERVAL_DAYS = 180;
 function maybeGraduate(card) {
     if (!card || card.reviews < GRADUATION_MIN_REVIEWS) return false;
     if (card.interval < GRADUATION_MIN_INTERVAL_DAYS) return false;
-    if (isKnown(card.spanish)) return false;
+    const lemma = cardLemma(card);
+    if (isKnown(lemma)) return false;
 
-    srsDeck = srsDeck.filter(c => c.spanish !== card.spanish);
+    srsDeck = srsDeck.filter(c => cardLemma(c) !== lemma);
     knownWords.push({
-        spanish: card.spanish,
+        target: lemma,
+        spanish: card.spanish || lemma,
         english: card.english,
         type: card.type,
         source: card.source,
@@ -244,7 +255,7 @@ function fuzzSeed(str) {
 
 function fuzzInterval(interval, card, rating) {
     if (interval < SRS_CONFIG.FUZZ_MIN_INTERVAL_DAYS) return interval;
-    const seed = fuzzSeed(`${card.spanish || ''}|${rating}|${interval}`);
+    const seed = fuzzSeed(`${cardLemma(card)}|${rating}|${interval}`);
     const delta = interval * SRS_CONFIG.FUZZ_RANGE * (seed * 2 - 1);
     return Math.min(SRS_CONFIG.MAX_INTERVAL, Math.max(1, Math.round(interval + delta)));
 }
@@ -374,7 +385,7 @@ function creditPractice(results, now) {
     now = now || new Date();
     let changed = false;
     (results || []).forEach(result => {
-        const card = srsDeck.find(c => c.spanish === result.lemma);
+        const card = srsDeck.find(c => cardLemma(c) === result.lemma);
         if (!card) return;
         const due = !card.nextReview || new Date(card.nextReview) <= now;
         if (result.rating !== 'again' && !due) return;
@@ -419,7 +430,7 @@ function addToSRS() {
     // already-known word in the Reader and hitting "Add to SRS Deck"
     // would push a second, independent card for the same lemma, since
     // this only ever checked srsDeck, never knownWords.
-    if (srsDeck.find(w => w.spanish === cleanWord) || isKnown(cleanWord)) {
+    if (srsDeck.find(w => cardLemma(w) === cleanWord) || isKnown(cleanWord)) {
         closePopup();
         return;
     }
@@ -430,6 +441,7 @@ function addToSRS() {
     }
     
     srsDeck.push(Object.assign({
+        target: cleanWord,
         spanish: cleanWord,
         english: data.en,
         type: data.type,
@@ -616,7 +628,7 @@ function startReviewSession(lemmas, name, options) {
 
     if (options && Array.isArray(options.words) && options.words.length > 0) {
         scopedSessionCards = options.words.map(w => {
-            const existing = srsDeck.find(c => c.spanish === w.lemma);
+            const existing = srsDeck.find(c => cardLemma(c) === w.lemma);
             if (existing) {
                 const card = Object.assign({}, existing);
                 card._original = existing;
@@ -624,6 +636,7 @@ function startReviewSession(lemmas, name, options) {
                 return card;
             }
             return {
+                target: w.lemma,
                 spanish: w.lemma,
                 english: w.translation || 'unknown',
                 type: w.pos || 'unknown',
@@ -789,7 +802,7 @@ function endReviewSession() {
 }
 
 function inScope(card) {
-    return !reviewScope || reviewScope.has(card.spanish);
+    return !reviewScope || reviewScope.has(cardLemma(card));
 }
 
 function getDueCards() {
@@ -928,22 +941,23 @@ function renderCard() {
     // hold an unrelated homograph ("son" = "tone", "llamas" = a placename).
     // Shortened either way: a review card tests recall, it isn't the place
     // for the Reader popup's full dictionary gloss (see Lexicon.shortGloss).
+    const targetWord = cardLemma(currentReviewCard);
     const hasOwnGloss = currentReviewCard.english && currentReviewCard.english !== 'unknown';
-    const liveEntry = hasOwnGloss ? null : Lexicon.define(currentReviewCard.spanish);
+    const liveEntry = hasOwnGloss ? null : Lexicon.define(targetWord);
     const displayEnglish = Lexicon.shortGloss(liveEntry ? liveEntry.en : (currentReviewCard.english || '—'));
     const displayType = liveEntry ? liveEntry.type : (currentReviewCard.type || '');
 
     // el/la in front of a noun the same way Decks' own word lists already
     // show it (Lexicon.withArticle) — silently a no-op for anything that
     // isn't a noun with a known simple gender.
-    const spanishDisplay = Lexicon.withArticle(currentReviewCard.spanish);
+    const spanishDisplay = Lexicon.withArticle(targetWord);
     const englishFirst = reviewDirection === 'en-es';
 
-    const spanishHtml = esc(spanishDisplay) + (typeof ParlourTTS !== 'undefined' ? ParlourTTS.button(currentReviewCard.spanish, { type: 'vocabulary' }) : '');
-    if (typeof ParlourTTS !== 'undefined' && ParlourTTS.preload && currentReviewCard.spanish) {
-        ParlourTTS.preload({ text: currentReviewCard.spanish, type: 'vocabulary' });
+    const spanishHtml = esc(spanishDisplay) + (typeof ParlourTTS !== 'undefined' ? ParlourTTS.button(targetWord, { type: 'vocabulary' }) : '');
+    if (typeof ParlourTTS !== 'undefined' && ParlourTTS.preload && targetWord) {
+        ParlourTTS.preload({ text: targetWord, type: 'vocabulary' });
         // The reveal reads it with its article (speakRevealedWord()).
-        if (spanishDisplay !== currentReviewCard.spanish) ParlourTTS.preload({ text: spanishDisplay, type: 'vocabulary' });
+        if (spanishDisplay !== targetWord) ParlourTTS.preload({ text: spanishDisplay, type: 'vocabulary' });
     }
     // A card flagged leech (see SRS_CONFIG.LEECH_THRESHOLD) gets a quiet
     // badge here rather than any different treatment of the card itself —
@@ -960,7 +974,7 @@ function renderCard() {
         document.getElementById('review-back').textContent = displayEnglish;
         document.getElementById('review-context').innerHTML = contextHtml;
     }
-    reviewExpectedSpanish = currentReviewCard.spanish;
+    reviewExpectedSpanish = targetWord;
     reviewExpectedEnglish = displayEnglish;
 
     const typeMode = reviewMode === 'type';
@@ -1398,8 +1412,9 @@ function revealTypedResult(bucket, elapsedSec, isNearMiss) {
 // Enter, so mobile browsers allow the audio.
 function speakRevealedWord() {
     if (!currentReviewCard || typeof ParlourTTS === 'undefined' || !ParlourTTS.speak) return;
+    const cardWord = cardLemma(currentReviewCard);
     const word = (typeof Lexicon !== 'undefined' && Lexicon.withArticle)
-        ? Lexicon.withArticle(currentReviewCard.spanish) : currentReviewCard.spanish;
+        ? Lexicon.withArticle(cardWord) : cardWord;
     ParlourTTS.speak({ text: word, type: 'vocabulary' });
 }
 
@@ -1431,23 +1446,25 @@ function rateCard(rating) {
 
     currentReviewCard._seenInSession = true;
 
+    const cardWord = cardLemma(currentReviewCard);
+
     if (rating === 'again') {
-        if (!sessionRelearningQueue.some(c => c.spanish === currentReviewCard.spanish)) {
+        if (!sessionRelearningQueue.some(c => cardLemma(c) === cardWord)) {
             sessionRelearningQueue.push(currentReviewCard);
         } else {
-            sessionRelearningQueue = sessionRelearningQueue.filter(c => c.spanish !== currentReviewCard.spanish);
+            sessionRelearningQueue = sessionRelearningQueue.filter(c => cardLemma(c) !== cardWord);
             sessionRelearningQueue.push(currentReviewCard);
         }
     } else {
-        sessionRelearningQueue = sessionRelearningQueue.filter(c => c.spanish !== currentReviewCard.spanish);
+        sessionRelearningQueue = sessionRelearningQueue.filter(c => cardLemma(c) !== cardWord);
     }
 
     if (reviewSessionStats) {
         reviewSessionStats.total++;
         if (typeof reviewSessionStats[rating] === 'number') reviewSessionStats[rating]++;
-        if (rating === 'again' && !reviewSessionStats.missed.some(w => w.lemma === currentReviewCard.spanish)) {
+        if (rating === 'again' && !reviewSessionStats.missed.some(w => cardLemma(w) === cardWord)) {
             reviewSessionStats.missed.push({
-                lemma: currentReviewCard.spanish,
+                lemma: cardWord,
                 translation: currentReviewCard.english,
                 pos: currentReviewCard.type
             });

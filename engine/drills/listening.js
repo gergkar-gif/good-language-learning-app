@@ -137,56 +137,66 @@ const ListeningDriller = (function () {
 
     // ---- Exercise builders — one per type in PARLOUR_LISTENING_SPEC.md §2 ----
 
+    function _pairTarget(p) {
+        return (typeof Lang !== 'undefined' && Lang.targetText) ? Lang.targetText(p) : (p.target || p.spanish || p.hungarian || '');
+    }
+
     // Decoys of similar length from the same pool, so a learner can't just
     // spot the odd one out by size — spec §6's "linguistically plausible,
     // not obvious elimination", applied as a light, data-driven heuristic
     // rather than hand-authored near-miss sentences.
     function _pickSimilar(pool, pair, key, n) {
-        const targetLen = _wordCount(pair[key]);
-        const targetText = pair[key].toLowerCase();
-        let candidates = pool.filter(p => p !== pair && p[key].toLowerCase() !== targetText);
-        const similar = candidates.filter(p => Math.abs(_wordCount(p[key]) - targetLen) <= 2);
+        const getVal = (p) => (key === 'english' || key === 'translation') ? (p.english || p.translation || '') : _pairTarget(p);
+        const targetVal = getVal(pair);
+        const targetLen = _wordCount(targetVal);
+        const targetLower = targetVal.toLowerCase();
+        let candidates = pool.filter(p => p !== pair && getVal(p).toLowerCase() !== targetLower);
+        const similar = candidates.filter(p => Math.abs(_wordCount(getVal(p)) - targetLen) <= 2);
         if (similar.length >= n) candidates = similar;
-        return _shuffled(candidates).slice(0, n).map(p => p[key]);
+        return _shuffled(candidates).slice(0, n).map(p => getVal(p));
     }
 
     function _buildMeaning(pair, pool) {
         const decoys = _pickSimilar(pool, pair, 'english', DECOY_COUNT);
         if (decoys.length < DECOY_COUNT) return null;
-        const options = _shuffled([pair.english, ...decoys]);
+        const targetText = _pairTarget(pair);
+        const english = pair.english || pair.translation || '';
+        const options = _shuffled([english, ...decoys]);
         return {
             kind: 'listen-choice',
-            audio: pair.spanish,
+            audio: targetText,
             promptText: 'What does it mean?',
             options,
-            correct: options.indexOf(pair.english),
-            transcript: pair.spanish,
-            translation: pair.english
+            correct: options.indexOf(english),
+            transcript: targetText,
+            translation: english
         };
     }
 
     function _buildSpanishChoice(pair, pool) {
-        const decoys = _pickSimilar(pool, pair, 'spanish', DECOY_COUNT);
+        const targetText = _pairTarget(pair);
+        const decoys = _pickSimilar(pool, pair, 'target', DECOY_COUNT);
         if (decoys.length < DECOY_COUNT) return null;
-        const options = _shuffled([pair.spanish, ...decoys]);
+        const options = _shuffled([targetText, ...decoys]);
         return {
             kind: 'listen-choice',
-            audio: pair.spanish,
+            audio: targetText,
             promptText: 'Which sentence did you hear?',
             options,
-            correct: options.indexOf(pair.spanish),
-            transcript: pair.spanish,
-            translation: pair.english
+            correct: options.indexOf(targetText),
+            transcript: targetText,
+            translation: pair.english || pair.translation || ''
         };
     }
 
     function _buildType(pair) {
+        const targetText = _pairTarget(pair);
         return {
             kind: 'listen-type',
-            audio: pair.spanish,
-            answer: pair.spanish,
-            transcript: pair.spanish,
-            translation: pair.english
+            audio: targetText,
+            answer: targetText,
+            transcript: targetText,
+            translation: pair.english || pair.translation || ''
         };
     }
 
@@ -212,17 +222,18 @@ const ListeningDriller = (function () {
     }
 
     function _buildMissingWord(pair) {
-        const word = _pickBlankWord(pair.spanish);
+        const targetText = _pairTarget(pair);
+        const word = _pickBlankWord(targetText);
         if (!word) return null;
-        const blanked = _blank(pair.spanish, word);
+        const blanked = _blank(targetText, word);
         if (!blanked) return null;
         return {
             kind: 'listen-missing-word',
-            audio: pair.spanish,
+            audio: targetText,
             sentence: blanked,
             answer: word,
-            transcript: pair.spanish,
-            translation: pair.english
+            transcript: targetText,
+            translation: pair.english || pair.translation || ''
         };
     }
 

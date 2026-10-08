@@ -433,7 +433,9 @@ const CefrExam = (function () {
                     _state.speakingRecognition = new SpeechRecognition();
                     _state.speakingRecognition.continuous = true;
                     _state.speakingRecognition.interimResults = true;
-                    _state.speakingRecognition.lang = (typeof Lang !== 'undefined' && Lang.code().startsWith('hu')) ? 'hu-HU' : 'es-ES';
+                    _state.speakingRecognition.lang = (typeof Lang !== 'undefined' && typeof Lang.sttLocale === 'function')
+                        ? Lang.sttLocale()
+                        : ((typeof Lang !== 'undefined' && Lang.code().startsWith('hu')) ? 'hu-HU' : 'es-ES');
 
                     _state.speakingRecognition.onresult = (event) => {
                         let finalStr = '';
@@ -599,8 +601,11 @@ const CefrExam = (function () {
             const isHu = _id.includes('hu');
             const isA1 = (_data && _data.level === 'A1') || _id.includes('a1');
             const isA2 = (_data && _data.level === 'A2') || _id.includes('a2');
-            const isB2 = (_data && _data.level === 'B2') || _id.includes('b2');
-            const speakingConnectors = isHu
+            const levelCode = isA1 ? 'A1' : (isA2 ? 'A2' : (isB2 ? 'B2' : 'B1'));
+            const profileConnectors = (typeof Lang !== 'undefined' && typeof Lang.discourseConnectors === 'function')
+                ? Lang.discourseConnectors(levelCode, isHu ? 'hu' : 'es')
+                : [];
+            const speakingConnectors = profileConnectors.length ? profileConnectors : (isHu
                 ? (isA1 ? ['és', 'mert', 'is', 'de', 'szintén', 'szerintem']
                     : (isA2 ? ['és', 'mert', 'is', 'de', 'szintén', 'szerintem', 'ezért', 'például', 'aztán']
                     : (isB2 ? ['véleményem szerint', 'úgy vélem', 'meglátásom szerint', 'elsőként', 'például', 'ugyanakkor', 'mindazonáltal', 'ennek következtében', 'másrészt', 'egyrészt', 'összességében']
@@ -608,7 +613,7 @@ const CefrExam = (function () {
                 : (isA1 ? ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo']
                     : (isA2 ? ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo', 'por eso', 'después', 'entonces']
                     : (isB2 ? ['en primer lugar', 'por ejemplo', 'en mi opinión', 'desde mi perspectiva', 'además', 'por consiguiente', 'no obstante', 'sin embargo', 'en definitiva', 'cabe destacar']
-                    : ['en primer lugar', 'por ejemplo', 'en mi opinión', 'además', 'por eso'])));
+                    : ['en primer lugar', 'por ejemplo', 'en mi opinión', 'además', 'por eso']))));
             const foundConnectors = speakingConnectors.filter(c => lowerText.includes(c));
             const cohesionScore = Math.min(6, Math.max(2, foundConnectors.length * 2));
 

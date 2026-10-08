@@ -23,6 +23,11 @@ const SpeakingRunner = (function () {
     let _userAudioPlayer = null;
     let _capturedTranscript = '';
 
+    function _target(ex) {
+        if (!ex) return '';
+        return (typeof Lang !== 'undefined' && Lang.targetText) ? Lang.targetText(ex) : (ex.target || ex.sentence || ex.spanish || '');
+    }
+
     function _esc(text) {
         const d = document.createElement('div');
         d.textContent = text;
@@ -95,7 +100,7 @@ const SpeakingRunner = (function () {
         revealEl.innerHTML = `
             ${isPromptSpeak ? `
                 <div class="sp-target-text">
-                    <p class="sp-es-lead">${_esc(_exercise.spanish)}</p>
+                    <p class="sp-es-lead">${_esc(_target(_exercise))}</p>
                 </div>
             ` : ''}
             ${wordsHtml}
@@ -133,7 +138,7 @@ const SpeakingRunner = (function () {
             }
         }
         if (typeof ParlourTTS !== 'undefined') {
-            ParlourTTS.speak({ text: _exercise.spanish, type: 'pronunciation' });
+            ParlourTTS.speak({ text: _target(_exercise), type: 'pronunciation' });
         }
     }
 
@@ -239,7 +244,7 @@ const SpeakingRunner = (function () {
         }
 
         SpeechInput.startListening({
-            target: _exercise.spanish || _exercise.sentence || '',
+            target: _target(_exercise),
             preferRecording: true,
             onInterim: interim => {
                 _capturedTranscript = interim;
@@ -260,7 +265,7 @@ const SpeakingRunner = (function () {
                 _stopRecording();
                 const micLabel = _container.querySelector('.sp-mic-status');
                 if (micLabel) micLabel.textContent = 'Tap to speak';
-                const evalResult = SpeechInput.evaluate(_exercise.spanish, text);
+                const evalResult = SpeechInput.evaluate(_target(_exercise), text);
                 _finishEvaluation(evalResult);
             },
             onAudioReady: url => {
@@ -305,7 +310,7 @@ const SpeakingRunner = (function () {
                         liveText.textContent = captured;
                         liveText.classList.remove('hidden');
                     }
-                    const evalResult = SpeechInput.evaluate(_exercise.spanish, captured);
+                    const evalResult = SpeechInput.evaluate(_target(_exercise), captured);
                     _finishEvaluation(evalResult);
                     return;
                 }
@@ -394,7 +399,7 @@ const SpeakingRunner = (function () {
                         <p class="sp-instruction">${_esc(instruction)}</p>
                     ` : `
                         <div class="sp-target-lead">
-                            <p class="sp-es-text">${_esc(exercise.spanish)}</p>
+                            <p class="sp-es-text">${_esc(_target(exercise))}</p>
                             <button type="button" class="sp-listen-btn" data-action="listen-lead" aria-label="Listen to model pronunciation">
                                 ${typeof Art !== 'undefined' ? Art.icon('listening') : ''} Listen
                             </button>
@@ -469,7 +474,7 @@ const SpeakingRunner = (function () {
         if (listenBtn) {
             listenBtn.addEventListener('click', () => {
                 if (typeof ParlourTTS !== 'undefined') {
-                    ParlourTTS.speak({ text: _exercise.spanish, type: 'pronunciation' });
+                    ParlourTTS.speak({ text: _target(_exercise), type: 'pronunciation' });
                 }
             });
         }

@@ -158,7 +158,7 @@ const TranslationDriller = (function () {
 
         return dir === DIRECTION.ES_EN
             ? {
-                prompt: pair.spanish,
+                prompt: (typeof Lang !== 'undefined' && Lang.targetText) ? Lang.targetText(pair) : (pair.target || pair.spanish || pair.hungarian || ''),
                 model: pair.english,
                 promptLabel: `${langName} → English`,
                 direction: 'es-en',
@@ -166,7 +166,7 @@ const TranslationDriller = (function () {
             }
             : {
                 prompt: pair.english,
-                model: pair.spanish,
+                model: (typeof Lang !== 'undefined' && Lang.targetText) ? Lang.targetText(pair) : (pair.target || pair.spanish || pair.hungarian || ''),
                 promptLabel: `English → ${langName}`,
                 direction: 'en-es',
                 placeholder: `Translate to ${langName}…`

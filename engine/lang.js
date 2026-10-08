@@ -51,6 +51,159 @@ const Lang = (function () {
     // per multi-language-plan) so it stays out.
     const AVAILABLE = ['es-latam', 'es-es', 'hu'];
 
+    // Comprehensive language profiles — centralizing orthography, speech
+    // locales, connectors, and exam labels so engine modules never need
+    // hardcoded if-lang branches.
+    const PROFILES = {
+        'es-latam': {
+            code: 'es-latam',
+            baseCode: 'es',
+            name: 'Spanish',
+            courseName: 'Spanish (Latin America)',
+            voices: ['es-MX', 'es-US', 'es-419', 'es-CO', 'es-AR', 'es-ES', 'es'],
+            sttLocale: 'es-MX',
+            tests: ['A1', 'A2', 'B1', 'B2'],
+            diacritics: { a: ['á'], e: ['é'], i: ['í'], o: ['ó'], u: ['ú', 'ü'], n: ['ñ'] },
+            openers: { '?': '¿', '!': '¡' },
+            examLabels: {
+                trueFalseNotStated: ['Verdadero', 'Falso', 'No se menciona en el texto']
+            },
+            paradigm: {
+                hasVosotros: false,
+                persons: {
+                    yo: { key: 'yo', label: 'yo' },
+                    tu: { key: 'tu', label: 'tú' },
+                    ud: { key: 'ud', label: 'él / ella' },
+                    nosotros: { key: 'nosotros', label: 'nosotros' },
+                    vosotros: { key: 'vosotros', label: 'vosotros' },
+                    uds: { key: 'uds', label: 'ellos / ustedes' }
+                },
+                defaultPersons: ['yo', 'tu', 'ud', 'nosotros', 'uds'],
+                vosotrosPersons: ['yo', 'tu', 'ud', 'nosotros', 'vosotros', 'uds'],
+                tenses: [
+                    { value: 'indicativo.presente',    label: 'Present' },
+                    { value: 'indicativo.preterito',   label: 'Preterite' },
+                    { value: 'indicativo.imperfecto',  label: 'Imperfect' },
+                    { value: 'indicativo.futuro',      label: 'Future' },
+                    { value: 'indicativo.condicional', label: 'Conditional' },
+                    { value: 'subjuntivo.presente',    label: 'Present Subjunctive' },
+                    { value: 'subjuntivo.imperfecto',  label: 'Imperfect Subjunctive' },
+                    { value: 'subjuntivo.futuro',      label: 'Future Subjunctive' },
+                    { value: 'all',                    label: 'All Tenses' }
+                ]
+            },
+            paradigm: {
+                hasVosotros: true,
+                persons: {
+                    yo: { key: 'yo', label: 'yo' },
+                    tu: { key: 'tu', label: 'tú' },
+                    ud: { key: 'ud', label: 'él / ella' },
+                    nosotros: { key: 'nosotros', label: 'nosotros' },
+                    vosotros: { key: 'vosotros', label: 'vosotros' },
+                    uds: { key: 'uds', label: 'ellos / ustedes' }
+                },
+                defaultPersons: ['yo', 'tu', 'ud', 'nosotros', 'uds'],
+                vosotrosPersons: ['yo', 'tu', 'ud', 'nosotros', 'vosotros', 'uds'],
+                tenses: [
+                    { value: 'indicativo.presente',    label: 'Present' },
+                    { value: 'indicativo.preterito',   label: 'Preterite' },
+                    { value: 'indicativo.imperfecto',  label: 'Imperfect' },
+                    { value: 'indicativo.futuro',      label: 'Future' },
+                    { value: 'indicativo.condicional', label: 'Conditional' },
+                    { value: 'subjuntivo.presente',    label: 'Present Subjunctive' },
+                    { value: 'subjuntivo.imperfecto',  label: 'Imperfect Subjunctive' },
+                    { value: 'subjuntivo.futuro',      label: 'Future Subjunctive' },
+                    { value: 'all',                    label: 'All Tenses' }
+                ]
+            },
+            discourseConnectors: {
+                A1: ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo'],
+                A2: ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo', 'por eso', 'después', 'entonces'],
+                B1: ['en primer lugar', 'por ejemplo', 'en mi opinión', 'además', 'por eso'],
+                B2: ['en primer lugar', 'por ejemplo', 'en mi opinión', 'desde mi perspectiva', 'además', 'por consiguiente', 'no obstante', 'sin embargo', 'en definitiva', 'cabe destacar']
+            }
+        },
+        'es-es': {
+            code: 'es-es',
+            baseCode: 'es',
+            name: 'Spanish',
+            courseName: 'Spanish (Spain)',
+            voices: ['es-ES', 'es'],
+            sttLocale: 'es-ES',
+            tests: ['A1', 'A2', 'B1'],
+            diacritics: { a: ['á'], e: ['é'], i: ['í'], o: ['ó'], u: ['ú', 'ü'], n: ['ñ'] },
+            openers: { '?': '¿', '!': '¡' },
+            examLabels: {
+                trueFalseNotStated: ['Verdadero', 'Falso', 'No se menciona en el texto']
+            },
+            discourseConnectors: {
+                A1: ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo'],
+                A2: ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo', 'por eso', 'después', 'entonces'],
+                B1: ['en primer lugar', 'por ejemplo', 'en mi opinión', 'además', 'por eso'],
+                B2: ['en primer lugar', 'por ejemplo', 'en mi opinión', 'desde mi perspectiva', 'además', 'por consiguiente', 'no obstante', 'sin embargo', 'en definitiva', 'cabe destacar']
+            }
+        },
+        hu: {
+            code: 'hu',
+            baseCode: 'hu',
+            name: 'Hungarian',
+            courseName: 'Hungarian',
+            voices: ['hu-HU', 'hu'],
+            sttLocale: 'hu-HU',
+            tests: ['A1', 'A2', 'B1', 'C1'],
+            diacritics: { a: ['á'], e: ['é'], i: ['í'], o: ['ó', 'ö', 'ő'], u: ['ú', 'ü', 'ű'] },
+            openers: {},
+            examLabels: {
+                trueFalseNotStated: ['Igaz', 'Hamis', 'A szöveg nem tartalmaz ilyen információt']
+            },
+            discourseConnectors: {
+                A1: ['és', 'mert', 'is', 'de', 'szintén', 'szerintem'],
+                A2: ['és', 'mert', 'is', 'de', 'szintén', 'szerintem', 'ezért', 'például', 'aztán'],
+                B1: ['véleményem szerint', 'szerintem', 'úgy gondolom', 'először is', 'például', 'ugyanakkor', 'azonban', 'ezért', 'másrészt', 'egyrészt'],
+                B2: ['véleményem szerint', 'úgy vélem', 'meglátásom szerint', 'elsőként', 'például', 'ugyanakkor', 'mindazonáltal', 'ennek következtében', 'másrészt', 'egyrészt', 'összességében']
+            }
+        },
+        fr: {
+            code: 'fr',
+            baseCode: 'fr',
+            name: 'French',
+            courseName: 'French',
+            voices: ['fr-FR', 'fr-CA', 'fr'],
+            sttLocale: 'fr-FR',
+            tests: ['A1', 'A2'],
+            diacritics: { a: ['à', 'â'], c: ['ç'], e: ['é', 'è', 'ê', 'ë'], i: ['î', 'ï'], o: ['ô', 'œ'], u: ['ù', 'û', 'ü'] },
+            openers: {},
+            examLabels: {
+                trueFalseNotStated: ['Vrai', 'Faux', 'Non mentionné dans le texte']
+            },
+            paradigm: {
+                hasVosotros: false,
+                persons: {
+                    je: { key: 'je', label: "je / j'" },
+                    tu: { key: 'tu', label: 'tu' },
+                    il: { key: 'il', label: 'il / elle / on' },
+                    nous: { key: 'nous', label: 'nous' },
+                    vous: { key: 'vous', label: 'vous' },
+                    ils: { key: 'ils', label: 'ils / elles' }
+                },
+                defaultPersons: ['je', 'tu', 'il', 'nous', 'vous', 'ils'],
+                tenses: [
+                    { value: 'indicatif.present', label: 'Présent' },
+                    { value: 'indicatif.imparfait', label: 'Imparfait' },
+                    { value: 'indicatif.passe_compose', label: 'Passé composé' },
+                    { value: 'indicatif.futur_simple', label: 'Futur simple' },
+                    { value: 'all', label: 'All Tenses' }
+                ]
+            },
+            discourseConnectors: {
+                A1: ['et', 'mais', 'parce que', 'aussi', 'par exemple'],
+                A2: ['donc', 'alors', 'puis', 'cependant', 'par conséquent'],
+                B1: ['à mon avis', 'selon moi', 'd\'abord', 'en effet', 'pourtant'],
+                B2: ['en premier lieu', 'néanmoins', 'toutefois', 'd\'une part', 'd\'autre part']
+            }
+        }
+    };
+
     let current = DEFAULT;
     try {
         const stored = localStorage.getItem(SETTING_KEY);
@@ -65,6 +218,62 @@ const Lang = (function () {
 
     function defaultCode() {
         return DEFAULT;
+    }
+
+    function paradigm(targetCode) {
+        const p = profile(targetCode);
+        return (p && p.paradigm) ? p.paradigm : null;
+    }
+
+    function profile(targetCode) {
+        const c = targetCode || current;
+        if (PROFILES[c]) return PROFILES[c];
+        const base = c.split('-')[0];
+        if (PROFILES[base]) return PROFILES[base];
+        return {
+            code: c,
+            baseCode: base,
+            name: LANGUAGE_NAMES[c] || c,
+            courseName: COURSE_NAMES[c] || c,
+            voices: VOICES[c] || [c],
+            sttLocale: c,
+            tests: ['A1', 'A2'],
+            diacritics: {},
+            openers: {},
+            examLabels: { trueFalseNotStated: ['True', 'False', 'Not Stated'] },
+            discourseConnectors: { A1: [], A2: [], B1: [], B2: [] }
+        };
+    }
+
+    function registerProfile(cfg) {
+        if (!cfg || !cfg.code) return;
+        PROFILES[cfg.code] = Object.assign({}, profile(cfg.code), cfg);
+        if (cfg.voices) VOICES[cfg.code] = cfg.voices;
+        if (cfg.name) LANGUAGE_NAMES[cfg.code] = cfg.name;
+        if (cfg.courseName) COURSE_NAMES[cfg.code] = cfg.courseName;
+        if (cfg.isAvailable && !AVAILABLE.includes(cfg.code)) AVAILABLE.push(cfg.code);
+    }
+
+    function sttLocale(targetCode) {
+        return profile(targetCode).sttLocale || (targetCode || current);
+    }
+
+    function diacritics(targetCode) {
+        return profile(targetCode).diacritics || {};
+    }
+
+    function openers(targetCode) {
+        return profile(targetCode).openers || {};
+    }
+
+    function examLabels(targetCode) {
+        return profile(targetCode).examLabels || {};
+    }
+
+    function discourseConnectors(level, targetCode) {
+        const p = profile(targetCode);
+        const lvl = (level || 'B1').toUpperCase();
+        return (p.discourseConnectors && p.discourseConnectors[lvl]) || [];
     }
 
     // Natural language name for exercises and prompts ('Spanish', 'Hungarian')
@@ -100,6 +309,22 @@ const Lang = (function () {
     // mark the other complete and both decks would pour into one pile.
     function key(name) {
         return `${current}:${name}`;
+    }
+
+    // Universal target text accessor that accepts any exercise/pair/card item shape
+    function targetText(item) {
+        if (!item) return '';
+        if (typeof item === 'string') return item;
+        const base = current.split('-')[0];
+        return item.target || item.lemma || item[current] || item[base] || item.hungarian || item.spanish || item.sentence || '';
+    }
+
+    // Universal lemma accessor that accepts any dictionary/word/card item shape
+    function targetLemma(item) {
+        if (!item) return '';
+        if (typeof item === 'string') return item;
+        const base = current.split('-')[0];
+        return item.target || item.lemma || item[current] || item[base] || item.hungarian || item.spanish || item.word || '';
     }
 
     // Migrate older keys to course-scoped names without losing learner progress.
@@ -153,5 +378,27 @@ const Lang = (function () {
 
     migrateLegacyKeys();
 
-    return { code, defaultCode, name, nameFor, courseName, available, voices, content, key, set };
+    return {
+        code,
+        current: code,
+        defaultCode,
+        name,
+        nameFor,
+        courseName,
+        available,
+        voices,
+        content,
+        key,
+        set,
+        profile,
+        registerProfile,
+        sttLocale,
+        diacritics,
+        openers,
+        examLabels,
+        discourseConnectors,
+        targetText,
+        targetLemma,
+        paradigm
+    };
 })();

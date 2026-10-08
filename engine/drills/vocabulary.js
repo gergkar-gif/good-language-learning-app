@@ -199,7 +199,7 @@ const VocabularyDriller = (function () {
     function _buildContextIndex() {
         const index = {};
         _pairs.forEach(pair => {
-            const sentence = pair.spanish || pair.hungarian || pair.target || '';
+            const sentence = (typeof Lang !== 'undefined' && Lang.targetText) ? Lang.targetText(pair) : (pair.spanish || pair.hungarian || pair.target || '');
             const tokens = sentence.match(WORD_RE) || [];
             if (tokens.length < MIN_CONTEXT_WORDS) return;
 

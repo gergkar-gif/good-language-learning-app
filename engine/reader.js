@@ -21,13 +21,13 @@ function getWordStatus(spanish) {
         return 'mastered';
     }
     if (typeof knownWords !== 'undefined' && Array.isArray(knownWords)) {
-        if (knownWords.some(w => w.spanish === clean)) return 'mastered';
+        if (knownWords.some(w => ((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(w) : w.spanish) === clean)) return 'mastered';
     }
 
     // 2. Check active SRS deck
     let card = null;
     if (typeof srsDeck !== 'undefined' && Array.isArray(srsDeck)) {
-        card = srsDeck.find(w => w.spanish === clean);
+        card = srsDeck.find(w => ((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(w) : w.spanish) === clean);
     }
 
     // 3. If not found, check via Lexicon lemma resolution
@@ -42,7 +42,7 @@ function getWordStatus(spanish) {
                 return 'mastered';
             }
             if (typeof srsDeck !== 'undefined' && Array.isArray(srsDeck)) {
-                card = srsDeck.find(w => w.spanish === lemma);
+                card = srsDeck.find(w => ((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(w) : w.spanish) === lemma);
             }
         }
     }
@@ -408,7 +408,7 @@ async function showWord(spanish, contextTokens, tokenIndex, looksLikeName, conte
     }
     const capWarning = document.getElementById('popup-new-word-cap');
     const btn = document.getElementById('popup-add-btn');
-    const alreadySaved = srsDeck.find(w => w.spanish === cleanWord);
+    const alreadySaved = srsDeck.find(w => ((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(w) : w.spanish) === cleanWord);
     const alreadyKnown = typeof isKnown === 'function' && isKnown(cleanWord);
     const atCap = !canAddNewWord();
 
@@ -1866,10 +1866,10 @@ window.Reader = {
     _buildFamiliarSet() {
         const set = new Set();
         if (typeof srsDeck !== 'undefined' && Array.isArray(srsDeck)) {
-            srsDeck.forEach(c => { if ((c.reviews || 0) >= 1) set.add(c.spanish); });
+            srsDeck.forEach(c => { if ((c.reviews || 0) >= 1) set.add((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(c) : c.spanish); });
         }
         if (typeof knownWords !== 'undefined' && Array.isArray(knownWords)) {
-            knownWords.forEach(w => set.add(w.spanish));
+            knownWords.forEach(w => set.add((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(w) : w.spanish));
         }
         return set.size ? set : null;
     },
@@ -2540,8 +2540,9 @@ window.Reader = {
                 return;
             }
 
-            if (typeof srsDeck === 'undefined' || srsDeck.find(function(c) { return c.spanish === w.lemma; })) return;
+            if (typeof srsDeck === 'undefined' || srsDeck.find(function(c) { return ((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(c) : c.spanish) === w.lemma; })) return;
             srsDeck.push(Object.assign({
+                target: w.lemma,
                 spanish: w.lemma,
                 english: w.translation || 'unknown',
                 type: w.pos || 'unknown',
