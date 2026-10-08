@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-10-08-hu-tts-fix';
+const CACHE_VERSION = 'v2026-10-08-multilang-rework';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -157,6 +157,11 @@ self.addEventListener('fetch', event => {
     if (request.method !== 'GET') return;
 
     const url = new URL(request.url);
+
+    // Bypass localhost/127.0.0.1 completely so local development is never cached
+    if (url.hostname === 'localhost' || url.hostname === '127.0.0.1') {
+        return;
+    }
 
     // Bypass external requests (Cloudflare Worker sync, Resend, AI APIs)
     if (url.origin !== self.location.origin) {

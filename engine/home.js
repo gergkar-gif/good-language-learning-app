@@ -384,6 +384,7 @@ const Home = (function () {
     }
 
     function hideWelcome() {
+        try { localStorage.setItem('parlour_first_open_completed', 'true'); } catch (err) {}
         const el = document.getElementById('pl-welcome');
         if (el && el.parentNode) el.parentNode.removeChild(el);
     }
@@ -626,6 +627,10 @@ const Home = (function () {
         host.addEventListener('change', e => {
             const select = e.target.closest('#hm-lang-select');
             if (!select || select.value === Lang.code()) return;
+            try {
+                localStorage.setItem('parlour_first_open_completed', 'true');
+                localStorage.setItem(`${select.value}:diagnosticOnboardingDismissed`, 'true');
+            } catch (err) {}
             Lang.set(select.value);
             location.reload();
         });
@@ -667,7 +672,9 @@ const Home = (function () {
 
         const progress = (typeof getProgress === 'function') ? getProgress() : {};
         const completedCount = Object.keys(progress).length;
-        const showOnboarding = completedCount === 0
+        const hasEverOnboarded = !!localStorage.getItem('parlour_first_open_completed');
+        const showOnboarding = !hasEverOnboarded
+            && completedCount === 0
             && typeof DiagnosticTest !== 'undefined'
             && !DiagnosticTest.hasTaken()
             && !DiagnosticTest.isOnboardingDismissed();

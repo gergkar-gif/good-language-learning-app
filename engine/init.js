@@ -406,6 +406,25 @@ function _hideBootScreen() {
 function _initServiceWorker() {
     if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
 
+    // In local development (localhost / 127.0.0.1), unregister any active service worker
+    // and wipe caches so live code changes are immediately visible without stale cache traps.
+    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+        navigator.serviceWorker.getRegistrations().then(regs => {
+            for (const reg of regs) {
+                reg.unregister();
+                console.log('Parlour: Unregistered active ServiceWorker on localhost');
+            }
+        });
+        if ('caches' in window) {
+            caches.keys().then(names => {
+                for (const name of names) {
+                    caches.delete(name);
+                }
+            });
+        }
+        return;
+    }
+
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js').then(reg => {
             console.log('Parlour: ServiceWorker registered successfully, scope:', reg.scope);

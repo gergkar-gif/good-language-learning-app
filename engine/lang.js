@@ -370,6 +370,9 @@ const Lang = (function () {
         current = next;
         try {
             localStorage.setItem(SETTING_KEY, next);
+            if (localStorage.getItem('parlour_first_open_completed') === 'true') {
+                localStorage.setItem(`${next}:diagnosticOnboardingDismissed`, 'true');
+            }
         } catch (error) {
             console.warn('Language: could not save the chosen course', error);
         }
