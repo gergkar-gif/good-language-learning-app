@@ -3737,8 +3737,8 @@ In 'Kizárólag Pacsirta kedvéért mondtak le a színházról', why does 'le' f
 * Because 'Kizárólag Pacsirta kedvéért' occupies the pre-verbal focus slot, triggering inversion.
 - Because 'lemond' is an inseparable verb.
 - Because the sentence is a question.
-decision: 
-why: 
+decision: match: Because 'lemond' is an inseparable compound verb that forbids prefix splitting. || Because past-tense declarative sentences always place the prefix after the verb.
+why: Both new wrong options provide plausible but clearly false grammatical explanations of Hungarian verbal prefix syntax (length 79 and 80 vs 97 chars); only the focus inversion rule is correct.
 
 ### b2-03-05-dialogue-1   teaches: ['nominalization']
 files: content/hu/exercises/b2/b2-03-05-ex.json
@@ -3748,8 +3748,8 @@ Tanár: _____
 * Az 'amikor megvizsgáltuk' mellékmondat helyett írd azt, hogy 'a kérdés megvizsgálása során'!
 - Írj bele több szleng kifejezést!
 - Hagyd el az összes igét a szövegből!
-decision: 
-why: 
+decision: match: Az 'amikor megvizsgáltuk' mellékmondat helyett írd azt, hogy 'a kérdés megvizsgálást során'! || Az 'amikor megvizsgáltuk' mellékmondat helyett írd azt, hogy 'a kérdés megvizsgálásban során'!
+why: Both new wrong options use incorrect case marking (-t and -ban instead of possessive -a) for the nominalized noun governed by postposition 'során' (93 and 95 vs 93 chars); only the marked option provides grammatical, elevated essay nominalization.
 
 ### b2-03-05-intro-1   teaches: ['b2-language-style-word-formation-vocab']
 files: content/hu/exercises/b2/b2-03-05-ex.json
@@ -3758,8 +3758,8 @@ What is a 'körmondat' in literary analysis?
 * a long, complex periodic sentence with multiple subordinate clauses
 - a one-word exclamation
 - a spelling mistake
-decision: 
-why: 
+decision: match: a brief declarative sentence containing only a single predicate || a rhyming poetic stanza composed of alternating metric feet
+why: Both new wrong options are real grammatical/poetic concepts (simple sentence, poetic stanza) that do not define a periodic complex sentence (körmondat), matching length and style (64 and 59 vs 69 chars).
 
 ### b2-04-05-reading-1   teaches: None
 files: content/hu/exercises/b2/b2-04-05-ex.json
@@ -3768,8 +3768,8 @@ Miért keresi fel Tiborc az éj leple alatt Bánk bánt a királyi palotában?
 * Hogy elpanaszolja a nép elviselhetetlen nyomorúságát, és segítséget kérjen, nehogy a kétségbeesés bűnbe sodorja a családját.
 - Hogy meghívja a nádort az udvaroncok fényes lakomájára.
 - Hogy jelentse a király váratlan hazatérését a hadjáratból.
-decision: 
-why: 
+decision: shorten: Hogy elpanaszolja a nép nyomorúságát, és segítséget kérjen.
+why: Shortened to the core purpose from the drama (lamenting the people's misery and asking for help), matching the length of the wrong options (59 vs 57 and 58 chars) with all options answering 'Miért' with 'Hogy...'.
 
 ### b2-05-01-intro-2   teaches: ['b2-roots-tradition-collective-memory-vocab']
 files: content/hu/exercises/b2/b2-05-01-ex.json
@@ -3778,8 +3778,8 @@ What does 'megvereget (valakinek a vállát)' mean?
 * to pat (someone's shoulder) gently
 - to injure someone
 - to ignore someone
-decision: 
-why: 
+decision: match: to push someone's shoulder away angrily || to lean against someone's shoulder lazily
+why: Both new wrong options are plausible shoulder physical actions of matching length (39 and 41 vs 35 chars) that clearly do not mean 'megvereget' (gentle patting/tapping).
 
 ### b2-05-05-dialogue-1   teaches: ['b2-frequentative-verbs']
 files: content/hu/exercises/b2/b2-05-05-ex.json
@@ -3789,8 +3789,8 @@ lesson: content/hu/lessons/b2/b2-05-05.json
 * Úgy, hogy nem kapkodtak: apránként végezték a dolgukat, és nemzedékről nemzedékre átadták a rengeteg bölcsességét.
 - Úgy, hogy elhamarkodottan kapkodtak a nemzedékben.
 - Úgy, hogy nemzedékről nemzedékre átadni a bölcsességet!
-decision: 
-why: 
+decision: match: Úgy, hogy elhamarkodottan kapkodtak: nem építettek menedéket, és hamar feladták a téli küzdelmet. || Úgy, hogy válogatás nélkül mindent feléltek: nem gyűjtögettek készletet a zord hónapok hidegére.
+why: Both new wrong options answer 'Hogyan...' with natural, grammatically correct full Hungarian sentences featuring frequentative verbs (kapkodtak, gyűjtögettek), matching length (97 and 97 vs 115 chars) while describing behaviors that contradict survival.
 
 ### b2-05-consolidation-9   teaches: ['b2-frequentative-verbs']
 files: content/hu/exercises/b2/b2-05-consolidation-ex.json
@@ -3799,8 +3799,8 @@ What is the exact difference between 'olvastat' and 'olvasgat'?
 * 'olvastat' is causative ('makes someone read'), while 'olvasgat' is frequentative/attenuative ('reads casually at leisure').
 - Both mean 'reads casually at leisure'.
 - 'olvasgat' is causative, while 'olvastat' is frequentative.
-decision: 
-why: 
+decision: match: 'olvasgat' is causative ('makes someone read'), while 'olvastat' is frequentative/attenuative ('reads casually at leisure'). || Both forms are causative suffixes, differing only in whether the action is performed by one person or a group.
+why: Option 1 exactly inverts the causative/frequentative assignment with matching glosses (124 chars), while Option 2 gives a plausible but false morphological claim (111 chars); both match length and style of the correct option (124 chars).
 
 ### b2-07-02-dialogue-2   teaches: ['correlative-minel-annal']
 files: content/hu/exercises/b2/b2-07-02-ex.json
@@ -3810,8 +3810,8 @@ Tanár: _____
 * Minél pontosabban figyelte a részleteket, annál kevésbé uralkodott el rajta a pánik.
 - Mert nem vette észre, hogy a műtőben van.
 - Amennyiben félt, azonnal elaludt.
-decision: 
-why: 
+decision: match: Amennyire pontosabban figyelte a részleteket, annyira kevésbé uralkodott el rajta a pánik. || Minél pontosan figyelte a részleteket, annál kevésbé uralkodott el rajta a pánik.
+why: Both new wrong options violate the grammar of correlative comparatives (amennyire... annyira cannot take comparatives; minél requires comparative pontosabban, not positive pontosan); matching length (90 and 81 vs 84 chars).
 
 ### b2-07-04-dialogue-1   teaches: ['correlative-minel-annal']
 files: content/hu/exercises/b2/b2-07-04-ex.json
@@ -3821,8 +3821,8 @@ Orvos: _____
 * Úgy, hogy a tünet pihenés után is fennmaradt, feltéve, hogy a beteg erős fénybe nézett.
 - Úgy, hogy a beteg soha nem volt fáradt.
 - Aszerint, hogy nem vizsgáltuk meg a szemét.
-decision: 
-why: 
+decision: match: Úgy, hogy a panaszok azonnal megszűntek, mihelyt a beteg egy rövid időre lehunyta a szemét. || Úgy, hogy a tünetek pihenés közben teljesen elmúltak, amint a beteg sötét szobába vonult.
+why: Both new wrong options are natural medical sentences starting with 'Úgy, hogy...' describing symptoms disappearing with rest (which would prove the opposite, that it was simple fatigue); matching length (91 and 90 vs 87 chars).
 
 ### b2-09-05-reading-2   teaches: None
 files: content/hu/exercises/b2/b2-09-05-ex.json
@@ -3831,8 +3831,8 @@ Miért nem zárhatta be a hivatalnok a jegypénztárt a szolgálati szabályzat 
 * Mert amíg bárki az állomáson tartózkodik, hogy megkérdezze, miért nem jár a villamos, a pénztárnak nyitva kell maradnia.
 - Mert elvesztette a váróterem ajtajának a kulcsát.
 - Mert éjszakai vonatot vártak a szomszédos vágányon.
-decision: 
-why: 
+decision: shorten: Mert amíg utas tartózkodik az állomáson, nyitva kell tartania.
+why: Shortened to the core rule from the story (must keep open as long as a passenger is at the station), matching the length of the wrong options (62 vs 48 and 50 chars), all starting with 'Mert...'.
 
 ### b2-10-05-reading-2   teaches: None
 files: content/hu/exercises/b2/b2-10-05-ex.json
@@ -3841,8 +3841,8 @@ Mit tett a tanár, ha valamelyik diák felületes kifejezést használt a fordí
 * Azonnal kijavíttatta vele a mondatot, és addig keresgéltette a pontos magyar szót, amíg a szöveg tisztán nem csengett.
 - Maga írta meg helyette a teljes házi feladatot a táblán.
 - Megtiltotta neki, hogy többé felszólaljon az önképzőkörben.
-decision: 
-why: 
+decision: shorten: Kijavíttatta vele a mondatot, és megkerestette a pontos magyar szót.
+why: Shortened to the essential actions from the text (made the student correct the sentence and find the exact Hungarian word), matching the length of the wrong options (68 vs 56 and 59 chars).
 
 ### b2-15-03-intro-1   teaches: ['b2-censorship-ambiguity-indirect-expression-vocab']
 files: content/hu/exercises/b2/b2-15-03-ex.json
@@ -3851,8 +3851,8 @@ What is an 'eufemizmus'?
 * a mild or indirect word used instead of a harsh or blunt one
 - a loud marching song
 - a strictly military weapon
-decision: 
-why: 
+decision: match: an exaggerated statement not meant to be taken literally || a sharp satirical remark intended to mock or insult someone
+why: Both new wrong options are standard rhetorical definitions (hyperbole, sarcasm) matching length and style (57 and 59 vs 60 chars) without cartoonish distractors.
 
 ### b2-15-consolidation-3   teaches: ['agentless-constructions']
 files: content/hu/exercises/b2/b2-15-consolidation-ex.json
@@ -3861,8 +3861,8 @@ What does '-ásra/-ésre kerül' express in official Hungarian prose?
 * administrative passive-avoidance (an action being performed or implemented)
 - a spatial movement into a room
 - a polite greeting between colleagues
-decision: 
-why: 
+decision: match: frequentative or repetitive action carried out habitually over a period || immediate future obligation requiring the subject to take direct action
+why: Both new wrong options describe real grammatical functions (habitual/frequentative aspect, personal obligation) matching length and academic style (72 and 71 vs 77 chars), leaving passive-avoidance as the only correct function.
 
 ### b2-20-04-controlled-3   teaches: ['b2-relational-compounds']
 files: content/hu/exercises/b2/b2-20-04-ex.json
@@ -3871,8 +3871,8 @@ Which case is governed by 'szemben' in 'az előző nemzedék____ szemben'?
 * -kel (instrumental: nemzedékkel)
 - -nek (dative)
 - -t (accusative)
-decision: 
-why: 
+decision: match: -nek (dative: nemzedéknek) || -t (accusative: nemzedéket)
+why: Both wrong options include the inflected example noun in parentheses matching the exact pattern of the correct option (26 and 27 vs 32 chars).
 
 ### b2-21-04-intro-1   teaches: ['b2-economic-cycles-crisis-adaptation-vocab']
 files: content/hu/exercises/b2/b2-21-04-ex.json
@@ -3881,8 +3881,8 @@ What is 'versenyképesség' in economic and market discourse?
 * the ability of an enterprise or national economy to produce goods and services that meet international market tests while sustaining income growth
 - a sporting trophy awarded to the fastest marathon runner
 - a mandatory municipal fee charged for street parking
-decision: 
-why: 
+decision: match: the legal framework established by regulatory authorities to penalize monopolistic pricing and enforce consumer protection across industries || the financial reserve maintained by commercial institutions to safeguard corporate liquidity during unexpected recessions or credit crunches
+why: Both new wrong options provide genuine macroeconomic/regulatory definitions (antitrust law, liquidity reserve) of matching length (143 and 141 vs 148 chars); only the marked option defines competitiveness.
 
 ### b2-21-consolidation-9   teaches: ['b2-proportional-rates']
 files: content/hu/exercises/b2/b2-21-consolidation-ex.json
@@ -3891,8 +3891,8 @@ Why is 'kétszer akkora' used instead of 'kétszer annyi' in 'A költségvetési
 * Because 'akkora' compares non-countable conceptual or dimensional magnitude (size of deficit), while 'annyi' compares discrete countable quantities.
 - Because 'annyi' can only be used with food items.
 - Because 'akkora' is the only form allowed in newspaper articles.
-decision: 
-why: 
+decision: match: Because 'annyi' compares non-countable dimensional magnitude, while 'akkora' compares discrete countable quantities. || Because 'akkora' is required when comparing monetary amounts, while 'annyi' is used exclusively for physical objects.
+why: Option 1 directly inverts the grammatical rule, and Option 2 posits an invented semantic restriction; both match length and style (117 and 117 vs 150 chars, ratio 1.28x) without silly absolutes.
 
 ### b2-27-consolidation-2   teaches: ['b2-borders-kinship-transborder-identity-vocab']
 files: content/hu/exercises/b2/b2-27-consolidation-ex.json
@@ -3901,8 +3901,8 @@ What does 'kisebbségi lét' embody in Central European history?
 * the historical experience, legal struggles, and cultural endurance of national communities living outside their kin-state
 - a short-term recreational trip to mountain tourist resorts
 - a temporary commercial license issued to foreign merchants
-decision: 
-why: 
+decision: match: the diplomatic process of establishing bilateral trade agreements and consular representations between neighboring states || the demographic movement of rural laborers relocating voluntarily to capital cities during rapid industrial modernization
+why: Both new wrong options are plausible historical/sociological concepts (bilateral trade treaties, rural-to-urban labor migration) matching length (122 and 124 vs 121 chars); only the marked option defines minority existence.
 
 ### b2-35-04-controlled-3   teaches: ['past-conditional-volna']
 files: content/hu/exercises/b2/b2-35-04-ex.json
@@ -3911,8 +3911,8 @@ Select the postposition that commonly pairs with 'érdekében' in sustainability
 * a fenntarthatóság érdekében (in the interest of sustainability)
 - a fenntarthatóság nélkül
 - a fenntarthatóság helyett
-decision: 
-why: 
+decision: shorten: a fenntarthatóság érdekében
+why: Removed the parenthetical English gloss so the correct option matches the wrong options in length and style (27 vs 24 and 24 chars).
 
 ### b2-36-04-controlled-3   teaches: ['b2-mastery-synthesis']
 files: content/hu/exercises/b2/b2-36-04-ex.json
@@ -3921,8 +3921,8 @@ Which case suffix is governed by 'értelmezés' when discussing the interpretati
 * genitive possessive (-nak/-nek az értelmezése)
 - ablative (-tól/-től)
 - delative (-ról/-ről)
-decision: 
-why: 
+decision: match: ablative case suffix (-tól/-től: a szövegtől) || delative case suffix (-ról/-ről: a szövegről)
+why: Both wrong options match the format and grammatical detail of the correct option with a sample noun phrase (45 and 45 vs 47 chars).
 
 ### b2-bartokkodaly-05.ex02   teaches: ['b2-bartok-kodaly-vocab']
 files: content/hu/exercises/b2/b2-bartokkodaly-05-ex.json
@@ -3931,8 +3931,8 @@ Miben különbözött az 1972-ben indult budapesti táncházmozgalom a korábbi 
 * Nem színpadi látványosságként, hanem élő, közösségi szórakozási és improvizációs formaként élesztette újjá a néptáncot.
 - Betiltotta a prímás és a brácsa használatát.
 - Csak hivatásos balettművészek léphettek be a terembe.
-decision: 
-why: 
+decision: match: Merev, előre rögzített koreográfiákra épülő, zárt színházi előadások keretében mutatta be a paraszti hagyományokat. || A hagyományos vonószenekarokat modern elektronikus hangszerekkel és nyugati táncstílusokkal váltotta fel a színpadon.
+why: Both new wrong options describe plausible alternative performance formats of matching length (116 and 118 vs 117 chars) that are false regarding the participatory táncház movement.
 
 ### b2-gazdasagiatmenet-04.ex08   teaches: None
 files: content/hu/exercises/b2/b2-gazdasagiatmenet-04-ex.json
@@ -3941,8 +3941,8 @@ Milyen veszélyre figyelmeztetnek az összeszerelő üzemekkel kapcsolatban a kr
 * Arra, hogy a hozzáadott érték alacsony maradhat, és az ország túlzottan kiszolgáltatottá válik a külföldi autóiparnak.
 - Arra, hogy túl sok mérnök diplomázik a hazai egyetemeken.
 - Arra, hogy a vasúthálózat teljesen feleslegessé válik.
-decision: 
-why: 
+decision: shorten: Arra, hogy az alacsony hozzáadott érték kiszolgáltatottsághoz vezet.
+why: Shortened to the essential risk (low value added leads to vulnerability), matching wrong option length (68 vs 58 and 53 chars), all starting with 'Arra, hogy...'.
 
 ### b2-gimnaziumok-05.ex08   teaches: None
 files: content/hu/exercises/b2/b2-gimnaziumok-05-ex.json
@@ -3951,8 +3951,8 @@ Milyen segítséget nyújtanak a modern tehetséggondozó és szakkollégiumi pr
 * Ösztöndíjakkal, hétvégi műhelyekkel és egyetemi hallgatók által végzett mentorálással támogatják őket.
 - Felmentik őket az érettségi vizsga letétele alól.
 - Kizárólag sportversenyeken versenyeztetik őket.
-decision: 
-why: 
+decision: match: Anyagi támogatást adnak kollégiumi lakhatásra, de nem nyújtanak számukra rendszeres tanulmányi mentorálást. || Nyelvtanfolyamokat szerveznek a diákoknak, de nem vonják be őket a tudományos diákköri műhelymunkába.
+why: Both new wrong options are realistic educational assistance models that lack the full academic mentoring described in the text; matching length (107 and 102 vs 104 chars) without absolutes or absurdities.
 
 ### b2-kulpolitika-05.ex08   teaches: None
 files: content/hu/exercises/b2/b2-kulpolitika-05-ex.json
@@ -3961,8 +3961,8 @@ Melyik három nagy német prémium autógyártó működtet vagy épít üzemet 
 * Audi (Győr), BMW (Debrecen) és Mercedes-Benz (Kecskemét).
 - Volkswagen, Renault és Fiat.
 - Toyota, Honda és Hyundai.
-decision: 
-why: 
+decision: shorten: Audi, BMW és Mercedes-Benz.
+why: Dropped the parenthetical city locations so the correct option matches the format and length of the wrong options (27 vs 28 and 26 chars).
 
 ### b2-lakhatas-02.ex08   teaches: None
 files: content/hu/exercises/b2/b2-lakhatas-02-ex.json
@@ -3971,8 +3971,8 @@ Hogyan befolyásolta a telepi lakók egészségét a kertes környezet a szöveg
 * A saját kerti zöldségtermesztés és a tiszta levegő miatt a halandóság lényegesen alacsonyabb volt a belvárosi átlagnál.
 - A lakók azonnal megbetegedtek a fák túlzott közelségétől.
 - Semmilyen hatással nem volt az egészségi állapotukra.
-decision: 
-why: 
+decision: match: A kertes környezet miatt a lakók ritkábban mozogtak a szabadban, így az átlagos életkor nem tért el a pesti adatoktól. || A vidéki életmód miatt a fertőző betegségek jóval gyorsabban terjedtek, mint a modern csatornázott bérházak lakásaiban.
+why: Both new wrong options present plausible public-health hypotheses that contradict the text (120 and 122 vs 115 chars) without cartoonish claims or absolutes.
 
 ### b2-lakhatas-05.ex08   teaches: None
 files: content/hu/exercises/b2/b2-lakhatas-05-ex.json
@@ -3981,8 +3981,8 @@ Miért kiemelten fontos a belvárosi épületállomány energetikai korszerűsí
 * Mert a régi, rosszul szigetelt bérházak rengeteg energiát pazarolnak el, így a felújítás klímavédelmi és anyagi érdek is.
 - Mert a fűtés teljesen feleslegessé vált a fővárosban.
 - Mert az új szigetelés megsemmisíti a történelmi műemlékeket.
-decision: 
-why: 
+decision: match: Mert a modern fűtési rendszerek beépítésével a bérházak fenntartási költségei a többszörösére növekednének a lakók számára. || Mert a műemléki szabályozás értelmében a homlokzatok felújítása nélkül a belvárosi lakásokat nem lehetne bérbe adni.
+why: Both new wrong options provide serious urban policy explanations starting with 'Mert...' of matching length (124 and 117 vs 118 chars); only option 0 gives the climate and economic necessity from the text.
 
 ### b2-magyarfilm-05.ex01   teaches: ['b2-hungarian-cinema-vocab']
 files: content/hu/exercises/b2/b2-magyarfilm-05-ex.json
@@ -3991,8 +3991,8 @@ Milyen operatőri megoldást alkalmazott a Saul fia a feszültség megteremtés�
 * Szűk látószöget, amely folyamatosan a főszereplő arcára és tarkójára tapad, homályban hagyva a hátteret.
 - Szélesvásznú helikopteres felvételeket a táborról.
 - Fekete-fehér rajzfilmes animációs betéteket.
-decision: 
-why: 
+decision: match: Madártávlatból rögzített, széles totálképeket, amelyek a láger hatalmas méreteit mutatják be fentről. || Gyors, dinamikus vágásokkal kísért akciójeleneteket, amelyek a szökési kísérlet részleteit emelik ki.
+why: Both new wrong options describe plausible film techniques in the accusative of matching length (103 and 102 vs 103 chars) that were deliberately not used in Saul fia.
 
 ### b2-marslakok-01.ex01   teaches: ['b2-the-martians-vocab']
 files: content/hu/exercises/b2/b2-marslakok-01-ex.json
@@ -4001,8 +4001,8 @@ Mit jelent az 'elméleti fizika' kifejezés a tudományos életben?
 * A fizikának azt az ágát, amely matematikai modellekkel és elméleti törvényszerűségekkel írja le a természet jelenségeit.
 - Kizárólag ipari gyárakban végzett gépjavítási munkát.
 - Csillagászati távcsövek lencséinek kézi csiszolását.
-decision: 
-why: 
+decision: match: A fizikának azt az ágát, amely kísérleti berendezésekkel és mérőműszerekkel vizsgálja az anyagi részecskék tulajdonságait. || A fizikának azt az ágát, amely közvetlen mérnöki és ipari technológiai alkalmazások kifejlesztésére összpontosít a gyárakban.
+why: Both new wrong options define real branches of physics (experimental and applied physics) matching length and syntactic structure (122 and 126 vs 119 chars) without absolutes or blue-collar distractors.
 
 ### b2-matematikasakk-02.ex06   teaches: None
 files: content/hu/exercises/b2/b2-matematikasakk-02-ex.json
@@ -4011,8 +4011,8 @@ Kiknek a nevével találkozhatunk a KöMaL huszadik század eleji sikeres felada
 * Olyan későbbi világhírű tudósokéval, mint Kármán Tódor, Wigner Jenő, Teller Ede és Erdős Pál.
 - Kizárólag külföldi politikusokéval.
 - Csak általános iskolai rajztanárokéval.
-decision: 
-why: 
+decision: match: Olyan neves politikusokéval, mint Tisza István, Károlyi Mihály, Bethlen István és Teleki Pál. || Olyan ismert írókéval és költőkéval, mint Babits Mihály, Kosztolányi Dezső és Karinthy Frigyes.
+why: Both new wrong options name actual groups of prominent early 20th-century Hungarian figures (politicians, writers) matching case, length, and style (93 and 95 vs 95 chars) without 'Csak' or 'Kizárólag'.
 
 ### b2-matematikasakk-04.ex06   teaches: None
 files: content/hu/exercises/b2/b2-matematikasakk-04-ex.json
@@ -4021,8 +4021,8 @@ Miért indult Polgár Judit pályafutása során következetesen a nyílt (férf
 * Hogy bebizonyítsa: a szellemi sportokban és a sakktábla mellett nincs különbség férfi és női teljesítmény között.
 - Mert Magyarországon nem rendeztek női sakkversenyeket.
 - Mert a női versenyeken tilos volt a támadó játék.
-decision: 
-why: 
+decision: match: Hogy megfeleljen a nemzetközi szövetség azon elvárásának, amely kötelezővé tette a vegyes bajnokságokon való részvételt. || Hogy a nővéreivel közösen alapított budapesti sakklubot népszerűsítse a hazai és a külföldi amatőr játékosok körében.
+why: Both new wrong options answer 'Miért...' with purpose clauses starting with 'Hogy...', matching length (121 and 118 vs 112 chars) with plausible tournament motives that are false according to the story.
 
 ### b2-matematikasakk-05.ex06   teaches: None
 files: content/hu/exercises/b2/b2-matematikasakk-05-ex.json
@@ -4031,8 +4031,8 @@ Miért nevezi a szöveg a matematikát és a sakkot 'egyetemes nyelvnek'?
 * Mert egy elegáns matematikai bizonyítást vagy egy sakkjátszmát a Föld bármely pontján nyelvi akadályok nélkül megértenek.
 - Mert mindkettőt kizárólag eszperantó nyelven oktatják.
 - Mert egyikben sincsenek szabályok.
-decision: 
-why: 
+decision: match: Mert mindkét terület szabályrendszerét azonos nemzetközi szervezet és közös bürokratikus testület felügyeli világszerte. || Mert a nemzetközi versenyeken a résztvevők kötött szóbeli formulákon keresztül, rögzített protokoll szerint kommunikálnak.
+why: Both new wrong options answer 'Miért...' starting with 'Mert...', matching length (122 and 123 vs 117 chars) without cartoonish claims or absolutes.
 
 ### b2-mediatortenet-01.ex08   teaches: None
 files: content/hu/exercises/b2/b2-mediatortenet-01-ex.json
@@ -4041,8 +4041,8 @@ Milyen reformokat sürgetett Kossuth Lajos a Pesti Hírlap vezércikkeiben?
 * A jobbágyfelszabadítást, a közteherviselést, az esküdtszékek felállítását és a hazai ipar védelmét.
 - A latin hivatalos nyelv örökös fenntartását.
 - A vármegyei gyűlések bezárását.
-decision: 
-why: 
+decision: shorten: A jobbágyfelszabadítást és a közteherviselést.
+why: Shortened to Kossuth's two primary reform goals from the era, matching the length of the wrong options (46 vs 45 and 32 chars) in the accusative.
 
 ### b2-mediatortenet-02.ex02   teaches: ['b2-public-sphere-history-vocab']
 files: content/hu/exercises/b2/b2-mediatortenet-02-ex.json
@@ -4051,8 +4051,8 @@ Miért tekintjük Puskás Tivadar 1893-as budapesti Telefonhírmondóját világ
 * Mert harminc évvel a rádió megjelenése előtt telefonvezetéken keresztül valósította meg a napi rendszeres hírközlést és élő kulturális műsorszórást.
 - Mert ez volt a világ első színes televíziócsatornája.
 - Mert postagalambokkal kézbesítette a tőzsdei árfolyamokat.
-decision: 
-why: 
+decision: match: Mert ez volt az első olyan nemzetközi távírórendszer, amely tenger alatti kábeleken kötötte össze az európai fővárosok tőzsdei központjait. || Mert a világon először alkalmazott vezeték nélküli rádióhullámokat a polgári lakosság azonnali katasztrófavédelmi riasztására Budapesten.
+why: Both new wrong options are plausible telecommunication milestones starting with 'Mert...' matching length (141 and 138 vs 146 chars) without cartoonish post pigeons.
 
 ### b2-mediatortenet-02.ex08   teaches: None
 files: content/hu/exercises/b2/b2-mediatortenet-02-ex.json
@@ -4061,8 +4061,8 @@ Milyen műsorokat sugárzott napközben a Telefonhírmondó az előfizetőknek?
 * Tőzsdei árfolyamokat, országgyűlési híreket, pontos időjelzést, színházi kritikákat, nyelvleckéket és esti operaközvetítéseket.
 - Kizárólag vasúti menetrendeket éjféltől hajnalig.
 - Csak némafilmeket feliratokkal.
-decision: 
-why: 
+decision: match: Hivatalos rendőrségi közleményeket, zárt katonai felhívásokat, bírósági tárgyalási jegyzőkönyveket és diplomáciai táviratokat. || Egyházi szertartásokat, vidéki mezőgazdasági vásárok részletes árait, valamint a postai csomagküldő szolgálat napi díjszabását.
+why: Both new wrong options provide plausible broadcast programming in the accusative matching exact length (127 and 127 vs 127 chars) without absolutes or silent movies on telephone wire.
 
 ### b2-mediatortenet-03.ex02   teaches: ['b2-public-sphere-history-vocab']
 files: content/hu/exercises/b2/b2-mediatortenet-03-ex.json
@@ -4071,8 +4071,8 @@ Miért volt történelmi jelentőségű a Magyar Televízió 1989. június 16-i 
 * Mert cenzúra nélkül, egyenes adásban közvetítette Nagy Imre és mártírtársai újratemetését a Hősök teréről.
 - Mert ekkor vezették be a hétfői adásszünetet.
 - Mert ekkor szólalt meg először a Telefonhírmondó.
-decision: 
-why: 
+decision: match: Mert ekkor indult el az első független kereskedelmi hírcsatorna adása a budapesti stúdiókból sugározva. || Mert ekkor közvetítették először színes technikával az állami ünnepségeket és a katonai díszszemlét.
+why: Both new wrong options describe television history milestones starting with 'Mert...' matching length (104 and 102 vs 107 chars); only option 0 is the true historical event of June 16, 1989.
 
 ### b2-mediatortenet-04.ex02   teaches: ['b2-public-sphere-history-vocab']
 files: content/hu/exercises/b2/b2-mediatortenet-04-ex.json
@@ -4081,8 +4081,8 @@ Mit hozott létre az 1996-os médiatörvény Magyarországon?
 * A duális médiarendszert, amelyben a közszolgálati csatornák mellett országos kereskedelmi televíziók és rádiók is működhetnek.
 - Az állami televíziós monopólium örökös fenntartását.
 - A nyomtatott napilapok betiltását.
-decision: 
-why: 
+decision: match: A kizárólagos közszolgálati modellt, amelyben a magáncégek csak helyi kábelhálózatokon keresztül sugározhattak műsorokat. || Az államilag felügyelt sajtótrösztöt, amely a nyomtatott és elektronikus hírközlés minden frekvenciáját közvetlenül irányította.
+why: Both new wrong options are formal descriptions of alternative media models in the accusative matching length (122 and 129 vs 126 chars) without cartoonish prohibitions.
 
 ### b2-mediatortenet-05.ex02   teaches: ['b2-public-sphere-history-vocab']
 files: content/hu/exercises/b2/b2-mediatortenet-05-ex.json
@@ -4091,8 +4091,8 @@ Mit értünk a digitális nyilvánosságban a „véleménybuborék” fogalma a
 * Azt a jelenséget, amikor az algoritmusok miatt a felhasználó szinte kizárólag a saját előzetes nézeteit megerősítő hírekkel találkozik.
 - A Telefonhírmondó rézből készült fülhallgatóját.
 - A nyomtatott napilapok hétvégi mellékletét.
-decision: 
-why: 
+decision: match: Azt a digitális biztonsági eljárást, amellyel a szerkesztőségek megvédik az online felületeiket a kéretlen reklámoktól és vírusoktól. || Azt a fizetési rendszert, amelynek révén a prémium olvasók havi előfizetési díj ellenében hirdetésmentesen érhetik el a cikkeket.
+why: Both new wrong options define real digital media concepts (ad/virus filtering, paywall system) matching length and syntactic structure (135 and 130 vs 134 chars); only option 0 defines opinion bubble.
 
 ### b2-nyelvujitas-04.ex06   teaches: None
 files: content/hu/exercises/b2/b2-nyelvujitas-04-ex.json
@@ -4101,8 +4101,8 @@ Melyik szópár köszönhető a magyar nyelvújításnak?
 * anyag (az 'anya' szóból) és irodalom (az 'ír' igéből)
 - víz és tűz
 - kéz és láb
-decision: 
-why: 
+decision: match: víz (ősi finnugor alapszó) és tűz (ősi elemnév) || kéz (ősi testrésznév) és láb (ősi alapszó)
+why: Both wrong options add parenthetical etymological notes matching the style and length of the correct option (47 and 42 vs 53 chars), testing neologisms against Finno-Ugric core roots.
 
 ### b2-politikairetorika-01.ex08   teaches: None
 files: content/hu/exercises/b2/b2-politikairetorika-01-ex.json
@@ -4111,8 +4111,8 @@ Ki látható a Hősök tere közepén álló harminchat méteres oszlop tetején
 * Gábriel arkangyal, aki a Szent Koronát és a kettős keresztet tartja a magasba.
 - Schickedanz Albert építész.
 - I. Ferenc József császár és király.
-decision: 
-why: 
+decision: shorten: Gábriel arkangyal szobra.
+why: Shortened to the statue's identity, matching the length and grammatical form of the wrong options (25 vs 26 and 36 chars) answering 'Ki látható...'.
 
 ### b2-politikairetorika-03.ex02   teaches: ['b2-monuments-political-memory-vocab']
 files: content/hu/exercises/b2/b2-politikairetorika-03-ex.json
@@ -4121,8 +4121,8 @@ Hogyan oldotta meg Budapest a kommunista köztéri szobrok sorsát a rendszervá
 * Nem semmisítették meg őket, hanem a Tétényi-fennsíkon létrehozott Memento Parkba (Szoborparkba) gyűjtötték össze történelmi mementóként.
 - Mindegyiket beolvasztották és fegyvereket gyártottak belőlük.
 - Az összes szobrot az eredeti helyén hagyták.
-decision: 
-why: 
+decision: match: A szobrok többségét külföldi magángyűjtőknek adták el aukciókon, a befolyt összeget pedig a főváros költségvetésébe utalták át. || Zárt raktárakban és múzeumi pincékben helyezték el őket, hogy ne legyenek láthatók a nyilvános budapesti terek látogatói számára.
+why: Both new wrong options describe plausible historical policies for removed monuments of matching length (129 and 131 vs 137 chars) without absolutes or cartoonish weapon melting.
 
 ### b2-politikairetorika-04.ex02   teaches: ['b2-monuments-political-memory-vocab']
 files: content/hu/exercises/b2/b2-politikairetorika-04-ex.json
@@ -4131,8 +4131,8 @@ Hogyan jellemezte a szöveg Deák Ferenc és Kossuth Lajos szónoki stílusának
 * Deák a higgadt, tételes jogi érvelésre épített, míg Kossuth a romantikus pátosz és a lelkesítő erkölcsi meggyőzés mestere volt.
 - Mindketten csak latinul voltak hajlandók beszélni.
 - Kossuth kizárólag gazdasági grafikonokat mutatott be némán.
-decision: 
-why: 
+decision: match: Deák a forradalmi tömegek közvetlen mozgósítására törekedett, míg Kossuth a zárt diplomáciai háttértárgyalások híve volt. || Deák a gazdasági statisztikák száraz ismertetésére szorítkozott, míg Kossuth vallási prédikációk mintájára építette fel beszédeit.
+why: Both new wrong options follow the comparative syntactic frame 'Deák ..., míg Kossuth ...' of matching length (122 and 131 vs 128 chars) without cartoonish silent graphics.
 
 ### b2-politikairetorika-consolidation.ex08   teaches: ['b2-cataphoric-clauses']
 files: content/hu/exercises/b2/b2-politikairetorika-consolidation-ex.json
@@ -4142,8 +4142,8 @@ Which sentence demonstrates proper grammatical agreement and natural word order 
 - A miniszter arra a határozott céllal lépett a szószékre.
 - A miniszter abban a határozott céllal lépett a szószékre.
 - A miniszter az a céllal lépett a szószékre.
-decision: 
-why: 
+decision: match: A miniszter arra a határozott céllal lépett a szószékre, hogy meggyőzze a képviselőket a reform szükségességéről. || A miniszter abban a határozott céllal lépett a szószékre, hogy meggyőzze a képviselőket a reform szükségességéről. || A miniszter az a határozott céllal lépett a szószékre, hogy meggyőzze a képviselőket a reform szükségességéről.
+why: All options are now complete sentences with identical subordinate clauses and matching length (114, 115, 113 vs 114 chars), differing only in the demonstrative pronoun case agreement with instrumental 'céllal' (arra, abban, az a vs azzal).
 
 ### b2-semmelweis-01.ex06   teaches: None
 files: content/hu/exercises/b2/b2-semmelweis-01-ex.json
@@ -4152,8 +4152,8 @@ Melyik tragikus esemény vezette rá Semmelweist a gyermekágyi láz valódi ok�
 * Barátja, Kolletschka professzor boncolás közben megvágta az ujját, és a gyermekágyi lázzal azonos tünetekkel halt meg.
 - Leégett a bécsi Közkórház régi könyvtára.
 - Louis Pasteur személyesen látogatta meg a budai klinikát.
-decision: 
-why: 
+decision: match: Egyik legkedvesebb tanítványa a kórteremben fertőződött meg tüdőbajjal, és hetekig tartó lázas küzdelem után elhunyt. || A klinika főorvosa súlyos mérgezést szenvedett a laboratóriumi vegyszerektől, és a kezelés ellenére életét vesztette.
+why: Both new wrong options describe tragic medical deaths of hospital colleagues matching length and narrative style (119 and 119 vs 119 chars); only Kolletschka's autopsy wound matches historical fact.
 
 ### b2-semmelweis-02.ex01   teaches: ['b2-medical-pioneers-vocab']
 files: content/hu/exercises/b2/b2-semmelweis-02-ex.json
@@ -4162,8 +4162,8 @@ Mit nevez a modern tudományfilozófia és pszichológia 'Semmelweis-reflexnek'?
 * Azt a jelenséget, amikor a szakmai közösség a bizonyítékok ellenére automatikusan elutasít egy új felismerést, mert az sérti a megszokott dogmákat.
 - A klórvíz hatására fellépő allergiás bőrpírt.
 - Azt a sebészeti eljárást, amellyel a csonttöréseket gyógyították.
-decision: 
-why: 
+decision: match: Azt a pszichológiai mechanizmust, amely során a kutató a saját feltevését támogató adatokat részesíti előnyben a cáfoló bizonyítékokkal szemben. || Azt a vitataktikát, amely során a szakmai közösség a tárgyi bizonyítékok helyett a vitapartner tekintélyét és rangját helyezi a középpontba.
+why: Both new wrong options define real psychological/epistemological concepts (confirmation bias, appeal to status) matching length and structure (146 and 142 vs 148 chars).
 
 ### b2-semmelweis-02.ex06   teaches: None
 files: content/hu/exercises/b2/b2-semmelweis-02-ex.json
@@ -4172,8 +4172,8 @@ Mi volt a legfőbb lélektani oka annak, hogy a vezető főorvosok elutasított�
 * Az elmélet elfogadása egyet jelentett volna azzal a beismeréssel, hogy saját mosdatlan kezükkel ők maguk okozták a betegek halálát.
 - A klórmész túl drága volt a tizenkilencedik századi Ausztriában.
 - Semmelweis nem tudott semmilyen statisztikai adatot felmutatni.
-decision: 
-why: 
+decision: match: Úgy érezték, hogy a fertőtlenítés kötelező bevezetése csorbítaná a tekintélyüket és az orvosi hivatás hagyományos társadalmi rangját. || Attól tartottak, hogy az új higiéniai eljárások elterjedése feleslegessé tenné a bécsi egyetemen oktatott bonyolult kezelési módszereket.
+why: Both new wrong options provide plausible psychological/institutional motives matching length (135 and 138 vs 134 chars) answering 'Mi volt a legfőbb lélektani oka...'.
 
 ### b2-semmelweis-05.ex06   teaches: None
 files: content/hu/exercises/b2/b2-semmelweis-05-ex.json
@@ -4182,8 +4182,8 @@ Mi a közös vonás Semmelweis Ignác, Szent-Györgyi Albert és Karikó Katalin
 * Mindhárman olyan úttörő felismerésért küzdöttek, amelyet a korabeli szakmai fősodor kezdetben kétkedéssel vagy elutasítással fogadott.
 - Mindhárman ugyanabban az évben születtek Budapesten.
 - Mindhárman a fizikai Nobel-díjat vették át Stockholmban.
-decision: 
-why: 
+decision: match: Mindhárman a Magyar Tudományos Akadémia elnökeként fejezték be a pályafutásukat, jelentős állami támogatást kapva a kutatásaikhoz. || Mindhárman külföldi egyetemek rektoraként tevékenykedtek, miközben orvosi tankönyveket írtak a leendő sebészorvosok oktatására.
+why: Both new wrong options start with 'Mindhárman...' describing career trajectories matching length (131 and 129 vs 135 chars); only option 0 represents their shared historical struggle against initial skepticism.
 
 ### b2-szamizdat-01.ex01   teaches: ['b2-three-ts-censorship-vocab']
 files: content/hu/exercises/b2/b2-szamizdat-01-ex.json
@@ -4192,8 +4192,8 @@ Mit jelent az 'öncenzúra' fogalma a kádári korszak művészeti életében?
 * Azt a folyamatot, amikor az alkotó a retorzióktól félve maga törli a rendszerkritikus gondolatokat a művéből.
 - A könyvek nyomtatás előtti helyesírási ellenőrzését.
 - A külföldi utazási engedélyek hivatalos jóváhagyását.
-decision: 
-why: 
+decision: match: Azt a hivatalos eljárást, amikor az állami cenzorok pecséttel engedélyezik a kézirat nyomdai sokszorosítását. || Azt a kiadói gyakorlatot, amikor a szerkesztők a szerző engedélye nélkül változtatják meg a kötet címét.
+why: Both new wrong options define real publishing/censorship practices in Kádár-era culture (state censorship, editorial tampering) matching length (111 and 105 vs 110 chars); only option 0 defines self-censorship.
 
 ### b2-szecesszio-01.ex06   teaches: None
 files: content/hu/exercises/b2/b2-szecesszio-01-ex.json
@@ -4202,8 +4202,8 @@ Mi volt a Fővárosi Közmunkák Tanácsának legfőbb feladata 1873 után?
 * A teljes városszerkezetet átfogó szabályozási terv kidolgozása, sugárutak és körutak kialakításával.
 - Irodalmi folyóiratok szerkesztése a kávéházakban.
 - A budai vár lebontása és gyárteleppé alakítása.
-decision: 
-why: 
+decision: match: A Duna-parti ipari kikötők és a teherpályaudvarok közvetlen vasúti felügyeletének ellátása Pesten. || Az állami fenntartású középiskolák és egyetemi karok működésének pénzügyi ellenőrzése a fővárosban.
+why: Both new wrong options are realistic Budapest administrative/infrastructural responsibilities in the accusative matching exact length (99 and 100 vs 99 chars); only option 0 describes urban master planning.
 
 ### b2-szecesszio-03.ex01   teaches: ['b2-fin-de-siecle-budapest-vocab']
 files: content/hu/exercises/b2/b2-szecesszio-03-ex.json
@@ -4212,8 +4212,8 @@ Miért volt forradalmi jelentőségű a Zsolnay-gyárban kifejlesztett 'pirográ
 * Mert magas hőfokon kiégetett, teljesen fagy- és saválló kerámia volt, így kültéri tetők és homlokzatok díszítésére is alkalmasnak bizonyult.
 - Mert papírból készült, és esőben könnyen lemosható volt.
 - Mert kizárólag fekete-fehér színben lehetett előállítani.
-decision: 
-why: 
+decision: match: Mert könnyű fémötvözetből készült, amellyel a korábbi vasbeton szerkezeteket és tartóoszlopokat olcsón lehetett helyettesíteni az építkezésen. || Mert különleges szigetelő réteget képezett a belső terekben, amely megakadályozta a fűtött szobák falainak vizesedését és penészedését.
+why: Both new wrong options offer serious architectural material explanations starting with 'Mert...' matching length (144 and 138 vs 141 chars) without cartoonish claims or absolutes.
 
 ### b2-szecesszio-04.ex01   teaches: ['b2-fin-de-siecle-budapest-vocab']
 files: content/hu/exercises/b2/b2-szecesszio-04-ex.json
@@ -4222,8 +4222,8 @@ Mit neveznek a budapesti bérházakban 'függőfolyosónak' (vagy pesti szóval 
 * A belső udvarra nyíló, emeleti lakásokat összekötő, kovácsoltvas korlátos nyitott folyosót.
 - A Duna felett átívelő vasúti hidat.
 - Az alagsorban működő szénraktárt.
-decision: 
-why: 
+decision: match: Az utcafronti homlokzatból előreugró, üvegezett ablakokkal beépített zárt erkélysort. || A földszinti kapualjból a pincébe vezető, kőfalakkal határolt boltíves lépcsőfeljárót.
+why: Both new wrong options define architectural elements of Budapest tenement buildings in the accusative (enclosed bay window, vaulted cellar entrance) matching length (87 and 87 vs 91 chars).
 
 ### b2-urbanusnepi-02.ex02   teaches: ['b2-urbanists-populists-vocab']
 files: content/hu/exercises/b2/b2-urbanusnepi-02-ex.json
@@ -4232,8 +4232,8 @@ Melyik folyóirat volt az urbánus értelmiség és József Attila legfontosabb 
 * A Szép Szó, amelyet József Attila, Ignotus Pál és Fejtő Ferenc szerkesztett.
 - A Gazdasági Értesítő.
 - A Csíksomlyói Kalendárium.
-decision: 
-why: 
+decision: match: A Válasz, amelyet Illyés Gyula, Fülep Lajos és Sárközi György indított el. || A Napkelet, amelyet a konzervatív irodalmi körök és Tormay Cécile vezetett.
+why: Both new wrong options name the other two major intellectual periodicals of 1930s Hungary (the populist Válasz, the conservative Napkelet) with their actual editors, matching length (75 and 76 vs 76 chars).
 
 ### b2-urbanusnepi-03.ex08   teaches: None
 files: content/hu/exercises/b2/b2-urbanusnepi-03-ex.json
@@ -4242,8 +4242,8 @@ Milyen veszélyre figyelmeztetett Bibó István a második világháború utáni
 * Arra, hogy a népi felemelkedés azonnal zsákutcába jut, ha elszakad a demokratikus intézmények és a szabadságjogok tiszteletétől.
 - Arra, hogy túl sok könyvtár épült a kistelepüléseken.
 - Arra, hogy a magyar nyelv nem alkalmas tudományos vitákra.
-decision: 
-why: 
+decision: match: Arra, hogy az iparosítás és az urbanizáció túlzott felgyorsulása miatt a hagyományos falusi életforma örökre megsemmisülhet. || Arra, hogy a polgári jogállam kiépítése megakadályozza a szociálisan hátrányos helyzetű rétegek anyagi felzárkózását a jövőben.
+why: Both new wrong options present serious political/philosophical risks starting with 'Arra, hogy...' matching length (125 and 128 vs 128 chars); only option 0 represents Bibó's actual synthesis.
 
 ### b2-urbanusnepi-04.ex02   teaches: ['b2-urbanists-populists-vocab']
 files: content/hu/exercises/b2/b2-urbanusnepi-04-ex.json
@@ -4252,8 +4252,8 @@ Miért volt történelmi jelentőségű az 1985. júniusi monori találkozó?
 * Mert évtizedes elszigeteltség után először ült közös asztalhoz a népi ellenzék és a városi demokratikus ellenzék negyvenöt vezető személyisége.
 - Mert ott írták alá az első magyar vasútépítési szerződést.
 - Mert a Kádár-kormány ott osztott állami kitüntetéseket a cenzoroknak.
-decision: 
-why: 
+decision: match: Mert a pártvezetés ott hirdette meg a gazdasági reformok új programját és az állami cenzúra intézményének fokozatos eltörlését. || Mert az ellenzéki csoportok ott alapították meg az első hivatalosan bejegyzett független parlamenti pártot a diktatúra idején.
+why: Both new wrong options describe plausible late-communist political events starting with 'Mert...' matching length (128 and 128 vs 144 chars); only option 0 is the historical reality of Monor.
 
 ### b2-urbanusnepi-04.ex04   teaches: ['contrastive-discourse-markers']
 files: content/hu/exercises/b2/b2-urbanusnepi-04-ex.json
@@ -4263,8 +4263,8 @@ Where is 'ellenben' most idiomatically placed when contrasting a second subject 
 - At the very end of the sentence after the period.
 - Between the definite article 'a' and its noun.
 - Inside the verb prefix.
-decision: 
-why: 
+decision: shorten: Immediately after the contrasted second subject.
+why: Dropped the full example sentence so the correct option matches the syntactic-position style and length of the wrong options (48 vs 49, 44, and 24 chars).
 
 ### b2-urbanusnepi-05.ex02   teaches: ['b2-urbanists-populists-vocab']
 files: content/hu/exercises/b2/b2-urbanusnepi-05-ex.json
@@ -4273,8 +4273,8 @@ Hogyan jelent meg a népi–urbánus törésvonal az 1989–1990-es rendszervál
 * Az újonnan alakuló pártok és kulturális folyóiratok arculatában, majd a nemzeti szuverenitásról és az európai integrációról szóló vitákban.
 - Teljesen eltűnt, és soha többé nem említették a sajtóban.
 - Kizárólag a közlekedési szabályok módosításában.
-decision: 
-why: 
+decision: match: A helyhatósági választási törvények technikai szövegezésében, valamint a külföldi befektetők adózási kedvezményeinek elosztásában. || Az állami iparvállalatok privatizációs szerződéseiben, miközben a parlamenti pártok programjaiból teljesen háttérbe szorult a téma.
+why: Both new wrong options describe real administrative/economic areas of post-1989 transition matching length and syntax (132 and 134 vs 142 chars) without absolutes or cartoonish traffic rules.
 
 ### b2-urbanusnepi-consolidation.ex08   teaches: ['contrastive-discourse-markers']
 files: content/hu/exercises/b2/b2-urbanusnepi-consolidation-ex.json
@@ -4284,8 +4284,8 @@ Which sentence demonstrates native B2 placement of 'ellenben' and 'ezzel szemben
 - Ellenben a népi írók szemben ezzel beszéltek.
 - A hatalom ellenben szemben ezzel volt.
 - Monoron szemben ezzel ellenben ültek.
-decision: 
-why: 
+decision: match: A hatalom a megosztottságra épített; ellenben Monoron a népi írók a közösségi jogokról, az urbánusok ezzel szemben az alkotmányos garanciákról beszéltek egymást tisztelve. || A hatalom a megosztottságra épített; szemben ezzel Monoron a népi írók a közösségi jogokról, az urbánusok ellenben az alkotmányos garanciákról beszéltek egymást tisztelve. || A hatalom a megosztottságra épített; ezzel szemben Monoron ellenben a népi írók a közösségi jogokról, az urbánusok az alkotmányos garanciákról beszéltek egymást tisztelve.
+why: All options are now complete B2 sentences of matching length (175, 175, 175 vs 165 chars) differing solely in discourse marker placement: swapping the two markers, inverting 'szemben ezzel', and clustering 'ezzel szemben ellenben'.
 
 
 ########## Block 5: hu c1 (164 exercises) ##########
