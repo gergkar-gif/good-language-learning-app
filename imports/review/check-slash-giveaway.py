@@ -20,7 +20,8 @@ Usage:
 
 Exit code 1 if any hit remains in the selected scope.
 Files c1-21-* and c1-22-* (Hungarian) are being rewritten under ROADMAP 127
-and are skipped here.
+and are skipped here. The 14 native-reviewed Hungarian A1 items in
+NATIVE_REVIEWED are skipped for --length only (ROADMAP 130).
 """
 import glob
 import json
@@ -30,6 +31,13 @@ from collections import Counter
 
 COURSES = ("hu", "es-es", "es-latam")
 SKIP_PREFIXES = ("c1-21-", "c1-22-")
+# Hungarian A1 dialogue items a native speaker reviewed and kept as they are (ROADMAP 130); skipped for --length only.
+NATIVE_REVIEWED = {
+    "a1-121-dialogue-1", "a1-124-practice-5", "a1-125-consolidation-13", "a1-127-practice-5",
+    "a1-128-dialogue-1", "a1-135-dialogue-2", "a1-141-practice-5", "a1-142-practice-5",
+    "a1-144-dialogue-1", "a1-145-consolidation-13", "a1-145-consolidation-14", "a1-147-dialogue-1",
+    "a1-149-dialogue-1", "a1-150-dialogue-1",
+}
 
 
 def gives_away(o, k, length):
@@ -53,6 +61,8 @@ def hits(courses, levels, length=False):
                 o, k = e.get("options"), e.get("correct")
                 if not (isinstance(o, list) and all(isinstance(x, str) for x in o)
                         and len(o) > 1 and isinstance(k, int) and 0 <= k < len(o)):
+                    continue
+                if length and course == "hu" and e.get("id") in NATIVE_REVIEWED:
                     continue
                 if gives_away(o, k, length):
                     yield course, level, e.get("id"), f.replace(os.sep, "/"), e

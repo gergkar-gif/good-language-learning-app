@@ -33,7 +33,6 @@ Completed work is archived out to `ACHIEVED.md`.
 
 148. **A1–B1 polishes (added 2026-10-08).** Everything still open for Hungarian, es-es and es-latam up to B1, gathered from items 130, 133, 134, 136, 138, 140, 141, 142, 144 and 145 (their full original entries, with the parts already done, are in ACHIEVED.md under the same numbers). Every A1–B1 unit is read, tagged, locked and passes the validator; these are the leftovers. Each point was checked against the files on 2026-10-08. When a point is done, delete it here and log it in ACHIEVED.md under item 148 (same commit); when none are left, archive the item. *(sign-off)* = needs the user's decision before work starts.
     - **Both languages**
-      - (a) **Length give-aways back since the review** (from 130): HU A1 15 (the Spanish B1 ones are parked below). List them with `python imports/review/check-slash-giveaway.py --length <course> <level> --list`; fix rules in `imports/review/ANTIGRAVITY-length-giveaway-es.md` / `-hu.md`.
       - (b) **Sentence-builders accept one word order** (from 144(9)). **PARKED by the user 2026-10-07; do not start unprompted.** Plan in ACHIEVED.md item 144.
     - **Hungarian**
       - (f) Fact checks (from 141(e)): the history facts a subagent rewrote from general knowledge in `interwar-years`, `world-war-2`, `revolution-1956`, against their screens; `being-hungarian-citizen` `03.ex04` (compulsory schooling to 16).
