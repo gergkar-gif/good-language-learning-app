@@ -883,6 +883,15 @@ const SpeechInput = (function () {
             .replace(/(.)\1+/g, '$1');     // collapse adjacent duplicates ('rr'->'r', sinalefa 'aa'->'a', 'ee'->'e')
     }
 
+    function genericPhoneticFold(word) {
+        if (!word) return '';
+        return String(word)
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/(.)\1+/g, '$1');
+    }
+
     const PHONETIC_FOLDERS = {
         hu: phoneticFoldHu,
         es: phoneticFoldEs
@@ -896,7 +905,7 @@ const SpeechInput = (function () {
 
     function _getPhoneticFolder(lang) {
         const base = String(lang || (typeof Lang !== 'undefined' ? Lang.code() : 'es')).toLowerCase().split('-')[0];
-        return PHONETIC_FOLDERS[base] || PHONETIC_FOLDERS.es;
+        return PHONETIC_FOLDERS[base] || genericPhoneticFold;
     }
 
     function phoneticFold(word, langHint) {
@@ -917,20 +926,21 @@ const SpeechInput = (function () {
         const recFold = folder(recNorm);
         if (targetFold && targetFold === recFold) return true;
 
-        // Number words vs digits tolerance (e.g. "dos" vs "2"); Hungarian
-        // words included alongside Spanish since spoken numbers rarely
-        // collide across the two languages. "ket" covers Hungarian "két",
-        // the form used before a noun, alongside the standalone "kettő".
-        const numMap = {
-            '1': ['uno', 'una', 'un', 'egy'], '2': ['dos', 'ketto', 'ket'], '3': ['tres', 'harom'],
-            '4': ['cuatro', 'negy'], '5': ['cinco', 'ot'], '6': ['seis', 'hat'],
-            '7': ['siete', 'het'], '8': ['ocho', 'nyolc'], '9': ['nueve', 'kilenc'],
-            '10': ['diez', 'tiz']
-        };
+        // Number words vs digits tolerance from language profile
+        const numMap = (typeof Lang !== 'undefined' && typeof Lang.numberWords === 'function')
+            ? Lang.numberWords(lang)
+            : {
+                '1': ['uno', 'una', 'un', 'egy'], '2': ['dos', 'ketto', 'ket'], '3': ['tres', 'harom'],
+                '4': ['cuatro', 'negy'], '5': ['cinco', 'ot'], '6': ['seis', 'hat'],
+                '7': ['siete', 'het'], '8': ['ocho', 'nyolc'], '9': ['nueve', 'kilenc'],
+                '10': ['diez', 'tiz']
+            };
         if ((numMap[recNorm] || []).includes(targetNorm) || (numMap[targetNorm] || []).includes(recNorm)) return true;
 
-        // Abbreviation & contraction equivalence
-        const abbrMap = { 'db': 'darab', 'pa': 'para', 'pal': 'parael', 'al': 'ael', 'del': 'deel' };
+        // Abbreviation & contraction equivalence from language profile
+        const abbrMap = (typeof Lang !== 'undefined' && typeof Lang.speechAbbreviations === 'function')
+            ? Lang.speechAbbreviations(lang)
+            : { 'db': 'darab', 'pa': 'para', 'pal': 'parael', 'al': 'ael', 'del': 'deel' };
         if (abbrMap[recNorm] === targetNorm || abbrMap[targetNorm] === recNorm) return true;
 
         // Short words (<= 3 chars) need exact or phonetic match

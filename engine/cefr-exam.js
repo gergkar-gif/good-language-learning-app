@@ -123,10 +123,10 @@ const CefrExam = (function () {
         async function _loadData() {
             if (_data) return _data;
             try {
-                const lang = typeof Lang !== 'undefined' ? Lang.code() : 'es';
                 let res = await fetch(Lang.content(_dataFile));
-                if (!res.ok && lang === 'es-latam') {
-                    res = await fetch('content/es-es/' + _dataFile);
+                const fallback = (typeof Lang.contentFallback === 'function') ? Lang.contentFallback() : null;
+                if (!res.ok && fallback) {
+                    res = await fetch('content/' + fallback + '/' + _dataFile);
                 }
                 _data = res.ok ? await res.json() : null;
             } catch (e) {
@@ -185,7 +185,8 @@ const CefrExam = (function () {
                 Speech.speak(text, { rate: _state.listeningSpeed, onEnd: onEnded });
             } else if (typeof window !== 'undefined' && window.speechSynthesis) {
                 const utter = new SpeechSynthesisUtterance(text);
-                utter.lang = langCode.startsWith('hu') ? 'hu-HU' : 'es-ES';
+                utter.lang = (typeof Lang !== 'undefined' && typeof Lang.sttLocale === 'function')
+                    ? Lang.sttLocale(langCode) : langCode;
                 utter.rate = _state.listeningSpeed;
                 utter.onend = () => { if (typeof onEnded === 'function') onEnded(); };
                 utter.onerror = () => { if (typeof onEnded === 'function') onEnded(); };
@@ -435,7 +436,7 @@ const CefrExam = (function () {
                     _state.speakingRecognition.interimResults = true;
                     _state.speakingRecognition.lang = (typeof Lang !== 'undefined' && typeof Lang.sttLocale === 'function')
                         ? Lang.sttLocale()
-                        : ((typeof Lang !== 'undefined' && Lang.code().startsWith('hu')) ? 'hu-HU' : 'es-ES');
+                        : ((typeof Lang !== 'undefined') ? Lang.code() : 'es-ES');
 
                     _state.speakingRecognition.onresult = (event) => {
                         let finalStr = '';
@@ -514,51 +515,59 @@ const CefrExam = (function () {
             const isA1 = (_data && _data.level === 'A1') || _id.includes('a1');
             const isA2 = (_data && _data.level === 'A2') || _id.includes('a2');
             const isB2 = (_data && _data.level === 'B2') || _id.includes('b2');
-            const examConnectors = isHu ? (
-                isA1 ? [
-                    'és', 'de', 'mert', 'is', 'szintén', 'vagy',
-                    'szia', 'sziasztok', 'jó napot', 'köszönöm', 'nagyon köszönöm',
-                    'üdvözlettel', 'szép napot', 'viszlát', 'ezért'
-                ] : (isA2 ? [
-                    'és', 'de', 'mert', 'is', 'szintén', 'vagy', 'ezért',
-                    'után', 'aztán', 'amikor', 'ha', 'szerintem', 'például',
-                    'szia', 'sziasztok', 'kedves', 'köszönöm', 'nagyon köszönöm',
-                    'üdvözlettel', 'remélem', 'viszlát'
-                ] : (isB2 ? [
-                    'véleményem szerint', 'úgy vélem, hogy', 'meglátásom szerint', 'álláspontom szerint',
-                    'egyrészt', 'másrészt', 'elsőként', 'mindazonáltal', 'ennek ellenére',
-                    'jóllehet', 'ugyanakkor', 'viszont', 'továbbá', 'ráadásul',
-                    'következésképpen', 'tekintettel arra, hogy', 'ebből fakadóan', 'ennek következtében',
-                    'összességében', 'kétségkívül', 'határozottan', 'fontos hangsúlyozni'
-                ] : [
-                    'véleményem szerint', 'úgy gondolom, hogy', 'szerintem', 'meglátásom szerint',
-                    'egyrészt', 'másrészt', 'először is', 'továbbá', 'végül',
-                    'azonban', 'ennek ellenére', 'bár', 'ugyanakkor', 'viszont',
-                    'ezért', 'mivel', 'ennek következtében', 'így', 'tehát',
-                    'nagyon köszönöm', 'üdvözlettel', 'remélem', 'fontos, hogy'
-                ]))
-            ) : (
-                isA1 ? [
-                    'y', 'pero', 'porque', 'también', 'además', 'o',
-                    'hola', 'buenos días', 'gracias', 'muchas gracias',
-                    'un saludo', 'un abrazo', 'hasta pronto', 'saludos', 'por eso'
-                ] : (isA2 ? [
-                    'y', 'pero', 'porque', 'también', 'además', 'o', 'por eso',
-                    'cuando', 'después', 'luego', 'entonces', 'primero',
-                    'hola', 'buenos días', 'estimado', 'gracias', 'muchas gracias',
-                    'un saludo', 'un abrazo', 'hasta pronto', 'saludos', 'si', 'aunque'
-                ] : (isB2 ? [
-                    'en primer lugar', 'por una parte', 'por otra parte', 'en lo que respecta a',
-                    'sin embargo', 'no obstante', 'a pesar de que', 'si bien', 'pese a',
-                    'por consiguiente', 'en consecuencia', 'por lo tanto', 'de ahí que',
-                    'desde mi punto de vista', 'en mi opinión', 'cabe destacar que', 'conviene señalar que',
-                    'es imprescindible que', 'resulta fundamental que', 'en definitiva', 'en conclusión'
-                ] : [
-                    'sin embargo', 'por lo tanto', 'en mi opinión', 'por un lado', 'por otro lado',
-                    'en cuanto a', 'además', 'me encantaría', 'gracias por', 'un abrazo', 'aunque',
-                    'de modo que', 'así que', 'dado que', 'es importante que', 'no creo que'
-                ]))
-            );
+            const levelCode = isA1 ? 'A1' : (isA2 ? 'A2' : (isB2 ? 'B2' : 'B1'));
+            const langCode = isHu ? 'hu' : (typeof Lang !== 'undefined' ? Lang.code() : 'es');
+            const profileConnectors = (typeof Lang !== 'undefined' && typeof Lang.discourseConnectors === 'function')
+                ? Lang.discourseConnectors(levelCode, langCode)
+                : [];
+            let examConnectors = profileConnectors;
+            if (!examConnectors || !examConnectors.length) {
+                examConnectors = isHu ? (
+                    isA1 ? [
+                        'és', 'de', 'mert', 'is', 'szintén', 'vagy',
+                        'szia', 'sziasztok', 'jó napot', 'köszönöm', 'nagyon köszönöm',
+                        'üdvözlettel', 'szép napot', 'viszlát', 'ezért'
+                    ] : (isA2 ? [
+                        'és', 'de', 'mert', 'is', 'szintén', 'vagy', 'ezért',
+                        'után', 'aztán', 'amikor', 'ha', 'szerintem', 'például',
+                        'szia', 'sziasztok', 'kedves', 'köszönöm', 'nagyon köszönöm',
+                        'üdvözlettel', 'remélem', 'viszlát'
+                    ] : (isB2 ? [
+                        'véleményem szerint', 'úgy vélem, hogy', 'meglátásom szerint', 'álláspontom szerint',
+                        'egyrészt', 'másrészt', 'elsőként', 'mindazonáltal', 'ennek ellenére',
+                        'jóllehet', 'ugyanakkor', 'viszont', 'továbbá', 'ráadásul',
+                        'következésképpen', 'tekintettel arra, hogy', 'ebből fakadóan', 'ennek következtében',
+                        'összességében', 'kétségkívül', 'határozottan', 'fontos hangsúlyozni'
+                    ] : [
+                        'véleményem szerint', 'úgy gondolom, hogy', 'szerintem', 'meglátásom szerint',
+                        'egyrészt', 'másrészt', 'először is', 'továbbá', 'végül',
+                        'azonban', 'ennek ellenére', 'bár', 'ugyanakkor', 'viszont',
+                        'ezért', 'mivel', 'ennek következtében', 'így', 'tehát',
+                        'nagyon köszönöm', 'üdvözlettel', 'remélem', 'fontos, hogy'
+                    ]))
+                ) : (
+                    isA1 ? [
+                        'y', 'pero', 'porque', 'también', 'además', 'o',
+                        'hola', 'buenos días', 'gracias', 'muchas gracias',
+                        'un saludo', 'un abrazo', 'hasta pronto', 'saludos', 'por eso'
+                    ] : (isA2 ? [
+                        'y', 'pero', 'porque', 'también', 'además', 'o', 'por eso',
+                        'cuando', 'después', 'luego', 'entonces', 'primero',
+                        'hola', 'buenos días', 'estimado', 'gracias', 'muchas gracias',
+                        'un saludo', 'un abrazo', 'hasta pronto', 'saludos', 'si', 'aunque'
+                    ] : (isB2 ? [
+                        'en primer lugar', 'por una parte', 'por otra parte', 'en lo que respecta a',
+                        'sin embargo', 'no obstante', 'a pesar de que', 'si bien', 'pese a',
+                        'por consiguiente', 'en consecuencia', 'por lo tanto', 'de ahí que',
+                        'desde mi punto de vista', 'en mi opinión', 'cabe destacar que', 'conviene señalar que',
+                        'es imprescindible que', 'resulta fundamental que', 'en definitiva', 'en conclusión'
+                    ] : [
+                        'sin embargo', 'por lo tanto', 'en mi opinión', 'por un lado', 'por otro lado',
+                        'en cuanto a', 'además', 'me encantaría', 'gracias por', 'un abrazo', 'aunque',
+                        'de modo que', 'así que', 'dado que', 'es importante que', 'no creo que'
+                    ]))
+                );
+            }
             const lowerText = text.toLowerCase();
             const foundConnectors = examConnectors.filter(c => lowerText.includes(c));
             const cohesionScore = Math.min(6, Math.max(2, foundConnectors.length * 2));
@@ -601,19 +610,24 @@ const CefrExam = (function () {
             const isHu = _id.includes('hu');
             const isA1 = (_data && _data.level === 'A1') || _id.includes('a1');
             const isA2 = (_data && _data.level === 'A2') || _id.includes('a2');
+            const isB2 = (_data && _data.level === 'B2') || _id.includes('b2');
             const levelCode = isA1 ? 'A1' : (isA2 ? 'A2' : (isB2 ? 'B2' : 'B1'));
+            const langCode = isHu ? 'hu' : (typeof Lang !== 'undefined' ? Lang.code() : 'es');
             const profileConnectors = (typeof Lang !== 'undefined' && typeof Lang.discourseConnectors === 'function')
-                ? Lang.discourseConnectors(levelCode, isHu ? 'hu' : 'es')
+                ? Lang.discourseConnectors(levelCode, langCode)
                 : [];
-            const speakingConnectors = profileConnectors.length ? profileConnectors : (isHu
-                ? (isA1 ? ['és', 'mert', 'is', 'de', 'szintén', 'szerintem']
-                    : (isA2 ? ['és', 'mert', 'is', 'de', 'szintén', 'szerintem', 'ezért', 'például', 'aztán']
-                    : (isB2 ? ['véleményem szerint', 'úgy vélem', 'meglátásom szerint', 'elsőként', 'például', 'ugyanakkor', 'mindazonáltal', 'ennek következtében', 'másrészt', 'egyrészt', 'összességében']
-                    : ['véleményem szerint', 'szerintem', 'úgy gondolom', 'először is', 'például', 'ugyanakkor', 'azonban', 'ezért', 'másrészt', 'egyrészt'])))
-                : (isA1 ? ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo']
-                    : (isA2 ? ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo', 'por eso', 'después', 'entonces']
-                    : (isB2 ? ['en primer lugar', 'por ejemplo', 'en mi opinión', 'desde mi perspectiva', 'además', 'por consiguiente', 'no obstante', 'sin embargo', 'en definitiva', 'cabe destacar']
-                    : ['en primer lugar', 'por ejemplo', 'en mi opinión', 'además', 'por eso']))));
+            let speakingConnectors = profileConnectors;
+            if (!speakingConnectors || !speakingConnectors.length) {
+                speakingConnectors = isHu ? (
+                    isA1 ? ['és', 'mert', 'is', 'de', 'szintén', 'szerintem']
+                        : (isA2 ? ['és', 'mert', 'is', 'de', 'szintén', 'szerintem', 'ezért', 'például', 'aztán']
+                        : (isB2 ? ['véleményem szerint', 'úgy vélem', 'meglátásom szerint', 'elsőként', 'például', 'ugyanakkor', 'mindazonáltal', 'ennek következtében', 'másrészt', 'egyrészt', 'összességében']
+                        : ['véleményem szerint', 'szerintem', 'úgy gondolom', 'először is', 'például', 'ugyanakkor', 'azonban', 'ezért', 'másrészt', 'egyrészt'])))
+                    : (isA1 ? ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo']
+                        : (isA2 ? ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo', 'por eso', 'después', 'entonces']
+                        : (isB2 ? ['en primer lugar', 'por ejemplo', 'en mi opinión', 'desde mi perspectiva', 'además', 'por consiguiente', 'no obstante', 'sin embargo', 'en definitiva', 'cabe destacar']
+                        : ['en primer lugar', 'por ejemplo', 'en mi opinión', 'además', 'por eso'])));
+            }
             const foundConnectors = speakingConnectors.filter(c => lowerText.includes(c));
             const cohesionScore = Math.min(6, Math.max(2, foundConnectors.length * 2));
 

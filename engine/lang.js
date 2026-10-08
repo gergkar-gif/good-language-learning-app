@@ -62,9 +62,15 @@ const Lang = (function () {
             courseName: 'Spanish (Latin America)',
             voices: ['es-MX', 'es-US', 'es-419', 'es-CO', 'es-AR', 'es-ES', 'es'],
             sttLocale: 'es-MX',
+            contentFallback: 'es-es',
             tests: ['A1', 'A2', 'B1', 'B2'],
             diacritics: { a: ['á'], e: ['é'], i: ['í'], o: ['ó'], u: ['ú', 'ü'], n: ['ñ'] },
             openers: { '?': '¿', '!': '¡' },
+            numberWords: {
+                '1': ['uno', 'una', 'un'], '2': ['dos'], '3': ['tres'], '4': ['cuatro'], '5': ['cinco'],
+                '6': ['seis'], '7': ['siete'], '8': ['ocho'], '9': ['nueve'], '10': ['diez']
+            },
+            speechAbbreviations: { 'pa': 'para', 'pal': 'parael', 'al': 'ael', 'del': 'deel' },
             examLabels: {
                 trueFalseNotStated: ['Verdadero', 'Falso', 'No se menciona en el texto']
             },
@@ -141,6 +147,11 @@ const Lang = (function () {
             tests: ['A1', 'A2', 'B1'],
             diacritics: { a: ['á'], e: ['é'], i: ['í'], o: ['ó'], u: ['ú', 'ü'], n: ['ñ'] },
             openers: { '?': '¿', '!': '¡' },
+            numberWords: {
+                '1': ['uno', 'una', 'un'], '2': ['dos'], '3': ['tres'], '4': ['cuatro'], '5': ['cinco'],
+                '6': ['seis'], '7': ['siete'], '8': ['ocho'], '9': ['nueve'], '10': ['diez']
+            },
+            speechAbbreviations: { 'pa': 'para', 'pal': 'parael', 'al': 'ael', 'del': 'deel' },
             examLabels: {
                 trueFalseNotStated: ['Verdadero', 'Falso', 'No se menciona en el texto']
             },
@@ -161,6 +172,11 @@ const Lang = (function () {
             tests: ['A1', 'A2', 'B1', 'C1'],
             diacritics: { a: ['á'], e: ['é'], i: ['í'], o: ['ó', 'ö', 'ő'], u: ['ú', 'ü', 'ű'] },
             openers: {},
+            numberWords: {
+                '1': ['egy'], '2': ['ketto', 'ket'], '3': ['harom'], '4': ['negy'], '5': ['ot'],
+                '6': ['hat'], '7': ['het'], '8': ['nyolc'], '9': ['kilenc'], '10': ['tiz']
+            },
+            speechAbbreviations: { 'db': 'darab' },
             examLabels: {
                 trueFalseNotStated: ['Igaz', 'Hamis', 'A szöveg nem tartalmaz ilyen információt']
             },
@@ -198,6 +214,10 @@ const Lang = (function () {
             tests: ['A1', 'A2'],
             diacritics: { a: ['à', 'â'], c: ['ç'], e: ['é', 'è', 'ê', 'ë'], i: ['î', 'ï'], o: ['ô', 'œ'], u: ['ù', 'û', 'ü'] },
             openers: {},
+            numberWords: {
+                '1': ['un', 'une'], '2': ['deux'], '3': ['trois'], '4': ['quatre'], '5': ['cinq'],
+                '6': ['six'], '7': ['sept'], '8': ['huit'], '9': ['neuf'], '10': ['dix']
+            },
             examLabels: {
                 trueFalseNotStated: ['Vrai', 'Faux', 'Non mentionné dans le texte']
             },
@@ -297,6 +317,22 @@ const Lang = (function () {
 
     function sttLocale(targetCode) {
         return profile(targetCode).sttLocale || (targetCode || current);
+    }
+
+    // Digit -> spoken number words, for matching "dos" against "2" in speech.
+    function numberWords(targetCode) {
+        return profile(targetCode).numberWords || {};
+    }
+
+    // Spoken contractions the recogniser may return ('pa' for 'para').
+    function speechAbbreviations(targetCode) {
+        return profile(targetCode).speechAbbreviations || {};
+    }
+
+    // A sibling course whose content can stand in for a missing file
+    // (es-latam borrows es-es). null when the course has none.
+    function contentFallback(targetCode) {
+        return profile(targetCode).contentFallback || null;
     }
 
     function diacritics(targetCode) {
@@ -447,6 +483,9 @@ const Lang = (function () {
         profile,
         registerProfile,
         sttLocale,
+        numberWords,
+        speechAbbreviations,
+        contentFallback,
         diacritics,
         openers,
         examLabels,

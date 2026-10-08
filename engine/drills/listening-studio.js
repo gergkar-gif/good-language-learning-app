@@ -185,8 +185,8 @@ const ListeningStudio = (function () {
             ];
         }
 
-        // Spanish default fallback
-        return [
+        if (base === 'es') {
+            return [
             {
                 id: 'ls-es-fallback-01',
                 level: 'A1',
@@ -246,6 +246,9 @@ const ListeningStudio = (function () {
                 ]
             }
         ];
+        }
+
+        return [];
     }
 
     if (typeof document !== 'undefined') {
@@ -486,7 +489,11 @@ const ListeningStudio = (function () {
                 ` : ''}
 
                 <div class="wk-picker-grid">
-                    ${filteredTasks.map(task => {
+                    ${filteredTasks.length === 0 ? `
+                        <div class="sp-empty-state" style="grid-column: 1 / -1; padding: 40px 20px; text-align: center; color: var(--text-muted, #687787);">
+                            No listening tasks available yet for this course.
+                        </div>
+                    ` : filteredTasks.map(task => {
                         const turnsCount = (task.audio && task.audio.turns) ? task.audio.turns.length : 0;
                         const questionsCount = (task.questions) ? task.questions.length : 0;
                         return `

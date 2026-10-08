@@ -4261,8 +4261,8 @@ function lessonInlineVoiceInput(selector, btn) {
     let target = null;
     let speechLang = undefined;
     if (selector === '#review-type-field') {
-        const isEnglishTarget = (typeof reviewDirection !== 'undefined' && reviewDirection === 'es-en');
-        speechLang = isEnglishTarget ? 'en-US' : (typeof Lang !== 'undefined' ? Lang.code() : 'es-ES');
+        const isEnglishTarget = (typeof reviewDirection !== 'undefined' && String(reviewDirection).endsWith('-en'));
+        speechLang = isEnglishTarget ? 'en-US' : (typeof Lang !== 'undefined' && typeof Lang.sttLocale === 'function' ? Lang.sttLocale() : 'es-ES');
         target = isEnglishTarget
             ? (typeof reviewExpectedEnglish !== 'undefined' ? reviewExpectedEnglish : null)
             : (typeof reviewExpectedSpanish !== 'undefined' ? reviewExpectedSpanish : null);
