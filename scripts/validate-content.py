@@ -632,6 +632,10 @@ def fill_blank_hint_errors(data):
                 errs.append((f"exercises/{idx} ({ex.get('id')})",
                              f"hint ({inner}) is written into sentence; move it to the \"hint\" field"))
                 break
+        if re.search(r"\[[^\]]*\]\s*$", s):
+            errs.append((f"exercises/{idx} ({ex.get('id')})",
+                         "an [English] translation is written into sentence; it belongs in the \"english\" field "
+                         "(shown after the answer and as the second hint)"))
     return errs
 
 

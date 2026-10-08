@@ -202,7 +202,7 @@ The commonest defects in shipped content. Each rule is here because a review fou
 - **Pin the person.** A person- or possessor-marked answer, or a sentence with the subject dropped, names the person in the hint (`I`, `his family`) or in the sentence.
 - **English-only hints need synonyms.** When the hint is English only, list every correct target word in `answers` (*consent* → *beleegyezését*, *hozzájárulását*).
 - **Function words and correlatives** get a structural hint (`az + -nak`, `minél … ____`), not English.
-- **`english`** translates the whole sentence with the blank filled. It must not fit a second answer.
+- **`english`** translates the whole sentence with the blank filled. It must not fit a second answer. It goes in the field, never into `sentence` as a trailing `[English]` gloss: the engine shows it after the answer and as the second step of "Need a hint?", and the validator fails the bracket.
 
 ---
 
