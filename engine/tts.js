@@ -49,6 +49,23 @@ const ParlourTTS = (function () {
         return audioCtx;
     }
 
+    function isBufferAudible(buffer) {
+        if (!buffer || buffer.duration < 0.1) return false;
+        try {
+            const data = buffer.getChannelData(0);
+            const len = data.length;
+            let peak = 0;
+            for (let i = 0; i < len; i += 16) {
+                const val = Math.abs(data[i]);
+                if (val > peak) peak = val;
+                if (peak > 0.04) return true;
+            }
+            return peak > 0.04;
+        } catch {
+            return true;
+        }
+    }
+
     function decodeBase64ToBuffer(key, b64) {
         if (bufferCache[key]) return Promise.resolve(bufferCache[key]);
         const ctx = getAudioCtx();
@@ -156,8 +173,8 @@ const ParlourTTS = (function () {
     }
 
     function sessionKey(text, language, voiceName, character, gender, type) {
-        // 'v3' = Spanish + Hungarian words/readings moved to Enceladus; bump when the worker's default voices change
-        return `v3::${language}::${voiceName || ''}::${character || ''}::${gender || ''}::${type || ''}::${text}`;
+        // 'v4' = Hungarian short-word abbreviation fix + Enceladus untyped default fallback
+        return `v4::${language}::${voiceName || ''}::${character || ''}::${gender || ''}::${type || ''}::${text}`;
     }
 
     function isOnline() {
@@ -317,29 +334,34 @@ const ParlourTTS = (function () {
         // Fast path: Play pre-decoded Web Audio PCM buffer in <0.02ms with zero main-thread blocking
         const pcmBuffer = bufferCache[key] || (cached && cached.__buffer);
         if (pcmBuffer && ctx) {
-            if (btn) {
-                btn.classList.remove('is-loading');
-                btn.classList.add('is-playing');
-            }
-            try {
-                if (ctx.state === 'suspended' && typeof ctx.resume === 'function') {
-                    ctx.resume();
+            if (!isBufferAudible(pcmBuffer)) {
+                delete bufferCache[key];
+                delete cache[key];
+            } else {
+                if (btn) {
+                    btn.classList.remove('is-loading');
+                    btn.classList.add('is-playing');
                 }
-                const source = ctx.createBufferSource();
-                source.buffer = pcmBuffer;
-                if (source.playbackRate) source.playbackRate.value = rate;
-                source.connect(ctx.destination);
-                activeSource = source;
-                source.onended = () => {
-                    if (activeSource === source) activeSource = null;
+                try {
+                    if (ctx.state === 'suspended' && typeof ctx.resume === 'function') {
+                        ctx.resume();
+                    }
+                    const source = ctx.createBufferSource();
+                    source.buffer = pcmBuffer;
+                    if (source.playbackRate) source.playbackRate.value = rate;
+                    source.connect(ctx.destination);
+                    activeSource = source;
+                    source.onended = () => {
+                        if (activeSource === source) activeSource = null;
+                        cleanupBtn();
+                        if (onEnded) onEnded();
+                    };
+                    source.start(0);
+                    return true;
+                } catch (err) {
+                    activeSource = null;
                     cleanupBtn();
-                    if (onEnded) onEnded();
-                };
-                source.start(0);
-                return true;
-            } catch (err) {
-                activeSource = null;
-                cleanupBtn();
+                }
             }
         }
 

@@ -29,11 +29,12 @@ assert.strictEqual(resolveVoiceName({ type: 'story' }, 'es-ES'), 'es-ES-Chirp3-H
 assert.strictEqual(resolveVoiceName({ type: 'reading' }, 'es-ES'), 'es-ES-Chirp3-HD-Enceladus');
 assert.strictEqual(resolveVoiceName({ character: 'Puck' }, 'es-ES'), 'es-ES-Chirp3-HD-Puck');
 
-// Hungarian retains Chirp3-HD across all types; story/reading uses Enceladus (low male narrator)
+// Hungarian retains Chirp3-HD across all types; story/reading and default untyped words use Enceladus
 assert.strictEqual(resolveVoiceName({ type: 'vocabulary' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Enceladus');
 assert.strictEqual(resolveVoiceName({ type: 'story' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Enceladus');
 assert.strictEqual(resolveVoiceName({ type: 'reading' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Enceladus');
 assert.strictEqual(resolveVoiceName({ type: 'narrator' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Enceladus');
+assert.strictEqual(resolveVoiceName({}, 'hu-HU'), 'hu-HU-Chirp3-HD-Enceladus');
 
 // Dialogue characters in stories respect gender and explicit character overrides
 assert.strictEqual(resolveVoiceName({ type: 'story', gender: 'female' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Kore');

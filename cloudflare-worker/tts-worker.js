@@ -92,7 +92,7 @@ function resolveVoiceName(payload, languageCode) {
             return `hu-HU-Chirp3-HD-${SHORT_VOICE[payload.gender]}`;
         }
         if (isLongForm || payload.type === 'narrator') return 'hu-HU-Chirp3-HD-Enceladus';
-        const short = SHORT_VOICE[payload.type] || SHORT_VOICE.narrator;
+        const short = SHORT_VOICE[payload.type] || 'Enceladus';
         return `hu-HU-Chirp3-HD-${short}`;
     }
 
@@ -176,17 +176,24 @@ export default {
         // Intonation fix: if text has no terminal punctuation, append '.' to enforce falling
         // declarative cadence. Critical for Hungarian isolated vocabulary words (e.g. "kutya" → "kutya.")
         // — without punctuation the neural model treats the word as an open clause and raises pitch.
+        // For Hungarian, also capitalize the first letter: lowercase isolated words like "ez.",
+        // "az.", "ki." are mistaken by Google TTS's normalizer for abbreviations (ezelőtt, azaz, kiadás)
+        // and synthesized as empty silence.
         if (!/[.!?…]$/.test(text)) {
+            if (languageCode === 'hu-HU') {
+                text = text.charAt(0).toUpperCase() + text.slice(1);
+            }
             text = text + '.';
         }
 
         // Hungarian Wh-question cadence: Hungarian Wh-questions (*ki, mi, hol...*) naturally use
         // a falling tone. When '?' is sent to the model it produces an English-style high-rise
         // on the final syllable which sounds unnatural. Replace the terminal '?' with '.' so the
-        // model uses falling declarative cadence.
+        // model uses falling declarative cadence. Also ensure initial letter is capitalized to
+        // prevent abbreviation silence.
         const HU_WH_WORDS = /^(ki|mi|hol|mikor|miért|hogyan|mennyi|milyen|melyik|hova|honnan|merre|meddig|mettől|mióta|mire)\b/i;
         if (languageCode === 'hu-HU' && text.endsWith('?') && HU_WH_WORDS.test(text)) {
-            text = text.slice(0, -1) + '.';
+            text = text.charAt(0).toUpperCase() + text.slice(1, -1) + '.';
         }
 
         // Hungarian story comma cadence: in narrative readings, commas mark rhythmic clause
@@ -216,12 +223,15 @@ export default {
             const cached = await r2.get(key);
             if (cached) {
                 const bytes = new Uint8Array(await cached.arrayBuffer());
-                return json({
-                    audioContent: bytesToBase64(bytes),
-                    voiceName,
-                    lang,
-                    cached: true
-                }, 200, cors);
+                // Only serve cached audio if it contains substantive audio data (corrupted silent clips are < 1200 bytes)
+                if (bytes.length >= 1200) {
+                    return json({
+                        audioContent: bytesToBase64(bytes),
+                        voiceName,
+                        lang,
+                        cached: true
+                    }, 200, cors);
+                }
             }
         }
 
@@ -258,11 +268,12 @@ export default {
                 return json({ error: 'No audioContent in Google TTS response' }, 502, cors);
             }
 
-            if (r2) {
+            const rawBytes = base64ToBytes(data.audioContent);
+            if (r2 && rawBytes.length >= 1200) {
                 // Best-effort: a write failure shouldn't fail the response the
                 // learner is waiting on, just cost a repeat Google TTS call later.
                 try {
-                    await r2.put(key, base64ToBytes(data.audioContent), {
+                    await r2.put(key, rawBytes, {
                         httpMetadata: { contentType: 'audio/mpeg' }
                     });
                 } catch (cacheErr) {

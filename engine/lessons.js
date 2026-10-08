@@ -997,7 +997,7 @@ function setExerciseVoiceMuted(value) {
 
 function speakExercise(text) {
     if (!text || exerciseVoiceMuted() || typeof ParlourTTS === 'undefined') return;
-    ParlourTTS.speak({ text });
+    ParlourTTS.speak({ text, type: 'vocabulary' });
 }
 
 function speakSettled() {
