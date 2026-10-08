@@ -1,15 +1,16 @@
 # Project instructions
 
-## Work in your own worktree, not the Google Drive folder
+## Work in your own worktree, not the main checkout
 
-Antigravity edits files in the main checkout (the Google Drive folder)
+The main checkout is `C:/dev/parlour` (moved off Google Drive 2026-10-08;
+the old Drive folder is retired, don't use it). Antigravity edits files there
 while Claude sessions run, and has wiped Claude's uncommitted work there
 before. Claude edits and commits in its own worktree, `C:/dev/parlour-claude`.
-Use absolute paths there even when the session opened in the Drive folder.
+Use absolute paths there even when the session opened in the main checkout.
 A second Claude session running at the same time makes its own:
-`git worktree add --detach C:/dev/parlour-<task> origin/master`. Commit there,
-then `git pull --rebase origin master` and `git push origin HEAD:master`.
-commit-gate blocks git writes in the main checkout.
+`git -C C:/dev/parlour worktree add --detach C:/dev/parlour-<task> origin/master`.
+Commit there, then `git pull --rebase origin master` and
+`git push origin HEAD:master`. commit-gate blocks git writes in the main checkout.
 
 ## Exercise metadata is required on all generated content
 

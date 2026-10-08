@@ -4,7 +4,7 @@ This is the only rules document you read. You get two units, in Hungarian (`hu`)
 Spanish (`es-es` + `es-latam`, see § Spanish; the examples in the rules are Hungarian,
 the Spanish section says how each applies). For every exercise in them
 you decide one skill tag, fix real content defects, and report. Work only in
-`C:/dev/parlour-claude` (absolute paths); never touch the Google Drive checkout; no git
+`C:/dev/parlour-claude` (absolute paths); never touch the main checkout `C:/dev/parlour`; no git
 writes; set `PYTHONIOENCODING=utf-8` on every python command. Never run `apply_tags.py`
 or `lock_tags.py`.
 
