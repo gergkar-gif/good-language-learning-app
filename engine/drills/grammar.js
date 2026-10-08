@@ -320,6 +320,7 @@ const GrammarDriller = (function () {
                 return {
                     kind: 'fill-blank',
                     sentence: ex.sentence,
+                    hint: ex.hint,
                     answer: ex.answer || (ex.answers && ex.answers[0]),
                     acceptable: ex.answers || [ex.answer],
                     explanation: ex.explanation,

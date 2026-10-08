@@ -86,6 +86,7 @@ across them. Those are exactly the rules that break when authoring at volume.
 | `sentence-order` `solution` indices are a permutation of `sentences` | ❌ |
 | `multiple-choice` / `dialogue-complete` `correct` is a valid option index | ❌ |
 | `fill-blank` `answer` actually fits the blank in `sentence` | ❌ |
+| A `fill-blank` hint is in `hint`, not written into `sentence` | ✅ `validate-content.py` |
 | A lesson file's `title` matches its curriculum entry | ✅ generated, cannot drift |
 
 ## Content the engine silently drops

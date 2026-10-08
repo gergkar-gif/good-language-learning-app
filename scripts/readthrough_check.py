@@ -39,7 +39,7 @@ PERSON_END = re.compile(r"(om|em|öm|am|ad|ed|od|öd|unk|ünk|atok|etek|otok|öt
 ES_PERSON = re.compile(r"\b(yo|t[uú]|[eé]l|ella|usted|nosotros|nosotras|vosotros|vosotras|ellos|ellas|ustedes|I|you|he|she|we|they)\b", re.I)
 ES_AUX = {"he", "has", "ha", "hemos", "habéis", "han"}
 EXCHANGE = re.compile(r"\b((starts?|begins?|opens?|continues?|follows?|ends?|finishes) (this|the|that) (exchange|conversation|dialogue)|this exchange)\b", re.I)
-CONTENT_KEYS = ("question", "sentence", "options", "pairs", "solution", "solutions", "sentences", "tiles", "prompt", "template", "answer", "answers")
+CONTENT_KEYS = ("question", "sentence", "options", "pairs", "solution", "solutions", "sentences", "tiles", "prompt", "template", "answer", "answers", "hint")
 
 
 def load(p):
@@ -63,6 +63,11 @@ def prompt_text(e):
     if e.get("type") == "dialogue-complete":
         return " ".join(l.get("text", "") for l in e.get("prompt") or [] if "_" not in l.get("text", ""))
     return e.get("sentence") or e.get("question") or ""
+
+
+def hints(e, ptxt):
+    """The fill-blank hint: the `hint` field, plus any old-style "(...)" left in the prompt."""
+    return ([e["hint"]] if isinstance(e.get("hint"), str) else []) + re.findall(r"\(([^)]*)\)", ptxt)
 
 
 def positions(course, level):
@@ -158,12 +163,12 @@ def main():
                 if any(pw[i:i + len(aw)] == aw for i in range(len(pw) - len(aw) + 1)):
                     warns.append(f"{eid}: the answer {ans!r} is printed in the prompt")
             if lang == "hu" and e.get("type") == "fill-blank" and ans:
-                hint = " ".join(re.findall(r"\(([^)]*)\)", ptxt))
+                hint = " ".join(hints(e, ptxt))
                 last = (words(ans) or [""])[-1]
                 if PERSON_END.search(last) and len(last) > 4 and hint and not PERSON_WORDS.search(hint):
                     warns.append(f"{eid}: answer {ans!r} carries a person/possessor ending but hint ({hint}) names no person")
             if lang != "hu" and e.get("type") == "fill-blank" and ans and words(ans) and words(ans)[-1] in ES_AUX:
-                if not ES_PERSON.search(" ".join(re.findall(r"\(([^)]*)\)", ptxt)) + " " + (e.get("english") or "") + " " + re.sub(r"\([^)]*\)", " ", ptxt)):
+                if not ES_PERSON.search(" ".join(hints(e, ptxt)) + " " + (e.get("english") or "") + " " + re.sub(r"\([^)]*\)", " ", ptxt)):
                     warns.append(f"{eid}: answer {ans!r} fits several persons but the hint and sentence name none; add a person to the hint")
             if lang != "hu" and e.get("type") == "multiple-choice" and len(opts) > 1 and all(isinstance(o, str) for o in opts):
                 cw = words(opts[e["correct"]])
@@ -173,7 +178,7 @@ def main():
                     if i != e["correct"] and len(diff) == 2 and diff[1] == diff[0] + 1 and ow[diff[0]] == cw[diff[1]] and ow[diff[1]] == cw[diff[0]]:
                         warns.append(f"{eid}: option {o!r} is a swap of two adjacent words in the answer; check it is really ungrammatical (Spanish word order is free)")
             if e.get("type") == "fill-blank" and ans:
-                for h in re.findall(r"\(([^)]*)\)", ptxt):
+                for h in hints(e, ptxt):
                     if words(h) and words(h) == words(ans):
                         warns.append(f"{eid}: the hint ({h}) is the answer {ans!r}; give an English hint instead")
             for i, s2 in (d.get("ds") or {}).items():

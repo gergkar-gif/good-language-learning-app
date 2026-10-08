@@ -610,6 +610,31 @@ def stray_script_errors(path):
     return errs
 
 
+FB_ACRONYM = re.compile(r"^(?=.*[A-ZÁÉÍÓÖŐÚÜŰ].*[A-ZÁÉÍÓÖŐÚÜŰ])[A-ZÁÉÍÓÖŐÚÜŰ0-9\-]+$")
+FB_AFTER_BLANK = re.compile(r"_{2,}['\"’”]?[\s,]*\(([^()]*)\)")
+FB_AT_END = re.compile(r"\(([^()]*)\)[\s.?!…]*(\[[^\]]*\])?[\s.?!…]*$")
+
+
+def fill_blank_hint_errors(data):
+    """A fill-blank hint goes in `hint`, not in `sentence` as a parenthetical
+    after the blank or at the end (ROADMAP 149; scripts/migrate_fillblank_hints.py
+    moved the old ones). Acronyms such as "(BOE)" belong to the sentence, and
+    so does a parenthetical that holds the blank itself."""
+    errs = []
+    for idx, ex in enumerate(data.get("exercises", [])):
+        s = ex.get("sentence")
+        if ex.get("type") != "fill-blank" or not isinstance(s, str):
+            continue
+        for m in (FB_AFTER_BLANK.search(s), FB_AT_END.search(s)):
+            inner = m.group(1).strip() if m else ""
+            rest = s[:m.start(1)] + s[m.end(1):] if m else ""
+            if inner and not FB_ACRONYM.match(inner) and re.search(r"_{2,}", rest):
+                errs.append((f"exercises/{idx} ({ex.get('id')})",
+                             f"hint ({inner}) is written into sentence; move it to the \"hint\" field"))
+                break
+    return errs
+
+
 def duplicate_story_id_errors(lang_dir):
     """Two story files with the same id: the Library lists both under one id
     (shared reading progress) and the manifest keeps whichever it reads last.
@@ -737,6 +762,8 @@ def validate_language(lang, only=None, sources=None):
             elif name == "units" and enforce_metadata:
                 meta_errors = validate_unit_tracks(data, path)
             meta_errors += stray_script_errors(path)
+            if name == "exercises":
+                meta_errors += fill_blank_hint_errors(data)
 
             if not errors and not meta_errors:
                 passed += 1

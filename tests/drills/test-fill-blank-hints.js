@@ -306,6 +306,26 @@ async function runTests() {
 
     console.log('[PASS] GrammarRunner fill-blank has matching progressive hint behavior without emojis.');
 
+    console.log('--- Test 8: the `hint` field shows right after the blank ---');
+    const hinted = stepRenderers['fill-blank']({
+        sentence: 'Ayer __ una carta.',
+        hint: 'escribir',
+        answer: 'escribí',
+        english: 'Yesterday I wrote a letter.'
+    });
+    assert.ok(hinted.includes('<span class="lsn-blank">?</span> <span class="lsn-blank-hint">(escribir)</span> una carta.'),
+        'Lesson fill-blank shows the hint after the blank');
+    const plain = stepRenderers['fill-blank']({ sentence: 'Buenos ___.', answer: 'días', english: 'Good morning.' });
+    assert.ok(!plain.includes('lsn-blank-hint'), 'No hint span without a hint field');
+
+    GrammarRunner.render(grContainer, {
+        exercise: { kind: 'fill-blank', sentence: 'Ayer __ una carta.', hint: 'escribir', answer: 'escribí' }
+    });
+    assert.ok(grContainer.innerHTML.includes('<span class="gd-blank">?</span> <span class="gd-blank-hint">(escribir)</span> una carta.'),
+        'GrammarRunner fill-blank shows the hint after the blank');
+
+    console.log('[PASS] The hint field renders after the blank in lessons and the Grammar Driller.');
+
     console.log('\n[ALL PASS] All fill-blank hint mechanism tests passed successfully!');
 }
 

@@ -197,7 +197,7 @@ The commonest defects in shipped content. Each rule is here because a review fou
 ### 6.4 Fill-blanks and the `hint` field
 
 - **The blank:** exactly one `____`, inside the sentence where the word belongs, never appended after a complete sentence. The answer never repeats letters printed next to the blank (`meg____` → the answer has no *meg*).
-- **The hint goes in the `hint` field, never in `sentence`.** (The field is being added to the schemas and the engine under ROADMAP 149; it lands before the first generation run.) Give a hint only when the blank can't be recovered without one: a new word, an ambiguous person, case or tense, or a register choice. Most blanks need none.
+- **The hint goes in the `hint` field, never in `sentence`.** The engine shows it in parentheses after the blank, and `validate-content.py` fails a hint written into the sentence. Give a hint only when the blank can't be recovered without one: a new word, an ambiguous person, case or tense, or a register choice. Most blanks need none.
 - **A hint is never the answer.** Give the lemma plus the grammar (`válik, past`; `halál + -hoz`; `bailar, yo`) or English (`meanwhile`). Never the inflected form.
 - **Pin the person.** A person- or possessor-marked answer, or a sentence with the subject dropped, names the person in the hint (`I`, `his family`) or in the sentence.
 - **English-only hints need synonyms.** When the hint is English only, list every correct target word in `answers` (*consent* → *beleegyezését*, *hozzájárulását*).

@@ -75,8 +75,9 @@ or `lock_tags.py`.
 
 - a choice/dialogue item with two acceptable answers (make the wrong option clearly wrong);
 - a fill-blank accepting one answer where several fit: add alternatives via an `answers`
-  array replacing `answer`, or pin it with an English hint in a trailing parenthetical that
-  names the person for a conjugated or possessed form (`(his family)`, `(I closed)`);
+  array replacing `answer`, or pin it with an English `hint` (the exercise field, never a
+  parenthetical in `sentence`) that names the person for a conjugated or possessed form
+  (`his family`, `I closed`);
 - the answer printed in the prompt (the checker warns), a wrong gloss, a wrong "correct"
   answer, a "which means X?" whose options include another form of the same word;
 - an item whose answer needs grammar or words not yet taught, or that asks about the
@@ -144,8 +145,8 @@ skill `[taught in this unit]` or `[taught LATER]` by that order.
   The 2–6 old tags on an exercise are noise: decide one.
 - **Sentence-builders with a natural alternative order** (*Ya hemos…* / *Hemos ya…*): replace `solution` with `solutions` listing every natural order (same tiles; never keep both keys, the schema rejects it); the grader accepts all of them. Missing alternatives are a defect: the learner builds a correct sentence and is told it is wrong.
 - **Fill-blank pinning.** Spanish drops the subject, so a blank like *___ en casa* may accept
-  several persons: add the missing forms to `answers`, or pin it with an English hint naming the
-  person (`(I am)`). *Tú/usted* and *vosotros/ustedes* variants both count when the course allows
+  several persons: add the missing forms to `answers`, or pin it with an English `hint` naming the
+  person (`I am`). *Tú/usted* and *vosotros/ustedes* variants both count when the course allows
   them.
 - Worked examples: *Mi hermana ___ (tener) dos hijos* → `tener`; *El libro es ___ (rojo/roja)* →
   `adjective-agreement`; *¿Cómo se dice "brother"?* → unit vocabulary; *Ellos __ dos hijos*

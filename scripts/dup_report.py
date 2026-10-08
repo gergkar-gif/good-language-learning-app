@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CK = ("question", "sentence", "options", "pairs", "solution", "prompt", "template",
-      "answer", "answers", "correct", "text", "english", "words", "tiles", "sentences", "solutions")
+      "answer", "answers", "correct", "text", "english", "words", "tiles", "sentences", "solutions", "hint")
 
 
 def key(e):

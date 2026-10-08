@@ -29,7 +29,7 @@ Work only in `C:/dev/parlour-claude` (absolute paths); no git writes; set
    - exactly one grammatical/correct option; a wrong option must not be a valid answer
      (free word order, optional subject, a present for the future, colloquial forms);
    - fill-blank answers needing a person carry a person in the hint or the English line;
-     the parenthesised hint must not be the answer; sentence-builders need an `english`
+     the `hint` must not be the answer; sentence-builders need an `english`
      prompt; no grammar the course teaches later; a wrong dialogue reply must not be a
      valid answer to its question;
    - the new item must differ from every other item of the unit (check with step 6);

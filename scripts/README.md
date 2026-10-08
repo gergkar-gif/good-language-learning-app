@@ -49,7 +49,7 @@ regenerable.
 
 | Script | Purpose |
 |---|---|
-| `add_fillblank_hints.py` | Adds a parenthetical hint to fill-blanks that are unrecoverable without one. |
+| `migrate_fillblank_hints.py` | Moved fill-blank hints out of `sentence` into the `hint` field (ROADMAP 149); rerun it on imported content that still writes them into the sentence. |
 | `export_missing_vocab_sentences.py` | Exports words lacking example sentences as prompt files for LLM backfill. |
 | `generate_scenarios.py`, `generate_writing_exchanges.py` | Regenerate the conversation scenarios and written exchanges. |
 | `stitch_track_unit_stories.py` | Stitches an elective-track unit's five readings into its consolidated Library reading. |

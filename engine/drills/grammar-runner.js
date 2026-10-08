@@ -16,7 +16,7 @@
 // ever sees the normalised form, never the raw content-file shape.
 //
 //   multiple-choice:   { kind, question, options, correct, explanation? }
-//   fill-blank:        { kind, sentence, answer, explanation? }
+//   fill-blank:        { kind, sentence, hint?, answer, explanation? }
 //   sentence-builder:  { kind, tiles, solution, english? }
 //   sentence-order:    { kind, sentences, solution }
 //   dialogue-complete: { kind, prompt, options, correct }
@@ -249,7 +249,8 @@ const GrammarRunner = (function () {
         const englishGloss = ex.english || ex.translation || '';
 
         _container.innerHTML = `
-            <p class="gd-question">${_escapeHtml(ex.sentence).replace(/_{2,}/, '<span class="gd-blank">?</span>')}</p>
+            <p class="gd-question">${_escapeHtml(ex.sentence).replace(/_{2,}/, '<span class="gd-blank">?</span>'
+                + (ex.hint ? ` <span class="gd-blank-hint">(${_escapeHtml(ex.hint)})</span>` : ''))}</p>
             <input class="gd-input" type="text" placeholder="Type the missing word"
                 autocomplete="off" autocapitalize="off" spellcheck="false">
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.gd-input') : ''}

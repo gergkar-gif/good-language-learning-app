@@ -1639,7 +1639,8 @@ const stepRenderers = {
         // hint that wouldn't just be the answer — don't offer one.
         const canHint = !!stepState.translation || !hintStartRevealsAnswer(stepState.answer);
         return `
-            <p class="lsn-question">${escMd(step.sentence).replace(/_{2,}/, '<span class="lsn-blank">?</span>')}</p>
+            <p class="lsn-question">${escMd(step.sentence).replace(/_{2,}/, '<span class="lsn-blank">?</span>'
+                + (step.hint ? ` <span class="lsn-blank-hint">(${esc(step.hint)})</span>` : ''))}</p>
             <div class="lsn-input-with-mic">
                 <input id="blank-input" class="lsn-input" type="text" placeholder="Type or speak the missing word" autocomplete="off" autocapitalize="off" spellcheck="false">
                 <button type="button" class="lsn-mic-addon" onclick="lessonInlineVoiceInput('#blank-input', this)" aria-label="Speak to type" title="Speak to type">

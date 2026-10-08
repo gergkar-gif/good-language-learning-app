@@ -286,6 +286,15 @@
             "_____ de Hungría."
           ]
         },
+        "hint": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Shown in parentheses after the blank, only when the blank can't be recovered without it: the lemma plus the grammar ('bailar, yo', 'halál + -hoz') or English ('meanwhile'). Never the answer, and never written into `sentence`. See docs/course-generation-brief.md § 6.4.",
+          "examples": [
+            "escribir",
+            "in Hungary"
+          ]
+        },
         "answer": {
           "type": "string",
           "minLength": 1,

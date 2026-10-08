@@ -227,14 +227,11 @@ deliberately.
 
 **`fill-blank` hints:** when a blank is genuinely unrecoverable without a
 nudge — a brand-new word, an ambiguous case/person choice, a fixed register
-pick — append a short parenthetical hint to the end of `sentence`, e.g.
-`"Az utcán látok egy ____. (bird)"`. Only when truly unguessable; most
-blanks shouldn't have one. **This is scheduled to change**: a dedicated
-`hint` field is planned (see `ROADMAP.md` → Workshop → "Fill-blank
-exercises should carry a real, typed `hint` field") so it renders styled
-and separate from the sentence instead of being silently part of the same
-string. Once that field exists in `exercises.schema.json`, use it instead
-— this note will be updated at that point.
+pick — put a short hint in the exercise's `hint` field, e.g.
+`"sentence": "Az utcán látok egy ____.", "hint": "bird"`. Only when truly
+unguessable; most blanks shouldn't have one. Never write the hint into
+`sentence` (the validator fails it); the engine shows it in parentheses
+after the blank. Full rules: docs/course-generation-brief.md § 6.4.
 
 ---
 
