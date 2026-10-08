@@ -1,5 +1,24 @@
 # Instructions for AI coding agents (Antigravity, Gemini, etc.)
 
+## Who does what
+
+- **The user** is the creative authority: sets direction and gives final
+  approval. Anything marked *(sign-off)* waits for the user.
+- **Claude** is the project manager: plans and breaks down work, writes the
+  briefs, assigns tasks, reviews output against the checks, and keeps
+  ROADMAP.md, ACHIEVED.md, the docs, the rules and the checks.
+- **Antigravity** does the bulk work from a brief: follows it exactly, runs
+  the validator, stops at the brief's checkpoints for review, and keeps the
+  records ("Project records" below). It does not change rules, skills, the
+  curriculum or a task's scope on its own; it raises them instead.
+- **ChatGPT** is for one-off jobs the user runs by hand (translation exports).
+
+**No double work.** Every open task has one owner, named in its queue item
+(`Owner:`). Nobody redoes another's task: review it and send the fixes back
+through its brief. A fix to a class of problem lands together with its rule
+in the docs and, where a machine can check it, a check, so it is never
+fixed twice.
+
 ## Before every commit or push that touches `content/`
 
 Run the schema validator and fix every failure it reports:
