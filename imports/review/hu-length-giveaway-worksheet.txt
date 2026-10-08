@@ -4297,8 +4297,8 @@ In C1 rhetoric, what is the term for a long, harmoniously balanced multi-clause 
 * körmondat (periodic sentence)
 - tőmondat
 - szóhalmozás
-decision: 
-why: 
+decision: match: tőmondat (simple kernel sentence) || szóhalmozás (rhetorical accumulation)
+why: Both new wrong options add rhetorical/syntactic terms with matching English glosses (32 and 37 vs 29 chars); only körmondat denotes a periodic sentence.
 
 ### c1-01-05-introduce-1   teaches: ['c1-argument-cohesion-vocab']
 files: content/hu/exercises/c1/c1-01-05-ex.json
@@ -4307,8 +4307,8 @@ What does Babits mean by the term 'írástudó'?
 * the intellectual whose vocation is to uphold universal spiritual and moral truths
 - anyone who literally knows the alphabet
 - a paid government scribe
-decision: 
-why: 
+decision: match: an author who writes popular commercial fiction for mass entertainment || an administrative scribe employed to draft official government statutes
+why: Both new wrong options provide plausible literary/civic roles matching register and length (71 and 75 vs 81 chars); only the marked option defines Babits's moral intellectual.
 
 ### c1-03-03-introduce-1   teaches: ['c1-hedging-evidentials-vocab']
 files: content/hu/exercises/c1/c1-03-03-ex.json
@@ -4317,8 +4317,8 @@ Milyen célt szolgál a 'nem zárható ki, hogy' fordulat?
 * Lehetőséget ad egy alternatív magyarázat felvetésére anélkül, hogy bizonyítottnak tekintenénk.
 - Kizárja a további vitát.
 - Azonnali beismerést jelent.
-decision: 
-why: 
+decision: match: Lezárja a tudományos vitát azzal a ténnyel, hogy más magyarázat nem létezhet. || Elismeri a vizsgált állítás cáfolhatatlan, végleges bizonyítottságát.
+why: Both new wrong options describe definitive epistemic closures of matching register and length (75 and 76 vs 94 chars); only the marked option describes epistemic hedging/openness.
 
 ### c1-03-consolidation-9   teaches: ['epistemic-hedging']
 files: content/hu/exercises/c1/c1-03-consolidation-ex.json
@@ -4327,8 +4327,8 @@ Mi a különbség a 'bizonyára' és az 'aligha' között?
 * A 'bizonyára' magas valószínűséget, az 'aligha' kifejezetten alacsony valószínűséget jelez.
 - Nincs köztük semmi különbség.
 - Az 'aligha' csak a múlt időben használható.
-decision: 
-why: 
+decision: match: A 'bizonyára' alacsony valószínűséget, az 'aligha' kifejezetten magas valószínűséget jelez. || A 'bizonyára' szubjektív feltételezést, az 'aligha' objektív ténybeli bizonyosságot fejez ki.
+why: Option 1 inverts the probability scale and Option 2 posits an invented semantic distinction, matching length and analytical style (91 and 94 vs 91 chars).
 
 ### c1-13-03-check-8   teaches: ['c1-fiscal-counterbalancing']
 files: content/hu/exercises/c1/c1-13-03-ex.json
@@ -4337,8 +4337,8 @@ Mi az alkotmányos adósságfék (debt brake) célja?
 * Annak jogi biztosítása, hogy az államadósság a GDP arányában évről évre mérséklődjön.
 - A banki hitelkamatok maximálása.
 - A pénzforgalom készpénzmentesítése.
-decision: 
-why: 
+decision: match: A kereskedelmi banki hitelkamatok felső határának törvényi rögzítése válság idején. || A gazdasági szereplők közötti készpénzforgalom fokozatos korlátozása az adóbevételekért.
+why: Both new wrong options provide genuine macroeconomic/regulatory policies (interest rate caps, cash restrictions) matching length and style (86 and 88 vs 85 chars); only the marked option defines the debt brake.
 
 ### c1-14-01-check-8   teaches: ['c1-ecological-system-dynamics']
 files: content/hu/exercises/c1/c1-14-01-ex.json
@@ -4347,8 +4347,8 @@ Melyik állítás írja le helyesen az ökoszisztéma-szolgáltatások fogalmát
 * A természet által a társadalom számára biztosított ingyenes javak és funkciók összessége (pl. tiszta ivóvíz, beporzás, szén-dioxid-megkötés).
 - A nemzeti parkok belépődíjaiból származó bevétel.
 - A faipari vállalatok által fizetett környezetvédelmi bírság.
-decision: 
-why: 
+decision: match: A természetvédelmi hatóságok által a szennyező ipari létesítményekre kiszabott kötelező bírságok és adók összessége. || Az állami erdőgazdaságok által a faipari kitermelésből és a vadászati jogokból realizált éves költségvetési bevétel.
+why: Both new wrong options describe plausible environmental economic concepts (regulatory fines, timber/hunting revenues) matching length and register (114 and 119 vs 141 chars); only the marked option defines ecosystem services.
 
 ### c1-14-02-check-8   teaches: ['c1-energy-transition-clauses']
 files: content/hu/exercises/c1/c1-14-02-ex.json
@@ -4357,8 +4357,8 @@ Mit takar a 'villamosenergia-rendszerirányító' (TSO / MAVIR) feladatköre?
 * A termelés és a fogyasztás másodpercről másodpercre történő egyensúlyban tartását és a hálózati frekvencia biztosítását.
 - A lakossági villanyszámlák postázását.
 - Új szénbányák megnyitását.
-decision: 
-why: 
+decision: match: A villamosenergia-piacon értékesített áram tőzsdei árfolyamának és hatósági tarifáinak napi szintű meghatározását. || Az elavult széntüzelésű erőművek hatósági bezárását és a lakossági napelemek műszaki engedélyezését.
+why: Both new wrong options describe real energy sector regulatory tasks (power exchange tariffs, decommissioning/permitting) matching length (112 and 106 vs 120 chars); only the marked option defines the TSO's grid balancing function.
 
 ### c1-14-03-check-8   teaches: ['c1-green-taxonomy-criteria']
 files: content/hu/exercises/c1/c1-14-03-ex.json
@@ -4367,8 +4367,8 @@ Mi az ESG-szempontok (Environmental, Social, Governance) lényege a vállalatér
 * A pénzügyi mutatókon túlmenően a környezeti lábnyom, a társadalmi felelősség és az átlátható cégvezetés együttes vizsgálata.
 - A dolgozók kötelező heti sportolásának ellenőrzése.
 - A külföldi devizaszámlák könyvelése.
-decision: 
-why: 
+decision: match: A multinacionális vállalatok nemzetközi adóoptimalizálásának és offshore pénzmozgásainak szigorú könyvvizsgálata. || A munkavállalók szakszervezeti tagságának és bérfeszültségeinek kizárólagos statisztikai összegzése a vezetés számára.
+why: Both new wrong options describe plausible corporate finance/HR audit criteria of matching length and register (114 and 119 vs 124 chars); only the marked option defines ESG criteria.
 
 ### c1-14-04-check-8   teaches: ['c1-nuclear-governance']
 files: content/hu/exercises/c1/c1-14-04-ex.json
@@ -4377,8 +4377,8 @@ Mit jelent az 'alapterhelés' (baseload) funkciója a villamosenergia-rendszerbe
 * A rendszer azon folyamatos, stabil áramszintjét, amely napszaktól és időjárástól függetlenül szünetmentesen rendelkezésre áll.
 - A legmagasabb díjú villanyáram tarifáját.
 - A hálózat túlterhelése miatti áramszünetet.
-decision: 
-why: 
+decision: match: A csúcsidőszakokban hirtelen fellépő extra fogyasztási igényt, amelyet gyors indítású gázturbinákkal fedeznek. || A megújuló energiaforrások időjárásfüggő ingadozása miatt fellépő tartalék áramszükségletet.
+why: Both new wrong options describe genuine grid power concepts (peak load, reserve power) matching length and register (111 and 98 vs 126 chars); only the marked option defines baseload.
 
 ### c1-14-05-reading-4   teaches: None
 files: content/hu/exercises/c1/c1-14-05-ex.json
@@ -4387,8 +4387,8 @@ Mit testesít meg Matula bácsi karaktere a Tüskevárban?
 * A természettel harmóniában élő, annak törvényeit és határait tisztelő hagyományos ökológiai bölcsességet.
 - Egy radikális iparosítást követelő hivatalnokot.
 - Egy természetvédelmi bírságokat kiszabó bürokratát.
-decision: 
-why: 
+decision: match: A modern nagyvárosi civilizáció kényelmét kereső, a vadvilágtól elidegenedett technokrata szemléletet. || A természeti erőforrások korlátlan gazdasági kiaknázását szorgalmazó, profitorientált vállalkozót.
+why: Both new wrong options describe contrasting modern attitudes matching length and literary register (104 and 101 vs 105 chars); only the marked option reflects Matula's traditional ecological character.
 
 ### c1-14-consolidation-9   teaches: ['c1-nuclear-governance']
 files: content/hu/exercises/c1/c1-14-consolidation-ex.json
@@ -4397,8 +4397,8 @@ Hogyan járul hozzá a nukleáris energia a klímacélok eléréséhez?
 * Szén-dioxid-mentes alapterhelést biztosít, miközben nem terheli a légkört üvegházhatású gázokkal.
 - Hőenergiát von el a környezettől.
 - Csökkenti az ipari vízhasználatot nullára.
-decision: 
-why: 
+decision: match: Teljes mértékben helyettesíti a megújuló nap- és szélenergia tárolásához szükséges akkumulátorkapacitást. || Csökkenti a légköri felmelegedést azáltal, hogy elnyeli a környezetében keletkező ipari szén-dioxidot.
+why: Both new wrong options describe plausible but false environmental claims matching length and scientific tone (106 and 104 vs 97 chars); only the marked option correctly explains nuclear power's low-carbon baseload role.
 
 ### c1-15-02-introduce-1   teaches: ['c1-artificial-intelligence-vocab']
 files: content/hu/exercises/c1/c1-15-02-ex.json
@@ -4407,8 +4407,8 @@ Mi a transzformátor-architektúra kulcsfontosságú újítása?
 * Az önfigyelem (self-attention) mechanizmusa, amely lehetővé teszi a kontextus párhuzamos feldolgozását szekvenciális lépések nélkül.
 - A mágnesszalagos adattárolás bevezetése.
 - A képernyők felbontásának megduplázása.
-decision: 
-why: 
+decision: match: A visszacsatolt neurális hálózatok azon elve, amely szigorúan csak időbeli sorrendben képes szavakat elemezni. || A döntési fák olyan többdimenziós hierarchiája, amely előre megadott nyelvtani szabályok szerint működik.
+why: Both new wrong options describe real classical computational/NLP methods (RNNs, decision tree rule systems) matching length (111 and 108 vs 132 chars); only the marked option defines the transformer's self-attention innovation.
 
 ### c1-15-03-introduce-1   teaches: ['c1-artificial-intelligence-vocab']
 files: content/hu/exercises/c1/c1-15-03-ex.json
@@ -4417,8 +4417,8 @@ Mi a lényege a 'feketedoboz-jelenségnek' (black box) a mesterséges intelligen
 * Bár a bemenet és a kimenet ismert, a modell belső döntési logikája az emberi elme számára közvetlenül átláthatatlan.
 - Hogy a számítógépeket fekete műanyag házba építik be.
 - Hogy a repülőgépek repülési adatait rögzíti.
-decision: 
-why: 
+decision: match: Hogy a modell fejlesztői szándékosan titokban tartják a forráskódot és a felhasznált tanítóadatok teljes listáját. || Bár a belső súlyok és paraméterek ismertek, a rendszer képtelen új bemenetekre értelmezhető válaszokat adni.
+why: Both new wrong options present plausible machine learning concepts (proprietary opacity, overfitting/generalization failure) matching length (116 and 111 vs 116 chars); only the marked option defines the black box interpretability problem.
 
 ### c1-15-04-introduce-1   teaches: ['c1-artificial-intelligence-vocab']
 files: content/hu/exercises/c1/c1-15-04-ex.json
@@ -4427,8 +4427,8 @@ Mi a kockázata az automatizált adatalapú döntéshozatalnak a közszférában
 * A történelmi adatokban rejlő társadalmi torzítások (bias) intézményesülése és a jogorvoslat nehézkessége.
 - Hogy a nyomtatók túl sok papírt használnak el.
 - Hogy az irodákban túl csendes lesz a munkakörnyezet.
-decision: 
-why: 
+decision: match: Az adatközpontok energiafogyasztásának hirtelen megnövekedése és a hálózati szerverek túlterhelődése. || A köztisztviselők szakmai döntési jogkörének szétaprózódása az önkormányzati hivatalok között.
+why: Both new wrong options describe real administrative/IT concerns matching length and register (104 and 99 vs 105 chars); only the marked option addresses the core risk of algorithmic bias and denial of due process.
 
 ### c1-15-05-introduce-1   teaches: ['c1-artificial-intelligence-vocab']
 files: content/hu/exercises/c1/c1-15-05-ex.json
@@ -4437,8 +4437,8 @@ Milyen alapvető különbséget állapított meg Neumann János a számítógép
 * A gép nagy sebességű soros számításokat végez nagy számtani pontossággal, míg az agy lassabb idegsejtekkel, de masszív párhuzamosítással és hibatűréssel dolgozik.
 - Hogy a gép érzelmekkel rendelkezik, az emberi agy viszont csak számokat lát.
 - Hogy az agy közvetlenül 220 voltos hálózati feszültséggel működik.
-decision: 
-why: 
+decision: match: A gép analóg és intuitív asszociációkkal alkot új mintázatokat, míg az agy kizárólag szigorú bináris aritmetikával és mechanikus soros logikával működik. || A gép az érzelmi intelligencia révén alkalmazkodik a környezethez, míg az emberi elme pusztán tárolt memóriacímek mechanikus lehívására képes.
+why: Both new wrong options construct plausible inverted comparisons matching length and scientific tone (153 and 145 vs 162 chars); only the marked option accurately reflects Neumann's comparison between serial digital machines and parallel neural networks.
 
 ### c1-15-05-reading-4   teaches: None
 files: content/hu/exercises/c1/c1-15-05-ex.json
@@ -4447,8 +4447,8 @@ Mit jelentett Neumann híres felismerése, miszerint 'az agy nyelve nem a matema
 * Hogy az idegrendszer nem merev formális logikai szimbólumokkal, hanem statisztikai és analóg jellegű ingerületi mintázatokkal reprezentálja a világot.
 - Hogy az orvosoknak nem szabad matematikát tanulniuk.
 - Hogy a számítógépek képtelenek összeadni a törteket.
-decision: 
-why: 
+decision: match: Hogy az emberi gondolkodás kizárólag az anyanyelv szavaira épül, és teljesen független az idegsejtek fizikai és biokémiai impulzusaitól. || Hogy az elme a formális matematikai axiómák szigorú levezetésével hoz döntéseket, kizárva minden analóg ingerületi bizonytalanságot.
+why: Both new wrong options describe plausible philosophical/epistemological theories matching length and tone (139 and 140 vs 150 chars); only the marked option conveys Neumann's insight on statistical, non-formal neural representation.
 
 ### c1-15-consolidation-2   teaches: ['participle-actions']
 files: content/hu/exercises/c1/c1-15-consolidation-ex.json
@@ -4457,8 +4457,8 @@ Milyen funkciót töltenek be a '-ván/-vén' végű participiumok az akadémiai
 * Hipotetikus feltételeket vagy ok-okozati körülményeket sűrítenek elegáns szintaktikai formába.
 - Kizárólag múlt idejű parancsot fejeznek ki.
 - Kérdő mondatok végén álló kötőszók.
-decision: 
-why: 
+decision: match: Múltbeli befejezett cselekvések passzív vagy szenvedő értelmét fejezik ki az igei állítmányban. || Jövőbeli elvégzendő kötelességeket vagy szigorú adminisztratív elvárásokat rögzítenek a mondatban.
+why: Both new wrong options describe real participial/verbal functions (passive past, modal obligation '-andó/-endő') of matching length and grammatical register (99 and 99 vs 94 chars); only the marked option describes the adverbial participle '-ván/-vén'.
 
 ### c1-16-02-introduce-1   teaches: ['c1-public-sphere-vocab']
 files: content/hu/exercises/c1/c1-16-02-ex.json
@@ -4467,8 +4467,8 @@ Mit jelent a 'retorikai keretezés' (framing) a politikai kommunikációban?
 * A valóság olyan szempontú bemutatását és megfogalmazását, amely előre meghatározza a választó értelmezési keretét és érzelmi reakcióját.
 - A választási plakátok bekeretezését fa- vagy fémlécekkel.
 - A rádióstúdiók hangszigetelését.
-decision: 
-why: 
+decision: match: A törvényjavaslatok jogi szövegének paragrafusokba és cikkelyekbe foglalását a parlamenti bizottsági viták előtt. || A választási eredmények szigorúan objektív, matematikai és statisztikai összesítését a közvélemény-kutatók által.
+why: Both new wrong options describe real political/civic processes (legislative drafting, polling aggregation) matching length and register (114 and 119 vs 136 chars); only the marked option defines rhetorical framing.
 
 ### c1-16-03-introduce-1   teaches: ['c1-public-sphere-vocab']
 files: content/hu/exercises/c1/c1-16-03-ex.json
@@ -4477,8 +4477,8 @@ Mit jelent a 'közérdekű adat' fogalma a magyar jogrendben?
 * Az állami vagy helyi önkormányzati feladatot ellátó szervek kezelésében lévő, a tevékenységükre vagy közpénzekre vonatkozó nyilvános adatot.
 - A magánszemélyek banki jelszavait.
 - A televíziós műsorvezetők magánéleti titkait.
-decision: 
-why: 
+decision: match: A magánvállalatok által kifejlesztett egyedi szoftverek és gyártási eljárások szigorúan védett iparjogvédelmi adatait. || A bírósági tárgyalásokon részt vevő vádlottak és tanúk védett személyes adatait és orvosi kórtörténetét.
+why: Both new wrong options describe real legal categories of confidential data (trade secrets, protected personal data) matching length and legal tone (118 and 108 vs 140 chars); only the marked option defines public data in Hungarian administrative law.
 
 ### c1-16-04-introduce-1   teaches: ['c1-public-sphere-vocab']
 files: content/hu/exercises/c1/c1-16-04-ex.json
@@ -4487,8 +4487,8 @@ Miért van kiemelt szerepe a forráskritikának az oknyomozó újságírásban?
 * Mert garantálja, hogy a közzétett állítások hiteles, többszörösen ellenőrzött tényeken alapuljanak, kizárva a manipulációt.
 - Hogy a riporterek minél kevesebbet dolgozzanak a cikkeken.
 - Hogy kizárólag névtelen kommentekre lehessen hivatkozni.
-decision: 
-why: 
+decision: match: Mert biztosítja a szerkesztőség számára az állami hirdetésekből és szponzori támogatásokból származó bevételeket. || Mert felgyorsítja a hírközlést azáltal, hogy feleslegessé teszi az információk időigényes háttérellenőrzését.
+why: Both new wrong options start with 'Mert' answering the 'Miért' question (Rule 13) with plausible media operations reasons (revenue protection, publishing speed) matching length (111 and 108 vs 123 chars); only the marked option defines source verification.
 
 ### c1-16-consolidation-2   teaches: ['agentless-constructions']
 files: content/hu/exercises/c1/c1-16-consolidation-ex.json
@@ -4497,8 +4497,8 @@ Mit fejez ki a '-andó/-endő' participium az adminisztratív vagy jogi stílusb
 * Szükségszerűséget, elvégzendő kötelességet vagy szigorú elvárást.
 - Befejezett múltbeli történést.
 - Feltételes kívánságot.
-decision: 
-why: 
+decision: match: Egyidejűleg lezajló folyamatos cselekvést vagy tartós állapotot. || Feltételes módban megfogalmazott szubjektív kívánságot.
+why: Both new wrong options describe real aspectual/modal categories of matching length (67 and 56 vs 65 chars); only the marked option defines the gerundive / participle of obligation.
 
 ### c1-16-consolidation-9   teaches: ['rhetorical-questions']
 files: content/hu/exercises/c1/c1-16-consolidation-ex.json
@@ -4507,8 +4507,8 @@ Mit fejez ki a 'Vajon mi másra utalhatna...' szerkezet egy politikai vitában?
 * Egy költői, deliberatív kérdést, amely logikailag egyetlen elkerülhetetlen következtetésre vezeti rá a hallgatót.
 - Kételyt afelől, hogy létezik-e a valóság.
 - Kérdést a helyes időjárás-előrejelzésről.
-decision: 
-why: 
+decision: match: Egy nyitott és pártatlan érdeklődést, amely a vitapartner véleményét kéri ki további érvek megfontolására. || Egy bizonytalan beismerést, amellyel a szónok saját felkészületlenségét és tévedéseit mentegeti.
+why: Both new wrong options describe plausible rhetorical debate stances (open inquiry, concession) of matching length and register (104 and 96 vs 113 chars); only the marked option defines the leading rhetorical question.
 
 ### c1-17-01-introduce-1   teaches: ['c1-regional-geopolitics-vocab']
 files: content/hu/exercises/c1/c1-17-01-ex.json
@@ -4517,8 +4517,8 @@ Mit jelent a 'reálpolitika' (realpolitik) a nemzetközi kapcsolatokban?
 * Olyan külpolitikai gyakorlatot, amely ideológiai doktrínák helyett a nyers hatalmi érdekekre és a gyakorlati erőviszonyokra épít.
 - A televíziós valóságshow-k elemzését.
 - A határok nélküli világ azonnali kikiáltását.
-decision: 
-why: 
+decision: match: Olyan nemzetközi diplomáciát, amely az egyetemes emberi jogokat és a morális értékeket helyezi minden érdek elé. || A globális intézmények által vezetett békefolyamatot, amely a gazdasági határok teljes felszámolását célozza.
+why: Both new wrong options describe established foreign policy paradigms (liberal moralism, institutional globalism) matching length (110 and 111 vs 129 chars); only the marked option defines realpolitik.
 
 ### c1-17-02-introduce-1   teaches: ['c1-regional-geopolitics-vocab']
 files: content/hu/exercises/c1/c1-17-02-ex.json
@@ -4527,8 +4527,8 @@ Mi a geopolitikai szerepe egy 'ütközőzónának' (buffer zone)?
 * Két rivalizáló nagyhatalom vagy szövetségi rendszer közvetlen katonai összeütközésének elválasztása és a feszültségek tompítása.
 - A nemzetközi autóversenyek lebonyolítása.
 - A vasúti vagonok ütközőinek ellenőrzése.
-decision: 
-why: 
+decision: match: A nemzetközi szabadkereskedelmi megállapodásokban rögzített vámmentes gazdasági térségek védelme és fejlesztése. || Két szövetséges állam közötti közvetlen határátkelők felügyelete és a közös infrastruktúra működtetése.
+why: Both new wrong options describe real international relations/border management functions matching length and tone (109 and 105 vs 128 chars); only the marked option defines a geopolitical buffer zone.
 
 ### c1-17-03-introduce-1   teaches: ['c1-regional-geopolitics-vocab']
 files: content/hu/exercises/c1/c1-17-03-ex.json
@@ -4537,8 +4537,8 @@ Mit jelent a NATO 5. cikkelye szerinti 'kollektív védelem' elve?
 * Hogy a szövetség bármely tagállama elleni fegyveres támadást az összes tagállam elleni támadásnak tekintenek, és kollektíven fellépnek a megtámadott védelmében.
 - Hogy minden ország feloszlatja saját rendőrségét.
 - Hogy a tagállamok nem tarthatnak közös hadgyakorlatokat.
-decision: 
-why: 
+decision: match: Hogy a tagállamok kötelesek átadni nemzeti hadseregük teljes irányítását egy állandó nemzetközi parancsnokságnak békében is. || Hogy a szövetséges országok kizárólag diplomáciai úton és gazdasági szankciókkal léphetnek fel külső agresszió esetén.
+why: Both new wrong options present plausible alternative security alliance models (supranational command, non-military sanctions) matching length and register (124 and 119 vs 160 chars); only the marked option defines Article 5 collective defense.
 
 ### c1-17-04-introduce-1   teaches: ['c1-regional-geopolitics-vocab']
 files: content/hu/exercises/c1/c1-17-04-ex.json
@@ -4547,8 +4547,8 @@ Mit jelent az 'eszkalációs spirál' a konfliktuskutatásban?
 * Olyan folyamatot, amelyben a felek egymást követő válaszlépései kölcsönösen és egyre magasabb szintre növelik a feszültséget vagy az erőszakot.
 - A hegyi utak csigalépcsőszerű kialakítását.
 - A tárgyalótermek légkondicionálását.
-decision: 
-why: 
+decision: match: A diplomáciai tárgyalások azon szakaszát, amelyben a konfliktusban álló felek kölcsönös engedményekkel csillapítják a válságot. || A nemzetközi békefenntartó erők által irányított, előre egyeztetett fegyverletételi és demobilizációs folyamatot.
+why: Both new wrong options describe real peace and conflict resolution stages (de-escalation, disarmament) matching length and tone (122 and 115 vs 143 chars); only the marked option defines an escalation spiral.
 
 ### c1-17-05-introduce-1   teaches: ['c1-regional-geopolitics-vocab']
 files: content/hu/exercises/c1/c1-17-05-ex.json
@@ -4557,8 +4557,8 @@ Mi Szűcs Jenő híres modelljének lényege a három európai történeti régi
 * Hogy a Nyugat (társadalmi autonómiák, hatalommegosztás) és a Kelet (cári autokrácia, állami túlsúly) között létezik egy harmadik, önálló Közép-Európa, amely strukturálisan a Nyugathoz kötődik, de történelmileg sérülékeny periféria maradt.
 - Hogy Európában csak a sarki jégmezők és a sivatagok számítanak régiónak.
 - Hogy Magyarország földrajzilag Ázsiához tartozik.
-decision: 
-why: 
+decision: match: Hogy Európa gazdasági, társadalmi és kulturális fejlődését kizárólag a mediterrán dél és a skandináv észak közötti földrajzi, éghajlati és kereskedelmi törésvonal határozta meg a történelemben. || Hogy a kontinens két egymástól teljesen elszigetelt, merev gazdasági tömbre oszlott a kora újkorban, és a kettő között semmiféle történelmi, jogi vagy intézményi átmeneti zóna nem alakulhatott ki.
+why: Both new wrong options describe alternative historical geography models matching length and academic register (194 and 199 vs 238 chars); only the marked option captures Szűcs's three historical regions thesis.
 
 ### c1-17-05-reading-4   teaches: None
 files: content/hu/exercises/c1/c1-17-05-ex.json
@@ -4567,8 +4567,8 @@ Miért tekinti Szűcs Jenő Közép-Európát a 'Nyugat peremvidékének' ahelye
 * Mert a térség átvette a nyugati kereszténységet, a gótikát, a reneszánszt, a rendiséget és az egyetemek rendszerét, még ha a fejlődés meg-megakadt is.
 - Mert a térségben mindenki latinul beszél manapság is.
 - Mert nincsenek folyók a térségben.
-decision: 
-why: 
+decision: match: Mert a régió a kora újkortól kezdve maga alá gyűrte a nyugat-európai gazdaságot, és átvette a globális tengeri kereskedelem irányítását. || Mert a térség politikai intézményei és jogrendszere teljesen azonos maradt az orosz cári autokrácia központosított modelljével.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) with plausible historical arguments that are false regarding Szűcs's text (126 and 123 vs 150 chars); only the marked option cites the shared Western institutional features.
 
 ### c1-17-consolidation-1   teaches: ['diplomatic-softening']
 files: content/hu/exercises/c1/c1-17-consolidation-ex.json
@@ -4577,8 +4577,8 @@ Milyen szerepet töltenek be a diplomáciai óvatosságot kifejező modális fel
 * Tompítják a kategorikus kijelentéseket és fenntartják a rugalmas tárgyalási mozgásteret.
 - Kizárólag a szerződések dátumát jelölik.
 - Megtiltják a külföldi utazást.
-decision: 
-why: 
+decision: match: Végleges és kötelező érvényű ultimátumot fogalmaznak meg a tárgyalópartner számára. || Pontosan rögzítik a diplomáciai protokoll szerinti hivatalos megszólítási formákat.
+why: Both new wrong options describe diplomatic discourse functions matching length and register (83 and 84 vs 88 chars); only the marked option describes the softening role of conditional modals.
 
 ### c1-17-consolidation-2   teaches: ['b2-temporal-framing']
 files: content/hu/exercises/c1/c1-17-consolidation-ex.json
@@ -4587,8 +4587,8 @@ Mit fejez ki a 'mielőtt még... volna' temporalitás az események leírásába
 * Olyan előidejűséget, amelyben egy esemény megelőz egy várható vagy tervezett történést.
 - Egyidejű cselekvést a jelenben.
 - A jövőbeni parancsot.
-decision: 
-why: 
+decision: match: Olyan utóidejűséget, amelyben a mellékmondat eseménye követi a főmondatban leírt történést. || Olyan egyidejűséget, amelyben két független folyamat párhuzamosan zajlik le a múltban.
+why: Both new wrong options describe temporal relationships (posteriority, simultaneity) matching grammatical register and length (89 and 87 vs 87 chars); only the marked option defines anteriority with counterfactual framing.
 
 ### c1-17-consolidation-9   teaches: ['mintha']
 files: content/hu/exercises/c1/c1-17-consolidation-ex.json
@@ -4597,8 +4597,8 @@ Mi a lényege a 'Miként... akként' analógiás hasonlatnak Szűcs Jenő szöve
 * Párhuzamot von a nyugat-európai intézményfejlődés és a közép-európai mintázatok között, kiemelve a strukturális rokonságot.
 - Kijelenti, hogy nincs semmilyen kapcsolat az országok között.
 - Időjárási adatokat vet össze.
-decision: 
-why: 
+decision: match: Éles és feloldhatatlan ellentétet tételez a nyugati polgárosodás és a kelet-európai feudalizmus merev struktúrái között. || Egymást kizáró alternatívaként mutatja be a nemzeti függetlenség megőrzését és a nyugati integráció lehetőségét.
+why: Both new wrong options describe rhetorical comparison types (contrast, mutually exclusive alternatives) matching length (114 and 114 vs 123 chars); only the marked option defines the correlative analogy.
 
 ### c1-18-01-introduce-1   teaches: ['c1-digital-sovereignty-vocab']
 files: content/hu/exercises/c1/c1-18-01-ex.json
@@ -4607,8 +4607,8 @@ Mit jelent a 'digitális szuverenitás' (digital sovereignty) fogalma?
 * Egy állam vagy közösség képességét arra, hogy maga rendelkezzék digitális adatai, technológiai infrastruktúrája és szoftveres rendszerei felett.
 - A monitor fényerejének automatikus szabályozását.
 - Minden külföldi weboldal teljes betiltását gazdasági okokból.
-decision: 
-why: 
+decision: match: A magánkézben lévő nemzetközi technológiai óriáscégek kizárólagos jogát saját felhasználóik adatainak és algoritmusainak felügyeletére. || A nemzetközi távközlési hálózatok fizikai adatátviteli sebességének és a számítógépes chipek kapacitásának műszaki szabványosítását.
+why: Both new wrong options describe plausible digital governance/technical concepts matching length and register (129 and 129 vs 144 chars); only the marked option defines state/community digital sovereignty.
 
 ### c1-18-02-introduce-1   teaches: ['c1-digital-sovereignty-vocab']
 files: content/hu/exercises/c1/c1-18-02-ex.json
@@ -4617,8 +4617,8 @@ Mely létesítmények minősülnek 'kritikus infrastruktúrának' egy modern tá
 * Azok a hálózatok és rendszerek (pl. áramhálózat, ivóvízellátás, kórházak, vasút), amelyek kiesése megbénítja a társadalom és gazdaság működését.
 - Kizárólag az autópályák melletti benzinkutak és pihenőhelyek.
 - A közösségi média hirdetési felületei.
-decision: 
-why: 
+decision: match: Azok a szabadidős és turisztikai létesítmények, amelyek elsősorban a lakosság hétvégi kikapcsolódását és szórakozását szolgálják. || A nemzetközi divatcégek és kereskedelmi plázák azon hálózatai, amelyek a szezonális fogyasztási cikkek forgalmazásáért felelősek.
+why: Both new wrong options describe non-critical commercial/recreational categories matching length and tone (121 and 122 vs 144 chars); only the marked option defines vital critical infrastructure.
 
 ### c1-18-03-introduce-1   teaches: ['c1-digital-sovereignty-vocab']
 files: content/hu/exercises/c1/c1-18-03-ex.json
@@ -4627,8 +4627,8 @@ Mit nevezünk Shoshana Zuboff elmélete nyomán 'megfigyelési kapitalizmusnak' 
 * Azt a gazdasági logikát, amely az emberi élményeket ingyenes nyersanyagként zsákmányolja ki viselkedési adatokká formálva és azokat piacra dobva.
 - A banki biztonsági kamerák gyártási technológiáját.
 - A postai bélyeggyűjtők zárt körű aukcióit.
-decision: 
-why: 
+decision: match: A munkahelyi számítógépes szoftverek azon funkcióját, amely a dolgozók napi munkaidejét és billentyűleütéseit rögzíti a vezetőség számára. || A pénzügyi felügyeleti hatóságok azon rendszerét, amely a banki csalások és a pénzmosás kiszűrésére figyeli a gyanús átutalásokat.
+why: Both new wrong options describe real corporate/financial monitoring systems matching length and register (126 and 122 vs 145 chars); only the marked option defines Zuboff's concept of surveillance capitalism.
 
 ### c1-18-05-reading-4   teaches: None
 files: content/hu/exercises/c1/c1-18-05-ex.json
@@ -4637,8 +4637,8 @@ Mi a lényegi különbség Kalmár szerint a számítógép műveletei és az em
 * A gép pusztán mechanikus szimbólummanipulációt végez jelentés nélkül, míg az ember képes szemantikai jelentést tulajdonítani és reflexív módon új összefüggéseket alkotni.
 - A gép egyáltalán nem képes számokat összeadni.
 - Az emberi elme lassabban számol, ezért teljesen felesleges.
-decision: 
-why: 
+decision: match: A gép intuitív módon és kontextusfüggően értelmezi a fogalmakat, míg az emberi gondolkodás kizárólag formális szintaktikai szabályok merev követésére képes. || A gép érzelmi állapotai befolyásolják az aritmetikai számításokat, míg az emberi agy teljesen függetleníti magát minden szubjektív tapasztalattól.
+why: Both new wrong options describe plausible inverted cognitive distinctions matching length and philosophical register (147 and 144 vs 170 chars); only the marked option conveys Kalmár's syntactic vs semantic distinction.
 
 ### c1-18-consolidation-2   teaches: ['formal-obligation']
 files: content/hu/exercises/c1/c1-18-consolidation-ex.json
@@ -4647,8 +4647,8 @@ Milyen szerkezettel fejezhetünk ki rendszerszintű elengedhetetlen szükségsze
 * Elengedhetetlen biztosítani a kritikus infrastruktúrák redundáns áramellátását.
 - Talán szép lenne biztosítani valamikor.
 - Nem szükséges vele foglalkozni.
-decision: 
-why: 
+decision: match: Esetleg érdemes volna megfontolni a helyi áramhálózatok időszakos korszerűsítését. || Nem feltétlenül indokolt újabb forrásokat fordítani a tartalék energiarendszerekre.
+why: Both new wrong options express weak possibility / dispensability matching length and sentence structure (80 and 83 vs 79 chars); only the marked option expresses systemic imperative necessity ('Elengedhetetlen biztosítani...').
 
 ### c1-18-consolidation-9   teaches: ['b2-cleft-identification']
 files: content/hu/exercises/c1/c1-18-consolidation-ex.json
@@ -4657,8 +4657,8 @@ Hogyan működik a 'nem annyira X, mint inkább Y' fókuszos kiemelés egy érve
 * Egymással szembeállít két tényezőt, visszaszorítva a felszínes magyarázatot és a lényegi okra irányítva a figyelmet.
 - Kijelenti, hogy mindkét dolog teljesen lényegtelen.
 - Elnézést kér a felmerülő hibákért.
-decision: 
-why: 
+decision: match: Egyenrangú fontosságúnak nyilvánít két állítást, elkerülve a választást a felmerülő magyarázatok között. || Időbeli sorrendbe állítja az eseményeket, kiemelve a korábbi cselekvés elsőbbségét a későbbivel szemben.
+why: Both new wrong options describe alternative argumentative functions (equivalence, temporal ordering) matching length and tone (104 and 106 vs 116 chars); only the marked option defines focus contrast ('nem annyira X, mint inkább Y').
 
 ### c1-19-01-introduce-1   teaches: ['c1-social-stratification-vocab']
 files: content/hu/exercises/c1/c1-19-01-ex.json
@@ -4667,8 +4667,8 @@ Mit ért a szociológia a 'státuszkongruencia' hiánya alatt?
 * Azt az állapotot, amikor az egyén iskolázottsága, jövedelme és társadalmi presztízse nincs összhangban egymással (pl. magasan képzett, de alulfizetett).
 - Azt, hogy valaki nem tudja megjegyezni a munkatársai nevét.
 - A bankszámlakivonatok havi rendszeres ellenőrzését.
-decision: 
-why: 
+decision: match: Azt a helyzetet, amikor az egyén jövedelmi szintje, lakóhelye és iskolai végzettsége tökéletes harmóniában tükrözi társadalmi pozícióját. || Azt a folyamatot, amikor a munkavállaló önként mond le vezetői beosztásáról és magas fizetéséről a nyugodtabb életmód érdekében.
+why: Both new wrong options describe sociological concepts (status consistency, downshifting) matching length and analytical register (135 and 130 vs 152 chars); only the marked option defines status inconsistency.
 
 ### c1-19-02-introduce-1   teaches: ['c1-social-stratification-vocab']
 files: content/hu/exercises/c1/c1-19-02-ex.json
@@ -4677,8 +4677,8 @@ Kiket nevezett a történeti szociológia 'úri középosztálynak' a két hábo
 * A birtokaikat vesztett, állami hivatalokban és a katonaságban menedéket kereső, feudális értékrendet őrző elitet.
 - A gyárakban dolgozó szakmunkásokat.
 - A falusi kisiparosokat és molnárokat.
-decision: 
-why: 
+decision: match: A gyorsan meggazdagodott ipari nagyvállalkozókat és bankárokat, akik modern polgári életmódot folytattak. || A földdel rendelkező gazdag paraszti réteget, amely a falusi önkormányzatok irányítását tartotta a kezében.
+why: Both new wrong options describe real social strata of interwar Hungary (bourgeoisie, wealthy peasantry) matching length and historical register (106 and 108 vs 113 chars); only the marked option defines the 'úri középosztály'.
 
 ### c1-19-03-introduce-1   teaches: ['c1-social-stratification-vocab']
 files: content/hu/exercises/c1/c1-19-03-ex.json
@@ -4687,8 +4687,8 @@ Mit nevez a szociológia 'halmozott hátránynak' (cumulative disadvantage)?
 * Amikor az anyagi szegénység, az alacsony iskolázottság, a rossz lakáskörülmények és a földrajzi elszigeteltség együttesen sújtja az egyént.
 - A sportversenyeken kapott büntetőpontok összegét.
 - A banki hitelkártyák kamatterheit.
-decision: 
-why: 
+decision: match: Azt az átmeneti jövedelemkiesést, amelyet a munkahelyváltás vagy a szezonális munkanélküliség okoz egy családban. || A nagyvárosi értelmiségi rétegek azon nehézségét, hogy a túlkínálat miatt nehezebben találnak szakterületüknek megfelelő állást.
+why: Both new wrong options describe genuine socioeconomic disadvantages (frictional unemployment, educated underemployment) matching length and tone (111 and 126 vs 139 chars); only the marked option defines cumulative disadvantage.
 
 ### c1-19-04-introduce-1   teaches: ['c1-social-stratification-vocab']
 files: content/hu/exercises/c1/c1-19-04-ex.json
@@ -4697,8 +4697,8 @@ Mit bizonyítanak a Pierre Bourdieu szociológiájára épülő mobilitásvizsg�
 * Hogy az iskolarendszer nem semlegesíti a családi hátteret, hanem a kulturális és társadalmi tőke révén újratermeli a meglévő osztálykülönbségeket.
 - Hogy a könyvolvasás csökkenti a számítógépes játékok népszerűségét.
 - Hogy minden diák pontosan ugyanannyi pénzt költ tanszerekre.
-decision: 
-why: 
+decision: match: Hogy az oktatási rendszer teljesen felszámolja a társadalmi egyenlőtlenségeket, és kizárólag a veleszületett egyéni tehetség érvényesül. || Hogy a családi háttér semmilyen hatással nincs a tanulmányi eredményekre, mert a tanárok minden diákot azonos elvárásokkal értékelnek.
+why: Both new wrong options articulate the meritocratic thesis that Bourdieu disproved, matching length and sociological register (133 and 133 vs 146 chars); only the marked option states the reproduction of class differences.
 
 ### c1-19-05-introduce-1   teaches: ['c1-social-stratification-vocab']
 files: content/hu/exercises/c1/c1-19-05-ex.json
@@ -4707,8 +4707,8 @@ Mi a lényege Erdei Ferenc híres 'kettős társadalom' modelljének?
 * Hogy a magyar társadalom egy rendi-nemesi származású történelmi elitre és egy modern gazdasági polgárságra hasadt ketté, miközben a parasztság kirekesztve maradt.
 - Hogy Magyarországon két különböző miniszterelnök uralkodott egyszerre.
 - Hogy az ország két hivatalos pénznemet használt a kereskedelemben.
-decision: 
-why: 
+decision: match: Hogy a társadalmi fejlődést a dunántúli iparosodott városok és a tiszántúli agrárvidékek közötti területi és gazdasági ellentét határozta meg. || Hogy a magyar lakosság fele a katolikus, másik fele a protestáns felekezethez tartozott, és a vallási törésvonal osztotta ketté az országot.
+why: Both new wrong options present plausible alternative bipartite social cleavages (regional, confessional) matching length and historical register (136 and 143 vs 162 chars); only the marked option defines Erdei's historical vs bourgeois dual society model.
 
 ### c1-19-05-reading-4   teaches: None
 files: content/hu/exercises/c1/c1-19-05-ex.json
@@ -4717,8 +4717,8 @@ Miért tekintette Erdei a parasztság helyzetét a nemzet legnagyobb tragédiáj
 * Mert a hárommilliós paraszti tömeg el volt zárva az oktatástól, a földtől és a politikai jogoktól, így a társadalom többsége nem válhatott cselekvő polgárrá.
 - Mert a parasztok nem akartak modern ruhákban járni.
 - Mert a parasztság nem értett a gépjárművezetéshez.
-decision: 
-why: 
+decision: match: Mert a parasztság elhagyta a hagyományos népszokásokat és a mezőgazdaságot, tömegesen költözve a külföldi nagyvárosok ipartelepeire. || Mert a falusi lakosság teljes mértékben kiszorította a városi polgárságot a politikai hatalomból és a gazdasági vezetésből.
+why: Both new wrong options start with 'Mert' answering 'Miért' (Rule 13) with plausible historical arguments of matching length (130 and 125 vs 157 chars); only the marked option reflects Erdei's analysis of peasant disenfranchisement.
 
 ### c1-19-consolidation-1   teaches: ['correlative-minel-annal']
 files: content/hu/exercises/c1/c1-19-consolidation-ex.json
@@ -4727,8 +4727,8 @@ Melyik mondat alkalmaz helyes arányossági névutót szociológiai kontextusban
 * A társadalmi mobilitás az iskolai végzettség arányában és viszonylatában mérhető a legpontosabban.
 - A mobilitás mögött sétálnak a diákok az utcán.
 - A szociológus az iskola mellett várakozott.
-decision: 
-why: 
+decision: match: A társadalmi mobilitás az iskolai végzettség ellenére és dacára csökkent az elmúlt évtizedekben. || A társadalmi mobilitás az iskolai végzettség gyanánt és címén került be a kutatási jelentésbe.
+why: Both new wrong options use real postpositional pairs expressing concession or role of matching register and length (94 and 96 vs 98 chars); only the marked option uses proportionality postpositions ('arányában és viszonylatában').
 
 ### c1-19-consolidation-2   teaches: ['causative-verbal-derivations']
 files: content/hu/exercises/c1/c1-19-consolidation-ex.json
@@ -4737,8 +4737,8 @@ Milyen szerkezettel fejezhetünk ki kauzális láncolatot a szociológiai érvel
 * előidézve a leszakadást, maga után vonva a szegregációt és a mobilitás gátlását eredményezve
 - miközben kávéztak a konferencián
 - hogyha szép idő lesz a hétvégén
-decision: 
-why: 
+decision: match: miközben a kutatók az adatokat elemezték, és a hallgatóság csendben figyelt a teremben || amennyiben a döntéshozók elegendő támogatást biztosítanak a jövő évi költségvetésben
+why: Both new wrong options use complex temporal or conditional multi-clause structures of matching length (89 and 86 vs 92 chars); only the marked option constructs a causal chain of participial phrases.
 
 ### c1-20-03-introduce-1   teaches: ['c1-drying-alfold-vocab']
 files: content/hu/exercises/c1/c1-20-03-ex.json
@@ -4747,8 +4747,8 @@ Mit jelent az 'ökoszisztéma-szolgáltatás' fogalma az ökológiai közgazdas�
 * A természet által az emberi társadalom számára ingyenesen nyújtott javakat és folyamatokat (pl. víztisztítás, beporzás, árvízmegelőzés).
 - A nemzeti parkok belépőjegyeinek online árusítását.
 - A háziállatok orvosi ellátását biztosító állami támogatást.
-decision: 
-why: 
+decision: match: A környezetvédelmi hatóságok által a szennyező gyárakra kiszabott kötelező bírságok és kártérítések jogi rendszerét. || Az állami erdészetek által faanyag-értékesítésből és vadászati engedélyekből származó éves költségvetési bevételeket.
+why: Both new wrong options provide genuine environmental economics categories (fines/compensation, forestry revenue) matching length (115 and 116 vs 136 chars); only the marked option defines ecosystem services.
 
 ### c1-20-05-introduce-1   teaches: ['c1-drying-alfold-vocab']
 files: content/hu/exercises/c1/c1-20-05-ex.json
@@ -4757,8 +4757,8 @@ Miért tekintik Kaán Károlyt a magyar természetvédelem úttörőjének?
 * Mert ő ismerte fel, hogy az Alföld fásítása és a mezővédő erdősávok elengedhetetlenek a szikesedés megállításához és a táj klímájának védelméhez.
 - Mert ő építette a legelső fa hidat a Dunán.
 - Mert egzotikus pálmafákat telepített a budapesti parkokba.
-decision: 
-why: 
+decision: match: Mert ő tervezte meg az első nagyszabású gát- és csatornarendszert, amely lecsapolta az alföldi mocsarakat és vadvizeket. || Mert ő hozta létre az ország első állatkertjét és botanikus kertjét az egzotikus növényfajok megismertetésére.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) with historical landscape intervention concepts matching length (116 and 112 vs 145 chars); only the marked option identifies Kaán's afforestation and soil conservation work.
 
 ### c1-23-01-introduce-1   teaches: ['c1-urban-preservation-vocab']
 files: content/hu/exercises/c1/c1-23-01-ex.json
@@ -4767,8 +4767,8 @@ Mit jelent a 'sugaras-körutas rendszer' Budapest városszerkezetében?
 * A központból kiinduló egyenes sugárutak (pl. Andrássy út) és az azokat övező félköríves körutak (Kiskörút, Nagykörút) geometrikus hálózatát.
 - A villamosok forgó kerekeinek műszaki karbantartási tervét.
 - A Duna kör alakú mesterséges tavakká alakítását.
-decision: 
-why: 
+decision: match: A budai hegyvidék domborzatát követő, szabálytalan és kanyargós utcákból álló organikus városhálózatot. || A Duna mindkét partján párhuzamosan futó rakpartok és a folyót átszelő hidak szigorúan derékszögű négyzethálóját.
+why: Both new wrong options describe plausible urban spatial layouts (topographic organic, grid/riverfront) matching length and urban planning tone (111 and 117 vs 140 chars); only the marked option defines the radial-ring road system.
 
 ### c1-23-02-introduce-1   teaches: ['c1-urban-preservation-vocab']
 files: content/hu/exercises/c1/c1-23-02-ex.json
@@ -4777,8 +4777,8 @@ Mi jellemezte a budapesti 'eklektikus' és 'historizáló' építészetet a 19. 
 * A korábbi történelmi stílusok (reneszánsz, gótika, barokk) formaelemeinek szabad, látványos és dekoratív ötvözése a modern bérpalotákon.
 - A beton és műanyag kizárólagos használata díszítések nélkül.
 - A fák és kertek betiltása a város egész területén.
-decision: 
-why: 
+decision: match: A népi motívumok és a növényi ornamentika kizárólagos alkalmazása a Lechner Ödön-féle szecessziós épületeken. || A tiszta geometrikus formák, a vasbeton szerkezetek és a díszítésmentes funkcionalizmus teljes uralma a homlokzatokon.
+why: Both new wrong options describe real architectural movements (Art Nouveau, functionalist modernism) matching length and architectural register (117 and 124 vs 136 chars); only the marked option defines historicism and eclecticism.
 
 ### c1-23-03-introduce-1   teaches: ['c1-urban-preservation-vocab']
 files: content/hu/exercises/c1/c1-23-03-ex.json
@@ -4787,8 +4787,8 @@ Mi képezi a legfőbb szakmai vitát a budai Várnegyed Hauszmann-programja kör
 * Hogy a háborúban elpusztult történelmi épületek teljes újraépítése történeti hűségnek vagy anakronisztikus díszletépítésnek tekintendő.
 - Hogy a Mátyás-templom tornyát le kell-e festeni pirosra.
 - Hogy a Várhegy gyomrában szabad-e földalatti vidámparkot nyitni.
-decision: 
-why: 
+decision: match: Hogy a középkori palotamaradványok fölé szabad-e modern acél- és üvegtetőt építeni a régészeti feltárások védelmére. || Hogy a Várnegyed teljes lakóövezetét át kell-e alakítani kizárólag szállodákat befogadó zárt turisztikai negyeddé.
+why: Both new wrong options present genuine heritage conservation debates (glass roofing, overtourism zoning) matching length and tone (117 and 116 vs 135 chars); only the marked option addresses the replica vs pastiche debate of the Hauszmann Program.
 
 ### c1-23-04-introduce-1   teaches: ['c1-urban-preservation-vocab']
 files: content/hu/exercises/c1/c1-23-04-ex.json
@@ -4797,8 +4797,8 @@ Mit vizsgál az 'építészeti szemiotika' a városi környezetben?
 * Azt, hogy az épületek formái, anyagai és térbeli elhelyezkedése milyen kulturális, társadalmi és politikai üzeneteket, szimbólumokat hordoznak.
 - A tégla és malter kémiai összetételének laboratóriumi elemzését.
 - A fűtésszámlák havi alakulását az új lakásokban.
-decision: 
-why: 
+decision: match: Az épületek teherhordó szerkezeteinek statikai stabilitását és az alkalmazott alapozási technikák földrengésállóságát. || A városi bérházak energetikai hatékonyságát, a hőszigetelés minőségét és az épületgépészeti rendszerek fogyasztását.
+why: Both new wrong options describe real architectural/engineering disciplines (structural statics, building energetics) matching length (118 and 116 vs 143 chars); only the marked option defines architectural semiotics.
 
 ### c1-23-05-introduce-1   teaches: ['c1-urban-preservation-vocab']
 files: content/hu/exercises/c1/c1-23-05-ex.json
@@ -4807,8 +4807,8 @@ Hogyan mutatja be Szerb Antal Budapestet a képzeletbeli marslakónak?
 * Nem száraz adatokkal, hanem a budai hegyvidéki múlt és a pesti nagyvárosi zsongás költői, lélektani kettősségén keresztül.
 - Kizárólag a villamosjegyek árainak felsorolásával.
 - A parlament épületének műszaki tervrajzaival.
-decision: 
-why: 
+decision: match: Részletes gazdasági statisztikákkal és az ipari termelés számszerű mutatóinak tárgyilagos ismertetésével. || A város polgári közigazgatási szabályzatának és a kerületi határvonalak jogi paragrafusainak felolvasásával.
+why: Both new wrong options describe dry bureaucratic/economic presentations matching length and literary tone (104 and 111 vs 122 chars); only the marked option reflects Szerb Antal's poetic, psychological dual portrait of Buda and Pest.
 
 ### c1-24-01-introduce-1   teaches: ['c1-academic-autonomy-vocab']
 files: content/hu/exercises/c1/c1-24-01-ex.json
@@ -4817,8 +4817,8 @@ Mit jelent a 'falszifikálhatóság' Karl Popper tudományfilozófiájában?
 * Azt a kritériumot, hogy egy tudományos elméletnek elvileg cáfolhatónak kell lennie tapasztalati adatok vagy kísérletek által.
 - A laboratóriumi műszerek szándékos megrongálását.
 - A tudományos cikkek latin nyelvű lefordítását.
-decision: 
-why: 
+decision: match: Azt a követelményt, hogy egy elméletet kizárólag közvetlen érzéki tapasztalatokból levezetve, induktív módon kell igazolni. || Azt az elvet, hogy egy tudományos hipotézisnek összhangban kell állnia a társadalom többségének vallási meggyőződésével.
+why: Both new wrong options present philosophical theories of scientific validity (positivist induction, social consensus) matching length (120 and 118 vs 125 chars); only the marked option defines Popperian falsifiability.
 
 ### c1-24-02-introduce-1   teaches: ['c1-academic-autonomy-vocab']
 files: content/hu/exercises/c1/c1-24-02-ex.json
@@ -4827,8 +4827,8 @@ Mit nevez Thomas Kuhn 'paradigmaváltásnak' a tudomány fejlődésében?
 * Azt a forradalmi fordulatot, amikor a felhalmozódó anomáliák megdöntik a régi elméletet, és egy alapvetően új világkép válik uralkodóvá.
 - A laboratóriumi fehér köpenyek kékre cserélését.
 - A professzorok évi fizetésemelését az egyetemeken.
-decision: 
-why: 
+decision: match: A tudományos ismeretek fokozatos, apránkénti felhalmozódását a meglévő elméleti keretek megkérdőjelezése nélkül. || Az egyetemi kutatóintézetek közötti éves költségvetési források és eszközparkok adminisztratív újraelosztását.
+why: Both new wrong options describe plausible academic processes (cumulative normal science, budgetary administration) matching length (109 and 111 vs 136 chars); only the marked option defines Kuhn's paradigm shift.
 
 ### c1-24-03-introduce-1   teaches: ['c1-academic-autonomy-vocab']
 files: content/hu/exercises/c1/c1-24-03-ex.json
@@ -4837,8 +4837,8 @@ Mit nevez a modern tudomány 'replikációs válságnak' (replication crisis)?
 * Azt a riasztó jelenséget, hogy számos rangos folyóiratban megjelent kísérlet eredményeit független kutatók nem tudják megismételni.
 - A nyomtatott folyóiratok papírhiány miatti késését.
 - A mikroszkópok lencséinek párásodását a laboratóriumokban.
-decision: 
-why: 
+decision: match: A fiatal kutatók külföldi egyetemekre való elvándorlása miatt fellépő súlyos kutatói létszámhiányt a hazai intézetekben. || A tudományos folyóiratok előfizetési díjainak drasztikus növekedése miatt kialakuló könyvtári hozzáférési nehézségeket.
+why: Both new wrong options describe real institutional crises in academia (brain drain, journal subscription crisis) matching length (122 and 123 vs 131 chars); only the marked option defines the replication crisis.
 
 ### c1-24-04-introduce-1   teaches: ['c1-academic-autonomy-vocab']
 files: content/hu/exercises/c1/c1-24-04-ex.json
@@ -4847,8 +4847,8 @@ Mi a lényegi különbség az 'alapkutatás' és az 'alkalmazott kutatás' köz�
 * Az alapkutatást a tiszta szellemi kíváncsiság és a természet mély törvényeinek megismerése vezérli közvetlen haszon nélkül, míg az alkalmazott kutatás konkrét gyakorlati célokat szolgál.
 - Az alapkutatást csak diákok végezhetik, az alkalmazottat csak professzorok.
 - Az alapkutatás kizárólag könyvtárakban zajlik számítógépek nélkül.
-decision: 
-why: 
+decision: match: Az alapkutatás kizárólag a humántudományok elméleti kérdéseivel foglalkozik, míg az alkalmazott kutatás a természettudományok empirikus kísérleteit végzi el. || Az alapkutatást kizárólag magánvállalatok finanszírozzák azonnali profit reményében, míg az alkalmazott kutatás állami támogatásból valósul meg.
+why: Both new wrong options describe plausible disciplinary/funding contrasts matching length and academic tone (161 and 149 vs 186 chars); only the marked option captures the theoretical vs practical motivation distinction.
 
 ### c1-24-05-introduce-1   teaches: ['c1-academic-autonomy-vocab']
 files: content/hu/exercises/c1/c1-24-05-ex.json
@@ -4857,8 +4857,8 @@ Miért tekintik Szent-Györgyi Albert Nobel-díját egyedülállónak a magyar t
 * Mert ő az egyetlen magyar Nobel-díjas, aki a díjazott kutatásait teljes egészében Magyarországon, a Szegedi Tudományegyetemen végezte el.
 - Mert ő volt a világ legfiatalabb díjazottja.
 - Mert ő fedezte fel az első mesterséges műanyagot.
-decision: 
-why: 
+decision: match: Mert ő kapta meg a díjat elsőként a világon a fizika és a kémia területén elért eredményeiért egyszerre. || Mert kutatási eredményeit kizárólag magyar nyelven publikálta a nemzetközi tudományos folyóiratokban.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing plausible scientific milestones matching length (111 and 106 vs 137 chars); only the marked option identifies the domestic Szeged research distinction.
 
 ### c1-24-05-reading-4   teaches: None
 files: content/hu/exercises/c1/c1-24-05-ex.json
@@ -4867,8 +4867,8 @@ Mit jelent Szent-Györgyi híres aforizmája a felfedezésről?
 * Azt, hogy a tudós ugyanazokat a tényeket látja, mint bárki más, de képes új, eredeti összefüggésekben gondolkodni róluk dogmák nélkül.
 - Azt, hogy a kutatóknak mindent le kell rajzolniuk színes ceruzával.
 - Azt, hogy a felfedezésekhez csupán drága szemüvegre van szükség.
-decision: 
-why: 
+decision: match: Azt, hogy a tudományos áttörések kizárólag a drága laboratóriumi műszerek felbontóképességének növelésén múlnak. || Azt, hogy a kutatónak el kell vetnie minden korábbi empirikus tapasztalatot, és csak a megérzéseire kell támaszkodnia.
+why: Both new wrong options present epistemological claims matching length and tone (111 and 118 vs 134 chars); only the marked option captures Szent-Györgyi's famous quote ('seeing what everybody has seen and thinking what nobody has thought').
 
 ### c1-27-02-introduce-1   teaches: ['c1-epidemiology-vocab']
 files: content/hu/exercises/c1/c1-27-02-ex.json
@@ -4877,8 +4877,8 @@ Miért alkalmazott Semmelweis Ignác klórmeszes oldatot a sima szappanos kézmo
 * Mert felismerte, hogy a boncolás után a kézen maradó láthatatlan szag és cadaver-részecskék csak a klórmész erős oxidáló, csíraölő hatásával tüntethetők el.
 - Mert a korabeli orvosi kamara rendelete megtiltotta a szappan használatát.
 - Mert úgy gondolta, hogy a hideg víz önmagában serkenti a vérkeringést.
-decision: 
-why: 
+decision: match: Mert a bécsi közkórház szigorú házirendje kizárólag az olcsóbb vegyszerek beszerzését engedélyezte a sebészeti klinikákon. || Mert úgy vélte, hogy a klórmész fehér színe megnyugtatja a szülészeten vajúdó anyákat és javítja a műtők higiénés hangulatát.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) offering administrative/psychological explanations of matching length (120 and 122 vs 156 chars); only the marked option gives Semmelweis's chemical/pathological rationale.
 
 ### c1-27-03-introduce-1   teaches: ['c1-epidemiology-vocab']
 files: content/hu/exercises/c1/c1-27-03-ex.json
@@ -4887,8 +4887,8 @@ Mi volt a 'miazma-elmélet', amelyet Semmelweis empirikus adatai megdöntöttek?
 * Az az évszázados orvosi dogma, amely szerint a járványokat a mocsarakból és rothadó anyagokból felszálló 'rossz levegő' (miazma) terjeszti.
 - A vérkeringés mikroszkópos vizsgálatának korai módszertana.
 - A gyógyszerészeti vegyületek kémiai tisztításának eljárása.
-decision: 
-why: 
+decision: match: Az az ókori tanítás, amely szerint a betegségeket a négy testnedv (vér, sárga epe, fekete epe, nyálka) egyensúlyának felborulása okozza. || Az a 19. századi hipotézis, amely a fertőzéseket kizárólag a mikroszkopikus baktériumok közvetlen érintkezésével magyarázta.
+why: Both new wrong options describe real historical medical theories (humorism, germ theory) matching length and tone (139 and 122 vs 139 chars); only the marked option defines the miasma theory.
 
 ### c1-27-05-introduce-1   teaches: ['c1-epidemiology-vocab']
 files: content/hu/exercises/c1/c1-27-05-ex.json
@@ -4897,8 +4897,8 @@ Hogyan jött rá Semmelweis Ignác a gyermekágyi láz valódi kórbonctani ered
 * Kolletschka törvényszéki orvosprofesszor boncolási sebfertőzésben bekövetkezett halálát elemezve rájött, hogy a kórbonctani részecskék véráramba kerülése azonos a gyermekágyi lázzal.
 - A bécsi közkórház meteorológiai naplójának statisztikai elemzéséből.
 - A kórházi ápolók étrendjének és pihenőidejének összehasonlításából.
-decision: 
-why: 
+decision: match: A bécsi szülészeti klinikák közötti eltérő szellőztetési technikák és fűtési rendszerek több évre visszamenő műszaki felméréséből. || A szülő nők étrendjének és a csecsemők születési súlyának részletes biokémiai és laboratóriumi vizsgálatából a klinika laborjában.
+why: Both new wrong options describe plausible empirical methodologies matching length and tone (132 and 132 vs 182 chars); only the marked option details Kolletschka's fatal autopsy wound infection.
 
 ### c1-28-01-introduce-1   teaches: ['c1-railway-modernization-vocab']
 files: content/hu/exercises/c1/c1-28-01-ex.json
@@ -4907,8 +4907,8 @@ Mit jelent az 'intermodális csomópont' a korszerű közlekedésföldrajzban?
 * Olyan közlekedési állomást vagy terminált, ahol a különböző közlekedési módok (vasút, közút, kerékpár, vízi út) közvetlenül és akadálymentesen kapcsolódnak egymáshoz.
 - Kizárólag az autópályák és gyorsforgalmi utak közötti többszintű csomópontot.
 - A repülőtéri terminálok közötti belső poggyászszállító rendszert.
-decision: 
-why: 
+decision: match: Olyan autópálya-csomópontot, ahol a különböző gyorsforgalmi utak többszintű kereszteződésekkel és lehajtókkal kapcsolódnak a városhálózathoz. || Olyan zárt logisztikai raktárbázist, ahol kizárólag az azonos vasúti nyomtávú teherkocsik közötti áruátrakodást végzik a határállomásokon.
+why: Both new wrong options describe real transport infrastructure types (highway interchanges, rail freight yards) matching length and register (136 and 133 vs 166 chars); only the marked option defines an intermodal passenger hub.
 
 ### c1-28-02-introduce-1   teaches: ['c1-railway-modernization-vocab']
 files: content/hu/exercises/c1/c1-28-02-ex.json
@@ -4917,8 +4917,8 @@ Mi a lényege a 'multimodalitásnak' az utasok szemszögéből?
 * Az utazási lánc zökkenőmentes megvalósítása különböző közlekedési eszközök (pl. kerékpár, vonat, villamos) összehangolt igénybevételével.
 - A belvárosi fizetős parkolóhelyek számának korlátlan növelése.
 - A gépjárművek kötelező műszaki ellenőrzésének megkönnyítése.
-decision: 
-why: 
+decision: match: A saját személygépkocsi kizárólagos használata a háztól házig tartó utazás során a menetrendi kötöttségek elkerülésére. || Az egységesített nemzetközi repülőjegyek online megvásárlása és a digitális beszállókártyák okostelefonos érvényesítése.
+why: Both new wrong options describe alternative passenger travel modes (private car monomodality, airline booking) matching length and register (121 and 120 vs 137 chars); only the marked option defines multimodality.
 
 ### c1-28-04-introduce-1   teaches: ['c1-railway-modernization-vocab']
 files: content/hu/exercises/c1/c1-28-04-ex.json
@@ -4927,8 +4927,8 @@ Mi a szerepe az európai ETCS (European Train Control System) biztosítóberende
 * Egységes európai digitális vonatbefolyásoló rendszer, amely megakadályozza a vonatok ütközését és lehetővé teszi a határokon átnyúló mozdonyközlekedést.
 - Mert a nemzetközi szabványok tiltják a dízelvontatást a személyszállításban.
 - Mert az áramszolgáltatók kötelező kvótát írnak elő a vasúttársaságoknak.
-decision: 
-why: 
+decision: match: Olyan egységesített nemzetközi jegykiadó és helyfoglalási rendszer, amely lehetővé teszi a közvetlen átszállójegyek megváltását Európában. || A felsővezetékek feszültségét és áramellátását felügyelő műszaki hálózat, amely megvédi a mozdonyokat az elektromos túlfeszültségtől.
+why: Both new wrong options fix the original defect where wrong options answered 'Miért' instead of 'Mi a szerepe' (Rule 13); both describe real railway technical systems of matching length (137 and 132 vs 152 chars); only the marked option defines ETCS.
 
 ### c1-28-05-introduce-1   teaches: ['c1-railway-modernization-vocab']
 files: content/hu/exercises/c1/c1-28-05-ex.json
@@ -4937,8 +4937,8 @@ Hogyan működött Baross Gábor 1889-es 'zónatarifa-rendszere'?
 * Koncentrikus zónákra osztotta az országot, és a távoli zónákban fix, rendkívül alacsony díjakat szabott meg, így a messziről utazók kilométerenként sokkal kevesebbet fizettek.
 - A magánvasutak állami támogatásának teljes megszüntetése.
 - A vasúti kocsik osztályonkénti szigorúbb elkülönítése.
-decision: 
-why: 
+decision: match: Szigorúan a megtett kilométerekkel arányosan emelte a jegyárakat, így a legtávolabbról utazóknak minden egyes kilométerért azonos magas díjat kellett fizetniük. || Különböző regionális vasúttársaságok önálló árazásán alapult, ahol minden megye saját hatáskörben határozta meg a helyi viteldíjakat.
+why: Both new wrong options describe pricing mechanisms (linear mileage tariff, regional fragmentation) answering 'Hogyan működött' (Rule 13) with matching length (151 and 132 vs 175 chars); only the marked option defines Baross's zone tariff.
 
 ### c1-29-03-introduce-1   teaches: ['c1-museums-monuments-vocab']
 files: content/hu/exercises/c1/c1-29-03-ex.json
@@ -4947,8 +4947,8 @@ Mit nevez az építészetelmélet 'pastiche' (kulisszaépítészet) jelenségnek
 * A történeti korszakok stílusjegyeinek felületes másolását modern anyagokon (pl. vasbetonon), amely a hitelesség látszatát kelti, de nélkülözi a történeti anyag valódiságát.
 - A műemléki romok modern üveg- és acélszerkezetekkel való megóvását.
 - A régészeti ásatások során talált leletek helyszíni konzerválását.
-decision: 
-why: 
+decision: match: A megrongálódott műemlék épületek romjainak modern üveg- és acélszerkezetekkel való megóvását és funkcióváltó kortárs átépítését. || A régészeti ásatások során feltárt eredeti falfelületek és kőfaragványok szigorúan tudományos módszerekkel történő helyszíni konzerválását.
+why: Both new wrong options describe legitimate heritage conservation techniques (contemporary intervention, in-situ conservation) matching length and architectural tone (129 and 134 vs 172 chars); only the marked option defines architectural pastiche.
 
 ### c1-30-01-introduce-1   teaches: ['c1-east-west-geopolitics-vocab']
 files: content/hu/exercises/c1/c1-30-01-ex.json
@@ -4957,8 +4957,8 @@ Mit jelent az 'ütközőzóna' fogalma a klasszikus geopolitikában?
 * Két egymással rivalizáló nagyhatalom vagy szövetségi tömb közé ékelődő térséget, amely elválasztja a feleket és tompítja a közvetlen összeütközés kockázatát.
 - A nemzetközi kereskedelmi egyezményekben rögzített vámmentes övezetet.
 - A fegyveres konfliktusok után kialakított ideiglenes demilitarizált övezetet.
-decision: 
-why: 
+decision: match: A nemzetközi szabadkereskedelmi egyezményekben rögzített, adómentességet és vámkedvezményt biztosító speciális gazdasági övezetet. || A két szövetséges állam közötti közvetlen határátkelők felügyeletére létrehozott, közösen működtetett vám- és rendészeti ellenőrző sávot.
+why: Both new wrong options describe real border/trade legal zones matching length and geopolitical tone (133 and 136 vs 157 chars); only the marked option defines a geopolitical buffer zone.
 
 ### c1-30-02-introduce-1   teaches: ['c1-east-west-geopolitics-vocab']
 files: content/hu/exercises/c1/c1-30-02-ex.json
@@ -4967,8 +4967,8 @@ Mi Szűcs Jenő alapvető tézise Európa három történeti régiójáról?
 * Hogy Közép-Kelet-Európa nem puszta földrajzi fogalom, hanem olyan sajátos történeti régió, amely a nyugati jogi struktúrákhoz kapcsolódott, de a társadalmi autonómiák hiánya miatt megrekedt.
 - Hogy a nyugat-európai gazdasági modell kizárólag a gyarmati kereskedelemre épült.
 - Hogy Kelet-Európa politikai intézményei teljesen függetlenek voltak a gazdasági folyamatoktól.
-decision: 
-why: 
+decision: match: Hogy a kontinens fejlődését kizárólag az észak-európai protestáns államok és a déli katolikus monarchiák közötti vallási törésvonal határozta meg. || Hogy a kelet-európai térség teljesen azonos intézményi utat járt be Nyugat-Európával, és a gazdasági különbségek csak az ipari forradalom idején alakultak ki.
+why: Both new wrong options describe plausible alternative historical theories matching length and academic register (139 and 153 vs 190 chars); only the marked option captures Szűcs's structural regions thesis.
 
 ### c1-30-05-introduce-1   teaches: ['c1-east-west-geopolitics-vocab']
 files: content/hu/exercises/c1/c1-30-05-ex.json
@@ -4977,8 +4977,8 @@ Mit szimbolizál Ady Endre 'Komp-ország' metaforája?
 * A Kelet és Nyugat, az ázsiai elmaradottság és az európai polgárosodás között tétován ingadozó, megállapodni képtelen Magyarország történelmi drámáját.
 - A dunai gőzhajózás gazdasági fellendülését a kiegyezés után.
 - A magyar kereskedelmi tengerészet fejlesztési terveit az Adrián.
-decision: 
-why: 
+decision: match: A dunai és tiszai folyami kereskedelem gazdasági fellendülését és a korszerű kikötői infrastruktúra kiépülését a dualizmus évtizedeiben. || A magyar királyi kereskedelmi tengerészet fiumei kikötőfejlesztési programját és a nemzetközi áruszállítás modernizációját.
+why: Both new wrong options interpret the metaphor literally as maritime/river commerce matching length and literary-historical tone (133 and 122 vs 150 chars); only the marked option defines Ady's cultural-historical ferry-land metaphor.
 
 ### c1-31-02-introduce-1   teaches: ['c1-historical-trauma-vocab']
 files: content/hu/exercises/c1/c1-31-02-ex.json
@@ -4987,8 +4987,8 @@ Mit értünk 'morális önfelmentés' alatt a modern történetírásban?
 * Azon törekvést, amellyel egy társadalom eltagadja saját történelmi felelősségét és bűneit, és minden katasztrófáért kizárólag külső nagyhatalmakat vagy bűnbakokat tesz felelőssé.
 - A nemzetközi bíróságok által háborús bűnösöknek biztosított eljárási kegyelmet.
 - A diplomáciai immunitás jogi intézményét nagykövetek és diplomaták esetében.
-decision: 
-why: 
+decision: match: A nemzetközi bíróságok által háborús bűnösöknek biztosított eljárási kegyelmet vagy büntetéscsökkentést az együttműködésért cserébe. || A nemzetközi szerződésekben rögzített diplomáciai immunitást, amely mentesíti a diplomatákat a helyi büntetőjogi felelősségre vonás alól.
+why: Both new wrong options describe real legal institutions (clemency, diplomatic immunity) matching length and register (132 and 137 vs 178 chars); only the marked option defines historiographical moral self-exoneration.
 
 ### c1-32-02-introduce-1   teaches: ['c1-fundamental-rights-vocab']
 files: content/hu/exercises/c1/c1-32-02-ex.json
@@ -4997,8 +4997,8 @@ Mikor tekinthető alkotmányosnak egy alapjog korlátozása a szükségesség-ar
 * Kizárólag akkor, ha egy másik alapjog vagy alkotmányos érték védelmében elkerülhetetlen, legitim célt szolgál, és a cél elérésére alkalmas legenyhébb eszközt alkalmazza anélkül, hogy a jog lényeges tartalmát sértené.
 - Minden olyan esetben, amikor a gazdasági növekedés gyorsítása érdekében a kormányzat rendeletet alkot.
 - Amikor a nemzetközi piacokon az állampapírok hozama jelentősen megemelkedik.
-decision: 
-why: 
+decision: match: Bármikor, amikor a mindenkori parlamenti többség a gazdasági növekedés gyorsítása vagy a költségvetési egyensúly biztosítása érdekében törvényt hoz. || Minden olyan esetben, amikor a közigazgatási hatóságok hatékonyságának növelése érdekében a rendőrség vagy a minisztérium ezt indokoltnak ítéli.
+why: Both new wrong options present plausible governmental justifications (legislative supremacy, administrative convenience) matching length and constitutional register (147 and 144 vs 216 chars); only the marked option defines the constitutional proportionality test.
 
 ### c1-32-03-introduce-1   teaches: ['c1-fundamental-rights-vocab']
 files: content/hu/exercises/c1/c1-32-03-ex.json
@@ -5007,8 +5007,8 @@ Miért nevezte Sólyom László az emberi méltóságot 'anyajognak'?
 * Mert olyan oszthatatlan és elidegeníthetetlen alapérték, amelyből minden nevesített szabadságjog és személyiségi jog levezethető, és amely soha nem korlátozható.
 - Mert kizárólag a családtámogatási ellátások folyósításának jogalapját képezi.
 - Mert a szülői felügyeleti jogok polgári jogi szabályozásának alapelve.
-decision: 
-why: 
+decision: match: Mert a családtámogatási ellátások és az anyasági segélyek folyósításának legfőbb alkotmányos és pénzügyi jogalapját képezi. || Mert a szülői felügyeleti jogok és a gyámhatósági eljárások polgári jogi szabályozásának kötelező alapelve a családjogban.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) interpreting 'anyajog' through family law matching length (120 and 122 vs 161 chars); only the marked option defines human dignity as the source of all fundamental rights.
 
 ### c1-32-05-introduce-1   teaches: ['c1-fundamental-rights-vocab']
 files: content/hu/exercises/c1/c1-32-05-ex.json
@@ -5017,8 +5017,8 @@ Mit értett Sólyom László a 'láthatatlan alkotmány' fogalma alatt?
 * Az írott Alkotmány mögött húzódó, a bíróság által kibontott koherens jogelvek, alapjogi mércék és erkölcsi értékek szerves rendszerét, amely állandóságot biztosít a politikai hullámverésekkel szemben.
 - A nemzetközi szerződések azon záradékait, amelyeket a parlament még nem cikkelyezett be.
 - Az Alkotmánybíróság elnökének kizárólagos hatáskörébe tartozó egyedi utasításokat.
-decision: 
-why: 
+decision: match: A nemzetközi emberi jogi egyezmények azon záradékait, amelyeket a parlament még nem cikkelyezett be a hazai jogrendbe, de kötelezőek. || Az Alkotmánybíróság elnökének kizárólagos hatáskörébe tartozó belső ügyrendi utasításokat és titkos normakontroll-irányelveket.
+why: Both new wrong options describe plausible legal phenomena (ratification lag, presidential internal rules) matching length and tone (130 and 124 vs 200 chars); only the marked option defines Sólyom's doctrine of the invisible constitution.
 
 ### c1-33-02-introduce-1   teaches: ['c1-literary-modernism-vocab']
 files: content/hu/exercises/c1/c1-33-02-ex.json
@@ -5027,8 +5027,8 @@ Mit jelent a poétikai többértelműség (poliszémia) a modernista lírában?
 * Azt a jelenséget, amikor egy költői kép vagy kifejezés egyszerre több egymással összefüggő, olykor feszültségben álló jelentést hordoz anélkül, hogy egyetlen definícióra szűkíthető lenne.
 - A szándékos helyesírási hibák alkalmazását a klasszikus versformákban.
 - Az idegen szavak és kifejezések túlzott használatát az irodalmi művekben.
-decision: 
-why: 
+decision: match: A szigorú klasszicista versformák formai szabályainak feladását és a szabadvers kizárólagos használatát az avantgárd költészetben. || Az archaikus és idegen szavak túlzott alkalmazását a szövegben, amely szándékosan megnehezíti a vers ritmusának követését.
+why: Both new wrong options describe real formal poetic techniques (free verse abandonment of form, archaic diction) matching length and literary register (125 and 121 vs 187 chars); only the marked option defines poetic polysemy.
 
 ### c1-33-03-introduce-1   teaches: ['c1-literary-modernism-vocab']
 files: content/hu/exercises/c1/c1-33-03-ex.json
@@ -5037,8 +5037,8 @@ Mit jelent az 'írástudók árulása' (Julien Benda és Babits szellemében)?
 * Azt a morális züllést, amikor az értelmiségiek és művészek feladják az egyetemes igazság és humánum védelmét, és behódolnak a nacionalista vagy totalitárius politikai hatalomnak.
 - A kiadói szerződések határidő előtti felbontását pénzügyi viták miatt.
 - A plágium gyanújába keveredett tudományos publikációk visszavonását.
-decision: 
-why: 
+decision: match: A könyvkiadói szerződések felbontását és a szerzői jogi díjak jogosulatlan visszatartását a kereskedelmi kiadók részéről. || A tudományos és irodalmi plágium gyanújába keveredett publikációk visszavonását és a szerzői etikai normák megsértését.
+why: Both new wrong options describe real publishing/ethical breaches matching length and tone (121 and 119 vs 178 chars); only the marked option defines the moral betrayal of intellectuals (la trahison des clercs).
 
 ### c1-33-04-introduce-1   teaches: ['c1-literary-modernism-vocab']
 files: content/hu/exercises/c1/c1-33-04-ex.json
@@ -5047,8 +5047,8 @@ Miért tekinthető mérföldkőnek Babits Mihály Dante Isteni színjáték-ford
 * Mert nem egyszerű fordítás volt, hanem a magyar nyelv poétikai határainak kitágítása és a nemzeti irodalom szerves integrálása az európai klasszikus kánonba.
 - Mert a fordító kizárólag prózai formában adta vissza a toszkán tercinákat.
 - Mert a szöveget az Akadémia kötelező iskolai tananyaggá nyilvánította.
-decision: 
-why: 
+decision: match: Mert a fordító lemondott az eredeti toszkán tercinák rímképletéről, és modern, ritmustalan prózában adta vissza a teljes művet. || Mert a fordítás azonnali állami díjat nyert, és a közoktatásban kötelező tananyaggá nyilvánították minden középiskolában.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing plausible translation/curricular points matching length (122 and 118 vs 157 chars); only the marked option captures the poetic and canonical significance of Babits's translation.
 
 ### c1-34-02-introduce-1   teaches: ['c1-philosophy-of-science-vocab']
 files: content/hu/exercises/c1/c1-34-02-ex.json
@@ -5057,8 +5057,8 @@ Mi Karl Popper demarkációs kritériumának lényege a tudományosság meghatá
 * Egy elmélet csak akkor tekinthető tudományosnak, ha elvileg cáfolható (falszifikálható), vagyis megfogalmazható olyan lehetséges empirikus tapasztalat, amely megdöntheti.
 - Az, hogy egy állítást mindenki elhisz-e a társadalomban.
 - Az, hogy az állítás maradéktalanul levezethető-e a klasszikus logikai axiómákból.
-decision: 
-why: 
+decision: match: Az, hogy egy elmélet állításait sikerül-e minél több független megfigyeléssel és empirikus adattal véglegesen igazolni. || Az, hogy az elmélet tételei maradéktalanul levezethetők-e a formális logika absztrakt axiómáiból és matematikai alapelveiből.
+why: Both new wrong options present rival philosophical criteria of demarcation (verificationism, logicism) matching length and register (124 and 124 vs 170 chars); only the marked option defines Popper's falsification criterion.
 
 ### c1-34-03-introduce-1   teaches: ['c1-philosophy-of-science-vocab']
 files: content/hu/exercises/c1/c1-34-03-ex.json
@@ -5067,8 +5067,8 @@ Miért a független szakmai lektorálás (peer review) a modern tudomány legfő
 * Mert biztosítja, hogy egy kutatási eredményt a szakterület független szakértői anonim módon, szigorú módszertani és etikai szempontok alapján ellenőrizzenek a publikálás előtt.
 - Mert kizárja a korábbi elméletekkel való bármilyen szakmai vitát.
 - Mert adminisztratív módon garantálja a tudományos konszenzus egyhangúságát.
-decision: 
-why: 
+decision: match: Mert adminisztratív módon garantálja, hogy a publikációk kizárólag a folyóirat szerkesztőbizottságának politikai nézeteit tükrözzék. || Mert biztosítja, hogy minden benyújtott kézirat azonnal megjelenhessen anélkül, hogy vitába keveredne a meglévő elméletekkel.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing plausible administrative editorial mechanisms matching length (124 and 119 vs 176 chars); only the marked option defines independent peer review.
 
 ### c1-34-04-introduce-1   teaches: ['c1-philosophy-of-science-vocab']
 files: content/hu/exercises/c1/c1-34-04-ex.json
@@ -5077,8 +5077,8 @@ Mit nevez Thomas Kuhn 'paradigmaváltásnak' a tudománytörténetben?
 * Azt a forradalmi folyamatot, amikor a felhalmozódó anomáliák hatására a korábbi uralkodó elméleti és módszertani keret összeomlik, és egy új, összemérhetetlen világkép lép a helyébe.
 - A meglévő elméleti keretek fokozatos, apró módosításokkal történő kiegészítését.
 - A kísérleti eszközök technológiai modernizációjának időszakos ciklusait.
-decision: 
-why: 
+decision: match: A tudományos ismeretek fokozatos, kumulatív felhalmozódását a meglévő elméleti és módszertani keretek fenntartása mellett. || A laboratóriumi mérőeszközök és kísérleti berendezések technológiai korszerűsítésének rendszeres, ciklikus megújulását.
+why: Both new wrong options describe normal cumulative science and instrumental upgrades matching length and philosophy of science register (124 and 123 vs 182 chars); only the marked option defines a Kuhn paradigm shift.
 
 ### c1-35-01-introduce-1   teaches: ['c1-digital-ethics-vocab']
 files: content/hu/exercises/c1/c1-35-01-ex.json
@@ -5087,8 +5087,8 @@ Mit jelent az információs entrópia Shannon elméletében?
 * Egy üzenet vagy rendszer bizonytalanságának és információtartalmának mértékét: minél nagyobb az entrópia, annál nagyobb a kiszámíthatatlanság.
 - A hardveres számítási kapacitás maximális órajelének határértékét.
 - A telekommunikációs hálózatok fizikai adatátviteli sebességét.
-decision: 
-why: 
+decision: match: A processzorok és integrált áramkörök maximális fizikai órajelét és a mikrochipek másodpercenkénti számítási kapacitását. || A digitális telekommunikációs kábelek fizikai adatátviteli sebességét és sávszélességét a hálózati csomópontok között.
+why: Both new wrong options describe physical hardware/network metrics (clock speed, bandwidth) matching length and technical register (123 and 121 vs 142 chars); only the marked option defines Shannon information entropy.
 
 ### c1-35-02-introduce-1   teaches: ['c1-digital-ethics-vocab']
 files: content/hu/exercises/c1/c1-35-02-ex.json
@@ -5097,8 +5097,8 @@ Mit nevez Shoshana Zuboff 'megfigyelési kapitalizmusnak'?
 * Azt a gazdasági rendszert, amely az emberi viselkedést és személyes tapasztalatot ingyenes nyersanyagként sajátítja ki, hogy viselkedési többletet állítson elő és prediktív algoritmusokkal manipulálja a döntéseinket.
 - A pénzügyi tranzakciók digitális banki ellenőrzésének intézményi rendszerét.
 - Az ipari gyártósorok automatizálását a munkaerőköltségek csökkentése érdekében.
-decision: 
-why: 
+decision: match: A banki tranzakciók és digitális pénzmozgások állami felügyeletének azon rendszerét, amely a terrorfinanszírozás, pénzmosás és adócsalás megelőzésére szolgál a pénzügyi szektorban. || Az ipari gyártósorok, összeszerelő üzemek és logisztikai raktárak olyan teljes körű robotizálását, amely a fizikai munkaerő kiváltásával minimalizálja a vállalatok termelési költségeit.
+why: Both new wrong options describe real financial/industrial automated systems matching length and register (181 and 185 vs 216 chars); only the marked option defines surveillance capitalism.
 
 ### c1-35-03-introduce-1   teaches: ['c1-digital-ethics-vocab']
 files: content/hu/exercises/c1/c1-35-03-ex.json
@@ -5107,8 +5107,8 @@ Mi az 'információs önrendelkezési jog' lényege az alkotmányjogban?
 * Minden ember elidegeníthetetlen joga arra, hogy maga döntsön személyes adatainak kiszolgáltatásáról, kezeléséről és felhasználásáról az állami és piaci szereplőkkel szemben.
 - A digitális eszközök állami szubvencionálására vonatkozó szociális jogot.
 - A gazdasági társaságok jogát a felhasználói adatok szabad kereskedelmi hasznosítására.
-decision: 
-why: 
+decision: match: A rászoruló polgárok azon alanyi jogát, hogy az állam ingyenes szélessávú internet-hozzáférést és digitális eszközöket biztosítson számukra. || A piaci vállalatok törvényes felhatalmazását arra, hogy a fogyasztói szokásokról gyűjtött statisztikákat szabadon értékesítsék harmadik feleknek.
+why: Both new wrong options describe plausible digital social/commercial rights matching length and legal tone (139 and 143 vs 173 chars); only the marked option defines informational self-determination.
 
 ### c1-35-04-introduce-1   teaches: ['c1-digital-ethics-vocab']
 files: content/hu/exercises/c1/c1-35-04-ex.json
@@ -5117,8 +5117,8 @@ Milyen alapvető különbséget tárt fel Neumann János a számítógép és az
 * A számítógép pontos digitális aritmetikát használ nagy sebességgel, míg az agy alacsony pontosságú, analóg és statisztikai jelzésekkel, párhuzamosan és elképesztő energiahatékonysággal gondolkodik.
 - Az emberi agy kizárólag determinisztikus szabályokat követ a döntéshozatal során.
 - A neurális hálózatok működése maradéktalanul azonos a bináris logikai kapukéval.
-decision: 
-why: 
+decision: match: A számítógép analóg és asszociatív ingerületi mintázatokkal dolgozik, míg az emberi elme kizárólag determinisztikus bináris logikai kapuk soros sorrendjét követi. || A számítógép intuitív és érzelmi döntéshozatalra képes, míg az emberi agy működése maradéktalanul megegyezik a mechanikus lyukkártyás számológépekével.
+why: Both new wrong options construct plausible inverted comparisons matching length and cognitive/cybernetic register (161 and 147 vs 197 chars); only the marked option conveys Neumann's digital/serial vs neural/parallel contrast.
 
 ### c1-35-05-introduce-1   teaches: ['c1-digital-ethics-vocab']
 files: content/hu/exercises/c1/c1-35-05-ex.json
@@ -5127,8 +5127,8 @@ Milyen prófétai figyelmeztetést fogalmazott meg Neumann János 'Túlélhetjü
 * A technológiai fejlődés exponenciális sebessége hamarosan meghaladja a korábbi politikai intézmények kereteit, így a túlélés egyetlen záloga az emberiség morális érettsége és az együttműködés lesz.
 - Azt, hogy a számítástechnika fejlődése hamarosan eléri a fizikai határait.
 - Hogy a technológiai innovációt kizárólag a katonai védelem szolgálatába kell állítani.
-decision: 
-why: 
+decision: match: Azt, hogy a számítógépes processzorok miniatürizálása hamarosan eléri az atomi méretek fizikai korlátait, leállítva a technikai fejlődést. || Azt, hogy a technológiai fejlesztéseket szigorúan el kell zárni a civil társadalom elől, kizárólag a nemzetbiztonsági védelemre korlátozva őket.
+why: Both new wrong options describe plausible technological prognoses matching length and essayistic register (139 and 142 vs 197 chars); only the marked option reflects Neumann's moral and institutional warning.
 
 ### c1-emlekezetpolitika-03-introduce-1   teaches: ['c1-historical-revisionism-vocab']
 files: content/hu/exercises/c1/c1-emlekezetpolitika-03-ex.json
@@ -5137,8 +5137,8 @@ Mi volt a 2016-os Dózsa László-plakátbotrány lényege?
 * A forradalom 60. évfordulóján egy híres archív fotón szereplő 15 éves pesti srác, Pruck Pál arcához tévesen egy kormánypárti színész nevét rendelték, s a tévedést a bizonyítékok ellenére sem voltak hajlandók elismerni.
 - Hogy a kiállított fotósorozatot nem látták el megfelelő szerzői jogi jelöléssel a levéltári források szerint.
 - Hogy a jubileumi rendezvények időpontja egybeesett egy nemzetközi sporteseménnyel.
-decision: 
-why: 
+decision: match: Hogy az ünnepi megemlékezésekre készült köztéri plakátok költségvetése többszörösen meghaladta a tervezett állami keretet az elszámolások szerint. || Hogy a levéltári forrásokból származó archív felvételek digitalizálása során súlyos technikai hibák miatt elveszett az eredeti fotók egy része.
+why: Both new wrong options describe plausible commemorative/administrative controversies matching length and journalistic register (139 and 138 vs 218 chars); only the marked option details the historical misattribution of Pál Pruck.
 
 ### c1-esszemuveszet-01-check-7   teaches: ['essay-oratory-style']
 files: content/hu/exercises/c1/c1-esszemuveszet-01-ex.json
@@ -5147,8 +5147,8 @@ Melyik jellemző NEM igaz Pázmány Péter prózájára?
 * Száraz, képektől mentes, kizárólag latin terminusokat használó fogalmazásmód.
 - Gazdag és érzékletes képszerűség.
 - Hatalmas ívű, harmonikus körmondatok.
-decision: 
-why: 
+decision: match: A bibliai példázatokra és népi szólásokra épülő, érzékletes képszerűség. || A barokk gondolatmenetet fegyelmezetten kibontó, hatalmas ívű körmondatok.
+why: Both new wrong options elaborate actual hallmarks of Pázmány's baroque prose matching length (76 and 76 vs 77 chars); only the marked option states an untrue feature.
 
 ### c1-felsooktatas-05-introduce-1   teaches: ['c1-university-model-change-vocab']
 files: content/hu/exercises/c1/c1-felsooktatas-05-ex.json
@@ -5157,8 +5157,8 @@ Mit jelent a 'tudományos szuverenitás' fogalma a 21. századi tudománypolitik
 * A nemzet azon képességét, hogy független, nemzetközileg integrált és politikailag nem befolyásolt intézményekben saját maga termelje újra a magas szintű tudást és innovációt.
 - A nemzeti kutatóintézetek kizárólagos állami monopóliumát minden tudományterületen.
 - A külföldi kutatók foglalkoztatásának szigorú kvótákhoz kötését az egyetemeken.
-decision: 
-why: 
+decision: match: A hazai egyetemek és kutatóhelyek feletti teljes politikai ellenőrzést és a nemzetközi kutatási együttműködésekből való tudatos kilépést. || A szabadalmi bevételek és technológiai fejlesztések kizárólagos állami tulajdonba vételét a magánbefektetők kizárásával.
+why: Both new wrong options describe national autarkic science policies matching length and tone (136 and 120 vs 174 chars); only the marked option defines autonomous scientific sovereignty.
 
 ### c1-geopolitika-04-introduce-1   teaches: ['c1-pendulum-politics-vocab']
 files: content/hu/exercises/c1/c1-geopolitika-04-ex.json
@@ -5167,8 +5167,8 @@ Mit nevez a nemzetközi szakirodalom 'adósságcsapda-diplomáciának' a kínai 
 * Olyan gigantikus, titkosított feltételű infrastrukturális hitelek nyújtását, amelyek piaci megtérülése kétséges, s a visszafizetés elmaradásakor a hitelező politikai és stratégiai engedményeket kényszerít ki.
 - A fejlődő országok számára nyújtott vissza nem térítendő nemzetközi humanitárius segélyprogramokat.
 - A nemzetközi pénzpiacokon kibocsátott államkötvények kamatainak állami garanciavállalását.
-decision: 
-why: 
+decision: match: A nemzetközi fejlesztési bankok által nyújtott, szigorú gazdasági reformokhoz és antikorrupciós feltételekhez kötött, kedvezményes kamatozású többoldalú pénzügyi mentőcsomagokat. || A feltörekvő gazdaságok számára folyósított, vissza nem térítendő nemzetközi humanitárius és egészségügyi segélyprogramokat, valamint a multilaterális adósságelengedési megállapodásokat.
+why: Both new wrong options describe established multilateral financing models (IMF/WB adjustment loans, debt relief) matching length (178 and 188 vs 208 chars); only the marked option defines debt-trap diplomacy.
 
 ### c1-geopolitika-05-introduce-1   teaches: ['c1-pendulum-politics-vocab']
 files: content/hu/exercises/c1/c1-geopolitika-05-ex.json
@@ -5177,8 +5177,8 @@ Mit jelent a 'kétsebességes Európa' koncepciója Magyarország jövője szemp
 * Azt, hogy a szorosabb integrációt és jogállamiságot vállaló magállamok (Franciaország, Németország stb.) mélyebb szövetségre lépnek, míg a kimaradó renitens államok a pénzügyi és döntési perifériára rekednek.
 - Azt, hogy a tagállamok gazdasági növekedési üteme határozza meg a szavazati jogok súlyát.
 - Azt, hogy a keleti tagállamok automatikusan mentesülnek a közös jogi normák betartása alól.
-decision: 
-why: 
+decision: match: Azt az integrációs modellt, amelyben a tagállamok gazdasági növekedési üteme határozza meg a szavazati jogok arányát az Európai Parlamentben. || Azt az elvet, hogy a keleti tagállamok a gazdasági felzárkózás befejezéséig automatikusan mentesülnek minden közös költségvetési befizetés alól.
+why: Both new wrong options describe alternative European governance proposals matching length and EU-law register (141 and 137 vs 208 chars); only the marked option defines multi-speed Europe.
 
 ### c1-irodalmielet-03-introduce-1   teaches: ['c1-literary-canon-vocab']
 files: content/hu/exercises/c1/c1-irodalmielet-03-ex.json
@@ -5187,8 +5187,8 @@ Hogyan működött a politikai kliensrendszer a Petőfi Irodalmi Múzeum közpon
 * A lojális szerzőknek milliárdos támogatásokat és ösztöndíjakat juttattak, miközben a független és kritikus alkotókat és folyóiratokat forrásmegvonással és feketelistákkal próbálták ellehetetleníteni.
 - Kizárólag a könyvtári kölcsönzési statisztikák alapján osztottak szét minden kulturális támogatást.
 - A támogatásokat teljesen átlátható, nemzetközi szakmai zsűrik bevonásával ítélték oda.
-decision: 
-why: 
+decision: match: A kulturális költségvetést szigorúan a könyvtári kölcsönzési adatok és az eladási példányszámok arányában, automatikusan osztották szét. || A pályázati forrásokat nemzetközileg akkreditált, független szakmai zsűrik bevonásával, teljesen anonim bírálati rendszerben ítélték oda.
+why: Both new wrong options describe merit-based/market-based allocation mechanisms matching length and tone (133 and 133 vs 199 chars); only the marked option describes political clientelism.
 
 ### c1-irodalmielet-05-introduce-1   teaches: ['c1-literary-canon-vocab']
 files: content/hu/exercises/c1/c1-irodalmielet-05-ex.json
@@ -5197,8 +5197,8 @@ Miért bukik el szükségszerűen minden erőszakos, politikai célú kánonáts
 * Mert az irodalmi értéket nem a hatalmi rendeletek vagy a pénz, hanem az esztétikai minőség és a szabad olvasói közösség teremti meg, így a politikai kegyencek gyorsan feledésbe merülnek.
 - Mert az állami támogatások megvonása után a hivatalos szerzők azonnal külföldre távoznak.
 - Mert a nemzetközi kulturális szervezetek automatikusan érvénytelenítik a nemzeti tanterveket.
-decision: 
-why: 
+decision: match: Mert az állami támogatásból élő hivatalos szerzők a források szétosztása után azonnal felhagynak az írással és külföldre költöznek. || Mert a nemzetközi kulturális intézmények automatikusan érvénytelenítik azon államok tankönyveit, amelyekben politikai beavatkozás történt.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) offering administrative/international explanations matching length (130 and 134 vs 186 chars); only the marked option reflects the aesthetic and reader-community basis of the literary canon.
 
 ### c1-kiberbiztonsag-01-introduce-1   teaches: ['c1-cyber-warfare-vocab']
 files: content/hu/exercises/c1/c1-kiberbiztonsag-01-ex.json
@@ -5207,8 +5207,8 @@ Mit ért a katonai doktrína a 'kibertér mint hadszíntér' kifejezés alatt?
 * Azt, hogy a szárazföld, a tenger, a levegő és a világűr mellett a digitális információs tér hivatalosan is az önálló hadműveletek ötödik dimenziójává vált.
 - Hogy a katonáknak számítógépes játékokban kell gyakorolniuk a célbalövést.
 - A katonai toborzóirodák weboldalainak karbantartását.
-decision: 
-why: 
+decision: match: Azt, hogy a modern hadseregek kizárólag szimulációs szoftverekben és virtuális valóságban végezhetnek hadgyakorlatokat békében. || A toborzóirodák és a katonai logisztikai raktárak internetes honlapjainak és nyilvános információs felületeinek üzemeltetését.
+why: Both new wrong options describe minor IT/simulation support functions matching length and military register (125 and 123 vs 155 chars); only the marked option defines cyberspace as the fifth warfare domain.
 
 ### c1-kiberbiztonsag-02-introduce-1   teaches: ['c1-cyber-warfare-vocab']
 files: content/hu/exercises/c1/c1-kiberbiztonsag-02-ex.json
@@ -5217,8 +5217,8 @@ Miért tekinthető a katonai minőségű kémszoftver (pl. Pegasus) 'fegyverkén
 * Mert felhasználói beavatkozás nélkül (zero-click) töri fel a telefont, átveszi a mikrofon, a kamera és a titkosított csevegések teljes irányítását.
 - Mert fizikailag felrobbantja a telefontöltőt a konnektorban.
 - Mert automatikusan letiltja a kéretlen reklámleveleket.
-decision: 
-why: 
+decision: match: Mert fizikailag tönkreteszi a készülék mikroprocesszorát és túlfeszültséget idéz elő az akkumulátor töltési áramkörében. || Mert kéretlen vírusirtóként működve letiltja az engedély nélküli alkalmazások letöltését a hivatalos áruházakból.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) describing hardware destruction or antivirus behavior matching length (121 and 115 vs 147 chars); only the marked option accurately defines zero-click surveillance cyberweapons.
 
 ### c1-kiberbiztonsag-03-introduce-1   teaches: ['c1-cyber-warfare-vocab']
 files: content/hu/exercises/c1/c1-kiberbiztonsag-03-ex.json
@@ -5227,8 +5227,8 @@ Milyen áttörést hoz az Európai Unió NIS2-irányelve a vállalati kibervéde
 * Kötelezővé teszi a 24 órán belüli incidensbejelentést, kiterjeszti a felelősséget a felsővezetésre, és szigorú bírságokat szab ki a mulasztásokra.
 - Ingyenes laptopot biztosít minden európai középiskolás diáknak.
 - Megtiltja a számítógépek éjszakai kikapcsolását a minisztériumokban.
-decision: 
-why: 
+decision: match: Ingyenes kiberbiztonsági szoftvercsomagot biztosít a magánszemélyek és az egyéni vállalkozók otthoni számítógépei számára. || Előírja a számítógépek folyamatos éjszakai készenlétét a minisztériumokban az informatikai frissítések letöltéséhez.
+why: Both new wrong options describe plausible EU digital measures (free consumer software, night updates) matching length and regulatory tone (122 and 118 vs 146 chars); only the marked option defines NIS2 directive requirements.
 
 ### c1-kiberbiztonsag-05-introduce-1   teaches: ['c1-cyber-warfare-vocab']
 files: content/hu/exercises/c1/c1-kiberbiztonsag-05-ex.json
@@ -5237,8 +5237,8 @@ Mit jelent a 'társadalmi ellenállóképesség' (societal resilience) a kibert�
 * A társadalom, az intézmények és az állampolgárok azon képességét, hogy elviseljék, kivédjék és gyorsan kiheverjék a súlyos dezinformációs és kiberinfrastruktúra-támadásokat.
 - A lakosság fizikai állóképességének tesztelését az edzőtermekben.
 - A wifi-jelszavak betiltását az irodákban.
-decision: 
-why: 
+decision: match: A felhőalapú informatikai szerverek azon műszaki tulajdonságát, hogy hardveres meghibásodás esetén azonnal átkapcsolnak tartalék adatközpontokra. || Az állami hírügynökség azon jogszabályi monopóliumát, amely megtiltja a külföldi hírek közzétételét válsághelyzetek idején.
+why: Both new wrong options present alternative resilience/security concepts (technical failover, news censorship) matching length (139 and 121 vs 173 chars); only the marked option defines societal resilience.
 
 ### c1-kozlekedespolitika-01-introduce-1   teaches: ['c1-railway-decay-vocab']
 files: content/hu/exercises/c1/c1-kozlekedespolitika-01-ex.json
@@ -5247,8 +5247,8 @@ Mit jelent a 'lassújel' a vasúti közlekedésben?
 * A pálya műszaki romlása, sínhibák vagy elhasználódás miatt elrendelt kényszerű sebességkorlátozást egy adott szakaszon.
 - Egy udvarias figyelmeztető táblát a madarak számára.
 - A kalauzok lassú jegykezelési tempóját jelző lámpát.
-decision: 
-why: 
+decision: match: A vasútállomások körzetében a gyalogosforgalom védelmében előírt kötelező, állandó megállási tilalmat. || A mozdonyvezetők pihenőidejét rögzítő digitális menetíró készülék által kiadott hangjelzést a fülkében.
+why: Both new wrong options describe plausible railway traffic/signaling concepts matching length and tone (104 and 107 vs 119 chars); only the marked option defines a temporary speed restriction (lassújel).
 
 ### c1-kozlekedespolitika-02-introduce-1   teaches: ['c1-railway-decay-vocab']
 files: content/hu/exercises/c1/c1-kozlekedespolitika-02-ex.json
@@ -5257,8 +5257,8 @@ Miért bírálták szakértők a vasúti mellékvonalak 'forgalomszüneteltetés
 * Mert a buszos pótlás lassabb, kényelmetlenebb, nem alkalmas kerékpárok szállítására, és a vidéki kistelepülések elszigetelődését okozza.
 - Mert a pótlóbuszokon kötelező volt énekelni.
 - Mert a buszok csak hátramenetben közlekedhettek.
-decision: 
-why: 
+decision: match: Mert a pótlóbuszok magasabb üzemeltetési költsége azonnal felélte a regionális közlekedésre szánt teljes éves állami támogatást. || Mert az autóbuszok környezetszennyezése a sűrűbb menetrend miatt meghaladta a fővárosi nagyvállalatok ipari károsanyag-kibocsátását.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing plausible transport economics/environmental arguments matching length (125 and 126 vs 136 chars); only the marked option reflects the actual accessibility and service criticism.
 
 ### c1-kozlekedespolitika-03-introduce-1   teaches: ['c1-railway-decay-vocab']
 files: content/hu/exercises/c1/c1-kozlekedespolitika-03-ex.json
@@ -5267,8 +5267,8 @@ Milyen kötelezettséget vállalt a magyar állam a 35 éves autópálya-koncess
 * Évente több százmilliárd forint 'rendelkezésre állási díjat' fizet a magánkonzorciumnak az autópályák fenntartásáért és bővítéséért, garantálva a magántőke profitját.
 - Azt, hogy minden autópályán kötelező kerékpárutat építeni.
 - Azt, hogy ingyenes benzint oszt a hétvégi kirándulóknak.
-decision: 
-why: 
+decision: match: Azt, hogy a koncessziós időszak alatt a magántársaság közvetlenül szedi be és tartja meg az összes matricabevételt állami hozzájárulás nélkül. || Azt, hogy az autópályák teljes szakaszán díjmentessé teszi a teherforgalmat a nemzetközi tranzitkereskedelem élénkítése érdekében.
+why: Both new wrong options describe plausible toll/concession arrangements matching length and fiscal register (139 and 126 vs 166 chars); only the marked option defines the availability fee (rendelkezésre állási díj) model.
 
 ### c1-kozlekedespolitika-04-introduce-1   teaches: ['c1-railway-decay-vocab']
 files: content/hu/exercises/c1/c1-kozlekedespolitika-04-ex.json
@@ -5277,8 +5277,8 @@ Miért bírálták élesen a Budapest–Belgrád vasútvonal újjáépítését 
 * Mert gigantikus, titkosított kínai hitelből valósul meg, elkerüli a nagyobb hazai városokat, a megtérülése évszázadokig tarthat, s főként a kínai teherárut szolgálja ki a magyar utasok helyett.
 - Mert túl sok fát ültettek a vasút mellé.
 - Mert csak gőzmozdonyok közlekedhetnek rajta.
-decision: 
-why: 
+decision: match: Mert a beruházás kizárólag a hazai személyszállítást fejleszti, miközben teljesen ellehetetleníti az észak–déli nemzetközi teherfuvarozást. || Mert a pálya korszerűsítése után sem engedélyezik a villamos mozdonyok közlekedését a magas áramfogyasztási költségek miatt.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing plausible infrastructure objections matching length (137 and 124 vs 193 chars); only the marked option reflects the actual cost-benefit and geopolitical critiques of the project.
 
 ### c1-kozlekedespolitika-05-introduce-1   teaches: ['c1-railway-decay-vocab']
 files: content/hu/exercises/c1/c1-kozlekedespolitika-05-ex.json
@@ -5287,8 +5287,8 @@ Mi a közlekedéspolitikai paradoxona a magyarországi 'ország- és vármegyeb�
 * Az, hogy bár rendkívül olcsóvá tette az utazást, a MÁV jegybevételeinek kiesése miatt tovább csökkent a pályakarbantartásra és új járművekre fordítható forrás.
 - Az, hogy a bérleteket csak postagalambbal lehetett megrendelni.
 - Az, hogy a bérletek csak éjfél és hajnali kettő között voltak érvényesek.
-decision: 
-why: 
+decision: match: Az, hogy a bérletek alacsony ára ellenére drasztikusan visszaesett az utasszám, mert a lakosság inkább a drágább InterCity vonatokat választotta. || Az, hogy a díjtermék bevezetése után az állam megszüntette a vidéki vasútvonalak menetrend szerinti járatainak felét a párhuzamosságok miatt.
+why: Both new wrong options describe plausible policy paradoxes matching length and transport economics tone (140 and 138 vs 159 chars); only the marked option defines the fare revenue depletion paradox.
 
 ### c1-kozlekedespolitika-consolidation-9   teaches: ['correlative-minel-annal']
 files: content/hu/exercises/c1/c1-kozlekedespolitika-consolidation-ex.json
@@ -5297,8 +5297,8 @@ Mi a funkciója a 'Minél... annál...' arányossági szerkezetnek a közlekedé
 * Az autópályákra fordított magántőke-kifizetések és a vasúti pályaromlás közötti közvetlen összefüggést bizonyítja.
 - Megmutatja, milyen gyorsan száguld a mozdony.
 - Elnézést kér az időjárási viszonyok miatt.
-decision: 
-why: 
+decision: match: Időbeli sorrendbe állítja az infrastrukturális beruházásokat, kizárva a forráselvonások közötti kauzális kapcsolatot. || Megkérdőjelezi a hivatalos statisztikai adatok hitelességét a költségvetési zárszámadás részletes vizsgálata során.
+why: Both new wrong options describe analytical discourse functions matching length and tone (111 and 113 vs 114 chars); only the marked option defines the correlative proportionality analysis.
 
 ### c1-kulturalisorokseg-01-introduce-1   teaches: ['c1-cultural-policy-vocab']
 files: content/hu/exercises/c1/c1-kulturalisorokseg-01-ex.json
@@ -5307,8 +5307,8 @@ Mit jelent a 'szellemi térfoglalás' a kormányzati kultúrpolitika gyakorlatá
 * A közpénzekből finanszírozott kulturális és tudományos intézmények, lapok és döntőbizottságok ideológiai és személyi uralmát a politikai lojalitás alapján.
 - A könyvtári olvasótermek asztalainak átrendezését.
 - Új festmények kiakasztását a folyosókon.
-decision: 
-why: 
+decision: match: A műemléki védettség alatt álló épületek és múzeumok látogatottságának növelését modern digitális tárlatvezetési rendszerekkel. || A független művészeti társaságok bevonását az állami költségvetés tervezésébe a sokszínű kultúrafinanszírozás biztosítására.
+why: Both new wrong options describe positive cultural management practices matching length and institutional register (123 and 124 vs 155 chars); only the marked option defines ideological/institutional capture.
 
 ### c1-kulturalisorokseg-02-introduce-1   teaches: ['c1-cultural-policy-vocab']
 files: content/hu/exercises/c1/c1-kulturalisorokseg-02-ex.json
@@ -5317,8 +5317,8 @@ Hogyan működik a Petőfi Kulturális Ügynökség (PKÜ) megaintézményi mode
 * A korábban autonóm szakmai kuratóriumok által elosztott irodalmi és művészeti forrásokat egyetlen központi holdingba vonja össze, felülről irányított vezetéssel.
 - Minden magyar polgárnak ingyen oszt versesköteteket a postán.
 - Kizárólag külföldi operaénekeseket foglalkoztat.
-decision: 
-why: 
+decision: match: A kulturális források elosztását teljesen átadja a regionális önkormányzatoknak és a helyi művészeti egyesületek kuratóriumainak. || Kizárólag a nemzetközi könyvvásárok és külföldi színházi vendégjátékok logisztikai szervezését végzi független ügynökségként.
+why: Both new wrong options describe decentralized or purely promotional agency models matching length and tone (124 and 121 vs 161 chars); only the marked option defines centralized holding control.
 
 ### c1-kulturalisorokseg-03-check-8   teaches: ['correlative-minel-annal']
 files: content/hu/exercises/c1/c1-kulturalisorokseg-03-ex.json
@@ -5327,8 +5327,8 @@ Melyik szerkezet fejezi ki a forrásmegvonás és színházi pusztulás arányos
 * Minél kevesebb forrás jut a függetleneknek... annál több társulat kényszerül bezárásra
 - Ha nem esik az eső, száraz a színpad
 - A színészek szeretnek tapsot kapni
-decision: 
-why: 
+decision: match: Mivel a független színházak nem jutnak forráshoz, ezért a társulatok kénytelenek bezárni || Noha jelentős forrást vontak el a függetlenektől, mégis több új társulat nyitotta meg kapuit
+why: Both new wrong options use real complex syntactic structures (cause-effect 'Mivel... ezért', concession 'Noha... mégis') of matching length (87 and 93 vs 86 chars); only the marked option expresses proportionality ('Minél... annál...').
 
 ### c1-kulturalisorokseg-03-introduce-1   teaches: ['c1-cultural-policy-vocab']
 files: content/hu/exercises/c1/c1-kulturalisorokseg-03-ex.json
@@ -5337,8 +5337,8 @@ Milyen hatással volt a kulturális TAO-rendszer megszüntetése a független sz
 * Megfosztotta őket a jegybevételekkel arányos, politikai ellenőrzéstől mentes állami kiegészítéstől, kiszolgáltatva őket az egyedi miniszteri döntéseknek.
 - Azonnal megduplázta a színészek fizetését.
 - Ingyenessé tette a színházbérleteket az egyetemistáknak.
-decision: 
-why: 
+decision: match: Lehetővé tette a független társulatok számára a jegyárak drasztikus csökkentését az állami alapokból folyósított közvetlen támogatásokkal. || Átláthatóbbá tette a jegyeladásokat azáltal, hogy a színházak kizárólag a nemzetközi fesztiválok bevételeire támaszkodhattak.
+why: Both new wrong options describe plausible positive/neutral subsidy outcomes matching length and tone (137 and 127 vs 153 chars); only the marked option reflects the loss of autonomous funding and vulnerability to discretionary ministerial grants.
 
 ### c1-kulturalisorokseg-04-introduce-1   teaches: ['c1-cultural-policy-vocab']
 files: content/hu/exercises/c1/c1-kulturalisorokseg-04-ex.json
@@ -5347,8 +5347,8 @@ Milyen jogállást és privilégiumokat biztosított a 2011-es Alaptörvény az 
 * Köztestületi rangot, alkotmányos szintű védelmet, tízmilliárdos költségvetést és kiemelt delegálási jogot az NKA kuratóriumaiba.
 - Kizárólag egy belvárosi iroda bérleti jogát.
 - A külföldi festményvásárok szervezési jogát.
-decision: 
-why: 
+decision: match: A civil egyesületi forma fenntartását állami költségvetési juttatások és delegálási jogok nélkül a művészeti életben. || Kizárólag a kortárs képzőművészeti kiállítások engedélyezési jogkörét a minisztérium közvetlen felügyelete mellett.
+why: Both new wrong options describe minor legal statuses (unfunded NGO, minor regulatory agency) matching length and legal tone (119 and 115 vs 128 chars); only the marked option details the MMA's constitutional public-body status and NKA representation.
 
 ### c1-kulturalisorokseg-05-introduce-1   teaches: ['c1-cultural-policy-vocab']
 files: content/hu/exercises/c1/c1-kulturalisorokseg-05-ex.json
@@ -5357,8 +5357,8 @@ Mit jelent a 'kettészakadt kultúra' kifejezés a mai magyar valóságban?
 * Egymással nem kommunikáló, párhuzamosan létező művészeti intézményrendszereket, írószervezeteket és kánonokat a politikai polarizáció mentén.
 - A könyvek kettévágását a nyomdákban.
 - A színházi függöny kettészakadását az előadás alatt.
-decision: 
-why: 
+decision: match: A fővárosi elitkultúra és a vidéki népművészeti hagyományok békés, harmonikus egymás mellett élését a nemzeti intézményrendszerben. || A digitális tartalomfogyasztás és a hagyományos nyomtatott könyvkiadás közötti generációs megoszlást a modern társadalomban.
+why: Both new wrong options describe plausible cultural dualities (urban vs folk, digital vs print) matching length and sociological tone (124 and 123 vs 141 chars); only the marked option defines polarized institutional bifurcation.
 
 ### c1-kulturalisorokseg-consolidation-9   teaches: ['epistemic-hedging']
 files: content/hu/exercises/c1/c1-kulturalisorokseg-consolidation-ex.json
@@ -5367,8 +5367,8 @@ Mi a szerepe az episztemikus kifejezéseknek a paritás megszűnésének bírál
 * Objektív elemzői súlyt adnak annak kimondására, hogy a döntéshozatal átpolitizálódása megtörtént.
 - Elnézést kérnek a késve érkező vendégektől.
 - Megmutatják, mikor kezdődik a színházi előadás.
-decision: 
-why: 
+decision: match: Érzelmi felindulást és indulatos szónoki retorikát visznek a kulturális költségvetési vitákba. || Elismerik a hivatalos minisztériumi álláspont megfellebbezhetetlen és kizárólagos igazságát.
+why: Both new wrong options describe opposing rhetorical functions (emotional pathos, uncritical deference) matching length and analytical register (94 and 92 vs 97 chars); only the marked option defines objective epistemic framing.
 
 ### c1-magyarjovo-01-introduce-1   teaches: ['c1-civil-society-vocab']
 files: content/hu/exercises/c1/c1-magyarjovo-01-ex.json
@@ -5377,8 +5377,8 @@ Mi váltotta ki a magyar pedagógusok polgári engedetlenségi mozgalmát?
 * A kormányrendelet, amely adminisztratív eszközökkel gyakorlatilag ellehetetlenítette az érdemi sztrájkjog gyakorlását.
 - A nyári iskolai szünetek hosszának csökkentése két nappal.
 - A pedagógusok kötelező sportfoglalkozásainak bevezetése.
-decision: 
-why: 
+decision: match: Az a minisztériumi határozat, amely kötelezővé tette a tanári egyenruha viselését minden állami fenntartású iskolában. || Az iskolai nyári szünetek időtartamának minimális módosítása az őszi szünet napjainak rovására a tanév rendjében.
+why: Both new wrong options describe administrative school policies matching length and tone (114 and 115 vs 118 chars); only the marked option names the strike ban decree that triggered civil disobedience.
 
 ### c1-magyarjovo-03-introduce-1   teaches: ['c1-civil-society-vocab']
 files: content/hu/exercises/c1/c1-magyarjovo-03-ex.json
@@ -5387,8 +5387,8 @@ Miért tiltakoznak a helyi lakosok az akkumulátorgyárak terjeszkedése ellen?
 * A hatalmas vízigény, a termőföldek elvétele és a mérgező anyagok talajvízbe jutásának reális kockázata miatt.
 - Mert a gyárak túl sok napelemet telepítenek a tetőkre.
 - Mert nem tetszik nekik a gyárépületek szürke színe.
-decision: 
-why: 
+decision: match: A gyárak magas villamosenergia-fogyasztása miatti lakossági áramdíj-emelkedések elkerülhetetlen kockázata miatt. || Az új ipari létesítmények által keltett zajszennyezés és a teherautó-forgalom okozta útburkolat-romlás miatt.
+why: Both new wrong options start with noun phrases ending in 'miatt' (matching 'Miért' syntax, Rule 13) with real infrastructure concerns of matching length (111 and 107 vs 109 chars); only the marked option names water depletion, land loss, and toxic contamination.
 
 ### c1-magyarjovo-consolidation-9   teaches: ['correlative-minel-annal']
 files: content/hu/exercises/c1/c1-magyarjovo-consolidation-ex.json
@@ -5397,8 +5397,8 @@ Mi a Demokratikus Minimum legfőbb intézményi garanciája a korrupcióval szem
 * A független ügyészség, az Európai Ügyészséghez való csatlakozás és a bíróságok autonómiája.
 - A minisztériumok létszámának csökkentése.
 - A készpénzhasználat betiltása az üzletekben.
-decision: 
-why: 
+decision: match: Az államigazgatási hivatalok létszámának csökkentése és a miniszteri fizetések befagyasztása. || A készpénzforgalom teljes megszüntetése és a digitális tranzakciók hatósági ellenőrzése.
+why: Both new wrong options propose administrative/financial anti-corruption measures matching length (91 and 91 vs 91 chars); only the marked option lists the judicial/institutional pillars of the Democratic Minimum.
 
 ### c1-mediakritika-consolidation-2   teaches: ['discourse-particles']
 files: content/hu/exercises/c1/c1-mediakritika-consolidation-ex.json
@@ -5407,8 +5407,8 @@ Mit fejeznek ki a 'még maga a... is', 'mégoly csekély' szerkezetek?
 * Skáláris fokozást, amely a szélső vagy legkisebb értéket is hangsúlyozza az érvelésben.
 - Időbeli egymásutániságot.
 - Kételyt a beszélő kilétét illetően.
-decision: 
-why: 
+decision: match: Időbeli egymásutániságot, amely az események szigorú kronológiáját jelöli a szövegben. || Feltételes következtetést, amely megkérdőjelezi a beszélő állításának valóságtartalmát.
+why: Both new wrong options describe grammatical/rhetorical concepts (temporal sequence, conditional doubt) matching length and linguistic register (89 and 88 vs 87 chars); only the marked option defines scalar focal particles.
 
 ### c1-mediaszabadsag-02-introduce-1   teaches: ['c1-media-capture-vocab']
 files: content/hu/exercises/c1/c1-mediaszabadsag-02-ex.json
@@ -5417,8 +5417,8 @@ Hogyan működtek a szerkesztőségi feketelisták az MTVA-ban a kiszivárgott h
 * Meghatározták azon civil szakértők, jogvédők és ellenzéki politikusok névsorát, akiket tilos volt megszólaltatni a hírműsorokban.
 - Fekete színű borítékban küldték ki a jutalmakat a riportereknek.
 - Kizárólag fekete-fehér televíziókon engedték nézni az adást.
-decision: 
-why: 
+decision: match: Rögzítették a televíziós stábok számára a stúdiókban kötelezően viselendő hivatalos formaruhák színét és szabásmintáját. || Listázták a nemzetközi hírügynökségektől átvett azon gazdasági jelentéseket, amelyeket kizárólag szó szerint lehetett közölni.
+why: Both new wrong options describe internal editorial/dress-code rules matching length and journalistic register (122 and 123 vs 129 chars); only the marked option defines political blacklisting of critical experts.
 
 ### c1-mediaszabadsag-03-introduce-1   teaches: ['c1-media-capture-vocab']
 files: content/hu/exercises/c1/c1-mediaszabadsag-03-ex.json
@@ -5427,8 +5427,8 @@ Hogyan torzította el a magyar reklámpiacot az állami hirdetések elosztása?
 * Az állam lett a legnagyobb hirdető, és a forrásokat kizárólag a kormánypárti sajtónak juttatta, gazdaságilag fojtogatva a független médiát.
 - Az állam megtiltotta a színes reklámok közzétételét.
 - Csak a külföldi autómárkák kaphattak reklámfelületet a lapokban.
-decision: 
-why: 
+decision: match: Az állam megtiltotta a kereskedelmi televízióknak a prémium sávos hirdetések sugárzását, korlátozva a vállalatok bevételeit. || A minisztériumok kötelezővé tették, hogy a hazai kkv-k kizárólag az állami tulajdonú nyomtatott magazinokban hirdethessenek.
+why: Both new wrong options present plausible commercial advertising interventions matching length and economic tone (122 and 122 vs 139 chars); only the marked option defines the politically biased state advertising distortion.
 
 ### c1-mediaszabadsag-04-introduce-1   teaches: ['c1-media-capture-vocab']
 files: content/hu/exercises/c1/c1-mediaszabadsag-04-ex.json
@@ -5437,8 +5437,8 @@ Miért mondott fel az Index szerkesztősége szinte teljes egészében 2020 júl
 * Mert a főszerkesztő elbocsátása után úgy ítélték meg, hogy a lap tulajdonosi háttere és függetlensége végleg ellehetetlenült a politikai befolyás miatt.
 - Mert a szerkesztőség tagjai közösen nyertek a lottón.
 - Mert leállt az internetkapcsolat a szerkesztőségben.
-decision: 
-why: 
+decision: match: Mert a lap vezetősége drasztikusan csökkentette az újságírók fizetését és megszüntette a home office lehetőségét a cégnél. || Mert a szerkesztőség tagjai közösen úgy döntöttek, hogy felhagynak az online újságírással és nyomtatott magazint indítanak.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing plausible workplace/editorial reasons matching length (124 and 121 vs 152 chars); only the marked option details the political takeover and dismissal of the editor-in-chief.
 
 ### c1-mediaszabadsag-05-introduce-1   teaches: ['c1-media-capture-vocab']
 files: content/hu/exercises/c1/c1-mediaszabadsag-05-ex.json
@@ -5447,8 +5447,8 @@ Milyen célt szolgál az Európai Médiaszabadság Törvény (EMFA)?
 * Megvédi az újságírókat a politikai beavatkozástól, kötelezővé teszi az állami hirdetések átláthatóságát és tiltja a szerkesztőségek kémprogramokkal való lehallgatását.
 - Betiltja a külföldi filmek sugárzását az európai televíziókban.
 - Előírja, hogy minden európai újságot latin betűkkel kell nyomtatni.
-decision: 
-why: 
+decision: match: Egységesíti az európai műsorszolgáltatók előfizetési díjait és szabályozza a kereskedelmi reklámok maximális hosszát a televíziókban. || Betiltja az európai sajtóorgánumok külföldi felvásárlását és kötelezővé teszi a nemzeti nyelvek védelmét az online médiában.
+why: Both new wrong options present plausible European media regulations (ad caps, foreign ownership/language quotas) matching length and legal tone (123 and 122 vs 167 chars); only the marked option defines the EMFA provisions.
 
 ### c1-mediaszabadsag-consolidation-9   teaches: ['correlative-minel-annal']
 files: content/hu/exercises/c1/c1-mediaszabadsag-consolidation-ex.json
@@ -5457,8 +5457,8 @@ Mi a funkciója a 'Minél... annál...' arányossági szerkezetnek a médiapiaci
 * Az állami források piactorzító beáramlása és a szabad sajtó anyagi kivéreztetése közötti egyenes arányosságot bizonyítja.
 - Megmutatja, milyen drága egy televíziós kamera.
 - Megmagyarázza a műsorvezetők öltözködési stílusát.
-decision: 
-why: 
+decision: match: Párhuzamot von a szerkesztőségi munka ritmusa és a televíziós hírműsorok nézettségének ingadozása között a piacon. || Megkérdőjelezi a független közvélemény-kutató intézetek módszertanát a választási kampányok elemzése során.
+why: Both new wrong options describe media analysis functions matching length and tone (107 and 108 vs 121 chars); only the marked option defines the correlative proportionality analysis of state media distortion.
 
 ### c1-megfigyeles-01-introduce-1   teaches: ['c1-pegasus-scandal-vocab']
 files: content/hu/exercises/c1/c1-megfigyeles-01-ex.json
@@ -5467,8 +5467,8 @@ Miért robbantott ki nemzetközi botrányt a Pegasus kémszoftver magyarországi
 * Mert a kormány a terrorizmus elleni katonai kiberfegyvert illegálisan, független tényfeltáró újságírók, médiavezetők, ügyvédek és politikai ellenfelek lehallgatására használta fel.
 - Mert a szoftver túl drága volt a költségvetésnek.
 - Mert az izraeli cég elfelejtette elküldeni a számlát a minisztériumnak.
-decision: 
-why: 
+decision: match: Mert a beszerzett kémszoftver technikai hibái miatt hetekre összeomlott a magyar közigazgatás központi informatikai hálózata. || Mert a kormány a szoftver licenceit engedély nélkül továbbértékesítette harmadik országbeli magánbiztonsági vállalatoknak.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) with plausible IT/procurement scandals matching length (123 and 124 vs 180 chars); only the marked option details the illegal surveillance of journalists, lawyers, and opposition figures.
 
 ### c1-megfigyeles-02-introduce-1   teaches: ['c1-pegasus-scandal-vocab']
 files: content/hu/exercises/c1/c1-megfigyeles-02-ex.json
@@ -5477,8 +5477,8 @@ Miért jelent súlyos jogállami torzulást a magyarországi lehallgatások mini
 * Mert nincs független bírói kontroll: a politikai kormányzat tagja (az igazságügyi miniszter vagy államtitkára) egymaga, fellebbezési lehetőség és külső felügyelet nélkül pecsételi le a titkos megfigyeléseket.
 - Mert a pecsétek tintája túl drága az államkincstárnak.
 - Mert a miniszterek nem tudnak gyorsan aláírni.
-decision: 
-why: 
+decision: match: Mert az eljárási illetékek és perköltségek összege aránytalanul meghaladja a nemzetközi egyezményekben rögzített maximális adminisztratív tarifákat a bírósági ügyekben. || Mert a minisztériumi döntéshozatal bürokratikus lassúsága miatt a nemzetbiztonsági szolgálatok lemaradnak a sürgős nemzetközi terrorvédelmi műveletek azonnali végrehajtásáról.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) offering administrative/speed justifications matching length (169 and 176 vs 208 chars); only the marked option identifies the absence of independent judicial oversight.
 
 ### c1-megfigyeles-03-introduce-1   teaches: ['c1-pegasus-scandal-vocab']
 files: content/hu/exercises/c1/c1-megfigyeles-03-ex.json
@@ -5487,8 +5487,8 @@ Mit nevez a médiajog 'dermesztő hatásnak' (chilling effect) a megfigyelések 
 * Azt a pszichológiai állapotot és öncenzúrát, amikor a polgárok és informátorok a lehallgatástól és retorziótól való félelmükben nem mernek beszélni a sajtóval vagy bírálni a hatalmat.
 - A hideg téli időjárás miatti telefonos akkumulátor-lemerülést.
 - A számítógépes ventilátorok hangos zúgását a szerverszobában.
-decision: 
-why: 
+decision: match: A tényfeltáró cikkek megjelenése után a hatóságok által elrendelt kötelező vagyonosodási vizsgálatok és adóbírságok rendszerét. || A hírportálok szerkesztőségeit érő túlterheléses támadásokat, amelyek órákra elérhetetlenné teszik a független weboldalakat.
+why: Both new wrong options describe real pressures on media (tax audits, DDoS attacks) matching length and tone (124 and 125 vs 183 chars); only the marked option defines the psychological and free speech chilling effect.
 
 ### c1-megfigyeles-05-introduce-1   teaches: ['c1-pegasus-scandal-vocab']
 files: content/hu/exercises/c1/c1-megfigyeles-05-ex.json
@@ -5497,8 +5497,8 @@ Milyen elengedhetetlen garanciák szükségesek a digitális jogállam helyreál
 * A titkosszolgálatok politikai függetlenítése, a miniszteri önkény helyett kötelező külső bírói engedélyezés bevezetése, és a törvénytelen megfigyelések áldozatainak hatékony jogorvoslata.
 - Minden okostelefon állami elkobzása a lakosságtól.
 - A titkosszolgálati költségvetés titkos megduplázása.
-decision: 
-why: 
+decision: match: A nemzetbiztonsági szolgálatok költségvetésének megkétszerezése és a minisztériumi engedélyezési eljárások digitális gyorsítása. || Az állami hírközlési felügyelet hatáskörének kiterjesztése az összes külföldi közösségi médiahálózat közvetlen ellenőrzésére.
+why: Both new wrong options describe authoritarian or administrative security measures matching length and legal tone (130 and 123 vs 187 chars); only the marked option specifies judicial authorization, political independence, and victim remedies.
 
 ### c1-mestersegesintelligencia-01-introduce-1   teaches: ['c1-ai-ethics-vocab']
 files: content/hu/exercises/c1/c1-mestersegesintelligencia-01-ex.json
@@ -5507,8 +5507,8 @@ Miért van kiemelt jelentősége a magyar nyelvű saját alapmodellek (pl. Puli)
 * Mert biztosítják, hogy a magyar nyelv agglutináló szerkezete és kulturális kontextusa pontosan érvényesüljön a digitális környezetben.
 - Mert betiltják az összes külföldi weboldalt.
 - Mert olcsóbbá teszik a billentyűzetek gyártását.
-decision: 
-why: 
+decision: match: Mert lehetővé teszik a külföldi keresőmotorok és nemzetközi felhőszolgáltatók teljes és kötelező hatósági kitiltását az országból. || Mert közvetlenül csökkentik a hazai szuperszámítógépek hardveres áramfogyasztását és az adatközpontok hűtési költségeit.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing autarkic bans or hardware savings of matching length (129 and 119 vs 134 chars); only the marked option defines linguistic and cultural sovereignty in agglutinative NLP.
 
 ### c1-mestersegesintelligencia-03-introduce-1   teaches: ['c1-ai-ethics-vocab']
 files: content/hu/exercises/c1/c1-mestersegesintelligencia-03-ex.json
@@ -5517,8 +5517,8 @@ Miben különbözik a generatív MI hatása a korábbi ipari forradalmaktól?
 * Nem a fizikai kétkezi munkát, hanem a magasan képzett fehérgalléros és kreatív kognitív tevékenységeket érinti közvetlenül.
 - Hogy csak a mezőgazdasági termelőket érinti hátrányosan.
 - Hogy kizárólag a vasúti közlekedést automatizálja.
-decision: 
-why: 
+decision: match: Kizárólag az agrárgazdaságban dolgozó kétkezi idénymunkások napi feladatait automatizálja a szántóföldeken. || Nem a szellemi feladatokat, hanem a nehézipari gyártósorok mechanikus futószalagjait alakítja át teljesen.
+why: Both new wrong options describe blue-collar/agricultural automation matching length and register (111 and 108 vs 123 chars); only the marked option identifies the impact on high-skill white-collar and cognitive labor.
 
 ### c1-mestersegesintelligencia-05-introduce-1   teaches: ['c1-ai-ethics-vocab']
 files: content/hu/exercises/c1/c1-mestersegesintelligencia-05-ex.json
@@ -5527,8 +5527,8 @@ Mit jelent az 'összehangolási probléma' (alignment problem) az AGI kutatásba
 * Annak biztosítását, hogy a szuperintelligens rendszerek céljai és cselekedetei maradéktalanul összhangban legyenek az emberi értékekkel és túléléssel.
 - A számítógépek képernyőjének vízszintbe állítását.
 - Az összes jelszó egyformára változtatását.
-decision: 
-why: 
+decision: match: A mesterséges intelligencia modellek tanításához szükséges számítási felhők és processzorok órajeleinek szinkronizálását. || A különböző programozási nyelvek szintaxisának és adatstruktúráinak egységesítését a nemzetközi szoftverfejlesztésben.
+why: Both new wrong options describe real technical synchronization/standardization problems matching length (123 and 118 vs 150 chars); only the marked option defines the AI value alignment problem.
 
 ### c1-mestersegesintelligencia-consolidation-2   teaches: ['b2-focus-inversion']
 files: content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json
@@ -5537,8 +5537,8 @@ Hogyan emel ki egy ellenpontozó állítást a kontrasztív fókusz inverziója?
 * A hangsúlyozott elemet közvetlenül a véges ige elé helyezi, miközben a 'nem... hanem...' szerkezettel élesen szembeállítja az alternatívákat.
 - Eltünteti az összes igét a mondatból.
 - Minden szót ábécérendbe állít.
-decision: 
-why: 
+decision: match: A mondat végére helyezi a határozószót, és feltételes móddal tompítja az állítás határozottságát a vitapartner meggyőzésére. || Elhagyja a tagadószót, miközben a bővítményeket szigorúan a névszói állítmány mögé sorolja fel a mondatban.
+why: Both new wrong options describe plausible Hungarian syntactic manipulations matching grammatical register and length (119 and 107 vs 141 chars); only the marked option defines preverbal contrastive focus inversion.
 
 ### c1-mestersegesintelligencia-consolidation-9   teaches: ['b2-focus-inversion']
 files: content/hu/exercises/c1/c1-mestersegesintelligencia-consolidation-ex.json
@@ -5547,8 +5547,8 @@ Mi a lényege a 'nem a technológia, hanem az etika' típusú megfogalmazásokna
 * Kontrasztív fókusszal rámutatnak arra, hogy az igazi döntési pont nem a gép képességeiben, hanem az emberi erkölcsi felelősségben rejlik.
 - Hogy a gépeket tilos bekapcsolni.
 - Hogy a mérnököknek nincs szükségük diplomára.
-decision: 
-why: 
+decision: match: Kategorikusan elvetik a technológiai innovációt, és a digitális eszközök használatának teljes betiltását követelik. || Megkerülik a politikai és társadalmi felelősséget, kizárólag a szoftverek mérnöki és matematikai hibáira hárítva a döntést.
+why: Both new wrong options describe contrasting ethical/technological stances matching length and tone (114 and 124 vs 137 chars); only the marked option defines contrastive ethical framing.
 
 ### c1-mestersegesnyelv-01-introduce-1   teaches: ['c1-small-language-ai-vocab']
 files: content/hu/exercises/c1/c1-mestersegesnyelv-01-ex.json
@@ -5557,8 +5557,8 @@ Miért jelent kulturális kockázatot a nagy nyelvmodellek döntően angol taní
 * Mert a modellek az angolszász értékrendet és gondolkodási mintákat vetítik rá a magyar nyelvre, elnyomva az egyedi hazai kulturális kontextust.
 - Hogy a gép nem tudja helyesen leírni a budapesti utcák nevét.
 - Hogy túl sok áramot fogyasztanak a szerverközpontok éjszaka.
-decision: 
-why: 
+decision: match: Mert a rendszerek képtelenné válnak a digitális szövegekben szereplő dátumok és pénzösszegek helyes matematikai átváltására. || Mert a szerverközpontok megnövekedett áramfogyasztása miatt a szolgáltatók kénytelenek korlátozni a hozzáférést a felhasználók előtt.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) with technical/energy arguments matching length (125 and 130 vs 143 chars); only the marked option addresses the cultural imperialism / loss of cultural context risk.
 
 ### c1-mestersegesnyelv-02-introduce-1   teaches: ['c1-small-language-ai-vocab']
 files: content/hu/exercises/c1/c1-mestersegesnyelv-02-ex.json
@@ -5567,8 +5567,8 @@ Hogyan vezet a hangvezérelt eszközök angol túlsúlya a magyar nyelv funkció
 * A fiatalok a technológiai utasításokat megszokásból angolul adják ki, így a magyar fokozatosan kiszorul a modern élet legdinamikusabb tereiből.
 - A hangszórók megrongálják a magyar szótárak lapjait.
 - A mikrofonok nem képesek érzékelni a női hangokat.
-decision: 
-why: 
+decision: match: Az intelligens hangszórók hardveres beállításai megakadályozzák az ékezetes karaktereket tartalmazó magyar zeneszámok lejátszását. || A mikrofonok technikai érzékenysége miatt a készülékek kizárólag az anyanyelvi brit és amerikai kiejtést képesek feldolgozni.
+why: Both new wrong options present plausible technical voice-recognition limitations matching length (125 and 123 vs 143 chars); only the marked option explains sociolinguistic domain loss among youth.
 
 ### c1-mestersegesnyelv-03-introduce-1   teaches: ['c1-small-language-ai-vocab']
 files: content/hu/exercises/c1/c1-mestersegesnyelv-03-ex.json
@@ -5577,8 +5577,8 @@ Miért tekintik a debreceni Komondor szuperszámítógépen betanított PULI mod
 * Mert ez az első független, nemzeti kutatók által ellenőrzött és finomhangolt magyar alapmodell, amely megvédi nyelvi szuverenitásunkat.
 - Mert képes magyar pásztorkutyák ugatását fordítani emberi nyelvre.
 - Mert ez a világ legkisebb hordozható zsebszámológépe.
-decision: 
-why: 
+decision: match: Mert ez a leggyorsabb kereskedelmi szoftver, amelyet külföldi techcégek licenceltek a globális pénzügyi piacok elemzésére. || Mert ez az első olyan digitális fordítóprogram, amely teljesen feleslegessé teszi az idegen nyelvek oktatását az iskolákban.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing alternative software breakthroughs matching length (120 and 123 vs 135 chars); only the marked option defines the sovereign national LLM milestone.
 
 ### c1-mestersegesnyelv-04-introduce-1   teaches: ['c1-small-language-ai-vocab']
 files: content/hu/exercises/c1/c1-mestersegesnyelv-04-ex.json
@@ -5587,8 +5587,8 @@ Mi a fő etikai probléma a magyar írók műveinek engedély nélküli 'adatkap
 * Hogy a nemzetközi cégek szabadon felhasználják a szerzők szellemi tulajdonát a modellek betanítására anélkül, hogy engedélyt kérnének vagy díjazást fizetnének.
 - Hogy a gépek megváltoztatják a könyvek nyomdai betűtípusát.
 - Hogy a digitális szövegek túl sok helyet foglalnak a könyvtárak polcain.
-decision: 
-why: 
+decision: match: Hogy a digitális másolatok készítése közben a szövegfelismerő szoftverek súlyos tipográfiai és nyomdai hibákat vétenek a kiadványokban. || Hogy a letöltött irodalmi művek fájlmérete túlterheli az egyetemi könyvtárak szervereit és a digitális archívumok tárhelyeit.
+why: Both new wrong options describe technical digitisation/storage complaints matching length (133 and 124 vs 159 chars); only the marked option defines uncompensated intellectual property copyright infringement in AI training.
 
 ### c1-mestersegesnyelv-05-introduce-1   teaches: ['c1-small-language-ai-vocab']
 files: content/hu/exercises/c1/c1-mestersegesnyelv-05-ex.json
@@ -5597,8 +5597,8 @@ Mit hirdet a 'digitális humanizmus' eszméje a mesterséges intelligencia korá
 * Azt, hogy a technológiai fejlesztéseknek az emberi méltóságot, a kulturális sokszínűséget és a társadalmi igazságosságot kell szolgálniuk a puszta profitszerzés helyett.
 - A számítógépek betiltását minden iskolában.
 - A robotok kötelező megkeresztelését a templomokban.
-decision: 
-why: 
+decision: match: Azt, hogy a gazdasági hatékonyság és a profitmaximalizálás érdekében az emberi munkaerőt teljesen fel kell váltani autonóm robotokkal. || Azt, hogy a digitális fejlesztéseket teljesen ki kell vonni a társadalmi és etikai ellenőrzés alól a szabad piac védelmében.
+why: Both new wrong options describe anti-humanist market-technocratic positions matching length and tone (127 and 124 vs 169 chars); only the marked option defines digital humanism.
 
 ### c1-mestersegesnyelv-consolidation-9   teaches: ['correlative-minel-annal']
 files: content/hu/exercises/c1/c1-mestersegesnyelv-consolidation-ex.json
@@ -5607,8 +5607,8 @@ Mi a lényege a 'Minél... annál...' korrelatív szerkezetnek a nyelvtechnológ
 * Megmutatja, hogy a tanítóadatok minőségének növelése arányosan jobb és árnyaltabb anyanyelvi modellt eredményez.
 - Kijelenti, hogy nincs szükség semmilyen számítógépre.
 - Elnézést kér az angol nyelv elterjedése miatt.
-decision: 
-why: 
+decision: match: Időbeli sorrendbe állítja a gépi tanulási fázisokat, bemutatva a modellfejlesztés technológiai egymásutániságát. || Megkérdőjelezi a digitális szótárak megbízhatóságát, és a nyomtatott lexikonok kizárólagos elsőbbségét hirdeti.
+why: Both new wrong options describe analytical/linguistic stances matching length and tone (115 and 111 vs 112 chars); only the marked option defines the correlative proportionality analysis of dataset quality.
 
 ### c1-metaforak-01-introduce-1   teaches: ['c1-hungarian-metaphors-vocab']
 files: content/hu/exercises/c1/c1-metaforak-01-ex.json
@@ -5617,8 +5617,8 @@ Hogyan strukturálja a hármas esetrendszer az absztrakt gondolkodást a magyarb
 * A honnan-hol-hová fizikai téri irányultságát viszi át az érzelmi és elvont állapotok kifejezésére.
 - Megszünteti a határozószók szükségességét.
 - Csak a térképészetben van jelentősége.
-decision: 
-why: 
+decision: match: A térbeli távolságok pontos mértékét határozza meg a fizikai földrajzi viszonyok leírásakor. || Megszünteti a határozószók és a melléknevek közötti nyelvtani különbséget az elvont szövegekben.
+why: Both new wrong options describe linguistic/spatial functions matching length and grammatical tone (97 and 98 vs 98 chars); only the marked option explains the cognitive spatial metaphor extension of the local case system.
 
 ### c1-metaforak-02-introduce-1   teaches: ['c1-hungarian-metaphors-vocab']
 files: content/hu/exercises/c1/c1-metaforak-02-ex.json
@@ -5627,8 +5627,8 @@ Mit fejez ki a 'lábra kap' kifejezés az elvont folyamatok leírásában?
 * Azt, hogy egy eszme vagy hír megerősödik és gyorsan elterjed a köztudatban.
 - Hogy valaki új cipőt vásárolt.
 - Hogy valaki gyorsan fut.
-decision: 
-why: 
+decision: match: Azt, hogy egy elavult nézet végleg elveszíti hitelét és feledésbe merül. || Azt, hogy egy vita során a felek békés kompromisszumra jutnak egymással.
+why: Both new wrong options provide figurative idiomatic meanings of matching length and register (74 and 74 vs 75 chars); only the marked option defines 'lábra kap'.
 
 ### c1-metaforak-03-check-7   teaches: ['c1-cultural-semiotics']
 files: content/hu/exercises/c1/c1-metaforak-03-ex.json
@@ -5637,8 +5637,8 @@ Melyik metafora kapcsolódik a szülőföld iránti ragaszkodáshoz?
 * A röghöz kötöttség és a szülőföld rögének szeretete.
 - A szélkakas forgása.
 - A vándormadarak repülése.
-decision: 
-why: 
+decision: match: A szélkakas szeszélyes forgása az égi szélben. || A vándormadarak őszi elköltözése idegen tájakra.
+why: Both new wrong options expand the existing nature metaphors into full descriptive noun phrases matching length (46 and 50 vs 52 chars); only the marked option expresses attachment to one's native soil.
 
 ### c1-metaforak-03-introduce-1   teaches: ['c1-hungarian-metaphors-vocab']
 files: content/hu/exercises/c1/c1-metaforak-03-ex.json
@@ -5647,8 +5647,8 @@ Mit szimbolizál a 'tiszta forrás' fogalma Bartók Béla és a magyar kultúra 
 * A romlatlan, ősi gyökerekből táplálkozó tiszta szellemi és művészi értéket.
 - A hegyi ásványvizek palackozását.
 - Egy tiszta patak földrajzi fekvését.
-decision: 
-why: 
+decision: match: A hegyi forrásvizek ipari palackozását és kereskedelmi értékesítését. || A modern nagyvárosi kabarék szórakoztató és könnyed zenei világát.
+why: Both new wrong options interpret the phrase literally (water bottling) or via urban popular music, matching length (74 and 70 vs 75 chars); only the marked option conveys Bartók's folk art ideal ('csak tiszta forrásból').
 
 ### c1-metaforak-04-introduce-1   teaches: ['c1-hungarian-metaphors-vocab']
 files: content/hu/exercises/c1/c1-metaforak-04-ex.json
@@ -5657,8 +5657,8 @@ Mit jelent a 'végvári mentalitás' a magyar társadalomtörténetben?
 * Azt a történelmi reflexet, amely a nemzetet a külső fenyegetésekkel szemben álló magányos védőbástyaként éli meg.
 - A középkori várak turisztikai látogatását.
 - A katonai egyenruhák viselését hétköznap.
-decision: 
-why: 
+decision: match: A nyitott nemzetközi kereskedelem és a határok nélküli globális együttműködés feltétlen történelmi támogatását. || A modern polgári közigazgatás és a békés intézményfejlődés elsőbbségét a fegyveres konfliktusokkal szemben.
+why: Both new wrong options describe contrasting historical/political orientations (cosmopolitanism, institutional peace) matching length (109 and 108 vs 113 chars); only the marked option defines the bastion/frontier reflex.
 
 ### c1-metaforak-05-check-7   teaches: ['metaphor']
 files: content/hu/exercises/c1/c1-metaforak-05-ex.json
@@ -5667,8 +5667,8 @@ Mi biztosítja a magyar nyelv metaforikus vitalitását a jövőben?
 * A hagyományok tisztelete és a nyitott, kreatív megújulási képesség szerves egysége.
 - A szótárak elégetése.
 - A külföldi szavak betiltása büntetéssel.
-decision: 
-why: 
+decision: match: Az idegen szavak szigorú törvényi tilalma és a nyelvi változások hatósági büntetése. || A történelmi szókészlet merev megőrzése és minden új technikai kifejezés elutasítása.
+why: Both new wrong options describe purist/isolationist linguistic attitudes of matching length (82 and 86 vs 83 chars); only the marked option balances tradition and creative adaptation.
 
 ### c1-metaforak-consolidation-2   teaches: ['c1-cultural-semiotics']
 files: content/hu/exercises/c1/c1-metaforak-consolidation-ex.json
@@ -5677,8 +5677,8 @@ Mit fejez ki a 'végvár' és a 'védőbástya' metaforája?
 * A nemzet történelmi felelősségét és a civilizáció védelmében hozott önfeláldozását.
 - A gazdasági elszigeteltség dicséretét.
 - Egy kirándulóhely leírását.
-decision: 
-why: 
+decision: match: A gazdasági elzárkózás dicséretét és a külföldi kereskedelem elutasításának eszméjét. || A modern tengeri kikötők és erődítmények műszaki felépítésének pontos ismertetését.
+why: Both new wrong options provide alternative interpretations (isolationist policy, military architecture) matching length and tone (84 and 86 vs 83 chars); only the marked option defines the cultural-historical trope.
 
 ### c1-metaforak-consolidation-9   teaches: ['c1-cultural-semiotics']
 files: content/hu/exercises/c1/c1-metaforak-consolidation-ex.json
@@ -5687,8 +5687,8 @@ Mi a magyar nyelv legfőbb metafizikai ereje a kulturális szemiotika szerint?
 * Az a képessége, hogy a konkrét testi és téri tapasztalatot a legmagasabb szellemi igazságok hordozójává emeli.
 - Hogy a szavak mind egyformán hosszúak.
 - Hogy nincsenek benne magánhangzók.
-decision: 
-why: 
+decision: match: Az a nyelvtani tulajdonsága, hogy szigorúan kerüli az elvont kifejezéseket és csak a látható tárgyakat nevezi meg. || Az a fonetikai sajátossága, hogy a szavak ritmusa pontosan követi a matematikai egyenletek törvényszerűségeit.
+why: Both new wrong options describe invented linguistic characteristics matching length and semiotic register (106 and 110 vs 110 chars); only the marked option defines bodily/spatial grounding of abstract meaning.
 
 ### c1-monetaris-02-introduce-1   teaches: ['c1-forint-eurozone-vocab']
 files: content/hu/exercises/c1/c1-monetaris-02-ex.json
@@ -5697,8 +5697,8 @@ Milyen makrogazdasági vészhelyzet hívta életre az 1995-ös Bokros-csomagot?
 * A fenyegető fizetésképtelenség és a fenntarthatatlan ikerdeficit (költségvetési és fizetési mérleg hiány).
 - A túlzottan magas devizatartalék elköltése.
 - A lakossági megtakarítások kötelező megduplázása.
-decision: 
-why: 
+decision: match: A túlzottan magas nemzetközi devizatartalékok lekötése és az exportáruk hirtelen felértékelődése a világpiacon. || A kereskedelmi bankok betétállományának és a lakossági megtakarításoknak a hirtelen, ellenőrizetlen megugrása.
+why: Both new wrong options describe alternative economic imbalances (excess reserves, savings surge) matching length and macroeconomic register (110 and 111 vs 106 chars); only the marked option defines the twin deficit crisis.
 
 ### c1-monetaris-03-check-8   teaches: ['c1-monetary-tightening-clauses']
 files: content/hu/exercises/c1/c1-monetaris-03-ex.json
@@ -5707,8 +5707,8 @@ Hogyan működik a lebegő árfolyamrendszer mint makrogazdasági sokkelnyelő?
 * A forint leértékelődése külső sokkok idején automatikusan javítja az export versenyképességét és mérsékli az importot.
 - Azonnal leállítja a külföldi pénzküldést.
 - Fixálja a benzin árát az egész országban.
-decision: 
-why: 
+decision: match: A jegybank devizavásárlásai révén teljesen rögzíti a forint árfolyamát, megvédve a gazdaságot a piaci ingadozásoktól. || Automatikusan leállítja a nemzetközi tőkemozgásokat, és hatóságilag rögzíti az importált energiahordozók fogyasztói árát.
+why: Both new wrong options describe fixed-rate or capital-control mechanisms matching length and economic tone (116 and 118 vs 118 chars); only the marked option defines the floating exchange rate shock absorber mechanism.
 
 ### c1-monetaris-03-introduce-1   teaches: ['c1-forint-eurozone-vocab']
 files: content/hu/exercises/c1/c1-monetaris-03-ex.json
@@ -5717,8 +5717,8 @@ Miért támadták meg a spekulatív alapok a forint intervenciós sávját 2003 
 * Mert a forint felértékelődésére spekulálva arra számítottak, hogy a jegybank eltörli vagy kiszélesíti a sávot.
 - Mert tönkre akarták tenni a budapesti tőzsdét.
 - Mert az euró bevezetését ünnepelték.
-decision: 
-why: 
+decision: match: Mert a forint drasztikus gyengülésére számítva a devizatartalékok kimerülésére spekuláltak a határidős piacon. || Mert az állampapírok hozamának zuhanása miatt a jegybanki alapkamat azonnali emelését próbálták kikényszeríteni.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing plausible speculative rationales (depreciation attack, interest rate play) matching length (111 and 111 vs 110 chars); only the marked option describes the speculative attack against the strong edge of the band.
 
 ### c1-monetaris-04-check-8   teaches: ['c1-inflationary-expectations']
 files: content/hu/exercises/c1/c1-monetaris-04-ex.json
@@ -5727,8 +5727,8 @@ Mi volt a forintosítás jogi és gazdasági következménye?
 * A lakossági jelzáloghitelek átváltása forintra, ami megszüntette a közvetlen devizakockázatot a családok számára.
 - A devizahitelek teljes és ingyenes elengedése.
 - Az összes bank államosítása.
-decision: 
-why: 
+decision: match: A lakossági devizahitelek teljes és feltétel nélküli elengedése a bankok költségvetési kártalanítása mellett. || Az összes kereskedelmi bank azonnali államosítása és a jelzáloghitelek állami kezelésbe vétele a minisztérium által.
+why: Both new wrong options describe radical alternative outcomes (full debt forgiveness, bank nationalization) matching length and legal-financial register (107 and 115 vs 113 chars); only the marked option defines conversion to eliminate FX risk.
 
 ### c1-monetaris-04-introduce-1   teaches: ['c1-forint-eurozone-vocab']
 files: content/hu/exercises/c1/c1-monetaris-04-ex.json
@@ -5737,8 +5737,8 @@ Miért vált tömeges tragédiává a svájci frank alapú devizahitelezés Magy
 * Mert a forint gyengülésével a háztartások törlesztőrészletei drasztikusan megugrottak, miközben jövedelmük forintban maradt.
 - Mert Svájcban betiltották a forint használatát.
 - Mert a bankok bezárták fiókjaikat.
-decision: 
-why: 
+decision: match: Mert a svájci jegybank drasztikusan megemelte az alapkamatot, ami azonnal megduplázta a nemzetközi hitelkamatokat. || Mert a svájci bankok felmondták a szerződéseket, és követelték a teljes tőketartozás azonnali devizás visszafizetését.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing alternative banking mechanisms matching length (115 and 118 vs 124 chars); only the marked option identifies the currency mismatch (forint income vs depreciating FX debt).
 
 ### c1-monetaris-05-introduce-1   teaches: ['c1-forint-eurozone-vocab']
 files: content/hu/exercises/c1/c1-monetaris-05-ex.json
@@ -5747,8 +5747,8 @@ Mi a fő különbség a 'nominális' és a 'reálkonvergencia' között az euró
 * A nominális az inflációs és költségvetési mutatószámokra, míg a reálkonvergencia a fejlettségi és termelékenységi szintre vonatkozik.
 - A nominális a bankjegyek méretére utal.
 - Nincs különbség, a két szó azonos fogalmat takar.
-decision: 
-why: 
+decision: match: A nominális a gazdasági fejlettségre és a GDP szintjére, míg a reálkonvergencia az árfolyam és az infláció mutatóira utal. || A nominális a bankrendszer digitális integrációjára, míg a reálkonvergencia a nemzeti valuta aranyfedezetére vonatkozik.
+why: Both new wrong options describe plausible macroeconomic relationships (inverted definitions, banking/gold standard) matching length (120 and 122 vs 133 chars); only the marked option correctly defines nominal vs real convergence.
 
 ### c1-monetaris-consolidation-1   teaches: ['c1-macroeconomic-indicators']
 files: content/hu/exercises/c1/c1-monetaris-consolidation-ex.json
@@ -5757,8 +5757,8 @@ Miért tekinthető történelmi sikernek a forint 1946-os bevezetése?
 * Mert a visszaszerzett aranytartalékra építve megállította a világtörténelem legsúlyosabb hiperinflációját.
 - Mert ingyenessé tette a közlekedést.
 - Mert megegyezett az amerikai dollárral.
-decision: 
-why: 
+decision: match: Mert azonnal felváltotta az amerikai dollárt, és a nemzetközi kereskedelem vezető elszámoló valutájává vált. || Mert az állam a bevezetéskor teljesen eltörölte a jövedelemadókat és ingyenessé tette a közszolgáltatásokat.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing dramatic historical fiscal milestones matching length (109 and 108 vs 106 chars); only the marked option cites halting hyperinflation backed by gold.
 
 ### c1-monetaris-consolidation-2   teaches: ['c1-fiscal-counterbalancing']
 files: content/hu/exercises/c1/c1-monetaris-consolidation-ex.json
@@ -5767,8 +5767,8 @@ Mi volt az 1995-ös csúszó leértékelés (crawling peg) legfőbb gazdasági e
 * Kiszámíthatóvá tette az árfolyam pályáját az exportőrök számára és felszámolta a leértékelési spekulációt.
 - Azonnal megduplázta a reálbéreket.
 - Eltörölte a vámokat.
-decision: 
-why: 
+decision: match: Rögzítette a hazai inflációt az európai átlagszinten, és megszüntette a költségvetési deficitet az államban. || Azonnal felértékelte a nemzeti valutát, jelentősen megkönnyítve az importált fogyasztási cikkek beszerzését.
+why: Both new wrong options describe alternative exchange rate regime outcomes (fixed inflation, revaluation) matching length and economic tone (106 and 107 vs 106 chars); only the marked option defines crawling peg predictability and anti-speculation effects.
 
 ### c1-monetaris-consolidation-9   teaches: ['c1-growth-model-synthesis']
 files: content/hu/exercises/c1/c1-monetaris-consolidation-ex.json
@@ -5777,8 +5777,8 @@ Hogyan működik a lebegő árfolyam a szuverén gazdaságpolitikában?
 * Külső aszimmetrikus sokkok esetén leértékelődéssel tompítja a gazdaság visszaesését, megvédve a hazai termelőket.
 - Minden devizatranzakciót betilt a belföldi piacon.
 - Rögzíti az inflációt 0 százalékon.
-decision: 
-why: 
+decision: match: Szigorúan rögzíti a kamatszintet, és hatóságilag megakadályozza a nemzeti valuta bármilyen árfolyammozgását. || Megtiltja a hazai kereskedelmi bankok számára a devizakereskedelmet és a külföldi hitelfelvételt válság idején.
+why: Both new wrong options describe fixed-rate regimes or capital controls matching length and macroeconomic tone (105 and 111 vs 113 chars); only the marked option defines the floating rate shock absorber mechanism.
 
 ### c1-pestiironia-04-introduce-1   teaches: ['c1-urban-satire-vocab']
 files: content/hu/exercises/c1/c1-pestiironia-04-ex.json
@@ -5787,8 +5787,8 @@ Mit jelentett az 'aizopusi nyelv' a cenzúra korszakában?
 * Olyan virágnyelvet és történelmi allegóriákat, amelyek rejtett üzeneteket közvetítettek a közönségnek a cenzorok kijátszásával.
 - A tudományos szakkifejezések szigorú használatát a sajtóban.
 - A bírósági tárgyalások hivatalos jegyzőkönyvi stílusát.
-decision: 
-why: 
+decision: match: A természettudományos szakkifejezések és latin definíciók merev használatát a cenzúrázott tudományos folyóiratokban. || A hivatalos bírósági jegyzőkönyvek és hatósági végzések szigorú jogi szaknyelvét a közigazgatási eljárások során.
+why: Both new wrong options describe formal technical/legal registers matching length (122 and 113 vs 127 chars); only the marked option defines Aesopian allegorical language.
 
 ### c1-polgariengedetlenseg-02-introduce-1   teaches: ['c1-civil-disobedience-vocab']
 files: content/hu/exercises/c1/c1-polgariengedetlenseg-02-ex.json
@@ -5797,8 +5797,8 @@ Miért volt korszakalkotó a Beszélő szerkesztőinek nyílt névvállalása?
 * Mert a polgári engedetlenséget nyílt, erőszakmentes és felelős joggyakorlásként fogalmazta meg.
 - Mert a pártállam kérte tőlük.
 - Mert pénzjutalmat kaptak érte.
-decision: 
-why: 
+decision: match: Mert a pártállami hatóságok kifejezett írásos engedélyével és pénzügyi támogatásával jött létre. || Mert a szerkesztők azonnal diplomáciai védettséget kaptak a nyugati nagykövetségek képviselőitől.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing state authorization or diplomatic protection matching length (102 and 98 vs 95 chars); only the marked option captures open, non-violent civic responsibility.
 
 ### c1-tarsadalmireteg-01-introduce-1   teaches: ['c1-centre-periphery-vocab']
 files: content/hu/exercises/c1/c1-tarsadalmireteg-01-ex.json
@@ -5807,8 +5807,8 @@ Mit jelent a 'fővárosi vízfej' kifejezés a magyar urbanisztikában?
 * Azt a torz térszerkezetet, amelyben Budapest gazdasági, lakossági és kulturális súlya aránytalanul meghaladja az összes többi hazai városét.
 - A parlament épületének kupolaszerkezetét.
 - A Duna legmélyebb pontján lévő árvízvédelmi műtárgyat.
-decision: 
-why: 
+decision: match: A budai hegyvidék alatt húzódó természetes karsztvízbázisok és gyógyfürdők összetett hidrogeológiai hálózatát. || A Duna budapesti szakaszán kiépített korszerű árvízvédelmi védművek és gátrendszerek műszaki infrastruktúráját.
+why: Both new wrong options interpret the term literally via water infrastructure matching length and urban planning tone (114 and 113 vs 140 chars); only the marked option defines the macrocephalic urban primacy of Budapest.
 
 ### c1-tarsadalmireteg-02-introduce-1   teaches: ['c1-centre-periphery-vocab']
 files: content/hu/exercises/c1/c1-tarsadalmireteg-02-ex.json
@@ -5817,8 +5817,8 @@ Mit jelent a 'közlekedési szegénység' (transport poverty) szociológiai foga
 * Azt a helyzetet, amikor a lakosok jövedelem vagy tömegközlekedés hiányában nem tudnak eljutni a munkahelyekre, iskolákba és kórházakba.
 - A városi tömegközlekedési járatok késését csúcsidőben.
 - A kerékpárutak hiányát a külvárosi lakótelepeken.
-decision: 
-why: 
+decision: match: A nagyvárosi autósok azon nehézségét, hogy a csúcsforgalmi dugók és a parkolási díjak miatt késve érkeznek meg a munkahelyükre. || A vasúttársaságok azon pénzügyi veszteségét, amely az elavult szerelvények magas üzemanyag-fogyasztásából származik.
+why: Both new wrong options describe plausible transport difficulties (congestion/parking, rail operating deficit) matching length (133 and 119 vs 135 chars); only the marked option defines sociodemographic transport poverty.
 
 ### c1-tarsadalmireteg-03-introduce-1   teaches: ['c1-centre-periphery-vocab']
 files: content/hu/exercises/c1/c1-tarsadalmireteg-03-ex.json
@@ -5827,8 +5827,8 @@ Mit nevezünk 'ellátási sivatagnak' (welfare/service desert) a közszolgáltat
 * Olyan földrajzi térséget, ahol a lakosság számára a mindennapi élethez szükséges alapvető közszolgáltatások (orvos, gyógyszertár, posta, iskola) tartósan hiányoznak.
 - Olyan ipari parkot, ahol megszűnt a gyártótevékenység.
 - Az autópályák melletti pihenőhelyek hiányát a tranzitútvonalakon.
-decision: 
-why: 
+decision: match: Olyan egykori ipari körzetet és rozsdaövezetet, ahol a gyárak bezárása után átmenetileg szünetel a termelő gazdasági tevékenység. || Az autópályák és gyorsforgalmi utak mentén kijelölt olyan pihenőhelyeket, ahol nincsenek üzemanyagtöltő állomások és üzletek.
+why: Both new wrong options describe plausible regional economic deserts (brownfields, rest stops) matching length (131 and 125 vs 165 chars); only the marked option defines public service deserts.
 
 ### c1-tarsadalmireteg-04-introduce-1   teaches: ['c1-centre-periphery-vocab']
 files: content/hu/exercises/c1/c1-tarsadalmireteg-04-ex.json
@@ -5837,8 +5837,8 @@ Mi a célja a 'szociális mezőgazdaságnak' (social farming) a hátrányos hely
 * A helyi munkanélküliek és rászorulók bevonása a közösségi termelésbe, önellátást és értékteremtő munkát biztosítva számukra.
 - A termőföldek felvásárlása külföldi befektetők által.
 - A hagyományos kézműves mesterségek múzeumi bemutatása.
-decision: 
-why: 
+decision: match: A termőföldek nagybirtokosok általi felvásárlásának elősegítése és az iparszerű, monokultúrás agrártermelés fejlesztése. || A hagyományos falusi kézműves mesterségek és népszokások múzeumi bemutatása a külföldi turisták szórakoztatására.
+why: Both new wrong options describe agricultural investment or tourism goals matching length and tone (122 and 113 vs 124 chars); only the marked option defines social farming.
 
 ### c1-tarsadalmireteg-05-introduce-1   teaches: ['c1-centre-periphery-vocab']
 files: content/hu/exercises/c1/c1-tarsadalmireteg-05-ex.json
@@ -5847,8 +5847,8 @@ Mit jelent a 'kiegyensúlyozott térszerkezet' (balanced spatial structure) eszm
 * Olyan országos hálózatot, ahol a gazdasági erő, az oktatás és a minőségi életfeltételek több erős regionális pólus között oszlanak meg, nem pedig egyetlen városban összpontosulnak.
 - A központi adóbevételek kizárólagos újraelosztását a fővárosi hivatalok által.
 - A területi önkormányzatok jogköreinek teljes visszavonását.
-decision: 
-why: 
+decision: match: Olyan centralizált államszervezetet, ahol az adóbevételeket és a fejlesztési döntéseket kizárólag a fővárosi minisztériumok kezelik. || Olyan közigazgatási rendszert, amely a helyi önkormányzatok jogköreit megszüntetve egyetlen központi kormányhivatal alá vonja a régiókat.
+why: Both new wrong options describe centralized urban-primacy models matching length and spatial policy tone (139 and 133 vs 180 chars); only the marked option defines polycentric spatial balance.
 
 ### c1-tudomanyosszabadsag-02-introduce-1   teaches: ['c1-mta-ceu-vocab']
 files: content/hu/exercises/c1/c1-tudomanyosszabadsag-02-ex.json
@@ -5857,8 +5857,8 @@ Miért tekinthető a Lex CEU és az egyetem elüldözése a rendszerváltás ut�
 * Mert a második világháború óta először fordult elő Európában, hogy egy kormány politikai bosszúból, diszkriminatív törvénnyel száműzött egy világhírű egyetemet a fővárosából.
 - Mert az egyetem akkreditációja adminisztratív határidő-mulasztás miatt járt le.
 - Mert az amerikai és magyar felsőoktatási kreditek átszámítása átmenetileg akadozott.
-decision: 
-why: 
+decision: match: Mert az egyetemi karok akkreditációja egyszerű adminisztratív határidő-mulasztás miatt, hatósági eljárásban járt le a minisztériumban. || Mert az amerikai és a magyar felsőoktatási kreditrendszerek közötti technikai eltérések miatt a hallgatók nem tudtak záróvizsgát tenni.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing plausible bureaucratic/credit issues matching length (139 and 136 vs 174 chars); only the marked option explains the politically motivated expulsion.
 
 ### c1-tudomanyosszabadsag-03-introduce-1   teaches: ['c1-mta-ceu-vocab']
 files: content/hu/exercises/c1/c1-tudomanyosszabadsag-03-ex.json
@@ -5867,8 +5867,8 @@ Miért jelentett súlyos csapást az egyetemi autonómiára a KEKVA alapítvány
 * Mert a választott egyetemi szenátusokat megfosztották döntési jogköreiktől, és az egyetemek vezetését élethosszig kinevezett kormánypárti politikusok és oligarchák kuratóriumainak adták át.
 - Mert az egyetemi karok dékánjai kizárólag külföldi vendégprofesszorokat alkalmazhattak.
 - Mert a szakdolgozatok leadási határidejét egységesen egy héttel előbbre hozták.
-decision: 
-why: 
+decision: match: Mert az egyetemek dékánjai a reform után kizárólag külföldi vendégprofesszorokat és kutatókat alkalmazhattak az oktatásban. || Mert a hallgatói önkormányzatok jogköreit kiterjesztve a diákok vétójogot kaptak az oktatók tudományos kinevezései felett.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing administrative/student governance shifts matching length (128 and 124 vs 189 chars); only the marked option details the loss of senate autonomy to politically appointed trustee boards.
 
 ### c1-tudomanyosszabadsag-05-introduce-1   teaches: ['c1-mta-ceu-vocab']
 files: content/hu/exercises/c1/c1-tudomanyosszabadsag-05-ex.json
@@ -5877,8 +5877,8 @@ Miért tekinthető a tudományos autonómia demokratikus imperatívusznak egy mo
 * Mert a politikai és gazdasági nyomástól mentes, független kutatás és oktatás nélkül a társadalom elveszíti a valóság megismerésének és a kritikai gondolkodásnak a képességét, kiszolgáltatva magát az autoriter propagandának.
 - Mert a szabadalmi díjakból származó bevételek kizárólag a kutatóintézeteket illetik meg.
 - Mert a tanszéki értekezletek határozatai kötelező érvényűek a minisztériumra.
-decision: 
-why: 
+decision: match: Mert a kutatásokból származó ipari szabadalmak és technológiai licencbevételek kizárólag az egyetemi karok költségvetését illetik meg a központi államkassza helyett. || Mert az egyetemi tanszékek és a rektori konferencia határozatai közvetlen jogi kötőerővel bírnak a gazdasági és parlamenti döntéshozatalra minden törvényjavaslat esetén.
+why: Both new wrong options start with 'Mert' under 'Miért' (Rule 13) proposing financial/administrative reasons matching length (166 and 170 vs 223 chars); only the marked option explains why independent research and critical thinking are democratic imperatives.
 
 ### c1-varosfejlesztes-02-introduce-1   teaches: ['c1-urban-sprawl-vocab']
 files: content/hu/exercises/c1/c1-varosfejlesztes-02-ex.json
@@ -5887,8 +5887,8 @@ Mit nevezünk 'dzsentrifikációnak' a volt ipari és munkáskerületekben?
 * Azt a folyamatot, amikor az elhanyagolt negyedek felújítása miatt a megélhetési és lakhatási költségek megugranak, kiszorítva az eredeti, szegényebb lakosságot a gazdagabb rétegek javára.
 - A műemlék épületek külső homlokzatának díszítő festését.
 - A közterületi parkolási övezetek kiterjesztését az ipartelepekre.
-decision: 
-why: 
+decision: match: Azt az urbanisztikai programot, amely az elhagyott gyárépületeket közösségi parkokká és ingyenes szociális bérlakásokká alakítja át. || Azt a folyamatot, amikor a városvezetés a belvárosi utcák forgalomcsillapításával és sétálóutcásításával támogatja a helyi kisvállalkozásokat.
+why: Both new wrong options describe positive urban development programs (social conversion, pedestrianization) matching length and urban planning tone (136 and 137 vs 187 chars); only the marked option defines gentrification.
 
 ### c1-varosfejlesztes-03-introduce-1   teaches: ['c1-urban-sprawl-vocab']
 files: content/hu/exercises/c1/c1-varosfejlesztes-03-ex.json
@@ -5897,8 +5897,8 @@ Mit jelent a 'modal split' (közlekedési munkamegosztás) fogalma a városterve
 * Azt az arányszámot, amely bemutatja, hogy a városlakók milyen százalékban választják az autót, a közösségi közlekedést, a kerékpárt vagy a gyaloglást a napi utazásaikhoz.
 - A járművek átlagos életkorának és amortizációjának statisztikai megoszlását.
 - A belvárosi és külvárosi parkolóhelyek arányos elosztását.
-decision: 
-why: 
+decision: match: Azt a statisztikai mutatót, amely a városi gépjárműállomány átlagos életkorát, műszaki amortizációját és üzemanyag-fogyasztását méri fel. || Azt a várostervezési irányelvet, amely a belvárosi és külvárosi parkolóhelyek számát osztja el arányosan a lakosság gépkocsi-tulajdona alapján.
+why: Both new wrong options describe real urban transport statistics (fleet age, parking allocation) matching length and technical tone (139 and 141 vs 170 chars); only the marked option defines modal split.
 
 ### c1-vitakultura-01-check-7   teaches: ['c1-parliamentary-debate']
 files: content/hu/exercises/c1/c1-vitakultura-01-ex.json
@@ -5907,8 +5907,8 @@ Melyik állítás foglalja össze legpontosabban Széchenyi reformkori stratégi
 * A békés, szerves fejlődés, az intézményteremtés és az erkölcsi pallérozódás elsőbbsége.
 - A fegyveres felkelés azonnali kirobbantása.
 - A jobbágyok jogfosztottságának fenntartása.
-decision: 
-why: 
+decision: match: A Habsburg-házzal való azonnali szakítás és a fegyveres nemzeti felkelés kirobbantása. || A rendi kiváltságok és a jobbágyok jogfosztottságának változatlan fenntartása a jövőben.
+why: Both new wrong options state historical alternatives (radical rebellion, conservative feudal retention) matching length and 19th-century political register (91 and 90 vs 87 chars); only the marked option summarizes Széchenyi's strategy of organic development.
 
 ### c1-vitakultura-01-introduce-1   teaches: ['c1-public-debate-vocab']
 files: content/hu/exercises/c1/c1-vitakultura-01-ex.json
@@ -5917,8 +5917,8 @@ Mi volt a központi vita Széchenyi és Kossuth között a reformkorban?
 * A lassú, szerves gazdasági reformok és a gyors, politikai érdekegyesítés és függetlenség útja közötti választás.
 - Hogy hol épüljön fel az új színház.
 - A bécsi opera új karmesterének személye.
-decision: 
-why: 
+decision: match: Hogy a fővárosi Lánchíd építésének költségeit kizárólag a nemesség adómentességének eltörléséből fedezzék-e. || Hogy a magyar nyelv hivatalossá tétele előtt meg kell-e követelni a latin nyelv kötelező ismeretét a parlamentben.
+why: Both new wrong options propose historical debates of the Reform Era matching length and register (112 and 115 vs 112 chars); only the marked option defines the fundamental strategic debate between Széchenyi and Kossuth.
 
 ### c1-vitakultura-consolidation-2   teaches: ['c1-parliamentary-debate']
 files: content/hu/exercises/c1/c1-vitakultura-consolidation-ex.json
@@ -5927,5 +5927,5 @@ Milyen módszerrel érte el Deák Ferenc az 1867-es kiegyezést?
 * A jogfolytonosság megingathatatlan elméletével és a békés passzív ellenállással.
 - Külföldi hadseregek behívásával.
 - A magyar nyelvhasználat feladásával.
-decision: 
-why: 
+decision: match: Külföldi nagyhatalmi hadseregek behívásával és fegyveres zendülés szervezésével. || A nemzeti nyelvhasználat és a független magyar törvények teljes feladásával.
+why: Both new wrong options describe extreme non-historical strategies matching length and 19th-century legal-historical register (87 and 81 vs 80 chars); only the marked option captures Deák's legal continuity doctrine and passive resistance.
