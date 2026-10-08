@@ -9,14 +9,19 @@ Applies to:
   - es-latam B2 (tracks: 'latam' + 'regional', 36 units each)
   - hu       B1 (track: 'citizenship', 36 units)
   - es-es    B1 (track: 'cultura', 6 authored units so far)
+
+Run with no arguments, it restitches every track above, which also rewrites
+unit stories that were edited by hand (e.g. HU C1). To restitch one unit only:
+  python scripts/stitch_track_unit_stories.py --unit es-latam b1 latam <unit id>
 """
 
 import json
 import re
+import sys
 from pathlib import Path
 
 
-def stitch_language_track(lang: str, level: str, track_id: str, lang_audio_code: str):
+def stitch_language_track(lang: str, level: str, track_id: str, lang_audio_code: str, only_unit: str = None):
     level_lc = level.lower()
     units_path = Path(f"content/{lang}/curriculum/units/{level_lc}.json")
     lessons_dir = Path(f"content/{lang}/lessons/{level_lc}")
@@ -34,6 +39,8 @@ def stitch_language_track(lang: str, level: str, track_id: str, lang_audio_code:
 
     updated_count = 0
     for order_idx, unit in enumerate(track_units, start=1):
+        if only_unit and unit.get("id") != only_unit:
+            continue
         unit_title = unit["title"]
         stems = [s for s in unit.get("stems", []) if not s.endswith("-consolidation")]
         if not stems:
@@ -183,6 +190,12 @@ def stitch_language_track(lang: str, level: str, track_id: str, lang_audio_code:
 
 
 def main():
+    if sys.argv[1:2] == ["--unit"]:
+        if len(sys.argv) != 6:
+            sys.exit("usage: stitch_track_unit_stories.py --unit <lang> <level> <track> <unit id>")
+        lang, level, track_id, unit_id = sys.argv[2:6]
+        stitch_language_track(lang, level, track_id, lang.split("-")[0], only_unit=unit_id)
+        return
     # B1 tracks
     stitch_language_track("es-latam", "b1", "latam", "es")
     stitch_language_track("hu", "b1", "citizenship", "hu")
