@@ -93,7 +93,7 @@ console.log('[PASS] Sync prompt deferral verified.');
 console.log('\n--- Test 5: Home First-Open Screen ---');
 const homeCode = fs.readFileSync(path.join(__dirname, '../../engine/home.js'), 'utf8');
 assert(homeCode.includes('What would you like to learn?'), 'first-open screen asks for the language');
-assert(homeCode.includes('Which Spanish?'), 'first-open screen asks which Spanish');
+assert(homeCode.includes('Which ${_welcomeLangLabel}?'), 'first-open screen asks which variety of the chosen language');
 assert(homeCode.includes('Start from the beginning') && homeCode.includes('Find my level'), 'two starting points');
 assert(homeCode.includes('data-open-guide-modal'), 'Home keeps the How Parlour works link');
 assert(homeCode.includes('Guide.openOverviewModal()'), 'home.js must call Guide.openOverviewModal()');

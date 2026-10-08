@@ -51,6 +51,23 @@ const Lang = (function () {
     // per multi-language-plan) so it stays out.
     const AVAILABLE = ['es-latam', 'es-es', 'hu'];
 
+    // Can-do cue copy shared by both Spanish courses; only the city differs.
+    const ES_CAN_DO_CUES = {
+        monthsExamples: 'enero, febrero, marzo...',
+        monthInEvent: 'State when an event or your birthday is using "en" (e.g. "En octubre..." or "En diciembre...")',
+        daysExamples: 'lunes, martes...',
+        dayInEvent: 'Say which day you do an activity (e.g. los lunes, los viernes)',
+        cafeGreeting: 'Polite greeting (Hola / Buenas tardes)',
+        cafeOrder: 'Order a drink or snack (e.g. "Un café con leche, por favor")',
+        cafeBill: 'Conclude politely or ask for the bill ("La cuenta, por favor" / "Muchas gracias")',
+        restaurantGreeting: 'Greeting and request a table ("Una mesa para dos, por favor")',
+        restaurantOrder: 'Order food and drinks ("De primero queremos... y de segundo...")',
+        restaurantBill: 'Ask for the bill ("La cuenta, por favor")',
+        directionsInterruption: 'Polite opening (Disculpe / Perdón)',
+        directionsAsk: 'Ask for directions (e.g. "¿Dónde está la estación de tren?")',
+        directionsThanks: 'Thank the person (Muchas gracias)'
+    };
+
     // Comprehensive language profiles — centralizing orthography, speech
     // locales, connectors, and exam labels so engine modules never need
     // hardcoded if-lang branches.
@@ -98,38 +115,7 @@ const Lang = (function () {
                     { value: 'all',                    label: 'All Tenses' }
                 ]
             },
-                        canDoCues: {
-                city: 'Madrid',
-                monthsExamples: 'enero, febrero, marzo...',
-                monthInEvent: 'State when an event or your birthday is using "en" (e.g. "En octubre..." or "En diciembre...")',
-                daysExamples: 'lunes, martes...',
-                dayInEvent: 'Say which day you do an activity (e.g. los lunes, los viernes)',
-                cafeGreeting: 'Polite greeting (Hola / Buenas tardes)',
-                cafeOrder: 'Order a drink or snack (e.g. "Un café con leche, por favor")',
-                cafeBill: 'Conclude politely or ask for the bill ("La cuenta, por favor" / "Muchas gracias")',
-                restaurantGreeting: 'Greeting and request a table ("Una mesa para dos, por favor")',
-                restaurantOrder: 'Order food and drinks ("De primero queremos... y de segundo...")',
-                restaurantBill: 'Ask for the bill ("La cuenta, por favor")',
-                directionsInterruption: 'Polite opening (Disculpe / Perdón)',
-                directionsAsk: 'Ask for directions (e.g. "¿Dónde está la estación de tren?")',
-                directionsThanks: 'Thank the person (Muchas gracias)'
-            },
-                        canDoCues: {
-                city: 'Madrid',
-                monthsExamples: 'enero, febrero, marzo...',
-                monthInEvent: 'State when an event or your birthday is using "en" (e.g. "En octubre..." or "En diciembre...")',
-                daysExamples: 'lunes, martes...',
-                dayInEvent: 'Say which day you do an activity (e.g. los lunes, los viernes)',
-                cafeGreeting: 'Polite greeting (Hola / Buenas tardes)',
-                cafeOrder: 'Order a drink or snack (e.g. "Un café con leche, por favor")',
-                cafeBill: 'Conclude politely or ask for the bill ("La cuenta, por favor" / "Muchas gracias")',
-                restaurantGreeting: 'Greeting and request a table ("Una mesa para dos, por favor")',
-                restaurantOrder: 'Order food and drinks ("De primero queremos... y de segundo...")',
-                restaurantBill: 'Ask for the bill ("La cuenta, por favor")',
-                directionsInterruption: 'Polite opening (Disculpe / Perdón)',
-                directionsAsk: 'Ask for directions (e.g. "¿Dónde está la estación de tren?")',
-                directionsThanks: 'Thank the person (Muchas gracias)'
-            },
+            canDoCues: Object.assign({}, ES_CAN_DO_CUES, { city: 'Mexico City' }),
             discourseConnectors: {
                 A1: ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo'],
                 A2: ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo', 'por eso', 'después', 'entonces'],
@@ -152,6 +138,7 @@ const Lang = (function () {
                 '6': ['seis'], '7': ['siete'], '8': ['ocho'], '9': ['nueve'], '10': ['diez']
             },
             speechAbbreviations: { 'pa': 'para', 'pal': 'parael', 'al': 'ael', 'del': 'deel' },
+            canDoCues: Object.assign({}, ES_CAN_DO_CUES, { city: 'Madrid' }),
             examLabels: {
                 trueFalseNotStated: ['Verdadero', 'Falso', 'No se menciona en el texto']
             },
@@ -180,7 +167,7 @@ const Lang = (function () {
             examLabels: {
                 trueFalseNotStated: ['Igaz', 'Hamis', 'A szöveg nem tartalmaz ilyen információt']
             },
-                        canDoCues: {
+            canDoCues: {
                 city: 'Budapest',
                 monthsExamples: 'január, február, március...',
                 monthInEvent: 'State when an event or your birthday is using -ban / -ben (e.g. "Októberben..." or "Decemberben...")',
@@ -221,7 +208,7 @@ const Lang = (function () {
             examLabels: {
                 trueFalseNotStated: ['Vrai', 'Faux', 'Non mentionné dans le texte']
             },
-                        canDoCues: {
+            canDoCues: {
                 city: 'Paris',
                 monthsExamples: 'janvier, février, mars...',
                 monthInEvent: 'State when an event or your birthday is using "en" (e.g. "En octobre..." or "En décembre...")',

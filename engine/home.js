@@ -703,7 +703,8 @@ const Home = (function () {
 
         const progress = (typeof getProgress === 'function') ? getProgress() : {};
         const completedCount = Object.keys(progress).length;
-        const hasEverOnboarded = !!localStorage.getItem('parlour_first_open_completed');
+        let hasEverOnboarded = false;
+        try { hasEverOnboarded = !!localStorage.getItem('parlour_first_open_completed'); } catch (err) {}
         const showOnboarding = !hasEverOnboarded
             && completedCount === 0
             && typeof DiagnosticTest !== 'undefined'
