@@ -16,8 +16,7 @@
 **Never more than 2 subagents running at once** (the user's rule). Count the
 ones still running before launching another; queue the rest.
 
-**No double work.** Every open task has one owner, named in its queue item
-(`Owner:`). Nobody redoes another's task: review it and send the fixes back
+**No double work.** Nobody redoes another's task: review it and send the fixes back
 through its brief. A small mistake (a few items, an obvious slip) the
 reviewer may simply fix, directly or through a cheap Haiku subagent, instead
 of a round trip. A fix to a class of problem lands together with its rule
