@@ -53,6 +53,10 @@ Completed work is archived out to `ACHIEVED.md`.
     - **Next:** audit what a new-course run needs end to end (unit tables and `skills/<lang>.json` first, then lessons, screens, exercises, stories, audio), list every rule learned so far and whether a check enforces it, and propose one generation brief plus the missing checks *(sign-off)*.
     - Later: a dry run on a small slice of Italian A1, reviewed, before the full run.
 
+150. **Curated Communicative Challenges per course (added 2026-10-08).** `injectCommunicativeChallenge()` in `engine/lessons.js` loads `curriculum/challenges.json` for the current course and otherwise generates a challenge from the lesson's goals. es-es got its file 2026-10-08 (ACHIEVED.md item 150). Open:
+    - es-latam: `content/es-latam/curriculum/challenges.json` is written for Spain (a café in Madrid, *soy de España*, tapas and *De primero…* in `a2-restaurant`). Rewrite its 6 entries in a Latin American setting *(sign-off)*.
+    - hu: no `content/hu/curriculum/challenges.json`, so every Hungarian lesson 404s on it and uses the generated challenge. Write a Hungarian set *(sign-off)*.
+
 ---
 
 ## 2. Future Feature Ideas
