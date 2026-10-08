@@ -7191,6 +7191,295 @@
   font-weight: bold;
 }
 
+.diag-opt-btn.is-correct-opt,
+.diag-opt-btn.is-right-opt {
+  box-shadow: inset 0 0 0 2px var(--success, #2F7A4D);
+  border-color: var(--success, #2F7A4D);
+  background: var(--success-bg, #E3EFE7);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.diag-opt-btn.is-correct-opt .diag-opt-letter,
+.diag-opt-btn.is-right-opt .diag-opt-letter {
+  box-shadow: inset 0 0 0 1.5px var(--success, #2F7A4D);
+  color: var(--success, #2F7A4D);
+  border-color: var(--success, #2F7A4D);
+}
+
+.diag-opt-btn.is-wrong-opt {
+  box-shadow: inset 0 0 0 2px var(--danger, #B23A22);
+  border-color: var(--danger, #B23A22);
+  background: var(--danger-bg, #F6E4DF);
+  color: var(--text);
+}
+
+.diag-opt-btn.is-wrong-opt .diag-opt-letter {
+  box-shadow: inset 0 0 0 1.5px var(--danger, #B23A22);
+  color: var(--danger, #B23A22);
+  border-color: var(--danger, #B23A22);
+}
+
+.diag-opt-btn.is-dimmed {
+  opacity: 0.55;
+}
+
+.diag-opt-btn:disabled {
+  cursor: default;
+}
+
+@media (hover: hover) {
+  .diag-opt-btn:disabled:hover {
+    box-shadow: inherit;
+    background: inherit;
+  }
+  .diag-opt-btn.is-correct-opt:hover {
+    box-shadow: inset 0 0 0 2px var(--success, #2F7A4D);
+  }
+  .diag-opt-btn.is-wrong-opt:hover {
+    box-shadow: inset 0 0 0 2px var(--danger, #B23A22);
+  }
+}
+
+.diag-opt-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.diag-opt-mark.diag-opt-right {
+  color: var(--success, #2F7A4D);
+}
+
+.diag-opt-mark.diag-opt-wrong {
+  color: var(--danger, #B23A22);
+}
+
+.diag-feedback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: var(--radius-sm, 2px);
+  line-height: 1.4;
+}
+
+.diag-feedback.is-correct {
+  background: var(--success-bg, #E3EFE7);
+  color: var(--success, #2F7A4D);
+  box-shadow: inset 0 0 0 1px var(--success, #2F7A4D);
+}
+
+.diag-feedback.is-wrong {
+  background: var(--danger-bg, #F6E4DF);
+  color: var(--danger, #B23A22);
+  box-shadow: inset 0 0 0 1px var(--danger, #B23A22);
+}
+
+.diag-feedback-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.diag-text-input.is-correct {
+  box-shadow: inset 0 0 0 2px var(--success, #2F7A4D) !important;
+  background: var(--success-bg, #E3EFE7) !important;
+}
+
+.diag-text-input.is-wrong {
+  box-shadow: inset 0 0 0 2px var(--danger, #B23A22) !important;
+  background: var(--danger-bg, #F6E4DF) !important;
+}
+
+.diag-review-drawer {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.diag-review-tier-card {
+  border-top: 1.5px solid var(--primary);
+  padding-top: 14px;
+}
+
+.diag-review-tier-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--text);
+  font-family: var(--font-display, Georgia, serif);
+}
+
+.diag-review-q-card {
+  padding: 14px 16px;
+  background: var(--surface, #FFF);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 2px);
+  margin-bottom: 12px;
+}
+
+.diag-review-q-card:last-child {
+  margin-bottom: 0;
+}
+
+.diag-review-q-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.diag-review-q-num {
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 12px;
+}
+
+.diag-review-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm, 2px);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.diag-review-badge.is-correct {
+  background: var(--success-bg, #E3EFE7);
+  color: var(--success, #2F7A4D);
+}
+
+.diag-review-badge.is-wrong {
+  background: var(--danger-bg, #F6E4DF);
+  color: var(--danger, #B23A22);
+}
+
+.diag-review-prompt {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.diag-review-sentence {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.diag-review-sentence .diag-blank {
+  color: var(--primary);
+  font-weight: 600;
+  border-bottom: 1.5px solid var(--primary);
+  padding: 0 4px;
+}
+
+.diag-review-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.diag-review-options-grid .diag-opt-btn {
+  padding: 9px 12px;
+  font-size: 13.5px;
+  cursor: default;
+  border-radius: var(--radius-sm, 2px);
+}
+
+.diag-review-options-grid .diag-opt-letter {
+  width: 22px;
+  height: 22px;
+  font-size: 11px;
+}
+
+@media (hover: hover) {
+  .diag-review-options-grid .diag-opt-btn:hover {
+    border-color: inherit;
+    box-shadow: inherit;
+    background: inherit;
+  }
+  .diag-review-options-grid .diag-opt-btn.is-correct-opt:hover {
+    box-shadow: inset 0 0 0 2px var(--success, #2F7A4D);
+    background: var(--success-bg, #E3EFE7);
+  }
+  .diag-review-options-grid .diag-opt-btn.is-wrong-opt:hover {
+    box-shadow: inset 0 0 0 2px var(--danger, #B23A22);
+    background: var(--danger-bg, #F6E4DF);
+  }
+}
+
+.diag-review-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm, 2px);
+  line-height: 1.4;
+}
+
+.diag-review-status.is-correct {
+  background: var(--success-bg, #E3EFE7);
+  color: var(--success, #2F7A4D);
+}
+
+.diag-review-status.is-wrong {
+  background: var(--danger-bg, #F6E4DF);
+  color: var(--danger, #B23A22);
+}
+
+.diag-review-status strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.diag-review-input-res {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font-size: 13.5px;
+  border-radius: var(--radius-sm, 2px);
+  margin: 8px 0 4px;
+}
+
+.diag-review-input-res.is-correct {
+  background: var(--success-bg, #E3EFE7);
+  color: var(--success, #2F7A4D);
+}
+
+.diag-review-input-res.is-wrong {
+  background: var(--danger-bg, #F6E4DF);
+  color: var(--danger, #B23A22);
+}
+
+.diag-review-wrong-val {
+  color: var(--danger, #B23A22);
+  text-decoration: line-through;
+}
+
+.diag-review-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+
 /* Primary and secondary buttons used across Workshop & Diagnostic */
 .wk-primary-btn {
   display: inline-flex;

@@ -27,7 +27,7 @@ const DiagnosticTest = (function () {
     let _phase = PHASE.PREFACE;
     let _currentTierIdx = 0;
     let _currentQuestionIdx = 0;
-    let _answers = {}; // qId -> optionIndex
+    let _answers = {}; // qId -> optionIndex or typed string
     let _shuffledOptions = {}; // qId -> array of { text, originalIdx }
     let _tierResults = []; // array of { level, correct, total, passed }
     let _openingTab = 'home';
@@ -286,7 +286,11 @@ const DiagnosticTest = (function () {
                         ${optionsList.map((opt, i) => {
                             const isSelected = selectedOrigIdx === opt.originalIdx;
                             return `
-                                <button type="button" class="diag-opt-btn ${isSelected ? 'selected' : ''}" data-option-idx="${opt.originalIdx}" role="radio" aria-checked="${isSelected}">
+                                <button type="button"
+                                        class="diag-opt-btn ${isSelected ? 'selected' : ''}"
+                                        data-option-idx="${opt.originalIdx}"
+                                        role="radio"
+                                        aria-checked="${isSelected}">
                                     <span class="diag-opt-letter">${String.fromCharCode(65 + i)}</span>
                                     <span class="diag-opt-text">${_esc(opt.text)}</span>
                                     ${isSelected ? '<span class="diag-opt-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>' : ''}
@@ -364,6 +368,7 @@ const DiagnosticTest = (function () {
                         if (e.key === 'Enter') {
                             e.preventDefault();
                             if (inputEl.value.trim()) {
+                                _answers[q.id] = inputEl.value;
                                 const nextBtn = host.querySelector('[data-action="next-q"]');
                                 if (nextBtn && !nextBtn.disabled) {
                                     nextBtn.click();
@@ -380,6 +385,19 @@ const DiagnosticTest = (function () {
                         _render();
                     });
                 });
+
+                if (_answers[q.id] !== undefined) {
+                    const onEnterNext = (e) => {
+                        if (e.key === 'Enter') {
+                            const nextBtn = host.querySelector('[data-action="next-q"]');
+                            if (nextBtn && !nextBtn.disabled) {
+                                e.preventDefault();
+                                nextBtn.click();
+                            }
+                        }
+                    };
+                    host.addEventListener('keydown', onEnterNext, { once: true });
+                }
             }
 
             const prevBtn = host.querySelector('[data-action="prev-q"]');
@@ -444,7 +462,12 @@ const DiagnosticTest = (function () {
                         ${tfnsLabels.map((lbl, idx) => {
                             const isSelected = userChoice === idx;
                             return `
-                                <button type="button" class="diag-opt-btn ${isSelected ? 'selected' : ''}" data-rq-id="${_esc(rq.id)}" data-rq-idx="${idx}" role="radio" aria-checked="${isSelected}">
+                                <button type="button"
+                                        class="diag-opt-btn ${isSelected ? 'selected' : ''}"
+                                        data-rq-id="${_esc(rq.id)}"
+                                        data-rq-idx="${idx}"
+                                        role="radio"
+                                        aria-checked="${isSelected}">
                                     <span class="diag-opt-letter">${String.fromCharCode(65 + idx)}</span>
                                     <span class="diag-opt-text">${_esc(lbl)}</span>
                                     ${isSelected ? '<span class="diag-opt-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>' : ''}
@@ -464,7 +487,12 @@ const DiagnosticTest = (function () {
                         ${optionsList.map((opt, i) => {
                             const isSelected = userChoice === opt.originalIdx;
                             return `
-                                <button type="button" class="diag-opt-btn ${isSelected ? 'selected' : ''}" data-rq-id="${_esc(rq.id)}" data-rq-idx="${opt.originalIdx}" role="radio" aria-checked="${isSelected}">
+                                <button type="button"
+                                        class="diag-opt-btn ${isSelected ? 'selected' : ''}"
+                                        data-rq-id="${_esc(rq.id)}"
+                                        data-rq-idx="${opt.originalIdx}"
+                                        role="radio"
+                                        aria-checked="${isSelected}">
                                     <span class="diag-opt-letter">${String.fromCharCode(65 + i)}</span>
                                     <span class="diag-opt-text">${_esc(opt.text)}</span>
                                     ${isSelected ? '<span class="diag-opt-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>' : ''}
@@ -731,6 +759,214 @@ const DiagnosticTest = (function () {
         return passedLevel;
     }
 
+    function _renderReviewBreakdown() {
+        const tiers = (_testData && _testData.tiers) ? _testData.tiers : [];
+        const checkSvg = '<svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>';
+        const crossSvg = '<svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+
+        const lang = (typeof Lang !== 'undefined' && typeof Lang.current === 'function')
+            ? Lang.current() : ((typeof Lang !== 'undefined' && typeof Lang.code === 'function') ? Lang.code() : 'es');
+
+        const tfnsLabels = lang === 'hu'
+            ? ['Igaz', 'Hamis', 'A szöveg nem tartalmaz ilyen információt']
+            : ['Verdadero', 'Falso', 'No se menciona en el texto'];
+
+        return _tierResults.map(tr => {
+            const tierDef = tiers.find(t => t.level === tr.level) || {};
+            const questions = tierDef.questions || [];
+            const rs = tierDef.readingSection;
+            const rsQuestions = (rs && rs.questions) || [];
+
+            const coreHtml = questions.map((q, qi) => {
+                const userAns = _answers[q.id];
+                const isTextInput = q.type === 'text-input';
+                let isRight = false;
+
+                if (isTextInput) {
+                    const cleanUser = (typeof userAns === 'string' ? userAns.trim() : '').toLowerCase();
+                    const normUser = cleanUser.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                    const accepted = [q.answer, ...(q.altAnswers || [])].filter(Boolean).map(a => a.trim().toLowerCase());
+                    const normAccepted = accepted.map(a => a.normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
+                    isRight = cleanUser.length > 0 && (accepted.includes(cleanUser) || normAccepted.includes(normUser));
+
+                    return `
+                        <div class="diag-review-q-card">
+                            <div class="diag-review-q-header">
+                                <span class="diag-review-q-num">Question ${qi + 1}</span>
+                                <span class="diag-review-badge ${isRight ? 'is-correct' : 'is-wrong'}">${isRight ? 'Correct' : 'Missed'}</span>
+                            </div>
+                            ${q.prompt ? `<div class="diag-review-prompt">${_esc(q.prompt)}</div>` : ''}
+                            <div class="diag-review-sentence">${_esc(q.sentence || '').replace(/_____/g, '<span class="diag-blank">_____</span>')}</div>
+                            <div class="diag-review-input-res ${isRight ? 'is-correct' : 'is-wrong'}">
+                                <span class="diag-review-icon">${isRight ? checkSvg : crossSvg}</span>
+                                ${isRight ? `
+                                    <span>Your answer: <strong>${_esc(userAns)}</strong></span>
+                                ` : `
+                                    <span>Your answer: <span class="diag-review-wrong-val">${_esc(userAns || '—')}</span> · Correct answer: <strong>${_esc(q.answer)}</strong></span>
+                                `}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Multiple choice question
+                isRight = userAns === q.correct;
+                const optionsList = _shuffledOptions[q.id] || (q.options || []).map((text, idx) => ({ text, originalIdx: idx }));
+
+                const optionsHtml = optionsList.map((opt, i) => {
+                    const isCorrectOpt = opt.originalIdx === q.correct;
+                    const isSelected = opt.originalIdx === userAns;
+                    let optClass = 'diag-opt-btn';
+                    let markHtml = '';
+
+                    if (isCorrectOpt) {
+                        optClass += ' is-correct-opt';
+                        markHtml = `<span class="diag-opt-mark diag-opt-right">${checkSvg}</span>`;
+                    } else if (isSelected) {
+                        optClass += ' is-wrong-opt';
+                        markHtml = `<span class="diag-opt-mark diag-opt-wrong">${crossSvg}</span>`;
+                    } else {
+                        optClass += ' is-dimmed';
+                    }
+
+                    return `
+                        <div class="${optClass}" role="presentation">
+                            <span class="diag-opt-letter">${String.fromCharCode(65 + i)}</span>
+                            <span class="diag-opt-text">${_esc(opt.text)}</span>
+                            ${markHtml}
+                        </div>
+                    `;
+                }).join('');
+
+                const correctText = (q.options && q.options[q.correct]) ? q.options[q.correct] : '';
+                const userText = (userAns !== undefined && q.options) ? q.options[userAns] : '—';
+
+                return `
+                    <div class="diag-review-q-card">
+                        <div class="diag-review-q-header">
+                            <span class="diag-review-q-num">Question ${qi + 1}</span>
+                            <span class="diag-review-badge ${isRight ? 'is-correct' : 'is-wrong'}">${isRight ? 'Correct' : 'Missed'}</span>
+                        </div>
+                        ${q.prompt ? `<div class="diag-review-prompt">${_esc(q.prompt)}</div>` : ''}
+                        <div class="diag-review-sentence">${_esc(q.sentence || '').replace(/_____/g, '<span class="diag-blank">_____</span>')}</div>
+                        <div class="diag-review-options-grid" aria-label="Question options">
+                            ${optionsHtml}
+                        </div>
+                        <div class="diag-review-status ${isRight ? 'is-correct' : 'is-wrong'}">
+                            <span class="diag-review-icon">${isRight ? checkSvg : crossSvg}</span>
+                            ${isRight ? `
+                                <span>Correct answer: <strong>${_esc(correctText)}</strong></span>
+                            ` : `
+                                <span>You chose <span class="diag-review-wrong-val">${_esc(userText)}</span> · Correct answer: <strong>${_esc(correctText)}</strong></span>
+                            `}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const readingHtml = rsQuestions.map((rq, rqi) => {
+                const userAns = _answers[rq.id];
+                const isTFNS = rq.type === 'true-false-not-stated';
+                const isRight = userAns === rq.correct;
+                const promptText = rq.statement || rq.question || '';
+
+                let optionsHtml = '';
+                let correctText = '';
+                let userText = '';
+
+                if (isTFNS) {
+                    correctText = tfnsLabels[rq.correct] || '';
+                    userText = userAns !== undefined ? (tfnsLabels[userAns] || '—') : '—';
+
+                    optionsHtml = tfnsLabels.map((lbl, idx) => {
+                        const isCorrectOpt = idx === rq.correct;
+                        const isSelected = idx === userAns;
+                        let optClass = 'diag-opt-btn';
+                        let markHtml = '';
+
+                        if (isCorrectOpt) {
+                            optClass += ' is-correct-opt';
+                            markHtml = `<span class="diag-opt-mark diag-opt-right">${checkSvg}</span>`;
+                        } else if (isSelected) {
+                            optClass += ' is-wrong-opt';
+                            markHtml = `<span class="diag-opt-mark diag-opt-wrong">${crossSvg}</span>`;
+                        } else {
+                            optClass += ' is-dimmed';
+                        }
+
+                        return `
+                            <div class="${optClass}" role="presentation">
+                                <span class="diag-opt-letter">${String.fromCharCode(65 + idx)}</span>
+                                <span class="diag-opt-text">${_esc(lbl)}</span>
+                                ${markHtml}
+                            </div>
+                        `;
+                    }).join('');
+                } else {
+                    const optionsList = _shuffledOptions[rq.id] || (rq.options || []).map((text, idx) => ({ text, originalIdx: idx }));
+                    correctText = (rq.options && rq.options[rq.correct]) ? rq.options[rq.correct] : '';
+                    userText = (userAns !== undefined && rq.options) ? rq.options[userAns] : '—';
+
+                    optionsHtml = optionsList.map((opt, i) => {
+                        const isCorrectOpt = opt.originalIdx === rq.correct;
+                        const isSelected = opt.originalIdx === userAns;
+                        let optClass = 'diag-opt-btn';
+                        let markHtml = '';
+
+                        if (isCorrectOpt) {
+                            optClass += ' is-correct-opt';
+                            markHtml = `<span class="diag-opt-mark diag-opt-right">${checkSvg}</span>`;
+                        } else if (isSelected) {
+                            optClass += ' is-wrong-opt';
+                            markHtml = `<span class="diag-opt-mark diag-opt-wrong">${crossSvg}</span>`;
+                        } else {
+                            optClass += ' is-dimmed';
+                        }
+
+                        return `
+                            <div class="${optClass}" role="presentation">
+                                <span class="diag-opt-letter">${String.fromCharCode(65 + i)}</span>
+                                <span class="diag-opt-text">${_esc(opt.text)}</span>
+                                ${markHtml}
+                            </div>
+                        `;
+                    }).join('');
+                }
+
+                return `
+                    <div class="diag-review-q-card">
+                        <div class="diag-review-q-header">
+                            <span class="diag-review-q-num">Reading Question ${rqi + 1}</span>
+                            <span class="diag-review-badge ${isRight ? 'is-correct' : 'is-wrong'}">${isRight ? 'Correct' : 'Missed'}</span>
+                        </div>
+                        <div class="diag-review-sentence">${_esc(promptText)}</div>
+                        <div class="diag-review-options-grid" aria-label="Question options">
+                            ${optionsHtml}
+                        </div>
+                        <div class="diag-review-status ${isRight ? 'is-correct' : 'is-wrong'}">
+                            <span class="diag-review-icon">${isRight ? checkSvg : crossSvg}</span>
+                            ${isRight ? `
+                                <span>Correct answer: <strong>${_esc(correctText)}</strong></span>
+                            ` : `
+                                <span>You chose <span class="diag-review-wrong-val">${_esc(userText)}</span> · Correct answer: <strong>${_esc(correctText)}</strong></span>
+                            `}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            return `
+                <div class="diag-review-tier-card">
+                    <h4 class="diag-review-tier-title">Tier ${_esc(tr.level)}: ${_esc(tr.name)} (${tr.correct}/${tr.total})</h4>
+                    <div class="diag-review-q-list">
+                        ${coreHtml}
+                        ${readingHtml}
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
     function _renderDebrief(host) {
         const placedLevel = _determinePlacement();
         const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
@@ -754,6 +990,7 @@ const DiagnosticTest = (function () {
         const levelsOrder = (typeof LEVEL_ORDER !== 'undefined') ? LEVEL_ORDER : ['A1', 'A2', 'B1', 'B2', 'C1'];
         const placedIdx = levelsOrder.indexOf(placedLevel.toUpperCase());
         const precedingLevels = placedIdx > 0 ? levelsOrder.slice(0, placedIdx) : [];
+        const totalQuestions = _tierResults.reduce((acc, tr) => acc + tr.total, 0);
 
         host.innerHTML = `
             <div class="diag-wrap">
@@ -795,6 +1032,18 @@ const DiagnosticTest = (function () {
                                 </div>
                             `).join('')}
                         </div>
+
+                        <div class="diag-review-toggle-wrap" style="margin-top: 14px;">
+                            <button type="button" class="wk-secondary-btn diag-review-toggle-btn" data-action="toggle-review" style="width: 100%; justify-content: space-between;">
+                                <span>Review questions and options (${totalQuestions} questions)</span>
+                                <span class="diag-review-arrow" aria-hidden="true" style="display:inline-flex; align-items:center; transition: transform var(--dur-fast, 0.15s) ease;">
+                                    <svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="diag-review-drawer hidden" id="diag-review-drawer">
+                            ${_renderReviewBreakdown()}
+                        </div>
                     </div>
 
                     <div class="diag-pedagogical-reminder" style="margin-top: 20px; padding: 14px; background: var(--wash, #f8f9fa); border-radius: var(--radius-sm, 4px); font-size: 0.85rem; color: var(--muted); line-height: 1.55;">
@@ -814,6 +1063,9 @@ const DiagnosticTest = (function () {
                         `}
 
                         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <button type="button" class="wk-secondary-btn" data-action="review-answers-bottom" style="flex: 1;">
+                                Review Questions &amp; Options
+                            </button>
                             ${nearly ? `
                                 <button type="button" class="wk-secondary-btn" data-action="review-nearly" style="flex: 1;">
                                     Review ${_esc(nearly.level)} First
@@ -835,6 +1087,31 @@ const DiagnosticTest = (function () {
 
         const closeBtn = host.querySelector('[data-action="close-diag"]');
         if (closeBtn) closeBtn.addEventListener('click', close);
+
+        const toggleReviewBtn = host.querySelector('[data-action="toggle-review"]');
+        const reviewDrawer = host.querySelector('#diag-review-drawer');
+        if (toggleReviewBtn && reviewDrawer) {
+            toggleReviewBtn.addEventListener('click', () => {
+                const isHidden = reviewDrawer.classList.contains('hidden');
+                reviewDrawer.classList.toggle('hidden', !isHidden);
+                const arrow = toggleReviewBtn.querySelector('.diag-review-arrow');
+                if (arrow) {
+                    arrow.style.transform = isHidden ? 'rotate(180deg)' : 'none';
+                }
+            });
+        }
+
+        const reviewBottomBtn = host.querySelector('[data-action="review-answers-bottom"]');
+        if (reviewBottomBtn && reviewDrawer) {
+            reviewBottomBtn.addEventListener('click', () => {
+                reviewDrawer.classList.remove('hidden');
+                const arrow = host.querySelector('.diag-review-arrow');
+                if (arrow) {
+                    arrow.style.transform = 'rotate(180deg)';
+                }
+                reviewDrawer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
 
         const acceptJumpBtn = host.querySelector('[data-action="accept-jump"]');
         if (acceptJumpBtn) {
