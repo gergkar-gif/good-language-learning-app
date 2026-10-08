@@ -92,29 +92,37 @@ const Lang = (function () {
                     { value: 'all',                    label: 'All Tenses' }
                 ]
             },
-            paradigm: {
-                hasVosotros: true,
-                persons: {
-                    yo: { key: 'yo', label: 'yo' },
-                    tu: { key: 'tu', label: 'tú' },
-                    ud: { key: 'ud', label: 'él / ella' },
-                    nosotros: { key: 'nosotros', label: 'nosotros' },
-                    vosotros: { key: 'vosotros', label: 'vosotros' },
-                    uds: { key: 'uds', label: 'ellos / ustedes' }
-                },
-                defaultPersons: ['yo', 'tu', 'ud', 'nosotros', 'uds'],
-                vosotrosPersons: ['yo', 'tu', 'ud', 'nosotros', 'vosotros', 'uds'],
-                tenses: [
-                    { value: 'indicativo.presente',    label: 'Present' },
-                    { value: 'indicativo.preterito',   label: 'Preterite' },
-                    { value: 'indicativo.imperfecto',  label: 'Imperfect' },
-                    { value: 'indicativo.futuro',      label: 'Future' },
-                    { value: 'indicativo.condicional', label: 'Conditional' },
-                    { value: 'subjuntivo.presente',    label: 'Present Subjunctive' },
-                    { value: 'subjuntivo.imperfecto',  label: 'Imperfect Subjunctive' },
-                    { value: 'subjuntivo.futuro',      label: 'Future Subjunctive' },
-                    { value: 'all',                    label: 'All Tenses' }
-                ]
+                        canDoCues: {
+                city: 'Madrid',
+                monthsExamples: 'enero, febrero, marzo...',
+                monthInEvent: 'State when an event or your birthday is using "en" (e.g. "En octubre..." or "En diciembre...")',
+                daysExamples: 'lunes, martes...',
+                dayInEvent: 'Say which day you do an activity (e.g. los lunes, los viernes)',
+                cafeGreeting: 'Polite greeting (Hola / Buenas tardes)',
+                cafeOrder: 'Order a drink or snack (e.g. "Un café con leche, por favor")',
+                cafeBill: 'Conclude politely or ask for the bill ("La cuenta, por favor" / "Muchas gracias")',
+                restaurantGreeting: 'Greeting and request a table ("Una mesa para dos, por favor")',
+                restaurantOrder: 'Order food and drinks ("De primero queremos... y de segundo...")',
+                restaurantBill: 'Ask for the bill ("La cuenta, por favor")',
+                directionsInterruption: 'Polite opening (Disculpe / Perdón)',
+                directionsAsk: 'Ask for directions (e.g. "¿Dónde está la estación de tren?")',
+                directionsThanks: 'Thank the person (Muchas gracias)'
+            },
+                        canDoCues: {
+                city: 'Madrid',
+                monthsExamples: 'enero, febrero, marzo...',
+                monthInEvent: 'State when an event or your birthday is using "en" (e.g. "En octubre..." or "En diciembre...")',
+                daysExamples: 'lunes, martes...',
+                dayInEvent: 'Say which day you do an activity (e.g. los lunes, los viernes)',
+                cafeGreeting: 'Polite greeting (Hola / Buenas tardes)',
+                cafeOrder: 'Order a drink or snack (e.g. "Un café con leche, por favor")',
+                cafeBill: 'Conclude politely or ask for the bill ("La cuenta, por favor" / "Muchas gracias")',
+                restaurantGreeting: 'Greeting and request a table ("Una mesa para dos, por favor")',
+                restaurantOrder: 'Order food and drinks ("De primero queremos... y de segundo...")',
+                restaurantBill: 'Ask for the bill ("La cuenta, por favor")',
+                directionsInterruption: 'Polite opening (Disculpe / Perdón)',
+                directionsAsk: 'Ask for directions (e.g. "¿Dónde está la estación de tren?")',
+                directionsThanks: 'Thank the person (Muchas gracias)'
             },
             discourseConnectors: {
                 A1: ['porque', 'también', 'y', 'pero', 'además', 'por ejemplo'],
@@ -156,12 +164,29 @@ const Lang = (function () {
             examLabels: {
                 trueFalseNotStated: ['Igaz', 'Hamis', 'A szöveg nem tartalmaz ilyen információt']
             },
+                        canDoCues: {
+                city: 'Budapest',
+                monthsExamples: 'január, február, március...',
+                monthInEvent: 'State when an event or your birthday is using -ban / -ben (e.g. "Októberben..." or "Decemberben...")',
+                daysExamples: 'hétfő, kedd...',
+                dayInEvent: 'Say which day you have an activity or day off (e.g. hétfőn, pénteken)',
+                cafeGreeting: 'Polite greeting (Jó napot / Szia)',
+                cafeOrder: 'Order a drink or snack (e.g. "Kérek egy kávét és egy tejet")',
+                cafeBill: 'Conclude politely or ask for the bill ("Kérem a számlát" / "Köszönöm")',
+                restaurantGreeting: 'Greeting and ask for a table or menu',
+                restaurantOrder: 'Order food and drink politely ("Kérek egy...")',
+                restaurantBill: 'Ask about the bill or thank the staff',
+                directionsInterruption: 'Polite interruption (Elnézést / Bocsánat)',
+                directionsAsk: 'Ask where a place is (e.g. "Hol van a pályaudvar?")',
+                directionsThanks: 'Polite thank you (Köszönöm szépen)'
+            },
             discourseConnectors: {
                 A1: ['és', 'mert', 'is', 'de', 'szintén', 'szerintem'],
                 A2: ['és', 'mert', 'is', 'de', 'szintén', 'szerintem', 'ezért', 'például', 'aztán'],
                 B1: ['véleményem szerint', 'szerintem', 'úgy gondolom', 'először is', 'például', 'ugyanakkor', 'azonban', 'ezért', 'másrészt', 'egyrészt'],
                 B2: ['véleményem szerint', 'úgy vélem', 'meglátásom szerint', 'elsőként', 'például', 'ugyanakkor', 'mindazonáltal', 'ennek következtében', 'másrészt', 'egyrészt', 'összességében']
-            }
+            },
+            informalTextingNote: "When Hungarian people text, accents are often left out — these exchanges simulate that, so don't be surprised if they're missing."
         },
         fr: {
             code: 'fr',
@@ -175,6 +200,22 @@ const Lang = (function () {
             openers: {},
             examLabels: {
                 trueFalseNotStated: ['Vrai', 'Faux', 'Non mentionné dans le texte']
+            },
+                        canDoCues: {
+                city: 'Paris',
+                monthsExamples: 'janvier, février, mars...',
+                monthInEvent: 'State when an event or your birthday is using "en" (e.g. "En octobre..." or "En décembre...")',
+                daysExamples: 'lundi, mardi...',
+                dayInEvent: 'Say which day you do an activity (e.g. le lundi, le vendredi)',
+                cafeGreeting: 'Polite greeting (Bonjour / Bonsoir)',
+                cafeOrder: 'Order a drink or snack (e.g. "Un café au lait, s\'il vous plaît")',
+                cafeBill: 'Conclude politely or ask for the bill ("L\'addition, s\'il vous plaît" / "Merci beaucoup")',
+                restaurantGreeting: 'Greeting and request a table ("Une table pour deux, s\'il vous plaît")',
+                restaurantOrder: 'Order food and drinks ("En entrée, nous aimerions... et en plat...")',
+                restaurantBill: 'Ask for the bill ("L\'addition, s\'il vous plaît")',
+                directionsInterruption: 'Polite opening (Excusez-moi / Pardon)',
+                directionsAsk: 'Ask for directions (e.g. "Où se trouve la gare ?")',
+                directionsThanks: 'Thank the person (Merci beaucoup)'
             },
             paradigm: {
                 hasVosotros: false,
@@ -276,9 +317,18 @@ const Lang = (function () {
         return (p.discourseConnectors && p.discourseConnectors[lvl]) || [];
     }
 
+    function canDoCues(targetCode) {
+        const p = profile(targetCode);
+        return p.canDoCues || profile('es-latam').canDoCues || {};
+    }
+
     // Natural language name for exercises and prompts ('Spanish', 'Hungarian')
     function name() {
         return LANGUAGE_NAMES[current] || current;
+    }
+
+    function languageNameFor(otherCode) {
+        return LANGUAGE_NAMES[otherCode] || COURSE_NAMES[otherCode] || otherCode;
     }
 
     // The display name for any course code, not just the current one —
@@ -387,6 +437,7 @@ const Lang = (function () {
         defaultCode,
         name,
         nameFor,
+        languageNameFor,
         courseName,
         available,
         voices,
@@ -400,6 +451,7 @@ const Lang = (function () {
         openers,
         examLabels,
         discourseConnectors,
+        canDoCues,
         targetText,
         targetLemma,
         paradigm

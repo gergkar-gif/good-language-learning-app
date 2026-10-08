@@ -34,6 +34,52 @@
             .trim();
     }
 
+    const DEFAULT_CUES = {
+        hu: {
+            city: 'Budapest',
+            monthsExamples: 'január, február, március...',
+            monthInEvent: 'State when an event or your birthday is using -ban / -ben (e.g. "Októberben..." or "Decemberben...")',
+            daysExamples: 'hétfő, kedd...',
+            dayInEvent: 'Say which day you have an activity or day off (e.g. hétfőn, pénteken)',
+            cafeGreeting: 'Polite greeting (Jó napot / Szia)',
+            cafeOrder: 'Order a drink or snack (e.g. "Kérek egy kávét és egy tejet")',
+            cafeBill: 'Conclude politely or ask for the bill ("Kérem a számlát" / "Köszönöm")',
+            restaurantGreeting: 'Greeting and ask for a table or menu',
+            restaurantOrder: 'Order food and drink politely ("Kérek egy...")',
+            restaurantBill: 'Ask about the bill or thank the staff',
+            directionsInterruption: 'Polite interruption (Elnézést / Bocsánat)',
+            directionsAsk: 'Ask where a place is (e.g. "Hol van a pályaudvar?")',
+            directionsThanks: 'Polite thank you (Köszönöm szépen)'
+        },
+        es: {
+            city: 'Madrid',
+            monthsExamples: 'enero, febrero, marzo...',
+            monthInEvent: 'State when an event or your birthday is using "en" (e.g. "En octubre..." or "En diciembre...")',
+            daysExamples: 'lunes, martes...',
+            dayInEvent: 'Say which day you do an activity (e.g. los lunes, los viernes)',
+            cafeGreeting: 'Polite greeting (Hola / Buenas tardes)',
+            cafeOrder: 'Order a drink or snack (e.g. "Un café con leche, por favor")',
+            cafeBill: 'Conclude politely or ask for the bill ("La cuenta, por favor" / "Muchas gracias")',
+            restaurantGreeting: 'Greeting and request a table ("Una mesa para dos, por favor")',
+            restaurantOrder: 'Order food and drinks ("De primero queremos... y de second...")',
+            restaurantBill: 'Ask for the bill ("La cuenta, por favor")',
+            directionsInterruption: 'Polite opening (Disculpe / Perdón)',
+            directionsAsk: 'Ask for directions (e.g. "¿Dónde está la estación de tren?")',
+            directionsThanks: 'Thank the person (Muchas gracias)'
+        }
+    };
+
+    const _customCues = {};
+
+    function _getCues(langCode) {
+        if (typeof Lang !== 'undefined' && typeof Lang.canDoCues === 'function') {
+            const cues = Lang.canDoCues(langCode);
+            if (cues && Object.keys(cues).length > 0) return cues;
+        }
+        const base = String(langCode || 'es').split('-')[0].toLowerCase();
+        return _customCues[base] || DEFAULT_CUES[base] || DEFAULT_CUES.es;
+    }
+
     // Whole-word topic triggers. A scenario template replaces the can-do's own
     // wording, so a trigger must only fire when the can-do really is that
     // situation — bare substrings sent "…where and when the Maya flourished"
@@ -119,6 +165,7 @@
         const langName = opts.language || (typeof Lang !== 'undefined' ? Lang.name() : 'the target language');
         const langCode = (opts.langCode || (typeof Lang !== 'undefined' ? Lang.code() : 'es')).toLowerCase();
         const isOral = opts.modality !== 'written';
+        const langCues = _getCues(langCode);
         const cleaned = cleanRawText(canDoText);
         const lower = (canDoText || '').toLowerCase();
         const title = extractCleanTitle(canDoText);
@@ -132,12 +179,9 @@
 
         if (isMonths) {
             const hasSayWhich = lower.includes('which month') || lower.includes('say which');
-            const cues = (langCode === 'hu') ? [
-                'Recite the months in order (január, február, március...)',
-                hasSayWhich ? 'State when an event or your birthday is using -ban / -ben (e.g. "Októberben..." or "Decemberben...")' : 'Say your favorite month'
-            ] : [
-                'Recite the months in order (enero, febrero, marzo...)',
-                hasSayWhich ? 'State when an event or your birthday is using "en" (e.g. "En octubre..." or "En diciembre...")' : 'Say your favorite month'
+            const cues = [
+                `Recite the months in order (${langCues.monthsExamples || 'in order...'})`,
+                hasSayWhich ? (langCues.monthInEvent || 'State when an event or your birthday is') : 'Say your favorite month'
             ];
 
             return {
@@ -153,12 +197,9 @@
         }
 
         if (isDays) {
-            const cues = (langCode === 'hu') ? [
-                'Say the days of the week in order (hétfő, kedd...)',
-                'Say which day you have an activity or day off (e.g. hétfőn, pénteken)'
-            ] : [
-                'Say the days of the week in order (lunes, martes...)',
-                'Say which day you do an activity (e.g. los lunes, los viernes)'
+            const cues = [
+                `Say the days of the week in order (${langCues.daysExamples || 'in order...'})`,
+                langCues.dayInEvent || 'Say which day you do an activity'
             ];
 
             return {
@@ -196,20 +237,16 @@
         const isShopping = TOPIC.shopping.test(lower);
 
         if (isCafe) {
-            const cues = (langCode === 'hu') ? [
-                'Polite greeting (Jó napot / Szia)',
-                'Order a drink or snack (e.g. "Kérek egy kávét és egy tejet")',
-                'Conclude politely or ask for the bill ("Kérem a számlát" / "Köszönöm")'
-            ] : [
-                'Polite greeting (Hola / Buenas tardes)',
-                'Order a drink or snack (e.g. "Un café con leche, por favor")',
-                'Conclude politely or ask for the bill ("La cuenta, por favor" / "Muchas gracias")'
+            const cues = [
+                langCues.cafeGreeting || 'Polite greeting',
+                langCues.cafeOrder || 'Order a drink or snack',
+                langCues.cafeBill || 'Conclude politely or ask for the bill'
             ];
 
             return {
                 type: 'transaction',
                 title: title,
-                scenario: `You are at a café in ${langName === 'Hungarian' ? 'Budapest' : langName === 'Spanish' ? 'Madrid' : 'town'}.`,
+                scenario: `You are at a café in ${langCues.city || 'town'}.`,
                 prompt: isOral
                     ? `Order at the café: greet the server, ask politely for a drink and a pastry, and ask for the bill.`
                     : `Write a short interaction at the café: greet the server, order your drink, and ask for the bill.`,
@@ -219,14 +256,10 @@
         }
 
         if (isRestaurant) {
-            const cues = (langCode === 'hu') ? [
-                'Greeting and ask for a table or menu',
-                'Order food and drink politely ("Kérek egy...")',
-                'Ask about the bill or thank the staff'
-            ] : [
-                'Greeting and request a table ("Una mesa para dos, por favor")',
-                'Order food and drinks ("De primero queremos... y de segundo...")',
-                'Ask for the bill ("La cuenta, por favor")'
+            const cues = [
+                langCues.restaurantGreeting || 'Greeting and request a table or menu',
+                langCues.restaurantOrder || 'Order food and drink politely',
+                langCues.restaurantBill || 'Ask for the bill or thank the staff'
             ];
 
             return {
@@ -240,14 +273,10 @@
         }
 
         if (isDirections) {
-            const cues = (langCode === 'hu') ? [
-                'Polite interruption (Elnézést / Bocsánat)',
-                'Ask where a place is (e.g. "Hol van a pályaudvar?")',
-                'Polite thank you (Köszönöm szépen)'
-            ] : [
-                'Polite opening (Disculpe / Perdón)',
-                'Ask for directions (e.g. "¿Dónde está la estación de tren?")',
-                'Thank the person (Muchas gracias)'
+            const cues = [
+                langCues.directionsInterruption || 'Polite opening / interruption',
+                langCues.directionsAsk || 'Ask where a place is',
+                langCues.directionsThanks || 'Thank the person politely'
             ];
 
             return {
@@ -376,9 +405,14 @@
         };
     }
 
+    function registerCues(lang, cues) {
+        if (lang && cues) _customCues[String(lang).split('-')[0].toLowerCase()] = cues;
+    }
+
     return {
         cleanRawText,
         extractCleanTitle,
-        formatPrompt
+        formatPrompt,
+        registerCues
     };
 });

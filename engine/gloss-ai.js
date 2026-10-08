@@ -38,7 +38,8 @@ const GlossAI = (function () {
 
     // 'es-latam' and 'es-es' share one dictionary and one worker language.
     function workerLang(courseCode) {
-        return String(courseCode || '').indexOf('hu') === 0 ? 'hu' : 'es';
+        const code = String(courseCode || (typeof Lang !== 'undefined' ? Lang.code() : 'es')).toLowerCase();
+        return code.split('-')[0];
     }
 
     function readStored(key) {

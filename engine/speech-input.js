@@ -806,7 +806,8 @@ const SpeechInput = (function () {
 
     function _detectPhoneticLang(langHint, textSample) {
         if (langHint) {
-            const l = String(langHint).toLowerCase();
+            const l = String(langHint).toLowerCase().split('-')[0];
+            if (typeof PHONETIC_FOLDERS !== 'undefined' && PHONETIC_FOLDERS[l]) return l;
             if (l.startsWith('hu')) return 'hu';
             if (l.startsWith('es')) return 'es';
         }
@@ -820,7 +821,14 @@ const SpeechInput = (function () {
             }
         }
         const active = getSpeechLang();
-        if (active && active.toLowerCase().startsWith('hu')) return 'hu';
+        if (active) {
+            const actBase = active.toLowerCase().split('-')[0];
+            if (typeof PHONETIC_FOLDERS !== 'undefined' && PHONETIC_FOLDERS[actBase]) return actBase;
+        }
+        if (typeof Lang !== 'undefined' && typeof Lang.code === 'function') {
+            const code = Lang.code().toLowerCase().split('-')[0];
+            if (typeof PHONETIC_FOLDERS !== 'undefined' && PHONETIC_FOLDERS[code]) return code;
+        }
         return 'es';
     }
 
@@ -875,10 +883,27 @@ const SpeechInput = (function () {
             .replace(/(.)\1+/g, '$1');     // collapse adjacent duplicates ('rr'->'r', sinalefa 'aa'->'a', 'ee'->'e')
     }
 
+    const PHONETIC_FOLDERS = {
+        hu: phoneticFoldHu,
+        es: phoneticFoldEs
+    };
+
+    function registerPhoneticFolder(langCode, folderFn) {
+        if (!langCode || typeof folderFn !== 'function') return;
+        const code = String(langCode).toLowerCase().split('-')[0];
+        PHONETIC_FOLDERS[code] = folderFn;
+    }
+
+    function _getPhoneticFolder(lang) {
+        const base = String(lang || (typeof Lang !== 'undefined' ? Lang.code() : 'es')).toLowerCase().split('-')[0];
+        return PHONETIC_FOLDERS[base] || PHONETIC_FOLDERS.es;
+    }
+
     function phoneticFold(word, langHint) {
         if (!word) return '';
         const lang = _detectPhoneticLang(langHint, word);
-        return lang === 'hu' ? phoneticFoldHu(word) : phoneticFoldEs(word);
+        const folder = _getPhoneticFolder(lang);
+        return folder(word);
     }
 
     // Check if two individual words are phonetically close enough
@@ -887,8 +912,9 @@ const SpeechInput = (function () {
         if (targetNorm === recNorm) return true;
 
         const lang = _detectPhoneticLang(langHint, `${targetNorm} ${recNorm}`);
-        const targetFold = lang === 'hu' ? phoneticFoldHu(targetNorm) : phoneticFoldEs(targetNorm);
-        const recFold = lang === 'hu' ? phoneticFoldHu(recNorm) : phoneticFoldEs(recNorm);
+        const folder = _getPhoneticFolder(lang);
+        const targetFold = folder(targetNorm);
+        const recFold = folder(recNorm);
         if (targetFold && targetFold === recFold) return true;
 
         // Number words vs digits tolerance (e.g. "dos" vs "2"); Hungarian
@@ -925,8 +951,9 @@ const SpeechInput = (function () {
     function isBoundaryMergeMatch(mergedNorm, singleNorm, lang) {
         if (!mergedNorm || !singleNorm) return false;
         if (mergedNorm === singleNorm) return true;
-        const mFold = lang === 'hu' ? phoneticFoldHu(mergedNorm) : phoneticFoldEs(mergedNorm);
-        const sFold = lang === 'hu' ? phoneticFoldHu(singleNorm) : phoneticFoldEs(singleNorm);
+        const folder = _getPhoneticFolder(lang);
+        const mFold = folder(mergedNorm);
+        const sFold = folder(singleNorm);
         return !!(mFold && mFold === sFold);
     }
 
@@ -1209,6 +1236,7 @@ const SpeechInput = (function () {
         isFullTargetMatch,
         normalizeForSpeech,
         phoneticFold,
+        registerPhoneticFolder,
         canonicalizeTranscript
     };
 })();

@@ -978,7 +978,7 @@ const StoryAudioPlayer = {
         const gender = isNarrator ? undefined : (this.characterGenders && this.characterGenders[speaker]);
 
         if (speakerTag) {
-            const langLabel = paraLang === 'en' ? 'English' : (paraLang === 'hu' ? 'Hungarian' : 'Spanish');
+            const langLabel = paraLang === 'en' ? 'English' : ((typeof Lang !== 'undefined' && typeof Lang.nameFor === 'function') ? (Lang.nameFor(paraLang) || Lang.name()) : (paraLang === 'hu' ? 'Hungarian' : 'Spanish'));
             speakerTag.textContent = `${speaker} (${langLabel})`;
         }
 

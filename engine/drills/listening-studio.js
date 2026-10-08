@@ -61,6 +61,14 @@ const ListeningStudio = (function () {
         return d.innerHTML;
     }
 
+    function _getTfnsLabels(lang) {
+        if (typeof Lang !== 'undefined' && Lang.examLabels) {
+            const labels = Lang.examLabels(lang);
+            if (labels && labels.trueFalseNotStated) return labels.trueFalseNotStated;
+        }
+        return ['Verdadero', 'Falso', 'No se menciona'];
+    }
+
     // ----------------------------------------
     // DATA LOADING
     // ----------------------------------------
@@ -123,7 +131,8 @@ const ListeningStudio = (function () {
     }
 
     function _getFallbackTasks(lang) {
-        if (lang === 'hu') {
+        const base = String(lang || 'es').toLowerCase().split('-')[0];
+        if (base === 'hu') {
             return [
                 {
                     id: 'ls-hu-fallback-01',
@@ -738,9 +747,7 @@ const ListeningStudio = (function () {
             const userAns = _userAnswers[q.id];
 
             if (q.type === 'true-false-not-stated') {
-                const labels = (_loadedLang === 'hu')
-                    ? ['Igaz', 'Hamis', 'Nincs említve']
-                    : ['Verdadero', 'Falso', 'No se menciona'];
+                const labels = _getTfnsLabels(_loadedLang);
 
                 return `
                     <div class="lt-question-card" data-qid="${_esc(q.id)}">
@@ -850,9 +857,10 @@ const ListeningStudio = (function () {
                     ${questions.map((q, idx) => {
                         const userAns = _userAnswers[q.id];
                         const isCorrect = userAns === q.correct;
-                        const correctLabel = q.options ? q.options[q.correct] : ((_loadedLang === 'hu') ? ['Igaz', 'Hamis', 'Nincs említve'][q.correct] : ['Verdadero', 'Falso', 'No se menciona'][q.correct]);
+                        const tfns = _getTfnsLabels(_loadedLang);
+                        const correctLabel = q.options ? q.options[q.correct] : tfns[q.correct];
                         const userLabel = userAns != null
-                            ? (q.options ? q.options[userAns] : ((_loadedLang === 'hu') ? ['Igaz', 'Hamis', 'Nincs említve'][userAns] : ['Verdadero', 'Falso', 'No se menciona'][userAns]))
+                            ? (q.options ? q.options[userAns] : tfns[userAns])
                             : 'No answer';
 
                         return `

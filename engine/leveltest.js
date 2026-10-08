@@ -446,9 +446,11 @@ const LevelTest = (function () {
             // Labels are in the target language (CEFR exam convention).
             const lang = (typeof Lang !== 'undefined' && typeof Lang.current === 'function')
                 ? Lang.current() : 'es';
-            const labels = lang === 'hu'
+            const tfnsFromLang = (typeof Lang !== 'undefined' && typeof Lang.examLabels === 'function')
+                ? (Lang.examLabels(lang) || {}).trueFalseNotStated : null;
+            const labels = tfnsFromLang || (lang === 'hu'
                 ? ['Igaz', 'Hamis', 'A szöveg nem tartalmaz ilyen információt']
-                : ['Verdadero', 'Falso', 'No se menciona en el texto'];
+                : ['Verdadero', 'Falso', 'No se menciona en el texto']);
             const right = String(q.correct);
             const isRight = chosen === right;
 
@@ -1416,7 +1418,9 @@ const LevelTest = (function () {
                 recognition = new SpeechRec();
                 recognition.continuous = true;
                 recognition.interimResults = true;
-                recognition.lang = test.level.startsWith('A') ? (typeof Lang !== 'undefined' && Lang.current() === 'hu' ? 'hu-HU' : 'es-ES') : 'es-ES';
+                recognition.lang = (typeof Lang !== 'undefined' && typeof Lang.sttLocale === 'function')
+                    ? Lang.sttLocale()
+                    : (test.level && test.level.startsWith('A') ? (typeof Lang !== 'undefined' && Lang.current() === 'hu' ? 'hu-HU' : 'es-ES') : 'es-ES');
                 recognition.onresult = (e) => {
                     let transcript = '';
                     for (let i = 0; i < e.results.length; i++) {

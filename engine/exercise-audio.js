@@ -43,7 +43,8 @@ const ExerciseAudio = (function () {
     };
 
     function family(lang) {
-        return String(lang || 'es').toLowerCase().startsWith('hu') ? 'hu' : 'es';
+        const code = String(lang || (typeof Lang !== 'undefined' ? Lang.code() : 'es')).toLowerCase();
+        return code.split('-')[0];
     }
 
     function tokens(text) {

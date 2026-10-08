@@ -272,22 +272,50 @@ const Home = (function () {
 
     const WELCOME_PENDING_KEY = 'parlour_welcome_pending';
 
-    const WELCOME_LANGUAGES = [
-        { label: 'Spanish', codes: ['es-latam', 'es-es'] },
-        { label: 'Hungarian', codes: ['hu'] }
-    ];
-    const WELCOME_VARIANTS = [
-        { label: 'Latin America', code: 'es-latam' },
-        { label: 'Spain', code: 'es-es' }
-    ];
+    function _getWelcomeLanguages() {
+        if (typeof Lang === 'undefined' || !Lang.available) {
+            return [
+                { label: 'Spanish', codes: ['es-latam', 'es-es'] },
+                { label: 'Hungarian', codes: ['hu'] }
+            ];
+        }
+        const available = Lang.available();
+        const groups = {};
+        available.forEach(code => {
+            const label = (Lang.languageNameFor && Lang.languageNameFor(code)) || (Lang.nameFor && Lang.nameFor(code)) || code;
+            if (!groups[label]) groups[label] = [];
+            groups[label].push(code);
+        });
+        return Object.keys(groups).map(label => ({
+            label,
+            codes: groups[label]
+        }));
+    }
+
+    function _getWelcomeVariants(langLabel) {
+        if (typeof Lang === 'undefined' || !Lang.available) {
+            return [
+                { label: 'Latin America', code: 'es-latam' },
+                { label: 'Spain', code: 'es-es' }
+            ];
+        }
+        const langs = _getWelcomeLanguages();
+        const target = langs.find(l => l.label === langLabel) || langs[0];
+        if (!target) return [];
+        return target.codes.map(code => {
+            const fullName = (Lang.nameFor && Lang.nameFor(code)) || code;
+            const match = fullName.match(/\((.*?)\)/);
+            const label = match ? match[1] : fullName;
+            return { label, code };
+        });
+    }
 
     let _welcomeCode = null;
+    let _welcomeLangLabel = null;
 
     function _welcomeStepHtml(step) {
-        const available = Lang.available();
         if (step === 'language') {
-            const choices = WELCOME_LANGUAGES
-                .filter(l => l.codes.some(c => available.includes(c)))
+            const choices = _getWelcomeLanguages()
                 .map(l => `<button type="button" class="pl-welcome-choice" data-welcome-language="${esc(l.label)}">${esc(l.label)}</button>`)
                 .join('');
             return `
@@ -296,22 +324,23 @@ const Home = (function () {
             `;
         }
         if (step === 'variant') {
-            const choices = WELCOME_VARIANTS
-                .filter(v => available.includes(v.code))
+            const choices = _getWelcomeVariants(_welcomeLangLabel)
                 .map(v => `<button type="button" class="pl-welcome-choice" data-welcome-code="${esc(v.code)}">${esc(v.label)}</button>`)
                 .join('');
+            const q = _welcomeLangLabel ? `Which ${_welcomeLangLabel}?` : 'Which variety?';
             return `
-                <p class="pl-welcome-question">Which Spanish?</p>
+                <p class="pl-welcome-question">${esc(q)}</p>
                 <div class="pl-welcome-choices">${choices}</div>
                 <button type="button" class="pl-welcome-back" data-welcome-step="language">← Back</button>
             `;
         }
+        const hasVariants = _getWelcomeVariants(_welcomeLangLabel).length > 1;
         return `
             <div class="pl-welcome-choices">
                 <button type="button" class="pl-welcome-choice" data-welcome-start="start">Start from the beginning</button>
                 <button type="button" class="pl-welcome-choice" data-welcome-start="placement">Find my level</button>
             </div>
-            <button type="button" class="pl-welcome-back" data-welcome-step="language">← Back</button>
+            <button type="button" class="pl-welcome-back" data-welcome-step="${hasVariants ? 'variant' : 'language'}">← Back</button>
         `;
     }
 
@@ -342,8 +371,10 @@ const Home = (function () {
         el.addEventListener('click', e => {
             const language = e.target.closest('[data-welcome-language]');
             if (language) {
-                const choice = WELCOME_LANGUAGES.find(l => l.label === language.getAttribute('data-welcome-language'));
-                const codes = choice.codes.filter(c => Lang.available().includes(c));
+                const label = language.getAttribute('data-welcome-language');
+                _welcomeLangLabel = label;
+                const choice = _getWelcomeLanguages().find(l => l.label === label);
+                const codes = (choice && choice.codes) ? choice.codes.filter(c => Lang.available().includes(c)) : [];
                 if (codes.length > 1) {
                     _showWelcomeStep('variant');
                 } else {
