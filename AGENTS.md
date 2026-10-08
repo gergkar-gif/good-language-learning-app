@@ -178,6 +178,8 @@ Carried over from `docs/archive/PLANNING.md`; the rules that still apply to cont
 
 ## Adding a new course (Polish, Czech, Slovak, French, German, …)
 
+**Generating content (a new course, a new level or a regenerated unit): read [docs/course-generation-brief.md](docs/course-generation-brief.md) first.** It holds the lesson shape, the content rules and the checks in one place, and wins over the older guides.
+
 Every rule above applies to every course, and the validator enforces it the same way everywhere. A new course starts inside those rules, not outside them. Before writing any lesson or exercise for a new course `content/<code>/` (e.g. `pl`, `cs`, `sk`, `fr`, `de`):
 
 1. **Copy the full schema set** from `content/es-es/schemas/` (the reference set) into `content/<code>/schemas/`. Adjust only what the language itself needs, such as extra parts of speech (Hungarian added `postposition`) or id patterns. **Never loosen the metadata rules:** keep the six-value `category` enum. If the course's lesson shape has stage names, put them in an optional `stage` field, as Hungarian does, never in `category`.
