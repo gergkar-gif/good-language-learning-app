@@ -27,6 +27,21 @@ failure email per push. A `pre-push` hook in `.githooks/` runs it for you
 (enable with `git config core.hooksPath .githooks`) — do not bypass it with
 `--no-verify`.
 
+## Keep ROADMAP.md current (mark finished work done)
+
+ROADMAP.md is the project's record of what is open; nothing updates it but
+you. When you finish a task:
+
+- Strike the queue item through (`~~item~~`, with the date) and move its
+  full entry to ACHIEVED.md under "Completed queue items", keeping its
+  number. If only part is done, mark that part and say what is left.
+- Mark it done **everywhere it is listed**: search ROADMAP.md for the skill
+  slugs, unit ids and files you touched, and update every other item that
+  names them. Work done under one item often settles parts of another.
+- Put anything you found but did not fix in a new numbered queue item.
+
+Do it in the same commit as the work. A commit message is not a substitute.
+
 ## Content rules the validator enforces
 
 - Follow the schemas in `content/<lang>/schemas/`. Do not invent ids, fields

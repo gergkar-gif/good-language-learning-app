@@ -57,6 +57,14 @@ session knowing about, update ROADMAP.md before ending the session:
 
 - Mark a "Current priority queue" item done (`~~item~~` with the date) if it
   was on that list.
+- Mark it done **everywhere it is listed**. Work done under one item often
+  settles parts of others (a "small-fixes pass" fixing another item's
+  follow-ups). Search ROADMAP.md for the skill slugs, unit ids and files you
+  touched, and update or archive every item that names them, in the same
+  edit. Stale entries have cost whole sessions (2026-10-08: items 137, 138,
+  141, 143 and 144 all still listed work that was done).
+- Before you tell the user an item is open, check it against the data
+  (validator, counts, the file itself), not only against its roadmap text.
 - Add a dated entry to the relevant topic section (Content & curriculum,
   Workshop, Decks, etc.) describing what shipped, if it's a real feature or
   fix worth remembering later — not every small tweak needs one.
