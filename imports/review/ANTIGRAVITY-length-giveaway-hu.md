@@ -368,3 +368,36 @@ own question**: does a *Miért* question have only *Mert…* answers, a
 numbers or years, a dialogue reply a reply to **that** line? Decisions
 moved to the neighbouring entry are exactly the mistake the diff against
 the worksheet cannot see.
+
+### Block 4 (B2), reviewed 2026-10-08
+
+Commit `9761fb22`. The mechanics are right and this block had no swapped
+decisions (every new option was read next to its own question): all 55
+decisions (9 shorten / 46 match / 0 log) are applied as written, nothing
+outside the worksheet changed, no `teaches` / `category` / `stage` /
+`correct` value moved, the validator passes, no B2 id is still flagged. The
+distractors are the best so far: plausible, specific and false.
+
+**Fix these three in a separate commit before you start block 5**
+(edit the worksheet entries as well):
+
+1. `b2-urbanusnepi-consolidation.ex08` (*native B2 placement of 'ellenben'
+   and 'ezzel szemben'*): two of the three wrong options are acceptable
+   Hungarian. *… ellenben Monoron …, az urbánusok ezzel szemben …* just
+   swaps the two connectors, and *szemben ezzel* is a normal variant of
+   *ezzel szemben*. Rewrite them so they are plainly wrong placements (for
+   example *ellenben* at the end of the sentence or between the article and
+   its noun, *ezzel szemben* inside a verb phrase). Keep the one that
+   puts *ellenben* right after the first subject if you find it clearly
+   wrong; if you are not sure it is, replace that too.
+2. `b2-07-02-dialogue-2`: *Amennyire pontosabban figyelte …, annyira
+   kevésbé …* can pass as a (clumsy) correlative. Replace it with a form
+   that is plainly wrong (wrong correlative pair, or a comparative missing
+   where the pair needs one). Keep *Minél pontosan …*.
+3. `b2-35-04-controlled-3` (*Select the postposition that commonly pairs
+   with 'érdekében'*): the question is itself malformed, since *érdekében*
+   is in the stem and in the marked answer. Don't change the options: set
+   `decision: log` (restore the original shortened option if you changed
+   it, which you did, from *a fenntarthatóság érdekében (in the interest of
+   sustainability)* back to that text) and add it to
+   `hu-review-questions.txt` with a proposed rewritten question.
