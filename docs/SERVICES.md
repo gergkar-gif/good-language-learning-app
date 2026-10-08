@@ -278,3 +278,24 @@ Expected:
 After that, any speaking drill or oral challenge records cleanly on mobile and
 desktop, scores pronunciation with Whisper, and lets you tap **Your Voice** to
 listen back.
+
+---
+
+## Google Search Console and discoverability
+
+Parlour is indexed via Google Search Console at `https://parlour.me.uk`.
+
+**On-site discovery assets.**
+- `robots.txt`: Allows search engines, disallows private internal routes (`/tools/`, `/docs/`), points to sitemap.
+- `sitemap.xml`: Canonical sitemap containing indexable routes (`https://parlour.me.uk/`, `https://parlour.me.uk/privacy.html`).
+- `index.html`: Canonical link, Open Graph metadata, Twitter card, Schema.org JSON-LD structured data (`WebSite` and `WebApplication`), and `<noscript>` fallback.
+
+**Search Console setup.**
+1. Sign in to [Google Search Console](https://search.google.com/search-console).
+2. Choose **Domain** property and enter `parlour.me.uk` (or **URL prefix** with `https://parlour.me.uk`).
+3. Verification:
+   - For Domain property: Add the DNS TXT record provided by Google (e.g. `google-site-verification=...`) into Cloudflare DNS.
+   - For URL prefix property: Add the HTML tag `<meta name="google-site-verification" content="..." />` into `index.html` or upload the verification HTML file to the root.
+4. Under **Sitemaps**, submit `https://parlour.me.uk/sitemap.xml`.
+5. Under **URL Inspection**, enter `https://parlour.me.uk/` and click **Request Indexing**.
+
