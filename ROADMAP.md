@@ -57,6 +57,8 @@ Completed work is archived out to `ACHIEVED.md`.
     - es-latam: `content/es-latam/curriculum/challenges.json` is written for Spain (a café in Madrid, *soy de España*, tapas and *De primero…* in `a2-restaurant`). Rewrite its 6 entries in a Latin American setting *(sign-off)*.
     - hu: no `content/hu/curriculum/challenges.json`, so every Hungarian lesson 404s on it and uses the generated challenge. Write a Hungarian set *(sign-off)*.
 
+151. **Hungarian fill-blanks without an `english` line (added 2026-10-08, from item 149).** 2,417 of 5,083 HU fill-blanks have no translation (A1 691, A2 611, B1 1,115; Spanish has one on every fill-blank), so the learner gets no meaning after answering and "Need a hint?" stops at the first letter. **Assigned to Antigravity: [docs/hu-fillblank-english-brief.md](docs/hu-fillblank-english-brief.md)** (A1 first, then stop for review). The list is `validate-content.py --warnings` → `fill-blank without english`. When all three levels are done, Claude makes `english` required in `content/hu/schemas/exercises.schema.json`.
+
 ---
 
 ## 2. Future Feature Ideas

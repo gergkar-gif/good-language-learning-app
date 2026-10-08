@@ -768,6 +768,10 @@ def validate_language(lang, only=None, sources=None):
             meta_errors += stray_script_errors(path)
             if name == "exercises":
                 meta_errors += fill_blank_hint_errors(data)
+                # Spanish schemas already require it; HU is being filled (ROADMAP 151).
+                for ex in data.get("exercises", []):
+                    if ex.get("type") == "fill-blank" and not ex.get("english"):
+                        warn(lang, "fill-blank without english", f"{path.relative_to(ROOT).as_posix()} :: {ex.get('id')}")
 
             if not errors and not meta_errors:
                 passed += 1
