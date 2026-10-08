@@ -48,6 +48,20 @@ current:
 proposed:
 KEEP
 
+### b2-35-04-controlled-3   (content/hu/exercises/b2/b2-35-04-ex.json)
+why: Question stem is malformed: it names 'érdekében' in the question itself ("Select the postposition that commonly pairs with 'érdekében'") while 'érdekében' is the postposition tested in the answer.
+current:
+Select the postposition that commonly pairs with 'érdekében' in sustainability discourse:
+* a fenntarthatóság érdekében (in the interest of sustainability)
+- a fenntarthatóság nélkül
+- a fenntarthatóság helyett
+proposed:
+Select the postpositional phrase meaning 'in the interest of sustainability' in environmental discourse:
+* a fenntarthatóság érdekében
+- a fenntarthatóság nélkül
+- a fenntarthatóság helyett
+note: Rewriting the question stem fixes the self-answering prompt defect and allows removing the English gloss from the correct option to eliminate the length giveaway.
+
 ### c1-01-01-controlled-4   (content/hu/exercises/c1/c1-01-01-ex.json)
 why: Multiple elevated concessive conjunctions (noha, jóllehet, ámbár) are equally natural in this context
 current:

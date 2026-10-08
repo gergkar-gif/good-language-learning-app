@@ -3810,8 +3810,8 @@ Tanár: _____
 * Minél pontosabban figyelte a részleteket, annál kevésbé uralkodott el rajta a pánik.
 - Mert nem vette észre, hogy a műtőben van.
 - Amennyiben félt, azonnal elaludt.
-decision: match: Amennyire pontosabban figyelte a részleteket, annyira kevésbé uralkodott el rajta a pánik. || Minél pontosan figyelte a részleteket, annál kevésbé uralkodott el rajta a pánik.
-why: Both new wrong options violate the grammar of correlative comparatives (amennyire... annyira cannot take comparatives; minél requires comparative pontosabban, not positive pontosan); matching length (90 and 81 vs 84 chars).
+decision: match: Minél pontosabban figyelte a részleteket, annyira kevésbé uralkodott el rajta a pánik. || Minél pontosan figyelte a részleteket, annál kevésbé uralkodott el rajta a pánik.
+why: Both new wrong options violate the grammar of correlative comparatives (mismatched correlative pair minél... annyira; minél requires comparative pontosabban, not positive pontosan); matching length (85 and 81 vs 84 chars).
 
 ### b2-07-04-dialogue-1   teaches: ['correlative-minel-annal']
 files: content/hu/exercises/b2/b2-07-04-ex.json
@@ -3911,8 +3911,8 @@ Select the postposition that commonly pairs with 'érdekében' in sustainability
 * a fenntarthatóság érdekében (in the interest of sustainability)
 - a fenntarthatóság nélkül
 - a fenntarthatóság helyett
-decision: shorten: a fenntarthatóság érdekében
-why: Removed the parenthetical English gloss so the correct option matches the wrong options in length and style (27 vs 24 and 24 chars).
+decision: log
+why: The question stem is malformed ("Select the postposition that commonly pairs with 'érdekében'") as it contains the target postposition in the stem while testing the noun phrase; logged to hu-review-questions.txt with proposed rewrite.
 
 ### b2-36-04-controlled-3   teaches: ['b2-mastery-synthesis']
 files: content/hu/exercises/b2/b2-36-04-ex.json
@@ -4284,8 +4284,8 @@ Which sentence demonstrates native B2 placement of 'ellenben' and 'ezzel szemben
 - Ellenben a népi írók szemben ezzel beszéltek.
 - A hatalom ellenben szemben ezzel volt.
 - Monoron szemben ezzel ellenben ültek.
-decision: match: A hatalom a megosztottságra épített; ellenben Monoron a népi írók a közösségi jogokról, az urbánusok ezzel szemben az alkotmányos garanciákról beszéltek egymást tisztelve. || A hatalom a megosztottságra épített; szemben ezzel Monoron a népi írók a közösségi jogokról, az urbánusok ellenben az alkotmányos garanciákról beszéltek egymást tisztelve. || A hatalom a megosztottságra épített; ezzel szemben Monoron ellenben a népi írók a közösségi jogokról, az urbánusok az alkotmányos garanciákról beszéltek egymást tisztelve.
-why: All options are now complete B2 sentences of matching length (175, 175, 175 vs 165 chars) differing solely in discourse marker placement: swapping the two markers, inverting 'szemben ezzel', and clustering 'ezzel szemben ellenben'.
+decision: match: A hatalom a megosztottságra épített; ezzel szemben Monoron a népi írók a közösségi jogokról, az urbánusok az alkotmányos garanciákról beszéltek egymást tisztelve ellenben. || A hatalom a megosztottságra épített; ezzel szemben Monoron a népi írók a közösségi jogokról, az ellenben urbánusok az alkotmányos garanciákról beszéltek egymást tisztelve. || A hatalom a megosztottságra épített; Monoron a népi írók a közösségi jogokról, az urbánusok ellenben az alkotmányos garanciákról beszéltek egymást ezzel szemben tisztelve.
+why: All options are complete B2 sentences of matching length (165, 165, 172 vs 165 chars); wrong options exhibit plainly ungrammatical placement of the discourse markers (sentence-final ellenben, ellenben between article and noun, and ezzel szemben inside the participial verb phrase).
 
 
 ########## Block 5: hu c1 (164 exercises) ##########
