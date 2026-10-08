@@ -4,8 +4,10 @@ You are adding the missing `english` line to Hungarian fill-blank exercises.
 Read this whole file, then [AGENTS.md](../AGENTS.md) § "Exercise metadata" and
 [course-generation-brief.md](course-generation-brief.md) § 6.4, before you change anything.
 
-**Do A1 first (691 exercises), then stop.** The user and Claude review it before
-A2 (611) and B1 (1,115) are done.
+**A1 is done and reviewed (2026-10-09).** A2 (611) and B1 (1,115) are two
+separate runs: each run is given one level, does only that level, and commits it
+on its own. Two runs can go at the same time, since they touch different files;
+pull before you commit.
 
 ## What is wrong
 
@@ -22,12 +24,13 @@ When all of them have one, Claude makes `english` required in
 ## The list
 
 ```
-python scripts/validate-content.py --warnings
+python scripts/check-content.py hu a2      # or b1
 ```
 
-prints every one under `fill-blank without english`, as `file :: exercise id`.
-The count goes down as you work; the level is done when no file of that level
-is listed.
+lists every one under `missing-english`, by file and exercise id;
+`--summary` gives the count. The count goes down as you work; the level is done
+when it is 0. (`validate-content.py --warnings` lists the same ones for all
+levels together, under `fill-blank without english`.)
 
 ## What to write
 
@@ -45,6 +48,10 @@ Add one field, `"english"`, to each listed exercise. Change nothing else.
 - **Pin the answer.** The English must fit every entry in `answers` and must
   not fit a different form: keep the person, number, tense and possessor of the
   answer (*my wife*, not *wife*; *had happened*, not *happens*).
+- **Say what an English speaker would say, not word for word.** *Kérek egy
+  kávét* is *I'd like a coffee*, never *I request a coffee*; *Holnap is
+  találkozunk* is *We're meeting tomorrow too*, not *Tomorrow we also meet*.
+  Pinning the answer means keeping its meaning and form, not its word order.
 - **Hungarian has no gender.** A dropped or *ő* subject is *He/She* (as in the
   existing lines) unless the sentence or story fixes it (*Ő a feleségem* → *She is my wife*).
 - **Translate only the Hungarian.** If the sentence starts with an English
@@ -77,12 +84,13 @@ Examples:
 ## Checks before you hand back
 
 1. `python scripts/validate-content.py --changed` passes.
-2. `python scripts/validate-content.py --warnings` lists no file of the level you did.
+2. `python scripts/check-content.py hu <level> --summary` shows `missing-english` 0.
 3. Read 20 of your translations against their sentences at random.
 
 ## Records
 
-- Commit per level (`content(hu): english lines for A1 fill-blanks (ROADMAP 151)`).
-- Update ROADMAP item 151 with what is done; when all three levels are done, the
-  item moves to ACHIEVED.md in the same commit (AGENTS.md § "Project records").
+- Commit per level (`content(hu): english lines for A2 fill-blanks (ROADMAP 151)`).
+- Update ROADMAP item 151 with what is done; the run that finishes the last of
+  A2 and B1 moves the item to ACHIEVED.md in the same commit (AGENTS.md §
+  "Project records").
 - Hand back with: counts per level, the "looks wrong" list, anything unclear.
