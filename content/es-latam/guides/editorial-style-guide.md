@@ -65,6 +65,8 @@ Avoid exercises that exist only to increase lesson length.
 
 - Every exercise must specify `category` (`vocabulary | grammar | reading | dialogue | writing | listening`).
 - Every non-`reading` exercise must carry exactly one `teaches` slug from the frozen skill list in `skills/<lang>.json` (chosen by what a wrong answer shows; full rules in AGENTS.md § "Exercise metadata" and docs/skill-tagging-spec.md) (applies to both `es-latam` and `es-es`).
+- Never use a form before the screen that teaches it (its skill's `taught_in`): *lo / la / los / las* are taught at `a2-12-01-gr`, so earlier dialogues repeat the noun (*Sí, ya hemos visto el río*). This includes wrong options and grammar-screen examples.
+- Every `sentence-builder` carries `english` (shown as feedback after the attempt; without it the learner gets none).
 - Grammar choice items record `distractor_skills` when a wrong option is a well-formed form of another grammar skill, keyed by 0-based option index as written in the file: options `["es", "está", "hay"]` for *La casa ____ grande* get `{"1": "estar", "2": "hay"}`, using the registry's slugs. Random wrong words get no entry.
 
 ---

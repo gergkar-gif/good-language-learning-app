@@ -27,20 +27,61 @@ failure email per push. A `pre-push` hook in `.githooks/` runs it for you
 (enable with `git config core.hooksPath .githooks`) — do not bypass it with
 `--no-verify`.
 
-## Keep ROADMAP.md current (mark finished work done)
+## Project records: roadmap, achieved, docs (every agent, every session)
 
-ROADMAP.md is the project's record of what is open; nothing updates it but
-you. When you finish a task:
+Nothing updates these files but the agent doing the work, so they are only
+as accurate as the last session left them. Stale entries have cost whole
+sessions. These rules apply to Claude, Antigravity and anyone else.
 
-- Strike the queue item through (`~~item~~`, with the date) and move its
-  full entry to ACHIEVED.md under "Completed queue items", keeping its
-  number. If only part is done, mark that part and say what is left.
-- Mark it done **everywhere it is listed**: search ROADMAP.md for the skill
-  slugs, unit ids and files you touched, and update every other item that
-  names them. Work done under one item often settles parts of another.
-- Put anything you found but did not fix in a new numbered queue item.
+**Where things live (one home each).**
 
-Do it in the same commit as the work. A commit message is not a substitute.
+- `ROADMAP.md` "Active & Parked Priorities": **open work only**. Nothing
+  finished stays in it, not even struck through.
+- `ACHIEVED.md`: everything finished, with its original item number.
+- `docs/`, the course guides and `AGENTS.md`: specs and rules. What a future
+  author or generator must know lives here, not in the roadmap or a commit.
+- Commit messages and chat are not records. Anything only there is lost.
+
+**Finishing work (in the same commit as the work).**
+
+1. **Move it to ACHIEVED.md.** A whole item: move its full entry to
+   ACHIEVED.md under "Completed queue items" (newest first), keep its number
+   and add `— **Done <date>.**` and what was done. Part of an item: delete
+   that part from the roadmap entry and log it in ACHIEVED.md under the
+   item's number. Never leave `~~done~~` text in the roadmap. Numbers are
+   never reused or renumbered.
+2. **Update every other entry that lists the same work.** Work done under one
+   item often settles parts of others. Search ROADMAP.md for the skill slugs,
+   unit ids, exercise ids and files you touched, and update or archive each
+   entry that names them. Fix any "see item N" that now points at ACHIEVED.md.
+3. **Write the lesson into the docs.** If the change fixes a class of
+   content problem, changes how an exercise or lesson type behaves, or sets a
+   new convention (for example: a form used before its screen teaches it, a
+   lesson type rendering wrong, a new required field), add the rule where
+   authors and generators read it, so future content is generated right:
+   - this file, § "Teaching and exercise principles" (all courses);
+   - `content/es-latam/guides/editorial-style-guide.md` (Spanish) and
+     `content/hu/HU_Content_Authoring_Template.md` (Hungarian);
+   - `docs/skill-tagging-spec.md` § "Read-through conventions" and
+     `docs/readthrough-brief.md` for tagging decisions;
+   - and, if a machine can check it, a check in
+     `scripts/validate-content.py` or `scripts/readthrough_check.py`.
+   A fix that isn't written down gets regenerated wrong.
+4. **Queue what you found but didn't fix**, as a new numbered item with the
+   actual list (ids, files, counts). Never "see the session log" or "see the
+   subagent reports": save a subagent's findings to a file (`imports/review/`
+   or `docs/`) and link it.
+
+**Shape of a queue item.** A bold title line with the date added, one or two
+sentences of context (what, why, where the spec is), then one sub-point per
+piece of open work, each marked when it needs the user: *(sign-off)*,
+**PARKED by the user**, **User: later**. Work that spans sessions carries a
+`State:` / `Next:` line, so the next session can start without the chat.
+Item 148 is the model.
+
+**Before telling the user something is open or done**, check it against the
+files (the validator, a count, the file itself), not only against the
+roadmap text.
 
 ## Content rules the validator enforces
 
@@ -97,6 +138,8 @@ Carried over from `docs/archive/PLANNING.md`; the rules that still apply to cont
 - Conjugation prompts: never ask for a form when the subject is unclear; make it explicit.
 - Accept every grammatically valid alternative (interchangeable names and nouns, and similar).
 - `fill-blank` hints: add a short parenthetical to `sentence` only when the blank is genuinely unrecoverable (a brand-new noun, an ambiguous verb person or tense), and never let it repeat the answer: for the answer `mientras que` the hint is `(meanwhile)`, not `(mientras que)`. There is no typed `hint` field yet.
+- Never use a form before the screen that teaches it: check the skill's `taught_in` in `skills/<lang>.json`. Example: Spanish *lo / la / los / las* are first taught at `a2-12-01-gr`, so earlier dialogues repeat the noun (*Sí, ya hemos visto el río*, not *Sí, ya lo he visto*); that goes for grammar-screen examples and wrong options too. Fixed in ES A2 units 2–6 on 2026-10-08.
+- Every `sentence-builder` carries `english`. The engine shows it only as feedback after the attempt and as an opt-in hint above 8 tiles (`engine/lessons.js`), so a builder without it gives the learner no feedback.
 - A question must be answerable from the exercise itself: a pronoun with no antecedent (`ő`, `él`) makes two options equally valid, and the same question must not appear twice in a row.
 - Per-level exercise shape (types per block, the review-lesson shape) is checked by `python scripts/audit-lesson.py a1|a2|b1`. Many older lessons predate it and do not all pass, so treat it as a guide, not a gate. The old prose guides are in `docs/archive/guides/`.
 

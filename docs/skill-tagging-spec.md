@@ -171,6 +171,8 @@ So every unit is tagged the same way:
 
 - **A unit's own contrast outranks the Sí/No rule (ES A2, decided with the user 2026-10-06).** In a dialogue whose wrong replies differ in the contrast the unit teaches (*Sí, todavía no…* beside *Sí, ya…*; *desde hace* vs *desde enero*), tag that grammar skill, because a learner who picks the wrong reply has confused that contrast and should be routed to its practice. Use the unit vocabulary skill only when the wrong replies differ just by Sí/No or an infinitive.
 
+- **Set phrases built on a taught frame get the frame's grammar skill (ES A2, decided with the user 2026-10-08).** Invitations are not their own skill: *¿Quieres venir…?* / *Sí, quiero ir* items are `querer-poder`, *¿Te gustaría…? / Me gustaría…* items are `polite-softening`; matching, "what does X mean", a blank that supplies one word, and accept/decline phrases with no taught form stay on the unit vocabulary skill. A reported question (*Preguntó qué pasó*, *Quiso saber dónde…*) is `preguntas-indirectas`; a direct one is `questions`.
+
 ## Coverage
 
 Every skill should have at least **6 exercises** (per variant for Spanish),
