@@ -46,6 +46,14 @@ list) come first. The new course is held to exactly the same rules, and the
 validator fails a course folder that has content but no schemas or tag
 registry.
 
+## Roles and subagents
+
+Roles are in [AGENTS.md](AGENTS.md) § "Who does what": the user decides,
+Claude manages, Antigravity does bulk work from briefs. **Never run more than
+2 subagents at once**; count the running ones before launching. Small
+mistakes in a worker's output can be fixed directly or by a Haiku subagent;
+bigger ones go back through the brief.
+
 ## Project records: follow AGENTS.md
 
 The rules for ROADMAP.md, ACHIEVED.md and the docs are in
