@@ -56,6 +56,7 @@ const LANGUAGE_CODE = { en: 'en-US', es: 'es-ES', hu: 'hu-HU' };
 const SHORT_VOICE = {
     male: 'Charon',        // firm, deep — default dialogue/character voice
     female: 'Kore',        // firm — default dialogue/character voice
+    dialogue: 'Charon',    // default dialogue voice when gender unspecified
     narrator: 'Sulafat',   // warm, steady — stories and long reading passages
     reading: 'Sulafat',
     vocabulary: 'Enceladus', // deep male — the main course voice
@@ -186,12 +187,13 @@ export default {
             text = text + '.';
         }
 
-        // Hungarian Wh-question cadence: Hungarian Wh-questions (*ki, mi, hol...*) naturally use
-        // a falling tone. When '?' is sent to the model it produces an English-style high-rise
-        // on the final syllable which sounds unnatural. Replace the terminal '?' with '.' so the
-        // model uses falling declarative cadence. Also ensure initial letter is capitalized to
-        // prevent abbreviation silence.
-        const HU_WH_WORDS = /^(ki|mi|hol|mikor|miért|hogyan|mennyi|milyen|melyik|hova|honnan|merre|meddig|mettől|mióta|mire)\b/i;
+        // Hungarian Wh-question cadence: Hungarian Wh-questions naturally use a falling tone
+        // (eső hanglejtés), exactly like declarative sentences. When '?' is sent to Google TTS,
+        // it produces an English-style high-rising uptalk on the final syllable which sounds
+        // unnatural. Replace the terminal '?' with '.' so the model uses falling declarative cadence.
+        // We match all interrogatives (including short 'hogy', accusative 'mit', 'hány', 'hová',
+        // inflected case forms like 'kivel', 'mivel') and allow conversational openers (és, de, hát, te...).
+        const HU_WH_WORDS = /^(?:(?:és|de|hát|akkor|nos|meg|te|ti|ön|önök|maga|maguk)\s+)*(ki|kik|kit|kiket|kinek|kiknek|kivel|kikkel|kiről|kitől|kihez|kiben|kinél|mi|mik|mit|miket|minek|mivel|mikkel|miről|mitől|mihez|miben|minél|mire|hol|hova|hová|honnan|honnét|merre|merrefelé|mikor|mikorra|meddig|mettől|mióta|miért|hogy|hogyan|mennyi|mennyit|mennyibe|mennyiért|mennyivel|hány|hányat|hányan|hányas|hányszor|hányadik|milyen|milyet|milyenre|milyenben|milyennel|melyik|melyiket|melyikre|melyikkel|melyikben|melyiknél|miféle)\b/i;
         if (languageCode === 'hu-HU' && text.endsWith('?') && HU_WH_WORDS.test(text)) {
             text = text.charAt(0).toUpperCase() + text.slice(1, -1) + '.';
         }
@@ -200,7 +202,10 @@ export default {
         // boundaries (szólamhatárok). Appending a typographic em-dash after commas followed by
         // whitespace provides a natural breathing pause so complex Hungarian sentences don't
         // feel rushed. Only applies to long-form reading/story narration; preserves decimal numbers (e.g. 1,5).
-        if (languageCode === 'hu-HU' && (payload.type === 'story' || payload.type === 'reading' || payload.type === 'narrator')) {
+        // Must NEVER apply to dialogue or character speech, where an em-dash breaks natural vocatives
+        // ("Szia, Meg!") and short conversational replies into halting, unnatural fragments.
+        const isDialogue = payload.type === 'dialogue' || Boolean(payload.character);
+        if (languageCode === 'hu-HU' && !isDialogue && (payload.type === 'story' || payload.type === 'reading' || payload.type === 'narrator')) {
             text = text.replace(/,(\s+)(?![—–])/g, ', —$1');
         }
 
@@ -213,7 +218,8 @@ export default {
         }
 
         const voiceName = resolveVoiceName(payload, languageCode);
-        const speakingRate = Number(payload.speakingRate) || 1.0;
+        const defaultRate = isDialogue ? 1.05 : 1.0;
+        const speakingRate = Number(payload.speakingRate) || defaultRate;
         const pitch = Number(payload.pitch) || 0.0;
 
         const r2 = env && env.TTS_CACHE;

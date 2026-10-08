@@ -920,7 +920,7 @@ const StoryAudioPlayer = {
             ParlourTTS.preload({
                 text: p.text,
                 language: pLang,
-                type: 'story',
+                type: isNarrator ? 'story' : 'dialogue',
                 character: charVoice,
                 gender: charGender
             });
@@ -987,7 +987,7 @@ const StoryAudioPlayer = {
         const played = await ParlourTTS.speak({
             text,
             language: paraLang,
-            type: 'story',
+            type: isNarrator ? 'story' : 'dialogue',
             character,
             gender,
             speed: this.speed,

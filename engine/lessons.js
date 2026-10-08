@@ -995,21 +995,30 @@ function setExerciseVoiceMuted(value) {
     if (value && typeof ParlourTTS !== 'undefined') ParlourTTS.stop();
 }
 
-function speakExercise(text) {
+function speakExercise(text, options) {
     if (!text || exerciseVoiceMuted() || typeof ParlourTTS === 'undefined') return;
-    ParlourTTS.speak({ text, type: 'vocabulary' });
+    const opts = options || {};
+    ParlourTTS.speak(Object.assign({ text, type: 'vocabulary' }, opts));
 }
 
 function speakSettled() {
     const text = stepState.spoken;
     if (!text) return;
+    const isDialogue = Boolean(stepState.choiceIsDialogue);
+    const gender = stepState.spokenGender;
     const slot = document.getElementById('step-listen');
-    if (slot) slot.innerHTML = say(text, { label: 'Hear the answer again' });
+    if (slot) slot.innerHTML = say(text, {
+        label: 'Hear the answer again',
+        type: isDialogue ? 'dialogue' : undefined,
+        gender: isDialogue ? gender : undefined
+    });
     // Let the "correct" chime finish first when sound effects are on.
     const soundOn = typeof Sound !== 'undefined' && !Sound.muted();
     const step = currentStepIndex;
     setTimeout(() => {
-        if (currentStepIndex === step && stepState.spoken === text) speakExercise(text);
+        if (currentStepIndex === step && stepState.spoken === text) {
+            speakExercise(text, isDialogue ? { type: 'dialogue', gender } : undefined);
+        }
     }, soundOn ? 350 : 0);
 }
 
@@ -1402,15 +1411,21 @@ const stepRenderers = {
     dialogue(step) {
         return `
             <div class="lsn-dialogue">
-                ${(step.lines || []).map(line => `
+                ${(step.lines || []).map(line => {
+                    const speaker = line.speaker || '';
+                    const gender = (speaker && typeof Reader !== 'undefined' && typeof Reader.inferCharacterGender === 'function')
+                        ? Reader.inferCharacterGender(speaker, {}, { male: 0, female: 0 })
+                        : undefined;
+                    const text = line.es || line.text || '';
+                    return `
                     <div class="lsn-line">
-                        <div class="lsn-speaker">${esc(line.speaker)}</div>
+                        <div class="lsn-speaker">${esc(speaker)}</div>
                         <div>
-                            <div class="lsn-es">${esc(line.es || line.text)}</div>
+                            <div class="lsn-es">${esc(text)}${say(text, { type: 'dialogue', gender })}</div>
                             ${line.en ? `<div class="lsn-en">${esc(line.en)}</div>` : ''}
                         </div>
                     </div>
-                `).join('')}
+                `;}).join('')}
             </div>
         `;
     },
@@ -1437,7 +1452,7 @@ const stepRenderers = {
             const charVoice = isNarrator ? undefined : voices[spk];
             const charGender = isNarrator ? undefined : genders[spk];
             return say(line.text, {
-                type: 'story',
+                type: isNarrator ? 'story' : 'dialogue',
                 character: charVoice,
                 gender: charGender
             });
@@ -1493,16 +1508,26 @@ const stepRenderers = {
         if (!Array.isArray(pick.correct)) stepState.translation = parts[pick.correct].gloss;
         stepState.choiceTexts = parts.map(p => p.text);
         stepState.choiceIsDialogue = true;
+        const missingLine = (step.prompt || []).find(l => /_{2,}/.test(l.text || ''));
+        const missingSpeaker = missingLine ? missingLine.speaker : '';
+        const missingGender = (missingSpeaker && typeof Reader !== 'undefined' && typeof Reader.inferCharacterGender === 'function')
+            ? Reader.inferCharacterGender(missingSpeaker, {}, { male: 0, female: 0 })
+            : undefined;
+        stepState.spokenGender = missingGender;
         stepState.spoken = choiceSpoken(Array.isArray(pick.correct) ? pick.correct[0] : pick.correct);
         const isMulti = Array.isArray(step.correct) && step.correct.length > 1;
         return `
             <div class="lsn-dialogue">
-                ${(step.prompt || []).map(line => `
+                ${(step.prompt || []).map(line => {
+                    const gender = (line.speaker && typeof Reader !== 'undefined' && typeof Reader.inferCharacterGender === 'function')
+                        ? Reader.inferCharacterGender(line.speaker, {}, { male: 0, female: 0 })
+                        : undefined;
+                    return `
                     <div class="lsn-line">
                         <div class="lsn-speaker">${esc(line.speaker)}</div>
-                        <div class="lsn-es">${escMd(line.text)}${/_{2,}/.test(line.text) ? '' : say(line.text)}</div>
+                        <div class="lsn-es">${escMd(line.text)}${/_{2,}/.test(line.text) ? '' : say(line.text, { type: 'dialogue', gender })}</div>
                     </div>
-                `).join('')}
+                `;}).join('')}
             </div>
             <p class="lsn-question">Choose the missing line:${isMulti ? ' <span class="lsn-multi-hint">(more than one answer is acceptable — pick any)</span>' : ''}</p>
             <div class="lsn-options">
@@ -1718,11 +1743,11 @@ const stepRenderers = {
 
             return `
                 <p class="lsn-question">Write in ${esc(langName)}.</p>
-                <div class="sp-lesson-card" style="padding:14px; border:1px solid var(--border); border-radius:8px; margin-bottom:12px; background:var(--surface);">
+                <div class="sp-lesson-card" style="padding:14px; border:1px solid var(--border); border-radius:var(--radius-sm); margin-bottom:12px; background:var(--surface);">
                     ${scenario ? `<p style="font-size:0.92rem; color:var(--text-muted); margin:0 0 6px 0; font-style:italic;">${esc(scenario)}</p>` : ''}
                     <p style="font-size:1.15rem; font-weight:700; color:var(--text-heading); margin:0 0 8px 0;">${esc(prompt)}</p>
                     ${cues.length ? `
-                        <div style="background:rgba(0,0,0,0.03); border-radius:6px; padding:8px 12px; margin-top:8px;">
+                        <div style="background:var(--wash); border:1px solid var(--border-light); border-radius:var(--radius-sm); padding:8px 12px; margin-top:8px;">
                             <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; color:var(--text-muted);">Points to include:</span>
                             <ul style="margin:4px 0 0 0; padding-left:18px; font-size:0.9rem; color:var(--text);">
                                 ${cues.map(c => `<li>${esc(c)}</li>`).join('')}
@@ -1731,14 +1756,14 @@ const stepRenderers = {
                     ` : ''}
                 </div>
                 <div class="lsn-composition-wrap" style="margin-bottom:10px;">
-                    <textarea class="lsn-input" data-write-composition="1" style="width:100%; min-height:90px; font-size:1rem; padding:10px; border-radius:8px;" placeholder="Write your response in ${esc(langName)}..." oninput="lessonCheckWriting()"></textarea>
+                    <textarea class="lsn-input" data-write-composition="1" style="width:100%; min-height:90px; font-size:1rem; padding:10px; border-radius:var(--radius-sm);" placeholder="Write your response in ${esc(langName)}..." oninput="lessonCheckWriting()"></textarea>
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px;">
                         <span id="lsn-comp-wordcount" style="font-size:0.8rem; color:var(--text-muted);">0/${stepState.minWords} words</span>
                         ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('[data-write-composition]') : ''}
                     </div>
                 </div>
                 ${modelAnswer ? `
-                    <div class="lsn-model hidden" data-model="comp" style="margin-top:12px; padding:12px; border-radius:8px; background:rgba(0,0,0,0.04);">
+                    <div class="lsn-model hidden" data-model="comp" style="margin-top:12px; padding:12px; border-radius:var(--radius-sm); background:var(--wash); border:1px solid var(--border-light);">
                         <span class="lsn-model-label" style="display:block; margin-bottom:4px; font-weight:700;">Example Model Text</span>
                         <span class="lsn-es" style="font-size:0.95rem; line-height:1.4;">${esc(modelAnswer)}${say(modelAnswer)}</span>
                     </div>
@@ -1970,18 +1995,18 @@ const stepRenderers = {
 
         return `
             <div class="sp-challenge-header" style="margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
-                <span class="cando-badge cando-badge-verified" style="font-size:0.75rem; padding:4px 8px; border-radius:4px; font-weight:700;">CEFR ${esc(level)} • ${esc(tierBadge)}</span>
+                <span class="cando-badge cando-badge-verified" style="font-size:0.75rem; padding:4px 8px; border-radius:var(--radius-sm); font-weight:700;">CEFR ${esc(level)} • ${esc(tierBadge)}</span>
                 ${(!isSentenceMode && stepState.canDo) ? `<span style="font-size:0.82rem; color:var(--text-muted); font-style:italic;">Target: "${esc(stepState.canDo)}"</span>` : ''}
             </div>
 
             ${isSnoozed ? `
-                <div class="sp-snoozed-banner" style="background:var(--surface); border:1px dashed var(--border); padding:10px 14px; margin-bottom:14px; display:flex; align-items:center; justify-content:space-between; gap:10px;">
+                <div class="sp-snoozed-banner" style="background:var(--surface); border:1px dashed var(--border); border-radius:var(--radius-sm); padding:10px 14px; margin-bottom:14px; display:flex; align-items:center; justify-content:space-between; gap:10px;">
                     <span style="font-size:0.88rem; color:var(--text-muted, #687787);">Speaking practice is currently snoozed. You can type your answer below.</span>
                     <button type="button" class="btn-secondary" onclick="lessonResumeSpeaking()" style="padding:4px 10px; font-size:0.82rem;">Turn mic on</button>
                 </div>
             ` : ''}
 
-            <div class="sp-lesson-card" style="padding:16px; border:1px solid var(--border); border-radius:10px; background:var(--card-bg, var(--surface));">
+            <div class="sp-lesson-card" style="padding:16px; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--surface);">
                 ${stepState.scenario ? `<p style="font-size:0.95rem; color:var(--text-muted); margin:0 0 8px 0; font-style:italic;">${esc(stepState.scenario)}</p>` : ''}
 
                 ${isSentenceMode ? `
@@ -1992,7 +2017,7 @@ const stepRenderers = {
                 `}
 
                 ${stepState.cues && stepState.cues.length ? `
-                    <div style="background:rgba(0,0,0,0.03); border-radius:6px; padding:10px 14px; margin-top:10px;">
+                    <div style="background:var(--wash); border:1px solid var(--border-light); border-radius:var(--radius-sm); padding:10px 14px; margin-top:10px;">
                         <span style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; color:var(--text-muted);">${isSentenceMode ? 'Hint:' : 'Points to include:'}</span>
                         <ul style="margin:6px 0 0 0; padding-left:20px; font-size:0.92rem; color:var(--text);">
                             ${stepState.cues.map(c => `<li style="margin-bottom:4px;">${esc(c)}</li>`).join('')}
@@ -2024,7 +2049,7 @@ const stepRenderers = {
                 <details style="font-size:0.85rem; color:var(--text-muted);">
                     <summary style="cursor:pointer; user-select:none;">Or type your response</summary>
                     <div style="margin-top:8px;">
-                        <textarea id="lesson-challenge-input" class="lsn-input" style="width:100%; min-height:60px; font-size:0.95rem; padding:8px; border-radius:6px;" placeholder="Type your response in ${esc(langName)}..." oninput="stepState.checkDisabled = false; updateFooterButton();"></textarea>
+                        <textarea id="lesson-challenge-input" class="lsn-input" style="width:100%; min-height:60px; font-size:0.95rem; padding:8px; border-radius:var(--radius-sm);" placeholder="Type your response in ${esc(langName)}..." oninput="stepState.checkDisabled = false; updateFooterButton();"></textarea>
                     </div>
                 </details>
             </div>
@@ -2179,7 +2204,11 @@ function renderStep() {
 
     // Fetch the answer's audio now, so it plays the moment the step settles.
     if (stepState.spoken && !exerciseVoiceMuted() && typeof ParlourTTS !== 'undefined') {
-        ParlourTTS.preload({ text: stepState.spoken });
+        ParlourTTS.preload({
+            text: stepState.spoken,
+            type: stepState.choiceIsDialogue ? 'dialogue' : undefined,
+            gender: stepState.choiceIsDialogue ? stepState.spokenGender : undefined
+        });
     }
 
     // Auto-focus active text inputs on desktop without triggering scroll jumps
@@ -3453,10 +3482,10 @@ async function lessonGetWritingFeedback() {
     const score = result.overallScore || 0;
     const tip = _graderOneLineTip(result);
     resultEl.innerHTML = `
-        <div class="sp-challenge-feedback-card" style="background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px 16px; margin:10px 0;">
+        <div class="sp-challenge-feedback-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); padding:12px 16px; margin:10px 0;">
             <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
                 <span style="font-weight:700; font-size:0.9rem; color:var(--text-heading);">Writing Coach</span>
-                <span class="cando-badge ${score >= 60 ? 'cando-badge-verified' : 'cando-badge-gap'}" style="font-size:0.8rem;">${score}%</span>
+                <span class="cando-badge ${score >= 60 ? 'cando-badge-verified' : 'cando-badge-gap'}" style="font-size:0.8rem; border-radius:var(--radius-sm);">${score}%</span>
             </div>
             ${tip ? `<p style="margin:0; font-size:0.95rem; color:var(--text); line-height:1.4;">${esc(tip)}</p>` : ''}
         </div>
@@ -3999,7 +4028,7 @@ async function lessonCheckChallenge() {
                     </div>
                 ` : ''}
                 ${target ? `
-                    <div style="margin-top:10px; padding:10px 14px; background:rgba(0,0,0,0.03); border-radius:6px;">
+                    <div style="margin-top:10px; padding:10px 14px; background:var(--wash); border:1px solid var(--border-light); border-radius:var(--radius-sm);">
                         <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Model Answer:</span>
                         <p style="margin:4px 0 0 0; font-size:1.05rem; font-weight:600; color:var(--text-heading);">${esc(target)}</p>
                     </div>
@@ -4075,10 +4104,10 @@ async function lessonCheckChallenge() {
         if (revealEl) {
             revealEl.classList.remove('hidden');
             revealEl.innerHTML = `
-                <div class="sp-challenge-feedback-card" style="background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px 16px; margin:10px 0;">
+                <div class="sp-challenge-feedback-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); padding:12px 16px; margin:10px 0;">
                     <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
                         <span style="font-weight:700; font-size:0.9rem; color:var(--text-heading);">Coach Feedback</span>
-                        <span class="cando-badge ${score >= 60 ? 'cando-badge-verified' : 'cando-badge-gap'}" style="font-size:0.8rem;">${score}%</span>
+                        <span class="cando-badge ${score >= 60 ? 'cando-badge-verified' : 'cando-badge-gap'}" style="font-size:0.8rem; border-radius:var(--radius-sm);">${score}%</span>
                     </div>
                     ${tip ? `<p style="margin:0; font-size:0.95rem; color:var(--text); line-height:1.4;">${esc(tip)}</p>` : ''}
                 </div>

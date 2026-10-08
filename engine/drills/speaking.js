@@ -952,7 +952,7 @@ const SpeakingDriller = (function () {
                     ${p.scenario ? `<p class="sp-prod-prompt-scenario" style="margin: 4px 0 8px 0; font-size: 0.9rem; color: var(--text-muted); font-style: italic;">${_esc(p.scenario)}</p>` : ''}
                     <p class="sp-prod-prompt-desc">${_esc(p.prompt || '')}</p>
                     ${p.cues && p.cues.length ? `
-                        <div class="sp-prod-prompt-cues" style="margin-top: 10px; padding: 8px 12px; background: rgba(0,0,0,0.03); border-radius: 6px; text-align: left;">
+                        <div class="sp-prod-prompt-cues" style="margin-top: 10px; padding: 8px 12px; background: var(--wash); border: 1px solid var(--border-light); border-radius: var(--radius-sm); text-align: left;">
                             <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.04em; display: block; margin-bottom: 2px;">Points to include:</span>
                             <ul style="margin: 2px 0 0 0; padding-left: 18px; font-size: 0.88rem; color: var(--text);">
                                 ${p.cues.map(c => `<li style="margin-bottom: 2px;">${_esc(c)}</li>`).join('')}
@@ -1332,10 +1332,10 @@ const SpeakingDriller = (function () {
                         </div>
                     ` : ''}
 
-                    <div class="sp-challenge-feedback-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; margin: 16px 0;">
+                    <div class="sp-challenge-feedback-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 18px; margin: 16px 0;">
                         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
                             <span style="font-weight: 700; font-size: 0.92rem; color: var(--text-heading);">Speaking Coach</span>
-                            <span class="cando-badge ${score >= 60 ? 'cando-badge-verified' : 'cando-badge-gap'}" style="font-size: 0.8rem;">${score}%</span>
+                            <span class="cando-badge ${score >= 60 ? 'cando-badge-verified' : 'cando-badge-gap'}" style="font-size: 0.8rem; border-radius: var(--radius-sm);">${score}%</span>
                         </div>
                         <p style="margin: 0; font-size: 0.98rem; color: var(--text); line-height: 1.45;">${_esc(tip)}</p>
                     </div>
@@ -1348,7 +1348,7 @@ const SpeakingDriller = (function () {
                     ` : ''}
 
                     ${_prodTranscript && _prodTranscript.trim() ? `
-                        <div class="sp-prod-transcript-preview" style="margin-top: 12px; padding: 10px 14px; background: rgba(0,0,0,0.03); border-radius: 8px; font-size: 0.92rem; color: var(--text);">
+                        <div class="sp-prod-transcript-preview" style="margin-top: 12px; padding: 10px 14px; background: var(--wash); border: 1px solid var(--border-light); border-radius: var(--radius-sm); font-size: 0.92rem; color: var(--text);">
                             <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.04em; display: block; margin-bottom: 4px;">What you said:</span>
                             <p style="margin: 0; font-style: italic;">“${_esc(_prodTranscript.trim())}”</p>
                         </div>
@@ -1993,7 +1993,7 @@ const SpeakingDriller = (function () {
                                     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
                                 </div>
                             </div>
-                            <div class="sp-turn-live-transcript" style="min-height: 48px; padding: 8px 12px; background: var(--surface, #fff); border: 1px solid var(--border, #eee); border-radius: 6px; margin-bottom: 12px; font-size: 1rem; color: var(--text-muted, #666); font-style: italic; display: flex; align-items: center; justify-content: center;">
+                            <div class="sp-turn-live-transcript" style="min-height: 48px; padding: 8px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 12px; font-size: 1rem; color: var(--text-muted); font-style: italic; display: flex; align-items: center; justify-content: center;">
                                 Listening in ${langName}... Speak naturally.
                             </div>
                             <button type="button" class="sp-scenario-stop-btn" data-action="stop-turn-record">
@@ -2004,9 +2004,9 @@ const SpeakingDriller = (function () {
                     ` : ''}
 
                     ${isReview ? `
-                        <div class="sp-turn-review-panel" style="padding: 16px; background: var(--wash, #f8f9fa); border-radius: var(--radius);">
+                        <div class="sp-turn-review-panel" style="padding: 16px; background: var(--wash); border-radius: var(--radius-sm);">
                             <label style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--muted); margin-bottom: 4px;">Spoken Transcript (Review / Edit):</label>
-                            <textarea class="sp-turn-edit-field" style="width: 100%; min-height: 60px; padding: 8px; font-size: 0.95rem; border: 1px solid var(--border, #ccc); border-radius: 6px; box-sizing: border-box;">${_esc(_scenarioTranscript)}</textarea>
+                            <textarea class="sp-turn-edit-field" style="width: 100%; min-height: 60px; padding: 8px; font-size: 0.95rem; border: 1px solid var(--border); border-radius: var(--radius-sm); box-sizing: border-box;">${_esc(_scenarioTranscript)}</textarea>
 
                             ${_scenarioAudioUrl ? `
                                 <div style="margin: 12px 0;">

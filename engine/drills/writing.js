@@ -462,7 +462,7 @@ const WritingDriller = (function () {
                     ${p.scenario ? `<p class="sp-prompt-detail-scenario" style="margin: 4px 0 8px 0; font-size: 0.9rem; color: var(--text-muted); font-style: italic;">${_esc(p.scenario)}</p>` : ''}
                     <p class="sp-prompt-detail-desc">${_esc(p.prompt)}</p>
                     ${p.cues && p.cues.length ? `
-                        <div class="sp-prompt-cues" style="margin-top: 10px; padding: 8px 12px; background: rgba(0,0,0,0.03); border-radius: 6px; text-align: left;">
+                        <div class="sp-prompt-cues" style="margin-top: 10px; padding: 8px 12px; background: var(--wash); border: 1px solid var(--border-light); border-radius: var(--radius-sm); text-align: left;">
                             <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.04em; display: block; margin-bottom: 2px;">Points to include:</span>
                             <ul style="margin: 2px 0 0 0; padding-left: 18px; font-size: 0.88rem; color: var(--text);">
                                 ${p.cues.map(c => `<li style="margin-bottom: 2px;">${_esc(c)}</li>`).join('')}
@@ -752,16 +752,16 @@ const WritingDriller = (function () {
                         </div>
                     ` : ''}
 
-                    <div class="sp-challenge-feedback-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; margin: 16px 0;">
+                    <div class="sp-challenge-feedback-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 18px; margin: 16px 0;">
                         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
                             <span style="font-weight: 700; font-size: 0.92rem; color: var(--text-heading);">Writing Coach</span>
-                            <span class="cando-badge ${score >= 60 ? 'cando-badge-verified' : 'cando-badge-gap'}" style="font-size: 0.8rem;">${score}%</span>
+                            <span class="cando-badge ${score >= 60 ? 'cando-badge-verified' : 'cando-badge-gap'}" style="font-size: 0.8rem; border-radius: var(--radius-sm);">${score}%</span>
                         </div>
                         <p style="margin: 0; font-size: 0.98rem; color: var(--text); line-height: 1.45;">${_esc(tip)}</p>
                     </div>
 
                     ${_draftText && _draftText.trim() ? `
-                        <div class="sp-prod-transcript-preview" style="margin-top: 12px; padding: 10px 14px; background: rgba(0,0,0,0.03); border-radius: 8px; font-size: 0.92rem; color: var(--text);">
+                        <div class="sp-prod-transcript-preview" style="margin-top: 12px; padding: 10px 14px; background: var(--wash); border: 1px solid var(--border-light); border-radius: var(--radius-sm); font-size: 0.92rem; color: var(--text);">
                             <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.04em; display: block; margin-bottom: 4px;">What you wrote:</span>
                             <p style="margin: 0; font-style: italic;">“${_esc(_draftText.trim())}”</p>
                         </div>
@@ -1482,7 +1482,7 @@ const WritingDriller = (function () {
                     ${(result.feedback && ((result.feedback.strengths && result.feedback.strengths.length) || (result.feedback.priorities && result.feedback.priorities.length))) ? `
                         <div class="sp-feedback-sections" style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                             ${(result.feedback.strengths && result.feedback.strengths.length) ? `
-                                <div class="sp-feedback-col" style="padding: 12px; background: var(--surface, #fff); border: 1px solid var(--border); border-radius: 6px;">
+                                <div class="sp-feedback-col" style="padding: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);">
                                     <h5 style="margin: 0 0 8px; color: var(--success); font-size: 0.85rem; text-transform: uppercase; font-weight: 700;">Strengths</h5>
                                     <ul style="margin: 0; padding-left: 18px; font-size: 0.85rem; color: var(--text);">
                                         ${result.feedback.strengths.map(s => `<li>${_esc(s)}</li>`).join('')}
@@ -1490,7 +1490,7 @@ const WritingDriller = (function () {
                                 </div>
                             ` : ''}
                             ${(result.feedback.priorities && result.feedback.priorities.length) ? `
-                                <div class="sp-feedback-col" style="padding: 12px; background: var(--surface, #fff); border: 1px solid var(--border); border-radius: 6px;">
+                                <div class="sp-feedback-col" style="padding: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);">
                                     <h5 style="margin: 0 0 8px; color: var(--primary); font-size: 0.85rem; text-transform: uppercase; font-weight: 700;">Focus Areas</h5>
                                     <ul style="margin: 0; padding-left: 18px; font-size: 0.85rem; color: var(--text);">
                                         ${result.feedback.priorities.map(p => `<li>${_esc(p)}</li>`).join('')}

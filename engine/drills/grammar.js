@@ -1271,7 +1271,7 @@ const GrammarDriller = (function () {
                             <div class="gd-missed-answers">
                                 ${item.user ? `<div class="gd-missed-user"><span class="gd-badge-wrong">Your answer:</span> ${_escapeHtml(item.user)}</div>` : ''}
                                 <div class="gd-missed-correct"><span class="gd-badge-correct">Correct:</span> <strong>${_escapeHtml(item.correct)}</strong></div>
-                                ${item.distractorTitle ? `<div style="font-size:12px;color:var(--warning,#B07204);margin-top:2px;">(Used a ${item.distractorTitle} form)</div>` : ''}
+                                ${item.distractorTitle ? `<div style="font-size:12px;color:var(--ochre-text);margin-top:2px;">(Used a ${item.distractorTitle} form)</div>` : ''}
                             </div>
                         </div>
                     `).join('')}

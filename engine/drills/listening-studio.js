@@ -468,7 +468,7 @@ const ListeningStudio = (function () {
             : tasks.filter(t => t.level === _levelFilter);
 
         mount.innerHTML = `
-            <div class="sp-driller-wrap">
+            <div class="sp-driller-wrap sp-studio-body">
                 <div class="sp-setup-head">
                     <h2 class="sp-setup-title">Listening Comprehension Studio</h2>
                     <p class="sp-setup-desc">
@@ -488,19 +488,19 @@ const ListeningStudio = (function () {
                     </div>
                 ` : ''}
 
-                <div class="wk-picker-grid">
+                <div class="sp-scenarios-grid ls-tasks-grid">
                     ${filteredTasks.length === 0 ? `
-                        <div class="sp-empty-state" style="grid-column: 1 / -1; padding: 40px 20px; text-align: center; color: var(--text-muted, #687787);">
+                        <div class="sp-empty-state" style="padding: 40px 20px; text-align: center; color: var(--text-muted);">
                             No listening tasks available yet for this course.
                         </div>
                     ` : filteredTasks.map(task => {
                         const turnsCount = (task.audio && task.audio.turns) ? task.audio.turns.length : 0;
                         const questionsCount = (task.questions) ? task.questions.length : 0;
                         return `
-                            <div class="wk-card sp-card-clickable ls-task-card" data-select-task="${_esc(task.id)}">
-                                <div class="sp-prompt-card-head">
+                            <div class="sp-scenario-card ls-task-card" data-select-task="${_esc(task.id)}">
+                                <div class="sp-scenario-card-header">
                                     <span class="sp-level-pill">${_esc(task.level)}</span>
-                                    <span class="sp-words-target">${turnsCount} turns · ${questionsCount} questions</span>
+                                    <span class="sp-turns-pill">${turnsCount} turns · ${questionsCount} questions</span>
                                 </div>
                                 <h3 class="wk-card-title">${_esc(task.title)}</h3>
                                 <p class="wk-card-sub">${_esc(task.context || task.topic || 'Audio comprehension task')}</p>

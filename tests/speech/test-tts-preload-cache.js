@@ -36,22 +36,25 @@ assert.strictEqual(resolveVoiceName({ type: 'reading' }, 'hu-HU'), 'hu-HU-Chirp3
 assert.strictEqual(resolveVoiceName({ type: 'narrator' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Enceladus');
 assert.strictEqual(resolveVoiceName({}, 'hu-HU'), 'hu-HU-Chirp3-HD-Enceladus');
 
-// Dialogue characters in stories respect gender and explicit character overrides
+// Dialogue characters in stories and drills respect gender and explicit character overrides
 assert.strictEqual(resolveVoiceName({ type: 'story', gender: 'female' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Kore');
 assert.strictEqual(resolveVoiceName({ type: 'story', gender: 'male' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Charon');
+assert.strictEqual(resolveVoiceName({ type: 'dialogue' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Charon');
+assert.strictEqual(resolveVoiceName({ type: 'dialogue', gender: 'female' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Kore');
 assert.strictEqual(resolveVoiceName({ type: 'story', character: 'Aoede' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Aoede');
 assert.strictEqual(resolveVoiceName({ type: 'story', gender: 'female' }, 'es-ES'), 'es-ES-Chirp3-HD-Kore');
 assert.strictEqual(resolveVoiceName({ type: 'story', gender: 'male' }, 'es-ES'), 'es-ES-Chirp3-HD-Charon');
 console.log('[PASS] Worker voice resolution tiers verified.');
 
-// Test 1b: Story comma cadence normalization
-function normalizeStoryText(text, type, languageCode) {
+// Test 1b: Story comma cadence and Hungarian Wh-question normalization
+function normalizeStoryText(text, type, languageCode, character) {
     if (!/[.!?…]$/.test(text)) text = text + '.';
-    const HU_WH_WORDS = /^(ki|mi|hol|mikor|miért|hogyan|mennyi|milyen|melyik|hova|honnan|merre|meddig|mettől|mióta|mire)\b/i;
+    const HU_WH_WORDS = /^(?:(?:és|de|hát|akkor|nos|meg|te|ti|ön|önök|maga|maguk)\s+)*(ki|kik|kit|kiket|kinek|kiknek|kivel|kikkel|kiről|kitől|kihez|kiben|kinél|mi|mik|mit|miket|minek|mivel|mikkel|miről|mitől|mihez|miben|minél|mire|hol|hova|hová|honnan|honnét|merre|merrefelé|mikor|mikorra|meddig|mettől|mióta|miért|hogy|hogyan|mennyi|mennyit|mennyibe|mennyiért|mennyivel|hány|hányat|hányan|hányas|hányszor|hányadik|milyen|milyet|milyenre|milyenben|milyennel|melyik|melyiket|melyikre|melyikkel|melyikben|melyiknél|miféle)\b/i;
     if (languageCode === 'hu-HU' && text.endsWith('?') && HU_WH_WORDS.test(text)) {
-        text = text.slice(0, -1) + '.';
+        text = text.charAt(0).toUpperCase() + text.slice(1, -1) + '.';
     }
-    if (languageCode === 'hu-HU' && (type === 'story' || type === 'reading' || type === 'narrator')) {
+    const isDialogue = type === 'dialogue' || Boolean(character);
+    if (languageCode === 'hu-HU' && !isDialogue && (type === 'story' || type === 'reading' || type === 'narrator')) {
         text = text.replace(/,(\s+)(?![—–])/g, ', —$1');
     }
     return text;
@@ -65,12 +68,29 @@ assert.strictEqual(
     normalizeStoryText('1,5 liter tej volt', 'story', 'hu-HU'),
     '1,5 liter tej volt.'
 );
+// Spoken dialogue vocatives must NOT get em-dashes inserted at commas
+assert.strictEqual(
+    normalizeStoryText('Szia, Meg!', 'dialogue', 'hu-HU'),
+    'Szia, Meg!'
+);
+// Character lines inside stories must NOT get em-dashes inserted
+assert.strictEqual(
+    normalizeStoryText('Köszönöm, jól vagyok.', 'story', 'hu-HU', 'Kore'),
+    'Köszönöm, jól vagyok.'
+);
 // Non-story Hungarian vocab words must not get dashes inserted at commas
 assert.strictEqual(
     normalizeStoryText('alma, körte', 'vocabulary', 'hu-HU'),
     'alma, körte.'
 );
-console.log('[PASS] Hungarian narrative comma cadence beat verified.');
+// Hungarian Wh-questions (hogy, mit, hány, complex openers) normalize to falling cadence (.)
+assert.strictEqual(normalizeStoryText('Hogy vagy?', 'dialogue', 'hu-HU'), 'Hogy vagy.');
+assert.strictEqual(normalizeStoryText('Mit kérsz?', 'dialogue', 'hu-HU'), 'Mit kérsz.');
+assert.strictEqual(normalizeStoryText('És te hol laksz?', 'dialogue', 'hu-HU'), 'És te hol laksz.');
+assert.strictEqual(normalizeStoryText('Hány óra van?', 'dialogue', 'hu-HU'), 'Hány óra van.');
+// Yes/No questions retain their question mark
+assert.strictEqual(normalizeStoryText('Kérsz teát?', 'dialogue', 'hu-HU'), 'Kérsz teát?');
+console.log('[PASS] Hungarian narrative comma cadence and Wh-cadence verified.');
 
 // Test 2: ParlourTTS preload and cache API in engine/tts.js
 console.log('\n--- Test 2: ParlourTTS Preload & Cache API ---');
