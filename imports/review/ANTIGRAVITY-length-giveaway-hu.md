@@ -401,3 +401,41 @@ distractors are the best so far: plausible, specific and false.
    it, which you did, from *a fenntarthatóság érdekében (in the interest of
    sustainability)* back to that text) and add it to
    `hu-review-questions.txt` with a proposed rewritten question.
+
+### Block 5 (C1), reviewed 2026-10-08
+
+Commit `4bffe8f8`. The mechanics are right: all 164 decisions (all `match`)
+are applied exactly as written, nothing outside the worksheet changed, no
+`teaches` / `category` / `stage` / `correct` value moved, the validator
+passes, and no C1 id is still flagged. Rule 13 held: no swapped decisions,
+every new option fits its own question. The content is on topic, specific
+and false, and the grammar items (*Minél … annál*, *ellenben*, participles)
+are plainly wrong rather than stylistic variants.
+
+**One systematic problem, which is the last item of ROADMAP 130.** The
+"false, not extreme" standard slipped: in about 60 of the 164 exercises the
+new wrong options are the extreme version of the correct one, with
+*kizárólag*, *teljesen*, *semmilyen*, *egyáltalán*, *soha*, *végleg*,
+*korlátlan*, *feltétel nélkül*, *kategorikusan* or *maradéktalanul*, while
+the correct option is moderate. A learner can pick the moderate one without
+understanding the topic, which is the same kind of shape cue this whole item
+removes (it was the "Sajnos" tell in block 1).
+
+**Fix these in a separate commit** (edit the worksheet entries as well).
+For each id, reread the wrong options; where one of them carries such a word
+and the correct option does not, rewrite that option as a *moderate-sounding
+but false* claim, in the same tone and length (a different real mechanism,
+body, date or concept, not "all / never / only"). The list is a candidate
+list from a pattern search, so skip an id where the word is natural and the
+correct option has one too:
+
+c1-03-03-introduce-1, c1-14-03-check-8, c1-14-05-reading-4, c1-14-consolidation-9, c1-15-03-introduce-1, c1-15-05-introduce-1, c1-15-05-reading-4, c1-17-01-introduce-1, c1-17-03-introduce-1, c1-17-05-introduce-1, c1-17-05-reading-4, c1-17-consolidation-1, c1-18-01-introduce-1, c1-18-05-reading-4, c1-19-01-introduce-1, c1-19-04-introduce-1, c1-19-05-reading-4, c1-23-02-introduce-1, c1-24-01-introduce-1, c1-24-04-introduce-1, c1-24-05-reading-4, c1-27-02-introduce-1, c1-27-03-introduce-1, c1-28-01-introduce-1, c1-28-02-introduce-1, c1-30-02-introduce-1, c1-32-05-introduce-1, c1-33-02-introduce-1, c1-33-04-introduce-1, c1-34-02-introduce-1, c1-34-03-introduce-1, c1-35-02-introduce-1, c1-35-04-introduce-1, c1-35-05-introduce-1, c1-felsooktatas-05-introduce-1, c1-irodalmielet-03-introduce-1, c1-kiberbiztonsag-01-introduce-1, c1-kozlekedespolitika-02-introduce-1, c1-kozlekedespolitika-03-introduce-1, c1-kozlekedespolitika-04-introduce-1, c1-kulturalisorokseg-02-introduce-1, c1-kulturalisorokseg-03-introduce-1, c1-kulturalisorokseg-04-introduce-1, c1-kulturalisorokseg-consolidation-9, c1-magyarjovo-consolidation-9, c1-mediaszabadsag-02-introduce-1, c1-mestersegesintelligencia-01-introduce-1, c1-mestersegesintelligencia-03-introduce-1, c1-mestersegesintelligencia-consolidation-9, c1-mestersegesnyelv-02-introduce-1, c1-mestersegesnyelv-03-introduce-1, c1-mestersegesnyelv-05-introduce-1, c1-mestersegesnyelv-consolidation-9, c1-metaforak-02-introduce-1, c1-monetaris-03-check-8, c1-monetaris-04-introduce-1, c1-monetaris-04-check-8, c1-monetaris-consolidation-1, c1-tarsadalmireteg-05-introduce-1, c1-tudomanyosszabadsag-03-introduce-1, c1-tudomanyosszabadsag-05-introduce-1, c1-vitakultura-01-introduce-1, c1-vitakultura-consolidation-2
+
+Also check `c1-15-03-introduce-1` (*feketedoboz-jelenség*): the wrong option
+*… a fejlesztők szándékosan titokban tartják a forráskódot …* is a real
+second meaning of "black box" (proprietary secrecy), so it can pass as a
+correct answer. Make it plainly wrong.
+
+Once this commit is in and checked, ROADMAP 130 is complete except for the
+14 native-speaker-reviewed A1 ids, `c1-21-*` / `c1-22-*` (item 127) and the
+logged items.
