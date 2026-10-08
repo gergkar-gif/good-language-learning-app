@@ -234,19 +234,16 @@ def course_language(course, sources):
 
 # (language, skill, prerequisite) pairs the prerequisite-order check skips, each with its queue item.
 KNOWN_PREREQ_ORDER = {
-    # Spanish pairs found when the check was added (2026-10-05), awaiting the user's decisions: ROADMAP 140
-    ("es", "cuando-mientras", "imperfect"): "ROADMAP 140",
-    ("es", "imperativo-formal-usted", "subjuntivo-morfologia"): "ROADMAP 140",
-    ("es", "imperativo-negativo", "subjuntivo-morfologia"): "ROADMAP 140",
-    ("es", "indefinidos-negativos", "negation"): "ROADMAP 140",
-    ("es", "perifrasis-verbales", "acabar-de"): "ROADMAP 140",
-    ("es", "formal-register", "nominalization"): "ROADMAP 140",
-    ("es", "nominalizacion-despersonalizacion", "nominalization"): "ROADMAP 140",
-    ("es", "apodosis-condicional-literaria", "pluscuamperfecto-subjuntivo-si"): "ROADMAP 140",
-    ("es", "implicit-conditionals", "pluscuamperfecto-subjuntivo-si"): "ROADMAP 140",
-    ("es", "inversiones-condicionales-de-haber", "pluscuamperfecto-subjuntivo-si"): "ROADMAP 140",
-    ("es", "mixed-conditionals", "pluscuamperfecto-subjuntivo-si"): "ROADMAP 140",
-    ("es", "regrets-reproaches", "pluscuamperfecto-subjuntivo-si"): "ROADMAP 140",
+    # Spanish pairs found once every screen could be placed (2026-10-08), awaiting the user's decisions: ROADMAP 148(i)
+    ("es", "adjective-agreement", "plural"): "ROADMAP 148",
+    ("es", "doler", "gustar"): "ROADMAP 148",
+    ("es", "hay", "estar"): "ROADMAP 148",
+    ("es", "ser", "subject-pronouns"): "ROADMAP 148",
+    ("es", "tener", "present-tense"): "ROADMAP 148",
+    ("es", "estilo-indirecto-informacion", "estilo-indirecto"): "ROADMAP 148",
+    ("es", "hypothetical-structures", "si-clauses"): "ROADMAP 148",
+    ("es", "opinion-verbs-mood", "giving-opinions"): "ROADMAP 148",
+    ("es", "correlativos-no-solo-sino", "sino-vs-pero"): "ROADMAP 148",
 }
 
 
@@ -266,8 +263,11 @@ def screen_positions(course):
             for si, stem in enumerate(entry.get("stems", [])):
                 stem_at[stem] = ((LEVELS.index(level), ui, si), entry.get("track") or "core")
         for screen in (ROOT / "content" / course / "grammar" / level.lower()).glob("*.json"):
-            stem = re.sub(r"(-[a-z])?-gr$", "", screen.stem)
-            if stem in stem_at:
+            # a screen is named after its lesson stem, plus an optional -a/-b and/or a descriptive suffix
+            stem = re.sub(r"-gr$", "", screen.stem)
+            while stem and stem not in stem_at:
+                stem = stem.rpartition("-")[0]
+            if stem:
                 pos[screen.stem] = stem_at[stem]
     return pos
 
