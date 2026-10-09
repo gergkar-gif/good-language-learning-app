@@ -1,6 +1,32 @@
 {
  "_comment": "Finished units (ROADMAP 153). Written only by scripts/freeze_unit.py; check-content.py --changed blocks edits to a unit listed here.",
  "units": {
+  "a1/greetings-basic-interaction": {
+   "frozen": "2026-10-09",
+   "reason": "all checks fixed, every screen read, checklists specific, a1-09-dialogue-1 fixed",
+   "accepted": [
+    {
+     "check": "answer-in-prompt",
+     "id": "a1-06-controlled-1",
+     "why": "the natural reply to Jó reggelt is Jó reggelt; repeating it is the point"
+    },
+    {
+     "check": "answer-in-prompt",
+     "id": "a1-06-practice-3",
+     "why": "the natural reply to Jó napot is Jó napot; repeating it is the point"
+    },
+    {
+     "check": "answer-in-prompt",
+     "id": "a1-10-consolidation-7",
+     "why": "the natural reply to Jó reggelt is Jó reggelt; repeating it is the point"
+    },
+    {
+     "check": "answer-in-prompt",
+     "id": "a1-10-consolidation-12",
+     "why": "the natural reply to Jó napot is Jó napot; repeating it is the point"
+    }
+   ]
+  },
   "a1/reading-hungarian": {
    "frozen": "2026-10-09",
    "reason": "model unit: all checks fixed, every screen and every exercise's metadata read (Claude)",
