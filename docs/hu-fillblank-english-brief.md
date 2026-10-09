@@ -1,5 +1,8 @@
 # Hungarian fill-blank translations: brief for Antigravity (ROADMAP 151)
 
+> **Done 2026-10-09** (ACHIEVED.md 151). All levels have `english` and the HU
+> schema now requires it. Kept as a record of the rules used.
+
 You are adding the missing `english` line to Hungarian fill-blank exercises.
 Read this whole file, then [AGENTS.md](../AGENTS.md) § "Exercise metadata" and
 [course-generation-brief.md](course-generation-brief.md) § 6.4, before you change anything.

@@ -233,6 +233,11 @@ unguessable; most blanks shouldn't have one. Never write the hint into
 `sentence` (the validator fails it); the engine shows it in parentheses
 after the blank. Full rules: docs/course-generation-brief.md § 6.4.
 
+**`fill-blank` needs `english`** (required by the schema since 2026-10-09, as in
+Spanish): the whole sentence in natural English with the blank filled in,
+keeping the answer's person, number, tense and possessor. The engine shows it
+after the answer and as the second hint step.
+
 ---
 
 ## 5. Vocabulary file (`vocabulary/a1/a1-NN-voc.json`)
