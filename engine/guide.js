@@ -303,8 +303,8 @@ const Guide = (function () {
             <div class="wp-sheet pl-guide-modal" role="dialog" aria-modal="true" aria-labelledby="pl-guide-modal-title">
                 <div class="wp-header pl-guide-modal-header">
                     <div>
-                        <span class="hm-eyebrow">A Quick Tour</span>
-                        <h2 id="pl-guide-modal-title" class="pl-guide-title">How Parlour works</h2>
+                        <span class="hm-eyebrow">About & Guide</span>
+                        <h2 id="pl-guide-modal-title" class="pl-guide-title">About Parlour</h2>
                     </div>
                     <button class="wp-close" data-guide-modal-close="1" aria-label="Close modal">&times;</button>
                 </div>
@@ -312,29 +312,31 @@ const Guide = (function () {
                 <div class="pl-guide-modal-scroll">
                     <!-- The Philosophy -->
                     <div class="pl-guide-section">
-                        <h3 class="pl-guide-sec-title">The Idea</h3>
+                        <h3 class="pl-guide-sec-title">What Is Parlour?</h3>
                         <p class="pl-guide-p">
-                            Parlour is for people who actually want to learn languages and cultures. A non-commercial project, we want to provide a place where you can learn, read, review, and practice — welcome!
+                            Parlour is a language learning platform, built for anyone who wants to learn a language, speak it competently, without trying to juggle five different language apps.
                         </p>
                         <p class="pl-guide-p">
-                            Real fluency comes from three things working together: <strong>comprehensible input</strong> (reading real stories), 
-                            <strong>structured grammar</strong> (understanding how sentences fit together), and <strong>active production</strong> (writing and speaking your own thoughts).
+                            When I started this project, I felt like I had enough of paywalls, garbage UI, and annoying cartoon mascots. I made this app in a way that I always imagined a language app should look like. It should explain the grammar, let you practice, let you read stories, collect and practice your own words &ndash; it should treat you like a serious person. Learning a language is not easy &ndash; and it shouldn&rsquo;t be. The difficulty is what gives it the special flavour. But the difficulty should not be that you run out of hearts, or that your word list is suddenly behind a paywall.
+                        </p>
+                        <p class="pl-guide-p">
+                            Parlour is non-commercial, free, and privacy-respecting: no ads, no trackers, and your study data stays local to your browser unless you choose to back it up.
                         </p>
                     </div>
 
                     <!-- The 6 Rooms -->
                     <div class="pl-guide-section">
-                        <h3 class="pl-guide-sec-title">The 6 Rooms</h3>
+                        <h3 class="pl-guide-sec-title">The Six Main &lsquo;Rooms&rsquo;</h3>
                         <div class="pl-guide-rooms">
                             <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Home</span>
                                 <h4>Your Study Desk</h4>
-                                <p>Answers one question every day: <em>"What is the single best thing to do right now?"</em> Recommends your next lesson, reviews due cards, or suggests a quick 5–15 minute study budget.</p>
+                                <p>Answers one question every day: <em>&ldquo;What is the single best thing to do right now?&rdquo;</em> Recommends your next lesson, reviews due cards, or suggests a quick 5&ndash;15 minute study budget.</p>
                             </div>
                             <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Lessons</span>
                                 <h4>The Course Workbook</h4>
-                                <p>Structured CEFR curriculum (A1 to B1+). Each unit breaks down grammar clearly with interactive steps, vocabulary in context, and communicative tasks.</p>
+                                <p>Structured CEFR curriculum (A1 to B1+). Each unit breaks down grammar clearly with interactive steps, vocabulary in context, and communicative tasks. You can follow the path that we laid out, or follow your own intuition. If you don&rsquo;t know where your knowledge is, fill in the placement test.</p>
                             </div>
                             <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Library</span>
@@ -342,19 +344,19 @@ const Guide = (function () {
                                 <p>Graded stories and classic literature. Tap any word to see instant translations and add it to your deck. Plus: paste your own texts into <em>My Texts</em>.</p>
                             </div>
                             <div class="pl-guide-room-card">
+                                <span class="pl-guide-room-tag">Workshop</span>
+                                <h4>The Practice Studio</h4>
+                                <p>Focused micro-practice. Drill fast verb conjugations, train your listening, or use the Speaking &amp; Writing Studios for open-ended composition with CEFR grading.</p>
+                            </div>
+                            <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Decks</span>
                                 <h4>The Memory Box</h4>
                                 <p>Spaced repetition (SRS) flashcards. Target words from your lessons and reading flow here automatically. You can also import decks directly from Quizlet or Anki.</p>
                             </div>
                             <div class="pl-guide-room-card">
-                                <span class="pl-guide-room-tag">Workshop</span>
-                                <h4>The Practice Studio</h4>
-                                <p>Focused micro-practice. Drill fast verb conjugations, train your listening ear, or use the Speaking & Writing Studios for open-ended composition with CEFR grading.</p>
-                            </div>
-                            <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Journey</span>
                                 <h4>Your Learning Record</h4>
-                                <p>Visual milestones, CEFR proficiency levels, and streak stats. You can also import your existing streak from Duolingo or another app so you never lose momentum.</p>
+                                <p>Visual milestones, CEFR proficiency levels, and streak stats. You can also import your existing streak from another app so you never lose momentum.</p>
                             </div>
                         </div>
                     </div>
@@ -364,20 +366,28 @@ const Guide = (function () {
                         <h3 class="pl-guide-sec-title">Bring your study habits with you</h3>
                         <ul class="pl-guide-bullets">
                             <li>
-                                <strong>Import your streak:</strong> Head to <em>Journey</em> and tap <em>Import streak from another app</em> to bring your Duolingo or Babbel streak over.
+                                <strong>Import your streak:</strong> Head to <em>Journey</em> and tap <em>Import streak</em> to bring your streak over.
                             </li>
                             <li>
                                 <strong>Import your flashcards:</strong> In <em>Decks</em>, tap <em>Import</em> to paste sets from Quizlet, Anki, or CSV spreadsheets.
                             </li>
                             <li>
-                                <strong>Read whatever you want:</strong> In <em>Library &rarr; My Texts</em>, paste any Spanish or Hungarian article, story, or song lyrics to read with full tap-to-translate dictionary support.
+                                <strong>Read whatever you want:</strong> In <em>Library &rarr; My Texts</em>, paste any article, story, or song lyrics to read with full tap-to-translate dictionary support.
                             </li>
                         </ul>
+                    </div>
+
+                    <!-- Colophon & Contact -->
+                    <div class="pl-guide-section" style="margin-bottom: 0;">
+                        <h3 class="pl-guide-sec-title">Colophon & Contact</h3>
+                        <p class="pl-guide-p">
+                            Parlour is an independent, non-commercial project by Károly Gergely. If you notice an error in the curriculum, have feedback, or want to contribute, get in touch at <a href="mailto:gergkar@gmail.com" style="color:var(--text); text-decoration:underline;">gergkar@gmail.com</a> or open an issue on <a href="https://github.com/gergkar-gif/good-language-learning-app" target="_blank" rel="noopener" style="color:var(--text); text-decoration:underline;">GitHub</a>.
+                        </p>
                     </div>
                 </div>
 
                 <div class="pl-guide-modal-footer">
-                    <button class="pl-guide-primary-btn" data-guide-modal-close="1">Got it, let's explore</button>
+                    <button class="pl-guide-primary-btn" data-guide-modal-close="1">Close</button>
                 </div>
             </div>
         `;

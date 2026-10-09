@@ -730,7 +730,7 @@ const Home = (function () {
             ${todayStrip()}
             <div class="hm-footer">
                 ${courseBlock()}
-                <button type="button" class="hm-guide-link" data-open-guide-modal="1">How Parlour works</button>
+                <button type="button" class="hm-guide-link" data-open-guide-modal="1">About Parlour</button>
             </div>
             ${recStatsPanel()}
         `;
