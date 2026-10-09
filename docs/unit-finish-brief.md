@@ -233,3 +233,17 @@ found that no check flagged), *Metadata* (every `teaches`,
 `distractor_skills` or `category` you changed, and the exercises whose new
 options you re-checked). The reviewer compares *Found by reading* with their
 own read of the unit.
+
+### Run 2 (second-read fix lists for the two units), reviewed 2026-10-09
+
+Commits `2155ea156`, `ba91d6ae5`. Every item on both fix lists is done and
+the tag changes are right; both units check clean. Two small options were
+fixed in review: `a1-12-controlled-4` *Ki te?* (ungrammatical **and** the
+wrong person, two faults) is now *Ki vagy?* with `distractor_skills`
+`personal-pronouns`; `a1-09-controlled-extra` *Bocsánat, köszönöm!* (an odd
+combination) is now *Szívesen, Anna!*. Keep doing this: a wrong option is a
+real phrase or form that fails in exactly one way.
+
+**Next run:** do the next four HU A1 units in order (`numbers-personal-information`
+and the three after it), steps 1–5 and 7, commit each **unfrozen** and push.
+The reviewer runs the second read on them.
