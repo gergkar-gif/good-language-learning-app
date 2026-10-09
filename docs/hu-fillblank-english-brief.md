@@ -4,10 +4,8 @@ You are adding the missing `english` line to Hungarian fill-blank exercises.
 Read this whole file, then [AGENTS.md](../AGENTS.md) § "Exercise metadata" and
 [course-generation-brief.md](course-generation-brief.md) § 6.4, before you change anything.
 
-**A1 is done and reviewed (2026-10-09).** A2 (611) and B1 (1,115) are two
-separate runs: each run is given one level, does only that level, and commits it
-on its own. Two runs can go at the same time, since they touch different files;
-pull before you commit.
+**A1 and A2 are done and reviewed (2026-10-09).** B1 (1,115) remains
+as its own run. Pull before you commit.
 
 ## What is wrong
 
