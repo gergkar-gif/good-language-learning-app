@@ -1,48 +1,6 @@
 {
  "_comment": "Finished units (ROADMAP 153). Written only by scripts/freeze_unit.py; check-content.py --changed blocks edits to a unit listed here.",
  "units": {
-  "a1/greetings-basic-interaction": {
-   "frozen": "2026-10-09",
-   "reason": "all checks fixed, every exercise read",
-   "accepted": [
-    {
-     "check": "answer-in-prompt",
-     "id": "a1-06-controlled-1",
-     "why": "the natural reply to Jó reggelt is Jó reggelt; repeating it is the point"
-    },
-    {
-     "check": "answer-in-prompt",
-     "id": "a1-06-practice-3",
-     "why": "the natural reply to Jó napot is Jó napot; repeating it is the point"
-    },
-    {
-     "check": "answer-in-prompt",
-     "id": "a1-10-consolidation-7",
-     "why": "the natural reply to Jó reggelt is Jó reggelt; repeating it is the point"
-    },
-    {
-     "check": "answer-in-prompt",
-     "id": "a1-10-consolidation-12",
-     "why": "the natural reply to Jó napot is Jó napot; repeating it is the point"
-    }
-   ]
-  },
-  "a1/introducing-yourself": {
-   "frozen": "2026-10-09",
-   "reason": "all checks fixed, every exercise read",
-   "accepted": [
-    {
-     "check": "tell-punctuation",
-     "id": "a1-15-review-1",
-     "why": "Budapest is a proper noun so capitalisation is required"
-    },
-    {
-     "check": "vocab-unused",
-     "id": "a1-15",
-     "why": "review list; név, nő, férfi drilled earlier in unit"
-    }
-   ]
-  },
   "a1/reading-hungarian": {
    "frozen": "2026-10-09",
    "reason": "model unit: all checks fixed, every screen and every exercise's metadata read (Claude)",
@@ -70,6 +28,16 @@
    "unit": "a1/reading-hungarian",
    "date": "2026-10-09",
    "reason": "metadata check: stale distractor_skills after option rewrites (a1-04-intro-1, a1-04-check-2), a1-02-practice-dialogue wrong option off-skill, a1-02-intro-2 missing distractor_skills"
+  },
+  {
+   "unit": "a1/greetings-basic-interaction",
+   "date": "2026-10-09",
+   "reason": "review 2026-10-09: reading and metadata step not done (see docs/unit-finish-brief.md review notes)"
+  },
+  {
+   "unit": "a1/introducing-yourself",
+   "date": "2026-10-09",
+   "reason": "review 2026-10-09: reading and metadata step not done (see docs/unit-finish-brief.md review notes)"
   }
  ]
 }

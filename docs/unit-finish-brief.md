@@ -173,3 +173,54 @@ Do not edit ROADMAP.md or ACHIEVED.md. The reviewer does.
 ## Review notes
 
 (The reviewer adds notes here after each run.)
+
+### Run 1 (hu a1 `greetings-basic-interaction`, `introducing-yourself`), reviewed 2026-10-09
+
+Commits `c1efa15dd`, `c4bdb9030`. The checker findings are fixed, the
+challenges exist for every lesson, the cues don't give the answers away, and
+the suspects you accepted are right. **But steps 2 and 3 (reading every
+screen and checking every exercise's metadata) were not done:** neither
+commit reports a single reading finding or tag change, and the review found
+these. Both units are **unfrozen**; fix them, then freeze them again (a
+change that re-freezes a unit passes the pre-push check).
+
+1. `a1-13-practice-3`: its `distractor_skills` still says options 1 and 2 are
+   `ki-and-mi` forms, but you replaced them (*Ő egy jó barát.*, *Ki az a
+   férfi?*). This is the exact case step 3 warns about. Make the wrong
+   options near misses of `spatial-questions-hol-hova` (the skill it
+   teaches) or of a skill you then record, and set `distractor_skills` to
+   match; re-lock.
+2. *az a* + noun (*az a férfi*, *az a barát*) is not taught anywhere in A1:
+   `a1-13-practice-3` and `a1-14-dialogue-1` use it in new options. Only
+   forms the learner has met.
+3. `a1-11` challenge: *A nevem Meg. Hogy hívnak?* uses *nevem* and
+   *hívnak*, first met in unit 3's story. Rewrite with what a1-11 teaches
+   (*Én Meg vagyok. Te ki vagy?* style).
+4. `a1-08`, `a1-09`, `a1-10` share one generic checklist (*I can use the new
+   greetings and polite expressions.*), so their challenges share a can-do.
+   Write each lesson's own two checklist lines from its goal and content
+   (a1-09 is asking someone to repeat or slow down) and copy the first into
+   its challenge's `canDo`. This is the kind of thing reading finds.
+5. `a1-15-controlled-1` and `-2`: the wrong options break two things at once
+   (*Ő Meg van.*: wrong person **and** wrong copula). HU rule 2: break exactly
+   one thing, the skill the exercise teaches (`van-zero-copula`): *Én Meg
+   van. Itt lakom.*, *Én Meg vagy. Itt lakom.*
+6. `a1-15-practice-3`: *Én Meg vagyok.* as a wrong answer to *Hol laksz?* is
+   recorded as `van-zero-copula`, but it is a correct copula sentence that
+   answers *who*, not *where*: `ki-and-mi`, like option 2. Check the other
+   `distractor_skills` in both units the same way: does picking that option
+   really show the learner mixing up that skill?
+7. `a1-09-dialogue-1` (open since ROADMAP 130): Mariann's line ends in *hogy
+   vagy?*, which the learner learned in a1-08, so *Nem értem* doesn't fit.
+   Use the proposal in `imports/review/hu-review-questions.txt`: a fast line
+   Meg can't follow (*Szia, Meg, elugrom a postára egy levélért, aztán sietek
+   a piacra!*), keep *Nem értem. Még egyszer, légyszi.* as the answer, and a
+   wrong option that is no reply to it. Remove the entry from the questions
+   file.
+
+**From now on the commit body has three sections, each non-empty or saying
+why it is empty:** *Checker findings*, *Found by reading* (every defect you
+found that no check flagged), *Metadata* (every `teaches`,
+`distractor_skills` or `category` you changed, and the exercises whose new
+options you re-checked). The reviewer compares *Found by reading* with their
+own read of the unit.
