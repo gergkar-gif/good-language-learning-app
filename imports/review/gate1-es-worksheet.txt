@@ -1,0 +1,3220 @@
+# Release-gate worksheet: es-es:a1, es-latam:a1, es-es:a2, es-latam:a2
+#
+# One entry per exercise. Identical copies (lesson + consolidation file, and
+# es-es + es-latam) are ONE entry; `files:` lists every copy and every copy
+# gets the same change. `lesson:` is the lesson the exercise belongs to: read
+# it (and the grammar it references) before deciding.
+#
+# `checks:` says why the entry is here:
+#   length-giveaway  the correct option is over 1.3x the longest wrong one
+#   tell-absolute    only wrong options carry an absolute (always, never,
+#                    only, nobody, completely ...)
+#   tell-time-word   only wrong options carry a time word (yesterday,
+#                    tomorrow, last year ...)
+#
+# Fill in `decision:` for EVERY entry in a block BEFORE you edit that block:
+#   shorten: <the new correct option, in full>
+#   match: <each new wrong option, in full, separated by " || ">
+#   keep               -> only for tell-absolute / tell-time-word: the word is
+#                         the point of the exercise or can't be used to rule the
+#                         option out (say why); never for length-giveaway
+#   log                -> you are not certain; add it to the review-questions
+#                         file, change nothing
+# then one short line `why:` saying why the result has exactly one right
+# answer AND why every option you wrote is correct, or wrong for exactly the
+# reason you intend. The reviewer diffs every changed option against this file.
+
+
+########## Block 1: a1 (82 exercises) ##########
+
+### a1-01-02.ex12   teaches: ['a1-greetings-introductions-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-01-02-ex.json, content/es-latam/exercises/a1/a1-01-02-ex.json
+lesson: content/es-es/lessons/a1/a1-01-02.json
+Ana: Hola. Soy Ana.
+Carlos: _____
+* Hola. Soy Carlos.
+- Hasta mañana.
+- Gracias.
+decision: 
+why: 
+
+### a1-01-02.ex13   teaches: ['a1-greetings-introductions-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-01-02-ex.json, content/es-latam/exercises/a1/a1-01-02-ex.json
+lesson: content/es-es/lessons/a1/a1-01-02.json
+Meg: Soy Meg.
+Carlos: Yo soy Carlos. _____
+* También soy estudiante.
+- Buenos días.
+- Hasta luego.
+decision: 
+why: 
+
+### a1-01-03.ex02   teaches: ['questions']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-01-03-ex.json, content/es-latam/exercises/a1/a1-01-03-ex.json
+lesson: content/es-es/lessons/a1/a1-01-03.json
+Which question means "What's your name?"
+* ¿Cómo te llamas?
+- ¿Quién soy?
+- ¿Qué es?
+decision: 
+why: 
+
+### a1-01-05.ex09   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-01-05-ex.json, content/es-latam/exercises/a1/a1-01-05-ex.json
+lesson: content/es-es/lessons/a1/a1-01-05.json
+Where is Meg from?
+* South Africa.
+- Hungary.
+- Spain.
+decision: 
+why: 
+
+### a1-02-03.ex11   teaches: ['a1-meeting-someone-new-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-02-03-ex.json, content/es-latam/exercises/a1/a1-02-03-ex.json
+lesson: content/es-es/lessons/a1/a1-02-03.json
+Which word means "exchange" in a language-exchange context?
+* intercambio
+- clase
+- persona
+decision: 
+why: 
+
+### a1-02-04.ex15   teaches: ['a1-meeting-someone-new-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-02-04-ex.json, content/es-latam/exercises/a1/a1-02-04-ex.json
+lesson: content/es-es/lessons/a1/a1-02-04.json
+Which sentence says that someone introduces a person?
+* Carlos presenta a Meg.
+- Meg es su amiga.
+decision: 
+why: 
+
+### a1-02-05.ex11   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-02-05-ex.json, content/es-latam/exercises/a1/a1-02-05-ex.json
+lesson: content/es-es/lessons/a1/a1-02-05.json
+What do Carlos and the others talk about in the story?
+* They talk about learning Spanish.
+- They buy train tickets.
+- They cook dinner.
+decision: 
+why: 
+
+### a1-02-consolidation.ex18   teaches: ['a1-meeting-someone-new-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-02-consolidation-ex.json, content/es-latam/exercises/a1/a1-02-consolidation-ex.json
+lesson: content/es-es/lessons/a1/a1-02-consolidation.json
+Which answer fits: ¿Por qué vienes al intercambio?
+* Porque estudio español.
+- Mucho gusto.
+- Ella es mi amiga.
+decision: 
+why: 
+
+### a1-03c-02-v03   teaches: ['a1-describing-people-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-03c-02-ex.json, content/es-latam/exercises/a1/a1-03c-02-ex.json
+lesson: content/es-es/lessons/a1/a1-03c-02.json
+Which word means **hard-working**?
+* trabajador
+- tímido
+- rubio
+decision: 
+why: 
+
+### a1-04-consolidation.ex13   teaches: ['hay']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-04-consolidation-ex.json, content/es-latam/exercises/a1/a1-04-consolidation-ex.json
+lesson: content/es-es/lessons/a1/a1-04-consolidation.json
+Which sentence says what exists in the neighbourhood?
+* Hay una farmacia en el barrio.
+- La farmacia está cerca.
+decision: 
+why: 
+
+### a1.05.05.ex03   teaches: ['a1-family-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-05-05-ex.json, content/es-latam/exercises/a1/a1-05-05-ex.json
+lesson: content/es-es/lessons/a1/a1-05-05.json
+¿Cómo se dice "to introduce"? 
+* presentar
+- tener
+- ser
+decision: 
+why: 
+
+### a1.08.05.ex14   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-08-05-ex.json, content/es-latam/exercises/a1/a1-08-05-ex.json
+lesson: content/es-es/lessons/a1/a1-08-05.json
+What is the general setting of the story?
+* A supermarket.
+- A café.
+- A home.
+decision: 
+why: 
+
+### a1.08.05.ex16   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-08-05-ex.json, content/es-latam/exercises/a1/a1-08-05-ex.json
+lesson: content/es-es/lessons/a1/a1-08-05.json
+Where does the shopping trip end?
+* At the checkout.
+- At home.
+- At a café.
+decision: 
+why: 
+
+### a1.10.05.ex03   teaches: ['a1-birthdays-celebrations-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-10-05-ex.json, content/es-latam/exercises/a1/a1-10-05-ex.json
+lesson: content/es-es/lessons/a1/a1-10-05.json
+¿Qué es una celebración sorpresa?
+* Una fiesta que la persona no espera
+- Un pastel muy grande
+- Una fiesta pequeña
+decision: 
+why: 
+
+### a1.10.05.ex06   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-10-05-ex.json, content/es-latam/exercises/a1/a1-10-05-ex.json
+lesson: content/es-es/lessons/a1/a1-10-05.json
+What do Meg's friends do while she is out?
+* They decorate the living room and get a cake ready
+- They take her out for dinner
+- They call her family in South Africa
+decision: 
+why: 
+
+### a1.10.consolidation.ex03   teaches: ['a1-birthdays-celebrations-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-10-consolidation-ex.json, content/es-latam/exercises/a1/a1-10-consolidation-ex.json
+lesson: content/es-es/lessons/a1/a1-10-consolidation.json
+¿Cómo preguntas la edad de alguien?
+* ¿Cuántos años tienes?
+- ¿Cuánto cuesta?
+- ¿Cómo te llamas?
+decision: 
+why: 
+
+### a1.12.05.ex19   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-12-05-ex.json, content/es-latam/exercises/a1/a1-12-05-ex.json
+lesson: content/es-es/lessons/a1/a1-12-05.json
+What does the Unit 12 schedule show?
+* A person's daily timetable.
+- A birthday party.
+- A café menu.
+decision: 
+why: 
+
+### a1.abi.01.ex10   teaches: ['a1-skills-abilities-vocab']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a1/a1-abilities-01-ex.json, content/es-latam/exercises/a1/a1-abilities-01-ex.json
+lesson: content/es-es/lessons/a1/a1-abilities-01.json
+Meg: Carlos, ¿puedes explicarme esta palabra?
+Carlos: _____
+* ¡Claro que sí! Con mucho gusto.
+- Ayer fue martes.
+- No tengo paraguas.
+decision: 
+why: 
+
+### a1.abi.02.ex10   teaches: ['a1-skills-abilities-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-abilities-02-ex.json, content/es-latam/exercises/a1/a1-abilities-02-ex.json
+lesson: content/es-es/lessons/a1/a1-abilities-02.json
+Meg: Carlos, ¿sabes tocar algún instrumento?
+Carlos: _____
+* Sí, sé tocar un poco la guitarra acústica.
+- Tengo fiebre hoy.
+- Son las tres en punto.
+decision: 
+why: 
+
+### a1.abi.03.ex11   teaches: ['a1-skills-abilities-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-abilities-03-ex.json, content/es-latam/exercises/a1/a1-abilities-03-ex.json
+lesson: content/es-es/lessons/a1/a1-abilities-03.json
+Carlos: ¿Sabes a qué hora cierra el banco?
+Meg: _____
+* Sí, sé que cierra a las cuatro y media.
+- Tengo veinticinco años.
+- No me gustan los coches.
+decision: 
+why: 
+
+### a1.abi.05.ex05   teaches: ['a1-skills-abilities-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-abilities-05-ex.json, content/es-latam/exercises/a1/a1-abilities-05-ex.json
+lesson: content/es-es/lessons/a1/a1-abilities-05.json
+Carlos asks: "¿Puedes ayudarme?" You agree warmly by saying:
+* ¡Claro que sí! Con mucho gusto.
+- No me gusta.
+- Tengo veinte años.
+decision: 
+why: 
+
+### a1.abi.05.ex08   teaches: ['a1-skills-abilities-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-abilities-05-ex.json, content/es-latam/exercises/a1/a1-abilities-05-ex.json
+lesson: content/es-es/lessons/a1/a1-abilities-05.json
+Can pronouns attach to the end of an infinitive in Spanish?
+* Yes, like "ayudarme".
+- No, never.
+- Only in writing.
+decision: 
+why: 
+
+### a1.abi.05.ex10   teaches: ['a1-skills-abilities-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-abilities-05-ex.json, content/es-latam/exercises/a1/a1-abilities-05-ex.json
+lesson: content/es-es/lessons/a1/a1-abilities-05.json
+Meg: Carlos, esta caja pesa mucho. ¿Me puedes ayudar?
+Carlos: _____
+* ¡Por supuesto! Yo llevo la caja a la mesa.
+- Es la una de la tarde.
+- Tengo dolor de muelas.
+decision: 
+why: 
+
+### a1.abi.cons.ex12   teaches: ['a1-skills-abilities-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-abilities-consolidation-ex.json, content/es-latam/exercises/a1/a1-abilities-consolidation-ex.json
+lesson: content/es-es/lessons/a1/a1-abilities-consolidation.json
+Carlos: ¿Me puedes hacer un favor?
+Meg: _____
+* ¡Claro que sí! Dime qué necesitas.
+- Tengo sueño.
+- Vivo en Sudáfrica.
+decision: 
+why: 
+
+### a1.cafe.01.ex15   teaches: ['a1-ordering-cafe-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-cafe-01-ex.json, content/es-latam/exercises/a1/a1-cafe-01-ex.json
+lesson: content/es-es/lessons/a1/a1-cafe-01.json
+¿Qué significa "refresco"? 
+* soft drink
+- coffee
+- tea
+decision: 
+why: 
+
+### a1.cafe.04.ex04   teaches: ['a1-ordering-cafe-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-cafe-04-ex.json, content/es-latam/exercises/a1/a1-cafe-04-ex.json
+lesson: content/es-es/lessons/a1/a1-cafe-04.json
+Which order asks for both a coffee and a sandwich?
+* Quiero un café y un sándwich.
+- Quiero un café.
+- Café.
+decision: 
+why: 
+
+### a1.cafe.04.ex09   teaches: ['a1-ordering-cafe-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-cafe-04-ex.json, content/es-latam/exercises/a1/a1-cafe-04-ex.json
+lesson: content/es-es/lessons/a1/a1-cafe-04.json
+What is a good response to "¿Algo más?" when you have finished?
+* No, gracias. Eso es todo.
+- Sí, quiero.
+- Quiero café.
+decision: 
+why: 
+
+### a1.cafe.05.ex05   teaches: ['a1-ordering-cafe-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-cafe-05-ex.json, content/es-latam/exercises/a1/a1-cafe-05-ex.json
+lesson: content/es-es/lessons/a1/a1-cafe-05.json
+Which is a natural order?
+* Quiero un café, por favor.
+- Quiero un café por.
+- Café quiero un.
+decision: 
+why: 
+
+### a1.cafe.05.ex17   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-cafe-05-ex.json, content/es-latam/exercises/a1/a1-cafe-05-ex.json
+lesson: content/es-es/lessons/a1/a1-cafe-05.json
+What does the waiter ask after the order?
+* If the customer wants anything else.
+- Where the customer lives.
+- What time it is.
+decision: 
+why: 
+
+### a1.cafe.05.ex18   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-cafe-05-ex.json, content/es-latam/exercises/a1/a1-cafe-05-ex.json
+lesson: content/es-es/lessons/a1/a1-cafe-05.json
+How does the interaction end?
+* The customer thanks the waiter and finishes the order.
+- The customer goes to the supermarket.
+- The waiter orders food.
+decision: 
+why: 
+
+### a1.cafe.06.ex06   teaches: ['a1-ordering-cafe-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-cafe-consolidation-ex.json, content/es-latam/exercises/a1/a1-cafe-consolidation-ex.json
+lesson: content/es-es/lessons/a1/a1-cafe-consolidation.json
+Which is a polite café request?
+* Quiero un café, por favor.
+- Quiero un café por.
+- Café quiero.
+decision: 
+why: 
+
+### a1.cont.01.ex10   teaches: ['a1-present-continuous-vocab']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a1/a1-continuous-01-ex.json, content/es-latam/exercises/a1/a1-continuous-01-ex.json
+lesson: content/es-es/lessons/a1/a1-continuous-01.json
+Meg: Carlos, ¿qué estás haciendo?
+Carlos: _____
+* Estoy cocinando una sopa de verduras.
+- Tengo dolor de muelas.
+- Ayer fue domingo.
+decision: 
+why: 
+
+### a1.cont.01.ex11   teaches: ['a1-present-continuous-vocab']
+checks: tell-time-word
+files: content/es-es/exercises/a1/a1-continuous-01-ex.json, content/es-latam/exercises/a1/a1-continuous-01-ex.json
+lesson: content/es-es/lessons/a1/a1-continuous-01.json
+Carlos: ¿Puedes hablar un momento?
+Meg: _____
+* Ahora mismo estoy estudiando, ¿te llamo después?
+- Ahora mismo estás estudiando, ¿te llamo después?
+- Ayer estuve estudiando mucho para el examen final.
+decision: 
+why: 
+
+### a1.cont.02.ex10   teaches: ['a1-present-continuous-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-continuous-02-ex.json, content/es-latam/exercises/a1/a1-continuous-02-ex.json
+lesson: content/es-es/lessons/a1/a1-continuous-02.json
+Carlos: Meg, ¿estás comiendo ya?
+Meg: _____
+* Sí, estoy comiendo un plato de arroz con verduras.
+- Tengo frío.
+- El metro llega a las ocho.
+decision: 
+why: 
+
+### a1.cont.03.ex10   teaches: ['a1-present-continuous-vocab']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a1/a1-continuous-03-ex.json, content/es-latam/exercises/a1/a1-continuous-03-ex.json
+lesson: content/es-es/lessons/a1/a1-continuous-03.json
+Meg: Carlos, ¿dónde estás? Te estamos esperando.
+Carlos: _____
+* ¡Ya estoy yendo hacia el restaurante!
+- Ayer compré pan.
+- Me gusta el color verde.
+decision: 
+why: 
+
+### a1.cont.04.ex03   teaches: ['progressive']
+checks: tell-absolute
+files: content/es-es/exercises/a1/a1-continuous-04-ex.json, content/es-latam/exercises/a1/a1-continuous-04-ex.json
+lesson: content/es-es/lessons/a1/a1-continuous-04.json
+¡Silencio! Carlos __ en su habitación ahora mismo.
+* está durmiendo
+- duerme siempre
+- dormir
+decision: 
+why: 
+
+### a1.cont.04.ex09   teaches: ['present-tense']
+checks: tell-absolute
+files: content/es-es/exercises/a1/a1-continuous-04-ex.json, content/es-latam/exercises/a1/a1-continuous-04-ex.json
+lesson: content/es-es/lessons/a1/a1-continuous-04.json
+Carlos __ en un banco, pero hoy no está trabajando.
+* trabaja
+- está trabajando siempre
+- trabajando
+decision: 
+why: 
+
+### a1.cont.04.ex11   teaches: ['a1-present-continuous-vocab']
+checks: tell-time-word
+files: content/es-es/exercises/a1/a1-continuous-04-ex.json, content/es-latam/exercises/a1/a1-continuous-04-ex.json
+lesson: content/es-es/lessons/a1/a1-continuous-04.json
+Carlos: ¿Siempre tomas café por la tarde?
+Meg: _____
+* Casi siempre, pero hoy estoy tomando té verde.
+- Casi siempre, pero hoy estás tomando té caliente.
+- Casi siempre, pero ayer tomé té negro en mi casa.
+decision: 
+why: 
+
+### a1.cont.05.ex02   teaches: ['progressive']
+checks: tell-time-word
+files: content/es-es/exercises/a1/a1-continuous-05-ex.json, content/es-latam/exercises/a1/a1-continuous-05-ex.json
+lesson: content/es-es/lessons/a1/a1-continuous-05.json
+A friend calls and asks: "¿Dónde estás?" You answer: "__ de mi casa."
+* Estoy saliendo
+- Salgo ayer
+- Estoy salido
+decision: 
+why: 
+
+### a1.cont.05.ex08   teaches: ['progressive']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a1/a1-continuous-05-ex.json, content/es-latam/exercises/a1/a1-continuous-05-ex.json
+lesson: content/es-es/lessons/a1/a1-continuous-05.json
+Which sentence means "I am leaving now"?
+* Estoy saliendo ahora.
+- Salí ayer.
+- Salgo mañana.
+decision: 
+why: 
+
+### a1.cont.05.ex11   teaches: ['a1-present-continuous-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-continuous-05-ex.json, content/es-latam/exercises/a1/a1-continuous-05-ex.json
+lesson: content/es-es/lessons/a1/a1-continuous-05.json
+Carlos: ¿Qué estás haciendo, Meg?
+Meg: _____
+* Estoy tomando café y leyendo el periódico.
+- Tengo veinticinco años.
+- Es de noche.
+decision: 
+why: 
+
+### a1.cont.cons.ex11   teaches: ['a1-present-continuous-vocab']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a1/a1-continuous-consolidation-ex.json, content/es-latam/exercises/a1/a1-continuous-consolidation-ex.json
+lesson: content/es-es/lessons/a1/a1-continuous-consolidation.json
+Carlos: Meg, ¿estás lista para salir?
+Meg: _____
+* Casi; me estoy poniendo los zapatos y salgo.
+- Tengo dolor de estómago.
+- Hace viento ayer.
+decision: 
+why: 
+
+### a1.dem.01.ex10   teaches: ['a1-demonstratives-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-demonstrative-01-ex.json, content/es-latam/exercises/a1/a1-demonstrative-01-ex.json
+lesson: content/es-es/lessons/a1/a1-demonstrative-01.json
+Meg: Carlos, ¿te gusta este sombrero?
+Carlos: _____
+* Sí, este sombrero te queda muy bien.
+- Tengo veinticinco años.
+- Son las tres.
+decision: 
+why: 
+
+### a1.dem.01.ex11   teaches: ['a1-demonstratives-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-demonstrative-01-ex.json, content/es-latam/exercises/a1/a1-demonstrative-01-ex.json
+lesson: content/es-es/lessons/a1/a1-demonstrative-01.json
+Meg: ¿Cuánto cuestan estas frutas?
+Vendedor: _____
+* Estas frutas cuestan dos dólares el kilo.
+- Me despierto temprano.
+- No sé nadar.
+decision: 
+why: 
+
+### a1.dem.03.ex04   teaches: ['demonstratives']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-demonstrative-03-ex.json, content/es-latam/exercises/a1/a1-demonstrative-03-ex.json
+lesson: content/es-es/lessons/a1/a1-demonstrative-03.json
+Con "allí" usamos normalmente...
+* aquel / aquella
+- este / esta
+- mi / tu
+decision: 
+why: 
+
+### a1.dem.03.ex10   teaches: ['a1-demonstratives-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-demonstrative-03-ex.json, content/es-latam/exercises/a1/a1-demonstrative-03-ex.json
+lesson: content/es-es/lessons/a1/a1-demonstrative-03.json
+Meg: Carlos, ¿qué es aquel edificio a lo lejos?
+Carlos: _____
+* Aquel edificio es el teatro de la ópera.
+- Son las cinco de la tarde.
+- Me llamo Carlos.
+decision: 
+why: 
+
+### a1.dem.03.ex11   teaches: ['a1-demonstratives-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-demonstrative-03-ex.json, content/es-latam/exercises/a1/a1-demonstrative-03-ex.json
+lesson: content/es-es/lessons/a1/a1-demonstrative-03.json
+Carlos: ¿Te gustan más estas casas o aquellas de allí?
+Meg: _____
+* Me gustan mucho más aquellas casas de colores.
+- No tengo paraguas.
+- Estudio en la biblioteca.
+decision: 
+why: 
+
+### a1.dem.04.ex11   teaches: ['a1-demonstratives-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-demonstrative-04-ex.json, content/es-latam/exercises/a1/a1-demonstrative-04-ex.json
+lesson: content/es-es/lessons/a1/a1-demonstrative-04.json
+Meg: He aprobado el examen de español.
+Carlos: _____
+* ¡Eso es una maravillosa noticia!
+- Tengo sueño.
+- El coche es azul.
+decision: 
+why: 
+
+### a1.dem.05.ex10   teaches: ['a1-demonstratives-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-demonstrative-05-ex.json, content/es-latam/exercises/a1/a1-demonstrative-05-ex.json
+lesson: content/es-es/lessons/a1/a1-demonstrative-05.json
+Vendedora: ¿Le gusta esta bufanda de seda?
+Meg: _____
+* Sí, es hermosa. Me llevo esta.
+- Tengo tres hermanos.
+- Son las ocho.
+decision: 
+why: 
+
+### a1.dem.cons.ex11   teaches: ['a1-demonstratives-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-demonstrative-consolidation-ex.json, content/es-latam/exercises/a1/a1-demonstrative-consolidation-ex.json
+lesson: content/es-es/lessons/a1/a1-demonstrative-consolidation.json
+Meg: ¿Te gusta más este cuadro o aquel?
+Carlos: _____
+* Aquel cuadro de la pared es precioso.
+- Tengo fiebre.
+- El tren sale a las nueve.
+decision: 
+why: 
+
+### a1.directions.04.ex09   teaches: ['estar']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-directions-04-ex.json, content/es-latam/exercises/a1/a1-directions-04-ex.json
+lesson: content/es-es/lessons/a1/a1-directions-04.json
+Which locates a specific place?
+* El museo está a la derecha.
+- Hay un museo.
+- Ve al museo.
+decision: 
+why: 
+
+### a1.directions.05.ex14   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-directions-05-ex.json, content/es-latam/exercises/a1/a1-directions-05-ex.json
+lesson: content/es-es/lessons/a1/a1-directions-05.json
+Where does the character start navigating in the story?
+* In the centre of Hanoi.
+- At the airport.
+- At home.
+decision: 
+why: 
+
+### a1.directions.05.ex18   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-directions-05-ex.json, content/es-latam/exercises/a1/a1-directions-05-ex.json
+lesson: content/es-es/lessons/a1/a1-directions-05.json
+Where does the character eventually arrive?
+* At the place they were looking for.
+- At a birthday party.
+- At a kitchen.
+decision: 
+why: 
+
+### a1.dol.02.ex10   teaches: ['a1-what-hurts-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-doler-02-ex.json, content/es-latam/exercises/a1/a1-doler-02-ex.json
+lesson: content/es-es/lessons/a1/a1-doler-02.json
+Meg: Carlos, ¿qué te duele?
+Carlos: _____
+* Me duele mucho el hombro izquierdo.
+- Tengo diez lápices.
+- Mañana voy a estudiar.
+decision: 
+why: 
+
+### a1.dol.02.ex11   teaches: ['a1-what-hurts-vocab']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a1/a1-doler-02-ex.json, content/es-latam/exercises/a1/a1-doler-02-ex.json
+lesson: content/es-es/lessons/a1/a1-doler-02.json
+Médico: ¿A su hijo qué le duele?
+Madre: _____
+* Le duele mucho el oído y tiene fiebre.
+- Compramos manzanas ayer.
+- Vivo cerca de aquí.
+decision: 
+why: 
+
+### a1.dol.03.ex06   teaches: ['intensificadores-y-grado']
+checks: tell-absolute
+files: content/es-es/exercises/a1/a1-doler-03-ex.json, content/es-latam/exercises/a1/a1-doler-03-ex.json
+lesson: content/es-es/lessons/a1/a1-doler-03.json
+¿Cómo se dice "It doesn't hurt at all"?
+* No me duele nada.
+- No me duele algo.
+- No me duelen ninguno.
+decision: 
+why: 
+
+### a1.dol.04.ex08   teaches: ['a1-what-hurts-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-doler-04-ex.json, content/es-latam/exercises/a1/a1-doler-04-ex.json
+lesson: content/es-es/lessons/a1/a1-doler-04.json
+How do you ask for headache medicine?
+* ¿Tiene algo para el dolor de cabeza?
+- ¿Tiene algo con la cabeza?
+- ¿Dónde está mi cabeza?
+decision: 
+why: 
+
+### a1.dol.04.ex10   teaches: ['a1-what-hurts-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-doler-04-ex.json, content/es-latam/exercises/a1/a1-doler-04-ex.json
+lesson: content/es-es/lessons/a1/a1-doler-04.json
+Meg: Buenas tardes, ¿tiene algo para el dolor de garganta?
+Farmacéutico: _____
+* Sí, este jarabe de hierbas es muy bueno.
+- No me gusta la música.
+- Son las tres.
+decision: 
+why: 
+
+### a1.dol.05.ex10   teaches: ['a1-what-hurts-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-doler-05-ex.json, content/es-latam/exercises/a1/a1-doler-05-ex.json
+lesson: content/es-es/lessons/a1/a1-doler-05.json
+Meg: Carlos, ¿cómo te sientes hoy?
+Carlos: _____
+* Mucho mejor, gracias. Ya no me duele la espalda.
+- El libro está en la mesa.
+- Vivo en Hanói.
+decision: 
+why: 
+
+### a1.dol.cons.ex11   teaches: ['a1-what-hurts-vocab']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a1/a1-doler-consolidation-ex.json, content/es-latam/exercises/a1/a1-doler-consolidation-ex.json
+lesson: content/es-es/lessons/a1/a1-doler-consolidation.json
+Meg: Carlos, ¿necesitas algo de la farmacia?
+Carlos: _____
+* Sí, necesito pastillas; me duele la cabeza.
+- Ayer comí arroz.
+- El tren sale a las diez.
+decision: 
+why: 
+
+### a1.future.03.ex02   teaches: ['a1-future-plans-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-future-03-ex.json, content/es-latam/exercises/a1/a1-future-03-ex.json
+lesson: content/es-es/lessons/a1/a1-future-03.json
+¿Qué significa "adónde"?
+* where to
+- how
+- when
+decision: 
+why: 
+
+### a1.future.05.ex15   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-future-05-ex.json, content/es-latam/exercises/a1/a1-future-05-ex.json
+lesson: content/es-es/lessons/a1/a1-future-05.json
+Who is Ana travelling with?
+* Her friend Marta.
+- Her family.
+- Her doctor.
+decision: 
+why: 
+
+### a1.future.06.ex01   teaches: ['a1-future-plans-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-future-consolidation-ex.json, content/es-latam/exercises/a1/a1-future-consolidation-ex.json
+lesson: content/es-es/lessons/a1/a1-future-consolidation.json
+¿Cómo se dice "next week"?
+* la próxima semana
+- mañana
+- el sábado
+decision: 
+why: 
+
+### a1.gustar.03.ex11   teaches: ['gustar']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-gustar-03-ex.json, content/es-latam/exercises/a1/a1-gustar-03-ex.json
+lesson: content/es-es/lessons/a1/a1-gustar-03.json
+Carlos: ¿A ustedes les gusta viajar?
+Meg y Lauren: _____
+* Sí, nos gusta mucho.
+- Sí, te gusta.
+- No, soy Meg.
+decision: 
+why: 
+
+### a1.gustar.04.ex10   teaches: ['a1-likes-dislikes-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-gustar-04-ex.json, content/es-latam/exercises/a1/a1-gustar-04-ex.json
+lesson: content/es-es/lessons/a1/a1-gustar-04.json
+Meg: ¿Qué te gusta hacer los domingos?
+Carlos: _____
+* Me gusta leer y cocinar.
+- Tengo 28 años.
+- Soy de Hungría.
+decision: 
+why: 
+
+### a1.gustar.04.ex11   teaches: ['a1-likes-dislikes-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-gustar-04-ex.json, content/es-latam/exercises/a1/a1-gustar-04-ex.json
+lesson: content/es-es/lessons/a1/a1-gustar-04.json
+Carlos: ¿Te gusta bailar salsa?
+Meg: _____
+* ¡Sí, me encanta bailar!
+- No, soy Meg.
+- Vivo en Hanói.
+decision: 
+why: 
+
+### a1.gustar.05.ex11   teaches: ['a1-likes-dislikes-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-gustar-05-ex.json, content/es-latam/exercises/a1/a1-gustar-05-ex.json
+lesson: content/es-es/lessons/a1/a1-gustar-05.json
+Carlos: ¿Qué te parece el museo de arte?
+Meg: _____
+* Me interesa mucho la pintura.
+- Tengo 25 años.
+- No es de México.
+decision: 
+why: 
+
+### a1.hobbies.03.ex09   teaches: ['a1-hobbies-free-time-vocab']
+checks: tell-time-word
+files: content/es-es/exercises/a1/a1-hobbies-03-ex.json, content/es-latam/exercises/a1/a1-hobbies-03-ex.json
+lesson: content/es-es/lessons/a1/a1-hobbies-03.json
+Which expression shows a repeated routine?
+* Cada semana
+- Ayer
+- El año pasado
+decision: 
+why: 
+
+### a1.hobbies.03.ex16   teaches: ['a1-hobbies-free-time-vocab']
+checks: tell-time-word
+files: content/es-es/exercises/a1/a1-hobbies-03-ex.json, content/es-latam/exercises/a1/a1-hobbies-03-ex.json
+lesson: content/es-es/lessons/a1/a1-hobbies-03.json
+Which shows a repeated activity?
+* Los sábados juego al fútbol.
+- El sábado jugué al fútbol.
+- Ayer juego al fútbol.
+decision: 
+why: 
+
+### a1.hobbies.04.ex09   teaches: ['a1-hobbies-free-time-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-hobbies-04-ex.json, content/es-latam/exercises/a1/a1-hobbies-04-ex.json
+lesson: content/es-es/lessons/a1/a1-hobbies-04.json
+Which question asks about a hobby?
+* ¿Qué haces en tu tiempo libre?
+- ¿Dónde trabajas?
+- ¿Qué tienes?
+decision: 
+why: 
+
+### a1.hobbies.05.ex14   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-hobbies-05-ex.json, content/es-latam/exercises/a1/a1-hobbies-05-ex.json
+lesson: content/es-es/lessons/a1/a1-hobbies-05.json
+What does Carlos like to do on Saturday mornings?
+* Play football with friends.
+- Cook new dishes.
+- Play the guitar.
+decision: 
+why: 
+
+### a1.hobbies.05.ex16   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-hobbies-05-ex.json, content/es-latam/exercises/a1/a1-hobbies-05-ex.json
+lesson: content/es-es/lessons/a1/a1-hobbies-05.json
+Who plays the guitar very well?
+* Meg's sister Lauren.
+- Daniela.
+- Carlos.
+decision: 
+why: 
+
+### a1.hobbies.05.ex17   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-hobbies-05-ex.json, content/es-latam/exercises/a1/a1-hobbies-05-ex.json
+lesson: content/es-es/lessons/a1/a1-hobbies-05.json
+What does Carlos prefer to do in the afternoon?
+* Rest, read or listen to music.
+- Cook new dishes.
+- Dance salsa.
+decision: 
+why: 
+
+### a1.hobbies.05.ex18   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-hobbies-05-ex.json, content/es-latam/exercises/a1/a1-hobbies-05-ex.json
+lesson: content/es-es/lessons/a1/a1-hobbies-05.json
+What do the friends plan for next Saturday?
+* To play together in the park.
+- To go to a museum.
+- To cook together.
+decision: 
+why: 
+
+### a1.kitchen.01.ex15   teaches: ['a1-kitchen-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-kitchen-01-ex.json, content/es-latam/exercises/a1/a1-kitchen-01-ex.json
+lesson: content/es-es/lessons/a1/a1-kitchen-01.json
+¿Qué significa "sartén"? 
+* frying pan
+- oven
+- spoon
+decision: 
+why: 
+
+### a1.kitchen.05.ex17   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-kitchen-05-ex.json, content/es-latam/exercises/a1/a1-kitchen-05-ex.json
+lesson: content/es-es/lessons/a1/a1-kitchen-05.json
+What kind of text is the Unit 11 story?
+* A recipe or cooking sequence.
+- A birthday invitation.
+- A shopping list.
+decision: 
+why: 
+
+### a1.refl.02.ex11   teaches: ['a1-daily-routine-reflexive-verbs-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-reflexive-02-ex.json, content/es-latam/exercises/a1/a1-reflexive-02-ex.json
+lesson: content/es-es/lessons/a1/a1-reflexive-02.json
+Carlos: ¿A qué hora se despiertan tus amigos?
+Meg: _____
+* Se despiertan a las ocho de la mañana.
+- No quieren comer pan.
+- Me gusta el verano.
+decision: 
+why: 
+
+### a1.refl.03.ex11   teaches: ['a1-daily-routine-reflexive-verbs-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-reflexive-03-ex.json, content/es-latam/exercises/a1/a1-reflexive-03-ex.json
+lesson: content/es-es/lessons/a1/a1-reflexive-03.json
+Carlos: Meg, hace frío afuera hoy.
+Meg: _____
+* Entonces me pongo una chaqueta abrigada.
+- No me gustan los coches.
+- Está lloviendo café.
+decision: 
+why: 
+
+### a1.refl.04.ex10   teaches: ['a1-daily-routine-reflexive-verbs-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-reflexive-04-ex.json, content/es-latam/exercises/a1/a1-reflexive-04-ex.json
+lesson: content/es-es/lessons/a1/a1-reflexive-04.json
+Carlos: ¿Por qué despiertas a Juan tan temprano?
+Meg: _____
+* Porque tenemos clase a las ocho.
+- Me gusta el verano.
+- Está nublado.
+decision: 
+why: 
+
+### a1.refl.04.ex11   teaches: ['a1-daily-routine-reflexive-verbs-vocab']
+checks: length-giveaway, tell-absolute
+files: content/es-es/exercises/a1/a1-reflexive-04-ex.json, content/es-latam/exercises/a1/a1-reflexive-04-ex.json
+lesson: content/es-es/lessons/a1/a1-reflexive-04.json
+Meg: ¿Lavas tú los platos después de cenar?
+Carlos: _____
+* Sí, yo lavo los platos y limpio la mesa.
+- Me lavo la cara siempre.
+- No me gusta bailar.
+decision: 
+why: 
+
+### a1.refl.05.ex10   teaches: ['a1-daily-routine-reflexive-verbs-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-reflexive-05-ex.json, content/es-latam/exercises/a1/a1-reflexive-05-ex.json
+lesson: content/es-es/lessons/a1/a1-reflexive-05.json
+Meg: Carlos, ¿cuál es tu rutina por la mañana?
+Carlos: _____
+* Primero tomo café y después me ducho.
+- Tengo veintiocho años.
+- Mañana es jueves.
+decision: 
+why: 
+
+### a1.refl.cons.ex12   teaches: ['a1-daily-routine-reflexive-verbs-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-reflexive-consolidation-ex.json, content/es-latam/exercises/a1/a1-reflexive-consolidation-ex.json
+lesson: content/es-es/lessons/a1/a1-reflexive-consolidation.json
+Carlos: ¿Qué te pones hoy para salir?
+Meg: _____
+* Me pongo unos pantalones cómodos y una camiseta.
+- Vivo en un apartamento nuevo.
+- Son las cuatro y media.
+decision: 
+why: 
+
+
+########## Block 2: a1 + a2 (81 exercises) ##########
+
+### a1.weather.05.ex15   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-weather-05-ex.json, content/es-latam/exercises/a1/a1-weather-05-ex.json
+lesson: content/es-es/lessons/a1/a1-weather-05.json
+What does the character record?
+* The weather on different days.
+- Family members.
+- Directions around town.
+decision: 
+why: 
+
+### a1.work.05.ex02   teaches: ['a1-work-obligations-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-work-05-ex.json, content/es-latam/exercises/a1/a1-work-05-ex.json
+lesson: content/es-es/lessons/a1/a1-work-05.json
+¿Qué significa "jornada"?
+* working day
+- office
+- break
+decision: 
+why: 
+
+### a1.work.05.ex03   teaches: ['a1-work-obligations-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a1/a1-work-05-ex.json, content/es-latam/exercises/a1/a1-work-05-ex.json
+lesson: content/es-es/lessons/a1/a1-work-05.json
+¿Qué significa "después"?
+* afterwards
+- first
+- early
+decision: 
+why: 
+
+### a2.02.05.ex15   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-02-05-ex.json, content/es-latam/exercises/a2/a2-02-05-ex.json
+lesson: (not referenced by a lesson)
+¿Por qué aceptan la idea de Carlos?
+* Porque todavía no han navegado entre las montañas.
+- Porque ya han visto el río.
+- Porque hay mucho tráfico.
+decision: 
+why: 
+
+### a2.02.02.ex13   teaches: ['ya-todavia-no']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-02-02-ex.json, content/es-latam/exercises/a2/a2-02-02-ex.json
+lesson: content/es-es/lessons/a2/a2-02-02.json
+Which sentence is negative and says the action has not happened yet?
+* Todavía no he visto el templo.
+- Ya he visto el templo.
+- He visto el templo.
+decision: 
+why: 
+
+### a2.02.04.ex10   teaches: ['a2-what-you-have-done-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-02-04-ex.json, content/es-latam/exercises/a2/a2-02-04-ex.json
+lesson: content/es-es/lessons/a2/a2-02-04.json
+¿Qué significa «recorrer»?
+* to travel around
+- to stop
+- to rent
+decision: 
+why: 
+
+### a2.02.04.ex15   teaches: ['ya-todavia-no']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-02-04-ex.json, content/es-latam/exercises/a2/a2-02-04-ex.json
+lesson: content/es-es/lessons/a2/a2-02-04.json
+Carlos: ¿Han llegado al pueblo?
+Meg: _____
+* No, todavía no hemos llegado.
+- No, ya hemos llegado.
+- No, todavía no llegar.
+decision: 
+why: 
+
+### a2.02.05.ex05   teaches: ['ya-todavia-no']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-02-05-ex.json, content/es-latam/exercises/a2/a2-02-05-ex.json
+lesson: content/es-es/lessons/a2/a2-02-05.json
+Which sentence says what remains to be done?
+* Todavía no han navegado entre las montañas.
+- Ya han visto los arrozales.
+- Ya han alquilado las bicicletas.
+decision: 
+why: 
+
+### a2.02.05.ex11   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-02-05-ex.json, content/es-latam/exercises/a2/a2-02-05-ex.json
+lesson: content/es-es/lessons/a2/a2-02-05.json
+¿Qué han visto durante el camino?
+* Búfalos, arrozales y pequeños templos.
+- El aeropuerto y la estación.
+- La playa y el mar.
+decision: 
+why: 
+
+### a2.02.05.ex12   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-02-05-ex.json, content/es-latam/exercises/a2/a2-02-05-ex.json
+lesson: content/es-es/lessons/a2/a2-02-05.json
+¿Qué ha hecho Meg varias veces?
+* Se ha detenido para hacer fotografías.
+- Ha alquilado otra bicicleta.
+- Ha navegado por el río.
+decision: 
+why: 
+
+### a2.03.01.ex13   teaches: ['preterito-perfecto']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-03-01-ex.json, content/es-latam/exercises/a2/a2-03-01-ex.json
+lesson: content/es-es/lessons/a2/a2-03-01.json
+Which sentence uses the pretérito perfecto?
+* Hemos comprado los billetes.
+- Compramos los billetes ayer.
+- Compra los billetes.
+decision: 
+why: 
+
+### a2.03.01.ex14   teaches: ['preterito-perfecto']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-03-01-ex.json, content/es-latam/exercises/a2/a2-03-01-ex.json
+lesson: content/es-es/lessons/a2/a2-03-01.json
+Meg: ¿Qué han visto?
+Carlos: _____
+* Hemos visto las cuevas.
+- Hemos ver las cuevas.
+- Vimos las cuevas ayer.
+decision: 
+why: 
+
+### a2.03.01.ex15   teaches: ['preterito-perfecto']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-03-01-ex.json, content/es-latam/exercises/a2/a2-03-01-ex.json
+lesson: content/es-es/lessons/a2/a2-03-01.json
+Carlos: ¿Han llegado al embarcadero?
+Meg: _____
+* Sí, hemos llegado.
+- Sí, hemos llegar.
+- Sí, llegamos ayer.
+decision: 
+why: 
+
+### a2.03.05.ex15   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-03-05-ex.json, content/es-latam/exercises/a2/a2-03-05-ex.json
+lesson: content/es-es/lessons/a2/a2-03-05.json
+¿Qué hace Lauren durante el paseo?
+* Escribe algunas notas en su cuaderno.
+- Toma fotografías sin parar.
+- Compra fruta fresca.
+decision: 
+why: 
+
+### a2.04.01.ex13   teaches: ['antes-despues-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-04-01-ex.json, content/es-latam/exercises/a2/a2-04-01-ex.json
+lesson: content/es-es/lessons/a2/a2-04-01.json
+Which sentence has the correct sequence?
+* Antes de empezar, hemos lavado las manos.
+- Antes de empezar, hemos lavar las manos.
+- Antes de empezar, lavamos las manos ayer.
+decision: 
+why: 
+
+### a2.04.01.ex15   teaches: ['preterito-perfecto']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-04-01-ex.json, content/es-latam/exercises/a2/a2-04-01-ex.json
+lesson: content/es-es/lessons/a2/a2-04-01.json
+Carlos: ¿Han preparado los ingredientes antes de cocinar?
+Meg: _____
+* Sí, hemos preparado los ingredientes.
+- Sí, hemos preparar los ingredientes.
+- Sí, preparamos los ingredientes ayer.
+decision: 
+why: 
+
+### a2.04.02.ex15   teaches: ['preterito-perfecto']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-04-02-ex.json, content/es-latam/exercises/a2/a2-04-02-ex.json
+lesson: content/es-es/lessons/a2/a2-04-02.json
+Carlos: ¿Han servido la comida después de cocinar?
+Meg: _____
+* Sí, hemos servido la comida.
+- Sí, hemos servir la comida.
+- Sí, servimos la comida ayer.
+decision: 
+why: 
+
+### a2.04.05.ex11   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-04-05-ex.json, content/es-latam/exercises/a2/a2-04-05-ex.json
+lesson: content/es-es/lessons/a2/a2-04-05.json
+¿A qué clase se han apuntado los amigos?
+* A una clase de cocina tradicional.
+- A una clase de español.
+- A una clase de fotografía.
+decision: 
+why: 
+
+### a2.04.05.ex12   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-04-05-ex.json, content/es-latam/exercises/a2/a2-04-05-ex.json
+lesson: content/es-es/lessons/a2/a2-04-05.json
+¿Qué hacen antes de empezar?
+* Se lavan las manos y se ponen un delantal.
+- Prueban la comida.
+- Se marchan de la clase.
+decision: 
+why: 
+
+### a2.04.05.ex15   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-04-05-ex.json, content/es-latam/exercises/a2/a2-04-05-ex.json
+lesson: content/es-es/lessons/a2/a2-04-05.json
+¿Qué hacen antes de marcharse?
+* Hacen una foto con la profesora.
+- Preparan otra receta.
+- Compran un delantal.
+decision: 
+why: 
+
+### a2.05.05.ex14   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-05-05-ex.json, content/es-latam/exercises/a2/a2-05-05-ex.json
+lesson: content/es-es/lessons/a2/a2-05-05.json
+¿Cómo describe la experiencia uno de los viajeros?
+* Ha sido inesperada, pero divertida.
+- Ha sido aburrida.
+- Ha sido imposible.
+decision: 
+why: 
+
+### a2.06.02.ex10   teaches: ['a2-comparing-trips-memories-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-06-02-ex.json, content/es-latam/exercises/a2/a2-06-02-ex.json
+lesson: content/es-es/lessons/a2/a2-06-02.json
+¿Qué significa «cómodo»?
+* comfortable
+- more
+- less
+decision: 
+why: 
+
+### a2.06.03.ex10   teaches: ['a2-comparing-trips-memories-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-06-03-ex.json, content/es-latam/exercises/a2/a2-06-03-ex.json
+lesson: content/es-es/lessons/a2/a2-06-03.json
+¿Qué significa «la experiencia»?
+* experience
+- more
+- less
+decision: 
+why: 
+
+### a2.06.05.ex14   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-06-05-ex.json, content/es-latam/exercises/a2/a2-06-05-ex.json
+lesson: content/es-es/lessons/a2/a2-06-05.json
+¿Qué han hecho en Ninh Bình?
+* Han hecho muchas actividades durante las vacaciones.
+- Han trabajado en un hotel.
+- Han estudiado en una escuela.
+decision: 
+why: 
+
+### a2.06.05.ex15   teaches: None
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-06-05-ex.json, content/es-latam/exercises/a2/a2-06-05-ex.json
+lesson: content/es-es/lessons/a2/a2-06-05.json
+¿Qué piensa Kaylee de los arrozales y los pueblos?
+* Todavía piensa en ellos.
+- Nunca ha visitado esos lugares.
+- Ha olvidado esos lugares.
+decision: 
+why: 
+
+### a2.07.01.ex12   teaches: ['desde-desde-hace']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-07-01-ex.json, content/es-latam/exercises/a2/a2-07-01-ex.json
+lesson: content/es-es/lessons/a2/a2-07-01.json
+Choose the correct duration expression.
+* desde hace dos años
+- desde dos años
+- desde el año
+decision: 
+why: 
+
+### a2.07.05.ex13   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-07-05-ex.json, content/es-latam/exercises/a2/a2-07-05-ex.json
+lesson: content/es-es/lessons/a2/a2-07-05.json
+¿Para qué ha venido Lucía a Vietnam?
+* Para enseñar español y conocer mejor la cultura vietnamita.
+- Para trabajar en un hotel.
+- Para estudiar en la universidad.
+decision: 
+why: 
+
+### a2.07.05.ex15   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-07-05-ex.json, content/es-latam/exercises/a2/a2-07-05-ex.json
+lesson: content/es-es/lessons/a2/a2-07-05.json
+¿Qué hacen los amigos después de la clase?
+* Toman algo en una cafetería.
+- Van a Ninh Bình.
+- Estudian en casa.
+decision: 
+why: 
+
+### a2.08.05.ex05   teaches: ['querer-poder']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-08-05-ex.json, content/es-latam/exercises/a2/a2-08-05-ex.json
+lesson: content/es-es/lessons/a2/a2-08-05.json
+Which is a positive response to an invitation to a celebration?
+* Sí, gracias. Quiero venir a la celebración.
+- Todavía no he comprado la bebida.
+- Todavía no he cocinado.
+decision: 
+why: 
+
+### a2.08.05.ex12   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-08-05-ex.json, content/es-latam/exercises/a2/a2-08-05-ex.json
+lesson: content/es-es/lessons/a2/a2-08-05.json
+¿Qué plato les enseña a preparar Lucía?
+* Una tortilla española.
+- Una paella.
+- Una sopa.
+decision: 
+why: 
+
+### a2.08.05.ex14   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-08-05-ex.json, content/es-latam/exercises/a2/a2-08-05-ex.json
+lesson: content/es-es/lessons/a2/a2-08-05.json
+¿Qué hace Lucía después de cenar?
+* Les muestra fotografías de su ciudad.
+- Les enseña una tortilla.
+- Les da las gracias.
+decision: 
+why: 
+
+### a2.08.05.ex16   teaches: ['a2-making-responding-invitations-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-08-05-ex.json, content/es-latam/exercises/a2/a2-08-05-ex.json
+lesson: content/es-es/lessons/a2/a2-08-05.json
+Meg: ¿Quieres venir a la celebración?
+Carlos: _____
+* Sí, claro. Ya he preparado la comida.
+- Todavía no he venido.
+- Todavía he venido.
+decision: 
+why: 
+
+### a2.08.consolidation.ex08   teaches: ['ya-todavia-no']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a2/a2-08-consolidation-ex.json, content/es-latam/exercises/a2/a2-08-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-08-consolidation.json
+Which sentence says something has not happened yet?
+* Todavía no he cocinado.
+- Ya he cocinado.
+- He cocinado ayer.
+decision: 
+why: 
+
+### a2.09.01.ex02   teaches: ['alguna-vez']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-09-01-ex.json, content/es-latam/exercises/a2/a2-09-01-ex.json
+lesson: content/es-es/lessons/a2/a2-09-01.json
+Which sentence asks about an experience?
+* ¿Has visitado alguna vez la playa?
+- Nunca he visitado la playa.
+- He visitado la playa.
+decision: 
+why: 
+
+### a2.09.01.ex14   teaches: ['alguna-vez']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-09-01-ex.json, content/es-latam/exercises/a2/a2-09-01-ex.json
+lesson: content/es-es/lessons/a2/a2-09-01.json
+Carlos: ¿Has visitado alguna vez la playa?
+Meg: _____
+* Sí, he visitado la playa.
+- No, he visitado la playa.
+- Sí, nunca he visitado la playa.
+decision: 
+why: 
+
+### a2.09.01.ex15   teaches: ['alguna-vez']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-09-01-ex.json, content/es-latam/exercises/a2/a2-09-01-ex.json
+lesson: content/es-es/lessons/a2/a2-09-01.json
+Meg: ¿Has estado alguna vez en la costa?
+Carlos: _____
+* Sí, he estado en la costa.
+- No, he estado en la costa.
+- Sí, nunca he estado en la costa.
+decision: 
+why: 
+
+### a2.09.02.ex02   teaches: ['alguna-vez']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-09-02-ex.json, content/es-latam/exercises/a2/a2-09-02-ex.json
+lesson: content/es-es/lessons/a2/a2-09-02.json
+Which sentence asks whether someone has ever been to the port?
+* ¿Has estado alguna vez en el puerto?
+- Nunca he estado en el puerto.
+- He estado en el puerto.
+decision: 
+why: 
+
+### a2.09.03.ex02   teaches: ['alguna-vez']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-09-03-ex.json, content/es-latam/exercises/a2/a2-09-03-ex.json
+lesson: content/es-es/lessons/a2/a2-09-03.json
+Which sentence asks whether someone has ever met a fisherman?
+* ¿Has conocido alguna vez a un pescador?
+- Nunca he conocido a un pescador.
+- He conocido a un pescador.
+decision: 
+why: 
+
+### a2.09.03.ex15   teaches: ['alguna-vez']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-09-03-ex.json, content/es-latam/exercises/a2/a2-09-03-ex.json
+lesson: content/es-es/lessons/a2/a2-09-03.json
+Carlos: ¿Has visto alguna vez una barca?
+Meg: _____
+* Sí, he visto muchas.
+- No, he visto muchas.
+- Sí, nunca he visto una barca.
+decision: 
+why: 
+
+### a2.09.04.ex02   teaches: ['alguna-vez']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-09-04-ex.json, content/es-latam/exercises/a2/a2-09-04-ex.json
+lesson: content/es-es/lessons/a2/a2-09-04.json
+Which sentence asks whether someone has ever eaten at a restaurant?
+* ¿Has comido alguna vez en ese restaurante?
+- Nunca he comido en ese restaurante.
+- He comido en ese restaurante.
+decision: 
+why: 
+
+### a2.09.04.ex10   teaches: ['a2-experiences-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-09-04-ex.json, content/es-latam/exercises/a2/a2-09-04-ex.json
+lesson: content/es-es/lessons/a2/a2-09-04.json
+¿Qué significa «el restaurante»?
+* restaurant
+- never
+- ever
+decision: 
+why: 
+
+### a2.09.04.ex15   teaches: ['alguna-vez']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-09-04-ex.json, content/es-latam/exercises/a2/a2-09-04-ex.json
+lesson: content/es-es/lessons/a2/a2-09-04.json
+Carlos: ¿Has visitado alguna vez la costa?
+Meg: _____
+* Sí, he visitado la costa.
+- No, he visitado la costa.
+- Sí, nunca he visitado la costa.
+decision: 
+why: 
+
+### a2.09.05.ex02   teaches: ['alguna-vez']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-09-05-ex.json, content/es-latam/exercises/a2/a2-09-05-ex.json
+lesson: content/es-es/lessons/a2/a2-09-05.json
+Which sentence asks whether someone has ever bought a souvenir?
+* ¿Has comprado alguna vez un recuerdo?
+- Nunca he comprado un recuerdo.
+- He comprado un recuerdo.
+decision: 
+why: 
+
+### a2.09.05.ex12   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-09-05-ex.json, content/es-latam/exercises/a2/a2-09-05-ex.json
+lesson: content/es-es/lessons/a2/a2-09-05.json
+¿Por qué aceptan todos la excursión?
+* Porque ninguno ha visitado ese pequeño pueblo pesquero.
+- Porque todos han vivido allí.
+- Porque conocen muy bien el pueblo.
+decision: 
+why: 
+
+### a2.09.05.ex13   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-09-05-ex.json, content/es-latam/exercises/a2/a2-09-05-ex.json
+lesson: content/es-es/lessons/a2/a2-09-05.json
+¿Qué pregunta Daniela al llegar al mar?
+* Si han visto alguna vez tantas barcas juntas.
+- Si han comprado recuerdos.
+- Si han probado el marisco.
+decision: 
+why: 
+
+### a2.09.05.ex14   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-09-05-ex.json, content/es-latam/exercises/a2/a2-09-05-ex.json
+lesson: content/es-es/lessons/a2/a2-09-05.json
+¿Qué dice Carlos sobre el puerto?
+* Nunca ha estado en un puerto como ese.
+- Ha estado allí muchas veces.
+- Nunca ha visto el mar.
+decision: 
+why: 
+
+### a2.09.05.ex18   teaches: ['alguna-vez']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-09-05-ex.json, content/es-latam/exercises/a2/a2-09-05-ex.json
+lesson: content/es-es/lessons/a2/a2-09-05.json
+Meg: ¿Has probado alguna vez el marisco?
+Carlos: _____
+* Sí, he probado el marisco.
+- No, he probado el marisco.
+- Sí, nunca he probado el marisco.
+decision: 
+why: 
+
+### a2.09.consolidation.ex01   teaches: ['alguna-vez']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-09-consolidation-ex.json, content/es-latam/exercises/a2/a2-09-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-09-consolidation.json
+Which sentence asks about an experience?
+* ¿Has visitado alguna vez la playa?
+- Nunca he visitado la playa.
+- He visitado la playa.
+decision: 
+why: 
+
+### a2.09.consolidation.ex14   teaches: ['alguna-vez']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-09-consolidation-ex.json, content/es-latam/exercises/a2/a2-09-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-09-consolidation.json
+Meg: ¿Has visitado alguna vez la playa?
+Carlos: _____
+* Sí, he visitado la playa.
+- No, he visitado la playa.
+- Sí, nunca he visitado la playa.
+decision: 
+why: 
+
+### a2.10.03.ex02   teaches: ['preterito-perfecto']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-10-03-ex.json, content/es-latam/exercises/a2/a2-10-03-ex.json
+lesson: content/es-es/lessons/a2/a2-10-03.json
+Which sentence uses the pretérito perfecto correctly?
+* Mi padre ha llamado porque necesita hablar.
+- Mi padre ha llamar porque necesita hablar.
+- Mi padre llamó anoche porque necesitaba hablar.
+decision: 
+why: 
+
+### a2.10.03.ex15   teaches: ['por-que-y-porque']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-10-03-ex.json, content/es-latam/exercises/a2/a2-10-03-ex.json
+lesson: content/es-es/lessons/a2/a2-10-03.json
+Meg: ¿Por qué has contestado?
+Carlos: _____
+* He contestado porque he recibido una noticia.
+- He contestado ya.
+- Todavía no he contestado.
+decision: 
+why: 
+
+### a2.10.03.ex16   teaches: ['por-que-y-porque']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-10-03-ex.json, content/es-latam/exercises/a2/a2-10-03-ex.json
+lesson: content/es-es/lessons/a2/a2-10-03.json
+Carlos: ¿Por qué ha llamado tu madre?
+Meg: _____
+* Ha llamado porque necesita hablar conmigo.
+- Ha llamado ya.
+- Todavía no ha llamado.
+decision: 
+why: 
+
+### a2.10.05.ex12   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-10-05-ex.json, content/es-latam/exercises/a2/a2-10-05-ex.json
+lesson: content/es-es/lessons/a2/a2-10-05.json
+¿Qué ha recibido el protagonista?
+* Una noticia de su familia.
+- Una invitación.
+- Una excursión.
+decision: 
+why: 
+
+### a2.10.consolidation.ex01   teaches: ['preterito-perfecto']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-10-consolidation-ex.json, content/es-latam/exercises/a2/a2-10-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-10-consolidation.json
+Which sentence uses the pretérito perfecto correctly?
+* Mi madre ha llamado.
+- Mi madre ha llamar.
+- Mi madre llamó ayer.
+decision: 
+why: 
+
+### a2.10.consolidation.ex04   teaches: ['ya-todavia-no']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-10-consolidation-ex.json, content/es-latam/exercises/a2/a2-10-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-10-consolidation.json
+Which sentence means 'I have not called yet'?
+* Todavía no he llamado.
+- Ya he llamado.
+- Todavía llamo.
+decision: 
+why: 
+
+### a2.10.consolidation.ex11   teaches: ['por-que-y-porque']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-10-consolidation-ex.json, content/es-latam/exercises/a2/a2-10-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-10-consolidation.json
+Which sentence gives a reason for a recent action?
+* He contestado porque he recibido una noticia.
+- He contestado ya.
+- Todavía no he contestado.
+decision: 
+why: 
+
+### a2.10.consolidation.ex15   teaches: ['por-que-y-porque']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-10-consolidation-ex.json, content/es-latam/exercises/a2/a2-10-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-10-consolidation.json
+Carlos: ¿Por qué has contestado?
+Meg: _____
+* He contestado porque he recibido una noticia.
+- He contestado ya.
+- Todavía no he contestado.
+decision: 
+why: 
+
+### a2.11.05.ex14   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-11-05-ex.json, content/es-latam/exercises/a2/a2-11-05-ex.json
+lesson: content/es-es/lessons/a2/a2-11-05.json
+¿Qué compró Meg?
+* Un pequeño abanico hecho a mano.
+- Una fotografía.
+- Un libro de cocina.
+decision: 
+why: 
+
+### a2.11.consolidation.ex11   teaches: ['preterito-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-11-consolidation-ex.json, content/es-latam/exercises/a2/a2-11-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-11-consolidation.json
+Which sentence correctly recounts a finished event?
+* Primero visitamos el festival.
+- Primero visitamos el festival mañana.
+- Primero hemos visitado el festival ayer.
+decision: 
+why: 
+
+### a2.12.05.ex14   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-12-05-ex.json, content/es-latam/exercises/a2/a2-12-05-ex.json
+lesson: content/es-es/lessons/a2/a2-12-05.json
+¿Qué recibió Lucía?
+* El regalo y las flores.
+- El aeropuerto.
+- La bicicleta.
+decision: 
+why: 
+
+### a2.12.05.ex15   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-12-05-ex.json, content/es-latam/exercises/a2/a2-12-05-ex.json
+lesson: content/es-es/lessons/a2/a2-12-05.json
+¿Cómo reaccionó Lucía?
+* Se sorprendió y se alegró.
+- Se fue a casa.
+- No respondió.
+decision: 
+why: 
+
+### a2.13.05.ex10   teaches: ['a2-describing-events-time-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-13-05-ex.json, content/es-latam/exercises/a2/a2-13-05-ex.json
+lesson: content/es-es/lessons/a2/a2-13-05.json
+¿Qué significa «la organización»?
+* organisation
+- lake
+- flower
+decision: 
+why: 
+
+### a2.13.05.ex11   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-13-05-ex.json, content/es-latam/exercises/a2/a2-13-05-ex.json
+lesson: content/es-es/lessons/a2/a2-13-05.json
+¿Qué organizó una organización local?
+* Una jornada para limpiar un parque.
+- Una fiesta.
+- Una clase de cocina.
+decision: 
+why: 
+
+### a2.13.05.ex15   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-13-05-ex.json, content/es-latam/exercises/a2/a2-13-05-ex.json
+lesson: content/es-es/lessons/a2/a2-13-05.json
+¿Qué hicieron los voluntarios al mediodía?
+* Comieron juntos en el parque.
+- Fueron a casa.
+- Visitaron un museo.
+decision: 
+why: 
+
+### a2.14.01.ex05   teaches: ['preterito-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-14-01-ex.json, content/es-latam/exercises/a2/a2-14-01-ex.json
+lesson: content/es-es/lessons/a2/a2-14-01.json
+Which direct question is correct?
+* ¿Dónde trabajaste?
+- ¿Dónde trabajas ayer?
+- ¿Dónde trabajar ayer?
+decision: 
+why: 
+
+### a2.14.01.ex12   teaches: ['preterito-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-14-01-ex.json, content/es-latam/exercises/a2/a2-14-01-ex.json
+lesson: content/es-es/lessons/a2/a2-14-01.json
+Which direct question is correct?
+* ¿Cómo empezó la entrevista?
+- ¿Cómo empieza la entrevista ayer?
+- ¿Cómo empezar la entrevista?
+decision: 
+why: 
+
+### a2.14.01.ex14   teaches: ['preterito-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-14-01-ex.json, content/es-latam/exercises/a2/a2-14-01-ex.json
+lesson: content/es-es/lessons/a2/a2-14-01.json
+Carlos: ¿Qué pasó?
+Meg: _____
+* La entrevista empezó bien.
+- La entrevista empezar bien.
+- La entrevista empieza ayer.
+decision: 
+why: 
+
+### a2.14.01.ex15   teaches: ['preterito-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-14-01-ex.json, content/es-latam/exercises/a2/a2-14-01-ex.json
+lesson: content/es-es/lessons/a2/a2-14-01.json
+Meg: ¿Dónde trabajaste?
+Carlos: _____
+* Trabajé en un taller.
+- Trabajo en un taller ayer.
+- Trabajar en un taller.
+decision: 
+why: 
+
+### a2.14.02.ex09   teaches: ['preguntas-indirectas']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-14-02-ex.json, content/es-latam/exercises/a2/a2-14-02-ex.json
+lesson: content/es-es/lessons/a2/a2-14-02.json
+Which is an indirect question?
+* Preguntó cuándo llegó el artesano.
+- ¿Cuándo llegó el artesano?
+- ¿Quién llegó al taller?
+decision: 
+why: 
+
+### a2.14.02.ex10   teaches: ['a2-asking-what-happened-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-14-02-ex.json, content/es-latam/exercises/a2/a2-14-02-ex.json
+lesson: content/es-es/lessons/a2/a2-14-02.json
+¿Qué significa «el artesano»?
+* craftsperson
+- question
+- answer
+decision: 
+why: 
+
+### a2.14.02.ex12   teaches: ['preguntas-indirectas']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-14-02-ex.json, content/es-latam/exercises/a2/a2-14-02-ex.json
+lesson: content/es-es/lessons/a2/a2-14-02.json
+Which sentence correctly reports a question?
+* Preguntó qué pasó.
+- Preguntó ¿qué pasó?
+- Preguntó qué pasa ayer.
+decision: 
+why: 
+
+### a2.14.02.ex16   teaches: ['preguntas-indirectas']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-14-02-ex.json, content/es-latam/exercises/a2/a2-14-02-ex.json
+lesson: content/es-es/lessons/a2/a2-14-02.json
+Meg: ¿Qué quiso saber?
+Carlos: _____
+* Quiso saber dónde trabajaste.
+- Quiso saber ¿dónde trabajaste?.
+- Quiso saber dónde trabajas ayer.
+decision: 
+why: 
+
+### a2.14.03.ex09   teaches: ['preguntas-indirectas']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-14-03-ex.json, content/es-latam/exercises/a2/a2-14-03-ex.json
+lesson: content/es-es/lessons/a2/a2-14-03.json
+Which is an indirect question?
+* Quiso saber cuál elegiste.
+- ¿Cuál elegiste?
+- ¿Quién vino?
+decision: 
+why: 
+
+### a2.14.04.ex15   teaches: ['preguntas-indirectas']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-14-04-ex.json, content/es-latam/exercises/a2/a2-14-04-ex.json
+lesson: content/es-es/lessons/a2/a2-14-04.json
+Carlos: ¿Qué quiso saber la periodista sobre la experiencia?
+Meg: _____
+* Quiso saber cuándo empezó.
+- Quiso saber ¿cuándo empezó?.
+- Quiso saber cuándo empieza ayer.
+decision: 
+why: 
+
+### a2.14.04.ex16   teaches: ['preguntas-indirectas']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-14-04-ex.json, content/es-latam/exercises/a2/a2-14-04-ex.json
+lesson: content/es-es/lessons/a2/a2-14-04.json
+Meg: ¿Qué quiso saber sobre el trabajo?
+Carlos: _____
+* Quiso saber dónde trabajó.
+- Quiso saber dónde trabaja ayer.
+- Quiso saber ¿dónde trabajó?.
+decision: 
+why: 
+
+### a2.14.05.ex14   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-14-05-ex.json, content/es-latam/exercises/a2/a2-14-05-ex.json
+lesson: content/es-es/lessons/a2/a2-14-05.json
+¿Qué explicó el entrevistado?
+* Que aprendió el oficio de su abuelo.
+- Cómo llegó a la playa.
+- Cómo preparó una fiesta.
+decision: 
+why: 
+
+### a2.14.05.ex16   teaches: ['preguntas-indirectas']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-14-05-ex.json, content/es-latam/exercises/a2/a2-14-05-ex.json
+lesson: content/es-es/lessons/a2/a2-14-05.json
+Carlos: ¿Qué explicó el artesano sobre la herramienta?
+Meg: _____
+* Explicó cómo usó la herramienta.
+- Explicó ¿cómo usó la herramienta?.
+- Explicó cómo usa ayer la herramienta.
+decision: 
+why: 
+
+### a2.14.05.ex17   teaches: ['preguntas-indirectas']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-14-05-ex.json, content/es-latam/exercises/a2/a2-14-05-ex.json
+lesson: content/es-es/lessons/a2/a2-14-05.json
+Meg: ¿Qué quiso saber sobre el oficio?
+Carlos: _____
+* Quiso saber cómo empezó.
+- Quiso saber cómo empieza ayer.
+- Quiso saber ¿cómo empezó?.
+decision: 
+why: 
+
+### a2.14.consolidation.ex11   teaches: ['preguntas-indirectas']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-14-consolidation-ex.json, content/es-latam/exercises/a2/a2-14-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-14-consolidation.json
+Which sentence correctly reports a past question?
+* Quiso saber qué pasó.
+- Quiso saber ¿qué pasó?
+- Quiso saber qué pasa ayer.
+decision: 
+why: 
+
+### a2.14.consolidation.ex14   teaches: ['preterito-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-14-consolidation-ex.json, content/es-latam/exercises/a2/a2-14-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-14-consolidation.json
+Meg: ¿Qué pasó?
+Carlos: _____
+* La entrevista empezó bien.
+- La entrevista empieza ayer.
+- La entrevista empezar bien.
+decision: 
+why: 
+
+### a2.14.consolidation.ex16   teaches: ['preguntas-indirectas']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-14-consolidation-ex.json, content/es-latam/exercises/a2/a2-14-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-14-consolidation.json
+Meg: ¿Qué quiso saber?
+Carlos: _____
+* Quiso saber dónde trabajó.
+- Quiso saber ¿dónde trabajó?.
+- Quiso saber dónde trabaja ayer.
+decision: 
+why: 
+
+
+########## Block 3: a2 (82 exercises) ##########
+
+### a2.15.02.ex10   teaches: ['a2-explaining-what-happened-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-15-02-ex.json, content/es-latam/exercises/a2/a2-15-02-ex.json
+lesson: content/es-es/lessons/a2/a2-15-02.json
+¿Qué significa «la consecuencia»?
+* consequence
+- reason
+- message
+decision: 
+why: 
+
+### a2.15.04.ex02   teaches: ['porque-y-por-eso']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-15-04-ex.json, content/es-latam/exercises/a2/a2-15-04-ex.json
+lesson: content/es-es/lessons/a2/a2-15-04.json
+What does «por eso» introduce in «Recibió un mensaje, por eso se fue»?
+* the consequence
+- the cause
+- a question
+decision: 
+why: 
+
+### a2.15.05.ex11   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-15-05-ex.json, content/es-latam/exercises/a2/a2-15-05-ex.json
+lesson: content/es-es/lessons/a2/a2-15-05.json
+¿Por qué fue inesperada la despedida?
+* Porque alguien recibió una noticia y tuvo que irse.
+- Porque terminó una clase.
+- Porque empezó una excursión.
+decision: 
+why: 
+
+### a2.16.03.ex16   teaches: ['preterito-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-16-03-ex.json, content/es-latam/exercises/a2/a2-16-03-ex.json
+lesson: content/es-es/lessons/a2/a2-16-03.json
+Meg: ¿Qué hicieron y qué van a hacer después?
+Carlos: _____
+* Terminamos el viaje y vamos a volver.
+- Vamos a terminar el viaje y volvimos.
+- Terminamos el viaje y volvemos ayer.
+decision: 
+why: 
+
+### a2.16.04.ex13   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-16-04-ex.json, content/es-latam/exercises/a2/a2-16-04-ex.json
+lesson: content/es-es/lessons/a2/a2-16-04.json
+Which sentence describes a future goal?
+* Voy a aprender español.
+- Aprendí español ayer.
+- Aprendía español.
+decision: 
+why: 
+
+### a2.16.04.ex15   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-16-04-ex.json, content/es-latam/exercises/a2/a2-16-04-ex.json
+lesson: content/es-es/lessons/a2/a2-16-04.json
+Carlos: ¿Qué vas a hacer el próximo año?
+Meg: _____
+* Voy a viajar.
+- Viajé.
+- Viajo ayer.
+decision: 
+why: 
+
+### a2.16.04.ex16   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-16-04-ex.json, content/es-latam/exercises/a2/a2-16-04-ex.json
+lesson: content/es-es/lessons/a2/a2-16-04.json
+Meg: ¿Qué vas a aprender?
+Carlos: _____
+* Voy a aprender español.
+- Aprendí español ayer.
+- Aprendo español ayer.
+decision: 
+why: 
+
+### a2.16.05.ex11   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-16-05-ex.json, content/es-latam/exercises/a2/a2-16-05-ex.json
+lesson: content/es-es/lessons/a2/a2-16-05.json
+¿Qué idea tuvo Meg después del pícnic?
+* Escribir cartas para abrirlas dentro de un año.
+- Hacer un viaje inmediatamente.
+- Comprar una caja nueva.
+decision: 
+why: 
+
+### a2.16.05.ex13   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-16-05-ex.json, content/es-latam/exercises/a2/a2-16-05-ex.json
+lesson: content/es-es/lessons/a2/a2-16-05.json
+¿Sobre qué escribieron las cartas?
+* Sobre sus recuerdos y planes.
+- Sobre una receta.
+- Sobre una entrevista.
+decision: 
+why: 
+
+### a2.16.05.ex15   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-16-05-ex.json, content/es-latam/exercises/a2/a2-16-05-ex.json
+lesson: content/es-es/lessons/a2/a2-16-05.json
+¿Dónde escondió Kaylee la caja?
+* En una estantería del salón.
+- En una estación.
+- En un parque.
+decision: 
+why: 
+
+### a2.16.05.ex17   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-16-05-ex.json, content/es-latam/exercises/a2/a2-16-05-ex.json
+lesson: content/es-es/lessons/a2/a2-16-05.json
+Meg: ¿Qué va a hacer Carlos?
+Carlos: _____
+* Voy a seguir estudiando español.
+- Seguí estudiando español ayer.
+- Estudiaba español ayer.
+decision: 
+why: 
+
+### a2.16.05.ex18   teaches: ['preterito-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-16-05-ex.json, content/es-latam/exercises/a2/a2-16-05-ex.json
+lesson: content/es-es/lessons/a2/a2-16-05.json
+Carlos: ¿Qué hicieron con las cartas?
+Meg: _____
+* Las guardaron en una caja.
+- Las van a guardar en una caja mañana.
+- Las guardan ayer.
+decision: 
+why: 
+
+### a2.17.01.ex14   teaches: ['preterito-perfecto']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-17-01-ex.json, content/es-latam/exercises/a2/a2-17-01-ex.json
+lesson: content/es-es/lessons/a2/a2-17-01.json
+Carlos: ¿Qué has hecho este año?
+Meg: _____
+* He aprendido mucho.
+- Aprendí mucho el año pasado.
+- Aprendo mucho ayer.
+decision: 
+why: 
+
+### a2.17.01.ex15   teaches: ['preterito-perfecto']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-17-01-ex.json, content/es-latam/exercises/a2/a2-17-01-ex.json
+lesson: content/es-es/lessons/a2/a2-17-01.json
+Meg: ¿Has tenido buenas experiencias este año en el curso?
+Carlos: _____
+* Sí, he tenido buenas experiencias.
+- Sí, tuve buenas experiencias el año pasado.
+- Sí, tengo buenas experiencias ayer.
+decision: 
+why: 
+
+### a2.17.02.ex02   teaches: ['preterito-perfecto']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-17-02-ex.json, content/es-latam/exercises/a2/a2-17-02-ex.json
+lesson: content/es-es/lessons/a2/a2-17-02.json
+Which sentence uses the pretérito perfecto?
+* Hemos recordado la lección hoy.
+- Recordamos la lección ayer.
+- Recordábamos la lección.
+decision: 
+why: 
+
+### a2.17.03.ex12   teaches: ['preterito-perfecto-vs-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-17-03-ex.json, content/es-latam/exercises/a2/a2-17-03-ex.json
+lesson: content/es-es/lessons/a2/a2-17-03.json
+Which sentence correctly contrasts an open period and a finished period?
+* He aprendido mucho este año. / Aprendí mucho el año pasado.
+- Aprendí mucho este año. / He aprendido mucho el año pasado.
+- Aprendo mucho ayer. / Aprendí mucho el año pasado.
+decision: 
+why: 
+
+### a2.17.04.ex13   teaches: ['preterito-perfecto-vs-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-17-04-ex.json, content/es-latam/exercises/a2/a2-17-04-ex.json
+lesson: content/es-es/lessons/a2/a2-17-04.json
+Which sentence uses the pretérito perfecto?
+* Ya he terminado el curso.
+- Terminé el curso ayer.
+- Terminé el curso el año pasado.
+decision: 
+why: 
+
+### a2.17.04.ex15   teaches: ['preterito-perfecto-vs-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-17-04-ex.json, content/es-latam/exercises/a2/a2-17-04-ex.json
+lesson: content/es-es/lessons/a2/a2-17-04.json
+Carlos: ¿Qué has hecho este año?
+Meg: _____
+* He mejorado mucho.
+- Mejoré mucho el año pasado.
+- Mejoro mucho ayer.
+decision: 
+why: 
+
+### a2.17.05.ex11   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-17-05-ex.json, content/es-latam/exercises/a2/a2-17-05-ex.json
+lesson: content/es-es/lessons/a2/a2-17-05.json
+¿Qué preparó el profesor para la última clase?
+* Algunas actividades para recordar lo aprendido.
+- Un viaje.
+- Una nueva clase de cocina.
+decision: 
+why: 
+
+### a2.17.05.ex14   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-17-05-ex.json, content/es-latam/exercises/a2/a2-17-05-ex.json
+lesson: content/es-es/lessons/a2/a2-17-05.json
+¿Qué hizo el profesor al terminar la clase?
+* Felicitó al grupo por su esfuerzo.
+- Escribió una carta.
+- Compró una foto.
+decision: 
+why: 
+
+### a2.17.05.ex16   teaches: ['preterito-perfecto-vs-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-17-05-ex.json, content/es-latam/exercises/a2/a2-17-05-ex.json
+lesson: content/es-es/lessons/a2/a2-17-05.json
+Carlos: ¿Qué han aprendido este año?
+Meg: _____
+* Hemos aprendido mucho.
+- Aprendimos mucho ayer.
+- Aprendemos mucho mañana.
+decision: 
+why: 
+
+### a2.17.consolidation.ex14   teaches: ['preterito-perfecto']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-17-consolidation-ex.json, content/es-latam/exercises/a2/a2-17-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-17-consolidation.json
+Meg: ¿Qué has hecho este año?
+Carlos: _____
+* He aprendido mucho.
+- Aprendí mucho el año pasado.
+- Aprendo mucho ayer.
+decision: 
+why: 
+
+### a2.18.01.ex02   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-18-01-ex.json, content/es-latam/exercises/a2/a2-18-01-ex.json
+lesson: content/es-es/lessons/a2/a2-18-01.json
+Which sentence describes a future travel plan?
+* Voy a preparar la maleta.
+- Preparé la maleta ayer.
+- He preparado la maleta.
+decision: 
+why: 
+
+### a2.18.01.ex09   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-18-01-ex.json, content/es-latam/exercises/a2/a2-18-01-ex.json
+lesson: content/es-es/lessons/a2/a2-18-01.json
+Which verb stays in the infinitive after «vamos a»?
+* preparar
+- preparamos
+- preparamos ayer
+decision: 
+why: 
+
+### a2.18.01.ex14   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-18-01-ex.json, content/es-latam/exercises/a2/a2-18-01-ex.json
+lesson: content/es-es/lessons/a2/a2-18-01.json
+Carlos: ¿Qué vas a hacer antes del viaje?
+Meg: _____
+* Voy a preparar la maleta.
+- Preparé la maleta ayer.
+- He preparado la maleta el año pasado.
+decision: 
+why: 
+
+### a2.18.02.ex09   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-18-02-ex.json, content/es-latam/exercises/a2/a2-18-02-ex.json
+lesson: content/es-es/lessons/a2/a2-18-02.json
+Which verb stays in the infinitive after «voy a»?
+* llegar
+- llegué
+- llegué ayer
+decision: 
+why: 
+
+### a2.18.02.ex15   teaches: ['preterito-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-18-02-ex.json, content/es-latam/exercises/a2/a2-18-02-ex.json
+lesson: content/es-es/lessons/a2/a2-18-02.json
+Carlos: ¿Qué pasó en el viaje?
+Meg: _____
+* Llegamos al aeropuerto temprano.
+- Vamos a llegar al aeropuerto mañana.
+- Hemos llegado ayer.
+decision: 
+why: 
+
+### a2.18.03.ex02   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-18-03-ex.json, content/es-latam/exercises/a2/a2-18-03-ex.json
+lesson: content/es-es/lessons/a2/a2-18-03.json
+Which sentence describes a future travel plan?
+* Voy a visitar una ciudad nueva.
+- Visité una ciudad nueva ayer.
+- He visitado una ciudad nueva.
+decision: 
+why: 
+
+### a2.18.03.ex09   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-18-03-ex.json, content/es-latam/exercises/a2/a2-18-03-ex.json
+lesson: content/es-es/lessons/a2/a2-18-03.json
+Which verb stays in the infinitive after «va a»?
+* conocer
+- conoce
+- conoció ayer
+decision: 
+why: 
+
+### a2.18.04.ex02   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-18-04-ex.json, content/es-latam/exercises/a2/a2-18-04-ex.json
+lesson: content/es-es/lessons/a2/a2-18-04.json
+Which sentence describes a future travel plan?
+* Voy a esperar a Lucía en el aeropuerto.
+- Esperé a Lucía en el aeropuerto ayer.
+- He esperado a Lucía en el aeropuerto.
+decision: 
+why: 
+
+### a2.18.04.ex09   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-18-04-ex.json, content/es-latam/exercises/a2/a2-18-04-ex.json
+lesson: content/es-es/lessons/a2/a2-18-04.json
+Which verb stays in the infinitive after «vamos a»?
+* esperar
+- esperamos
+- esperamos ayer
+decision: 
+why: 
+
+### a2.18.05.ex02   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-18-05-ex.json, content/es-latam/exercises/a2/a2-18-05-ex.json
+lesson: content/es-es/lessons/a2/a2-18-05.json
+Which sentence describes a future travel plan?
+* Voy a organizar la despedida de Lucía.
+- Organicé la despedida de Lucía ayer.
+- He organizado la despedida de Lucía.
+decision: 
+why: 
+
+### a2.18.05.ex09   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-18-05-ex.json, content/es-latam/exercises/a2/a2-18-05-ex.json
+lesson: content/es-es/lessons/a2/a2-18-05.json
+Which verb stays in the infinitive after «voy a»?
+* abrazar
+- abrazo
+- abracé ayer
+decision: 
+why: 
+
+### a2.18.05.ex12   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-18-05-ex.json, content/es-latam/exercises/a2/a2-18-05-ex.json
+lesson: content/es-es/lessons/a2/a2-18-05.json
+¿De qué hablaron en el aeropuerto?
+* De los mejores momentos que han compartido.
+- De una clase de cocina.
+- De sus maletas.
+decision: 
+why: 
+
+### a2.18.consolidation.ex01   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-18-consolidation-ex.json, content/es-latam/exercises/a2/a2-18-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-18-consolidation.json
+Which sentence describes a travel plan?
+* Voy a preparar la maleta.
+- Preparé la maleta ayer.
+- He preparado la maleta.
+decision: 
+why: 
+
+### a2.18.consolidation.ex04   teaches: ['preterito-indefinido']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-18-consolidation-ex.json, content/es-latam/exercises/a2/a2-18-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-18-consolidation.json
+Which sentence describes a completed travel event?
+* Llegamos al aeropuerto temprano.
+- Vamos a llegar mañana.
+- Llegaremos pronto.
+decision: 
+why: 
+
+### a2.18.consolidation.ex15   teaches: ['preterito-indefinido']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a2/a2-18-consolidation-ex.json, content/es-latam/exercises/a2/a2-18-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-18-consolidation.json
+Carlos: ¿Qué pasó en el viaje?
+Meg: _____
+* Llegamos al aeropuerto temprano.
+- Vamos a llegar mañana.
+- Hemos llegado ayer.
+decision: 
+why: 
+
+### a2.19.01.ex02   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-19-01-ex.json, content/es-latam/exercises/a2/a2-19-01-ex.json
+lesson: content/es-es/lessons/a2/a2-19-01.json
+Which sentence uses the futuro simple?
+* Viajaré mañana.
+- Voy a viajar mañana.
+- Viajé ayer.
+decision: 
+why: 
+
+### a2.19.03.ex12   teaches: ['futuro-simple']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a2/a2-19-03-ex.json, content/es-latam/exercises/a2/a2-19-03-ex.json
+lesson: content/es-es/lessons/a2/a2-19-03.json
+Which sentence expresses a prediction?
+* Probablemente sucederá pronto.
+- Sucedió ayer.
+- Voy a hacerlo ahora.
+decision: 
+why: 
+
+### a2.19.03.ex15   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-19-03-ex.json, content/es-latam/exercises/a2/a2-19-03-ex.json
+lesson: content/es-es/lessons/a2/a2-19-03.json
+Carlos: ¿Qué crees que pasará?
+Meg: _____
+* Sucederá pronto.
+- Sucedió ayer.
+- Sucede ayer.
+decision: 
+why: 
+
+### a2.19.03.ex16   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-19-03-ex.json, content/es-latam/exercises/a2/a2-19-03-ex.json
+lesson: content/es-es/lessons/a2/a2-19-03.json
+Meg: ¿Crees que será una buena experiencia?
+Carlos: _____
+* Sí, será una buena experiencia.
+- Sí, fue una buena experiencia ayer.
+- Sí, ha sido una buena experiencia.
+decision: 
+why: 
+
+### a2.19.04.ex02   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-19-04-ex.json, content/es-latam/exercises/a2/a2-19-04-ex.json
+lesson: content/es-es/lessons/a2/a2-19-04.json
+Which sentence states a goal with the futuro simple (not «ir a» + infinitive)?
+* Ahorraremos dinero para el proyecto.
+- Vamos a ahorrar dinero para el proyecto.
+- Ahorramos dinero ayer.
+decision: 
+why: 
+
+### a2.19.04.ex12   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-19-04-ex.json, content/es-latam/exercises/a2/a2-19-04-ex.json
+lesson: content/es-es/lessons/a2/a2-19-04.json
+Which sentence expresses a future goal?
+* Seguiré estudiando español.
+- Estudié español ayer.
+- He estudiado español.
+decision: 
+why: 
+
+### a2.19.04.ex15   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-19-04-ex.json, content/es-latam/exercises/a2/a2-19-04-ex.json
+lesson: content/es-es/lessons/a2/a2-19-04.json
+Carlos: ¿Qué harás en el futuro?
+Meg: _____
+* Seguiré estudiando español.
+- Seguí estudiando español ayer.
+- He seguido estudiando español.
+decision: 
+why: 
+
+### a2.19.04.ex16   teaches: ['futuro-simple']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a2/a2-19-04-ex.json, content/es-latam/exercises/a2/a2-19-04-ex.json
+lesson: content/es-es/lessons/a2/a2-19-04.json
+Meg: ¿Qué harás con tu dinero?
+Carlos: _____
+* Ahorraré dinero para viajar.
+- Ahorré dinero ayer.
+- He ahorrado dinero.
+decision: 
+why: 
+
+### a2.19.05.ex02   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-19-05-ex.json, content/es-latam/exercises/a2/a2-19-05-ex.json
+lesson: content/es-es/lessons/a2/a2-19-05.json
+Which sentence about Daniela uses the futuro simple (not «ir a» + infinitive)?
+* Daniela encontrará su camino.
+- Daniela va a encontrar su camino.
+- Daniela encontró su camino ayer.
+decision: 
+why: 
+
+### a2.19.05.ex12   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-19-05-ex.json, content/es-latam/exercises/a2/a2-19-05-ex.json
+lesson: content/es-es/lessons/a2/a2-19-05.json
+¿Qué hará Daniela?
+* Viajará por el sur de Vietnam.
+- Vivirá en Hanói.
+- Trabajará en España.
+decision: 
+why: 
+
+### a2.19.05.ex13   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-19-05-ex.json, content/es-latam/exercises/a2/a2-19-05-ex.json
+lesson: content/es-es/lessons/a2/a2-19-05.json
+¿Qué espera hacer Lauren?
+* Encontrar un nuevo trabajo.
+- Viajar a Chile.
+- Comprar una casa.
+decision: 
+why: 
+
+### a2.19.05.ex14   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-19-05-ex.json, content/es-latam/exercises/a2/a2-19-05-ex.json
+lesson: content/es-es/lessons/a2/a2-19-05.json
+¿Para qué ahorrará dinero Kaylee?
+* Para visitar España el año siguiente.
+- Para comprar un coche.
+- Para estudiar en Chile.
+decision: 
+why: 
+
+### a2.19.05.ex15   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-19-05-ex.json, content/es-latam/exercises/a2/a2-19-05-ex.json
+lesson: content/es-es/lessons/a2/a2-19-05.json
+¿Qué dice Carlos que hará?
+* Continuará aprendiendo español todos los días.
+- Dejará de estudiar español.
+- Se mudará a España.
+decision: 
+why: 
+
+### a2.19.05.ex17   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-19-05-ex.json, content/es-latam/exercises/a2/a2-19-05-ex.json
+lesson: content/es-es/lessons/a2/a2-19-05.json
+Meg: ¿Para qué ahorrará dinero Kaylee?
+Carlos: _____
+* Para visitar España.
+- Para visitar España ayer.
+- Ha visitado España.
+decision: 
+why: 
+
+### a2.19.05.ex18   teaches: ['futuro-simple']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a2/a2-19-05-ex.json, content/es-latam/exercises/a2/a2-19-05-ex.json
+lesson: content/es-es/lessons/a2/a2-19-05.json
+Carlos: ¿Qué harás tú en el futuro?
+Meg: _____
+* Seguiré viviendo en Hanói.
+- Viví en Hanói ayer.
+- He vivido en Hanói.
+decision: 
+why: 
+
+### a2.19.consolidation.ex01   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-19-consolidation-ex.json, content/es-latam/exercises/a2/a2-19-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-19-consolidation.json
+Which sentence uses the futuro simple?
+* Viajaré mañana.
+- Voy a viajar mañana.
+- Viajé ayer.
+decision: 
+why: 
+
+### a2.19.consolidation.ex08   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-19-consolidation-ex.json, content/es-latam/exercises/a2/a2-19-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-19-consolidation.json
+Which sentence expresses a prediction?
+* Sucederá pronto.
+- Sucedió ayer.
+- Sucede ayer.
+decision: 
+why: 
+
+### a2.19.consolidation.ex11   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-19-consolidation-ex.json, content/es-latam/exercises/a2/a2-19-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-19-consolidation.json
+Which sentence expresses a future goal?
+* Lograré mis objetivos.
+- Logré mis objetivos ayer.
+- He logrado mis objetivos.
+decision: 
+why: 
+
+### a2.19.consolidation.ex15   teaches: ['futuro-simple']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a2/a2-19-consolidation-ex.json, content/es-latam/exercises/a2/a2-19-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-19-consolidation.json
+Carlos: ¿Qué crees que pasará?
+Meg: _____
+* Probablemente sucederá pronto.
+- Sucedió ayer.
+- Ha sucedido ayer.
+decision: 
+why: 
+
+### a2.19.consolidation.ex16   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-19-consolidation-ex.json, content/es-latam/exercises/a2/a2-19-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-19-consolidation.json
+Meg: ¿Qué harás en el futuro?
+Carlos: _____
+* Seguiré estudiando español.
+- Seguí estudiando español ayer.
+- He seguido estudiando español.
+decision: 
+why: 
+
+### a2.20.03.ex02   teaches: ['preterito-perfecto-vs-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-03-ex.json, content/es-latam/exercises/a2/a2-20-03-ex.json
+lesson: content/es-es/lessons/a2/a2-20-03.json
+Which sentence uses the pretérito perfecto correctly?
+* Hoy han continuado sus proyectos.
+- Continuaron sus proyectos mañana.
+- Van a continuar sus proyectos ayer.
+decision: 
+why: 
+
+### a2.20.03.ex12   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-03-ex.json, content/es-latam/exercises/a2/a2-20-03-ex.json
+lesson: content/es-es/lessons/a2/a2-20-03.json
+Which sentence describes an immediate future plan?
+* Vamos a empezar un nuevo capítulo.
+- Empezamos un nuevo capítulo ayer.
+- Hemos empezado un nuevo capítulo.
+decision: 
+why: 
+
+### a2.20.03.ex15   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-03-ex.json, content/es-latam/exercises/a2/a2-20-03-ex.json
+lesson: content/es-es/lessons/a2/a2-20-03.json
+Carlos: ¿Qué van a hacer ahora?
+Meg: _____
+* Vamos a continuar nuestros proyectos.
+- Continuamos nuestros proyectos ayer.
+- Hemos continuado nuestros proyectos.
+decision: 
+why: 
+
+### a2.20.03.ex16   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-03-ex.json, content/es-latam/exercises/a2/a2-20-03-ex.json
+lesson: content/es-es/lessons/a2/a2-20-03.json
+Meg: ¿Qué vas a hacer después?
+Carlos: _____
+* Voy a volver a casa.
+- Volví a casa ayer.
+- He vuelto a casa.
+decision: 
+why: 
+
+### a2.20.04.ex02   teaches: ['preterito-perfecto-vs-indefinido']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-04-ex.json, content/es-latam/exercises/a2/a2-20-04-ex.json
+lesson: content/es-es/lessons/a2/a2-20-04.json
+Which sentence uses the pretérito perfecto correctly?
+* Ya han logrado su objetivo.
+- Lograron su objetivo mañana.
+- Lograrán su objetivo ayer.
+decision: 
+why: 
+
+### a2.20.04.ex12   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-04-ex.json, content/es-latam/exercises/a2/a2-20-04-ex.json
+lesson: content/es-es/lessons/a2/a2-20-04.json
+Which sentence expresses a prediction?
+* El futuro será diferente.
+- El futuro fue diferente ayer.
+- El futuro ha sido diferente.
+decision: 
+why: 
+
+### a2.20.04.ex15   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-04-ex.json, content/es-latam/exercises/a2/a2-20-04-ex.json
+lesson: content/es-es/lessons/a2/a2-20-04.json
+Carlos: ¿Cómo será el futuro?
+Meg: _____
+* Será diferente.
+- Fue diferente ayer.
+- Ha sido diferente.
+decision: 
+why: 
+
+### a2.20.04.ex16   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-04-ex.json, content/es-latam/exercises/a2/a2-20-04-ex.json
+lesson: content/es-es/lessons/a2/a2-20-04.json
+Meg: ¿Qué lograrán?
+Carlos: _____
+* Lograremos nuestros objetivos.
+- Logramos nuestros objetivos ayer.
+- Hemos logrado nuestros objetivos.
+decision: 
+why: 
+
+### a2.20.05.ex13   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-20-05-ex.json, content/es-latam/exercises/a2/a2-20-05-ex.json
+lesson: content/es-es/lessons/a2/a2-20-05.json
+¿Dónde quedaron Carlos y Meg?
+* Junto al lago Hoàn Kiếm.
+- En el aeropuerto.
+- En una cafetería.
+decision: 
+why: 
+
+### a2.20.05.ex17   teaches: ['preterito-perfecto']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-05-ex.json, content/es-latam/exercises/a2/a2-20-05-ex.json
+lesson: content/es-es/lessons/a2/a2-20-05.json
+Meg: ¿Qué han aprendido desde aquel día?
+Carlos: _____
+* Hemos aprendido mucho.
+- Aprendimos mucho mañana.
+- Vamos a aprender mucho ayer.
+decision: 
+why: 
+
+### a2.20.05.ex18   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-05-ex.json, content/es-latam/exercises/a2/a2-20-05-ex.json
+lesson: content/es-es/lessons/a2/a2-20-05.json
+Carlos: ¿Qué van a hacer ahora?
+Meg: _____
+* Vamos a empezar un nuevo capítulo.
+- Empezamos un nuevo capítulo ayer.
+- Hemos empezado un nuevo capítulo ayer.
+decision: 
+why: 
+
+### a2.20.consolidation.ex08   teaches: ['ir-infinitive']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-consolidation-ex.json, content/es-latam/exercises/a2/a2-20-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-20-consolidation.json
+Which sentence describes a future plan?
+* Voy a empezar un nuevo capítulo.
+- Empecé un nuevo capítulo ayer.
+- He empezado un nuevo capítulo.
+decision: 
+why: 
+
+### a2.20.consolidation.ex11   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-consolidation-ex.json, content/es-latam/exercises/a2/a2-20-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-20-consolidation.json
+Which sentence expresses a prediction?
+* El futuro será diferente.
+- El futuro fue diferente ayer.
+- El futuro ha sido diferente.
+decision: 
+why: 
+
+### a2.20.consolidation.ex14   teaches: ['preterito-perfecto']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-consolidation-ex.json, content/es-latam/exercises/a2/a2-20-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-20-consolidation.json
+Meg: ¿Qué han aprendido?
+Carlos: _____
+* Hemos aprendido mucho.
+- Aprendimos mañana.
+- Vamos a aprender ayer.
+decision: 
+why: 
+
+### a2.20.consolidation.ex16   teaches: ['futuro-simple']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-20-consolidation-ex.json, content/es-latam/exercises/a2/a2-20-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-20-consolidation.json
+Meg: ¿Cómo será el futuro?
+Carlos: _____
+* Será diferente.
+- Fue diferente ayer.
+- Ha sido diferente.
+decision: 
+why: 
+
+### a2.condicionalsimple.02.ex10   teaches: ['condicional-irregular']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-condicionalsimple-02-ex.json, content/es-latam/exercises/a2/a2-condicionalsimple-02-ex.json
+lesson: content/es-es/lessons/a2/a2-condicionalsimple-02.json
+* In this situation, I would leave on time with my suitcase.
+- I left on time with my suitcase yesterday.
+- He puts the suitcase in that place.
+- In your opinion, we could arrive earlier.
+decision: 
+why: 
+
+### a2.condicionalsimple.03.ex07   teaches: ['a2-asking-politely-giving-advice-vocab']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-condicionalsimple-03-ex.json, content/es-latam/exercises/a2/a2-condicionalsimple-03-ex.json
+lesson: content/es-es/lessons/a2/a2-condicionalsimple-03.json
+Cliente: Buenas tardes, ¿nos traería la carta, por favor?
+Camarero: _____
+* Con mucho gusto, enseguida les traigo la carta y un poco de agua.
+- Con mucho gusto, les traje la carta y un poco de agua ayer.
+- No, no quiero traerles la carta ni el agua ahora.
+decision: 
+why: 
+
+### a2.condicionalsimple.03.ex08   teaches: ['polite-softening']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a2/a2-condicionalsimple-03-ex.json, content/es-latam/exercises/a2/a2-condicionalsimple-03-ex.json
+lesson: content/es-es/lessons/a2/a2-condicionalsimple-03.json
+Camarero: ¿Desean pedir algún plato especial hoy?
+Cliente: _____
+* Desearíamos probar el plato del día, si es tan amable.
+- Deseamos probar el plato del día ayer.
+- Deseé probar el plato del día mañana.
+decision: 
+why: 
+
+### a2.condicionalsimple.04.ex10   teaches: ['a2-asking-politely-giving-advice-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-condicionalsimple-04-ex.json, content/es-latam/exercises/a2/a2-condicionalsimple-04-ex.json
+lesson: content/es-es/lessons/a2/a2-condicionalsimple-04.json
+* If you are tired, you should sleep more and take care of your health.
+- He was tired yesterday and slept all morning.
+- The doctor advised him to exercise more.
+- You must visit the clinic if you feel tired.
+decision: 
+why: 
+
+### a2.condicionalsimple.consolidation.ex01   teaches: ['polite-softening']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-condicionalsimple-consolidation-ex.json, content/es-latam/exercises/a2/a2-condicionalsimple-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-condicionalsimple-consolidation.json
+¿Qué forma expresa una petición educada a un camarero?
+* ¿Podría traerme la sal?
+- ¡Tráeme la sal!
+- Traes la sal
+- Pudo traer la sal
+decision: 
+why: 
+
+### a2.educacionyestudios.01.ex07   teaches: ['adjective-agreement']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-educacionyestudios-01-ex.json, content/es-latam/exercises/a2/a2-educacionyestudios-01-ex.json
+lesson: content/es-es/lessons/a2/a2-educacionyestudios-01.json
+Meg: ¿Cuál es tu asignatura favorita este año?
+Carlos: _____
+* Me apasiona la historia y la literatura, aunque son materias difíciles.
+- Me apasiona la historia y la literatura, aunque son materias fácil.
+- Me apasionó la historia y la literatura ayer en clase.
+decision: 
+why: 
+
+### a2.educacionyestudios.02.ex07   teaches: ['a2-studying-school-life-vocab']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-educacionyestudios-02-ex.json, content/es-latam/exercises/a2/a2-educacionyestudios-02-ex.json
+lesson: content/es-es/lessons/a2/a2-educacionyestudios-02.json
+Meg: ¿Dónde podemos estudiar con tranquilidad para el examen?
+Carlos: _____
+* Vamos a la biblioteca central; en el aula hay mucho ruido hoy.
+- Vamos a la cafetería; allí hay mucho ruido y mucha gente hoy.
+- Fuimos a la biblioteca ayer por la tarde con el profesor.
+decision: 
+why: 
+
+### a2.educacionyestudios.03.ex02   teaches: ['a2-studying-school-life-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-educacionyestudios-03-ex.json, content/es-latam/exercises/a2/a2-educacionyestudios-03-ex.json
+lesson: content/es-es/lessons/a2/a2-educacionyestudios-03.json
+En España, una nota de 9 o 10 se llama un _____.
+* sobresaliente
+- notable
+- aprobado
+- suspenso
+decision: 
+why: 
+
+### a2.educacionyestudios.05.ex01   teaches: ['a2-studying-school-life-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-educacionyestudios-05-ex.json, content/es-latam/exercises/a2/a2-educacionyestudios-05-ex.json
+lesson: content/es-es/lessons/a2/a2-educacionyestudios-05.json
+Carlos fue aceptado para hacer un _____ de estudios en Granada.
+* intercambio
+- aula
+- apunte
+- horario
+decision: 
+why: 
+
+### a2.educacionyestudios.05.ex07   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-educacionyestudios-05-ex.json, content/es-latam/exercises/a2/a2-educacionyestudios-05-ex.json
+lesson: content/es-es/lessons/a2/a2-educacionyestudios-05.json
+¿En qué facultad estudiará Carlos en Granada?
+* Facultad de Filosofía y Letras
+- Facultad de Medicina
+- Facultad de Derecho
+- Facultad de Ciencias
+decision: 
+why: 
+
+
+########## Block 4: a2 (34 exercises) ##########
+
+### a2.imperfectobasico.01.ex07   teaches: ['imperfect']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a2/a2-imperfectobasico-01-ex.json, content/es-latam/exercises/a2/a2-imperfectobasico-01-ex.json
+lesson: content/es-es/lessons/a2/a2-imperfectobasico-01.json
+Which sentence correctly uses the imperfecto?
+* Siempre comía paella los domingos.
+- Ayer comí paella.
+- Ahora como paella.
+- Mañana comería paella.
+decision: 
+why: 
+
+### a2.imperfectobasico.01.ex11   teaches: ['imperfect']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-imperfectobasico-01-ex.json, content/es-latam/exercises/a2/a2-imperfectobasico-01-ex.json
+lesson: content/es-es/lessons/a2/a2-imperfectobasico-01.json
+Meg: ¿Estudiabas español antes de venir aquí?
+Carlos: _____
+* Sí, practicaba frecuentemente con un amigo.
+- Sí, practiqué ayer con un amigo.
+- Sí, practico frecuentemente con un amigo.
+decision: 
+why: 
+
+### a2.imperfectobasico.02.ex10   teaches: ['imperfect']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-imperfectobasico-02-ex.json, content/es-latam/exercises/a2/a2-imperfectobasico-02-ex.json
+lesson: content/es-es/lessons/a2/a2-imperfectobasico-02.json
+Daniela: ¿Dónde vivías cuando estudiabas en la universidad?
+Carlos: _____
+* Vivía en un apartamento pequeño cerca del centro.
+- Ayer viví en un apartamento pequeño cerca del centro.
+- Vivo en un apartamento pequeño cerca del centro.
+decision: 
+why: 
+
+### a2.imperfectobasico.03.ex10   teaches: ['imperfect']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-imperfectobasico-03-ex.json, content/es-latam/exercises/a2/a2-imperfectobasico-03-ex.json
+lesson: content/es-es/lessons/a2/a2-imperfectobasico-03.json
+Meg: ¿Adónde ibas durante las vacaciones de verano?
+Carlos: _____
+* Siempre iba a la casa de mis tíos en la montaña.
+- Ayer fui a la casa de mis tíos en la montaña.
+- Siempre voy a la casa de mis tíos en la montaña.
+decision: 
+why: 
+
+### a2.imperfectobasico.04.ex10   teaches: ['imperfect']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-imperfectobasico-04-ex.json, content/es-latam/exercises/a2/a2-imperfectobasico-04-ex.json
+lesson: content/es-es/lessons/a2/a2-imperfectobasico-04.json
+Carlos: ¿Cómo te sentías en tu primer día de trabajo?
+Daniela: _____
+* Me sentía muy nerviosa, pero la oficina parecía agradable.
+- Ayer me sentí muy nerviosa, pero la oficina parecía agradable.
+- Me siento muy nerviosa, pero la oficina parecía agradable.
+decision: 
+why: 
+
+### a2.imperfectobasico.05.ex05   teaches: ['imperfect']
+checks: length-giveaway, tell-time-word
+files: content/es-es/exercises/a2/a2-imperfectobasico-05-ex.json, content/es-latam/exercises/a2/a2-imperfectobasico-05-ex.json
+lesson: content/es-es/lessons/a2/a2-imperfectobasico-05.json
+Which sentence uses the imperfecto correctly?
+* De niño, siempre jugaba en la calle.
+- Ayer jugé en la calle.
+- Mañana jugaré en la calle.
+- Ahora juego en la calle.
+decision: 
+why: 
+
+### a2.imperfectobasico.05.ex12   teaches: ['imperfect']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-imperfectobasico-05-ex.json, content/es-latam/exercises/a2/a2-imperfectobasico-05-ex.json
+lesson: content/es-es/lessons/a2/a2-imperfectobasico-05.json
+* In that era, my dear grandfather used to visit us every Sunday.
+- My grandfather visited us last Sunday afternoon.
+- Now my grandfather visits us every weekend.
+- In that era, we lived in a different country.
+decision: 
+why: 
+
+### a2.imperfectobasico.consolidation.ex06   teaches: ['imperfect']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-imperfectobasico-consolidation-ex.json, content/es-latam/exercises/a2/a2-imperfectobasico-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-imperfectobasico-consolidation.json
+Which of the following correctly uses the imperfecto?
+* Siempre comíamos juntos.
+- Ayer comimos juntos.
+- De niño, fui muy tímido.
+- Hace un momento fue muy ruidoso.
+decision: 
+why: 
+
+### a2.imperfectocontraste.01.ex09   teaches: ['preterite-vs-imperfect']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-imperfectocontraste-01-ex.json, content/es-latam/exercises/a2/a2-imperfectocontraste-01-ex.json
+lesson: content/es-es/lessons/a2/a2-imperfectocontraste-01.json
+* I was strolling through the park when, suddenly, it started to rain.
+- I walked through the park because it was raining.
+- I will stroll in the park if the rain stops.
+- Suddenly, it rained while we were at home.
+decision: 
+why: 
+
+### a2.imperfectocontraste.03.ex09   teaches: ['a2-imperfect-vs-preterite-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-imperfectocontraste-03-ex.json, content/es-latam/exercises/a2/a2-imperfectocontraste-03-ex.json
+lesson: content/es-es/lessons/a2/a2-imperfectocontraste-03.json
+* I was very nervous before the exam, but I felt relieved when finishing.
+- I was happy during the exam and finished early.
+- He was relieved because the exam was easy.
+- We felt nervous after we received the results.
+decision: 
+why: 
+
+### a2.imperfectocontraste.04.ex09   teaches: ['a2-imperfect-vs-preterite-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-imperfectocontraste-04-ex.json, content/es-latam/exercises/a2/a2-imperfectocontraste-04-ex.json
+lesson: content/es-es/lessons/a2/a2-imperfectocontraste-04.json
+* I found a wallet in the street and turned it in at the nearby police station.
+- I lost my wallet near the police station yesterday.
+- He bought a new wallet at the nearby store.
+- We went to the police station to ask for directions.
+decision: 
+why: 
+
+### a2.indefinidosnegacion.01.ex01   teaches: ['indefinidos-negativos']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-indefinidosnegacion-01-ex.json, content/es-latam/exercises/a2/a2-indefinidosnegacion-01-ex.json
+lesson: content/es-es/lessons/a2/a2-indefinidosnegacion-01.json
+¿Hay _____ en la cocina? Escuché un ruido.
+* alguien
+- algún
+- ninguno
+- nada
+decision: 
+why: 
+
+### a2.indefinidosnegacion.01.ex04   teaches: ['a2-indefinites-double-negation-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-indefinidosnegacion-01-ex.json, content/es-latam/exercises/a2/a2-indefinidosnegacion-01-ex.json
+lesson: content/es-es/lessons/a2/a2-indefinidosnegacion-01.json
+Un _____ tocó el timbre anoche.
+* desconocido
+- público
+- alguien
+- asistir
+decision: 
+why: 
+
+### a2.indefinidosnegacion.02.ex01   teaches: ['indefinidos-negativos']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-indefinidosnegacion-02-ex.json, content/es-latam/exercises/a2/a2-indefinidosnegacion-02-ex.json
+lesson: content/es-es/lessons/a2/a2-indefinidosnegacion-02.json
+¿Quieres comer _____ antes de que salgamos?
+* algo
+- nada
+- alguien
+- ninguno
+decision: 
+why: 
+
+### a2.indefinidosnegacion.02.ex09   teaches: ['indefinidos-negativos']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-indefinidosnegacion-02-ex.json, content/es-latam/exercises/a2/a2-indefinidosnegacion-02-ex.json
+lesson: content/es-es/lessons/a2/a2-indefinidosnegacion-02.json
+Camarero: ¿Desean tomar algo de postre hoy?
+Cliente: No, gracias, no queremos _____.
+* nada
+- algo
+- nadie
+- alguien
+decision: 
+why: 
+
+### a2.indefinidosnegacion.02.ex10   teaches: ['indefinidos-negativos']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-indefinidosnegacion-02-ex.json, content/es-latam/exercises/a2/a2-indefinidosnegacion-02-ex.json
+lesson: content/es-es/lessons/a2/a2-indefinidosnegacion-02.json
+Marta: ¿Notaste algo extraño en la oficina?
+Javier: No, no noté _____ raro.
+* nada
+- todo
+- nadie
+- ninguno
+decision: 
+why: 
+
+### a2.indefinidosnegacion.03.ex01   teaches: ['indefinidos-negativos']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-indefinidosnegacion-03-ex.json, content/es-latam/exercises/a2/a2-indefinidosnegacion-03-ex.json
+lesson: content/es-es/lessons/a2/a2-indefinidosnegacion-03.json
+¿Tienes _____ duda sobre la lección de gramática?
+* alguna
+- algún
+- ninguno
+- nada
+decision: 
+why: 
+
+### a2.indefinidosnegacion.03.ex04   teaches: ['a2-indefinites-double-negation-vocab']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-indefinidosnegacion-03-ex.json, content/es-latam/exercises/a2/a2-indefinidosnegacion-03-ex.json
+lesson: content/es-es/lessons/a2/a2-indefinidosnegacion-03.json
+Tenemos que encontrar una _____ rápida a este conflicto.
+* solución
+- duda
+- alguna
+- ninguna
+decision: 
+why: 
+
+### a2.indefinidosnegacion.04.ex04   teaches: ['a2-indefinites-double-negation-vocab']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-indefinidosnegacion-04-ex.json, content/es-latam/exercises/a2/a2-indefinidosnegacion-04-ex.json
+lesson: content/es-es/lessons/a2/a2-indefinidosnegacion-04.json
+Llegamos a un _____ muy importante en la reunión.
+* acuerdo
+- tampoco
+- nunca
+- jamás
+decision: 
+why: 
+
+### a2.indefinidosnegacion.04.ex07   teaches: ['negation']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-indefinidosnegacion-04-ex.json, content/es-latam/exercises/a2/a2-indefinidosnegacion-04-ex.json
+lesson: content/es-es/lessons/a2/a2-indefinidosnegacion-04.json
+* Expresa que es su primera vez viendo algo así.
+- Dice que visita la ciudad a menudo.
+- No le gusta la ciudad.
+decision: 
+why: 
+
+### a2.indefinidosnegacion.cons.ex07   teaches: ['indefinidos-negativos']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-indefinidosnegacion-consolidation-ex.json, content/es-latam/exercises/a2/a2-indefinidosnegacion-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-indefinidosnegacion-consolidation.json
+Carlos: ¿Has encontrado las llaves en algún sitio?
+Meg: No, no las he encontrado en _____ lugar.
+* ningún
+- alguna
+- nada
+- nadie
+decision: 
+why: 
+
+### a2.perifrasisduracion.01.ex07   teaches: ['perifrasis-verbales']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-perifrasisduracion-01-ex.json, content/es-latam/exercises/a2/a2-perifrasisduracion-01-ex.json
+lesson: content/es-es/lessons/a2/a2-perifrasisduracion-01.json
+* Salió de la reunión hace un instante.
+- Todavía está en la reunión.
+- No fue a la reunión.
+decision: 
+why: 
+
+### a2.perifrasisduracion.04.ex07   teaches: ['perifrasis-verbales']
+checks: tell-absolute
+files: content/es-es/exercises/a2/a2-perifrasisduracion-04-ex.json, content/es-latam/exercises/a2/a2-perifrasisduracion-04-ex.json
+lesson: content/es-es/lessons/a2/a2-perifrasisduracion-04.json
+* Celebraron al enterarse de la noticia.
+- Nadie se alegró de la noticia.
+- No supieron qué hacer.
+decision: 
+why: 
+
+### a2.perifrasisduracion.cons.ex05   teaches: ['perifrasis-verbales']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-perifrasisduracion-consolidation-ex.json, content/es-latam/exercises/a2/a2-perifrasisduracion-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-perifrasisduracion-consolidation.json
+* Viven allí desde hace más de tres años.
+- Se mudaron la semana pasada.
+- Quieren marcharse pronto.
+decision: 
+why: 
+
+### a2.perifrasisverbales.02.ex10   teaches: ['a2-connecting-ideas-habits-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-perifrasisverbales-02-ex.json, content/es-latam/exercises/a2/a2-perifrasisverbales-02-ex.json
+lesson: content/es-es/lessons/a2/a2-perifrasisverbales-02.json
+* I have been studying for a month and I continue learning with enthusiasm.
+- I studied for a month last year.
+- I will study for one month next semester.
+- We have been living here for one week.
+decision: 
+why: 
+
+### a2.perifrasisverbales.03.ex01   teaches: ['ordering-markers']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-perifrasisverbales-03-ex.json, content/es-latam/exercises/a2/a2-perifrasisverbales-03-ex.json
+lesson: content/es-es/lessons/a2/a2-perifrasisverbales-03.json
+Estaba cansado; _____, terminó todo el trabajo antes de acostarse.
+* sin embargo
+- por eso
+- porque
+- además
+decision: 
+why: 
+
+### a2.perifrasisverbales.05.ex07   teaches: None
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-perifrasisverbales-05-ex.json, content/es-latam/exercises/a2/a2-perifrasisverbales-05-ex.json
+lesson: content/es-es/lessons/a2/a2-perifrasisverbales-05.json
+¿Cuánto tiempo lleva Carlos viviendo en Hanói?
+* Más de seis meses
+- Un año entero
+- Tres semanas
+- Dos meses
+decision: 
+why: 
+
+### a2.perifrasisverbales.consolidation.ex02   teaches: ['ordering-markers']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-perifrasisverbales-consolidation-ex.json, content/es-latam/exercises/a2/a2-perifrasisverbales-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-perifrasisverbales-consolidation.json
+Hacía sol; _____, la temperatura era muy fría.
+* sin embargo
+- por eso
+- porque
+- además
+decision: 
+why: 
+
+### a2.porpara.01.ex04   teaches: ['a2-por-and-para-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-porpara-01-ex.json, content/es-latam/exercises/a2/a2-porpara-01-ex.json
+lesson: content/es-es/lessons/a2/a2-porpara-01.json
+¿Quién es el _____ del paquete postal?
+* destinatario
+- objetivo
+- regalo
+- destino
+decision: 
+why: 
+
+### a2.pronombrescliticos.02.ex10   teaches: ['a2-pronouns-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-pronombrescliticos-02-ex.json, content/es-latam/exercises/a2/a2-pronombrescliticos-02-ex.json
+lesson: content/es-es/lessons/a2/a2-pronombrescliticos-02.json
+* Carlos bought a package and brought it to my office.
+- Carlos received a letter at his office.
+- I sold the package to Carlos yesterday.
+- Carlos wrote an email to his coworker.
+decision: 
+why: 
+
+### a2.pronombrescliticos.04.ex10   teaches: ['a2-pronouns-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-pronombrescliticos-04-ex.json, content/es-latam/exercises/a2/a2-pronombrescliticos-04-ex.json
+lesson: content/es-es/lessons/a2/a2-pronombrescliticos-04.json
+* I gave the package to the client and handed it to him in person.
+- The client returned the package to the office.
+- I wrote an urgent report for the director.
+- The boss delivered the notes to the client.
+decision: 
+why: 
+
+### a2.pronombrescliticos.05.ex12   teaches: ['a2-pronouns-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-pronombrescliticos-05-ex.json, content/es-latam/exercises/a2/a2-pronombrescliticos-05-ex.json
+lesson: content/es-es/lessons/a2/a2-pronombrescliticos-05.json
+* I want to thank you for your kindness and return your backpack.
+- Carlos returned my backpack yesterday at school.
+- Please organize the backpack before leaving.
+- He needs help returning the backpack to Carlos.
+decision: 
+why: 
+
+### a2.vosotrospeninsular.03.ex04   teaches: ['a2-vosotros-vocab']
+checks: tell-time-word
+files: content/es-es/exercises/a2/a2-vosotrospeninsular-03-ex.json
+lesson: content/es-es/lessons/a2/a2-vosotrospeninsular-03.json
+Hicimos una _____ inolvidable a la sierra de Guadarrama.
+* excursión
+- reunión
+- ayer
+- habéis
+decision: 
+why: 
+
+### a2.vosotrospeninsular.cons.ex05   teaches: ['a2-vosotros-vocab']
+checks: length-giveaway
+files: content/es-es/exercises/a2/a2-vosotrospeninsular-consolidation-ex.json
+lesson: content/es-es/lessons/a2/a2-vosotrospeninsular-consolidation.json
+* Les invita a entrar y sentarse con total confianza.
+- Les pide que esperen fuera.
+- No quiere visitas hoy.
+decision: 
+why: 
