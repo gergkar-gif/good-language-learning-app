@@ -89,7 +89,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "____ van egy asztal.",
-      "hint": "there",
+      "hint": "over there",
       "english": "There is a table there.",
       "answer": "Ott",
       "teaches": [
@@ -230,7 +230,7 @@
       "options": [
         "Hány éves vagy?",
         "Hol van a lámpa?",
-        "Honnan jössz te?"
+        "Hol laksz te itt?"
       ],
       "correct": 1,
       "teaches": [
@@ -244,13 +244,16 @@
       "question": "Choose the correct sentence for 'There's no chair here.'",
       "options": [
         "Itt nincs szék.",
-        "Nem itt szék.",
-        "Itt szék nincs van."
+        "Itt van szék.",
+        "Ott nincs szék."
       ],
       "correct": 0,
       "teaches": [
         "van-and-nincs-there-is-there-isn-t"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "itt-ott-here-there"
+      }
     },
     {
       "id": "a1-24-practice-7",
@@ -280,7 +283,7 @@
       ],
       "options": [
         "Igen, itt van.",
-        "Ez egy tea."
+        "Ez egy könyv."
       ],
       "correct": 0,
       "teaches": [
@@ -361,7 +364,7 @@
       "id": "a1-24-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is the negative existential ('isn't there')?",
+      "question": "Which means 'there isn't'?",
       "options": [
         "nincs",
         "nem",
@@ -384,19 +387,22 @@
       "options": [
         "Itt van az ajtó.",
         "Ott van az ajtó.",
-        "Itt nincs ajtó."
+        "Ott nincs ajtó."
       ],
       "correct": 1,
       "teaches": [
         "itt-ott-here-there"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "van-and-nincs-there-is-there-isn-t"
+      }
     },
     {
       "id": "a1-24-practice-9",
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "____ nincs ablak.",
-      "hint": "There is no window here.",
+      "hint": "here",
       "english": "There is no window here.",
       "answer": "Itt",
       "teaches": [

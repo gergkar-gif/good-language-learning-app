@@ -143,7 +143,7 @@
       "id": "a1-25-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which suffix does 'lakás' take for 'in' (it has back vowels)?",
+      "question": "Which suffix does 'lakás' take for 'in'?",
       "options": [
         "lakásban",
         "lakásben",
@@ -151,7 +151,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "ban-ben-in"
+        "vowel-harmony"
       ],
       "distractor_skills": {
         "2": "plural-nouns-k"
@@ -201,19 +201,15 @@
       "category": "grammar",
       "tiles": [
         "Mi",
-        "ez",
-        "a",
-        "tárgy",
+        "az",
         "?"
       ],
       "solution": [
         "Mi",
-        "ez",
-        "a",
-        "tárgy",
+        "az",
         "?"
       ],
-      "english": "What is this object?",
+      "english": "What is that?",
       "teaches": [
         "ki-and-mi"
       ]
@@ -226,7 +222,7 @@
       "options": [
         "Hány éves vagy?",
         "Hol van a kulcs?",
-        "Honnan jössz te?"
+        "Hol laksz te itt?"
       ],
       "correct": 1,
       "teaches": [
@@ -240,13 +236,16 @@
       "question": "Choose the correct sentence for 'This is the room.'",
       "options": [
         "Ez a szoba.",
-        "Ez van szoba.",
-        "Szoba ez van."
+        "Ez van a szoba.",
+        "Az a szoba."
       ],
       "correct": 0,
       "teaches": [
         "van-zero-copula"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "demonstratives-ez-az"
+      }
     },
     {
       "id": "a1-25-practice-7",
@@ -267,7 +266,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mi ez a tárgy?"
+          "text": "Mi ez?"
         },
         {
           "speaker": "Károly",
@@ -276,7 +275,7 @@
       ],
       "options": [
         "Ez egy kulcs.",
-        "Ő egy mérnök."
+        "Ő egy barát."
       ],
       "correct": 0,
       "teaches": [
@@ -326,8 +325,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Ask 'What is this object?' in Hungarian.",
-          "answer": "Mi ez a tárgy?"
+          "prompt": "Ask 'What is that?' in Hungarian.",
+          "answer": "Mi az?"
         }
       ],
       "teaches": [

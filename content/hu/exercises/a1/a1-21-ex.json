@@ -65,7 +65,7 @@
       "id": "a1-21-controlled-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "____ egy tea. (this)",
+      "question": "____ egy könyv. (this)",
       "options": [
         "Ez",
         "Az",
@@ -74,7 +74,10 @@
       "correct": 0,
       "teaches": [
         "demonstratives-ez-az"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "ki-and-mi"
+      }
     },
     {
       "id": "a1-21-controlled-2",
@@ -141,7 +144,7 @@
       "options": [
         "micsoda",
         "hol van",
-        "honnan"
+        "ki az"
       ],
       "correct": 0,
       "teaches": [
@@ -152,9 +155,9 @@
       "id": "a1-21-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "____ ez? Egy tea.",
+      "sentence": "____ ez? Egy kávé.",
       "hint": "what",
-      "english": "What is this? A tea.",
+      "english": "What is this? A coffee.",
       "answer": "Mi",
       "teaches": [
         "ki-and-mi"
@@ -174,8 +177,8 @@
           "What is that?"
         ],
         [
-          "Ez egy tea.",
-          "This is a tea."
+          "Ez egy könyv.",
+          "This is a book."
         ],
         [
           "Az egy kávé.",
@@ -211,7 +214,7 @@
       "id": "a1-21-practice-5",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Meg: ____ Károly: Ez egy tea.",
+      "question": "Meg: ____ Károly: Ez egy kávé.",
       "options": [
         "Mi ez?",
         "Ő Meg.",
@@ -244,10 +247,10 @@
       "id": "a1-21-practice-7",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Ez nem kávé, ez egy ____.",
-      "hint": "a hot drink",
-      "english": "This is not coffee, this is a tea.",
-      "answer": "tea",
+      "sentence": "Ez nem könyv, ez egy ____.",
+      "hint": "phone",
+      "english": "This is not a book, this is a phone.",
+      "answer": "telefon",
       "teaches": [
         "a1-objects-locations-vocab"
       ]
@@ -267,8 +270,8 @@
         }
       ],
       "options": [
-        "Ez egy tea.",
-        "Ő egy tanár."
+        "Ez egy könyv.",
+        "Ő egy barát."
       ],
       "correct": 0,
       "teaches": [
@@ -291,7 +294,7 @@
       ],
       "options": [
         "Az egy kávé.",
-        "Ő egy barista."
+        "Ő egy jó barát."
       ],
       "correct": 0,
       "teaches": [
@@ -318,8 +321,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say 'This is a tea.' in Hungarian.",
-          "answer": "Ez egy tea."
+          "prompt": "Say 'This is a book.' in Hungarian.",
+          "answer": "Ez egy könyv."
         }
       ],
       "teaches": [
