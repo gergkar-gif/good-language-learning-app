@@ -139,7 +139,7 @@ that froze it (`git log -p --grep "reading-hungarian"`) before your first unit.
    `python scripts/check-content.py --changed`.
 6. **Don't freeze yet.** Commit the unit (step 7) unfrozen. A second
    reader (a Sonnet subagent run by the reviewer) then reads the unit
-   independently and the reviewer turns its findings into a checked fix list,
+   independently ([unit-second-read.md](unit-second-read.md)) and the reviewer turns its findings into a checked fix list,
    `imports/review/sonnet-reads/<course>-<level>-<unit id>.md`. Fix every item
    on that list, then freeze:
 

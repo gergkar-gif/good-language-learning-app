@@ -7,7 +7,8 @@ themselves are in [skill-tagging-spec.md](skill-tagging-spec.md) § "Read-throug
 conventions"; this file is about the workflow around them.
 
 Applies to any course and level (HU B1–C1, ES A1 onward, a new language), and
-to similar per-unit review passes that use subagents.
+to similar per-unit review passes that use subagents. The second read before a unit is frozen (ROADMAP 153)
+has its own file: [unit-second-read.md](unit-second-read.md).
 
 ## Roles
 
