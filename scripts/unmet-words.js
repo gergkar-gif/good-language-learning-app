@@ -209,10 +209,13 @@ function targetTexts(e) {
             }
         }
     }
-    // *Meg* the name is skipped where it is capitalised; *tanár* is checked even
-    // though *Tanár úr* is capitalised (a word also seen in lower case is no name).
-    const capNames = new Set(names);
-    for (const w of lowerSeen) names.delete(w);
+    for (const w of lowerSeen) names.delete(w);   // *Tanár úr* is a title, *tanár* a word
+    // The stories' characters are names even where the word is also a word
+    // (*Meg* and the particle *meg*): skipped where capitalised.
+    const capNames = new Set();
+    for (const st of ((readJson(`content/${course}/stories/manifest.json`) || {}).stories || [])) {
+        for (const c of st.characters || []) tokens(c).forEach(t => capNames.add(lower(t)));
+    }
     const roots = NUMBER_ROOTS[Lang.code()] || [];
     const numberMet = (w, pos) => {
         if (!w) return true;

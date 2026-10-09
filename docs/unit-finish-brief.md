@@ -297,3 +297,33 @@ freeze each unit, commit and push.
    relies on (*Ő a barátod?*).
 5. `cardinal-numbers` is now taught on `a1-16a-gr` (the user's decision,
    2026-10-09), so the a1-16a tags are right; leave them.
+
+### Run 3 fixes (hu a1 units 4–7), reviewed 2026-10-09
+
+Commits `0a60b48bf`, `7c7645513`, `d2d052e5f`, `2188e19c9`. Every fix-list item
+is done, all four units check clean and are frozen (HU A1 at 7 of 33). The
+new options are mostly real one-fault near misses; well done. Fixed in
+review (units unfrozen, fixed, re-locked, re-frozen):
+
+1. `a1-22-b-gr`: *könyv → könyvek* was replaced by *ház → házak*, another
+   exception to the screen's own rule (back vowels take *-ok*). Now *kávé →
+   kávék*. **A replacement example must follow the rule the screen states.**
+2. `a1-32-practice-5`, `a1-33-practice-5`, `a1-35-practice-5`: new wrong
+   options *Ki az a férfi?*, *Ki az a barát?*: *az a* + noun is still not
+   taught in A1 (Run 1, note 2). Now *Ki ő?*, *Ki a barátod?*.
+3. `a1-26-dialogue-2`, `a1-30-dialogue-2`: right answers *Szép család!*,
+   *Szép!* use *szép* (taught a1-32). The checker missed them (a name rule
+   in `unmet-words.js`, now fixed). Now *Ki az anyád?*, *Igen, együtt.*
+4. `a1-20-check-1` ("Which question asks for an address?"): wrong option
+   *Hol laksz?* is close to a second right answer. Now *Mi a telefonszámod?*.
+5. `a1-20-check-2` (a word-order scramble of *Mi a címed?*): retagged to the
+   unit vocabulary, like `a1-17-check-2`; the fix list had said `ki-and-mi`,
+   which was the reviewer's slip.
+
+Commit bodies for units 5–7 were short bullet lists without the *Found by
+reading* section; use the four sections from step 7.
+
+**Next run** follows the new order (step "Order" above): the reviewer runs
+the second reads of `plurals-quantities`, `possession`, `foundations-review`
+and `where-things-are` first; start when their fix lists are committed.
+
