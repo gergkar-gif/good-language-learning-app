@@ -270,5 +270,5 @@ freeze each unit, commit and push.
 4. **Order:** do `family` before `describing-people`. The family list adds
    the "your" (*-d*) possessive to `a1-26-b-gr`, which the unit 7 list
    relies on (*Ő a barátod?*).
-5. Leave the `cardinal-numbers` tags in a1-16a as they are; its `taught_in`
-   is a registry question for the user.
+5. `cardinal-numbers` is now taught on `a1-16a-gr` (the user's decision,
+   2026-10-09), so the a1-16a tags are right; leave them.

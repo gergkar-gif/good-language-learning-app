@@ -29,7 +29,7 @@ step 4.
 ## Metadata
 
 - `basic-hungarian-word-order` is taught in a1-20 but tagged on earlier items that test no focus position (the `taught-later` errors): `a1-16b-practice-6`, `-7` (builders for *Harminc éves vagyok.*) → `cardinal-numbers`; `a1-17-controlled-3`, `a1-17-practice-4`, `a1-17-check-2` → the unit vocabulary skill. In a1-20, `a1-20-practice-4` and `-check-2` (*Mi a telefonszámod?*) are tagged word order while `a1-19-practice-4` tags the same sentence `ki-and-mi`: make all three `ki-and-mi`.
-- `cardinal-numbers` before a1-16b (all of a1-16a): a registry question, not yours. The reviewer takes it to the user (`taught_in` should probably be `a1-16a-gr`). Leave these tags as they are.
+- `cardinal-numbers` in a1-16a: fixed in the registry (`taught_in` is now `a1-16a-gr`). Leave these tags as they are.
 - Re-lock after the changes.
 
 ## Goals, checklists, challenges
