@@ -14,6 +14,7 @@ assert.strictEqual(A.fillBlank('Az emberi méltóság érték az alkotmányunk__
     'Az emberi méltóság érték az alkotmányunkban.');
 // An English lead-in is dropped.
 assert.strictEqual(A.fillBlank('Complete the greeting: Buenos ___.', 'días', 'es'), 'Buenos días.');
+assert.strictEqual(A.fillBlank('Complete: ¿De dónde ___?', 'eres', 'es'), '¿De dónde eres?');
 // "He" and "has" are Spanish here, not English.
 assert.strictEqual(A.fillBlank('¿Has __ bien? (llegar)', 'llegado', 'es'), '¿Has llegado bien?');
 // Two blanks, one answer: silent.

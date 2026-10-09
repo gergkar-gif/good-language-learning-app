@@ -50,6 +50,7 @@ regenerable.
 | Script | Purpose |
 |---|---|
 | `check-content.py` | Every mechanical content check in one pass (give-aways, hints, blanks, copies, teaching order, new-course shape); `--changed` gates new findings at pre-push. |
+| `render_lesson.js` | Prints a lesson screen by screen as the app builds it (real `buildSteps()`), including the generated speaking steps and challenge, and flags missing files: `node scripts/render_lesson.js hu a1-01`. |
 | `freeze_unit.py` | Freezes a finished unit (no findings left except accepted ones, each with a reason) in `content/<course>/frozen-units.json`; `--status` counts frozen units; `check-content.py --changed` then blocks edits to it (ROADMAP 153). |
 | `migrate_fillblank_hints.py` | Moved fill-blank hints out of `sentence` into the `hint` field (ROADMAP 149); rerun it on imported content that still writes them into the sentence. |
 | `export_missing_vocab_sentences.py` | Exports words lacking example sentences as prompt files for LLM backfill. |

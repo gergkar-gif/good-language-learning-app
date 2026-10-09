@@ -105,10 +105,13 @@ const ExerciseAudio = (function () {
     // Drops an English instruction in front of the sentence itself:
     // "Complete the greeting: Buenos ___." -> "Buenos ___.". Only segments
     // that read as English are dropped, so a target-language "Nota: ..." stays.
+    // A one-word instruction ("Complete:") is too short to read as English.
+    const INSTRUCTION = /^(complete|fill in|translate|choose|answer|finish|reply|respond)$/i;
+
     function dropLeadIn(text, lang) {
         const parts = String(text || '').split(/:\s+/);
         let i = 0;
-        while (i < parts.length - 1 && looksEnglish(parts[i], lang) && !/_{2,}/.test(parts[i])) i++;
+        while (i < parts.length - 1 && (looksEnglish(parts[i], lang) || INSTRUCTION.test(parts[i].trim())) && !/_{2,}/.test(parts[i])) i++;
         return parts.slice(i).join(': ').replace(/\s+\/\s+/g, ' ');
     }
 

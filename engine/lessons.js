@@ -228,13 +228,11 @@ async function buildSteps(lesson) {
         try {
             const challengeData = await loadContent('curriculum/challenges.json');
             if (challengeData && challengeData.challenges) {
+                // Exact lesson stem only: a prefix or title-word match put one
+                // lesson's challenge into unrelated lessons ("b1-story" into any
+                // title containing "story").
                 const stem = (lesson.id || '').replace(/^lesson\./, '').split('.').join('-');
-                curated = challengeData.challenges[stem];
-                if (!curated) {
-                    const keys = Object.keys(challengeData.challenges);
-                    const matchedKey = keys.find(k => stem.startsWith(k) || (lesson.title && lesson.title.toLowerCase().includes(k.split('-')[1] || '')));
-                    if (matchedKey) curated = challengeData.challenges[matchedKey];
-                }
+                curated = challengeData.challenges[stem] || null;
             }
         } catch (e) {}
 
@@ -373,11 +371,10 @@ async function buildSteps(lesson) {
                         part.items.forEach(it => {
                             if (it.spanish && it.english) addSpeakingCandidate(it.spanish, it.english, 3);
                         });
-                    } else if (part.type === 'table' && Array.isArray(part.rows)) {
-                        part.rows.forEach(r => {
-                            if (r[0] && r[1]) addSpeakingCandidate(r[0], r[1], 2);
-                        });
                     }
+                    // Table rows are not candidates: their columns are forms of
+                    // the target language (a/á, én/vagyok), not a sentence and
+                    // its English, so they made "repeat *hat*: hát" steps.
                 });
                 steps.push({
                     type: 'grammar',
@@ -440,9 +437,15 @@ async function buildSteps(lesson) {
                         console.warn('Exercise not found:', id);
                         return;
                     }
-                    if (exercise.sentence && (exercise.english || exercise.translation)) {
-                        const clean = exercise.sentence.replace(/_{2,}/g, exercise.answer || '');
-                        addSpeakingCandidate(clean, exercise.english || exercise.translation, 2, exercise.teaches);
+                    const fill = exercise.answer || (Array.isArray(exercise.answers) && exercise.answers[0]) || '';
+                    if (exercise.sentence && fill && (exercise.english || exercise.translation)) {
+                        // The same completed sentence the answer audio speaks:
+                        // English lead-ins ("Complete: …") and glosses dropped.
+                        let clean = typeof ExerciseAudio !== 'undefined'
+                            ? ExerciseAudio.fillBlank(exercise.sentence, fill, Lang.code())
+                            : exercise.sentence.replace(/_{2,}/g, fill);
+                        if (clean) clean = clean.charAt(0).toUpperCase() + clean.slice(1);
+                        if (clean) addSpeakingCandidate(clean, exercise.english || exercise.translation, 2, exercise.teaches);
                     } else if (exercise.spanish && exercise.english) {
                         addSpeakingCandidate(exercise.spanish, exercise.english, 2, exercise.teaches);
                     }

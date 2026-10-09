@@ -398,7 +398,7 @@
             title: title,
             scenario: `Put your ${langName} skills into practice for this goal.`,
             prompt: isOral
-                ? `In ${langName}, ${action.charAt(0).toLowerCase() + action.slice(1)}. Speak clearly and naturally.`
+                ? `In ${langName}, ${(action.charAt(0).toLowerCase() + action.slice(1)).replace(new RegExp('\\s+in ' + langName + '\\b', 'i'), '')}. Speak clearly and naturally.`
                 : `In ${langName}, ${action.charAt(0).toLowerCase() + action.slice(1)}. Write clearly and naturally.`,
             cues: cues,
             canDo: canDoText
