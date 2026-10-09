@@ -1,0 +1,27 @@
+{
+ "_comment": "Finished units (ROADMAP 153). Written only by scripts/freeze_unit.py; check-content.py --changed blocks edits to a unit listed here.",
+ "units": {
+  "a1/reading-hungarian": {
+   "frozen": "2026-10-09",
+   "reason": "model unit: all checks fixed, every exercise read (Claude)",
+   "accepted": [
+    {
+     "check": "answer-in-prompt",
+     "id": "a1-01-practice-4",
+     "why": "the natural reply to Szia is Szia; repeating it is the point"
+    },
+    {
+     "check": "answer-in-prompt",
+     "id": "a1-02-review-2",
+     "why": "the natural reply to Szia is Szia; repeating it is the point"
+    },
+    {
+     "check": "tell-punctuation",
+     "id": "a1-02-intro-1",
+     "why": "English I is always capitalised; the options are I / you / he / she"
+    }
+   ]
+  }
+ },
+ "unfrozen": []
+}

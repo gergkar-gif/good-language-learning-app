@@ -50,7 +50,7 @@ regenerable.
 | Script | Purpose |
 |---|---|
 | `check-content.py` | Every mechanical content check in one pass (give-aways, hints, blanks, copies, teaching order, new-course shape); `--changed` gates new findings at pre-push. |
-| `make_worksheet.py` | Turns `check-content.py` findings into a fix worksheet (one entry per exercise, copies across lessons and es-es/es-latam merged, split into blocks) for a reviewed Antigravity pass. |
+| `freeze_unit.py` | Freezes a finished unit (no findings left except accepted ones, each with a reason) in `content/<course>/frozen-units.json`; `--status` counts frozen units; `check-content.py --changed` then blocks edits to it (ROADMAP 153). |
 | `migrate_fillblank_hints.py` | Moved fill-blank hints out of `sentence` into the `hint` field (ROADMAP 149); rerun it on imported content that still writes them into the sentence. |
 | `export_missing_vocab_sentences.py` | Exports words lacking example sentences as prompt files for LLM backfill. |
 | `generate_scenarios.py`, `generate_writing_exchanges.py` | Regenerate the conversation scenarios and written exchanges. |

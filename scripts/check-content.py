@@ -17,6 +17,11 @@ LEGACY_COURSES is new and held to everything: every finding fails, and the
 lesson-shape checks (brief § 2) run on it too (`--shape` forces them on an
 existing course, for testing).
 
+Frozen units (ROADMAP 153). A unit listed in content/<course>/frozen-units.json
+(written by scripts/freeze_unit.py) is finished: its accepted findings (checked
+by a reader and kept, each with a reason) are not reported again, and
+`--changed` blocks any edit to it unless the same change unfreezes it.
+
 Not covered here: schemas, tags and skill rules (validate-content.py), and
 everything a reader has to judge (brief § 8.2).
 """
@@ -489,14 +494,22 @@ def units_of(src, course, level):
     return src.read(f"content/{course}/curriculum/units/{level}.json") or []
 
 
+def frozen_units(src, course):
+    """{"<level>/<unit id>": entry} from content/<course>/frozen-units.json."""
+    return (src.read(f"content/{course}/frozen-units.json") or {}).get("units", {})
+
+
 def run(src, course, levels, unit_id=None, shape=False):
     found = []
+    frozen = frozen_units(src, course)
     for level in levels:
         for u in units_of(src, course, level):
             if unit_id and u.get("id") != unit_id:
                 continue
+            accepted = {(a["check"], a["id"]) for a in frozen.get(f"{level}/{u.get('id')}", {}).get("accepted", [])}
             for check, eid, msg, f in check_unit(src, course, level, u, shape):
-                found.append((course, level, u.get("id"), check, eid, msg, f))
+                if (check, eid) not in accepted:
+                    found.append((course, level, u.get("id"), check, eid, msg, f))
     return found
 
 
@@ -529,13 +542,21 @@ def changed_units():
 
 def gate():
     head, base = Source(), Source("origin/master")
-    new = []
+    new, blocked = [], []
     for course, level, uid in sorted(changed_units()):
+        key = f"{level}/{uid}"
+        if key in frozen_units(base, course) and key in frozen_units(head, course):
+            blocked.append(f"{course} {key}")
         is_new = course not in LEGACY_COURSES
         now = run(head, course, [level], uid, shape=is_new)
         before = set() if is_new else {(c, i) for *_, c, i, _m, _f in run(base, course, [level], uid)}
         new += [x for x in now if (x[3], x[4]) not in before]
     show(new)
+    if blocked:
+        print("\ncheck-content: these units are frozen (content/<course>/frozen-units.json) and were edited: "
+              + ", ".join(blocked) + ". Unfreeze first: `python scripts/freeze_unit.py --unfreeze <course> <level> "
+              "<unit> --reason ...`, in the same change. Push blocked.")
+        return 1
     errors = [x for x in new if x[3] not in SUSPECTS]
     if errors:
         print(f"\ncheck-content: {len(errors)} new error(s) in the changed units; push blocked. "
