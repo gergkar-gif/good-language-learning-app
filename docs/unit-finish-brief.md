@@ -91,12 +91,41 @@ that froze it (`git log -p --grep "reading-hungarian"`) before your first unit.
      line it was built from (the grammar example or the exercise's
      `english`); if the source is right and the engine's choice is wrong,
      stop and report it.
+   - **Metadata, on every exercise.** The learner model, the review engine
+     and the skill map run on it, so a wrong tag teaches the app something
+     false about the learner. Rules: [AGENTS.md](../AGENTS.md) § "Exercise
+     metadata" and [skill-tagging-spec.md](skill-tagging-spec.md)
+     § "Read-through conventions". Check each exercise:
+     - `teaches`: the one skill **a wrong answer shows** (a tested form gets
+       its grammar skill, a tested word the unit's vocabulary skill).
+     - `distractor_skills` (grammar choice items): every wrong option that is
+       a real form of **another** skill, by option index; none for a wrong
+       form of the same skill. *Én Meg vagyok* for "You are Meg" is
+       `{"1": "personal-pronouns"}`.
+     - `category` follows the tag (a vocabulary skill is `vocabulary`).
+     - `hint` (fill-blanks): only when the blank can't be recovered, never
+       the answer, names the person where the form is person-marked.
+     - `english` on every fill-blank and sentence-builder, translating the
+       completed sentence and fitting no other answer; `answers` lists every
+       correct alternative.
+     **Whenever you change an option, a sentence or a prompt, re-check that
+     exercise's `teaches` and `distractor_skills` against the new text**: a
+     replaced wrong option keeps its old `distractor_skills` entry until you
+     change it, and the validator can't see that it no longer fits (it
+     happened in the model unit: *Ki ő?* replaced by *Ez egy tea.*, still
+     recorded as `ki-and-mi`). A new wrong option should be a near miss of
+     the skill the exercise teaches, so a wrong answer still shows that
+     skill.
+     Tags are locked, so after changing any `teaches`, `distractor_skills`
+     or `category`, re-lock the unit:
+     `python scripts/lock_tags.py <course> <level>/<unit id> --update --reason "..."`,
+     and list every tag change in the commit body. Never add, rename or merge
+     a skill (the list is frozen): if no skill fits, stop and report.
    - What you found by reading: fix it if you are certain; otherwise stop
      and report it with your proposal.
 4. **Edit rules.** Edit the JSON text in place (no re-dump), keep each
-   file's formatting. Don't change `id`, `type`, `teaches`,
-   `distractor_skills`, `category`, `stage` or `correct`; the tags are
-   locked. Words you write: only forms you are certain of, at A1/A2 only
+   file's formatting. Don't change `id`, `type`, `stage` or `correct`; tags
+   change only as in step 3, with a re-lock. Words you write: only forms you are certain of, at A1/A2 only
    words the learner has met in this unit or earlier.
 5. **Check.** Re-run step 1 until it shows only what you will accept, re-run
    the render (no `!!` lines, every screen right), then

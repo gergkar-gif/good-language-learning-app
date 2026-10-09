@@ -20,7 +20,8 @@ existing course, for testing).
 Frozen units (ROADMAP 153). A unit listed in content/<course>/frozen-units.json
 (written by scripts/freeze_unit.py) is finished: its accepted findings (checked
 by a reader and kept, each with a reason) are not reported again, and
-`--changed` blocks any edit to it unless the same change unfreezes it.
+`--changed` blocks any edit to it unless the same change unfreezes it (and
+may freeze it again: a changed freeze record counts).
 
 Not covered here: schemas, tags and skill rules (validate-content.py), and
 everything a reader has to judge (brief § 8.2).
@@ -545,7 +546,8 @@ def gate():
     new, blocked = [], []
     for course, level, uid in sorted(changed_units()):
         key = f"{level}/{uid}"
-        if key in frozen_units(base, course) and key in frozen_units(head, course):
+        was, now = frozen_units(base, course).get(key), frozen_units(head, course).get(key)
+        if was is not None and was == now:  # still frozen and not re-frozen in this change
             blocked.append(f"{course} {key}")
         is_new = course not in LEGACY_COURSES
         now = run(head, course, [level], uid, shape=is_new)

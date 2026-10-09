@@ -3,7 +3,7 @@
  "units": {
   "a1/reading-hungarian": {
    "frozen": "2026-10-09",
-   "reason": "model unit: all checks fixed, every exercise read (Claude)",
+   "reason": "model unit: all checks fixed, every screen and every exercise's metadata read (Claude)",
    "accepted": [
     {
      "check": "answer-in-prompt",
@@ -23,5 +23,11 @@
    ]
   }
  },
- "unfrozen": []
+ "unfrozen": [
+  {
+   "unit": "a1/reading-hungarian",
+   "date": "2026-10-09",
+   "reason": "metadata check: stale distractor_skills after option rewrites (a1-04-intro-1, a1-04-check-2), a1-02-practice-dialogue wrong option off-skill, a1-02-intro-2 missing distractor_skills"
+  }
+ ]
 }
