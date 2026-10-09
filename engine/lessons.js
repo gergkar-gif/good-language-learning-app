@@ -445,6 +445,9 @@ async function buildSteps(lesson) {
                             ? ExerciseAudio.fillBlank(exercise.sentence, fill, Lang.code())
                             : exercise.sentence.replace(/_{2,}/g, fill);
                         if (clean) clean = clean.charAt(0).toUpperCase() + clean.slice(1);
+                        // A dialogue line ("Anna: Jó reggelt! Te: ____!") would have the
+                        // learner read the speaker names aloud; it isn't one sentence.
+                        if (clean && /(^|\s)[A-ZÁÉÍÓÖŐÚÜŰÑ][A-Za-záéíóöőúüűñ]*:\s/.test(clean)) clean = '';
                         if (clean) addSpeakingCandidate(clean, exercise.english || exercise.translation, 2, exercise.teaches);
                     } else if (exercise.spanish && exercise.english) {
                         addSpeakingCandidate(exercise.spanish, exercise.english, 2, exercise.teaches);

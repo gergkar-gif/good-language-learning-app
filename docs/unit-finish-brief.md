@@ -127,17 +127,26 @@ that froze it (`git log -p --grep "reading-hungarian"`) before your first unit.
    file's formatting. Don't change `id`, `type`, `stage` or `correct`; tags
    change only as in step 3, with a re-lock. Words you write: only forms you are certain of, at A1/A2 only
    words the learner has met in this unit or earlier.
+   **What counts as met:** a word or form is met when it is in a vocabulary
+   list, or is the subject of a grammar screen, at or before the lesson. A
+   lesson may also use whole phrases from its *own* grammar examples. A word
+   seen only in another lesson's example, a tip or a story is not met. This
+   applies to everything the learner reads: prompts, right answers, wrong
+   options, challenge targets.
 5. **Check.** Re-run step 1 until it shows only what you will accept, re-run
    the render (no `!!` lines, every screen right), then
    `python scripts/validate-content.py --changed` and
    `python scripts/check-content.py --changed`.
-6. **Freeze.**
+6. **Don't freeze yet.** Commit the unit (step 7) unfrozen. A second
+   reader (a Sonnet subagent run by the reviewer) then reads the unit
+   independently and the reviewer turns its findings into a checked fix list,
+   `imports/review/sonnet-reads/<course>-<level>-<unit id>.md`. Fix every item
+   on that list, then freeze:
 
-        python scripts/freeze_unit.py <course> <level> <unit id> --reason "all checks fixed, every exercise read" \
-            --accept "<check>:<exercise id>:<why it stays>" ...
+        python scripts/freeze_unit.py <course> <level> <unit id> --reason "all checks fixed, every exercise read, second read fixed"             --accept "<check>:<exercise id>:<why it stays>" ...
 
-   It refuses while anything is left that isn't accepted, and only suspects
-   and the two tell checks can be accepted.
+   `freeze_unit.py` refuses while anything is left that isn't accepted, and
+   only suspects and the two tell checks can be accepted.
 7. **Commit the unit on its own:**
    `content(hu): finish and freeze a1/greetings-basic-interaction (ROADMAP 153)`,
    with what you fixed and what you accepted in the body.
@@ -159,7 +168,7 @@ body.
 
 ## Runs and stops
 
-Do **four units per run**, each committed and pushed on its own
+Do **four units per run** (or the fix lists for units already read), each committed and pushed on its own
 (`git pull --rebase origin master` first; stage only your files). Then stop
 and report, per unit: the counts fixed by kind, every accepted finding with
 its reason, every correct option you changed, and anything you stopped on.
