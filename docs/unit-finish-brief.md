@@ -247,3 +247,28 @@ real phrase or form that fails in exactly one way.
 **Next run:** do the next four HU A1 units in order (`numbers-personal-information`
 and the three after it), steps 1–5 and 7, commit each **unfrozen** and push.
 The reviewer runs the second read on them.
+
+### Run 3 (hu a1 `numbers-personal-information` to `describing-people`), reviewed 2026-10-09
+
+Commits `98fdde762`, `32c36e88c`, `05d778a5a`, `c4486c514`. The second read
+of each unit is filtered into a fix list in `imports/review/sonnet-reads/`:
+`hu-a1-numbers-personal-information.md`, `hu-a1-objects-locations.md`,
+`hu-a1-family.md`, `hu-a1-describing-people.md`. Fix every item, re-lock,
+freeze each unit, commit and push.
+
+1. Unit 4 got a real reading pass. **Units 5–7 did not:** their *Found by
+   reading* lists only the new challenges and a coverage check, and `family`
+   changed nothing but `challenges.json`. The reads found 20–30 defects in
+   each. Steps 2 and 3 are the job; the challenges are one part of it.
+2. **Length fixes must use met words.** `32c36e88c` padded options with
+   *barista*, *mérnök*, *tanár*, *diák*, *Honnan jössz*, none of them met.
+   If no met option of the right length exists, shorten the right answer
+   or accept the suspect with a reason.
+3. **Consolidation checklists:** `a1-25`, `a1-30`, `a1-35` consolidations
+   still carry the generic *I can recognise the main language from this
+   unit.* Each gets its own two lines, like `a1-20-consolidation`.
+4. **Order:** do `family` before `describing-people`. The family list adds
+   the "your" (*-d*) possessive to `a1-26-b-gr`, which the unit 7 list
+   relies on (*Ő a barátod?*).
+5. Leave the `cardinal-numbers` tags in a1-16a as they are; its `taught_in`
+   is a registry question for the user.
