@@ -45,7 +45,7 @@ function show(s, n) {
         case 'goal': case 'checklist': add('items', s.items); break;
         case 'grammar': (s.parts || []).forEach(p => add(p.type, p.content || p.text || p.items || p.rows || p.title)); break;
         case 'vocabulary': add('words', (s.words || []).map(w => `${w.lemma} = ${w.translation}`).join(' · ')); break;
-        case 'story': add('paragraphs', (s.lines || []).length); break;
+        case 'story': (s.lines || []).forEach(p => out.push(`    ${p.lang && p.lang !== course.split('-')[0] ? '(' + p.lang + ') ' : ''}${p.speaker ? p.speaker + ': ' : ''}${p.text || ''}`)); break;
         case 'speaking': add('mode', s.mode); add('prompt', s.prompt); add('say', s.spanish); add('english', s.english); break;
         case 'challenge': ['scenario', 'prompt', 'cues', 'target', 'english', 'canDo'].forEach(k => add(k, s[k])); break;
         case 'srs': add('cards', (s.cards || []).map(w => w.lemma).join(', ')); break;

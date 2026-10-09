@@ -45,6 +45,11 @@ that froze it (`git log -p --grep "reading-hungarian"`) before your first unit.
    `english` line that doesn't match, a question that depends on a step that
    isn't shown, a speaking step whose English isn't its sentence. Any `!!`
    line at the end (a missing file, a missing exercise) is an error.
+   Then check that every word of the unit's story can be tapped in the
+   Reader: `node scripts/audit-reader-coverage.js <course> --story <story file
+   stem> --top 0` must report 0 "not in the dictionary" (names excepted) and
+   0 "lookup throws"; a miss is reported, not fixed in the dictionary by
+   hand.
 3. **Fix everything in this unit, in one pass.**
    - `length-giveaway` (correct option over 1.3× the longest wrong one):
      shorten the correct option, or make the wrong ones as long and as
@@ -68,13 +73,19 @@ that froze it (`git log -p --grep "reading-hungarian"`) before your first unit.
      (`a1-06`, `a1-01-02`). The model is `hu` `a1-01` … `a1-05`. Fields:
      `tier` (`tier1` A1, `tier2` A2), `level`, `title`
      (`Communicative Challenge: <short name>`), `scenario` (one situation,
-     with the story's people), `prompt` (what to say, in English), `cues`
-     (2–3, each with the Hungarian/Spanish in brackets), `target` (the model
-     answer), `english` (its translation), `canDo` (the lesson's first
-     checklist line, copied). The target answers the prompt exactly, uses
+     with the story's people), `prompt` (the task in English), `cues` (2–3),
+     `target` (the model answer), `english` (its translation), `canDo` (the
+     lesson's first checklist line, copied).
+     What the learner sees: at A1 the scenario, then *Say this in
+     <language>:* with the `english` line, and the cues as a hint; at A2 the
+     scenario, the `prompt` and the cues as *Points to include*, with
+     `target` revealed after. So **cues say what to include, never the
+     words** (*Greet him back*, not *Greeting (Szia)*: the hint is shown
+     before the learner speaks). The target answers the prompt exactly, uses
      only words and forms the learner has met by this lesson, and is short:
-     one to three sentences at A1. es-es and es-latam each get their own
-     entry (no *vosotros*, a Latin American setting in es-latam).
+     one to three sentences at A1. Check it in the render. es-es and es-latam
+     each get their own entry (no *vosotros*, a Latin American setting in
+     es-latam).
    - **Speaking steps:** if one is wrong (its English isn't a translation of
      its sentence, the sentence is broken or not taught yet), fix the source
      line it was built from (the grammar example or the exercise's

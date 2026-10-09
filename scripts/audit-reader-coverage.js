@@ -8,6 +8,9 @@
 //
 //   node scripts/audit-reader-coverage.js [course|all] [--out report.json]
 //                                          [--top N] [--min-count N]
+//                                          [--story <file stem or id>,...]
+//
+// --story limits the audit to those stories (a unit's, when finishing it).
 //
 // course: hu | es-es | es-latam | all (default all)
 //
@@ -28,6 +31,7 @@ const courseArg = positional[0] || 'all';
 const outFile = flag('--out', null);
 const mdFile = flag('--markdown', null);
 const topN = parseInt(flag('--top', '40'), 10);
+const onlyStories = flag('--story', null) ? new Set(flag('--story', null).split(',')) : null;
 const minCount = parseInt(flag('--min-count', '1'), 10);
 
 const root = path.resolve(__dirname, '..');
@@ -103,6 +107,7 @@ async function auditCourse(course) {
         let story;
         try { story = JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { continue; }
         const storyId = story.id || path.basename(file, '.json');
+        if (onlyStories && !onlyStories.has(storyId) && !onlyStories.has(path.basename(file, '.json'))) continue;
         for (const p of story.paragraphs || []) {
             // paragraphs in another language (English narration) aren't tappable
             if (p.lang && p.lang !== lang) continue;
