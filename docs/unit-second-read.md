@@ -11,20 +11,28 @@ filtered before anyone acts on it.
 
 ## The flow, per unit
 
-1. Antigravity finishes the unit (brief steps 1–5), commits it **unfrozen**
-   and pushes. Check it reached `origin/master`; if it is only in the main
-   checkout, push it from `C:/dev/parlour-claude` (`git checkout --detach
-   <commit>`, then `git push origin HEAD:master`).
-2. The reviewer runs the second read (below): a Sonnet subagent, report only.
-3. The reviewer checks and filters the report into a fix list,
-   `imports/review/sonnet-reads/<course>-<level>-<unit id>.md`, commits it,
-   and adds a short review note to the brief.
-4. Antigravity fixes every item, re-locks tags where they changed, freezes,
-   commits, pushes.
-5. The reviewer spot-checks the fixes (the new options especially; that is
-   where slips happen), fixes small things directly (unfreeze → fix →
+Changed 2026-10-09 (from Run 4): the read comes **before** Antigravity's
+pass, not after it. In runs 1–3 Antigravity finished a unit, the reader found
+20–30 more defects, and Antigravity went through the unit a second time; its
+own reading pass found little the reader didn't. Now there is one pass.
+
+1. The reviewer runs the second read (below) on the unit **as it stands**:
+   a Sonnet subagent, report only. Run `check-content.py` first and give the
+   reader nothing from it; the reader reads blind.
+2. The reviewer checks and filters the report into a fix list,
+   `imports/review/sonnet-reads/<course>-<level>-<unit id>.md`, and commits
+   it. Leave out what `check-content.py` already reports (length
+   give-aways, `unmet-word`): Antigravity gets those from the checker.
+3. Antigravity does the unit (brief steps 1–7) with the fix list in the same
+   pass, freezes it, commits, pushes.
+4. The reviewer spot-checks the unit (the changed options especially; that
+   is where slips happen), fixes small things directly (unfreeze → fix →
    `lock_tags.py --update` → re-freeze with the same `--accept`s), and
-   records it in the brief's review notes.
+   records it in the brief's review notes. A unit with bigger problems is
+   unfrozen and sent back.
+
+Units committed under the old order (finished, then read) keep it: their fix
+lists are applied and then they are frozen.
 
 ## Running the read
 
@@ -43,9 +51,9 @@ filtered before anyone acts on it.
 Fill in `<course>`, `<unit id>`, `<stems>`, the earlier units and the folder.
 
 > You are reviewing one unit of a `<language>` language course (the Parlour
-> app) for a learner who knows only English. The unit has been finished by
-> another agent; your job is an independent second read to find anything it
-> missed. REPORT ONLY: do not edit, create or commit any file. Work only
+> app) for a learner who knows only English. Another agent will finish the
+> unit using your findings; your job is an independent read to find
+> everything that is wrong with it. REPORT ONLY: do not edit, create or commit any file. Work only
 > inside the folder `<folder>` (absolute paths; `cd <folder> && …`).
 >
 > The unit is `<course>` `<level>` `<unit id>`: lessons `<stems>` (lesson,
@@ -62,6 +70,12 @@ Fill in `<course>`, `<unit id>`, `<stems>`, the earlier units and the folder.
 > `node scripts/render_lesson.js <course> <stems>` (every screen as the app
 > builds it, including the generated speaking steps and the challenge);
 > `node scripts/audit-reader-coverage.js <course> --story <story stem> --top 0`.
+>
+> Skip what `check-content.py` already reports (length give-aways,
+> `unmet-word`): the other agent gets those from the checker. A lesson whose
+> challenge is still the generic fallback will get one written; don't report
+> that. The render may omit `*-review-*` exercises; read those in the
+> exercise JSON.
 >
 > Read every exercise, challenge, goal, checklist, speaking step and the
 > story. For each exercise check: correct, natural target language; exactly

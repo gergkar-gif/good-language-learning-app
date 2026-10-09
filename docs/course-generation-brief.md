@@ -68,7 +68,7 @@ Sections, in this order:
 | `exercise-group` **Production** | 2 (`sentence-builder`, `structured-writing`). |
 | `srs` | `{"type": "srs", "title": "Add to Review"}`. |
 | `exercise-group` **Check** | 2: retrieve the lesson's point with no support. |
-| `checklist` | The `goal` items as "I can …", in the same count and order. |
+| `checklist` | The `goal` items as "I can …", in the same count and order. Each line is this lesson's own: no two lessons of a course share a line (`checklist-shared`), and the first line is what the lesson's challenge practises (it is copied into the challenge's `canDo`). |
 
 - **Exercise count:** A1 is 2+4+5+2+2+2 = 17. From A2 it is 2+4+4+2+2+2+2 = 18.
 - **Types:** every teaching lesson uses at least 5 exercise types.
@@ -88,6 +88,7 @@ Rules:
 - Its 20 exercises mostly reuse or lightly vary the unit's own items. They run from easy to hard and cover every lesson.
 - It uses at least 5 types and at least 6 different `teaches` tags.
 - Every exercise is tagged.
+- Its goal and checklist name what this unit can do (*I can ask what something is and where it is.*), never a line any unit could carry (*I can recognise the main language from this unit.*); `checklist-shared` catches the copies.
 
 ### 2.4 What a unit may use
 
@@ -189,10 +190,12 @@ The commonest defects in shipped content. Each rule is here because a review fou
    - an opener or marker (*Sajnos*, *Mert*, *Porque*)
    - a " / " join
    - a capital letter, final punctuation or ending that sets one option apart
-6. **Plausible and real.** No absurd, rude or cartoonish options, and no non-words (unless the item is about spelling). Options use only taught words and forms, in the item's language. Glosses go in brackets: if one option has a gloss, all do.
+6. **Plausible and real.** No absurd, rude or cartoonish options, and no non-words (unless the item is about spelling). Options use only taught words and forms, in the item's language (`unmet-word` checks the words at HU A1–A2; a length fix never brings in an unmet word). Glosses go in brackets: if one option has a gloss, all do.
 7. **Fact items:** wrong options are real, plausible, false facts of the same kind (another real city, another real year). The question asks only what the lesson's text contains.
 8. **Word-order items:** a wrong order must break an unambiguous rule of the language (the focus slot, verb position). If another order is also natural, accept it.
 9. After writing or replacing options, **re-read the question and each option in full**. Never carry options over from a neighbouring item.
+10. **One fault per wrong option.** A wrong option breaks exactly one thing, the point the item teaches. *Ő Meg van.* for *Én Meg vagyok.* breaks the person and the copula at once; *Szülő ő van.* breaks the order and adds *van*. Word salad (*Itt szék nincs van.*) breaks everything and teaches nothing.
+11. **Never the quoted line.** An item that asks which line comes before a reply never offers the reply itself, or a stock line (*Szia!*, *Köszönöm.*) that no one would say there (`reply-as-option`).
 
 ### 6.4 Fill-blanks and the `hint` field
 

@@ -27,6 +27,15 @@ that froze it (`git log -p --grep "reading-hungarian"`) before your first unit.
 
 ## One unit
 
+**Order (from Run 4, 2026-10-09).** The second read comes first now. Before
+you touch a unit, the reviewer has a Sonnet reader read it as it stands and
+filters the report into a fix list,
+`imports/review/sonnet-reads/<course>-<level>-<unit id>.md`. You then do
+steps 1–5 **and** every item on that list in one pass, freeze, and commit.
+The list doesn't replace step 2: it is what one reader found, and you still
+read every screen. A unit with no fix list yet isn't ready for you; skip
+it and say so.
+
 1. **Report.** `python scripts/check-content.py <course> <level> <unit id>`.
    Errors must all be fixed; suspects (`suspect`) must each be fixed or
    accepted with a reason.
@@ -66,6 +75,21 @@ that froze it (`git log -p --grep "reading-hungarian"`) before your first unit.
      of the lesson uses. Use it in an existing exercise (a matching pair, an
      option, a sentence), or accept if the list is a review list and the
      word is drilled earlier in the unit.
+   - `unmet-word` (HU A1–A2): a word whose lemma is in no vocabulary list
+     and no grammar screen at or before the lesson (`scripts/unmet-words.js`,
+     which looks every word up the way the Reader does). Replace it with a
+     met word. Accept only where the unknown word is the point (a line the
+     learner is meant not to understand, a reading-unit decoding drill).
+     It checks words, not forms: *címem* passes once *cím* is met, so a
+     form taught later is still yours to catch by reading. **A length fix
+     must not bring in an unmet word**; if no met option of the right
+     length exists, shorten the right answer.
+   - `checklist-shared`: a checklist line another lesson also has. Write
+     this lesson's own lines from its goal and content (the first is what
+     its challenge practises; copy it into `canDo`). Consolidations too.
+   - `reply-as-option`: a "which line comes before the reply" item offers
+     the reply itself. Use real lines that would come before a different
+     reply.
    - Other suspects: fix, or accept with the reason (*the reply to Szia is
      Szia*).
    - **The challenge: write one for every lesson** in
@@ -137,19 +161,20 @@ that froze it (`git log -p --grep "reading-hungarian"`) before your first unit.
    the render (no `!!` lines, every screen right), then
    `python scripts/validate-content.py --changed` and
    `python scripts/check-content.py --changed`.
-6. **Don't freeze yet.** Commit the unit (step 7) unfrozen. A second
-   reader (a Sonnet subagent run by the reviewer) then reads the unit
-   independently ([unit-second-read.md](unit-second-read.md)) and the reviewer turns its findings into a checked fix list,
-   `imports/review/sonnet-reads/<course>-<level>-<unit id>.md`. Fix every item
-   on that list, then freeze:
+6. **Freeze.** With every check fixed or accepted and every fix-list item
+   done:
 
-        python scripts/freeze_unit.py <course> <level> <unit id> --reason "all checks fixed, every exercise read, second read fixed"             --accept "<check>:<exercise id>:<why it stays>" ...
+        python scripts/freeze_unit.py <course> <level> <unit id> --reason "all checks fixed, every exercise read, second read fixed" --accept "<check>:<exercise id>:<why it stays>" ...
 
    `freeze_unit.py` refuses while anything is left that isn't accepted, and
    only suspects and the two tell checks can be accepted.
 7. **Commit the unit on its own:**
    `content(hu): finish and freeze a1/greetings-basic-interaction (ROADMAP 153)`,
-   with what you fixed and what you accepted in the body.
+   with what you fixed and what you accepted in the body, in four sections:
+   *Checker findings*, *Fix list* (every item, done or why not), *Found by
+   reading* (what you found that neither a check nor the list had) and
+   *Metadata*. The reviewer then spot-checks the unit; if something is
+   wrong they unfreeze it and send it back.
 
 ## Spanish: both courses at once
 
@@ -168,7 +193,7 @@ body.
 
 ## Runs and stops
 
-Do **four units per run** (or the fix lists for units already read), each committed and pushed on its own
+Do **four units per run** (the ones with fix lists), each committed and pushed on its own
 (`git pull --rebase origin master` first; stage only your files). Then stop
 and report, per unit: the counts fixed by kind, every accepted finding with
 its reason, every correct option you changed, and anything you stopped on.

@@ -64,6 +64,7 @@ CHECKS = {
     "hint-person": "a person-marked answer, but no person in the hint, sentence or English line",
     "answer-in-prompt": "the answer is printed in the prompt",
     "exchange-reference": "the question refers to an exchange that isn't shown",
+    "reply-as-option": "a 'which line comes before the reply' item offers the reply itself",
     "missing-english": "a fill-blank or sentence-builder without `english`",
     "question-answer-type": "the correct option doesn't answer the question word (number, yes/no)",
     # language appendices (§ 9)
@@ -76,6 +77,8 @@ CHECKS = {
     "unit-copy": "an exercise copies one from an earlier lesson of the unit",
     "taught-later": "a grammar skill is used before the lesson whose screen teaches it",
     "vocab-unused": "a vocabulary word no exercise of its lesson uses",
+    "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
+    "unmet-word": "a word the learner hasn't met by this lesson (scripts/unmet-words.js)",
     # shape, new courses only (§ 2)
     "shape-groups": "a teaching lesson's exercise groups differ from the brief's shape",
     "shape-types": "a lesson uses fewer than 5 exercise types",
@@ -86,7 +89,12 @@ CHECKS = {
 }
 # Patterns a reader confirms: always printed, never gated. Every other check is an error.
 SUSPECTS = {"tell-opener", "tell-punctuation", "option-language", "question-answer-type",
-            "answer-in-prompt", "hu-case-noun", "vocab-unused"}
+            "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word"}
+# unmet-word runs where the vocabulary lists are complete enough to define "met":
+# Hungarian A1-A2. Spanish lists leave out function words (en, que, con), so the
+# check would flag words every learner knows; and from B1 the lists don't try to
+# cover every word.
+UNMET_WORD = {"hu": {"a1", "a2"}}
 
 ENGLISH = set(("the an to are was were of and in on at for with my your his her its it i you she we they do does did "
                "not this that have what which who how why will would can could should there their from by or but if "
@@ -131,6 +139,8 @@ EXCHANGE = re.compile(r"\b((starts?|begins?|opens?|continues?|follows?|ends?|fin
 ES_PERSON = re.compile(r"\b(yo|t[uú]|[eé]l|ella|usted|nosotros|nosotras|vosotros|vosotras|ellos|ellas|ustedes|I|you|he|she|we|they)\b", re.I)
 ES_AUX = {"he", "has", "ha", "hemos", "habéis", "han"}
 BLANK = re.compile(r"_{2,}")
+REPLY_BEFORE = re.compile(r"\b(comes?|said|line) (just )?before\b|\bbefore the (reply|answer)\b", re.I)
+QUOTED = re.compile(r"[“\"„]([^”\"]+)[”\"]")
 COPY_KEYS = ("question", "sentence", "options", "pairs", "solution", "prompt", "template", "answer", "answers",
              "correct", "text", "english", "words", "tiles", "sentences", "solutions", "hint")
 NOT_TEXT = {"id", "teaches", "type", "category", "stage", "english", "explanation", "hint", "distractor_skills", "audio"}
@@ -299,6 +309,10 @@ def check_exercise(e, course, lang):
 
     if t == "multiple-choice" and EXCHANGE.search(e.get("question") or ""):
         hit("exchange-reference")
+    if t == "multiple-choice" and opts and REPLY_BEFORE.search(e.get("question") or ""):
+        quoted = {fold(q).strip() for q in QUOTED.findall(e.get("question") or "")}
+        if any(fold(o).strip() in quoted for o in opts):
+            hit("reply-as-option")
 
     if t == "fill-blank":
         s = e.get("sentence") or ""
@@ -354,12 +368,45 @@ def check_exercise(e, course, lang):
 
 # --- lesson and unit checks -------------------------------------------------
 
+def unmet_words(src, course, level):
+    """{stem: [(id, word, first stem)]} from scripts/unmet-words.js, for the working
+    tree only (it reads the files itself; a git revision gets none)."""
+    key = ("unmet", course, level)
+    if key not in src.cache:
+        found = defaultdict(list)
+        if not src.rev and level in UNMET_WORD.get(course, ()):
+            out = subprocess.run(["node", str(ROOT / "scripts/unmet-words.js"), course, level],
+                                 cwd=ROOT, capture_output=True)
+            if out.returncode == 0:
+                for x in json.loads(out.stdout.decode("utf-8") or "[]"):
+                    found[x["stem"]].append((x["id"], x["word"], x["first"]))
+        src.cache[key] = found
+    return src.cache[key]
+
+
 def stem_words(lemma, articles):
     """Prefixes that stand for a lemma in an inflected text. A "(Madrid)" note is
     dropped, and of "a / b" alternatives the first is taken."""
     lemma = re.sub(r"\([^)]*\)", " ", lemma).split(" / ")[0]
     ws = [w for w in words(fold(lemma)) if w not in {fold(a) for a in articles}]
     return [w[:max(3, len(w) - 2)] if len(w) > 4 else w for w in ws if len(w) >= 2]
+
+
+def checklist_lines(src, course):
+    """{folded checklist line: [stems]} over every lesson of the course."""
+    key = ("checklists", course)
+    if key not in src.cache:
+        lines = defaultdict(list)
+        for level in LEVELS:
+            for u in units_of(src, course, level):
+                for stem in u.get("stems", []):
+                    for sec in (src.read(f"content/{course}/lessons/{level}/{stem}.json") or {}).get("sections", []):
+                        if sec.get("type") == "checklist":
+                            for it in sec.get("items") or []:
+                                if isinstance(it, str) and it.strip():
+                                    lines[fold(it).strip()].append(stem)
+        src.cache[key] = lines
+    return src.cache[key]
 
 
 def lesson_groups(lesson):
@@ -387,6 +434,8 @@ def check_unit(src, course, level, unit, shape):
         exs = data.get("exercises", []) if isinstance(data, dict) else []
         by_id = {e.get("id"): e for e in exs}
         consolidation = "consolidation" in stem
+        for eid, word, first in unmet_words(src, course, level).get(stem, []):
+            out.append(("unmet-word", eid, f"*{word}* " + (f"is first taught at {first}" if first else "is in no vocabulary list"), ex_rel))
         for e in exs:
             eid = e.get("id")
             for check, msg in check_exercise(e, course, lang):
@@ -409,6 +458,13 @@ def check_unit(src, course, level, unit, shape):
         lesson = src.read(lesson_rel)
         if not lesson:
             continue
+        shared = checklist_lines(src, course)
+        for sec in lesson.get("sections", []):
+            if sec.get("type") == "checklist":
+                for it in sec.get("items") or []:
+                    others = [x for x in shared.get(fold(it).strip(), []) if x != stem] if isinstance(it, str) else []
+                    if others:
+                        out.append(("checklist-shared", stem, f"{it.strip()[:60]!r} also in {', '.join(others[:3])}", lesson_rel))
         groups = lesson_groups(lesson)
         refs = [r for g in groups for r in g.get("exerciseRefs") or []]
         prev = None
