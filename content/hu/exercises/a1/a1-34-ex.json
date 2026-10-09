@@ -112,8 +112,8 @@
       "question": "Which sentence means \"He is my friend\"?",
       "options": [
         "Ő a barátom.",
-        "Ő barát van.",
-        "Barátom ő van."
+        "Ő a barátod.",
+        "Ő a barát."
       ],
       "correct": 0,
       "teaches": [
@@ -218,15 +218,18 @@
       "category": "grammar",
       "question": "Which sentence comes just before the reply \"A férfi magas, a nő alacsony.\"?",
       "options": [
-        "Milyen az ember?",
-        "A férfi magas, a nő alacsony.",
-        "És ő a barátod?",
-        "Igen, ő a barátom."
+        "Milyen a férfi és a nő?",
+        "Ki a férfi és a nő?",
+        "Hol van a férfi és a nő?"
       ],
       "correct": 0,
       "teaches": [
         "quantity-choice-questions-mennyi-melyik"
       ],
+      "distractor_skills": {
+        "1": "ki-and-mi",
+        "2": "spatial-questions-hol-hova"
+      },
       "stage": "practice"
     },
     {
@@ -280,7 +283,7 @@
       ],
       "options": [
         "Igen, ő a barátom.",
-        "Igen, barátom ő van."
+        "Igen, ő a barátod."
       ],
       "correct": 0,
       "teaches": [
@@ -294,7 +297,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Milyen az ember?"
+          "text": "Milyen a férfi és a nő?"
         },
         {
           "speaker": "Károly",

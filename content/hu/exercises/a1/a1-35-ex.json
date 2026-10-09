@@ -21,11 +21,11 @@
       "id": "a1-35-review-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"A strong man\"?",
+      "question": "How do you say \"A kind woman\"?",
       "options": [
-        "Egy erős férfi.",
-        "Egy erősek férfi.",
-        "Férfi erős egy."
+        "Egy kedves nő.",
+        "Egy kedvesek nő.",
+        "Nő kedves egy."
       ],
       "correct": 0,
       "stage": "review",
@@ -140,9 +140,9 @@
       "category": "vocabulary",
       "question": "How is ismerős different from barát?",
       "options": [
-        "an acquaintance, not a close friend",
-        "they mean exactly the same thing",
-        "a word used only for family members"
+        "someone you know, but not a close friend",
+        "a close friend you have known for years",
+        "a best friend you spend every day with"
       ],
       "correct": 0,
       "teaches": [
@@ -221,14 +221,17 @@
       "question": "Which sentence comes just before the reply \"Kicsi, de erős.\"?",
       "options": [
         "Ő milyen?",
-        "Kicsi, de erős.",
-        "És ő egy barát?",
-        "Nem, ő egy ismerős."
+        "Ő a barátod?",
+        "Ki az a férfi?"
       ],
       "correct": 0,
       "teaches": [
         "quantity-choice-questions-mennyi-melyik"
       ],
+      "distractor_skills": {
+        "1": "yes-no-questions",
+        "2": "ki-and-mi"
+      },
       "stage": "practice"
     },
     {
@@ -296,7 +299,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Ő egy barát?"
+          "text": "Ő a barátod?"
         },
         {
           "speaker": "Károly",
@@ -305,7 +308,7 @@
       ],
       "options": [
         "Nem, ő egy ismerős.",
-        "Nem, ismerős ő van."
+        "Nem, ő egy ismerős van."
       ],
       "correct": 0,
       "teaches": [
@@ -363,8 +366,8 @@
       "question": "How do you say \"Small, but strong\"?",
       "options": [
         "Kicsi, de erős.",
-        "Kicsi erős de.",
-        "De kicsi, erős."
+        "Kicsi és erős.",
+        "Kicsi erős de."
       ],
       "correct": 0,
       "teaches": [
