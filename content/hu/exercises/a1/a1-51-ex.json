@@ -2,85 +2,51 @@
   "lesson": "a1-51",
   "exercises": [
     {
-      "id": "a1-51-review-1",
+      "id": "a1-51-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which form means “in the room”?",
-      "options": [
-        "a szobában",
-        "a szobába",
-        "a szoba"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "ban-ben-in"
       ],
+      "question": "Which sentence means “I am in the room”?",
+      "options": [
+        "A szobában vagyok.",
+        "A szobába vagyok.",
+        "A szoba vagyok."
+      ],
+      "correct": 0,
       "distractor_skills": {
         "1": "movement-with-ba-be"
       }
     },
     {
-      "id": "a1-51-review-2",
+      "id": "a1-51-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which question asks where something is?",
-      "options": [
-        "Hol?",
-        "Hová?",
-        "Ki?"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "spatial-questions-hol-hova"
       ],
+      "question": "Which question asks where something is?",
+      "options": [
+        "Hol van a táska?",
+        "Hová van a táska?",
+        "Mi van a táska?"
+      ],
+      "correct": 0,
       "distractor_skills": {
         "2": "ki-and-mi"
       }
     },
     {
-      "id": "a1-51-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the location sentence.",
-      "options": [
-        "A könyv a szobában van.",
-        "A könyv a szobába van.",
-        "A könyv szoba van."
-      ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-51-intro-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which form means “in the kitchen”?",
-      "options": [
-        "a konyhában",
-        "a konyhába",
-        "a konyha"
-      ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "introduce"
-    },
-    {
       "id": "a1-51-controlled-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-where-things-are-vocab"
+      ],
       "pairs": [
         [
           "szoba",
@@ -98,129 +64,90 @@
           "hálószoba",
           "bedroom"
         ]
-      ],
-      "teaches": [
-        "a1-where-things-are-vocab"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-51-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A könyv a ____ van.",
-      "hint": "in the room",
-      "english": "The book is in the room.",
+      "stage": "controlled",
       "teaches": [
         "ban-ben-in"
       ],
-      "stage": "controlled",
-      "answers": [
-        "szobában",
-        "teremben"
-      ]
+      "sentence": "A táska a ____ van.",
+      "hint": "szoba + -ban",
+      "answer": "szobában",
+      "english": "The bag is in the room."
     },
     {
       "id": "a1-51-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is correct?",
-      "options": [
-        "A táska a szobában van.",
-        "A táska a szobába van.",
-        "A táska szoba van."
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "ban-ben-in"
       ],
+      "question": "Which form means “in the kitchen”?",
+      "options": [
+        "a konyhában",
+        "a konyhába",
+        "a konyhán"
+      ],
+      "correct": 0,
       "distractor_skills": {
         "1": "movement-with-ba-be"
-      },
-      "stage": "controlled"
+      }
     },
     {
       "id": "a1-51-controlled-4",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Hol van Károly?",
-      "options": [
-        "A konyhában van.",
-        "A konyhába van.",
-        "Károly konyha."
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
-        "ban-ben-in"
+        "spatial-questions-hol-hova"
       ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "controlled"
+      "sentence": "____ van a konyha?",
+      "hint": "Where",
+      "answer": "Hol",
+      "english": "Where is the kitchen?"
     },
     {
       "id": "a1-51-practice-1",
-      "type": "matching",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "szoba",
-          "room"
-        ],
-        [
-          "hálószoba",
-          "bedroom"
-        ],
-        [
-          "fürdőszoba",
-          "bathroom"
-        ],
-        [
-          "ház",
-          "house"
-        ]
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-where-things-are-vocab"
       ],
-      "stage": "practice"
+      "question": "Which phrase means “in the bedroom”?",
+      "options": [
+        "a hálószobában",
+        "a fürdőszobában",
+        "a konyhában"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-51-practice-2",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which answer fits Hol van a táska?",
-      "options": [
-        "A szobában van.",
-        "A szobába megy.",
-        "A szoba."
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "ban-ben-in"
       ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "practice"
+      "sentence": "Károly a ____ van.",
+      "hint": "konyha + -ban",
+      "answer": "konyhában",
+      "english": "Károly is in the kitchen."
     },
     {
       "id": "a1-51-practice-3",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Hol van a ____?",
-      "hint": "the bag",
-      "english": "Where is the bag?",
-      "answer": "táska",
-      "teaches": [
-        "a1-where-things-are-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-51-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "tiles": [
         "A",
         "táska",
@@ -237,47 +164,63 @@
         "van",
         "."
       ],
-      "english": "The bag is in the room.",
+      "english": "The bag is in the room."
+    },
+    {
+      "id": "a1-51-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "practice"
+      "question": "Which question asks “Where are you?”?",
+      "options": [
+        "Hol vagy?",
+        "Ki vagy?",
+        "Hogy vagy?"
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "ki-and-mi"
+      }
     },
     {
       "id": "a1-51-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hol van a könyv?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A szobában van.",
-        "A szobába van."
-      ],
-      "correct": 0,
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "spatial-questions-hol-hova"
       ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "practice"
+      "tiles": [
+        "Hol",
+        "van",
+        "a",
+        "fürdőszoba",
+        "?"
+      ],
+      "solution": [
+        "Hol",
+        "van",
+        "a",
+        "fürdőszoba",
+        "?"
+      ],
+      "english": "Where is the bathroom?"
     },
     {
       "id": "a1-51-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hol vagy?"
+          "text": "Hol vagy, Meg?"
         },
         {
           "speaker": "Meg",
@@ -285,14 +228,10 @@
         }
       ],
       "options": [
-        "a konyhában",
-        "a konyhába",
-        "a konyha"
+        "A konyhában vagyok.",
+        "A konyhába vagyok."
       ],
       "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
       "distractor_skills": {
         "1": "movement-with-ba-be"
       }
@@ -301,94 +240,88 @@
       "id": "a1-51-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "spatial-questions-hol-hova"
+      ],
       "prompt": [
-        {
-          "speaker": "Mariann",
-          "text": "Hol van a táska?"
-        },
         {
           "speaker": "Meg",
           "text": "_____"
+        },
+        {
+          "speaker": "Károly",
+          "text": "A hálószobában van."
         }
       ],
       "options": [
-        "A szobában van.",
-        "A szobába van.",
-        "A szoba."
+        "Hol van a táska?",
+        "Ki a jó barát?"
       ],
       "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
       "distractor_skills": {
-        "1": "movement-with-ba-be"
+        "1": "ki-and-mi"
       }
     },
     {
-      "id": "a1-51-writing-1",
+      "id": "a1-51-production-1",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"The bag is in the kitchen.\" in Hungarian.",
-          "answer": "A táska a konyhában van."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "ban-ben-in"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you are in the kitchen.",
+          "answer": "A konyhában vagyok."
+        }
       ]
     },
     {
-      "id": "a1-51-writing-2",
+      "id": "a1-51-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "spatial-questions-hol-hova"
+      ],
       "template": [
         {
-          "prompt": "Say \"It's in the room.\" in Hungarian.",
-          "answer": "A szobában van."
+          "prompt": "Ask where the bathroom is.",
+          "answer": "Hol van a fürdőszoba?"
         }
-      ],
-      "teaches": [
-        "ban-ben-in"
       ]
     },
     {
       "id": "a1-51-check-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence is correct?",
-      "options": [
-        "A táska a szobában van.",
-        "A táska a szobába van.",
-        "A táska szobában van a."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "ban-ben-in"
       ],
+      "question": "Choose the correct location sentence.",
+      "options": [
+        "A könyv a szobában van.",
+        "A könyv a szobába van."
+      ],
+      "correct": 0,
       "distractor_skills": {
         "1": "movement-with-ba-be"
-      },
-      "stage": "check"
+      }
     },
     {
       "id": "a1-51-check-2",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which question asks where something is?",
-      "options": [
-        "Hol van a könyv?",
-        "Hová megy a könyv?",
-        "Ki a könyv?"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "ban-ben-in"
       ],
-      "distractor_skills": {
-        "2": "ki-and-mi"
-      },
-      "stage": "check"
+      "sentence": "A táska a hálószoba____ van.",
+      "answer": "ban",
+      "english": "The bag is in the bedroom."
     }
   ]
 }

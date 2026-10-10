@@ -2,85 +2,51 @@
   "lesson": "a1-55",
   "exercises": [
     {
-      "id": "a1-55-review-1",
+      "id": "a1-55-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which form means “in the bag”?",
-      "options": [
-        "a táskában",
-        "a táskába",
-        "a táska"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "ban-ben-in"
       ],
+      "question": "Which sentence means “The book is in the bag”?",
+      "options": [
+        "A könyv a táskában van.",
+        "A könyv a táskába van.",
+        "A könyv a táska van."
+      ],
+      "correct": 0,
       "distractor_skills": {
         "1": "movement-with-ba-be"
       }
     },
     {
-      "id": "a1-55-review-2",
+      "id": "a1-55-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which question gets the answer “Az ablakban van.”?",
-      "options": [
-        "Hol van a könyv?",
-        "Hová megy a könyv?",
-        "Ki a könyv?"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "spatial-questions-hol-hova"
       ],
+      "question": "Which question asks “Where is the bag?”?",
+      "options": [
+        "Hol van a táska?",
+        "Hová van a táska?",
+        "Ki van a táska?"
+      ],
+      "correct": 0,
       "distractor_skills": {
         "2": "ki-and-mi"
       }
     },
     {
-      "id": "a1-55-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the location sentence.",
-      "options": [
-        "Anna az ajtóban van.",
-        "Anna az ajtóba van.",
-        "Anna ajtó van."
-      ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-55-intro-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which form means “in the window”?",
-      "options": [
-        "az ablakban",
-        "az ablakba",
-        "az ablak"
-      ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "introduce"
-    },
-    {
       "id": "a1-55-controlled-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-where-things-are-vocab"
+      ],
       "pairs": [
         [
           "szék",
@@ -98,198 +64,210 @@
           "táska",
           "bag"
         ]
-      ],
-      "teaches": [
-        "a1-where-things-are-vocab"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-55-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Meg az ____ van.",
-      "hint": "in the doorway",
-      "english": "Meg is in the doorway.",
-      "answer": "ajtóban",
+      "stage": "controlled",
       "teaches": [
         "ban-ben-in"
       ],
-      "stage": "controlled"
+      "sentence": "A táska a ____ van.",
+      "hint": "nappali + -ban",
+      "answer": "nappaliban",
+      "english": "The bag is in the living room."
     },
     {
       "id": "a1-55-controlled-3",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is correct?",
-      "options": [
-        "Anna az ablakban van.",
-        "Anna az ablakba van.",
-        "Anna ablak van."
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "ban-ben-in"
+        "a1-where-things-are-vocab"
       ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "controlled"
+      "question": "Which word means “window”?",
+      "options": [
+        "az ablak",
+        "az asztal",
+        "az ajtó"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-55-controlled-4",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Hol van Károly?",
-      "options": [
-        "Az ajtóban van.",
-        "Az ajtóba van.",
-        "Károly ajtó."
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
-        "ban-ben-in"
+        "spatial-questions-hol-hova"
       ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "controlled"
+      "sentence": "____ van a szék?",
+      "hint": "Where",
+      "answer": "Hol",
+      "english": "Where is the chair?"
     },
     {
       "id": "a1-55-practice-1",
-      "type": "matching",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "szék",
-          "chair"
-        ],
-        [
-          "ajtó",
-          "door"
-        ],
-        [
-          "táska",
-          "bag"
-        ],
-        [
-          "szoba",
-          "room"
-        ]
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-where-things-are-vocab"
       ],
-      "stage": "practice"
+      "question": "Which Hungarian word means “door”?",
+      "options": [
+        "az ajtó",
+        "az ablak",
+        "a szoba"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-55-practice-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which answer fits Hol van a táska?",
-      "options": [
-        "Az ablakban van.",
-        "Az ablakba megy.",
-        "Az ablak."
-      ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "practice"
-    },
-    {
-      "id": "a1-55-practice-3",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Hol van az ____?",
-      "hint": "the door",
-      "english": "Where is the door?",
-      "answer": "ajtó",
+      "stage": "practice",
       "teaches": [
         "a1-where-things-are-vocab"
       ],
-      "stage": "practice"
+      "sentence": "Hol van a ____?",
+      "hint": "bag",
+      "answer": "táska",
+      "english": "Where is the bag?"
     },
     {
-      "id": "a1-55-practice-4",
+      "id": "a1-55-practice-3",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "tiles": [
         "A",
-        "táska",
-        "az",
-        "ajtóban",
+        "szék",
+        "a",
+        "szobában",
         "van",
         "."
       ],
       "solution": [
         "A",
-        "táska",
-        "az",
-        "ajtóban",
+        "szék",
+        "a",
+        "szobában",
         "van",
         "."
       ],
-      "english": "The bag is in the doorway.",
+      "english": "The chair is in the room."
+    },
+    {
+      "id": "a1-55-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
         "ban-ben-in"
       ],
-      "stage": "practice"
+      "question": "Which sentence is correct?",
+      "options": [
+        "A könyv a táskában van.",
+        "A könyv a táskába van.",
+        "A könyv a táskán van a."
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-55-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hol van a táska?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Az ablakban van.",
-        "Az ablakba van."
-      ],
-      "correct": 0,
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "spatial-questions-hol-hova"
       ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "practice"
+      "tiles": [
+        "Hol",
+        "van",
+        "az",
+        "ajtó",
+        "?"
+      ],
+      "solution": [
+        "Hol",
+        "van",
+        "az",
+        "ajtó",
+        "?"
+      ],
+      "english": "Where is the door?"
+    },
+    {
+      "id": "a1-55-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Hol van a táska?",
+      "options": [
+        "A nappaliban van.",
+        "A konyhában van.",
+        "A szobában van."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-55-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Hol van az asztal és a szék?",
+      "options": [
+        "A szobában van.",
+        "Az utcában van.",
+        "A parkban van."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-55-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Hol van a bolt?",
+      "options": [
+        "Az utcában van.",
+        "A házban van.",
+        "A szobában van."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-55-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol vagy?"
+          "speaker": "Meg",
+          "text": "Hol van a táska?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "az ajtóban",
-        "az ajtóba",
-        "az ajtó"
+        "A nappaliban van.",
+        "A nappaliba van."
       ],
       "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
       "distractor_skills": {
         "1": "movement-with-ba-be"
       }
@@ -298,10 +276,14 @@
       "id": "a1-55-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Meg, hol vagy?"
+          "speaker": "Anna",
+          "text": "Hol van a szék?"
         },
         {
           "speaker": "Meg",
@@ -309,83 +291,73 @@
         }
       ],
       "options": [
-        "Az ablakban vagyok.",
-        "Az ablakba megyek.",
-        "Az ablak."
+        "A szobában van.",
+        "A szobába van."
       ],
       "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
       "distractor_skills": {
         "1": "movement-with-ba-be"
       }
     },
     {
-      "id": "a1-55-writing-1",
+      "id": "a1-55-production-1",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"The chair is in the room. The bag is in the window.\" in Hungarian.",
-          "answer": "A szék a szobában van. A táska az ablakban van."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "ban-ben-in"
+      ],
+      "template": [
+        {
+          "prompt": "Say that the bag is in the room.",
+          "answer": "A táska a szobában van."
+        }
       ]
     },
     {
-      "id": "a1-55-writing-2",
+      "id": "a1-55-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "spatial-questions-hol-hova"
+      ],
       "template": [
         {
-          "prompt": "Say \"It's in the doorway.\" in Hungarian.",
-          "answer": "Az ajtóban van."
+          "prompt": "Ask where the bag is.",
+          "answer": "Hol van a táska?"
         }
-      ],
-      "teaches": [
-        "ban-ben-in"
       ]
     },
     {
       "id": "a1-55-check-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence is correct?",
-      "options": [
-        "A táska az ablakban van.",
-        "A táska az ablakba van.",
-        "A táska ablakban van a."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "ban-ben-in"
       ],
+      "question": "Choose the correct location sentence.",
+      "options": [
+        "A szék a szobában van.",
+        "A szék a szobába van."
+      ],
+      "correct": 0,
       "distractor_skills": {
         "1": "movement-with-ba-be"
-      },
-      "stage": "check"
+      }
     },
     {
       "id": "a1-55-check-2",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which question asks where the chair is?",
-      "options": [
-        "Hol van a szék?",
-        "Hová megy a szék?",
-        "Mi a szék?"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "ban-ben-in"
       ],
-      "distractor_skills": {
-        "2": "ki-and-mi"
-      },
-      "stage": "check"
+      "sentence": "A könyv a táska____ van.",
+      "answer": "ban",
+      "english": "The book is in the bag."
     }
   ]
 }

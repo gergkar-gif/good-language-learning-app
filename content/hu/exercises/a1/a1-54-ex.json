@@ -2,85 +2,51 @@
   "lesson": "a1-54",
   "exercises": [
     {
-      "id": "a1-54-review-1",
+      "id": "a1-54-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which form means “in the house”?",
-      "options": [
-        "a házban",
-        "a házba",
-        "a ház"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "ban-ben-in"
       ],
+      "question": "Which sentence means “The flat is in the house”?",
+      "options": [
+        "A lakás a házban van.",
+        "A lakás a házba van.",
+        "A lakás a ház van."
+      ],
+      "correct": 0,
       "distractor_skills": {
         "1": "movement-with-ba-be"
       }
     },
     {
-      "id": "a1-54-review-2",
+      "id": "a1-54-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which question gets the answer “A házban van.”?",
-      "options": [
-        "Hol van Meg?",
-        "Hová megy Meg?",
-        "Ki Meg?"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "spatial-questions-hol-hova"
-      ],
-      "distractor_skills": {
-        "2": "ki-and-mi"
-      }
-    },
-    {
-      "id": "a1-54-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the location sentence.",
-      "options": [
-        "Anna a házban van.",
-        "Anna a házba van.",
-        "Anna ház van."
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "ban-ben-in"
       ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-54-intro-2",
-      "type": "multiple-choice",
-      "category": "grammar",
       "question": "Which form means “in the street”?",
       "options": [
         "az utcában",
         "az utcába",
-        "az utca"
+        "az utcánál"
       ],
       "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
       "distractor_skills": {
         "1": "movement-with-ba-be"
-      },
-      "stage": "introduce"
+      }
     },
     {
       "id": "a1-54-controlled-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-where-things-are-vocab"
+      ],
       "pairs": [
         [
           "utca",
@@ -92,135 +58,144 @@
         ],
         [
           "lakás",
-          "flat / apartment"
+          "flat"
         ],
         [
           "asztal",
           "table"
         ]
-      ],
-      "teaches": [
-        "a1-where-things-are-vocab"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-54-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Meg a ____ van.",
-      "hint": "in the flat",
-      "english": "Meg is in the flat.",
-      "answer": "lakásban",
+      "stage": "controlled",
       "teaches": [
         "ban-ben-in"
       ],
-      "stage": "controlled"
+      "sentence": "A könyv a ____ van.",
+      "hint": "lakás + -ban",
+      "answer": "lakásban",
+      "english": "The book is in the flat."
     },
     {
       "id": "a1-54-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is correct?",
-      "options": [
-        "Anna a lakásban van.",
-        "Anna a lakásba van.",
-        "Anna lakás van."
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "ban-ben-in"
       ],
+      "question": "Which form means “in the house”?",
+      "options": [
+        "a házban",
+        "a házba",
+        "a házben"
+      ],
+      "correct": 0,
       "distractor_skills": {
         "1": "movement-with-ba-be"
-      },
-      "stage": "controlled"
+      }
     },
     {
       "id": "a1-54-controlled-4",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Hol van Károly?",
-      "options": [
-        "A házban van.",
-        "A házba van.",
-        "Károly ház."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "ban-ben-in"
+        "a1-where-things-are-vocab"
       ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "controlled"
+      "sentence": "Hol van az ____?",
+      "hint": "table",
+      "answer": "asztal",
+      "english": "Where is the table?"
     },
     {
       "id": "a1-54-practice-1",
-      "type": "matching",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "lakás",
-          "flat / apartment"
-        ],
-        [
-          "asztal",
-          "table"
-        ],
-        [
-          "utca",
-          "street"
-        ],
-        [
-          "szoba",
-          "room"
-        ]
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-where-things-are-vocab"
       ],
-      "stage": "practice"
+      "question": "Which Hungarian word means “street”?",
+      "options": [
+        "az utca",
+        "a szoba",
+        "a lakás"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-54-practice-2",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which answer fits Hol van a táska?",
-      "options": [
-        "A lakásban van.",
-        "A lakásba megy.",
-        "A lakás."
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "spatial-questions-hol-hova"
       ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "practice"
+      "sentence": "____ van a lakás?",
+      "hint": "Where",
+      "answer": "Hol",
+      "english": "Where is the flat?"
     },
     {
       "id": "a1-54-practice-3",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Hol van a ____?",
-      "hint": "the table",
-      "english": "Where is the table?",
-      "answer": "asztal",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-where-things-are-vocab"
+        "ban-ben-in"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Az",
+        "asztal",
+        "a",
+        "szobában",
+        "van",
+        "."
+      ],
+      "solution": [
+        "Az",
+        "asztal",
+        "a",
+        "szobában",
+        "van",
+        "."
+      ],
+      "english": "The table is in the room."
     },
     {
       "id": "a1-54-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "ban-ben-in"
+      ],
+      "question": "Which sentence is correct?",
+      "options": [
+        "A bolt az utcában van.",
+        "A bolt az utcába van.",
+        "A bolt az utcán van a."
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "movement-with-ba-be"
+      }
+    },
+    {
+      "id": "a1-54-practice-5",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "tiles": [
         "A",
-        "táska",
+        "lakás",
         "a",
         "házban",
         "van",
@@ -228,68 +203,37 @@
       ],
       "solution": [
         "A",
-        "táska",
+        "lakás",
         "a",
         "házban",
         "van",
         "."
       ],
-      "english": "The bag is in the house.",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-54-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hol van Anna?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A lakásban van.",
-        "A lakásba van."
-      ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "practice"
+      "english": "The flat is in the house."
     },
     {
       "id": "a1-54-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol vagy?"
+          "speaker": "Meg",
+          "text": "Hol van a bolt?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "a házban",
-        "a házba",
-        "a ház"
+        "Az utcában van.",
+        "Az utcába van."
       ],
       "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
       "distractor_skills": {
         "1": "movement-with-ba-be"
       }
@@ -298,10 +242,14 @@
       "id": "a1-54-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Hol laksz?"
+          "speaker": "Anna",
+          "text": "Hol van az asztal?"
         },
         {
           "speaker": "Meg",
@@ -309,83 +257,73 @@
         }
       ],
       "options": [
-        "A lakásban lakom.",
-        "A lakásba megyek.",
-        "A lakás."
+        "A szobában van.",
+        "A szobába van."
       ],
       "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
       "distractor_skills": {
         "1": "movement-with-ba-be"
       }
     },
     {
-      "id": "a1-54-writing-1",
+      "id": "a1-54-production-1",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"Anna is in the house. The bag is in the flat.\" in Hungarian.",
-          "answer": "Anna a házban van. A táska a lakásban van."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "ban-ben-in"
+      ],
+      "template": [
+        {
+          "prompt": "Say that the flat is in the house.",
+          "answer": "A lakás a házban van."
+        }
       ]
     },
     {
-      "id": "a1-54-writing-2",
+      "id": "a1-54-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"It's in the house.\" in Hungarian.",
-          "answer": "A házban van."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "ban-ben-in"
+      ],
+      "template": [
+        {
+          "prompt": "Say that the table is in the room.",
+          "answer": "Az asztal a szobában van."
+        }
       ]
     },
     {
       "id": "a1-54-check-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence is correct?",
-      "options": [
-        "A ház az utcában van.",
-        "A ház az utcába van.",
-        "A ház utcában van a."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "ban-ben-in"
       ],
+      "question": "Choose the correct location sentence.",
+      "options": [
+        "A lakás a házban van.",
+        "A lakás a házba van."
+      ],
+      "correct": 0,
       "distractor_skills": {
         "1": "movement-with-ba-be"
-      },
-      "stage": "check"
+      }
     },
     {
       "id": "a1-54-check-2",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which question asks where the flat is?",
-      "options": [
-        "Hol van a lakás?",
-        "Hová megy a lakás?",
-        "Mi a lakás?"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "ban-ben-in"
       ],
-      "distractor_skills": {
-        "2": "ki-and-mi"
-      },
-      "stage": "check"
+      "sentence": "A bolt az utca____ van.",
+      "answer": "ban",
+      "english": "The shop is in the street."
     }
   ]
 }

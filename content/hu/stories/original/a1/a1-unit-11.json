@@ -7,128 +7,120 @@
   "estimatedMinutes": 3,
   "characters": [
     "Károly",
-    "Meg",
-    "András",
-    "Anna",
-    "Mariann"
+    "Meg"
   ],
   "paragraphs": [
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg and Károly are at home. Meg wants to describe where things and people are."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "A szoba a lakásban van."
+      "text": "Meg and Károly are at home in the flat. Meg looks around and describes where things and rooms are."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "A konyha is a lakásban van."
+      "text": "Ez a lakás szép és nagy. A nappali itt van."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "A fürdőszoba a hálószoba mellett van."
+      "text": "Igen, a szoba és a konyha is a lakásban van."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Hol van a fürdőszoba és a hálószoba?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "A fürdőszoba itt van, a hálószoba ott van."
     },
     {
       "type": "narration",
       "lang": "en",
-      "text": "They look around the flat and name familiar places."
+      "text": "Meg looks out into the street and asks about places in town."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "A nappali nagy. Az iskola messze van."
+      "text": "Hol van az iskola és az iroda?"
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Az iroda a központban van."
+      "text": "Az iskola az utcában van. Az iroda a házban van."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "A terem az osztály mellett van."
+      "text": "És a bolt? A bolt is a házban van?"
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "A könyvtár az iskola mellett van."
+      "text": "Nem, a bolt az utcában van. A könyvtár és a park is ott van."
     },
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg sees a shop and a park from the window."
+      "text": "Meg looks around the room for her everyday things."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "A bolt az utca végén van. A park is there too."
+      "text": "Hol van az asztal és a szék?"
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "A ház mellett van a park."
-    },
-    {
-      "type": "narration",
-      "lang": "en",
-      "text": "Inside, they find familiar objects."
+      "text": "Az asztal a szobában van. A szék is a szobában van."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Az asztal a szobában van. A szék az asztal mellett van."
+      "text": "Itt van az ajtó és az ablak. De hol van a táska?"
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Az ajtó nyitva van. Az ablak is nyitva van."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "A táska a szék mellett van."
+      "text": "A táska a nappaliban van."
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Miről beszél Meg és Károly ebben a történetben?",
+          "question": "Hol van a táska Károly szerint?",
           "options": [
-            "Különböző helyiségek, épületek és tárgyak helyzetéről",
-            "A bevásárlóközpont nyitvatartási idejéről",
-            "Egy külföldi nyaralás költségeiről",
-            "Egy új televízió vásárlásáról"
+            "A konyhában van.",
+            "A nappaliban van.",
+            "A hálószobában van.",
+            "A fürdőszobában van."
           ],
-          "correctIndex": 0,
-          "explanation": "Meg és Károly azt írják le, hogy a lakásban és a környéken mi hol van (They describe where rooms, buildings, and objects are located)."
+          "correctIndex": 1,
+          "explanation": "Károly mondja: „A táska a nappaliban van.”"
         },
         {
-          "question": "Hol található a fürdőszoba a lakásban?",
+          "question": "Hol van az asztal és a szék?",
           "options": [
-            "A konyhában",
-            "Az erkély mellett",
-            "A folyosó végén lévő szekrényben",
-            "A hálószoba mellett"
-          ],
-          "correctIndex": 3,
-          "explanation": "Károly mondja: „A fürdőszoba a hálószoba mellett van” (The bathroom is next to the bedroom)."
-        },
-        {
-          "question": "Hol van a bolt Meg elmondása szerint?",
-          "options": [
-            "A másik városban",
-            "A házzal szemben lévő metróban",
-            "Az utca végén",
-            "A központban lévő iroda mellett"
+            "Az utcában van.",
+            "A boltban van.",
+            "A szobában van.",
+            "A parkban van."
           ],
           "correctIndex": 2,
-          "explanation": "Meg mondja: „A bolt az utca végén van” (The shop is at the end of the street)."
+          "explanation": "Károly mondja: „Az asztal a szobában van. A szék is a szobában van.”"
+        },
+        {
+          "question": "Hol van a bolt Károly szerint?",
+          "options": [
+            "Az utcában van.",
+            "A házban van.",
+            "A szobában van.",
+            "A lakásban van."
+          ],
+          "correctIndex": 0,
+          "explanation": "Károly mondja: „Nem, a bolt az utcában van.”"
         }
       ]
     }
