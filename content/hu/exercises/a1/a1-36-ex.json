@@ -2,66 +2,34 @@
   "lesson": "a1-36",
   "exercises": [
     {
-      "id": "a1-36-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"family\"?",
-      "options": [
-        "család",
-        "ismerős",
-        "barát"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ]
-    },
-    {
-      "id": "a1-36-review-2",
+      "id": "a1-36-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"He is very strong\"?",
+      "question": "Which word means \"tables\"?",
       "options": [
-        "Ő nagyon erős.",
-        "Ő nagyon erős van.",
-        "Nagyon erős ő van."
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "van-zero-copula"
-      ]
-    },
-    {
-      "id": "a1-36-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"person\"?",
-      "options": [
-        "ember",
-        "csoport",
-        "könyv"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-36-intro-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is the plural of ember?",
-      "options": [
-        "emberek",
-        "emberk",
-        "emberok"
+        "asztalok",
+        "asztalk",
+        "asztalek"
       ],
       "correct": 0,
       "teaches": [
         "plural-nouns-k"
+      ],
+      "stage": "introduce"
+    },
+    {
+      "id": "a1-36-introduce-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence means \"The books are here.\"?",
+      "options": [
+        "A könyvek itt van.",
+        "A könyvek itt vannak.",
+        "A könyv itt vannak."
+      ],
+      "correct": 1,
+      "teaches": [
+        "egyutt-together"
       ],
       "stage": "introduce"
     },
@@ -71,20 +39,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "ember",
-          "person"
-        ],
-        [
-          "csoport",
-          "group"
-        ],
-        [
           "könyv",
           "book"
         ],
         [
           "asztal",
           "table"
+        ],
+        [
+          "ember",
+          "person"
+        ],
+        [
+          "csoport",
+          "group"
         ]
       ],
       "teaches": [
@@ -96,10 +64,10 @@
       "id": "a1-36-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Az ____ együtt vannak.",
-      "hint": "the people",
-      "english": "The people are together.",
-      "answer": "emberek",
+      "sentence": "A ____ itt vannak.",
+      "hint": "könyv, plural",
+      "english": "The books are here.",
+      "answer": "könyvek",
       "teaches": [
         "plural-nouns-k"
       ],
@@ -107,15 +75,12 @@
     },
     {
       "id": "a1-36-controlled-3",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which is the plural of könyv?",
-      "options": [
-        "könyvek",
-        "könyvok",
-        "könyvak"
-      ],
-      "correct": 0,
+      "sentence": "Az ____ ott vannak.",
+      "hint": "asztal, plural",
+      "english": "The tables are there.",
+      "answer": "asztalok",
       "teaches": [
         "plural-nouns-k"
       ],
@@ -125,67 +90,35 @@
       "id": "a1-36-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Az ____ nagyok.",
-      "hint": "the tables",
-      "english": "The tables are big.",
-      "answer": "asztalok",
+      "sentence": "A székek itt ____.",
+      "hint": "van, plural subject",
+      "english": "The chairs are here.",
+      "answer": "vannak",
       "teaches": [
-        "plural-nouns-k"
+        "egyutt-together"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-36-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which suffix marks a plural noun in Hungarian?",
-      "options": [
-        "-k",
-        "-t",
-        "-ban"
-      ],
-      "correct": 0,
-      "teaches": [
-        "plural-nouns-k"
-      ],
-      "distractor_skills": {
-        "2": "ban-ben-in"
-      },
-      "stage": "practice"
-    },
-    {
-      "id": "a1-36-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Egy csoport ____ van itt.",
-      "hint": "people; singular noun",
-      "english": "A group of people is here.",
-      "answer": "ember",
-      "teaches": [
-        "singular-after-numbers"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-36-practice-3",
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
         [
-          "Az emberek együtt vannak.",
-          "The people are together."
+          "A könyv itt van.",
+          "The book is here."
         ],
         [
           "A könyvek itt vannak.",
           "The books are here."
         ],
         [
-          "Egy csoport ember.",
-          "A group of people."
+          "Az asztal ott van.",
+          "The table is there."
         ],
         [
-          "Az asztalok nagyok.",
-          "The tables are big."
+          "Az asztalok ott vannak.",
+          "The tables are there."
         ]
       ],
       "teaches": [
@@ -194,24 +127,56 @@
       "stage": "practice"
     },
     {
-      "id": "a1-36-practice-4",
+      "id": "a1-36-practice-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which word means \"groups\"?",
+      "options": [
+        "csoportek",
+        "csoportk",
+        "csoportok"
+      ],
+      "correct": 2,
+      "teaches": [
+        "plural-nouns-k"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a1-36-practice-3",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Az",
-        "emberek",
-        "együtt",
+        "itt",
         "vannak",
-        "."
+        ".",
+        "Az",
+        "asztalok"
       ],
       "solution": [
         "Az",
-        "emberek",
-        "együtt",
+        "asztalok",
+        "itt",
         "vannak",
         "."
       ],
-      "english": "The people are together.",
+      "english": "The tables are here.",
+      "teaches": [
+        "egyutt-together"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a1-36-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which question asks where the chairs are?",
+      "options": [
+        "Hol van a székek?",
+        "Hol vannak a székek?",
+        "Hol vannak a szék?"
+      ],
+      "correct": 1,
       "teaches": [
         "egyutt-together"
       ],
@@ -219,55 +184,12 @@
     },
     {
       "id": "a1-36-practice-5",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which question gets the reply \"Egy csoport ember.\"?",
-      "options": [
-        "Milyen a csoport?",
-        "Egy csoport ember.",
-        "Hol vannak a könyvek?",
-        "A könyvek itt vannak."
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-36-practice-6",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which verb form agrees with a plural subject like emberek?",
-      "options": [
-        "vannak",
-        "van",
-        "voltak"
-      ],
-      "correct": 0,
-      "teaches": [
-        "egyutt-together"
-      ],
-      "distractor_skills": {
-        "1": "van-zero-copula"
-      },
-      "stage": "practice"
-    },
-    {
-      "id": "a1-36-practice-7",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "A könyvek itt vannak.",
-      "base_word": "könyvek",
-      "base_gloss": "The books are here.",
-      "options": [
-        {
-          "word": "asztal",
-          "inflected": "asztalok",
-          "sentence": "Az asztalok itt vannak.",
-          "gloss": "tables"
-        }
-      ],
+      "sentence": "A ____ itt vannak.",
+      "hint": "ember, plural",
+      "english": "The people are here.",
+      "answer": "emberek",
       "teaches": [
         "plural-nouns-k"
       ],
@@ -279,22 +201,23 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Hol vannak a könyvek?"
+          "speaker": "Károly",
+          "text": "Hol vannak az asztalok?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "A könyvek itt vannak.",
-        "A könyv itt van."
+        "Ott van.",
+        "Ott vannak."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "plural-nouns-k"
-      ]
+        "egyutt-together"
+      ],
+      "stage": "dialogue"
     },
     {
       "id": "a1-36-dialogue-2",
@@ -302,64 +225,80 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Milyen a csoport?"
+          "speaker": "Károly",
+          "text": "Itt vannak a gyerekek?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Egy csoport ember.",
-        "Egy csoport emberek."
+        "Igen, itt vannak.",
+        "Igen, itt van."
       ],
       "correct": 0,
       "teaches": [
-        "singular-after-numbers"
-      ]
+        "egyutt-together"
+      ],
+      "stage": "dialogue"
     },
     {
-      "id": "a1-36-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"The tables are big.\" in Hungarian.",
-          "answer": "Az asztalok nagyok."
-        }
+      "id": "a1-36-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "a",
+        "székek",
+        "?",
+        "Hol",
+        "vannak"
       ],
-      "teaches": [
-        "plural-predicate-adjectives-k"
-      ]
-    },
-    {
-      "id": "a1-36-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"The people are together.\" in Hungarian.",
-          "answer": "Az emberek együtt vannak."
-        }
+      "solution": [
+        "Hol",
+        "vannak",
+        "a",
+        "székek",
+        "?"
       ],
+      "english": "Where are the chairs?",
       "teaches": [
         "egyutt-together"
-      ]
+      ],
+      "stage": "production"
+    },
+    {
+      "id": "a1-36-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say \"The books are here.\"",
+          "answer": "A könyvek itt vannak."
+        },
+        {
+          "prompt": "Say \"The tables are there.\"",
+          "answer": "Az asztalok ott vannak."
+        }
+      ],
+      "teaches": [
+        "plural-nouns-k"
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-36-check-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"group\"?",
+      "category": "grammar",
+      "question": "Which word means \"people\"?",
       "options": [
-        "csoport",
-        "ember",
-        "könyv"
+        "emberok",
+        "emberek",
+        "emberk"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "a1-plurals-quantities-vocab"
+        "plural-nouns-k"
       ],
       "stage": "check"
     },
@@ -367,15 +306,15 @@
       "id": "a1-36-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"The books are here\"?",
+      "question": "Which sentence means \"The tables are here.\"?",
       "options": [
-        "A könyvek itt vannak.",
-        "A könyv itt van.",
-        "Könyvek itt van."
+        "Az asztal itt vannak.",
+        "Az asztalok itt vannak.",
+        "Az asztalok itt van."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "plural-nouns-k"
+        "egyutt-together"
       ],
       "stage": "check"
     }

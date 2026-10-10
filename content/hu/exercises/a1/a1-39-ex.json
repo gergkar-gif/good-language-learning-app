@@ -2,66 +2,33 @@
   "lesson": "a1-39",
   "exercises": [
     {
-      "id": "a1-39-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"small\"?",
-      "options": [
-        "kicsi",
-        "nagy",
-        "régi"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ]
-    },
-    {
-      "id": "a1-39-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "How do you say \"The children are here\"?",
-      "options": [
-        "A gyerekek itt vannak.",
-        "A gyerek itt van vannak.",
-        "Gyerekek itt van."
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "plural-nouns-k"
-      ]
-    },
-    {
-      "id": "a1-39-intro-1",
+      "id": "a1-39-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
       "question": "Which word means \"new\"?",
       "options": [
-        "új",
         "régi",
+        "új",
         "kicsi"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "a1-plurals-quantities-vocab"
       ],
       "stage": "introduce"
     },
     {
-      "id": "a1-39-intro-2",
+      "id": "a1-39-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"old\"?",
+      "category": "grammar",
+      "question": "Which sentence means \"There are many books here.\"?",
       "options": [
-        "régi",
-        "új",
-        "nagy"
+        "Sok könyvek vannak itt.",
+        "Sok könyv van itt."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "a1-plurals-quantities-vocab"
+        "singular-after-numbers"
       ],
       "stage": "introduce"
     },
@@ -95,29 +62,26 @@
     {
       "id": "a1-39-controlled-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Az ____ könyvek és a régi könyvek.",
+      "category": "grammar",
+      "sentence": "Az ____ könyvek itt vannak.",
       "hint": "new",
-      "english": "The new books and the old books.",
+      "english": "The new books are here.",
       "answer": "új",
       "teaches": [
-        "a1-plurals-quantities-vocab"
+        "adjective-order-before-the-noun"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-39-controlled-3",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which sentence keeps the adjective correctly unchanged in front of a plural noun?",
-      "options": [
-        "a nagy asztalok",
-        "a nagyak asztalok",
-        "a nagyok asztalok"
-      ],
-      "correct": 0,
+      "sentence": "A könyvek ____.",
+      "hint": "régi, plural",
+      "english": "The books are old.",
+      "answer": "régiek",
       "teaches": [
-        "adjective-order-before-the-noun"
+        "plural-predicate-adjectives-k"
       ],
       "stage": "controlled"
     },
@@ -125,10 +89,10 @@
       "id": "a1-39-controlled-4",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A nagy asztalok és a ____ székek.",
-      "hint": "small",
-      "english": "The big tables and the small chairs.",
-      "answer": "kicsi",
+      "sentence": "____ ember van itt.",
+      "hint": "many",
+      "english": "Many people are here.",
+      "answer": "sok",
       "teaches": [
         "a1-plurals-quantities-vocab"
       ],
@@ -138,13 +102,13 @@
       "id": "a1-39-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word takes the plural -k in \"az új könyvek\"?",
+      "question": "Which phrase means \"the old books\"?",
       "options": [
-        "könyvek (the noun)",
-        "új (the adjective)",
-        "neither word"
+        "a régiek könyvek",
+        "a régi könyv",
+        "a régi könyvek"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "adjective-order-before-the-noun"
       ],
@@ -152,121 +116,81 @@
     },
     {
       "id": "a1-39-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ könyv van.",
-      "hint": "many",
-      "english": "There are many books.",
-      "answer": "Sok",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence means \"The windows are new.\"?",
+      "options": [
+        "Az ablakok újak.",
+        "Az ablakok új.",
+        "Az ablakok újok."
+      ],
+      "correct": 0,
       "teaches": [
-        "a1-plurals-quantities-vocab"
+        "plural-predicate-adjectives-k"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-39-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Az új könyvek és a régi könyvek.",
-          "The new books and the old books."
-        ],
-        [
-          "A nagy asztalok és a kicsi székek.",
-          "The big tables and the small chairs."
-        ],
-        [
-          "Sok könyv van.",
-          "There are many books."
-        ],
-        [
-          "A könyv régi.",
-          "The book is old."
-        ]
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "van",
+        "itt",
+        ".",
+        "Sok",
+        "könyv"
       ],
+      "solution": [
+        "Sok",
+        "könyv",
+        "van",
+        "itt",
+        "."
+      ],
+      "english": "There are many books here.",
       "teaches": [
-        "a1-plurals-quantities-vocab"
+        "singular-after-numbers"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-39-practice-4",
-      "type": "sentence-builder",
+      "type": "multiple-choice",
       "category": "grammar",
-      "tiles": [
-        "A",
-        "nagy",
-        "asztalok",
-        "és",
-        "a",
-        "kicsi",
-        "székek",
-        "."
+      "question": "Hány szék van itt?",
+      "options": [
+        "Négy székek van itt.",
+        "Négy székek vannak itt.",
+        "Négy szék van itt."
       ],
-      "solution": [
-        "A",
-        "nagy",
-        "asztalok",
-        "és",
-        "a",
-        "kicsi",
-        "székek",
-        "."
-      ],
-      "english": "The big tables and the small chairs.",
+      "correct": 2,
       "teaches": [
-        "adjective-order-before-the-noun"
+        "singular-after-numbers"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-39-practice-5",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "vocabulary",
-      "question": "Which question gets the reply \"Az új könyvek és a régi könyvek.\"?",
-      "options": [
-        "Milyenek a könyvek?",
-        "Az új könyvek és a régi könyvek.",
-        "Milyenek az asztalok?",
-        "A nagy asztalok és a kicsi székek."
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-39-practice-6",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"small\"?",
-      "options": [
-        "kicsi",
-        "nagy",
-        "sok"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-39-practice-7",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Az új könyvek itt vannak.",
-      "base_word": "új",
-      "base_gloss": "The new books are here.",
-      "options": [
-        {
-          "word": "régi",
-          "inflected": "régi",
-          "sentence": "A régi könyvek itt vannak.",
-          "gloss": "old"
-        }
+      "pairs": [
+        [
+          "Az új könyvek.",
+          "The new books."
+        ],
+        [
+          "A régi székek.",
+          "The old chairs."
+        ],
+        [
+          "A könyvek újak.",
+          "The books are new."
+        ],
+        [
+          "Sok könyv van itt.",
+          "There are many books here."
+        ]
       ],
       "teaches": [
         "a1-plurals-quantities-vocab"
@@ -280,7 +204,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Milyenek a könyvek?"
+          "text": "A székek újak?"
         },
         {
           "speaker": "Károly",
@@ -288,13 +212,14 @@
         }
       ],
       "options": [
-        "Az új könyvek és a régi könyvek.",
-        "Új könyvek régi van."
+        "Nem, régi.",
+        "Nem, régiek."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "adjective-order-before-the-noun"
-      ]
+        "plural-predicate-adjectives-k"
+      ],
+      "stage": "dialogue"
     },
     {
       "id": "a1-39-dialogue-2",
@@ -303,7 +228,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Sok könyv van?"
+          "text": "Van itt könyv?"
         },
         {
           "speaker": "Károly",
@@ -311,51 +236,65 @@
         }
       ],
       "options": [
-        "Igen, sok könyv van.",
-        "Igen, sok könyvek van."
+        "Igen, sok könyvek vannak itt.",
+        "Igen, sok könyv van itt."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "singular-after-numbers"
-      ]
+      ],
+      "stage": "dialogue"
     },
     {
-      "id": "a1-39-writing-1",
+      "id": "a1-39-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        ".",
+        "régiek",
+        "könyvek",
+        "A"
+      ],
+      "solution": [
+        "A",
+        "könyvek",
+        "régiek",
+        "."
+      ],
+      "english": "The books are old.",
+      "teaches": [
+        "plural-predicate-adjectives-k"
+      ],
+      "stage": "production"
+    },
+    {
+      "id": "a1-39-production-2",
       "type": "structured-writing",
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"The big tables and the small chairs.\" in Hungarian.",
-          "answer": "A nagy asztalok és a kicsi székek."
-        }
-      ],
-      "teaches": [
-        "adjective-order-before-the-noun"
-      ]
-    },
-    {
-      "id": "a1-39-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
+          "prompt": "Say \"There are many chairs here.\"",
+          "answer": "Sok szék van itt."
+        },
         {
-          "prompt": "Say \"There are many books.\" in Hungarian.",
-          "answer": "Sok könyv van."
+          "prompt": "Say \"There are three books here.\"",
+          "answer": "Három könyv van itt."
         }
       ],
       "teaches": [
         "singular-after-numbers"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-39-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"many\"?",
+      "question": "Which word means \"old\"?",
       "options": [
-        "sok",
-        "kicsi",
-        "új"
+        "régi",
+        "új",
+        "kicsi"
       ],
       "correct": 0,
       "teaches": [
@@ -367,15 +306,14 @@
       "id": "a1-39-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"The new books and the old books\"?",
+      "question": "Which phrase means \"many chairs\"?",
       "options": [
-        "Az új könyvek és a régi könyvek.",
-        "Az újak könyvek és régik könyvek.",
-        "Könyvek új és régi."
+        "sok székek",
+        "sok szék"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "adjective-order-before-the-noun"
+        "singular-after-numbers"
       ],
       "stage": "check"
     }

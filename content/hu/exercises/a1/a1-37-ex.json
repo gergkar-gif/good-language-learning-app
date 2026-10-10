@@ -2,69 +2,34 @@
   "lesson": "a1-37",
   "exercises": [
     {
-      "id": "a1-37-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"door\"?",
-      "options": [
-        "ajtó",
-        "csoport",
-        "gyerek"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ]
-    },
-    {
-      "id": "a1-37-review-2",
+      "id": "a1-37-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which suffix marks a plural noun?",
+      "question": "Which word means \"windows\"?",
       "options": [
-        "-k",
-        "-t",
-        "-ban"
+        "ablakök",
+        "ablakok",
+        "ablakek"
       ],
-      "correct": 0,
-      "stage": "review",
+      "correct": 1,
       "teaches": [
-        "plural-nouns-k"
-      ],
-      "distractor_skills": {
-        "2": "ban-ben-in"
-      }
-    },
-    {
-      "id": "a1-37-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"chair\"?",
-      "options": [
-        "szék",
-        "ablak",
-        "ajtó"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-plurals-quantities-vocab"
+        "vowel-harmony"
       ],
       "stage": "introduce"
     },
     {
-      "id": "a1-37-intro-2",
+      "id": "a1-37-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is the plural of ablak?",
+      "question": "Which sentence means \"The chairs are big.\"?",
       "options": [
-        "ablakok",
-        "ablakek",
-        "ablaki"
+        "A székek nagy.",
+        "A székek nagyak.",
+        "A székek nagyok."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "plural-nouns-k"
+        "plural-predicate-adjectives-k"
       ],
       "stage": "introduce"
     },
@@ -99,10 +64,10 @@
       "id": "a1-37-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A ____ az ablakok mellett vannak.",
-      "hint": "the chairs",
-      "english": "The chairs are next to the windows.",
-      "answer": "székek",
+      "sentence": "A ____ itt vannak.",
+      "hint": "barát, plural",
+      "english": "The friends are here.",
+      "answer": "barátok",
       "teaches": [
         "plural-nouns-k"
       ],
@@ -112,11 +77,11 @@
       "id": "a1-37-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which linking vowel does szék take in the plural?",
+      "question": "Which word means \"chairs\"?",
       "options": [
-        "-ek (front vowel)",
-        "-ok (back vowel)",
-        "-ak (back vowel)"
+        "székek",
+        "székök",
+        "székok"
       ],
       "correct": 0,
       "teaches": [
@@ -128,64 +93,35 @@
       "id": "a1-37-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A ____ itt vannak.",
-      "hint": "the friends",
-      "english": "The friends are here.",
-      "answer": "barátok",
+      "sentence": "Az ablakok ____.",
+      "hint": "nagy, plural",
+      "english": "The windows are big.",
+      "answer": "nagyok",
       "teaches": [
-        "plural-nouns-k"
+        "plural-predicate-adjectives-k"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-37-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Why does ablak take -ok, not -ek, in the plural?",
-      "options": [
-        "it has back vowels, so vowel harmony requires -ok",
-        "all nouns take -ok",
-        "it's an exception with no rule"
-      ],
-      "correct": 0,
-      "teaches": [
-        "vowel-harmony"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-37-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A székek az ____ mellett vannak.",
-      "hint": "windows",
-      "english": "The chairs are next to the windows.",
-      "answer": "ablakok",
-      "teaches": [
-        "plural-nouns-k"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-37-practice-3",
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
         [
-          "A székek az ablakok mellett vannak.",
-          "The chairs are next to the windows."
+          "A székek nagyok.",
+          "The chairs are big."
+        ],
+        [
+          "Az ablakok kicsik.",
+          "The windows are small."
         ],
         [
           "A barátok itt vannak.",
           "The friends are here."
         ],
         [
-          "Az ajtó nyitva van.",
-          "The door is open."
-        ],
-        [
-          "A barátaim kedvesek.",
-          "My friends are kind."
+          "Az ajtók ott vannak.",
+          "The doors are there."
         ]
       ],
       "teaches": [
@@ -194,24 +130,50 @@
       "stage": "practice"
     },
     {
-      "id": "a1-37-practice-4",
+      "id": "a1-37-practice-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence means \"The windows are small.\"?",
+      "options": [
+        "Az ablakok kicsi.",
+        "Az ablakok kicsik."
+      ],
+      "correct": 1,
+      "teaches": [
+        "plural-predicate-adjectives-k"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a1-37-practice-3",
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "A",
-        "barátok",
-        "itt",
-        "vannak",
-        "."
+        ".",
+        "nagyok",
+        "székek",
+        "A"
       ],
       "solution": [
         "A",
-        "barátok",
-        "itt",
-        "vannak",
+        "székek",
+        "nagyok",
         "."
       ],
-      "english": "The friends are here.",
+      "english": "The chairs are big.",
+      "teaches": [
+        "plural-predicate-adjectives-k"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a1-37-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Az ____ nagyok.",
+      "hint": "ajtó, plural",
+      "english": "The doors are big.",
+      "answer": "ajtók",
       "teaches": [
         "plural-nouns-k"
       ],
@@ -220,53 +182,16 @@
     {
       "id": "a1-37-practice-5",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which question gets the reply \"A székek az ablakok mellett vannak.\"?",
-      "options": [
-        "Hol vannak a székek?",
-        "A székek az ablakok mellett vannak.",
-        "Ki van itt?",
-        "A barátok itt vannak."
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-37-practice-6",
-      "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly places the chairs next to the windows?",
+      "question": "Which word means \"people\"?",
       "options": [
-        "A székek az ablakok mellett vannak.",
-        "A szék az ablak mellett van vannak.",
-        "Székek ablakok mellett."
+        "emberök",
+        "emberok",
+        "emberek"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "plural-nouns-k"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-37-practice-7",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "A barátok itt vannak.",
-      "base_word": "barátok",
-      "base_gloss": "The friends are here.",
-      "options": [
-        {
-          "word": "szék",
-          "inflected": "székek",
-          "sentence": "A székek itt vannak.",
-          "gloss": "chairs"
-        }
-      ],
-      "teaches": [
-        "plural-nouns-k"
+        "vowel-harmony"
       ],
       "stage": "practice"
     },
@@ -276,22 +201,23 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Hol vannak a székek?"
+          "speaker": "Károly",
+          "text": "A székek nagyok?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "A székek az ablakok mellett vannak.",
-        "A szék ablak mellett."
+        "Igen, nagyok.",
+        "Igen, nagy."
       ],
       "correct": 0,
       "teaches": [
-        "plural-nouns-k"
-      ]
+        "plural-predicate-adjectives-k"
+      ],
+      "stage": "dialogue"
     },
     {
       "id": "a1-37-dialogue-2",
@@ -300,7 +226,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Itt vannak a barátaid?"
+          "text": "Nagyok az ablakok?"
         },
         {
           "speaker": "Károly",
@@ -308,55 +234,69 @@
         }
       ],
       "options": [
-        "Igen, a barátok itt vannak.",
-        "Igen, barát itt van."
+        "Nem, kicsi.",
+        "Nem, kicsik."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "plural-nouns-k"
-      ]
+        "plural-predicate-adjectives-k"
+      ],
+      "stage": "dialogue"
     },
     {
-      "id": "a1-37-writing-1",
+      "id": "a1-37-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        ".",
+        "kicsik",
+        "ablakok",
+        "Az"
+      ],
+      "solution": [
+        "Az",
+        "ablakok",
+        "kicsik",
+        "."
+      ],
+      "english": "The windows are small.",
+      "teaches": [
+        "plural-predicate-adjectives-k"
+      ],
+      "stage": "production"
+    },
+    {
+      "id": "a1-37-production-2",
       "type": "structured-writing",
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"The friends are here.\" in Hungarian.",
-          "answer": "A barátok itt vannak."
-        }
-      ],
-      "teaches": [
-        "plural-nouns-k"
-      ]
-    },
-    {
-      "id": "a1-37-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
+          "prompt": "Say \"The chairs are big.\"",
+          "answer": "A székek nagyok."
+        },
         {
-          "prompt": "Say \"The chairs are next to the windows.\" in Hungarian.",
-          "answer": "A székek az ablakok mellett vannak."
+          "prompt": "Say \"The doors are small.\"",
+          "answer": "Az ajtók kicsik."
         }
       ],
       "teaches": [
-        "plural-nouns-k"
-      ]
+        "plural-predicate-adjectives-k"
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-37-check-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"door\"?",
+      "category": "grammar",
+      "question": "Which word means \"phones\"?",
       "options": [
-        "ajtó",
-        "ablak",
-        "szék"
+        "telefonok",
+        "telefonek",
+        "telefonök"
       ],
       "correct": 0,
       "teaches": [
-        "a1-plurals-quantities-vocab"
+        "vowel-harmony"
       ],
       "stage": "check"
     },
@@ -364,15 +304,15 @@
       "id": "a1-37-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"The friends are here\"?",
+      "question": "Which sentence means \"The doors are big.\"?",
       "options": [
-        "A barátok itt vannak.",
-        "A barát itt van.",
-        "Barátok itt van."
+        "Az ajtók nagyak.",
+        "Az ajtók nagy.",
+        "Az ajtók nagyok."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "plural-nouns-k"
+        "plural-predicate-adjectives-k"
       ],
       "stage": "check"
     }
