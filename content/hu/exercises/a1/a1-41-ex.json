@@ -25,7 +25,7 @@
       "options": [
         "A barátok mind itt vannak.",
         "A barát mind itt van.",
-        "Barátok mind van."
+        "A barátok mind itt van."
       ],
       "correct": 0,
       "stage": "review",
@@ -99,9 +99,9 @@
       "id": "a1-41-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A ____ itt van.",
-      "hint": "his/her key",
-      "english": "His/Her key is here.",
+      "sentence": "Károly itt van. A ____ ott van.",
+      "hint": "kulcs, his",
+      "english": "Károly is here. His key is there.",
       "answer": "kulcsa",
       "teaches": [
         "possessive-suffixes"
@@ -112,11 +112,11 @@
       "id": "a1-41-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How does Hungarian mark \"his phone\"?",
+      "question": "Károly itt van. Which means \"His book is there\"?",
       "options": [
-        "a suffix on the noun itself: telefonja",
-        "a separate word before the noun",
-        "word order alone, with no suffix"
+        "A könyve ott van.",
+        "A könyvem ott van.",
+        "A könyved ott van."
       ],
       "correct": 0,
       "teaches": [
@@ -128,10 +128,10 @@
       "id": "a1-41-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A ____ az asztalon van.",
-      "hint": "his/her phone",
-      "english": "His/Her phone is on the table.",
-      "answer": "telefonja",
+      "sentence": "Anna itt van. A ____ nagy.",
+      "hint": "táska, her",
+      "english": "Anna is here. Her bag is big.",
+      "answer": "táskája",
       "teaches": [
         "possessive-suffixes"
       ],
@@ -141,11 +141,11 @@
       "id": "a1-41-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly says \"His key is here\"?",
+      "question": "Anna itt van. Which means \"Her phone is here\"?",
       "options": [
-        "A kulcsa itt van.",
-        "A kulcs ő van itt.",
-        "Kulcsa ő itt."
+        "A telefonja itt van.",
+        "A telefon itt van.",
+        "A telefonom itt van."
       ],
       "correct": 0,
       "teaches": [
@@ -157,10 +157,10 @@
       "id": "a1-41-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A ____ az asztalon van.",
-      "hint": "his/her bag",
-      "english": "His/Her bag is on the table.",
-      "answer": "táskája",
+      "sentence": "Károly itt van. Hol van a ____?",
+      "hint": "telefon, his",
+      "english": "Károly is here. Where is his phone?",
+      "answer": "telefonja",
       "teaches": [
         "possessive-suffixes"
       ],
@@ -172,20 +172,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "A telefonja az asztalon van.",
-          "His/her phone is on the table."
-        ],
-        [
           "A kulcsa itt van.",
           "His/her key is here."
         ],
         [
-          "A táskája nagy.",
-          "His/her bag is big."
+          "A telefonja ott van.",
+          "His/her phone is there."
         ],
         [
           "A könyve régi.",
           "His/her book is old."
+        ],
+        [
+          "Hol van a táskája?",
+          "Where is his/her bag?"
         ]
       ],
       "teaches": [
@@ -199,19 +199,17 @@
       "category": "grammar",
       "tiles": [
         "A",
-        "kulcsa",
-        "itt",
-        "van",
+        "táskája",
+        "nagy",
         "."
       ],
       "solution": [
         "A",
-        "kulcsa",
-        "itt",
-        "van",
+        "táskája",
+        "nagy",
         "."
       ],
-      "english": "His/her key is here.",
+      "english": "His/her bag is big.",
       "teaches": [
         "possessive-suffixes"
       ],
@@ -221,11 +219,11 @@
       "id": "a1-41-practice-5",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which line does this reply answer: \"A telefonja az asztalon van.\"?",
+      "question": "Which line does this reply answer: \"A telefonja ott van.\"?",
       "options": [
         "Hol van a telefonja?",
         "Hol van a kulcsa?",
-        "Itt van a kulcsa?"
+        "Hol van a könyve?"
       ],
       "correct": 0,
       "teaches": [
@@ -237,11 +235,11 @@
       "id": "a1-41-practice-6",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which noun-plus-possessive combination means \"his/her book\"?",
+      "question": "Which form means \"his/her bag\"?",
       "options": [
-        "könyve",
-        "könyvje",
-        "könyvem"
+        "táskája",
+        "táskám",
+        "táskád"
       ],
       "correct": 0,
       "teaches": [
@@ -276,7 +274,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Hol van a telefonja?"
+          "text": "Anna itt van. Hol van a kulcsa?"
         },
         {
           "speaker": "Károly",
@@ -284,8 +282,9 @@
         }
       ],
       "options": [
-        "A telefonja az asztalon van.",
-        "A telefon ő van asztalon."
+        "A kulcsa ott van.",
+        "A kulcsom ott van.",
+        "A kulcsod ott van."
       ],
       "correct": 0,
       "teaches": [
@@ -299,7 +298,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Itt van a kulcsa?"
+          "text": "Hol van a telefonod?"
         },
         {
           "speaker": "Károly",
@@ -307,8 +306,9 @@
         }
       ],
       "options": [
-        "Igen, a kulcsa itt van.",
-        "Igen, kulcsa van itt a."
+        "A telefonom ott van.",
+        "A telefonja ott van.",
+        "A telefonod ott van."
       ],
       "correct": 0,
       "teaches": [
@@ -321,8 +321,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"His/her key is here.\" in Hungarian.",
-          "answer": "A kulcsa itt van."
+          "prompt": "Anna is here. Say \"Her key is there.\" in Hungarian.",
+          "answer": "A kulcsa ott van."
         }
       ],
       "teaches": [
@@ -335,8 +335,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"His/her phone is on the table.\" in Hungarian.",
-          "answer": "A telefonja az asztalon van."
+          "prompt": "Say \"Where is his phone?\" in Hungarian.",
+          "answer": "Hol van a telefonja?"
         }
       ],
       "teaches": [
@@ -363,11 +363,11 @@
       "id": "a1-41-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"His/her key is here\"?",
+      "question": "Anna itt van. How do you say \"Her key is here\"?",
       "options": [
         "A kulcsa itt van.",
         "A kulcs itt van.",
-        "Kulcsa itt van ő."
+        "A kulcsom itt van."
       ],
       "correct": 0,
       "teaches": [

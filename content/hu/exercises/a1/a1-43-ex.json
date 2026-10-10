@@ -25,7 +25,7 @@
       "options": [
         "A szobánk itt van.",
         "A szoba itt van.",
-        "Szobánk itt van ő."
+        "A szobám itt van."
       ],
       "correct": 0,
       "stage": "review",
@@ -85,6 +85,10 @@
         [
           "enyém",
           "mine"
+        ],
+        [
+          "kié",
+          "whose?"
         ]
       ],
       "teaches": [
@@ -97,7 +101,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A ____ itt van.",
-      "hint": "my flat",
+      "hint": "lakás, my",
       "english": "My flat is here.",
       "answer": "lakásom",
       "teaches": [
@@ -112,8 +116,8 @@
       "question": "Which sentence means \"The car is mine\"?",
       "options": [
         "Az autó az enyém.",
-        "Az autó enyém van.",
-        "Enyém az autó van."
+        "Az autó az övé.",
+        "Az autó a tiéd."
       ],
       "correct": 0,
       "teaches": [
@@ -125,10 +129,10 @@
       "id": "a1-43-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Az autó az ____.",
-      "hint": "mine",
-      "english": "The car is mine.",
-      "answer": "enyém",
+      "sentence": "A táska a ____?",
+      "hint": "yours",
+      "english": "Is the bag yours?",
+      "answer": "tiéd",
       "teaches": [
         "possessive-pronouns-enyem"
       ],
@@ -137,16 +141,16 @@
     {
       "id": "a1-43-practice-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is more natural to avoid repeating the noun: \"az autó az autóm\" or \"az autó az enyém\"?",
+      "category": "vocabulary",
+      "question": "Which sentence means \"Whose is the car?\"",
       "options": [
-        "az autó az enyém",
-        "az autó az autóm",
-        "both are equally natural"
+        "Kié az autó?",
+        "Hol van az autó?",
+        "Milyen az autó?"
       ],
       "correct": 0,
       "teaches": [
-        "possessive-pronouns-enyem"
+        "a1-possession-vocab"
       ],
       "stage": "practice"
     },
@@ -154,10 +158,10 @@
       "id": "a1-43-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A ____ itt van.",
-      "hint": "my address",
-      "english": "My address is here.",
-      "answer": "címem",
+      "sentence": "Mi a ____?",
+      "hint": "cím, your",
+      "english": "What is your address?",
+      "answer": "címed",
       "teaches": [
         "possessive-suffixes"
       ],
@@ -181,8 +185,8 @@
           "The address is important."
         ],
         [
-          "Ez az én lakásom.",
-          "This is my flat."
+          "Az autó az övé.",
+          "The car is his/hers."
         ]
       ],
       "teaches": [
@@ -195,20 +199,20 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Az",
-        "autó",
+        "A",
+        "lakás",
         "az",
-        "enyém",
+        "övé",
         "."
       ],
       "solution": [
-        "Az",
-        "autó",
+        "A",
+        "lakás",
         "az",
-        "enyém",
+        "övé",
         "."
       ],
-      "english": "The car is mine.",
+      "english": "The flat is his/hers.",
       "teaches": [
         "possessive-pronouns-enyem"
       ],
@@ -221,8 +225,8 @@
       "question": "Which line does this reply answer: \"A lakásom itt van.\"?",
       "options": [
         "Hol van a lakásod?",
-        "Kié az autó?",
-        "Hol van a kulcsod?"
+        "Hol van a címed?",
+        "Hol van az autód?"
       ],
       "correct": 0,
       "teaches": [
@@ -273,7 +277,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Kié az autó?"
+          "text": "Az autó a tiéd?"
         },
         {
           "speaker": "Károly",
@@ -281,8 +285,9 @@
         }
       ],
       "options": [
-        "Az autó az enyém.",
-        "Az autó enyém van."
+        "Igen, az autó az enyém.",
+        "Igen, az autó a tiéd.",
+        "Igen, az autó az övé."
       ],
       "correct": 0,
       "teaches": [
@@ -305,7 +310,8 @@
       ],
       "options": [
         "A lakásom itt van.",
-        "A lakás itt van om."
+        "A lakásod itt van.",
+        "A lakása itt van."
       ],
       "correct": 0,
       "teaches": [
@@ -360,11 +366,11 @@
       "id": "a1-43-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"The car is mine\"?",
+      "question": "How do you say \"The flat is mine\"?",
       "options": [
-        "Az autó az enyém.",
-        "Az autó enyém.",
-        "Enyém autó van."
+        "A lakás az enyém.",
+        "A lakás az övé.",
+        "A lakás a tiéd."
       ],
       "correct": 0,
       "teaches": [

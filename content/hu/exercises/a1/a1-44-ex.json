@@ -21,11 +21,11 @@
       "id": "a1-44-review-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"The flat is mine\"?",
+      "question": "How do you say \"The key is mine\"?",
       "options": [
-        "A lakás az enyém.",
-        "A lakás enyém van.",
-        "Enyém lakás van."
+        "A kulcs az enyém.",
+        "A kulcs a tiéd.",
+        "A kulcs az övé."
       ],
       "correct": 0,
       "stage": "review",
@@ -37,11 +37,11 @@
       "id": "a1-44-intro-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word means \"yours\"?",
+      "question": "Which word means \"ours\"?",
       "options": [
-        "tiéd",
-        "enyém",
-        "övé"
+        "miénk",
+        "tiétek",
+        "övék"
       ],
       "correct": 0,
       "teaches": [
@@ -53,11 +53,11 @@
       "id": "a1-44-intro-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word means \"ours\"?",
+      "question": "Which word means \"yours (several people)\"?",
       "options": [
-        "miénk",
         "tiétek",
-        "övé"
+        "tiéd",
+        "miénk"
       ],
       "correct": 0,
       "teaches": [
@@ -71,20 +71,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "tiéd",
-          "yours"
-        ],
-        [
-          "övé",
-          "his / hers"
-        ],
-        [
           "miénk",
           "ours"
         ],
         [
           "tiétek",
-          "yours (plural)"
+          "yours (several people)"
+        ],
+        [
+          "övék",
+          "theirs"
+        ],
+        [
+          "tiéd",
+          "yours (one person)"
         ]
       ],
       "teaches": [
@@ -96,10 +96,10 @@
       "id": "a1-44-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A táska a ____?",
-      "hint": "yours",
-      "english": "Is the bag yours?",
-      "answer": "tiéd",
+      "sentence": "A lakás a ____?",
+      "hint": "yours, several people",
+      "english": "Is the flat yours (all of you)?",
+      "answer": "tiétek",
       "teaches": [
         "possessive-pronouns-enyem"
       ],
@@ -112,8 +112,8 @@
       "question": "Which sentence means \"The bag is ours\"?",
       "options": [
         "A táska a miénk.",
-        "A táska miénk van.",
-        "Miénk a táska van."
+        "A táska az övék.",
+        "A táska a tiétek."
       ],
       "correct": 0,
       "teaches": [
@@ -125,9 +125,9 @@
       "id": "a1-44-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A táska a ____.",
+      "sentence": "A szoba a ____.",
       "hint": "ours",
-      "english": "The bag is ours.",
+      "english": "The room is ours.",
       "answer": "miénk",
       "teaches": [
         "possessive-pronouns-enyem"
@@ -138,11 +138,11 @@
       "id": "a1-44-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which part of tiéd matches the -d you'd add to a noun for \"your\"?",
+      "question": "Which sentence means \"The car is theirs\"?",
       "options": [
-        "the -d ending",
-        "the ti- beginning",
-        "neither part"
+        "Az autó az övék.",
+        "Az autó az övé.",
+        "Az autó a miénk."
       ],
       "correct": 0,
       "teaches": [
@@ -154,9 +154,9 @@
       "id": "a1-44-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ez a könyv a ____?",
-      "hint": "yours",
-      "english": "Is this book yours?",
+      "sentence": "A kulcs a ____?",
+      "hint": "yours, one person",
+      "english": "Is the key yours?",
       "answer": "tiéd",
       "teaches": [
         "possessive-pronouns-enyem"
@@ -169,20 +169,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "A táska a tiéd?",
-          "Is the bag yours?"
-        ],
-        [
           "A táska a miénk.",
           "The bag is ours."
         ],
         [
-          "Ez a könyv az övé.",
-          "This book is his/hers."
+          "A szoba a tiétek?",
+          "Is the room yours (plural)?"
         ],
         [
-          "Az a ház a tiétek?",
-          "Is that house yours (plural)?"
+          "Az autó az övék.",
+          "The car is theirs."
+        ],
+        [
+          "Van egy autónk.",
+          "We have a car."
         ]
       ],
       "teaches": [
@@ -195,22 +195,20 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "A",
-        "táska",
-        "a",
-        "miénk",
+        "Van",
+        "egy",
+        "szobájuk",
         "."
       ],
       "solution": [
-        "A",
-        "táska",
-        "a",
-        "miénk",
+        "Van",
+        "egy",
+        "szobájuk",
         "."
       ],
-      "english": "The bag is ours.",
+      "english": "They have a room.",
       "teaches": [
-        "possessive-pronouns-enyem"
+        "van-possessive-to-have"
       ],
       "stage": "practice"
     },
@@ -218,11 +216,11 @@
       "id": "a1-44-practice-5",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which line does this reply answer: \"Nem, a táska a miénk.\"?",
+      "question": "Which line does this reply answer: \"Igen, a táska a miénk.\"?",
       "options": [
-        "A táska a tiéd?",
-        "Kié a könyv?",
-        "Hol van a táska?"
+        "A táska a tiétek?",
+        "A táska az övék?",
+        "Kié a táska?"
       ],
       "correct": 0,
       "teaches": [
@@ -234,17 +232,21 @@
       "id": "a1-44-practice-6",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word means \"his / hers\"?",
+      "question": "Which sentence means \"I don't have a key\"?",
       "options": [
-        "övé",
-        "tiéd",
-        "miénk"
+        "Nincs kulcsom.",
+        "Van kulcsom.",
+        "Nincs kulcs."
       ],
       "correct": 0,
       "teaches": [
-        "possessive-pronouns-enyem"
+        "van-possessive-to-have"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "1": "van-and-nincs-there-is-there-isn-t",
+        "2": "van-and-nincs-there-is-there-isn-t"
+      }
     },
     {
       "id": "a1-44-practice-7",
@@ -255,10 +257,10 @@
       "base_gloss": "The bag is ours.",
       "options": [
         {
-          "word": "tiéd",
-          "inflected": "tiéd",
-          "sentence": "A táska a tiéd.",
-          "gloss": "yours"
+          "word": "övék",
+          "inflected": "övék",
+          "sentence": "A táska az övék.",
+          "gloss": "theirs"
         }
       ],
       "teaches": [
@@ -272,17 +274,18 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "A táska a tiéd?"
+          "speaker": "Meg",
+          "text": "A szoba a tiétek?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, a táska az enyém.",
-        "Igen, a táska tiéd."
+        "Igen, a szoba a miénk.",
+        "Igen, a szoba a tiétek.",
+        "Igen, a szoba az övék."
       ],
       "correct": 0,
       "teaches": [
@@ -296,7 +299,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Kié ez a könyv?"
+          "text": "Van egy autótok?"
         },
         {
           "speaker": "Károly",
@@ -304,12 +307,13 @@
         }
       ],
       "options": [
-        "Ez a könyv az övé.",
-        "Ez a könyv övé van."
+        "Igen, van egy autónk.",
+        "Igen, van egy autótok.",
+        "Igen, van egy autójuk."
       ],
       "correct": 0,
       "teaches": [
-        "possessive-pronouns-enyem"
+        "possessive-suffixes"
       ]
     },
     {
@@ -332,23 +336,23 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"Is the bag yours?\" in Hungarian.",
-          "answer": "A táska a tiéd?"
+          "prompt": "Say \"We have a flat.\" in Hungarian.",
+          "answer": "Van egy lakásunk."
         }
       ],
       "teaches": [
-        "possessive-pronouns-enyem"
+        "van-possessive-to-have"
       ]
     },
     {
       "id": "a1-44-check-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word means \"ours\"?",
+      "question": "Which word completes \"A lakás a ____.\" (The flat is ours)?",
       "options": [
         "miénk",
-        "tiéd",
-        "övé"
+        "tiétek",
+        "övék"
       ],
       "correct": 0,
       "teaches": [
@@ -360,17 +364,21 @@
       "id": "a1-44-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"The bag is ours\"?",
+      "question": "How do you say \"We have a room\"?",
       "options": [
-        "A táska a miénk.",
-        "A táska miénk.",
-        "Miénk táska van."
+        "Van egy szobánk.",
+        "Nincs szobánk.",
+        "Van egy szoba."
       ],
       "correct": 0,
       "teaches": [
-        "possessive-pronouns-enyem"
+        "van-possessive-to-have"
       ],
-      "stage": "check"
+      "stage": "check",
+      "distractor_skills": {
+        "1": "van-and-nincs-there-is-there-isn-t",
+        "2": "van-and-nincs-there-is-there-isn-t"
+      }
     }
   ]
 }
