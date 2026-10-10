@@ -1,0 +1,49 @@
+# Pilot: regenerate hu a1 `foundations-review` (ROADMAP 149 step 3, 153)
+
+A test run, one of three arms. The same week, Sonnet regenerates
+`plurals-quantities` (unit 8) and fixes `possession` (unit 9) the current
+way. All three are then read blind and compared on defects left, time and
+cost. Note the time you start and finish; put both in the commit body.
+
+## What to do
+
+Regenerate the unit's **lessons and exercises** from scratch under
+[docs/course-generation-brief.md](../../docs/course-generation-brief.md),
+reusing what already exists around them:
+
+- **Keep:** the stems (`a1-46` … `a1-50`, `a1-50-consolidation`), the
+  grammar screens, the vocabulary files and the story
+  (`content/hu/stories/original/a1/a1-unit-10.json`). Fix any of them that
+  break a rule (a wrong rule, an example or story line using a word or form
+  not yet taught, a listed word no exercise uses), and say so in the commit.
+- **Write new:** every exercise file (`content/hu/exercises/a1/<stem>-ex.json`),
+  each lesson file's `goal`, sections and `checklist` (`content/hu/lessons/a1/<stem>.json`),
+  and the six challenges in `content/hu/curriculum/challenges.json`.
+  Throw the old exercises away; don't edit them.
+- **Shape:** brief § 2.2 for the five lessons (Introduce 2, Controlled 4,
+  Practice 5, Dialogue 2, Production 2, Check 2; the story and a Reading
+  group of 3 on `a1-50`), § 2.3 for the consolidation (4 × 5). Exercise ids
+  `<stem>-<stage>-<n>` (`a1-46-controlled-3`).
+- **Unit 10 is a review unit.** Its lessons revisit units 1–9 (each lesson's
+  title and grammar screens say which part); it teaches no new grammar.
+  Every exercise uses only what units 1–9 and the unit's own vocabulary
+  taught. "Met" is defined in `docs/unit-finish-brief.md` step 4.
+- **Rules:** brief § 6 (one right answer, one fault per wrong option, no
+  length give-aways, no tells, never the quoted line), § 7, and
+  AGENTS.md § "Exercise metadata" for every tag. The skill list is frozen.
+
+## Checks, then commit
+
+    python scripts/check-content.py hu a1 foundations-review
+    node scripts/render_lesson.js hu a1-46 a1-47 a1-48 a1-49 a1-50 a1-50-consolidation
+    python scripts/validate-content.py --changed
+
+Fix everything the checker reports (accept suspects only with a reason),
+read every rendered screen, then lock the new tags:
+
+    python scripts/lock_tags.py hu a1/foundations-review --update --reason "regenerated (pilot)"
+
+**Don't freeze.** Commit the unit on its own,
+`content(hu): regenerate a1/foundations-review (pilot, ROADMAP 149)`, with
+the start and finish times, what you kept and fixed in the screens,
+vocabulary and story, and every accepted suspect. Push, then stop and report.
