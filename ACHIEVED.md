@@ -10,8 +10,11 @@ needs re-reading before starting new work; it's reference only.
 ## Completed work (2026-10-12)
 
 - **"Learn from Music" in Listening Practice & Workshop Nomenclature Alignment (Done 2026-10-12).**
-  - **Learn from Music Integration:**
-    - Authored CEFR-aligned song lyrics collections for European Spanish and Latin American Spanish (`content/es-es/songs.json` and `content/es-latam/songs.json`), with synchronized bilingual line translations, cultural/idiomatic annotations, and curated cloze blanks.
+  - **Learn from Music Integration & Authentic Catalog Expansion:**
+    - Authored CEFR-aligned authentic song lyrics collections for European Spanish, Latin American Spanish, and Hungarian (`content/es-es/songs.json`, `content/es-latam/songs.json`, and `content/hu/songs.json`) with 10 songs each (30 songs total across A1, A2, and B1), featuring 100% verified authentic lyrics from the original artists (Republic, Lovasi/Csík Zenekar, Carson Coma, Omega, Kispál és a Borz, LGT, Illés, Quimby, Bagossy Brothers Company, Halott Pénz; Sabina, Alaska y Dinarama, Jarabe de Palo, Mecano, Estopa, Rosalía, Manu Chao, Serrat, Amaral, El Canto del Loco; Buena Vista Social Club, Soda Stereo, Mercedes Sosa, Natalia Lafourcade, Carlos Vives & Shakira, Juanes, Celia Cruz, Julieta Venegas, Los Ángeles Azules, Mon Laferte).
+    - Organized all song catalogs strictly A to Z by song title across all courses, and updated `engine/drills/music.js` to sort alphabetically and display `${title} — ${artist}` in the song selector.
+    - Set bilingual line translations off by default (`_showTranslations = false`) to focus learner listening comprehension first, with optional one-click toggle.
+    - Verified all 30 YouTube video IDs via live YouTube oEmbed API, ensuring active and embeddable video streams, plus added a direct "Open on YouTube ↗" fallback link in the player sidebar.
     - Implemented `engine/drills/music.js` featuring three progressive learning modes ("Easy" multiple-choice cloze, "Hard" freeform typing cloze, and "Understand the lyrics" bilingual reader with inline lexical footnotes), drop-down song switcher, and integrated word lookup into `Lexicon` / SRS deck.
     - Embedded "Learn from Music" directly as a dedicated tab inside Listening Practice (`engine/drills/listening-studio.js`) rather than a standalone card, cleanly managing lifecycle stop and sub-tab state.
     - Styled lyrics interface in `styles/workshop.css` conforming to Parlour's cream background and clean typography tokens.

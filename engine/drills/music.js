@@ -17,7 +17,7 @@ const MusicDriller = (function () {
     let _songs = [];
     let _currentSongId = null;
     let _activeMode = 'easy'; // 'easy' | 'hard' | 'understand'
-    let _showTranslations = true;
+    let _showTranslations = false;
     let _activeWord = null;
     let _activeDefinition = null;
     let _activePos = null;
@@ -208,7 +208,7 @@ const MusicDriller = (function () {
             ]
         },
         {
-            id: "megustas",
+            id: "me-gustas-tu",
             title: "Me Gustas Tú",
             artist: "Manu Chao",
             youtubeId: "rs6Y4kZ8qtw",
@@ -349,29 +349,35 @@ const MusicDriller = (function () {
     ];
 
     async function _loadSongs() {
+        let loaded = null;
         if (typeof Content !== 'undefined' && typeof Lang !== 'undefined' && Lang.content) {
             try {
                 const data = await Content.json(Lang.content('songs.json'));
                 if (data && Array.isArray(data.songs) && data.songs.length) {
-                    return data.songs;
+                    loaded = data.songs;
                 }
             } catch (e) {
                 // fall through
             }
         }
-        try {
-            const lang = typeof Lang !== 'undefined' ? Lang.code() : 'es-es';
-            const res = await fetch(`content/${lang}/songs.json`);
-            if (res.ok) {
-                const data = await res.json();
-                if (data && Array.isArray(data.songs) && data.songs.length) {
-                    return data.songs;
+        if (!loaded) {
+            try {
+                const lang = typeof Lang !== 'undefined' ? Lang.code() : 'es-es';
+                const res = await fetch(`content/${lang}/songs.json`);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && Array.isArray(data.songs) && data.songs.length) {
+                        loaded = data.songs;
+                    }
                 }
+            } catch (e) {
+                // fall through
             }
-        } catch (e) {
-            // fall through
         }
-        return _FALLBACK_SONGS;
+        if (!loaded) {
+            loaded = _FALLBACK_SONGS;
+        }
+        return loaded.slice().sort((a, b) => (a.title || '').localeCompare(b.title || '', undefined, { sensitivity: 'base' }));
     }
 
     function _normalize(str) {
@@ -391,7 +397,7 @@ const MusicDriller = (function () {
         const current = _getCurrentSong();
         const optionsHtml = _songs.map(s => `
             <option value="${s.id}" ${s.id === current.id ? 'selected' : ''}>
-                ${s.artist} — ${s.title} (${s.level || 'All'}${s.origin ? ' · ' + s.origin : ''})
+                ${s.title} — ${s.artist} (${s.level || 'All'}${s.origin ? ' · ' + s.origin : ''})
             </option>
         `).join('');
 
@@ -431,6 +437,12 @@ const MusicDriller = (function () {
                                     src="https://www.youtube.com/embed/${current.youtubeId}?enablejsapi=1&rel=0&modestbranding=1"
                                     allow="autoplay; encrypted-media"
                                     allowfullscreen></iframe>
+                        </div>
+
+                        <div style="margin: 6px 0 10px; display: flex; justify-content: flex-end;">
+                            <a id="wk-music-yt-link" href="https://www.youtube.com/watch?v=${current.youtubeId}" target="_blank" rel="noopener noreferrer" class="wk-music-yt-link" style="display: inline-flex; align-items: center; gap: 4px; font-size: 0.8rem; color: var(--primary); text-decoration: none; opacity: 0.85;">
+                                Open on YouTube ↗
+                            </a>
                         </div>
 
                         <div class="wk-music-status-card">
@@ -639,6 +651,10 @@ const MusicDriller = (function () {
         const iframe = document.getElementById('wk-music-yt-iframe');
         if (iframe) {
             iframe.src = `https://www.youtube.com/embed/${current.youtubeId}?enablejsapi=1&rel=0&modestbranding=1`;
+        }
+        const ytLink = document.getElementById('wk-music-yt-link');
+        if (ytLink) {
+            ytLink.href = `https://www.youtube.com/watch?v=${current.youtubeId}`;
         }
         _renderSheet();
     }
