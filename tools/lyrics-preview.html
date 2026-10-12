@@ -571,8 +571,8 @@
 <!-- Lexicon Popup Card -->
 <div class="lexicon-card" id="lexicon-card">
   <div>
-    <span class="lexicon-headword" id="pop-word">palabra</span>
-    <span class="lexicon-pos" id="pop-pos">sustantivo</span>
+    <span class="lexicon-headword" id="pop-word"></span>
+    <span class="lexicon-pos" id="pop-pos"></span>
   </div>
   <div class="lexicon-def" id="pop-def">Definition</div>
   <button class="btn-srs" onclick="addWordToDeck()">+ Add to Flashcard Deck</button>
@@ -1231,7 +1231,7 @@ function handleWordTap(cleanWord, event) {
 
   if (!entry) {
     document.getElementById('pop-word').textContent = cleanWord;
-    document.getElementById('pop-pos').textContent = "palabra";
+    document.getElementById('pop-pos').textContent = "word";
     document.getElementById('pop-def').textContent = "Look up in main Parlour Lexicon";
   } else {
     document.getElementById('pop-word').textContent = entry.lemma;

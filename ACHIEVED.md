@@ -9,6 +9,17 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed work (2026-10-12)
 
+- **Unified Lexicon Reader Popup for "Learn from Music" & Hungarian Morphology Disambiguation (Done 2026-10-12).**
+  - **Learn from Music Word Lookup & Popups:**
+    - Unified word tap resolution in `engine/drills/music.js`: lyrics in both "Understand" and "Exercise" modes now render tokens using `Reader.makeClickable()`, delegating taps directly to Parlour's standard `Reader.showWord()` popup.
+    - Eliminated isolated mock popover (`.wk-music-lexicon-pop`) with hardcoded Spanish defaults (`palabra`, `sustantivo`) in favour of the full Reader sheet featuring audio pronunciation, rich dictionary translations, complete CEFR lesson cross-links, and full Hungarian morphology slicing.
+    - Maintained music drill aesthetic via `.wk-music-lyrics-sheet .word:hover` styling in `styles/workshop.css`.
+  - **Hungarian Morphology & Ranking Disambiguation:**
+    - Resolved bug in `engine/morphology/hungarian.js` where `mondjátok` falsely resolved to the noun `monda` ("legend, saga, myth"): guarded nominal linking-vowel resolution so consonant+`j` stems (such as verb imperatives and definite conjugations) are not erroneously treated as fleeting vowel-deletion stems yielding `apja/anyja` possessive restorations.
+    - Fixed ranking in `engine/lexicon.js`: updated `isTruncated()` so any reading whose lemma is strictly shorter than the query form is treated as truncated/derived, allowing frequency rank (`rankOf`) to correctly prioritize frequent base verbs (`mond`, rank 52) over obscure homographs (`monda`, rank 5,751).
+    - Added `nyáréjszaka` ("summer night") to `imports/dictionary/additions-hu.json` and merged into `imports/dictionary/hungarian-en.json`, enabling `nyáréjszakán` to resolve cleanly with superessive case and full morphological chain `nyáréjszaka → nyáréjszakán` (`-n`).
+    - Added comprehensive regression test suite in `tests/reader/test-hu-music-song-lookup.js`.
+
 - **"Learn from Music" in Listening Practice & Workshop Nomenclature Alignment (Done 2026-10-12).**
   - **Learn from Music Integration & Authentic Catalog Expansion:**
     - Authored CEFR-aligned authentic song lyrics collections for European Spanish, Latin American Spanish, and Hungarian (`content/es-es/songs.json`, `content/es-latam/songs.json`, and `content/hu/songs.json`) with 10 songs each (30 songs total across A1, A2, and B1), featuring 100% verified authentic lyrics from the original artists (Republic, Lovasi/Csík Zenekar, Carson Coma, Omega, Kispál és a Borz, LGT, Illés, Quimby, Bagossy Brothers Company, Halott Pénz; Sabina, Alaska y Dinarama, Jarabe de Palo, Mecano, Estopa, Rosalía, Manu Chao, Serrat, Amaral, El Canto del Loco; Buena Vista Social Club, Soda Stereo, Mercedes Sosa, Natalia Lafourcade, Carlos Vives & Shakira, Juanes, Celia Cruz, Julieta Venegas, Los Ángeles Azules, Mon Laferte).

@@ -6447,9 +6447,10 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
   border-bottom: 1px dotted transparent;
   transition: all 0.15s ease;
 }
-.wk-music-word-tap:hover {
+.wk-music-word-tap:hover,
+.wk-music-lyrics-sheet .word:hover {
   color: var(--accent);
-  border-bottom-color: var(--accent);
+  border-bottom: 1px dotted var(--accent);
 }
 
 /* Blanks (Transparent, paper underline) */

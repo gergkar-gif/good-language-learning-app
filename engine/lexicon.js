@@ -532,7 +532,7 @@ const Lexicon = (function () {
         // "went" — neither is a truncation of "ment", so both stay ranked
         // by frequency exactly as before).
         function isTruncated(r) {
-            return key.length > r.lemma.length && key.indexOf(r.lemma) === 0;
+            return key.length > r.lemma.length;
         }
         readings.sort((a, b) => (isTruncated(a) - isTruncated(b)) || (rankOf(a) - rankOf(b)));
         // Pinned to the reading that actually won ranking — see ladder()'s

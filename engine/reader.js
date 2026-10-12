@@ -1082,6 +1082,7 @@ const StoryAudioPlayer = {
 window.StoryAudioPlayer = StoryAudioPlayer;
 
 window.Reader = {
+    showWord: showWord,
     _normSearch: _normSearch,
     _matchesTerm: _matchesTerm,
     _shuffled: _shuffled,

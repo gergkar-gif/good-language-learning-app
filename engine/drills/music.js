@@ -471,10 +471,10 @@ const MusicDriller = (function () {
                 <!-- Lexicon Popup -->
                 <div class="wk-music-lexicon-pop" id="wk-music-lexicon-pop">
                     <div class="wk-music-pop-head">
-                        <span class="wk-music-pop-lemma" id="wk-pop-lemma">palabra</span>
-                        <span class="wk-music-pop-pos" id="wk-pop-pos">sustantivo</span>
+                        <span class="wk-music-pop-lemma" id="wk-pop-lemma"></span>
+                        <span class="wk-music-pop-pos" id="wk-pop-pos"></span>
                     </div>
-                    <div class="wk-music-pop-def" id="wk-pop-def">Definition</div>
+                    <div class="wk-music-pop-def" id="wk-pop-def"></div>
                     <button type="button" class="wk-music-pop-btn" id="wk-pop-srs-btn">+ Add to Flashcards</button>
                 </div>
             </div>
@@ -498,20 +498,26 @@ const MusicDriller = (function () {
                 if (_activeMode === 'understand') {
                     // Full unredacted poetry, every word tappable for dictionary lookup
                     const cleanText = line.text.replace(/\[([^\]]+)\]/g, '$1');
-                    const words = cleanText.split(' ');
-
-                    words.forEach((w, wIdx) => {
-                        if (!w) return;
-                        const span = document.createElement('span');
-                        span.className = 'wk-music-word-tap';
-                        span.textContent = w;
-                        const cleanWord = w.toLowerCase().replace(/[¿¡,.]/g, '');
-                        span.addEventListener('click', (e) => _handleWordTap(cleanWord, e));
-                        lineEl.appendChild(span);
-                        if (wIdx < words.length - 1) {
-                            lineEl.appendChild(document.createTextNode(' '));
-                        }
-                    });
+                    if (typeof Reader !== 'undefined' && Reader.makeClickable) {
+                        const verseSpan = document.createElement('span');
+                        verseSpan.className = 'wk-music-line-verse';
+                        verseSpan.innerHTML = Reader.makeClickable(cleanText);
+                        lineEl.appendChild(verseSpan);
+                    } else {
+                        const words = cleanText.split(' ');
+                        words.forEach((w, wIdx) => {
+                            if (!w) return;
+                            const span = document.createElement('span');
+                            span.className = 'wk-music-word-tap word';
+                            span.textContent = w;
+                            const cleanWord = w.toLowerCase().replace(/[¿¡,.]/g, '');
+                            span.addEventListener('click', (e) => _handleWordTap(cleanWord, e));
+                            lineEl.appendChild(span);
+                            if (wIdx < words.length - 1) {
+                                lineEl.appendChild(document.createTextNode(' '));
+                            }
+                        });
+                    }
 
                 } else {
                     // Exercise Mode: Easy (Roll-down select) or Hard (Type-in input)
@@ -567,19 +573,25 @@ const MusicDriller = (function () {
 
                         } else {
                             // Non-blank words remain tappable for lexicon
-                            const words = part.split(' ');
-                            words.forEach((w, wIdx) => {
-                                if (!w) return;
-                                const span = document.createElement('span');
-                                span.className = 'wk-music-word-tap';
-                                span.textContent = w;
-                                const cleanWord = w.toLowerCase().replace(/[¿¡,.]/g, '');
-                                span.addEventListener('click', (e) => _handleWordTap(cleanWord, e));
-                                lineEl.appendChild(span);
-                                if (wIdx < words.length - 1) {
-                                    lineEl.appendChild(document.createTextNode(' '));
-                                }
-                            });
+                            if (typeof Reader !== 'undefined' && Reader.makeClickable) {
+                                const partSpan = document.createElement('span');
+                                partSpan.innerHTML = Reader.makeClickable(part);
+                                lineEl.appendChild(partSpan);
+                            } else {
+                                const words = part.split(' ');
+                                words.forEach((w, wIdx) => {
+                                    if (!w) return;
+                                    const span = document.createElement('span');
+                                    span.className = 'wk-music-word-tap word';
+                                    span.textContent = w;
+                                    const cleanWord = w.toLowerCase().replace(/[¿¡,.]/g, '');
+                                    span.addEventListener('click', (e) => _handleWordTap(cleanWord, e));
+                                    lineEl.appendChild(span);
+                                    if (wIdx < words.length - 1) {
+                                        lineEl.appendChild(document.createTextNode(' '));
+                                    }
+                                });
+                            }
                         }
                     });
                 }
@@ -739,11 +751,21 @@ const MusicDriller = (function () {
 
     // Lexicon & SRS
     async function _handleWordTap(cleanWord, event) {
-        event.stopPropagation();
+        if (event && event.stopPropagation) event.stopPropagation();
         _activeWord = cleanWord;
+
+        if (typeof showWord === 'function') {
+            showWord(cleanWord, [cleanWord], 0, false, cleanWord);
+            return;
+        }
+        if (typeof Reader !== 'undefined' && typeof Reader.showWord === 'function') {
+            Reader.showWord(cleanWord, [cleanWord], 0, false, cleanWord);
+            return;
+        }
+
         let lemma = cleanWord;
-        let pos = 'palabra';
-        let def = 'Look up in Lexicon';
+        let pos = '';
+        let def = 'No definition available';
 
         if (typeof Lexicon !== 'undefined' && typeof Lexicon.lookup === 'function') {
             try {
@@ -752,7 +774,7 @@ const MusicDriller = (function () {
                 if (res && res.readings && res.readings.length > 0) {
                     const r = res.readings[0];
                     lemma = r.lemma || cleanWord;
-                    pos = r.pos || 'palabra';
+                    pos = r.pos || '';
                     def = r.translation || 'Available in Lexicon';
                 }
             } catch (e) {
@@ -762,7 +784,7 @@ const MusicDriller = (function () {
 
         _activeDefinition = def;
         _activePos = pos;
-        _showLexiconPop(lemma, pos, def, event.target);
+        _showLexiconPop(lemma, pos, def, (event && event.target) ? event.target : document.body);
     }
 
     function _showLexiconPop(lemma, pos, def, targetEl) {

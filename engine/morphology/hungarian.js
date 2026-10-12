@@ -145,7 +145,7 @@ const HungarianMorphology = (function () {
             sense = nominalSense(dictionary[shortened]);
             if (sense) return { lemma: shortened, sense: sense };
             // the shortened form may itself be stem + a linking vowel (lelké -> lelke -> lelk -> lélek)
-            if (/[ae]$/.test(shortened)) {
+            if (/[ae]$/.test(shortened) && !/[^aeiouáéíóöőúüű]j$/.test(shortened.slice(0, -1))) {
                 for (const cand of lengthenedStems(shortened.slice(0, -1))) {
                     sense = nominalSense(dictionary[cand]);
                     if (sense) return { lemma: cand, sense: sense };
