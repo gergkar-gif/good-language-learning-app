@@ -6633,14 +6633,16 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
   transition: border-color var(--dur-fast, 0.15s) ease;
 }
 
-.wk-video-spanish-text .word {
+.wk-video-spanish-text .word,
+.wk-video-target-text .word {
   cursor: pointer;
   border-radius: 2px;
   transition: background-color var(--dur-fast, 0.1s) ease;
 }
 
 @media (hover: hover) {
-  .wk-video-spanish-text .word:hover {
+  .wk-video-spanish-text .word:hover,
+  .wk-video-target-text .word:hover {
     background-color: rgba(224, 159, 62, 0.22);
     text-decoration: underline;
     text-decoration-color: var(--accent, #e09f3e);

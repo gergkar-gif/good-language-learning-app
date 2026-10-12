@@ -21,10 +21,15 @@ assert(fs.existsSync(latamVideosPath), 'content/es-latam/videos.json must exist'
 const latamVideos = JSON.parse(fs.readFileSync(latamVideosPath, 'utf8'));
 assert(Array.isArray(latamVideos.videos) && latamVideos.videos.length >= 3, 'es-latam must have at least 3 authentic videos');
 
+const huVideosPath = path.join(__dirname, '../../content/hu/videos.json');
+assert(fs.existsSync(huVideosPath), 'content/hu/videos.json must exist');
+const huVideos = JSON.parse(fs.readFileSync(huVideosPath, 'utf8'));
+assert(Array.isArray(huVideos.videos) && huVideos.videos.length >= 2, 'hu must have at least 2 authentic videos');
+
 console.log('  [PASS] Video data files exist and contain authentic entries.');
 
 // 2. Validate video schema and structure
-[...esVideos.videos, ...latamVideos.videos].forEach(video => {
+[...esVideos.videos, ...latamVideos.videos, ...huVideos.videos].forEach(video => {
     assert(video.id, 'Video must have id');
     assert(video.title, `Video ${video.id} must have title`);
     assert(video.source, `Video ${video.id} must have source/channel`);
@@ -53,7 +58,8 @@ console.log('  [PASS] Video data files exist and contain authentic entries.');
     // Paragraphs validation
     assert(Array.isArray(video.paragraphs) && video.paragraphs.length >= 3, `Video ${video.id} must have at least 3 paragraphs`);
     video.paragraphs.forEach((p, idx) => {
-        assert(p.spanish && p.spanish.trim().length > 0, `Paragraph ${idx} in ${video.id} must have spanish text`);
+        const text = p.spanish || p.hungarian || p.text;
+        assert(text && text.trim().length > 0, `Paragraph ${idx} in ${video.id} must have transcript text`);
         assert(p.english && p.english.trim().length > 0, `Paragraph ${idx} in ${video.id} must have english translation`);
     });
 });

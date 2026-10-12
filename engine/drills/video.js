@@ -585,18 +585,19 @@ const VideoDriller = (function () {
             pBox.style.border = '1px solid var(--border)';
             pBox.style.borderRadius = 'var(--radius-md, 8px)';
 
-            const spanishP = document.createElement('div');
-            spanishP.className = 'wk-video-spanish-text';
-            spanishP.style.lineHeight = '1.7';
-            spanishP.style.fontSize = '0.96rem';
-            spanishP.style.color = 'var(--ink)';
+            const targetText = p.target || p.hungarian || p.spanish || p.text || '';
+            const textEl = document.createElement('div');
+            textEl.className = 'wk-video-spanish-text wk-video-target-text';
+            textEl.style.lineHeight = '1.7';
+            textEl.style.fontSize = '0.96rem';
+            textEl.style.color = 'var(--ink)';
 
             if (typeof Reader !== 'undefined' && Reader.makeClickable) {
-                spanishP.innerHTML = Reader.makeClickable(p.spanish);
+                textEl.innerHTML = Reader.makeClickable(targetText);
             } else {
-                spanishP.textContent = p.spanish;
+                textEl.textContent = targetText;
             }
-            pBox.appendChild(spanishP);
+            pBox.appendChild(textEl);
 
             if (_showTranslations && p.english) {
                 const engP = document.createElement('div');
