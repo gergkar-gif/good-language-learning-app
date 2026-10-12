@@ -1,0 +1,456 @@
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+
+VIDEOS_ES_ES = [
+    {
+        "id": "espana-crisis-vivienda-bbc",
+        "title": "Cómo pasó España del boom inmobiliario a una crisis de vivienda",
+        "source": "BBC News Mundo",
+        "youtubeId": "wNJ0RT7enm4",
+        "level": "B1",
+        "duration": "6:27",
+        "topic": "Sociedad y Economía",
+        "origin": "Spain",
+        "description": "Reportaje de investigación de BBC News Mundo sobre las causas del déficit habitacional en España, el estallido de la burbuja inmobiliaria de 2008 y la situación del alquiler juvenil.",
+        "questions": [
+            {
+                "id": "q1",
+                "question": "¿Por qué miles de personas protestaron acampando con carpas en la céntrica Puerta del Sol de Madrid?",
+                "options": [
+                    "Protestaban por la crisis de vivienda y la falta de un techo accesible",
+                    "Reclamaban la rebaja de impuestos a los grandes inversores inmobiliarios",
+                    "Celebraban la aprobación de nuevos créditos hipotecarios del Banco de España",
+                    "Exigían la demolición de edificios antiguos en el centro histórico"
+                ],
+                "answerIndex": 0,
+                "explanation": "Miles de manifestantes instalaron carpas en la Puerta del Sol reclamando que 'tener un techo es un derecho' y denunciando que la vivienda se ha vuelto impagable para millones de familias."
+            },
+            {
+                "id": "q2",
+                "question": "¿Qué caracterizó al llamado «boom del ladrillo» en España entre 1997 y 2007?",
+                "options": [
+                    "Se construyó a un ritmo sin precedentes (hasta 5 millones de viviendas) con crédito descontrolado",
+                    "El gobierno prohibió por completo la concesión de hipotecas a particulares",
+                    "El Estado asumió la propiedad del 90% de las viviendas en alquiler",
+                    "La construcción se detuvo totalmente debido a las altas tasas de interés del euro"
+                ],
+                "answerIndex": 0,
+                "explanation": "Durante el 'boom del ladrillo' se construyeron hasta 5 millones de viviendas impulsadas por tasas de interés bajas tras adoptar el euro y una gran especulación bancaria e inmobiliaria."
+            },
+            {
+                "id": "q3",
+                "question": "Según estimaciones del Banco de España y CaixaBank citadas en el video, ¿a cuánto asciende el déficit actual de viviendas?",
+                "options": [
+                    "Unas 750.000 viviendas",
+                    "Aproximadamente 50.000 viviendas",
+                    "Alrededor de 5 millones de viviendas",
+                    "Menos de 10.000 viviendas"
+                ],
+                "answerIndex": 0,
+                "explanation": "El informe señala textualmente que el Banco de España y CaixaBank estiman un déficit de unas 750.000 viviendas debido a la falta de mano de obra, pocas empresas y altos costes de materiales."
+            },
+            {
+                "id": "q4",
+                "question": "¿Qué porcentaje del total representan las viviendas sociales en España en comparación con la media de la Unión Europea?",
+                "options": [
+                    "Apenas un 2%, frente al 7% de media en la Unión Europea",
+                    "Un 15%, superando ampliamente la media europea",
+                    "Un 30%, situándose como líder en vivienda protegida",
+                    "No existen viviendas de protección social en España"
+                ],
+                "answerIndex": 0,
+                "explanation": "Las viviendas sociales en España representan tan solo el 2% del parque inmobiliario, una cifra muy reducida frente al promedio del 7% en los países de la Unión Europea."
+            },
+            {
+                "id": "q5",
+                "question": "¿Cuál es la consecuencia más grave de la subida del alquiler para los jóvenes españoles según el reportaje?",
+                "options": [
+                    "El alquiler medio alcanza el 98,7% del salario medio de un joven, retrasando la emancipación más allá de los 30 años",
+                    "Los jóvenes solo necesitan destinar el 15% de sus ingresos al pago de un piso",
+                    "La edad media de independencia juvenil ha bajado a los 18 años",
+                    "El 85% de los menores de 30 años compra vivienda propia al terminar sus estudios"
+                ],
+                "answerIndex": 0,
+                "explanation": "El alquiler medio (1.176 euros mensuales) equivale al 98,7% del sueldo medio juvenil, lo que duplica el riesgo de pobreza y hace que la edad media para independizarse supere los 30 años."
+            }
+        ],
+        "cloze": [
+            {
+                "text": "Miles de personas protestan por una crisis que se ha convertido en una de las principales preocupaciones de los españoles: la [vivienda].",
+                "english": "Thousands of people protest over a crisis that has become one of the main concerns of Spaniards: housing.",
+                "options": ["vivienda", "salud", "justicia", "educación"]
+            },
+            {
+                "text": "Hemos visto a muchas personas en las manifestaciones en Madrid repetir algo: tener un techo es un [derecho].",
+                "english": "We have seen many people in the demonstrations in Madrid repeat something: having a roof over one's head is a right.",
+                "options": ["derecho", "regalo", "negocio", "premio"],
+                "note": "tener un techo es un derecho: Common Spanish social slogan highlighting shelter as a fundamental constitutional right."
+            },
+            {
+                "text": "Alrededor de 3,4 millones de personas viven en condiciones de [hacinamiento] y otros 3 millones están en peligro de desalojo.",
+                "english": "Around 3.4 million people live in overcrowded conditions and another 3 million are at risk of eviction.",
+                "options": ["hacinamiento", "comodidad", "aislamiento", "privacidad"],
+                "note": "hacinamiento: Overcrowding (excessive number of people residing in inadequate living space)."
+            },
+            {
+                "text": "En España esta crisis se vivió como la explosión de la [burbuja] inmobiliaria que se había inflado en la década anterior.",
+                "english": "In Spain this crisis was experienced as the burst of the real estate bubble that had inflated in the preceding decade.",
+                "options": ["burbuja", "deuda", "bolsa", "rueda"],
+                "note": "burbuja inmobiliaria: Housing / real estate bubble."
+            },
+            {
+                "text": "En el caso español, evidentemente el crédito se salió de [madre], completamente.",
+                "english": "In the Spanish case, credit obviously got completely out of hand.",
+                "options": ["madre", "control", "rumbo", "foco"],
+                "note": "salirse de madre: Idiomatic Spanish phrase meaning to get completely out of hand / out of control."
+            },
+            {
+                "text": "Pero entonces llegó la crisis financiera, explotó esa burbuja y los precios se [desplomaron] hasta un 40%.",
+                "english": "But then the financial crisis arrived, that bubble burst, and prices plummeted by up to 40%.",
+                "options": ["desplomaron", "mantuvieron", "duplicaron", "elevaron"]
+            },
+            {
+                "text": "Hoy, el Banco de España y CaixaBank estiman que existe un [déficit] de unas 750.000 viviendas.",
+                "english": "Today, the Bank of Spain and CaixaBank estimate that there is a shortfall of around 750,000 homes.",
+                "options": ["déficit", "exceso", "superávit", "aumento"]
+            },
+            {
+                "text": "Hay pocas empresas, no hay [mano] de obra, los costes de materiales son muy caros.",
+                "english": "There are few companies, there is no workforce, material costs are very expensive.",
+                "options": ["mano", "falta", "tipo", "bolsa"],
+                "note": "mano de obra: Manual workforce / labour supply."
+            },
+            {
+                "text": "En 10 años el arriendo aumentó más de un 90%, es decir, hoy casi cuesta el [doble].",
+                "english": "In 10 years rent increased by more than 90%, which means today it costs almost double.",
+                "options": ["doble", "triple", "tercio", "mitad"]
+            },
+            {
+                "text": "Para que te hagas una idea, el salario medio se ha incrementado en un 27,8% - las [cuentas] no dan.",
+                "english": "To give you an idea, the average salary has increased by 27.8% - the numbers just don't add up.",
+                "options": ["cuentas", "cifras", "tablas", "sumas"],
+                "note": "las cuentas no dan: Spanish idiom meaning the math doesn't add up / expenses exceed income."
+            },
+            {
+                "text": "La edad de [emancipación] en España ha roto récord histórico: la edad media para independizarse supera hoy los 30 años.",
+                "english": "The age of emancipation in Spain has broken a historic record: the average age to become independent now exceeds 30.",
+                "options": ["emancipación", "jubilación", "votación", "graduación"],
+                "note": "emancipación: Moving out of the parental household into independent living."
+            }
+        ],
+        "paragraphs": [
+            {
+                "spanish": "¿Qué hacen estas cientos de carpas en la céntrica Puerta del Sol en Madrid? Miles de personas protestan por una crisis que se ha convertido en una de las principales preocupaciones de los españoles: la vivienda. Así que exigen al gobierno progresista de Pedro Sánchez una solución. Ojo: está claro que España no es el único país con problemas de vivienda en el mundo, pero aquí te cuento cómo pasó España del 'boom del ladrillo' a no tener suficiente vivienda accesible para su población.",
+                "english": "What are these hundreds of tents doing in the central Puerta del Sol in Madrid? Thousands of people are protesting over a crisis that has become one of the main concerns of Spaniards: housing. So they demand a solution from the government. Be aware: Spain is certainly not the only country in the world facing housing issues, but here I'll tell you how Spain went from the 'construction boom' to not having enough affordable housing for its people."
+            },
+            {
+                "spanish": "Hemos visto a muchas personas en las manifestaciones en Madrid repetir algo: tener un techo es un derecho. Y es algo que en España se ha vuelto impagable para millones de personas. Te muestro algunos datos. Una encuesta de la Fundación FOESSA, que estudia temas sociales en España, reveló que una de cada 4 personas en el país tenía dificultades para acceder y mantener una vivienda en 2024. Alrededor de 3,4 millones de personas viven en condiciones de hacinamiento y otros 3 millones están en peligro de desalojo.",
+                "english": "We have seen many people at the demonstrations in Madrid repeating something: having a roof is a right. And that is something that in Spain has become unaffordable for millions. Here is some data: A survey by the FOESSA Foundation revealed that 1 in 4 people in the country had difficulties accessing and keeping housing in 2024. Around 3.4 million live in overcrowded conditions and another 3 million face the threat of eviction."
+            },
+            {
+                "spanish": "Así como le pasó a Maricarmen, la anciana de 87 años que fue desalojada por la policía ante las cámaras del mundo y que se ha convertido en el rostro de esta crisis. El mismo estudio dice que una quinta parte de los hogares de menor renta en España dedica hoy más del 70% de sus ingresos al pago del alquiler. Y esto es un aumento del 50% de lo que tenía que pagar en 2007. Pero ¿entonces qué pasó desde ese año?",
+                "english": "Just as happened to Maricarmen, the 87-year-old woman evicted by police before the world's cameras, who became the face of this crisis. The same study indicates that one-fifth of lower-income households in Spain today dedicate over 70% of their earnings to rent payments—a 50% jump compared to 2007. But what happened since then?"
+            },
+            {
+                "spanish": "Recordemos que en 2008 el mundo se enfrentó a una de las peores crisis financieras. En España esta crisis se vivió como la explosión de la burbuja inmobiliaria que se había inflado en la década anterior. Durante el llamado 'boom del ladrillo' se construyó a un ritmo sin precedentes, hasta 5 millones de viviendas entre 1997 y 2007. Como el país había adoptado el euro, se beneficiaba de tasas de interés muy bajas y era muy fácil obtener una hipoteca, con mucha especulación. El crédito se salió de madre: superó el PIB. Pero entonces llegó la crisis, los precios se desplomaron hasta un 40% y sumió al país en una recesión hasta 2014.",
+                "english": "Let's remember that in 2008 the world faced one of its worst financial crises. In Spain this was experienced as the bursting of the housing bubble inflated in the previous decade. During the 'construction boom' up to 5 million homes were built between 1997 and 2007. Having adopted the euro, Spain enjoyed low interest rates, easy mortgages, and massive speculation. Credit spiraled completely out of hand, exceeding GDP. Then the crash hit: prices plunged up to 40%, plunging Spain into recession until 2014."
+            },
+            {
+                "spanish": "Desde entonces los niveles de construcción no han vuelto a esos números. Hoy el Banco de España y CaixaBank estiman que existe un déficit de unas 750.000 viviendas. Hay pocas empresas, falta mano de obra, los costes de materiales son muy caros y las licencias muy complejas. Además, hay casi 4 millones de viviendas vacías, muchas en pueblos y ciudades pequeñas, mientras la población creció en 1,2 millones de hogares. A esto se suma el auge de las viviendas de alquiler turístico en ciudades como Barcelona o Málaga, y que las viviendas sociales representan solo un 2%, frente al 7% de media europea.",
+                "english": "Since then construction has never returned to those levels. Today the Bank of Spain and CaixaBank estimate a deficit of some 750,000 homes. There are few firms, labor shortages, high material costs, and bureaucratic licensing. Moreover, nearly 4 million homes sit vacant, many in small towns, while population growth added 1.2 million households. Tourist rentals boom in cities like Barcelona or Málaga, while social housing represents merely 2%, versus the 7% European average."
+            },
+            {
+                "spanish": "En 10 años el arriendo aumentó más del 90%, casi el doble, mientras el salario medio solo creció un 27,8%: las cuentas no dan. El sector más afectado son los jóvenes: el precio medio del alquiler (1.176 euros) equivale al 98,7% del salario medio juvenil. Casi la mitad de los hogares jóvenes que alquilan están sobreendeudados. Por eso la edad media de emancipación ha roto récord histórico y supera hoy los 30 años.",
+                "english": "Over 10 years rents surged over 90%—almost doubling—while average wages rose only 27.8%: the numbers don't add up. Young people bear the brunt: average rent (1,176 euros) equals 98.7% of the average young person's wage. Nearly half of young renting households are over-indebted. Consequently, the average emancipation age has broken records, now exceeding 30 years."
+            }
+        ]
+    },
+    {
+        "id": "panama-canal-ascensores-bbc",
+        "title": "Cómo funcionan los «ascensores de agua» del Canal de Panamá",
+        "source": "BBC News Mundo",
+        "youtubeId": "4QA0xUu_x3c",
+        "level": "B1",
+        "duration": "6:06",
+        "topic": "Geografía y Comercio",
+        "origin": "Panama",
+        "description": "Explicación técnica y medioambiental de BBC News Mundo sobre las esclusas del Canal de Panamá, la navegación por el lago Gatún y el impacto de la sequía de El Niño.",
+        "questions": [
+            {
+                "id": "q1",
+                "question": "¿Cuál es la principal amenaza que pone en riesgo el funcionamiento del Canal de Panamá según el video?",
+                "options": [
+                    "La escasez de agua dulce provocada por el cambio climático y el fenómeno de El Niño",
+                    "El abandono de las rutas comerciales marítimas por parte de las navieras",
+                    "El desbordamiento incontrolado de los ríos que inundó las esclusas",
+                    "La competencia de un canal ferroviario de alta velocidad en Colombia"
+                ],
+                "answerIndex": 0,
+                "explanation": "El informe explica que el canal se está secando debido a la falta de precipitaciones y a la intensidad de El Niño, ya que todo el sistema opera exclusivamente con agua dulce."
+            },
+            {
+                "id": "q2",
+                "question": "¿Por qué el Canal de Panamá necesita millones de litros de agua dulce para trasladar los buques?",
+                "options": [
+                    "Porque las esclusas funcionan como una escalera hidráulica que eleva los barcos 26 metros hasta el lago Gatún",
+                    "Porque los motores de los barcos necesitan agua dulce para refrigerarse durante la travesía",
+                    "Porque el agua salada disolvería el concreto de las cámaras de navegación",
+                    "Porque la corriente marina entre los dos océanos corre en sentido contrario"
+                ],
+                "answerIndex": 0,
+                "explanation": "Para superar la diferencia de altura con el lago Gatún (26 metros sobre el nivel del mar), las esclusas se llenan por gravedad con unos 200 millones de litros de agua por esclusaje."
+            },
+            {
+                "id": "q3",
+                "question": "¿Qué peso tiene el Canal de Panamá en el comercio internacional y en la economía panameña?",
+                "options": [
+                    "Por sus esclusas pasa el 6% del comercio marítimo mundial y aporta cerca del 10% del presupuesto nacional",
+                    "Representa el 50% de todo el comercio marítimo del planeta",
+                    "Es una vía secundaria que solo transporta pesca local entre océanos",
+                    "Apenas genera ingresos para el Estado panameño al ser de administración internacional"
+                ],
+                "answerIndex": 0,
+                "explanation": "El canal canaliza el 6% del comercio mundial, representa hasta una quinta parte de la economía panameña y aporta más de 3.000 millones de dólares anuales al Estado."
+            },
+            {
+                "id": "q4",
+                "question": "Además del tráfico de buques, ¿qué otro uso primordial e indispensable tiene el agua de los lagos del canal?",
+                "options": [
+                    "Abastece de agua potable a cerca de dos millones de personas en Panamá",
+                    "Se utiliza para la irrigación masiva de cultivos de piña en la selva",
+                    "Se embotella para su exportación como agua mineral a Europa",
+                    "Alimenta parques acuáticos y complejos hoteleros en las esclusas"
+                ],
+                "answerIndex": 0,
+                "explanation": "Los lagos del canal suministran agua potable a casi dos millones de ciudadanos panameños, lo cual es la máxima prioridad en tiempos de escasez."
+            },
+            {
+                "id": "q5",
+                "question": "¿Qué proyecto a largo plazo prepara la Autoridad del Canal para garantizar 50 años de seguridad hídrica?",
+                "options": [
+                    "Construir un nuevo reservorio mediante el represamiento del río Indio en Colón",
+                    "Construir una planta desalinizadora gigante en el océano Atlántico",
+                    "Excavar un túnel subterráneo directo entre el Pacífico y el Caribe",
+                    "Cerrar definitivamente el canal durante los meses de verano"
+                ],
+                "answerIndex": 0,
+                "explanation": "La Autoridad del Canal proyecta represer el río Indio en Colón a partir de 2027 para crear un nuevo embalse hídrico capaz de garantizar 50 años de suministro."
+            }
+        ],
+        "cloze": [
+            {
+                "text": "El Canal de Panamá enfrenta un enorme desafío: se está [secando].",
+                "english": "The Panama Canal faces an enormous challenge: it is drying up.",
+                "options": ["secando", "hundiendo", "cerrando", "cayendo"]
+            },
+            {
+                "text": "Esto ha obligado a reducir el [tránsito] de buques por la vía interoceánica más famosa de América.",
+                "english": "This has forced a reduction in ship traffic through the most famous interoceanic waterway in the Americas.",
+                "options": ["tránsito", "precio", "peso", "tiempo"]
+            },
+            {
+                "text": "Pero, para que esto suceda, hay que salvar las diferencias de [altura].",
+                "english": "But for this to happen, differences in height must be overcome.",
+                "options": ["altura", "tamaño", "peso", "coste"],
+                "note": "salvar diferencias de altura: Overcoming / bridging elevation differences."
+            },
+            {
+                "text": "Y esto no es más que una especie de [escalera] que funciona con millones y millones de litros de agua dulce.",
+                "english": "And this is nothing more than a kind of staircase operating with millions of liters of freshwater.",
+                "options": ["escalera", "puente", "carretera", "puerta"]
+            },
+            {
+                "text": "Para el proceso de [esclusaje] se usan cerca de 200 millones de litros de agua.",
+                "english": "For the lockage process, nearly 200 million liters of water are used.",
+                "options": ["esclusaje", "bombeo", "dragado", "anclaje"],
+                "note": "esclusaje: The operation of passing vessels through locks."
+            },
+            {
+                "text": "Estas cámaras de concreto se llenan por [gravedad], o sea, sin bombeo.",
+                "english": "These concrete chambers fill by gravity, that is, without pumping.",
+                "options": ["gravedad", "presión", "calor", "vapor"],
+                "note": "llenarse por gravedad: Filling naturally by gravitational water flow."
+            },
+            {
+                "text": "El 6% del comercio [mundial] pasa por estas esclusas.",
+                "english": "6% of world trade passes through these locks.",
+                "options": ["mundial", "aéreo", "local", "fluvial"]
+            },
+            {
+                "text": "Algunos barcos permanecieron esperando durante semanas y las navieras llegaron a pagar millones de dólares para conseguir un [cupo].",
+                "english": "Some ships waited for weeks and shipping lines paid millions of dollars to secure a transit slot.",
+                "options": ["cupo", "barco", "billete", "permiso"],
+                "note": "cupo: Transit slot / reserved passage quota."
+            }
+        ],
+        "paragraphs": [
+            {
+                "spanish": "El Canal de Panamá enfrenta un enorme desafío: se está secando. La falta de lluvias que potencia el cambio climático este año es aún más grave por el fenómeno de El Niño. Esto ha obligado a reducir el tránsito de buques por la vía interoceánica más famosa de América, algo que podría afectar al comercio mundial y a nuestros bolsillos.",
+                "english": "The Panama Canal faces an enormous challenge: it is drying up. The rain deficit intensified by climate change is even more acute this year due to El Niño. This has forced authorities to curb ship traffic through the most famous interoceanic crossing in the Americas, threatening global trade."
+            },
+            {
+                "spanish": "El Canal conecta el Océano Pacífico con el Atlántico. Para que los buques crucen, hay que salvar las diferencias de altura: entran a una esclusa, una escalera de agua dulce que eleva y desciende las naves para navegar el lago Gatún, situado 26 metros sobre el nivel del mar.",
+                "english": "The Canal connects the Pacific and Atlantic Oceans. For ships to cross, elevation differences must be negotiated: they enter locks, giant freshwater water-stairs that lift and lower vessels across Gatun Lake, situated 26 meters above sea level."
+            },
+            {
+                "spanish": "Para el proceso de esclusaje se usan cerca de 200 millones de litros de agua dulce. Las cámaras de concreto se llenan por gravedad, sin bombeo, y mientras una parte del agua se reutiliza, otra termina en el mar y se gasta. Por estas esclusas pasa el 6% del comercio marítimo mundial, generando para Panamá más de 3.000 millones de dólares anuales.",
+                "english": "Around 200 million liters of freshwater are consumed per lock operation. The concrete chambers fill naturally by gravity without pumps; while some is recycled, the rest discharges into the sea. 6% of global maritime commerce traverses these locks, providing Panama over $3 billion annually."
+            },
+            {
+                "spanish": "Además del tráfico comercial, los lagos del Canal abastecen de agua potable a cerca de dos millones de personas en el país, lo que constituye la máxima prioridad en tiempos de escasez. Para asegurar 50 años más de seguridad hídrica, se proyecta represer el río Indio a partir de 2027.",
+                "english": "Beyond commerce, canal lakes provide drinking water to nearly two million citizens, which remains the overriding priority in drought periods. To secure 50 more years of water reliability, damming the Indio River is planned starting in 2027."
+            }
+        ]
+    },
+    {
+        "id": "cuba-paradoja-alimentaria-bbc",
+        "title": "Por qué Cuba no produce suficiente comida y depende del exterior",
+        "source": "BBC News Mundo",
+        "youtubeId": "fChADqGk5O8",
+        "level": "B1",
+        "duration": "6:23",
+        "topic": "Economía y Sociedad",
+        "origin": "Cuba",
+        "description": "Reportaje de BBC News Mundo sobre la paradoja agrícola cubana, la historia de la caña de azúcar, el sistema de Acopio, el Período Especial y la crisis alimentaria actual.",
+        "questions": [
+            {
+                "id": "q1",
+                "question": "¿Cuál es la gran paradoja geográfica y productiva de Cuba destacada al comienzo del reportaje?",
+                "options": [
+                    "Que siendo la mayor isla del Caribe con tierra fértil y clima óptimo, importa cerca del 80% de los alimentos que consume",
+                    "Que es el mayor exportador de cereales de América Latina pero carece de agua potable",
+                    "Que su población solo consume alimentos importados de Europa por preferencia cultural",
+                    "Que no posee costas marítimas ni acceso a recursos pesqueros"
+                ],
+                "answerIndex": 0,
+                "explanation": "La paradoja reside en que, contando con más de 100.000 km², tierra fértil, clima idóneo y costas, la isla no produce lo suficiente para alimentar a sus 9 millones de habitantes e importa el 80% de su comida."
+            },
+            {
+                "id": "q2",
+                "question": "Antes de 1959, ¿cuál era el cultivo estrella y motor principal de la economía cubana?",
+                "options": [
+                    "La caña de azúcar",
+                    "El trigo sarraceno",
+                    "El café arábica de montaña",
+                    "La soja industrializada"
+                ],
+                "answerIndex": 0,
+                "explanation": "Cuba fue el primer productor y exportador mundial de azúcar durante el siglo XIX y la primera mitad del siglo XX, lo que generaba divisas pero creaba dependencia de monocultivo."
+            },
+            {
+                "id": "q3",
+                "question": "¿Qué papel desempeña Acopio en la agricultura cubana y por qué es criticado por analistas?",
+                "options": [
+                    "Es la empresa estatal que compra obligatoriamente cosechas a precios fijos muy bajos, desincentivando al campesino",
+                    "Es una cooperativa privada internacional que exporta café a Estados Unidos",
+                    "Es un banco de semillas comunitarias financiado por Naciones Unidas",
+                    "Es el sindicato de pescadores artesanales del oriente de la isla"
+                ],
+                "answerIndex": 0,
+                "explanation": "Acopio compra cosechas a precios estatales tasados que con frecuencia no cubren los costes reales de producción, lo que desalienta la inversión de los agricultores."
+            },
+            {
+                "id": "q4",
+                "question": "¿Qué consecuencias inmediatas provocó la caída de la Unión Soviética en 1991 en la isla?",
+                "options": [
+                    "El inicio del Período Especial: pérdida súbita del comprador de azúcar y del suministro de petróleo, fertilizantes y alimentos",
+                    "El crecimiento récord de la producción ganadera y lechera nacional",
+                    "La firma inmediata de un tratado de libre comercio con Estados Unidos",
+                    "La industrialización tecnológica acelerada del campo cubano"
+                ],
+                "answerIndex": 0,
+                "explanation": "Con el colapso soviético en 1991, Cuba perdió a su principal socio, quedándose sin petróleo, pesticidas, fertilizantes ni alimentos subsidiados, lo que hundió la producción agrícola."
+            },
+            {
+                "id": "q5",
+                "question": "En la actualidad, ¿cómo influye la crisis energética y de combustible en el desabastecimiento alimentario?",
+                "options": [
+                    "Los continuos apagones paralizan las bombas de riego, las cámaras de refrigeración y el transporte de cosechas",
+                    "El exceso de electricidad satura las plantas procesadoras de leche",
+                    "No tiene ninguna influencia porque la agricultura cubana es completamente manual",
+                    "Ha permitido sustituir el transporte tradicional por vehículos solares"
+                ],
+                "answerIndex": 0,
+                "explanation": "La grave crisis de combustible y los apagones diarios impiden regar los campos con motobombas, paralizan la cadena de frío para conservar alimentos y detienen el transporte hacia los mercados."
+            }
+        ],
+        "cloze": [
+            {
+                "text": "Un país con abundante tierra [fértil], buen clima y, como isla al fin, rodeada de mar.",
+                "english": "A country with abundant fertile land, good climate and, being an island after all, surrounded by sea.",
+                "options": ["fértil", "árida", "seca", "fría"]
+            },
+            {
+                "text": "Cuba importa cerca del 80% de los [alimentos] que consume.",
+                "english": "Cuba imports close to 80% of the food it consumes.",
+                "options": ["alimentos", "metales", "libros", "coches"]
+            },
+            {
+                "text": "En apenas cinco años, la producción de algunos alimentos básicos prácticamente [colapsó].",
+                "english": "In barely five years, production of several staple foods practically collapsed.",
+                "options": ["colapsó", "mejoró", "creció", "duplicó"]
+            },
+            {
+                "text": "Y es que Cuba fue nada más y nada menos que el primer productor y exportador de [azúcar] del mundo.",
+                "english": "Cuba was nothing less than the world's leading producer and exporter of sugar.",
+                "options": ["azúcar", "café", "tabaco", "maíz"]
+            },
+            {
+                "text": "El nuevo régimen impulsó una reforma [agraria] sin precedentes en la que expropió tierras.",
+                "english": "The new regime drove an unprecedented agrarian reform in which it expropriated lands.",
+                "options": ["agraria", "urbana", "fiscal", "bancaria"],
+                "note": "reforma agraria: Farmland redistribution policy enacted after the 1959 revolution."
+            },
+            {
+                "text": "Hoy en día, el Estado controla gran parte del proceso agrícola a través de [Acopio].",
+                "english": "Nowadays, the state controls a major part of the agricultural process through Acopio.",
+                "options": ["Acopio", "Aduana", "Hacienda", "Sanidad"],
+                "note": "Acopio: State agency that purchases and distributes agricultural crops in Cuba."
+            },
+            {
+                "text": "Fue en esta época cuando mejor funcionó la llamada [libreta] de abastecimiento con la que el Estado distribuye alimentos subvencionados.",
+                "english": "It was during this period that the ration book, through which the state distributes subsidized food, worked best.",
+                "options": ["libreta", "tarjeta", "bolsa", "moneda"],
+                "note": "libreta de abastecimiento: The subsidized food ration book system created in 1962."
+            },
+            {
+                "text": "Y la grave crisis energética que vive la isla ha provocado [apagones] que paralizan el riego y la refrigeración.",
+                "english": "And the acute energy crisis affecting the island has caused blackouts that paralyze irrigation and refrigeration.",
+                "options": ["apagones", "vientos", "lluvias", "fuegos"],
+                "note": "apagones: Power outages / blackouts."
+            }
+        ],
+        "paragraphs": [
+            {
+                "spanish": "Vengo a hablarte de una de las más grandes paradojas de Cuba. Hablamos de la isla más grande del Caribe, con más de 100 mil kilómetros cuadrados: un país con abundante tierra fértil, buen clima y rodeada de mar. Sin embargo, no produce lo suficiente para alimentar a su población de 9 millones de personas e importa cerca del 80% de los alimentos que consume.",
+                "english": "I'm here to tell you about one of Cuba's greatest paradoxes: the largest island in the Caribbean, spanning over 100,000 square kilometers with abundant fertile land, good climate, and surrounding sea. Yet it fails to feed its 9 million citizens, importing roughly 80% of what it consumes."
+            },
+            {
+                "spanish": "En apenas cinco años, la producción de alimentos básicos colapsó: la carne de cerdo cayó un 95%, el arroz un 87%, los frijoles un 70% y la leche un 58%. Una parte del problema es histórico: Cuba fue el primer exportador mundial de azúcar, lo que financiaba importar comida desde Estados Unidos, creando una gran dependencia exterior.",
+                "english": "In just five years, staple food output plummeted: pork fell 95%, rice 87%, beans 70%, and milk 58%. Part of the issue is historical: Cuba was the globe's top sugar exporter, funding food imports from the US and creating severe external dependence."
+            },
+            {
+                "spanish": "Tras el triunfo de la Revolución en 1959, la reforma agraria puso la industria en manos del Estado. Hoy Acopio compra cosechas a precios muy bajos que desincentivan a los campesinos. Durante décadas la Unión Soviética compraba azúcar por encima del precio de mercado a cambio de petróleo, pesticidas y fertilizantes, hasta su colapso en 1991, que desató el devastador Período Especial.",
+                "english": "Following the 1959 Revolution, agrarian reform placed farming under state control. Today, state purchaser Acopio buys crops at depressed prices that discourage farmers. For decades the USSR bought sugar above market rates in exchange for oil and fertilizer, until its 1991 fall sparked the grueling Special Period."
+            },
+            {
+                "spanish": "Hoy la agricultura sobrevive con recursos mínimos. El embargo estadounidense dificulta el acceso a financiamiento y maquinaria. Además, la grave crisis energética provoca constantes apagones que paralizan el bombeo de agua para riego y la refrigeración de alimentos, mientras la emigración reduce la mano de obra en el campo.",
+                "english": "Today Cuban agriculture survives on minimal resources. The US embargo complicates access to loans and machinery. Crucially, the severe power crisis brings persistent blackouts that paralyze irrigation pumps and refrigeration, while emigration drains rural labor."
+            }
+        ]
+    }
+]
+
+# Write to content/es-es/videos.json and content/es-latam/videos.json
+es_es_path = ROOT / "content" / "es-es" / "videos.json"
+es_latam_path = ROOT / "content" / "es-latam" / "videos.json"
+
+with open(es_es_path, "w", encoding="utf-8") as f:
+    json.dump({"videos": VIDEOS_ES_ES}, f, ensure_ascii=False, indent=2)
+print("Saved:", es_es_path)
+
+with open(es_latam_path, "w", encoding="utf-8") as f:
+    json.dump({"videos": VIDEOS_ES_ES}, f, ensure_ascii=False, indent=2)
+print("Saved:", es_latam_path)

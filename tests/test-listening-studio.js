@@ -102,7 +102,7 @@ const createMockContainer = () => {
 
     // 4. Test Workshop.js registration
     const workshopCode = fs.readFileSync(path.join(__dirname, '../engine/workshop.js'), 'utf8');
-    assert(workshopCode.includes("title: 'Listening Studio'"), "Workshop must register 'Listening Studio'");
+    assert(workshopCode.includes("title: 'Listening Practice'") || workshopCode.includes("title: 'Listening Studio'"), "Workshop must register 'Listening Practice'");
     assert(workshopCode.includes("category: 'studios'"), "Workshop listening driller must have category 'studios'");
     assert(workshopCode.includes("listening: typeof ListeningStudio !== 'undefined' ? ListeningStudio"), "Workshop must map listening to ListeningStudio");
     assert(workshopCode.includes("if (id === 'listening-driller' || id === 'listening-decoding')"), "Workshop must transparently route listening-driller");

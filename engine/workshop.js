@@ -159,7 +159,7 @@ const Workshop = (function () {
             id: 'listening',
             icon: 'listening',
             title: 'Listening Practice',
-            sub: () => `Decoding drills, song lyrics, and CEFR listening comprehension.`,
+            sub: () => `Decoding drills, song lyrics, authentic video journalism, and CEFR listening comprehension.`,
             containerId: 'listening-studio-root',
             category: 'studios'
         },
@@ -373,6 +373,7 @@ const Workshop = (function () {
             speaking: typeof SpeakingDriller !== 'undefined' ? SpeakingDriller : null,
             writing: typeof WritingDriller !== 'undefined' ? WritingDriller : null,
             music: typeof MusicDriller !== 'undefined' ? MusicDriller : null,
+            video: typeof VideoDriller !== 'undefined' ? VideoDriller : null,
             'hu-verb-studio': typeof HuVerbStudio !== 'undefined' ? HuVerbStudio : null,
             'hu-cultural-exam': typeof HuCulturalExam !== 'undefined' ? HuCulturalExam : null,
             'es-ccse-exam': typeof CcseExam !== 'undefined' ? CcseExam : null,

@@ -9,6 +9,26 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed work (2026-10-12)
 
+- **"Learn from Video" in Listening Practice with Authentic Verified Catalogs (Done 2026-10-12).**
+  - **Authentic Video Listening Architecture:**
+    - Inspired by Conjuguemos video listening and user-supplied BBC Mundo investigative journalism (`wNJ0RT7enm4`), implemented `engine/drills/video.js` (`VideoDriller`).
+    - Integrated as the 4th tab inside Listening Practice (`engine/drills/listening-studio.js`) alongside Listening Comprehension, Decoding Drills, and Learn from Music.
+    - Features three specialized learning modes:
+      1. **Comprehension Quiz**: Multi-question assessment testing understanding of core reportage facts, arguments, causes, and figures with instant answer feedback and pedagogical explanations.
+      2. **Fill-in-the-Blank (Listening Cloze)**: Aural transcription with Easy (roll-down `<select>` choices) and Hard (typed input) options, Check All, Reveal, and Reset actions.
+      3. **Transcript & Reader Lookup**: Full authentic unredacted transcript formatted into thematic paragraphs, with interactive word lookup delegating to `Reader.showWord()` / Parlour Lexicon, optional bilingual line translations, and lexical footnotes.
+    - Embedded responsive YouTube player with direct fallback link ("Open on YouTube ↗") and live score readout.
+  - **100% Genuine, Non-Hallucinated Content Catalogs (`content/es-es/videos.json` & `content/es-latam/videos.json`):**
+    - Extracted word-for-word human-verified official subtitles directly from YouTube:
+      - *Cómo pasó España del boom inmobiliario a una crisis de vivienda* (`wNJ0RT7enm4`, BBC News Mundo · Spain / Housing & Economy, B1).
+      - *Cómo funcionan los «ascensores de agua» del Canal de Panamá* (`4QA0xUu_x3c`, BBC News Mundo · Panama / Geography & Commerce, B1).
+      - *Por qué Cuba no produce suficiente comida y depende del exterior* (`fChADqGk5O8`, BBC News Mundo · Cuba / Agriculture & Society, B1).
+    - Every quiz question, cloze blank, and transcript sentence is strictly grounded in the official human transcript with zero hallucination.
+  - **App Wiring & Test Verification:**
+    - Registered `engine/drills/video.js` in `index.html` and mapped `video: VideoDriller` in `engine/workshop.js`.
+    - Added dedicated CSS styles in `styles/workshop.css`.
+    - Created comprehensive regression test suite in `tests/drills/test-video-driller.js` (all tests passing) and verified `validate-content.py --changed` (100% valid schema match).
+
 - **Unified Lexicon Reader Popup for "Learn from Music" & Hungarian Morphology Disambiguation (Done 2026-10-12).**
   - **Learn from Music Word Lookup & Popups:**
     - Unified word tap resolution in `engine/drills/music.js`: lyrics in both "Understand" and "Exercise" modes now render tokens using `Reader.makeClickable()`, delegating taps directly to Parlour's standard `Reader.showWord()` popup.

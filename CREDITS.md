@@ -1,4 +1,4 @@
-﻿# Parlour — Credits & Attributions
+# Parlour — Credits & Attributions
 
 Parlour is a language-learning application for Spanish and Hungarian.  
 This file records the third-party data sources used in the application, along with their licences and required attributions.
