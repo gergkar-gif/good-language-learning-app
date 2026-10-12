@@ -85,6 +85,9 @@ const WritingDriller = (function () {
 
     async function _loadExchanges() {
         const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        if (typeof TaughtWords !== 'undefined' && TaughtWords.load) {
+            await TaughtWords.load().catch(() => {});
+        }
         if (_exchanges && _exchanges.length > 0 && _exchangesLoadedLang === lang) return;
         try {
             const data = await Content.json(Lang.content('writing-exchanges.json'));
@@ -978,11 +981,19 @@ const WritingDriller = (function () {
             </div>
         ` : '';
 
-        const exchangesHtml = filteredExchanges.length ? filteredExchanges.map(s => `
+        const exchangesHtml = filteredExchanges.length ? filteredExchanges.map(s => {
+            const readiness = (typeof RecommendationEngine !== 'undefined' && RecommendationEngine.scenarioReadinessSync)
+                ? RecommendationEngine.scenarioReadinessSync(s)
+                : { percentage: 100, isReady: true };
+            const readinessClass = readiness.isReady ? 'is-ready' : 'is-developing';
+            const readinessPill = `<span class="sp-readiness-pill ${readinessClass}">${readiness.percentage}% words learned</span>`;
+
+            return `
             <div class="wk-card sp-scenario-card wr-exchange-card" data-select-exchange="${_esc(s.id)}" role="button" tabindex="0">
                 <div class="wr-exchange-card-header">
                     <span class="sp-level-pill">${_esc(s.cefrLevel || 'A1')}</span>
                     <span class="sp-turns-pill">${(s.turns || []).length} messages</span>
+                    ${readinessPill}
                 </div>
                 <h3 class="wk-card-title">${_esc(_scenarioText(s, 'title', s) || 'Written Exchange')}</h3>
                 <p class="wr-exchange-roleplay-tag">
@@ -991,7 +1002,8 @@ const WritingDriller = (function () {
                 <p class="wk-card-sub">${_esc(_scenarioText(s, 'situation', s) || '')}</p>
                 ${s.targetCompetency ? `<div class="wr-exchange-comp-tag"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> <span>${_esc(s.targetCompetency)}</span></div>` : ''}
             </div>
-        `).join('') : `
+            `;
+        }).join('') : `
             <div class="sp-empty-state">
                 <p>No written exchanges found for this level yet.</p>
             </div>

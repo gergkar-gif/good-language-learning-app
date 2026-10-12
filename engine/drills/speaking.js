@@ -165,6 +165,9 @@ const SpeakingDriller = (function () {
 
     async function _loadScenarios() {
         const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        if (typeof TaughtWords !== 'undefined' && TaughtWords.load) {
+            await TaughtWords.load().catch(() => {});
+        }
         if (_scenarios && _scenarios.length > 0 && _scenariosLoadedLang === lang) return;
         try {
             const data = await Content.json(Lang.content('conversation-scenarios.json'));
@@ -1597,11 +1600,19 @@ const SpeakingDriller = (function () {
             </div>
         ` : '';
 
-        const scenariosHtml = filteredScenarios.length ? filteredScenarios.map(s => `
+        const scenariosHtml = filteredScenarios.length ? filteredScenarios.map(s => {
+            const readiness = (typeof RecommendationEngine !== 'undefined' && RecommendationEngine.scenarioReadinessSync)
+                ? RecommendationEngine.scenarioReadinessSync(s)
+                : { percentage: 100, isReady: true };
+            const readinessClass = readiness.isReady ? 'is-ready' : 'is-developing';
+            const readinessPill = `<span class="sp-readiness-pill ${readinessClass}">${readiness.percentage}% words learned</span>`;
+
+            return `
             <div class="wk-card sp-scenario-card" data-select-scenario="${_esc(s.id)}" role="button" tabindex="0">
                 <div class="sp-scenario-card-header">
                     <span class="sp-level-pill">${_esc(s.cefrLevel || 'A1')}</span>
                     <span class="sp-turns-pill">${(s.turns || []).length} turns</span>
+                    ${readinessPill}
                 </div>
                 <h3 class="wk-card-title">${_esc(_scenarioText(s, 'title', s) || 'Scenario')}</h3>
                 <p class="sp-scenario-roleplay-tag">
@@ -1610,7 +1621,8 @@ const SpeakingDriller = (function () {
                 <p class="wk-card-sub">${_esc(_scenarioText(s, 'situation', s) || '')}</p>
                 ${s.targetCompetency ? `<div class="sp-scenario-comp-tag"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> <span>${_esc(s.targetCompetency)}</span></div>` : ''}
             </div>
-        `).join('') : `
+            `;
+        }).join('') : `
             <div class="sp-empty-state">
                 <p>No conversation scenarios found for this level yet.</p>
             </div>

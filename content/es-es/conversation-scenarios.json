@@ -16,9 +16,21 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can order food and drink in a café and ask for the bill",
-      "targetSkills": [],
+      "targetSkills": [
+        "ordering_food",
+        "social_interaction",
+        "numbers_and_prices"
+      ],
       "unitIds": [
         "unit.a1.11"
+      ],
+      "requiredLemmas": [
+        "café",
+        "agua",
+        "leche",
+        "cuenta",
+        "camarero",
+        "gracias"
       ],
       "turns": [
         {
@@ -117,9 +129,19 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can enquire about room availability and check into a hotel",
-      "targetSkills": [],
+      "targetSkills": [
+        "hotel_checkin",
+        "dates_and_duration",
+        "enquiring_services"
+      ],
       "unitIds": [
-        "unit.a1.26"
+        "unit.a1.08"
+      ],
+      "requiredLemmas": [
+        "habitación",
+        "noche",
+        "llave",
+        "gracias"
       ],
       "turns": [
         {
@@ -221,7 +243,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can ask for grocery items, quantities, and complete a store checkout",
-      "targetSkills": [],
+      "targetSkills": [
+        "shopping_food",
+        "asking_location",
+        "transactions_and_payment"
+      ],
       "unitIds": [
         "unit.a1.09",
         "unit.a1.10"
@@ -320,7 +346,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can explain simple health ailments and ask for over-the-counter medicine",
-      "targetSkills": [],
+      "targetSkills": [
+        "describing_symptoms",
+        "health_needs",
+        "following_instructions"
+      ],
       "unitIds": [
         "unit.a1.20",
         "unit.a1.21"
@@ -415,7 +445,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can ask for clothing sizes, colors, and ask for the fitting room",
-      "targetSkills": [],
+      "targetSkills": [
+        "shopping_clothes",
+        "describing_items",
+        "asking_assistance"
+      ],
       "unitIds": [
         "unit.a1.10",
         "unit.a1.03"
@@ -511,7 +545,9 @@
       },
       "targetCompetency": "I can introduce myself, state my name, origin, and exchange simple personal information",
       "targetSkills": [
-        "introductions"
+        "introductions",
+        "personal_info",
+        "social_exchange"
       ],
       "unitIds": [
         "unit.a1.01",
@@ -609,7 +645,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can state travel destinations, ask about trip duration, and pay taxi fares",
-      "targetSkills": [],
+      "targetSkills": [
+        "city_travel",
+        "asking_time",
+        "numbers_and_payment"
+      ],
       "unitIds": [
         "unit.a1.14",
         "unit.a1.15"
@@ -705,7 +745,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can request a table, order dishes from a menu, and ask for tableware",
-      "targetSkills": [],
+      "targetSkills": [
+        "restaurant_dining",
+        "food_ordering",
+        "polite_requests"
+      ],
       "unitIds": [
         "unit.a1.11",
         "unit.a1.14"
@@ -800,7 +844,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can buy a train ticket, enquire about schedules, and clarify journey details",
-      "targetSkills": [],
+      "targetSkills": [
+        "travel_arrangements",
+        "asking_timetable",
+        "transactional_clarification"
+      ],
       "unitIds": [
         "unit.a2.18",
         "unit.a2.01"
@@ -905,7 +953,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can ask for and understand directional guidance in a city",
-      "targetSkills": [],
+      "targetSkills": [
+        "asking_directions",
+        "spatial_orientation",
+        "polite_enquiry"
+      ],
       "unitIds": [
         "unit.a1.16",
         "unit.a2.23"
@@ -1007,7 +1059,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can propose plans, negotiate meeting times, and agree on weekend activities",
-      "targetSkills": [],
+      "targetSkills": [
+        "invitations_and_plans",
+        "negotiating_time",
+        "social_conversation"
+      ],
       "unitIds": [
         "unit.a2.08",
         "unit.a2.16"
@@ -1103,7 +1159,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can explain a problem in hotel accommodation and request a solution or room change",
-      "targetSkills": [],
+      "targetSkills": [
+        "complaints_and_problems",
+        "polite_requests",
+        "expressing_dissatisfaction"
+      ],
       "unitIds": [
         "unit.a2.15",
         "unit.a2.26"
@@ -1198,7 +1258,9 @@
       },
       "targetCompetency": "I can rent leisure equipment, enquire about rental terms, safety gear, and deposits",
       "targetSkills": [
-        "clarification"
+        "rental_transactions",
+        "clarification",
+        "price_enquiry"
       ],
       "unitIds": [
         "unit.a2.07",
@@ -1295,7 +1357,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can report a lost item, describe physical features and contents, and leave contact details",
-      "targetSkills": [],
+      "targetSkills": [
+        "describing_objects",
+        "narrating_past_events",
+        "giving_contact_info"
+      ],
       "unitIds": [
         "unit.a2.11",
         "unit.a2.14"
@@ -1391,7 +1457,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can explain dietary restrictions and food allergies, and verify ingredients in a meal",
-      "targetSkills": [],
+      "targetSkills": [
+        "food_safety",
+        "clarifying_ingredients",
+        "polite_requests"
+      ],
       "unitIds": [
         "unit.a2.04",
         "unit.a2.26"
@@ -1485,7 +1555,9 @@
       },
       "targetCompetency": "I can perform social pleasantries as a houseguest, offer compliments, and offer help",
       "targetSkills": [
-        "complimenting"
+        "social_courtesy",
+        "complimenting",
+        "offering_assistance"
       ],
       "unitIds": [
         "unit.a2.08",
@@ -1584,7 +1656,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can explain a product issue, present proof of purchase, and request a size exchange",
-      "targetSkills": [],
+      "targetSkills": [
+        "returns_and_exchanges",
+        "explaining_defects",
+        "consumer_interaction"
+      ],
       "unitIds": [
         "unit.a2.15",
         "unit.a2.25"
@@ -1676,7 +1752,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can talk about language learning background, duration, strengths, and goals",
-      "targetSkills": [],
+      "targetSkills": [
+        "describing_learning",
+        "expressing_goals",
+        "talking_about_time"
+      ],
       "unitIds": [
         "unit.a2.09",
         "unit.a2.29"
@@ -1769,7 +1849,11 @@
         "interlocutorVoice": "es-AR"
       },
       "targetCompetency": "I can describe health symptoms, duration, and ask medical advice",
-      "targetSkills": [],
+      "targetSkills": [
+        "describing_illness",
+        "past_experience",
+        "following_medical_advice"
+      ],
       "unitIds": [
         "unit.b1.core.09",
         "unit.a1.20"
@@ -1867,7 +1951,11 @@
         "interlocutorVoice": "es-CO"
       },
       "targetCompetency": "I can enquire about housing lease terms, utility costs, and negotiate contract details",
-      "targetSkills": [],
+      "targetSkills": [
+        "housing_negotiation",
+        "clarifying_conditions",
+        "asking_details"
+      ],
       "unitIds": [
         "unit.b1.core.10"
       ],
@@ -1957,7 +2045,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can summarize work experience, discuss professional strengths, and answer interview questions",
-      "targetSkills": [],
+      "targetSkills": [
+        "professional_presentation",
+        "career_narrative",
+        "strengths_and_goals"
+      ],
       "unitIds": [
         "unit.b1.core.06",
         "unit.b1.core.26"
@@ -2047,7 +2139,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can express dissatisfaction with a service disruption, demand alternatives, and claim compensation",
-      "targetSkills": [],
+      "targetSkills": [
+        "complaints_and_rights",
+        "problem_resolution",
+        "formal_demands"
+      ],
       "unitIds": [
         "unit.b1.core.08",
         "unit.b1.core.20"
@@ -2138,7 +2234,9 @@
       },
       "targetCompetency": "I can express opinions, provide arguments on environmental issues, and respond to counterarguments",
       "targetSkills": [
-        "debating"
+        "expressing_opinions",
+        "debating",
+        "environmental_issues"
       ],
       "unitIds": [
         "unit.b1.core.16",
@@ -2229,7 +2327,11 @@
         "interlocutorVoice": "es-MX"
       },
       "targetCompetency": "I can narrate past events chronologically, describe suspects, and register an official report",
-      "targetSkills": [],
+      "targetSkills": [
+        "reporting_crimes",
+        "past_narrative",
+        "official_procedures"
+      ],
       "unitIds": [
         "unit.b1.core.28",
         "unit.b1.core.01"
@@ -2320,7 +2422,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can negotiate travel itineraries, weigh pros and cons of transport and accommodation, and manage budgets",
-      "targetSkills": [],
+      "targetSkills": [
+        "planning_travel",
+        "weighing_options",
+        "budget_negotiation"
+      ],
       "unitIds": [
         "unit.b1.core.08",
         "unit.b1.core.23"
@@ -2410,7 +2516,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can summarize plots, describe character motivations, and recommend artistic works enthusiastically",
-      "targetSkills": [],
+      "targetSkills": [
+        "describing_culture",
+        "summarizing_plots",
+        "expressing_emotions"
+      ],
       "unitIds": [
         "unit.b1.core.15",
         "unit.b1.core.30"
@@ -2500,7 +2610,11 @@
         "interlocutorVoice": "es-ES"
       },
       "targetCompetency": "I can enquire about banking conditions, fees, online services, and documentation requirements",
-      "targetSkills": [],
+      "targetSkills": [
+        "banking_transactions",
+        "financial_terms",
+        "official_enquiry"
+      ],
       "unitIds": [
         "unit.b1.core.19",
         "unit.b1.core.24"
@@ -2590,7 +2704,9 @@
       },
       "targetCompetency": "I can participate in community meetings, propose improvements, vote, and mediate disagreements",
       "targetSkills": [
-        "persuasion"
+        "civic_participation",
+        "persuasion",
+        "consensus_building"
       ],
       "unitIds": [
         "unit.b1.core.11",

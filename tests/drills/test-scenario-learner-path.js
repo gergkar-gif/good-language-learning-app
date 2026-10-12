@@ -60,10 +60,13 @@ console.log('\n--- Test 2: Recommendation Engine Unit Scenario Matching ---');
 const esScenarios = JSON.parse(fs.readFileSync(path.join(root, 'content/es-latam/conversation-scenarios.json'), 'utf8'));
 const esCurriculum = JSON.parse(fs.readFileSync(path.join(root, 'content/es-latam/curriculum/curriculum.json'), 'utf8'));
 
+const esWordLessonIndex = JSON.parse(fs.readFileSync(path.join(root, 'content/es-latam/indexes/word-lesson-index.json'), 'utf8'));
+
 global.Content = {
     async json(p) {
         if (p.includes('conversation-scenarios.json')) return esScenarios;
         if (p.includes('indexes/grammar-titles.json')) return {};
+        if (p.includes('indexes/word-lesson-index.json')) return esWordLessonIndex;
         throw new Error('Not found: ' + p);
     }
 };
@@ -128,7 +131,8 @@ const RecommendationEngine = require('../../engine/recommendationEngine.js');
         unitFor: (lid) => ({ levelKey: 'A1', unit: cafeUnit }),
         nextStep: () => ({ kind: 'lesson', lesson: { id: 'next.lesson', title: 'Next Lesson' }, level: 'A1' }),
         completedCount: () => 15,
-        currentLevel: () => 'A1'
+        currentLevel: () => 'A1',
+        isComplete: (lid) => true
     };
 
     dismissedList = [];
@@ -151,6 +155,25 @@ const RecommendationEngine = require('../../engine/recommendationEngine.js');
     const wrapped = Object.assign({ kind: 'unit-nudge' }, nudge);
     assert.strictEqual(wrapped.kind, 'unit-nudge', 'recommend()-style wrapping must keep kind as unit-nudge');
     console.log('✓ Practice nudge survives recommend()\'s kind:unit-nudge wrapping');
+
+    console.log('\n--- Test 3b: Dynamic Vocabulary Readiness Gating (<80% held back) ---');
+    // If the learner has not reached lessons teaching the necessary words
+    global.LearnerPath.isComplete = (lid) => false;
+    const prematureNudge = await RecommendationEngine._practiceNudge();
+    assert.strictEqual(prematureNudge, null, 'Premature scenario must not be recommended when learner readiness < 80%');
+    console.log('✓ Scenario held back when learner has not acquired >= 80% of required vocabulary');
+
+    // Test scenarioReadiness helper directly
+    const readinessLow = await RecommendationEngine.scenarioReadiness(cafeScenario);
+    assert.strictEqual(readinessLow.isReady, false, 'Readiness should be false when 0% of words are known');
+    assert(readinessLow.percentage < 80, 'Percentage should be below 80');
+
+    // Restore isComplete
+    global.LearnerPath.isComplete = (lid) => true;
+    const readinessHigh = await RecommendationEngine.scenarioReadiness(cafeScenario);
+    assert.strictEqual(readinessHigh.isReady, true, 'Readiness should be true when all words are known');
+    assert(readinessHigh.percentage >= 80, 'Percentage should be >= 80%');
+    console.log('✓ RecommendationEngine.scenarioReadiness correctly calculates percentage and readiness threshold');
 
     console.log('\n--- Test 4: Mid-unit, Nothing Weak: No Practice Card, No Roleplay ---');
     // Not the last lesson (lesson 1 of cafeUnit): the unit's roleplay is

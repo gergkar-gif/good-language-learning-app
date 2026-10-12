@@ -58,6 +58,132 @@ const RecommendationEngine = (function () {
         return _scenariosCache[path];
     }
 
+    function _getTaughtWords() {
+        let tw = (typeof TaughtWords !== 'undefined') ? TaughtWords : null;
+        if (!tw && typeof require !== 'undefined') {
+            try { tw = require('./taughtWords.js'); } catch (e) {}
+        }
+        return tw;
+    }
+
+    function _isLemmaKnown(lemma, tw) {
+        if (!lemma) return false;
+        const norm = lemma.trim().toLowerCase();
+
+        // 1. TaughtWords curriculum check (introducing lesson complete)
+        if (tw && typeof tw.isReached === 'function') {
+            if (tw.isReached(norm)) return true;
+        }
+
+        // 2. knownWords (graduated or declared known)
+        if (typeof isKnown === 'function' && isKnown(norm)) return true;
+        if (typeof knownWords !== 'undefined' && Array.isArray(knownWords)) {
+            if (knownWords.some(w => {
+                const target = (typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(w) : (w.spanish || w.lemma || w.target);
+                return target && target.toLowerCase() === norm;
+            })) {
+                return true;
+            }
+        }
+
+        // 3. SRS deck check (active review history)
+        if (typeof srsDeck !== 'undefined' && Array.isArray(srsDeck)) {
+            const card = srsDeck.find(w => {
+                const target = (typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(w) : (w.spanish || w.lemma || w.target);
+                return target && target.toLowerCase() === norm;
+            });
+            if (card && (card.reviews > 0 || card.ease != null)) {
+                return true;
+            }
+        }
+
+        // 4. LearnerModel wordState check
+        if (typeof LearnerModel !== 'undefined' && typeof LearnerModel.wordState === 'function') {
+            const ws = LearnerModel.wordState(norm);
+            if (ws && (ws.state === 'mastered' || ws.state === 'strong' || ws.state === 'developing')) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    async function scenarioReadiness(scenario) {
+        const tw = _getTaughtWords();
+        if (tw && typeof tw.load === 'function') {
+            await tw.load();
+        }
+        return scenarioReadinessSync(scenario);
+    }
+
+    function scenarioReadinessSync(scenario) {
+        if (!scenario) {
+            return { readyCount: 0, totalCount: 0, percentage: 100, isReady: true, missing: [], readyLemmas: [] };
+        }
+
+        const tw = _getTaughtWords();
+
+        let lemmas = [];
+        if (Array.isArray(scenario.requiredLemmas) && scenario.requiredLemmas.length > 0) {
+            lemmas = scenario.requiredLemmas.map(w => (typeof w === 'string' ? w.trim().toLowerCase() : '')).filter(Boolean);
+        } else if (Array.isArray(scenario.turns)) {
+            const extracted = new Set();
+            for (const t of scenario.turns) {
+                const kw = (t.validationCriteria && t.validationCriteria.targetKeywords) || [];
+                for (const k of kw) {
+                    if (typeof k === 'string') {
+                        const clean = k.trim().toLowerCase();
+                        if (clean.length > 2 && !clean.includes(' ')) {
+                            extracted.add(clean);
+                        }
+                    }
+                }
+            }
+            lemmas = Array.from(extracted);
+        }
+
+        lemmas = Array.from(new Set(lemmas));
+
+        const hasLearnerData = (tw && typeof tw.isReached === 'function') ||
+            (typeof srsDeck !== 'undefined') ||
+            (typeof knownWords !== 'undefined') ||
+            (typeof LearnerModel !== 'undefined' && typeof LearnerModel.wordState === 'function');
+
+        if (!hasLearnerData || lemmas.length === 0) {
+            return {
+                readyCount: lemmas.length,
+                totalCount: lemmas.length,
+                percentage: 100,
+                isReady: true,
+                missing: [],
+                readyLemmas: lemmas.slice()
+            };
+        }
+
+        const readyLemmas = [];
+        const missing = [];
+
+        for (const lem of lemmas) {
+            if (_isLemmaKnown(lem, tw)) {
+                readyLemmas.push(lem);
+            } else {
+                missing.push(lem);
+            }
+        }
+
+        const percentage = lemmas.length > 0 ? Math.round((readyLemmas.length / lemmas.length) * 100) : 100;
+        const isReady = percentage >= 80;
+
+        return {
+            readyCount: readyLemmas.length,
+            totalCount: lemmas.length,
+            percentage,
+            isReady,
+            missing,
+            readyLemmas
+        };
+    }
+
     async function _scenarioForUnit(unitId) {
         if (!unitId) return null;
         try {
@@ -276,11 +402,28 @@ const RecommendationEngine = (function () {
         // Object.assign(); reusing `kind` on this returned object would
         // silently win that merge and the card would never render (see the
         // 2026-09-23 fix that gave this its own key).
+        // Scenarios and exchanges are recommended only when the completed unit
+        // is the capstone unit of the scenario and the learner is vocabulary-ready
+        // (>= 80% of required lemmas known/reached).
         const scenario = await _scenarioForUnit(unit.id);
-        if (scenario) return { levelKey, unit, scenario, type: 'scenario' };
+        if (scenario) {
+            const uids = scenario.unitIds || [];
+            const isCapstone = uids.length === 0 || uids[uids.length - 1] === unit.id;
+            const readiness = await scenarioReadiness(scenario);
+            if (isCapstone && readiness.isReady) {
+                return { levelKey, unit, scenario, type: 'scenario', readiness };
+            }
+        }
 
         const exchange = await _exchangeForUnit(unit.id);
-        if (exchange) return { levelKey, unit, exchange, type: 'exchange' };
+        if (exchange) {
+            const uids = exchange.unitIds || [];
+            const isCapstone = uids.length === 0 || uids[uids.length - 1] === unit.id;
+            const readiness = await scenarioReadiness(exchange);
+            if (isCapstone && readiness.isReady) {
+                return { levelKey, unit, exchange, type: 'exchange', readiness };
+            }
+        }
 
         return null;
     }
@@ -888,6 +1031,8 @@ const RecommendationEngine = (function () {
         dismissUnit,
         dismissMiniGame,
         grammarVocabCandidate: _grammarVocabCandidate,
+        scenarioReadiness,
+        scenarioReadinessSync,
         _scenarioForUnit,
         _practiceNudge,
         _miniGameNudge

@@ -67,6 +67,36 @@ if (fs.existsSync(esEsPath)) {
 }
 verifyUnitIds(huData, path.join(root, 'content/hu/curriculum/curriculum.json'), 'hu');
 
+console.log('\n--- Test 2b: Scenario Required Vocabulary Integrity in word-lesson-index ---');
+function verifyRequiredLemmas(scenarioData, wordLessonIndexPath, langLabel) {
+    const wIndex = JSON.parse(fs.readFileSync(wordLessonIndexPath, 'utf8'));
+    const byLemma = wIndex.byLemma || {};
+    const bareIndex = {};
+    for (const k of Object.keys(byLemma)) {
+        bareIndex[k] = byLemma[k];
+        const bare = k.replace(/^(el|la|los|las|un|una)\s+/i, '');
+        if (!bareIndex[bare]) bareIndex[bare] = byLemma[k];
+    }
+
+    for (const sc of scenarioData.scenarios) {
+        assert(Array.isArray(sc.requiredLemmas) && sc.requiredLemmas.length >= 4,
+            `Scenario ${sc.id} in ${langLabel} must define requiredLemmas with at least 4 items`);
+        for (const lem of sc.requiredLemmas) {
+            const clean = lem.trim().toLowerCase();
+            const found = bareIndex[clean] || byLemma[clean];
+            assert(found, `Scenario ${sc.id} requiredLemma "${lem}" is not taught anywhere in ${langLabel} curriculum!`);
+        }
+    }
+    console.log(`[PASS] All ${scenarioData.scenarios.length} scenarios in ${langLabel} have valid requiredLemmas taught in curriculum.`);
+}
+
+verifyRequiredLemmas(esData, path.join(root, 'content/es-latam/indexes/word-lesson-index.json'), 'es-latam');
+if (fs.existsSync(esEsPath)) {
+    const esEsData = JSON.parse(fs.readFileSync(esEsPath, 'utf8'));
+    verifyRequiredLemmas(esEsData, path.join(root, 'content/es-es/indexes/word-lesson-index.json'), 'es-es');
+}
+verifyRequiredLemmas(huData, path.join(root, 'content/hu/indexes/word-lesson-index.json'), 'hu');
+
 console.log('\n--- Test 3: Zero-Emoji Enforcement Across Code & Data ---');
 const emojiRegex = /[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/u;
 

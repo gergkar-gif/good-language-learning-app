@@ -21,7 +21,20 @@
         "requests"
       ],
       "unitIds": [
-        "unit.a1.05"
+        "unit.a1.19",
+        "unit.a1.22"
+      ],
+      "requiredLemmas": [
+        "szia",
+        "kenyér",
+        "sajt",
+        "paradicsom",
+        "kell",
+        "víz",
+        "tea",
+        "üveg",
+        "asztal",
+        "köszönöm"
       ],
       "turns": [
         {
@@ -32,8 +45,8 @@
           "learnerCueEn": "Greet Balázs and write to him that we need bread, cheese, and tomatoes.",
           "vocabularyHints": [
             "Szia Balázs! — Hi Balázs!",
-            "Kell kenyér és sajt. — We need bread and cheese.",
-            "Kérlek vegyél paradicsomot is. — Please buy tomatoes too.",
+            "Kenyér, sajt és paradicsom kell. — Bread, cheese and tomato are needed.",
+            "Kérlek vegyél kenyeret és sajtot. — Please buy bread and cheese.",
             "Köszönöm! — Thank you!"
           ],
           "validationCriteria": {
@@ -46,46 +59,53 @@
               "paradicsom",
               "kell",
               "kérlek",
-              "kerlek"
+              "kerlek",
+              "köszönöm",
+              "koszonom"
             ]
           }
         },
         {
           "turnIndex": 2,
-          "interlocutorPrompt": "Rendben, a kenyeret és a sajtot már a kosárba tettem. Vegyek valami innivalót is, például ásványvizet vagy almalevet?",
-          "interlocutorTranslation": "Alright, I already put bread and cheese in the basket. Should I buy something to drink too, like mineral water or apple juice?",
-          "learnerCue": "Kérj egy nagy üveg ásványvizet és almalevet.",
-          "learnerCueEn": "Ask for a big bottle of mineral water and apple juice.",
+          "interlocutorPrompt": "Rendben, a kenyeret és a sajtot már a kosárba tettem. Vegyek valami innivalót is, például vizet vagy teát?",
+          "interlocutorTranslation": "Alright, I already put bread and cheese in the basket. Should I buy something to drink too, like water or tea?",
+          "learnerCue": "Kérj egy nagy üveg vizet és hideg teát.",
+          "learnerCueEn": "Ask for a big bottle of water and cold tea.",
           "vocabularyHints": [
-            "Igen, kérlek vegyél ásványvizet. — Yes, please buy mineral water.",
+            "Igen, kérlek vegyél vizet. — Yes, please buy water.",
             "Egy nagy üveg vizet. — A big bottle of water.",
-            "És almalevet is. — And apple juice too."
+            "És teát is. — And tea too.",
+            "Köszönöm! — Thank you!"
           ],
           "validationCriteria": {
             "minWords": 3,
             "targetKeywords": [
-              "ásványvíz",
-              "asvanyviz",
-              "almalé",
-              "almalevet",
               "víz",
+              "viz",
               "vizet",
+              "tea",
+              "teát",
+              "teat",
+              "üveg",
+              "uveg",
               "igen",
-              "kérlek",
               "nagy",
-              "köszönöm"
+              "kérlek",
+              "kerlek",
+              "köszönöm",
+              "koszonom"
             ]
           }
         },
         {
           "turnIndex": 3,
-          "interlocutorPrompt": "Szuper, most megyek a pénztárhoz. Körülbelül tíz perc múlva otthon vagyok. Megteríted az asztalt?",
-          "interlocutorTranslation": "Super, heading to checkout now. I will be home in about ten minutes. Will you set the table?",
-          "learnerCue": "Válaszolj, hogy igen, szívesen megteríted az asztalt, és várod otthon.",
-          "learnerCueEn": "Answer yes, you will gladly set the table and wait for him at home.",
+          "interlocutorPrompt": "Szuper, most megyek a pénztárhoz. Körülbelül tíz perc múlva otthon vagyok. Segítesz a vacsoránál?",
+          "interlocutorTranslation": "Super, heading to checkout now. I will be home in about ten minutes. Will you help with dinner?",
+          "learnerCue": "Válaszolj, hogy igen, szívesen segítesz, és az asztal már kész.",
+          "learnerCueEn": "Answer yes, you will gladly help, and the table is already set.",
           "vocabularyHints": [
-            "Igen, megterítem az asztalt. — Yes, I will set the table.",
-            "Szívesen! — Gladly!",
+            "Igen, szívesen segítek! — Yes, I will gladly help!",
+            "Az asztal már kész. — The table is already ready.",
             "Várlak itthon! — Waiting for you at home!",
             "Szia! — Bye!"
           ],
@@ -93,14 +113,14 @@
             "minWords": 3,
             "targetKeywords": [
               "igen",
-              "asztalt",
-              "megterítem",
-              "megteritem",
-              "várlak",
-              "varlak",
-              "itthon",
+              "segítek",
+              "segitek",
+              "asztal",
+              "kész",
+              "kesz",
               "szívesen",
               "szivesen",
+              "vár",
               "szia"
             ]
           }
@@ -112,8 +132,8 @@
       "cefrLevel": "A1",
       "title": "Találkozó a Deák téren",
       "titleEn": "Meeting at Deak Square",
-      "situation": "Öt órakor találkozol a barátoddal, Annával a Deák Ferenc téren, de a metród késik és üzenetet írsz.",
-      "situationEn": "You are meeting your friend Anna at 5:00 at Deák Ferenc tér, but your metro is delayed and you text her.",
+      "situation": "Öt órakor találkozol a barátoddal, Annával a Deák Ferenc téren, a metrón utazol és üzenetet írsz neki.",
+      "situationEn": "You are meeting your friend Anna at 5:00 at Deák Ferenc tér, you are traveling on the metro and text her.",
       "roleplay": {
         "interlocutorRole": "Anna (Barátnő)",
         "interlocutorRoleEn": "Anna (Friend)",
@@ -124,24 +144,38 @@
       "targetSkills": [
         "making_plans",
         "telling_time",
-        "apologizing"
+        "transport_and_directions"
       ],
       "unitIds": [
-        "unit.a1.02",
-        "unit.a1.04"
+        "unit.a1.28",
+        "unit.a1.30"
+      ],
+      "requiredLemmas": [
+        "szia",
+        "bocsánat",
+        "metró",
+        "tíz",
+        "perc",
+        "jó",
+        "rendben",
+        "kávézó",
+        "találkozik",
+        "kávé",
+        "tea",
+        "köszönöm"
       ],
       "turns": [
         {
           "turnIndex": 1,
-          "interlocutorPrompt": "Szia! Már itt vagyok a Deák téren a templom előtt. Hol jársz?",
-          "interlocutorTranslation": "Hi! I am already here at Deák square in front of the church. Where are you?",
-          "learnerCue": "Kérj elnézést és írd meg, hogy késik a metró, tíz perc múlva megérkezel.",
-          "learnerCueEn": "Apologize and write that the metro is delayed, you will arrive in ten minutes.",
+          "interlocutorPrompt": "Szia! Már itt vagyok a Deák téren az állomás előtt. Hol jársz?",
+          "interlocutorTranslation": "Hi! I am already here at Deák square in front of the station. Where are you?",
+          "learnerCue": "Kérj elnézést és írd meg, hogy a metrón vagy, tíz perc múlva ott vagy.",
+          "learnerCueEn": "Apologize and write that you are on the metro, you will be there in ten minutes.",
           "vocabularyHints": [
-            "Szia Anna, ne haragudj! — Hi Anna, don't be angry / sorry!",
-            "Késik a metró. — The metro is delayed.",
+            "Szia Anna, bocsánat! — Hi Anna, sorry!",
+            "A metrón vagyok. — I am on the metro.",
             "Tíz perc múlva ott vagyok. — I will be there in ten minutes.",
-            "Bocsánat! — Sorry!"
+            "Elnézést! — Excuse me / sorry!"
           ],
           "validationCriteria": {
             "minWords": 3,
@@ -149,42 +183,37 @@
               "szia",
               "bocsánat",
               "bocsanat",
-              "haragudj",
-              "késik",
-              "kesik",
+              "elnézést",
+              "elnezest",
               "metró",
               "metro",
               "tíz",
               "tiz",
               "perc",
-              "múlva",
-              "mulva"
+              "ott"
             ]
           }
         },
         {
           "turnIndex": 2,
-          "interlocutorPrompt": "Semmi baj, nem sietünk! Kicsit hideg van kint. Bemenjek a sarkon lévő kávézóba?",
-          "interlocutorTranslation": "No problem, no hurry! It is a bit cold outside. Should I go into the corner café?",
-          "learnerCue": "Válaszolj, hogy az nagyon jó ötlet, menjen be nyugodtan.",
-          "learnerCueEn": "Reply that it is a very good idea, tell her to go ahead inside.",
+          "interlocutorPrompt": "Semmi baj, nem sietünk! Kicsit hideg van kint. Találkozunk a kávézóban?",
+          "interlocutorTranslation": "No problem, no hurry! It is a bit cold outside. Shall we meet in the café?",
+          "learnerCue": "Válaszolj, hogy rendben, a kávézóban találkozunk.",
+          "learnerCueEn": "Reply alright, tell her you will meet in the café.",
           "vocabularyHints": [
-            "Igen, jó ötlet! — Yes, good idea!",
-            "Menj be nyugodtan. — Go inside by all means.",
+            "Igen, rendben! — Yes, alright!",
+            "A kávézóban találkozunk. — We will meet in the café.",
             "Mindjárt ott vagyok. — I will be there shortly."
           ],
           "validationCriteria": {
             "minWords": 3,
             "targetKeywords": [
               "igen",
-              "jó",
-              "jo",
-              "ötlet",
-              "otlet",
+              "rendben",
               "kávézó",
               "kavezo",
-              "menj",
-              "nyugodtan",
+              "találkozunk",
+              "talalkozunk",
               "mindjárt",
               "mindjart"
             ]
@@ -192,29 +221,30 @@
         },
         {
           "turnIndex": 3,
-          "interlocutorPrompt": "Már leültem az ablak mellé. Kérjek neked egy kávét vagy teát, mire megérkezel?",
-          "interlocutorTranslation": "I am already seated next to the window. Should I order you a coffee or tea before you arrive?",
-          "learnerCue": "Köszönd meg és kérj egy meleg tejeskávét.",
-          "learnerCueEn": "Thank her and ask for a warm coffee with milk.",
+          "interlocutorPrompt": "Már bent ülök az ablak mellett. Kérjek neked egy kávét vagy teát, mire megérkezel?",
+          "interlocutorTranslation": "I am already seated inside next to the window. Should I order you a coffee or tea before you arrive?",
+          "learnerCue": "Köszönd meg és kérj egy meleg kávét vagy teát.",
+          "learnerCueEn": "Thank her and ask for a warm coffee or tea.",
           "vocabularyHints": [
             "Nagyon köszönöm! — Thank you very much!",
-            "Egy meleg tejeskávét kérek. — A warm latte/white coffee please.",
-            "Mindjárt megérkezem. — Arriving right now."
+            "Egy meleg kávét kérek. — A warm coffee please.",
+            "Hamarosan találkozunk! — See you soon!"
           ],
           "validationCriteria": {
             "minWords": 3,
             "targetKeywords": [
               "köszönöm",
               "koszonom",
-              "tejeskávét",
-              "tejeskavet",
-              "kávét",
-              "kavet",
-              "meleg",
               "kérek",
               "kerek",
-              "mindjárt",
-              "mindjart"
+              "kávé",
+              "kávét",
+              "kave",
+              "kavet",
+              "tea",
+              "teát",
+              "meleg",
+              "szia"
             ]
           }
         }
@@ -225,7 +255,7 @@
       "cefrLevel": "A2",
       "title": "Apartman kulcsátvétel",
       "titleEn": "Apartment Key Handover",
-      "situation": "Hétvégére szállást béreltél Budapesten, de a vonattal késésben vagy és üzenetet írsz a tulajdonosnak, Tamásnak.",
+      "situation": "Hétvégére szállást béreltél Budapesten, de a vonattal késésben vagy és üzenetet írsz a szállásadónak, Tamásnak.",
       "situationEn": "You booked accommodation in Budapest for the weekend, but your train is delayed and you message the host, Tamás.",
       "roleplay": {
         "interlocutorRole": "Tamás (Szállásadó)",
@@ -240,8 +270,20 @@
         "arrangements"
       ],
       "unitIds": [
-        "unit.a2.01",
-        "unit.a2.02"
+        "unit.a2.14",
+        "unit.a2.16"
+      ],
+      "requiredLemmas": [
+        "jó",
+        "nap",
+        "vonat",
+        "késik",
+        "érkezik",
+        "sajnos",
+        "kulcs",
+        "szám",
+        "lakás",
+        "köszönöm"
       ],
       "turns": [
         {
@@ -253,19 +295,23 @@
           "vocabularyHints": [
             "Jó napot kívánok Tamás! — Good day Tamás!",
             "Sajnos késik a vonatunk. — Unfortunately our train is delayed.",
-            "Várhatóan fél kilencre érünk oda. — Expected to arrive around eight thirty.",
+            "Fél kilencre érünk oda. — Expected to arrive around eight thirty.",
             "Elnézést a kellemetlenségért. — Sorry for the inconvenience."
           ],
           "validationCriteria": {
             "minWords": 4,
             "targetKeywords": [
               "jó",
+              "jo",
               "napot",
               "vonat",
               "késik",
+              "kesik",
               "fél",
+              "fel",
               "kilenc",
-              "érkezem",
+              "érkezünk",
+              "erkezunk",
               "elnézést",
               "sajnos"
             ]
@@ -273,13 +319,13 @@
         },
         {
           "turnIndex": 2,
-          "interlocutorPrompt": "Semmi gond, megesik az ilyesmi. Fél kilenckor nem tudok ott lenni, de a kulcsszéfbe beteszem a kulcsot a bejáratnál. Megfelel így önnek?",
-          "interlocutorTranslation": "No problem, these things happen. At 8:30 I cannot be there, but I will put the key in the key safe by the entrance. Does that suit you?",
-          "learnerCue": "Válaszolj, hogy ez tökéletesen megfelel, és kérdezd meg a kulcsszéf kódját.",
-          "learnerCueEn": "Answer that this suits you perfectly, and ask for the code to the key safe.",
+          "interlocutorPrompt": "Semmi gond, megesik az ilyesmi. Fél kilenckor nem tudok ott lenni, de a kulcsot a bejáratnál lévő széfbe teszem. Megfelel így önnek?",
+          "interlocutorTranslation": "No problem, these things happen. At 8:30 I cannot be there, but I will put the key in the safe by the entrance. Does that suit you?",
+          "learnerCue": "Válaszolj, hogy ez tökéletesen megfelel, és kérdezd meg a széf kódját.",
+          "learnerCueEn": "Answer that this suits you perfectly, and ask for the code to the safe.",
           "vocabularyHints": [
             "Ez tökéletes megoldás, köszönöm! — This is a perfect solution, thank you!",
-            "Mi a kulcsszéf kódja? — What is the key safe code?",
+            "Mi a széf kódja? — What is the safe code?",
             "Hogyan működik? — How does it work?"
           ],
           "validationCriteria": {
@@ -290,24 +336,27 @@
               "megfelel",
               "kód",
               "kod",
+              "szám",
+              "szam",
+              "kulcs",
               "széf",
               "szef",
-              "kulcsszéf",
               "köszönöm",
+              "koszonom",
               "mi"
             ]
           }
         },
         {
           "turnIndex": 3,
-          "interlocutorPrompt": "A kód: 5291. Kinyitás után kérem tekerje el a számokat. Jó utat, és kérem írjon, ha megérkeztek!",
-          "interlocutorTranslation": "The code is 5291. After opening please spin the numbers. Safe travels, and please write when you have arrived!",
-          "learnerCue": "Köszönd meg a segítőkészséget és írd meg, hogy szólsz amint bent vagytok az apartmanban.",
-          "learnerCueEn": "Thank him for his helpfulness and write that you will let him know as soon as you are inside the apartment.",
+          "interlocutorPrompt": "A kód: 5291. Kinyitás után kérem tekerje el a számokat. Jó utat, és kérem írjon, ha megérkeztek a lakásba!",
+          "interlocutorTranslation": "The code is 5291. After opening please spin the numbers. Safe travels, and please write when you have arrived at the apartment!",
+          "learnerCue": "Köszönd meg a segítséget és írd meg, hogy szólsz amint bent vagytok a lakásban.",
+          "learnerCueEn": "Thank him for his help and write that you will let him know as soon as you are inside the apartment.",
           "vocabularyHints": [
             "Köszönöm szépen a segítséget! — Thank you very much for the help!",
-            "Kód feljegyezve. — Code noted down.",
-            "Üzenek amint megérkezünk. — I will message as soon as we arrive.",
+            "Szám feljegyezve. — Number noted down.",
+            "Írok amint megérkezünk a lakásba. — I will write as soon as we arrive at the apartment.",
             "Köszönöm! — Thank you!"
           ],
           "validationCriteria": {
@@ -317,11 +366,15 @@
               "koszonom",
               "segítséget",
               "segitseget",
-              "kód",
+              "szám",
+              "szam",
               "megérkezünk",
+              "megerkezunk",
+              "lakás",
+              "lakas",
               "írok",
-              "szólok",
-              "üdvözlettel"
+              "irok",
+              "szólok"
             ]
           }
         }
@@ -343,39 +396,57 @@
       "targetCompetency": "I can reschedule appointments and describe physical symptoms in simple written notes",
       "targetSkills": [
         "health",
-        "present-tense-routine-language",
+        "appointments",
         "polite_requests"
       ],
       "unitIds": [
-        "unit.a2.01",
-        "unit.a2.04"
+        "unit.a2.17",
+        "unit.a2.23"
+      ],
+      "requiredLemmas": [
+        "jó",
+        "nap",
+        "időpont",
+        "orvos",
+        "péntek",
+        "kedd",
+        "óra",
+        "fáj",
+        "hát",
+        "köszönöm",
+        "viszlát"
       ],
       "turns": [
         {
           "turnIndex": 1,
           "interlocutorPrompt": "Jó napot kívánok! Az Életrendelő recepciója fogadja az üzenetet. Miben segíthetünk?",
           "interlocutorTranslation": "Good day! Életrendelő clinic reception here. How can we help you?",
-          "learnerCue": "Üdvözöld a recepcióst, írd meg, hogy péntekre van időpontod, de sajnos át kell tenned a jövő hétre.",
-          "learnerCueEn": "Greet the receptionist, say you have an appointment for Friday, but unfortunately need to move it to next week.",
+          "learnerCue": "Üdvözöld a recepcióst, írd meg, hogy péntekre van időpontod, de sajnos át kell tenned a jövő hétre mert fáj a hátad.",
+          "learnerCueEn": "Greet the receptionist, say you have an appointment for Friday, but unfortunately need to move it to next week because your back hurts.",
           "vocabularyHints": [
             "Jó napot kívánok! — Good day!",
             "Időpontom van péntekre. — I have an appointment for Friday.",
-            "Szeretném áthelyezni a jövő hétre. — I would like to reschedule to next week.",
-            "Erősen fáj a hátam. — My back hurts badly."
+            "Fáj a hátam. — My back hurts.",
+            "Szeretném áthelyezni a jövő hétre. — I would like to reschedule to next week."
           ],
           "validationCriteria": {
             "minWords": 4,
             "targetKeywords": [
               "jó",
+              "jo",
               "napot",
               "időpont",
               "idopont",
               "péntek",
               "pentek",
               "jövő",
+              "jovo",
               "hét",
-              "áttenni",
-              "szeretném"
+              "het",
+              "fáj",
+              "faj",
+              "hátam",
+              "hatam"
             ]
           }
         },
@@ -383,10 +454,10 @@
           "turnIndex": 2,
           "interlocutorPrompt": "Értem. A jövő héten kedd délelőtt tíz órakor vagy csütörtök délután háromkor tudná fogadni a szakorvos. Melyik lenne jobb önnek?",
           "interlocutorTranslation": "Understood. Next week the specialist can see you Tuesday morning at 10:00 or Thursday afternoon at 3:00. Which would be better for you?",
-          "learnerCue": "Válaszd a kedd délelőtt tíz órai időpontot és írd meg, hogy az tökéletes számodra.",
-          "learnerCueEn": "Choose the Tuesday 10:00 AM slot and write that it is perfect for you.",
+          "learnerCue": "Válaszd a kedd délelőtt tíz órai időpontot és írd meg, hogy az nagyon jó számodra.",
+          "learnerCueEn": "Choose the Tuesday 10:00 AM slot and write that it is very good for you.",
           "vocabularyHints": [
-            "A kedd délelőtt tíz óra tökéletes lenne. — Tuesday 10 AM would be perfect.",
+            "A kedd délelőtt tíz óra jó lesz. — Tuesday 10 AM will be good.",
             "Azt szeretném kérni. — I would like to request that one.",
             "Köszönöm szépen. — Thank you very much."
           ],
@@ -396,25 +467,27 @@
               "kedd",
               "tíz",
               "tiz",
+              "óra",
+              "ora",
               "délelőtt",
               "delelott",
-              "tökéletes",
-              "tokeletes",
-              "jobb",
-              "köszönöm"
+              "jó",
+              "jo",
+              "köszönöm",
+              "koszonom"
             ]
           }
         },
         {
           "turnIndex": 3,
-          "interlocutorPrompt": "Rögzítettem: jövő kedd 10:00. Kérjük, hogy az előző orvosi leleteit hozza magával a vizsgálatra! Várjuk önöket.",
-          "interlocutorTranslation": "Recorded: next Tuesday 10:00. Please bring your previous medical records to the exam! We look forward to seeing you.",
-          "learnerCue": "Köszönd meg a segítséget és írd meg, hogy magaddal viszed a leleteket.",
-          "learnerCueEn": "Thank them for the help and write that you will bring the medical records with you.",
+          "interlocutorPrompt": "Rögzítettem: jövő kedd 10:00. Kérjük, hozza magával az iratait a vizsgálatra! Várjuk önt.",
+          "interlocutorTranslation": "Recorded: next Tuesday 10:00. Please bring your documents to the exam! We look forward to seeing you.",
+          "learnerCue": "Köszönd meg a segítséget és köszönj el: viszlát!",
+          "learnerCueEn": "Thank them for the help and say goodbye: viszlát!",
           "vocabularyHints": [
             "Köszönöm szépen a segítséget! — Thank you very much for the help!",
-            "Természetesen viszem a leleteket. — Of course I will bring the records.",
-            "Viszontlátásra! — Goodbye!"
+            "Ott leszek kedden. — I will be there on Tuesday.",
+            "Viszlát! — Goodbye!"
           ],
           "validationCriteria": {
             "minWords": 3,
@@ -423,10 +496,10 @@
               "koszonom",
               "segítséget",
               "segitseget",
-              "viszem",
-              "leleteket",
-              "viszontlátásra",
-              "viszontlatasra"
+              "kedd",
+              "kedden",
+              "viszlát",
+              "viszlat"
             ]
           }
         }

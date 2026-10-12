@@ -40,8 +40,15 @@ const TaughtWords = (function () {
     // toggle barely restricting anything, defeating its own purpose. A
     // lemma with no entry counts as NOT yet encountered.
     function isReached(lemma) {
-        if (!_index) return false; // load() not called yet — fail closed, not open
-        const lessonId = _index[lemma];
+        if (!_index || !lemma) return false; // load() not called yet — fail closed, not open
+        let lessonId = _index[lemma];
+        if (!lessonId) {
+            // Check with common gendered articles in Spanish or Hungarian
+            lessonId = _index['el ' + lemma] || _index['la ' + lemma] || _index['los ' + lemma] || _index['las ' + lemma];
+        }
+        if (!lessonId && (lemma.startsWith('el ') || lemma.startsWith('la '))) {
+            lessonId = _index[lemma.slice(3)];
+        }
         if (!lessonId) return false;
         return (typeof LearnerPath !== 'undefined' && LearnerPath.isComplete) ? LearnerPath.isComplete(lessonId) : false;
     }

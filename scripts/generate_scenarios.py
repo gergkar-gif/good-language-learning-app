@@ -35,6 +35,7 @@ ES_SCENARIOS = [
         "targetCompetency": "I can order food and drink in a café and ask for the bill",
         "targetSkills": ["ordering_food", "social_interaction", "numbers_and_prices"],
         "unitIds": ["unit.a1.11"],
+        "requiredLemmas": ["café", "agua", "leche", "cuenta", "camarero", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -108,7 +109,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can enquire about room availability and check into a hotel",
         "targetSkills": ["hotel_checkin", "dates_and_duration", "enquiring_services"],
-        "unitIds": ["unit.a1.26"],
+        "unitIds": ["unit.a1.08"],
+        "requiredLemmas": ["habitación", "noche", "llave", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1978,6 +1980,7 @@ HU_EXPANDED_SCENARIOS = [
         "targetCompetency": "I can order food and drink in a café and ask for the bill in Hungarian",
         "targetSkills": ["ordering_food", "polite_requests", "paying_bill"],
         "unitIds": ["unit.a1.23", "unit.a1.24"],
+        "requiredLemmas": ["kávé", "sütemény", "tej", "cukor", "számla", "kártya", "készpénz", "kérek", "köszönöm"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -2048,7 +2051,8 @@ HU_EXPANDED_SCENARIOS = [
         },
         "targetCompetency": "I can buy basic food items, state quantities, and pay in Hungarian",
         "targetSkills": ["food_shopping", "numbers_and_prices", "polite_requests"],
-        "unitIds": ["unit.a1.08", "unit.a1.09"],
+        "unitIds": ["unit.a1.21", "unit.a1.24"],
+        "requiredLemmas": ["kenyér", "sajt", "kiló", "kérek", "készpénz", "kártya", "köszönöm"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -2122,6 +2126,7 @@ HU_EXPANDED_SCENARIOS = [
         "targetCompetency": "I can buy a train ticket, enquire about schedule and departure tracks in Hungarian",
         "targetSkills": ["travel_arrangements", "asking_timetable", "numbers_and_times"],
         "unitIds": ["unit.a2.14", "unit.a2.15"],
+        "requiredLemmas": ["pályaudvar", "vonat", "jegy", "indul", "érkezik", "óra", "köszönöm"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -2192,6 +2197,7 @@ HU_EXPANDED_SCENARIOS = [
         "targetCompetency": "I can ask for and understand directional directions in Hungarian",
         "targetSkills": ["asking_directions", "spatial_orientation", "polite_enquiry"],
         "unitIds": ["unit.a2.05", "unit.a2.06"],
+        "requiredLemmas": ["hol", "tér", "jobbra", "balra", "egyenesen", "köszönöm"],
         "turns": [
             {
                 "turnIndex": 1,

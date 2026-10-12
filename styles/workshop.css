@@ -3719,6 +3719,26 @@
     border-radius: var(--radius-sm);
 }
 
+.sp-readiness-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 7px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.02em;
+}
+.sp-readiness-pill.is-ready {
+    color: var(--success);
+    border: 1px solid var(--success);
+    background: var(--success-bg, rgba(46, 125, 50, 0.08));
+}
+.sp-readiness-pill.is-developing {
+    color: var(--muted);
+    border: 1px solid var(--border);
+    background: var(--wash, rgba(0, 0, 0, 0.04));
+}
+
 .sp-scenario-roleplay-tag {
     font-size: 12px;
     color: var(--accent-dark, var(--accent));
@@ -4994,6 +5014,9 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 .sp-studio-body .wr-exchange-card { display: block; text-align: left; padding: 20px 0 22px; max-width: 34em; }
 .sp-scenario-card-header, .wr-exchange-card-header { display: flex; align-items: center; justify-content: flex-start; gap: 12px; margin-bottom: 8px; }
 .sp-turns-pill { background: none; padding: 0; border-radius: 0; text-transform: none; letter-spacing: 0; font: 400 13px/1 var(--font-ui); color: var(--muted); }
+.sp-readiness-pill { border: 0; box-shadow: inset 0 0 0 1px var(--border); font: 500 12px/1 var(--font-ui); letter-spacing: 0.01em; border-radius: var(--radius-sm); padding: 2px 7px; }
+.sp-readiness-pill.is-ready { color: var(--success); box-shadow: inset 0 0 0 1px var(--success); background: var(--success-bg, transparent); }
+.sp-readiness-pill.is-developing { color: var(--muted); box-shadow: inset 0 0 0 1px var(--border); background: none; }
 .sp-scenario-roleplay-tag, .wr-exchange-roleplay-tag { color: var(--muted); font: 400 13.5px/1.4 var(--font-ui); margin: 6px 0 10px; }
 .sp-scenario-roleplay-tag strong, .wr-exchange-roleplay-tag strong { font-weight: 500; color: var(--text); }
 .sp-studio-body .sp-scenario-card .wk-card-sub, .sp-studio-body .wr-exchange-card .wk-card-sub { color: var(--muted); line-height: 1.6; margin: 0 0 12px; }

@@ -16,24 +16,35 @@
       },
       "targetCompetency": "I can write short, simple notes and messages relating to everyday matters",
       "targetSkills": [
-        "present-tense",
+        "shopping",
+        "food_and_drink",
         "requests"
       ],
       "unitIds": [
-        "unit.a1.08"
+        "unit.a1.09"
+      ],
+      "requiredLemmas": [
+        "hola",
+        "pan",
+        "arroz",
+        "tomate",
+        "agua",
+        "mesa",
+        "casa",
+        "gracias"
       ],
       "turns": [
         {
           "turnIndex": 1,
           "interlocutorPrompt": "Hola! Estoy en el supermercado ahora mismo. Hace falta comprar algo para la cena de hoy?",
           "interlocutorTranslation": "Hi! I am at the supermarket right now. Do we need to buy anything for dinner today?",
-          "learnerCue": "Saluda a Mateo y dile que necesitamos comprar pan, pasta y queso.",
-          "learnerCueEn": "Greet Mateo and tell him that we need to buy bread, pasta, and cheese.",
+          "learnerCue": "Saluda a Mateo y dile que necesitamos comprar pan, arroz y tomates.",
+          "learnerCueEn": "Greet Mateo and tell him that we need to buy bread, rice, and tomatoes.",
           "vocabularyHints": [
             "hola Mateo — hello Mateo",
             "hace falta... — we need...",
             "necesitamos pan — we need bread",
-            "pasta y queso — pasta and cheese",
+            "arroz y tomates — rice and tomatoes",
             "por favor — please"
           ],
           "validationCriteria": {
@@ -41,8 +52,9 @@
             "targetKeywords": [
               "hola",
               "pan",
-              "pasta",
-              "queso",
+              "arroz",
+              "tomates",
+              "tomate",
               "necesitamos",
               "compra",
               "favor"
@@ -51,20 +63,21 @@
         },
         {
           "turnIndex": 2,
-          "interlocutorPrompt": "Listo, ya tengo el pan y la pasta en la cesta. Quieres que compre tambien algo para beber, como zumo o agua?",
-          "interlocutorTranslation": "Got it, I already have the bread and pasta in the basket. Do you want me to also buy something to drink, like juice or water?",
-          "learnerCue": "Pide una botella de agua mineral grande y un zumo de naranja.",
-          "learnerCueEn": "Ask for a large bottle of mineral water and an orange juice.",
+          "interlocutorPrompt": "Listo, ya tengo el pan y el arroz en la cesta. Quieres que compre tambien algo para beber, como agua o jugo?",
+          "interlocutorTranslation": "Got it, I already have bread and rice in the basket. Do you want me to also buy something to drink, like water or juice?",
+          "learnerCue": "Pide una botella de agua grande y jugo de naranja.",
+          "learnerCueEn": "Ask for a large bottle of water and orange juice.",
           "vocabularyHints": [
             "si, una botella de agua — yes, a bottle of water",
-            "agua mineral grande — large mineral water",
-            "zumo de naranja — orange juice",
+            "agua grande — large water",
+            "jugo de naranja — orange juice",
             "gracias — thank you"
           ],
           "validationCriteria": {
             "minWords": 3,
             "targetKeywords": [
               "agua",
+              "jugo",
               "zumo",
               "naranja",
               "botella",
@@ -107,8 +120,8 @@
       "cefrLevel": "A1",
       "title": "Quedar en la plaza",
       "titleEn": "Meeting at the Plaza",
-      "situation": "Has quedado con tu amiga Lucia a las cinco en la Plaza Mayor, pero el autobus va con retraso y le escribes.",
-      "situationEn": "You arranged to meet your friend Lucia at 5:00 in the Plaza Mayor, but your bus is running late and you text her.",
+      "situation": "Has quedado con tu amiga Lucia a las cinco en la plaza, pero el autobus va con retraso y le escribes.",
+      "situationEn": "You arranged to meet your friend Lucia at 5:00 at the plaza, but your bus is running late and you text her.",
       "roleplay": {
         "interlocutorRole": "Lucia (Amiga)",
         "interlocutorRoleEn": "Lucia (Friend)",
@@ -117,21 +130,34 @@
       },
       "targetCompetency": "I can exchange basic text messages to arrange meeting times and locations",
       "targetSkills": [
+        "making_plans",
+        "telling_time",
         "apologizing"
       ],
       "unitIds": [
-        "unit.a1.02"
+        "unit.a1.14",
+        "unit.a1.16"
+      ],
+      "requiredLemmas": [
+        "hola",
+        "camino",
+        "diez",
+        "minuto",
+        "llegar",
+        "cafetería",
+        "esperar",
+        "gracias"
       ],
       "turns": [
         {
           "turnIndex": 1,
           "interlocutorPrompt": "Hola! Ya estoy en la plaza, cerca de la estatua grande. Por donde vienes?",
           "interlocutorTranslation": "Hi! I am already at the plaza, near the big statue. Where are you coming from?",
-          "learnerCue": "Pide disculpas y explica que vas en el autobus y llegas diez minutos tarde.",
-          "learnerCueEn": "Apologize and explain that you are on the bus and arriving ten minutes late.",
+          "learnerCue": "Pide disculpas y explica que estas en camino y llegas diez minutos tarde.",
+          "learnerCueEn": "Apologize and explain that you are on your way and arriving ten minutes late.",
           "vocabularyHints": [
             "hola Lucia, lo siento — hi Lucia, I am sorry",
-            "estoy en el autobus — I am on the bus",
+            "estoy en camino — I am on my way",
             "llego diez minutos tarde — I arrive ten minutes late",
             "perdon — sorry / excuse me"
           ],
@@ -141,7 +167,7 @@
               "hola",
               "siento",
               "perdon",
-              "autobus",
+              "camino",
               "tarde",
               "minutos",
               "diez",
@@ -215,11 +241,22 @@
       },
       "targetCompetency": "I can respond in writing to an invitation and ask basic logistical questions",
       "targetSkills": [
-        "invitations"
+        "invitations",
+        "social_interaction",
+        "dates_and_events"
       ],
       "unitIds": [
-        "unit.a1.01",
-        "unit.a1.06"
+        "unit.a1.12",
+        "unit.a1.23"
+      ],
+      "requiredLemmas": [
+        "cumpleaños",
+        "amigo",
+        "sábado",
+        "gracias",
+        "refresco",
+        "calle",
+        "casa"
       ],
       "turns": [
         {
@@ -316,11 +353,25 @@
       },
       "targetCompetency": "I can write short messages requesting information and assistance from peers",
       "targetSkills": [
-        "education"
+        "asking_for_help",
+        "education",
+        "polite_requests"
       ],
       "unitIds": [
-        "unit.a1.01",
-        "unit.a1.04"
+        "unit.a1.20",
+        "unit.a1.21"
+      ],
+      "requiredLemmas": [
+        "enfermo",
+        "cama",
+        "hoy",
+        "mejor",
+        "foto",
+        "clase",
+        "tarea",
+        "mañana",
+        "amable",
+        "gracias"
       ],
       "turns": [
         {
@@ -416,11 +467,22 @@
       },
       "targetCompetency": "I can write messages describing everyday problems and asking for repairs or assistance",
       "targetSkills": [
-        "housing"
+        "housing",
+        "explaining_problems",
+        "formal_register"
       ],
       "unitIds": [
         "unit.a2.04",
         "unit.a2.05"
+      ],
+      "requiredLemmas": [
+        "problema",
+        "agua",
+        "casa",
+        "puerta",
+        "abrir",
+        "esperar",
+        "gracias"
       ],
       "turns": [
         {
@@ -521,12 +583,23 @@
       },
       "targetCompetency": "I can communicate travel delays and coordinate check-in procedures in writing",
       "targetSkills": [
-        "present-tense",
+        "travel",
+        "time_and_dates",
         "arrangements"
       ],
       "unitIds": [
         "unit.a2.01",
         "unit.a2.02"
+      ],
+      "requiredLemmas": [
+        "hora",
+        "llegar",
+        "caja",
+        "llave",
+        "número",
+        "casa",
+        "noche",
+        "gracias"
       ],
       "turns": [
         {
@@ -632,6 +705,16 @@
         "unit.a2.05",
         "unit.a2.07"
       ],
+      "requiredLemmas": [
+        "fiebre",
+        "hoy",
+        "trabajar",
+        "oficina",
+        "informe",
+        "médico",
+        "mañana",
+        "gracias"
+      ],
       "turns": [
         {
           "turnIndex": 1,
@@ -733,8 +816,18 @@
         "descriptions"
       ],
       "unitIds": [
-        "unit.a2.03",
-        "unit.a2.06"
+        "unit.a2.21",
+        "unit.a2.28"
+      ],
+      "requiredLemmas": [
+        "bicicleta",
+        "dinero",
+        "año",
+        "hoy",
+        "hora",
+        "calle",
+        "tarde",
+        "gracias"
       ],
       "turns": [
         {
@@ -833,13 +926,23 @@
       },
       "targetCompetency": "I can contribute actively to group planning discussions, expressing preferences and justifying opinions in writing",
       "targetSkills": [
+        "group_coordination",
         "preferences",
         "budgeting",
-        "present-tense"
+        "travel"
       ],
       "unitIds": [
         "unit.b1.core.03",
         "unit.b1.core.08"
+      ],
+      "requiredLemmas": [
+        "pueblo",
+        "opción",
+        "dinero",
+        "viaje",
+        "compartir",
+        "tarde",
+        "gracias"
       ],
       "turns": [
         {
@@ -937,11 +1040,21 @@
       },
       "targetCompetency": "I can write formal and assertive complaints requesting explanations and solutions",
       "targetSkills": [
-        "complaints"
+        "complaints",
+        "customer_service",
+        "formal_writing"
       ],
       "unitIds": [
         "unit.b1.core.06",
-        "unit.b1.core.04"
+        "unit.b1.core.14"
+      ],
+      "requiredLemmas": [
+        "número",
+        "esperar",
+        "problema",
+        "recibir",
+        "solución",
+        "gracias"
       ],
       "turns": [
         {
@@ -1040,11 +1153,21 @@
       },
       "targetCompetency": "I can negotiate special accommodations, dietary requirements, and group bookings in writing",
       "targetSkills": [
-        "hospitality"
+        "hospitality",
+        "special_requests",
+        "polite_negotiation"
       ],
       "unitIds": [
-        "unit.b1.core.04",
-        "unit.b1.core.05"
+        "unit.b1.core.08",
+        "unit.b1.core.10"
+      ],
+      "requiredLemmas": [
+        "reservar",
+        "tiempo",
+        "habitación",
+        "noche",
+        "posible",
+        "gracias"
       ],
       "turns": [
         {
@@ -1141,12 +1264,22 @@
       },
       "targetCompetency": "I can write diplomatic messages to neighbors explaining home repairs and respecting community rules",
       "targetSkills": [
+        "civic_communication",
         "diplomacy",
         "politeness"
       ],
       "unitIds": [
-        "unit.b1.core.04",
-        "unit.b1.core.05"
+        "unit.b1.core.05",
+        "unit.b1.core.11"
+      ],
+      "requiredLemmas": [
+        "mensaje",
+        "puerta",
+        "ruido",
+        "noche",
+        "vecino",
+        "perdón",
+        "gracias"
       ],
       "turns": [
         {
