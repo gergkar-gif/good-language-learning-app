@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Parlour — Learn from Music</title>
+<link rel="stylesheet" href="../styles/base.css?v=2026-08-13d">
+<link rel="stylesheet" href="../styles/geometry.css?v=2026-08-13d">
+<link rel="stylesheet" href="../styles/components.css">
+<link rel="stylesheet" href="../styles/workshop.css">
+<style>
+  :root {
+    --cream-paper: #F5F1E8;
+    --ink-navy: #102A47;
+    --ink-navy-deep: #0A1D33;
+    --ink-navy-mid: #3C5570;
+    --muted-blue-grey: #55677D;
+    --vermilion: #E94B16;
+    --vermilion-text: #B23A18;
+    --vermilion-tint: #FCEBE3;
+    --pine: #2F7A4D;
+    --pine-tint: #E3EFE7;
+    --brick: #B23A22;
+    --brick-tint: #F6E4DF;
+    --note-cream: #FDFBF6;
+    --hairline: rgba(16, 42, 71, 0.16);
+    --font-display: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style", Georgia, Cambria, serif;
+    --font-ui: Inter, "Segoe UI Variable Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--cream-paper);
+    color: var(--ink-navy);
+    font-family: var(--font-ui);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-wrap {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 16px 20px 80px;
+  }
+  @media (max-width: 639px) {
+    .page-wrap {
+      padding: 12px 16px 70px;
+    }
+  }
+
+  /* Back navigation */
+  .wk-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .wk-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    padding: 4px 0;
+    color: var(--ink-navy-mid);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .wk-back-btn:hover {
+    color: var(--ink-navy);
+  }
+
+  /* Editorial Header */
+  .editorial-header {
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+  }
+  .header-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--vermilion-text);
+    margin-bottom: 4px;
+    display: block;
+  }
+  .page-title {
+    font-family: var(--font-display);
+    font-size: 1.85rem;
+    font-weight: 400;
+    color: var(--ink-navy);
+    margin: 0 0 4px;
+    line-height: 1.15;
+  }
+  .page-lede {
+    font-size: 0.9rem;
+    color: var(--muted-blue-grey);
+    margin: 0;
+  }
+
+  /* Shelf Toolbar */
+  .shelf-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--hairline);
+    margin-bottom: 20px;
+  }
+  .shelf-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+  .shelf-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted-blue-grey);
+    margin-right: 4px;
+  }
+  .rect-btn {
+    background: transparent;
+    border: 1px solid var(--hairline);
+    border-radius: 2px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-navy);
+    cursor: pointer;
+    min-height: 30px;
+    transition: all 0.15s ease;
+  }
+  .rect-btn:hover {
+    border-color: var(--ink-navy);
+  }
+  .rect-btn.active {
+    background: var(--ink-navy);
+    color: #fff;
+    border-color: var(--ink-navy);
+  }
+
+  /* Mode Tabs (Type on a Hairline Rule) */
+  .mode-rule-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--hairline);
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+  .mode-rule-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 6px 0 8px;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--muted-blue-grey);
+    cursor: pointer;
+    margin-bottom: -1px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .mode-rule-tab:hover {
+    color: var(--ink-navy);
+  }
+  .mode-rule-tab.active {
+    color: var(--ink-navy);
+    border-bottom-color: var(--vermilion);
+  }
+
+  /* Main Grid */
+  .music-grid {
+    display: grid;
+    grid-template-columns: 310px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  @media (max-width: 639px) {
+    .music-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  /* Player Sticky Column */
+  .player-col {
+    position: sticky;
+    top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  @media (max-width: 639px) {
+    .player-col {
+      position: sticky;
+      top: 0;
+      z-index: 500;
+      background: var(--cream-paper);
+      margin: 0 -16px;
+      padding: 8px 16px;
+      border-bottom: 1px solid var(--hairline);
+    }
+  }
+
+  .video-wrap {
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    position: relative;
+    background: #000;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid var(--hairline);
+  }
+  .video-wrap iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border: none;
+  }
+
+  .player-info-card {
+    background: var(--cream-paper);
+    border: 1px solid var(--hairline);
+    border-radius: 2px;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  }
+  .score-badge {
+    font-weight: 600;
+    color: var(--ink-navy);
+  }
+
+  /* Lyrics Document Layout */
+  .lyrics-sheet {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 500px;
+  }
+
+  .stanza {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .lyric-line {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--ink-navy);
+  }
+
+  .line-translation {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.88rem;
+    color: var(--muted-blue-grey);
+    margin-top: 1px;
+  }
+
+  /* Word hover in reader */
+  .word-tap {
+    cursor: pointer;
+    border-bottom: 1px dotted transparent;
+    transition: all 0.15s ease;
+  }
+  .word-tap:hover {
+    color: var(--vermilion-text);
+    border-bottom-color: var(--vermilion-text);
+  }
+
+  /* Inline Roll-down Select Dropdown for Blanks (Transparent, paper underline) */
+  .blank-select {
+    display: inline-block;
+    vertical-align: baseline;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: var(--ink-navy);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--hairline-heavy);
+    border-radius: 0;
+    padding: 0 4px 1px 2px;
+    margin: 0 2px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .blank-select:focus,
+  .blank-select:hover {
+    border-bottom-color: var(--vermilion);
+  }
+  .blank-select.correct {
+    border-bottom-color: var(--pine);
+    background: var(--pine-tint);
+    color: var(--pine);
+    font-weight: 600;
+  }
+  .blank-select.wrong {
+    border-bottom-color: var(--brick);
+    background: var(--brick-tint);
+    color: var(--brick);
+  }
+
+  /* Inline Text Input for Typed Mode (Transparent, paper underline) */
+  .blank-input {
+    display: inline-block;
+    vertical-align: baseline;
+    width: 90px;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: var(--ink-navy);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--hairline-heavy);
+    border-radius: 0;
+    padding: 0 4px 1px;
+    margin: 0 2px;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .blank-input:focus {
+    border-bottom-color: var(--vermilion);
+  }
+  .blank-input.correct {
+    border-bottom-color: var(--pine);
+    background: var(--pine-tint);
+    color: var(--pine);
+    font-weight: 600;
+  }
+  .blank-input.wrong {
+    border-bottom-color: var(--brick);
+    background: var(--brick-tint);
+    color: var(--brick);
+  }
+
+  /* Song Roll-down Select in Shelf Bar */
+  .song-select {
+    background: var(--card-cream);
+    border: 1px solid var(--hairline-heavy);
+    border-radius: 2px;
+    padding: 5px 26px 5px 8px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-navy);
+    cursor: pointer;
+    min-height: 30px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475E75' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 13px 13px;
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  .song-select:focus,
+  .song-select:hover {
+    border-color: var(--ink-navy);
+  }
+
+  /* Line-Specific Annotation Note (Understand the lyrics tab) */
+  .line-note {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    background: var(--note-cream);
+    border-left: 2px solid var(--ink-navy-mid);
+    border-radius: 2px;
+    padding: 3px 8px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    line-height: 1.45;
+    color: var(--ink-navy-mid);
+  }
+  .line-note .note-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--vermilion-text);
+  }
+  .line-note .note-body {
+    color: var(--ink-navy);
+  }
+
+  /* Stanza-level Footnote */
+  .annotated-note {
+    background: var(--note-cream);
+    border-left: 2px solid var(--ink-navy-mid);
+    border-top: 1px solid var(--hairline);
+    border-right: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    border-radius: 2px;
+    padding: 8px 12px;
+    margin-top: 8px;
+    font-size: 0.82rem;
+    color: var(--muted-blue-grey);
+    line-height: 1.45;
+  }
+  .annotated-note strong {
+    color: var(--ink-navy);
+  }
+
+  /* Footer Actions */
+  .sheet-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--hairline);
+  }
+
+  /* Lexicon Popup Card */
+  .lexicon-card {
+    position: fixed;
+    background: var(--note-cream);
+    border: 1px solid var(--ink-navy);
+    border-radius: 2px;
+    padding: 10px 12px;
+    width: 240px;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 14px rgba(16, 42, 71, 0.08);
+  }
+  .lexicon-headword {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink-navy);
+  }
+  .lexicon-pos {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--muted-blue-grey);
+    text-transform: uppercase;
+    margin-left: 6px;
+  }
+  .lexicon-def {
+    font-size: 12px;
+    color: var(--ink-navy);
+    margin: 4px 0 8px;
+  }
+  .btn-srs {
+    width: 100%;
+    background: var(--ink-navy);
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .btn-srs:hover {
+    background: var(--vermilion);
+  }
+
+  /* Toast Notification */
+  .toast-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--ink-navy);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 2px;
+    font-size: 12px;
+    display: none;
+    z-index: 2000;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- Workshop Back Navigation -->
+  <div class="wk-nav">
+    <button class="wk-back-btn" onclick="showToast('Navigating back to Workshop...')">
+      ← Workshop / Studios
+    </button>
+  </div>
+
+  <!-- Editorial Header -->
+  <header class="editorial-header">
+    <span class="header-eyebrow">Workshop · Studio</span>
+    <h1 class="page-title">Learn from Music</h1>
+    <p class="page-lede">
+      Poetic lyrics reading and aural Cloze. Read stanzas, inspect vocabulary, and complete missing phrases as the music plays.
+    </p>
+  </header>
+
+  <!-- Shelf Toolbar: Songs & Mode -->
+  <div class="shelf-bar">
+    <div class="shelf-cluster">
+      <label for="song-picker" class="shelf-label">Song:</label>
+      <select id="song-picker" class="song-select" onchange="loadSong(this.value)">
+        <option value="bonito" selected>Jarabe de Palo — Bonito (A2 · Spain)</option>
+        <option value="megustas">Manu Chao — Me Gustas Tú (A1 · Global)</option>
+      </select>
+    </div>
+
+    <div class="shelf-cluster">
+      <button class="rect-btn active" id="btn-toggle-trans" onclick="toggleTranslations()">Translations: On</button>
+    </div>
+  </div>
+
+  <!-- Studio Mode Tabs -->
+  <div class="mode-rule-tabs">
+    <button class="mode-rule-tab active" id="tab-easy" onclick="switchMode('easy')">Easy</button>
+    <button class="mode-rule-tab" id="tab-hard" onclick="switchMode('hard')">Hard</button>
+    <button class="mode-rule-tab" id="tab-understand" onclick="switchMode('understand')">Understand the lyrics</button>
+  </div>
+
+  <!-- Studio Grid -->
+  <div class="music-grid">
+
+    <!-- Player Sticky Column -->
+    <aside class="player-col">
+      <div class="video-wrap">
+        <iframe id="yt-iframe"
+                src="https://www.youtube.com/embed/xxhET61yB1A?enablejsapi=1&rel=0&modestbranding=1"
+                allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+      </div>
+
+      <div class="player-info-card" id="status-card">
+        <span id="status-mode-label">Easy Mode</span>
+        <span class="score-badge" id="score-readout">0 answered</span>
+      </div>
+
+      <div style="font-size:12px; color:var(--muted-blue-grey); padding: 4px 2px;" id="mode-helper-text">
+        Play the song. Select the missing words from the roll-down choices as you hear them.
+      </div>
+    </aside>
+
+    <!-- Lyrics Sheet Column -->
+    <main class="lyrics-main">
+      <div class="lyrics-sheet" id="lyrics-sheet">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="sheet-actions" id="exercise-actions" style="display:flex;">
+        <button class="rect-btn active" onclick="checkAllAnswers()">Check All</button>
+        <button class="rect-btn" onclick="revealAnswers()">Reveal Answers</button>
+        <button class="rect-btn" onclick="resetExercises()">Reset</button>
+      </div>
+    </main>
+
+  </div>
+
+</div>
+
+<!-- Lexicon Popup Card -->
+<div class="lexicon-card" id="lexicon-card">
+  <div>
+    <span class="lexicon-headword" id="pop-word">palabra</span>
+    <span class="lexicon-pos" id="pop-pos">sustantivo</span>
+  </div>
+  <div class="lexicon-def" id="pop-def">Definition</div>
+  <button class="btn-srs" onclick="addWordToDeck()">+ Add to Flashcard Deck</button>
+</div>
+
+<!-- Toast notification -->
+<div class="toast-bar" id="toast">Saved</div>
+
+<script>
+// ==========================================
+// SONG CORPUS (STANZAS, BLANKS & NOTES)
+// ==========================================
+const SONGS = {
+  bonito: {
+    title: "Bonito",
+    artist: "Jarabe de Palo",
+    youtubeId: "xxhET61yB1A",
+    stanzas: [
+      {
+        lines: [
+          {
+            text: "Bonito, todo me [parece] bonito",
+            english: "Beautiful, everything seems beautiful to me",
+            options: ["parece", "aparece", "merece", "carece"],
+            note: "parecer: In Spanish, 'parecer' operates like 'gustar' (me parece = 'it seems to me')."
+          },
+          {
+            text: "Bonita mañana",
+            english: "Beautiful morning"
+          },
+          {
+            text: "Bonito [lugar]",
+            english: "Beautiful place",
+            options: ["lugar", "hogar", "mar", "viajar"]
+          },
+          {
+            text: "Bonita la cama",
+            english: "Beautiful the bed"
+          }
+        ]
+      },
+      {
+        lines: [
+          {
+            text: "Qué bien se [ve] el mar",
+            english: "How good the sea looks",
+            options: ["ve", "va", "da", "sé"]
+          },
+          {
+            text: "Bonito es el día",
+            english: "Beautiful is the day"
+          },
+          {
+            text: "Y [acaba] de empezar",
+            english: "And it has just begun",
+            options: ["acaba", "empieza", "trata", "deja"],
+            note: "acabar de + infinitive: Expresses having just done something ('acaba de empezar' = has just begun)."
+          },
+          {
+            text: "Bonita la vida",
+            english: "Beautiful life"
+          },
+          {
+            text: "Respira, respira, respira",
+            english: "Breathe, breathe, breathe"
+          }
+        ]
+      },
+      {
+        lines: [
+          {
+            text: "El teléfono suena, mi [pana] se queja",
+            english: "The phone is ringing, my pal complains",
+            options: ["pana", "cama", "semana", "mañana"],
+            note: "pana: Colloquial Latin American / Caribbean Spanish for 'buddy' or 'close pal'."
+          },
+          {
+            text: "La cosa va mal, la vida le [pesa]",
+            english: "Things are going badly, life weighs on him",
+            options: ["pesa", "pasa", "deja", "queda"]
+          },
+          {
+            text: "Que vivir así ya no le [interesa]",
+            english: "Living like this no longer interests him",
+            options: ["interesa", "importa", "molesta", "conviene"]
+          },
+          {
+            text: "Que seguir así no [vale] la pena",
+            english: "That continuing like this is not worth it",
+            options: ["vale", "sirve", "cuesta", "cuenta"],
+            note: "valer la pena: Idiomatic expression meaning 'to be worth the effort / trouble'."
+          },
+          {
+            text: "Se perdió el amor, se [acabó] la fiesta",
+            english: "Love was lost, the party is over",
+            options: ["acabó", "pasó", "quedó", "dejó"]
+          }
+        ]
+      },
+      {
+        lines: [
+          {
+            text: "Ya no anda el [motor] que empuja la tierra",
+            english: "The engine that pushes the earth no longer runs",
+            options: ["motor", "barco", "sol", "tren"]
+          },
+          {
+            text: "La vida es un [chiste] con triste final",
+            english: "Life is a joke with a sad ending",
+            options: ["chiste", "sueño", "cuento", "juego"]
+          },
+          {
+            text: "El futuro no existe, pero yo le [digo]",
+            english: "The future does not exist, but I tell him",
+            options: ["digo", "hago", "pido", "veo"]
+          },
+          {
+            text: "Bonito, todo me parece bonito",
+            english: "Beautiful, everything seems beautiful to me"
+          },
+          {
+            text: "Bonito, todo me parece bonito",
+            english: "Beautiful, everything seems beautiful to me"
+          }
+        ]
+      },
+      {
+        lines: [
+          {
+            text: "Bonita la [paz], bonita la vida",
+            english: "Beautiful peace, beautiful life",
+            options: ["paz", "mar", "luz", "voz"]
+          },
+          {
+            text: "Bonito volver a [nacer] cada día",
+            english: "Beautiful to be born again every day",
+            options: ["nacer", "hacer", "tener", "crecer"],
+            note: "volver a + infinitive: Expresses doing an action again ('volver a nacer' = to be born anew)."
+          },
+          {
+            text: "Bonita la [verdad] cuando no suena a mentira",
+            english: "Beautiful truth when it doesn't sound like a lie",
+            options: ["verdad", "realidad", "palabra", "noticia"]
+          },
+          {
+            text: "Bonita la [amistad], bonita la risa",
+            english: "Beautiful friendship, beautiful laughter",
+            options: ["amistad", "verdad", "ciudad", "bondad"]
+          }
+        ]
+      },
+      {
+        lines: [
+          {
+            text: "Bonita la [gente] cuando hay calidad",
+            english: "Beautiful people when there is quality",
+            options: ["gente", "tarde", "noche", "fiesta"]
+          },
+          {
+            text: "Bonita la gente que no se [arrepiente]",
+            english: "Beautiful the people who don't regret",
+            options: ["arrepiente", "siente", "entiende", "detiene"],
+            note: "arrepentirse: Reflexive verb meaning 'to regret' (no se arrepiente = they don't regret)."
+          },
+          {
+            text: "Que gana y que [pierde], que habla y no miente",
+            english: "Who wins and who loses, who speaks and doesn't lie",
+            options: ["pierde", "puede", "quiere", "sabe"]
+          },
+          {
+            text: "Bonita la gente, por eso yo digo",
+            english: "Beautiful people, that's why I say"
+          }
+        ]
+      },
+      {
+        lines: [
+          {
+            text: "Bonito, todo me parece bonito",
+            english: "Beautiful, everything seems beautiful to me"
+          },
+          {
+            text: "Qué bonito que te va cuando te va bonito",
+            english: "How nice it goes for you when it goes nicely",
+            note: "irle bonito: Impersonal expression for how things are turning out for someone (te va bonito = things are going nicely for you)."
+          },
+          {
+            text: "Qué bonito que te va cuando todo va bien",
+            english: "How nice it goes for you when everything goes well"
+          }
+        ]
+      }
+    ]
+  },
+  megustas: {
+    title: "Me Gustas Tú",
+    artist: "Manu Chao",
+    youtubeId: "rs6Y4kZ8qtw",
+    stanzas: [
+      {
+        lines: [
+          {
+            text: "¿Qué horas son, mi [corazón]?",
+            english: "What time is it, my sweetheart?",
+            options: ["corazón", "canción", "razón", "ilusión"],
+            note: "¿qué horas son?: Plural colloquial idiom for 'what time is it?' common across Latin America (standard: ¿qué hora es?)."
+          },
+          {
+            text: "Te lo dije bien clarito",
+            english: "I told you very clearly",
+            note: "clarito: Diminutive of 'claro' (-ito suffix softening and adding affection/emphasis)."
+          },
+          {
+            text: "Permanece a la escucha",
+            english: "Stay tuned / keep listening",
+            note: "a la escucha: Radio broadcasting jargon meaning 'listening in / stay tuned'."
+          },
+          {
+            text: "Doce de la noche en La Habana, Cuba",
+            english: "Midnight in Havana, Cuba"
+          },
+          {
+            text: "Once de la noche en San Salvador, El Salvador",
+            english: "11 PM in San Salvador"
+          },
+          {
+            text: "Diez de la noche en Managua, Nicaragua",
+            english: "10 PM in Managua"
+          },
+          {
+            text: "Me gustas tú",
+            english: "I like you (You please me)"
+          }
+        ]
+      },
+      {
+        lines: [
+          {
+            text: "Me [gustan] los aviones, me gustas tú",
+            english: "I like airplanes, I like you",
+            options: ["gustan", "gusta", "gusto", "gustas"],
+            note: "gustar agreement: 'Me gustan los aviones' (plural noun 'aviones' is grammatical subject) vs 'me gustas tú' (second-person singular subject)."
+          },
+          {
+            text: "Me gusta [viajar], me gustas tú",
+            english: "I like traveling, I like you",
+            options: ["viajar", "cantar", "bailar", "soñar"]
+          },
+          {
+            text: "Me gusta la [mañana], me gustas tú",
+            english: "I like the morning, I like you",
+            options: ["mañana", "noche", "tarde", "semana"]
+          },
+          {
+            text: "Me gusta el [viento], me gustas tú",
+            english: "I like the wind, I like you",
+            options: ["viento", "tiempo", "ciento", "momento"]
+          },
+          {
+            text: "Me gusta [soñar], me gustas tú",
+            english: "I like dreaming, I like you",
+            options: ["soñar", "amar", "dormir", "hablar"]
+          },
+          {
+            text: "Me gusta la mar, me gustas tú",
+            english: "I like the sea, I like you",
+            note: "la mar: Poetic feminine usage of 'el mar', traditional in seafaring folk and songs."
+          }
+        ]
+      },
+      {
+        lines: [
+          {
+            text: "¿Qué voy a [hacer]? Je ne sais pas",
+            english: "What am I going to do? I don't know",
+            options: ["hacer", "decir", "tener", "poner"],
+            note: "Je ne sais pas: French for 'I don't know' (Manu Chao frequently blends Spanish, French, and English)."
+          },
+          {
+            text: "¿Qué voy a hacer? Je ne sais plus",
+            english: "What am I going to do? I don't know anymore",
+            note: "Je ne sais plus: French for 'I no longer know'."
+          },
+          {
+            text: "¿Qué voy a hacer? Je suis perdu",
+            english: "What am I going to do? I am lost",
+            note: "Je suis perdu: French for 'I am lost'."
+          },
+          {
+            text: "¿Qué horas son, mi corazón?",
+            english: "What time is it, my sweetheart?"
+          }
+        ]
+      },
+      {
+        lines: [
+          {
+            text: "Me gusta la [moto], me gustas tú",
+            english: "I like the motorcycle, I like you",
+            options: ["moto", "foto", "auto", "bici"],
+            note: "la moto: Feminine noun, colloquial short form of 'la motocicleta'."
+          },
+          {
+            text: "Me gusta [correr], me gustas tú",
+            english: "I like running, I like you",
+            options: ["correr", "comer", "beber", "leer"]
+          },
+          {
+            text: "Me gusta la [lluvia], me gustas tú",
+            english: "I like the rain, I like you",
+            options: ["lluvia", "nieve", "luz", "playa"]
+          },
+          {
+            text: "Me gusta [volver], me gustas tú",
+            english: "I like returning, I like you",
+            options: ["volver", "tener", "hacer", "poner"]
+          },
+          {
+            text: "Me gusta la [montaña], me gustas tú",
+            english: "I like the mountain, I like you",
+            options: ["montaña", "mañana", "campaña", "cabaña"]
+          },
+          {
+            text: "Me gusta la [noche], me gustas tú",
+            english: "I like the night, I like you",
+            options: ["noche", "tarde", "calle", "gente"]
+          }
+        ]
+      }
+    ]
+  }
+};
+
+// MINI LEXICON FOR TAP LOOKUP
+const MINI_LEXICON = {
+  "bonito": { lemma: "bonito", pos: "adj.", def: "pretty, nice, beautiful" },
+  "todo": { lemma: "todo", pos: "pron.", def: "everything, all" },
+  "me": { lemma: "yo", pos: "pron.", def: "to me (indirect object)" },
+  "parece": { lemma: "parecer", pos: "v.", def: "to seem, to appear" },
+  "mañana": { lemma: "mañana", pos: "sust.", def: "morning / tomorrow" },
+  "lugar": { lemma: "lugar", pos: "sust.", def: "place, spot" },
+  "cama": { lemma: "cama", pos: "sust.", def: "bed" },
+  "mar": { lemma: "mar", pos: "sust.", def: "sea, ocean" },
+  "día": { lemma: "día", pos: "sust.", def: "day" },
+  "acaba": { lemma: "acabar", pos: "v.", def: "to finish; (acabar de) to have just" },
+  "empezar": { lemma: "empezar", pos: "v.", def: "to begin, to start" },
+  "vida": { lemma: "vida", pos: "sust.", def: "life" },
+  "respira": { lemma: "respirar", pos: "v.", def: "to breathe" },
+  "teléfono": { lemma: "teléfono", pos: "sust.", def: "telephone" },
+  "suena": { lemma: "sonar", pos: "v.", def: "to ring, to sound" },
+  "pana": { lemma: "pana", pos: "sust.", def: "buddy, pal, friend" },
+  "queja": { lemma: "quejarse", pos: "v.", def: "to complain" },
+  "pesa": { lemma: "pesar", pos: "v.", def: "to weigh upon" },
+  "interesa": { lemma: "interesar", pos: "v.", def: "to interest (le interesa)" },
+  "vale": { lemma: "valer", pos: "v.", def: "to be worth; (valer la pena)" },
+  "pena": { lemma: "pena", pos: "sust.", def: "sorrow, pity, trouble" },
+  "perdió": { lemma: "perder", pos: "v.", def: "to lose (was lost)" },
+  "acabó": { lemma: "acabar", pos: "v.", def: "to end (ended)" },
+  "motor": { lemma: "motor", pos: "sust.", def: "engine, motor" },
+  "tierra": { lemma: "tierra", pos: "sust.", def: "earth, land" },
+  "chiste": { lemma: "chiste", pos: "sust.", def: "joke" },
+  "futuro": { lemma: "futuro", pos: "sust.", def: "future" },
+  "digo": { lemma: "decir", pos: "v.", def: "to say (pres: I say)" },
+  "paz": { lemma: "paz", pos: "sust.", def: "peace" },
+  "nacer": { lemma: "nacer", pos: "v.", def: "to be born" },
+  "verdad": { lemma: "verdad", pos: "sust.", def: "truth" },
+  "mentira": { lemma: "mentira", pos: "sust.", def: "lie, falsehood" },
+  "amistad": { lemma: "amistad", pos: "sust.", def: "friendship" },
+  "risa": { lemma: "risa", pos: "sust.", def: "laughter" },
+  "gente": { lemma: "gente", pos: "sust.", def: "people" },
+  "calidad": { lemma: "calidad", pos: "sust.", def: "quality" },
+  "arrepiente": { lemma: "arrepentirse", pos: "v.", def: "to regret, repent" },
+  "pierde": { lemma: "perder", pos: "v.", def: "to lose (loses)" },
+  "horas": { lemma: "hora", pos: "sust.", def: "hour, time" },
+  "corazón": { lemma: "corazón", pos: "sust.", def: "heart, sweetheart" },
+  "clarito": { lemma: "claro", pos: "adj.", def: "clear, plain, sharp" },
+  "aviones": { lemma: "avión", pos: "sust.", def: "airplane" },
+  "gustan": { lemma: "gustar", pos: "v.", def: "to please (plural subject)" },
+  "viajar": { lemma: "viajar", pos: "v.", def: "to travel" },
+  "viento": { lemma: "viento", pos: "sust.", def: "wind" },
+  "soñar": { lemma: "soñar", pos: "v.", def: "to dream" },
+  "moto": { lemma: "moto", pos: "sust.", def: "motorcycle" },
+  "correr": { lemma: "correr", pos: "v.", def: "to run" },
+  "lluvia": { lemma: "lluvia", pos: "sust.", def: "rain" },
+  "volver": { lemma: "volver", pos: "v.", def: "to return" },
+  "montaña": { lemma: "montaña", pos: "sust.", def: "mountain" },
+  "noche": { lemma: "noche", pos: "sust.", def: "night" }
+};
+
+// ==========================================
+// STATE
+// ==========================================
+let currentSongKey = 'bonito';
+let activeMode = 'easy'; // 'easy' | 'hard' | 'understand'
+let showTranslations = true;
+let activeWord = null;
+
+// ==========================================
+// RENDERING
+// ==========================================
+function loadSong(key) {
+  currentSongKey = key;
+  const picker = document.getElementById('song-picker');
+  if (picker && picker.value !== key) {
+    picker.value = key;
+  }
+
+  const iframe = document.getElementById('yt-iframe');
+  iframe.src = `https://www.youtube.com/embed/${SONGS[key].youtubeId}?enablejsapi=1&rel=0&modestbranding=1`;
+
+  renderSheet();
+}
+
+function switchMode(mode) {
+  activeMode = mode;
+  document.getElementById('tab-easy').classList.toggle('active', mode === 'easy');
+  document.getElementById('tab-hard').classList.toggle('active', mode === 'hard');
+  document.getElementById('tab-understand').classList.toggle('active', mode === 'understand');
+
+  const actions = document.getElementById('exercise-actions');
+  const helper = document.getElementById('mode-helper-text');
+  const label = document.getElementById('status-mode-label');
+
+  if (mode === 'easy') {
+    actions.style.display = 'flex';
+    label.textContent = "Easy Mode";
+    helper.textContent = "Play the song. Select the missing words from the roll-down choices as you hear them.";
+    updateAnsweredCount();
+  } else if (mode === 'hard') {
+    actions.style.display = 'flex';
+    label.textContent = "Hard Mode";
+    helper.textContent = "Play the song. Type the missing words into the blanks as you hear them.";
+    updateAnsweredCount();
+  } else {
+    actions.style.display = 'none';
+    label.textContent = "Understand the lyrics";
+    document.getElementById('score-readout').textContent = "Tap any word to inspect";
+    helper.textContent = "Read through the full lyrics with translations and cultural notes. Tap any word to look up its definition.";
+  }
+
+  renderSheet();
+}
+
+function toggleTranslations() {
+  showTranslations = !showTranslations;
+  const btn = document.getElementById('btn-toggle-trans');
+  btn.textContent = showTranslations ? "Translations: On" : "Translations: Off";
+  btn.classList.toggle('active', showTranslations);
+  renderSheet();
+}
+
+function normalize(str) {
+  return String(str || '')
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[¿¡,.]/g, '');
+}
+
+function renderSheet() {
+  const song = SONGS[currentSongKey];
+  const container = document.getElementById('lyrics-sheet');
+  container.innerHTML = '';
+
+  song.stanzas.forEach((stanza) => {
+    const stanzaEl = document.createElement('div');
+    stanzaEl.className = 'stanza';
+
+    stanza.lines.forEach((line) => {
+      const lineEl = document.createElement('div');
+      lineEl.className = 'lyric-line';
+
+      if (activeMode === 'understand') {
+        // Understand the lyrics: Full uninterrupted poem with no blanks, all words tappable
+        const cleanText = line.text.replace(/\[([^\]]+)\]/g, '$1');
+        const words = cleanText.split(' ');
+
+        words.forEach((w, wIdx) => {
+          if (!w) return;
+          const span = document.createElement('span');
+          span.className = 'word-tap';
+          span.textContent = w;
+          const clean = w.toLowerCase().replace(/[¿¡,.]/g, '');
+          span.onclick = (e) => handleWordTap(clean, e);
+          lineEl.appendChild(span);
+          if (wIdx < words.length - 1) {
+            lineEl.appendChild(document.createTextNode(' '));
+          }
+        });
+
+      } else {
+        // Exercise Mode: Easy (Roll-down dropdown) or Hard (Type-in)
+        const parts = line.text.split(/(\[[^\]]+\])/);
+
+        parts.forEach(part => {
+          if (part.startsWith('[') && part.endsWith(']')) {
+            const targetWord = part.slice(1, -1);
+
+            if (activeMode === 'easy') {
+              // Easy: Roll-down select dropdown
+              const select = document.createElement('select');
+              select.className = 'blank-select';
+              select.dataset.answer = targetWord;
+
+              const defaultOpt = document.createElement('option');
+              defaultOpt.value = "";
+              defaultOpt.textContent = "— choose —";
+              select.appendChild(defaultOpt);
+
+              const pool = line.options ? [...line.options] : [targetWord, "otra", "cosa", "bien"];
+              pool.sort(() => Math.random() - 0.5);
+
+              pool.forEach(opt => {
+                const optEl = document.createElement('option');
+                optEl.value = opt;
+                optEl.textContent = opt;
+                select.appendChild(optEl);
+              });
+
+              select.onchange = () => {
+                select.classList.remove('correct', 'wrong');
+                updateAnsweredCount();
+              };
+              lineEl.appendChild(select);
+
+            } else {
+              // Hard: Type-in input
+              const input = document.createElement('input');
+              input.type = "text";
+              input.className = 'blank-input';
+              input.dataset.answer = targetWord;
+              input.placeholder = "____";
+              input.oninput = () => {
+                input.classList.remove('correct', 'wrong');
+                updateAnsweredCount();
+              };
+              input.onkeydown = (e) => {
+                if (e.key === 'Enter') checkAllAnswers();
+              };
+              lineEl.appendChild(input);
+            }
+
+          } else {
+            // Non-blank words remain tappable for lexicon
+            const words = part.split(' ');
+            words.forEach((w, wIdx) => {
+              if (!w) return;
+              const span = document.createElement('span');
+              span.className = 'word-tap';
+              span.textContent = w;
+              const clean = w.toLowerCase().replace(/[¿¡,.]/g, '');
+              span.onclick = (e) => handleWordTap(clean, e);
+              lineEl.appendChild(span);
+              if (wIdx < words.length - 1) {
+                lineEl.appendChild(document.createTextNode(' '));
+              }
+            });
+          }
+        });
+      }
+
+      // Bilingual Translation
+      if (showTranslations && line.english) {
+        const transEl = document.createElement('div');
+        transEl.className = 'line-translation';
+        transEl.textContent = line.english;
+        lineEl.appendChild(transEl);
+      }
+
+      // Line-Specific Annotation Note (Shown strictly in 'understand' mode, right under this line)
+      if (activeMode === 'understand' && line.note) {
+        const noteEl = document.createElement('div');
+        noteEl.className = 'line-note';
+        noteEl.innerHTML = `<span class="note-tag">Note</span> <span class="note-body">${line.note}</span>`;
+        lineEl.appendChild(noteEl);
+      }
+
+      stanzaEl.appendChild(lineEl);
+    });
+
+    // Stanza-level Footnote (if present)
+    if (stanza.note && activeMode === 'understand') {
+      const noteEl = document.createElement('div');
+      noteEl.className = 'annotated-note';
+      noteEl.innerHTML = `<strong>Note:</strong> ${stanza.note}`;
+      stanzaEl.appendChild(noteEl);
+    }
+
+    container.appendChild(stanzaEl);
+  });
+
+  if (activeMode !== 'understand') {
+    updateAnsweredCount();
+  }
+}
+
+function updateAnsweredCount() {
+  const all = document.querySelectorAll('.blank-select, .blank-input');
+  const filled = Array.from(all).filter(el => el.value.trim() !== '');
+  const hasEvaluated = document.querySelector('.blank-select.correct, .blank-select.wrong, .blank-input.correct, .blank-input.wrong');
+  if (!hasEvaluated) {
+    document.getElementById('score-readout').textContent = `${filled.length} of ${all.length} answered`;
+  }
+}
+
+function checkAllAnswers() {
+  const elements = document.querySelectorAll('.blank-select, .blank-input');
+  let correctCount = 0;
+  elements.forEach(el => {
+    const answer = el.dataset.answer;
+    const userVal = el.value.trim();
+    if (!userVal) {
+      el.classList.remove('correct', 'wrong');
+      return;
+    }
+    if (normalize(userVal) === normalize(answer)) {
+      el.classList.add('correct');
+      el.classList.remove('wrong');
+      correctCount++;
+    } else {
+      el.classList.add('wrong');
+      el.classList.remove('correct');
+    }
+  });
+  document.getElementById('score-readout').textContent = `${correctCount} of ${elements.length} correct`;
+  showToast(`${correctCount} of ${elements.length} correct`);
+}
+
+function revealAnswers() {
+  const elements = document.querySelectorAll('.blank-select, .blank-input');
+  elements.forEach(el => {
+    el.value = el.dataset.answer;
+    el.classList.add('correct');
+    el.classList.remove('wrong');
+  });
+  document.getElementById('score-readout').textContent = `${elements.length} of ${elements.length} correct`;
+}
+
+function resetExercises() {
+  const elements = document.querySelectorAll('.blank-select, .blank-input');
+  elements.forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'wrong');
+  });
+  updateAnsweredCount();
+}
+
+// ==========================================
+// LEXICON LOOKUP POPUP
+// ==========================================
+function handleWordTap(cleanWord, event) {
+  event.stopPropagation();
+  const entry = MINI_LEXICON[cleanWord];
+  const popover = document.getElementById('lexicon-card');
+
+  if (!entry) {
+    document.getElementById('pop-word').textContent = cleanWord;
+    document.getElementById('pop-pos').textContent = "palabra";
+    document.getElementById('pop-def').textContent = "Look up in main Parlour Lexicon";
+  } else {
+    document.getElementById('pop-word').textContent = entry.lemma;
+    document.getElementById('pop-pos').textContent = entry.pos;
+    document.getElementById('pop-def').textContent = entry.def;
+  }
+  activeWord = cleanWord;
+
+  const rect = event.target.getBoundingClientRect();
+  popover.style.left = `${Math.min(window.innerWidth - 260, Math.max(10, rect.left))}px`;
+  popover.style.top = `${rect.bottom + window.scrollY + 6}px`;
+  popover.style.display = 'block';
+}
+
+function hidePopover() {
+  document.getElementById('lexicon-card').style.display = 'none';
+}
+
+function addWordToDeck() {
+  showToast(`"${activeWord}" added to flashcard deck`);
+  hidePopover();
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.display = 'block';
+  setTimeout(() => {
+    t.style.display = 'none';
+  }, 2200);
+}
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('#lexicon-card') && !e.target.classList.contains('word-tap')) {
+    hidePopover();
+  }
+});
+
+// Initial render
+window.addEventListener('DOMContentLoaded', () => {
+  switchMode('easy');
+});
+</script>
+
+</body>
+</html>

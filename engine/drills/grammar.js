@@ -924,7 +924,7 @@ const GrammarDriller = (function () {
 
         _container.innerHTML = `
             <div class="gd-settings">
-                <h2 class="gd-title">Grammar Driller</h2>
+                <h2 class="gd-title">Grammar Practice</h2>
                 ${(typeof DrillInfo !== 'undefined') ? DrillInfo.buttonHtml('grammar') : ''}
                 ${switcherHtml}
                 <div class="gd-tab-panel">

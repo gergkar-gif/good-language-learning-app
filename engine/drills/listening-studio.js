@@ -21,7 +21,8 @@ const ListeningStudio = (function () {
 
     const STUDIO_TAB = {
         COMPREHENSION: 'comprehension',
-        DECODING: 'decoding'
+        DECODING: 'decoding',
+        MUSIC: 'music'
     };
 
     const PHASE = {
@@ -405,6 +406,9 @@ const ListeningStudio = (function () {
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.DECODING ? 'active' : ''}" data-studio-tab="decoding" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.DECODING}">
                         Decoding Drills
                     </button>
+                    <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.MUSIC ? 'active' : ''}" data-studio-tab="music" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.MUSIC}">
+                        Learn from Music
+                    </button>
                 </div>
                 <div class="sp-studio-body ls-studio-body" id="ls-studio-mount"></div>
             </div>
@@ -428,7 +432,13 @@ const ListeningStudio = (function () {
         const mount = document.getElementById('ls-studio-mount');
         if (!mount) return;
 
-        if (_activeStudioTab === STUDIO_TAB.DECODING) {
+        if (_activeStudioTab === STUDIO_TAB.MUSIC) {
+            if (typeof MusicDriller !== 'undefined') {
+                MusicDriller.render(mount, _subOptions);
+            } else {
+                mount.innerHTML = '<div class="gd-loading">Loading Music Studio…</div>';
+            }
+        } else if (_activeStudioTab === STUDIO_TAB.DECODING) {
             if (typeof ListeningDriller !== 'undefined') {
                 ListeningDriller.render(mount, _subOptions);
             } else {
@@ -956,12 +966,18 @@ const ListeningStudio = (function () {
         if (typeof ListeningDriller !== 'undefined' && typeof ListeningDriller.stop === 'function') {
             try { ListeningDriller.stop(); } catch (e) {}
         }
+        if (typeof MusicDriller !== 'undefined' && typeof MusicDriller.stop === 'function') {
+            try { MusicDriller.stop(); } catch (e) {}
+        }
     }
 
     async function render(container, options = {}) {
         _container = container;
 
-        if (options && (options.autoStart || options.count)) {
+        if (options && (options.activeTab === 'music' || options.activeTab === 'songs')) {
+            _activeStudioTab = STUDIO_TAB.MUSIC;
+            _subOptions = options;
+        } else if (options && (options.autoStart || options.count)) {
             _activeStudioTab = STUDIO_TAB.DECODING;
             _subOptions = options;
         } else if (options && options.activeTab) {

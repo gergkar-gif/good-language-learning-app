@@ -685,7 +685,7 @@ const VocabularyDriller = (function () {
 
         _container.innerHTML = `
             <div class="gd-settings">
-                <h2 class="gd-title">Vocabulary Driller</h2>
+                <h2 class="gd-title">Vocabulary Practice</h2>
                 ${DrillInfo.buttonHtml('vocabulary')}
                 <p class="gd-hint">Recognise, infer and retrieve vocabulary from real ${Lang.name()} sentences —
                     not bare flashcards. Direct recall lives in My Decks.</p>

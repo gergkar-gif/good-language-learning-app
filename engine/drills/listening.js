@@ -260,7 +260,7 @@ const ListeningDriller = (function () {
     function _renderSettings() {
         if (!ParlourTTS.available()) {
             _container.innerHTML = `
-                <h2 class="gd-title">Listening Driller</h2>
+                <h2 class="gd-title">Listening Practice</h2>
                 <div class="gd-empty">There's no audio available right now — you're offline and this
                     browser has no ${typeof Lang !== 'undefined' ? Lang.name() : 'course'} voice installed.
                     Reconnect, or add a device voice in your language/speech settings, then reopen
@@ -275,7 +275,7 @@ const ListeningDriller = (function () {
 
         _container.innerHTML = `
             <div class="gd-settings">
-                <h2 class="gd-title">Listening Driller</h2>
+                <h2 class="gd-title">Listening Practice</h2>
                 ${DrillInfo.buttonHtml('listening')}
                 <p class="gd-hint">Decode spoken ${Lang.name()} — meaning, matching, dictation and missing
                     words, all by ear. Play as many times as you like.</p>

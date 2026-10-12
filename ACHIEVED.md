@@ -9,6 +9,17 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed work (2026-10-12)
 
+- **"Learn from Music" in Listening Practice & Workshop Nomenclature Alignment (Done 2026-10-12).**
+  - **Learn from Music Integration:**
+    - Authored CEFR-aligned song lyrics collections for European Spanish and Latin American Spanish (`content/es-es/songs.json` and `content/es-latam/songs.json`), with synchronized bilingual line translations, cultural/idiomatic annotations, and curated cloze blanks.
+    - Implemented `engine/drills/music.js` featuring three progressive learning modes ("Easy" multiple-choice cloze, "Hard" freeform typing cloze, and "Understand the lyrics" bilingual reader with inline lexical footnotes), drop-down song switcher, and integrated word lookup into `Lexicon` / SRS deck.
+    - Embedded "Learn from Music" directly as a dedicated tab inside Listening Practice (`engine/drills/listening-studio.js`) rather than a standalone card, cleanly managing lifecycle stop and sub-tab state.
+    - Styled lyrics interface in `styles/workshop.css` conforming to Parlour's cream background and clean typography tokens.
+  - **Workshop Cards & UI Nomenclature Standardization:**
+    - Standardized all top-level Workshop cards from disparate "Studio" / "Driller" suffixes to unified "Practice": Grammar Practice, Listening Practice, Speaking Practice, Verb Practice (and Hungarian Verb & Morphology Practice), Writing Practice, and Vocabulary Practice (`engine/workshop.js`).
+    - Synchronized modal descriptions and sheet titles across `engine/drillInfo.js`.
+    - Aligned drill headers (`<h2 class="gd-title">`) and contextual navigation in `engine/drills/grammar.js`, `engine/drills/hu-verb.js`, `engine/drills/vocabulary.js`, `engine/drills/listening.js`, `engine/learnerModel.js`, `engine/guide.js`, `engine/journey.js`, and `engine/lessons.js`.
+
 - **Dynamic Vocabulary Readiness & Curriculum Alignment for Written Exchanges and Spoken Scenarios (Done 2026-10-12).**
   Addressed issue where early written exchanges (e.g. Hungarian *Találkozó a Deák téren*) and oral scenarios were recommended prematurely when learners did not know the required vocabulary. Replaced rigid milestone placement with a dynamic vocabulary readiness model:
   - **Curriculum Vocabulary Alignment & Verification:**

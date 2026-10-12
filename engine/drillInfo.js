@@ -18,8 +18,15 @@ const DrillInfo = (function () {
     // Each entry: what this trains, why it might feel strange at first,
     // what "getting better" actually looks like — not a feature list.
     const COPY = {
+        'hu-verb-studio': {
+            title: 'About Verb & Morphology Practice',
+            body: [
+                "Consolidated Hungarian inflection and structure practice across conjugation, verbal prefixes, suffix stacking, and word decomposition.",
+                "Work on individual forms or peel complex words apart piece by piece to build natural reading and speaking instincts."
+            ]
+        },
         'hu-verb': {
-            title: 'About the Verb Driller',
+            title: 'About Verb Practice',
             body: [
                 "This trains the ending, not the verb. You'll often be asked to conjugate a verb you don't recognise — that's on purpose. Once you know the pattern for a person (-ok/-asz/-ik...), you can build the right form for almost any verb, familiar or not.",
                 "It can feel like guessing at first. With practice, your ear starts to catch what \"sounds right\" before you consciously work out the rule — that instinct is the actual goal, not memorising every verb."
@@ -47,21 +54,21 @@ const DrillInfo = (function () {
             ]
         },
         verbs: {
-            title: 'About the Verb Driller',
+            title: 'About Verb Practice',
             body: [
                 "Table mode shows a full conjugation to study; Speed mode tests you against the clock on individual forms.",
                 "The goal isn't memorising a giant list of endings — it's pattern recognition. The more forms you produce, the faster a conjugation starts to feel automatic instead of something you have to work out each time."
             ]
         },
         grammar: {
-            title: 'About the Grammar Driller',
+            title: 'About Grammar Practice',
             body: [
                 "Targeted grammar practice built around your course skills. 'Fix weak areas' prioritises concepts you've recently missed, while 'Practise a skill' lets you drill any grammar point in the course.",
                 "Exercises progress from recognition to active production, with on-demand rule reviews whenever you need a quick reminder."
             ]
         },
         vocabulary: {
-            title: 'About the Vocabulary Driller',
+            title: 'About Vocabulary Practice',
             body: [
                 "Rather than bare flashcard recall, every question here tests a word inside a real sentence — you have to use the surrounding context to work out or confirm the meaning, the same way you'd meet it in actual reading.",
                 "That makes it harder than a simple \"what does this mean\" quiz on purpose: recognising a word in context is the skill that actually transfers to reading and conversation."
@@ -75,21 +82,21 @@ const DrillInfo = (function () {
             ]
         },
         listening: {
-            title: 'About the Listening Driller',
+            title: 'About Listening Practice',
             body: [
                 "Short audio clips, decoded by ear alone — no text to lean on while you listen.",
                 "This is deliberately uncomfortable at first: understanding a written sentence and understanding the same sentence spoken at natural speed are genuinely different skills. This one only gets built through repetition."
             ]
         },
         speaking: {
-            title: 'About the Speaking Studio',
+            title: 'About Speaking Practice',
             body: [
                 "Say sentences out loud rather than typing them — production, not recognition. You can shadow a native recording, respond to a prompt, or work through an open-ended scenario.",
                 "Speaking a language and reading it use different mental muscles — this is the one place in the app dedicated to building the first."
             ]
         },
         writing: {
-            title: 'About the Writing Studio',
+            title: 'About Writing Practice',
             body: [
                 "Open-ended composition, from single sentences up to short exchanges, graded against CEFR expectations for your level rather than a single fixed \"correct answer.\"",
                 "This is where you get to be imprecise and find out what happens — the grading is there to catch real mistakes, not to demand a textbook-perfect response."

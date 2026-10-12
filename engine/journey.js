@@ -788,10 +788,10 @@ const Journey = (function () {
                                 </div>
                                 <div class="cando-row-actions">
                                     <span class="cando-badge ${badgeClass}">${badgeText}</span>
-                                    <button type="button" class="dk-secondary cando-btn" data-action-speaking="${esc(item.text)}" title="Practice in Speaking Studio">
+                                    <button type="button" class="dk-secondary cando-btn" data-action-speaking="${esc(item.text)}" title="Practice in Speaking Practice">
                                         Speak
                                     </button>
-                                    <button type="button" class="dk-secondary cando-btn" data-action-writing="${esc(item.text)}" title="Practice in Writing Studio">
+                                    <button type="button" class="dk-secondary cando-btn" data-action-writing="${esc(item.text)}" title="Practice in Writing Practice">
                                         Write
                                     </button>
                                 </div>

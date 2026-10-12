@@ -246,7 +246,7 @@ const Guide = (function () {
             id: 'invite-verb-driller',
             tab: 'drills',
             applies: ctx => !!ctx.weakVerbTense,
-            text: () => 'If a verb keeps catching you out, the Verb Driller practises just that.',
+            text: () => 'If a verb keeps catching you out, Verb Practice focuses on just that.',
             button: 'Have a look'
         },
         {
@@ -346,7 +346,7 @@ const Guide = (function () {
                             <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Workshop</span>
                                 <h4>The Practice Studio</h4>
-                                <p>Focused micro-practice. Drill fast verb conjugations, train your listening, or use the Speaking &amp; Writing Studios for open-ended composition with CEFR grading.</p>
+                                <p>Focused micro-practice. Drill fast verb conjugations, train your listening, or use Speaking &amp; Writing Practice for open-ended composition with CEFR grading.</p>
                             </div>
                             <div class="pl-guide-room-card">
                                 <span class="pl-guide-room-tag">Decks</span>

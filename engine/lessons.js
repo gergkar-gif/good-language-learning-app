@@ -2677,7 +2677,7 @@ function summaryGoalsHtml(checklistResults) {
                                     Quick 3-Question Practice
                                 </button>
                                 <button type="button" class="dk-secondary lsn-goal-action-btn" data-remediate-speaking="${esc(item.text)}">
-                                    Practice in Speaking Studio →
+                                    Speaking Practice →
                                 </button>
                             </div>
                         </div>

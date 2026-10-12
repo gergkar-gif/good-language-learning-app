@@ -23,7 +23,7 @@ const Workshop = (function () {
         {
             id: 'speaking',
             icon: 'speaking',
-            title: 'Speaking Studio',
+            title: 'Speaking Practice',
             sub: () => `Practise pronunciation, shadowing, and open-ended oral production.`,
             containerId: 'speaking-driller-root',
             category: 'studios'
@@ -31,7 +31,7 @@ const Workshop = (function () {
         {
             id: 'writing',
             icon: 'writing',
-            title: 'Writing Studio',
+            title: 'Writing Practice',
             sub: () => `Sentence translation and open-ended written production with CEFR grading.`,
             containerId: 'writing-driller-root',
             category: 'studios'
@@ -39,7 +39,7 @@ const Workshop = (function () {
         {
             id: 'hu-verb-studio',
             icon: 'hu-morphology',
-            title: 'Verb & Morphology Studio',
+            title: 'Verb & Morphology Practice',
             sub: 'Conjugation, verbal prefixes, suffixes, and word decomposition.',
             containerId: 'hu-verb-studio-root',
             langs: ['hu'],
@@ -148,7 +148,7 @@ const Workshop = (function () {
         {
             id: 'verbs',
             icon: 'verbs',
-            title: 'Verb Driller',
+            title: 'Verb Practice',
             sub: 'Conjugation tables and speed drills.',
             containerId: 'verb-driller-root',
             langs: ['es', 'es-latam', 'es-es'],
@@ -158,15 +158,15 @@ const Workshop = (function () {
         {
             id: 'listening',
             icon: 'listening',
-            title: 'Listening Studio',
-            sub: () => `Decoding drills and CEFR listening comprehension.`,
+            title: 'Listening Practice',
+            sub: () => `Decoding drills, song lyrics, and CEFR listening comprehension.`,
             containerId: 'listening-studio-root',
             category: 'studios'
         },
         {
             id: 'grammar',
             icon: 'grammar',
-            title: 'Grammar Driller',
+            title: 'Grammar Practice',
             sub: 'Practice by skill, drawn from every lesson.',
             containerId: 'grammar-driller-root',
             category: 'foundations'
@@ -174,7 +174,7 @@ const Workshop = (function () {
         {
             id: 'vocabulary',
             icon: 'vocabulary',
-            title: 'Vocabulary Driller',
+            title: 'Vocabulary Practice',
             sub: 'Meaning and context, drawn from every word taught.',
             containerId: 'vocabulary-driller-root',
             category: 'foundations',
@@ -223,6 +223,8 @@ const Workshop = (function () {
         speaking: '<circle cx="50" cy="50" r="42" class="ps-wash"/><rect x="42" y="22" width="16" height="28" rx="8" class="ps-ink"/><path d="M34 40a16 16 0 0 0 32 0" class="ps-ink" fill="none" stroke="currentColor" stroke-width="4"/><line x1="50" y1="56" x2="50" y2="72" class="ps-ink" stroke="currentColor" stroke-width="4"/><line x1="38" y1="72" x2="62" y2="72" class="ps-ink" stroke="currentColor" stroke-width="4"/><circle cx="72" cy="28" r="6" class="ps-accent"/>',
         // a quill and manuscript — written production
         writing: '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M30 70 L65 35 L75 45 L40 80 L25 85 Z" class="ps-ink"/><line x1="60" y1="40" x2="70" y2="50" class="ps-wash" stroke="currentColor" stroke-width="2"/><circle cx="75" cy="25" r="5" class="ps-accent"/>',
+        // beamed eighth notes — music, rhythm and lyrics
+        music: '<circle cx="50" cy="50" r="42" class="ps-wash"/><circle cx="38" cy="65" r="9" class="ps-ink"/><circle cx="68" cy="53" r="9" class="ps-accent"/><path d="M47 65V24l30-6v35" class="ps-ink" fill="none" stroke="currentColor" stroke-width="4"/><polygon points="45,24 77,18 77,28 45,34" class="ps-ink"/>',
         // a root block with a smaller piece attached at its edge — a
         // suffix/case ending joining onto a stem
         'hu-suffix': '<circle cx="50" cy="50" r="42" class="ps-wash"/><rect x="20" y="34" width="36" height="32" class="ps-ink"/><rect x="56" y="42" width="20" height="16" class="ps-accent"/>',
@@ -370,6 +372,7 @@ const Workshop = (function () {
             'listening-driller': typeof ListeningDriller !== 'undefined' ? ListeningDriller : null,
             speaking: typeof SpeakingDriller !== 'undefined' ? SpeakingDriller : null,
             writing: typeof WritingDriller !== 'undefined' ? WritingDriller : null,
+            music: typeof MusicDriller !== 'undefined' ? MusicDriller : null,
             'hu-verb-studio': typeof HuVerbStudio !== 'undefined' ? HuVerbStudio : null,
             'hu-cultural-exam': typeof HuCulturalExam !== 'undefined' ? HuCulturalExam : null,
             'es-ccse-exam': typeof CcseExam !== 'undefined' ? CcseExam : null,
@@ -454,26 +457,26 @@ const Workshop = (function () {
             }
             _active = 'hu-verb-studio';
             _activeOptions = Object.assign({ activeTab: id }, options);
-            return _renderAndHideLoader('Verb & Morphology Studio');
+            return _renderAndHideLoader('Verb & Morphology Practice');
         }
 
         // Transparent routing for Translation driller into Writing Studio
         if (id === 'translation') {
             _active = 'writing';
             _activeOptions = Object.assign({ activeTab: 'translation' }, options);
-            return _renderAndHideLoader('Writing Studio');
+            return _renderAndHideLoader('Writing Practice');
         }
 
         // Transparent routing for listening sub-drillers into Listening Studio
         if (id === 'listening-driller' || id === 'listening-decoding') {
             _active = 'listening';
             _activeOptions = Object.assign({ activeTab: 'decoding' }, options);
-            return _renderAndHideLoader('Listening Studio');
+            return _renderAndHideLoader('Listening Practice');
         }
         if (id === 'listening-comprehension' || id === 'listening-studio') {
             _active = 'listening';
             _activeOptions = Object.assign({ activeTab: 'comprehension' }, options);
-            return _renderAndHideLoader('Listening Studio');
+            return _renderAndHideLoader('Listening Practice');
         }
 
 

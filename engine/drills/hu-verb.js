@@ -285,7 +285,7 @@ const HuVerbDriller = (function () {
     function _renderSettings() {
         _container.innerHTML = `
             <div class="gd-settings">
-                <h2 class="gd-title">Verb Driller</h2>
+                <h2 class="gd-title">Verb Practice</h2>
                 ${DrillInfo.buttonHtml('hu-verb')}
                 <p class="gd-hint">Decode and produce Hungarian verb forms. Draws from the full dictionary
                     rather than just your lessons so far — ${_verbs.length} verbs available for this combination.

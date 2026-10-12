@@ -572,14 +572,14 @@ const LearnerModel = (function () {
     };
 
     const DRILLER_TITLES = {
-        verbs: 'Verb Driller',
-        translation: 'Translation Driller',
-        listening: 'Listening Driller',
-        speaking: 'Speaking Driller',
+        verbs: 'Verb Practice',
+        translation: 'Writing Practice',
+        listening: 'Listening Practice',
+        speaking: 'Speaking Practice',
         'hu-suffix': 'Suffix Driller',
         'hu-prefix': 'Prefix Driller',
         'hu-morphology': 'Morphology Driller',
-        'hu-verb': 'Verb Driller'
+        'hu-verb': 'Verb Practice'
     };
 
     const TRACKED_DRILLERS = Object.keys(DRILLER_TITLES);
