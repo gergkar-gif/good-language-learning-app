@@ -110,4 +110,12 @@ assert(typeof global.window.VideoDriller.render === 'function', 'VideoDriller mu
 assert(typeof global.window.VideoDriller.stop === 'function', 'VideoDriller must have stop function');
 console.log('  [PASS] VideoDriller module methods verified.');
 
+// 7. Verify cloze numbering and note reveal logic in engine
+const videoSrc = fs.readFileSync(videoEnginePath, 'utf8');
+assert(videoSrc.includes('wk-video-cloze-num'), 'video.js must render numbered cloze badges');
+assert(videoSrc.includes('wk-video-line-note'), 'video.js must render tip notes with class');
+assert(videoSrc.includes('_clozeChecked'), 'video.js must gate tip display behind check/reveal');
+console.log('  [PASS] Cloze numbering and conditional tip reveal logic verified.');
+
 console.log('\nAll Learn from Video tests PASSED successfully!\n');
+

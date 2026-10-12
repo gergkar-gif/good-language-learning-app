@@ -22,6 +22,7 @@ const VideoDriller = (function () {
     let _clozeSubMode = 'easy'; // 'easy' | 'hard'
     let _showTranslations = false;
     let _quizAnswers = {}; // { [qId]: selectedIndex }
+    let _clozeChecked = false; // tips/notes revealed only when user checks answers
 
     // Built-in fallback video collection in case of offline / test environments
     const _FALLBACK_VIDEOS = [
@@ -464,9 +465,21 @@ const VideoDriller = (function () {
         const stanzaEl = document.createElement('div');
         stanzaEl.className = 'wk-music-stanza';
 
-        clozeLines.forEach((line) => {
+        clozeLines.forEach((line, lineIdx) => {
             const lineEl = document.createElement('div');
             lineEl.className = 'wk-music-line';
+
+            // Cloze item number badge
+            const numBadge = document.createElement('span');
+            numBadge.className = 'wk-video-cloze-num';
+            numBadge.style.display = 'inline-block';
+            numBadge.style.minWidth = '22px';
+            numBadge.style.marginRight = '8px';
+            numBadge.style.fontWeight = '700';
+            numBadge.style.fontSize = '0.95rem';
+            numBadge.style.color = 'var(--muted)';
+            numBadge.textContent = `${lineIdx + 1}.`;
+            lineEl.appendChild(numBadge);
 
             const regex = /\[(.*?)\]/g;
             const parts = line.text.split(regex);
@@ -544,14 +557,19 @@ const VideoDriller = (function () {
             if (_showTranslations && line.english) {
                 const transEl = document.createElement('div');
                 transEl.className = 'wk-music-line-trans';
+                transEl.style.paddingLeft = '30px';
                 transEl.textContent = line.english;
                 lineEl.appendChild(transEl);
             }
 
             if (line.note) {
                 const noteEl = document.createElement('div');
-                noteEl.className = 'wk-music-line-note';
-                noteEl.innerHTML = `<span class="wk-note-tag">Note</span> <span class="wk-note-body">${line.note}</span>`;
+                noteEl.className = 'wk-music-line-note wk-video-line-note';
+                noteEl.style.marginLeft = '30px';
+                if (!_clozeChecked) {
+                    noteEl.style.display = 'none';
+                }
+                noteEl.innerHTML = `<span class="wk-note-tag">Tip</span> <span class="wk-note-body">${line.note}</span>`;
                 lineEl.appendChild(noteEl);
             }
 
@@ -641,6 +659,12 @@ const VideoDriller = (function () {
             }
         });
 
+        // Reveal tips/notes upon checking answers
+        _clozeChecked = true;
+        root.querySelectorAll('.wk-video-line-note').forEach(note => {
+            note.style.display = 'inline-flex';
+        });
+
         _updateScoreReadout(`${correctCount} of ${blanks.length} correct`);
         _showToast(`${correctCount} of ${blanks.length} correct`);
     }
@@ -654,6 +678,13 @@ const VideoDriller = (function () {
             el.classList.add('is-correct');
             el.classList.remove('is-wrong');
         });
+
+        // Reveal tips/notes upon revealing answers
+        _clozeChecked = true;
+        root.querySelectorAll('.wk-video-line-note').forEach(note => {
+            note.style.display = 'inline-flex';
+        });
+
         _updateScoreReadout(`${blanks.length} of ${blanks.length} correct`);
     }
 
@@ -665,6 +696,13 @@ const VideoDriller = (function () {
             el.value = '';
             el.classList.remove('is-correct', 'is-wrong');
         });
+
+        // Hide tips/notes upon reset
+        _clozeChecked = false;
+        root.querySelectorAll('.wk-video-line-note').forEach(note => {
+            note.style.display = 'none';
+        });
+
         _updateScoreReadout();
     }
 
@@ -742,6 +780,7 @@ const VideoDriller = (function () {
             picker.addEventListener('change', (e) => {
                 _currentVideoId = e.target.value;
                 _quizAnswers = {};
+                _clozeChecked = false;
                 _renderTabBody();
 
                 const current = _getCurrentVideo();
@@ -799,6 +838,7 @@ const VideoDriller = (function () {
             subEasy.addEventListener('click', () => {
                 if (_clozeSubMode === 'easy') return;
                 _clozeSubMode = 'easy';
+                _clozeChecked = false;
                 subEasy.classList.add('is-active');
                 if (subHard) subHard.classList.remove('is-active');
                 _renderTabBody();
@@ -808,6 +848,7 @@ const VideoDriller = (function () {
             subHard.addEventListener('click', () => {
                 if (_clozeSubMode === 'hard') return;
                 _clozeSubMode = 'hard';
+                _clozeChecked = false;
                 subHard.classList.add('is-active');
                 if (subEasy) subEasy.classList.remove('is-active');
                 _renderTabBody();

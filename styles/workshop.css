@@ -6649,4 +6649,18 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
   }
 }
 
+.wk-video-cloze-num {
+  font-family: var(--font-display, Georgia, serif);
+  user-select: none;
+}
+
+.wk-video-line-note {
+  animation: wkFadeIn 0.2s ease-out;
+}
+
+@keyframes wkFadeIn {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
