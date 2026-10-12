@@ -23,8 +23,10 @@ const read = p => JSON.parse(fs.readFileSync(path.join(root, 'content', COURSE, 
 const curriculum = read('curriculum/curriculum.json');
 const grammarIndex = read('indexes/grammar-index.json');
 
+// taughtWords.js backs the scenario word-readiness gate (80% of a
+// scenario's requiredLemmas); without it every word reads as unknown.
 const ENGINE_FILES = ['srs.js', 'recycle.js', 'learnerPath.js', 'learnerModel.js',
-    'drillHistory.js', 'recommend.js', 'recommendationEngine.js'];
+    'drillHistory.js', 'taughtWords.js', 'recommend.js', 'recommendationEngine.js'];
 
 const DAY = 24 * 60 * 60 * 1000;
 const NOW = Date.parse('2026-09-28T12:00:00Z');
@@ -54,6 +56,7 @@ function world({ progress = {}, appOpen = 50, store = {}, returned = null, level
         AppOpens: { current: () => appOpen, returned: () => returned },
         LEVEL_ORDER: ['A1', 'A2', 'B1', 'B2', 'C1'],
         getProgress: () => progress,
+        isLessonComplete: id => !!progress[id],
         LevelTest: { resultFor: level => levelTests[level] || null },
         document: { getElementById: () => null, querySelector: () => null, querySelectorAll: () => [], addEventListener: () => {} },
         CustomEvent: function () {}
