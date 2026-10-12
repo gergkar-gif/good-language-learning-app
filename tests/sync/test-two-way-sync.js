@@ -312,6 +312,39 @@ console.log('\n--- Test 7: Startup Sync Automatic Pull & Apply ---');
     assert.strictEqual(JSON.parse(normalCalls[1].options.body).baseUpdatedAt, undefined, 'a normal save sends no baseUpdatedAt');
     console.log('[PASS] A normal save reads and merges the cloud copy before uploading.');
 
+    console.log('\n--- Test 10: 401 Unauthorized Session Expiration Recovery ---');
+    const authEnv = createMockEnvironment({
+        syncToken: 'active-session-token',
+        syncEmail: 'learner@example.com'
+    });
+    authEnv.setFetchResponse({
+        ok: false,
+        status: 401,
+        json: async () => ({ error: 'Not signed in' })
+    });
+
+    let threwExpired = false;
+    try {
+        await authEnv.Sync.status();
+    } catch (err) {
+        threwExpired = err.message.includes('Session expired');
+    }
+    assert.strictEqual(threwExpired, true, 'status() on 401 must throw Session expired error');
+    assert.strictEqual(authEnv.Sync.isLoggedIn(), false, 'isLoggedIn() must become false after 401');
+    assert.strictEqual(authEnv.sandbox.localStorage.getItem('syncToken'), null, 'syncToken must be removed from storage on 401');
+    assert.strictEqual(authEnv.sandbox.localStorage.getItem('syncEmail'), 'learner@example.com', 'syncEmail must be retained for re-login');
+
+    // Test client-side JWT timestamp expiry detection
+    const expiredPayload = Buffer.from(JSON.stringify({ sub: 'user1', exp: Date.now() - 60000 })).toString('base64');
+    const expiredJwt = `header.${expiredPayload}.signature`;
+    const jwtEnv = createMockEnvironment({
+        syncToken: expiredJwt,
+        syncEmail: 'learner@example.com'
+    });
+    assert.strictEqual(jwtEnv.Sync.isLoggedIn(), false, 'Expired JWT should immediately register as logged out');
+    assert.strictEqual(jwtEnv.sandbox.localStorage.getItem('syncToken'), null, 'Expired JWT should be cleared from storage');
+    console.log('[PASS] 401 responses and expired tokens gracefully reset session and retain user email.');
+
     console.log('\n==========================================================');
     console.log('ALL TWO-WAY SYNC & SAVE-ON-LEAVE TESTS PASSED');
     console.log('==========================================================');

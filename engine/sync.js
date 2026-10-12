@@ -67,9 +67,77 @@ const Sync = (function () {
     // (see engine/lang.js's own header comment on this exact point).
     const GLOBAL_KEYS = ['spanishApp_xp'];
 
+    function _decodeBase64(str) {
+        if (typeof atob === 'function') {
+            try { return atob(str); } catch (e) {}
+        }
+        if (typeof Buffer !== 'undefined') {
+            try { return Buffer.from(str, 'base64').toString('binary'); } catch (e) {}
+        }
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+        let output = '';
+        let i = 0;
+        const clean = str.replace(/[^A-Za-z0-9+/=]/g, '');
+        while (i < clean.length) {
+            const enc1 = chars.indexOf(clean.charAt(i++));
+            const enc2 = chars.indexOf(clean.charAt(i++));
+            const enc3 = chars.indexOf(clean.charAt(i++));
+            const enc4 = chars.indexOf(clean.charAt(i++));
+            if (enc1 < 0 || enc2 < 0) break;
+            const chr1 = (enc1 << 2) | (enc2 >> 4);
+            output += String.fromCharCode(chr1);
+            if (enc3 >= 0 && enc3 !== 64) {
+                const chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+                output += String.fromCharCode(chr2);
+            }
+            if (enc4 >= 0 && enc4 !== 64) {
+                const chr3 = ((enc3 & 3) << 6) | enc4;
+                output += String.fromCharCode(chr3);
+            }
+        }
+        return output;
+    }
+
+    function _isTokenExpired(token) {
+        if (!token || typeof token !== 'string') return false;
+        const parts = token.split('.');
+        if (parts.length !== 3) return false;
+        try {
+            const padded = parts[1].replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((parts[1].length + 3) % 4);
+            const binary = _decodeBase64(padded);
+            if (!binary) return false;
+            const payload = JSON.parse(binary);
+            if (payload && typeof payload.exp === 'number' && payload.exp < Date.now()) {
+                return true;
+            }
+        } catch (e) {
+            // If decoding fails, defer to server validation
+        }
+        return false;
+    }
+
+    function _handleUnauthorized() {
+        try {
+            localStorage.removeItem(TOKEN_STORAGE_KEY);
+            localStorage.removeItem(LAST_SYNCED_KEY);
+        } catch (error) { /* private browsing */ }
+        if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function') {
+            try {
+                window.dispatchEvent(new CustomEvent('sync-session-expired'));
+            } catch (e) {}
+        }
+    }
+
     function getToken() {
-        try { return localStorage.getItem(TOKEN_STORAGE_KEY); }
-        catch (error) { return null; }
+        try {
+            const t = localStorage.getItem(TOKEN_STORAGE_KEY);
+            if (!t || t === 'undefined' || t === 'null') return null;
+            if (_isTokenExpired(t)) {
+                _handleUnauthorized();
+                return null;
+            }
+            return t;
+        } catch (error) { return null; }
     }
 
     function isLoggedIn() {
@@ -617,6 +685,10 @@ const Sync = (function () {
         }
 
         const res = await fetch(WORKER_URL + '/sync/state', fetchInit);
+        if (res.status === 401) {
+            _handleUnauthorized();
+            throw new Error('Session expired. Please sign in again.');
+        }
         if (!res.ok) throw new Error('Backup failed (' + res.status + ')');
         const data = await res.json();
         _isDirty = false;
@@ -649,6 +721,10 @@ const Sync = (function () {
                 headers: { 'Authorization': 'Bearer ' + token },
                 signal: controller ? controller.signal : undefined
             });
+            if (res.status === 401) {
+                _handleUnauthorized();
+                throw new Error('Session expired. Please sign in again.');
+            }
             if (!res.ok) throw new Error('Could not reach cloud (' + res.status + ')');
             return await res.json();
         } finally {

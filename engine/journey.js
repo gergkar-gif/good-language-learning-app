@@ -470,6 +470,11 @@ const Journey = (function () {
             <div class="jr-account-divider"><span>or sign in with email</span></div>
         ` : '';
 
+        const rememberedEmail = (typeof Sync !== 'undefined' && Sync.email) ? Sync.email() : '';
+        const expiredNotice = (!loggedIn && rememberedEmail) ? `
+            <p class="jr-account-expired" style="font-size:13px; color:var(--accent, #dc4e2e); margin:0 0 10px;">Your session has expired. Sign in again to resume syncing.</p>
+        ` : '';
+
         const body = loggedIn ? `
             <p class="jr-account-email">${esc(Sync.email())}</p>
             <p class="jr-account-sub" style="font-size:12px; color:var(--muted); margin: 4px 0 12px;">Automatic cloud saving active. Progress syncs automatically as you study.</p>
@@ -480,11 +485,12 @@ const Journey = (function () {
             <p class="jr-account-status" id="jr-account-status"></p>
             <button class="jr-account-logout" data-sync-logout="1">Log out</button>
         ` : `
-            <p class="jr-account-blurb">Back up your progress so it isn't stuck on one device.</p>
+            ${expiredNotice}
+            <p class="jr-account-blurb">${expiredNotice ? 'Sign in to reconnect this device to your cloud progress.' : 'Back up your progress so it isn\'t stuck on one device.'}</p>
             ${googleSection}
             <div class="jr-account-login">
                 <input type="email" id="jr-account-email-input" class="dk-editor-input"
-                    placeholder="you@example.com" maxlength="254">
+                    placeholder="you@example.com" value="${esc(rememberedEmail)}" maxlength="254">
                 <button class="dk-secondary" data-sync-request-link="1">Send me a login link</button>
             </div>
             <p class="jr-account-status" id="jr-account-status"></p>
@@ -534,7 +540,9 @@ const Journey = (function () {
                 ? 'Cloud backup: ' + new Date(data.updatedAt).toLocaleString() + ' · Up to date'
                 : 'No backup yet.';
         } catch (error) {
-            statusEl.textContent = 'Could not reach the cloud right now.';
+            statusEl.textContent = (error.message && error.message.includes('Session expired'))
+                ? error.message
+                : 'Could not reach the cloud right now.';
         }
     }
 
@@ -705,6 +713,12 @@ const Journey = (function () {
                 }
             });
         }
+    }
+
+    if (typeof window !== 'undefined') {
+        window.addEventListener('sync-session-expired', () => {
+            _draw();
+        });
     }
 
     // Entering the tab always starts at the top of the page.

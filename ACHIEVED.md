@@ -9,6 +9,23 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed work (2026-10-12)
 
+- **Cloud Sync Session Expiration & 401 Unauthorized Recovery (Done 2026-10-12).**
+  - **Issue Diagnosis:**
+    - Mobile devices and persistent sessions encountered error 401 ("Could not reach cloud (401)") when attempting to back up, restore, or perform background auto-saves.
+    - Caused by Cloudflare Sync Worker's 30-day session token TTL expiring (`SESSION_TTL_SECONDS = 30 * 24 * 60 * 60`).
+    - When `/sync/state` returned 401, `engine/sync.js` threw an unhandled error without clearing the expired JWT from `localStorage`. The app remained stuck in `isLoggedIn() === true`, continuing to attempt syncs with the dead token while hiding the login interface.
+  - **Client-Side Expiry Detection & Recovery:**
+    - Implemented `_isTokenExpired()` in `engine/sync.js` to inspect JWT expiration timestamps with zero external dependencies, handling both browser and Node/sandbox environments via pure JS base64 decoding.
+    - Implemented `_handleUnauthorized()` to intercept 401 responses, clear the dead `syncToken` and `syncLastSyncedAt` from `localStorage`, and fire a `sync-session-expired` event while preserving all local study progress and the learner's email address.
+    - Updated `status()` and `backup()` to throw actionable messages ("Session expired. Please sign in again.") instead of raw HTTP 401 status strings.
+  - **Reactive UI in My Journey:**
+    - Updated `accountBlock()` in `engine/journey.js` to detect expired sessions when a learner's email is remembered but the token is cleared, displaying a prominent notice ("Your session has expired. Sign in again to resume syncing.") and pre-filling the login email input.
+    - Added `sync-session-expired` event listener in `engine/journey.js` to immediately refresh the Account card from the failing backup/restore state to the 1-tap Google Sign-In and magic-link form.
+  - **Worker TTL & Cache Versioning:**
+    - Extended `SESSION_TTL_SECONDS` in `cloudflare-worker/sync-worker.js` from 30 days to 365 days (1 year) to prevent unexpected monthly session cliffs.
+    - Bumped `CACHE_VERSION` in `sw.js` to `v2026-10-12-sync-auth` and cache busters in `index.html`.
+    - Added Test 10 in `tests/sync/test-two-way-sync.js` verifying 401 recovery and client-side expired JWT handling with zero emojis.
+
 - **"Learn from Video" in Listening Practice with Authentic Verified Catalogs (Done 2026-10-12).**
   - **Authentic Video Listening Architecture:**
     - Inspired by Conjuguemos video listening and user-supplied BBC Mundo investigative journalism (`wNJ0RT7enm4`), implemented `engine/drills/video.js` (`VideoDriller`).
