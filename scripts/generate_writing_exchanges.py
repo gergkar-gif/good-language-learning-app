@@ -108,7 +108,7 @@ ES_EXCHANGES = [
         },
         "targetCompetency": "I can exchange basic text messages to arrange meeting times and locations",
         "targetSkills": ["making_plans", "telling_time", "apologizing"],
-        "unitIds": ["unit.a1.14", "unit.a1.16"],
+        "unitIds": ["unit.a1.14", "unit.a1.16", "unit.a1.19"],
         "requiredLemmas": ["hola", "camino", "diez", "minuto", "llegar", "cafetería", "esperar", "gracias"],
         "turns": [
             {

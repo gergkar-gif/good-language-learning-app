@@ -184,7 +184,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can ask for grocery items, quantities, and complete a store checkout",
         "targetSkills": ["shopping_food", "asking_location", "transactions_and_payment"],
-        "unitIds": ["unit.a1.09", "unit.a1.10"],
+        "unitIds": ["unit.a1.09"],
+        "requiredLemmas": ["pan", "kilo", "manzana", "pagar", "caja", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -257,6 +258,7 @@ ES_SCENARIOS = [
         "targetCompetency": "I can explain simple health ailments and ask for over-the-counter medicine",
         "targetSkills": ["describing_symptoms", "health_needs", "following_instructions"],
         "unitIds": ["unit.a1.20", "unit.a1.21"],
+        "requiredLemmas": ["doler", "cabeza", "resfriado", "medicina", "pastilla", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -327,7 +329,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can ask for clothing sizes, colors, and ask for the fitting room",
         "targetSkills": ["shopping_clothes", "describing_items", "asking_assistance"],
-        "unitIds": ["unit.a1.10", "unit.a1.03"],
+        "unitIds": ["unit.a1.07", "unit.a1.10"],
+        "requiredLemmas": ["camisa", "chaqueta", "barato", "caro", "preferir", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -398,6 +401,7 @@ ES_SCENARIOS = [
         "targetCompetency": "I can introduce myself, state my name, origin, and exchange simple personal information",
         "targetSkills": ["introductions", "personal_info", "social_exchange"],
         "unitIds": ["unit.a1.01", "unit.a1.02"],
+        "requiredLemmas": ["hola", "nombre", "ciudad", "nuevo", "conocer", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -468,7 +472,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can state travel destinations, ask about trip duration, and pay taxi fares",
         "targetSkills": ["city_travel", "asking_time", "numbers_and_payment"],
-        "unitIds": ["unit.a1.14", "unit.a1.15"],
+        "unitIds": ["unit.a1.15", "unit.a1.16"],
+        "requiredLemmas": ["calle", "hotel", "centro", "minuto", "llegar", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -539,7 +544,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can request a table, order dishes from a menu, and ask for tableware",
         "targetSkills": ["restaurant_dining", "food_ordering", "polite_requests"],
-        "unitIds": ["unit.a1.11", "unit.a1.14"],
+        "unitIds": ["unit.a1.11", "unit.a1.13"],
+        "requiredLemmas": ["camarero", "menú", "ensalada", "comida", "cuenta", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -614,7 +620,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can buy a train ticket, enquire about schedules, and clarify journey details",
         "targetSkills": ["travel_arrangements", "asking_timetable", "transactional_clarification"],
-        "unitIds": ["unit.a2.18", "unit.a2.01"],
+        "unitIds": ["unit.a2.01"],
+        "requiredLemmas": ["billete", "andén", "dinero", "tomar", "estación", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -688,7 +695,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can ask for and understand directional guidance in a city",
         "targetSkills": ["asking_directions", "spatial_orientation", "polite_enquiry"],
-        "unitIds": ["unit.a1.16", "unit.a2.23"],
+        "unitIds": ["unit.a2.23"],
+        "requiredLemmas": ["girar", "cruzar", "puente", "seguir", "calle", "museo"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -763,6 +771,7 @@ ES_SCENARIOS = [
         "targetCompetency": "I can propose plans, negotiate meeting times, and agree on weekend activities",
         "targetSkills": ["invitations_and_plans", "negotiating_time", "social_conversation"],
         "unitIds": ["unit.a2.08", "unit.a2.16"],
+        "requiredLemmas": ["plan", "celebrar", "venir", "fiesta", "invitación", "amigo"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -832,7 +841,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can explain a problem in hotel accommodation and request a solution or room change",
         "targetSkills": ["complaints_and_problems", "polite_requests", "expressing_dissatisfaction"],
-        "unitIds": ["unit.a2.15", "unit.a2.26"],
+        "unitIds": ["unit.a2.05", "unit.a2.26"],
+        "requiredLemmas": ["habitación", "problema", "cambiar", "descansar", "llave", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -903,7 +913,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can rent leisure equipment, enquire about rental terms, safety gear, and deposits",
         "targetSkills": ["rental_transactions", "clarification", "price_enquiry"],
-        "unitIds": ["unit.a2.07", "unit.a2.12"],
+        "unitIds": ["unit.a2.02", "unit.a2.21"],
+        "requiredLemmas": ["alquilar", "bicicleta", "parque", "playa", "hora", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -974,7 +985,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can report a lost item, describe physical features and contents, and leave contact details",
         "targetSkills": ["describing_objects", "narrating_past_events", "giving_contact_info"],
-        "unitIds": ["unit.a2.11", "unit.a2.14"],
+        "unitIds": ["unit.a2.24", "unit.a2.25"],
+        "requiredLemmas": ["mochila", "perder", "libro", "teléfono", "número", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1046,7 +1058,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can explain dietary restrictions and food allergies, and verify ingredients in a meal",
         "targetSkills": ["food_safety", "clarifying_ingredients", "polite_requests"],
-        "unitIds": ["unit.a2.04", "unit.a2.26"],
+        "unitIds": ["unit.a2.25", "unit.a2.26"],
+        "requiredLemmas": ["pedir", "plato", "comer", "cocina", "agua", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1116,7 +1129,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can perform social pleasantries as a houseguest, offer compliments, and offer help",
         "targetSkills": ["social_courtesy", "complimenting", "offering_assistance"],
-        "unitIds": ["unit.a2.08", "unit.a2.09"],
+        "unitIds": ["unit.a2.08"],
+        "requiredLemmas": ["amigo", "casa", "traer", "cena", "fiesta", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1187,7 +1201,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can explain a product issue, present proof of purchase, and request a size exchange",
         "targetSkills": ["returns_and_exchanges", "explaining_defects", "consumer_interaction"],
-        "unitIds": ["unit.a2.15", "unit.a2.25"],
+        "unitIds": ["unit.a2.05", "unit.a2.25"],
+        "requiredLemmas": ["cambiar", "ticket", "pequeño", "grande", "comprar", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1256,7 +1271,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can talk about language learning background, duration, strengths, and goals",
         "targetSkills": ["describing_learning", "expressing_goals", "talking_about_time"],
-        "unitIds": ["unit.a2.09", "unit.a2.29"],
+        "unitIds": ["unit.a2.29"],
+        "requiredLemmas": ["fácil", "examen", "aprobar", "nota", "clase", "estudiante"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1327,7 +1343,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can describe health symptoms, duration, and ask medical advice",
         "targetSkills": ["describing_illness", "past_experience", "following_medical_advice"],
-        "unitIds": ["unit.b1.core.09", "unit.a1.20"],
+        "unitIds": ["unit.b1.core.09"],
+        "requiredLemmas": ["malestar", "tratamiento", "fiebre", "dolor", "cabeza", "medicina"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1395,6 +1412,7 @@ ES_SCENARIOS = [
         "targetCompetency": "I can enquire about housing lease terms, utility costs, and negotiate contract details",
         "targetSkills": ["housing_negotiation", "clarifying_conditions", "asking_details"],
         "unitIds": ["unit.b1.core.10"],
+        "requiredLemmas": ["alquiler", "vivienda", "luminoso", "reparación", "contrato", "habitación"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1458,7 +1476,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can summarize work experience, discuss professional strengths, and answer interview questions",
         "targetSkills": ["professional_presentation", "career_narrative", "strengths_and_goals"],
-        "unitIds": ["unit.b1.core.06", "unit.b1.core.26"],
+        "unitIds": ["unit.b1.core.06"],
+        "requiredLemmas": ["puesto", "candidato", "oferta", "solución", "realizar", "empresa"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1523,6 +1542,7 @@ ES_SCENARIOS = [
         "targetCompetency": "I can express dissatisfaction with a service disruption, demand alternatives, and claim compensation",
         "targetSkills": ["complaints_and_rights", "problem_resolution", "formal_demands"],
         "unitIds": ["unit.b1.core.08", "unit.b1.core.20"],
+        "requiredLemmas": ["cancelar", "conexión", "alojamiento", "equipaje", "transporte", "vuelo"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1587,6 +1607,7 @@ ES_SCENARIOS = [
         "targetCompetency": "I can express opinions, provide arguments on environmental issues, and respond to counterarguments",
         "targetSkills": ["expressing_opinions", "debating", "environmental_issues"],
         "unitIds": ["unit.b1.core.16", "unit.b1.core.21"],
+        "requiredLemmas": ["proteger", "reciclar", "sostenible", "ambiental", "postura", "perspectiva"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1650,7 +1671,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can narrate past events chronologically, describe suspects, and register an official report",
         "targetSkills": ["reporting_crimes", "past_narrative", "official_procedures"],
-        "unitIds": ["unit.b1.core.28", "unit.b1.core.01"],
+        "unitIds": ["unit.b1.core.28"],
+        "requiredLemmas": ["derecho", "emergencia", "exigir", "documento", "perder", "tarjeta"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1715,6 +1737,7 @@ ES_SCENARIOS = [
         "targetCompetency": "I can negotiate travel itineraries, weigh pros and cons of transport and accommodation, and manage budgets",
         "targetSkills": ["planning_travel", "weighing_options", "budget_negotiation"],
         "unitIds": ["unit.b1.core.08", "unit.b1.core.23"],
+        "requiredLemmas": ["itinerario", "alojamiento", "transporte", "preferible", "conveniente", "criterio"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1778,7 +1801,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can summarize plots, describe character motivations, and recommend artistic works enthusiastically",
         "targetSkills": ["describing_culture", "summarizing_plots", "expressing_emotions"],
-        "unitIds": ["unit.b1.core.15", "unit.b1.core.30"],
+        "unitIds": ["unit.b1.core.15"],
+        "requiredLemmas": ["obra", "personaje", "protagonista", "reseña", "canción", "película"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1842,7 +1866,8 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can enquire about banking conditions, fees, online services, and documentation requirements",
         "targetSkills": ["banking_transactions", "financial_terms", "official_enquiry"],
-        "unitIds": ["unit.b1.core.19", "unit.b1.core.24"],
+        "unitIds": ["unit.b1.core.19"],
+        "requiredLemmas": ["ahorro", "gasto", "presupuesto", "precio", "coste", "cuenta"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -1907,6 +1932,7 @@ ES_SCENARIOS = [
         "targetCompetency": "I can participate in community meetings, propose improvements, vote, and mediate disagreements",
         "targetSkills": ["civic_participation", "persuasion", "consensus_building"],
         "unitIds": ["unit.b1.core.11", "unit.b1.core.21"],
+        "requiredLemmas": ["acordar", "participar", "prioritario", "comunitario", "aportar", "postura"],
         "turns": [
             {
                 "turnIndex": 1,
@@ -2052,7 +2078,7 @@ HU_EXPANDED_SCENARIOS = [
         "targetCompetency": "I can buy basic food items, state quantities, and pay in Hungarian",
         "targetSkills": ["food_shopping", "numbers_and_prices", "polite_requests"],
         "unitIds": ["unit.a1.21", "unit.a1.24"],
-        "requiredLemmas": ["kenyér", "sajt", "kiló", "kérek", "készpénz", "kártya", "köszönöm"],
+        "requiredLemmas": ["kenyér", "sajt", "tej", "alma", "forint", "kell", "köszönöm"],
         "turns": [
             {
                 "turnIndex": 1,

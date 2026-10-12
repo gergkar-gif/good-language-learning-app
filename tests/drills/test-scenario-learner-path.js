@@ -54,6 +54,50 @@ checkCurriculumUnits(
     'hu'
 );
 
+console.log('\n--- Test 1b: Scenario Required Vocabulary Integrity in word-lesson-index ---');
+function verifyRequiredLemmas(scenarioPath, wordLessonIndexPath, langLabel) {
+    const scenarioData = JSON.parse(fs.readFileSync(scenarioPath, 'utf8'));
+    const wIndex = JSON.parse(fs.readFileSync(wordLessonIndexPath, 'utf8'));
+    const byLemma = wIndex.byLemma || {};
+    const bareIndex = {};
+    for (const k of Object.keys(byLemma)) {
+        bareIndex[k] = byLemma[k];
+        const bare = k.replace(/^(el|la|los|las|un|una)\s+/i, '');
+        if (!bareIndex[bare]) bareIndex[bare] = byLemma[k];
+    }
+
+    for (const sc of scenarioData.scenarios) {
+        assert(Array.isArray(sc.requiredLemmas) && sc.requiredLemmas.length >= 4,
+            `Scenario ${sc.id} in ${langLabel} must define requiredLemmas with at least 4 items`);
+        for (const lem of sc.requiredLemmas) {
+            const clean = lem.trim().toLowerCase();
+            const found = bareIndex[clean] || byLemma[clean];
+            assert(found, `Scenario ${sc.id} requiredLemma "${lem}" is not taught anywhere in ${langLabel} curriculum!`);
+        }
+    }
+    console.log(`✓ All ${scenarioData.scenarios.length} scenarios in ${langLabel} have valid requiredLemmas taught in curriculum.`);
+}
+
+verifyRequiredLemmas(
+    path.join(root, 'content/es-latam/conversation-scenarios.json'),
+    path.join(root, 'content/es-latam/indexes/word-lesson-index.json'),
+    'es-latam'
+);
+
+if (fs.existsSync(path.join(root, 'content/es-es/conversation-scenarios.json'))) {
+    verifyRequiredLemmas(
+        path.join(root, 'content/es-es/conversation-scenarios.json'),
+        path.join(root, 'content/es-es/indexes/word-lesson-index.json'),
+        'es-es'
+    );
+}
+
+verifyRequiredLemmas(
+    path.join(root, 'content/hu/conversation-scenarios.json'),
+    path.join(root, 'content/hu/indexes/word-lesson-index.json'),
+    'hu'
+);
+
 console.log('\n--- Test 2: Recommendation Engine Unit Scenario Matching ---');
 
 // Mock browser globals for recommendationEngine

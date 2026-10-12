@@ -12,16 +12,16 @@ needs re-reading before starting new work; it's reference only.
 - **Dynamic Vocabulary Readiness & Curriculum Alignment for Written Exchanges and Spoken Scenarios (Done 2026-10-12).**
   Addressed issue where early written exchanges (e.g. Hungarian *Találkozó a Deák téren*) and oral scenarios were recommended prematurely when learners did not know the required vocabulary. Replaced rigid milestone placement with a dynamic vocabulary readiness model:
   - **Curriculum Vocabulary Alignment & Verification:**
-    - Defined explicit canonical `requiredLemmas` for all 12 Spanish and 4 Hungarian written exchanges (`content/<course>/writing-exchanges.json`) and conversation scenarios (`content/<course>/conversation-scenarios.json`).
+    - Defined explicit canonical `requiredLemmas` for all 12 Spanish and 4 Hungarian written exchanges (`content/<course>/writing-exchanges.json`) and all 28 Spanish (8 A1, 10 A2, 10 B1) and 4 Hungarian (A1, A2) conversation scenarios (`content/<course>/conversation-scenarios.json`).
     - Aligned scenario `unitIds` to ensure all required words are taught at or before the designated curriculum capstone units.
-    - Verified 100% curriculum alignment for Hungarian (all 8 scenarios: 0 untaught words, 100% ready at unit) and all 12 Spanish written exchanges (0 untaught words, >= 88% ready at unit).
+    - Verified 100% curriculum alignment across all courses and types (88 total scenarios across Spanish LatAm, Spanish ES, and Hungarian: 0 untaught words, 100% ready at designated units).
   - **Engine Dynamic Readiness & Workshop UX:**
     - In `engine/taughtWords.js`: enhanced `isReached(lemma)` to recognize gendered articles (`el `, `la `, `los `, `las `) for dictionary lookups.
     - In `engine/recommendationEngine.js`: added `scenarioReadiness(scenario)` (async) and `scenarioReadinessSync(scenario)` to compute learner vocabulary readiness across `TaughtWords.isReached`, `knownWords`, `srsDeck`, and `LearnerModel.wordState`. Recommendations on Home are dynamically held back until the learner reaches the capstone unit AND achieves >= 80% vocabulary readiness (`percentage >= 80`).
     - In `engine/drills/writing.js` and `engine/drills/speaking.js`: studio cards remain fully accessible and clickable (never locked, preserving learner agency), displaying live readiness badges (`.sp-readiness-pill.is-ready` / `.is-developing`: `${readiness.percentage}% words learned`). Muted border styling added in `styles/workshop.css`.
   - **Auditing & Automated Tests:**
     - Created `scripts/audit_scenario_vocabulary.py` with `--type`, `--lang`, and `--check` CLI validation, generating detailed report in `docs/scenario-vocabulary-audit.md`.
-    - Added automated vocabulary integrity and dynamic readiness tests in `tests/drills/test-writing-exchanges.js` and `tests/drills/test-scenario-learner-path.js`. Verified zero emojis and green schema validation across all modified files.
+    - Added automated vocabulary integrity and dynamic readiness tests in `tests/drills/test-writing-exchanges.js` and `tests/drills/test-scenario-learner-path.js` (Test 1b). Verified zero emojis, green schema validation (`validate-content.py --changed`), and content checks (`check-content.py --changed`) across all modified files.
 
 ## Done parts moved out of open queue items (2026-10-08)
 
