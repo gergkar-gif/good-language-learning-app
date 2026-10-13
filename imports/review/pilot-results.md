@@ -50,8 +50,8 @@ The unit was a stub, so the fix list was a rewrite plan (new screens, story,
 most exercises); the fixer rewrote under the existing ids and kept the old
 consolidation shape (6/6/4/4, 4 `teaches` tags). It taught the 3rd-person
 possessive (*kulcsa*, *telefonja*) on `a1-41-a-gr` as the list asked, though
-the registry has `3rd-person-possessive` at A2 (`a2-12`): a registry
-question for the user.
+the registry had `3rd-person-possessive` at A2 (`a2-12`). Decided by the
+user 2026-10-13: moved to A1, taught on `a1-41-a-gr`.
 
 ## Arm B: defects the blind read found (filtered)
 
