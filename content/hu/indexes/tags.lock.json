@@ -2,9 +2,9 @@
  "_comment": "Reviewed exercise tags (ROADMAP 125). Written only by scripts/lock_tags.py when a unit has been read; the validator fails any change to a locked exercise's teaches or distractor_skills that is not recorded here.",
  "units": {
   "A1/buying-food": {
-   "locked": "2026-10-05",
-   "exercises": 117,
-   "reason": "read-through (Sonnet subagent, reviewed)"
+   "locked": "2026-10-13",
+   "exercises": 108,
+   "reason": "regenerated (Sonnet, 2026-10-13)"
   },
   "A1/cafe": {
    "locked": "2026-10-05",
@@ -2417,21 +2417,24 @@
   },
   "a1-101-check-2": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "cardinal-numbers"
    ],
    "distractor_skills": {}
   },
   "a1-101-controlled-1": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "cardinal-numbers"
    ],
    "distractor_skills": {}
   },
   "a1-101-controlled-2": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "singular-after-numbers"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "how-the-accusative-t-works",
+    "2": "plural-nouns-k"
+   }
   },
   "a1-101-controlled-3": {
    "teaches": [
@@ -2441,15 +2444,18 @@
   },
   "a1-101-controlled-4": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "cardinal-numbers"
    ],
    "distractor_skills": {}
   },
   "a1-101-dialogue-1": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "singular-after-numbers"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "0": "plural-nouns-k",
+    "2": "how-the-accusative-t-works"
+   }
   },
   "a1-101-dialogue-2": {
    "teaches": [
@@ -2469,6 +2475,18 @@
    ],
    "distractor_skills": {}
   },
+  "a1-101-introduce-1": {
+   "teaches": [
+    "a1-buying-food-vocab"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-101-introduce-2": {
+   "teaches": [
+    "cardinal-numbers"
+   ],
+   "distractor_skills": {}
+  },
   "a1-101-practice-1": {
    "teaches": [
     "a1-buying-food-vocab"
@@ -2477,23 +2495,35 @@
   },
   "a1-101-practice-2": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "cardinal-numbers"
    ],
    "distractor_skills": {}
   },
   "a1-101-practice-3": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
   "a1-101-practice-4": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "a1-buying-food-vocab"
    ],
    "distractor_skills": {}
   },
   "a1-101-practice-5": {
+   "teaches": [
+    "cardinal-numbers"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-101-production-1": {
+   "teaches": [
+    "cardinal-numbers"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-101-production-2": {
    "teaches": [
     "a1-buying-food-vocab"
    ],
@@ -2525,13 +2555,13 @@
   },
   "a1-102-check-1": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-102-check-2": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
@@ -2543,31 +2573,31 @@
   },
   "a1-102-controlled-2": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-102-controlled-3": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-102-controlled-4": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "a1-buying-food-vocab"
    ],
    "distractor_skills": {}
   },
   "a1-102-dialogue-1": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-102-dialogue-2": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
@@ -2583,33 +2613,45 @@
    ],
    "distractor_skills": {}
   },
-  "a1-102-practice-1": {
+  "a1-102-introduce-1": {
    "teaches": [
     "a1-buying-food-vocab"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-102-introduce-2": {
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-102-practice-1": {
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-102-practice-2": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-102-practice-3": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-102-practice-4": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-102-practice-5": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
@@ -2620,6 +2662,18 @@
    "distractor_skills": {}
   },
   "a1-102-practice-7": {
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-102-production-1": {
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-102-production-2": {
    "teaches": [
     "definite-vs-indefinite-conjugation"
    ],
@@ -2651,25 +2705,25 @@
   },
   "a1-103-check-1": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
   "a1-103-check-2": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-103-controlled-1": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
   "a1-103-controlled-2": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
@@ -2681,19 +2735,19 @@
   },
   "a1-103-controlled-4": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "demonstratives-ez-az"
    ],
    "distractor_skills": {}
   },
   "a1-103-dialogue-1": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-103-dialogue-2": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "demonstratives-ez-az"
    ],
    "distractor_skills": {}
   },
@@ -2709,9 +2763,21 @@
    ],
    "distractor_skills": {}
   },
-  "a1-103-practice-1": {
+  "a1-103-introduce-1": {
    "teaches": [
     "a1-buying-food-vocab"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-103-introduce-2": {
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-103-practice-1": {
+   "teaches": [
+    "demonstratives-ez-az"
    ],
    "distractor_skills": {}
   },
@@ -2723,19 +2789,31 @@
   },
   "a1-103-practice-3": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-103-practice-4": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "a1-buying-food-vocab"
    ],
    "distractor_skills": {}
   },
   "a1-103-practice-5": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-103-production-1": {
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-103-production-2": {
+   "teaches": [
+    "demonstratives-ez-az"
    ],
    "distractor_skills": {}
   },
@@ -2765,51 +2843,57 @@
   },
   "a1-104-check-1": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
   "a1-104-check-2": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "how-the-accusative-t-works"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "plural-nouns-k"
+   }
   },
   "a1-104-controlled-1": {
-   "teaches": [
-    "containers-and-measures"
-   ],
-   "distractor_skills": {}
-  },
-  "a1-104-controlled-2": {
-   "teaches": [
-    "a1-buying-food-vocab"
-   ],
-   "distractor_skills": {}
-  },
-  "a1-104-controlled-3": {
-   "teaches": [
-    "a1-buying-food-vocab"
-   ],
-   "distractor_skills": {}
-  },
-  "a1-104-controlled-4": {
    "teaches": [
     "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
-  "a1-104-dialogue-1": {
+  "a1-104-controlled-2": {
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-104-controlled-3": {
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "distractor_skills": {
+    "2": "plural-nouns-k"
+   }
+  },
+  "a1-104-controlled-4": {
    "teaches": [
     "a1-buying-food-vocab"
    ],
    "distractor_skills": {}
   },
-  "a1-104-dialogue-2": {
+  "a1-104-dialogue-1": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
+  },
+  "a1-104-dialogue-2": {
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "distractor_skills": {
+    "2": "plural-nouns-k"
+   }
   },
   "a1-104-intro-1": {
    "teaches": [
@@ -2823,11 +2907,25 @@
    ],
    "distractor_skills": {}
   },
-  "a1-104-practice-1": {
+  "a1-104-introduce-1": {
    "teaches": [
     "a1-buying-food-vocab"
    ],
    "distractor_skills": {}
+  },
+  "a1-104-introduce-2": {
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-104-practice-1": {
+   "teaches": [
+    "containers-and-measures"
+   ],
+   "distractor_skills": {
+    "2": "plural-nouns-k"
+   }
   },
   "a1-104-practice-2": {
    "teaches": [
@@ -2837,19 +2935,31 @@
   },
   "a1-104-practice-3": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
   "a1-104-practice-4": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "containers-and-measures"
    ],
    "distractor_skills": {}
   },
   "a1-104-practice-5": {
    "teaches": [
     "a1-buying-food-vocab"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-104-production-1": {
+   "teaches": [
+    "quantity-choice-questions-mennyi-melyik"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-104-production-2": {
+   "teaches": [
+    "containers-and-measures"
    ],
    "distractor_skills": {}
   },
@@ -2879,13 +2989,13 @@
   },
   "a1-105-check-1": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
   "a1-105-check-2": {
    "teaches": [
-    "containers-and-measures"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
@@ -2897,85 +3007,90 @@
   },
   "a1-105-consolidation-10": {
    "teaches": [
-    "quantity-choice-questions-mennyi-melyik"
+    "a1-buying-food-vocab"
    ],
    "distractor_skills": {}
   },
   "a1-105-consolidation-11": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
   "a1-105-consolidation-12": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-105-consolidation-13": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "singular-after-numbers"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "0": "how-the-accusative-t-works",
+    "1": "plural-nouns-k"
+   }
   },
   "a1-105-consolidation-14": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "demonstratives-ez-az"
    ],
    "distractor_skills": {}
   },
   "a1-105-consolidation-15": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "how-the-accusative-t-works"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "plural-nouns-k"
+   }
   },
   "a1-105-consolidation-16": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-105-consolidation-17": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "containers-and-measures"
    ],
    "distractor_skills": {}
   },
   "a1-105-consolidation-18": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-105-consolidation-19": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "a1-buying-food-vocab"
    ],
    "distractor_skills": {}
   },
   "a1-105-consolidation-2": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "cardinal-numbers"
    ],
    "distractor_skills": {}
   },
   "a1-105-consolidation-20": {
    "teaches": [
-    "singular-after-numbers"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
   "a1-105-consolidation-3": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-105-consolidation-4": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
@@ -2987,13 +3102,13 @@
   },
   "a1-105-consolidation-6": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "cardinal-numbers"
    ],
    "distractor_skills": {}
   },
   "a1-105-consolidation-7": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
@@ -3005,7 +3120,7 @@
   },
   "a1-105-consolidation-9": {
    "teaches": [
-    "containers-and-measures"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
@@ -3017,7 +3132,7 @@
   },
   "a1-105-controlled-2": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
@@ -3029,19 +3144,19 @@
   },
   "a1-105-controlled-4": {
    "teaches": [
-    "definite-article-a-az"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-105-dialogue-1": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
   "a1-105-dialogue-2": {
    "teaches": [
-    "a1-buying-food-vocab"
+    "present-tense-routine-language"
    ],
    "distractor_skills": {}
   },
@@ -3057,15 +3172,27 @@
    ],
    "distractor_skills": {}
   },
-  "a1-105-practice-1": {
+  "a1-105-introduce-1": {
    "teaches": [
     "a1-buying-food-vocab"
    ],
    "distractor_skills": {}
   },
+  "a1-105-introduce-2": {
+   "teaches": [
+    "quantity-choice-questions-mennyi-melyik"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-105-practice-1": {
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ],
+   "distractor_skills": {}
+  },
   "a1-105-practice-2": {
    "teaches": [
-    "present-tense-routine-language"
+    "a1-buying-food-vocab"
    ],
    "distractor_skills": {}
   },
@@ -3077,14 +3204,38 @@
   },
   "a1-105-practice-4": {
    "teaches": [
-    "van-zero-copula"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
   "a1-105-practice-5": {
    "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-105-production-1": {
+   "teaches": [
+    "cardinal-numbers"
+   ],
+   "distractor_skills": {}
+  },
+  "a1-105-production-2": {
+   "teaches": [
     "a1-buying-food-vocab"
    ],
+   "distractor_skills": {}
+  },
+  "a1-105-reading-1": {
+   "teaches": [],
+   "distractor_skills": {}
+  },
+  "a1-105-reading-2": {
+   "teaches": [],
+   "distractor_skills": {}
+  },
+  "a1-105-reading-3": {
+   "teaches": [],
    "distractor_skills": {}
   },
   "a1-105-review-1": {

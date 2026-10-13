@@ -2,248 +2,208 @@
   "lesson": "a1-101",
   "exercises": [
     {
-      "id": "a1-101-review-1",
+      "id": "a1-101-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means 'hi / bye'?",
-      "options": [
-        "szia",
-        "köszönöm",
-        "igen"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-greetings-basic-interaction-vocab"
-      ]
-    },
-    {
-      "id": "a1-101-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "szia",
-          "hi / bye"
-        ],
-        [
-          "köszönöm",
-          "thank you"
-        ],
-        [
-          "igen",
-          "yes"
-        ],
-        [
-          "nem",
-          "no"
-        ]
-      ],
-      "stage": "review",
-      "teaches": [
-        "a1-greetings-basic-interaction-vocab"
-      ]
-    },
-    {
-      "id": "a1-101-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'bread'?",
-      "options": [
-        "kenyér",
-        "tej",
-        "sajt"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-buying-food-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “expensive”?",
+      "options": [
+        "olcsó",
+        "drága",
+        "ezer"
+      ],
+      "correct": 1
     },
     {
-      "id": "a1-101-intro-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Mennyi az ____?",
-      "english": "How much is the price?",
-      "answer": "ár",
+      "id": "a1-101-introduce-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-buying-food-vocab"
+        "cardinal-numbers"
       ],
-      "stage": "introduce"
+      "question": "Which number is 300?",
+      "options": [
+        "kétszáz",
+        "háromszáz",
+        "négyszáz"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-101-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Kérek ____.",
-      "hint": "bread",
-      "english": "I'd like bread.",
-      "answer": "kenyeret",
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "cardinal-numbers"
       ],
-      "stage": "controlled"
+      "sentence": "A kenyér ____ forint.",
+      "english": "The bread is 200 forints.",
+      "answer": "kétszáz"
     },
     {
       "id": "a1-101-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'tej' mean?",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "singular-after-numbers"
+      ],
+      "question": "Which means “five hundred forints”?",
       "options": [
-        "milk",
-        "cheese",
-        "apple"
+        "ötszáz forint",
+        "ötszáz forintot",
+        "ötszáz forintok"
       ],
       "correct": 0,
-      "teaches": [
-        "a1-buying-food-vocab"
-      ],
-      "stage": "controlled"
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "plural-nouns-k"
+      }
     },
     {
       "id": "a1-101-controlled-3",
       "type": "matching",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "kenyér",
-          "bread"
-        ],
-        [
-          "tej",
-          "milk"
-        ],
-        [
-          "sajt",
-          "cheese"
-        ],
-        [
-          "alma",
-          "apple"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-buying-food-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "drága",
+          "expensive"
+        ],
+        [
+          "olcsó",
+          "cheap"
+        ],
+        [
+          "forint",
+          "forint (money)"
+        ],
+        [
+          "ezer",
+          "one thousand"
+        ],
+        [
+          "mennyibe kerül",
+          "how much does it cost"
+        ]
+      ]
     },
     {
       "id": "a1-101-controlled-4",
-      "type": "substitution",
+      "type": "sentence-builder",
       "category": "grammar",
-      "base_sentence": "Kérek kenyeret.",
-      "base_word": "kenyeret",
-      "base_gloss": "I'd like bread.",
-      "options": [
-        {
-          "word": "tej",
-          "inflected": "tejet",
-          "sentence": "Kérek tejet.",
-          "gloss": "milk"
-        },
-        {
-          "word": "sajt",
-          "inflected": "sajtot",
-          "sentence": "Kérek sajtot.",
-          "gloss": "cheese"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "cardinal-numbers"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "A",
+        "tej",
+        "háromszáz",
+        "forint",
+        "."
+      ],
+      "solution": [
+        "A",
+        "tej",
+        "háromszáz",
+        "forint",
+        "."
+      ],
+      "english": "The milk is 300 forints."
     },
     {
       "id": "a1-101-practice-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means 'cheese'?",
-      "options": [
-        "sajt",
-        "kenyér",
-        "alma"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-buying-food-vocab"
       ],
-      "stage": "practice"
+      "question": "Which question asks the price of the bread?",
+      "options": [
+        "Hol kerül a kenyér?",
+        "Mennyibe kerül a kenyér?",
+        "Hány kerül a kenyér?"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-101-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Kérek tejet és ____.",
-      "hint": "cheese",
-      "english": "I'd like milk and cheese.",
-      "answer": "sajtot",
+      "stage": "practice",
       "teaches": [
-        "how-the-accusative-t-works"
+        "cardinal-numbers"
       ],
-      "stage": "practice"
+      "sentence": "Egy kiló alma ____ forint.",
+      "english": "A kilo of apples is 400 forints.",
+      "answer": "négyszáz"
     },
     {
       "id": "a1-101-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Kérek kenyeret.",
-          "I'd like bread."
-        ],
-        [
-          "Mennyi az ár?",
-          "How much is the price?"
-        ],
-        [
-          "Kérek tejet és sajtot.",
-          "I'd like milk and cheese."
-        ],
-        [
-          "Kérek egy almát.",
-          "I'd like an apple."
-        ]
-      ],
-      "teaches": [
-        "a1-buying-food-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-101-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "grammar",
-      "base_sentence": "Kérek almát.",
-      "base_word": "almát",
-      "base_gloss": "I'd like apple(s).",
-      "options": [
-        {
-          "word": "kenyér",
-          "inflected": "kenyeret",
-          "sentence": "Kérek kenyeret.",
-          "gloss": "bread"
-        },
-        {
-          "word": "tej",
-          "inflected": "tejet",
-          "sentence": "Kérek tejet.",
-          "gloss": "milk"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "question": "Which sentence gives the price of a kilo of apples?",
+      "options": [
+        "Egy kiló almát négyszáz forint.",
+        "Egy kiló alma négyszáz forint.",
+        "Egy kiló alma négyszáz forintot."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-101-practice-4",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-buying-food-vocab"
+      ],
+      "sentence": "A tej olcsó, de a sajt ____.",
+      "english": "The milk is cheap, but the cheese is expensive.",
+      "answer": "drága"
     },
     {
       "id": "a1-101-practice-5",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "cardinal-numbers"
+      ],
+      "question": "Which price is the biggest?",
+      "options": [
+        "ötszáz forint",
+        "ezer forint",
+        "kétszázötven forint"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-101-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "singular-after-numbers"
+      ],
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Károly",
+          "text": "Mennyibe kerül a kenyér?"
         },
         {
           "speaker": "Meg",
@@ -251,110 +211,113 @@
         }
       ],
       "options": [
-        "Kérek kenyeret, tejet és sajtot.",
-        "Hol van itt a legközelebbi piac?"
+        "A kenyér háromszáz forintok.",
+        "A kenyér háromszáz forint.",
+        "A kenyér háromszáz forintot."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-buying-food-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-101-dialogue-1",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Eladó",
-          "text": "Jó napot kívánok!"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Jó napot!",
-        "Kérek egy kávét."
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-buying-food-vocab"
-      ]
+      "correct": 1,
+      "distractor_skills": {
+        "0": "plural-nouns-k",
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "a1-101-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Mit kér?\"",
-      "options": [
-        "Kérek egy almát, köszönöm.",
-        "Nem tudom, hol van."
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
         "a1-buying-food-vocab"
+      ],
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        },
+        {
+          "speaker": "Anna",
+          "text": "Négyszáz forint."
+        }
+      ],
+      "options": [
+        "Hol van a boltban egy kiló alma?",
+        "Mennyibe kerül egy kiló alma?",
+        "Hány kerül egy kiló alma?"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-101-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
+      "teaches": [
+        "cardinal-numbers"
+      ],
+      "tiles": [
+        "Egy",
+        "kiló",
+        "alma",
+        "négyszáz",
+        "forint",
+        "."
+      ],
+      "solution": [
+        "Egy",
+        "kiló",
+        "alma",
+        "négyszáz",
+        "forint",
+        "."
+      ],
+      "english": "A kilo of apples is 400 forints."
+    },
+    {
+      "id": "a1-101-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-buying-food-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Ask how much the bread costs.",
+          "answer": "Mennyibe kerül a kenyér?"
+        },
+        {
+          "prompt": "Say that the milk is 250 forints.",
+          "answer": "A tej kétszázötven forint."
+        }
       ]
     },
     {
-      "id": "a1-101-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: kenyér",
-          "answer": "Kérek egy kenyeret."
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-101-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: alma",
-          "answer": "Kérek egy almát."
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "production"
-    },
-    {
       "id": "a1-101-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "question": "Which word means 'apple'?",
-      "options": [
-        "alma",
-        "kenyér",
-        "tej"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-buying-food-vocab"
       ],
-      "stage": "check"
+      "sentence": "Mennyibe ____ a tej?",
+      "english": "How much does the milk cost?",
+      "answer": "kerül"
     },
     {
       "id": "a1-101-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Kérek egy ____.",
-      "hint": "apple",
-      "english": "I'd like an apple.",
-      "answer": "almát",
+      "stage": "check",
       "teaches": [
-        "how-the-accusative-t-works"
+        "cardinal-numbers"
       ],
-      "stage": "check"
+      "question": "Which means “two thousand forints”?",
+      "options": [
+        "kétszáz forint",
+        "kétezer forint",
+        "ezer forint"
+      ],
+      "correct": 1
     }
   ]
 }

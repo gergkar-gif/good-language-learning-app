@@ -2,360 +2,355 @@
   "lesson": "a1-105",
   "exercises": [
     {
-      "id": "a1-105-review-1",
+      "id": "a1-105-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'ár' mean?",
+      "stage": "introduce",
+      "teaches": [
+        "a1-buying-food-vocab"
+      ],
+      "question": "Which word means “basket”?",
       "options": [
-        "price",
-        "piece",
-        "how much"
+        "zacskó",
+        "kosár",
+        "piac"
       ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-buying-food-vocab"
-      ]
+      "correct": 1
     },
     {
-      "id": "a1-105-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "darab",
-          "piece"
-        ],
-        [
-          "ár",
-          "price"
-        ],
-        [
-          "drága",
-          "expensive"
-        ],
-        [
-          "olcsó",
-          "cheap"
-        ]
-      ],
-      "stage": "review",
-      "teaches": [
-        "a1-buying-food-vocab"
-      ]
-    },
-    {
-      "id": "a1-105-intro-1",
+      "id": "a1-105-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'expensive'?",
+      "category": "grammar",
+      "stage": "introduce",
+      "teaches": [
+        "quantity-choice-questions-mennyi-melyik"
+      ],
+      "question": "Which means “How much is that in total?”?",
       "options": [
-        "drága",
-        "olcsó",
-        "kérek"
+        "Hány összesen?",
+        "Mennyi összesen?",
+        "Hol összesen?"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-buying-food-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-105-intro-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A hús ____.",
-      "hint": "expensive",
-      "english": "The meat is expensive.",
-      "answer": "drága",
-      "teaches": [
-        "a1-buying-food-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 1
     },
     {
       "id": "a1-105-controlled-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A kenyér ____.",
-      "hint": "cheap",
-      "english": "The bread is cheap.",
-      "answer": "olcsó",
+      "stage": "controlled",
       "teaches": [
         "a1-buying-food-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "Összesen ezerötszáz ____.",
+      "english": "In total it is 1500 forints.",
+      "answer": "forint"
     },
     {
       "id": "a1-105-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'olcsó' mean?",
-      "options": [
-        "cheap",
-        "I'd like / I ask for",
-        "pay"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-buying-food-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "controlled"
+      "sentence": "A kosarat ____.",
+      "english": "I'll take the basket.",
+      "answer": "veszem"
     },
     {
       "id": "a1-105-controlled-3",
       "type": "matching",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "drága",
-          "expensive"
-        ],
-        [
-          "olcsó",
-          "cheap"
-        ],
-        [
-          "kérek",
-          "I'd like / I ask for"
-        ],
-        [
-          "fizet",
-          "pay"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-buying-food-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "összesen",
+          "in total"
+        ],
+        [
+          "fizet",
+          "pays"
+        ],
+        [
+          "kosár",
+          "basket"
+        ],
+        [
+          "zacskó",
+          "bag"
+        ],
+        [
+          "eladó",
+          "seller"
+        ]
+      ]
     },
     {
       "id": "a1-105-controlled-4",
-      "type": "substitution",
+      "type": "sentence-builder",
       "category": "grammar",
-      "base_sentence": "A kenyér olcsó.",
-      "base_word": "kenyér",
-      "base_gloss": "The bread is cheap.",
-      "options": [
-        {
-          "word": "hús",
-          "inflected": "hús",
-          "sentence": "A hús olcsó.",
-          "gloss": "meat"
-        },
-        {
-          "word": "alma",
-          "inflected": "alma",
-          "sentence": "Az alma olcsó.",
-          "gloss": "apple"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
-        "definite-article-a-az"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Anna",
+        "veszi",
+        "a",
+        "kosarat",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "veszi",
+        "a",
+        "kosarat",
+        "."
+      ],
+      "english": "Anna takes the basket."
     },
     {
       "id": "a1-105-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'I'd like / I ask for'?",
-      "options": [
-        "kérek",
-        "drága",
-        "fizet"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-buying-food-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "question": "Meg wants a kilo of pears, any pears. What does she say?",
+      "options": [
+        "Egy kiló körtét kérem.",
+        "Egy kiló körtét kérek.",
+        "Egy kiló körte kérek."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-105-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Rendben, ____.",
-      "hint": "I'll pay",
-      "english": "All right, I'll pay.",
-      "answer": "fizetek",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "present-tense-routine-language"
+        "a1-buying-food-vocab"
       ],
-      "stage": "practice"
+      "sentence": "Mennyi ____?",
+      "english": "How much is that in total?",
+      "answer": "összesen"
     },
     {
       "id": "a1-105-practice-3",
-      "type": "matching",
+      "type": "sentence-builder",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "A kenyér olcsó.",
-          "The bread is cheap."
-        ],
-        [
-          "A hús drága.",
-          "The meat is expensive."
-        ],
-        [
-          "Rendben. Fizetek.",
-          "Okay. I'm paying."
-        ],
-        [
-          "Kérek egy kiló húst és egy liter vizet.",
-          "I'd like one kilo of meat and one litre of water."
-        ]
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-buying-food-vocab"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Mennyibe",
+        "kerül",
+        "egy",
+        "kiló",
+        "körte",
+        "?"
+      ],
+      "solution": [
+        "Mennyibe",
+        "kerül",
+        "egy",
+        "kiló",
+        "körte",
+        "?"
+      ],
+      "english": "How much does a kilo of pears cost?"
     },
     {
       "id": "a1-105-practice-4",
-      "type": "substitution",
+      "type": "fill-blank",
       "category": "grammar",
-      "base_sentence": "A hús drága.",
-      "base_word": "hús",
-      "base_gloss": "The meat is expensive.",
-      "options": [
-        {
-          "word": "kenyér",
-          "inflected": "kenyér",
-          "sentence": "A kenyér drága.",
-          "gloss": "bread"
-        },
-        {
-          "word": "sajt",
-          "inflected": "sajt",
-          "sentence": "A sajt drága.",
-          "gloss": "cheese"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
-        "van-zero-copula"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "sentence": "Meg két kiló paradicsomot ____.",
+      "english": "Meg buys two kilos of tomatoes.",
+      "answer": "vesz"
     },
     {
       "id": "a1-105-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Eladó",
-          "text": "Olcsó. Öt forint."
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Rendben. Fizetek.",
-        "Nem kérek kenyeret."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-buying-food-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "question": "Anna points at the pears she can see. What does she say?",
+      "options": [
+        "A körtét kérem.",
+        "A körtét kérek.",
+        "A körte kérem."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-105-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "How much is a kilo of tomatoes?",
+      "options": [
+        "400 forints.",
+        "300 forints.",
+        "250 forints."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-105-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Who is cooking tonight?",
+      "options": [
+        "Károly.",
+        "Anna.",
+        "Meg."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-105-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "How much do Meg and Anna pay in total?",
+      "options": [
+        "2,000 forints.",
+        "1,500 forints.",
+        "400 forints."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-105-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mennyibe kerül?"
+          "speaker": "Eladó",
+          "text": "Mit kérsz?"
         },
         {
-          "speaker": "Eladó",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Öt forint. Olcsó.",
-        "Nem, köszönöm."
+        "Egy zacskó rizs kérek.",
+        "Egy zacskót rizs kérek.",
+        "Egy zacskó rizst kérek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-buying-food-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-105-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Olcsó. Öt forint.\"",
-      "options": [
-        "Rendben. Fizetek.",
-        "Kérek egy kávét."
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
       ],
-      "correct": 0,
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Fizetsz?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Igen, fizet.",
+        "Igen, fizetek.",
+        "Igen, fizetsz."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-105-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
+      "teaches": [
+        "cardinal-numbers"
+      ],
+      "tiles": [
+        "Összesen",
+        "ezerötszáz",
+        "forint",
+        "."
+      ],
+      "solution": [
+        "Összesen",
+        "ezerötszáz",
+        "forint",
+        "."
+      ],
+      "english": "In total it is 1500 forints."
+    },
+    {
+      "id": "a1-105-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
         "a1-buying-food-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Ask how much a kilo of pears costs.",
+          "answer": "Mennyibe kerül egy kiló körte?"
+        },
+        {
+          "prompt": "Say that you will take the pears.",
+          "answer": "A körtét kérem."
+        }
       ]
     },
     {
-      "id": "a1-105-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: drága",
-          "answer": "A hús drága."
-        }
-      ],
-      "teaches": [
-        "van-zero-copula"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-105-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: olcsó",
-          "answer": "Az alma olcsó."
-        }
-      ],
-      "teaches": [
-        "van-zero-copula"
-      ],
-      "stage": "production"
-    },
-    {
       "id": "a1-105-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'pay'?",
-      "options": [
-        "fizet",
-        "drága",
-        "olcsó"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-buying-food-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "sentence": "Kérem a ____.",
+      "english": "I'll take the bag.",
+      "answer": "zacskót"
     },
     {
       "id": "a1-105-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Kérek egy ____ húst és egy liter vizet.",
-      "hint": "kilo",
-      "english": "I'd like a kilo of meat and a liter of water.",
-      "answer": "kiló",
+      "stage": "check",
       "teaches": [
-        "containers-and-measures"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "check"
+      "question": "Which sentence is right?",
+      "options": [
+        "Veszek a körtét.",
+        "Veszem a körtét.",
+        "Veszem egy körtét."
+      ],
+      "correct": 1
     }
   ]
 }

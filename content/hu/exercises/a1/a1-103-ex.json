@@ -2,273 +2,198 @@
   "lesson": "a1-103",
   "exercises": [
     {
-      "id": "a1-103-review-1",
+      "id": "a1-103-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'hal' mean?",
+      "stage": "introduce",
+      "teaches": [
+        "a1-buying-food-vocab"
+      ],
+      "question": "Which word means “fresh”?",
       "options": [
-        "fish",
-        "meat",
-        "egg"
+        "édes",
+        "friss",
+        "olcsó"
       ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-buying-food-vocab"
-      ]
+      "correct": 1
     },
     {
-      "id": "a1-103-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "hús",
-          "meat"
-        ],
-        [
-          "hal",
-          "fish"
-        ],
-        [
-          "rizs",
-          "rice"
-        ],
-        [
-          "víz",
-          "water"
-        ]
-      ],
-      "stage": "review",
-      "teaches": [
-        "a1-buying-food-vocab"
-      ]
-    },
-    {
-      "id": "a1-103-intro-1",
+      "id": "a1-103-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'rice'?",
-      "options": [
-        "rizs",
-        "víz",
-        "kiló"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-buying-food-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-103-intro-2",
-      "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Kérek egy ____ rizst.",
-      "hint": "kilo",
-      "english": "I'd like a kilo of rice.",
-      "answer": "kiló",
+      "stage": "introduce",
       "teaches": [
-        "containers-and-measures"
+        "how-the-accusative-t-works"
       ],
-      "stage": "introduce"
+      "question": "Which means “I'll take this one”?",
+      "options": [
+        "Ez kérem.",
+        "Ezt kérem.",
+        "Ezt kérek."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-103-controlled-1",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Mennyi a ____?",
-      "hint": "the rice",
-      "english": "How much is the rice?",
-      "answer": "rizs",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-buying-food-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "sentence": "____ kérem.",
+      "english": "I'll take that one.",
+      "answer": "Azt"
     },
     {
       "id": "a1-103-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'víz' mean?",
-      "options": [
-        "water",
-        "kilo",
-        "litre"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-buying-food-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "controlled"
+      "question": "Which form fits? “Ezt ____.” (I take this one.)",
+      "options": [
+        "veszek",
+        "veszem",
+        "veszel"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-103-controlled-3",
       "type": "matching",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "rizs",
-          "rice"
-        ],
-        [
-          "víz",
-          "water"
-        ],
-        [
-          "kiló",
-          "kilo"
-        ],
-        [
-          "liter",
-          "litre"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-buying-food-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "friss",
+          "fresh"
+        ],
+        [
+          "édes",
+          "sweet"
+        ],
+        [
+          "zacskó",
+          "bag"
+        ],
+        [
+          "olcsó",
+          "cheap"
+        ],
+        [
+          "drága",
+          "expensive"
+        ]
+      ]
     },
     {
       "id": "a1-103-controlled-4",
-      "type": "substitution",
+      "type": "fill-blank",
       "category": "grammar",
-      "base_sentence": "Kérek egy kiló rizst.",
-      "base_word": "rizst",
-      "base_gloss": "I'd like one kilo of rice.",
-      "options": [
-        {
-          "word": "hús",
-          "inflected": "húst",
-          "sentence": "Kérek egy kiló húst.",
-          "gloss": "meat"
-        },
-        {
-          "word": "alma",
-          "inflected": "almát",
-          "sentence": "Kérek egy kiló almát.",
-          "gloss": "apple"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "demonstratives-ez-az"
       ],
-      "stage": "controlled"
+      "sentence": "Mennyibe kerül ____?",
+      "english": "How much does this cost?",
+      "answer": "ez"
     },
     {
       "id": "a1-103-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'kilo'?",
-      "options": [
-        "kiló",
-        "rizs",
-        "liter"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-buying-food-vocab"
+        "demonstratives-ez-az"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “That is cheap. I'll take that one.”?",
+      "options": [
+        "Az olcsó. Azt kérem.",
+        "Azt olcsó. Azt kérem.",
+        "Az olcsó. Az kérem."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-103-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Kérek egy liter ____.",
-      "hint": "water",
-      "english": "I'd like a liter of water.",
-      "answer": "vizet",
+      "stage": "practice",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Ez friss, ____ veszem.",
+      "english": "This is fresh, I'll take it.",
+      "answer": "ezt"
     },
     {
       "id": "a1-103-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Mennyi a rizs?",
-          "How much is the rice?"
-        ],
-        [
-          "Kérek egy kiló rizst.",
-          "I'd like one kilo of rice."
-        ],
-        [
-          "Kérek egy liter vizet.",
-          "I'd like one litre of water."
-        ],
-        [
-          "Mennyi az ár?",
-          "How much is the price?"
-        ]
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-buying-food-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Anna",
+        "azt",
+        "kéri",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "azt",
+        "kéri",
+        "."
+      ],
+      "english": "Anna asks for that one."
     },
     {
       "id": "a1-103-practice-4",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Kérek vizet.",
-      "base_word": "vizet",
-      "base_gloss": "I'd like water.",
-      "options": [
-        {
-          "word": "tej",
-          "inflected": "tejet",
-          "sentence": "Kérek tejet.",
-          "gloss": "milk"
-        },
-        {
-          "word": "alma",
-          "inflected": "almát",
-          "sentence": "Kérek almát.",
-          "gloss": "apple"
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-103-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Kérek egy kiló rizst és egy liter vizet.",
-        "Szerintem ez a kis bolt nagyon drága."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-buying-food-vocab"
       ],
-      "stage": "practice"
+      "sentence": "Az alma nagyon ____.",
+      "english": "The apple is very sweet.",
+      "answer": "édes"
+    },
+    {
+      "id": "a1-103-practice-5",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "question": "Which sentence means “I'll take that one”?",
+      "options": [
+        "Azt veszek.",
+        "Azt veszem.",
+        "Azt vesz."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-103-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mennyi vizet kér?"
+          "speaker": "Károly",
+          "text": "Mit kérsz?"
         },
         {
           "speaker": "Meg",
@@ -276,86 +201,111 @@
         }
       ],
       "options": [
-        "Egy liter vizet kérek.",
-        "Igen, szeretem a teát."
+        "Ezt kérek.",
+        "Ez kérem.",
+        "Ezt kérem."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-buying-food-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-103-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Mennyi vizet kér?\"",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "demonstratives-ez-az"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Olcsó ez?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "Egy litert kérek.",
-        "Kérek egy almát."
+        "Nem, ezt drága.",
+        "Nem, ez drága.",
+        "Nem, ez drágát."
       ],
-      "correct": 0,
+      "correct": 1
+    },
+    {
+      "id": "a1-103-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "a1-buying-food-vocab"
+        "definite-vs-indefinite-conjugation"
+      ],
+      "tiles": [
+        "Ezt",
+        "kérem",
+        ",",
+        "azt",
+        "nem",
+        "kérem",
+        "."
+      ],
+      "solution": [
+        "Ezt",
+        "kérem",
+        ",",
+        "azt",
+        "nem",
+        "kérem",
+        "."
+      ],
+      "english": "I'll take this one, I won't take that one."
+    },
+    {
+      "id": "a1-103-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "demonstratives-ez-az"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you will take this one.",
+          "answer": "Ezt kérem."
+        },
+        {
+          "prompt": "Say that this is fresh.",
+          "answer": "Ez friss."
+        }
       ]
-    },
-    {
-      "id": "a1-103-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: víz",
-          "answer": "Kérek egy liter vizet."
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-103-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: kiló",
-          "answer": "Kérek egy kiló rizst."
-        }
-      ],
-      "teaches": [
-        "containers-and-measures"
-      ],
-      "stage": "production"
     },
     {
       "id": "a1-103-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'litre'?",
-      "options": [
-        "liter",
-        "rizs",
-        "víz"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-buying-food-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "sentence": "Ez olcsó, ____ kérem.",
+      "english": "This is cheap, I'll take this one.",
+      "answer": "ezt"
     },
     {
       "id": "a1-103-check-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Kérek egy ____ vizet.",
-      "hint": "litre",
-      "english": "I'd like a liter of water.",
-      "answer": "liter",
+      "type": "multiple-choice",
+      "category": "grammar",
       "stage": "check",
       "teaches": [
-        "a1-buying-food-vocab"
-      ]
+        "definite-vs-indefinite-conjugation"
+      ],
+      "question": "Which means “I'll take that one”?",
+      "options": [
+        "Azt kérem.",
+        "Az kérem.",
+        "Azt kérek."
+      ],
+      "correct": 0
     }
   ]
 }

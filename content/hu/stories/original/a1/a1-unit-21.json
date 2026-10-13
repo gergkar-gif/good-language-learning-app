@@ -1,115 +1,162 @@
 {
   "id": "story.a1.unit21",
-  "title": "Buying Food",
+  "title": "At the Market",
   "level": "A1",
   "type": "original",
   "characters": [
-    "Károly",
     "Meg",
+    "Anna",
+    "Károly",
     "Eladó"
   ],
   "paragraphs": [
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg and Károly go to a shop because they need food."
+      "text": "Saturday morning at the market. Meg and Anna want to buy food for dinner, because Károly cooks tonight."
     },
     {
       "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Jó napot kívánok!"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Kérek kenyeret, tejet és sajtot."
+      "speaker": "Anna",
+      "text": "Jó napot! Mennyibe kerül a paradicsom?"
     },
     {
       "type": "dialogue",
       "speaker": "Eladó",
-      "text": "Almát vagy narancsot kér?"
+      "text": "Jó napot! Egy kiló paradicsom négyszáz forint."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Kérek két almát és egy narancsot."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Mennyi a hús?"
+      "text": "Az olcsó! Két kilót kérek. A krumpli drága?"
     },
     {
       "type": "dialogue",
       "speaker": "Eladó",
-      "text": "Három forint egy kiló. Nem drága."
+      "text": "Nem drága. Egy kiló krumpli kétszázötven forint."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Kérek egy kiló húst és egy liter vizet."
+      "text": "Akkor egy kilót kérek. Otthon van vaj, de nincs rizs."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Egy zacskó rizst is kérünk. És a körte friss?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Eladó",
+      "text": "Igen, nagyon friss és édes. Hal is van!"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Ma nem kérünk halat, Károly csirkét főz. A körtét kérem, egy kilót."
     },
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg asks about the price and then pays."
+      "text": "The seller puts everything into a basket."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Mennyi az ár?"
+      "text": "Mennyi összesen?"
     },
     {
       "type": "dialogue",
       "speaker": "Eladó",
-      "text": "Olcsó. Öt forint."
+      "text": "Összesen kétezer forint."
     },
     {
       "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Rendben. Fizetek."
+      "speaker": "Anna",
+      "text": "Fizetek. Tessék, kétezer forint."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Eladó",
+      "text": "Köszönöm szépen! Viszlát!"
     },
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg buys bread, apples, eggs, fish, and rice. She also asks for water and a piece of cake."
+      "text": "At home, Károly waits in the kitchen."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Szia! Kérem a kosarat. Hol van a paradicsom?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Itt van, és a krumpli is. Kérsz egy körtét?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Köszönöm, kérek! A csirkét ma este én főzöm."
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Hol játszódik a beszélgetés?",
+          "question": "Mennyibe kerül egy kiló paradicsom?",
           "options": [
-            "Egy ruhaboltban",
-            "Egy buszmegállóban",
-            "Egy élelmiszerboltban",
-            "Egy postahivatalban"
-          ],
-          "correctIndex": 2,
-          "explanation": "Meg és Károly egy boltban élelmiszereket (kenyér, tej, sajt, gyümölcs, hús) vásárolnak az eladótól."
-        },
-        {
-          "question": "Mennyi gyümölcsöt kér Meg az eladótól?",
-          "options": [
-            "Két almát és egy narancsot",
-            "Három almát és két citromot",
-            "Csak öt narancsot",
-            "Egy kiló banánt"
+            "Négyszáz forint.",
+            "Háromszáz forint.",
+            "Kétszázötven forint.",
+            "Ezer forint."
           ],
           "correctIndex": 0,
-          "explanation": "Meg így válaszol az eladónak: „Kérek két almát és egy narancsot.” (I'd like two apples and an orange.)"
+          "explanation": "The seller says: „Egy kiló paradicsom négyszáz forint.” (A kilo of tomatoes is 400 forints.)",
+          "questionEnglish": "How much is a kilo of tomatoes?",
+          "optionsEnglish": [
+            "400 forints.",
+            "300 forints.",
+            "250 forints.",
+            "1,000 forints."
+          ]
         },
         {
-          "question": "Mi történik a vásárlás végén, amikor Meg megtudja az árat?",
+          "question": "Mennyi krumplit kér Meg?",
           "options": [
-            "Meg nem veszi meg a termékeket, mert túl drágák.",
-            "Károly kártyával fizet a pénztárnál.",
-            "Meg visszateszi a kenyeret a polcra.",
-            "Meg elfogadja az árat, és fizet."
+            "Egy kilót.",
+            "Két kilót.",
+            "Három darabot.",
+            "Egy zacskót."
           ],
-          "correctIndex": 3,
-          "explanation": "Amikor az eladó mondja, hogy olcsó (öt forint), Meg így dönt: „Rendben. Fizetek.” (Alright. I'll pay.)"
+          "correctIndex": 0,
+          "explanation": "Meg says: „Akkor egy kilót kérek.” (Then I'd like one kilo.)",
+          "questionEnglish": "How much potato does Meg ask for?",
+          "optionsEnglish": [
+            "One kilo.",
+            "Two kilos.",
+            "Three pieces.",
+            "One bag."
+          ]
+        },
+        {
+          "question": "Mennyit fizet Anna összesen?",
+          "options": [
+            "Kétezer forintot.",
+            "Ezerötszáz forintot.",
+            "Négyszáz forintot.",
+            "Háromszáz forintot."
+          ],
+          "correctIndex": 0,
+          "explanation": "The seller says: „Összesen kétezer forint.” (In total it is 2,000 forints.)",
+          "questionEnglish": "How much does Anna pay in total?",
+          "optionsEnglish": [
+            "2,000 forints.",
+            "1,500 forints.",
+            "400 forints.",
+            "300 forints."
+          ]
         }
       ]
     }

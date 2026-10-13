@@ -2,305 +2,194 @@
   "lesson": "a1-102",
   "exercises": [
     {
-      "id": "a1-102-review-1",
+      "id": "a1-102-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'sajt' mean?",
+      "stage": "introduce",
+      "teaches": [
+        "a1-buying-food-vocab"
+      ],
+      "question": "Which word means “butter”?",
       "options": [
-        "cheese",
-        "bread",
-        "apple"
+        "vaj",
+        "hal",
+        "rizs"
       ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-buying-food-vocab"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-102-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "tej",
-          "milk"
-        ],
-        [
-          "alma",
-          "apple"
-        ],
-        [
-          "narancs",
-          "orange"
-        ],
-        [
-          "tojás",
-          "egg"
-        ]
-      ],
-      "stage": "review",
-      "teaches": [
-        "a1-buying-food-vocab"
-      ]
-    },
-    {
-      "id": "a1-102-intro-1",
+      "id": "a1-102-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'orange'?",
-      "options": [
-        "narancs",
-        "tojás",
-        "hús"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-buying-food-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-102-intro-2",
-      "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Kérek ____.",
-      "hint": "egg",
-      "english": "I'd like an egg.",
-      "answer": "tojást",
+      "stage": "introduce",
       "teaches": [
-        "how-the-accusative-t-works"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "introduce"
+      "question": "Which means “I'll take the bread”?",
+      "options": [
+        "Kérek a kenyeret.",
+        "Kérem a kenyeret.",
+        "Kérem egy kenyeret."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-102-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Kérek ____.",
-      "hint": "orange",
-      "english": "I'd like an orange.",
-      "answer": "narancsot",
+      "stage": "controlled",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "sentence": "Kérem a ____.",
+      "english": "I'll take the bread.",
+      "answer": "kenyeret"
     },
     {
       "id": "a1-102-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'tojás' mean?",
-      "options": [
-        "egg",
-        "meat",
-        "fish"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-buying-food-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "controlled"
+      "sentence": "Meg a tejet ____.",
+      "english": "Meg takes the milk.",
+      "answer": "veszi"
     },
     {
       "id": "a1-102-controlled-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "sentence": "Egy üveg tejet ____.",
+      "english": "I would like a bottle of milk.",
+      "answer": "kérek"
+    },
+    {
+      "id": "a1-102-controlled-4",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-buying-food-vocab"
+      ],
       "pairs": [
         [
-          "narancs",
-          "orange"
+          "rizs",
+          "rice"
         ],
         [
-          "tojás",
-          "egg"
+          "vaj",
+          "butter"
         ],
         [
-          "hús",
-          "meat"
+          "csirke",
+          "chicken"
         ],
         [
           "hal",
           "fish"
+        ],
+        [
+          "tojás",
+          "egg"
         ]
-      ],
-      "teaches": [
-        "a1-buying-food-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-102-controlled-4",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Kérek narancsot.",
-      "base_word": "narancsot",
-      "base_gloss": "I'd like an orange.",
-      "options": [
-        {
-          "word": "tojás",
-          "inflected": "tojást",
-          "sentence": "Kérek tojást.",
-          "gloss": "egg"
-        },
-        {
-          "word": "hús",
-          "inflected": "húst",
-          "sentence": "Kérek húst.",
-          "gloss": "meat"
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-102-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'meat'?",
-      "options": [
-        "hús",
-        "narancs",
-        "hal"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-buying-food-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “You take the cheese”?",
+      "options": [
+        "Veszel a sajtot.",
+        "Veszed a sajtot.",
+        "Veszed egy sajtot."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-102-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Szeretnék ____.",
-      "hint": "fish",
-      "english": "I would like fish.",
-      "answer": "halat",
+      "stage": "practice",
       "teaches": [
-        "how-the-accusative-t-works"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "sentence": "Károly a csirkét ____.",
+      "english": "Károly cooks the chicken.",
+      "answer": "főzi"
     },
     {
       "id": "a1-102-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Kérek narancsot.",
-          "I'd like an orange."
-        ],
-        [
-          "Kérek tojást.",
-          "I'd like an egg."
-        ],
-        [
-          "Szeretnék halat.",
-          "I would like fish."
-        ],
-        [
-          "Kérek húst.",
-          "I'd like meat."
-        ]
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-buying-food-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Veszem",
+        "a",
+        "rizst",
+        "."
+      ],
+      "solution": [
+        "Veszem",
+        "a",
+        "rizst",
+        "."
+      ],
+      "english": "I take the rice."
     },
     {
       "id": "a1-102-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "grammar",
-      "base_sentence": "Szeretnék halat.",
-      "base_word": "halat",
-      "base_gloss": "I would like fish.",
-      "options": [
-        {
-          "word": "narancs",
-          "inflected": "narancsot",
-          "sentence": "Szeretnék narancsot.",
-          "gloss": "orange"
-        },
-        {
-          "word": "tojás",
-          "inflected": "tojást",
-          "sentence": "Szeretnék tojást.",
-          "gloss": "egg"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
-        "how-the-accusative-t-works"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “I buy a fish”?",
+      "options": [
+        "Veszem egy halat.",
+        "Veszek egy halat.",
+        "Veszek a halat."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-102-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Kérek húst és halat.",
-        "Mennyi a kenyér?"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-buying-food-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-102-practice-6",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "You want any orange, not a particular one. Which fits?",
-      "options": [
-        "Kérek egy narancsot.",
-        "Kérem a narancsot.",
-        "Kérem egy narancsot."
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-102-practice-7",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "You mean the specific orange already on the counter. Which fits?",
-      "options": [
-        "Kérem a narancsot.",
-        "Kérek egy narancsot.",
-        "Kérek a narancsot."
-      ],
-      "correct": 0,
-      "teaches": [
-        "definite-vs-indefinite-conjugation"
-      ],
-      "stage": "practice"
+      "sentence": "A vajat ____.",
+      "english": "I would like the butter.",
+      "answer": "kérem"
     },
     {
       "id": "a1-102-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Halat vagy húst kér?"
+          "speaker": "Anna",
+          "text": "Kéred a tejet?"
         },
         {
           "speaker": "Meg",
@@ -308,86 +197,107 @@
         }
       ],
       "options": [
-        "Húst kérek.",
-        "Nem, köszönöm. Csak nézek."
+        "Igen, kérek.",
+        "Igen, kérem.",
+        "Igen, kéred."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-buying-food-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-102-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Halat vagy húst kér?\"",
-      "options": [
-        "Halat kérek.",
-        "Kérek egy kávét."
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "a1-buying-food-vocab"
+        "definite-vs-indefinite-conjugation"
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Kérsz sajtot?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Igen, kérem.",
+        "Igen, kérek.",
+        "Igen, kérsz."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-102-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "tiles": [
+        "Anna",
+        "veszi",
+        "a",
+        "kenyeret",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "veszi",
+        "a",
+        "kenyeret",
+        "."
+      ],
+      "english": "Anna takes the bread."
+    },
+    {
+      "id": "a1-102-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you would like the milk.",
+          "answer": "Kérem a tejet."
+        },
+        {
+          "prompt": "Say that Meg cooks the chicken.",
+          "answer": "Meg főzi a csirkét."
+        }
       ]
     },
     {
-      "id": "a1-102-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: narancs",
-          "answer": "Kérek egy narancsot."
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-102-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: hal",
-          "answer": "Szeretnék egy halat."
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "production"
-    },
-    {
       "id": "a1-102-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'fish'?",
-      "options": [
-        "hal",
-        "narancs",
-        "tojás"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-buying-food-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "check"
+      "sentence": "A tejet ____.",
+      "english": "I would like the milk.",
+      "answer": "kérem"
     },
     {
       "id": "a1-102-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Kérek ____.",
-      "hint": "meat",
-      "english": "I'd like meat.",
-      "answer": "húst",
+      "stage": "check",
       "teaches": [
-        "how-the-accusative-t-works"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "check"
+      "question": "Which means “She takes the chicken”?",
+      "options": [
+        "Veszi a csirkét.",
+        "Vesz a csirkét.",
+        "Veszi egy csirkét."
+      ],
+      "correct": 0
     }
   ]
 }
