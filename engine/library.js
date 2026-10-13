@@ -2101,6 +2101,35 @@ const Library = (function () {
 
         const marksChecked = (typeof readerMarksOn === 'function' && readerMarksOn()) ? 'true' : 'false';
 
+        let topChapterLabel = '';
+        let mainChapterTitle = isMulti ? chapter.title : t.title;
+
+        if (isBookFormat) {
+            if (displaySubtitle) {
+                topChapterLabel = chapter.title;
+                mainChapterTitle = displaySubtitle;
+            } else {
+                const splitMatch = (chapter.title || '').match(/^(?:((?:chapter|capítulo|capitulo|fejezet|part|parte|rész|book|libro|könyv)\s+(?:\d+|[ivxlcdm]+|[a-záéíóúñüöőű]+))\s*[:.\-—–]\s*(.+))$/i);
+                if (splitMatch) {
+                    topChapterLabel = splitMatch[1].trim();
+                    mainChapterTitle = splitMatch[2].trim();
+                } else if (/^(?:chapter|capítulo|capitulo|fejezet|part|parte|rész|book|libro|könyv)\s+(?:\d+|[ivxlcdm]+|[a-záéíóúñüöőű]+)$/i.test((chapter.title || '').trim())) {
+                    topChapterLabel = chapter.title;
+                    mainChapterTitle = '';
+                }
+            }
+        }
+
+        let headerTitlesHtml = '';
+        if (topChapterLabel && mainChapterTitle) {
+            headerTitlesHtml = '<div class="lt-chapter-top-label">' + esc(topChapterLabel) + '</div>' +
+                '<h3 class="story-title' + (isBookFormat ? ' lt-chapter-heading' : '') + '">' + Reader.makeClickable(mainChapterTitle) + '</h3>';
+        } else if (topChapterLabel && !mainChapterTitle) {
+            headerTitlesHtml = '<h3 class="story-title lt-chapter-top-label' + (isBookFormat ? ' lt-chapter-heading' : '') + '">' + esc(topChapterLabel) + '</h3>';
+        } else {
+            headerTitlesHtml = '<h3 class="story-title' + (isBookFormat ? ' lt-chapter-heading' : '') + '">' + Reader.makeClickable(mainChapterTitle) + '</h3>';
+        }
+
         let html = '<div class="story-bar">' +
             '<button type="button" class="story-action" data-mytext-back="1">' + backLabel + '</button>' +
             chapterSelectHtml +
@@ -2108,8 +2137,7 @@ const Library = (function () {
         '<div class="story-header' + (isBookFormat ? ' lt-book-chapter-header' : '') + '">' +
             '<div class="story-header-left">' +
                 (isMulti ? '<p class="lt-reading-eyebrow">' + esc(t.title) + (t.author ? ' · ' + esc(t.author) : '') + ' · Chapter ' + (chapterIndex + 1) + ' of ' + totalCh + '</p>' : '') +
-                '<h3 class="story-title' + (isBookFormat ? ' lt-chapter-heading' : '') + '">' + esc(isMulti ? chapter.title : t.title) + '</h3>' +
-                (displaySubtitle ? '<p class="lt-chapter-subtitle">' + Reader.makeClickable(displaySubtitle) + '</p>' : '') +
+                headerTitlesHtml +
                 '<span class="story-level-badge">' + esc(level) + '</span>' +
             '</div>' +
         '</div>' +

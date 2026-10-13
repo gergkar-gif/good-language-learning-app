@@ -547,7 +547,10 @@ async function runTests() {
     };
     await Lib2.openMyText(bookId, 0);
     assert(readerEl.innerHTML.includes('lt-book-chapter-header'), 'Book reader should use centered lt-book-chapter-header');
-    assert(readerEl.innerHTML.includes('lt-chapter-heading'), 'Book reader should style chapter title with lt-chapter-heading');
+    assert(readerEl.innerHTML.includes('lt-chapter-top-label'), 'Book reader should render top chapter label with lt-chapter-top-label');
+    assert(readerEl.innerHTML.includes('Capítulo 1'), 'Book reader should render Capitulo 1 in top chapter label');
+    assert(readerEl.innerHTML.includes('lt-chapter-heading'), 'Book reader should style main chapter title with lt-chapter-heading');
+    assert(readerEl.innerHTML.includes('El comienzo'), 'Book reader should render main chapter title in lt-chapter-heading');
     assert(readerEl.innerHTML.includes('lt-book-body'), 'Book reader should style prose container with lt-book-body');
     assert(readerEl.innerHTML.includes('lt-first-para'), 'First narrative paragraph should receive lt-first-para class');
     assert(readerEl.innerHTML.includes('id="story-substack-player"'), 'Book reader should render the floating Substack-style audio player');
