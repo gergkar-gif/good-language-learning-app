@@ -136,4 +136,6 @@ scenario not mentioning the target's object · lesson titles using forms
 not yet taught (*dolgaim*) · a verb whose meaning needs an object not yet
 taught (*hallgat* alone = "is silent") · false spelling claims (*hova* and
 *Hová* are the same word) · a screen rule its own tip contradicts · an English gloss that lets two
-verbs or conjugations fit ("take" for *kérem*/*veszem*: write "buy").
+verbs or conjugations fit ("take" for *kérem*/*veszem*: write "buy") · a
+question in reported speech ("Anna asks Meg where she is going") that lets
+the third-person option fit: quote the direct question.

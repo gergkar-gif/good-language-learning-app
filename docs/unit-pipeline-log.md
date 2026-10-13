@@ -247,3 +247,7 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   a1-65-consolidation-17, a1-70-consolidation-1, a1-75-consolidation-17.
   Left: reopening five frozen units for one review item each isn't worth it;
   fold them into any later edit of those units.
+- New check `reported-question` (suspect): "Anna asks Meg where she is
+  going. Which question?" lets *Hová megy?* fit too. 9 hits in HU A1: 2 new
+  ones in 28/29 sent to the fixer; a1-124/125 hits are formal *Ön* (3rd
+  person is right there, accept); a1-113-practice-3 logged.

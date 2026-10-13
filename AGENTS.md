@@ -46,7 +46,8 @@ listed twice in one vocabulary file, `distractor_skills` on the right option or
 naming the item's own skill, a HU blank glued to a stem ending in *-a/-e*
 whose answer is a suffix, an unmet word in a challenge target, a HU fill-blank whose English "take" lets
 both *kér-* and *vesz-* fit, a consolidation item copied verbatim from a lesson
-(suspect)…); findings
+(suspect), a question in reported speech that lets a third-person option fit
+(suspect; fine for formal *Ön*)…); findings
 already in the content stay a report. `python scripts/check-content.py
 <course> [level] [unit id]` lists everything for one scope, `--summary`
 counts it. The pre-push hook runs both checks.
