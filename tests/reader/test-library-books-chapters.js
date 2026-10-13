@@ -529,12 +529,30 @@ async function runTests() {
     assert.strictEqual(parsedRiordan.chapters[0].subtitle, 'Pulverizo accidentalmente a mi profesora de introducción al álgebra');
     assert(parsedRiordan.chapters[0].paragraphs[0].startsWith('Mira, yo no quería ser mestizo'), 'Subtitle should be extracted into chapter.subtitle, not left as paragraph 0');
 
-    // Verify centered book chapter header, subtitle, first-para and dialogue formatting in reader
+    // Verify centered book chapter header, subtitle, first-para, dialogue formatting, and floating Substack audio player in reader
+    let audioInitCalledWith = null;
+    let audioTeardownCalls = 0;
+    global.StoryAudioPlayer = {
+        isPlaying: false,
+        currentParaIndex: 0,
+        paragraphs: [],
+        init(story, container) {
+            audioInitCalledWith = { story, container };
+            this.paragraphs = story.paragraphs || [];
+        },
+        updateProgressUI() {},
+        teardown() {
+            audioTeardownCalls++;
+        }
+    };
     await Lib2.openMyText(bookId, 0);
     assert(readerEl.innerHTML.includes('lt-book-chapter-header'), 'Book reader should use centered lt-book-chapter-header');
     assert(readerEl.innerHTML.includes('lt-chapter-heading'), 'Book reader should style chapter title with lt-chapter-heading');
     assert(readerEl.innerHTML.includes('lt-book-body'), 'Book reader should style prose container with lt-book-body');
     assert(readerEl.innerHTML.includes('lt-first-para'), 'First narrative paragraph should receive lt-first-para class');
+    assert(readerEl.innerHTML.includes('id="story-substack-player"'), 'Book reader should render the floating Substack-style audio player');
+    assert(!readerEl.innerHTML.includes('Listen to this paragraph'), 'Book reader should not render inline per-paragraph TTS buttons');
+    assert(audioInitCalledWith && audioInitCalledWith.story.paragraphs.length === 2, 'StoryAudioPlayer.init should be called with the chapter paragraphs');
 
     // Verify manual chapter deletion from Book Overview TOC
     Lib2.openMyTextOrChapters(bookId);
@@ -545,7 +563,7 @@ async function runTests() {
     assert.strictEqual(remainingBook.chapters.length, 1, 'Deleting chapter 0 should leave 1 chapter');
     assert.strictEqual(remainingBook.chapters[0].title, 'Capítulo 2: El viaje');
     assert.strictEqual(remainingBook.progress.chapterIndex, 0, 'Reading progress chapterIndex should shift down when an earlier chapter is removed');
-    console.log('   ✓ Front-matter filtering, chapter subtitles, book typography classes, and manual chapter removal verified.');
+    console.log('   ✓ Front-matter filtering, chapter subtitles, book typography classes, floating Substack player, and manual chapter removal verified.');
 
     console.log('\nAll Library book & chapter tests passed!');
 }

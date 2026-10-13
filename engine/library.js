@@ -1871,6 +1871,19 @@ const Library = (function () {
                 }
             }
 
+            // Keep floating audio player synced to the reader's scroll position while paused
+            // so pressing Play starts from the currently visible paragraph.
+            if (typeof StoryAudioPlayer !== 'undefined' && !StoryAudioPlayer.isPlaying &&
+                StoryAudioPlayer.paragraphs && StoryAudioPlayer.paragraphs.length > 0) {
+                const clampedIdx = Math.max(0, Math.min(StoryAudioPlayer.paragraphs.length - 1, currentParaIdx));
+                if (StoryAudioPlayer.currentParaIndex !== clampedIdx) {
+                    StoryAudioPlayer.currentParaIndex = clampedIdx;
+                    if (typeof StoryAudioPlayer.updateProgressUI === 'function') {
+                        StoryAudioPlayer.updateProgressUI();
+                    }
+                }
+            }
+
             if (pct >= 2 || currentParaIdx > 0) {
                 clearTimeout(saveTimer);
                 saveTimer = setTimeout(() => {
@@ -1934,6 +1947,11 @@ const Library = (function () {
 
         const container = document.getElementById('reader-content');
         if (!container) return;
+
+        // Stop any previous narration before loading the new chapter/text
+        if (typeof StoryAudioPlayer !== 'undefined' && StoryAudioPlayer.teardown) {
+            StoryAudioPlayer.teardown();
+        }
 
         // Ensure dictionary/morphology is ready so word status colors and taps work immediately
         if (typeof Lexicon !== 'undefined' && !Lexicon.isLoaded()) {
@@ -2016,6 +2034,7 @@ const Library = (function () {
         '<div class="story-body' + (isBookFormat ? ' lt-book-body' : '') + '">';
 
         let seenOpeningNarration = false;
+        const playableParagraphs = [];
         for (let idx = bodyStartIndex; idx < paragraphs.length; idx++) {
             const p = (paragraphs[idx] || '').trim();
             if (!p) continue;
@@ -2031,9 +2050,14 @@ const Library = (function () {
             const paraClasses = ['story-paragraph', isDialogue ? 'dialogue lt-book-dialogue' : 'narration'];
             if (isFirstNarration) paraClasses.push('lt-first-para');
 
-            html += '<p class="' + paraClasses.join(' ') + '" data-para-index="' + idx + '">' +
+            const playableIdx = playableParagraphs.length;
+            playableParagraphs.push({
+                text: p,
+                type: isDialogue ? 'dialogue' : 'narration'
+            });
+
+            html += '<p class="' + paraClasses.join(' ') + '" data-para-index="' + playableIdx + '">' +
                 Reader.makeClickable(p) +
-                (typeof ParlourTTS !== 'undefined' ? ParlourTTS.button(p, { type: 'reading', label: 'Listen to this paragraph' }) : '') +
             '</p>';
         }
         html += '</div>';
@@ -2052,6 +2076,26 @@ const Library = (function () {
                       (chapterIndex > 0 ? `<button type="button" class="dk-secondary" data-mytext-prev-ch="1">&larr; Previous chapter</button>` : '') +
                       `<button type="button" class="btn-primary" data-mytext-finish-book="1">Finish ${isMulti ? 'book' : 'reading'} ✓</button>` +
                   `</div>`) +
+        '</div>';
+
+        // Floating Substack-like audio player at the bottom of the reader
+        const playIconHtml = (typeof Art !== 'undefined' && Art.icon) ? Art.icon('play') : '▶';
+        html += '<div class="story-substack-player" id="story-substack-player" role="region" aria-label="Story narration">' +
+            '<button type="button" class="ssp-play-btn" id="story-audio-play-btn" aria-label="Play story">' +
+                '<span class="ssp-icon">' + playIconHtml + '</span>' +
+            '</button>' +
+            '<div class="ssp-track">' +
+                '<div class="ssp-meta">' +
+                    '<span class="ssp-label">Listen along</span>' +
+                    '<span class="ssp-speaker-tag hidden" id="ssp-speaker-tag"></span>' +
+                '</div>' +
+                '<div class="ssp-scrubber-row">' +
+                    '<span class="ssp-time" id="story-audio-time-cur">0:00</span>' +
+                    '<input type="range" class="ssp-slider" id="story-audio-slider" min="0" max="100" value="0" aria-label="Narration position">' +
+                    '<span class="ssp-time" id="story-audio-time-rem">-0:00</span>' +
+                '</div>' +
+            '</div>' +
+            '<button type="button" class="ssp-speed-btn" id="story-audio-speed-btn" title="Playback speed">1×</button>' +
         '</div>';
 
         container.innerHTML = html;
@@ -2106,6 +2150,19 @@ const Library = (function () {
         }
 
         showReading();
+        if (typeof StoryAudioPlayer !== 'undefined' && StoryAudioPlayer.init) {
+            StoryAudioPlayer.init({
+                id: t.id + '-ch-' + chapterIndex,
+                title: isMulti ? chapter.title : t.title,
+                paragraphs: playableParagraphs
+            }, container);
+            if (t.progress && t.progress.chapterIndex === chapterIndex && t.progress.paraIndex > 0 && playableParagraphs.length > 0) {
+                StoryAudioPlayer.currentParaIndex = Math.min(playableParagraphs.length - 1, t.progress.paraIndex);
+                if (typeof StoryAudioPlayer.updateProgressUI === 'function') {
+                    StoryAudioPlayer.updateProgressUI();
+                }
+            }
+        }
         if (typeof updateReaderWordColors === 'function') updateReaderWordColors();
         restoreMyTextPosition(t, chapterIndex);
         wireMyTextScrollProgress(t.id, chapterIndex);
@@ -2137,6 +2194,9 @@ const Library = (function () {
     }
 
     function closeMyText() {
+        if (typeof StoryAudioPlayer !== 'undefined' && StoryAudioPlayer.teardown) {
+            StoryAudioPlayer.teardown();
+        }
         if (window._storyScrollListener && typeof window.removeEventListener === 'function') {
             window.removeEventListener('scroll', window._storyScrollListener);
             window._storyScrollListener = null;
@@ -2154,6 +2214,9 @@ const Library = (function () {
     // SECTION SWITCHING (Parlour / Saved / My Texts / reading)
     // ----------------------------------------
     function showSection(section) {
+        if (typeof StoryAudioPlayer !== 'undefined' && StoryAudioPlayer.teardown) {
+            StoryAudioPlayer.teardown();
+        }
         activeSection = PANES[section] ? section : 'parlour';
 
         document.querySelectorAll('#lib-subnav [data-lib-tab]').forEach(btn => {
