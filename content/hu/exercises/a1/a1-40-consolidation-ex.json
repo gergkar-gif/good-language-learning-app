@@ -201,14 +201,18 @@
       "question": "Which phrase means \"the new books\"?",
       "options": [
         "az újak könyvek",
-        "az új könyvek",
-        "az új könyv"
+        "a könyvek újak",
+        "az új könyvek"
       ],
-      "correct": 1,
+      "correct": 2,
       "teaches": [
         "adjective-order-before-the-noun"
       ],
-      "stage": "in-context"
+      "stage": "in-context",
+      "distractor_skills": {
+        "0": "plural-predicate-adjectives-k",
+        "1": "plural-predicate-adjectives-k"
+      }
     },
     {
       "id": "a1-40-consolidation-14",
@@ -217,7 +221,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Az ablakok nagyok?"
+          "text": "Az ablakok kicsik?"
         },
         {
           "speaker": "Károly",
@@ -225,8 +229,8 @@
         }
       ],
       "options": [
-        "Igen, nagy.",
-        "Igen, nagyok."
+        "Nem, nagy.",
+        "Nem, nagyok."
       ],
       "correct": 1,
       "teaches": [

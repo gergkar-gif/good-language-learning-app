@@ -24,14 +24,18 @@
       "question": "Which phrase means \"the big tables\"?",
       "options": [
         "a nagyok asztalok",
-        "a nagy asztal",
+        "az asztalok nagyok",
         "a nagy asztalok"
       ],
       "correct": 2,
       "teaches": [
         "adjective-order-before-the-noun"
       ],
-      "stage": "introduce"
+      "stage": "introduce",
+      "distractor_skills": {
+        "0": "plural-predicate-adjectives-k",
+        "1": "plural-predicate-adjectives-k"
+      }
     },
     {
       "id": "a1-38-controlled-1",
@@ -93,14 +97,18 @@
       "question": "Which phrase means \"the small chairs\"?",
       "options": [
         "a kicsik székek",
-        "a kicsi székek",
-        "a kicsi szék"
+        "a székek kicsik",
+        "a kicsi székek"
       ],
-      "correct": 1,
+      "correct": 2,
       "teaches": [
         "adjective-order-before-the-noun"
       ],
-      "stage": "controlled"
+      "stage": "controlled",
+      "distractor_skills": {
+        "0": "plural-predicate-adjectives-k",
+        "1": "plural-predicate-adjectives-k"
+      }
     },
     {
       "id": "a1-38-practice-1",
@@ -207,7 +215,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Hol vannak a székek?"
+          "text": "A nagy székek itt vannak?"
         },
         {
           "speaker": "Károly",
@@ -215,14 +223,17 @@
         }
       ],
       "options": [
-        "A kicsik székek ott vannak.",
-        "A kicsi székek ott vannak."
+        "Nem, a kicsik székek ott vannak.",
+        "Nem, a kicsi székek ott vannak."
       ],
       "correct": 1,
       "teaches": [
         "adjective-order-before-the-noun"
       ],
-      "stage": "dialogue"
+      "stage": "dialogue",
+      "distractor_skills": {
+        "0": "plural-predicate-adjectives-k"
+      }
     },
     {
       "id": "a1-38-dialogue-2",
@@ -313,7 +324,7 @@
       "category": "grammar",
       "question": "Which phrase means \"the big windows\"?",
       "options": [
-        "a nagy ablak",
+        "az ablakok nagyok",
         "a nagyok ablakok",
         "a nagy ablakok"
       ],
@@ -321,7 +332,11 @@
       "teaches": [
         "adjective-order-before-the-noun"
       ],
-      "stage": "check"
+      "stage": "check",
+      "distractor_skills": {
+        "0": "plural-predicate-adjectives-k",
+        "1": "plural-predicate-adjectives-k"
+      }
     }
   ]
 }
