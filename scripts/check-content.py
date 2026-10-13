@@ -82,6 +82,8 @@ CHECKS = {
     "ds-on-answer": "distractor_skills names the right option",
     "ds-own-skill": "distractor_skills names the skill the exercise teaches (a wrong form of the tested skill gets none)",
     "reported-question": "a question in reported speech ('asks Meg where she is going') lets a third-person option fit; quote the direct question",
+    "hova-variant": "HU fill-blank answering Hová without also accepting Hova (both spellings are standard)",
+    "article-blank": "HU fill-blank: 'a ____' before an answer starting with a vowel, or 'az ____' before a consonant",
     "take-gloss": "HU fill-blank: English 'take' for a kér-/vesz- answer, so both verbs fit (write 'have'/'ask for' or 'buy')",
     "glued-blank": "HU: a blank glued to a stem ending in -a/-e whose answer is a suffix (hálószoba____ + ban teaches *hálószobaban*)",
     "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
@@ -100,7 +102,7 @@ CHECKS = {
 LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
-SUSPECTS = {"reported-question", "consolidation-copy", "take-gloss", "glued-blank", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"hova-variant", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # Hungarian A1-A2. Spanish lists leave out function words (en, que, con), so the
@@ -267,6 +269,16 @@ def check_exercise(e, course, lang):
     opts = string_options(e)
     if t in CHOICE and opts and re.search(r"\basks\b[^.?“\"]*\b(what|where|whether|if|when|how|who|why)\s+(she|he|they)\b", e.get("question") or "", re.I):
         hit("reported-question", (e.get("question") or "")[:60])
+    if lang == "hu" and t == "fill-blank":
+        answers = [str(x) for x in (e.get("answers") or [e.get("answer")]) if x]
+        low = {fold(x) for x in answers}
+        if any(x.strip().lower() == "hová" for x in answers) and "hova" not in {x.strip().lower() for x in answers}:
+            hit("hova-variant", "add Hova to answers")
+        m = re.search(r"(?:^|[\s(“\"])(a|az)\s+_{2,}", e.get("sentence") or "", re.I)
+        if m and answers:
+            vowel = fold(answers[0])[:1] in "aeiou"
+            if (m.group(1).lower() == "a") == vowel:
+                hit("article-blank", f"{m.group(1)} ____ + {answers[0]}")
     if lang == "hu" and t == "fill-blank":
         # only where the learner types the verb: in a choice item the options decide
         gloss = " ".join(str(e.get(k) or "") for k in ("english", "question"))

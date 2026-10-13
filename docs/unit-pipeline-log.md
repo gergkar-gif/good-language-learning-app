@@ -251,3 +251,8 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   going. Which question?" lets *Hová megy?* fit too. 9 hits in HU A1: 2 new
   ones in 28/29 sent to the fixer; a1-124/125 hits are formal *Ön* (3rd
   person is right there, accept); a1-113-practice-3 logged.
+- New checks `hova-variant` and `article-blank` (suspects). First run:
+  a1-153-controlled-1 (in the fixer's list), a1-151-practice-3 (in the
+  list), and a real one in frozen unit 8: a1-36-practice-5 builds *A
+  emberek* (fold into the next edit of unit 8); B1/B2 hits logged; the C1
+  hits are *az* the pronoun (false positives).
