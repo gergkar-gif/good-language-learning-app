@@ -59,6 +59,12 @@ when a rewrite adds new story files without deleting the old ones. Lessons
 load stories by file path (`"ref"`), so keep the file a lesson references
 and delete the other (or give it its own id if both are wanted).
 
+**A1 story comprehension questions** are in the target language and carry
+their English: `questionEnglish` and `optionsEnglish` (same length and
+order as `options`) on every question. The Reader then shows a "Show
+English" toggle (decided by the user 2026-10-13). A question with its
+English may use words the story doesn't teach; `unmet-word` skips it.
+
 Why: the "Sync generated content" GitHub workflow runs the same validator as
 its first step. If it fails, nothing is regenerated and the repo owner gets a
 failure email per push. A `pre-push` hook in `.githooks/` runs it for you

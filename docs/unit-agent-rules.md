@@ -90,7 +90,9 @@ possessed *-im*, a noun possessor *Anna kulcsa*) is yours to catch.
   no comparisons with languages other than English; a recap states what
   the earlier unit actually taught.
 - Story: natural lines (no odd negative questions); narration matches the
-  lines; comprehension options use met forms.
+  lines. A1 comprehension questions are in Hungarian with `questionEnglish`
+  and `optionsEnglish` (same order as `options`) on each question; the
+  Reader shows an English toggle.
 - Glosses read right to an English speaker (*terem* = "large room", not
   "hall").
 - Challenge per lesson in `content/<course>/curriculum/challenges.json`:

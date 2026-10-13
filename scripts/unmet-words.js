@@ -242,7 +242,8 @@ function targetTexts(e) {
             const lines = (s.paragraphs || []).filter(x => x && x.type === 'dialogue' && typeof x.text === 'string').map(x => ({ text: x.text }));
             const qs = ((s.narration || {}).pedagogical || {}).comprehensionQuestions || [];
             addExtra(stem, { id: `${f.replace(/\.json$/, '')}:story`, prompt: lines });
-            qs.forEach((q, i) => addExtra(stem, { id: `${f.replace(/\.json$/, '')}:question-${i + 1}`, question: '', options: q.options || [], prompt: [{ text: q.question || '' }] }));
+            // a question with its English (the A1 toggle) may use words the story doesn't teach
+            qs.filter(q => !q.questionEnglish).forEach((q, i) => addExtra(stem, { id: `${f.replace(/\.json$/, '')}:question-${i + 1}`, question: '', options: q.options || [], prompt: [{ text: q.question || '' }] }));
         }
     }
     const found = [];

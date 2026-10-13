@@ -1154,6 +1154,34 @@
   margin: 0;
 }
 
+.story-comp-en-toggle {
+  margin-left: auto;
+  padding: 4px 10px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.story-comp-en-toggle[aria-pressed="true"] {
+  border-color: var(--accent);
+}
+
+/* English translation of a comprehension question and its options, shown by the toggle */
+.story-comp-en {
+  display: none;
+  margin-top: 2px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.show-english .story-comp-en {
+  display: block;
+}
+
 .story-comp-prev-score {
   font-size: 0.85em;
   font-weight: 600;

@@ -2247,25 +2247,41 @@ window.Reader = {
         let compHtml = '';
         if (story.narration && story.narration.pedagogical && story.narration.pedagogical.comprehensionQuestions && story.narration.pedagogical.comprehensionQuestions.length) {
             const qs = story.narration.pedagogical.comprehensionQuestions;
+            // A1 questions are in the target language; when every question carries
+            // its English, a toggle shows it (remembered per viewer).
+            const hasEnglish = qs.every(q => q.questionEnglish && Array.isArray(q.optionsEnglish) &&
+                q.optionsEnglish.length === (q.options || []).length);
+            let showEnglish = false;
+            if (hasEnglish) {
+                try { showEnglish = localStorage.getItem('parlour-comp-english') === '1'; } catch (_) { /* storage blocked */ }
+            }
+            const enToggle = hasEnglish
+                ? '<button type="button" class="story-comp-en-toggle" aria-pressed="' + showEnglish + '">' +
+                    (showEnglish ? 'Hide English' : 'Show English') + '</button>'
+                : '';
             const prevComp = this.getComprehension(this.currentStoryId);
             const prevBadge = prevComp
                 ? '<span class="story-comp-prev-score">Previous score: ' + prevComp.correct + '/' + prevComp.total + ' ✓</span>'
                 : '';
-            compHtml = '<div class="story-comprehension-block">' +
+            compHtml = '<div class="story-comprehension-block' + (showEnglish ? ' show-english' : '') + '">' +
                 '<div class="story-comp-header">' +
                     '<h4 class="story-comp-title">Comprehension Check</h4>' +
-                    prevBadge +
+                    prevBadge + enToggle +
                 '</div>' +
                 '<div class="story-comp-list">' +
                     qs.map((q, qIdx) => {
-                        const indexedOptions = (q.options || []).map((opt, oIdx) => ({ text: opt, originalIdx: oIdx }));
+                        const indexedOptions = (q.options || []).map((opt, oIdx) => ({ text: opt, originalIdx: oIdx,
+                            en: hasEnglish ? q.optionsEnglish[oIdx] : '' }));
                         const shuffledOpts = _shuffled(indexedOptions);
                         return '<div class="story-comp-item" data-comp-idx="' + qIdx + '">' +
-                            '<p class="story-comp-q">' + self.escapeHtml(q.question) + '</p>' +
+                            '<p class="story-comp-q">' + self.escapeHtml(q.question) +
+                                (hasEnglish ? '<span class="story-comp-en" lang="en">' + self.escapeHtml(q.questionEnglish) + '</span>' : '') +
+                            '</p>' +
                             '<div class="story-comp-options">' +
                                 shuffledOpts.map(item =>
                                     '<button type="button" class="story-comp-opt" data-q="' + qIdx + '" data-opt="' + item.originalIdx + '" data-correct="' + q.correctIndex + '">' +
                                         self.escapeHtml(item.text) +
+                                        (item.en ? '<span class="story-comp-en" lang="en">' + self.escapeHtml(item.en) + '</span>' : '') +
                                     '</button>'
                                 ).join('') +
                             '</div>' +
@@ -2294,6 +2310,18 @@ window.Reader = {
 
         if (hasNarration) {
             StoryAudioPlayer.init(story, container);
+        }
+
+        const enToggleBtn = container.querySelector('.story-comp-en-toggle');
+        if (enToggleBtn) {
+            enToggleBtn.addEventListener('click', () => {
+                const block = container.querySelector('.story-comprehension-block');
+                const on = !block.classList.contains('show-english');
+                block.classList.toggle('show-english', on);
+                enToggleBtn.setAttribute('aria-pressed', String(on));
+                enToggleBtn.textContent = on ? 'Hide English' : 'Show English';
+                try { localStorage.setItem('parlour-comp-english', on ? '1' : '0'); } catch (_) { /* storage blocked */ }
+            });
         }
 
         container.querySelectorAll('.story-comp-opt').forEach(btn => {

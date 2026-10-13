@@ -169,7 +169,16 @@
                   "question": { "type": "string" },
                   "options": { "type": "array", "items": { "type": "string" } },
                   "correctIndex": { "type": "integer", "minimum": 0 },
-                  "explanation": { "type": "string" }
+                  "explanation": { "type": "string" },
+                  "questionEnglish": {
+                    "type": "string"
+                  },
+                  "optionsEnglish": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
