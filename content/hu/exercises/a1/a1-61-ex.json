@@ -2,303 +2,232 @@
   "lesson": "a1-61",
   "exercises": [
     {
-      "id": "a1-61-review-1",
+      "id": "a1-61-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which means “I work”?",
-      "options": [
-        "dolgozom",
-        "dolgozik",
-        "dolgozni"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "ik-verbs-dolgozom-not-dolgozok",
-        "2": "building-the-infinitive-the-suffix-ni"
-      }
-    },
-    {
-      "id": "a1-61-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which form is a present-tense verb?",
+      "question": "Which means “I read”?",
       "options": [
-        "tanulok",
-        "tanulni",
-        "tanulás"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      }
-    },
-    {
-      "id": "a1-61-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the correct first-person sentence.",
-      "options": [
+        "Olvasek.",
         "Olvasok.",
-        "Olvas.",
-        "Olvasni."
+        "Olvasök."
       ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "2": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "introduce"
+      "correct": 1
     },
     {
-      "id": "a1-61-intro-2",
+      "id": "a1-61-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which means “Károly works”?",
-      "options": [
-        "Károly dolgozik.",
-        "Károly dolgozom.",
-        "Károly dolgozni."
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
-        "present-tense-routine-language"
+        "subject-pronouns-omission"
       ],
-      "distractor_skills": {
-        "2": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "introduce"
+      "question": "Which sentence puts stress on “I” (“I am the one who cooks”)?",
+      "options": [
+        "Főzök.",
+        "Én főzök."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-61-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "dolgozni",
-          "to work"
-        ],
-        [
-          "tanulni",
-          "to study"
-        ],
-        [
-          "olvasni",
-          "to read"
-        ],
-        [
-          "írni",
-          "to write"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-everyday-actions-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "controlled"
+      "question": "Which verb form is right for “I study”?",
+      "options": [
+        "tanulok",
+        "tanulek",
+        "tanulök"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-61-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Én ____ magyarul.",
-      "hint": "I study",
-      "english": "I study Hungarian.",
-      "answer": "tanulok",
+      "stage": "controlled",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "stage": "controlled"
+      "sentence": "A konyhában ____.",
+      "hint": "főz, I",
+      "english": "I cook in the kitchen.",
+      "answer": "főzök"
     },
     {
       "id": "a1-61-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence is correct?",
-      "options": [
-        "Meg olvas.",
-        "Meg olvasok.",
-        "Meg olvasni."
-      ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "2": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-61-controlled-4",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence naturally omits the subject?",
-      "options": [
-        "Dolgozom.",
-        "Én dolgozom én.",
-        "Dolgozom én vagyok."
-      ],
-      "correct": 0,
-      "teaches": [
-        "subject-pronouns-omission"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-61-practice-1",
       "type": "matching",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "dolgozom",
-          "I work"
-        ],
-        [
-          "tanulok",
-          "I study"
-        ],
-        [
-          "olvasok",
-          "I read"
-        ],
-        [
-          "írok",
-          "I write"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-everyday-actions-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "olvas",
+          "to read"
+        ],
+        [
+          "ír",
+          "to write"
+        ],
+        [
+          "tanul",
+          "to study"
+        ],
+        [
+          "főz",
+          "to cook"
+        ],
+        [
+          "beszél",
+          "to speak"
+        ]
+      ]
+    },
+    {
+      "id": "a1-61-controlled-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "tiles": [
+        "Itt",
+        "főzök",
+        "."
+      ],
+      "solution": [
+        "Itt",
+        "főzök",
+        "."
+      ],
+      "english": "I cook here."
+    },
+    {
+      "id": "a1-61-practice-1",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-everyday-actions-vocab"
+      ],
+      "question": "Tanulok a könyvtárban. What does the speaker do there?",
+      "options": [
+        "Studies.",
+        "Reads.",
+        "Writes."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-61-practice-2",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which answer fits Mit csinálsz?",
-      "options": [
-        "Olvasok.",
-        "Olvasni.",
-        "Olvasó."
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "practice"
+      "sentence": "A kertben ____.",
+      "hint": "beszél, I",
+      "english": "I speak in the garden.",
+      "answer": "beszélek"
     },
     {
       "id": "a1-61-practice-3",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Károly ____ egy könyvet.",
-      "hint": "Károly is reading a book",
-      "english": "Károly is reading a book.",
-      "answer": "olvas",
+      "stage": "practice",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "question": "Which sentence is correct?",
+      "options": [
+        "A konyhában főzek.",
+        "A konyhában főzök."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-61-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "sentence": "Itt ____.",
+      "hint": "ír, I",
+      "english": "I write here.",
+      "answer": "írok"
+    },
+    {
+      "id": "a1-61-practice-5",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "tiles": [
-        "Ma",
-        "dolgozom",
-        "és",
+        "A",
+        "nappaliban",
         "olvasok",
         "."
       ],
       "solution": [
-        "Ma",
-        "dolgozom",
-        "és",
+        "A",
+        "nappaliban",
         "olvasok",
         "."
       ],
-      "english": "Today I work and read.",
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-61-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Mit csinálsz?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Tanulok.",
-        "Tanulni."
-      ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "practice"
+      "english": "I read in the living room."
     },
     {
       "id": "a1-61-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mit csinálsz?"
+          "speaker": "Meg",
+          "text": "Hol vagy, Anna?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Anna",
           "text": "_____"
         }
       ],
       "options": [
-        "Dolgozom.",
-        "Dolgozik.",
-        "Dolgozni."
+        "A könyvtárban tanulok.",
+        "A könyvtárban tanulek.",
+        "A könyvtárban tanulök."
       ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "1": "ik-verbs-dolgozom-not-dolgozok",
-        "2": "building-the-infinitive-the-suffix-ni"
-      }
+      "correct": 0
     },
     {
       "id": "a1-61-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Meg, mit csinálsz?"
+          "speaker": "Anna",
+          "text": "Ki főz?"
         },
         {
           "speaker": "Meg",
@@ -306,100 +235,83 @@
         }
       ],
       "options": [
-        "Olvasok.",
-        "Olvasni.",
-        "Olvasó."
+        "Én főz.",
+        "Én főzök.",
+        "Én főzek."
       ],
-      "correct": 0,
+      "correct": 1
+    },
+    {
+      "id": "a1-61-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      }
-    },
-    {
-      "id": "a1-61-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write two short Hungarian sentences using I Work, I Study.",
-          "answer": "Dolgozom. Olvasok."
-        }
+      "tiles": [
+        "Itt",
+        "olvasok",
+        "és",
+        "írok",
+        "."
       ],
-      "teaches": [
-        "a1-everyday-actions-vocab"
-      ]
+      "solution": [
+        "Itt",
+        "olvasok",
+        "és",
+        "írok",
+        "."
+      ],
+      "english": "Here I read and write."
     },
     {
-      "id": "a1-61-writing-2",
+      "id": "a1-61-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "template": [
         {
-          "prompt": "Write one short Hungarian response to a practical question from today's lesson.",
+          "prompt": "Say that you study.",
           "answer": "Tanulok."
+        },
+        {
+          "prompt": "Say that you are the one who writes (stress “I”).",
+          "answer": "Én írok."
         }
-      ],
-      "teaches": [
-        "a1-everyday-actions-vocab"
       ]
     },
     {
       "id": "a1-61-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which translates \"I work\"?",
-      "options": [
-        "Dolgozom.",
-        "Dolgozni.",
-        "Dolgozik."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni",
-        "2": "ik-verbs-dolgozom-not-dolgozok"
-      },
-      "stage": "check"
+      "sentence": "A nappaliban ____.",
+      "hint": "tanul, I",
+      "english": "I study in the living room.",
+      "answer": "tanulok"
     },
     {
       "id": "a1-61-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which form means “I study”?",
-      "options": [
-        "Tanulok.",
-        "Tanulni.",
-        "Tanulás."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "check"
-    },
-    {
-      "id": "a1-61-practice-6",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which reply to “Dolgozol?” leaves out the pronoun?",
+      "question": "Which means “I speak”?",
       "options": [
-        "Igen, én dolgozom.",
-        "Igen, én vagyok dolgozom.",
-        "Igen, dolgozom."
+        "Beszélok.",
+        "Beszélek.",
+        "Beszélök."
       ],
-      "correct": 2,
-      "teaches": [
-        "subject-pronouns-omission"
-      ],
-      "stage": "practice"
+      "correct": 1
     }
   ]
 }

@@ -2,275 +2,205 @@
   "lesson": "a1-62",
   "exercises": [
     {
-      "id": "a1-62-review-1",
+      "id": "a1-62-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which means “I eat”?",
-      "options": [
-        "eszem",
-        "eszik",
-        "enni"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "ik-verbs-dolgozom-not-dolgozok",
-        "2": "building-the-infinitive-the-suffix-ni"
-      }
+      "question": "Which means “you study”?",
+      "options": [
+        "Tanulsz.",
+        "Tanulok.",
+        "Tanulosz."
+      ],
+      "correct": 0
     },
     {
-      "id": "a1-62-review-2",
+      "id": "a1-62-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which form is a present-tense verb?",
-      "options": [
-        "hallgatok",
-        "hallgatni",
-        "hallgatás"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      }
-    },
-    {
-      "id": "a1-62-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the correct first-person sentence.",
+      "question": "Which means “you read”?",
       "options": [
-        "Nézek.",
-        "Néz.",
-        "Nézni."
+        "Olvassz.",
+        "Olvasol.",
+        "Olvasok."
       ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "2": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-62-intro-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which means “Anna speaks”?",
-      "options": [
-        "Anna beszél.",
-        "Anna beszélek.",
-        "Anna beszélni."
-      ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "2": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "introduce"
+      "correct": 1
     },
     {
       "id": "a1-62-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "beszélni",
-          "to speak"
-        ],
-        [
-          "hallgatni",
-          "to listen"
-        ],
-        [
-          "nézni",
-          "to watch / look at"
-        ],
-        [
-          "enni",
-          "to eat"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-everyday-actions-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "controlled"
+      "sentence": "____ itt?",
+      "hint": "vár, you",
+      "english": "Are you waiting here?",
+      "answer": "vársz"
     },
     {
       "id": "a1-62-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Én ____ magyarul.",
-      "hint": "I speak",
-      "english": "I speak Hungarian.",
-      "answer": "beszélek",
+      "stage": "controlled",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "stage": "controlled"
+      "sentence": "A parkban ____.",
+      "hint": "sétál, you",
+      "english": "You walk in the park.",
+      "answer": "sétálsz"
     },
     {
       "id": "a1-62-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence is correct?",
-      "options": [
-        "Meg néz.",
-        "Meg nézek.",
-        "Meg nézni."
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "2": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "controlled"
+      "question": "Which means “you cook”?",
+      "options": [
+        "főzel",
+        "főzöl",
+        "főzsz"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-62-controlled-4",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence naturally omits the subject?",
-      "options": [
-        "Hallgatok.",
-        "Én hallgatok én.",
-        "Hallgatok én vagyok."
-      ],
-      "correct": 0,
-      "teaches": [
-        "subject-pronouns-omission"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-62-practice-1",
       "type": "matching",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "beszélek",
-          "I speak"
-        ],
-        [
-          "hallgatok",
-          "I listen"
-        ],
-        [
-          "nézek",
-          "I watch"
-        ],
-        [
-          "eszem",
-          "I eat"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-everyday-actions-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "vár",
+          "to wait"
+        ],
+        [
+          "sétál",
+          "to walk"
+        ],
+        [
+          "kérdez",
+          "to ask"
+        ],
+        [
+          "beszél",
+          "to speak"
+        ],
+        [
+          "olvas",
+          "to read"
+        ]
+      ]
+    },
+    {
+      "id": "a1-62-practice-1",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-everyday-actions-vocab"
+      ],
+      "question": "Vársz itt? What is the speaker asking?",
+      "options": [
+        "Are you waiting here?",
+        "Are you walking here?",
+        "Are you asking here?"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-62-practice-2",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which answer fits Mit csinálsz?",
-      "options": [
-        "Nézek.",
-        "Nézni.",
-        "Néző."
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "practice"
+      "sentence": "Hol ____?",
+      "hint": "olvas, you",
+      "english": "Where do you read?",
+      "answer": "olvasol"
     },
     {
       "id": "a1-62-practice-3",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Anna ____ egy filmet.",
-      "hint": "Anna is watching a movie",
-      "english": "Anna is watching a movie.",
-      "answer": "néz",
+      "stage": "practice",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "question": "Which sentence is correct?",
+      "options": [
+        "Kérdezsz itt?",
+        "Kérdezol itt?",
+        "Kérdezel itt?"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-62-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": [
-        "Ma",
-        "beszélek",
-        "és",
-        "nézek",
-        "."
-      ],
-      "solution": [
-        "Ma",
-        "beszélek",
-        "és",
-        "nézek",
-        "."
-      ],
-      "english": "Today I speak and watch.",
+      "stage": "practice",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "tiles": [
+        "A",
+        "parkban",
+        "sétálsz",
+        "?"
+      ],
+      "solution": [
+        "A",
+        "parkban",
+        "sétálsz",
+        "?"
+      ],
+      "english": "Are you walking in the park?"
     },
     {
       "id": "a1-62-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Mit csinálsz?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Beszélek.",
-        "Beszélni."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "present-tense-routine-language"
+        "subject-pronouns-omission"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "practice"
+      "question": "Which sentence is correct?",
+      "options": [
+        "Te olvasok.",
+        "Te olvasol.",
+        "Én olvasol."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-62-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Mit csinál Anna?"
+          "text": "Hol sétálsz?"
         },
         {
           "speaker": "Meg",
@@ -278,111 +208,104 @@
         }
       ],
       "options": [
-        "Anna hallgat.",
-        "Anna hallgatok.",
-        "Anna hallgatni."
+        "A parkban sétálsz.",
+        "A parkban sétálek.",
+        "A parkban sétálok."
       ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "2": "building-the-infinitive-the-suffix-ni"
-      }
+      "correct": 2
     },
     {
       "id": "a1-62-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Mariann",
-          "text": "Meg, mit csinálsz?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Nézek.",
-        "Nézni.",
-        "Néző."
-      ],
-      "correct": 0,
+      "stage": "dialogue",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      }
-    },
-    {
-      "id": "a1-62-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
+      "prompt": [
         {
-          "prompt": "Write two short Hungarian sentences using Everyday Verbs.",
-          "answer": "Magyarul beszélek. Eszem."
+          "speaker": "Anna",
+          "text": "_____"
+        },
+        {
+          "speaker": "Meg",
+          "text": "Igen, olvasok."
         }
       ],
-      "teaches": [
-        "a1-everyday-actions-vocab"
-      ]
+      "options": [
+        "Olvasok?",
+        "Olvassz?",
+        "Olvasol?"
+      ],
+      "correct": 2
     },
     {
-      "id": "a1-62-writing-2",
+      "id": "a1-62-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "tiles": [
+        "Hol",
+        "vársz",
+        "?"
+      ],
+      "solution": [
+        "Hol",
+        "vársz",
+        "?"
+      ],
+      "english": "Where are you waiting?"
+    },
+    {
+      "id": "a1-62-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "template": [
         {
-          "prompt": "Write one short Hungarian response to a practical question from today's lesson.",
-          "answer": "Beszélek."
+          "prompt": "Ask a friend if they cook.",
+          "answer": "Főzöl?"
+        },
+        {
+          "prompt": "Ask a friend if they speak.",
+          "answer": "Beszélsz?"
         }
-      ],
-      "teaches": [
-        "a1-everyday-actions-vocab"
       ]
     },
     {
       "id": "a1-62-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which translates \"I listen\"?",
-      "options": [
-        "Hallgatok.",
-        "Hallgatni.",
-        "Hallgat."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni",
-        "2": "ik-verbs-dolgozom-not-dolgozok"
-      },
-      "stage": "check"
+      "sentence": "Itt ____?",
+      "hint": "ír, you",
+      "english": "Are you writing here?",
+      "answer": "írsz"
     },
     {
       "id": "a1-62-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which form means “I speak”?",
-      "options": [
-        "Beszélek.",
-        "Beszélni.",
-        "Beszélés."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "check"
+      "question": "Which means “you ask”?",
+      "options": [
+        "kérdezol",
+        "kérdezsz",
+        "kérdezel"
+      ],
+      "correct": 2
     }
   ]
 }

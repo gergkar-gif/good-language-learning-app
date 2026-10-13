@@ -2,302 +2,277 @@
   "lesson": "a1-65",
   "exercises": [
     {
-      "id": "a1-65-review-1",
+      "id": "a1-65-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which means “I answer”?",
-      "options": [
-        "válaszolok",
-        "válaszol",
-        "válaszolni"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "category": "vocabulary",
+      "stage": "introduce",
       "teaches": [
-        "present-tense-routine-language"
+        "a1-everyday-actions-vocab"
       ],
-      "distractor_skills": {
-        "1": "ik-verbs-dolgozom-not-dolgozok",
-        "2": "building-the-infinitive-the-suffix-ni"
-      }
+      "question": "Which word means “in the afternoon”?",
+      "options": [
+        "reggel",
+        "délután",
+        "este"
+      ],
+      "correct": 1
     },
     {
-      "id": "a1-65-review-2",
+      "id": "a1-65-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which form is a present-tense verb?",
-      "options": [
-        "tanítok",
-        "tanítani",
-        "tanítás"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      }
-    },
-    {
-      "id": "a1-65-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the correct first-person sentence.",
+      "question": "Which answer fits “Olvasol?”",
       "options": [
-        "Kérek.",
-        "Kér.",
-        "Kérni."
+        "Igen, olvasol.",
+        "Igen, olvas.",
+        "Igen, olvasok."
       ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "2": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-65-intro-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which means “Anna travels”?",
-      "options": [
-        "Anna utazik.",
-        "Anna utazom.",
-        "Anna utazni."
-      ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "2": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "introduce"
+      "correct": 2
     },
     {
       "id": "a1-65-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "utazni",
-          "to travel"
-        ],
-        [
-          "tanítani",
-          "to teach"
-        ],
-        [
-          "kérni",
-          "to ask for"
-        ],
-        [
-          "válaszolni",
-          "to answer"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-everyday-actions-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "controlled"
+      "sentence": "Reggel ____.",
+      "hint": "olvas, I",
+      "english": "In the morning I read.",
+      "answer": "olvasok"
     },
     {
       "id": "a1-65-controlled-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Én ____ magyarul.",
-      "hint": "I answer",
-      "english": "I answer in Hungarian.",
-      "answer": "válaszolok",
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-65-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence is correct?",
-      "options": [
-        "Meg kér.",
-        "Meg kérek.",
-        "Meg kérni."
-      ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "2": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-65-controlled-4",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence naturally omits the subject?",
-      "options": [
-        "Tanítok.",
-        "Én tanítok én.",
-        "Tanítok én vagyok."
-      ],
-      "correct": 0,
-      "teaches": [
-        "subject-pronouns-omission"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-65-practice-1",
       "type": "matching",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "kérek",
-          "I ask for"
-        ],
-        [
-          "tanítok",
-          "I teach"
-        ],
-        [
-          "válaszolok",
-          "I answer"
-        ],
-        [
-          "utazni",
-          "to travel"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-everyday-actions-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "reggel",
+          "in the morning"
+        ],
+        [
+          "délután",
+          "in the afternoon"
+        ],
+        [
+          "este",
+          "in the evening"
+        ],
+        [
+          "most",
+          "now"
+        ],
+        [
+          "otthon",
+          "at home"
+        ]
+      ]
+    },
+    {
+      "id": "a1-65-controlled-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "sentence": "Tanulsz? Igen, ____.",
+      "hint": "tanul, I",
+      "english": "Do you study? Yes, I study.",
+      "answer": "tanulok"
+    },
+    {
+      "id": "a1-65-controlled-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "negation-with-nem"
+      ],
+      "tiles": [
+        "Most",
+        "nem",
+        "tanulok",
+        "."
+      ],
+      "solution": [
+        "Most",
+        "nem",
+        "tanulok",
+        "."
+      ],
+      "english": "I am not studying now."
+    },
+    {
+      "id": "a1-65-practice-1",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-everyday-actions-vocab"
+      ],
+      "question": "Este sétálok. When does the speaker walk?",
+      "options": [
+        "In the morning.",
+        "In the evening.",
+        "In the afternoon."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-65-practice-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which answer fits Mit csinálsz?",
-      "options": [
-        "Válaszolok.",
-        "Válaszolni.",
-        "Válaszoló."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "present-tense-routine-language"
+        "a1-everyday-actions-vocab"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "practice"
+      "sentence": "____ a parkban sétálok.",
+      "hint": "afternoon",
+      "english": "In the afternoon I walk in the park.",
+      "answer": "délután"
     },
     {
       "id": "a1-65-practice-3",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Anna ____ egy vizet.",
-      "hint": "Anna is asking for water",
-      "english": "Anna is asking for water.",
-      "answer": "kér",
+      "stage": "practice",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "question": "Which reply fits “Főzöl?”",
+      "options": [
+        "Nem, nem főzöl.",
+        "Nem, nem főz.",
+        "Nem, nem főzök."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-65-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "tiles": [
-        "Ma",
-        "tanítok",
-        "és",
-        "válaszolok",
+        "Délután",
+        "a",
+        "parkban",
+        "sétálok",
         "."
       ],
       "solution": [
-        "Ma",
-        "tanítok",
-        "és",
-        "válaszolok",
+        "Délután",
+        "a",
+        "parkban",
+        "sétálok",
         "."
       ],
-      "english": "Today I teach and answer.",
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "stage": "practice"
+      "english": "In the afternoon I walk in the park."
     },
     {
       "id": "a1-65-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Mit csinálsz?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Válaszolok.",
-        "Válaszolni."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "present-tense-routine-language"
+        "negation-with-nem"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "practice"
+      "question": "Which sentence means “In the evening she does not cook”?",
+      "options": [
+        "Este főz nem.",
+        "Este nincs főz.",
+        "Este nem főz."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-65-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What is Meg doing in the living room?",
+      "options": [
+        "Reading.",
+        "Cooking.",
+        "Writing."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-65-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Who is cooking?",
+      "options": [
+        "Meg.",
+        "Károly.",
+        "Anna."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-65-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does Anna do in the afternoon?",
+      "options": [
+        "She walks in the park.",
+        "She studies in the library.",
+        "She writes in the office."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-65-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit csinál Anna?"
+          "text": "Délután sétálsz?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Anna",
           "text": "_____"
         }
       ],
       "options": [
-        "Anna tanít.",
-        "Anna tanítok.",
-        "Anna tanítani."
+        "Igen, délután sétálsz.",
+        "Igen, délután sétál.",
+        "Igen, délután sétálok."
       ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "2": "building-the-infinitive-the-suffix-ni"
-      }
+      "correct": 2
     },
     {
       "id": "a1-65-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "yes-no-questions"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Meg, mit csinálsz?"
+          "speaker": "Anna",
+          "text": "Este főzöl?"
         },
         {
           "speaker": "Meg",
@@ -305,84 +280,84 @@
         }
       ],
       "options": [
-        "Kérek egy kávét.",
-        "Kérni.",
-        "Kérő."
+        "Nem, este főzök.",
+        "Nem, este nem főzök."
       ],
-      "correct": 0,
+      "correct": 1
+    },
+    {
+      "id": "a1-65-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      }
+      "tiles": [
+        "Reggel",
+        "olvasok",
+        ",",
+        "délután",
+        "sétálok",
+        "."
+      ],
+      "solution": [
+        "Reggel",
+        "olvasok",
+        ",",
+        "délután",
+        "sétálok",
+        "."
+      ],
+      "english": "In the morning I read, in the afternoon I walk."
     },
     {
-      "id": "a1-65-writing-1",
+      "id": "a1-65-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "template": [
         {
-          "prompt": "Write two short Hungarian sentences using Verb Review.",
-          "answer": "Utazom. Kérek egy kávét."
-        }
-      ],
-      "teaches": [
-        "a1-everyday-actions-vocab"
-      ]
-    },
-    {
-      "id": "a1-65-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
+          "prompt": "Say that you study in the morning.",
+          "answer": "Reggel tanulok."
+        },
         {
-          "prompt": "Write one short Hungarian response to a practical question from today's lesson.",
-          "answer": "Válaszolok."
+          "prompt": "Ask a friend if they walk in the park in the afternoon.",
+          "answer": "Délután a parkban sétálsz?"
         }
-      ],
-      "teaches": [
-        "a1-everyday-actions-vocab"
       ]
     },
     {
       "id": "a1-65-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which translates \"I travel\"?",
-      "options": [
-        "Utazom.",
-        "Utazni.",
-        "Utazik."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni",
-        "2": "ik-verbs-dolgozom-not-dolgozok"
-      },
-      "stage": "check"
+      "sentence": "Este a konyhában ____.",
+      "hint": "főz, you",
+      "english": "In the evening you cook in the kitchen.",
+      "answer": "főzöl"
     },
     {
       "id": "a1-65-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which form means “I answer”?",
-      "options": [
-        "Válaszolok.",
-        "Válaszolni.",
-        "Válaszolás."
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "present-tense-routine-language"
+        "a1-everyday-actions-vocab"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "check"
+      "question": "Which word means “in the morning”?",
+      "options": [
+        "este",
+        "reggel",
+        "délután"
+      ],
+      "correct": 1
     }
   ]
 }
