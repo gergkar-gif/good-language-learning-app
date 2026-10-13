@@ -2,77 +2,73 @@
   "lesson": "a1-77",
   "exercises": [
     {
-      "id": "a1-77-review-1",
+      "id": "a1-77-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"hour / o'clock\"?",
-      "options": [
-        "óra",
-        "nap",
-        "hét"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-time-dates-vocab"
-      ]
+      ],
+      "question": "Which word means “at night”?",
+      "options": [
+        "éjjel",
+        "este",
+        "reggel"
+      ],
+      "correct": 0
     },
     {
-      "id": "a1-77-review-2",
+      "id": "a1-77-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which clock time is 9:30?",
-      "options": [
-        "Fél tíz.",
-        "Negyed tíz.",
-        "Tíz óra."
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "fractions"
-      ]
-    },
-    {
-      "id": "a1-77-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"morning\"?",
+        "cardinal-numbers"
+      ],
+      "question": "Which means “At noon it is twelve o’clock”?",
       "options": [
-        "reggel",
-        "délután",
-        "este"
+        "Délben tizenegy óra van.",
+        "Délben tizenkét óra van.",
+        "Este tizenkét óra van."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-77-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"evening\"?",
-      "options": [
-        "este",
-        "reggel",
-        "délben"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 1
     },
     {
       "id": "a1-77-controlled-1",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-time-dates-vocab"
+      ],
+      "sentence": "____ nyolc óra van.",
+      "english": "It is eight o’clock in the evening.",
+      "answer": "Este"
+    },
+    {
+      "id": "a1-77-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "fractions"
+      ],
+      "sentence": "Délután háromnegyed ____ van.",
+      "english": "It is 4:45 in the afternoon.",
+      "answer": "öt"
+    },
+    {
+      "id": "a1-77-controlled-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-time-dates-vocab"
+      ],
       "pairs": [
         [
           "reggel",
-          "morning"
+          "in the morning"
         ],
         [
           "délben",
@@ -80,168 +76,136 @@
         ],
         [
           "délután",
-          "afternoon"
+          "in the afternoon"
         ],
         [
           "este",
-          "evening"
+          "in the evening"
+        ],
+        [
+          "éjjel",
+          "at night"
         ]
-      ],
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-77-controlled-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ dolgozom.",
-      "hint": "in the morning",
-      "english": "I work in the morning.",
-      "answer": "Reggel",
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-77-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence means \"I'm home in the evening\"?",
-      "options": [
-        "Este otthon vagyok.",
-        "Este otthon van.",
-        "Este otthon vagy."
-      ],
-      "correct": 0,
-      "teaches": [
-        "van-zero-copula"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-77-controlled-4",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ szabad vagyok.",
-      "hint": "in the afternoon",
-      "english": "I am free in the afternoon.",
-      "answer": "Délután",
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-77-practice-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which answer fits \"Mikor dolgozol?\" (When do you work?)",
-      "options": [
-        "Délben dolgozom.",
-        "Délben vagyok.",
-        "Reggel te vagy."
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-77-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Délben dolgozom, délután szabad vagyok, ____ otthon vagyok.",
-      "hint": "in the evening",
-      "english": "I work at noon, I am free in the afternoon, in the evening I am home.",
-      "answer": "este",
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-77-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Reggel dolgozom.",
-          "I work in the morning."
-        ],
-        [
-          "Délután szabad vagyok.",
-          "I'm free in the afternoon."
-        ],
-        [
-          "Este otthon vagyok.",
-          "I'm home in the evening."
-        ],
-        [
-          "Délben ebédelek.",
-          "I have lunch at noon."
-        ]
-      ],
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-77-practice-4",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "fractions"
+      ],
       "tiles": [
         "Reggel",
-        "dolgozom",
+        "fél",
+        "hét",
+        "van",
         "."
       ],
       "solution": [
         "Reggel",
-        "dolgozom",
+        "fél",
+        "hét",
+        "van",
         "."
       ],
-      "english": "I work in the morning.",
+      "english": "It is 6:30 in the morning."
+    },
+    {
+      "id": "a1-77-practice-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "fractions"
+      ],
+      "question": "Délután negyed három van. What time is it?",
+      "options": [
+        "3:15 in the afternoon",
+        "2:45 in the afternoon",
+        "2:15 in the afternoon"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-77-practice-2",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-time-dates-vocab"
       ],
-      "stage": "practice"
+      "question": "Which word means “late”?",
+      "options": [
+        "korán",
+        "későn",
+        "éjjel"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-77-practice-3",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-time-dates-vocab"
+      ],
+      "sentence": "Reggel ____ ébredünk.",
+      "english": "In the morning we wake up early.",
+      "answer": "korán"
+    },
+    {
+      "id": "a1-77-practice-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "tiles": [
+        "Este",
+        "későn",
+        "pihenünk",
+        "."
+      ],
+      "solution": [
+        "Este",
+        "későn",
+        "pihenünk",
+        "."
+      ],
+      "english": "In the evening we rest late."
     },
     {
       "id": "a1-77-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Mikor vagy szabad?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Délután szabad vagyok.",
-        "Délután szabad van."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "van-zero-copula"
+        "cardinal-numbers"
       ],
-      "stage": "practice"
+      "question": "Which means “It is one o’clock at night”?",
+      "options": [
+        "Reggel egy óra van.",
+        "Éjjel két óra van.",
+        "Éjjel egy óra van."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-77-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "yes-no-questions"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mikor vagy otthon?"
+          "speaker": "Anna",
+          "text": "Délben tizenkét óra van?"
         },
         {
           "speaker": "Meg",
@@ -249,88 +213,126 @@
         }
       ],
       "options": [
-        "Este otthon vagyok.",
-        "Este otthon van."
+        "Igen, délben tizenkét óra van.",
+        "Nem, délben tizenkét óra van.",
+        "Igen, délben tizenegy óra van."
       ],
-      "correct": 0,
-      "teaches": [
-        "van-zero-copula"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-77-dialogue-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the natural reply to \"Mit csinálsz délután?\"",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "yes-no-questions"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Hány óra van?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "Fél négy van."
+        },
+        {
+          "speaker": "Anna",
+          "text": "Negyed négy van?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "Délután tanulok.",
-        "Délután tanul.",
-        "Reggel tanulok."
+        "Igen, negyed négy van.",
+        "Nem, negyed négy van.",
+        "Nem, fél négy van."
       ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ]
+      "correct": 2
     },
     {
-      "id": "a1-77-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write \"I work at noon.\" in Hungarian.",
-          "answer": "Délben dolgozom."
-        }
-      ],
+      "id": "a1-77-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "a1-time-dates-vocab"
-      ]
+        "negation-with-nem"
+      ],
+      "tiles": [
+        "Nem",
+        "negyed",
+        "tíz",
+        ",",
+        "hanem",
+        "fél",
+        "tíz",
+        "van",
+        "."
+      ],
+      "solution": [
+        "Nem",
+        "negyed",
+        "tíz",
+        ",",
+        "hanem",
+        "fél",
+        "tíz",
+        "van",
+        "."
+      ],
+      "english": "It is not 9:15, it is 9:30."
     },
     {
-      "id": "a1-77-writing-2",
+      "id": "a1-77-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "fractions"
+      ],
       "template": [
         {
-          "prompt": "Write \"I'm home in the evening.\" in Hungarian.",
-          "answer": "Este otthon vagyok."
+          "prompt": "Ask whether it is 8:30.",
+          "answer": "Fél kilenc van?"
+        },
+        {
+          "prompt": "Say that it is nine in the evening.",
+          "answer": "Este kilenc óra van."
         }
-      ],
-      "teaches": [
-        "a1-time-dates-vocab"
       ]
     },
     {
       "id": "a1-77-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"afternoon\"?",
-      "options": [
-        "délután",
-        "délben",
-        "este"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-time-dates-vocab"
+        "negation-with-nem"
       ],
-      "stage": "check"
+      "sentence": "Nem reggel van, ____ este.",
+      "english": "It is not morning, it is evening.",
+      "answer": "hanem"
     },
     {
       "id": "a1-77-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "\"Délben dolgozom, délután szabad vagyok, este otthon vagyok.\" — What does this describe?",
-      "options": [
-        "A daily schedule across noon, afternoon and evening.",
-        "A weekly schedule across days.",
-        "A list of rooms in a home."
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-time-dates-vocab"
+        "fractions"
       ],
-      "stage": "check"
+      "question": "Which question asks “Is it 7:30?”",
+      "options": [
+        "Fél hét van?",
+        "Hét óra van?",
+        "Fél nyolc van?"
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "1": "cardinal-numbers"
+      }
     }
   ]
 }

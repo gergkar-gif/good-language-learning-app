@@ -2,335 +2,367 @@
   "lesson": "a1-80",
   "exercises": [
     {
-      "id": "a1-80-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"Sunday\"?",
-      "options": [
-        "vasárnap",
-        "szombat",
-        "kedd"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-time-dates-vocab"
-      ]
-    },
-    {
-      "id": "a1-80-review-2",
+      "id": "a1-80-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which means \"on Wednesday\"?",
-      "options": [
-        "szerdán",
-        "szerda",
-        "szerdában"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "on-en-on"
-      ]
+      ],
+      "question": "Which means “On Monday morning we study”?",
+      "options": [
+        "Hétfőn reggel tanulok.",
+        "Hétfőn este tanulunk.",
+        "Hétfőn reggel tanulunk."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "0": "present-tense-routine-language"
+      }
     },
     {
-      "id": "a1-80-intro-1",
+      "id": "a1-80-introduce-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"Friday\"?",
+      "stage": "introduce",
+      "teaches": [
+        "a1-time-dates-vocab"
+      ],
+      "question": "Which word means “weekend”?",
       "options": [
-        "péntek",
-        "szombat",
+        "hétvége",
+        "hétfő",
         "vasárnap"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-80-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"meeting\"?",
-      "options": [
-        "találkozó",
-        "találkozunk",
-        "találkozik"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 0
     },
     {
       "id": "a1-80-controlled-1",
-      "type": "matching",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "péntek",
-          "Friday"
-        ],
-        [
-          "szombat",
-          "Saturday"
-        ],
-        [
-          "vasárnap",
-          "Sunday"
-        ],
-        [
-          "találkozó",
-          "meeting"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-time-dates-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "Szerdán ____ főzünk.",
+      "english": "On Wednesday evening we cook.",
+      "answer": "este"
     },
     {
       "id": "a1-80-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A találkozó ____ van.",
-      "hint": "on Friday",
-      "english": "The meeting is on Friday.",
-      "answer": "pénteken",
+      "stage": "controlled",
       "teaches": [
         "on-en-on"
       ],
-      "stage": "controlled"
+      "sentence": "____ otthon pihenünk.",
+      "english": "At the weekend we rest at home.",
+      "answer": "Hétvégén"
     },
     {
       "id": "a1-80-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is the correct \"on Saturday\" form?",
-      "options": [
-        "szombaton",
-        "szombatn",
-        "szombatban"
-      ],
-      "correct": 0,
-      "teaches": [
-        "on-en-on"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-80-controlled-4",
-      "type": "fill-blank",
+      "type": "matching",
       "category": "vocabulary",
-      "sentence": "Szombat vagy ____ is jó.",
-      "hint": "Sunday",
-      "english": "Saturday or Sunday works too.",
-      "answer": "vasárnap",
+      "stage": "controlled",
       "teaches": [
         "a1-time-dates-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "mikor",
+          "when"
+        ],
+        [
+          "nap",
+          "day"
+        ],
+        [
+          "hétvége",
+          "weekend"
+        ],
+        [
+          "hány",
+          "how many"
+        ],
+        [
+          "óra",
+          "hour / o’clock"
+        ]
+      ]
+    },
+    {
+      "id": "a1-80-controlled-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "on-en-on"
+      ],
+      "tiles": [
+        "Kedden",
+        "délután",
+        "sétálunk",
+        "."
+      ],
+      "solution": [
+        "Kedden",
+        "délután",
+        "sétálunk",
+        "."
+      ],
+      "english": "On Tuesday afternoon we walk."
     },
     {
       "id": "a1-80-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word needs NO -n suffix to mean \"on Sunday\"?",
-      "options": [
-        "vasárnap",
-        "szombat",
-        "péntek"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "on-en-on"
       ],
-      "stage": "practice"
+      "question": "Which means “In June, on Saturday afternoon we walk”?",
+      "options": [
+        "Júniusban szombaton délután sétálnak.",
+        "Júniusban szombaton délután sétálunk.",
+        "Júniusban szombaten délután sétálunk."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "0": "present-tense-routine-language"
+      }
     },
     {
       "id": "a1-80-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ jó. Szombat vagy vasárnap is jó.",
-      "hint": "Friday",
-      "english": "Friday is good. Saturday or Sunday works too.",
-      "answer": "Péntek",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-time-dates-vocab"
+        "negation-with-nem"
       ],
-      "stage": "practice"
+      "sentence": "Nem hétfőn, ____ kedden tanulunk.",
+      "english": "We study not on Monday but on Tuesday.",
+      "answer": "hanem"
     },
     {
       "id": "a1-80-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Mikor van a találkozó?",
-          "When is the meeting?"
-        ],
-        [
-          "Találkozunk pénteken.",
-          "We'll meet on Friday."
-        ],
-        [
-          "Péntek jó.",
-          "Friday is good."
-        ],
-        [
-          "Szombat vagy vasárnap is jó.",
-          "Saturday or Sunday works too."
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-time-dates-vocab"
+        "vowel-harmony"
       ],
-      "stage": "practice"
+      "question": "Which means “In November we walk in the park”?",
+      "options": [
+        "Novemberban a parkban sétálunk.",
+        "Novemberben a parkban sétálunk."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-80-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "on-en-on"
+      ],
       "tiles": [
-        "Találkozunk",
-        "pénteken",
+        "Júliusban",
+        "hétvégén",
+        "a",
+        "parkban",
+        "sportolunk",
         "."
       ],
       "solution": [
-        "Találkozunk",
-        "pénteken",
+        "Júliusban",
+        "hétvégén",
+        "a",
+        "parkban",
+        "sportolunk",
         "."
       ],
-      "english": "We'll meet on Friday.",
-      "teaches": [
-        "on-en-on"
-      ],
-      "stage": "practice"
+      "english": "In July at the weekend we do sport in the park."
     },
     {
       "id": "a1-80-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mikor jó? Hétfőn vagy kedden?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Kedden jó.",
-        "Keddben jó."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "on-en-on"
+        "a1-time-dates-vocab"
       ],
-      "stage": "practice"
+      "question": "Which word asks “when”?",
+      "options": [
+        "hol",
+        "miért",
+        "mikor"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-80-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "When does Meg go to the library?",
+      "options": [
+        "On Wednesday.",
+        "On Monday.",
+        "On Sunday."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-80-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Where do Anna and Mariann walk in June?",
+      "options": [
+        "In the park.",
+        "In the library.",
+        "At home."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-80-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does Meg do on Monday?",
+      "options": [
+        "She rests at home.",
+        "She studies in the library.",
+        "She walks in the park."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-80-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-time-dates-vocab"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mikor van a találkozó?"
+          "speaker": "Anna",
+          "text": "Mikor sportoltok?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Pénteken reggel.",
-        "Csütörtök van."
+        "A parkban sportolunk.",
+        "Szombaton sportolunk.",
+        "Igen, sportolunk."
       ],
-      "correct": 0,
-      "teaches": [
-        "on-en-on"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-80-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the natural reply to \"Találkozunk pénteken?\"",
-      "options": [
-        "Igen, találkozunk.",
-        "Igen, találkozó vagyok.",
-        "Nem, péntek van."
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "a1-time-dates-vocab"
-      ]
-    },
-    {
-      "id": "a1-80-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
+        "yes-no-questions"
+      ],
+      "prompt": [
         {
-          "prompt": "Write \"We'll meet on Friday.\" in Hungarian.",
-          "answer": "Találkozunk pénteken."
+          "speaker": "Meg",
+          "text": "Hétfőn tanultok?"
+        },
+        {
+          "speaker": "Mariann",
+          "text": "_____"
         }
       ],
+      "options": [
+        "Nem, hétfőn tanulunk.",
+        "Nem, kedden tanulunk."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-80-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "on-en-on"
-      ]
+      ],
+      "tiles": [
+        "Hétfőn",
+        "reggel",
+        "tanulunk",
+        ",",
+        "szombaton",
+        "pihenünk",
+        "."
+      ],
+      "solution": [
+        "Hétfőn",
+        "reggel",
+        "tanulunk",
+        ",",
+        "szombaton",
+        "pihenünk",
+        "."
+      ],
+      "english": "On Monday morning we study, on Saturday we rest."
     },
     {
-      "id": "a1-80-writing-2",
+      "id": "a1-80-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "on-en-on"
+      ],
       "template": [
         {
-          "prompt": "Write \"Saturday or Sunday works too.\" in Hungarian.",
-          "answer": "Szombat vagy vasárnap is jó."
+          "prompt": "Ask when they (you all) study.",
+          "answer": "Mikor tanultok?"
+        },
+        {
+          "prompt": "Say that on Friday evening you and Meg cook.",
+          "answer": "Pénteken este főzünk."
         }
-      ],
-      "teaches": [
-        "a1-time-dates-vocab"
       ]
     },
     {
       "id": "a1-80-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"Saturday\"?",
-      "options": [
-        "szombat",
-        "vasárnap",
-        "péntek"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-time-dates-vocab"
+        "on-en-on"
       ],
-      "stage": "check"
+      "sentence": "____ délután vásárolunk.",
+      "english": "On Thursday afternoon we shop.",
+      "answer": "Csütörtökön"
     },
     {
       "id": "a1-80-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence means \"The meeting is on Friday\"?",
-      "options": [
-        "A találkozó pénteken van.",
-        "A találkozó péntek van.",
-        "A találkozó pénteki van."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "on-en-on"
+        "ban-ben-in"
       ],
-      "stage": "check"
+      "question": "Which means “In March, on Wednesday we cook”?",
+      "options": [
+        "Március szerdán főzünk.",
+        "Márciusban szerdán főzünk.",
+        "Márciusben szerdán főzünk."
+      ],
+      "correct": 1
     }
   ]
 }

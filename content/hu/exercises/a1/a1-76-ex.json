@@ -2,81 +2,77 @@
   "lesson": "a1-76",
   "exercises": [
     {
-      "id": "a1-76-review-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which number is tíz?",
-      "options": [
-        "10",
-        "5",
-        "3"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "cardinal-numbers"
-      ]
-    },
-    {
-      "id": "a1-76-review-2",
+      "id": "a1-76-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"day\"?",
-      "options": [
-        "nap",
-        "hét",
-        "hónap"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-time-dates-vocab"
-      ]
-    },
-    {
-      "id": "a1-76-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"hour / o'clock\"?",
+      ],
+      "question": "Which word means “hour / o’clock”?",
       "options": [
         "óra",
-        "perc",
-        "negyed"
+        "hány",
+        "fél"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 0
     },
     {
-      "id": "a1-76-intro-2",
+      "id": "a1-76-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"half\"?",
-      "options": [
-        "fél",
-        "negyed",
-        "perc"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-time-dates-vocab"
+        "cardinal-numbers"
       ],
-      "stage": "introduce"
+      "question": "Which means “It is seven o’clock”?",
+      "options": [
+        "Hét óra van.",
+        "Hat óra van.",
+        "Nyolc óra van."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-76-controlled-1",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-time-dates-vocab"
+      ],
+      "sentence": "____ óra van?",
+      "english": "What time is it?",
+      "answer": "Hány"
+    },
+    {
+      "id": "a1-76-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "cardinal-numbers"
+      ],
+      "sentence": "____ óra van.",
+      "english": "It is two o’clock.",
+      "answer": "Két"
+    },
+    {
+      "id": "a1-76-controlled-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-time-dates-vocab"
+      ],
       "pairs": [
         [
           "óra",
-          "hour / o'clock"
+          "hour / o’clock"
         ],
         [
-          "perc",
-          "minute"
+          "hány",
+          "how many"
         ],
         [
           "fél",
@@ -85,140 +81,142 @@
         [
           "negyed",
           "quarter"
+        ],
+        [
+          "háromnegyed",
+          "three quarters"
         ]
-      ],
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-76-controlled-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Hány ____ van?",
-      "hint": "What time is it?",
-      "english": "What time is it?",
-      "answer": "óra",
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-76-controlled-3",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which sentence means \"It's ten o'clock\"?",
-      "options": [
-        "Tíz óra van.",
-        "Tíz perc van.",
-        "Tíz negyed van."
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-76-controlled-4",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "____ tíz van.",
-      "hint": "half past nine",
-      "english": "It is half past nine.",
-      "answer": "Fél",
+      "stage": "controlled",
       "teaches": [
-        "fractions"
+        "cardinal-numbers"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Tizenkét",
+        "óra",
+        "van",
+        "."
+      ],
+      "solution": [
+        "Tizenkét",
+        "óra",
+        "van",
+        "."
+      ],
+      "english": "It is twelve o’clock."
     },
     {
       "id": "a1-76-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which clock time is 9:15?",
-      "options": [
-        "Negyed tíz.",
-        "Fél tíz.",
-        "Tíz óra."
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "fractions"
       ],
-      "stage": "practice"
+      "question": "It is 9:30. Which sentence says so?",
+      "options": [
+        "Fél kilenc van.",
+        "Fél tíz van.",
+        "Tíz óra van."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "2": "cardinal-numbers"
+      }
     },
     {
       "id": "a1-76-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Fél tíz van. Még van néhány ____.",
-      "hint": "minute",
-      "english": "It is half past nine. There are still a few minutes.",
-      "answer": "perc",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-time-dates-vocab"
+        "fractions"
       ],
-      "stage": "practice"
+      "sentence": "____ tíz van.",
+      "english": "It is 9:15.",
+      "answer": "Negyed"
     },
     {
       "id": "a1-76-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Fél tíz.",
-          "9:30 (half past nine)"
-        ],
-        [
-          "Negyed tíz.",
-          "9:15 (a quarter past nine)"
-        ],
-        [
-          "Tíz óra.",
-          "10:00 (ten o'clock)"
-        ],
-        [
-          "Öt perc.",
-          "five minutes"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-time-dates-vocab"
+        "fractions"
       ],
-      "stage": "practice"
+      "question": "Háromnegyed hat van. What time is it?",
+      "options": [
+        "6:45",
+        "5:45",
+        "5:15"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-76-practice-4",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "fractions"
+      ],
       "tiles": [
-        "Hány",
-        "óra",
+        "Fél",
+        "nyolc",
         "van",
-        "?"
+        "."
       ],
       "solution": [
-        "Hány",
-        "óra",
+        "Fél",
+        "nyolc",
         "van",
-        "?"
+        "."
       ],
-      "english": "What time is it?",
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "practice"
+      "english": "It is 7:30."
     },
     {
       "id": "a1-76-practice-5",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-time-dates-vocab"
+      ],
+      "pairs": [
+        [
+          "Negyed hat",
+          "5:15"
+        ],
+        [
+          "Fél hat",
+          "5:30"
+        ],
+        [
+          "Háromnegyed hat",
+          "5:45"
+        ],
+        [
+          "Hat óra",
+          "6:00"
+        ]
+      ]
+    },
+    {
+      "id": "a1-76-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-time-dates-vocab"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
+          "speaker": "Anna",
           "text": "Hány óra van?"
         },
         {
@@ -227,112 +225,105 @@
         }
       ],
       "options": [
-        "Fél tíz.",
-        "Öt nap."
+        "Jól vagyok, köszönöm.",
+        "Négy óra van.",
+        "Igen, négy óra van."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "practice"
+      "correct": 1
     },
     {
-      "id": "a1-76-dialogue-1",
+      "id": "a1-76-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "yes-no-questions"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mikor van a találkozó?"
+          "speaker": "Károly",
+          "text": "Fél tíz van?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Fél tíz.",
-        "Kedd van."
+        "Igen, fél tíz van.",
+        "Igen, fél kilenc van.",
+        "Nem, fél tíz van."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-time-dates-vocab"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-76-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the natural reply to \"Hány perc?\"",
-      "options": [
-        "Negyed óra.",
-        "Fél asztal.",
-        "Tíz szék."
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-time-dates-vocab"
-      ]
-    },
-    {
-      "id": "a1-76-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask what time it is, in Hungarian.",
-          "answer": "Hány óra van?"
-        }
-      ],
-      "teaches": [
-        "a1-time-dates-vocab"
-      ]
-    },
-    {
-      "id": "a1-76-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write \"It's half past nine.\" in Hungarian.",
-          "answer": "Fél tíz van."
-        }
-      ],
+      "id": "a1-76-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "fractions"
+      ],
+      "tiles": [
+        "Háromnegyed",
+        "öt",
+        "van",
+        "."
+      ],
+      "solution": [
+        "Háromnegyed",
+        "öt",
+        "van",
+        "."
+      ],
+      "english": "It is 4:45."
+    },
+    {
+      "id": "a1-76-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "fractions"
+      ],
+      "template": [
+        {
+          "prompt": "Ask what time it is.",
+          "answer": "Hány óra van?"
+        },
+        {
+          "prompt": "Say that it is 4:30.",
+          "answer": "Fél öt van."
+        }
       ]
     },
     {
       "id": "a1-76-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which means \"a quarter past nine\" (9:15)?",
-      "options": [
-        "Negyed tíz.",
-        "Fél tíz.",
-        "Tíz óra."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "fractions"
       ],
-      "stage": "check"
+      "sentence": "Háromnegyed ____ van.",
+      "english": "It is 7:45.",
+      "answer": "nyolc"
     },
     {
       "id": "a1-76-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Fél tíz van. What time is it?",
-      "options": [
-        "9:30",
-        "10:30",
-        "9:15"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "fractions"
+        "cardinal-numbers"
       ],
-      "stage": "check"
+      "question": "Which number fits? “___ óra van.” (It is eleven o’clock.)",
+      "options": [
+        "Tizenkét",
+        "Egy",
+        "Tizenegy"
+      ],
+      "correct": 2
     }
   ]
 }

@@ -2,249 +2,205 @@
   "lesson": "a1-79",
   "exercises": [
     {
-      "id": "a1-79-review-1",
+      "id": "a1-79-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which day is csütörtök?",
-      "options": [
-        "Thursday",
-        "Tuesday",
-        "Friday"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-time-dates-vocab"
-      ]
+      ],
+      "question": "Which word means “August”?",
+      "options": [
+        "augusztus",
+        "április",
+        "szeptember"
+      ],
+      "correct": 0
     },
     {
-      "id": "a1-79-review-2",
+      "id": "a1-79-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is the \"on Wednesday\" form?",
-      "options": [
-        "szerdán",
-        "szerda",
-        "szerdaban"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "on-en-on"
-      ]
-    },
-    {
-      "id": "a1-79-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"January\"?",
+        "vowel-harmony"
+      ],
+      "question": "Which means “In September we study”?",
       "options": [
-        "január",
-        "február",
-        "március"
+        "Szeptemberban tanulunk.",
+        "Szeptemberben tanulunk."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-79-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"April\"?",
-      "options": [
-        "április",
-        "március",
-        "február"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 1
     },
     {
       "id": "a1-79-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "ban-ben-in"
+      ],
+      "sentence": "____ a parkban sétálunk.",
+      "english": "In June we walk in the park.",
+      "answer": "Júniusban"
+    },
+    {
+      "id": "a1-79-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "ban-ben-in"
+      ],
+      "sentence": "____ otthon pihenünk.",
+      "english": "In December we rest at home.",
+      "answer": "Decemberben"
+    },
+    {
+      "id": "a1-79-controlled-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-time-dates-vocab"
+      ],
       "pairs": [
         [
-          "január",
-          "January"
+          "június",
+          "June"
         ],
         [
-          "február",
-          "February"
+          "július",
+          "July"
         ],
         [
           "március",
           "March"
         ],
         [
-          "április",
-          "April"
+          "május",
+          "May"
+        ],
+        [
+          "október",
+          "October"
         ]
-      ],
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-79-controlled-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ van a találkozó?",
-      "hint": "When",
-      "english": "When is the meeting?",
-      "answer": "Mikor",
-      "teaches": [
-        "a1-time-dates-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-79-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which means \"in April\"?",
-      "options": [
-        "áprilisban",
-        "április",
-        "áprilison"
-      ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-79-controlled-4",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "A találkozó ____ van.",
-      "hint": "in April",
-      "english": "The meeting is in April.",
-      "answer": "áprilisban",
+      "stage": "controlled",
       "teaches": [
-        "ban-ben-in"
+        "vowel-harmony"
       ],
-      "stage": "controlled"
+      "question": "Which means “In August we walk”?",
+      "options": [
+        "Augusztusben sétálunk.",
+        "Augusztusban sétálunk."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-79-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which month comes right after február?",
-      "options": [
-        "március",
-        "január",
-        "április"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-time-dates-vocab"
+        "ban-ben-in"
       ],
-      "stage": "practice"
+      "question": "Which is “in April”?",
+      "options": [
+        "április",
+        "áprilisban",
+        "áprilisben"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-79-practice-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "sentence": "Január, február, március vagy ____?",
-      "english": "January, February, March, or April?",
-      "answer": "április",
+      "stage": "practice",
       "teaches": [
         "a1-time-dates-vocab"
       ],
-      "stage": "practice"
+      "question": "Most október van. What month is it?",
+      "options": [
+        "September",
+        "November",
+        "October"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-79-practice-3",
-      "type": "matching",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "Mikor van a találkozó?",
-          "When is the meeting?"
-        ],
-        [
-          "Áprilisban.",
-          "In April."
-        ],
-        [
-          "Január, február, március vagy április?",
-          "January, February, March, or April?"
-        ],
-        [
-          "A találkozó áprilisban van.",
-          "The meeting is in April."
-        ]
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-time-dates-vocab"
       ],
-      "stage": "practice"
+      "sentence": "Most ____ van.",
+      "english": "It is May now.",
+      "answer": "május"
     },
     {
       "id": "a1-79-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": [
-        "A",
-        "találkozó",
-        "áprilisban",
-        "van",
-        "."
-      ],
-      "solution": [
-        "A",
-        "találkozó",
-        "áprilisban",
-        "van",
-        "."
-      ],
-      "english": "The meeting is in April.",
+      "stage": "practice",
       "teaches": [
         "ban-ben-in"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Novemberben",
+        "a",
+        "konyhában",
+        "főzünk",
+        "."
+      ],
+      "solution": [
+        "Novemberben",
+        "a",
+        "konyhában",
+        "főzünk",
+        "."
+      ],
+      "english": "In November we cook in the kitchen."
     },
     {
       "id": "a1-79-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Január, február, március vagy április?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Április.",
-        "Szerda van."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-time-dates-vocab"
+        "ban-ben-in"
       ],
-      "stage": "practice"
+      "question": "Which means “In July we study”?",
+      "options": [
+        "Júliusban tanulnak.",
+        "Júliusben tanulunk.",
+        "Júliusban tanulunk."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "0": "present-tense-routine-language"
+      }
     },
     {
       "id": "a1-79-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mikor van a találkozó?"
+          "speaker": "Anna",
+          "text": "Mikor sétáltok a parkban?"
         },
         {
           "speaker": "Meg",
@@ -252,88 +208,113 @@
         }
       ],
       "options": [
-        "Áprilisban.",
-        "Csütörtök van."
+        "Májusben sétálunk.",
+        "Májusban sétálunk.",
+        "Májusban sétálnak."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-time-dates-vocab"
-      ]
+      "correct": 1,
+      "distractor_skills": {
+        "2": "present-tense-routine-language"
+      }
     },
     {
       "id": "a1-79-dialogue-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the natural reply to \"Melyik hónapban vagy szabad?\" (Which month are you free?)",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Szeptemberben tanultok?"
+        },
+        {
+          "speaker": "Mariann",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "Márciusban szabad vagyok.",
-        "Március szabad van.",
-        "Én március vagyok."
+        "Nem, októberban tanulunk.",
+        "Nem, októberben tanulnak.",
+        "Nem, októberben tanulunk."
       ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ]
+      "correct": 2,
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
-      "id": "a1-79-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask \"When is the meeting?\" in Hungarian.",
-          "answer": "Mikor van a találkozó?"
-        }
-      ],
-      "teaches": [
-        "a1-time-dates-vocab"
-      ]
-    },
-    {
-      "id": "a1-79-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write \"The meeting is in April.\" in Hungarian.",
-          "answer": "A találkozó áprilisban van."
-        }
-      ],
+      "id": "a1-79-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "ban-ben-in"
+      ],
+      "tiles": [
+        "Szeptemberben",
+        "a",
+        "könyvtárban",
+        "tanulunk",
+        "."
+      ],
+      "solution": [
+        "Szeptemberben",
+        "a",
+        "könyvtárban",
+        "tanulunk",
+        "."
+      ],
+      "english": "In September we study in the library."
+    },
+    {
+      "id": "a1-79-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "ban-ben-in"
+      ],
+      "template": [
+        {
+          "prompt": "Say that in January you and Meg rest at home.",
+          "answer": "Januárban otthon pihenünk."
+        },
+        {
+          "prompt": "Say that in October you study.",
+          "answer": "Októberben tanulok."
+        }
       ]
     },
     {
       "id": "a1-79-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"March\"?",
-      "options": [
-        "március",
-        "április",
-        "február"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-time-dates-vocab"
+        "ban-ben-in"
       ],
-      "stage": "check"
+      "sentence": "____ főzünk.",
+      "english": "In February we cook.",
+      "answer": "Februárban"
     },
     {
       "id": "a1-79-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is the correct form of \"in January\"?",
-      "options": [
-        "januárban",
-        "január",
-        "januáron"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "ban-ben-in"
       ],
-      "stage": "check"
+      "question": "Which is “in March”?",
+      "options": [
+        "március",
+        "márciusben",
+        "márciusban"
+      ],
+      "correct": 2
     }
   ]
 }

@@ -1,14 +1,12 @@
 {
   "id": "story.a1.unit16",
-  "title": "Time & Dates",
+  "title": "A Study Plan",
   "level": "A1",
   "lesson": 80,
   "type": "original",
-  "estimatedMinutes": 4,
+  "estimatedMinutes": 3,
   "characters": [
-    "Károly",
     "Meg",
-    "András",
     "Anna",
     "Mariann"
   ],
@@ -16,94 +14,99 @@
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg and Károly need to choose a day and time for a meeting."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Mikor van a találkozó?"
+      "text": "It is Sunday evening. Meg is at home in Budapest and phones Anna. She wants to study with Anna and Mariann in the library."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Pénteken reggel. Hány óra?"
+      "text": "Szia, Anna! Mikor tanultok a könyvtárban?"
     },
     {
       "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Fél tíz. Még van néhány perc."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Hétfőn, kedden, szerdán vagy csütörtökön? Szerda is jó."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Nem. Péntek jó. Szombat vagy vasárnap is jó."
+      "speaker": "Anna",
+      "text": "Szia, Meg! Hétfőn és szerdán tanulunk. Hétfőn reggel olvasunk, szerdán délután írunk."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Január, február, március vagy április?"
+      "text": "Jó! Hétfőn otthon pihenek, de szerdán megyek a könyvtárba."
+    },
+    {
+      "type": "narration",
+      "lang": "en",
+      "text": "Mariann takes the phone."
     },
     {
       "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Április. Délben dolgozom, délután szabad vagyok, este otthon vagyok."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Hány perc?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Negyed óra. Találkozunk pénteken."
+      "speaker": "Mariann",
+      "text": "Szia, Meg! Szeptemberben, októberben és novemberben a könyvtárban tanulunk. Júniusban a parkban sétálunk."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Délután jó, este is jó. Hány óra? Negyed óra?"
+      "text": "És decemberben?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mariann",
+      "text": "Decemberben nem tanulunk, hanem otthon pihenünk."
+    },
+    {
+      "type": "narration",
+      "lang": "en",
+      "text": "Meg looks at the clock."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Anna, hány óra van?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Háromnegyed kilenc van. Este van, Meg. Jó éjszakát!"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Jó éjszakát, Anna! Szia, Mariann!"
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Miről egyeztet Meg és Károly a történetben?",
+          "question": "When do Anna and Mariann study in the library?",
           "options": [
-            "Egy könyv áráról a boltban",
-            "Egy új lakás szobáiról",
-            "Egy találkozó napjáról és időpontjáról",
-            "A dél-afrikai időjárásról"
-          ],
-          "correctIndex": 2,
-          "explanation": "Meg és Károly időpontot és napot próbálnak kiválasztani a találkozóhoz (Meg and Károly coordinate the day and time for a meeting)."
-        },
-        {
-          "question": "Melyik napot és hónapot választják ki a találkozóra?",
-          "options": [
-            "Hétfőt januárban",
-            "Szerdát márciusban",
-            "Keddet februárban",
-            "Pénteket áprilisban"
-          ],
-          "correctIndex": 3,
-          "explanation": "Károly megerősíti: „Április” és „Találkozunk pénteken” (April, and we meet on Friday)."
-        },
-        {
-          "question": "Mikor ér rá Károly a kiválasztott napon?",
-          "options": [
-            "Délután szabad, este pedig otthon van",
-            "Csak kora reggel ér rá",
-            "Egész nap dolgozik késő éjszakáig",
-            "Csak délben van fél órája"
+            "On Monday and Wednesday.",
+            "On Tuesday and Thursday.",
+            "On Saturday and Sunday.",
+            "On Friday only."
           ],
           "correctIndex": 0,
-          "explanation": "Károly mondja: „Délben dolgozom, délután szabad vagyok, este otthon vagyok” (At noon I work, in the afternoon I am free, in the evening I am home)."
+          "explanation": "Anna says: „Hétfőn és szerdán tanulunk.” (We study on Monday and Wednesday.)"
+        },
+        {
+          "question": "What do Anna and Mariann do in December?",
+          "options": [
+            "They walk in the park.",
+            "They study in the library.",
+            "They rest at home.",
+            "They cook in the kitchen."
+          ],
+          "correctIndex": 2,
+          "explanation": "Mariann says: „Decemberben nem tanulunk, hanem otthon pihenünk.” (In December we do not study, we rest at home.)"
+        },
+        {
+          "question": "What time is it at the end?",
+          "options": [
+            "8:15",
+            "8:45",
+            "9:15",
+            "9:45"
+          ],
+          "correctIndex": 1,
+          "explanation": "Anna says: „Háromnegyed kilenc van.” (It is 8:45.)"
         }
       ]
     }
