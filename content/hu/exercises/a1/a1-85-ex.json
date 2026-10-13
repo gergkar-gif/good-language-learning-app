@@ -2,248 +2,246 @@
   "lesson": "a1-85",
   "exercises": [
     {
-      "id": "a1-85-review-1",
+      "id": "a1-85-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"rest\"?",
-      "options": [
-        "pihenés",
-        "tanulás",
-        "munka"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-frequency-word-order-vocab"
-      ]
+      ],
+      "question": "Which word means “to work”?",
+      "options": [
+        "főz",
+        "pihen",
+        "dolgozik"
+      ],
+      "correct": 2
     },
     {
-      "id": "a1-85-review-2",
+      "id": "a1-85-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence puts the emphasis on WHEN (this evening), not WHERE?",
-      "options": [
-        "Este vagyok otthon.",
-        "Otthon vagyok este.",
-        "Vagyok otthon este."
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "basic-hungarian-word-order"
-      ]
-    },
-    {
-      "id": "a1-85-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"work\" (the noun)?",
+        "ik-verbs-dolgozom-not-dolgozok"
+      ],
+      "question": "Which means “Anna works”?",
       "options": [
-        "munka",
-        "tanulás",
-        "sport"
+        "Anna dolgozik.",
+        "Anna dolgoz.",
+        "Anna dolgozok."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-frequency-word-order-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-85-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"resting\"?",
-      "options": [
-        "pihenés",
-        "munka",
-        "sport"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-frequency-word-order-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 0
     },
     {
       "id": "a1-85-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "munka",
-          "work"
-        ],
-        [
-          "tanulás",
-          "studying"
-        ],
-        [
-          "sport",
-          "sport"
-        ],
-        [
-          "pihenés",
-          "resting"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-frequency-word-order-vocab"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "controlled"
+      "sentence": "Meg a boltban ____.",
+      "english": "Meg works in the shop.",
+      "answer": "dolgozik"
     },
     {
       "id": "a1-85-controlled-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Hétvégén gyakran van ____.",
-      "hint": "work",
-      "english": "On the weekend there is often work.",
-      "answer": "munka",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-frequency-word-order-vocab"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "controlled"
+      "question": "How do you say “I work”?",
+      "options": [
+        "Dolgozok.",
+        "Dolgozom.",
+        "Dolgozik."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-85-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is the correct 1st person singular of dolgozik (to work)?",
-      "options": [
-        "dolgozom",
-        "dolgozok",
-        "dolgozik"
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "ik-verbs-dolgozom-not-dolgozok"
+        "a1-frequency-word-order-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "dolgozik",
+          "to work"
+        ],
+        [
+          "reggelizik",
+          "to have breakfast"
+        ],
+        [
+          "pihen",
+          "to rest"
+        ],
+        [
+          "sportol",
+          "to do sport"
+        ],
+        [
+          "munka",
+          "work"
+        ]
+      ]
     },
     {
       "id": "a1-85-controlled-4",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Délben ____.",
-      "hint": "I work",
-      "english": "I work at noon.",
-      "answer": "dolgozom",
+      "stage": "controlled",
       "teaches": [
         "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-85-practice-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which answer fits \"Mit csinálsz hétvégén?\"",
-      "options": [
-        "Sportolok és pihenek.",
-        "Sport és pihenés vagyok.",
-        "Munka sportolok."
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-frequency-word-order-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-85-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A ____ is fontos. A pihenés is fontos.",
-      "hint": "studying",
-      "english": "Studying is important too. Rest is important too.",
-      "answer": "tanulás",
-      "teaches": [
-        "a1-frequency-word-order-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-85-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "A tanulás is fontos.",
-          "Studying is important too."
-        ],
-        [
-          "A sport jó.",
-          "Sport is good."
-        ],
-        [
-          "Délben dolgozom.",
-          "I work at noon."
-        ],
-        [
-          "A munka után pihenés kell.",
-          "After work, rest is needed."
-        ]
-      ],
-      "teaches": [
-        "a1-frequency-word-order-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-85-practice-4",
-      "type": "sentence-builder",
-      "category": "grammar",
       "tiles": [
         "A",
-        "sport",
-        "jó",
+        "könyvtárban",
+        "dolgozom",
         "."
       ],
       "solution": [
         "A",
-        "sport",
-        "jó",
+        "könyvtárban",
+        "dolgozom",
         "."
       ],
-      "english": "Sport is good.",
+      "english": "I work in the library."
+    },
+    {
+      "id": "a1-85-practice-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "van-zero-copula"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "practice"
+      "sentence": "Reggel ____.",
+      "english": "I have breakfast in the morning.",
+      "answer": "reggelizem"
+    },
+    {
+      "id": "a1-85-practice-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "ik-verbs-dolgozom-not-dolgozok"
+      ],
+      "question": "Which sentence is correct?",
+      "options": [
+        "Hétfőn nem dolgozom.",
+        "Hétfőn nem dolgozok."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-85-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "ik-verbs-dolgozom-not-dolgozok"
+      ],
+      "question": "Which form fits? “Károly az irodában ____.”",
+      "options": [
+        "dolgozom",
+        "dolgozol",
+        "dolgozik"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-85-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "sentence": "Anna és én az étteremben ____.",
+      "english": "Anna and I work in the restaurant.",
+      "answer": "dolgozunk"
     },
     {
       "id": "a1-85-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "A tanulás is fontos. A pihenés is fontos."
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A sport jó. A munka után pihenés kell.",
-        "A sport vagyok jó. A munka után pihenés kell."
-      ],
-      "correct": 0,
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-frequency-word-order-vocab"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Délután",
+        "nem",
+        "dolgozom",
+        "."
+      ],
+      "solution": [
+        "Délután",
+        "nem",
+        "dolgozom",
+        "."
+      ],
+      "english": "In the afternoon I do not work."
+    },
+    {
+      "id": "a1-85-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Where does Meg work?",
+      "options": [
+        "In the library.",
+        "In the office.",
+        "In the park."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-85-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Who usually rests after work?",
+      "options": [
+        "Meg.",
+        "Károly.",
+        "Anna."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-85-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "When does Anna cook?",
+      "options": [
+        "After breakfast.",
+        "Before dinner.",
+        "After lunch."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-85-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ik-verbs-dolgozom-not-dolgozok"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mikor dolgozol?"
+          "speaker": "Anna",
+          "text": "Hol dolgozol?"
         },
         {
           "speaker": "Meg",
@@ -251,88 +249,105 @@
         }
       ],
       "options": [
-        "Délben dolgozom.",
-        "Délben dolgozok."
+        "A boltban dolgozok.",
+        "A boltban dolgozik.",
+        "A boltban dolgozom."
       ],
-      "correct": 0,
-      "teaches": [
-        "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-85-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the natural reply to \"Szeretsz sportolni?\" (Do you like doing sports?)",
-      "options": [
-        "Igen, gyakran sportolok.",
-        "Igen, gyakran sport vagyok.",
-        "Igen, sport szeretek."
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-frequency-word-order-vocab"
-      ]
-    },
-    {
-      "id": "a1-85-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write \"I work at noon.\" in Hungarian, using dolgozik correctly.",
-          "answer": "Délben dolgozom."
-        }
-      ],
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
-    },
-    {
-      "id": "a1-85-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
+      ],
+      "prompt": [
         {
-          "prompt": "Write \"Sport is good.\" in Hungarian.",
-          "answer": "A sport jó."
+          "speaker": "Károly",
+          "text": "Te mindig reggelizel?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
         }
       ],
+      "options": [
+        "Igen, mindig reggelizem.",
+        "Igen, mindig reggelizek.",
+        "Igen, mindig reggelizik."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-85-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "van-zero-copula"
+        "ik-verbs-dolgozom-not-dolgozok"
+      ],
+      "tiles": [
+        "Hétfőn",
+        "általában",
+        "dolgozom",
+        "."
+      ],
+      "solution": [
+        "Hétfőn",
+        "általában",
+        "dolgozom",
+        "."
+      ],
+      "english": "On Mondays I usually work."
+    },
+    {
+      "id": "a1-85-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "ik-verbs-dolgozom-not-dolgozok"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you work in the shop.",
+          "answer": "A boltban dolgozom."
+        },
+        {
+          "prompt": "Say that Anna has breakfast.",
+          "answer": "Anna reggelizik."
+        }
       ]
     },
     {
       "id": "a1-85-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"sport\"?",
-      "options": [
-        "sport",
-        "munka",
-        "tanulás"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-frequency-word-order-vocab"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "check"
+      "sentence": "Én az irodában ____.",
+      "english": "I work in the office.",
+      "answer": "dolgozom"
     },
     {
       "id": "a1-85-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is the correct -ik-verb 1st person singular pattern?",
-      "options": [
-        "-om / -em / -öm",
-        "-ok / -ek / -ök",
-        "-unk / -ünk"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "check"
+      "question": "Which means “Meg has breakfast”?",
+      "options": [
+        "Meg reggeliz.",
+        "Meg reggelizik.",
+        "Meg reggelizem."
+      ],
+      "correct": 1
     }
   ]
 }

@@ -2,248 +2,231 @@
   "lesson": "a1-84",
   "exercises": [
     {
-      "id": "a1-84-review-1",
+      "id": "a1-84-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"school\"?",
-      "options": [
-        "iskola",
-        "otthon",
-        "munka"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-frequency-word-order-vocab"
-      ]
-    },
-    {
-      "id": "a1-84-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which correctly means \"after school\"?",
-      "options": [
-        "az iskola után",
-        "után az iskola",
-        "iskola utánja"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "temporal-postpositions"
-      ]
-    },
-    {
-      "id": "a1-84-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"today\"?",
-      "options": [
-        "ma",
-        "most",
-        "otthon"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-frequency-word-order-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which sentence means “In the morning I always read”?",
+      "options": [
+        "Este mindig olvasok.",
+        "Reggel néha olvasok.",
+        "Reggel mindig olvasok."
+      ],
+      "correct": 2
     },
     {
-      "id": "a1-84-intro-2",
+      "id": "a1-84-introduce-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"now\"?",
-      "options": [
-        "most",
-        "ma",
-        "otthon"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-frequency-word-order-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which question means “When do you study?”",
+      "options": [
+        "Hol tanulsz?",
+        "Mikor tanulsz?",
+        "Miért tanulsz?"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-84-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "ma",
-          "today"
-        ],
-        [
-          "most",
-          "now"
-        ],
-        [
-          "otthon",
-          "home / at home"
-        ],
-        [
-          "iskola",
-          "school"
-        ]
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-frequency-word-order-vocab"
+        "mindig-and-gyakran-frequency-adverbs"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Hétfőn",
+        "általában",
+        "tanulok",
+        "."
+      ],
+      "solution": [
+        "Hétfőn",
+        "általában",
+        "tanulok",
+        "."
+      ],
+      "english": "On Monday I usually study."
     },
     {
       "id": "a1-84-controlled-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ otthon vagyok.",
-      "hint": "today",
-      "english": "Today I am home.",
-      "answer": "Ma",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-frequency-word-order-vocab"
+        "negation-with-nem"
       ],
-      "stage": "controlled"
+      "sentence": "Reggel ____ tanulok.",
+      "english": "In the morning I do not study.",
+      "answer": "nem"
     },
     {
       "id": "a1-84-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the natural sentence.",
-      "options": [
-        "Most tanulok.",
-        "Most tanul vagyok.",
-        "Tanulok most van."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "basic-hungarian-word-order"
+        "a1-frequency-word-order-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "____ sportolsz?",
+      "english": "When do you do sport?",
+      "answer": "Mikor"
     },
     {
       "id": "a1-84-controlled-4",
-      "type": "fill-blank",
+      "type": "matching",
       "category": "vocabulary",
-      "sentence": "____ pedig tanulok.",
-      "hint": "now",
-      "english": "And now I am studying.",
-      "answer": "Most",
+      "stage": "controlled",
       "teaches": [
         "a1-frequency-word-order-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "reggeli",
+          "breakfast"
+        ],
+        [
+          "ebéd",
+          "lunch"
+        ],
+        [
+          "vacsora",
+          "dinner"
+        ],
+        [
+          "munka",
+          "work"
+        ],
+        [
+          "általában",
+          "usually"
+        ]
+      ]
     },
     {
       "id": "a1-84-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence puts the emphasis on WHEN (today), not WHERE?",
-      "options": [
-        "Ma vagyok otthon.",
-        "Otthon vagyok ma.",
-        "Vagyok otthon ma."
-      ],
-      "correct": 0,
-      "teaches": [
-        "basic-hungarian-word-order"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-84-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Ma otthon vagyok, most ____ tanulok.",
-      "hint": "whereas/and",
-      "english": "Today I'm home, and now I'm studying.",
-      "answer": "pedig",
-      "teaches": [
-        "a1-frequency-word-order-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-84-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Ma otthon vagyok, most pedig tanulok.",
-          "Today I'm home, and now I'm studying."
-        ],
-        [
-          "Iskolában is szokott tanulni.",
-          "At school they usually study too."
-        ],
-        [
-          "Otthon vagyok ma.",
-          "I am home today."
-        ],
-        [
-          "Most tanulok.",
-          "I'm studying now."
-        ]
-      ],
-      "teaches": [
-        "a1-frequency-word-order-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-84-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "mindig-and-gyakran-frequency-adverbs"
+      ],
       "tiles": [
-        "Ma",
-        "otthon",
-        "vagyok",
+        "Ebéd",
+        "után",
+        "néha",
+        "pihenek",
         "."
       ],
       "solution": [
-        "Ma",
-        "otthon",
-        "vagyok",
+        "Ebéd",
+        "után",
+        "néha",
+        "pihenek",
         "."
       ],
-      "english": "Today I'm home.",
-      "teaches": [
-        "basic-hungarian-word-order"
-      ],
-      "stage": "practice"
+      "english": "After lunch I sometimes rest."
     },
     {
-      "id": "a1-84-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Minden nap együtt vagyunk?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+      "id": "a1-84-practice-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "soha-needs-nem-negative-concord"
       ],
+      "question": "Which sentence means “In the evening I never cook”?",
       "options": [
-        "Nem. Ma otthon vagyok, most pedig tanulok.",
-        "Nem. Iskola van otthon."
+        "Este soha főzök.",
+        "Este soha nem főzünk.",
+        "Este soha nem főzök."
       ],
-      "correct": 0,
+      "correct": 2
+    },
+    {
+      "id": "a1-84-practice-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "temporal-postpositions"
+      ],
+      "sentence": "Vacsora ____ sétálunk.",
+      "english": "After dinner we walk.",
+      "answer": "után"
+    },
+    {
+      "id": "a1-84-practice-4",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-frequency-word-order-vocab"
       ],
-      "stage": "practice"
+      "question": "Which question fits the answer “Néha.”?",
+      "options": [
+        "Hol szoktál sportolni?",
+        "Mikor szoktál sportolni?",
+        "Milyen gyakran sportolsz?"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-84-practice-5",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "is-placing-also-too"
+      ],
+      "sentence": "Anna és Károly reggeli után sétálnak. Meg ____ sétál reggeli után.",
+      "english": "Meg also walks after breakfast.",
+      "answer": "is"
     },
     {
       "id": "a1-84-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Hol vagy most?"
+          "text": "Mikor ebédelsz?"
+        },
+        {
+          "speaker": "Anna",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Délben ebédelek.",
+        "Délben ebédelsz.",
+        "Délben ebédel."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-84-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-frequency-word-order-vocab"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Milyen gyakran pihensz?"
         },
         {
           "speaker": "Károly",
@@ -251,88 +234,83 @@
         }
       ],
       "options": [
-        "Iskolában vagyok.",
-        "Iskola vagyok most."
+        "A kertben pihenek.",
+        "Mert pihenek.",
+        "Néha pihenek."
       ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ]
+      "correct": 2
     },
     {
-      "id": "a1-84-dialogue-2",
-      "type": "multiple-choice",
+      "id": "a1-84-production-1",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "Choose the natural reply to \"Mit csinálsz most?\"",
-      "options": [
-        "Most tanulok.",
-        "Most tanul.",
-        "Tanulok van most."
-      ],
-      "correct": 0,
+      "stage": "production",
       "teaches": [
-        "present-tense-routine-language"
-      ]
+        "mindig-and-gyakran-frequency-adverbs"
+      ],
+      "tiles": [
+        "Délután",
+        "a",
+        "parkban",
+        "általában",
+        "sétálunk",
+        "."
+      ],
+      "solution": [
+        "Délután",
+        "a",
+        "parkban",
+        "általában",
+        "sétálunk",
+        "."
+      ],
+      "english": "In the afternoon we usually walk in the park."
     },
     {
-      "id": "a1-84-writing-1",
+      "id": "a1-84-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "mindig-and-gyakran-frequency-adverbs"
+      ],
       "template": [
         {
-          "prompt": "Write \"Today I'm home, and now I'm studying.\" in Hungarian.",
-          "answer": "Ma otthon vagyok, most pedig tanulok."
-        }
-      ],
-      "teaches": [
-        "basic-hungarian-word-order"
-      ]
-    },
-    {
-      "id": "a1-84-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
+          "prompt": "Ask Anna when she studies.",
+          "answer": "Mikor tanulsz?"
+        },
         {
-          "prompt": "Write \"I am home today.\" in Hungarian.",
-          "answer": "Otthon vagyok ma."
+          "prompt": "Say that you never do sport in the morning.",
+          "answer": "Reggel soha nem sportolok."
         }
-      ],
-      "teaches": [
-        "basic-hungarian-word-order"
       ]
     },
     {
       "id": "a1-84-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "question": "Which word means \"school\"?",
-      "options": [
-        "iskola",
-        "otthon",
-        "hétvége"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-frequency-word-order-vocab"
       ],
-      "stage": "check"
+      "sentence": "Este ____ főzök.",
+      "english": "In the evening I sometimes cook.",
+      "answer": "néha"
     },
     {
       "id": "a1-84-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "In Hungarian word order, what typically sits right before the verb?",
-      "options": [
-        "the focused word",
-        "the subject, always",
-        "the object, always"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "basic-hungarian-word-order"
+        "temporal-postpositions"
       ],
-      "stage": "check"
+      "question": "Which sentence is correct?",
+      "options": [
+        "Ebéd mindig után pihenek.",
+        "Ebéd után mindig pihenek."
+      ],
+      "correct": 0
     }
   ]
 }

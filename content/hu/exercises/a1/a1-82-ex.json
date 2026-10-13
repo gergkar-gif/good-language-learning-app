@@ -2,339 +2,317 @@
   "lesson": "a1-82",
   "exercises": [
     {
-      "id": "a1-82-review-1",
+      "id": "a1-82-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"always\"?",
-      "options": [
-        "mindig",
-        "gyakran",
-        "szokott"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-frequency-word-order-vocab"
-      ]
+      ],
+      "question": "Which means “every evening”?",
+      "options": [
+        "minden este",
+        "minden reggel",
+        "minden délután"
+      ],
+      "correct": 0
     },
     {
-      "id": "a1-82-review-2",
+      "id": "a1-82-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence means \"I usually do sports, but sometimes I rest\"?",
-      "options": [
-        "Általában sportolok, de néha pihenek.",
-        "Mindig sportolok, de soha pihenek.",
-        "Gyakran pihenek, de mindig sportolok."
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
-      ]
-    },
-    {
-      "id": "a1-82-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which word means \"sometimes\"?",
+        "soha-needs-nem-negative-concord"
+      ],
+      "question": "Which means “I never cook”?",
       "options": [
-        "néha",
-        "ritkán",
-        "soha"
+        "Soha főzök.",
+        "Soha nem főzünk.",
+        "Soha nem főzök."
       ],
-      "correct": 0,
-      "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-82-intro-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which word means \"never\"?",
-      "options": [
-        "soha",
-        "néha",
-        "ritkán"
-      ],
-      "correct": 0,
-      "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
-      ],
-      "stage": "introduce"
+      "correct": 2
     },
     {
       "id": "a1-82-controlled-1",
-      "type": "matching",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "néha",
-          "sometimes"
-        ],
-        [
-          "ritkán",
-          "rarely"
-        ],
-        [
-          "soha",
-          "never"
-        ],
-        [
-          "gyakran",
-          "often"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-frequency-word-order-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "____ reggel olvasok.",
+      "english": "I read every morning.",
+      "answer": "Minden"
     },
     {
       "id": "a1-82-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Általában sportolok, de ____ pihenek.",
-      "hint": "sometimes",
-      "english": "I usually do sports, but sometimes I rest.",
-      "answer": "néha",
-      "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-82-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the grammatically correct sentence.",
-      "options": [
-        "Soha nem dolgozom vasárnap.",
-        "Soha dolgozom vasárnap.",
-        "Nem soha dolgozom vasárnap."
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "soha-needs-nem-negative-concord"
       ],
-      "stage": "controlled"
+      "sentence": "Soha ____ főzök.",
+      "english": "I never cook.",
+      "answer": "nem"
+    },
+    {
+      "id": "a1-82-controlled-3",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-frequency-word-order-vocab"
+      ],
+      "pairs": [
+        [
+          "soha",
+          "never"
+        ],
+        [
+          "minden",
+          "every"
+        ],
+        [
+          "milyen gyakran",
+          "how often"
+        ],
+        [
+          "néha",
+          "sometimes"
+        ],
+        [
+          "általában",
+          "usually"
+        ]
+      ]
     },
     {
       "id": "a1-82-controlled-4",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Én ____ dolgozom hétvégén.",
-      "hint": "rarely",
-      "english": "I rarely work on the weekend.",
-      "answer": "ritkán",
+      "stage": "controlled",
       "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
+        "soha-needs-nem-negative-concord"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Anna",
+        "soha",
+        "nem",
+        "sportol",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "soha",
+        "nem",
+        "sportol",
+        "."
+      ],
+      "english": "Anna never does sport."
     },
     {
       "id": "a1-82-practice-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is the correct way to say \"never\" inside a sentence?",
-      "options": [
-        "soha nem",
-        "csak soha",
-        "nem soha"
-      ],
-      "correct": 0,
-      "teaches": [
-        "soha-needs-nem-negative-concord"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-82-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Soha ____ dolgozom vasárnap.",
-      "hint": "not — completes the negative",
-      "english": "I never work on Sunday.",
-      "answer": "nem",
-      "teaches": [
-        "soha-needs-nem-negative-concord"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-82-practice-3",
-      "type": "matching",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "Én ritkán dolgozom hétvégén.",
-          "I rarely work on the weekend."
-        ],
-        [
-          "Soha nem dolgozom vasárnap.",
-          "I never work on Sunday."
-        ],
-        [
-          "Általában sportolok, de néha pihenek.",
-          "I usually do sports, but sometimes I rest."
-        ],
-        [
-          "Gyakran sportolsz?",
-          "Do you often do sports?"
-        ]
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-frequency-word-order-vocab"
       ],
-      "stage": "practice"
+      "question": "How do you say “I rarely cook”?",
+      "options": [
+        "Gyakran főzök.",
+        "Néha főzök.",
+        "Ritkán főzök."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-82-practice-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "soha-needs-nem-negative-concord"
+      ],
+      "question": "Which sentence is correct?",
+      "options": [
+        "Mariann soha nem főz.",
+        "Mariann soha főz."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-82-practice-3",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-frequency-word-order-vocab"
+      ],
+      "sentence": "____ gyakran sportolsz?",
+      "english": "How often do you do sport?",
+      "answer": "Milyen"
     },
     {
       "id": "a1-82-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "soha-needs-nem-negative-concord"
+      ],
       "tiles": [
-        "Soha",
+        "Reggel",
+        "soha",
         "nem",
-        "dolgozom",
-        "vasárnap",
+        "tanulunk",
         "."
       ],
       "solution": [
-        "Soha",
+        "Reggel",
+        "soha",
         "nem",
-        "dolgozom",
-        "vasárnap",
+        "tanulunk",
         "."
       ],
-      "english": "I never work on Sunday.",
-      "teaches": [
-        "soha-needs-nem-negative-concord"
-      ],
-      "stage": "practice"
+      "english": "In the morning we never study."
     },
     {
       "id": "a1-82-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Dolgozol vasárnap?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Soha nem dolgozom vasárnap.",
-        "Soha dolgozom vasárnap."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "soha-needs-nem-negative-concord"
+        "a1-frequency-word-order-vocab"
       ],
-      "stage": "practice"
+      "question": "Meg says: “Minden hétfőn tanulok, minden pénteken sétálok.” When does Meg walk?",
+      "options": [
+        "Every Monday.",
+        "Every Friday.",
+        "Every morning."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-82-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "soha-needs-nem-negative-concord"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Én ritkán dolgozom hétvégén."
+          "speaker": "Károly",
+          "text": "Te főzöl este?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Én is ritkán dolgozom.",
-        "Én mindig ritkán."
+        "Nem, soha főzök.",
+        "Nem, soha nem főzök.",
+        "Nem, soha nem főzünk."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-frequency-word-order-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-82-dialogue-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the natural reply to \"Néha pihensz?\"",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-frequency-word-order-vocab"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Milyen gyakran sportolsz?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "Igen, néha pihenek.",
-        "Igen, néha pihensz.",
-        "Igen, pihenés vagyok."
+        "A parkban sportolok délben.",
+        "Mert most sportolok.",
+        "Minden szombaton sportolok."
       ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ]
+      "correct": 2
     },
     {
-      "id": "a1-82-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write \"I never work on Sunday.\" in Hungarian.",
-          "answer": "Soha nem dolgozom vasárnap."
-        }
-      ],
-      "teaches": [
-        "soha-needs-nem-negative-concord"
-      ]
-    },
-    {
-      "id": "a1-82-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write \"I rarely work on the weekend.\" in Hungarian.",
-          "answer": "Én ritkán dolgozom hétvégén."
-        }
-      ],
+      "id": "a1-82-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "mindig-and-gyakran-frequency-adverbs"
+      ],
+      "tiles": [
+        "Minden",
+        "este",
+        "főzök",
+        "."
+      ],
+      "solution": [
+        "Minden",
+        "este",
+        "főzök",
+        "."
+      ],
+      "english": "I cook every evening."
+    },
+    {
+      "id": "a1-82-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "soha-needs-nem-negative-concord"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you never cook.",
+          "answer": "Soha nem főzök."
+        },
+        {
+          "prompt": "Ask Meg how often she does sport.",
+          "answer": "Milyen gyakran sportolsz?"
+        }
       ]
     },
     {
       "id": "a1-82-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which word means \"rarely\"?",
-      "options": [
-        "ritkán",
-        "néha",
-        "soha"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
+        "soha-needs-nem-negative-concord"
       ],
-      "stage": "check"
+      "sentence": "Károly soha ____ pihen.",
+      "english": "Károly never rests.",
+      "answer": "nem"
     },
     {
       "id": "a1-82-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence correctly uses negative concord?",
-      "options": [
-        "Soha nem dolgozom vasárnap.",
-        "Soha dolgozom vasárnap.",
-        "Nem soha dolgozom vasárnap."
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "soha-needs-nem-negative-concord"
+        "a1-frequency-word-order-vocab"
       ],
-      "stage": "check"
+      "question": "Which question means “How often do you cook?”",
+      "options": [
+        "Mikor szoktál főzni?",
+        "Milyen gyakran főzöl?",
+        "Hol szoktál főzni?"
+      ],
+      "correct": 1
     }
   ]
 }

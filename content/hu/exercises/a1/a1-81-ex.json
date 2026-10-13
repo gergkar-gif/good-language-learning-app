@@ -2,73 +2,73 @@
   "lesson": "a1-81",
   "exercises": [
     {
-      "id": "a1-81-review-1",
+      "id": "a1-81-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"Friday\"?",
-      "options": [
-        "péntek",
-        "szombat",
-        "vasárnap"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "a1-time-dates-vocab"
-      ]
-    },
-    {
-      "id": "a1-81-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence means \"We'll meet on Friday\"?",
-      "options": [
-        "Találkozunk pénteken.",
-        "Találkozó pénteken van.",
-        "Péntek találkozunk."
+        "a1-frequency-word-order-vocab"
       ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "on-en-on"
-      ]
-    },
-    {
-      "id": "a1-81-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which word means \"always\"?",
+      "question": "Which word means “rarely”?",
       "options": [
-        "mindig",
         "gyakran",
+        "ritkán",
         "néha"
       ],
-      "correct": 0,
-      "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
-      ],
-      "stage": "introduce"
+      "correct": 1
     },
     {
-      "id": "a1-81-intro-2",
+      "id": "a1-81-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word means \"often\"?",
-      "options": [
-        "gyakran",
-        "mindig",
-        "ritkán"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
+        "szokott-infinitive-habitual-actions"
       ],
-      "stage": "introduce"
+      "question": "Which means “I usually read in the morning”?",
+      "options": [
+        "Reggel szoktam olvasni.",
+        "Reggel szoktam olvas.",
+        "Reggel szoktam olvasok."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-81-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "szokott-infinitive-habitual-actions"
+      ],
+      "sentence": "Anna este szokott ____.",
+      "english": "Anna usually cooks in the evening.",
+      "answer": "főzni"
+    },
+    {
+      "id": "a1-81-controlled-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "szokott-infinitive-habitual-actions"
+      ],
+      "question": "Which form of szokott fits? “Meg és Károly ____ sportolni.”",
+      "options": [
+        "szokott",
+        "szoktak",
+        "szoktam"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-81-controlled-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-frequency-word-order-vocab"
+      ],
       "pairs": [
         [
           "mindig",
@@ -79,319 +79,237 @@
           "often"
         ],
         [
-          "szokott",
-          "usually does / tends to"
+          "általában",
+          "usually"
         ],
         [
-          "általában",
-          "usually / generally"
+          "néha",
+          "sometimes"
+        ],
+        [
+          "ritkán",
+          "rarely"
         ]
-      ],
-      "teaches": [
-        "a1-frequency-word-order-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-81-controlled-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Én ____ reggel tanulok.",
-      "hint": "always",
-      "english": "I always study in the morning.",
-      "answer": "mindig",
-      "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-81-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the natural sentence.",
-      "options": [
-        "Gyakran sportolok.",
-        "Sportolok gyakran vagyok.",
-        "Gyakran vagyok sportolok."
-      ],
-      "correct": 0,
-      "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-81-controlled-4",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Iskolában is ____ tanulni.",
-      "hint": "usually / habitually",
-      "english": "He/She usually studies at school too.",
-      "answer": "szokott",
+      "stage": "controlled",
       "teaches": [
-        "szokott-infinitive-habitual-actions"
+        "mindig-and-gyakran-frequency-adverbs"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Károly",
+        "ritkán",
+        "főz",
+        "."
+      ],
+      "solution": [
+        "Károly",
+        "ritkán",
+        "főz",
+        "."
+      ],
+      "english": "Károly rarely cooks."
     },
     {
       "id": "a1-81-practice-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which answer fits \"Te gyakran sportolsz?\"",
-      "options": [
-        "Általában igen.",
-        "Általában sportol.",
-        "Igen, sport vagyok."
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "present-tense-routine-language"
+        "a1-frequency-word-order-vocab"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “At noon we usually have lunch”?",
+      "options": [
+        "Délben néha ebédelünk.",
+        "Délben általában ebédelünk.",
+        "Délben ritkán ebédelünk."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-81-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "____ sportolok, de néha pihenek.",
-      "hint": "usually",
-      "english": "I usually do sports, but sometimes I rest.",
-      "answer": "Általában",
+      "stage": "practice",
       "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
+        "szokott-infinitive-habitual-actions"
       ],
-      "stage": "practice"
+      "sentence": "Reggel ____ tanulni.",
+      "english": "In the morning I usually study.",
+      "answer": "szoktam"
     },
     {
       "id": "a1-81-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Mindig reggel tanulok.",
-          "I always study in the morning."
-        ],
-        [
-          "Általában sportolok.",
-          "I usually do sports."
-        ],
-        [
-          "Iskolában is szokott tanulni.",
-          "At school they usually study too."
-        ],
-        [
-          "Te gyakran sportolsz?",
-          "Do you often do sports?"
-        ]
-      ],
-      "teaches": [
-        "a1-frequency-word-order-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-81-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": [
-        "Mindig",
-        "reggel",
-        "tanulok",
-        "."
-      ],
-      "solution": [
-        "Mindig",
-        "reggel",
-        "tanulok",
-        "."
-      ],
-      "english": "I always study in the morning.",
+      "stage": "practice",
       "teaches": [
         "mindig-and-gyakran-frequency-adverbs"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Délben",
+        "általában",
+        "ebédelünk",
+        "."
+      ],
+      "solution": [
+        "Délben",
+        "általában",
+        "ebédelünk",
+        "."
+      ],
+      "english": "At noon we usually have lunch."
+    },
+    {
+      "id": "a1-81-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "szokott-infinitive-habitual-actions"
+      ],
+      "question": "Which sentence means “Anna usually walks in the afternoon”?",
+      "options": [
+        "Anna délután szoktam sétálni.",
+        "Anna délután szokott sétál.",
+        "Anna délután szokott sétálni."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-81-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Én mindig reggel tanulok. Te gyakran sportolsz?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Általában igen.",
-        "Mindig szombat."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-frequency-word-order-vocab"
       ],
-      "stage": "practice"
+      "sentence": "Anna ____ sétál a parkban.",
+      "english": "Anna often walks in the park.",
+      "answer": "gyakran"
     },
     {
       "id": "a1-81-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mindig reggel tanulsz?"
+          "speaker": "Anna",
+          "text": "Te gyakran sportolsz?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, mindig reggel tanulok.",
-        "Igen, mindig reggel tanul."
+        "Nem, ritkán sportolsz.",
+        "Nem, ritkán sportol.",
+        "Nem, ritkán sportolok."
       ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-81-dialogue-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the natural reply to \"Gyakran sportolsz?\"",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "szokott-infinitive-habitual-actions"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Mikor szoktál tanulni?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "Igen, gyakran sportolok.",
-        "Igen, gyakran sportolsz.",
-        "Igen, sport vagyok."
+        "Reggel szoktam tanulni.",
+        "Reggel szoktál tanulni.",
+        "Reggel szokott tanulni."
       ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-81-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write \"I always study in the morning.\" in Hungarian.",
-          "answer": "Mindig reggel tanulok."
-        }
-      ],
+      "id": "a1-81-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
-      ]
+        "szokott-infinitive-habitual-actions"
+      ],
+      "tiles": [
+        "Este",
+        "szoktunk",
+        "főzni",
+        "."
+      ],
+      "solution": [
+        "Este",
+        "szoktunk",
+        "főzni",
+        "."
+      ],
+      "english": "In the evening we usually cook."
     },
     {
-      "id": "a1-81-writing-2",
+      "id": "a1-81-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Write \"I usually do sports, but sometimes I rest.\" in Hungarian.",
-          "answer": "Általában sportolok, de néha pihenek."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "mindig-and-gyakran-frequency-adverbs"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you always read.",
+          "answer": "Mindig olvasok."
+        },
+        {
+          "prompt": "Say that Anna usually cooks, using szokott.",
+          "answer": "Anna szokott főzni."
+        }
       ]
     },
     {
       "id": "a1-81-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which word means \"usually / generally\"?",
-      "options": [
-        "általában",
-        "mindig",
-        "gyakran"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
+        "szokott-infinitive-habitual-actions"
       ],
-      "stage": "check"
+      "sentence": "Mariann és én délután ____ sétálni.",
+      "english": "Mariann and I usually walk in the afternoon.",
+      "answer": "szoktunk"
     },
     {
       "id": "a1-81-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "In szokott tanulni, which part carries the person ending?",
+      "category": "vocabulary",
+      "stage": "check",
+      "teaches": [
+        "a1-frequency-word-order-vocab"
+      ],
+      "question": "Which sentence means “I sometimes rest”?",
       "options": [
-        "szokott",
-        "tanulni",
-        "neither"
+        "Ritkán pihenek.",
+        "Néha pihenek.",
+        "Általában pihenek."
       ],
-      "correct": 0,
-      "teaches": [
-        "szokott-infinitive-habitual-actions"
-      ],
-      "stage": "check"
-    },
-    {
-      "id": "a1-81-practice-6",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which means “He usually does sports”?",
-      "options": [
-        "Szokott sportol.",
-        "Szokott sportolni.",
-        "Szokott sportolsz."
-      ],
-      "correct": 1,
-      "teaches": [
-        "szokott-infinitive-habitual-actions"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-81-practice-7",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Meg reggel szokott ____.",
-      "hint": "study",
-      "english": "Meg usually studies in the morning.",
-      "answer": "tanulni",
-      "teaches": [
-        "szokott-infinitive-habitual-actions"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-81-practice-8",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Károly",
-        "szokott",
-        "sportolni",
-        "."
-      ],
-      "solutions": [
-        [
-          "Károly",
-          "szokott",
-          "sportolni",
-          "."
-        ],
-        [
-          "Károly",
-          "sportolni",
-          "szokott",
-          "."
-        ]
-      ],
-      "english": "Károly usually does sports.",
-      "teaches": [
-        "szokott-infinitive-habitual-actions"
-      ],
-      "stage": "practice"
+      "correct": 1
     }
   ]
 }
