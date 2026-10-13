@@ -2,55 +2,16 @@
   "lesson": "a1-49",
   "exercises": [
     {
-      "id": "a1-49-review-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence says \"This is my book\"?",
-      "options": [
-        "Ez a könyvem.",
-        "A táska az enyém.",
-        "Ez könyvem a."
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "possessive-suffixes"
-      ],
-      "distractor_skills": {
-        "1": "possessive-pronouns-enyem"
-      }
-    },
-    {
-      "id": "a1-49-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which question asks \"Where is your bag?\"",
-      "options": [
-        "Hol van a táskád?",
-        "Mi a táskád?",
-        "Ki a táskád?"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "spatial-questions-hol-hova"
-      ],
-      "distractor_skills": {
-        "1": "ki-and-mi",
-        "2": "ki-and-mi"
-      }
-    },
-    {
       "id": "a1-49-intro-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence means \"His/her phone is here\"?",
+      "question": "Which means \"our room\"?",
       "options": [
-        "A telefonja itt van.",
-        "A lakásom Budapesten van.",
-        "A telefon ő itt van."
+        "szobám",
+        "szobátok",
+        "szobánk"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "possessive-suffixes"
       ],
@@ -58,20 +19,44 @@
     },
     {
       "id": "a1-49-intro-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which means \"her bag\"?",
+      "options": [
+        "a táskám",
+        "a táskád",
+        "a táskája"
+      ],
+      "correct": 2,
+      "teaches": [
+        "3rd-person-possessive"
+      ],
+      "stage": "introduce",
+      "distractor_skills": {
+        "0": "possessive-suffixes",
+        "1": "possessive-suffixes"
+      }
+    },
+    {
+      "id": "a1-49-controlled-1",
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
         [
+          "táska",
+          "bag"
+        ],
+        [
+          "autó",
+          "car"
+        ],
+        [
+          "kié?",
+          "whose?"
+        ],
+        [
           "enyém",
           "mine"
-        ],
-        [
-          "tiéd",
-          "yours"
-        ],
-        [
-          "övé",
-          "his / hers"
         ],
         [
           "saját",
@@ -81,221 +66,143 @@
       "teaches": [
         "a1-foundations-review-vocab"
       ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-49-controlled-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence uses a possessive pronoun rather than a possessive suffix?",
-      "options": [
-        "A táska az enyém.",
-        "A telefonja itt van.",
-        "A táska enyémé."
-      ],
-      "correct": 0,
-      "teaches": [
-        "possessive-pronouns-enyem"
-      ],
-      "distractor_skills": {
-        "1": "possessive-suffixes"
-      },
       "stage": "controlled"
     },
     {
       "id": "a1-49-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A táska a ____.",
-      "hint": "yours",
-      "english": "The bag is yours.",
-      "answer": "tiéd",
+      "sentence": "A ____ nagy.",
+      "hint": "család, our",
+      "english": "Our family is big.",
+      "answer": "családunk",
       "teaches": [
-        "possessive-pronouns-enyem"
+        "possessive-suffixes"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-49-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "enyém",
-          "mine"
-        ],
-        [
-          "saját",
-          "own"
-        ],
-        [
-          "ember",
-          "person"
-        ],
-        [
-          "könyv",
-          "book"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "András itt van. A ____ ott van.",
+      "hint": "telefon, his",
+      "english": "András is here. His phone is there.",
+      "answer": "telefonja",
       "teaches": [
-        "a1-foundations-review-vocab"
+        "3rd-person-possessive"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-49-controlled-4",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which is plural?",
-      "options": [
-        "barátok",
-        "barát",
-        "barátom"
-      ],
-      "correct": 0,
+      "sentence": "A kulcs az ____.",
+      "hint": "mine",
+      "english": "The key is mine.",
+      "answer": "enyém",
       "teaches": [
-        "plural-nouns-k"
+        "possessive-pronouns-enyem"
       ],
-      "distractor_skills": {
-        "2": "possessive-suffixes"
-      },
       "stage": "controlled"
     },
     {
       "id": "a1-49-practice-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "telefon",
-          "phone"
-        ],
-        [
-          "lakás",
-          "flat"
-        ],
-        [
-          "saját",
-          "own"
-        ],
-        [
-          "kulcs",
-          "key"
-        ]
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which question asks whose the bag is?",
+      "options": [
+        "Hol van a táska?",
+        "Kié a táska?",
+        "Milyen a táska?"
       ],
+      "correct": 1,
       "teaches": [
-        "a1-possession-vocab"
+        "possessive-pronouns-enyem"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "0": "spatial-questions-hol-hova",
+        "2": "quantity-choice-questions-mennyi-melyik"
+      }
     },
     {
       "id": "a1-49-practice-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Choose the correct plural.",
+      "question": "Which sentence means \"The bag is theirs.\"?",
       "options": [
-        "táskák",
-        "táska",
-        "táskám"
+        "A táska a miénk.",
+        "A táska az övé.",
+        "A táska az övék."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "plural-nouns-k"
+        "possessive-pronouns-enyem"
       ],
-      "distractor_skills": {
-        "2": "possessive-suffixes"
-      },
       "stage": "practice"
     },
     {
       "id": "a1-49-practice-3",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "A telefon a ____.",
-      "hint": "his/hers",
-      "english": "The phone is his/hers.",
-      "answer": "övé",
+      "tiles": [
+        "autónk",
+        "egy",
+        ".",
+        "Van"
+      ],
+      "solution": [
+        "Van",
+        "egy",
+        "autónk",
+        "."
+      ],
+      "english": "We have a car.",
       "teaches": [
-        "possessive-pronouns-enyem"
+        "van-possessive-to-have"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-49-practice-4",
-      "type": "sentence-builder",
+      "type": "multiple-choice",
       "category": "grammar",
-      "tiles": [
-        "A",
-        "könyv",
-        "a",
-        "tiéd",
-        "."
+      "question": "Which sentence means \"I don't have a key.\"?",
+      "options": [
+        "Van kulcsom.",
+        "Nincs kulcsod.",
+        "Nincs kulcsom."
       ],
-      "solution": [
-        "A",
-        "könyv",
-        "a",
-        "tiéd",
-        "."
-      ],
-      "english": "The book is yours.",
+      "correct": 2,
       "teaches": [
-        "possessive-pronouns-enyem"
+        "van-possessive-to-have"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "1": "possessive-suffixes"
+      }
     },
     {
       "id": "a1-49-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Kié ez a könyv?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Az enyém.",
-        "Az tiéd."
-      ],
-      "correct": 0,
-      "teaches": [
-        "possessive-pronouns-enyem"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-49-practice-6",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Ez a telefon a ____.",
-      "hint": "mine",
-      "english": "This phone is mine.",
-      "answer": "enyém",
-      "teaches": [
-        "possessive-pronouns-enyem"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-49-practice-7",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which possessive sentence is correct?",
+      "question": "Which means \"his own room\"?",
       "options": [
-        "A telefonom az enyém.",
-        "A telefon én.",
-        "A telefonom én."
+        "saját szobám",
+        "saját szobája",
+        "saját szobájuk"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "possessive-pronouns-enyem"
+        "3rd-person-possessive"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "0": "possessive-suffixes",
+        "2": "possessive-suffixes"
+      }
     },
     {
       "id": "a1-49-dialogue-1",
@@ -303,22 +210,24 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Anna",
-          "text": "Ez a táska a tiéd?"
+          "speaker": "Meg",
+          "text": "A szoba a tiétek?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Nem, az övé.",
-        "Igen, sok."
+        "Igen, a szoba a miénk.",
+        "Igen, a szoba a tiétek.",
+        "Igen, a szoba az övék."
       ],
       "correct": 0,
       "teaches": [
         "possessive-pronouns-enyem"
-      ]
+      ],
+      "stage": "dialogue"
     },
     {
       "id": "a1-49-dialogue-2",
@@ -327,7 +236,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Kié ez a telefon?"
+          "text": "Hol van Anna kulcsa?"
         },
         {
           "speaker": "Károly",
@@ -335,27 +244,43 @@
         }
       ],
       "options": [
-        "Az övé.",
-        "Az övé van."
+        "A kulcsom itt van.",
+        "A kulcsa itt van.",
+        "A kulcsod itt van."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "possessive-pronouns-enyem"
-      ]
+        "3rd-person-possessive"
+      ],
+      "stage": "dialogue",
+      "distractor_skills": {
+        "0": "possessive-suffixes",
+        "2": "possessive-suffixes"
+      }
     },
     {
       "id": "a1-49-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"I am Meg. He is Károly. This bag is mine.\" in Hungarian.",
-          "answer": "Meg vagyok. Ő Károly. Ez a táska az enyém."
-        }
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "az",
+        "A",
+        ".",
+        "enyém",
+        "kulcs"
       ],
+      "solution": [
+        "A",
+        "kulcs",
+        "az",
+        "enyém",
+        "."
+      ],
+      "english": "The key is mine.",
       "teaches": [
         "possessive-pronouns-enyem"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-49-writing-2",
@@ -363,48 +288,54 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"This is my own book. The phone is yours.\" in Hungarian.",
-          "answer": "Ez a saját könyvem. A telefon a tiéd."
+          "prompt": "Say \"We have our own car.\" in Hungarian.",
+          "answer": "Van saját autónk."
+        },
+        {
+          "prompt": "Say \"Her bag is here.\" in Hungarian.",
+          "answer": "A táskája itt van."
         }
       ],
       "teaches": [
-        "possessive-pronouns-enyem"
-      ]
+        "van-possessive-to-have"
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-49-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence says \"This is my phone\"?",
+      "category": "vocabulary",
+      "question": "Which word means \"whose?\"",
       "options": [
-        "Ez a telefonom.",
-        "A lakás az enyém.",
-        "Ez telefonom a."
+        "tiéd",
+        "kié",
+        "övé"
       ],
-      "correct": 0,
-      "stage": "check",
+      "correct": 1,
       "teaches": [
-        "possessive-suffixes"
+        "a1-foundations-review-vocab"
       ],
-      "distractor_skills": {
-        "1": "possessive-pronouns-enyem"
-      }
+      "stage": "check"
     },
     {
       "id": "a1-49-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which form is correct?",
+      "question": "Which sentence means \"Her phone is here.\"?",
       "options": [
-        "A telefonom az enyém.",
-        "A telefonom én.",
-        "A telefon az én."
+        "A telefonom itt van.",
+        "A telefonja itt van.",
+        "A telefonod itt van."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "possessive-pronouns-enyem"
+        "3rd-person-possessive"
       ],
-      "stage": "check"
+      "stage": "check",
+      "distractor_skills": {
+        "0": "possessive-suffixes",
+        "2": "possessive-suffixes"
+      }
     }
   ]
 }

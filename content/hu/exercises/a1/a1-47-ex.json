@@ -2,111 +2,76 @@
   "lesson": "a1-47",
   "exercises": [
     {
-      "id": "a1-47-review-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence correctly avoids a copula for identity?",
-      "options": [
-        "Ő Károly.",
-        "Ő van Károly.",
-        "Ő Károly van."
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "van-zero-copula"
-      ]
-    },
-    {
-      "id": "a1-47-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which question asks \"Where is your sibling?\"",
-      "options": [
-        "Hol van a testvéred?",
-        "Mi a testvéred?",
-        "Ki a testvéred?"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "spatial-questions-hol-hova"
-      ],
-      "distractor_skills": {
-        "1": "ki-and-mi",
-        "2": "ki-and-mi"
-      }
-    },
-    {
       "id": "a1-47-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence means \"The family is together\"?",
+      "category": "vocabulary",
+      "question": "Which word means \"sibling\"?",
       "options": [
-        "A család együtt van.",
-        "A család együtt vannak.",
-        "A család van együtt."
+        "testvér",
+        "szülő",
+        "gyerek"
       ],
       "correct": 0,
-      "teaches": [
-        "egyutt-together"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-47-intro-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "család",
-          "family"
-        ],
-        [
-          "testvér",
-          "sibling"
-        ],
-        [
-          "barát",
-          "friend"
-        ],
-        [
-          "ismerős",
-          "acquaintance"
-        ]
-      ],
       "teaches": [
         "a1-foundations-review-vocab"
       ],
       "stage": "introduce"
     },
     {
-      "id": "a1-47-controlled-1",
+      "id": "a1-47-intro-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence says who someone is, not where a family is?",
+      "question": "Which means \"my mother\"?",
       "options": [
-        "Ő Anna.",
-        "A család együtt van.",
-        "Anna van."
+        "anyád",
+        "anya",
+        "anyám"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "van-zero-copula"
+        "kinship-possessives"
       ],
-      "distractor_skills": {
-        "1": "egyutt-together"
-      },
+      "stage": "introduce"
+    },
+    {
+      "id": "a1-47-controlled-1",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "testvér",
+          "sibling"
+        ],
+        [
+          "nagymama",
+          "grandmother"
+        ],
+        [
+          "ismerős",
+          "acquaintance"
+        ],
+        [
+          "milyen",
+          "what ... like"
+        ],
+        [
+          "kedves",
+          "kind"
+        ]
+      ],
+      "teaches": [
+        "a1-foundations-review-vocab"
+      ],
       "stage": "controlled"
     },
     {
       "id": "a1-47-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Van egy ____.",
-      "hint": "my sibling",
-      "english": "I have a sibling.",
-      "answer": "testvérem",
+      "sentence": "Ő az ____.",
+      "hint": "apa, my",
+      "english": "He is my father.",
+      "answer": "apám",
       "teaches": [
         "kinship-possessives"
       ],
@@ -114,183 +79,116 @@
     },
     {
       "id": "a1-47-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "testvér",
-          "sibling"
-        ],
-        [
-          "ismerős",
-          "acquaintance"
-        ],
-        [
-          "ember",
-          "person"
-        ],
-        [
-          "könyv",
-          "book"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Van egy ____.",
+      "hint": "testvér, my",
+      "english": "I have a sibling.",
+      "answer": "testvérem",
       "teaches": [
-        "a1-foundations-review-vocab"
+        "van-possessive-to-have"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-47-controlled-4",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which is plural?",
-      "options": [
-        "testvérek",
-        "testvér",
-        "testvérem"
-      ],
-      "correct": 0,
+      "sentence": "Ők ____.",
+      "hint": "magas",
+      "english": "They are tall.",
+      "answer": "magasak",
       "teaches": [
-        "plural-nouns-k"
+        "plural-predicate-adjectives-k"
       ],
-      "distractor_skills": {
-        "2": "kinship-possessives"
-      },
       "stage": "controlled"
     },
     {
       "id": "a1-47-practice-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "barát",
-          "friend"
-        ],
-        [
-          "család",
-          "family"
-        ],
-        [
-          "ismerős",
-          "acquaintance"
-        ],
-        [
-          "kulcs",
-          "key"
-        ]
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence means \"I don't have a younger sister.\"?",
+      "options": [
+        "Van húgom.",
+        "Nincs húgom.",
+        "Nem a húgom."
       ],
+      "correct": 1,
       "teaches": [
-        "a1-foundations-review-vocab"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "0": "van-possessive-to-have"
+      }
     },
     {
       "id": "a1-47-practice-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Choose the correct plural.",
+      "question": "Which question asks what someone is like?",
       "options": [
-        "ismerősök",
-        "ismerős",
-        "ismerősöm"
+        "Ki ő?",
+        "Milyen ő?",
+        "Hány éves ő?"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "plural-nouns-k"
+        "quantity-choice-questions-mennyi-melyik"
       ],
+      "stage": "practice",
       "distractor_skills": {
-        "2": "possessive-suffixes"
-      },
-      "stage": "practice"
+        "0": "ki-and-mi",
+        "2": "cardinal-numbers"
+      }
     },
     {
       "id": "a1-47-practice-3",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Ő a ____.",
-      "hint": "my friend",
-      "english": "He/She is my friend.",
-      "answer": "barátom",
+      "tiles": [
+        "fiatalok",
+        "A",
+        ".",
+        "fiúk"
+      ],
+      "solution": [
+        "A",
+        "fiúk",
+        "fiatalok",
+        "."
+      ],
+      "english": "The boys are young.",
       "teaches": [
-        "possessive-suffixes"
+        "plural-predicate-adjectives-k"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-47-practice-4",
-      "type": "sentence-builder",
+      "type": "multiple-choice",
       "category": "grammar",
-      "tiles": [
-        "A",
-        "testvérek",
-        "itt",
-        "vannak",
-        "."
+      "question": "Which means \"the tall boys\"?",
+      "options": [
+        "a magasak fiúk",
+        "a magas fiúk"
       ],
-      "solution": [
-        "A",
-        "testvérek",
-        "itt",
-        "vannak",
-        "."
-      ],
-      "english": "The siblings are here.",
+      "correct": 1,
       "teaches": [
-        "plural-nouns-k"
+        "adjective-order-before-the-noun"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-47-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Anna",
-          "text": "Ki ő?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Ő a testvérem.",
-        "Ő egy könyv."
-      ],
-      "correct": 0,
-      "teaches": [
-        "ki-and-mi"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-47-practice-6",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A ____ itt vannak.",
-      "hint": "acquaintances, plural",
-      "english": "The acquaintances are here.",
-      "answer": "ismerősök",
+      "sentence": "Ő ____ kedves.",
+      "hint": "very",
+      "english": "She is very kind.",
+      "answer": "nagyon",
       "teaches": [
-        "plural-nouns-k"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-47-practice-7",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which possessive sentence is correct?",
-      "options": [
-        "A testvérem itt van.",
-        "A testvér én van.",
-        "A testvérem én."
-      ],
-      "correct": 0,
-      "teaches": [
-        "kinship-possessives"
+        "nagyon-very"
       ],
       "stage": "practice"
     },
@@ -300,22 +198,27 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Anna",
-          "text": "Ismerős ő?"
+          "speaker": "Meg",
+          "text": "Van testvéred?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, ismerős.",
-        "Igen, nem ismerős."
+        "Igen, van egy testvére.",
+        "Igen, van egy testvérem.",
+        "Igen, van egy testvéred."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "yes-no-questions"
-      ]
+        "kinship-possessives"
+      ],
+      "stage": "dialogue",
+      "distractor_skills": {
+        "0": "3rd-person-possessive"
+      }
     },
     {
       "id": "a1-47-dialogue-2",
@@ -324,7 +227,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Hol a család?"
+          "text": "Milyen a nagymamád?"
         },
         {
           "speaker": "Károly",
@@ -332,27 +235,37 @@
         }
       ],
       "options": [
-        "Itt van a család.",
-        "Ő a család."
+        "Nagyon kedvesek.",
+        "Nagyon kedves van.",
+        "Nagyon kedves."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "spatial-questions-hol-hova"
-      ]
+        "plural-predicate-adjectives-k"
+      ],
+      "stage": "dialogue"
     },
     {
       "id": "a1-47-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"I am Meg. He is Károly. He is my friend.\" in Hungarian.",
-          "answer": "Meg vagyok. Ő Károly. Ő a barátom."
-        }
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "apám",
+        "az",
+        ".",
+        "Ő"
       ],
+      "solution": [
+        "Ő",
+        "az",
+        "apám",
+        "."
+      ],
+      "english": "He is my father.",
       "teaches": [
-        "van-zero-copula"
-      ]
+        "kinship-possessives"
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-47-writing-2",
@@ -360,27 +273,32 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"The siblings are here. He is my acquaintance.\" in Hungarian.",
-          "answer": "A testvérek itt vannak. Ő az ismerősöm."
+          "prompt": "Say \"I have a sibling.\" in Hungarian.",
+          "answer": "Van egy testvérem."
+        },
+        {
+          "prompt": "Say \"They are tall.\" in Hungarian.",
+          "answer": "Ők magasak."
         }
       ],
       "teaches": [
-        "plural-nouns-k"
-      ]
+        "van-possessive-to-have"
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-47-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence correctly avoids a copula for identity?",
+      "category": "vocabulary",
+      "question": "Which word means \"acquaintance\"?",
       "options": [
-        "Ő Anna.",
-        "Ő van Anna.",
-        "Ő Anna van."
+        "barát",
+        "ember",
+        "ismerős"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "van-zero-copula"
+        "a1-foundations-review-vocab"
       ],
       "stage": "check"
     },
@@ -388,17 +306,20 @@
       "id": "a1-47-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which form is correct?",
+      "question": "Which means \"your grandmother\"?",
       "options": [
-        "A testvérem itt van.",
-        "A testvérem én.",
-        "A testvér az én."
+        "a nagymamám",
+        "a nagymamája",
+        "a nagymamád"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "kinship-possessives"
       ],
-      "stage": "check"
+      "stage": "check",
+      "distractor_skills": {
+        "1": "3rd-person-possessive"
+      }
     }
   ]
 }

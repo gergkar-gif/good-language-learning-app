@@ -4,16 +4,16 @@
     {
       "id": "a1-50-consolidation-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which question asks \"What is your name?\"",
+      "category": "vocabulary",
+      "question": "Which word means \"table\"?",
       "options": [
-        "Mi a neved?",
-        "Meg vagyok.",
-        "Neved mi?"
+        "szék",
+        "asztal",
+        "ajtó"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "ki-and-mi"
+        "a1-foundations-review-vocab"
       ],
       "stage": "consolidation"
     },
@@ -21,15 +21,15 @@
       "id": "a1-50-consolidation-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence means \"The family is together\"?",
+      "question": "Which sentence means \"I am Károly.\"?",
       "options": [
-        "A család együtt van.",
-        "A család együtt vannak.",
-        "A család van együtt."
+        "Te Károly vagy.",
+        "Én Károly vagyok.",
+        "Ő Károly."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "egyutt-together"
+        "personal-pronouns"
       ],
       "stage": "consolidation"
     },
@@ -37,100 +37,63 @@
       "id": "a1-50-consolidation-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence means \"The books are here\"?",
+      "question": "Which means \"his phone\"?",
       "options": [
-        "A könyvek itt vannak.",
-        "A székek nagyok.",
-        "A könyv itt van vannak."
+        "telefonom",
+        "telefonja",
+        "telefonod"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "plural-nouns-k"
+        "3rd-person-possessive"
       ],
+      "stage": "consolidation",
       "distractor_skills": {
-        "1": "plural-predicate-adjectives-k"
-      },
-      "stage": "consolidation"
+        "0": "possessive-suffixes",
+        "2": "possessive-suffixes"
+      }
     },
     {
       "id": "a1-50-consolidation-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence means \"His/her phone is here\"?",
+      "question": "Which sentence means \"The bag is yours.\"?",
       "options": [
-        "A telefonja itt van.",
-        "A lakásom Budapesten van.",
-        "A telefon ő itt van."
+        "A táska a tiéd.",
+        "A táska az enyém.",
+        "A táska az övé."
       ],
       "correct": 0,
       "teaches": [
-        "possessive-suffixes"
+        "possessive-pronouns-enyem"
       ],
       "stage": "consolidation"
     },
     {
       "id": "a1-50-consolidation-5",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which question asks someone's age?",
+      "category": "grammar",
+      "question": "Which means \"my older sister\"?",
       "options": [
-        "Hány éves vagy?",
-        "Hol laksz?",
-        "Éves vagy hány?"
+        "nővéred",
+        "nővérem",
+        "nővére"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "a1-numbers-personal-information-vocab"
+        "kinship-possessives"
       ],
-      "stage": "consolidation"
+      "stage": "consolidation",
+      "distractor_skills": {
+        "2": "3rd-person-possessive"
+      }
     },
     {
       "id": "a1-50-consolidation-6",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Szia",
-          "Hi"
-        ],
-        [
-          "köszönöm",
-          "thank you"
-        ],
-        [
-          "igen",
-          "yes"
-        ],
-        [
-          "nem",
-          "no"
-        ]
-      ],
-      "teaches": [
-        "a1-reading-hungarian-vocab"
-      ],
-      "stage": "consolidation"
-    },
-    {
-      "id": "a1-50-consolidation-7",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Mi ____?",
-      "hint": "this",
-      "english": "What is this?",
-      "answer": "ez",
-      "teaches": [
-        "demonstratives-ez-az"
-      ],
-      "stage": "consolidation"
-    },
-    {
-      "id": "a1-50-consolidation-8",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Hány éves ____?",
-      "hint": "are you",
-      "english": "How old are you?",
+      "sentence": "Te Anna ____.",
+      "english": "You are Anna.",
       "answer": "vagy",
       "teaches": [
         "van-zero-copula"
@@ -138,15 +101,40 @@
       "stage": "consolidation"
     },
     {
+      "id": "a1-50-consolidation-7",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "____ laksz?",
+      "english": "Where do you live?",
+      "answer": "hol",
+      "teaches": [
+        "spatial-questions-hol-hova"
+      ],
+      "stage": "consolidation"
+    },
+    {
+      "id": "a1-50-consolidation-8",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Az ____ nagyok.",
+      "hint": "ablak",
+      "english": "The windows are big.",
+      "answer": "ablakok",
+      "teaches": [
+        "plural-nouns-k"
+      ],
+      "stage": "consolidation"
+    },
+    {
       "id": "a1-50-consolidation-9",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A könyvek itt ____.",
-      "hint": "are",
-      "english": "The books are here.",
-      "answer": "vannak",
+      "sentence": "Sok ____ van itt.",
+      "hint": "person",
+      "english": "There are many people here.",
+      "answer": "ember",
       "teaches": [
-        "egyutt-together"
+        "singular-after-numbers"
       ],
       "stage": "consolidation"
     },
@@ -154,38 +142,62 @@
       "id": "a1-50-consolidation-10",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A ____ itt vannak.",
-      "hint": "my friends",
-      "english": "My friends are here.",
-      "answer": "barátaim",
+      "sentence": "Van egy ____.",
+      "hint": "autó, we",
+      "english": "We have a car.",
+      "answer": "autónk",
       "teaches": [
-        "possessive-suffixes"
+        "van-possessive-to-have"
       ],
       "stage": "consolidation"
     },
     {
       "id": "a1-50-consolidation-11",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____, Meg vagyok.",
-      "hint": "Hi",
-      "english": "Hi, I'm Meg.",
-      "answers": ["Szia", "Szervusz", "Helló"],
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Te Mariann vagy?"
+        },
+        {
+          "speaker": "Mariann",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Igen, én Mariann vagyok.",
+        "Nem, én Mariann vagyok.",
+        "Igen, nem vagyok Mariann."
+      ],
+      "correct": 0,
       "teaches": [
-        "a1-foundations-review-vocab"
+        "yes-no-questions"
       ],
       "stage": "consolidation"
     },
     {
       "id": "a1-50-consolidation-12",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Ez a ____.",
-      "hint": "my book",
-      "english": "This is my book.",
-      "answer": "könyvem",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Hol van a telefon?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A telefon a konyhában van.",
+        "A telefon a konyhaben van.",
+        "A telefon a konyha van."
+      ],
+      "correct": 0,
       "teaches": [
-        "possessive-suffixes"
+        "ban-ben-in"
       ],
       "stage": "consolidation"
     },
@@ -195,8 +207,8 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol laksz?"
+          "speaker": "Anna",
+          "text": "Milyen a testvéred?"
         },
         {
           "speaker": "Meg",
@@ -204,12 +216,12 @@
         }
       ],
       "options": [
-        "Budapesten lakom.",
-        "Budapest vagyok."
+        "Magasak és kedvesek.",
+        "Magas és kedves."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "spatial-questions-hol-hova"
+        "plural-predicate-adjectives-k"
       ],
       "stage": "consolidation"
     },
@@ -219,8 +231,8 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mi a neved?"
+          "speaker": "Anna",
+          "text": "A kulcs a tiéd?"
         },
         {
           "speaker": "Meg",
@@ -228,12 +240,13 @@
         }
       ],
       "options": [
-        "Meg vagyok.",
-        "Meg vagy."
+        "Igen, a kulcs az övé.",
+        "Igen, a kulcs az enyém.",
+        "Igen, a kulcs a tiéd."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "van-zero-copula"
+        "possessive-pronouns-enyem"
       ],
       "stage": "consolidation"
     },
@@ -243,45 +256,41 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hány éves vagy?"
+          "speaker": "Meg",
+          "text": "Anna itt van. Hol van a táskája?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Harminc éves vagyok.",
-        "Harminc van."
+        "A táskám ott van.",
+        "A táskád ott van.",
+        "A táskája ott van."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "van-zero-copula"
+        "3rd-person-possessive"
       ],
-      "stage": "consolidation"
+      "stage": "consolidation",
+      "distractor_skills": {
+        "0": "possessive-suffixes",
+        "1": "possessive-suffixes"
+      }
     },
     {
       "id": "a1-50-consolidation-16",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
         {
-          "speaker": "Károly",
-          "text": "Ez a könyved?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
+          "prompt": "Say \"I am Meg. I live in Budapest.\" in Hungarian.",
+          "answer": "Én Meg vagyok. Budapesten lakom."
         }
       ],
-      "options": [
-        "Igen, ez az enyém.",
-        "Igen, te vagy."
-      ],
-      "correct": 0,
       "teaches": [
-        "possessive-pronouns-enyem"
+        "van-zero-copula"
       ],
       "stage": "consolidation"
     },
@@ -291,27 +300,36 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"I am Meg. He is Károly. This is my book.\" in Hungarian.",
-          "answer": "Meg vagyok. Ő Károly. Ez a könyvem."
+          "prompt": "Say \"She is my mother.\" in Hungarian.",
+          "answer": "Ő az anyám."
         }
       ],
       "teaches": [
-        "van-zero-copula"
+        "kinship-possessives"
       ],
       "stage": "consolidation"
     },
     {
       "id": "a1-50-consolidation-18",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"The family is together. The friends are here.\" in Hungarian.",
-          "answer": "A család együtt van. A barátok itt vannak."
-        }
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "itt",
+        "Három",
+        ".",
+        "van",
+        "szék"
       ],
+      "solution": [
+        "Három",
+        "szék",
+        "van",
+        "itt",
+        "."
+      ],
+      "english": "There are three chairs here.",
       "teaches": [
-        "egyutt-together"
+        "singular-after-numbers"
       ],
       "stage": "consolidation"
     },
@@ -321,12 +339,12 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"How old are you? I am thirty.\" in Hungarian.",
-          "answer": "Hány éves vagy? Harminc éves vagyok."
+          "prompt": "Say \"The car is theirs.\" in Hungarian.",
+          "answer": "Az autó az övék."
         }
       ],
       "teaches": [
-        "a1-numbers-personal-information-vocab"
+        "possessive-pronouns-enyem"
       ],
       "stage": "consolidation"
     },
@@ -336,12 +354,12 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"The bag is mine. My books are here.\" in Hungarian.",
-          "answer": "A táska az enyém. A könyveim itt vannak."
+          "prompt": "Say \"Excuse me, where is the kitchen?\" in Hungarian.",
+          "answer": "Elnézést, hol van a konyha?"
         }
       ],
       "teaches": [
-        "possessive-pronouns-enyem"
+        "a1-foundations-review-vocab"
       ],
       "stage": "consolidation"
     }

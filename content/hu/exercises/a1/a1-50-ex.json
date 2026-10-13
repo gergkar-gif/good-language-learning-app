@@ -2,79 +2,32 @@
   "lesson": "a1-50",
   "exercises": [
     {
-      "id": "a1-50-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word greets someone?",
-      "options": [
-        "Szia!",
-        "Köszönöm.",
-        "Kérem."
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-greetings-basic-interaction-vocab"
-      ]
-    },
-    {
-      "id": "a1-50-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which question asks \"Where is the coffee?\"",
-      "options": [
-        "Hol van a kávé?",
-        "Mi a kávé?",
-        "Ki a kávé?"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "spatial-questions-hol-hova"
-      ],
-      "distractor_skills": {
-        "1": "ki-and-mi",
-        "2": "ki-and-mi"
-      }
-    },
-    {
       "id": "a1-50-intro-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which question asks someone's age?",
+      "question": "Which word means \"you're welcome\"?",
       "options": [
-        "Hány éves vagy?",
-        "Hol laksz?",
-        "Éves vagy hány?"
+        "bocsánat",
+        "szívesen",
+        "rendben"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "a1-numbers-personal-information-vocab"
+        "a1-foundations-review-vocab"
       ],
       "stage": "introduce"
     },
     {
       "id": "a1-50-intro-2",
-      "type": "matching",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "együtt",
-          "together"
-        ],
-        [
-          "köszönöm",
-          "thank you"
-        ],
-        [
-          "légyszi",
-          "please (casual)"
-        ],
-        [
-          "jó",
-          "good"
-        ]
+      "question": "Which word gets someone's attention, like \"excuse me\"?",
+      "options": [
+        "elnézést",
+        "köszönöm",
+        "rendben"
       ],
+      "correct": 0,
       "teaches": [
         "a1-foundations-review-vocab"
       ],
@@ -82,17 +35,32 @@
     },
     {
       "id": "a1-50-controlled-1",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "vocabulary",
-      "question": "Which is the reply to being thanked?",
-      "options": [
-        "Kérem.",
-        "Hány éves vagy?",
-        "Köszönöm."
+      "pairs": [
+        [
+          "köszönöm",
+          "thank you"
+        ],
+        [
+          "szívesen",
+          "you're welcome"
+        ],
+        [
+          "bocsánat",
+          "sorry"
+        ],
+        [
+          "elnézést",
+          "excuse me"
+        ],
+        [
+          "rendben",
+          "okay"
+        ]
       ],
-      "correct": 0,
       "teaches": [
-        "a1-greetings-basic-interaction-vocab"
+        "a1-foundations-review-vocab"
       ],
       "stage": "controlled"
     },
@@ -100,10 +68,10 @@
       "id": "a1-50-controlled-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A kávé ____.",
-      "hint": "good",
-      "english": "The coffee is good.",
-      "answer": "jó",
+      "sentence": "Bocsánat! – Semmi ____.",
+      "hint": "problem",
+      "english": "Sorry! – No worries.",
+      "answer": "baj",
       "teaches": [
         "a1-foundations-review-vocab"
       ],
@@ -111,26 +79,12 @@
     },
     {
       "id": "a1-50-controlled-3",
-      "type": "matching",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "együtt",
-          "together"
-        ],
-        [
-          "jó",
-          "good"
-        ],
-        [
-          "ember",
-          "person"
-        ],
-        [
-          "könyv",
-          "book"
-        ]
-      ],
+      "sentence": "Köszönöm! – ____!",
+      "hint": "you're welcome",
+      "english": "Thank you! – You're welcome!",
+      "answer": "szívesen",
       "teaches": [
         "a1-foundations-review-vocab"
       ],
@@ -138,45 +92,28 @@
     },
     {
       "id": "a1-50-controlled-4",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which is plural?",
-      "options": [
-        "székek",
-        "szék",
-        "székem"
-      ],
-      "correct": 0,
+      "sentence": "Elnézést, hol ____ a konyha?",
+      "hint": "is",
+      "english": "Excuse me, where is the kitchen?",
+      "answer": "van",
       "teaches": [
-        "plural-nouns-k"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "distractor_skills": {
-        "2": "possessive-suffixes"
-      },
       "stage": "controlled"
     },
     {
       "id": "a1-50-practice-1",
-      "type": "matching",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "légyszi",
-          "please (casual)"
-        ],
-        [
-          "köszönöm",
-          "thank you"
-        ],
-        [
-          "barát",
-          "friend"
-        ],
-        [
-          "kulcs",
-          "key"
-        ]
+      "question": "Which word completes \"Kicsi, ____ erős.\" (Small, but strong)?",
+      "options": [
+        "és",
+        "de",
+        "nem"
       ],
+      "correct": 1,
       "teaches": [
         "a1-foundations-review-vocab"
       ],
@@ -184,33 +121,30 @@
     },
     {
       "id": "a1-50-practice-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the correct plural.",
-      "options": [
-        "kulcsok",
-        "kulcs",
-        "kulcsom"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "sentence": "Kedves ____ vicces.",
+      "hint": "and",
+      "english": "Kind and funny.",
+      "answer": "és",
       "teaches": [
-        "plural-nouns-k"
+        "a1-foundations-review-vocab"
       ],
-      "distractor_skills": {
-        "2": "possessive-suffixes"
-      },
       "stage": "practice"
     },
     {
       "id": "a1-50-practice-3",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Ez a ____.",
-      "hint": "my key",
-      "english": "This is my key.",
-      "answer": "kulcsom",
+      "question": "Which sentence means \"He is not my older brother.\"?",
+      "options": [
+        "Ő nincs a bátyám.",
+        "Ő nem vagyok a bátyám.",
+        "Ő nem a bátyám."
+      ],
+      "correct": 2,
       "teaches": [
-        "possessive-suffixes"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
       "stage": "practice"
     },
@@ -219,20 +153,20 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "A",
-        "barátok",
         "együtt",
-        "vannak",
-        "."
+        "A",
+        ".",
+        "van",
+        "család"
       ],
       "solution": [
         "A",
-        "barátok",
+        "család",
         "együtt",
-        "vannak",
+        "van",
         "."
       ],
-      "english": "The friends are together.",
+      "english": "The family is together.",
       "teaches": [
         "egyutt-together"
       ],
@@ -240,56 +174,69 @@
     },
     {
       "id": "a1-50-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Anna",
-          "text": "Együtt megyünk?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "Köszönöm! – Szívesen!",
+          "Thank you! – You're welcome!"
+        ],
+        [
+          "Bocsánat! – Semmi baj.",
+          "Sorry! – No worries."
+        ],
+        [
+          "Tessék, a kulcsod.",
+          "Here you are, your key."
+        ],
+        [
+          "Kicsi, de erős.",
+          "Small, but strong."
+        ]
       ],
-      "options": [
-        "Igen, együtt megyünk.",
-        "Nem, együtt megyünk."
-      ],
-      "correct": 0,
       "teaches": [
-        "yes-no-questions"
+        "a1-foundations-review-vocab"
       ],
       "stage": "practice"
     },
     {
-      "id": "a1-50-practice-6",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A barátok ____ vannak.",
-      "hint": "together",
-      "english": "The friends are together.",
-      "answer": "együtt",
-      "teaches": [
-        "egyutt-together"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-50-practice-7",
+      "id": "a1-50-reading-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which possessive sentence is correct?",
+      "category": "reading",
+      "question": "What does Anna ask about?",
       "options": [
-        "A kulcsom az enyém.",
-        "A kulcs én.",
-        "A kulcsom én."
+        "Where the kitchen is",
+        "Whose the bag is",
+        "How old Meg is"
+      ],
+      "correct": 1,
+      "stage": "reading"
+    },
+    {
+      "id": "a1-50-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "What does Meg say is needed?",
+      "options": [
+        "More coffee",
+        "More keys",
+        "More chairs"
+      ],
+      "correct": 2,
+      "stage": "reading"
+    },
+    {
+      "id": "a1-50-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Where are the chairs, according to Károly?",
+      "options": [
+        "In the kitchen",
+        "In the room",
+        "On a chair"
       ],
       "correct": 0,
-      "teaches": [
-        "possessive-pronouns-enyem"
-      ],
-      "stage": "practice"
+      "stage": "reading"
     },
     {
       "id": "a1-50-dialogue-1",
@@ -297,22 +244,24 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Anna",
-          "text": "Köszönöm!"
+          "speaker": "Meg",
+          "text": "Tessék, a kulcsod."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérem.",
-        "Együtt vagyunk."
+        "Szívesen!",
+        "Bocsánat!",
+        "Köszönöm!"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "a1-greetings-basic-interaction-vocab"
-      ]
+        "a1-foundations-review-vocab"
+      ],
+      "stage": "dialogue"
     },
     {
       "id": "a1-50-dialogue-2",
@@ -321,7 +270,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Jó ez a kávé?"
+          "text": "Bocsánat!"
         },
         {
           "speaker": "Meg",
@@ -329,27 +278,43 @@
         }
       ],
       "options": [
-        "Igen, nagyon jó.",
-        "Nem, köszönöm."
+        "Semmi baj.",
+        "Szívesen.",
+        "Tessék."
       ],
       "correct": 0,
       "teaches": [
         "a1-foundations-review-vocab"
-      ]
+      ],
+      "stage": "dialogue"
     },
     {
       "id": "a1-50-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"I am Meg. He is Károly. Thank you.\" in Hungarian.",
-          "answer": "Meg vagyok. Ő Károly. Köszönöm."
-        }
+      "type": "sentence-builder",
+      "category": "vocabulary",
+      "tiles": [
+        "hol",
+        "a",
+        "?",
+        "Elnézést",
+        "van",
+        "konyha",
+        ","
       ],
+      "solution": [
+        "Elnézést",
+        ",",
+        "hol",
+        "van",
+        "a",
+        "konyha",
+        "?"
+      ],
+      "english": "Excuse me, where is the kitchen?",
       "teaches": [
-        "van-zero-copula"
-      ]
+        "a1-foundations-review-vocab"
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-50-writing-2",
@@ -357,43 +322,48 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"The friends are together. The coffee is good.\" in Hungarian.",
-          "answer": "A barátok együtt vannak. A kávé jó."
+          "prompt": "Say \"The family is together.\" in Hungarian.",
+          "answer": "A család együtt van."
+        },
+        {
+          "prompt": "Say \"Kind and funny.\" in Hungarian.",
+          "answer": "Kedves és vicces."
         }
       ],
       "teaches": [
-        "egyutt-together"
-      ]
+        "a1-foundations-review-vocab"
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-50-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"please (casual)\"?",
+      "question": "Which word means \"okay\"?",
       "options": [
-        "légyszi",
-        "köszönöm",
-        "együtt"
+        "együtt",
+        "bocsánat",
+        "rendben"
       ],
-      "correct": 0,
-      "stage": "check",
+      "correct": 2,
       "teaches": [
-        "a1-greetings-basic-interaction-vocab"
-      ]
+        "a1-foundations-review-vocab"
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-50-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which form is correct?",
+      "question": "Which sentence means \"The friends are all together.\"?",
       "options": [
-        "A kulcsom az enyém.",
-        "A kulcsom én.",
-        "A kulcs az én."
+        "A barátok mind együtt van.",
+        "A barátok mind együtt vannak.",
+        "A barát mind együtt vannak."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "possessive-pronouns-enyem"
+        "egyutt-together"
       ],
       "stage": "check"
     }

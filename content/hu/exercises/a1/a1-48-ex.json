@@ -2,174 +2,41 @@
   "lesson": "a1-48",
   "exercises": [
     {
-      "id": "a1-48-review-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which question asks \"What is this?\"",
-      "options": [
-        "Mi ez?",
-        "Ez egy könyv.",
-        "Ki ez?"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "ki-and-mi"
-      ]
-    },
-    {
-      "id": "a1-48-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which question asks \"Where is the table?\"",
-      "options": [
-        "Hol van az asztal?",
-        "Mi ez?",
-        "Ki ez?"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "spatial-questions-hol-hova"
-      ],
-      "distractor_skills": {
-        "1": "ki-and-mi",
-        "2": "ki-and-mi"
-      }
-    },
-    {
       "id": "a1-48-intro-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence means \"The books are here\"?",
+      "category": "vocabulary",
+      "question": "Which word means \"window\"?",
       "options": [
-        "A könyvek itt vannak.",
-        "A székek nagyok.",
-        "A könyv itt van vannak."
+        "ajtó",
+        "ablak",
+        "lámpa"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "plural-nouns-k"
+        "a1-foundations-review-vocab"
       ],
-      "distractor_skills": {
-        "1": "plural-predicate-adjectives-k"
-      },
       "stage": "introduce"
     },
     {
       "id": "a1-48-intro-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "tárgy",
-          "object"
-        ],
-        [
-          "könyv",
-          "book"
-        ],
-        [
-          "asztal",
-          "table"
-        ],
-        [
-          "sok",
-          "many / a lot of"
-        ]
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence means \"That is a lamp.\"?",
+      "options": [
+        "Ez egy lámpa.",
+        "Az egy lámpa."
       ],
+      "correct": 1,
       "teaches": [
-        "a1-foundations-review-vocab"
+        "demonstratives-ez-az"
       ],
       "stage": "introduce"
     },
     {
       "id": "a1-48-controlled-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence answers \"Mi ez?\" for a single object?",
-      "options": [
-        "Ez egy könyv.",
-        "A könyvek itt vannak.",
-        "Ez könyvek."
-      ],
-      "correct": 0,
-      "teaches": [
-        "indefinite-article-egy"
-      ],
-      "distractor_skills": {
-        "1": "plural-nouns-k"
-      },
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-48-controlled-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Sok ____ van itt.",
-      "hint": "table",
-      "english": "There are many tables here.",
-      "answer": "asztal",
-      "teaches": [
-        "singular-after-numbers"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-48-controlled-3",
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "tárgy",
-          "object"
-        ],
-        [
-          "sok",
-          "many / a lot of"
-        ],
-        [
-          "ember",
-          "person"
-        ],
-        [
-          "táska",
-          "bag"
-        ]
-      ],
-      "teaches": [
-        "a1-foundations-review-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-48-controlled-4",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is plural?",
-      "options": [
-        "asztalok",
-        "asztal",
-        "asztalom"
-      ],
-      "correct": 0,
-      "teaches": [
-        "plural-nouns-k"
-      ],
-      "distractor_skills": {
-        "2": "possessive-suffixes"
-      },
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-48-practice-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "könyv",
-          "book"
-        ],
         [
           "asztal",
           "table"
@@ -179,12 +46,75 @@
           "chair"
         ],
         [
-          "kulcs",
-          "key"
+          "ablak",
+          "window"
+        ],
+        [
+          "ajtó",
+          "door"
+        ],
+        [
+          "konyha",
+          "kitchen"
         ]
       ],
       "teaches": [
-        "a1-objects-locations-vocab"
+        "a1-foundations-review-vocab"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-48-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "A ____ ott vannak.",
+      "hint": "szék",
+      "english": "The chairs are there.",
+      "answer": "székek",
+      "teaches": [
+        "plural-nouns-k"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-48-controlled-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "A telefon a ____ van.",
+      "hint": "konyha, in",
+      "english": "The phone is in the kitchen.",
+      "answer": "konyhában",
+      "teaches": [
+        "ban-ben-in"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-48-controlled-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Három ____ van itt.",
+      "hint": "chair",
+      "english": "There are three chairs here.",
+      "answer": "szék",
+      "teaches": [
+        "singular-after-numbers"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-48-practice-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence means \"The windows are here.\"?",
+      "options": [
+        "Az ablakek itt vannak.",
+        "Az ablakok itt vannak.",
+        "Az ablak itt vannak."
+      ],
+      "correct": 1,
+      "teaches": [
+        "plural-nouns-k"
       ],
       "stage": "practice"
     },
@@ -192,110 +122,86 @@
       "id": "a1-48-practice-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Choose the correct plural.",
+      "question": "Which sentence means \"There are many chairs here.\"?",
       "options": [
-        "tárgyak",
-        "tárgy",
-        "tárgyam"
+        "Sok székek van itt.",
+        "Sok szék vannak itt.",
+        "Sok szék van itt."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "plural-nouns-k"
+        "singular-after-numbers"
       ],
+      "stage": "practice",
       "distractor_skills": {
-        "2": "possessive-suffixes"
-      },
-      "stage": "practice"
+        "0": "plural-nouns-k",
+        "1": "egyutt-together"
+      }
     },
     {
       "id": "a1-48-practice-3",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Ez az ____.",
-      "hint": "my table",
-      "english": "This is my table.",
-      "answer": "asztalom",
+      "tiles": [
+        "kicsi",
+        "A",
+        "székek",
+        "és",
+        "nagy",
+        "a",
+        ".",
+        "asztalok"
+      ],
+      "solution": [
+        "A",
+        "nagy",
+        "asztalok",
+        "és",
+        "a",
+        "kicsi",
+        "székek",
+        "."
+      ],
+      "english": "The big tables and the small chairs.",
       "teaches": [
-        "possessive-suffixes"
+        "adjective-order-before-the-noun"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-48-practice-4",
-      "type": "sentence-builder",
+      "type": "multiple-choice",
       "category": "grammar",
-      "tiles": [
-        "A",
-        "tárgyak",
-        "itt",
-        "vannak",
-        "."
+      "question": "Which sentence means \"The windows are small.\"?",
+      "options": [
+        "Az ablakok kicsi.",
+        "Az ablakok kicsiek.",
+        "Az ablakok kicsik."
       ],
-      "solution": [
-        "A",
-        "tárgyak",
-        "itt",
-        "vannak",
-        "."
-      ],
-      "english": "The objects are here.",
+      "correct": 2,
       "teaches": [
-        "plural-nouns-k"
+        "plural-predicate-adjectives-k"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-48-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Anna",
-          "text": "Sok könyv van itt?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Igen, sok könyv van.",
-        "Igen, sok könyvek vannak."
-      ],
-      "correct": 0,
-      "teaches": [
-        "singular-after-numbers"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-48-practice-6",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A ____ itt vannak.",
-      "hint": "tables, plural",
-      "english": "The tables are here.",
-      "answer": "asztalok",
-      "teaches": [
-        "plural-nouns-k"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-48-practice-7",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which possessive sentence is correct?",
+      "question": "Which sentence means \"There is no lamp here.\"?",
       "options": [
-        "Az asztalom itt van.",
-        "Az asztal én van.",
-        "Az asztalom én."
+        "Itt van lámpa.",
+        "Itt nincs lámpa.",
+        "Itt nem lámpa."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "possessive-suffixes"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "2": "negation-with-nem"
+      }
     },
     {
       "id": "a1-48-dialogue-1",
@@ -303,22 +209,24 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mi ez a tárgy?"
+          "speaker": "Meg",
+          "text": "Hol van a kulcs?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Ez egy asztal.",
-        "Ő egy asztal."
+        "A kulcs a szobaben van.",
+        "A kulcs a szobában van.",
+        "A kulcs a szoba van."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "ki-and-mi"
-      ]
+        "ban-ben-in"
+      ],
+      "stage": "dialogue"
     },
     {
       "id": "a1-48-dialogue-2",
@@ -327,7 +235,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Hány asztal van?"
+          "text": "Hány szék van itt?"
         },
         {
           "speaker": "Károly",
@@ -335,30 +243,43 @@
         }
       ],
       "options": [
-        "Sok asztal van.",
-        "Sok asztal vagyok."
+        "Három szék van itt.",
+        "Három székek van itt.",
+        "Három szék vannak itt."
       ],
       "correct": 0,
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t"
+        "singular-after-numbers"
       ],
+      "stage": "dialogue",
       "distractor_skills": {
-        "1": "van-zero-copula"
+        "1": "plural-nouns-k",
+        "2": "egyutt-together"
       }
     },
     {
       "id": "a1-48-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"I am Meg. He is Károly. This is my table.\" in Hungarian.",
-          "answer": "Meg vagyok. Ő Károly. Ez az asztalom."
-        }
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "ott",
+        "A",
+        ".",
+        "vannak",
+        "székek"
       ],
+      "solution": [
+        "A",
+        "székek",
+        "ott",
+        "vannak",
+        "."
+      ],
+      "english": "The chairs are there.",
       "teaches": [
-        "van-zero-copula"
-      ]
+        "plural-nouns-k"
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-48-writing-2",
@@ -366,43 +287,47 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"The objects are here. There are many books.\" in Hungarian.",
-          "answer": "A tárgyak itt vannak. Sok könyv van."
+          "prompt": "Say \"There are three chairs here.\" in Hungarian.",
+          "answer": "Három szék van itt."
+        },
+        {
+          "prompt": "Say \"The key is in the kitchen.\" in Hungarian.",
+          "answer": "A kulcs a konyhában van."
         }
       ],
       "teaches": [
-        "singular-after-numbers"
-      ]
+        "a1-foundations-review-vocab"
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-48-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which question asks \"What is that?\"",
+      "category": "vocabulary",
+      "question": "Which word means \"kitchen\"?",
       "options": [
-        "Mi az?",
-        "Az egy asztal.",
-        "Ki az?"
+        "szoba",
+        "lakás",
+        "konyha"
       ],
-      "correct": 0,
-      "stage": "check",
+      "correct": 2,
       "teaches": [
-        "ki-and-mi"
-      ]
+        "a1-foundations-review-vocab"
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-48-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which form is correct?",
+      "question": "Which means \"lamps\"?",
       "options": [
-        "Az asztalom itt van.",
-        "Az asztalom én.",
-        "Az asztal az én."
+        "lámpak",
+        "lámpák"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "possessive-suffixes"
+        "plural-nouns-k"
       ],
       "stage": "check"
     }
