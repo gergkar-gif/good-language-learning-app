@@ -2,257 +2,211 @@
   "lesson": "a1-88",
   "exercises": [
     {
-      "id": "a1-88-review-1",
+      "id": "a1-88-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"door\"?",
-      "options": [
-        "ajtó",
-        "lámpa",
-        "ablak"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-home-vocab"
-      ]
+      ],
+      "question": "Which word means “comfortable”?",
+      "options": [
+        "tiszta",
+        "kényelmes",
+        "sötét"
+      ],
+      "correct": 1
     },
     {
-      "id": "a1-88-review-2",
+      "id": "a1-88-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which article is correct for ajtó?",
-      "options": [
-        "az",
-        "a",
-        "nincs (none)"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "definite-article-a-az"
-      ]
-    },
-    {
-      "id": "a1-88-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"lamp\"?",
+        "adjective-order-before-the-noun"
+      ],
+      "question": "Which means “a bright room”?",
       "options": [
-        "lámpa",
-        "tükör",
-        "ajtó"
+        "egy világosak szoba",
+        "egy szoba világos",
+        "egy világos szoba"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-88-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"window\"?",
-      "options": [
-        "ablak",
-        "ajtó",
-        "tükör"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 2
     },
     {
       "id": "a1-88-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "lámpa",
-          "lamp"
-        ],
-        [
-          "tükör",
-          "mirror"
-        ],
-        [
-          "ajtó",
-          "door"
-        ],
-        [
-          "ablak",
-          "window"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-home-vocab"
+        "plural-predicate-adjectives-k"
       ],
-      "stage": "controlled"
+      "sentence": "A szobák ____.",
+      "english": "The rooms are big.",
+      "answer": "nagyok"
     },
     {
       "id": "a1-88-controlled-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "____ ablak nyitva van.",
-      "hint": "the — vowel-initial article",
-      "english": "The window is open.",
-      "answer": "Az",
+      "stage": "controlled",
       "teaches": [
-        "definite-article-a-az"
+        "plural-predicate-adjectives-k"
       ],
-      "stage": "controlled"
+      "question": "Which means “The chairs are comfortable”?",
+      "options": [
+        "A székek kényelmes.",
+        "A székek kényelmesek.",
+        "A szék kényelmesek."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-88-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is correct: \"the mirror\"?",
-      "options": [
-        "a tükör",
-        "az tükör",
-        "a tükör az"
-      ],
-      "correct": 0,
-      "teaches": [
-        "definite-article-a-az"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-88-controlled-4",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A lámpa a tükör ____ van.",
-      "hint": "in front of",
-      "english": "The lamp is in front of the mirror.",
-      "answer": "előtt",
-      "teaches": [
-        "postpositions-basic"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-88-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is the correct \"my window\" form?",
-      "options": [
-        "ablakom",
-        "ablakm",
-        "ablakok"
-      ],
-      "correct": 0,
-      "teaches": [
-        "possessive-suffixes"
-      ],
-      "distractor_skills": {
-        "2": "plural-nouns-k"
-      },
-      "stage": "practice"
-    },
-    {
-      "id": "a1-88-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Az ajtó az ablak ____ van.",
-      "hint": "next to",
-      "english": "The door is next to the window.",
-      "answer": "mellett",
-      "teaches": [
-        "postpositions-basic"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-88-practice-3",
       "type": "matching",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "A lámpa a tükör előtt van.",
-          "The lamp is in front of the mirror."
-        ],
-        [
-          "Az ajtó az ablak mellett van.",
-          "The door is next to the window."
-        ],
-        [
-          "ablakom",
-          "my window"
-        ],
-        [
-          "tükröm",
-          "my mirror"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-home-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "világos",
+          "bright"
+        ],
+        [
+          "sötét",
+          "dark"
+        ],
+        [
+          "tiszta",
+          "clean"
+        ],
+        [
+          "kényelmes",
+          "comfortable"
+        ],
+        [
+          "tágas",
+          "spacious"
+        ]
+      ]
     },
     {
-      "id": "a1-88-practice-4",
+      "id": "a1-88-controlled-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "adjective-order-before-the-noun"
+      ],
       "tiles": [
         "A",
-        "lámpa",
-        "a",
-        "tükör",
-        "előtt",
+        "nappaliban",
         "van",
+        "egy",
+        "kényelmes",
+        "kanapé",
         "."
       ],
       "solution": [
         "A",
-        "lámpa",
-        "a",
-        "tükör",
-        "előtt",
+        "nappaliban",
         "van",
+        "egy",
+        "kényelmes",
+        "kanapé",
         "."
       ],
-      "english": "The lamp is in front of the mirror.",
+      "english": "There is a comfortable sofa in the living room."
+    },
+    {
+      "id": "a1-88-practice-1",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "postpositions-basic"
+        "a1-home-vocab"
       ],
-      "stage": "practice"
+      "sentence": "A konyha nagyon ____.",
+      "english": "The kitchen is very dark.",
+      "answer": "sötét"
+    },
+    {
+      "id": "a1-88-practice-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "quantity-choice-questions-mennyi-melyik"
+      ],
+      "question": "Which question asks what the kitchen is like?",
+      "options": [
+        "Hol van a konyha?",
+        "Milyen a konyha?",
+        "Hány konyha van?"
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "0": "spatial-questions-hol-hova"
+      }
+    },
+    {
+      "id": "a1-88-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "singular-after-numbers"
+      ],
+      "question": "Which means “There are three rooms”?",
+      "options": [
+        "Három szobák van.",
+        "Három szoba van.",
+        "Három szoba vannak."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-88-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "singular-after-numbers"
+      ],
+      "sentence": "A lakásban négy ____ van.",
+      "english": "There are four rooms in the flat.",
+      "answer": "szoba"
     },
     {
       "id": "a1-88-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "A lámpa a tükör előtt van."
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Az ajtó az ablak mellett van.",
-        "Az ajtó ablak van mellett."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "postpositions-basic"
+        "plural-predicate-adjectives-k"
       ],
-      "stage": "practice"
+      "question": "Which means “The kitchen is small and clean”?",
+      "options": [
+        "A konyha kicsi és tiszta.",
+        "A konyha kicsik és tiszta.",
+        "A konyha kicsi és tiszták."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-88-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-home-vocab"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol van az ajtó?"
+          "speaker": "Anna",
+          "text": "Milyen a lakás?"
         },
         {
           "speaker": "Meg",
@@ -260,88 +214,105 @@
         }
       ],
       "options": [
-        "Az ajtó az ablak mellett van.",
-        "Az ajtó van ablak mellett."
+        "A lakás világos és kényelmes.",
+        "A lakásban három szoba van.",
+        "A lakás az iskola mellett van."
       ],
-      "correct": 0,
-      "teaches": [
-        "postpositions-basic"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-88-dialogue-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the natural reply to \"Hol van a tükör?\"",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "plural-predicate-adjectives-k"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "A szobák világosak?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "A tükör az ajtó mellett van.",
-        "A tükör ajtó van mellett.",
-        "Tükör van a mellett ajtó."
+        "Igen, a szobák világosak.",
+        "Igen, a szobák világos.",
+        "Igen, a szoba világosak."
       ],
-      "correct": 0,
-      "teaches": [
-        "postpositions-basic"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-88-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write \"The lamp is in front of the mirror.\" in Hungarian.",
-          "answer": "A lámpa a tükör előtt van."
-        }
-      ],
+      "id": "a1-88-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "postpositions-basic"
-      ]
+        "plural-predicate-adjectives-k"
+      ],
+      "tiles": [
+        "A",
+        "szobák",
+        "világosak",
+        "és",
+        "tiszták",
+        "."
+      ],
+      "solution": [
+        "A",
+        "szobák",
+        "világosak",
+        "és",
+        "tiszták",
+        "."
+      ],
+      "english": "The rooms are bright and clean."
     },
     {
-      "id": "a1-88-writing-2",
+      "id": "a1-88-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-home-vocab"
+      ],
       "template": [
         {
-          "prompt": "Write \"my window\" in Hungarian.",
-          "answer": "ablakom"
+          "prompt": "Ask how many rooms there are.",
+          "answer": "Hány szoba van?"
+        },
+        {
+          "prompt": "Say that the kitchen is small and clean.",
+          "answer": "A konyha kicsi és tiszta."
         }
-      ],
-      "teaches": [
-        "possessive-suffixes"
       ]
     },
     {
       "id": "a1-88-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"mirror\"?",
-      "options": [
-        "tükör",
-        "lámpa",
-        "ajtó"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-home-vocab"
+        "plural-nouns-k"
       ],
-      "stage": "check"
+      "sentence": "A székek az asztal mellett ____.",
+      "english": "The chairs are next to the table.",
+      "answer": "vannak"
     },
     {
       "id": "a1-88-check-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is the correct \"my mirror\" form?",
-      "options": [
-        "tükröm",
-        "tüköröm",
-        "tükörem"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "possessive-suffixes"
+        "a1-home-vocab"
       ],
-      "stage": "check"
+      "sentence": "Sok ____ van a nappaliban.",
+      "english": "There is a lot of furniture in the living room.",
+      "answer": "bútor"
     }
   ]
 }

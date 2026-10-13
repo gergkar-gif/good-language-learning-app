@@ -2,254 +2,208 @@
   "lesson": "a1-87",
   "exercises": [
     {
-      "id": "a1-87-review-1",
+      "id": "a1-87-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"chair\"?",
-      "options": [
-        "szék",
-        "asztal",
-        "ágy"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-home-vocab"
-      ]
-    },
-    {
-      "id": "a1-87-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is the correct \"in the living room\" form?",
-      "options": [
-        "nappaliban",
-        "nappaliben",
-        "nappalin"
       ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "ban-ben-in"
-      ]
-    },
-    {
-      "id": "a1-87-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"table\"?",
+      "question": "Which word means “bed”?",
       "options": [
         "asztal",
         "szék",
         "ágy"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 2
     },
     {
-      "id": "a1-87-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"sofa\"?",
-      "options": [
-        "kanapé",
-        "ágy",
-        "szék"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-87-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "asztal",
-          "table"
-        ],
-        [
-          "szék",
-          "chair"
-        ],
-        [
-          "ágy",
-          "bed"
-        ],
-        [
-          "kanapé",
-          "sofa"
-        ]
-      ],
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-87-controlled-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "____ asztal itt van.",
-      "hint": "the — vowel-initial article",
-      "english": "The table is here.",
-      "answer": "Az",
-      "teaches": [
-        "definite-article-a-az"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-87-controlled-3",
+      "id": "a1-87-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is correct: \"the chair\"?",
-      "options": [
-        "a szék",
-        "az szék",
-        "a szeék"
-      ],
-      "correct": 0,
-      "teaches": [
-        "definite-article-a-az"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-87-controlled-4",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "____ ágy az ablak mögött van.",
-      "hint": "the",
-      "english": "The bed is behind the window.",
-      "answer": "Az",
-      "teaches": [
-        "definite-article-a-az"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-87-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which article goes with kanapé?",
-      "options": [
-        "a",
-        "az",
-        "nincs (none)"
-      ],
-      "correct": 0,
-      "teaches": [
-        "definite-article-a-az"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-87-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Az asztal a kanapé ____ van.",
-      "hint": "in front of",
-      "english": "The table is in front of the sofa.",
-      "answer": "előtt",
+      "stage": "introduce",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "practice"
+      "question": "Which means “under the chair”?",
+      "options": [
+        "a szék alatt",
+        "a szék fölött",
+        "a szék mellett"
+      ],
+      "correct": 0
     },
     {
-      "id": "a1-87-practice-3",
+      "id": "a1-87-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "postpositions-basic"
+      ],
+      "sentence": "A szék az asztal ____ van.",
+      "english": "The chair is next to the table.",
+      "answer": "mellett"
+    },
+    {
+      "id": "a1-87-controlled-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "postpositions-basic"
+      ],
+      "question": "Which means “between the bed and the wardrobe”?",
+      "options": [
+        "az ágy és a szekrény között",
+        "az ágy a szekrény között",
+        "között az ágy és a szekrény"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-87-controlled-3",
       "type": "matching",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "Az asztal a kanapé előtt van.",
-          "The table is in front of the sofa."
-        ],
-        [
-          "A szék az asztal mellett van.",
-          "The chair is next to the table."
-        ],
-        [
-          "Az ágy az ablak mögött van.",
-          "The bed is behind the window."
-        ],
-        [
-          "A szék a kanapé és az asztal között van.",
-          "The chair is between the sofa and the table."
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-home-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "mellett",
+          "next to"
+        ],
+        [
+          "alatt",
+          "under"
+        ],
+        [
+          "fölött",
+          "above"
+        ],
+        [
+          "mögött",
+          "behind"
+        ],
+        [
+          "között",
+          "between"
+        ]
+      ]
     },
     {
-      "id": "a1-87-practice-4",
+      "id": "a1-87-controlled-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "postpositions-basic"
+      ],
       "tiles": [
         "A",
+        "kulcs",
+        "a",
         "szék",
-        "az",
-        "asztal",
-        "mellett",
+        "alatt",
         "van",
         "."
       ],
       "solution": [
         "A",
+        "kulcs",
+        "a",
         "szék",
-        "az",
-        "asztal",
-        "mellett",
+        "alatt",
         "van",
         "."
       ],
-      "english": "The chair is next to the table.",
+      "english": "The key is under the chair."
+    },
+    {
+      "id": "a1-87-practice-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "singular-after-numbers"
+      ],
+      "sentence": "A nappaliban van két ____.",
+      "english": "There are two chairs in the living room.",
+      "answer": "szék"
+    },
+    {
+      "id": "a1-87-practice-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "van-and-nincs-there-is-there-isn-t"
+      ],
+      "question": "Which means “There is no wardrobe in the bedroom”?",
+      "options": [
+        "A hálószobában van szekrény.",
+        "A hálószobában nincs szekrény.",
+        "A hálószobába nincs szekrény."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-87-practice-3",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-home-vocab"
+      ],
+      "question": "Which sentence means “The picture is in the living room”?",
+      "options": [
+        "A tükör a nappaliban van.",
+        "A polc a nappaliban van.",
+        "A kép a nappaliban van."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-87-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "practice"
+      "sentence": "A táska az ajtó ____ van.",
+      "english": "The bag is behind the door.",
+      "answer": "mögött"
     },
     {
       "id": "a1-87-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Az asztal a kanapé előtt van."
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A szék az asztal mellett van.",
-        "A szék asztal van mellett."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “The mirror is next to the door”?",
+      "options": [
+        "A tükör mellett az ajtó van.",
+        "A tükör az ajtóban mellett van.",
+        "A tükör az ajtó mellett van."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-87-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "postpositions-basic"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol van az ágy?"
+          "speaker": "Anna",
+          "text": "Hol van a polc?"
         },
         {
           "speaker": "Meg",
@@ -257,88 +211,120 @@
         }
       ],
       "options": [
-        "Az ágy az ablak mögött van.",
-        "Az ágy ablak mögött."
+        "A polc az ágy mellett van.",
+        "A polc az ágy van.",
+        "A polc az ágyban mellett van."
       ],
-      "correct": 0,
-      "teaches": [
-        "postpositions-basic"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-87-dialogue-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the natural reply to \"Van kanapé a nappaliban?\"",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "singular-after-numbers"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Hány szék van az asztal mellett?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "Igen, van egy kanapé.",
-        "Igen, kanapé van a nappali.",
-        "Igen, a kanapé nappali van."
+        "Az asztal mellett két szék van.",
+        "Az asztal mellett két székek van.",
+        "Az asztal mellett két szék vannak."
       ],
       "correct": 0,
-      "teaches": [
-        "van-and-nincs-there-is-there-isn-t"
-      ]
+      "distractor_skills": {
+        "1": "plural-nouns-k"
+      }
     },
     {
-      "id": "a1-87-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write \"The table is in front of the sofa.\" in Hungarian.",
-          "answer": "Az asztal a kanapé előtt van."
-        }
-      ],
+      "id": "a1-87-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "postpositions-basic"
-      ]
+      ],
+      "tiles": [
+        "Az",
+        "asztal",
+        "a",
+        "kanapé",
+        "és",
+        "a",
+        "szék",
+        "között",
+        "van",
+        "."
+      ],
+      "solution": [
+        "Az",
+        "asztal",
+        "a",
+        "kanapé",
+        "és",
+        "a",
+        "szék",
+        "között",
+        "van",
+        "."
+      ],
+      "english": "The table is between the sofa and the chair."
     },
     {
-      "id": "a1-87-writing-2",
+      "id": "a1-87-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-home-vocab"
+      ],
       "template": [
         {
-          "prompt": "Write \"The chair is next to the table.\" in Hungarian.",
-          "answer": "A szék az asztal mellett van."
+          "prompt": "Say that the lamp is above the bed.",
+          "answer": "A lámpa az ágy fölött van."
+        },
+        {
+          "prompt": "Say that there is a sofa in the living room.",
+          "answer": "A nappaliban van egy kanapé."
         }
-      ],
-      "teaches": [
-        "postpositions-basic"
       ]
     },
     {
       "id": "a1-87-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"bed\"?",
-      "options": [
-        "ágy",
-        "asztal",
-        "szék"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-home-vocab"
+        "postpositions-basic"
       ],
-      "stage": "check"
+      "sentence": "A szőnyeg az asztal ____ van.",
+      "english": "The rug is under the table.",
+      "answer": "alatt"
     },
     {
       "id": "a1-87-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which article is correct for ágy?",
-      "options": [
-        "az",
-        "a",
-        "nincs (none)"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "definite-article-a-az"
+        "postpositions-basic"
       ],
-      "stage": "check"
+      "question": "Which means “The lamp is in front of the mirror”?",
+      "options": [
+        "A lámpa a tükör mögött van.",
+        "A lámpa a tükör előtt van.",
+        "A lámpa a tükör alatt van."
+      ],
+      "correct": 1
     }
   ]
 }

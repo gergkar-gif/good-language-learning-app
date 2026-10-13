@@ -2,252 +2,251 @@
   "lesson": "a1-90",
   "exercises": [
     {
-      "id": "a1-90-review-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which word means \"in front of\"?",
-      "options": [
-        "előtt",
-        "között",
-        "mögött"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "postpositions-basic"
-      ]
-    },
-    {
-      "id": "a1-90-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which reads correctly as \"next to the bedroom\"?",
-      "options": [
-        "hálószoba mellett",
-        "mellett hálószoba",
-        "hálószoba mellette"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "postpositions-basic"
-      ]
-    },
-    {
-      "id": "a1-90-intro-1",
+      "id": "a1-90-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"bright\"?",
-      "options": [
-        "világos",
-        "tiszta",
-        "kényelmes"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-home-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “cosy”?",
+      "options": [
+        "tiszta",
+        "sötét",
+        "otthonos"
+      ],
+      "correct": 2
     },
     {
-      "id": "a1-90-intro-2",
+      "id": "a1-90-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"cozy\"?",
-      "options": [
-        "otthonos",
-        "tiszta",
-        "világos"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-home-vocab"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "introduce"
+      "question": "Which question asks where the sofa is?",
+      "options": [
+        "Milyen a kanapé?",
+        "Hol van a kanapé?",
+        "Hány kanapé van?"
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "0": "quantity-choice-questions-mennyi-melyik"
+      }
     },
     {
       "id": "a1-90-controlled-1",
-      "type": "matching",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "otthonos",
-          "cozy"
-        ],
-        [
-          "tiszta",
-          "clean"
-        ],
-        [
-          "kényelmes",
-          "comfortable"
-        ],
-        [
-          "világos",
-          "bright"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-home-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "____ szoba van a lakásban?",
+      "english": "How many rooms are there in the flat?",
+      "answer": "Hány"
     },
     {
       "id": "a1-90-controlled-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A nappali ____ és otthonos.",
-      "hint": "bright",
-      "english": "The living room is bright and cozy.",
-      "answer": "világos",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-home-vocab"
+        "definite-article-a-az"
       ],
-      "stage": "controlled"
+      "question": "Which fits? “Van egy tévé. ____ tévé a kanapé előtt van.”",
+      "options": [
+        "Egy",
+        "Az",
+        "A"
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "0": "indefinite-article-egy"
+      }
     },
     {
       "id": "a1-90-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the grammatically correct sentence.",
-      "options": [
-        "A nappali világos.",
-        "A nappali van világos.",
-        "A nappali világos van."
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "van-zero-copula"
+        "a1-home-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "hol",
+          "where"
+        ],
+        [
+          "milyen",
+          "what is it like"
+        ],
+        [
+          "hány",
+          "how many"
+        ],
+        [
+          "mi",
+          "what"
+        ],
+        [
+          "otthonos",
+          "cosy"
+        ]
+      ]
     },
     {
       "id": "a1-90-controlled-4",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A lakás ____.",
-      "hint": "comfortable",
-      "english": "The apartment is comfortable.",
-      "answer": "kényelmes",
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-90-practice-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which sentence lists three adjectives correctly?",
-      "options": [
-        "A lakás tiszta, kényelmes és világos.",
-        "A lakás tiszták, kényelmesek és világosak.",
-        "A lakás tiszta, és, kényelmes és világos."
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-90-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A hálószoba ____ világos.",
-      "hint": "also/too",
-      "english": "The bedroom is also bright.",
-      "answer": "is",
-      "teaches": [
-        "is-placing-also-too"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-90-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "A nappali világos és otthonos.",
-          "The living room is bright and cozy."
-        ],
-        [
-          "A lakás tiszta, kényelmes és világos.",
-          "The apartment is clean, comfortable and bright."
-        ],
-        [
-          "A hálószoba is világos.",
-          "The bedroom is also bright."
-        ],
-        [
-          "A lakás kényelmes.",
-          "The apartment is comfortable."
-        ]
-      ],
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-90-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "singular-after-numbers"
+      ],
       "tiles": [
         "A",
-        "lakás",
-        "kényelmes",
-        "és",
-        "világos",
+        "konyhában",
+        "négy",
+        "szék",
+        "van",
         "."
       ],
       "solution": [
         "A",
-        "lakás",
-        "kényelmes",
-        "és",
-        "világos",
+        "konyhában",
+        "négy",
+        "szék",
+        "van",
         "."
       ],
-      "english": "The apartment is comfortable and bright.",
+      "english": "There are four chairs in the kitchen."
+    },
+    {
+      "id": "a1-90-practice-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "van-zero-copula"
+        "indefinite-article-egy"
       ],
-      "stage": "practice"
+      "sentence": "A hálószobában van ____ ágy.",
+      "english": "There is a bed in the bedroom.",
+      "answer": "egy"
+    },
+    {
+      "id": "a1-90-practice-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "postpositions-basic"
+      ],
+      "question": "Which sentence means “The sofa is in front of the window”?",
+      "options": [
+        "A kanapé az ablak mögött van.",
+        "A kanapé az ablak előtt van.",
+        "A kanapé az ablak alatt van."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-90-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "possessive-suffixes"
+      ],
+      "question": "Which sentence means “Her bedroom is bright”?",
+      "options": [
+        "A hálószobám világos.",
+        "A hálószobád világos.",
+        "A hálószobája világos."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-90-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "plural-predicate-adjectives-k"
+      ],
+      "sentence": "A szobák ____ és tiszták.",
+      "english": "The rooms are bright and clean.",
+      "answer": "világosak"
     },
     {
       "id": "a1-90-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "A nappali világos és otthonos."
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A hálószoba is világos.",
-        "A hálószoba van világos."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "van-zero-copula"
+        "a1-home-vocab"
       ],
-      "stage": "practice"
+      "question": "Which answer fits “Milyen a konyha?”",
+      "options": [
+        "Kicsi és tiszta.",
+        "Három szoba van.",
+        "A nappali mellett van."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-90-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "How many rooms are there in the flat?",
+      "options": [
+        "Two.",
+        "Three.",
+        "Four."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-90-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Where is the sofa in the living room?",
+      "options": [
+        "In front of the window.",
+        "Behind the wardrobe.",
+        "Next to the kitchen."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-90-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does Károly's flat not have?",
+      "options": [
+        "A garden.",
+        "A window.",
+        "A sofa."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-90-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "van-and-nincs-there-is-there-isn-t"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Milyen a lakás?"
+          "speaker": "Anna",
+          "text": "Van kert a lakásban?"
         },
         {
           "speaker": "Károly",
@@ -255,88 +254,111 @@
         }
       ],
       "options": [
-        "A lakás tiszta, kényelmes és világos.",
-        "A lakás van tiszta."
+        "Nem, nincs kert.",
+        "Nem, van kert.",
+        "Nem, nincs a kert."
       ],
-      "correct": 0,
-      "teaches": [
-        "van-zero-copula"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-90-dialogue-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the natural reply to \"Milyen a konyha?\"",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "possessive-suffixes"
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Milyen a lakásod?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "A konyha világos.",
-        "A konyha van világos.",
-        "A konyha világos van."
+        "A lakásom kicsi, de kényelmes.",
+        "A lakásod kicsi, de kényelmes.",
+        "A lakása kicsi, de kényelmes."
       ],
-      "correct": 0,
-      "teaches": [
-        "van-zero-copula"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-90-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write \"The bedroom is clean and cozy.\" in Hungarian.",
-          "answer": "A hálószoba tiszta és otthonos."
-        }
-      ],
+      "id": "a1-90-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "van-zero-copula"
-      ]
+        "postpositions-basic"
+      ],
+      "tiles": [
+        "A",
+        "tévé",
+        "a",
+        "kanapé",
+        "előtt",
+        "van",
+        "."
+      ],
+      "solution": [
+        "A",
+        "tévé",
+        "a",
+        "kanapé",
+        "előtt",
+        "van",
+        "."
+      ],
+      "english": "The TV is in front of the sofa."
     },
     {
-      "id": "a1-90-writing-2",
+      "id": "a1-90-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-home-vocab"
+      ],
       "template": [
         {
-          "prompt": "Write \"The apartment is clean, comfortable and bright.\" in Hungarian.",
-          "answer": "A lakás tiszta, kényelmes és világos."
+          "prompt": "Ask how many rooms there are in the flat.",
+          "answer": "Hány szoba van a lakásban?"
+        },
+        {
+          "prompt": "Say that the living room is big and bright.",
+          "answer": "A nappali nagy és világos."
         }
-      ],
-      "teaches": [
-        "van-zero-copula"
       ]
     },
     {
       "id": "a1-90-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"clean\"?",
-      "options": [
-        "tiszta",
-        "világos",
-        "kényelmes"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-home-vocab"
+        "definite-article-a-az"
       ],
-      "stage": "check"
+      "sentence": "Van egy kanapé. ____ kanapé kényelmes.",
+      "english": "There is a sofa. The sofa is comfortable.",
+      "answer": "A"
     },
     {
       "id": "a1-90-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence correctly uses the zero-copula rule?",
-      "options": [
-        "A szoba kényelmes.",
-        "A szoba van kényelmes.",
-        "A szoba kényelmes van."
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "van-zero-copula"
+        "a1-home-vocab"
       ],
-      "stage": "check"
+      "question": "Which sentence means “The living room is big, but dark”?",
+      "options": [
+        "A nappali nagy, de sötét.",
+        "A nappali kicsi, de sötét.",
+        "A nappali nagy, de világos."
+      ],
+      "correct": 0
     }
   ]
 }

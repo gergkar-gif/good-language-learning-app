@@ -2,74 +2,84 @@
   "lesson": "a1-86",
   "exercises": [
     {
-      "id": "a1-86-review-1",
+      "id": "a1-86-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"sport\"?",
-      "options": [
-        "sport",
-        "munka",
-        "tanulás"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "a1-frequency-word-order-vocab"
-      ]
+        "a1-home-vocab"
+      ],
+      "question": "Which word means “bedroom”?",
+      "options": [
+        "fürdőszoba",
+        "hálószoba",
+        "nappali"
+      ],
+      "correct": 1
     },
     {
-      "id": "a1-86-review-2",
+      "id": "a1-86-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is the correct -ik-verb 1st person singular pattern?",
-      "options": [
-        "-om / -em / -öm",
-        "-ok / -ek / -ök",
-        "-unk / -ünk"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "ik-verbs-dolgozom-not-dolgozok"
-      ]
-    },
-    {
-      "id": "a1-86-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"living room\"?",
+        "ban-ben-in"
+      ],
+      "question": "Which means “in the kitchen”?",
       "options": [
-        "nappali",
-        "hálószoba",
-        "konyha"
+        "a konyhába",
+        "a konyhaban",
+        "a konyhában"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-86-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"kitchen\"?",
-      "options": [
-        "konyha",
-        "fürdőszoba",
-        "hálószoba"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 2,
+      "distractor_skills": {
+        "0": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-86-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "ban-ben-in"
+      ],
+      "sentence": "A ____ van egy asztal.",
+      "english": "There is a table in the kitchen.",
+      "answer": "konyhában"
+    },
+    {
+      "id": "a1-86-controlled-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "movement-with-ba-be"
+      ],
+      "question": "Which completes the answer? “Hová mész?” – “A ____ megyek.”",
+      "options": [
+        "fürdőszobában",
+        "fürdőszobába",
+        "fürdőszobaba"
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "0": "ban-ben-in"
+      }
+    },
+    {
+      "id": "a1-86-controlled-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-home-vocab"
+      ],
       "pairs": [
+        [
+          "konyha",
+          "kitchen"
+        ],
         [
           "nappali",
           "living room"
@@ -79,264 +89,238 @@
           "bedroom"
         ],
         [
-          "konyha",
-          "kitchen"
-        ],
-        [
           "fürdőszoba",
           "bathroom"
+        ],
+        [
+          "előszoba",
+          "hallway"
         ]
-      ],
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-86-controlled-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A ____ világos és otthonos.",
-      "hint": "living room",
-      "english": "The living room is bright and cozy.",
-      "answer": "nappali",
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-86-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which means \"in the kitchen\"?",
-      "options": [
-        "a konyhában",
-        "a konyhaban",
-        "a konyhán"
-      ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-86-controlled-4",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A ____ is világos.",
-      "hint": "bedroom",
-      "english": "The bedroom is also bright.",
-      "answer": "hálószoba",
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-86-practice-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which room is \"a fürdőszoba\"?",
-      "options": [
-        "bathroom",
-        "bedroom",
-        "kitchen"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-86-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A konyha a nappali ____ van.",
-      "hint": "next to",
-      "english": "The kitchen is next to the living room.",
-      "answer": "mellett",
-      "teaches": [
-        "postpositions-basic"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-86-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "A nappali világos és otthonos.",
-          "The living room is bright and cozy."
-        ],
-        [
-          "A hálószoba is világos.",
-          "The bedroom is also bright."
-        ],
-        [
-          "A konyha a nappali mellett van.",
-          "The kitchen is next to the living room."
-        ],
-        [
-          "A fürdőszoba a hálószoba mellett van.",
-          "The bathroom is next to the bedroom."
-        ]
-      ],
-      "teaches": [
-        "a1-home-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-86-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "tiles": [
         "A",
-        "nappali",
-        "világos",
-        "és",
-        "otthonos",
+        "konyhában",
+        "van",
+        "egy",
+        "asztal",
         "."
       ],
       "solution": [
         "A",
-        "nappali",
-        "világos",
-        "és",
-        "otthonos",
+        "konyhában",
+        "van",
+        "egy",
+        "asztal",
         "."
       ],
-      "english": "The living room is bright and cozy.",
+      "english": "There is a table in the kitchen."
+    },
+    {
+      "id": "a1-86-practice-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "van-zero-copula"
+        "ban-ben-in"
       ],
-      "stage": "practice"
+      "sentence": "Meg a ____ van.",
+      "english": "Meg is in the bathroom.",
+      "answer": "fürdőszobában"
+    },
+    {
+      "id": "a1-86-practice-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "van-and-nincs-there-is-there-isn-t"
+      ],
+      "question": "Which means “There is no lamp in the kitchen”?",
+      "options": [
+        "A konyhában van lámpa.",
+        "A konyhában nincs lámpa.",
+        "A konyhába nincs lámpa."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-86-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "spatial-questions-hol-hova"
+      ],
+      "question": "Which question fits the answer “A hálószobában.”?",
+      "options": [
+        "Hol van Anna?",
+        "Hová megy Anna?",
+        "Hol megy Anna?"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-86-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "movement-with-ba-be"
+      ],
+      "sentence": "Károly a ____ megy.",
+      "english": "Károly is going into the bedroom.",
+      "answer": "hálószobába"
     },
     {
       "id": "a1-86-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "A nappali világos és otthonos."
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A hálószoba is világos.",
-        "A hálószoba van otthonos."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "van-zero-copula"
+        "a1-home-vocab"
       ],
-      "stage": "practice"
+      "question": "What does “előszoba” mean?",
+      "options": [
+        "hallway",
+        "bathroom",
+        "kitchen"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-86-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Hol van a konyha?"
+          "speaker": "Anna",
+          "text": "Hol van Károly?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "A konyha a nappali mellett van.",
-        "A konyha nappali van."
+        "A konyhába van.",
+        "A konyhában van.",
+        "A konyhaban van."
       ],
-      "correct": 0,
-      "teaches": [
-        "postpositions-basic"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-86-dialogue-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the natural reply to \"Hány szoba van a lakásban?\"",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "van-and-nincs-there-is-there-isn-t"
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Van lámpa a konyhában?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "Két szoba van.",
-        "Két szobák van.",
-        "Négy lakás van."
+        "Igen, van lámpa a konyhában.",
+        "Igen, nincs lámpa a konyhában.",
+        "Igen, van lámpa a konyhába."
       ],
-      "correct": 0,
-      "teaches": [
-        "singular-after-numbers"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-86-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write \"The living room is bright and cozy.\" in Hungarian.",
-          "answer": "A nappali világos és otthonos."
-        }
-      ],
+      "id": "a1-86-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "van-zero-copula"
-      ]
+        "ban-ben-in"
+      ],
+      "tiles": [
+        "Az",
+        "előszobában",
+        "van",
+        "egy",
+        "lámpa",
+        "."
+      ],
+      "solution": [
+        "Az",
+        "előszobában",
+        "van",
+        "egy",
+        "lámpa",
+        "."
+      ],
+      "english": "There is a lamp in the hallway."
     },
     {
-      "id": "a1-86-writing-2",
+      "id": "a1-86-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-home-vocab"
+      ],
       "template": [
         {
-          "prompt": "Write \"The bathroom is next to the bedroom.\" in Hungarian.",
-          "answer": "A fürdőszoba a hálószoba mellett van."
+          "prompt": "Say that there is a table in the kitchen.",
+          "answer": "A konyhában van egy asztal."
+        },
+        {
+          "prompt": "Say that you are going into the living room.",
+          "answer": "A nappaliba megyek."
         }
-      ],
-      "teaches": [
-        "postpositions-basic"
       ]
     },
     {
       "id": "a1-86-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"bathroom\"?",
-      "options": [
-        "fürdőszoba",
-        "hálószoba",
-        "konyha"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-home-vocab"
+        "ban-ben-in"
       ],
-      "stage": "check"
+      "sentence": "Anna az ____ van.",
+      "english": "Anna is in the hallway.",
+      "answer": "előszobában"
     },
     {
       "id": "a1-86-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is the correct \"in the bedroom\" form?",
+      "stage": "check",
+      "teaches": [
+        "movement-with-ba-be"
+      ],
+      "question": "Which means “I am going into the living room”?",
       "options": [
-        "hálószobában",
-        "hálószobaban",
-        "hálószobán"
+        "A nappaliba megyek.",
+        "A nappaliban megyek.",
+        "A nappalibe megyek."
       ],
       "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "stage": "check"
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     }
   ]
 }
