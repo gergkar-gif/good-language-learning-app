@@ -2,292 +2,249 @@
   "lesson": "a1-122",
   "exercises": [
     {
-      "id": "a1-122-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'bolt' mean?",
-      "options": [
-        "shop",
-        "product",
-        "gift"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
-    },
-    {
-      "id": "a1-122-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'nadrág' mean?",
-      "options": [
-        "trousers",
-        "T-shirt",
-        "bag"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
-    },
-    {
       "id": "a1-122-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'táska' mean?",
-      "options": [
-        "bag",
-        "book",
-        "shoe"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-shopping-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “white”?",
+      "options": [
+        "fehér",
+        "fekete",
+        "kék"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-122-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'ajándék' mean?",
-      "options": [
-        "gift",
-        "book",
-        "bag"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-shopping-vocab"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "introduce"
+      "question": "Which sentence says you want a red T-shirt?",
+      "options": [
+        "Egy pólót piros kérek.",
+        "Egy piros pólót kérek.",
+        "Egy pirost pólót kérek."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-122-controlled-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Melyik ____ szép?",
-      "hint": "bag",
-      "english": "Which bag is pretty?",
-      "answer": "táska",
+      "stage": "controlled",
       "teaches": [
         "a1-shopping-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "A kabát ____.",
+      "english": "The coat is green.",
+      "answer": "zöld"
     },
     {
       "id": "a1-122-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'shoe'.",
-      "options": [
-        "cipő",
-        "könyv",
-        "táska"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-shopping-vocab"
+        "van-zero-copula"
       ],
-      "stage": "controlled"
+      "sentence": "A cipő ____.",
+      "english": "The shoe is black.",
+      "answer": "fekete"
     },
     {
       "id": "a1-122-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "cipő",
-          "shoe"
-        ],
-        [
-          "táska",
-          "bag"
-        ],
-        [
-          "könyv",
-          "book"
-        ],
-        [
-          "ajándék",
-          "gift"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-shopping-vocab"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "controlled"
+      "question": "Which sentence says you are buying a blue shirt?",
+      "options": [
+        "Inget kék veszek.",
+        "Kéket inget veszek.",
+        "Kék inget veszek."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-122-controlled-4",
-      "type": "substitution",
+      "type": "sentence-builder",
       "category": "grammar",
-      "base_sentence": "Ezt kérem, nem azt.",
-      "base_word": "Ezt",
-      "base_gloss": "I'd like this one, not that one.",
-      "options": [
-        {
-          "word": "cipő",
-          "inflected": "Ezt a cipőt",
-          "sentence": "Ezt a cipőt kérem, nem azt.",
-          "gloss": "this shoe"
-        },
-        {
-          "word": "könyv",
-          "inflected": "Ezt a könyvet",
-          "sentence": "Ezt a könyvet kérem, nem azt.",
-          "gloss": "this book"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Anna",
+        "egy",
+        "zöld",
+        "kabátot",
+        "vesz",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "egy",
+        "zöld",
+        "kabátot",
+        "vesz",
+        "."
+      ],
+      "english": "Anna is buying a green coat."
     },
     {
       "id": "a1-122-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which word means 'which one'?",
-      "options": [
-        "melyik",
-        "milyen",
-        "mennyi"
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik"
+        "a1-shopping-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "piros",
+          "red"
+        ],
+        [
+          "kék",
+          "blue"
+        ],
+        [
+          "fekete",
+          "black"
+        ],
+        [
+          "fehér",
+          "white"
+        ],
+        [
+          "zöld",
+          "green"
+        ],
+        [
+          "ing",
+          "shirt"
+        ]
+      ]
     },
     {
       "id": "a1-122-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Melyik színt szereted? ____ tetszik.",
-      "hint": "this one",
-      "english": "Which color do you like? I like this one.",
-      "answer": "Ez",
-      "teaches": [
-        "demonstratives-ez-az"
+      "type": "substitution",
+      "category": "vocabulary",
+      "stage": "practice",
+      "base_sentence": "A póló piros.",
+      "base_word": "piros",
+      "base_gloss": "The T-shirt is red.",
+      "options": [
+        {
+          "word": "kék",
+          "inflected": "kék",
+          "sentence": "A póló kék.",
+          "gloss": "blue"
+        },
+        {
+          "word": "fehér",
+          "inflected": "fehér",
+          "sentence": "A póló fehér.",
+          "gloss": "white"
+        }
       ],
-      "stage": "practice"
+      "teaches": [
+        "a1-shopping-vocab"
+      ]
     },
     {
       "id": "a1-122-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "cipő",
-          "shoe"
-        ],
-        [
-          "táska",
-          "bag"
-        ],
-        [
-          "könyv",
-          "book"
-        ],
-        [
-          "ajándék",
-          "gift"
-        ],
-        [
-          "bolt",
-          "shop"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-shopping-vocab"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "practice"
+      "sentence": "Fekete ____ veszek.",
+      "english": "I am buying black trousers.",
+      "answer": "nadrágot"
     },
     {
       "id": "a1-122-practice-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Ez a könyv ajándék.",
-      "base_word": "könyv",
-      "base_gloss": "This book is a gift.",
-      "options": [
-        {
-          "word": "táska",
-          "inflected": "táska",
-          "sentence": "Ez a táska ajándék.",
-          "gloss": "bag"
-        },
-        {
-          "word": "cipő",
-          "inflected": "cipő",
-          "sentence": "Ez a cipő ajándék.",
-          "gloss": "shoe"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-shopping-vocab"
+        "singular-after-numbers"
       ],
-      "stage": "practice"
+      "question": "Which sentence says there are two red T-shirts?",
+      "options": [
+        "Két piros póló van.",
+        "Két piros pólók van.",
+        "Két pólók piros van."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-122-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Ez a termék jó?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Igen, tetszik.",
-        "Mennyibe kerül?"
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-shopping-vocab"
+        "quantity-choice-questions-mennyi-melyik"
       ],
-      "stage": "practice"
+      "question": "Which question asks what the shirt is like?",
+      "options": [
+        "Mi az ing?",
+        "Milyen az ing?",
+        "Hol az ing?"
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "0": "ki-and-mi",
+        "2": "spatial-questions-hol-hova"
+      }
     },
     {
       "id": "a1-122-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Melyik táskát szereted jobban?"
+          "speaker": "Eladó",
+          "text": "Milyen inget kér?"
         },
         {
-          "speaker": "Anna",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Ezt szeretem, nem azt.",
-        "Szia, hogy vagy?"
+        "Egy fehér ing kérek.",
+        "Egy fehér ingek kérek.",
+        "Egy fehér inget kérek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-122-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-shopping-vocab"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Ez a könyv ajándék?"
+          "speaker": "Anna",
+          "text": "Milyen a nadrág?"
         },
         {
           "speaker": "Meg",
@@ -295,73 +252,90 @@
         }
       ],
       "options": [
-        "Igen, ez ajándék.",
-        "Nagy vagy kicsi?"
+        "Kék.",
+        "Igen, a nadrág.",
+        "Egy nadrágot veszek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-122-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask which bag is pretty.",
-          "answer": "Melyik táska szép?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik"
-      ]
+        "adjective-order-before-the-noun"
+      ],
+      "tiles": [
+        "Egy",
+        "fehér",
+        "inget",
+        "és",
+        "egy",
+        "kék",
+        "nadrágot",
+        "kérek",
+        "."
+      ],
+      "solution": [
+        "Egy",
+        "fehér",
+        "inget",
+        "és",
+        "egy",
+        "kék",
+        "nadrágot",
+        "kérek",
+        "."
+      ],
+      "english": "I would like a white shirt and blue trousers."
     },
     {
       "id": "a1-122-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-shopping-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say you'd like this one, not that one.",
-          "answer": "Ezt kérem, nem azt."
+          "prompt": "Say that the coat is green.",
+          "answer": "A kabát zöld."
+        },
+        {
+          "prompt": "Say that you are buying a red T-shirt.",
+          "answer": "Egy piros pólót veszek."
         }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
       ]
     },
     {
       "id": "a1-122-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'book'.",
-      "options": [
-        "könyv",
-        "cipő",
-        "táska"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-shopping-vocab"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "check"
+      "sentence": "Egy ____ pólót veszek.",
+      "english": "I am buying a red T-shirt.",
+      "answer": "piros"
     },
     {
       "id": "a1-122-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'gift'.",
-      "options": [
-        "ajándék",
-        "könyv",
-        "cipő"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-shopping-vocab"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "check"
+      "question": "Which sentence says you want a black coat?",
+      "options": [
+        "Kabátot fekete kérek.",
+        "Fekete kabátot kérek.",
+        "Feketét kabátot kérek."
+      ],
+      "correct": 1
     }
   ]
 }

@@ -6,105 +6,147 @@
   "characters": [
     "Eladó",
     "Meg",
+    "Anna",
     "Károly"
   ],
   "paragraphs": [
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg and Károly go to a shop to buy something practical."
+      "text": "Saturday morning. Meg and Anna are in a clothes shop. Tomorrow is Károly's birthday and they want to buy him a gift."
     },
     {
       "type": "dialogue",
       "speaker": "Eladó",
-      "text": "Jó napot kívánok! Mit keres?"
+      "text": "Jó napot kívánok! Segíthetek?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Egy pólót és egy táskát keresek."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Ez a termék jó?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Igen, tetszik. Milyen a méret?"
+      "text": "Jó napot! Ajándékot szeretnék, egy inget."
     },
     {
       "type": "dialogue",
       "speaker": "Eladó",
-      "text": "Nagy vagy kicsi?"
+      "text": "Milyen színt szeretne?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "A nagy jó. Milyen a szín?"
+      "text": "Egy kék inget kérek."
     },
     {
       "type": "dialogue",
       "speaker": "Eladó",
-      "text": "Piros, kék, fekete és fehér van."
+      "text": "Milyen méret kell?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "A kék pólót kérem. Mennyi az ár?"
+      "text": "Nagy kell. Károly magas."
     },
     {
       "type": "dialogue",
       "speaker": "Eladó",
-      "text": "Tíz forint."
+      "text": "Tessék, ez a méret jó. Nyolcezer forint."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Szép, de túl drága. Van olcsó?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Eladó",
+      "text": "Van egy fehér ing. Az hatezer forint."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Rendben. A táska is ajándék?"
+      "text": "Szép és nagy. Azt kérem."
+    },
+    {
+      "type": "narration",
+      "lang": "en",
+      "text": "Meg looks around for the till."
     },
     {
       "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Nem, az ajándék külön van."
+      "speaker": "Meg",
+      "text": "Legyen szíves, hol van a pénztár?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Eladó",
+      "text": "Ott van, asszonyom. Fizetni kell a pénztárnál."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Köszönöm. Van kártyám."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Károly nagyon örül majd az ajándéknak!"
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Mit szeretne vásárolni Meg az üzletben?",
+          "question": "Mit szeretne venni Meg?",
           "options": [
-            "Egy könyvet és egy tollat",
-            "Egy pólót és egy táskát",
-            "Egy téli kabátot és sálat",
-            "Egy cipőt és zoknit"
-          ],
-          "correctIndex": 1,
-          "explanation": "Meg ezt mondja az eladónak: „Egy pólót és egy táskát keresek.” (I am looking for a T-shirt and a bag.)"
-        },
-        {
-          "question": "Milyen színű és méretű pólót választ Meg?",
-          "options": [
-            "Kicsi méretű fehér pólót",
-            "Nagy méretű piros pólót",
-            "Közepes méretű fekete pólót",
-            "Nagy méretű kék pólót"
-          ],
-          "correctIndex": 3,
-          "explanation": "Meg kiválasztja a méretet és a színt: „A nagy jó.” és „A kék pólót kérem.” (The big one is good; The blue T-shirt, please.)"
-        },
-        {
-          "question": "Mennyibe kerül a kiválasztott termék az eladó szerint?",
-          "options": [
-            "Tíz forintba kerül.",
-            "Öt forintba kerül.",
-            "Húsz forintba kerül.",
-            "Ingyenes ajándék a vásárlóknak."
+            "Egy inget.",
+            "Egy nadrágot.",
+            "Egy kabátot.",
+            "Egy táskát."
           ],
           "correctIndex": 0,
-          "explanation": "Meg kérdésére az eladó egyértelműen válaszol: „Tíz forint.” (Ten forints.)"
+          "explanation": "Meg says: „Ajándékot szeretnék, egy inget.” (I would like a gift, a shirt.)",
+          "questionEnglish": "What would Meg like to buy?",
+          "optionsEnglish": [
+            "A shirt.",
+            "Trousers.",
+            "A coat.",
+            "A bag."
+          ]
+        },
+        {
+          "question": "Miért nem kérik a kék inget?",
+          "options": [
+            "Mert túl drága.",
+            "Mert túl kicsi.",
+            "Mert nem szép.",
+            "Mert piros."
+          ],
+          "correctIndex": 0,
+          "explanation": "Anna says: „Szép, de túl drága.” (Nice, but too expensive.)",
+          "questionEnglish": "Why do they not take the blue shirt?",
+          "optionsEnglish": [
+            "Because it is too expensive.",
+            "Because it is too small.",
+            "Because it is not nice.",
+            "Because it is red."
+          ]
+        },
+        {
+          "question": "Mennyibe kerül a fehér ing?",
+          "options": [
+            "Hatezer forint.",
+            "Nyolcezer forint.",
+            "Ezer forint.",
+            "Tízezer forint."
+          ],
+          "correctIndex": 0,
+          "explanation": "The assistant says: „Az hatezer forint.” (That one is 6,000 forints.)",
+          "questionEnglish": "How much does the white shirt cost?",
+          "optionsEnglish": [
+            "6,000 forints.",
+            "8,000 forints.",
+            "1,000 forints.",
+            "10,000 forints."
+          ]
         }
       ]
     }

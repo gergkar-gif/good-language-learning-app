@@ -2,268 +2,221 @@
   "lesson": "a1-123",
   "exercises": [
     {
-      "id": "a1-123-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'táska' mean?",
-      "options": [
-        "bag",
-        "shoe",
-        "gift"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
-    },
-    {
-      "id": "a1-123-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'ajándék' mean?",
-      "options": [
-        "gift",
-        "product",
-        "shop"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
-    },
-    {
       "id": "a1-123-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'méret' mean?",
-      "options": [
-        "size",
-        "price",
-        "colour"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-shopping-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “size”?",
+      "options": [
+        "méret",
+        "szín",
+        "ár"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-123-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'ár' mean?",
-      "options": [
-        "price",
-        "size",
-        "red"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-shopping-vocab"
+        "quantity-choice-questions-mennyi-melyik"
       ],
-      "stage": "introduce"
+      "question": "Which question asks about the size?",
+      "options": [
+        "Mennyibe kerül?",
+        "Milyen méret kell?",
+        "Melyik szín kell?"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-123-controlled-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Milyen a ____? Nagy vagy kicsi?",
-      "english": "What's the size like? Large or small?",
-      "answer": "méret",
+      "stage": "controlled",
       "teaches": [
         "a1-shopping-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "Melyik ____ kell?",
+      "english": "Which colour is needed?",
+      "answer": "szín"
     },
     {
       "id": "a1-123-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'colour'.",
-      "options": [
-        "szín",
-        "ár",
-        "méret"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-shopping-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-123-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "méret",
-          "size"
-        ],
-        [
-          "ár",
-          "price"
-        ],
-        [
-          "szín",
-          "colour"
-        ],
-        [
-          "piros",
-          "red"
-        ]
-      ],
-      "teaches": [
-        "a1-shopping-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-123-controlled-4",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Mennyi az ár?",
-      "base_word": "ár",
-      "base_gloss": "How much is the price?",
-      "options": [
-        {
-          "word": "méret",
-          "inflected": "méret",
-          "sentence": "Mennyi a méret?",
-          "gloss": "size"
-        },
-        {
-          "word": "szín",
-          "inflected": "szín",
-          "sentence": "Milyen a szín?",
-          "gloss": "colour"
-        }
-      ],
-      "teaches": [
-        "quantity-choice-questions-mennyi-melyik"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-123-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which question word asks about price?",
-      "options": [
-        "mennyi",
-        "milyen",
-        "melyik"
-      ],
-      "correct": 0,
-      "teaches": [
-        "quantity-choice-questions-mennyi-melyik"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-123-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A nagy méret ____ forint.",
-      "hint": "ten",
-      "english": "The large size is ten forints.",
-      "answer": "tíz",
+      "stage": "controlled",
       "teaches": [
         "cardinal-numbers"
       ],
-      "stage": "practice"
+      "sentence": "A póló ____ forint.",
+      "english": "The T-shirt is 3,000 forints.",
+      "answer": "háromezer"
     },
     {
-      "id": "a1-123-practice-3",
+      "id": "a1-123-controlled-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "question": "You like this coat next to you. Which sentence?",
+      "options": [
+        "Ez veszem.",
+        "Azt veszem.",
+        "Ezt veszem."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "1": "demonstratives-ez-az"
+      }
+    },
+    {
+      "id": "a1-123-controlled-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "nagyon-very"
+      ],
+      "tiles": [
+        "A",
+        "kabát",
+        "túl",
+        "nagy",
+        "."
+      ],
+      "solution": [
+        "A",
+        "kabát",
+        "túl",
+        "nagy",
+        "."
+      ],
+      "english": "The coat is too big."
+    },
+    {
+      "id": "a1-123-practice-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-shopping-vocab"
+      ],
       "pairs": [
         [
           "méret",
           "size"
         ],
         [
-          "ár",
-          "price"
-        ],
-        [
           "szín",
           "colour"
         ],
         [
-          "piros",
-          "red"
+          "ár",
+          "price"
         ],
         [
-          "nagy",
-          "large"
+          "drága",
+          "expensive"
+        ],
+        [
+          "olcsó",
+          "cheap"
+        ],
+        [
+          "kabát",
+          "coat"
         ]
+      ]
+    },
+    {
+      "id": "a1-123-practice-2",
+      "type": "substitution",
+      "category": "vocabulary",
+      "stage": "practice",
+      "base_sentence": "Az ing túl kicsi.",
+      "base_word": "kicsi",
+      "base_gloss": "The shirt is too small.",
+      "options": [
+        {
+          "word": "nagy",
+          "inflected": "nagy",
+          "sentence": "Az ing túl nagy.",
+          "gloss": "large"
+        },
+        {
+          "word": "drága",
+          "inflected": "drága",
+          "sentence": "Az ing túl drága.",
+          "gloss": "expensive"
+        }
       ],
       "teaches": [
         "a1-shopping-vocab"
+      ]
+    },
+    {
+      "id": "a1-123-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "cardinal-numbers"
       ],
-      "stage": "practice"
+      "question": "Which number is 8,000?",
+      "options": [
+        "nyolcezer",
+        "hatezer",
+        "ötezer"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-123-practice-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Piros pólót kérek.",
-      "base_word": "Piros",
-      "base_gloss": "I'd like a red T-shirt.",
-      "options": [
-        {
-          "word": "kék",
-          "inflected": "Kék",
-          "sentence": "Kék pólót kérek.",
-          "gloss": "blue"
-        },
-        {
-          "word": "fekete",
-          "inflected": "Fekete",
-          "sentence": "Fekete pólót kérek.",
-          "gloss": "black"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-shopping-vocab"
+        "mert-because"
       ],
-      "stage": "practice"
+      "question": "Which sentence says: I won't take it because it is too expensive?",
+      "options": [
+        "Nem veszem mert, túl drága.",
+        "Nem veszem, mert túl drága.",
+        "Nem veszem, miért túl drága."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-123-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Eladó",
-          "text": "Nagy vagy kicsi?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A nagy jó.",
-        "Mennyibe kerül?"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-shopping-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "sentence": "Azt nem ____.",
+      "english": "I won't take that one.",
+      "answer": "veszem"
     },
     {
       "id": "a1-123-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "singular-after-numbers"
+      ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Milyen méretek vannak?"
+          "text": "Mennyibe kerül a kabát?"
         },
         {
           "speaker": "Eladó",
@@ -271,96 +224,116 @@
         }
       ],
       "options": [
-        "Nagy vagy kicsi?",
-        "Piros, kék, fekete és fehér van."
+        "A kabát nyolcezer forintot.",
+        "A kabát nyolcezer forintok.",
+        "A kabát nyolcezer forint."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
+      "correct": 2,
+      "distractor_skills": {
+        "0": "how-the-accusative-t-works",
+        "1": "plural-nouns-k"
+      }
     },
     {
       "id": "a1-123-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-shopping-vocab"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mennyi az ára?"
+          "speaker": "Eladó",
+          "text": "Milyen méret kell?"
         },
         {
-          "speaker": "Eladó",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Száz forint.",
-        "Nagy vagy kicsi?"
+        "Nagy kell.",
+        "Piros kell.",
+        "Nyolcezer kell."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-123-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask what sizes there are.",
-          "answer": "Milyen méretek vannak?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "quantity-choice-questions-mennyi-melyik"
-      ]
+        "definite-vs-indefinite-conjugation"
+      ],
+      "tiles": [
+        "Ezt",
+        "veszem,",
+        "azt",
+        "nem",
+        "veszem",
+        "."
+      ],
+      "solution": [
+        "Ezt",
+        "veszem,",
+        "azt",
+        "nem",
+        "veszem",
+        "."
+      ],
+      "english": "I'll take this one, not that one."
     },
     {
       "id": "a1-123-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-shopping-vocab"
+      ],
       "template": [
         {
-          "prompt": "Ask how much it costs.",
-          "answer": "Mennyibe kerül?"
+          "prompt": "Ask the price of the coat.",
+          "answer": "Mennyibe kerül a kabát?"
+        },
+        {
+          "prompt": "Say that the shirt is too small.",
+          "answer": "Az ing túl kicsi."
         }
-      ],
-      "teaches": [
-        "quantity-choice-questions-mennyi-melyik"
       ]
     },
     {
       "id": "a1-123-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'size'.",
-      "options": [
-        "méret",
-        "ár",
-        "szín"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-shopping-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "check"
+      "sentence": "Ezt ____.",
+      "english": "I'll take this one.",
+      "answers": [
+        "veszem",
+        "kérem"
+      ]
     },
     {
       "id": "a1-123-check-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Choose the correct word for 'red'.",
-      "options": [
-        "piros",
-        "kék",
-        "fekete"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-shopping-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “price”?",
+      "options": [
+        "szín",
+        "ár",
+        "méret"
+      ],
+      "correct": 1
     }
   ]
 }

@@ -2,110 +2,126 @@
   "lesson": "a1-121",
   "exercises": [
     {
-      "id": "a1-121-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'kártya' mean?",
-      "options": [
-        "card",
-        "cash",
-        "to pay"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-restaurant-vocab"
-      ]
-    },
-    {
-      "id": "a1-121-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'fizet' mean?",
-      "options": [
-        "to pay",
-        "because",
-        "card"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-buying-food-vocab"
-      ]
-    },
-    {
       "id": "a1-121-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'bolt' mean?",
-      "options": [
-        "shop",
-        "product",
-        "T-shirt"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-shopping-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “trousers”?",
+      "options": [
+        "nadrág",
+        "ing",
+        "cipő"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-121-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'termék' mean?",
-      "options": [
-        "product",
-        "trousers",
-        "shop"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-shopping-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "introduce"
+      "question": "Which sentence says you are buying a shirt?",
+      "options": [
+        "Egy ing veszek.",
+        "Egy inget veszek.",
+        "Egy ingot veszek."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-121-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Kérek egy ____.",
-      "hint": "trousers",
-      "english": "I'd like some trousers.",
-      "answer": "nadrágot",
+      "stage": "controlled",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "sentence": "Anna ____ vesz.",
+      "english": "Anna is buying a coat.",
+      "answer": "kabátot"
     },
     {
       "id": "a1-121-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'product'.",
-      "options": [
-        "termék",
-        "bolt",
-        "póló"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-shopping-vocab"
+        "plural-nouns-k"
       ],
-      "stage": "controlled"
+      "question": "Which word means “shoes”?",
+      "options": [
+        "cipőt",
+        "cipőek",
+        "cipők"
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "0": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "a1-121-controlled-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "singular-after-numbers"
+      ],
+      "question": "Which sentence says there are two T-shirts?",
+      "options": [
+        "Két póló van.",
+        "Két pólók van.",
+        "Két pólót van."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-121-controlled-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "singular-after-numbers"
+      ],
+      "tiles": [
+        "A",
+        "ruhaboltban",
+        "sok",
+        "kabát",
+        "van",
+        "."
+      ],
+      "solution": [
+        "A",
+        "ruhaboltban",
+        "sok",
+        "kabát",
+        "van",
+        "."
+      ],
+      "english": "There are many coats in the clothes shop."
+    },
+    {
+      "id": "a1-121-practice-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-shopping-vocab"
+      ],
       "pairs": [
         [
-          "bolt",
-          "shop"
+          "ruhabolt",
+          "clothes shop"
         ],
         [
-          "termék",
-          "product"
+          "ing",
+          "shirt"
         ],
         [
           "póló",
@@ -114,253 +130,214 @@
         [
           "nadrág",
           "trousers"
+        ],
+        [
+          "kabát",
+          "coat"
+        ],
+        [
+          "cipő",
+          "shoe"
         ]
-      ],
-      "teaches": [
-        "a1-shopping-vocab"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
-      "id": "a1-121-controlled-4",
+      "id": "a1-121-practice-2",
       "type": "substitution",
       "category": "grammar",
-      "base_sentence": "Kérek egy pólót.",
-      "base_word": "pólót",
-      "base_gloss": "I'd like a T-shirt.",
+      "stage": "practice",
+      "base_sentence": "Egy inget veszek.",
+      "base_word": "ing",
+      "base_gloss": "I am buying a shirt.",
       "options": [
         {
-          "word": "nadrág",
-          "inflected": "nadrágot",
-          "sentence": "Kérek egy nadrágot.",
-          "gloss": "trousers"
+          "word": "póló",
+          "inflected": "pólót",
+          "sentence": "Egy pólót veszek.",
+          "gloss": "T-shirt"
         },
         {
-          "word": "termék",
-          "inflected": "terméket",
-          "sentence": "Kérek egy terméket.",
-          "gloss": "product"
+          "word": "kabát",
+          "inflected": "kabátot",
+          "sentence": "Egy kabátot veszek.",
+          "gloss": "coat"
         }
       ],
       "teaches": [
         "how-the-accusative-t-works"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-121-practice-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "You want to buy a T-shirt. What do you say?",
-      "options": [
-        "Kérek egy pólót.",
-        "Kérek egy kávét.",
-        "Szia!"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-shopping-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-121-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Egy pólót és egy nadrágot ____.",
-      "english": "I'm looking for a T-shirt and a pair of trousers.",
-      "answer": "keresek",
-      "teaches": [
-        "a1-shopping-vocab"
-      ],
-      "stage": "practice"
+      ]
     },
     {
       "id": "a1-121-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "bolt",
-          "shop"
-        ],
-        [
-          "termék",
-          "product"
-        ],
-        [
-          "póló",
-          "T-shirt"
-        ],
-        [
-          "nadrág",
-          "trousers"
-        ],
-        [
-          "kártya",
-          "card"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-shopping-vocab"
+        "singular-after-numbers"
       ],
-      "stage": "practice"
+      "sentence": "Három ____ van a boltban.",
+      "english": "There are three coats in the shop.",
+      "answer": "kabát"
     },
     {
       "id": "a1-121-practice-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Ez a termék jó.",
-      "base_word": "termék",
-      "base_gloss": "This product is good.",
-      "options": [
-        {
-          "word": "bolt",
-          "inflected": "bolt",
-          "sentence": "Ez a bolt jó.",
-          "gloss": "shop"
-        },
-        {
-          "word": "póló",
-          "inflected": "póló",
-          "sentence": "Ez a póló jó.",
-          "gloss": "T-shirt"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-shopping-vocab"
+        "ban-ben-in"
       ],
-      "stage": "practice"
+      "question": "Which sentence says there are many T-shirts in the shop?",
+      "options": [
+        "Sok póló van a bolt.",
+        "Sok póló van a boltban.",
+        "Sok póló van a boltba."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "2": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-121-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Eladó",
-          "text": "Jó napot kívánok! Mit keres?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Egy pólót és egy táskát.",
-        "Mennyibe kerülnek?"
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-shopping-vocab"
+        "plural-predicate-adjectives-k"
       ],
-      "stage": "practice"
+      "question": "Which sentence says the coats are expensive?",
+      "options": [
+        "A kabátok drága.",
+        "A kabát drágák.",
+        "A kabátok drágák."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-121-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Egy pólót és egy táskát keresek."
+          "speaker": "Eladó",
+          "text": "Mit kér?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Ebben a boltban táskák és pólók is vannak.",
-        "A busz ott van."
+        "Egy inget és egy nadrágot kérek.",
+        "Egy ing és egy nadrágot kérek.",
+        "Egy inget és egy nadrág kérek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-121-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "singular-after-numbers"
+      ],
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit keres?"
+          "speaker": "Meg",
+          "text": "Van kabát?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Eladó",
           "text": "_____"
         }
       ],
       "options": [
-        "Egy nadrágot keresek.",
-        "Szia, hogy vagy?"
+        "Igen, sok kabátok van.",
+        "Igen, sok kabát van.",
+        "Igen, sok kabátot van."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-121-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say you're looking for a T-shirt.",
-          "answer": "Egy pólót keresek."
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "how-the-accusative-t-works"
-      ]
+      ],
+      "tiles": [
+        "Egy",
+        "inget",
+        "és",
+        "egy",
+        "nadrágot",
+        "veszek",
+        "."
+      ],
+      "solution": [
+        "Egy",
+        "inget",
+        "és",
+        "egy",
+        "nadrágot",
+        "veszek",
+        "."
+      ],
+      "english": "I am buying a shirt and a pair of trousers."
     },
     {
       "id": "a1-121-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-shopping-vocab"
+      ],
       "template": [
         {
-          "prompt": "Ask if this product is good.",
-          "answer": "Ez a termék jó?"
+          "prompt": "Say that you are buying a coat.",
+          "answer": "Kabátot veszek."
+        },
+        {
+          "prompt": "Say that there are many shoes in the shop.",
+          "answer": "Sok cipő van a boltban."
         }
-      ],
-      "teaches": [
-        "demonstratives-ez-az"
       ]
     },
     {
       "id": "a1-121-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'shop'.",
-      "options": [
-        "bolt",
-        "termék",
-        "nadrág"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-shopping-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "sentence": "Egy ____ veszek.",
+      "english": "I am buying a T-shirt.",
+      "answer": "pólót"
     },
     {
       "id": "a1-121-check-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Choose the correct word for 'trousers'.",
-      "options": [
-        "nadrág",
-        "póló",
-        "termék"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-shopping-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “coat”?",
+      "options": [
+        "cipő",
+        "ing",
+        "kabát"
+      ],
+      "correct": 2
     }
   ]
 }

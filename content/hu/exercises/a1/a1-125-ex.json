@@ -2,364 +2,381 @@
   "lesson": "a1-125",
   "exercises": [
     {
-      "id": "a1-125-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'eladó' mean?",
-      "options": [
-        "salesperson",
-        "price",
-        "gift"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
-    },
-    {
-      "id": "a1-125-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'fehér' mean?",
-      "options": [
-        "white",
-        "blue",
-        "black"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
-    },
-    {
       "id": "a1-125-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'kicsi' mean?",
-      "options": [
-        "small",
-        "large",
-        "good"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-shopping-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “gift”?",
+      "options": [
+        "ajándék",
+        "pénztár",
+        "méret"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-125-introduce-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'tetszik' mean?",
-      "options": [
-        "to please",
-        "to look for",
-        "to buy"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
-        "a1-shopping-vocab"
+        "a1-restaurant-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which sentence means “It is nice, but a little expensive.”?",
+      "options": [
+        "Szép, mert egy kicsit drága.",
+        "Szép, de egy kicsit drága.",
+        "Szép, miért egy kicsit drága."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-125-controlled-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Igen, ____. Milyen méretek vannak?",
-      "english": "Yes, I like it. What sizes are there?",
-      "answer": "tetszik",
+      "stage": "controlled",
       "teaches": [
         "a1-shopping-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "Ajándékot ____.",
+      "english": "I am buying a gift.",
+      "answer": "veszek"
     },
     {
       "id": "a1-125-controlled-2",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "question": "Choose the word for 'salesperson'.",
-      "options": [
-        "eladó",
-        "jó",
-        "kicsi"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "a1-shopping-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "Az ing egy ____ drága.",
+      "english": "The shirt is a little expensive.",
+      "answer": "kicsit"
     },
     {
       "id": "a1-125-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "kicsi",
-          "small"
-        ],
-        [
-          "jó",
-          "good"
-        ],
-        [
-          "tetszik",
-          "like / please"
-        ],
-        [
-          "eladó",
-          "salesperson"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-shopping-vocab"
+        "mert-because"
       ],
-      "stage": "controlled"
+      "question": "Which sentence says you won't take the coat because it is too big?",
+      "options": [
+        "Nem veszem a kabátot mert, túl nagy.",
+        "Nem veszem a kabátot, miért túl nagy.",
+        "Nem veszem a kabátot, mert túl nagy."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-125-controlled-4",
-      "type": "substitution",
+      "type": "sentence-builder",
       "category": "vocabulary",
-      "base_sentence": "A könyv is ajándék.",
-      "base_word": "könyv",
-      "base_gloss": "The book is a gift too.",
-      "options": [
-        {
-          "word": "táska",
-          "inflected": "táska",
-          "sentence": "A táska is ajándék.",
-          "gloss": "bag"
-        },
-        {
-          "word": "póló",
-          "inflected": "póló",
-          "sentence": "A póló is ajándék.",
-          "gloss": "T-shirt"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-shopping-vocab"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Szép,",
+        "de",
+        "egy",
+        "kicsit",
+        "drága",
+        "."
+      ],
+      "solution": [
+        "Szép,",
+        "de",
+        "egy",
+        "kicsit",
+        "drága",
+        "."
+      ],
+      "english": "It is nice, but a little expensive."
     },
     {
       "id": "a1-125-practice-1",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "vocabulary",
-      "question": "Which word means 'also / too'?",
-      "options": [
-        "is",
-        "és",
-        "de"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-shopping-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "ajándék",
+          "gift"
+        ],
+        [
+          "pénztár",
+          "till, cash desk"
+        ],
+        [
+          "kicsit",
+          "a little"
+        ],
+        [
+          "méret",
+          "size"
+        ],
+        [
+          "szín",
+          "colour"
+        ],
+        [
+          "ár",
+          "price"
+        ]
+      ]
     },
     {
       "id": "a1-125-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Nem, az ajándék ____ van.",
-      "english": "No, the gift is separate.",
-      "answer": "külön",
-      "teaches": [
-        "a1-shopping-vocab"
+      "type": "substitution",
+      "category": "grammar",
+      "stage": "practice",
+      "base_sentence": "Egy ajándékot veszek.",
+      "base_word": "ajándék",
+      "base_gloss": "I am buying a gift.",
+      "options": [
+        {
+          "word": "ing",
+          "inflected": "inget",
+          "sentence": "Egy inget veszek.",
+          "gloss": "shirt"
+        },
+        {
+          "word": "kabát",
+          "inflected": "kabátot",
+          "sentence": "Egy kabátot veszek.",
+          "gloss": "coat"
+        }
       ],
-      "stage": "practice"
+      "teaches": [
+        "how-the-accusative-t-works"
+      ]
     },
     {
       "id": "a1-125-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "kicsi",
-          "small"
-        ],
-        [
-          "jó",
-          "good"
-        ],
-        [
-          "tetszik",
-          "like / please"
-        ],
-        [
-          "eladó",
-          "salesperson"
-        ],
-        [
-          "nagy",
-          "large"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-shopping-vocab"
+        "kell-infinitive"
       ],
-      "stage": "practice"
+      "question": "Which sentence says there is no need to pay?",
+      "options": [
+        "Nem kell fizetni.",
+        "Nem kell fizet.",
+        "Kell fizetni."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-125-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "grammar",
-      "base_sentence": "Igen, tetszik.",
-      "base_word": "tetszik",
-      "base_gloss": "Yes, I like it.",
-      "options": [
-        {
-          "word": "nem tetszik",
-          "inflected": "nem tetszik",
-          "sentence": "Nem, nem tetszik.",
-          "gloss": "I don't like it"
-        },
-        {
-          "word": "nagyon tetszik",
-          "inflected": "nagyon tetszik",
-          "sentence": "Igen, nagyon tetszik.",
-          "gloss": "I like it a lot"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
-        "negation-with-nem"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "question": "You choose the white shirt. Which sentence?",
+      "options": [
+        "Kérek a fehér inget.",
+        "Kérem a fehér inget.",
+        "Kérem a fehér ing."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-125-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Igen, tetszik. Milyen méretek vannak?"
-        },
-        {
-          "speaker": "Eladó",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Nagy vagy kicsi.",
-        "Tíz forint."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-shopping-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "question": "The assistant asks a stranger if she takes the shirt. Which question?",
+      "options": [
+        "Ön veszed az inget?",
+        "Ön veszem az inget?",
+        "Ön veszi az inget?"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-125-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does Meg want to buy?",
+      "options": [
+        "A shirt as a gift.",
+        "A coat for herself.",
+        "A pair of shoes."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-125-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Why do they not take the blue shirt?",
+      "options": [
+        "It is too small.",
+        "It is too expensive.",
+        "The colour is wrong."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-125-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "How does Meg pay?",
+      "options": [
+        "With cash.",
+        "Anna pays.",
+        "With a card."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-125-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "nek-conditional"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Rendben. A könyv is ajándék?"
+          "speaker": "Eladó",
+          "text": "Segíthetek?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Nem, az ajándék külön van.",
-        "Igen, tetszik."
+        "Igen, egy ajándékot szeretnék.",
+        "Igen, egy ajándékot szeretne.",
+        "Igen, egy ajándékot szeretnél."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-125-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "singular-after-numbers"
+      ],
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit keres?"
+          "speaker": "Meg",
+          "text": "Mennyibe kerül a fehér ing?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Eladó",
           "text": "_____"
         }
       ],
       "options": [
-        "Egy pólót és egy táskát keresek.",
-        "Nem, az ajándék külön van."
+        "A fehér ing hatezer forintot.",
+        "A fehér ing hatezer forint.",
+        "A fehér ing hatezer forintok."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
+      "correct": 1,
+      "distractor_skills": {
+        "0": "how-the-accusative-t-works",
+        "2": "plural-nouns-k"
+      }
     },
     {
       "id": "a1-125-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say yes, you like it.",
-          "answer": "Igen, tetszik."
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "a1-shopping-vocab"
-      ]
+        "mert-because"
+      ],
+      "tiles": [
+        "Nem",
+        "veszem",
+        "a",
+        "kabátot,",
+        "mert",
+        "túl",
+        "drága",
+        "."
+      ],
+      "solution": [
+        "Nem",
+        "veszem",
+        "a",
+        "kabátot,",
+        "mert",
+        "túl",
+        "drága",
+        "."
+      ],
+      "english": "I won't take the coat because it is too expensive."
     },
     {
       "id": "a1-125-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Say no, the gift is separate.",
-          "answer": "Nem, az ajándék külön van."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "a1-shopping-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Politely ask where the till is.",
+          "answer": "Legyen szíves, hol van a pénztár?"
+        },
+        {
+          "prompt": "Say that you have a card.",
+          "answer": "Van kártyám."
+        }
       ]
     },
     {
       "id": "a1-125-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "question": "Choose the correct word for 'small'.",
-      "options": [
-        "kicsi",
-        "nagy",
-        "jó"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "a1-shopping-vocab"
+        "a1-restaurant-vocab"
       ],
-      "stage": "check"
+      "sentence": "Szép, ____ egy kicsit drága.",
+      "english": "It is nice, but a little expensive.",
+      "answer": "de"
     },
     {
       "id": "a1-125-check-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Choose the correct word for 'salesperson'.",
-      "options": [
-        "eladó",
-        "termék",
-        "bolt"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-shopping-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “till, cash desk”?",
+      "options": [
+        "ajándék",
+        "szín",
+        "pénztár"
+      ],
+      "correct": 2
     }
   ]
 }
