@@ -5,276 +5,373 @@
       "id": "a1-165-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What was Meg looking for in the story?",
-      "options": [
-        "a vonatjegyet",
-        "a kulcsot",
-        "a szemüvegét"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-postpositions-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “whole, all”?",
+      "options": [
+        "egész",
+        "végre",
+        "felé"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-165-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Where was the ticket found in the end?",
-      "options": [
-        "a könyv alatt",
-        "az asztal alatt",
-        "a doboz mögött"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
-        "postpositions-basic"
+        "temporal-postpositions"
       ],
-      "stage": "introduce"
+      "question": "Before lunch we walk towards the park. Which sentence?",
+      "options": [
+        "Ebéd után a park felé sétálunk.",
+        "Ebéd előtt a parkot felé sétálunk.",
+        "Ebéd előtt a park felé sétálunk."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-165-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Nem találom a ____.",
-      "hint": "ticket",
-      "english": "I can't find the ticket.",
-      "answer": "jegyet",
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-165-controlled-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A jegy a könyv ____ volt.",
-      "hint": "under",
-      "english": "The ticket was under the book.",
-      "answer": "alatt",
+      "stage": "controlled",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "controlled"
+      "sentence": "A kapu ____ találkozunk.",
+      "english": "We meet in front of the gate.",
+      "answer": "előtt"
+    },
+    {
+      "id": "a1-165-controlled-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "movement-with-ba-be"
+      ],
+      "question": "Anna goes to the park. Which sentence?",
+      "options": [
+        "Anna a parkban megy.",
+        "Anna a parkba megy.",
+        "Anna a park megy."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "0": "ban-ben-in"
+      }
     },
     {
       "id": "a1-165-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "jegy",
-          "ticket"
-        ],
-        [
-          "kulcs",
-          "key"
-        ],
-        [
-          "szemüveg",
-          "glasses"
-        ],
-        [
-          "doboz",
-          "box"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-postpositions-vocab"
+        "megy-jon"
       ],
-      "stage": "controlled"
+      "sentence": "Károly Annával ____ moziba.",
+      "english": "Károly is going to the cinema with Anna.",
+      "answer": "megy"
     },
     {
       "id": "a1-165-controlled-4",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'keres' mean?",
-      "options": [
-        "to look for",
-        "to find",
-        "to lose"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-postpositions-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "controlled"
+      "question": "I like music. Which sentence?",
+      "options": [
+        "Szeretem a zenét.",
+        "Szeretek a zenét.",
+        "Szeretsz a zenét."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-165-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'Check behind the box!'",
-      "options": [
-        "Nézd meg a doboz mögött!",
-        "Nézd meg a doboz alatt!",
-        "Nézd meg a dobozban!"
-      ],
-      "correct": 0,
-      "teaches": [
-        "postpositions-basic"
-      ],
-      "distractor_skills": {
-        "2": "ban-ben-in"
-      },
-      "stage": "practice"
-    },
-    {
-      "id": "a1-165-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A táska az asztal ____ van.",
-      "hint": "next to",
-      "english": "The bag is next to the table.",
-      "answer": "mellett",
-      "teaches": [
-        "postpositions-basic"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-165-practice-3",
-      "type": "fill-blank",
+      "type": "matching",
       "category": "vocabulary",
-      "sentence": "Végre ____ a szemüvegem.",
-      "hint": "megtalál + I",
-      "english": "I finally found my glasses.",
-      "answer": "megtaláltam",
+      "stage": "practice",
       "teaches": [
         "a1-postpositions-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "egész",
+          "whole"
+        ],
+        [
+          "végre",
+          "at last"
+        ],
+        [
+          "felé",
+          "towards"
+        ],
+        [
+          "helyett",
+          "instead of"
+        ],
+        [
+          "nélkül",
+          "without"
+        ],
+        [
+          "körül",
+          "around"
+        ]
+      ]
+    },
+    {
+      "id": "a1-165-practice-2",
+      "type": "substitution",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "postpositions-basic"
+      ],
+      "base_sentence": "Busz helyett gyalog megyek.",
+      "base_word": "busz",
+      "base_gloss": "Instead of the bus I walk.",
+      "options": [
+        {
+          "word": "villamos",
+          "inflected": "villamos",
+          "sentence": "Villamos helyett gyalog megyek.",
+          "gloss": "tram"
+        },
+        {
+          "word": "taxi",
+          "inflected": "taxi",
+          "sentence": "Taxi helyett gyalog megyek.",
+          "gloss": "taxi"
+        }
+      ]
+    },
+    {
+      "id": "a1-165-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "on-en-on"
+      ],
+      "question": "On Friday I am going to the cinema with Anna. Which sentence?",
+      "options": [
+        "Péntek Annával moziba megyek.",
+        "Pénteken Annával moziban megyek.",
+        "Pénteken Annával moziba megyek."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     },
     {
       "id": "a1-165-practice-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "What is the difference between 'dobozban' and 'doboz mellett'?",
-      "options": [
-        "inside the box vs next to the box",
-        "under the box vs inside the box",
-        "above the box vs behind the box"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
-        "postpositions-basic"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "practice"
+      "question": "After lunch I work. Which sentence?",
+      "options": [
+        "Ebéd után dolgozok.",
+        "Ebéd után dolgozom.",
+        "Ebéd után dolgozol."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-165-practice-5",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "táska",
-          "bag"
-        ],
-        [
-          "megtalál",
-          "to find"
-        ],
-        [
-          "keres",
-          "to look for"
-        ],
-        [
-          "néz",
-          "to look"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-postpositions-vocab"
+        "postpositions-basic"
       ],
-      "stage": "practice"
+      "sentence": "Cukor ____ kérem a kávét.",
+      "english": "I would like the coffee without sugar.",
+      "answer": "nélkül"
+    },
+    {
+      "id": "a1-165-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Where do the friends meet?",
+      "options": [
+        "Behind the cinema.",
+        "In front of the park gate.",
+        "Under the old bench."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-165-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "How does Károly say he will get there?",
+      "options": [
+        "He will walk.",
+        "He will take the bus.",
+        "He will come by taxi."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-165-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does Anna ask for?",
+      "options": [
+        "Coffee without sugar.",
+        "A glass of water.",
+        "Tea without milk."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-165-dialogue-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "—Hol a kulcs? —A lámpa ____ van az asztalon.",
-      "options": [
-        "mellett",
-        "között",
-        "után"
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "postpositions-basic"
-      ]
+        "movement-with-ba-be"
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Hová mész ebéd után?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A parkban megyek.",
+        "A parkba megyek.",
+        "A park megyek."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "0": "ban-ben-in"
+      }
     },
     {
       "id": "a1-165-dialogue-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "—Megtaláltad a jegyet? —Igen, ____.",
-      "hint": "megtalál + I",
-      "english": "—Did you find the ticket? —Yes, I found it.",
-      "answer": "megtaláltam",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "a1-postpositions-vocab"
-      ]
+        "val-vel"
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Kivel mész moziba?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Annával megyek.",
+        "Anna megyek.",
+        "Annával mész."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-165-production-1",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "A macska a kanapé ____ alszik.",
-      "hint": "behind",
-      "english": "The cat is sleeping behind the sofa.",
-      "answer": "mögött",
+      "stage": "production",
       "teaches": [
-        "postpositions-basic"
-      ]
+        "temporal-postpositions"
+      ],
+      "tiles": [
+        "Ebéd",
+        "után",
+        "Annával",
+        "a",
+        "park",
+        "felé",
+        "sétálok",
+        "."
+      ],
+      "solution": [
+        "Ebéd",
+        "után",
+        "Annával",
+        "a",
+        "park",
+        "felé",
+        "sétálok",
+        "."
+      ],
+      "english": "After lunch I walk towards the park with Anna."
     },
     {
       "id": "a1-165-production-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'The phone is under the paper.'",
-      "options": [
-        "A telefon a papír alatt van.",
-        "A telefon a papír felett van.",
-        "A telefon a papírban van."
-      ],
-      "correct": 0,
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
-        "postpositions-basic"
+        "a1-postpositions-vocab"
       ],
-      "distractor_skills": {
-        "2": "ban-ben-in"
-      }
+      "template": [
+        {
+          "prompt": "Say that you read before dinner.",
+          "answer": "Vacsora előtt olvasok."
+        },
+        {
+          "prompt": "Say that the cat is under the bench.",
+          "answer": "A macska a pad alatt van."
+        }
+      ]
     },
     {
       "id": "a1-165-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which word is a postposition?",
-      "options": [
-        "alatt",
-        "asztal",
-        "keres"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "postpositions-basic"
+        "a1-postpositions-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “at last”?",
+      "options": [
+        "egész",
+        "végre",
+        "helyett"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-165-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "A jegy a doboz ____ volt.",
-      "hint": "behind",
-      "english": "The ticket was behind the box.",
-      "answer": "mögött",
+      "stage": "check",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "check"
+      "question": "The picture is above the bed. Which sentence?",
+      "options": [
+        "A kép az ágy fölött van.",
+        "A kép az ágy alatt van.",
+        "A kép az ágy mellett van."
+      ],
+      "correct": 0
     }
   ]
 }

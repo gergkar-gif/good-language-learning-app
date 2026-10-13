@@ -4,274 +4,322 @@
     {
       "id": "a1-164-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "What does 'vacsora előtt' mean?",
-      "options": [
-        "before dinner",
-        "after dinner",
-        "during dinner"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "introduce",
       "teaches": [
-        "temporal-postpositions"
+        "a1-postpositions-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “towards”?",
+      "options": [
+        "nélkül",
+        "felé",
+        "körül"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-164-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "What does 'az út alatt' mean?",
-      "options": [
-        "during the trip",
-        "before the trip",
-        "after the trip"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
-        "temporal-postpositions"
+        "postpositions-basic"
       ],
-      "stage": "introduce"
+      "question": "How do you say “I am walking towards the park”?",
+      "options": [
+        "A park felé sétálok.",
+        "A parkot felé sétálok.",
+        "A park mellett sétálok."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-164-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Hét óra ____ érkezem haza.",
-      "hint": "before",
-      "english": "I arrive home before seven o'clock.",
-      "answer": "előtt",
+      "stage": "controlled",
       "teaches": [
-        "temporal-postpositions"
+        "postpositions-basic"
       ],
-      "stage": "controlled"
+      "sentence": "Az állomás ____ megyek.",
+      "english": "I am going towards the station.",
+      "answer": "felé"
     },
     {
       "id": "a1-164-controlled-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Az előadás ____ vacsorázunk.",
-      "hint": "after",
-      "english": "We have dinner after the lecture.",
-      "answer": "után",
+      "stage": "controlled",
       "teaches": [
-        "temporal-postpositions"
+        "direction-adverbs-jobbra-balra"
       ],
-      "stage": "controlled"
+      "question": "Which question asks “Which way are you going?”",
+      "options": [
+        "Mit mész?",
+        "Ki mész?",
+        "Merre mész?"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-164-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "előtt",
-          "before"
-        ],
-        [
-          "után",
-          "after"
-        ],
-        [
-          "alatt",
-          "during"
-        ],
-        [
-          "vacsora",
-          "dinner"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-postpositions-vocab"
+        "postpositions-basic"
       ],
-      "stage": "controlled"
+      "sentence": "Kávé ____ teát kérek.",
+      "english": "Instead of coffee I would like tea.",
+      "answer": "helyett"
     },
     {
       "id": "a1-164-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Translate: 'during the lesson':",
-      "options": [
-        "az óra alatt",
-        "az óra után",
-        "az óra előtt"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
-        "temporal-postpositions"
+        "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "question": "Instead of meat I eat fish. Which sentence?",
+      "options": [
+        "Hús helyett hal eszek.",
+        "Hús helyett halat eszek.",
+        "Hús helyett halat eszel."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-164-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which phrase means 'before five o'clock'?",
-      "options": [
-        "öt óra előtt",
-        "öt óra után",
-        "öt órakor"
-      ],
-      "correct": 0,
-      "teaches": [
-        "temporal-postpositions"
-      ],
-      "distractor_skills": {
-        "2": "kor-time"
-      },
-      "stage": "practice"
-    },
-    {
-      "id": "a1-164-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A találkozó ____ megiszom egy kávét.",
-      "hint": "before",
-      "english": "Before the meeting I drink a coffee.",
-      "answer": "előtt",
-      "teaches": [
-        "temporal-postpositions"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-164-practice-3",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Munka ____ edzeni megyek.",
-      "hint": "after",
-      "english": "After work I go to work out.",
-      "answer": "után",
-      "teaches": [
-        "temporal-postpositions"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-164-practice-4",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'Don't talk during the movie!'",
-      "options": [
-        "A film alatt ne beszélj!",
-        "A film után ne beszélj!",
-        "A film előtt ne beszélj!"
-      ],
-      "correct": 0,
-      "teaches": [
-        "temporal-postpositions"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-164-practice-5",
       "type": "matching",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "találkozó",
-          "meeting"
-        ],
-        [
-          "előadás",
-          "lecture"
-        ],
-        [
-          "utazás",
-          "journey"
-        ],
-        [
-          "út",
-          "road/trip"
-        ]
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-postpositions-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "felé",
+          "towards"
+        ],
+        [
+          "helyett",
+          "instead of"
+        ],
+        [
+          "nélkül",
+          "without"
+        ],
+        [
+          "körül",
+          "around"
+        ],
+        [
+          "közben",
+          "during"
+        ]
+      ]
+    },
+    {
+      "id": "a1-164-practice-2",
+      "type": "substitution",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "postpositions-basic"
+      ],
+      "base_sentence": "A park felé megyek.",
+      "base_word": "park",
+      "base_gloss": "I am going towards the park.",
+      "options": [
+        {
+          "word": "állomás",
+          "inflected": "az állomás",
+          "sentence": "Az állomás felé megyek.",
+          "gloss": "station"
+        },
+        {
+          "word": "tér",
+          "inflected": "a tér",
+          "sentence": "A tér felé megyek.",
+          "gloss": "square"
+        }
+      ]
+    },
+    {
+      "id": "a1-164-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "postpositions-basic"
+      ],
+      "question": "Instead of the bus I walk. Which sentence?",
+      "options": [
+        "Busz helyett gyalog megyek.",
+        "Busz felé gyalog megyek.",
+        "Buszt helyett gyalog megyek."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-164-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "postpositions-basic"
+      ],
+      "sentence": "Mozi ____ a parkba megyünk.",
+      "english": "Instead of the cinema we are going to the park.",
+      "answer": "helyett"
+    },
+    {
+      "id": "a1-164-practice-5",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "postpositions-basic"
+      ],
+      "question": "The bus is going towards the cinema. Which sentence?",
+      "options": [
+        "A busz a mozit felé megy.",
+        "A busz a mozi mögött megy.",
+        "A busz a mozi felé megy."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-164-dialogue-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "—Mikor találkozunk? —Hat óra ____ jó nekem.",
-      "options": [
-        "után",
-        "között",
-        "mellett"
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "temporal-postpositions"
-      ]
+        "postpositions-basic"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Merre mész?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A park felé vagyok.",
+        "A parkot felé.",
+        "A park felé."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-164-dialogue-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "—Mit csinálsz vacsora ____? —Olvasok egy könyvet.",
-      "hint": "after",
-      "english": "—What are you doing after dinner? —I'm reading a book.",
-      "answer": "után",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "temporal-postpositions"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Kávét kérsz?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Nem, kávé helyett tea kérek.",
+        "Nem, kávé helyett teát kérek.",
+        "Nem, kávét helyett teát kérek."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-164-production-1",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Az utazás ____ bepakolom a bőröndöt.",
-      "hint": "before",
-      "english": "Before the trip I pack the suitcase.",
-      "answer": "előtt",
+      "stage": "production",
       "teaches": [
-        "temporal-postpositions"
-      ]
+        "postpositions-basic"
+      ],
+      "tiles": [
+        "Busz",
+        "helyett",
+        "gyalog",
+        "megyek",
+        "a",
+        "park",
+        "felé",
+        "."
+      ],
+      "solution": [
+        "Busz",
+        "helyett",
+        "gyalog",
+        "megyek",
+        "a",
+        "park",
+        "felé",
+        "."
+      ],
+      "english": "Instead of the bus I walk towards the park."
     },
     {
       "id": "a1-164-production-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'I slept during the trip.'",
-      "options": [
-        "Az út alatt aludtam.",
-        "Az út előtt aludtam.",
-        "Az út után aludtam."
-      ],
-      "correct": 0,
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
-        "temporal-postpositions"
+        "a1-postpositions-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you are going towards the station.",
+          "answer": "Az állomás felé megyek."
+        },
+        {
+          "prompt": "Say that you would like tea instead of coffee.",
+          "answer": "Kávé helyett teát kérek."
+        }
       ]
     },
     {
       "id": "a1-164-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which postposition means 'during' in time contexts?",
-      "options": [
-        "alatt",
-        "felett",
-        "előtt"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "temporal-postpositions"
+        "a1-postpositions-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “instead of”?",
+      "options": [
+        "felé",
+        "körül",
+        "helyett"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-164-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Találkozunk az előadás ____.",
-      "hint": "after",
-      "english": "We meet after the lecture.",
-      "answer": "után",
+      "stage": "check",
       "teaches": [
-        "temporal-postpositions"
+        "postpositions-basic"
       ],
-      "stage": "check"
+      "question": "We are walking towards the museum. Which sentence?",
+      "options": [
+        "A múzeumot felé sétálunk.",
+        "A múzeum felé sétálunk.",
+        "A múzeum felé sétálok."
+      ],
+      "correct": 1
     }
   ]
 }

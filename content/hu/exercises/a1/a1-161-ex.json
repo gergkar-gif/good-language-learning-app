@@ -4,286 +4,344 @@
     {
       "id": "a1-161-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "What does 'alatt' mean?",
-      "options": [
-        "under",
-        "above",
-        "next to"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "introduce",
       "teaches": [
-        "postpositions-basic"
+        "a1-postpositions-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “bench”?",
+      "options": [
+        "kapu",
+        "pad",
+        "udvar"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-161-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Where does a Hungarian postposition go?",
-      "options": [
-        "after the noun",
-        "before the noun",
-        "inside the verb"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "introduce"
+      "question": "How do you say “The dog is under the bench”?",
+      "options": [
+        "A kutya a pad alatt van.",
+        "A kutya a padban van.",
+        "A kutya a pad fölött van."
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     },
     {
       "id": "a1-161-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A macska az asztal ____ alszik.",
-      "hint": "under",
-      "english": "The cat is sleeping under the table.",
-      "answer": "alatt",
+      "stage": "controlled",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "controlled"
+      "sentence": "A kutya a pad ____ van.",
+      "english": "The dog is behind the bench.",
+      "answer": "mögött"
     },
     {
       "id": "a1-161-controlled-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "A lámpa az asztal ____ van.",
-      "hint": "above",
-      "english": "The lamp is above the table.",
+      "stage": "controlled",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "controlled",
-      "answers": [
-        "felett",
-        "fölött"
-      ]
+      "question": "The bird is above the tree. Which sentence?",
+      "options": [
+        "A madár a fát fölött van.",
+        "A madár a fa mögött van.",
+        "A madár a fa fölött van."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-161-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "alatt",
-          "under"
-        ],
-        [
-          "felett",
-          "above"
-        ],
-        [
-          "ágy",
-          "bed"
-        ],
-        [
-          "lámpa",
-          "lamp"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-postpositions-vocab"
+        "postpositions-basic"
       ],
-      "stage": "controlled"
+      "sentence": "A macska a lépcső ____ van.",
+      "english": "The cat is next to the stairs.",
+      "answer": "mellett"
     },
     {
       "id": "a1-161-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which noun form is used with postpositions?",
-      "options": [
-        "bare noun (nominative)",
-        "noun with -ban",
-        "noun with -on"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "controlled"
+      "question": "The dog is between the bench and the tree. Which sentence?",
+      "options": [
+        "A kutya a pad között van.",
+        "A kutya a pad és a fa között van.",
+        "A kutya a pad és a fa mellett van."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-161-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'The shoe is under the bed.'",
-      "options": [
-        "A cipő az ágy alatt van.",
-        "A cipő az ágy felett van.",
-        "A cipő az ágyban van."
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "postpositions-basic"
+        "a1-postpositions-vocab"
       ],
-      "distractor_skills": {
-        "2": "ban-ben-in"
-      },
-      "stage": "practice"
+      "pairs": [
+        [
+          "pad",
+          "bench"
+        ],
+        [
+          "kapu",
+          "gate"
+        ],
+        [
+          "lépcső",
+          "stairs"
+        ],
+        [
+          "udvar",
+          "yard"
+        ],
+        [
+          "kutya",
+          "dog"
+        ],
+        [
+          "macska",
+          "cat"
+        ],
+        [
+          "madár",
+          "bird"
+        ],
+        [
+          "körül",
+          "around"
+        ]
+      ]
     },
     {
       "id": "a1-161-practice-2",
-      "type": "fill-blank",
+      "type": "substitution",
       "category": "grammar",
-      "sentence": "A kép az ágy ____ lóg a falon.",
-      "hint": "above",
-      "english": "The picture hangs on the wall above the bed.",
+      "stage": "practice",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "practice",
-      "answers": [
-        "felett",
-        "fölött"
+      "base_sentence": "A kutya a pad alatt van.",
+      "base_word": "pad",
+      "base_gloss": "The dog is under the bench.",
+      "options": [
+        {
+          "word": "lépcső",
+          "inflected": "a lépcső",
+          "sentence": "A kutya a lépcső alatt van.",
+          "gloss": "stairs"
+        },
+        {
+          "word": "ágy",
+          "inflected": "az ágy",
+          "sentence": "A kutya az ágy alatt van.",
+          "gloss": "bed"
+        }
       ]
     },
     {
       "id": "a1-161-practice-3",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Meg a fa ____ ül a parkban.",
-      "hint": "under",
-      "english": "Meg is sitting under the tree in the park.",
-      "answer": "alatt",
+      "stage": "practice",
       "teaches": [
-        "postpositions-basic"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "practice"
+      "question": "Anna asks Meg: “Where is the cat?” Which question?",
+      "options": [
+        "Hol van a macska?",
+        "Hová van a macska?",
+        "Honnan van a macska?"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-161-practice-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "What is the alternative spelling of 'felett'?",
-      "options": [
-        "fölött",
-        "mellett",
-        "előtt"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "practice"
+      "question": "The garden is around the house. Which sentence?",
+      "options": [
+        "A kert a ház között van.",
+        "A kert a házban van.",
+        "A kert a ház körül van."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     },
     {
       "id": "a1-161-practice-5",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "híd",
-          "bridge"
-        ],
-        [
-          "kép",
-          "picture"
-        ],
-        [
-          "fa",
-          "tree"
-        ],
-        [
-          "fölött",
-          "above/over"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-postpositions-vocab"
+        "postpositions-basic"
       ],
-      "stage": "practice"
+      "sentence": "A kép az ágy ____ van.",
+      "english": "The picture is above the bed.",
+      "answer": "fölött"
     },
     {
       "id": "a1-161-dialogue-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "—Hol van a táskám? (It is under the table.) —Az asztal ____ van.",
-      "options": [
-        "alatt",
-        "felett",
-        "mellett"
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
         "postpositions-basic"
-      ]
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Hol van a kutya?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A pad alatt vagyok.",
+        "A padot alatt van.",
+        "A pad alatt van."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-161-dialogue-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "—Hol van a tükör? —A mosdó ____ van.",
-      "hint": "above",
-      "english": "—Where is the mirror? —It is above the sink.",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
         "postpositions-basic"
       ],
-      "answers": [
-        "felett",
-        "fölött"
-      ]
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Hol van a madár?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A fa fölött vagyok.",
+        "A fa fölött van.",
+        "A fát fölött van."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-161-production-1",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "A labda a szék ____ van.",
-      "hint": "under",
-      "english": "The ball is under the chair.",
-      "answer": "alatt",
+      "stage": "production",
       "teaches": [
         "postpositions-basic"
-      ]
+      ],
+      "tiles": [
+        "A",
+        "kutya",
+        "a",
+        "pad",
+        "és",
+        "a",
+        "fa",
+        "között",
+        "van",
+        "."
+      ],
+      "solution": [
+        "A",
+        "kutya",
+        "a",
+        "pad",
+        "és",
+        "a",
+        "fa",
+        "között",
+        "van",
+        "."
+      ],
+      "english": "The dog is between the bench and the tree."
     },
     {
       "id": "a1-161-production-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'The birds fly above the city.'",
-      "options": [
-        "A madarak a város felett repülnek.",
-        "A madarak a város alatt repülnek.",
-        "A madarak a városban repülnek."
-      ],
-      "correct": 0,
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
-        "postpositions-basic"
+        "a1-postpositions-vocab"
       ],
-      "distractor_skills": {
-        "2": "ban-ben-in"
-      }
+      "template": [
+        {
+          "prompt": "Say that the cat is in front of the gate.",
+          "answer": "A macska a kapu előtt van."
+        },
+        {
+          "prompt": "Ask where the dog is.",
+          "answer": "Hol van a kutya?"
+        }
+      ]
     },
     {
       "id": "a1-161-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which postposition means 'under'?",
-      "options": [
-        "alatt",
-        "felett",
-        "után"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "postpositions-basic"
+        "a1-postpositions-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “dog”?",
+      "options": [
+        "macska",
+        "madár",
+        "kutya"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-161-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "A könyv az ágy ____ van.",
-      "hint": "under",
-      "english": "The book is under the bed.",
-      "answer": "alatt",
+      "stage": "check",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "check"
+      "question": "The cat is under the stairs. Which sentence?",
+      "options": [
+        "A macska a lépcső fölött van.",
+        "A macska a lépcső alatt van.",
+        "A macska a lépcső mögött van."
+      ],
+      "correct": 1
     }
   ]
 }

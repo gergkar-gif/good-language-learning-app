@@ -4,274 +4,329 @@
     {
       "id": "a1-163-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "What does 'között' mean?",
-      "options": [
-        "between",
-        "after",
-        "under"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "introduce",
       "teaches": [
-        "postpositions-basic"
+        "a1-postpositions-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “without”?",
+      "options": [
+        "közben",
+        "előtt",
+        "nélkül"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-163-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "What does 'után' mean?",
-      "options": [
-        "after",
-        "before",
-        "next to"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "introduce"
+      "question": "How do you say “without sugar”?",
+      "options": [
+        "nélkül cukor",
+        "cukor nélkül",
+        "cukrot nélkül"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-163-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A kávézó a két épület ____ található.",
-      "hint": "between",
-      "english": "The café is located between the two buildings.",
-      "answer": "között",
+      "stage": "controlled",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "controlled"
+      "sentence": "Tej ____ kérem a kávét.",
+      "english": "I would like the coffee without milk.",
+      "answer": "nélkül"
     },
     {
       "id": "a1-163-controlled-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Munka ____ találkozunk a parkban.",
-      "hint": "after",
-      "english": "We meet in the park after work.",
-      "answer": "után",
+      "stage": "controlled",
       "teaches": [
-        "temporal-postpositions"
+        "postpositions-basic"
       ],
-      "stage": "controlled"
+      "question": "I go out without an umbrella. Which sentence?",
+      "options": [
+        "Esernyő nélkül megyek.",
+        "Esernyőt nélkül megyek.",
+        "Esernyő nélkül megyünk."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-163-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "között",
-          "between/among"
-        ],
-        [
-          "után",
-          "after"
-        ],
-        [
-          "sarok",
-          "corner"
-        ],
-        [
-          "ebéd",
-          "lunch"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-postpositions-vocab"
+        "postpositions-basic"
       ],
-      "stage": "controlled"
+      "question": "I do not go home without my key. Which sentence?",
+      "options": [
+        "Kulcsot nélkül nem megyek haza.",
+        "Kulcs nélkül megyek haza.",
+        "Kulcs nélkül nem megyek haza."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-163-controlled-4",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Translate: 'after the bridge':",
-      "options": [
-        "a híd után",
-        "a híd előtt",
-        "a híd mellett"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "controlled"
+      "sentence": "Cukor nélkül kérem ____ teát.",
+      "english": "I would like the tea without sugar.",
+      "answer": "a"
     },
     {
       "id": "a1-163-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "What does 'Az óra után kávézunk' mean?",
-      "options": [
-        "We have coffee after the class.",
-        "We have coffee during class.",
-        "We have coffee before class."
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "temporal-postpositions"
+        "a1-postpositions-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "nélkül",
+          "without"
+        ],
+        [
+          "esernyő",
+          "umbrella"
+        ],
+        [
+          "cukor nélkül",
+          "without sugar"
+        ],
+        [
+          "tej nélkül",
+          "without milk"
+        ],
+        [
+          "kulcs nélkül",
+          "without a key"
+        ]
+      ]
     },
     {
       "id": "a1-163-practice-2",
-      "type": "fill-blank",
+      "type": "substitution",
       "category": "grammar",
-      "sentence": "Fordulj balra a sarok ____!",
-      "hint": "after",
-      "english": "Turn left after the corner!",
-      "answer": "után",
+      "stage": "practice",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "practice"
+      "base_sentence": "Cukor nélkül kérem a teát.",
+      "base_word": "cukor",
+      "base_gloss": "I would like the tea without sugar.",
+      "options": [
+        {
+          "word": "tej",
+          "inflected": "tej nélkül",
+          "sentence": "Tej nélkül kérem a teát.",
+          "gloss": "milk"
+        },
+        {
+          "word": "citrom",
+          "inflected": "citrom nélkül",
+          "sentence": "Citrom nélkül kérem a teát.",
+          "gloss": "lemon"
+        }
+      ]
     },
     {
       "id": "a1-163-practice-3",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "A macska a két szék ____ alszik.",
-      "hint": "between",
-      "english": "The cat is sleeping between the two chairs.",
-      "answer": "között",
+      "stage": "practice",
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "practice"
+      "question": "I am not going to the cinema without Anna. Which sentence?",
+      "options": [
+        "Anna nélkül nem megyek mozi.",
+        "Anna nélkül nem megyek moziba.",
+        "Annát nélkül nem megyek moziba."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-163-practice-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Translate: 'among the books':",
-      "options": [
-        "a könyvek között",
-        "a könyvek után",
-        "a könyvek mellett"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
-        "postpositions-basic"
+        "val-vel"
       ],
-      "stage": "practice"
+      "question": "Anna asks Meg: “With milk or without milk?” Which question?",
+      "options": [
+        "Tejjel vagy tej nélkül?",
+        "Tej vagy tej nélkül?",
+        "Tejjel vagy tejjel nélkül?"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-163-practice-5",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "ablak",
-          "window"
-        ],
-        [
-          "munka",
-          "work"
-        ],
-        [
-          "óra",
-          "hour/lesson"
-        ],
-        [
-          "fordul",
-          "to turn"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-postpositions-vocab"
+        "postpositions-basic"
       ],
-      "stage": "practice"
+      "sentence": "Hús ____ eszem a tésztát.",
+      "english": "I eat the pasta without meat.",
+      "answer": "nélkül"
     },
     {
       "id": "a1-163-dialogue-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "—Mikor érsz rá? —Az ebéd ____ ráérek.",
-      "options": [
-        "után",
-        "között",
-        "mellett"
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "temporal-postpositions"
-      ]
+        "definite-vs-indefinite-conjugation"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Tejjel kéred a teát?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Nem, tej nélkül kérem.",
+        "Nem, tej nélkül kéred.",
+        "Nem, tej nélkül kérnek."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-163-dialogue-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "—Hol van a bolt? —A posta és a bank ____ van.",
-      "hint": "between",
-      "english": "—Where is the store? —It is between the post office and the bank.",
-      "answer": "között",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "postpositions-basic"
-      ]
+        "present-tense-routine-language"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Esernyővel mész?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Nem, esernyő nélkül mész.",
+        "Nem, esernyő nélkül megy.",
+        "Nem, esernyő nélkül megyek."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-163-production-1",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "A bejárat a két ablak ____ található.",
-      "hint": "between",
-      "english": "The entrance is located between the two windows.",
-      "answer": "között",
+      "stage": "production",
       "teaches": [
         "postpositions-basic"
-      ]
+      ],
+      "tiles": [
+        "Tej",
+        "nélkül",
+        "kérem",
+        "a",
+        "kávét,",
+        "cukor",
+        "nélkül",
+        "a",
+        "teát",
+        "."
+      ],
+      "solution": [
+        "Tej",
+        "nélkül",
+        "kérem",
+        "a",
+        "kávét,",
+        "cukor",
+        "nélkül",
+        "a",
+        "teát",
+        "."
+      ],
+      "english": "I would like the coffee without milk and the tea without sugar."
     },
     {
       "id": "a1-163-production-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'Let's meet after work.'",
-      "options": [
-        "Találkozzunk munka után.",
-        "Találkozzunk munka előtt.",
-        "Találkozzunk munkában."
-      ],
-      "correct": 0,
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
-        "temporal-postpositions"
+        "a1-postpositions-vocab"
       ],
-      "distractor_skills": {
-        "2": "ban-ben-in"
-      }
+      "template": [
+        {
+          "prompt": "Say that you are going out without an umbrella.",
+          "answer": "Esernyő nélkül megyek."
+        },
+        {
+          "prompt": "Say that you are not going to the cinema without Anna.",
+          "answer": "Anna nélkül nem megyek moziba."
+        }
+      ]
     },
     {
       "id": "a1-163-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which postposition means 'between'?",
-      "options": [
-        "között",
-        "után",
-        "mellett"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "postpositions-basic"
+        "a1-postpositions-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “umbrella”?",
+      "options": [
+        "esernyő",
+        "kulcs",
+        "szemüveg"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-163-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Az óra ____ hazamegyek.",
-      "hint": "after",
-      "english": "After class I go home.",
-      "answer": "után",
+      "stage": "check",
       "teaches": [
-        "temporal-postpositions"
+        "postpositions-basic"
       ],
-      "stage": "check"
+      "question": "I go to the cinema without Anna. Which sentence?",
+      "options": [
+        "Annával nélkül megyek moziba.",
+        "Annát nélkül megyek moziba.",
+        "Anna nélkül megyek moziba."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "0": "val-vel"
+      }
     }
   ]
 }

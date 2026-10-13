@@ -1,104 +1,125 @@
 {
   "id": "story.a1.unit33",
-  "title": "Hol van a jegy?",
+  "title": "Egy nap Budapesten",
   "level": "A1",
   "type": "original",
   "characters": [
-    "Károly",
-    "Meg"
+    "Meg",
+    "Anna",
+    "Károly"
   ],
   "paragraphs": [
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg and Károly are preparing to leave their apartment for Keleti railway station, but Meg cannot find her train ticket."
+      "text": "Saturday, the last day of the language course. Meg, Anna and Károly plan a day out in Budapest."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Sziasztok! Szép nap van. Ebéd előtt a park felé sétálunk, jó?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Károly! Baj van, nem találom a vonatjegyet!"
+      "text": "Jó ötlet! A park kapuja előtt találkozunk? Ott van egy pad is, a fa mellett."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Nyugodj meg, Meg! Hol láttad utoljára?"
+      "text": "Igen, a kapu előtt. Busz helyett gyalog megyek, mert közel van."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Nézd, a kutya a pad alatt van! Milyen aranyos!"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Azt hiszem, az asztalra tettem az ebéd után."
+      "text": "Ebéd után kávézunk. Én egy kávét kérek, tej nélkül."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Nézd meg az asztal alatt! Leesett a földre?"
+      "text": "Én is, de cukorral. Anna, te mit kérsz?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Kávé helyett teát kérek, tej nélkül."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Nem, az asztal alatt csak a cipőm van."
+      "text": "Koncert előtt még pihenünk egy kicsit. Koncert után vacsorázunk."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "És a szék mellett? Vagy a nagy doboz mögött?"
+      "text": "Egész nap együtt vagyunk. Végre szabadság!"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "A doboz mögött sincs... Várj! Mi van a lámpa mellett?"
+      "text": "Köszönöm nektek! Nagyon szeretek veletek magyarul beszélni."
     },
     {
       "type": "dialogue",
-      "speaker": "Károly",
-      "text": "A lámpa mellett csak a könyved van. De nézd, mi van a könyv alatt!"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Itt van! A könyv alatt volt az asztalon!"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Szuper! Most már indulhatunk a vasútállomásra."
+      "speaker": "Anna",
+      "text": "Ügyes vagy, Meg! Jó nap lesz."
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Mi Meg problémája a történet elején?",
+          "question": "Hol találkoznak?",
           "options": [
-            "Nem találja a lakáskulcsát a táskájában.",
-            "Elvesztette a pénztárcáját a metrón.",
-            "Nem találja a vonatjegyet az indulás előtt.",
-            "Elkésik egy fontos munkahelyi megbeszélésről."
-          ],
-          "correctIndex": 2,
-          "explanation": "Meg aggódva mondja: „Baj van, nem találom a vonatjegyet!”, amikor a Keleti pályaudvarra készülnének."
-        },
-        {
-          "question": "Mit talál Meg az asztal alatt, amikor lenéz a földre?",
-          "options": [
-            "Csak a cipőjét találja ott.",
-            "Egy nagy kartondobozt és egy lámpát.",
-            "A könyvét és a vonatjegyét.",
-            "Egy poharat és a telefonját."
+            "A kapu előtt.",
+            "A mozi mögött.",
+            "A pad alatt."
           ],
           "correctIndex": 0,
-          "explanation": "Meg az asztal alá néz: „Nem, az asztal alatt csak a cipőm van.” (No, under the table there is only my shoe.)"
+          "explanation": "Meg asks: „A park kapuja előtt találkozunk?” and Károly says: „Igen, a kapu előtt.” (We meet in front of the gate.)",
+          "questionEnglish": "Where do they meet?",
+          "optionsEnglish": [
+            "In front of the gate.",
+            "Behind the cinema.",
+            "Under the bench."
+          ]
         },
         {
-          "question": "Hol találják meg végül a vonatjegyet?",
+          "question": "Mit kér Anna?",
           "options": [
-            "A szék mellett a szőnyegen",
-            "A nagy doboz mögött a szobában",
-            "A kabát belső zsebében",
-            "A könyv alatt az asztalon"
+            "Kávét cukor nélkül.",
+            "Vizet.",
+            "Teát tej nélkül."
           ],
-          "correctIndex": 3,
-          "explanation": "A jegy a könyv alatt rejtőzött: „Itt van! A könyv alatt volt az asztalon!” (It is here! It was under the book on the table!)"
+          "correctIndex": 2,
+          "explanation": "Anna says: „Kávé helyett teát kérek, tej nélkül.” (Instead of coffee I would like tea, without milk.)",
+          "questionEnglish": "What does Anna ask for?",
+          "optionsEnglish": [
+            "Coffee without sugar.",
+            "Water.",
+            "Tea without milk."
+          ]
+        },
+        {
+          "question": "Mit csinálnak ebéd előtt?",
+          "options": [
+            "Koncertre mennek.",
+            "A park felé sétálnak.",
+            "Vacsoráznak."
+          ],
+          "correctIndex": 1,
+          "explanation": "Anna says: „Ebéd előtt a park felé sétálunk.” (Before lunch we walk towards the park.)",
+          "questionEnglish": "What do they do before lunch?",
+          "optionsEnglish": [
+            "They go to a concert.",
+            "They walk towards the park.",
+            "They have dinner."
+          ]
         }
       ]
     }
