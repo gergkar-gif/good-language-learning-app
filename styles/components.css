@@ -9401,3 +9401,75 @@
 .lsn-spinner { width: 28px; height: 28px; border: 3px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: boot-spin .9s linear infinite; }
 .lsn-btn-spinner { display: inline-block; width: 12px; height: 12px; margin-right: 8px; vertical-align: -1px; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: boot-spin .9s linear infinite; }
 @media (prefers-reduced-motion: reduce) { .lsn-spinner, .lsn-btn-spinner { animation-duration: 3s; } }
+
+/* My Texts: file import, multi-chapter TOC, and chapter reader controls */
+.lt-import-box { margin: 8px 0 20px; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.lt-import-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.lt-import-btn { display: inline-flex; align-items: center; cursor: pointer; margin: 0; }
+.lt-import-hint { font-size: 13px; color: var(--muted); }
+.lt-import-status { margin: 10px 0 0; font-size: 13px; font-weight: 500; color: var(--text); }
+.lt-imported-summary { margin: 12px 0 18px; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.lt-imported-summary-title { font: 400 1.05rem/1.3 var(--font-display); color: var(--text); margin: 0 0 8px; }
+.lt-imported-chapter-preview { list-style: none; padding: 0; margin: 0 0 12px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: var(--text); }
+.lt-ch-preview-meta, .lt-ch-preview-more { color: var(--muted); font-size: 13px; }
+.lt-card-author { font-family: var(--font-ui); font-size: 13px; color: var(--muted); font-weight: 400; }
+.lt-card-badges { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 2px; }
+.lt-card-progress { font-size: 12px; font-weight: 600; }
+.lt-card-progress.is-now { color: var(--accent-text); }
+.lt-card-progress.is-done { color: var(--success); }
+.lt-continue-block { margin-bottom: 24px; }
+
+.lt-book-head { margin: 12px 0 24px; }
+.lt-book-author { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
+.lt-book-meta { margin: 6px 0 18px; font-size: 13px; color: var(--muted); }
+.lt-book-cta { margin-top: 12px; }
+.lt-chapter-list { border-top: 1px solid var(--primary); max-width: 44em; }
+.lt-chapter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 15px 0;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  color: var(--text);
+  cursor: pointer;
+}
+.lt-ch-main { display: flex; align-items: baseline; gap: 12px; min-width: 0; flex: 1; }
+.lt-ch-num { font: 500 13px/1.2 var(--font-ui); color: var(--muted); flex: none; min-width: 24px; }
+.lt-ch-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.lt-ch-title { font: 400 1.15rem/1.25 var(--font-display); color: var(--text); }
+.lt-ch-meta { font: 400 12.5px/1.3 var(--font-ui); color: var(--muted); }
+.lt-ch-status { font: 600 12.5px/1.2 var(--font-ui); color: var(--muted); flex: none; white-space: nowrap; }
+.lt-ch-status.is-now { color: var(--accent-text); }
+.lt-ch-status.is-done { color: var(--success); }
+@media (hover: hover) {
+  .lt-chapter-row:hover .lt-ch-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+}
+
+.lt-reading-eyebrow { margin: 0 0 4px; font: 500 13px/1.3 var(--font-ui); color: var(--muted); }
+.lt-chapter-select {
+  max-width: 220px;
+  padding: 6px 10px;
+  font: 500 13px/1.2 var(--font-ui);
+  color: var(--text);
+  background: var(--bg);
+  border: 0;
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 0 0 1.5px var(--border);
+  cursor: pointer;
+}
+.lt-chapter-select:focus { outline: none; box-shadow: inset 0 0 0 1.5px var(--primary); }
+.lt-chapter-finish { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.lt-next-ch-label { margin: 0; font: 400 1rem/1.4 var(--font-display); color: var(--muted); }
+.lt-next-ch-label strong { font-weight: 400; color: var(--text); }
+.lt-finish-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 639px) {
+  .lt-chapter-select { box-shadow: inset 0 0 0 1px var(--border); font-weight: 500; }
+  .lt-ch-status, .lt-card-progress { font-weight: 500; }
+}
+

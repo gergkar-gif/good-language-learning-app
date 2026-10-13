@@ -54,7 +54,7 @@ const Sync = (function () {
     // shouldn't silently change on restore.
     const COURSE_KEYS = [
         'progress', 'srsDeck', 'knownWords', 'recycleSchedule', 'testResults',
-        'readStories', 'savedReadings', 'myTexts', 'myDecks',
+        'readStories', 'storyProgress', 'savedReadings', 'myTexts', 'myDecks',
         'verbSpeedScores', 'unitPracticeDismissed', 'miniGameDismissed',
         'milestonesSeen', 'lastActivity', 'productionEvidence', 'assessmentHistory',
         'wordLookups', 'recommendationOutcomes', 'electiveResolvedAt', 'listeningLog'
