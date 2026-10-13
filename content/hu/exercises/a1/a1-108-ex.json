@@ -2,273 +2,209 @@
   "lesson": "a1-108",
   "exercises": [
     {
-      "id": "a1-108-review-1",
+      "id": "a1-108-introduce-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "introduce",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "question": "Which sentence means “I'd like some apples”?",
+      "options": [
+        "Almák kérek.",
+        "Almákat kérek.",
+        "Almákot kérek."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-108-introduce-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'hagyma' mean?",
+      "stage": "introduce",
+      "teaches": [
+        "a1-market-vocab"
+      ],
+      "question": "Which word means “plum”?",
       "options": [
-        "onion",
-        "tomato",
-        "carrot"
+        "szilva",
+        "narancs",
+        "saláta"
       ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-market-vocab"
-      ]
-    },
-    {
-      "id": "a1-108-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "krumpli",
-          "potato"
-        ],
-        [
-          "répa",
-          "carrot"
-        ],
-        [
-          "tejföl",
-          "sour cream"
-        ],
-        [
-          "vaj",
-          "butter"
-        ]
-      ],
-      "stage": "review",
-      "teaches": [
-        "a1-market-vocab"
-      ]
-    },
-    {
-      "id": "a1-108-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'sour cream'?",
-      "options": [
-        "tejföl",
-        "vaj",
-        "csirke"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-108-intro-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Hány csomag ____ kell?",
-      "hint": "sausage",
-      "english": "How many packets of sausage are needed?",
-      "answer": "kolbász",
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 0
     },
     {
       "id": "a1-108-controlled-1",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Mennyi a ____?",
-      "hint": "the butter",
-      "english": "How much is the butter?",
-      "answer": "vaj",
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-108-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'vaj' mean?",
-      "options": [
-        "butter",
-        "chicken",
-        "sausage"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-108-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "tejföl",
-          "sour cream"
-        ],
-        [
-          "vaj",
-          "butter"
-        ],
-        [
-          "csirke",
-          "chicken"
-        ],
-        [
-          "kolbász",
-          "sausage"
-        ]
-      ],
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-108-controlled-4",
-      "type": "substitution",
       "category": "grammar",
-      "base_sentence": "Kérek egy csomag vajat.",
-      "base_word": "vajat",
-      "base_gloss": "I'd like a packet of butter.",
-      "options": [
-        {
-          "word": "kolbász",
-          "inflected": "kolbászt",
-          "sentence": "Kérek egy csomag kolbászt.",
-          "gloss": "sausage"
-        },
-        {
-          "word": "tejföl",
-          "inflected": "tejfölt",
-          "sentence": "Kérek egy üveg tejfölt.",
-          "gloss": "sour cream"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "sentence": "Anna ____ vesz.",
+      "hint": "alma, plural",
+      "english": "Anna buys apples.",
+      "answer": "almákat"
+    },
+    {
+      "id": "a1-108-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "sentence": "Meg ____ is kér.",
+      "hint": "banán, plural",
+      "english": "Meg asks for bananas too.",
+      "answer": "banánokat"
+    },
+    {
+      "id": "a1-108-controlled-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "sentence": "Ők ____ vesznek.",
+      "hint": "szilva, plural",
+      "english": "They buy plums.",
+      "answer": "szilvákat"
+    },
+    {
+      "id": "a1-108-controlled-4",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-market-vocab"
+      ],
+      "pairs": [
+        [
+          "szilva",
+          "plum"
+        ],
+        [
+          "narancs",
+          "orange"
+        ],
+        [
+          "saláta",
+          "lettuce"
+        ],
+        [
+          "paprika",
+          "pepper"
+        ],
+        [
+          "uborka",
+          "cucumber"
+        ]
+      ]
     },
     {
       "id": "a1-108-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'chicken'?",
-      "options": [
-        "csirke",
-        "tejföl",
-        "kolbász"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-market-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “I'll take the pears”?",
+      "options": [
+        "Kérem a körtét.",
+        "Kérem a körték.",
+        "Kérem a körtéket."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-108-practice-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Kérek egy csomag vajat és egy üveg ____.",
-      "hint": "sour cream",
-      "english": "I'd like a packet of butter and a bottle of sour cream.",
-      "answer": "tejfölt",
+      "stage": "practice",
       "teaches": [
-        "how-the-accusative-t-works"
+        "singular-after-numbers"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “I'd like three oranges”?",
+      "options": [
+        "Három narancsot kérek.",
+        "Három narancsokat kérek.",
+        "Három narancsok kérek."
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "plural-nouns-k"
+      }
     },
     {
       "id": "a1-108-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Mennyi a vaj?",
-          "How much is the butter?"
-        ],
-        [
-          "Hány csomag kolbász kell?",
-          "How many packets of sausage are needed?"
-        ],
-        [
-          "Kérek egy csomag vajat és egy üveg tejfölt.",
-          "I'd like a packet of butter and a bottle of sour cream."
-        ],
-        [
-          "Negyed kiló is elég?",
-          "Is a quarter kilo enough too?"
-        ]
-      ],
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-108-practice-4",
-      "type": "substitution",
+      "type": "sentence-builder",
       "category": "grammar",
-      "base_sentence": "Kérek egy csirkét.",
-      "base_word": "csirkét",
-      "base_gloss": "I'd like a chicken.",
-      "options": [
-        {
-          "word": "kolbász",
-          "inflected": "kolbászt",
-          "sentence": "Kérek egy kolbászt.",
-          "gloss": "sausage"
-        },
-        {
-          "word": "vaj",
-          "inflected": "vajat",
-          "sentence": "Kérek egy vajat.",
-          "gloss": "butter"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Meg",
+        "almákat",
+        "és",
+        "körtéket",
+        "vesz",
+        "."
+      ],
+      "solution": [
+        "Meg",
+        "almákat",
+        "és",
+        "körtéket",
+        "vesz",
+        "."
+      ],
+      "english": "Meg buys apples and pears."
     },
     {
-      "id": "a1-108-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hány csomag kolbász kell?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Egy csomag. És egy csirke.",
-        "Kérek egy teát."
-      ],
-      "correct": 0,
+      "id": "a1-108-practice-4",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-market-vocab"
       ],
-      "stage": "practice"
+      "question": "Which of these is a fruit (gyümölcs)?",
+      "options": [
+        "saláta",
+        "hagyma",
+        "szilva"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-108-practice-5",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "sentence": "Kérem az érett ____.",
+      "hint": "szilva, plural",
+      "english": "I'll take the ripe plums.",
+      "answer": "szilvákat"
     },
     {
       "id": "a1-108-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
-          "speaker": "Árus",
-          "text": "Negyed kiló is elég?"
+          "speaker": "Mariann",
+          "text": "Mit kérsz?"
         },
         {
           "speaker": "Meg",
@@ -276,86 +212,108 @@
         }
       ],
       "options": [
-        "Igen, köszönöm.",
-        "Ez a piac nagy."
+        "Almákat és körtéket kérem.",
+        "Almákat és körték kérek.",
+        "Almákat és körtéket kérek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-market-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-108-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Negyed kiló is elég?\"",
-      "options": [
-        "Igen, elég.",
-        "Kérek egy limonádét."
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "a1-market-vocab"
+        "definite-vs-indefinite-conjugation"
+      ],
+      "prompt": [
+        {
+          "speaker": "Mariann",
+          "text": "Kéred az almákat?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Igen, az almákat kérek.",
+        "Igen, az almákat kérem.",
+        "Igen, az almákat kéred."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-108-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "tiles": [
+        "Kérem",
+        "az",
+        "érett",
+        "körtéket",
+        "."
+      ],
+      "solution": [
+        "Kérem",
+        "az",
+        "érett",
+        "körtéket",
+        "."
+      ],
+      "english": "I'll take the ripe pears."
+    },
+    {
+      "id": "a1-108-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you buy apples and plums.",
+          "answer": "Almákat és szilvákat veszek."
+        },
+        {
+          "prompt": "Say that you ask for three oranges.",
+          "answer": "Három narancsot kérek."
+        }
       ]
     },
     {
-      "id": "a1-108-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: csirke",
-          "answer": "Kérek egy csirkét."
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-108-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: kolbász",
-          "answer": "Kérek egy csomag kolbászt."
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "production"
-    },
-    {
       "id": "a1-108-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'sausage'?",
-      "options": [
-        "kolbász",
-        "tejföl",
-        "vaj"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-market-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "sentence": "Mi ____ kérünk.",
+      "hint": "körte, plural",
+      "english": "We'd like pears.",
+      "answer": "körtéket"
     },
     {
       "id": "a1-108-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "____ kiló is elég?",
-      "hint": "quarter",
-      "english": "Is a quarter kilo enough too?",
-      "answer": "Negyed",
+      "stage": "check",
       "teaches": [
-        "fractions"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "question": "Which sentence means “They take the oranges”?",
+      "options": [
+        "Veszik a narancsot.",
+        "Veszik a narancsokat.",
+        "Vesznek a narancsokat."
+      ],
+      "correct": 1
     }
   ]
 }

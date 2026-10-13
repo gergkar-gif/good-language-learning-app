@@ -2,360 +2,362 @@
   "lesson": "a1-110",
   "exercises": [
     {
-      "id": "a1-110-review-1",
+      "id": "a1-110-introduce-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'üveg' mean?",
+      "category": "grammar",
+      "stage": "introduce",
+      "teaches": [
+        "containers-and-measures"
+      ],
+      "question": "Which sentence means “I'd like two kilos of red apples”?",
       "options": [
-        "bottle/jar",
-        "packet",
-        "kilo"
+        "Két kiló piros almát kérek.",
+        "Két kiló piros almákat kérek.",
+        "Két kiló pirost almát kérek."
       ],
       "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-market-vocab"
-      ]
+      "distractor_skills": {
+        "1": "plural-nouns-k"
+      }
     },
     {
-      "id": "a1-110-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "csomag",
-          "packet"
-        ],
-        [
-          "kiló",
-          "kilo"
-        ],
-        [
-          "fél",
-          "half"
-        ],
-        [
-          "negyed",
-          "quarter"
-        ]
-      ],
-      "stage": "review",
-      "teaches": [
-        "a1-market-vocab"
-      ]
-    },
-    {
-      "id": "a1-110-intro-1",
+      "id": "a1-110-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'quarter'?",
+      "category": "grammar",
+      "stage": "introduce",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "question": "Which sentence means “Do you take the apple or the pear?”",
       "options": [
-        "negyed",
-        "mennyi",
-        "hány"
+        "Az almát vagy a körtét veszel?",
+        "Az almát vagy a körtét veszed?",
+        "Az almát vagy a körtét veszem?"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-110-intro-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A répa is ____.",
-      "hint": "fresh",
-      "english": "The carrot is fresh too.",
-      "answer": "friss",
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 1
     },
     {
       "id": "a1-110-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "____ kiló krumplit kérek.",
-      "hint": "quarter",
-      "english": "I'd like a quarter kilo of potatoes.",
-      "answer": "Negyed",
       "stage": "controlled",
       "teaches": [
-        "fractions"
-      ]
+        "is-placing-also-too"
+      ],
+      "sentence": "Az almát ____, a körtét is kérem.",
+      "english": "I'll take both the apple and the pear.",
+      "answer": "is"
     },
     {
       "id": "a1-110-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'mennyi' mean?",
-      "options": [
-        "how much",
-        "how many",
-        "fresh"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-market-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "sentence": "Mi a piros ____ kérjük.",
+      "hint": "körte, plural",
+      "english": "We ask for the red pears.",
+      "answer": "körtéket"
     },
     {
       "id": "a1-110-controlled-3",
-      "type": "matching",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "negyed",
-          "quarter"
-        ],
-        [
-          "mennyi",
-          "how much"
-        ],
-        [
-          "hány",
-          "how many"
-        ],
-        [
-          "friss",
-          "fresh"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-market-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "Az almát ____ a körtét kéred?",
+      "english": "Do you take the apple or the pear?",
+      "answer": "vagy"
     },
     {
       "id": "a1-110-controlled-4",
-      "type": "substitution",
+      "type": "matching",
       "category": "vocabulary",
-      "base_sentence": "A répa friss.",
-      "base_word": "répa",
-      "base_gloss": "The carrot is fresh.",
-      "options": [
-        {
-          "word": "paradicsom",
-          "inflected": "paradicsom",
-          "sentence": "A paradicsom friss.",
-          "gloss": "tomato"
-        },
-        {
-          "word": "hagyma",
-          "inflected": "hagyma",
-          "sentence": "A hagyma friss.",
-          "gloss": "onion"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-market-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "pult",
+          "counter"
+        ],
+        [
+          "szatyor",
+          "shopping bag"
+        ],
+        [
+          "kosár",
+          "basket"
+        ],
+        [
+          "zacskó",
+          "bag"
+        ],
+        [
+          "eladó",
+          "seller"
+        ]
+      ]
     },
     {
       "id": "a1-110-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'how many'?",
-      "options": [
-        "hány",
-        "negyed",
-        "friss"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-market-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “They buy plums”?",
+      "options": [
+        "Szilvákot vesznek.",
+        "Szilvákat veszik.",
+        "Szilvákat vesznek."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-110-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ a paradicsom?",
-      "hint": "how much",
-      "english": "How much is the tomato?",
-      "answer": "Mennyi",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-market-vocab"
+        "definite-article-a-az"
       ],
-      "stage": "practice"
+      "question": "Which fits? “____ érett szilvákat kérjük.”",
+      "options": [
+        "A",
+        "Az",
+        "Egy"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-110-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Negyed kiló is elég?",
-          "Is a quarter kilo enough too?"
-        ],
-        [
-          "A répa is friss.",
-          "The carrot is fresh too."
-        ],
-        [
-          "Mennyi a paradicsom?",
-          "How much is the tomato?"
-        ],
-        [
-          "Ez a hagyma friss?",
-          "Is this onion fresh?"
-        ]
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-market-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Mi",
+        "a",
+        "piros",
+        "almákat",
+        "kérjük",
+        "."
+      ],
+      "solution": [
+        "Mi",
+        "a",
+        "piros",
+        "almákat",
+        "kérjük",
+        "."
+      ],
+      "english": "We'd like the red apples."
     },
     {
       "id": "a1-110-practice-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Mennyi a paradicsom?",
-      "base_word": "paradicsom",
-      "base_gloss": "How much is the tomato?",
-      "options": [
-        {
-          "word": "krumpli",
-          "inflected": "krumpli",
-          "sentence": "Mennyi a krumpli?",
-          "gloss": "potato"
-        },
-        {
-          "word": "répa",
-          "inflected": "répa",
-          "sentence": "Mennyi a répa?",
-          "gloss": "carrot"
-        }
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-market-vocab"
+        "ban-ben-in"
       ],
-      "stage": "practice"
+      "sentence": "A piros alma a ____ van.",
+      "english": "The red apple is in the basket.",
+      "answer": "kosárban"
     },
     {
       "id": "a1-110-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Árus",
-          "text": "Negyed kiló is elég?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Igen, köszönöm.",
-        "Kérek egy teát."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-market-vocab"
       ],
-      "stage": "practice"
+      "question": "Which word means “counter” (where the seller works)?",
+      "options": [
+        "kosár",
+        "pult",
+        "zacskó"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-110-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mennyi a paradicsom?"
+          "speaker": "Mariann",
+          "text": "Az almát vagy a körtét kéred?"
         },
         {
-          "speaker": "Árus",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Egy kiló három forint.",
-        "Szia, Károly!"
+        "A körtét kérek.",
+        "A körtét kéred.",
+        "A körtét kérem."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-market-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-110-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Mennyi a paradicsom?\"",
-      "options": [
-        "Egy kiló három forint.",
-        "Igen, kérem a számlát."
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
       ],
-      "correct": 0,
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Ti kéritek a szilvát is?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Igen, a szilvát is kérünk.",
+        "Igen, a szilvát is kérjük.",
+        "Igen, a szilvát is kérik."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-110-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
+      "teaches": [
+        "is-placing-also-too"
+      ],
+      "tiles": [
+        "Az",
+        "almát",
+        "is",
+        ",",
+        "a",
+        "körtét",
+        "is",
+        "kérem",
+        "."
+      ],
+      "solution": [
+        "Az",
+        "almát",
+        "is",
+        ",",
+        "a",
+        "körtét",
+        "is",
+        "kérem",
+        "."
+      ],
+      "english": "I'll take both the apple and the pear."
+    },
+    {
+      "id": "a1-110-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
         "a1-market-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Ask for two kilos of plums.",
+          "answer": "Két kiló szilvát kérek."
+        },
+        {
+          "prompt": "Say that you and Anna take the red apples.",
+          "answer": "Mi kérjük a piros almákat."
+        }
       ]
     },
     {
-      "id": "a1-110-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: friss",
-          "answer": "A zöldség friss."
-        }
-      ],
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-110-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: hány",
-          "answer": "Hány csomag kolbász kell?"
-        }
-      ],
-      "teaches": [
-        "quantity-choice-questions-mennyi-melyik"
-      ],
-      "stage": "production"
-    },
-    {
       "id": "a1-110-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'fresh'?",
-      "options": [
-        "friss",
-        "negyed",
-        "mennyi"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-market-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "check"
+      "sentence": "Ők a zöld paprikákat ____.",
+      "hint": "vesz",
+      "english": "They are buying the green peppers.",
+      "answer": "veszik"
     },
     {
       "id": "a1-110-check-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ csomag kolbász kell?",
-      "hint": "how many",
-      "english": "How many packets of sausage are needed?",
-      "answer": "Hány",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-market-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "check"
+      "question": "Which sentence means “We take the cucumber, they take the onion”?",
+      "options": [
+        "Mi veszünk az uborkát, ők a hagymát veszik.",
+        "Mi vesszük az uborkát, ők a hagymát veszik.",
+        "Mi vesszük az uborkát, ők a hagymát vesznek."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-110-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does Károly not take, because there is some at home?",
+      "options": [
+        "The cucumber.",
+        "The pepper.",
+        "The onion."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-110-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Who pays at the stall?",
+      "options": [
+        "Károly.",
+        "Meg.",
+        "Anna."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-110-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does Károly cook at home?",
+      "options": [
+        "The soup.",
+        "The fish.",
+        "The chicken."
+      ],
+      "correct": 2
     }
   ]
 }

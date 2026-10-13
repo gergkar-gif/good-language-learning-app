@@ -2,272 +2,204 @@
   "lesson": "a1-106",
   "exercises": [
     {
-      "id": "a1-106-review-1",
+      "id": "a1-106-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means 'expensive'?",
-      "options": [
-        "drága",
-        "olcsó",
-        "kérek"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-buying-food-vocab"
-      ]
-    },
-    {
-      "id": "a1-106-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "drága",
-          "expensive"
-        ],
-        [
-          "olcsó",
-          "cheap"
-        ],
-        [
-          "kérek",
-          "I'd like / I ask for"
-        ],
-        [
-          "fizet",
-          "pay"
-        ]
-      ],
-      "stage": "review",
-      "teaches": [
-        "a1-buying-food-vocab"
-      ]
-    },
-    {
-      "id": "a1-106-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'market'?",
-      "options": [
-        "piac",
-        "árus",
-        "zöldség"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-market-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “ripe”?",
+      "options": [
+        "savanyú",
+        "érett",
+        "sárga"
+      ],
+      "correct": 1
     },
     {
-      "id": "a1-106-intro-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Az a ____.",
-      "hint": "fruit",
-      "english": "That is the fruit.",
-      "answer": "gyümölcs",
+      "id": "a1-106-introduce-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-market-vocab"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "introduce"
+      "question": "Which phrase means “a yellow banana”?",
+      "options": [
+        "egy sárga banán",
+        "egy banán sárga",
+        "egy sárgák banán"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-106-controlled-1",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Ez a ____.",
-      "hint": "vegetable",
-      "english": "This is the vegetable.",
-      "answer": "zöldség",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-market-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "sentence": "Kérem a piros ____.",
+      "english": "I'll take the red apple.",
+      "answer": "almát"
     },
     {
       "id": "a1-106-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'árus' mean?",
-      "options": [
-        "vendor",
-        "vegetable",
-        "fruit"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-market-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "sentence": "Egy zöld ____ kérek.",
+      "english": "I'd like a green pear.",
+      "answer": "körtét"
     },
     {
       "id": "a1-106-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "piac",
-          "market"
-        ],
-        [
-          "árus",
-          "vendor"
-        ],
-        [
-          "zöldség",
-          "vegetable"
-        ],
-        [
-          "gyümölcs",
-          "fruit"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-market-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "question": "Which sentence means “I'll take the sour lemon”?",
+      "options": [
+        "Kérem a savanyút citrom.",
+        "Kérem a savanyú citrom.",
+        "Kérem a savanyú citromot."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-106-controlled-4",
-      "type": "substitution",
+      "type": "matching",
       "category": "vocabulary",
-      "base_sentence": "Ez a zöldség.",
-      "base_word": "zöldség",
-      "base_gloss": "This is the vegetable.",
-      "options": [
-        {
-          "word": "gyümölcs",
-          "inflected": "gyümölcs",
-          "sentence": "Ez a gyümölcs.",
-          "gloss": "fruit"
-        },
-        {
-          "word": "piac",
-          "inflected": "piac",
-          "sentence": "Ez a piac.",
-          "gloss": "market"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-market-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "piros",
+          "red"
+        ],
+        [
+          "zöld",
+          "green"
+        ],
+        [
+          "sárga",
+          "yellow"
+        ],
+        [
+          "érett",
+          "ripe"
+        ],
+        [
+          "savanyú",
+          "sour"
+        ]
+      ]
     },
     {
       "id": "a1-106-practice-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means 'vegetable'?",
-      "options": [
-        "zöldség",
-        "piac",
-        "gyümölcs"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-market-vocab"
       ],
-      "stage": "practice"
+      "question": "Which fruit is sárga and savanyú?",
+      "options": [
+        "a banán",
+        "a körte",
+        "a citrom"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-106-practice-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Itt a ____. Sok árus van.",
-      "english": "Here is the market. There are many vendors.",
-      "answer": "piac",
+      "stage": "practice",
       "teaches": [
         "a1-market-vocab"
       ],
-      "stage": "practice"
+      "sentence": "A paradicsom ____, nem zöld.",
+      "english": "The tomato is red, not green.",
+      "answer": "piros"
     },
     {
       "id": "a1-106-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Ez a zöldség.",
-          "This is the vegetable."
-        ],
-        [
-          "Az a gyümölcs.",
-          "That is the fruit."
-        ],
-        [
-          "Itt a piac. Sok árus van.",
-          "Here's the market. There are many vendors."
-        ],
-        [
-          "Kérek zöldséget és gyümölcsöt.",
-          "I'd like vegetables and fruit."
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-market-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “I'll take the ripe banana”?",
+      "options": [
+        "Veszek az érett banánt.",
+        "Veszem az érett banánt.",
+        "Veszem az érett banán."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-106-practice-4",
-      "type": "substitution",
+      "type": "sentence-builder",
       "category": "grammar",
-      "base_sentence": "Kérek zöldséget.",
-      "base_word": "zöldséget",
-      "base_gloss": "I'd like vegetables.",
-      "options": [
-        {
-          "word": "gyümölcs",
-          "inflected": "gyümölcsöt",
-          "sentence": "Kérek gyümölcsöt.",
-          "gloss": "fruit"
-        },
-        {
-          "word": "hús",
-          "inflected": "húst",
-          "sentence": "Kérek húst.",
-          "gloss": "meat"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
-        "how-the-accusative-t-works"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Kérem",
+        "a",
+        "zöld",
+        "körtét",
+        "."
+      ],
+      "solution": [
+        "Kérem",
+        "a",
+        "zöld",
+        "körtét",
+        "."
+      ],
+      "english": "I'll take the green pear."
     },
     {
       "id": "a1-106-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Itt a piac. Sok árus van."
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Kérek zöldséget és gyümölcsöt.",
-        "Kérek egy kávét."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-market-vocab"
       ],
-      "stage": "practice"
+      "question": "Anna says: “A banán sárga és érett.” What is the banana like?",
+      "options": [
+        "green and sour",
+        "red and fresh",
+        "yellow and ripe"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-106-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Itt a piac."
+          "speaker": "Mariann",
+          "text": "Kéred a piros almát?"
         },
         {
           "speaker": "Meg",
@@ -275,86 +207,110 @@
         }
       ],
       "options": [
-        "Sok árus van.",
-        "Finom a leves."
+        "Igen, kérem.",
+        "Igen, kéred.",
+        "Igen, kérek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-market-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-106-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Itt a piac.\"",
-      "options": [
-        "Sok árus van.",
-        "Meleg a kávé."
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-market-vocab"
-      ]
-    },
-    {
-      "id": "a1-106-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: piac",
-          "answer": "Itt a piac."
-        }
-      ],
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-106-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: árus",
-          "answer": "Az árus itt van."
-        }
-      ],
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-106-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'fruit'?",
-      "options": [
-        "gyümölcs",
-        "piac",
-        "árus"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "check"
-    },
-    {
-      "id": "a1-106-check-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Kérek zöldséget és ____.",
-      "hint": "fruit",
-      "english": "I'd like vegetables and fruit.",
-      "answer": "gyümölcsöt",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Milyen a citrom?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A citrom savanyúk.",
+        "A citrom savanyút.",
+        "A citrom savanyú."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "0": "plural-predicate-adjectives-k"
+      }
+    },
+    {
+      "id": "a1-106-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
+      "teaches": [
+        "adjective-order-before-the-noun"
+      ],
+      "tiles": [
+        "Egy",
+        "piros",
+        "almát",
+        "kérek",
+        "."
+      ],
+      "solution": [
+        "Egy",
+        "piros",
+        "almát",
+        "kérek",
+        "."
+      ],
+      "english": "I'd like a red apple."
+    },
+    {
+      "id": "a1-106-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-market-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Say that the banana is yellow and ripe.",
+          "answer": "A banán sárga és érett."
+        },
+        {
+          "prompt": "Say that you will take the green pear.",
+          "answer": "Kérem a zöld körtét."
+        }
+      ]
+    },
+    {
+      "id": "a1-106-check-1",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "check",
+      "teaches": [
+        "a1-market-vocab"
+      ],
+      "sentence": "Kérek egy ____ citromot.",
+      "english": "I'd like a sour lemon.",
+      "answer": "savanyú"
+    },
+    {
+      "id": "a1-106-check-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "check",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "question": "Which sentence means “I'll take the red apple”?",
+      "options": [
+        "Kérem a pirost almát.",
+        "Kérem a piros almát.",
+        "Kérem a piros alma."
+      ],
+      "correct": 1
     }
   ]
 }

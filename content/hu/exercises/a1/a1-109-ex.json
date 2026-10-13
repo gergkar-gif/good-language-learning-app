@@ -2,273 +2,209 @@
   "lesson": "a1-109",
   "exercises": [
     {
-      "id": "a1-109-review-1",
+      "id": "a1-109-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'tejföl' mean?",
+      "stage": "introduce",
+      "teaches": [
+        "a1-market-vocab"
+      ],
+      "question": "Which means “Anything else?”",
       "options": [
-        "sour cream",
-        "butter",
-        "sausage"
+        "Ennyi.",
+        "Mást?",
+        "Tessék!"
       ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-market-vocab"
-      ]
+      "correct": 1
     },
     {
-      "id": "a1-109-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "vaj",
-          "butter"
-        ],
-        [
-          "kolbász",
-          "sausage"
-        ],
-        [
-          "üveg",
-          "bottle/jar"
-        ],
-        [
-          "csomag",
-          "packet"
-        ]
-      ],
-      "stage": "review",
-      "teaches": [
-        "a1-market-vocab"
-      ]
-    },
-    {
-      "id": "a1-109-intro-1",
+      "id": "a1-109-introduce-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means 'bottle/jar'?",
+      "stage": "introduce",
+      "teaches": [
+        "a1-market-vocab"
+      ],
+      "question": "What does “Viszontlátásra!” mean?",
       "options": [
-        "üveg",
-        "csomag",
-        "kiló"
+        "Good morning!",
+        "Goodbye!",
+        "Thank you!"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-109-intro-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Kérek egy ____ tejfölt.",
-      "hint": "bottle",
-      "english": "I'd like a bottle of sour cream.",
-      "answer": "üveg",
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 1
     },
     {
       "id": "a1-109-controlled-1",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Kérek ____ kiló paradicsomot.",
-      "hint": "half",
-      "english": "I'd like half a kilo of tomatoes.",
-      "answer": "fél",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "fractions"
+        "a1-market-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "Még ____? – Nem, ennyi.",
+      "english": "Anything else? – No, that's all.",
+      "answer": "valamit"
     },
     {
       "id": "a1-109-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'csomag' mean?",
-      "options": [
-        "packet",
-        "kilo",
-        "half"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-109-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "üveg",
-          "bottle/jar"
-        ],
-        [
-          "csomag",
-          "packet"
-        ],
-        [
-          "kiló",
-          "kilo"
-        ],
-        [
-          "fél",
-          "half"
-        ]
-      ],
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-109-controlled-4",
-      "type": "substitution",
+      "type": "fill-blank",
       "category": "grammar",
-      "base_sentence": "Kérek egy üveg tejfölt.",
-      "base_word": "tejfölt",
-      "base_gloss": "I'd like a bottle of sour cream.",
-      "options": [
-        {
-          "word": "vaj",
-          "inflected": "vajat",
-          "sentence": "Kérek egy csomag vajat.",
-          "gloss": "butter"
-        },
-        {
-          "word": "kolbász",
-          "inflected": "kolbászt",
-          "sentence": "Kérek egy csomag kolbászt.",
-          "gloss": "sausage"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "sentence": "Mit kérsz? – Egy kiló ____.",
+      "english": "What would you like? – A kilo of apples.",
+      "answer": "almát"
+    },
+    {
+      "id": "a1-109-controlled-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "question": "Which short answer fits “Mit kérsz?”",
+      "options": [
+        "Két banán.",
+        "Két banánt.",
+        "Két banánok."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "2": "plural-nouns-k"
+      }
+    },
+    {
+      "id": "a1-109-controlled-4",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-market-vocab"
+      ],
+      "pairs": [
+        [
+          "Tessék!",
+          "here you are"
+        ],
+        [
+          "Mást?",
+          "anything else?"
+        ],
+        [
+          "Ennyi.",
+          "that's all"
+        ],
+        [
+          "Viszontlátásra!",
+          "goodbye (polite)"
+        ],
+        [
+          "Mit kérsz?",
+          "what would you like?"
+        ]
+      ]
     },
     {
       "id": "a1-109-practice-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means 'kilo'?",
-      "options": [
-        "kiló",
-        "üveg",
-        "fél"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-market-vocab"
       ],
-      "stage": "practice"
+      "question": "The seller asks “Még valamit?” You have everything. What do you say?",
+      "options": [
+        "Nem, tessék.",
+        "Nem, mást.",
+        "Nem, ennyi."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-109-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Kérek egy ____ vajat.",
-      "hint": "packet",
-      "english": "I'd like a packet of butter.",
-      "answer": "csomag",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-market-vocab"
+        "cardinal-numbers"
       ],
-      "stage": "practice"
+      "question": "The seller says “Összesen ezerkétszáz forint.” Which amount is that?",
+      "options": [
+        "1,020 forints",
+        "2,200 forints",
+        "1,200 forints"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-109-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Kérek fél kiló paradicsomot.",
-          "I'd like half a kilo of tomatoes."
-        ],
-        [
-          "Kérek egy üveg tejfölt.",
-          "I'd like a bottle of sour cream."
-        ],
-        [
-          "Kérek egy csomag vajat.",
-          "I'd like a packet of butter."
-        ],
-        [
-          "Egy kiló három forint.",
-          "One kilo is three forints."
-        ]
-      ],
-      "teaches": [
-        "a1-market-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-109-practice-4",
-      "type": "substitution",
+      "type": "fill-blank",
       "category": "grammar",
-      "base_sentence": "Kérek fél kiló paradicsomot.",
-      "base_word": "paradicsomot",
-      "base_gloss": "I'd like half a kilo of tomatoes.",
-      "options": [
-        {
-          "word": "krumpli",
-          "inflected": "krumplit",
-          "sentence": "Kérek fél kiló krumplit.",
-          "gloss": "potato"
-        },
-        {
-          "word": "hagyma",
-          "inflected": "hagymát",
-          "sentence": "Kérek fél kiló hagymát.",
-          "gloss": "onion"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Tessék! Mást? – Még három ____.",
+      "english": "Here you are! Anything else? – Three more pears.",
+      "answer": "körtét"
+    },
+    {
+      "id": "a1-109-practice-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "containers-and-measures"
+      ],
+      "tiles": [
+        "Még",
+        "egy",
+        "csomag",
+        "rizst",
+        "kérek",
+        "."
+      ],
+      "solution": [
+        "Még",
+        "egy",
+        "csomag",
+        "rizst",
+        "kérek",
+        "."
+      ],
+      "english": "I'd like one more packet of rice."
     },
     {
       "id": "a1-109-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Kérek fél kiló paradicsomot és egy kiló krumplit."
-        },
-        {
-          "speaker": "Árus",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Egy kiló három forint.",
-        "A répa nem friss."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-market-vocab"
       ],
-      "stage": "practice"
+      "question": "What do you say to the seller when you leave?",
+      "options": [
+        "Tessék, mást? Még valamit?",
+        "Köszönöm, viszontlátásra!",
+        "Mennyi összesen? Ennyi."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-109-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
-          "speaker": "Árus",
-          "text": "Mennyi krumplit kér?"
+          "speaker": "Mariann",
+          "text": "Tessék! Mást?"
         },
         {
           "speaker": "Meg",
@@ -276,86 +212,112 @@
         }
       ],
       "options": [
-        "Egy kilót kérek.",
-        "Szia, hogy vagy?"
+        "Még két narancs.",
+        "Még két narancsot.",
+        "Még két narancsok."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-market-vocab"
-      ]
+      "correct": 1,
+      "distractor_skills": {
+        "2": "plural-nouns-k"
+      }
     },
     {
       "id": "a1-109-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Mennyi krumplit kér?\"",
-      "options": [
-        "Egy kilót kérek.",
-        "Meleg a leves."
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "singular-after-numbers"
       ],
-      "correct": 0,
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Mennyi összesen?"
+        },
+        {
+          "speaker": "Mariann",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Összesen ezerháromszáz forintot.",
+        "Összesen ezerháromszáz forintok.",
+        "Összesen ezerháromszáz forint."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "0": "how-the-accusative-t-works",
+        "1": "plural-nouns-k"
+      }
+    },
+    {
+      "id": "a1-109-production-1",
+      "type": "sentence-builder",
+      "category": "vocabulary",
+      "stage": "production",
       "teaches": [
         "a1-market-vocab"
+      ],
+      "tiles": [
+        "Köszönöm",
+        ",",
+        "viszontlátásra",
+        "!"
+      ],
+      "solution": [
+        "Köszönöm",
+        ",",
+        "viszontlátásra",
+        "!"
+      ],
+      "english": "Thank you, goodbye!"
+    },
+    {
+      "id": "a1-109-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-market-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Say you'd like one more kilo of plums.",
+          "answer": "Még egy kiló szilvát kérek."
+        },
+        {
+          "prompt": "Tell the seller that is all.",
+          "answer": "Ennyi."
+        }
       ]
     },
     {
-      "id": "a1-109-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: üveg",
-          "answer": "Kérek egy üveg tejfölt."
-        }
-      ],
-      "teaches": [
-        "containers-and-measures"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-109-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: csomag",
-          "answer": "Kérek egy csomag vajat."
-        }
-      ],
-      "teaches": [
-        "containers-and-measures"
-      ],
-      "stage": "production"
-    },
-    {
       "id": "a1-109-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "question": "Which word means 'half'?",
-      "options": [
-        "fél",
-        "üveg",
-        "csomag"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-market-vocab"
       ],
-      "stage": "check"
+      "sentence": "Mennyi ____? – Ezerháromszáz forint.",
+      "english": "How much is it in total? – 1,300 forints.",
+      "answer": "összesen"
     },
     {
       "id": "a1-109-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "sentence": "Egy ____ három forint.",
-      "hint": "kilo",
-      "english": "One kilo is three forints.",
-      "answer": "kiló",
+      "stage": "check",
       "teaches": [
         "a1-market-vocab"
       ],
-      "stage": "check"
+      "question": "What does “Ennyi.” mean at the stall?",
+      "options": [
+        "Anything else?",
+        "Here you are.",
+        "That's all."
+      ],
+      "correct": 2
     }
   ]
 }
