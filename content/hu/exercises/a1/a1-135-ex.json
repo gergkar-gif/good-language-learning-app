@@ -2,369 +2,345 @@
   "lesson": "a1-135",
   "exercises": [
     {
-      "id": "a1-135-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'kávézó' mean?",
-      "options": [
-        "café",
-        "library",
-        "museum"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-city-vocab"
-      ]
-    },
-    {
-      "id": "a1-135-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'múzeum' mean?",
-      "options": [
-        "museum",
-        "café",
-        "cinema"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-city-vocab"
-      ]
-    },
-    {
       "id": "a1-135-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'közel' mean?",
-      "options": [
-        "near",
-        "far",
-        "left"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-city-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “plan for the day”?",
+      "options": [
+        "délelőtt",
+        "térkép",
+        "program"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-135-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'jobb' mean?",
-      "options": [
-        "right",
-        "left",
-        "far"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-city-vocab"
+        "movement-with-ba-be"
       ],
-      "stage": "introduce"
+      "question": "Which sentence means “In the morning I go to the park”?",
+      "options": [
+        "Reggel a parkban megyek.",
+        "Reggel a parkba megyek.",
+        "Reggel a park megyek."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-135-controlled-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A múzeum ____ van.",
-      "hint": "on the right",
-      "english": "The museum is on the right.",
-      "answer": "jobbra",
+      "stage": "controlled",
       "teaches": [
         "a1-city-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "____ a múzeumban vagyok.",
+      "english": "In the late morning I am in the museum.",
+      "answer": "Délelőtt"
     },
     {
       "id": "a1-135-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'far'.",
-      "options": [
-        "messze",
-        "közel",
-        "bal"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-city-vocab"
+        "ban-ben-in"
       ],
-      "stage": "controlled"
+      "sentence": "Délben az ____ ebédelek.",
+      "hint": "étterem",
+      "english": "At noon I have lunch in the restaurant.",
+      "answer": "étteremben"
     },
     {
       "id": "a1-135-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "közel",
-          "near"
-        ],
-        [
-          "messze",
-          "far"
-        ],
-        [
-          "bal",
-          "left"
-        ],
-        [
-          "jobb",
-          "right"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-city-vocab"
+        "movement-with-ba-be"
       ],
-      "stage": "controlled"
+      "sentence": "Délután a ____ megyek.",
+      "hint": "mozi",
+      "english": "In the afternoon I am going to the cinema.",
+      "answer": "moziba"
     },
     {
       "id": "a1-135-controlled-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "A park balra van.",
-      "base_word": "balra",
-      "base_gloss": "The park is on the left.",
-      "options": [
-        {
-          "word": "jobbra",
-          "inflected": "jobbra",
-          "sentence": "A park jobbra van.",
-          "gloss": "on the right"
-        },
-        {
-          "word": "közel",
-          "inflected": "közel",
-          "sentence": "A park közel van.",
-          "gloss": "near"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-city-vocab"
+        "mindig-and-gyakran-frequency-adverbs"
       ],
-      "stage": "controlled"
+      "question": "Which sentence means “I often go to the park”?",
+      "options": [
+        "Gyakran a parkba megyek.",
+        "Ritkán a parkba megyek.",
+        "Néha a parkba megyek."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-135-practice-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which suffix does 'tér' take for 'on the square'?",
-      "options": [
-        "-en",
-        "-ban",
-        "-ra"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "on-en-on"
+        "a1-city-vocab"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "practice"
+      "question": "Anna asks: “Mi a program ma?” What does she want to know?",
+      "options": [
+        "your plan for today",
+        "where the bank is",
+        "the price of the map"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-135-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A könyvtár a ____ van.",
-      "hint": "square",
-      "english": "The library is on the square.",
-      "answer": "téren",
+      "stage": "practice",
       "teaches": [
-        "on-en-on"
+        "mindig-and-gyakran-frequency-adverbs"
       ],
-      "stage": "practice"
+      "sentence": "____ a parkba megyek reggel.",
+      "english": "I always go to the park in the morning.",
+      "answer": "Mindig"
     },
     {
       "id": "a1-135-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "közel",
-          "near"
-        ],
-        [
-          "messze",
-          "far"
-        ],
-        [
-          "bal",
-          "left"
-        ],
-        [
-          "jobb",
-          "right"
-        ],
-        [
-          "kávézó",
-          "café"
-        ]
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-city-vocab"
+        "ban-ben-in"
       ],
-      "stage": "practice"
+      "tiles": [
+        "ebédelek",
+        "az",
+        ".",
+        "étteremben",
+        "Délben"
+      ],
+      "solution": [
+        "Délben",
+        "az",
+        "étteremben",
+        "ebédelek",
+        "."
+      ],
+      "english": "At noon I have lunch in the restaurant."
     },
     {
       "id": "a1-135-practice-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Az étterem a téren van.",
-      "base_word": "étterem",
-      "base_gloss": "The restaurant is on the square.",
-      "options": [
-        {
-          "word": "könyvtár",
-          "inflected": "könyvtár",
-          "sentence": "A könyvtár a téren van.",
-          "gloss": "the library"
-        },
-        {
-          "word": "mozi",
-          "inflected": "mozi",
-          "sentence": "A mozi a téren van.",
-          "gloss": "the cinema"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-city-vocab"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "practice"
+      "question": "Which question means “Where are you going in the afternoon?”",
+      "options": [
+        "Hová mész délután?",
+        "Hol vagy délután?",
+        "Hová megy délután?"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-135-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Hol van a park?"
-        },
-        {
-          "speaker": "Mariann",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Balra, a tér mögött.",
-        "Szeretek úszni."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-city-vocab"
+        "movement-with-ba-be"
       ],
-      "stage": "practice"
+      "sentence": "Reggel a ____ megyek, délután a múzeumba.",
+      "hint": "park",
+      "english": "In the morning I go to the park, in the afternoon to the museum.",
+      "answer": "parkba"
     },
     {
       "id": "a1-135-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "A könyvtár is a téren van?"
+          "speaker": "Károly",
+          "text": "Hol ebédelsz?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, a könyvtár is ott van.",
-        "Mennyibe kerül?"
+        "Az étterembe ebédelek.",
+        "Az étterem ebédelek.",
+        "Az étteremben ebédelek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-city-vocab"
-      ]
+      "correct": 2,
+      "distractor_skills": {
+        "0": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-135-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "movement-with-ba-be"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "A gyógyszertár közel van?"
+          "speaker": "Anna",
+          "text": "Milyen gyakran mész a moziba?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, közel van, jobb kéz felől.",
-        "Szia, hogy vagy?"
+        "Néha a mozi megyek.",
+        "Néha a moziba megyek.",
+        "Néha a moziban megyek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-city-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-135-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say the restaurant is on the square.",
-          "answer": "Az étterem a téren van."
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "on-en-on"
-      ]
+        "movement-with-ba-be"
+      ],
+      "tiles": [
+        "a",
+        "moziba",
+        "délután",
+        "megyek",
+        ".",
+        ",",
+        "megyek",
+        "a",
+        "Reggel",
+        "parkba"
+      ],
+      "solution": [
+        "Reggel",
+        "a",
+        "parkba",
+        "megyek",
+        ",",
+        "délután",
+        "a",
+        "moziba",
+        "megyek",
+        "."
+      ],
+      "english": "In the morning I go to the park, in the afternoon to the cinema."
     },
     {
       "id": "a1-135-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Say the park is on the left.",
-          "answer": "A park balra van."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "a1-city-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Ask what the plan is today.",
+          "answer": "Mi a program ma?"
+        },
+        {
+          "prompt": "Say that you often go to the park.",
+          "answer": "Gyakran a parkba megyek."
+        }
       ]
     },
     {
       "id": "a1-135-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'near'.",
-      "options": [
-        "közel",
-        "messze",
-        "bal"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-city-vocab"
+        "ban-ben-in"
       ],
-      "stage": "check"
+      "sentence": "Délelőtt a ____ vagyok.",
+      "hint": "könyvtár",
+      "english": "In the late morning I am in the library.",
+      "answer": "könyvtárban"
     },
     {
       "id": "a1-135-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'left'.",
-      "options": [
-        "bal",
-        "jobb",
-        "messze"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-city-vocab"
+        "movement-with-ba-be"
       ],
-      "stage": "check"
+      "question": "Which sentence means “I rarely go to the hospital”?",
+      "options": [
+        "Ritkán megyek a kórházban.",
+        "Ritkán megyek a kórházba.",
+        "Gyakran megyek a kórházba."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-135-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Where do the three friends go first?",
+      "options": [
+        "To the park.",
+        "To the cinema.",
+        "To the museum."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-135-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Where is the museum?",
+      "options": [
+        "Behind the hotel.",
+        "In front of the bank.",
+        "Next to the square."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-135-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Where is the restaurant?",
+      "options": [
+        "In front of the church.",
+        "Next to the bank.",
+        "Behind the hotel."
+      ],
+      "correct": 2
     }
   ]
 }

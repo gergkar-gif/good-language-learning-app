@@ -5,110 +5,148 @@
   "type": "original",
   "characters": [
     "Meg",
-    "Mariann"
+    "Károly",
+    "Anna",
+    "Járókelő"
   ],
   "paragraphs": [
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg is learning to move around the city more independently."
+      "text": "Saturday morning in the city. Meg, Károly and Anna have a map and a plan for the day."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Hol van a bank?"
+      "text": "Jó reggelt! Mi a program ma?"
     },
     {
       "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "A bank közel van. A posta is közel van."
+      "speaker": "Anna",
+      "text": "Reggel a parkba megyünk, délben az étteremben ebédelünk."
     },
     {
       "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Hová megyünk?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Az állomásra megyünk."
+      "speaker": "Károly",
+      "text": "És délután? Meg, te hová mész? A múzeumba vagy a moziba?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "A gyógyszertár hol van?"
+      "text": "A múzeumba megyek. De hol van a múzeum? Nem látom a térképen."
+    },
+    {
+      "type": "narration",
+      "lang": "en",
+      "text": "They ask a woman on the street."
     },
     {
       "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "A bolt mellett van."
+      "speaker": "Anna",
+      "text": "Elnézést! Hol van a múzeum?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Járókelő",
+      "text": "A múzeum a tér mellett van, a templom előtt. Nincs messze."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Messze van innen?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Járókelő",
+      "text": "Nem, nagyon közel van. Gyalog egy kilométer."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Köszönöm szépen!"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Járókelő",
+      "text": "Szívesen! Jó napot!"
+    },
+    {
+      "type": "narration",
+      "lang": "en",
+      "text": "The three friends walk to the park, and at noon they look for the restaurant."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Itt az étterem! A szálloda mögött van."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "És az iskola?"
+      "text": "Éhes vagyok. Menjünk be!"
     },
     {
       "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Az utca végén van."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Van itt park?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Igen, a park közel van. A kórház messze van."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "A múzeum és a mozi is itt van?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Igen. A könyvtár a téren van."
+      "speaker": "Anna",
+      "text": "Igen, én is. Délután a múzeumba megyünk, este otthon vagyunk."
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Mit csinál Meg és Mariann a városban?",
+          "question": "Hová megy először a három barát?",
           "options": [
-            "Éttermet keresnek az esti vacsorához.",
-            "Városi épületek és helyszínek elhelyezkedéséről tájékozódnak.",
-            "A repülőtérre sietnek taxival.",
-            "Egy múzeumban néznek kiállítást."
-          ],
-          "correctIndex": 1,
-          "explanation": "Meg a városi épületek (bank, posta, gyógyszertár, iskola, park, könyvtár) elhelyezkedéséről kérdezi Mariannt."
-        },
-        {
-          "question": "Hol található a gyógyszertár Mariann szerint?",
-          "options": [
-            "A múzeum mögött",
-            "Az utca végén",
-            "A bolt mellett",
-            "A kórházban"
-          ],
-          "correctIndex": 2,
-          "explanation": "Meg kérdésére Mariann válaszol: „A bolt mellett van.” (It is next to the shop.)"
-        },
-        {
-          "question": "Hová mennek konkrétan a szereplők?",
-          "options": [
-            "Az állomásra mennek.",
-            "A távoli kórházba indulnak.",
-            "A könyvtárba sétálnak.",
-            "Egyenesen a moziba mennek."
+            "A parkba.",
+            "A múzeumba.",
+            "A moziba.",
+            "A bankba."
           ],
           "correctIndex": 0,
-          "explanation": "Arra a kérdésre, hogy „Hová megyünk?”, Mariann így felel: „Az állomásra megyünk.” (We are going to the station.)"
+          "explanation": "Anna says: „Reggel a parkba megyünk.” (In the morning we go to the park.)",
+          "questionEnglish": "Where do the three friends go first?",
+          "optionsEnglish": [
+            "To the park.",
+            "To the museum.",
+            "To the cinema.",
+            "To the bank."
+          ]
+        },
+        {
+          "question": "Hol van a múzeum?",
+          "options": [
+            "A tér mellett, a templom előtt.",
+            "A szálloda mögött.",
+            "A bank és a bolt között.",
+            "A park mellett."
+          ],
+          "correctIndex": 0,
+          "explanation": "The woman says: „A múzeum a tér mellett van, a templom előtt.” (The museum is next to the square, in front of the church.)",
+          "questionEnglish": "Where is the museum?",
+          "optionsEnglish": [
+            "Next to the square, in front of the church.",
+            "Behind the hotel.",
+            "Between the bank and the shop.",
+            "Next to the park."
+          ]
+        },
+        {
+          "question": "Hol van az étterem?",
+          "options": [
+            "A szálloda mögött.",
+            "A templom előtt.",
+            "A bank mellett.",
+            "A tér mellett."
+          ],
+          "correctIndex": 0,
+          "explanation": "Károly says: „A szálloda mögött van.” (It is behind the hotel.)",
+          "questionEnglish": "Where is the restaurant?",
+          "optionsEnglish": [
+            "Behind the hotel.",
+            "In front of the church.",
+            "Next to the bank.",
+            "Next to the square."
+          ]
         }
       ]
     }

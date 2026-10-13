@@ -2,365 +2,311 @@
   "lesson": "a1-132",
   "exercises": [
     {
-      "id": "a1-132-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'város' mean?",
-      "options": [
-        "city",
-        "street",
-        "station"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-city-vocab"
-      ]
-    },
-    {
-      "id": "a1-132-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'állomás' mean?",
-      "options": [
-        "station",
-        "square",
-        "city"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-city-vocab"
-      ]
-    },
-    {
       "id": "a1-132-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'gyógyszertár' mean?",
-      "options": [
-        "pharmacy",
-        "school",
-        "bank"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-city-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “church”?",
+      "options": [
+        "templom",
+        "tér",
+        "kórház"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-132-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'iskola' mean?",
-      "options": [
-        "school",
-        "pharmacy",
-        "bank"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-city-vocab"
+        "postpositions-basic"
       ],
-      "stage": "introduce"
+      "question": "Which sentence means “The church is next to the square”?",
+      "options": [
+        "A templom a tér mellett van.",
+        "A templom a tér mögött van.",
+        "A templom a tér előtt van."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-132-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A gyógyszertár hol ____?",
-      "english": "Where is the pharmacy?",
-      "answer": "van",
+      "stage": "controlled",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "postpositions-basic"
       ],
-      "stage": "controlled"
+      "sentence": "A bank a bolt ____ van.",
+      "english": "The bank is next to the shop.",
+      "answer": "mellett"
     },
     {
       "id": "a1-132-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'bank'.",
-      "options": [
-        "bank",
-        "bolt",
-        "iskola"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-city-vocab"
+        "postpositions-basic"
       ],
-      "stage": "controlled"
+      "sentence": "A kórház az iskola ____ van.",
+      "english": "The hospital is behind the school.",
+      "answer": "mögött"
     },
     {
       "id": "a1-132-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "bank",
-          "bank"
-        ],
-        [
-          "bolt",
-          "shop"
-        ],
-        [
-          "gyógyszertár",
-          "pharmacy"
-        ],
-        [
-          "iskola",
-          "school"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-city-vocab"
+        "postpositions-basic"
       ],
-      "stage": "controlled"
+      "sentence": "A bolt a bank és a kávézó ____ van.",
+      "english": "The shop is between the bank and the café.",
+      "answer": "között"
     },
     {
       "id": "a1-132-controlled-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "A bolt mellett van.",
-      "base_word": "bolt",
-      "base_gloss": "It's next to the shop.",
-      "options": [
-        {
-          "word": "bank",
-          "inflected": "bank",
-          "sentence": "A bank mellett van.",
-          "gloss": "the bank"
-        },
-        {
-          "word": "iskola",
-          "inflected": "iskola",
-          "sentence": "Az iskola mellett van.",
-          "gloss": "the school"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-city-vocab"
+        "postpositions-basic"
       ],
-      "stage": "controlled"
+      "question": "Which phrase means “in front of the museum”?",
+      "options": [
+        "a múzeum mögött",
+        "a múzeumban előtt",
+        "a múzeum előtt"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-132-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'next to'?",
-      "options": [
-        "mellett",
-        "közel",
-        "messze"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-city-vocab"
+        "postpositions-basic"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “The park is behind the hotel”?",
+      "options": [
+        "A park a szálloda mögött van.",
+        "A park mögött a szálloda van.",
+        "A park a szállodában mögött van."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-132-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A bank ____ van a posta.",
-      "hint": "next to",
-      "english": "The post office is next to the bank.",
-      "answer": "mellett",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "postpositions-basic"
+        "a1-city-vocab"
       ],
-      "stage": "practice"
+      "sentence": "A ____ a tér mellett van.",
+      "english": "The church is next to the square.",
+      "answer": "templom"
     },
     {
       "id": "a1-132-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "bank",
-          "bank"
-        ],
-        [
-          "bolt",
-          "shop"
-        ],
-        [
-          "gyógyszertár",
-          "pharmacy"
-        ],
-        [
-          "iskola",
-          "school"
-        ],
-        [
-          "város",
-          "city"
-        ]
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-city-vocab"
+        "postpositions-basic"
       ],
-      "stage": "practice"
+      "tiles": [
+        "előtt",
+        "park",
+        "van",
+        ".",
+        "A",
+        "a",
+        "múzeum"
+      ],
+      "solution": [
+        "A",
+        "múzeum",
+        "a",
+        "park",
+        "előtt",
+        "van",
+        "."
+      ],
+      "english": "The museum is in front of the park."
     },
     {
       "id": "a1-132-practice-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Az iskola az utca végén van.",
-      "base_word": "iskola",
-      "base_gloss": "The school is at the end of the street.",
-      "options": [
-        {
-          "word": "gyógyszertár",
-          "inflected": "gyógyszertár",
-          "sentence": "A gyógyszertár az utca végén van.",
-          "gloss": "the pharmacy"
-        },
-        {
-          "word": "bolt",
-          "inflected": "bolt",
-          "sentence": "A bolt az utca végén van.",
-          "gloss": "the shop"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-city-vocab"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "practice"
+      "question": "Which question asks where the pharmacy is?",
+      "options": [
+        "Ki van a gyógyszertár?",
+        "Hol van a gyógyszertár?",
+        "Hová van a gyógyszertár?"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-132-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Hol van a gyógyszertár?"
-        },
-        {
-          "speaker": "Mariann",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A bolt mellett.",
-        "Mennyibe kerül?"
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-city-vocab"
+        "postpositions-basic"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “The school is between the library and the park”?",
+      "options": [
+        "Az iskola a könyvtár a park között van.",
+        "Az iskola a könyvtár és a park mellett van.",
+        "Az iskola a könyvtár és a park között van."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-132-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "postpositions-basic"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Hol van az iskola?"
+          "speaker": "Anna",
+          "text": "Hol van a szálloda?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Az utca végén.",
-        "Szeretek úszni."
+        "A szálloda a templomban mögött van.",
+        "A szálloda a templom mögött vagyok.",
+        "A szálloda a templom mögött van."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-city-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-132-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "van-and-nincs-there-is-there-isn-t"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Hol van a bank?"
+          "speaker": "Károly",
+          "text": "Mi van a park mellett?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "A gyógyszertár mellett.",
-        "Szia, hogy vagy?"
+        "A park mellett egy kávézók van.",
+        "A park mellett egy kávézó van.",
+        "A park mellett egy kávézót van."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-city-vocab"
-      ]
+      "correct": 1,
+      "distractor_skills": {
+        "2": "how-the-accusative-t-works",
+        "0": "plural-nouns-k"
+      }
     },
     {
       "id": "a1-132-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask where the pharmacy is.",
-          "answer": "Hol van a gyógyszertár?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "spatial-questions-hol-hova"
-      ]
+        "postpositions-basic"
+      ],
+      "tiles": [
+        "és",
+        "a",
+        "a",
+        "A",
+        ".",
+        "van",
+        "kávézó",
+        "bolt",
+        "bank",
+        "között"
+      ],
+      "solution": [
+        "A",
+        "bolt",
+        "a",
+        "bank",
+        "és",
+        "a",
+        "kávézó",
+        "között",
+        "van",
+        "."
+      ],
+      "english": "The shop is between the bank and the café."
     },
     {
       "id": "a1-132-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-city-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say it's next to the shop.",
-          "answer": "A bolt mellett van."
+          "prompt": "Say that the church is next to the square.",
+          "answer": "A templom a tér mellett van."
+        },
+        {
+          "prompt": "Ask where the pharmacy is.",
+          "answer": "Hol van a gyógyszertár?"
         }
-      ],
-      "teaches": [
-        "postpositions-basic"
       ]
     },
     {
       "id": "a1-132-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'pharmacy'.",
-      "options": [
-        "gyógyszertár",
-        "iskola",
-        "bank"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-city-vocab"
+        "postpositions-basic"
       ],
-      "stage": "check"
+      "sentence": "A múzeum a park ____ van.",
+      "english": "The museum is in front of the park.",
+      "answer": "előtt"
     },
     {
       "id": "a1-132-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'school'.",
-      "options": [
-        "iskola",
-        "bolt",
-        "bank"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-city-vocab"
+        "postpositions-basic"
       ],
-      "stage": "check"
+      "question": "Which sentence means “The bank is behind the hotel”?",
+      "options": [
+        "A bank a szálloda előtt van.",
+        "A bank a szálloda mellett van.",
+        "A bank a szálloda mögött van."
+      ],
+      "correct": 2
     }
   ]
 }

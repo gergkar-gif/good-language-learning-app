@@ -2,369 +2,341 @@
   "lesson": "a1-131",
   "exercises": [
     {
-      "id": "a1-131-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'hosszú' mean?",
-      "options": [
-        "long",
-        "short",
-        "comfortable"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
-    },
-    {
-      "id": "a1-131-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'visel' mean?",
-      "options": [
-        "to wear",
-        "to try",
-        "to look for"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
-    },
-    {
       "id": "a1-131-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'város' mean?",
-      "options": [
-        "city",
-        "street",
-        "square"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-city-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “hospital”?",
+      "options": [
+        "kórház",
+        "bank",
+        "múzeum"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-131-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'állomás' mean?",
+      "category": "grammar",
+      "stage": "introduce",
+      "teaches": [
+        "ban-ben-in"
+      ],
+      "question": "Which sentence means “There is a museum in the city”?",
       "options": [
-        "station",
-        "street",
-        "city"
+        "Van egy múzeum a városban.",
+        "Van egy múzeum a város.",
+        "Van egy múzeum a városba."
       ],
       "correct": 0,
-      "teaches": [
-        "a1-city-vocab"
-      ],
-      "stage": "introduce"
+      "distractor_skills": {
+        "2": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-131-controlled-1",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Hol van a ____?",
-      "hint": "square",
-      "english": "Where is the square?",
-      "answer": "tér",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-city-vocab"
+        "ban-ben-in"
       ],
-      "stage": "controlled"
+      "sentence": "Anna a ____ van.",
+      "hint": "bank",
+      "english": "Anna is in the bank.",
+      "answer": "bankban"
     },
     {
       "id": "a1-131-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'street'.",
-      "options": [
-        "utca",
-        "tér",
-        "város"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-city-vocab"
+        "ban-ben-in"
       ],
-      "stage": "controlled"
+      "sentence": "Károly a ____ van.",
+      "hint": "múzeum",
+      "english": "Károly is in the museum.",
+      "answer": "múzeumban"
     },
     {
       "id": "a1-131-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "város",
-          "city"
-        ],
-        [
-          "utca",
-          "street"
-        ],
-        [
-          "tér",
-          "square"
-        ],
-        [
-          "állomás",
-          "station"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-city-vocab"
+        "ban-ben-in"
       ],
-      "stage": "controlled"
+      "question": "Which sentence means “Meg is in the restaurant”?",
+      "options": [
+        "Meg az étteremban van.",
+        "Meg az étteremben van.",
+        "Meg az étterem van."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-131-controlled-4",
-      "type": "substitution",
+      "type": "matching",
       "category": "vocabulary",
-      "base_sentence": "Hol van a bank?",
-      "base_word": "bank",
-      "base_gloss": "Where is the bank?",
-      "options": [
-        {
-          "word": "állomás",
-          "inflected": "állomás",
-          "sentence": "Hol van az állomás?",
-          "gloss": "the station"
-        },
-        {
-          "word": "tér",
-          "inflected": "tér",
-          "sentence": "Hol van a tér?",
-          "gloss": "the square"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-city-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "bank",
+          "bank"
+        ],
+        [
+          "múzeum",
+          "museum"
+        ],
+        [
+          "kórház",
+          "hospital"
+        ],
+        [
+          "szálloda",
+          "hotel"
+        ],
+        [
+          "gyógyszertár",
+          "pharmacy"
+        ]
+      ]
     },
     {
       "id": "a1-131-practice-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which word means 'where' (asking about a location)?",
-      "options": [
-        "hol",
-        "hová",
-        "milyen"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "a1-city-vocab"
       ],
-      "distractor_skills": {
-        "2": "quantity-choice-questions-mennyi-melyik"
-      },
-      "stage": "practice"
+      "question": "Anna says: “Van itt egy szálloda?” What is she looking for?",
+      "options": [
+        "a hospital",
+        "a hotel",
+        "a bank"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-131-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Az állomásra ____.",
-      "hint": "we are going",
-      "english": "We are going to the station.",
-      "answer": "megyünk",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-city-vocab"
+        "ban-ben-in"
       ],
-      "stage": "practice"
+      "sentence": "Károly a ____ van.",
+      "hint": "szálloda",
+      "english": "Károly is in the hotel.",
+      "answer": "szállodában"
     },
     {
       "id": "a1-131-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "város",
-          "city"
-        ],
-        [
-          "utca",
-          "street"
-        ],
-        [
-          "tér",
-          "square"
-        ],
-        [
-          "állomás",
-          "station"
-        ],
-        [
-          "hosszú",
-          "long"
-        ]
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-city-vocab"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "stage": "practice"
+      "tiles": [
+        "városban",
+        "A",
+        "egy",
+        "van",
+        ".",
+        "múzeum"
+      ],
+      "solution": [
+        "A",
+        "városban",
+        "van",
+        "egy",
+        "múzeum",
+        "."
+      ],
+      "english": "There is a museum in the city."
     },
     {
       "id": "a1-131-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "grammar",
-      "base_sentence": "Hová megyünk?",
-      "base_word": "Hová",
-      "base_gloss": "Where are we going?",
-      "options": [
-        {
-          "word": "Hol",
-          "inflected": "Hol",
-          "sentence": "Hol vagyunk?",
-          "gloss": "where (location)"
-        },
-        {
-          "word": "Mikor",
-          "inflected": "Mikor",
-          "sentence": "Mikor megyünk?",
-          "gloss": "when"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “There is no cinema in the city”?",
+      "options": [
+        "Nincs mozi a városban.",
+        "Nincs mozi a városba.",
+        "Van mozi a városban."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-131-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Hol van a bank?"
-        },
-        {
-          "speaker": "Mariann",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Közel van, itt a sarkon.",
-        "Szeretek úszni."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-city-vocab"
+        "ban-ben-in"
       ],
-      "stage": "practice"
+      "question": "Anna asks: “Hol vagy?” Which answer fits?",
+      "options": [
+        "A kórház vagyok.",
+        "A kórházba vagyok.",
+        "A kórházban vagyok."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "1": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-131-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "van-and-nincs-there-is-there-isn-t"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Hová megyünk?"
+          "speaker": "Károly",
+          "text": "Van itt egy bank?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Az állomásra.",
-        "Mennyibe kerül?"
+        "Igen, van egy bankot.",
+        "Igen, van egy bank.",
+        "Igen, van egy bankban."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-city-vocab"
-      ]
+      "correct": 1,
+      "distractor_skills": {
+        "0": "how-the-accusative-t-works",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "a1-131-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Hol van a tér?"
+          "speaker": "Anna",
+          "text": "Hol van Meg?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "A város közepén.",
-        "Szia, hogy vagy?"
+        "A könyvtárban van.",
+        "A könyvtár van.",
+        "A könyvtárba van."
       ],
       "correct": 0,
-      "teaches": [
-        "a1-city-vocab"
-      ]
+      "distractor_skills": {
+        "2": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-131-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask where the bank is.",
-          "answer": "Hol van a bank?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "spatial-questions-hol-hova"
-      ]
+        "ban-ben-in"
+      ],
+      "tiles": [
+        "van",
+        "Károly",
+        "a",
+        "bankban",
+        "moziban",
+        "a",
+        "van",
+        ".",
+        ",",
+        "Anna"
+      ],
+      "solution": [
+        "Anna",
+        "a",
+        "bankban",
+        "van",
+        ",",
+        "Károly",
+        "a",
+        "moziban",
+        "van",
+        "."
+      ],
+      "english": "Anna is in the bank, Károly is in the cinema."
     },
     {
       "id": "a1-131-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-city-vocab"
+      ],
       "template": [
         {
-          "prompt": "Ask where you're going.",
-          "answer": "Hová megyünk?"
+          "prompt": "Say that there is a museum in the city.",
+          "answer": "Van egy múzeum a városban."
+        },
+        {
+          "prompt": "Say that you are in the hotel.",
+          "answer": "A szállodában vagyok."
         }
-      ],
-      "teaches": [
-        "spatial-questions-hol-hova"
       ]
     },
     {
       "id": "a1-131-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'city'.",
-      "options": [
-        "város",
-        "utca",
-        "tér"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-city-vocab"
+        "ban-ben-in"
       ],
-      "stage": "check"
+      "sentence": "Hol vagy? – A ____ vagyok.",
+      "hint": "kórház",
+      "english": "Where are you? – I am in the hospital.",
+      "answer": "kórházban"
     },
     {
       "id": "a1-131-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'square'.",
-      "options": [
-        "tér",
-        "állomás",
-        "utca"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-city-vocab"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "stage": "check"
+      "question": "Which sentence means “There is a hotel here”?",
+      "options": [
+        "Itt van egy szálloda.",
+        "Itt van szállodát.",
+        "Itt nincs szálloda."
+      ],
+      "correct": 0
     }
   ]
 }

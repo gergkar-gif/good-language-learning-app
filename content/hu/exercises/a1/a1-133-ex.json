@@ -2,366 +2,336 @@
   "lesson": "a1-133",
   "exercises": [
     {
-      "id": "a1-133-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'gyógyszertár' mean?",
-      "options": [
-        "pharmacy",
-        "school",
-        "hospital"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-city-vocab"
-      ]
-    },
-    {
-      "id": "a1-133-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'iskola' mean?",
-      "options": [
-        "school",
-        "bank",
-        "hospital"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-city-vocab"
-      ]
-    },
-    {
       "id": "a1-133-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'posta' mean?",
-      "options": [
-        "post office",
-        "hospital",
-        "park"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-city-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “on foot”?",
+      "options": [
+        "kilométer",
+        "gyalog",
+        "innen"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-133-introduce-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'kórház' mean?",
-      "options": [
-        "hospital",
-        "post office",
-        "restaurant"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-city-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which sentence means “The bank is near”?",
+      "options": [
+        "A bank közel vagy.",
+        "A bank közel van.",
+        "A bank messze van."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-133-controlled-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Van itt ____?",
-      "hint": "post office",
-      "english": "Is there a post office here?",
-      "answer": "posta",
+      "stage": "controlled",
       "teaches": [
         "a1-city-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "A kórház nagyon ____ van.",
+      "english": "The hospital is very far.",
+      "answer": "messze"
     },
     {
       "id": "a1-133-controlled-2",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "question": "Choose the word for 'restaurant'.",
-      "options": [
-        "étterem",
-        "park",
-        "posta"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "a1-city-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "A bolt itt van, nagyon ____.",
+      "english": "The shop is right here, very near.",
+      "answer": "közel"
     },
     {
       "id": "a1-133-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "posta",
-          "post office"
-        ],
-        [
-          "kórház",
-          "hospital"
-        ],
-        [
-          "park",
-          "park"
-        ],
-        [
-          "étterem",
-          "restaurant"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-city-vocab"
+        "singular-after-numbers"
       ],
-      "stage": "controlled"
+      "sentence": "Az iskola két ____ innen.",
+      "english": "The school is two kilometres from here.",
+      "answer": "kilométer"
     },
     {
       "id": "a1-133-controlled-4",
-      "type": "substitution",
+      "type": "matching",
       "category": "vocabulary",
-      "base_sentence": "Van itt park?",
-      "base_word": "park",
-      "base_gloss": "Is there a park here?",
-      "options": [
-        {
-          "word": "étterem",
-          "inflected": "étterem",
-          "sentence": "Van itt étterem?",
-          "gloss": "a restaurant"
-        },
-        {
-          "word": "posta",
-          "inflected": "posta",
-          "sentence": "Van itt posta?",
-          "gloss": "a post office"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-city-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "közel",
+          "near"
+        ],
+        [
+          "messze",
+          "far"
+        ],
+        [
+          "innen",
+          "from here"
+        ],
+        [
+          "kilométer",
+          "kilometre"
+        ],
+        [
+          "gyalog",
+          "on foot"
+        ]
+      ]
     },
     {
       "id": "a1-133-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "What does 'Az utca végén van' mean?",
+      "stage": "practice",
+      "teaches": [
+        "singular-after-numbers"
+      ],
+      "question": "Which sentence means “The park is three kilometres from here”?",
       "options": [
-        "It's at the end of the street.",
-        "It's next to the street.",
-        "It's on the street."
+        "A park három kilométer innen.",
+        "A park három kilométerek innen.",
+        "A park három kilométert innen."
       ],
       "correct": 0,
-      "teaches": [
-        "possessive-suffixes"
-      ],
-      "stage": "practice"
+      "distractor_skills": {
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "a1-133-practice-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Igen, a park közel van. A kórház ____ van.",
-      "hint": "far",
-      "english": "Yes, the park is close. The hospital is far.",
-      "answer": "messze",
+      "stage": "practice",
       "teaches": [
         "a1-city-vocab"
       ],
-      "stage": "practice"
+      "sentence": "Nem messze van, hanem ____.",
+      "english": "It is not far, it is near.",
+      "answer": "közel"
     },
     {
       "id": "a1-133-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "posta",
-          "post office"
-        ],
-        [
-          "kórház",
-          "hospital"
-        ],
-        [
-          "park",
-          "park"
-        ],
-        [
-          "étterem",
-          "restaurant"
-        ],
-        [
-          "iskola",
-          "school"
-        ]
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-city-vocab"
+        "singular-after-numbers"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Az",
+        "iskola",
+        "innen",
+        "kilométer",
+        ".",
+        "egy"
+      ],
+      "solution": [
+        "Az",
+        "iskola",
+        "egy",
+        "kilométer",
+        "innen",
+        "."
+      ],
+      "english": "The school is one kilometre from here."
     },
     {
       "id": "a1-133-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "base_sentence": "A kórház messze van.",
-      "base_word": "messze",
-      "base_gloss": "The hospital is far.",
-      "options": [
-        {
-          "word": "közel",
-          "inflected": "közel",
-          "sentence": "A kórház közel van.",
-          "gloss": "near"
-        },
-        {
-          "word": "mellett",
-          "inflected": "mellett",
-          "sentence": "A kórház a posta mellett van.",
-          "gloss": "next to"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-city-vocab"
       ],
-      "stage": "practice"
+      "question": "Anna says: “A kórház messze van innen.” What does she say?",
+      "options": [
+        "The hotel is far from here.",
+        "The hospital is near here.",
+        "The hospital is far from here."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-133-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Van itt park?"
-        },
-        {
-          "speaker": "Mariann",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Igen, van. Nincs messze.",
-        "Szeretek úszni."
-      ],
-      "correct": 0,
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-city-vocab"
+        "movement-with-ba-be"
       ],
-      "stage": "practice"
+      "tiles": [
+        "a",
+        "bankba",
+        ".",
+        "megyek",
+        "Gyalog"
+      ],
+      "solution": [
+        "Gyalog",
+        "megyek",
+        "a",
+        "bankba",
+        "."
+      ],
+      "english": "I walk to the bank."
     },
     {
       "id": "a1-133-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "yes-no-questions"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Hol van a posta?"
+          "speaker": "Károly",
+          "text": "Messze van innen a múzeum?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "A bank mellett.",
-        "Mennyibe kerül?"
+        "Nem, közel van.",
+        "Nem, közel vagyok.",
+        "Igen, közel van."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-city-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-133-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "singular-after-numbers"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Van itt étterem?"
+          "speaker": "Anna",
+          "text": "Hány kilométer a kórház?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, a sarkon van egy.",
-        "Szia, hogy vagy?"
+        "Három kilométerek innen.",
+        "Három kilométer innen.",
+        "Három kilométert innen."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-city-vocab"
-      ]
+      "correct": 1,
+      "distractor_skills": {
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "a1-133-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask if there's a park here.",
-          "answer": "Van itt park?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "vocabulary",
+      "stage": "production",
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t"
-      ]
+        "a1-city-vocab"
+      ],
+      "tiles": [
+        ",",
+        "közel",
+        "a",
+        "van",
+        "bank",
+        "messze",
+        "A",
+        "kórház",
+        "van",
+        "de",
+        "."
+      ],
+      "solution": [
+        "A",
+        "kórház",
+        "messze",
+        "van",
+        ",",
+        "de",
+        "a",
+        "bank",
+        "közel",
+        "van",
+        "."
+      ],
+      "english": "The hospital is far, but the bank is near."
     },
     {
       "id": "a1-133-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Say the hospital is far.",
-          "answer": "A kórház messze van."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "a1-city-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Say that the bank is near.",
+          "answer": "A bank közel van."
+        },
+        {
+          "prompt": "Say that the hospital is two kilometres from here.",
+          "answer": "A kórház két kilométer innen."
+        }
       ]
     },
     {
       "id": "a1-133-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "question": "Choose the correct word for 'post office'.",
-      "options": [
-        "posta",
-        "kórház",
-        "étterem"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-city-vocab"
       ],
-      "stage": "check"
+      "sentence": "A múzeum nagyon ____ van innen.",
+      "english": "The museum is very far from here.",
+      "answer": "messze"
     },
     {
       "id": "a1-133-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'hospital'.",
-      "options": [
-        "kórház",
-        "park",
-        "posta"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-city-vocab"
+        "singular-after-numbers"
       ],
-      "stage": "check"
+      "question": "Which sentence means “The school is four kilometres from here”?",
+      "options": [
+        "Az iskola négy kilométer vagyok.",
+        "Az iskola négy kilométer innen.",
+        "Az iskola négy kilométerek innen."
+      ],
+      "correct": 1
     }
   ]
 }
