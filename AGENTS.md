@@ -44,7 +44,7 @@ It fails only on problems your change adds (a give-away option, a hint that
 is the answer, a missing `english`, a form used before its screen, a lemma
 listed twice in one vocabulary file, `distractor_skills` on the right option or
 naming the item's own skill, a HU blank glued to a stem ending in *-a/-e*
-whose answer is a suffix, an unmet word in a challenge target or story…); findings
+whose answer is a suffix, an unmet word in a challenge target…); findings
 already in the content stay a report. `python scripts/check-content.py
 <course> [level] [unit id]` lists everything for one scope, `--summary`
 counts it. The pre-push hook runs both checks.
@@ -62,8 +62,9 @@ and delete the other (or give it its own id if both are wanted).
 **A1 story comprehension questions** are in the target language and carry
 their English: `questionEnglish` and `optionsEnglish` (same length and
 order as `options`) on every question. The Reader then shows a "Show
-English" toggle (decided by the user 2026-10-13). A question with its
-English may use words the story doesn't teach; `unmet-word` skips it.
+English" toggle (decided by the user 2026-10-13). Stories, questions
+included, may use words the learner hasn't met: they should be a little
+challenging, and the Reader translates any word on a tap.
 
 Why: the "Sync generated content" GitHub workflow runs the same validator as
 its first step. If it fails, nothing is regenerated and the repo owner gets a

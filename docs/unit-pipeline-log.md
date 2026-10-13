@@ -83,6 +83,9 @@ listing each item."
 | 10-13 | 14 fixes | Haiku, exact old → new list | 74k Haiku, 1 | | 9/9 | |
 | 10-13 | 15 fixes | Haiku, exact old → new list | 83k Haiku, 3 | | 11/11 | |
 | 10-13 | 16 time-dates | read first (real content) | | 132k, 4 | 40+ | → regenerate |
+| 10-13 | 16 time-dates | Sonnet regen | 177k, 10 | 112k, 3 | 6 applied | Claude applied directly |
+| 10-13 | 17 frequency-word-order | verdict-first read → regen | 181k, 9 | 90k + 121k | 9 applied | read caught a reversed answer key |
+| 10-13 | A1 story questions ×12 | Haiku translation | 77k Haiku, 1 | | 36 questions | for the English toggle |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -138,11 +141,8 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   blank glued to a stem in *-a/-e* with a lengthening suffix as the answer;
   3 real hits in B1: b1-18-03.ex03, b1-26-05.ex02, b1-30-03.ex05; one false
   positive, a verb, b1-33-04.ex02).
-- `unmet-word` now also scans challenge targets and stories (dialogue and
-  comprehension questions), which reads kept finding by hand (unit 16).
-  First run: frozen units 1–4 stories have 18–29 unmet words each, mostly
-  in comprehension options (*kutya*, *macska*, *Madridban*): logged for
-  the user.
+- `unmet-word` now also scans challenge targets. (It briefly scanned
+  stories too; the user ruled 2026-10-13 that stories may use unmet words.)
 - **Next to try (units 14, 15):** have each regenerator run a self-check
   against rules § 6 and list what it checked, to see if the read finds
   fewer defects; keep two units in parallel.
@@ -163,3 +163,20 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   `scripts/merge_challenges.py` for parallel-unit conflicts.
 - Running cost per stub unit now ≈ 190k regen + 120k read Sonnet + 80k
   Haiku; ~4 units/hour with two agents.
+
+### 2026-10-13 (after units 16, 17 frozen)
+
+- **Verdict-first reads** on old units cost 90k (vs 130k) and decide
+  regenerate/fix before anyone pays for a full defect list. Keep for every
+  unit not yet read.
+- **Regenerated units so far all needed regenerating** (8–17 except 9):
+  units 18–33 are probably the same; verdict-first read stays as the gate.
+- **Short fix lists (≤ ~8 text edits): the reviewer applies them directly**
+  (unit 16, 17); Haiku only for longer lists — the agent's own setup
+  (~50k) outweighs a few edits.
+- **A read caught a reversed answer key** (a1-84-check-2) that every check
+  passed. No script can tell which option is right; reads stay.
+- **English toggle (user, 2026-10-13):** A1 comprehension questions in
+  Hungarian with `questionEnglish`/`optionsEnglish`; done for units 1–7, 9,
+  11–15, 17. The rest (units 8, 10, 16 need Hungarian questions; 18+ need
+  English) is done by Sonnet once all units are finished (user).

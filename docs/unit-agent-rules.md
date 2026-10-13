@@ -14,9 +14,10 @@ same day.
 A word or form is **met** when it is in a vocabulary list, or is the subject
 of a grammar screen, at or before the lesson. A lesson may also use whole
 phrases from its *own* grammar examples. A word seen only in another
-lesson's example, a tip or a story is not met. This applies to everything the
-learner reads: prompts, right answers, wrong options, challenge targets,
-story lines and comprehension options. `check-content.py` (`unmet-word`)
+lesson's example, a tip or a story is not met. This applies to exercises
+(prompts, right answers, wrong options) and challenge targets. **Stories
+are exempt:** they should be a little challenging, and the learner taps
+unknown words in the Reader (user, 2026-10-13). `check-content.py` (`unmet-word`)
 checks lemmas, not forms: a form taught later (*-ba/-be*, *-on*, plural
 possessed *-im*, a noun possessor *Anna kulcsa*) is yours to catch.
 `skills/<lang>.json` `taught_in` says where each grammar skill is taught.
