@@ -260,3 +260,18 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   answer (the course teaches *eszem/iszom*; *-k* forms are its wrong
   options). One hit course-wide, unit 33 (fixed with its screen, a
   consolidation item and an a1-164 challenge, all *eszek/iszok* → *-m*).
+
+### 2026-10-13 (units 32, 33 frozen): HU A1 complete
+
+- Paired read 32+33: 202k, 10 min (first attempt stopped on the weekly
+  Sonnet limit). ~35 items; I applied them myself with one exact-replacement
+  script (each old string must match once, else nothing is written) plus a
+  JSON pass for `ds`, retags and challenges. Cheaper than a Haiku pass for a
+  list this size, and the script caught a double match the list missed
+  (*Magyarul tanulsz.* in two items).
+- Same pattern again: recap screens presenting earlier units as new
+  (a1-158-b, a1-159-a, a1-160-a/b). The regeneration prompt's "recap, never
+  new" line is not enough on its own; the reader catches it reliably, so
+  keep the read.
+- My own edits tripped `length-giveaway` and `unmet-word` once each;
+  run check-content after every hand edit, not only before freezing.
