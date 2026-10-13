@@ -2,255 +2,220 @@
   "lesson": "a1-71",
   "exercises": [
     {
-      "id": "a1-71-review-1",
+      "id": "a1-71-introduce-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which means “morning”?",
-      "options": [
-        "reggel",
-        "este",
-        "éjjel"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-daily-routine-vocab"
-      ]
+        "present-tense-routine-language"
+      ],
+      "question": "Which means “we read”?",
+      "options": [
+        "Olvasunk.",
+        "Olvasünk.",
+        "Olvasok."
+      ],
+      "correct": 0
     },
     {
-      "id": "a1-71-review-2",
+      "id": "a1-71-introduce-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which means “to get up”?",
-      "options": [
-        "felkelni",
-        "lefeküdni",
-        "ebédelni"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-daily-routine-vocab"
-      ]
-    },
-    {
-      "id": "a1-71-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which sentence means “I get up in the morning”?",
-      "options": [
-        "Reggel felkelek.",
-        "Este felkelek.",
-        "Reggel lefekszem."
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-daily-routine-vocab"
       ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-71-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which expression means “in the evening”?",
+      "question": "Which word means “we”?",
       "options": [
-        "este",
-        "reggel",
-        "délben"
+        "mi",
+        "te",
+        "ő"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-daily-routine-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 0
     },
     {
       "id": "a1-71-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "reggel",
-          "morning"
-        ],
-        [
-          "délben",
-          "at noon"
-        ],
-        [
-          "délután",
-          "afternoon"
-        ],
-        [
-          "este",
-          "evening"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-daily-routine-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "controlled"
+      "question": "Which verb form is right for “we cook”?",
+      "options": [
+        "főzünk",
+        "főzunk",
+        "főzök"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-71-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Reggel _____.",
-      "hint": "I get up",
-      "english": "I get up in the morning.",
-      "answer": "felkelek",
+      "stage": "controlled",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "stage": "controlled"
+      "sentence": "A kertben ____.",
+      "hint": "beszél, we",
+      "english": "We speak in the garden.",
+      "answer": "beszélünk"
     },
     {
       "id": "a1-71-controlled-3",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "vocabulary",
-      "question": "Which is a meal?",
-      "options": [
-        "ebéd",
-        "ablak",
-        "szünet"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "a1-daily-routine-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "mi",
+          "we"
+        ],
+        [
+          "ébred",
+          "to wake up"
+        ],
+        [
+          "olvas",
+          "to read"
+        ],
+        [
+          "kérdez",
+          "to ask"
+        ],
+        [
+          "sétál",
+          "to walk"
+        ]
+      ]
     },
     {
       "id": "a1-71-controlled-4",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence fits a daily routine?",
-      "options": [
-        "Este olvasok.",
-        "Este olvasni.",
-        "Este olvasó."
-      ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-71-practice-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "ebéd",
-          "lunch / meal"
-        ],
-        [
-          "reggel",
-          "morning"
-        ],
-        [
-          "délután",
-          "afternoon"
-        ],
-        [
-          "este",
-          "evening"
-        ]
-      ],
-      "teaches": [
-        "a1-daily-routine-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-71-practice-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which answer fits Mit csinálsz reggel?",
-      "options": [
-        "Reggelizem.",
-        "Reggel.",
-        "Reggel van."
-      ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-71-practice-3",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Este _____.",
-      "hint": "I go to bed",
-      "english": "I go to bed in the evening.",
-      "answer": "lefekszem",
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-71-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "tiles": [
         "Délután",
-        "dolgozom",
+        "a",
+        "kertben",
+        "sétálunk",
         "."
       ],
       "solution": [
         "Délután",
-        "dolgozom",
+        "a",
+        "kertben",
+        "sétálunk",
         "."
       ],
-      "english": "I work in the afternoon.",
+      "english": "In the afternoon we walk in the garden."
+    },
+    {
+      "id": "a1-71-practice-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "question": "Which sentence is correct?",
+      "options": [
+        "Itt írunk.",
+        "Itt írünk."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-71-practice-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "sentence": "Itt ____.",
+      "hint": "ír, we",
+      "english": "We write here.",
+      "answer": "írunk"
+    },
+    {
+      "id": "a1-71-practice-3",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-daily-routine-vocab"
+      ],
+      "question": "Reggel ébredünk. What do we do in the morning?",
+      "options": [
+        "We wake up.",
+        "We cook.",
+        "We read."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-71-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "subject-pronouns-omission"
+      ],
+      "question": "Which sentence stresses “we” (“we are the ones who cook”)?",
+      "options": [
+        "Főzünk.",
+        "Mi főzünk."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-71-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Mit csinálsz este?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Este olvasok.",
-        "Este olvasni."
-      ],
-      "correct": 0,
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "practice"
+      "tiles": [
+        "Meg",
+        "és",
+        "én",
+        "a",
+        "konyhában",
+        "főzünk",
+        "."
+      ],
+      "solution": [
+        "Meg",
+        "és",
+        "én",
+        "a",
+        "konyhában",
+        "főzünk",
+        "."
+      ],
+      "english": "Meg and I cook in the kitchen."
     },
     {
       "id": "a1-71-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mikor fekszel le?"
+          "speaker": "Anna",
+          "text": "Meg, hol olvasol?"
         },
         {
           "speaker": "Meg",
@@ -258,23 +223,24 @@
         }
       ],
       "options": [
-        "este",
-        "reggel",
-        "délben"
+        "Károly és én a nappaliban olvasunk.",
+        "Károly és én a nappaliban olvasünk.",
+        "Károly és én a nappaliban olvasok."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-daily-routine-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-71-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Mit csinálsz?"
+          "speaker": "Anna",
+          "text": "Ki főz délután?"
         },
         {
           "speaker": "Meg",
@@ -282,77 +248,85 @@
         }
       ],
       "options": [
-        "Reggelizem.",
-        "Reggel.",
-        "Reggel van."
+        "Mi főzünk.",
+        "Mi főzök.",
+        "Mi főz."
       ],
-      "correct": 0,
+      "correct": 0
+    },
+    {
+      "id": "a1-71-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "present-tense-routine-language"
-      ]
+      ],
+      "tiles": [
+        "Reggel",
+        "olvasunk",
+        ",",
+        "délután",
+        "sétálunk",
+        "."
+      ],
+      "solution": [
+        "Reggel",
+        "olvasunk",
+        ",",
+        "délután",
+        "sétálunk",
+        "."
+      ],
+      "english": "In the morning we read, in the afternoon we walk."
     },
     {
-      "id": "a1-71-writing-1",
+      "id": "a1-71-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "template": [
         {
-          "prompt": "Write two short Hungarian sentences using Morning.",
-          "answer": "Reggel dolgozom. Este olvasok."
-        }
-      ],
-      "teaches": [
-        "a1-daily-routine-vocab"
-      ]
-    },
-    {
-      "id": "a1-71-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
+          "prompt": "Tell Meg that Anna and you study (start with Anna).",
+          "answer": "Anna és én tanulunk."
+        },
         {
-          "prompt": "Write one short Hungarian response to a practical question from today's lesson.",
-          "answer": "Este olvasok."
+          "prompt": "Say that we speak in the garden.",
+          "answer": "A kertben beszélünk."
         }
-      ],
-      "teaches": [
-        "a1-daily-routine-vocab"
       ]
     },
     {
       "id": "a1-71-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which sentence means “I get up in the morning”?",
-      "options": [
-        "Reggel felkelek.",
-        "Reggel felkelni.",
-        "Reggel felkel."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "building-the-infinitive-the-suffix-ni"
-      },
-      "stage": "check"
+      "sentence": "A nappaliban ____.",
+      "hint": "tanul, we",
+      "english": "We study in the living room.",
+      "answer": "tanulunk"
     },
     {
       "id": "a1-71-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which expression means “every day”?",
-      "options": [
-        "minden nap",
-        "éjjel",
-        "délben"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-daily-routine-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "check"
+      "question": "How do you say “we speak”?",
+      "options": [
+        "Beszélünk.",
+        "Beszélunk.",
+        "Beszélek."
+      ],
+      "correct": 0
     }
   ]
 }
