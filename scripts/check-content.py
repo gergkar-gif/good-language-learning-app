@@ -78,6 +78,9 @@ CHECKS = {
     "taught-later": "a grammar skill is used before the lesson whose screen teaches it",
     "vocab-unused": "a vocabulary word no exercise of its lesson uses",
     "vocab-duplicate": "a vocabulary list has the same lemma twice",
+    "ds-on-answer": "distractor_skills names the right option",
+    "ds-own-skill": "distractor_skills names the skill the exercise teaches (a wrong form of the tested skill gets none)",
+    "glued-blank": "HU: a blank glued to a stem ending in -a/-e whose answer is a suffix (hálószoba____ + ban teaches *hálószobaban*)",
     "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
     "unmet-word": "a word the learner hasn't met by this lesson (scripts/unmet-words.js)",
     # shape, new courses only (§ 2)
@@ -89,7 +92,12 @@ CHECKS = {
     "shape-story": "the unit story is outside the level's length band",
 }
 # Patterns a reader confirms: always printed, never gated. Every other check is an error.
-SUSPECTS = {"tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+# Hungarian suffixes before which a final -a/-e lengthens (szoba -> szobában, szobát)
+# (accent-free, compared with fold(answer))
+LENGTHENING_SUFFIXES = set(
+    "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
+    "t k m d nk tok tek ul ert va ve".split())
+SUSPECTS = {"glued-blank", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # Hungarian A1-A2. Spanish lists leave out function words (en, que, con), so the
@@ -254,12 +262,25 @@ def check_exercise(e, course, lang):
     L = LANG.get(lang)
     t = e.get("type")
     opts = string_options(e)
+    if t == "fill-blank" and lang == "hu":
+        # a final -a/-e lengthens before a suffix (szoba -> szobában), so a blank glued
+        # to such a stem whose answer starts with a consonant teaches a misspelling
+        m = re.search(r"([^\W\d_]*[ae])_{2,}", e.get("sentence") or "", re.I)
+        answers = e.get("answers") or [e.get("answer") or ""]
+        if m and any(fold(str(a)).strip() in LENGTHENING_SUFFIXES for a in answers):
+            hit("glued-blank", f"{m.group(1)}____ + {answers[0]}")
     if t in CHOICE and opts:
         k = e.get("correct")
         if not isinstance(k, int) or not 0 <= k < len(opts):
             hit("choice-index")
         else:
             right, wrong = opts[k], [x for j, x in enumerate(opts) if j != k]
+            ds = e.get("distractor_skills") if isinstance(e.get("distractor_skills"), dict) else {}
+            if str(k) in ds:
+                hit("ds-on-answer", ds[str(k)])
+            own = [v for v in ds.values() if v in (e.get("teaches") or [])]
+            if own:
+                hit("ds-own-skill", own[0])
             if len({o.strip() for o in opts}) < len(opts):  # case kept: "el Doce de Mayo" can be the wrong one
                 hit("duplicate-options")
             bare = [GLOSS.sub("", x).strip() for x in opts]
