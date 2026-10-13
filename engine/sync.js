@@ -53,7 +53,7 @@ const Sync = (function () {
     // each already documented in its own file as a per-device setting that
     // shouldn't silently change on restore.
     const COURSE_KEYS = [
-        'progress', 'srsDeck', 'knownWords', 'recycleSchedule', 'testResults',
+        'progress', 'srsDeck', 'knownWords', 'srsResetLog', 'recycleSchedule', 'testResults',
         'readStories', 'storyProgress', 'savedReadings', 'myTexts', 'myDecks',
         'verbSpeedScores', 'unitPracticeDismissed', 'miniGameDismissed',
         'milestonesSeen', 'lastActivity', 'productionEvidence', 'assessmentHistory',
@@ -636,6 +636,16 @@ const Sync = (function () {
         Object.keys(globals).forEach(name => {
             localStorage.setItem(name, globals[name]);
         });
+
+        if (typeof loadDeck === 'function') {
+            try { loadDeck(); } catch (e) {}
+        }
+        if (typeof loadKnownWords === 'function') {
+            try { loadKnownWords(); } catch (e) {}
+        }
+        if (typeof loadXP === 'function') {
+            try { loadXP(); } catch (e) {}
+        }
     }
 
     // ----------------------------------------
@@ -663,9 +673,10 @@ const Sync = (function () {
             const cloud = await status({ timeoutMs: 8000 });
             const cloudAt = (cloud && cloud.updatedAt) ? new Date(cloud.updatedAt).getTime() : 0;
             if (cloud && cloud.state && cloudAt > lastSynced) {
+                const preMerge = state;
                 state = mergeSnapshots(state, cloud.state);
                 applySnapshot(state);
-                mergedRemote = true;
+                mergedRemote = differsFromCloud(state, preMerge);
             }
         }
 
@@ -764,6 +775,54 @@ const Sync = (function () {
         }
     }
 
+    function _wordKey(item) {
+        if (!item || typeof item !== 'object') return '';
+        return item.target || item.spanish || item.lemma || item.hungarian || item.word || '';
+    }
+
+    function _itemActivityTime(item) {
+        if (!item || typeof item !== 'object') return 0;
+        const addedAt = item.added ? (Date.parse(item.added) || 0) : 0;
+        const reviewedAt = item.lastReviewed ? (Date.parse(item.lastReviewed) || 0) : 0;
+        return Math.max(addedAt, reviewedAt);
+    }
+
+    function _parseResetLog(raw) {
+        const obj = (raw && typeof raw === 'object') ? raw : safeJsonParse(raw, null);
+        if (!obj || typeof obj !== 'object') return { resetAt: 0, lemmas: {} };
+        const resetAt = Number(obj.resetAt) || 0;
+        const lemmas = {};
+        if (obj.lemmas && typeof obj.lemmas === 'object') {
+            for (const [k, v] of Object.entries(obj.lemmas)) {
+                const t = Number(v) || 0;
+                if (t > resetAt) lemmas[k] = t;
+            }
+        }
+        return { resetAt, lemmas };
+    }
+
+    function mergeSrsResetLog(localRaw, cloudRaw) {
+        const lLog = _parseResetLog(localRaw);
+        const cLog = _parseResetLog(cloudRaw);
+        const resetAt = Math.max(lLog.resetAt, cLog.resetAt);
+        const lemmas = {};
+        for (const k of new Set([...Object.keys(lLog.lemmas), ...Object.keys(cLog.lemmas)])) {
+            const t = Math.max(lLog.lemmas[k] || 0, cLog.lemmas[k] || 0);
+            if (t > resetAt) lemmas[k] = t;
+        }
+        return JSON.stringify({ resetAt, lemmas });
+    }
+
+    function _isResetByLog(item, key, resetLog) {
+        if (!resetLog) return false;
+        const cutoff = Math.max(
+            Number(resetLog.resetAt) || 0,
+            (resetLog.lemmas && key) ? (Number(resetLog.lemmas[key]) || 0) : 0
+        );
+        if (cutoff <= 0) return false;
+        return _itemActivityTime(item) <= cutoff;
+    }
+
     function mergeProgress(localRaw, cloudRaw) {
         const lProg = safeJsonParse(localRaw, {});
         const cProg = safeJsonParse(cloudRaw, {});
@@ -786,14 +845,15 @@ const Sync = (function () {
         return JSON.stringify(res);
     }
 
-    function mergeKnownWords(localRaw, cloudRaw) {
+    function mergeKnownWords(localRaw, cloudRaw, resetLog) {
         const lWords = safeJsonParse(localRaw, []);
         const cWords = safeJsonParse(cloudRaw, []);
         const map = new Map();
         [...cWords, ...lWords].forEach(w => {
             if (!w) return;
-            const key = w.spanish || w.lemma || w.word;
+            const key = _wordKey(w);
             if (!key) return;
+            if (_isResetByLog(w, key, resetLog)) return;
             if (!map.has(key)) {
                 map.set(key, w);
             } else {
@@ -808,14 +868,15 @@ const Sync = (function () {
         return JSON.stringify(Array.from(map.values()));
     }
 
-    function mergeSrsDeck(localRaw, cloudRaw) {
+    function mergeSrsDeck(localRaw, cloudRaw, resetLog) {
         const lCards = safeJsonParse(localRaw, []);
         const cCards = safeJsonParse(cloudRaw, []);
         const cardMap = new Map();
         [...cCards, ...lCards].forEach(card => {
             if (!card) return;
-            const key = card.spanish || card.lemma || card.word;
+            const key = _wordKey(card);
             if (!key) return;
+            if (_isResetByLog(card, key, resetLog)) return;
             if (!cardMap.has(key)) {
                 cardMap.set(key, card);
             } else {
@@ -906,16 +967,19 @@ const Sync = (function () {
         }
     }
 
-    function mergeField(name, localRaw, cloudRaw) {
+    function mergeField(name, localRaw, cloudRaw, resetLog) {
         if (localRaw) localRaw = _repairArrayLike(localRaw);
         if (cloudRaw) cloudRaw = _repairArrayLike(cloudRaw);
+        if (name === 'srsResetLog') return mergeSrsResetLog(localRaw, cloudRaw);
+        if (name === 'knownWords' && resetLog) return mergeKnownWords(localRaw, cloudRaw, resetLog);
+        if (name === 'srsDeck' && resetLog) return mergeSrsDeck(localRaw, cloudRaw, resetLog);
         if (!localRaw) return cloudRaw;
         if (!cloudRaw) return localRaw;
         if (localRaw === cloudRaw) return localRaw;
 
         if (name === 'progress') return mergeProgress(localRaw, cloudRaw);
-        if (name === 'knownWords') return mergeKnownWords(localRaw, cloudRaw);
-        if (name === 'srsDeck') return mergeSrsDeck(localRaw, cloudRaw);
+        if (name === 'knownWords') return mergeKnownWords(localRaw, cloudRaw, resetLog);
+        if (name === 'srsDeck') return mergeSrsDeck(localRaw, cloudRaw, resetLog);
         if (name === 'spanishApp_xp') return mergeXP(localRaw, cloudRaw);
         if (name === 'readStories' || name === 'savedReadings' || name === 'myTexts' || name === 'myDecks') {
             return mergeArrayById(localRaw, cloudRaw);
@@ -958,17 +1022,65 @@ const Sync = (function () {
             const mData = {};
             const keys = new Set([...Object.keys(lData), ...Object.keys(cData)]);
 
+            let resetLog = null;
+            if (lData.srsResetLog !== undefined || cData.srsResetLog !== undefined) {
+                mData.srsResetLog = mergeSrsResetLog(lData.srsResetLog, cData.srsResetLog);
+                const parsed = _parseResetLog(mData.srsResetLog);
+                if (parsed.resetAt > 0 || Object.keys(parsed.lemmas).length > 0) {
+                    resetLog = parsed;
+                }
+            }
+
             keys.forEach(key => {
+                if (key === 'srsResetLog') return;
                 const lRaw = lData[key];
                 const cRaw = cData[key];
-                if (lRaw === undefined) {
+                if ((key === 'srsDeck' || key === 'knownWords') && resetLog) {
+                    mData[key] = mergeField(key, lRaw, cRaw, resetLog);
+                } else if (lRaw === undefined) {
                     mData[key] = cRaw;
                 } else if (cRaw === undefined) {
                     mData[key] = lRaw;
                 } else {
-                    mData[key] = mergeField(key, lRaw, cRaw);
+                    mData[key] = mergeField(key, lRaw, cRaw, resetLog);
                 }
             });
+
+            // Preserve the invariant that knownWords and srsDeck are mutually
+            // exclusive: if a word graduated/was marked known on one device
+            // while still sitting in srsDeck on another, keep whichever state
+            // was touched more recently.
+            if (mData.srsDeck && mData.knownWords) {
+                const cards = safeJsonParse(mData.srsDeck, []);
+                const known = safeJsonParse(mData.knownWords, []);
+                if (cards.length > 0 && known.length > 0) {
+                    const knownByKey = new Map();
+                    known.forEach(w => {
+                        const k = _wordKey(w);
+                        if (k) knownByKey.set(k, w);
+                    });
+                    const dropFromKnown = new Set();
+                    const filteredCards = cards.filter(card => {
+                        const k = _wordKey(card);
+                        if (!k || !knownByKey.has(k)) return true;
+                        const w = knownByKey.get(k);
+                        const cardTime = _itemActivityTime(card);
+                        const knownTime = _itemActivityTime(w);
+                        if (cardTime > knownTime) {
+                            dropFromKnown.add(k);
+                            return true;
+                        }
+                        return false;
+                    });
+                    if (filteredCards.length !== cards.length) {
+                        mData.srsDeck = JSON.stringify(filteredCards);
+                    }
+                    if (dropFromKnown.size > 0) {
+                        mData.knownWords = JSON.stringify(known.filter(w => !dropFromKnown.has(_wordKey(w))));
+                    }
+                }
+            }
+
             merged[course] = mData;
         });
 

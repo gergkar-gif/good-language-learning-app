@@ -9,6 +9,11 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed work (2026-10-13)
 
+- **Deck Reset & Per-Word Removal Cloud Sync Tombstone Persistence (`engine/srs.js`, `engine/decks.js`, `engine/sync.js`, `engine/lang.js`) (Done 2026-10-13).**
+  - Added per-course `srsResetLog` (`{ resetAt, lemmas }`) tracked in `engine/srs.js` and synced via `COURSE_KEYS` in `engine/sync.js` so full deck resets (`clearDeck()`), single-deck resets (`resetDeckProgress()`), and individual word removals (`removeFromAllWords()`) filter out any cloud or local cards/known words whose activity timestamp predates the reset.
+  - Updated `clearDeck()`, `resetDeckProgress()`, and `removeFromAllWords()` to persist `'[]'` via `saveDeck()` / `saveKnownWords()` and immediately trigger `Sync.performAutoSave()`, and updated `applySnapshot()` to reload in-memory `srsDeck` and `knownWords`.
+  - Guarded `migrateLegacyKeys()` (`engine/lang.js`) with `app_legacyKeysMigrated` and `srsResetLog` so legacy `es:srsDeck` / `spanishApp_srsDeck` keys are never re-copied after a reset.
+
 - **Verb Driller Curriculum & Signal Wiring (`verbs` / `hu-verb`), Encountered-Verb Scoping & Removal of Post-Lesson Nudge Wall (Done 2026-10-13).**
   - **Expanded `verb-tense-skills.json` Across All Three Courses:**
     - Expanded `content/es-es/indexes/verb-tense-skills.json` and `content/es-latam/indexes/verb-tense-skills.json` to map A1–B2 verb conjugation skills (`ar-verbs`, `er-ir-verbs`, `stem-changes`, `reflexives`, `preterite-irregular-stems`, `future-probability`, `subjuntivo-deseos`, and `imperfect-subjunctive-forms` in `es-latam`) to their driller tense paths.

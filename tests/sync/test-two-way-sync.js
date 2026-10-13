@@ -345,6 +345,68 @@ console.log('\n--- Test 7: Startup Sync Automatic Pull & Apply ---');
     assert.strictEqual(jwtEnv.sandbox.localStorage.getItem('syncToken'), null, 'Expired JWT should be cleared from storage');
     console.log('[PASS] 401 responses and expired tokens gracefully reset session and retain user email.');
 
+    console.log('\n--- Test 11: Deck Reset & Per-Lemma Removal Survive Cloud Sync ---');
+    {
+        const resetAt = Date.parse('2026-10-12T20:00:00Z');
+        const localAfterReset = {
+            es: {
+                srsDeck: JSON.stringify([
+                    { spanish: 'nuevo', reviews: 0, interval: 0, added: '2026-10-12T21:00:00Z' }
+                ]),
+                knownWords: JSON.stringify([]),
+                srsResetLog: JSON.stringify({ resetAt, lemmas: {} })
+            }
+        };
+        const cloudWith300Words = {
+            es: {
+                srsDeck: JSON.stringify([
+                    { spanish: 'antiguo1', reviews: 3, interval: 7, added: '2026-09-01T10:00:00Z', lastReviewed: '2026-10-10T10:00:00Z' },
+                    { spanish: 'antiguo2', reviews: 1, interval: 1 } // legacy card with no timestamps
+                ]),
+                knownWords: JSON.stringify([
+                    { spanish: 'conocido1', english: 'known', added: '2026-09-15T10:00:00Z' }
+                ])
+            }
+        };
+
+        const mergedFull = Sync.mergeSnapshots(localAfterReset, cloudWith300Words);
+        const mergedCards = JSON.parse(mergedFull.es.srsDeck);
+        const mergedKnown = JSON.parse(mergedFull.es.knownWords);
+        assert.strictEqual(mergedCards.length, 1, 'Cloud cards predating full reset must not resurrect');
+        assert.strictEqual(mergedCards[0].spanish, 'nuevo', 'Cards added after full reset must be preserved');
+        assert.strictEqual(mergedKnown.length, 0, 'Cloud knownWords predating full reset must not resurrect');
+
+        // Per-deck / per-lemma reset: only reset lemmas are filtered; other decks remain untouched
+        const lemmaResetAt = Date.parse('2026-10-12T20:00:00Z');
+        const localPartialReset = {
+            es: {
+                srsDeck: JSON.stringify([
+                    { spanish: 'quedarse', reviews: 2, interval: 3, added: '2026-09-01T00:00:00Z' }
+                ]),
+                knownWords: JSON.stringify([]),
+                srsResetLog: JSON.stringify({ resetAt: 0, lemmas: { borrar: lemmaResetAt } })
+            }
+        };
+        const cloudBeforePartial = {
+            es: {
+                srsDeck: JSON.stringify([
+                    { spanish: 'quedarse', reviews: 2, interval: 3, added: '2026-09-01T00:00:00Z' },
+                    { spanish: 'borrar', reviews: 5, interval: 20, added: '2026-09-01T00:00:00Z', lastReviewed: '2026-10-01T00:00:00Z' }
+                ]),
+                knownWords: JSON.stringify([
+                    { spanish: 'borrar', english: 'to erase', added: '2026-09-05T00:00:00Z' }
+                ])
+            }
+        };
+        const mergedPartial = Sync.mergeSnapshots(localPartialReset, cloudBeforePartial);
+        const partialCards = JSON.parse(mergedPartial.es.srsDeck);
+        const partialKnown = JSON.parse(mergedPartial.es.knownWords);
+        assert.strictEqual(partialCards.length, 1, 'Per-lemma reset card must not return from cloud');
+        assert.strictEqual(partialCards[0].spanish, 'quedarse', 'Untouched deck card must remain');
+        assert.strictEqual(partialKnown.length, 0, 'Per-lemma reset knownWord must not return from cloud');
+        console.log('[PASS] Full and per-deck resets survive cloud sync merges without resurrecting old words.');
+    }
+
     console.log('\n==========================================================');
     console.log('ALL TWO-WAY SYNC & SAVE-ON-LEAVE TESTS PASSED');
     console.log('==========================================================');

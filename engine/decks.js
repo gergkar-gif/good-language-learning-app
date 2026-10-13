@@ -268,6 +268,7 @@ const Decks = (function () {
         // so this can't silently un-graduate a known word.
         const alreadyGraduated = typeof isKnown === 'function' && isKnown(clean);
         if (!cardFor(clean) && !alreadyGraduated) {
+            if (typeof clearSrsLemmaReset === 'function') clearSrsLemmaReset(clean);
             srsDeck.push(Object.assign({
                 spanish: clean,
                 english: finalTranslation || 'unknown',
@@ -1527,8 +1528,12 @@ const Decks = (function () {
 
         srsDeck = srsDeck.filter(card => !lemmas.has((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(card) : card.spanish));
         knownWords = knownWords.filter(w => !lemmas.has((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(w) : w.spanish));
+        if (typeof recordSrsLemmaReset === 'function') recordSrsLemmaReset(Array.from(lemmas));
         saveDeck();
         saveKnownWords();
+        if (typeof Sync !== 'undefined' && typeof Sync.performAutoSave === 'function') {
+            Sync.performAutoSave();
+        }
         if (typeof UI !== 'undefined' && UI.toast) UI.toast(`Progress reset for "${label}".`, 'info');
         render();
     }
@@ -1536,7 +1541,11 @@ const Decks = (function () {
     function removeFromAllWords(lemma) {
         if (!confirm(`Remove "${lemma}" from your deck? This deletes its review history.`)) return;
         srsDeck = srsDeck.filter(card => ((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(card) : card.spanish) !== lemma);
+        if (typeof recordSrsLemmaReset === 'function') recordSrsLemmaReset([lemma]);
         saveDeck();
+        if (typeof Sync !== 'undefined' && typeof Sync.performAutoSave === 'function') {
+            Sync.performAutoSave();
+        }
         render();
     }
 

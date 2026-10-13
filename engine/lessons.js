@@ -3347,6 +3347,7 @@ function lessonSaveSrsChoices() {
         }
 
         if (srsDeck.find(w => w.spanish === card.lemma)) return;
+        if (typeof clearSrsLemmaReset === 'function') clearSrsLemmaReset(card.lemma);
         srsDeck.push(Object.assign({
             spanish: card.lemma,
             english: card.translation || 'unknown',
