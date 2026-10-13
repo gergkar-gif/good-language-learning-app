@@ -4,282 +4,366 @@
     {
       "id": "a1-155-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "What does 'repülőtérről' mean?",
-      "options": [
-        "from the airport",
-        "to the airport",
-        "at the airport"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "introduce",
       "teaches": [
-        "delative-rol-rel"
+        "a1-origin-cases-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “country”?",
+      "options": [
+        "ország",
+        "város",
+        "kert"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-155-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What was brought in 'Finom paprikát hoztam Szegedről'?",
+      "category": "grammar",
+      "stage": "introduce",
+      "teaches": [
+        "delative-rol-rel"
+      ],
+      "question": "Which sentence means “I am from Hungary”?",
       "options": [
-        "paprika",
-        "chocolate",
-        "tea"
+        "Magyarországról vagyok.",
+        "Magyarországból vagyok.",
+        "Magyarországba vagyok."
       ],
       "correct": 0,
-      "teaches": [
-        "a1-origin-cases-vocab"
-      ],
-      "stage": "introduce"
+      "distractor_skills": {
+        "2": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-155-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Meg a ____ érkezett.",
-      "hint": "repülőtér + from",
-      "english": "Meg arrived from the airport.",
-      "answer": "repülőtérről",
+      "stage": "controlled",
       "teaches": [
-        "delative-rol-rel"
+        "elative-bol-bel"
       ],
-      "stage": "controlled"
+      "sentence": "Meg ____ van.",
+      "hint": "Anglia",
+      "english": "Meg is from England.",
+      "answer": "Angliából"
     },
     {
       "id": "a1-155-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Anna ____ jön.",
-      "hint": "Szeged + from",
-      "english": "Anna is coming from Szeged.",
-      "answer": "Szegedről",
+      "stage": "controlled",
       "teaches": [
         "delative-rol-rel"
       ],
-      "stage": "controlled"
+      "sentence": "Károly ____ van.",
+      "hint": "Budapest",
+      "english": "Károly is from Budapest.",
+      "answer": "Budapestről"
     },
     {
       "id": "a1-155-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "repülőtérről",
-          "from the airport"
-        ],
-        [
-          "ajándék",
-          "gift"
-        ],
-        [
-          "bőrönd",
-          "suitcase"
-        ],
-        [
-          "megérkezik",
-          "arrives"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "elative-bol-bel"
       ],
-      "stage": "controlled"
+      "sentence": "Mi ____ vagyunk.",
+      "hint": "Németország",
+      "english": "We are from Germany.",
+      "answer": "Németországból"
     },
     {
       "id": "a1-155-controlled-4",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Meg takes the chocolate out of her bag (táska), not her pocket (zseb). Which phrase means 'out of her bag'?",
-      "options": [
-        "a táskájából",
-        "a zsebéből",
-        "az asztalról"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-origin-cases-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-155-practice-1",
-      "type": "multiple-choice",
       "category": "grammar",
-      "question": "Translate: 'A gift from Pécs':",
-      "options": [
-        "Egy ajándék Pécsről",
-        "Egy ajándék Pécsbe",
-        "Egy ajándék Pécsen"
-      ],
-      "correct": 0,
-      "teaches": [
-        "delative-rol-rel"
-      ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be",
-        "2": "on-en-on"
-      },
-      "stage": "practice"
-    },
-    {
-      "id": "a1-155-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A busz a ____ indul.",
-      "hint": "belváros + from",
-      "english": "The bus departs from downtown.",
-      "answer": "belvárosból",
+      "stage": "controlled",
       "teaches": [
         "elative-bol-bel"
       ],
-      "stage": "practice"
+      "question": "You are from Spain. Which sentence says so?",
+      "options": [
+        "Spanyolországról vagyok.",
+        "Spanyolországból vagyok.",
+        "Spanyolországban vagyok."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      }
+    },
+    {
+      "id": "a1-155-practice-1",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-origin-cases-vocab"
+      ],
+      "pairs": [
+        [
+          "ország",
+          "country"
+        ],
+        [
+          "Magyarország",
+          "Hungary"
+        ],
+        [
+          "Anglia",
+          "England"
+        ],
+        [
+          "Németország",
+          "Germany"
+        ],
+        [
+          "Spanyolország",
+          "Spain"
+        ]
+      ]
+    },
+    {
+      "id": "a1-155-practice-2",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "elative-bol-bel"
+      ],
+      "tiles": [
+        "de",
+        "lakik",
+        "Budapesten",
+        ",",
+        "van",
+        "Meg",
+        ".",
+        "Angliából"
+      ],
+      "solution": [
+        "Meg",
+        "Angliából",
+        "van",
+        ",",
+        "de",
+        "Budapesten",
+        "lakik",
+        "."
+      ],
+      "english": "Meg is from England, but she lives in Budapest."
     },
     {
       "id": "a1-155-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Meg hozott egy bort ____.",
-      "hint": "Tokaj + from",
-      "english": "Meg brought a wine from Tokaj.",
-      "answer": "Tokajból",
+      "stage": "practice",
       "teaches": [
-        "elative-bol-bel"
+        "delative-rol-rel"
       ],
-      "stage": "practice"
+      "sentence": "Anna ____ van.",
+      "hint": "Magyarország",
+      "english": "Anna is from Hungary.",
+      "answer": "Magyarországról"
     },
     {
       "id": "a1-155-practice-4",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'Meséljetek az utazásról!' mean?",
-      "options": [
-        "Tell me about the trip!",
-        "Let's go on a trip!",
-        "Where is the trip to?"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "delative-rol-rel"
       ],
-      "stage": "practice"
+      "question": "Which pair is right: “in Budapest” and “from Budapest”?",
+      "options": [
+        "Budapesten – Budapestből",
+        "Budapestben – Budapestről",
+        "Budapesten – Budapestről"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-155-practice-5",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "belvárosból",
-          "from downtown"
-        ],
-        [
-          "piacról",
-          "from the market"
-        ],
-        [
-          "vasútállomásról",
-          "from the station"
-        ],
-        [
-          "utazásról",
-          "about the trip"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "on-en-on"
       ],
-      "stage": "practice"
+      "sentence": "Hol laksz? ____ lakom.",
+      "hint": "Budapest",
+      "english": "Where do you live? I live in Budapest.",
+      "answer": "Budapesten"
+    },
+    {
+      "id": "a1-155-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Where does Meg come from first this evening?",
+      "options": [
+        "The library.",
+        "The market.",
+        "The bakery."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-155-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Where is Anna from?",
+      "options": [
+        "Pécs.",
+        "Budapest.",
+        "England."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-155-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does Károly offer Anna?",
+      "options": [
+        "Cake.",
+        "Coffee.",
+        "A message."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-155-dialogue-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "—Honnan jöttök? —A ____ jövünk.",
-      "options": [
-        "vasútállomásról",
-        "vasútállomásra",
-        "vasútállomáson"
-      ],
-      "correct": 0,
-      "teaches": [
-        "delative-rol-rel"
-      ]
-    },
-    {
-      "id": "a1-155-dialogue-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "—Mit hoztál? —Hoztam egy könyvet a ____.",
-      "hint": "bolt + from",
-      "english": "—What did you bring? —I brought a book from the store.",
-      "answer": "boltból",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
         "elative-bol-bel"
-      ]
-    },
-    {
-      "id": "a1-155-production-1",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A vonat megérkezett ____.",
-      "hint": "Szeged + from",
-      "english": "The train arrived from Szeged.",
-      "answer": "Szegedről",
-      "teaches": [
-        "delative-rol-rel"
-      ]
-    },
-    {
-      "id": "a1-155-production-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'We are arriving from the airport.'",
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Honnan vagy?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "A repülőtérről érkezünk.",
-        "A repülőtérre érkezünk.",
-        "A repülőtéren vagyunk."
+        "Angliában vagyok.",
+        "Angliából vagyok.",
+        "Angliáról vagyok."
       ],
-      "correct": 0,
-      "teaches": [
-        "delative-rol-rel"
-      ],
+      "correct": 1,
       "distractor_skills": {
-        "2": "on-en-on"
+        "0": "ban-ben-in"
       }
     },
     {
-      "id": "a1-155-check-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which case is used for 'from the airport' (repülőtérről)?",
+      "id": "a1-155-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "on-en-on"
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Hol laksz?"
+        },
+        {
+          "speaker": "Anna",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "delative (-ról/-ről)",
-        "elative (-ból/-ből)",
-        "superessive (-on/-en/-ön)"
+        "Budapesten lakom.",
+        "Budapestről lakom.",
+        "Budapestben lakom."
       ],
       "correct": 0,
+      "distractor_skills": {
+        "1": "delative-rol-rel"
+      }
+    },
+    {
+      "id": "a1-155-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "delative-rol-rel"
       ],
-      "distractor_skills": {
-        "1": "elative-bol-bel",
-        "2": "on-en-on"
-      },
-      "stage": "check"
+      "tiles": [
+        "megyek",
+        ".",
+        "Angliába",
+        "Magyarországról"
+      ],
+      "solution": [
+        "Magyarországról",
+        "Angliába",
+        "megyek",
+        "."
+      ],
+      "english": "I am going from Hungary to England."
+    },
+    {
+      "id": "a1-155-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-origin-cases-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Ask where your friend is from.",
+          "answer": "Honnan vagy?"
+        },
+        {
+          "prompt": "Say that you are from Germany.",
+          "answer": "Németországból vagyok."
+        }
+      ]
+    },
+    {
+      "id": "a1-155-check-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
+      "teaches": [
+        "delative-rol-rel"
+      ],
+      "sentence": "____ vagyok.",
+      "hint": "Magyarország",
+      "english": "I am from Hungary.",
+      "answer": "Magyarországról"
     },
     {
       "id": "a1-155-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Anna a ____ hozott paprikát.",
-      "hint": "piac + from",
-      "english": "Anna brought paprika from the market.",
-      "answer": "piacról",
+      "stage": "check",
       "teaches": [
-        "delative-rol-rel"
+        "elative-bol-bel"
       ],
-      "stage": "check"
+      "question": "Which sentence means “They are from England”?",
+      "options": [
+        "Angliából vannak.",
+        "Angliában vannak.",
+        "Angliáról vannak."
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     }
   ]
 }

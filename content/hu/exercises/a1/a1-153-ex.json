@@ -5,282 +5,324 @@
       "id": "a1-153-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'Miről beszéltek?' mean?",
-      "options": [
-        "What are you talking about?",
-        "Where are you going?",
-        "Who is speaking?"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-origin-cases-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “from there”?",
+      "options": [
+        "onnan",
+        "innen",
+        "oda"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-153-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'about whom?'",
-      "options": [
-        "kiről",
-        "miről",
-        "kivel"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "introduce"
+      "question": "Which question means “Where are you going?”",
+      "options": [
+        "Hová mész?",
+        "Hol vagy?",
+        "Honnan jössz?"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-153-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A tanár a magyar ____ beszél.",
-      "hint": "történelem + about",
-      "english": "The teacher speaks about Hungarian history.",
-      "answer": "történelemről",
+      "stage": "controlled",
       "teaches": [
-        "delative-rol-rel"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "controlled"
+      "sentence": "____ mész? A moziba.",
+      "english": "Where are you going? To the cinema.",
+      "answer": "Hová"
     },
     {
       "id": "a1-153-controlled-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Károly és Meg a ____ beszélnek.",
-      "hint": "munka + about",
-      "english": "Károly and Meg are talking about work.",
-      "answer": "munkáról",
+      "stage": "controlled",
       "teaches": [
-        "delative-rol-rel"
+        "ban-ben-in"
       ],
-      "stage": "controlled"
+      "question": "Hol van Anna?",
+      "options": [
+        "A kertben van.",
+        "A kertbe van.",
+        "A kertből van."
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "elative-bol-bel"
+      }
     },
     {
       "id": "a1-153-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "miről",
-          "about what"
-        ],
-        [
-          "kiről",
-          "about whom"
-        ],
-        [
-          "beszél",
-          "speaks"
-        ],
-        [
-          "mesél",
-          "narrates/tells"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "movement-with-ba-be"
       ],
-      "stage": "controlled"
+      "sentence": "Hová megy Anna? A ____ megy.",
+      "hint": "kert",
+      "english": "Where is Anna going? She is going into the garden.",
+      "answer": "kertbe"
     },
     {
       "id": "a1-153-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Choose the correct phrase for 'about the family':",
-      "options": [
-        "a családról",
-        "a családból",
-        "a családra"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
-        "delative-rol-rel"
+        "elative-bol-bel"
       ],
+      "question": "Honnan jön Anna?",
+      "options": [
+        "A kertbe jön.",
+        "A kertből jön.",
+        "A kertben jön."
+      ],
+      "correct": 1,
       "distractor_skills": {
-        "1": "elative-bol-bel"
-      },
-      "stage": "controlled"
+        "0": "movement-with-ba-be",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "a1-153-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'I am reading about Budapest.'",
-      "options": [
-        "Budapestről olvasok.",
-        "Budapesten olvasok.",
-        "Budapestre olvasok."
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "delative-rol-rel"
+        "a1-origin-cases-vocab"
       ],
-      "distractor_skills": {
-        "1": "on-en-on"
-      },
-      "stage": "practice"
+      "pairs": [
+        [
+          "ide",
+          "to here"
+        ],
+        [
+          "oda",
+          "to there"
+        ],
+        [
+          "onnan",
+          "from there"
+        ],
+        [
+          "innen",
+          "from here"
+        ],
+        [
+          "haza",
+          "home (to)"
+        ]
+      ]
     },
     {
       "id": "a1-153-practice-2",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "____ olvasol most?",
-      "hint": "About what",
-      "english": "What are you reading about now?",
-      "answer": "Miről",
+      "stage": "practice",
       "teaches": [
-        "delative-rol-rel"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "practice"
+      "tiles": [
+        "megyek",
+        ",",
+        "ide",
+        "Onnan",
+        ".",
+        "jövök"
+      ],
+      "solution": [
+        "Onnan",
+        "jövök",
+        ",",
+        "ide",
+        "megyek",
+        "."
+      ],
+      "english": "I come from there, I am going here."
     },
     {
       "id": "a1-153-practice-3",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Anna a tegnapi ____ mesél.",
-      "hint": "film + about",
-      "english": "Anna is telling about yesterday's movie.",
-      "answer": "filmről",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "delative-rol-rel"
+        "a1-origin-cases-vocab"
       ],
-      "stage": "practice"
+      "sentence": "Anna ott van. ____ megyek.",
+      "english": "Anna is there. I am going there.",
+      "answer": "Oda"
     },
     {
       "id": "a1-153-practice-4",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What is the meaning of 'Kiről beszél a pincér?'",
-      "options": [
-        "Whom is the waiter talking about?",
-        "What is the waiter serving?",
-        "Where is the waiter coming from?"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “I am going home”?",
+      "options": [
+        "Otthon megyek.",
+        "Otthonról megyek.",
+        "Haza megyek."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-153-practice-5",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "filmről",
-          "about the movie"
-        ],
-        [
-          "hírről",
-          "about the news"
-        ],
-        [
-          "munkáról",
-          "about work"
-        ],
-        [
-          "családról",
-          "about family"
-        ]
-      ],
-      "teaches": [
-        "a1-origin-cases-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-153-dialogue-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "—Miről beszéltek? —A holnapi ____ beszélünk.",
-      "options": [
-        "programról",
-        "programra",
-        "programban"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "delative-rol-rel"
       ],
+      "sentence": "____ jövök.",
+      "english": "I come from home.",
+      "answer": "Otthonról"
+    },
+    {
+      "id": "a1-153-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "movement-with-ba-be"
+      ],
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Hová mész?"
+        },
+        {
+          "speaker": "Anna",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A moziba megyek.",
+        "A moziból megyek.",
+        "A moziban megyek."
+      ],
+      "correct": 0,
       "distractor_skills": {
+        "1": "elative-bol-bel",
         "2": "ban-ben-in"
       }
     },
     {
       "id": "a1-153-dialogue-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "—Kiről mesélsz? —A régi ____ mesélek.",
-      "hint": "barát + about",
-      "english": "—Who are you talking about? —I'm talking about the old friend.",
-      "answer": "barátról",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "delative-rol-rel"
-      ]
+        "spatial-questions-hol-hova"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Honnan jön Károly?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Károly otthonról jön.",
+        "Károly otthon jön.",
+        "Károly haza jön."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-153-production-1",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Sokat beszélünk a magyar ____.",
-      "hint": "nyelv + about",
-      "english": "We talk a lot about the Hungarian language.",
-      "answer": "nyelvről",
+      "stage": "production",
       "teaches": [
-        "delative-rol-rel"
-      ]
+        "spatial-questions-hol-hova"
+      ],
+      "tiles": [
+        "mész",
+        "?",
+        "hová",
+        "Honnan",
+        "és",
+        ",",
+        "jössz"
+      ],
+      "solution": [
+        "Honnan",
+        "jössz",
+        ",",
+        "és",
+        "hová",
+        "mész",
+        "?"
+      ],
+      "english": "Where do you come from, and where are you going?"
     },
     {
       "id": "a1-153-production-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'We are talking about the trip.'",
-      "options": [
-        "Az utazásról beszélünk.",
-        "Az utazásra beszélünk.",
-        "Az utazásban vagyunk."
-      ],
-      "correct": 0,
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
-        "delative-rol-rel"
+        "a1-origin-cases-vocab"
       ],
-      "distractor_skills": {
-        "2": "ban-ben-in"
-      }
+      "template": [
+        {
+          "prompt": "Ask where your friend is going.",
+          "answer": "Hová mész?"
+        },
+        {
+          "prompt": "Say that you come from home.",
+          "answer": "Otthonról jövök."
+        }
+      ]
     },
     {
       "id": "a1-153-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which case is used to mean 'about' with the verb 'beszél'?",
-      "options": [
-        "delative (-ról/-ről)",
-        "sublative (-ra/-re)",
-        "allative (-hoz/-hez)"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "delative-rol-rel"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "check"
+      "sentence": "____ jössz? A bankból.",
+      "english": "Where do you come from? From the bank.",
+      "answer": "Honnan"
     },
     {
       "id": "a1-153-check-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "____ beszéltetek tegnap?",
-      "hint": "About whom",
-      "english": "Who did you talk about yesterday?",
-      "answer": "Kiről",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "delative-rol-rel"
+        "a1-origin-cases-vocab"
       ],
-      "stage": "check"
+      "question": "Which sentence means “She is going there”?",
+      "options": [
+        "Ide megy.",
+        "Oda megy.",
+        "Onnan megy."
+      ],
+      "correct": 1
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "id": "story.a1.unit31",
-  "title": "Honnan jöttök?",
+  "title": "Where Are You From?",
   "level": "A1",
   "type": "original",
   "characters": [
@@ -12,89 +12,115 @@
     {
       "type": "narration",
       "lang": "en",
-      "text": "Károly meets Meg and Anna at a café in Budapest after their weekend trips."
+      "text": "Monday evening in the café. Károly, Anna and Meg talk about where they come from."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Sziasztok! De jó látni titeket! Honnan jöttök?"
+      "text": "Szia, Meg! Honnan jössz?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Szia Károly! Én most érkeztem a repülőtérről."
+      "text": "A könyvtárból jövök. Reggeltől estig tanulok."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "A repülőtérről? Hol voltál hétvégén?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Bécsben voltam. Nagyon szép volt a város."
+      "text": "Én az irodából jövök. Hétfőtől péntekig nyolctól ötig dolgozom."
     },
     {
       "type": "dialogue",
       "speaker": "Anna",
-      "text": "Én Szegedről jövök, a vasútállomásról egyenesen ide sétáltam."
+      "text": "Sziasztok! A piacról jövök, és nagyon éhes vagyok."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Szegedről? És hoztál valamit?"
+      "text": "Anna, kérsz tortát? A pékségből van."
     },
     {
       "type": "dialogue",
       "speaker": "Anna",
-      "text": "Igen! Hoztam finom szegedi paprikát a piacról."
+      "text": "Igen, köszönöm! Meg, honnan vagy te? Budapestről?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Nézzétek, a táskámból előveszek egy kis csokoládét Bécsből."
+      "text": "Nem, Angliából vagyok, de most Budapesten lakom."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Én Pécsről vagyok. Károly Budapestről van."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Köszönöm szépen! Üljünk le, és meséljetek az utazásról!"
+      "text": "Igen. És jó este van! Mindenki itt van."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Tortát kapok Károlytól, kávét Annától. Jó este lesz!"
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Miről mesél Meg és Anna Károlynak a kávézóban?",
+          "question": "Honnan jön Meg?",
           "options": [
-            "Egy új egyetemi kurzusról és a vizsgákról.",
-            "A hétvégi utazásaikról és az onnan hozott finomságokról.",
-            "A budapesti albérletek magas bérleti díjáról.",
-            "Egy elromlott repülőgépről a Liszt Ferenc repülőtéren."
-          ],
-          "correctIndex": 1,
-          "explanation": "A lányok a hétvégi útjaikról (Meg Bécsben, Anna Szegeden járt) és a hozott ajándékokról beszélnek."
-        },
-        {
-          "question": "Mit hozott Anna Szegedről a barátoknak?",
-          "options": [
-            "Egy képeskönyvet a városról",
-            "Bécsi csokoládét egy cukrászdából",
-            "Szegedi paprikát a piacról",
-            "Friss kenyeret a vasútállomásról"
-          ],
-          "correctIndex": 2,
-          "explanation": "Anna büszkén meséli: „Hoztam finom szegedi paprikát a piacról.” (I brought delicious paprika from Szeged from the market.)"
-        },
-        {
-          "question": "Mit vesz elő Meg a táskájából az asztalnál?",
-          "options": [
-            "Egy kis csokoládét Bécsből",
-            "Friss narancslevet Budapestről",
-            "Finom sajtot a szegedi piacról",
-            "Egy doboz süteményt a repülőtérről"
+            "A könyvtárból.",
+            "A piacról.",
+            "Az irodából.",
+            "A pékségből."
           ],
           "correctIndex": 0,
-          "explanation": "Meg előveszi a meglepetést: „Nézzétek, a táskámból előveszek egy kis csokoládét Bécsből.” (Look, from my bag I take out a little chocolate from Vienna.)"
+          "explanation": "Meg says: „A könyvtárból jövök.” (I come from the library.)",
+          "questionEnglish": "Where does Meg come from?",
+          "optionsEnglish": [
+            "From the library.",
+            "From the market.",
+            "From the office.",
+            "From the bakery."
+          ]
+        },
+        {
+          "question": "Ki van Pécsről?",
+          "options": [
+            "Anna.",
+            "Károly.",
+            "Meg.",
+            "Senki."
+          ],
+          "correctIndex": 0,
+          "explanation": "Anna says: „Én Pécsről vagyok.” (I am from Pécs.)",
+          "questionEnglish": "Who is from Pécs?",
+          "optionsEnglish": [
+            "Anna.",
+            "Károly.",
+            "Meg.",
+            "Nobody."
+          ]
+        },
+        {
+          "question": "Mikor dolgozik Károly?",
+          "options": [
+            "Hétfőtől péntekig, nyolctól ötig.",
+            "Reggeltől estig.",
+            "Szombattól vasárnapig.",
+            "Csak este."
+          ],
+          "correctIndex": 0,
+          "explanation": "Károly says: „Hétfőtől péntekig nyolctól ötig dolgozom.”",
+          "questionEnglish": "When does Károly work?",
+          "optionsEnglish": [
+            "From Monday to Friday, from eight to five.",
+            "From morning to evening.",
+            "From Saturday to Sunday.",
+            "Only in the evening."
+          ]
         }
       ]
     }

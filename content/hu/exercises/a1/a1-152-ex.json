@@ -4,285 +4,315 @@
     {
       "id": "a1-152-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "What does 'Budapestről' mean?",
-      "options": [
-        "from Budapest",
-        "to Budapest",
-        "in Budapest"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "introduce",
       "teaches": [
-        "delative-rol-rel"
+        "a1-origin-cases-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “hill, mountain”?",
+      "options": [
+        "hegy",
+        "tér",
+        "pálya"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-152-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which question word means 'from where?'",
-      "options": [
-        "honnan",
-        "hol",
-        "hova"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "delative-rol-rel"
       ],
-      "stage": "introduce"
+      "question": "Which sentence means “I come from the square”?",
+      "options": [
+        "A térből jövök.",
+        "A térről jövök.",
+        "A tér jövök."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-152-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Károly ____ érkezik.",
-      "hint": "Budapest + from",
-      "english": "Károly arrives from Budapest.",
-      "answer": "Budapestről",
+      "stage": "controlled",
       "teaches": [
         "delative-rol-rel"
       ],
-      "stage": "controlled"
+      "sentence": "A ____ jövünk.",
+      "hint": "piac",
+      "english": "We come from the market.",
+      "answer": "piacról"
     },
     {
       "id": "a1-152-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Elveszem a kulcsot az ____.",
-      "hint": "asztal + off/from",
-      "english": "I take the key off the table.",
-      "answer": "asztalról",
+      "stage": "controlled",
       "teaches": [
         "delative-rol-rel"
       ],
-      "stage": "controlled"
+      "sentence": "Anna az ____ jön.",
+      "hint": "utca",
+      "english": "Anna comes from the street.",
+      "answer": "utcáról"
     },
     {
       "id": "a1-152-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Budapestről",
-          "from Budapest"
-        ],
-        [
-          "székről",
-          "off the chair"
-        ],
-        [
-          "piacról",
-          "from the market"
-        ],
-        [
-          "honnan",
-          "from where"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "delative-rol-rel"
       ],
-      "stage": "controlled"
+      "sentence": "____ beszélsz?",
+      "english": "What are you talking about?",
+      "answer": "Miről"
     },
     {
       "id": "a1-152-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Choose the correct form for 'Szeged' (front vowel):",
-      "options": [
-        "Szegedről",
-        "Szegedról",
-        "Szegedből"
-      ],
-      "correct": 0,
-      "teaches": [
-        "vowel-harmony"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-152-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'Where are you coming from?'",
-      "options": [
-        "Honnan jössz?",
-        "Hova mész?",
-        "Hol vagy?"
-      ],
-      "correct": 0,
-      "teaches": [
-        "spatial-questions-hol-hova"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-152-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Péter most érkezik a ____.",
-      "hint": "piac + from/off",
-      "english": "Péter is arriving from the market now.",
-      "answer": "piacról",
+      "stage": "controlled",
       "teaches": [
         "delative-rol-rel"
       ],
-      "stage": "practice"
+      "question": "Meg says: “A zenéről mesélek.” What is she telling about?",
+      "options": [
+        "About music.",
+        "From music.",
+        "In music."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-152-practice-1",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-origin-cases-vocab"
+      ],
+      "pairs": [
+        [
+          "mesél",
+          "tells"
+        ],
+        [
+          "hegy",
+          "hill"
+        ],
+        [
+          "pálya",
+          "pitch"
+        ],
+        [
+          "piac",
+          "market"
+        ],
+        [
+          "utca",
+          "street"
+        ]
+      ]
+    },
+    {
+      "id": "a1-152-practice-2",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "delative-rol-rel"
+      ],
+      "tiles": [
+        "hegyről",
+        "jön",
+        "Anna",
+        ".",
+        "a"
+      ],
+      "solution": [
+        "Anna",
+        "a",
+        "hegyről",
+        "jön",
+        "."
+      ],
+      "english": "Anna comes from the hill."
     },
     {
       "id": "a1-152-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A levél leesik a ____.",
-      "hint": "szék + off",
-      "english": "The letter falls off the chair.",
-      "answer": "székről",
+      "stage": "practice",
       "teaches": [
         "delative-rol-rel"
       ],
-      "stage": "practice"
+      "sentence": "Meg a ____ mesél.",
+      "hint": "család",
+      "english": "Meg tells about the family.",
+      "answer": "családról"
     },
     {
       "id": "a1-152-practice-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "What is the opposite of 'az asztalra' (onto the table)?",
-      "options": [
-        "az asztalról",
-        "az asztalban",
-        "az asztalból"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "delative-rol-rel"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in",
-        "2": "elative-bol-bel"
-      },
-      "stage": "practice"
+      "question": "Which sentence means “We come from the hill”?",
+      "options": [
+        "A hegyről jövünk.",
+        "A hegyből jövünk.",
+        "A hegy jövünk."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-152-practice-5",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "asztalról",
-          "off the table"
-        ],
-        [
-          "polcról",
-          "off the shelf"
-        ],
-        [
-          "érkezik",
-          "arrives"
-        ],
-        [
-          "honnan",
-          "from where"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "delative-rol-rel"
       ],
-      "stage": "practice"
+      "sentence": "Kiről beszélsz? ____ beszélek.",
+      "hint": "Anna",
+      "english": "Who are you talking about? I am talking about Anna.",
+      "answer": "Annáról"
     },
     {
       "id": "a1-152-dialogue-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "—Honnan jössz? —____ jövök, vonattal.",
-      "options": [
-        "Szegedről",
-        "Szegedre",
-        "Szegeden"
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
         "delative-rol-rel"
       ],
-      "distractor_skills": {
-        "2": "on-en-on"
-      }
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Honnan jössz most?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A piacról jövök.",
+        "A piacból jövök.",
+        "A piacba jövök."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-152-dialogue-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "—Hol van a könyv? —Elvettem az ____.",
-      "hint": "asztal + off/from",
-      "english": "—Where is the book? —I took it off the table.",
-      "answer": "asztalról",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
         "delative-rol-rel"
-      ]
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Miről mesélsz?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A családból mesélek.",
+        "A családról mesélek.",
+        "A családról mesélsz."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-152-production-1",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Anna ____ utazik Szegedre.",
-      "hint": "Budapest + from",
-      "english": "Anna travels from Budapest to Szeged.",
-      "answer": "Budapestről",
+      "stage": "production",
       "teaches": [
         "delative-rol-rel"
-      ]
+      ],
+      "tiles": [
+        "az",
+        "Anna",
+        "jön",
+        "piacról",
+        "utcáról",
+        ".",
+        ",",
+        "a",
+        "Meg"
+      ],
+      "solution": [
+        "Meg",
+        "a",
+        "piacról",
+        "jön",
+        ",",
+        "Anna",
+        "az",
+        "utcáról",
+        "."
+      ],
+      "english": "Meg comes from the market, Anna from the street."
     },
     {
       "id": "a1-152-production-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'The phone is falling off the shelf.'",
-      "options": [
-        "A telefon leesik a polcról.",
-        "A telefon felmegy a polcra.",
-        "A telefon a polcon van."
-      ],
-      "correct": 0,
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
-        "delative-rol-rel"
+        "a1-origin-cases-vocab"
       ],
-      "distractor_skills": {
-        "2": "on-en-on"
-      }
+      "template": [
+        {
+          "prompt": "Ask what your friend is talking about.",
+          "answer": "Miről beszélsz?"
+        },
+        {
+          "prompt": "Say that you come from the square.",
+          "answer": "A térről jövök."
+        }
+      ]
     },
     {
       "id": "a1-152-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "What case do we use for coming from Budapest?",
-      "options": [
-        "delative (-ról/-ről)",
-        "elative (-ból/-ből)",
-        "inessive (-ban/-ben)"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "delative-rol-rel"
       ],
-      "distractor_skills": {
-        "1": "elative-bol-bel",
-        "2": "ban-ben-in"
-      },
-      "stage": "check"
+      "sentence": "A ____ jövök.",
+      "hint": "pálya",
+      "english": "I come from the pitch.",
+      "answer": "pályáról"
     },
     {
       "id": "a1-152-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Károly most érkezik a ____.",
-      "hint": "piac + from",
-      "english": "Károly is arriving from the market now.",
-      "answer": "piacról",
+      "stage": "check",
       "teaches": [
         "delative-rol-rel"
       ],
-      "stage": "check"
+      "question": "Anna asks: “Miről beszélsz?” Which reply fits?",
+      "options": [
+        "A tervből.",
+        "A terv.",
+        "A tervről."
+      ],
+      "correct": 2
     }
   ]
 }

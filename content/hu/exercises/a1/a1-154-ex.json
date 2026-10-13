@@ -4,280 +4,325 @@
     {
       "id": "a1-154-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "What suffix is used for coming from a person (e.g. the doctor)?",
-      "options": [
-        "-tól/-től",
-        "-ból/-ből",
-        "-ról/-ről"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "introduce",
       "teaches": [
-        "tol-tol"
+        "a1-origin-cases-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “until when?”",
+      "options": [
+        "meddig",
+        "hánykor",
+        "mettől"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-154-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'otthonról' mean?",
+      "category": "grammar",
+      "stage": "introduce",
+      "teaches": [
+        "tol-tol"
+      ],
+      "question": "Which sentence means “I get a present from Anna”?",
       "options": [
-        "from home",
-        "at home",
-        "towards home"
+        "Ajándékot kapok Annától.",
+        "Ajándékot kapok Anna.",
+        "Ajándékot kapok Annából."
       ],
       "correct": 0,
-      "teaches": [
-        "a1-origin-cases-vocab"
-      ],
-      "stage": "introduce"
+      "distractor_skills": {
+        "2": "elative-bol-bel"
+      }
     },
     {
       "id": "a1-154-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Péter most jön az ____.",
-      "hint": "orvos + from",
-      "english": "Péter is coming from the doctor now.",
-      "answer": "orvostól",
+      "stage": "controlled",
       "teaches": [
         "tol-tol"
       ],
-      "stage": "controlled"
+      "sentence": "Üzenetet kapok ____.",
+      "hint": "Károly",
+      "english": "I get a message from Károly.",
+      "answer": "Károlytól"
     },
     {
       "id": "a1-154-controlled-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "A vonat ____ érkezik.",
-      "hint": "Budapest + from",
-      "english": "The train arrives from Budapest.",
-      "answer": "Budapestről",
+      "stage": "controlled",
       "teaches": [
-        "delative-rol-rel"
+        "tol-tol"
       ],
-      "stage": "controlled"
+      "question": "Which sentence means “She gets a message from Anna”?",
+      "options": [
+        "Üzenetet kap Annátől.",
+        "Üzenetet kap Annáról.",
+        "Üzenetet kap Annától."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "1": "delative-rol-rel"
+      }
     },
     {
       "id": "a1-154-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "boltból",
-          "out of the shop"
-        ],
-        [
-          "piacról",
-          "from the market"
-        ],
-        [
-          "orvostól",
-          "from the doctor"
-        ],
-        [
-          "otthonról",
-          "from home"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "tol-tol"
       ],
-      "stage": "controlled"
+      "sentence": "____ estig dolgozom.",
+      "hint": "reggel",
+      "english": "I work from morning to evening.",
+      "answer": "Reggeltől"
     },
     {
       "id": "a1-154-controlled-4",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Choose the correct expression: 'I come out of the bank':",
-      "options": [
-        "A bankból jövök.",
-        "A bankról jövök.",
-        "A banktól jövök."
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
-        "elative-bol-bel"
+        "tol-tol"
       ],
-      "distractor_skills": {
-        "1": "delative-rol-rel"
-      },
-      "stage": "controlled"
+      "sentence": "Hétfőtől ____ dolgozom.",
+      "hint": "péntek",
+      "english": "I work from Monday to Friday.",
+      "answer": "péntekig"
     },
     {
       "id": "a1-154-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which case belongs to the 'in' group (interior)?",
-      "options": [
-        "-ból/-ből",
-        "-ról/-ről",
-        "-tól/-től"
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "elative-bol-bel"
+        "a1-origin-cases-vocab"
       ],
-      "distractor_skills": {
-        "1": "delative-rol-rel"
-      },
-      "stage": "practice"
+      "pairs": [
+        [
+          "kap",
+          "gets"
+        ],
+        [
+          "üzenet",
+          "message"
+        ],
+        [
+          "meddig",
+          "until when"
+        ],
+        [
+          "mettől",
+          "from when"
+        ],
+        [
+          "ajándék",
+          "present"
+        ]
+      ]
     },
     {
       "id": "a1-154-practice-2",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Károly a ____ jön.",
-      "hint": "barát + from",
-      "english": "Károly comes from the friend.",
-      "answer": "baráttól",
+      "stage": "practice",
       "teaches": [
         "tol-tol"
       ],
-      "stage": "practice"
+      "tiles": [
+        "ötig",
+        ".",
+        "dolgozom",
+        "Nyolctól"
+      ],
+      "solution": [
+        "Nyolctól",
+        "ötig",
+        "dolgozom",
+        "."
+      ],
+      "english": "I work from eight to five."
     },
     {
       "id": "a1-154-practice-3",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A turisták ____ érkeztek.",
-      "hint": "from afar",
-      "english": "The tourists arrived from afar.",
-      "answer": "messziről",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "tol-tol"
       ],
-      "stage": "practice"
+      "question": "Which phrase means “from Saturday to Sunday”?",
+      "options": [
+        "szombatig vasárnaptól",
+        "szombattól vasárnapig",
+        "szombaton vasárnapig"
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "2": "on-en-on"
+      }
     },
     {
       "id": "a1-154-practice-4",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "question": "Translate: 'from close by / up close':",
-      "options": [
-        "közelről",
-        "messziről",
-        "otthonról"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-origin-cases-vocab"
       ],
-      "stage": "practice"
+      "sentence": "____ dolgozol?",
+      "english": "Until when do you work?",
+      "answer": "Meddig"
     },
     {
       "id": "a1-154-practice-5",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "messziről",
-          "from afar"
-        ],
-        [
-          "közelről",
-          "from up close"
-        ],
-        [
-          "otthonról",
-          "from home"
-        ],
-        [
-          "állomástól",
-          "from the station"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "tol-tol"
       ],
-      "stage": "practice"
+      "question": "Anna says: “Reggeltől estig tanulok.” What does she mean?",
+      "options": [
+        "I study from morning to evening.",
+        "I study in the morning and evening.",
+        "I study until the morning."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-154-dialogue-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "—Honnan jössz ilyen későn? —Az ____ jövök.",
-      "options": [
-        "orvostól",
-        "orvoshoz",
-        "orvosnál"
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
         "tol-tol"
-      ]
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Mettől meddig dolgozol?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Nyolctól ötig dolgozom.",
+        "Nyolcig ötig dolgozom.",
+        "Nyolctól öttől dolgozom."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-154-dialogue-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "—Hozol vizet? —Igen, hozok a ____.",
-      "hint": "bolt + from/out of",
-      "english": "—Will you bring water? —Yes, I'll bring some from the store.",
-      "answer": "boltból",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "elative-bol-bel"
-      ]
+        "tol-tol"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Kitől kapsz üzenetet?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Károlyból kapok üzenetet.",
+        "Károlytól kapok üzenetet.",
+        "Károlytól kapsz üzenetet."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "0": "elative-bol-bel"
+      }
     },
     {
       "id": "a1-154-production-1",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Meg most jön ki a ____.",
-      "hint": "szoba + from/out of",
-      "english": "Meg is coming out of the room now.",
-      "answer": "szobából",
+      "stage": "production",
       "teaches": [
-        "elative-bol-bel"
-      ]
+        "tol-tol"
+      ],
+      "tiles": [
+        "ötig",
+        "nyolctól",
+        "dolgozom",
+        "péntekig",
+        ".",
+        "Hétfőtől"
+      ],
+      "solution": [
+        "Hétfőtől",
+        "péntekig",
+        "nyolctól",
+        "ötig",
+        "dolgozom",
+        "."
+      ],
+      "english": "I work from Monday to Friday, from eight to five."
     },
     {
       "id": "a1-154-production-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Translate: 'I came from home.'",
-      "options": [
-        "Otthonról jöttem.",
-        "Otthon vagyok.",
-        "Otthonra megyek."
-      ],
-      "correct": 0,
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
         "a1-origin-cases-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Ask from when until when your friend works.",
+          "answer": "Mettől meddig dolgozol?"
+        },
+        {
+          "prompt": "Say that you get a message from Anna.",
+          "answer": "Üzenetet kapok Annától."
+        }
       ]
     },
     {
       "id": "a1-154-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Match the trio: házba (into), házban (in), ____ (out of):",
-      "options": [
-        "házból",
-        "házról",
-        "háztól"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "elative-bol-bel"
+        "tol-tol"
       ],
-      "distractor_skills": {
-        "1": "delative-rol-rel"
-      },
-      "stage": "check"
+      "sentence": "____ vasárnapig tanulok.",
+      "hint": "szombat",
+      "english": "I study from Saturday to Sunday.",
+      "answer": "Szombattól"
     },
     {
       "id": "a1-154-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "A diákok az ____ jönnek.",
-      "hint": "iskola + from",
-      "english": "The students come from school.",
-      "answer": "iskolából",
+      "stage": "check",
       "teaches": [
-        "elative-bol-bel"
+        "tol-tol"
       ],
-      "stage": "check"
+      "question": "Complete: Ajándékot kapok ____. (from Károly)",
+      "options": [
+        "Károlytól",
+        "Károlyig",
+        "Károlyból"
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "2": "elative-bol-bel"
+      }
     }
   ]
 }

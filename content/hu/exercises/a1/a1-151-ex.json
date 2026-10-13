@@ -4,289 +4,326 @@
     {
       "id": "a1-151-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "What does 'szobából' mean?",
-      "options": [
-        "out of the room",
-        "into the room",
-        "in the room"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "introduce",
       "teaches": [
-        "elative-bol-bel"
+        "a1-origin-cases-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “swimming pool”?",
+      "options": [
+        "pékség",
+        "cukrászda",
+        "uszoda"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-151-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "What suffix attaches to back-vowel nouns to mean 'out of'?",
+      "stage": "introduce",
+      "teaches": [
+        "elative-bol-bel"
+      ],
+      "question": "Which sentence means “I come from the shop”?",
       "options": [
-        "-ból",
-        "-ből",
-        "-ban"
+        "A boltból jövök.",
+        "A boltba jövök.",
+        "A boltban jövök."
       ],
       "correct": 0,
-      "teaches": [
-        "vowel-harmony"
-      ],
-      "stage": "introduce"
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "a1-151-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Péter jön a ____.",
-      "hint": "bolt + from/out of",
-      "english": "Péter is coming from the store.",
-      "answer": "boltból",
+      "stage": "controlled",
       "teaches": [
         "elative-bol-bel"
       ],
-      "stage": "controlled"
+      "sentence": "Az ____ jövök.",
+      "hint": "iskola",
+      "english": "I come from the school.",
+      "answer": "iskolából"
     },
     {
       "id": "a1-151-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A pincér kijön az ____.",
-      "hint": "étterem + from/out of",
-      "english": "The waiter comes out of the restaurant.",
-      "answer": "étteremből",
+      "stage": "controlled",
       "teaches": [
         "elative-bol-bel"
       ],
-      "stage": "controlled"
+      "sentence": "Anna a ____ jön.",
+      "hint": "kert",
+      "english": "Anna comes from the garden.",
+      "answer": "kertből"
     },
     {
       "id": "a1-151-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "házból",
-          "out of the house"
-        ],
-        [
-          "szobából",
-          "out of the room"
-        ],
-        [
-          "kertből",
-          "out of the garden"
-        ],
-        [
-          "bankból",
-          "from the bank"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "elative-bol-bel"
       ],
-      "stage": "controlled"
+      "question": "Which sentence means “We come from the restaurant”?",
+      "options": [
+        "Az étteremból jövünk.",
+        "Az étteremből jövünk.",
+        "Az étterembe jövünk."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "2": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-151-controlled-4",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "How does 'iskola' change when adding -ból?",
-      "options": [
-        "iskolából",
-        "iskolból",
-        "iskolábólban"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "elative-bol-bel"
+        "a1-origin-cases-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "____ jössz?",
+      "english": "Where do you come from?",
+      "answer": "Honnan"
     },
     {
       "id": "a1-151-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence means 'Meg comes out of the room'?",
-      "options": [
-        "Meg kijön a szobából.",
-        "Meg bemegy a szobába.",
-        "Meg a szobában van."
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "elative-bol-bel"
+        "a1-origin-cases-vocab"
       ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be",
-        "2": "ban-ben-in"
-      },
-      "stage": "practice"
+      "pairs": [
+        [
+          "honnan",
+          "from where"
+        ],
+        [
+          "pékség",
+          "bakery"
+        ],
+        [
+          "cukrászda",
+          "pastry shop"
+        ],
+        [
+          "uszoda",
+          "swimming pool"
+        ],
+        [
+          "iskola",
+          "school"
+        ]
+      ]
     },
     {
       "id": "a1-151-practice-2",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Anna most jön a ____.",
-      "hint": "bank + from",
-      "english": "Anna is coming from the bank now.",
-      "answer": "bankból",
+      "stage": "practice",
       "teaches": [
         "elative-bol-bel"
       ],
-      "stage": "practice"
+      "tiles": [
+        "jön",
+        "cukrászdából",
+        "Meg",
+        ".",
+        "a"
+      ],
+      "solution": [
+        "Meg",
+        "a",
+        "cukrászdából",
+        "jön",
+        "."
+      ],
+      "english": "Meg is coming from the pastry shop."
     },
     {
       "id": "a1-151-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A gyerekek kijönnek az ____.",
-      "hint": "iskola + from",
-      "english": "The children come out of the school.",
-      "answer": "iskolából",
+      "stage": "practice",
       "teaches": [
         "elative-bol-bel"
       ],
-      "stage": "practice"
+      "sentence": "A ____ jövünk.",
+      "hint": "uszoda",
+      "english": "We come from the swimming pool.",
+      "answer": "uszodából"
     },
     {
       "id": "a1-151-practice-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Choose the correct suffix for 'kert' (garden):",
-      "options": [
-        "kertből",
-        "kertból",
-        "kertről"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "elative-bol-bel"
       ],
-      "distractor_skills": {
-        "2": "delative-rol-rel"
-      },
-      "stage": "practice"
+      "question": "Anna says: “A pékségből jövök.” Where is she coming from?",
+      "options": [
+        "From the bakery.",
+        "To the bakery.",
+        "In the bakery."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-151-practice-5",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "kijön",
-          "to come out"
-        ],
-        [
-          "étteremből",
-          "from the restaurant"
-        ],
-        [
-          "iskolából",
-          "from school"
-        ],
-        [
-          "szobából",
-          "out of the room"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-origin-cases-vocab"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "practice"
+      "question": "Which word asks “Where from?”",
+      "options": [
+        "hol",
+        "honnan",
+        "hová"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-151-dialogue-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "—Honnan jössz? —A ____ jövök.",
-      "options": [
-        "boltból",
-        "boltba",
-        "bolton"
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
         "elative-bol-bel"
       ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Honnan jössz?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A moziba jövök.",
+        "A moziban jövök.",
+        "A moziból jövök."
+      ],
+      "correct": 2,
       "distractor_skills": {
-        "1": "movement-with-ba-be",
-        "2": "on-en-on"
+        "0": "movement-with-ba-be",
+        "1": "ban-ben-in"
       }
     },
     {
       "id": "a1-151-dialogue-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "—Károly a szobában van? —Nem, most jött ki a ____.",
-      "hint": "ház + out of",
-      "english": "—Is Károly in the room? —No, he just came out of the house.",
-      "answer": "házból",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "elative-bol-bel"
-      ]
+        "present-tense-routine-language"
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Honnan jön Anna?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Anna a kertből jön.",
+        "Anna a kertből jövök.",
+        "Anna a kertből jössz."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-151-production-1",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Kijövök a ____.",
-      "hint": "kert + from/out of",
-      "english": "I come out of the garden.",
-      "answer": "kertből",
+      "stage": "production",
       "teaches": [
         "elative-bol-bel"
-      ]
+      ],
+      "tiles": [
+        "bankba",
+        "Az",
+        "megyek",
+        "a",
+        "iskolából",
+        "."
+      ],
+      "solution": [
+        "Az",
+        "iskolából",
+        "a",
+        "bankba",
+        "megyek",
+        "."
+      ],
+      "english": "I am going from the school to the bank."
     },
     {
       "id": "a1-151-production-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'I come from the bank.'",
-      "options": [
-        "A bankból jövök.",
-        "A bankba jövök.",
-        "A bankban vagyok."
-      ],
-      "correct": 0,
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
-        "elative-bol-bel"
+        "a1-origin-cases-vocab"
       ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be",
-        "2": "ban-ben-in"
-      }
+      "template": [
+        {
+          "prompt": "Ask where your friend comes from.",
+          "answer": "Honnan jössz?"
+        },
+        {
+          "prompt": "Say that you come from the café.",
+          "answer": "A kávézóból jövök."
+        }
+      ]
     },
     {
       "id": "a1-151-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "What is the opposite direction of 'a szobába' (into the room)?",
-      "options": [
-        "a szobából",
-        "a szobában",
-        "a szobára"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "elative-bol-bel"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "check"
+      "sentence": "A ____ jövök.",
+      "hint": "templom",
+      "english": "I come from the church.",
+      "answer": "templomból"
     },
     {
       "id": "a1-151-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "A pincér kijön az ____.",
-      "hint": "étterem + from",
-      "english": "The waiter comes out of the restaurant.",
-      "answer": "étteremből",
+      "stage": "check",
       "teaches": [
         "elative-bol-bel"
       ],
-      "stage": "check"
+      "question": "Which sentence means “We come from the library”?",
+      "options": [
+        "A könyvtárból jövök.",
+        "A könyvtárba jövünk.",
+        "A könyvtárból jövünk."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "1": "movement-with-ba-be"
+      }
     }
   ]
 }
