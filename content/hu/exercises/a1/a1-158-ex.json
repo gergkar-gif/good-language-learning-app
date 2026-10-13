@@ -5,270 +5,331 @@
       "id": "a1-158-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'folyékonyan' mean?",
-      "options": [
-        "fluently",
-        "slowly",
-        "poorly"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “German” (a person)?",
+      "options": [
+        "angol",
+        "spanyol",
+        "német"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-158-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What phrase means 'a little bit'?",
-      "options": [
-        "egy kicsit",
-        "nagyon jól",
-        "tökéletesen"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "van-zero-copula"
       ],
-      "stage": "introduce"
+      "question": "How do you say “Anna is Spanish”?",
+      "options": [
+        "Anna spanyolul.",
+        "Anna spanyol.",
+        "Anna van spanyol."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-158-controlled-1",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Meg még csak ____ beszél magyarul.",
-      "hint": "a little bit",
-      "english": "Meg still only speaks Hungarian a little bit.",
-      "answer": "egy kicsit",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "van-zero-copula"
       ],
-      "stage": "controlled"
+      "question": "You are Hungarian. Which sentence?",
+      "options": [
+        "Magyar vagyok.",
+        "Magyar vagy.",
+        "Magyar van."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-158-controlled-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Károly ____ beszél angolul.",
-      "hint": "fluently",
-      "english": "Károly speaks English fluently.",
-      "answer": "folyékonyan",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "plural-predicate-adjectives-k"
       ],
-      "stage": "controlled"
+      "sentence": "Anna és Meg ____.",
+      "english": "Anna and Meg are English.",
+      "answer": "angolok"
     },
     {
       "id": "a1-158-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "folyékonyan",
-          "fluently"
-        ],
-        [
-          "egy kicsit",
-          "a little bit"
-        ],
-        [
-          "már",
-          "already"
-        ],
-        [
-          "még",
-          "still/yet"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "ban-ben-in"
       ],
-      "stage": "controlled"
+      "question": "I live in Spain. Which sentence?",
+      "options": [
+        "Spanyolországba lakom.",
+        "Spanyolország lakom.",
+        "Spanyolországban lakom."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "0": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-158-controlled-4",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Translate: 'I don't speak fluently yet':",
-      "options": [
-        "Még nem beszélek folyékonyan.",
-        "Már beszélek folyékonyan.",
-        "Csak folyékonyan beszélek."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "ban-ben-in"
       ],
-      "stage": "controlled"
+      "sentence": "____ lakom.",
+      "english": "I live in England.",
+      "answer": "Angliában"
     },
     {
       "id": "a1-158-practice-1",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "vocabulary",
-      "question": "Translate: 'Do you already understand Hungarian?'",
-      "options": [
-        "Már értesz magyarul?",
-        "Még értesz magyarul?",
-        "Csak értesz magyarul?"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "magyar",
+          "Hungarian"
+        ],
+        [
+          "angol",
+          "English"
+        ],
+        [
+          "német",
+          "German"
+        ],
+        [
+          "olasz",
+          "Italian"
+        ],
+        [
+          "francia",
+          "French"
+        ],
+        [
+          "spanyol",
+          "Spanish"
+        ]
+      ]
     },
     {
       "id": "a1-158-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Nem beszélek ____, de értek.",
-      "hint": "perfectly",
-      "english": "I don't speak perfectly, but I understand.",
-      "answer": "tökéletesen",
+      "type": "substitution",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "ban-ben-in"
       ],
-      "stage": "practice"
+      "base_sentence": "Spanyolországban lakom.",
+      "base_word": "Spanyolország",
+      "base_gloss": "I live in Spain.",
+      "options": [
+        {
+          "word": "Németország",
+          "inflected": "Németországban",
+          "sentence": "Németországban lakom.",
+          "gloss": "Germany"
+        },
+        {
+          "word": "Anglia",
+          "inflected": "Angliában",
+          "sentence": "Angliában lakom.",
+          "gloss": "England"
+        }
+      ]
     },
     {
       "id": "a1-158-practice-3",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Anna ____ nagyon jól beszél spanyolul.",
-      "hint": "already",
-      "english": "Anna already speaks Spanish very well.",
-      "answer": "már",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "van-zero-copula"
       ],
-      "stage": "practice"
+      "question": "You ask a friend: “Are you Hungarian?” Which question?",
+      "options": [
+        "Magyar vagyok?",
+        "Magyar vagy?",
+        "Magyar van?"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-158-practice-4",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What is the opposite of 'már' (already) in negative context?",
-      "options": [
-        "még nem (not yet)",
-        "mindig",
-        "soha"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "plural-predicate-adjectives-k"
       ],
-      "stage": "practice"
+      "question": "They are Spanish. Which sentence?",
+      "options": [
+        "Ők spanyolok.",
+        "Ők spanyol.",
+        "Ők spanyolul."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-158-practice-5",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "tökéletesen",
-          "perfectly"
-        ],
-        [
-          "csak",
-          "only"
-        ],
-        [
-          "sokat",
-          "a lot"
-        ],
-        [
-          "hogy",
-          "how"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "ul-ul-essive-modal"
       ],
-      "stage": "practice"
+      "question": "Meg is English and she speaks English. Which sentence?",
+      "options": [
+        "Meg angol, és angol beszél.",
+        "Meg angol, és angolt beszél.",
+        "Meg angol, és angolul beszél."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-158-dialogue-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "—Hogy beszélsz magyarul? —Csak ____, de tanulok.",
-      "options": [
-        "egy kicsit",
-        "tökéletesen",
-        "nagyon"
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "a1-languages-manner-vocab"
-      ]
+        "van-zero-copula"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Magyar vagy?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Nem, angol vagy.",
+        "Nem, angol van.",
+        "Nem, angol vagyok."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-158-dialogue-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "—Érted a rádiót? —Nem, ____ nem értek mindent.",
-      "hint": "still/yet",
-      "english": "—Do you understand the radio? —No, I still don't understand everything.",
-      "answer": "még",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "a1-languages-manner-vocab"
-      ]
+        "ban-ben-in"
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Hol laksz?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Angliába lakom.",
+        "Angliában lakom.",
+        "Angliában laksz."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "0": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-158-production-1",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Meg minden nap ____ gyakorol.",
-      "hint": "a lot",
-      "english": "Meg practices a lot every day.",
-      "answer": "sokat",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "a1-languages-manner-vocab"
-      ]
+        "ban-ben-in"
+      ],
+      "tiles": [
+        "Angol",
+        "vagyok,",
+        "és",
+        "Angliában",
+        "lakom",
+        "."
+      ],
+      "solution": [
+        "Angol",
+        "vagyok,",
+        "és",
+        "Angliában",
+        "lakom",
+        "."
+      ],
+      "english": "I am English and I live in England."
     },
     {
       "id": "a1-158-production-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Translate: 'He speaks English very well.'",
-      "options": [
-        "Nagyon jól beszél angolul.",
-        "Angolul tanul nagyon.",
-        "Egy kicsit beszél angolul."
-      ],
-      "correct": 0,
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
         "a1-languages-manner-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you are Hungarian.",
+          "answer": "Magyar vagyok."
+        },
+        {
+          "prompt": "Ask a friend if he is German.",
+          "answer": "Német vagy?"
+        }
       ]
     },
     {
       "id": "a1-158-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which adverb means 'only'?",
-      "options": [
-        "csak",
-        "már",
-        "még"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “Spanish” (a person)?",
+      "options": [
+        "német",
+        "francia",
+        "spanyol"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-158-check-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Károly ____ beszél két nyelven.",
-      "hint": "fluently",
-      "english": "Károly speaks two languages fluently.",
-      "answer": "folyékonyan",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "ban-ben-in"
       ],
-      "stage": "check"
+      "question": "I live in France. Which sentence?",
+      "options": [
+        "Franciaországben lakom.",
+        "Franciaországban lakom.",
+        "Franciaország lakom."
+      ],
+      "correct": 1
     }
   ]
 }

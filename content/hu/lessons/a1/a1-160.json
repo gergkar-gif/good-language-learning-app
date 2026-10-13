@@ -1,20 +1,22 @@
 {
   "id": "lesson.a1.160",
   "unit": 32,
-  "title": "Language Exchange - Nyelvcsere a kávézóban",
+  "title": "Language Café - Nyelvcsere",
   "level": "A1",
+  "grammar": "tanul and gyakorol with -ul/-ül, practising together with mi and ti, and the unit story",
   "goal": [
-    "I can participate in a simple language exchange conversation.",
-    "I can ask what words mean and how to say phrases in Hungarian."
+    "I can offer to practise a language together, like Gyakorolunk együtt?",
+    "I can say which language I am learning, like Magyarul tanulok.",
+    "I can follow a story about a language exchange in a café."
   ],
-  "grammar": "Meta-communicative phrases; counting languages; story reading",
   "sections": [
     {
       "type": "goal",
       "title": "Lesson Goals",
       "items": [
-        "I can participate in a simple language exchange conversation.",
-        "I can ask what words mean and how to say phrases in Hungarian."
+        "I can offer to practise a language together, like Gyakorolunk együtt?",
+        "I can say which language I am learning, like Magyarul tanulok.",
+        "I can follow a story about a language exchange in a café."
       ]
     },
     {
@@ -23,10 +25,12 @@
     },
     {
       "type": "grammar",
+      "title": "Learning and practising a language",
       "ref": "grammar/a1/a1-160-a-gr.json"
     },
     {
       "type": "grammar",
+      "title": "Practising together: mi and ti",
       "ref": "grammar/a1/a1-160-b-gr.json"
     },
     {
@@ -68,8 +72,18 @@
     },
     {
       "type": "story",
-      "title": "Reading: Nyelvgyakorlás a kávézóban",
+      "title": "Reading: Language Café",
       "ref": "stories/original/a1/a1-unit-32.json"
+    },
+    {
+      "type": "exercise-group",
+      "title": "Reading",
+      "ref": "exercises/a1/a1-160-ex.json",
+      "exerciseRefs": [
+        "a1-160-reading-1",
+        "a1-160-reading-2",
+        "a1-160-reading-3"
+      ]
     },
     {
       "type": "exercise-group",
@@ -106,8 +120,9 @@
       "type": "checklist",
       "title": "Can you do this?",
       "items": [
-        "I can participate in a simple language exchange conversation.",
-        "I can ask what words mean and how to say phrases in Hungarian."
+        "I can offer to practise a language together, like Gyakorolunk együtt?",
+        "I can say which language I am learning, like Magyarul tanulok.",
+        "I can follow a story about a language exchange in a café."
       ]
     }
   ]

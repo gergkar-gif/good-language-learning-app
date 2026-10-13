@@ -5,270 +5,312 @@
       "id": "a1-159-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'Rosszul vagyok' mean?",
-      "options": [
-        "I feel sick",
-        "I am bad",
-        "I am alone"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which phrase means “More slowly, please”?",
+      "options": [
+        "Lassabban, légy szíves.",
+        "Még egyszer, légy szíves.",
+        "Nem értem."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-159-introduce-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'egyedül' mean?",
-      "options": [
-        "alone",
-        "together",
-        "early"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which verb means “to help”?",
+      "options": [
+        "jelent",
+        "mond",
+        "segít"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-159-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Nem szeretek ____ utazni.",
-      "hint": "alone",
-      "english": "I don't like to travel alone.",
-      "answer": "egyedül",
+      "stage": "controlled",
       "teaches": [
-        "ul-ul-essive-modal"
+        "negation-with-nem"
       ],
-      "stage": "controlled"
+      "sentence": "____ értem.",
+      "english": "I do not understand.",
+      "answer": "Nem"
     },
     {
       "id": "a1-159-controlled-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Meg ____ érzi magát ma.",
-      "hint": "badly",
-      "english": "Meg feels unwell today.",
-      "answer": "rosszul",
+      "stage": "controlled",
       "teaches": [
-        "ul-ul-essive-modal"
+        "negation-with-nem"
       ],
-      "stage": "controlled"
+      "question": "You have not understood. What do you say?",
+      "options": [
+        "Értem.",
+        "Nem értem.",
+        "Nem értesz."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-159-controlled-3",
-      "type": "matching",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "rosszul",
-          "badly / unwell"
-        ],
-        [
-          "egyedül",
-          "alone"
-        ],
-        [
-          "például",
-          "for example"
-        ],
-        [
-          "anyanyelv",
-          "native language"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "Lassabban, légy ____.",
+      "english": "More slowly, please.",
+      "answer": "szíves"
     },
     {
       "id": "a1-159-controlled-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means 'for example'?",
-      "options": [
-        "például",
-        "váratlanul",
-        "egyedül"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "controlled"
+      "question": "You ask a friend to say it once more. What do you say?",
+      "options": [
+        "Még egyszer, légy szíves.",
+        "Köszönöm, nem kérek.",
+        "Jó éjszakát, Anna."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-159-practice-1",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "vocabulary",
-      "question": "Choose the correct sentence for 'I live alone in Budapest':",
-      "options": [
-        "Egyedül élek Budapesten.",
-        "Együtt élek Budapesten.",
-        "Egyedül vagyok Budapestre."
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "segít",
+          "helps"
+        ],
+        [
+          "jelent",
+          "means"
+        ],
+        [
+          "mond",
+          "says"
+        ],
+        [
+          "szó",
+          "word"
+        ],
+        [
+          "mondat",
+          "sentence"
+        ]
+      ]
     },
     {
       "id": "a1-159-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Sok nyelvet tanulok, ____ a spanyolt.",
-      "hint": "for example",
-      "english": "I study many languages, for example Spanish.",
-      "answer": "például",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "ul-ul-essive-modal"
       ],
-      "stage": "practice"
+      "question": "You want to ask “How do you say it in Hungarian?” Which question?",
+      "options": [
+        "Hogy mondják magyarban?",
+        "Hogy mondják magyar?",
+        "Hogy mondják magyarul?"
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "0": "ban-ben-in"
+      }
     },
     {
       "id": "a1-159-practice-3",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A vendég ____ érkezett meg.",
-      "hint": "unexpectedly",
-      "english": "The guest arrived unexpectedly.",
-      "answer": "váratlanul",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "ul-ul-essive-modal"
+        "a1-languages-manner-vocab"
       ],
-      "stage": "practice"
+      "question": "Meg points at a word and asks: “What does this mean?” Which question?",
+      "options": [
+        "Hol jelent ez?",
+        "Mit jelent ez?",
+        "Mit jelentek ez?"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-159-practice-4",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What is the meaning of 'anyanyelv'?",
-      "options": [
-        "native language",
-        "foreign language",
-        "easy language"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "ul-ul-essive-modal"
       ],
-      "stage": "practice"
+      "sentence": "Hogy mondják ____?",
+      "english": "How do you say it in Hungarian?",
+      "answer": "magyarul"
     },
     {
       "id": "a1-159-practice-5",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "váratlanul",
-          "unexpectedly"
-        ],
-        [
-          "külföldi",
-          "foreigner"
-        ],
-        [
-          "él",
-          "to live"
-        ],
-        [
-          "érez",
-          "to feel"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "question": "You ask a friend: “Can you help?” Which question?",
+      "options": [
+        "Segítesz?",
+        "Segítek?",
+        "Segítenek?"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-159-dialogue-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "—Mi a baj? —____ vagyok, kérek egy pohár vizet.",
-      "options": [
-        "Rosszul",
-        "Jól",
-        "Egyedül"
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
         "a1-languages-manner-vocab"
-      ]
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Holnap a kávézóban találkozunk."
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Bocsánat, nem értem.",
+        "Köszönöm, jól vagyok.",
+        "Jó éjszakát, Károly."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-159-dialogue-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "—Egyedül laksz? —Nem, nem élek ____.",
-      "hint": "alone",
-      "english": "—Do you live alone? —No, I don't live alone.",
-      "answer": "egyedül",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "ul-ul-essive-modal"
-      ]
+        "present-tense-routine-language"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Segítesz?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Persze, segít.",
+        "Persze, segítesz.",
+        "Persze, segítek."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-159-production-1",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Az angol az én ____.",
-      "hint": "mother tongue + my",
-      "english": "English is my mother tongue.",
-      "answer": "anyanyelvem",
+      "type": "sentence-builder",
+      "category": "vocabulary",
+      "stage": "production",
       "teaches": [
-        "possessive-suffixes"
-      ]
+        "a1-languages-manner-vocab"
+      ],
+      "tiles": [
+        "Lassabban,",
+        "légy",
+        "szíves,",
+        "mert",
+        "nem",
+        "értem",
+        "."
+      ],
+      "solution": [
+        "Lassabban,",
+        "légy",
+        "szíves,",
+        "mert",
+        "nem",
+        "értem",
+        "."
+      ],
+      "english": "More slowly, please, because I do not understand."
     },
     {
       "id": "a1-159-production-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Translate: 'For example, Hungarian is interesting.'",
-      "options": [
-        "Például a magyar nyelv érdekes.",
-        "Rosszul a magyar nyelv érdekes.",
-        "Egyedül a magyar nyelv érdekes."
-      ],
-      "correct": 0,
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
         "a1-languages-manner-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Ask how to say it in Hungarian.",
+          "answer": "Hogy mondják magyarul?"
+        },
+        {
+          "prompt": "Ask a friend to speak more slowly.",
+          "answer": "Lassabban, légy szíves."
+        }
       ]
     },
     {
       "id": "a1-159-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'például' translate to?",
-      "options": [
-        "for example",
-        "furthermore",
-        "certainly"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “word”?",
+      "options": [
+        "szó",
+        "mondat",
+        "jelent"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-159-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Péter ma ____ aludt.",
-      "hint": "badly",
-      "english": "Péter slept badly today.",
-      "answer": "rosszul",
+      "stage": "check",
       "teaches": [
         "ul-ul-essive-modal"
       ],
-      "stage": "check"
+      "question": "Which sentence is right? You do not understand German.",
+      "options": [
+        "Nem értek német.",
+        "Értek németül.",
+        "Nem értek németül."
+      ],
+      "correct": 2
     }
   ]
 }

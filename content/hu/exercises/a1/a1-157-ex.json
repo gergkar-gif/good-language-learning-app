@@ -5,270 +5,323 @@
       "id": "a1-157-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'ért' mean?",
-      "options": [
-        "to understand",
-        "to speak",
-        "to write"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “badly”?",
+      "options": [
+        "rosszul",
+        "jól",
+        "folyékonyan"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-157-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Translate: 'I am learning Hungarian':",
-      "options": [
-        "Magyarul tanulok.",
-        "Magyarul beszélek.",
-        "Magyarul értek."
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "ul-ul-essive-modal"
       ],
-      "stage": "introduce"
+      "question": "How do you say “I speak Spanish well”?",
+      "options": [
+        "Jó beszélek spanyolul.",
+        "Jólul beszélek spanyolul.",
+        "Jól beszélek spanyolul."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-157-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Nem ____ németül.",
-      "hint": "ért + I",
-      "english": "I don't understand German.",
-      "answer": "értek",
+      "stage": "controlled",
       "teaches": [
-        "present-tense-routine-language"
+        "ul-ul-essive-modal"
       ],
-      "stage": "controlled"
+      "sentence": "____ beszélek angolul.",
+      "english": "I speak English well.",
+      "answer": "Jól"
     },
     {
       "id": "a1-157-controlled-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Anna spanyolul ____.",
-      "hint": "read + she",
-      "english": "Anna reads in Spanish.",
-      "answer": "olvas",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "ul-ul-essive-modal"
       ],
-      "stage": "controlled"
+      "question": "Which word means “badly”, made from rossz?",
+      "options": [
+        "rosszül",
+        "rosszul",
+        "rossz"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-157-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "tanul",
-          "to learn"
-        ],
-        [
-          "ért",
-          "to understand"
-        ],
-        [
-          "olvas",
-          "to read"
-        ],
-        [
-          "ír",
-          "to write"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "ul-ul-essive-modal"
       ],
-      "stage": "controlled"
+      "sentence": "Nem beszélek ____ németül.",
+      "english": "I do not speak German well.",
+      "answer": "jól"
     },
     {
       "id": "a1-157-controlled-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Choose the word for 'difficult':",
-      "options": [
-        "nehéz",
-        "könnyű",
-        "sajnos"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "controlled"
+      "question": "You speak Italian a little. Which sentence?",
+      "options": [
+        "Egy kicsit beszélek olaszul.",
+        "Egy kicsi beszélek olaszul.",
+        "Egy kicsit beszélsz olaszul."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-157-practice-1",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "vocabulary",
-      "question": "Translate: 'Unfortunately I do not understand Hungarian.'",
-      "options": [
-        "Sajnos nem értek magyarul.",
-        "Sajnos jól értek magyarul.",
-        "Magyarul tanulok."
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "jól",
+          "well"
+        ],
+        [
+          "rosszul",
+          "badly"
+        ],
+        [
+          "egy kicsit",
+          "a little"
+        ],
+        [
+          "folyékonyan",
+          "fluently"
+        ],
+        [
+          "ért",
+          "understands"
+        ]
+      ]
     },
     {
       "id": "a1-157-practice-2",
-      "type": "fill-blank",
+      "type": "substitution",
       "category": "vocabulary",
-      "sentence": "A magyar nyelv nem ____, hanem nehéz.",
-      "hint": "easy",
-      "english": "The Hungarian language is not easy, but difficult.",
-      "answer": "könnyű",
+      "stage": "practice",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "practice"
+      "base_sentence": "Jól beszélek angolul.",
+      "base_word": "jól",
+      "base_gloss": "I speak English well.",
+      "options": [
+        {
+          "word": "rosszul",
+          "inflected": "rosszul",
+          "sentence": "Rosszul beszélek angolul.",
+          "gloss": "badly"
+        },
+        {
+          "word": "folyékonyan",
+          "inflected": "folyékonyan",
+          "sentence": "Folyékonyan beszélek angolul.",
+          "gloss": "fluently"
+        }
+      ]
     },
     {
       "id": "a1-157-practice-3",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Meg minden este magyarul ____.",
-      "hint": "learn + she",
-      "english": "Meg studies Hungarian every evening.",
-      "answer": "tanul",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "ul-ul-essive-modal"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “Meg speaks Hungarian badly”?",
+      "options": [
+        "Meg rossz beszél magyarul.",
+        "Meg rosszul beszélek magyarul.",
+        "Meg rosszul beszél magyarul."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-157-practice-4",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What is the meaning of 'Értesz angolul?'",
-      "options": [
-        "Do you understand English?",
-        "Do you write English?",
-        "Are you English?"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "sentence": "Anna nagyon jól ____ franciául.",
+      "english": "Anna speaks French very well.",
+      "answer": "beszél"
     },
     {
       "id": "a1-157-practice-5",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "könnyű",
-          "easy"
-        ],
-        [
-          "nehéz",
-          "difficult"
-        ],
-        [
-          "sajnos",
-          "unfortunately"
-        ],
-        [
-          "levél",
-          "letter"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-languages-manner-vocab"
+        "ul-ul-essive-modal"
       ],
-      "stage": "practice"
+      "question": "You understand a little English. Which sentence?",
+      "options": [
+        "Egy kicsit értek angolül.",
+        "Egy kicsit értek angolul.",
+        "Egy kicsit érted angolul."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-157-dialogue-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "—Érted ezt a cikket? —Igen, jól ____ angolul.",
-      "options": [
-        "értek",
-        "tanulok",
-        "írok"
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "a1-languages-manner-vocab"
-      ]
+        "present-tense-routine-language"
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Jól beszélsz angolul?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Igen, elég jól beszélsz.",
+        "Igen, elég jól beszélek.",
+        "Igen, elég jól beszél."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-157-dialogue-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "—Nehéz a magyar nyelv? —Igen, egy kicsit ____.",
-      "hint": "difficult",
-      "english": "—Is the Hungarian language difficult? —Yes, it is a little difficult.",
-      "answer": "nehéz",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
         "a1-languages-manner-vocab"
-      ]
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Beszélsz spanyolul?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Egy kicsit beszélek.",
+        "Egy kicsi beszélek.",
+        "Egy kicsit beszélsz."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-157-production-1",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Károly olaszul ____ levelet a barátjának.",
-      "hint": "write + he",
-      "english": "Károly writes a letter in Italian to his friend.",
-      "answer": "ír",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "a1-languages-manner-vocab"
-      ]
+        "ul-ul-essive-modal"
+      ],
+      "tiles": [
+        "Egy",
+        "kicsit",
+        "beszélek",
+        "magyarul,",
+        "de",
+        "nem",
+        "beszélek",
+        "jól",
+        "."
+      ],
+      "solution": [
+        "Egy",
+        "kicsit",
+        "beszélek",
+        "magyarul,",
+        "de",
+        "nem",
+        "beszélek",
+        "jól",
+        "."
+      ],
+      "english": "I speak a little Hungarian, but I do not speak it well."
     },
     {
       "id": "a1-157-production-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Translate: 'I am reading in German.'",
-      "options": [
-        "Németül olvasok.",
-        "Németül írok.",
-        "Németül tanulok."
-      ],
-      "correct": 0,
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
         "a1-languages-manner-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you speak English very well.",
+          "answer": "Nagyon jól beszélek angolul."
+        },
+        {
+          "prompt": "Say that you speak German a little.",
+          "answer": "Egy kicsit beszélek németül."
+        }
       ]
     },
     {
       "id": "a1-157-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which verb means 'to understand'?",
-      "options": [
-        "ért",
-        "ír",
-        "tanul"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “a little”?",
+      "options": [
+        "nagyon",
+        "egy kicsit",
+        "folyékonyan"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-157-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Sajnos nem ____ franciául.",
-      "hint": "ért + I",
-      "english": "Unfortunately I don't understand French.",
-      "answer": "értek",
+      "stage": "check",
       "teaches": [
-        "present-tense-routine-language"
+        "ul-ul-essive-modal"
       ],
-      "stage": "check"
+      "question": "Which sentence is right? Károly speaks Spanish badly.",
+      "options": [
+        "Károly rosszul beszél spanyolul.",
+        "Károly rosszol beszél spanyolul.",
+        "Károly rossz beszél spanyolul."
+      ],
+      "correct": 0
     }
   ]
 }

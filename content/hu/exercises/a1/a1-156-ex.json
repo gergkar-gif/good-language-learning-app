@@ -5,67 +5,98 @@
       "id": "a1-156-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'magyarul' mean?",
-      "options": [
-        "in Hungarian",
-        "Hungary",
-        "Hungarian person"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-languages-manner-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “in German”?",
+      "options": [
+        "magyarul",
+        "németül",
+        "angolul"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-156-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which suffix attaches to front-vowel languages like 'német'?",
-      "options": [
-        "-ül",
-        "-ul",
-        "-ban"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "ul-ul-essive-modal"
       ],
-      "distractor_skills": {
-        "2": "ban-ben-in"
-      },
-      "stage": "introduce"
+      "question": "How do you say “I speak English”?",
+      "options": [
+        "Beszélek angolul.",
+        "Beszélek angol.",
+        "Beszélek angolt."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-156-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Meg tanul ____.",
-      "hint": "magyar + in",
-      "english": "Meg is learning Hungarian.",
-      "answer": "magyarul",
+      "stage": "controlled",
       "teaches": [
         "ul-ul-essive-modal"
       ],
-      "stage": "controlled"
+      "sentence": "Beszélek ____.",
+      "english": "I speak German.",
+      "answer": "németül"
     },
     {
       "id": "a1-156-controlled-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Károly jól beszél ____.",
-      "hint": "német + in",
-      "english": "Károly speaks German well.",
-      "answer": "németül",
+      "stage": "controlled",
       "teaches": [
         "ul-ul-essive-modal"
       ],
-      "stage": "controlled"
+      "question": "Which word means “in Spanish”?",
+      "options": [
+        "spanyolül",
+        "spanyolol",
+        "spanyolul"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-156-controlled-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "ul-ul-essive-modal"
+      ],
+      "sentence": "Anna ____ beszél.",
+      "english": "Anna speaks French.",
+      "answer": "franciául"
+    },
+    {
+      "id": "a1-156-controlled-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "ul-ul-essive-modal"
+      ],
+      "question": "You ask a friend: “Do you speak Hungarian?” Which question?",
+      "options": [
+        "Beszélek magyarul?",
+        "Beszélsz magyarul?",
+        "Beszélsz magyar?"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-156-practice-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-languages-manner-vocab"
+      ],
       "pairs": [
         [
           "magyarul",
@@ -82,101 +113,7 @@
         [
           "spanyolul",
           "in Spanish"
-        ]
-      ],
-      "teaches": [
-        "a1-languages-manner-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-156-controlled-4",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "How does 'francia' become 'in French'?",
-      "options": [
-        "franciául",
-        "franciaul",
-        "franciaban"
-      ],
-      "correct": 0,
-      "teaches": [
-        "ul-ul-essive-modal"
-      ],
-      "distractor_skills": {
-        "2": "ban-ben-in"
-      },
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-156-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'Do you speak English?'",
-      "options": [
-        "Beszélsz angolul?",
-        "Beszélsz angolban?",
-        "Beszélsz angolra?"
-      ],
-      "correct": 0,
-      "teaches": [
-        "ul-ul-essive-modal"
-      ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "practice"
-    },
-    {
-      "id": "a1-156-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Anna egy kicsit beszél ____.",
-      "hint": "olasz + in",
-      "english": "Anna speaks a little Italian.",
-      "answer": "olaszul",
-      "teaches": [
-        "ul-ul-essive-modal"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-156-practice-3",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Nem beszélek ____.",
-      "hint": "francia + in",
-      "english": "I don't speak French.",
-      "answer": "franciául",
-      "teaches": [
-        "ul-ul-essive-modal"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-156-practice-4",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which of these is the correct front-vowel form?",
-      "options": [
-        "törökül",
-        "törökul",
-        "törökön"
-      ],
-      "correct": 0,
-      "teaches": [
-        "ul-ul-essive-modal"
-      ],
-      "distractor_skills": {
-        "2": "on-en-on"
-      },
-      "stage": "practice"
-    },
-    {
-      "id": "a1-156-practice-5",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
+        ],
         [
           "olaszul",
           "in Italian"
@@ -184,110 +121,208 @@
         [
           "franciául",
           "in French"
-        ],
-        [
-          "nyelv",
-          "language"
-        ],
-        [
-          "beszél",
-          "to speak"
         ]
-      ],
-      "teaches": [
-        "a1-languages-manner-vocab"
-      ],
-      "stage": "practice"
+      ]
     },
     {
-      "id": "a1-156-dialogue-1",
-      "type": "multiple-choice",
+      "id": "a1-156-practice-2",
+      "type": "substitution",
       "category": "grammar",
-      "question": "—Beszélsz magyarul? —Igen, ____ tanulok.",
-      "options": [
-        "magyarul",
-        "magyarban",
-        "magyart"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "ul-ul-essive-modal"
       ],
+      "base_sentence": "Beszélek angolul.",
+      "base_word": "angol",
+      "base_gloss": "I speak English.",
+      "options": [
+        {
+          "word": "német",
+          "inflected": "németül",
+          "sentence": "Beszélek németül.",
+          "gloss": "German"
+        },
+        {
+          "word": "spanyol",
+          "inflected": "spanyolul",
+          "sentence": "Beszélek spanyolul.",
+          "gloss": "Spanish"
+        }
+      ]
+    },
+    {
+      "id": "a1-156-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "ul-ul-essive-modal"
+      ],
+      "question": "Which sentence is right? Károly speaks German.",
+      "options": [
+        "Károly németül beszél.",
+        "Károly németul beszél.",
+        "Károly német beszél."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-156-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "ul-ul-essive-modal"
+      ],
+      "question": "Meg reads a book in English. Which sentence?",
+      "options": [
+        "Meg angolul olvasok.",
+        "Meg angol olvas.",
+        "Meg angolul olvas."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-156-practice-5",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "ul-ul-essive-modal"
+      ],
+      "sentence": "Beszélsz ____?",
+      "english": "Do you speak Hungarian?",
+      "answer": "magyarul"
+    },
+    {
+      "id": "a1-156-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Beszélsz spanyolul?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Igen, beszélsz.",
+        "Igen, beszél.",
+        "Igen, beszélek."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-156-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ul-ul-essive-modal"
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Beszélsz németül?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Nem, nem beszélek német.",
+        "Nem, nem beszélek németül.",
+        "Nem, nem beszélek németet."
+      ],
+      "correct": 1,
       "distractor_skills": {
-        "1": "ban-ben-in",
         "2": "how-the-accusative-t-works"
       }
     },
     {
-      "id": "a1-156-dialogue-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "—Milyen nyelven beszélsz? —Beszélek ____ és spanyolul.",
-      "hint": "angol + in",
-      "english": "—What language do you speak? —I speak English and Spanish.",
-      "answer": "angolul",
-      "teaches": [
-        "ul-ul-essive-modal"
-      ]
-    },
-    {
       "id": "a1-156-production-1",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Péter folyékonyan beszél ____.",
-      "hint": "német + in",
-      "english": "Péter speaks German fluently.",
-      "answer": "németül",
+      "stage": "production",
       "teaches": [
         "ul-ul-essive-modal"
-      ]
+      ],
+      "tiles": [
+        "Meg",
+        "angolul",
+        "és",
+        "németül",
+        "beszél",
+        "."
+      ],
+      "solution": [
+        "Meg",
+        "angolul",
+        "és",
+        "németül",
+        "beszél",
+        "."
+      ],
+      "english": "Meg speaks English and German."
     },
     {
       "id": "a1-156-production-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Translate: 'I speak Spanish and Hungarian.'",
-      "options": [
-        "Beszélek spanyolul és magyarul.",
-        "Beszélek spanyolban és magyarban.",
-        "Spanyol és magyar vagyok."
-      ],
-      "correct": 0,
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
-        "ul-ul-essive-modal"
+        "a1-languages-manner-vocab"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      }
+      "template": [
+        {
+          "prompt": "Say that you speak English.",
+          "answer": "Beszélek angolul."
+        },
+        {
+          "prompt": "Ask a friend if they speak German.",
+          "answer": "Beszélsz németül?"
+        }
+      ]
     },
     {
       "id": "a1-156-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "What is the suffix for back-vowel language adverbs?",
-      "options": [
-        "-ul",
-        "-ül",
-        "-an"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "ul-ul-essive-modal"
+        "a1-languages-manner-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “language”?",
+      "options": [
+        "magyarul",
+        "beszél",
+        "nyelv"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-156-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Meg minden nap gyakorol ____.",
-      "hint": "magyar + in",
-      "english": "Meg practices Hungarian every day.",
-      "answer": "magyarul",
+      "stage": "check",
       "teaches": [
         "ul-ul-essive-modal"
       ],
-      "stage": "check"
+      "question": "How do you say “I speak French”?",
+      "options": [
+        "Beszélek franciaül.",
+        "Beszélek franciául.",
+        "Beszélek francia."
+      ],
+      "correct": 1
     }
   ]
 }

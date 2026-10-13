@@ -12,94 +12,124 @@
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg and Károly meet at a quiet café near Deák square for a language exchange session."
+      "text": "Saturday afternoon in a café. Meg and Károly meet for a language exchange. Anna sits at the next table."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Szia Meg! Kezdhetjük a nyelvgyakorlást?"
+      "text": "Szia, Meg! Gyakorolunk egy kicsit? Magyarul beszélünk, jó?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Szia Károly! Igen, nagyon szeretnék magyarul beszélni."
+      "text": "Szia! Igen, de csak egy kicsit beszélek magyarul. Rosszul beszélek."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Nagyszerű! Hogy érzed magad ma?"
+      "text": "Nem igaz! Jól beszélsz. Mit szeretnél inni?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Köszönöm, jól vagyok. Egy kicsit fáradt vagyok, de készen állok."
+      "text": "Hogy mondják magyarul: “orange juice”?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Narancslé. Mondd: egy narancslevet kérek."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Egy narancslevet kérek. Köszönöm, Károly!"
     },
     {
       "type": "dialogue",
       "speaker": "Anna",
-      "text": "Sziasztok! Csatlakozhatok? Én spanyolul tanulok, de angolul is gyakorolhatunk."
+      "text": "Sziasztok! Én spanyolul tanulok, de angolul is szeretnék gyakorolni. Leülhetek?"
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Persze, gyere Anna! Meg angolul segít neked, mi meg magyarul segítünk Megnek."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Károly, hogy mondják magyarul: 'I would like an orange juice'?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Úgy mondják: 'Egy narancslevet kérek szépen'."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Egy narancslevet kérek szépen... Köszönöm! Már sok új szót tudok magyarul."
+      "text": "Persze! Ő Meg, angol, és angolul beszél. Én magyar vagyok."
     },
     {
       "type": "dialogue",
       "speaker": "Anna",
-      "text": "Nagyon ügyes vagy Meg, egyre jobban beszélsz!"
+      "text": "Szia, Meg! Én is magyar vagyok, de Spanyolországban lakom. Te hol laksz?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Angliában lakom. Anna, lassabban, légy szíves. Nem értem."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Bocsánat! Angolul segítesz nekem, én magyarul segítek neked."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Persze! Nagyon jó nyelvcsere ez."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Ügyes vagy, Meg! Már sok szót értesz magyarul."
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Miért találkozik Meg, Károly és Anna a kávézóban?",
+          "question": "Mit tanul Anna?",
           "options": [
-            "Hogy nyelveket gyakoroljanak és segítsenek egymásnak a tanulásban.",
-            "Hogy állásinterjút tartsanak egy nemzetközi cégnél.",
-            "Hogy panaszt tegyenek a pincérnél a hideg kávé miatt.",
-            "Hogy spanyol nyelvvizsgát írjanak az egyetemen."
+            "Spanyolul tanul.",
+            "Németül tanul.",
+            "Franciául tanul."
           ],
           "correctIndex": 0,
-          "explanation": "A barátok nyelvcsere céljából találkoznak a kávézóban (Meg angolul segít Annának, ők pedig magyarul segítenek Megnek)."
+          "explanation": "Anna says: „Én spanyolul tanulok.” (I am learning Spanish.)",
+          "questionEnglish": "What is Anna learning?",
+          "optionsEnglish": [
+            "She is learning Spanish.",
+            "She is learning German.",
+            "She is learning French."
+          ]
         },
         {
-          "question": "Mit szeretne megtanulni Meg mondani magyarul?",
+          "question": "Ki angol?",
           "options": [
-            "Azt, hogy hol van a vasútállomás.",
-            "Azt, hogy kérek egy kávét cukorral és tejjel.",
-            "Azt, hogy szeretne egy narancslevet kérni.",
-            "Azt, hogy mennyi az idő most délután."
+            "Károly.",
+            "Meg.",
+            "Anna."
+          ],
+          "correctIndex": 1,
+          "explanation": "Károly says: „Ő Meg, angol, és angolul beszél.” (She is Meg, English, and she speaks English.)",
+          "questionEnglish": "Who is English?",
+          "optionsEnglish": [
+            "Károly.",
+            "Meg.",
+            "Anna."
+          ]
+        },
+        {
+          "question": "Mit kér Meg?",
+          "options": [
+            "Egy kávét.",
+            "Egy teát.",
+            "Egy narancslevet."
           ],
           "correctIndex": 2,
-          "explanation": "Meg kérdezi: „Károly, hogy mondják magyarul: 'I would like an orange juice'?” Károly megtanítja: „Egy narancslevet kérek szépen.”"
-        },
-        {
-          "question": "Mit mond Anna Megnek a nyelvgyakorlás végén?",
-          "options": [
-            "Hogy még túl nehéz neki a magyar nyelv.",
-            "Hogy inkább csak angolul beszéljen a kávézóban.",
-            "Hogy nem értette a kiejtését.",
-            "Hogy nagyon ügyes, és egyre jobban beszél."
-          ],
-          "correctIndex": 3,
-          "explanation": "Anna dicséri Meg fejlődését: „Nagyon ügyes vagy Meg, egyre jobban beszélsz!” (You are very skilled Meg, you speak better and better!)"
+          "explanation": "Meg says: „Egy narancslevet kérek.” (I would like an orange juice.)",
+          "questionEnglish": "What does Meg ask for?",
+          "optionsEnglish": [
+            "A coffee.",
+            "A tea.",
+            "An orange juice."
+          ]
         }
       ]
     }
