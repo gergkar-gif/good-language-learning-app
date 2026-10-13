@@ -2,353 +2,334 @@
   "lesson": "a1-69",
   "exercises": [
     {
-      "id": "a1-69-review-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which means “I do not listen”?",
-      "options": [
-        "Nem hallgatok.",
-        "Hallgatok nem.",
-        "Nem hallgat."
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "negation-with-nem"
-      ]
-    },
-    {
-      "id": "a1-69-review-2",
+      "id": "a1-69-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means “someone”?",
-      "options": [
-        "valaki",
-        "senki",
-        "valami"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ]
-    },
-    {
-      "id": "a1-69-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the correct negative sentence.",
-      "options": [
-        "Károly nem olvas.",
-        "Károly nem olvasok.",
-        "Károly olvas nem."
-      ],
-      "correct": 0,
-      "teaches": [
-        "negation-with-nem"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-69-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which question word means “who”?",
-      "options": [
-        "Ki?",
-        "Mit?",
-        "Hol?"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-questions-negation-vocab"
       ],
-      "stage": "introduce"
+      "question": "Complete the correction: “Nem Anna főz, ____ Károly.”",
+      "options": [
+        "hanem",
+        "mert",
+        "miért"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-69-introduce-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "introduce",
+      "teaches": [
+        "nem-vs-nincs-two-kinds-of-negation"
+      ],
+      "question": "Which sentence means “Anna is not here”?",
+      "options": [
+        "Anna nincs itt.",
+        "Anna nem olvas.",
+        "Nem vagyok itt."
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "negation-with-nem",
+        "2": "negation-with-nem"
+      }
     },
     {
       "id": "a1-69-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "melyik",
-          "which"
-        ],
-        [
-          "valaki",
-          "someone"
-        ],
-        [
-          "senki",
-          "nobody"
-        ],
-        [
-          "valami",
-          "something"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-questions-negation-vocab"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
-      "stage": "controlled"
+      "sentence": "Anna ____ itt.",
+      "english": "Anna is not here.",
+      "answer": "nincs"
     },
     {
       "id": "a1-69-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Anna nem ____ magyarul.",
-      "hint": "doesn't study",
-      "english": "Anna doesn't study Hungarian.",
-      "answer": "tanul",
+      "stage": "controlled",
       "teaches": [
-        "present-tense-routine-language"
+        "negation-with-nem"
       ],
-      "stage": "controlled"
+      "sentence": "Anna ____ olvas.",
+      "english": "Anna does not read.",
+      "answer": "nem"
     },
     {
       "id": "a1-69-controlled-3",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "Which is a natural yes/no question?",
-      "options": [
-        "Olvas?",
-        "Nem olvas.",
-        "Olvasni?"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
-        "yes-no-questions"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
-      "distractor_skills": {
-        "1": "negation-with-nem"
-      },
-      "stage": "controlled"
+      "tiles": [
+        "Károly",
+        "nincs",
+        "otthon",
+        "."
+      ],
+      "solution": [
+        "Károly",
+        "nincs",
+        "otthon",
+        "."
+      ],
+      "english": "Károly is not at home."
     },
     {
       "id": "a1-69-controlled-4",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "vocabulary",
-      "question": "Which word means “nobody”?",
-      "options": [
-        "senki",
-        "valaki",
-        "valami"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "a1-questions-negation-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "hanem",
+          "but (rather)"
+        ],
+        [
+          "igaz",
+          "true"
+        ],
+        [
+          "kérdés",
+          "question"
+        ],
+        [
+          "válasz",
+          "answer"
+        ],
+        [
+          "miért",
+          "why"
+        ]
+      ]
     },
     {
       "id": "a1-69-practice-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "senki",
-          "nobody"
-        ],
-        [
-          "valami",
-          "something"
-        ],
-        [
-          "mit",
-          "what"
-        ],
-        [
-          "ki",
-          "who"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-questions-negation-vocab"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “I am not at home”?",
+      "options": [
+        "Nem vagyok otthon.",
+        "Nincs otthon.",
+        "Nincs vagyok otthon."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-69-practice-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which answer fits Miért nem tanul Anna?",
-      "options": [
-        "Mert beteg.",
-        "Melyik tanul?",
-        "Valaki tanul?"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-questions-negation-vocab"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “Meg is not waiting”?",
+      "options": [
+        "Meg nem vár.",
+        "Meg nincs vár.",
+        "Meg nem várok."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-69-practice-3",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Hol ____ Anna?",
-      "hint": "does she work",
-      "english": "Where does Anna work?",
-      "answer": "dolgozik",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "present-tense-routine-language"
+        "a1-questions-negation-vocab"
       ],
-      "stage": "practice"
+      "sentence": "Nem Anna főz, ____ Károly.",
+      "english": "It is not Anna who cooks but Károly.",
+      "answer": "hanem"
     },
     {
       "id": "a1-69-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": [
-        "Miért",
-        "nem",
-        "dolgozik",
-        "Anna",
-        "?"
-      ],
-      "solution": [
-        "Miért",
-        "nem",
-        "dolgozik",
-        "Anna",
-        "?"
-      ],
-      "english": "Why doesn't Anna work?",
+      "stage": "practice",
       "teaches": [
         "negation-with-nem"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Nem",
+        "Anna",
+        "ír",
+        ",",
+        "hanem",
+        "Meg",
+        "."
+      ],
+      "solution": [
+        "Nem",
+        "Anna",
+        "ír",
+        ",",
+        "hanem",
+        "Meg",
+        "."
+      ],
+      "english": "It is not Anna who writes but Meg."
     },
     {
       "id": "a1-69-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Van itt valaki?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Nem, senki.",
-        "Igen, valami."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-questions-negation-vocab"
       ],
-      "stage": "practice"
+      "question": "“Anna főz.” – “Nem igaz!” Which correction fits?",
+      "options": [
+        "Nem Anna főz, hanem Károly.",
+        "Nem Anna főz, mert Károly.",
+        "Nem Anna főz, és Károly."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-69-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "nem-vs-nincs-two-kinds-of-negation"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Melyik könyv a tiéd?"
+          "speaker": "Meg",
+          "text": "Anna olvas?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Ez a könyv.",
-        "Senki."
+        "Nem, Anna nem olvas.",
+        "Nem, Anna nincs olvas."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-69-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-questions-negation-vocab"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Van valami az asztalon?"
+          "speaker": "Mariann",
+          "text": "Anna főz?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, valami van.",
-        "Nem, valaki van."
+        "Nem Anna főz, hanem Meg.",
+        "Nem Anna főz, mert Meg."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-69-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write two short Hungarian sentences using Correcting Information.",
-          "answer": "Melyik a könyved? Valaki itt van."
-        }
-      ],
+      "id": "a1-69-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "a1-questions-negation-vocab"
-      ]
+        "nem-vs-nincs-two-kinds-of-negation"
+      ],
+      "tiles": [
+        "Meg",
+        "nincs",
+        "a",
+        "konyhában",
+        ",",
+        "hanem",
+        "a",
+        "kertben",
+        "van",
+        "."
+      ],
+      "solution": [
+        "Meg",
+        "nincs",
+        "a",
+        "konyhában",
+        ",",
+        "hanem",
+        "a",
+        "kertben",
+        "van",
+        "."
+      ],
+      "english": "Meg is not in the kitchen but in the garden."
     },
     {
-      "id": "a1-69-writing-2",
+      "id": "a1-69-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Write one short Hungarian response to a practical question from today's lesson.",
-          "answer": "Valaki itt van."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "a1-questions-negation-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Say that Anna is not at home.",
+          "answer": "Anna nincs otthon."
+        },
+        {
+          "prompt": "Say that it is not Meg who reads but Anna.",
+          "answer": "Nem Meg olvas, hanem Anna."
+        }
       ]
     },
     {
       "id": "a1-69-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which sentence is correct?",
-      "options": [
-        "Nem keresek.",
-        "Nem keres.",
-        "Keresek nem."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "negation-with-nem"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
-      "stage": "check"
+      "sentence": "András ____ a kertben.",
+      "english": "András is not in the garden.",
+      "answer": "nincs"
     },
     {
       "id": "a1-69-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means “which”?",
-      "options": [
-        "melyik",
-        "senki",
-        "valami"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-questions-negation-vocab"
+        "negation-with-nem"
       ],
-      "stage": "check"
+      "question": "Which sentence means “Károly does not dance”?",
+      "options": [
+        "Károly nem táncol.",
+        "Károly nincs táncol.",
+        "Károly nem táncolok."
+      ],
+      "correct": 0
     }
   ]
 }

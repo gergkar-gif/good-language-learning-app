@@ -2,256 +2,261 @@
   "lesson": "a1-70",
   "exercises": [
     {
-      "id": "a1-70-review-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which means “I do not write”?",
-      "options": [
-        "Nem írok.",
-        "Írok nem.",
-        "Nem ír."
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "negation-with-nem"
-      ]
-    },
-    {
-      "id": "a1-70-review-2",
+      "id": "a1-70-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which means “I don't understand”?",
-      "options": [
-        "nem értem",
-        "értem",
-        "semmi"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ]
-    },
-    {
-      "id": "a1-70-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the correct negative sentence.",
-      "options": [
-        "Anna nem keres.",
-        "Anna nem keresek.",
-        "Anna keres nem."
-      ],
-      "correct": 0,
-      "teaches": [
-        "negation-with-nem"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-70-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which question word means “why”?",
-      "options": [
-        "Miért?",
-        "Ki?",
-        "Mit?"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-questions-negation-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “really?”",
+      "options": [
+        "tényleg",
+        "talán",
+        "persze"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-70-introduce-2",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "introduce",
+      "teaches": [
+        "a1-questions-negation-vocab"
+      ],
+      "question": "What does “Nem baj.” mean?",
+      "options": [
+        "Never mind.",
+        "I do not understand.",
+        "It is not true."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-70-controlled-1",
-      "type": "matching",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "semmi",
-          "nothing"
-        ],
-        [
-          "érteni",
-          "to understand"
-        ],
-        [
-          "értem",
-          "I understand"
-        ],
-        [
-          "nem értem",
-          "I don't understand"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-questions-negation-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "Olvasok. És ____?",
+      "english": "I read. And you?",
+      "answer": "te"
     },
     {
       "id": "a1-70-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Meg nem ____ magyarul.",
-      "hint": "doesn't speak",
-      "english": "Meg doesn't speak Hungarian.",
-      "answer": "beszél",
+      "stage": "controlled",
       "teaches": [
-        "present-tense-routine-language"
+        "negation-with-nem"
       ],
-      "stage": "controlled"
+      "sentence": "____ értem.",
+      "english": "I do not understand.",
+      "answer": "Nem"
     },
     {
       "id": "a1-70-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is a natural yes/no question?",
-      "options": [
-        "Főz?",
-        "Nem főz.",
-        "Főzni?"
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "yes-no-questions"
+        "a1-questions-negation-vocab"
       ],
-      "distractor_skills": {
-        "1": "negation-with-nem"
-      },
-      "stage": "controlled"
+      "pairs": [
+        [
+          "tényleg",
+          "really"
+        ],
+        [
+          "talán",
+          "perhaps"
+        ],
+        [
+          "persze",
+          "of course"
+        ],
+        [
+          "nem baj",
+          "never mind"
+        ],
+        [
+          "még egyszer",
+          "once more"
+        ]
+      ]
     },
     {
       "id": "a1-70-controlled-4",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "vocabulary",
-      "question": "Which word means “nothing”?",
-      "options": [
-        "semmi",
-        "értem",
-        "érteni"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "a1-questions-negation-vocab"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Még",
+        "egyszer",
+        ",",
+        "légy",
+        "szíves",
+        "."
+      ],
+      "solution": [
+        "Még",
+        "egyszer",
+        ",",
+        "légy",
+        "szíves",
+        "."
+      ],
+      "english": "Once more, please."
     },
     {
       "id": "a1-70-practice-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "érteni",
-          "to understand"
-        ],
-        [
-          "semmi",
-          "nothing"
-        ],
-        [
-          "kérdés",
-          "question"
-        ],
-        [
-          "válasz",
-          "answer"
-        ]
-      ],
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-70-practice-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which answer fits Miért nem olvas Meg?",
-      "options": [
-        "Mert beteg.",
-        "Semmi.",
-        "Mert olvas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-70-practice-3",
-      "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Hol ____ Meg?",
-      "hint": "is she studying",
-      "english": "Where is Meg studying?",
-      "answer": "tanul",
+      "stage": "practice",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "question": "Anna says: “Olvasok. És te?” You cook. Which reply do you give?",
+      "options": [
+        "Én főzök.",
+        "Én főzöl.",
+        "Én főz."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-70-practice-2",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-questions-negation-vocab"
+      ],
+      "sentence": "Anna nincs itt. – ____? Hol van?",
+      "english": "Anna is not here. – Really? Where is she?",
+      "answer": "Tényleg"
+    },
+    {
+      "id": "a1-70-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "negation-with-nem"
+      ],
+      "question": "Which sentence means “Perhaps Anna does not study”?",
+      "options": [
+        "Talán Anna nem tanul.",
+        "Talán Anna tanul nem.",
+        "Talán Anna nem tanulok."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-70-practice-4",
       "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Miért",
-        "nem",
-        "beszél",
-        "Meg",
-        "?"
-      ],
-      "solution": [
-        "Miért",
-        "nem",
-        "beszél",
-        "Meg",
-        "?"
-      ],
-      "english": "Why doesn't Meg speak?",
-      "teaches": [
-        "negation-with-nem"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-70-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Mariann",
-          "text": "Érted?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Igen, értem.",
-        "Nem, semmi."
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-questions-negation-vocab"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Nem",
+        "értem",
+        ",",
+        "még",
+        "egyszer",
+        ",",
+        "légy",
+        "szíves",
+        "."
+      ],
+      "solution": [
+        "Nem",
+        "értem",
+        ",",
+        "még",
+        "egyszer",
+        ",",
+        "légy",
+        "szíves",
+        "."
+      ],
+      "english": "I do not understand, once more, please."
+    },
+    {
+      "id": "a1-70-practice-5",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "spatial-questions-hol-hova"
+      ],
+      "question": "Which question asks where Meg is walking to?",
+      "options": [
+        "Hová sétál Meg?",
+        "Hol sétál Meg?",
+        "Hová Meg sétál?"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-70-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What is Meg doing at home?",
+      "options": [
+        "Reading.",
+        "Cooking.",
+        "Walking in the park."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-70-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Where is András?",
+      "options": [
+        "At home.",
+        "In the office.",
+        "In the park."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-70-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Why does Meg not cook?",
+      "options": [
+        "Because she is reading.",
+        "Because she is in the office.",
+        "Because she does not understand."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-70-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Van itt valami?"
+          "speaker": "Anna",
+          "text": "Tanulok. És te?"
         },
         {
           "speaker": "Meg",
@@ -259,22 +264,23 @@
         }
       ],
       "options": [
-        "Nincs itt semmi.",
-        "Igen, senki van."
+        "Én olvasok.",
+        "Én olvasol."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-70-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "yes-no-questions"
+      ],
       "prompt": [
         {
           "speaker": "Mariann",
-          "text": "Dolgozol?"
+          "text": "Tanulsz most?"
         },
         {
           "speaker": "Meg",
@@ -282,73 +288,86 @@
         }
       ],
       "options": [
-        "Nem, nem dolgozom.",
-        "Nem, dolgozom."
+        "Nem, most nem tanulok.",
+        "Nem, most tanulok."
       ],
-      "correct": 0,
-      "teaches": [
-        "negation-with-nem"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-70-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write two short Hungarian sentences using Questions Review.",
-          "answer": "Semmit sem értek. Nem értem a kérdést."
-        }
-      ],
+      "id": "a1-70-production-1",
+      "type": "sentence-builder",
+      "category": "vocabulary",
+      "stage": "production",
       "teaches": [
         "a1-questions-negation-vocab"
-      ]
+      ],
+      "tiles": [
+        "Anna",
+        "olvas",
+        ",",
+        "és",
+        "te",
+        "?"
+      ],
+      "solution": [
+        "Anna",
+        "olvas",
+        ",",
+        "és",
+        "te",
+        "?"
+      ],
+      "english": "Anna reads, and you?"
     },
     {
-      "id": "a1-70-writing-2",
+      "id": "a1-70-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Write one short Hungarian response to a practical question from today's lesson.",
-          "answer": "Nem, nem értem."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "a1-questions-negation-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you do not understand and ask for it once more, please.",
+          "answer": "Nem értem. Még egyszer, légy szíves?"
+        },
+        {
+          "prompt": "Say that you read and ask a friend back.",
+          "answer": "Olvasok. És te?"
+        }
       ]
     },
     {
       "id": "a1-70-check-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence is correct?",
-      "options": [
-        "Nem főzök.",
-        "Nem főz.",
-        "Főzök nem."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "negation-with-nem"
+        "a1-questions-negation-vocab"
       ],
-      "stage": "check"
+      "sentence": "Anna nem főz, ____ olvas.",
+      "english": "Anna does not cook because she reads.",
+      "answer": "mert"
     },
     {
       "id": "a1-70-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means “to understand”?",
+      "category": "grammar",
+      "stage": "check",
+      "teaches": [
+        "yes-no-questions"
+      ],
+      "question": "Which question can you answer with Igen or Nem?",
       "options": [
-        "érteni",
-        "értem",
-        "semmi"
+        "Anna olvas?",
+        "Ki olvas?",
+        "Miért olvas Anna?"
       ],
       "correct": 0,
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ],
-      "stage": "check"
+      "distractor_skills": {
+        "1": "ki-and-mi"
+      }
     }
   ]
 }

@@ -2,73 +2,58 @@
   "lesson": "a1-66",
   "exercises": [
     {
-      "id": "a1-66-review-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which means “I do not work”?",
-      "options": [
-        "Nem dolgozom.",
-        "Dolgozom nem.",
-        "Nem dolgozik."
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "negation-with-nem"
-      ]
-    },
-    {
-      "id": "a1-66-review-2",
+      "id": "a1-66-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which question asks “why”?",
-      "options": [
-        "Miért?",
-        "Hogyan?",
-        "Melyik?"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ]
-    },
-    {
-      "id": "a1-66-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the correct negative sentence.",
-      "options": [
-        "Károly nem tanul.",
-        "Károly nem tanulok.",
-        "Károly tanul nem."
-      ],
-      "correct": 0,
-      "teaches": [
-        "negation-with-nem"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-66-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which question asks “how”?",
-      "options": [
-        "Hogyan?",
-        "Miért?",
-        "Mit?"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-questions-negation-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “answer”?",
+      "options": [
+        "kérdés",
+        "válasz",
+        "kérdez"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-66-introduce-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "introduce",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "question": "Which question means “Who reads?”",
+      "options": [
+        "Ki olvas?",
+        "Ki olvasol?",
+        "Ki olvasok?"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-66-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "sentence": "Ki ____ a konyhában?",
+      "hint": "cook",
+      "english": "Who cooks in the kitchen?",
+      "answer": "főz"
+    },
+    {
+      "id": "a1-66-controlled-2",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-questions-negation-vocab"
+      ],
       "pairs": [
         [
           "kérdés",
@@ -79,177 +64,161 @@
           "answer"
         ],
         [
-          "igaz",
-          "true"
+          "kérdez",
+          "to ask"
         ],
         [
-          "hamis",
-          "false"
+          "válaszol",
+          "to answer"
+        ],
+        [
+          "ki",
+          "who"
         ]
-      ],
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-66-controlled-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Nem ____ magyarul.",
-      "hint": "I don't speak",
-      "english": "I don't speak Hungarian.",
-      "answer": "beszélek",
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-66-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is a natural yes/no question?",
+      "stage": "controlled",
+      "teaches": [
+        "ki-and-mi"
+      ],
+      "question": "Which question fits the answer “Ez egy kérdés.”?",
       "options": [
-        "Dolgozol?",
-        "Nem dolgozol.",
-        "Dolgozni?"
+        "Mi ez?",
+        "Ki ez?",
+        "Hol ez?"
       ],
       "correct": 0,
-      "teaches": [
-        "yes-no-questions"
-      ],
       "distractor_skills": {
-        "1": "negation-with-nem"
-      },
-      "stage": "controlled"
+        "2": "spatial-questions-hol-hova"
+      }
     },
     {
       "id": "a1-66-controlled-4",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "Which means “I don't understand”?",
-      "options": [
-        "Nem értem.",
-        "Értem nem.",
-        "Nem ért."
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
-        "negation-with-nem"
+        "ki-and-mi"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Ki",
+        "vár",
+        "itt",
+        "?"
+      ],
+      "solution": [
+        "Ki",
+        "vár",
+        "itt",
+        "?"
+      ],
+      "english": "Who is waiting here?"
     },
     {
       "id": "a1-66-practice-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "válasz",
-          "answer"
-        ],
-        [
-          "hamis",
-          "false"
-        ],
-        [
-          "hol",
-          "where"
-        ],
-        [
-          "miért",
-          "why"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-questions-negation-vocab"
+        "ki-and-mi"
       ],
-      "stage": "practice"
+      "question": "Which answer fits “Ki ez?”",
+      "options": [
+        "Ez Anna.",
+        "Ez egy kérdés.",
+        "Ez egy válasz."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-66-practice-2",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "question": "Which answer fits Miért nem dolgozol?",
-      "options": [
-        "Mert beteg vagyok.",
-        "Hogyan dolgozol?",
-        "Mit dolgozol?"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-questions-negation-vocab"
       ],
-      "stage": "practice"
+      "sentence": "Ez egy ____.",
+      "hint": "question",
+      "english": "This is a question.",
+      "answer": "kérdés"
     },
     {
       "id": "a1-66-practice-3",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Hol ____?",
-      "hint": "do you work",
-      "english": "Where do you work?",
-      "answer": "dolgozol",
+      "stage": "practice",
       "teaches": [
         "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “Meg answers”?",
+      "options": [
+        "Meg válaszol.",
+        "Meg válaszolok.",
+        "Meg válaszolsz."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-66-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "ki-and-mi"
+      ],
       "tiles": [
-        "Miért",
-        "nem",
-        "tanulsz",
+        "Ki",
+        "táncol",
+        "a",
+        "kertben",
         "?"
       ],
       "solution": [
-        "Miért",
-        "nem",
-        "tanulsz",
+        "Ki",
+        "táncol",
+        "a",
+        "kertben",
         "?"
       ],
-      "english": "Why don't you study?",
-      "teaches": [
-        "negation-with-nem"
-      ],
-      "stage": "practice"
+      "english": "Who is dancing in the garden?"
     },
     {
       "id": "a1-66-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Mariann",
-          "text": "Érted?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "yes-no-questions"
       ],
+      "question": "Which question can you answer with Igen or Nem?",
       "options": [
-        "Nem értem.",
-        "Nem ért."
+        "Anna olvas?",
+        "Ki olvas?",
+        "Mi ez?"
       ],
       "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "stage": "practice"
+      "distractor_skills": {
+        "1": "ki-and-mi",
+        "2": "ki-and-mi"
+      }
     },
     {
       "id": "a1-66-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Igaz ez?"
+          "speaker": "Anna",
+          "text": "Ki olvas?"
         },
         {
           "speaker": "Meg",
@@ -257,96 +226,110 @@
         }
       ],
       "options": [
-        "Nem, hamis.",
-        "Nem, kérdés."
+        "Károly olvas.",
+        "Károly olvasok.",
+        "Károly olvasol."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-66-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-questions-negation-vocab"
+      ],
       "prompt": [
         {
           "speaker": "Mariann",
-          "text": "Ez egy kérdés?"
+          "text": "Ki ez?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Anna",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, egy kérdés.",
-        "Nem, egy kérdés."
+        "Ez Meg.",
+        "Ez egy válasz.",
+        "Ez egy kérdés."
       ],
-      "correct": 0,
-      "teaches": [
-        "yes-no-questions"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-66-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write two short Hungarian sentences using Making Negatives.",
-          "answer": "Ez egy kérdés. Ez nem igaz."
-        }
-      ],
+      "id": "a1-66-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "negation-with-nem"
-      ]
+        "present-tense-routine-language"
+      ],
+      "tiles": [
+        "Anna",
+        "kérdez",
+        ",",
+        "Meg",
+        "válaszol",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "kérdez",
+        ",",
+        "Meg",
+        "válaszol",
+        "."
+      ],
+      "english": "Anna asks, Meg answers."
     },
     {
-      "id": "a1-66-writing-2",
+      "id": "a1-66-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Write one short Hungarian response to a practical question from today's lesson.",
-          "answer": "Nem értem."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "a1-questions-negation-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Ask who reads.",
+          "answer": "Ki olvas?"
+        },
+        {
+          "prompt": "Say that Károly answers.",
+          "answer": "Károly válaszol."
+        }
       ]
     },
     {
       "id": "a1-66-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which sentence is correct?",
-      "options": [
-        "Nem dolgozom.",
-        "Nem dolgozik.",
-        "Dolgozom nem."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "negation-with-nem"
+        "present-tense-routine-language"
       ],
-      "stage": "check"
+      "sentence": "Ki ____ itt?",
+      "hint": "wait",
+      "english": "Who is waiting here?",
+      "answer": "vár"
     },
     {
       "id": "a1-66-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which question asks “why”?",
-      "options": [
-        "Miért?",
-        "Melyik?",
-        "Kit?"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-questions-negation-vocab"
+        "ki-and-mi"
       ],
-      "stage": "check"
+      "question": "Which question asks about a thing?",
+      "options": [
+        "Mi ez?",
+        "Ki ez?",
+        "Ki ír?"
+      ],
+      "correct": 0
     }
   ]
 }

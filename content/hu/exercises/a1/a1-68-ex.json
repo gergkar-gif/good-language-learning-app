@@ -2,256 +2,221 @@
   "lesson": "a1-68",
   "exercises": [
     {
-      "id": "a1-68-review-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which means “I do not watch”?",
-      "options": [
-        "Nem nézek.",
-        "Nézek nem.",
-        "Nem néz."
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "negation-with-nem"
-      ]
-    },
-    {
-      "id": "a1-68-review-2",
+      "id": "a1-68-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which question word means “whom”?",
-      "options": [
-        "Kit?",
-        "Mit?",
-        "Hol?"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ]
-    },
-    {
-      "id": "a1-68-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the correct negative sentence.",
-      "options": [
-        "Meg nem beszél.",
-        "Meg nem beszélek.",
-        "Meg beszél nem."
-      ],
-      "correct": 0,
-      "teaches": [
-        "negation-with-nem"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-68-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which question word means “what”?",
-      "options": [
-        "Mit?",
-        "Hol?",
-        "Ki?"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-questions-negation-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “because”?",
+      "options": [
+        "mert",
+        "miért",
+        "mikor"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-68-introduce-2",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "introduce",
+      "teaches": [
+        "a1-questions-negation-vocab"
+      ],
+      "question": "Which question means “Why do you read?”",
+      "options": [
+        "Miért olvasol?",
+        "Mikor olvasol?",
+        "Hol olvasol?"
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "2": "spatial-questions-hol-hova"
+      }
     },
     {
       "id": "a1-68-controlled-1",
-      "type": "matching",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "hogyan",
-          "how"
-        ],
-        [
-          "miért",
-          "why"
-        ],
-        [
-          "mit",
-          "what"
-        ],
-        [
-          "kit",
-          "whom"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-questions-negation-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "____ vársz? – Mert Anna kérdez.",
+      "english": "Why are you waiting? – Because Anna is asking.",
+      "answer": "Miért"
     },
     {
       "id": "a1-68-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Nem ____ magyarul.",
-      "hint": "I don't read",
-      "english": "I don't read Hungarian.",
-      "answer": "olvasok",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "present-tense-routine-language"
+        "a1-questions-negation-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "Olvasok, ____ tanulok.",
+      "english": "I read because I study.",
+      "answer": "mert"
     },
     {
       "id": "a1-68-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is a natural yes/no question?",
-      "options": [
-        "Dolgozik?",
-        "Nem dolgozik.",
-        "Dolgozni?"
-      ],
-      "correct": 0,
-      "teaches": [
-        "yes-no-questions"
-      ],
-      "distractor_skills": {
-        "1": "negation-with-nem"
-      },
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-68-controlled-4",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means “why”?",
-      "options": [
-        "miért",
-        "hogyan",
-        "mit"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-68-practice-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "kit",
-          "whom"
-        ],
-        [
-          "mit",
-          "what"
-        ],
-        [
-          "hol",
-          "where"
-        ],
-        [
-          "ki",
-          "who"
-        ]
-      ],
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-68-practice-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which answer fits Miért nem dolgozik Károly?",
-      "options": [
-        "Mert beteg.",
-        "Hogyan dolgozik?",
-        "Kit dolgozik?"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-68-practice-3",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Mit ____?",
-      "hint": "are you watching",
-      "english": "What are you watching?",
-      "answer": "nézel",
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-68-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "negation-with-nem"
+      ],
       "tiles": [
         "Miért",
         "nem",
-        "tanul",
-        "Károly",
+        "főzöl",
         "?"
       ],
       "solution": [
         "Miért",
         "nem",
-        "tanul",
-        "Károly",
+        "főzöl",
         "?"
       ],
-      "english": "Why doesn't Károly study?",
-      "teaches": [
-        "negation-with-nem"
-      ],
-      "stage": "practice"
+      "english": "Why do you not cook?"
     },
     {
-      "id": "a1-68-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Mit csinálsz?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Tanulok.",
-        "Miért tanulok?"
-      ],
-      "correct": 0,
+      "id": "a1-68-controlled-4",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
         "a1-questions-negation-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "miért",
+          "why"
+        ],
+        [
+          "mert",
+          "because"
+        ],
+        [
+          "mikor",
+          "when"
+        ],
+        [
+          "kérdés",
+          "question"
+        ],
+        [
+          "válasz",
+          "answer"
+        ]
+      ]
+    },
+    {
+      "id": "a1-68-practice-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "negation-with-nem"
+      ],
+      "question": "Which sentence means “I do not cook, because I read”?",
+      "options": [
+        "Nem főzök, mert olvasok.",
+        "Főzök nem, mert olvasok.",
+        "Nem főzök, mert olvasol."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-68-practice-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "question": "Which answer fits “Miért nem sétálsz?”",
+      "options": [
+        "Mert tanulok.",
+        "Mert tanulsz.",
+        "Mert tanul."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-68-practice-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "sentence": "Nem ____, mert olvasok.",
+      "hint": "cook, I",
+      "english": "I do not cook because I read.",
+      "answer": "főzök"
+    },
+    {
+      "id": "a1-68-practice-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "negation-with-nem"
+      ],
+      "tiles": [
+        "Anna",
+        "nem",
+        "válaszol",
+        ",",
+        "mert",
+        "ír",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "nem",
+        "válaszol",
+        ",",
+        "mert",
+        "ír",
+        "."
+      ],
+      "english": "Anna does not answer because she is writing."
+    },
+    {
+      "id": "a1-68-practice-5",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "yes-no-questions"
+      ],
+      "question": "Which question can you answer with Igen or Nem?",
+      "options": [
+        "Főzöl?",
+        "Miért főzöl?",
+        "Ki főz?"
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "2": "ki-and-mi"
+      }
     },
     {
       "id": "a1-68-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-questions-negation-vocab"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol vagy?"
+          "speaker": "Mariann",
+          "text": "Miért nem főzöl?"
         },
         {
           "speaker": "Meg",
@@ -259,22 +224,24 @@
         }
       ],
       "options": [
-        "A konyhában vagyok.",
-        "A konyhába megyek."
+        "Mert olvasok.",
+        "Reggel olvasok.",
+        "Igen, olvasok."
       ],
-      "correct": 0,
-      "teaches": [
-        "spatial-questions-hol-hova"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-68-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "yes-no-questions"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Hogy vagy?"
+          "speaker": "Anna",
+          "text": "Tanulsz?"
         },
         {
           "speaker": "Meg",
@@ -282,73 +249,83 @@
         }
       ],
       "options": [
-        "Jól vagyok.",
-        "Mit vagyok?"
+        "Nem, nem tanulok, mert olvasok.",
+        "Nem, tanulok, mert olvasok."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-questions-negation-vocab"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-68-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write two short Hungarian sentences using Question Words.",
-          "answer": "Hogyan mész az iskolába? Miért tanulsz?"
-        }
-      ],
+      "id": "a1-68-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "a1-questions-negation-vocab"
-      ]
+        "negation-with-nem"
+      ],
+      "tiles": [
+        "Nem",
+        "sétálok",
+        ",",
+        "mert",
+        "tanulok",
+        "."
+      ],
+      "solution": [
+        "Nem",
+        "sétálok",
+        ",",
+        "mert",
+        "tanulok",
+        "."
+      ],
+      "english": "I am not walking because I am studying."
     },
     {
-      "id": "a1-68-writing-2",
+      "id": "a1-68-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Write one short Hungarian response to a practical question from today's lesson.",
-          "answer": "Miért nem?"
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "a1-questions-negation-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Ask a friend why they do not read.",
+          "answer": "Miért nem olvasol?"
+        },
+        {
+          "prompt": "Say that you do not cook, because you study.",
+          "answer": "Nem főzök, mert tanulok."
+        }
       ]
     },
     {
       "id": "a1-68-check-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence is correct?",
-      "options": [
-        "Nem olvasok.",
-        "Nem olvas.",
-        "Olvasok nem."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "negation-with-nem"
+        "a1-questions-negation-vocab"
       ],
-      "stage": "check"
+      "sentence": "Anna nem ír, ____ olvas.",
+      "english": "Anna does not write because she reads.",
+      "answer": "mert"
     },
     {
       "id": "a1-68-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which question asks “how”?",
-      "options": [
-        "Hogyan?",
-        "Mit?",
-        "Kit?"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-questions-negation-vocab"
+        "negation-with-nem"
       ],
-      "stage": "check"
+      "question": "Which sentence means “Why does Anna not dance?”",
+      "options": [
+        "Miért nem táncol Anna?",
+        "Miért táncol nem Anna?",
+        "Miért nem táncolok Anna?"
+      ],
+      "correct": 0
     }
   ]
 }
