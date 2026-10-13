@@ -52,7 +52,7 @@
     {
       "id": "a1-43-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"mine\"?",
       "options": [
         "enyém",
@@ -61,7 +61,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "possessive-pronouns-enyem"
+        "a1-possession-vocab"
       ],
       "stage": "introduce"
     },
@@ -159,7 +159,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "Mi a ____?",
-      "hint": "cím, your",
+      "hint": "cím, your (one person)",
       "english": "What is your address?",
       "answer": "címed",
       "teaches": [
@@ -316,7 +316,10 @@
       "correct": 0,
       "teaches": [
         "possessive-suffixes"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "3rd-person-possessive"
+      }
     },
     {
       "id": "a1-43-writing-1",

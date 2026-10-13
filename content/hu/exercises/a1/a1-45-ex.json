@@ -4,7 +4,7 @@
     {
       "id": "a1-45-review-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "question": "Which word means \"yours (plural)\"?",
       "options": [
         "tiétek",
@@ -14,7 +14,7 @@
       "correct": 0,
       "stage": "review",
       "teaches": [
-        "possessive-pronouns-enyem"
+        "a1-possession-vocab"
       ]
     },
     {
@@ -47,7 +47,10 @@
       "teaches": [
         "possessive-suffixes"
       ],
-      "stage": "introduce"
+      "stage": "introduce",
+      "distractor_skills": {
+        "2": "3rd-person-possessive"
+      }
     },
     {
       "id": "a1-45-intro-2",
@@ -286,7 +289,10 @@
       "correct": 0,
       "teaches": [
         "possessive-suffixes"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "3rd-person-possessive"
+      }
     },
     {
       "id": "a1-45-dialogue-2",
@@ -310,7 +316,10 @@
       "correct": 0,
       "teaches": [
         "possessive-suffixes"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "3rd-person-possessive"
+      }
     },
     {
       "id": "a1-45-writing-1",
