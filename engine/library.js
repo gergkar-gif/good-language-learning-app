@@ -278,12 +278,16 @@ const Library = (function () {
 
     function compactChaptersMeta(chapters) {
         if (!Array.isArray(chapters)) return [];
-        return chapters.map((ch, idx) => ({
-            index: idx,
-            title: ch.title || ('Part ' + (idx + 1)),
-            wordCount: ch.wordCount || 0,
-            estimatedMinutes: ch.estimatedMinutes || Math.max(1, Math.round((ch.wordCount || 0) / READING_WPM))
-        }));
+        return chapters.map((ch, idx) => {
+            const meta = {
+                index: idx,
+                title: ch.title || ('Part ' + (idx + 1)),
+                wordCount: ch.wordCount || 0,
+                estimatedMinutes: ch.estimatedMinutes || Math.max(1, Math.round((ch.wordCount || 0) / READING_WPM))
+            };
+            if (ch.subtitle) meta.subtitle = ch.subtitle;
+            return meta;
+        });
     }
 
     function loadMyTexts() {
@@ -470,6 +474,7 @@ const Library = (function () {
 
         nonEmpty.forEach((ch, idx) => {
             const baseTitle = (ch.title || '').trim() || (nonEmpty.length === 1 ? (fallbackTitle || 'Part 1') : ('Chapter ' + (idx + 1)));
+            const subtitle = (ch.subtitle || '').trim();
             const paraWordCounts = ch.paragraphs.map(p => tokenizeWords(p).length);
             const totalChapterWords = paraWordCounts.reduce((a, b) => a + b, 0);
 
@@ -504,22 +509,26 @@ const Library = (function () {
                     const partTitle = nonEmpty.length === 1
                         ? 'Part ' + (scIdx + 1)
                         : `${baseTitle} (${scIdx + 1}/${subChunks.length})`;
-                    result.push({
+                    const entry = {
                         index: result.length,
                         title: partTitle,
                         paragraphs: sc.paragraphs,
                         wordCount: sc.wordCount,
                         estimatedMinutes: Math.max(1, Math.round(sc.wordCount / READING_WPM))
-                    });
+                    };
+                    if (subtitle) entry.subtitle = subtitle;
+                    result.push(entry);
                 });
             } else {
-                result.push({
+                const entry = {
                     index: result.length,
                     title: baseTitle,
                     paragraphs: ch.paragraphs,
                     wordCount: totalChapterWords,
                     estimatedMinutes: Math.max(1, Math.round(totalChapterWords / READING_WPM))
-                });
+                };
+                if (subtitle) entry.subtitle = subtitle;
+                result.push(entry);
             }
         });
 
@@ -718,19 +727,33 @@ const Library = (function () {
         return m ? decodeXmlEntities(m[1].replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim() : '';
     }
 
+    const EPUB_BOILERPLATE_CLASS_RE = /(?:^|[\s_-])(?:cubierta|portada|cover|sinopsis|synopsis|info|creditos|credits|copyright|colophon|dedicatoria|dedication|exlibris|bloque_exlibris|tlogo|ttitulo|titlepage|title-page|halftitle|frontmatter|backmatter|autor|about-author)(?:$|[\s_-])/i;
+    const EPUB_SUBTITLE_CLASS_RE = /(?:^|[\s_-])(?:subtit|subtitle|subtitulo|chap-sub|chapter-subtitle|ch-sub)(?:$|[\s_-])/i;
+    const EPUB_BOILERPLATE_STEM_RE = /^(?:cubierta|portada|cover|titulo|title|titlepage|title[_-]page|halftitle|half[_-]title|info|creditos|credits|copyright|legal|colophon|sinopsis|synopsis|resumen|dedicatoria|dedication|epigrafe|epigraph|exlibris|agradecimientos|acknowledg(?:e)?ments|autor|author|biografia|bio|indice|toc|nav)$/i;
+    const EPUB_GUIDE_BOILERPLATE_RE = /^(?:cover|title-page|titlepage|halftitlepage|copyright-page|colophon|dedication|epigraph|toc|acknowledg(?:e)?ments|bibliography|index|glossary|other\.(?:halftitlepage|credits|copyright|backmatter|frontmatter))$/i;
+
     function extractHtmlParagraphsAndTitle(xhtmlString) {
+        const rawStr = String(xhtmlString || '');
+        const isBoilerplateMarkup = /<(?:body|div|section)\b[^>]*(?:class|epub:type)\s*=\s*["'][^"']*(?:cubierta|portada|cover|sinopsis|synopsis|info|creditos|copyright|colophon|dedicatoria|dedication|bloque_exlibris|tlogo|ttitulo|titlepage|halftitle|frontmatter|autor|about-author)[^"']*["']/i.test(rawStr);
+
         if (typeof DOMParser !== 'undefined') {
-            const doc = new DOMParser().parseFromString(xhtmlString, 'text/html');
+            const doc = new DOMParser().parseFromString(rawStr, 'text/html');
             if (doc && doc.body) {
+                const headTitleEl = doc.querySelector('head > title');
+                const headTitle = headTitleEl ? headTitleEl.textContent.replace(/\s+/g, ' ').trim() : '';
                 doc.querySelectorAll('script, style, svg, nav, head, noscript, iframe').forEach(el => el.remove());
 
                 let detectedTitle = '';
                 const headingEl = doc.querySelector('h1, h2, h3, [class*="title"], [class*="chapter"]');
                 if (headingEl) {
-                    const hText = headingEl.textContent.replace(/\s+/g, ' ').trim();
+                    const hText = (headingEl.textContent || headingEl.getAttribute('title') || '').replace(/\s+/g, ' ').trim();
                     if (hText && hText.length <= 120) detectedTitle = hText;
                 }
+                if (!detectedTitle && headTitle && headTitle.length <= 120 && !/^ignored$/i.test(headTitle)) {
+                    detectedTitle = headTitle;
+                }
 
+                let detectedSubtitle = '';
                 const paragraphs = [];
                 const blocks = doc.querySelectorAll('p, h1, h2, h3, h4, h5, h6, blockquote, li');
                 if (blocks.length > 0) {
@@ -738,7 +761,15 @@ const Library = (function () {
                         if (el.tagName !== 'P' && el.querySelector('p')) return;
                         const txt = el.textContent.replace(/\s+/g, ' ').trim();
                         if (!txt) return;
-                        if (txt === detectedTitle && paragraphs.length === 0) return;
+                        if (paragraphs.length === 0 && !detectedSubtitle) {
+                            if (el === headingEl || txt.toLowerCase() === (detectedTitle || '').toLowerCase()) return;
+                            const cls = el.getAttribute('class') || '';
+                            const isSubHeading = (EPUB_SUBTITLE_CLASS_RE.test(cls) || (headingEl && headingEl.tagName === 'H1' && (el.tagName === 'H2' || el.tagName === 'H3')));
+                            if (isSubHeading && txt.length <= 160) {
+                                detectedSubtitle = txt;
+                                return;
+                            }
+                        }
                         paragraphs.push(txt);
                     });
                 } else {
@@ -748,29 +779,49 @@ const Library = (function () {
                         if (clean && clean !== detectedTitle) paragraphs.push(clean);
                     });
                 }
-                return { title: detectedTitle, paragraphs: paragraphs };
+                return { title: detectedTitle, subtitle: detectedSubtitle, paragraphs: paragraphs, isBoilerplate: isBoilerplateMarkup };
             }
         }
 
         // Fallback HTML/XHTML extractor (also used in headless/Node test environments)
-        const cleaned = String(xhtmlString || '')
+        const headTitleMatch = rawStr.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i);
+        const headTitle = headTitleMatch ? decodeXmlEntities(headTitleMatch[1].replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim() : '';
+
+        const cleaned = rawStr
             .replace(/<(script|style|svg|nav|head|noscript|iframe)\b[\s\S]*?<\/\1>/gi, '');
         let detectedTitle = '';
-        const hMatch = cleaned.match(/<h[1-3]\b[^>]*>([\s\S]*?)<\/h[1-3]>/i);
+        let detectedTitleTag = '';
+        const hMatch = cleaned.match(/<(h[1-3])\b([^>]*)>([\s\S]*?)<\/\1>/i);
         if (hMatch) {
-            const hText = decodeXmlEntities(hMatch[1].replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+            detectedTitleTag = hMatch[1].toUpperCase();
+            const attrTitle = parseXmlAttrs(hMatch[2]).title || '';
+            const hText = (decodeXmlEntities(hMatch[3].replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim()) || attrTitle.trim();
             if (hText && hText.length <= 120) detectedTitle = hText;
         }
+        if (!detectedTitle && headTitle && headTitle.length <= 120 && !/^ignored$/i.test(headTitle)) {
+            detectedTitle = headTitle;
+        }
+
+        let detectedSubtitle = '';
         const paragraphs = [];
-        const blockRe = /<(p|h[1-6]|blockquote|li)\b[^>]*>([\s\S]*?)<\/\1>/gi;
+        const blockRe = /<(p|h[1-6]|blockquote|li)\b([^>]*)>([\s\S]*?)<\/\1>/gi;
         let bm;
         while ((bm = blockRe.exec(cleaned)) !== null) {
             const tag = bm[1].toLowerCase();
-            const inner = bm[2];
+            const attrs = parseXmlAttrs(bm[2] || '');
+            const inner = bm[3];
             if (tag !== 'p' && /<p\b/i.test(inner)) continue;
             const txt = decodeXmlEntities(inner.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
             if (!txt) continue;
-            if (txt === detectedTitle && paragraphs.length === 0) continue;
+            if (paragraphs.length === 0 && !detectedSubtitle) {
+                if (txt.toLowerCase() === (detectedTitle || '').toLowerCase()) continue;
+                const cls = attrs['class'] || '';
+                const isSubHeading = (EPUB_SUBTITLE_CLASS_RE.test(cls) || (detectedTitleTag === 'H1' && (tag === 'h2' || tag === 'h3')));
+                if (isSubHeading && txt.length <= 160) {
+                    detectedSubtitle = txt;
+                    continue;
+                }
+            }
             paragraphs.push(txt);
         }
         if (!paragraphs.length) {
@@ -781,7 +832,7 @@ const Library = (function () {
                 if (clean && clean !== detectedTitle) paragraphs.push(clean);
             });
         }
-        return { title: detectedTitle, paragraphs: paragraphs };
+        return { title: detectedTitle, subtitle: detectedSubtitle, paragraphs: paragraphs, isBoilerplate: isBoilerplateMarkup };
     }
 
     async function parseEpub(arrayBuffer, fallbackTitle) {
@@ -814,9 +865,22 @@ const Library = (function () {
             const props = (attrs.properties || '').toLowerCase();
             if (!id || !href) continue;
             const resolved = resolveRelativeZipPath(opfDir, href);
-            manifestById.set(id, { href: resolved, mediaType: mediaType });
+            manifestById.set(id, { href: resolved, mediaType: mediaType, properties: props });
             if (props.split(/\s+/).includes('nav')) navHref = resolved;
             if (mediaType.includes('dtbncx')) ncxHref = resolved;
+        }
+
+        // Collect OPF <guide> references that mark front/back-matter boilerplate (cover, title-page, copyright-page, etc.)
+        const boilerplateGuideHrefs = new Set();
+        const refRe = /<(?:\w+:)?reference\b([^>]*)\/?>/gi;
+        let refm;
+        while ((refm = refRe.exec(opfXml)) !== null) {
+            const attrs = parseXmlAttrs(refm[1]);
+            const rType = (attrs.type || '').trim();
+            const rHref = attrs.href ? resolveRelativeZipPath(opfDir, attrs.href) : '';
+            if (rHref && EPUB_GUIDE_BOILERPLATE_RE.test(rType)) {
+                boilerplateGuideHrefs.add(rHref);
+            }
         }
 
         // Map spine file path -> human-readable chapter title from TOC (EPUB 3 nav or EPUB 2 NCX)
@@ -869,6 +933,7 @@ const Library = (function () {
         }
 
         const rawChapters = [];
+        let seenNarrativeTocChapter = false;
         for (const idref of spineIds) {
             const item = manifestById.get(idref);
             if (!item) continue;
@@ -883,17 +948,34 @@ const Library = (function () {
             const chTitle = tocTitle || extracted.title || ('Chapter ' + (rawChapters.length + 1));
             const wordsInChapter = extracted.paragraphs.reduce((sum, p) => sum + tokenizeWords(p).length, 0);
 
+            const fileStem = item.href.split('/').pop().replace(/\.[^.]+$/, '').toLowerCase();
+            const isTitleRepeatStub = !!(tocTitle && tocTitle.toLowerCase() === bookTitle.toLowerCase() && wordsInChapter < 150);
+            const isExplicitBoilerplate = boilerplateGuideHrefs.has(item.href) ||
+                EPUB_BOILERPLATE_STEM_RE.test(fileStem) ||
+                extracted.isBoilerplate ||
+                isTitleRepeatStub;
+
+            if (tocTitle && !isExplicitBoilerplate) {
+                seenNarrativeTocChapter = true;
+            }
+            // Spine items at the front of the book that are omitted from a multi-entry TOC
+            // (e.g. back-cover blurb/synopsis, copyright/errata log, dedication) are front-matter.
+            const isUnlistedFrontMatter = !seenNarrativeTocChapter && tocTitlesByPath.size >= 2 && !tocTitle && wordsInChapter < 600;
+
             rawChapters.push({
                 title: chTitle,
+                subtitle: extracted.subtitle || '',
                 paragraphs: extracted.paragraphs,
-                _words: wordsInChapter
+                _words: wordsInChapter,
+                _isBoilerplate: isExplicitBoilerplate || isUnlistedFrontMatter
             });
         }
 
-        // Filter out tiny front-matter stubs (cover page, half-title, copyright < 15 words)
-        // when the book has substantive chapters alongside them.
+        // Filter out front/back-matter boilerplate (cover, synopsis, title page, copyright/credits,
+        // dedication, author bio) and tiny stubs (< 15 words) when the book has real chapters.
+        const narrativeChapters = rawChapters.filter(c => !c._isBoilerplate && c._words >= 15);
         const substantive = rawChapters.filter(c => c._words >= 15);
-        const chosen = substantive.length > 0 ? substantive : rawChapters;
+        const chosen = narrativeChapters.length > 0 ? narrativeChapters : (substantive.length > 0 ? substantive : rawChapters);
         const chapters = finalizeChapterList(chosen, bookTitle);
 
         if (!chapters.length) {
@@ -1341,6 +1423,69 @@ const Library = (function () {
         `;
     }
 
+    function removeDraftChapter(chIdx) {
+        if (!textDraft || !Array.isArray(textDraft.chapters)) return;
+        if (textDraft.chapters.length <= 1) {
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('A book must keep at least one chapter.', 'warning');
+            return;
+        }
+        if (chIdx < 0 || chIdx >= textDraft.chapters.length) return;
+        textDraft.chapters.splice(chIdx, 1);
+        textDraft.chapters.forEach((c, idx) => { c.index = idx; });
+        const combinedText = draftPlainText(textDraft);
+        textDraft.analysis = analyseText(combinedText);
+        textDraft.fileLabel = `${textDraft.chapters.length} ${textDraft.chapters.length === 1 ? 'part' : 'chapters'} (${textDraft.analysis.totalWords.toLocaleString()} words)`;
+        renderMyTextsPane();
+    }
+
+    async function deleteBookChapter(textId, chIdx) {
+        const t = getMyText(textId);
+        if (!t) return;
+        const chapters = await resolveBookChapters(t);
+        if (chapters.length <= 1) {
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('A book must keep at least one chapter.', 'warning');
+            return;
+        }
+        if (chIdx < 0 || chIdx >= chapters.length) return;
+        const removed = chapters.splice(chIdx, 1)[0];
+        chapters.forEach((c, idx) => { c.index = idx; });
+
+        const payload = await loadBookPayload(t.id);
+        await saveBookPayload(t.id, {
+            chapters: chapters,
+            lemmas: (payload && payload.lemmas) || null
+        });
+
+        t.chapters = compactChaptersMeta(chapters);
+        if (t.analysis) {
+            const totalWords = chapters.reduce((sum, c) => sum + (c.wordCount || 0), 0);
+            t.analysis.totalWords = totalWords;
+            t.analysis.estimatedMinutes = Math.max(1, Math.round(totalWords / READING_WPM));
+        }
+        if (t.progress) {
+            if (Array.isArray(t.progress.readChapters)) {
+                t.progress.readChapters = t.progress.readChapters
+                    .filter(idx => idx !== chIdx)
+                    .map(idx => (idx > chIdx ? idx - 1 : idx));
+            }
+            if (typeof t.progress.chapterIndex === 'number') {
+                if (chIdx < t.progress.chapterIndex) {
+                    t.progress.chapterIndex = Math.max(0, t.progress.chapterIndex - 1);
+                } else if (chIdx === t.progress.chapterIndex) {
+                    t.progress.chapterIndex = Math.min(chapters.length - 1, t.progress.chapterIndex);
+                    t.progress.pct = 0;
+                    t.progress.paraIndex = 0;
+                }
+            }
+        }
+        t.modified = new Date().toISOString();
+        saveMyTexts();
+        if (typeof UI !== 'undefined' && UI.toast && removed) {
+            UI.toast(`Removed "${removed.title}"`, 'info', 2000);
+        }
+        renderMyTextsPane();
+    }
+
     function textEditorHtml() {
         const isNew = !textDraft.id;
         const a = textDraft.analysis;
@@ -1371,10 +1516,15 @@ const Library = (function () {
                     <div class="lt-imported-summary">
                         <p class="lt-imported-summary-title">Loaded ${chCount} ${chCount === 1 ? 'chapter' : 'chapters'}${textDraft.author ? ' by ' + esc(textDraft.author) : ''}</p>
                         <ul class="lt-imported-chapter-preview">
-                            ${textDraft.chapters.slice(0, 6).map((c, idx) =>
-                                `<li>${esc(c.title)} <span class="lt-ch-preview-meta">(${c.wordCount.toLocaleString()} words)</span></li>`
-                            ).join('')}
-                            ${chCount > 6 ? `<li class="lt-ch-preview-more">+ ${chCount - 6} more chapters</li>` : ''}
+                            ${textDraft.chapters.map((c, idx) => `
+                                <li class="lt-imported-ch-item">
+                                    <span class="lt-imported-ch-label">
+                                        <strong>${idx + 1}.</strong> ${esc(c.title)}${c.subtitle ? ` <span class="lt-ch-preview-sub">— ${esc(c.subtitle)}</span>` : ''}
+                                        <span class="lt-ch-preview-meta">(${c.wordCount.toLocaleString()} words)</span>
+                                    </span>
+                                    ${chCount > 1 ? `<button type="button" class="lt-ch-remove-btn" data-draft-remove-ch="${idx}" title="Remove chapter" aria-label="Remove ${esc(c.title)}">Remove</button>` : ''}
+                                </li>
+                            `).join('')}
                         </ul>
                         <button type="button" class="lt-card-action" data-text-clear-file="1">Switch to plain text paste</button>
                     </div>
@@ -1402,7 +1552,7 @@ const Library = (function () {
     function textProgressSummary(t) {
         const chs = Array.isArray(t.chapters) && t.chapters.length ? t.chapters : [{ index: 0, title: t.title }];
         const totalCh = chs.length;
-        const p = t.progress || { chapterIndex: 0, pct: 0, readChapters: [] };
+        const p = t.progress || { chapterIndex: 0, pct: 0, paraIndex: 0, readChapters: [] };
         const readSet = new Set(Array.isArray(p.readChapters) ? p.readChapters : []);
         const allRead = totalCh > 0 && readSet.size >= totalCh;
         const curIdx = Math.min(totalCh - 1, Math.max(0, p.chapterIndex || 0));
@@ -1546,16 +1696,20 @@ const Library = (function () {
                             ? `<span class="lt-ch-status is-done">✓ Read</span>`
                             : (isCurrent ? `<span class="lt-ch-status is-now">Current</span>` : `<span class="lt-ch-status">→</span>`));
                     return `
-                        <button type="button" class="lt-chapter-row${isCurrent ? ' is-current' : ''}${isRead ? ' is-read' : ''}" data-book-open-ch="${idx}">
-                            <div class="lt-ch-main">
-                                <span class="lt-ch-num">${idx + 1}.</span>
-                                <div class="lt-ch-text">
-                                    <span class="lt-ch-title">${esc(ch.title)}</span>
-                                    <span class="lt-ch-meta">${(ch.wordCount || 0).toLocaleString()} words · ~${ch.estimatedMinutes || 1} min</span>
+                        <div class="lt-chapter-row-wrap${isCurrent ? ' is-current' : ''}${isRead ? ' is-read' : ''}" role="listitem">
+                            <button type="button" class="lt-chapter-row${isCurrent ? ' is-current' : ''}${isRead ? ' is-read' : ''}" data-book-open-ch="${idx}">
+                                <div class="lt-ch-main">
+                                    <span class="lt-ch-num">${idx + 1}.</span>
+                                    <div class="lt-ch-text">
+                                        <span class="lt-ch-title">${esc(ch.title)}</span>
+                                        ${ch.subtitle ? `<span class="lt-ch-subtitle">${esc(ch.subtitle)}</span>` : ''}
+                                        <span class="lt-ch-meta">${(ch.wordCount || 0).toLocaleString()} words · ~${ch.estimatedMinutes || 1} min</span>
+                                    </div>
                                 </div>
-                            </div>
-                            ${statusHtml}
-                        </button>
+                                ${statusHtml}
+                            </button>
+                            ${chs.length > 1 ? `<button type="button" class="lt-ch-delete-btn" data-book-delete-ch="${idx}" title="Remove this chapter from book" aria-label="Remove ${esc(ch.title)}">&times;</button>` : ''}
+                        </div>
                     `;
                 }).join('')}
             </div>
@@ -1616,6 +1770,19 @@ const Library = (function () {
             el.onclick = function () {
                 const ch = parseInt(el.getAttribute('data-book-open-ch') || '0', 10);
                 if (activeBookId) openMyText(activeBookId, isNaN(ch) ? 0 : ch);
+            };
+        });
+        host.querySelectorAll('[data-book-delete-ch]').forEach(el => {
+            el.onclick = function (e) {
+                if (e && e.stopPropagation) e.stopPropagation();
+                const ch = parseInt(el.getAttribute('data-book-delete-ch') || '-1', 10);
+                if (activeBookId && !isNaN(ch) && ch >= 0) return deleteBookChapter(activeBookId, ch);
+            };
+        });
+        host.querySelectorAll('[data-draft-remove-ch]').forEach(el => {
+            el.onclick = function () {
+                const ch = parseInt(el.getAttribute('data-draft-remove-ch') || '-1', 10);
+                if (!isNaN(ch) && ch >= 0) removeDraftChapter(ch);
             };
         });
         host.querySelectorAll('[data-text-edit]').forEach(el => {
@@ -1796,6 +1963,7 @@ const Library = (function () {
 
         const level = t.analysis && t.analysis.level ? t.analysis.level : 'Unassessed';
         const isMulti = totalCh > 1;
+        const isBookFormat = isMulti || t.sourceType === 'epub' || t.sourceType === 'docx';
         const backLabel = isMulti ? '&larr; Chapters' : '&larr; My texts';
 
         const chapterSelectHtml = isMulti ? `
@@ -1806,16 +1974,33 @@ const Library = (function () {
             </select>
         ` : '';
 
+        const paragraphs = chapter.paragraphs || [];
+        let displaySubtitle = (chapter.subtitle || '').trim();
+        let bodyStartIndex = 0;
+
+        // Detect an inline chapter subtitle in paragraph 0 for books imported before
+        // explicit subtitle extraction (e.g. "Pulverizo accidentalmente a mi profesora...")
+        if (!displaySubtitle && isBookFormat && paragraphs.length >= 2 && !/\([2-9]\d*\/\d+\)$/.test(chapter.title || '')) {
+            const p0 = (paragraphs[0] || '').trim();
+            const p0Words = tokenizeWords(p0).length;
+            if (p0.length > 0 && p0.length <= 100 && p0Words >= 2 && p0Words <= 16 &&
+                !/[.?!…:;»”"]$/.test(p0) && !/^[-—–―«"“]/.test(p0)) {
+                displaySubtitle = p0;
+                bodyStartIndex = 1;
+            }
+        }
+
         const marksChecked = (typeof readerMarksOn === 'function' && readerMarksOn()) ? 'true' : 'false';
 
         let html = '<div class="story-bar">' +
             '<button type="button" class="story-action" data-mytext-back="1">' + backLabel + '</button>' +
             chapterSelectHtml +
         '</div>' +
-        '<div class="story-header">' +
+        '<div class="story-header' + (isBookFormat ? ' lt-book-chapter-header' : '') + '">' +
             '<div class="story-header-left">' +
-                (isMulti ? '<p class="lt-reading-eyebrow">' + esc(t.title) + ' · Chapter ' + (chapterIndex + 1) + ' of ' + totalCh + '</p>' : '') +
-                '<h3 class="story-title">' + esc(isMulti ? chapter.title : t.title) + '</h3>' +
+                (isMulti ? '<p class="lt-reading-eyebrow">' + esc(t.title) + (t.author ? ' · ' + esc(t.author) : '') + ' · Chapter ' + (chapterIndex + 1) + ' of ' + totalCh + '</p>' : '') +
+                '<h3 class="story-title' + (isBookFormat ? ' lt-chapter-heading' : '') + '">' + esc(isMulti ? chapter.title : t.title) + '</h3>' +
+                (displaySubtitle ? '<p class="lt-chapter-subtitle">' + Reader.makeClickable(displaySubtitle) + '</p>' : '') +
                 '<span class="story-level-badge">' + esc(level) + '</span>' +
             '</div>' +
         '</div>' +
@@ -1828,15 +2013,29 @@ const Library = (function () {
             '</button>' +
         '</div>' +
         '<div class="story-scroll-track" aria-hidden="true"><div class="story-scroll-bar" id="story-scroll-bar"></div></div>' +
-        '<div class="story-body">';
+        '<div class="story-body' + (isBookFormat ? ' lt-book-body' : '') + '">';
 
-        const paragraphs = chapter.paragraphs || [];
-        paragraphs.forEach((p, idx) => {
-            html += '<p class="story-paragraph narration" data-para-index="' + idx + '">' +
+        let seenOpeningNarration = false;
+        for (let idx = bodyStartIndex; idx < paragraphs.length; idx++) {
+            const p = (paragraphs[idx] || '').trim();
+            if (!p) continue;
+            if (/^(?:\*\s*\*\s*\*|\-{3,}|•\s*•\s*•|~{3,})$/.test(p)) {
+                html += '<hr class="lt-scene-break" aria-hidden="true">';
+                seenOpeningNarration = false;
+                continue;
+            }
+            const isDialogue = /^[-—–―«"“]/.test(p);
+            const isFirstNarration = isBookFormat && !seenOpeningNarration && !isDialogue;
+            if (!isDialogue) seenOpeningNarration = true;
+
+            const paraClasses = ['story-paragraph', isDialogue ? 'dialogue lt-book-dialogue' : 'narration'];
+            if (isFirstNarration) paraClasses.push('lt-first-para');
+
+            html += '<p class="' + paraClasses.join(' ') + '" data-para-index="' + idx + '">' +
                 Reader.makeClickable(p) +
                 (typeof ParlourTTS !== 'undefined' ? ParlourTTS.button(p, { type: 'reading', label: 'Listen to this paragraph' }) : '') +
             '</p>';
-        });
+        }
         html += '</div>';
 
         // End of chapter navigation: advance directly to next chapter without a word review screen
@@ -1844,7 +2043,7 @@ const Library = (function () {
         const nextChapter = hasNext ? chapters[chapterIndex + 1] : null;
         html += '<div class="story-finish lt-chapter-finish">' +
             (hasNext
-                ? `<p class="lt-next-ch-label">Up next: <strong>${esc(nextChapter.title)}</strong></p>` +
+                ? `<p class="lt-next-ch-label">Up next: <strong>${esc(nextChapter.title)}${nextChapter.subtitle ? ' — ' + esc(nextChapter.subtitle) : ''}</strong></p>` +
                   `<div class="lt-finish-actions">` +
                       (chapterIndex > 0 ? `<button type="button" class="dk-secondary" data-mytext-prev-ch="1">&larr; Previous chapter</button>` : '') +
                       `<button type="button" class="btn-primary" data-mytext-next-ch="1">Next chapter &rarr;</button>` +

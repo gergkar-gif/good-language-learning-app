@@ -448,6 +448,105 @@ async function runTests() {
     assert.strictEqual(storedProgress.chapterIndex, 1, 'Saved location should now be on Chapter 2 (index 1)');
 
     console.log('   ✓ End-to-end TOC, single-chapter rendering, tap-to-translate spans, Next Chapter flow, and progress persistence verified.');
+
+    console.log('6. Testing EPUB front-matter filtering, chapter subtitles, book formatting, and manual chapter removal...');
+    const riordanStyleEpub = buildZipBuffer([
+        { name: 'mimetype', data: 'application/epub+zip', store: true },
+        {
+            name: 'META-INF/container.xml',
+            data: `<?xml version="1.0"?><container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>`
+        },
+        {
+            name: 'OEBPS/content.opf',
+            data: `<?xml version="1.0" encoding="utf-8"?>
+                <package xmlns="http://www.idpf.org/2007/opf" version="2.0">
+                    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <dc:title>El ladrón del rayo</dc:title>
+                        <dc:creator>Rick Riordan</dc:creator>
+                    </metadata>
+                    <manifest>
+                        <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+                        <item id="cubierta.xhtml" href="Text/cubierta.xhtml" media-type="application/xhtml+xml"/>
+                        <item id="sinopsis.xhtml" href="Text/sinopsis.xhtml" media-type="application/xhtml+xml"/>
+                        <item id="titulo.xhtml" href="Text/titulo.xhtml" media-type="application/xhtml+xml"/>
+                        <item id="info.xhtml" href="Text/info.xhtml" media-type="application/xhtml+xml"/>
+                        <item id="cap1" href="Text/Capitulo_01.xhtml" media-type="application/xhtml+xml"/>
+                        <item id="cap2" href="Text/Capitulo_02.xhtml" media-type="application/xhtml+xml"/>
+                    </manifest>
+                    <spine toc="ncx">
+                        <itemref idref="cubierta.xhtml"/>
+                        <itemref idref="sinopsis.xhtml"/>
+                        <itemref idref="titulo.xhtml"/>
+                        <itemref idref="info.xhtml"/>
+                        <itemref idref="cap1"/>
+                        <itemref idref="cap2"/>
+                    </spine>
+                    <guide>
+                        <reference type="cover" title="Portada" href="Text/cubierta.xhtml"/>
+                        <reference type="title-page" title="Página de título" href="Text/titulo.xhtml"/>
+                        <reference type="copyright-page" title="Créditos" href="Text/info.xhtml"/>
+                    </guide>
+                </package>`
+        },
+        {
+            name: 'OEBPS/toc.ncx',
+            data: `<?xml version="1.0" encoding="utf-8"?>
+                <ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+                    <navMap>
+                        <navPoint id="n1" playOrder="1"><navLabel><text>Cubierta</text></navLabel><content src="Text/cubierta.xhtml"/></navPoint>
+                        <navPoint id="n2" playOrder="2"><navLabel><text>El ladrón del rayo</text></navLabel><content src="Text/titulo.xhtml"/></navPoint>
+                        <navPoint id="n3" playOrder="3"><navLabel><text>Capítulo 1</text></navLabel><content src="Text/Capitulo_01.xhtml"/></navPoint>
+                        <navPoint id="n4" playOrder="4"><navLabel><text>Capítulo 2</text></navLabel><content src="Text/Capitulo_02.xhtml"/></navPoint>
+                    </navMap>
+                </ncx>`
+        },
+        { name: 'OEBPS/Text/cubierta.xhtml', data: `<html><body class="sinmargen"><div class="cubierta"></div></body></html>` },
+        {
+            name: 'OEBPS/Text/sinopsis.xhtml',
+            data: `<html><head><title>Sinopsis</title></head><body><div class="sinopsis"><p>¿Qué pasaría si un día descubrieras que, en realidad, eres hijo de un dios griego que debe cumplir una misión secreta? Pues eso es lo que le sucede a Percy Jackson.</p></div></body></html>`
+        },
+        {
+            name: 'OEBPS/Text/titulo.xhtml',
+            data: `<html><head><title>Título</title></head><body><p class="tautor">Rick Riordan</p><h1 class="ttitulo">El ladrón del rayo</h1><p class="tserie">Percy Jackson y los dioses del Olimpo - 1</p><p class="trevision">ePub r1.9 Titivillus 30.05.2019</p></body></html>`
+        },
+        {
+            name: 'OEBPS/Text/info.xhtml',
+            data: `<html><head><title>Créditos</title></head><body><div class="info"><p>Título original: The Lightning Thief Rick Riordan 2006 Traducción Libertad Aguilera Ballester Editor digital Titivillus Corrección de erratas r1.2 r1.3 r1.4</p></div></body></html>`
+        },
+        {
+            name: 'OEBPS/Text/Capitulo_01.xhtml',
+            data: `<html><body><h1 title="Capítulo 1">C<small>APÍTULO</small> 1</h1><p class="subtit">Pulverizo accidentalmente a mi profesora de introducción al álgebra</p><p class="asangre">Mira, yo no quería ser mestizo. Si estás leyendo esto porque crees que podrías estar en la misma situación, cierra el libro inmediatamente.</p><p>—Hola, Percy —dijo Grover mientras subíamos al autobús escolar amarillo.</p></body></html>`
+        },
+        {
+            name: 'OEBPS/Text/Capitulo_02.xhtml',
+            data: `<html><body><h1 title="Capítulo 2">C<small>APÍTULO</small> 2</h1><p class="subtit">Tres ancianas tejen los calcetines de la muerte</p><p class="asangre">Estaba acostumbrado a tener experiencias raras de vez en cuando, pero solían acabarse pronto y nadie me creía jamás en el colegio.</p></body></html>`
+        }
+    ]);
+
+    const parsedRiordan = await Lib2._parseEpub(riordanStyleEpub, 'El ladrón del rayo');
+    assert.strictEqual(parsedRiordan.chapters.length, 2, 'Should automatically filter out sinopsis, titulo, and info front-matter pages');
+    assert.strictEqual(parsedRiordan.chapters[0].title, 'Capítulo 1');
+    assert.strictEqual(parsedRiordan.chapters[0].subtitle, 'Pulverizo accidentalmente a mi profesora de introducción al álgebra');
+    assert(parsedRiordan.chapters[0].paragraphs[0].startsWith('Mira, yo no quería ser mestizo'), 'Subtitle should be extracted into chapter.subtitle, not left as paragraph 0');
+
+    // Verify centered book chapter header, subtitle, first-para and dialogue formatting in reader
+    await Lib2.openMyText(bookId, 0);
+    assert(readerEl.innerHTML.includes('lt-book-chapter-header'), 'Book reader should use centered lt-book-chapter-header');
+    assert(readerEl.innerHTML.includes('lt-chapter-heading'), 'Book reader should style chapter title with lt-chapter-heading');
+    assert(readerEl.innerHTML.includes('lt-book-body'), 'Book reader should style prose container with lt-book-body');
+    assert(readerEl.innerHTML.includes('lt-first-para'), 'First narrative paragraph should receive lt-first-para class');
+
+    // Verify manual chapter deletion from Book Overview TOC
+    Lib2.openMyTextOrChapters(bookId);
+    const deleteChBtns = host.querySelectorAll('[data-book-delete-ch]');
+    assert.strictEqual(deleteChBtns.length, 2, 'TOC should render remove button on each chapter when >1 chapters exist');
+    await deleteChBtns[0].onclick({});
+    const remainingBook = JSON.parse(localStorage.getItem('es:myTexts'))[0];
+    assert.strictEqual(remainingBook.chapters.length, 1, 'Deleting chapter 0 should leave 1 chapter');
+    assert.strictEqual(remainingBook.chapters[0].title, 'Capítulo 2: El viaje');
+    assert.strictEqual(remainingBook.progress.chapterIndex, 0, 'Reading progress chapterIndex should shift down when an earlier chapter is removed');
+    console.log('   ✓ Front-matter filtering, chapter subtitles, book typography classes, and manual chapter removal verified.');
+
     console.log('\nAll Library book & chapter tests passed!');
 }
 
