@@ -2,184 +2,101 @@
   "lesson": "a1-136",
   "exercises": [
     {
-      "id": "a1-136-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'közel' mean?",
-      "options": [
-        "near",
-        "far",
-        "right"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-city-vocab"
-      ]
-    },
-    {
-      "id": "a1-136-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'jobb' mean?",
-      "options": [
-        "right",
-        "left",
-        "far"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-city-vocab"
-      ]
-    },
-    {
       "id": "a1-136-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'busz' mean?",
-      "options": [
-        "bus",
-        "tram",
-        "train"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-transport-directions-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “tram”?",
+      "options": [
+        "busz",
+        "vonat",
+        "villamos"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-136-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'vonat' mean?",
-      "options": [
-        "train",
-        "bus",
-        "metro"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "val-vel"
       ],
-      "stage": "introduce"
+      "question": "Which sentence says you are going by bus?",
+      "options": [
+        "Busszal megyek.",
+        "Buszval megyek.",
+        "Busztal megyek."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-136-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "____ vagy villamossal.",
-      "hint": "by bus",
-      "english": "By bus or by tram.",
-      "answer": "Busszal",
+      "stage": "controlled",
       "teaches": [
         "val-vel"
       ],
-      "stage": "controlled"
+      "sentence": "Anna ____ jön.",
+      "english": "Anna is coming by tram.",
+      "answer": "villamossal"
     },
     {
       "id": "a1-136-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'metro'.",
-      "options": [
-        "metró",
-        "vonat",
-        "busz"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "val-vel"
       ],
-      "stage": "controlled"
+      "question": "How do you say “by train”?",
+      "options": [
+        "vonatval",
+        "vonattel",
+        "vonattal"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-136-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "busz",
-          "bus"
-        ],
-        [
-          "villamos",
-          "tram"
-        ],
-        [
-          "metró",
-          "metro"
-        ],
-        [
-          "vonat",
-          "train"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "megy-jon"
       ],
-      "stage": "controlled"
+      "question": "Meg and Anna go by metro. Meg says:",
+      "options": [
+        "Metróval mennek.",
+        "Metróval megyünk.",
+        "Metróval megyek."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-136-controlled-4",
-      "type": "substitution",
+      "type": "fill-blank",
       "category": "grammar",
-      "base_sentence": "Busszal megyünk.",
-      "base_word": "Busszal",
-      "base_gloss": "We're going by bus.",
-      "options": [
-        {
-          "word": "villamos",
-          "inflected": "Villamossal",
-          "sentence": "Villamossal megyünk.",
-          "gloss": "by tram"
-        },
-        {
-          "word": "metró",
-          "inflected": "Metróval",
-          "sentence": "Metróval megyünk.",
-          "gloss": "by metro"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
-        "val-vel"
+        "megy-jon"
       ],
-      "stage": "controlled"
+      "sentence": "Ti vonattal ____.",
+      "english": "You (pl) are coming by train.",
+      "answer": "jöttök"
     },
     {
       "id": "a1-136-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "How do you say 'we go' in Hungarian?",
-      "options": [
-        "megyünk",
-        "megyek",
-        "mész"
-      ],
-      "correct": 0,
-      "teaches": [
-        "megy-jon"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-136-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Mivel ____?",
-      "hint": "do we go",
-      "english": "How do we go?",
-      "answer": "megyünk",
-      "teaches": [
-        "megy-jon"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-136-practice-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-transport-directions-vocab"
+      ],
       "pairs": [
         [
           "busz",
@@ -198,170 +115,203 @@
           "train"
         ],
         [
-          "közel",
-          "near"
+          "taxi",
+          "taxi"
         ]
-      ],
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ],
-      "stage": "practice"
+      ]
     },
     {
-      "id": "a1-136-practice-4",
+      "id": "a1-136-practice-2",
       "type": "substitution",
       "category": "grammar",
-      "base_sentence": "Metróval megyünk?",
-      "base_word": "metróval",
-      "base_gloss": "Are we going by metro?",
+      "stage": "practice",
+      "base_sentence": "Busszal megyek.",
+      "base_word": "busz",
+      "base_gloss": "I am going by bus.",
       "options": [
+        {
+          "word": "villamos",
+          "inflected": "villamossal",
+          "sentence": "Villamossal megyek.",
+          "gloss": "tram"
+        },
         {
           "word": "vonat",
           "inflected": "vonattal",
-          "sentence": "Vonattal megyünk?",
-          "gloss": "by train"
-        },
-        {
-          "word": "busz",
-          "inflected": "busszal",
-          "sentence": "Busszal megyünk?",
-          "gloss": "by bus"
+          "sentence": "Vonattal megyek.",
+          "gloss": "train"
         }
       ],
       "teaches": [
         "val-vel"
+      ]
+    },
+    {
+      "id": "a1-136-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "megy-jon"
       ],
-      "stage": "practice"
+      "question": "Anna asks Meg where she is going. Which question?",
+      "options": [
+        "Hová megyek?",
+        "Hová mész?",
+        "Hová megy?"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-136-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "val-vel"
+      ],
+      "question": "Anna asks: “Kivel mész?” Meg answers:",
+      "options": [
+        "Annaval.",
+        "Anna.",
+        "Annával."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-136-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mivel megyünk?"
-        },
-        {
-          "speaker": "Mariann",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Busszal megyünk.",
-        "Szép ez a ruha."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "megy-jon"
       ],
-      "stage": "practice"
+      "sentence": "Ők busszal ____.",
+      "english": "They are coming by bus.",
+      "answer": "jönnek"
     },
     {
       "id": "a1-136-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-transport-directions-vocab"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Metróval megyünk?"
+          "speaker": "Anna",
+          "text": "Mivel mész?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Nem, most busszal megyünk.",
-        "Mennyibe kerül?"
+        "Annával megyek.",
+        "Metróval megyek.",
+        "Igen, megyek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-136-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "megy-jon"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Van vonat is?"
+          "speaker": "Károly",
+          "text": "Te is jössz Annával?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, és villamos is van.",
-        "Szia, hogy vagy?"
+        "Igen, jössz.",
+        "Igen, jön.",
+        "Igen, jövök."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-136-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask how you're going (by what means).",
-          "answer": "Mivel megyünk?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "val-vel"
-      ]
+      ],
+      "tiles": [
+        "Meg",
+        "Annával",
+        "megy",
+        "a",
+        "múzeumba",
+        "."
+      ],
+      "solution": [
+        "Meg",
+        "Annával",
+        "megy",
+        "a",
+        "múzeumba",
+        "."
+      ],
+      "english": "Meg is going to the museum with Anna."
     },
     {
       "id": "a1-136-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-transport-directions-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say by bus or by tram.",
-          "answer": "Busszal vagy villamossal."
+          "prompt": "Say that you are going by tram.",
+          "answer": "Villamossal megyek."
+        },
+        {
+          "prompt": "Ask Anna how she is going.",
+          "answer": "Mivel mész?"
         }
-      ],
-      "teaches": [
-        "val-vel"
       ]
     },
     {
       "id": "a1-136-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'bus'.",
-      "options": [
-        "busz",
-        "villamos",
-        "vonat"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "val-vel"
       ],
-      "stage": "check"
+      "sentence": "____ megyek.",
+      "english": "I am going by metro.",
+      "answer": "Metróval"
     },
     {
       "id": "a1-136-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'tram'.",
-      "options": [
-        "villamos",
-        "metró",
-        "busz"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "megy-jon"
       ],
-      "stage": "check"
+      "question": "Which sentence says “they are coming by tram”?",
+      "options": [
+        "Villamossal jövünk.",
+        "Villamossal jöttök.",
+        "Villamossal jönnek."
+      ],
+      "correct": 2
     }
   ]
 }

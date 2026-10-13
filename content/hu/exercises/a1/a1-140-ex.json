@@ -2,188 +2,113 @@
   "lesson": "a1-140",
   "exercises": [
     {
-      "id": "a1-140-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'érkezik' mean?",
-      "options": [
-        "to arrive",
-        "to depart",
-        "to come"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
-    },
-    {
-      "id": "a1-140-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'leszáll' mean?",
-      "options": [
-        "to get off",
-        "to get on",
-        "to arrive"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
-    },
-    {
       "id": "a1-140-introduce-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "What does 'egyenesen' mean?",
-      "options": [
-        "straight",
-        "to the right",
-        "to the left"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "introduce",
       "teaches": [
-        "direction-adverbs-jobbra-balra"
+        "a1-transport-directions-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “to the left”?",
+      "options": [
+        "jobbra",
+        "egyenesen",
+        "balra"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-140-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'utazik' mean?",
-      "options": [
-        "to travel",
-        "to arrive",
-        "to depart"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "direction-adverbs-jobbra-balra"
       ],
-      "stage": "introduce"
+      "question": "The bank is on the right. Which sentence?",
+      "options": [
+        "Balra van a bank.",
+        "Jobbra van a bank.",
+        "Egyenesen van a bank."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-140-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Menj ____, aztán jobbra.",
-      "hint": "straight",
-      "english": "Go straight, then right.",
-      "answer": "egyenesen",
+      "stage": "controlled",
       "teaches": [
         "direction-adverbs-jobbra-balra"
       ],
-      "stage": "controlled"
+      "sentence": "Anna ____ megy.",
+      "english": "Anna is going to the right.",
+      "answer": "jobbra"
     },
     {
       "id": "a1-140-controlled-2",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the word for 'to the left'.",
-      "options": [
-        "balra",
-        "jobbra",
-        "egyenesen"
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "direction-adverbs-jobbra-balra"
+        "a1-transport-directions-vocab"
       ],
-      "stage": "controlled"
+      "question": "How do you ask “which way?”",
+      "options": [
+        "mikor",
+        "merre",
+        "miért"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-140-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "egyenesen",
-          "straight"
-        ],
-        [
-          "jobbra",
-          "to the right"
-        ],
-        [
-          "balra",
-          "to the left"
-        ],
-        [
-          "utazik",
-          "travel"
-        ]
-      ],
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-140-controlled-4",
-      "type": "substitution",
+      "type": "fill-blank",
       "category": "grammar",
-      "base_sentence": "A taxi balra van.",
-      "base_word": "balra",
-      "base_gloss": "The taxi is to the left.",
-      "options": [
-        {
-          "word": "jobbra",
-          "inflected": "jobbra",
-          "sentence": "A taxi jobbra van.",
-          "gloss": "to the right"
-        },
-        {
-          "word": "közel",
-          "inflected": "közel",
-          "sentence": "A taxi közel van.",
-          "gloss": "near"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "direction-adverbs-jobbra-balra"
       ],
-      "stage": "controlled"
+      "sentence": "A bank ____ van.",
+      "english": "The bank is on the left.",
+      "answer": "balra"
+    },
+    {
+      "id": "a1-140-controlled-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "direction-adverbs-jobbra-balra"
+      ],
+      "tiles": [
+        "A",
+        "múzeum",
+        "jobbra",
+        "van",
+        "."
+      ],
+      "solution": [
+        "A",
+        "múzeum",
+        "jobbra",
+        "van",
+        "."
+      ],
+      "english": "The museum is on the right."
     },
     {
       "id": "a1-140-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "What's the correct first-person form of 'utazik' (I travel)?",
-      "options": [
-        "utazom",
-        "utazok",
-        "utazik"
-      ],
-      "correct": 0,
-      "teaches": [
-        "ik-verbs-dolgozom-not-dolgozok"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-140-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Most busszal ____.",
-      "hint": "we travel",
-      "english": "Now we travel by bus.",
-      "answer": "utazunk",
-      "teaches": [
-        "ik-verbs-dolgozom-not-dolgozok"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-140-practice-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-transport-directions-vocab"
+      ],
       "pairs": [
         [
           "egyenesen",
-          "straight"
+          "straight on"
         ],
         [
           "jobbra",
@@ -194,174 +119,244 @@
           "to the left"
         ],
         [
-          "utazik",
-          "travel"
+          "merre",
+          "which way"
         ],
         [
-          "indul",
-          "depart"
+          "megálló",
+          "stop"
+        ],
+        [
+          "jegy",
+          "ticket"
         ]
-      ],
+      ]
+    },
+    {
+      "id": "a1-140-practice-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "direction-adverbs-jobbra-balra"
       ],
-      "stage": "practice"
+      "question": "Which sentence puts the bank next to the church, on the right?",
+      "options": [
+        "A bank a templom mellett van, balra.",
+        "A bank a templom előtt van, jobbra.",
+        "A bank a templom mellett van, jobbra."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-140-practice-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "direction-adverbs-jobbra-balra"
+      ],
+      "sentence": "Merre van a kórház? — ____ van.",
+      "english": "Which way is the hospital? — It is straight on.",
+      "answer": "Egyenesen"
     },
     {
       "id": "a1-140-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "grammar",
-      "base_sentence": "Vonattal utazom.",
-      "base_word": "utazom",
-      "base_gloss": "I travel by train.",
-      "options": [
-        {
-          "word": "busszal",
-          "inflected": "busszal utazom",
-          "sentence": "Busszal utazom.",
-          "gloss": "by bus"
-        },
-        {
-          "word": "gyalog",
-          "inflected": "gyalog megyek",
-          "sentence": "Gyalog megyek.",
-          "gloss": "on foot"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
-        "val-vel"
+        "mert-because"
       ],
-      "stage": "practice"
+      "question": "We go left because the museum is there. Which sentence?",
+      "options": [
+        "Balra megyünk, de ott van a múzeum.",
+        "Balra megyünk, hanem ott van a múzeum.",
+        "Balra megyünk, mert ott van a múzeum."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-140-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Merre van a taxiállomás?"
-        },
-        {
-          "speaker": "Mariann",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Balra, a tér mellett.",
-        "Szeretek úszni."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "direction-adverbs-jobbra-balra"
       ],
-      "stage": "practice"
+      "question": "Meg says: we go straight on, and the bank is on the right. Which sentence?",
+      "options": [
+        "Egyenesen megyünk, és balra van a bank.",
+        "Jobbra megyünk, és egyenesen van a bank.",
+        "Egyenesen megyünk, és jobbra van a bank."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-140-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "How does Meg travel at first?",
+      "options": [
+        "By bus.",
+        "By metro.",
+        "On foot."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-140-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Why does Meg ask for the way?",
+      "options": [
+        "She has lost her ticket.",
+        "She got off at the wrong stop.",
+        "The bus is late."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-140-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does the passer-by say about the museum?",
+      "options": [
+        "It is far, so take a taxi.",
+        "It is on the right.",
+        "It is near, ten minutes on foot."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-140-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-transport-directions-vocab"
+      ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Hol van a bolt?"
+          "text": "Elnézést, merre van a bank?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Járókelő",
           "text": "_____"
         }
       ],
       "options": [
-        "Menj egyenesen, aztán balra.",
-        "Mennyibe kerül?"
+        "Busszal megyek a bankba.",
+        "Jobbra van a bank.",
+        "Két jegyet kérek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-140-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "megy-jon"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Busszal megyünk haza?"
+          "speaker": "Anna",
+          "text": "Balra vagy jobbra megyünk?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Nem, ma metróval megyünk.",
-        "Szia, hogy vagy?"
+        "Balra megyek.",
+        "Balra mennek.",
+        "Balra megyünk."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-140-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Tell someone to go left, then straight.",
-          "answer": "Menj balra, aztán egyenesen."
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "megy-jon"
-      ]
+        "direction-adverbs-jobbra-balra"
+      ],
+      "tiles": [
+        "Elnézést,",
+        "merre",
+        "van",
+        "a",
+        "pályaudvar",
+        "?"
+      ],
+      "solution": [
+        "Elnézést,",
+        "merre",
+        "van",
+        "a",
+        "pályaudvar",
+        "?"
+      ],
+      "english": "Excuse me, which way is the railway station?"
     },
     {
       "id": "a1-140-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "direction-adverbs-jobbra-balra"
+      ],
       "template": [
         {
-          "prompt": "Say you're travelling by train.",
-          "answer": "Vonattal utazom."
+          "prompt": "Say that the museum is on the left.",
+          "answer": "A múzeum balra van."
+        },
+        {
+          "prompt": "Say that you are going straight on.",
+          "answer": "Egyenesen megyek."
         }
-      ],
-      "teaches": [
-        "ik-verbs-dolgozom-not-dolgozok"
       ]
     },
     {
       "id": "a1-140-check-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the correct word for 'straight'.",
+      "category": "vocabulary",
+      "stage": "check",
+      "teaches": [
+        "a1-transport-directions-vocab"
+      ],
+      "question": "What is “straight on” in Hungarian?",
       "options": [
         "egyenesen",
         "balra",
         "jobbra"
       ],
-      "correct": 0,
-      "teaches": [
-        "direction-adverbs-jobbra-balra"
-      ],
-      "stage": "check"
+      "correct": 0
     },
     {
       "id": "a1-140-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Choose the correct word for 'to the right'.",
-      "options": [
-        "jobbra",
-        "balra",
-        "egyenesen"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "direction-adverbs-jobbra-balra"
       ],
-      "stage": "check"
+      "question": "Which sentence says “we are going left”?",
+      "options": [
+        "Jobbra megyünk.",
+        "Egyenesen megyünk.",
+        "Balra megyünk."
+      ],
+      "correct": 2
     }
   ]
 }

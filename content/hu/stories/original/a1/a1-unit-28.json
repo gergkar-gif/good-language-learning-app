@@ -5,120 +5,138 @@
   "type": "original",
   "characters": [
     "Meg",
-    "Mariann"
+    "Anna",
+    "Károly",
+    "Járókelő"
   ],
   "paragraphs": [
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg and Mariann travel across Budapest and have a small navigation problem."
+      "text": "Sunday morning. Anna and Károly are waiting in front of the museum. Meg is on the bus and phones Anna."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Szia, Meg! Mivel jössz?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Mivel megyünk?"
+      "text": "Szia! Busszal jövök. Hamarosan leszállok."
     },
     {
-      "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Busszal vagy villamossal."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Van jegyünk?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Igen. A megálló ott van."
+      "type": "narration",
+      "lang": "en",
+      "text": "Meg gets off at a stop, but she cannot see the museum."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "A metróval megyünk?"
+      "text": "Jaj, ez nem a jó megálló! Elnézést, merre van a múzeum?"
     },
     {
       "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Nem, most busszal utazunk."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Hol a pályaudvar?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Menj egyenesen, aztán jobbra."
+      "speaker": "Járókelő",
+      "text": "Menjen egyenesen, aztán balra."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "És a taxi?"
+      "text": "Messze van?"
     },
     {
       "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "A taxi balra van."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Mikor indul a vonat?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Hamarosan. Mi felszállunk, aztán te leszállsz."
+      "speaker": "Járókelő",
+      "text": "Nem, közel van. Gyalog tíz perc."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Mikor érkezünk?"
+      "text": "Köszönöm!"
+    },
+    {
+      "type": "narration",
+      "lang": "en",
+      "text": "Ten minutes later Anna and Károly see Meg."
     },
     {
       "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Hamarosan. Jön a busz."
+      "speaker": "Károly",
+      "text": "Nézd, jön Meg!"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Szia, Meg! Gyere, bemegyünk a múzeumba!"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Szia! Igen, bemegyünk. De haza nem busszal megyek, hanem villamossal."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Én is villamossal megyek."
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Milyen témáról beszélget Meg és Mariann?",
+          "question": "Mivel jön Meg a múzeumhoz?",
           "options": [
-            "Egy kávézó kínálatáról és az ételekről.",
-            "Városi közlekedésről, járművekről és útirányról.",
-            "Hétvégi sportolásról a szabadban.",
-            "Egy lakás felújításáról és rendezéséről."
-          ],
-          "correctIndex": 1,
-          "explanation": "Meg és Mariann budapesti közlekedésről, járművekről (busz, metró, taxi, vonat) és az útirányról beszélgetnek."
-        },
-        {
-          "question": "Milyen járművel utaznak most a metró helyett?",
-          "options": [
-            "Busszal utaznak.",
-            "Metróval utaznak.",
-            "Kerékpárral mennek.",
-            "Taxival utaznak."
+            "Busszal.",
+            "Villamossal.",
+            "Metróval.",
+            "Taxival."
           ],
           "correctIndex": 0,
-          "explanation": "Mariann tisztázza: „Nem, most busszal utazunk.” (No, we are traveling by bus now.)"
+          "explanation": "Meg says: „Busszal jövök.” (I am coming by bus.)",
+          "questionEnglish": "How is Meg coming to the museum?",
+          "optionsEnglish": [
+            "By bus.",
+            "By tram.",
+            "By metro.",
+            "By taxi."
+          ]
         },
         {
-          "question": "Hogyan lehet eljutni a pályaudvarra Mariann útbaigazítása szerint?",
+          "question": "Merre van a múzeum?",
           "options": [
-            "Menj balra, aztán rögtön fordulj vissza.",
-            "Fordulj kétszer balra a tér után.",
-            "Csak taxival vagy villamossal lehet odaérni.",
-            "Menj egyenesen, aztán jobbra."
+            "Egyenesen, aztán balra.",
+            "Egyenesen, aztán jobbra.",
+            "Balra, aztán egyenesen.",
+            "Jobbra, aztán balra."
           ],
-          "correctIndex": 3,
-          "explanation": "A pályaudvar felé Mariann így ad útbaigazítást: „Menj egyenesen, aztán jobbra.” (Go straight, then right.)"
+          "correctIndex": 0,
+          "explanation": "The passer-by says: „Menjen egyenesen, aztán balra.” (Go straight on, then left.)",
+          "questionEnglish": "Which way is the museum?",
+          "optionsEnglish": [
+            "Straight on, then left.",
+            "Straight on, then right.",
+            "Left, then straight on.",
+            "Right, then left."
+          ]
+        },
+        {
+          "question": "Hogyan megy haza Meg?",
+          "options": [
+            "Villamossal.",
+            "Busszal.",
+            "Taxival.",
+            "Gyalog."
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg says: „De haza nem busszal megyek, hanem villamossal.” (But I am not going home by bus but by tram.)",
+          "questionEnglish": "How is Meg going home?",
+          "optionsEnglish": [
+            "By tram.",
+            "By bus.",
+            "By taxi.",
+            "On foot."
+          ]
         }
       ]
     }

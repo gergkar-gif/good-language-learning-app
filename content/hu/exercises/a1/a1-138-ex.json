@@ -2,268 +2,218 @@
   "lesson": "a1-138",
   "exercises": [
     {
-      "id": "a1-138-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'railway station'.",
-      "options": [
-        "pályaudvar",
-        "megálló",
-        "jegy"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
-    },
-    {
-      "id": "a1-138-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'pályaudvar' mean?",
-      "options": [
-        "railway station",
-        "stop",
-        "ticket"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
-    },
-    {
       "id": "a1-138-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'gyalog' mean?",
-      "options": [
-        "on foot",
-        "by bicycle",
-        "by taxi"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-transport-directions-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “soon”?",
+      "options": [
+        "gyalog",
+        "bicikli",
+        "hamarosan"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-138-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'jön' mean?",
-      "options": [
-        "to come",
-        "to go",
-        "to arrive"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "megy-jon"
       ],
-      "stage": "introduce"
+      "question": "Meg is at the museum. She says that Anna is coming by bus. Which sentence?",
+      "options": [
+        "Anna busszal megy.",
+        "Anna busszal jön.",
+        "Anna busszal jönnek."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-138-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "____ a busz.",
-      "hint": "is coming",
-      "english": "The bus is coming.",
-      "answer": "Jön",
+      "stage": "controlled",
       "teaches": [
         "megy-jon"
       ],
-      "stage": "controlled"
+      "sentence": "Te metróval ____?",
+      "english": "Are you going by metro?",
+      "answer": "mész"
     },
     {
       "id": "a1-138-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'bicycle'.",
-      "options": [
-        "bicikli",
-        "gyalog",
-        "busz"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "megy-jon"
       ],
-      "stage": "controlled"
+      "sentence": "Károly és Anna biciklivel ____.",
+      "english": "Károly and Anna are coming by bicycle.",
+      "answer": "jönnek"
     },
     {
       "id": "a1-138-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "gyalog",
-          "on foot"
-        ],
-        [
-          "bicikli",
-          "bicycle"
-        ],
-        [
-          "megy",
-          "go"
-        ],
-        [
-          "jön",
-          "come"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "val-vel"
       ],
-      "stage": "controlled"
+      "question": "Which word means “by bicycle”?",
+      "options": [
+        "biciklivel",
+        "biciklival",
+        "bicikliel"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-138-controlled-4",
-      "type": "substitution",
+      "type": "sentence-builder",
       "category": "vocabulary",
-      "base_sentence": "Jön a busz.",
-      "base_word": "Jön",
-      "base_gloss": "The bus is coming.",
-      "options": [
-        {
-          "word": "Megy",
-          "inflected": "Megy",
-          "sentence": "Megy a busz.",
-          "gloss": "is going"
-        },
-        {
-          "word": "Érkezik",
-          "inflected": "Érkezik",
-          "sentence": "Érkezik a busz.",
-          "gloss": "is arriving"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-transport-directions-vocab"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Mikor",
+        "indul",
+        "a",
+        "busz",
+        "?"
+      ],
+      "solution": [
+        "Mikor",
+        "indul",
+        "a",
+        "busz",
+        "?"
+      ],
+      "english": "When does the bus leave?"
     },
     {
       "id": "a1-138-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "How do you tell someone to 'Go straight'?",
-      "options": [
-        "Menj egyenesen.",
-        "Megyek egyenesen.",
-        "Mész egyenesen."
-      ],
-      "correct": 0,
-      "teaches": [
-        "megy-jon"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-138-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "____ egyenesen, aztán jobbra.",
-      "english": "Go straight, then right.",
-      "answer": "Menj",
-      "teaches": [
-        "megy-jon"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-138-practice-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-transport-directions-vocab"
+      ],
       "pairs": [
-        [
-          "gyalog",
-          "on foot"
-        ],
         [
           "bicikli",
           "bicycle"
         ],
         [
+          "hamarosan",
+          "soon"
+        ],
+        [
+          "indul",
+          "leaves"
+        ],
+        [
+          "érkezik",
+          "arrives"
+        ],
+        [
           "megy",
-          "go"
+          "goes"
         ],
         [
           "jön",
-          "come"
-        ],
-        [
-          "jegy",
-          "ticket"
+          "comes"
         ]
-      ],
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ],
-      "stage": "practice"
+      ]
     },
     {
-      "id": "a1-138-practice-4",
+      "id": "a1-138-practice-2",
       "type": "substitution",
       "category": "grammar",
-      "base_sentence": "Gyalog megyek.",
-      "base_word": "Gyalog",
-      "base_gloss": "I go on foot.",
+      "stage": "practice",
+      "base_sentence": "Busszal megyek.",
+      "base_word": "busz",
+      "base_gloss": "I am going by bus.",
       "options": [
         {
           "word": "bicikli",
-          "inflected": "Biciklivel",
+          "inflected": "biciklivel",
           "sentence": "Biciklivel megyek.",
-          "gloss": "by bicycle"
+          "gloss": "bicycle"
         },
         {
-          "word": "busz",
-          "inflected": "Busszal",
-          "sentence": "Busszal megyek.",
-          "gloss": "by bus"
+          "word": "metró",
+          "inflected": "metróval",
+          "sentence": "Metróval megyek.",
+          "gloss": "metro"
         }
       ],
       "teaches": [
         "val-vel"
+      ]
+    },
+    {
+      "id": "a1-138-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "practice"
+      "question": "Which question asks when the train arrives?",
+      "options": [
+        "Mikor érkezek a vonat?",
+        "Mikor érkezik a vonat?",
+        "Mikor érkeznek a vonat?"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-138-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "sentence": "Mi hamarosan ____.",
+      "english": "We arrive soon.",
+      "answer": "érkezünk"
     },
     {
       "id": "a1-138-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mikor jön a busz?"
-        },
-        {
-          "speaker": "Mariann",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Hamarosan. Nézd, már jön!",
-        "Szép ez a ruha."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "megy-jon"
       ],
-      "stage": "practice"
+      "question": "Meg asks Anna and Károly whether they are coming. Which question?",
+      "options": [
+        "Ti jövünk?",
+        "Ti jöttök?",
+        "Ti jönnek?"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-138-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-transport-directions-vocab"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Mivel mész?"
+          "speaker": "Anna",
+          "text": "Mikor indul a vonat?"
         },
         {
           "speaker": "Meg",
@@ -271,96 +221,109 @@
         }
       ],
       "options": [
-        "Gyalog megyek.",
-        "Jó reggelt!"
+        "Busszal megyek.",
+        "Hamarosan indul.",
+        "Annával jön."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-138-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "megy-jon"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Gyalog mész?"
+          "speaker": "Károly",
+          "text": "Hová mentek?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Nem, biciklivel megyek.",
-        "Szia, hogy vagy?"
+        "A múzeumba mész.",
+        "A múzeumba megyünk.",
+        "A múzeumba mennek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-138-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say the bus is coming.",
-          "answer": "Jön a busz."
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "megy-jon"
-      ]
+        "val-vel"
+      ],
+      "tiles": [
+        "Anna",
+        "biciklivel",
+        "jön",
+        "a",
+        "múzeumba",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "biciklivel",
+        "jön",
+        "a",
+        "múzeumba",
+        "."
+      ],
+      "english": "Anna is coming to the museum by bicycle."
     },
     {
       "id": "a1-138-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-transport-directions-vocab"
+      ],
       "template": [
         {
-          "prompt": "Tell someone to go straight, then right.",
-          "answer": "Menj egyenesen, aztán jobbra."
+          "prompt": "Say that you are going by bicycle.",
+          "answer": "Biciklivel megyek."
+        },
+        {
+          "prompt": "Ask when the train arrives.",
+          "answer": "Mikor érkezik a vonat?"
         }
-      ],
-      "teaches": [
-        "megy-jon"
       ]
     },
     {
       "id": "a1-138-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'on foot'.",
-      "options": [
-        "gyalog",
-        "bicikli",
-        "busz"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "megy-jon"
       ],
-      "stage": "check"
+      "sentence": "Mi gyalog ____.",
+      "english": "We are going on foot.",
+      "answer": "megyünk"
     },
     {
       "id": "a1-138-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'come'.",
-      "options": [
-        "jön",
-        "megy",
-        "indul"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "megy-jon"
       ],
-      "stage": "check"
+      "question": "Which sentence says “the bus is coming soon”?",
+      "options": [
+        "Hamarosan megy a busz.",
+        "Hamarosan jönnek a busz.",
+        "Hamarosan jön a busz."
+      ],
+      "correct": 2
     }
   ]
 }

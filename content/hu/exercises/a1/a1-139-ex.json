@@ -2,292 +2,235 @@
   "lesson": "a1-139",
   "exercises": [
     {
-      "id": "a1-139-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'bicikli' mean?",
-      "options": [
-        "bicycle",
-        "on foot",
-        "taxi"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
-    },
-    {
-      "id": "a1-139-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'jön' mean?",
-      "options": [
-        "to come",
-        "to go",
-        "to depart"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
-    },
-    {
       "id": "a1-139-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'indul' mean?",
-      "options": [
-        "to depart",
-        "to arrive",
-        "to come"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-transport-directions-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “goes up”?",
+      "options": [
+        "lemegy",
+        "felmegy",
+        "bemegy"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-139-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'felszáll' mean?",
-      "options": [
-        "to get on",
-        "to get off",
-        "to depart"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "directional-preverbs"
       ],
-      "stage": "introduce"
+      "question": "Which word means “I am going in”?",
+      "options": [
+        "Kimegyek.",
+        "Lemegyek.",
+        "Bemegyek."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-139-controlled-1",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Mikor ____ a vonat?",
-      "hint": "departs",
-      "english": "When does the train depart?",
-      "answer": "indul",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "directional-preverbs"
       ],
-      "stage": "controlled"
+      "sentence": "Anna ____ a kertbe.",
+      "english": "Anna goes out into the garden.",
+      "answer": "kimegy"
     },
     {
       "id": "a1-139-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'to arrive'.",
-      "options": [
-        "érkezik",
-        "indul",
-        "leszáll"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-139-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "indul",
-          "depart"
-        ],
-        [
-          "érkezik",
-          "arrive"
-        ],
-        [
-          "felszáll",
-          "get on"
-        ],
-        [
-          "leszáll",
-          "get off"
-        ]
-      ],
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-139-controlled-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Mikor indul a vonat?",
-      "base_word": "indul",
-      "base_gloss": "When does the train depart?",
-      "options": [
-        {
-          "word": "érkezik",
-          "inflected": "érkezik",
-          "sentence": "Mikor érkezik a vonat?",
-          "gloss": "arrives"
-        },
-        {
-          "word": "megy",
-          "inflected": "megy",
-          "sentence": "Mikor megy a vonat?",
-          "gloss": "goes"
-        }
-      ],
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-139-practice-1",
-      "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which verb is an ik-verb, needing -em for 'I' instead of -ek?",
-      "options": [
-        "érkezik",
-        "indul",
-        "jön"
-      ],
-      "correct": 0,
-      "teaches": [
-        "ik-verbs-dolgozom-not-dolgozok"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-139-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Mi ____, aztán te leszállsz.",
-      "hint": "get on",
-      "english": "We get on, then you get off.",
-      "answer": "felszállunk",
+      "stage": "controlled",
       "teaches": [
         "directional-preverbs"
       ],
-      "stage": "practice"
+      "question": "How do you say “comes down”?",
+      "options": [
+        "lejön",
+        "bejön",
+        "kijön"
+      ],
+      "correct": 0
     },
     {
-      "id": "a1-139-practice-3",
+      "id": "a1-139-controlled-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "megy-jon"
+      ],
+      "question": "Meg asks Anna and Károly whether they are coming in. Which question?",
+      "options": [
+        "Bejönnek?",
+        "Bejövünk?",
+        "Bejöttök?"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-139-controlled-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "directional-preverbs"
+      ],
+      "question": "Which question asks when you go in?",
+      "options": [
+        "Mikor bemész?",
+        "Mikor mész be?",
+        "Mikor be mész?"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-139-practice-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-transport-directions-vocab"
+      ],
       "pairs": [
         [
-          "indul",
-          "depart"
+          "bemegy",
+          "goes in"
         ],
         [
-          "érkezik",
-          "arrive"
+          "kimegy",
+          "goes out"
+        ],
+        [
+          "felmegy",
+          "goes up"
+        ],
+        [
+          "lemegy",
+          "goes down"
         ],
         [
           "felszáll",
-          "get on"
+          "gets on"
         ],
         [
           "leszáll",
-          "get off"
-        ],
-        [
-          "jön",
-          "come"
+          "gets off"
         ]
-      ],
+      ]
+    },
+    {
+      "id": "a1-139-practice-2",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "directional-preverbs"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Nem",
+        "megyek",
+        "ki",
+        "a",
+        "kertbe",
+        "."
+      ],
+      "solution": [
+        "Nem",
+        "megyek",
+        "ki",
+        "a",
+        "kertbe",
+        "."
+      ],
+      "english": "I am not going out into the garden."
+    },
+    {
+      "id": "a1-139-practice-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "directional-preverbs"
+      ],
+      "sentence": "Mikor jössz ____?",
+      "english": "When are you coming down?",
+      "answer": "le"
     },
     {
       "id": "a1-139-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "base_sentence": "Mikor érkezünk?",
-      "base_word": "érkezünk",
-      "base_gloss": "When do we arrive?",
-      "options": [
-        {
-          "word": "indulunk",
-          "inflected": "indulunk",
-          "sentence": "Mikor indulunk?",
-          "gloss": "do we depart"
-        },
-        {
-          "word": "felszállunk",
-          "inflected": "felszállunk",
-          "sentence": "Mikor felszállunk?",
-          "gloss": "do we get on"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-transport-directions-vocab"
       ],
-      "stage": "practice"
+      "question": "You are at the stop and the bus stops. You get off. Which sentence?",
+      "options": [
+        "Felszállok.",
+        "Lejövök.",
+        "Leszállok."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-139-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mikor indul a vonat?"
-        },
-        {
-          "speaker": "Mariann",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Öt perc múlva. Szálljunk fel!",
-        "Szép ez a ruha."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "directional-preverbs"
       ],
-      "stage": "practice"
+      "sentence": "Nem ____ le.",
+      "english": "I am not getting off.",
+      "answer": "szállok"
     },
     {
       "id": "a1-139-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "megy-jon"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mikor érkezünk?"
+          "speaker": "Károly",
+          "text": "Te is bemész?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Fél óra múlva.",
-        "Mennyibe kerül?"
+        "Igen, bemegyünk.",
+        "Igen, bemegy.",
+        "Igen, bemegyek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-139-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "directional-preverbs"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Most felszállunk."
+          "speaker": "Anna",
+          "text": "Bemegyünk a boltba?"
         },
         {
           "speaker": "Meg",
@@ -295,73 +238,82 @@
         }
       ],
       "options": [
-        "Rendben, én is felszállok.",
-        "Szia, hogy vagy?"
+        "Nem, nem bemegyünk.",
+        "Nem, nem megyünk be.",
+        "Nem, nem megyünk ki."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-139-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask when the train departs.",
-          "answer": "Mikor indul a vonat?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "a1-transport-directions-vocab"
-      ]
+        "directional-preverbs"
+      ],
+      "tiles": [
+        "Anna",
+        "nem",
+        "jön",
+        "ki",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "nem",
+        "jön",
+        "ki",
+        "."
+      ],
+      "english": "Anna is not coming out."
     },
     {
       "id": "a1-139-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Say we get on, then you get off.",
-          "answer": "Mi felszállunk, aztán te leszállsz."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "directional-preverbs"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you go up.",
+          "answer": "Felmegyek."
+        },
+        {
+          "prompt": "Say that you are not going in.",
+          "answer": "Nem megyek be."
+        }
       ]
     },
     {
       "id": "a1-139-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Choose the correct word for 'depart'.",
-      "options": [
-        "indul",
-        "érkezik",
-        "jön"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-transport-directions-vocab"
       ],
-      "stage": "check"
+      "question": "Which sentence says “I am getting on”?",
+      "options": [
+        "Bemegyek.",
+        "Felszállok.",
+        "Leszállok."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-139-check-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'get off'.",
-      "options": [
-        "leszáll",
-        "felszáll",
-        "indul"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "directional-preverbs"
       ],
-      "stage": "check"
+      "sentence": "Anna nem jön ____.",
+      "english": "Anna is not coming out.",
+      "answer": "ki"
     }
   ]
 }

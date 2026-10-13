@@ -2,184 +2,109 @@
   "lesson": "a1-137",
   "exercises": [
     {
-      "id": "a1-137-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'villamos' mean?",
-      "options": [
-        "tram",
-        "metro",
-        "bus"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
-    },
-    {
-      "id": "a1-137-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'metró' mean?",
-      "options": [
-        "metro",
-        "train",
-        "bus"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
-    },
-    {
       "id": "a1-137-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'jegy' mean?",
-      "options": [
-        "ticket",
-        "stop",
-        "taxi"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-transport-directions-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “ticket”?",
+      "options": [
+        "megálló",
+        "jegy",
+        "állomás"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-137-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'megálló' mean?",
-      "options": [
-        "stop",
-        "ticket",
-        "station"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "introduce"
+      "question": "Which sentence asks for a ticket?",
+      "options": [
+        "Egy jegy kérek.",
+        "Egy jegyot kérek.",
+        "Egy jegyet kérek."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-137-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Van ____?",
-      "hint": "our ticket",
-      "english": "Do we have our ticket?",
-      "answer": "jegyünk",
+      "stage": "controlled",
       "teaches": [
-        "possessive-suffixes"
+        "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "sentence": "Kérek egy ____.",
+      "english": "I would like a ticket.",
+      "answer": "jegyet"
     },
     {
       "id": "a1-137-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'taxi'.",
-      "options": [
-        "taxi",
-        "jegy",
-        "megálló"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "controlled"
+      "question": "Which question asks where the stop is?",
+      "options": [
+        "Hová van a megálló?",
+        "Mi van a megálló?",
+        "Hol van a megálló?"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-137-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "jegy",
-          "ticket"
-        ],
-        [
-          "megálló",
-          "stop"
-        ],
-        [
-          "pályaudvar",
-          "railway station"
-        ],
-        [
-          "taxi",
-          "taxi"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "singular-after-numbers"
       ],
-      "stage": "controlled"
+      "sentence": "Három ____ kell.",
+      "english": "Three tickets are needed.",
+      "answer": "jegy"
     },
     {
       "id": "a1-137-controlled-4",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Van jegyünk?",
-      "base_word": "jegyünk",
-      "base_gloss": "Do we have a ticket?",
-      "options": [
-        {
-          "word": "taxink",
-          "inflected": "taxink",
-          "sentence": "Van taxink?",
-          "gloss": "our taxi"
-        },
-        {
-          "word": "jegyed",
-          "inflected": "jegyed",
-          "sentence": "Van jegyed?",
-          "gloss": "your ticket"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "possessive-suffixes"
+        "a1-transport-directions-vocab"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Mennyibe",
+        "kerül",
+        "a",
+        "jegy",
+        "?"
+      ],
+      "solution": [
+        "Mennyibe",
+        "kerül",
+        "a",
+        "jegy",
+        "?"
+      ],
+      "english": "How much does the ticket cost?"
     },
     {
       "id": "a1-137-practice-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which question word means 'by what means'?",
-      "options": [
-        "mivel",
-        "mikor",
-        "hová"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-137-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A ____ ott van.",
-      "hint": "stop",
-      "english": "The stop is over there.",
-      "answer": "megálló",
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-137-practice-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-transport-directions-vocab"
+      ],
       "pairs": [
         [
           "jegy",
@@ -190,178 +115,222 @@
           "stop"
         ],
         [
+          "állomás",
+          "station"
+        ],
+        [
           "pályaudvar",
-          "railway station"
+          "large railway station"
         ],
         [
           "taxi",
           "taxi"
         ],
         [
-          "busz",
-          "bus"
+          "vonat",
+          "train"
         ]
+      ]
+    },
+    {
+      "id": "a1-137-practice-2",
+      "type": "substitution",
+      "category": "grammar",
+      "stage": "practice",
+      "base_sentence": "Egy jegyet kérek.",
+      "base_word": "jegy",
+      "base_gloss": "I would like a ticket.",
+      "options": [
+        {
+          "word": "kávé",
+          "inflected": "kávét",
+          "sentence": "Egy kávét kérek.",
+          "gloss": "coffee"
+        },
+        {
+          "word": "sajt",
+          "inflected": "sajtot",
+          "sentence": "Egy sajtot kérek.",
+          "gloss": "cheese"
+        }
       ],
+      "teaches": [
+        "how-the-accusative-t-works"
+      ]
+    },
+    {
+      "id": "a1-137-practice-3",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-transport-directions-vocab"
       ],
-      "stage": "practice"
+      "question": "Which sentence says the railway station is far from here?",
+      "options": [
+        "A pályaudvar nincs innen.",
+        "A pályaudvar közel van innen.",
+        "A pályaudvar messze van innen."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-137-practice-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Hol a pályaudvar?",
-      "base_word": "pályaudvar",
-      "base_gloss": "Where's the railway station?",
-      "options": [
-        {
-          "word": "megálló",
-          "inflected": "megálló",
-          "sentence": "Hol a megálló?",
-          "gloss": "stop"
-        },
-        {
-          "word": "taxi",
-          "inflected": "taxi",
-          "sentence": "Hol a taxi?",
-          "gloss": "taxi"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "ban-ben-in"
       ],
-      "stage": "practice"
+      "question": "Which sentence says you are waiting at the stop?",
+      "options": [
+        "A megállóba várok.",
+        "A megállóban várok.",
+        "A megálló várok."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "0": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-137-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Van jegyünk?"
-        },
-        {
-          "speaker": "Mariann",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Igen, van két jegyünk.",
-        "Szép ez a ruha."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-transport-directions-vocab"
       ],
-      "stage": "practice"
+      "sentence": "Nincs ____ itt.",
+      "english": "There is no stop here.",
+      "answer": "megálló"
     },
     {
       "id": "a1-137-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "singular-after-numbers"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Hol van a pályaudvar?"
+          "speaker": "Eladó",
+          "text": "Hány jegy kell?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Menj egyenesen, aztán jobbra.",
-        "Mennyibe kerül?"
+        "Két jegyek kell.",
+        "Két jegyet kell.",
+        "Két jegy kell."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-137-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-transport-directions-vocab"
+      ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Hol áll a taxi?"
+          "text": "Hol van a megálló?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Anna",
           "text": "_____"
         }
       ],
       "options": [
-        "Ott balra, a pályaudvar előtt.",
-        "Szia, hogy vagy?"
+        "Busszal megy.",
+        "Közel van innen.",
+        "Igen, van."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-137-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask if we have a ticket.",
-          "answer": "Van jegyünk?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "possessive-suffixes"
-      ]
+        "a1-transport-directions-vocab"
+      ],
+      "tiles": [
+        "A",
+        "pályaudvar",
+        "messze",
+        "van",
+        "innen",
+        "."
+      ],
+      "solution": [
+        "A",
+        "pályaudvar",
+        "messze",
+        "van",
+        "innen",
+        "."
+      ],
+      "english": "The railway station is far from here."
     },
     {
       "id": "a1-137-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-transport-directions-vocab"
+      ],
       "template": [
         {
-          "prompt": "Ask where the railway station is.",
-          "answer": "Hol a pályaudvar?"
+          "prompt": "Ask for two tickets.",
+          "answer": "Két jegyet kérek."
+        },
+        {
+          "prompt": "Ask how much the ticket costs.",
+          "answer": "Mennyibe kerül a jegy?"
         }
-      ],
-      "teaches": [
-        "spatial-questions-hol-hova"
       ]
     },
     {
       "id": "a1-137-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Choose the correct word for 'ticket'.",
-      "options": [
-        "jegy",
-        "megálló",
-        "taxi"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-transport-directions-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “station”?",
+      "options": [
+        "állomás",
+        "jegy",
+        "megálló"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-137-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'stop'.",
-      "options": [
-        "megálló",
-        "pályaudvar",
-        "jegy"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-transport-directions-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "question": "Which sentence asks for three tickets?",
+      "options": [
+        "Három jegy kérek.",
+        "Három jegyeket kérek.",
+        "Három jegyet kérek."
+      ],
+      "correct": 2
     }
   ]
 }
