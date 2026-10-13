@@ -7,18 +7,14 @@
       "category": "grammar",
       "stage": "introduce",
       "teaches": [
-        "ban-ben-in"
+        "vowel-harmony"
       ],
-      "question": "Which sentence means “I am in the living room”?",
+      "question": "Which means “in the hall”?",
       "options": [
-        "A nappaliban vagyok.",
-        "A nappaliba vagyok.",
-        "A nappaliban van."
+        "a teremben",
+        "a teremban"
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-52-introduce-2",
@@ -26,21 +22,47 @@
       "category": "grammar",
       "stage": "introduce",
       "teaches": [
-        "ban-ben-in"
+        "van-zero-copula"
       ],
-      "question": "Which form means “in the classroom”?",
+      "question": "Which sentence means “I am in the office”?",
       "options": [
-        "a teremben",
-        "a teremban",
-        "a terembe"
+        "Az irodában vagyok.",
+        "Az irodában vagy.",
+        "Az irodában van."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "2": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-52-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "ban-ben-in"
+      ],
+      "sentence": "A kulcs a ____ van.",
+      "hint": "szekrény, in",
+      "english": "The key is in the cupboard.",
+      "answer": "szekrényben"
+    },
+    {
+      "id": "a1-52-controlled-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "vowel-harmony"
+      ],
+      "question": "Which of these words takes -ben?",
+      "options": [
+        "kert",
+        "iskola",
+        "nappali"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-52-controlled-3",
       "type": "matching",
       "category": "vocabulary",
       "stage": "controlled",
@@ -53,63 +75,46 @@
           "living room"
         ],
         [
-          "iskola",
-          "school"
-        ],
-        [
           "iroda",
           "office"
         ],
         [
           "terem",
-          "classroom"
+          "hall"
+        ],
+        [
+          "kert",
+          "garden"
+        ],
+        [
+          "szekrény",
+          "cupboard"
         ]
       ]
     },
     {
-      "id": "a1-52-controlled-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "stage": "controlled",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "sentence": "Anna az ____ van.",
-      "hint": "iroda + -ban",
-      "answer": "irodában",
-      "english": "Anna is at the office."
-    },
-    {
-      "id": "a1-52-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "stage": "controlled",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "question": "Which form means “at school”?",
-      "options": [
-        "az iskolában",
-        "az iskolába",
-        "az iskolán"
-      ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
-    },
-    {
       "id": "a1-52-controlled-4",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
       "stage": "controlled",
       "teaches": [
         "ban-ben-in"
       ],
-      "sentence": "A könyv a ____ van.",
-      "hint": "terem + -ben",
-      "answer": "teremben",
-      "english": "The book is in the classroom."
+      "tiles": [
+        "Mariann",
+        "az",
+        "irodában",
+        "van",
+        "."
+      ],
+      "solution": [
+        "Mariann",
+        "az",
+        "irodában",
+        "van",
+        "."
+      ],
+      "english": "Mariann is in the office."
     },
     {
       "id": "a1-52-practice-1",
@@ -119,11 +124,11 @@
       "teaches": [
         "a1-where-things-are-vocab"
       ],
-      "question": "Which Hungarian word means “office”?",
+      "question": "Apa a kertben van. Where is Dad?",
       "options": [
-        "az iroda",
-        "az iskola",
-        "a terem"
+        "In the garden.",
+        "In the school.",
+        "In the office."
       ],
       "correct": 0
     },
@@ -133,53 +138,39 @@
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "ban-ben-in"
       ],
-      "sentence": "____ van az iroda?",
-      "hint": "Where",
-      "answer": "Hol",
-      "english": "Where is the office?"
+      "sentence": "Anna az ____ van.",
+      "hint": "iskola, in",
+      "english": "Anna is at school.",
+      "answer": "iskolában"
     },
     {
       "id": "a1-52-practice-3",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "stage": "practice",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "tiles": [
-        "A",
-        "nappaliban",
-        "vagyok",
-        "."
-      ],
-      "solution": [
-        "A",
-        "nappaliban",
-        "vagyok",
-        "."
-      ],
-      "english": "I am in the living room."
-    },
-    {
-      "id": "a1-52-practice-4",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "vowel-harmony"
       ],
       "question": "Which sentence is correct?",
       "options": [
-        "Károly a teremben van.",
-        "Károly a terembe van.",
-        "Károly a terem van."
+        "Meg a nappaliban van.",
+        "Meg a nappaliben van."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
+    },
+    {
+      "id": "a1-52-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "van-zero-copula"
+      ],
+      "sentence": "Anna a teremben ____.",
+      "english": "Anna is in the hall.",
+      "answer": "van"
     },
     {
       "id": "a1-52-practice-5",
@@ -187,23 +178,21 @@
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "van-zero-copula"
       ],
       "tiles": [
-        "Anna",
-        "az",
-        "iskolában",
-        "van",
-        "."
+        "A",
+        "nappaliban",
+        "vagy",
+        "?"
       ],
       "solution": [
-        "Anna",
-        "az",
-        "iskolában",
-        "van",
-        "."
+        "A",
+        "nappaliban",
+        "vagy",
+        "?"
       ],
-      "english": "Anna is at school."
+      "english": "Are you in the living room?"
     },
     {
       "id": "a1-52-dialogue-1",
@@ -211,26 +200,24 @@
       "category": "dialogue",
       "stage": "dialogue",
       "teaches": [
-        "ban-ben-in"
+        "van-zero-copula"
       ],
       "prompt": [
         {
-          "speaker": "Anna",
-          "text": "Hol vagy, Károly?"
+          "speaker": "Károly",
+          "text": "Hol van András?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Az irodában vagyok.",
-        "Az irodába vagyok."
+        "András az iskolában van.",
+        "András az iskolában vagyok.",
+        "András az iskolában vagy."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-52-dialogue-2",
@@ -238,41 +225,48 @@
       "category": "dialogue",
       "stage": "dialogue",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "van-zero-copula"
       ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "_____"
+          "speaker": "Anna",
+          "text": "Hol vagy, Mariann?"
         },
         {
-          "speaker": "Anna",
-          "text": "A nappaliban van."
+          "speaker": "Mariann",
+          "text": "_____"
         }
       ],
       "options": [
-        "Hol van a könyv?",
-        "Ki a jó barát?"
+        "A teremben vagyok.",
+        "A teremben van.",
+        "A teremben vagy."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "ki-and-mi"
-      }
+      "correct": 0
     },
     {
       "id": "a1-52-production-1",
-      "type": "structured-writing",
-      "category": "writing",
+      "type": "sentence-builder",
+      "category": "grammar",
       "stage": "production",
       "teaches": [
         "ban-ben-in"
       ],
-      "template": [
-        {
-          "prompt": "Say that you are in the living room.",
-          "answer": "A nappaliban vagyok."
-        }
-      ]
+      "tiles": [
+        "Apa",
+        "a",
+        "kertben",
+        "van",
+        "."
+      ],
+      "solution": [
+        "Apa",
+        "a",
+        "kertben",
+        "van",
+        "."
+      ],
+      "english": "Dad is in the garden."
     },
     {
       "id": "a1-52-production-2",
@@ -280,42 +274,47 @@
       "category": "writing",
       "stage": "production",
       "teaches": [
-        "ban-ben-in"
+        "van-zero-copula"
       ],
       "template": [
         {
-          "prompt": "Say that Anna is at school.",
-          "answer": "Anna az iskolában van."
+          "prompt": "Say that you are in the living room.",
+          "answer": "A nappaliban vagyok."
+        },
+        {
+          "prompt": "Say that Anna is in the office.",
+          "answer": "Anna az irodában van."
         }
       ]
     },
     {
       "id": "a1-52-check-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "stage": "check",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "question": "Choose the correct location form for “terem”.",
-      "options": [
-        "a teremben",
-        "a teremban",
-        "a teremen"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-52-check-2",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
       "teaches": [
         "ban-ben-in"
       ],
-      "sentence": "Károly az iroda____ van.",
-      "answer": "ban",
-      "english": "Károly is at the office."
+      "sentence": "Meg a ____ van.",
+      "hint": "kert, in",
+      "english": "Meg is in the garden.",
+      "answer": "kertben"
+    },
+    {
+      "id": "a1-52-check-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "check",
+      "teaches": [
+        "van-zero-copula"
+      ],
+      "question": "Which sentence means “You are in the garden”?",
+      "options": [
+        "A kertben vagy.",
+        "A kertben vagyok.",
+        "A kertben van."
+      ],
+      "correct": 0
     }
   ]
 }

@@ -7,18 +7,15 @@
       "category": "grammar",
       "stage": "introduce",
       "teaches": [
-        "ban-ben-in"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "question": "Which sentence means “The flat is in the house”?",
+      "question": "Which sentence means “There is a table in the room”?",
       "options": [
-        "A lakás a házban van.",
-        "A lakás a házba van.",
-        "A lakás a ház van."
+        "A szobában van egy asztal.",
+        "A szobában nincs asztal.",
+        "A szoba van egy asztal."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-54-introduce-2",
@@ -26,18 +23,14 @@
       "category": "grammar",
       "stage": "introduce",
       "teaches": [
-        "ban-ben-in"
+        "singular-after-numbers"
       ],
-      "question": "Which form means “in the street”?",
+      "question": "Which means “three chairs”?",
       "options": [
-        "az utcában",
-        "az utcába",
-        "az utcánál"
+        "három szék",
+        "három székek"
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-54-controlled-1",
@@ -63,6 +56,10 @@
         [
           "asztal",
           "table"
+        ],
+        [
+          "kert",
+          "garden"
         ]
       ]
     },
@@ -72,44 +69,49 @@
       "category": "grammar",
       "stage": "controlled",
       "teaches": [
-        "ban-ben-in"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "sentence": "A könyv a ____ van.",
-      "hint": "lakás + -ban",
-      "answer": "lakásban",
-      "english": "The book is in the flat."
+      "sentence": "A házban ____ szék.",
+      "hint": "there is no",
+      "english": "There is no chair in the house.",
+      "answer": "nincs"
     },
     {
       "id": "a1-54-controlled-3",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
       "teaches": [
-        "ban-ben-in"
+        "singular-after-numbers"
       ],
-      "question": "Which form means “in the house”?",
-      "options": [
-        "a házban",
-        "a házba",
-        "a házben"
-      ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "sentence": "A lakásban három ____ van.",
+      "hint": "room",
+      "english": "There are three rooms in the flat.",
+      "answer": "szoba"
     },
     {
       "id": "a1-54-controlled-4",
-      "type": "fill-blank",
-      "category": "vocabulary",
+      "type": "sentence-builder",
+      "category": "grammar",
       "stage": "controlled",
       "teaches": [
-        "a1-where-things-are-vocab"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "sentence": "Hol van az ____?",
-      "hint": "table",
-      "answer": "asztal",
-      "english": "Where is the table?"
+      "tiles": [
+        "A",
+        "szobában",
+        "nincs",
+        "asztal",
+        "."
+      ],
+      "solution": [
+        "A",
+        "szobában",
+        "nincs",
+        "asztal",
+        "."
+      ],
+      "english": "There is no table in the room."
     },
     {
       "id": "a1-54-practice-1",
@@ -119,11 +121,11 @@
       "teaches": [
         "a1-where-things-are-vocab"
       ],
-      "question": "Which Hungarian word means “street”?",
+      "question": "A házban van egy lámpa és egy szék. What is in the house?",
       "options": [
-        "az utca",
-        "a szoba",
-        "a lakás"
+        "A lamp and a chair.",
+        "A table and a door.",
+        "A key and a bag."
       ],
       "correct": 0
     },
@@ -133,83 +135,69 @@
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "sentence": "____ van a lakás?",
-      "hint": "Where",
-      "answer": "Hol",
-      "english": "Where is the flat?"
+      "sentence": "A konyhában ____ egy ablak.",
+      "hint": "there is",
+      "english": "There is a window in the kitchen.",
+      "answer": "van"
     },
     {
       "id": "a1-54-practice-3",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "stage": "practice",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "tiles": [
-        "Az",
-        "asztal",
-        "a",
-        "szobában",
-        "van",
-        "."
-      ],
-      "solution": [
-        "Az",
-        "asztal",
-        "a",
-        "szobában",
-        "van",
-        "."
-      ],
-      "english": "The table is in the room."
-    },
-    {
-      "id": "a1-54-practice-4",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "singular-after-numbers"
       ],
       "question": "Which sentence is correct?",
       "options": [
-        "A bolt az utcában van.",
-        "A bolt az utcába van.",
-        "A bolt az utcán van a."
+        "A házban sok ablak van.",
+        "A házban sok ablakok van."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
-      "id": "a1-54-practice-5",
+      "id": "a1-54-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "singular-after-numbers"
       ],
       "tiles": [
-        "A",
-        "lakás",
-        "a",
-        "házban",
+        "Hány",
+        "szoba",
         "van",
-        "."
+        "a",
+        "lakásban",
+        "?"
       ],
       "solution": [
-        "A",
-        "lakás",
-        "a",
-        "házban",
+        "Hány",
+        "szoba",
         "van",
-        "."
+        "a",
+        "lakásban",
+        "?"
       ],
-      "english": "The flat is in the house."
+      "english": "How many rooms are there in the flat?"
+    },
+    {
+      "id": "a1-54-practice-5",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "van-and-nincs-there-is-there-isn-t"
+      ],
+      "question": "Which sentence says there is no kitchen in the flat?",
+      "options": [
+        "A lakásban nincs konyha.",
+        "A lakásban van konyha.",
+        "A lakásban nincs ajtó."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-54-dialogue-1",
@@ -217,12 +205,12 @@
       "category": "dialogue",
       "stage": "dialogue",
       "teaches": [
-        "ban-ben-in"
+        "singular-after-numbers"
       ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Hol van a bolt?"
+          "text": "Hány szoba van a lakásban?"
         },
         {
           "speaker": "Károly",
@@ -230,12 +218,13 @@
         }
       ],
       "options": [
-        "Az utcában van.",
-        "Az utcába van."
+        "A lakásban három szoba van.",
+        "A lakásban három szobák van.",
+        "A lakásban három szobában van."
       ],
       "correct": 0,
       "distractor_skills": {
-        "1": "movement-with-ba-be"
+        "2": "ban-ben-in"
       }
     },
     {
@@ -244,41 +233,50 @@
       "category": "dialogue",
       "stage": "dialogue",
       "teaches": [
-        "ban-ben-in"
+        "yes-no-questions"
       ],
       "prompt": [
         {
           "speaker": "Anna",
-          "text": "Hol van az asztal?"
+          "text": "Van asztal a konyhában?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "A szobában van.",
-        "A szobába van."
+        "Igen, van.",
+        "Igen, nincs.",
+        "Nem, van."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-54-production-1",
-      "type": "structured-writing",
-      "category": "writing",
+      "type": "sentence-builder",
+      "category": "grammar",
       "stage": "production",
       "teaches": [
-        "ban-ben-in"
+        "singular-after-numbers"
       ],
-      "template": [
-        {
-          "prompt": "Say that the flat is in the house.",
-          "answer": "A lakás a házban van."
-        }
-      ]
+      "tiles": [
+        "A",
+        "házban",
+        "sok",
+        "ablak",
+        "van",
+        "."
+      ],
+      "solution": [
+        "A",
+        "házban",
+        "sok",
+        "ablak",
+        "van",
+        "."
+      ],
+      "english": "There are many windows in the house."
     },
     {
       "id": "a1-54-production-2",
@@ -286,12 +284,16 @@
       "category": "writing",
       "stage": "production",
       "teaches": [
-        "ban-ben-in"
+        "van-and-nincs-there-is-there-isn-t"
       ],
       "template": [
         {
-          "prompt": "Say that the table is in the room.",
-          "answer": "Az asztal a szobában van."
+          "prompt": "Say there is a lamp in the room.",
+          "answer": "A szobában van egy lámpa."
+        },
+        {
+          "prompt": "Say there is no table in the kitchen.",
+          "answer": "A konyhában nincs asztal."
         }
       ]
     },
@@ -301,17 +303,15 @@
       "category": "grammar",
       "stage": "check",
       "teaches": [
-        "ban-ben-in"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "question": "Choose the correct location sentence.",
+      "question": "Which sentence means “There is no lamp in the bedroom”?",
       "options": [
-        "A lakás a házban van.",
-        "A lakás a házba van."
+        "A hálószobában nincs lámpa.",
+        "A hálószobában van lámpa.",
+        "A fürdőszobában nincs lámpa."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-54-check-2",
@@ -319,11 +319,12 @@
       "category": "grammar",
       "stage": "check",
       "teaches": [
-        "ban-ben-in"
+        "singular-after-numbers"
       ],
-      "sentence": "A bolt az utca____ van.",
-      "answer": "ban",
-      "english": "The shop is in the street."
+      "sentence": "A szobában négy ____ van.",
+      "hint": "chair",
+      "english": "There are four chairs in the room.",
+      "answer": "szék"
     }
   ]
 }

@@ -7,18 +7,15 @@
       "category": "grammar",
       "stage": "introduce",
       "teaches": [
-        "ban-ben-in"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
-      "question": "Which sentence means “The book is in the bag”?",
+      "question": "Which sentence means “The bag is not in the room”?",
       "options": [
-        "A könyv a táskában van.",
-        "A könyv a táskába van.",
-        "A könyv a táska van."
+        "A táska nincs a szobában.",
+        "A táska van a szobában.",
+        "A táska nincs a szoba."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-55-introduce-2",
@@ -26,18 +23,15 @@
       "category": "grammar",
       "stage": "introduce",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "adjective-order-before-the-noun"
       ],
-      "question": "Which question asks “Where is the bag?”?",
+      "question": "Which means “in the big room”?",
       "options": [
-        "Hol van a táska?",
-        "Hová van a táska?",
-        "Ki van a táska?"
+        "a nagy szobában",
+        "a nagyban szoba",
+        "a nagy szoba"
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "2": "ki-and-mi"
-      }
+      "correct": 0
     },
     {
       "id": "a1-55-controlled-1",
@@ -63,6 +57,10 @@
         [
           "táska",
           "bag"
+        ],
+        [
+          "asztal",
+          "table"
         ]
       ]
     },
@@ -72,41 +70,51 @@
       "category": "grammar",
       "stage": "controlled",
       "teaches": [
-        "ban-ben-in"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
-      "sentence": "A táska a ____ van.",
-      "hint": "nappali + -ban",
-      "answer": "nappaliban",
-      "english": "The bag is in the living room."
+      "sentence": "Ez ____ a konyha, ez a fürdőszoba.",
+      "hint": "not",
+      "english": "This is not the kitchen, this is the bathroom.",
+      "answer": "nem"
     },
     {
       "id": "a1-55-controlled-3",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "stage": "controlled",
-      "teaches": [
-        "a1-where-things-are-vocab"
-      ],
-      "question": "Which word means “window”?",
-      "options": [
-        "az ablak",
-        "az asztal",
-        "az ajtó"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-55-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
-      "sentence": "____ van a szék?",
-      "hint": "Where",
-      "answer": "Hol",
-      "english": "Where is the chair?"
+      "sentence": "A táska ____ a szobában.",
+      "hint": "is not in",
+      "english": "The bag is not in the room.",
+      "answer": "nincs"
+    },
+    {
+      "id": "a1-55-controlled-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "adjective-order-before-the-noun"
+      ],
+      "tiles": [
+        "Anna",
+        "az",
+        "új",
+        "lakásban",
+        "van",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "az",
+        "új",
+        "lakásban",
+        "van",
+        "."
+      ],
+      "english": "Anna is in the new flat."
     },
     {
       "id": "a1-55-practice-1",
@@ -116,52 +124,42 @@
       "teaches": [
         "a1-where-things-are-vocab"
       ],
-      "question": "Which Hungarian word means “door”?",
+      "question": "Az ajtó nagy, az ablak kicsi. Which one is small?",
       "options": [
-        "az ajtó",
-        "az ablak",
-        "a szoba"
+        "The window.",
+        "The door.",
+        "The chair."
       ],
       "correct": 0
     },
     {
       "id": "a1-55-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "stage": "practice",
-      "teaches": [
-        "a1-where-things-are-vocab"
-      ],
-      "sentence": "Hol van a ____?",
-      "hint": "bag",
-      "answer": "táska",
-      "english": "Where is the bag?"
-    },
-    {
-      "id": "a1-55-practice-3",
-      "type": "sentence-builder",
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "adjective-order-before-the-noun"
       ],
-      "tiles": [
-        "A",
-        "szék",
-        "a",
-        "szobában",
-        "van",
-        "."
+      "sentence": "Mariann a ____ kertben van.",
+      "hint": "beautiful",
+      "english": "Mariann is in the beautiful garden.",
+      "answer": "szép"
+    },
+    {
+      "id": "a1-55-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "adjective-order-before-the-noun"
       ],
-      "solution": [
-        "A",
-        "szék",
-        "a",
-        "szobában",
-        "van",
-        "."
+      "question": "Which sentence is correct?",
+      "options": [
+        "Apa a régi házban van.",
+        "Apa a régiben házban van.",
+        "Apa a régi ház van."
       ],
-      "english": "The chair is in the room."
+      "correct": 0
     },
     {
       "id": "a1-55-practice-4",
@@ -169,18 +167,15 @@
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
-      "question": "Which sentence is correct?",
+      "question": "Which sentence means “This is not the chair”?",
       "options": [
-        "A könyv a táskában van.",
-        "A könyv a táskába van.",
-        "A könyv a táskán van a."
+        "Ez nem a szék.",
+        "Ez nincs a szék.",
+        "Ez nem van a szék."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-55-practice-5",
@@ -188,34 +183,34 @@
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
       "tiles": [
-        "Hol",
-        "van",
-        "az",
-        "ajtó",
-        "?"
+        "Károly",
+        "nincs",
+        "a",
+        "nappaliban",
+        "."
       ],
       "solution": [
-        "Hol",
-        "van",
-        "az",
-        "ajtó",
-        "?"
+        "Károly",
+        "nincs",
+        "a",
+        "nappaliban",
+        "."
       ],
-      "english": "Where is the door?"
+      "english": "Károly is not in the living room."
     },
     {
       "id": "a1-55-reading-1",
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Hol van a táska?",
+      "question": "Where is Meg at the start of the story?",
       "options": [
-        "A nappaliban van.",
-        "A konyhában van.",
-        "A szobában van."
+        "In the shop.",
+        "In the kitchen.",
+        "In the garden."
       ],
       "correct": 0
     },
@@ -224,11 +219,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Hol van az asztal és a szék?",
+      "question": "What is in the living room?",
       "options": [
-        "A szobában van.",
-        "Az utcában van.",
-        "A parkban van."
+        "A nice table and four chairs.",
+        "A nice table and three chairs.",
+        "A big table and four chairs."
       ],
       "correct": 0
     },
@@ -237,11 +232,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Hol van a bolt?",
+      "question": "Where is Anna’s key?",
       "options": [
-        "Az utcában van.",
-        "A házban van.",
-        "A szobában van."
+        "In the cupboard in the bedroom.",
+        "In the cupboard in the kitchen.",
+        "In the bag in the living room."
       ],
       "correct": 0
     },
@@ -251,12 +246,12 @@
       "category": "dialogue",
       "stage": "dialogue",
       "teaches": [
-        "ban-ben-in"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Hol van a táska?"
+          "text": "Ez a konyha?"
         },
         {
           "speaker": "Károly",
@@ -264,13 +259,10 @@
         }
       ],
       "options": [
-        "A nappaliban van.",
-        "A nappaliba van."
+        "Nem, ez nem a konyha.",
+        "Nem, ez nincs a konyha."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-55-dialogue-2",
@@ -278,12 +270,12 @@
       "category": "dialogue",
       "stage": "dialogue",
       "teaches": [
-        "ban-ben-in"
+        "adjective-order-before-the-noun"
       ],
       "prompt": [
         {
-          "speaker": "Anna",
-          "text": "Hol van a szék?"
+          "speaker": "Károly",
+          "text": "Hol van Anna?"
         },
         {
           "speaker": "Meg",
@@ -291,28 +283,39 @@
         }
       ],
       "options": [
-        "A szobában van.",
-        "A szobába van."
+        "Az új lakásban van.",
+        "Az újban lakásban van.",
+        "Az új lakás van."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-55-production-1",
-      "type": "structured-writing",
-      "category": "writing",
+      "type": "sentence-builder",
+      "category": "grammar",
       "stage": "production",
       "teaches": [
-        "ban-ben-in"
+        "adjective-order-before-the-noun"
       ],
-      "template": [
-        {
-          "prompt": "Say that the bag is in the room.",
-          "answer": "A táska a szobában van."
-        }
-      ]
+      "tiles": [
+        "A",
+        "nagy",
+        "szobában",
+        "van",
+        "egy",
+        "asztal",
+        "."
+      ],
+      "solution": [
+        "A",
+        "nagy",
+        "szobában",
+        "van",
+        "egy",
+        "asztal",
+        "."
+      ],
+      "english": "There is a table in the big room."
     },
     {
       "id": "a1-55-production-2",
@@ -320,44 +323,47 @@
       "category": "writing",
       "stage": "production",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
       "template": [
         {
-          "prompt": "Ask where the bag is.",
-          "answer": "Hol van a táska?"
+          "prompt": "Say that Károly is not in the kitchen.",
+          "answer": "Károly nincs a konyhában."
+        },
+        {
+          "prompt": "Say that this is not the bathroom.",
+          "answer": "Ez nem a fürdőszoba."
         }
       ]
     },
     {
       "id": "a1-55-check-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "stage": "check",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "question": "Choose the correct location sentence.",
-      "options": [
-        "A szék a szobában van.",
-        "A szék a szobába van."
-      ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
-    },
-    {
-      "id": "a1-55-check-2",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
       "teaches": [
-        "ban-ben-in"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
-      "sentence": "A könyv a táska____ van.",
-      "answer": "ban",
-      "english": "The book is in the bag."
+      "sentence": "Anna ____ az irodában.",
+      "hint": "is not in",
+      "english": "Anna is not in the office.",
+      "answer": "nincs"
+    },
+    {
+      "id": "a1-55-check-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "check",
+      "teaches": [
+        "adjective-order-before-the-noun"
+      ],
+      "question": "Which means “in the old house”?",
+      "options": [
+        "a régi házban",
+        "a régiben házban",
+        "a régi ház"
+      ],
+      "correct": 0
     }
   ]
 }

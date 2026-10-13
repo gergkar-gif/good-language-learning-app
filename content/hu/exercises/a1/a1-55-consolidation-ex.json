@@ -4,52 +4,34 @@
     {
       "id": "a1-55-consolidation-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "stage": "consolidation",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "question": "Which form means “in the living room”?",
-      "options": [
-        "a nappaliban",
-        "a nappaliba",
-        "a nappalin"
-      ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
-    },
-    {
-      "id": "a1-55-consolidation-2",
-      "type": "matching",
       "category": "vocabulary",
       "stage": "consolidation",
       "teaches": [
         "a1-where-things-are-vocab"
       ],
-      "pairs": [
-        [
-          "szoba",
-          "room"
-        ],
-        [
-          "konyha",
-          "kitchen"
-        ],
-        [
-          "iskola",
-          "school"
-        ],
-        [
-          "bolt",
-          "shop"
-        ],
-        [
-          "lakás",
-          "flat"
-        ]
-      ]
+      "question": "Which word means “living room”?",
+      "options": [
+        "nappali",
+        "hálószoba",
+        "konyha"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-55-consolidation-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "consolidation",
+      "teaches": [
+        "ban-ben-in"
+      ],
+      "question": "Which means “in the bathroom”?",
+      "options": [
+        "a fürdőszobában",
+        "a fürdőszobaban",
+        "a fürdőszobében"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-55-consolidation-3",
@@ -57,19 +39,15 @@
       "category": "grammar",
       "stage": "consolidation",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "vowel-harmony"
       ],
-      "question": "Which question asks “Where is the shop?”?",
+      "question": "Which of these words takes -ben?",
       "options": [
-        "Hol van a bolt?",
-        "Ki van a boltban?",
-        "Mi van a boltban?"
+        "szekrény",
+        "bolt",
+        "iroda"
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "ki-and-mi",
-        "2": "ki-and-mi"
-      }
+      "correct": 0
     },
     {
       "id": "a1-55-consolidation-4",
@@ -77,17 +55,17 @@
       "category": "grammar",
       "stage": "consolidation",
       "teaches": [
-        "itt-ott-here-there"
+        "definite-article-a-az"
       ],
-      "question": "Which sentence means “The chair is here”?",
+      "question": "Which means “in the library”?",
       "options": [
-        "A szék itt van.",
-        "A szék ott van.",
-        "A szék hol van?"
+        "a könyvtárban",
+        "az könyvtárban",
+        "egy könyvtárban"
       ],
       "correct": 0,
       "distractor_skills": {
-        "2": "spatial-questions-hol-hova"
+        "2": "indefinite-article-egy"
       }
     },
     {
@@ -98,16 +76,13 @@
       "teaches": [
         "van-and-nincs-there-is-there-isn-t"
       ],
-      "question": "Which sentence means “There is no chair in the room”?",
+      "question": "Which sentence means “There is no lamp in the room”?",
       "options": [
-        "Nincs szék a szobában.",
-        "Nem szék a szobában.",
-        "Van szék a szobában."
+        "A szobában nincs lámpa.",
+        "A szobában van lámpa.",
+        "A konyhában nincs lámpa."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "negation-with-nem"
-      }
+      "correct": 0
     },
     {
       "id": "a1-55-consolidation-6",
@@ -117,29 +92,23 @@
       "teaches": [
         "ban-ben-in"
       ],
-      "sentence": "A táska a ____ van.",
-      "hint": "szoba + -ban",
-      "answer": "szobában",
-      "english": "The bag is in the room."
+      "sentence": "Mariann a ____ van.",
+      "hint": "hálószoba, in",
+      "english": "Mariann is in the bedroom.",
+      "answer": "hálószobában"
     },
     {
       "id": "a1-55-consolidation-7",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
       "stage": "consolidation",
       "teaches": [
-        "definite-article-a-az"
+        "ban-ben-in"
       ],
-      "question": "Which article fits before “iroda”?",
-      "options": [
-        "az iroda",
-        "a iroda",
-        "egy iroda"
-      ],
-      "correct": 0,
-      "distractor_skills": {
-        "2": "indefinite-article-egy"
-      }
+      "sentence": "A telefon a ____ van.",
+      "hint": "szekrény, in",
+      "english": "The phone is in the cupboard.",
+      "answer": "szekrényben"
     },
     {
       "id": "a1-55-consolidation-8",
@@ -147,12 +116,11 @@
       "category": "grammar",
       "stage": "consolidation",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "van-zero-copula"
       ],
-      "sentence": "____ van a könyvtár?",
-      "hint": "Where",
-      "answer": "Hol",
-      "english": "Where is the library?"
+      "sentence": "Anna az iskolában ____.",
+      "english": "Anna is at school.",
+      "answer": "van"
     },
     {
       "id": "a1-55-consolidation-9",
@@ -160,28 +128,25 @@
       "category": "grammar",
       "stage": "consolidation",
       "teaches": [
-        "ban-ben-in"
+        "singular-after-numbers"
       ],
-      "sentence": "Károly a ____ van.",
-      "hint": "konyha + -ban",
-      "answer": "konyhában",
-      "english": "Károly is in the kitchen."
+      "sentence": "A lakásban öt ____ van.",
+      "hint": "room",
+      "english": "There are five rooms in the flat.",
+      "answer": "szoba"
     },
     {
       "id": "a1-55-consolidation-10",
-      "type": "multiple-choice",
-      "category": "vocabulary",
+      "type": "fill-blank",
+      "category": "grammar",
       "stage": "consolidation",
       "teaches": [
-        "a1-where-things-are-vocab"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
-      "question": "Which Hungarian word means “table”?",
-      "options": [
-        "az asztal",
-        "az ablak",
-        "az ajtó"
-      ],
-      "correct": 0
+      "sentence": "Károly ____ az irodában.",
+      "hint": "is not in",
+      "english": "Károly is not in the office.",
+      "answer": "nincs"
     },
     {
       "id": "a1-55-consolidation-11",
@@ -189,25 +154,26 @@
       "category": "dialogue",
       "stage": "consolidation",
       "teaches": [
-        "ban-ben-in"
+        "spatial-questions-hol-hova"
       ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Hol vagy, Károly?"
+          "text": "_____"
         },
         {
           "speaker": "Károly",
-          "text": "_____"
+          "text": "A parkban vagyok."
         }
       ],
       "options": [
-        "Az irodában vagyok.",
-        "Az irodába vagyok."
+        "Hol vagy?",
+        "Ki vagy?",
+        "Hogy vagy?"
       ],
       "correct": 0,
       "distractor_skills": {
-        "1": "movement-with-ba-be"
+        "1": "ki-and-mi"
       }
     },
     {
@@ -216,166 +182,170 @@
       "category": "dialogue",
       "stage": "consolidation",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "singular-after-numbers"
       ],
       "prompt": [
         {
           "speaker": "Anna",
-          "text": "_____"
+          "text": "Hány szék van a nappaliban?"
         },
         {
-          "speaker": "Meg",
-          "text": "A boltban van."
+          "speaker": "Károly",
+          "text": "_____"
         }
       ],
       "options": [
-        "Hol van Károly?",
-        "Ki ez a barát?"
+        "A nappaliban négy szék van.",
+        "A nappaliban négy székek van.",
+        "A nappaliban négy székben van."
       ],
       "correct": 0,
       "distractor_skills": {
-        "1": "ki-and-mi"
+        "2": "ban-ben-in"
       }
     },
     {
       "id": "a1-55-consolidation-13",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "consolidation",
+      "teaches": [
+        "nem-vs-nincs-two-kinds-of-negation"
+      ],
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Ez a hálószoba?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Nem, ez nem a hálószoba.",
+        "Nem, ez nincs a hálószoba."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-55-consolidation-14",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "consolidation",
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t"
+        "adjective-order-before-the-noun"
       ],
-      "question": "Which sentence means “There is no bag in the room”?",
+      "question": "Which sentence is correct?",
       "options": [
-        "Nincs táska a szobában.",
-        "Nem táska a szobában.",
-        "Van táska a szobában."
+        "Anna a nagy kertben van.",
+        "Anna a nagyban kertben van.",
+        "Anna a nagy kert van."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "negation-with-nem"
-      }
-    },
-    {
-      "id": "a1-55-consolidation-14",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "stage": "consolidation",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "tiles": [
-        "A",
-        "lakás",
-        "a",
-        "házban",
-        "van",
-        "."
-      ],
-      "solution": [
-        "A",
-        "lakás",
-        "a",
-        "házban",
-        "van",
-        "."
-      ],
-      "english": "The flat is in the house."
+      "correct": 0
     },
     {
       "id": "a1-55-consolidation-15",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "consolidation",
+      "teaches": [
+        "a1-where-things-are-vocab"
+      ],
+      "pairs": [
+        [
+          "iskola",
+          "school"
+        ],
+        [
+          "bolt",
+          "shop"
+        ],
+        [
+          "terem",
+          "hall"
+        ],
+        [
+          "utca",
+          "street"
+        ],
+        [
+          "ablak",
+          "window"
+        ]
+      ]
+    },
+    {
+      "id": "a1-55-consolidation-16",
       "type": "sentence-builder",
       "category": "grammar",
       "stage": "consolidation",
       "teaches": [
-        "itt-ott-here-there"
+        "adjective-order-before-the-noun"
       ],
       "tiles": [
-        "A",
-        "könyv",
-        "ott",
+        "Anna",
+        "a",
+        "nagy",
+        "kertben",
         "van",
         "."
       ],
       "solution": [
-        "A",
-        "könyv",
-        "ott",
+        "Anna",
+        "a",
+        "nagy",
+        "kertben",
         "van",
         "."
       ],
-      "english": "The book is there."
-    },
-    {
-      "id": "a1-55-consolidation-16",
-      "type": "structured-writing",
-      "category": "writing",
-      "stage": "consolidation",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "template": [
-        {
-          "prompt": "Say that you are in the living room.",
-          "answer": "A nappaliban vagyok."
-        }
-      ]
+      "english": "Anna is in the big garden."
     },
     {
       "id": "a1-55-consolidation-17",
-      "type": "structured-writing",
-      "category": "writing",
+      "type": "sentence-builder",
+      "category": "grammar",
       "stage": "consolidation",
       "teaches": [
         "spatial-questions-hol-hova"
       ],
+      "tiles": [
+        "Hol",
+        "van",
+        "az",
+        "iroda",
+        "?"
+      ],
+      "solution": [
+        "Hol",
+        "van",
+        "az",
+        "iroda",
+        "?"
+      ],
+      "english": "Where is the office?"
+    },
+    {
+      "id": "a1-55-consolidation-18",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "consolidation",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "template": [
         {
-          "prompt": "Ask where the bathroom is.",
-          "answer": "Hol van a fürdőszoba?"
+          "prompt": "Say that you are in the bathroom.",
+          "answer": "A fürdőszobában vagyok."
+        },
+        {
+          "prompt": "Say that Mum is in the shop.",
+          "answer": "Anya a boltban van."
         }
       ]
     },
     {
-      "id": "a1-55-consolidation-18",
-      "type": "fill-blank",
-      "category": "grammar",
-      "stage": "consolidation",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "sentence": "Anna a park____ van.",
-      "answer": "ban",
-      "english": "Anna is in the park."
-    },
-    {
       "id": "a1-55-consolidation-19",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "stage": "consolidation",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "tiles": [
-        "A",
-        "táska",
-        "a",
-        "szobában",
-        "van",
-        "."
-      ],
-      "solution": [
-        "A",
-        "táska",
-        "a",
-        "szobában",
-        "van",
-        "."
-      ],
-      "english": "The bag is in the room."
-    },
-    {
-      "id": "a1-55-consolidation-20",
       "type": "structured-writing",
       "category": "writing",
       "stage": "consolidation",
@@ -384,10 +354,38 @@
       ],
       "template": [
         {
-          "prompt": "Say that there is a table in the room.",
-          "answer": "Van asztal a szobában."
+          "prompt": "Say there is a chair in the living room.",
+          "answer": "A nappaliban van egy szék."
+        },
+        {
+          "prompt": "Say there are three windows in the house.",
+          "answer": "A házban három ablak van."
         }
       ]
+    },
+    {
+      "id": "a1-55-consolidation-20",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "consolidation",
+      "teaches": [
+        "nem-vs-nincs-two-kinds-of-negation"
+      ],
+      "tiles": [
+        "Ez",
+        "nem",
+        "a",
+        "konyha",
+        "."
+      ],
+      "solution": [
+        "Ez",
+        "nem",
+        "a",
+        "konyha",
+        "."
+      ],
+      "english": "This is not the kitchen."
     }
   ]
 }

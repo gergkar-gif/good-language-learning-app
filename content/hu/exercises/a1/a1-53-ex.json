@@ -9,16 +9,13 @@
       "teaches": [
         "ban-ben-in"
       ],
-      "question": "Which sentence means “He is at the shop”?",
+      "question": "Which means “in the park”?",
       "options": [
-        "A boltban van.",
-        "A boltba van.",
-        "A bolt van."
+        "a parkban",
+        "a parkben",
+        "a park"
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-53-introduce-2",
@@ -26,17 +23,17 @@
       "category": "grammar",
       "stage": "introduce",
       "teaches": [
-        "ban-ben-in"
+        "definite-article-a-az"
       ],
-      "question": "Which form means “in the library”?",
+      "question": "Which means “in the office”?",
       "options": [
-        "a könyvtárban",
-        "a könyvtárba",
-        "a könyvtárben"
+        "az irodában",
+        "a irodában",
+        "egy irodában"
       ],
       "correct": 0,
       "distractor_skills": {
-        "1": "movement-with-ba-be"
+        "2": "indefinite-article-egy"
       }
     },
     {
@@ -61,8 +58,12 @@
           "shop"
         ],
         [
-          "park",
-          "park"
+          "iskola",
+          "school"
+        ],
+        [
+          "iroda",
+          "office"
         ]
       ]
     },
@@ -74,42 +75,49 @@
       "teaches": [
         "ban-ben-in"
       ],
-      "sentence": "Meg az ____ van.",
-      "hint": "osztály + -ban",
-      "answer": "osztályban",
-      "english": "Meg is in the class."
+      "sentence": "Anya a ____ van.",
+      "hint": "bolt, in",
+      "english": "Mum is in the shop.",
+      "answer": "boltban"
     },
     {
       "id": "a1-53-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "stage": "controlled",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "question": "Which form means “in the park”?",
-      "options": [
-        "a parkban",
-        "a parkba",
-        "a parkben"
-      ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
-    },
-    {
-      "id": "a1-53-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "definite-article-a-az"
       ],
-      "sentence": "____ van a könyvtár?",
-      "hint": "Where",
-      "answer": "Hol",
-      "english": "Where is the library?"
+      "sentence": "____ parkban vagyok.",
+      "hint": "the",
+      "english": "I am in the park.",
+      "answer": "A"
+    },
+    {
+      "id": "a1-53-controlled-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "definite-article-a-az"
+      ],
+      "tiles": [
+        "A",
+        "gyerek",
+        "az",
+        "osztályban",
+        "van",
+        "."
+      ],
+      "solution": [
+        "A",
+        "gyerek",
+        "az",
+        "osztályban",
+        "van",
+        "."
+      ],
+      "english": "The child is in class."
     },
     {
       "id": "a1-53-practice-1",
@@ -119,11 +127,11 @@
       "teaches": [
         "a1-where-things-are-vocab"
       ],
-      "question": "Which Hungarian word means “shop”?",
+      "question": "Anya a könyvtárban van. Where is Mum?",
       "options": [
-        "a bolt",
-        "a park",
-        "a terem"
+        "In the library.",
+        "In the shop.",
+        "In the park."
       ],
       "correct": 0
     },
@@ -135,37 +143,52 @@
       "teaches": [
         "ban-ben-in"
       ],
-      "sentence": "A könyv a ____ van.",
-      "hint": "könyvtár + -ban",
-      "answer": "könyvtárban",
-      "english": "The book is in the library."
+      "sentence": "Apa a ____ van.",
+      "hint": "park, in",
+      "english": "Dad is in the park.",
+      "answer": "parkban"
     },
     {
       "id": "a1-53-practice-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "definite-article-a-az"
+      ],
+      "sentence": "András ____ osztályban van.",
+      "hint": "the",
+      "english": "András is in class.",
+      "answer": "az"
+    },
+    {
+      "id": "a1-53-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
       "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "definite-article-a-az"
       ],
       "tiles": [
-        "Károly",
-        "a",
-        "boltban",
+        "A",
+        "barátom",
+        "az",
+        "iskolában",
         "van",
         "."
       ],
       "solution": [
-        "Károly",
-        "a",
-        "boltban",
+        "A",
+        "barátom",
+        "az",
+        "iskolában",
         "van",
         "."
       ],
-      "english": "Károly is at the shop."
+      "english": "My friend is at school."
     },
     {
-      "id": "a1-53-practice-4",
+      "id": "a1-53-practice-5",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "practice",
@@ -174,38 +197,11 @@
       ],
       "question": "Which sentence is correct?",
       "options": [
-        "Anna a parkban van.",
-        "Anna a parkba van.",
-        "Anna a parkben van."
+        "Meg a könyvtárban van.",
+        "Meg a könyvtárben van.",
+        "Meg a könyvtár van."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
-    },
-    {
-      "id": "a1-53-practice-5",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "stage": "practice",
-      "teaches": [
-        "spatial-questions-hol-hova"
-      ],
-      "tiles": [
-        "Hol",
-        "van",
-        "a",
-        "könyvtár",
-        "?"
-      ],
-      "solution": [
-        "Hol",
-        "van",
-        "a",
-        "könyvtár",
-        "?"
-      ],
-      "english": "Where is the library?"
+      "correct": 0
     },
     {
       "id": "a1-53-dialogue-1",
@@ -227,12 +223,10 @@
       ],
       "options": [
         "A boltban van.",
-        "A boltba van."
+        "A boltben van.",
+        "A bolt van."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-53-dialogue-2",
@@ -240,41 +234,47 @@
       "category": "dialogue",
       "stage": "dialogue",
       "teaches": [
-        "ban-ben-in"
+        "definite-article-a-az"
       ],
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hol vagy, Meg?"
+          "text": "Hol vagy, Mariann?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Az osztályban vagyok.",
-        "Az osztályba vagyok."
+        "Az iskolában vagyok.",
+        "A iskolában vagyok."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-53-production-1",
-      "type": "structured-writing",
-      "category": "writing",
+      "type": "sentence-builder",
+      "category": "grammar",
       "stage": "production",
       "teaches": [
         "ban-ben-in"
       ],
-      "template": [
-        {
-          "prompt": "Say that you are in the park.",
-          "answer": "A parkban vagyok."
-        }
-      ]
+      "tiles": [
+        "Anna",
+        "a",
+        "könyvtárban",
+        "van",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "a",
+        "könyvtárban",
+        "van",
+        "."
+      ],
+      "english": "Anna is in the library."
     },
     {
       "id": "a1-53-production-2",
@@ -282,45 +282,47 @@
       "category": "writing",
       "stage": "production",
       "teaches": [
-        "ban-ben-in"
+        "definite-article-a-az"
       ],
       "template": [
         {
-          "prompt": "Say that Károly is at the shop.",
-          "answer": "Károly a boltban van."
+          "prompt": "Say that you are in the class.",
+          "answer": "Az osztályban vagyok."
+        },
+        {
+          "prompt": "Say that Anna is in the library.",
+          "answer": "Anna a könyvtárban van."
         }
       ]
     },
     {
       "id": "a1-53-check-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
+      "teaches": [
+        "definite-article-a-az"
+      ],
+      "sentence": "Anna ____ iskolában van.",
+      "hint": "the",
+      "english": "Anna is at school.",
+      "answer": "az"
+    },
+    {
+      "id": "a1-53-check-2",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
       "teaches": [
         "ban-ben-in"
       ],
-      "question": "Choose the correct form for “in the library”.",
+      "question": "Which sentence is correct?",
       "options": [
-        "a könyvtárban",
-        "a könyvtárba",
-        "a könyvtáron"
+        "Mariann a boltban van.",
+        "Mariann a boltben van.",
+        "Mariann a bolt van."
       ],
-      "correct": 0,
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
-    },
-    {
-      "id": "a1-53-check-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "stage": "check",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "sentence": "Meg az osztály____ van.",
-      "answer": "ban",
-      "english": "Meg is in the class."
+      "correct": 0
     }
   ]
 }

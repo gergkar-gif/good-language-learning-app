@@ -1,126 +1,147 @@
 {
   "id": "story.a1.unit11",
-  "title": "Where Things Are",
+  "title": "Where Is Anna’s Key?",
   "level": "A1",
   "lesson": 55,
   "type": "original",
   "estimatedMinutes": 3,
   "characters": [
     "Károly",
-    "Meg"
+    "Meg",
+    "Anna"
   ],
   "paragraphs": [
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg and Károly are at home in the flat. Meg looks around and describes where things and rooms are."
+      "text": "Anna visits Meg and Károly in their new flat in Budapest. Károly opens the door."
     },
     {
       "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Ez a lakás szép és nagy. A nappali itt van."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Igen, a szoba és a konyha is a lakásban van."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Hol van a fürdőszoba és a hálószoba?"
+      "speaker": "Anna",
+      "text": "Szia, Károly! Hol van Meg?"
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "A fürdőszoba itt van, a hálószoba ott van."
+      "text": "Szia, Anna! Meg nincs itt. A boltban van."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "És András? A parkban van?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Nem, András az irodában van."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Nagy a lakás?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Igen. A lakásban van egy nappali, egy hálószoba, egy konyha és egy fürdőszoba."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Van asztal a nappaliban?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Igen, a nappaliban van egy szép asztal és négy szék."
     },
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg looks out into the street and asks about places in town."
+      "text": "Anna wants to put down her bag, but she cannot find her key."
     },
     {
       "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Hol van az iskola és az iroda?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Az iskola az utcában van. Az iroda a házban van."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "És a bolt? A bolt is a házban van?"
+      "speaker": "Anna",
+      "text": "Hol van a kulcs? A kulcs nincs a táskában."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Nem, a bolt az utcában van. A könyvtár és a park is ott van."
+      "text": "A kulcs nincs a nappaliban?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Nem, nincs."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "A konyhában van?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "A konyhában nincs."
     },
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg looks around the room for her everyday things."
+      "text": "Meg comes home from the shop. She knows where the key is."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Hol van az asztal és a szék?"
+      "text": "Szia, Anna! Itt vagyok. A kulcs a hálószobában van, a szekrényben."
     },
     {
       "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Az asztal a szobában van. A szék is a szobában van."
+      "speaker": "Anna",
+      "text": "Köszönöm, Meg!"
     },
     {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Itt van az ajtó és az ablak. De hol van a táska?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "A táska a nappaliban van."
+      "type": "narration",
+      "lang": "en",
+      "text": "Anna’s key was in the cupboard in the bedroom all along."
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Hol van a táska Károly szerint?",
+          "question": "Hol van Meg?",
           "options": [
+            "A boltban van.",
             "A konyhában van.",
             "A nappaliban van.",
-            "A hálószobában van.",
-            "A fürdőszobában van."
-          ],
-          "correctIndex": 1,
-          "explanation": "Károly mondja: „A táska a nappaliban van.”"
-        },
-        {
-          "question": "Hol van az asztal és a szék?",
-          "options": [
-            "Az utcában van.",
-            "A boltban van.",
-            "A szobában van.",
-            "A parkban van."
-          ],
-          "correctIndex": 2,
-          "explanation": "Károly mondja: „Az asztal a szobában van. A szék is a szobában van.”"
-        },
-        {
-          "question": "Hol van a bolt Károly szerint?",
-          "options": [
-            "Az utcában van.",
-            "A házban van.",
-            "A szobában van.",
-            "A lakásban van."
+            "A kertben van."
           ],
           "correctIndex": 0,
-          "explanation": "Károly mondja: „Nem, a bolt az utcában van.”"
+          "explanation": "Károly mondja: „Meg nincs itt. A boltban van.” (Meg is in the shop.)"
+        },
+        {
+          "question": "Mi van a nappaliban?",
+          "options": [
+            "Egy szép asztal és négy szék.",
+            "Egy szép asztal és három szék.",
+            "Egy nagy asztal és négy szék.",
+            "Egy szép lámpa és négy szék."
+          ],
+          "correctIndex": 0,
+          "explanation": "Károly mondja: „A nappaliban van egy szép asztal és négy szék.” (There is a nice table and four chairs.)"
+        },
+        {
+          "question": "Hol van a kulcs?",
+          "options": [
+            "A hálószobában van, a szekrényben.",
+            "A konyhában van, a szekrényben.",
+            "A nappaliban van, a táskában.",
+            "A hálószobában van, az asztalon."
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg mondja: „A kulcs a hálószobában van, a szekrényben.” (The key is in the cupboard in the bedroom.)"
         }
       ]
     }
