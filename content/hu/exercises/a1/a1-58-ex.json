@@ -2,227 +2,103 @@
   "lesson": "a1-58",
   "exercises": [
     {
-      "id": "a1-58-review-1",
+      "id": "a1-58-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which phrase means “into the museum”?",
-      "options": [
-        "a múzeumba",
-        "a múzeumban",
-        "a múzeum"
+      "stage": "introduce",
+      "teaches": [
+        "adjective-order-before-the-noun"
       ],
-      "correct": 0,
-      "stage": "review",
+      "question": "Which means “to the big park”?",
+      "options": [
+        "a nagy parkba",
+        "a nagyba park",
+        "a nagy park"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-58-introduce-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
         "movement-with-ba-be"
       ],
+      "question": "Which means “to the beautiful garden”?",
+      "options": [
+        "a szép kertbe",
+        "a szép kertba",
+        "a szép kertben"
+      ],
+      "correct": 0,
       "distractor_skills": {
-        "1": "ban-ben-in"
+        "2": "ban-ben-in"
       }
-    },
-    {
-      "id": "a1-58-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which word fits: “____ mész? Az étterembe.”?",
-      "options": [
-        "Hová",
-        "Hol",
-        "Mi"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "spatial-questions-hol-hova"
-      ],
-      "distractor_skills": {
-        "2": "ki-and-mi"
-      }
-    },
-    {
-      "id": "a1-58-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the movement sentence.",
-      "options": [
-        "Anna a múzeumba megy.",
-        "Anna a múzeumban megy.",
-        "Anna múzeum megy."
-      ],
-      "correct": 0,
-      "teaches": [
-        "movement-with-ba-be"
-      ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-58-intro-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which form means “in the restaurant”?",
-      "options": [
-        "az étteremben",
-        "az étterembe",
-        "az étterem"
-      ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "introduce"
     },
     {
       "id": "a1-58-controlled-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-going-places-vocab"
+      ],
       "pairs": [
+        [
+          "város",
+          "city"
+        ],
         [
           "étterem",
           "restaurant"
         ],
         [
-          "múzeum",
-          "museum"
+          "kávézó",
+          "café"
         ],
         [
-          "egyetem",
-          "university"
-        ],
-        [
-          "munkahely",
-          "workplace"
+          "mozi",
+          "cinema"
         ]
-      ],
-      "teaches": [
-        "a1-going-places-vocab"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-58-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Károly az ____ megy.",
-      "hint": "to the restaurant",
-      "english": "Károly is going to the restaurant.",
-      "answer": "étterembe",
+      "stage": "controlled",
       "teaches": [
-        "movement-with-ba-be"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "controlled"
+      "sentence": "Meg a ____ parkba megy.",
+      "english": "Meg is going to the big park.",
+      "answer": "nagy"
     },
     {
       "id": "a1-58-controlled-3",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which is the correct destination form?",
-      "options": [
-        "a múzeumba",
-        "a múzeumban",
-        "a múzeum"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "movement-with-ba-be"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "controlled"
+      "sentence": "Anna a nagy ____ megy.",
+      "english": "Anna is going to the big city.",
+      "answer": "városba"
     },
     {
       "id": "a1-58-controlled-4",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Hová megy Meg?",
-      "options": [
-        "Az étterembe megy.",
-        "Az étteremben van.",
-        "Meg étterem."
-      ],
-      "correct": 0,
-      "teaches": [
-        "movement-with-ba-be"
-      ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-58-practice-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "egyetem",
-          "university"
-        ],
-        [
-          "munkahely",
-          "workplace"
-        ],
-        [
-          "múzeum",
-          "museum"
-        ],
-        [
-          "bolt",
-          "shop"
-        ]
-      ],
-      "teaches": [
-        "a1-going-places-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-58-practice-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which answer fits Hová mész?",
-      "options": [
-        "A múzeumba megyek.",
-        "A múzeumban vagyok.",
-        "A múzeum."
-      ],
-      "correct": 0,
-      "teaches": [
-        "movement-with-ba-be"
-      ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "practice"
-    },
-    {
-      "id": "a1-58-practice-3",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Az az ____.",
-      "hint": "university",
-      "english": "That is the university.",
-      "answers": [
-        "egyetem"
-      ],
-      "teaches": [
-        "a1-going-places-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-58-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "adjective-order-before-the-noun"
+      ],
       "tiles": [
         "Károly",
         "az",
+        "új",
         "étterembe",
         "megy",
         "."
@@ -230,78 +106,124 @@
       "solution": [
         "Károly",
         "az",
+        "új",
         "étterembe",
         "megy",
         "."
       ],
-      "english": "Károly is going to the restaurant.",
+      "english": "Károly is going to the new restaurant."
+    },
+    {
+      "id": "a1-58-practice-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "adjective-order-before-the-noun"
+      ],
+      "question": "Which sentence is correct?",
+      "options": [
+        "Apa a kicsi boltba megy.",
+        "Apa a kicsiba boltba megy.",
+        "Apa a kicsi bolt megy."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-58-practice-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "definite-article-a-az"
+      ],
+      "sentence": "Anna ____ új étterembe megy.",
+      "english": "Anna is going to the new restaurant.",
+      "answer": "az"
+    },
+    {
+      "id": "a1-58-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
         "movement-with-ba-be"
       ],
-      "stage": "practice"
+      "question": "Which means “to the old library”?",
+      "options": [
+        "a régi könyvtárba",
+        "a régi könyvtárban",
+        "a régi könyvtárbe"
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
+    },
+    {
+      "id": "a1-58-practice-4",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-going-places-vocab"
+      ],
+      "question": "Az új étterem nagy, a régi étterem kicsi. Anna a nagy étterembe megy. Which restaurant is Anna going to?",
+      "options": [
+        "The new one.",
+        "The old one.",
+        "Both."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-58-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hová mész?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Az étterembe megyek.",
-        "Az étteremben vagyok."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
         "movement-with-ba-be"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "practice"
+      "sentence": "Hová mész? A szép ____ megyek.",
+      "english": "Where are you going? I am going to the beautiful garden.",
+      "answer": "kertbe"
     },
     {
       "id": "a1-58-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "adjective-order-before-the-noun"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol vagy?"
+          "speaker": "Anna",
+          "text": "Hová mész, Károly?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "A múzeumban.",
-        "A múzeumba.",
-        "A múzeum."
+        "A nagy parkba megyek.",
+        "A nagyba parkba megyek."
       ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-58-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Hová mész?"
+          "speaker": "Károly",
+          "text": "Hol van Anna?"
         },
         {
           "speaker": "Meg",
@@ -309,80 +231,83 @@
         }
       ],
       "options": [
-        "Az étterembe megyek.",
-        "Az étteremben vagyok.",
-        "Az étterem."
+        "Az új étteremben van.",
+        "Az új étterembe van."
       ],
-      "correct": 0,
-      "teaches": [
-        "movement-with-ba-be"
-      ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      }
+      "correct": 0
     },
     {
-      "id": "a1-58-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write two short Hungarian sentences using Where Are You Going?.",
-          "answer": "A múzeumba megyek. Az étterembe megyek."
-        }
-      ],
+      "id": "a1-58-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "movement-with-ba-be"
-      ]
+        "adjective-order-before-the-noun"
+      ],
+      "tiles": [
+        "Meg",
+        "a",
+        "kicsi",
+        "kávézóba",
+        "megy",
+        "."
+      ],
+      "solution": [
+        "Meg",
+        "a",
+        "kicsi",
+        "kávézóba",
+        "megy",
+        "."
+      ],
+      "english": "Meg is going to the small café."
     },
     {
-      "id": "a1-58-writing-2",
+      "id": "a1-58-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "adjective-order-before-the-noun"
+      ],
       "template": [
         {
-          "prompt": "Write one short Hungarian response to a practical question from today's lesson.",
-          "answer": "Az étterembe megyek."
+          "prompt": "Say that you are going to the big park.",
+          "answer": "A nagy parkba megyek."
+        },
+        {
+          "prompt": "Say that Anna is going to the new restaurant.",
+          "answer": "Anna az új étterembe megy."
         }
-      ],
-      "teaches": [
-        "movement-with-ba-be"
       ]
     },
     {
       "id": "a1-58-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which sentence is correct?",
-      "options": [
-        "Károly a múzeumba megy.",
-        "Károly a múzeumban megy.",
-        "Károly múzeum megy a."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "movement-with-ba-be"
+        "adjective-order-before-the-noun"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "check"
+      "sentence": "Anna a ____ kertbe megy.",
+      "english": "Anna is going to the old garden.",
+      "answer": "régi"
     },
     {
       "id": "a1-58-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which question fits the answer “Az étterembe megyek.”?",
-      "options": [
-        "Hová mész?",
-        "Hol vagy?",
-        "Ki vagy?"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "check"
+      "question": "Which means “to the new cinema”?",
+      "options": [
+        "az új moziba",
+        "az moziba új",
+        "az új mozi"
+      ],
+      "correct": 0
     }
   ]
 }

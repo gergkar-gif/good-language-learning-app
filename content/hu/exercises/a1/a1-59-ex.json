@@ -2,279 +2,212 @@
   "lesson": "a1-59",
   "exercises": [
     {
-      "id": "a1-59-review-1",
+      "id": "a1-59-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which phrase means “into the pharmacy”?",
-      "options": [
-        "a gyógyszertárba",
-        "a gyógyszertárban",
-        "a gyógyszertár"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "movement-with-ba-be"
+        "negation-with-nem"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      }
+      "question": "Which means “I am not going to the park”?",
+      "options": [
+        "Nem megyek a parkba.",
+        "Megyek a parkba.",
+        "Nem megyek a park."
+      ],
+      "correct": 0
     },
     {
-      "id": "a1-59-review-2",
+      "id": "a1-59-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word fits: “____ megy Meg? A bankba.”?",
-      "options": [
-        "Hová",
-        "Hol",
-        "Ki"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "negation-with-nem"
       ],
-      "distractor_skills": {
-        "2": "ki-and-mi"
-      }
-    },
-    {
-      "id": "a1-59-intro-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Choose the movement sentence.",
+      "question": "Which sentence means “Anna is not going to the office”?",
       "options": [
-        "Anna a bankba megy.",
-        "Anna a bankban megy.",
-        "Anna bank megy."
+        "Anna nem megy az irodába.",
+        "Anna nem megy az iroda.",
+        "Anna nem megy az irodában."
       ],
-      "correct": 0,
-      "teaches": [
-        "movement-with-ba-be"
-      ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-59-intro-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which form means “in the pharmacy”?",
-      "options": [
-        "a gyógyszertárban",
-        "a gyógyszertárba",
-        "a gyógyszertár"
-      ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "introduce"
+      "correct": 0
     },
     {
       "id": "a1-59-controlled-1",
       "type": "matching",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "posta",
-          "post office"
-        ],
-        [
-          "bank",
-          "bank"
-        ],
-        [
-          "gyógyszertár",
-          "pharmacy"
-        ],
-        [
-          "bejárat",
-          "entrance"
-        ]
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-going-places-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "ma",
+          "today"
+        ],
+        [
+          "most",
+          "now"
+        ],
+        [
+          "hová",
+          "where to"
+        ],
+        [
+          "megy",
+          "he / she goes"
+        ]
+      ]
     },
     {
       "id": "a1-59-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Károly a ____ megy.",
-      "hint": "to the pharmacy",
-      "english": "Károly is going to the pharmacy.",
-      "answer": "gyógyszertárba",
+      "stage": "controlled",
       "teaches": [
         "movement-with-ba-be"
       ],
-      "stage": "controlled"
+      "sentence": "Nem a boltba megyek, a ____ megyek.",
+      "english": "I am not going to the shop, I am going to the park.",
+      "answer": "parkba"
     },
     {
       "id": "a1-59-controlled-3",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which is the correct destination form?",
-      "options": [
-        "a bankba",
-        "a bankban",
-        "a bank"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
-        "movement-with-ba-be"
+        "negation-with-nem"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "controlled"
+      "sentence": "Anna ____ megy a boltba.",
+      "english": "Anna is not going to the shop.",
+      "answer": "nem"
     },
     {
       "id": "a1-59-controlled-4",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "Hová megy Meg?",
-      "options": [
-        "A gyógyszertárba megy.",
-        "A gyógyszertárban van.",
-        "Meg gyógyszertár."
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
-        "movement-with-ba-be"
+        "negation-with-nem"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "controlled"
+      "tiles": [
+        "Károly",
+        "nem",
+        "megy",
+        "a",
+        "kertbe",
+        "."
+      ],
+      "solution": [
+        "Károly",
+        "nem",
+        "megy",
+        "a",
+        "kertbe",
+        "."
+      ],
+      "english": "Károly is not going to the garden."
     },
     {
       "id": "a1-59-practice-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "bejárat",
-          "entrance"
-        ],
-        [
-          "gyógyszertár",
-          "pharmacy"
-        ],
-        [
-          "posta",
-          "post office"
-        ],
-        [
-          "iskola",
-          "school"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-going-places-vocab"
+        "negation-with-nem"
       ],
-      "stage": "practice"
+      "question": "Which sentence is correct?",
+      "options": [
+        "Ma nem megyek a boltba.",
+        "Ma megyek nem a boltba.",
+        "Ma nem a megyek boltba."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-59-practice-2",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which answer fits Hová mész?",
-      "options": [
-        "A gyógyszertárba megyek.",
-        "A gyógyszertárban vagyok.",
-        "A gyógyszertár."
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
-        "movement-with-ba-be"
+        "negation-with-nem"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "practice"
+      "sentence": "Meg ____ a moziba megy, a kávézóba megy.",
+      "english": "Meg is not going to the cinema, she is going to the café.",
+      "answer": "nem"
     },
     {
       "id": "a1-59-practice-3",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "sentence": "Ez a ____.",
-      "hint": "pharmacy",
-      "english": "This is the pharmacy.",
-      "answers": [
-        "gyógyszertár"
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-going-places-vocab"
       ],
-      "stage": "practice"
+      "question": "Which word means “today”?",
+      "options": [
+        "ma",
+        "most",
+        "hová"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-59-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "negation-with-nem"
+      ],
       "tiles": [
-        "Meg",
+        "Most",
+        "nem",
+        "megyek",
         "a",
-        "gyógyszertárba",
-        "megy",
+        "parkba",
         "."
       ],
       "solution": [
-        "Meg",
+        "Most",
+        "nem",
+        "megyek",
         "a",
-        "gyógyszertárba",
-        "megy",
+        "parkba",
         "."
       ],
-      "english": "Meg is going to the pharmacy.",
-      "teaches": [
-        "movement-with-ba-be"
-      ],
-      "stage": "practice"
+      "english": "I am not going to the park now."
     },
     {
       "id": "a1-59-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hová mész?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A bankba megyek.",
-        "A bankban vagyok."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
         "movement-with-ba-be"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "practice"
+      "question": "Which sentence is correct?",
+      "options": [
+        "Nem az irodába megyek, a könyvtárba megyek.",
+        "Nem az irodába megyek, a könyvtárban megyek.",
+        "Nem az irodába megyek, a könyvtárbe megyek."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-59-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "movement-with-ba-be"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol vagy?"
+          "speaker": "Anna",
+          "text": "Hová megy Károly ma?"
         },
         {
           "speaker": "Meg",
@@ -282,107 +215,115 @@
         }
       ],
       "options": [
-        "a gyógyszertárban",
-        "a gyógyszertárba",
-        "a gyógyszertár"
+        "Ma nem az irodába megy, a parkba megy.",
+        "Ma nem az irodában megy, a parkba megy."
       ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-59-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "negation-with-nem"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Hová mész?"
+          "speaker": "Anna",
+          "text": "Ma a boltba megyek. És te?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "A gyógyszertárba megyek.",
-        "A gyógyszertárban vagyok.",
-        "A gyógyszertár."
+        "Én nem megyek a boltba.",
+        "Én megyek nem a boltba."
       ],
-      "correct": 0,
-      "teaches": [
-        "movement-with-ba-be"
-      ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      }
+      "correct": 0
     },
     {
-      "id": "a1-59-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write two short Hungarian sentences using Moving Around.",
-          "answer": "A bankba megyek. A gyógyszertárba megyek."
-        }
-      ],
+      "id": "a1-59-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "movement-with-ba-be"
-      ]
+        "negation-with-nem"
+      ],
+      "tiles": [
+        "Anna",
+        "nem",
+        "a",
+        "boltba",
+        "megy",
+        ",",
+        "a",
+        "parkba",
+        "megy",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "nem",
+        "a",
+        "boltba",
+        "megy",
+        ",",
+        "a",
+        "parkba",
+        "megy",
+        "."
+      ],
+      "english": "Anna is not going to the shop, she is going to the park."
     },
     {
-      "id": "a1-59-writing-2",
+      "id": "a1-59-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "negation-with-nem"
+      ],
       "template": [
         {
-          "prompt": "Write one short Hungarian response to a practical question from today's lesson.",
-          "answer": "A bankba megyek."
+          "prompt": "Say that you are not going to the cinema.",
+          "answer": "Nem megyek a moziba."
+        },
+        {
+          "prompt": "Say that Károly is not going to the office.",
+          "answer": "Károly nem megy az irodába."
         }
-      ],
-      "teaches": [
-        "movement-with-ba-be"
       ]
     },
     {
       "id": "a1-59-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which sentence is correct?",
-      "options": [
-        "Károly a gyógyszertárba megy.",
-        "Károly a gyógyszertárban megy.",
-        "Károly gyógyszertár megy a."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "movement-with-ba-be"
+        "negation-with-nem"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "check"
+      "sentence": "Én ____ megyek az iskolába.",
+      "english": "I am not going to school.",
+      "answer": "nem"
     },
     {
       "id": "a1-59-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which question fits the answer “A bankba megy.”?",
-      "options": [
-        "Hová megy Károly?",
-        "Hol van Károly?",
-        "Mi megy Károly?"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "negation-with-nem"
       ],
-      "stage": "check"
+      "question": "Which means “I am not going to the cinema”?",
+      "options": [
+        "Nem megyek a moziba.",
+        "Megyek nem a moziba.",
+        "Nem a megyek moziba."
+      ],
+      "correct": 0
     }
   ]
 }

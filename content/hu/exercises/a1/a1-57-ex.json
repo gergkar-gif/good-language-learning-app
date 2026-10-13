@@ -2,94 +2,46 @@
   "lesson": "a1-57",
   "exercises": [
     {
-      "id": "a1-57-review-1",
+      "id": "a1-57-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which phrase means “into the café”?",
-      "options": [
-        "a kávézóba",
-        "a kávézóban",
-        "a kávézó"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "movement-with-ba-be"
-      ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      }
-    },
-    {
-      "id": "a1-57-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which word fits: “____ megy Anna? A megállóba.”?",
-      "options": [
-        "Hová",
-        "Hol",
-        "Ki"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "spatial-questions-hol-hova"
       ],
-      "distractor_skills": {
-        "2": "ki-and-mi"
-      }
+      "question": "Which question asks where someone is, not where they are going?",
+      "options": [
+        "Hol van Meg?",
+        "Hová megy Meg?",
+        "Hol megy Meg?"
+      ],
+      "correct": 0
     },
     {
-      "id": "a1-57-intro-1",
+      "id": "a1-57-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Choose the movement sentence.",
-      "options": [
-        "Anna a moziba megy.",
-        "Anna a moziban megy.",
-        "Anna mozi megy."
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "movement-with-ba-be"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-57-intro-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which form means “in the cinema”?",
+      "question": "Which sentence means “Anna is going to the restaurant”?",
       "options": [
-        "a moziban",
-        "a moziba",
-        "a mozi"
+        "Anna az étterembe megy.",
+        "Anna az étteremben megy.",
+        "Anna az étterembe van."
       ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      },
-      "stage": "introduce"
+      "correct": 0
     },
     {
       "id": "a1-57-controlled-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-going-places-vocab"
+      ],
       "pairs": [
-        [
-          "állomás",
-          "station"
-        ],
-        [
-          "megálló",
-          "stop"
-        ],
         [
           "mozi",
           "cinema"
@@ -97,292 +49,253 @@
         [
           "kávézó",
           "café"
+        ],
+        [
+          "étterem",
+          "restaurant"
+        ],
+        [
+          "könyvtár",
+          "library"
         ]
-      ],
-      "teaches": [
-        "a1-going-places-vocab"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-57-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Károly a ____ megy.",
-      "hint": "to the café",
-      "english": "Károly is going to the café.",
-      "answer": "kávézóba",
+      "stage": "controlled",
       "teaches": [
-        "movement-with-ba-be"
+        "ban-ben-in"
       ],
-      "stage": "controlled"
+      "sentence": "Hol vagy? A ____ vagyok.",
+      "english": "Where are you? I am in the café.",
+      "answer": "kávézóban"
     },
     {
       "id": "a1-57-controlled-3",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which is the correct destination form?",
-      "options": [
-        "a megállóba",
-        "a megállóban",
-        "a megálló"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "movement-with-ba-be"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "controlled"
+      "sentence": "Hová mész? A ____ megyek.",
+      "english": "Where are you going? I am going to the café.",
+      "answer": "kávézóba"
     },
     {
       "id": "a1-57-controlled-4",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Hová megy Meg?",
-      "options": [
-        "A moziba megy.",
-        "A moziban van.",
-        "Meg mozi."
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
-        "movement-with-ba-be"
+        "spatial-questions-hol-hova"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "controlled"
+      "sentence": "____ van Meg? A moziban van.",
+      "english": "Where is Meg? She is at the cinema.",
+      "answer": "Hol"
     },
     {
       "id": "a1-57-practice-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "állomás",
-          "station"
-        ],
-        [
-          "megálló",
-          "stop"
-        ],
-        [
-          "kávézó",
-          "café"
-        ],
-        [
-          "busz",
-          "bus"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-going-places-vocab"
+        "ban-ben-in"
       ],
-      "stage": "practice"
+      "question": "Hol van Károly?",
+      "options": [
+        "A moziban van.",
+        "A moziba van.",
+        "A moziban megy."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-57-practice-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which answer fits Hová jön Anna?",
-      "options": [
-        "A kávézóba jön.",
-        "A kávézóban van.",
-        "A kávézó."
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
-        "movement-with-ba-be"
+        "spatial-questions-hol-hova"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "practice"
+      "question": "Anna az étterembe megy. Which question does this answer?",
+      "options": [
+        "Hová megy Anna?",
+        "Hol van Anna?",
+        "Hová van Anna?"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-57-practice-3",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Hová ____ Károly?",
-      "hint": "goes",
-      "english": "Where is Károly going?",
-      "answers": [
-        "megy"
-      ],
-      "teaches": [
-        "a1-going-places-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-57-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "movement-with-ba-be"
+      ],
       "tiles": [
         "Károly",
         "a",
-        "megállóba",
+        "moziba",
         "megy",
         "."
       ],
       "solution": [
         "Károly",
         "a",
-        "megállóba",
+        "moziba",
         "megy",
         "."
       ],
-      "english": "Károly is going to the stop.",
+      "english": "Károly is going to the cinema."
+    },
+    {
+      "id": "a1-57-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
         "movement-with-ba-be"
       ],
-      "stage": "practice"
+      "question": "Meg a kávézóban van, Anna a kávézóba megy. Who is already at the café?",
+      "options": [
+        "Meg.",
+        "Anna.",
+        "Both."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-57-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hová mész?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A moziba megyek.",
-        "A moziban vagyok."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
         "movement-with-ba-be"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "practice"
+      "sentence": "Anna az ____ megy.",
+      "english": "Anna is going to the restaurant.",
+      "answer": "étterembe"
     },
     {
       "id": "a1-57-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "Hol vagy?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "A moziban.",
-        "A moziba.",
-        "A mozi."
+        "A moziban vagyok.",
+        "A moziba vagyok."
       ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "distractor_skills": {
-        "1": "movement-with-ba-be"
-      }
+      "correct": 0
     },
     {
       "id": "a1-57-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "movement-with-ba-be"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Meg, hová mész?"
+          "speaker": "Anna",
+          "text": "Hová mész?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "A megállóba megyek.",
-        "A megállóban vagyok.",
-        "A megálló."
+        "Az étterembe megyek.",
+        "Az étteremben megyek."
       ],
-      "correct": 0,
-      "teaches": [
-        "movement-with-ba-be"
-      ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      }
+      "correct": 0
     },
     {
-      "id": "a1-57-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write two short Hungarian sentences using Destinations.",
-          "answer": "A megállóba megyek. A moziba megyek."
-        }
-      ],
+      "id": "a1-57-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "movement-with-ba-be"
-      ]
+        "spatial-questions-hol-hova"
+      ],
+      "tiles": [
+        "Hol",
+        "van",
+        "Anna",
+        "?"
+      ],
+      "solution": [
+        "Hol",
+        "van",
+        "Anna",
+        "?"
+      ],
+      "english": "Where is Anna?"
     },
     {
-      "id": "a1-57-writing-2",
+      "id": "a1-57-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Write one short Hungarian response to a practical question from today's lesson.",
-          "answer": "A megállóba megyek."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "movement-with-ba-be"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you are in the café.",
+          "answer": "A kávézóban vagyok."
+        },
+        {
+          "prompt": "Say that you are going to the cinema.",
+          "answer": "A moziba megyek."
+        }
       ]
     },
     {
       "id": "a1-57-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which sentence is correct?",
-      "options": [
-        "Károly a moziba megy.",
-        "Károly a moziban megy.",
-        "Károly mozi megy a."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "movement-with-ba-be"
+        "spatial-questions-hol-hova"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "check"
+      "sentence": "____ vagy? A kertben vagyok.",
+      "english": "Where are you? I am in the garden.",
+      "answer": "Hol"
     },
     {
       "id": "a1-57-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which question asks where Anna is going?",
-      "options": [
-        "Hová megy Anna?",
-        "Hol van Anna?",
-        "Ki megy Anna?"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "spatial-questions-hol-hova"
+        "movement-with-ba-be"
       ],
-      "stage": "check"
+      "question": "Which sentence says Meg is going to the café?",
+      "options": [
+        "Meg a kávézóba megy.",
+        "Meg a kávézóban megy.",
+        "Meg a kávézóba van."
+      ],
+      "correct": 0
     }
   ]
 }
