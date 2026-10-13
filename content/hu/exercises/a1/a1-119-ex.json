@@ -2,26 +2,124 @@
   "lesson": "a1-119",
   "exercises": [
     {
-      "id": "a1-119-review-1",
+      "id": "a1-119-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'szomjas' mean?",
-      "options": [
-        "thirsty",
-        "hungry",
-        "vegetarian"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-restaurant-vocab"
-      ]
+      ],
+      "question": "Which word means “spicy”?",
+      "options": [
+        "csípős",
+        "sós",
+        "savanyú"
+      ],
+      "correct": 0
     },
     {
-      "id": "a1-119-review-2",
+      "id": "a1-119-introduce-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "introduce",
+      "teaches": [
+        "mert-because"
+      ],
+      "question": "Which sentence means “I would like soup because I am hungry.”?",
+      "options": [
+        "Levest kérek, miért éhes vagyok.",
+        "Levest kérek, mert éhes vagyok.",
+        "Levest kérek, és éhes vagyok."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-119-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "mert-because"
+      ],
+      "sentence": "Vizet kérek, ____ szomjas vagyok.",
+      "english": "I would like water because I am thirsty.",
+      "answer": "mert"
+    },
+    {
+      "id": "a1-119-controlled-2",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-restaurant-vocab"
+      ],
+      "sentence": "A leves túl ____.",
+      "english": "The soup is too spicy.",
+      "answer": "csípős"
+    },
+    {
+      "id": "a1-119-controlled-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "mert-because"
+      ],
+      "question": "Which sentence is written correctly?",
+      "options": [
+        "Nem kérek húst mert, vegetáriánus vagyok.",
+        "Nem kérek húst mert vegetáriánus vagyok.",
+        "Nem kérek húst, mert vegetáriánus vagyok."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-119-controlled-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "mert-because"
+      ],
+      "tiles": [
+        "Vizet",
+        "kérek,",
+        "mert",
+        "szomjas",
+        "vagyok",
+        "."
+      ],
+      "solution": [
+        "Vizet",
+        "kérek,",
+        "mert",
+        "szomjas",
+        "vagyok",
+        "."
+      ],
+      "english": "I would like water because I am thirsty."
+    },
+    {
+      "id": "a1-119-practice-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-restaurant-vocab"
+      ],
       "pairs": [
+        [
+          "csípős",
+          "spicy"
+        ],
+        [
+          "sós",
+          "salty"
+        ],
+        [
+          "savanyú",
+          "sour"
+        ],
         [
           "éhes",
           "hungry"
@@ -31,330 +129,203 @@
           "thirsty"
         ],
         [
-          "kell",
-          "need / must"
-        ],
-        [
-          "vagyok",
-          "I am"
+          "friss",
+          "fresh"
         ]
+      ]
+    },
+    {
+      "id": "a1-119-practice-2",
+      "type": "substitution",
+      "category": "vocabulary",
+      "stage": "practice",
+      "base_sentence": "A leves csípős.",
+      "base_word": "csípős",
+      "base_gloss": "The soup is spicy.",
+      "options": [
+        {
+          "word": "sós",
+          "inflected": "sós",
+          "sentence": "A leves sós.",
+          "gloss": "salty"
+        },
+        {
+          "word": "savanyú",
+          "inflected": "savanyú",
+          "sentence": "A leves savanyú.",
+          "gloss": "sour"
+        }
       ],
-      "stage": "review",
       "teaches": [
         "a1-restaurant-vocab"
       ]
     },
     {
-      "id": "a1-119-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'would like'?",
-      "options": [
-        "szeretne",
-        "kérek",
-        "és"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-119-intro-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Éhes vagyok, ____ nem vagyok szomjas.",
-      "hint": "but",
-      "english": "I'm hungry, but I'm not thirsty.",
-      "answer": "de",
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-119-controlled-1",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Szeretnék levest ____ salátát.",
-      "hint": "and",
-      "english": "I would like soup and salad.",
-      "answer": "és",
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-119-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'kérek' mean?",
-      "options": [
-        "I'd like",
-        "and",
-        "but"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-119-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "szeretne",
-          "would like"
-        ],
-        [
-          "kérek",
-          "I'd like"
-        ],
-        [
-          "és",
-          "and"
-        ],
-        [
-          "de",
-          "but"
-        ]
-      ],
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-119-controlled-4",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Mariann marhát kér, mert éhes.",
-      "base_word": "mert",
-      "base_gloss": "Mariann asks for beef, because she's hungry.",
-      "options": [
-        {
-          "word": "és",
-          "inflected": "és",
-          "sentence": "Mariann marhát kér, és csirkét is kér.",
-          "gloss": "and"
-        },
-        {
-          "word": "de",
-          "inflected": "de",
-          "sentence": "Mariann marhát kér, de Anna vegetáriánus.",
-          "gloss": "but"
-        }
-      ],
-      "teaches": [
-        "mert-because"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-119-practice-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'and'?",
-      "options": [
-        "és",
-        "szeretne",
-        "de"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-119-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Szeretnék menüt, ____ éhes vagyok.",
-      "english": "I would like the set meal because I'm hungry.",
-      "answer": "mert",
-      "teaches": [
-        "mert-because"
-      ],
-      "stage": "practice"
-    },
-    {
       "id": "a1-119-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Szeretnék levest és salátát.",
-          "I would like soup and salad."
-        ],
-        [
-          "Éhes vagyok, de nem vagyok szomjas.",
-          "I'm hungry, but I'm not thirsty."
-        ],
-        [
-          "Szeretnék menüt, mert éhes vagyok.",
-          "I would like the set meal because I'm hungry."
-        ],
-        [
-          "Anna vegetáriánus, de Mariann marhát kér.",
-          "Anna is vegetarian, but Mariann asks for beef."
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-restaurant-vocab"
+        "mert-because"
       ],
-      "stage": "practice"
+      "question": "Which sentence says: I won't take the soup because it is too spicy?",
+      "options": [
+        "Nem kérem a levest, mert túl csípős.",
+        "Nem kérem a levest, mert csípős túl.",
+        "Nem kérem a levest, miért túl csípős."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-119-practice-4",
-      "type": "substitution",
+      "type": "fill-blank",
       "category": "grammar",
-      "base_sentence": "Szeretnék levest és salátát.",
-      "base_word": "levest",
-      "base_gloss": "I would like soup and salad.",
-      "options": [
-        {
-          "word": "köret",
-          "inflected": "köretet",
-          "sentence": "Szeretnék köretet és salátát.",
-          "gloss": "side dish"
-        },
-        {
-          "word": "marha",
-          "inflected": "marhát",
-          "sentence": "Szeretnék marhát és salátát.",
-          "gloss": "beef"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
-        "how-the-accusative-t-works"
+        "mert-because"
       ],
-      "stage": "practice"
+      "sentence": "Miért nem kérsz levest? – ____ túl csípős.",
+      "english": "Why don't you want soup? – Because it is too spicy.",
+      "answer": "Mert"
     },
     {
       "id": "a1-119-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Anna",
-          "text": "Én vegetáriánus vagyok. Salátát szeretnék."
-        },
-        {
-          "speaker": "Pincér",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Rendben. Hozom a salátát.",
-        "Kártya vagy készpénz?"
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-restaurant-vocab"
+        "van-zero-copula"
       ],
-      "stage": "practice"
+      "question": "Which sentence says the salad is very sour?",
+      "options": [
+        "A saláta van nagyon savanyú.",
+        "A saláta nagyon savanyú.",
+        "A salátát nagyon savanyú."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-119-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "mert-because"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Igen, vizet kérek."
+          "speaker": "Pincér",
+          "text": "Miért nem kéri a levest?"
         },
         {
-          "speaker": "Pincér",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Rendben, hozom.",
-        "Ez a répa nem friss."
+        "Egy levest kérek.",
+        "Igen, kérem.",
+        "Mert túl csípős."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-restaurant-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-119-dialogue-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence correctly uses mert (because)?",
-      "options": [
-        "Szeretnék menüt, mert éhes vagyok.",
-        "Szeretnék menüt és salátát."
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-restaurant-vocab"
       ],
-      "correct": 0,
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Miért kérsz vizet?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Mert szomjas vagyok.",
+        "Igen, szomjas vagyok.",
+        "Vizet kérek."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-119-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "mert-because"
+      ],
+      "tiles": [
+        "Salátát",
+        "kérek,",
+        "mert",
+        "vegetáriánus",
+        "vagyok",
+        "."
+      ],
+      "solution": [
+        "Salátát",
+        "kérek,",
+        "mert",
+        "vegetáriánus",
+        "vagyok",
+        "."
+      ],
+      "english": "I would like a salad because I am a vegetarian."
+    },
+    {
+      "id": "a1-119-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-restaurant-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Say that the soup is too spicy.",
+          "answer": "A leves túl csípős."
+        },
+        {
+          "prompt": "Say that you would like water because you are thirsty.",
+          "answer": "Vizet kérek, mert szomjas vagyok."
+        }
       ]
     },
     {
-      "id": "a1-119-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: és",
-          "answer": "Szeretnék levest és salátát."
-        }
-      ],
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-119-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: de",
-          "answer": "Éhes vagyok, de nem vagyok szomjas."
-        }
-      ],
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "production"
-    },
-    {
       "id": "a1-119-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'but'?",
-      "options": [
-        "de",
-        "szeretne",
-        "kérek"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-restaurant-vocab"
+        "mert-because"
       ],
-      "stage": "check"
+      "sentence": "Halat kérek, ____ éhes vagyok.",
+      "english": "I would like fish because I am hungry.",
+      "answer": "mert"
     },
     {
       "id": "a1-119-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "sentence": "Anna vegetáriánus, ____ Mariann marhát kér.",
-      "hint": "but",
-      "english": "Anna is vegetarian, but Mariann asks for beef.",
-      "answer": "de",
+      "stage": "check",
       "teaches": [
         "a1-restaurant-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “sour”?",
+      "options": [
+        "csípős",
+        "savanyú",
+        "sós"
+      ],
+      "correct": 1
     }
   ]
 }

@@ -2,269 +2,218 @@
   "lesson": "a1-116",
   "exercises": [
     {
-      "id": "a1-116-review-1",
+      "id": "a1-116-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means 'I would like'?",
-      "options": [
-        "szeretnék",
-        "még",
-        "finom"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-restaurant-vocab"
-      ]
-    },
-    {
-      "id": "a1-116-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "szeretnék",
-          "I would like"
-        ],
-        [
-          "még",
-          "more / another"
-        ],
-        [
-          "finom",
-          "delicious"
-        ],
-        [
-          "meleg",
-          "hot / warm"
-        ]
       ],
-      "stage": "review",
-      "teaches": [
-        "a1-restaurant-vocab"
-      ]
-    },
-    {
-      "id": "a1-116-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'restaurant'?",
+      "question": "Which word means “main course”?",
       "options": [
-        "étterem",
-        "leves",
+        "főétel",
+        "köret",
         "saláta"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 0
     },
     {
-      "id": "a1-116-intro-2",
-      "type": "fill-blank",
+      "id": "a1-116-introduce-2",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Én csirkét kérek ____.",
-      "hint": "with a side dish",
-      "english": "I'd like chicken with a side dish.",
-      "answer": "körettel",
-      "teaches": [
-        "val-vel"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-116-controlled-1",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Szeretnék ____ és salátát.",
-      "hint": "soup",
-      "english": "I would like soup and salad.",
-      "answer": "levest",
+      "stage": "introduce",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "question": "Which sentence asks for a soup?",
+      "options": [
+        "Kérek egy leves.",
+        "Kérek egy levest.",
+        "Kérek egy levesot."
+      ],
+      "correct": 1
     },
     {
-      "id": "a1-116-controlled-2",
+      "id": "a1-116-controlled-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'leves' mean?",
-      "options": [
-        "soup",
-        "salad",
-        "side dish"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "a1-restaurant-vocab"
       ],
-      "stage": "controlled"
+      "question": "Which word means “dessert”?",
+      "options": [
+        "saláta",
+        "főétel",
+        "desszert"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-116-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "sentence": "Károly húst és ____ kér.",
+      "english": "Károly asks for meat and a side dish.",
+      "answer": "köretet"
     },
     {
       "id": "a1-116-controlled-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "van-and-nincs-there-is-there-isn-t"
+      ],
+      "question": "Which sentence says there is no dessert?",
+      "options": [
+        "Nincs desszert.",
+        "Nincs desszertet.",
+        "Van desszert."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-116-controlled-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "van-and-nincs-there-is-there-isn-t"
+      ],
+      "tiles": [
+        "Az",
+        "étlapon",
+        "van",
+        "hal",
+        "."
+      ],
+      "solution": [
+        "Az",
+        "étlapon",
+        "van",
+        "hal",
+        "."
+      ],
+      "english": "There is fish on the menu."
+    },
+    {
+      "id": "a1-116-practice-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-restaurant-vocab"
+      ],
       "pairs": [
         [
-          "étterem",
-          "restaurant"
-        ],
-        [
-          "leves",
-          "soup"
+          "főétel",
+          "main course"
         ],
         [
           "saláta",
           "salad"
         ],
         [
+          "desszert",
+          "dessert"
+        ],
+        [
           "köret",
           "side dish"
+        ],
+        [
+          "leves",
+          "soup"
+        ],
+        [
+          "étlap",
+          "menu"
         ]
-      ],
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-116-controlled-4",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Szeretnék levest.",
-      "base_word": "levest",
-      "base_gloss": "I would like soup.",
-      "options": [
-        {
-          "word": "saláta",
-          "inflected": "salátát",
-          "sentence": "Szeretnék salátát.",
-          "gloss": "salad"
-        },
-        {
-          "word": "köret",
-          "inflected": "köretet",
-          "sentence": "Szeretnék köretet.",
-          "gloss": "side dish"
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-116-practice-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'salad'?",
-      "options": [
-        "saláta",
-        "étterem",
-        "köret"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "practice"
+      ]
     },
     {
       "id": "a1-116-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Jó napot kívánok! Itt az ____.",
-      "hint": "menu",
-      "english": "Good day! Here's the menu.",
-      "answer": "étlap",
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-116-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Szeretnék levest és salátát.",
-          "I would like soup and salad."
-        ],
-        [
-          "Én csirkét kérek körettel.",
-          "I'd like chicken with a side dish."
-        ],
-        [
-          "Jó napot kívánok! Itt az étlap.",
-          "Good day! Here's the menu."
-        ],
-        [
-          "Kérek egy köretet.",
-          "I'd like a side dish."
-        ]
-      ],
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-116-practice-4",
       "type": "substitution",
       "category": "grammar",
-      "base_sentence": "Kérek egy köretet.",
-      "base_word": "köretet",
-      "base_gloss": "I'd like a side dish.",
+      "stage": "practice",
+      "base_sentence": "Kérek egy levest.",
+      "base_word": "leves",
+      "base_gloss": "I would like a soup.",
       "options": [
-        {
-          "word": "leves",
-          "inflected": "levest",
-          "sentence": "Kérek egy levest.",
-          "gloss": "soup"
-        },
         {
           "word": "saláta",
           "inflected": "salátát",
           "sentence": "Kérek egy salátát.",
           "gloss": "salad"
+        },
+        {
+          "word": "desszert",
+          "inflected": "desszertet",
+          "sentence": "Kérek egy desszertet.",
+          "gloss": "dessert"
         }
       ],
       "teaches": [
         "how-the-accusative-t-works"
+      ]
+    },
+    {
+      "id": "a1-116-practice-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Anna ____ kér.",
+      "english": "Anna asks for fish.",
+      "answer": "halat"
+    },
+    {
+      "id": "a1-116-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "on-en-on"
+      ],
+      "question": "Which sentence says there is fish on the menu?",
+      "options": [
+        "Az étlap van hal.",
+        "Az étlapon van hal.",
+        "Az étlapon van halat."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-116-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Pincér",
-          "text": "Jó napot kívánok! Itt az étlap."
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Szeretnék levest és salátát.",
-        "Kártya vagy készpénz?"
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-restaurant-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "question": "Anna would like a soup and a salad. Which sentence?",
+      "options": [
+        "Leves és salátát kér.",
+        "Levest és saláta kér.",
+        "Levest és salátát kér."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-116-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
           "speaker": "Pincér",
@@ -276,86 +225,111 @@
         }
       ],
       "options": [
-        "Levest és salátát kérek.",
-        "Itt a piac."
+        "Egy levest és egy halat kérek.",
+        "Egy leves és egy halat kérek.",
+        "Egy levest és egy hal kérek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-restaurant-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-116-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Mit kér?\"",
-      "options": [
-        "Csirkét kérek körettel.",
-        "Itt az étlap."
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "correct": 0,
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Van saláta?"
+        },
+        {
+          "speaker": "Pincér",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Igen, van salátát.",
+        "Igen, van saláta.",
+        "Igen, salátát van."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-116-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "tiles": [
+        "Egy",
+        "levest",
+        "és",
+        "egy",
+        "főételt",
+        "kérek",
+        "."
+      ],
+      "solution": [
+        "Egy",
+        "levest",
+        "és",
+        "egy",
+        "főételt",
+        "kérek",
+        "."
+      ],
+      "english": "I would like a soup and a main course."
+    },
+    {
+      "id": "a1-116-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
         "a1-restaurant-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Ask for a dessert.",
+          "answer": "Kérek egy desszertet."
+        },
+        {
+          "prompt": "Say that there is no salad.",
+          "answer": "Nincs saláta."
+        }
       ]
     },
     {
-      "id": "a1-116-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: leves",
-          "answer": "Szeretnék levest."
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-116-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: saláta",
-          "answer": "Kérek egy salátát."
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "production"
-    },
-    {
       "id": "a1-116-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'side dish'?",
-      "options": [
-        "köret",
-        "étterem",
-        "leves"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-restaurant-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "sentence": "Kérek egy ____.",
+      "english": "I would like a main course.",
+      "answer": "főételt"
     },
     {
       "id": "a1-116-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Kérek egy ____.",
-      "hint": "side dish",
-      "english": "I'd like a side dish.",
-      "answer": "köretet",
+      "stage": "check",
       "teaches": [
-        "how-the-accusative-t-works"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "stage": "check"
+      "question": "Which sentence means “There is soup.”?",
+      "options": [
+        "Van levest.",
+        "Nincs leves.",
+        "Van leves."
+      ],
+      "correct": 2
     }
   ]
 }

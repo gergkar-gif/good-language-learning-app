@@ -2,359 +2,331 @@
   "lesson": "a1-117",
   "exercises": [
     {
-      "id": "a1-117-review-1",
+      "id": "a1-117-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'saláta' mean?",
+      "stage": "introduce",
+      "teaches": [
+        "a1-restaurant-vocab"
+      ],
+      "question": "Which word means “pork”?",
       "options": [
-        "salad",
-        "soup",
-        "dessert"
+        "sertéshús",
+        "marhahús",
+        "csirke"
       ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-restaurant-vocab"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-117-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "étterem",
-          "restaurant"
-        ],
-        [
-          "saláta",
-          "salad"
-        ],
-        [
-          "köret",
-          "side dish"
-        ],
-        [
-          "étlap",
-          "menu"
-        ]
-      ],
-      "stage": "review",
-      "teaches": [
-        "a1-restaurant-vocab"
-      ]
-    },
-    {
-      "id": "a1-117-intro-1",
+      "id": "a1-117-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'dessert'?",
-      "options": [
-        "desszert",
-        "menü",
-        "marha"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-117-intro-2",
-      "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Szeretnék ____, mert éhes vagyok.",
-      "hint": "set meal",
-      "english": "I would like the set meal because I'm hungry.",
-      "answer": "menüt",
+      "stage": "introduce",
       "teaches": [
-        "how-the-accusative-t-works"
+        "nek-conditional"
       ],
-      "stage": "introduce"
+      "question": "Which is the politest way for you to ask for a soup?",
+      "options": [
+        "Kérek egy levest.",
+        "Kérnék egy levest.",
+        "Kérnél egy levest."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "0": "kerek-vs-szeretnek"
+      }
     },
     {
       "id": "a1-117-controlled-1",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Szeretne csirkét vagy ____?",
-      "hint": "beef",
-      "english": "Would you like chicken or beef?",
-      "answer": "marhát",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "a1-restaurant-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "A menü: leves, főétel és ____.",
+      "english": "The set menu: soup, main course and dessert.",
+      "answer": "desszert"
     },
     {
       "id": "a1-117-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'menü' mean?",
-      "options": [
-        "set meal/menu",
-        "beef",
-        "chicken"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-restaurant-vocab"
+        "nek-conditional"
       ],
-      "stage": "controlled"
+      "sentence": "Anna tésztát ____.",
+      "english": "Anna would like pasta.",
+      "answers": [
+        "szeretne",
+        "kérne",
+        "kér"
+      ]
     },
     {
       "id": "a1-117-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "desszert",
-          "dessert"
-        ],
-        [
-          "menü",
-          "set meal/menu"
-        ],
-        [
-          "marha",
-          "beef"
-        ],
-        [
-          "csirke",
-          "chicken"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-restaurant-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "question": "Which sentence asks for beef?",
+      "options": [
+        "Marhahús kérek.",
+        "Marhahúsot kérek.",
+        "Marhahúst kérek."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-117-controlled-4",
-      "type": "substitution",
+      "type": "sentence-builder",
       "category": "grammar",
-      "base_sentence": "Szeretnék menüt.",
-      "base_word": "menüt",
-      "base_gloss": "I would like the set meal.",
-      "options": [
-        {
-          "word": "desszert",
-          "inflected": "desszertet",
-          "sentence": "Szeretnék desszertet.",
-          "gloss": "dessert"
-        },
-        {
-          "word": "marha",
-          "inflected": "marhát",
-          "sentence": "Szeretnék marhát.",
-          "gloss": "beef"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "nek-conditional"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Kérnék",
+        "egy",
+        "menüt",
+        "."
+      ],
+      "solution": [
+        "Kérnék",
+        "egy",
+        "menüt",
+        "."
+      ],
+      "english": "I would like a set menu."
     },
     {
       "id": "a1-117-practice-1",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "vocabulary",
-      "question": "Which word means 'beef'?",
-      "options": [
-        "marha",
-        "desszert",
-        "csirke"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-restaurant-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "menü",
+          "set menu"
+        ],
+        [
+          "marhahús",
+          "beef"
+        ],
+        [
+          "sertéshús",
+          "pork"
+        ],
+        [
+          "tészta",
+          "pasta"
+        ],
+        [
+          "főétel",
+          "main course"
+        ],
+        [
+          "köret",
+          "side dish"
+        ]
+      ]
     },
     {
       "id": "a1-117-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Mariann marhát ____.",
-      "english": "Mariann asks for beef.",
-      "answer": "kér",
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-117-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Szeretne csirkét vagy marhát?",
-          "Would you like chicken or beef?"
-        ],
-        [
-          "Szeretnék menüt, mert éhes vagyok.",
-          "I would like the set meal because I'm hungry."
-        ],
-        [
-          "Mariann marhát kér.",
-          "Mariann asks for beef."
-        ],
-        [
-          "Desszert is kell.",
-          "Dessert is needed too."
-        ]
-      ],
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-117-practice-4",
       "type": "substitution",
       "category": "grammar",
-      "base_sentence": "Csirkét kérek.",
-      "base_word": "Csirkét",
-      "base_gloss": "I'd like chicken.",
+      "stage": "practice",
+      "base_sentence": "Szeretnék marhahúst.",
+      "base_word": "marhahús",
+      "base_gloss": "I would like beef.",
       "options": [
         {
-          "word": "marha",
-          "inflected": "Marhát",
-          "sentence": "Marhát kérek.",
-          "gloss": "beef"
+          "word": "sertéshús",
+          "inflected": "sertéshúst",
+          "sentence": "Szeretnék sertéshúst.",
+          "gloss": "pork"
         },
         {
-          "word": "desszert",
-          "inflected": "Desszertet",
-          "sentence": "Desszertet kérek.",
-          "gloss": "dessert"
+          "word": "tészta",
+          "inflected": "tésztát",
+          "sentence": "Szeretnék tésztát.",
+          "gloss": "pasta"
         }
       ],
       "teaches": [
         "how-the-accusative-t-works"
+      ]
+    },
+    {
+      "id": "a1-117-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "question": "You want this particular fish. Which sentence?",
+      "options": [
+        "Kérem a halat.",
+        "Kérek a halat.",
+        "Kérem egy halat."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-117-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "question": "You point at the dish next to you and say you take this one. Which sentence?",
+      "options": [
+        "Ez kérem.",
+        "Ezt kérem.",
+        "Azt kérem."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-117-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Pincér",
-          "text": "Szeretne csirkét vagy marhát?"
-        },
-        {
-          "speaker": "András",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Én csirkét kérek körettel.",
-        "Nem vagyok szomjas."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-restaurant-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "sentence": "Anna a levest ____.",
+      "english": "Anna takes the soup.",
+      "answer": "kéri"
     },
     {
       "id": "a1-117-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
-          "speaker": "Anna",
-          "text": "Desszert is kell."
+          "speaker": "Pincér",
+          "text": "Mit szeretne?"
         },
         {
-          "speaker": "Pincér",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Rendben, hozom.",
-        "Nem, ez a répa friss."
+        "Egy leves és egy marhahúst szeretnék.",
+        "Egy levest és egy marhahús szeretnék.",
+        "Egy levest és egy marhahúst szeretnék."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-restaurant-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-117-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Szeretne csirkét vagy marhát?\"",
-      "options": [
-        "Marhát kérek.",
-        "Éhes vagyok, de nem vagyok szomjas."
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
       ],
-      "correct": 0,
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Kéred a halat?"
+        },
+        {
+          "speaker": "Anna",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Igen, kérem.",
+        "Igen, kérek.",
+        "Igen, kéred."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-117-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "tiles": [
+        "Anna",
+        "a",
+        "tésztát",
+        "kéri",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "a",
+        "tésztát",
+        "kéri",
+        "."
+      ],
+      "english": "Anna takes the pasta."
+    },
+    {
+      "id": "a1-117-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
         "a1-restaurant-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Politely ask for a set menu.",
+          "answer": "Kérnék egy menüt."
+        },
+        {
+          "prompt": "Say that you take this one.",
+          "answer": "Ezt kérem."
+        }
       ]
     },
     {
-      "id": "a1-117-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: menü",
-          "answer": "Szeretnék menüt."
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-117-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: desszert",
-          "answer": "Kérek egy desszertet."
-        }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "production"
-    },
-    {
       "id": "a1-117-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'chicken'?",
-      "options": [
-        "csirke",
-        "desszert",
-        "menü"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-restaurant-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "check"
+      "sentence": "Kérem a ____.",
+      "english": "I would like the pasta.",
+      "answer": "tésztát"
     },
     {
       "id": "a1-117-check-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ is kell.",
-      "hint": "dessert",
-      "english": "Dessert is needed too.",
-      "answer": "Desszert",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-restaurant-vocab"
+        "nek-conditional"
       ],
-      "stage": "check"
+      "question": "Which sentence says Anna would like fish?",
+      "options": [
+        "Anna halat szeretnék.",
+        "Anna halat szeretne.",
+        "Anna halat szeretnél."
+      ],
+      "correct": 1
     }
   ]
 }

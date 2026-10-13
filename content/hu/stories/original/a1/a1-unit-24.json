@@ -6,118 +6,157 @@
   "characters": [
     "Pincér",
     "Meg",
-    "András",
-    "Anna",
-    "Mariann",
-    "Károly"
+    "Károly",
+    "Anna"
   ],
   "paragraphs": [
     {
       "type": "narration",
       "lang": "en",
-      "text": "Károly, Meg, András, Anna and Mariann have a meal together."
+      "text": "Saturday evening. Meg, Károly and Anna have booked a table at a restaurant. Anna is a vegetarian."
     },
     {
       "type": "dialogue",
       "speaker": "Pincér",
-      "text": "Jó napot kívánok! Itt az étlap."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Szeretnék levest és salátát."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "András",
-      "text": "Én csirkét kérek körettel."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Anna",
-      "text": "Én vegetáriánus vagyok. Salátát szeretnék."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Éhes vagyok, de nem vagyok szomjas."
+      "text": "Jó estét kívánok! Tessék, itt az étlap."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Kell még valami?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Igen, vizet kérek."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Anna",
-      "text": "Desszert is kell."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Szeretnék menüt, mert éhes vagyok."
+      "text": "Köszönöm. Nagyon éhes vagyok. Kérnék egy levest és marhahúst."
     },
     {
       "type": "dialogue",
       "speaker": "Pincér",
-      "text": "Kártya vagy készpénz?"
+      "text": "Köretet is kér?"
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Kártya. Fizetek."
+      "text": "Igen, rizst kérek."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Nem kérek húst, mert vegetáriánus vagyok. Van saláta?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pincér",
+      "text": "Van. A tészta is nagyon finom, de egy kicsit csípős."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Nem baj. Azt kérem."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Köszönöm."
+      "text": "Én halat szeretnék. Levest nem kérek, mert nem vagyok nagyon éhes."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pincér",
+      "text": "Desszertet is kérnek?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Igen, egy fagylaltot szeretnék."
     },
     {
       "type": "narration",
       "lang": "en",
-      "text": "The set menu has soup, salad, a side dish, and dessert. András orders chicken, Mariann orders beef, and Anna, who is vegetarian, has the salad. Károly pays with a card."
+      "text": "They eat and talk. Everything is delicious. Later, Károly asks for the bill."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Kérem a számlát!"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pincér",
+      "text": "Hozom. Összesen hétezer forint."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Fizetni kell. Van kártyám, de nincs készpénzem."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pincér",
+      "text": "Kártyával is lehet."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Tessék, ez a borravaló."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pincér",
+      "text": "Köszönöm szépen! Viszlát!"
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Hol vannak és mit csinálnak a barátok?",
+          "question": "Miért nem kér Anna húst?",
           "options": [
-            "Moziban új magyar filmet néznek.",
-            "Egy étteremben közösen rendelnek és étkeznek.",
-            "A piacon zöldségeket árulnak a standoknál.",
-            "Egy ruhaboltban próbálnak fel kabátokat."
+            "Mert vegetáriánus.",
+            "Mert nem éhes.",
+            "Mert drága.",
+            "Mert nincs hús."
           ],
-          "correctIndex": 1,
-          "explanation": "A barátok (Károly, Meg, András, Anna, Mariann) egy étteremben ülnek, és ételt rendelnek az étlapról."
+          "correctIndex": 0,
+          "explanation": "Anna says: „Nem kérek húst, mert vegetáriánus vagyok.” (I do not want meat because I am a vegetarian.)",
+          "questionEnglish": "Why does Anna not ask for meat?",
+          "optionsEnglish": [
+            "Because she is a vegetarian.",
+            "Because she is not hungry.",
+            "Because it is expensive.",
+            "Because there is no meat."
+          ]
         },
         {
-          "question": "Miért salátát kér Anna az étteremben?",
+          "question": "Mit szeretne enni Meg a hal után?",
           "options": [
-            "Mert nem éhes, csak szomjas.",
-            "Mert elfogyott a csirke az étlapról.",
-            "Mert vegetáriánus, és nem eszik húst.",
-            "Mert a pincér ezt ajánlja a menüben."
+            "Egy fagylaltot.",
+            "Egy tortát.",
+            "Egy levest.",
+            "Egy salátát."
           ],
-          "correctIndex": 2,
-          "explanation": "Anna kifejezetten mondja: „Én vegetáriánus vagyok. Salátát szeretnék.” (I am vegetarian. I would like salad.)"
+          "correctIndex": 0,
+          "explanation": "Meg says: „Igen, egy fagylaltot szeretnék.” (Yes, I would like an ice cream.)",
+          "questionEnglish": "What would Meg like to eat after the fish?",
+          "optionsEnglish": [
+            "An ice cream.",
+            "A cake.",
+            "A soup.",
+            "A salad."
+          ]
         },
         {
-          "question": "Hogyan rendezi Károly a számlát az étkezés végén?",
+          "question": "Mennyi a számla összesen?",
           "options": [
-            "Készpénzzel fizet a pincérnek.",
-            "Mindenki külön fizeti a saját részét.",
-            "Meg rendezi az egész számlát készpénzben.",
-            "Károly bankkártyával fizet."
+            "Hétezer forint.",
+            "Ezer forint.",
+            "Kétezer forint.",
+            "Hatezer forint."
           ],
-          "correctIndex": 3,
-          "explanation": "A pincér kérdésére („Kártya vagy készpénz?”) Károly válaszol: „Kártya. Fizetek.” (Card. I'll pay.)"
+          "correctIndex": 0,
+          "explanation": "The waiter says: „Összesen hétezer forint.” (In total it is 7,000 forints.)",
+          "questionEnglish": "How much is the bill in total?",
+          "optionsEnglish": [
+            "7,000 forints.",
+            "1,000 forints.",
+            "2,000 forints.",
+            "6,000 forints."
+          ]
         }
       ]
     }

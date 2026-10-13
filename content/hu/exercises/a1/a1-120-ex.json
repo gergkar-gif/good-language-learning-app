@@ -2,114 +2,108 @@
   "lesson": "a1-120",
   "exercises": [
     {
-      "id": "a1-120-review-1",
+      "id": "a1-120-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'szeretne' mean?",
-      "options": [
-        "would like",
-        "and",
-        "but"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-restaurant-vocab"
-      ]
-    },
-    {
-      "id": "a1-120-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "szeretne",
-          "would like"
-        ],
-        [
-          "és",
-          "and"
-        ],
-        [
-          "de",
-          "but"
-        ],
-        [
-          "mert",
-          "because"
-        ]
       ],
-      "stage": "review",
-      "teaches": [
-        "a1-restaurant-vocab"
-      ]
-    },
-    {
-      "id": "a1-120-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'because'?",
+      "question": "Which word means “cash”?",
       "options": [
-        "mert",
+        "készpénz",
         "kártya",
-        "készpénz"
+        "borravaló"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 0
     },
     {
-      "id": "a1-120-intro-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Kártya. Most ____.",
-      "hint": "I'll pay",
-      "english": "Card. I'll pay now.",
-      "answer": "fizetek",
+      "id": "a1-120-introduce-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-restaurant-vocab"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "stage": "introduce"
+      "question": "Which sentence means “I have a card, but I have no cash.”?",
+      "options": [
+        "Van kártyám, de van készpénzem.",
+        "Van kártyám, de nincs készpénzem.",
+        "Nincs kártyám, de nincs készpénzem."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-120-controlled-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Kártya vagy ____?",
-      "english": "Card or cash?",
-      "answer": "készpénz",
+      "stage": "controlled",
       "teaches": [
         "a1-restaurant-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "Van kártyám, ____ nincs készpénzem.",
+      "english": "I have a card, but I have no cash.",
+      "answer": "de"
     },
     {
       "id": "a1-120-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'kártya' mean?",
-      "options": [
-        "card",
-        "cash",
-        "pay"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-restaurant-vocab"
+        "possessive-suffixes"
       ],
-      "stage": "controlled"
+      "sentence": "Nincs ____, de van kártyám.",
+      "english": "I have no cash, but I have a card.",
+      "answer": "készpénzem"
     },
     {
       "id": "a1-120-controlled-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "question": "Which sentence asks for the bill?",
+      "options": [
+        "Kérek a számlát.",
+        "Kérem a számla.",
+        "Kérem a számlát."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-120-controlled-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "tiles": [
+        "Kérem",
+        "az",
+        "étlapot",
+        "."
+      ],
+      "solution": [
+        "Kérem",
+        "az",
+        "étlapot",
+        "."
+      ],
+      "english": "I would like the menu."
+    },
+    {
+      "id": "a1-120-practice-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-restaurant-vocab"
+      ],
       "pairs": [
-        [
-          "mert",
-          "because"
-        ],
         [
           "kártya",
           "card"
@@ -119,125 +113,134 @@
           "cash"
         ],
         [
-          "fizet",
-          "pay"
+          "borravaló",
+          "tip (money)"
+        ],
+        [
+          "számla",
+          "bill"
+        ],
+        [
+          "étlap",
+          "menu"
+        ],
+        [
+          "fizetni",
+          "to pay"
         ]
-      ],
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-120-controlled-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Kártya vagy készpénz?",
-      "base_word": "Kártya",
-      "base_gloss": "Card or cash?",
-      "options": [
-        {
-          "word": "készpénz",
-          "inflected": "Készpénz",
-          "sentence": "Készpénz vagy kártya?",
-          "gloss": "cash"
-        }
-      ],
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-120-practice-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'cash'?",
-      "options": [
-        "készpénz",
-        "mert",
-        "fizet"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-120-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Szeretnék ____, mert szomjas vagyok.",
-      "hint": "tea",
-      "english": "I would like tea because I'm thirsty.",
-      "answer": "teát",
-      "stage": "practice",
-      "teaches": [
-        "how-the-accusative-t-works"
       ]
     },
     {
-      "id": "a1-120-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Kártya vagy készpénz?",
-          "Card or cash?"
-        ],
-        [
-          "Kártya. Fizetek.",
-          "Card. I'm paying."
-        ],
-        [
-          "Köszönöm.",
-          "Thank you."
-        ],
-        [
-          "Szeretnék menüt, mert éhes vagyok.",
-          "I would like the set meal because I'm hungry."
-        ]
-      ],
+      "id": "a1-120-practice-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-restaurant-vocab"
+        "kell-infinitive"
       ],
-      "stage": "practice"
+      "question": "Which sentence says there is no need to book a table?",
+      "options": [
+        "Nem kell asztalt foglalni.",
+        "Nem kell asztal foglalni.",
+        "Nem kell asztalt foglal."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-120-practice-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "sentence": "Anna a számlát ____.",
+      "english": "Anna asks for the bill.",
+      "answer": "kéri"
     },
     {
       "id": "a1-120-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "grammar",
-      "base_sentence": "Szeretnék menüt, mert éhes vagyok.",
-      "base_word": "menüt",
-      "base_gloss": "I would like the set meal because I'm hungry.",
-      "options": [
-        {
-          "word": "leves",
-          "inflected": "levest",
-          "sentence": "Szeretnék levest, mert éhes vagyok.",
-          "gloss": "soup"
-        },
-        {
-          "word": "desszert",
-          "inflected": "desszertet",
-          "sentence": "Szeretnék desszertet, mert éhes vagyok.",
-          "gloss": "dessert"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
-        "how-the-accusative-t-works"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "question": "Meg points at the fish and says she takes this one. Which sentence?",
+      "options": [
+        "Ez kérem.",
+        "Ezt kérem.",
+        "Azt kérem."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-120-practice-5",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "mert-because"
+      ],
+      "question": "Which sentence says: I am not paying because Károly pays?",
+      "options": [
+        "Nem fizetek mert, Károly fizet.",
+        "Nem fizetek, miért Károly fizet.",
+        "Nem fizetek, mert Károly fizet."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-120-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Why does Anna not order meat?",
+      "options": [
+        "She is a vegetarian.",
+        "She is not hungry.",
+        "The meat is too expensive."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-120-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does Károly say about paying?",
+      "options": [
+        "He has cash but no card.",
+        "He has a card but no cash.",
+        "He has neither cash nor a card."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-120-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "How much is the bill?",
+      "options": [
+        "2,000 forints.",
+        "6,000 forints.",
+        "7,000 forints."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-120-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "possessive-suffixes"
+      ],
       "prompt": [
         {
           "speaker": "Pincér",
-          "text": "Kártya vagy készpénz?"
+          "text": "Hozom a számlát. Fizet?"
         },
         {
           "speaker": "Károly",
@@ -245,23 +248,24 @@
         }
       ],
       "options": [
-        "Kártya. Fizetek.",
-        "Szeretnék egy teát."
+        "Van kártyám, de nincs készpénzem.",
+        "Van kártyám, de nincs készpénzed.",
+        "Van kártyád, de nincs készpénzem."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "practice"
+      "correct": 0
     },
     {
-      "id": "a1-120-dialogue-1",
+      "id": "a1-120-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Köszönöm."
+          "text": "Kérem a számlát!"
         },
         {
           "speaker": "Pincér",
@@ -269,86 +273,86 @@
         }
       ],
       "options": [
-        "Kérem.",
-        "Hol a pincér?"
+        "Hozok a számlát.",
+        "Hozom a számlát.",
+        "Hozom egy számlát."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-restaurant-vocab"
-      ]
+      "correct": 1
     },
     {
-      "id": "a1-120-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Kártya vagy készpénz?\"",
-      "options": [
-        "Készpénz. Fizetek.",
-        "Éhes vagyok."
-      ],
-      "correct": 0,
+      "id": "a1-120-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "a1-restaurant-vocab"
-      ]
+        "possessive-suffixes"
+      ],
+      "tiles": [
+        "Van",
+        "kártyám",
+        ",",
+        "de",
+        "nincs",
+        "készpénzem",
+        "."
+      ],
+      "solution": [
+        "Van",
+        "kártyám",
+        ",",
+        "de",
+        "nincs",
+        "készpénzem",
+        "."
+      ],
+      "english": "I have a card, but I have no cash."
     },
     {
-      "id": "a1-120-writing-1",
+      "id": "a1-120-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: kártya",
-          "answer": "Kártya. Fizetek."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "a1-restaurant-vocab"
       ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-120-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: készpénz",
-          "answer": "Készpénz vagy kártya?"
+          "prompt": "Ask for the menu.",
+          "answer": "Kérem az étlapot."
+        },
+        {
+          "prompt": "Say that you would like a soup because you are hungry.",
+          "answer": "Levest kérek, mert éhes vagyok."
         }
-      ],
-      "teaches": [
-        "a1-restaurant-vocab"
-      ],
-      "stage": "production"
+      ]
     },
     {
       "id": "a1-120-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'pay'?",
-      "options": [
-        "fizet",
-        "mert",
-        "kártya"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-restaurant-vocab"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "stage": "check"
+      "sentence": "Nincs készpénzem, ____ van kártyám.",
+      "english": "I have no cash, but I have a card.",
+      "answer": "de"
     },
     {
       "id": "a1-120-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "sentence": "Vendég: Köszönöm! Pincér: ____.",
-      "hint": "you're welcome",
-      "english": "Guest: Thank you! Waiter: You're welcome.",
-      "answer": "Kérem",
+      "stage": "check",
       "teaches": [
         "a1-restaurant-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “tip (money)”?",
+      "options": [
+        "kártya",
+        "készpénz",
+        "borravaló"
+      ],
+      "correct": 2
     }
   ]
 }
