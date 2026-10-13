@@ -2,269 +2,252 @@
   "lesson": "a1-145",
   "exercises": [
     {
-      "id": "a1-145-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'fut' mean?",
-      "options": [
-        "to run",
-        "to swim",
-        "to read"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
-    },
-    {
-      "id": "a1-145-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'úszik' mean?",
-      "options": [
-        "to swim",
-        "to dance",
-        "to run"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
-    },
-    {
       "id": "a1-145-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'fut' mean?",
-      "options": [
-        "to run",
-        "to read",
-        "to swim"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-hobbies-free-time-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “plan”?",
+      "options": [
+        "ötlet",
+        "terv",
+        "csinál"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-145-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'táncol' mean?",
-      "options": [
-        "to dance",
-        "to run",
-        "to swim"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "introduce"
+      "question": "Which question asks what you are doing on Saturday?",
+      "options": [
+        "Mit csinál szombaton?",
+        "Mi csinálsz szombaton?",
+        "Mit csinálsz szombaton?"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-145-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Szeretek ____.",
-      "hint": "swimming",
-      "english": "I like swimming.",
-      "answer": "úszni",
+      "stage": "controlled",
       "teaches": [
-        "building-the-infinitive-the-suffix-ni"
+        "megy-jon"
       ],
-      "stage": "controlled"
+      "sentence": "Szombaton kirándulni ____.",
+      "english": "On Saturday I am going hiking.",
+      "answer": "megyek"
     },
     {
       "id": "a1-145-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'to read'.",
-      "options": [
-        "olvas",
-        "fut",
-        "úszik"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "val-vel"
       ],
-      "stage": "controlled"
+      "question": "How do you say “with me”?",
+      "options": [
+        "veled",
+        "velem",
+        "vele"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-145-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "olvas",
-          "read"
-        ],
-        [
-          "fut",
-          "run"
-        ],
-        [
-          "úszik",
-          "swim"
-        ],
-        [
-          "táncol",
-          "dance"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "val-vel"
       ],
-      "stage": "controlled"
+      "sentence": "Jössz ____?",
+      "english": "Are you coming with me?",
+      "answer": "velem"
     },
     {
       "id": "a1-145-controlled-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "grammar",
-      "base_sentence": "Szeretek futni.",
-      "base_word": "futni",
-      "base_gloss": "I like running.",
-      "options": [
-        {
-          "word": "úszni",
-          "inflected": "úszni",
-          "sentence": "Szeretek úszni.",
-          "gloss": "swimming"
-        },
-        {
-          "word": "táncolni",
-          "inflected": "táncolni",
-          "sentence": "Szeretek táncolni.",
-          "gloss": "dancing"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "controlled"
+      "question": "On Sunday you would like to go to the cinema. Which sentence?",
+      "options": [
+        "Vasárnap moziba szeretnék megyek.",
+        "Vasárnap moziba szeretnék mennek.",
+        "Vasárnap moziba szeretnék menni."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-145-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Is the infinitive of úszik (an ik-verb) regular or irregular?",
-      "options": [
-        "Regular: úszni",
-        "Irregular: úszikni",
-        "Irregular: úszekni"
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "building-the-infinitive-the-suffix-ni"
+        "a1-hobbies-free-time-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "terv",
+          "plan"
+        ],
+        [
+          "csinál",
+          "does"
+        ],
+        [
+          "ötlet",
+          "idea"
+        ],
+        [
+          "velem",
+          "with me"
+        ],
+        [
+          "veled",
+          "with you"
+        ],
+        [
+          "vele",
+          "with him, her"
+        ]
+      ]
     },
     {
       "id": "a1-145-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Igen, ____.",
-      "hint": "together",
-      "english": "Yes, together.",
-      "answer": "együtt",
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
+      "type": "substitution",
+      "category": "grammar",
+      "stage": "practice",
+      "base_sentence": "Velem jön Anna.",
+      "base_word": "én",
+      "base_gloss": "Anna is coming with me.",
+      "options": [
+        {
+          "word": "te",
+          "inflected": "veled",
+          "sentence": "Veled jön Anna.",
+          "gloss": "you"
+        },
+        {
+          "word": "mi",
+          "inflected": "velünk",
+          "sentence": "Velünk jön Anna.",
+          "gloss": "us"
+        }
       ],
-      "stage": "practice"
+      "teaches": [
+        "val-vel"
+      ]
     },
     {
       "id": "a1-145-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "olvas",
-          "read"
-        ],
-        [
-          "fut",
-          "run"
-        ],
-        [
-          "úszik",
-          "swim"
-        ],
-        [
-          "táncol",
-          "dance"
-        ],
-        [
-          "találkozik",
-          "meet"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "on-en-on"
       ],
-      "stage": "practice"
+      "question": "Which sentence says: on Saturday I am going hiking?",
+      "options": [
+        "Szombaten kirándulni megyek.",
+        "Szombatot kirándulni megyek.",
+        "Szombaton kirándulni megyek."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "a1-145-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "grammar",
-      "base_sentence": "Szeretünk együtt táncolni.",
-      "base_word": "táncolni",
-      "base_gloss": "We like dancing together.",
-      "options": [
-        {
-          "word": "úszni",
-          "inflected": "úszni",
-          "sentence": "Szeretünk együtt úszni.",
-          "gloss": "swimming"
-        },
-        {
-          "word": "olvasni",
-          "inflected": "olvasni",
-          "sentence": "Szeretünk együtt olvasni.",
-          "gloss": "reading"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
-        "building-the-infinitive-the-suffix-ni"
+        "val-vel"
       ],
-      "stage": "practice"
+      "question": "You invite Anna to come along. Which sentence?",
+      "options": [
+        "Jössz veled?",
+        "Jössz velem?",
+        "Jössz vele?"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-145-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Szeretsz úszni?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Igen, és futni is szeretek.",
-        "A bank közel van."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "megy-jon"
       ],
-      "stage": "practice"
+      "sentence": "Vasárnap este moziba ____.",
+      "english": "On Sunday evening we are going to the cinema.",
+      "answer": "megyünk"
+    },
+    {
+      "id": "a1-145-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What would Károly like to do on Saturday?",
+      "options": [
+        "Go swimming.",
+        "Go hiking.",
+        "Play tennis."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-145-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Why does Meg not want to swim?",
+      "options": [
+        "It is too far.",
+        "She cannot swim.",
+        "The water is cold."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-145-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What do they plan for Sunday?",
+      "options": [
+        "A match.",
+        "A concert.",
+        "A film."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-145-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "megy-jon"
+      ],
       "prompt": [
         {
-          "speaker": "András",
-          "text": "Mit csinálunk a hétvégén?"
+          "speaker": "Anna",
+          "text": "Mit csinálsz szombaton?"
         },
         {
           "speaker": "Meg",
@@ -272,22 +255,24 @@
         }
       ],
       "options": [
-        "Menjünk együtt kirándulni!",
-        "Mennyibe kerül?"
+        "Kirándulni mész.",
+        "Kirándulni megyek.",
+        "Kirándulni megy."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-145-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "val-vel"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Szeretsz társasjátékot játszani?"
+          "speaker": "Károly",
+          "text": "Jössz velem moziba?"
         },
         {
           "speaker": "Meg",
@@ -295,73 +280,86 @@
         }
       ],
       "options": [
-        "Igen! Játsszunk együtt!",
-        "Szia, hogy vagy?"
+        "Igen, velem megyek.",
+        "Igen, vele megyek.",
+        "Igen, veled megyek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-145-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say you like swimming.",
-          "answer": "Szeretek úszni."
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "building-the-infinitive-the-suffix-ni"
-      ]
+      ],
+      "tiles": [
+        "Szombaton",
+        "Annával",
+        "kirándulni",
+        "megyek",
+        "."
+      ],
+      "solution": [
+        "Szombaton",
+        "Annával",
+        "kirándulni",
+        "megyek",
+        "."
+      ],
+      "english": "On Saturday I am going hiking with Anna."
     },
     {
       "id": "a1-145-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Say yes, together.",
-          "answer": "Igen, együtt."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "a1-hobbies-free-time-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Say that on Saturday you are going hiking.",
+          "answer": "Szombaton kirándulni megyek."
+        },
+        {
+          "prompt": "Ask Anna to come with you.",
+          "answer": "Jössz velem?"
+        }
       ]
     },
     {
       "id": "a1-145-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Choose the correct word for 'run'.",
-      "options": [
-        "fut",
-        "úszik",
-        "táncol"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-hobbies-free-time-vocab"
       ],
-      "stage": "check"
+      "question": "What is “idea” in Hungarian?",
+      "options": [
+        "terv",
+        "ötlet",
+        "csinál"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-145-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'dance'.",
-      "options": [
-        "táncol",
-        "olvas",
-        "fut"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "val-vel"
       ],
-      "stage": "check"
+      "question": "“We are going with you (pl).” Which sentence?",
+      "options": [
+        "Velünk megyünk.",
+        "Veletek megyünk.",
+        "Velük megyünk."
+      ],
+      "correct": 1
     }
   ]
 }

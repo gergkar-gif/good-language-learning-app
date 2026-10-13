@@ -2,292 +2,231 @@
   "lesson": "a1-141",
   "exercises": [
     {
-      "id": "a1-141-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'egyenesen' mean?",
-      "options": [
-        "straight",
-        "to the right",
-        "to the left"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
-    },
-    {
-      "id": "a1-141-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'utazik' mean?",
-      "options": [
-        "to travel",
-        "to arrive",
-        "to depart"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-transport-directions-vocab"
-      ]
-    },
-    {
       "id": "a1-141-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'szabadidő' mean?",
-      "options": [
-        "free time",
-        "sport",
-        "football"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-hobbies-free-time-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “free time”?",
+      "options": [
+        "zene",
+        "szabadidő",
+        "érdekel"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-141-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'úszás' mean?",
-      "options": [
-        "swimming",
-        "running",
-        "football"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "erdekel-construction"
       ],
-      "stage": "introduce"
+      "question": "How do you say “I like music”?",
+      "options": [
+        "Szeretem a zene.",
+        "Szeretek a zenét.",
+        "Szeretem a zenét."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-141-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Mit csinálsz ____?",
-      "hint": "in your free time",
-      "english": "What do you do in your free time?",
-      "answer": "szabadidőben",
+      "stage": "controlled",
       "teaches": [
-        "ban-ben-in"
+        "erdekel-construction"
       ],
-      "stage": "controlled"
+      "sentence": "____ olvasni.",
+      "english": "I like reading.",
+      "answer": "Szeretek"
     },
     {
       "id": "a1-141-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'football'.",
-      "options": [
-        "foci",
-        "sport",
-        "úszás"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-141-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "szabadidő",
-          "free time"
-        ],
-        [
-          "sport",
-          "sport"
-        ],
-        [
-          "foci",
-          "football"
-        ],
-        [
-          "úszás",
-          "swimming"
-        ]
-      ],
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-141-controlled-4",
-      "type": "substitution",
       "category": "grammar",
-      "base_sentence": "Szeretek sportolni.",
-      "base_word": "sportolni",
-      "base_gloss": "I like doing sport.",
-      "options": [
-        {
-          "word": "úszni",
-          "inflected": "úszni",
-          "sentence": "Szeretek úszni.",
-          "gloss": "swimming"
-        },
-        {
-          "word": "focizni",
-          "inflected": "focizni",
-          "sentence": "Szeretek focizni.",
-          "gloss": "playing football"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "erdekel-construction"
       ],
-      "stage": "controlled"
+      "question": "Sport interests you (Meg is speaking). Which sentence?",
+      "options": [
+        "A sportot érdekel.",
+        "A sport érdekel.",
+        "A sport érdeklek."
+      ],
+      "correct": 1
     },
     {
-      "id": "a1-141-practice-1",
-      "type": "multiple-choice",
+      "id": "a1-141-controlled-3",
+      "type": "fill-blank",
       "category": "grammar",
-      "question": "Which form is used with an infinitive and no named object?",
-      "options": [
-        "szeretek",
-        "szeretem",
-        "szereted"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "sentence": "Anna ____ a zenét.",
+      "english": "Anna likes music.",
+      "answer": "szereti"
     },
     {
-      "id": "a1-141-practice-2",
-      "type": "fill-blank",
+      "id": "a1-141-controlled-4",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Szeretem az úszást és a ____.",
-      "hint": "running, object form",
-      "english": "I like swimming and running.",
-      "answer": "futást",
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "erdekel-construction"
       ],
-      "stage": "practice"
+      "question": "You like to do sport. Which sentence?",
+      "options": [
+        "Szeretek sportol.",
+        "Szeretek sportolni.",
+        "Szeretek sportolok."
+      ],
+      "correct": 1
     },
     {
-      "id": "a1-141-practice-3",
+      "id": "a1-141-practice-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-hobbies-free-time-vocab"
+      ],
       "pairs": [
         [
           "szabadidő",
           "free time"
         ],
         [
+          "szeret",
+          "likes"
+        ],
+        [
+          "érdekel",
+          "interests"
+        ],
+        [
+          "zene",
+          "music"
+        ],
+        [
           "sport",
           "sport"
-        ],
-        [
-          "foci",
-          "football"
-        ],
-        [
-          "úszás",
-          "swimming"
-        ],
-        [
-          "egyenesen",
-          "straight"
         ]
-      ],
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ],
-      "stage": "practice"
+      ]
     },
     {
-      "id": "a1-141-practice-4",
+      "id": "a1-141-practice-2",
       "type": "substitution",
       "category": "grammar",
-      "base_sentence": "Szeretem az úszást.",
-      "base_word": "úszást",
-      "base_gloss": "I like swimming.",
+      "stage": "practice",
+      "base_sentence": "Szeretem a zenét.",
+      "base_word": "zene",
+      "base_gloss": "I like music.",
       "options": [
         {
-          "word": "focit",
-          "inflected": "focit",
-          "sentence": "Szeretem a focit.",
-          "gloss": "football"
-        },
-        {
-          "word": "sportot",
+          "word": "sport",
           "inflected": "sportot",
           "sentence": "Szeretem a sportot.",
           "gloss": "sport"
+        },
+        {
+          "word": "könyv",
+          "inflected": "könyvet",
+          "sentence": "Szeretem a könyvet.",
+          "gloss": "book"
         }
       ],
       "teaches": [
         "how-the-accusative-t-works"
+      ]
+    },
+    {
+      "id": "a1-141-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "question": "Anna asks Meg whether she likes sport. Which question?",
+      "options": [
+        "Szeretsz a sportot?",
+        "Szereted a sportot?",
+        "Szereted a sport?"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-141-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "question": "Which sentence is right? Anna does not like sport.",
+      "options": [
+        "Anna nem szeret a sportot.",
+        "Anna nem szereti a sport.",
+        "Anna nem szereti a sportot."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-141-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Mit csinálsz a szabadidődben?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Sportolok. Szeretek úszni és futni.",
-        "A bank közel van."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "erdekel-construction"
       ],
-      "stage": "practice"
+      "sentence": "Téged ____ a sport?",
+      "english": "Does sport interest you?",
+      "answer": "érdekel"
     },
     {
       "id": "a1-141-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Szeretek sportolni."
+          "speaker": "Anna",
+          "text": "Szereted a zenét?"
         },
         {
-          "speaker": "Anna",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Én is! Én a focit szeretem.",
-        "Mennyibe kerül?"
+        "Igen, szeretek.",
+        "Igen, szeretem.",
+        "Igen, szereti."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-141-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "erdekel-construction"
+      ],
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Szereted az úszást?"
+          "text": "Mi érdekel téged?"
         },
         {
           "speaker": "Meg",
@@ -295,73 +234,94 @@
         }
       ],
       "options": [
-        "Igen, nagyon szeretem.",
-        "Szia, hogy vagy?"
+        "A zenét érdekel.",
+        "A zene érdeklek.",
+        "A zene érdekel."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-141-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say what you do in your free time.",
-          "answer": "Szeretek sportolni."
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "erdekel-construction"
-      ]
+        "definite-vs-indefinite-conjugation"
+      ],
+      "tiles": [
+        "Szeretem",
+        "a",
+        "zenét,",
+        "de",
+        "nem",
+        "szeretem",
+        "a",
+        "sportot",
+        "."
+      ],
+      "solution": [
+        "Szeretem",
+        "a",
+        "zenét,",
+        "de",
+        "nem",
+        "szeretem",
+        "a",
+        "sportot",
+        "."
+      ],
+      "english": "I like music, but I do not like sport."
     },
     {
       "id": "a1-141-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-hobbies-free-time-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say you like swimming and running.",
-          "answer": "Szeretem az úszást és a futást."
+          "prompt": "Say that you like to read.",
+          "answer": "Szeretek olvasni."
+        },
+        {
+          "prompt": "Say that sport interests you.",
+          "answer": "A sport érdekel."
         }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
       ]
     },
     {
       "id": "a1-141-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Choose the correct word for 'free time'.",
-      "options": [
-        "szabadidő",
-        "sport",
-        "foci"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-hobbies-free-time-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “music”?",
+      "options": [
+        "sport",
+        "szabadidő",
+        "zene"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-141-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'swimming'.",
-      "options": [
-        "úszás",
-        "futás",
-        "foci"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "erdekel-construction"
       ],
-      "stage": "check"
+      "question": "Choose the right sentence: I like to cook.",
+      "options": [
+        "Szeretek főz.",
+        "Szeretek főzök.",
+        "Szeretek főzni."
+      ],
+      "correct": 2
     }
   ]
 }

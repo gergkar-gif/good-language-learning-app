@@ -2,369 +2,341 @@
   "lesson": "a1-142",
   "exercises": [
     {
-      "id": "a1-142-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'szabadidő' mean?",
-      "options": [
-        "free time",
-        "sport",
-        "music"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
-    },
-    {
-      "id": "a1-142-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'úszás' mean?",
-      "options": [
-        "swimming",
-        "running",
-        "dance"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
-    },
-    {
       "id": "a1-142-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'futás' mean?",
-      "options": [
-        "running",
-        "swimming",
-        "reading"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-hobbies-free-time-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “football”?",
+      "options": [
+        "film",
+        "foci",
+        "futás"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-142-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'zene' mean?",
-      "options": [
-        "music",
-        "film",
-        "book"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "introduce"
+      "question": "You like football. Which sentence?",
+      "options": [
+        "Szeretem a foci.",
+        "Szeretem a focik.",
+        "Szeretem a focit."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "1": "plural-nouns-k"
+      }
     },
     {
       "id": "a1-142-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Én a ____ szeretem.",
-      "hint": "football, object form",
-      "english": "I like football.",
-      "answer": "focit",
+      "stage": "controlled",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "sentence": "Szeretem a ____.",
+      "english": "I like the film.",
+      "answer": "filmet"
     },
     {
       "id": "a1-142-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'film'.",
-      "options": [
-        "film",
-        "könyv",
-        "zene"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "definite-article-a-az"
       ],
-      "stage": "controlled"
+      "question": "How do you say “I like swimming”?",
+      "options": [
+        "Szeretem a úszást.",
+        "Szeretem az úszást.",
+        "Szeretem az úszás."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-142-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "futás",
-          "running"
-        ],
-        [
-          "zene",
-          "music"
-        ],
-        [
-          "film",
-          "film"
-        ],
-        [
-          "könyv",
-          "book"
-        ]
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Anna",
+        "szereti",
+        "a",
+        "futást",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "szereti",
+        "a",
+        "futást",
+        "."
+      ],
+      "english": "Anna likes running."
     },
     {
       "id": "a1-142-controlled-4",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Szeretem a zenét.",
-      "base_word": "zenét",
-      "base_gloss": "I like music.",
-      "options": [
-        {
-          "word": "filmeket",
-          "inflected": "filmeket",
-          "sentence": "Szeretem a filmeket.",
-          "gloss": "films"
-        },
-        {
-          "word": "könyvet",
-          "inflected": "könyvet",
-          "sentence": "Szeretem a könyvet.",
-          "gloss": "the book"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "a1-hobbies-free-time-vocab"
       ],
-      "stage": "controlled"
+      "question": "What is “hike” in Hungarian?",
+      "options": [
+        "szabadidő",
+        "kirándulás",
+        "érdekel"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-142-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence fronts the object for emphasis?",
-      "options": [
-        "Én a focit szeretem.",
-        "Szeretem a focit.",
-        "Szeretek focizni."
-      ],
-      "correct": 0,
-      "teaches": [
-        "basic-hungarian-word-order"
-      ],
-      "distractor_skills": {
-        "2": "erdekel-construction"
-      },
-      "stage": "practice"
-    },
-    {
-      "id": "a1-142-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Szeretem a zenét és a ____.",
-      "hint": "films, object form",
-      "english": "I like music and films.",
-      "answer": "filmeket",
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-142-practice-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-hobbies-free-time-vocab"
+      ],
       "pairs": [
+        [
+          "foci",
+          "football"
+        ],
+        [
+          "úszás",
+          "swimming"
+        ],
         [
           "futás",
           "running"
         ],
         [
-          "zene",
-          "music"
+          "kirándulás",
+          "hike"
         ],
         [
-          "film",
-          "film"
+          "néz",
+          "watches"
         ],
         [
-          "könyv",
-          "book"
-        ],
-        [
-          "foci",
-          "football"
+          "hallgat",
+          "listens to"
         ]
-      ],
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ],
-      "stage": "practice"
+      ]
     },
     {
-      "id": "a1-142-practice-4",
+      "id": "a1-142-practice-2",
       "type": "substitution",
       "category": "grammar",
-      "base_sentence": "Szeretem a zenét és a filmeket.",
-      "base_word": "filmeket",
-      "base_gloss": "I like music and films.",
+      "stage": "practice",
+      "base_sentence": "Szeretem a filmet.",
+      "base_word": "film",
+      "base_gloss": "I like the film.",
       "options": [
         {
-          "word": "könyveket",
-          "inflected": "könyveket",
-          "sentence": "Szeretem a zenét és a könyveket.",
-          "gloss": "books"
+          "word": "foci",
+          "inflected": "focit",
+          "sentence": "Szeretem a focit.",
+          "gloss": "football"
         },
         {
-          "word": "focit",
-          "inflected": "focit",
-          "sentence": "Szeretem a zenét és a focit.",
-          "gloss": "football"
+          "word": "zene",
+          "inflected": "zenét",
+          "sentence": "Szeretem a zenét.",
+          "gloss": "music"
         }
       ],
       "teaches": [
         "how-the-accusative-t-works"
+      ]
+    },
+    {
+      "id": "a1-142-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "question": "Anna asks what Meg is watching. Which question?",
+      "options": [
+        "Mit nézek?",
+        "Mit nézel?",
+        "Mit néz?"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-142-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "question": "Which sentence says you are listening to music?",
+      "options": [
+        "Zene hallgatok.",
+        "Zenéet hallgatok.",
+        "Zenét hallgatok."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-142-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Anna",
-          "text": "Én a focit szeretem."
-        },
-        {
-          "speaker": "András",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Én inkább a zenét és a filmeket szeretem.",
-        "A bank közel van."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "sentence": "Anna filmet ____.",
+      "english": "Anna is watching a film.",
+      "answer": "néz"
     },
     {
       "id": "a1-142-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-hobbies-free-time-vocab"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mit szeretsz?"
+          "speaker": "Anna",
+          "text": "Mit hallgatsz?"
         },
         {
-          "speaker": "András",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "A zenét és a filmeket.",
-        "Mennyibe kerül?"
+        "Filmet nézek.",
+        "Zenét hallgatok.",
+        "A focit szeretem."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-142-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Szereted a futást?"
+          "speaker": "Károly",
+          "text": "Mit nézel?"
         },
         {
-          "speaker": "Anna",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Nem, a focit szeretem.",
-        "Szia, hogy vagy?"
+        "Filmet nézel.",
+        "Filmet néz.",
+        "Filmet nézek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-142-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say you like football (with emphasis on 'I').",
-          "answer": "Én a focit szeretem."
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "basic-hungarian-word-order"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "tiles": [
+        "Szeretem",
+        "az",
+        "úszást",
+        "és",
+        "a",
+        "futást",
+        "."
+      ],
+      "solution": [
+        "Szeretem",
+        "az",
+        "úszást",
+        "és",
+        "a",
+        "futást",
+        "."
+      ],
+      "english": "I like swimming and running."
     },
     {
       "id": "a1-142-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-hobbies-free-time-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say you like music and films.",
-          "answer": "Szeretem a zenét és a filmeket."
+          "prompt": "Say that you are watching a film.",
+          "answer": "Filmet nézek."
+        },
+        {
+          "prompt": "Say that you are listening to music.",
+          "answer": "Zenét hallgatok."
         }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
       ]
     },
     {
       "id": "a1-142-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Choose the correct word for 'running'.",
-      "options": [
-        "futás",
-        "úszás",
-        "tánc"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-hobbies-free-time-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “running”?",
+      "options": [
+        "úszás",
+        "futás",
+        "kirándulás"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-142-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'music'.",
-      "options": [
-        "zene",
-        "film",
-        "könyv"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "question": "You like the hike. Which sentence?",
+      "options": [
+        "Szeretem a kirándulás.",
+        "Szeretem a kirándulást.",
+        "Szeretem a kiránduláset."
+      ],
+      "correct": 1
     }
   ]
 }

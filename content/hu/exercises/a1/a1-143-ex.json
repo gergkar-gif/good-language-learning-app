@@ -2,272 +2,220 @@
   "lesson": "a1-143",
   "exercises": [
     {
-      "id": "a1-143-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'futás' mean?",
-      "options": [
-        "running",
-        "swimming",
-        "dance"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
-    },
-    {
-      "id": "a1-143-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'kirándulás' mean?",
-      "options": [
-        "excursion",
-        "dance",
-        "reading"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
-    },
-    {
       "id": "a1-143-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'olvasás' mean?",
-      "options": [
-        "reading",
-        "dance",
-        "hiking"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-hobbies-free-time-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “runs”?",
+      "options": [
+        "úszik",
+        "fut",
+        "focizik"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-143-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'barát' mean?",
-      "options": [
-        "friend",
-        "dance",
-        "hike"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "introduce"
+      "question": "How do you say “to swim”?",
+      "options": [
+        "úszikni",
+        "úszani",
+        "úszni"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-143-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Szeretsz ____?",
-      "hint": "dancing",
-      "english": "Do you like dancing?",
-      "answer": "táncolni",
+      "stage": "controlled",
       "teaches": [
         "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "controlled"
+      "sentence": "Szeretek ____.",
+      "english": "I like to run.",
+      "answer": "futni"
     },
     {
       "id": "a1-143-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'hike / excursion'.",
-      "options": [
-        "kirándulás",
-        "tánc",
-        "olvasás"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "controlled"
+      "question": "What is “to dance” in Hungarian?",
+      "options": [
+        "táncol",
+        "táncolni",
+        "táncolnik"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-143-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "olvasás",
-          "reading"
-        ],
-        [
-          "tánc",
-          "dance"
-        ],
-        [
-          "kirándulás",
-          "hike / excursion"
-        ],
-        [
-          "barát",
-          "friend"
-        ]
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Anna",
+        "szeretne",
+        "kirándulni",
+        "."
+      ],
+      "solution": [
+        "Anna",
+        "szeretne",
+        "kirándulni",
+        "."
+      ],
+      "english": "Anna would like to go hiking."
     },
     {
       "id": "a1-143-controlled-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "grammar",
-      "base_sentence": "Szeretsz táncolni?",
-      "base_word": "táncolni",
-      "base_gloss": "Do you like dancing?",
-      "options": [
-        {
-          "word": "olvasni",
-          "inflected": "olvasni",
-          "sentence": "Szeretsz olvasni?",
-          "gloss": "reading"
-        },
-        {
-          "word": "kirándulni",
-          "inflected": "kirándulni",
-          "sentence": "Szeretsz kirándulni?",
-          "gloss": "hiking"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "controlled"
+      "question": "How do you say “to eat”?",
+      "options": [
+        "eszni",
+        "enni",
+        "eszik"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-143-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which suffix builds an infinitive from a verb stem?",
-      "options": [
-        "-ni",
-        "-ban",
-        "-tól"
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "building-the-infinitive-the-suffix-ni"
+        "a1-hobbies-free-time-vocab"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "practice"
+      "pairs": [
+        [
+          "úszik",
+          "swims"
+        ],
+        [
+          "fut",
+          "runs"
+        ],
+        [
+          "focizik",
+          "plays football"
+        ],
+        [
+          "kirándul",
+          "goes hiking"
+        ],
+        [
+          "néz",
+          "watches"
+        ],
+        [
+          "hallgat",
+          "listens to"
+        ]
+      ]
     },
     {
       "id": "a1-143-practice-2",
-      "type": "fill-blank",
+      "type": "substitution",
       "category": "grammar",
-      "sentence": "Én szeretek ____.",
-      "hint": "hiking",
-      "english": "I like hiking.",
-      "answer": "kirándulni",
+      "stage": "practice",
+      "base_sentence": "Szeretek úszni.",
+      "base_word": "úszik",
+      "base_gloss": "I like to swim.",
+      "options": [
+        {
+          "word": "fut",
+          "inflected": "futni",
+          "sentence": "Szeretek futni.",
+          "gloss": "run"
+        },
+        {
+          "word": "focizik",
+          "inflected": "focizni",
+          "sentence": "Szeretek focizni.",
+          "gloss": "play football"
+        }
+      ],
       "teaches": [
         "building-the-infinitive-the-suffix-ni"
-      ],
-      "stage": "practice"
+      ]
     },
     {
       "id": "a1-143-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "olvasás",
-          "reading"
-        ],
-        [
-          "tánc",
-          "dance"
-        ],
-        [
-          "kirándulás",
-          "hike / excursion"
-        ],
-        [
-          "barát",
-          "friend"
-        ],
-        [
-          "zene",
-          "music"
-        ]
-      ],
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-143-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "grammar",
-      "base_sentence": "Szeretek olvasni.",
-      "base_word": "olvasni",
-      "base_gloss": "I like reading.",
-      "options": [
-        {
-          "word": "táncolni",
-          "inflected": "táncolni",
-          "sentence": "Szeretek táncolni.",
-          "gloss": "dancing"
-        },
-        {
-          "word": "kirándulni",
-          "inflected": "kirándulni",
-          "sentence": "Szeretek kirándulni.",
-          "gloss": "hiking"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
         "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "practice"
+      "question": "Which sentence says you usually play football?",
+      "options": [
+        "Szoktam focizni.",
+        "Szoktam focizom.",
+        "Szokunk focizni."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-143-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "building-the-infinitive-the-suffix-ni"
+      ],
+      "question": "You are going swimming. Which sentence?",
+      "options": [
+        "Úszok megyek.",
+        "Úszni megyek.",
+        "Úszni menni."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-143-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Szeretsz táncolni?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Igen, nagyon szeretek.",
-        "A bank közel van."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "practice"
+      "sentence": "Moziba szeretnék ____.",
+      "english": "I would like to go to the cinema.",
+      "answer": "menni"
     },
     {
       "id": "a1-143-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "building-the-infinitive-the-suffix-ni"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Szeretek olvasni."
+          "speaker": "Anna",
+          "text": "Szeretsz táncolni?"
         },
         {
           "speaker": "Meg",
@@ -275,96 +223,107 @@
         }
       ],
       "options": [
-        "Én inkább táncolni szeretek.",
-        "Mennyibe kerül?"
+        "Igen, szeretek táncolok.",
+        "Igen, szeretek táncolni.",
+        "Igen, táncolni szeretsz."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-143-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "nek-conditional"
+      ],
       "prompt": [
         {
-          "speaker": "Anna",
-          "text": "Én szeretek kirándulni."
+          "speaker": "Károly",
+          "text": "Futni szeretnél?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Én is szeretek kirándulni.",
-        "Szia, hogy vagy?"
+        "Nem, focizni szeretnél.",
+        "Nem, focizni szeretne.",
+        "Nem, focizni szeretnék."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-143-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask if someone likes dancing.",
-          "answer": "Szeretsz táncolni?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "building-the-infinitive-the-suffix-ni"
-      ]
+      ],
+      "tiles": [
+        "Szeretek",
+        "úszni",
+        "és",
+        "futni",
+        "."
+      ],
+      "solution": [
+        "Szeretek",
+        "úszni",
+        "és",
+        "futni",
+        "."
+      ],
+      "english": "I like to swim and run."
     },
     {
       "id": "a1-143-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Say you like hiking.",
-          "answer": "Szeretek kirándulni."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "building-the-infinitive-the-suffix-ni"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you like to swim.",
+          "answer": "Szeretek úszni."
+        },
+        {
+          "prompt": "Say that you are going hiking.",
+          "answer": "Kirándulni megyek."
+        }
       ]
     },
     {
       "id": "a1-143-check-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'reading'.",
-      "options": [
-        "olvasás",
-        "tánc",
-        "futás"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "check"
+      "question": "Pick the form for “to play football”:",
+      "options": [
+        "focizik",
+        "focizni",
+        "focizinek"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-143-check-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'friend'.",
-      "options": [
-        "barát",
-        "kirándulás",
-        "zene"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-hobbies-free-time-vocab"
+        "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "check"
+      "sentence": "Anna szeret ____.",
+      "english": "Anna likes dancing.",
+      "answer": "táncolni"
     }
   ]
 }

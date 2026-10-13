@@ -4,114 +4,123 @@
   "level": "A1",
   "type": "original",
   "characters": [
-    "Károly",
     "Meg",
     "Anna",
-    "András",
-    "Mariann"
+    "Károly"
   ],
   "paragraphs": [
     {
       "type": "narration",
       "lang": "en",
-      "text": "The friends talk about free time and discover activities they enjoy together."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Mit csinálsz szabadidőben?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Szeretek sportolni. Szeretem az úszást és a futást."
+      "text": "Friday evening. Meg, Anna and Károly make a plan for the weekend."
     },
     {
       "type": "dialogue",
       "speaker": "Anna",
-      "text": "Én a focit szeretem."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "András",
-      "text": "Szeretem a zenét és a filmeket."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Szeretek olvasni."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Szeretsz táncolni?"
+      "text": "Mit csinálunk hétvégén? Mit szeretnétek?"
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Igen, szeretek táncolni."
+      "text": "Engem a sport érdekel. Szombaton kirándulni szeretnék."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Jó ötlet! Én szeretek kirándulni, de nem szeretek úszni. A víz hideg!"
     },
     {
       "type": "dialogue",
       "speaker": "Anna",
-      "text": "Én szeretek kirándulni."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "András",
-      "text": "Találkozunk a hétvégén?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Igen, együtt."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Én játszani is szeretek."
+      "text": "Akkor szombaton kirándulunk. Busszal megyünk?"
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Én szeretek filmet nézni és zenét hallgatni."
+      "text": "Igen, busszal. Gyalog messze van."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "És vasárnap? Mit csinálsz, Anna?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Én zenét hallgatok, vagy filmet nézek. Moziba szeretnék menni."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Moziba megyünk! Jössz velünk, Meg?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Persze! Szeretem a filmeket. Szombaton túra, vasárnap film."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Jó hétvége lesz!"
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Miről beszélgetnek a barátok a történetben?",
+          "question": "Mit csinálnak szombaton?",
           "options": [
-            "A munkahelyi nehézségeikről és a pénzről.",
-            "Egy tervezett külföldi utazás költségeiről.",
-            "A szabadidős hobbijaikról és a kedvenc időtöltéseikről.",
-            "Egy elveszett vonatjegyről az állomáson."
-          ],
-          "correctIndex": 2,
-          "explanation": "A barátok sorra elmesélik, mit szeretnek csinálni a szabadidejükben (sport, zene, olvasás, tánc, kirándulás)."
-        },
-        {
-          "question": "Milyen sportot szeret Meg a szöveg szerint?",
-          "options": [
-            "A teniszt és a kosárlabdát",
-            "Az úszást és a futást",
-            "A focit és a síelést",
-            "Csak a kerékpározást"
-          ],
-          "correctIndex": 1,
-          "explanation": "Meg mondja: „Szeretek sportolni. Szeretem az úszást és a futást.” (I like sports. I like swimming and running.)"
-        },
-        {
-          "question": "Mit terveznek a barátok a hétvégére?",
-          "options": [
-            "Találkoznak és együtt töltenek időt.",
-            "Mindenki otthon marad egyedül olvasni.",
-            "Nem érnek rá, mert dolgozniuk kell.",
-            "Különböző városokba utaznak el vonattal."
+            "Kirándulnak.",
+            "Úsznak.",
+            "Moziba mennek.",
+            "Teniszeznek."
           ],
           "correctIndex": 0,
-          "explanation": "András kérdésére („Találkozunk a hétvégén?”) Meg örömmel felel: „Igen, együtt.” (Yes, together.)"
+          "explanation": "Anna says: „Akkor szombaton kirándulunk.” (Then we are going hiking on Saturday.)",
+          "questionEnglish": "What are they doing on Saturday?",
+          "optionsEnglish": [
+            "Going hiking.",
+            "Swimming.",
+            "Going to the cinema.",
+            "Playing tennis."
+          ]
+        },
+        {
+          "question": "Miért nem szeret Meg úszni?",
+          "options": [
+            "Mert a víz hideg.",
+            "Mert messze van.",
+            "Mert drága.",
+            "Mert nem szereti a sportot."
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg says: „A víz hideg!” (The water is cold!)",
+          "questionEnglish": "Why does Meg not like swimming?",
+          "optionsEnglish": [
+            "Because the water is cold.",
+            "Because it is far.",
+            "Because it is expensive.",
+            "Because she does not like sport."
+          ]
+        },
+        {
+          "question": "Mit csinálnak vasárnap?",
+          "options": [
+            "Moziba mennek.",
+            "Kirándulnak.",
+            "Futnak.",
+            "Zenét hallgatnak."
+          ],
+          "correctIndex": 0,
+          "explanation": "Károly says: „Moziba megyünk!” (We are going to the cinema!)",
+          "questionEnglish": "What are they doing on Sunday?",
+          "optionsEnglish": [
+            "Going to the cinema.",
+            "Going hiking.",
+            "Running.",
+            "Listening to music."
+          ]
         }
       ]
     }
