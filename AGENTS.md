@@ -41,7 +41,8 @@ python scripts/check-content.py --changed
 ```
 
 It fails only on problems your change adds (a give-away option, a hint that
-is the answer, a missing `english`, a form used before its screen…); findings
+is the answer, a missing `english`, a form used before its screen, a lemma
+listed twice in one vocabulary file…); findings
 already in the content stay a report. `python scripts/check-content.py
 <course> [level] [unit id]` lists everything for one scope, `--summary`
 counts it. The pre-push hook runs both checks.

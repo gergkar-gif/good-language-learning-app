@@ -79,7 +79,8 @@ All reads so far used the full docs (brief, AGENTS, spec, registry).
 - Reviewer's own cost: filtering by checking each claim in the files is
   where errors were caught (wrong pilot item, "Harminc éves" two-answer
   item), so it stays.
-- Next candidates: a `check-content.py` check for duplicate vocabulary
-  entries and for `distractor_skills` on non-word options (the Reader
+- Done: `check-content.py` `vocab-duplicate` (error); it also found
+  *foto* twice in es-es/es-latam `a1-03-01-voc` (left for the Spanish A1 pass).
+- Next candidates: a check for `distractor_skills` on non-word options (the Reader
   lexicon can tell a non-word); Haiku for applying an already-filtered
   fix list.

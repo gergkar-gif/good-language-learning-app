@@ -77,6 +77,7 @@ CHECKS = {
     "unit-copy": "an exercise copies one from an earlier lesson of the unit",
     "taught-later": "a grammar skill is used before the lesson whose screen teaches it",
     "vocab-unused": "a vocabulary word no exercise of its lesson uses",
+    "vocab-duplicate": "a vocabulary list has the same lemma twice",
     "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
     "unmet-word": "a word the learner hasn't met by this lesson (scripts/unmet-words.js)",
     # shape, new courses only (§ 2)
@@ -483,7 +484,12 @@ def check_unit(src, course, level, unit, shape):
             voc = src.read(f"content/{course}/{vocab_ref}") or {}
             hay = fold(" ".join(" ".join(texts(e)) for e in exs))
             hay_words = set(re.findall(r"\w+", hay))
+            seen_lemmas = set()
             for w in voc.get("words", []) if isinstance(voc, dict) else []:
+                lemma = fold(w.get("lemma", ""))
+                if lemma in seen_lemmas:
+                    out.append(("vocab-duplicate", stem, w.get("lemma"), f"content/{course}/{vocab_ref}"))
+                seen_lemmas.add(lemma)
                 sw = stem_words(w.get("lemma", ""), L.get("articles", ()))
                 if sw and not all(any(h.startswith(s) for h in hay_words) for s in sw):
                     out.append(("vocab-unused", stem, w.get("lemma"), f"content/{course}/{vocab_ref}"))
