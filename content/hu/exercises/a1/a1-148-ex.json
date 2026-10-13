@@ -2,287 +2,209 @@
   "lesson": "a1-148",
   "exercises": [
     {
-      "id": "a1-148-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'mikor' mean?",
-      "options": [
-        "when",
-        "where",
-        "who"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
-    },
-    {
-      "id": "a1-148-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'hétvége' mean?",
-      "options": [
-        "weekend",
-        "tomorrow",
-        "evening"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
-    },
-    {
       "id": "a1-148-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'délután' mean?",
-      "options": [
-        "afternoon",
-        "evening",
-        "morning"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-friends-making-plans-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “idea”?",
+      "options": [
+        "buli",
+        "ötlet",
+        "terv"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-148-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'mikor' mean?",
-      "options": [
-        "when",
-        "where",
-        "how"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "good-for-me-nekem-jo"
       ],
-      "stage": "introduce"
+      "question": "Anna says: “Nekem jó.” What does she mean?",
+      "options": [
+        "It suits me.",
+        "It suits you.",
+        "It suits him."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-148-controlled-1",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Nekem nem jó ____.",
-      "hint": "afternoon",
-      "english": "The afternoon is not good for me.",
-      "answer": "délután",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "good-for-me-nekem-jo"
       ],
-      "stage": "controlled"
+      "sentence": "____ jó szombaton?",
+      "english": "Is Saturday good for you?",
+      "answer": "Neked"
     },
     {
       "id": "a1-148-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'evening'.",
-      "options": [
-        "este",
-        "délután",
-        "óra"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "good-for-me-nekem-jo"
       ],
-      "stage": "controlled"
+      "sentence": "____ nem jó este.",
+      "english": "The evening is not good for her.",
+      "answer": "Neki"
     },
     {
       "id": "a1-148-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "délután",
-          "afternoon"
-        ],
-        [
-          "este",
-          "evening"
-        ],
-        [
-          "óra",
-          "o'clock / hour"
-        ],
-        [
-          "mikor",
-          "when"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "good-for-me-nekem-jo"
       ],
-      "stage": "controlled"
+      "question": "Which sentence means “It is good for us on Saturday”?",
+      "options": [
+        "Nekem jó szombaton.",
+        "Nektek jó szombaton.",
+        "Nekünk jó szombaton."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-148-controlled-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Nekem nem jó délután.",
-      "base_word": "délután",
-      "base_gloss": "The afternoon doesn't work for me.",
-      "options": [
-        {
-          "word": "este",
-          "inflected": "este",
-          "sentence": "Nekem nem jó este.",
-          "gloss": "the evening"
-        },
-        {
-          "word": "hétvégén",
-          "inflected": "hétvégén",
-          "sentence": "Nekem nem jó hétvégén.",
-          "gloss": "at the weekend"
-        }
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "kor-time"
       ],
-      "stage": "controlled"
+      "sentence": "Nekem jó ____.",
+      "hint": "hét",
+      "english": "Seven o'clock is good for me.",
+      "answer": "hétkor"
     },
     {
       "id": "a1-148-practice-1",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "vocabulary",
-      "question": "Which word asks 'when'?",
-      "options": [
-        "mikor",
-        "hol",
-        "milyen"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-friends-making-plans-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "nekem",
+          "for me"
+        ],
+        [
+          "neked",
+          "for you"
+        ],
+        [
+          "neki",
+          "for him/her"
+        ],
+        [
+          "nekünk",
+          "for us"
+        ],
+        [
+          "nektek",
+          "for you (all)"
+        ],
+        [
+          "nekik",
+          "for them"
+        ]
+      ]
     },
     {
       "id": "a1-148-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Nekem hét ____ jó.",
-      "english": "Seven o'clock is good for me.",
-      "answer": "óra",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "good-for-me-nekem-jo"
       ],
-      "stage": "practice"
+      "question": "Meg says: “Nektek jó vasárnap?” Who is she asking?",
+      "options": [
+        "Two or more friends.",
+        "Just one friend.",
+        "Only herself."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-148-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "délután",
-          "afternoon"
-        ],
-        [
-          "este",
-          "evening"
-        ],
-        [
-          "óra",
-          "o'clock / hour"
-        ],
-        [
-          "mikor",
-          "when"
-        ],
-        [
-          "holnap",
-          "tomorrow"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "good-for-me-nekem-jo"
       ],
-      "stage": "practice"
+      "sentence": "Mikor jó ____?",
+      "english": "When is it good for you (all)?",
+      "answer": "nektek"
     },
     {
       "id": "a1-148-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "base_sentence": "Nekem hét óra jó.",
-      "base_word": "hét óra",
-      "base_gloss": "Seven o'clock works for me.",
-      "options": [
-        {
-          "word": "nyolc óra",
-          "inflected": "nyolc óra",
-          "sentence": "Nekem nyolc óra jó.",
-          "gloss": "eight o'clock"
-        },
-        {
-          "word": "délután",
-          "inflected": "délután",
-          "sentence": "Nekem délután jó.",
-          "gloss": "the afternoon"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-friends-making-plans-vocab"
       ],
-      "stage": "practice"
+      "question": "What does “később” mean?",
+      "options": [
+        "later",
+        "early",
+        "always"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-148-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mikor találkozunk?"
-        },
-        {
-          "speaker": "Anna",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Holnap délután jó neked?",
-        "A bank közel van."
-      ],
-      "correct": 0,
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "good-for-me-nekem-jo"
       ],
-      "stage": "practice"
+      "tiles": [
+        "neked",
+        "jó",
+        "Nekem",
+        "de",
+        ",",
+        "este",
+        "nem",
+        "jó",
+        "."
+      ],
+      "solution": [
+        "Nekem",
+        "nem",
+        "jó",
+        "este",
+        ",",
+        "de",
+        "neked",
+        "jó",
+        "."
+      ],
+      "english": "The evening is not good for me, but it is good for you."
     },
     {
       "id": "a1-148-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Mariann",
-          "text": "Nekem nem jó délután, de este ráérek."
-        },
-        {
-          "speaker": "András",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Nekem is jó az este.",
-        "Mennyibe kerül?"
-      ],
-      "correct": 0,
+      "stage": "dialogue",
       "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
-    },
-    {
-      "id": "a1-148-dialogue-2",
-      "type": "dialogue-complete",
-      "category": "dialogue",
+        "kor-time"
+      ],
       "prompt": [
         {
           "speaker": "Anna",
@@ -294,73 +216,118 @@
         }
       ],
       "options": [
+        "Nekem hét jó.",
         "Nekem hétkor jó.",
-        "Szia, hogy vagy?"
+        "Nekem hétben jó."
       ],
-      "correct": 0,
+      "correct": 1,
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      }
+    },
+    {
+      "id": "a1-148-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
+        "good-for-me-nekem-jo"
+      ],
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Nekem hétkor jó. És neked?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Nektek is jó.",
+        "Neki is jó.",
+        "Nekem is jó."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-148-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask when we're meeting.",
-          "answer": "Mikor találkozunk?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
+        "good-for-me-nekem-jo"
+      ],
+      "tiles": [
+        "de",
+        "neki",
+        "jó",
+        ",",
+        "Nekem",
+        "hétvégén",
+        "nem",
+        "jó",
+        "."
+      ],
+      "solution": [
+        "Nekem",
+        "jó",
+        "hétvégén",
+        ",",
+        "de",
+        "neki",
+        "nem",
+        "jó",
+        "."
+      ],
+      "english": "It is good for me at the weekend, but it is not good for her."
     },
     {
       "id": "a1-148-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-friends-making-plans-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say seven o'clock works for you.",
-          "answer": "Nekem hét óra jó."
+          "prompt": "Say that Saturday is good for you.",
+          "answer": "Nekem jó szombaton."
+        },
+        {
+          "prompt": "Ask Anna whether seven o'clock is good for her.",
+          "answer": "Neked jó hétkor?"
         }
-      ],
-      "teaches": [
-        "good-for-me-nekem-jo"
       ]
     },
     {
       "id": "a1-148-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'afternoon'.",
-      "options": [
-        "délután",
-        "este",
-        "óra"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "good-for-me-nekem-jo"
       ],
-      "stage": "check"
+      "sentence": "____ jó este.",
+      "english": "The evening is good for me.",
+      "answer": "Nekem"
     },
     {
       "id": "a1-148-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'when'.",
-      "options": [
-        "mikor",
-        "hol",
-        "milyen"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "good-for-me-nekem-jo"
       ],
-      "stage": "check"
+      "question": "Which sentence means “It is not good for her in the afternoon”?",
+      "options": [
+        "Neki nem jó délután.",
+        "Neki jó délután.",
+        "Neked nem jó délután."
+      ],
+      "correct": 0
     }
   ]
 }

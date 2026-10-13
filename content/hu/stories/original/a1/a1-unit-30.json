@@ -6,117 +6,141 @@
   "characters": [
     "Károly",
     "Meg",
-    "Anna",
-    "Mariann",
-    "András"
+    "Anna"
   ],
   "paragraphs": [
     {
       "type": "narration",
       "lang": "en",
-      "text": "The group wants to make a plan for a shared activity."
+      "text": "Thursday afternoon. Károly is having a party on Saturday and invites his friends."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Van egy tervem. Szeretnétek együtt programot?"
+      "text": "Szia, Meg! Szombaton buli van a kávézóban. Szeretnél jönni?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Igen. Mikor találkozunk?"
+      "text": "Igen, szívesen! Hánykor találkozunk?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Hétkor. Neked jó?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Hétkor sajnos nem jó nekem. Fél nyolckor lehet?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Persze, lehet. Akkor fél nyolckor találkozunk a kávézó előtt."
+    },
+    {
+      "type": "narration",
+      "lang": "en",
+      "text": "Anna arrives."
     },
     {
       "type": "dialogue",
       "speaker": "Anna",
-      "text": "Holnap délután jó?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Nekem nem jó délután, de este ráérek."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "András",
-      "text": "Nekem is jó az este."
+      "text": "Sziasztok! Mi a terv?"
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Akarunk találkozni hétkor?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Igen, szeretnék."
+      "text": "Szombaton buli van. Anna, te is jössz? Meghívlak!"
     },
     {
       "type": "dialogue",
       "speaker": "Anna",
-      "text": "Nekem hét óra jó."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Mariann",
-      "text": "Lehet nyolc óra?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "Igen, lehet."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "András",
-      "text": "Hol találkozunk?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "A téren. Ez a program."
+      "text": "Szombaton sajnos dolgozom. De vasárnap szabad vagyok."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Jó. Akkor együtt megyünk."
+      "text": "Vasárnap nekem is jó. Mit akarsz csinálni?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "A parkban akarok sétálni, aztán lehet kávét inni."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Jó ötlet! Hánykor találkozunk?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Délben a parkban."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Rendben! Szombaton buli, vasárnap park. Jó hétvége lesz!"
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Mi a célja a csoport beszélgetésének?",
+          "question": "Mikor van a buli?",
           "options": [
-            "Megtervezni egy közös találkozót és megegyezni az időpontban.",
-            "Eladni egy régi asztalt és széket a lakásból.",
-            "Felkészülni egy nehéz egyetemi vizsgára.",
-            "Megkeresni egy elhagyott táskát a villamoson."
+            "Szombaton.",
+            "Vasárnap.",
+            "Pénteken.",
+            "Hétfőn."
           ],
           "correctIndex": 0,
-          "explanation": "A barátok egy közös esti programot szerveznek, és megegyeznek a pontos időben és helyszínben."
+          "explanation": "Károly says: „Szombaton buli van a kávézóban.” (There is a party in the café on Saturday.)",
+          "questionEnglish": "When is the party?",
+          "optionsEnglish": [
+            "On Saturday.",
+            "On Sunday.",
+            "On Friday.",
+            "On Monday."
+          ]
         },
         {
-          "question": "Miért nem jó Mariann-nak a délutáni időpont?",
+          "question": "Hánykor találkozik Károly és Meg?",
           "options": [
-            "Mert elutazik egy másik városba.",
-            "Mert délután nem ér rá, csak este.",
-            "Mert délután mindig alszik.",
-            "Mert nem akar találkozni a barátaival."
+            "Fél nyolckor.",
+            "Hétkor.",
+            "Nyolckor.",
+            "Délben."
           ],
-          "correctIndex": 1,
-          "explanation": "Mariann magyarázata: „Nekem nem jó délután, de este ráérek.” (Afternoon is not good for me, but I am free in the evening.)"
+          "correctIndex": 0,
+          "explanation": "Meg says: „Fél nyolckor lehet?” and Károly agrees: „Akkor fél nyolckor találkozunk.”",
+          "questionEnglish": "At what time do Károly and Meg meet?",
+          "optionsEnglish": [
+            "At half past seven.",
+            "At seven.",
+            "At eight.",
+            "At noon."
+          ]
         },
         {
-          "question": "Végül mikor és hol találkoznak a barátok?",
+          "question": "Miért nem jön Anna a buliba?",
           "options": [
-            "Hét órakor az iskolánál",
-            "Délután háromkor egy kávézóban",
-            "Nyolc órakor a téren",
-            "Kilenc órakor a vasútállomáson"
+            "Mert dolgozik.",
+            "Mert nem akar jönni.",
+            "Mert moziban van.",
+            "Mert vasárnap jön."
           ],
-          "correctIndex": 2,
-          "explanation": "Mariann kérdésére („Lehet nyolc óra?”) Károly beleegyezik, a helyszín pedig a tér: „A téren. Ez a program.”"
+          "correctIndex": 0,
+          "explanation": "Anna says: „Szombaton sajnos dolgozom.” (On Saturday, unfortunately, I am working.)",
+          "questionEnglish": "Why is Anna not coming to the party?",
+          "optionsEnglish": [
+            "Because she is working.",
+            "Because she does not want to come.",
+            "Because she is at the cinema.",
+            "Because she is coming on Sunday."
+          ]
         }
       ]
     }

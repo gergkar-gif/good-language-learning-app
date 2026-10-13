@@ -2,296 +2,231 @@
   "lesson": "a1-146",
   "exercises": [
     {
-      "id": "a1-146-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'úszik' mean?",
-      "options": [
-        "to swim",
-        "to run",
-        "to read"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
-    },
-    {
-      "id": "a1-146-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'táncol' mean?",
-      "options": [
-        "to dance",
-        "to run",
-        "to swim"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-hobbies-free-time-vocab"
-      ]
-    },
-    {
       "id": "a1-146-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'terv' mean?",
-      "options": [
-        "plan",
-        "meeting",
-        "invitation"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-friends-making-plans-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “party”?",
+      "options": [
+        "bolt",
+        "buli",
+        "kert"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-146-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'meghív' mean?",
-      "options": [
-        "to invite",
-        "to plan",
-        "to meet"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "nek-conditional"
       ],
-      "stage": "introduce"
+      "question": "Which question means “Would you like to come?”",
+      "options": [
+        "Szeretnék jönni?",
+        "Szeretne jönni?",
+        "Szeretnél jönni?"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-146-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Van egy ____.",
-      "hint": "my plan",
-      "english": "I have a plan.",
-      "answer": "tervem",
+      "stage": "controlled",
       "teaches": [
-        "possessive-suffixes"
+        "movement-with-ba-be"
       ],
-      "stage": "controlled"
+      "sentence": "Szeretnél jönni a ____?",
+      "hint": "buli",
+      "english": "Would you like to come to the party?",
+      "answer": "buliba"
     },
     {
       "id": "a1-146-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'meeting'.",
-      "options": [
-        "találkozó",
-        "terv",
-        "program"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "nek-conditional"
       ],
-      "stage": "controlled"
+      "sentence": "Anna, ____ jönni este?",
+      "english": "Anna, would you like to come this evening?",
+      "answer": "szeretnél"
     },
     {
       "id": "a1-146-controlled-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "question": "Which sentence means “I invite Anna to the party”?",
+      "options": [
+        "Meghívom Anna a buliba.",
+        "Meghívom Annát a buliba.",
+        "Meghívom Annát a buliban."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      }
+    },
+    {
+      "id": "a1-146-controlled-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "question": "Which sentence means “You invite Károly”?",
+      "options": [
+        "Meghívom Károlyt.",
+        "Meghívja Károlyt.",
+        "Meghívod Károlyt."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-146-practice-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-friends-making-plans-vocab"
+      ],
       "pairs": [
         [
-          "terv",
-          "plan"
-        ],
-        [
-          "program",
-          "activity / plan"
+          "buli",
+          "party"
         ],
         [
           "meghív",
           "invite"
         ],
         [
-          "találkozó",
-          "meeting"
+          "találkozik",
+          "meet"
+        ],
+        [
+          "sajnos",
+          "unfortunately"
+        ],
+        [
+          "terv",
+          "plan"
         ]
-      ],
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-146-controlled-4",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Van egy tervem.",
-      "base_word": "tervem",
-      "base_gloss": "I have a plan.",
-      "options": [
-        {
-          "word": "programom",
-          "inflected": "programom",
-          "sentence": "Van egy programom.",
-          "gloss": "my activity"
-        },
-        {
-          "word": "találkozóm",
-          "inflected": "találkozóm",
-          "sentence": "Van egy találkozóm.",
-          "gloss": "my meeting"
-        }
-      ],
-      "teaches": [
-        "possessive-suffixes"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-146-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is the polite invitation form, 'would you like'?",
-      "options": [
-        "szeretnétek",
-        "szerettek",
-        "szeretitek"
-      ],
-      "correct": 0,
-      "teaches": [
-        "nek-conditional"
-      ],
-      "distractor_skills": {
-        "2": "definite-vs-indefinite-conjugation",
-        "1": "present-tense-routine-language"
-      },
-      "stage": "practice"
+      ]
     },
     {
       "id": "a1-146-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Szeretnétek együtt ____?",
-      "hint": "activity",
-      "english": "Would you like an activity together?",
-      "answer": "programot",
+      "stage": "practice",
       "teaches": [
-        "how-the-accusative-t-works"
+        "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "practice"
+      "sentence": "Szeretnél ____ szombaton?",
+      "hint": "találkozik",
+      "english": "Would you like to meet on Saturday?",
+      "answer": "találkozni"
     },
     {
       "id": "a1-146-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "terv",
-          "plan"
-        ],
-        [
-          "program",
-          "activity / plan"
-        ],
-        [
-          "meghív",
-          "invite"
-        ],
-        [
-          "találkozó",
-          "meeting"
-        ],
-        [
-          "úszik",
-          "swim"
-        ]
-      ],
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-146-practice-4",
-      "type": "substitution",
+      "type": "sentence-builder",
       "category": "grammar",
-      "base_sentence": "Szeretnétek együtt programot?",
-      "base_word": "programot",
-      "base_gloss": "Would you like an activity together?",
-      "options": [
-        {
-          "word": "kirándulást",
-          "inflected": "kirándulást",
-          "sentence": "Szeretnétek együtt kirándulást?",
-          "gloss": "a hike"
-        },
-        {
-          "word": "találkozót",
-          "inflected": "találkozót",
-          "sentence": "Szeretnétek együtt találkozót?",
-          "gloss": "a meeting"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Annát",
+        "is",
+        "Károly",
+        ".",
+        "meghívja"
+      ],
+      "solution": [
+        "Károly",
+        "meghívja",
+        "Annát",
+        "is",
+        "."
+      ],
+      "english": "Károly invites Anna too."
     },
     {
-      "id": "a1-146-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Van egy tervem. Szeretnétek moziba menni szombaton?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Igen! Mikor találkozunk?",
-        "A bank közel van."
-      ],
-      "correct": 0,
+      "id": "a1-146-practice-4",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-friends-making-plans-vocab"
       ],
-      "stage": "practice"
+      "question": "You cannot come to the party. What do you say?",
+      "options": [
+        "Sajnos nem.",
+        "Igen, szívesen.",
+        "Persze."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-146-practice-5",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "sentence": "Mi ____ Annát és Károlyt is.",
+      "hint": "meghív",
+      "english": "We invite Anna and Károly too.",
+      "answer": "meghívjuk"
     },
     {
       "id": "a1-146-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-friends-making-plans-vocab"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Igen. Mikor találkozunk?"
+          "speaker": "Anna",
+          "text": "Szeretnél jönni a buliba?"
         },
         {
-          "speaker": "Anna",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Holnap délután jó?",
-        "Mennyibe kerül?"
+        "Szombaton este.",
+        "Igen, szívesen.",
+        "Nem, szívesen."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-146-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Van egy tervem."
+          "text": "Meghívod Annát is?"
         },
         {
           "speaker": "Meg",
@@ -299,73 +234,87 @@
         }
       ],
       "options": [
-        "Milyen terv?",
-        "Szia, hogy vagy?"
+        "Igen, meghívom.",
+        "Igen, meghívod.",
+        "Igen, meghívja."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-146-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say you have a plan.",
-          "answer": "Van egy tervem."
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "possessive-suffixes"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "tiles": [
+        "Annát",
+        "buliba",
+        "Meghívom",
+        "és",
+        "a",
+        "Károlyt",
+        "."
+      ],
+      "solution": [
+        "Meghívom",
+        "Annát",
+        "és",
+        "Károlyt",
+        "a",
+        "buliba",
+        "."
+      ],
+      "english": "I invite Anna and Károly to the party."
     },
     {
       "id": "a1-146-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-friends-making-plans-vocab"
+      ],
       "template": [
         {
-          "prompt": "Ask if they'd like an activity together.",
-          "answer": "Szeretnétek együtt programot?"
+          "prompt": "Ask a friend whether she would like to come to the party.",
+          "answer": "Szeretnél jönni a buliba?"
+        },
+        {
+          "prompt": "Say that you invite Anna.",
+          "answer": "Meghívom Annát."
         }
-      ],
-      "teaches": [
-        "nek-conditional"
       ]
     },
     {
       "id": "a1-146-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'plan'.",
-      "options": [
-        "terv",
-        "program",
-        "találkozó"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "sentence": "Meghívom ____ is.",
+      "hint": "Károly",
+      "english": "I invite Károly too.",
+      "answer": "Károlyt"
     },
     {
       "id": "a1-146-check-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Choose the correct word for 'to invite'.",
-      "options": [
-        "meghív",
-        "találkozik",
-        "akar"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-friends-making-plans-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “unfortunately”?",
+      "options": [
+        "szívesen",
+        "persze",
+        "sajnos"
+      ],
+      "correct": 2
     }
   ]
 }

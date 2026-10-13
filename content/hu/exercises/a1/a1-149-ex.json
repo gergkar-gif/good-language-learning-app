@@ -2,365 +2,326 @@
   "lesson": "a1-149",
   "exercises": [
     {
-      "id": "a1-149-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'lehet' mean?",
-      "options": [
-        "may",
-        "to want",
-        "to be free"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
-    },
-    {
-      "id": "a1-149-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'este' mean?",
-      "options": [
-        "evening",
-        "afternoon",
-        "morning"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
-    },
-    {
       "id": "a1-149-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'akar' mean?",
-      "options": [
-        "to want",
-        "to be free",
-        "may/can"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-friends-making-plans-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “one can, it is possible”?",
+      "options": [
+        "kell",
+        "van",
+        "lehet"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-149-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'ráér' mean?",
+      "category": "grammar",
+      "stage": "introduce",
+      "teaches": [
+        "lehet-infinitive"
+      ],
+      "question": "Which sentence means “You can walk in the park”?",
       "options": [
-        "to be free",
-        "to want",
-        "to invite"
+        "A parkban lehet sétálni.",
+        "A parkban kell sétálni.",
+        "A parkban lehet sétál."
       ],
       "correct": 0,
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ],
-      "stage": "introduce"
+      "distractor_skills": {
+        "1": "kell-infinitive"
+      }
     },
     {
       "id": "a1-149-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "____ nyolc óra?",
-      "english": "Can it be eight o'clock?",
-      "answer": "Lehet",
+      "stage": "controlled",
       "teaches": [
-        "lehet-infinitive"
+        "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "sentence": "A kávézóban lehet ____ inni.",
+      "hint": "kávé",
+      "english": "In the café you can drink coffee.",
+      "answer": "kávét"
     },
     {
       "id": "a1-149-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'would like'.",
-      "options": [
-        "szeretne",
-        "akar",
-        "ráér"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "controlled"
+      "sentence": "Az étteremben lehet ____.",
+      "hint": "eszik",
+      "english": "In the restaurant you can eat.",
+      "answer": "enni"
     },
     {
       "id": "a1-149-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "akar",
-          "want"
-        ],
-        [
-          "szeretne",
-          "would like"
-        ],
-        [
-          "lehet",
-          "can / may"
-        ],
-        [
-          "ráér",
-          "be free"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "lehet-infinitive"
       ],
-      "stage": "controlled"
+      "sentence": "Itt ____ parkolni?",
+      "english": "Can one park here?",
+      "answer": "lehet"
     },
     {
       "id": "a1-149-controlled-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Igen, lehet.",
-      "base_word": "lehet",
-      "base_gloss": "Yes, that's possible.",
-      "options": [
-        {
-          "word": "szeretném",
-          "inflected": "szeretném",
-          "sentence": "Igen, szeretném.",
-          "gloss": "I'd like that"
-        },
-        {
-          "word": "jó",
-          "inflected": "jó",
-          "sentence": "Igen, jó.",
-          "gloss": "good"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "lehet-infinitive"
       ],
-      "stage": "controlled"
+      "question": "Anna says: “Itt nem lehet parkolni.” What does it mean?",
+      "options": [
+        "One cannot park here.",
+        "One does not have to park here.",
+        "One can park here."
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "kell-infinitive"
+      }
     },
     {
       "id": "a1-149-practice-1",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which form means 'I would like' (first person)?",
-      "options": [
-        "szeretnék",
-        "szeretne",
-        "szeretnétek"
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "nek-conditional"
+        "a1-friends-making-plans-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "sétálni",
+          "to walk"
+        ],
+        [
+          "parkolni",
+          "to park"
+        ],
+        [
+          "ülni",
+          "to sit"
+        ],
+        [
+          "inni",
+          "to drink"
+        ],
+        [
+          "olvasni",
+          "to read"
+        ]
+      ]
     },
     {
       "id": "a1-149-practice-2",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Este ____.",
-      "hint": "I'm free",
-      "english": "I'm free in the evening.",
-      "answer": "ráérek",
+      "stage": "practice",
       "teaches": [
-        "present-tense-routine-language"
+        "lehet-infinitive"
       ],
-      "stage": "practice"
+      "tiles": [
+        "kávét",
+        "lehet",
+        "Itt",
+        "inni",
+        "."
+      ],
+      "solution": [
+        "Itt",
+        "lehet",
+        "kávét",
+        "inni",
+        "."
+      ],
+      "english": "You can drink coffee here."
     },
     {
       "id": "a1-149-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "akar",
-          "want"
-        ],
-        [
-          "szeretne",
-          "would like"
-        ],
-        [
-          "lehet",
-          "can / may"
-        ],
-        [
-          "ráér",
-          "be free"
-        ],
-        [
-          "mikor",
-          "when"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "practice"
+      "sentence": "____ lehet ebédelni?",
+      "english": "Where can one have lunch?",
+      "answer": "Hol"
     },
     {
       "id": "a1-149-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "base_sentence": "Lehet nyolc óra?",
-      "base_word": "nyolc óra",
-      "base_gloss": "Could it be eight o'clock?",
-      "options": [
-        {
-          "word": "hét óra",
-          "inflected": "hét óra",
-          "sentence": "Lehet hét óra?",
-          "gloss": "seven o'clock"
-        },
-        {
-          "word": "holnap",
-          "inflected": "holnap",
-          "sentence": "Lehet holnap?",
-          "gloss": "tomorrow"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-friends-making-plans-vocab"
       ],
-      "stage": "practice"
+      "question": "Meg asks: “Itt lehet ülni?” What does she want to know?",
+      "options": [
+        "Whether one must sit here.",
+        "Whether one can sit here.",
+        "Where she can sit."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-149-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Mariann",
-          "text": "Lehet nyolckor találkozni?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Igen, lehet.",
-        "A bank közel van."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "practice"
+      "question": "Which word completes “Szombaton lehet ____” (One can meet on Saturday)?",
+      "options": [
+        "találkozik",
+        "találkozni",
+        "találkozunk"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-149-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "lehet-infinitive"
+      ],
       "prompt": [
         {
-          "speaker": "Anna",
-          "text": "Nekem hétkor jó."
+          "speaker": "Meg",
+          "text": "Itt lehet kávét inni?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Anna",
           "text": "_____"
         }
       ],
       "options": [
-        "Nekem csak nyolckor jó. Lehet?",
-        "Mennyibe kerül?"
+        "Igen, lehet.",
+        "Igen, kell.",
+        "Nem, lehet."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-149-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Ráérsz este?"
+          "text": "Hol lehet kávét inni?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, este ráérek.",
-        "Szia, hogy vagy?"
+        "A kávézóba lehet.",
+        "A kávézó lehet.",
+        "A kávézóban lehet."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
+      "correct": 2,
+      "distractor_skills": {
+        "0": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-149-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask if eight o'clock could work.",
-          "answer": "Lehet nyolc óra?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "lehet-infinitive"
-      ]
+      ],
+      "tiles": [
+        "kávét",
+        "és",
+        "A",
+        "inni",
+        "találkozni",
+        "lehet",
+        "kávézóban",
+        "."
+      ],
+      "solution": [
+        "A",
+        "kávézóban",
+        "lehet",
+        "találkozni",
+        "és",
+        "kávét",
+        "inni",
+        "."
+      ],
+      "english": "In the café you can meet and drink coffee."
     },
     {
       "id": "a1-149-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-friends-making-plans-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say you're free in the evening.",
-          "answer": "Este ráérek."
+          "prompt": "Ask whether one can park here.",
+          "answer": "Itt lehet parkolni?"
+        },
+        {
+          "prompt": "Say that one can walk in the park.",
+          "answer": "A parkban lehet sétálni."
         }
-      ],
-      "teaches": [
-        "present-tense-routine-language"
       ]
     },
     {
       "id": "a1-149-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'to want'.",
-      "options": [
-        "akar",
-        "szeretne",
-        "lehet"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "building-the-infinitive-the-suffix-ni"
       ],
-      "stage": "check"
+      "sentence": "Itt lehet ____.",
+      "hint": "ül",
+      "english": "One can sit here.",
+      "answer": "ülni"
     },
     {
       "id": "a1-149-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'can / may'.",
-      "options": [
-        "lehet",
-        "akar",
-        "ráér"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "question": "Which sentence means “In the cinema you can watch a film”?",
+      "options": [
+        "A moziban lehet film nézni.",
+        "A moziban lehet filmet nézni.",
+        "A moziban lehet filmet néz."
+      ],
+      "correct": 1
     }
   ]
 }

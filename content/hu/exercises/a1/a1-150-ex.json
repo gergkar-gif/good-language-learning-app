@@ -2,269 +2,252 @@
   "lesson": "a1-150",
   "exercises": [
     {
-      "id": "a1-150-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'együtt' mean?",
-      "options": [
-        "together",
-        "yes",
-        "good"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
-    },
-    {
-      "id": "a1-150-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'lehet' mean?",
-      "options": [
-        "can",
-        "want",
-        "be free"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
-    },
-    {
       "id": "a1-150-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'együtt' mean?",
-      "options": [
-        "together",
-        "good",
-        "yes"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-friends-making-plans-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “then, in that case”?",
+      "options": [
+        "akkor",
+        "később",
+        "sajnos"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-150-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'igen' mean?",
-      "options": [
-        "yes",
-        "no",
-        "good"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "kor-time"
       ],
-      "stage": "introduce"
+      "question": "Which sentence means “Then we meet at half past seven”?",
+      "options": [
+        "Akkor fél nyolc találkozunk.",
+        "Akkor fél nyolckor találkozunk.",
+        "Akkor fél hétkor találkozunk."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-150-controlled-1",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Jó. Akkor ____ megyünk.",
-      "hint": "together",
-      "english": "Good. Then we're going together.",
-      "answer": "együtt",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "good-for-me-nekem-jo"
       ],
-      "stage": "controlled"
+      "sentence": "Hétkor ____ nem jó.",
+      "english": "Seven o'clock is not good for me.",
+      "answer": "nekem"
     },
     {
       "id": "a1-150-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'no'.",
-      "options": [
-        "nem",
-        "igen",
-        "jó"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "akar-tervez-infinitive"
       ],
-      "stage": "controlled"
+      "sentence": "Vasárnap a parkban ____ sétálni.",
+      "english": "On Sunday I want to walk in the park.",
+      "answer": "akarok"
     },
     {
       "id": "a1-150-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "jó",
-          "good"
-        ],
-        [
-          "igen",
-          "yes"
-        ],
-        [
-          "nem",
-          "no"
-        ],
-        [
-          "együtt",
-          "together"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "lehet-infinitive"
       ],
-      "stage": "controlled"
+      "sentence": "____ fél nyolckor találkozni?",
+      "english": "Can we meet at half past seven?",
+      "answer": "Lehet"
     },
     {
       "id": "a1-150-controlled-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Jó. Akkor együtt megyünk.",
-      "base_word": "együtt",
-      "base_gloss": "Good. Then we're going together.",
-      "options": [
-        {
-          "word": "ma",
-          "inflected": "ma",
-          "sentence": "Jó. Akkor ma megyünk.",
-          "gloss": "today"
-        },
-        {
-          "word": "holnap",
-          "inflected": "holnap",
-          "sentence": "Jó. Akkor holnap megyünk.",
-          "gloss": "tomorrow"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "kor-time"
       ],
-      "stage": "controlled"
+      "question": "Which sentence means “The party is at eight”?",
+      "options": [
+        "A buli nyolc van.",
+        "A buli nyolcban van.",
+        "A buli nyolckor van."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     },
     {
       "id": "a1-150-practice-1",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "vocabulary",
-      "question": "Which word means 'then / in that case', linking back to a decision?",
-      "options": [
-        "akkor",
-        "mikor",
-        "vagy"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-friends-making-plans-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "akkor",
+          "then"
+        ],
+        [
+          "megbeszél",
+          "arrange"
+        ],
+        [
+          "találkozó",
+          "meeting"
+        ],
+        [
+          "ötlet",
+          "idea"
+        ],
+        [
+          "buli",
+          "party"
+        ],
+        [
+          "később",
+          "later"
+        ]
+      ]
     },
     {
       "id": "a1-150-practice-2",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Hol ____?",
-      "hint": "we meet",
-      "english": "Where do we meet?",
-      "answer": "találkozunk",
+      "stage": "practice",
       "teaches": [
-        "present-tense-routine-language"
+        "kor-time"
       ],
-      "stage": "practice"
+      "tiles": [
+        "a",
+        "Szombaton",
+        "előtt",
+        "kávézó",
+        "találkozunk",
+        "fél",
+        "nyolckor",
+        "."
+      ],
+      "solution": [
+        "Szombaton",
+        "fél",
+        "nyolckor",
+        "találkozunk",
+        "a",
+        "kávézó",
+        "előtt",
+        "."
+      ],
+      "english": "On Saturday we meet at half past seven in front of the café."
     },
     {
       "id": "a1-150-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "jó",
-          "good"
-        ],
-        [
-          "igen",
-          "yes"
-        ],
-        [
-          "nem",
-          "no"
-        ],
-        [
-          "együtt",
-          "together"
-        ],
-        [
-          "akar",
-          "want"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "akar-tervez-infinitive"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “Anna does not want to walk”?",
+      "options": [
+        "Anna nem akar sétálni.",
+        "Anna nem akarok sétálni.",
+        "Anna nem akarnak sétálni."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-150-practice-4",
-      "type": "substitution",
+      "type": "fill-blank",
       "category": "grammar",
-      "base_sentence": "A téren. Ez a program.",
-      "base_word": "téren",
-      "base_gloss": "At the square. That's the plan.",
-      "options": [
-        {
-          "word": "könyvtárban",
-          "inflected": "könyvtárban",
-          "sentence": "A könyvtárban. Ez a program.",
-          "gloss": "at the library"
-        },
-        {
-          "word": "bolt",
-          "inflected": "boltban",
-          "sentence": "A boltban. Ez a program.",
-          "gloss": "at the shop"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "mert-because"
       ],
-      "stage": "practice"
+      "sentence": "Anna nem jön, ____ dolgozik.",
+      "english": "Anna is not coming because she works.",
+      "answer": "mert"
     },
     {
       "id": "a1-150-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "András",
-          "text": "Hol találkozunk?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A téren, a kávézó előtt.",
-        "A bank közel van."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "good-for-me-nekem-jo"
       ],
-      "stage": "practice"
+      "question": "Károly asks: “Neked jó vasárnap?” What does he ask?",
+      "options": [
+        "Whether Sunday suits you.",
+        "Whether Sunday suits him.",
+        "Whether Sunday suits us."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-150-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What is happening on Saturday?",
+      "options": [
+        "A Saturday party.",
+        "Going for a walk.",
+        "Dinner at home."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-150-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "At what time do Károly and Meg meet?",
+      "options": [
+        "At half past seven.",
+        "At seven o'clock.",
+        "At eight o'clock."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-150-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Why can Anna not come to the party?",
+      "options": [
+        "She is working.",
+        "She does not want to come.",
+        "She is at the cinema."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-150-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "good-for-me-nekem-jo"
+      ],
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "A téren, a kávézó előtt."
+          "text": "Hétkor találkozunk. Neked jó?"
         },
         {
           "speaker": "Meg",
@@ -272,96 +255,112 @@
         }
       ],
       "options": [
-        "Jó. Akkor ott találkozunk hétkor.",
-        "Mennyibe kerül?"
+        "Nekem nem jó. Fél nyolckor lehet?",
+        "Neked nem jó. Fél nyolckor lehet?",
+        "Nekem nem jó. Fél nyolckor kell?"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-150-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-friends-making-plans-vocab"
+      ],
       "prompt": [
         {
-          "speaker": "Mariann",
-          "text": "Ki jön még?"
+          "speaker": "Anna",
+          "text": "Szombaton sajnos nem lehet."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Anna és András is jön.",
-        "Szia, hogy vagy?"
+        "Igen, szívesen.",
+        "Nekem jó szombaton.",
+        "Akkor vasárnap."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-friends-making-plans-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-150-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask where we're meeting.",
-          "answer": "Hol találkozunk?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "spatial-questions-hol-hova"
-      ]
+        "nek-conditional"
+      ],
+      "tiles": [
+        "jönni",
+        "buli",
+        "?",
+        "Szombaton",
+        ",",
+        "van",
+        "szeretnél"
+      ],
+      "solution": [
+        "Szombaton",
+        "buli",
+        "van",
+        ",",
+        "szeretnél",
+        "jönni",
+        "?"
+      ],
+      "english": "There is a party on Saturday, would you like to come?"
     },
     {
       "id": "a1-150-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Say good, then we're going together.",
-          "answer": "Jó. Akkor együtt megyünk."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "a1-friends-making-plans-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Ask at what time you meet.",
+          "answer": "Hánykor találkozunk?"
+        },
+        {
+          "prompt": "Say that seven o'clock is good for you.",
+          "answer": "Nekem jó hétkor."
+        }
       ]
     },
     {
       "id": "a1-150-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'together'.",
-      "options": [
-        "együtt",
-        "jó",
-        "igen"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "kor-time"
       ],
-      "stage": "check"
+      "sentence": "____ találkozunk a parkban.",
+      "hint": "kilenc",
+      "english": "We meet at nine in the park.",
+      "answer": "Kilenckor"
     },
     {
       "id": "a1-150-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'yes'.",
-      "options": [
-        "igen",
-        "nem",
-        "jó"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-friends-making-plans-vocab"
+        "akar-tervez-infinitive"
       ],
-      "stage": "check"
+      "question": "Which question means “Do you want to come on Sunday?”",
+      "options": [
+        "Vasárnap akarok jönni?",
+        "Vasárnap akar jönni?",
+        "Vasárnap akarsz jönni?"
+      ],
+      "correct": 2
     }
   ]
 }
