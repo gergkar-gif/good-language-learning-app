@@ -2,269 +2,210 @@
   "lesson": "a1-127",
   "exercises": [
     {
-      "id": "a1-127-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'sapka' mean?",
-      "options": [
-        "hat",
-        "sock",
-        "boot"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
-    },
-    {
-      "id": "a1-127-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'kabát' mean?",
-      "options": [
-        "coat",
-        "skirt",
-        "shirt"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
-    },
-    {
       "id": "a1-127-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'pulóver' mean?",
-      "options": [
-        "jumper",
-        "sock",
-        "hat"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “grey”?",
+      "options": [
+        "fehér",
+        "barna",
+        "szürke"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-127-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'sapka' mean?",
-      "options": [
-        "hat",
-        "boot",
-        "sock"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "introduce"
+      "question": "Which phrase means “a black hat”?",
+      "options": [
+        "egy fekete sapka",
+        "egy sapka fekete",
+        "egy feketék sapka"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-127-controlled-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Ez a ____ színes.",
-      "hint": "sock",
-      "english": "This sock is colorful.",
-      "answer": "zokni",
+      "stage": "controlled",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "Van egy ____ szoknyám.",
+      "english": "I have a grey skirt.",
+      "answer": "szürke"
     },
     {
       "id": "a1-127-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'boot'.",
-      "options": [
-        "csizma",
-        "sapka",
-        "zokni"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "plural-predicate-adjectives-k"
       ],
-      "stage": "controlled"
+      "sentence": "A cipők ____.",
+      "hint": "fekete",
+      "english": "The shoes are black.",
+      "answer": "feketék"
     },
     {
       "id": "a1-127-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "pulóver",
-          "jumper"
-        ],
-        [
-          "zokni",
-          "sock"
-        ],
-        [
-          "sapka",
-          "hat"
-        ],
-        [
-          "csizma",
-          "boot"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "plural-predicate-adjectives-k"
       ],
-      "stage": "controlled"
+      "question": "Which sentence means “The socks are white”?",
+      "options": [
+        "A zoknik fehérek.",
+        "A zoknik fehér.",
+        "A zoknik fehérak."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-127-controlled-4",
-      "type": "substitution",
+      "type": "matching",
       "category": "vocabulary",
-      "base_sentence": "A kabát hosszú, de kényelmes.",
-      "base_word": "kabát",
-      "base_gloss": "The coat is long, but comfortable.",
-      "options": [
-        {
-          "word": "pulóver",
-          "inflected": "pulóver",
-          "sentence": "A pulóver hosszú, de kényelmes.",
-          "gloss": "the jumper"
-        },
-        {
-          "word": "sapka",
-          "inflected": "sapka",
-          "sentence": "A sapka hosszú, de kényelmes.",
-          "gloss": "the hat"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "szürke",
+          "grey"
+        ],
+        [
+          "színes",
+          "colourful"
+        ],
+        [
+          "barna",
+          "brown"
+        ],
+        [
+          "fehér",
+          "white"
+        ],
+        [
+          "fekete",
+          "black"
+        ]
+      ]
     },
     {
       "id": "a1-127-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which suffix turns 'szín' (colour) into 'colourful'?",
-      "options": [
-        "-es",
-        "-t",
-        "-ban"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “I have a blue coat”?",
+      "options": [
+        "Van egy kabátom kék.",
+        "Van egy kék kabátom.",
+        "Van egy kékek kabátom."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-127-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A kabát hosszú, ____ kényelmes.",
-      "hint": "but",
-      "english": "The coat is long, but comfortable.",
-      "answer": "de",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "plural-predicate-adjectives-k"
       ],
-      "stage": "practice"
+      "sentence": "A ruhák ____.",
+      "hint": "színes",
+      "english": "The dresses are colourful.",
+      "answer": "színesek"
     },
     {
       "id": "a1-127-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "pulóver",
-          "jumper"
-        ],
-        [
-          "zokni",
-          "sock"
-        ],
-        [
-          "sapka",
-          "hat"
-        ],
-        [
-          "csizma",
-          "boot"
-        ],
-        [
-          "ruha",
-          "clothing / dress"
-        ]
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "practice"
+      "tiles": [
+        "van",
+        "zoknim",
+        "Fekete",
+        ".",
+        "fehér",
+        "cipőm",
+        "és"
+      ],
+      "solution": [
+        "Fekete",
+        "cipőm",
+        "és",
+        "fehér",
+        "zoknim",
+        "van",
+        "."
+      ],
+      "english": "I have black shoes and white socks."
     },
     {
       "id": "a1-127-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "base_sentence": "Ez a zokni színes.",
-      "base_word": "zokni",
-      "base_gloss": "This sock is colourful.",
-      "options": [
-        {
-          "word": "sapka",
-          "inflected": "sapka",
-          "sentence": "Ez a sapka színes.",
-          "gloss": "the hat"
-        },
-        {
-          "word": "csizma",
-          "inflected": "csizma",
-          "sentence": "Ez a csizma színes.",
-          "gloss": "the boot"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "practice"
+      "question": "Anna says: “A ruha színes.” What is the dress like?",
+      "options": [
+        "brand new",
+        "colourful",
+        "dark brown"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-127-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Anna",
-          "text": "Ez a zokni színes."
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "És a sapka? Világos vagy sötét?",
-        "Mennyibe kerül?"
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "plural-predicate-adjectives-k"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “The shoes are brown and the socks are grey”?",
+      "options": [
+        "A cipők barnák, a zoknik szürkék.",
+        "A cipők barna, a zoknik szürkék.",
+        "A cipők barnák, a zoknik szürkeek."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-127-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "plural-predicate-adjectives-k"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "A kabát nagy, de kényelmes."
+          "speaker": "Anna",
+          "text": "Milyen a sapkád?"
         },
         {
           "speaker": "Meg",
@@ -272,96 +213,116 @@
         }
       ],
       "options": [
-        "De a nadrág rövid - nem jó.",
-        "A busz ott van."
+        "Feketék.",
+        "Feketét.",
+        "Fekete."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-127-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "plural-predicate-adjectives-k"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Milyen a pulóver?"
+          "speaker": "Károly",
+          "text": "A zoknik fehérek?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kényelmes, de nagyon színes.",
-        "Nagy vagy kicsi?"
+        "Nem, szürke.",
+        "Nem, szürkeek.",
+        "Nem, szürkék."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
+      "correct": 2
     },
     {
       "id": "a1-127-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say this sock is colourful.",
-          "answer": "Ez a zokni színes."
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "van-zero-copula"
-      ]
+        "adjective-order-before-the-noun"
+      ],
+      "tiles": [
+        "egy",
+        "fehér",
+        "egy",
+        "kék",
+        ".",
+        "és",
+        "Van",
+        "nadrágom",
+        "ingem"
+      ],
+      "solution": [
+        "Van",
+        "egy",
+        "fehér",
+        "ingem",
+        "és",
+        "egy",
+        "kék",
+        "nadrágom",
+        "."
+      ],
+      "english": "I have a white shirt and a blue pair of trousers."
     },
     {
       "id": "a1-127-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-clothes-appearance-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say the coat is long, but comfortable.",
-          "answer": "A kabát hosszú, de kényelmes."
+          "prompt": "Say that the shoes are black.",
+          "answer": "A cipők feketék."
+        },
+        {
+          "prompt": "Say that you have a grey skirt.",
+          "answer": "Van egy szürke szoknyám."
         }
-      ],
-      "teaches": [
-        "van-zero-copula"
       ]
     },
     {
       "id": "a1-127-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'jumper'.",
-      "options": [
-        "pulóver",
-        "sapka",
-        "zokni"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "plural-predicate-adjectives-k"
       ],
-      "stage": "check"
+      "sentence": "A zoknik ____.",
+      "hint": "szürke",
+      "english": "The socks are grey.",
+      "answer": "szürkék"
     },
     {
       "id": "a1-127-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'hat'.",
-      "options": [
-        "sapka",
-        "csizma",
-        "pulóver"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "plural-predicate-adjectives-k"
       ],
-      "stage": "check"
+      "question": "Which sentence is correct?",
+      "options": [
+        "A kabátok kékek.",
+        "A kabátok kékak.",
+        "A kabátok kék."
+      ],
+      "correct": 0
     }
   ]
 }

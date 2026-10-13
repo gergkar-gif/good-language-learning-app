@@ -2,291 +2,191 @@
   "lesson": "a1-128",
   "exercises": [
     {
-      "id": "a1-128-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'pulóver' mean?",
-      "options": [
-        "jumper",
-        "boot",
-        "hat"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
-    },
-    {
-      "id": "a1-128-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'csizma' mean?",
-      "options": [
-        "boot",
-        "sock",
-        "jumper"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
-    },
-    {
       "id": "a1-128-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'farmer' mean?",
-      "options": [
-        "jeans",
-        "jumper",
-        "coat"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “wear”?",
+      "options": [
+        "visel",
+        "vesz",
+        "kér"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-128-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'világos' mean?",
-      "options": [
-        "light (colour)",
-        "dark",
-        "colourful"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "introduce"
+      "question": "Which sentence means “Anna wears a blue coat”?",
+      "options": [
+        "Anna kék kabát visel.",
+        "Anna kék kabátot viselem.",
+        "Anna kék kabátot visel."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-128-controlled-1",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A sapka világos ____ sötét?",
-      "english": "Is the hat light or dark?",
-      "answer": "vagy",
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-128-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'colourful'.",
-      "options": [
-        "színes",
-        "világos",
-        "sötét"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-128-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "farmer",
-          "jeans"
-        ],
-        [
-          "cipő",
-          "shoe"
-        ],
-        [
-          "színes",
-          "colourful"
-        ],
-        [
-          "világos",
-          "light"
-        ]
-      ],
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-128-controlled-4",
-      "type": "substitution",
       "category": "grammar",
-      "base_sentence": "Szeretném felpróbálni a cipőt.",
-      "base_word": "cipőt",
-      "base_gloss": "I would like to try on the shoe.",
-      "options": [
-        {
-          "word": "farmer",
-          "inflected": "farmert",
-          "sentence": "Szeretném felpróbálni a farmert.",
-          "gloss": "the jeans"
-        },
-        {
-          "word": "kabát",
-          "inflected": "kabátot",
-          "sentence": "Szeretném felpróbálni a kabátot.",
-          "gloss": "the coat"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "sentence": "Anna szürke ____ visel.",
+      "hint": "szoknya",
+      "english": "Anna wears a grey skirt.",
+      "answer": "szoknyát"
+    },
+    {
+      "id": "a1-128-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "sentence": "Én fehér inget ____.",
+      "hint": "visel",
+      "english": "I wear a white shirt.",
+      "answer": "viselek"
+    },
+    {
+      "id": "a1-128-controlled-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "sentence": "Anna ____ a kék kabátot.",
+      "hint": "visel",
+      "english": "Anna is wearing the blue coat.",
+      "answer": "viseli"
+    },
+    {
+      "id": "a1-128-controlled-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "question": "Which sentence means “I wear the black hat”?",
+      "options": [
+        "Viseled a fekete sapkát.",
+        "Viselem a fekete sapkát.",
+        "Viselek a fekete sapkát."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-128-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'or', for offering a choice?",
-      "options": [
-        "vagy",
-        "és",
-        "de"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “You wear a white T-shirt”?",
+      "options": [
+        "Fehér pólót viselnek.",
+        "Fehér pólót viselsz.",
+        "Fehér pólót viselek."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-128-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Szeretném ____ a cipőt.",
-      "hint": "try on",
-      "english": "I would like to try on the shoes.",
-      "answer": "felpróbálni",
+      "stage": "practice",
       "teaches": [
-        "building-the-infinitive-the-suffix-ni"
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Meg fekete ____ visel.",
+      "hint": "cipő",
+      "english": "Meg wears black shoes.",
+      "answer": "cipőt"
     },
     {
       "id": "a1-128-practice-3",
-      "type": "matching",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "farmer",
-          "jeans"
-        ],
-        [
-          "cipő",
-          "shoe"
-        ],
-        [
-          "színes",
-          "colourful"
-        ],
-        [
-          "világos",
-          "light"
-        ],
-        [
-          "zokni",
-          "sock"
-        ]
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "practice"
+      "question": "Mit visel Károly? – Farmert és fehér pólót visel. What does Károly wear?",
+      "options": [
+        "a black coat and shoes",
+        "jeans and a white T-shirt",
+        "a grey skirt and a hat"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-128-practice-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "A sapka világos vagy sötét?",
-      "base_word": "világos",
-      "base_gloss": "Is the hat light or dark?",
-      "options": [
-        {
-          "word": "nagy",
-          "inflected": "nagy",
-          "sentence": "A sapka nagy vagy kicsi?",
-          "gloss": "large"
-        },
-        {
-          "word": "szép",
-          "inflected": "szép",
-          "sentence": "A sapka szép vagy csúnya?",
-          "gloss": "pretty"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "tiles": [
+        "a",
+        "szürke",
+        "viselik",
+        "Ők",
+        ".",
+        "nadrágot"
+      ],
+      "solution": [
+        "Ők",
+        "viselik",
+        "a",
+        "szürke",
+        "nadrágot",
+        "."
+      ],
+      "english": "They wear the grey trousers."
     },
     {
       "id": "a1-128-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "A sapka világos vagy sötét?"
-        },
-        {
-          "speaker": "Mariann",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Sötét. A csizma is sötét.",
-        "A busz ott van."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "question": "Which fits? “Mi fekete cipőt ____.”",
+      "options": [
+        "viselek",
+        "viselnek",
+        "viselünk"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-128-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
-        {
-          "speaker": "Mariann",
-          "text": "Megyünk haza?"
-        },
         {
           "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Még szeretném felpróbálni a cipőt.",
-        "Mennyibe kerül?"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
-    },
-    {
-      "id": "a1-128-dialogue-2",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Anna",
-          "text": "Milyen a farmer, világos vagy sötét?"
+          "text": "Mit visel ma Anna?"
         },
         {
           "speaker": "Károly",
@@ -294,73 +194,112 @@
         }
       ],
       "options": [
-        "Sötét, de túl nagy.",
-        "Szia, hogy vagy?"
+        "Piros ruhát visel.",
+        "Piros ruha visel.",
+        "Piros ruhát viselek."
       ],
-      "correct": 0,
+      "correct": 0
+    },
+    {
+      "id": "a1-128-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
+        "definite-vs-indefinite-conjugation"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Viseled a kék kabátot?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Igen, viselek.",
+        "Igen, viselem.",
+        "Igen, viseled."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-128-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask if the hat is light or dark.",
-          "answer": "A sapka világos vagy sötét?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "tiles": [
+        "Károly",
+        "inget",
+        "és",
+        "farmert",
+        "fehér",
+        "visel",
+        "."
+      ],
+      "solution": [
+        "Károly",
+        "fehér",
+        "inget",
+        "és",
+        "farmert",
+        "visel",
+        "."
+      ],
+      "english": "Károly wears a white shirt and jeans."
     },
     {
       "id": "a1-128-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-clothes-appearance-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say you'd like to try on the shoe.",
-          "answer": "Szeretném felpróbálni a cipőt."
+          "prompt": "Ask what Anna wears.",
+          "answer": "Mit visel Anna?"
+        },
+        {
+          "prompt": "Say that you wear a grey hat.",
+          "answer": "Szürke sapkát viselek."
         }
-      ],
-      "teaches": [
-        "nek-conditional"
       ]
     },
     {
       "id": "a1-128-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'jeans'.",
-      "options": [
-        "farmer",
-        "cipő",
-        "sapka"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "check"
+      "sentence": "Ők a szoknyát ____.",
+      "hint": "visel",
+      "english": "They are wearing the skirt.",
+      "answer": "viselik"
     },
     {
       "id": "a1-128-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'light (colour)'.",
-      "options": [
-        "világos",
-        "sötét",
-        "színes"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "question": "Which sentence means “Meg wears a dress”?",
+      "options": [
+        "Meg ruhák visel.",
+        "Meg ruha visel.",
+        "Meg ruhát visel."
+      ],
+      "correct": 2
     }
   ]
 }

@@ -2,366 +2,322 @@
   "lesson": "a1-129",
   "exercises": [
     {
-      "id": "a1-129-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'farmer' mean?",
-      "options": [
-        "jeans",
-        "boot",
-        "hat"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
-    },
-    {
-      "id": "a1-129-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'sötét' mean?",
-      "options": [
-        "dark",
-        "comfortable",
-        "ugly"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
-    },
-    {
       "id": "a1-129-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'csúnya' mean?",
-      "options": [
-        "ugly",
-        "beautiful",
-        "comfortable"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “hair”?",
+      "options": [
+        "szem",
+        "haj",
+        "szemüveg"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-129-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'kényelmes' mean?",
-      "options": [
-        "comfortable",
-        "ugly",
-        "dark"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "3rd-person-possessive"
       ],
-      "stage": "introduce"
+      "question": "Which sentence means “She has brown hair”?",
+      "options": [
+        "Barna hajam van.",
+        "Barna haj van.",
+        "Barna haja van."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "1": "van-and-nincs-there-is-there-isn-t"
+      }
     },
     {
       "id": "a1-129-controlled-1",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Ez ____, de az szép.",
-      "hint": "ugly",
-      "english": "This one is ugly, but that one is pretty.",
-      "answer": "csúnya",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "3rd-person-possessive"
       ],
-      "stage": "controlled"
+      "sentence": "Kék ____ van.",
+      "hint": "szem",
+      "english": "She has blue eyes.",
+      "answer": "szeme"
     },
     {
       "id": "a1-129-controlled-2",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "question": "Choose the word for 'dark'.",
-      "options": [
-        "sötét",
-        "világos",
-        "szép"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "____ haja van.",
+      "english": "He has short hair.",
+      "answer": "Rövid"
     },
     {
       "id": "a1-129-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "sötét",
-          "dark"
-        ],
-        [
-          "szép",
-          "beautiful"
-        ],
-        [
-          "csúnya",
-          "ugly"
-        ],
-        [
-          "kényelmes",
-          "comfortable"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "3rd-person-possessive"
       ],
-      "stage": "controlled"
+      "question": "Which sentence means “She has glasses”?",
+      "options": [
+        "Szemüvege van.",
+        "Szemüvegem van.",
+        "Szemüveged van."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-129-controlled-4",
-      "type": "substitution",
+      "type": "matching",
       "category": "vocabulary",
-      "base_sentence": "Ez a cipő kényelmes.",
-      "base_word": "kényelmes",
-      "base_gloss": "This shoe is comfortable.",
-      "options": [
-        {
-          "word": "csúnya",
-          "inflected": "csúnya",
-          "sentence": "Ez a cipő csúnya.",
-          "gloss": "ugly"
-        },
-        {
-          "word": "szép",
-          "inflected": "szép",
-          "sentence": "Ez a cipő szép.",
-          "gloss": "pretty"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "haj",
+          "hair"
+        ],
+        [
+          "szem",
+          "eye"
+        ],
+        [
+          "hosszú",
+          "long"
+        ],
+        [
+          "rövid",
+          "short"
+        ],
+        [
+          "idős",
+          "elderly"
+        ]
+      ]
     },
     {
       "id": "a1-129-practice-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which pair are true opposites?",
-      "options": [
-        "szép / csúnya",
-        "szép / kényelmes",
-        "sötét / kényelmes"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "practice"
+      "question": "Anna is tall and young. Which words describe her?",
+      "options": [
+        "alacsony és fiatal",
+        "magas és idős",
+        "magas és fiatal"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-129-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A kabát sötét, de a csizma ____.",
-      "hint": "light",
-      "english": "The coat is dark, but the boots are light.",
-      "answer": "világos",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "negation-with-nem"
       ],
-      "stage": "practice"
+      "sentence": "Anna nem alacsony, ____ magas.",
+      "english": "Anna is not short, but tall.",
+      "answer": "hanem"
     },
     {
       "id": "a1-129-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "sötét",
-          "dark"
-        ],
-        [
-          "szép",
-          "beautiful"
-        ],
-        [
-          "csúnya",
-          "ugly"
-        ],
-        [
-          "kényelmes",
-          "comfortable"
-        ],
-        [
-          "világos",
-          "light"
-        ]
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "3rd-person-possessive"
       ],
-      "stage": "practice"
+      "tiles": [
+        ".",
+        "szőke",
+        "van",
+        "Hosszú",
+        "haja",
+        ","
+      ],
+      "solution": [
+        "Hosszú",
+        ",",
+        "szőke",
+        "haja",
+        "van",
+        "."
+      ],
+      "english": "She has long, blond hair."
     },
     {
       "id": "a1-129-practice-4",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Ez csúnya, de az szép.",
-      "base_word": "Ez",
-      "base_gloss": "This one is ugly, but that one is pretty.",
-      "options": [
-        {
-          "word": "Az",
-          "inflected": "Az",
-          "sentence": "Az csúnya, de ez szép.",
-          "gloss": "that one"
-        },
-        {
-          "word": "A kabát",
-          "inflected": "A kabát",
-          "sentence": "A kabát csúnya, de a ruha szép.",
-          "gloss": "the coat"
-        }
-      ],
-      "teaches": [
-        "demonstratives-ez-az"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-129-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Szeretném felpróbálni a cipőt."
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Ez nagyon csúnya, de az szép.",
-        "Mennyibe kerül?"
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "practice"
+      "question": "Which question asks what her hair is like?",
+      "options": [
+        "Milyen a haja?",
+        "Mi a haja?",
+        "Hol a haja?"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-129-practice-5",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-clothes-appearance-vocab"
+      ],
+      "sentence": "Károly nem fiatal, hanem ____.",
+      "english": "Károly is not young, but elderly.",
+      "answer": "idős"
     },
     {
       "id": "a1-129-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "a1-clothes-appearance-vocab"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Ez nagyon csúnya, de az szép."
+          "speaker": "Károly",
+          "text": "Milyen Anna?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Rendben, ezt viselem.",
-        "A busz ott van."
+        "Magas és fiatal.",
+        "Igen, magas és fiatal.",
+        "Ő Anna."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-129-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "plural-predicate-adjectives-k"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Kényelmes a kabát?"
+          "speaker": "Meg",
+          "text": "Milyen a haja?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Anna",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, nagyon kényelmes.",
-        "Sötét. A csizma is sötét."
+        "Hosszú és szőke.",
+        "Hosszú és szőkét.",
+        "Hosszú és szőkék."
       ],
       "correct": 0,
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "a1-129-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say this one is ugly, but that one is pretty.",
-          "answer": "Ez csúnya, de az szép."
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "demonstratives-ez-az"
-      ]
+        "3rd-person-possessive"
+      ],
+      "tiles": [
+        "Barna",
+        "és",
+        "haja",
+        "szeme",
+        "kék",
+        "van",
+        "."
+      ],
+      "solution": [
+        "Barna",
+        "haja",
+        "és",
+        "kék",
+        "szeme",
+        "van",
+        "."
+      ],
+      "english": "She has brown hair and blue eyes."
     },
     {
       "id": "a1-129-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-clothes-appearance-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say this shoe is comfortable.",
-          "answer": "Ez a cipő kényelmes."
+          "prompt": "Say that Meg is tall.",
+          "answer": "Meg magas."
+        },
+        {
+          "prompt": "Say that she has long hair.",
+          "answer": "Hosszú haja van."
         }
-      ],
-      "teaches": [
-        "van-zero-copula"
       ]
     },
     {
       "id": "a1-129-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'ugly'.",
-      "options": [
-        "csúnya",
-        "szép",
-        "sötét"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "3rd-person-possessive"
       ],
-      "stage": "check"
+      "sentence": "Rövid ____ van.",
+      "hint": "haj",
+      "english": "He has short hair.",
+      "answer": "haja"
     },
     {
       "id": "a1-129-check-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Choose the correct word for 'comfortable'.",
-      "options": [
-        "kényelmes",
-        "csúnya",
-        "világos"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “elderly”?",
+      "options": [
+        "idős",
+        "hosszú",
+        "fiatal"
+      ],
+      "correct": 0
     }
   ]
 }

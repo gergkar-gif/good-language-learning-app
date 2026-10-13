@@ -2,292 +2,235 @@
   "lesson": "a1-126",
   "exercises": [
     {
-      "id": "a1-126-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'tetszik' mean?",
-      "options": [
-        "to please",
-        "to wear",
-        "to try"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
-    },
-    {
-      "id": "a1-126-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'eladó' mean?",
-      "options": [
-        "salesperson",
-        "product",
-        "gift"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-shopping-vocab"
-      ]
-    },
-    {
       "id": "a1-126-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'ruha' mean?",
-      "options": [
-        "dress",
-        "shirt",
-        "coat"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “skirt”?",
+      "options": [
+        "szoknya",
+        "ruha",
+        "sapka"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-126-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'szoknya' mean?",
-      "options": [
-        "skirt",
-        "coat",
-        "shirt"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "demonstratives-ez-az"
       ],
-      "stage": "introduce"
+      "question": "Which sentence means “That is a hat”?",
+      "options": [
+        "Ez egy sapka.",
+        "Az egy sapka.",
+        "Az egy sapkák."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-126-controlled-1",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Szép ez a ____.",
-      "hint": "dress",
-      "english": "This dress is pretty.",
-      "answer": "ruha",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "singular-after-numbers"
       ],
-      "stage": "controlled"
+      "sentence": "Két ____ van itt.",
+      "english": "There are two socks here.",
+      "answer": "zokni"
     },
     {
       "id": "a1-126-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'shirt'.",
-      "options": [
-        "ing",
-        "kabát",
-        "szoknya"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "van-possessive-to-have"
       ],
-      "stage": "controlled"
+      "sentence": "Nincs ____.",
+      "hint": "szoknya, I",
+      "english": "I don't have a skirt.",
+      "answer": "szoknyám"
     },
     {
       "id": "a1-126-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "ruha",
-          "clothing / dress"
-        ],
-        [
-          "ing",
-          "shirt"
-        ],
-        [
-          "kabát",
-          "coat"
-        ],
-        [
-          "szoknya",
-          "skirt"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "plural-nouns-k"
       ],
-      "stage": "controlled"
+      "question": "Which word means “hats”?",
+      "options": [
+        "sapkak",
+        "sapka",
+        "sapkák"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-126-controlled-4",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Inget viselek.",
-      "base_word": "Inget",
-      "base_gloss": "I'm wearing a shirt.",
-      "options": [
-        {
-          "word": "kabát",
-          "inflected": "Kabátot",
-          "sentence": "Kabátot viselek.",
-          "gloss": "a coat"
-        },
-        {
-          "word": "ruha",
-          "inflected": "Ruhát",
-          "sentence": "Ruhát viselek.",
-          "gloss": "a dress"
-        }
-      ],
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "a1-clothes-appearance-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "szoknya",
+          "skirt"
+        ],
+        [
+          "ruha",
+          "dress"
+        ],
+        [
+          "sapka",
+          "hat"
+        ],
+        [
+          "pulóver",
+          "jumper"
+        ],
+        [
+          "zokni",
+          "sock"
+        ]
+      ]
     },
     {
       "id": "a1-126-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence emphasises how pretty the dress is?",
+      "stage": "practice",
+      "teaches": [
+        "van-possessive-to-have"
+      ],
+      "question": "Which sentence means “I have a hat”?",
       "options": [
-        "Szép ez a ruha.",
-        "Ez a ruha.",
-        "A ruha jó."
+        "Van egy sapkám.",
+        "Van egy sapkád.",
+        "Van egy sapka."
       ],
       "correct": 0,
-      "teaches": [
-        "basic-hungarian-word-order"
-      ],
-      "stage": "practice"
+      "distractor_skills": {
+        "2": "van-and-nincs-there-is-there-isn-t"
+      }
     },
     {
       "id": "a1-126-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Én inget és pulóvert ____.",
-      "hint": "wear",
-      "english": "I wear a shirt and a sweater.",
-      "answer": "viselek",
+      "stage": "practice",
       "teaches": [
-        "present-tense-routine-language"
+        "van-possessive-to-have"
       ],
-      "stage": "practice"
+      "sentence": "Két ____ van.",
+      "hint": "pulóver, I",
+      "english": "I have two jumpers.",
+      "answer": "pulóverem"
     },
     {
       "id": "a1-126-practice-3",
-      "type": "matching",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "ruha",
-          "clothing / dress"
-        ],
-        [
-          "ing",
-          "shirt"
-        ],
-        [
-          "kabát",
-          "coat"
-        ],
-        [
-          "szoknya",
-          "skirt"
-        ],
-        [
-          "tetszik",
-          "like / please"
-        ]
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "practice"
+      "question": "Anna says: “A ruha szép.” What does she talk about?",
+      "options": [
+        "a sock",
+        "a dress",
+        "a skirt"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-126-practice-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "A szoknya is szép.",
-      "base_word": "szoknya",
-      "base_gloss": "The skirt is pretty too.",
-      "options": [
-        {
-          "word": "ruha",
-          "inflected": "ruha",
-          "sentence": "A ruha is szép.",
-          "gloss": "the dress"
-        },
-        {
-          "word": "ing",
-          "inflected": "ing",
-          "sentence": "Az ing is szép.",
-          "gloss": "the shirt"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "van-possessive-to-have"
       ],
-      "stage": "practice"
+      "tiles": [
+        ".",
+        "van",
+        "zoknim",
+        "Három"
+      ],
+      "solution": [
+        "Három",
+        "zoknim",
+        "van",
+        "."
+      ],
+      "english": "I have three socks."
     },
     {
       "id": "a1-126-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Anna",
-          "text": "Szép ez a ruha."
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Igen. A szoknya is szép.",
-        "A busz ott van."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "singular-after-numbers"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “There are four socks here”?",
+      "options": [
+        "Itt négy zokni van.",
+        "Itt négy zokni nincs.",
+        "Itt négy zoknik van."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-126-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "van-possessive-to-have"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit viselsz?"
+          "speaker": "Anna",
+          "text": "Van sapkád?"
         },
         {
-          "speaker": "Mariann",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Inget és pulóvert.",
-        "Mennyibe kerül?"
+        "Igen, van egy sapka.",
+        "Igen, van egy sapkám.",
+        "Igen, van egy sapkád."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
+      "correct": 1,
+      "distractor_skills": {
+        "0": "van-and-nincs-there-is-there-isn-t"
+      }
     },
     {
       "id": "a1-126-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "plural-nouns-k"
+      ],
       "prompt": [
         {
-          "speaker": "Anna",
-          "text": "Milyen ruhát viselsz?"
+          "speaker": "Károly",
+          "text": "Mi ez?"
         },
         {
           "speaker": "Meg",
@@ -295,73 +238,92 @@
         }
       ],
       "options": [
-        "Szoknyát és inget.",
-        "Szia, hogy vagy?"
+        "Ez egy ruhák.",
+        "Ez egy ruhát.",
+        "Ez egy ruha."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
+      "correct": 2,
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "a1-126-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say this dress is pretty.",
-          "answer": "Szép ez a ruha."
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "van-zero-copula"
-      ]
+        "van-possessive-to-have"
+      ],
+      "tiles": [
+        "ruhám",
+        "pulóverem",
+        "és",
+        ".",
+        "két",
+        "egy",
+        "Van"
+      ],
+      "solution": [
+        "Van",
+        "két",
+        "pulóverem",
+        "és",
+        "egy",
+        "ruhám",
+        "."
+      ],
+      "english": "I have two jumpers and a dress."
     },
     {
       "id": "a1-126-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-clothes-appearance-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say you're wearing a shirt and a jumper.",
-          "answer": "Inget és pulóvert viselek."
+          "prompt": "Say that this is a skirt.",
+          "answer": "Ez egy szoknya."
+        },
+        {
+          "prompt": "Say that you have a dress.",
+          "answer": "Van egy ruhám."
         }
-      ],
-      "teaches": [
-        "how-the-accusative-t-works"
       ]
     },
     {
       "id": "a1-126-check-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "vocabulary",
-      "question": "Choose the correct word for 'coat'.",
-      "options": [
-        "kabát",
-        "ing",
-        "ruha"
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "check"
+      "sentence": "Ez egy ____.",
+      "english": "This is a sock.",
+      "answer": "zokni"
     },
     {
       "id": "a1-126-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'skirt'.",
+      "category": "grammar",
+      "stage": "check",
+      "teaches": [
+        "van-possessive-to-have"
+      ],
+      "question": "Which sentence means “I don't have a dress”?",
       "options": [
-        "szoknya",
-        "ruha",
-        "ing"
+        "Nincs ruhám.",
+        "Nincs ruha.",
+        "Nincs ruhád."
       ],
       "correct": 0,
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ],
-      "stage": "check"
+      "distractor_skills": {
+        "1": "van-and-nincs-there-is-there-isn-t"
+      }
     }
   ]
 }

@@ -2,272 +2,206 @@
   "lesson": "a1-130",
   "exercises": [
     {
-      "id": "a1-130-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'visel' mean?",
-      "options": [
-        "to wear",
-        "to try on",
-        "to choose"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
-    },
-    {
-      "id": "a1-130-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'kényelmes' mean?",
-      "options": [
-        "comfortable",
-        "long",
-        "short"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
-    },
-    {
       "id": "a1-130-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What does 'hosszú' mean?",
-      "options": [
-        "long",
-        "short",
-        "comfortable"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which word means “pretty”?",
+      "options": [
+        "hosszú",
+        "színes",
+        "csinos"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-130-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'visel' mean?",
-      "options": [
-        "to wear",
-        "to try",
-        "to look for"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "negation-with-nem"
       ],
-      "stage": "introduce"
+      "question": "Which sentence means “Anna is not short, but tall”?",
+      "options": [
+        "Anna nem alacsony, hanem magas.",
+        "Anna nem alacsony, de magas.",
+        "Anna nem alacsony, és magas."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-130-controlled-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A nadrág ____?",
-      "hint": "short",
-      "english": "Are the trousers short?",
-      "answer": "rövid",
+      "stage": "controlled",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "A ____ magas és csinos.",
+      "hint": "barátnő, my",
+      "english": "My friend (a woman) is tall and pretty.",
+      "answer": "barátnőm"
     },
     {
       "id": "a1-130-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the word for 'try'.",
-      "options": [
-        "próbál",
-        "visel",
-        "keres"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "is-placing-also-too"
       ],
-      "stage": "controlled"
+      "sentence": "Anna is, Meg ____ szemüveget visel.",
+      "english": "Both Anna and Meg wear glasses.",
+      "answer": "is"
     },
     {
       "id": "a1-130-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "hosszú",
-          "long"
-        ],
-        [
-          "rövid",
-          "short"
-        ],
-        [
-          "próbál",
-          "try"
-        ],
-        [
-          "visel",
-          "wear"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "negation-with-nem"
       ],
-      "stage": "controlled"
+      "sentence": "Éva nem idős, ____ fiatal.",
+      "english": "Éva is not elderly, but young.",
+      "answer": "hanem"
     },
     {
       "id": "a1-130-controlled-4",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Rendben, ezt viselem.",
-      "base_word": "viselem",
-      "base_gloss": "Okay, I'll wear this.",
-      "options": [
-        {
-          "word": "próbálom",
-          "inflected": "próbálom",
-          "sentence": "Rendben, ezt próbálom.",
-          "gloss": "I'm trying this"
-        },
-        {
-          "word": "kérem",
-          "inflected": "kérem",
-          "sentence": "Rendben, ezt kérem.",
-          "gloss": "I'd like this"
-        }
-      ],
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "definite-vs-indefinite-conjugation"
+        "a1-clothes-appearance-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "barátnő",
+          "female friend"
+        ],
+        [
+          "csinos",
+          "pretty"
+        ],
+        [
+          "szemüveg",
+          "glasses"
+        ],
+        [
+          "haj",
+          "hair"
+        ],
+        [
+          "idős",
+          "elderly"
+        ]
+      ]
     },
     {
       "id": "a1-130-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which form is correct when the object is specific, like 'ezt' (this one)?",
-      "options": [
-        "viselem",
-        "viselek",
-        "visel"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
-        "definite-vs-indefinite-conjugation"
+        "how-the-accusative-t-works"
       ],
-      "distractor_skills": {
-        "2": "present-tense-routine-language"
-      },
-      "stage": "practice"
+      "question": "Which question asks what Éva is wearing?",
+      "options": [
+        "Ki visel Éva?",
+        "Mit visel Éva?",
+        "Milyen Éva?"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-130-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Nem, a nadrág ____.",
-      "hint": "long",
-      "english": "No, the trousers are long.",
-      "answer": "hosszú",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Éva kék ____ visel.",
+      "hint": "kabát",
+      "english": "Éva wears a blue coat.",
+      "answer": "kabátot"
     },
     {
       "id": "a1-130-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "hosszú",
-          "long"
-        ],
-        [
-          "rövid",
-          "short"
-        ],
-        [
-          "próbál",
-          "try"
-        ],
-        [
-          "visel",
-          "wear"
-        ],
-        [
-          "kényelmes",
-          "comfortable"
-        ]
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "is-placing-also-too"
       ],
-      "stage": "practice"
+      "tiles": [
+        "Meg",
+        "magas",
+        ".",
+        "is",
+        ",",
+        "Anna",
+        "is"
+      ],
+      "solution": [
+        "Meg",
+        "is",
+        ",",
+        "Anna",
+        "is",
+        "magas",
+        "."
+      ],
+      "english": "Both Meg and Anna are tall."
     },
     {
       "id": "a1-130-practice-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "base_sentence": "A nadrág rövid?",
-      "base_word": "rövid",
-      "base_gloss": "Are the trousers short?",
-      "options": [
-        {
-          "word": "hosszú",
-          "inflected": "hosszú",
-          "sentence": "A nadrág hosszú?",
-          "gloss": "long"
-        },
-        {
-          "word": "kényelmes",
-          "inflected": "kényelmes",
-          "sentence": "A nadrág kényelmes?",
-          "gloss": "comfortable"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-clothes-appearance-vocab"
       ],
-      "stage": "practice"
+      "question": "Anna says: “A barátnőm csinos és fiatal.” What is her friend like?",
+      "options": [
+        "ugly and young",
+        "pretty and young",
+        "pretty and elderly"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-130-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "A nadrág rövid?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Nem, hosszú.",
-        "A busz ott van."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “Éva wears the grey coat”?",
+      "options": [
+        "Éva viseli a szürke kabát.",
+        "Éva viseli a szürke kabátot.",
+        "Éva visel a szürke kabátot."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-130-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "plural-predicate-adjectives-k"
+      ],
       "prompt": [
         {
-          "speaker": "Anna",
-          "text": "Ez a kabát csúnya, de az szép."
+          "speaker": "Károly",
+          "text": "Milyen a barátnőd?"
         },
         {
           "speaker": "Meg",
@@ -275,96 +209,156 @@
         }
       ],
       "options": [
-        "Igen, akkor azt veszem fel.",
-        "Mennyibe kerül?"
+        "Magas és csinos.",
+        "Magas és csinost.",
+        "Magas és csinosak."
       ],
       "correct": 0,
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "a1-130-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Szeretnéd felpróbálni a kabátot?"
+          "speaker": "Meg",
+          "text": "Mit visel ma Éva?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Anna",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, szeretném felpróbálni.",
-        "Nem, a nadrág hosszú."
+        "Szürke kabát és fekete nadrág visel.",
+        "Szürke kabátot és fekete nadrágot visel.",
+        "Szürke kabátot és fekete nadrágot viselek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-clothes-appearance-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-130-production-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Ask if the trousers are short.",
-          "answer": "A nadrág rövid?"
-        }
-      ],
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "yes-no-questions"
-      ]
+        "3rd-person-possessive"
+      ],
+      "tiles": [
+        ".",
+        "Éva",
+        "haja",
+        "magas",
+        "van",
+        "és",
+        "hosszú",
+        ","
+      ],
+      "solution": [
+        "Éva",
+        "magas",
+        ",",
+        "és",
+        "hosszú",
+        "haja",
+        "van",
+        "."
+      ],
+      "english": "Éva is tall, and she has long hair."
     },
     {
       "id": "a1-130-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-clothes-appearance-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say okay, you'll wear this.",
-          "answer": "Rendben, ezt viselem."
+          "prompt": "Say that your friend (a woman) is young and pretty.",
+          "answer": "A barátnőm fiatal és csinos."
+        },
+        {
+          "prompt": "Say that she wears a blue dress.",
+          "answer": "Kék ruhát visel."
         }
-      ],
-      "teaches": [
-        "definite-vs-indefinite-conjugation"
       ]
     },
     {
       "id": "a1-130-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'long'.",
-      "options": [
-        "hosszú",
-        "rövid",
-        "kényelmes"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "sentence": "Ő fehér ____ visel.",
+      "hint": "ing",
+      "english": "He wears a white shirt.",
+      "answer": "inget"
     },
     {
       "id": "a1-130-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Choose the correct word for 'wear'.",
-      "options": [
-        "visel",
-        "próbál",
-        "keres"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-clothes-appearance-vocab"
+        "negation-with-nem"
       ],
-      "stage": "check"
+      "question": "Which sentence means “He is not tall, but short”?",
+      "options": [
+        "Nem magas, hanem alacsonyat.",
+        "Nem magas, hanem alacsonyak.",
+        "Nem magas, hanem alacsony."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-130-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What colour is the coat that Éva wears?",
+      "options": [
+        "Brown.",
+        "Grey.",
+        "Blue."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-130-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Who tells Károly what Éva looks like?",
+      "options": [
+        "Meg and Anna.",
+        "Éva herself.",
+        "Mariann."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-130-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does Anna wear today?",
+      "options": [
+        "A grey coat.",
+        "A blue jumper.",
+        "A red dress."
+      ],
+      "correct": 2
     }
   ]
 }
