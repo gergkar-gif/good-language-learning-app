@@ -1,0 +1,85 @@
+# Unit pipeline: prompts, measurements, process reviews
+
+How the reviewer (Claude) runs units through Sonnet agents, what each step
+costs, and what changed at each review. **Every 2 finished units, the
+reviewer reviews the process** (decided by the user 2026-10-13, under
+time and usage pressure): add the units' numbers to the table, compare
+with the previous rows, pick one or two changes that cut tokens or
+reviewer work without losing defects, record them below, and apply them
+to the next units. Repeated defects go into `docs/unit-agent-rules.md`
+§ 6 at once; a defect a script could catch becomes a `check-content.py`
+check.
+
+## Pipeline (current)
+
+1. **Stub unit** (repeated screens, shared checklists, generic content):
+   Sonnet regenerates it. **Real content:** skip to 2.
+2. Sonnet blind read (report only) on a read-only worktree.
+3. Reviewer filters the report against the files, writes
+   `imports/review/sonnet-reads/hu-a1-<unit id>.md` (Applied / Not taken),
+   applies the fixes (small lists directly; long lists to a fixer agent),
+   re-locks, freezes, commits through commit-gate.
+At most 2 agents at once. Worktrees: `git worktree add --detach
+/home/user/parlour-<job> HEAD`, removed after.
+
+## Prompt templates
+
+Fill `<…>`. Each agent reads `docs/unit-agent-rules.md` and nothing else
+by default.
+
+**Read.** "You are reviewing one unit of a Hungarian course (Parlour app)
+for a learner who knows only English, to find everything wrong with it.
+REPORT ONLY: edit, create or commit nothing; change no git or tool
+config. Work only in `<folder>`. Unit `hu a1 <unit id>`: lessons
+`<stems>`, story `<story stem>`; earlier units `<range>`. Read
+`docs/unit-agent-rules.md` first; it is your rulebook (open other docs
+only to settle a point it doesn't cover). Run its § 5 commands. Read
+every exercise, screen, challenge, goal, checklist, speaking step and the
+story, checking § 1–4 and every item of § 6. Skip what check-content
+reports. Focus: `<unit-specific grammar to watch>`. Report grouped: 1.
+Found by reading; 2. Metadata; 3. Challenges / goals / checklists; 4.
+Doubtful. One line each: id, problem quoting the text, fix; mark
+uncertain items (unsure). Don't pad."
+
+**Regenerate.** "Regenerate hu a1 unit `<n>` `<unit id>` (`<stems>`) in
+`<folder>`. Rulebook: `docs/unit-agent-rules.md`; shape:
+`docs/course-generation-brief.md` § 2.2/2.3 (read only those). Rewrite
+both screens per lesson, story, exercises, goals/checklists, challenges;
+keep ids and stems. `<unit-specific points>`. Run § 5 checks, fix
+everything, lock tags, don't freeze. Commit normally with start/finish
+times; report the commit, per-lesson points, and Hungarian you are unsure
+of."
+
+**Fix.** "Apply the fix list `<file>` to hu a1 `<unit id>` in `<folder>`.
+Rulebook: `docs/unit-agent-rules.md`. Apply every Applied item, nothing
+under Not taken; re-lock; run § 5 checks; don't freeze; commit normally
+listing each item."
+
+## Measurements
+
+| Date | Unit | Route | Regen / fix (tok, min) | Read (tok, min) | Real defects in read | Notes |
+|---|---|---|---|---|---|---|
+| 10-10 | 8 plurals-quantities | Sonnet regen (pilot A) | 251k, 16 | 153k, 4.5 | ~21 | |
+| 10-10 | 9 possession | read → fixer (pilot B) | 298k, 23 | 159k, 7.5 | ~14 | |
+| 10-13 | 8 + 9 | pilot fix lists, one Sonnet fixer | 142k, 4.5 | | | both units in one agent |
+| 10-13 | 11 where-things-are | Sonnet regen | 267k, 14 | 155k, 5.5 | 9 applied | frozen; agent bypassed hooks (now forbidden) |
+| 10-13 | 10 foundations-review | Sonnet regen | 245k, 9 | 187k, 5 | ~15 to filter | |
+| 10-13 | 8 (second read) | | | 161k, 5 | ~10 to filter | found a wrong pilot fix-list item |
+
+All reads so far used the full docs (brief, AGENTS, spec, registry).
+
+## Process reviews
+
+### 2026-10-13 (after units 10, 11)
+
+- Cost per finished unit ≈ 450k Sonnet tokens on either route; reads
+  (150–190k) mostly re-read the same four docs. **Change:** this rules
+  sheet replaces them for every agent; templates above replace hand-written
+  prompts. Measure on unit 9's second read against the 155–187k reads.
+- Reviewer's own cost: filtering by checking each claim in the files is
+  where errors were caught (wrong pilot item, "Harminc éves" two-answer
+  item), so it stays.
+- Next candidates: a `check-content.py` check for duplicate vocabulary
+  entries and for `distractor_skills` on non-word options (the Reader
+  lexicon can tell a non-word); Haiku for applying an already-filtered
+  fix list.
