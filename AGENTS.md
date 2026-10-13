@@ -45,7 +45,8 @@ is the answer, a missing `english`, a form used before its screen, a lemma
 listed twice in one vocabulary file, `distractor_skills` on the right option or
 naming the item's own skill, a HU blank glued to a stem ending in *-a/-e*
 whose answer is a suffix, an unmet word in a challenge target, a HU fill-blank whose English "take" lets
-both *kér-* and *vesz-* fit…); findings
+both *kér-* and *vesz-* fit, a consolidation item copied verbatim from a lesson
+(suspect)…); findings
 already in the content stay a report. `python scripts/check-content.py
 <course> [level] [unit id]` lists everything for one scope, `--summary`
 counts it. The pre-push hook runs both checks.

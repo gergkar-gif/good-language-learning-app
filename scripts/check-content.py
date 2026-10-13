@@ -75,6 +75,7 @@ CHECKS = {
     "non-rendering-type": "a lesson uses an exercise type lessons don't render",
     "adjacent-repeat": "two adjacent exercises share a question line",
     "unit-copy": "an exercise copies one from an earlier lesson of the unit",
+    "consolidation-copy": "a consolidation item copies a lesson item of its unit verbatim (vary the words)",
     "taught-later": "a grammar skill is used before the lesson whose screen teaches it",
     "vocab-unused": "a vocabulary word no exercise of its lesson uses",
     "vocab-duplicate": "a vocabulary list has the same lemma twice",
@@ -98,7 +99,7 @@ CHECKS = {
 LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
-SUSPECTS = {"take-gloss", "glued-blank", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"consolidation-copy", "take-gloss", "glued-blank", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # Hungarian A1-A2. Spanish lists leave out function words (en, que, con), so the
@@ -471,13 +472,16 @@ def check_unit(src, course, level, unit, shape):
             eid = e.get("id")
             for check, msg in check_exercise(e, course, lang):
                 out.append((check, eid, msg, ex_rel))
+            key = json.dumps({k: e.get(k) for k in COPY_KEYS if k in e}, ensure_ascii=False, sort_keys=True)
+            key = re.sub(r"\s*\((?:Lesson|Lecke|Lección) ?\d+\)", "", key)
             if not consolidation:
-                key = json.dumps({k: e.get(k) for k in COPY_KEYS if k in e}, ensure_ascii=False, sort_keys=True)
-                key = re.sub(r"\s*\((?:Lesson|Lecke|Lección) ?\d+\)", "", key)
                 if key in seen:
                     out.append(("unit-copy", eid, f"copy of {seen[key]}", ex_rel))
                 else:
                     seen[key] = eid
+            elif key in seen:
+                # a review may revisit a point, but a verbatim copy reviews nothing new
+                out.append(("consolidation-copy", eid, f"copy of {seen[key]}", ex_rel))
             for slug in e.get("teaches") or []:
                 sk = skills.get(slug) or {}
                 if sk.get("kind") == "grammar" and sk.get("level", "").lower() == level:

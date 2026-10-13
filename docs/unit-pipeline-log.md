@@ -233,3 +233,12 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
 - New check `take-gloss` (HU fill-blanks whose English "take" lets *kér-*
   and *vesz-* both fit): the defect recurred in 21, 22, 24, 25 despite the
   rules sheet; the check finds exactly the read's 4 typed items.
+
+### 2026-10-13 (units 26, 27 read)
+
+- The paired read found ~25 items per unit, mostly recap screens presenting
+  earlier units as new (the 28+29 prompt already lists "recap, never new").
+- New check `consolidation-copy` (suspect): a consolidation item identical
+  to a lesson item. 317 hits course-wide, almost all in frozen units 2–7, 9
+  (whose consolidations were built as replays; left as they are) and in the
+  not-yet-regenerated 28–30; regenerated units have 1–5 each.
