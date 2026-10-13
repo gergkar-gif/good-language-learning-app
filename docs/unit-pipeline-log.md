@@ -89,6 +89,9 @@ listing each item."
 | 10-13 | 19 food-drink | regen, no verdict read | 160k, 8 | 127k, 4.5 | 10 applied, 1 false | read claimed *Nem van tej.* is correct |
 | 10-13 | 20 everyday-hungarian-review | regen (review unit) | 267k, 12 | 191k, 5 | 10 applied | review units cost ~40% more |
 | 10-13 | 21 buying-food | regen | 213k, 11 | 137k, 4 | 9 applied | two-right-answer blanks via English "take" |
+| 10-13 | 22 market | regen | 217k, 13 | 167k for 22+23 (**83k/unit**), 5.5 | 12 applied | paired read |
+| 10-13 | 23 cafe | regen | 180k, 9.5 | (paired) | 7 applied | |
+| 10-13 | 22 + 23 fixes | Haiku | 110k Haiku, 2.5 | | 19/19 | |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -211,3 +214,15 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   ("take" for *kérem*/*veszem*). Added to rules § 6.
 - Units 21 and 22 overlap in topic (market lesson in 21): the regeneration
   prompt now names what the previous unit already covers.
+
+### 2026-10-13 (after units 22, 23 frozen): two units per agent
+
+- **Paired read** (one Sonnet agent, units 22 + 23): 167k = 83k per unit
+  against 106–191k single, with as many real findings (12 + 7 applied) and
+  a cross-unit catch (unit 23's price screen re-teaching unit 21). **Reads
+  go in pairs from now on** (user: "double is ok").
+- Triples considered and declined for now (user agreed): the fixed cost
+  per read is ~40–50k, so a third unit saves only ~13k/unit more, while a
+  ~250k-token context risks the detail checks late in the read.
+- Paired regeneration (units 24 + 25 in one agent) is running; verdict when
+  its read is in.
