@@ -565,7 +565,64 @@ async function runTests() {
     assert.strictEqual(remainingBook.progress.chapterIndex, 0, 'Reading progress chapterIndex should shift down when an earlier chapter is removed');
     console.log('   ✓ Front-matter filtering, chapter subtitles, book typography classes, floating Substack player, and manual chapter removal verified.');
 
+    console.log('7. Testing Cross-Device Cloud Book Sync (syncPendingBooks + lazy chapter download on Device B)...');
+    const cloudBooks = new Map();
+    let autoSaveScheduled = 0;
+    global.Sync = {
+        isLoggedIn: () => true,
+        scheduleAutoSave: () => { autoSaveScheduled++; },
+        saveBook: async (key, payload) => {
+            cloudBooks.set(key, JSON.parse(JSON.stringify(payload)));
+            return true;
+        },
+        loadBook: async (key) => {
+            return cloudBooks.get(key) || null;
+        },
+        deleteBook: async (key) => {
+            cloudBooks.delete(key);
+            return true;
+        }
+    };
+
+    const uploadedCount = await Lib2.syncPendingBooks();
+    assert.strictEqual(uploadedCount, 1, 'syncPendingBooks should upload the existing local book to the cloud');
+    assert(cloudBooks.has('es:book:' + bookId), 'Cloud book store should hold the uploaded book payload');
+
+    // Simulate Device B receiving a new multi-chapter book via Cloud Sync state snapshot (metadata only, no local BookStore record yet)
+    const remoteBookId = 'text-remote-novel-99';
+    cloudBooks.set('es:book:' + remoteBookId, {
+        chapters: [
+            { index: 0, title: 'Capítulo Uno Remoto', paragraphs: ['El viento soplaba fuerte sobre la sierra nevada.'], wordCount: 8, estimatedMinutes: 1 },
+            { index: 1, title: 'Capítulo Dos Remoto', paragraphs: ['Al amanecer llegaron al refugio de piedra.'], wordCount: 7, estimatedMinutes: 1 }
+        ],
+        lemmas: []
+    });
+
+    const currentTexts = JSON.parse(localStorage.getItem('es:myTexts') || '[]');
+    currentTexts.push({
+        id: remoteBookId,
+        title: 'Novela desde otro dispositivo',
+        author: 'Autora Remota',
+        sourceType: 'epub',
+        chapters: [
+            { index: 0, title: 'Capítulo Uno Remoto', wordCount: 8, estimatedMinutes: 1 },
+            { index: 1, title: 'Capítulo Dos Remoto', wordCount: 7, estimatedMinutes: 1 }
+        ],
+        created: new Date().toISOString(),
+        modified: new Date().toISOString(),
+        analysis: { totalWords: 15, estimatedMinutes: 1, level: 'A2', familiarPercent: 80 },
+        progress: { chapterIndex: 1, pct: 0, paraIndex: 0, readChapters: [0], at: Date.now() }
+    });
+    localStorage.setItem('es:myTexts', JSON.stringify(currentTexts));
+
+    Lib2.reloadFromStorage();
+    await Lib2.openMyText(remoteBookId, 1);
+    assert(readerEl.innerHTML.includes('Capítulo Dos Remoto'), 'Device B should lazily download chapters from Cloud Sync and open Chapter 2');
+    assert(readerEl.innerHTML.includes('data-word="refugio"'), 'Downloaded chapter paragraphs should render with clickable words on Device B');
+    console.log('   ✓ Cross-device cloud book upload (syncPendingBooks) and on-demand chapter download verified.');
+
     console.log('\nAll Library book & chapter tests passed!');
+    process.exit(0);
 }
 
 runTests().catch(err => {

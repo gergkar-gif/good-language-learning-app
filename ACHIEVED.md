@@ -9,6 +9,11 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed work (2026-10-13)
 
+- **Library Cross-Device Cloud Book & Reading Progress Sync (`engine/library.js`, `engine/sync.js`, `cloudflare-worker/sync-worker.js`, `cloudflare-worker/sync-schema.sql`) (Done 2026-10-13).**
+  - Added `/sync/book` (`GET` and `POST`) endpoints and automatic `user_books` D1 table creation (`ensureBooksTable`) in `cloudflare-worker/sync-worker.js` so multi-chapter book bodies (`chapters` + `lemmas`) are stored in dedicated per-book D1 rows without bloating `/sync/state` above the 64 KB `keepalive` limit.
+  - Added deflate-compressed book payload sync (`Sync.saveBook`, `Sync.loadBook`, `Sync.deleteBook`), timestamp-aware `mergeMyTexts()` (preserving the newer `progress.at` reading position and unioning `readChapters`), and `myTextsResetLog` deletion tombstones in `engine/sync.js`, plus `Library.reloadFromStorage()` in `Sync.applySnapshot()`.
+  - Updated `engine/library.js` to call `Sync.scheduleAutoSave()` on `saveMyTexts()` and `saveSaved()`, upload book payloads on save and via `syncPendingBooks()` for books added previously, and lazily download book chapters on demand in `resolveBookChapters()` when opening a synced book on another device.
+
 - **Deck Reset & Per-Word Removal Cloud Sync Tombstone Persistence (`engine/srs.js`, `engine/decks.js`, `engine/sync.js`, `engine/lang.js`) (Done 2026-10-13).**
   - Added per-course `srsResetLog` (`{ resetAt, lemmas }`) tracked in `engine/srs.js` and synced via `COURSE_KEYS` in `engine/sync.js` so full deck resets (`clearDeck()`), single-deck resets (`resetDeckProgress()`), and individual word removals (`removeFromAllWords()`) filter out any cloud or local cards/known words whose activity timestamp predates the reset.
   - Updated `clearDeck()`, `resetDeckProgress()`, and `removeFromAllWords()` to persist `'[]'` via `saveDeck()` / `saveKnownWords()` and immediately trigger `Sync.performAutoSave()`, and updated `applySnapshot()` to reload in-memory `srsDeck` and `knownWords`.

@@ -96,6 +96,9 @@ function createMockEnvironment(initialStorage = {}) {
         String: global.String,
         Number: global.Number,
         Boolean: global.Boolean,
+        Buffer: global.Buffer,
+        Uint8Array: global.Uint8Array,
+        require: require,
         console: { warn: () => {}, error: () => {}, log: () => {} }
     };
 
@@ -405,6 +408,95 @@ console.log('\n--- Test 7: Startup Sync Automatic Pull & Apply ---');
         assert.strictEqual(partialCards[0].spanish, 'quedarse', 'Untouched deck card must remain');
         assert.strictEqual(partialKnown.length, 0, 'Per-lemma reset knownWord must not return from cloud');
         console.log('[PASS] Full and per-deck resets survive cloud sync merges without resurrecting old words.');
+    }
+
+    console.log('\n--- Test 12: My Texts Progress Merge, Deletion Log, & Book Payload Compression ---');
+    {
+        const cloudMyTexts = [
+            {
+                id: 'book-shared',
+                title: 'Rayuela',
+                author: 'Cortazar',
+                modified: '2026-10-12T10:00:00Z',
+                progress: { chapterIndex: 4, pct: 75, paraIndex: 12, readChapters: [0, 1, 2, 3], at: 5000 }
+            },
+            {
+                id: 'book-deleted-locally',
+                title: 'Old Book',
+                modified: '2026-10-01T10:00:00Z',
+                progress: { chapterIndex: 0, pct: 0, paraIndex: 0, readChapters: [], at: 1000 }
+            }
+        ];
+        const localMyTexts = [
+            {
+                id: 'book-shared',
+                title: 'Rayuela',
+                author: 'Cortazar',
+                modified: '2026-10-10T10:00:00Z',
+                progress: { chapterIndex: 1, pct: 20, paraIndex: 2, readChapters: [0], at: 2000 }
+            },
+            {
+                id: 'book-new-local',
+                title: 'Ficciones',
+                author: 'Borges',
+                modified: '2026-10-13T08:00:00Z',
+                progress: { chapterIndex: 0, pct: 10, paraIndex: 1, readChapters: [], at: 6000 }
+            }
+        ];
+
+        const mergedBooksSnap = Sync.mergeSnapshots(
+            {
+                es: {
+                    myTexts: JSON.stringify(localMyTexts),
+                    myTextsResetLog: JSON.stringify({ 'book-deleted-locally': Date.parse('2026-10-12T12:00:00Z') })
+                }
+            },
+            {
+                es: {
+                    myTexts: JSON.stringify(cloudMyTexts)
+                }
+            }
+        );
+
+        const mergedBooks = JSON.parse(mergedBooksSnap.es.myTexts);
+        assert.strictEqual(mergedBooks.length, 2, 'Deleted book must be filtered out while active books from both devices remain');
+        const rayuela = mergedBooks.find(b => b.id === 'book-shared');
+        assert(rayuela, 'Shared book must exist');
+        assert.strictEqual(rayuela.progress.chapterIndex, 4, 'Newer cloud reading chapterIndex must win over older local position');
+        assert.strictEqual(rayuela.progress.pct, 75, 'Newer cloud reading percentage must win');
+        assert.deepStrictEqual(rayuela.progress.readChapters, [0, 1, 2, 3], 'Completed chapters must union across devices');
+
+        // Verify saveBook / loadBook compressed payload round-trip
+        const bookEnv = createMockEnvironment({ syncToken: 'test-token' });
+        let uploadedBody = null;
+        bookEnv.setFetchResponse({
+            ok: true,
+            status: 200,
+            json: async () => ({ ok: true, updatedAt: 12345 })
+        });
+        const samplePayload = {
+            chapters: [
+                { index: 0, title: 'Capitulo 1', paragraphs: ['En un lugar de la Mancha.', 'Segunda frase del capitulo.'], wordCount: 11, estimatedMinutes: 1 }
+            ],
+            lemmas: [{ lemma: 'lugar', translation: 'place', pos: 'noun' }]
+        };
+        const savedOk = await bookEnv.Sync.saveBook('es:book:book-shared', samplePayload);
+        assert.strictEqual(savedOk, true, 'saveBook should succeed when signed in');
+        uploadedBody = JSON.parse(bookEnv.getLastFetchCall().options.body);
+        assert.strictEqual(uploadedBody.key, 'es:book:book-shared');
+        assert.strictEqual(uploadedBody.payload.encoding, 'deflate-base64', 'Book payload should be deflate-compressed for cloud storage');
+
+        bookEnv.setFetchResponse({
+            ok: true,
+            status: 200,
+            json: async () => ({ payload: uploadedBody.payload, updatedAt: 12345 })
+        });
+        const loadedPayload = await bookEnv.Sync.loadBook('es:book:book-shared');
+        assert(loadedPayload && Array.isArray(loadedPayload.chapters), 'loadBook should decompress book chapters');
+        assert.strictEqual(loadedPayload.chapters.length, 1);
+        assert.strictEqual(loadedPayload.chapters[0].title, 'Capitulo 1');
+        assert.strictEqual(loadedPayload.chapters[0].paragraphs[0], 'En un lugar de la Mancha.');
+        console.log('[PASS] My Texts progress merge, deletion log, and deflate book payload sync verified.');
     }
 
     console.log('\n==========================================================');

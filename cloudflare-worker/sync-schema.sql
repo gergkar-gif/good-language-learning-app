@@ -16,3 +16,12 @@ CREATE TABLE users (
     updated_at INTEGER,
     created_at INTEGER NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS user_books (
+    user_id TEXT NOT NULL,
+    book_key TEXT NOT NULL,
+    payload_json TEXT NOT NULL,
+    updated_at INTEGER NOT NULL,
+    PRIMARY KEY (user_id, book_key)
+);
+

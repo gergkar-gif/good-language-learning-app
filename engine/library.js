@@ -98,15 +98,8 @@ const Library = (function () {
         return dbPromise;
     }
 
-    async function saveBookPayload(textId, payload) {
-        const key = bookStoreKey(textId);
-        const record = {
-            key: key,
-            chapters: payload.chapters || [],
-            lemmas: payload.lemmas || null,
-            updated: Date.now()
-        };
-        memBookStore.set(key, record);
+    async function _putBookRecord(record) {
+        memBookStore.set(record.key, record);
         const db = await openDb();
         if (!db) return;
         return new Promise(resolve => {
@@ -119,6 +112,30 @@ const Library = (function () {
                 resolve();
             }
         });
+    }
+
+    async function saveBookPayload(textId, payload, options) {
+        const key = bookStoreKey(textId);
+        const fromCloud = Boolean(options && options.fromCloud);
+        const record = {
+            key: key,
+            chapters: payload.chapters || [],
+            lemmas: payload.lemmas || null,
+            updated: Date.now(),
+            cloudSynced: fromCloud
+        };
+        await _putBookRecord(record);
+
+        if (!fromCloud && typeof Sync !== 'undefined' && Sync.isLoggedIn && Sync.isLoggedIn() && typeof Sync.saveBook === 'function') {
+            Sync.saveBook(key, { chapters: record.chapters, lemmas: record.lemmas })
+                .then(ok => {
+                    if (ok) {
+                        record.cloudSynced = true;
+                        _putBookRecord(record);
+                    }
+                })
+                .catch(() => {});
+        }
     }
 
     async function loadBookPayload(textId) {
@@ -144,6 +161,9 @@ const Library = (function () {
     async function deleteBookPayload(textId) {
         const key = bookStoreKey(textId);
         memBookStore.delete(key);
+        if (typeof Sync !== 'undefined' && Sync.isLoggedIn && Sync.isLoggedIn() && typeof Sync.deleteBook === 'function') {
+            Sync.deleteBook(key).catch(() => {});
+        }
         const db = await openDb();
         if (!db) return;
         return new Promise(resolve => {
@@ -159,7 +179,7 @@ const Library = (function () {
     }
 
     // Resolves the full chapter objects ([{ index, title, paragraphs, wordCount, estimatedMinutes }])
-    // for a My Text item, falling back to inline t.text for legacy or short pasted texts.
+    // for a My Text item, falling back to inline t.text or lazily downloading from Cloud Sync.
     async function resolveBookChapters(t) {
         if (!t) return [];
         const payload = await loadBookPayload(t.id);
@@ -174,7 +194,53 @@ const Library = (function () {
             });
             return built;
         }
+        if (typeof Sync !== 'undefined' && Sync.isLoggedIn && Sync.isLoggedIn() && typeof Sync.loadBook === 'function') {
+            const remote = await Sync.loadBook(bookStoreKey(t.id));
+            if (remote && Array.isArray(remote.chapters) && remote.chapters.length) {
+                await saveBookPayload(t.id, {
+                    chapters: remote.chapters,
+                    lemmas: remote.lemmas || null
+                }, { fromCloud: true });
+                return remote.chapters;
+            }
+        }
         return [];
+    }
+
+    // Uploads any local books in IndexedDB that have not yet been backed up to the cloud
+    // (for example, books added before signing in or before cloud book sync existed).
+    let _syncingBooksPromise = null;
+    async function syncPendingBooks() {
+        if (typeof Sync === 'undefined' || !Sync.isLoggedIn || !Sync.isLoggedIn() || typeof Sync.saveBook !== 'function') {
+            return 0;
+        }
+        if (_syncingBooksPromise) return _syncingBooksPromise;
+        _syncingBooksPromise = (async () => {
+            let uploaded = 0;
+            try {
+                for (const t of myTexts) {
+                    if (!t || !t.id) continue;
+                    const existing = await loadBookPayload(t.id);
+                    if (existing && Array.isArray(existing.chapters) && existing.chapters.length && !existing.cloudSynced) {
+                        const ok = await Sync.saveBook(bookStoreKey(t.id), {
+                            chapters: existing.chapters,
+                            lemmas: existing.lemmas || null
+                        });
+                        if (ok) {
+                            existing.cloudSynced = true;
+                            await _putBookRecord(existing);
+                            uploaded++;
+                        }
+                    }
+                }
+            } catch (e) {
+                // Transient error; will retry on next sync
+            } finally {
+                _syncingBooksPromise = null;
+            }
+            return uploaded;
+        })();
+        return _syncingBooksPromise;
     }
 
     // ----------------------------------------
@@ -192,6 +258,9 @@ const Library = (function () {
 
     function saveSaved() {
         localStorage.setItem(savedKey(), JSON.stringify(savedIds));
+        if (typeof Sync !== 'undefined' && typeof Sync.scheduleAutoSave === 'function') {
+            Sync.scheduleAutoSave();
+        }
     }
 
     function isSaved(storyId) {
@@ -259,6 +328,18 @@ const Library = (function () {
     // MY TEXTS — data & storage migration
     // ----------------------------------------
     const myTextsKey = () => Lang.key('myTexts');
+    const myTextsResetKey = () => Lang.key('myTextsResetLog');
+
+    function recordTextDeleted(id) {
+        if (!id) return;
+        try {
+            const log = JSON.parse(localStorage.getItem(myTextsResetKey()) || '{}');
+            if (log && typeof log === 'object' && !Array.isArray(log)) {
+                log[id] = Date.now();
+                localStorage.setItem(myTextsResetKey(), JSON.stringify(log));
+            }
+        } catch (e) {}
+    }
 
     function compactAnalysis(a) {
         if (!a) return null;
@@ -290,7 +371,7 @@ const Library = (function () {
         });
     }
 
-    function loadMyTexts() {
+    function loadMyTexts(skipAutoSave) {
         try {
             myTexts = JSON.parse(localStorage.getItem(myTextsKey()) || '[]');
         } catch (error) {
@@ -325,12 +406,15 @@ const Library = (function () {
                 migrated = true;
             }
         });
-        if (migrated) saveMyTexts();
+        if (migrated) saveMyTexts(skipAutoSave);
     }
 
-    function saveMyTexts() {
+    function saveMyTexts(skipAutoSave) {
         try {
             localStorage.setItem(myTextsKey(), JSON.stringify(myTexts));
+            if (!skipAutoSave && typeof Sync !== 'undefined' && typeof Sync.scheduleAutoSave === 'function') {
+                Sync.scheduleAutoSave();
+            }
         } catch (e) {
             if (typeof UI !== 'undefined' && UI.toast) {
                 UI.toast('Browser storage is full. Try deleting unused texts.', 'error');
@@ -1319,6 +1403,7 @@ const Library = (function () {
         const id = textDraft.id;
         if (!confirm(`Delete "${textDraft.title}"? Words you've saved from it stay in your decks.`)) return;
         myTexts = myTexts.filter(t => t.id !== id);
+        recordTextDeleted(id);
         saveMyTexts();
         await deleteBookPayload(id);
         textDraft = null;
@@ -1331,6 +1416,7 @@ const Library = (function () {
         if (!t) return;
         if (!confirm(`Delete "${t.title}"? Words you've saved from it stay in your decks.`)) return;
         myTexts = myTexts.filter(x => x.id !== id);
+        recordTextDeleted(id);
         saveMyTexts();
         await deleteBookPayload(id);
         if (activeBookId === id) activeBookId = null;
@@ -1959,7 +2045,12 @@ const Library = (function () {
         }
 
         const chapters = await resolveBookChapters(t);
-        if (!chapters.length) return;
+        if (!chapters.length) {
+            if (typeof UI !== 'undefined' && UI.toast) {
+                UI.toast('Open Parlour once on the device where this book was added so its chapters can sync to the cloud.', 'warning', 4500);
+            }
+            return;
+        }
 
         const totalCh = chapters.length;
         const defaultCh = (t.progress && typeof t.progress.chapterIndex === 'number') ? t.progress.chapterIndex : 0;
@@ -2257,11 +2348,24 @@ const Library = (function () {
     }
 
     // ----------------------------------------
-    // INIT
+    // INIT & CLOUD SYNC RELOAD
     // ----------------------------------------
+    function reloadFromStorage() {
+        loadSaved();
+        loadMyTexts(true);
+        if (!textDraft) {
+            if (activeSection === 'saved') {
+                renderSavedList();
+            } else if (activeSection === 'mytexts') {
+                renderMyTextsPane();
+            }
+        }
+        syncPendingBooks();
+    }
+
     function init() {
         loadSaved();
-        loadMyTexts();
+        loadMyTexts(true);
 
         const subnav = document.getElementById('lib-subnav');
         if (subnav) {
@@ -2283,6 +2387,16 @@ const Library = (function () {
                 if (removeBtn) { toggleSave(removeBtn.getAttribute('data-saved-remove')); renderSavedList(); }
             });
         }
+
+        if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
+            window.addEventListener('sync-saved', () => {
+                syncPendingBooks();
+            });
+        }
+
+        setTimeout(() => {
+            syncPendingBooks();
+        }, 1200);
     }
 
     if (document.readyState === 'loading') {
@@ -2291,7 +2405,7 @@ const Library = (function () {
         init();
     }
 
-    return {
+    const api = {
         isSaved,
         toggleSave,
         showReading,
@@ -2302,7 +2416,22 @@ const Library = (function () {
         openMyTextOrChapters,
         buildChaptersFromText,
         parseDocumentFile,
+        reloadFromStorage,
+        syncPendingBooks,
+        saveBookPayload,
+        loadBookPayload,
+        resolveBookChapters,
         _parseEpub: parseEpub,
         _parseDocx: parseDocx
     };
+
+    if (typeof window !== 'undefined') {
+        window.Library = api;
+    }
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = api;
+    }
+
+    return api;
 })();
+

@@ -54,7 +54,7 @@ const Sync = (function () {
     // shouldn't silently change on restore.
     const COURSE_KEYS = [
         'progress', 'srsDeck', 'knownWords', 'srsResetLog', 'recycleSchedule', 'testResults',
-        'readStories', 'storyProgress', 'savedReadings', 'myTexts', 'myDecks',
+        'readStories', 'storyProgress', 'savedReadings', 'myTexts', 'myTextsResetLog', 'myDecks',
         'verbSpeedScores', 'unitPracticeDismissed', 'miniGameDismissed',
         'milestonesSeen', 'lastActivity', 'productionEvidence', 'assessmentHistory',
         'wordLookups', 'recommendationOutcomes', 'electiveResolvedAt', 'listeningLog'
@@ -646,6 +646,203 @@ const Sync = (function () {
         if (typeof loadXP === 'function') {
             try { loadXP(); } catch (e) {}
         }
+        if (typeof Library !== 'undefined' && typeof Library.reloadFromStorage === 'function') {
+            try { Library.reloadFromStorage(); } catch (e) {}
+        }
+    }
+
+    // ----------------------------------------
+    // BOOK PAYLOAD SYNC (/sync/book)
+    // ----------------------------------------
+    // Multi-chapter book bodies live in IndexedDB locally and in the
+    // user_books table in D1 remotely, compressed with deflate-raw + base64
+    // so full novels transfer quickly without bloating /sync/state.
+
+    function _bytesToBase64(bytes) {
+        if (typeof Buffer !== 'undefined') {
+            try { return Buffer.from(bytes).toString('base64'); } catch (e) {}
+        }
+        let binary = '';
+        const chunk = 8192;
+        for (let i = 0; i < bytes.length; i += chunk) {
+            const sub = bytes.subarray(i, Math.min(bytes.length, i + chunk));
+            for (let j = 0; j < sub.length; j++) {
+                binary += String.fromCharCode(sub[j]);
+            }
+        }
+        if (typeof btoa === 'function') {
+            try { return btoa(binary); } catch (e) {}
+        }
+        return '';
+    }
+
+    function _base64ToBytes(b64) {
+        if (typeof Buffer !== 'undefined') {
+            try { return new Uint8Array(Buffer.from(b64, 'base64')); } catch (e) {}
+        }
+        const binary = _decodeBase64(b64);
+        const out = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) {
+            out[i] = binary.charCodeAt(i);
+        }
+        return out;
+    }
+
+    async function _compressBookPayload(payload) {
+        if (!payload || typeof payload !== 'object') return payload;
+        const clean = {
+            chapters: payload.chapters || [],
+            lemmas: payload.lemmas || null
+        };
+        const jsonStr = JSON.stringify(clean);
+        try {
+            if (typeof CompressionStream !== 'undefined' && typeof TextEncoder !== 'undefined') {
+                const rawBytes = new TextEncoder().encode(jsonStr);
+                const cs = new CompressionStream('deflate-raw');
+                const writer = cs.writable.getWriter();
+                writer.write(rawBytes);
+                writer.close();
+                const reader = cs.readable.getReader();
+                const chunks = [];
+                let totalLen = 0;
+                while (true) {
+                    const step = await reader.read();
+                    if (step.done) break;
+                    chunks.push(step.value);
+                    totalLen += step.value.byteLength;
+                }
+                const out = new Uint8Array(totalLen);
+                let offset = 0;
+                for (const c of chunks) {
+                    out.set(c, offset);
+                    offset += c.byteLength;
+                }
+                const b64 = _bytesToBase64(out);
+                if (b64) return { encoding: 'deflate-base64', data: b64 };
+            }
+            if (typeof require === 'function') {
+                const zlib = require('zlib');
+                const compressed = zlib.deflateRawSync(Buffer.from(jsonStr, 'utf8'));
+                return { encoding: 'deflate-base64', data: compressed.toString('base64') };
+            }
+        } catch (e) {
+            // Fall back to plain object if compression stream is unavailable
+        }
+        return clean;
+    }
+
+    async function _decompressBookPayload(stored) {
+        if (!stored || typeof stored !== 'object') return null;
+        if (stored.encoding === 'deflate-base64' && typeof stored.data === 'string') {
+            try {
+                const compressedBytes = _base64ToBytes(stored.data);
+                if (typeof DecompressionStream !== 'undefined' && typeof TextDecoder !== 'undefined') {
+                    const ds = new DecompressionStream('deflate-raw');
+                    const writer = ds.writable.getWriter();
+                    writer.write(compressedBytes);
+                    writer.close();
+                    const reader = ds.readable.getReader();
+                    const chunks = [];
+                    let totalLen = 0;
+                    while (true) {
+                        const step = await reader.read();
+                        if (step.done) break;
+                        chunks.push(step.value);
+                        totalLen += step.value.byteLength;
+                    }
+                    const out = new Uint8Array(totalLen);
+                    let offset = 0;
+                    for (const c of chunks) {
+                        out.set(c, offset);
+                        offset += c.byteLength;
+                    }
+                    const jsonStr = new TextDecoder('utf-8').decode(out);
+                    return JSON.parse(jsonStr);
+                }
+                if (typeof require === 'function') {
+                    const zlib = require('zlib');
+                    const raw = zlib.inflateRawSync(Buffer.from(compressedBytes));
+                    return JSON.parse(raw.toString('utf8'));
+                }
+            } catch (e) {
+                return null;
+            }
+        }
+        if (Array.isArray(stored.chapters)) {
+            return stored;
+        }
+        return null;
+    }
+
+    async function saveBook(bookKey, payload) {
+        const token = getToken();
+        if (!token || !bookKey || !payload) return false;
+        try {
+            const compressed = await _compressBookPayload(payload);
+            const res = await fetch(WORKER_URL + '/sync/book', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                body: JSON.stringify({ key: bookKey, payload: compressed })
+            });
+            if (res && res.status === 401) {
+                _handleUnauthorized();
+                return false;
+            }
+            return Boolean(res && res.ok);
+        } catch (err) {
+            return false;
+        }
+    }
+
+    async function loadBook(bookKey) {
+        const token = getToken();
+        if (!token || !bookKey) return null;
+        try {
+            const res = await fetch(WORKER_URL + '/sync/book?key=' + encodeURIComponent(bookKey), {
+                headers: { 'Authorization': 'Bearer ' + token }
+            });
+            if (res && res.status === 401) {
+                _handleUnauthorized();
+                return null;
+            }
+            if (!res || !res.ok) return null;
+            const data = await res.json();
+            if (!data || !data.payload) return null;
+            const unpacked = await _decompressBookPayload(data.payload);
+            if (!unpacked) return null;
+            return {
+                chapters: unpacked.chapters || [],
+                lemmas: unpacked.lemmas || null,
+                updatedAt: data.updatedAt || null
+            };
+        } catch (err) {
+            return null;
+        }
+    }
+
+    async function deleteBook(bookKey) {
+        const token = getToken();
+        if (!token || !bookKey) return false;
+        try {
+            const res = await fetch(WORKER_URL + '/sync/book', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                body: JSON.stringify({ key: bookKey, deleted: true })
+            });
+            if (res && res.status === 401) {
+                _handleUnauthorized();
+                return false;
+            }
+            return Boolean(res && res.ok);
+        } catch (err) {
+            return false;
+        }
     }
 
     // ----------------------------------------
@@ -950,6 +1147,95 @@ const Sync = (function () {
         return JSON.stringify(Array.from(map.values()));
     }
 
+    function _parseTextResetLog(raw) {
+        const obj = (raw && typeof raw === 'object') ? raw : safeJsonParse(raw, null);
+        if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return {};
+        const out = {};
+        for (const [k, v] of Object.entries(obj)) {
+            const t = Number(v) || 0;
+            if (t > 0) out[k] = t;
+        }
+        return out;
+    }
+
+    function mergeMyTextsResetLog(localRaw, cloudRaw) {
+        const lLog = _parseTextResetLog(localRaw);
+        const cLog = _parseTextResetLog(cloudRaw);
+        const merged = {};
+        for (const k of new Set([...Object.keys(lLog), ...Object.keys(cLog)])) {
+            merged[k] = Math.max(lLog[k] || 0, cLog[k] || 0);
+        }
+        return JSON.stringify(merged);
+    }
+
+    function mergeMyTexts(localRaw, cloudRaw, textResetLog) {
+        const lArr = safeJsonParse(localRaw, []);
+        const cArr = safeJsonParse(cloudRaw, []);
+        const resetMap = textResetLog || {};
+        const map = new Map();
+
+        [...cArr, ...lArr].forEach(item => {
+            if (!item || typeof item !== 'object') return;
+            const id = item.id;
+            if (!id) return;
+            const deletedAt = Number(resetMap[id]) || 0;
+            const itemTime = Math.max(
+                item.modified ? (Date.parse(item.modified) || 0) : 0,
+                item.created ? (Date.parse(item.created) || 0) : 0
+            );
+            if (deletedAt > 0 && itemTime <= deletedAt) return;
+
+            if (!map.has(id)) {
+                map.set(id, item);
+                return;
+            }
+
+            const existing = map.get(id);
+            const exMod = Math.max(
+                existing.modified ? (Date.parse(existing.modified) || 0) : 0,
+                existing.created ? (Date.parse(existing.created) || 0) : 0
+            );
+            const newMod = itemTime;
+
+            const base = (newMod >= exMod)
+                ? Object.assign({}, existing, item)
+                : Object.assign({}, item, existing);
+
+            if (!base.text && (existing.text || item.text)) {
+                const exChLen = Array.isArray(existing.chapters) ? existing.chapters.length : 1;
+                const newChLen = Array.isArray(item.chapters) ? item.chapters.length : 1;
+                if (exChLen === newChLen && exChLen <= 1) {
+                    base.text = existing.text || item.text;
+                }
+            }
+
+            const exProg = existing.progress || null;
+            const newProg = item.progress || null;
+            if (exProg || newProg) {
+                const p1 = exProg || { chapterIndex: 0, pct: 0, paraIndex: 0, readChapters: [], at: 0 };
+                const p2 = newProg || { chapterIndex: 0, pct: 0, paraIndex: 0, readChapters: [], at: 0 };
+                const readSet = new Set([
+                    ...(Array.isArray(p1.readChapters) ? p1.readChapters : []),
+                    ...(Array.isArray(p2.readChapters) ? p2.readChapters : [])
+                ]);
+                const t1 = Number(p1.at) || 0;
+                const t2 = Number(p2.at) || 0;
+                const newerProg = (t2 >= t1) ? p2 : p1;
+                base.progress = {
+                    chapterIndex: newerProg.chapterIndex || 0,
+                    pct: newerProg.pct || 0,
+                    paraIndex: newerProg.paraIndex || 0,
+                    readChapters: Array.from(readSet).sort((a, b) => a - b),
+                    at: Math.max(t1, t2)
+                };
+            }
+
+            map.set(id, base);
+        });
+
+        return JSON.stringify(Array.from(map.values()));
+    }
+
     // An array that went through the old Object.assign fallback came back
     // as {"0": …, "1": …} — turn it back into the array it was.
     function _isArrayLike(value) {
@@ -967,12 +1253,14 @@ const Sync = (function () {
         }
     }
 
-    function mergeField(name, localRaw, cloudRaw, resetLog) {
+    function mergeField(name, localRaw, cloudRaw, resetLog, textResetLog) {
         if (localRaw) localRaw = _repairArrayLike(localRaw);
         if (cloudRaw) cloudRaw = _repairArrayLike(cloudRaw);
         if (name === 'srsResetLog') return mergeSrsResetLog(localRaw, cloudRaw);
+        if (name === 'myTextsResetLog') return mergeMyTextsResetLog(localRaw, cloudRaw);
         if (name === 'knownWords' && resetLog) return mergeKnownWords(localRaw, cloudRaw, resetLog);
         if (name === 'srsDeck' && resetLog) return mergeSrsDeck(localRaw, cloudRaw, resetLog);
+        if (name === 'myTexts') return mergeMyTexts(localRaw, cloudRaw, textResetLog);
         if (!localRaw) return cloudRaw;
         if (!cloudRaw) return localRaw;
         if (localRaw === cloudRaw) return localRaw;
@@ -981,7 +1269,7 @@ const Sync = (function () {
         if (name === 'knownWords') return mergeKnownWords(localRaw, cloudRaw, resetLog);
         if (name === 'srsDeck') return mergeSrsDeck(localRaw, cloudRaw, resetLog);
         if (name === 'spanishApp_xp') return mergeXP(localRaw, cloudRaw);
-        if (name === 'readStories' || name === 'savedReadings' || name === 'myTexts' || name === 'myDecks') {
+        if (name === 'readStories' || name === 'savedReadings' || name === 'myDecks') {
             return mergeArrayById(localRaw, cloudRaw);
         }
         if (name.startsWith('drillHistory:')) {
@@ -1031,18 +1319,29 @@ const Sync = (function () {
                 }
             }
 
+            let textResetLog = null;
+            if (lData.myTextsResetLog !== undefined || cData.myTextsResetLog !== undefined) {
+                mData.myTextsResetLog = mergeMyTextsResetLog(lData.myTextsResetLog, cData.myTextsResetLog);
+                const parsedTexts = _parseTextResetLog(mData.myTextsResetLog);
+                if (Object.keys(parsedTexts).length > 0) {
+                    textResetLog = parsedTexts;
+                }
+            }
+
             keys.forEach(key => {
-                if (key === 'srsResetLog') return;
+                if (key === 'srsResetLog' || key === 'myTextsResetLog') return;
                 const lRaw = lData[key];
                 const cRaw = cData[key];
                 if ((key === 'srsDeck' || key === 'knownWords') && resetLog) {
-                    mData[key] = mergeField(key, lRaw, cRaw, resetLog);
+                    mData[key] = mergeField(key, lRaw, cRaw, resetLog, textResetLog);
+                } else if (key === 'myTexts' && textResetLog) {
+                    mData[key] = mergeField(key, lRaw, cRaw, resetLog, textResetLog);
                 } else if (lRaw === undefined) {
                     mData[key] = cRaw;
                 } else if (cRaw === undefined) {
                     mData[key] = lRaw;
                 } else {
-                    mData[key] = mergeField(key, lRaw, cRaw, resetLog);
+                    mData[key] = mergeField(key, lRaw, cRaw, resetLog, textResetLog);
                 }
             });
 
@@ -1302,6 +1601,7 @@ const Sync = (function () {
         loginWithGoogle, renderGoogleButton, promptGoogleOneTap,
         isGoogleAuthAvailable, getGoogleClientId,
         gatherSnapshot, applySnapshot, backup, restore, status,
+        saveBook, loadBook, deleteBook,
         maybeShowFirstVisitPrompt, scheduleAutoSave, performAutoSave,
         lastSavedAt, syncOnStartup, checkForRemoteUpdates, mergeSnapshots,
         isDirty: () => _isDirty

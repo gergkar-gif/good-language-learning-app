@@ -379,6 +379,98 @@ async function handlePostState(request, env, cors) {
     return json({ ok: true, updatedAt }, 200, cors);
 }
 
+// ----------------------------------------
+// BOOK PAYLOAD STORAGE (user_books table)
+// ----------------------------------------
+// Multi-chapter book bodies (chapters + lemmas) live in their own D1 rows
+// so the main /sync/state snapshot stays fast and under the 64 KB keepalive
+// limit. Auto-creates the table on first use so upgrading the Worker needs
+// no separate D1 Console step.
+
+let _booksTableEnsured = false;
+
+async function ensureBooksTable(env) {
+    if (_booksTableEnsured) return;
+    await env.DB.prepare(
+        'CREATE TABLE IF NOT EXISTS user_books (user_id TEXT NOT NULL, book_key TEXT NOT NULL, payload_json TEXT NOT NULL, updated_at INTEGER NOT NULL, PRIMARY KEY (user_id, book_key))'
+    ).run();
+    _booksTableEnsured = true;
+}
+
+async function handleGetBook(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+
+    const url = new URL(request.url);
+    const bookKey = (url.searchParams.get('key') || '').trim();
+    if (!bookKey || bookKey.length > 160) {
+        return json({ error: 'Invalid book key' }, 400, cors);
+    }
+
+    await ensureBooksTable(env);
+    const row = await env.DB.prepare(
+        'SELECT payload_json, updated_at FROM user_books WHERE user_id = ? AND book_key = ?'
+    ).bind(session.sub, bookKey).first();
+
+    if (!row) {
+        return json({ payload: null, updatedAt: null }, 200, cors);
+    }
+
+    let parsed = null;
+    try {
+        parsed = JSON.parse(row.payload_json);
+    } catch (e) {
+        parsed = null;
+    }
+
+    return json({
+        payload: parsed,
+        updatedAt: row.updated_at
+    }, 200, cors);
+}
+
+async function handlePostBook(request, env, cors) {
+    const session = await requireSession(request, env);
+    if (!session) return json({ error: 'Not signed in' }, 401, cors);
+
+    let body;
+    try {
+        body = await request.json();
+    } catch (e) {
+        return json({ error: 'Bad request' }, 400, cors);
+    }
+
+    const bookKey = (body && typeof body.key === 'string') ? body.key.trim() : '';
+    if (!bookKey || bookKey.length > 160) {
+        return json({ error: 'Invalid book key' }, 400, cors);
+    }
+
+    await ensureBooksTable(env);
+
+    if (body.deleted === true || body.payload === null) {
+        await env.DB.prepare(
+            'DELETE FROM user_books WHERE user_id = ? AND book_key = ?'
+        ).bind(session.sub, bookKey).run();
+        return json({ ok: true, deleted: true }, 200, cors);
+    }
+
+    if (typeof body.payload !== 'object' || body.payload === null) {
+        return json({ error: 'Missing book payload' }, 400, cors);
+    }
+
+    const serialized = JSON.stringify(body.payload);
+    if (serialized.length > 1800000) {
+        return json({ error: 'Book payload exceeds cloud storage limit' }, 413, cors);
+    }
+
+    const updatedAt = Date.now();
+    await env.DB.prepare(
+        'INSERT INTO user_books (user_id, book_key, payload_json, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT(user_id, book_key) DO UPDATE SET payload_json = excluded.payload_json, updated_at = excluded.updated_at'
+    ).bind(session.sub, bookKey, serialized, updatedAt).run();
+
+    return json({ ok: true, updatedAt }, 200, cors);
+}
+
 export default {
     async fetch(request, env) {
         const origin = request.headers.get('Origin') || '';
@@ -398,7 +490,10 @@ export default {
         if (path === '/auth/google' && request.method === 'POST') return handleGoogleAuth(request, env, cors);
         if (path === '/sync/state' && request.method === 'GET') return handleGetState(request, env, cors);
         if (path === '/sync/state' && request.method === 'POST') return handlePostState(request, env, cors);
+        if (path === '/sync/book' && request.method === 'GET') return handleGetBook(request, env, cors);
+        if (path === '/sync/book' && request.method === 'POST') return handlePostBook(request, env, cors);
 
         return json({ error: 'Not found' }, 404, cors);
     }
 };
+
