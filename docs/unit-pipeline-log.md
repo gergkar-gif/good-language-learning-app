@@ -242,3 +242,8 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   to a lesson item. 317 hits course-wide, almost all in frozen units 2–7, 9
   (whose consolidations were built as replays; left as they are) and in the
   not-yet-regenerated 28–30; regenerated units have 1–5 each.
+- Known `consolidation-copy` suspects in units frozen before the check
+  (one each): a1-45-consolidation-10, a1-60-consolidation-4,
+  a1-65-consolidation-17, a1-70-consolidation-1, a1-75-consolidation-17.
+  Left: reopening five frozen units for one review item each isn't worth it;
+  fold them into any later edit of those units.
