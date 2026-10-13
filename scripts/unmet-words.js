@@ -243,7 +243,13 @@ function targetTexts(e) {
             const qs = ((s.narration || {}).pedagogical || {}).comprehensionQuestions || [];
             addExtra(stem, { id: `${f.replace(/\.json$/, '')}:story`, prompt: lines });
             // a question with its English (the A1 toggle) may use words the story doesn't teach
-            qs.filter(q => !q.questionEnglish).forEach((q, i) => addExtra(stem, { id: `${f.replace(/\.json$/, '')}:question-${i + 1}`, question: '', options: q.options || [], prompt: [{ text: q.question || '' }] }));
+            qs.forEach((q, i) => {
+                if (q.questionEnglish) return;
+                // as option lists, so an English question or option set is recognised as English
+                const id = `${f.replace(/\.json$/, '')}:question-${i + 1}`;
+                addExtra(stem, { id, question: '', options: q.options || [] });
+                addExtra(stem, { id, question: '', options: [q.question || ''] });
+            });
         }
     }
     const found = [];
