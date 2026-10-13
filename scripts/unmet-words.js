@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Words an exercise uses before the course has taught them (ROADMAP 153).
 //
-// Runs every target-language word of a unit's exercises through the Reader's
+// Runs every target-language word of a unit's exercises, challenge targets
+// and story (dialogue lines and comprehension questions) through the Reader's
 // own Lexicon.lookup() and checks its lemma against what the learner has met
 // by that lesson ("met" as in docs/unit-finish-brief.md step 4):
 //   - a vocabulary list at or before the lesson (word-lesson-index.json, the
@@ -221,6 +222,29 @@ function targetTexts(e) {
         if (!w) return true;
         return roots.some(r => w.startsWith(r) && metBy(r, pos) && numberMet(w.slice(r.length), pos));
     };
+    // What the learner reads besides exercises: the challenge target (keyed by
+    // stem) and the unit story (its `lesson` number names the stem), checked
+    // as pseudo-exercises with the same rules.
+    const extras = new Map();
+    const addExtra = (stem, e) => { if (order.has(stem)) (extras.get(stem) || extras.set(stem, []).get(stem)).push(e); };
+    const challenges = readJson(`content/${course}/curriculum/challenges.json`) || {};
+    for (const [stem, c] of Object.entries(challenges.challenges || challenges)) {
+        if (c && typeof c.target === 'string') addExtra(stem, { id: `${stem}:challenge`, prompt: [{ text: c.target }] });
+    }
+    for (const level of LEVELS) {
+        const dir = `content/${course}/stories/original/${level}`;
+        let files = [];
+        try { files = fs.readdirSync(dir).filter(f => f.endsWith('.json')); } catch (_) { continue; }
+        for (const f of files) {
+            const s = readJson(`${dir}/${f}`) || {};
+            if (s.lesson == null) continue;
+            const stem = `${level}-${String(s.lesson).padStart(2, '0')}`;
+            const lines = (s.paragraphs || []).filter(x => x && x.type === 'dialogue' && typeof x.text === 'string').map(x => ({ text: x.text }));
+            const qs = ((s.narration || {}).pedagogical || {}).comprehensionQuestions || [];
+            addExtra(stem, { id: `${f.replace(/\.json$/, '')}:story`, prompt: lines });
+            qs.forEach((q, i) => addExtra(stem, { id: `${f.replace(/\.json$/, '')}:question-${i + 1}`, question: '', options: q.options || [], prompt: [{ text: q.question || '' }] }));
+        }
+    }
     const found = [];
     for (const [stem, pos] of order) {
         const level = levelOf.get(stem);
@@ -228,7 +252,7 @@ function targetTexts(e) {
         if (onlyStems && !onlyStems.has(stem)) continue;
         const data = readJson(`content/${course}/exercises/${level}/${stem}-ex.json`) || {};
         const own = ownWords.get(stem);
-        for (const e of data.exercises || []) {
+        for (const e of [...(data.exercises || []), ...(extras.get(stem) || [])]) {
             const seen = new Set();
             const texts = [];
             for (const [t, maybe] of targetTexts(e)) {

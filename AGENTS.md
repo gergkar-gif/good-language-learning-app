@@ -44,7 +44,7 @@ It fails only on problems your change adds (a give-away option, a hint that
 is the answer, a missing `english`, a form used before its screen, a lemma
 listed twice in one vocabulary file, `distractor_skills` on the right option or
 naming the item's own skill, a HU blank glued to a stem ending in *-a/-e*
-whose answer is a suffix…); findings
+whose answer is a suffix, an unmet word in a challenge target or story…); findings
 already in the content stay a report. `python scripts/check-content.py
 <course> [level] [unit id]` lists everything for one scope, `--summary`
 counts it. The pre-push hook runs both checks.

@@ -130,6 +130,11 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   blank glued to a stem in *-a/-e* with a lengthening suffix as the answer;
   3 real hits in B1: b1-18-03.ex03, b1-26-05.ex02, b1-30-03.ex05; one false
   positive, a verb, b1-33-04.ex02).
+- `unmet-word` now also scans challenge targets and stories (dialogue and
+  comprehension questions), which reads kept finding by hand (unit 16).
+  First run: frozen units 1–4 stories have 18–29 unmet words each, mostly
+  in comprehension options (*kutya*, *macska*, *Madridban*): logged for
+  the user.
 - **Next to try (units 14, 15):** have each regenerator run a self-check
   against rules § 6 and list what it checked, to see if the read finds
   fewer defects; keep two units in parallel.
