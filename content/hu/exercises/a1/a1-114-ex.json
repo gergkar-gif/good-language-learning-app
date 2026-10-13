@@ -2,273 +2,227 @@
   "lesson": "a1-114",
   "exercises": [
     {
-      "id": "a1-114-review-1",
+      "id": "a1-114-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which means “I'll bring it”?",
-      "options": [
-        "Hozom.",
-        "Kérek.",
-        "Kér."
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-cafe-vocab"
-      ]
-    },
-    {
-      "id": "a1-114-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "hozom",
-          "I'll bring it"
-        ],
-        [
-          "kérek",
-          "I ask for"
-        ],
-        [
-          "kér",
-          "he/she asks for"
-        ],
-        [
-          "számla",
-          "bill"
-        ]
       ],
-      "stage": "review",
-      "teaches": [
-        "a1-cafe-vocab"
-      ]
-    },
-    {
-      "id": "a1-114-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'bill'?",
+      "question": "Which word means “bill”?",
       "options": [
         "számla",
-        "kér",
-        "hoz"
+        "étlap",
+        "cukor"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 0
     },
     {
-      "id": "a1-114-intro-2",
-      "type": "fill-blank",
+      "id": "a1-114-introduce-2",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "____ kenyeret.",
-      "hint": "I ask for",
-      "english": "I ask for bread.",
-      "answer": "Kérek",
+      "stage": "introduce",
       "teaches": [
-        "present-tense-routine-language"
+        "cardinal-numbers"
       ],
-      "stage": "introduce"
+      "question": "Which number is 600?",
+      "options": [
+        "nyolcszáz",
+        "hatszáz",
+        "ötszáz"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-114-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Mit ____?",
-      "hint": "does he/she ask for",
-      "english": "What does he/she ask for?",
-      "answer": "kér",
+      "stage": "controlled",
       "teaches": [
-        "present-tense-routine-language"
+        "cardinal-numbers"
       ],
-      "stage": "controlled"
+      "sentence": "A kávé ____ forint.",
+      "english": "The coffee is 600 forints.",
+      "answer": "hatszáz"
     },
     {
       "id": "a1-114-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'kér' mean?",
-      "options": [
-        "ask",
-        "bring",
-        "pay"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-cafe-vocab"
+        "singular-after-numbers"
       ],
-      "stage": "controlled"
+      "question": "Which sentence gives the price of two teas?",
+      "options": [
+        "Két tea ötszáz forintot.",
+        "Két teát ötszáz forint.",
+        "Két tea ötszáz forint."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "0": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "a1-114-controlled-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-cafe-vocab"
+      ],
       "pairs": [
         [
           "számla",
           "bill"
         ],
         [
-          "kér",
-          "ask"
-        ],
-        [
           "hoz",
-          "bring"
+          "to bring"
         ],
         [
-          "szeretne",
-          "would like"
+          "étlap",
+          "menu"
+        ],
+        [
+          "cukor",
+          "sugar"
+        ],
+        [
+          "sör",
+          "beer"
+        ],
+        [
+          "torta",
+          "cake"
         ]
-      ],
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-114-controlled-4",
-      "type": "substitution",
+      "type": "sentence-builder",
       "category": "grammar",
-      "base_sentence": "Kérek egy számlát.",
-      "base_word": "számlát",
-      "base_gloss": "I'd like the bill.",
-      "options": [
-        {
-          "word": "étlap",
-          "inflected": "étlapot",
-          "sentence": "Kérek egy étlapot.",
-          "gloss": "menu"
-        },
-        {
-          "word": "tea",
-          "inflected": "teát",
-          "sentence": "Kérek egy teát.",
-          "gloss": "tea"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "cardinal-numbers"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Két",
+        "tea",
+        "hatszáz",
+        "forint",
+        "."
+      ],
+      "solution": [
+        "Két",
+        "tea",
+        "hatszáz",
+        "forint",
+        "."
+      ],
+      "english": "Two teas are 600 forints."
     },
     {
       "id": "a1-114-practice-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means 'bring'?",
-      "options": [
-        "hoz",
-        "számla",
-        "szeretne"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-cafe-vocab"
       ],
-      "stage": "practice"
+      "question": "Which question asks the price of the coffee?",
+      "options": [
+        "Hol kerül a kávé?",
+        "Mennyibe kerül a kávé?",
+        "Hány kerül a kávé?"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-114-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Kérik a ____?",
-      "hint": "the bill",
-      "english": "Would you like the bill?",
-      "answer": "számlát",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "how-the-accusative-t-works"
+        "a1-cafe-vocab"
       ],
-      "stage": "practice"
+      "sentence": "Mennyibe ____ két tea?",
+      "english": "How much do two teas cost?",
+      "answer": "kerül"
     },
     {
       "id": "a1-114-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Mit kér?",
-          "What would you like?"
-        ],
-        [
-          "Kérek kenyeret.",
-          "I'd like bread."
-        ],
-        [
-          "Hozom.",
-          "I'll bring it."
-        ],
-        [
-          "Kérik a számlát?",
-          "Would you like the bill?"
-        ]
-      ],
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-114-practice-4",
       "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Hozom a kávét.",
-      "base_word": "kávét",
-      "base_gloss": "I'll bring the coffee.",
+      "category": "vocabulary",
+      "stage": "practice",
+      "base_sentence": "Mennyibe kerül a kávé?",
+      "base_word": "kávé",
+      "base_gloss": "How much does the coffee cost?",
       "options": [
         {
           "word": "tea",
-          "inflected": "teát",
-          "sentence": "Hozom a teát.",
+          "inflected": "tea",
+          "sentence": "Mennyibe kerül a tea?",
           "gloss": "tea"
         },
         {
-          "word": "számla",
-          "inflected": "számlát",
-          "sentence": "Hozom a számlát.",
-          "gloss": "bill"
+          "word": "sütemény",
+          "inflected": "sütemény",
+          "sentence": "Mennyibe kerül a sütemény?",
+          "gloss": "pastry"
+        },
+        {
+          "word": "limonádé",
+          "inflected": "limonádé",
+          "sentence": "Mennyibe kerül a limonádé?",
+          "gloss": "lemonade"
         }
       ],
       "teaches": [
-        "how-the-accusative-t-works"
+        "a1-cafe-vocab"
+      ]
+    },
+    {
+      "id": "a1-114-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "question": "You want to pay. Which sentence asks for the bill?",
+      "options": [
+        "Kérek a számlát.",
+        "Kérem a számla.",
+        "Kérem a számlát."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-114-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Pincér",
-          "text": "Mit kér?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Kérek egy kávét és egy teát.",
-        "Hol van a legközelebbi piac?"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-cafe-vocab"
+        "cardinal-numbers"
       ],
-      "stage": "practice"
+      "sentence": "A kávé háromszáz, a tea kétszázötven. Összesen ____ forint.",
+      "english": "The coffee is 300, the tea is 250. In total it is 550 forints.",
+      "answer": "ötszázötven"
     },
     {
       "id": "a1-114-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "singular-after-numbers"
+      ],
       "prompt": [
         {
-          "speaker": "Pincér",
-          "text": "Kérik a számlát?"
+          "speaker": "Anna",
+          "text": "Mennyibe kerül a kávé?"
         },
         {
           "speaker": "Meg",
@@ -276,86 +230,109 @@
         }
       ],
       "options": [
-        "Igen, kérem.",
-        "Nem, ez a répa friss."
+        "A kávé háromszáz forintot.",
+        "A kávé háromszáz forint.",
+        "A kávé háromszáz forintok."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-cafe-vocab"
-      ]
+      "correct": 1,
+      "distractor_skills": {
+        "0": "how-the-accusative-t-works",
+        "2": "plural-nouns-k"
+      }
     },
     {
       "id": "a1-114-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Kérik a számlát?\"",
-      "options": [
-        "Igen, kérem.",
-        "Kérek egy kiló almát."
-      ],
-      "correct": 0,
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
       "teaches": [
         "a1-cafe-vocab"
-      ]
-    },
-    {
-      "id": "a1-114-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
+      ],
+      "prompt": [
         {
-          "prompt": "Write a sentence using this word: kér",
-          "answer": "Mit kér?"
+          "speaker": "Meg",
+          "text": "_____"
+        },
+        {
+          "speaker": "Pincér",
+          "text": "Tessék. Összesen ezerötszáz forint."
         }
       ],
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-114-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: hoz",
-          "answer": "Hozom a kávét."
-        }
-      ],
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-114-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'would like'?",
       "options": [
-        "szeretne",
-        "számla",
-        "hoz"
+        "Kérem a kávét.",
+        "Kérem a teát.",
+        "Kérem a számlát."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "check"
+      "correct": 2
     },
     {
-      "id": "a1-114-check-2",
-      "type": "fill-blank",
+      "id": "a1-114-production-1",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "____ a kávét.",
-      "hint": "I'll bring",
-      "english": "I'll bring the coffee.",
-      "answer": "Hozom",
+      "stage": "production",
       "teaches": [
         "definite-vs-indefinite-conjugation"
       ],
-      "stage": "check"
+      "tiles": [
+        "Kérem",
+        "a",
+        "számlát",
+        "."
+      ],
+      "solution": [
+        "Kérem",
+        "a",
+        "számlát",
+        "."
+      ],
+      "english": "I would like the bill."
+    },
+    {
+      "id": "a1-114-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-cafe-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Ask how much the coffee costs.",
+          "answer": "Mennyibe kerül a kávé?"
+        },
+        {
+          "prompt": "Say that two teas are 600 forints.",
+          "answer": "Két tea hatszáz forint."
+        }
+      ]
+    },
+    {
+      "id": "a1-114-check-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "sentence": "Kérem a ____.",
+      "english": "I would like the bill.",
+      "answer": "számlát"
+    },
+    {
+      "id": "a1-114-check-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "check",
+      "teaches": [
+        "cardinal-numbers"
+      ],
+      "question": "Which means “five hundred and fifty forints”?",
+      "options": [
+        "ötszáz forint",
+        "ötszázötven forint",
+        "ezerötszáz forint"
+      ],
+      "correct": 1
     }
   ]
 }

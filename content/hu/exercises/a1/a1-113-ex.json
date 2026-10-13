@@ -2,360 +2,334 @@
   "lesson": "a1-113",
   "exercises": [
     {
-      "id": "a1-113-review-1",
+      "id": "a1-113-introduce-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'waiter'?",
-      "options": [
-        "pincér",
-        "étlap",
-        "tej"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-cafe-vocab"
-      ]
+        "nek-conditional"
+      ],
+      "question": "Which sentence says Anna would like a tea?",
+      "options": [
+        "Anna egy teát szeretne.",
+        "Anna egy teát szeretnék.",
+        "Anna egy teát szeretnél."
+      ],
+      "correct": 0
     },
     {
-      "id": "a1-113-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "pincér",
-          "waiter"
-        ],
-        [
-          "étlap",
-          "menu"
-        ],
-        [
-          "itt",
-          "here"
-        ],
-        [
-          "hol",
-          "where"
-        ]
-      ],
-      "stage": "review",
-      "teaches": [
-        "a1-cafe-vocab"
-      ]
-    },
-    {
-      "id": "a1-113-intro-1",
+      "id": "a1-113-introduce-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means 'milk'?",
+      "stage": "introduce",
+      "teaches": [
+        "a1-cafe-vocab"
+      ],
+      "question": "Which word means “menu”?",
       "options": [
-        "tej",
+        "asztal",
         "pincér",
         "étlap"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-113-intro-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Kérek cukrot és ____ is.",
-      "hint": "milk",
-      "english": "I'd like sugar and milk too.",
-      "answer": "tejet",
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "introduce"
+      "correct": 2
     },
     {
       "id": "a1-113-controlled-1",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Itt a ____.",
-      "hint": "milk",
-      "english": "Here's the milk.",
-      "answer": "tej",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-cafe-vocab"
+        "nek-conditional"
       ],
-      "stage": "controlled"
+      "sentence": "Mit ____ Károly?",
+      "english": "What would Károly like?",
+      "answers": [
+        "szeretne",
+        "kér"
+      ]
     },
     {
       "id": "a1-113-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'pincér' mean?",
-      "options": [
-        "waiter",
-        "menu",
-        "table"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-cafe-vocab"
+        "nek-conditional"
       ],
-      "stage": "controlled"
+      "question": "Which sentence says “I would like coffee, Anna would like tea”?",
+      "options": [
+        "Én kávét szeretne, Anna teát szeretne.",
+        "Én kávét szeretnék, Anna teát szeretne.",
+        "Én kávét szeretnék, Anna teát szeretnék."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-113-controlled-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-cafe-vocab"
+      ],
       "pairs": [
         [
-          "tej",
-          "milk"
+          "étlap",
+          "menu"
         ],
         [
           "pincér",
           "waiter"
         ],
         [
-          "étlap",
-          "menu"
+          "sör",
+          "beer"
         ],
         [
           "asztal",
           "table"
+        ],
+        [
+          "cukor",
+          "sugar"
+        ],
+        [
+          "limonádé",
+          "lemonade"
         ]
-      ],
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-113-controlled-4",
-      "type": "substitution",
+      "type": "sentence-builder",
       "category": "grammar",
-      "base_sentence": "Kérek egy teát.",
-      "base_word": "teát",
-      "base_gloss": "I'd like a tea.",
-      "options": [
-        {
-          "word": "kávé",
-          "inflected": "kávét",
-          "sentence": "Kérek egy kávét.",
-          "gloss": "coffee"
-        },
-        {
-          "word": "tej",
-          "inflected": "tejet",
-          "sentence": "Kérek tejet.",
-          "gloss": "milk"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "nek-conditional"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Károly",
+        "egy",
+        "sört",
+        "szeretne",
+        "."
+      ],
+      "solution": [
+        "Károly",
+        "egy",
+        "sört",
+        "szeretne",
+        "."
+      ],
+      "english": "Károly would like a beer."
     },
     {
       "id": "a1-113-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'menu'?",
-      "options": [
-        "étlap",
-        "tej",
-        "asztal"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-cafe-vocab"
+        "nek-conditional"
       ],
-      "stage": "practice"
+      "question": "Meg asks Károly about Anna. What does she say?",
+      "options": [
+        "Mit szeretnék Anna?",
+        "Mit szeretnél Anna?",
+        "Mit szeretne Anna?"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-113-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Itt az ____.",
-      "hint": "table",
-      "english": "Here's the table.",
-      "answer": "asztal",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-cafe-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Anna egy ____ szeretne.",
+      "english": "Anna would like an ice cream.",
+      "answer": "fagylaltot"
     },
     {
       "id": "a1-113-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Jó napot kívánok! Itt az étlap.",
-          "Good day! Here's the menu."
-        ],
-        [
-          "Kérek cukrot és tejet is.",
-          "I'd like sugar and milk too."
-        ],
-        [
-          "Itt az asztal.",
-          "Here's the table."
-        ],
-        [
-          "Hol a pincér?",
-          "Where's the waiter?"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-cafe-vocab"
+        "kerek-vs-szeretnek"
       ],
-      "stage": "practice"
+      "question": "Which question asks a friend if she wants another coffee?",
+      "options": [
+        "Kérek még egy kávét?",
+        "Kérsz még egy kávét?",
+        "Kér még egy kávét?"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-113-practice-4",
       "type": "substitution",
       "category": "grammar",
-      "base_sentence": "Itt az asztal.",
-      "base_word": "asztal",
-      "base_gloss": "Here's the table.",
+      "stage": "practice",
+      "base_sentence": "Anna egy teát szeretne.",
+      "base_word": "Anna",
+      "base_gloss": "Anna would like a tea.",
       "options": [
         {
-          "word": "pincér",
-          "inflected": "pincér",
-          "sentence": "Itt a pincér.",
-          "gloss": "waiter"
+          "word": "Károly",
+          "inflected": "Károly",
+          "sentence": "Károly egy teát szeretne.",
+          "gloss": "Károly"
         },
         {
-          "word": "étlap",
-          "inflected": "étlap",
-          "sentence": "Itt az étlap.",
-          "gloss": "menu"
+          "word": "Meg",
+          "inflected": "Meg",
+          "sentence": "Meg egy teát szeretne.",
+          "gloss": "Meg"
         }
       ],
       "teaches": [
-        "definite-article-a-az"
-      ],
-      "stage": "practice"
+        "nek-conditional"
+      ]
     },
     {
       "id": "a1-113-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Hol a pincér?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Itt van.",
-        "Nem kérek teát."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-cafe-vocab"
+        "definite-vs-indefinite-conjugation"
       ],
-      "stage": "practice"
+      "question": "Which sentence asks for the menu?",
+      "options": [
+        "Kérem az étlapot.",
+        "Kérek az étlapot.",
+        "Kérem az étlap."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-113-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "nek-conditional"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Itt az asztal?"
+          "speaker": "Károly",
+          "text": "Mit szeretne Anna?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, itt van.",
-        "Nem, ez drága."
+        "Anna egy teát szeretnék.",
+        "Anna egy teát szeretne.",
+        "Anna egy teát szeretnél."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-cafe-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-113-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Itt az asztal?\"",
-      "options": [
-        "Igen, itt van.",
-        "Kérek egy csomagot."
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "nek-conditional"
       ],
-      "correct": 0,
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Szeretnél még egy kávét?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Igen, szeretne még egy kávét.",
+        "Igen, szeretnél még egy kávét.",
+        "Igen, szeretnék még egy kávét."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-113-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
+      "teaches": [
+        "definite-vs-indefinite-conjugation"
+      ],
+      "tiles": [
+        "Kérem",
+        "az",
+        "étlapot",
+        "."
+      ],
+      "solution": [
+        "Kérem",
+        "az",
+        "étlapot",
+        "."
+      ],
+      "english": "I would like the menu."
+    },
+    {
+      "id": "a1-113-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
         "a1-cafe-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Say that Anna would like a tea.",
+          "answer": "Anna egy teát szeretne."
+        },
+        {
+          "prompt": "Ask Károly what he would like.",
+          "answer": "Mit szeretne Károly?"
+        }
       ]
     },
     {
-      "id": "a1-113-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: pincér",
-          "answer": "Hol a pincér?"
-        }
-      ],
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-113-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: asztal",
-          "answer": "Itt az asztal."
-        }
-      ],
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "production"
-    },
-    {
       "id": "a1-113-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'table'?",
-      "options": [
-        "asztal",
-        "tej",
-        "pincér"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-cafe-vocab"
+        "nek-conditional"
       ],
-      "stage": "check"
+      "sentence": "Meg egy limonádét ____.",
+      "english": "Meg would like a lemonade.",
+      "answers": [
+        "szeretne",
+        "kér"
+      ]
     },
     {
       "id": "a1-113-check-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Hol a ____?",
-      "hint": "the waiter",
-      "english": "Where's the waiter?",
-      "answer": "pincér",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-cafe-vocab"
+        "kerek-vs-szeretnek"
       ],
-      "stage": "check"
+      "question": "Anna asks “Kérsz még egy teát?” Which reply says yes?",
+      "options": [
+        "Igen, kérsz még egy teát.",
+        "Igen, kérek még egy teát.",
+        "Igen, kér még egy teát."
+      ],
+      "correct": 1
     }
   ]
 }

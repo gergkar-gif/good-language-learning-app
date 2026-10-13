@@ -2,360 +2,376 @@
   "lesson": "a1-115",
   "exercises": [
     {
-      "id": "a1-115-review-1",
+      "id": "a1-115-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means 'more / another'?",
-      "options": [
-        "még",
-        "finom",
-        "meleg"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-cafe-vocab"
-      ]
-    },
-    {
-      "id": "a1-115-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "finom",
-          "delicious"
-        ],
-        [
-          "meleg",
-          "hot / warm"
-        ],
-        [
-          "kérem",
-          "I'd like it"
-        ],
-        [
-          "köszönöm",
-          "thank you"
-        ]
       ],
-      "stage": "review",
-      "teaches": [
-        "a1-cafe-vocab"
-      ]
-    },
-    {
-      "id": "a1-115-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'I would like'?",
+      "question": "Which word means “cold”?",
       "options": [
-        "szeretnék",
-        "még",
+        "hideg",
+        "meleg",
         "finom"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 0
     },
     {
-      "id": "a1-115-intro-2",
-      "type": "fill-blank",
+      "id": "a1-115-introduce-2",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Igen, ____.",
-      "hint": "please",
-      "english": "Yes, please.",
-      "answer": "kérem",
+      "stage": "introduce",
       "teaches": [
-        "definite-vs-indefinite-conjugation"
+        "kerek-vs-szeretnek"
       ],
-      "stage": "introduce"
+      "question": "Which is the everyday way to order a coffee?",
+      "options": [
+        "Kérnék egy kávét.",
+        "Kérek egy kávét.",
+        "Szeretnék egy kávét."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-115-controlled-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "____ a kávé.",
-      "hint": "hot",
-      "english": "The coffee is hot.",
-      "answer": "Meleg",
+      "stage": "controlled",
       "teaches": [
         "a1-cafe-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "A kávé ____, a limonádé hideg.",
+      "english": "The coffee is hot, the lemonade is cold.",
+      "answer": "meleg"
     },
     {
       "id": "a1-115-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'még' mean?",
-      "options": [
-        "more / another",
-        "delicious",
-        "hot / warm"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-cafe-vocab"
+        "van-zero-copula"
       ],
-      "stage": "controlled"
+      "question": "Which sentence says the cake is delicious?",
+      "options": [
+        "A torta finom.",
+        "A torta van finom.",
+        "A tortát finom."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-115-controlled-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "containers-and-measures"
+      ],
+      "sentence": "Szeretnék egy csésze ____.",
+      "english": "I would like a cup of tea.",
+      "answer": "teát"
+    },
+    {
+      "id": "a1-115-controlled-4",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "kerek-vs-szeretnek"
+      ],
+      "tiles": [
+        "Még",
+        "egy",
+        "kávét",
+        "kérek",
+        "."
+      ],
+      "solution": [
+        "Még",
+        "egy",
+        "kávét",
+        "kérek",
+        "."
+      ],
+      "english": "I would like another coffee."
+    },
+    {
+      "id": "a1-115-practice-1",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-cafe-vocab"
+      ],
       "pairs": [
         [
-          "szeretnék",
-          "I would like"
+          "meleg",
+          "hot, warm"
         ],
         [
-          "még",
-          "more / another"
+          "hideg",
+          "cold"
         ],
         [
           "finom",
           "delicious"
         ],
         [
-          "meleg",
-          "hot / warm"
+          "még",
+          "more, another"
+        ],
+        [
+          "számla",
+          "bill"
+        ],
+        [
+          "étlap",
+          "menu"
         ]
-      ],
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-115-controlled-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Meleg a kávé.",
-      "base_word": "kávé",
-      "base_gloss": "The coffee is hot.",
-      "options": [
-        {
-          "word": "tea",
-          "inflected": "tea",
-          "sentence": "Meleg a tea.",
-          "gloss": "tea"
-        },
-        {
-          "word": "reggeli",
-          "inflected": "reggeli",
-          "sentence": "Meleg a reggeli.",
-          "gloss": "breakfast"
-        }
-      ],
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-115-practice-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'delicious'?",
-      "options": [
-        "finom",
-        "szeretnék",
-        "meleg"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "practice"
+      ]
     },
     {
       "id": "a1-115-practice-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Szeretnék még egy ____.",
-      "hint": "coffee",
-      "english": "I would like another coffee.",
-      "answer": "kávét",
-      "teaches": [
-        "how-the-accusative-t-works"
+      "type": "substitution",
+      "category": "vocabulary",
+      "stage": "practice",
+      "base_sentence": "A kávé meleg.",
+      "base_word": "meleg",
+      "base_gloss": "The coffee is hot.",
+      "options": [
+        {
+          "word": "hideg",
+          "inflected": "hideg",
+          "sentence": "A kávé hideg.",
+          "gloss": "cold"
+        },
+        {
+          "word": "finom",
+          "inflected": "finom",
+          "sentence": "A kávé finom.",
+          "gloss": "delicious"
+        }
       ],
-      "stage": "practice"
+      "teaches": [
+        "a1-cafe-vocab"
+      ]
     },
     {
       "id": "a1-115-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Meleg a kávé.",
-          "The coffee is hot."
-        ],
-        [
-          "Köszönöm. Finom.",
-          "Thank you. It's delicious."
-        ],
-        [
-          "Igen, kérem.",
-          "Yes, please. / Yes, I'd like it."
-        ],
-        [
-          "Szeretnék egy limonádét.",
-          "I would like a lemonade."
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-cafe-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Hozom a ____.",
+      "english": "I will bring the bill.",
+      "answer": "számlát"
     },
     {
       "id": "a1-115-practice-4",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Finom a sütemény.",
-      "base_word": "sütemény",
-      "base_gloss": "The pastry is delicious.",
-      "options": [
-        {
-          "word": "kávé",
-          "inflected": "kávé",
-          "sentence": "Finom a kávé.",
-          "gloss": "coffee"
-        },
-        {
-          "word": "szendvics",
-          "inflected": "szendvics",
-          "sentence": "Finom a szendvics.",
-          "gloss": "sandwich"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-cafe-vocab"
+        "nek-conditional"
       ],
-      "stage": "practice"
+      "question": "Which question asks what a friend would like to drink?",
+      "options": [
+        "Mit szeretnék inni?",
+        "Mit szeretnél inni?",
+        "Mit szeretnél enni?"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-115-practice-5",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "Pincér",
-          "text": "Hozom. Meleg a kávé."
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Köszönöm. Finom.",
-        "Nem kérek süteményt."
-      ],
-      "correct": 0,
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-cafe-vocab"
+        "singular-after-numbers"
       ],
-      "stage": "practice"
+      "question": "Which sentence gives the price of the cake?",
+      "options": [
+        "A torta négyszáz forintot.",
+        "A torta négyszáz forintok.",
+        "A torta négyszáz forint."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "0": "how-the-accusative-t-works",
+        "1": "plural-nouns-k"
+      }
+    },
+    {
+      "id": "a1-115-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does Meg order first?",
+      "options": [
+        "A cup of coffee.",
+        "A cup of tea.",
+        "A glass of lemonade."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-115-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does Károly order to eat?",
+      "options": [
+        "Only a soft drink.",
+        "A sandwich and a piece of cake.",
+        "An ice cream and a coffee."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-115-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "How much is the bill?",
+      "options": [
+        "1,500 forints.",
+        "2,500 forints.",
+        "2,000 forints."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-115-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
           "speaker": "Pincér",
-          "text": "Kér még valamit?"
+          "text": "Mit szeretne?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, még egy teát kérek.",
-        "Nem, ez a piac drága."
+        "Egy szendvics és egy üdítőt kérek.",
+        "Egy szendvicset és egy üdítőt kérek.",
+        "Egy szendvicset és egy üdítő kérek."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-cafe-vocab"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-115-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Kér még valamit?\"",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "singular-after-numbers"
+      ],
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Mennyi összesen?"
+        },
+        {
+          "speaker": "Pincér",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "Nem, köszönöm.",
-        "Kérek egy kiló húst."
+        "Összesen ezerötszáz forint.",
+        "Összesen ezerötszáz forintot.",
+        "Összesen ezerötszáz forintok."
       ],
       "correct": 0,
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "plural-nouns-k"
+      }
+    },
+    {
+      "id": "a1-115-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
+      "teaches": [
+        "nek-conditional"
+      ],
+      "tiles": [
+        "Kérnék",
+        "egy",
+        "csésze",
+        "teát",
+        "."
+      ],
+      "solution": [
+        "Kérnék",
+        "egy",
+        "csésze",
+        "teát",
+        "."
+      ],
+      "english": "I would like a cup of tea."
+    },
+    {
+      "id": "a1-115-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
       "teaches": [
         "a1-cafe-vocab"
+      ],
+      "template": [
+        {
+          "prompt": "Ask for another coffee.",
+          "answer": "Kérek még egy kávét."
+        },
+        {
+          "prompt": "Ask for the bill.",
+          "answer": "Kérem a számlát."
+        }
       ]
     },
     {
-      "id": "a1-115-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: finom",
-          "answer": "A kávé finom."
-        }
-      ],
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-115-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: meleg",
-          "answer": "Meleg a tea."
-        }
-      ],
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "production"
-    },
-    {
       "id": "a1-115-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'hot / warm'?",
-      "options": [
-        "meleg",
-        "szeretnék",
-        "még"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-cafe-vocab"
+        "nek-conditional"
       ],
-      "stage": "check"
+      "sentence": "Anna egy teát ____.",
+      "english": "Anna would like a tea.",
+      "answers": [
+        "szeretne",
+        "kér"
+      ]
     },
     {
       "id": "a1-115-check-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Kér még ____?",
-      "hint": "something",
-      "english": "Would you like anything else?",
-      "answer": "valamit",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "how-the-accusative-t-works"
+        "a1-cafe-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “hot”?",
+      "options": [
+        "hideg",
+        "meleg",
+        "finom"
+      ],
+      "correct": 1
     }
   ]
 }

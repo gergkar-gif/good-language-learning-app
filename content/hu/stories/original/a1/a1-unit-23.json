@@ -6,115 +6,157 @@
   "characters": [
     "Pincér",
     "Meg",
+    "Anna",
     "Károly"
   ],
   "paragraphs": [
     {
       "type": "narration",
       "lang": "en",
-      "text": "The group meets at a café. Meg orders in Hungarian."
+      "text": "Saturday afternoon. Meg, Anna and Károly sit down at a café. Károly is hungry and Anna is thirsty."
     },
     {
       "type": "dialogue",
       "speaker": "Pincér",
-      "text": "Jó napot kívánok! Itt az étlap."
+      "text": "Jó napot kívánok! Tessék, itt az étlap. Mit szeretne?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Kérek egy kávét és egy teát."
+      "text": "Köszönöm. Kérnék egy csésze kávét."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Én egy teát szeretnék. Van limonádé?"
     },
     {
       "type": "dialogue",
       "speaker": "Pincér",
-      "text": "Szeretne limonádét vagy üdítőt?"
+      "text": "Igen, van. Ma nagyon meleg van, a limonádé hideg és friss."
     },
     {
       "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Szeretnék egy limonádét. És egy szendvicset kérek."
+      "speaker": "Anna",
+      "text": "Akkor egy pohár limonádét szeretnék."
     },
     {
       "type": "dialogue",
       "speaker": "Pincér",
-      "text": "Kér még süteményt?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Igen, kérek egy süteményt."
+      "text": "És a barátja mit szeretne?"
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Én kérek reggelit."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Kérek cukrot és tejet is."
+      "text": "Én éhes vagyok. Egy szendvicset és egy darab tortát szeretnék enni."
     },
     {
       "type": "dialogue",
       "speaker": "Pincér",
-      "text": "Hozom. Meleg a kávé."
+      "text": "A torta nagyon finom! Kávét is szeretne?"
     },
     {
       "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Köszönöm. Finom."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Pincér",
-      "text": "Kérik a számlát?"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Meg",
-      "text": "Igen, kérem."
+      "speaker": "Károly",
+      "text": "Nem, köszönöm. Egy üdítőt kérek."
     },
     {
       "type": "narration",
       "lang": "en",
-      "text": "The waiter brings coffee, tea, lemonade, and soda. Meg asks for a sandwich, a pastry, and a breakfast plate, along with some sugar and milk."
+      "text": "The waiter brings everything. They eat and drink."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Anna",
+      "text": "Meg, szeretnél még egy kávét?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Igen, kérek még egy kávét. Nagyon finom!"
+    },
+    {
+      "type": "narration",
+      "lang": "en",
+      "text": "Later, Károly asks for the bill."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Kérem a számlát!"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pincér",
+      "text": "Hozom. Összesen kétezer forint."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Én fizetek. Tessék."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pincér",
+      "text": "Köszönöm szépen! Viszlát!"
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Miről szól a beszélgetés a kávézóban?",
+          "question": "Mit kér Meg először?",
           "options": [
-            "Meg és Károly italokat és ételt rendelnek a pincértől.",
-            "A pincér új munkatársat keres a kávézóba.",
-            "Meg panaszkodik a hideg kávé miatt.",
-            "Károly elmagyarázza az utat a vendégeknek."
+            "Egy csésze kávét.",
+            "Egy teát.",
+            "Egy pohár limonádét.",
+            "Egy üdítőt."
           ],
           "correctIndex": 0,
-          "explanation": "Meg és Károly a kávézóban kávét, teát, limonádét és ételeket rendelnek a pincértől magyarul."
+          "explanation": "Meg says: „Kérnék egy csésze kávét.” (I would like a cup of coffee.)",
+          "questionEnglish": "What does Meg ask for first?",
+          "optionsEnglish": [
+            "A cup of coffee.",
+            "A tea.",
+            "A glass of lemonade.",
+            "A soft drink."
+          ]
         },
         {
-          "question": "Mit kér Károly a pincértől?",
+          "question": "Mit szeretne enni Károly?",
           "options": [
-            "Csak egy pohár hideg vizet",
-            "Egy nagy adag süteményt",
-            "Reggelit kér",
-            "Egy fekete teát cukorral"
+            "Egy szendvicset és egy darab tortát.",
+            "Egy fagylaltot.",
+            "Csak egy süteményt.",
+            "Egy szelet kenyeret."
           ],
-          "correctIndex": 2,
-          "explanation": "Károly ezt mondja: „Én kérek reggelit.” (I'll have breakfast.)"
+          "correctIndex": 0,
+          "explanation": "Károly says: „Egy szendvicset és egy darab tortát szeretnék enni.” (I would like to eat a sandwich and a piece of cake.)",
+          "questionEnglish": "What would Károly like to eat?",
+          "optionsEnglish": [
+            "A sandwich and a piece of cake.",
+            "An ice cream.",
+            "Only a pastry.",
+            "A slice of bread."
+          ]
         },
         {
-          "question": "Mi történik, miután megkapják a rendelést?",
+          "question": "Mennyit fizet Meg összesen?",
           "options": [
-            "Meg visszaküldi a meleg kávét a pincérnek.",
-            "Meg finomnak találja a kávét, majd kérik a számlát.",
-            "Károly elégedetlen az étellel, és feláll.",
-            "A pincér elfelejti kihozni a szendvicset."
+            "Kétezer forintot.",
+            "Ezerötszáz forintot.",
+            "Kétezerötszáz forintot.",
+            "Háromszáz forintot."
           ],
-          "correctIndex": 1,
-          "explanation": "A kávéra Meg azt mondja: „Köszönöm. Finom.”, majd a végén kérik a számlát: „Igen, kérem.”"
+          "correctIndex": 0,
+          "explanation": "The waiter says: „Összesen kétezer forint.” (In total it is 2,000 forints.)",
+          "questionEnglish": "How much does Meg pay in total?",
+          "optionsEnglish": [
+            "2,000 forints.",
+            "1,500 forints.",
+            "2,500 forints.",
+            "300 forints."
+          ]
         }
       ]
     }

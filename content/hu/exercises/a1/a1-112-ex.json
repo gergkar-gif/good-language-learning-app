@@ -2,249 +2,232 @@
   "lesson": "a1-112",
   "exercises": [
     {
-      "id": "a1-112-review-1",
+      "id": "a1-112-introduce-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'to bring'?",
-      "options": [
-        "hozni",
-        "sütemény",
-        "cukor"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-cafe-vocab"
-      ]
-    },
-    {
-      "id": "a1-112-review-2",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "hozni",
-          "to bring"
-        ],
-        [
-          "még",
-          "more / another"
-        ],
-        [
-          "cukor",
-          "sugar"
-        ],
-        [
-          "reggeli",
-          "breakfast"
-        ]
-      ],
-      "stage": "review",
-      "teaches": [
-        "a1-cafe-vocab"
-      ]
-    },
-    {
-      "id": "a1-112-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'sandwich'?",
-      "options": [
-        "szendvics",
-        "sütemény",
-        "reggeli"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-112-intro-2",
-      "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Kér még ____?",
-      "hint": "pastry",
-      "english": "Would you like more pastry?",
-      "answer": "süteményt",
+      "stage": "introduce",
       "teaches": [
-        "how-the-accusative-t-works"
+        "nek-conditional"
       ],
-      "stage": "introduce"
+      "question": "Which form means “you would like”?",
+      "options": [
+        "szeretnék",
+        "szeretnél",
+        "szeretne"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-112-introduce-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "introduce",
+      "teaches": [
+        "nek-conditional"
+      ],
+      "question": "Which sentence is the politer way to ask for a tea?",
+      "options": [
+        "Kérnék egy teát.",
+        "Kérek egy teát.",
+        "Kérnek egy teát."
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "kerek-vs-szeretnek",
+        "2": "present-tense-routine-language"
+      }
     },
     {
       "id": "a1-112-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "És egy ____ kérek.",
-      "hint": "sandwich",
-      "english": "And I'd like a sandwich.",
-      "answer": "szendvicset",
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "nek-conditional"
       ],
-      "stage": "controlled"
+      "sentence": "Mit ____, Anna?",
+      "english": "What would you like, Anna?",
+      "answers": [
+        "szeretnél",
+        "kérnél"
+      ]
     },
     {
       "id": "a1-112-controlled-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "What does 'sütemény' mean?",
-      "options": [
-        "pastry",
-        "breakfast",
-        "sugar"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-cafe-vocab"
+        "nek-conditional"
       ],
-      "stage": "controlled"
+      "sentence": "____ egy limonádét.",
+      "english": "I would like a lemonade.",
+      "answers": [
+        "Kérnék",
+        "Szeretnék"
+      ]
     },
     {
       "id": "a1-112-controlled-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "szendvics",
-          "sandwich"
-        ],
-        [
-          "sütemény",
-          "pastry"
-        ],
-        [
-          "reggeli",
-          "breakfast"
-        ],
-        [
-          "cukor",
-          "sugar"
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-cafe-vocab"
+        "nek-conditional"
       ],
-      "stage": "controlled"
+      "question": "Which sentence says Anna would like a tea?",
+      "options": [
+        "Anna teát szeretnék.",
+        "Anna teát szeretnél.",
+        "Anna teát szeretne."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-112-controlled-4",
-      "type": "substitution",
+      "type": "sentence-builder",
       "category": "grammar",
-      "base_sentence": "Kérek egy szendvicset.",
-      "base_word": "szendvicset",
-      "base_gloss": "I'd like a sandwich.",
-      "options": [
-        {
-          "word": "sütemény",
-          "inflected": "süteményt",
-          "sentence": "Kérek egy süteményt.",
-          "gloss": "pastry"
-        },
-        {
-          "word": "reggeli",
-          "inflected": "reggelit",
-          "sentence": "Kérek egy reggelit.",
-          "gloss": "breakfast"
-        }
-      ],
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "nek-conditional"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Szeretnél",
+        "egy",
+        "kávét",
+        "?"
+      ],
+      "solution": [
+        "Szeretnél",
+        "egy",
+        "kávét",
+        "?"
+      ],
+      "english": "Would you like a coffee?"
     },
     {
       "id": "a1-112-practice-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means 'breakfast'?",
-      "options": [
-        "reggeli",
-        "szendvics",
-        "cukor"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "a1-cafe-vocab"
       ],
-      "stage": "practice"
+      "question": "Which word means “to drink”?",
+      "options": [
+        "enni",
+        "inni",
+        "szeretne"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-112-practice-2",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Igen, kérek egy ____.",
-      "hint": "pastry",
-      "english": "Yes, I'd like a pastry.",
-      "answer": "süteményt",
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-112-practice-3",
-      "type": "matching",
       "category": "vocabulary",
-      "pairs": [
-        [
-          "És egy szendvicset kérek.",
-          "And I'd like a sandwich."
-        ],
-        [
-          "Kér még süteményt?",
-          "Would you like more pastry?"
-        ],
-        [
-          "Igen, kérek egy süteményt.",
-          "Yes, I'd like a pastry."
-        ],
-        [
-          "Kérek cukrot és tejet is.",
-          "I'd like sugar and milk too."
-        ]
-      ],
+      "stage": "practice",
       "teaches": [
         "a1-cafe-vocab"
       ],
-      "stage": "practice"
+      "sentence": "Szeretnék kávét ____.",
+      "english": "I would like to drink coffee.",
+      "answer": "inni"
     },
     {
-      "id": "a1-112-practice-4",
+      "id": "a1-112-practice-3",
       "type": "substitution",
       "category": "grammar",
-      "base_sentence": "Kérek cukrot.",
-      "base_word": "cukrot",
-      "base_gloss": "I'd like sugar.",
+      "stage": "practice",
+      "base_sentence": "Szeretnék egy teát.",
+      "base_word": "teát",
+      "base_gloss": "I would like a tea.",
       "options": [
         {
-          "word": "tej",
-          "inflected": "tejet",
-          "sentence": "Kérek tejet.",
-          "gloss": "milk"
+          "word": "kávé",
+          "inflected": "kávét",
+          "sentence": "Szeretnék egy kávét.",
+          "gloss": "coffee"
         },
         {
-          "word": "sütemény",
-          "inflected": "süteményt",
-          "sentence": "Kérek süteményt.",
-          "gloss": "pastry"
+          "word": "limonádé",
+          "inflected": "limonádét",
+          "sentence": "Szeretnék egy limonádét.",
+          "gloss": "lemonade"
+        },
+        {
+          "word": "fagylalt",
+          "inflected": "fagylaltot",
+          "sentence": "Szeretnék egy fagylaltot.",
+          "gloss": "ice cream"
         }
       ],
       "teaches": [
         "how-the-accusative-t-works"
+      ]
+    },
+    {
+      "id": "a1-112-practice-4",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-cafe-vocab"
       ],
-      "stage": "practice"
+      "pairs": [
+        [
+          "szeretnék",
+          "I would like"
+        ],
+        [
+          "szeretnél",
+          "you would like"
+        ],
+        [
+          "szeretne",
+          "he / she would like"
+        ],
+        [
+          "kérnék",
+          "I would like (politely)"
+        ],
+        [
+          "enni",
+          "to eat"
+        ],
+        [
+          "inni",
+          "to drink"
+        ]
+      ]
     },
     {
       "id": "a1-112-practice-5",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "nek-conditional"
+      ],
+      "question": "Which sentence means “I would like to eat”?",
+      "options": [
+        "Szeretnék enni.",
+        "Szeretnék inni.",
+        "Szeretne enni."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-112-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "nek-conditional"
+      ],
       "prompt": [
         {
           "speaker": "Pincér",
-          "text": "Kér még süteményt?"
+          "text": "Mit szeretne?"
         },
         {
           "speaker": "Meg",
@@ -252,110 +235,105 @@
         }
       ],
       "options": [
-        "Igen, kérek egy süteményt.",
-        "Nem, ez a répa friss."
+        "Egy teát szeretne.",
+        "Egy teát szeretnék.",
+        "Egy teát szeretnél."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "practice"
+      "correct": 1
     },
     {
-      "id": "a1-112-dialogue-1",
+      "id": "a1-112-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "nek-conditional"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Én kérek reggelit."
+          "speaker": "Anna",
+          "text": "Mit szeretnél inni?"
         },
         {
-          "speaker": "Pincér",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Rendben, hozom.",
-        "Nem drága a piac."
+        "Teát szeretnél inni.",
+        "Teát szeretne inni.",
+        "Teát szeretnék inni."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-cafe-vocab"
-      ]
+      "correct": 2
     },
     {
-      "id": "a1-112-dialogue-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which is the natural reply to \"Kér még süteményt?\"",
-      "options": [
-        "Igen, kérek még egyet.",
-        "Ez a répa friss."
-      ],
-      "correct": 0,
+      "id": "a1-112-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "a1-cafe-vocab"
-      ]
+        "nek-conditional"
+      ],
+      "tiles": [
+        "Szeretnék",
+        "kávét",
+        "inni",
+        "."
+      ],
+      "solution": [
+        "Szeretnék",
+        "kávét",
+        "inni",
+        "."
+      ],
+      "english": "I would like to drink coffee."
     },
     {
-      "id": "a1-112-writing-1",
+      "id": "a1-112-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a sentence using this word: szendvics",
-          "answer": "Kérek egy szendvicset."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "a1-cafe-vocab"
       ],
-      "stage": "production"
-    },
-    {
-      "id": "a1-112-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: cukor",
-          "answer": "Kérek cukrot és tejet."
+          "prompt": "Using the verb kér, politely ask for a lemonade.",
+          "answer": "Kérnék egy limonádét."
+        },
+        {
+          "prompt": "Using the verb szeret, ask a friend what she would like.",
+          "answer": "Mit szeretnél?"
         }
-      ],
-      "teaches": [
-        "a1-cafe-vocab"
-      ],
-      "stage": "production"
+      ]
     },
     {
       "id": "a1-112-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means 'sugar'?",
-      "options": [
-        "cukor",
-        "szendvics",
-        "sütemény"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-cafe-vocab"
+        "nek-conditional"
       ],
-      "stage": "check"
+      "sentence": "Te kávét ____ inni.",
+      "english": "You would like to drink coffee.",
+      "answer": "szeretnél"
     },
     {
       "id": "a1-112-check-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "grammar",
-      "sentence": "Kérek ____ és tejet is.",
-      "hint": "sugar",
-      "english": "I'd like sugar and milk too.",
-      "answer": "cukrot",
+      "stage": "check",
       "teaches": [
-        "how-the-accusative-t-works"
+        "nek-conditional"
       ],
-      "stage": "check"
+      "question": "Which sentence says Anna would like to eat?",
+      "options": [
+        "Anna szeretnék enni.",
+        "Anna szeretne enni.",
+        "Anna szeretnél enni."
+      ],
+      "correct": 1
     }
   ]
 }
