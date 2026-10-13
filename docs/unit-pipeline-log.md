@@ -256,3 +256,7 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   list), and a real one in frozen unit 8: a1-36-practice-5 builds *A
   emberek* (fold into the next edit of unit 8); B1/B2 hits logged; the C1
   hits are *az* the pronoun (false positives).
+- New check `ik-first-person` (error): *eszek/iszok/dolgozok…* as a right
+  answer (the course teaches *eszem/iszom*; *-k* forms are its wrong
+  options). One hit course-wide, unit 33 (fixed with its screen, a
+  consolidation item and an a1-164 challenge, all *eszek/iszok* → *-m*).

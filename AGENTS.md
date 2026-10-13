@@ -48,7 +48,8 @@ whose answer is a suffix, an unmet word in a challenge target, a HU fill-blank w
 both *kér-* and *vesz-* fit, a consolidation item copied verbatim from a lesson
 (suspect), a question in reported speech that lets a third-person option fit
 (suspect; fine for formal *Ön*), a HU blank whose article doesn't fit its answer
-or a *Hová* answer without *Hova* (suspects)…); findings
+or a *Hová* answer without *Hova* (suspects), an -ik verb's "I" form in *-k*
+(*eszek*) as a right answer…); findings
 already in the content stay a report. `python scripts/check-content.py
 <course> [level] [unit id]` lists everything for one scope, `--summary`
 counts it. The pre-push hook runs both checks.

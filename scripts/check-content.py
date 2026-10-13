@@ -84,6 +84,7 @@ CHECKS = {
     "reported-question": "a question in reported speech ('asks Meg where she is going') lets a third-person option fit; quote the direct question",
     "hova-variant": "HU fill-blank answering Hová without also accepting Hova (both spellings are standard)",
     "article-blank": "HU fill-blank: 'a ____' before an answer starting with a vowel, or 'az ____' before a consonant",
+    "ik-first-person": "HU: an -ik verb's 'I' form with -k (eszek, iszok, dolgozok) as a right answer; the course teaches -m",
     "take-gloss": "HU fill-blank: English 'take' for a kér-/vesz- answer, so both verbs fit (write 'have'/'ask for' or 'buy')",
     "glued-blank": "HU: a blank glued to a stem ending in -a/-e whose answer is a suffix (hálószoba____ + ban teaches *hálószobaban*)",
     "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
@@ -102,6 +103,7 @@ CHECKS = {
 LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
+IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
 SUSPECTS = {"hova-variant", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
@@ -269,6 +271,15 @@ def check_exercise(e, course, lang):
     opts = string_options(e)
     if t in CHOICE and opts and re.search(r"\basks\b[^.?“\"]*\b(what|where|whether|if|when|how|who|why)\s+(she|he|they)\b", e.get("question") or "", re.I):
         hit("reported-question", (e.get("question") or "")[:60])
+    if lang == "hu":
+        right = []
+        if opts and isinstance(e.get("correct"), int) and 0 <= e["correct"] < len(opts):
+            right.append(opts[e["correct"]])
+        right += [str(x) for x in (e.get("answers") or [e.get("answer")]) if x and not isinstance(x, (dict, list))]
+        right.append(" ".join(map(str, e.get("solution") or [])))
+        m = IK_K.search(" ".join(right))
+        if m:
+            hit("ik-first-person", m.group(0))
     if lang == "hu" and t == "fill-blank":
         answers = [str(x) for x in (e.get("answers") or [e.get("answer")]) if x]
         low = {fold(x) for x in answers}
