@@ -87,6 +87,8 @@ listing each item."
 | 10-13 | A1 story questions ×12 | Haiku translation | 77k Haiku, 1 | | 36 questions | for the English toggle |
 | 10-13 | 18 home | regen, no verdict read | 204k, 11 | 126k, 3.5 | 9 applied | |
 | 10-13 | 19 food-drink | regen, no verdict read | 160k, 8 | 127k, 4.5 | 10 applied, 1 false | read claimed *Nem van tej.* is correct |
+| 10-13 | 20 everyday-hungarian-review | regen (review unit) | 267k, 12 | 191k, 5 | 10 applied | review units cost ~40% more |
+| 10-13 | 21 buying-food | regen | 213k, 11 | 137k, 4 | 9 applied | two-right-answer blanks via English "take" |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -200,3 +202,12 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
 - Reads keep producing ~1 false Hungarian claim per unit (*Nem van tej.*,
   *táskája*): filtering stays with the reviewer.
 - Reviewer's own slips this round: none found by the next step.
+
+### 2026-10-13 (after units 20, 21 frozen)
+
+- Review units cost ~40% more (read every earlier unit): budget ~460k for
+  unit 25 and the A1 end review.
+- New repeat defect: English glosses that let two conjugations fit
+  ("take" for *kérem*/*veszem*). Added to rules § 6.
+- Units 21 and 22 overlap in topic (market lesson in 21): the regeneration
+  prompt now names what the previous unit already covers.
