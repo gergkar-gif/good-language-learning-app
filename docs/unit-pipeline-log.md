@@ -224,5 +224,12 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
 - Triples considered and declined for now (user agreed): the fixed cost
   per read is ~40–50k, so a third unit saves only ~13k/unit more, while a
   ~250k-token context risks the detail checks late in the read.
-- Paired regeneration (units 24 + 25 in one agent) is running; verdict when
-  its read is in.
+- **Paired regeneration** (24 + 25): 238k = 119k/unit (single: 160–267k),
+  14 min for both. But its read found ~16 real defects per unit (single:
+  9–12), mostly in the second unit: re-teaching earlier units as new
+  (colours from 22, the definite verb from 21) and repeated item shapes.
+  Net still cheaper (the extra fixes are Haiku work), so pairs stay, with
+  the prompt now listing what earlier units already teach.
+- New check `take-gloss` (HU fill-blanks whose English "take" lets *kér-*
+  and *vesz-* both fit): the defect recurred in 21, 22, 24, 25 despite the
+  rules sheet; the check finds exactly the read's 4 typed items.

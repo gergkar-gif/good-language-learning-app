@@ -80,6 +80,7 @@ CHECKS = {
     "vocab-duplicate": "a vocabulary list has the same lemma twice",
     "ds-on-answer": "distractor_skills names the right option",
     "ds-own-skill": "distractor_skills names the skill the exercise teaches (a wrong form of the tested skill gets none)",
+    "take-gloss": "HU fill-blank: English 'take' for a kér-/vesz- answer, so both verbs fit (write 'have'/'ask for' or 'buy')",
     "glued-blank": "HU: a blank glued to a stem ending in -a/-e whose answer is a suffix (hálószoba____ + ban teaches *hálószobaban*)",
     "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
     "unmet-word": "a word the learner hasn't met by this lesson (scripts/unmet-words.js)",
@@ -97,7 +98,7 @@ CHECKS = {
 LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
-SUSPECTS = {"glued-blank", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"take-gloss", "glued-blank", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # Hungarian A1-A2. Spanish lists leave out function words (en, que, con), so the
@@ -262,6 +263,14 @@ def check_exercise(e, course, lang):
     L = LANG.get(lang)
     t = e.get("type")
     opts = string_options(e)
+    if lang == "hu" and t == "fill-blank":
+        # only where the learner types the verb: in a choice item the options decide
+        gloss = " ".join(str(e.get(k) or "") for k in ("english", "question"))
+        if re.search(r"\btak(e|es|ing|en)\b", gloss, re.I):
+            said = " ".join(str(x) for x in (e.get("answers") or [e.get("answer")]) if x).lower()
+            kinds = {v for v, pat in (("kér", r"\bkér"), ("vesz", r"\b(vesz|vegy|ves)")) if re.search(pat, said)}
+            if len(kinds) == 1:
+                hit("take-gloss", gloss[:60])
     if t == "fill-blank" and lang == "hu":
         # a final -a/-e lengthens before a suffix (szoba -> szobában), so a blank glued
         # to such a stem whose answer starts with a consonant teaches a misspelling
