@@ -64,9 +64,12 @@ listing each item."
 | 10-13 | 8 + 9 | pilot fix lists, one Sonnet fixer | 142k, 4.5 | | | both units in one agent |
 | 10-13 | 11 where-things-are | Sonnet regen | 267k, 14 | 155k, 5.5 | 9 applied | frozen; agent bypassed hooks (now forbidden) |
 | 10-13 | 10 foundations-review | Sonnet regen | 245k, 9 | 187k, 5 | ~15 to filter | |
-| 10-13 | 8 (second read) | | | 161k, 5 | ~10 to filter | found a wrong pilot fix-list item |
+| 10-13 | 8 (second read) | | | 161k, 5 | 8 applied | found a wrong pilot fix-list item |
+| 10-13 | 9 (second read) | | | **123k, 3.5** (rules sheet) | 10 applied, 1 false | first read on the rules sheet |
+| 10-13 | 8 + 10 fixes | **Haiku** applies filtered lists | 118k Haiku, 2.5 | | all 17 items right | the one slip was in Claude's list |
+| 10-13 | 9 fixes | Claude directly | | | | short list |
 
-All reads so far used the full docs (brief, AGENTS, spec, registry).
+Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
 ## Process reviews
 
@@ -84,3 +87,19 @@ All reads so far used the full docs (brief, AGENTS, spec, registry).
 - Next candidates: a check for `distractor_skills` on non-word options (the Reader
   lexicon can tell a non-word); Haiku for applying an already-filtered
   fix list.
+
+### 2026-10-13 (after units 8, 9, 10 frozen)
+
+- **Rules sheet:** unit 9's read cost 123k / 3.5 min against 155–187k /
+  5 min, with as many real findings (and one new class: challenge scenarios
+  not naming the target's object). Keep it; every agent uses it.
+- **Haiku for applying a filtered list:** 17/17 items right, 118k Haiku
+  tokens, 2.5 min, no improvisation. Use Haiku for every fix list from now
+  on; Sonnet only for regeneration and reads.
+- **Reviewer slips found by the next step:** twice the reviewer's own list
+  put `distractor_skills` on the wrong option (pilot a1-44 items; a1-38-check-2,
+  where the option order differed). **Change:** a list item naming an option
+  index must quote the option text, and the fixer checks the text matches
+  before editing. Added to the rules sheet § 3.
+- Reads still produce ~1 false claim each (*táskája* does not lengthen):
+  filtering against the files stays.

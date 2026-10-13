@@ -71,7 +71,11 @@ possessed *-im*, a noun possessor *Anna kulcsa*) is yours to catch.
   that is a **well-formed** form of **another** skill (*három székek* →
   `plural-nouns-k`). None for an ungrammatical option (*a nagyok asztalok*,
   *Itt nem lámpa.*), none for a wrong form of the tested skill itself.
-  Whenever an option changes, re-check its entry.
+  Whenever an option changes, re-check its entry. The entry goes on the
+  option that *is* the other skill's form (*Nincs kulcs.* → `van-and-nincs`),
+  never on a wrong form of the tested skill (*Van kulcsom.* for "I don't
+  have a key"). Fix lists naming an option index quote the option's text;
+  check that the text matches before editing.
 - Review items keep the skill they review. Open writing → unit vocabulary.
 - After any tag change: `python scripts/lock_tags.py hu a1/<unit id>
   --update --reason "..."`. The skill list is frozen: never edit
@@ -124,4 +128,5 @@ repeated screens or checklists across lessons · duplicated vocabulary
 entries · `distractor_skills` left on a replaced option · `ds` on an
 ungrammatical option · two right answers through ellipsis · a recap screen
 contradicting its unit · comma splices in goal/checklist/canDo ·
-scenario not mentioning the target's object.
+scenario not mentioning the target's object · lesson titles using forms
+not yet taught (*dolgaim*).
