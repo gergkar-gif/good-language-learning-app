@@ -68,6 +68,9 @@ listing each item."
 | 10-13 | 9 (second read) | | | **123k, 3.5** (rules sheet) | 10 applied, 1 false | first read on the rules sheet |
 | 10-13 | 8 + 10 fixes | **Haiku** applies filtered lists | 118k Haiku, 2.5 | | all 17 items right | the one slip was in Claude's list |
 | 10-13 | 9 fixes | Claude directly | | | | short list |
+| 10-13 | 12 going-places | Sonnet regen (rules sheet) | 171k, 9 | 125k, 4.5 | 9 applied | |
+| 10-13 | 13 everyday-actions | Sonnet regen (rules sheet) | 204k, 11 | 106k, 2 | 8 applied | read skipped 2 commands |
+| 10-13 | 12 + 13 fixes | Haiku | 115k Haiku, 3 | | 16/17; 1 skipped, 1 wrong | both caused by Claude's list |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -103,3 +106,21 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   before editing. Added to the rules sheet § 3.
 - Reads still produce ~1 false claim each (*táskája* does not lengthen):
   filtering against the files stays.
+
+### 2026-10-13 (after units 12, 13 frozen)
+
+- **Cost per unit is down ~30%:** regeneration 171–204k (was 245–267k),
+  read 106–125k (was 155–187k), Haiku fix ~58k Haiku. About 300k Sonnet +
+  60k Haiku per stub unit, ~25 min wall time with two units in parallel.
+  Projection for the 20 HU A1 units left: ~6–7M Sonnet tokens (was ~9M).
+- **Remaining errors are the reviewer's fix lists:** a conditional item
+  ("only if that is the exact text") made Haiku add *i, í* to a vowel list
+  the screen's own tip contradicts; an item asked for `answers` next to
+  `answer`, which the schema rejects (`answers` replaces `answer`).
+  **Change:** fix-list items are exact old → new replacements, no
+  conditionals; field shapes are checked against an existing item first.
+- **Regenerators still write words whose meaning needs a form not yet
+  taught** (*hallgat* alone = "is silent"). Added to rules § 6.
+- **Next to try (units 14, 15):** have each regenerator run a self-check
+  against rules § 6 and list what it checked, to see if the read finds
+  fewer defects; keep two units in parallel.

@@ -43,7 +43,8 @@ possessed *-im*, a noun possessor *Anna kulcsa*) is yours to catch.
    lengthens). `hint` only when the blank can't be recovered, never the
    answer, names the person for person-marked forms (*live, I*). `english`
    on every fill-blank and builder, fitting only the right answer;
-   `answers` lists every correct alternative. The grader ignores case and
+   `answers` (an array that replaces `answer`) lists every correct
+   alternative (*Hová* / *Hova*). The grader ignores case and
    punctuation.
 6. Builders produce a natural sentence, not a bare noun phrase.
 7. Vary items: no three items of the same shape in one lesson, no list
@@ -129,4 +130,6 @@ entries · `distractor_skills` left on a replaced option · `ds` on an
 ungrammatical option · two right answers through ellipsis · a recap screen
 contradicting its unit · comma splices in goal/checklist/canDo ·
 scenario not mentioning the target's object · lesson titles using forms
-not yet taught (*dolgaim*).
+not yet taught (*dolgaim*) · a verb whose meaning needs an object not yet
+taught (*hallgat* alone = "is silent") · false spelling claims (*hova* and
+*Hová* are the same word) · a screen rule its own tip contradicts.
