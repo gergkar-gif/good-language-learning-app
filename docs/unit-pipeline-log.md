@@ -29,7 +29,10 @@ also rewrites). Worktrees: `git worktree add --detach
 ## Prompt templates
 
 Fill `<…>`. Each agent reads `docs/unit-agent-rules.md` and nothing else
-by default.
+by default. Reads end with "fix as an exact old → new replacement; quote
+the option text whenever you name an option" and "Run ALL its § 5
+commands"; regenerations get the unit's taught/not-yet-taught list
+(verbs, cases, *is*, -ik, accusative) spelled out.
 
 **Read.** "You are reviewing one unit of a Hungarian course (Parlour app)
 for a learner who knows only English, to find everything wrong with it.
@@ -75,6 +78,11 @@ listing each item."
 | 10-13 | 12 going-places | Sonnet regen (rules sheet) | 171k, 9 | 125k, 4.5 | 9 applied | |
 | 10-13 | 13 everyday-actions | Sonnet regen (rules sheet) | 204k, 11 | 106k, 2 | 8 applied | read skipped 2 commands |
 | 10-13 | 12 + 13 fixes | Haiku | 115k Haiku, 3 | | 16/17; 1 skipped, 1 wrong | both caused by Claude's list |
+| 10-13 | 14 questions-negation | regen + § 6 self-check | 171k, 9 | 113k, 2.5 | 9 applied | |
+| 10-13 | 15 daily-routine | regen + § 6 self-check | 214k, 12 | 135k, 4 | 11 applied | |
+| 10-13 | 14 fixes | Haiku, exact old → new list | 74k Haiku, 1 | | 9/9 | |
+| 10-13 | 15 fixes | Haiku, exact old → new list | 83k Haiku, 3 | | 11/11 | |
+| 10-13 | 16 time-dates | read first (real content) | | 132k, 4 | 40+ | → regenerate |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -138,3 +146,20 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
 - **Next to try (units 14, 15):** have each regenerator run a self-check
   against rules § 6 and list what it checked, to see if the read finds
   fewer defects; keep two units in parallel.
+
+### 2026-10-13 (after units 14, 15 frozen)
+
+- **§ 6 self-check in regeneration: dropped.** Reads still found 9–11
+  real defects per unit (same as without it) and regeneration cost the
+  same or more (171k, 214k).
+- **Reads propose exact old → new fixes: kept.** The fix list is then a
+  near-copy, Haiku's pass fell to 74–83k / 1–3 min, all items right.
+- **Real-content units: read first, then decide.** Unit 16's read found
+  40+ defects (no challenges, generic checklists, forms taught later, an
+  incoherent story): regenerate when a read finds more than ~30 or the
+  challenges/checklists are missing or generic; else fix.
+- **New checks this round:** `ds-on-answer`, `ds-own-skill`,
+  `glued-blank`, and `unmet-word` over stories and challenge targets;
+  `scripts/merge_challenges.py` for parallel-unit conflicts.
+- Running cost per stub unit now ≈ 190k regen + 120k read Sonnet + 80k
+  Haiku; ~4 units/hour with two agents.
