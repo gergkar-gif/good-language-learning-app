@@ -85,6 +85,8 @@ listing each item."
 | 10-13 | 16 time-dates | Sonnet regen | 177k, 10 | 112k, 3 | 6 applied | Claude applied directly |
 | 10-13 | 17 frequency-word-order | verdict-first read → regen | 181k, 9 | 90k + 121k | 9 applied | read caught a reversed answer key |
 | 10-13 | A1 story questions ×12 | Haiku translation | 77k Haiku, 1 | | 36 questions | for the English toggle |
+| 10-13 | 18 home | regen, no verdict read | 204k, 11 | 126k, 3.5 | 9 applied | |
+| 10-13 | 19 food-drink | regen, no verdict read | 160k, 8 | 127k, 4.5 | 10 applied, 1 false | read claimed *Nem van tej.* is correct |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -188,3 +190,13 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   to regeneration. **Change:** regenerate them directly, no verdict read
   (saves ~90k Sonnet per unit, ~1.4M in all); each still gets one blind
   read after regeneration.
+
+### 2026-10-13 (after units 18, 19 frozen)
+
+- Direct regeneration (no verdict read) worked: 18 and 19 needed only
+  short fix lists (9–10 items). Keep.
+- `scripts/take_unit_commit.py` replaced the hand-written cherry-pick and
+  conflict sequence.
+- Reads keep producing ~1 false Hungarian claim per unit (*Nem van tej.*,
+  *táskája*): filtering stays with the reviewer.
+- Reviewer's own slips this round: none found by the next step.
