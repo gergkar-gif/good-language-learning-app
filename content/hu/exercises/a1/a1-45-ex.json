@@ -24,8 +24,8 @@
       "question": "How do you say \"The key is yours\"?",
       "options": [
         "A kulcs a tiéd.",
-        "A kulcs tiéd.",
-        "Tiéd kulcs van."
+        "A kulcs az enyém.",
+        "A kulcs az övé."
       ],
       "correct": 0,
       "stage": "review",
@@ -37,15 +37,15 @@
       "id": "a1-45-intro-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word means \"theirs\"?",
+      "question": "Which means \"my own room\"?",
       "options": [
-        "övék",
-        "övé",
-        "miénk"
+        "saját szobám",
+        "saját szobád",
+        "saját szobája"
       ],
       "correct": 0,
       "teaches": [
-        "possessive-pronouns-enyem"
+        "possessive-suffixes"
       ],
       "stage": "introduce"
     },
@@ -56,8 +56,8 @@
       "question": "Which word means \"own\"?",
       "options": [
         "saját",
-        "tulajdon",
-        "dolog"
+        "dolog",
+        "fontos"
       ],
       "correct": 0,
       "teaches": [
@@ -71,20 +71,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "övék",
-          "theirs"
-        ],
-        [
           "saját",
           "own"
         ],
         [
-          "tulajdon",
-          "property"
-        ],
-        [
           "dolog",
           "thing"
+        ],
+        [
+          "övék",
+          "theirs"
+        ],
+        [
+          "kié",
+          "whose?"
         ]
       ],
       "teaches": [
@@ -96,12 +96,12 @@
       "id": "a1-45-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A könyv az ____.",
-      "hint": "theirs",
-      "english": "The book is theirs.",
-      "answer": "övék",
+      "sentence": "Van saját ____.",
+      "hint": "szoba, my",
+      "english": "I have my own room.",
+      "answer": "szobám",
       "teaches": [
-        "possessive-pronouns-enyem"
+        "possessive-suffixes"
       ],
       "stage": "controlled"
     },
@@ -109,28 +109,28 @@
       "id": "a1-45-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence means \"I have my own room\"?",
+      "question": "Which sentence means \"We have our own flat\"?",
       "options": [
-        "Van egy saját szobám.",
-        "Van saját szoba van.",
-        "Saját szobám van egy."
+        "Van saját lakásunk.",
+        "Van saját lakásom.",
+        "Van saját lakásuk."
       ],
       "correct": 0,
       "teaches": [
-        "van-possessive-to-have"
+        "possessive-suffixes"
       ],
       "stage": "controlled"
     },
     {
       "id": "a1-45-controlled-4",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Nekik van egy ____.",
-      "hint": "their car",
-      "english": "They have a car.",
-      "answer": "autójuk",
+      "category": "vocabulary",
+      "sentence": "A ____ kulcsom itt van.",
+      "hint": "own",
+      "english": "My own key is here.",
+      "answer": "saját",
       "teaches": [
-        "possessive-suffixes"
+        "a1-possession-vocab"
       ],
       "stage": "controlled"
     },
@@ -138,11 +138,11 @@
       "id": "a1-45-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sound gets inserted between autó and the suffix -juk to avoid two vowels colliding?",
+      "question": "Which sentence means \"They have their own car\"?",
       "options": [
-        "j",
-        "v",
-        "n"
+        "Van saját autójuk.",
+        "Van saját autónk.",
+        "Van saját autótok."
       ],
       "correct": 0,
       "teaches": [
@@ -154,9 +154,9 @@
       "id": "a1-45-practice-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Minden saját ____ megvan.",
+      "sentence": "Ez egy fontos ____.",
       "hint": "thing",
-      "english": "All of my own things are here.",
+      "english": "This is an important thing.",
       "answer": "dolog",
       "teaches": [
         "a1-possession-vocab"
@@ -169,20 +169,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "A könyv az övék.",
-          "The book is theirs."
-        ],
-        [
-          "Minden saját dolog megvan.",
-          "All of my own things are here."
-        ],
-        [
-          "Van egy saját szobám.",
+          "Van saját szobám.",
           "I have my own room."
         ],
         [
-          "Nekik van egy autójuk.",
-          "They have a car."
+          "A saját kulcsom itt van.",
+          "My own key is here."
+        ],
+        [
+          "Ez egy fontos dolog.",
+          "This is an important thing."
+        ],
+        [
+          "Van saját lakásunk.",
+          "We have our own flat."
         ]
       ],
       "teaches": [
@@ -195,20 +195,18 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Nekik",
-        "van",
-        "egy",
-        "autójuk",
+        "Van",
+        "saját",
+        "autónk",
         "."
       ],
       "solution": [
-        "Nekik",
-        "van",
-        "egy",
-        "autójuk",
+        "Van",
+        "saját",
+        "autónk",
         "."
       ],
-      "english": "They have a car.",
+      "english": "We have our own car.",
       "teaches": [
         "van-possessive-to-have"
       ],
@@ -237,8 +235,8 @@
       "question": "Which word means \"thing\"?",
       "options": [
         "dolog",
-        "tulajdon",
-        "saját"
+        "saját",
+        "fontos"
       ],
       "correct": 0,
       "teaches": [
@@ -250,15 +248,15 @@
       "id": "a1-45-practice-7",
       "type": "substitution",
       "category": "grammar",
-      "base_sentence": "Nekik van egy autójuk.",
-      "base_word": "autójuk",
-      "base_gloss": "They have a car.",
+      "base_sentence": "Van saját szobájuk.",
+      "base_word": "szobájuk",
+      "base_gloss": "They have their own room.",
       "options": [
         {
-          "word": "szoba",
-          "inflected": "szobájuk",
-          "sentence": "Nekik van egy szobájuk.",
-          "gloss": "room"
+          "word": "kulcs",
+          "inflected": "kulcsuk",
+          "sentence": "Van saját kulcsuk.",
+          "gloss": "their own key"
         }
       ],
       "teaches": [
@@ -273,7 +271,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Kié ez a könyv?"
+          "text": "Hol van a kulcsod?"
         },
         {
           "speaker": "Károly",
@@ -281,12 +279,13 @@
         }
       ],
       "options": [
-        "A könyv az övék.",
-        "A könyv övék van."
+        "A saját kulcsom itt van.",
+        "A saját kulcsod itt van.",
+        "A saját kulcsa itt van."
       ],
       "correct": 0,
       "teaches": [
-        "possessive-pronouns-enyem"
+        "possessive-suffixes"
       ]
     },
     {
@@ -304,12 +303,13 @@
         }
       ],
       "options": [
-        "Igen, van egy saját szobám.",
-        "Igen, saját szoba van nekem."
+        "Igen, van saját szobám.",
+        "Igen, van saját szobád.",
+        "Igen, van saját szobája."
       ],
       "correct": 0,
       "teaches": [
-        "van-possessive-to-have"
+        "possessive-suffixes"
       ]
     },
     {
@@ -318,8 +318,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"They have a car.\" in Hungarian.",
-          "answer": "Nekik van egy autójuk."
+          "prompt": "Say \"I have my own room.\" in Hungarian.",
+          "answer": "Van saját szobám."
         }
       ],
       "teaches": [
@@ -332,23 +332,23 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"The book is theirs.\" in Hungarian.",
-          "answer": "A könyv az övék."
+          "prompt": "Say \"My own key is here.\" in Hungarian.",
+          "answer": "A saját kulcsom itt van."
         }
       ],
       "teaches": [
-        "possessive-pronouns-enyem"
+        "possessive-suffixes"
       ]
     },
     {
       "id": "a1-45-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"property\"?",
+      "question": "Which word completes \"Van ____ szobám.\" (I have my own room)?",
       "options": [
-        "tulajdon",
+        "saját",
         "dolog",
-        "saját"
+        "fontos"
       ],
       "correct": 0,
       "teaches": [
@@ -360,17 +360,21 @@
       "id": "a1-45-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"They have a car\"?",
+      "question": "How do you say \"I have my own key\"?",
       "options": [
-        "Nekik van egy autójuk.",
-        "Nekik van egy autó.",
-        "Ők van autójuk."
+        "Van saját kulcsom.",
+        "Nincs saját kulcsom.",
+        "Van saját kulcsod."
       ],
       "correct": 0,
       "teaches": [
         "van-possessive-to-have"
       ],
-      "stage": "check"
+      "stage": "check",
+      "distractor_skills": {
+        "1": "van-and-nincs-there-is-there-isn-t",
+        "2": "possessive-suffixes"
+      }
     }
   ]
 }

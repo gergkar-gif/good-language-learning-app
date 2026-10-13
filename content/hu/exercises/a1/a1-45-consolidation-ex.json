@@ -104,9 +104,9 @@
       "id": "a1-45-consolidation-7",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A ____ itt van.",
-      "hint": "his/her key",
-      "english": "His/Her key is here.",
+      "sentence": "Károly itt van. A ____ ott van.",
+      "hint": "kulcs, his",
+      "english": "Károly is here. His key is there.",
       "answer": "kulcsa",
       "teaches": [
         "possessive-suffixes"
@@ -131,7 +131,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A ____ itt van.",
-      "hint": "my flat",
+      "hint": "lakás, my",
       "english": "My flat is here.",
       "answer": "lakásom",
       "teaches": [
@@ -144,7 +144,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A táska a ____?",
-      "hint": "yours",
+      "hint": "yours, one person",
       "english": "Is the bag yours?",
       "answer": "tiéd",
       "teaches": [
@@ -169,10 +169,10 @@
       "id": "a1-45-consolidation-12",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A ____ az asztalon van.",
-      "hint": "his/her phone",
-      "english": "His/Her phone is on the table.",
-      "answer": "telefonja",
+      "sentence": "Van saját ____.",
+      "hint": "szoba, my",
+      "english": "I have my own room.",
+      "answer": "szobám",
       "teaches": [
         "possessive-suffixes"
       ],
@@ -185,7 +185,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Hol van a telefonja?"
+          "text": "Anna itt van. Hol van a kulcsa?"
         },
         {
           "speaker": "Károly",
@@ -193,8 +193,9 @@
         }
       ],
       "options": [
-        "A telefonja az asztalon van.",
-        "A telefon ő van asztalon."
+        "A kulcsa ott van.",
+        "A kulcsom ott van.",
+        "A kulcsod ott van."
       ],
       "correct": 0,
       "teaches": [
@@ -218,7 +219,8 @@
       ],
       "options": [
         "A szobánk kicsi.",
-        "A szoba kicsi mi van."
+        "A szobám kicsi.",
+        "A szobájuk kicsi."
       ],
       "correct": 0,
       "teaches": [
@@ -233,7 +235,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Kié az autó?"
+          "text": "Az autó a tiéd?"
         },
         {
           "speaker": "Károly",
@@ -241,8 +243,9 @@
         }
       ],
       "options": [
-        "Az autó az enyém.",
-        "Az autó enyém van."
+        "Igen, az autó az enyém.",
+        "Igen, az autó a tiéd.",
+        "Igen, az autó az övé."
       ],
       "correct": 0,
       "teaches": [
@@ -256,17 +259,18 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "A táska a tiéd?"
+          "speaker": "Meg",
+          "text": "A szoba a tiétek?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, a táska az enyém.",
-        "Igen, a táska tiéd."
+        "Igen, a szoba a miénk.",
+        "Igen, a szoba a tiétek.",
+        "Igen, a szoba az övék."
       ],
       "correct": 0,
       "teaches": [
@@ -280,8 +284,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"His/her key is here.\" in Hungarian.",
-          "answer": "A kulcsa itt van."
+          "prompt": "Anna is here. Say \"Her key is there.\" in Hungarian.",
+          "answer": "A kulcsa ott van."
         }
       ],
       "teaches": [
@@ -295,8 +299,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"My friend is here.\" in Hungarian.",
-          "answer": "A barátom itt van."
+          "prompt": "Say \"Our family is big.\" in Hungarian.",
+          "answer": "A családunk nagy."
         }
       ],
       "teaches": [
@@ -325,12 +329,12 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"The bag is ours.\" in Hungarian.",
-          "answer": "A táska a miénk."
+          "prompt": "Say \"We have a car.\" in Hungarian.",
+          "answer": "Van egy autónk."
         }
       ],
       "teaches": [
-        "possessive-pronouns-enyem"
+        "van-possessive-to-have"
       ],
       "stage": "consolidation"
     }

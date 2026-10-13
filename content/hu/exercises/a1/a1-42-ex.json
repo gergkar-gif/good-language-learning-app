@@ -21,11 +21,11 @@
       "id": "a1-42-review-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"His/her bag is big\"?",
+      "question": "Anna itt van. Which means \"Her bag is big\"?",
       "options": [
         "A táskája nagy.",
         "A táska nagy.",
-        "Táskája nagy ő."
+        "A táskám nagy."
       ],
       "correct": 0,
       "stage": "review",
@@ -112,11 +112,11 @@
       "id": "a1-42-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is the \"my friend\" form of barát?",
+      "question": "Which means \"your (plural) friend\"?",
       "options": [
-        "barátom",
-        "barátnk",
-        "barátom van"
+        "barátotok",
+        "barátunk",
+        "barátjuk"
       ],
       "correct": 0,
       "teaches": [
@@ -129,9 +129,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A ____ itt van.",
-      "hint": "my friend",
-      "english": "My friend is here.",
-      "answer": "barátom",
+      "hint": "barát, our",
+      "english": "Our friend is here.",
+      "answer": "barátunk",
       "teaches": [
         "possessive-suffixes"
       ],
@@ -141,11 +141,11 @@
       "id": "a1-42-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Why does szoba lengthen its final -a to -á before the possessive suffix?",
+      "question": "Which means \"their family\"?",
       "options": [
-        "vowel-final stems shift shape slightly before the suffix",
-        "vowel-final stems keep their basic dictionary form before suffixes",
-        "it is an isolated historical exception found in older texts"
+        "családjuk",
+        "családunk",
+        "családotok"
       ],
       "correct": 0,
       "teaches": [
@@ -156,13 +156,13 @@
     {
       "id": "a1-42-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A barátom ____ van.",
-      "hint": "here",
-      "english": "My friend is here.",
-      "answer": "itt",
+      "category": "grammar",
+      "sentence": "Itt van a ____?",
+      "hint": "barát, your (several people)",
+      "english": "Is your (plural) friend here?",
+      "answer": "barátotok",
       "teaches": [
-        "a1-possession-vocab"
+        "possessive-suffixes"
       ],
       "stage": "practice"
     },
@@ -176,16 +176,16 @@
           "Our room is small."
         ],
         [
-          "A barátom itt van.",
-          "My friend is here."
+          "A családjuk nagy.",
+          "Their family is big."
         ],
         [
-          "A családod nagy?",
-          "Is your family big?"
+          "A nevünk szép.",
+          "Our name is nice."
         ],
         [
-          "A neved szép.",
-          "Your name is nice."
+          "Hol van a barátotok?",
+          "Where is your (plural) friend?"
         ]
       ],
       "teaches": [
@@ -199,17 +199,19 @@
       "category": "grammar",
       "tiles": [
         "A",
-        "szobánk",
-        "kicsi",
+        "barátotok",
+        "itt",
+        "van",
         "."
       ],
       "solution": [
         "A",
-        "szobánk",
-        "kicsi",
+        "barátotok",
+        "itt",
+        "van",
         "."
       ],
-      "english": "Our room is small.",
+      "english": "Your (plural) friend is here.",
       "teaches": [
         "possessive-suffixes"
       ],
@@ -222,8 +224,8 @@
       "question": "Which line does this reply answer: \"A szobánk kicsi.\"?",
       "options": [
         "Milyen a szobátok?",
-        "Itt van a barátod?",
-        "Hol van a telefonja?"
+        "Milyen a családotok?",
+        "Milyen a barátotok?"
       ],
       "correct": 0,
       "teaches": [
@@ -256,10 +258,10 @@
       "base_gloss": "Our room is small.",
       "options": [
         {
-          "word": "barát",
-          "inflected": "barátom",
-          "sentence": "A barátom kicsi.",
-          "gloss": "my friend"
+          "word": "család",
+          "inflected": "családunk",
+          "sentence": "A családunk kicsi.",
+          "gloss": "our family"
         }
       ],
       "teaches": [
@@ -283,7 +285,8 @@
       ],
       "options": [
         "A szobánk kicsi.",
-        "A szoba kicsi mi van."
+        "A szobám kicsi.",
+        "A szobájuk kicsi."
       ],
       "correct": 0,
       "teaches": [
@@ -297,7 +300,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Itt van a barátod?"
+          "text": "Itt van a barátotok?"
         },
         {
           "speaker": "Károly",
@@ -305,8 +308,9 @@
         }
       ],
       "options": [
-        "Igen, a barátom itt van.",
-        "Igen, barát itt van om."
+        "Igen, a barátunk itt van.",
+        "Igen, a barátotok itt van.",
+        "Igen, a barátjuk itt van."
       ],
       "correct": 0,
       "teaches": [
@@ -319,8 +323,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"My friend is here.\" in Hungarian.",
-          "answer": "A barátom itt van."
+          "prompt": "Say \"Our family is big.\" in Hungarian.",
+          "answer": "A családunk nagy."
         }
       ],
       "teaches": [
@@ -333,8 +337,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"Our room is small.\" in Hungarian.",
-          "answer": "A szobánk kicsi."
+          "prompt": "Say \"Their room is small.\" in Hungarian.",
+          "answer": "A szobájuk kicsi."
         }
       ],
       "teaches": [
@@ -361,11 +365,11 @@
       "id": "a1-42-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"My friend is here\"?",
+      "question": "How do you say \"Our friend is here\"?",
       "options": [
-        "A barátom itt van.",
-        "A barát itt van.",
-        "Barátom itt van ő."
+        "A barátunk itt van.",
+        "A barátotok itt van.",
+        "A barátjuk itt van."
       ],
       "correct": 0,
       "teaches": [

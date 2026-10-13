@@ -2,66 +2,34 @@
   "lesson": "a1-38",
   "exercises": [
     {
-      "id": "a1-38-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"family\"?",
-      "options": [
-        "család",
-        "csoport",
-        "barát"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ]
-    },
-    {
-      "id": "a1-38-review-2",
+      "id": "a1-38-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Why does ablak take -ok in the plural?",
-      "options": [
-        "it has back vowels",
-        "it has front vowels",
-        "it's an irregular noun"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "vowel-harmony"
-      ]
-    },
-    {
-      "id": "a1-38-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"child\"?",
-      "options": [
-        "gyerek",
-        "család",
-        "nagy"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-38-intro-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is the plural of gyerek?",
+      "question": "Which word means \"children\"?",
       "options": [
         "gyerekek",
-        "gyerkek",
-        "gyereki"
+        "gyerekok",
+        "gyerekk"
       ],
       "correct": 0,
       "teaches": [
         "plural-nouns-k"
+      ],
+      "stage": "introduce"
+    },
+    {
+      "id": "a1-38-introduce-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which phrase means \"the big tables\"?",
+      "options": [
+        "a nagyok asztalok",
+        "a nagy asztal",
+        "a nagy asztalok"
+      ],
+      "correct": 2,
+      "teaches": [
+        "adjective-order-before-the-noun"
       ],
       "stage": "introduce"
     },
@@ -97,7 +65,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A ____ itt vannak.",
-      "hint": "the children",
+      "hint": "gyerek, plural",
       "english": "The children are here.",
       "answer": "gyerekek",
       "teaches": [
@@ -107,27 +75,11 @@
     },
     {
       "id": "a1-38-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Why does gyerek still take the full -ek, even though it already ends in -k?",
-      "options": [
-        "Hungarian plural suffixes attach to the whole stem",
-        "the final -k is dropped first",
-        "gyerek is an exception with no plural"
-      ],
-      "correct": 0,
-      "teaches": [
-        "plural-nouns-k"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-38-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A ____ együtt vannak.",
-      "hint": "the families",
-      "english": "The families are together.",
+      "sentence": "A ____ ott vannak.",
+      "hint": "család, plural",
+      "english": "The families are there.",
       "answer": "családok",
       "teaches": [
         "plural-nouns-k"
@@ -135,36 +87,94 @@
       "stage": "controlled"
     },
     {
-      "id": "a1-38-practice-1",
+      "id": "a1-38-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly says \"The children are here\"?",
+      "question": "Which phrase means \"the small chairs\"?",
       "options": [
-        "A gyerekek itt vannak.",
-        "A gyerek itt van vannak.",
-        "Gyerekek itt van."
+        "a kicsik székek",
+        "a kicsi székek",
+        "a kicsi szék"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "plural-nouns-k"
+        "adjective-order-before-the-noun"
       ],
-      "stage": "practice"
+      "stage": "controlled"
     },
     {
-      "id": "a1-38-practice-2",
-      "type": "fill-blank",
+      "id": "a1-38-practice-1",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "sentence": "A család ____.",
-      "hint": "big",
-      "english": "The family is big.",
-      "answer": "nagy",
+      "question": "Which word means \"family\"?",
+      "options": [
+        "gyerek",
+        "ember",
+        "család"
+      ],
+      "correct": 2,
       "teaches": [
         "a1-plurals-quantities-vocab"
       ],
       "stage": "practice"
     },
     {
+      "id": "a1-38-practice-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "A ____ asztalok itt vannak.",
+      "hint": "big",
+      "english": "The big tables are here.",
+      "answer": "nagy",
+      "teaches": [
+        "adjective-order-before-the-noun"
+      ],
+      "stage": "practice"
+    },
+    {
       "id": "a1-38-practice-3",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "székek",
+        "itt",
+        "vannak",
+        ".",
+        "A",
+        "kicsi"
+      ],
+      "solution": [
+        "A",
+        "kicsi",
+        "székek",
+        "itt",
+        "vannak",
+        "."
+      ],
+      "english": "The small chairs are here.",
+      "teaches": [
+        "adjective-order-before-the-noun"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a1-38-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which word means \"women\"?",
+      "options": [
+        "nőek",
+        "nők",
+        "nőök"
+      ],
+      "correct": 1,
+      "teaches": [
+        "plural-nouns-k"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a1-38-practice-5",
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
@@ -177,93 +187,16 @@
           "The people are together."
         ],
         [
-          "A család nagy.",
-          "The family is big."
+          "A nagy asztalok.",
+          "The big tables."
         ],
         [
-          "Sok gyerek van.",
-          "There are many children."
+          "A családok ott vannak.",
+          "The families are there."
         ]
       ],
       "teaches": [
         "a1-plurals-quantities-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-38-practice-4",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "A",
-        "gyerekek",
-        "itt",
-        "vannak",
-        "."
-      ],
-      "solution": [
-        "A",
-        "gyerekek",
-        "itt",
-        "vannak",
-        "."
-      ],
-      "english": "The children are here.",
-      "teaches": [
-        "plural-nouns-k"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-38-practice-5",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which question gets the reply \"Igen, nagy a családom.\"?",
-      "options": [
-        "Nagy a családod?",
-        "Igen, nagy.",
-        "Hol vannak a gyerekek?",
-        "A gyerekek itt vannak."
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-38-practice-6",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "In \"a nagy asztalok\", which word stays unchanged in front of the plural noun?",
-      "options": [
-        "nagy (the adjective)",
-        "gyerek",
-        "ember"
-      ],
-      "correct": 0,
-      "teaches": [
-        "adjective-order-before-the-noun"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-38-practice-7",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "A gyerekek itt vannak.",
-      "base_word": "gyerekek",
-      "base_gloss": "The children are here.",
-      "options": [
-        {
-          "word": "ember",
-          "inflected": "emberek",
-          "sentence": "Az emberek itt vannak.",
-          "gloss": "people"
-        }
-      ],
-      "teaches": [
-        "plural-nouns-k"
       ],
       "stage": "practice"
     },
@@ -274,7 +207,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Nagy a családod?"
+          "text": "Hol vannak a székek?"
         },
         {
           "speaker": "Károly",
@@ -282,13 +215,14 @@
         }
       ],
       "options": [
-        "Igen, nagy a családom.",
-        "Igen, nagy család van."
+        "A kicsik székek ott vannak.",
+        "A kicsi székek ott vannak."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "possessive-suffixes"
-      ]
+        "adjective-order-before-the-noun"
+      ],
+      "stage": "dialogue"
     },
     {
       "id": "a1-38-dialogue-2",
@@ -297,7 +231,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Hol vannak a gyerekek?"
+          "text": "Az emberek együtt vannak?"
         },
         {
           "speaker": "Károly",
@@ -305,55 +239,71 @@
         }
       ],
       "options": [
-        "A gyerekek itt vannak.",
-        "A gyerek itt van vannak."
+        "Igen, együtt vannak.",
+        "Igen, együtt van."
       ],
       "correct": 0,
       "teaches": [
-        "plural-nouns-k"
-      ]
+        "egyutt-together"
+      ],
+      "stage": "dialogue"
     },
     {
-      "id": "a1-38-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"The family is big.\" in Hungarian.",
-          "answer": "A család nagy."
-        }
+      "id": "a1-38-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "együtt",
+        "vannak",
+        ".",
+        "Az",
+        "emberek"
       ],
-      "teaches": [
-        "van-zero-copula"
-      ]
-    },
-    {
-      "id": "a1-38-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"The children are together.\" in Hungarian.",
-          "answer": "A gyerekek együtt vannak."
-        }
+      "solution": [
+        "Az",
+        "emberek",
+        "együtt",
+        "vannak",
+        "."
       ],
+      "english": "The people are together.",
       "teaches": [
         "egyutt-together"
-      ]
+      ],
+      "stage": "production"
+    },
+    {
+      "id": "a1-38-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say \"The small chairs are there.\"",
+          "answer": "A kicsi székek ott vannak."
+        },
+        {
+          "prompt": "Say \"The big tables are here.\"",
+          "answer": "A nagy asztalok itt vannak."
+        }
+      ],
+      "teaches": [
+        "adjective-order-before-the-noun"
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-38-check-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"family\"?",
+      "category": "grammar",
+      "question": "Which word means \"families\"?",
       "options": [
-        "család",
-        "gyerek",
-        "ember"
+        "családk",
+        "családok",
+        "családek"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "a1-plurals-quantities-vocab"
+        "plural-nouns-k"
       ],
       "stage": "check"
     },
@@ -361,15 +311,15 @@
       "id": "a1-38-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"The people are together\"?",
+      "question": "Which phrase means \"the big windows\"?",
       "options": [
-        "Az emberek együtt vannak.",
-        "Az ember együtt van.",
-        "Emberek együtt van."
+        "a nagy ablak",
+        "a nagyok ablakok",
+        "a nagy ablakok"
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "egyutt-together"
+        "adjective-order-before-the-noun"
       ],
       "stage": "check"
     }

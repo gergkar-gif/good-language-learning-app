@@ -2,66 +2,33 @@
   "lesson": "a1-40",
   "exercises": [
     {
-      "id": "a1-40-review-1",
+      "id": "a1-40-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
       "question": "Which word means \"all\"?",
       "options": [
-        "mind",
-        "néhány",
-        "sok"
+        "több",
+        "sok",
+        "mind"
       ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ]
-    },
-    {
-      "id": "a1-40-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "How do you say \"There are many books\"?",
-      "options": [
-        "Sok könyv van.",
-        "Sok könyvek van.",
-        "Könyv sok van."
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "singular-after-numbers"
-      ]
-    },
-    {
-      "id": "a1-40-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"all\"?",
-      "options": [
-        "mind",
-        "néhány",
-        "több"
-      ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
         "a1-plurals-quantities-vocab"
       ],
       "stage": "introduce"
     },
     {
-      "id": "a1-40-intro-2",
+      "id": "a1-40-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"a few / some\"?",
+      "category": "grammar",
+      "question": "Which sentence means \"A few chairs are here.\"?",
       "options": [
-        "néhány",
-        "mind",
-        "sok"
+        "Néhány székek vannak itt.",
+        "Néhány szék van itt."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "a1-plurals-quantities-vocab"
+        "singular-after-numbers"
       ],
       "stage": "introduce"
     },
@@ -72,7 +39,7 @@
       "pairs": [
         [
           "néhány",
-          "a few / some"
+          "a few"
         ],
         [
           "mind",
@@ -80,11 +47,15 @@
         ],
         [
           "több",
-          "more / several"
+          "more"
         ],
         [
           "együtt",
           "together"
+        ],
+        [
+          "kell",
+          "is needed"
         ]
       ],
       "teaches": [
@@ -94,6 +65,19 @@
     },
     {
       "id": "a1-40-controlled-2",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "sentence": "____ szék van itt.",
+      "hint": "a few",
+      "english": "A few chairs are here.",
+      "answer": "néhány",
+      "teaches": [
+        "a1-plurals-quantities-vocab"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a1-40-controlled-3",
       "type": "fill-blank",
       "category": "vocabulary",
       "sentence": "A barátok ____ itt vannak.",
@@ -106,29 +90,13 @@
       "stage": "controlled"
     },
     {
-      "id": "a1-40-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which quantity word pairs with a plural noun, unlike sok/néhány/több?",
-      "options": [
-        "mind",
-        "sok",
-        "néhány"
-      ],
-      "correct": 0,
-      "teaches": [
-        "singular-after-numbers"
-      ],
-      "stage": "controlled"
-    },
-    {
       "id": "a1-40-controlled-4",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A gyerekek ____ vannak.",
-      "hint": "together",
-      "english": "The children are together.",
-      "answer": "együtt",
+      "sentence": "Több szék ____.",
+      "hint": "is needed",
+      "english": "More chairs are needed.",
+      "answer": "kell",
       "teaches": [
         "a1-plurals-quantities-vocab"
       ],
@@ -138,47 +106,91 @@
       "id": "a1-40-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly says \"The friends are all here\"?",
+      "question": "Which sentence means \"More books are here.\"?",
       "options": [
-        "A barátok mind itt vannak.",
-        "A barátok mindek itt vannak.",
-        "Barátok mind van itt."
+        "Több könyvek vannak itt.",
+        "Több könyv van itt."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "plural-nouns-k"
+        "singular-after-numbers"
       ],
       "stage": "practice"
     },
     {
       "id": "a1-40-practice-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence means \"The children are all here.\"?",
+      "options": [
+        "A gyerek mind itt vannak.",
+        "A gyerekek mind itt van.",
+        "A gyerekek mind itt vannak."
+      ],
+      "correct": 2,
+      "teaches": [
+        "egyutt-together"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a1-40-practice-3",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "mind",
+        "együtt",
+        "vannak",
+        ".",
+        "A",
+        "gyerekek"
+      ],
+      "solution": [
+        "A",
+        "gyerekek",
+        "mind",
+        "együtt",
+        "vannak",
+        "."
+      ],
+      "english": "The children are all together.",
+      "teaches": [
+        "egyutt-together"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a1-40-practice-4",
+      "type": "multiple-choice",
       "category": "vocabulary",
-      "sentence": "____ könyv van az asztalon.",
-      "hint": "a few",
-      "english": "There are a few books on the table.",
-      "answer": "Néhány",
+      "question": "Which sentence means \"More chairs are needed.\"?",
+      "options": [
+        "Sok szék kell.",
+        "Néhány szék kell.",
+        "Több szék kell."
+      ],
+      "correct": 2,
       "teaches": [
         "a1-plurals-quantities-vocab"
       ],
       "stage": "practice"
     },
     {
-      "id": "a1-40-practice-3",
+      "id": "a1-40-practice-5",
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
         [
+          "Néhány szék van itt.",
+          "A few chairs are here."
+        ],
+        [
+          "Több könyv van itt.",
+          "More books are here."
+        ],
+        [
           "A barátok mind itt vannak.",
           "The friends are all here."
-        ],
-        [
-          "A gyerekek együtt vannak.",
-          "The children are together."
-        ],
-        [
-          "Néhány könyv van.",
-          "There are a few books."
         ],
         [
           "Több szék kell.",
@@ -191,83 +203,43 @@
       "stage": "practice"
     },
     {
-      "id": "a1-40-practice-4",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "A",
-        "barátok",
-        "mind",
-        "itt",
-        "vannak",
-        "."
-      ],
-      "solution": [
-        "A",
-        "barátok",
-        "mind",
-        "itt",
-        "vannak",
-        "."
-      ],
-      "english": "The friends are all here.",
-      "teaches": [
-        "plural-nouns-k"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-40-practice-5",
+      "id": "a1-40-reading-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which question gets the reply \"Igen, mind itt vannak.\"?",
+      "category": "reading",
+      "question": "What does Meg say there are only a few of?",
       "options": [
-        "Mind itt vannak a barátok?",
-        "Igen, mind itt vannak.",
-        "Hol vannak a gyerekek?",
-        "A gyerekek együtt vannak."
+        "Tables",
+        "Chairs",
+        "Books"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ],
-      "stage": "practice"
+      "correct": 1,
+      "stage": "reading"
     },
     {
-      "id": "a1-40-practice-6",
+      "id": "a1-40-reading-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"more / several\"?",
+      "category": "reading",
+      "question": "Which books does Károly point out?",
       "options": [
-        "több",
-        "mind",
-        "néhány"
+        "The big books and the small books",
+        "The new books and the old books",
+        "The few books and the many books"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-plurals-quantities-vocab"
-      ],
-      "stage": "practice"
+      "correct": 1,
+      "stage": "reading"
     },
     {
-      "id": "a1-40-practice-7",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "A barátok mind itt vannak.",
-      "base_word": "barátok",
-      "base_gloss": "The friends are all here.",
+      "id": "a1-40-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "What does Károly add after Meg asks for more chairs?",
       "options": [
-        {
-          "word": "gyerek",
-          "inflected": "gyerekek",
-          "sentence": "A gyerekek mind itt vannak.",
-          "gloss": "children"
-        }
+        "The children are outside.",
+        "The family is here too.",
+        "The friends have left."
       ],
-      "teaches": [
-        "plural-nouns-k"
-      ],
-      "stage": "practice"
+      "correct": 1,
+      "stage": "reading"
     },
     {
       "id": "a1-40-dialogue-1",
@@ -276,7 +248,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mind itt vannak a barátok?"
+          "text": "Kell szék?"
         },
         {
           "speaker": "Károly",
@@ -284,13 +256,14 @@
         }
       ],
       "options": [
-        "Igen, mind itt vannak.",
-        "Igen, mind van itt."
+        "Igen, több székek kell.",
+        "Igen, több szék kell."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "egyutt-together"
-      ]
+        "singular-after-numbers"
+      ],
+      "stage": "dialogue"
     },
     {
       "id": "a1-40-dialogue-2",
@@ -299,7 +272,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Együtt vannak a gyerekek?"
+          "text": "Itt vannak a barátok?"
         },
         {
           "speaker": "Károly",
@@ -307,49 +280,65 @@
         }
       ],
       "options": [
-        "Igen, a gyerekek együtt vannak.",
-        "Igen, gyerekek együtt van."
+        "Igen, mind itt van.",
+        "Igen, mind itt vannak."
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
         "egyutt-together"
-      ]
+      ],
+      "stage": "dialogue"
     },
     {
-      "id": "a1-40-writing-1",
+      "id": "a1-40-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "van",
+        "itt",
+        ".",
+        "Több",
+        "könyv"
+      ],
+      "solution": [
+        "Több",
+        "könyv",
+        "van",
+        "itt",
+        "."
+      ],
+      "english": "There are more books here.",
+      "teaches": [
+        "singular-after-numbers"
+      ],
+      "stage": "production"
+    },
+    {
+      "id": "a1-40-production-2",
       "type": "structured-writing",
       "category": "writing",
       "template": [
         {
-          "prompt": "Say \"The friends are all here.\" in Hungarian.",
-          "answer": "A barátok mind itt vannak."
-        }
-      ],
-      "teaches": [
-        "plural-nouns-k"
-      ]
-    },
-    {
-      "id": "a1-40-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
+          "prompt": "Say \"A few chairs are here.\"",
+          "answer": "Néhány szék van itt."
+        },
         {
-          "prompt": "Say \"The friends are together.\" in Hungarian.",
-          "answer": "A barátok együtt vannak."
+          "prompt": "Say \"A few friends are here.\"",
+          "answer": "Néhány barát van itt."
         }
       ],
       "teaches": [
-        "egyutt-together"
-      ]
+        "singular-after-numbers"
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-40-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"together\"?",
+      "question": "Which word means \"a few\"?",
       "options": [
-        "együtt",
+        "néhány",
         "mind",
         "több"
       ],
@@ -363,15 +352,15 @@
       "id": "a1-40-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"The friends are all here\"?",
+      "question": "Which sentence means \"The friends are all here.\"?",
       "options": [
-        "A barátok mind itt vannak.",
-        "A barát mind itt van.",
-        "Barátok mind van."
+        "A barát mind itt vannak.",
+        "A barátok mind itt van.",
+        "A barátok mind itt vannak."
       ],
-      "correct": 0,
+      "correct": 2,
       "teaches": [
-        "plural-nouns-k"
+        "egyutt-together"
       ],
       "stage": "check"
     }

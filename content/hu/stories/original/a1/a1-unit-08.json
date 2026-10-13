@@ -11,7 +11,7 @@
     {
       "type": "narration",
       "lang": "en",
-      "text": "Károly and Meg are at a small gathering with friends and family."
+      "text": "Károly and Meg are at a gathering with friends and family. The room is full."
     },
     {
       "type": "dialogue",
@@ -26,7 +26,7 @@
     {
       "type": "narration",
       "lang": "en",
-      "text": "There are books, tables, chairs, windows and doors around the room."
+      "text": "They look at the things in the room."
     },
     {
       "type": "dialogue",
@@ -36,12 +36,17 @@
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "A székek az ablakok mellett vannak."
+      "text": "A székek ott vannak. Az ajtók kicsik."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Az ablakok nagyok."
     },
     {
       "type": "narration",
       "lang": "en",
-      "text": "Meg sees several friends and children. The families are together."
+      "text": "The friends and the children have arrived."
     },
     {
       "type": "dialogue",
@@ -51,12 +56,22 @@
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Igen, az emberek együtt vannak."
+      "text": "Igen, az emberek mind együtt vannak."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Hány gyerek van itt?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Károly",
+      "text": "Hat gyerek van itt."
     },
     {
       "type": "narration",
       "lang": "en",
-      "text": "Some things are big, some are small. Some objects are new and some are old."
+      "text": "Some things are big, some are small, some are new and some are old."
     },
     {
       "type": "dialogue",
@@ -71,64 +86,56 @@
     {
       "type": "narration",
       "lang": "en",
-      "text": "There are a few empty chairs and several new books. Everyone is looking at the room."
+      "text": "Meg counts the chairs."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Néhány szék üres. Több könyv van az asztalon."
+      "text": "Néhány szék van itt. Több szék kell."
     },
     {
       "type": "dialogue",
       "speaker": "Károly",
-      "text": "Mind együtt vagyunk."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Károly",
-      "text": "A család is itt van."
+      "text": "Igen, több szék kell. A család is itt van."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Az ajtók nyitva vannak."
+      "text": "Sok barát van itt. Szép csoport!"
     }
   ],
   "narration": {
     "pedagogical": {
       "comprehensionQuestions": [
         {
-          "question": "Milyen eseményen vesz részt Meg és Károly?",
+          "question": "Where are Károly and Meg?",
           "options": [
-            "Egy orvosi vizsgálaton a rendelőben",
-            "Egy egyetemi nyelvvizsgán",
-            "Egy baráti és családi összejövetelen",
-            "Egy filmforgatáson a belvárosban"
-          ],
-          "correctIndex": 2,
-          "explanation": "Károly és Meg egy csoportos összejövetelen vannak barátokkal és családdal (They are at a small gathering with friends and family)."
-        },
-        {
-          "question": "Hol helyezkednek el a székek a teremben?",
-          "options": [
-            "Az ablakok mellett",
-            "A bejárati ajtó előtt",
-            "A kertben a fák alatt",
-            "Az asztalok tetején"
+            "At a gathering of friends and family",
+            "In a shop full of books",
+            "At a school with many children"
           ],
           "correctIndex": 0,
-          "explanation": "Károly mondja: „A székek az ablakok mellett vannak” (The chairs are next to the windows)."
+          "explanation": "The narration says Károly and Meg are at a gathering with friends and family, and Károly says Sok ember van itt (There are many people here)."
         },
         {
-          "question": "Mit lát Meg az asztalon?",
+          "question": "What does Meg say is needed?",
           "options": [
-            "Csak poharakat és kávét",
-            "Több könyvet",
-            "Egy laptopot és telefonokat",
-            "Egy régi újságot"
+            "More tables",
+            "More chairs",
+            "More windows"
           ],
           "correctIndex": 1,
-          "explanation": "Meg megjegyzi: „Több könyv van az asztalon” (There are several books on the table)."
+          "explanation": "Meg says Néhány szék van itt. Több szék kell. (A few chairs are here. More chairs are needed.)"
+        },
+        {
+          "question": "Who is together, according to Meg?",
+          "options": [
+            "The friends and the children",
+            "The books and the tables",
+            "The doors and the windows"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg says A barátok és a gyerekek együtt vannak. (The friends and the children are together.)"
         }
       ]
     }
