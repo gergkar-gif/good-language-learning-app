@@ -2,315 +2,199 @@
   "lesson": "a1-97",
   "exercises": [
     {
-      "id": "a1-97-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"beside, next to\"?",
-      "options": [
-        "mellett",
-        "haza",
-        "bolt"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ]
-    },
-    {
-      "id": "a1-97-review-2",
+      "id": "a1-97-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"He/she goes to school\"?",
-      "options": [
-        "Az iskolába megy.",
-        "Az iskola megy.",
-        "Iskolába van megy."
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "movement-with-ba-be"
-      ]
+        "present-tense-routine-language"
+      ],
+      "question": "Which form means “I read”?",
+      "options": [
+        "olvasol",
+        "olvasok",
+        "olvas"
+      ],
+      "correct": 1
     },
     {
-      "id": "a1-97-intro-1",
+      "id": "a1-97-introduce-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"he/she works\"?",
-      "options": [
-        "dolgozik",
-        "tanul",
-        "megy"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-97-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"he/she studies\"?",
+      "question": "Which means “I work”?",
       "options": [
-        "tanul",
-        "dolgozik",
-        "jön"
+        "Dolgozok.",
+        "Dolgozik.",
+        "Dolgozom."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 2
     },
     {
       "id": "a1-97-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "dolgozik",
-          "he/she works"
-        ],
-        [
-          "tanul",
-          "he/she studies"
-        ],
-        [
-          "megy",
-          "he/she goes"
-        ],
-        [
-          "jön",
-          "he/she comes"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "controlled"
+      "sentence": "Ti délután ____?",
+      "hint": "tanul",
+      "english": "Do you all study in the afternoon?",
+      "answer": "tanultok"
     },
     {
       "id": "a1-97-controlled-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "András ____, Anna tanul.",
-      "hint": "works",
-      "english": "András works, Anna studies.",
-      "answer": "dolgozik",
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-97-controlled-3",
-      "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which is the correct 1st-person form of dolgozik?",
-      "options": [
-        "dolgozom",
-        "dolgozok",
-        "dolgozon"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
         "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "distractor_skills": {
-        "1": "present-tense-routine-language"
-      },
-      "stage": "controlled"
+      "sentence": "Hétfőn nem ____.",
+      "hint": "dolgozik, I",
+      "english": "On Monday I do not work.",
+      "answer": "dolgozom"
+    },
+    {
+      "id": "a1-97-controlled-3",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-everyday-hungarian-review-vocab"
+      ],
+      "pairs": [
+        [
+          "olvas",
+          "to read"
+        ],
+        [
+          "tanul",
+          "to study"
+        ],
+        [
+          "főz",
+          "to cook"
+        ],
+        [
+          "sétál",
+          "to walk"
+        ],
+        [
+          "jön",
+          "to come"
+        ]
+      ]
     },
     {
       "id": "a1-97-controlled-4",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "András ____ velünk.",
-      "hint": "comes",
-      "english": "András comes with us.",
-      "answer": "jön",
+      "stage": "controlled",
       "teaches": [
-        "megy-jon"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-97-controlled-5",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is the correct \"we\" form of dolgozik?",
-      "options": [
-        "dolgozunk",
-        "dolgoztok",
-        "dolgoznak"
+      "tiles": [
+        "Reggel",
+        "reggelizem",
+        "."
       ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
+      "solution": [
+        "Reggel",
+        "reggelizem",
+        "."
       ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-97-controlled-6",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Mi is ____ a projekten.",
-      "hint": "work",
-      "english": "We are also working on the project.",
-      "answer": "dolgozunk",
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-97-controlled-7",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is the correct \"they\" form of dolgozik?",
-      "options": [
-        "dolgoznak",
-        "dolgozunk",
-        "dolgozik"
-      ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-97-controlled-8",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Ti is ____ ma?",
-      "hint": "work",
-      "english": "Are you also working today?",
-      "answer": "dolgoztok",
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "stage": "controlled"
+      "english": "I have breakfast in the morning."
     },
     {
       "id": "a1-97-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word does NOT take -ba/-be, unlike a normal destination noun?",
-      "options": [
-        "haza",
-        "iskola",
-        "bolt"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
-        "movement-with-ba-be"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "practice"
+      "question": "Which means “Anna and Károly are working”?",
+      "options": [
+        "Anna és Károly dolgozunk.",
+        "Anna és Károly dolgoznak.",
+        "Anna és Károly dolgozol."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-97-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Együtt megyünk ____.",
-      "hint": "home",
-      "english": "We go home together.",
-      "answer": "haza",
+      "stage": "practice",
       "teaches": [
-        "movement-with-ba-be"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "practice"
+      "sentence": "Reggel teát ____.",
+      "hint": "iszik, I",
+      "english": "In the morning I drink tea.",
+      "answer": "iszom"
     },
     {
       "id": "a1-97-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Én mindig reggel dolgozom.",
-          "I always work in the morning."
-        ],
-        [
-          "András dolgozik, Anna tanul.",
-          "András works, Anna studies."
-        ],
-        [
-          "Utána megyünk az iskolába.",
-          "After that we go to school."
-        ],
-        [
-          "András jön velünk.",
-          "András comes with us."
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "subject-pronouns-omission"
       ],
-      "stage": "practice"
+      "question": "Meg says: “Tanulok.” Who is studying?",
+      "options": [
+        "Meg",
+        "Anna",
+        "Károly"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-97-practice-4",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "András",
-        "dolgozik",
-        ",",
-        "Anna",
-        "tanul",
-        "."
-      ],
-      "solution": [
-        "András",
-        "dolgozik",
-        ",",
-        "Anna",
-        "tanul",
-        "."
-      ],
-      "english": "András works, Anna studies.",
+      "stage": "practice",
       "teaches": [
-        "present-tense-routine-language"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "practice"
+      "sentence": "Károly nem ____.",
+      "english": "Károly does not work.",
+      "answer": "dolgozik"
     },
     {
       "id": "a1-97-practice-5",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "András dolgozik.",
-      "base_word": "dolgozik",
-      "base_gloss": "András works.",
-      "options": [
-        {
-          "word": "tanul",
-          "inflected": "tanul",
-          "sentence": "András tanul.",
-          "gloss": "studies"
-        },
-        {
-          "word": "jön",
-          "inflected": "jön",
-          "sentence": "András jön.",
-          "gloss": "comes"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-everyday-hungarian-review-vocab"
       ],
-      "stage": "practice"
+      "question": "What does “válaszol” mean?",
+      "options": [
+        "to ask",
+        "to dance",
+        "to answer"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-97-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Ki dolgozik?"
+          "text": "Olvasol?"
         },
         {
           "speaker": "Károly",
@@ -318,112 +202,108 @@
         }
       ],
       "options": [
-        "András dolgozik, Anna tanul.",
-        "András dolgozik van."
+        "Igen, olvasol.",
+        "Igen, olvasok.",
+        "Igen, olvasek."
       ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-97-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ik-verbs-dolgozom-not-dolgozok"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "András jön velünk?"
+          "speaker": "Anna",
+          "text": "Hol dolgozol?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, András jön velünk.",
-        "Igen, András van jön velünk."
+        "A boltban dolgozom.",
+        "A boltban dolgozok.",
+        "A boltban dolgozik."
       ],
-      "correct": 0,
-      "teaches": [
-        "megy-jon"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-97-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"I always work in the morning.\" in Hungarian.",
-          "answer": "Én mindig reggel dolgozom."
-        }
-      ],
+      "id": "a1-97-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "ik-verbs-dolgozom-not-dolgozok"
-      ]
+        "present-tense-routine-language"
+      ],
+      "tiles": [
+        "Délután",
+        "a",
+        "parkban",
+        "sétálunk",
+        "."
+      ],
+      "solution": [
+        "Délután",
+        "a",
+        "parkban",
+        "sétálunk",
+        "."
+      ],
+      "english": "In the afternoon we walk in the park."
     },
     {
-      "id": "a1-97-writing-2",
+      "id": "a1-97-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-everyday-hungarian-review-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say \"After the meeting we go home together.\" in Hungarian.",
-          "answer": "A találkozó után együtt megyünk haza."
+          "prompt": "Say that you work in the shop.",
+          "answer": "A boltban dolgozom."
+        },
+        {
+          "prompt": "Say that you do not cook.",
+          "answer": "Nem főzök."
         }
-      ],
-      "teaches": [
-        "megy-jon"
       ]
     },
     {
       "id": "a1-97-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"he/she goes\"?",
-      "options": [
-        "megy",
-        "jön",
-        "dolgozik"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "check"
+      "sentence": "Meg és Anna a kertben ____.",
+      "hint": "sétál",
+      "english": "Meg and Anna walk in the garden.",
+      "answer": "sétálnak"
     },
     {
       "id": "a1-97-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"After that we go to school\"?",
-      "options": [
-        "Utána megyünk az iskolába.",
-        "Utána megyünk az iskola.",
-        "Az iskolába utána megyünk van."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "movement-with-ba-be"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "check"
-    },
-    {
-      "id": "a1-97-check-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which word means \"we work\"?",
+      "question": "Which means “I have breakfast at home”?",
       "options": [
-        "dolgozunk",
-        "dolgoztok",
-        "dolgoznak"
+        "Otthon reggelizek.",
+        "Otthon reggelizem.",
+        "Otthon reggelizik."
       ],
-      "correct": 0,
-      "teaches": [
-        "present-tense-routine-language"
-      ],
-      "stage": "check"
+      "correct": 1
     }
   ]
 }

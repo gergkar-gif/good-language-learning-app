@@ -2,346 +2,307 @@
   "lesson": "a1-98",
   "exercises": [
     {
-      "id": "a1-98-review-1",
+      "id": "a1-98-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"morning\"?",
-      "options": [
-        "reggel",
-        "hétfő",
-        "délben"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-everyday-hungarian-review-vocab"
-      ]
+      ],
+      "question": "Which question asks what time it is?",
+      "options": [
+        "Milyen nap van ma?",
+        "Hány óra van?",
+        "Hány éves vagy?"
+      ],
+      "correct": 1
     },
     {
-      "id": "a1-98-review-2",
+      "id": "a1-98-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"Anna comes with us on Monday\"?",
-      "options": [
-        "Anna hétfőn jön velünk.",
-        "Anna hétfőn jön van velünk.",
-        "Velünk hétfőn Anna jön van."
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "megy-jon"
-      ]
-    },
-    {
-      "id": "a1-98-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"Monday\"?",
+        "fractions"
+      ],
+      "question": "Which means “It is half past nine”?",
       "options": [
-        "hétfő",
-        "reggel",
-        "mindig"
+        "Fél kilenc van.",
+        "Negyed tíz van.",
+        "Fél tíz van."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-98-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"always\"?",
-      "options": [
-        "mindig",
-        "néha",
-        "hétfő"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 2
     },
     {
       "id": "a1-98-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "on-en-on"
+      ],
+      "sentence": "____ pihenek.",
+      "english": "On Saturday I rest.",
+      "answer": "Szombaton"
+    },
+    {
+      "id": "a1-98-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "ban-ben-in"
+      ],
+      "sentence": "____ a parkban sétálunk.",
+      "english": "In July we walk in the park.",
+      "answer": "Júliusban"
+    },
+    {
+      "id": "a1-98-controlled-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-everyday-hungarian-review-vocab"
+      ],
       "pairs": [
-        [
-          "hétfő",
-          "Monday"
-        ],
-        [
-          "reggel",
-          "morning"
-        ],
         [
           "mindig",
           "always"
         ],
         [
-          "néha",
-          "sometimes"
+          "ritkán",
+          "rarely"
+        ],
+        [
+          "korán",
+          "early"
+        ],
+        [
+          "későn",
+          "late"
+        ],
+        [
+          "mindennap",
+          "every day"
         ]
-      ],
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-98-controlled-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ reggel otthon vagyunk.",
-      "hint": "on Monday",
-      "english": "On Monday morning we are at home.",
-      "answer": "Hétfőn",
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-98-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which suffix marks \"on\" a day of the week?",
-      "options": [
-        "-n",
-        "-ban",
-        "-ra"
-      ],
-      "correct": 0,
-      "teaches": [
-        "on-en-on"
-      ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-98-controlled-4",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Én mindig reggel dolgozom, de ____ otthon tanulok.",
-      "hint": "sometimes",
-      "english": "I always work in the morning, but sometimes I study at home.",
-      "answer": "néha",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "on-en-on"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Pénteken",
+        "este",
+        "főzünk",
+        "."
+      ],
+      "solution": [
+        "Pénteken",
+        "este",
+        "főzünk",
+        "."
+      ],
+      "english": "On Friday evening we cook."
     },
     {
       "id": "a1-98-practice-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"tomorrow\"?",
-      "options": [
-        "holnap",
-        "hétfő",
-        "reggel"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "mindig-and-gyakran-frequency-adverbs"
       ],
-      "stage": "practice"
+      "question": "Which means “I rarely read”?",
+      "options": [
+        "Gyakran olvasok.",
+        "Ritkán olvasok.",
+        "Néha olvasok."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-98-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ is találkozunk.",
-      "hint": "tomorrow",
-      "english": "We're meeting tomorrow too.",
-      "answer": "Holnap",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "szokott-infinitive-habitual-actions"
       ],
-      "stage": "practice"
+      "sentence": "Reggel ____ olvasni.",
+      "hint": "szokott, I",
+      "english": "In the morning I usually read.",
+      "answer": "szoktam"
     },
     {
       "id": "a1-98-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Hétfőn reggel otthon vagyunk.",
-          "On Monday morning we are at home."
-        ],
-        [
-          "Én mindig reggel dolgozom.",
-          "I always work in the morning."
-        ],
-        [
-          "De néha otthon tanulok.",
-          "But sometimes I study at home."
-        ],
-        [
-          "Holnap is találkozunk.",
-          "Tomorrow we also meet."
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "soha-needs-nem-negative-concord"
       ],
-      "stage": "practice"
+      "question": "Which means “Anna never cooks”?",
+      "options": [
+        "Anna soha nem főz.",
+        "Anna soha főz.",
+        "Anna nem soha főz."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-98-practice-4",
-      "type": "sentence-builder",
-      "category": "vocabulary",
-      "tiles": [
-        "Hétfőn",
-        "reggel",
-        "otthon",
-        "vagyunk",
-        "."
-      ],
-      "solution": [
-        "Hétfőn",
-        "reggel",
-        "otthon",
-        "vagyunk",
-        "."
-      ],
-      "english": "On Monday morning we are at home.",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "is-placing-also-too"
       ],
-      "stage": "practice"
+      "sentence": "Anna olvas, és Meg ____ olvas.",
+      "english": "Anna reads, and Meg reads too.",
+      "answer": "is"
     },
     {
       "id": "a1-98-practice-5",
-      "type": "substitution",
-      "category": "vocabulary",
-      "base_sentence": "Én mindig reggel dolgozom.",
-      "base_word": "mindig",
-      "base_gloss": "I always work in the morning.",
-      "options": [
-        {
-          "word": "néha",
-          "inflected": "néha",
-          "sentence": "Én néha reggel dolgozom.",
-          "gloss": "sometimes"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "temporal-postpositions"
       ],
-      "stage": "practice"
+      "question": "Which means “after lunch”?",
+      "options": [
+        "után ebéd",
+        "ebéd után",
+        "ebéd előtt"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-98-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "soha-needs-nem-negative-concord"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mindig otthon vagytok hétfőn?"
+          "speaker": "Károly",
+          "text": "Milyen gyakran főzöl?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, hétfőn reggel otthon vagyunk.",
-        "Igen, hétfő reggel otthon van."
+        "Soha főzök.",
+        "Soha nem főzök.",
+        "Nem soha főzök."
       ],
-      "correct": 0,
-      "teaches": [
-        "van-zero-copula"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-98-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "fractions"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Holnap is találkozunk?"
+          "speaker": "Károly",
+          "text": "Negyed kilenc van?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, holnap is találkozunk.",
-        "Igen, holnap van találkozunk."
+        "Igen, negyed kilenc van.",
+        "Igen, fél kilenc van.",
+        "Nem, negyed kilenc van."
       ],
-      "correct": 0,
-      "teaches": [
-        "is-placing-also-too"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-98-writing-1",
+      "id": "a1-98-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
+      "teaches": [
+        "mindig-and-gyakran-frequency-adverbs"
+      ],
+      "tiles": [
+        "Hétfőn",
+        "reggel",
+        "mindig",
+        "olvasok",
+        "."
+      ],
+      "solution": [
+        "Hétfőn",
+        "reggel",
+        "mindig",
+        "olvasok",
+        "."
+      ],
+      "english": "On Monday morning I always read."
+    },
+    {
+      "id": "a1-98-production-2",
       "type": "structured-writing",
       "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"On Monday morning we are at home.\" in Hungarian.",
-          "answer": "Hétfőn reggel otthon vagyunk."
-        }
-      ],
+      "stage": "production",
       "teaches": [
         "a1-everyday-hungarian-review-vocab"
-      ]
-    },
-    {
-      "id": "a1-98-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
+      ],
       "template": [
         {
-          "prompt": "Say \"Tomorrow we also meet.\" in Hungarian.",
-          "answer": "Holnap is találkozunk."
+          "prompt": "Say that it is half past seven.",
+          "answer": "Fél nyolc van."
+        },
+        {
+          "prompt": "Say that you rest on Saturday.",
+          "answer": "Szombaton pihenek."
         }
-      ],
-      "teaches": [
-        "is-placing-also-too"
       ]
     },
     {
       "id": "a1-98-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"sometimes\"?",
-      "options": [
-        "néha",
-        "mindig",
-        "soha"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "ban-ben-in"
       ],
-      "stage": "check"
+      "sentence": "____ otthon főzünk.",
+      "english": "In December we cook at home.",
+      "answer": "Decemberben"
     },
     {
       "id": "a1-98-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"I always work in the morning, but sometimes I study at home\"?",
-      "options": [
-        "Én mindig reggel dolgozom, de néha otthon tanulok.",
-        "Én mindig reggel dolgozom, néha de otthon tanulok.",
-        "Mindig dolgozom reggel én, de néha tanulok otthon."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "mindig-and-gyakran-frequency-adverbs"
+        "fractions"
       ],
-      "stage": "check"
+      "question": "Which means “It is 7:45”?",
+      "options": [
+        "Háromnegyed hét van.",
+        "Háromnegyed nyolc van.",
+        "Negyed nyolc van."
+      ],
+      "correct": 1
     }
   ]
 }

@@ -2,249 +2,241 @@
   "lesson": "a1-100",
   "exercises": [
     {
-      "id": "a1-100-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"tomorrow\"?",
-      "options": [
-        "holnap",
-        "után",
-        "délben"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ]
-    },
-    {
-      "id": "a1-100-review-2",
+      "id": "a1-100-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"The bed is in the room\"?",
-      "options": [
-        "Az ágy a szobában van.",
-        "Az ágy a szoba van.",
-        "Szobában az ágy."
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "ban-ben-in"
-      ]
+        "basic-hungarian-word-order"
+      ],
+      "question": "Which is the right way to ask “Where does Anna work?”",
+      "options": [
+        "Hol Anna dolgozik?",
+        "Hol dolgozik Anna?",
+        "Dolgozik hol Anna?"
+      ],
+      "correct": 1
     },
     {
-      "id": "a1-100-intro-1",
+      "id": "a1-100-introduce-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"lunch\"?",
-      "options": [
-        "ebéd",
-        "vacsora",
-        "reggeli"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-everyday-hungarian-review-vocab"
       ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-100-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"at noon\"?",
+      "question": "Which word means “tomorrow”?",
       "options": [
-        "délben",
-        "reggel",
-        "este"
+        "ma",
+        "most",
+        "holnap"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 2
     },
     {
       "id": "a1-100-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "ebéd",
-          "lunch"
-        ],
-        [
-          "délben",
-          "at noon"
-        ],
-        [
-          "után",
-          "after"
-        ],
-        [
-          "holnap",
-          "tomorrow"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "negation-with-nem"
       ],
-      "stage": "controlled"
+      "sentence": "Nem Anna főz, ____ Károly.",
+      "english": "It is not Anna who cooks, but Károly.",
+      "answer": "hanem"
     },
     {
       "id": "a1-100-controlled-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "____ ebédelünk.",
-      "hint": "at noon",
-      "english": "At noon we have lunch.",
-      "answer": "Délben",
+      "stage": "controlled",
       "teaches": [
         "a1-everyday-hungarian-review-vocab"
       ],
-      "stage": "controlled"
+      "sentence": "Nem főzök, ____ olvasok.",
+      "english": "I do not cook, because I read.",
+      "answer": "mert"
     },
     {
       "id": "a1-100-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Where does the postposition után go relative to its noun?",
-      "options": [
-        "after it",
-        "before it",
-        "it doesn't combine with nouns"
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "postpositions-basic"
+        "a1-everyday-hungarian-review-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "hanem",
+          "but rather"
+        ],
+        [
+          "mert",
+          "because"
+        ],
+        [
+          "miért",
+          "why"
+        ],
+        [
+          "mikor",
+          "when"
+        ],
+        [
+          "holnap",
+          "tomorrow"
+        ]
+      ]
     },
     {
       "id": "a1-100-controlled-4",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "A találkozó ____ együtt megyünk haza.",
-      "hint": "after",
-      "english": "After the meeting we go home together.",
-      "answer": "után",
+      "stage": "controlled",
       "teaches": [
-        "temporal-postpositions"
+        "negation-with-nem"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Miért",
+        "nem",
+        "főzöl",
+        "?"
+      ],
+      "solution": [
+        "Miért",
+        "nem",
+        "főzöl",
+        "?"
+      ],
+      "english": "Why do you not cook?"
     },
     {
       "id": "a1-100-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly says \"The room and the kitchen are in order\"?",
-      "options": [
-        "A szoba és a konyha rendben van.",
-        "A szoba és konyha van rendben.",
-        "Rendben szoba és konyha van."
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
-        "definite-article-a-az"
+        "nem-vs-nincs-two-kinds-of-negation"
       ],
-      "stage": "practice"
+      "question": "Which means “Károly is not cooking”?",
+      "options": [
+        "Károly nincs főz.",
+        "Károly nem főz.",
+        "Károly nem főzök."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-100-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Délben ebédelünk. Kérek kenyeret és ____.",
-      "hint": "coffee, accusative",
-      "english": "At noon we have lunch. I'd like bread and coffee.",
-      "answer": "kávét",
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-100-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Hétfőn reggel otthon vagyunk.",
-          "On Monday morning we are at home."
-        ],
-        [
-          "Utána megyünk az iskolába.",
-          "After that we go to school."
-        ],
-        [
-          "Délben ebédelünk.",
-          "At noon we eat lunch."
-        ],
-        [
-          "A találkozó után együtt megyünk haza.",
-          "After the meeting we go home together."
-        ]
-      ],
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-100-practice-4",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "A",
-        "találkozó",
-        "után",
-        "együtt",
-        "megyünk",
-        "haza",
-        "."
-      ],
-      "solution": [
-        "A",
-        "találkozó",
-        "után",
-        "együtt",
-        "megyünk",
-        "haza",
-        "."
-      ],
-      "english": "After the meeting we go home together.",
+      "stage": "practice",
       "teaches": [
         "temporal-postpositions"
       ],
-      "stage": "practice"
+      "sentence": "Ebéd ____ pihenek.",
+      "english": "I rest after lunch.",
+      "answer": "után"
+    },
+    {
+      "id": "a1-100-practice-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "question": "Which means “In the morning I drink tea”?",
+      "options": [
+        "Reggel tea iszom.",
+        "Reggel teát iszok.",
+        "Reggel teát iszom."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-100-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "movement-with-ba-be"
+      ],
+      "sentence": "Szerdán az irodában vagyok, csütörtökön a boltba ____.",
+      "english": "On Wednesday I am in the office, on Thursday I go to the shop.",
+      "answer": "megyek"
     },
     {
       "id": "a1-100-practice-5",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe your morning: say you always work in the morning.",
-          "answer": "Mindig reggel dolgozom."
-        },
-        {
-          "prompt": "Say what happens at noon: say at noon you eat lunch.",
-          "answer": "Délben ebédelek."
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "present-tense-routine-language"
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "question": "Which word completes “____ főz Károly?” (What does Károly cook?)",
+      "options": [
+        "Mit",
+        "Mi",
+        "Ki"
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "ki-and-mi",
+        "2": "ki-and-mi"
+      }
+    },
+    {
+      "id": "a1-100-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Where does Károly study on Mondays and Wednesdays?",
+      "options": [
+        "At school.",
+        "At the library.",
+        "At the office."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-100-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Why does Meg go to the shop?",
+      "options": [
+        "She is hungry and thirsty.",
+        "There is no milk at home.",
+        "She works in that shop."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-100-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Where is Anna waiting at noon?",
+      "options": [
+        "In the café.",
+        "At home.",
+        "In the park."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-100-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "movement-with-ba-be"
+      ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Milyen volt a nap?"
+          "text": "Anna a boltba megy?"
         },
         {
           "speaker": "Károly",
@@ -252,96 +244,118 @@
         }
       ],
       "options": [
-        "Jó nap volt.",
-        "Jó nap van."
+        "Nem, Anna nem a boltba megy, hanem az iskolában.",
+        "Nem, Anna nem a boltba megy, hanem az iskolába.",
+        "Nem, Anna nem a boltba megy, hanem az iskola."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ]
+      "correct": 1,
+      "distractor_skills": {
+        "0": "ban-ben-in"
+      }
     },
     {
       "id": "a1-100-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "on-en-on"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mikor ebédelünk?"
+          "speaker": "Anna",
+          "text": "Mikor sportolsz?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Délben.",
-        "Itt ebédelünk."
+        "Szombatban délután sportolok.",
+        "Szombaton délután sportolsz.",
+        "Szombaton délután sportolok."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ]
+      "correct": 2,
+      "distractor_skills": {
+        "0": "ban-ben-in"
+      }
     },
     {
-      "id": "a1-100-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"It was a good day.\" in Hungarian.",
-          "answer": "Jó nap volt."
-        }
-      ],
+      "id": "a1-100-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ]
+        "basic-hungarian-word-order"
+      ],
+      "tiles": [
+        "Hétfőn",
+        "reggel",
+        "a",
+        "konyhában",
+        "reggelizem",
+        "."
+      ],
+      "solution": [
+        "Hétfőn",
+        "reggel",
+        "a",
+        "konyhában",
+        "reggelizem",
+        "."
+      ],
+      "english": "On Monday morning I have breakfast in the kitchen."
     },
     {
-      "id": "a1-100-writing-2",
+      "id": "a1-100-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-everyday-hungarian-review-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say \"András comes with us.\" in Hungarian.",
-          "answer": "András jön velünk."
+          "prompt": "Say that tomorrow you are not going to school.",
+          "answer": "Holnap nem megyek az iskolába."
+        },
+        {
+          "prompt": "Say that in the morning you always drink tea.",
+          "answer": "Reggel mindig teát iszom."
         }
-      ],
-      "teaches": [
-        "megy-jon"
       ]
     },
     {
       "id": "a1-100-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"after\"?",
-      "options": [
-        "után",
-        "délben",
-        "előtt"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "movement-with-ba-be"
       ],
-      "stage": "check"
+      "sentence": "Ebéd után a ____ megyek.",
+      "english": "After lunch I go to the library.",
+      "answer": "könyvtárba"
     },
     {
       "id": "a1-100-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"At noon we eat lunch\"?",
-      "options": [
-        "Délben ebédelünk.",
-        "Délben van ebédelünk.",
-        "Ebédelünk délben van."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "present-tense-routine-language"
+        "on-en-on"
       ],
-      "stage": "check"
+      "question": "Which means “On Friday evening we cook at home”?",
+      "options": [
+        "Pénteken este otthon főzök.",
+        "Péntekben este otthon főzünk.",
+        "Pénteken este otthon főzünk."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     }
   ]
 }

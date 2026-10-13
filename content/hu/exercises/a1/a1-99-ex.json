@@ -2,349 +2,325 @@
   "lesson": "a1-99",
   "exercises": [
     {
-      "id": "a1-99-review-1",
+      "id": "a1-99-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"kitchen\"?",
-      "options": [
-        "konyha",
-        "szoba",
-        "asztal"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-everyday-hungarian-review-vocab"
-      ]
+      ],
+      "question": "Which word means “dining room”?",
+      "options": [
+        "előszoba",
+        "nappali",
+        "étkező"
+      ],
+      "correct": 2
     },
     {
-      "id": "a1-99-review-2",
+      "id": "a1-99-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"Tomorrow we also meet\"?",
-      "options": [
-        "Holnap is találkozunk.",
-        "Holnap van találkozunk.",
-        "Találkozunk holnap is van."
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "is-placing-also-too"
-      ]
-    },
-    {
-      "id": "a1-99-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"room\"?",
+        "postpositions-basic"
+      ],
+      "question": "Which means “next to the bed”?",
       "options": [
-        "szoba",
-        "konyha",
-        "asztal"
+        "az ágy alatt",
+        "az ágy mellett",
+        "az ágy fölött"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-99-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"kitchen\"?",
-      "options": [
-        "konyha",
-        "szoba",
-        "otthon"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 1
     },
     {
       "id": "a1-99-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "otthon",
-          "at home"
-        ],
-        [
-          "szoba",
-          "room"
-        ],
-        [
-          "konyha",
-          "kitchen"
-        ],
-        [
-          "asztal",
-          "table"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "stage": "controlled"
+      "sentence": "A fürdőszobában ____ tükör.",
+      "english": "There is no mirror in the bathroom.",
+      "answer": "nincs"
     },
     {
       "id": "a1-99-controlled-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A ____ és a konyha rendben van.",
-      "hint": "room",
-      "english": "The room and the kitchen are in order.",
-      "answer": "szoba",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "postpositions-basic"
       ],
-      "stage": "controlled"
+      "sentence": "A kanapé az ablak ____ van.",
+      "english": "The sofa is in front of the window.",
+      "answer": "előtt"
     },
     {
       "id": "a1-99-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence correctly says \"In the kitchen there is bread\"?",
-      "options": [
-        "A konyhában van a kenyér.",
-        "A konyha van a kenyér.",
-        "A konyhában kenyér."
-      ],
-      "correct": 0,
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "ban-ben-in"
+        "a1-everyday-hungarian-review-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "kenyér",
+          "bread"
+        ],
+        [
+          "tej",
+          "milk"
+        ],
+        [
+          "tojás",
+          "egg"
+        ],
+        [
+          "sütemény",
+          "cake"
+        ],
+        [
+          "étkező",
+          "dining room"
+        ]
+      ]
     },
     {
       "id": "a1-99-controlled-4",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Az ágy a ____ van.",
-      "hint": "in the room",
-      "english": "The bed is in the room.",
-      "answer": "szobában",
+      "stage": "controlled",
       "teaches": [
-        "ban-ben-in"
+        "postpositions-basic"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "A",
+        "lámpa",
+        "az",
+        "asztal",
+        "fölött",
+        "van",
+        "."
+      ],
+      "solution": [
+        "A",
+        "lámpa",
+        "az",
+        "asztal",
+        "fölött",
+        "van",
+        "."
+      ],
+      "english": "The lamp is above the table."
     },
     {
       "id": "a1-99-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which suffix shows something is on a surface, like a table?",
-      "options": [
-        "-on/-en",
-        "-ban/-ben",
-        "mellett"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
-        "on-en-on"
+        "singular-after-numbers"
       ],
+      "question": "Which means “There are three chairs in the room”?",
+      "options": [
+        "A szobában három székek van.",
+        "A szobában három szék van.",
+        "A szobában három szék vannak."
+      ],
+      "correct": 1,
       "distractor_skills": {
-        "1": "ban-ben-in",
-        "2": "postpositions-basic"
-      },
-      "stage": "practice"
+        "0": "plural-nouns-k"
+      }
     },
     {
       "id": "a1-99-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Az ____ a kávé.",
-      "hint": "on the table",
-      "english": "On the table there is coffee.",
-      "answer": "asztalon",
+      "stage": "practice",
       "teaches": [
-        "on-en-on"
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Veszek egy kiló ____.",
+      "english": "I buy a kilo of apples.",
+      "answer": "almát"
     },
     {
       "id": "a1-99-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "A konyhában van a kenyér.",
-          "In the kitchen there is bread."
-        ],
-        [
-          "Az asztalon a kávé.",
-          "On the table (there is) coffee."
-        ],
-        [
-          "Az ágy a szobában van.",
-          "The bed is in the room."
-        ],
-        [
-          "A szoba és a konyha rendben van.",
-          "The room and the kitchen are in order."
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "containers-and-measures"
       ],
-      "stage": "practice"
+      "question": "Which means “I drink a glass of water”?",
+      "options": [
+        "Iszom egy pohárat vizet.",
+        "Iszom egy pohár víz.",
+        "Iszom egy pohár vizet."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "a1-99-practice-4",
-      "type": "sentence-builder",
+      "type": "multiple-choice",
       "category": "grammar",
-      "tiles": [
-        "Az",
-        "ágy",
-        "a",
-        "szobában",
-        "van",
-        "."
-      ],
-      "solution": [
-        "Az",
-        "ágy",
-        "a",
-        "szobában",
-        "van",
-        "."
-      ],
-      "english": "The bed is in the room.",
+      "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "kerek-vs-szeretnek"
       ],
-      "stage": "practice"
+      "question": "Which order is the softer, more polite one?",
+      "options": [
+        "Kérek egy teát.",
+        "Szeretnék egy teát.",
+        "Kérsz egy teát."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-99-practice-5",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "A konyhában van a kenyér.",
-      "base_word": "konyhában",
-      "base_gloss": "In the kitchen there is bread.",
-      "options": [
-        {
-          "word": "szoba",
-          "inflected": "szobában",
-          "sentence": "A szobában van a kenyér.",
-          "gloss": "room"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "ban-ben-in"
+        "a1-everyday-hungarian-review-vocab"
       ],
-      "stage": "practice"
+      "question": "Which answer fits “Milyen a nappali?”",
+      "options": [
+        "Három szoba van.",
+        "A kanapé mellett van.",
+        "Nagy és világos."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-99-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Hol van a kenyér?"
+          "speaker": "Károly",
+          "text": "Mit eszel reggel?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "A konyhában van a kenyér.",
-        "A konyha van a kenyér."
+        "Reggel egy tojás eszem.",
+        "Reggel egy tojást eszem.",
+        "Reggel egy tojást eszek."
       ],
-      "correct": 0,
-      "teaches": [
-        "ban-ben-in"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-99-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "van-and-nincs-there-is-there-isn-t"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Rendben van a szoba?"
+          "speaker": "Károly",
+          "text": "Van tévé a hálószobában?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, a szoba és a konyha rendben van.",
-        "Igen, rendben a szoba van."
+        "Nem, nincs tévé a hálószobában.",
+        "Nem, van tévé a hálószobában.",
+        "Nem, nincs tévé a hálószobába."
       ],
       "correct": 0,
-      "teaches": [
-        "basic-hungarian-word-order"
-      ]
+      "distractor_skills": {
+        "2": "movement-with-ba-be"
+      }
     },
     {
-      "id": "a1-99-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"The bed is in the room.\" in Hungarian.",
-          "answer": "Az ágy a szobában van."
-        }
-      ],
+      "id": "a1-99-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "ban-ben-in"
-      ]
+        "kerek-vs-szeretnek"
+      ],
+      "tiles": [
+        "Szeretnék",
+        "két",
+        "pohár",
+        "vizet",
+        "."
+      ],
+      "solution": [
+        "Szeretnék",
+        "két",
+        "pohár",
+        "vizet",
+        "."
+      ],
+      "english": "I would like two glasses of water."
     },
     {
-      "id": "a1-99-writing-2",
+      "id": "a1-99-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-everyday-hungarian-review-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say \"On the table there is coffee.\" in Hungarian.",
-          "answer": "Az asztalon a kávé."
+          "prompt": "Say that there is a bed in the bedroom.",
+          "answer": "A hálószobában van egy ágy."
+        },
+        {
+          "prompt": "Order a cup of tea (start with the drink).",
+          "answer": "Egy csésze teát kérek."
         }
-      ],
-      "teaches": [
-        "on-en-on"
       ]
     },
     {
       "id": "a1-99-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"table\"?",
-      "options": [
-        "asztal",
-        "szoba",
-        "konyha"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "sentence": "Iszom egy pohár ____.",
+      "english": "I drink a glass of water.",
+      "answer": "vizet"
     },
     {
       "id": "a1-99-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"In the kitchen there is bread, on the table (there is) coffee\"?",
-      "options": [
-        "A konyhában van a kenyér, az asztalon a kávé.",
-        "A konyha van kenyér, asztal kávé.",
-        "Kenyér a konyhában, kávé az asztalon van."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "ban-ben-in"
+        "postpositions-basic"
       ],
-      "stage": "check"
+      "question": "Which means “between the bed and the wardrobe”?",
+      "options": [
+        "az ágy és a szekrény mellett",
+        "az ágy és a szekrény között",
+        "az ágy és a szekrény mögött"
+      ],
+      "correct": 1
     }
   ]
 }

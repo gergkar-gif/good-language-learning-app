@@ -2,73 +2,76 @@
   "lesson": "a1-96",
   "exercises": [
     {
-      "id": "a1-96-review-1",
+      "id": "a1-96-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"thirsty\"?",
-      "options": [
-        "szomjas",
-        "éhes",
-        "finom"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-food-drink-vocab"
-      ]
-    },
-    {
-      "id": "a1-96-review-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "How do you say \"Dinner will be delicious\"?",
-      "options": [
-        "A vacsora finom lesz.",
-        "A vacsora finom van.",
-        "Finom lesz a vacsora van."
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-food-drink-vocab"
-      ]
-    },
-    {
-      "id": "a1-96-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"shop / store\"?",
-      "options": [
-        "bolt",
-        "iskola",
-        "haza"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-everyday-hungarian-review-vocab"
       ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-96-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"beside, next to\"?",
+      "question": "Which word completes “Most megyek ____.” (I am going home now.)",
       "options": [
-        "mellett",
+        "otthon",
         "haza",
-        "iskola"
+        "messze"
       ],
-      "correct": 0,
+      "correct": 1
+    },
+    {
+      "id": "a1-96-introduce-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "spatial-questions-hol-hova"
       ],
-      "stage": "introduce"
+      "question": "Which question asks where someone is going?",
+      "options": [
+        "Hol vagy?",
+        "Hol van Anna?",
+        "Hová mész?"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-96-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "ban-ben-in"
+      ],
+      "sentence": "Meg a ____ van.",
+      "english": "Meg is in the library.",
+      "answer": "könyvtárban"
+    },
+    {
+      "id": "a1-96-controlled-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "movement-with-ba-be"
+      ],
+      "question": "Which completes “Anna a ____ megy.” (Anna is going into the garden.)",
+      "options": [
+        "kertben",
+        "kertbe",
+        "kertba"
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "0": "ban-ben-in"
+      }
+    },
+    {
+      "id": "a1-96-controlled-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-everyday-hungarian-review-vocab"
+      ],
       "pairs": [
         [
           "iskola",
@@ -76,203 +79,162 @@
         ],
         [
           "bolt",
-          "shop, store"
+          "shop"
         ],
         [
-          "haza",
-          "home"
+          "könyvtár",
+          "library"
         ],
         [
-          "mellett",
-          "beside, next to"
+          "kávézó",
+          "café"
+        ],
+        [
+          "étterem",
+          "restaurant"
         ]
-      ],
-      "teaches": [
-        "a1-everyday-hungarian-review-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-96-controlled-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A bolt az iskola ____ van.",
-      "hint": "beside",
-      "english": "The shop is beside the school.",
-      "answer": "mellett",
-      "teaches": [
-        "postpositions-basic"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-96-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence correctly asks \"Where is he going?\"",
-      "options": [
-        "Hová megy?",
-        "Hol megy?",
-        "Hová van?"
-      ],
-      "correct": 0,
-      "teaches": [
-        "spatial-questions-hol-hova"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-96-controlled-4",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Az ____ megy.",
-      "hint": "to school",
-      "english": "He/She goes to school.",
-      "answer": "iskolába",
+      "stage": "controlled",
       "teaches": [
         "movement-with-ba-be"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Az",
+        "irodába",
+        "megyek",
+        "."
+      ],
+      "solution": [
+        "Az",
+        "irodába",
+        "megyek",
+        "."
+      ],
+      "english": "I am going to the office."
     },
     {
       "id": "a1-96-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which suffix marks destination (\"to\"), not location (\"in/at\")?",
-      "options": [
-        "-ba/-be",
-        "-ban/-ben",
-        "mellett"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
-        "movement-with-ba-be"
+        "ban-ben-in"
       ],
+      "question": "Which means “Anna is at the cinema”?",
+      "options": [
+        "Anna a moziba megy.",
+        "Anna a moziban van.",
+        "Anna a moziba van."
+      ],
+      "correct": 1,
       "distractor_skills": {
-        "1": "ban-ben-in",
-        "2": "postpositions-basic"
-      },
-      "stage": "practice"
+        "0": "movement-with-ba-be"
+      }
     },
     {
       "id": "a1-96-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Megyünk az iskolába. András ____ velünk.",
-      "hint": "comes",
-      "english": "We are going to school. András comes with us.",
-      "answer": "jön",
+      "stage": "practice",
       "teaches": [
-        "megy-jon"
+        "movement-with-ba-be"
       ],
-      "stage": "practice"
+      "sentence": "Mariann az ____ megy.",
+      "english": "Mariann is going into the restaurant.",
+      "answer": "étterembe"
     },
     {
       "id": "a1-96-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Hol van?",
-          "Where is he/she?"
-        ],
-        [
-          "Az iskola mellett van.",
-          "He/she is beside the school."
-        ],
-        [
-          "Hová megy?",
-          "Where is he/she going?"
-        ],
-        [
-          "Az iskolába megy.",
-          "He/she goes to school."
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "movement-with-ba-be"
       ],
-      "stage": "practice"
+      "question": "Which means “Today I am not going to school”?",
+      "options": [
+        "Ma nem megyek az iskolába.",
+        "Ma nincs megyek az iskolába.",
+        "Ma nem megyek az iskolában."
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "a1-96-practice-4",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "A",
-        "bolt",
-        "az",
-        "iskola",
-        "mellett",
-        "van",
-        "."
-      ],
-      "solution": [
-        "A",
-        "bolt",
-        "az",
-        "iskola",
-        "mellett",
-        "van",
-        "."
-      ],
-      "english": "The shop is beside the school.",
+      "stage": "practice",
       "teaches": [
-        "postpositions-basic"
+        "movement-with-ba-be"
       ],
-      "stage": "practice"
+      "sentence": "Nem a boltba megyek, a ____ megyek.",
+      "english": "I am not going to the shop, I am going to the park.",
+      "answer": "parkba"
     },
     {
       "id": "a1-96-practice-5",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Az iskola mellett van.",
-      "base_word": "iskola",
-      "base_gloss": "He/she is beside the school.",
-      "options": [
-        {
-          "word": "bolt",
-          "inflected": "bolt",
-          "sentence": "A bolt mellett van.",
-          "gloss": "shop"
-        }
-      ],
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-everyday-hungarian-review-vocab"
       ],
-      "stage": "practice"
+      "question": "Which word means “near”?",
+      "options": [
+        "messze",
+        "közel",
+        "otthon"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-96-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "movement-with-ba-be"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Hová megy Károly?"
+          "speaker": "Anna",
+          "text": "Hová mész?"
         },
         {
-          "speaker": "András",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Az iskolába megy.",
-        "Az iskola megy."
+        "A kertbe megyek.",
+        "A kertben megyek.",
+        "A kertba megyek."
       ],
       "correct": 0,
-      "teaches": [
-        "movement-with-ba-be"
-      ]
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     },
     {
       "id": "a1-96-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "ban-ben-in"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Hol van a bolt?"
+          "speaker": "Anna",
+          "text": "Hol vagy, Károly?"
         },
         {
           "speaker": "Károly",
@@ -280,73 +242,86 @@
         }
       ],
       "options": [
-        "Az iskola mellett van.",
-        "Az iskolába van."
+        "A nappaliba vagyok.",
+        "A nappaliben vagyok.",
+        "A nappaliban vagyok."
       ],
-      "correct": 0,
-      "teaches": [
-        "postpositions-basic"
-      ]
+      "correct": 2,
+      "distractor_skills": {
+        "0": "movement-with-ba-be"
+      }
     },
     {
-      "id": "a1-96-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"He is beside the school.\" in Hungarian.",
-          "answer": "Az iskola mellett van."
-        }
-      ],
+      "id": "a1-96-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
-        "postpositions-basic"
-      ]
+        "spatial-questions-hol-hova"
+      ],
+      "tiles": [
+        "Hová",
+        "mész",
+        "ma",
+        "?"
+      ],
+      "solution": [
+        "Hová",
+        "mész",
+        "ma",
+        "?"
+      ],
+      "english": "Where are you going today?"
     },
     {
-      "id": "a1-96-writing-2",
+      "id": "a1-96-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "a1-everyday-hungarian-review-vocab"
+      ],
       "template": [
         {
-          "prompt": "Say \"We go to school.\" in Hungarian.",
-          "answer": "Megyünk az iskolába."
+          "prompt": "Say that you are in the kitchen.",
+          "answer": "A konyhában vagyok."
+        },
+        {
+          "prompt": "Say that you are going to the shop.",
+          "answer": "A boltba megyek."
         }
-      ],
-      "teaches": [
-        "movement-with-ba-be"
       ]
     },
     {
       "id": "a1-96-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"school\"?",
-      "options": [
-        "iskola",
-        "bolt",
-        "haza"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-everyday-hungarian-review-vocab"
+        "ban-ben-in"
       ],
-      "stage": "check"
+      "sentence": "Anna az ____ van.",
+      "english": "Anna is in the office.",
+      "answer": "irodában"
     },
     {
       "id": "a1-96-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"András comes with us\"?",
-      "options": [
-        "András jön velünk.",
-        "András jön van velünk.",
-        "Velünk András jön van."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "megy-jon"
+        "movement-with-ba-be"
       ],
-      "stage": "check"
+      "question": "Which means “Károly is going to the cinema”?",
+      "options": [
+        "Károly a moziban megy.",
+        "Károly a mozi megy.",
+        "Károly a moziba megy."
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "0": "ban-ben-in"
+      }
     }
   ]
 }
