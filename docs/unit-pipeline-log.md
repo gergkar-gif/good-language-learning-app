@@ -180,3 +180,12 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   Hungarian with `questionEnglish`/`optionsEnglish`; done for units 1–7, 9,
   11–15, 17. The rest (units 8, 10, 16 need Hungarian questions; 18+ need
   English) is done by Sonnet once all units are finished (user).
+
+### 2026-10-13 (planning units 18–33)
+
+- A scripted survey of units 18–33 (check-content counts, challenge entries,
+  distinct screens) finds every one with **no challenges** and 18–30 with
+  generic checklists shared across lessons: the pattern that sent 16 and 17
+  to regeneration. **Change:** regenerate them directly, no verdict read
+  (saves ~90k Sonnet per unit, ~1.4M in all); each still gets one blind
+  read after regeneration.
