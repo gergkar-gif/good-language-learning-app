@@ -9,6 +9,23 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed work (2026-10-13)
 
+- **Verb Driller Curriculum & Signal Wiring (`verbs` / `hu-verb`), Encountered-Verb Scoping & Removal of Post-Lesson Nudge Wall (Done 2026-10-13).**
+  - **Expanded `verb-tense-skills.json` Across All Three Courses:**
+    - Expanded `content/es-es/indexes/verb-tense-skills.json` and `content/es-latam/indexes/verb-tense-skills.json` to map A1–B2 verb conjugation skills (`ar-verbs`, `er-ir-verbs`, `stem-changes`, `reflexives`, `preterite-irregular-stems`, `future-probability`, `subjuntivo-deseos`, and `imperfect-subjunctive-forms` in `es-latam`) to their driller tense paths.
+    - Created `content/hu/indexes/verb-tense-skills.json` mapping Hungarian conjugation skills (`present-tense-routine-language`, `ik-verbs-dolgozom-not-dolgozok`, `definite-vs-indefinite-conjugation`, `past-tense-indefinite`, `irregular-past`, `definite-past`) to `pres.indef`, `pres.def`, `past.indef`, and `past.def`.
+  - **Encountered Verbs & Tenses Tracking (`engine/taughtWords.js`, `engine/learnerModel.js`):**
+    - Enhanced `TaughtWords.isReached(lemma)` with Spanish verb-key normalization (`ny` → `ñ`, accented `-ír` infinitives `oír`/`reír`/`sonreír`/`freír`, reflexive `-se` base/reflexive matching) and `knownWords`/`srsDeck` checks, and added `TaughtWords.reachedVerbs(pool)`.
+    - Added `LearnerModel.tenseForSkill(skillId)`, `LearnerModel.encounteredTenses()`, `LearnerModel.encounteredVerbs(pool)`, Hungarian person keys (`1sg`..`3pl`) in `VERB_PERSONS`, and a `recentMiss` flag on `LearnerModel.weakConjugations()`.
+  - **Bidirectional Signal Recording in Table Mode & Hungarian Verb Driller (`engine/verbs/table.js`, `engine/drills/hu-verb.js`, `engine/verbs.js`):**
+    - Wired `VerbsTable` (`engine/verbs/table.js`) to record `Recycle.credit('verb:' + tensePath + ':' + person, ...)` and `DrillHistory.record('verbs', ...)` on the first check per verb table.
+    - Wired `HuVerbDriller` (`engine/drills/hu-verb.js`) to record `Recycle.credit('verb:' + tense + '.' + (definite ? 'def' : 'indef') + ':' + personKey, ...)` on finish/abort/stop, added fail-open fallback when `knownOnly` filters out all verbs, and added `options.tense`, `options.definite`, and `options.knownOnly` support to `HuVerbDriller.render(root, options)`.
+    - Added `options.knownOnly`, `options.verbs`, and `options.tenses` scoping to `Verbs.render(options)` (`engine/verbs.js`).
+  - **Recommendation Engine & Study Plan Integration (`engine/recommendationEngine.js`, `engine/studyPlan.js`, `engine/studyPlanRunner.js`):**
+    - Updated `_miniGameNudge()` in `engine/recommendationEngine.js` to route verb-tense trouble skills (`LearnerModel.tenseForSkill`), recent `weakConjugations`, and completed verb-tense units (when $\ge 3$ verbs have been encountered in the curriculum) to the Verb Driller (`verbs` / `hu-verb`) scoped to `tense`, `knownOnly: true`, `tenses: encounteredTenses`, and `verbs: encounteredVerbs`.
+    - Updated `StudyPlan._sources()` and `StudyPlanRunner.launchItem()` to boost `verbs`/`hu-verb` urgency when conjugations or verb-tense skills are weak/developing and pass `knownOnly: true`, `tense`, `tenses`, and `verbs`.
+  - **Post-Lesson Nudge Removal (`engine/lessons.js`):**
+    - Removed `summaryReinforceHtml`, `renderLessonSummaryNext` (Screen 2), `guideInvitation`, and remediation action buttons from `renderLessonSummary`, leaving a single clean celebration/stats recap screen where `Continue →` returns directly to Home (or `study-plan-screen`) so `RecommendationEngine` is the single recommended path.
+
 - **Library Long-Form Books, Client-Side `.epub`/`.docx`/`.txt` Import, Per-Chapter Reader & Bookmarking (Done 2026-10-13).**
   - **Client-Side Book Import & Auto-Chunking (`engine/library.js`):**
     - Added zero-dependency client-side ZIP extraction (`unpackZip` using Web Streams `DecompressionStream('deflate-raw')` with Node `zlib` fallback) to parse `.epub` and `.docx` files directly in the browser, alongside `.txt`, `.md`, and pasted long-form texts.

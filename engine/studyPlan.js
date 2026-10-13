@@ -165,6 +165,24 @@ const StudyPlan = (function () {
         const weakSpoken = (canSpeak && typeof LearnerModel !== 'undefined' && LearnerModel.weakProductionSkills)
             ? await LearnerModel.weakProductionSkills(1, 'oral')
             : [];
+        const encounteredTenses = (typeof LearnerModel !== 'undefined' && LearnerModel.encounteredTenses)
+            ? await LearnerModel.encounteredTenses()
+            : [];
+        const encounteredVerbs = (typeof LearnerModel !== 'undefined' && LearnerModel.encounteredVerbs)
+            ? await LearnerModel.encounteredVerbs()
+            : [];
+        let weakTenseFromSkills = null;
+        let weakTenseSkillState = null;
+        if (typeof LearnerModel !== 'undefined' && LearnerModel.tenseForSkill) {
+            for (let i = 0; i < skills.length; i++) {
+                const t = await LearnerModel.tenseForSkill(skills[i].skillId);
+                if (t) {
+                    weakTenseFromSkills = t;
+                    weakTenseSkillState = skills[i].state;
+                    break;
+                }
+            }
+        }
         drillers.forEach(d => {
             const id = d.drillerId;
             let urgency = d.state === 'weak'
@@ -185,14 +203,36 @@ const StudyPlan = (function () {
                 const count = _perBlock(SEC_PER_TRANSLATION_Q);
                 make = () => ({ kind: 'translation', count, level: curLevel, estMinutes: count * SEC_PER_TRANSLATION_Q / 60 });
             } else if (id === 'verbs') {
-                // Aim the drill at the weakest tense Verb Speed has recorded
-                // (LearnerModel.weakConjugations()), not a random one.
+                // Aim the drill at the weakest tense Verb Speed / curriculum has recorded,
+                // scoped to the verbs and tenses the learner has encountered so far.
                 const weakConj = (typeof LearnerModel !== 'undefined' && LearnerModel.weakConjugations) ? LearnerModel.weakConjugations(1) : [];
-                const tense = weakConj.length ? weakConj[0].tensePath : null;
-                make = () => Object.assign({ kind: 'verbs', seconds: VERB_SPEED_SECONDS, estMinutes: BLOCK_MINUTES }, tense ? { tense } : {});
+                const tense = (weakConj.length && weakConj[0].tensePath) || weakTenseFromSkills || encounteredTenses[encounteredTenses.length - 1] || null;
+                if (weakConj.length || weakTenseSkillState === 'weak') {
+                    urgency = Math.max(urgency, URGENCY.DRILLER_WEAK + 8);
+                } else if (weakTenseSkillState === 'developing') {
+                    urgency = Math.max(urgency, URGENCY.GRAMMAR_DEVELOPING);
+                }
+                make = () => Object.assign(
+                    { kind: 'verbs', seconds: VERB_SPEED_SECONDS, estMinutes: BLOCK_MINUTES, knownOnly: true },
+                    tense ? { tense } : {},
+                    encounteredTenses.length ? { tenses: encounteredTenses } : {},
+                    encounteredVerbs.length ? { verbs: encounteredVerbs } : {}
+                );
             } else if (id.indexOf('hu-') === 0) {
                 const count = _perBlock(SEC_PER_MORPH_Q);
-                make = () => ({ kind: 'driller', drillerId: id, title: d.title, count, estMinutes: count * SEC_PER_MORPH_Q / 60 });
+                if (id === 'hu-verb') {
+                    const weakConj = (typeof LearnerModel !== 'undefined' && LearnerModel.weakConjugations) ? LearnerModel.weakConjugations(1) : [];
+                    const tense = (weakConj.length && weakConj[0].tensePath) || weakTenseFromSkills || encounteredTenses[encounteredTenses.length - 1] || null;
+                    if (weakConj.length || weakTenseSkillState === 'weak') {
+                        urgency = Math.max(urgency, URGENCY.DRILLER_WEAK + 8);
+                    }
+                    make = () => Object.assign(
+                        { kind: 'driller', drillerId: id, title: d.title, count, estMinutes: count * SEC_PER_MORPH_Q / 60, knownOnly: true },
+                        tense ? { tense } : {}
+                    );
+                } else {
+                    make = () => ({ kind: 'driller', drillerId: id, title: d.title, count, estMinutes: count * SEC_PER_MORPH_Q / 60 });
+                }
             }
             if (make) sources.push(_source('driller:' + id, id, urgency, make));
         });

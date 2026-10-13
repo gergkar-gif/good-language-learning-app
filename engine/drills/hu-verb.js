@@ -167,13 +167,14 @@ const HuVerbDriller = (function () {
     // present pool (conjugate() returns null for them there on purpose,
     // see its own comment), so the toggle set isn't just relabelling the
     // same verb list four ways.
-    function _buildVerbs() {
+    function _buildVerbs(forceAll) {
         _verbs = [];
         const persons = _availablePersons();
+        const filterKnown = _knownOnly && !forceAll && typeof TaughtWords !== 'undefined';
         for (const lemma in _dict) {
             const rank = Lexicon.frequencyRank(lemma);
             if (rank === null || rank >= MAX_LEMMA_RANK) continue;
-            if (_knownOnly && typeof TaughtWords !== 'undefined' && !TaughtWords.isReached(lemma)) continue;
+            if (filterKnown && !TaughtWords.isReached(lemma)) continue;
             const sense = HungarianMorphology.verbSense(_dict[lemma]);
             if (!sense || FORM_OF_GLOSS.test(sense.en)) continue;
 
@@ -184,6 +185,9 @@ const HuVerbDriller = (function () {
             if (forms.length < persons.length) continue; // skip anything conjugate() couldn't fill in
 
             _verbs.push({ lemma, gloss: sense.en, forms });
+        }
+        if (filterKnown && !_verbs.length) {
+            _buildVerbs(true);
         }
     }
 
@@ -218,6 +222,7 @@ const HuVerbDriller = (function () {
             options,
             correct: options.indexOf(_personLabel(target)),
             explanation: `${verb.lemma} = ${verb.gloss}`,
+            personKey: `${target.person}${target.number}`,
             moreInfo: _moreInfo()
         };
     }
@@ -233,6 +238,7 @@ const HuVerbDriller = (function () {
             options,
             correct: options.indexOf(target.form),
             explanation: `${verb.lemma} = ${verb.gloss}`,
+            personKey: `${target.person}${target.number}`,
             moreInfo: _moreInfo()
         };
     }
@@ -245,6 +251,7 @@ const HuVerbDriller = (function () {
             sentence: `"${verb.lemma}" (${verb.gloss}), ${_personLabel(target)} (${target.pronoun}) = ______`,
             answer: target.form,
             explanation: `${verb.lemma} = ${verb.gloss}`,
+            personKey: `${target.person}${target.number}`,
             moreInfo: _moreInfo()
         };
     }
@@ -258,6 +265,7 @@ const HuVerbDriller = (function () {
             sentence: `${from.pronoun} ${from.form} → ${to.pronoun} ______`,
             answer: to.form,
             explanation: `${verb.lemma} = ${verb.gloss}`,
+            personKey: `${to.person}${to.number}`,
             moreInfo: _moreInfo()
         };
     }
@@ -401,11 +409,21 @@ const HuVerbDriller = (function () {
     // ================================================================
     //  RENDERING — Session
     // ================================================================
+    let _sessionRecycle = [];
+
+    function _flushRecycle() {
+        if (_sessionRecycle.length && typeof Recycle !== 'undefined' && Recycle.credit) {
+            Recycle.credit(_sessionRecycle);
+        }
+        _sessionRecycle = [];
+    }
+
     function _startSession() {
         const pool = _buildPool();
         _seen = 0;
         _correct = 0;
         _missedDetails = [];
+        _sessionRecycle = [];
 
         if (!pool.length) {
             _phase = PHASE.SETTINGS;
@@ -472,10 +490,17 @@ const HuVerbDriller = (function () {
             exercise: _queue[_queueIndex],
             onResult: (correct, details) => {
                 _seen++;
+                const ex = _queue[_queueIndex];
+                if (ex && ex.personKey) {
+                    const cellKey = `${_tense}.${_definite ? 'def' : 'indef'}`;
+                    _sessionRecycle.push({
+                        id: `verb:${cellKey}:${ex.personKey}`,
+                        rating: correct ? 'good' : 'again'
+                    });
+                }
                 if (correct) {
                     _correct++;
                 } else {
-                    const ex = _queue[_queueIndex];
                     _missedDetails.push({
                         question: (details && details.question) || (ex ? ex.question || ex.sentence : 'Question'),
                         correct: (details && details.correct) || (ex ? ex.answer || ex.solution : ''),
@@ -511,6 +536,7 @@ const HuVerbDriller = (function () {
     function _finishSession() {
         if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
         _phase = PHASE.RESULTS;
+        _flushRecycle();
         if (typeof DrillHistory !== 'undefined') {
             DrillHistory.record('hu-verb', { correct: _correct, wrong: _seen - _correct });
         }
@@ -577,6 +603,7 @@ const HuVerbDriller = (function () {
 
     function _abortSession() {
         if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+        _flushRecycle();
         _phase = PHASE.SETTINGS;
         _renderSettings();
     }
@@ -587,7 +614,29 @@ const HuVerbDriller = (function () {
     async function render(root, options) {
         _container = root;
 
-        if (options && (options.autoStart || options.count)) {
+        let changedCell = false;
+        if (options) {
+            if (typeof options.tense === 'string') {
+                if (options.tense.indexOf('.') !== -1) {
+                    const [t, d] = options.tense.split('.');
+                    if (t === 'pres' || t === 'past') { _tense = t; changedCell = true; }
+                    if (d === 'def' || d === 'indef') { _definite = (d === 'def'); changedCell = true; }
+                } else if (options.tense === 'pres' || options.tense === 'past') {
+                    _tense = options.tense;
+                    changedCell = true;
+                }
+            }
+            if (typeof options.definite === 'boolean') {
+                _definite = options.definite;
+                changedCell = true;
+            }
+            if (typeof options.knownOnly === 'boolean') {
+                _knownOnly = options.knownOnly;
+                changedCell = true;
+            }
+        }
+
+        if (options && (options.autoStart || options.count || changedCell)) {
             if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
             _phase = PHASE.SETTINGS;
         }
@@ -595,6 +644,10 @@ const HuVerbDriller = (function () {
         if (_phase === PHASE.SETTINGS) {
             _container.innerHTML = `<div class="gd-loading">Loading…</div>`;
             await _load();
+            if (changedCell && _dict) {
+                if (_knownOnly && typeof TaughtWords !== 'undefined') await TaughtWords.load();
+                _buildVerbs();
+            }
             if (options && (options.autoStart || options.count)) {
                 if (options.count) {
                     _mode = MODE.COUNT;
@@ -618,6 +671,7 @@ const HuVerbDriller = (function () {
     // to call even when no timer is running.
     function stop() {
         if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+        _flushRecycle();
         _phase = PHASE.SETTINGS;
     }
 

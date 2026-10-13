@@ -731,24 +731,6 @@ function closeLesson(options) {
     showTab(lessonReturnTab, document.querySelector('.nav button[data-tab="' + lessonReturnTab + '"]'));
 }
 
-// The lesson-complete screen's "Quick Reinforce" buttons (see
-// summaryReinforceHtml()) — same teardown as Done/closeLesson, but landing
-// on Workshop with a driller already open and scoped, instead of wherever
-// the lesson was originally opened from. The learner chose to keep
-// practicing, not to leave.
-// The Vocabulary Driller is B1+ (engine/workshop.js's minLevel) — below
-// that, opening it only bounces to the Workshop picker.
-function _vocabDrillerAvailable() {
-    return typeof Workshop === 'undefined' || !Workshop.isAvailable || Workshop.isAvailable('vocabulary');
-}
-
-function _openReinforce(drillerId, options) {
-    teardownLesson();
-    document.getElementById('lesson-screen').classList.add('hidden');
-    showTab('drills', document.querySelector('.nav button[data-tab="drills"]'));
-    if (typeof Workshop !== 'undefined') Workshop.open(drillerId, options);
-}
-
 // ============================================
 // HELPERS
 // ============================================
@@ -2548,75 +2530,11 @@ function summaryWordsHtml(words) {
     `;
 }
 
-// "Quick Reinforce" — a short Workshop session (same driller engines, no
-// settings screen, a handful of questions) scoped to exactly what this
-// lesson just taught, offered right here rather than only ever reachable
-// by navigating to Workshop and picking a skill/word list manually. Two
-// independent offers, either or both may be absent: grammarSkill is null
-// for a lesson with no grammar-tagged exercises (e.g. a pure-vocabulary
-// lesson), and words is empty for a lesson that introduced none. Reuses
-// the exact scoping options GrammarDriller/VocabularyDriller already
-// understand (see engine/recommend.js and engine/workshop.js's
-// "Recommended for you" card) rather than a separate mini-game engine.
-const QUICK_REINFORCE_COUNT = 5;
-
-function summaryReinforceHtml(grammarSkill, words, level) {
-    const hasVoice = typeof ParlourTTS !== 'undefined' && ParlourTTS.available();
-    const hasSpeechInput = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported()) || hasVoice;
-
-    if (!grammarSkill && !words.length && !hasVoice && !hasSpeechInput) return '';
-
-    return `
-        <div class="lsn-summary-reinforce">
-            <p class="lsn-summary-reinforce-label">Reinforce what you learned:</p>
-            <div class="lsn-summary-reinforce-actions">
-                ${grammarSkill ? `
-                    <button class="dk-secondary" data-drill-grammar="${esc(grammarSkill)}">
-                        Practice in Workshop →
-                    </button>
-                    <button class="dk-secondary" data-reinforce-grammar="${esc(grammarSkill)}">
-                        Grammar practice
-                    </button>
-                ` : ''}
-                ${words.length && _vocabDrillerAvailable() ? `
-                    <button class="dk-secondary" data-reinforce-vocab="1">
-                        Vocabulary practice
-                    </button>
-                ` : ''}
-                ${words.length >= 4 && typeof DeckMatch !== 'undefined' ? `
-                    <button class="dk-secondary" data-reinforce-match="1" title="Match this lesson's words to their meanings, timed">
-                        Word matching
-                    </button>
-                ` : ''}
-                ${hasVoice ? `
-                    <button class="dk-secondary" data-reinforce-listening="1" title="Practice listening to spoken sentences">
-                        Listening practice
-                    </button>
-                ` : ''}
-                ${hasSpeechInput ? `
-                    <button class="dk-secondary" data-reinforce-speaking="1" title="Speak sentences out loud">
-                        Speaking practice
-                    </button>
-                ` : ''}
-            </div>
-        </div>
-    `;
-}
-
-// A milestone crossed by finishing THIS lesson — rare, so it earns a line
-// of its own, but stays plain text rather than reaching for the accent:
-// the frontispiece above is already this screen's one accent element (see
-// engine/art.js's own rule that the accent never doubles up in one
-// composition).
 function summaryMilestonesHtml(milestones) {
     if (!milestones.length) return '';
     return milestones.map(m => `<p class="lsn-summary-milestone">Milestone: ${esc(m.label)}</p>`).join('');
 }
 
-// Same wording Home's header-streak already uses (updateXPHeader() in
-// engine/xp.js) — reused verbatim rather than inventing a second phrasing
-// for the same fact. Always shown, even at zero: a blank line here would
-// read as "did I lose my streak?", not as "nothing to report."
 function summaryStreakLine() {
     if (typeof getStreak !== 'function') return '';
     const streak = getStreak();
@@ -2624,20 +2542,6 @@ function summaryStreakLine() {
     return `<p class="lsn-summary-streak">${esc(text)}</p>`;
 }
 
-// The screen shown after the last step (and any remediation redo) instead
-// of returning straight to whatever tab the lesson was opened from — one
-// beat to register the lesson is actually done before moving on. Reuses
-// #lesson-content and the footer button rather than a separate overlay, so
-// it inherits the same layout the rest of the lesson already has.
-//
-// firstTime tells apart a real completion from a redo (finishLesson()
-// already knows this from markLessonComplete()'s own return value): XP was
-// only actually awarded on a first completion, and a milestone (or a rank,
-// via rankBefore — see finishLesson()) can only be newly crossed once, so
-// all three are skipped on a redo rather than showing a stale or zeroed
-// stat. The words-just-learned section isn't gated the same way —
-// replaying a lesson to reinforce its vocabulary is a real reason to
-// revisit it, and the words taught don't change on a redo.
 function summaryGoalsHtml(checklistResults) {
     const list = checklistResults || (
         currentLesson && currentLesson.id && typeof LearnerModel !== 'undefined'
@@ -2659,40 +2563,12 @@ function summaryGoalsHtml(checklistResults) {
         `;
     }
 
-    return `
-        <div class="lsn-summary-goals lsn-summary-goals-remediation">
-            <p class="lsn-summary-goals-title">Goals to lock down:</p>
-            <div class="lsn-summary-goals-list">
-                ${unverified.map(item => {
-                    const badgeClass = item.state === 'confidence-gap' ? 'lsn-goal-badge-gap' : 'lsn-goal-badge-review';
-                    const badgeText = item.state === 'confidence-gap' ? 'Confidence Gap' : 'Needs Practice';
-                    return `
-                        <div class="lsn-goal-item">
-                            <div class="lsn-goal-header">
-                                <span class="lsn-goal-text">"${esc(item.text)}"</span>
-                                <span class="lsn-goal-badge ${badgeClass}">${badgeText}</span>
-                            </div>
-                            <div class="lsn-goal-actions">
-                                <button type="button" class="dk-secondary lsn-goal-action-btn" data-remediate-practice="${esc(item.text)}">
-                                    Quick 3-Question Practice
-                                </button>
-                                <button type="button" class="dk-secondary lsn-goal-action-btn" data-remediate-speaking="${esc(item.text)}">
-                                    Speaking Practice →
-                                </button>
-                            </div>
-                        </div>
-                    `;
-                }).join('')}
-            </div>
-        </div>
-    `;
+    return '';
 }
 
-// Split into two screens: this one is the celebration/stats recap, the
-// second (renderLessonSummaryNext(), reached via its own "Continue")
-// carries the "what's next" reinforcement offers. Split rather than one
-// long scroll so the result (accuracy, streak, goals) reads as its own
-// moment before the app starts asking for more practice.
+// Single clean celebration/stats recap screen at the end of a lesson.
+// "Continue" closes the lesson and returns to Home (or the active Study
+// Plan), where RecommendationEngine presents the single recommended next step.
 async function renderLessonSummary(firstTime, rankBefore) {
     const container = document.getElementById('lesson-content');
     if (!container) return;
@@ -2715,21 +2591,9 @@ async function renderLessonSummary(firstTime, rankBefore) {
     const xpEarned = (firstTime && typeof GRAMMAR_XP === 'number') ? GRAMMAR_XP : null;
 
     const words = await collectLessonVocabulary(lesson);
-    const grammarSkill = (typeof Recommend !== 'undefined' && lesson.id)
-        ? await Recommend.lessonSkillFor(lesson.id)
-        : null;
     const milestones = firstTime ? newlyReachedMilestones() : [];
-    const guideSignals = (typeof LearnerModel !== 'undefined' && LearnerModel.guideSignals)
-        ? await LearnerModel.guideSignals()
-        : {};
-    const invitation = guideInvitation(lesson, firstTime, guideSignals);
     const rankAfter = (typeof getRank === 'function') ? getRank().rank : null;
     const rankedUp = firstTime && rankBefore != null && rankAfter != null && rankAfter > rankBefore;
-
-    // Reused unchanged by renderLessonSummaryNext() below and by the Match
-    // Game's onExit -- computed once here rather than re-awaited on every
-    // screen transition or return trip from the embedded mini-game.
-    _lessonSummaryCtx = { lesson, words, grammarSkill, firstTime, rankBefore };
 
     const statsHtml = (accuracy === null && !elapsed && !xpEarned) ? '' : `
         <div class="lsn-summary-stats">
@@ -2761,7 +2625,6 @@ async function renderLessonSummary(firstTime, rankBefore) {
             ${numberLabel ? `<p class="lsn-summary-lesson">${esc(numberLabel)} — ${esc(lesson.title || '')}</p>` : ''}
             ${Art.heroSvg ? Art.heroSvg('complete', 'lsn-summary-art') : Art.svg('summit', 'lsn-summary-art')}
             ${statsHtml}
-            ${invitation ? guideInvitationHtml(invitation) : ''}
             ${summaryStreakLine()}
             ${rankedUp ? (typeof renderRankUpCard === 'function' ? renderRankUpCard(rankAfter) : `<p class="lsn-summary-milestone">Rank up! You're now Rank ${rankAfter}.</p>`) : ''}
             ${summaryMilestonesHtml(milestones)}
@@ -2772,32 +2635,6 @@ async function renderLessonSummary(firstTime, rankBefore) {
     const summaryScrollParent = container.closest('.content') || document.querySelector('.content');
     if (summaryScrollParent) summaryScrollParent.scrollTop = 0;
     else window.scrollTo(0, 0);
-
-    const remPracticeBtns = container.querySelectorAll('[data-remediate-practice]');
-    remPracticeBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            if (grammarSkill) {
-                _openReinforce('grammar', { skill: grammarSkill, count: 3 });
-            } else if (words && words.length && _vocabDrillerAvailable()) {
-                _openReinforce('vocabulary', { words: words.slice(0, 3) });
-            } else {
-                _openReinforce('speaking', { count: 3 });
-            }
-        });
-    });
-
-    const remSpeakingBtns = container.querySelectorAll('[data-remediate-speaking]');
-    remSpeakingBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const goalText = btn.getAttribute('data-remediate-speaking');
-            _openReinforce('speaking', {
-                targetCompetency: goalText,
-                level: lesson.level || 'A1'
-            });
-        });
-    });
-
-    if (invitation) wireGuideInvitation(container, invitation);
 
     const addWordsBtn = container.querySelector('[data-add-lesson-words]');
     if (addWordsBtn) {
@@ -2814,168 +2651,10 @@ async function renderLessonSummary(firstTime, rankBefore) {
         nextBtn.textContent = 'Continue →';
         nextBtn.disabled = false;
         nextBtn.classList.remove('is-locked');
-        nextBtn.onclick = renderLessonSummaryNext;
-    }
-}
-
-// The new-learner introduction's end-of-lesson invitation (engine/guide.js
-// decides which one, if any): the deck after the first lesson, then the
-// Library and the Workshop at unit ends.
-function guideInvitation(lesson, firstTime, signals) {
-    if (typeof Guide === 'undefined') return null;
-
-    let unitCompleted = false;
-    let unitsDone = 0;
-    const data = window._curriculumData;
-    if (data && data.levels && typeof isLessonComplete === 'function') {
-        Object.keys(data.levels).forEach(key => {
-            (data.levels[key].units || []).forEach(unit => {
-                const lessons = unit.lessons || [];
-                if (!lessons.length || !lessons.every(l => isLessonComplete(l.id))) return;
-                unitsDone++;
-                if (firstTime && lessons.some(l => l.id === lesson.id)) unitCompleted = true;
-            });
-        });
-    }
-
-    return Guide.invitation({
-        firstTime: firstTime,
-        newWords: lessonNewDeckWords,
-        unitCompleted: unitCompleted,
-        unitsDone: unitsDone,
-        weakVerbTense: !!(signals && signals.weakVerbTense),
-        weakListening: !!(signals && signals.weakListening)
-    });
-}
-
-function guideInvitationHtml(invitation) {
-    return `
-        <div class="lsn-invite">
-            <p class="lsn-invite-text">${esc(invitation.text)}</p>
-            <div class="lsn-invite-actions">
-                <button type="button" class="dk-secondary" data-guide-invite="1">${esc(invitation.button)}</button>
-                ${invitation.nextLesson ? '<button type="button" class="dk-link-btn" data-guide-next-lesson="1">Next lesson</button>' : ''}
-            </div>
-        </div>
-    `;
-}
-
-function wireGuideInvitation(container, invitation) {
-    const go = container.querySelector('[data-guide-invite]');
-    if (go) {
-        go.addEventListener('click', () => {
-            Guide.acceptInvitation(invitation.id);
-            lessonReturnTab = invitation.tab;
+        nextBtn.onclick = () => {
+            if (lessonReturnTab !== 'study-plan-screen') lessonReturnTab = 'home';
             closeLesson();
-        });
-    }
-
-    const next = container.querySelector('[data-guide-next-lesson]');
-    if (next) {
-        next.addEventListener('click', () => {
-            const step = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
-            if (step && step.kind === 'lesson') startLesson(step.lesson.id);
-            else renderLessonSummaryNext();
-        });
-    }
-}
-
-// Set by renderLessonSummary() just before it renders screen 1; read by
-// this function and by the Match Game's onExit so returning from either
-// doesn't need to re-await collectLessonVocabulary()/lessonSkillFor() a
-// second time for data that hasn't changed.
-let _lessonSummaryCtx = null;
-
-// Screen 2 of the lesson-complete flow: the reinforcement offers
-// (summaryReinforceHtml, RecommendationEngine's next-action card) that used
-// to sit at the bottom of one long summary. "Done" lives here now instead
-// of on screen 1, since this is the actual last stop before leaving the
-// lesson.
-function renderLessonSummaryNext() {
-    const container = document.getElementById('lesson-content');
-    const ctx = _lessonSummaryCtx;
-    if (!container || !ctx) return;
-    const { lesson, words, grammarSkill, firstTime, rankBefore } = ctx;
-
-    container.innerHTML = `
-        <div class="lsn-summary">
-            <p class="lsn-summary-eyebrow">What's next</p>
-            ${summaryReinforceHtml(grammarSkill, words, lesson.level)}
-        </div>
-    `;
-    const summaryScrollParent = container.closest('.content') || document.querySelector('.content');
-    if (summaryScrollParent) summaryScrollParent.scrollTop = 0;
-    else window.scrollTo(0, 0);
-
-    const drillGrammarBtn = container.querySelector('[data-drill-grammar]');
-    if (drillGrammarBtn) {
-        drillGrammarBtn.addEventListener('click', () => {
-            _openReinforce('grammar', { skill: drillGrammarBtn.getAttribute('data-drill-grammar') });
-        });
-    }
-
-    const reinforceGrammarBtn = container.querySelector('[data-reinforce-grammar]');
-    if (reinforceGrammarBtn) {
-        reinforceGrammarBtn.addEventListener('click', () => {
-            _openReinforce('grammar', { skill: reinforceGrammarBtn.getAttribute('data-reinforce-grammar'), count: QUICK_REINFORCE_COUNT });
-        });
-    }
-
-    const reinforceVocabBtn = container.querySelector('[data-reinforce-vocab]');
-    if (reinforceVocabBtn) {
-        reinforceVocabBtn.addEventListener('click', () => {
-            _openReinforce('vocabulary', { words: words });
-        });
-    }
-
-    const reinforceListeningBtn = container.querySelector('[data-reinforce-listening]');
-    if (reinforceListeningBtn) {
-        reinforceListeningBtn.addEventListener('click', () => {
-            _openReinforce('listening', { count: QUICK_REINFORCE_COUNT, autoStart: true, level: lesson.level || null });
-        });
-    }
-
-    const reinforceSpeakingBtn = container.querySelector('[data-reinforce-speaking]');
-    if (reinforceSpeakingBtn) {
-        reinforceSpeakingBtn.addEventListener('click', () => {
-            _openReinforce('speaking', { count: QUICK_REINFORCE_COUNT, autoStart: true, level: lesson.level || null });
-        });
-    }
-
-    const reinforceMatchBtn = container.querySelector('[data-reinforce-match]');
-    if (reinforceMatchBtn) {
-        reinforceMatchBtn.addEventListener('click', () => {
-            const footer = document.querySelector('#lesson-screen .lesson-footer');
-            if (footer) footer.style.display = 'none';
-            const matchCount = Math.min(words.length, 12);
-            const matchWords = words.slice(0, matchCount);
-            const timeLimit = Math.min(120, matchCount * 8);
-            DeckMatch.render(container, {
-                words: matchWords,
-                deckId: lesson.id || 'lesson-reinforce',
-                limit: matchCount,
-                timeLimit: timeLimit,
-                srsCredit: 'misses',
-                exitLabel: 'Back to summary',
-                onExit: () => {
-                    if (footer) footer.style.display = '';
-                    renderLessonSummaryNext();
-                }
-            });
-        });
-    }
-
-    if (typeof RecommendationEngine !== 'undefined') RecommendationEngine.mountNextAction(container);
-
-    const backBtn = document.getElementById('lesson-back-btn');
-    if (backBtn) backBtn.disabled = true;
-
-    const nextBtn = document.getElementById('lesson-next-btn');
-    if (nextBtn) {
-        nextBtn.textContent = 'Done';
-        nextBtn.disabled = false;
-        nextBtn.classList.remove('is-locked');
-        nextBtn.onclick = closeLesson;
+        };
     }
 }
 

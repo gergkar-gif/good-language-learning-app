@@ -471,11 +471,43 @@ const RecommendationEngine = (function () {
             .slice(0, 10);
     }
 
+    const TENSE_LABELS = {
+        'indicativo.presente': 'the present tense',
+        'indicativo.preterito': 'the preterite tense',
+        'indicativo.imperfecto': 'the imperfect tense',
+        'indicativo.futuro': 'the future tense',
+        'indicativo.condicional': 'the conditional tense',
+        'subjuntivo.presente': 'the present subjunctive',
+        'subjuntivo.imperfecto': 'the imperfect subjunctive',
+        'pres.indef': 'present indefinite conjugation',
+        'pres.def': 'definite conjugation',
+        'past.indef': 'past indefinite conjugation',
+        'past.def': 'definite past conjugation'
+    };
+
+    function _verbDrillerId() {
+        const code = (typeof Lang !== 'undefined' && Lang.code) ? Lang.code() : 'es';
+        return code === 'hu' ? 'hu-verb' : 'verbs';
+    }
+
+    function _verbDrillOptions(tense, encounteredTenses, encounteredVerbs) {
+        if (_verbDrillerId() === 'hu-verb') {
+            const opts = { autoStart: true, count: 5, knownOnly: true };
+            if (tense) opts.tense = tense;
+            return opts;
+        }
+        const opts = { mode: 'speed', autoStart: true, duration: 60, knownOnly: true };
+        if (tense) opts.tense = tense;
+        if (Array.isArray(encounteredTenses) && encounteredTenses.length) opts.tenses = encounteredTenses;
+        if (Array.isArray(encounteredVerbs) && encounteredVerbs.length) opts.verbs = encounteredVerbs;
+        return opts;
+    }
+
     // What each weak driller's card says and opens with. Speaking has its
     // own candidate below.
     const DRILLER_OFFERS = {
-        verbs: { title: 'Verb conjugation', buttonLabel: 'Conjugation practice, timed', topic: 'verb conjugation', invite: 'Practice it here:', priority: 90, options: () => ({ mode: 'speed', autoStart: true, duration: 60 }) },
-        'hu-verb': { title: 'Verb conjugation', buttonLabel: 'Conjugation practice', topic: 'verb conjugation', invite: 'Practice it here:', priority: 90, options: () => ({ autoStart: true, count: 5 }) },
+        verbs: { title: 'Verb conjugation', buttonLabel: 'Conjugation practice, timed', topic: 'verb conjugation', invite: 'Practice it here:', priority: 90, options: (level, ctx) => _verbDrillOptions(ctx && ctx.tense, ctx && ctx.encounteredTenses, ctx && ctx.encounteredVerbs) },
+        'hu-verb': { title: 'Verb conjugation', buttonLabel: 'Conjugation practice', topic: 'verb conjugation', invite: 'Practice it here:', priority: 90, options: (level, ctx) => _verbDrillOptions(ctx && ctx.tense, ctx && ctx.encounteredTenses, ctx && ctx.encounteredVerbs) },
         'hu-suffix': { title: 'Suffixes', buttonLabel: 'Suffix practice', topic: 'suffixes', invite: 'Practice them here:', priority: 90, options: () => ({ autoStart: true, count: 5 }) },
         'hu-prefix': { title: 'Verbal prefixes', buttonLabel: 'Prefix practice', topic: 'verbal prefixes', invite: 'Practice them here:', priority: 90, options: () => ({ autoStart: true, count: 5 }) },
         'hu-morphology': { title: 'Word structure', buttonLabel: 'Word structure practice', topic: 'word structure', invite: 'Practice it here:', priority: 90, options: () => ({ autoStart: true, count: 5 }) },
@@ -510,7 +542,7 @@ const RecommendationEngine = (function () {
         if (offer.kind === 'unit-nudge') return 'unit-nudge:' + (offer.type || '');
         if (offer.kind === 'elective') return 'elective:' + offer.unit.track;
         if (offer.kind === 'welcome-back') return 'welcome-back:';
-        return offer.drillerId + ':' + (offer.skill || '');
+        return offer.drillerId + ':' + (offer.skill || offer.tense || '');
     }
 
     function _noteOutcome(offer, outcome) {
@@ -600,6 +632,8 @@ const RecommendationEngine = (function () {
         return best ? best.title : null;
     }
 
+    const MIN_ENCOUNTERED_VERBS = 3;
+
     async function _miniGameNudge() {
         const lessonId = LearnerPath.lastCompletedLessonId();
         if (!lessonId || miniGameDismissed(lessonId) || typeof LearnerModel === 'undefined') return null;
@@ -608,10 +642,18 @@ const RecommendationEngine = (function () {
         const weakBlurb = topic => `You made a few mistakes with ${topic} lately.`;
         const candidates = [];
 
-        // Grammar Driller skills: recent unresolved misses, then recent
+        const tw = _getTaughtWords();
+        if (tw && typeof tw.load === 'function') await tw.load();
+        const encounteredTenses = LearnerModel.encounteredTenses ? await LearnerModel.encounteredTenses() : [];
+        const encounteredVerbs = LearnerModel.encounteredVerbs ? await LearnerModel.encounteredVerbs() : [];
+        const verbDriller = _verbDrillerId();
+
+        // Grammar & Verb skills: recent unresolved misses, then recent
         // level-test weak spots, worst first, so a cooled-down top skill
-        // hands over to the next one. A vocabulary-theme skill is drilled
-        // the same way but named as words.
+        // hands over to the next one. When a weak grammar skill is a verb
+        // conjugation tense (in verb-tense-skills.json), route it to the
+        // Verb Driller scoped to that tense and the learner's encountered
+        // verbs.
         const trouble = LearnerModel.troubleSkills ? await LearnerModel.troubleSkills(3) : [];
         for (let i = 0; i < trouble.length; i++) {
             const t = trouble[i];
@@ -623,17 +665,56 @@ const RecommendationEngine = (function () {
                     ? (unitTitle ? `words from “${unitTitle}”` : 'some recent words')
                     : (unitTitle ? `the exercises from “${unitTitle}”` : 'some recent exercises');
             }
+            const mappedTense = (!isVocab && !t.levelTest && LearnerModel.tenseForSkill)
+                ? await LearnerModel.tenseForSkill(t.skillId)
+                : null;
+            if (mappedTense) {
+                candidates.push({
+                    drillerId: verbDriller,
+                    skill: t.skillId,
+                    tense: mappedTense,
+                    title: 'Verb conjugation',
+                    buttonLabel: verbDriller === 'verbs' ? 'Conjugation practice, timed' : 'Conjugation practice',
+                    blurb: weakBlurb(topic),
+                    invite: 'Practice with the verbs you know:',
+                    reason: 'weak',
+                    priority: 100 - i,
+                    options: _verbDrillOptions(mappedTense, encounteredTenses, encounteredVerbs)
+                });
+            } else {
+                candidates.push({
+                    drillerId: 'grammar',
+                    skill: t.skillId,
+                    title: isVocab ? 'Vocabulary' : 'Grammar',
+                    buttonLabel: isVocab ? 'Word practice' : 'Grammar practice',
+                    blurb: t.levelTest
+                        ? `Your ${t.levelTest} test showed a few mistakes with ${topic}.`
+                        : weakBlurb(topic),
+                    invite: isVocab ? 'Practice them here:' : 'Practice it here:',
+                    reason: 'weak',
+                    priority: 100 - i,
+                    options: { skill: t.skillId, count: 5, autoStart: true }
+                });
+            }
+        }
+
+        // Direct conjugation misses from Verb Speed / Verb Table that
+        // haven't yet triggered a full grammar skill's 2-exercise threshold.
+        const weakConj = (LearnerModel.weakConjugations ? LearnerModel.weakConjugations(3) : []).filter(c => c.recentMiss);
+        if (weakConj.length && !candidates.some(c => c.drillerId === verbDriller && c.tense === weakConj[0].tensePath)) {
+            const topConj = weakConj[0];
+            const tenseTopic = TENSE_LABELS[topConj.tensePath] || 'verb conjugation';
             candidates.push({
-                drillerId: 'grammar',
-                skill: t.skillId,
-                title: isVocab ? 'Vocabulary' : 'Grammar',
-                buttonLabel: isVocab ? 'Word practice' : 'Grammar practice',
-                blurb: t.levelTest
-                    ? `Your ${t.levelTest} test showed a few mistakes with ${topic}.`
-                    : weakBlurb(topic),
-                invite: isVocab ? 'Practice them here:' : 'Practice it here:',
-                priority: 100 - i,
-                options: { skill: t.skillId, count: 5, autoStart: true }
+                drillerId: verbDriller,
+                skill: topConj.tensePath,
+                tense: topConj.tensePath,
+                title: 'Verb conjugation',
+                buttonLabel: verbDriller === 'verbs' ? 'Conjugation practice, timed' : 'Conjugation practice',
+                blurb: weakBlurb(tenseTopic),
+                invite: 'Practice with the verbs you know:',
+                reason: 'weak',
+                priority: 96,
+                options: _verbDrillOptions(topConj.tensePath, encounteredTenses, encounteredVerbs)
             });
         }
 
@@ -648,6 +729,7 @@ const RecommendationEngine = (function () {
                     buttonLabel: 'Vocabulary practice',
                     blurb: weakBlurb('some recent words'),
                     invite: 'Practice them here:',
+                    reason: 'weak',
                     priority: 95,
                     options: { words: words.slice(0, 6).map(w => ({ lemma: w.lemma, translation: w.translation, pos: w.pos })), autoStart: true }
                 });
@@ -659,6 +741,7 @@ const RecommendationEngine = (function () {
                     buttonLabel: action === 'match' ? 'Word matching' : 'Word review',
                     blurb: 'These are the words you find hardest in review.',
                     invite: 'Practice them here:',
+                    reason: 'weak',
                     priority: 93,
                     options: { kind: 'srs', words, action }
                 });
@@ -683,6 +766,7 @@ const RecommendationEngine = (function () {
                         ? `You made a few mistakes with ${humanizeSkill(prod.skillId)} when speaking lately.`
                         : 'You made a few mistakes when speaking lately.',
                     invite: 'Practice it here:',
+                    reason: 'weak',
                     priority: 92,
                     options: { autoStart: true, count: 5, level, skill: prod ? prod.skillId : undefined }
                 });
@@ -690,6 +774,7 @@ const RecommendationEngine = (function () {
         }
 
         // Any other driller whose recent sessions have gone badly.
+        const fallbackTense = (weakConj[0] && weakConj[0].tensePath) || encounteredTenses[encounteredTenses.length - 1] || null;
         weakDrillers.forEach(d => {
             const offer = DRILLER_OFFERS[d.drillerId];
             if (!offer) return;
@@ -699,10 +784,40 @@ const RecommendationEngine = (function () {
                 buttonLabel: offer.buttonLabel,
                 blurb: weakBlurb(offer.topic),
                 invite: offer.invite,
+                reason: 'weak',
                 priority: offer.priority,
-                options: offer.options(level)
+                options: offer.options(level, { tense: fallbackTense, encounteredTenses, encounteredVerbs })
             });
         });
+
+        // Curriculum-driven Verb Practice: when the learner finishes a unit
+        // whose primary grammar skill is a verb tense and has encountered
+        // verbs in the curriculum, offer a practice session with the verbs
+        // and tense they have encountered so far.
+        const foundUnit = LearnerPath.unitFor ? LearnerPath.unitFor(lessonId) : null;
+        if (foundUnit && foundUnit.unit && !dismissedUnits().includes(foundUnit.unit.id)) {
+            const uLessons = foundUnit.unit.lessons || [];
+            const lastInUnit = uLessons[uLessons.length - 1];
+            if (lastInUnit && lastInUnit.id === lessonId && encounteredVerbs.length >= MIN_ENCOUNTERED_VERBS && typeof Recommend !== 'undefined' && Recommend.unitSkillFor) {
+                const unitSkill = await Recommend.unitSkillFor(foundUnit.unit);
+                const unitTense = (unitSkill && LearnerModel.tenseForSkill) ? await LearnerModel.tenseForSkill(unitSkill) : null;
+                if (unitTense && !candidates.some(c => c.drillerId === verbDriller)) {
+                    const tenseLabel = TENSE_LABELS[unitTense] || humanizeSkill(unitSkill);
+                    candidates.push({
+                        drillerId: verbDriller,
+                        skill: unitSkill,
+                        tense: unitTense,
+                        title: 'Verb conjugation',
+                        buttonLabel: verbDriller === 'verbs' ? 'Conjugation practice, timed' : 'Conjugation practice',
+                        blurb: `You have learned ${tenseLabel} and ${encounteredVerbs.length} verbs in your lessons so far.`,
+                        invite: 'Practice the verbs you know:',
+                        reason: 'encountered',
+                        priority: 85,
+                        options: _verbDrillOptions(unitTense, encounteredTenses, encounteredVerbs)
+                    });
+                }
+            }
+        }
 
         const outcomes = _outcomes();
         const open = _currentOpen();
@@ -716,10 +831,11 @@ const RecommendationEngine = (function () {
             challengeTitle: pick.title,
             drillerId: pick.drillerId,
             skill: pick.skill || null,
+            tense: pick.tense || null,
             buttonLabel: pick.buttonLabel,
             blurb: pick.blurb,
             invite: pick.invite,
-            reason: 'weak',
+            reason: pick.reason || 'weak',
             options: pick.options
         };
     }
