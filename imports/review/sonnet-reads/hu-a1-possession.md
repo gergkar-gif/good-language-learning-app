@@ -38,5 +38,6 @@ of the full docs (123k, 3.5 min), filtered and applied by Claude.
 - Shape repetition of "Which means" items; consolidation repeating a1-42
   dialogue: acceptable.
 - `sajat` skill is A2 (`a2-25-b-gr`) though a1-45 teaches *saját*: items are
-  tagged `possessive-suffixes` / `van-possessive-to-have`; a registry
-  question for the user.
+  tagged `possessive-suffixes` / `van-possessive-to-have`. Decided by the
+  user 2026-10-13: `sajat` moved to A1 (`a1-45-a-gr`); `a1-45-check-1`
+  rewritten to test it (*saját* / *sajátom*).
