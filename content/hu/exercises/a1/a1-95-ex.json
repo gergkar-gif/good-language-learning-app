@@ -2,248 +2,235 @@
   "lesson": "a1-95",
   "exercises": [
     {
-      "id": "a1-95-review-1",
+      "id": "a1-95-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"dinner\"?",
-      "options": [
-        "vacsora",
-        "leves",
-        "alma"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-food-drink-vocab"
-      ]
-    },
-    {
-      "id": "a1-95-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "How do you say \"I request coffee\"?",
-      "options": [
-        "Kérek kávét.",
-        "Kérek kávé.",
-        "Kávét kérek van."
       ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "how-the-accusative-t-works"
-      ]
-    },
-    {
-      "id": "a1-95-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"thirsty\"?",
+      "question": "Which word means “hungry”?",
       "options": [
         "szomjas",
-        "éhes",
-        "finom"
+        "finom",
+        "éhes"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 2
     },
     {
-      "id": "a1-95-intro-2",
+      "id": "a1-95-introduce-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"hungry\"?",
-      "options": [
-        "éhes",
-        "szomjas",
-        "finom"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-food-drink-vocab"
       ],
-      "stage": "introduce"
+      "question": "Which means “I am thirsty. I drink a glass of water.”?",
+      "options": [
+        "Éhes vagyok. Iszom egy pohár vizet.",
+        "Szomjas vagyok. Iszom egy pohár vizet.",
+        "Szomjas vagyok. Eszem egy pohár vizet."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-95-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "van-zero-copula"
+      ],
+      "sentence": "Anna éhes, de én nem ____ éhes.",
+      "english": "Anna is hungry, but I am not hungry.",
+      "answer": "vagyok"
+    },
+    {
+      "id": "a1-95-controlled-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "present-tense-routine-language"
+      ],
+      "question": "Which form fits? “Még egy szendvicset ____.” (I would like another sandwich.)",
+      "options": [
+        "kér",
+        "kérek",
+        "kérsz"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-95-controlled-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-food-drink-vocab"
+      ],
       "pairs": [
-        [
-          "szomjas",
-          "thirsty"
-        ],
         [
           "éhes",
           "hungry"
+        ],
+        [
+          "szomjas",
+          "thirsty"
         ],
         [
           "finom",
           "delicious"
         ],
         [
-          "vacsora",
-          "dinner"
+          "pincér",
+          "waiter"
+        ],
+        [
+          "még",
+          "another, more"
         ]
-      ],
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-95-controlled-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Nem vagyok szomjas, de ____ vagyok.",
-      "hint": "hungry",
-      "english": "I am not thirsty, but I am hungry.",
-      "answer": "éhes",
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-95-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence correctly says \"I am hungry\"?",
-      "options": [
-        "Éhes vagyok.",
-        "Éhes van.",
-        "Éhesen vagyok."
-      ],
-      "correct": 0,
-      "teaches": [
-        "van-zero-copula"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-95-controlled-4",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A leves nagyon ____.",
-      "hint": "delicious",
-      "english": "The soup is very delicious.",
-      "answer": "finom",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-food-drink-vocab"
+        "van-zero-copula"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "A",
+        "leves",
+        "nagyon",
+        "finom",
+        "."
+      ],
+      "solution": [
+        "A",
+        "leves",
+        "nagyon",
+        "finom",
+        "."
+      ],
+      "english": "The soup is very delicious."
     },
     {
       "id": "a1-95-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word fits \"A leves ____ finom\" to mean \"The soup is very delicious\"?",
-      "options": [
-        "nagyon",
-        "sok",
-        "kevés"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
-        "nagyon-very"
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "question": "Anna is thirsty and orders water. What does she say?",
+      "options": [
+        "Egy pohár víz kérek.",
+        "Egy pohár vizet kérsz.",
+        "Egy pohár vizet kérek."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-95-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "A vacsora finom ____.",
-      "hint": "will be",
-      "english": "Dinner will be delicious.",
-      "answer": "lesz",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Egy kávét és egy ____ kérek.",
+      "english": "I would like a coffee and a cake.",
+      "answer": "süteményt"
     },
     {
       "id": "a1-95-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Nem vagyok szomjas, de éhes vagyok.",
-          "I am not thirsty, but I am hungry."
-        ],
-        [
-          "A leves nagyon finom.",
-          "The soup is very delicious."
-        ],
-        [
-          "A vacsora finom lesz.",
-          "Dinner will be delicious."
-        ],
-        [
-          "Van levesünk.",
-          "We have soup."
-        ]
-      ],
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-95-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "kerek-vs-szeretnek"
+      ],
       "tiles": [
-        "Nem",
-        "vagyok",
-        "szomjas",
-        ",",
-        "de",
-        "éhes",
-        "vagyok",
+        "Még",
+        "egy",
+        "csésze",
+        "teát",
+        "kérek",
         "."
       ],
       "solution": [
-        "Nem",
-        "vagyok",
-        "szomjas",
-        ",",
-        "de",
-        "éhes",
-        "vagyok",
+        "Még",
+        "egy",
+        "csésze",
+        "teát",
+        "kérek",
         "."
       ],
-      "english": "I am not thirsty, but I am hungry.",
-      "teaches": [
-        "van-zero-copula"
-      ],
-      "stage": "practice"
+      "english": "I would like another cup of tea."
     },
     {
-      "id": "a1-95-practice-5",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Éhes vagyok.",
-      "base_word": "Éhes",
-      "base_gloss": "I am hungry.",
-      "options": [
-        {
-          "word": "szomjas",
-          "inflected": "Szomjas",
-          "sentence": "Szomjas vagyok.",
-          "gloss": "thirsty"
-        }
-      ],
+      "id": "a1-95-practice-4",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
         "a1-food-drink-vocab"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “The waiter is hungry”?",
+      "options": [
+        "A pincér éhes.",
+        "A pincér szomjas.",
+        "A pincér finom."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-95-practice-5",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "containers-and-measures"
+      ],
+      "sentence": "Veszek egy kiló ____ a boltban.",
+      "english": "I buy a kilo of apples at the shop.",
+      "answer": "almát"
     },
     {
       "id": "a1-95-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Mit kérsz?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Egy levest és egy pohár vizet kérek.",
+        "Egy leves és egy pohár vizet kérek.",
+        "Egy levest és egy pohár vizet kérsz."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-95-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
           "speaker": "Károly",
@@ -255,96 +242,125 @@
         }
       ],
       "options": [
-        "Nem vagyok szomjas, de éhes vagyok.",
-        "Nem vagyok szomjas, de éhes van."
+        "Igen, éhes vagyok. Eszem egy szendvicset.",
+        "Igen, éhes vagyok. Eszem egy szendvics.",
+        "Igen, éhes vagyok. Eszel egy szendvicset."
       ],
-      "correct": 0,
-      "teaches": [
-        "van-zero-copula"
-      ]
+      "correct": 0
     },
     {
-      "id": "a1-95-dialogue-2",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
+      "id": "a1-95-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "tiles": [
+        "Egy",
+        "kávét",
+        "és",
+        "egy",
+        "süteményt",
+        "kérek",
+        "."
+      ],
+      "solution": [
+        "Egy",
+        "kávét",
+        "és",
+        "egy",
+        "süteményt",
+        "kérek",
+        "."
+      ],
+      "english": "I would like a coffee and a cake."
+    },
+    {
+      "id": "a1-95-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "van-zero-copula"
+      ],
+      "template": [
         {
-          "speaker": "Meg",
-          "text": "Milyen a leves?"
+          "prompt": "Say that you are thirsty.",
+          "answer": "Szomjas vagyok."
         },
         {
-          "speaker": "Károly",
-          "text": "_____"
+          "prompt": "Order a glass of water.",
+          "answer": "Egy pohár vizet kérek."
         }
-      ],
-      "options": [
-        "A leves nagyon finom.",
-        "A leves van nagyon finom."
-      ],
-      "correct": 0,
-      "teaches": [
-        "van-zero-copula"
-      ]
-    },
-    {
-      "id": "a1-95-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"I am thirsty.\" in Hungarian.",
-          "answer": "Szomjas vagyok."
-        }
-      ],
-      "teaches": [
-        "van-zero-copula"
-      ]
-    },
-    {
-      "id": "a1-95-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"Dinner will be delicious.\" in Hungarian.",
-          "answer": "A vacsora finom lesz."
-        }
-      ],
-      "teaches": [
-        "a1-food-drink-vocab"
       ]
     },
     {
       "id": "a1-95-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"delicious\"?",
-      "options": [
-        "finom",
-        "éhes",
-        "szomjas"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "sentence": "Szeretnék egy csésze ____.",
+      "english": "I would like a cup of coffee.",
+      "answer": "kávét"
     },
     {
       "id": "a1-95-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"I am not thirsty, but I am hungry\"?",
-      "options": [
-        "Nem vagyok szomjas, de éhes vagyok.",
-        "Nem szomjas van, de éhes van.",
-        "Szomjas nem vagyok, éhes vagyok de."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "van-zero-copula"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "question": "Which sentence means “I would like two sandwiches”?",
+      "options": [
+        "Két szendvics kérek.",
+        "Két szendvicseket kérek.",
+        "Két szendvicset kérek."
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a1-95-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What does Anna order?",
+      "options": [
+        "A coffee and a sandwich.",
+        "A tea and a piece of cake.",
+        "Two glasses of water."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-95-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "Who comes in later and says he is thirsty?",
+      "options": [
+        "Károly.",
+        "Anna.",
+        "Meg."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-95-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "stage": "reading",
+      "question": "What is missing at home?",
+      "options": [
+        "Bread.",
+        "Cheese.",
+        "Soup."
+      ],
+      "correct": 1
     }
   ]
 }

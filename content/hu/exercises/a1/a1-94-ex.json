@@ -2,255 +2,192 @@
   "lesson": "a1-94",
   "exercises": [
     {
-      "id": "a1-94-review-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"much / many\"?",
-      "options": [
-        "sok",
-        "kevés",
-        "darab"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-food-drink-vocab"
-      ]
-    },
-    {
-      "id": "a1-94-review-2",
+      "id": "a1-94-introduce-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"There is much bread\"?",
-      "options": [
-        "Sok kenyér van.",
-        "Sok kenyér.",
-        "Kenyér sok van."
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
-        "van-and-nincs-there-is-there-isn-t"
-      ]
-    },
-    {
-      "id": "a1-94-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"few / little\"?",
-      "options": [
-        "kevés",
-        "sok",
-        "darab"
+        "kerek-vs-szeretnek"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-94-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"I request / please\"?",
+      "question": "Which word is the everyday way to say “I would like” when ordering?",
       "options": [
+        "szeretnék",
         "kérek",
-        "van",
-        "sok"
+        "kérsz"
       ],
-      "correct": 0,
+      "correct": 1
+    },
+    {
+      "id": "a1-94-introduce-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-food-drink-vocab"
+        "kerek-vs-szeretnek"
       ],
-      "stage": "introduce"
+      "question": "Which sentence means “I would like a tea” (polite)?",
+      "options": [
+        "Szeretnék egy tea.",
+        "Szeretnék egy teat.",
+        "Szeretnék egy teát."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-94-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "kevés",
-          "little, few"
-        ],
-        [
-          "sok",
-          "much, many"
-        ],
-        [
-          "kérek",
-          "I request"
-        ],
-        [
-          "van",
-          "there is"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "sentence": "Szeretnék egy ____.",
+      "english": "I would like a cake.",
+      "answer": "süteményt"
     },
     {
       "id": "a1-94-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "____ vizet, kávét és teát.",
-      "hint": "I request",
-      "english": "I'd like water, coffee and tea.",
-      "answer": "Kérek",
+      "stage": "controlled",
       "teaches": [
-        "kerek-vs-szeretnek"
+        "present-tense-routine-language"
       ],
-      "stage": "controlled"
+      "sentence": "Mit ____ te?",
+      "english": "What would you like?",
+      "answer": "kérsz"
     },
     {
       "id": "a1-94-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "In a list of requested items, which suffix must EVERY item take?",
-      "options": [
-        "-t (accusative)",
-        "-ban (locative)",
-        "no suffix at all"
-      ],
-      "correct": 0,
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "present-tense-routine-language"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "controlled"
+      "question": "Which form fits? “Anna egy kávét ____.”",
+      "options": [
+        "kérek",
+        "kér",
+        "kérsz"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-94-controlled-4",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Kérek egy üveg vizet és egy pohár ____.",
-      "hint": "tea, accusative",
-      "english": "I'd like a bottle of water and a glass of tea.",
-      "answer": "teát",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
       "teaches": [
-        "containers-and-measures"
+        "a1-food-drink-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "sütemény",
+          "cake"
+        ],
+        [
+          "szendvics",
+          "sandwich"
+        ],
+        [
+          "kérek",
+          "I would like, please"
+        ],
+        [
+          "szeretnék",
+          "I would like (softer)"
+        ]
+      ]
     },
     {
       "id": "a1-94-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly lists three requested drinks?",
-      "options": [
-        "Kérek vizet, kávét és teát.",
-        "Kérek víz, kávé és tea.",
-        "Kérek vizet, kávé és teát."
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "question": "Which sentence orders a coffee and a cake?",
+      "options": [
+        "Kérek egy kávét és egy süteményt.",
+        "Kérek egy kávé és egy sütemény.",
+        "Kérek egy kávét és egy sütemény."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-94-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Kérek ____.",
-      "hint": "soup, accusative",
-      "english": "I'd like soup.",
-      "answer": "levest",
+      "stage": "practice",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Kérsz ____?",
+      "english": "Would you like tea?",
+      "answer": "teát"
     },
     {
       "id": "a1-94-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Kérek vizet, kávét és teát.",
-          "I request water, coffee and tea."
-        ],
-        [
-          "Kérek egy üveg vizet.",
-          "I request one bottle of water."
-        ],
-        [
-          "Kérek levest.",
-          "I request soup."
-        ],
-        [
-          "Kérek egy pohár teát.",
-          "I request one glass of tea."
-        ]
-      ],
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-94-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "kerek-vs-szeretnek"
+      ],
       "tiles": [
-        "Kérek",
-        "vizet",
-        ",",
-        "kávét",
-        "és",
+        "Szeretnék",
+        "egy",
+        "csésze",
         "teát",
         "."
       ],
       "solution": [
-        "Kérek",
-        "vizet",
-        ",",
-        "kávét",
-        "és",
+        "Szeretnék",
+        "egy",
+        "csésze",
         "teát",
         "."
       ],
-      "english": "I'd like water, coffee and tea.",
+      "english": "I would like a cup of tea."
+    },
+    {
+      "id": "a1-94-practice-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "question": "Which question means “Would you like coffee?”",
+      "options": [
+        "Kérek kávét?",
+        "Kérsz kávé?",
+        "Kérsz kávét?"
+      ],
+      "correct": 2
     },
     {
       "id": "a1-94-practice-5",
-      "type": "substitution",
+      "type": "fill-blank",
       "category": "grammar",
-      "base_sentence": "Kérek levest.",
-      "base_word": "levest",
-      "base_gloss": "I request soup.",
-      "options": [
-        {
-          "word": "kenyér",
-          "inflected": "kenyeret",
-          "sentence": "Kérek kenyeret.",
-          "gloss": "bread"
-        },
-        {
-          "word": "alma",
-          "inflected": "almát",
-          "sentence": "Kérek almát.",
-          "gloss": "apple"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
-        "how-the-accusative-t-works"
+        "present-tense-routine-language"
       ],
-      "stage": "practice"
+      "sentence": "Anna nem ____ süteményt.",
+      "english": "Anna does not want a cake.",
+      "answer": "kér"
     },
     {
       "id": "a1-94-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "kerek-vs-szeretnek"
+      ],
       "prompt": [
         {
           "speaker": "Károly",
@@ -262,96 +199,113 @@
         }
       ],
       "options": [
-        "Kérek vizet, kávét és teát.",
-        "Kérek víz, kávé és tea."
+        "Kérek egy teát.",
+        "Kérsz egy teát.",
+        "Kérek egy tea."
       ],
-      "correct": 0,
-      "teaches": [
-        "how-the-accusative-t-works"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-94-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "kerek-vs-szeretnek"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Kérsz levest?"
+          "speaker": "Anna",
+          "text": "Kérsz kávét?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, kérek levest.",
-        "Igen, kérek leves."
+        "Nem, szeretnék egy teát.",
+        "Nem, szeretnék egy tea.",
+        "Nem, kérsz egy teát."
       ],
       "correct": 0,
-      "teaches": [
-        "how-the-accusative-t-works"
-      ]
+      "distractor_skills": {
+        "2": "present-tense-routine-language"
+      }
     },
     {
-      "id": "a1-94-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"I request bread and cheese.\" in Hungarian.",
-          "answer": "Kérek kenyeret és sajtot."
-        }
-      ],
+      "id": "a1-94-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "how-the-accusative-t-works"
-      ]
+      ],
+      "tiles": [
+        "Kérek",
+        "két",
+        "pohár",
+        "vizet",
+        "."
+      ],
+      "solution": [
+        "Kérek",
+        "két",
+        "pohár",
+        "vizet",
+        "."
+      ],
+      "english": "I would like two glasses of water."
     },
     {
-      "id": "a1-94-writing-2",
+      "id": "a1-94-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "kerek-vs-szeretnek"
+      ],
       "template": [
         {
-          "prompt": "Say \"I request one bottle of water and one glass of tea.\" in Hungarian.",
-          "answer": "Kérek egy üveg vizet és egy pohár teát."
+          "prompt": "Order a coffee in the everyday way.",
+          "answer": "Kérek egy kávét."
+        },
+        {
+          "prompt": "Order a cake in the softer, polite way.",
+          "answer": "Szeretnék egy süteményt."
         }
-      ],
-      "teaches": [
-        "containers-and-measures"
       ]
     },
     {
       "id": "a1-94-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"there is\"?",
-      "options": [
-        "van",
-        "kérek",
-        "sok"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-food-drink-vocab"
+        "present-tense-routine-language"
       ],
-      "stage": "check"
+      "sentence": "Mit ____ Károly?",
+      "english": "What does Károly want?",
+      "answer": "kér"
     },
     {
       "id": "a1-94-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"I request soup\"?",
-      "options": [
-        "Kérek levest.",
-        "Kérek leves.",
-        "Levest kérek van."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "question": "Which sentence means “No milk for me”?",
+      "options": [
+        "Nem kérek tej.",
+        "Nem kérek tejet.",
+        "Nem kérünk tejet."
+      ],
+      "correct": 1,
+      "distractor_skills": {
+        "2": "present-tense-routine-language"
+      }
     }
   ]
 }

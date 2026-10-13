@@ -2,85 +2,77 @@
   "lesson": "a1-91",
   "exercises": [
     {
-      "id": "a1-91-review-1",
+      "id": "a1-91-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"together\"?",
-      "options": [
-        "együtt",
-        "minden",
-        "otthon"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-family-vocab"
-      ]
-    },
-    {
-      "id": "a1-91-review-2",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which is the \"in the room\" form of szoba?",
-      "options": [
-        "szobában",
-        "szobák",
-        "szobát"
-      ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "ban-ben-in"
-      ],
-      "distractor_skills": {
-        "1": "plural-nouns-k",
-        "2": "how-the-accusative-t-works"
-      }
-    },
-    {
-      "id": "a1-91-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"bread\"?",
-      "options": [
-        "kenyér",
-        "vaj",
-        "sajt"
-      ],
-      "correct": 0,
+      "stage": "introduce",
       "teaches": [
         "a1-food-drink-vocab"
       ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-91-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"milk\"?",
+      "question": "Which word means “cheese”?",
       "options": [
         "tej",
-        "víz",
-        "kávé"
+        "sajt",
+        "kenyér"
       ],
-      "correct": 0,
+      "correct": 1
+    },
+    {
+      "id": "a1-91-introduce-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "introduce",
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "introduce"
+      "question": "Which means “Anna cooks soup”?",
+      "options": [
+        "Anna főz levesat.",
+        "Anna főz leves.",
+        "Anna főz levest."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-91-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "sentence": "Meg vásárol ____.",
+      "english": "Meg buys bread.",
+      "answer": "kenyeret"
+    },
+    {
+      "id": "a1-91-controlled-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "question": "Which form fits? “Károly ____ főz.” (Károly makes coffee.)",
+      "options": [
+        "kávé",
+        "kávét",
+        "kávéet"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-91-controlled-3",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-food-drink-vocab"
+      ],
       "pairs": [
         [
           "kenyér",
           "bread"
-        ],
-        [
-          "vaj",
-          "butter"
         ],
         [
           "sajt",
@@ -89,168 +81,129 @@
         [
           "tej",
           "milk"
+        ],
+        [
+          "alma",
+          "apple"
+        ],
+        [
+          "tea",
+          "tea"
+        ],
+        [
+          "leves",
+          "soup"
         ]
-      ],
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-91-controlled-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Van ____, sajt és tej.",
-      "hint": "butter",
-      "english": "There is butter, cheese, and milk.",
-      "answer": "vaj",
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-91-controlled-3",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Which sentence correctly asks for bread using the accusative?",
-      "options": [
-        "Kérek kenyeret.",
-        "Kérek kenyér.",
-        "Kenyeret van."
-      ],
-      "correct": 0,
-      "teaches": [
-        "how-the-accusative-t-works"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-91-controlled-4",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Kérek ____.",
-      "hint": "water, accusative",
-      "english": "I'd like water.",
-      "answer": "vizet",
+      "stage": "controlled",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "controlled"
+      "tiles": [
+        "Meg",
+        "egy",
+        "almát",
+        "vásárol",
+        "."
+      ],
+      "solution": [
+        "Meg",
+        "egy",
+        "almát",
+        "vásárol",
+        "."
+      ],
+      "english": "Meg buys an apple."
     },
     {
       "id": "a1-91-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which suffix marks the object of kérek?",
-      "options": [
-        "-t",
-        "-ban",
-        "-nak"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "distractor_skills": {
-        "1": "ban-ben-in"
-      },
-      "stage": "practice"
+      "question": "Which sentence means “I buy cheese”?",
+      "options": [
+        "Sajt vásárolok.",
+        "Sajtot vásárolok.",
+        "Sajtet vásárolok."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-91-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Kérek ____.",
-      "hint": "tea, accusative",
-      "english": "I'd like tea.",
-      "answer": "teát",
+      "stage": "practice",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Károly ____ vásárol.",
+      "english": "Károly buys milk.",
+      "answer": "tejet"
     },
     {
       "id": "a1-91-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Van kenyér.",
-          "There is bread."
-        ],
-        [
-          "Kérek kenyeret.",
-          "I'd like bread."
-        ],
-        [
-          "Kérek vizet.",
-          "I'd like water."
-        ],
-        [
-          "A kenyér jó.",
-          "The bread is good."
-        ]
-      ],
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-food-drink-vocab"
+        "van-and-nincs-there-is-there-isn-t"
       ],
-      "stage": "practice"
+      "question": "Which means “There is no milk”?",
+      "options": [
+        "Nem van tej.",
+        "Nincs tej.",
+        "Nincs tejet."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-91-practice-4",
-      "type": "sentence-builder",
+      "type": "multiple-choice",
       "category": "grammar",
-      "tiles": [
-        "Kérek",
-        "kenyeret",
-        "."
-      ],
-      "solution": [
-        "Kérek",
-        "kenyeret",
-        "."
-      ],
-      "english": "I'd like bread.",
+      "stage": "practice",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “I read a book”?",
+      "options": [
+        "Olvasok egy könyv.",
+        "Olvasok egy könyvt.",
+        "Olvasok egy könyvet."
+      ],
+      "correct": 2
     },
     {
       "id": "a1-91-practice-5",
-      "type": "substitution",
+      "type": "fill-blank",
       "category": "grammar",
-      "base_sentence": "Kérek kenyeret.",
-      "base_word": "kenyeret",
-      "base_gloss": "I'd like bread.",
-      "options": [
-        {
-          "word": "tej",
-          "inflected": "tejet",
-          "sentence": "Kérek tejet.",
-          "gloss": "milk"
-        },
-        {
-          "word": "sajt",
-          "inflected": "sajtot",
-          "sentence": "Kérek sajtot.",
-          "gloss": "cheese"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Anna ____ főz.",
+      "english": "Anna cooks tea.",
+      "answer": "teát"
     },
     {
       "id": "a1-91-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Mit kérsz?"
+          "text": "Te szoktál főzni?"
         },
         {
           "speaker": "Meg",
@@ -258,96 +211,110 @@
         }
       ],
       "options": [
-        "Kérek kenyeret.",
-        "Kérek kenyér."
+        "Igen, szoktam levest főzni.",
+        "Igen, szoktam leves főzni.",
+        "Igen, szoktam levesat főzni."
       ],
-      "correct": 0,
-      "teaches": [
-        "how-the-accusative-t-works"
-      ]
+      "correct": 0
     },
     {
       "id": "a1-91-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Van vaj?"
+          "speaker": "Anna",
+          "text": "Te kávét főzöl?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, van vaj, sajt és tej.",
-        "Igen, van vajat."
+        "Nem, teát főzök.",
+        "Nem, tea főzök.",
+        "Nem, teát főzünk."
       ],
       "correct": 0,
-      "teaches": [
-        "van-and-nincs-there-is-there-isn-t"
-      ]
+      "distractor_skills": {
+        "2": "present-tense-routine-language"
+      }
     },
     {
-      "id": "a1-91-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"I'd like cheese.\" in Hungarian.",
-          "answer": "Kérek sajtot."
-        }
-      ],
+      "id": "a1-91-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "how-the-accusative-t-works"
-      ]
+      ],
+      "tiles": [
+        "Meg",
+        "olvas",
+        "egy",
+        "könyvet",
+        "."
+      ],
+      "solution": [
+        "Meg",
+        "olvas",
+        "egy",
+        "könyvet",
+        "."
+      ],
+      "english": "Meg reads a book."
     },
     {
-      "id": "a1-91-writing-2",
+      "id": "a1-91-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "template": [
         {
-          "prompt": "Say \"There is bread and milk.\" in Hungarian.",
-          "answer": "Van kenyér és tej."
+          "prompt": "Say that you buy bread.",
+          "answer": "Kenyeret vásárolok."
+        },
+        {
+          "prompt": "Say that Anna cooks soup.",
+          "answer": "Anna levest főz."
         }
-      ],
-      "teaches": [
-        "van-and-nincs-there-is-there-isn-t"
       ]
     },
     {
       "id": "a1-91-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"cheese\"?",
-      "options": [
-        "sajt",
-        "vaj",
-        "tej"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "sentence": "Anna ____ főz.",
+      "english": "Anna cooks soup.",
+      "answer": "levest"
     },
     {
       "id": "a1-91-check-2",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "How do you say \"I'd like water\"?",
-      "options": [
-        "Kérek vizet.",
-        "Kérek víz.",
-        "Vizet kérek van."
-      ],
-      "correct": 0,
+      "category": "vocabulary",
+      "stage": "check",
       "teaches": [
-        "how-the-accusative-t-works"
+        "a1-food-drink-vocab"
       ],
-      "stage": "check"
+      "question": "Which word means “apple”?",
+      "options": [
+        "alma",
+        "tej",
+        "leves"
+      ],
+      "correct": 0
     }
   ]
 }

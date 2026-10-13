@@ -2,252 +2,213 @@
   "lesson": "a1-93",
   "exercises": [
     {
-      "id": "a1-93-review-1",
+      "id": "a1-93-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"glass\"?",
+      "stage": "introduce",
+      "teaches": [
+        "a1-food-drink-vocab"
+      ],
+      "question": "Which word means “bottle”?",
       "options": [
         "pohár",
         "üveg",
-        "darab"
+        "csésze"
       ],
-      "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "a1-food-drink-vocab"
-      ]
+      "correct": 1
     },
     {
-      "id": "a1-93-review-2",
+      "id": "a1-93-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"The apple is good\"?",
+      "stage": "introduce",
+      "teaches": [
+        "containers-and-measures"
+      ],
+      "question": "Which means “a glass of water”?",
       "options": [
-        "Az alma jó.",
-        "Az alma van jó.",
-        "Van az alma jó."
+        "egy pohár víz",
+        "egy víz pohár",
+        "egy pohár vizek"
       ],
       "correct": 0,
-      "stage": "review",
-      "teaches": [
-        "van-zero-copula"
-      ]
-    },
-    {
-      "id": "a1-93-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"apple\"?",
-      "options": [
-        "alma",
-        "pohár",
-        "üveg"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-93-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"piece\"?",
-      "options": [
-        "darab",
-        "üveg",
-        "pohár"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "introduce"
+      "distractor_skills": {
+        "2": "plural-nouns-k"
+      }
     },
     {
       "id": "a1-93-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "containers-and-measures"
+      ],
+      "sentence": "Iszom egy ____ vizet.",
+      "english": "I drink a glass of water.",
+      "answer": "pohár"
+    },
+    {
+      "id": "a1-93-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "containers-and-measures"
+      ],
+      "sentence": "Veszek két ____ bort.",
+      "english": "I buy two bottles of wine.",
+      "answer": "üveg"
+    },
+    {
+      "id": "a1-93-controlled-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "controlled",
+      "teaches": [
+        "containers-and-measures"
+      ],
+      "question": "Which fits? “Két ____ teát iszunk.”",
+      "options": [
+        "csészék",
+        "csészét",
+        "csésze"
+      ],
+      "correct": 2,
+      "distractor_skills": {
+        "0": "plural-nouns-k",
+        "1": "how-the-accusative-t-works"
+      }
+    },
+    {
+      "id": "a1-93-controlled-4",
       "type": "matching",
       "category": "vocabulary",
+      "stage": "controlled",
+      "teaches": [
+        "a1-food-drink-vocab"
+      ],
       "pairs": [
-        [
-          "alma",
-          "apple"
-        ],
         [
           "pohár",
           "glass"
+        ],
+        [
+          "csésze",
+          "cup"
         ],
         [
           "üveg",
           "bottle"
         ],
         [
+          "kiló",
+          "kilo"
+        ],
+        [
           "darab",
           "piece"
+        ],
+        [
+          "kevés",
+          "little, few"
         ]
-      ],
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-93-controlled-2",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Van két ____ alma.",
-      "hint": "piece",
-      "english": "There are two pieces of apple.",
-      "answer": "darab",
-      "teaches": [
-        "containers-and-measures"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-93-controlled-3",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"many/much\"?",
-      "options": [
-        "sok",
-        "kevés",
-        "darab"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "controlled"
-    },
-    {
-      "id": "a1-93-controlled-4",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "De ____ a sajt.",
-      "hint": "little",
-      "english": "But there is little cheese.",
-      "answer": "kevés",
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "controlled"
+      ]
     },
     {
       "id": "a1-93-practice-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which measure word fits \"Kérek egy ____ almát\" (a piece of apple)?",
-      "options": [
-        "darab",
-        "üveg",
-        "pohár"
-      ],
-      "correct": 0,
+      "stage": "practice",
       "teaches": [
         "containers-and-measures"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “I buy a kilo of apples”?",
+      "options": [
+        "Veszek egy kilót almát.",
+        "Veszek egy kiló almát.",
+        "Veszek egy kiló alma."
+      ],
+      "correct": 1
     },
     {
       "id": "a1-93-practice-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ kenyér van.",
-      "hint": "much",
-      "english": "There is much bread.",
-      "answer": "Sok",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Egy darab ____ eszem.",
+      "english": "I eat a piece of cheese.",
+      "answer": "sajtot"
     },
     {
       "id": "a1-93-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Van két darab alma.",
-          "There are two pieces of apple."
-        ],
-        [
-          "De kevés a sajt.",
-          "But there is little cheese."
-        ],
-        [
-          "Sok kenyér van.",
-          "There is much bread."
-        ],
-        [
-          "Kérek egy üveg vizet.",
-          "I'd like one bottle of water."
-        ]
-      ],
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-93-practice-4",
       "type": "sentence-builder",
       "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "containers-and-measures"
+      ],
       "tiles": [
-        "Van",
+        "Anna",
         "két",
-        "darab",
-        "alma",
+        "csésze",
+        "teát",
+        "iszik",
         "."
       ],
       "solution": [
-        "Van",
+        "Anna",
         "két",
-        "darab",
-        "alma",
+        "csésze",
+        "teát",
+        "iszik",
         "."
       ],
-      "english": "There are two pieces of apple.",
+      "english": "Anna drinks two cups of tea."
+    },
+    {
+      "id": "a1-93-practice-4",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
       "teaches": [
-        "containers-and-measures"
+        "a1-food-drink-vocab"
       ],
-      "stage": "practice"
+      "question": "Which phrase means “a kilo of apples”?",
+      "options": [
+        "egy üveg alma",
+        "egy kiló alma",
+        "egy pohár alma"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-93-practice-5",
-      "type": "substitution",
+      "type": "fill-blank",
       "category": "grammar",
-      "base_sentence": "Kérek egy üveg vizet.",
-      "base_word": "vizet",
-      "base_gloss": "I'd like one bottle of water.",
-      "options": [
-        {
-          "word": "tea",
-          "inflected": "teát",
-          "sentence": "Kérek egy pohár teát.",
-          "gloss": "tea"
-        },
-        {
-          "word": "alma",
-          "inflected": "almát",
-          "sentence": "Kérek egy darab almát.",
-          "gloss": "apple"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
-        "containers-and-measures"
+        "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "sentence": "Kevés ____ iszom.",
+      "english": "I drink little milk.",
+      "answer": "tejet"
     },
     {
       "id": "a1-93-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "containers-and-measures"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mennyi sajt van?"
+          "speaker": "Anna",
+          "text": "Mit iszol?"
         },
         {
           "speaker": "Meg",
@@ -255,96 +216,110 @@
         }
       ],
       "options": [
-        "De kevés a sajt.",
-        "De kevés sajt van a."
+        "Egy pohár tej iszom.",
+        "Egy pohár tejet iszom.",
+        "Egy poharat tejet iszom."
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-food-drink-vocab"
-      ]
+      "correct": 1,
+      "distractor_skills": {
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "a1-93-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "containers-and-measures"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Károly",
+          "text": "Mit veszel?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek egy pohár teát.",
-        "Kérek egy pohár tea."
+        "Veszek két üveg víz.",
+        "Veszek két üveg vizet.",
+        "Veszek két üveget vizet."
       ],
-      "correct": 0,
-      "teaches": [
-        "containers-and-measures"
-      ]
+      "correct": 1
     },
     {
-      "id": "a1-93-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"There is much bread.\" in Hungarian.",
-          "answer": "Sok kenyér van."
-        }
-      ],
-      "teaches": [
-        "singular-after-numbers"
-      ]
-    },
-    {
-      "id": "a1-93-writing-2",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"I'd like one piece of apple.\" in Hungarian.",
-          "answer": "Kérek egy darab almát."
-        }
-      ],
+      "id": "a1-93-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "containers-and-measures"
+      ],
+      "tiles": [
+        "Veszünk",
+        "egy",
+        "kiló",
+        "almát",
+        "."
+      ],
+      "solution": [
+        "Veszünk",
+        "egy",
+        "kiló",
+        "almát",
+        "."
+      ],
+      "english": "We buy a kilo of apples."
+    },
+    {
+      "id": "a1-93-production-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "containers-and-measures"
+      ],
+      "template": [
+        {
+          "prompt": "Say that you drink a glass of water.",
+          "answer": "Egy pohár vizet iszom."
+        },
+        {
+          "prompt": "Say that Károly buys two bottles of milk.",
+          "answer": "Károly két üveg tejet vesz."
+        }
       ]
     },
     {
       "id": "a1-93-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"bottle\"?",
-      "options": [
-        "üveg",
-        "pohár",
-        "darab"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-food-drink-vocab"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "sentence": "Egy csésze ____ iszom.",
+      "english": "I drink a cup of tea.",
+      "answer": "teát"
     },
     {
       "id": "a1-93-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"I'd like one bottle of water\"?",
-      "options": [
-        "Kérek egy üveg vizet.",
-        "Kérek egy üveg víz.",
-        "Egy üveg vizet van."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
         "containers-and-measures"
       ],
-      "stage": "check"
+      "question": "Which means “two bottles of wine”?",
+      "options": [
+        "két bor üveg",
+        "két üveg bor",
+        "két üvegek bor"
+      ],
+      "correct": 1
     }
   ]
 }

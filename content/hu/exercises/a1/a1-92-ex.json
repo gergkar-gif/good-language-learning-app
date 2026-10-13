@@ -2,250 +2,202 @@
   "lesson": "a1-92",
   "exercises": [
     {
-      "id": "a1-92-review-1",
+      "id": "a1-92-introduce-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which word means \"soup\"?",
-      "options": [
-        "leves",
-        "tej",
-        "sajt"
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "a1-food-drink-vocab"
-      ]
+      ],
+      "question": "Which word means “to drink”?",
+      "options": [
+        "eszik",
+        "főz",
+        "iszik"
+      ],
+      "correct": 2
     },
     {
-      "id": "a1-92-review-2",
+      "id": "a1-92-introduce-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"I'd like bread\"?",
-      "options": [
-        "Kérek kenyeret.",
-        "Kérek kenyér.",
-        "Kenyeret van."
-      ],
-      "correct": 0,
-      "stage": "review",
+      "stage": "introduce",
       "teaches": [
         "how-the-accusative-t-works"
-      ]
-    },
-    {
-      "id": "a1-92-intro-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"coffee\"?",
+      ],
+      "question": "Which question means “What do you eat?”",
       "options": [
-        "kávé",
-        "tea",
-        "víz"
+        "Mi eszel?",
+        "Mit eszel?",
+        "Mit eszem?"
       ],
-      "correct": 0,
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "introduce"
-    },
-    {
-      "id": "a1-92-intro-2",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"soup\"?",
-      "options": [
-        "leves",
-        "kávé",
-        "tej"
-      ],
-      "correct": 0,
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "introduce"
+      "correct": 1
     },
     {
       "id": "a1-92-controlled-1",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "víz",
-          "water"
-        ],
-        [
-          "kávé",
-          "coffee"
-        ],
-        [
-          "tea",
-          "tea"
-        ],
-        [
-          "leves",
-          "soup"
-        ]
-      ],
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-food-drink-vocab"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "controlled"
+      "sentence": "Anna vizet ____.",
+      "english": "Anna drinks water.",
+      "answer": "iszik"
     },
     {
       "id": "a1-92-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Kérek ____.",
-      "hint": "coffee, accusative",
-      "english": "I'd like coffee.",
-      "answer": "kávét",
+      "stage": "controlled",
       "teaches": [
-        "how-the-accusative-t-works"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "controlled"
+      "sentence": "Reggel egy tojást ____.",
+      "english": "In the morning I eat an egg.",
+      "answer": "eszem"
     },
     {
       "id": "a1-92-controlled-3",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which meal name means \"dinner\"?",
-      "options": [
-        "vacsora",
-        "reggeli",
-        "ebéd"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "stage": "controlled",
       "teaches": [
-        "a1-food-drink-vocab"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "controlled"
+      "question": "Which form fits? “Ti teát ____.”",
+      "options": [
+        "iszunk",
+        "isztok",
+        "iszol"
+      ],
+      "correct": 1
     },
     {
       "id": "a1-92-controlled-4",
-      "type": "fill-blank",
+      "type": "matching",
       "category": "vocabulary",
-      "sentence": "A ____ finom.",
-      "hint": "dinner",
-      "english": "Dinner is delicious.",
-      "answer": "vacsora",
+      "stage": "controlled",
       "teaches": [
         "a1-food-drink-vocab"
       ],
-      "stage": "controlled"
+      "pairs": [
+        [
+          "eszik",
+          "eats"
+        ],
+        [
+          "iszik",
+          "drinks"
+        ],
+        [
+          "mit",
+          "what"
+        ],
+        [
+          "bor",
+          "wine"
+        ],
+        [
+          "tojás",
+          "egg"
+        ],
+        [
+          "hús",
+          "meat"
+        ]
+      ]
     },
     {
       "id": "a1-92-practice-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which suffix on ebéd means \"for lunch\"?",
-      "options": [
-        "-re",
-        "-ban",
-        "-t"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
       "teaches": [
-        "a1-food-drink-vocab"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "practice"
+      "sentence": "Mit ____ Anna?",
+      "english": "What does Anna eat?",
+      "answer": "eszik"
     },
     {
       "id": "a1-92-practice-2",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "____ lesz leves.",
-      "hint": "for lunch",
-      "english": "For lunch there will be soup.",
-      "answer": "Ebédre",
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-92-practice-3",
-      "type": "matching",
-      "category": "vocabulary",
-      "pairs": [
-        [
-          "Kérek kávét.",
-          "I request coffee."
-        ],
-        [
-          "A vacsora finom.",
-          "Dinner is delicious."
-        ],
-        [
-          "Ebédre lesz leves.",
-          "For lunch there will be soup."
-        ],
-        [
-          "Kérek teát.",
-          "I request tea."
-        ]
-      ],
-      "teaches": [
-        "a1-food-drink-vocab"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-92-practice-4",
-      "type": "sentence-builder",
+      "type": "multiple-choice",
       "category": "grammar",
-      "tiles": [
-        "A",
-        "vacsora",
-        "finom",
-        "."
-      ],
-      "solution": [
-        "A",
-        "vacsora",
-        "finom",
-        "."
-      ],
-      "english": "Dinner is delicious.",
-      "teaches": [
-        "van-zero-copula"
-      ],
-      "stage": "practice"
-    },
-    {
-      "id": "a1-92-practice-5",
-      "type": "substitution",
-      "category": "grammar",
-      "base_sentence": "Kérek kávét.",
-      "base_word": "kávét",
-      "base_gloss": "I request coffee.",
-      "options": [
-        {
-          "word": "tea",
-          "inflected": "teát",
-          "sentence": "Kérek teát.",
-          "gloss": "tea"
-        },
-        {
-          "word": "víz",
-          "inflected": "vizet",
-          "sentence": "Kérek vizet.",
-          "gloss": "water"
-        }
-      ],
+      "stage": "practice",
       "teaches": [
         "how-the-accusative-t-works"
       ],
-      "stage": "practice"
+      "question": "Which sentence means “In the evening we eat meat”?",
+      "options": [
+        "Este hús eszünk.",
+        "Este húst eszünk.",
+        "Este húst eszem."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-92-practice-3",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "tiles": [
+        "Reggel",
+        "kávét",
+        "iszom",
+        "."
+      ],
+      "solution": [
+        "Reggel",
+        "kávét",
+        "iszom",
+        "."
+      ],
+      "english": "In the morning I drink coffee."
+    },
+    {
+      "id": "a1-92-practice-4",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "practice",
+      "teaches": [
+        "a1-food-drink-vocab"
+      ],
+      "question": "Which sentence means “Károly drinks wine”?",
+      "options": [
+        "Károly bort eszik.",
+        "Károly bort iszik.",
+        "Károly vizet iszik."
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a1-92-practice-5",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
+      "sentence": "Ebéd után ____ iszom.",
+      "english": "After lunch I drink coffee.",
+      "answer": "kávét"
     },
     {
       "id": "a1-92-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Kávét vagy teát kérsz?"
+          "speaker": "Anna",
+          "text": "Mit eszel reggel?"
         },
         {
           "speaker": "Meg",
@@ -253,96 +205,112 @@
         }
       ],
       "options": [
-        "Kérek teát.",
-        "Kérek tea."
+        "Reggel egy tojás eszem.",
+        "Reggel egy tojást eszem.",
+        "Reggel egy tojást eszik."
       ],
-      "correct": 0,
-      "teaches": [
-        "how-the-accusative-t-works"
-      ]
+      "correct": 1
     },
     {
       "id": "a1-92-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
+      "stage": "dialogue",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Milyen a vacsora?"
+          "speaker": "Károly",
+          "text": "Anna teát iszik?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "A vacsora finom.",
-        "A vacsora van finom."
+        "Igen, tea iszik.",
+        "Igen, teát iszik.",
+        "Igen, teát isznak."
       ],
-      "correct": 0,
-      "teaches": [
-        "van-zero-copula"
-      ]
+      "correct": 1,
+      "distractor_skills": {
+        "2": "ik-verbs-dolgozom-not-dolgozok"
+      }
     },
     {
-      "id": "a1-92-writing-1",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say \"I'd like water.\" in Hungarian.",
-          "answer": "Kérek vizet."
-        }
-      ],
+      "id": "a1-92-production-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "production",
       "teaches": [
         "how-the-accusative-t-works"
-      ]
+      ],
+      "tiles": [
+        "Meg",
+        "és",
+        "Károly",
+        "levest",
+        "esznek",
+        "."
+      ],
+      "solution": [
+        "Meg",
+        "és",
+        "Károly",
+        "levest",
+        "esznek",
+        "."
+      ],
+      "english": "Meg and Károly eat soup."
     },
     {
-      "id": "a1-92-writing-2",
+      "id": "a1-92-production-2",
       "type": "structured-writing",
       "category": "writing",
+      "stage": "production",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ],
       "template": [
         {
-          "prompt": "Say \"For lunch there will be soup.\" in Hungarian.",
-          "answer": "Ebédre lesz leves."
+          "prompt": "Say that you drink water.",
+          "answer": "Vizet iszom."
+        },
+        {
+          "prompt": "Ask a friend what he or she eats.",
+          "answer": "Mit eszel?"
         }
-      ],
-      "teaches": [
-        "a1-food-drink-vocab"
       ]
     },
     {
       "id": "a1-92-check-1",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which word means \"tea\"?",
-      "options": [
-        "tea",
-        "kávé",
-        "víz"
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "check",
       "teaches": [
-        "a1-food-drink-vocab"
+        "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "stage": "check"
+      "sentence": "Mi sajtot ____.",
+      "english": "We eat cheese.",
+      "answer": "eszünk"
     },
     {
       "id": "a1-92-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say \"Dinner is delicious\"?",
-      "options": [
-        "A vacsora finom.",
-        "A vacsora van finom.",
-        "Finom vacsora van."
-      ],
-      "correct": 0,
+      "stage": "check",
       "teaches": [
-        "van-zero-copula"
+        "how-the-accusative-t-works"
       ],
-      "stage": "check"
+      "question": "Which sentence means “I drink milk”?",
+      "options": [
+        "Tej iszom.",
+        "Tejt iszom.",
+        "Tejet iszom."
+      ],
+      "correct": 2
     }
   ]
 }
