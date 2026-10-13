@@ -19,7 +19,11 @@ check.
    `imports/review/sonnet-reads/hu-a1-<unit id>.md` (Applied / Not taken),
    applies the fixes (small lists directly; long lists to a fixer agent),
    re-locks, freezes, commits through commit-gate.
-At most 2 agents at once. Worktrees: `git worktree add --detach
+At most 2 agents at once. A `challenges.json` conflict when taking a unit's
+commit: `python scripts/merge_challenges.py hu <commit>`, then
+`git cherry-pick --continue`; a `word-lesson-index.json` conflict: rerun
+`python scripts/build_word_lesson_index.py hu` (revert the es-* indexes it
+also rewrites). Worktrees: `git worktree add --detach
 /home/user/parlour-<job> HEAD`, removed after.
 
 ## Prompt templates
