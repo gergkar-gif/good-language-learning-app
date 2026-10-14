@@ -63,13 +63,13 @@
     {
       "id": "a2-50-controlled-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "Tedd ____ a húst!",
       "hint": "Put the meat into it!",
       "english": "Put the meat into it!",
       "answer": "bele",
       "teaches": [
-        "movement-with-ba-be"
+        "a2-cooking-vocab"
       ],
       "stage": "controlled"
     },
@@ -90,17 +90,21 @@
       "id": "a2-50-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "vele, hozzá, bele — what do all three have in common?",
+      "question": "Which means “with him/her”?",
       "options": [
-        "They're all a case suffix (-val/-vel, -hoz/-hez/-höz, -ba/-be) glued onto \"it\"",
-        "They are compound conjunctions used to connect dependent clauses",
-        "They are independent adverbs formed without any case inflection"
+        "vele",
+        "bele",
+        "hozzá"
       ],
       "correct": 0,
       "teaches": [
-        "movement-with-ba-be"
+        "val-vel"
       ],
-      "stage": "controlled"
+      "stage": "controlled",
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "hoz-suffix"
+      }
     },
     {
       "id": "a2-50-practice-1",
@@ -217,7 +221,7 @@
       ],
       "options": [
         "Ildikóval együtt gulyást főzünk.",
-        "Ildikóval együtt gulyást főztök."
+        "Ildikóval együtt ebédelünk."
       ],
       "correct": 0,
       "teaches": [
@@ -231,7 +235,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit tegyek bele a paprika után?"
+          "text": "Mi kell még bele?"
         },
         {
           "speaker": "Ildikó",
@@ -239,8 +243,8 @@
         }
       ],
       "options": [
-        "Egy kis borsot és sót.",
-        "Egy kanalat és egy kést."
+        "Bors és só.",
+        "Fagylalt és torta."
       ],
       "correct": 0,
       "teaches": [
@@ -299,11 +303,11 @@
       "id": "a2-50-check-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which is the traditional Hungarian dish this unit is about?",
+      "question": "Which is a traditional Hungarian dish made with meat and paprika?",
       "options": [
         "gulyás",
-        "leves",
-        "saláta"
+        "saláta",
+        "fagylalt"
       ],
       "correct": 0,
       "teaches": [

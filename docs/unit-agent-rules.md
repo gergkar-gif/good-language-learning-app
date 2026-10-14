@@ -145,4 +145,7 @@ the third-person option fit: quote the direct question. · a screen presenting a
 word or form an earlier unit taught as new (check `taught_in` and the
 earlier screens; say "You know …") · a consolidation item copying a lesson
 item (vary the words) · a wrong option whose fault is the person, not the
-form the item tests.
+form the item tests. · Readers' wrong Hungarian (HU A2): *amit olvasok* is right (a relative
+*amit* takes the indefinite verb; never "fix" it to *olvasom*); *ki* as a relative
+(*kollégám, ki …*) is literary-correct, so never use it as a wrong option;
+*Szabad vagy foglalt vagy?* is natural.
