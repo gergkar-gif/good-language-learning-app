@@ -123,7 +123,7 @@
       "question": "Which means \"You shouldn't eat so much sugar\"?",
       "options": [
         "Nem kellene annyi cukrot enni.",
-        "Nem szeretem a cukrot.",
+        "Nagyon szeretem a cukrot.",
         "Sokat mozgok."
       ],
       "correct": 0,
@@ -142,12 +142,12 @@
           "You should rest more."
         ],
         [
-          "Érdemes korán lefeküdni.",
-          "It's worth going to bed early."
+          "Érdemes többet aludni.",
+          "It's worth sleeping more."
         ],
         [
-          "Sok a stressz mostanában.",
-          "There's a lot of stress lately."
+          "Sok a stressz az életemben.",
+          "There's a lot of stress in my life."
         ],
         [
           "Mit tegyek?",
@@ -214,7 +214,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Nagyon fáradt vagyok mostanában."
+          "text": "Nagyon fáradt vagyok."
         },
         {
           "speaker": "Károly",
@@ -223,7 +223,7 @@
       ],
       "options": [
         "Kellene többet aludni, és pihenni is kellene.",
-        "Kellene kevesebbet aludni és többet dolgozni."
+        "Nem kellene többet aludni, és nem kellene pihenni."
       ],
       "correct": 0,
       "teaches": [
@@ -246,7 +246,7 @@
       ],
       "options": [
         "Érdemes többet pihenni.",
-        "Érdemes még többet stresszelni."
+        "Érdemes még több cukrot enni."
       ],
       "correct": 0,
       "teaches": [
@@ -327,7 +327,11 @@
       "teaches": [
         "mit-csinaljak"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "0": "present-tense-routine-language",
+        "2": "imperative-indefinite"
+      }
     },
     {
       "id": "a2-87-practice-6",

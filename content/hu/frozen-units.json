@@ -1145,6 +1145,38 @@
     }
    ]
   },
+  "a2/health-body": {
+   "frozen": "2026-10-14",
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read (units 17-18), fixes filtered by Claude",
+   "accepted": [
+    {
+     "check": "consolidation-copy",
+     "id": "a2-85-consolidation-1",
+     "why": "replay kept: consolidations mostly reuse the unit's items (user's preference)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a2-85-consolidation-2",
+     "why": "replay kept: consolidations mostly reuse the unit's items (user's preference)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a2-85-consolidation-3",
+     "why": "replay kept: consolidations mostly reuse the unit's items (user's preference)"
+    }
+   ]
+  },
+  "a2/healthy-living-advice": {
+   "frozen": "2026-10-14",
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read (units 17-18), fixes filtered by Claude",
+   "accepted": [
+    {
+     "check": "consolidation-copy",
+     "id": "a2-90-consolidation-2",
+     "why": "replay kept: consolidations mostly reuse the unit's items (user's preference)"
+    }
+   ]
+  },
   "a2/home-housing": {
    "frozen": "2026-10-14",
    "reason": "A2 pass: paired Sonnet read (units 5-8), fix list filtered by Claude and applied, give-aways fixed (2026-10-14)",
@@ -1270,6 +1302,48 @@
      "check": "consolidation-copy",
      "id": "a2-20-consolidation-9",
      "why": "replay kept: consolidations mostly reuse the unit's items (user's preference)"
+    }
+   ]
+  },
+  "a2/review-life-leisure-health": {
+   "frozen": "2026-10-14",
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read (units 19-20), fixes filtered by Claude",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a2-97-dialogue-2",
+     "why": "szállj fel is the imperative of felszáll (a2-66 vocabulary); the imperative is taught at a2-48"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-97-practice-2",
+     "why": "itthon is only an extra accepted answer; otthon is the taught one"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-100",
+     "why": "review lesson re-lists known words (busz, orvos)"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-96",
+     "why": "review lesson re-lists known words (hobbi)"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-98",
+     "why": "review lesson re-lists known words (probléma)"
+    }
+   ]
+  },
+  "a2/school-language-learning": {
+   "frozen": "2026-10-14",
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read (units 19-20), fixes filtered by Claude",
+   "accepted": [
+    {
+     "check": "option-language",
+     "id": "a2-94-practice-1",
+     "why": "the option names the -an/-en ending itself (metalanguage)"
     }
    ]
   },
@@ -1464,6 +1538,11 @@
    "unit": "a1/possession",
    "date": "2026-10-13",
    "reason": "sajat moved to A1: a1-45-check-1 becomes a saját item"
+  },
+  {
+   "unit": "a2/review-life-leisure-health",
+   "date": "2026-10-14",
+   "reason": "correct an accept reason"
   }
  ]
 }

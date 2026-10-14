@@ -92,7 +92,6 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "____ a fejem.",
-      "hint": "My head hurts.",
       "english": "My head hurts.",
       "answer": "Fáj",
       "teaches": [
@@ -107,11 +106,14 @@
       "sentence": "____ enni zöldséget és gyümölcsöt.",
       "hint": "One should",
       "english": "One should eat vegetables and fruit.",
-      "answer": "Kellene",
       "teaches": [
         "kellene"
       ],
-      "stage": "controlled"
+      "stage": "controlled",
+      "answers": [
+        "Kellene",
+        "Érdemes"
+      ]
     },
     {
       "id": "a2-99-practice-1",
@@ -120,8 +122,8 @@
       "question": "Which is the formal way a doctor asks \"What's your complaint?\"",
       "options": [
         "Mi a panasza?",
-        "Mi a baj?",
-        "Hol fáj?"
+        "Mi a baj veled?",
+        "Hol fáj neked?"
       ],
       "correct": 0,
       "teaches": [
@@ -215,15 +217,12 @@
       ],
       "options": [
         "Két napja fáj a torkom, és köhögök.",
-        "Két napja fáj a torkod, és köhögsz."
+        "Mostantól többet pihenek, és eleget alszom."
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language"
-      ],
-      "distractor_skills": {
-        "1": "possessive-suffixes"
-      }
+        "a2-health-body-vocab"
+      ]
     },
     {
       "id": "a2-99-dialogue-2",
@@ -232,7 +231,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Nem tudok aludni, folyton fáj a fejem. Mit tegyek?"
+          "text": "Nem tudok aludni, mindig fáj a fejem. Mit tegyek?"
         },
         {
           "speaker": "Károly",
@@ -240,8 +239,8 @@
         }
       ],
       "options": [
-        "Kellene többet pihenni, és kevesebb stresszel élni.",
-        "Nyitva van kilenctől ötig."
+        "Kellene többet pihenni, és több vizet inni.",
+        "A gyógyszertár kilenctől ötig van nyitva."
       ],
       "correct": 0,
       "teaches": [
@@ -283,8 +282,8 @@
       "question": "Which word means \"pharmacy\"?",
       "options": [
         "gyógyszertár",
-        "rendelő",
-        "kórház"
+        "pályaudvar",
+        "gyógyszerész"
       ],
       "correct": 0,
       "teaches": [
@@ -296,11 +295,11 @@
       "id": "a2-99-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly means \"A walk is better than nothing\"?",
+      "question": "Which sentence correctly means \"Tea is better than nothing\"?",
       "options": [
-        "A séta jobb, mint a semmi.",
-        "A séta jó, mint a semmi.",
-        "A séta jobban, mint a semmi."
+        "A tea jobb, mint a semmi.",
+        "A tea jó, mint a semmi.",
+        "A tea jobban, mint a semmi."
       ],
       "correct": 0,
       "teaches": [

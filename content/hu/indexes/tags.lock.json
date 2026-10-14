@@ -217,14 +217,14 @@
    "reason": "read-through, a2-131-a2-135 + consolidation"
   },
   "A2/health-body": {
-   "locked": "2026-10-07",
+   "locked": "2026-10-14",
    "exercises": 93,
-   "reason": "new exercises for thin skills (ROADMAP 144(4))"
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read (units 17-18), fixes filtered by Claude"
   },
   "A2/healthy-living-advice": {
-   "locked": "2026-10-07",
+   "locked": "2026-10-14",
    "exercises": 98,
-   "reason": "new exercises for thin skills (ROADMAP 144(4))"
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read (units 17-18), fixes filtered by Claude"
   },
   "A2/home-housing": {
    "locked": "2026-10-14",
@@ -307,9 +307,9 @@
    "reason": "read-through, a2-166-a2-170 + consolidation"
   },
   "A2/review-life-leisure-health": {
-   "locked": "2026-10-05",
+   "locked": "2026-10-14",
    "exercises": 92,
-   "reason": "read-through, all lessons + consolidation"
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read (units 19-20), fixes filtered by Claude"
   },
   "A2/review-work-past-opinions": {
    "locked": "2026-10-07",
@@ -317,9 +317,9 @@
    "reason": "new exercises for thin skills (ROADMAP 144(4))"
   },
   "A2/school-language-learning": {
-   "locked": "2026-10-05",
+   "locked": "2026-10-14",
    "exercises": 92,
-   "reason": "read-through, a2-91-a2-95 + consolidation"
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read (units 19-20), fixes filtered by Claude"
   },
   "A2/shopping-prices": {
    "locked": "2026-10-14",
@@ -51068,7 +51068,7 @@
   },
   "a2-85-consolidation-8": {
    "teaches": [
-    "a2-health-body-vocab"
+    "yes-no-questions"
    ],
    "distractor_skills": {}
   },
@@ -51104,7 +51104,7 @@
   },
   "a2-85-dialogue-1": {
    "teaches": [
-    "a2-health-body-vocab"
+    "yes-no-questions"
    ],
    "distractor_skills": {}
   },
@@ -51364,7 +51364,10 @@
    "teaches": [
     "mit-csinaljak"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "0": "present-tense-routine-language",
+    "2": "imperative-indefinite"
+   }
   },
   "a2-87-practice-6": {
    "teaches": [
@@ -51554,7 +51557,7 @@
     "tud-infinitive-skills"
    ],
    "distractor_skills": {
-    "1": "szabad-infinitive",
+    "1": "lehet-infinitive",
     "2": "lehet-infinitive"
    }
   },
@@ -52342,7 +52345,7 @@
   },
   "a2-96-controlled-4": {
    "teaches": [
-    "a2-culture-going-out-vocab"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
@@ -52438,7 +52441,7 @@
   },
   "a2-97-controlled-4": {
    "teaches": [
-    "a2-transport-getting-around-vocab"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
@@ -52636,11 +52639,9 @@
   },
   "a2-99-dialogue-1": {
    "teaches": [
-    "present-tense-routine-language"
+    "a2-health-body-vocab"
    ],
-   "distractor_skills": {
-    "1": "possessive-suffixes"
-   }
+   "distractor_skills": {}
   },
   "a2-99-dialogue-2": {
    "teaches": [
