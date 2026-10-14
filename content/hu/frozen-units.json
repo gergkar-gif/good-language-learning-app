@@ -1181,6 +1181,11 @@
     }
    ]
   },
+  "a2/hotels-accommodation": {
+   "frozen": "2026-10-14",
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read, fixes filtered by Claude",
+   "accepted": []
+  },
   "a2/leisure-hobbies": {
    "frozen": "2026-10-14",
    "reason": "A2 pass: paired Sonnet read (units 11-12), fix list filtered by Claude and applied (2026-10-14)",
@@ -1337,6 +1342,49 @@
      "check": "consolidation-copy",
      "id": "a2-10-consolidation-9",
      "why": "replay kept: consolidations mostly reuse the unit's items (user's preference)"
+    }
+   ]
+  },
+  "a2/transport-getting-around": {
+   "frozen": "2026-10-14",
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read, fixes filtered by Claude",
+   "accepted": [
+    {
+     "check": "consolidation-copy",
+     "id": "a2-70-consolidation-10",
+     "why": "replay (user wants replays)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-70-controlled-4",
+     "why": "Először is only an accepted alternative answer"
+    }
+   ]
+  },
+  "a2/travel-holidays": {
+   "frozen": "2026-10-14",
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read, fixes filtered by Claude",
+   "accepted": [
+    {
+     "check": "consolidation-copy",
+     "id": "a2-75-consolidation-6",
+     "why": "replay (user wants replays)"
+    }
+   ]
+  },
+  "a2/weather-seasons": {
+   "frozen": "2026-10-14",
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read, fixes filtered by Claude",
+   "accepted": [
+    {
+     "check": "consolidation-copy",
+     "id": "a2-65-consolidation-2",
+     "why": "replay (user wants replays)"
+    },
+    {
+     "check": "question-answer-type",
+     "id": "a2-65-consolidation-7",
+     "why": "'Milyen most az idő, esik?' ends in a yes/no question"
     }
    ]
   }

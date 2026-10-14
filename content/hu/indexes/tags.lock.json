@@ -232,9 +232,9 @@
    "reason": "A2 pass: paired Sonnet read, fixes applied (2026-10-14)"
   },
   "A2/hotels-accommodation": {
-   "locked": "2026-10-05",
+   "locked": "2026-10-14",
    "exercises": 92,
-   "reason": "read-through, a2-76-a2-80 + consolidation"
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read, fixes filtered by Claude"
   },
   "A2/inflected-infinitives-necessity": {
    "locked": "2026-10-05",
@@ -362,14 +362,14 @@
    "reason": "read-through, a2-171-a2-175 + consolidation"
   },
   "A2/transport-getting-around": {
-   "locked": "2026-10-07",
+   "locked": "2026-10-14",
    "exercises": 92,
-   "reason": "retagged onto new/re-levelled gap skills (ROADMAP 144(5))"
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read, fixes filtered by Claude"
   },
   "A2/travel-holidays": {
-   "locked": "2026-10-07",
+   "locked": "2026-10-14",
    "exercises": 92,
-   "reason": "retagged onto new/re-levelled gap skills (ROADMAP 144(5))"
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read, fixes filtered by Claude"
   },
   "A2/verb-prefixes": {
    "locked": "2026-10-05",
@@ -377,9 +377,9 @@
    "reason": "read-through, a2-106-a2-110 + consolidation"
   },
   "A2/weather-seasons": {
-   "locked": "2026-10-05",
+   "locked": "2026-10-14",
    "exercises": 92,
-   "reason": "read-through, all lessons + consolidation"
+   "reason": "HU A2 read 2026-10-14: Sonnet paired read, fixes filtered by Claude"
   },
   "A2/work-professions": {
    "locked": "2026-10-05",
@@ -48416,7 +48416,7 @@
   },
   "a2-61-dialogue-2": {
    "teaches": [
-    "a2-weather-seasons-vocab"
+    "yes-no-questions"
    ],
    "distractor_skills": {}
   },
@@ -48602,13 +48602,13 @@
   },
   "a2-63-dialogue-1": {
    "teaches": [
-    "a2-weather-seasons-vocab"
+    "yes-no-questions"
    ],
    "distractor_skills": {}
   },
   "a2-63-dialogue-2": {
    "teaches": [
-    "a2-weather-seasons-vocab"
+    "yes-no-questions"
    ],
    "distractor_skills": {}
   },
@@ -48670,9 +48670,7 @@
    "teaches": [
     "comparative-bb"
    ],
-   "distractor_skills": {
-    "2": "an-en-adverb"
-   }
+   "distractor_skills": {}
   },
   "a2-64-controlled-1": {
    "teaches": [
@@ -49032,7 +49030,9 @@
    "teaches": [
     "ra-re"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "ban-ben-in"
+   }
   },
   "a2-67-controlled-1": {
    "teaches": [
@@ -49158,7 +49158,7 @@
   },
   "a2-68-dialogue-1": {
    "teaches": [
-    "temporal-postpositions"
+    "kor-time"
    ],
    "distractor_skills": {
     "1": "ban-ben-in"
@@ -49276,7 +49276,7 @@
   },
   "a2-69-intro-2": {
    "teaches": [
-    "directional-preverbs"
+    "a2-transport-getting-around-vocab"
    ],
    "distractor_skills": {}
   },
@@ -49354,7 +49354,7 @@
   },
   "a2-70-consolidation-2": {
    "teaches": [
-    "directional-preverbs"
+    "a2-transport-getting-around-vocab"
    ],
    "distractor_skills": {}
   },
@@ -50182,7 +50182,7 @@
   },
   "a2-77-dialogue-1": {
    "teaches": [
-    "a2-hotels-accommodation-vocab"
+    "yes-no-questions"
    ],
    "distractor_skills": {}
   },
