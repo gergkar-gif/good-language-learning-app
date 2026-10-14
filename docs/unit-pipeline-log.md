@@ -46,6 +46,35 @@ Read this before working on any unit. Agents read only
 
 At most 2 agents at once (CLAUDE.md). Never let an agent bypass hooks.
 
+### Who does what: model choice (measured on HU A1)
+
+| Job | Model | Why |
+|---|---|---|
+| Regenerate units (2 per agent) | **Sonnet** | Writes usable Hungarian; ~119k/unit paired. |
+| Blind read (report only, 2 units per agent) | **Sonnet** | Finds ~10–25 real defects/unit; Haiku is too weak to find them. |
+| Filter the read into a fix list | **Claude (main session)** | Readers propose wrong Hungarian a few times a level; only the filter catches it. Never delegate this. |
+| Apply a filtered list, exact old → new | **Claude** with `apply_replacements.py` for short lists (≤ ~40 items); **Haiku** for long ones | Haiku applied 9/9, 11/11, 17/17, 19/19 exact items with no improvisation (74–131k); its only slips came from vague items in Claude's list ("only if that is the exact text"). Doing it directly is cheaper when the list is short. |
+| Mechanical translation (e.g. story questions → English) | **Haiku** | 36 questions, 77k, 1 min, all right. Under ~10 items: Claude directly. |
+| Build a tool (e.g. the walk test) | **Sonnet**, own worktree | 152k; review and rerun its output before taking it. |
+| Judgement calls, registry/skill questions, anything for the user | **Claude**, ask the user | Never left to an agent. |
+
+How to delegate:
+
+- **At most 2 agents running at once** (CLAUDE.md); count before launching.
+- Each agent gets its **own worktree** (`git worktree add --detach
+  /home/user/parlour-<job> HEAD`) and the rulebook `docs/unit-agent-rules.md`
+  only; the prompt templates below say the rest. Name exact files, stems,
+  earlier units' ranges and what earlier units own.
+- Every prompt says: never bypass hooks or change git/tool config; report
+  only (reads); quote option text when naming an option; give fixes as
+  exact old → new.
+- An agent's report is a claim, not a result: check its Hungarian, rerun
+  its commands, take its commit with `take_unit_commit.py`.
+- **Usage limits:** a Sonnet weekly limit stops an agent within seconds
+  ("resets <time>"). Tell the user and offer: wait, do it in the main
+  session, or a weaker Haiku pass. Don't silently downgrade a read to
+  Haiku.
+
 ### Before calling a level done
 
 Count with the tools before giving the user any number, and say what is
