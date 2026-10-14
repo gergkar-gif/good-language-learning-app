@@ -112,6 +112,12 @@ def main():
         cc.show(left)
         sys.exit(f"\n{course} {key} is not clean: {len(left)} finding(s) above. Fix them, "
                  "or --accept a checked suspect / tell with its reason.")
+    old = data["units"].get(key)
+    if old:
+        # refreezing: cc.run hides the unit's accepted findings, so keep them,
+        # and keep the earlier reason in front of this one
+        accepted += [a for a in old["accepted"] if (a["check"], a["id"]) not in keep]
+        reason = f"{old['reason']}; refrozen {today}: {reason}"
     data["units"][key] = {"frozen": today, "reason": reason, "accepted": accepted}
     save(course, data)
     print(f"froze {course} {key} ({len(accepted)} accepted finding(s)).")

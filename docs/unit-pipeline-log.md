@@ -275,3 +275,24 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   keep the read.
 - My own edits tripped `length-giveaway` and `unmet-word` once each;
   run check-content after every hand edit, not only before freezing.
+
+### 2026-10-14: follow-ups after HU A1 (user's decisions)
+
+- Consolidation copies: the count I first gave (five) was wrong; the
+  frozen units 12–25 had 22 stray copies, units 2–9 are replays. The user
+  chose to fix the strays and leave 2–9. 21 rewritten (a1-60, 65, 70, 75,
+  80, 115, 120, 125) plus a1-113-practice-3 (reported question → quoted)
+  and a1-36-practice-5 (*A emberek* → *Az*). Lesson: count with the
+  checker before putting a number to the user.
+- `freeze_unit.py` refreezing a frozen unit replaced its reason and lost
+  its accepted findings (check-content hides them, so they weren't passed
+  back). Fixed: a refreeze keeps the earlier accepted entries and reason.
+- Accepted at refreeze: a1-57-introduce-1 (asks about the question form, not
+  reported speech), a1-124-controlled-2, a1-124-practice-3,
+  a1-125-practice-5 (formal *Ön*: third person is right).
+- *hánykor* added through `imports/dictionary/additions-hu.json` (merge
+  step, so a dictionary rebuild keeps it). Spanish a1-03-01 duplicate
+  *foto* removed in both courses. B1 glued blanks (b1-18-03.ex03,
+  b1-26-05.ex02, b1-30-03.ex05) stay parked with HU B1.
+- Next, decided by the user: the gate-1 lesson walk test (ROADMAP 153(b))
+  on HU A1 before starting HU A2.
