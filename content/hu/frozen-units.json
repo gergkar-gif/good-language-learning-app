@@ -950,6 +950,17 @@
    "reason": "regenerated (Sonnet) 2026-10-13, blind read, fix list applied (imports/review/sonnet-reads/hu-a1-where-things-are.md)",
    "accepted": []
   },
+  "a2/ability-possibility-permission": {
+   "frozen": "2026-10-14",
+   "reason": "HU A2 pass: read by Sonnet, fixes filtered and applied by Claude (2026-10-14)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a2-115-controlled-4",
+     "why": "infinitive of horgászik (a2-115 vocabulary)"
+    }
+   ]
+  },
   "a2/cooking": {
    "frozen": "2026-10-14",
    "reason": "A2 pass: paired Sonnet read (units 9-10), fix list filtered by Claude and applied (2026-10-14)",
@@ -1383,6 +1394,22 @@
     }
    ]
   },
+  "a2/the-past-1": {
+   "frozen": "2026-10-14",
+   "reason": "HU A2 pass: read by Sonnet, fixes filtered and applied by Claude (2026-10-14)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a2-120-consolidation-8",
+     "why": "forms of piknikezik (a2-55 vocabulary)"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-116",
+     "why": "aztán re-listed from a2-02; used on a2-116-b"
+    }
+   ]
+  },
   "a2/time-dates-schedules": {
    "frozen": "2026-10-14",
    "reason": "A2 pass: paired Sonnet read (units 1-4), fix list filtered by Claude and applied, length give-aways fixed (2026-10-14)",
@@ -1446,6 +1473,17 @@
     }
    ]
   },
+  "a2/verb-prefixes": {
+   "frozen": "2026-10-14",
+   "reason": "HU A2 pass: read by Sonnet, fixes filtered and applied by Claude (2026-10-14)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a2-110-writing-2",
+     "why": "split form of befejez, taught in a2-108"
+    }
+   ]
+  },
   "a2/weather-seasons": {
    "frozen": "2026-10-14",
    "reason": "HU A2 read 2026-10-14: Sonnet paired read, fixes filtered by Claude",
@@ -1459,6 +1497,42 @@
      "check": "question-answer-type",
      "id": "a2-65-consolidation-7",
      "why": "'Milyen most az idő, esik?' ends in a yes/no question"
+    }
+   ]
+  },
+  "a2/work-professions": {
+   "frozen": "2026-10-14",
+   "reason": "HU A2 pass: read by Sonnet, fixes filtered and applied by Claude (2026-10-14)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a2-105-consolidation-12",
+     "why": "túlóráz- built on túlóra (a2-103 vocabulary), shown on a2-105-b"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a2-105-consolidation-2",
+     "why": "consolidation replay (user wants replays, 2026-10-14)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a2-105-consolidation-3",
+     "why": "consolidation replay (user wants replays, 2026-10-14)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a2-105-consolidation-8",
+     "why": "consolidation replay (user wants replays, 2026-10-14)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-105-consolidation-9",
+     "why": "inflected infinitive of ír (a2-105 vocabulary)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a2-105-consolidation-9",
+     "why": "consolidation replay (user wants replays, 2026-10-14)"
     }
    ]
   }

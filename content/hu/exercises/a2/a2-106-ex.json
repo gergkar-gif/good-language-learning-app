@@ -104,9 +104,9 @@
       "id": "a2-106-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A taxi megáll, és Ildikó gyorsan ____ a kocsiból.",
+      "sentence": "A taxi itt van, és Ildikó gyorsan ____ a kocsiból.",
       "hint": "gets out of the vehicle",
-      "english": "The taxi stops, and Ildikó quickly gets out of the car.",
+      "english": "The taxi is here, and Ildikó quickly gets out of the car.",
       "answer": "kiszáll",
       "teaches": [
         "directional-preverbs"
@@ -211,7 +211,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hol vagy? Kint állok az utcán."
+          "text": "Hol vagy? Az utcán vagyok."
         },
         {
           "speaker": "Meg",
@@ -219,8 +219,8 @@
         }
       ],
       "options": [
-        "Mindjárt kijövök a házból.",
-        "Mindjárt bemegyek a házból."
+        "Hamarosan kijövök a házból.",
+        "Hamarosan bemegyek a házból."
       ],
       "correct": 0,
       "teaches": [
@@ -234,7 +234,7 @@
       "prompt": [
         {
           "speaker": "Petra",
-          "text": "Hol van Zsófia? Nem látom itt bent."
+          "text": "Hol van Zsófia? Nem látom az irodában."
         },
         {
           "speaker": "Meg",
@@ -242,12 +242,12 @@
         }
       ],
       "options": [
-        "Kint van, de mindjárt bejön.",
-        "Ma nagyon fáradt vagyok."
+        "Az utcán van, hamarosan bejön.",
+        "Az utcán van, hamarosan kijön."
       ],
       "correct": 0,
       "teaches": [
-        "a2-verb-prefixes-vocab"
+        "directional-preverbs"
       ]
     },
     {
@@ -296,7 +296,11 @@
       "teaches": [
         "movement-with-ba-be"
       ],
-      "stage": "check"
+      "stage": "check",
+      "distractor_skills": {
+        "1": "elative-bol-bel",
+        "2": "directional-preverbs"
+      }
     },
     {
       "id": "a2-106-check-2",
