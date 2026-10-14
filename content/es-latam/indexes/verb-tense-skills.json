@@ -1,25 +1,33 @@
 {
   "_comment": "Hand-authored. Which grammar skills (ids from grammar-index.json) each Verb Speed tense is evidence for. Verb Speed records one recycle card per tense+person ('verb:<tense>:<person>'); engine/learnerModel.js joins those cards to these skills. subjuntivo.futuro is deliberately unmapped: no skill in the curriculum teaches it.",
   "indicativo.presente": [
-    "present-tense"
+    "present-tense",
+    "ar-verbs",
+    "er-ir-verbs",
+    "stem-changes",
+    "reflexives"
   ],
   "indicativo.preterito": [
-    "preterito-indefinido"
+    "preterito-indefinido",
+    "preterite-irregular-stems"
   ],
   "indicativo.imperfecto": [
     "imperfect"
   ],
   "indicativo.futuro": [
-    "futuro-simple"
+    "futuro-simple",
+    "future-probability"
   ],
   "indicativo.condicional": [
     "condicional-regular",
     "condicional-irregular"
   ],
   "subjuntivo.presente": [
-    "subjuntivo-morfologia"
+    "subjuntivo-morfologia",
+    "subjuntivo-deseos"
   ],
   "subjuntivo.imperfecto": [
-    "hypothetical-structures"
+    "hypothetical-structures",
+    "imperfect-subjunctive-forms"
   ]
 }

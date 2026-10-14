@@ -42,7 +42,12 @@ const Verbs = (function () {
     }
 
     function _getRealTenses() {
-        return _getTenseOptions().filter(function (t) { return t.value !== 'all'; });
+        var real = _getTenseOptions().filter(function (t) { return t.value !== 'all'; });
+        if (_activeRenderOptions && Array.isArray(_activeRenderOptions.tenses) && _activeRenderOptions.tenses.length) {
+            var allowed = real.filter(function (t) { return _activeRenderOptions.tenses.indexOf(t.value) !== -1; });
+            if (allowed.length) return allowed;
+        }
+        return real;
     }
 
     function _getPersons() {
@@ -297,7 +302,15 @@ const Verbs = (function () {
     // than silently breaking the driller for a learner early in the course.
     function _rebuildVerbList() {
         var base = (typeof ALL_VERBS !== 'undefined') ? ALL_VERBS.slice() : ['hablar', 'comer', 'vivir'];
-        if (_state.knownOnly && typeof TaughtWords !== 'undefined') {
+        if (_activeRenderOptions && Array.isArray(_activeRenderOptions.verbs) && _activeRenderOptions.verbs.length) {
+            var explicit = base.filter(function (v) { return _activeRenderOptions.verbs.indexOf(v) !== -1; });
+            if (explicit.length) {
+                base = explicit;
+            } else if (_state.knownOnly && typeof TaughtWords !== 'undefined') {
+                var knownFallback = base.filter(function (v) { return TaughtWords.isReached(v); });
+                if (knownFallback.length) base = knownFallback;
+            }
+        } else if (_state.knownOnly && typeof TaughtWords !== 'undefined') {
             var known = base.filter(function (v) { return TaughtWords.isReached(v); });
             if (known.length) base = known;
         }
@@ -333,6 +346,21 @@ const Verbs = (function () {
         }
         if (options && options.tense && TENSE_OPTIONS.some(function (t) { return t.value === options.tense; })) {
             _state.tense = options.tense;
+        }
+        if (options && typeof options.knownOnly === 'boolean') {
+            _state.knownOnly = options.knownOnly;
+        }
+        if (_state.knownOnly || (options && Array.isArray(options.verbs) && options.verbs.length)) {
+            (typeof TaughtWords !== 'undefined' ? TaughtWords.load() : Promise.resolve()).then(function () {
+                _rebuildVerbList();
+                if (_state.mode === 'table') {
+                    return _loadRandomVerb().then(function () {
+                        _render();
+                    });
+                }
+                _render();
+            });
+            return;
         }
         _render();
     }

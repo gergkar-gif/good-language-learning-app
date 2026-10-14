@@ -15,7 +15,9 @@ const VerbsTable = (function () {
     var _container = null;
     var _onNext    = null;
     var _persons   = [];
+    var _tensePath = null;
     var _allCorrect = false;
+    var _checkedOnce = false;
 
     // ---- Helpers ----
     function _getPersonLabel(key) {
@@ -176,6 +178,7 @@ const VerbsTable = (function () {
         var correctCount = 0;
         var total = 0;
         var missedLabels = [];
+        var recycleItems = [];
 
         for (var i = 0; i < rows.length; i++) {
             var row = rows[i];
@@ -186,6 +189,7 @@ const VerbsTable = (function () {
             if (!correctAnswer) continue; // person not available in this tense
 
             total++;
+            var p = input.dataset.person;
             var userVal = input.value;
             var normalisedUser    = _normalise(userVal);
             var normalisedCorrect = _normalise(correctAnswer);
@@ -200,14 +204,25 @@ const VerbsTable = (function () {
                 }
                 if (corr) { corr.textContent = ''; corr.classList.add('hidden'); }
                 correctCount++;
+                if (_tensePath && p) recycleItems.push({ id: 'verb:' + _tensePath + ':' + p, rating: 'good' });
             } else {
                 input.classList.add('vtable-wrong');
-                var p = input.dataset.person;
                 if (p && _getPersonLabel(p)) missedLabels.push(_getPersonLabel(p));
                 if (corr) {
                     corr.textContent = 'Correct: ' + correctAnswer;
                     corr.classList.remove('hidden');
                 }
+                if (_tensePath && p) recycleItems.push({ id: 'verb:' + _tensePath + ':' + p, rating: 'again' });
+            }
+        }
+
+        if (!_checkedOnce && total > 0) {
+            _checkedOnce = true;
+            if (recycleItems.length && typeof Recycle !== 'undefined' && Recycle.credit) {
+                Recycle.credit(recycleItems);
+            }
+            if (typeof DrillHistory !== 'undefined' && DrillHistory.record) {
+                DrillHistory.record('verbs', { correct: correctCount, wrong: total - correctCount });
             }
         }
 
@@ -246,7 +261,9 @@ const VerbsTable = (function () {
         _container   = root;
         _onNext      = options.onNext || function () {};
         _persons     = options.persons || [];
+        _tensePath   = options.tensePath || null;
         _allCorrect  = false;
+        _checkedOnce = false;
 
         var verb      = options.verb;
         var tensePath = options.tensePath;

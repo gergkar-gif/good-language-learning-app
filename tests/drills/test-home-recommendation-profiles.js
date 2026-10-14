@@ -375,6 +375,81 @@ profile('misses on a unit\'s vocabulary → names the unit\'s words, not "readin
     assert.ok(/words from “.+”/.test(p.blurb), p.blurb);
 });
 
+// ---- verb-tense skills & encountered verbs ----
+profile('recent misses on a verb-tense skill → Verb Practice scoped to encountered verbs & tenses', async () => {
+    let arLesson = null;
+    let arEntries = [];
+    for (const unit of coreUnits('A1')) {
+        for (const lesson of (unit.lessons || []).slice(0, -1)) {
+            const here = (grammarIndex.bySkill['ar-verbs'] || []).filter(e => e.ref === refFor(lesson.id));
+            if (here.length >= 2) { arLesson = lesson; arEntries = here; break; }
+        }
+        if (arLesson) break;
+    }
+    assert.ok(arLesson, 'found a mid-unit lesson with ar-verbs exercises');
+    const w = world({
+        progress: progressThrough(arLesson.id),
+        store: recycleStore(cards(arEntries.slice(0, 2).map(e => e.id), 'missed', 49))
+    });
+    const p = await recommend(w);
+    assert.strictEqual(p.kind, 'mini-game', `got ${p.kind}`);
+    assert.strictEqual(p.drillerId, 'verbs');
+    assert.strictEqual(p.tense, 'indicativo.presente');
+    assert.strictEqual(p.options.knownOnly, true);
+    assert.ok(Array.isArray(p.options.verbs) && p.options.verbs.length >= 3, 'scoped to encountered verbs');
+    assert.ok(Array.isArray(p.options.tenses) && p.options.tenses.includes('indicativo.presente'), 'scoped to encountered tenses');
+});
+
+profile('recent conjugation miss in Verb Speed → Verb Practice on that tense', async () => {
+    const w = world({
+        progress: progressThrough(mid.lesson.id),
+        store: recycleStore({
+            ...cards(mid.ids, 'good', 49),
+            'verb:indicativo.preterito:uds': { reviews: 0, ease: 1.9, interval: 0, lastOpen: 49, dueAtOpen: 50, lapses: 1, leech: false }
+        })
+    });
+    const p = await recommend(w);
+    assert.strictEqual(p.kind, 'mini-game', `got ${p.kind}`);
+    assert.strictEqual(p.drillerId, 'verbs');
+    assert.strictEqual(p.tense, 'indicativo.preterito');
+    assert.strictEqual(p.options.knownOnly, true);
+});
+
+profile('finished a verb-tense unit with zero mistakes → Verb Practice on encountered verbs in that tense', async () => {
+    const verbUnit = coreUnits('A1').find(u => u.id === 'unit.a1.06');
+    const lastLesson = verbUnit.lessons[verbUnit.lessons.length - 1];
+    const w = world({ progress: progressThrough(lastLesson.id) });
+    const p = await recommend(w);
+    assert.strictEqual(p.kind, 'mini-game', `got ${p.kind}`);
+    assert.strictEqual(p.drillerId, 'verbs');
+    assert.strictEqual(p.reason, 'encountered');
+    assert.strictEqual(p.tense, 'indicativo.presente');
+    assert.strictEqual(p.options.knownOnly, true);
+    assert.ok(Array.isArray(p.options.verbs) && p.options.verbs.length >= 3, 'includes encountered verbs');
+});
+
+profile('Hungarian verb-tense trouble skill → Verb Conjugation on that tense (hu)', async () => {
+    const hu = p => JSON.parse(fs.readFileSync(path.join(root, 'content/hu', p), 'utf8'));
+    const huCurriculum = hu('curriculum/curriculum.json');
+    const huIndex = hu('indexes/grammar-index.json');
+    const skill = 'present-tense-routine-language';
+    const entries = huIndex.bySkill[skill] || [];
+    assert.ok(entries.length >= 2, 'hu has present-tense-routine-language exercises');
+    const ids = entries.slice(0, 2).map(e => e.id);
+    const progress = {};
+    let t = NOW - 30 * DAY;
+    const units = Object.values(huCurriculum.levels).flatMap(l => l.units || []);
+    units.forEach(u => (u.lessons || []).forEach(l => { progress[l.id] = { completedAt: new Date(t += 60000).toISOString() }; }));
+    const firstOfMulti = units.find(u => (u.lessons || []).length > 1).lessons[0];
+    progress[firstOfMulti.id] = { completedAt: new Date(NOW).toISOString() };
+    const w = world({ course: 'hu', progress, store: { ['hu:recycleSchedule']: JSON.stringify(cards(ids, 'missed', 49)) } });
+    const p = await recommend(w);
+    assert.strictEqual(p.kind, 'mini-game', `got ${p.kind}`);
+    assert.strictEqual(p.drillerId, 'hu-verb');
+    assert.strictEqual(p.tense, 'pres.indef');
+    assert.strictEqual(p.options.knownOnly, true);
+});
+
 // ------------------------------------------------------------------
 
 (async () => {

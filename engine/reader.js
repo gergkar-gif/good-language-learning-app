@@ -2570,6 +2570,7 @@ window.Reader = {
             }
 
             if (typeof srsDeck === 'undefined' || srsDeck.find(function(c) { return ((typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(c) : c.spanish) === w.lemma; })) return;
+            if (typeof clearSrsLemmaReset === 'function') clearSrsLemmaReset(w.lemma);
             srsDeck.push(Object.assign({
                 target: w.lemma,
                 spanish: w.lemma,

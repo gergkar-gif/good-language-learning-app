@@ -7,6 +7,54 @@ queue numbering and wording (not renumbered or edited) so old references
 and commit messages that cite an item number still resolve. Nothing here
 needs re-reading before starting new work; it's reference only.
 
+## Completed work (2026-10-13)
+
+- **Library Cross-Device Cloud Book & Reading Progress Sync (`engine/library.js`, `engine/sync.js`, `cloudflare-worker/sync-worker.js`, `cloudflare-worker/sync-schema.sql`) (Done 2026-10-13).**
+  - Added `/sync/book` (`GET` and `POST`) endpoints and automatic `user_books` D1 table creation (`ensureBooksTable`) in `cloudflare-worker/sync-worker.js` so multi-chapter book bodies (`chapters` + `lemmas`) are stored in dedicated per-book D1 rows without bloating `/sync/state` above the 64 KB `keepalive` limit.
+  - Added deflate-compressed book payload sync (`Sync.saveBook`, `Sync.loadBook`, `Sync.deleteBook`), timestamp-aware `mergeMyTexts()` (preserving the newer `progress.at` reading position and unioning `readChapters`), and `myTextsResetLog` deletion tombstones in `engine/sync.js`, plus `Library.reloadFromStorage()` in `Sync.applySnapshot()`.
+  - Updated `engine/library.js` to call `Sync.scheduleAutoSave()` on `saveMyTexts()` and `saveSaved()`, upload book payloads on save and via `syncPendingBooks()` for books added previously, and lazily download book chapters on demand in `resolveBookChapters()` when opening a synced book on another device.
+
+- **Deck Reset & Per-Word Removal Cloud Sync Tombstone Persistence (`engine/srs.js`, `engine/decks.js`, `engine/sync.js`, `engine/lang.js`) (Done 2026-10-13).**
+  - Added per-course `srsResetLog` (`{ resetAt, lemmas }`) tracked in `engine/srs.js` and synced via `COURSE_KEYS` in `engine/sync.js` so full deck resets (`clearDeck()`), single-deck resets (`resetDeckProgress()`), and individual word removals (`removeFromAllWords()`) filter out any cloud or local cards/known words whose activity timestamp predates the reset.
+  - Updated `clearDeck()`, `resetDeckProgress()`, and `removeFromAllWords()` to persist `'[]'` via `saveDeck()` / `saveKnownWords()` and immediately trigger `Sync.performAutoSave()`, and updated `applySnapshot()` to reload in-memory `srsDeck` and `knownWords`.
+  - Guarded `migrateLegacyKeys()` (`engine/lang.js`) with `app_legacyKeysMigrated` and `srsResetLog` so legacy `es:srsDeck` / `spanishApp_srsDeck` keys are never re-copied after a reset.
+
+- **Verb Driller Curriculum & Signal Wiring (`verbs` / `hu-verb`), Encountered-Verb Scoping & Removal of Post-Lesson Nudge Wall (Done 2026-10-13).**
+  - **Expanded `verb-tense-skills.json` Across All Three Courses:**
+    - Expanded `content/es-es/indexes/verb-tense-skills.json` and `content/es-latam/indexes/verb-tense-skills.json` to map A1–B2 verb conjugation skills (`ar-verbs`, `er-ir-verbs`, `stem-changes`, `reflexives`, `preterite-irregular-stems`, `future-probability`, `subjuntivo-deseos`, and `imperfect-subjunctive-forms` in `es-latam`) to their driller tense paths.
+    - Created `content/hu/indexes/verb-tense-skills.json` mapping Hungarian conjugation skills (`present-tense-routine-language`, `ik-verbs-dolgozom-not-dolgozok`, `definite-vs-indefinite-conjugation`, `past-tense-indefinite`, `irregular-past`, `definite-past`) to `pres.indef`, `pres.def`, `past.indef`, and `past.def`.
+  - **Encountered Verbs & Tenses Tracking (`engine/taughtWords.js`, `engine/learnerModel.js`):**
+    - Enhanced `TaughtWords.isReached(lemma)` with Spanish verb-key normalization (`ny` → `ñ`, accented `-ír` infinitives `oír`/`reír`/`sonreír`/`freír`, reflexive `-se` base/reflexive matching) and `knownWords`/`srsDeck` checks, and added `TaughtWords.reachedVerbs(pool)`.
+    - Added `LearnerModel.tenseForSkill(skillId)`, `LearnerModel.encounteredTenses()`, `LearnerModel.encounteredVerbs(pool)`, Hungarian person keys (`1sg`..`3pl`) in `VERB_PERSONS`, and a `recentMiss` flag on `LearnerModel.weakConjugations()`.
+  - **Bidirectional Signal Recording in Table Mode & Hungarian Verb Driller (`engine/verbs/table.js`, `engine/drills/hu-verb.js`, `engine/verbs.js`):**
+    - Wired `VerbsTable` (`engine/verbs/table.js`) to record `Recycle.credit('verb:' + tensePath + ':' + person, ...)` and `DrillHistory.record('verbs', ...)` on the first check per verb table.
+    - Wired `HuVerbDriller` (`engine/drills/hu-verb.js`) to record `Recycle.credit('verb:' + tense + '.' + (definite ? 'def' : 'indef') + ':' + personKey, ...)` on finish/abort/stop, added fail-open fallback when `knownOnly` filters out all verbs, and added `options.tense`, `options.definite`, and `options.knownOnly` support to `HuVerbDriller.render(root, options)`.
+    - Added `options.knownOnly`, `options.verbs`, and `options.tenses` scoping to `Verbs.render(options)` (`engine/verbs.js`).
+  - **Recommendation Engine & Study Plan Integration (`engine/recommendationEngine.js`, `engine/studyPlan.js`, `engine/studyPlanRunner.js`):**
+    - Updated `_miniGameNudge()` in `engine/recommendationEngine.js` to route verb-tense trouble skills (`LearnerModel.tenseForSkill`), recent `weakConjugations`, and completed verb-tense units (when $\ge 3$ verbs have been encountered in the curriculum) to the Verb Driller (`verbs` / `hu-verb`) scoped to `tense`, `knownOnly: true`, `tenses: encounteredTenses`, and `verbs: encounteredVerbs`.
+    - Updated `StudyPlan._sources()` and `StudyPlanRunner.launchItem()` to boost `verbs`/`hu-verb` urgency when conjugations or verb-tense skills are weak/developing and pass `knownOnly: true`, `tense`, `tenses`, and `verbs`.
+  - **Post-Lesson Nudge Removal (`engine/lessons.js`):**
+    - Removed `summaryReinforceHtml`, `renderLessonSummaryNext` (Screen 2), `guideInvitation`, and remediation action buttons from `renderLessonSummary`, leaving a single clean celebration/stats recap screen where `Continue →` returns directly to Home (or `study-plan-screen`) so `RecommendationEngine` is the single recommended path.
+
+- **Library Long-Form Books, Client-Side `.epub`/`.docx`/`.txt` Import, Per-Chapter Reader & Bookmarking (Done 2026-10-13).**
+  - **Client-Side Book Import & Auto-Chunking (`engine/library.js`):**
+    - Added zero-dependency client-side ZIP extraction (`unpackZip` using Web Streams `DecompressionStream('deflate-raw')` with Node `zlib` fallback) to parse `.epub` and `.docx` files directly in the browser, alongside `.txt`, `.md`, and pasted long-form texts.
+    - Implemented `parseEpub()` supporting `META-INF/container.xml`, OPF metadata (`dc:title`, `dc:creator`), manifest/spine resolution, EPUB 3 `<nav>` and EPUB 2 `.ncx` table-of-contents titles, `<guide>` boilerplate & front/back-matter filtering (`cover`, `title-page`, `copyright-page`, `sinopsis`, `titulo`, `info`, `dedicatoria`, `agradecimientos`, `autor`), and chapter subtitle extraction (`<p class="subtit">` / `<h2>` / `<h3>`).
+    - Implemented `parseDocx()` supporting `docProps/core.xml` metadata and `word/document.xml` heading-based chapter splits (`Heading 1`/`Heading 2`, `Título`, `Capítulo`, `Fejezet`).
+    - Implemented `buildChaptersFromText()` and `finalizeChapterList()` to split plain text on explicit chapter headings (`Capítulo`, `Chapter`, `Parte`, `Fejezet`, Markdown `#`/`##`) and auto-chunk unchaptered documents or oversized chapters (>3,500 words) at paragraph boundaries into ~2,500-word parts (`Part 1`, `Part 2`, or `Chapter Title (1/2)`).
+  - **High-Capacity `IndexedDB` Storage & Cloud Sync Efficiency (`engine/library.js`, `engine/sync.js`):**
+    - Created `BookStore` (`IndexedDB` database `parlour_library_db`, store `books`) to persist full chapter arrays and heavy `analysis.lemmas` vocabulary breakdowns outside `localStorage`.
+    - Kept `localStorage` (`<course>:myTexts`) strictly to compact metadata (~1.5 KB per book: title, author, summary stats, chapter titles/subtitles/word counts, and `progress`), allowing 500+ full-length novels to be stored without hitting the 5 MB `localStorage` limit or bloating Cloud Sync payloads, with automatic migration of legacy `myTexts` entries.
+    - Added `storyProgress` to `COURSE_KEYS` in `engine/sync.js` (resolving part of Library & Reading Experience item 1 in `ROADMAP.md`) so reading positions sync across devices.
+  - **Table of Contents, Per-Chapter Reader, Chapter Management, Book Typography & Location Persistence:**
+    - Added a dedicated Book Table of Contents view (`bookOverviewHtml`) inside **My Texts** displaying chapter titles, subtitles, word counts, read checkmarks, per-chapter removal (`deleteBookChapter` and `removeDraftChapter` in Edit), a "Continue reading — Chapter X (Y%)" primary CTA, and a "Continue Reading" hero banner at the top of the **My Texts** tab.
+    - Updated `openMyText(id, chapterIndex)` to render one chapter at a time (~2k–3.5k words in DOM) with centered book chapter headers (`.lt-book-chapter-header`, larger bold serif `.lt-chapter-heading`, centered italic `.lt-chapter-subtitle` with automatic subtitle detection for previously imported books), book prose typography (`.lt-book-body`, first-line indentation, flush-left `.lt-first-para`, indented `.lt-book-dialogue`, and `.lt-scene-break`), preserving full tap-to-translate (`Reader.makeClickable()` + `Reader.showWord()` + `Lexicon` + `GlossAI` fallback), the **"Mark words you're learning"** toggle (`#story-marks-toggle`), a header chapter-switcher dropdown (`#lt-reader-chapter-select`), and direct **"Next chapter →"** progression without an intervening word-review screen.
+    - Implemented `wireMyTextScrollProgress()` and `restoreMyTextPosition()` to persist `{ chapterIndex, pct, paraIndex, readChapters, at }` on scroll and restore the exact chapter and paragraph (`data-para-index`) on reopen.
+  - **Styling, Service Worker & Regression Tests:**
+    - Added Composed Room styles (`.lt-import-box`, `.lt-book-head`, `.lt-chapter-list`, `.lt-chapter-row`, `.lt-book-chapter-header`, `.lt-book-body`, `.lt-chapter-select`, `.lt-chapter-finish`, and `@media (max-width: 639px)` phone-weight rules) in `styles/components.css`.
+    - Bumped `CACHE_VERSION` in `sw.js` to `v2026-10-13-book-formatting` and updated asset version strings in `index.html`.
+    - Added unit and end-to-end test suite in `tests/reader/test-library-books-chapters.js` (all 6 test suites passing).
+
 ## Completed work (2026-10-12)
 
 - **Cloud Sync Session Expiration & 401 Unauthorized Recovery (Done 2026-10-12).**

@@ -345,6 +345,12 @@ const Lang = (function () {
     // Migrate older keys to course-scoped names without losing learner progress.
     function migrateLegacyKeys() {
         try {
+            if (localStorage.getItem('app_legacyKeysMigrated') === '1') {
+                if (localStorage.getItem(SETTING_KEY) === 'es') {
+                    localStorage.setItem(SETTING_KEY, 'es-latam');
+                }
+                return;
+            }
             // 1. Unscoped legacy keys -> es:
             const legacy = {
                 'spanishApp_srsDeck': 'es:srsDeck',
@@ -365,6 +371,9 @@ const Lang = (function () {
                 'es:readStories': 'es-latam:readStories'
             };
             for (const [from, to] of Object.entries(esToLatam)) {
+                if (to === 'es-latam:srsDeck' && localStorage.getItem('es-latam:srsResetLog') !== null) {
+                    continue;
+                }
                 const value = localStorage.getItem(from);
                 if (value !== null && localStorage.getItem(to) === null) {
                     localStorage.setItem(to, value);
@@ -375,6 +384,7 @@ const Lang = (function () {
             if (localStorage.getItem(SETTING_KEY) === 'es') {
                 localStorage.setItem(SETTING_KEY, 'es-latam');
             }
+            localStorage.setItem('app_legacyKeysMigrated', '1');
         } catch (error) {
             console.warn('Language: could not migrate saved data', error);
         }

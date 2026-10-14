@@ -283,7 +283,11 @@ const StudyPlanRunner = (function () {
             _embeddedDriller = mod;
             if (typeof UI !== 'undefined') UI.showLoading('Preparing practice…');
             try {
-                await mod.render(document.getElementById('study-plan-driller'), { count: item.count, autoStart: true });
+                await mod.render(document.getElementById('study-plan-driller'), Object.assign(
+                    { count: item.count, autoStart: true },
+                    item.tense ? { tense: item.tense } : {},
+                    typeof item.knownOnly === 'boolean' ? { knownOnly: item.knownOnly } : {}
+                ));
             } finally {
                 if (typeof UI !== 'undefined') UI.hideLoading();
             }
@@ -292,7 +296,12 @@ const StudyPlanRunner = (function () {
             // leaves this screen the way a review does.
             _leavingForActivity = true;
             goTab('drills');
-            Workshop.open('verbs', Object.assign({ mode: 'speed', duration: item.seconds, autoStart: true }, item.tense ? { tense: item.tense } : {}));
+            Workshop.open('verbs', Object.assign(
+                { mode: 'speed', duration: item.seconds, autoStart: true, knownOnly: item.knownOnly !== false },
+                item.tense ? { tense: item.tense } : {},
+                item.tenses ? { tenses: item.tenses } : {},
+                item.verbs ? { verbs: item.verbs } : {}
+            ));
         } else if (item.kind === 'reading' && typeof Reader !== 'undefined') {
             _leavingForActivity = true;
             goTab('reader');

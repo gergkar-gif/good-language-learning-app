@@ -95,10 +95,10 @@ const src = f => fs.readFileSync(path.join(__dirname, '../../engine', f), 'utf8'
 assert.strictEqual((src('decks.js').match(/srsCredit: true/g) || []).length, 2, 'Decks opts Match and Blast in');
 assert.ok(src('studyPlanRunner.js').includes('srsCredit: true'), 'study plan Match credits fully');
 assert.ok(src('recommendationEngine.js').includes('srsCredit: true'), 'weakest-words Match credits fully');
-assert.ok(src('lessons.js').includes("srsCredit: 'misses'"), 'lesson Quick Reinforce credits misses only');
+assert.ok(!src('lessons.js').includes('summaryReinforceHtml'), 'post-lesson Quick Reinforce removed in favour of RecommendationEngine');
 const matchJs = src('decks/match.js');
 assert.ok(/_wrongUids\.forEach\(uid => results\.push\(\{ lemma: _wordsByUid\[uid\]\.lemma, rating: 'again' \}\)\)/.test(matchJs),
     'Match credits wrong pairs, not words left over at time-out');
-console.log('✓ Match credit: full in Decks/study plan/recommendations, misses-only after a lesson');
+console.log('✓ Match credit: full in Decks/study plan/recommendations');
 
 console.log('\nAll deck SRS credit tests passed!');

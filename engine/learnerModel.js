@@ -110,8 +110,9 @@ const LearnerModel = (function () {
         }
     }
 
-    // Verb Speed's person keys (engine/verbs/speed.js PERSON_LABELS).
-    const VERB_PERSONS = ['yo', 'tu', 'ud', 'nosotros', 'vosotros', 'uds'];
+    // Verb Speed's person keys (engine/verbs/speed.js PERSON_LABELS) plus
+    // HuVerbDriller's person keys (1sg..3pl).
+    const VERB_PERSONS = ['yo', 'tu', 'ud', 'nosotros', 'vosotros', 'uds', '1sg', '2sg', '3sg', '1pl', '2pl', '3pl'];
 
     // skillId -> [{ id }] of every recycle-schedule id that is evidence for
     // it. grammar-index.json's lesson exercises, plus three sources recorded
@@ -393,6 +394,7 @@ const LearnerModel = (function () {
     // weakSkills(), one card per pair instead of an average over a skill.
     function weakConjugations(limit) {
         const schedule = (typeof loadRecycleSchedule === 'function') ? loadRecycleSchedule() : {};
+        const currentOpen = (typeof currentAppOpen === 'function') ? currentAppOpen() : 0;
         const results = [];
         Object.keys(schedule).forEach(id => {
             if (id.indexOf('verb:') !== 0) return;
@@ -402,8 +404,9 @@ const LearnerModel = (function () {
             if (!card || !(card.lapses > 0) || typeof card.ease !== 'number') return;
             const state = classifyEase(card.ease);
             if (state === 'strong') return;
+            const recentMiss = card.reviews === 0 && !card.recoveredAtOpen && currentOpen - (card.lastOpen || 0) <= TROUBLE_RECENT_OPENS;
             const parts = id.split(':');
-            results.push({ tensePath: parts[1], person: parts[2], state, ease: card.ease, lapses: card.lapses || 0 });
+            results.push({ tensePath: parts[1], person: parts[2], state, ease: card.ease, lapses: card.lapses || 0, recentMiss });
         });
         results.sort((a, b) => (a.ease - b.ease) || (b.lapses - a.lapses));
         return results.slice(0, limit || results.length);
@@ -1401,6 +1404,53 @@ const LearnerModel = (function () {
         return (weakList || []).some(w => w.state === 'weak' && tenseSkillIds.has(w.skillId));
     }
 
+    async function tenseForSkill(rawSkillId) {
+        if (!rawSkillId) return null;
+        await _ensureAliasesLoaded();
+        const skillId = _canonicalSkill(rawSkillId);
+        const tenses = await _optionalJson('indexes/verb-tense-skills.json');
+        if (!tenses) return null;
+        for (const key of Object.keys(tenses)) {
+            if (key.charAt(0) === '_' || !Array.isArray(tenses[key])) continue;
+            if (tenses[key].indexOf(skillId) !== -1 || tenses[key].indexOf(rawSkillId) !== -1) {
+                return key;
+            }
+        }
+        return null;
+    }
+
+    async function encounteredTenses() {
+        const [tenses, index] = await Promise.all([
+            _optionalJson('indexes/verb-tense-skills.json'),
+            _grammarIndex()
+        ]);
+        if (!tenses) return [];
+        const bySkill = (index && index.bySkill) || {};
+        const reached = (typeof LearnerPath !== 'undefined' && LearnerPath.reachedExerciseRefs)
+            ? LearnerPath.reachedExerciseRefs() : null;
+        const schedule = (typeof loadRecycleSchedule === 'function') ? loadRecycleSchedule() : {};
+
+        const out = [];
+        Object.keys(tenses).forEach(tenseKey => {
+            if (tenseKey.charAt(0) === '_' || !Array.isArray(tenses[tenseKey])) return;
+            const hasVerbHistory = VERB_PERSONS.some(p => hasHistory(schedule['verb:' + tenseKey + ':' + p]));
+            const hasReachedSkill = tenses[tenseKey].some(skillId => {
+                const entries = bySkill[skillId] || [];
+                return entries.some(entry => (reached && entry.ref && reached.has(entry.ref)) || hasHistory(schedule[entry.id]));
+            });
+            if (hasVerbHistory || hasReachedSkill) out.push(tenseKey);
+        });
+        return out;
+    }
+
+    async function encounteredVerbs(pool) {
+        if (typeof TaughtWords === 'undefined') return [];
+        if (typeof TaughtWords.load === 'function') await TaughtWords.load();
+        if (typeof TaughtWords.reachedVerbs === 'function') return TaughtWords.reachedVerbs(pool);
+        const list = Array.isArray(pool) ? pool : ((typeof ALL_VERBS !== 'undefined' && Array.isArray(ALL_VERBS)) ? ALL_VERBS : []);
+        return list.filter(v => TaughtWords.isReached(v));
+    }
+
     async function weakVerbTense() {
         const tenses = await _optionalJson('indexes/verb-tense-skills.json');
         if (!tenses) return false;
@@ -1425,6 +1475,9 @@ const LearnerModel = (function () {
         weakSkills,
         troubleSkills,
         weakConjugations,
+        tenseForSkill,
+        encounteredTenses,
+        encounteredVerbs,
         recordListeningOutcome,
         listeningState,
         weakVerbTense,

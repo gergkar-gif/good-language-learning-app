@@ -817,6 +817,7 @@ const MusicDriller = (function () {
             });
 
             if (!alreadyInDeck) {
+                if (typeof clearSrsLemmaReset === 'function') clearSrsLemmaReset(clean);
                 const schedule = typeof newCardSchedule === 'function' ? newCardSchedule() : { interval: 1, ease: 2.5, reps: 0 };
                 srsDeck.push(Object.assign({
                     target: clean,

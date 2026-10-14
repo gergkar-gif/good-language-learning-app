@@ -14,6 +14,71 @@ function cardLemma(card) {
     return (typeof Lang !== 'undefined' && Lang.targetLemma) ? Lang.targetLemma(card) : (card.target || card.lemma || card.spanish || card.hungarian || '');
 }
 
+function loadSrsResetLog() {
+    try {
+        const raw = localStorage.getItem(Lang.key('srsResetLog'));
+        const parsed = raw ? JSON.parse(raw) : null;
+        if (!parsed || typeof parsed !== 'object') return { resetAt: 0, lemmas: {} };
+        return {
+            resetAt: Number(parsed.resetAt) || 0,
+            lemmas: (parsed.lemmas && typeof parsed.lemmas === 'object') ? parsed.lemmas : {}
+        };
+    } catch (error) {
+        return { resetAt: 0, lemmas: {} };
+    }
+}
+
+function saveSrsResetLog(log) {
+    try {
+        localStorage.setItem(Lang.key('srsResetLog'), JSON.stringify({
+            resetAt: Number(log && log.resetAt) || 0,
+            lemmas: (log && log.lemmas && typeof log.lemmas === 'object') ? log.lemmas : {}
+        }));
+    } catch (error) {}
+}
+
+function srsItemTimestamp(item) {
+    if (!item || typeof item !== 'object') return 0;
+    const addedAt = item.added ? (Date.parse(item.added) || 0) : 0;
+    const reviewedAt = item.lastReviewed ? (Date.parse(item.lastReviewed) || 0) : 0;
+    return Math.max(addedAt, reviewedAt);
+}
+
+function isSrsItemReset(item, resetLog) {
+    if (!resetLog) return false;
+    const lemma = cardLemma(item);
+    const cutoff = Math.max(
+        Number(resetLog.resetAt) || 0,
+        (resetLog.lemmas && lemma) ? (Number(resetLog.lemmas[lemma]) || 0) : 0
+    );
+    if (cutoff <= 0) return false;
+    return srsItemTimestamp(item) <= cutoff;
+}
+
+function recordSrsReset(timestamp) {
+    const at = typeof timestamp === 'number' ? timestamp : Date.now();
+    saveSrsResetLog({ resetAt: at, lemmas: {} });
+}
+
+function recordSrsLemmaReset(lemmas, timestamp) {
+    if (!Array.isArray(lemmas) || !lemmas.length) return;
+    const at = typeof timestamp === 'number' ? timestamp : Date.now();
+    const log = loadSrsResetLog();
+    lemmas.forEach(lemma => {
+        if (lemma) log.lemmas[lemma] = at;
+    });
+    saveSrsResetLog(log);
+}
+
+function clearSrsLemmaReset(lemma) {
+    if (!lemma) return;
+    const log = loadSrsResetLog();
+    if (log.lemmas && Object.prototype.hasOwnProperty.call(log.lemmas, lemma)) {
+        delete log.lemmas[lemma];
+        saveSrsResetLog(log);
+    }
+}
+
 function loadDeck() {
     const saved = localStorage.getItem(Lang.key('srsDeck'));
     if (saved) {
@@ -24,6 +89,10 @@ function loadDeck() {
             srsDeck = [];
         }
         if (!Array.isArray(srsDeck)) srsDeck = [];
+        const resetLog = loadSrsResetLog();
+        if (resetLog.resetAt > 0 || Object.keys(resetLog.lemmas).length > 0) {
+            srsDeck = srsDeck.filter(card => !isSrsItemReset(card, resetLog));
+        }
         // Enrich cards that were added before dictionary loaded
         for (const card of srsDeck) {
             if (card.english === 'unknown' || !card.english) {
@@ -66,6 +135,11 @@ function loadKnownWords() {
     try {
         const saved = localStorage.getItem(Lang.key('knownWords'));
         knownWords = saved ? JSON.parse(saved) : [];
+        if (!Array.isArray(knownWords)) knownWords = [];
+        const resetLog = loadSrsResetLog();
+        if (resetLog.resetAt > 0 || Object.keys(resetLog.lemmas).length > 0) {
+            knownWords = knownWords.filter(w => !isSrsItemReset(w, resetLog));
+        }
     } catch (error) {
         knownWords = [];
     }
@@ -84,6 +158,7 @@ function isKnown(lemma) {
 
 function addKnownWord(spanish, english, type, source) {
     if (!spanish || isKnown(spanish)) return false;
+    clearSrsLemmaReset(spanish);
     srsDeck = srsDeck.filter(card => cardLemma(card) !== spanish);
     knownWords.push({
         target: spanish,
@@ -120,6 +195,7 @@ async function creditTestedOutWords(lessonIds) {
     let count = 0;
     vocab.flat().forEach(word => {
         if (!word.lemma || inDeck.has(word.lemma) || isKnown(word.lemma)) return;
+        clearSrsLemmaReset(word.lemma);
         knownWords.push({
             target: word.lemma,
             spanish: word.lemma,
@@ -140,13 +216,15 @@ async function creditTestedOutWords(lessonIds) {
 function moveKnownToReview(spanish) {
     const word = knownWords.find(w => cardLemma(w) === spanish);
     if (!word) return;
+    clearSrsLemmaReset(spanish);
     knownWords = knownWords.filter(w => cardLemma(w) !== spanish);
     srsDeck.push(Object.assign({
         target: word.target || word.spanish,
         spanish: word.spanish,
         english: word.english,
         type: word.type,
-        source: word.source
+        source: word.source,
+        added: new Date().toISOString()
     }, newCardSchedule()));
     saveKnownWords();
     saveDeck();
@@ -166,6 +244,7 @@ function maybeGraduate(card) {
     const lemma = cardLemma(card);
     if (isKnown(lemma)) return false;
 
+    clearSrsLemmaReset(lemma);
     srsDeck = srsDeck.filter(c => cardLemma(c) !== lemma);
     knownWords.push({
         target: lemma,
@@ -185,12 +264,19 @@ function clearDeck() {
     if (!confirm(`Are you sure you want to reset your ${course} flashcards and known words? Your global XP and streak will be preserved.`)) {
         return;
     }
-    localStorage.removeItem(Lang.key('srsDeck'));
-    localStorage.removeItem(Lang.key('knownWords'));
     srsDeck = [];
     knownWords = [];
     sessionRelearningQueue = [];
-    updateSRSCounter();
+    recordSrsReset();
+    try {
+        localStorage.removeItem('spanishApp_srsDeck');
+        localStorage.setItem('app_legacyKeysMigrated', '1');
+    } catch (error) {}
+    saveDeck();
+    saveKnownWords();
+    if (typeof Sync !== 'undefined' && typeof Sync.performAutoSave === 'function') {
+        Sync.performAutoSave();
+    }
     updateReviewStats();
     if (typeof UI !== 'undefined' && UI.toast) {
         UI.toast('Flashcard deck reset.', 'info');
@@ -439,7 +525,8 @@ function addToSRS() {
         closePopup();
         return;
     }
-    
+
+    clearSrsLemmaReset(cleanWord);
     srsDeck.push(Object.assign({
         target: cleanWord,
         spanish: cleanWord,
@@ -1541,6 +1628,11 @@ if (typeof module !== 'undefined' && module.exports) {
         saveDeck,
         loadKnownWords,
         saveKnownWords,
+        clearDeck,
+        loadSrsResetLog,
+        recordSrsReset,
+        recordSrsLemmaReset,
+        clearSrsLemmaReset,
         srsNormalise,
         englishAlternatives,
         startReviewSession,
@@ -1548,6 +1640,8 @@ if (typeof module !== 'undefined' && module.exports) {
         rateCard,
         getCurrentReviewCard: () => currentReviewCard,
         getDeck: () => srsDeck,
-        setDeck: (d) => { srsDeck = d; }
+        setDeck: (d) => { srsDeck = d; },
+        getKnownWords: () => knownWords,
+        setKnownWords: (k) => { knownWords = k; }
     };
 }

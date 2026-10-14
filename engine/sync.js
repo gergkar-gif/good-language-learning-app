@@ -53,8 +53,8 @@ const Sync = (function () {
     // each already documented in its own file as a per-device setting that
     // shouldn't silently change on restore.
     const COURSE_KEYS = [
-        'progress', 'srsDeck', 'knownWords', 'recycleSchedule', 'testResults',
-        'readStories', 'savedReadings', 'myTexts', 'myDecks',
+        'progress', 'srsDeck', 'knownWords', 'srsResetLog', 'recycleSchedule', 'testResults',
+        'readStories', 'storyProgress', 'savedReadings', 'myTexts', 'myTextsResetLog', 'myDecks',
         'verbSpeedScores', 'unitPracticeDismissed', 'miniGameDismissed',
         'milestonesSeen', 'lastActivity', 'productionEvidence', 'assessmentHistory',
         'wordLookups', 'recommendationOutcomes', 'electiveResolvedAt', 'listeningLog'
@@ -636,6 +636,213 @@ const Sync = (function () {
         Object.keys(globals).forEach(name => {
             localStorage.setItem(name, globals[name]);
         });
+
+        if (typeof loadDeck === 'function') {
+            try { loadDeck(); } catch (e) {}
+        }
+        if (typeof loadKnownWords === 'function') {
+            try { loadKnownWords(); } catch (e) {}
+        }
+        if (typeof loadXP === 'function') {
+            try { loadXP(); } catch (e) {}
+        }
+        if (typeof Library !== 'undefined' && typeof Library.reloadFromStorage === 'function') {
+            try { Library.reloadFromStorage(); } catch (e) {}
+        }
+    }
+
+    // ----------------------------------------
+    // BOOK PAYLOAD SYNC (/sync/book)
+    // ----------------------------------------
+    // Multi-chapter book bodies live in IndexedDB locally and in the
+    // user_books table in D1 remotely, compressed with deflate-raw + base64
+    // so full novels transfer quickly without bloating /sync/state.
+
+    function _bytesToBase64(bytes) {
+        if (typeof Buffer !== 'undefined') {
+            try { return Buffer.from(bytes).toString('base64'); } catch (e) {}
+        }
+        let binary = '';
+        const chunk = 8192;
+        for (let i = 0; i < bytes.length; i += chunk) {
+            const sub = bytes.subarray(i, Math.min(bytes.length, i + chunk));
+            for (let j = 0; j < sub.length; j++) {
+                binary += String.fromCharCode(sub[j]);
+            }
+        }
+        if (typeof btoa === 'function') {
+            try { return btoa(binary); } catch (e) {}
+        }
+        return '';
+    }
+
+    function _base64ToBytes(b64) {
+        if (typeof Buffer !== 'undefined') {
+            try { return new Uint8Array(Buffer.from(b64, 'base64')); } catch (e) {}
+        }
+        const binary = _decodeBase64(b64);
+        const out = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) {
+            out[i] = binary.charCodeAt(i);
+        }
+        return out;
+    }
+
+    async function _compressBookPayload(payload) {
+        if (!payload || typeof payload !== 'object') return payload;
+        const clean = {
+            chapters: payload.chapters || [],
+            lemmas: payload.lemmas || null
+        };
+        const jsonStr = JSON.stringify(clean);
+        try {
+            if (typeof CompressionStream !== 'undefined' && typeof TextEncoder !== 'undefined') {
+                const rawBytes = new TextEncoder().encode(jsonStr);
+                const cs = new CompressionStream('deflate-raw');
+                const writer = cs.writable.getWriter();
+                writer.write(rawBytes);
+                writer.close();
+                const reader = cs.readable.getReader();
+                const chunks = [];
+                let totalLen = 0;
+                while (true) {
+                    const step = await reader.read();
+                    if (step.done) break;
+                    chunks.push(step.value);
+                    totalLen += step.value.byteLength;
+                }
+                const out = new Uint8Array(totalLen);
+                let offset = 0;
+                for (const c of chunks) {
+                    out.set(c, offset);
+                    offset += c.byteLength;
+                }
+                const b64 = _bytesToBase64(out);
+                if (b64) return { encoding: 'deflate-base64', data: b64 };
+            }
+            if (typeof require === 'function') {
+                const zlib = require('zlib');
+                const compressed = zlib.deflateRawSync(Buffer.from(jsonStr, 'utf8'));
+                return { encoding: 'deflate-base64', data: compressed.toString('base64') };
+            }
+        } catch (e) {
+            // Fall back to plain object if compression stream is unavailable
+        }
+        return clean;
+    }
+
+    async function _decompressBookPayload(stored) {
+        if (!stored || typeof stored !== 'object') return null;
+        if (stored.encoding === 'deflate-base64' && typeof stored.data === 'string') {
+            try {
+                const compressedBytes = _base64ToBytes(stored.data);
+                if (typeof DecompressionStream !== 'undefined' && typeof TextDecoder !== 'undefined') {
+                    const ds = new DecompressionStream('deflate-raw');
+                    const writer = ds.writable.getWriter();
+                    writer.write(compressedBytes);
+                    writer.close();
+                    const reader = ds.readable.getReader();
+                    const chunks = [];
+                    let totalLen = 0;
+                    while (true) {
+                        const step = await reader.read();
+                        if (step.done) break;
+                        chunks.push(step.value);
+                        totalLen += step.value.byteLength;
+                    }
+                    const out = new Uint8Array(totalLen);
+                    let offset = 0;
+                    for (const c of chunks) {
+                        out.set(c, offset);
+                        offset += c.byteLength;
+                    }
+                    const jsonStr = new TextDecoder('utf-8').decode(out);
+                    return JSON.parse(jsonStr);
+                }
+                if (typeof require === 'function') {
+                    const zlib = require('zlib');
+                    const raw = zlib.inflateRawSync(Buffer.from(compressedBytes));
+                    return JSON.parse(raw.toString('utf8'));
+                }
+            } catch (e) {
+                return null;
+            }
+        }
+        if (Array.isArray(stored.chapters)) {
+            return stored;
+        }
+        return null;
+    }
+
+    async function saveBook(bookKey, payload) {
+        const token = getToken();
+        if (!token || !bookKey || !payload) return false;
+        try {
+            const compressed = await _compressBookPayload(payload);
+            const res = await fetch(WORKER_URL + '/sync/book', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                body: JSON.stringify({ key: bookKey, payload: compressed })
+            });
+            if (res && res.status === 401) {
+                _handleUnauthorized();
+                return false;
+            }
+            return Boolean(res && res.ok);
+        } catch (err) {
+            return false;
+        }
+    }
+
+    async function loadBook(bookKey) {
+        const token = getToken();
+        if (!token || !bookKey) return null;
+        try {
+            const res = await fetch(WORKER_URL + '/sync/book?key=' + encodeURIComponent(bookKey), {
+                headers: { 'Authorization': 'Bearer ' + token }
+            });
+            if (res && res.status === 401) {
+                _handleUnauthorized();
+                return null;
+            }
+            if (!res || !res.ok) return null;
+            const data = await res.json();
+            if (!data || !data.payload) return null;
+            const unpacked = await _decompressBookPayload(data.payload);
+            if (!unpacked) return null;
+            return {
+                chapters: unpacked.chapters || [],
+                lemmas: unpacked.lemmas || null,
+                updatedAt: data.updatedAt || null
+            };
+        } catch (err) {
+            return null;
+        }
+    }
+
+    async function deleteBook(bookKey) {
+        const token = getToken();
+        if (!token || !bookKey) return false;
+        try {
+            const res = await fetch(WORKER_URL + '/sync/book', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                body: JSON.stringify({ key: bookKey, deleted: true })
+            });
+            if (res && res.status === 401) {
+                _handleUnauthorized();
+                return false;
+            }
+            return Boolean(res && res.ok);
+        } catch (err) {
+            return false;
+        }
     }
 
     // ----------------------------------------
@@ -663,9 +870,10 @@ const Sync = (function () {
             const cloud = await status({ timeoutMs: 8000 });
             const cloudAt = (cloud && cloud.updatedAt) ? new Date(cloud.updatedAt).getTime() : 0;
             if (cloud && cloud.state && cloudAt > lastSynced) {
+                const preMerge = state;
                 state = mergeSnapshots(state, cloud.state);
                 applySnapshot(state);
-                mergedRemote = true;
+                mergedRemote = differsFromCloud(state, preMerge);
             }
         }
 
@@ -764,6 +972,54 @@ const Sync = (function () {
         }
     }
 
+    function _wordKey(item) {
+        if (!item || typeof item !== 'object') return '';
+        return item.target || item.spanish || item.lemma || item.hungarian || item.word || '';
+    }
+
+    function _itemActivityTime(item) {
+        if (!item || typeof item !== 'object') return 0;
+        const addedAt = item.added ? (Date.parse(item.added) || 0) : 0;
+        const reviewedAt = item.lastReviewed ? (Date.parse(item.lastReviewed) || 0) : 0;
+        return Math.max(addedAt, reviewedAt);
+    }
+
+    function _parseResetLog(raw) {
+        const obj = (raw && typeof raw === 'object') ? raw : safeJsonParse(raw, null);
+        if (!obj || typeof obj !== 'object') return { resetAt: 0, lemmas: {} };
+        const resetAt = Number(obj.resetAt) || 0;
+        const lemmas = {};
+        if (obj.lemmas && typeof obj.lemmas === 'object') {
+            for (const [k, v] of Object.entries(obj.lemmas)) {
+                const t = Number(v) || 0;
+                if (t > resetAt) lemmas[k] = t;
+            }
+        }
+        return { resetAt, lemmas };
+    }
+
+    function mergeSrsResetLog(localRaw, cloudRaw) {
+        const lLog = _parseResetLog(localRaw);
+        const cLog = _parseResetLog(cloudRaw);
+        const resetAt = Math.max(lLog.resetAt, cLog.resetAt);
+        const lemmas = {};
+        for (const k of new Set([...Object.keys(lLog.lemmas), ...Object.keys(cLog.lemmas)])) {
+            const t = Math.max(lLog.lemmas[k] || 0, cLog.lemmas[k] || 0);
+            if (t > resetAt) lemmas[k] = t;
+        }
+        return JSON.stringify({ resetAt, lemmas });
+    }
+
+    function _isResetByLog(item, key, resetLog) {
+        if (!resetLog) return false;
+        const cutoff = Math.max(
+            Number(resetLog.resetAt) || 0,
+            (resetLog.lemmas && key) ? (Number(resetLog.lemmas[key]) || 0) : 0
+        );
+        if (cutoff <= 0) return false;
+        return _itemActivityTime(item) <= cutoff;
+    }
+
     function mergeProgress(localRaw, cloudRaw) {
         const lProg = safeJsonParse(localRaw, {});
         const cProg = safeJsonParse(cloudRaw, {});
@@ -786,14 +1042,15 @@ const Sync = (function () {
         return JSON.stringify(res);
     }
 
-    function mergeKnownWords(localRaw, cloudRaw) {
+    function mergeKnownWords(localRaw, cloudRaw, resetLog) {
         const lWords = safeJsonParse(localRaw, []);
         const cWords = safeJsonParse(cloudRaw, []);
         const map = new Map();
         [...cWords, ...lWords].forEach(w => {
             if (!w) return;
-            const key = w.spanish || w.lemma || w.word;
+            const key = _wordKey(w);
             if (!key) return;
+            if (_isResetByLog(w, key, resetLog)) return;
             if (!map.has(key)) {
                 map.set(key, w);
             } else {
@@ -808,14 +1065,15 @@ const Sync = (function () {
         return JSON.stringify(Array.from(map.values()));
     }
 
-    function mergeSrsDeck(localRaw, cloudRaw) {
+    function mergeSrsDeck(localRaw, cloudRaw, resetLog) {
         const lCards = safeJsonParse(localRaw, []);
         const cCards = safeJsonParse(cloudRaw, []);
         const cardMap = new Map();
         [...cCards, ...lCards].forEach(card => {
             if (!card) return;
-            const key = card.spanish || card.lemma || card.word;
+            const key = _wordKey(card);
             if (!key) return;
+            if (_isResetByLog(card, key, resetLog)) return;
             if (!cardMap.has(key)) {
                 cardMap.set(key, card);
             } else {
@@ -889,6 +1147,95 @@ const Sync = (function () {
         return JSON.stringify(Array.from(map.values()));
     }
 
+    function _parseTextResetLog(raw) {
+        const obj = (raw && typeof raw === 'object') ? raw : safeJsonParse(raw, null);
+        if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return {};
+        const out = {};
+        for (const [k, v] of Object.entries(obj)) {
+            const t = Number(v) || 0;
+            if (t > 0) out[k] = t;
+        }
+        return out;
+    }
+
+    function mergeMyTextsResetLog(localRaw, cloudRaw) {
+        const lLog = _parseTextResetLog(localRaw);
+        const cLog = _parseTextResetLog(cloudRaw);
+        const merged = {};
+        for (const k of new Set([...Object.keys(lLog), ...Object.keys(cLog)])) {
+            merged[k] = Math.max(lLog[k] || 0, cLog[k] || 0);
+        }
+        return JSON.stringify(merged);
+    }
+
+    function mergeMyTexts(localRaw, cloudRaw, textResetLog) {
+        const lArr = safeJsonParse(localRaw, []);
+        const cArr = safeJsonParse(cloudRaw, []);
+        const resetMap = textResetLog || {};
+        const map = new Map();
+
+        [...cArr, ...lArr].forEach(item => {
+            if (!item || typeof item !== 'object') return;
+            const id = item.id;
+            if (!id) return;
+            const deletedAt = Number(resetMap[id]) || 0;
+            const itemTime = Math.max(
+                item.modified ? (Date.parse(item.modified) || 0) : 0,
+                item.created ? (Date.parse(item.created) || 0) : 0
+            );
+            if (deletedAt > 0 && itemTime <= deletedAt) return;
+
+            if (!map.has(id)) {
+                map.set(id, item);
+                return;
+            }
+
+            const existing = map.get(id);
+            const exMod = Math.max(
+                existing.modified ? (Date.parse(existing.modified) || 0) : 0,
+                existing.created ? (Date.parse(existing.created) || 0) : 0
+            );
+            const newMod = itemTime;
+
+            const base = (newMod >= exMod)
+                ? Object.assign({}, existing, item)
+                : Object.assign({}, item, existing);
+
+            if (!base.text && (existing.text || item.text)) {
+                const exChLen = Array.isArray(existing.chapters) ? existing.chapters.length : 1;
+                const newChLen = Array.isArray(item.chapters) ? item.chapters.length : 1;
+                if (exChLen === newChLen && exChLen <= 1) {
+                    base.text = existing.text || item.text;
+                }
+            }
+
+            const exProg = existing.progress || null;
+            const newProg = item.progress || null;
+            if (exProg || newProg) {
+                const p1 = exProg || { chapterIndex: 0, pct: 0, paraIndex: 0, readChapters: [], at: 0 };
+                const p2 = newProg || { chapterIndex: 0, pct: 0, paraIndex: 0, readChapters: [], at: 0 };
+                const readSet = new Set([
+                    ...(Array.isArray(p1.readChapters) ? p1.readChapters : []),
+                    ...(Array.isArray(p2.readChapters) ? p2.readChapters : [])
+                ]);
+                const t1 = Number(p1.at) || 0;
+                const t2 = Number(p2.at) || 0;
+                const newerProg = (t2 >= t1) ? p2 : p1;
+                base.progress = {
+                    chapterIndex: newerProg.chapterIndex || 0,
+                    pct: newerProg.pct || 0,
+                    paraIndex: newerProg.paraIndex || 0,
+                    readChapters: Array.from(readSet).sort((a, b) => a - b),
+                    at: Math.max(t1, t2)
+                };
+            }
+
+            map.set(id, base);
+        });
+
+        return JSON.stringify(Array.from(map.values()));
+    }
+
     // An array that went through the old Object.assign fallback came back
     // as {"0": …, "1": …} — turn it back into the array it was.
     function _isArrayLike(value) {
@@ -906,18 +1253,23 @@ const Sync = (function () {
         }
     }
 
-    function mergeField(name, localRaw, cloudRaw) {
+    function mergeField(name, localRaw, cloudRaw, resetLog, textResetLog) {
         if (localRaw) localRaw = _repairArrayLike(localRaw);
         if (cloudRaw) cloudRaw = _repairArrayLike(cloudRaw);
+        if (name === 'srsResetLog') return mergeSrsResetLog(localRaw, cloudRaw);
+        if (name === 'myTextsResetLog') return mergeMyTextsResetLog(localRaw, cloudRaw);
+        if (name === 'knownWords' && resetLog) return mergeKnownWords(localRaw, cloudRaw, resetLog);
+        if (name === 'srsDeck' && resetLog) return mergeSrsDeck(localRaw, cloudRaw, resetLog);
+        if (name === 'myTexts') return mergeMyTexts(localRaw, cloudRaw, textResetLog);
         if (!localRaw) return cloudRaw;
         if (!cloudRaw) return localRaw;
         if (localRaw === cloudRaw) return localRaw;
 
         if (name === 'progress') return mergeProgress(localRaw, cloudRaw);
-        if (name === 'knownWords') return mergeKnownWords(localRaw, cloudRaw);
-        if (name === 'srsDeck') return mergeSrsDeck(localRaw, cloudRaw);
+        if (name === 'knownWords') return mergeKnownWords(localRaw, cloudRaw, resetLog);
+        if (name === 'srsDeck') return mergeSrsDeck(localRaw, cloudRaw, resetLog);
         if (name === 'spanishApp_xp') return mergeXP(localRaw, cloudRaw);
-        if (name === 'readStories' || name === 'savedReadings' || name === 'myTexts' || name === 'myDecks') {
+        if (name === 'readStories' || name === 'savedReadings' || name === 'myDecks') {
             return mergeArrayById(localRaw, cloudRaw);
         }
         if (name.startsWith('drillHistory:')) {
@@ -958,17 +1310,76 @@ const Sync = (function () {
             const mData = {};
             const keys = new Set([...Object.keys(lData), ...Object.keys(cData)]);
 
+            let resetLog = null;
+            if (lData.srsResetLog !== undefined || cData.srsResetLog !== undefined) {
+                mData.srsResetLog = mergeSrsResetLog(lData.srsResetLog, cData.srsResetLog);
+                const parsed = _parseResetLog(mData.srsResetLog);
+                if (parsed.resetAt > 0 || Object.keys(parsed.lemmas).length > 0) {
+                    resetLog = parsed;
+                }
+            }
+
+            let textResetLog = null;
+            if (lData.myTextsResetLog !== undefined || cData.myTextsResetLog !== undefined) {
+                mData.myTextsResetLog = mergeMyTextsResetLog(lData.myTextsResetLog, cData.myTextsResetLog);
+                const parsedTexts = _parseTextResetLog(mData.myTextsResetLog);
+                if (Object.keys(parsedTexts).length > 0) {
+                    textResetLog = parsedTexts;
+                }
+            }
+
             keys.forEach(key => {
+                if (key === 'srsResetLog' || key === 'myTextsResetLog') return;
                 const lRaw = lData[key];
                 const cRaw = cData[key];
-                if (lRaw === undefined) {
+                if ((key === 'srsDeck' || key === 'knownWords') && resetLog) {
+                    mData[key] = mergeField(key, lRaw, cRaw, resetLog, textResetLog);
+                } else if (key === 'myTexts' && textResetLog) {
+                    mData[key] = mergeField(key, lRaw, cRaw, resetLog, textResetLog);
+                } else if (lRaw === undefined) {
                     mData[key] = cRaw;
                 } else if (cRaw === undefined) {
                     mData[key] = lRaw;
                 } else {
-                    mData[key] = mergeField(key, lRaw, cRaw);
+                    mData[key] = mergeField(key, lRaw, cRaw, resetLog, textResetLog);
                 }
             });
+
+            // Preserve the invariant that knownWords and srsDeck are mutually
+            // exclusive: if a word graduated/was marked known on one device
+            // while still sitting in srsDeck on another, keep whichever state
+            // was touched more recently.
+            if (mData.srsDeck && mData.knownWords) {
+                const cards = safeJsonParse(mData.srsDeck, []);
+                const known = safeJsonParse(mData.knownWords, []);
+                if (cards.length > 0 && known.length > 0) {
+                    const knownByKey = new Map();
+                    known.forEach(w => {
+                        const k = _wordKey(w);
+                        if (k) knownByKey.set(k, w);
+                    });
+                    const dropFromKnown = new Set();
+                    const filteredCards = cards.filter(card => {
+                        const k = _wordKey(card);
+                        if (!k || !knownByKey.has(k)) return true;
+                        const w = knownByKey.get(k);
+                        const cardTime = _itemActivityTime(card);
+                        const knownTime = _itemActivityTime(w);
+                        if (cardTime > knownTime) {
+                            dropFromKnown.add(k);
+                            return true;
+                        }
+                        return false;
+                    });
+                    if (filteredCards.length !== cards.length) {
+                        mData.srsDeck = JSON.stringify(filteredCards);
+                    }
+                    if (dropFromKnown.size > 0) {
+                        mData.knownWords = JSON.stringify(known.filter(w => !dropFromKnown.has(_wordKey(w))));
+                    }
+                }
+            }
+
             merged[course] = mData;
         });
 
@@ -1190,6 +1601,7 @@ const Sync = (function () {
         loginWithGoogle, renderGoogleButton, promptGoogleOneTap,
         isGoogleAuthAvailable, getGoogleClientId,
         gatherSnapshot, applySnapshot, backup, restore, status,
+        saveBook, loadBook, deleteBook,
         maybeShowFirstVisitPrompt, scheduleAutoSave, performAutoSave,
         lastSavedAt, syncOnStartup, checkForRemoteUpdates, mergeSnapshots,
         isDirty: () => _isDirty
