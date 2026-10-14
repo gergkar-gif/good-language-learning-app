@@ -7,8 +7,8 @@ time and usage pressure): add the units' numbers to the table, compare
 with the previous rows, pick one or two changes that cut tokens or
 reviewer work without losing defects, record them below, and apply them
 to the next units. Repeated defects go into `docs/unit-agent-rules.md`
-§ 6 at once; a defect a script could catch becomes a `check-content.py`
-check.
+§ 6 at once; a recurring problem gets a script (§ "Script recurring
+problems").
 
 ## Pipeline (current, as HU A1 was finished 2026-10-13/14)
 
@@ -41,10 +41,36 @@ Read this before working on any unit. Agents read only
    Refreezing a frozen unit keeps its earlier reason and accepted
    findings.
 7. **Every 2 units:** process review below; a repeated defect goes into
-   `docs/unit-agent-rules.md` § 6 the same day, and one a script can
-   catch becomes a `check-content.py` check.
+   `docs/unit-agent-rules.md` § 6 the same day, and anything recurring
+   gets a script (below).
 
 At most 2 agents at once (CLAUDE.md). Never let an agent bypass hooks.
+
+### Script recurring problems (user, 2026-10-13)
+
+When an issue shows up a second time, stop fixing it by hand or by prompt
+and write a Python script, in the same session:
+
+- **A recurring content defect → a check** in `scripts/check-content.py`:
+  an error when the rule is certain (`ik-first-person`, `vocab-duplicate`,
+  `ds-on-answer`), a suspect when it needs a reader's eye
+  (`consolidation-copy`, `reported-question`, `glued-blank`,
+  `article-blank`, `take-gloss`). Run it over the whole course at once:
+  that is how hits in already-frozen units were found. Add the rule to
+  `docs/unit-agent-rules.md` § 6 and AGENTS.md's checker list.
+- **A mechanical fix that is always the same → a fixer script**, never a
+  prompt. It must refuse rather than guess: write nothing unless every
+  change matches exactly (`apply_replacements.py`), and run the checker
+  after.
+- **A recurring chore or conflict → a script**: `take_unit_commit.py`
+  (cherry-pick + the two conflicts every parallel unit causes),
+  `merge_challenges.py`, `freeze_unit.py` (refreeze keeps history),
+  `walk_lessons.js` (play every lesson), `fill-dictionary-gaps.py merge`
+  (dictionary additions survive rebuilds).
+- Test a new check on the existing content before trusting it: look at
+  its first hits, tighten it until they are real (false positives such as
+  the B1/C1 *az* pronoun hits are noted in the process review), and record
+  the count.
 
 ### Who does what: model choice (measured on HU A1)
 

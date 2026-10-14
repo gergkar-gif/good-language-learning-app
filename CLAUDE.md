@@ -55,6 +55,10 @@ templates, costs and the "before calling a level done" checklist are in
 agents get [docs/unit-agent-rules.md](docs/unit-agent-rules.md) as their
 only rulebook. Read both before running a unit. Never tell the user a level
 is done from memory: run the checklist and say what it doesn't cover.
+An issue that recurs gets a Python script (a `check-content.py` check, a
+fixer that refuses rather than guesses, or a chore script) in the same
+session, not another prompt: see the pipeline doc § "Script recurring
+problems".
 
 ## Roles and subagents
 
