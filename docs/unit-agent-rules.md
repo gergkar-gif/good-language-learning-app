@@ -21,6 +21,9 @@ unknown words in the Reader (user, 2026-10-13). `check-content.py` (`unmet-word`
 checks lemmas, not forms: a form taught later (*-ba/-be*, *-on*, plural
 possessed *-im*, a noun possessor *Anna kulcsa*) is yours to catch.
 `skills/<lang>.json` `taught_in` says where each grammar skill is taught.
+When your prompt gives a knowledge sheet (`scripts/prior_knowledge.py`),
+use it for what earlier units taught instead of opening them; anything on
+it is known and is never presented as new.
 
 ## 2. Exercises
 

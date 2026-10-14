@@ -15,9 +15,15 @@ problems").
 Read this before working on any unit. Agents read only
 `docs/unit-agent-rules.md`; the reviewer (Claude) runs the steps below.
 
+0. **Knowledge sheet** for each unit (from 2026-10-14):
+   `python scripts/prior_knowledge.py <course> <level> <unit id> --out
+   <worktree>/prior-<unit id>.md`: known grammar and words by unit, every
+   earlier screen title, what this unit teaches, what comes later. Give
+   its path to the regenerating and the reading agent instead of "read the
+   earlier units" (~7k tokens a unit).
 1. **Regenerate two units per Sonnet agent** (a pair costs ~119k a unit
    against 160–267k single; the second unit re-teaches the first's
-   material more often, so the prompt lists what earlier units own and
+   material more often, so the prompt points at both units' sheets and
    says "recap, never new"). Real, decent content can go read-first
    instead (step 2, then decide). Each agent works in its own worktree:
    `git worktree add --detach /home/user/parlour-<job> HEAD`, removed after.
@@ -25,15 +31,24 @@ Read this before working on any unit. Agents read only
    id> <commit>` (cherry-picks, resolves the `challenges.json` and
    `word-lesson-index.json` conflicts, runs the checks).
 3. **Paired blind read** by one Sonnet agent (report only, ~83–108k a
-   unit), asking for exact old → new fixes quoting option text.
-4. **Filter** the report against the files into
+   unit). From 2026-10-14 the reader also writes its fixes as JSON, one
+   file per unit (`<worktree>/fixes-<unit id>.json`, format in
+   `scripts/apply_replacements.py`: exact `old`/`new` text or an `id` with
+   `set` fields; every fix carries the exercise `id`, `"kind":
+   "hungarian"` when it changes Hungarian, `"sure": false` when unsure).
+4. **Check the fixes by script:** `python scripts/check_fixes.py <course>
+   <level> <unit id> <fixes.json>` applies them to a scratch state, runs
+   check-content, restores the files, and splits them into rejected (no
+   exact match, or a new finding on its exercise), review (Hungarian or
+   unsure) and auto. **Read only the review list and the report's
+   non-fix notes**; readers propose wrong Hungarian a few times per level
+   (*Nem van tej*, *szürkét*). Record the outcome in
    `imports/review/sonnet-reads/<course>-<level>-<unit id>.md` (Applied /
-   Not taken with reasons). Readers propose wrong Hungarian a few times
-   per level (*Nem van tej*, *szürkét*): check every grammar claim.
-5. **Apply:** text fixes with `python scripts/apply_replacements.py
-   <fixes.json>` (each old string must match once, or nothing is
-   written); `distractor_skills`, retags and challenges by id with a short
-   JSON round-trip. A Haiku fixer only for long lists (74–131k).
+   Not taken with reasons).
+5. **Apply:** `python scripts/apply_replacements.py <fixes>.auto.json`,
+   then the review file after deleting what you don't take. No Haiku
+   fixer needed when the reader's JSON is good; for a list without JSON,
+   write the JSON yourself (short lists) or give it to Haiku (long ones).
 6. **Check after every hand edit**, not only at freeze:
    `python scripts/check-content.py <course> <level> <unit id>`; then
    `lock_tags.py --update`, `freeze_unit.py` (`--accept
@@ -73,6 +88,11 @@ and write a Python script, in the same session:
   the count.
 
 ### Who does what: model choice (measured on HU A1)
+
+(From 2026-10-14 the reader's JSON plus `check_fixes.py` replaces the
+Haiku fixer for most lists; see Pipeline steps 3–5. Measure the first A2
+pairs against the A1 rows before trusting the saving.)
+
 
 | Job | Model | Why |
 |---|---|---|
@@ -139,13 +159,22 @@ story, checking § 1–4 and every item of § 6. Skip what check-content
 reports. Focus: `<unit-specific grammar to watch>`. Report grouped: 1.
 Found by reading; 2. Metadata; 3. Challenges / goals / checklists; 4.
 Doubtful. One line each: id, problem quoting the text, fix; mark
-uncertain items (unsure). Don't pad."
+uncertain items (unsure). Don't pad. What the learner knows before this
+unit is in `<prior sheet path>` (read it first; anything listed there
+presented as new is a defect). Also write every fix you give as JSON in
+`<fixes path>`, in the format at the top of
+`scripts/apply_replacements.py`, each with its exercise or challenge
+`id`, `\"kind\": \"hungarian\"` when it changes Hungarian text and
+`\"sure\": false` when unsure; quote `old` exactly from the file (that
+file is the only one you may create)."
 
 **Regenerate.** "Regenerate hu a1 unit `<n>` `<unit id>` (`<stems>`) in
 `<folder>`. Rulebook: `docs/unit-agent-rules.md`; shape:
 `docs/course-generation-brief.md` § 2.2/2.3 (read only those). Rewrite
 both screens per lesson, story, exercises, goals/checklists, challenges;
-keep ids and stems. `<unit-specific points>`. Run § 5 checks, fix
+keep ids and stems. What the learner already knows is in `<prior sheet
+path>`: use it instead of opening earlier units; anything in it is
+presented as known (\"You know …\"), never as new. `<unit-specific points>`. Run § 5 checks, fix
 everything, lock tags, don't freeze. Commit normally with start/finish
 times; report the commit, per-lesson points, and Hungarian you are unsure
 of."
@@ -392,3 +421,31 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   b1-26-05.ex02, b1-30-03.ex05) stay parked with HU B1.
 - Next, decided by the user: the gate-1 lesson walk test (ROADMAP 153(b))
   on HU A1 before starting HU A2.
+
+### 2026-10-14: two efficiency methods built (for HU A2 onwards)
+
+- **Knowledge sheet** (`scripts/prior_knowledge.py`): ~7k tokens a unit
+  (61 known skills, 527 words, every earlier screen title before A1 unit
+  32). Replaces agents opening earlier units; aimed at the most common
+  read finding in units 24–33 (screens presenting earlier material as
+  new). Expected: shorter reads and fix lists; measure on the first A2
+  pair.
+- **New suspect `recap-unmarked`** in check-content: a grammar screen that
+  repeats 2+ example sentences of an earlier unit's screens with no "You
+  know"-style wording. HU A1 21 hits (mostly review units 10 and 20, whose
+  screens recap without saying so), A2 7, es-es A1 0. It would not have
+  caught the unit 32 defects (those screens said "you know" for part and
+  presented the rest as new), so it is a partial check; the sheet is the
+  prevention.
+- **Reader JSON + `scripts/check_fixes.py`**: the reader writes its fixes
+  as JSON; the script applies them to the working tree, runs check-content
+  on the unit, restores the files and sorts them into rejected / review /
+  auto. Tested on a frozen unit with five planted fixes: the good one went
+  to auto, the Hungarian and unsure ones to review, a non-matching text and
+  a length give-away were rejected, files unchanged afterwards. The reviewer
+  then reads only the review list. `apply_replacements.py` now also takes
+  `{"file", "id", "set": {...}}` fixes (tags, `distractor_skills`,
+  options, challenge fields; null deletes a field).
+- Limit: the script knows only whether a fix applies cleanly and passes
+  the checks, not whether its Hungarian is right; that stays the
+  reviewer's job (the review list).

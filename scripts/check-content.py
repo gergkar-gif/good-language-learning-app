@@ -89,6 +89,7 @@ CHECKS = {
     "glued-blank": "HU: a blank glued to a stem ending in -a/-e whose answer is a suffix (hálószoba____ + ban teaches *hálószobaban*)",
     "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
     "unmet-word": "a word the learner hasn't met by this lesson (scripts/unmet-words.js)",
+    "recap-unmarked": "a grammar screen repeats 2+ example sentences from an earlier unit's screens without saying they are known ('You know …')",
     # shape, new courses only (§ 2)
     "shape-groups": "a teaching lesson's exercise groups differ from the brief's shape",
     "shape-types": "a lesson uses fewer than 5 exercise types",
@@ -105,7 +106,7 @@ LENGTHENING_SUFFIXES = set(
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
 SUSPECTS = {"hova-variant", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
-            "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word"}
+            "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # Hungarian A1-A2. Spanish lists leave out function words (en, que, con), so the
 # check would flag words every learner knows; and from B1 the lists don't try to
@@ -477,6 +478,53 @@ SHAPE_CONSOL = [("Recognize", 5), ("Recall", 5), ("In Context", 5), ("Produce", 
 STORY_BAND = {"a1": (80, 150), "a2": (120, 200), "b1": (300, 400)}
 
 
+RECAP_WORDS = re.compile(r"\b(you know|you have met|you met|as you know|again|remember|recap|review|already|earlier|you learned|you've)\b", re.I)
+def screen_items(src, course, level):
+    """Every grammar screen up to `level` in course order, with its example
+    sentences and table rows of 2+ words: [(unit id, screen, items, text)]."""
+    key = ("screens", course, level)
+    if key not in src.cache:
+        rows = []
+        for lv in LEVELS[:LEVELS.index(level) + 1]:
+            for u in units_of(src, course, lv):
+                for stem in u.get("stems", []):
+                    for ab in "ab":
+                        g = src.read(f"content/{course}/grammar/{lv}/{stem}-{ab}-gr.json")
+                        if not isinstance(g, dict):
+                            continue
+                        its, text = set(), []
+                        for sec in g.get("sections", []):
+                            if sec.get("type") == "table":
+                                its |= {r[0] for r in sec.get("rows") or [] if r and isinstance(r[0], str)}
+                            elif sec.get("type") == "examples":
+                                its |= {i.get("spanish", "") for i in sec.get("items") or [] if isinstance(i, dict)}
+                            else:
+                                text.append(sec.get("content") or "")
+                        its = {n for n in (re.sub(r"[\s.?!,–-]+", " ", x).strip().lower() for x in its) if len(n.split()) >= 2}
+                        rows.append((f"{lv}/{u.get('id')}", f"{stem}-{ab}-gr", its, " ".join(text)))
+        src.cache[key] = rows
+    return src.cache[key]
+
+
+def recap_unmarked(src, course, level, unit):
+    """Screens of `unit` that reuse 2+ sentences an earlier unit's screens
+    showed, with no 'You know'-style wording (a recap presented as new)."""
+    out, first, me = [], {}, f"{level}/{unit.get('id')}"
+    for uid, name, its, text in screen_items(src, course, level):
+        if uid == me:
+            old = sorted(x for x in its if x in first)
+            if len(old) >= 2 and not RECAP_WORDS.search(text):
+                shown = "; ".join(f"{x} ({first[x]})" for x in old[:3])
+                out.append(("recap-unmarked", name, f"{len(old)} sentences from earlier units: {shown}",
+                            f"content/{course}/grammar/{level}/{name}.json"))
+        else:
+            for x in its:
+                first.setdefault(x, name)
+        if uid == me and name.endswith("-b-gr") and name.startswith(unit["stems"][-1]):
+            break
+    return out
+
+
 def check_unit(src, course, level, unit, shape):
     """Findings for one unit: [(check, id, msg, file)]."""
     lang = course.split("-")[0]
@@ -556,6 +604,7 @@ def check_unit(src, course, level, unit, shape):
 
         if shape:
             out += check_shape(src, course, level, stem, lesson, lesson_rel, groups, by_id, consolidation)
+    out += recap_unmarked(src, course, level, unit)
     return out
 
 
