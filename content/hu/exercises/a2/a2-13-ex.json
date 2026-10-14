@@ -35,7 +35,8 @@
         "nal-nel"
       ],
       "distractor_skills": {
-        "1": "tol-tol"
+        "1": "tol-tol",
+        "2": "dative-possessor"
       },
       "stage": "introduce"
     },
@@ -83,9 +84,9 @@
       "id": "a2-13-controlled-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ma a szülei____ vagyok.",
-      "english": "Today I am at his parents' place.",
-      "answer": "nél",
+      "sentence": "Ma a ____ vagyok.",
+      "english": "Today I am at his/her parents' place.",
+      "answer": "szüleinél",
       "teaches": [
         "nal-nel"
       ],
@@ -238,15 +239,12 @@
       ],
       "options": [
         "A szüleinél van.",
-        "A szüleire van."
+        "A szülei van."
       ],
       "correct": 0,
       "teaches": [
         "nal-nel"
-      ],
-      "distractor_skills": {
-        "1": "ra-re"
-      }
+      ]
     },
     {
       "id": "a2-13-writing-1",

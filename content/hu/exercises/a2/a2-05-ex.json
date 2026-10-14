@@ -67,9 +67,9 @@
       "id": "a2-05-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Hétfő____ péntekig dolgozom.",
+      "sentence": "____ péntekig dolgozom.",
       "english": "I work from Monday to Friday.",
-      "answer": "től",
+      "answer": "Hétfőtől",
       "teaches": [
         "tol-tol"
       ],
@@ -83,13 +83,17 @@
       "options": [
         "Fáradt vagyok, ezért pihenek.",
         "Fáradt vagyok, de pihenek.",
-        "Fáradt vagyok, és dolgozom."
+        "Fáradt vagyok, és pihenek."
       ],
       "correct": 0,
       "teaches": [
         "mert-because"
       ],
-      "stage": "controlled"
+      "stage": "controlled",
+      "distractor_skills": {
+        "1": "basic-connectors",
+        "2": "basic-connectors"
+      }
     },
     {
       "id": "a2-05-controlled-4",
