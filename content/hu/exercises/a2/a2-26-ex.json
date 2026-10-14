@@ -64,13 +64,14 @@
       "id": "a2-26-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A második emelet____ lakunk.",
+      "sentence": "A második ____ lakunk.",
       "english": "We live on the second floor.",
-      "answer": "en",
+      "answer": "emeleten",
       "teaches": [
         "on-en-on"
       ],
-      "stage": "controlled"
+      "stage": "controlled",
+      "hint": "floor, on"
     },
     {
       "id": "a2-26-controlled-3",
@@ -92,16 +93,15 @@
       "question": "Which sentence means “I currently live on the third floor”?",
       "options": [
         "Most a harmadik emeleten lakom.",
-        "Most a harmadik emeletre költözöm.",
-        "Most a harmadik emeletről jövök."
+        "Most a harmadik emeletben lakom.",
+        "Most a harmadik emeletből lakom."
       ],
       "correct": 0,
       "teaches": [
         "on-en-on"
       ],
       "distractor_skills": {
-        "1": "ra-re",
-        "2": "delative-rol-rel"
+        "1": "ban-ben-in"
       },
       "stage": "controlled"
     },
@@ -226,14 +226,14 @@
       ],
       "options": [
         "A második emeleten lakom.",
-        "A második emeletre megyek."
+        "A második emeletben lakom."
       ],
       "correct": 0,
       "teaches": [
         "on-en-on"
       ],
       "distractor_skills": {
-        "1": "ra-re"
+        "1": "ban-ben-in"
       }
     },
     {
@@ -251,13 +251,16 @@
         }
       ],
       "options": [
-        "Ez nagyon jó! Hol van a lakás?",
-        "Ez nagyon jó! Melyik emeletre laktok?"
+        "Ez nagyon jó! Melyik emeleten van a lakás?",
+        "Ez nagyon jó! Melyik emeletben van a lakás?"
       ],
       "correct": 0,
       "teaches": [
-        "a2-home-housing-vocab"
-      ]
+        "on-en-on"
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     },
     {
       "id": "a2-26-writing-1",
