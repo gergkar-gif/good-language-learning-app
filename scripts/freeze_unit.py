@@ -15,6 +15,7 @@ stored with the unit and not reported again. Once frozen, `check-content.py
 import datetime
 import importlib.util
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -117,6 +118,7 @@ def main():
         # refreezing: cc.run hides the unit's accepted findings, so keep them,
         # and keep the earlier reason in front of this one
         accepted += [a for a in old["accepted"] if (a["check"], a["id"]) not in keep]
+        reason = re.sub(r"^refrozen \d{4}-\d{2}-\d{2}: ", "", reason)  # added here, not by the caller
         reason = f"{old['reason']}; refrozen {today}: {reason}"
     data["units"][key] = {"frozen": today, "reason": reason, "accepted": accepted}
     save(course, data)

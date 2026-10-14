@@ -184,6 +184,36 @@ Rulebook: `docs/unit-agent-rules.md`. Apply every Applied item, nothing
 under Not taken; re-lock; run § 5 checks; don't freeze; commit normally
 listing each item."
 
+**New unit (from scratch; written 2026-10-14 for HU A2 units 45–47).** Fill `{W}` (the agent's worktree), `{SHEET}` (`prior_knowledge.py` output), `{UID}`, `{TITLE}`, `{NUM}`, `{S1}`…`{S5}` (lesson stems), `{PLAN}` (from `docs/hu-a1-a2-cefr-gap-proposal.md`) and `{EXTRA}` (unit-specific notes). Add the unit's row to the unit table and its vocabulary skill to `skills/<lang>.json` / `frozen-<lang>.json` in the agent's worktree before it starts (the validator needs both, and they go in the same commit as the lessons).
+
+```
+You are writing ONE NEW unit of the Hungarian A2 course of the Parlour language app, from scratch. Work ONLY in `{W}` (a git worktree; absolute paths). DO NOT COMMIT (the main session collects your files). Never change git or tool config, never bypass hooks.
+
+Read first, in this order, and nothing else unless needed to settle a point:
+1. `{W}/docs/unit-agent-rules.md` (rulebook: met words, exercises, metadata, screens, challenges, known defects).
+2. `{W}/docs/course-generation-brief.md` § 2 (shape), § 3 (screens), § 4 (vocabulary), § 5 (story), § 6 (exercises), § 7 (tags), § 9.1 (Hungarian).
+3. The knowledge sheet `{W}/{SHEET}`: everything the learner knows (all of A1–A2 grammar and 1600 words). Every A2 grammar skill is known by now; anything on the sheet is presented as known ("You know …"), never as new.
+4. As a JSON-shape model, the existing lesson `content/hu/lessons/a2/a2-160.json` with its screens, vocabulary, exercise file and story `content/hu/stories/original/a2/a2-unit-32.json`, and challenge entries in `content/hu/curriculum/challenges.json` (A1 entries show the format; key = lesson stem). Copy field names exactly; never invent fields.
+
+The unit (already in `content/hu/curriculum/units/a2.json` and `skills/hu.json`):
+- unit id `{UID}`, title "{TITLE}", unit number {NUM} (lesson field `"unit": {NUM}`), vocabulary skill `a2-{UID}-vocab`.
+- lessons `a2-{S1}` … `a2-{S5}` and `a2-{S5}-consolidation` (lesson ids `lesson.a2.{S1}` …; files `content/hu/lessons/a2/<stem>.json`, screens `content/hu/grammar/a2/<stem>-a-gr.json` and `-b-gr.json`, vocabulary `content/hu/vocabulary/a2/<stem>-voc.json`, exercises `content/hu/exercises/a2/<stem>-ex.json`, story `content/hu/stories/original/a2/a2-unit-{NUM}.json` on lesson `a2-{S5}`, consolidation exercises `a2-{S5}-consolidation-ex.json`).
+- Lesson plan (adjust if a better order emerges, keep the topic): {PLAN}
+
+Rules specific to this job:
+- The A2 skill list is CLOSED: no new grammar skills. Each lesson's two screens either (a) present the lesson's key words/phrases as a pattern table (like the existing A2 screen "híd, folyó, Duna: The River and the Bridge"), or (b) apply a known A2 grammar skill to the theme, saying "You know …". Exercises are tagged with the unit vocabulary skill (word meaning) or the existing grammar skill whose form a wrong answer shows (skill slugs from `skills/hu.json`; `taught_in` must be before this unit, which is true for all A1–A2 skills).
+- About 20–25 new words over the unit (check each against the knowledge sheet: a known word is used, not re-listed), British English glosses, same `theme` label in all five vocabulary files.
+- Exercise counts and section order per brief § 2.2 (A2: Introduce 2, Controlled 4, Practice 4, Listening 2 (`listening-choice`, `dictation`), Dialogue 2, Production 2, Check 2; lesson {S5} also has the story and a Reading group of 3), consolidation per § 2.3 (20 items, 4 groups of 5). Look at an existing A2 listening item shape in the HU B1 or Spanish A2 exercises if you need one (`grep -rl listening-choice content/*/exercises | head`).
+- Story 120–200 Hungarian words, the course's A2 characters (see a2-unit-32: Meg, Károly and friends), 3 comprehension questions; Hungarian setting; facts only when certain.
+- One challenge per teaching lesson (`a2-{S1}`…`a2-{S5}`) in `content/hu/curriculum/challenges.json`, `"level": "A2"`, tier as in the file, target 1–3 sentences using met words, `canDo` = the lesson's first checklist line.
+- Characters' names and the story move forward naturally; this unit is not another unit with nouns swapped.
+{EXTRA}
+
+Then run from `{W}`: `python scripts/build_word_lesson_index.py hu`; `python scripts/check-content.py hu a2 {UID}` (fix EVERY error; fix or justify each suspect); `node scripts/render_lesson.js hu a2-{S1} a2-{S2} a2-{S3} a2-{S4} a2-{S5} a2-{S5}-consolidation` and read every screen and item as rendered (`!!` = error); `node scripts/audit-reader-coverage.js hu --story a2-unit-{NUM} --top 0`; `python scripts/validate-content.py --changed` (fix everything it reports); `python scripts/lock_tags.py hu a2/{UID} --update --reason "new unit (CEFR gap check, 2026-10-14)"`.
+
+Report concisely: files created, word list, per-lesson topic and screens, check results, every Hungarian line or fact you are unsure of.
+```
+
 ## Measurements
 
 | Date | Unit | Route | Regen / fix (tok, min) | Read (tok, min) | Real defects in read | Notes |

@@ -72,3 +72,12 @@ teniszezik*) stay vocabulary (plain -ik conjugation).
 Each new theme is a new unit and a new vocabulary skill
 (`a2-<unit>-vocab`). V4 could instead be folded into `problems-requests` and
 `pharmacy` (no new skill).
+
+## Lesson plans for the three new units (written during the HU A2 pass)
+
+Prompt: `docs/unit-pipeline-log.md` § Prompt templates, "New unit".
+
+- **45 `nature-animals`** (a2-221…225): 221 pets (*háziállat, kutya, macska, sétáltat, etet*); 222 farm animals and the village (*tanya, ló, tehén, tyúk, disznó*, village vs town); 223 landscape and Hungarian geography (*erdő, hegy, folyó, tó, mező, domb*; *Duna, Tisza, Balaton, Alföld*, certain facts only); 224 plants, parks and the outdoors (*virág, fa, fű, kirándul, túrázik, természet*); 225 a weekend trip to the countryside (story).
+- **46 `phone-internet`** (a2-226…230): 226 my phone (*felhív, üzenet, töltő, lemerül*); 227 internet, wifi and e-mail (*e-mail cím, jelszó, bejelentkezik, letölt, feltölt*); 228 apps and doing things online (*alkalmazás*, booking, ordering, paying by card, *regisztrál*); 229 when technology goes wrong (*lefagy, újraindít, frissít*); 230 a video call with family abroad (story).
+- **47 `holidays-celebrations`** (a2-231…235): 231 birthdays and name days, wishes (*Boldog születésnapot!*); 232 Christmas (*karácsony, szenteste, ajándék, fenyőfa, bejgli*); 233 Easter and New Year (*húsvét, locsolás, szilveszter, újév*); 234 national holidays (15 March, 20 August, 23 October: facts checked); 235 a family celebration, inviting and hosting (story).
+- **V4** (no new unit): emergency, police and lost-property words (*112, rendőrség, ellopták, elveszett, talált tárgyak*) go into `problems-requests` and `pharmacy` when those units are finished.
