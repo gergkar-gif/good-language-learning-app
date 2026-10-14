@@ -1,5 +1,10 @@
 # Finishing a unit: brief for Antigravity (ROADMAP 153)
 
+> **Route superseded 2026-10-13:** HU A1 was finished by Sonnet agents, not
+> Antigravity. The current method is [unit-pipeline-log.md](unit-pipeline-log.md)
+> § "Pipeline"; rules for agents are in [unit-agent-rules.md](unit-agent-rules.md).
+> The unit-by-unit and freeze rules below still hold.
+
 The work goes **unit by unit, not problem by problem.** You take one unit,
 fix everything that is wrong with it in one go, and freeze it. A frozen unit
 is done: nobody works on it again unless the user sees a problem in the app.

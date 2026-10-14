@@ -10,20 +10,59 @@ to the next units. Repeated defects go into `docs/unit-agent-rules.md`
 § 6 at once; a defect a script could catch becomes a `check-content.py`
 check.
 
-## Pipeline (current)
+## Pipeline (current, as HU A1 was finished 2026-10-13/14)
 
-1. **Stub unit** (repeated screens, shared checklists, generic content):
-   Sonnet regenerates it. **Real content:** skip to 2.
-2. Sonnet blind read (report only) on a read-only worktree.
-3. Reviewer filters the report against the files, writes
-   `imports/review/sonnet-reads/hu-a1-<unit id>.md` (Applied / Not taken),
-   applies the fixes (small lists directly; long lists to a fixer agent),
-   re-locks, freezes, commits through commit-gate.
-At most 2 agents at once. Take a unit agent's commit with
-`python scripts/take_unit_commit.py hu a1 <unit id> <commit>`: it
-cherry-picks, resolves the `challenges.json` and `word-lesson-index.json`
-conflicts parallel units cause, and runs check-content and the validator. Worktrees: `git worktree add --detach
-/home/user/parlour-<job> HEAD`, removed after.
+Read this before working on any unit. Agents read only
+`docs/unit-agent-rules.md`; the reviewer (Claude) runs the steps below.
+
+1. **Regenerate two units per Sonnet agent** (a pair costs ~119k a unit
+   against 160–267k single; the second unit re-teaches the first's
+   material more often, so the prompt lists what earlier units own and
+   says "recap, never new"). Real, decent content can go read-first
+   instead (step 2, then decide). Each agent works in its own worktree:
+   `git worktree add --detach /home/user/parlour-<job> HEAD`, removed after.
+2. **Take each commit:** `python scripts/take_unit_commit.py hu a1 <unit
+   id> <commit>` (cherry-picks, resolves the `challenges.json` and
+   `word-lesson-index.json` conflicts, runs the checks).
+3. **Paired blind read** by one Sonnet agent (report only, ~83–108k a
+   unit), asking for exact old → new fixes quoting option text.
+4. **Filter** the report against the files into
+   `imports/review/sonnet-reads/<course>-<level>-<unit id>.md` (Applied /
+   Not taken with reasons). Readers propose wrong Hungarian a few times
+   per level (*Nem van tej*, *szürkét*): check every grammar claim.
+5. **Apply:** text fixes with `python scripts/apply_replacements.py
+   <fixes.json>` (each old string must match once, or nothing is
+   written); `distractor_skills`, retags and challenges by id with a short
+   JSON round-trip. A Haiku fixer only for long lists (74–131k).
+6. **Check after every hand edit**, not only at freeze:
+   `python scripts/check-content.py <course> <level> <unit id>`; then
+   `lock_tags.py --update`, `freeze_unit.py` (`--accept
+   "<check>:<id>:<reason>"` for deliberate suspects), commit, push.
+   Refreezing a frozen unit keeps its earlier reason and accepted
+   findings.
+7. **Every 2 units:** process review below; a repeated defect goes into
+   `docs/unit-agent-rules.md` § 6 the same day, and one a script can
+   catch becomes a `check-content.py` check.
+
+At most 2 agents at once (CLAUDE.md). Never let an agent bypass hooks.
+
+### Before calling a level done
+
+Count with the tools before giving the user any number, and say what is
+not verified:
+
+- `python scripts/freeze_unit.py --status`: every unit frozen.
+- `python scripts/check-content.py <course> <level>`: 0 errors; every
+  suspect fixed or accepted (copies, reported questions, glued blanks…).
+- `python scripts/validate-content.py --warnings`: none for the level
+  (`thin_ok` in `skills/<lang>.json` for a skill the user lets stay thin).
+- `node scripts/walk_lessons.js <course> <level>` with
+  `python scripts/dev-server.py 8131` running: every lesson plays to its
+  summary with no console errors and no failed requests (TTS is stubbed;
+  `--live-tts` and the live site can't be reached from the cloud
+  container; the user checks audio).
+- Not covered by any of this: speaking/challenge steps, wrong-answer
+  paths, and a native speaker's eye (the user spot-checks).
 
 ## Prompt templates
 
@@ -92,6 +131,8 @@ listing each item."
 | 10-13 | 22 market | regen | 217k, 13 | 167k for 22+23 (**83k/unit**), 5.5 | 12 applied | paired read |
 | 10-13 | 23 cafe | regen | 180k, 9.5 | (paired) | 7 applied | |
 | 10-13 | 22 + 23 fixes | Haiku | 110k Haiku, 2.5 | | 19/19 | |
+| 10-13 | 24–33 | paired regen + paired read | ~119k/unit | 83–108k/unit | ~25/unit | numbers in the process reviews below |
+| 10-14 | walk test build | Sonnet | 152k, 10.5 | | | HU A1 198/198 in 4.5 min |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 

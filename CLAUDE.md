@@ -47,6 +47,15 @@ list) come first. The new course is held to exactly the same rules, and the
 validator fails a course folder that has content but no schemas or tag
 registry.
 
+## Finishing units (release gate 1, ROADMAP 153)
+
+Units are finished and frozen one at a time. The current method, prompt
+templates, costs and the "before calling a level done" checklist are in
+[docs/unit-pipeline-log.md](docs/unit-pipeline-log.md) § "Pipeline";
+agents get [docs/unit-agent-rules.md](docs/unit-agent-rules.md) as their
+only rulebook. Read both before running a unit. Never tell the user a level
+is done from memory: run the checklist and say what it doesn't cover.
+
 ## Roles and subagents
 
 Roles are in [AGENTS.md](AGENTS.md) § "Who does what": the user decides,

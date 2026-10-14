@@ -138,4 +138,8 @@ taught (*hallgat* alone = "is silent") · false spelling claims (*hova* and
 *Hová* are the same word) · a screen rule its own tip contradicts · an English gloss that lets two
 verbs or conjugations fit ("take" for *kérem*/*veszem*: write "buy") · a
 question in reported speech ("Anna asks Meg where she is going") that lets
-the third-person option fit: quote the direct question.
+the third-person option fit: quote the direct question. · a screen presenting a
+word or form an earlier unit taught as new (check `taught_in` and the
+earlier screens; say "You know …") · a consolidation item copying a lesson
+item (vary the words) · a wrong option whose fault is the person, not the
+form the item tests.
