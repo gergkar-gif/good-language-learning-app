@@ -12,6 +12,14 @@ A second Claude session running at the same time makes its own:
 Commit there, then `git pull --rebase origin master` and
 `git push origin HEAD:master`. commit-gate blocks git writes in the main checkout.
 
+**Cloud sessions (Linux, claude.ai/code)** have no `C:/dev` folders and no
+Antigravity: work in the session's own checkout (`git checkout --detach
+origin/master` first) and put reader worktrees at `/home/user/parlour-read-a`
+and `-b` (`git worktree add --detach <path> origin/master`; remove them
+after). `.claude/hooks/session-start.sh` turns on the pre-push gate there.
+The container can restart mid-task: anything not committed or written to a
+file (an agent's reply, for one) can be lost.
+
 ## Exercise metadata is required on all generated content
 
 Every exercise you write or edit must carry the metadata the learner model

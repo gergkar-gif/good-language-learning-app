@@ -59,8 +59,11 @@ it is known and is never presented as new.
 - `teaches`: exactly one slug, the skill **a wrong answer shows**. Tested
   form → its grammar skill; tested word → unit vocabulary skill
   `<level>-<unit id>-vocab`. Required unless `category` is `reading`.
-- Word meaning (Which means…, matching, a fill-blank supplying a noun,
-  pronoun or question word) → vocabulary. Matching is always vocabulary.
+- Word meaning (Which means…, matching, a fill-blank supplying a noun, or
+  a bare pronoun or question word: *ki*, *mi*, *ő*) → vocabulary. Matching is
+  always vocabulary. An inflected pronoun or question word (*kivel*, *vele*,
+  *neki*, *hova*) is a form: it keeps the skill of its ending
+  (`verb-government-val-vel`, `case-inflected-pronouns`, …).
 - A choice between paradigm members (*én/te/ő*, *ki/mi*, number words) →
   that paradigm's grammar skill; a choice between whole sentences differing
   in a form → that form's skill.
@@ -120,7 +123,9 @@ it is known and is never presented as new.
   `node scripts/render_lesson.js hu <stems>` (read every screen; `!!`
   lines are errors; substitution items showing `[object Object]` is a known
   render-script issue); `node scripts/audit-reader-coverage.js hu --story
-  <story stem> --top 0`; `python scripts/validate-content.py --changed`.
+  <story stem> --top 0` (it names every "literal compound guess" word:
+  report each with a gloss, `word | lemma | pos | gloss |`, for
+  `scripts/fill-dictionary-gaps.py import`); `python scripts/validate-content.py --changed`.
 - Parked, don't report or fix: sentence-builder alternative orders
   (ROADMAP 148(b)); vocabulary lists re-listing earlier words.
 

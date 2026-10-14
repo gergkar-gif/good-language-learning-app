@@ -19,6 +19,7 @@ Run `python scripts/build_word_lesson_index.py <lang>` first if vocabulary
 lists changed.
 """
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -58,13 +59,24 @@ def main():
 
     skills = (read(f"skills/{lang}.json") or {}).get("skills", {})
     before, here, later = {}, [], []
+    # skills of the next level in a family this unit's exercises drill: a lesson
+    # teaching one of them under a neighbouring tag is invisible to the validator
+    next_level = LEVELS[LEVELS.index(level) + 1] if level != LEVELS[-1] else None
+    above, families = [], set()
+    for stem in units[pos][1].get("stems", []):
+        for ex in (read(f"content/{course}/exercises/{level}/{stem}-ex.json") or {}).get("exercises", []):
+            for slug in ex.get("teaches") or []:
+                if skills.get(slug, {}).get("kind") == "grammar":
+                    families.add(skills[slug].get("family"))
     for slug, sk in skills.items():
         if sk.get("kind") != "grammar" or sk.get("variant") not in (None, course):
             continue
         scr = sk.get("taught_in") or ""
-        stem = scr[:-len("-a-gr")] if scr.endswith(("-a-gr", "-b-gr")) else None
-        i = unit_of.get(stem)
+        m = re.match(r"(.+)-[a-z]-gr$", scr)
+        i = unit_of.get(m.group(1)) if m else None
         if i is None:
+            if sk.get("level", "").lower() == next_level:
+                above.append(sk)
             continue
         line = f"{sk.get('title', slug)} (`{slug}`, {scr})"
         if i < pos:
@@ -100,6 +112,10 @@ def main():
     lines += ["", "## Grammar this unit teaches", ""] + [f"- {x}" for x in sorted(here)] or ["- (none)"]
     lines += ["", f"## Grammar later in {level.upper()} (not met: don't use, or present as new only if this unit teaches it)", ""]
     lines += [f"- {name(i)}: {x}" for i, x in sorted(later)] or ["- (none)"]
+    lines += ["", f"## Same family as this unit's grammar, taught at {(next_level or '').upper()} (presented or drilled here = a defect, or the skill's level is wrong: report it)", ""]
+    same = sorted((s.get("level", ""), s.get("family", ""), f"{s.get('title', slug)} (`{slug}`, {s.get('taught_in')})")
+                  for slug, s in skills.items() if s in above and s.get("family") in families)
+    lines += [f"- {lv} {fam}: {x}" for lv, fam, x in same] or ["- (none)"]
     lines += ["", "## Earlier grammar screens (titles)", ""]
     for i in sorted(titles):
         lines.append(f"- **{name(i)}:** " + "; ".join(titles[i]))

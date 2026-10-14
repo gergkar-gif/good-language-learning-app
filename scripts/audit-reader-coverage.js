@@ -193,6 +193,9 @@ async function auditCourse(course) {
         console.log(`\n=== ${c}: ${r.stories} stories, ${r.tokens} tokens, ${r.uniqueWords} unique words`);
         console.log(`    not in the dictionary: ${r.misses.length} (${names} look like names)`);
         console.log(`    literal compound guess only: ${r.literalOnly.length}`);
+        // named in full for a --story audit (a unit's few stories), else like the misses
+        r.literalOnly.slice(0, onlyStories ? r.literalOnly.length : topN).forEach(x =>
+            console.log(`      ${x.word} = ${[].concat(x.parts || []).map(p => typeof p === 'string' ? p : (p.form || p.lemma || JSON.stringify(p))).join(' + ')}   ${x.sample ? '| ' + x.sample.slice(0, 80) : ''}`));
         console.log(`    lookup throws (tap would fail): ${r.crashes.length}`);
         r.crashes.slice(0, 10).forEach(x => console.log(`      ${x.word}: ${x.error}`));
         r.misses.slice(0, topN).forEach(x =>
