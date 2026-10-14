@@ -102,11 +102,14 @@
       "sentence": "Mit ____ te ma este?",
       "hint": "would you do",
       "english": "What would you do tonight?",
-      "answer": "csinálnál",
       "teaches": [
         "nek-conditional"
       ],
-      "stage": "controlled"
+      "stage": "controlled",
+      "answers": [
+        "csinálnál",
+        "tennél"
+      ]
     },
     {
       "id": "a2-139-controlled-4",
@@ -225,7 +228,7 @@
       "prompt": [
         {
           "speaker": "Zsófia",
-          "text": "Elvesztettem a kulcsomat. Vajon mit tennél most?"
+          "text": "Nincs kulcsom. Mit tennél most?"
         },
         {
           "speaker": "Meg",
@@ -257,12 +260,15 @@
       ],
       "options": [
         "Egész nap olvasnék és pihennék.",
-        "Egész nap dolgoztam."
+        "Egész nap sokat dolgoztam."
       ],
       "correct": 0,
       "teaches": [
-        "a2-suggestions-conditional-vocab"
-      ]
+        "nek-conditional"
+      ],
+      "distractor_skills": {
+        "1": "past-tense-indefinite"
+      }
     },
     {
       "id": "a2-139-writing-1",

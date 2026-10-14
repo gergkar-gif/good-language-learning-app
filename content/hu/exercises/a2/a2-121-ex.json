@@ -8,8 +8,8 @@
       "question": "Which means \"to buy\"?",
       "options": [
         "vesz",
-        "lát",
-        "talál"
+        "kap",
+        "eszik"
       ],
       "correct": 0,
       "teaches": [
@@ -44,7 +44,7 @@
         ],
         [
           "megvesz",
-          "to buy (something specific)"
+          "to buy (a completed purchase)"
         ],
         [
           "felvesz",
@@ -108,14 +108,17 @@
       "id": "a2-121-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "____ a kabátot, amit a kirakatban láttál.",
+      "sentence": "____ a kabátot, ami a kirakatban volt.",
       "hint": "I bought it, specifically",
-      "english": "I bought the coat that you saw in the store window.",
-      "answer": "Megvettem",
+      "english": "I bought the coat that was in the shop window.",
       "teaches": [
         "definite-past"
       ],
-      "stage": "controlled"
+      "stage": "controlled",
+      "answers": [
+        "Megvettem",
+        "Vettem"
+      ]
     },
     {
       "id": "a2-121-practice-1",
@@ -237,7 +240,7 @@
       ],
       "options": [
         "Vettem egy szép kabátot a boltban.",
-        "Este találkozom Petrával."
+        "Este találkozom Petrával a piacon."
       ],
       "correct": 0,
       "teaches": [
@@ -251,7 +254,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Végül megvetted a kabátot, amit a kirakatban láttál?"
+          "text": "Végül megvetted a kabátot, ami a kirakatban volt?"
         },
         {
           "speaker": "Károly",
@@ -260,7 +263,7 @@
       ],
       "options": [
         "Igen, végül megvettem.",
-        "Igen, csak megnéztem."
+        "Igen, végül kaptam a kabátot."
       ],
       "correct": 0,
       "teaches": [
@@ -287,8 +290,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say you finally bought the coat you saw in the shop window.",
-          "answer": "Végül megvettem a kabátot, amit a kirakatban láttam."
+          "prompt": "Say you finally bought the coat that was in the shop window.",
+          "answer": "Végül megvettem a kabátot, ami a kirakatban volt."
         }
       ],
       "teaches": [
@@ -321,7 +324,7 @@
       "category": "grammar",
       "question": "What does vette mean?",
       "options": [
-        "he/she bought it (the specific one)",
+        "he/she bought it",
         "he/she is buying something",
         "he/she will buy something"
       ],

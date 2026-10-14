@@ -148,4 +148,4 @@ item (vary the words) · a wrong option whose fault is the person, not the
 form the item tests. · Readers' wrong Hungarian (HU A2): *amit olvasok* is right (a relative
 *amit* takes the indefinite verb; never "fix" it to *olvasom*); *ki* as a relative
 (*kollégám, ki …*) is literary-correct, so never use it as a wrong option;
-*Szabad vagy foglalt vagy?* is natural.
+*Szabad vagy foglalt vagy?* is natural. · *fog* + infinitive word order: with nothing in focus the infinitive comes first (*valószínűleg pihenni fogok*, not *valószínűleg fogok pihenni*); *fog* comes first only when a focused word sits right before it (*Holnap fogok dolgozni*) · *meg-* is a perfective prefix, not a definiteness marker (*Vettem a kabátot* is right) · *El nem fogok menni* is acceptable emphatic Hungarian, so never use it as a wrong option · a grammar pattern taught in a lesson but tagged with a neighbouring skill (a2-140's hypothetical *ha* was tagged `nek-conditional` while its skill sat at B1): check that the pattern's own skill is taught where the lesson teaches it.
