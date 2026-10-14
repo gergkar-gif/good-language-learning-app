@@ -267,6 +267,54 @@ profile('a drill scored badly this week → that drill', async () => {
     assert.strictEqual(p.drillerId, 'listening');
 });
 
+// ---- Sentence drillers only draw on lessons already done (ROADMAP 154) ----
+// The engine launches Listening/Speaking/Translation with autoStart; their
+// pool is LearnerPath.readyPairs(level, skill). A learner N core lessons in:
+const weakDriller = (w, id) => {
+    const recent = new Date(NOW - 2 * DAY).toISOString();
+    const hist = [1, 2, 3].map(() => ({ date: recent, correct: 2, wrong: 8, accuracy: 20 }));
+    const key = w.run(`(function(){ let k=null; const s=localStorage.setItem; localStorage.setItem=(a,b)=>{k=a;}; DrillHistory.record('${id}',{correct:1,wrong:1}); localStorage.setItem=s; return k; })()`);
+    w.localStorage.setItem(key, JSON.stringify(hist));
+};
+const readyIn = (w, level) => w.run(`LearnerPath.readyPairs('${level}')`);
+
+profile('listening going badly one lesson in, only 4 sentences from lessons done → Continue', async () => {
+    const w = world({ progress: progressThrough(allCoreLessons('A1')[0].id) });
+    weakDriller(w, 'listening');
+    assert.ok((await readyIn(w, 'a1')).length < 8, 'premise: too few sentences yet');
+    const p = await recommend(w);
+    assert.strictEqual(p.kind, 'continue', `got ${p.kind}: ${p.drillerId || ''}`);
+});
+
+profile('speaking going badly one lesson in → no Speaking card either', async () => {
+    const w = world({ progress: progressThrough(allCoreLessons('A1')[0].id) });
+    w.ParlourTTS = { available: () => true };
+    weakDriller(w, 'speaking');
+    const p = await recommend(w);
+    assert.notStrictEqual(p.drillerId, 'speaking', 'offered speaking with almost nothing to say yet');
+});
+
+profile('speaking going badly 20 lessons in → Speaking (the gate, not the harness, held it back above)', async () => {
+    const w = world({ progress: progressThrough(allCoreLessons('A1')[19].id) });
+    w.ParlourTTS = { available: () => true };
+    weakDriller(w, 'speaking');
+    const p = await recommend(w);
+    assert.strictEqual(p.drillerId, 'speaking', `got ${p.kind}: ${p.drillerId || ''}`);
+});
+
+profile('listening going badly 8 lessons in → offered, from lessons done only', async () => {
+    const w = world({ progress: progressThrough(allCoreLessons('A1')[7].id) });
+    weakDriller(w, 'listening');
+    const p = await recommend(w);
+    assert.strictEqual(p.kind, 'mini-game', `got ${p.kind}`);
+    assert.strictEqual(p.drillerId, 'listening');
+    const ready = await readyIn(w, 'a1');
+    const reached = w.run('Array.from(LearnerPath.reachedExerciseRefs())');
+    assert.ok(ready.length >= 8);
+    ready.forEach(s => assert.ok(s.ref && reached.includes(s.ref), `${s.id} is from a lesson not done yet (or has no lesson)`));
+});
+
+
 // B1 progress: all of A1/A2 plus the first `n` B1 core lessons.
 const b1Progress = n => progressThrough(allCoreLessons('B1')[n - 1].id);
 

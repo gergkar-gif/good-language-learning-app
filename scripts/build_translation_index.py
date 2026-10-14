@@ -13,7 +13,11 @@ Two sources, both already authored for other purposes:
     skipped).
 
 Output: content/<lang>/indexes/translation-index.json
-    { "pairs": [ { spanish, english, level, source, topic?, track? }, ... ] }
+    { "pairs": [ { spanish, english, level, source, ref?, topic?, track? }, ... ] }
+(`ref` = the lesson exercises file the sentence belongs to, e.g.
+`exercises/a1/a1-01-01-ex.json`; absent for backfill sentences. The app uses
+it to draw engine- and plan-launched practice only from lessons the learner
+has reached, `LearnerPath.filterReached`, ROADMAP 154.)
 
 `track` (added 2026-09-04, for the Translation Driller's dual-track split;
 generalized across languages 2026-09-09) is only ever set to "core" or the
@@ -384,7 +388,19 @@ def _skills_for_grammar(stem, known_skills):
     return []
 
 
-def from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang, known_skills):
+def _lesson_ref(stem, level, ex_stems):
+    """The lesson exercises file a grammar screen belongs to: the longest
+    exercises stem (minus its `-ex`) that prefixes the grammar file's stem,
+    e.g. `a1-01-01-greetings-gr` -> `exercises/a1/a1-01-01-ex.json`."""
+    best = None
+    for ex in ex_stems.get(level, []):
+        base = ex[:-3] if ex.endswith("-ex") else ex
+        if stem.startswith(base + "-") and (best is None or len(ex) > len(best)):
+            best = ex
+    return f"exercises/{level.lower()}/{best}.json" if best else None
+
+
+def from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang, known_skills, ex_stems):
     pairs = []
     for f in sorted(grammar_dir.glob("*/*.json")):
         level = f.parent.name.upper()
@@ -395,6 +411,7 @@ def from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang, known_skills):
         topic = _topic_for(f.stem, level, by_unit_num, by_lesson_num)
         track = _track_for(f.stem, level, lang)
         skills = _skills_for_grammar(f.stem, known_skills)
+        ref = _lesson_ref(f.stem, level, ex_stems)
         base_id = data.get("id") or f.stem
         for section in data.get("sections", []):
             if section.get("type") != "examples":
@@ -420,6 +437,8 @@ def from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang, known_skills):
                     }
                     if skills:
                         pair["skillIds"] = skills
+                    if ref:
+                        pair["ref"] = ref
                     if topic:
                         pair["topic"] = topic
                     if track:
@@ -448,7 +467,8 @@ def from_exercises(exercises_dir, by_unit_num, by_lesson_num, lang):
                     "spanish": _join_tiles(solution),
                     "english": english,
                     "level": level,
-                    "source": "exercises"
+                    "source": "exercises",
+                    "ref": f"exercises/{f.parent.name}/{f.name}"
                 }
                 ex_id = ex.get("id")
                 if ex_id:
@@ -504,8 +524,11 @@ def main():
 
         by_unit_num, by_lesson_num = _load_curriculum_lookups(lang)
         known_skills = _load_known_skills(lang)
+        ex_stems = {}
+        for ef in exercises_dir.glob("*/*.json"):
+            ex_stems.setdefault(ef.parent.name.upper(), []).append(ef.stem)
         pairs = (
-            from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang, known_skills)
+            from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang, known_skills, ex_stems)
             + from_exercises(exercises_dir, by_unit_num, by_lesson_num, lang)
             + from_backfill(backfill_dir)
         )

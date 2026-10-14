@@ -7,6 +7,26 @@ queue numbering and wording (not renumbered or edited) so old references
 and commit messages that cite an item number still resolve. Nothing here
 needs re-reading before starting new work; it's reference only.
 
+## Completed work (2026-10-14)
+
+- **154 (part): Unified Candidate Evaluation Across Home, Results Screen "What's Next", and StudyPlan (Done 2026-10-14).**
+  - Extracted unified `RecommendationEngine.getCandidates(opts)` in `engine/recommendationEngine.js` exposing candidate evaluation across all 17 activity and teaching modalities (due SRS reviews, grammar driller on weak/developing skills, verb speed/table / hu-verb on tenses & encountered verbs, vocabulary driller, speaking driller, speaking can-do quick prompt, listening driller, translation driller, Hungarian morphology drillers [hu-suffix, hu-prefix, hu-morphology], match game, library reading, next lesson/test, unit capstone nudges [oral scenario, written exchange], elective track, and welcome back word review).
+  - Candidates carry standard metadata: `{ key, kind, drillerId, title, buttonLabel, blurb, invite, reason, priority, urgency, estMinutes, options, take }`.
+  - Streamlined `_miniGameNudge()` to evaluate through `getCandidates({ level, lessonId, weakOnly: true })` filtered by cool-downs.
+  - Enhanced `RecommendationEngine.mountNextAction()`: if the primary candidate was the driller the learner just completed (`opts.excludeDrillerId`), rather than instantly falling back to `continue`, it checks for the next highest priority weak candidate (`priority >= 80`) from `getCandidates({ excludeDrillerId })`.
+  - Updated `_nextActionInfo()`, `_routeTo()`, and `skip()` in `engine/recommendationEngine.js` to handle all activity modalities (`reading`, `speaking-cando`, `match`, `srs`).
+  - Connected `StudyPlan._sources(opts)` (`engine/studyPlan.js`) to delegate directly to `RecommendationEngine.getCandidates(Object.assign({ includeAll: true }, opts))`, ensuring Home and timed sessions draw from the exact same pool of strengths and weaknesses.
+  - Added dedicated unit test suite `tests/drills/test-study-plan.js` covering `getCandidates()`, `StudyPlan.build()` integration, and `mountNextAction()` driller exclusion, and wired it into `.githooks/pre-push`. All 33 learner profile tests and all unit tests pass cleanly.
+
+- **154 (part): Engine- and plan-launched Speaking/Translation/Listening only draw on lessons the learner has reached (Done 2026-10-14).**
+  - `scripts/build_translation_index.py` now writes `ref` on every grammar and exercise sentence (the lesson exercises file it belongs to; `backfill` sentences have none). All grammar and exercise sentences of es-es, es-latam and hu resolve to a real curriculum lesson. Id shapes differ per course, so ids are never parsed; the three `translation-index.json` files were regenerated.
+  - `LearnerPath.filterReached(pairs)` and `LearnerPath.readyPairs(level, skill)` (`engine/learnerPath.js`): sentences from reached lessons (the existing `reachedExerciseRefs()` rule), core track, no fallback to the whole pool.
+  - `autoStart` launches (engine card, study plan) of `speaking.js`, `translation.js`, `listening.js` use that filter and drop the silent "skill/level filter came up empty, use everything" fallbacks (`speaking.js` `_poolFor`, `listening.js` `_poolFor`). Manual Workshop use is unchanged.
+  - `RecommendationEngine` (`_hasReadyPairs`, `MIN_READY_PAIRS = 8`) and `studyPlan.js` drop a Speaking, Translation or Listening offer when fewer than 8 reached sentences exist; a skill-aimed speaking offer falls back to the generic one only if its skill pool is too thin.
+  - Four new profiles in `tests/drills/test-home-recommendation-profiles.js` (33/33 pass; with the gate off, 2 fail). `.githooks/pre-push` now runs the profile, learner-signals, scenario-path, and study-plan tests when `engine/`, `tests/drills/` or `content/` changed.
+
+
+
 ## Completed work (2026-10-13)
 
 - **Library Cross-Device Cloud Book & Reading Progress Sync (`engine/library.js`, `engine/sync.js`, `cloudflare-worker/sync-worker.js`, `cloudflare-worker/sync-schema.sql`) (Done 2026-10-13).**

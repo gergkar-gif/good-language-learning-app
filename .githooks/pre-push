@@ -7,6 +7,17 @@
 # Enable once per clone:  git config core.hooksPath .githooks
 # Bypass in an emergency: git push --no-verify
 
+# Recommendation engine tests: learner profiles, learner signals, scenario path.
+if git diff --name-only origin/master...HEAD 2>/dev/null | grep -qE '^(engine|tests/drills|content)/'; then
+  echo "pre-push: running recommendation tests..."
+  for t in test-home-recommendation-profiles test-learner-signals test-scenario-learner-path test-study-plan; do
+    if ! node "tests/drills/$t.js" > /dev/null; then
+      echo "pre-push: push blocked. tests/drills/$t.js fails; run it for the details."
+      exit 1
+    fi
+  done
+fi
+
 # Only validate content files if the commits being pushed actually touch content/
 if ! git diff --name-only origin/master...HEAD 2>/dev/null | grep -q '^content/'; then
   exit 0

@@ -34,6 +34,12 @@ import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 
+# Content has Hungarian and Spanish accents, which the default Windows console encoding cannot represent.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 ROOT = Path(__file__).resolve().parent.parent
 LEGACY_COURSES = {"hu", "es-es", "es-latam"}
 LEVELS = ["a1", "a2", "b1", "b2", "c1", "c2"]

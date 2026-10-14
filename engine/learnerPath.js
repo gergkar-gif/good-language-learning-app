@@ -98,6 +98,31 @@ const LearnerPath = (function () {
         }));
     }
 
+    // The practice sentences from lessons the learner has reached. `ref` is
+    // a sentence's lesson exercises file, written by
+    // scripts/build_translation_index.py; backfill sentences have none and
+    // so never count as reached. ("seen"; not yet "known", ROADMAP 154.)
+    // Unfiltered when the curriculum isn't loaded.
+    function filterReached(pairs) {
+        const reached = reachedExerciseRefs();
+        return reached ? pairs.filter(p => p.ref && reached.has(p.ref)) : pairs;
+    }
+
+    // The sentences an engine- or plan-launched driller may draw on for a
+    // level (and skill): reached, core track, no falling back to the whole
+    // pool when the filter comes up empty. Callers drop the offer if too few.
+    const _pairCache = {};
+    async function readyPairs(level, skill) {
+        if (typeof Content === 'undefined' || typeof Lang === 'undefined') return [];
+        const path = Lang.content('indexes/translation-index.json');
+        if (!_pairCache[path]) _pairCache[path] = Content.json(path).then(d => d.pairs || []).catch(() => []);
+        const target = level && level !== 'all' ? String(level).toUpperCase() : null;
+        return filterReached(await _pairCache[path]).filter(p =>
+            (!target || (p.level && p.level.toUpperCase() === target)) &&
+            (!skill || (p.skillIds && p.skillIds.includes(skill))) &&
+            (!p.track || p.track === 'core'));
+    }
+
     // ----------------------------------------
     // NEXT STEP (moved verbatim from engine/home.js)
     // ----------------------------------------
@@ -266,6 +291,8 @@ const LearnerPath = (function () {
         lastCompletedLessonId,
         completedCount,
         reachedExerciseRefs,
+        filterReached,
+        readyPairs,
         nextStep,
         currentLevel,
         touchActivity,

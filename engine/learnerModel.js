@@ -98,7 +98,7 @@ const LearnerModel = (function () {
     // so its learners' consoles show no 404s (Hungarian has no Grammar
     // Driller bank or Verb Speed).
     const ABSENT = {
-        hu: ['drills/grammar/a1-bank.json', 'indexes/verb-tense-skills.json']
+        hu: ['drills/grammar/a1-bank.json']
     };
     async function _optionalJson(path) {
         if (typeof Content === 'undefined' || typeof Lang === 'undefined') return null;

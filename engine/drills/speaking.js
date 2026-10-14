@@ -269,16 +269,24 @@ const SpeakingDriller = (function () {
         return TRACK_LABELS[track] || (track.charAt(0).toUpperCase() + track.slice(1));
     }
 
+    // Set by render() for engine- or plan-launched sessions (autoStart):
+    // only sentences from lessons the learner has reached (ROADMAP 154), and
+    // an empty skill/level filter stays empty. Manual Workshop use stays open.
+    let _ready = false;
+
     function _poolFor(level, skill, track) {
         let pool = _pairs || [];
+        if (_ready && typeof LearnerPath !== 'undefined' && LearnerPath.filterReached) {
+            pool = LearnerPath.filterReached(pool);
+        }
         if (skill) {
             const skillFiltered = pool.filter(p => p.skillIds && p.skillIds.includes(skill));
-            if (skillFiltered.length) pool = skillFiltered;
+            if (skillFiltered.length || _ready) pool = skillFiltered;
         }
         if (level && level !== 'all') {
             const target = level.toUpperCase();
             const filtered = pool.filter(p => p.level && p.level.toUpperCase() === target);
-            if (filtered.length) pool = filtered;
+            if (filtered.length || _ready) pool = filtered;
         }
         if (_secondTrack(level)) {
             pool = pool.filter(p => (p.track || TRACK.CORE) === track);
@@ -2469,6 +2477,7 @@ const SpeakingDriller = (function () {
             _activeStudioTab = options.activeTab;
         }
 
+        _ready = !!(options && options.autoStart);
         if (options && options.level) {
             _level = options.level;
         }

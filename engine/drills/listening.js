@@ -129,10 +129,16 @@ const ListeningDriller = (function () {
         return TRACK_LABELS[track] || (track.charAt(0).toUpperCase() + track.slice(1));
     }
 
+    // Set by render() for engine- or plan-launched sessions (autoStart):
+    // only sentences from lessons the learner has reached, and no falling
+    // back to the whole index (ROADMAP 154). Manual Workshop use stays open.
+    let _ready = false;
+
     function _poolFor(level, track) {
         let pool = _byLevel(level);
+        if (_ready && typeof LearnerPath !== 'undefined' && LearnerPath.filterReached) pool = LearnerPath.filterReached(pool);
         if (_secondTrack(level)) pool = pool.filter(p => (p.track || TRACK.CORE) === track);
-        return pool.length ? pool : _pairs;
+        return pool.length || _ready ? pool : _pairs;
     }
 
     // ---- Exercise builders — one per type in PARLOUR_LISTENING_SPEC.md §2 ----
@@ -562,6 +568,7 @@ const ListeningDriller = (function () {
     // ================================================================
     async function render(root, options) {
         _container = root;
+        _ready = options ? !!options.autoStart : (_phase === PHASE.SETTINGS ? false : _ready);
 
         if (options && (options.autoStart || options.count)) {
             if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }

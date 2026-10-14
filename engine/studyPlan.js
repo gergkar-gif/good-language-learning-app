@@ -108,6 +108,10 @@ const StudyPlan = (function () {
     }
 
     async function _sources(opts) {
+        if (typeof RecommendationEngine !== 'undefined' && RecommendationEngine.getCandidates) {
+            return await RecommendationEngine.getCandidates(Object.assign({ includeAll: true }, opts));
+        }
+
         const sources = [];
         const curLevel = (typeof LearnerPath !== 'undefined' && LearnerPath.currentLevel)
             ? LearnerPath.currentLevel().toLowerCase()
@@ -165,6 +169,13 @@ const StudyPlan = (function () {
         const weakSpoken = (canSpeak && typeof LearnerModel !== 'undefined' && LearnerModel.weakProductionSkills)
             ? await LearnerModel.weakProductionSkills(1, 'oral')
             : [];
+        // Listening, speaking and translation draw on sentences; a block
+        // needs enough from lessons already reached (ROADMAP 154).
+        const hasPairs = async skill => typeof RecommendationEngine === 'undefined' || !RecommendationEngine.hasReadyPairs
+            || RecommendationEngine.hasReadyPairs(curLevel, skill);
+        const sentenceOk = await hasPairs();
+        const spokenSkill = weakSpoken.length ? weakSpoken[0].skillId : null;
+        const spokenSkillOk = spokenSkill ? await hasPairs(spokenSkill) : false;
         const encounteredTenses = (typeof LearnerModel !== 'undefined' && LearnerModel.encounteredTenses)
             ? await LearnerModel.encounteredTenses()
             : [];
@@ -190,16 +201,17 @@ const StudyPlan = (function () {
                 : URGENCY.FILLER;
             let make = null;
             if (id === 'listening') {
-                if (!canListen) return;
+                if (!canListen || !sentenceOk) return;
                 const count = _perBlock(SEC_PER_LISTENING_Q);
                 make = () => ({ kind: 'listening', count, level: curLevel, estMinutes: count * SEC_PER_LISTENING_Q / 60 });
             } else if (id === 'speaking') {
-                if (!canSpeak) return;
+                if (!canSpeak || !sentenceOk) return;
                 const count = _perBlock(SEC_PER_SPEAKING_Q);
-                const skill = weakSpoken.length ? weakSpoken[0].skillId : null;
+                const skill = spokenSkillOk ? spokenSkill : null;
                 if (skill) urgency = Math.max(urgency, URGENCY.SPEAKING_WEAK);
                 make = () => Object.assign({ kind: 'speaking', count, level: curLevel, estMinutes: count * SEC_PER_SPEAKING_Q / 60 }, skill ? { skill } : {});
             } else if (id === 'translation') {
+                if (!sentenceOk) return;
                 const count = _perBlock(SEC_PER_TRANSLATION_Q);
                 make = () => ({ kind: 'translation', count, level: curLevel, estMinutes: count * SEC_PER_TRANSLATION_Q / 60 });
             } else if (id === 'verbs') {
@@ -529,3 +541,11 @@ const StudyPlan = (function () {
         discard
     };
 })();
+
+if (typeof window !== 'undefined') {
+    window.StudyPlan = StudyPlan;
+}
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = StudyPlan;
+}
+

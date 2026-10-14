@@ -515,6 +515,41 @@ const RecommendationEngine = (function () {
         listening: { title: 'Listening', buttonLabel: 'Listening practice', topic: 'listening', invite: 'Practice it here:', priority: 88, options: level => ({ autoStart: true, count: 5, level }) }
     };
 
+    // The drillers that draw on the sentence index (translation-index.json),
+    // which spans a whole level, not the learner's position (ROADMAP 154).
+    // An offer needs MIN_READY_PAIRS sentences from lessons already reached
+    // (5 per session, plus listening's decoys); fewer and it's dropped.
+    const SENTENCE_DRILLERS = ['translation', 'listening'];
+    const MIN_READY_PAIRS = 8;
+
+    async function _hasReadyPairs(level, skill) {
+        if (typeof LearnerPath === 'undefined' || !LearnerPath.readyPairs) return true;
+        return (await LearnerPath.readyPairs(level, skill)).length >= MIN_READY_PAIRS;
+    }
+
+    const SEC_PER_REVIEW = 20;
+    const SEC_PER_GRAMMAR_Q = 30;
+    const SEC_PER_VOCAB_WORD = 25;
+    const SEC_PER_LISTENING_Q = 35;
+    const SEC_PER_SPEAKING_Q = 35;
+    const SEC_PER_TRANSLATION_Q = 30;
+    const SEC_PER_MORPH_Q = 15;
+    const SEC_PER_MATCH_PAIR = 8;
+    const BLOCK_MINUTES = 1.5;
+    const REVIEW_BLOCK_WORDS = 10;
+    const VERB_SPEED_SECONDS = 60;
+    const DEFAULT_LESSON_MINUTES = 10;
+
+    function _chunks(list, size) {
+        const out = [];
+        for (let i = 0; i < list.length; i += size) out.push(list.slice(i, i + size));
+        return out;
+    }
+
+    function _perBlock(secPerItem) {
+        return Math.max(1, Math.round(BLOCK_MINUTES * 60 / secPerItem));
+    }
+
     // ----------------------------------------
     // OUTCOMES + COOL-DOWN
     // ----------------------------------------
@@ -539,9 +574,14 @@ const RecommendationEngine = (function () {
 
     // `type:detail`, e.g. 'grammar:ser-estar', 'srs:', 'elective:latam'.
     function _offerKey(offer) {
+        if (!offer) return '';
         if (offer.kind === 'unit-nudge') return 'unit-nudge:' + (offer.type || '');
-        if (offer.kind === 'elective') return 'elective:' + offer.unit.track;
+        if (offer.kind === 'elective') return 'elective:' + (offer.unit ? offer.unit.track : '');
         if (offer.kind === 'welcome-back') return 'welcome-back:';
+        if (offer.kind === 'reading') return 'reading:' + (offer.storyId || '');
+        if (offer.kind === 'speaking-cando') return 'speaking-cando:' + (offer.text || '');
+        if (offer.kind === 'srs') return 'srs:';
+        if (offer.kind === 'match') return 'match:';
         return offer.drillerId + ':' + (offer.skill || offer.tense || '');
     }
 
@@ -634,27 +674,22 @@ const RecommendationEngine = (function () {
 
     const MIN_ENCOUNTERED_VERBS = 3;
 
-    async function _miniGameNudge() {
-        const lessonId = LearnerPath.lastCompletedLessonId();
-        if (!lessonId || miniGameDismissed(lessonId) || typeof LearnerModel === 'undefined') return null;
-
-        const level = (LearnerPath.currentLevel ? LearnerPath.currentLevel() : 'A1').toLowerCase();
-        const weakBlurb = topic => `You made a few mistakes with ${topic} lately.`;
+    async function getCandidates(opts = {}) {
+        const level = (opts.level || (typeof LearnerPath !== 'undefined' && LearnerPath.currentLevel ? LearnerPath.currentLevel() : 'A1')).toLowerCase();
+        const lessonId = opts.lessonId !== undefined ? opts.lessonId : (typeof LearnerPath !== 'undefined' && LearnerPath.lastCompletedLessonId ? LearnerPath.lastCompletedLessonId() : null);
+        const weakOnly = !!opts.weakOnly;
+        const includeAll = !!opts.includeAll;
         const candidates = [];
 
         const tw = _getTaughtWords();
         if (tw && typeof tw.load === 'function') await tw.load();
-        const encounteredTenses = LearnerModel.encounteredTenses ? await LearnerModel.encounteredTenses() : [];
-        const encounteredVerbs = LearnerModel.encounteredVerbs ? await LearnerModel.encounteredVerbs() : [];
+        const encounteredTenses = (typeof LearnerModel !== 'undefined' && LearnerModel.encounteredTenses) ? await LearnerModel.encounteredTenses() : [];
+        const encounteredVerbs = (typeof LearnerModel !== 'undefined' && LearnerModel.encounteredVerbs) ? await LearnerModel.encounteredVerbs() : [];
         const verbDriller = _verbDrillerId();
+        const weakBlurb = topic => `You made a few mistakes with ${topic} lately.`;
 
-        // Grammar & Verb skills: recent unresolved misses, then recent
-        // level-test weak spots, worst first, so a cooled-down top skill
-        // hands over to the next one. When a weak grammar skill is a verb
-        // conjugation tense (in verb-tense-skills.json), route it to the
-        // Verb Driller scoped to that tense and the learner's encountered
-        // verbs.
-        const trouble = LearnerModel.troubleSkills ? await LearnerModel.troubleSkills(3) : [];
+        // 1. Grammar & Verb trouble skills
+        const trouble = (typeof LearnerModel !== 'undefined' && LearnerModel.troubleSkills) ? await LearnerModel.troubleSkills(3) : [];
         for (let i = 0; i < trouble.length; i++) {
             const t = trouble[i];
             const isVocab = (await _skillKind(t.skillId)) === 'vocabulary';
@@ -669,8 +704,11 @@ const RecommendationEngine = (function () {
                 ? await LearnerModel.tenseForSkill(t.skillId)
                 : null;
             if (mappedTense) {
+                let taken = false;
                 candidates.push({
+                    key: verbDriller + ':' + mappedTense,
                     drillerId: verbDriller,
+                    kind: verbDriller === 'verbs' ? 'verbs' : 'driller',
                     skill: t.skillId,
                     tense: mappedTense,
                     title: 'Verb conjugation',
@@ -679,11 +717,30 @@ const RecommendationEngine = (function () {
                     invite: 'Practice with the verbs you know:',
                     reason: 'weak',
                     priority: 100 - i,
-                    options: _verbDrillOptions(mappedTense, encounteredTenses, encounteredVerbs)
+                    urgency: (80 + (t.levelTest ? 5 : 0)) - i,
+                    estMinutes: BLOCK_MINUTES,
+                    options: _verbDrillOptions(mappedTense, encounteredTenses, encounteredVerbs),
+                    take: () => {
+                        if (taken) return null;
+                        taken = true;
+                        if (verbDriller === 'verbs') {
+                            return Object.assign(
+                                { kind: 'verbs', seconds: VERB_SPEED_SECONDS, estMinutes: BLOCK_MINUTES, knownOnly: true, tense: mappedTense },
+                                encounteredTenses.length ? { tenses: encounteredTenses } : {},
+                                encounteredVerbs.length ? { verbs: encounteredVerbs } : {}
+                            );
+                        }
+                        const count = _perBlock(SEC_PER_MORPH_Q);
+                        return { kind: 'driller', drillerId: verbDriller, title: 'Verb conjugation', count, estMinutes: count * SEC_PER_MORPH_Q / 60, knownOnly: true, tense: mappedTense };
+                    }
                 });
             } else {
+                let taken = false;
+                const gCount = _perBlock(SEC_PER_GRAMMAR_Q);
                 candidates.push({
+                    key: 'grammar:' + t.skillId,
                     drillerId: 'grammar',
+                    kind: 'grammar',
                     skill: t.skillId,
                     title: isVocab ? 'Vocabulary' : 'Grammar',
                     buttonLabel: isVocab ? 'Word practice' : 'Grammar practice',
@@ -693,19 +750,28 @@ const RecommendationEngine = (function () {
                     invite: isVocab ? 'Practice them here:' : 'Practice it here:',
                     reason: 'weak',
                     priority: 100 - i,
-                    options: { skill: t.skillId, count: 5, autoStart: true }
+                    urgency: (80 + (t.levelTest ? 5 : 0)) - i,
+                    estMinutes: gCount * SEC_PER_GRAMMAR_Q / 60,
+                    options: { skill: t.skillId, count: 5, autoStart: true },
+                    take: () => {
+                        if (taken) return null;
+                        taken = true;
+                        return { kind: 'grammar', skill: t.skillId, count: gCount, estMinutes: gCount * SEC_PER_GRAMMAR_Q / 60 };
+                    }
                 });
             }
         }
 
-        // Direct conjugation misses from Verb Speed / Verb Table that
-        // haven't yet triggered a full grammar skill's 2-exercise threshold.
-        const weakConj = (LearnerModel.weakConjugations ? LearnerModel.weakConjugations(3) : []).filter(c => c.recentMiss);
+        // 2. Direct conjugation misses
+        const weakConj = (typeof LearnerModel !== 'undefined' && LearnerModel.weakConjugations ? LearnerModel.weakConjugations(3) : []).filter(c => c.recentMiss);
         if (weakConj.length && !candidates.some(c => c.drillerId === verbDriller && c.tense === weakConj[0].tensePath)) {
             const topConj = weakConj[0];
             const tenseTopic = TENSE_LABELS[topConj.tensePath] || 'verb conjugation';
+            let taken = false;
             candidates.push({
+                key: verbDriller + ':' + topConj.tensePath,
                 drillerId: verbDriller,
+                kind: verbDriller === 'verbs' ? 'verbs' : 'driller',
                 skill: topConj.tensePath,
                 tense: topConj.tensePath,
                 title: 'Verb conjugation',
@@ -714,51 +780,93 @@ const RecommendationEngine = (function () {
                 invite: 'Practice with the verbs you know:',
                 reason: 'weak',
                 priority: 96,
-                options: _verbDrillOptions(topConj.tensePath, encounteredTenses, encounteredVerbs)
+                urgency: 78,
+                estMinutes: BLOCK_MINUTES,
+                options: _verbDrillOptions(topConj.tensePath, encounteredTenses, encounteredVerbs),
+                take: () => {
+                    if (taken) return null;
+                    taken = true;
+                    if (verbDriller === 'verbs') {
+                        return Object.assign(
+                            { kind: 'verbs', seconds: VERB_SPEED_SECONDS, estMinutes: BLOCK_MINUTES, knownOnly: true, tense: topConj.tensePath },
+                            encounteredTenses.length ? { tenses: encounteredTenses } : {},
+                            encounteredVerbs.length ? { verbs: encounteredVerbs } : {}
+                        );
+                    }
+                    const count = _perBlock(SEC_PER_MORPH_Q);
+                    return { kind: 'driller', drillerId: verbDriller, title: 'Verb conjugation', count, estMinutes: count * SEC_PER_MORPH_Q / 60, knownOnly: true, tense: topConj.tensePath };
+                }
             });
         }
 
-        // Words: in context for B1+ (Vocabulary Driller), as a review
-        // otherwise. Same words either way, so only one of the two.
+        // 3. Missed words
         const words = _missedWords();
         if (words.length >= MIN_MISSED_WORDS) {
             if (_vocabularyAvailable()) {
+                const drilled = new Set(opts.drilledWords || []);
+                const wordBlocks = _chunks(words.filter(w => !drilled.has(w.lemma)), _perBlock(SEC_PER_VOCAB_WORD));
                 candidates.push({
+                    key: 'vocabulary',
                     drillerId: 'vocabulary',
+                    kind: 'vocabulary',
                     title: 'Vocabulary',
                     buttonLabel: 'Vocabulary practice',
                     blurb: weakBlurb('some recent words'),
                     invite: 'Practice them here:',
                     reason: 'weak',
                     priority: 95,
-                    options: { words: words.slice(0, 6).map(w => ({ lemma: w.lemma, translation: w.translation, pos: w.pos })), autoStart: true }
+                    urgency: 75,
+                    estMinutes: Math.min(6, words.length) * SEC_PER_VOCAB_WORD / 60,
+                    options: { words: words.slice(0, 6).map(w => ({ lemma: w.lemma, translation: w.translation, pos: w.pos })), autoStart: true },
+                    take: () => {
+                        const block = wordBlocks.shift();
+                        return block ? { kind: 'vocabulary', words: block, estMinutes: block.length * SEC_PER_VOCAB_WORD / 60 } : null;
+                    }
                 });
             } else {
                 const action = (words.length >= 4 && typeof DeckMatch !== 'undefined') ? 'match' : 'review';
+                const timeLimit = Math.min(120, words.length * SEC_PER_MATCH_PAIR);
+                let taken = false;
                 candidates.push({
+                    key: 'srs',
                     drillerId: 'srs',
+                    kind: 'srs',
                     title: 'Word review',
                     buttonLabel: action === 'match' ? 'Word matching' : 'Word review',
                     blurb: 'These are the words you find hardest in review.',
                     invite: 'Practice them here:',
                     reason: 'weak',
                     priority: 93,
-                    options: { kind: 'srs', words, action }
+                    urgency: 75,
+                    estMinutes: action === 'match' ? timeLimit / 60 : Math.min(10, words.length) * SEC_PER_REVIEW / 60,
+                    options: { kind: 'srs', words, action },
+                    take: () => {
+                        if (taken) return null;
+                        taken = true;
+                        if (action === 'match') {
+                            return { kind: 'match', words: words.slice(0, 12), count: Math.min(12, words.length), timeLimit, estMinutes: timeLimit / 60 };
+                        }
+                        return { kind: 'review', count: Math.min(words.length, REVIEW_BLOCK_WORDS), estMinutes: Math.min(words.length, REVIEW_BLOCK_WORDS) * SEC_PER_REVIEW / 60 };
+                    }
                 });
             }
         }
 
-        // Speaking: a skill that's recently gone badly aloud, or the
-        // Speaking Driller as a whole.
+        // 4. Speaking
         const canSpeak = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported())
             || (typeof ParlourTTS !== 'undefined' && ParlourTTS.available());
-        const weakDrillers = (LearnerModel.weakDrillers ? LearnerModel.weakDrillers() : []).filter(d => _isRecent(d.lastDate));
+        const weakDrillers = (typeof LearnerModel !== 'undefined' && LearnerModel.weakDrillers ? LearnerModel.weakDrillers() : []).filter(d => _isRecent(d.lastDate));
         if (canSpeak) {
-            const prod = LearnerModel.weakProductionSkills
+            let prod = (typeof LearnerModel !== 'undefined' && LearnerModel.weakProductionSkills)
                 ? (await LearnerModel.weakProductionSkills(3, 'oral')).find(p => _isRecent(p.lastSeen)) : null;
-            if (prod || weakDrillers.some(d => d.drillerId === 'speaking')) {
+            if (prod && !(await _hasReadyPairs(level, prod.skillId))) prod = null;
+            if ((prod || weakDrillers.some(d => d.drillerId === 'speaking')) && await _hasReadyPairs(level)) {
+                let taken = false;
+                const spkCount = _perBlock(SEC_PER_SPEAKING_Q);
                 candidates.push({
+                    key: 'speaking' + (prod ? ':' + prod.skillId : ''),
                     drillerId: 'speaking',
+                    kind: 'speaking',
                     skill: prod ? prod.skillId : null,
                     title: 'Speaking',
                     buttonLabel: 'Speaking practice',
@@ -768,33 +876,71 @@ const RecommendationEngine = (function () {
                     invite: 'Practice it here:',
                     reason: 'weak',
                     priority: 92,
-                    options: { autoStart: true, count: 5, level, skill: prod ? prod.skillId : undefined }
+                    urgency: prod ? 70 : 60,
+                    estMinutes: spkCount * SEC_PER_SPEAKING_Q / 60,
+                    options: { autoStart: true, count: 5, level, skill: prod ? prod.skillId : undefined },
+                    take: () => {
+                        if (taken) return null;
+                        taken = true;
+                        return Object.assign({ kind: 'speaking', count: spkCount, level, estMinutes: spkCount * SEC_PER_SPEAKING_Q / 60 }, prod ? { skill: prod.skillId } : {});
+                    }
                 });
             }
         }
 
-        // Any other driller whose recent sessions have gone badly.
+        // 5. Other weak drillers
         const fallbackTense = (weakConj[0] && weakConj[0].tensePath) || encounteredTenses[encounteredTenses.length - 1] || null;
-        weakDrillers.forEach(d => {
+        for (const d of weakDrillers) {
+            if (candidates.some(c => c.drillerId === d.drillerId)) continue;
             const offer = DRILLER_OFFERS[d.drillerId];
-            if (!offer) return;
+            if (!offer) continue;
+            if (SENTENCE_DRILLERS.includes(d.drillerId) && !(await _hasReadyPairs(level))) continue;
+            let taken = false;
+            let makeItem = null;
+            let estMin = BLOCK_MINUTES;
+            if (d.drillerId === 'listening') {
+                const count = _perBlock(SEC_PER_LISTENING_Q);
+                estMin = count * SEC_PER_LISTENING_Q / 60;
+                makeItem = () => ({ kind: 'listening', count, level, estMinutes: estMin });
+            } else if (d.drillerId === 'translation') {
+                const count = _perBlock(SEC_PER_TRANSLATION_Q);
+                estMin = count * SEC_PER_TRANSLATION_Q / 60;
+                makeItem = () => ({ kind: 'translation', count, level, estMinutes: estMin });
+            } else if (d.drillerId.indexOf('hu-') === 0) {
+                const count = _perBlock(SEC_PER_MORPH_Q);
+                estMin = count * SEC_PER_MORPH_Q / 60;
+                makeItem = () => ({ kind: 'driller', drillerId: d.drillerId, title: offer.title, count, estMinutes: estMin });
+            } else if (d.drillerId === 'verbs') {
+                makeItem = () => Object.assign(
+                    { kind: 'verbs', seconds: VERB_SPEED_SECONDS, estMinutes: BLOCK_MINUTES, knownOnly: true },
+                    fallbackTense ? { tense: fallbackTense } : {},
+                    encounteredTenses.length ? { tenses: encounteredTenses } : {},
+                    encounteredVerbs.length ? { verbs: encounteredVerbs } : {}
+                );
+            }
             candidates.push({
+                key: 'driller:' + d.drillerId,
                 drillerId: d.drillerId,
+                kind: d.drillerId === 'verbs' ? 'verbs' : (d.drillerId === 'listening' ? 'listening' : (d.drillerId === 'translation' ? 'translation' : 'driller')),
                 title: offer.title,
                 buttonLabel: offer.buttonLabel,
                 blurb: weakBlurb(offer.topic),
                 invite: offer.invite,
                 reason: 'weak',
                 priority: offer.priority,
-                options: offer.options(level, { tense: fallbackTense, encounteredTenses, encounteredVerbs })
+                urgency: 60 + Math.min(10, Math.round((60 - (d.avgAccuracy || 0)) / 6)),
+                estMinutes: estMin,
+                options: offer.options(level, { tense: fallbackTense, encounteredTenses, encounteredVerbs }),
+                take: () => {
+                    if (taken) return null;
+                    taken = true;
+                    return makeItem ? makeItem() : null;
+                }
             });
-        });
+        }
 
-        // Curriculum-driven Verb Practice: when the learner finishes a unit
-        // whose primary grammar skill is a verb tense and has encountered
-        // verbs in the curriculum, offer a practice session with the verbs
-        // and tense they have encountered so far.
-        const foundUnit = LearnerPath.unitFor ? LearnerPath.unitFor(lessonId) : null;
+        // 6. Curriculum-driven Verb Practice
+        const foundUnit = (typeof LearnerPath !== 'undefined' && LearnerPath.unitFor) ? LearnerPath.unitFor(lessonId) : null;
         if (foundUnit && foundUnit.unit && !dismissedUnits().includes(foundUnit.unit.id)) {
             const uLessons = foundUnit.unit.lessons || [];
             const lastInUnit = uLessons[uLessons.length - 1];
@@ -803,8 +949,11 @@ const RecommendationEngine = (function () {
                 const unitTense = (unitSkill && LearnerModel.tenseForSkill) ? await LearnerModel.tenseForSkill(unitSkill) : null;
                 if (unitTense && !candidates.some(c => c.drillerId === verbDriller)) {
                     const tenseLabel = TENSE_LABELS[unitTense] || humanizeSkill(unitSkill);
+                    let taken = false;
                     candidates.push({
+                        key: verbDriller + ':' + unitTense,
                         drillerId: verbDriller,
+                        kind: verbDriller === 'verbs' ? 'verbs' : 'driller',
                         skill: unitSkill,
                         tense: unitTense,
                         title: 'Verb conjugation',
@@ -813,11 +962,280 @@ const RecommendationEngine = (function () {
                         invite: 'Practice the verbs you know:',
                         reason: 'encountered',
                         priority: 85,
-                        options: _verbDrillOptions(unitTense, encounteredTenses, encounteredVerbs)
+                        urgency: 70,
+                        estMinutes: BLOCK_MINUTES,
+                        options: _verbDrillOptions(unitTense, encounteredTenses, encounteredVerbs),
+                        take: () => {
+                            if (taken) return null;
+                            taken = true;
+                            if (verbDriller === 'verbs') {
+                                return Object.assign(
+                                    { kind: 'verbs', seconds: VERB_SPEED_SECONDS, estMinutes: BLOCK_MINUTES, knownOnly: true, tense: unitTense },
+                                    encounteredTenses.length ? { tenses: encounteredTenses } : {},
+                                    encounteredVerbs.length ? { verbs: encounteredVerbs } : {}
+                                );
+                            }
+                            const count = _perBlock(SEC_PER_MORPH_Q);
+                            return { kind: 'driller', drillerId: verbDriller, title: 'Verb conjugation', count, estMinutes: count * SEC_PER_MORPH_Q / 60, knownOnly: true, tense: unitTense };
+                        }
                     });
                 }
             }
         }
+
+        if (weakOnly) return candidates;
+
+        // 7. Developing grammar skills
+        if (includeAll && typeof LearnerModel !== 'undefined' && LearnerModel.weakSkills) {
+            const allSkills = await LearnerModel.weakSkills();
+            const developing = allSkills.filter(s => s.state === 'developing');
+            for (let rank = 0; rank < developing.length; rank++) {
+                const s = developing[rank];
+                if (candidates.some(c => c.skill === s.skillId)) continue;
+                let taken = false;
+                const gCount = _perBlock(SEC_PER_GRAMMAR_Q);
+                candidates.push({
+                    key: 'grammar:' + s.skillId,
+                    drillerId: 'grammar',
+                    kind: 'grammar',
+                    skill: s.skillId,
+                    title: 'Grammar',
+                    buttonLabel: 'Grammar practice',
+                    blurb: `Keep practicing ${humanizeSkill(s.skillId)}.`,
+                    invite: 'Practice it here:',
+                    reason: 'developing',
+                    priority: 50 - rank,
+                    urgency: 50 - rank,
+                    estMinutes: gCount * SEC_PER_GRAMMAR_Q / 60,
+                    options: { skill: s.skillId, count: 5, autoStart: true },
+                    take: () => {
+                        if (taken) return null;
+                        taken = true;
+                        return { kind: 'grammar', skill: s.skillId, count: gCount, estMinutes: gCount * SEC_PER_GRAMMAR_Q / 60 };
+                    }
+                });
+            }
+            if (!allSkills.length && !trouble.length) {
+                const gv = await _grammarVocabCandidate();
+                if (gv && gv.skill && !candidates.some(c => c.skill === gv.skill)) {
+                    let taken = false;
+                    const gCount = _perBlock(SEC_PER_GRAMMAR_Q);
+                    candidates.push({
+                        key: 'grammar:' + gv.skill,
+                        drillerId: 'grammar',
+                        kind: 'grammar',
+                        skill: gv.skill,
+                        title: 'Grammar',
+                        buttonLabel: 'Grammar practice',
+                        blurb: `Practice ${humanizeSkill(gv.skill)}.`,
+                        invite: 'Practice it here:',
+                        reason: 'filler',
+                        priority: 25,
+                        urgency: 10,
+                        estMinutes: gCount * SEC_PER_GRAMMAR_Q / 60,
+                        options: { skill: gv.skill, count: 5, autoStart: true },
+                        take: () => {
+                            if (taken) return null;
+                            taken = true;
+                            return { kind: 'grammar', skill: gv.skill, count: gCount, estMinutes: gCount * SEC_PER_GRAMMAR_Q / 60 };
+                        }
+                    });
+                }
+            }
+        }
+
+        // 8. Due reviews (SRS cards due)
+        const due = (typeof getDueCards === 'function') ? getDueCards() : [];
+        if (due.length && !candidates.some(c => c.kind === 'review' || c.kind === 'srs')) {
+            let left = due.length;
+            candidates.push({
+                key: 'review',
+                drillerId: 'srs',
+                kind: 'review',
+                title: 'Word review',
+                buttonLabel: 'Review due words',
+                blurb: `${due.length} ${due.length === 1 ? 'word is' : 'words are'} due for review.`,
+                invite: 'Review them now:',
+                reason: 'review',
+                priority: 89,
+                urgency: 90 + Math.min(10, Math.floor(due.length / 5)),
+                estMinutes: Math.min(left, REVIEW_BLOCK_WORDS) * SEC_PER_REVIEW / 60,
+                options: { action: 'review' },
+                take: () => {
+                    if (left <= 0) return null;
+                    const count = Math.min(left, REVIEW_BLOCK_WORDS);
+                    left -= count;
+                    return { kind: 'review', count, estMinutes: count * SEC_PER_REVIEW / 60 };
+                }
+            });
+        }
+
+        // 9. Available drillers as filler (listening, translation, hu-morphology, verbs)
+        if (includeAll && typeof LearnerModel !== 'undefined' && LearnerModel.availableDrillers) {
+            const avail = LearnerModel.availableDrillers();
+            const sentenceOk = await _hasReadyPairs(level);
+            for (const d of avail) {
+                if (candidates.some(c => c.drillerId === d.drillerId)) continue;
+                let taken = false;
+                let makeItem = null;
+                let estMin = BLOCK_MINUTES;
+                if (d.drillerId === 'listening') {
+                    if (!canSpeak && (typeof ParlourTTS === 'undefined' || !ParlourTTS.available())) continue;
+                    if (!sentenceOk) continue;
+                    const count = _perBlock(SEC_PER_LISTENING_Q);
+                    estMin = count * SEC_PER_LISTENING_Q / 60;
+                    makeItem = () => ({ kind: 'listening', count, level, estMinutes: estMin });
+                } else if (d.drillerId === 'speaking') {
+                    if (!canSpeak || !sentenceOk) continue;
+                    const count = _perBlock(SEC_PER_SPEAKING_Q);
+                    estMin = count * SEC_PER_SPEAKING_Q / 60;
+                    makeItem = () => ({ kind: 'speaking', count, level, estMinutes: estMin });
+                } else if (d.drillerId === 'translation') {
+                    if (!sentenceOk) continue;
+                    const count = _perBlock(SEC_PER_TRANSLATION_Q);
+                    estMin = count * SEC_PER_TRANSLATION_Q / 60;
+                    makeItem = () => ({ kind: 'translation', count, level, estMinutes: estMin });
+                } else if (d.drillerId === 'verbs') {
+                    makeItem = () => Object.assign(
+                        { kind: 'verbs', seconds: VERB_SPEED_SECONDS, estMinutes: BLOCK_MINUTES, knownOnly: true },
+                        fallbackTense ? { tense: fallbackTense } : {},
+                        encounteredTenses.length ? { tenses: encounteredTenses } : {},
+                        encounteredVerbs.length ? { verbs: encounteredVerbs } : {}
+                    );
+                } else if (d.drillerId.indexOf('hu-') === 0) {
+                    const count = _perBlock(SEC_PER_MORPH_Q);
+                    estMin = count * SEC_PER_MORPH_Q / 60;
+                    makeItem = () => ({ kind: 'driller', drillerId: d.drillerId, title: d.title, count, estMinutes: estMin });
+                }
+                if (makeItem) {
+                    candidates.push({
+                        key: 'driller:' + d.drillerId,
+                        drillerId: d.drillerId,
+                        kind: d.drillerId === 'verbs' ? 'verbs' : (d.drillerId === 'listening' ? 'listening' : (d.drillerId === 'speaking' ? 'speaking' : (d.drillerId === 'translation' ? 'translation' : 'driller'))),
+                        title: d.title || d.drillerId,
+                        buttonLabel: d.title || d.drillerId,
+                        blurb: `Practice ${d.title || d.drillerId}.`,
+                        invite: 'Practice here:',
+                        reason: 'filler',
+                        priority: 20,
+                        urgency: 10,
+                        estMinutes: estMin,
+                        options: { autoStart: true, count: 5, level },
+                        take: () => {
+                            if (taken) return null;
+                            taken = true;
+                            return makeItem();
+                        }
+                    });
+                }
+            }
+        }
+
+        // 10. Match Game
+        if ((includeAll || !weakOnly) && typeof DeckMatch !== 'undefined') {
+            const weak = (typeof LearnerModel !== 'undefined' && LearnerModel.weakWords) ? LearnerModel.weakWords(20) : [];
+            let pool = weak.length >= 4 ? weak.slice(0, 12) : [];
+            if (pool.length < 4 && typeof srsDeck !== 'undefined' && srsDeck.length >= 4) {
+                pool = srsDeck.slice(0, 12).map(c => ({ lemma: c.spanish || c.lemma, translation: c.english || c.translation }));
+            }
+            if (pool.length >= 4 && !candidates.some(c => c.kind === 'match')) {
+                const pairs = Math.min(pool.length, Math.max(4, Math.round(BLOCK_MINUTES * 60 / SEC_PER_MATCH_PAIR)));
+                const timeLimit = Math.min(120, pairs * SEC_PER_MATCH_PAIR);
+                let taken = false;
+                candidates.push({
+                    key: 'match',
+                    drillerId: 'match',
+                    kind: 'match',
+                    title: 'Word matching',
+                    buttonLabel: 'Play match game',
+                    blurb: 'Fast-paced word matching with the words you know.',
+                    invite: 'Match pairs here:',
+                    reason: 'filler',
+                    priority: 20,
+                    urgency: 10,
+                    estMinutes: timeLimit / 60,
+                    words: pool.slice(0, pairs),
+                    timeLimit,
+                    options: { words: pool.slice(0, pairs), timeLimit },
+                    take: () => {
+                        if (taken) return null;
+                        taken = true;
+                        return { kind: 'match', words: pool.slice(0, pairs), count: pairs, timeLimit, estMinutes: timeLimit / 60 };
+                    }
+                });
+            }
+        }
+
+        // 11. Library Reading
+        if ((includeAll || !weakOnly) && typeof Reader !== 'undefined' && Reader.ensureStories && Reader.getRecommendations) {
+            try {
+                await Reader.ensureStories();
+                const rec = Reader.getRecommendations();
+                const story = rec && rec.comfortable && rec.comfortable.story;
+                if (story && !candidates.some(c => c.kind === 'reading')) {
+                    const est = story.estimatedMinutes || 5;
+                    let taken = false;
+                    candidates.push({
+                        key: 'reading:' + story.id,
+                        drillerId: 'reading',
+                        kind: 'reading',
+                        storyId: story.id,
+                        title: story.title,
+                        buttonLabel: `Read: ${story.title}`,
+                        blurb: `Read "${story.title}" in the Library.`,
+                        invite: 'Start reading:',
+                        reason: 'filler',
+                        priority: 15,
+                        urgency: 10,
+                        estMinutes: est,
+                        options: { storyId: story.id },
+                        take: () => {
+                            if (taken) return null;
+                            taken = true;
+                            return { kind: 'reading', storyId: story.id, title: story.title, estMinutes: est };
+                        }
+                    });
+                }
+            } catch (e) { /* ignore reading errors */ }
+        }
+
+        // 12. Next lesson / Level test
+        if (opts.includeLesson) {
+            const step = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+            const doneLessons = opts.doneLessons || new Set();
+            if (step && step.kind === 'lesson' && !doneLessons.has(step.lesson.id)) {
+                const est = step.lesson.estimatedMinutes || DEFAULT_LESSON_MINUTES;
+                let taken = false;
+                candidates.push({
+                    key: 'lesson',
+                    drillerId: 'continue',
+                    kind: 'lesson',
+                    title: step.lesson.title,
+                    buttonLabel: `Lesson: ${step.lesson.title}`,
+                    blurb: 'Continue your course progression.',
+                    invite: 'Start lesson:',
+                    reason: 'continue',
+                    priority: 30,
+                    urgency: 30,
+                    estMinutes: est,
+                    take: () => {
+                        if (taken) return null;
+                        taken = true;
+                        return { kind: 'lesson', lessonId: step.lesson.id, title: step.lesson.title, estMinutes: est };
+                    }
+                });
+            }
+        }
+
+        return candidates;
+    }
+
+    async function _miniGameNudge() {
+        const lessonId = LearnerPath.lastCompletedLessonId();
+        if (!lessonId || miniGameDismissed(lessonId) || typeof LearnerModel === 'undefined') return null;
+
+        const level = (LearnerPath.currentLevel ? LearnerPath.currentLevel() : 'A1').toLowerCase();
+        const candidates = await getCandidates({ level, lessonId, weakOnly: true });
 
         const outcomes = _outcomes();
         const open = _currentOpen();
@@ -996,6 +1414,22 @@ const RecommendationEngine = (function () {
             title = primary.challengeTitle || (primary.skill ? `Grammar: ${humanizeSkill(primary.skill)}` : 'Practice');
             cta = primary.buttonLabel || title;
             sub = primary.blurb || "Reinforce what you just learned";
+        } else if (primary.kind === 'reading') {
+            title = primary.title ? `Read: ${primary.title}` : 'Library reading';
+            cta = `Read: ${primary.title || 'story'}`;
+            sub = 'Practice reading comprehension in the Library';
+        } else if (primary.kind === 'speaking-cando') {
+            title = 'Speaking prompt';
+            cta = `Speak: ${primary.text || 'prompt'}`;
+            sub = 'Quick spoken response';
+        } else if (primary.kind === 'match') {
+            title = 'Word matching';
+            cta = 'Play match game';
+            sub = 'Speed word association';
+        } else if (primary.kind === 'srs') {
+            title = 'Word review';
+            cta = `Review ${primary.due || (primary.options && primary.options.words ? primary.options.words.length : 'due')} words`;
+            sub = 'Spaced repetition review';
         } else {
             return null;
         }
@@ -1063,6 +1497,20 @@ const RecommendationEngine = (function () {
             } else {
                 _openWorkshopDriller(primary.drillerId, primary.options);
             }
+        } else if (primary.kind === 'reading') {
+            _noteOutcome(primary, 'taken');
+            if (typeof Reader !== 'undefined' && Reader.openStory) Reader.openStory(primary.storyId);
+            else if (typeof showTab === 'function') showTab('library', document.querySelector('.nav button[data-tab="library"]'));
+        } else if (primary.kind === 'speaking-cando') {
+            _noteOutcome(primary, 'taken');
+            _openWorkshopDriller('speaking', { targetCompetency: primary.text, level: primary.level, maxSeconds: primary.seconds || 40, autoStart: true });
+        } else if (primary.kind === 'match') {
+            _noteOutcome(primary, 'taken');
+            if (typeof DeckMatch !== 'undefined' && DeckMatch.start) DeckMatch.start(primary.words, primary.timeLimit);
+            else _openSrs({ action: 'match', words: primary.words });
+        } else if (primary.kind === 'srs') {
+            _noteOutcome(primary, 'taken');
+            _openSrs(primary.options || { action: 'review' });
         }
     }
 
@@ -1072,6 +1520,10 @@ const RecommendationEngine = (function () {
         if (primary.kind === 'mini-game') dismissMiniGame(primary.lessonId);
         if (primary.kind === 'unit-nudge' || primary.kind === 'elective') dismissUnit(primary.unit.id);
         if (primary.kind === 'elective') _resolveElective(primary);
+        if (primary.kind === 'reading' || primary.kind === 'match' || primary.kind === 'srs' || primary.kind === 'speaking-cando') {
+            _noteOutcome(primary, 'skipped');
+            return;
+        }
         _noteOutcome(primary, 'skipped');
     }
 
@@ -1098,11 +1550,40 @@ const RecommendationEngine = (function () {
             return;
         }
         if (!rec || !rec.primary) return;
+
         // Don't send the learner straight back into the driller they just
-        // finished — point them on along the course instead.
+        // finished — point them on along the course instead, or to the next
+        // candidate if another weakness needs attention.
         if (rec.primary.kind === 'mini-game' && rec.primary.drillerId === opts.excludeDrillerId) {
-            const step = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
-            rec = { primary: { kind: 'continue', step } };
+            const level = (typeof LearnerPath !== 'undefined' && LearnerPath.currentLevel)
+                ? LearnerPath.currentLevel().toLowerCase() : 'a1';
+            const candidates = await getCandidates({ level, excludeDrillerId: opts.excludeDrillerId });
+            const outcomes = _outcomes();
+            const open = _currentOpen();
+            const nextCandidate = candidates
+                .filter(c => c.drillerId !== opts.excludeDrillerId && !_coolingDown(c, outcomes, open) && c.priority >= 80)
+                .sort((a, b) => b.priority - a.priority)[0];
+
+            if (nextCandidate) {
+                rec = {
+                    primary: {
+                        kind: 'mini-game',
+                        lessonId: (typeof LearnerPath !== 'undefined' && LearnerPath.lastCompletedLessonId) ? LearnerPath.lastCompletedLessonId() : null,
+                        challengeTitle: nextCandidate.title,
+                        drillerId: nextCandidate.drillerId,
+                        skill: nextCandidate.skill || null,
+                        tense: nextCandidate.tense || null,
+                        buttonLabel: nextCandidate.buttonLabel,
+                        blurb: nextCandidate.blurb,
+                        invite: nextCandidate.invite,
+                        reason: nextCandidate.reason || 'weak',
+                        options: nextCandidate.options
+                    }
+                };
+            } else {
+                const step = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+                rec = { primary: { kind: 'continue', step } };
+            }
         }
 
         const info = _nextActionInfo(rec.primary);
@@ -1146,7 +1627,9 @@ const RecommendationEngine = (function () {
         mountNextAction,
         dismissUnit,
         dismissMiniGame,
+        getCandidates,
         grammarVocabCandidate: _grammarVocabCandidate,
+        hasReadyPairs: _hasReadyPairs,
         scenarioReadiness,
         scenarioReadinessSync,
         _scenarioForUnit,
