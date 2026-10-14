@@ -314,6 +314,116 @@
         "a2-the-past-1-vocab"
       ],
       "stage": "check"
+    },
+    {
+      "id": "a2-117-intro-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence means “Anna lived here two years ago”?",
+      "options": [
+        "Anna két éve itt lakott.",
+        "Anna két éve itt lakik."
+      ],
+      "correct": 0,
+      "teaches": [
+        "ago-ezelott"
+      ],
+      "distractor_skills": {
+        "1": "ota-duration"
+      },
+      "stage": "introduce"
+    },
+    {
+      "id": "a2-117-controlled-5",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Egy ____ ezelőtt sportoltam.",
+      "hint": "week, with -val/-vel",
+      "english": "I did sport a week ago.",
+      "answer": "héttel",
+      "teaches": [
+        "ago-ezelott"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-117-controlled-6",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which means “three days ago”?",
+      "options": [
+        "három nappal ezelőtt",
+        "három napja ezelőtt",
+        "három napot ezelőtt"
+      ],
+      "correct": 0,
+      "teaches": [
+        "ago-ezelott"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-117-practice-5",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Két",
+        "évvel",
+        "ezelőtt",
+        "Budapesten",
+        "dolgoztam",
+        "."
+      ],
+      "solution": [
+        "Két",
+        "évvel",
+        "ezelőtt",
+        "Budapesten",
+        "dolgoztam",
+        "."
+      ],
+      "english": "Two years ago I worked in Budapest.",
+      "teaches": [
+        "ago-ezelott"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-117-dialogue-3",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Gábor",
+          "text": "Mikor költöztetek ide?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Két éve költöztünk ide.",
+        "Két évvel költöztünk ide."
+      ],
+      "correct": 0,
+      "teaches": [
+        "ago-ezelott"
+      ],
+      "stage": "dialogue"
+    },
+    {
+      "id": "a2-117-check-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Három ____ piknikeztek a parkban.",
+      "hint": "days ago, short form",
+      "english": "They had a picnic in the park three days ago.",
+      "answer": "napja",
+      "teaches": [
+        "ago-ezelott"
+      ],
+      "stage": "check"
     }
   ]
 }

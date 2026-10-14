@@ -34,6 +34,25 @@
       "stage": "introduce"
     },
     {
+      "id": "a2-14-intro-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which means “Péter and his family”?",
+      "options": [
+        "Péterék",
+        "Péterek",
+        "Péter"
+      ],
+      "correct": 0,
+      "teaches": [
+        "ek-group-plural"
+      ],
+      "distractor_skills": {
+        "1": "plural-nouns-k"
+      },
+      "stage": "introduce"
+    },
+    {
       "id": "a2-14-controlled-1",
       "type": "matching",
       "category": "vocabulary",
@@ -99,6 +118,18 @@
       "correct": 0,
       "teaches": [
         "a2-family-life-vocab"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-14-controlled-5",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "____ Budapesten laknak.",
+      "english": "The Kovács family lives in Budapest.",
+      "answer": "Kovácsék",
+      "teaches": [
+        "ek-group-plural"
       ],
       "stage": "controlled"
     },
@@ -194,6 +225,47 @@
       "stage": "practice"
     },
     {
+      "id": "a2-14-practice-5",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence means “On Sunday Péter and his family are coming”?",
+      "options": [
+        "Vasárnap Péterék jönnek.",
+        "Vasárnap Péterék jön.",
+        "Vasárnap Péterek jönnek."
+      ],
+      "correct": 0,
+      "teaches": [
+        "ek-group-plural"
+      ],
+      "distractor_skills": {
+        "2": "plural-nouns-k"
+      },
+      "stage": "practice"
+    },
+    {
+      "id": "a2-14-practice-6",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Vasárnap",
+        "Péterékkel",
+        "ünnepelünk",
+        "."
+      ],
+      "solution": [
+        "Vasárnap",
+        "Péterékkel",
+        "ünnepelünk",
+        "."
+      ],
+      "english": "On Sunday we celebrate with Péter and his family.",
+      "teaches": [
+        "ek-group-plural"
+      ],
+      "stage": "practice"
+    },
+    {
       "id": "a2-14-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
@@ -237,6 +309,29 @@
       "correct": 0,
       "teaches": [
         "present-tense-routine-language"
+      ]
+    },
+    {
+      "id": "a2-14-dialogue-3",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Hol vagytok vasárnap?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Péteréknél vagyunk.",
+        "Péterék vagyunk."
+      ],
+      "correct": 0,
+      "teaches": [
+        "ek-group-plural"
       ]
     },
     {
@@ -296,6 +391,18 @@
       "correct": 0,
       "teaches": [
         "a2-family-life-vocab"
+      ],
+      "stage": "check"
+    },
+    {
+      "id": "a2-14-check-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Vasárnap a ____ jönnek.",
+      "english": "On Sunday the neighbour and his family are coming.",
+      "answer": "szomszédék",
+      "teaches": [
+        "ek-group-plural"
       ],
       "stage": "check"
     }

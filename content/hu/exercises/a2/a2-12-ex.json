@@ -34,6 +34,22 @@
       "stage": "introduce"
     },
     {
+      "id": "a2-12-intro-3",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which means “Whose bag is this?”",
+      "options": [
+        "Kinek a táskája ez?",
+        "Ki a táskája ez?",
+        "Kinek a táska ez?"
+      ],
+      "correct": 0,
+      "teaches": [
+        "dative-possessor"
+      ],
+      "stage": "introduce"
+    },
+    {
       "id": "a2-12-controlled-1",
       "type": "matching",
       "category": "vocabulary",
@@ -110,6 +126,18 @@
       "answer": "családja",
       "teaches": [
         "3rd-person-possessive"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-12-controlled-5",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "____ az autója új.",
+      "english": "Péter's car is new.",
+      "answer": "Péternek",
+      "teaches": [
+        "dative-possessor"
       ],
       "stage": "controlled"
     },
@@ -213,6 +241,48 @@
       "stage": "practice"
     },
     {
+      "id": "a2-12-practice-5",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence means “That boy's dog is very loud”?",
+      "options": [
+        "Annak a fiúnak a kutyája nagyon hangos.",
+        "Annak a fiú kutyája nagyon hangos.",
+        "Az a fiúnak a kutyája nagyon hangos."
+      ],
+      "correct": 0,
+      "teaches": [
+        "dative-possessor"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-12-practice-6",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Péternek",
+        "az",
+        "apja",
+        "Budapesten",
+        "lakik",
+        "."
+      ],
+      "solution": [
+        "Péternek",
+        "az",
+        "apja",
+        "Budapesten",
+        "lakik",
+        "."
+      ],
+      "english": "Péter's father lives in Budapest.",
+      "teaches": [
+        "dative-possessor"
+      ],
+      "stage": "practice"
+    },
+    {
       "id": "a2-12-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
@@ -256,6 +326,29 @@
       "correct": 0,
       "teaches": [
         "possessive-suffixes"
+      ]
+    },
+    {
+      "id": "a2-12-dialogue-3",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Kinek az autója ez?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Péternek az autója.",
+        "Péternek az autó."
+      ],
+      "correct": 0,
+      "teaches": [
+        "dative-possessor"
       ]
     },
     {
@@ -322,6 +415,18 @@
       "distractor_skills": {
         "2": "possessive-suffixes"
       },
+      "stage": "check"
+    },
+    {
+      "id": "a2-12-check-3",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "____ a lánynak a táskája nagy.",
+      "english": "That girl's bag is big.",
+      "answer": "Annak",
+      "teaches": [
+        "dative-possessor"
+      ],
       "stage": "check"
     }
   ]
