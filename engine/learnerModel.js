@@ -93,10 +93,16 @@ const LearnerModel = (function () {
         }
     }
 
-    // Optional per-course content files — each one missing (Hungarian has
-    // no Grammar Driller bank or Verb Speed) just contributes nothing.
+    // Optional per-course content files — each one missing just contributes
+    // nothing. Files a course is known not to have aren't requested at all,
+    // so its learners' consoles show no 404s (Hungarian has no Grammar
+    // Driller bank or Verb Speed).
+    const ABSENT = {
+        hu: ['drills/grammar/a1-bank.json', 'indexes/verb-tense-skills.json']
+    };
     async function _optionalJson(path) {
         if (typeof Content === 'undefined' || typeof Lang === 'undefined') return null;
+        if ((ABSENT[Lang.code()] || []).includes(path)) return null;
         try {
             return await Content.json(Lang.content(path));
         } catch (error) {

@@ -47,10 +47,11 @@ const { chromium } = require('playwright');
 
 const ROOT = path.resolve(__dirname, '..');
 
-// Files the engine probes on purpose and tolerates missing (engine/learnerModel.js
-// _optionalJson: "each one missing just contributes nothing"). A 404 here is
-// recorded as a note, not a failure. Anything else that 404s fails the lesson.
-const OPTIONAL_PROBES = [/\/content\/[^/]+\/drills\/grammar\/[^/]+-bank\.json$/, /\/content\/[^/]+\/indexes\/verb-tense-skills\.json$/];
+// Files the engine probes on purpose and tolerates missing. None for now:
+// engine/learnerModel.js no longer requests files a course is known not to
+// have (its ABSENT list), so every 404 fails the lesson (gate 1: no failed
+// requests). Add a pattern here only for a probe that can't be avoided.
+const OPTIONAL_PROBES = [];
 
 function parseArgs(argv) {
     const o = { base: 'http://127.0.0.1:8131', only: [], out: null, jobs: 4, liveTts: false, pos: [] };
