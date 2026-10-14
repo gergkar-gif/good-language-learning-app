@@ -789,7 +789,8 @@ def validate_language(lang, only=None, sources=None):
             if s.get("variant") and s["variant"] != lang:
                 continue
             n = skill_counts.get(slug, 0)
-            if n < MIN_EXERCISES_PER_SKILL:
+            # thin_ok: the user accepted fewer exercises, with the reason
+            if n < MIN_EXERCISES_PER_SKILL and not s.get("thin_ok"):
                 warn(lang, f"skill with fewer than {MIN_EXERCISES_PER_SKILL} exercises", f"{slug} ({n})")
 
     return passed, failed, failures
