@@ -1,0 +1,333 @@
+[
+ {
+  "file": "content/hu/exercises/a2/a2-156-ex.json",
+  "old": "\"Dolgozom ebédelek hazamegyek.\"",
+  "new": "\"Dolgozom, ebédelek, hazamegyek, otthon pihenek.\"",
+  "id": "a2-156-practice-1",
+  "why": "length give-away (49 vs 29): lengthen wrong option 1, one fault (no connectors)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-156-ex.json",
+  "old": "\"Munka ebéd otthon.\"",
+  "new": "\"Munka, ebéd, otthon, pihenés és egy jó vacsora.\"",
+  "id": "a2-156-practice-1",
+  "why": "length give-away: lengthen wrong option 2 (nouns only, no verbs), met words",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-156-ex.json",
+  "old": "\"Jövő héten Szegedre megyek.\"",
+  "new": "\"Jövő héten a kollégáimmal Szegedre megyek.\"",
+  "id": "a2-156-dialogue-1",
+  "why": "length give-away (50 vs 27): lengthen wrong reply (answers a different question)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-156-ex.json",
+  "old": "Hány órakor érkezel be reggel?",
+  "new": "Hánykor érkezel be reggel?",
+  "id": "a2-156-dialogue-2",
+  "why": "unmet word órakor: use met hánykor",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-156-ex.json",
+  "old": "Tegnap sokat dolgoztam, este pedig Károllyal vacsoráztam.",
+  "new": "Tegnap sokat dolgoztam, és este Károllyal vacsoráztam.",
+  "id": "a2-156-writing-2",
+  "why": "pedig is first taught at a2-159; prompt says \"and\"",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-156-ex.json",
+  "old": "\"Tegnap este korán elaludtam.\"",
+  "new": "\"Tegnap este korán vacsoráztam.\"",
+  "id": "a2-156-check-2",
+  "why": "unmet elalszom in the present-tense wrong option: use met vacsorázik in all three options",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-156-ex.json",
+  "old": "\"Tegnap este korán elalszom.\"",
+  "new": "\"Tegnap este korán vacsorázom.\"",
+  "id": "a2-156-check-2",
+  "why": "unmet elalszom: met vacsorázom (present, keeps distractor_skills 1)",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-156-ex.json",
+  "old": "\"Holnap este korán elaludtam.\"",
+  "new": "\"Holnap este korán vacsoráztam.\"",
+  "id": "a2-156-check-2",
+  "why": "keep the third option consistent with the new verb",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-157-ex.json",
+  "old": "Say your best friend lives next door, so you often get together.",
+  "new": "Say your best friend (a girl) lives next door, so you often get together.",
+  "id": "a2-157-writing-1",
+  "why": "English \"friend\" does not pin barátnőm; the answer is feminine",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-157-ex.json",
+  "old": "Which sentence correctly says \\\"close to his friends\\\"?",
+  "new": "Which phrase correctly says \\\"close to his friends\\\"?",
+  "id": "a2-157-practice-1",
+  "why": "options are phrases, not sentences",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-158-ex.json",
+  "old": "\"Sajnos lekéstem a vonatot.\"",
+  "new": "\"Sajnos lekéstem a vonatot, ezért későn jöttem.\"",
+  "id": "a2-158-dialogue-1",
+  "why": "length give-away (47 vs 26): lengthen wrong reply",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-158-ex.json",
+  "old": "és egy kis húst, mert gulyást akarok főzni.",
+  "new": "és egy kiló húst, mert gulyást akarok főzni.",
+  "id": "a2-158-dialogue-2",
+  "why": "unmet kis (first taught a2-160): kiló is met",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-158-ex.json",
+  "old": "\"Egy szép kabátot vettem a ruhaüzletben.\"",
+  "new": "\"A kollégáimmal gyakran ebédelek egy közeli étteremben.\"",
+  "id": "a2-158-dialogue-2",
+  "why": "length give-away (63 vs 39) and unmet ruhaüzlet; the old reply was a near-possible answer to \"Mit vettél?\"; new one answers another question",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-158-ex.json",
+  "old": "\"Levest és gulyást szeretném rendelek.\"",
+  "new": "\"Levest és gulyást szeretném rendelni.\"",
+  "id": "a2-158-practice-1",
+  "why": "unmet rendelek; one fault (definite szeretném with indefinite objects)",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-158-ex.json",
+  "old": "\"Levest és gulyást rendelnék szeretni.\"",
+  "new": "\"Leves és gulyás szeretnék rendelni.\"",
+  "id": "a2-158-practice-1",
+  "why": "unmet rendelnék; one fault (no accusative -t)",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-158-ex.json",
+  "old": "\"Felvágom a hagymát, és egy nagy fazékban megfőztük.\"",
+  "new": "\"Felvágom a hagymát, és egy nagy fazékban megfőztem.\"",
+  "id": "a2-158-check-2",
+  "why": "old option had two faults (tense and person); now one: present/past mix",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-158-ex.json",
+  "old": "\"Felvágtam a hagymát, és egy nagy fazékban megfőzöm.\"",
+  "new": "\"Felvágtam a hagyma, és egy nagy fazékban megfőztem.\"",
+  "id": "a2-158-check-2",
+  "why": "two options failed the same way (tense mix); now a missing accusative -t",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-158-b-gr.json",
+  "old": "(Unit 16's polite",
+  "new": "(the A1 polite",
+  "id": "a2-158-b-gr",
+  "why": "\"Unit 16\" is wrong: szeretnék/kérek were A1 (cafe, food-drink); say A1",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-158-a-gr.json",
+  "old": "the same imperative-based cooking verbs from Unit 10, now in the past tense.",
+  "new": "cooking verbs from Unit 10, now in the past tense.",
+  "id": "a2-158-a-gr",
+  "why": "felvág/megfőz were not the imperative verbs of Unit 10; \"imperative-based\" is wrong",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-158-a-gr.json",
+  "old": "in a question about the price you can drop the price and just ask *Mennyibe* *kerül*?",
+  "new": "the question *Mennyibe* *kerül*? uses the same -ba/-be, so the answer repeats it.",
+  "id": "a2-158-a-gr",
+  "why": "tip: \"drop the price\" in a question is meaningless",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-159-ex.json",
+  "old": "\"dolgozik\",",
+  "new": "\"felöltözik\",",
+  "id": "a2-159-intro-2",
+  "why": "length give-away (13 vs 9): longer wrong option",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-159-ex.json",
+  "old": "\"Nagyon élveztem a kirándulást a hegyekben.\"",
+  "new": "\"Nagyon jó volt a vasárnapi kirándulás a hegyekben.\"",
+  "id": "a2-159-dialogue-1",
+  "why": "unmet élveztem (c1); keeps length ratio",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-159-ex.json",
+  "old": "\"Minden nap nyolckor kezdődik a munkaidőm.\"",
+  "new": "\"Minden nap nyolckor kezdődik és ötkor végződik a munkaidőm.\"",
+  "id": "a2-159-dialogue-2",
+  "why": "length give-away (56 vs 41): lengthen wrong reply",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-159-ex.json",
+  "old": "\"Sok lesz a feladat, és túlórázom, ezért nagyon fárasztó volt.\"",
+  "new": "\"Sok volt a feladat, és túlórázom, ezért nagyon fárasztó volt.\"",
+  "id": "a2-159-check-2",
+  "why": "one fault (present verb in a past story); lesz is unmet",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-ex.json",
+  "old": "\"ápoló\"",
+  "new": "\"orvos\"",
+  "id": "a2-160-intro-1",
+  "why": "unmet ápoló: met orvos",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-ex.json",
+  "old": "\"Internet szerelő zuhany.\"",
+  "new": "\"Az internet, a szerelő, a zuhany és a wifi.\"",
+  "id": "a2-160-practice-1",
+  "why": "keep a non-sentence wrong option but longer",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-ex.json",
+  "old": "\"Mindjárt sikerült szerelőt hívni.\"",
+  "new": "\"Nem működik az internet, hívtam egy szerelőt.\"",
+  "id": "a2-160-practice-1",
+  "why": "unmet mindjárt; new option explains but does not ask for help",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-ex.json",
+  "old": "\"Elromlott, de tökéletesen működik.\"",
+  "new": "\"A piacon vettem hagymát, és megfőztem a gulyást.\"",
+  "id": "a2-160-dialogue-1",
+  "why": "length give-away (54 vs 34), unmet tökéletesen, and \"it broke but works perfectly\" could be a true answer",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-ex.json",
+  "old": "Milyen érzés most már önállóan élni Magyarországon?",
+  "new": "Hogyan érzed magad most már önállóan Magyarországon?",
+  "id": "a2-160-dialogue-2",
+  "why": "unmet érzés, élni: use met érzed magad (a2-82)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-ex.json",
+  "old": "\"Holnap a piacon vásárolok hagymát.\"",
+  "new": "\"A piacon hagymát és húst vásárolok.\"",
+  "id": "a2-160-dialogue-2",
+  "why": "tell-time-word ERROR (Holnap)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-ex.json",
+  "old": "\"szomorú\",",
+  "new": "\"elégedett\",",
+  "id": "a2-160-check-1",
+  "why": "unmet szomorú: met elégedett",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-ex.json",
+  "old": "\"Elromlik a zuhany, hívok egy szerelőt, és javítja.\"",
+  "new": "\"Elromlik a zuhany, keresek egy szerelőt, és megjavítja.\"",
+  "id": "a2-160-check-2",
+  "why": "unmet hívok and javítja: met keresek, megjavít",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-ex.json",
+  "old": "\"Mindjárt elromlott a zuhany.\"",
+  "new": "\"Elromlott a zuhany, keresek egy szerelőt, és megjavította.\"",
+  "id": "a2-160-check-2",
+  "why": "unmet mindjárt; wrong by meaning only; now one fault (present verb at the end)",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-consolidation-ex.json",
+  "old": "\"Talán ..., esetleg ..., lehet ..., valószínűleg ...\"",
+  "new": "\"Esetleg ..., valószínűleg ..., biztosan ..., talán ...\"",
+  "id": "a2-160-consolidation-1",
+  "why": "tell-opener talán; all met words",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-consolidation-ex.json",
+  "old": "\"Szerintem ..., viszont ..., pedig ..., ráadásul ...\"",
+  "new": "\"Szerintem ..., mert ..., ezért ..., hanem ...\"",
+  "id": "a2-160-consolidation-1",
+  "why": "unmet viszont, ráadásul (a2-185, b1)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-consolidation-ex.json",
+  "old": "\"dolgozik\",\n        \"hívtam\"\n",
+  "new": "\"felöltözik\",\n        \"mosakodik\"\n",
+  "id": "a2-160-consolidation-2",
+  "why": "length give-away (13 vs 8); hívtam is a verb form among infinitive-style words",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-consolidation-ex.json",
+  "old": "\"Mindjárt elromlik a mosógép.\"",
+  "new": "\"Szeretnék egy új mosógépet venni.\"",
+  "id": "a2-160-consolidation-3",
+  "why": "unmet mindjárt",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-consolidation-ex.json",
+  "old": "\"Hétköznap nyolckor kezdődik a munkaidőm.\"",
+  "new": "\"Hétköznap nyolckor kezdődik, és ötkor végződik a munkaidőm.\"",
+  "id": "a2-160-consolidation-8",
+  "why": "length give-away (61 vs 40): lengthen wrong reply",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-consolidation-ex.json",
+  "old": "Eleinte nehéz volt, de most már elég magabiztos vagyok.",
+  "new": "Régen nehéz volt, de most már elég magabiztos vagyok.",
+  "id": "a2-160-consolidation-9",
+  "why": "unmet eleinte (and először is not in a vocabulary list): régen is met (the-past-2)",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-160-consolidation-ex.json",
+  "old": "Say that last weekend you were at Ildikó's, and ate a delicious dinner.",
+  "new": "Say that last weekend you and Károly were at Ildikó's, and ate a delicious dinner.",
+  "id": "a2-160-consolidation-11",
+  "why": "prompt is singular but the answer is voltunk/ettünk (we)",
+  "sure": false
+ }
+]

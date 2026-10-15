@@ -1,0 +1,334 @@
+[
+  {
+    "file": "content/hu/exercises/a2/a2-151-ex.json",
+    "id": "a2-151-dialogue-1",
+    "set": {
+      "options": [
+        "Nem működik a klíma, és hiányzik egy párna.",
+        "Nagyon elégedett vagyok a szobával."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 47 vs 35; shorten the right option (43 vs 35)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-152-ex.json",
+    "id": "a2-152-dialogue-2",
+    "set": {
+      "options": [
+        "Szükségem van segítségre.",
+        "Nagyon elégedett vagyok."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 45 vs 24; shorten the right option to the screen phrase (25 vs 24)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-153-ex.json",
+    "id": "a2-153-intro-1",
+    "set": {
+      "options": [
+        "visszatérítés",
+        "elégedetlen",
+        "minőség"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 13 vs 7; elégedetlen (11, met) lengthens a wrong option"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-153-ex.json",
+    "id": "a2-153-dialogue-1",
+    "set": {
+      "options": [
+        "Lehet cserélni vagy visszatérítést kérni.",
+        "Nagyon elégedett vagyok a termékkel."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 51 vs 36 and *sajnálom* is unmet (in no vocabulary list); drop it (41 vs 36)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-153-ex.json",
+    "id": "a2-153-dialogue-2",
+    "set": {
+      "options": [
+        "A probléma az, hogy hibás a minősége.",
+        "A probléma az, hogy nagyon jó a minősége."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 37 vs 21; the wrong option keeps the frame, one fault (it reports no problem)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-154-ex.json",
+    "id": "a2-154-practice-1",
+    "set": {
+      "options": [
+        "Holnap fogok telefonálni.",
+        "Holnap telefonálok.",
+        "Tegnap telefonáltam."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 19 vs 14 and *hívok/hívtam* unmet; telefonál is in the lesson vocabulary (25 vs 20)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-154-ex.json",
+    "id": "a2-154-dialogue-2",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Mikor fog telefonálni a fogorvos?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Holnap reggel fog telefonálni.",
+        "Tegnap reggel már telefonált."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 24 vs 14 and *hívott* unmet; telefonál instead of hív (30 vs 29)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-154-ex.json",
+    "id": "a2-154-practice-2",
+    "set": {
+      "pairs": [
+        [
+          "Szeretnék egy időpontot foglalni.",
+          "I'd like to book an appointment."
+        ],
+        [
+          "Szeretnék módosítani egy időpontot.",
+          "I'd like to change an appointment."
+        ],
+        [
+          "Szeretnék lemondani egy időpontot.",
+          "I'd like to cancel an appointment."
+        ],
+        [
+          "Holnap fogok telefonálni.",
+          "Tomorrow I will call."
+        ]
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "*hív* is in no vocabulary list before a2-154 (only hívás); use telefonál"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-154-ex.json",
+    "id": "a2-154-practice-3",
+    "set": {
+      "tiles": [
+        "Károly",
+        "fog",
+        "telefonálni",
+        "holnap",
+        "."
+      ],
+      "solution": [
+        "Károly",
+        "fog",
+        "telefonálni",
+        "holnap",
+        "."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "same: hívni -> telefonálni"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-154-ex.json",
+    "id": "a2-154-writing-1",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say Károly will call tomorrow.",
+          "answer": "Károly fog telefonálni holnap."
+        }
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "same: hívni -> telefonálni"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-155-consolidation-ex.json",
+    "id": "a2-155-consolidation-9",
+    "set": {
+      "options": [
+        "Hibás, ezért kérek egy visszatérítést.",
+        "Nagyon elégedett vagyok a termékkel."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 58 vs 36; shorten the right option (38 vs 36)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-155-consolidation-ex.json",
+    "id": "a2-155-consolidation-11",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say you'd like to cancel an appointment because you're sick, and that the receptionist will call tomorrow.",
+          "answer": "Szeretnék lemondani egy időpontot, mert beteg vagyok, és a recepciós fog telefonálni holnap."
+        }
+      ]
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "hívni unmet (see a2-154); telefonálni"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-155-ex.json",
+    "id": "a2-155-dialogue-2",
+    "set": {
+      "options": [
+        "Igen, a recepciós azonnal megoldta.",
+        "Igen, a recepciós azonnal megoldódott."
+      ],
+      "teaches": [
+        "mediopassive-verbs-odik"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "tell-absolute *mindig*; the old wrong option contradicted \"Igen\" and tested nothing; new wrong option has one fault (megoldódott with an agent) and tests the -ódik contrast of the lesson"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-153-ex.json",
+    "id": "a2-153-check-2",
+    "set": {
+      "distractor_skills": null
+    },
+    "kind": "metadata",
+    "sure": false,
+    "why": "ds on the ungrammatical option \"hogy\" (*Nem vagyok elégedett, hogy kérek egy cserét*): rulebook says none for ungrammatical options"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-155-consolidation-ex.json",
+    "id": "a2-155-consolidation-3",
+    "set": {
+      "distractor_skills": null
+    },
+    "kind": "metadata",
+    "sure": false,
+    "why": "same: option \"hogy\" is not a well-formed form of hogy-clauses in this item"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-152-ex.json",
+    "id": "a2-152-practice-1",
+    "set": {
+      "distractor_skills": {
+        "2": "tud-infinitive-skills"
+      }
+    },
+    "kind": "metadata",
+    "sure": false,
+    "why": "tudnak is a well-formed present form of tud (tud-infinitive-skills); tudna is the same skill's own wrong form"
+  },
+  {
+    "file": "content/hu/lessons/a2/a2-151.json",
+    "old": "\"I can say something is missing, using hiányzik.\"\n      ]",
+    "new": "\"I can say something is missing, using hiányzik.\",\n        \"I can talk about someone, everyone and no one, using valaki, mindenki and senki with nem.\"\n      ]",
+    "kind": "text",
+    "sure": true,
+    "why": "goal screen lists two lines, checklist three: the third line (pronouns) is missing from the goals"
+  },
+  {
+    "file": "content/hu/lessons/a2/a2-151.json",
+    "old": "\"I can say that someone, everyone or no one did something, using valaki, mindenki and senki nem.\"",
+    "new": "\"I can talk about someone, everyone and no one, using valaki, mindenki and senki with nem.\"",
+    "kind": "text",
+    "sure": true,
+    "why": "\"senki nem\" is a fragment; \"did something\" is not what the lesson practises"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-152-b-gr.json",
+    "old": "the same way *birtokom* *van* patterns work:",
+    "new": "the same way *van egy autóm* works:",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "*birtokom* is never taught; reuse a known pattern (A1 van + possessive)"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-152-b-gr.json",
+    "old": "The thing you need takes -ra/-re, just like *szükséges* expressions you've seen before.",
+    "new": "The thing you need takes -ra/-re, as in *segítségre* and *pénzre*.",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "*szükséges* \"expressions you've seen before\" were never taught; say what the lesson shows"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-154-a-gr.json",
+    "old": "\"title\": \"Fogok Hívni: The Future Tense with fog\"",
+    "new": "\"title\": \"Fogok Telefonálni: The Future Tense with fog\"",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "hívni unmet; also see the content fix below"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-154-a-gr.json",
+    "old": "You already know one way to talk about the future: present tense plus a future time word, like *Jövőre* *folyékonyan* *beszélek* *magyarul*. Hungarian also has a dedicated future tense: *fog* (a completely regular verb) plus an infinitive. *fogok* *hívni* means \\\"I will call\\\" — a more explicit statement of what will definitely happen, often a promise or a plan someone else is counting on.",
+    "new": "You know two ways to talk about the future from Unit 27: the present tense plus a future time word, like *Jövőre* *folyékonyan* *beszélek* *magyarul*, and *fog* plus an infinitive. Here you use *fog* for calls and appointments: *fogok* *telefonálni* means \\\"I will call\\\" — a more explicit statement of what will definitely happen, often a promise or a plan someone else is counting on.",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "screen presents the dedicated future tense (fog + infinitive, a2-131) as new (\"Hungarian also has a dedicated future tense\") and calls *fog* \"a completely regular verb\"; hívni unmet"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-154-a-gr.json",
+    "old": "\"fogok hívni\", \"I will call\"",
+    "new": "\"fogok telefonálni\", \"I will call\"",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "hívni -> telefonálni"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-154-a-gr.json",
+    "old": "\"fogsz hívni\", \"you will call\"",
+    "new": "\"fogsz telefonálni\", \"you will call\"",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "hívni -> telefonálni"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-154-a-gr.json",
+    "old": "\"fog hívni\", \"he/she will call\"",
+    "new": "\"fog telefonálni\", \"he/she will call\"",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "hívni -> telefonálni"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-154-a-gr.json",
+    "old": "\"fogunk hívni\", \"we will call\"",
+    "new": "\"fogunk telefonálni\", \"we will call\"",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "hívni -> telefonálni"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-154-a-gr.json",
+    "old": "\"A recepciós fog hívni holnap.\"",
+    "new": "\"A recepciós fog telefonálni holnap.\"",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "hívni -> telefonálni"
+  }
+]

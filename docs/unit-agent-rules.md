@@ -125,7 +125,8 @@ it is known and is never presented as new.
   render-script issue); `node scripts/audit-reader-coverage.js hu --story
   <story stem> --top 0` (it names every "literal compound guess" word:
   report each with a gloss, `word | lemma | pos | gloss |`, for
-  `scripts/fill-dictionary-gaps.py import`); `python scripts/validate-content.py --changed`.
+  `scripts/fill-dictionary-gaps.py import`; the gloss is the lemma's
+  meaning, never the inflected form's, as it is stored under the lemma); `python scripts/validate-content.py --changed`.
 - Parked, don't report or fix: sentence-builder alternative orders
   (ROADMAP 148(b)); vocabulary lists re-listing earlier words.
 
@@ -153,4 +154,4 @@ item (vary the words) · a wrong option whose fault is the person, not the
 form the item tests. · Readers' wrong Hungarian (HU A2): *amit olvasok* is right (a relative
 *amit* takes the indefinite verb; never "fix" it to *olvasom*); *ki* as a relative
 (*kollégám, ki …*) is literary-correct, so never use it as a wrong option;
-*Szabad vagy foglalt vagy?* is natural. · *fog* + infinitive word order: with nothing in focus the infinitive comes first (*valószínűleg pihenni fogok*, not *valószínűleg fogok pihenni*); *fog* comes first only when a focused word sits right before it (*Holnap fogok dolgozni*) · *meg-* is a perfective prefix, not a definiteness marker (*Vettem a kabátot* is right) · *El nem fogok menni* is acceptable emphatic Hungarian, so never use it as a wrong option · a grammar pattern taught in a lesson but tagged with a neighbouring skill (a2-140's hypothetical *ha* was tagged `nek-conditional` while its skill sat at B1): check that the pattern's own skill is taught where the lesson teaches it.
+*Szabad vagy foglalt vagy?* is natural. · *fog* + infinitive word order: with nothing in focus the infinitive comes first (*valószínűleg pihenni fogok*, not *valószínűleg fogok pihenni*); *fog* comes first only when a focused word sits right before it (*Holnap fogok dolgozni*) · *meg-* is a perfective prefix, not a definiteness marker (*Vettem a kabátot* is right) · *El nem fogok menni* is acceptable emphatic Hungarian, so never use it as a wrong option · a grammar pattern taught in a lesson but tagged with a neighbouring skill (a2-140's hypothetical *ha* was tagged `nek-conditional` while its skill sat at B1): check that the pattern's own skill is taught where the lesson teaches it. · a review unit's screens presenting the units they review as new (open with "You know … from Unit N") · a story or comprehension question drilling a B1 form (*megkérte volna*): stories are exempt from met words, not from the level.

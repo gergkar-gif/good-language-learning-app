@@ -1,0 +1,242 @@
+[
+  {
+    "file": "content/hu/exercises/a2/a2-141-ex.json",
+    "id": "a2-141-intro-2",
+    "set": {
+      "options": [
+        "hisz",
+        "lát",
+        "néz"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "*hall* is unmet (a2-169); *néz* is met"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-141-ex.json",
+    "id": "a2-141-controlled-4",
+    "set": {
+      "sentence": "Fáradt vagy, ____, hosszú napod volt.",
+      "english": "You are tired, I guess you had a long day."
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "*látszol* is unmet (b2); reuse the screen example with met words"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-141-ex.json",
+    "id": "a2-141-practice-1",
+    "set": {
+      "question": "Which phrase opens an opinion with the verb hisz, \"to believe\"?",
+      "options": [
+        "azt hiszem",
+        "szerintem",
+        "gondolom"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away (10 vs 4); the old stem also said azt hiszem \"never needs hogy\", which contradicts a2-58 (azt hiszem, hogy)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-141-ex.json",
+    "id": "a2-141-check-1",
+    "set": {
+      "question": "Which word means \"idea\"?",
+      "options": [
+        "ötlet",
+        "vélemény",
+        "talán"
+      ]
+    },
+    "kind": "text",
+    "sure": true,
+    "why": "check-1 was identical to intro-1 (same stem, options)"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-141-a-gr.json",
+    "old": "*azt* *hiszem* (\\\"I think, I believe\\\") is built from *hisz* (\\\"to believe\\\") in its definite form *hiszem*, plus *azt*, the accusative of *az* (\\\"that\\\") pointing forward to the idea that follows. Unlike an English \\\"I believe that...\\\", no *hogy* is needed — the clause just follows directly after a comma. You've already heard *Károly* and others say it in earlier lessons; now you know exactly how it's built.",
+    "new": "You know *azt* *hiszem* (\\\"I think, I believe\\\") from stating opinions in earlier lessons. It is built from *hisz* (\\\"to believe\\\") in its definite form *hiszem*, plus *azt*, the accusative of *az* (\\\"that\\\") pointing forward to the idea that follows. You already use it with *hogy* (*Azt hiszem, hogy ...*); in everyday speech *hogy* is often dropped and the clause simply follows after a comma.",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "screen presented azt hiszem as new and said no hogy is needed, contradicting a2-58 which taught azt hiszem, hogy"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-141-a-gr.json",
+    "old": "*azt* *hiszem* itself drops *hogy*, but a question built around it — *Azt* *hiszed*, *hogy*...? — can still use *hogy*, because now *hiszed* is the main verb of a real question, not just an opinion-opener sitting in front of a statement.",
+    "new": "*Azt* *hiszem*, *hogy*... and *Azt* *hiszem*, ... mean the same: *hogy* is optional. In a question, *Azt* *hiszed*, *hogy*...? normally keeps it.",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "tip said azt hiszem \"drops hogy\"; make it consistent with a2-58 and the new text"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-141-b-gr.json",
+    "old": "It sits at the front or end of a sentence exactly like *szerintem* and *azt* *hiszem*, but",
+    "new": "It can sit at the front, in the middle or at the end of a sentence, like *szerintem* and *azt* *hiszem*, which you already know, but",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "its own example puts gondolom in the middle, not front or end; mark szerintem/azt hiszem as known"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-142-a-gr.json",
+    "old": "put *inkább* right in front of the verb (or the word you're choosing) to say what you'd rather do.",
+    "new": "put *inkább* right before the thing or action you choose to say what you'd rather do.",
+    "kind": "hungarian",
+    "sure": false,
+    "why": "in *Inkább teát iszom* inkább stands before the object, not right in front of the verb"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-142-ex.json",
+    "id": "a2-142-practice-1",
+    "set": {
+      "category": "grammar",
+      "question": "Which word completes \"Inkább teát iszom, ____ kávét\" (I'd rather drink tea than coffee)?",
+      "options": [
+        "mint",
+        "mert",
+        "és"
+      ],
+      "teaches": [
+        "inkabb-mint"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "stem claimed inkább goes \"right in front of the verb\" but in the screen's own examples it stands before the chosen object; item tests the inkább ... mint pattern, so grammar and inkabb-mint, not vocabulary"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-143-ex.json",
+    "id": "a2-143-intro-1",
+    "set": {
+      "options": [
+        "összehasonlít",
+        "megbeszélés",
+        "egyformán"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 13 vs 9; megbeszélés (11, met) lengthens a wrong option"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-143-ex.json",
+    "id": "a2-143-dialogue-2",
+    "set": {
+      "options": [
+        "Mindkettő jó, egyformán szeretem őket.",
+        "Mindkettő jó, egyformán szeretem azt."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "*egyiket* is unmet (b1) and the old wrong option contradicted itself (both good, like neither); one fault now: singular azt for two restaurants"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-143-a-gr.json",
+    "old": "*a* *másik* (\\\"the other one\\\") is a handy stand-in for *mint* when you don't want to repeat the full noun — *Ez* *jobb*, *mint* *a* *másik* works for a restaurant, a film, or a room alike.",
+    "new": "*a* *másik* (\\\"the other one\\\") is a handy stand-in for the second noun when you don't want to repeat it: *Ez* *jobb*, *mint* *a* *másik* works for a restaurant, a film, or a room alike.",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "tip called *a másik* a stand-in for *mint*; it stands in for the repeated noun"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-143-b-gr.json",
+    "old": "add the -n/-an/-en ending you use for manner adverbs (*gyorsan*, *lassan*) and you get *egyformán*",
+    "new": "add the manner-adverb ending *-n* (as in *gyorsan*, *lassan*, where it follows a consonant as -an/-en); because *egyforma* ends in -a, the vowel lengthens and you get *egyformán*",
+    "kind": "hungarian",
+    "sure": false,
+    "why": "egyforma + -an would be *egyformaan*; the final -a lengthens to -á before -n"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-143-b-gr.json",
+    "old": "Mindkettő jó könyv, egyformán tetszettek.",
+    "new": "Mindkettő jó könyv, egyformán szeretem őket.",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "*tetszettek* (tetszik) is first taught at a2-181; plural verb after mindkettő also odd"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-143-b-gr.json",
+    "old": "Both are good books, I liked them equally.",
+    "new": "Both are good books, I like them equally.",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "English matches the new example"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-144-ex.json",
+    "id": "a2-144-check-1",
+    "set": {
+      "question": "Which sentence means \"I agree with Károly\"?",
+      "options": [
+        "Egyetértek Károllyal.",
+        "Egyetértek Károlytól.",
+        "Egyetértek Károlyra."
+      ],
+      "teaches": [
+        "verb-government-val-vel"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "check-1 repeated practice-1 (same stem and options); new item tests the -val/-vel government taught on screen 1"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-145-ex.json",
+    "id": "a2-145-dialogue-2",
+    "set": {
+      "options": [
+        "Azért gondolom, mert izgalmasabb.",
+        "Azért gondolom, mert rosszabb."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "*egyáltalán* is first taught at a2-188 (check-content tell-absolute ERROR); wrong reply gives a reason that cannot support \"better\" (rosszabb is met)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-145-consolidation-ex.json",
+    "id": "a2-145-consolidation-8",
+    "set": {
+      "options": [
+        "Azt hiszem, ez jobb, mint a másik.",
+        "Két éjszakára foglaltam szobát."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 48 vs 31; shorten the right option (34 vs 31)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-145-consolidation-ex.json",
+    "id": "a2-145-consolidation-7",
+    "set": {
+      "sentences": [
+        "Szerintem menjünk el ma este vacsorázni.",
+        "Károly azt hiszi, hogy az olasz étterem jobb, mert ott finomabb az étel.",
+        "Egyetértek, az olasz étterem jobb, mint a kínai.",
+        "Végül az olasz étterembe mentünk vacsorázni."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "*Károly szerint* (noun + szerint) and *sokkal* are never taught; use azt hiszi (screen 141) and drop sokkal"
+  },
+  {
+    "file": "content/hu/lessons/a2/a2-145-consolidation.json",
+    "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can introduce an opinion with szerintem, azt hiszem, or gondolom.\"",
+    "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can give my opinion with szerintem, azt hiszem or gondolom.\"",
+    "kind": "text",
+    "sure": true,
+    "why": "check-content checklist-shared with a2-141 (goal screen)"
+  },
+  {
+    "file": "content/hu/lessons/a2/a2-145-consolidation.json",
+    "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can introduce an opinion with szerintem, azt hiszem, or gondolom.\"",
+    "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can give my opinion with szerintem, azt hiszem or gondolom.\"",
+    "kind": "text",
+    "sure": true,
+    "why": "check-content checklist-shared with a2-141 (checklist)"
+  }
+]

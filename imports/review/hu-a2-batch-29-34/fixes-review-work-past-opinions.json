@@ -1,0 +1,278 @@
+[
+  {
+    "file": "content/hu/exercises/a2/a2-146-ex.json",
+    "id": "a2-146-intro-1",
+    "set": {
+      "options": [
+        "munkatárs",
+        "szomszéd",
+        "feladat"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 9 vs 5; szomszéd (8) and feladat (7) are met and not synonyms of munkatárs"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-150-consolidation-ex.json",
+    "id": "a2-150-consolidation-1",
+    "set": {
+      "options": [
+        "munkatárs",
+        "szomszéd",
+        "feladat"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "same length give-away as a2-146-intro-1 (replay kept, options match the lesson fix)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-146-ex.json",
+    "id": "a2-146-dialogue-2",
+    "set": {
+      "options": [
+        "Nem, ma nem megyek be, otthon dolgozom.",
+        "Nem, ma nem bemegyek, otthon dolgozom."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 39 vs 21; the wrong option now has the same tail and the single fault nem bemegyek"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-147-ex.json",
+    "id": "a2-147-dialogue-1",
+    "set": {
+      "options": [
+        "Igen, jól tudok zongorázni.",
+        "Igen, szabad zongorázni."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 32 vs 24; shorten the right option (27 vs 24)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-147-ex.json",
+    "id": "a2-147-writing-1",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say you can't play the piano because you never learned.",
+          "answer": "Nem tudok zongorázni, mert sosem tanultam."
+        }
+      ]
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "*jogosítványom* is first taught at a2-210"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-148-ex.json",
+    "id": "a2-148-dialogue-2",
+    "set": {
+      "options": [
+        "Egy koncerten voltunk, nagyon jó volt.",
+        "Egy koncerten leszünk, nagyon jó lesz."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 38 vs 22; the wrong option keeps the single fault (future instead of past)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-148-ex.json",
+    "id": "a2-148-practice-1",
+    "set": {
+      "question": "Which one means \"I ate up the soup\" (the whole soup, finished)?",
+      "options": [
+        "Megettem a levest.",
+        "Ettem egy levest.",
+        "Eszem a levest."
+      ],
+      "teaches": [
+        "meg-meaning"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "length give-away 18 vs 13; the item tests meg- (perfective), not definiteness: ettem is the same form for a definite and an indefinite object in the 1st person, so \"definite-past\" was the wrong tag"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-149-ex.json",
+    "id": "a2-149-practice-1",
+    "set": {
+      "question": "Which sentence uses the present tense for something already arranged?"
+    },
+    "kind": "text",
+    "sure": false,
+    "why": "old stem \"already-fixed plan\" also fits Tervezünk sokat pihenni (a plan); the new stem names the one tense that differs"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-149-ex.json",
+    "id": "a2-149-practice-5",
+    "set": {
+      "options": [
+        "biztosan",
+        "valószínűleg",
+        "mindenesetre"
+      ],
+      "teaches": [
+        "a2-future-plans-vocab"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "length give-away 12 vs 8 and tell-absolute *soha*; mindenesetre (12, met) replaces soha; the word is a2-future-plans vocabulary, so that unit's vocab skill (review items keep the skill they review)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-149-ex.json",
+    "id": "a2-149-dialogue-2",
+    "set": {
+      "options": [
+        "Jó ötlet, menjünk!",
+        "Jó ötlet, mentünk!"
+      ],
+      "teaches": [
+        "junk-suggestion"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "old wrong option *Inkább teát iszom.* is a natural way to decline Menjünk moziba?, so a second reply could be right; new wrong option has one fault (past mentünk for the menjünk suggestion)"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-150-ex.json",
+    "id": "a2-150-check-1",
+    "set": {
+      "question": "Which sentence gives its reason with extra emphasis?",
+      "options": [
+        "Azért nem megyek, mert fáradt vagyok.",
+        "Nem megyek, mert fáradt vagyok.",
+        "Nem megyek, ezért fáradt vagyok."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "length give-away 11 vs 4 (azért, mert vs mert/hogy); whole sentences of similar length; wrong ones lack azért or reverse the reason"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-150-ex.json",
+    "id": "a2-150-check-2",
+    "set": {
+      "options": [
+        "Szerintem ez jobb, mert olcsóbb.",
+        "Szerintem ez egy olcsó étterem.",
+        "Azt hiszem, ez a jobb étterem."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away 32 vs 21 and tell-opener (only the right option had an opinion opener); all three now open with an opinion, only one has a reason"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-150-ex.json",
+    "id": "a2-150-dialogue-1",
+    "set": {
+      "options": [
+        "Szerintem ez jobb, mert olcsóbb.",
+        "Szerintem ez jobb, mint olcsóbb."
+      ],
+      "teaches": [
+        "mert-because"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "*drágább* is unmet (check-content) and the old wrong option was nonsense twice over (more expensive because cheaper); new wrong option has one fault (mint for mert)"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-146-a-gr.json",
+    "old": "and adding a possessive suffix to who you have to do something with *kell* + a personal infinitive.",
+    "new": "and putting a personal ending on the infinitive after *kell* (*Kell dolgoznom*).",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "sentence is garbled (\"a possessive suffix to who you have to do something with\"); kell + inflected infinitive takes a personal ending, not a possessive suffix"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-147-a-gr.json",
+    "old": "Petra nem tud vezetni, mert nincs jogosítványa.",
+    "new": "Petra nem tud zongorázni, mert még sosem tanult.",
+    "kind": "hungarian",
+    "sure": false,
+    "why": "*jogosítvány* (a2-210) is unmet in a review screen"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-147-a-gr.json",
+    "old": "Petra can't drive, because she doesn't have a license.",
+    "new": "Petra can't play the piano, because she has never learned.",
+    "kind": "text",
+    "sure": false,
+    "why": "English of the row above"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-148-a-gr.json",
+    "old": "[\"vettem egy kabátot / megvettem a kabátot\", \"I bought a coat / I bought the coat\"]",
+    "new": "[\"vettél egy kabátot / vetted a kabátot\", \"you bought a coat / you bought the coat\"]",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "megvettem is not the \"definite\" form of vettem: meg- is a perfective prefix and 1st-person -tem is the same for both objects; the row must show a real definite/indefinite pair (2nd person)"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-147-a-gr.json",
+    "old": "*tud* + infinitive states a personal skill",
+    "new": "You know *tud* + infinitive from Unit 23: it states a personal skill",
+    "kind": "text",
+    "sure": false,
+    "why": "screen body reads as new teaching; title says \"Bringing ... together\" (unsure how strict)"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-147-b-gr.json",
+    "old": "lehet + infinitive (never conjugated) asks",
+    "new": "You know *lehet* and *szabad* from Unit 23. lehet + infinitive (never conjugated) asks",
+    "kind": "text",
+    "sure": false,
+    "why": "same"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-148-a-gr.json",
+    "old": "Regular verbs add -t-",
+    "new": "You know the past tense from Units 24 and 25. Regular verbs add -t-",
+    "kind": "text",
+    "sure": false,
+    "why": "same"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-148-b-gr.json",
+    "old": "*aztán*, *utána*, *később*, *előbb* and *végül* chain",
+    "new": "You know the storytelling tools from Unit 26: *aztán*, *utána*, *később*, *előbb* and *végül* chain",
+    "kind": "text",
+    "sure": false,
+    "why": "same"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-149-a-gr.json",
+    "old": "Present tense + a future time word",
+    "new": "You know the three ways to talk about the future from Unit 27. Present tense + a future time word",
+    "kind": "text",
+    "sure": false,
+    "why": "same"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-149-b-gr.json",
+    "old": "The 1st-person plural imperative (-junk/-jünk) asked",
+    "new": "You know the conditional from Unit 28. The 1st-person plural imperative (-junk/-jünk) asked",
+    "kind": "text",
+    "sure": false,
+    "why": "same"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-150-a-gr.json",
+    "old": "szerintem, azt *hiszem* and *gondolom* all open an opinion",
+    "new": "You know the opinion tools from Unit 29. szerintem, azt *hiszem* and *gondolom* all open an opinion",
+    "kind": "text",
+    "sure": false,
+    "why": "same"
+  }
+]

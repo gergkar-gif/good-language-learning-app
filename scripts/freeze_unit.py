@@ -96,6 +96,9 @@ def main():
     accepted = []
     for a in accepts:
         check, eid, why = (a.split(":", 2) + ["", ""])[:3]
+        # challenge findings carry ids like "a2-168:challenge"
+        if why.startswith("challenge:"):
+            eid, why = eid + ":challenge", why[len("challenge:"):]
         if check not in ACCEPTABLE:
             sys.exit(f"--accept {check}: only {', '.join(sorted(ACCEPTABLE))} can be accepted; fix the rest")
         if not why.strip():
