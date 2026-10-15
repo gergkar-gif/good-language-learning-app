@@ -111,7 +111,7 @@
         "hívja",
         "a",
         "százizenkettőt",
-        "életveszély",
+        "baleset",
         "esetén",
         "!"
       ],
@@ -120,11 +120,11 @@
         "hívja",
         "a",
         "százizenkettőt",
-        "életveszély",
+        "baleset",
         "esetén",
         "!"
       ],
-      "english": "Call 112 immediately in case of danger to life!",
+      "english": "Call 112 immediately in case of an accident!",
       "teaches": [
         "a2-pharmacy-vocab"
       ],
@@ -134,10 +134,10 @@
       "id": "a2-219-practice-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A mentők tíz percen belül kiérkeztek a ____ helyszínére.",
+      "sentence": "A mentők hamarosan ott voltak a ____ helyszínén.",
       "hint": "accident",
       "answer": "baleset",
-      "english": "The ambulance arrived at the scene of the accident within ten minutes.",
+      "english": "The ambulance was soon at the scene of the accident.",
       "teaches": [
         "a2-pharmacy-vocab"
       ],
@@ -179,11 +179,11 @@
       "prompt": [
         {
           "speaker": "Diszpécser 112",
-          "text": "112 Segélyhívó központ. Hol történt a vészhelyzet?"
+          "text": "112, segélyhívás. Hol történt a vészhelyzet?"
         },
         {
           "speaker": "Hívó",
-          "text": "Budapest, hetedik kerület, Akácfa utca tíz. Nagyon ____ segítségre van szükségünk!"
+          "text": "Budapest, Akácfa utca tíz. Nagyon ____ segítségre van szükségünk!"
         }
       ],
       "options": [
@@ -204,7 +204,7 @@
       "prompt": [
         {
           "speaker": "Ügyeletes orvos",
-          "text": "Jó estét! Mi a fő panasza a kislánynak?"
+          "text": "Jó estét! Itt a rendelő. Mi a baj a lányával?"
         },
         {
           "speaker": "Anya",
@@ -226,10 +226,10 @@
       "id": "a2-219-writing-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Hétvégén a háziorvosi ügyeleten gyors ellátást kaptunk, az orvos receptet írt fel, és az ügyeletes ____ váltottuk ki.",
+      "sentence": "Hétvégén a háziorvosi ügyeleten gyors segítséget kaptunk, az orvos receptet írt fel, és az ügyeletes ____ váltottuk ki.",
       "hint": "in the pharmacy",
       "answer": "patikában",
-      "english": "On the weekend we received fast care at the urgent GP service, the doctor wrote a prescription, and we collected it at the on-call pharmacy.",
+      "english": "On the weekend we received fast help at the urgent GP service, the doctor wrote a prescription, and we collected it at the on-call pharmacy.",
       "teaches": [
         "ban-ben-in"
       ],
@@ -241,23 +241,25 @@
       "category": "grammar",
       "tiles": [
         "A",
-        "diszpécser",
-        "utasításait",
+        "diszpécsernek",
+        "mindent",
         "pontosan",
-        "követni",
+        "el",
         "kell",
+        "mondani",
         "."
       ],
       "solution": [
         "A",
-        "diszpécser",
-        "utasításait",
+        "diszpécsernek",
+        "mindent",
         "pontosan",
-        "követni",
+        "el",
         "kell",
+        "mondani",
         "."
       ],
-      "english": "The instructions of the dispatcher must be followed precisely.",
+      "english": "You must tell the dispatcher everything precisely.",
       "teaches": [
         "kell-infinitive"
       ],
@@ -283,12 +285,93 @@
       "id": "a2-219-check-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Az éjszakai gyógyszertárban egy kis ügyeleti pótdíjat kell fizetni a csengetés ____.",
+      "sentence": "Az éjszakai gyógyszertárban egy kicsit többet kell fizetni a csengetés ____.",
       "hint": "after",
       "answer": "után",
-      "english": "At the night pharmacy a small night fee must be paid after ringing the bell.",
+      "english": "At the night pharmacy you have to pay a little more after ringing the bell.",
       "teaches": [
         "temporal-postpositions"
+      ],
+      "stage": "check"
+    },
+    {
+      "id": "a2-219-controlled-5",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "rendőrség",
+          "police"
+        ],
+        [
+          "ellop",
+          "to steal"
+        ],
+        [
+          "feljelentés",
+          "police report"
+        ],
+        [
+          "Talált Tárgyak",
+          "lost property office"
+        ]
+      ],
+      "teaches": [
+        "a2-pharmacy-vocab"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-219-practice-5",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "sentence": "A buszon ____ a táskámat, ezért a rendőrségre megyek.",
+      "hint": "they stole",
+      "answer": "ellopták",
+      "english": "My bag was stolen on the bus, so I'm going to the police.",
+      "teaches": [
+        "a2-pharmacy-vocab"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-219-dialogue-3",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Rendőr",
+          "text": "Jó napot! Miben segíthetek?"
+        },
+        {
+          "speaker": "Turista",
+          "text": "Ellopták a telefonomat. ____ szeretnék tenni."
+        }
+      ],
+      "options": [
+        "Feljelentést",
+        "Reklamációt",
+        "Befizetést"
+      ],
+      "correct": 0,
+      "teaches": [
+        "a2-pharmacy-vocab"
+      ],
+      "stage": "dialogue"
+    },
+    {
+      "id": "a2-219-check-3",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "question": "You left your umbrella on the tram. Where do you ask for it?",
+      "options": [
+        "Talált Tárgyak",
+        "Orvosi ügyelet",
+        "Mentőszolgálat"
+      ],
+      "correct": 0,
+      "teaches": [
+        "a2-pharmacy-vocab"
       ],
       "stage": "check"
     }

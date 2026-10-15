@@ -961,6 +961,112 @@
     }
    ]
   },
+  "a2/banking": {
+   "frozen": "2026-10-15",
+   "reason": "HU A2 pass 39–44: read by Sonnet (3 units per reader), fixes filtered and applied by Claude, unmet words cleared (2026-10-15)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a2-211-writing-1",
+     "why": "megnézte = meg- + néz (a1-142, meg- a2-108-a)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-211-writing-2",
+     "why": "megkaptam = meg- + kap (a1-154, a2-168), meg- a2-108-a"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-212-controlled-2",
+     "why": "megnézni = meg- + néz (a1-142) + infinitive -ni (a1-143-b)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-212-dialogue-2",
+     "why": "legközelebbi = leg- + közel/közeli (a1-133, a2-14; superlative a2-76-b)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-212:challenge",
+     "why": "ütnöm = the verb of beüt (a2-212 vocabulary, separated prefix: be kell ütnöm) + -nöm (a2-105-b)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-213-controlled-1",
+     "why": "megadnod = meg- + ad (a2-77) + -nod (inflected infinitive, a2-105-b)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-213-writing-1",
+     "why": "visszaadta = vissza- + ad (a2-77), definite past (a2-118-b); visszajáró is in the a2-213 vocabulary"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-214-check-1",
+     "why": "megadni = meg- + ad (a2-77) + infinitive -ni"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-214-check-2",
+     "why": "írnod = ír (a1-61, a2-105) + -nod (inflected infinitive, a2-105-b)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-214-dialogue-2",
+     "why": "megkaptad = meg- + kap (a1-154, a2-168), past, meg- a2-108-a"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-215-consolidation-10",
+     "why": "tiltanom = letilt (a2-215 vocabulary, le kell tiltanom) + -nom (a2-105-b)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-215-consolidation-17",
+     "why": "tiltani = letilt (a2-215 vocabulary, le tudom tiltani) with the infinitive -ni"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-215-consolidation-5",
+     "why": "tiltani = letilt (a2-215 vocabulary, Le kell tiltani) with the infinitive -ni"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-215-consolidation-20",
+     "why": "visszakaptam = vissza- + kap (a1-154, a2-168), past"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-215-consolidation:challenge",
+     "why": "hagyom = the verb of jóváhagy (a2-214 vocabulary, separated prefix: hagyom jóvá)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-215-check-2",
+     "why": "fizethetsz = fizet (a1-105) + potential -het (a2-115-b); the item tests exactly this suffix"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-212",
+     "why": "beüt (a2-212-a-gr screen and the lesson challenge \"be kell ütnöm\"), ingyenes (a2-212-b-gr screen), levonás (a2-212-b-gr screen and used in a2-215)"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-213",
+     "why": "kerekítés (cash rounding) is taught on the a2-213-b-gr screen"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-215",
+     "why": "ellopott (stolen) is taught on the a2-215-a-gr screen (lost or stolen card)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-215-practice-2",
+     "why": "megkaptam = meg- + kap (a1-154, a2-168), past, meg- a2-108-a"
+    }
+   ]
+  },
   "a2/cooking": {
    "frozen": "2026-10-14",
    "reason": "A2 pass: paired Sonnet read (units 9-10), fix list filtered by Claude and applied (2026-10-14)",
@@ -1296,6 +1402,73 @@
    "reason": "HU A2 read 2026-10-14: Sonnet paired read, fixes filtered by Claude",
    "accepted": []
   },
+  "a2/inflected-infinitives-necessity": {
+   "frozen": "2026-10-15",
+   "reason": "HU A2 pass 39–44: read by Sonnet (3 units per reader), fixes filtered and applied by Claude, unmet words cleared (2026-10-15)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a2-205-consolidation-17",
+     "why": "le … adnunk: lead, listed in a2-205 as leadnom; the checker does not join the separated prefix"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-205-check-2",
+     "why": "össze … pakolnunk: összepakol (a2-195) split by kell; the checker does not join it"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-205-intro-2",
+     "why": "vizsgázni: listed in a2-205 as vizsgáznom"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-205-practice-1",
+     "why": "be … fejeznünk: befejez, listed in a2-205 as befejeznem; separated prefix"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-201",
+     "why": "kötelező: listed word not drilled; read in batch 39–44, kept"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-202",
+     "why": "számla, befizet, különben: listed words not drilled; read in batch 39–44, kept"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-203",
+     "why": "belépnem: listed form not drilled; read in batch 39–44, kept"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-205",
+     "why": "elfoglaltság: listed word not drilled; read in batch 39–44, kept"
+    }
+   ]
+  },
+  "a2/inflected-postpositions": {
+   "frozen": "2026-10-15",
+   "reason": "HU A2 pass 39–44: read by Sonnet (3 units per reader), fixes filtered and applied by Claude, unmet words cleared (2026-10-15)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a2-199-check-1",
+     "why": "vs, distinction: English word in an English prompt"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-199",
+     "why": "miattunk: on the a2-199-a paradigm screen"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-200",
+     "why": "kereszteződés: listed word not drilled; read in batch 39–44, kept"
+    }
+   ]
+  },
   "a2/lak-lek-suffix": {
    "frozen": "2026-10-15",
    "reason": "HU A2 pass: read by Sonnet, fixes filtered and applied by Claude (2026-10-15)",
@@ -1508,6 +1681,134 @@
      "check": "consolidation-copy",
      "id": "a2-20-consolidation-9",
      "why": "replay kept: consolidations mostly reuse the unit's items (user's preference)"
+    }
+   ]
+  },
+  "a2/pharmacy": {
+   "frozen": "2026-10-15",
+   "reason": "HU A2 pass 39–44: read by Sonnet (3 units per reader), fixes filtered and applied by Claude, unmet words cleared (2026-10-15)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a2-216-dialogue-2",
+     "why": "szedhetem = szed (a2-216 vocabulary) + potential -het (a2-115-b) with definite ending"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-217-controlled-2",
+     "why": "adnod = ad (a2-77) + -nod (inflected infinitive, a2-105-b), with meg"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-218-dialogue-2",
+     "why": "vezethetek = vezet (a2-218 vocabulary) + potential -het (a2-115-b)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-218:challenge",
+     "why": "vezethetek = vezet (a2-218 vocabulary) + potential -het (a2-115-b)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-219-controlled-2",
+     "why": "megkérdezte = meg- + kérdez (a1-62), definite past (a2-118-b)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-220-consolidation-15",
+     "why": "okozhat = okoz (a2-218 vocabulary) + potential -het (a2-115-b)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-220-consolidation-9",
+     "why": "háziorvosi = háziorvos (a2-219 vocabulary) + adjective -i (a2-08-c)"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-220",
+     "why": "egészség is the topic of the a2-220-b-gr screen"
+    }
+   ]
+  },
+  "a2/plural-possessed": {
+   "frozen": "2026-10-15",
+   "reason": "HU A2 pass 39–44: read by Sonnet (3 units per reader), fixes filtered and applied by Claude, unmet words cleared (2026-10-15)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a2-191-check-1",
+     "why": "vs, difference: English word in an English prompt"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-193-controlled-4",
+     "why": "difference: English word in an English prompt"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-195-check-2",
+     "why": "iratainkat: irat is taught in a2-195 (vocabulary lists irataim)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-195-writing-2",
+     "why": "irataimra: irat is taught in a2-195 (vocabulary lists irataim)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-195:challenge",
+     "why": "bálinté: the story character Bálint + anaphoric -é, taught on a2-195-c"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-194",
+     "why": "könyveimben, segítség: listed words not drilled; read in batch 39–44, kept"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-195",
+     "why": "készülődés, elindul, elfelejt: listed words not drilled; read in batch 39–44, kept"
+    }
+   ]
+  },
+  "a2/post-office": {
+   "frozen": "2026-10-15",
+   "reason": "HU A2 pass 39–44: read by Sonnet (3 units per reader), fixes filtered and applied by Claude, unmet words cleared (2026-10-15)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a2-206-intro-2",
+     "why": "adnom = ad + -nom (inflected infinitive, a2-105-b; ad taught in a2-77 'ad: Giving Someone Something'); used with the met felad"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-208-writing-1",
+     "why": "tizedikéig = tizedik (ordinals, a2-07) with the date form -e (a2-07-b) and time -ig, which is accepted at A2"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-209-writing-2",
+     "why": "legközelebbi = leg- + közel + -bb + -i of the met közeli/közel (a1-133, a2-14, superlative a2-76-b)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-210-consolidation-16",
+     "why": "tértivevénnyel = tértivevény (a2-207 vocabulary) + -val/-vel with assimilation (a1-136-a)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a2-210-practice-2",
+     "why": "veheti = át + vesz (a1-93) + potential -het (a2-115-b), 'the addressee may collect'"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-207",
+     "why": "kitölt is used as the separated 'töltse ki' in a2-207-controlled-4 and a2-207-dialogue-2 (prefix after the verb, which the checker does not join)"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a2-210",
+     "why": "személyazonosság is the subject of the lesson's grammar screen a2-210-a-gr (personal identification); felmutat is used as the separated 'mutassa fel' in a2-210-controlled-2 and a2-210-practice-1; kézbesítő is used in the a2-210 consolidation"
     }
    ]
   },

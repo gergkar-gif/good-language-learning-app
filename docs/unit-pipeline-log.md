@@ -269,6 +269,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-14 | HU A2 25–28 | paired read (2 units/reader) | | 235k + 235k, 10.5 | 128 applied of 132, 0 rejected | ~117k reader tokens/unit (logged as ~59k until 10-15: 470k is for 4 units); 1 skill-level clash (a2-140) found only via the batch note |
 | 10-15 | HU A2 29–34 | paired read (**3 units/reader**, trial) | | 327k + 352k, 20 | 235 applied of 236, 0 rejected | ~113k reader tokens/unit (×0.97 of 25–28; first logged as ×1.9 against the wrong ~59k), ~39 applied fixes/unit (×1.2); trial dropped on the wrong figure, back to 2 units/reader |
 | 10-15 | HU A2 35–38 | paired read (2 units/reader) | | 301k + 280k, 19 + 17 | 210 applied of 211, 0 rejected; 13 more by Claude | ~145k reader tokens/unit (×1.24 of 25–28); applied reader fixes 56 / 52 / 48 / 54 (~52/unit, ×1.6 of ~32); both report-file writes refused by the harness |
+| 10-15 | HU A2 39–44 | paired read (**3 units/reader**) | Sonnet fixer for 42–44 unmet words: 212k, 12 | 386k + 449k, 23 + 33 | 426 applied of 426, 0 rejected; ~20 more by Claude | ~139k reader tokens/unit (A ~129k, B ~150k; ×0.96 of 35–38's ~145k); applied reader fixes 72 / 70 / 58 / 77 / 74 / 75 (~71/unit, ×1.36 of ~52); ~250 unmet-word suspects left in 42–44 needed a fixer (~71k/unit); reader B's report write refused, A's allowed |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
