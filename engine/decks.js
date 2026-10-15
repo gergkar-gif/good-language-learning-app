@@ -57,6 +57,31 @@ const Decks = (function () {
     let sortOrder = 'natural'; // 'natural' | 'alphabetical' — how the open deck's word list is displayed. Shuffling is a per-mode concern (Match/Learn already randomize their own round), never something that reorders the list itself.
     let studyMode = null;      // null | 'match' | 'learn' | 'blast' — which study mode (if any) is open over the current deck
 
+    const SESSION_LIMIT_KEY = 'parlour_deck_session_limit';
+
+    function getStoredSessionLimit() {
+        try {
+            if (typeof localStorage === 'undefined') return null;
+            const raw = localStorage.getItem(SESSION_LIMIT_KEY);
+            if (raw) {
+                const n = parseInt(raw, 10);
+                if (!isNaN(n) && n > 0) return n;
+            }
+        } catch (error) {}
+        return null;
+    }
+
+    function setStoredSessionLimit(limit) {
+        try {
+            if (typeof localStorage === 'undefined') return;
+            if (limit && limit > 0) {
+                localStorage.setItem(SESSION_LIMIT_KEY, String(limit));
+            } else {
+                localStorage.removeItem(SESSION_LIMIT_KEY);
+            }
+        } catch (error) {}
+    }
+
     if (typeof document !== 'undefined') {
         document.addEventListener('language-changed', () => {
             catalogue = null;
@@ -160,6 +185,52 @@ const Decks = (function () {
         };
     }
 
+    // Smart-prioritize a deck's words for a focused study session:
+    // 1. Due cards or leeches (highest urgency)
+    // 2. Learning cards (reviews < 3, in progress)
+    // 3. New words (never studied)
+    // 4. Mastered words (reviews >= 3)
+    // 5. Graduated/known words
+    function prioritizeWords(words) {
+        const now = Date.now();
+        const indexed = (words || []).map((w, idx) => ({ w, idx }));
+        indexed.sort((a, b) => {
+            const cardA = cardFor(a.w.lemma);
+            const cardB = cardFor(b.w.lemma);
+            const isKnownA = a.w.known || (typeof isKnown === 'function' && isKnown(a.w.lemma));
+            const isKnownB = b.w.known || (typeof isKnown === 'function' && isKnown(b.w.lemma));
+
+            const score = (card, known) => {
+                if (known) return 5;
+                if (!card) return 3;
+                if (card.leech) return 1;
+                const isDue = !card.nextReview || new Date(card.nextReview).getTime() <= now;
+                if (isDue) return 1;
+                if ((card.reviews || 0) < 3) return 2;
+                return 4;
+            };
+
+            const scoreA = score(cardA, isKnownA);
+            const scoreB = score(cardB, isKnownB);
+            if (scoreA !== scoreB) return scoreA - scoreB;
+
+            // When both are due, older due date comes first
+            if (scoreA === 1 && cardA && cardB && cardA.nextReview && cardB.nextReview) {
+                const diff = new Date(cardA.nextReview).getTime() - new Date(cardB.nextReview).getTime();
+                if (diff !== 0) return diff;
+            }
+            return a.idx - b.idx;
+        });
+        return indexed.map(item => item.w);
+    }
+
+    function selectSessionWords(deck, limit) {
+        const words = wordsOf(deck);
+        if (!limit || limit >= words.length) return words;
+        const prioritized = prioritizeWords(words);
+        return prioritized.slice(0, Math.max(1, limit));
+    }
+
     // My Deck is every word the learner has taken on, whatever put it there
     // and whether it's still actively cycling through review or has already
     // graduated out — known words carry `known: true` so detailHtml() can
@@ -195,7 +266,7 @@ const Decks = (function () {
         if (id === 'mine') return myDeck();
         const custom = myDecks.find(deck => deck.id === id);
         if (custom) return custom;
-        return (catalogue.decks || []).find(deck => deck.id === id) || null;
+        return (catalogue && catalogue.decks ? catalogue.decks : []).find(deck => deck.id === id) || null;
     }
 
     // ----------------------------------------
@@ -323,10 +394,11 @@ const Decks = (function () {
         const deckWords = deck ? wordsOf(deck) : null;
         const opts = Object.assign({}, options);
         if (deckWords && (!opts.words || !opts.words.length)) {
-            opts.words = deckWords;
+            opts.words = opts.limit ? selectSessionWords(deck, opts.limit) : deckWords;
         }
 
-        startReviewSession(deckWords ? deckWords.map(w => w.lemma) : null,
+        const effectiveWords = opts.words || deckWords;
+        startReviewSession(effectiveWords ? effectiveWords.map(w => w.lemma) : null,
                            deck ? deck.name : 'All decks',
                            opts);
     }
@@ -1440,12 +1512,31 @@ const Decks = (function () {
             `;
         }).join('');
 
+        const savedLimit = getStoredSessionLimit();
+        const displayLimit = (savedLimit && savedLimit > 0 && savedLimit <= words.length) ? savedLimit : '';
+        const reviewBadgeCount = (savedLimit && savedLimit > 0) ? Math.min(savedLimit, s.ready) : s.ready;
+
         return `
             <button class="dk-back" data-close-deck="1">← All decks</button>
             <div class="dk-detail-head">
                 <h3>${esc(deck.name)}</h3>
                 ${deck.description ? `<p class="dk-detail-desc">${esc(deck.description)}</p>` : ''}
                 <p>${s.mastered} mastered${s.total ? ` · ${s.total} ${s.total === 1 ? 'word' : 'words'} total` : ''}</p>
+
+                ${words.length > 1 ? `
+                    <div class="dk-session-row">
+                        <label class="dk-session-label" for="dk-session-limit">Words to review:</label>
+                        <div class="dk-session-input-wrap">
+                            <input type="number" id="dk-session-limit" class="dk-session-input"
+                                   min="1" max="${words.length}"
+                                   placeholder="All"
+                                   value="${displayLimit}"
+                                   aria-label="Number of words to review">
+                            <span class="dk-session-total">/ ${words.length}</span>
+                            <button type="button" class="dk-link-btn" id="dk-session-all-btn">All</button>
+                        </div>
+                    </div>
+                ` : ''}
 
                 <!-- Three equal ways to engage with this deck right now — same size,
                      same weight, no one of them "the" primary action the way
@@ -1458,7 +1549,7 @@ const Decks = (function () {
                 <div class="dk-study-row">
                     <button class="dk-study-tab" data-review-deck="${esc(deck.id)}" ${s.ready ? '' : 'disabled'}>
                         <span class="dk-study-tab-label">Review</span>
-                        ${s.ready ? `<span class="dk-study-tab-badge">${s.ready}</span>` : ''}
+                        ${s.ready ? `<span class="dk-study-tab-badge">${reviewBadgeCount}</span>` : ''}
                     </button>
                     ${words.length > 1 ? `<button class="dk-study-tab" data-open-match="1"><span class="dk-study-tab-label">Match</span></button>` : ''}
                     ${words.length ? `<button class="dk-study-tab" data-open-learn="1"><span class="dk-study-tab-label">Learn</span></button>` : ''}
@@ -1581,9 +1672,13 @@ const Decks = (function () {
         // detail screen — closing it just clears studyMode and re-renders,
         // landing back on the same deck rather than the deck index.
         if (studyMode && deck) {
+            const limit = getStoredSessionLimit();
+            const sessionWords = selectSessionWords(deck, limit);
+            const gameWords = sessionWords.length >= 2 ? sessionWords : (wordsOf(deck).length >= 2 ? wordsOf(deck).slice(0, 2) : sessionWords);
+
             if (studyMode === 'match' && typeof DeckMatch !== 'undefined') {
                 DeckMatch.render(host, {
-                    words: wordsOf(deck),
+                    words: gameWords,
                     deckId: deck.id,
                     srsCredit: true,
                     onExit: () => { studyMode = null; render(); }
@@ -1592,14 +1687,14 @@ const Decks = (function () {
             }
             if (studyMode === 'learn' && typeof DeckLearn !== 'undefined') {
                 DeckLearn.render(host, {
-                    words: wordsOf(deck),
+                    words: gameWords,
                     onExit: () => { studyMode = null; render(); }
                 });
                 return;
             }
             if (studyMode === 'blast' && typeof DeckBlast !== 'undefined') {
                 DeckBlast.render(host, {
-                    words: wordsOf(deck),
+                    words: gameWords,
                     deckId: deck.id,
                     srsCredit: true,
                     onExit: () => { studyMode = null; render(); }
@@ -1701,8 +1796,51 @@ const Decks = (function () {
             const addInput = document.getElementById('dict-add-input');
             if (addInput) addInput.onkeydown = e => { if (e.key === 'Enter') addKnownWordByHand(); };
         }
+        {
+            const limitInput = host.querySelector('#dk-session-limit');
+            const allBtn = host.querySelector('#dk-session-all-btn');
+            const updateBadge = () => {
+                if (!deck) return;
+                const badge = host.querySelector('[data-review-deck] .dk-study-tab-badge');
+                if (!badge) return;
+                const curLimit = getStoredSessionLimit();
+                const totalReady = wordsOf(deck).length;
+                const count = (curLimit && curLimit > 0) ? Math.min(curLimit, totalReady) : totalReady;
+                badge.textContent = String(count);
+            };
+
+            if (limitInput) {
+                limitInput.oninput = () => {
+                    const val = limitInput.value.trim();
+                    const n = parseInt(val, 10);
+                    const limit = (!isNaN(n) && n > 0) ? n : null;
+                    setStoredSessionLimit(limit);
+                    updateBadge();
+                };
+            }
+            if (allBtn) {
+                allBtn.onclick = () => {
+                    if (limitInput) limitInput.value = '';
+                    setStoredSessionLimit(null);
+                    updateBadge();
+                };
+            }
+        }
         host.querySelectorAll('[data-review-deck]').forEach(el => {
-            el.onclick = function () { reviewDeck(el.getAttribute('data-review-deck')); };
+            el.onclick = function () {
+                const deckId = el.getAttribute('data-review-deck');
+                if (deckId === 'all') {
+                    reviewDeck('all');
+                    return;
+                }
+                const targetDeck = byId(deckId);
+                const limit = getStoredSessionLimit();
+                const sessionWords = targetDeck ? selectSessionWords(targetDeck, limit) : null;
+                reviewDeck(deckId, {
+                    limit: limit && sessionWords ? Math.min(limit, sessionWords.length) : null,
+                    words: sessionWords
+                });
+            };
         });
         host.querySelectorAll('[data-create-deck]').forEach(el => {
             el.onclick = function () { openCreateDeck(); };
@@ -1727,7 +1865,8 @@ const Decks = (function () {
     return {
         render, load, statusOf, myDeck, reviewDeck,
         openAddToDeckPicker, openBulkAddPicker, allMyDeckLemmas,
-        openImportDeck, parseImportLines
+        openImportDeck, parseImportLines,
+        prioritizeWords, selectSessionWords, getStoredSessionLimit, setStoredSessionLimit
     };
 })();
 

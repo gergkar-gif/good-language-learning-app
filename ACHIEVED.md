@@ -9,6 +9,13 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed work (2026-10-15)
 
+- **feat(decks): Custom Word Count & Smart Priority for Deck Review and Study Modes (Done 2026-10-15).**
+  - Added an open number input (`<input type="number" id="dk-session-limit">`) with quick "All" reset button directly above the study mode row (`Review`, `Match`, `Learn`, `Blast`) in `engine/decks.js` (`detailHtml()`).
+  - Added smart priority word selection (`Decks.prioritizeWords()`): sorts words by learner urgency (Due / Leech by oldest due date first -> Learning -> New -> Mastered -> Known/Graduated), passing the prioritized slice into all 4 study modes.
+  - Linked real-time dynamic count updates to the `Review` badge (`Math.min(limit, ready)`), and persisted session size in `localStorage` (`parlour_deck_session_limit`).
+  - Added `.dk-session-row` and `.dk-session-input` styling in `styles/components.css` matching constructivist theme.
+  - Added unit test suite `tests/decks/test-deck-session-size.js` verifying storage persistence, priority sorting, slice boundaries, and review session limit termination.
+
 - **fix(speech): Mobile Speech & Microphone Pipeline Resiliency across iOS & Android (Done 2026-10-15).**
   - Connected `_audioAnalyser` to `_audioCtx.destination` through a zero-gain node (`gainNode.gain.value = 0`) in `engine/speech-input.js`. On Android Chrome and iOS Safari, WebKit and Chromium optimize out disconnected `AnalyserNode` instances unless attached to `destination`, returning all zeros in `getByteFrequencyData` and causing the equalizer waveform to stay flat and speech presence detection to fail.
   - Resolved sample rate desynchronization on iOS Safari: re-creates `AudioContext` and retries `createMediaStreamSource` if the microphone stream hardware sample rate differs from the pre-instantiated context.

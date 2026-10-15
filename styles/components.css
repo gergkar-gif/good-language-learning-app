@@ -4731,6 +4731,49 @@
 
 .dk-detail-head p { font-size: 13px; color: var(--muted); margin: 2px 0 12px; }
 
+.dk-session-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.dk-session-label {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.dk-session-input-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dk-session-input {
+  width: 68px;
+  padding: 4px 8px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--text);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.dk-session-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.dk-session-total {
+  color: var(--muted);
+  font-size: 13px;
+}
+
 /* Review/Match/Learn as one equal-weight row — same size, same border
    treatment, no single one visually "the" primary action. Wraps to 2+1 on
    a narrow screen rather than shrinking illegibly. */
@@ -9148,13 +9191,13 @@
 .dk-study-tab:disabled { box-shadow: inset 0 0 0 1.5px var(--border); }
 .dk-words-head, .dk-word { border-color: var(--border); }
 .dk-status-tag { border-radius: 0; background: none; padding: 0; font-size: 12px; letter-spacing: .02em; }
-.dk-editor-input, .dkl-input, .dk-import-word, .dk-import-trans {
+.dk-editor-input, .dkl-input, .dk-import-word, .dk-import-trans, .dk-session-input {
   border: 0;
   box-shadow: inset 0 0 0 1.5px var(--border);
   border-radius: var(--radius-sm);
   background: none;
 }
-.dk-editor-input:focus, .dkl-input:focus { outline: none; box-shadow: inset 0 0 0 2px var(--primary); }
+.dk-editor-input:focus, .dkl-input:focus, .dk-session-input:focus { outline: none; box-shadow: inset 0 0 0 2px var(--primary); }
 .dk-link-btn-danger { color: var(--danger); }
 @media (hover: hover) {
   .dk-picker-result:hover { background: none; }
@@ -9335,8 +9378,8 @@
   .lt-mic-btn { box-shadow: inset 0 0 0 1px var(--border); }
   .ssp-speaker { font-weight: 500; }
   .wp-sheet { border-top: 1.5px solid var(--primary); }
-  .dk-editor-input, .dkl-input, .dk-import-word, .dk-import-trans { box-shadow: inset 0 0 0 1px var(--border); }
-  .dk-editor-input:focus, .dkl-input:focus { box-shadow: inset 0 0 0 1.5px var(--primary); }
+  .dk-editor-input, .dkl-input, .dk-import-word, .dk-import-trans, .dk-session-input { box-shadow: inset 0 0 0 1px var(--border); }
+  .dk-editor-input:focus, .dkl-input:focus, .dk-session-input:focus { box-shadow: inset 0 0 0 1.5px var(--primary); }
   .dk-editor-label { font-weight: 500; }
   .dkl-input-correct { box-shadow: inset 0 0 0 1.5px var(--success); }
   .dkl-input-wrong { box-shadow: inset 0 0 0 1.5px var(--danger); }
