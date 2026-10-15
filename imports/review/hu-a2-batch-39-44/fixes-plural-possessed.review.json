@@ -1,0 +1,398 @@
+[
+  {
+    "file": "content/hu/grammar/a2/a2-191-a-gr.json",
+    "old": "\"When you possess multiple items, Hungarian uses a special plural possession suffix rather than combining the regular plural (-k) with the possession suffix. For 'my (plural items)', the endings are **-aim** (back vowels) or **-eim** (front vowels), with **-jaim / -jeim** after certain vowels and consonants:\\n- *barát* → **barátaim** (my friends)\\n- *könyv* → **könyveim** (my books)\\n- *kulcs* → **kulcsaim** (my keys)\\n- *dolog* → **dolgaim** (my things / chores)\\n- *szülő* → **szüleim** (my parents)\\n- *cipő* → **cipőim** (my shoes)\"",
+    "new": "\"You know *szülei* and *testvérei* (\\\"his/her parents, siblings\\\") from Unit 13: one owner, several things owned. Now you learn the other persons. When you possess several items, Hungarian uses a special plural possession suffix rather than combining the regular plural (-k) with the possession suffix. For 'my (plural items)', the endings are **-aim** (back vowels) or **-eim** (front vowels), **-jaim / -jeim** after some consonants (*cél* → *céljaim*), and just **-im** after a vowel:\\n- *barát* → **barátaim** (my friends)\\n- *könyv* → **könyveim** (my books)\\n- *kulcs* → **kulcsaim** (my keys)\\n- *dolog* → **dolgaim** (my things)\\n- *szülő* → **szüleim** (my parents)\\n- *cipő* → **cipőim** (my shoes)\"",
+    "why": "No recap of the 3rd person singular (szülei, testvérei, a2-13) at the start; '-jaim/-jeim after certain vowels' is wrong (j comes after consonants); cipőim is -im, not -aim/-eim; 'chores' is the wrong gloss for dolog",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-191-b-gr.json",
+    "old": "\"Nouns ending in a short vowel undergo regular vowel lengthening or dropping before plural possession suffixes:\\n- *ruha* → **ruháim** (my clothes), *kefe* → **keféim** (my brushes).\\n- Irregular and fleeting-vowel stems: *dolog* → **dolgaim**, *szülő* → **szüleim**.\\n- Remember that the plural possessed suffix already includes the plurality of the objects: never say *barátaimok*!\"",
+    "new": "\"Nouns ending in *-a* or *-e* lengthen that vowel before *-im* (*á*, *é*); a stem that already ends in a long vowel just takes *-im* (*cipő* → *cipőim*):\\n- *ruha* → **ruháim** (my clothes), *kefe* → **keféim** (my brushes).\\n- Stems that change shape: *dolog* → **dolgaim** (the *o* drops), *szülő* → **szüleim** (the long vowel shortens).\\n- Remember that the plural possessed suffix already includes the plurality of the objects: never say *barátaimok*!\"",
+    "why": "'vowel lengthening or dropping' is vague and contradicts the long-vowel stems cipő/szülő; 'fleeting-vowel' wrongly describes szülő",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-191-ex.json",
+    "old": "    {\n      \"id\": \"a2-191-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az új sport____ nagyon kényelmesek a futáshoz.\",\n      \"hint\": \"my shoes\",\n      \"answer\": \"cipőim\",\n      \"english\": \"My new sports shoes are very comfortable for running.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-191-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az új ____ nagyon kényelmesek a futáshoz.\",\n      \"hint\": \"my shoes\",\n      \"answer\": \"cipőim\",\n      \"english\": \"My new shoes are very comfortable for running.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "id": "a2-191-check-2",
+    "why": "blank glued to the stem 'sport' (sportcipő compound, unmet): blank a whole word",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-191-ex.json",
+    "old": "    {\n      \"id\": \"a2-191-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Anna\",\n          \"text\": \"Kik jönnek a születésnapi bulidra szombaton?\"\n        },\n        {\n          \"speaker\": \"Bálint\",\n          \"text\": \"Csak a legközelebbi ____ és a családom.\"\n        }\n      ],\n      \"options\": [\n        \"barátaim\",\n        \"barátomok\",\n        \"barátunk\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"distractor_skills\": {\n        \"2\": \"possessive-suffixes\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-191-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Anna\",\n          \"text\": \"Kik jönnek a születésnapi bulidra szombaton?\"\n        },\n        {\n          \"speaker\": \"Bálint\",\n          \"text\": \"Csak a legközelebbi ____ és a családom.\"\n        }\n      ],\n      \"options\": [\n        \"barátaim\",\n        \"barátomok\",\n        \"barátom\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"distractor_skills\": {\n        \"2\": \"possessive-suffixes\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-191-dialogue-1",
+    "why": "'barátunk' fails two things (person and number; the question is Kik, plural); make it number only",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-192-b-gr.json",
+    "old": "\"When the owner is *ő* (he/she) and has multiple possessions, the ending is **-ai / -ei** or **-jai / -jei**. Notice the contrast with singular possessed objects:\\n- *háza* (his house) vs **házai** (his houses)\\n- *könyve* (his book) vs **könyvei** (his books)\\n- *barátja* (his friend) vs **barátai** (his friends)\\n- *kérdése* (his question) vs **kérdései** (his questions)\\n- *szülője* (his parent) vs **szülei** (his parents)\"",
+    "new": "\"You know *szülei* and *testvérei* (his/her parents, siblings) from Unit 13: that is the 3rd person. Here is the whole 3rd person pattern, next to your own (*te*) forms. When the owner is *ő* (he/she) and has multiple possessions, the ending is **-ai / -ei** or **-jai / -jei**. Notice the contrast with singular possessed objects:\\n- *háza* (his house) vs **házai** (his houses)\\n- *könyve* (his book) vs **könyvei** (his books)\\n- *barátja* (his friend) vs **barátai** (his friends)\\n- *kérdése* (his question) vs **kérdései** (his questions)\\n- *szülője* (his parent) vs **szülei** (his parents)\"",
+    "why": "3rd person -ai/-ei is known from a2-13 (szülei, testvérei) but is presented as new with no recap",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-192-ex.json",
+    "old": "    {\n      \"id\": \"a2-192-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"János nagyon elfoglalt, sokak a ____ az új projekttel kapcsolatban.\",\n      \"hint\": \"his questions\",\n      \"answer\": \"kérdései\",\n      \"english\": \"János is very busy, his questions regarding the new project are numerous.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-192-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"János nagyon okos, a ____ mindig jók.\",\n      \"hint\": \"his questions\",\n      \"answer\": \"kérdései\",\n      \"english\": \"János is very clever, his questions are always good.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "id": "a2-192-controlled-2",
+    "why": "'sokak a kérdései' is not natural Hungarian; 'kapcsolatban' unmet",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-192-ex.json",
+    "old": "    {\n      \"id\": \"a2-192-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Máté bemutatta a kollégáit és a ____ a partin.\",\n      \"hint\": \"his friends\",\n      \"answer\": \"barátait\",\n      \"english\": \"Máté introduced his colleagues and his friends at the party.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-192-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Máté bemutatta a kollégáit és a ____ ma este.\",\n      \"hint\": \"his friends\",\n      \"answer\": \"barátait\",\n      \"english\": \"Máté introduced his colleagues and his friends this evening.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-192-practice-4",
+    "why": "unmet 'partin'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-192-ex.json",
+    "old": "    {\n      \"id\": \"a2-192-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Dániel\",\n          \"text\": \"Hová tetted a táskádat és a kabátodat?\"\n        },\n        {\n          \"speaker\": \"Tamás\",\n          \"text\": \"A szobában hagytam a ____ az asztalon.\"\n        }\n      ],\n      \"options\": [\n        \"dolgaimat\",\n        \"dolgaid\",\n        \"dolgai\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-192-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Dániel\",\n          \"text\": \"Hová tetted a táskádat és a kabátodat?\"\n        },\n        {\n          \"speaker\": \"Tamás\",\n          \"text\": \"A szobában hagytam a ____ az asztalon.\"\n        }\n      ],\n      \"options\": [\n        \"dolgaimat\",\n        \"dolgaim\",\n        \"dolgaidat\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-192-dialogue-1",
+    "why": "wrong options dolgaid/dolgai each fail two things (person and the missing -t)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-192-ex.json",
+    "old": "    {\n      \"id\": \"a2-192-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Péter\",\n        \"szülei\",\n        \"Budapesten\",\n        \"élnek\",\n        \".\"\n      ],\n      \"solution\": [\n        \"Péter\",\n        \"szülei\",\n        \"Budapesten\",\n        \"élnek\",\n        \".\"\n      ],\n      \"english\": \"Péter's parents live in Budapest.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "    {\n      \"id\": \"a2-192-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Péter\",\n        \"szülei\",\n        \"Budapesten\",\n        \"laknak\",\n        \".\"\n      ],\n      \"solution\": [\n        \"Péter\",\n        \"szülei\",\n        \"Budapesten\",\n        \"laknak\",\n        \".\"\n      ],\n      \"english\": \"Péter's parents live in Budapest.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "id": "a2-192-writing-2",
+    "why": "unmet 'élnek' (b1-06-01): use laknak",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-193-ex.json",
+    "old": "    {\n      \"id\": \"a2-193-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nagyon örülünk, hogy a ____ megvalósulnak.\",\n      \"hint\": \"our plans\",\n      \"answer\": \"terveink\",\n      \"english\": \"We are very glad that our plans are coming true.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-193-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Szerintem a ____ nagyon izgalmasak.\",\n      \"hint\": \"our plans\",\n      \"answer\": \"terveink\",\n      \"english\": \"I think our plans are very exciting.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "id": "a2-193-controlled-1",
+    "why": "unmet 'örülünk', 'megvalósulnak' (b1-03-02)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-193-ex.json",
+    "old": "    {\n      \"id\": \"a2-193-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Gyerekek, nyissátok ki a ____ a negyvenedik oldalon!\",\n      \"hint\": \"your pl. books\",\n      \"answer\": \"könyveiteket\",\n      \"english\": \"Children, open your books on page forty!\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-193-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Gyerekek, hol vannak a ____?\",\n      \"hint\": \"your pl. books\",\n      \"answer\": \"könyveitek\",\n      \"english\": \"Children, where are your books?\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "id": "a2-193-controlled-2",
+    "why": "unmet 'nyissátok', 'negyvenedik', 'oldalon'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-193-ex.json",
+    "old": "    {\n      \"id\": \"a2-193-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A szomszédok kertjében a virágok és a ____ gyönyörűek.\",\n      \"hint\": \"their trees\",\n      \"answer\": \"fáik\",\n      \"english\": \"In the neighbors' garden, the flowers and their trees are beautiful.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-193-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A szomszédok kertjében a házak és a ____ gyönyörűek.\",\n      \"hint\": \"their trees\",\n      \"answer\": \"fáik\",\n      \"english\": \"In the neighbours' garden, the houses and their trees are beautiful.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-193-practice-2",
+    "why": "unmet 'virágok'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-193-ex.json",
+    "old": "    {\n      \"id\": \"a2-193-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem felejtjük el a tanácsokat, amiket a ____ adtak.\",\n      \"hint\": \"our parents\",\n      \"answer\": \"szüleink\",\n      \"english\": \"We do not forget the advice that our parents gave.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-193-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ma este a ____ is jönnek hozzánk.\",\n      \"hint\": \"our parents\",\n      \"answer\": \"szüleink\",\n      \"english\": \"Tonight our parents are coming to our place too.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-193-practice-4",
+    "why": "unmet 'felejtjük', 'tanácsokat'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-193-ex.json",
+    "old": "    {\n      \"id\": \"a2-193-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Zoli\",\n          \"text\": \"Hányan lesztek a hétvégi kiránduláson?\"\n        },\n        {\n          \"speaker\": \"Nóra\",\n          \"text\": \"Mi öten megyünk, és a ____ is csatlakoznak hozzánk.\"\n        }\n      ],\n      \"options\": [\n        \"barátaink\",\n        \"barátunk\",\n        \"barátaitok\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"possessive-suffixes\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-193-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Zoli\",\n          \"text\": \"Hányan lesztek a kiránduláson?\"\n        },\n        {\n          \"speaker\": \"Nóra\",\n          \"text\": \"Mi öten megyünk, és a ____ is csatlakoznak hozzánk.\"\n        }\n      ],\n      \"options\": [\n        \"barátaink\",\n        \"barátunk\",\n        \"barátaitok\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"possessive-suffixes\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-193-dialogue-1",
+    "why": "unmet 'hétvégi' (b1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-193-ex.json",
+    "old": "    {\n      \"id\": \"a2-193-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Tanár\",\n          \"text\": \"Diákok, hová tettétek a füzeteket?\"\n        },\n        {\n          \"speaker\": \"Diákok\",\n          \"text\": \"A padban vannak a füzeteink és a ____ is.\"\n        }\n      ],\n      \"options\": [\n        \"könyveink\",\n        \"könyvaink\",\n        \"könyveitek\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-193-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Tanár\",\n          \"text\": \"Diákok, hová tettétek a táskákat?\"\n        },\n        {\n          \"speaker\": \"Diákok\",\n          \"text\": \"A padban vannak a táskáink és a ____ is.\"\n        }\n      ],\n      \"options\": [\n        \"könyveink\",\n        \"könyvaink\",\n        \"könyveitek\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-193-dialogue-2",
+    "why": "unmet 'füzeteket', 'füzeteink'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-193-ex.json",
+    "old": "    {\n      \"id\": \"a2-193-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Szeretnénk bemutatni a külföldi vendégeknek a legszebb ____.\",\n      \"hint\": \"hagyomány, our, plural, accusative\",\n      \"answer\": \"hagyományainkat\",\n      \"english\": \"We would like to introduce our most beautiful traditions to the foreign guests.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "    {\n      \"id\": \"a2-193-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Vasárnap meglátogatjuk a ____.\",\n      \"hint\": \"szülő, our, plural, accusative\",\n      \"answer\": \"szüleinket\",\n      \"english\": \"On Sunday we visit our parents.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "id": "a2-193-writing-1",
+    "why": "unmet 'hagyomány', 'külföldi', 'vendég', 'legszebb' (b1-15-01)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-193-ex.json",
+    "old": "    {\n      \"id\": \"a2-193-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"A\",\n        \"szüleink\",\n        \"mindig\",\n        \"támogatják\",\n        \"az\",\n        \"álmainkat\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"szüleink\",\n        \"mindig\",\n        \"támogatják\",\n        \"az\",\n        \"álmainkat\",\n        \".\"\n      ],\n      \"english\": \"Our parents always support our dreams.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "    {\n      \"id\": \"a2-193-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"A\",\n        \"szüleink\",\n        \"mindig\",\n        \"segítenek\",\n        \"nekünk\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"szüleink\",\n        \"mindig\",\n        \"segítenek\",\n        \"nekünk\",\n        \".\"\n      ],\n      \"english\": \"Our parents always help us.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "id": "a2-193-writing-2",
+    "why": "unmet 'támogatják' (b1-05-03), 'álmainkat'; teaches follows the tested form",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-193-ex.json",
+    "old": "    {\n      \"id\": \"a2-193-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which sentence means 'Their friends are waiting outside'?\",\n      \"options\": [\n        \"A barátaik kint várnak.\",\n        \"A barátjuk kint vár.\",\n        \"A barátaitok kint várnak.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"possessive-suffixes\"\n      },\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-193-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which sentence means 'Their friends are waiting here'?\",\n      \"options\": [\n        \"A barátaik itt várnak.\",\n        \"A barátjuk itt vár.\",\n        \"A barátaitok itt várnak.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"possessive-suffixes\"\n      },\n      \"stage\": \"check\"\n    }",
+    "id": "a2-193-check-1",
+    "why": "unmet 'kint'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-193-ex.json",
+    "old": "    {\n      \"id\": \"a2-193-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Megkérdeztük a turistákat a tapasztalataikról és a ____.\",\n      \"hint\": \"benyomás, their, plural, delative\",\n      \"answer\": \"benyomásaikról\",\n      \"english\": \"We asked the tourists about their experiences and their impressions.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-193-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Beszélünk a szüleinkről és a ____.\",\n      \"hint\": \"barát, our, plural, delative\",\n      \"answer\": \"barátainkról\",\n      \"english\": \"We talk about our parents and our friends.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "id": "a2-193-check-2",
+    "why": "unmet 'megkérdeztük', 'benyomásaikról', 'turistákat'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-194-ex.json",
+    "old": "    {\n      \"id\": \"a2-194-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What is the instrumental form of 'barátaim' (with my friends)?\",\n      \"options\": [\n        \"barátaimmal\",\n        \"barátaimval\",\n        \"barátaivel\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "new": "    {\n      \"id\": \"a2-194-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What is the instrumental form of 'barátaim' (with my friends)?\",\n      \"options\": [\n        \"barátaimmal\",\n        \"barátaimval\",\n        \"barátaimmel\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "id": "a2-194-intro-1",
+    "why": "'barátaivel' fails two things (person and harmony); make it harmony only",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-194-ex.json",
+    "old": "    {\n      \"id\": \"a2-194-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ajándékot vettem a ____ a házassági évfordulójukra.\",\n      \"hint\": \"for my parents\",\n      \"answer\": \"szüleimnek\",\n      \"english\": \"I bought a gift for my parents for their wedding anniversary.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-194-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ajándékot vettem a ____ a boltban.\",\n      \"hint\": \"for my parents\",\n      \"answer\": \"szüleimnek\",\n      \"english\": \"I bought a present for my parents in the shop.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "id": "a2-194-controlled-2",
+    "why": "unmet 'házassági', 'évfordulójukra'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-194-ex.json",
+    "old": "    {\n      \"id\": \"a2-194-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which form correctly means 'with his/her friends'?\",\n      \"options\": [\n        \"barátaival\",\n        \"barátaidval\",\n        \"barátaivalvel\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-194-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which form correctly means 'with his/her friends'?\",\n      \"options\": [\n        \"barátaival\",\n        \"barátaiddal\",\n        \"barátaimmal\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "id": "a2-194-controlled-4",
+    "why": "barátaidval fails two things (person, assimilation) and barátaivalvel is a double suffix; use real forms of other persons",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-194-ex.json",
+    "old": "    {\n      \"id\": \"a2-194-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Lili\",\n          \"text\": \"Kivel mész nyaralni a tengerpartra?\"\n        },\n        {\n          \"speaker\": \"Ádám\",\n          \"text\": \"A volt egyetemi ____ utazom.\"\n        }\n      ],\n      \"options\": [\n        \"barátaimmal\",\n        \"barátaim\",\n        \"barátaimal\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"plural-possessive\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-194-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Lili\",\n          \"text\": \"Kivel mész nyaralni?\"\n        },\n        {\n          \"speaker\": \"Ádám\",\n          \"text\": \"A régi ____ utazom.\"\n        }\n      ],\n      \"options\": [\n        \"barátaimmal\",\n        \"barátaim\",\n        \"barátaimal\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"plural-possessive\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-194-dialogue-1",
+    "why": "unmet 'tengerpartra', 'egyetemi'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-194-ex.json",
+    "old": "    {\n      \"id\": \"a2-194-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Mindig számíthatok a családomra és a hűséges ____.\",\n      \"hint\": \"barát, my, plural, sublative\",\n      \"answer\": \"barátaimra\",\n      \"english\": \"I can always count on my family and my loyal friends.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "    {\n      \"id\": \"a2-194-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Mindig büszke vagyok a családomra és a ____.\",\n      \"hint\": \"barát, my, plural, -ra/-re\",\n      \"answer\": \"barátaimra\",\n      \"english\": \"I am always proud of my family and my friends.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "id": "a2-194-writing-1",
+    "why": "unmet 'számíthatok', 'hűséges'; 'sublative' hint",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-194-ex.json",
+    "old": "    {\n      \"id\": \"a2-194-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"A\",\n        \"szüleimmel\",\n        \"együtt\",\n        \"ünnepeljük\",\n        \"a\",\n        \"karácsonyt\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"szüleimmel\",\n        \"együtt\",\n        \"ünnepeljük\",\n        \"a\",\n        \"karácsonyt\",\n        \".\"\n      ],\n      \"english\": \"We celebrate Christmas together with my parents.\",\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "    {\n      \"id\": \"a2-194-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"A\",\n        \"szüleimmel\",\n        \"együtt\",\n        \"vacsorázunk\",\n        \"ma\",\n        \"este\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"szüleimmel\",\n        \"együtt\",\n        \"vacsorázunk\",\n        \"ma\",\n        \"este\",\n        \".\"\n      ],\n      \"english\": \"We have dinner together with my parents this evening.\",\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "id": "a2-194-writing-2",
+    "why": "unmet 'karácsonyt'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-194-ex.json",
+    "old": "    {\n      \"id\": \"a2-194-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which sentence is grammatically correct?\",\n      \"options\": [\n        \"Sokat beszélgetek a kollégáimmal.\",\n        \"Sokat beszélgetek a kollégáimval.\",\n        \"Sokat beszélgetek a kollégaimmal.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-194-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which sentence is grammatically correct?\",\n      \"options\": [\n        \"Sokat dolgozom a kollégáimmal.\",\n        \"Sokat dolgozom a kollégáimval.\",\n        \"Sokat dolgozom a kollégaimmal.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "id": "a2-194-check-1",
+    "why": "unmet 'beszélgetek' (b1-05-01)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-194-ex.json",
+    "old": "    {\n      \"id\": \"a2-194-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A nyáron a vidéki ____ látogatok el.\",\n      \"hint\": \"to my relatives\",\n      \"answer\": \"rokonaimhoz\",\n      \"english\": \"In the summer I visit my relatives in the countryside.\",\n      \"teaches\": [\n        \"hoz-suffix\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-194-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A nyáron a vidéki ____ utazom.\",\n      \"hint\": \"to my relatives\",\n      \"answer\": \"rokonaimhoz\",\n      \"english\": \"In the summer I visit my relatives in the countryside.\",\n      \"teaches\": [\n        \"hoz-suffix\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "id": "a2-194-check-2",
+    "why": "unmet 'látogatok'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-195-a-gr.json",
+    "old": "\"When preparing for a journey, plural possessed nouns frequently take the accusative case (-at/-et/-ot/t):\\n- *a kulcsaim* → **a kulcsaimat** (my keys - acc.)\\n- *a dolgaim* → **a dolgaimat** (my things - acc.)\\n- *az irataim* → **az irataimat** (my documents - acc.)\\n- *a jegyeid* → **a jegyeidet** (your tickets - acc.)\\n- *a ruháink* → **a ruháinkat** (our clothes - acc.)\"",
+    "new": "\"You know the accusative -t on possessed nouns from Unit 14. It works the same way on the plural possessed forms: **-at/-et** after -aim, -aid, -aink, -aitok, -aik (and their -e- partners), plain **-t** after -ai/-ei (*barátait*). There is no *-ot*:\\n- *a kulcsaim* → **a kulcsaimat** (my keys - acc.)\\n- *a dolgaim* → **a dolgaimat** (my things - acc.)\\n- *az irataim* → **az irataimat** (my documents - acc.)\\n- *a jegyeid* → **a jegyeidet** (your tickets - acc.)\\n- *a ruháink* → **a ruháinkat** (our clothes - acc.)\"",
+    "why": "'-at/-et/-ot/t' is wrong (no -ot; -t only after -ai/-ei) and the accusative on possessed nouns is known (a2-14) yet presented as new",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"How do you say 'I pack my belongings'?\",\n      \"options\": [\n        \"Összepakolom a holmijaimat.\",\n        \"Összepakolom a holmim.\",\n        \"Összepakolom a holmik.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"How do you say 'I pack my clothes'?\",\n      \"options\": [\n        \"Összepakolom a ruháimat.\",\n        \"Összepakolom a ruháidat.\",\n        \"Összepakolom a ruháim.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "id": "a2-195-intro-2",
+    "why": "holmi is a collective noun (a natural answer is 'a holmimat'); use ruha, as in the lesson; 'holmim' failed two things",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Mielőtt elindulok a repülőtérre, ellenőrzöm az ____.\",\n      \"hint\": \"irat, my, plural, accusative\",\n      \"answer\": \"irataimat\",\n      \"english\": \"Before leaving for the airport, I check my documents.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem találom az ____ a táskámban.\",\n      \"hint\": \"irat, my, plural, accusative\",\n      \"answer\": \"irataimat\",\n      \"english\": \"I can't find my documents in my bag.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "id": "a2-195-controlled-1",
+    "why": "unmet 'mielőtt' (b1-01-03), 'ellenőrzöm'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ne hagyd a vonatfülkében a ____!\",\n      \"hint\": \"your bags\",\n      \"answer\": \"táskáidat\",\n      \"english\": \"Don't leave your bags in the train compartment!\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Tedd a ____ a zsebedbe!\",\n      \"hint\": \"your tickets\",\n      \"answer\": \"jegyeidet\",\n      \"english\": \"Put your tickets in your pocket!\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "id": "a2-195-controlled-2",
+    "why": "unmet 'hagyd' (b2-34-03), 'vonatfülke'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A pályaudvaron találkozunk, ahol a ____ várnak ránk.\",\n      \"hint\": \"our friends\",\n      \"answer\": \"barátaink\",\n      \"english\": \"We meet at the railway station where our friends are waiting for us.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Találkozunk a pályaudvaron, a ____ már várnak ránk.\",\n      \"hint\": \"our friends\",\n      \"answer\": \"barátaink\",\n      \"english\": \"We meet at the station, our friends are already waiting for us.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-195-practice-2",
+    "why": "unmet 'ahol' (b1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem felejtettem el semmit, a zsebemben vannak a ____.\",\n      \"hint\": \"jegy, my, plural\",\n      \"answer\": \"jegyeim\",\n      \"english\": \"I haven't forgotten anything, my tickets are in my pocket.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Minden megvan, a zsebemben vannak a ____.\",\n      \"hint\": \"jegy, my, plural\",\n      \"answer\": \"jegyeim\",\n      \"english\": \"I have everything, my tickets are in my pocket.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-195-practice-4",
+    "why": "unmet 'felejtettem'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Feri\",\n          \"text\": \"Megvan minden fontos dolog az utazáshoz?\"\n        },\n        {\n          \"speaker\": \"Dóra\",\n          \"text\": \"Igen, a telefonomban vannak a repülő____, a táskámban meg az irataim.\"\n        }\n      ],\n      \"options\": [\n        \"jegyeim\",\n        \"jegyem\",\n        \"jegyeink\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"possessive-suffixes\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Feri\",\n          \"text\": \"Megvan minden fontos dolog az utazáshoz?\"\n        },\n        {\n          \"speaker\": \"Dóra\",\n          \"text\": \"Igen, a telefonomban vannak a ____, a táskámban meg az irataim.\"\n        }\n      ],\n      \"options\": [\n        \"jegyeim\",\n        \"jegyem\",\n        \"jegyeink\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"possessive-suffixes\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-195-dialogue-1",
+    "why": "blank glued to the stem 'repülő'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Katalin\",\n          \"text\": \"Kivel fogsz lakni a nyaralás alatt?\"\n        },\n        {\n          \"speaker\": \"Gergő\",\n          \"text\": \"A legjobb ____ béreltünk egy közös házat.\"\n        }\n      ],\n      \"options\": [\n        \"barátaimmal\",\n        \"barátaim\",\n        \"barátaimal\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"plural-possessive\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Katalin\",\n          \"text\": \"Kivel mész moziba?\"\n        },\n        {\n          \"speaker\": \"Gergő\",\n          \"text\": \"A legjobb ____ megyek.\"\n        }\n      ],\n      \"options\": [\n        \"barátaimmal\",\n        \"barátaim\",\n        \"barátaimal\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"plural-possessive\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-195-dialogue-2",
+    "why": "unmet 'nyaralás' (b1), 'béreltünk'; the reply must answer the question",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Mielőtt elhagyom a szállodai szobát, átnézem a fiókokat, hogy ne felejtsem ott a ____.\",\n      \"hint\": \"dolog, my, plural, accusative\",\n      \"answer\": \"dolgaimat\",\n      \"english\": \"Before leaving the hotel room, I check the drawers so that I don't leave my belongings there.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Hová tettem a ____? Nem találom őket!\",\n      \"hint\": \"dolog, my, plural, accusative\",\n      \"answer\": \"dolgaimat\",\n      \"english\": \"Where did I put my things? I can't find them!\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "id": "a2-195-writing-1",
+    "why": "unmet 'mielőtt', 'elhagyom', 'szállodai', 'átnézem', 'felejtsem'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Mindig\",\n        \"nagyon\",\n        \"vigyázok\",\n        \"a\",\n        \"személyes\",\n        \"irataimra\",\n        \".\"\n      ],\n      \"solution\": [\n        \"Mindig\",\n        \"nagyon\",\n        \"vigyázok\",\n        \"a\",\n        \"személyes\",\n        \"irataimra\",\n        \".\"\n      ],\n      \"english\": \"I always take great care of my personal documents.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Mindig\",\n        \"nagyon\",\n        \"vigyázok\",\n        \"az\",\n        \"irataimra\",\n        \".\"\n      ],\n      \"solution\": [\n        \"Mindig\",\n        \"nagyon\",\n        \"vigyázok\",\n        \"az\",\n        \"irataimra\",\n        \".\"\n      ],\n      \"english\": \"I always take great care of my documents.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "id": "a2-195-writing-2",
+    "why": "unmet 'személyes' (c1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which phrase correctly expresses 'I put my clothes into the wardrobe'?\",\n      \"options\": [\n        \"Bemásolom a ruháimat a szekrénybe.\",\n        \"Beteszem a ruháimat a szekrénybe.\",\n        \"Berakom a ruhám a szekrénybe.\"\n      ],\n      \"correct\": 1,\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which sentence means 'We pack our clothes into the suitcase'?\",\n      \"options\": [\n        \"Összepakoljuk a ruháinkat a bőröndbe.\",\n        \"Összepakoljuk a ruháitokat a bőröndbe.\",\n        \"Összepakoljuk a ruháink a bőröndbe.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "id": "a2-195-check-1",
+    "why": "'Bemásolom' is wrong by meaning alone; unmet bemásolom/beteszem/berakom; rewritten with lesson words, one fault each",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A hotel recepcióján bemutattuk az ____.\",\n      \"hint\": \"irat, our, plural, accusative\",\n      \"answer\": \"iratainkat\",\n      \"english\": \"At the hotel reception we presented our documents.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem találjuk az ____ a bőröndben.\",\n      \"hint\": \"irat, our, plural, accusative\",\n      \"answer\": \"iratainkat\",\n      \"english\": \"We can't find our documents in the suitcase.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "id": "a2-195-check-2",
+    "why": "unmet 'recepcióján', 'bemutattuk'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-consolidation-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-consolidation-7\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A hétvégén vidéken meglátogatom a ____.\",\n      \"hint\": \"szülő, my, plural, accusative\",\n      \"answer\": \"szüleimet\",\n      \"english\": \"On the weekend I visit my parents in the countryside.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-consolidation-7\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Vasárnap meglátogatom a ____.\",\n      \"hint\": \"szülő, my, plural, accusative\",\n      \"answer\": \"szüleimet\",\n      \"english\": \"On Sunday I visit my parents.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-195-consolidation-7",
+    "why": "unmet 'vidéken' (b1-11-03); the speaking step repeats this sentence",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-consolidation-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-consolidation-8\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Megkérdezted már a ____ a buliról?\",\n      \"hint\": \"your friends\",\n      \"answer\": \"barátaidat\",\n      \"english\": \"Have you asked your friends about the party already?\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-consolidation-8\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Látod ma este a ____?\",\n      \"hint\": \"your friends\",\n      \"answer\": \"barátaidat\",\n      \"english\": \"Are you seeing your friends this evening?\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-195-consolidation-8",
+    "why": "unmet 'megkérdezted'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-consolidation-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-consolidation-9\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A professzor úr érdekes választ adott a hallgatók ____.\",\n      \"hint\": \"kérdés, their, plural, sublative\",\n      \"answer\": \"kérdéseikre\",\n      \"english\": \"The professor gave an interesting answer to the students' questions.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-consolidation-9\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A tanár választ adott a diákok ____.\",\n      \"hint\": \"kérdés, their, plural, -ra/-re\",\n      \"answer\": \"kérdéseikre\",\n      \"english\": \"The teacher gave an answer to the students' questions.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-195-consolidation-9",
+    "why": "unmet 'professzor', 'hallgatók'; 'sublative' hint",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-consolidation-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-consolidation-11\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gábor\",\n          \"text\": \"Hová tetted a bőröndödet és a holmidat?\"\n        },\n        {\n          \"speaker\": \"Zita\",\n          \"text\": \"A hálószobában pakoltam ki a ____.\"\n        }\n      ],\n      \"options\": [\n        \"ruháimat\",\n        \"ruhám\",\n        \"ruháink\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"distractor_skills\": {\n        \"2\": \"plural-possessive\"\n      },\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-consolidation-11\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gábor\",\n          \"text\": \"Hová tetted a bőröndödet és a holmidat?\"\n        },\n        {\n          \"speaker\": \"Zita\",\n          \"text\": \"A szekrénybe tettem a ____.\"\n        }\n      ],\n      \"options\": [\n        \"ruháimat\",\n        \"ruháidat\",\n        \"ruháinkat\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-195-consolidation-11",
+    "why": "unmet 'pakoltam'; 'Hová' was answered with 'A hálószobában ... ki'; every wrong option lacked -t as well (two faults)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-consolidation-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-consolidation-12\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Miki\",\n          \"text\": \"Beszéltél már a szüleiddel az új lakásról?\"\n        },\n        {\n          \"speaker\": \"Kata\",\n          \"text\": \"Igen, a ____ nagyon örültek a hírnek.\"\n        }\n      ],\n      \"options\": [\n        \"szüleim\",\n        \"szüleink\",\n        \"szüleid\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-consolidation-12\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Miki\",\n          \"text\": \"Beszéltél már a szüleiddel az új lakásról?\"\n        },\n        {\n          \"speaker\": \"Kata\",\n          \"text\": \"Igen, a ____ nagyon szeretik.\"\n        }\n      ],\n      \"options\": [\n        \"szüleim\",\n        \"szüleink\",\n        \"szüleid\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-195-consolidation-12",
+    "why": "unmet 'örültek' (b2), 'hírnek'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-consolidation-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-consolidation-15\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Minden reggel ellenőrzöm, hogy a táskámban vannak-e a ____.\",\n      \"hint\": \"kulcs, my, plural\",\n      \"answer\": \"kulcsaim\",\n      \"english\": \"Every morning I check whether my keys are in my bag.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-consolidation-15\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Minden reggel a táskámban vannak a ____.\",\n      \"hint\": \"kulcs, my, plural\",\n      \"answer\": \"kulcsaim\",\n      \"english\": \"Every morning my keys are in my bag.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-195-consolidation-15",
+    "why": "unmet 'ellenőrzöm'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-consolidation-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-consolidation-16\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kedves Zsuzsi, szeretettel köszöntelek és várom a találkozást a ____.\",\n      \"hint\": \"barát, your, plural, instrumental\",\n      \"answer\": \"barátaiddal\",\n      \"english\": \"Dear Zsuzsi, warm greetings and I look forward to meeting with your friends.\",\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-consolidation-16\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kedves Zsuzsi, várom a találkozást a ____.\",\n      \"hint\": \"barát, your, plural, instrumental\",\n      \"answer\": \"barátaiddal\",\n      \"english\": \"Dear Zsuzsi, I look forward to meeting your friends.\",\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-195-consolidation-16",
+    "why": "unmet 'köszöntelek' (köszönt not met), 'szeretettel' (b2)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-consolidation-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-consolidation-18\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az utazás előtt gondosan összepakoltuk a ____.\",\n      \"hint\": \"holmi, our, plural, accusative\",\n      \"answer\": \"holmijainkat\",\n      \"english\": \"Before the journey we carefully packed our belongings.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-consolidation-18\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az utazás előtt gyorsan összepakoltuk a ____.\",\n      \"hint\": \"holmi, our, plural, accusative\",\n      \"answer\": \"holmijainkat\",\n      \"english\": \"Before the journey we quickly packed our belongings.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-195-consolidation-18",
+    "why": "unmet 'gondosan' (b2-02-03)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-195-consolidation-ex.json",
+    "old": "    {\n      \"id\": \"a2-195-consolidation-20\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem felejtem el a barátaimat, rendszeresen írok a régi ____.\",\n      \"hint\": \"barát, my, plural, dative\",\n      \"answer\": \"barátaimnak\",\n      \"english\": \"I don't forget my friends, I regularly write to my old friends.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-195-consolidation-20\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Szeretem a családomat, gyakran írok a régi ____.\",\n      \"hint\": \"barát, my, plural, dative\",\n      \"answer\": \"barátaimnak\",\n      \"english\": \"I love my family, I often write to my old friends.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-195-consolidation-20",
+    "why": "unmet 'felejtem', 'rendszeresen'",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-39.json",
+    "old": "Bálint gyorsan végigtapogatta az összes zsebét, de nem találta a kulcsokat.",
+    "new": "Bálint gyorsan végigtapogatta a nadrágzsebeit, de nem találta a kulcsokat.",
+    "why": "narration says he felt through ALL his pockets, yet the keys turn up in the coat's other pocket: contradiction",
+    "kind": "hungarian",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-193-ex.json",
+    "old": "    {\n      \"id\": \"a2-193-practice-1\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"A\",\n        \"közös\",\n        \"terveink\",\n        \"nagyon\",\n        \"fontosak\",\n        \"számunkra\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"közös\",\n        \"terveink\",\n        \"nagyon\",\n        \"fontosak\",\n        \"számunkra\",\n        \".\"\n      ],\n      \"english\": \"Our common plans are very important to us.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-193-practice-1\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"A\",\n        \"közös\",\n        \"terveink\",\n        \"nagyon\",\n        \"fontosak\",\n        \"nekünk\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"közös\",\n        \"terveink\",\n        \"nagyon\",\n        \"fontosak\",\n        \"nekünk\",\n        \".\"\n      ],\n      \"english\": \"Our common plans are very important to us.\",\n      \"teaches\": [\n        \"plural-possessive\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-193-practice-1",
+    "why": "'számunkra' is an inflected postposition (a2-196) used before it is taught; use nekünk",
+    "kind": "hungarian"
+  }
+]
