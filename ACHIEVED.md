@@ -7,6 +7,18 @@ queue numbering and wording (not renumbered or edited) so old references
 and commit messages that cite an item number still resolve. Nothing here
 needs re-reading before starting new work; it's reference only.
 
+## Completed work (2026-10-15)
+
+- **fix(speech): Mobile Speech & Microphone Pipeline Resiliency across iOS & Android (Done 2026-10-15).**
+  - Connected `_audioAnalyser` to `_audioCtx.destination` through a zero-gain node (`gainNode.gain.value = 0`) in `engine/speech-input.js`. On Android Chrome and iOS Safari, WebKit and Chromium optimize out disconnected `AnalyserNode` instances unless attached to `destination`, returning all zeros in `getByteFrequencyData` and causing the equalizer waveform to stay flat and speech presence detection to fail.
+  - Resolved sample rate desynchronization on iOS Safari: re-creates `AudioContext` and retries `createMediaStreamSource` if the microphone stream hardware sample rate differs from the pre-instantiated context.
+  - Eliminated timeslice `_mediaRecorder.start(100)` on iOS WebKit, which caused corrupted/dropped MP4 container atoms, switching to standard `_mediaRecorder.start()`. Added zero-chunk guard in `_mediaRecorder.onstop`.
+  - Calibrated mobile voice detection threshold from 0.08 to 0.05, ensuring natural speaking volume is recognized.
+  - Guarded Cloud STT silence timeouts so Whisper evaluates recorded speech before falling back to `no-speech`.
+  - In native `SpeechRecognition`, prevented unblessed fallback loops on mobile: restarts during initial grace periods do not trigger unauthorized `getUserMedia` calls without direct user gesture.
+  - Added proactive audio session cleanup: cancels active `ParlourTTS` and `window.speechSynthesis` before microphone recording in `speaking-runner.js` and `speaking.js`.
+  - Bumped PWA service worker cache version to `v2026-10-15-speech` in `sw.js` and script query buster `speech-input.js?v=2026-10-15stt` in `index.html`.
+
 ## Completed work (2026-10-14)
 
 - **154 (part): Unified Candidate Evaluation Across Home, Results Screen "What's Next", and StudyPlan (Done 2026-10-14).**

@@ -288,16 +288,49 @@ const SpeechInput = (function () {
             _mediaStream = stream;
 
             try {
-                if (meterCtx && _audioCtx === meterCtx) {
+                if (!_audioCtx || _audioCtx.state === 'closed') {
+                    const AC = (typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext));
+                    if (AC) _audioCtx = new AC();
+                }
+                if (_audioCtx) {
                     if (_audioCtx.state === 'suspended' && typeof _audioCtx.resume === 'function') {
                         _audioCtx.resume().catch(() => {});
                     }
-                    const source = _audioCtx.createMediaStreamSource(stream);
-                    _audioAnalyser = _audioCtx.createAnalyser();
-                    _audioAnalyser.fftSize = 64;
-                    _audioAnalyser.smoothingTimeConstant = 0.3;
-                    source.connect(_audioAnalyser);
-                    _audioDataArray = new Uint8Array(_audioAnalyser.frequencyBinCount);
+                    let source = null;
+                    if (typeof _audioCtx.createMediaStreamSource === 'function') {
+                        try {
+                            source = _audioCtx.createMediaStreamSource(stream);
+                        } catch (errSource) {
+                            try {
+                                const AC = (typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext));
+                                if (AC) {
+                                    _audioCtx = new AC();
+                                    if (_audioCtx.state === 'suspended' && typeof _audioCtx.resume === 'function') {
+                                        _audioCtx.resume().catch(() => {});
+                                    }
+                                    source = _audioCtx.createMediaStreamSource(stream);
+                                }
+                            } catch (errSource2) {}
+                        }
+                    }
+                    if (source && typeof _audioCtx.createAnalyser === 'function') {
+                        _audioAnalyser = _audioCtx.createAnalyser();
+                        _audioAnalyser.fftSize = 64;
+                        _audioAnalyser.smoothingTimeConstant = 0.3;
+                        source.connect(_audioAnalyser);
+
+                        // Connect analyser through a zero-gain node to destination so mobile Chrome and
+                        // iOS Safari WebKit audio engines pull mic frames through the analyser
+                        if (typeof _audioCtx.createGain === 'function' && _audioCtx.destination) {
+                            try {
+                                const zeroGain = _audioCtx.createGain();
+                                zeroGain.gain.value = 0;
+                                _audioAnalyser.connect(zeroGain);
+                                zeroGain.connect(_audioCtx.destination);
+                            } catch (eDest) {}
+                        }
+                        _audioDataArray = new Uint8Array(_audioAnalyser.frequencyBinCount);
+                    }
                 }
             } catch (e) {}
 
@@ -329,40 +362,52 @@ const SpeechInput = (function () {
             };
 
             _mediaRecorder.onstop = async () => {
-                if (currentToken === _sessionToken && _recordedChunks.length > 0) {
-                    _cleanAudioUrl();
-                    const type = (_mediaRecorder && _mediaRecorder.mimeType) || mimeType || 'audio/webm';
-                    _recordedAudioBlob = new Blob(_recordedChunks, { type });
-                    _recordedAudioUrl = URL.createObjectURL(_recordedAudioBlob);
-                    if (options.onAudioReady) options.onAudioReady(_recordedAudioUrl);
-                    if (_onAudioReadyCallback) _onAudioReadyCallback(_recordedAudioUrl);
+                if (currentToken !== _sessionToken) return;
 
-                    if (_isCloudSttSession && _onFinalCallback) {
-                        const cb = _onFinalCallback;
-                        _onFinalCallback = null;
-                        const onStatus = options.onStatusChange || null;
-                        if (onStatus) onStatus('analyzing');
-                        try {
-                            const transcript = await transcribeBlob(_recordedAudioBlob, lang, options.target);
-                            cb(transcript || '');
-                        } catch (err) {
-                            console.warn('SpeechInput: Cloud STT transcription failed:', err);
+                if (!_recordedChunks || _recordedChunks.length === 0) {
+                    if (_isCloudSttSession) {
+                        const onErr = options.onError || null;
+                        if (onErr) onErr('no-speech');
+                        else if (_onFinalCallback) _onFinalCallback('');
+                    }
+                    return;
+                }
+
+                _cleanAudioUrl();
+                const type = (_mediaRecorder && _mediaRecorder.mimeType) || mimeType || 'audio/webm';
+                _recordedAudioBlob = new Blob(_recordedChunks, { type });
+                _recordedAudioUrl = URL.createObjectURL(_recordedAudioBlob);
+                if (options.onAudioReady) options.onAudioReady(_recordedAudioUrl);
+                if (_onAudioReadyCallback) _onAudioReadyCallback(_recordedAudioUrl);
+
+                if (_isCloudSttSession && _onFinalCallback) {
+                    const cb = _onFinalCallback;
+                    _onFinalCallback = null;
+                    const onStatus = options.onStatusChange || null;
+                    if (onStatus) onStatus('analyzing');
+                    try {
+                        const transcript = await transcribeBlob(_recordedAudioBlob, lang, options.target);
+                        if (transcript) {
+                            cb(transcript);
+                        } else {
                             const onErr = options.onError || null;
-                            if (onErr) onErr('stt-failed');
+                            if (onErr) onErr('no-speech');
                             else cb('');
                         }
+                    } catch (err) {
+                        console.warn('SpeechInput: Cloud STT transcription failed:', err);
+                        const onErr = options.onError || null;
+                        if (onErr) onErr('stt-failed');
+                        else cb('');
                     }
                 }
             };
 
             try {
-                _mediaRecorder.start(100);
+                // Do not pass timeslice (e.g. 100ms) on iOS WebKit where it corrupts MP4 chunks
+                _mediaRecorder.start();
             } catch (e) {
-                try {
-                    _mediaRecorder.start();
-                } catch (e2) {
-                    console.warn('SpeechInput: mediaRecorder.start failed:', e2);
-                }
+                console.warn('SpeechInput: mediaRecorder.start failed:', e);
             }
         }
 
@@ -436,6 +481,7 @@ const SpeechInput = (function () {
                 const meterBlind = _isCloudSttSession && !(_audioCtx && _audioCtx.state === 'running');
                 stopListening();
                 if (meterBlind) return;
+                _onFinalCallback = null;
                 onError('no-speech');
             }
         }, manualStop ? 30000 : 10000);
@@ -462,7 +508,7 @@ const SpeechInput = (function () {
                         for (let i = 0; i < _audioDataArray.length; i++) sum += _audioDataArray[i];
                         const avg = sum / _audioDataArray.length;
                         realLevel = Math.min(1.0, Math.max(0, avg / 90));
-                        if (realLevel > 0.08) {
+                        if (realLevel > 0.05) {
                             _hasSpoken = true;
                             isHearing = true;
                         }
@@ -530,7 +576,7 @@ const SpeechInput = (function () {
 
         _isCloudSttSession = useCloudStt;
 
-        function _startRecognitionInstance() {
+        function _startRecognitionInstance(isRestart = false) {
             if (!_isListening) return;
             try {
                 const recognition = new RecognitionClass();
@@ -602,16 +648,9 @@ const SpeechInput = (function () {
                     const combined = (_accumulatedFinal + ' ' + _currentInterim).trim() || _bestTranscript || '';
                     const isFatal = event.error === 'not-allowed' || event.error === 'service-not-allowed';
 
-                    // Manual mode (Verbal Production, up to 5 minutes) only ends on
-                    // Finish or the max-duration timeout -- once the learner has
-                    // started speaking, a transient recognition error (aborted,
-                    // no-speech, network) is routine mid-session, not the end of
-                    // their turn. Restart instead of committing early (same as
-                    // onend below), or a long recording gets cut off at whatever
-                    // point the browser's recognition session happens to hiccup.
                     if (manualStop && _hasSpoken && !isFatal) {
                         try {
-                            _startRecognitionInstance();
+                            _startRecognitionInstance(true);
                             return;
                         } catch (e) {
                             console.warn('SpeechInput: recognition restart threw:', e);
@@ -647,6 +686,9 @@ const SpeechInput = (function () {
                         onError(event.error === 'service-not-allowed' ? 'service-not-allowed' : 'permission-denied');
                     } else if (event.error === 'aborted') {
                         stopListening();
+                        if (!_hasSpoken && !combined) {
+                            onError('no-speech');
+                        }
                     } else if (event.error === 'network') {
                         stopListening();
                         onError('network');
@@ -668,7 +710,7 @@ const SpeechInput = (function () {
                     // not "the learner is done." Restart instead of committing.
                     if (manualStop && _hasSpoken) {
                         try {
-                            _startRecognitionInstance();
+                            _startRecognitionInstance(true);
                             return;
                         } catch (e) {
                             console.warn('SpeechInput: recognition restart threw:', e);
@@ -684,7 +726,7 @@ const SpeechInput = (function () {
                     // If learner hasn't spoken yet and still within initial grace period, keep listening
                     if (Date.now() - _listenStartTime < (manualStop ? 30000 : 10000)) {
                         try {
-                            _startRecognitionInstance();
+                            _startRecognitionInstance(true);
                             return;
                         } catch (e) {
                             console.warn('SpeechInput: recognition restart threw:', e);
@@ -701,13 +743,15 @@ const SpeechInput = (function () {
             } catch (e) {
                 console.warn('SpeechInput: recognition start threw:', e);
                 _activeRecognition = null;
-                if (!options._triedCloudFallback && !options._triedNativeFallback && isCloudSttAvailable() && isRecordingSupported()) {
+                if (!isRestart && !options._triedCloudFallback && !options._triedNativeFallback && isCloudSttAvailable() && isRecordingSupported()) {
                     console.log('SpeechInput: recognition start threw, falling back to Cloud STT recording');
                     options._triedCloudFallback = true;
                     _isCloudSttSession = true;
                     _startRecordingStream(options);
                     return;
                 }
+                stopListening();
+                onError(isRestart ? 'no-speech' : 'recognition-failed');
             }
         }
 

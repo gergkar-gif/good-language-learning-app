@@ -223,6 +223,12 @@ const SpeakingRunner = (function () {
     function _startRecording() {
         if (_solved || _isRecording) return;
         _isRecording = true;
+        if (typeof ParlourTTS !== 'undefined' && typeof ParlourTTS.stop === 'function') {
+            ParlourTTS.stop();
+        }
+        if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
+            window.speechSynthesis.cancel();
+        }
         if (typeof Sound !== 'undefined') Sound.speaking();
 
         _capturedTranscript = '';

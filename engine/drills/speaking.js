@@ -869,6 +869,12 @@ const SpeakingDriller = (function () {
     }
 
     function _startProdRecording() {
+        if (typeof ParlourTTS !== 'undefined' && typeof ParlourTTS.stop === 'function') {
+            ParlourTTS.stop();
+        }
+        if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
+            window.speechSynthesis.cancel();
+        }
         _prodTranscript = '';
         _prodAudioUrl = null;
         _prodElapsedSeconds = 0;
@@ -2123,6 +2129,12 @@ const SpeakingDriller = (function () {
     }
 
     function _startTurnRecording() {
+        if (typeof ParlourTTS !== 'undefined' && typeof ParlourTTS.stop === 'function') {
+            ParlourTTS.stop();
+        }
+        if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
+            window.speechSynthesis.cancel();
+        }
         _scenarioTranscript = '';
         _scenarioAudioUrl = null;
         _scenarioIsRecording = true;
