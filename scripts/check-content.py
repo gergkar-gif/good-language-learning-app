@@ -705,7 +705,7 @@ def changed_units():
                  ["ls-files", "--others", "--exclude-standard", "content"]):
         r = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True)
         names |= {n for n in r.stdout.split() if n.startswith("content/")}
-    head = Source()
+    head, base = Source(), Source("origin/master")
     out = set()
     for n in names:
         parts = n.split("/")
@@ -713,8 +713,11 @@ def changed_units():
             continue
         course = parts[1]
         if parts[2] in ("curriculum",) and parts[-1].endswith(".json") and parts[3] == "units":
+            # only the rows that differ: appending a new unit doesn't touch the frozen ones
             level = parts[-1][:-5]
-            out |= {(course, level, u.get("id")) for u in units_of(head, course, level)}
+            before = {u.get("id"): u for u in units_of(base, course, level)}
+            out |= {(course, level, u.get("id")) for u in units_of(head, course, level)
+                    if before.get(u.get("id")) != u}
             continue
         level = parts[3] if len(parts) > 4 else None
         stem = re.sub(r"(-ex|-voc|-gr|-[ab]-gr)?\.json$", "", parts[-1])
