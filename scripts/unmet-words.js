@@ -218,9 +218,19 @@ function targetTexts(e) {
         for (const c of st.characters || []) tokens(c).forEach(t => capNames.add(lower(t)));
     }
     const roots = NUMBER_ROOTS[Lang.code()] || [];
-    const numberMet = (w, pos) => {
-        if (!w) return true;
-        return roots.some(r => w.startsWith(r) && metBy(r, pos) && numberMet(w.slice(r.length), pos));
+    // A clock time is a met number + -kor once that ending is taught (*kilenckor*,
+    // *tizenegykor*; `kor-time`): the suffix's stem from its skill's taught_in.
+    const NUMBER_SUFFIXES = { hu: { kor: 'kor-time' } }[Lang.code()] || {};
+    const skillList = (readJson(`skills/${course.split('-')[0]}.json`) || {}).skills || {};
+    const suffixAt = {};
+    for (const [suf, slug] of Object.entries(NUMBER_SUFFIXES)) {
+        const stem = String((skillList[slug] || {}).taught_in || '').replace(/-[a-z]-gr$/, '');
+        if (order.has(stem)) suffixAt[suf] = order.get(stem);
+    }
+    const numberMet = (w, pos, any = false) => {
+        if (!w) return any;
+        if (any && w in suffixAt) return pos >= suffixAt[w];
+        return roots.some(r => w.startsWith(r) && metBy(r, pos) && numberMet(w.slice(r.length), pos, true));
     };
     // The challenge target (keyed by stem) is said by the learner, so it is
     // checked like an exercise. Stories are not: they may be a little above the
