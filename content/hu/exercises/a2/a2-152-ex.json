@@ -311,6 +311,87 @@
         "possessive-suffixes"
       ],
       "stage": "check"
+    },
+    {
+      "id": "a2-152-controlled-5",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "rendőrség",
+          "police"
+        ],
+        [
+          "ellop",
+          "to steal"
+        ],
+        [
+          "feljelentés",
+          "police report"
+        ],
+        [
+          "Talált Tárgyak",
+          "lost property office"
+        ]
+      ],
+      "teaches": [
+        "a2-problems-requests-vocab"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-152-practice-5",
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "sentence": "A buszon ____ a táskámat, ezért a rendőrségre megyek.",
+      "hint": "they stole",
+      "answer": "ellopták",
+      "english": "My bag was stolen on the bus, so I'm going to the police.",
+      "teaches": [
+        "a2-problems-requests-vocab"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-152-dialogue-3",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Rendőr",
+          "text": "Jó napot! Miben segíthetek?"
+        },
+        {
+          "speaker": "Anna",
+          "text": "Ellopták a telefonomat. ____"
+        }
+      ],
+      "options": [
+        "Feljelentést szeretnék tenni.",
+        "Szükségem van egy esernyőre.",
+        "A klíma nem működik."
+      ],
+      "correct": 0,
+      "teaches": [
+        "a2-problems-requests-vocab"
+      ],
+      "stage": "dialogue"
+    },
+    {
+      "id": "a2-152-check-3",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "question": "What is 'Talált Tárgyak'?",
+      "options": [
+        "The lost property office",
+        "The police station",
+        "The railway ticket office"
+      ],
+      "correct": 0,
+      "teaches": [
+        "a2-problems-requests-vocab"
+      ],
+      "stage": "check"
     }
   ]
 }

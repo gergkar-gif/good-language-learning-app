@@ -73,3 +73,14 @@ Dropped as duplicates of existing senses: *nyugszik* "to rest", *ad*, *ér* "to 
   - the rounding table;
   - *adókártya* needed to open an account;
   - *104* offered as a wrong option for the European emergency number (104 is the real ambulance number; the question asks for the single European one).
+
+## The user's decisions (2026-10-15, after this batch)
+
+All five are recorded in ACHIEVED.md 153 ("Decisions after units 39–44").
+- Plain *X miatt* is A2 and is taught on a2-199-a.
+- A listed word with its case (*büszke valamire*) is an A2 chunk.
+- Participle-shaped words that a lesson lists in its vocabulary are A2 vocabulary.
+- No new skill for *kellett* or *szabadna*: a2-203-b and a2-204-b now recap known material.
+- The facts were corrected as described in the ACHIEVED entry.
+
+Police and lost property are now taught in unit 31 (a2-152-c) and recapped in a2-219.
