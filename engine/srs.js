@@ -950,8 +950,18 @@ function showNextCard() {
     const emptyEl = document.getElementById('review-empty');
     const summaryEl = document.getElementById('review-summary');
 
-    // If session has a limit (e.g. timed micro-session) and it is reached:
-    if (reviewLimit && reviewSessionStats && reviewSessionStats.total >= reviewLimit) {
+    const dueCards = getDueCards();
+    const hasPendingRelearn = sessionRelearningQueue.length > 0;
+
+    // Check if distinct card limit has been reached
+    const distinctSeen = scopedSessionCards
+        ? scopedSessionCards.filter(c => c._seenInSession).length
+        : (reviewSessionStats ? reviewSessionStats.total : 0);
+    const limitReached = reviewLimit && distinctSeen >= reviewLimit;
+
+    // If session has a limit, it only terminates once the required cards have been seen
+    // AND all pending relearning ("Again") cards have been cleared
+    if (limitReached && !hasPendingRelearn) {
         if (cardEl) cardEl.style.display = 'none';
         currentReviewCard = null;
         if (emptyEl) emptyEl.style.display = 'none';
@@ -959,15 +969,19 @@ function showNextCard() {
         return;
     }
 
-    const dueCards = getDueCards();
-
     let nextCard = null;
-    if (dueCards.length > 0) {
-        // Pick from the most urgent cards. If reviewLimit is set, pick from the top slice
+    const now = Date.now();
+    // 1. Relearning card whose 1-minute interval has arrived takes top priority
+    const readyRelearnIdx = sessionRelearningQueue.findIndex(c => !c._relearnAt || c._relearnAt <= now);
+
+    if (readyRelearnIdx !== -1) {
+        nextCard = sessionRelearningQueue[readyRelearnIdx];
+    } else if (dueCards.length > 0 && !limitReached) {
+        // 2. Next fresh card from due pool
         const pool = (reviewLimit && dueCards.length > reviewLimit) ? dueCards.slice(0, reviewLimit) : dueCards;
         nextCard = shuffled(pool)[0];
     } else if (sessionRelearningQueue.length > 0) {
-        // Cards that were rated "again" in this session but have not yet been recalled
+        // 3. No more fresh cards to show: serve pending relearning cards even before the 1m timer expires
         nextCard = sessionRelearningQueue[0];
     }
 
@@ -1532,10 +1546,16 @@ function rateCard(rating) {
     }
 
     currentReviewCard._seenInSession = true;
+    currentReviewCard.lastReviewed = now.toISOString();
 
     const cardWord = cardLemma(currentReviewCard);
 
+    if (typeof Decks !== 'undefined' && Decks.recordDeckReview) {
+        Decks.recordDeckReview(cardWord, now.getTime());
+    }
+
     if (rating === 'again') {
+        currentReviewCard._relearnAt = Date.now() + (SRS_CONFIG.AGAIN_MINUTES * 60 * 1000);
         if (!sessionRelearningQueue.some(c => cardLemma(c) === cardWord)) {
             sessionRelearningQueue.push(currentReviewCard);
         } else {

@@ -185,11 +185,28 @@ const Decks = (function () {
         };
     }
 
+    const recentDeckReviews = new Map(); // lemma -> timestamp
+
+    function recordDeckReview(lemma, timestamp) {
+        if (!lemma) return;
+        recentDeckReviews.set(String(lemma).toLowerCase(), timestamp || Date.now());
+    }
+
+    function getRecentReviewTime(lemma, card) {
+        if (card && card.lastReviewed) {
+            return new Date(card.lastReviewed).getTime();
+        }
+        if (lemma && recentDeckReviews.has(String(lemma).toLowerCase())) {
+            return recentDeckReviews.get(String(lemma).toLowerCase());
+        }
+        return 0;
+    }
+
     // Smart-prioritize a deck's words for a focused study session:
-    // 1. Due cards or leeches (highest urgency)
-    // 2. Learning cards (reviews < 3, in progress)
-    // 3. New words (never studied)
-    // 4. Mastered words (reviews >= 3)
+    // 1. Due / Leech cards (highest urgency: overdue, or failed in this session)
+    // 2. New / Unstudied words (never reviewed yet)
+    // 3. Learning cards (reviewed, but not due yet — sorted oldest lastReviewed first)
+    // 4. Mastered cards (3+ reviews, not due yet — sorted oldest lastReviewed first)
     // 5. Graduated/known words
     function prioritizeWords(words) {
         const now = Date.now();
@@ -200,25 +217,45 @@ const Decks = (function () {
             const isKnownA = a.w.known || (typeof isKnown === 'function' && isKnown(a.w.lemma));
             const isKnownB = b.w.known || (typeof isKnown === 'function' && isKnown(b.w.lemma));
 
-            const score = (card, known) => {
-                if (known) return 5;
-                if (!card) return 3;
-                if (card.leech) return 1;
-                const isDue = !card.nextReview || new Date(card.nextReview).getTime() <= now;
-                if (isDue) return 1;
-                if ((card.reviews || 0) < 3) return 2;
-                return 4;
+            const isDueCard = (card) => {
+                if (!card) return false;
+                if (card.leech) return true;
+                return !card.nextReview || new Date(card.nextReview).getTime() <= now;
             };
 
-            const scoreA = score(cardA, isKnownA);
-            const scoreB = score(cardB, isKnownB);
-            if (scoreA !== scoreB) return scoreA - scoreB;
+            const isDueA = isDueCard(cardA);
+            const isDueB = isDueCard(cardB);
 
-            // When both are due, older due date comes first
-            if (scoreA === 1 && cardA && cardB && cardA.nextReview && cardB.nextReview) {
+            const getTier = (card, known, isDue, lemma) => {
+                if (known) return 5;
+                if (isDue) return 1;
+                const recentTime = getRecentReviewTime(lemma, card);
+                // Unstudied / never reviewed:
+                if (!card && !recentTime) return 2;
+                if (card && !card.lastReviewed && (card.reviews || 0) === 0 && !recentTime) return 2;
+                // Reviewed and not due:
+                if (card && (card.reviews || 0) >= 3) return 4;
+                return 3;
+            };
+
+            const tierA = getTier(cardA, isKnownA, isDueA, a.w.lemma);
+            const tierB = getTier(cardB, isKnownB, isDueB, b.w.lemma);
+            if (tierA !== tierB) return tierA - tierB;
+
+            // When both are due (Tier 1): oldest due date comes first
+            if (tierA === 1 && cardA && cardB && cardA.nextReview && cardB.nextReview) {
                 const diff = new Date(cardA.nextReview).getTime() - new Date(cardB.nextReview).getTime();
                 if (diff !== 0) return diff;
             }
+
+            // When both are not due (Tier 3 or Tier 4): cards reviewed longer ago come first;
+            // cards reviewed just now (newest timestamp) are pushed to the end
+            if (tierA === 3 || tierA === 4) {
+                const timeA = getRecentReviewTime(a.w.lemma, cardA);
+                const timeB = getRecentReviewTime(b.w.lemma, cardB);
+                if (timeA !== timeB) return timeA - timeB;
+            }
+
             return a.idx - b.idx;
         });
         return indexed.map(item => item.w);
@@ -1866,7 +1903,8 @@ const Decks = (function () {
         render, load, statusOf, myDeck, reviewDeck,
         openAddToDeckPicker, openBulkAddPicker, allMyDeckLemmas,
         openImportDeck, parseImportLines,
-        prioritizeWords, selectSessionWords, getStoredSessionLimit, setStoredSessionLimit
+        prioritizeWords, selectSessionWords, getStoredSessionLimit, setStoredSessionLimit,
+        recordDeckReview
     };
 })();
 

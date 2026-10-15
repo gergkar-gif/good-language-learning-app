@@ -9,9 +9,14 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed work (2026-10-15)
 
+- **fix(decks): Fix Repeat Due Ordering and "Again" Relearning in Limited Deck Sessions (Done 2026-10-15).**
+  - Resolved repeated cards on back-to-back sessions: unstudied / new cards now strictly take priority over already reviewed cards that are not due yet (`Due / Leech -> New / Unstudied -> Learning (not-due) -> Mastered -> Known`). Cards reviewed in recent sessions are tracked via `Decks.recordDeckReview()` and sorted to the back of the non-due tiers.
+  - Fixed dropped "Again" cards in SRS limited review sessions (`engine/srs.js`): `showNextCard()` now enforces that sessions with limits do not terminate while `sessionRelearningQueue` has pending cards. Serves ready relearning cards (after 1m interval) or when the fresh pool is exhausted, requiring all "Again" cards to be recalled before session wrap-up.
+  - Updated test suite `tests/decks/test-deck-session-size.js` with Test 5 verifying "Again" cards return and resolve before limited sessions finish.
+
 - **feat(decks): Custom Word Count & Smart Priority for Deck Review and Study Modes (Done 2026-10-15).**
   - Added an open number input (`<input type="number" id="dk-session-limit">`) with quick "All" reset button directly above the study mode row (`Review`, `Match`, `Learn`, `Blast`) in `engine/decks.js` (`detailHtml()`).
-  - Added smart priority word selection (`Decks.prioritizeWords()`): sorts words by learner urgency (Due / Leech by oldest due date first -> Learning -> New -> Mastered -> Known/Graduated), passing the prioritized slice into all 4 study modes.
+  - Added smart priority word selection (`Decks.prioritizeWords()`): sorts words by learner urgency (Due / Leech by oldest due date first -> New / Unstudied -> Learning -> Mastered -> Known/Graduated), passing the prioritized slice into all 4 study modes.
   - Linked real-time dynamic count updates to the `Review` badge (`Math.min(limit, ready)`), and persisted session size in `localStorage` (`parlour_deck_session_limit`).
   - Added `.dk-session-row` and `.dk-session-input` styling in `styles/components.css` matching constructivist theme.
   - Added unit test suite `tests/decks/test-deck-session-size.js` verifying storage persistence, priority sorting, slice boundaries, and review session limit termination.

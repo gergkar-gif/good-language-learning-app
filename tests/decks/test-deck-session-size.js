@@ -114,12 +114,12 @@ const Decks = require('../../engine/decks.js');
     // perro is older due than gato, both are due
     // libro is leech
     assert.strictEqual(sortedLemmas.indexOf('perro') < sortedLemmas.indexOf('gato'), true, 'Older due card before newer due card');
-    assert.strictEqual(sortedLemmas.indexOf('perro') < sortedLemmas.indexOf('casa'), true, 'Due card before learning card');
-    assert.strictEqual(sortedLemmas.indexOf('libro') < sortedLemmas.indexOf('casa'), true, 'Leech card before learning card');
-    assert.strictEqual(sortedLemmas.indexOf('casa') < sortedLemmas.indexOf('nuevo'), true, 'Learning card before new card');
-    assert.strictEqual(sortedLemmas.indexOf('nuevo') < sortedLemmas.indexOf('agua'), true, 'New card before mastered card');
+    assert.strictEqual(sortedLemmas.indexOf('perro') < sortedLemmas.indexOf('nuevo'), true, 'Due card before new card');
+    assert.strictEqual(sortedLemmas.indexOf('libro') < sortedLemmas.indexOf('nuevo'), true, 'Leech card before new card');
+    assert.strictEqual(sortedLemmas.indexOf('nuevo') < sortedLemmas.indexOf('casa'), true, 'New card before learning (not-due) card');
+    assert.strictEqual(sortedLemmas.indexOf('casa') < sortedLemmas.indexOf('agua'), true, 'Learning (not-due) before mastered (not-due)');
     assert.strictEqual(sortedLemmas.indexOf('agua') < sortedLemmas.indexOf('sol'), true, 'Mastered card before known card');
-    console.log('[PASS] prioritizeWords sorts correctly: Due/Leech > Learning > New > Mastered > Known.');
+    console.log('[PASS] prioritizeWords sorts correctly: Due/Leech > New > Learning > Mastered > Known.');
 
     console.log('\n--- Test 3: selectSessionWords respects limit and deck bounds ---');
     const mockDeck = {
@@ -154,6 +154,35 @@ const Decks = require('../../engine/decks.js');
     const endedCard = SRS.getCurrentReviewCard();
     assert.strictEqual(endedCard, null, 'Review session should finish after reaching limit of 2');
     console.log('[PASS] reviewDeck with limit finishes after exact card count.');
+
+    console.log('\n--- Test 5: "Again" card comes back in session before finishing ---');
+    // Start a 2-card session
+    await Decks.reviewDeck('mine', { limit: 2 });
+    const c1 = SRS.getCurrentReviewCard();
+    assert.strictEqual(c1 !== null, true, 'Card 1 should start');
+
+    // Rate card 1 as "again"
+    const failedLemma = c1.spanish;
+    SRS.rateCard('again');
+
+    // Card 2 should be presented
+    const c2 = SRS.getCurrentReviewCard();
+    assert.strictEqual(c2 !== null, true, 'Card 2 should be presented');
+    assert.notStrictEqual(c2.spanish, failedLemma, 'Next card presented');
+    SRS.rateCard('good');
+
+    // After card 2 is rated good, 2 distinct cards have been seen, BUT card 1 was marked "again"!
+    // The session MUST NOT terminate — it must present card 1 again!
+    const c1Again = SRS.getCurrentReviewCard();
+    assert.strictEqual(c1Again !== null, true, 'Failed card must come back before session ends');
+    assert.strictEqual(c1Again.spanish, failedLemma, 'Failed card must be re-tested');
+
+    // Rate card 1 as good
+    SRS.rateCard('good');
+
+    // Now relearning queue is clear, session should end
+    assert.strictEqual(SRS.getCurrentReviewCard(), null, 'Session completes after relearning is cleared');
+    console.log('[PASS] Again card comes back and clears before session ends.');
 
     console.log('\n[ALL PASS] Deck session size tests passed successfully.');
 })();
