@@ -1,0 +1,492 @@
+[
+ {
+  "file": "content/hu/curriculum/challenges.json",
+  "id": "a2-224",
+  "set": {
+   "scenario": "Petra asks Meg about her plans for Sunday. Meg loves nature and wants to spend the day in the forest."
+  },
+  "sure": true,
+  "why": "The scenario did not mention the forest, hiking or nature that the target talks about."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-223-ex.json",
+  "id": "a2-223-dialogue-1",
+  "old": "\"A Balatonhoz megyünk.\"",
+  "new": "\"A Balatonra megyünk.\"",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'a Balatonra megyünk' is the natural answer for the lake/holiday region; -hoz is only 'to the shore'. Wrong options -nál (where) and -ról (from) stay, each one fault, ds entries unchanged."
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-223-a-gr.json",
+  "old": "*tó* changes its stem like *ló* does: *tavak* (\\\"lakes\\\").",
+  "new": "*tó* also changes its stem: *tavak* (\\\"lakes\\\").",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tó - tavak (ó becomes a, plus v) is not the same change as ló - lovak (only v added), so 'like ló' misleads."
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-225-b-gr.json",
+  "old": "with a place before *fog*, the infinitive follows it:",
+  "new": "with the place in focus right before *fog*, the infinitive follows it:",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Rulebook: fog comes first only when a focused word sits right before it; the tip stated it for any place."
+ },
+ {
+  "file": "content/hu/curriculum/challenges.json",
+  "id": "a2-225",
+  "set": {
+   "scenario": "It is Monday and a colleague at work asks Meg how her weekend trip to the village was.",
+   "prompt": "Tell your colleague that on Saturday you were in a small village, fed the hens and saw a stork."
+  },
+  "sure": false,
+  "why": "Petra went on the trip (story: Meg, Károly és Petra), so she would not ask Meg how it was. Gábor, Károly and the grandfather were there too, so an unnamed colleague asks."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-226-ex.json",
+  "id": "a2-226-controlled-3",
+  "set": {
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ],
+   "category": "grammar"
+  },
+  "sure": true,
+  "why": "Blank is the whole verb form kikapcsolom (hint 'kikapcsol, I'): a tested form gets its grammar skill, as a2-227-controlled-4 (letöltöm) already does."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-228-ex.json",
+  "id": "a2-228-controlled-4",
+  "set": {
+   "teaches": [
+    "present-tense-routine-language"
+   ],
+   "category": "grammar"
+  },
+  "sure": true,
+  "why": "Blank is the verb form regisztrálsz (hint 'regisztrál, you'), not a word meaning."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-229-ex.json",
+  "id": "a2-229-controlled-2",
+  "set": {
+   "teaches": [
+    "past-tense-indefinite"
+   ],
+   "category": "grammar"
+  },
+  "sure": true,
+  "why": "Blank is the past form lefagyott (hint 'lefagy, past')."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-230-ex.json",
+  "id": "a2-230-practice-4",
+  "set": {
+   "teaches": [
+    "past-tense-indefinite"
+   ],
+   "category": "grammar"
+  },
+  "sure": true,
+  "why": "Blank is the past form megszakadt (hint 'megszakad, past')."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-230-consolidation-ex.json",
+  "id": "a2-230-consolidation-8",
+  "set": {
+   "teaches": [
+    "past-tense-indefinite"
+   ],
+   "category": "grammar"
+  },
+  "sure": true,
+  "why": "Blank is the past form újraindítottam (hint 'újraindít, I'); a2-230-consolidation-7 (foglaltam) already uses past-tense-indefinite."
+ },
+ {
+  "file": "content/hu/curriculum/challenges.json",
+  "id": "a2-227",
+  "set": {
+   "scenario": "Meg is at her colleague Petra's flat and wants to get online and to send Petra a file. Petra is in the kitchen."
+  },
+  "sure": true,
+  "why": "The scenario did not mention the file the target talks about."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-226-ex.json",
+  "id": "a2-226-practice-1",
+  "old": "\"Kapcsolj ki a telefont!\"",
+  "new": "\"Kapcsold a telefont!\"",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "kapcsolj is an unmet form (suspect), and the option failed on definiteness, not on the prefix order the item tests. Now it fails on one thing, the missing prefix, with met words. Its ds entry (imperative-indefinite) goes with the old option."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-226-ex.json",
+  "id": "a2-226-practice-1",
+  "set": {
+   "distractor_skills": null
+  },
+  "sure": false,
+  "why": "'Kapcsold a telefont!' is not a well-formed form of another skill; ds 0 was for the replaced option."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-228-ex.json",
+  "id": "a2-228-dialogue-2",
+  "old": "\"Foglaltál már asztalt online?\"",
+  "new": "\"Mikor foglaltál asztalt online?\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Foglaltál már ... = experiential 'have you ever' már, which is B1 (mar-experiential). Ask 'when' instead."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-228-ex.json",
+  "id": "a2-228-dialogue-2",
+  "old": "\"Igen, tegnap foglalok az alkalmazásban.\"",
+  "new": "\"Tegnap foglalok az alkalmazásban.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Reply to a 'when' question has no Igen."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-228-ex.json",
+  "id": "a2-228-dialogue-2",
+  "old": "\"Igen, tegnap foglaltam az alkalmazásban.\"",
+  "new": "\"Tegnap foglaltam az alkalmazásban.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Reply to a 'when' question has no Igen."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-228-ex.json",
+  "id": "a2-228-dialogue-2",
+  "old": "\"Igen, tegnap foglalt az alkalmazásban.\"",
+  "new": "\"Tegnap foglalt az alkalmazásban.\"",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Reply to a 'when' question has no Igen."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-231-ex.json",
+  "id": "a2-231-practice-3",
+  "old": "\"hint\": \"Kata + -nak/-nek\"",
+  "new": "\"hint\": \"Kata, to\"",
+  "sure": true,
+  "why": "The hint hands over the ending the item tests (give-away); give the base word and the role only."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-232-ex.json",
+  "id": "a2-232-controlled-3",
+  "old": "\"hint\": \"anya + -nak/-nek\"",
+  "new": "\"hint\": \"anya, to\"",
+  "sure": true,
+  "why": "The hint hands over the ending the item tests (give-away); give the base word and the role only."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-233-ex.json",
+  "id": "a2-233-controlled-3",
+  "old": "\"hint\": \"szilveszter + -kor\"",
+  "new": "\"hint\": \"szilveszter, at\"",
+  "sure": true,
+  "why": "The hint hands over the ending the item tests (give-away); give the base word and the role only."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-235-ex.json",
+  "id": "a2-235-controlled-4",
+  "old": "\"hint\": \"buli + -ra\"",
+  "new": "\"hint\": \"buli, for\"",
+  "sure": true,
+  "why": "The hint hands over the ending the item tests (give-away); give the base word and the role only."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-235-ex.json",
+  "id": "a2-235-practice-4",
+  "old": "\"hint\": \"pezsgő + -vel\"",
+  "new": "\"hint\": \"pezsgő, with\"",
+  "sure": true,
+  "why": "The hint hands over the ending the item tests (give-away); give the base word and the role only."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-235-consolidation-ex.json",
+  "id": "a2-235-consolidation-10",
+  "old": "\"hint\": \"Gábor + -nak/-nek\"",
+  "new": "\"hint\": \"Gábor, to\"",
+  "sure": true,
+  "why": "The hint hands over the ending the item tests (give-away); give the base word and the role only."
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-234.json",
+  "old": "    \"I can say what you see and wear on the national holidays, such as cockades and fireworks.\"\n  ],\n  \"grammar\"",
+  "new": "    \"I can say what I see and wear on the national holidays, such as cockades and fireworks.\"\n  ],\n  \"grammar\"",
+  "sure": true,
+  "why": "Goal voice: \"I can say what you see\" -> \"I\"."
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-234.json",
+  "old": "        \"I can say what you see and wear on the national holidays, such as cockades and fireworks.\"\n      ]\n    },\n    {\n      \"type\": \"recycle\"",
+  "new": "        \"I can say what I see and wear on the national holidays, such as cockades and fireworks.\"\n      ]\n    },\n    {\n      \"type\": \"recycle\"",
+  "sure": true,
+  "why": "same, goal section"
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-234.json",
+  "old": "        \"I can say what you see and wear on the national holidays, such as cockades and fireworks.\"\n      ]\n    }\n  ]\n}",
+  "new": "        \"I can say what I see and wear on the national holidays, such as cockades and fireworks.\"\n      ]\n    }\n  ]\n}",
+  "sure": true,
+  "why": "same, checklist section"
+ },
+ {
+  "file": "content/hu/curriculum/curriculum.json",
+  "old": "I can say what you see and wear on the national holidays, such as cockades and fireworks.",
+  "new": "I can say what I see and wear on the national holidays, such as cockades and fireworks.",
+  "sure": true,
+  "why": "same, curriculum.json copy"
+ },
+ {
+  "file": "content/hu/curriculum/challenges.json",
+  "id": "a2-232",
+  "set": {
+   "prompt": "Tell Károly that on Christmas Eve your family eats fish soup and bejgli, and wish him a happy Christmas.",
+   "cues": [
+    "Say your family eats fish soup on Christmas Eve",
+    "Say your family eats bejgli too",
+    "Wish him a happy Christmas"
+   ]
+  },
+  "sure": true,
+  "why": "Target is \"eszünk\" (we); the prompt/cues said \"you eat\", which invites eszel."
+ },
+ {
+  "file": "content/hu/curriculum/challenges.json",
+  "id": "a2-235-consolidation",
+  "set": {
+   "scenario": "It is New Year's Eve and a pot of lentils is on the stove. Petra arrives at Meg and Károly's door."
+  },
+  "sure": true,
+  "why": "The scenario did not mention lentils, which the target talks about."
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-232.json",
+  "old": "  \"grammar\": \"Christmas words: karácsony, szenteste, fenyőfa, bejgli, halászlé, and giving presents with -nak/-nek\",",
+  "new": "  \"grammar\": \"Christmas words: karácsony, szenteste, karácsonyfa, bejgli, halászlé, and giving presents with -nak/-nek\",",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa."
+ },
+ {
+  "file": "content/hu/curriculum/curriculum.json",
+  "old": "              \"grammar\": \"Christmas words: karácsony, szenteste, fenyőfa, bejgli, halászlé, and giving presents with -nak/-nek\",",
+  "new": "              \"grammar\": \"Christmas words: karácsony, szenteste, karácsonyfa, bejgli, halászlé, and giving presents with -nak/-nek\",",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa."
+ },
+ {
+  "file": "content/hu/vocabulary/a2/a2-232-voc.json",
+  "old": "\"translation\": \"Christmas tree, fir tree\"",
+  "new": "\"translation\": \"Christmas tree\"",
+  "sure": true,
+  "why": "gloss for karácsonyfa"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-235-consolidation-ex.json",
+  "id": "a2-235-consolidation-3",
+  "old": "a small fir tree",
+  "new": "a small Christmas tree",
+  "sure": true,
+  "why": "Wrong option referred to the renamed word fenyőfa (fir tree); keep the English in step."
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-231-a-gr.json",
+  "old": "The two wishes are *Boldog születésnapot!* and *Boldog névnapot!* Both end",
+  "new": "You know the long wishes *Boldog névnapot kívánok!* and *Boldog születésnapot kívánok!* from Unit 37; the short forms are *Boldog születésnapot!* and *Boldog névnapot!* Both end",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "a2-184-a (Unit 37) already taught Boldog névnapot kívánok!, Boldog születésnapot kívánok! and Isten éltessen; the screen presents the wishes as new."
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-231-a-gr.json",
+  "old": "*Isten éltessen!* is a fixed phrase for either day",
+  "new": "*Isten éltessen!* (you know it from Unit 37) is a fixed phrase for either day",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Isten éltessen sokáig! is in a2-184-a (Unit 37)."
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-232-a-gr.json",
+  "old": "that is when the family gathers and the presents are opened.\"",
+  "new": "that is when the family gathers and the presents are opened. Like *este* (\\\"in the evening\\\"), *szenteste* needs no ending when it means \\\"on Christmas Eve\\\": *Szenteste halászlét eszünk*.\"",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "Szenteste is used with no case (Szenteste halászlét eszünk) and as a noun (Mikor van szenteste?) with nothing explaining why it has no -n; it ends in -este, the adverb the learner knows from A1."
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-233-b-gr.json",
+  "old": "For a date you use *-án/-én* (*január elsején*).",
+  "new": "For a date you use *-án/-én* (*január elsején*). *Újév napján* is a fixed phrase, \\\"on the day of the New Year\\\" (*nap* + *-ja* + *-n*, as in *névnapján*, Unit 37).",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "újév napján is in the table and drilled with no explanation of its -n."
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-235-a-gr.json",
+  "old": "*meghívlak* (\\\"I invite you\\\"). The event takes *-ra/-re*: *vacsorára*, *a bulira* (\\\"to dinner\\\", \\\"to the party\\\").",
+  "new": "*meghívlak* (\\\"I invite you\\\"). You also know from Unit 38 that the event takes *-ra/-re*: *vacsorára*, *a bulira* (\\\"to dinner\\\", \\\"to the party\\\").",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "Meghívlak vacsorára and the event in -ra/-re (kávéra, ebédre, a születésnapomra) are taught on a2-189-a (Unit 38); the screen presents them as new. (Say \"Unit 38\", not \"a2-189\", if the reviewer prefers: the tone elsewhere is \"from Unit N\".)"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-235-b-gr.json",
+  "old": "A few verbs are irregular, so learn the pairs: one guest",
+  "new": "You have already met several of these irregular commands (*gyere*, *gyertek* in Unit 34; *vegyél*, *vegyetek* in Unit 37; *ülj le* in Unit 40; *igyál* in Unit 44). Here they are as pairs: one guest",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "Gyere/Gyertek (a2-167-a, a2-170-a), Vegyél/Vegyetek (a2-185-a), Ülj le (a2-196-a), Igyál (a2-220) are known; only Üljetek, Egyél, Egyetek and Igyatok are new. The screen says \"learn the pairs\" as if all were new."
+ },
+ {
+  "file": "content/hu/curriculum/challenges.json",
+  "id": "a2-233",
+  "set": {
+   "scenario": "It is Easter Monday. Meg's mother, visiting from South Africa, asks Meg what happens at Easter in Hungary.",
+   "prompt": "Tell her that at Easter the boys sprinkle the girls and the girls give them a painted egg."
+  },
+  "sure": false,
+  "why": "Gábor's grandfather is Hungarian and would not ask Meg about Hungarian Easter customs; Meg's mother (story 47) is the natural asker."
+ },
+ {
+  "file": "content/hu/curriculum/challenges.json",
+  "id": "a2-234",
+  "set": {
+   "scenario": "It is 15 March. Meg's mother, visiting Budapest, sees red-white-green badges on many coats and asks why the shops are closed.",
+   "prompt": "Tell your mother that 15 March is a national holiday and that in 1848 there was a revolution in Hungary."
+  },
+  "sure": false,
+  "why": "Petra phoning Meg \"why she is not at work\" on a national holiday makes no sense (nobody works on 15 March); the scenario also never mentioned the holiday/revolution."
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-232-ex.json",
+  "old": "        \"bejgli\",\n        \"fenyőfa\"",
+  "new": "        \"bejgli\",\n        \"karácsonyfa\"",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "id": "a2-232-intro-2",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-232-ex.json",
+  "old": "          \"fenyőfa\",",
+  "new": "          \"karácsonyfa\",",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "id": "a2-232-controlled-1",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-232-ex.json",
+  "old": "      \"answer\": \"fenyőfa\"",
+  "new": "      \"answer\": \"karácsonyfa\"",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "id": "a2-232-controlled-2",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-232-ex.json",
+  "old": "      \"sentence\": \"Szenteste a fenyőfa alatt sok ajándék van.\",",
+  "new": "      \"sentence\": \"Szenteste a karácsonyfa alatt sok ajándék van.\",",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "id": "a2-232-listening-1",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-232-ex.json",
+  "old": "      \"options\": [\n        \"fenyőfa\",",
+  "new": "      \"options\": [\n        \"karácsonyfa\",",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "id": "a2-232-check-1",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-235-ex.json",
+  "old": "          \"fenyőfa\",",
+  "new": "          \"karácsonyfa\",",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "id": "a2-235-controlled-1",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-235-consolidation-ex.json",
+  "old": "      \"answer\": \"fenyőfa\"",
+  "new": "      \"answer\": \"karácsonyfa\"",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "id": "a2-235-consolidation-6",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/vocabulary/a2/a2-232-voc.json",
+  "old": "      \"lemma\": \"fenyőfa\",",
+  "new": "      \"lemma\": \"karácsonyfa\",",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-232-a-gr.json",
+  "old": "  \"title\": \"karácsony, szenteste, fenyőfa: Christmas Words\",",
+  "new": "  \"title\": \"karácsony, szenteste, karácsonyfa: Christmas Words\",",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-232-a-gr.json",
+  "old": "      \"content\": \"The main Christmas evening in Hungary is *szenteste*, Christmas Eve, 24 December. The family decorates the tree (*fenyőfa*) and opens the presents (*ajándék*, A1), which the *Jézuska* (\\\"little Jesus\\\") traditionally brings. On 6 December the *Mikulás* comes earlier and puts sweets in children's boots. *halászlé* (fish soup) is a common Christmas Eve dish, and *bejgli* is a roll with a poppy-seed or walnut filling. *karácsony* is Christmas itself, and *ünnep* is any holiday or festival. The wishes use the accusative you know from A1: *Boldog karácsonyt!* (like *Boldog születésnapot!*) and *Kellemes ünnepeket!* with the plural object ending *-ket* (A1 Unit 22).\"",
+  "new": "      \"content\": \"The main Christmas evening in Hungary is *szenteste*, Christmas Eve, 24 December. The family decorates the tree (*karácsonyfa*) and opens the presents (*ajándék*, A1), which the *Jézuska* (\\\"little Jesus\\\") traditionally brings. On 6 December the *Mikulás* comes earlier and puts sweets in children's boots. *halászlé* (fish soup) is a common Christmas Eve dish, and *bejgli* is a roll with a poppy-seed or walnut filling. *karácsony* is Christmas itself, and *ünnep* is any holiday or festival. The wishes use the accusative you know from A1: *Boldog karácsonyt!* (like *Boldog születésnapot!*) and *Kellemes ünnepeket!* with the plural object ending *-ket* (A1 Unit 22).\"",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-232-a-gr.json",
+  "old": "          \"fenyőfa\",",
+  "new": "          \"karácsonyfa\",",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-232-a-gr.json",
+  "old": "          \"spanish\": \"A fenyőfa alatt sok ajándék van.\",",
+  "new": "          \"spanish\": \"A karácsonyfa alatt sok ajándék van.\",",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/original/a2/a2-unit-47.json",
+  "old": "      \"text\": \"December huszonnegyedikén van szenteste. Meg anyja és Lily már két napja Budapesten vannak, mert Károly és Meg meghívták őket karácsonyra. A nappaliban áll a fenyőfa, alatta sok ajándék van.\"",
+  "new": "      \"text\": \"December huszonnegyedikén van szenteste. Meg anyja és Lily már két napja Budapesten vannak, mert Károly és Meg meghívták őket karácsonyra. A nappaliban áll a karácsonyfa, alatta sok ajándék van.\"",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/original/a2/a2-unit-47.json",
+  "old": "      \"text\": \"Meg boldog: a család együtt van, és a fenyőfa alatt még sok ajándék van.\"",
+  "new": "      \"text\": \"Meg boldog: a család együtt van, és a karácsonyfa alatt még sok ajándék van.\"",
+  "sure": true,
+  "why": "fenyőfa is a fir/pine tree; the Christmas tree is karácsonyfa.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/original/a2/a2-unit-47.json",
+  "old": "mindenki a fenyőfához megy",
+  "new": "mindenki a karácsonyfához megy",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "fenyőfa -> karácsonyfa"
+ }
+]

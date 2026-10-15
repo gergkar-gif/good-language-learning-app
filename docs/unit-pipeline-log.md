@@ -271,6 +271,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-15 | HU A2 29–34 | paired read (**3 units/reader**, trial) | | 327k + 352k, 20 | 235 applied of 236, 0 rejected | ~113k reader tokens/unit (×0.97 of 25–28; first logged as ×1.9 against the wrong ~59k), ~39 applied fixes/unit (×1.2); trial dropped on the wrong figure, back to 2 units/reader |
 | 10-15 | HU A2 35–38 | paired read (2 units/reader) | | 301k + 280k, 19 + 17 | 210 applied of 211, 0 rejected; 13 more by Claude | ~145k reader tokens/unit (×1.24 of 25–28); applied reader fixes 56 / 52 / 48 / 54 (~52/unit, ×1.6 of ~32); both report-file writes refused by the harness |
 | 10-15 | HU A2 39–44 | paired read (**3 units/reader**) | Sonnet fixer for 42–44 unmet words: 212k, 12 | 386k + 449k, 23 + 33 | 426 applied of 426, 0 rejected; ~20 more by Claude | ~139k reader tokens/unit (A ~129k, B ~150k; ×0.96 of 35–38's ~145k); applied reader fixes 72 / 70 / 58 / 77 / 74 / 75 (~71/unit, ×1.36 of ~52); ~250 unmet-word suspects left in 42–44 needed a fixer (~71k/unit); reader B's report write refused, A's allowed |
+| 10-15 | HU A2 45–47 (new units) | **New unit** template, 1 Sonnet writer per unit (45 ∥ 46, then 47); 1 paired reader (3 units) | writers 238k / 273k / 259k, 12.6 / 15.4 / 13.6 | 311k, 15.4 | 56 applied of 56, 0 rejected (45: 5, 46: 12, 47: 39) | ~257k writer + ~104k reader tokens/unit (~361k/unit); reader ×0.75 of 39–44's ~139k, ~19 applied fixes/unit (×0.26 of ~71): written-from-scratch units with the knowledge sheet came back far cleaner than the regenerated/read-first ones; 47's fixes are mostly one rename (*fenyőfa*, 15) and six hints; reader's report write refused again |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -503,3 +504,37 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
 - Limit: the script knows only whether a fix applies cleanly and passes
   the checks, not whether its Hungarian is right; that stays the
   reviewer's job (the review list).
+
+### 2026-10-15 (new units 45–47 written, read and frozen): HU A2 47/47
+
+- **Cost:** writers 238k / 273k / 259k (one Sonnet agent per unit, two at
+  once, 47 after 45 and 46 were merged so its sheet counted their words);
+  one reader for all three, 311k (~104k/unit). ~361k a unit in all, against
+  ~119k (regeneration) + ~139k (read) for the regenerated A2 units: a unit
+  from scratch costs about twice a regeneration, as expected for writing
+  every screen and item.
+- **Defects:** 56 applied fixes (~19/unit against ~71 in 39–44), 0 rejected;
+  the reader checked the writers' challenges instead of drafting (8 scenario
+  fixes). Unit 47 carried most of them: one wrong word used throughout
+  (*fenyőfa* for the Christmas tree, 15 fixes), six hints spelling out the
+  tested ending, and three screens presenting Unit 37/38 chunks as new. The
+  sheet lists earlier screen *titles*, not their example chunks, so a writer
+  doesn't see that *Boldog névnapot!* was taught; the reader found it.
+- **New check `hint-suffix`** (suspect, A1–B1 fill-blanks): a hint with
+  "+ -ending" (*buli + -ra*). 0 hits now in hu/es-es/es-latam A1–B1 after the
+  fixes; C1 uses suffix hints on purpose (436), so it is level-scoped. Rule
+  added to `docs/unit-agent-rules.md` § 6 with experiential *már* (B1) and
+  the "check earlier screens for the same chunks" note.
+- **Pipeline gap fixed:** `curriculum.json` comes from `build-manifest.py`;
+  without it the word index skipped the new units and the writers'
+  unmet-word checks were blind to their own words. Now in the "New unit"
+  template.
+- **Script fixes:** `prior_knowledge.py` numbers units within the level
+  ("A2 Unit 37 …"), so "You know … from Unit N" can be copied (its header
+  said "unit 78"); `unmet-words.js` accepts a met number + *-kor* (the two old
+  suspects *kilenckor* a2-105-consolidation-11 and *tizenegykor*
+  a2-107-controlled-3, and five more, were false positives; no content change).
+- **Still open (not covered by these checks):** the Reader splits
+  *húsvétkor / karácsonykor / szilveszterkor* as *kor* "age" (engine); digit
+  years *1848-ban*, *1956-ban* and TTS; the HU A2 walk test and the level
+  checklist.

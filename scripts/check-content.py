@@ -92,6 +92,7 @@ CHECKS = {
     "article-blank": "HU fill-blank: 'a ____' before an answer starting with a vowel, or 'az ____' before a consonant",
     "ik-first-person": "HU: an -ik verb's 'I' form with -k (eszek, iszok, dolgozok) as a right answer; the course teaches -m",
     "take-gloss": "HU fill-blank: English 'take' for a kér-/vesz- answer, so both verbs fit (write 'have'/'ask for' or 'buy')",
+    "hint-suffix": "A1–B1 fill-blank whose hint spells out the tested ending (*buli + -ra* for *bulira*): name the word and its role instead (*buli, for*)",
     "glued-blank": "HU: a blank glued to a stem ending in -a/-e whose answer is a suffix (hálószoba____ + ban teaches *hálószobaban*)",
     "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
     "unmet-word": "a word the learner hasn't met by this lesson (scripts/unmet-words.js)",
@@ -111,7 +112,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"hova-variant", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # Hungarian A1-A2. Spanish lists leave out function words (en, que, con), so the
@@ -312,6 +313,12 @@ def check_exercise(e, course, lang):
         answers = e.get("answers") or [e.get("answer") or ""]
         if m and any(fold(str(a)).strip() in LENGTHENING_SUFFIXES for a in answers):
             hit("glued-blank", f"{m.group(1)}____ + {answers[0]}")
+    if t == "fill-blank" and re.match(r"(a1|a2|b1)-", str(e.get("id") or "")):
+        # the hint names the base word, never the ending the item tests (units 45-47
+        # had six); C1 word-formation hints give the suffix on purpose, so A1-B1 only
+        h = e.get("hint")
+        if isinstance(h, str) and re.search(r"\+\s*-\w", h):
+            hit("hint-suffix", h[:40])
     if t in CHOICE and opts:
         k = e.get("correct")
         if not isinstance(k, int) or not 0 <= k < len(opts):

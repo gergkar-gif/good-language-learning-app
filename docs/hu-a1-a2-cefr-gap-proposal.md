@@ -75,6 +75,8 @@ Each new theme is a new unit and a new vocabulary skill
 
 ## Lesson plans for the three new units (written during the HU A2 pass)
 
+Done 2026-10-15: all three written, read and frozen (ACHIEVED.md 153; `imports/review/hu-a2-batch-45-47/`).
+
 Prompt: `docs/unit-pipeline-log.md` § Prompt templates, "New unit".
 
 - **45 `nature-animals`** (a2-221…225): 221 pets (*háziállat, kutya, macska, sétáltat, etet*); 222 farm animals and the village (*tanya, ló, tehén, tyúk, disznó*, village vs town); 223 landscape and Hungarian geography (*erdő, hegy, folyó, tó, mező, domb*; *Duna, Tisza, Balaton, Alföld*, certain facts only); 224 plants, parks and the outdoors (*virág, fa, fű, kirándul, túrázik, természet*); 225 a weekend trip to the countryside (story).
