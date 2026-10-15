@@ -541,6 +541,16 @@ const HungarianMorphology = (function () {
         ['suk', 'pres', 1, 'pl'], ['zuk', 'pres', 1, 'pl'],
         ['sük', 'pres', 1, 'pl'], ['zük', 'pres', 1, 'pl'],
         ['sátok', 'pres', 2, 'pl'], ['zátok', 'pres', 2, 'pl'],
+        // -lak/-lek: "I … you" (1sg subject, 2nd-person object), taught in
+        // HU a2-187 ("látlak", "meghívlak", "kérlek"). Without these rows
+        // the Reader split them as noun compounds ("lát" + "lak", dwelling).
+        // -alak/-elek after a cluster ("értelek", "küldelek"); past adds
+        // the past -t-/-ott- marker ("láttalak", "kerestelek", "vártalak").
+        ['lak', 'pres', 1, 'sg'], ['lek', 'pres', 1, 'sg'],
+        ['alak', 'pres', 1, 'sg'], ['elek', 'pres', 1, 'sg'],
+        ['talak', 'past', 1, 'sg'], ['telek', 'past', 1, 'sg'],
+        ['ttalak', 'past', 1, 'sg'], ['ttelek', 'past', 1, 'sg'],
+        ['ottalak', 'past', 1, 'sg'], ['ettelek', 'past', 1, 'sg'], ['öttelek', 'past', 1, 'sg'],
         // past — -t-/-ott-/-ett-/-ött- + personal ending; 3sg has no
         // further ending beyond the tense marker itself. Consonant
         // clusters that can't take a bare -t- (stems already ending in a

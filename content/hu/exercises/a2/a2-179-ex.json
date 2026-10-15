@@ -37,9 +37,9 @@
       "id": "a2-179-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "____ találkozunk a régi egyetemi barátokkal.",
+      "sentence": "____ találkozunk a régi barátokkal.",
       "hint": "From time to time: idő",
-      "english": "From time to time, we meet up with old university friends.",
+      "english": "From time to time, we meet up with old friends.",
       "answer": "Időnként",
       "teaches": [
         "distributive-nkent"
@@ -126,9 +126,9 @@
       "id": "a2-179-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A téli utakon ____ csúszós az aszfalt.",
+      "sentence": "Az utakon ____ sok a víz.",
       "hint": "in places: hely",
-      "english": "On winter roads, the asphalt is slippery in places.",
+      "english": "There is a lot of water on the roads in places.",
       "answer": "helyenként",
       "teaches": [
         "distributive-nkent"
@@ -139,9 +139,9 @@
       "id": "a2-179-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Az autó autópályán ____ 130 kilométerrel haladhat.",
+      "sentence": "Az autó a városban ____ ötven kilométerrel halad.",
       "hint": "per hour: óra",
-      "english": "On the highway, the car can travel at 130 kilometers per hour.",
+      "english": "In the city the car travels at fifty kilometers per hour.",
       "answer": "óránként",
       "teaches": [
         "distributive-nkent"
@@ -155,14 +155,18 @@
       "question": "Translate: 'We visit the museum occasionally.'",
       "options": [
         "Időnként meglátogatjuk a múzeumot.",
-        "Mindig meglátogatjuk a múzeumot.",
-        "Soha nem látogatjuk a múzeumot."
+        "Naponta meglátogatjuk a múzeumot.",
+        "Óránként meglátogatjuk a múzeumot."
       ],
       "correct": 0,
       "teaches": [
         "a2-essive-formal-vocab"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "1": "nta-productive",
+        "2": "distributive-nkent"
+      }
     },
     {
       "id": "a2-179-practice-5",
@@ -198,13 +202,17 @@
       "question": "—Gyakran jársz moziba? —Nem túl gyakran, de azért ____ elmegyek egy jó filmre.",
       "options": [
         "időnként",
-        "mindig",
-        "soha"
+        "naponta",
+        "óránként"
       ],
       "correct": 0,
       "teaches": [
         "a2-essive-formal-vocab"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "nta-productive",
+        "2": "distributive-nkent"
+      }
     },
     {
       "id": "a2-179-dialogue-2",
@@ -222,9 +230,9 @@
       "id": "a2-179-writing-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A hírek szerint az országban ____ záporok alakulhatnak ki.",
+      "sentence": "A hírek szerint az országban ____ zápor várható.",
       "hint": "in places: hely",
-      "english": "According to the news, showers may develop in places across the country.",
+      "english": "According to the news, showers are expected in places across the country.",
       "answer": "helyenként",
       "teaches": [
         "distributive-nkent"
@@ -269,9 +277,9 @@
       "id": "a2-179-check-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A járatok óránként egyszer ____.",
+      "sentence": "A buszok óránként egyszer ____.",
       "hint": "indul, plural",
-      "english": "The services depart once per hour.",
+      "english": "The buses depart once per hour.",
       "answer": "indulnak",
       "teaches": [
         "present-tense-routine-language"

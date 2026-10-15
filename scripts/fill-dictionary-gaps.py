@@ -228,7 +228,7 @@ def load_json(path, default):
 def dump_like(data, original_raw):
     """Serialise `data` in exactly the layout of original_raw, or fail."""
     probe = json.loads(original_raw)
-    for kwargs, crlf in (({'separators': (',', ':')}, False), ({'indent': 2}, True), ({'indent': 2}, False)):
+    for kwargs, crlf in (({'separators': (',', ':')}, False), ({}, False), ({'indent': 2}, True), ({'indent': 2}, False)):
         out = json.dumps(probe, ensure_ascii=False, **kwargs)
         if crlf:
             out = out.replace('\n', '\r\n')

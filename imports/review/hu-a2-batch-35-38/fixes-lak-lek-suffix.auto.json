@@ -1,0 +1,48 @@
+[
+ {
+  "file": "content/hu/exercises/a2/a2-187-ex.json",
+  "why": "length give-away 47 vs 24",
+  "old": "{\n      \"id\": \"a2-187-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Can '-lak / -lek' be used to address multiple people (titeket)?\",\n      \"options\": [\n        \"Yes, it applies to both singular and plural you\",\n        \"No, only to singular you\",\n        \"No, only to 3rd person\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "new": "{\n      \"id\": \"a2-187-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Can '-lak / -lek' be used to address multiple people (titeket)?\",\n      \"options\": [\n        \"Yes, singular and plural you\",\n        \"No, only to singular you\",\n        \"No, only to 3rd person\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "id": "a2-187-intro-2"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-187-b-gr.json",
+  "old": "My friends, I am waiting for you all at the restaurant!",
+  "new": "Friends, I am waiting for you all at the restaurant!",
+  "why": "matches the fix above"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-188-ex.json",
+  "why": "length give-away 32 vs 24; 'Meg nem várlak' is acceptable emphatic Hungarian, see doubtful list",
+  "old": "{\n      \"id\": \"a2-188-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Where does the preverb go when a verb is negated with 'nem'?\",\n      \"options\": [\n        \"Behind the verb (Nem várlak meg)\",\n        \"Directly before 'nem'\",\n        \"It disappears completely\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"prefix-word-order\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "new": "{\n      \"id\": \"a2-188-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Where does the preverb go when a verb is negated with 'nem'?\",\n      \"options\": [\n        \"After it (Nem várlak meg)\",\n        \"Directly before 'nem'\",\n        \"It disappears completely\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"prefix-word-order\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "id": "a2-188-intro-1"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-188-b-gr.json",
+  "old": "Many common Hungarian verbs use prefixes (preverbs) that express completed action or direction. These pair naturally with",
+  "new": "You already know prefixes (preverbs) such as *meg-*, *fel-* and *el-*. They pair naturally with",
+  "why": "screen presents known prefix material (a2-108, a2-49) as new"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-188-b-gr.json",
+  "old": "Word order rules apply normally:",
+  "new": "The word order you know applies:",
+  "why": "same"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-189-ex.json",
+  "why": "length give-away 34 vs 22",
+  "old": "{\n      \"id\": \"a2-189-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What case suffix does the treat take with 'Meghívlak'? (e.g. coffee, lunch)\",\n      \"options\": [\n        \"Sublative -ra/-re (kávéra, ebédre)\",\n        \"Inessive -ban/-ben\",\n        \"Instrumental -val/-vel\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"ra-re\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "new": "{\n      \"id\": \"a2-189-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What case suffix does the treat take with 'Meghívlak'? (e.g. coffee, lunch)\",\n      \"options\": [\n        \"Sublative -ra/-re (ebédre)\",\n        \"Inessive -ban/-ben\",\n        \"Instrumental -val/-vel\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"ra-re\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "id": "a2-189-intro-1"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-190-consolidation-ex.json",
+  "why": "distractor_skills on the ungrammatical option 1 (*Nem zavarok téged*)",
+  "old": "{\n      \"id\": \"a2-190-consolidation-15\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which phrase correctly expresses 'I won't bother you'?\",\n      \"options\": [\n        \"Nem zavarlak.\",\n        \"Nem zavarok téged.\",\n        \"Nem zavarsz.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"present-tense-routine-language\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"review\"\n    }",
+  "new": "{\n      \"id\": \"a2-190-consolidation-15\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which phrase correctly expresses 'I won't bother you'?\",\n      \"options\": [\n        \"Nem zavarlak.\",\n        \"Nem zavarok téged.\",\n        \"Nem zavarsz.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"review\"\n    }",
+  "id": "a2-190-consolidation-15"
+ }
+]

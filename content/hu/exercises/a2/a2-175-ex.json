@@ -8,8 +8,8 @@
       "question": "What does 'kővé dermedt' mean figuratively?",
       "options": [
         "froze in astonishment",
-        "fell onto a rock",
-        "threw a stone"
+        "fell down onto a rock",
+        "threw a stone at him"
       ],
       "correct": 0,
       "teaches": [
@@ -50,9 +50,9 @@
       "id": "a2-175-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A kerékpározás népszerű ____ vált a városban.",
+      "sentence": "A futás ____ vált a városban.",
       "hint": "into a habit: szokás",
-      "english": "Cycling became a popular habit in the city.",
+      "english": "Running became a habit in the city.",
       "answer": "szokássá",
       "teaches": [
         "translative-morphology"
@@ -73,8 +73,8 @@
           "valósággá válik"
         ],
         [
-          "divat",
-          "divattá válik"
+          "szokás",
+          "szokássá válik"
         ],
         [
           "semmi",
@@ -126,9 +126,9 @@
       "id": "a2-175-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A szoba sokkal ____ vált a festés után.",
+      "sentence": "Az új lámpával a szoba sokkal ____ vált.",
       "hint": "into brighter: világosabb",
-      "english": "The room became much brighter after the painting.",
+      "english": "With the new lamp the room became much brighter.",
       "answer": "világosabbá",
       "teaches": [
         "translative-morphology"
@@ -139,9 +139,9 @@
       "id": "a2-175-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A régi raktár a környék legnépszerűbb találkozóhelyévé ____.",
+      "sentence": "A kis étterem a város legjobb találkozóhelyévé ____.",
       "hint": "became",
-      "english": "The old warehouse became the neighborhood's most popular meeting place.",
+      "english": "The small restaurant became the city's best meeting place.",
       "teaches": [
         "valik-verb"
       ],
@@ -185,8 +185,8 @@
           "goal"
         ],
         [
-          "divat",
-          "fashion"
+          "átalakul",
+          "to transform"
         ]
       ],
       "teaches": [
@@ -198,7 +198,7 @@
       "id": "a2-175-dialogue-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "—Elindult az új vállalkozás? —Igen, az álmunk végre ____ vált!",
+      "question": "—Elindult az új kávézó? —Igen, az álmunk végre ____ vált!",
       "options": [
         "valósággá",
         "valóság",
@@ -216,9 +216,9 @@
       "id": "a2-175-dialogue-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "—Mi történt, amikor megláttad a medvét? —A félelemtől szinte ____ dermedtem!",
+      "sentence": "—Mi történt, amikor megláttad a barátodat? —A meglepetéstől szinte ____ dermedtem!",
       "hint": "into stone: kő",
-      "english": "—What happened when you saw the bear? —I almost froze into stone from fear!",
+      "english": "—What happened when you saw your friend? —I almost froze like stone from surprise!",
       "answer": "kővé",
       "teaches": [
         "translative-morphology"
@@ -229,7 +229,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A közös munka ____ tette a projektet.",
-      "hint": "into successful: sikeres",
+      "hint": "into successful",
       "english": "The teamwork made the project successful.",
       "answer": "sikeressé",
       "teaches": [
@@ -240,11 +240,11 @@
       "id": "a2-175-writing-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Translate: 'The healthy lifestyle became trendy.'",
+      "question": "Translate: 'The new restaurant became trendy.'",
       "options": [
-        "Az egészséges életmód divattá vált.",
-        "Az egészséges életmód divat volt.",
-        "Az egészséges életmód divatból vált."
+        "Az új étterem divattá vált.",
+        "Az új étterem divat volt.",
+        "Az új étterem divatból vált."
       ],
       "correct": 0,
       "teaches": [
@@ -259,17 +259,20 @@
       "id": "a2-175-check-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which phrase correctly expresses 'to make someone happy'?",
+      "question": "Which phrase correctly expresses 'to make the room prettier'?",
       "options": [
-        "boldoggá tesz valakit",
-        "boldog tesz valakit",
-        "boldognak tesz valakit"
+        "szebbé teszi a szobát",
+        "szebb teszi a szobát",
+        "szebbel teszi a szobát"
       ],
       "correct": 0,
       "teaches": [
         "translative-morphology"
       ],
-      "stage": "check"
+      "stage": "check",
+      "distractor_skills": {
+        "2": "val-vel"
+      }
     },
     {
       "id": "a2-175-check-2",

@@ -1,0 +1,406 @@
+[
+ {
+  "file": "content/hu/exercises/a2/a2-176-ex.json",
+  "old": "      \"id\": \"a2-176-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What does the suffix '-ként' mean?\",\n      \"options\": [\n        \"as / in the capacity of\",",
+  "new": "      \"id\": \"a2-176-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What does the suffix '-ként' mean?\",\n      \"options\": [\n        \"as / in the role of\",",
+  "why": "length give-away (23 vs 17): shorten the right option",
+  "id": "a2-176-intro-1"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-176-ex.json",
+  "old": "      \"id\": \"a2-176-practice-3\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Mint mérnök, ____ vett részt a projektben.\",\n      \"hint\": \"as an expert: szakértő\",\n      \"english\": \"As an engineer, he/she took part in the project as an expert.\",\n      \"answer\": \"szakértőként\",",
+  "new": "      \"id\": \"a2-176-practice-3\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Péter ____ vett részt a táborban.\",\n      \"hint\": \"as a volunteer: önkéntes\",\n      \"english\": \"Péter took part in the camp as a volunteer.\",\n      \"answer\": \"önkéntesként\",",
+  "why": "Mint mérnök ... szakértőként sets mint beside -ként (kent-vs-mint is B1); unmet szakértő",
+  "kind": "hungarian",
+  "id": "a2-176-practice-3"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-176-ex.json",
+  "old": "      \"id\": \"a2-176-practice-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which form of 'diák' means 'as a student'?\",\n      \"options\": [\n        \"diákként\",\n        \"diákká\",\n        \"diákul\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"essive-formal-kent\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"translative-morphology\",\n        \"2\": \"ul-ul-essive-modal\"",
+  "new": "      \"id\": \"a2-176-practice-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which form of 'diák' means 'as a student'?\",\n      \"options\": [\n        \"diákként\",\n        \"diákká\",\n        \"diákkal\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"essive-formal-kent\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"translative-morphology\",\n        \"2\": \"val-vel\"",
+  "why": "diákul is not a form (ds on an ungrammatical option); use a well-formed -val/-vel form",
+  "kind": "hungarian",
+  "id": "a2-176-practice-4"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-176-ex.json",
+  "old": "      \"id\": \"a2-176-dialogue-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"—Mivel foglalkozol mostanában? —Egy nyelviskolában dolgozom ____.\",\n      \"options\": [\n        \"tanárként\",\n        \"tanárvá\",\n        \"tanárul\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"essive-formal-kent\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"translative-morphology\",\n        \"2\": \"ul-ul-essive-modal\"",
+  "new": "      \"id\": \"a2-176-dialogue-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"—Mivel foglalkozol mostanában? —Egy nyelviskolában dolgozom ____.\",\n      \"options\": [\n        \"tanárként\",\n        \"tanárrá\",\n        \"tanárral\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"essive-formal-kent\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"translative-morphology\",\n        \"2\": \"val-vel\"",
+  "why": "tanárvá and tanárul are not forms (ds on ungrammatical options); tanárul could pass as a variant of tanárként",
+  "kind": "hungarian",
+  "id": "a2-176-dialogue-1"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-176-ex.json",
+  "old": "      \"id\": \"a2-176-dialogue-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"—Hogy kerültél a táborba? —Egy barátom hívott el ____.\",\n      \"hint\": \"as a helper: segítő\",\n      \"english\": \"—How did you end up at the camp? —A friend invited me as a helper.\",\n      \"answer\": \"segítőként\",",
+  "new": "      \"id\": \"a2-176-dialogue-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"—Mit csinálsz a táborban? —____ segítek.\",\n      \"hint\": \"as a volunteer: önkéntes\",\n      \"english\": \"—What do you do at the camp? —I help as a volunteer.\",\n      \"answer\": \"Önkéntesként\",",
+  "why": "unmet hívott, segítőként (a2-180)",
+  "kind": "hungarian",
+  "id": "a2-176-dialogue-2"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-176-ex.json",
+  "old": "      \"id\": \"a2-176-writing-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Translate: 'As a friend, I tell you the truth.'\",",
+  "new": "      \"id\": \"a2-176-writing-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Translate: 'As a friend, I tell the truth.'\",",
+  "why": "English says \"tell you\", the Hungarian has no you",
+  "id": "a2-176-writing-2"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-176-ex.json",
+  "old": "      \"id\": \"a2-176-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Orvosként fontos a betegek ____.\",\n      \"hint\": \"bizalom, possessive\",\n      \"english\": \"As a doctor, the patients' trust is important.\",",
+  "new": "      \"id\": \"a2-176-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Orvosként fontos a betegnek a ____.\",\n      \"hint\": \"bizalom, possessive\",\n      \"english\": \"As a doctor, the patient's trust is important.\",",
+  "why": "noun possessor without -nak (a betegek bizalma) is not taught; use the known dative possessor",
+  "kind": "hungarian",
+  "sure": false,
+  "id": "a2-176-check-2"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-177-a-gr.json",
+  "old": "*Felnőttként jobban megértem a szüleimet.*",
+  "new": "*Felnőttként jobban megértem az anyámat.*",
+  "why": "szüleimet is the plural possessed (my parents), taught only in a2-191",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-177-a-gr.json",
+  "old": "Felnőttként már más dolgok a fontosak.",
+  "new": "Felnőttként már más dolgok fontosak.",
+  "why": "stray article a before the predicate adjective",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-177-b-gr.json",
+  "old": "*Barátként kérlek, vigyázz magadra.* (As a friend, I ask you to take care of yourself.)",
+  "new": "*Barátként azt mondom neked: vigyázz magadra.* (As a friend, I tell you: take care of yourself.)",
+  "why": "kérlek is the -lak/-lek form, taught in a2-187",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-177-ex.json",
+  "old": "      \"id\": \"a2-177-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"____ felelősséget vállalunk a tetteinkért.\",\n      \"hint\": \"As an adult: felnőtt\",\n      \"english\": \"As adults, we take responsibility for our actions.\",",
+  "new": "      \"id\": \"a2-177-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"____ már saját lakásban lakunk.\",\n      \"hint\": \"As an adult: felnőtt\",\n      \"english\": \"As adults, we already live in our own apartment.\",",
+  "why": "tetteinkért is the plural possessed (our actions), taught only in a2-191; unmet felelősséget, vállalunk",
+  "kind": "hungarian",
+  "id": "a2-177-practice-2"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-177-ex.json",
+  "old": "      \"id\": \"a2-177-practice-3\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"____ könyvtárban tanultunk délutánonként.\",\n      \"hint\": \"As a student: diák\",\n      \"english\": \"As students, we studied in the library in the afternoons.\",",
+  "new": "      \"id\": \"a2-177-practice-3\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"____ a könyvtárban tanultunk délután.\",\n      \"hint\": \"As a student: diák\",\n      \"english\": \"As students, we studied in the library in the afternoon.\",",
+  "why": "unmet délutánonként; könyvtárban lacks the article",
+  "kind": "hungarian",
+  "id": "a2-177-practice-3"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-178-a-gr.json",
+  "old": "A festményt ajándékként kaptam a szüleimtől.",
+  "new": "A festményt ajándékként kaptam a barátomtól.",
+  "why": "szüleimtől is the plural possessed, taught only in a2-191",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-178-a-gr.json",
+  "old": "I received the painting as a gift from my parents.",
+  "new": "I received the painting as a gift from my friend.",
+  "why": "English of the example above"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-178-b-gr.json",
+  "old": "**használ [valamit valamivel/valamiként]**",
+  "new": "**használ [valamit valamiként]**",
+  "why": "használ valamit valamivel is not the pattern shown",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-178-ex.json",
+  "old": "      \"id\": \"a2-178-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Egy fényképet hoztam el a kirándulásról ____.\",\n      \"hint\": \"as a keepsake: emlék\",\n      \"english\": \"I brought a photo from the trip as a keepsake.\",",
+  "new": "      \"id\": \"a2-178-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Egy könyvet hoztam el a kirándulásról ____.\",\n      \"hint\": \"as a keepsake: emlék\",\n      \"english\": \"I brought a book from the trip as a keepsake.\",",
+  "why": "unmet fényképet",
+  "kind": "hungarian",
+  "id": "a2-178-controlled-2"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-178-ex.json",
+  "old": "      \"id\": \"a2-178-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Translate: 'We used the chair as a ladder.'\",\n      \"options\": [\n        \"A széket létraként használtuk.\",\n        \"A széket létrává használtuk.\",\n        \"A széket létrára használtuk.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"essive-formal-kent\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"translative-morphology\",\n        \"2\": \"ra-re\"",
+  "new": "      \"id\": \"a2-178-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Translate: 'We used the chair as a ladder.'\",\n      \"options\": [\n        \"A széket létraként használtuk.\",\n        \"A széket létrává használtuk.\",\n        \"A széket létrával használtuk.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"essive-formal-kent\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"translative-morphology\",\n        \"2\": \"val-vel\"",
+  "why": "A széket létrára használtuk (use for a ladder) is natural Hungarian, so a possible true answer",
+  "kind": "hungarian",
+  "sure": false,
+  "id": "a2-178-controlled-4"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-178-ex.json",
+  "old": "      \"id\": \"a2-178-practice-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What does 'emlékként megőriz' mean?\",\n      \"options\": [\n        \"keeps as a souvenir/memory\",\n        \"forgets quickly\",\n        \"throws away\"",
+  "new": "      \"id\": \"a2-178-practice-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What does 'emlékként megőriz' mean?\",\n      \"options\": [\n        \"keeps as a souvenir/memory\",\n        \"forgets it very quickly\",\n        \"throws it away for good\"",
+  "why": "length give-away (26 vs 15): lengthen the wrong options",
+  "id": "a2-178-practice-1"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-178-ex.json",
+  "old": "      \"id\": \"a2-178-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ezt a javaslatot ideiglenes ____ fogadtuk el.\",\n      \"hint\": \"as a solution: megoldás\",\n      \"english\": \"We accepted this proposal as a temporary solution.\",\n      \"answer\": \"megoldásként\",",
+  "new": "      \"id\": \"a2-178-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"____ veszek egy új lámpát.\",\n      \"hint\": \"as a solution: megoldás\",\n      \"english\": \"As a solution, I am buying a new lamp.\",\n      \"answer\": \"Megoldásként\",",
+  "why": "unmet ideiglenes, fogadtuk",
+  "kind": "hungarian",
+  "id": "a2-178-practice-2"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-178-ex.json",
+  "old": "      \"id\": \"a2-178-practice-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which sentence means 'I mention this as a warning'?\",\n      \"options\": [\n        \"Ezt figyelmeztetésként mondom.\",\n        \"Ezt figyelmeztetéssé mondom.\",\n        \"Ezt figyelmeztetésre mondom.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"essive-formal-kent\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"translative-morphology\",\n        \"2\": \"ra-re\"",
+  "new": "      \"id\": \"a2-178-practice-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which sentence means 'I say this as an example'?\",\n      \"options\": [\n        \"Ezt példaként mondom.\",\n        \"Ezt példává mondom.\",\n        \"Ezt példával mondom.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"essive-formal-kent\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"translative-morphology\",\n        \"2\": \"val-vel\"",
+  "why": "English says mention, Hungarian says mondom; unmet figyelmeztetés",
+  "kind": "hungarian",
+  "id": "a2-178-practice-4"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-178-ex.json",
+  "old": "      \"id\": \"a2-178-dialogue-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"—Hozhatok valamit vacsorára? —Egy üveg bort hozz ____!\",\n      \"hint\": \"as a gift: ajándék\",\n      \"english\": \"—Can I bring something for dinner? —Bring a bottle of wine as a gift!\",",
+  "new": "      \"id\": \"a2-178-dialogue-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"—Mit hozzak vacsorára? —Egy üveg bort hozz ____!\",\n      \"hint\": \"as a gift: ajándék\",\n      \"english\": \"—What should I bring for dinner? —Bring a bottle of wine as a gift!\",",
+  "why": "unmet hozhatok",
+  "kind": "hungarian",
+  "id": "a2-178-dialogue-2"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-178-ex.json",
+  "old": "      \"id\": \"a2-178-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What is 'megoldás' with the essive-formal suffix?\",\n      \"options\": [\n        \"megoldásként\",\n        \"megoldássá\",\n        \"megoldásul\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"essive-formal-kent\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"translative-morphology\",\n        \"2\": \"ul-ul-essive-modal\"",
+  "new": "      \"id\": \"a2-178-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What is 'megoldás' with the essive-formal suffix?\",\n      \"options\": [\n        \"megoldásként\",\n        \"megoldássá\",\n        \"megoldásban\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"essive-formal-kent\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"translative-morphology\",\n        \"2\": \"ban-ben-in\"",
+  "why": "megoldásul is a real variant of megoldásként (a possible true answer)",
+  "kind": "hungarian",
+  "id": "a2-178-check-1"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-179-a-gr.json",
+  "old": "*-ként* forms widely used temporal and distributive adverbs in Hungarian:",
+  "new": "You know *-nként* from *percenként* and *óránként* (a2-68). The same ending also forms widely used temporal and distributive adverbs:",
+  "why": "the screen presents -nként as new; a2-68 taught it (óránként)"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-179-ex.json",
+  "old": "      \"id\": \"a2-179-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"____ találkozunk a régi egyetemi barátokkal.\",\n      \"hint\": \"From time to time: idő\",\n      \"english\": \"From time to time, we meet up with old university friends.\",",
+  "new": "      \"id\": \"a2-179-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"____ találkozunk a régi barátokkal.\",\n      \"hint\": \"From time to time: idő\",\n      \"english\": \"From time to time, we meet up with old friends.\",",
+  "why": "unmet egyetemi",
+  "kind": "hungarian",
+  "id": "a2-179-controlled-1"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-179-ex.json",
+  "old": "      \"id\": \"a2-179-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A téli utakon ____ csúszós az aszfalt.\",\n      \"hint\": \"in places: hely\",\n      \"english\": \"On winter roads, the asphalt is slippery in places.\",",
+  "new": "      \"id\": \"a2-179-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az utakon ____ sok a víz.\",\n      \"hint\": \"in places: hely\",\n      \"english\": \"There is a lot of water on the roads in places.\",",
+  "why": "unmet téli, csúszós, aszfalt",
+  "kind": "hungarian",
+  "id": "a2-179-practice-2"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-179-ex.json",
+  "old": "      \"id\": \"a2-179-practice-3\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az autó autópályán ____ 130 kilométerrel haladhat.\",\n      \"hint\": \"per hour: óra\",\n      \"english\": \"On the highway, the car can travel at 130 kilometers per hour.\",",
+  "new": "      \"id\": \"a2-179-practice-3\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az autó a városban ____ ötven kilométerrel halad.\",\n      \"hint\": \"per hour: óra\",\n      \"english\": \"In the city the car travels at fifty kilometers per hour.\",",
+  "why": "unmet autópályán, haladhat",
+  "kind": "hungarian",
+  "id": "a2-179-practice-3"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-179-ex.json",
+  "old": "      \"id\": \"a2-179-practice-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Translate: 'We visit the museum occasionally.'\",\n      \"options\": [\n        \"Időnként meglátogatjuk a múzeumot.\",\n        \"Mindig meglátogatjuk a múzeumot.\",\n        \"Soha nem látogatjuk a múzeumot.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-essive-formal-vocab\"\n      ],\n      \"stage\": \"practice\"",
+  "new": "      \"id\": \"a2-179-practice-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Translate: 'We visit the museum occasionally.'\",\n      \"options\": [\n        \"Időnként meglátogatjuk a múzeumot.\",\n        \"Naponta meglátogatjuk a múzeumot.\",\n        \"Óránként meglátogatjuk a múzeumot.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-essive-formal-vocab\"\n      ],\n      \"stage\": \"practice\",\n      \"distractor_skills\": {\n        \"1\": \"nta-productive\",\n        \"2\": \"distributive-nkent\"\n      }",
+  "why": "tell-absolute error (Mindig / Soha nem); unmet látogatjuk",
+  "kind": "hungarian",
+  "id": "a2-179-practice-4"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-179-ex.json",
+  "old": "      \"id\": \"a2-179-dialogue-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"—Gyakran jársz moziba? —Nem túl gyakran, de azért ____ elmegyek egy jó filmre.\",\n      \"options\": [\n        \"időnként\",\n        \"mindig\",\n        \"soha\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-essive-formal-vocab\"\n      ]",
+  "new": "      \"id\": \"a2-179-dialogue-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"—Gyakran jársz moziba? —Nem túl gyakran, de azért ____ elmegyek egy jó filmre.\",\n      \"options\": [\n        \"időnként\",\n        \"naponta\",\n        \"óránként\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-essive-formal-vocab\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"nta-productive\",\n        \"2\": \"distributive-nkent\"\n      }",
+  "why": "tell-absolute error (mindig / soha)",
+  "kind": "hungarian",
+  "id": "a2-179-dialogue-1"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-179-ex.json",
+  "old": "      \"id\": \"a2-179-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A hírek szerint az országban ____ záporok alakulhatnak ki.\",\n      \"hint\": \"in places: hely\",\n      \"english\": \"According to the news, showers may develop in places across the country.\",",
+  "new": "      \"id\": \"a2-179-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A hírek szerint az országban ____ zápor várható.\",\n      \"hint\": \"in places: hely\",\n      \"english\": \"According to the news, showers are expected in places across the country.\",",
+  "why": "unmet alakulhatnak, záporok",
+  "kind": "hungarian",
+  "id": "a2-179-writing-1"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-179-ex.json",
+  "old": "      \"id\": \"a2-179-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A járatok óránként egyszer ____.\",\n      \"hint\": \"indul, plural\",\n      \"english\": \"The services depart once per hour.\",",
+  "new": "      \"id\": \"a2-179-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A buszok óránként egyszer ____.\",\n      \"hint\": \"indul, plural\",\n      \"english\": \"The buses depart once per hour.\",",
+  "why": "unmet járatok",
+  "kind": "hungarian",
+  "id": "a2-179-check-2"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-180-a-gr.json",
+  "old": "*Tanul orvosnak.* = Studying to be a doctor.",
+  "new": "*Orvosnak tanul.* = Studying to be a doctor.",
+  "why": "focus word belongs before the verb; the table already says Orvosnak tanulok",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-180-b-gr.json",
+  "old": "Do not confuse the two essive cases:",
+  "new": "You know -ul / -ül from a1-156 (*magyarul*). Do not confuse the two essive cases:",
+  "why": "the screen shows -ul/-ül as new"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-ex.json",
+  "old": "      \"id\": \"a2-180-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Earlier in this lesson: 'Bár mérnök vagyok, a hétvégén ____ segítek a táborban.' Which word fills the blank?\",\n      \"options\": [\n        \"önkéntesként (as volunteers)\",\n        \"orvosként (as doctors)\",\n        \"zenészként (as musicians)\"",
+  "new": "      \"id\": \"a2-180-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Complete: 'A hétvégén ____ segítek a táborban.' (as a student)\",\n      \"options\": [\n        \"diákként\",\n        \"tanárként\",\n        \"orvosként\"",
+  "why": "unmet zenészként; orvosként also fits a mérnök who helps at a camp, so the gloss must pin the word",
+  "kind": "hungarian",
+  "id": "a2-180-intro-2"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-ex.json",
+  "old": "      \"id\": \"a2-180-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A gyerekek egy rajzot adtak neki ____.\",\n      \"hint\": \"as a keepsake: emlék\",\n      \"english\": \"The children gave him/her a drawing as a keepsake.\",",
+  "new": "      \"id\": \"a2-180-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A gyerekek egy könyvet adtak neki ____.\",\n      \"hint\": \"as a keepsake: emlék\",\n      \"english\": \"The children gave him/her a book as a keepsake.\",",
+  "why": "unmet rajzot",
+  "kind": "hungarian",
+  "id": "a2-180-controlled-2"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-ex.json",
+  "old": "      \"id\": \"a2-180-controlled-3\",\n      \"type\": \"matching\",\n      \"category\": \"vocabulary\",\n      \"pairs\": [\n        [\n          \"önkéntes\",\n          \"önkéntesként\"\n        ],\n        [\n          \"vezető\",\n          \"vezetőként\"\n        ],\n        [\n          \"segítő\",\n          \"segítőként\"\n        ],\n        [\n          \"emlék\",\n          \"emlékként\"",
+  "new": "      \"id\": \"a2-180-controlled-3\",\n      \"type\": \"matching\",\n      \"category\": \"vocabulary\",\n      \"pairs\": [\n        [\n          \"vezetőként\",\n          \"as a leader\"\n        ],\n        [\n          \"segítőként\",\n          \"as a helper\"\n        ],\n        [\n          \"önkéntesként\",\n          \"as a volunteer\"\n        ],\n        [\n          \"emlékként\",\n          \"as a keepsake\"",
+  "why": "unmet vezető, segítő as base words",
+  "kind": "hungarian",
+  "id": "a2-180-controlled-3"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-ex.json",
+  "old": "      \"id\": \"a2-180-practice-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Translate: 'As an adult, this is a completely different experience.'\",\n      \"options\": [\n        \"Felnőttként egészen más élmény.\",\n        \"Felnőtté egészen más élmény.\",\n        \"Felnőttel egészen más élmény.\"",
+  "new": "      \"id\": \"a2-180-practice-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Translate: 'As an adult, this is a new experience.'\",\n      \"options\": [\n        \"Felnőttként ez új élmény.\",\n        \"Felnőtté ez új élmény.\",\n        \"Felnőttel ez új élmény.\"",
+  "why": "unmet más, completely",
+  "kind": "hungarian",
+  "id": "a2-180-practice-1"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-ex.json",
+  "old": "      \"id\": \"a2-180-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Carlos ____ sokszor volt táborban.\",\n      \"hint\": \"as a child: gyerek\",\n      \"english\": \"Carlos was at camp many times as a child.\",",
+  "new": "      \"id\": \"a2-180-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Carlos ____ sokat volt táborban.\",\n      \"hint\": \"as a child: gyerek\",\n      \"english\": \"Carlos was at camp a lot as a child.\",",
+  "why": "unmet sokszor",
+  "kind": "hungarian",
+  "id": "a2-180-practice-2"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-ex.json",
+  "old": "      \"id\": \"a2-180-practice-3\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A táborvezető ____ mutatta be a feladatot.\",\n      \"hint\": \"as an example: példa\",\n      \"english\": \"The camp leader presented the task as an example.\",",
+  "new": "      \"id\": \"a2-180-practice-3\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A táborvezető ____ hozta fel ezt a feladatot.\",\n      \"hint\": \"as an example: példa\",\n      \"english\": \"The camp leader brought up this task as an example.\",",
+  "why": "unmet mutatta",
+  "kind": "hungarian",
+  "id": "a2-180-practice-3"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-ex.json",
+  "old": "      \"id\": \"a2-180-practice-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What is the difference between 'például' and 'példaként'?\",\n      \"options\": [\n        \"'például' means 'for example', 'példaként' means 'as an example'\",\n        \"'például' is a noun, 'példaként' is a verb\",\n        \"They are identical in usage\"",
+  "new": "      \"id\": \"a2-180-practice-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What is the difference between 'például' and 'példaként'?\",\n      \"options\": [\n        \"'például' means 'for example', 'példaként' means 'as an example'\",\n        \"'például' means 'for a long time', 'példaként' means 'as an example'\",\n        \"'például' means 'for example', 'példaként' means 'every example'\"",
+  "why": "length give-away (64 vs 42); \"identical in usage\" option; each wrong option now has one fault",
+  "kind": "hungarian",
+  "id": "a2-180-practice-4"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-ex.json",
+  "old": "      \"id\": \"a2-180-dialogue-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"—Szereted a táboroztatást? —Igen, nagyon jó érzés ____ segíteni a fiataloknak!\",\n      \"options\": [\n        \"vezetőként\",\n        \"vezetővé\",\n        \"vezetőnek\"",
+  "new": "      \"id\": \"a2-180-dialogue-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"—Szereted a tábort? —Igen, nagyon jó érzés ____ segíteni a fiataloknak!\",\n      \"options\": [\n        \"önkéntesként\",\n        \"önkéntessé\",\n        \"önkéntesnek\"",
+  "why": "unmet vezető base words",
+  "kind": "hungarian",
+  "id": "a2-180-dialogue-1"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-ex.json",
+  "old": "      \"id\": \"a2-180-dialogue-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"—Mit csinálsz a hétvégén? —A helyi menhelyen dolgozom ____.\",\n      \"hint\": \"as a volunteer: önkéntes\",\n      \"english\": \"—What are you doing this weekend? —I'm working at the local shelter as a volunteer.\",",
+  "new": "      \"id\": \"a2-180-dialogue-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"—Mit csinálsz a hétvégén? —A kórházban dolgozom ____.\",\n      \"hint\": \"as a volunteer: önkéntes\",\n      \"english\": \"—What are you doing this weekend? —I'm working at the hospital as a volunteer.\",",
+  "why": "unmet helyi, menhelyen",
+  "kind": "hungarian",
+  "id": "a2-180-dialogue-2"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-ex.json",
+  "old": "      \"id\": \"a2-180-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A tanácsomat baráti ____ fogadd el!\",\n      \"hint\": \"as advice: tanács\",\n      \"english\": \"Accept my advice as friendly advice!\",\n      \"answer\": \"tanácsként\",",
+  "new": "      \"id\": \"a2-180-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ezt ____ mondom neked.\",\n      \"hint\": \"as a friend: barát\",\n      \"english\": \"I am telling you this as a friend.\",\n      \"answer\": \"barátként\",",
+  "why": "unmet baráti, fogadd; A tanácsomat baráti tanácsként is odd",
+  "kind": "hungarian",
+  "id": "a2-180-writing-1"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-ex.json",
+  "old": "      \"id\": \"a2-180-writing-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Translate: 'He works as an engineer, but studies as a student.'\",\n      \"options\": [\n        \"Mérnökként dolgozik, de diákként tanul.\",\n        \"Mérnökké dolgozik, de diákká tanul.\",\n        \"Mérnökkel dolgozik, de diákkal tanul.\"",
+  "new": "      \"id\": \"a2-180-writing-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Translate: 'He works as an engineer and helps out as a teacher.'\",\n      \"options\": [\n        \"Mérnökként dolgozik, és tanárként segít.\",\n        \"Mérnökké dolgozik, és tanárrá segít.\",\n        \"Mérnökkel dolgozik, és tanárral segít.\"",
+  "why": "English \"studies as a student\" is redundant",
+  "kind": "hungarian",
+  "id": "a2-180-writing-2"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-ex.json",
+  "old": "      \"id\": \"a2-180-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which word means 'as a leader'?\",\n      \"options\": [\n        \"vezetőként\",\n        \"vezetővé\",\n        \"vezetővel\"",
+  "new": "      \"id\": \"a2-180-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Which word means 'as a volunteer'?\",\n      \"options\": [\n        \"önkéntesként\",\n        \"önkéntessé\",\n        \"önkéntessel\"",
+  "why": "unmet vezetővé, vezetővel",
+  "kind": "hungarian",
+  "id": "a2-180-check-1"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-ex.json",
+  "old": "      \"id\": \"a2-180-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A rajzot szép emlékként ____.\",\n      \"hint\": \"megőriz, past, definite, he/she\",\n      \"english\": \"He/She kept the drawing as a fond keepsake.\",\n      \"answer\": \"megőrizte\",",
+  "new": "      \"id\": \"a2-180-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A könyvet szép emlékként ____.\",\n      \"hint\": \"kap, past, definite, he/she\",\n      \"english\": \"He/She received the book as a fond keepsake.\",\n      \"answer\": \"kapta\",",
+  "why": "unmet rajzot, megőrizte",
+  "kind": "hungarian",
+  "id": "a2-180-check-2"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-consolidation-ex.json",
+  "old": "      \"id\": \"a2-180-consolidation-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Translate: 'As a foreigner, I respect Hungarian traditions.'\",\n      \"options\": [\n        \"Külföldiként tisztelem a magyar hagyományokat.\",\n        \"Külföldivé tisztelem a magyar hagyományokat.\",\n        \"Külföldivel tisztelem a magyar hagyományokat.\"",
+  "new": "      \"id\": \"a2-180-consolidation-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Translate: 'As a foreigner, I respect the Hungarians.'\",\n      \"options\": [\n        \"Külföldiként tisztelem a magyarokat.\",\n        \"Külföldivé tisztelem a magyarokat.\",\n        \"Külföldivel tisztelem a magyarokat.\"",
+  "why": "unmet hagyományokat",
+  "kind": "hungarian",
+  "id": "a2-180-consolidation-4"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-consolidation-ex.json",
+  "old": "      \"id\": \"a2-180-consolidation-6\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Évekig pincérként ____ egy étteremben.\",\n      \"hint\": \"he/she worked\",\n      \"english\": \"He/She worked as a waiter in a restaurant for years.\",",
+  "new": "      \"id\": \"a2-180-consolidation-6\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nyáron pincérként ____ egy étteremben.\",\n      \"hint\": \"he/she worked\",\n      \"english\": \"In the summer he/she worked as a waiter in a restaurant.\",",
+  "why": "Évekig is the terminative -ig, a B1 skill (terminative-case-ig); the speaking step repeats it",
+  "kind": "hungarian",
+  "id": "a2-180-consolidation-6"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-consolidation-ex.json",
+  "old": "      \"id\": \"a2-180-consolidation-7\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"____ sokat olvastam mesekönyveket.\",\n      \"hint\": \"As a child: gyerek\",\n      \"english\": \"As a child, I read storybooks a lot.\",",
+  "new": "      \"id\": \"a2-180-consolidation-7\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"____ sokat olvastam.\",\n      \"hint\": \"As a child: gyerek\",\n      \"english\": \"As a child, I read a lot.\",",
+  "why": "unmet mesekönyveket",
+  "kind": "hungarian",
+  "id": "a2-180-consolidation-7"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-consolidation-ex.json",
+  "old": "      \"id\": \"a2-180-consolidation-10\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A baleset miatt az autók csak lassan ____.\",\n      \"hint\": \"halad, past plural\",\n      \"english\": \"Because of the accident, the cars were only moving slowly.\",",
+  "new": "      \"id\": \"a2-180-consolidation-10\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A hóban az autók csak lassan ____.\",\n      \"hint\": \"halad, past plural\",\n      \"english\": \"In the snow the cars were only moving slowly.\",",
+  "why": "unmet baleset, miatt",
+  "kind": "hungarian",
+  "id": "a2-180-consolidation-10"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-consolidation-ex.json",
+  "old": "      \"id\": \"a2-180-consolidation-15\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"____ már felelős döntéseket hozunk.\",\n      \"hint\": \"As an adult: felnőtt\",\n      \"english\": \"As adults, we already make responsible decisions.\",",
+  "new": "      \"id\": \"a2-180-consolidation-15\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"____ már minden nap dolgozunk.\",\n      \"hint\": \"As an adult: felnőtt\",\n      \"english\": \"As adults, we already work every day.\",",
+  "why": "unmet felelős",
+  "kind": "hungarian",
+  "id": "a2-180-consolidation-15"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-consolidation-ex.json",
+  "old": "      \"id\": \"a2-180-consolidation-17\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A múzeumban idegenvezetőként ____ csoportokat.\",\n      \"hint\": \"he/she guides\",\n      \"english\": \"He/She guides groups as a tour guide in the museum.\",\n      \"answer\": \"kísér\",",
+  "new": "      \"id\": \"a2-180-consolidation-17\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A múzeumban idegenvezetőként ____.\",\n      \"hint\": \"he/she works\",\n      \"english\": \"He/She works as a tour guide in the museum.\",\n      \"answer\": \"dolgozik\",",
+  "why": "unmet kísér",
+  "kind": "hungarian",
+  "id": "a2-180-consolidation-17"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-180-consolidation-ex.json",
+  "old": "      \"id\": \"a2-180-consolidation-18\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"____ meglátogatjuk a balatoni házat.\",\n      \"hint\": \"From time to time: idő\",\n      \"english\": \"From time to time, we visit the house at Lake Balaton.\",",
+  "new": "      \"id\": \"a2-180-consolidation-18\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"____ meglátogatjuk a barátunkat Budapesten.\",\n      \"hint\": \"From time to time: idő\",\n      \"english\": \"From time to time we visit our friend in Budapest.\",",
+  "why": "unmet balatoni",
+  "kind": "hungarian",
+  "id": "a2-180-consolidation-18"
+ }
+]

@@ -81,7 +81,16 @@ def apply(fixes):
         if c != 1:
             errors[n] = f"old text found {c}x"
             continue
-        texts[path] = texts[path].replace(fix["old"], fix["new"])
+        new_text = texts[path].replace(fix["old"], fix["new"])
+        if path.endswith(".json"):
+            # a text fix can break the JSON (an unescaped quote in "new");
+            # check-content skips a file it can't parse, so nothing else catches it
+            try:
+                json.loads(new_text)
+            except ValueError as e:
+                errors[n] = f"leaves invalid JSON ({e})"
+                continue
+        texts[path] = new_text
     return texts, errors
 
 

@@ -1,0 +1,378 @@
+[
+  {
+    "file": "content/hu/exercises/a2/a2-187-ex.json",
+    "why": "megbízom unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-187-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nagyon régóta ____, megbízom benned.\",\n      \"hint\": \"I know you\",\n      \"answer\": \"ismerlek\",\n      \"english\": \"I have known you for a very long time, I trust you.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "{\n      \"id\": \"a2-187-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nagyon régóta ____, jó barátom vagy.\",\n      \"hint\": \"I know you\",\n      \"answer\": \"ismerlek\",\n      \"english\": \"I have known you for a very long time, you are a good friend.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "id": "a2-187-controlled-1"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-187-ex.json",
+    "why": "vigyázz (a2-195) and úton unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-187-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Vigyázz magadra az úton, nagyon ____!\",\n      \"hint\": \"I worry for you\",\n      \"answer\": \"féltelek\",\n      \"english\": \"Take care of yourself on the road, I worry for you very much!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "{\n      \"id\": \"a2-187-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Sötét van, és messze laksz, nagyon ____!\",\n      \"hint\": \"I worry for you\",\n      \"answer\": \"féltelek\",\n      \"english\": \"It is dark and you live far away, I worry about you very much!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-187-practice-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-187-ex.json",
+    "why": "segít takes the dative (segítek neked): *segítelek* is not standard Hungarian; költözésben unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-187-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ha segítség kell a költözésben, szívesen ____.\",\n      \"hint\": \"segít, I ... you\",\n      \"answer\": \"segítelek\",\n      \"english\": \"If you need help moving, I gladly help you.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "{\n      \"id\": \"a2-187-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Te sokat kérdezel, most én ____ téged!\",\n      \"hint\": \"kérdez, I ... you\",\n      \"answer\": \"kérdezlek\",\n      \"english\": \"You ask a lot, now I ask you!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-187-practice-4"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-187-ex.json",
+    "why": "kisfiam, kint, vigyázz unmet",
+    "kind": "hungarian",
+    "sure": false,
+    "old": "{\n      \"id\": \"a2-187-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Anya\",\n          \"text\": \"Kisfiam, hideg van kint, vegyél fel kabátot!\"\n        },\n        {\n          \"speaker\": \"Bence\",\n          \"text\": \"Köszönöm, anya, vigyázz te is magadra, mert én is mindig ____!\"\n        }\n      ],\n      \"options\": [\n        \"féltelek\",\n        \"féltesz\",\n        \"féltem\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "new": "{\n      \"id\": \"a2-187-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Anya\",\n          \"text\": \"Fiam, hideg van, vegyél fel kabátot!\"\n        },\n        {\n          \"speaker\": \"Bence\",\n          \"text\": \"Rendben, anya. Én is mindig ____ téged!\"\n        }\n      ],\n      \"options\": [\n        \"féltelek\",\n        \"féltesz\",\n        \"féltem\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-187-dialogue-1"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-187-ex.json",
+    "why": "plural possessed *barátaim*, *sikereiteknek* (a2-191); örülök, szívből unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-187-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kedves barátaim, örülök a sikereiteknek és szívből ____.\",\n      \"hint\": \"I support you all\",\n      \"answer\": \"támogatlak\",\n      \"english\": \"Dear friends, I am happy for your successes and support you all from the heart.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "{\n      \"id\": \"a2-187-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kedves barátok, mindig ____ titeket.\",\n      \"hint\": \"I support you all\",\n      \"answer\": \"támogatlak\",\n      \"english\": \"Dear friends, I always support you all.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "id": "a2-187-writing-1"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-187-ex.json",
+    "why": "egyedül unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-187-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem vagy egyedül, mindenben ____.\",\n      \"hint\": \"támogat, I ... you\",\n      \"answer\": \"támogatlak\",\n      \"english\": \"You are not alone, I support you in everything.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "{\n      \"id\": \"a2-187-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Mindig itt vagyok, mindenben ____.\",\n      \"hint\": \"támogat, I ... you\",\n      \"answer\": \"támogatlak\",\n      \"english\": \"I am always here, I support you in everything.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "id": "a2-187-check-2"
+  },
+  {
+    "file": "content/hu/vocabulary/a2/a2-187-voc.json",
+    "old": "\"lemma\": \"segítelek\",\n      \"translation\": \"I help you\",",
+    "new": "\"lemma\": \"kérdezlek\",\n      \"translation\": \"I ask you\",",
+    "why": "segít is a dative verb, *segítelek* is not standard",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-187-a-gr.json",
+    "old": "*segít* → **segítelek** (I help you)",
+    "new": "*kérdez* → **kérdezlek** (I ask you)",
+    "why": "segít takes the dative (segítek neked), so *segítelek* is not standard Hungarian",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-187-a-gr.json",
+    "old": "(I worry for you / protect you)",
+    "new": "(I worry about you / I fear for you)",
+    "why": "félt does not mean 'protect'",
+    "sure": false
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-187-b-gr.json",
+    "old": "\"spanish\": \"Barátaim, várlak titeket az étteremben!\"",
+    "new": "\"spanish\": \"Kedves barátok, várlak titeket az étteremben!\"",
+    "why": "plural possessed *barátaim* is taught only in a2-191",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-188-ex.json",
+    "why": "késő unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-188-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Késő van és sötét, szívesen ____ a villamosig.\",\n      \"hint\": \"I will accompany you\",\n      \"answer\": \"elkísérlek\",\n      \"english\": \"It is late and dark, I will gladly accompany you to the tram.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "{\n      \"id\": \"a2-188-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Sötét van, szívesen ____ a villamosig.\",\n      \"hint\": \"I will accompany you\",\n      \"answer\": \"elkísérlek\",\n      \"english\": \"It is dark, I will gladly accompany you to the tram.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-188-practice-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-188-ex.json",
+    "why": "teljesen unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-188-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Tudom, hogy nehéz a helyzeted, teljesen ____.\",\n      \"hint\": \"megért, I ... you\",\n      \"answer\": \"megértelek\",\n      \"english\": \"I know your situation is difficult, I completely understand you.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "{\n      \"id\": \"a2-188-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Tudom, hogy nehéz a helyzeted, én ____.\",\n      \"hint\": \"megért, I ... you\",\n      \"answer\": \"megértelek\",\n      \"english\": \"I know your situation is difficult, I understand you.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-188-practice-4"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-188-ex.json",
+    "why": "nélküled is an inflected postposition (a2-196)",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-188-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Lili\",\n          \"text\": \"Még tíz percet kell dolgoznom az irodában. Menj nyugodtan!\"\n        },\n        {\n          \"speaker\": \"Máté\",\n          \"text\": \"Nem megyek el nélküled, lent az előtérben ____!\"\n        }\n      ],\n      \"options\": [\n        \"megvárlak\",\n        \"megvárom\",\n        \"várunk\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"definite-vs-indefinite-conjugation\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "new": "{\n      \"id\": \"a2-188-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Lili\",\n          \"text\": \"Még tíz percet kell dolgoznom az irodában. Menj nyugodtan!\"\n        },\n        {\n          \"speaker\": \"Máté\",\n          \"text\": \"Nem megyek el, lent az előtérben ____!\"\n        }\n      ],\n      \"options\": [\n        \"megvárlak\",\n        \"megvárom\",\n        \"várunk\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"definite-vs-indefinite-conjugation\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-188-dialogue-1"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-188-ex.json",
+    "why": "beszélhetünk, pár, percet, rosszkor, gyere unmet",
+    "kind": "hungarian",
+    "sure": false,
+    "old": "{\n      \"id\": \"a2-188-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gábor\",\n          \"text\": \"Beszélhetünk pár percet, vagy rosszkor jövök?\"\n        },\n        {\n          \"speaker\": \"Eszter\",\n          \"text\": \"Gyere be, egyáltalán nem ____!\"\n        }\n      ],\n      \"options\": [\n        \"zavarlak\",\n        \"zavarsz\",\n        \"zavarom\"\n      ],\n      \"correct\": 1,\n      \"teaches\": [\n        \"present-tense-routine-language\"\n      ],\n      \"distractor_skills\": {\n        \"0\": \"lak-lek-suffix\",\n        \"2\": \"definite-vs-indefinite-conjugation\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "new": "{\n      \"id\": \"a2-188-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gábor\",\n          \"text\": \"Bejöhetek?\"\n        },\n        {\n          \"speaker\": \"Eszter\",\n          \"text\": \"Persze, egyáltalán nem ____!\"\n        }\n      ],\n      \"options\": [\n        \"zavarlak\",\n        \"zavarsz\",\n        \"zavarom\"\n      ],\n      \"correct\": 1,\n      \"teaches\": [\n        \"present-tense-routine-language\"\n      ],\n      \"distractor_skills\": {\n        \"0\": \"lak-lek-suffix\",\n        \"2\": \"definite-vs-indefinite-conjugation\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-188-dialogue-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-188-ex.json",
+    "why": "amint unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-188-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Amint megérkezik a vonatom, azonnal ____ telefonon.\",\n      \"hint\": \"I will call you\",\n      \"answer\": \"felhívlak\",\n      \"english\": \"As soon as my train arrives, I will call you immediately on the phone.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "{\n      \"id\": \"a2-188-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ha megérkezik a vonatom, azonnal ____ telefonon.\",\n      \"hint\": \"I will call you\",\n      \"answer\": \"felhívlak\",\n      \"english\": \"When my train arrives, I will call you at once on the phone.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "id": "a2-188-writing-1"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-188-ex.json",
+    "why": "plural possessed *szavaidat* (a2-191)",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-188-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem hallom jól a szavaidat, sajnos nem ____.\",\n      \"hint\": \"ért, I ... you\",\n      \"answer\": \"értelek\",\n      \"english\": \"I don't hear your words well, unfortunately I don't understand you.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "{\n      \"id\": \"a2-188-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem hallom jól, sajnos nem ____.\",\n      \"hint\": \"ért, I ... you\",\n      \"answer\": \"értelek\",\n      \"english\": \"I can't hear well, unfortunately I don't understand you.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "id": "a2-188-check-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-189-ex.json",
+    "why": "gyere, fagyira unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-189-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Gyere velem a cukrászdába, ____ egy fagyira!\",\n      \"hint\": \"I invite you\",\n      \"answer\": \"meghívlak\",\n      \"english\": \"Come with me to the pastry shop, I invite you for an ice cream!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "{\n      \"id\": \"a2-189-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Menjünk a kávézóba, ____ egy kávéra!\",\n      \"hint\": \"I invite you\",\n      \"answer\": \"meghívlak\",\n      \"english\": \"Let's go to the café, I invite you for a coffee!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "id": "a2-189-controlled-1"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-189-ex.json",
+    "why": "késő unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-189-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Késő este van, a kapuig mindenképpen ____.\",\n      \"hint\": \"hazakísér, I ... you\",\n      \"answer\": \"hazakísérlek\",\n      \"english\": \"It is late evening, I will definitely walk you home to the gate.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "{\n      \"id\": \"a2-189-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Sötét van, a kapuig mindenképpen ____.\",\n      \"hint\": \"hazakísér, I ... you\",\n      \"answer\": \"hazakísérlek\",\n      \"english\": \"It is dark, I will definitely walk you home to the gate.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "id": "a2-189-controlled-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-189-ex.json",
+    "why": "miatt unmet (a2-199)",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-189-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ne izgulj a vizsga miatt, ____, hogy sikerülni fog!\",\n      \"hint\": \"I assure you\",\n      \"answer\": \"biztosítalak\",\n      \"english\": \"Don't be nervous about the exam, I assure you that you will succeed!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "{\n      \"id\": \"a2-189-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ne izgulj a vizsga előtt, ____, hogy sikerülni fog!\",\n      \"hint\": \"I assure you\",\n      \"answer\": \"biztosítalak\",\n      \"english\": \"Don't be nervous before the exam, I assure you that you will succeed!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-189-practice-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-189-ex.json",
+    "why": "mailben unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-189-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Holnap délelőtt e-mailben ____ az időpontról.\",\n      \"hint\": \"I will notify you\",\n      \"answer\": \"értesítelek\",\n      \"english\": \"Tomorrow morning I will notify you by email about the appointment.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "{\n      \"id\": \"a2-189-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Holnap délelőtt telefonon ____ az időpontról.\",\n      \"hint\": \"I will notify you\",\n      \"answer\": \"értesítelek\",\n      \"english\": \"Tomorrow morning I will let you know by phone about the appointment.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-189-practice-4"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-189-ex.json",
+    "why": "ráérek, gyere unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-189-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Tamás\",\n          \"text\": \"Ma van a születésnapom, mit csinálsz este?\"\n        },\n        {\n          \"speaker\": \"Zsófi\",\n          \"text\": \"Ráérek! Boldog születésnapot, gyere, ____ egy pohár borra!\"\n        }\n      ],\n      \"options\": [\n        \"meghívlak\",\n        \"meghívom\",\n        \"meghívsz\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"definite-vs-indefinite-conjugation\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "new": "{\n      \"id\": \"a2-189-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Tamás\",\n          \"text\": \"Ma van a születésnapom, mit csinálsz este?\"\n        },\n        {\n          \"speaker\": \"Zsófi\",\n          \"text\": \"Szabad vagyok! Boldog születésnapot, ____ egy pohár borra!\"\n        }\n      ],\n      \"options\": [\n        \"meghívlak\",\n        \"meghívom\",\n        \"meghívsz\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"definite-vs-indefinite-conjugation\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-189-dialogue-1"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-189-ex.json",
+    "why": "pontos, indulását, kijelzőt, kiírják, amint unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-189-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Dániel\",\n          \"text\": \"Mikor tudjuk meg a vonat pontos indulását?\"\n        },\n        {\n          \"speaker\": \"Eszter\",\n          \"text\": \"Figyelem a kijelzőt, és amint kiírják, azonnal ____.\"\n        }\n      ],\n      \"options\": [\n        \"értesítelek\",\n        \"értesítem\",\n        \"értesítesz\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"definite-vs-indefinite-conjugation\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "new": "{\n      \"id\": \"a2-189-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Dániel\",\n          \"text\": \"Mikor indul a vonat?\"\n        },\n        {\n          \"speaker\": \"Eszter\",\n          \"text\": \"Még nem tudom, de ha tudok valamit, azonnal ____.\"\n        }\n      ],\n      \"options\": [\n        \"értesítelek\",\n        \"értesítem\",\n        \"értesítesz\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"definite-vs-indefinite-conjugation\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-189-dialogue-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-189-ex.json",
+    "why": "szeretettel, vigyázz unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-189-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Szeretettel\",\n        \"átölellek\",\n        \",\",\n        \"vigyázz\",\n        \"magadra\",\n        \"!\"\n      ],\n      \"solution\": [\n        \"Szeretettel\",\n        \"átölellek\",\n        \",\",\n        \"vigyázz\",\n        \"magadra\",\n        \"!\"\n      ],\n      \"english\": \"Sending you a warm hug, take care of yourself!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "{\n      \"id\": \"a2-189-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Nagyon\",\n        \"szeretlek\",\n        \",\",\n        \"átölellek\",\n        \"!\"\n      ],\n      \"solution\": [\n        \"Nagyon\",\n        \"szeretlek\",\n        \",\",\n        \"átölellek\",\n        \"!\"\n      ],\n      \"english\": \"I love you very much, I am giving you a hug!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "id": "a2-189-writing-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-189-ex.json",
+    "why": "engedlek, egyedül unmet; tájékoztatlak (goal 2) was never drilled; check-2 repeated controlled-2",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-189-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem engedlek egyedül a sötétben, hazáig ____.\",\n      \"hint\": \"hazakísér, I ... you\",\n      \"answer\": \"hazakísérlek\",\n      \"english\": \"I won't let you go alone in the dark, I will walk you home all the way.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "{\n      \"id\": \"a2-189-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ha kérdésed van, szívesen ____ a részletekről.\",\n      \"hint\": \"tájékoztat, I ... you\",\n      \"answer\": \"tájékoztatlak\",\n      \"english\": \"If you have a question, I will gladly inform you about the details.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "id": "a2-189-check-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-ex.json",
+    "why": "állj unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Állj meg a harmadik vágánynál, azonnal ____!\",\n      \"hint\": \"I will notice you\",\n      \"answer\": \"észreveszlek\",\n      \"english\": \"Stop by track 3, I will notice you immediately!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Várj a harmadik vágánynál, azonnal ____!\",\n      \"hint\": \"I will notice you\",\n      \"answer\": \"észreveszlek\",\n      \"english\": \"Wait by track 3, I will notice you immediately!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "id": "a2-190-controlled-1"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-ex.json",
+    "why": "gyere unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Olyan régen találkoztunk, gyere ide, ____!\",\n      \"hint\": \"I hug you\",\n      \"answers\": [\n        \"megölellek\",\n        \"átölellek\"\n      ],\n      \"english\": \"We met so long ago, come here, I give you a hug!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Olyan régen találkoztunk, jó, hogy itt vagy, ____!\",\n      \"hint\": \"I hug you\",\n      \"answers\": [\n        \"megölellek\",\n        \"átölellek\"\n      ],\n      \"english\": \"We met so long ago, it is good that you are here, I give you a hug!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "id": "a2-190-controlled-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-ex.json",
+    "why": "tovább unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Látom, hogy dolgozol, nem ____ tovább.\",\n      \"hint\": \"I don't bother you\",\n      \"answer\": \"zavarlak\",\n      \"english\": \"I see you are working, I won't bother you any further.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Látom, hogy dolgozol, most nem ____.\",\n      \"hint\": \"I don't bother you\",\n      \"answer\": \"zavarlak\",\n      \"english\": \"I see you are working, I won't bother you now.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-190-practice-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-ex.json",
+    "why": "bármi unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Bármi történik a városban, nem ____ cserben.\",\n      \"hint\": \"I won't leave you in the lurch\",\n      \"answer\": \"hagylak\",\n      \"english\": \"Whatever happens in town, I won't leave you in the lurch.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ha baj van, nem ____ cserben.\",\n      \"hint\": \"I won't leave you in the lurch\",\n      \"answer\": \"hagylak\",\n      \"english\": \"If there is trouble, I won't leave you in the lurch.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "id": "a2-190-practice-4"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-ex.json",
+    "why": "*keresselek* is a subjunctive -lek form that nothing has taught",
+    "kind": "hungarian",
+    "sure": false,
+    "old": "{\n      \"id\": \"a2-190-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Balázs\",\n          \"text\": \"Megérkeztem a Nyugati pályaudvarra! Hol keresselek?\"\n        },\n        {\n          \"speaker\": \"Kata\",\n          \"text\": \"A nagy óra alatt állok és piros kabátban ____ téged!\"\n        }\n      ],\n      \"options\": [\n        \"várlak\",\n        \"várom\",\n        \"vársz\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"definite-vs-indefinite-conjugation\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Balázs\",\n          \"text\": \"Megérkeztem a Nyugati pályaudvarra! Hol vagy?\"\n        },\n        {\n          \"speaker\": \"Kata\",\n          \"text\": \"A nagy óra alatt állok és piros kabátban ____ téged!\"\n        }\n      ],\n      \"options\": [\n        \"várlak\",\n        \"várom\",\n        \"vársz\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"definite-vs-indefinite-conjugation\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-190-dialogue-1"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-ex.json",
+    "why": "közepén unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Kata\",\n          \"text\": \"Integess, légy szíves, mert nagy a tömeg!\"\n        },\n        {\n          \"speaker\": \"Balázs\",\n          \"text\": \"Itt integetek a peron közepén, már ____ téged!\"\n        }\n      ],\n      \"options\": [\n        \"látlak\",\n        \"látom\",\n        \"látsz\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"definite-vs-indefinite-conjugation\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Kata\",\n          \"text\": \"Integess, légy szíves, mert nagy a tömeg!\"\n        },\n        {\n          \"speaker\": \"Balázs\",\n          \"text\": \"Itt integetek a peronon, már ____ téged!\"\n        }\n      ],\n      \"options\": [\n        \"látlak\",\n        \"látom\",\n        \"látsz\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"definite-vs-indefinite-conjugation\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"dialogue\"\n    }",
+    "id": "a2-190-dialogue-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-ex.json",
+    "why": "kijáratánál, siess unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kedves barátom, a pályaudvar kijáratánál ____, ne siess.\",\n      \"hint\": \"I will wait for you\",\n      \"answers\": [\n        \"megvárlak\",\n        \"várlak\"\n      ],\n      \"english\": \"Dear friend, I will wait for you at the station exit, don't hurry.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kedves barátom, a pályaudvar bejáratánál ____.\",\n      \"hint\": \"I will wait for you\",\n      \"answers\": [\n        \"megvárlak\",\n        \"várlak\"\n      ],\n      \"english\": \"Dear friend, I will wait for you at the station entrance.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "id": "a2-190-writing-1"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-ex.json",
+    "why": "amint unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Amint\",\n        \"megérkezel\",\n        \",\",\n        \"szívesen\",\n        \"hazakísérlek\",\n        \".\"\n      ],\n      \"solution\": [\n        \"Amint\",\n        \"megérkezel\",\n        \",\",\n        \"szívesen\",\n        \"hazakísérlek\",\n        \".\"\n      ],\n      \"english\": \"As soon as you arrive, I will gladly walk you home.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Ha\",\n        \"megérkezel\",\n        \",\",\n        \"szívesen\",\n        \"hazakísérlek\",\n        \".\"\n      ],\n      \"solution\": [\n        \"Ha\",\n        \"megérkezel\",\n        \",\",\n        \"szívesen\",\n        \"hazakísérlek\",\n        \".\"\n      ],\n      \"english\": \"When you arrive, I will gladly walk you home.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "id": "a2-190-writing-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-ex.json",
+    "why": "repeats dialogue-2 (integetek ... látlak)",
+    "kind": "hungarian",
+    "sure": false,
+    "old": "{\n      \"id\": \"a2-190-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Itt integetek a vonat mellett, nem látsz? Én már tisztán ____!\",\n      \"hint\": \"I see you\",\n      \"answer\": \"látlak\",\n      \"english\": \"I'm waving here next to the train, don't you see me? I already see you clearly!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ott vagy a nagy óra alatt, már tisztán ____!\",\n      \"hint\": \"I see you\",\n      \"answer\": \"látlak\",\n      \"english\": \"You are there under the big clock, I can see you clearly now!\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "id": "a2-190-check-2"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-consolidation-ex.json",
+    "why": "*Nem téged látlak* is correct Hungarian (focus on téged)",
+    "kind": "hungarian",
+    "sure": false,
+    "old": "{\n      \"id\": \"a2-190-consolidation-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Where does 'nem' go when negating 'látlak'?\",\n      \"options\": [\n        \"Nem látlak.\",\n        \"Látlak nem.\",\n        \"Nem téged látlak.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"negation-with-nem\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-consolidation-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"Where does 'nem' go when negating 'látlak'?\",\n      \"options\": [\n        \"Nem látlak.\",\n        \"Látlak nem.\",\n        \"Nem látok téged.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"negation-with-nem\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-190-consolidation-4"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-consolidation-ex.json",
+    "why": "figyelmesen unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-consolidation-7\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nyugodtan beszélj, figyelmesen ____.\",\n      \"hint\": \"hallgat, I ... you\",\n      \"answer\": \"hallgatlak\",\n      \"english\": \"Speak calmly, I am listening to you attentively.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-consolidation-7\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nyugodtan beszélj, most ____.\",\n      \"hint\": \"hallgat, I ... you\",\n      \"answer\": \"hallgatlak\",\n      \"english\": \"Speak calmly, I am listening to you now.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-190-consolidation-7"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-consolidation-ex.json",
+    "why": "haragudj, zaj, miatt, alig unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-consolidation-8\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ne haragudj, de a nagy zaj miatt alig ____.\",\n      \"hint\": \"hall, I ... you\",\n      \"answer\": \"hallak\",\n      \"english\": \"Don't be upset, but because of the big noise I hardly hear you.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-consolidation-8\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Bocsánat, nagyon hangos a tömeg, nem ____ jól.\",\n      \"hint\": \"hall, I ... you\",\n      \"answer\": \"hallak\",\n      \"english\": \"Sorry, the crowd is very loud, I can't hear you well.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-190-consolidation-8"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-consolidation-ex.json",
+    "why": "szívből unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-consolidation-9\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nagyon kedves vagy, szívből ____.\",\n      \"hint\": \"szeret, I ... you\",\n      \"answer\": \"szeretlek\",\n      \"english\": \"You are very kind, I love you from the heart.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-consolidation-9\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Mindig segítesz, ezért nagyon ____.\",\n      \"hint\": \"szeret, I ... you\",\n      \"answer\": \"szeretlek\",\n      \"english\": \"You always help, so I love you very much.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-190-consolidation-9"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-consolidation-ex.json",
+    "why": "késő unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-consolidation-10\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Késő este van a városban, hazáig ____.\",\n      \"hint\": \"hazakísér, I ... you\",\n      \"answer\": \"hazakísérlek\",\n      \"english\": \"It is late evening in town, I will walk you home all the way.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-consolidation-10\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Sötét van a városban, hazáig ____.\",\n      \"hint\": \"hazakísér, I ... you\",\n      \"answer\": \"hazakísérlek\",\n      \"english\": \"It is dark in town, I will walk you home all the way.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-190-consolidation-10"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-consolidation-ex.json",
+    "why": "*odaérve* is an adverbial participle (B1 participle-actions); kijelzőn, mindjárt, nyugodj unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-consolidation-12\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gábor\",\n          \"text\": \"Nem találom a vonatot a kijelzőn!\"\n        },\n        {\n          \"speaker\": \"Eszter\",\n          \"text\": \"Nyugodj meg, látom a peront és mindjárt odaérve ____ téged.\"\n        }\n      ],\n      \"options\": [\n        \"megkereslek\",\n        \"megkeresem\",\n        \"keresek\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"definite-vs-indefinite-conjugation\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"review\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-consolidation-12\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gábor\",\n          \"text\": \"Nem találom a vonatot!\"\n        },\n        {\n          \"speaker\": \"Eszter\",\n          \"text\": \"Ne félj, már a peronon vagyok, azonnal ____ téged.\"\n        }\n      ],\n      \"options\": [\n        \"megkereslek\",\n        \"megkeresem\",\n        \"keresek\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"definite-vs-indefinite-conjugation\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"review\"\n    }",
+    "id": "a2-190-consolidation-12"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-consolidation-ex.json",
+    "why": "bármi unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-consolidation-14\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Bármi\",\n        \"baj\",\n        \"van\",\n        \",\",\n        \"támogatlak\",\n        \".\"\n      ],\n      \"solution\": [\n        \"Bármi\",\n        \"baj\",\n        \"van\",\n        \",\",\n        \"támogatlak\",\n        \".\"\n      ],\n      \"english\": \"Whatever trouble there is, I support you.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-consolidation-14\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Ha\",\n        \"baj\",\n        \"van\",\n        \",\",\n        \"támogatlak\",\n        \".\"\n      ],\n      \"solution\": [\n        \"Ha\",\n        \"baj\",\n        \"van\",\n        \",\",\n        \"támogatlak\",\n        \".\"\n      ],\n      \"english\": \"If there is trouble, I support you.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-190-consolidation-14"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-consolidation-ex.json",
+    "why": "örülök, megismerlek unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-consolidation-17\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Örülök\",\n        \",\",\n        \"hogy\",\n        \"megismerlek\",\n        \".\"\n      ],\n      \"solution\": [\n        \"Örülök\",\n        \",\",\n        \"hogy\",\n        \"megismerlek\",\n        \".\"\n      ],\n      \"english\": \"I am glad to get to know you.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-consolidation-17\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Jó\",\n        \",\",\n        \"hogy\",\n        \"ismerlek\",\n        \".\"\n      ],\n      \"solution\": [\n        \"Jó\",\n        \",\",\n        \"hogy\",\n        \"ismerlek\",\n        \".\"\n      ],\n      \"english\": \"It is good that I know you.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-190-consolidation-17"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-consolidation-ex.json",
+    "why": "amint unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-consolidation-18\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Amint hazaérkezel Budapestre, szívesen ____ egy finom vacsorára.\",\n      \"hint\": \"I invite you\",\n      \"answer\": \"meghívlak\",\n      \"english\": \"As soon as you arrive home in Budapest, I gladly invite you for a delicious dinner.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-consolidation-18\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ha hazaérkezel Budapestre, szívesen ____ egy finom vacsorára.\",\n      \"hint\": \"I invite you\",\n      \"answer\": \"meghívlak\",\n      \"english\": \"When you arrive home in Budapest, I gladly invite you for a delicious dinner.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-190-consolidation-18"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-190-consolidation-ex.json",
+    "why": "siess unmet",
+    "kind": "hungarian",
+    "old": "{\n      \"id\": \"a2-190-consolidation-20\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ne siess, a parkban egy padon ülök és türelmesen ____.\",\n      \"hint\": \"megvár, I ... you\",\n      \"answer\": \"megvárlak\",\n      \"english\": \"Don't hurry, I am sitting on a bench in the park and patiently waiting for you.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "{\n      \"id\": \"a2-190-consolidation-20\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A parkban egy padon ülök és türelmesen ____.\",\n      \"hint\": \"megvár, I ... you\",\n      \"answer\": \"megvárlak\",\n      \"english\": \"I am sitting on a bench in the park and patiently waiting for you.\",\n      \"teaches\": [\n        \"lak-lek-suffix\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "id": "a2-190-consolidation-20"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-38.json",
+    "old": "és a pályaudvar zsúfolt volt.",
+    "new": "és a pályaudvar zsúfolt volt. Carlos telefonon beszélt vele.",
+    "why": "the lines are a phone call (Hallasz engem?) but the narration never says so",
+    "kind": "hungarian",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-38.json",
+    "old": "megpillantotta a mosolygó Esztert.",
+    "new": "megpillantotta Esztert, aki mosolygott.",
+    "why": "present participle -ó (B1) in a2 story",
+    "kind": "hungarian",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-38.json",
+    "old": "Együtt indultak el a kávézó felé, örülve a találkozásnak és az előttük álló kellemes hétvégének.",
+    "new": "Együtt indultak el a kávézó felé, és mindketten örültek a találkozásnak meg a hétvégének.",
+    "why": "adverbial participle *örülve* and participle *álló* are B1 forms",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-37.json",
+    "old": "Az asztalon gőzölgő húsleves",
+    "new": "Az asztalon forró húsleves",
+    "why": "*gőzölgő* is a present participle (B1)",
+    "kind": "hungarian",
+    "sure": false
+  }
+]
