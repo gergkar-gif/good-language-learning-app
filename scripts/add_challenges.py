@@ -91,12 +91,26 @@ def main():
         print("\n".join(errors))
         sys.exit(f"refused: {len(errors)} problem(s); nothing written")
 
-    for stem, c in drafts.items():
-        table[stem] = {f: c[f] for f in FIELDS}
-    # this level's entries in curriculum order, after every other entry
+    # Existing entries keep their place (a replaced entry is edited in place);
+    # a new one goes right after the nearest earlier lesson of its level that
+    # has a challenge, else before the nearest later one, else at the end.
+    # (Re-sorting the whole file moved every other level's block and turned
+    # an 18-entry change into a 4,600-line diff.)
     order = {s: i for i, s in enumerate(stems)}
-    data["challenges"] = {**{k: v for k, v in table.items() if k not in order},
-                          **{k: table[k] for k in sorted((k for k in table if k in order), key=order.get)}}
+    keys = list(table)
+    for stem, c in drafts.items():
+        entry = {f: c[f] for f in FIELDS}
+        if stem not in table:
+            earlier = [k for k in keys if k in order and order[k] < order[stem]]
+            later = [k for k in keys if k in order and order[k] > order[stem]]
+            if earlier:
+                keys.insert(keys.index(max(earlier, key=order.get)) + 1, stem)
+            elif later:
+                keys.insert(keys.index(min(later, key=order.get)), stem)
+            else:
+                keys.append(stem)
+        table[stem] = entry
+    data["challenges"] = {k: table[k] for k in keys}
     target_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"added {len(drafts)} challenge(s) to {target_path.relative_to(ROOT)}")
 
