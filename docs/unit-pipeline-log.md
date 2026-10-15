@@ -54,7 +54,8 @@ Read this before working on any unit. Agents read only
    `lock_tags.py --update`, `freeze_unit.py` (`--accept
    "<check>:<id>:<reason>"` for deliberate suspects), commit, push.
    Refreezing a frozen unit keeps its earlier reason and accepted
-   findings.
+   findings; `--unfreeze` drops them, so pass them again with
+   `--accept` (keep each batch's accept list).
 7. **Every 2 units:** process review below; a repeated defect goes into
    `docs/unit-agent-rules.md` § 6 the same day, and anything recurring
    gets a script (below).
