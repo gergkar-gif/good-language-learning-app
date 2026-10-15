@@ -1,0 +1,556 @@
+[
+ {
+  "file": "content/hu/exercises/a2/a2-211-ex.json",
+  "id": "a2-211-intro-1",
+  "old": "    {\n      \"id\": \"a2-211-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Which set of documents is required to open a bank account in Hungary?\",\n      \"options\": [\n        \"Személyi igazolvány (vagy útlevél), lakcímkártya és adókártya.\",\n        \"Egy érvényes diákigazolvány és az egyetemi jogviszony-igazolás.\",\n        \"A munkahelyi belépőkártya és az előző havi villanyszámla.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "new": "    {\n      \"id\": \"a2-211-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Which set of documents is required to open a bank account in Hungary?\",\n      \"options\": [\n        \"Személyi igazolvány, lakcímkártya és adókártya.\",\n        \"Villamosbérlet, bélyeg és sárga csekk.\",\n        \"A telefonszámod, a kulcsod és a levél.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "why": "wrong options use many unmet words (diákigazolvány, egyetemi, jogviszony-igazolás, munkahelyi, belépőkártya, előző, villanyszámla); replaced with met words, right option shortened to keep the length ratio",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-211-ex.json",
+  "id": "a2-211-intro-2",
+  "old": "    {\n      \"id\": \"a2-211-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"How do you politely say 'I would like to open a current account'?\",\n      \"options\": [\n        \"Szeretnék folyószámlát nyitni.\",\n        \"Folyószámlát kell akarnom.\",\n        \"Nyitom a számla most.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "new": "    {\n      \"id\": \"a2-211-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"How do you politely say 'I would like to open a current account'?\",\n      \"options\": [\n        \"Szeretnék folyószámlát nyitni.\",\n        \"Nyitom a folyószámlát most.\",\n        \"Szeretnék folyószámla nyitni.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\",\n      \"distractor_skills\": {\n        \"1\": \"definite-vs-indefinite-conjugation\"\n      }\n    }",
+  "why": "wrong options \"Folyószámlát kell akarnom.\" (odd, \"must want\") and \"Nyitom a számla most.\" (two faults: not a polite request, and missing -t) replaced: \"Nyitom a folyószámlát most.\" is well formed but blunt, \"Szeretnék folyószámla nyitni.\" misses only the -t",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-211-ex.json",
+  "id": "a2-211-controlled-2",
+  "old": "    {\n      \"id\": \"a2-211-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Kérem, írja ____ a szerződést mindkét példányon!\",\n      \"hint\": \"sign\",\n      \"answer\": \"alá\",\n      \"english\": \"Please sign the contract on both copies!\",\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "new": "    {\n      \"id\": \"a2-211-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Kérem, írja ____ a szerződést itt!\",\n      \"hint\": \"sign\",\n      \"answer\": \"alá\",\n      \"english\": \"Please sign the contract here!\",\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "why": "unmet \"mindkét példányon\" (b2/b1)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-211-ex.json",
+  "id": "a2-211-practice-1",
+  "old": "    {\n      \"id\": \"a2-211-practice-1\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Kérem\",\n        \",\",\n        \"mutassa\",\n        \"be\",\n        \"a\",\n        \"lakcímkártyáját\",\n        \"és\",\n        \"az\",\n        \"adókártyáját\",\n        \"!\"\n      ],\n      \"solution\": [\n        \"Kérem\",\n        \",\",\n        \"mutassa\",\n        \"be\",\n        \"a\",\n        \"lakcímkártyáját\",\n        \"és\",\n        \"az\",\n        \"adókártyáját\",\n        \"!\"\n      ],\n      \"english\": \"Please present your address card and your tax card!\",\n      \"teaches\": [\n        \"prefix-word-order\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "new": "    {\n      \"id\": \"a2-211-practice-1\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Kérem\",\n        \",\",\n        \"mutassa\",\n        \"fel\",\n        \"a\",\n        \"lakcímkártyáját\",\n        \"és\",\n        \"az\",\n        \"adókártyáját\",\n        \"!\"\n      ],\n      \"solution\": [\n        \"Kérem\",\n        \",\",\n        \"mutassa\",\n        \"fel\",\n        \"a\",\n        \"lakcímkártyáját\",\n        \"és\",\n        \"az\",\n        \"adókártyáját\",\n        \"!\"\n      ],\n      \"english\": \"Please present your address card and your tax card!\",\n      \"teaches\": [\n        \"prefix-word-order\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "why": "unit 42 (a2-210) taught felmutat for showing documents; \"mutassa be\" recaps it less well",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-211-ex.json",
+  "id": "a2-211-practice-2",
+  "old": "    {\n      \"id\": \"a2-211-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A bankkártyát postán küldjük ki, de a PIN-kódot biztonsági okokból külön borítékban vagy SMS-ben ____.\",\n      \"hint\": \"you receive, formal\",\n      \"answer\": \"kapja meg\",\n      \"english\": \"We send the card by post, but for security reasons you receive the PIN code in a separate envelope or SMS.\",\n      \"teaches\": [\n        \"prefix-word-order\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "new": "    {\n      \"id\": \"a2-211-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A bankkártyát postán küldjük ki, a szerződést pedig külön borítékban ____.\",\n      \"hint\": \"you receive, formal\",\n      \"english\": \"We send the card by post, and you receive the contract in a separate envelope.\",\n      \"teaches\": [\n        \"prefix-word-order\"\n      ],\n      \"stage\": \"practice\",\n      \"answers\": [\n        \"kapja meg\",\n        \"kapja\"\n      ]\n    }",
+  "why": "\"PIN-kódot\" is first taught in a2-212 and \"kódot/biztonsági okokból\" are unmet; \"kapja\" without meg is also correct, so both are accepted",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-211-ex.json",
+  "id": "a2-211-practice-4",
+  "old": "    {\n      \"id\": \"a2-211-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Mennyibe kerül a havi számla____ ennél a számlacsomagnál?\",\n      \"hint\": \"maintenance\",\n      \"answer\": \"vezetés\",\n      \"english\": \"How much does monthly account maintenance cost for this account package?\",\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "new": "    {\n      \"id\": \"a2-211-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Mennyibe kerül a havi ____ ennél a számlacsomagnál?\",\n      \"hint\": \"maintenance\",\n      \"answer\": \"számlavezetés\",\n      \"english\": \"How much does monthly account maintenance cost for this account package?\",\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "why": "blank glued to a stem (\"számla____\" + vezetés); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-211-ex.json",
+  "id": "a2-211-dialogue-1",
+  "old": "    {\n      \"id\": \"a2-211-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Jó napot! Milyen ügyben segíthetek ma?\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Jó napot kívánok! Egy új bankszámlát ____ nyitni a munkabéremhez.\"\n        }\n      ],\n      \"options\": [\n        \"szeretnék\",\n        \"szeretnél\",\n        \"muszáj voltam\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"nek-conditional\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "new": "    {\n      \"id\": \"a2-211-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Jó napot! Miben segíthetek ma?\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Jó napot kívánok! Egy új bankszámlát ____ nyitni a munkámhoz.\"\n        }\n      ],\n      \"options\": [\n        \"szeretnék\",\n        \"szeretnél\",\n        \"szeretne\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"nek-conditional\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "why": "wrong option \"muszáj voltam\" is ungrammatical (\"muszáj\" is impersonal); \"ügyben\" and \"munkabéremhez\" unmet",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-211-ex.json",
+  "id": "a2-211-dialogue-2",
+  "old": "    {\n      \"id\": \"a2-211-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Kész a szerződés. Kérem, olvassa el, és itt lent ____ alá!\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Köszönöm, átolvasom és mindjárt aláírom.\"\n        }\n      ],\n      \"options\": [\n        \"írja\",\n        \"húzza\",\n        \"törölje\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "new": "    {\n      \"id\": \"a2-211-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Kész a szerződés. Kérem, itt ____ alá!\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Köszönöm, rendben, aláírom.\"\n        }\n      ],\n      \"options\": [\n        \"írja\",\n        \"kérje\",\n        \"fizesse\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "why": "unmet \"lent\", \"átolvasom\", \"mindjárt\", \"törölje\"; \"húzza alá\" (underline) is a real phrase, so a possible reading",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-211-ex.json",
+  "id": "a2-211-writing-1",
+  "old": "    {\n      \"id\": \"a2-211-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A bankfiókban az ügyintéző kedvesen elmagyarázta a netbank használatát és a napi ____.\",\n      \"hint\": \"limit, plural, accusative\",\n      \"answer\": \"limiteket\",\n      \"english\": \"In the bank branch the clerk kindly explained the use of online banking and the daily limits.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"production\"\n    }",
+  "new": "    {\n      \"id\": \"a2-211-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A bankfiókban az ügyintéző kedvesen elmagyarázta a napi ____.\",\n      \"hint\": \"limit, accusative\",\n      \"answer\": \"limitet\",\n      \"english\": \"In the bank branch the clerk kindly explained the daily limit.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"production\"\n    }",
+  "why": "\"netbank\" is first taught in a2-214 and \"használatát/elmagyarázta\" unmet",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-211-ex.json",
+  "id": "a2-211-check-2",
+  "old": "    {\n      \"id\": \"a2-211-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A sorszámhúzó gépnél válassza ki a 'Számla____' menüpontot!\",\n      \"hint\": \"account opening\",\n      \"answer\": \"nyitás\",\n      \"english\": \"At the ticket dispenser choose the 'Account Opening' menu option!\",\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "new": "    {\n      \"id\": \"a2-211-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A gépnél válassza ki a '____' menüpontot!\",\n      \"hint\": \"account opening\",\n      \"answer\": \"Számlanyitás\",\n      \"english\": \"At the ticket dispenser choose the 'Account Opening' menu option!\",\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "why": "blank glued to a stem (\"Számla____\" + nyitás) and \"sorszámhúzó\" is a present participle in -ó (B1); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-212-ex.json",
+  "id": "a2-212-controlled-2",
+  "old": "    {\n      \"id\": \"a2-212-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Szeretném megnézni az aktuális számla____ a képernyőn.\",\n      \"hint\": \"balance, my, accusative\",\n      \"answer\": \"egyenlegemet\",\n      \"english\": \"I would like to check my current account balance on the screen.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "new": "    {\n      \"id\": \"a2-212-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Szeretném megnézni az aktuális ____ a képernyőn.\",\n      \"hint\": \"balance, my, accusative\",\n      \"answer\": \"egyenlegemet\",\n      \"english\": \"I would like to check my current account balance on the screen.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "why": "blank glued to a stem (\"számla____\" + egyenlegemet); \"aktuális\" is in the screen",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-212-ex.json",
+  "id": "a2-212-controlled-4",
+  "old": "    {\n      \"id\": \"a2-212-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"How much cash can you withdraw free per month with the statutory declaration in Hungary?\",\n      \"options\": [\n        \"Havi két alkalommal, összesen 150 000 forintig.\",\n        \"Korlátlanul bármikor.\",\n        \"Csak 10 000 forintot évente.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "new": "    {\n      \"id\": \"a2-212-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"How much cash can you withdraw free per month with the statutory declaration in Hungary?\",\n      \"options\": [\n        \"Havi kétszer, 150 000 forintig.\",\n        \"Havi ötször, 500 000 forintig.\",\n        \"Évente kétszer, 10 000 forintig.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "why": "length-giveaway ERROR (47 vs 28), tell-absolute \"Korlátlanul bármikor\", unmet words; options equalised",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-212-ex.json",
+  "id": "a2-212-practice-3",
+  "old": "    {\n      \"id\": \"a2-212-practice-3\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What does 'Kér nyomtatott bizonylatot?' ask?\",\n      \"options\": [\n        \"Do you want a printed transaction receipt?\",\n        \"Do you want to change your PIN?\",\n        \"Do you want to deposit money?\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "new": "    {\n      \"id\": \"a2-212-practice-3\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What does 'Kér bizonylatot?' ask?\",\n      \"options\": [\n        \"Do you want a receipt?\",\n        \"Do you want to change your PIN?\",\n        \"Do you want to deposit money?\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "why": "length-giveaway ERROR (42 vs 31); \"nyomtatott\" is a past participle (B1); the screen says \"Kér bizonylatot?\"",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-212-ex.json",
+  "id": "a2-212-writing-1",
+  "old": "    {\n      \"id\": \"a2-212-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az ATM-ből sikeresen felvettem ötvenezer forintot, és a képernyőn megjelent a fennmaradó ____.\",\n      \"hint\": \"egyenleg, my\",\n      \"answer\": \"egyenlegem\",\n      \"english\": \"I successfully withdrew fifty thousand forints from the ATM, and my remaining balance appeared on the screen.\",\n      \"teaches\": [\n        \"possessive-suffixes\"\n      ],\n      \"stage\": \"production\"\n    }",
+  "new": "    {\n      \"id\": \"a2-212-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az ATM-ből sikeresen felvettem ötvenezer forintot, és a képernyőn ott van az ____.\",\n      \"hint\": \"egyenleg, my\",\n      \"answer\": \"egyenlegem\",\n      \"english\": \"I successfully withdrew fifty thousand forints from the ATM, and my balance is on the screen.\",\n      \"teaches\": [\n        \"possessive-suffixes\"\n      ],\n      \"stage\": \"production\"\n    }",
+  "why": "\"fennmaradó\" is a present participle in -ó (B1); \"megjelent\" unmet",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-212-ex.json",
+  "id": "a2-212-check-1",
+  "old": "    {\n      \"id\": \"a2-212-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What should you do immediately if the ATM does not dispense cash after debiting your account?\",\n      \"options\": [\n        \"Azonnal fel kell hívni a bank telefonos ügyfélszolgálatát.\",\n        \"Meg kell várni a következő havi hivatalos bankszámlakivonatot.\",\n        \"Újra meg kell kísérelni a pénzfelvételt egy kisebb összeggel.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "new": "    {\n      \"id\": \"a2-212-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What should you do immediately if the ATM does not dispense cash after debiting your account?\",\n      \"options\": [\n        \"Call the bank's customer service line at once.\",\n        \"Wait for next month's bank statement.\",\n        \"Try again with a smaller amount.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "why": "Hungarian options full of unmet words (hívni, ügyfélszolgálat = a2-215, bankszámlakivonat, kísérelni); English options like the other check items"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-212-ex.json",
+  "id": "a2-212-check-2",
+  "old": "    {\n      \"id\": \"a2-212-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ne felejtsd el elvenni a bank____ a gépből a pénz felvétele után!\",\n      \"hint\": \"card, your, accusative\",\n      \"answer\": \"kártyádat\",\n      \"english\": \"Don't forget to take your bank card from the machine after collecting the money!\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "new": "    {\n      \"id\": \"a2-212-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ne felejtsd el elvenni a ____ a gépből a pénz felvétele után!\",\n      \"hint\": \"card, your, accusative\",\n      \"answer\": \"kártyádat\",\n      \"english\": \"Don't forget to take your card from the machine after collecting the money!\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "why": "blank glued to a stem (\"bank____\" + kártyádat); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-213-ex.json",
+  "id": "a2-213-intro-1",
+  "old": "    {\n      \"id\": \"a2-213-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What is the standard question at Hungarian cash registers?\",\n      \"options\": [\n        \"Készpénzzel vagy kártyával fizet?\",\n        \"Készpénzben vagy kártyában fizet?\",\n        \"Készpénzzel vagy kártyával fizetek?\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"ban-ben-in\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"introduce\"\n    }",
+  "new": "    {\n      \"id\": \"a2-213-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What is the standard question at Hungarian cash registers?\",\n      \"options\": [\n        \"Készpénzzel vagy kártyával fizet?\",\n        \"Készpénzben vagy kártyában fizet?\",\n        \"Készpénzzel vagy kártyával fizetek?\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"distractor_skills\": {\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"introduce\"\n    }",
+  "why": "distractor_skills on option 1 \"Készpénzben vagy kártyában fizet?\" (ban-ben-in): \"kártyában fizet\" is not a well-formed form of that skill (ungrammatical option); \"Készpénzzel vagy kártyával fizetek?\" (index 2) is well formed and keeps its tag"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-213-ex.json",
+  "id": "a2-213-practice-2",
+  "old": "    {\n      \"id\": \"a2-213-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Az étteremben a szerviz____ már benne van a végösszegben, nem szükséges külön borravalót hagyni.\",\n      \"hint\": \"charge\",\n      \"answer\": \"díj\",\n      \"english\": \"In the restaurant the service charge is already included in the total, it is not necessary to leave a separate tip.\",\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "new": "    {\n      \"id\": \"a2-213-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Az étteremben a ____ már benne van a végösszegben, nem szükséges külön borravalót hagyni.\",\n      \"hint\": \"charge\",\n      \"answer\": \"szervizdíj\",\n      \"english\": \"In the restaurant the service charge is already included in the total, it is not necessary to leave a separate tip.\",\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "why": "blank glued to a stem (\"szerviz____\" + díj); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-213-ex.json",
+  "id": "a2-213-check-2",
+  "old": "    {\n      \"id\": \"a2-213-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kérjük, érintse a telefonját vagy az óráját a ter____!\",\n      \"hint\": \"terminal\",\n      \"answer\": \"minálhoz\",\n      \"english\": \"Please tap your phone or watch to the terminal!\",\n      \"teaches\": [\n        \"hoz-suffix\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "new": "    {\n      \"id\": \"a2-213-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kérjük, érintse a telefonját vagy az óráját a ____!\",\n      \"hint\": \"terminal\",\n      \"answer\": \"terminálhoz\",\n      \"english\": \"Please tap your phone or watch to the terminal!\",\n      \"teaches\": [\n        \"hoz-suffix\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "why": "blank splits a word (\"ter____\" + minálhoz); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-213-b-gr.json",
+  "old": "*Készpénz fizetésnél:*",
+  "new": "*Készpénzes fizetésnél:*",
+  "why": "\"Készpénz fizetésnél\" is not standard (készpénzes fizetésnél / készpénzfizetésnél)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-214-ex.json",
+  "id": "a2-214-intro-2",
+  "old": "    {\n      \"id\": \"a2-214-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"How fast do domestic Hungarian bank transfers process in the instant payment system?\",\n      \"options\": [\n        \"Másodperceken belül, a nap 24 órájában.\",\n        \"Három munkanap alatt.\",\n        \"Csak hétfőn reggel.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "new": "    {\n      \"id\": \"a2-214-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"How fast do domestic Hungarian bank transfers process in the instant payment system?\",\n      \"options\": [\n        \"Másodpercek alatt.\",\n        \"Három munkanap alatt.\",\n        \"Csak hétfőn reggel.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "why": "length-giveaway ERROR (39 vs 21); right option shortened (also drops unmet \"belül\")",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-214-ex.json",
+  "id": "a2-214-controlled-1",
+  "old": "    {\n      \"id\": \"a2-214-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Este át____ neked a koncertjegy árát a bankszámládra.\",\n      \"hint\": \"I transfer\",\n      \"answer\": \"utalom\",\n      \"english\": \"In the evening I'll transfer the price of the concert ticket to your bank account.\",\n      \"teaches\": [\n        \"definite-vs-indefinite-conjugation\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "new": "    {\n      \"id\": \"a2-214-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Este ____ neked a koncertjegy árát a bankszámládra.\",\n      \"hint\": \"I transfer\",\n      \"answer\": \"átutalom\",\n      \"english\": \"In the evening I'll transfer the price of the concert ticket to your bank account.\",\n      \"teaches\": [\n        \"definite-vs-indefinite-conjugation\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "why": "blank glued to a prefix (\"át____\"); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-214-ex.json",
+  "id": "a2-214-practice-1",
+  "old": "    {\n      \"id\": \"a2-214-practice-1\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Hagyd\",\n        \"jóvá\",\n        \"az\",\n        \"átutalást\",\n        \"a\",\n        \"telefonos\",\n        \"alkalmazásban\",\n        \"!\"\n      ],\n      \"solution\": [\n        \"Hagyd\",\n        \"jóvá\",\n        \"az\",\n        \"átutalást\",\n        \"a\",\n        \"telefonos\",\n        \"alkalmazásban\",\n        \"!\"\n      ],\n      \"english\": \"Approve the transfer in the phone application!\",\n      \"teaches\": [\n        \"imperative-definite\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "new": "    {\n      \"id\": \"a2-214-practice-1\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Hagyd\",\n        \"jóvá\",\n        \"az\",\n        \"átutalást\",\n        \"a\",\n        \"mobilbankban\",\n        \"!\"\n      ],\n      \"solution\": [\n        \"Hagyd\",\n        \"jóvá\",\n        \"az\",\n        \"átutalást\",\n        \"a\",\n        \"mobilbankban\",\n        \"!\"\n      ],\n      \"english\": \"Approve the transfer in the mobile banking app!\",\n      \"teaches\": [\n        \"imperative-definite\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "why": "\"alkalmazás\" is first taught in a2-218; the unit word mobilbank is met",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-214-ex.json",
+  "id": "a2-214-practice-3",
+  "old": "    {\n      \"id\": \"a2-214-practice-3\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the English meaning of 'kedvezményezett neve'?\",\n      \"options\": [\n        \"name of the beneficiary\",\n        \"bank manager name\",\n        \"customer password\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "new": "    {\n      \"id\": \"a2-214-practice-3\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the English meaning of 'kedvezményezett neve'?\",\n      \"options\": [\n        \"beneficiary's name\",\n        \"bank manager name\",\n        \"customer password\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "why": "length-giveaway ERROR (23 vs 17); right option shortened"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-214-ex.json",
+  "id": "a2-214-dialogue-1",
+  "old": "    {\n      \"id\": \"a2-214-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Főbérlő\",\n          \"text\": \"Hogyan rendezi a havi bérleti díjat?\"\n        },\n        {\n          \"speaker\": \"Bérlő\",\n          \"text\": \"Minden hónap elsején banki ____ küldöm a megadott számlaszámra.\"\n        }\n      ],\n      \"options\": [\n        \"átutalással\",\n        \"borítékkal\",\n        \"csekk nélkül\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "new": "    {\n      \"id\": \"a2-214-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Főbérlő\",\n          \"text\": \"Hogyan rendezi a havi bérleti díjat?\"\n        },\n        {\n          \"speaker\": \"Bérlő\",\n          \"text\": \"Minden hónap elsején banki ____ küldöm a számlájára.\"\n        }\n      ],\n      \"options\": [\n        \"átutalással\",\n        \"borítékkal\",\n        \"bélyeggel\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "why": "\"megadott\" is a past participle (B1); wrong option \"csekk nélkül\" fits the sentence ungrammatically",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-214-ex.json",
+  "id": "a2-214-dialogue-2",
+  "old": "    {\n      \"id\": \"a2-214-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Dániel\",\n          \"text\": \"Megkaptad a pénzt, amit tegnap este küldtem?\"\n        },\n        {\n          \"speaker\": \"Lilla\",\n          \"text\": \"Igen, a mobilbankomban már látszik a sikeres ____.\"\n        }\n      ],\n      \"options\": [\n        \"jóváírás\",\n        \"letiltás\",\n        \"reklamáció\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "new": "    {\n      \"id\": \"a2-214-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Dániel\",\n          \"text\": \"Megkaptad a pénzt, amit tegnap este küldtem?\"\n        },\n        {\n          \"speaker\": \"Lilla\",\n          \"text\": \"Igen, a mobilbankomban már látszik a sikeres ____.\"\n        }\n      ],\n      \"options\": [\n        \"átutalás\",\n        \"jelszó\",\n        \"kedvezményezett\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "why": "right option \"jóváírás\" is not in any vocabulary list and \"letiltás/reklamáció\" are first taught in a2-215; \"sikeres átutalás\" is as good an answer as \"jóváírás\", so the item is rebuilt on the unit words",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-214-ex.json",
+  "id": "a2-214-writing-1",
+  "old": "    {\n      \"id\": \"a2-214-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az átutalás elküldése előtt gondosan ellenőriztem a kedvezményezett huszonnégy jegyű számla____.\",\n      \"hint\": \"number, his/her, accusative\",\n      \"answer\": \"számát\",\n      \"english\": \"Before sending the transfer I carefully checked the beneficiary's twenty-four digit account number.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"production\"\n    }",
+  "new": "    {\n      \"id\": \"a2-214-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az átutalás elküldése előtt gondosan ellenőriztem a kedvezményezett huszonnégy jegyű ____.\",\n      \"hint\": \"number, his/her, accusative\",\n      \"answer\": \"számlaszámát\",\n      \"english\": \"Before sending the transfer I carefully checked the beneficiary's twenty-four digit account number.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"production\"\n    }",
+  "why": "blank glued to a stem (\"számla____\" + számát); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-214-ex.json",
+  "id": "a2-214-check-1",
+  "old": "    {\n      \"id\": \"a2-214-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What should you do if an unknown caller asks for your internet banking SMS code?\",\n      \"options\": [\n        \"Soha nem szabad megadni, azonnal le kell tenni a telefont!\",\n        \"Be kell olvasni a telefonba a kapott hatjegyű biztonsági kódot.\",\n        \"SMS-ben vissza kell küldeni a kódot a megadott telefonszámra.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "new": "    {\n      \"id\": \"a2-214-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What should you do if an unknown caller asks for your internet banking SMS code?\",\n      \"options\": [\n        \"Soha nem szabad megadni, azonnal le kell tenni a telefont.\",\n        \"Be kell olvasni a hatjegyű biztonsági kódot a telefonba.\",\n        \"SMS-ben vissza kell küldeni a kódot a számra.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "why": "\"kapott\" and \"megadott\" are past participles (B1) in the wrong options; the right option ended in \"!\" while the others end in \".\" (punctuation tell)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-214-a-gr.json",
+  "old": "Át tudod utalni a fele összeget a számlámra?",
+  "new": "Át tudod utalni a fél összeget a számlámra?",
+  "why": "\"a fele összeget\" is wrong (fele is the noun \"half of\"; the adjective is fél)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-intro-1",
+  "old": "    {\n      \"id\": \"a2-215-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What must you do first if you lose your bank card in Budapest?\",\n      \"options\": [\n        \"Azonnal le kell tiltani a kártyát az applikációban vagy telefonon.\",\n        \"Meg kell várni a következő munkanapi személyes bankfióki nyitást.\",\n        \"Személyesen be kell menni a legközelebbi rendőrkapitányságra.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What must you do first if you lose your bank card in Budapest?\",\n      \"options\": [\n        \"Block it at once, in the app or by phone.\",\n        \"Wait until the branch opens next week.\",\n        \"Go to the police station in person.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "why": "Hungarian options full of unmet words (applikáció, munkanapi, személyes, nyitás, rendőrkapitányság); English options"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-intro-2",
+  "old": "    {\n      \"id\": \"a2-215-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the meaning of 'pótkártya'?\",\n      \"options\": [\n        \"Replacement bank card.\",\n        \"Discount card.\",\n        \"Library card.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the meaning of 'pótkártya'?\",\n      \"options\": [\n        \"Replacement card.\",\n        \"Discount card.\",\n        \"Library card.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "why": "length-giveaway ERROR (22 vs 14); right option shortened"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-controlled-1",
+  "old": "    {\n      \"id\": \"a2-215-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Jó napot! Elhagytam a pénztárcámat, szeretném le____ a bankkártyámat.\",\n      \"hint\": \"to block\",\n      \"answer\": \"tiltani\",\n      \"english\": \"Good day! I lost my wallet, I would like to block my bank card.\",\n      \"teaches\": [\n        \"building-the-infinitive-the-suffix-ni\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Jó napot! Elhagytam a pénztárcámat, szeretném ____ a bankkártyámat.\",\n      \"hint\": \"to block\",\n      \"answer\": \"letiltani\",\n      \"english\": \"Good day! I lost my wallet, I would like to block my bank card.\",\n      \"teaches\": [\n        \"building-the-infinitive-the-suffix-ni\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "why": "blank glued to a prefix (\"le____\"); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-controlled-2",
+  "old": "    {\n      \"id\": \"a2-215-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A vitatott tranzakció miatt hivatalos ____ nyújtottam be a banknál.\",\n      \"hint\": \"complaint\",\n      \"answer\": \"reklamációt\",\n      \"english\": \"Due to the disputed transaction, I lodged an official complaint with the bank.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A levonás miatt hivatalos ____ nyújtottam be a banknál.\",\n      \"hint\": \"complaint\",\n      \"answer\": \"reklamációt\",\n      \"english\": \"Because of the debit I lodged an official complaint with the bank.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "why": "\"vitatott\" is a past participle modifier (B1); miatt kept (reported in § 6)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-controlled-4",
+  "old": "    {\n      \"id\": \"a2-215-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What does customer service do after you block a stolen card?\",\n      \"options\": [\n        \"Biztonsági okokból érvényteleníti a kártyát és új pótkártyát rendel.\",\n        \"Azonnal átutalja az összes pénzedet a bank központi számlájára.\",\n        \"Biztonsági okokból azonnal letiltja a regisztrált telefonszámodat.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What does customer service do after you block a stolen card?\",\n      \"options\": [\n        \"They cancel the card and order a replacement.\",\n        \"They transfer all your money to the bank.\",\n        \"They block your phone number as well.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "why": "Hungarian options full of unmet words and the participle \"regisztrált\"; English options"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-practice-2",
+  "old": "    {\n      \"id\": \"a2-215-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A vizsgálat után a bank jóváírta a vitatott összeg vissza____ a számlámon.\",\n      \"hint\": \"refund, its, accusative\",\n      \"answer\": \"térítését\",\n      \"english\": \"After the investigation, the bank credited the refund of the disputed amount to my account.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A vizsgálat után a bank jóváírta a ____ a számlámon.\",\n      \"hint\": \"refund, accusative\",\n      \"answer\": \"visszatérítést\",\n      \"english\": \"After the investigation, the bank credited the refund to my account.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "why": "blank glued to a prefix (\"vissza____\") and the participle \"vitatott\"; whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-practice-4",
+  "old": "    {\n      \"id\": \"a2-215-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Az új pót____ öt munkanapon belül megérkezik a postacímedre.\",\n      \"hint\": \"replacement card\",\n      \"answer\": \"kártya\",\n      \"english\": \"The new replacement card will arrive at your postal address within five working days.\",\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Az új ____ öt munkanapon belül megérkezik a postacímedre.\",\n      \"hint\": \"replacement card\",\n      \"answer\": \"pótkártya\",\n      \"english\": \"The new replacement card will arrive at your postal address within five working days.\",\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "why": "blank glued to a stem (\"pót____\" + kártya); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-dialogue-1",
+  "old": "    {\n      \"id\": \"a2-215-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Segítség, úgy tűnik, elhagytam a bankkártyámat a villamoson!\"\n        },\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Nyugodjon meg, egy pillanat alatt ____ a kártyát, hogy senki se élhessen vissza vele.\"\n        }\n      ],\n      \"options\": [\n        \"letiltjuk\",\n        \"kidobjuk\",\n        \"feltöltjük\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Segítség, úgy tűnik, elhagytam a bankkártyámat a villamoson!\"\n        },\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Nyugodjon meg, egy pillanat alatt ____ a kártyát.\"\n        }\n      ],\n      \"options\": [\n        \"letiltjuk\",\n        \"átutaljuk\",\n        \"aláírjuk\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "why": "\"hogy senki se élhessen vissza vele\" is hogy + subjunctive + -hat (B1 hogy-jon-jen); removed; wrong options \"kidobjuk/feltöltjük\" (unmet) replaced",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-writing-1",
+  "old": "    {\n      \"id\": \"a2-215-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nagyon megkönnyebbültem, amikor a bank ügyfélszolgálata gyorsan le____ a kártyámat a lopás után.\",\n      \"hint\": \"blocked\",\n      \"answer\": \"tiltotta\",\n      \"english\": \"I was very relieved when the bank customer service quickly blocked my card after the theft.\",\n      \"teaches\": [\n        \"definite-past\"\n      ],\n      \"stage\": \"production\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nagyon megkönnyebbültem, amikor a bank ügyfélszolgálata gyorsan ____ a kártyámat a lopás után.\",\n      \"hint\": \"blocked\",\n      \"answer\": \"letiltotta\",\n      \"english\": \"I was very relieved when the bank customer service quickly blocked my card after the theft.\",\n      \"teaches\": [\n        \"definite-past\"\n      ],\n      \"stage\": \"production\"\n    }",
+  "why": "blank glued to a prefix (\"le____\"); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-writing-2",
+  "old": "    {\n      \"id\": \"a2-215-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"A\",\n        \"bank\",\n        \"minden\",\n        \"jogosulatlan\",\n        \"levonást\",\n        \"gondosan\",\n        \"kivizsgál\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"bank\",\n        \"minden\",\n        \"jogosulatlan\",\n        \"levonást\",\n        \"gondosan\",\n        \"kivizsgál\",\n        \".\"\n      ],\n      \"english\": \"The bank carefully investigates every unauthorized debit.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"production\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"A\",\n        \"bank\",\n        \"minden\",\n        \"jogosulatlan\",\n        \"levonást\",\n        \"kivizsgálja\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"bank\",\n        \"minden\",\n        \"jogosulatlan\",\n        \"levonást\",\n        \"kivizsgálja\",\n        \".\"\n      ],\n      \"english\": \"The bank investigates every unauthorized debit.\",\n      \"teaches\": [\n        \"definite-vs-indefinite-conjugation\"\n      ],\n      \"stage\": \"production\"\n    }",
+  "why": "\"minden … levonást\" takes the definite conjugation: \"kivizsgál\" is wrong, \"kivizsgálja\" is right; \"gondosan\" is b2",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-check-1",
+  "old": "    {\n      \"id\": \"a2-215-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Where can you freeze your bank card instantly without calling anyone?\",\n      \"options\": [\n        \"Közvetlenül a mobilbankos alkalmazásban egy gombnyomással.\",\n        \"A helyi rendőrkapitányságon egy hivatalos jegyzőkönyvvel.\",\n        \"A legközelebbi postahivatalban az ügyfélszolgálati pultnál.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Where can you freeze your bank card instantly without calling anyone?\",\n      \"options\": [\n        \"In the mobile banking app, with one tap.\",\n        \"At the local police station.\",\n        \"At the nearest post office counter.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "why": "Hungarian options full of unmet words (alkalmazás = a2-218, ügyfélszolgálati, jegyzőkönyv…); English options"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-check-2",
+  "old": "    {\n      \"id\": \"a2-215-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A pótkártya megérkezéséig a telefonos érintéses fizetés továbbra is ____.\",\n      \"hint\": \"működik, can\",\n      \"answer\": \"működhet\",\n      \"english\": \"Until the replacement card arrives, phone contactless payment can still function.\",\n      \"teaches\": [\n        \"potential-hat-het\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A pótkártya megérkezéséig a telefonos érintéses fizetés továbbra is ____.\",\n      \"hint\": \"function, can\",\n      \"english\": \"Until the replacement card arrives, phone contactless payment can still function.\",\n      \"teaches\": [\n        \"potential-hat-het\"\n      ],\n      \"stage\": \"check\",\n      \"answers\": [\n        \"működhet\",\n        \"működik\"\n      ]\n    }",
+  "why": "\"továbbra is működik\" is equally correct; accepted (hint changed so it is not an accepted answer)",
+  "kind": "hungarian",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-215-a-gr.json",
+  "old": "éjjel-nappal hívható ügyfélszolgálat",
+  "new": "éjjel-nappali ügyfélszolgálat",
+  "why": "\"hívható\" is a present participle of the potential (-hat + -ó, B1 present-participle)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-213-ex.json",
+  "id": "a2-213-dialogue-2",
+  "old": "    {\n      \"id\": \"a2-213-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Pénztáros\",\n          \"text\": \"Kér számlát cégnévre a vásárlásról?\"\n        },\n        {\n          \"speaker\": \"Vásárló\",\n          \"text\": \"Nem köszönöm, elég lesz az egyszerű ____ is.\"\n        }\n      ],\n      \"options\": [\n        \"blokk\",\n        \"szerződés\",\n        \"értesítő\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "new": "    {\n      \"id\": \"a2-213-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Pénztáros\",\n          \"text\": \"Kér áfás számlát a vásárlásról?\"\n        },\n        {\n          \"speaker\": \"Vásárló\",\n          \"text\": \"Nem köszönöm, elég lesz az egyszerű ____ is.\"\n        }\n      ],\n      \"options\": [\n        \"blokk\",\n        \"szerződés\",\n        \"értesítő\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "why": "unmet \"cégnévre\"; the unit word áfás számla is used instead",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-dialogue-2",
+  "old": "    {\n      \"id\": \"a2-215-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Kétszer vonták le a számlámról az éttermi vacsorát tegnap.\"\n        },\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Rögzítem a ____, és elindítjuk a visszatérítési folyamatot.\"\n        }\n      ],\n      \"options\": [\n        \"reklamációt\",\n        \"szerződést\",\n        \"sorszámot\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Kétszer vonták le a számlámról ugyanazt az összeget.\"\n        },\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Rendben, kivizsgáljuk a ____.\"\n        }\n      ],\n      \"options\": [\n        \"reklamációt\",\n        \"szerződést\",\n        \"sorszámot\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+  "why": "unmet éttermi/rögzítem/elindítjuk/visszatérítési/folyamatot in the prompt",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-consolidation-ex.json",
+  "id": "a2-215-consolidation-2",
+  "old": "    {\n      \"id\": \"a2-215-consolidation-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What does an ATM prompt 'Vegye el a készpénzt' instruct?\",\n      \"options\": [\n        \"Take the cash from the dispenser!\",\n        \"Insert your card!\",\n        \"Enter your PIN!\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-consolidation-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What does an ATM prompt 'Vegye el a készpénzt' instruct?\",\n      \"options\": [\n        \"Take the cash from the dispenser!\",\n        \"Insert your card into the slot!\",\n        \"Enter your PIN on the keypad!\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "why": "length-giveaway ERROR (33 vs 17); wrong options lengthened"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-consolidation-ex.json",
+  "id": "a2-215-consolidation-5",
+  "old": "    {\n      \"id\": \"a2-215-consolidation-5\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What must you do first if your bank card is stolen?\",\n      \"options\": [\n        \"Azonnal le kell tiltani a kártyát.\",\n        \"El kell menni a moziba.\",\n        \"Venni kell új ruhát.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-consolidation-5\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What must you do first if your bank card is stolen?\",\n      \"options\": [\n        \"Le kell tiltani a kártyát.\",\n        \"El kell menni a moziba.\",\n        \"Venni kell új ruhát.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "why": "length-giveaway ERROR (34 vs 23); right option shortened",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-consolidation-ex.json",
+  "id": "a2-215-consolidation-6",
+  "old": "    {\n      \"id\": \"a2-215-consolidation-6\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Új folyó____ szeretnék nyitni a bankfiókban.\",\n      \"hint\": \"current account\",\n      \"answer\": \"számlát\",\n      \"english\": \"I would like to open a new current account in the bank branch.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-consolidation-6\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Új ____ szeretnék nyitni a bankfiókban.\",\n      \"hint\": \"current account\",\n      \"answer\": \"folyószámlát\",\n      \"english\": \"I would like to open a new current account in the bank branch.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "why": "blank glued to a stem (\"folyó____\" + számlát); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-consolidation-ex.json",
+  "id": "a2-215-consolidation-7",
+  "old": "    {\n      \"id\": \"a2-215-consolidation-7\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az ATM-nél készpénz____ választottam a menüből.\",\n      \"hint\": \"withdrawal\",\n      \"answer\": \"felvételt\",\n      \"english\": \"At the ATM I selected cash withdrawal from the menu.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-consolidation-7\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az ATM-nél a ____ választottam a menüből.\",\n      \"hint\": \"withdrawal\",\n      \"answer\": \"készpénzfelvételt\",\n      \"english\": \"At the ATM I selected cash withdrawal from the menu.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "why": "blank glued to a stem (\"készpénz____\" + felvételt); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-consolidation-ex.json",
+  "id": "a2-215-consolidation-8",
+  "old": "    {\n      \"id\": \"a2-215-consolidation-8\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kártyával vagy kész____ kíván fizetni a pénztárnál?\",\n      \"hint\": \"cash\",\n      \"answer\": \"pénzzel\",\n      \"english\": \"Do you wish to pay with card or cash at the cash register?\",\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-consolidation-8\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kártyával vagy ____ kíván fizetni a pénztárnál?\",\n      \"hint\": \"cash\",\n      \"answer\": \"készpénzzel\",\n      \"english\": \"Do you wish to pay with card or cash at the cash register?\",\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "why": "blank splits a word (\"kész____\" + pénzzel); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-consolidation-ex.json",
+  "id": "a2-215-consolidation-9",
+  "old": "    {\n      \"id\": \"a2-215-consolidation-9\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A bérleti díjat banki át____ rendezem minden hónapban.\",\n      \"hint\": \"transfer\",\n      \"answer\": \"utalással\",\n      \"english\": \"I settle the rent by bank transfer every month.\",\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-consolidation-9\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A bérleti díjat banki ____ rendezem minden hónapban.\",\n      \"hint\": \"transfer\",\n      \"answer\": \"átutalással\",\n      \"english\": \"I settle the rent by bank transfer every month.\",\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "why": "blank glued to a prefix (\"át____\"); whole word blanked",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-consolidation-ex.json",
+  "id": "a2-215-consolidation-10",
+  "old": "    {\n      \"id\": \"a2-215-consolidation-10\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Elveszett a kártyám, azonnal le kell ____ az alkalmazásban.\",\n      \"hint\": \"block\",\n      \"answer\": \"tiltanom\",\n      \"english\": \"My card is lost, I must block it immediately in the app.\",\n      \"teaches\": [\n        \"inflected-infinitives\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-consolidation-10\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Elveszett a kártyám, azonnal le kell ____ a mobilbankban.\",\n      \"hint\": \"block\",\n      \"answer\": \"tiltanom\",\n      \"english\": \"My card is lost, I must block it immediately in mobile banking.\",\n      \"teaches\": [\n        \"inflected-infinitives\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "why": "\"alkalmazásban\" is first taught in a2-218; unit word mobilbank",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-consolidation-ex.json",
+  "id": "a2-215-consolidation-11",
+  "old": "    {\n      \"id\": \"a2-215-consolidation-11\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Pénztáros\",\n          \"text\": \"Hogyan fizet a könyvekért?\"\n        },\n        {\n          \"speaker\": \"Vásárló\",\n          \"text\": \"Érintésmentes bankkártyával ____ fizetni.\"\n        }\n      ],\n      \"options\": [\n        \"szeretnék\",\n        \"szeretnél\",\n        \"muszáj vagyok\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"nek-conditional\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-consolidation-11\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Pénztáros\",\n          \"text\": \"Hogyan fizet a könyvekért?\"\n        },\n        {\n          \"speaker\": \"Vásárló\",\n          \"text\": \"Érintésmentes bankkártyával ____ fizetni.\"\n        }\n      ],\n      \"options\": [\n        \"szeretnék\",\n        \"szeretnél\",\n        \"szeretne\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"nek-conditional\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "why": "wrong option \"muszáj vagyok\" is ungrammatical",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-consolidation-ex.json",
+  "id": "a2-215-consolidation-15",
+  "old": "    {\n      \"id\": \"a2-215-consolidation-15\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az átutalás másodpercek alatt megérkezik a kedvezményezett számla____.\",\n      \"hint\": \"account number, its, onto\",\n      \"answer\": \"számára\",\n      \"english\": \"The transfer arrives at the beneficiary's account number within seconds.\",\n      \"teaches\": [\n        \"ra-re\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-consolidation-15\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az átutalás másodpercek alatt megérkezik a kedvezményezett ____.\",\n      \"hint\": \"account, his/her, onto\",\n      \"answer\": \"számlájára\",\n      \"english\": \"The transfer arrives in the beneficiary's account within seconds.\",\n      \"teaches\": [\n        \"ra-re\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "why": "blank glued to a stem (\"számla____\" + számára): \"számlaszámára\" is odd (money arrives in an account, not at a number); reworded",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-consolidation-ex.json",
+  "id": "a2-215-consolidation-18",
+  "old": "    {\n      \"id\": \"a2-215-consolidation-18\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem kell aggódnod a biztonság miatt, a kétlépcsős azonosítás megvédi a net____.\",\n      \"hint\": \"netbank\",\n      \"answer\": \"bankot\",\n      \"english\": \"You don't need to worry about security, two-factor authentication protects online banking.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-consolidation-18\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem kell aggódnod a biztonság miatt, a kétlépcsős azonosítás megvédi a ____.\",\n      \"hint\": \"netbank\",\n      \"answer\": \"netbankot\",\n      \"english\": \"You don't need to worry about security, two-factor authentication protects online banking.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "why": "blank glued to a stem (\"net____\" + bankot); whole word blanked, miatt kept (reported in § 6)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-consolidation-ex.json",
+  "id": "a2-215-consolidation-19",
+  "old": "    {\n      \"id\": \"a2-215-consolidation-19\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"How do you request a receipt at an ATM?\",\n      \"options\": [\n        \"Igen, kérek nyomtatott bizonylatot.\",\n        \"Nem, nem kell bizonylat.\",\n        \"Csak készpénzt kérek.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-consolidation-19\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"How do you request a receipt at an ATM?\",\n      \"options\": [\n        \"Igen, kérek bizonylatot.\",\n        \"Nem, nem kell bizonylat.\",\n        \"Csak készpénzt kérek.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "why": "length-giveaway ERROR (35 vs 24); right option shortened (drops the participle \"nyomtatott\", B1)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-consolidation-ex.json",
+  "id": "a2-215-consolidation-20",
+  "old": "    {\n      \"id\": \"a2-215-consolidation-20\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A vitatott levonás miatt hivatalos reklamációt nyújtottam be, és visszakaptam a ____.\",\n      \"hint\": \"visszatérítés, accusative\",\n      \"answer\": \"visszatérítést\",\n      \"english\": \"Due to the disputed debit I lodged an official complaint and received the refund.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-consolidation-20\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A levonás miatt reklamációt nyújtottam be, és visszakaptam a ____.\",\n      \"hint\": \"visszatérítés, accusative\",\n      \"answer\": \"visszatérítést\",\n      \"english\": \"Because of the debit I lodged a complaint and received the refund.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "why": "\"vitatott\" is a past participle (B1); miatt kept (reported in § 6)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-211-a-gr.json",
+  "old": "and bring identification documents:",
+  "new": "and bring identification documents (you know the identity card and the address card from the post office):",
+  "why": "screen presents the identity and address cards (taught in a2-210) as new"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-211-a-gr.json",
+  "old": "Key phrases:",
+  "new": "Key phrases (you know *Szeretnék* + infinitive and *Kérem, írja alá* already):",
+  "why": "screen presents szeretnék + infinitive (a1-94) and the formal imperative írja alá (a2-49, a2-207) as new"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-211-b-gr.json",
+  "old": "At bank branches, you draw a ticket (*sorszámot húzni*) under categories such as",
+  "new": "You know the queue ticket (*sorszámot húzni*) from the post office; bank branches use it too, under categories such as",
+  "why": "screen presents the queue ticket (a2-206-a) as new"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-211-b-gr.json",
+  "old": "Kér hozzá dombornyomott bankkártyát is a számlához?",
+  "new": "Kér hozzá bankkártyát is a számlához?",
+  "why": "\"dombornyomott\" is a past participle modifier (B1) and unmet",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-211-b-gr.json",
+  "old": "Would you like an embossed bank card for the account as well?",
+  "new": "Would you like a bank card for the account as well?",
+  "why": "English for the changed example"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-215-b-gr.json",
+  "old": "*Kérem a vitatott összeg visszatérítését!* (I request the refund of the disputed amount!)",
+  "new": "*Kérem az összeg visszatérítését!* (I request the refund of the amount!)",
+  "why": "\"vitatott\" is a past participle modifier (B1 past-participle-adjective)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-215-b-gr.json",
+  "old": "Kérjük, küldje el a vitatott bizonylat másolatát az ügyfélszolgálatnak!",
+  "new": "Kérjük, küldje el a bizonylat másolatát az ügyfélszolgálatnak!",
+  "why": "\"vitatott\" is a past participle modifier (B1)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-215-b-gr.json",
+  "old": "Please send a copy of the disputed receipt to customer service!",
+  "new": "Please send a copy of the receipt to customer service!",
+  "why": "English for the changed example"
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-211.json",
+  "old": "\"goal\": [\n    \"I can open a current account at a Hungarian bank and communicate at customer desks.\",\n    \"I know the required identification documents (személyi, lakcímkártya, adókártya) and terms.\"\n  ]",
+  "new": "\"goal\": [\n    \"I can open a current account at a Hungarian bank and communicate at customer desks.\",\n    \"I can name the documents needed to open an account (személyi igazolvány, lakcímkártya, adókártya).\"\n  ]",
+  "why": "goal 2 is \"I know …\", not a can-do line"
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-211.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can open a current account at a Hungarian bank and communicate at customer desks.\",\n        \"I know the required identification documents (személyi, lakcímkártya, adókártya) and terms.\"\n      ]",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can open a current account at a Hungarian bank and communicate at customer desks.\",\n        \"I can name the documents needed to open an account (személyi igazolvány, lakcímkártya, adókártya).\"\n      ]",
+  "why": "goal 2 is \"I know …\", not a can-do line"
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-211.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can open a current account at a Hungarian bank and communicate at customer desks.\",\n        \"I know the required identification documents (személyi, lakcímkártya, adókártya) and terms.\"\n      ]",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can open a current account at a Hungarian bank and communicate at customer desks.\",\n        \"I can name the documents needed to open an account (személyi igazolvány, lakcímkártya, adókártya).\"\n      ]",
+  "why": "goal 2 is \"I know …\", not a can-do line"
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-215-consolidation.json",
+  "old": "\"goal\": [\n    \"I have mastered all essential Hungarian banking pragmatics: opening accounts, ATM operations, POS card payments, and transfers.\",\n    \"I can handle banking emergencies, card blocking, and complaint procedures with ease.\"\n  ]",
+  "new": "\"goal\": [\n    \"I can open an account, use an ATM, pay by card or in cash and make a bank transfer in Hungarian.\",\n    \"I can block a lost card and lodge a complaint about a wrong debit.\"\n  ]",
+  "why": "\"I have mastered all essential … pragmatics\" is not a can-do line and overclaims (\"with ease\")"
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-215-consolidation.json",
+  "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I have mastered all essential Hungarian banking pragmatics: opening accounts, ATM operations, POS card payments, and transfers.\",\n        \"I can handle banking emergencies, card blocking, and complaint procedures with ease.\"\n      ]",
+  "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can open an account, use an ATM, pay by card or in cash and make a bank transfer in Hungarian.\",\n        \"I can block a lost card and lodge a complaint about a wrong debit.\"\n      ]",
+  "why": "\"I have mastered all essential … pragmatics\" is not a can-do line and overclaims (\"with ease\")"
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-215-consolidation.json",
+  "old": "\"title\": \"Unit 43 Mastery\",\n      \"items\": [\n        \"I have mastered all essential Hungarian banking pragmatics: opening accounts, ATM operations, POS card payments, and transfers.\",\n        \"I can handle banking emergencies, card blocking, and complaint procedures with ease.\"\n      ]",
+  "new": "\"title\": \"Unit 43 Mastery\",\n      \"items\": [\n        \"I can open an account, use an ATM, pay by card or in cash and make a bank transfer in Hungarian.\",\n        \"I can block a lost card and lodge a complaint about a wrong debit.\"\n      ]",
+  "why": "\"I have mastered all essential … pragmatics\" is not a can-do line and overclaims (\"with ease\")"
+ },
+ {
+  "file": "content/hu/stories/original/a2/a2-unit-43.json",
+  "old": "Eszter és Gábor a belvárosban intézik a pénzügyeiket: bankszámlát nyitnak az új munkahelyhez, készpénzt vesznek fel az ATM-ből, és kártyával fizetnek az étteremben.",
+  "new": "Gábor új bankszámlát nyit az új munkahelyéhez, Eszter készpénzt vesz fel az ATM-ből, aztán kártyával fizetnek az étteremben.",
+  "why": "summary says both open an account and both withdraw cash; in the story Gábor opens the account and Eszter withdraws the cash",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/original/a2/a2-unit-43.json",
+  "old": "Gábor elveszett bankkártyáját akarják letiltani a bankban.",
+  "new": "Gábor elvesztette a bankkártyáját, és le akarják tiltani.",
+  "why": "comprehension option has the past participle \"elveszett\" (B1)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/original/a2/a2-unit-43.json",
+  "old": "Hogyan ünneplik meg a sikeres számlanyitást a bankból kilépve?",
+  "new": "Hogyan ünneplik meg a sikeres számlanyitást?",
+  "why": "comprehension question has the adverbial participle \"kilépve\" (B1 participle-actions)",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/original/a2/a2-unit-43.json",
+  "old": "Eszter az összes felvett készpénzből ruhákat vásárol.",
+  "new": "Eszter az összes készpénzből ruhákat vásárol.",
+  "why": "comprehension option has the past participle \"felvett\" (B1)",
+  "kind": "hungarian"
+ }
+]

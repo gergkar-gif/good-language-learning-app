@@ -1,0 +1,144 @@
+[
+  {
+    "file": "content/hu/lessons/a2/a2-216.json",
+    "old": "\"goal\": [\n    \"I can describe common acute symptoms at a Hungarian pharmacy (sore throat, cough, fever, runny nose).\",\n    \"I know the vocabulary for medication formats (tabletta, pezsgőtabletta, orrspray, szirup).\"\n  ]",
+    "new": "\"goal\": [\n    \"I can describe common acute symptoms at a Hungarian pharmacy (sore throat, cough, fever, runny nose).\",\n    \"I can name common medication formats (tabletta, pezsgőtabletta, orrspray, szirup).\"\n  ]",
+    "why": "goal 2 is \"I know …\", not a can-do line"
+  },
+  {
+    "file": "content/hu/lessons/a2/a2-216.json",
+    "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe common acute symptoms at a Hungarian pharmacy (sore throat, cough, fever, runny nose).\",\n        \"I know the vocabulary for medication formats (tabletta, pezsgőtabletta, orrspray, szirup).\"\n      ]",
+    "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe common acute symptoms at a Hungarian pharmacy (sore throat, cough, fever, runny nose).\",\n        \"I can name common medication formats (tabletta, pezsgőtabletta, orrspray, szirup).\"\n      ]",
+    "why": "goal 2 is \"I know …\", not a can-do line"
+  },
+  {
+    "file": "content/hu/lessons/a2/a2-216.json",
+    "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe common acute symptoms at a Hungarian pharmacy (sore throat, cough, fever, runny nose).\",\n        \"I know the vocabulary for medication formats (tabletta, pezsgőtabletta, orrspray, szirup).\"\n      ]",
+    "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe common acute symptoms at a Hungarian pharmacy (sore throat, cough, fever, runny nose).\",\n        \"I can name common medication formats (tabletta, pezsgőtabletta, orrspray, szirup).\"\n      ]",
+    "why": "goal 2 is \"I know …\", not a can-do line"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-217-ex.json",
+    "id": "a2-217-practice-3",
+    "old": "    {\n      \"id\": \"a2-217-practice-3\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the English meaning of 'e-recept kiváltása'?\",\n      \"options\": [\n        \"dispensing an electronic prescription\",\n        \"booking an appointment\",\n        \"cancelling a doctor's visit\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-217-practice-3\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the English meaning of 'e-recept kiváltása'?\",\n      \"options\": [\n        \"collecting an e-prescription\",\n        \"booking an appointment\",\n        \"cancelling a doctor's visit\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "length-giveaway ERROR (37 vs 27); right option shortened"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-217-ex.json",
+    "id": "a2-217-check-1",
+    "old": "    {\n      \"id\": \"a2-217-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Can another person collect your e-prescription from the pharmacy for you?\",\n      \"options\": [\n        \"Igen, ha megadja az Ön TAJ-számát és bemutatja a saját személyi igazolványát.\",\n        \"Nem, a magyar törvények szerint kizárólag a beteg mehet el személyesen.\",\n        \"Csak akkor, ha rendelkezik hivatalos közjegyzői vagy bírósági engedéllyel.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-217-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Can another person collect your e-prescription from the pharmacy for you?\",\n      \"options\": [\n        \"Yes, with your TAJ number and their own ID card.\",\n        \"No, only the patient may collect it in person.\",\n        \"Only with a notary's written permission.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "tell-absolute ERROR (\"kizárólag\"); Hungarian options are full of unmet words (törvények, közjegyzői, bírósági, engedéllyel); English options"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-217-b-gr.json",
+    "old": "The GP has already prescribed the recipe into the cloud.",
+    "new": "The GP has already put the prescription into the cloud.",
+    "why": "\"recipe\" is a wrong translation of recept"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-217-b-gr.json",
+    "old": "I would like to collect my prescribed medications based on my TAJ number",
+    "new": "I would like to collect my medications based on my TAJ number",
+    "why": "English for the changed example"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-218-ex.json",
+    "id": "a2-218-controlled-4",
+    "old": "    {\n      \"id\": \"a2-218-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What warning is given if a medicine causes drowsiness?\",\n      \"options\": [\n        \"Gépjárművet vezetni tilos vagy óvatosságot igényel.\",\n        \"A gyógyszert étkezés előtt, éhgyomorra kell bevenni.\",\n        \"A tablettát bőséges meleg teával ajánlott lenyelni.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-218-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What warning is given if a medicine causes drowsiness?\",\n      \"options\": [\n        \"Do not drive, or drive with great care.\",\n        \"Take it before breakfast, on an empty stomach.\",\n        \"Swallow it with plenty of warm tea.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "Hungarian options are full of unmet words; English options"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-218-ex.json",
+    "id": "a2-218-check-1",
+    "old": "    {\n      \"id\": \"a2-218-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the consequence of exceeding the maximum recommended daily dose?\",\n      \"options\": [\n        \"Túladagolási mérgezés vagy súlyos mellékhatás alakulhat ki.\",\n        \"A hatóanyag gyorsabban és tartósabban fejti ki a hatását.\",\n        \"A gyógyszer hatása változatlan marad a következő napig.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-218-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the consequence of exceeding the maximum recommended daily dose?\",\n      \"options\": [\n        \"It may cause poisoning or serious side effects.\",\n        \"The medicine simply works faster and longer.\",\n        \"Nothing changes until the next day.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "Hungarian options are full of unmet words (túladagolási, mérgezés, tartósabban …); English options"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-218-a-gr.json",
+    "old": "Do not exceed the permitted daily maximum dosage!",
+    "new": "Do not exceed the daily dose!",
+    "why": "English for the changed example"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-218-b-gr.json",
+    "old": "Store in a dry place protected from light, at room temperature.",
+    "new": "Store at room temperature, in a dry place.",
+    "why": "English for the changed example"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-218-b-gr.json",
+    "old": "Do not take the preparation after the expiration date indicated on the box!",
+    "new": "Do not take the preparation after the expiration date!",
+    "why": "English for the changed example"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-219-ex.json",
+    "id": "a2-219-intro-2",
+    "old": "    {\n      \"id\": \"a2-219-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is 'orvosi ügyelet'?\",\n      \"options\": [\n        \"Urgent out-of-hours clinic for nights and weekends.\",\n        \"Routine eye testing clinic.\",\n        \"Dentistry school.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "new": "    {\n      \"id\": \"a2-219-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is 'orvosi ügyelet'?\",\n      \"options\": [\n        \"Out-of-hours urgent clinic.\",\n        \"Routine eye testing clinic.\",\n        \"Dentistry school.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "why": "length-giveaway ERROR (51 vs 27); right option shortened"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-219-ex.json",
+    "id": "a2-219-controlled-4",
+    "old": "    {\n      \"id\": \"a2-219-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"How do you buy medicine at an on-call pharmacy late at night?\",\n      \"options\": [\n        \"Csengetni kell az éjszakai kiadóablaknál elhelyezett csengővel.\",\n        \"Erősen dörömbölni kell a főbejárat zárva tartott üvegajtaján.\",\n        \"Meg kell várni a másnap reggeli szokásos nyitási időpontot.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-219-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"How do you buy medicine at an on-call pharmacy late at night?\",\n      \"options\": [\n        \"Ring the bell at the night window.\",\n        \"Bang hard on the locked front door.\",\n        \"Wait until the usual opening hours the next morning.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "Hungarian options use the participles \"elhelyezett\", \"zárva tartott\" (B1) and many unmet words; English options"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-219-b-gr.json",
+    "old": "Stay on the line with the dispatcher until help arrives!",
+    "new": "Stay on the line with the dispatcher and wait for help!",
+    "why": "English for the changed example"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-ex.json",
+    "id": "a2-220-check-1",
+    "old": "    {\n      \"id\": \"a2-220-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the standard workplace rule when falling sick in Hungary?\",\n      \"options\": [\n        \"Már az első napon értesíteni kell a munkáltatót és fel kell hívni a háziorvost.\",\n        \"Elég a gyógyulás után, a munkába állás napján bemutatni az orvosi papírt.\",\n        \"A táppénzes papírt a munkahelyi üzemorvosnak kell eljuttatni egy héten belül.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the standard workplace rule when falling sick in Hungary?\",\n      \"options\": [\n        \"Tell your employer on the first day and call your GP.\",\n        \"Show the doctor's paper on the day you go back to work.\",\n        \"Send the sick-pay form to the company doctor within a week.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "Hungarian options are full of unmet words (értesíteni, munkáltató, üzemorvos, eljuttatni); English options"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-ex.json",
+    "id": "a2-220-controlled-3",
+    "old": "    {\n      \"id\": \"a2-220-controlled-3\",\n      \"type\": \"matching\",\n      \"category\": \"vocabulary\",\n      \"pairs\": [\n        [\n          \"orvosi igazolás\",\n          \"medical certificate\"\n        ],\n        [\n          \"betegszabadság\",\n          \"sick leave\"\n        ],\n        [\n          \"ágynyugalom\",\n          \"bed rest\"\n        ],\n        [\n          \"jobbulást!\",\n          \"get well soon!\"\n        ]\n      ],\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-controlled-3\",\n      \"type\": \"matching\",\n      \"category\": \"vocabulary\",\n      \"pairs\": [\n        [\n          \"orvosi igazolás\",\n          \"medical certificate\"\n        ],\n        [\n          \"betegszabadság\",\n          \"sick leave\"\n        ],\n        [\n          \"táppénz\",\n          \"sickness benefit\"\n        ],\n        [\n          \"jobbulást!\",\n          \"get well soon!\"\n        ]\n      ],\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "táppénz was only used in the old check-1 option (vocab-unused once that item is rebuilt); matching now includes it"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-consolidation-ex.json",
+    "id": "a2-220-consolidation-2",
+    "old": "    {\n      \"id\": \"a2-220-consolidation-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the function of the Hungarian e-recept (electronic prescription) system?\",\n      \"options\": [\n        \"Doctors upload prescriptions directly to the EESZT health cloud, dispensable with TAJ and ID card.\",\n        \"Patients must carry printed stamps to the pharmacy.\",\n        \"Prescriptions can only be sent by mail.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-consolidation-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the function of the Hungarian e-recept (electronic prescription) system?\",\n      \"options\": [\n        \"Doctors upload prescriptions to an online health cloud.\",\n        \"Patients must carry printed stamps to the pharmacy.\",\n        \"Prescriptions can only be sent by mail.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "length-giveaway ERROR (98 vs 51); right option shortened"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-consolidation-ex.json",
+    "id": "a2-220-consolidation-4",
+    "old": "    {\n      \"id\": \"a2-220-consolidation-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is 'betegszabadság' in Hungary?\",\n      \"options\": [\n        \"The first 15 days of sick leave paid by the employer.\",\n        \"Paid vacation in the summer.\",\n        \"A penalty for arriving late.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-consolidation-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is 'betegszabadság' in Hungary?\",\n      \"options\": [\n        \"Sick leave paid by the employer.\",\n        \"Paid vacation in the summer.\",\n        \"A penalty for arriving late.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "length-giveaway ERROR (53 vs 28); right option shortened"
+  },
+  {
+    "file": "content/hu/lessons/a2/a2-220-consolidation.json",
+    "old": "\"goal\": [\n    \"I have mastered all core Hungarian healthcare and pharmacy interactions: symptoms, e-prescriptions, dosage, and urgent care.\",\n    \"I can navigate emergencies (112, ügyelet), communicate with pharmacists, and handle sick leave with ease.\"\n  ]",
+    "new": "\"goal\": [\n    \"I can describe my symptoms at a pharmacy, collect an e-prescription and ask for out-of-hours medical help in Hungarian.\",\n    \"I can read a dosage instruction, handle sick leave and wish someone a speedy recovery.\"\n  ]",
+    "why": "\"I have mastered all core … interactions\" is not a can-do line and overclaims (\"with ease\")"
+  },
+  {
+    "file": "content/hu/lessons/a2/a2-220-consolidation.json",
+    "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I have mastered all core Hungarian healthcare and pharmacy interactions: symptoms, e-prescriptions, dosage, and urgent care.\",\n        \"I can navigate emergencies (112, ügyelet), communicate with pharmacists, and handle sick leave with ease.\"\n      ]",
+    "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can describe my symptoms at a pharmacy, collect an e-prescription and ask for out-of-hours medical help in Hungarian.\",\n        \"I can read a dosage instruction, handle sick leave and wish someone a speedy recovery.\"\n      ]",
+    "why": "\"I have mastered all core … interactions\" is not a can-do line and overclaims (\"with ease\")"
+  },
+  {
+    "file": "content/hu/lessons/a2/a2-220-consolidation.json",
+    "old": "\"title\": \"Unit 44 Mastery\",\n      \"items\": [\n        \"I have mastered all core Hungarian healthcare and pharmacy interactions: symptoms, e-prescriptions, dosage, and urgent care.\",\n        \"I can navigate emergencies (112, ügyelet), communicate with pharmacists, and handle sick leave with ease.\"\n      ]",
+    "new": "\"title\": \"Unit 44 Mastery\",\n      \"items\": [\n        \"I can describe my symptoms at a pharmacy, collect an e-prescription and ask for out-of-hours medical help in Hungarian.\",\n        \"I can read a dosage instruction, handle sick leave and wish someone a speedy recovery.\"\n      ]",
+    "why": "\"I have mastered all core … interactions\" is not a can-do line and overclaims (\"with ease\")"
+  }
+]

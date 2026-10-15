@@ -7,9 +7,9 @@
       "category": "vocabulary",
       "question": "What information do you need to pick up a parcel from a Hungarian parcel locker?",
       "options": [
-        "A telefonszámodat és az SMS-ben kapott nyitókódot.",
-        "A születési anyakönyvi kivonatodat.",
-        "A lakáskulcsodat."
+        "A telefonszámod és a nyitókód.",
+        "A lakáskulcsod és a bélyeged.",
+        "A címed és a kulcsod."
       ],
       "correct": 0,
       "teaches": [
@@ -23,7 +23,7 @@
       "category": "vocabulary",
       "question": "What does 'utánvét' mean in delivery options?",
       "options": [
-        "Payment due upon receiving the parcel (COD).",
+        "Payment on receiving the parcel.",
         "Free delivery for seniors.",
         "Damaged package refund."
       ],
@@ -50,9 +50,9 @@
       "id": "a2-209-controlled-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A sikeres kártyás fizetés után automatikusan ki____ a rekesz ajtaja.",
+      "sentence": "A sikeres kártyás fizetés után automatikusan ____ a rekesz ajtaja.",
       "hint": "opens",
-      "answer": "nyílik",
+      "answer": "kinyílik",
       "english": "After successful card payment, the compartment door opens automatically.",
       "teaches": [
         "a2-post-office-vocab"
@@ -92,7 +92,7 @@
       "category": "vocabulary",
       "question": "What should you do after putting your parcel into the locker compartment?",
       "options": [
-        "Csukja be az ajtót kattanásig!",
+        "Csukja be az ajtót!",
         "Hagyja nyitva az ajtót!",
         "Vigye haza a dobozt!"
       ],
@@ -134,12 +134,12 @@
       "id": "a2-209-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Három napod van, hogy át____ a rendelésedet a bevásárlóközpont melletti automatából.",
-      "hint": "pick up",
-      "answer": "vedd",
-      "english": "You have three days to pick up your order from the locker next to the shopping center.",
+      "sentence": "Három napod van, és át kell ____ a csomagodat az automatából.",
+      "hint": "pick up, for you",
+      "answer": "venned",
+      "english": "You have three days, and you have to pick up your parcel from the locker.",
       "teaches": [
-        "imperative-definite"
+        "inflected-infinitives"
       ],
       "stage": "practice"
     },
@@ -179,7 +179,7 @@
       "prompt": [
         {
           "speaker": "Tamás",
-          "text": "Hová kérted az internetes rendelésedet?"
+          "text": "Hová kérted a csomagodat?"
         },
         {
           "speaker": "Gergő",
@@ -208,7 +208,7 @@
         },
         {
           "speaker": "Kata",
-          "text": "Csak beütöd a kapott ____ a képernyőn, és kinyílik az ajtó."
+          "text": "Csak írd be a ____ a képernyőn, és kinyílik az ajtó."
         }
       ],
       "options": [
@@ -269,9 +269,9 @@
       "category": "vocabulary",
       "question": "What happens if you do not pick up your parcel from the locker within the deadline?",
       "options": [
-        "Visszaküldik a feladónak vagy a központi raktárba.",
-        "Automatikusan kiszállítják a megadott otthoni lakcímre.",
-        "Helyben hagyják a csomagautomatában még egy teljes hónapig."
+        "It is sent back to the sender.",
+        "It is delivered to your home address.",
+        "It stays in the locker for another month."
       ],
       "correct": 0,
       "teaches": [
@@ -283,9 +283,9 @@
       "id": "a2-209-check-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Kérjük, ellenőrizze, hogy jól be____ a rekesz ajtaját!",
+      "sentence": "Kérjük, ellenőrizze, hogy jól ____ a rekesz ajtaját!",
       "hint": "you shut, past",
-      "answer": "csukta",
+      "answer": "becsukta",
       "english": "Please check whether you shut the compartment door properly!",
       "teaches": [
         "definite-past"

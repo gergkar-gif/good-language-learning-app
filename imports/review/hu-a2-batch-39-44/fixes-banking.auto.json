@@ -1,0 +1,124 @@
+[
+ {
+  "file": "content/hu/exercises/a2/a2-212-ex.json",
+  "id": "a2-212-check-1",
+  "old": "    {\n      \"id\": \"a2-212-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What should you do immediately if the ATM does not dispense cash after debiting your account?\",\n      \"options\": [\n        \"Azonnal fel kell hívni a bank telefonos ügyfélszolgálatát.\",\n        \"Meg kell várni a következő havi hivatalos bankszámlakivonatot.\",\n        \"Újra meg kell kísérelni a pénzfelvételt egy kisebb összeggel.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "new": "    {\n      \"id\": \"a2-212-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What should you do immediately if the ATM does not dispense cash after debiting your account?\",\n      \"options\": [\n        \"Call the bank's customer service line at once.\",\n        \"Wait for next month's bank statement.\",\n        \"Try again with a smaller amount.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "why": "Hungarian options full of unmet words (hívni, ügyfélszolgálat = a2-215, bankszámlakivonat, kísérelni); English options like the other check items"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-213-ex.json",
+  "id": "a2-213-intro-1",
+  "old": "    {\n      \"id\": \"a2-213-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What is the standard question at Hungarian cash registers?\",\n      \"options\": [\n        \"Készpénzzel vagy kártyával fizet?\",\n        \"Készpénzben vagy kártyában fizet?\",\n        \"Készpénzzel vagy kártyával fizetek?\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"distractor_skills\": {\n        \"1\": \"ban-ben-in\",\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"introduce\"\n    }",
+  "new": "    {\n      \"id\": \"a2-213-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"What is the standard question at Hungarian cash registers?\",\n      \"options\": [\n        \"Készpénzzel vagy kártyával fizet?\",\n        \"Készpénzben vagy kártyában fizet?\",\n        \"Készpénzzel vagy kártyával fizetek?\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"val-vel\"\n      ],\n      \"distractor_skills\": {\n        \"2\": \"present-tense-routine-language\"\n      },\n      \"stage\": \"introduce\"\n    }",
+  "why": "distractor_skills on option 1 \"Készpénzben vagy kártyában fizet?\" (ban-ben-in): \"kártyában fizet\" is not a well-formed form of that skill (ungrammatical option); \"Készpénzzel vagy kártyával fizetek?\" (index 2) is well formed and keeps its tag"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-214-ex.json",
+  "id": "a2-214-practice-3",
+  "old": "    {\n      \"id\": \"a2-214-practice-3\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the English meaning of 'kedvezményezett neve'?\",\n      \"options\": [\n        \"name of the beneficiary\",\n        \"bank manager name\",\n        \"customer password\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "new": "    {\n      \"id\": \"a2-214-practice-3\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the English meaning of 'kedvezményezett neve'?\",\n      \"options\": [\n        \"beneficiary's name\",\n        \"bank manager name\",\n        \"customer password\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+  "why": "length-giveaway ERROR (23 vs 17); right option shortened"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-intro-1",
+  "old": "    {\n      \"id\": \"a2-215-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What must you do first if you lose your bank card in Budapest?\",\n      \"options\": [\n        \"Azonnal le kell tiltani a kártyát az applikációban vagy telefonon.\",\n        \"Meg kell várni a következő munkanapi személyes bankfióki nyitást.\",\n        \"Személyesen be kell menni a legközelebbi rendőrkapitányságra.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What must you do first if you lose your bank card in Budapest?\",\n      \"options\": [\n        \"Block it at once, in the app or by phone.\",\n        \"Wait until the branch opens next week.\",\n        \"Go to the police station in person.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "why": "Hungarian options full of unmet words (applikáció, munkanapi, személyes, nyitás, rendőrkapitányság); English options"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-intro-2",
+  "old": "    {\n      \"id\": \"a2-215-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the meaning of 'pótkártya'?\",\n      \"options\": [\n        \"Replacement bank card.\",\n        \"Discount card.\",\n        \"Library card.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the meaning of 'pótkártya'?\",\n      \"options\": [\n        \"Replacement card.\",\n        \"Discount card.\",\n        \"Library card.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+  "why": "length-giveaway ERROR (22 vs 14); right option shortened"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-controlled-4",
+  "old": "    {\n      \"id\": \"a2-215-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What does customer service do after you block a stolen card?\",\n      \"options\": [\n        \"Biztonsági okokból érvényteleníti a kártyát és új pótkártyát rendel.\",\n        \"Azonnal átutalja az összes pénzedet a bank központi számlájára.\",\n        \"Biztonsági okokból azonnal letiltja a regisztrált telefonszámodat.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What does customer service do after you block a stolen card?\",\n      \"options\": [\n        \"They cancel the card and order a replacement.\",\n        \"They transfer all your money to the bank.\",\n        \"They block your phone number as well.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+  "why": "Hungarian options full of unmet words and the participle \"regisztrált\"; English options"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-ex.json",
+  "id": "a2-215-check-1",
+  "old": "    {\n      \"id\": \"a2-215-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Where can you freeze your bank card instantly without calling anyone?\",\n      \"options\": [\n        \"Közvetlenül a mobilbankos alkalmazásban egy gombnyomással.\",\n        \"A helyi rendőrkapitányságon egy hivatalos jegyzőkönyvvel.\",\n        \"A legközelebbi postahivatalban az ügyfélszolgálati pultnál.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Where can you freeze your bank card instantly without calling anyone?\",\n      \"options\": [\n        \"In the mobile banking app, with one tap.\",\n        \"At the local police station.\",\n        \"At the nearest post office counter.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+  "why": "Hungarian options full of unmet words (alkalmazás = a2-218, ügyfélszolgálati, jegyzőkönyv…); English options"
+ },
+ {
+  "file": "content/hu/exercises/a2/a2-215-consolidation-ex.json",
+  "id": "a2-215-consolidation-2",
+  "old": "    {\n      \"id\": \"a2-215-consolidation-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What does an ATM prompt 'Vegye el a készpénzt' instruct?\",\n      \"options\": [\n        \"Take the cash from the dispenser!\",\n        \"Insert your card!\",\n        \"Enter your PIN!\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "new": "    {\n      \"id\": \"a2-215-consolidation-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What does an ATM prompt 'Vegye el a készpénzt' instruct?\",\n      \"options\": [\n        \"Take the cash from the dispenser!\",\n        \"Insert your card into the slot!\",\n        \"Enter your PIN on the keypad!\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-banking-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+  "why": "length-giveaway ERROR (33 vs 17); wrong options lengthened"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-211-a-gr.json",
+  "old": "and bring identification documents:",
+  "new": "and bring identification documents (you know the identity card and the address card from the post office):",
+  "why": "screen presents the identity and address cards (taught in a2-210) as new"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-211-a-gr.json",
+  "old": "Key phrases:",
+  "new": "Key phrases (you know *Szeretnék* + infinitive and *Kérem, írja alá* already):",
+  "why": "screen presents szeretnék + infinitive (a1-94) and the formal imperative írja alá (a2-49, a2-207) as new"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-211-b-gr.json",
+  "old": "At bank branches, you draw a ticket (*sorszámot húzni*) under categories such as",
+  "new": "You know the queue ticket (*sorszámot húzni*) from the post office; bank branches use it too, under categories such as",
+  "why": "screen presents the queue ticket (a2-206-a) as new"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-211-b-gr.json",
+  "old": "Would you like an embossed bank card for the account as well?",
+  "new": "Would you like a bank card for the account as well?",
+  "why": "English for the changed example"
+ },
+ {
+  "file": "content/hu/grammar/a2/a2-215-b-gr.json",
+  "old": "Please send a copy of the disputed receipt to customer service!",
+  "new": "Please send a copy of the receipt to customer service!",
+  "why": "English for the changed example"
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-211.json",
+  "old": "\"goal\": [\n    \"I can open a current account at a Hungarian bank and communicate at customer desks.\",\n    \"I know the required identification documents (személyi, lakcímkártya, adókártya) and terms.\"\n  ]",
+  "new": "\"goal\": [\n    \"I can open a current account at a Hungarian bank and communicate at customer desks.\",\n    \"I can name the documents needed to open an account (személyi igazolvány, lakcímkártya, adókártya).\"\n  ]",
+  "why": "goal 2 is \"I know …\", not a can-do line"
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-211.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can open a current account at a Hungarian bank and communicate at customer desks.\",\n        \"I know the required identification documents (személyi, lakcímkártya, adókártya) and terms.\"\n      ]",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can open a current account at a Hungarian bank and communicate at customer desks.\",\n        \"I can name the documents needed to open an account (személyi igazolvány, lakcímkártya, adókártya).\"\n      ]",
+  "why": "goal 2 is \"I know …\", not a can-do line"
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-211.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can open a current account at a Hungarian bank and communicate at customer desks.\",\n        \"I know the required identification documents (személyi, lakcímkártya, adókártya) and terms.\"\n      ]",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can open a current account at a Hungarian bank and communicate at customer desks.\",\n        \"I can name the documents needed to open an account (személyi igazolvány, lakcímkártya, adókártya).\"\n      ]",
+  "why": "goal 2 is \"I know …\", not a can-do line"
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-215-consolidation.json",
+  "old": "\"goal\": [\n    \"I have mastered all essential Hungarian banking pragmatics: opening accounts, ATM operations, POS card payments, and transfers.\",\n    \"I can handle banking emergencies, card blocking, and complaint procedures with ease.\"\n  ]",
+  "new": "\"goal\": [\n    \"I can open an account, use an ATM, pay by card or in cash and make a bank transfer in Hungarian.\",\n    \"I can block a lost card and lodge a complaint about a wrong debit.\"\n  ]",
+  "why": "\"I have mastered all essential … pragmatics\" is not a can-do line and overclaims (\"with ease\")"
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-215-consolidation.json",
+  "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I have mastered all essential Hungarian banking pragmatics: opening accounts, ATM operations, POS card payments, and transfers.\",\n        \"I can handle banking emergencies, card blocking, and complaint procedures with ease.\"\n      ]",
+  "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can open an account, use an ATM, pay by card or in cash and make a bank transfer in Hungarian.\",\n        \"I can block a lost card and lodge a complaint about a wrong debit.\"\n      ]",
+  "why": "\"I have mastered all essential … pragmatics\" is not a can-do line and overclaims (\"with ease\")"
+ },
+ {
+  "file": "content/hu/lessons/a2/a2-215-consolidation.json",
+  "old": "\"title\": \"Unit 43 Mastery\",\n      \"items\": [\n        \"I have mastered all essential Hungarian banking pragmatics: opening accounts, ATM operations, POS card payments, and transfers.\",\n        \"I can handle banking emergencies, card blocking, and complaint procedures with ease.\"\n      ]",
+  "new": "\"title\": \"Unit 43 Mastery\",\n      \"items\": [\n        \"I can open an account, use an ATM, pay by card or in cash and make a bank transfer in Hungarian.\",\n        \"I can block a lost card and lodge a complaint about a wrong debit.\"\n      ]",
+  "why": "\"I have mastered all essential … pragmatics\" is not a can-do line and overclaims (\"with ease\")"
+ }
+]

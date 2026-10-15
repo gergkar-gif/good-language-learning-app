@@ -1,0 +1,456 @@
+[
+  {
+    "file": "content/hu/exercises/a2/a2-206-ex.json",
+    "id": "a2-206-intro-1",
+    "old": "    {\n      \"id\": \"a2-206-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What must you do first upon entering a Hungarian post office?\",\n      \"options\": [\n        \"Sorszámot kell húzni a bejáratnál.\",\n        \"Azonnal az ablakhoz kell tolakodni.\",\n        \"Fel kell hívni az ügyfélszolgálatot.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "new": "    {\n      \"id\": \"a2-206-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What must you do first upon entering a Hungarian post office?\",\n      \"options\": [\n        \"Sorszámot kell húzni a bejáratnál.\",\n        \"Azonnal az ablakhoz kell menni.\",\n        \"Egy bélyeget kell venni a bejáratnál.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "why": "wrong options \"Azonnal az ablakhoz kell tolakodni.\" and \"Fel kell hívni az ügyfélszolgálatot.\" use unmet words (tolakodni, hívni, ügyfélszolgálat is a2-215); replaced with met words, one fault each",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-206-ex.json",
+    "id": "a2-206-intro-2",
+    "old": "    {\n      \"id\": \"a2-206-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"How do you politely say 'I would like to post a letter'?\",\n      \"options\": [\n        \"Szeretnék feladni egy levelet.\",\n        \"Kell adnom egy levél.\",\n        \"Feladom levelet azonnal.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"kerek-vs-szeretnek\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "new": "    {\n      \"id\": \"a2-206-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"How do you politely say 'I would like to post a letter'?\",\n      \"options\": [\n        \"Szeretnék feladni egy levelet.\",\n        \"Fel kell adnom egy levelet.\",\n        \"Feladok egy levelet azonnal.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"kerek-vs-szeretnek\"\n      ],\n      \"stage\": \"introduce\",\n      \"distractor_skills\": {\n        \"1\": \"inflected-infinitives\",\n        \"2\": \"present-tense-routine-language\"\n      }\n    }",
+    "why": "wrong options \"Kell adnom egy levél.\" (two faults: kell adnom and missing -t) and \"Feladom levelet azonnal.\" (definite verb with bare indefinite object) replaced by real, well-formed phrases that are just not the polite \"I would like\" request",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-206-ex.json",
+    "id": "a2-206-practice-1",
+    "old": "    {\n      \"id\": \"a2-206-practice-1\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Húzzon\",\n        \"egy\",\n        \"sorszámot\",\n        \"a\",\n        \"bejáratnál\",\n        \"lévő\",\n        \"gépből\",\n        \"!\"\n      ],\n      \"solution\": [\n        \"Húzzon\",\n        \"egy\",\n        \"sorszámot\",\n        \"a\",\n        \"bejáratnál\",\n        \"lévő\",\n        \"gépből\",\n        \"!\"\n      ],\n      \"english\": \"Take a queue ticket from the machine at the entrance!\",\n      \"teaches\": [\n        \"imperative-indefinite\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-206-practice-1\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Húzzon\",\n        \"egy\",\n        \"sorszámot\",\n        \"a\",\n        \"bejáratnál\",\n        \"!\"\n      ],\n      \"solution\": [\n        \"Húzzon\",\n        \"egy\",\n        \"sorszámot\",\n        \"a\",\n        \"bejáratnál\",\n        \"!\"\n      ],\n      \"english\": \"Take a queue ticket at the entrance!\",\n      \"teaches\": [\n        \"imperative-indefinite\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "\"lévő\" is a present participle in -ó/-ő (B1 present-participle); builder reworded without it",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-206-ex.json",
+    "id": "a2-206-dialogue-1",
+    "old": "    {\n      \"id\": \"a2-206-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Jó napot! Miben segíthetek?\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Jó napot! ____ feladni ezt a hivatalos levelet.\"\n        }\n      ],\n      \"options\": [\n        \"Szeretnék\",\n        \"Muszáj vagyok\",\n        \"Kellhetek\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"kerek-vs-szeretnek\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-206-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Jó napot! Miben segíthetek?\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Jó napot! ____ feladni ezt a levelet.\"\n        }\n      ],\n      \"options\": [\n        \"Szeretnék\",\n        \"Szeretnél\",\n        \"Szeretne\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"kerek-vs-szeretnek\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "wrong options \"Muszáj vagyok\" (ungrammatical) and \"Kellhetek\" (non-word, unmet) replaced by forms of the tested szeretnék paradigm; \"hivatalos\" is first taught in a2-207",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-206-ex.json",
+    "id": "a2-206-dialogue-2",
+    "old": "    {\n      \"id\": \"a2-206-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Készpénzzel vagy kártyával óhajt fizetni?\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Bankkártyával ____ fizetni, ha lehetséges.\"\n        }\n      ],\n      \"options\": [\n        \"szeretnék\",\n        \"szeretnél\",\n        \"szeretne\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"nek-conditional\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-206-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Készpénzzel vagy kártyával fizet?\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Bankkártyával ____ fizetni, ha lehet.\"\n        }\n      ],\n      \"options\": [\n        \"szeretnék\",\n        \"szeretnél\",\n        \"szeretne\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"nek-conditional\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "unmet \"óhajt\" and \"lehetséges\" (c1) in the prompt; \"ha lehet\" is used in a2-213",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-206-ex.json",
+    "id": "a2-206-writing-1",
+    "old": "    {\n      \"id\": \"a2-206-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A postahivatalban udvariasan megkérdeztem, hogy hol lehet sorszámot ____.\",\n      \"hint\": \"húz, for me\",\n      \"answer\": \"húznom\",\n      \"english\": \"At the post office I politely asked where I could take a queue ticket.\",\n      \"teaches\": [\n        \"inflected-infinitives\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "    {\n      \"id\": \"a2-206-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A postahivatalban udvariasan megkérdeztem, hogy hol kell sorszámot ____.\",\n      \"hint\": \"húz, for me\",\n      \"answer\": \"húznom\",\n      \"english\": \"At the post office I politely asked where I have to take a queue ticket.\",\n      \"teaches\": [\n        \"inflected-infinitives\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "why": "\"hol lehet sorszámot húznom\" is not standard (lehet takes the plain infinitive; the inflected infinitive goes with kell); reworded to \"hol kell sorszámot húznom\", keeping the inflected-infinitive tag",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-206-ex.json",
+    "id": "a2-206-check-2",
+    "old": "    {\n      \"id\": \"a2-206-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kérjük, várja meg, amíg a sorszáma megjelenik a ____!\",\n      \"hint\": \"on the display\",\n      \"answer\": \"kijelzőn\",\n      \"english\": \"Please wait until your number appears on the display!\",\n      \"teaches\": [\n        \"on-en-on\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-206-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kérjük, nézze a sorszámát a ____!\",\n      \"hint\": \"on the display\",\n      \"answer\": \"kijelzőn\",\n      \"english\": \"Please look at your number on the display!\",\n      \"teaches\": [\n        \"on-en-on\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "\"amíg\" (míg/amíg clause, B1 mig-egyidejuseg) and \"megjelenik\" unmet; sentence reworded, answer kijelzőn unchanged",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-207-ex.json",
+    "id": "a2-207-controlled-1",
+    "old": "    {\n      \"id\": \"a2-207-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ezt a fontos szerződést ____ szeretném elküldeni.\",\n      \"hint\": \"as registered\",\n      \"answer\": \"ajánlottan\",\n      \"english\": \"I would like to send this important contract as registered mail.\",\n      \"teaches\": [\n        \"an-en-adverb\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-207-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ezt a fontos levelet ____ szeretném feladni.\",\n      \"hint\": \"as registered\",\n      \"answer\": \"ajánlottan\",\n      \"english\": \"I would like to send this important letter as registered mail.\",\n      \"teaches\": [\n        \"an-en-adverb\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "\"szerződést\" is first taught in a2-211 and \"elküldeni\" is unmet; \"levelet\"/\"feladni\" are met",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-207-ex.json",
+    "id": "a2-207-dialogue-1",
+    "old": "    {\n      \"id\": \"a2-207-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Hivatalos iratot küldök a bíróságnak. Milyen feladást javasol?\"\n        },\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Mindenképpen az ____ feladást javaslom tértivevénnyel.\"\n        }\n      ],\n      \"options\": [\n        \"ajánlott\",\n        \"egyszerű\",\n        \"utánvétes\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-207-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Hivatalos levelet küldök. Milyen feladást javasol?\"\n        },\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Mindenképpen az ____ feladást javaslom tértivevénnyel.\"\n        }\n      ],\n      \"options\": [\n        \"ajánlott\",\n        \"külföldi\",\n        \"gyors\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "prompt and options use unmet words (iratot, bíróságnak, egyszerű, utánvétes = a2-209, feladást): prompt reworded, wrong options \"egyszerű\" and \"utánvétes\" replaced",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-207-ex.json",
+    "id": "a2-207-dialogue-2",
+    "old": "    {\n      \"id\": \"a2-207-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Itt a feladóvevény. Kérem, ____ a feladó nevét és címét!\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Rendben, mindjárt felírom a címemet.\"\n        }\n      ],\n      \"options\": [\n        \"töltse ki\",\n        \"törölje le\",\n        \"adja el\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-207-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Itt a feladóvevény. Kérem, ____ a feladó nevét és címét!\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Rendben, felírom a címemet.\"\n        }\n      ],\n      \"options\": [\n        \"töltse ki\",\n        \"adja el\",\n        \"vegye át\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "wrong option \"törölje le\" is an unmet word; replaced with met verbs; unmet \"mindjárt\" dropped",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-207-ex.json",
+    "id": "a2-207-check-1",
+    "old": "    {\n      \"id\": \"a2-207-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What document proves you mailed an official letter on a specific calendar day?\",\n      \"options\": [\n        \"A lebélyegzett feladóvevény.\",\n        \"Egy üres boríték.\",\n        \"A villamosjegy.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-207-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What document proves you mailed an official letter on a specific calendar day?\",\n      \"options\": [\n        \"A feladóvevény.\",\n        \"Egy üres boríték.\",\n        \"A villamosjegy.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "length-giveaway ERROR (28 vs 17); right option shortened to \"A feladóvevény.\" (also drops the participle \"lebélyegzett\", B1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-207-ex.json",
+    "id": "a2-207-check-2",
+    "old": "    {\n      \"id\": \"a2-207-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A címzett neve alá a pontos várost és az ____ kell írni.\",\n      \"hint\": \"postcode\",\n      \"answer\": \"irányítószámot\",\n      \"english\": \"Under the recipient's name, the exact town and postcode must be written.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-207-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A címzett neve alá a várost és az ____ kell írni.\",\n      \"hint\": \"postcode\",\n      \"answer\": \"irányítószámot\",\n      \"english\": \"Under the recipient's name, the town and the postcode must be written.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "\"a pontos várost\" is odd Hungarian (an exact town); reworded",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-208-ex.json",
+    "id": "a2-208-intro-2",
+    "old": "    {\n      \"id\": \"a2-208-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Does it cost extra to pay a utility yellow cheque by card at the post office?\",\n      \"options\": [\n        \"Nem, a csekkbefizetés bankkártyával is díjmentes.\",\n        \"Igen, tíz százalék pótdíjat kell fizetni.\",\n        \"Csak készpénzzel lehet fizetni.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "new": "    {\n      \"id\": \"a2-208-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Does it cost extra to pay a utility yellow cheque by card at the post office?\",\n      \"options\": [\n        \"Nem, a csekkbefizetés bankkártyával is díjmentes.\",\n        \"Igen, még ötven forintot kell fizetni érte.\",\n        \"Csak készpénzzel lehet fizetni.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "why": "wrong option \"Igen, tíz százalék pótdíjat kell fizetni.\" uses unmet százalék (b1) and pótdíj",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-208-ex.json",
+    "id": "a2-208-controlled-2",
+    "old": "    {\n      \"id\": \"a2-208-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kérem, adja át a lepecsételt ____, mert az igazolja a befizetést!\",\n      \"hint\": \"the stub\",\n      \"answer\": \"szelvényt\",\n      \"english\": \"Please hand over the stamped stub because that verifies the payment!\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-208-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kérem, adja át a ____, mert az igazolja a befizetést!\",\n      \"hint\": \"the stub\",\n      \"answer\": \"szelvényt\",\n      \"english\": \"Please hand over the stub because that verifies the payment!\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "\"lepecsételt ____\" is a past participle modifier (B1 past-participle-adjective); participle removed",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-208-ex.json",
+    "id": "a2-208-controlled-4",
+    "old": "    {\n      \"id\": \"a2-208-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What proves to your landlord that you paid the gas bill on time?\",\n      \"options\": [\n        \"A lepecsételt postai csekkszelvény.\",\n        \"A boríték bélyege.\",\n        \"Egy buszjegy.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-208-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What proves to your landlord that you paid the gas bill on time?\",\n      \"options\": [\n        \"A csekk szelvénye.\",\n        \"A boríték bélyege.\",\n        \"Egy bérlet.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "length-giveaway ERROR (35 vs 18); right option shortened (also drops the participle \"lepecsételt\")",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-208-ex.json",
+    "id": "a2-208-practice-1",
+    "old": "    {\n      \"id\": \"a2-208-practice-1\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"vocabulary\",\n      \"tiles\": [\n        \"A\",\n        \"postai\",\n        \"csekkbefizetés\",\n        \"teljesen\",\n        \"díjmentes\",\n        \"az\",\n        \"ügyfeleknek\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"postai\",\n        \"csekkbefizetés\",\n        \"teljesen\",\n        \"díjmentes\",\n        \"az\",\n        \"ügyfeleknek\",\n        \".\"\n      ],\n      \"english\": \"Postal cheque payment is completely free of charge for customers.\",\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-208-practice-1\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"vocabulary\",\n      \"tiles\": [\n        \"A\",\n        \"csekkbefizetés\",\n        \"díjmentes\",\n        \"az\",\n        \"ügyfeleknek\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"csekkbefizetés\",\n        \"díjmentes\",\n        \"az\",\n        \"ügyfeleknek\",\n        \".\"\n      ],\n      \"english\": \"Cheque payment is free of charge for customers.\",\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "\"postai\" and \"teljesen\" unmet; builder shortened",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-208-ex.json",
+    "id": "a2-208-practice-4",
+    "old": "    {\n      \"id\": \"a2-208-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Mielőtt elindulsz, ellenőrizd a csekken szereplő pontos ____!\",\n      \"hint\": \"sum/amount\",\n      \"answer\": \"összeget\",\n      \"english\": \"Before you leave, check the exact amount listed on the cheque!\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-208-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nézd meg a csekken az ____!\",\n      \"hint\": \"sum/amount\",\n      \"answer\": \"összeget\",\n      \"english\": \"Check the amount on the cheque!\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "\"Mielőtt\" (B1 miutan-mielott) and the participle \"szereplő\" (B1 present-participle); reworded with nézd meg",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-208-ex.json",
+    "id": "a2-208-dialogue-2",
+    "old": "    {\n      \"id\": \"a2-208-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Főbérlő\",\n          \"text\": \"Befizetted már az e havi közösköltséget és a villanyt?\"\n        },\n        {\n          \"speaker\": \"Bérlő\",\n          \"text\": \"Igen, itt van a kezemben a lepecsételt ____.\"\n        }\n      ],\n      \"options\": [\n        \"szelvény\",\n        \"boríték\",\n        \"bélyeg\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-208-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Főbérlő\",\n          \"text\": \"Befizetted már az e havi számlát?\"\n        },\n        {\n          \"speaker\": \"Bérlő\",\n          \"text\": \"Igen, itt van a kezemben a ____.\"\n        }\n      ],\n      \"options\": [\n        \"szelvény\",\n        \"boríték\",\n        \"bélyeg\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "prompt had the participle \"lepecsételt\", the typo \"közösköltséget\" (two words: közös költség) and unmet villanyt; reworded with \"számlát\"",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-208-ex.json",
+    "id": "a2-208-writing-2",
+    "old": "    {\n      \"id\": \"a2-208-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Mindig\",\n        \"gondosan\",\n        \"őrizd\",\n        \"meg\",\n        \"a\",\n        \"befizetési\",\n        \"bizonylatot\",\n        \"!\"\n      ],\n      \"solution\": [\n        \"Mindig\",\n        \"gondosan\",\n        \"őrizd\",\n        \"meg\",\n        \"a\",\n        \"befizetési\",\n        \"bizonylatot\",\n        \"!\"\n      ],\n      \"english\": \"Always carefully keep the payment receipt!\",\n      \"teaches\": [\n        \"imperative-definite\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "    {\n      \"id\": \"a2-208-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"Mindig\",\n        \"őrizd\",\n        \"meg\",\n        \"a\",\n        \"bizonylatot\",\n        \"!\"\n      ],\n      \"solution\": [\n        \"Mindig\",\n        \"őrizd\",\n        \"meg\",\n        \"a\",\n        \"bizonylatot\",\n        \"!\"\n      ],\n      \"english\": \"Always keep the receipt!\",\n      \"teaches\": [\n        \"imperative-definite\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "why": "\"gondosan\" is first taught at b2-02-03; builder shortened",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-208-ex.json",
+    "id": "a2-208-check-2",
+    "old": "    {\n      \"id\": \"a2-208-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A postás a postaládába dobta be az e havi víz____.\",\n      \"hint\": \"water bill\",\n      \"answer\": \"számlát\",\n      \"english\": \"The postman dropped this month's water bill into the mailbox.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-208-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az e havi ____ már befizettem a postán.\",\n      \"hint\": \"bill\",\n      \"answer\": \"számlát\",\n      \"english\": \"I have already paid this month's bill at the post office.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "blank glued to a stem (\"víz____\" teaches the compound \"vízszámlát\"); blank is now a whole met word, and unmet postaládába/postás/dobta dropped",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-209-ex.json",
+    "id": "a2-209-intro-1",
+    "old": "    {\n      \"id\": \"a2-209-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What information do you need to pick up a parcel from a Hungarian parcel locker?\",\n      \"options\": [\n        \"A telefonszámodat és az SMS-ben kapott nyitókódot.\",\n        \"A születési anyakönyvi kivonatodat.\",\n        \"A lakáskulcsodat.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "new": "    {\n      \"id\": \"a2-209-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What information do you need to pick up a parcel from a Hungarian parcel locker?\",\n      \"options\": [\n        \"A telefonszámod és a nyitókód.\",\n        \"A lakáskulcsod és a bélyeged.\",\n        \"A címed és a kulcsod.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "why": "length-giveaway ERROR (50 vs 35); unmet wrong options \"születési anyakönyvi kivonatodat\" and the participle \"kapott\" removed; all options now ~30 characters",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-209-ex.json",
+    "id": "a2-209-controlled-2",
+    "old": "    {\n      \"id\": \"a2-209-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A sikeres kártyás fizetés után automatikusan ki____ a rekesz ajtaja.\",\n      \"hint\": \"opens\",\n      \"answer\": \"nyílik\",\n      \"english\": \"After successful card payment, the compartment door opens automatically.\",\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-209-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A sikeres kártyás fizetés után automatikusan ____ a rekesz ajtaja.\",\n      \"hint\": \"opens\",\n      \"answer\": \"kinyílik\",\n      \"english\": \"After successful card payment, the compartment door opens automatically.\",\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "blank glued to a prefix (\"ki____\"); whole word now blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-209-ex.json",
+    "id": "a2-209-controlled-4",
+    "old": "    {\n      \"id\": \"a2-209-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What should you do after putting your parcel into the locker compartment?\",\n      \"options\": [\n        \"Csukja be az ajtót kattanásig!\",\n        \"Hagyja nyitva az ajtót!\",\n        \"Vigye haza a dobozt!\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-209-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What should you do after putting your parcel into the locker compartment?\",\n      \"options\": [\n        \"Csukja be az ajtót!\",\n        \"Hagyja nyitva az ajtót!\",\n        \"Vigye haza a dobozt!\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "length-giveaway ERROR (30 vs 23); right option shortened (\"kattanásig\" is unmet)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-209-ex.json",
+    "id": "a2-209-practice-2",
+    "old": "    {\n      \"id\": \"a2-209-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Három napod van, hogy át____ a rendelésedet a bevásárlóközpont melletti automatából.\",\n      \"hint\": \"pick up\",\n      \"answer\": \"vedd\",\n      \"english\": \"You have three days to pick up your order from the locker next to the shopping center.\",\n      \"teaches\": [\n        \"imperative-definite\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-209-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Három napod van, és át kell ____ a csomagodat az automatából.\",\n      \"hint\": \"pick up, for you\",\n      \"answer\": \"venned\",\n      \"english\": \"You have three days, and you have to pick up your parcel from the locker.\",\n      \"teaches\": [\n        \"inflected-infinitives\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "\"hogy átvedd\" is a hogy + subjunctive clause (B1 hogy-jon-jen) and unmet rendelésedet/bevásárlóközpont/melletti; reworded with kell + inflected infinitive, whole word blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-209-ex.json",
+    "id": "a2-209-dialogue-1",
+    "old": "    {\n      \"id\": \"a2-209-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Tamás\",\n          \"text\": \"Hová kérted az internetes rendelésedet?\"\n        },\n        {\n          \"speaker\": \"Gergő\",\n          \"text\": \"A sarki Foxpost ____, mert éjjel-nappal nyitva van.\"\n        }\n      ],\n      \"options\": [\n        \"automatába\",\n        \"postába\",\n        \"bankba\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-209-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Tamás\",\n          \"text\": \"Hová kérted a csomagodat?\"\n        },\n        {\n          \"speaker\": \"Gergő\",\n          \"text\": \"A sarki Foxpost ____, mert éjjel-nappal nyitva van.\"\n        }\n      ],\n      \"options\": [\n        \"automatába\",\n        \"postába\",\n        \"bankba\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "unmet internetes/rendelésedet in the prompt",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-209-ex.json",
+    "id": "a2-209-dialogue-2",
+    "old": "    {\n      \"id\": \"a2-209-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Lili\",\n          \"text\": \"Hogy működik az átvétel a csomagautomatánál?\"\n        },\n        {\n          \"speaker\": \"Kata\",\n          \"text\": \"Csak beütöd a kapott ____ a képernyőn, és kinyílik az ajtó.\"\n        }\n      ],\n      \"options\": [\n        \"nyitókódot\",\n        \"kulcsot\",\n        \"bélyeget\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-209-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Lili\",\n          \"text\": \"Hogy működik az átvétel a csomagautomatánál?\"\n        },\n        {\n          \"speaker\": \"Kata\",\n          \"text\": \"Csak írd be a ____ a képernyőn, és kinyílik az ajtó.\"\n        }\n      ],\n      \"options\": [\n        \"nyitókódot\",\n        \"kulcsot\",\n        \"bélyeget\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "\"beütöd\" is first taught in a2-212 and \"kapott\" is a past participle (B1); reworded with írd be (cf. \"Írja be\", same lesson)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-209-ex.json",
+    "id": "a2-209-check-2",
+    "old": "    {\n      \"id\": \"a2-209-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kérjük, ellenőrizze, hogy jól be____ a rekesz ajtaját!\",\n      \"hint\": \"you shut, past\",\n      \"answer\": \"csukta\",\n      \"english\": \"Please check whether you shut the compartment door properly!\",\n      \"teaches\": [\n        \"definite-past\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-209-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kérjük, ellenőrizze, hogy jól ____ a rekesz ajtaját!\",\n      \"hint\": \"you shut, past\",\n      \"answer\": \"becsukta\",\n      \"english\": \"Please check whether you shut the compartment door properly!\",\n      \"teaches\": [\n        \"definite-past\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "blank glued to a prefix (\"be____\"); whole word now blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-ex.json",
+    "id": "a2-210-intro-1",
+    "old": "    {\n      \"id\": \"a2-210-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What document must you present to pick up a registered parcel addressed to you at the post office?\",\n      \"options\": [\n        \"Személyi igazolványt vagy útlevelet és a lakcímkártyát.\",\n        \"Egy érvényes diákigazolványt és az egyetemi leckekönyvet.\",\n        \"A banki átutalási bizonylatot és a postai feladóvevényt.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What document must you present to pick up a registered parcel addressed to you at the post office?\",\n      \"options\": [\n        \"Személyi igazolványt és lakcímkártyát.\",\n        \"Egy bérletet és egy bélyeget is a postán.\",\n        \"A kulcsodat és a telefonszámodat a postán.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "why": "wrong options \"diákigazolványt … leckekönyvet\" and \"banki átutalási bizonylatot … postai feladóvevényt\" use many unmet words; replaced with met ones; right option shortened to keep the length ratio",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-ex.json",
+    "id": "a2-210-controlled-4",
+    "old": "    {\n      \"id\": \"a2-210-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Can a family member collect your registered parcel if you are hospitalized?\",\n      \"options\": [\n        \"Igen, hivatalos írásos meghatalmazással.\",\n        \"Nem, senki sem veheti át.\",\n        \"Csak a rendőrség veheti át.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Can a family member collect your registered parcel if you are hospitalized?\",\n      \"options\": [\n        \"Igen, meghatalmazással.\",\n        \"Nem, csak a címzett.\",\n        \"Nem, csak a rendőrség.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "length-giveaway ERROR (40 vs 27) and tell-absolute (\"senki\")",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-ex.json",
+    "id": "a2-210-practice-4",
+    "old": "    {\n      \"id\": \"a2-210-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Az értesítő papíron rajta van, hogy melyik postahivatalban ____ a küldemény.\",\n      \"hint\": \"is located\",\n      \"english\": \"The notice paper indicates which post office branch the consignment is located at.\",\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"practice\",\n      \"answers\": [\n        \"található\",\n        \"van\"\n      ]\n    }",
+    "new": "    {\n      \"id\": \"a2-210-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Az értesítőn rajta van, hogy melyik postán ____ a csomag.\",\n      \"hint\": \"is\",\n      \"english\": \"The notice says at which post office the parcel is.\",\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"practice\",\n      \"answer\": \"van\"\n    }",
+    "why": "\"található\" (participle-like, first taught b1) and \"papíron/postahivatalban\" unmet; reworded, accepted answer is now \"van\"",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-ex.json",
+    "id": "a2-210-dialogue-1",
+    "old": "    {\n      \"id\": \"a2-210-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Jó napot! A csomagért jött?\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Igen, itt van az értesítő és a személyi ____.\"\n        }\n      ],\n      \"options\": [\n        \"igazolványom\",\n        \"levelem\",\n        \"csekkem\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Jó napot! A csomagért jött?\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Igen, itt van az értesítő és a személyi ____.\"\n        }\n      ],\n      \"options\": [\n        \"igazolványom\",\n        \"bizonylatom\",\n        \"feladóvevényem\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "length-giveaway ERROR (12 vs 7); wrong options lengthened with unit words",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-ex.json",
+    "id": "a2-210-check-1",
+    "old": "    {\n      \"id\": \"a2-210-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Which combination of documents is universally accepted for identification at Magyar Posta?\",\n      \"options\": [\n        \"Személyi igazolvány és lakcímkártya (vagy útlevél).\",\n        \"Diákigazolvány és könyvtári kártya.\",\n        \"Kondibérlet és névjegykártya.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Which combination of documents is universally accepted for identification at Magyar Posta?\",\n      \"options\": [\n        \"Személyi igazolvány és lakcímkártya.\",\n        \"Villamosbérlet és egy bélyeg.\",\n        \"Egy boríték és egy bélyeg.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "length-giveaway ERROR (51 vs 35); right option shortened and unmet wrong options (diákigazolvány, könyvtári, kondibérlet, névjegykártya) replaced",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-ex.json",
+    "id": "a2-210-dialogue-2",
+    "old": "    {\n      \"id\": \"a2-210-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Rendben, megtaláltam a dobozt a raktárban. Kérem, itt ____ alá!\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Köszönöm szépen a segítségét, szép napot kívánok!\"\n        }\n      ],\n      \"options\": [\n        \"írja\",\n        \"kérje\",\n        \"fizesse\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"Rendben, megtaláltam a dobozt. Kérem, itt ____ alá!\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Köszönöm szépen a segítségét, szép napot kívánok!\"\n        }\n      ],\n      \"options\": [\n        \"írja\",\n        \"kérje\",\n        \"fizesse\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "unmet \"raktárban\"",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-consolidation-ex.json",
+    "id": "a2-210-consolidation-6",
+    "old": "    {\n      \"id\": \"a2-210-consolidation-6\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A postára belépve először egy sor____ kell húzni.\",\n      \"hint\": \"queue ticket\",\n      \"answer\": \"számot\",\n      \"english\": \"Upon entering the post office, you must first take a queue ticket.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-consolidation-6\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A postán egy ____ kell húzni.\",\n      \"hint\": \"queue ticket\",\n      \"answer\": \"sorszámot\",\n      \"english\": \"At the post office you have to take a queue ticket.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "blank glued to a stem (\"sor____\" + számot), participle \"belépve\" (B1 participle-actions), \"először\" unmet; reworded",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-consolidation-ex.json",
+    "id": "a2-210-consolidation-9",
+    "old": "    {\n      \"id\": \"a2-210-consolidation-9\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem voltam otthon, amikor jött a kézbesítő, így értesí____ találtam a ládámban.\",\n      \"hint\": \"notice\",\n      \"answer\": \"tőt\",\n      \"english\": \"I was not home when the delivery person came, so I found a notice in my box.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-consolidation-9\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem voltam otthon, amikor a kézbesítő jött, ezért egy ____ találtam a postaládámban.\",\n      \"hint\": \"notice\",\n      \"answer\": \"értesítőt\",\n      \"english\": \"I was not home when the delivery person came, so I found a notice in my box.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "blank glued mid-word (\"értesí____\" + tőt); unmet \"így\", \"ládámban\"; whole word now blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-consolidation-ex.json",
+    "id": "a2-210-consolidation-10",
+    "old": "    {\n      \"id\": \"a2-210-consolidation-10\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A csomagautomatánál a hatjegyű nyitó____ kell megadni.\",\n      \"hint\": \"opening code\",\n      \"answer\": \"kódot\",\n      \"english\": \"At the parcel locker, the six-digit opening code must be entered.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-consolidation-10\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Írja be a hatjegyű ____ az érintőképernyőn!\",\n      \"hint\": \"opening code\",\n      \"answer\": \"nyitókódot\",\n      \"english\": \"At the parcel locker, the six-digit opening code must be entered.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "blank glued to a stem (\"nyitó____\" + kódot), unmet \"megadni\"; whole word now blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-consolidation-ex.json",
+    "id": "a2-210-consolidation-12",
+    "old": "    {\n      \"id\": \"a2-210-consolidation-12\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"A csomag átvételéhez szükségem van a személyazonosság igazolására.\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Tessék, itt van a személyi ____ és a lakcímkártyám.\"\n        }\n      ],\n      \"options\": [\n        \"igazolványom\",\n        \"levelem\",\n        \"bizonylatom\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-consolidation-12\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Ügyintéző\",\n          \"text\": \"A csomag átvételéhez a személyazonosságát kérem.\"\n        },\n        {\n          \"speaker\": \"Ügyfél\",\n          \"text\": \"Tessék, itt van a személyi ____ és a lakcímkártyám.\"\n        }\n      ],\n      \"options\": [\n        \"igazolványom\",\n        \"levelem\",\n        \"bizonylatom\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "\"igazolására\" is first taught in a2-220 (later unit); clerk line reworded with the unit word személyazonosság",
+    "kind": "hungarian",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-consolidation-ex.json",
+    "id": "a2-210-consolidation-13",
+    "old": "    {\n      \"id\": \"a2-210-consolidation-13\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Which action verifies that a yellow cheque was processed and settled?\",\n      \"options\": [\n        \"A postai tisztviselő lepecsételi és átadja a levágott szelvényt.\",\n        \"A tisztviselő összetépi a csekket.\",\n        \"A postás hazaviszi a papírt.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-consolidation-13\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Which action verifies that a yellow cheque was processed and settled?\",\n      \"options\": [\n        \"Lepecsételik a szelvényt az ablaknál.\",\n        \"A kézbesítő hazaviszi a szelvényt.\",\n        \"Az ügyfél elveszíti a szelvényt.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "length-giveaway ERROR (64 vs 34); unmet tisztviselő/levágott/összetépi/papírt and participle \"levágott\" replaced; options now equal length",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-consolidation-ex.json",
+    "id": "a2-210-consolidation-15",
+    "old": "    {\n      \"id\": \"a2-210-consolidation-15\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A feladott doboz kódját beírva a posta weboldalán azonnal látom a küldemény nyom____.\",\n      \"hint\": \"its tracking\",\n      \"answer\": \"követését\",\n      \"english\": \"By typing in the code of the posted box on the post office website, I immediately see the tracking of the item.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-consolidation-15\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nézd meg a telefonodon a küldemény ____!\",\n      \"hint\": \"its place\",\n      \"answer\": \"helyét\",\n      \"english\": \"Look at the item's location on your phone!\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "two B1 participles (\"feladott\", \"beírva\"), unmet weboldalán/kódját/követését and a glued blank (\"nyom____\"); reworded, answer now \"helyét\" (acc-poss)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-consolidation-ex.json",
+    "id": "a2-210-consolidation-17",
+    "old": "    {\n      \"id\": \"a2-210-consolidation-17\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"A\",\n        \"lepecsételt\",\n        \"szelvényt\",\n        \"gondosan\",\n        \"meg\",\n        \"kell\",\n        \"őriznünk\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"lepecsételt\",\n        \"szelvényt\",\n        \"gondosan\",\n        \"meg\",\n        \"kell\",\n        \"őriznünk\",\n        \".\"\n      ],\n      \"english\": \"We must carefully preserve the stamped stub.\",\n      \"teaches\": [\n        \"inflected-infinitives\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-consolidation-17\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"grammar\",\n      \"tiles\": [\n        \"A\",\n        \"szelvényt\",\n        \"meg\",\n        \"kell\",\n        \"őriznünk\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"szelvényt\",\n        \"meg\",\n        \"kell\",\n        \"őriznünk\",\n        \".\"\n      ],\n      \"english\": \"We must keep the stub.\",\n      \"teaches\": [\n        \"inflected-infinitives\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "participle \"lepecsételt\" (B1) and unmet \"gondosan\"; builder shortened",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-consolidation-ex.json",
+    "id": "a2-210-consolidation-18",
+    "old": "    {\n      \"id\": \"a2-210-consolidation-18\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem kell a postára mennem, mert az internetes megrendelésemet a sarki csomag____ kértem.\",\n      \"hint\": \"parcel locker\",\n      \"answer\": \"automatába\",\n      \"english\": \"I don't have to go to the post office because I requested my internet order to the corner parcel locker.\",\n      \"teaches\": [\n        \"movement-with-ba-be\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-consolidation-18\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Nem kell a postára mennem, mert a csomagomat a sarki ____ kértem.\",\n      \"hint\": \"parcel locker\",\n      \"answer\": \"csomagautomatába\",\n      \"english\": \"I don't have to go to the post office because I asked for my parcel to be sent to the locker on the corner.\",\n      \"teaches\": [\n        \"movement-with-ba-be\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "blank glued to a stem (\"csomag____\" + automatába), unmet internetes/megrendelésemet; reworded, whole word blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-consolidation-ex.json",
+    "id": "a2-210-consolidation-19",
+    "old": "    {\n      \"id\": \"a2-210-consolidation-19\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"How do you ask if card payment is accepted for bills at the counter?\",\n      \"options\": [\n        \"Lehet bankkártyával fizetni a csekkeket?\",\n        \"Kényszer a bankkártya fizetés?\",\n        \"Kell bankkártya nekem?\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lehet-infinitive\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-consolidation-19\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"grammar\",\n      \"question\": \"How do you ask if card payment is accepted for bills at the counter?\",\n      \"options\": [\n        \"Lehet bankkártyával fizetni a csekkeket?\",\n        \"Muszáj bankkártyával fizetni a csekkeket?\",\n        \"Kell bankkártyával fizetni a csekkeket?\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"lehet-infinitive\"\n      ],\n      \"stage\": \"review\",\n      \"distractor_skills\": {\n        \"1\": \"kell-infinitive\",\n        \"2\": \"kell-infinitive\"\n      }\n    }",
+    "why": "wrong options \"Kényszer a bankkártya fizetés?\" and \"Kell bankkártya nekem?\" are not real questions (length-giveaway ERROR 40 vs 30); replaced by real sentences differing in one word",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-210-consolidation-ex.json",
+    "id": "a2-210-consolidation-20",
+    "old": "    {\n      \"id\": \"a2-210-consolidation-20\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Az SMS-ben kapott nyitókódot beütve a rekesz ajtaja azonnal ki____.\",\n      \"hint\": \"opens\",\n      \"answer\": \"nyílik\",\n      \"english\": \"Entering the opening code received in the SMS, the locker door opens immediately.\",\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-210-consolidation-20\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Írd be a nyitókódot, és a rekesz ajtaja azonnal ____.\",\n      \"hint\": \"opens\",\n      \"answer\": \"kinyílik\",\n      \"english\": \"Enter the opening code, and the locker door opens immediately.\",\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "two B1 participles (\"kapott\", \"beütve\") and a glued blank (\"ki____\"); reworded, whole word blanked, \"beütve\" a2-212",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-207-ex.json",
+    "id": "a2-207-practice-2",
+    "old": "    {\n      \"id\": \"a2-207-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A tértivevényes levél kézbesítésekor a címzettnek alá kell ____ az átvételi elismervényt.\",\n      \"hint\": \"to sign, for him/her\",\n      \"answer\": \"írnia\",\n      \"english\": \"Upon delivery of a return receipt letter, the recipient has to sign the delivery receipt.\",\n      \"teaches\": [\n        \"inflected-infinitives\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-207-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A címzettnek alá kell ____ a tértivevényt.\",\n      \"hint\": \"to sign, for him/her\",\n      \"answer\": \"írnia\",\n      \"english\": \"The recipient has to sign the return receipt.\",\n      \"teaches\": [\n        \"inflected-infinitives\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "unmet \"átvételi elismervényt\" (a2-210) and \"kézbesítésekor\"; shortened",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-208-ex.json",
+    "id": "a2-208-check-1",
+    "old": "    {\n      \"id\": \"a2-208-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Which verb means 'to pay in'?\",\n      \"options\": [\n        \"befizet\",\n        \"kifizet\",\n        \"átfizet\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-208-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Which verb means 'to pay in'?\",\n      \"options\": [\n        \"befizet\",\n        \"lepecsétel\",\n        \"beolvas\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "wrong options \"kifizet\" and \"átfizet\" (unmet; átfizet is not a standard verb) replaced by two unit verbs that are clearly different words",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-208-ex.json",
+    "id": "a2-208-controlled-1",
+    "old": "    {\n      \"id\": \"a2-208-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Jó napot kívánok! Ezt a három sárga csekket szeretném ____.\",\n      \"hint\": \"to pay in\",\n      \"answer\": \"befizetni\",\n      \"english\": \"Good day! I would like to pay in these three yellow cheques.\",\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-208-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Jó napot kívánok! Ezt a három sárga csekket szeretném ____.\",\n      \"hint\": \"to pay in (be-)\",\n      \"answer\": \"befizetni\",\n      \"english\": \"Good day! I would like to pay in these three yellow cheques.\",\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "\"szeretném kifizetni\" and \"szeretném fizetni\" are natural too; hint now pins the be- prefix",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-208-ex.json",
+    "id": "a2-208-practice-2",
+    "old": "    {\n      \"id\": \"a2-208-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Nem kell a postára menned, a telefonos alkalmazással is be tudod ____ a QR-kódot.\",\n      \"hint\": \"to scan\",\n      \"answer\": \"olvasni\",\n      \"english\": \"You don't need to go to the post office, you can scan the QR code with the mobile app too.\",\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-208-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"Nem kell a postára menned, a telefonoddal is be tudod ____ a QR-kódot.\",\n      \"hint\": \"to scan\",\n      \"answer\": \"olvasni\",\n      \"english\": \"You don't need to go to the post office, you can scan the QR code with your phone too.\",\n      \"teaches\": [\n        \"a2-post-office-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "\"alkalmazással\" is first taught in a2-218 (later unit); \"telefonos\" unmet",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-206-a-gr.json",
+    "old": "Szeretnék venni két felbélyegzett borítékot.",
+    "new": "Szeretnék venni két borítékot és három bélyeget.",
+    "why": "example has the past participle \"felbélyegzett\" (B1 past-participle-adjective); kind hungarian",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-207-b-gr.json",
+    "old": "Postal clerks regularly use polite formal commands (*Ön* form):",
+    "new": "You know the polite formal commands (*Ön* form) from Unit 10. Postal clerks use them all the time:",
+    "why": "screen presents the formal imperative (imperative-definite a2-49-a-gr, imperative-indefinite a2-48-a-gr) as new; adjust the unit number to the right one",
+    "sure": false
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-207-b-gr.json",
+    "old": "Itt van a blokk és az igazoló szelvény.",
+    "new": "Kérem, őrizze meg a blokkot és az igazoló szelvényt!",
+    "why": "example 3 is not an imperative, although the screen is about imperatives",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-208-a-gr.json",
+    "old": "Itt a lepecsételt szelvény, ez igazolja a befizetést.",
+    "new": "A postás lepecsételte a szelvényt, ez igazolja a befizetést.",
+    "why": "\"lepecsételt szelvény\" is a past participle modifier (B1 past-participle-adjective); finite verb instead",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-42.json",
+    "old": "Péter a postára siet, hogy befizesse az áramszámlát és átvegye a nagymamája születésnapi ajándékát az automatából.",
+    "new": "Péter két sárga csekket fizet be a postán, aztán a sarki csomagautomatából átveszi a megérkezett csomagját.",
+    "why": "summary names an electricity bill and a grandmother's birthday present; the story has two unnamed yellow cheques and an unnamed parcel",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-42.json",
+    "old": "Először húznom kell egy sorszámot a bejáratnál lévő gépből a csekkbefizetéshez.",
+    "new": "Először a bejáratnál kell húznom egy sorszámot a csekkbefizetéshez.",
+    "why": "\"lévő\" is a present participle (B1 present-participle)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-42.json",
+    "old": "Jó napot! Ezt a két sárga csekket szeretném befizetni, és bankkártyával óhajtok fizetni.",
+    "new": "Jó napot! Ezt a két sárga csekket szeretném befizetni, és bankkártyával szeretnék fizetni.",
+    "why": "a customer saying \"óhajtok fizetni\" is stilted (óhajt is a clerk's word); szeretnék recaps lesson 206",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-42.json",
+    "old": "Tessék, itt vannak a lepecsételt szelvények. Őrizze meg őket gondosan!",
+    "new": "Tessék, itt vannak a szelvények. Őrizze meg őket gondosan!",
+    "why": "\"lepecsételt\" is a past participle modifier (B1); the narration already says the clerk stamped them",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-42.json",
+    "old": "és boldogan vette magához a megérkezett ajándékot.",
+    "new": "és boldogan vette magához a csomagot.",
+    "why": "\"megérkezett ajándékot\" is a past-participle modifier (B1) and \"ajándék\" had no antecedent in the story",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-42.json",
+    "old": "Beütötte a telefonszámát és az SMS-ben kapott hatjegyű nyitókódot.",
+    "new": "Beütötte a telefonszámát és a hatjegyű nyitókódot az SMS-ből.",
+    "why": "comprehension option has the past participle \"kapott\" (B1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-42.json",
+    "old": "A postán kapott papír szelvénnyel azonosította magát a leolvasónál.",
+    "new": "A postai szelvénnyel azonosította magát a leolvasónál.",
+    "why": "comprehension option has the past participle \"kapott\" (B1)",
+    "kind": "hungarian"
+  }
+]

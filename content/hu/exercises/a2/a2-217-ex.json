@@ -8,8 +8,8 @@
       "question": "What document do you present to collect an electronic prescription in Hungary?",
       "options": [
         "A TAJ-kártyát és a személyi igazolványt.",
-        "A lakcímkártyát és a diákigazolványt.",
-        "Az adókártyát és az oltási könyvet."
+        "A lakcímkártyát és a villamosbérletet.",
+        "Az adókártyát és az útlevelet is."
       ],
       "correct": 0,
       "teaches": [
@@ -93,8 +93,8 @@
       "question": "Can you buy antibiotics in Hungary without a prescription?",
       "options": [
         "Nem, az antibiotikumok szigorúan vénykötelesek.",
-        "Igen, bármelyik benzinkúton kaphatók.",
-        "Csak este nyolc után."
+        "Igen, bármelyik boltban kaphatók vény nélkül.",
+        "Csak este nyolc után vény nélkül."
       ],
       "correct": 0,
       "teaches": [
@@ -110,8 +110,6 @@
         "Szeretném",
         "kiváltani",
         "a",
-        "felhőbe",
-        "felírt",
         "gyógyszereimet",
         "."
       ],
@@ -119,12 +117,10 @@
         "Szeretném",
         "kiváltani",
         "a",
-        "felhőbe",
-        "felírt",
         "gyógyszereimet",
         "."
       ],
-      "english": "I would like to collect my medications prescribed into the cloud.",
+      "english": "I would like to collect my medications.",
       "teaches": [
         "a2-pharmacy-vocab"
       ],
@@ -134,10 +130,10 @@
       "id": "a2-217-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A gyógyszerész a számítógépes rendszerben azonnal látta a nekem felírt ____.",
+      "sentence": "A gyógyszerész a gépen azonnal látta a ____.",
       "hint": "recept, plural, accusative",
       "answer": "recepteket",
-      "english": "The pharmacist immediately saw the prescriptions written for me in the computer system.",
+      "english": "The pharmacist immediately saw the prescriptions on the computer.",
       "teaches": [
         "how-the-accusative-t-works"
       ],
@@ -149,7 +145,7 @@
       "category": "vocabulary",
       "question": "What is the English meaning of 'e-recept kiváltása'?",
       "options": [
-        "dispensing an electronic prescription",
+        "collecting an e-prescription",
         "booking an appointment",
         "cancelling a doctor's visit"
       ],
@@ -163,10 +159,10 @@
       "id": "a2-217-practice-4",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ez a gyógyszer ugyanazt a ható____ tartalmazza, de olcsóbb a hazai gyártású változata.",
+      "sentence": "Ez a gyógyszer ugyanazt a ____ tartalmazza, de olcsóbb.",
       "hint": "ingredient",
-      "answer": "anyagot",
-      "english": "This medicine contains the same active ingredient, but the domestically produced version is cheaper.",
+      "answer": "hatóanyagot",
+      "english": "This medicine contains the same active ingredient, but it is cheaper.",
       "teaches": [
         "how-the-accusative-t-works"
       ],
@@ -204,7 +200,7 @@
       "prompt": [
         {
           "speaker": "Gyógyszerész",
-          "text": "Megtaláltam az e-receptet. Három doboz antibiotikum van felírva."
+          "text": "Megtaláltam az e-receptet. Az orvos három doboz antibiotikumot írt fel."
         },
         {
           "speaker": "Beteg",
@@ -214,7 +210,7 @@
       "options": [
         "kiváltani",
         "letiltani",
-        "felbélyegezni"
+        "feladni"
       ],
       "correct": 0,
       "teaches": [
@@ -277,9 +273,9 @@
       "category": "vocabulary",
       "question": "Can another person collect your e-prescription from the pharmacy for you?",
       "options": [
-        "Igen, ha megadja az Ön TAJ-számát és bemutatja a saját személyi igazolványát.",
-        "Nem, a magyar törvények szerint kizárólag a beteg mehet el személyesen.",
-        "Csak akkor, ha rendelkezik hivatalos közjegyzői vagy bírósági engedéllyel."
+        "Yes, with your TAJ number and their own ID card.",
+        "No, only the patient may collect it in person.",
+        "Only with a notary's written permission."
       ],
       "correct": 0,
       "teaches": [
@@ -291,10 +287,10 @@
       "id": "a2-217-check-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A C-vitamin és a torokfertőtlenítő tabletta vény ____ is megvásárolható.",
+      "sentence": "A C-vitamin vény ____ is kapható.",
       "hint": "without",
       "answer": "nélkül",
-      "english": "Vitamin C and throat disinfectant tablets can be bought without a prescription too.",
+      "english": "Vitamin C is available without a prescription too.",
       "teaches": [
         "a2-pharmacy-vocab"
       ],

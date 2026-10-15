@@ -1,0 +1,412 @@
+[
+  {
+    "file": "content/hu/exercises/a2/a2-216-ex.json",
+    "id": "a2-216-intro-1",
+    "old": "    {\n      \"id\": \"a2-216-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"How do you politely ask for advice at a Hungarian pharmacy?\",\n      \"options\": [\n        \"Tudna ajánlani valamit megfázásra?\",\n        \"Add ide a gyógyszert!\",\n        \"Mit csinálsz a patikában?\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "new": "    {\n      \"id\": \"a2-216-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"How do you politely ask for advice at a Hungarian pharmacy?\",\n      \"options\": [\n        \"Tudna ajánlani valamit megfázásra?\",\n        \"Add ide gyorsan valamit megfázásra!\",\n        \"Mit csinálsz itt a patikában most?\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "why": "length-giveaway ERROR (34 vs 25); the wrong options \"Add ide a gyógyszert!\" and \"Mit csinálsz a patikában?\" lengthened; each is a blunt (impolite) request or an unrelated question",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-216-ex.json",
+    "id": "a2-216-controlled-2",
+    "old": "    {\n      \"id\": \"a2-216-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Erős fejfájásom van, tudna adni egy hatásos fájdalom____?\",\n      \"hint\": \"painkiller\",\n      \"answer\": \"csillapítót\",\n      \"english\": \"I have a severe headache, could you give an effective painkiller?\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-216-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Erős fejfájásom van, tudna adni egy hatásos ____?\",\n      \"hint\": \"painkiller\",\n      \"answer\": \"fájdalomcsillapítót\",\n      \"english\": \"I have a severe headache, could you give an effective painkiller?\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "blank glued mid-word (\"fájdalom____\" + csillapítót); whole word blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-216-ex.json",
+    "id": "a2-216-practice-4",
+    "old": "    {\n      \"id\": \"a2-216-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A gyógyszerész azt javasolta, hogy igyak sok forró teát és vegyek be C-____.\",\n      \"hint\": \"vitamin\",\n      \"answer\": \"vitamint\",\n      \"english\": \"The pharmacist recommended that I drink a lot of hot tea and take vitamin C.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-216-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A gyógyszerész azt javasolta, hogy igyak sok forró teát és vegyek be ____.\",\n      \"hint\": \"vitamin C\",\n      \"answer\": \"C-vitamint\",\n      \"english\": \"The pharmacist recommended that I drink a lot of hot tea and take vitamin C.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "blank glued to a stem (\"C-____\", hyphenated, so spelling is safe) – whole word blanked for consistency",
+    "kind": "hungarian",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-216-ex.json",
+    "id": "a2-216-dialogue-1",
+    "old": "    {\n      \"id\": \"a2-216-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gyógyszerész\",\n          \"text\": \"Jó napot! Milyen panasszal érkezett?\"\n        },\n        {\n          \"speaker\": \"Beteg\",\n          \"text\": \"Nagyon leverve érzem magam, és harmincnyolc fokos ____ van.\"\n        }\n      ],\n      \"options\": [\n        \"lázam\",\n        \"fájdalmam\",\n        \"hidegrázásom\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-216-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gyógyszerész\",\n          \"text\": \"Jó napot! Milyen panasszal érkezett?\"\n        },\n        {\n          \"speaker\": \"Beteg\",\n          \"text\": \"Nagyon rosszul érzem magam, és harmincnyolc fokos ____ van.\"\n        }\n      ],\n      \"options\": [\n        \"lázam\",\n        \"fájdalmam\",\n        \"hidegrázásom\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "\"leverve\" is an adverbial participle in -ve (B1 participle-actions); reworded with rosszul érzem magam (a2-82)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-216-ex.json",
+    "id": "a2-216-dialogue-2",
+    "old": "    {\n      \"id\": \"a2-216-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gyógyszerész\",\n          \"text\": \"Van valamilyen gyógyszerallergiája?\"\n        },\n        {\n          \"speaker\": \"Beteg\",\n          \"text\": \"Nincs semmilyen ____, szedhetem a javasolt tablettát.\"\n        }\n      ],\n      \"options\": [\n        \"allergiám\",\n        \"kutyám\",\n        \"receptem\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-216-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gyógyszerész\",\n          \"text\": \"Van valamilyen gyógyszerallergiája?\"\n        },\n        {\n          \"speaker\": \"Beteg\",\n          \"text\": \"Nincs semmilyen ____, szedhetem a tablettát.\"\n        }\n      ],\n      \"options\": [\n        \"allergiám\",\n        \"kutyám\",\n        \"receptem\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "\"a javasolt tablettát\" has the past participle \"javasolt\" (B1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-216-ex.json",
+    "id": "a2-216-writing-2",
+    "old": "    {\n      \"id\": \"a2-216-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"vocabulary\",\n      \"tiles\": [\n        \"A\",\n        \"patikus\",\n        \"hasznos\",\n        \"tanácsot\",\n        \"adott\",\n        \"a\",\n        \"gyógyuláshoz\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"patikus\",\n        \"hasznos\",\n        \"tanácsot\",\n        \"adott\",\n        \"a\",\n        \"gyógyuláshoz\",\n        \".\"\n      ],\n      \"english\": \"The pharmacist gave useful advice for recovery.\",\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "    {\n      \"id\": \"a2-216-writing-2\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"vocabulary\",\n      \"tiles\": [\n        \"A\",\n        \"gyógyszerész\",\n        \"hasznos\",\n        \"tanácsot\",\n        \"adott\",\n        \"a\",\n        \"gyógyuláshoz\",\n        \".\"\n      ],\n      \"solution\": [\n        \"A\",\n        \"gyógyszerész\",\n        \"hasznos\",\n        \"tanácsot\",\n        \"adott\",\n        \"a\",\n        \"gyógyuláshoz\",\n        \".\"\n      ],\n      \"english\": \"The pharmacist gave useful advice for recovery.\",\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "why": "\"patikus\" is unmet; the unit word is gyógyszerész",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-217-ex.json",
+    "id": "a2-217-practice-1",
+    "old": "    {\n      \"id\": \"a2-217-practice-1\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"vocabulary\",\n      \"tiles\": [\n        \"Szeretném\",\n        \"kiváltani\",\n        \"a\",\n        \"felhőbe\",\n        \"felírt\",\n        \"gyógyszereimet\",\n        \".\"\n      ],\n      \"solution\": [\n        \"Szeretném\",\n        \"kiváltani\",\n        \"a\",\n        \"felhőbe\",\n        \"felírt\",\n        \"gyógyszereimet\",\n        \".\"\n      ],\n      \"english\": \"I would like to collect my medications prescribed into the cloud.\",\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-217-practice-1\",\n      \"type\": \"sentence-builder\",\n      \"category\": \"vocabulary\",\n      \"tiles\": [\n        \"Szeretném\",\n        \"kiváltani\",\n        \"a\",\n        \"gyógyszereimet\",\n        \".\"\n      ],\n      \"solution\": [\n        \"Szeretném\",\n        \"kiváltani\",\n        \"a\",\n        \"gyógyszereimet\",\n        \".\"\n      ],\n      \"english\": \"I would like to collect my medications.\",\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "\"felírt\" is a past participle modifier (B1 past-participle-adjective)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-217-ex.json",
+    "id": "a2-217-practice-2",
+    "old": "    {\n      \"id\": \"a2-217-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A gyógyszerész a számítógépes rendszerben azonnal látta a nekem felírt ____.\",\n      \"hint\": \"recept, plural, accusative\",\n      \"answer\": \"recepteket\",\n      \"english\": \"The pharmacist immediately saw the prescriptions written for me in the computer system.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-217-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A gyógyszerész a gépen azonnal látta a ____.\",\n      \"hint\": \"recept, plural, accusative\",\n      \"answer\": \"recepteket\",\n      \"english\": \"The pharmacist immediately saw the prescriptions on the computer.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "\"nekem felírt\" is a past participle modifier (B1); reworded with finite verbs",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-217-ex.json",
+    "id": "a2-217-practice-4",
+    "old": "    {\n      \"id\": \"a2-217-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ez a gyógyszer ugyanazt a ható____ tartalmazza, de olcsóbb a hazai gyártású változata.\",\n      \"hint\": \"ingredient\",\n      \"answer\": \"anyagot\",\n      \"english\": \"This medicine contains the same active ingredient, but the domestically produced version is cheaper.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-217-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ez a gyógyszer ugyanazt a ____ tartalmazza, de olcsóbb.\",\n      \"hint\": \"ingredient\",\n      \"answer\": \"hatóanyagot\",\n      \"english\": \"This medicine contains the same active ingredient, but it is cheaper.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "blank glued mid-word (\"ható____\" + anyagot) and \"gyártású\" unmet; whole word blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-217-ex.json",
+    "id": "a2-217-dialogue-2",
+    "old": "    {\n      \"id\": \"a2-217-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gyógyszerész\",\n          \"text\": \"Megtaláltam az e-receptet. Három doboz antibiotikum van felírva.\"\n        },\n        {\n          \"speaker\": \"Beteg\",\n          \"text\": \"Köszönöm, mindet szeretném ____ most.\"\n        }\n      ],\n      \"options\": [\n        \"kiváltani\",\n        \"letiltani\",\n        \"felbélyegezni\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-217-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gyógyszerész\",\n          \"text\": \"Megtaláltam az e-receptet. Az orvos három doboz antibiotikumot írt fel.\"\n        },\n        {\n          \"speaker\": \"Beteg\",\n          \"text\": \"Köszönöm, mindet szeretném ____ most.\"\n        }\n      ],\n      \"options\": [\n        \"kiváltani\",\n        \"letiltani\",\n        \"feladni\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "\"van felírva\" is an adverbial participle in -va (B1 participle-actions); wrong option \"felbélyegezni\" replaced by the met verb feladni",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-217-ex.json",
+    "id": "a2-217-check-2",
+    "old": "    {\n      \"id\": \"a2-217-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A C-vitamin és a torokfertőtlenítő tabletta vény ____ is megvásárolható.\",\n      \"hint\": \"without\",\n      \"answer\": \"nélkül\",\n      \"english\": \"Vitamin C and throat disinfectant tablets can be bought without a prescription too.\",\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-217-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A C-vitamin vény ____ is kapható.\",\n      \"hint\": \"without\",\n      \"answer\": \"nélkül\",\n      \"english\": \"Vitamin C is available without a prescription too.\",\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "\"megvásárolható\" is a -ható/-hető form (present participle of the potential, B1 family) and \"torokfertőtlenítő\" a participle in -ó; reworded with \"kapható\" from the lesson's own example",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-217-b-gr.json",
+    "old": "Szeretném kiváltani a felírt gyógyszereimet a TAJ-számom alapján.",
+    "new": "Szeretném kiváltani a gyógyszereimet a TAJ-számom alapján.",
+    "why": "\"felírt\" is a past participle modifier (B1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-217-ex.json",
+    "id": "a2-217-intro-1",
+    "old": "    {\n      \"id\": \"a2-217-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What document do you present to collect an electronic prescription in Hungary?\",\n      \"options\": [\n        \"A TAJ-kártyát és a személyi igazolványt.\",\n        \"A lakcímkártyát és a diákigazolványt.\",\n        \"Az adókártyát és az oltási könyvet.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "new": "    {\n      \"id\": \"a2-217-intro-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What document do you present to collect an electronic prescription in Hungary?\",\n      \"options\": [\n        \"A TAJ-kártyát és a személyi igazolványt.\",\n        \"A lakcímkártyát és a villamosbérletet.\",\n        \"Az adókártyát és az útlevelet is.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "why": "unmet wrong options \"diákigazolványt\", \"oltási könyvet\"",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-217-ex.json",
+    "id": "a2-217-controlled-4",
+    "old": "    {\n      \"id\": \"a2-217-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Can you buy antibiotics in Hungary without a prescription?\",\n      \"options\": [\n        \"Nem, az antibiotikumok szigorúan vénykötelesek.\",\n        \"Igen, bármelyik benzinkúton kaphatók.\",\n        \"Csak este nyolc után.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-217-controlled-4\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Can you buy antibiotics in Hungary without a prescription?\",\n      \"options\": [\n        \"Nem, az antibiotikumok szigorúan vénykötelesek.\",\n        \"Igen, bármelyik boltban kaphatók vény nélkül.\",\n        \"Csak este nyolc után vény nélkül.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "unmet \"benzinkúton\"; \"bármelyik boltban\" is met",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-216-ex.json",
+    "id": "a2-216-check-1",
+    "old": "    {\n      \"id\": \"a2-216-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Which product is used specifically to unblock a congested nose?\",\n      \"options\": [\n        \"orrspray\",\n        \"szemcsepp\",\n        \"fogkrém\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-216-check-1\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"Which product is used specifically to unblock a congested nose?\",\n      \"options\": [\n        \"orrspray\",\n        \"kenőcs\",\n        \"szirup\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "unmet wrong options szemcsepp/fogkrém replaced by two products listed on the 216 screen (kenőcs, szirup)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-218-ex.json",
+    "id": "a2-218-intro-2",
+    "old": "    {\n      \"id\": \"a2-218-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the meaning of 'Gyermekektől elzárva tartandó' on medicine boxes?\",\n      \"options\": [\n        \"Keep out of reach of children.\",\n        \"Only for small children.\",\n        \"Store in the refrigerator.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "new": "    {\n      \"id\": \"a2-218-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the meaning of 'Tartsa gyermekektől távol!' on medicine boxes?\",\n      \"options\": [\n        \"Keep out of reach of children.\",\n        \"Only for small children.\",\n        \"Store in the refrigerator.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "why": "\"elzárva tartandó\" combines a -va adverbial participle and a -andó/-endő future passive participle (both B1: participle-actions, future-participle-ando)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-218-ex.json",
+    "id": "a2-218-controlled-1",
+    "old": "    {\n      \"id\": \"a2-218-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A tablettát reggel éh____ kell bevenni egy pohár vízzel.\",\n      \"hint\": \"on an empty stomach\",\n      \"answer\": \"gyomorra\",\n      \"english\": \"The tablet must be taken in the morning on an empty stomach with a glass of water.\",\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-218-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A tablettát reggel ____ kell bevenni egy pohár vízzel.\",\n      \"hint\": \"on an empty stomach\",\n      \"answer\": \"éhgyomorra\",\n      \"english\": \"The tablet must be taken in the morning on an empty stomach with a glass of water.\",\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "blank splits a word (\"éh____\" + gyomorra); whole word blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-218-ex.json",
+    "id": "a2-218-controlled-2",
+    "old": "    {\n      \"id\": \"a2-218-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kérjük, olvassa el figyelmesen a dobozban lévő beteg____!\",\n      \"hint\": \"leaflet\",\n      \"answer\": \"tájékoztatót\",\n      \"english\": \"Please read the patient information leaflet in the box carefully!\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-218-controlled-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Kérjük, olvassa el figyelmesen a ____!\",\n      \"hint\": \"leaflet\",\n      \"answer\": \"betegtájékoztatót\",\n      \"english\": \"Please read the patient information leaflet carefully!\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "blank glued mid-word (\"beteg____\" + tájékoztatót) and \"dobozban lévő\" has the participle lévő (B1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-218-ex.json",
+    "id": "a2-218-practice-3",
+    "old": "    {\n      \"id\": \"a2-218-practice-3\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the English meaning of 'szobahőmérsékleten tárolandó'?\",\n      \"options\": [\n        \"store at room temperature\",\n        \"store in the freezer\",\n        \"keep in direct sunlight\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-218-practice-3\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the English meaning of 'szobahőmérsékleten kell tárolni'?\",\n      \"options\": [\n        \"store at room temperature\",\n        \"store in the freezer\",\n        \"keep in direct sunlight\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "\"tárolandó\" is a future passive participle in -andó/-endő (B1 future-participle-ando)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-218-ex.json",
+    "id": "a2-218-practice-4",
+    "old": "    {\n      \"id\": \"a2-218-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ha bármilyen szokatlan mellék____ tapasztal, hagyja abba a gyógyszer szedését!\",\n      \"hint\": \"side effect\",\n      \"answer\": \"hatást\",\n      \"english\": \"If you experience any unusual side effect, stop taking the medication!\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-218-practice-4\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Ha bármilyen szokatlan ____ tapasztal, hagyja abba a gyógyszer szedését!\",\n      \"hint\": \"side effect\",\n      \"answer\": \"mellékhatást\",\n      \"english\": \"If you experience any unusual side effect, stop taking the medication!\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "blank glued mid-word (\"mellék____\" + hatást); whole word blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-218-ex.json",
+    "id": "a2-218-dialogue-2",
+    "old": "    {\n      \"id\": \"a2-218-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Beteg\",\n          \"text\": \"Vezethetek autót a gyógyszer bevétele után?\"\n        },\n        {\n          \"speaker\": \"Gyógyszerész\",\n          \"text\": \"Nem javaslom, mert ez a szer kifejezett ____ okozhat.\"\n        }\n      ],\n      \"options\": [\n        \"álmosságot\",\n        \"éhséget\",\n        \"lázat\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-218-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Beteg\",\n          \"text\": \"Vezethetek autót a gyógyszer bevétele után?\"\n        },\n        {\n          \"speaker\": \"Gyógyszerész\",\n          \"text\": \"Nem javaslom, mert ez a szer ____ okozhat.\"\n        }\n      ],\n      \"options\": [\n        \"álmosságot\",\n        \"éhséget\",\n        \"lázat\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "\"kifejezett\" is a past participle used as an adjective (B1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-218-ex.json",
+    "id": "a2-218-writing-1",
+    "old": "    {\n      \"id\": \"a2-218-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A betegtájékoztatóban leírtak szerint a gyógyszert szobahőmérsékleten, száraz helyen kell ____.\",\n      \"hint\": \"tárol, for us\",\n      \"answer\": \"tárolnunk\",\n      \"english\": \"According to what is written in the leaflet, we have to store the medicine at room temperature in a dry place.\",\n      \"teaches\": [\n        \"inflected-infinitives\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "    {\n      \"id\": \"a2-218-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A betegtájékoztató szerint a gyógyszert szobahőmérsékleten, száraz helyen kell ____.\",\n      \"hint\": \"tárol, for us\",\n      \"answer\": \"tárolnunk\",\n      \"english\": \"According to the leaflet, we have to store the medicine at room temperature in a dry place.\",\n      \"teaches\": [\n        \"inflected-infinitives\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "why": "\"a betegtájékoztatóban leírtak szerint\" uses the past participle \"leírtak\" as a noun (B1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-218-ex.json",
+    "id": "a2-218-check-2",
+    "old": "    {\n      \"id\": \"a2-218-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A tablettát tilos alkohollal be____!\",\n      \"hint\": \"take\",\n      \"answer\": \"venni\",\n      \"english\": \"It is forbidden to take the tablet with alcohol!\",\n      \"teaches\": [\n        \"szabad-infinitive\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-218-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A tablettát tilos alkohollal ____!\",\n      \"hint\": \"take\",\n      \"answer\": \"bevenni\",\n      \"english\": \"It is forbidden to take the tablet with alcohol!\",\n      \"teaches\": [\n        \"szabad-infinitive\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "blank glued to a prefix (\"be____\"); whole word blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-218-a-gr.json",
+    "old": "Ne lépje túl a megengedett napi maximális adagot!",
+    "new": "Ne lépje túl a napi adagot!",
+    "why": "\"megengedett\" is a past participle (B1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-218-b-gr.json",
+    "old": "*Gyermekektől elzárva tartandó!*",
+    "new": "*Tartsa gyermekektől távol!*",
+    "why": "\"elzárva tartandó\" = -va + -andó (B1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-218-b-gr.json",
+    "old": "A dobozon feltüntetett lejárati idő után ne szedje a készítményt!",
+    "new": "A lejárati idő után ne szedje a készítményt!",
+    "why": "\"feltüntetett\" is a past participle modifier (B1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-218-b-gr.json",
+    "old": "Száraz, fénytől védett helyen, szobahőmérsékleten tárolandó.",
+    "new": "Szobahőmérsékleten, száraz helyen kell tárolni.",
+    "why": "\"védett\" (-t participle) and \"tárolandó\" (-andó) are B1 forms",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-219-ex.json",
+    "id": "a2-219-writing-1",
+    "old": "    {\n      \"id\": \"a2-219-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Hétvégén a háziorvosi ügyeleten gyors ellátást kaptunk, és az orvos elektronikus receptet írt fel az ügyeletes ____.\",\n      \"hint\": \"for the pharmacy\",\n      \"answer\": \"patikának\",\n      \"english\": \"On the weekend we received fast care at the urgent GP service, and the doctor wrote an electronic prescription for the on-call pharmacy.\",\n      \"teaches\": [\n        \"verb-government-nak-nek\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "    {\n      \"id\": \"a2-219-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Hétvégén a háziorvosi ügyeleten gyors ellátást kaptunk, az orvos receptet írt fel, és az ügyeletes ____ váltottuk ki.\",\n      \"hint\": \"in the pharmacy\",\n      \"answer\": \"patikában\",\n      \"english\": \"On the weekend we received fast care at the urgent GP service, the doctor wrote a prescription, and we collected it at the on-call pharmacy.\",\n      \"teaches\": [\n        \"ban-ben-in\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "why": "a prescription is not written \"for the pharmacy\" (patikának); reworded so the patient collects it, blank is now patikában (tag changes to ban-ben-in)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-219-b-gr.json",
+    "old": "Maradjon a vonalban a diszpécserrel, amíg a segítség megérkezik!",
+    "new": "Maradjon a vonalban a diszpécserrel, és várja meg a segítséget!",
+    "why": "\"amíg\" clause (B1 mig-egyidejuseg family)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-219-a-gr.json",
+    "old": "(national emergency hotline: **1830** in Hungary)",
+    "new": "(national out-of-hours GP number: **1830** in Hungary)",
+    "why": "1830 is the on-call GP number; 112 is the emergency number (intro-1, check-1)",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-ex.json",
+    "id": "a2-220-intro-2",
+    "old": "    {\n      \"id\": \"a2-220-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What document proves to your employer that your absence was due to illness?\",\n      \"options\": [\n        \"Az orvosi igazolás.\",\n        \"Egy buszjegy.\",\n        \"Egy mozijegy.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-intro-2\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What document proves to your employer that your absence was due to illness?\",\n      \"options\": [\n        \"Az igazolás.\",\n        \"Egy buszjegy.\",\n        \"Egy mozijegy.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"introduce\"\n    }",
+    "why": "length-giveaway ERROR (19 vs 13); right option shortened",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-ex.json",
+    "id": "a2-220-controlled-1",
+    "old": "    {\n      \"id\": \"a2-220-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A háziorvos öt nap beteg____ írt ki a lázas megbetegedés miatt.\",\n      \"hint\": \"sick leave\",\n      \"answer\": \"szabadságot\",\n      \"english\": \"The GP prescribed five days of sick leave due to the febrile illness.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-controlled-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A háziorvos öt nap ____ írt ki a lázas megbetegedés miatt.\",\n      \"hint\": \"sick leave\",\n      \"answer\": \"betegszabadságot\",\n      \"english\": \"The GP prescribed five days of sick leave due to the febrile illness.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"controlled\"\n    }",
+    "why": "blank glued mid-word (\"beteg____\" + szabadságot); whole word blanked (miatt kept, reported in § 6)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-ex.json",
+    "id": "a2-220-practice-2",
+    "old": "    {\n      \"id\": \"a2-220-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Hétfőn vissza kell mennem a rendelőbe ellen____, mielőtt dolgozni kezdek.\",\n      \"hint\": \"check-up\",\n      \"answer\": \"őrzésre\",\n      \"english\": \"On Monday I have to go back to the surgery for a check-up before starting work.\",\n      \"teaches\": [\n        \"ra-re\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-practice-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Hétfőn vissza kell mennem a rendelőbe ____.\",\n      \"hint\": \"check-up\",\n      \"answer\": \"ellenőrzésre\",\n      \"english\": \"On Monday I have to go back to the surgery for a check-up.\",\n      \"teaches\": [\n        \"ra-re\"\n      ],\n      \"stage\": \"practice\"\n    }",
+    "why": "blank glued mid-word (\"ellen____\" + őrzésre) and \"mielőtt\" (B1 miutan-mielott); reworded",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-ex.json",
+    "id": "a2-220-writing-1",
+    "old": "    {\n      \"id\": \"a2-220-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Amikor meggyógyultam, elkértem a lepecsételt orvosi ____, és elküldtem a munkahelyi HR-osztálynak.\",\n      \"hint\": \"certificate\",\n      \"answer\": \"igazolást\",\n      \"english\": \"When I recovered, I asked for the stamped medical certificate and sent it to the workplace HR department.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-writing-1\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Amikor meggyógyultam, elkértem az orvosi ____, és elküldtem a munkahelyemre.\",\n      \"hint\": \"certificate\",\n      \"answer\": \"igazolást\",\n      \"english\": \"When I recovered, I asked for the medical certificate and sent it to my workplace.\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"production\"\n    }",
+    "why": "\"lepecsételt\" is a past participle (B1) and \"HR-osztály\" unmet",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-ex.json",
+    "id": "a2-220-check-2",
+    "old": "    {\n      \"id\": \"a2-220-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A rendszeres pihenés és az ágy____ elengedhetetlen a teljes felépüléshez.\",\n      \"hint\": \"bed rest\",\n      \"answer\": \"nyugalom\",\n      \"english\": \"Regular rest and bed rest are essential for a complete recovery.\",\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-check-2\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A pihenés és az ____ nagyon fontos a gyógyuláshoz.\",\n      \"hint\": \"bed rest\",\n      \"answer\": \"ágynyugalom\",\n      \"english\": \"Rest and bed rest are very important for recovery.\",\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"check\"\n    }",
+    "why": "blank glued to a stem (\"ágy____\" + nyugalom) and unmet \"elengedhetetlen/felépüléshez\"; whole word blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-220-a-gr.json",
+    "old": "Mielőtt visszatér a munkába, orvosi ellenőrzésre kell mennie.",
+    "new": "Munka előtt orvosi ellenőrzésre kell mennie.",
+    "why": "\"mielőtt\" clause (B1 miutan-mielott)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-220-b-gr.json",
+    "old": "**Ágynyugalom és sok folyadék javasolt.** = Bed rest and plenty of fluids are recommended.",
+    "new": "**Pihenj, és igyál sok folyadékot!** = Rest, and drink plenty of fluids!",
+    "why": "\"javasolt\" is a past participle used as a predicate adjective (B1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-ex.json",
+    "id": "a2-220-dialogue-1",
+    "old": "    {\n      \"id\": \"a2-220-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Kolléga\",\n          \"text\": \"Hallom, hogy nagyon megfáztál és nem tudsz bejönni.\"\n        },\n        {\n          \"speaker\": \"Beteg\",\n          \"text\": \"Igen, a háziorvos kiírt ____, péntekig otthon kell maradnom.\"\n        }\n      ],\n      \"options\": [\n        \"betegszabadságra\",\n        \"nyaralásra\",\n        \"túrára\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-dialogue-1\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Kolléga\",\n          \"text\": \"Hallom, hogy nagyon megfáztál és nem tudsz bejönni.\"\n        },\n        {\n          \"speaker\": \"Beteg\",\n          \"text\": \"Igen, a háziorvos kiírt ____, péntekig otthon kell maradnom.\"\n        }\n      ],\n      \"options\": [\n        \"betegszabadságra\",\n        \"nagy nyaralásra\",\n        \"hosszú túrára\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "length-giveaway ERROR (16 vs 10); wrong options lengthened",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-ex.json",
+    "id": "a2-220-dialogue-2",
+    "old": "    {\n      \"id\": \"a2-220-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Főnök\",\n          \"text\": \"Vigyázz magadra, és ne aggódj a munka miatt!\"\n        },\n        {\n          \"speaker\": \"Kolléga\",\n          \"text\": \"Köszönöm szépen a megértést és a ____!\"\n        }\n      ],\n      \"options\": [\n        \"jókívánságokat\",\n        \"recepteket\",\n        \"csekkeket\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-dialogue-2\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Főnök\",\n          \"text\": \"Vigyázz magadra, és ne aggódj a munka miatt!\"\n        },\n        {\n          \"speaker\": \"Kolléga\",\n          \"text\": \"Köszönöm szépen a megértést és a ____!\"\n        }\n      ],\n      \"options\": [\n        \"jókívánságokat\",\n        \"gyógyszereket\",\n        \"bizonylatokat\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"dialogue\"\n    }",
+    "why": "length-giveaway ERROR (14 vs 10); wrong options lengthened with unit words (recepteket/csekkeket)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-consolidation-ex.json",
+    "id": "a2-220-consolidation-6",
+    "old": "    {\n      \"id\": \"a2-220-consolidation-6\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Erős fejfájásom van, tudna adni egy hatásos fájdalom____?\",\n      \"hint\": \"painkiller\",\n      \"answer\": \"csillapítót\",\n      \"english\": \"I have a severe headache, could you give an effective painkiller?\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-consolidation-6\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Erős fejfájásom van, tudna adni egy hatásos ____?\",\n      \"hint\": \"painkiller\",\n      \"answer\": \"fájdalomcsillapítót\",\n      \"english\": \"I have a severe headache, could you give an effective painkiller?\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "blank glued mid-word (\"fájdalom____\" + csillapítót); whole word blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-consolidation-ex.json",
+    "id": "a2-220-consolidation-7",
+    "old": "    {\n      \"id\": \"a2-220-consolidation-7\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az orvos a felhőbe írta fel a receptet, így a TAJ-____ alapján kiválthatom.\",\n      \"hint\": \"my number\",\n      \"answer\": \"számom\",\n      \"english\": \"The doctor prescribed the recipe into the cloud, so I can collect it based on my TAJ number.\",\n      \"teaches\": [\n        \"possessive-suffixes\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-consolidation-7\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az orvos a felhőbe írta fel a receptet, így a ____ alapján kiválthatom.\",\n      \"hint\": \"TAJ number, my\",\n      \"answer\": \"TAJ-számom\",\n      \"english\": \"The doctor put the prescription into the cloud, so I can collect it based on my TAJ number.\",\n      \"teaches\": [\n        \"possessive-suffixes\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "\"recipe\" is a wrong translation of recept; blank glued to a hyphenated stem – whole word blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-consolidation-ex.json",
+    "id": "a2-220-consolidation-8",
+    "old": "    {\n      \"id\": \"a2-220-consolidation-8\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A tablettát reggel éh____, bő vízzel kell bevenni.\",\n      \"hint\": \"on an empty stomach\",\n      \"answer\": \"gyomorra\",\n      \"english\": \"The tablet must be taken in the morning on an empty stomach with plenty of water.\",\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-consolidation-8\",\n      \"type\": \"fill-blank\",\n      \"category\": \"vocabulary\",\n      \"sentence\": \"A tablettát reggel ____, bő vízzel kell bevenni.\",\n      \"hint\": \"on an empty stomach\",\n      \"answer\": \"éhgyomorra\",\n      \"english\": \"The tablet must be taken in the morning on an empty stomach with plenty of water.\",\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "blank splits a word (\"éh____\" + gyomorra); whole word blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-consolidation-ex.json",
+    "id": "a2-220-consolidation-11",
+    "old": "    {\n      \"id\": \"a2-220-consolidation-11\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gyógyszerész\",\n          \"text\": \"Jó napot! Miben segíthetek?\"\n        },\n        {\n          \"speaker\": \"Beteg\",\n          \"text\": \"Nagyon fáj a torkom és köhögök, ____ felírt gyógyszert jöttem kiváltani.\"\n        }\n      ],\n      \"options\": [\n        \"e-receptre\",\n        \"csekkre\",\n        \"borítékra\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-consolidation-11\",\n      \"type\": \"dialogue-complete\",\n      \"category\": \"dialogue\",\n      \"prompt\": [\n        {\n          \"speaker\": \"Gyógyszerész\",\n          \"text\": \"Jó napot! Miben segíthetek?\"\n        },\n        {\n          \"speaker\": \"Beteg\",\n          \"text\": \"Nagyon fáj a torkom és köhögök. Az orvos felírt egy ____ a felhőbe.\"\n        }\n      ],\n      \"options\": [\n        \"e-receptet\",\n        \"csekket\",\n        \"borítékot\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "\"e-receptre felírt gyógyszert\" has the past participle \"felírt\" (B1); reworded with a finite verb",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-consolidation-ex.json",
+    "id": "a2-220-consolidation-15",
+    "old": "    {\n      \"id\": \"a2-220-consolidation-15\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A betegtájékoztatóban leírtak szerint ez a gyógyszer álmos____ okozhat, ezért ne vezessen autót!\",\n      \"hint\": \"drowsiness\",\n      \"answer\": \"ságot\",\n      \"english\": \"According to the patient leaflet, this medicine may cause drowsiness, so do not drive a car!\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-consolidation-15\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A betegtájékoztató szerint ez a gyógyszer ____ okozhat, ezért ne vezessen autót!\",\n      \"hint\": \"drowsiness\",\n      \"answer\": \"álmosságot\",\n      \"english\": \"According to the patient leaflet, this medicine may cause drowsiness, so do not drive a car!\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "blank glued mid-word (\"álmos____\" + ságot) and \"leírtak szerint\" (participle, B1); whole word blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-consolidation-ex.json",
+    "id": "a2-220-consolidation-16",
+    "old": "    {\n      \"id\": \"a2-220-consolidation-16\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Jó napot kívánok! Tudna ajánlani egy hatásos orrspray-t és torokfertőtlenítő ____?\",\n      \"hint\": \"tablet, accusative\",\n      \"answer\": \"tablettát\",\n      \"english\": \"Good day! Could you recommend an effective nasal spray and throat disinfectant tablets?\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-consolidation-16\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Jó napot kívánok! Tudna ajánlani egy hatásos orrspray-t és egy ____?\",\n      \"hint\": \"tablet, accusative\",\n      \"answer\": \"tablettát\",\n      \"english\": \"Good day! Could you recommend an effective nasal spray and a tablet?\",\n      \"teaches\": [\n        \"how-the-accusative-t-works\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "\"torokfertőtlenítő\" is a participle in -ó (B1); reworded",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-consolidation-ex.json",
+    "id": "a2-220-consolidation-18",
+    "old": "    {\n      \"id\": \"a2-220-consolidation-18\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Az orvos által felírt gyógyszert bármelyik magyarországi patikában ki tudod ____.\",\n      \"hint\": \"to collect/dispense\",\n      \"answer\": \"váltani\",\n      \"english\": \"You can dispense the medicine prescribed by the doctor in any Hungarian pharmacy.\",\n      \"teaches\": [\n        \"tud-infinitive-skills\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-consolidation-18\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"Bármelyik magyarországi patikában ki tudod ____ az e-receptet.\",\n      \"hint\": \"to collect/dispense\",\n      \"answer\": \"váltani\",\n      \"english\": \"You can dispense the e-prescription in any Hungarian pharmacy.\",\n      \"teaches\": [\n        \"tud-infinitive-skills\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "\"által felírt\" is a past participle modifier (B1); reworded",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-consolidation-ex.json",
+    "id": "a2-220-consolidation-19",
+    "old": "    {\n      \"id\": \"a2-220-consolidation-19\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the advice if symptoms do not ease after three days?\",\n      \"options\": [\n        \"Orvoshoz kell fordulni szakorvosi vizsgálatért.\",\n        \"Nem kell csinálni semmit.\",\n        \"Sokat kell sétálni hidegben.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-consolidation-19\",\n      \"type\": \"multiple-choice\",\n      \"category\": \"vocabulary\",\n      \"question\": \"What is the advice if symptoms do not ease after three days?\",\n      \"options\": [\n        \"Orvoshoz kell fordulni.\",\n        \"Nem kell csinálni semmit.\",\n        \"Sokat kell sétálni hidegben.\"\n      ],\n      \"correct\": 0,\n      \"teaches\": [\n        \"a2-pharmacy-vocab\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "length-giveaway ERROR (47 vs 28); right option shortened",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/a2/a2-220-consolidation-ex.json",
+    "id": "a2-220-consolidation-20",
+    "old": "    {\n      \"id\": \"a2-220-consolidation-20\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A háziorvos lepecsételte a papírt, amely igazolja a beteg____.\",\n      \"hint\": \"my sick leave\",\n      \"answer\": \"szabadságomat\",\n      \"english\": \"The GP stamped the paper that verifies my sick leave.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "new": "    {\n      \"id\": \"a2-220-consolidation-20\",\n      \"type\": \"fill-blank\",\n      \"category\": \"grammar\",\n      \"sentence\": \"A háziorvos lepecsételte a papírt, amely igazolja a ____.\",\n      \"hint\": \"my sick leave\",\n      \"answer\": \"betegszabadságomat\",\n      \"english\": \"The GP stamped the paper that verifies my sick leave.\",\n      \"teaches\": [\n        \"acc-poss\"\n      ],\n      \"stage\": \"review\"\n    }",
+    "why": "blank glued mid-word (\"beteg____\" + szabadságomat); whole word blanked",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-44.json",
+    "old": "Hol találunk most nyitva tartó patikát?",
+    "new": "Melyik patika van most nyitva?",
+    "why": "\"nyitva tartó\" is a present participle in -ó (B1 present-participle)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-44.json",
+    "old": "Kézzel megírt hagyományos papírreceptre írja fel őket.",
+    "new": "Kézzel, hagyományos papírreceptre írja fel őket.",
+    "why": "comprehension option has the past participle \"megírt\" (B1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-44.json",
+    "old": "A rendelőben lévő gyógyszeres szekrényből ad át dobozokat.",
+    "new": "A rendelő gyógyszeres szekrényéből ad át dobozokat.",
+    "why": "comprehension option has the participle \"lévő\" (B1)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/original/a2/a2-unit-44.json",
+    "old": "majd az éjszakai patikában a TAJ-szám alapján kiváltják a felírt gyógyszereket.",
+    "new": "majd az éjszakai patikában a TAJ-kártya alapján kiváltják a gyógyszereket.",
+    "why": "summary says TAJ-szám (the story shows the TAJ-kártya) and uses the participle \"felírt\"",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/a2/a2-220-a-gr.json",
+    "old": "Before returning to work, you must go for a medical check-up.",
+    "new": "Before work you have to go for a medical check-up.",
+    "kind": "english"
+  }
+]

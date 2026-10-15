@@ -172,9 +172,9 @@
    "reason": "HU A2 pass: read and fixed (2026-10-14)"
   },
   "A2/banking": {
-   "locked": "2026-10-05",
+   "locked": "2026-10-15",
    "exercises": 100,
-   "reason": "read-through, a2-211-a2-215 + consolidation"
+   "reason": "HU A2 pass 39–44: reader fixes filtered and applied (2026-10-15)"
   },
   "A2/cooking": {
    "locked": "2026-10-14",
@@ -237,14 +237,14 @@
    "reason": "HU A2 read 2026-10-14: Sonnet paired read, fixes filtered by Claude"
   },
   "A2/inflected-infinitives-necessity": {
-   "locked": "2026-10-05",
+   "locked": "2026-10-15",
    "exercises": 100,
-   "reason": "read-through, a2-201-a2-205 + consolidation"
+   "reason": "HU A2 pass 39–44: reader fixes filtered and applied (2026-10-15)"
   },
   "A2/inflected-postpositions": {
-   "locked": "2026-10-05",
+   "locked": "2026-10-15",
    "exercises": 100,
-   "reason": "read-through, a2-196-a2-200 + consolidation"
+   "reason": "HU A2 pass 39–44: reader fixes filtered and applied (2026-10-15)"
   },
   "A2/lak-lek-suffix": {
    "locked": "2026-10-15",
@@ -277,19 +277,19 @@
    "reason": "A2 pass: paired Sonnet read, fixes applied (2026-10-14)"
   },
   "A2/pharmacy": {
-   "locked": "2026-10-05",
+   "locked": "2026-10-15",
    "exercises": 100,
-   "reason": "read-through, a2-216-a2-220 + consolidation"
+   "reason": "HU A2 pass 39–44: reader fixes filtered and applied (2026-10-15)"
   },
   "A2/plural-possessed": {
-   "locked": "2026-10-14",
+   "locked": "2026-10-15",
    "exercises": 106,
-   "reason": "CEFR gap check 2026-10-14: new skills basic-connectors / new A2 screens"
+   "reason": "HU A2 pass 39–44: reader fixes filtered and applied (2026-10-15)"
   },
   "A2/post-office": {
-   "locked": "2026-10-05",
+   "locked": "2026-10-15",
    "exercises": 100,
-   "reason": "read-through, a2-206-a2-210 + consolidation"
+   "reason": "HU A2 pass 39–44: reader fixes filtered and applied (2026-10-15)"
   },
   "A2/problems-requests": {
    "locked": "2026-10-15",
@@ -40226,7 +40226,7 @@
   },
   "a2-193-writing-2": {
    "teaches": [
-    "acc-poss"
+    "plural-possessive"
    ],
    "distractor_skills": {}
   },
@@ -40368,9 +40368,7 @@
    "teaches": [
     "acc-poss"
    ],
-   "distractor_skills": {
-    "2": "plural-possessive"
-   }
+   "distractor_skills": {}
   },
   "a2-195-consolidation-12": {
    "teaches": [
@@ -41252,7 +41250,9 @@
    "teaches": [
     "inflected-postpositions"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "postpositions-basic"
+   }
   },
   "a2-200-consolidation-5": {
    "teaches": [
@@ -41570,10 +41570,7 @@
    "teaches": [
     "szabad-infinitive"
    ],
-   "distractor_skills": {
-    "1": "kell-infinitive",
-    "2": "kell-infinitive"
-   }
+   "distractor_skills": {}
   },
   "a2-203-check-2": {
    "teaches": [
@@ -41769,7 +41766,7 @@
   },
   "a2-205-check-1": {
    "teaches": [
-    "a2-inflected-infinitives-necessity-vocab"
+    "inflected-infinitives"
    ],
    "distractor_skills": {}
   },
@@ -41845,10 +41842,7 @@
    "teaches": [
     "lehet-infinitive"
    ],
-   "distractor_skills": {
-    "1": "kell-infinitive",
-    "2": "kell-infinitive"
-   }
+   "distractor_skills": {}
   },
   "a2-205-consolidation-2": {
    "teaches": [
@@ -42046,7 +42040,10 @@
    "teaches": [
     "kerek-vs-szeretnek"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "inflected-infinitives",
+    "2": "present-tense-routine-language"
+   }
   },
   "a2-206-practice-1": {
    "teaches": [
@@ -42344,7 +42341,7 @@
   },
   "a2-209-practice-2": {
    "teaches": [
-    "imperative-definite"
+    "inflected-infinitives"
    ],
    "distractor_skills": {}
   },
@@ -42544,7 +42541,10 @@
    "teaches": [
     "lehet-infinitive"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "kell-infinitive",
+    "2": "kell-infinitive"
+   }
   },
   "a2-210-consolidation-2": {
    "teaches": [
@@ -42742,7 +42742,9 @@
    "teaches": [
     "a2-banking-vocab"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "definite-vs-indefinite-conjugation"
+   }
   },
   "a2-211-practice-1": {
    "teaches": [
@@ -42929,7 +42931,6 @@
     "val-vel"
    ],
    "distractor_skills": {
-    "1": "ban-ben-in",
     "2": "present-tense-routine-language"
    }
   },
@@ -43283,7 +43284,7 @@
   },
   "a2-215-writing-2": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "definite-vs-indefinite-conjugation"
    ],
    "distractor_skills": {}
   },
@@ -43663,7 +43664,7 @@
   },
   "a2-219-writing-1": {
    "teaches": [
-    "verb-government-nak-nek"
+    "ban-ben-in"
    ],
    "distractor_skills": {}
   },

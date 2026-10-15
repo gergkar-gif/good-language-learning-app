@@ -8,8 +8,8 @@
       "question": "What must you do first upon entering a Hungarian post office?",
       "options": [
         "Sorszámot kell húzni a bejáratnál.",
-        "Azonnal az ablakhoz kell tolakodni.",
-        "Fel kell hívni az ügyfélszolgálatot."
+        "Azonnal az ablakhoz kell menni.",
+        "Egy bélyeget kell venni a bejáratnál."
       ],
       "correct": 0,
       "teaches": [
@@ -24,14 +24,18 @@
       "question": "How do you politely say 'I would like to post a letter'?",
       "options": [
         "Szeretnék feladni egy levelet.",
-        "Kell adnom egy levél.",
-        "Feladom levelet azonnal."
+        "Fel kell adnom egy levelet.",
+        "Feladok egy levelet azonnal."
       ],
       "correct": 0,
       "teaches": [
         "kerek-vs-szeretnek"
       ],
-      "stage": "introduce"
+      "stage": "introduce",
+      "distractor_skills": {
+        "1": "inflected-infinitives",
+        "2": "present-tense-routine-language"
+      }
     },
     {
       "id": "a2-206-controlled-1",
@@ -112,8 +116,6 @@
         "sorszámot",
         "a",
         "bejáratnál",
-        "lévő",
-        "gépből",
         "!"
       ],
       "solution": [
@@ -122,11 +124,9 @@
         "sorszámot",
         "a",
         "bejáratnál",
-        "lévő",
-        "gépből",
         "!"
       ],
-      "english": "Take a queue ticket from the machine at the entrance!",
+      "english": "Take a queue ticket at the entrance!",
       "teaches": [
         "imperative-indefinite"
       ],
@@ -149,11 +149,11 @@
       "id": "a2-206-practice-3",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What is the meaning of 'felbélyegzett boríték'?",
+      "question": "What is the meaning of 'mérleg'?",
       "options": [
-        "stamped envelope",
-        "empty package",
-        "registered document"
+        "scales",
+        "a queue ticket",
+        "a counter window"
       ],
       "correct": 0,
       "teaches": [
@@ -185,13 +185,13 @@
         },
         {
           "speaker": "Ügyfél",
-          "text": "Jó napot! ____ feladni ezt a hivatalos levelet."
+          "text": "Jó napot! ____ feladni ezt a levelet."
         }
       ],
       "options": [
         "Szeretnék",
-        "Muszáj vagyok",
-        "Kellhetek"
+        "Szeretnél",
+        "Szeretne"
       ],
       "correct": 0,
       "teaches": [
@@ -206,11 +206,11 @@
       "prompt": [
         {
           "speaker": "Ügyintéző",
-          "text": "Készpénzzel vagy kártyával óhajt fizetni?"
+          "text": "Készpénzzel vagy kártyával fizet?"
         },
         {
           "speaker": "Ügyfél",
-          "text": "Bankkártyával ____ fizetni, ha lehetséges."
+          "text": "Bankkártyával ____ fizetni, ha lehet."
         }
       ],
       "options": [
@@ -228,10 +228,10 @@
       "id": "a2-206-writing-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A postahivatalban udvariasan megkérdeztem, hogy hol lehet sorszámot ____.",
+      "sentence": "A postahivatalban udvariasan megkérdeztem, hogy hol kell sorszámot ____.",
       "hint": "húz, for me",
       "answer": "húznom",
-      "english": "At the post office I politely asked where I could take a queue ticket.",
+      "english": "At the post office I politely asked where I have to take a queue ticket.",
       "teaches": [
         "inflected-infinitives"
       ],
@@ -285,10 +285,10 @@
       "id": "a2-206-check-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Kérjük, várja meg, amíg a sorszáma megjelenik a ____!",
+      "sentence": "Kérjük, nézze a sorszámát a ____!",
       "hint": "on the display",
       "answer": "kijelzőn",
-      "english": "Please wait until your number appears on the display!",
+      "english": "Please look at your number on the display!",
       "teaches": [
         "on-en-on"
       ],

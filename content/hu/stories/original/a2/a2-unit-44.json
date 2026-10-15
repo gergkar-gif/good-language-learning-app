@@ -6,7 +6,7 @@
   "order": 44,
   "type": "original",
   "estimatedMinutes": 3,
-  "summary": "Zoltán szombat éjjel belázasodik. Kata segítségével felkeresik a kerületi orvosi ügyeletet, majd az éjszakai patikában a TAJ-szám alapján kiváltják a felírt gyógyszereket.",
+  "summary": "Zoltán szombat éjjel belázasodik. Kata segítségével felkeresik a kerületi orvosi ügyeletet, majd az éjszakai patikában a TAJ-kártya alapján kiváltják a gyógyszereket.",
   "characters": [
     "Zoltán",
     "Kata",
@@ -49,7 +49,7 @@
     {
       "type": "dialogue",
       "speaker": "Kata",
-      "text": "Köszönjük doktor úr! Hol találunk most nyitva tartó patikát?"
+      "text": "Köszönjük doktor úr! Melyik patika van most nyitva?"
     },
     {
       "type": "dialogue",
@@ -88,10 +88,10 @@
         {
           "question": "Hogyan írja fel a kezelőorvos a gyógyszereket a rendelőben?",
           "options": [
-            "Kézzel megírt hagyományos papírreceptre írja fel őket.",
+            "Kézzel, hagyományos papírreceptre írja fel őket.",
             "E-mailben küldi el a recepteket Zoltán háziorvosának.",
             "Elektronikusan rögzíti őket az e-recept felhőbe.",
-            "A rendelőben lévő gyógyszeres szekrényből ad át dobozokat."
+            "A rendelő gyógyszeres szekrényéből ad át dobozokat."
           ],
           "correctIndex": 2,
           "explanation": "Az orvos közli: „Felírok egy antibiotikumot és egy erős lázcsillapítót az e-recept felhőbe.”"

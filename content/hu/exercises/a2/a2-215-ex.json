@@ -7,9 +7,9 @@
       "category": "vocabulary",
       "question": "What must you do first if you lose your bank card in Budapest?",
       "options": [
-        "Azonnal le kell tiltani a kártyát az applikációban vagy telefonon.",
-        "Meg kell várni a következő munkanapi személyes bankfióki nyitást.",
-        "Személyesen be kell menni a legközelebbi rendőrkapitányságra."
+        "Block it at once, in the app or by phone.",
+        "Wait until the branch opens next week.",
+        "Go to the police station in person."
       ],
       "correct": 0,
       "teaches": [
@@ -23,7 +23,7 @@
       "category": "vocabulary",
       "question": "What is the meaning of 'pótkártya'?",
       "options": [
-        "Replacement bank card.",
+        "Replacement card.",
         "Discount card.",
         "Library card."
       ],
@@ -37,9 +37,9 @@
       "id": "a2-215-controlled-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Jó napot! Elhagytam a pénztárcámat, szeretném le____ a bankkártyámat.",
+      "sentence": "Jó napot! Elhagytam a pénztárcámat, szeretném ____ a bankkártyámat.",
       "hint": "to block",
-      "answer": "tiltani",
+      "answer": "letiltani",
       "english": "Good day! I lost my wallet, I would like to block my bank card.",
       "teaches": [
         "building-the-infinitive-the-suffix-ni"
@@ -50,10 +50,10 @@
       "id": "a2-215-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A vitatott tranzakció miatt hivatalos ____ nyújtottam be a banknál.",
+      "sentence": "A levonás miatt hivatalos ____ nyújtottam be a banknál.",
       "hint": "complaint",
       "answer": "reklamációt",
-      "english": "Due to the disputed transaction, I lodged an official complaint with the bank.",
+      "english": "Because of the debit I lodged an official complaint with the bank.",
       "teaches": [
         "how-the-accusative-t-works"
       ],
@@ -92,9 +92,9 @@
       "category": "vocabulary",
       "question": "What does customer service do after you block a stolen card?",
       "options": [
-        "Biztonsági okokból érvényteleníti a kártyát és új pótkártyát rendel.",
-        "Azonnal átutalja az összes pénzedet a bank központi számlájára.",
-        "Biztonsági okokból azonnal letiltja a regisztrált telefonszámodat."
+        "They cancel the card and order a replacement.",
+        "They transfer all your money to the bank.",
+        "They block your phone number as well."
       ],
       "correct": 0,
       "teaches": [
@@ -136,10 +136,10 @@
       "id": "a2-215-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A vizsgálat után a bank jóváírta a vitatott összeg vissza____ a számlámon.",
-      "hint": "refund, its, accusative",
-      "answer": "térítését",
-      "english": "After the investigation, the bank credited the refund of the disputed amount to my account.",
+      "sentence": "A vizsgálat után a bank jóváírta a ____ a számlámon.",
+      "hint": "refund, accusative",
+      "answer": "visszatérítést",
+      "english": "After the investigation, the bank credited the refund to my account.",
       "teaches": [
         "acc-poss"
       ],
@@ -165,9 +165,9 @@
       "id": "a2-215-practice-4",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Az új pót____ öt munkanapon belül megérkezik a postacímedre.",
+      "sentence": "Az új ____ öt munkanapon belül megérkezik a postacímedre.",
       "hint": "replacement card",
-      "answer": "kártya",
+      "answer": "pótkártya",
       "english": "The new replacement card will arrive at your postal address within five working days.",
       "teaches": [
         "a2-banking-vocab"
@@ -185,13 +185,13 @@
         },
         {
           "speaker": "Ügyintéző",
-          "text": "Nyugodjon meg, egy pillanat alatt ____ a kártyát, hogy senki se élhessen vissza vele."
+          "text": "Nyugodjon meg, egy pillanat alatt ____ a kártyát."
         }
       ],
       "options": [
         "letiltjuk",
-        "kidobjuk",
-        "feltöltjük"
+        "átutaljuk",
+        "aláírjuk"
       ],
       "correct": 0,
       "teaches": [
@@ -206,11 +206,11 @@
       "prompt": [
         {
           "speaker": "Ügyfél",
-          "text": "Kétszer vonták le a számlámról az éttermi vacsorát tegnap."
+          "text": "Kétszer vonták le a számlámról ugyanazt az összeget."
         },
         {
           "speaker": "Ügyintéző",
-          "text": "Rögzítem a ____, és elindítjuk a visszatérítési folyamatot."
+          "text": "Rendben, kivizsgáljuk a ____."
         }
       ],
       "options": [
@@ -228,9 +228,9 @@
       "id": "a2-215-writing-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Nagyon megkönnyebbültem, amikor a bank ügyfélszolgálata gyorsan le____ a kártyámat a lopás után.",
+      "sentence": "Nagyon megkönnyebbültem, amikor a bank ügyfélszolgálata gyorsan ____ a kártyámat a lopás után.",
       "hint": "blocked",
-      "answer": "tiltotta",
+      "answer": "letiltotta",
       "english": "I was very relieved when the bank customer service quickly blocked my card after the theft.",
       "teaches": [
         "definite-past"
@@ -247,8 +247,7 @@
         "minden",
         "jogosulatlan",
         "levonást",
-        "gondosan",
-        "kivizsgál",
+        "kivizsgálja",
         "."
       ],
       "solution": [
@@ -257,13 +256,12 @@
         "minden",
         "jogosulatlan",
         "levonást",
-        "gondosan",
-        "kivizsgál",
+        "kivizsgálja",
         "."
       ],
-      "english": "The bank carefully investigates every unauthorized debit.",
+      "english": "The bank investigates every unauthorized debit.",
       "teaches": [
-        "how-the-accusative-t-works"
+        "definite-vs-indefinite-conjugation"
       ],
       "stage": "production"
     },
@@ -273,9 +271,9 @@
       "category": "vocabulary",
       "question": "Where can you freeze your bank card instantly without calling anyone?",
       "options": [
-        "Közvetlenül a mobilbankos alkalmazásban egy gombnyomással.",
-        "A helyi rendőrkapitányságon egy hivatalos jegyzőkönyvvel.",
-        "A legközelebbi postahivatalban az ügyfélszolgálati pultnál."
+        "In the mobile banking app, with one tap.",
+        "At the local police station.",
+        "At the nearest post office counter."
       ],
       "correct": 0,
       "teaches": [
@@ -288,13 +286,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A pótkártya megérkezéséig a telefonos érintéses fizetés továbbra is ____.",
-      "hint": "működik, can",
-      "answer": "működhet",
+      "hint": "function, can",
       "english": "Until the replacement card arrives, phone contactless payment can still function.",
       "teaches": [
         "potential-hat-het"
       ],
-      "stage": "check"
+      "stage": "check",
+      "answers": [
+        "működhet",
+        "működik"
+      ]
     }
   ]
 }
