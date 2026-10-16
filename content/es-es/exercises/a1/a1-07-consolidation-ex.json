@@ -155,15 +155,12 @@
       "options": [
         "Mi madre es amable.",
         "Mi madre son amable.",
-        "Mi madre está amable."
+        "Mi madre es amables."
       ],
       "correct": 0,
       "teaches": [
         "ser"
-      ],
-      "distractor_skills": {
-        "2": "estar"
-      }
+      ]
     },
     {
       "id": "a1.07.06.ex11",
@@ -251,7 +248,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Dónde está tu madre?"
+          "text": "¿Dónde está tu teléfono?"
         },
         {
           "speaker": "Carlos",
@@ -259,9 +256,9 @@
         }
       ],
       "options": [
-        "Está en la sala.",
-        "Están en la sala.",
-        "Hay en la sala."
+        "Está en la mesa.",
+        "Están en la mesa.",
+        "Hay en la mesa."
       ],
       "correct": 0,
       "teaches": [
@@ -302,11 +299,11 @@
           "answer": "Hay una cocina en mi casa."
         },
         {
-          "prompt": "Say where the table is.",
+          "prompt": "Say that the table is in the kitchen.",
           "answer": "La mesa está en la cocina."
         },
         {
-          "prompt": "Describe a family member using ser.",
+          "prompt": "Say that your mother is kind.",
           "answer": "Mi madre es amable."
         }
       ],
@@ -320,7 +317,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give a short description of your home and include one family sentence.",
+          "prompt": "Say that there is a kitchen, that the table is in the kitchen, and that your brother works at home.",
           "answer": "Hay una cocina. La mesa está en la cocina. Mi hermano trabaja en casa."
         }
       ],

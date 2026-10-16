@@ -12,9 +12,11 @@ one object per fix, with two more keys:
 This applies the whole list to the working tree, runs check-content on the
 unit, and always restores the files. Each fix ends up in one of three lists:
 
-- rejected: its old text or id doesn't match once, or it brings a new
+- rejected: its old text or id doesn't match once, it brings a new
   check-content finding on its exercise (a length give-away, an unmet word,
-  a copied item…);
+  a copied item…), or it leaves its exercise invalid under the course's
+  schema (a `hint` or `english` on a multiple-choice item: es A1 units 2-5
+  and 6-11, found only by validate-content after applying);
 - review: it applies cleanly, but it is unsure or changes Hungarian; only
   these need the reviewer's eye (readers propose wrong target-language
   text a few times a level);
@@ -40,6 +42,35 @@ cc = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(cc)
 
 
+def schema_errors(texts):
+    """{exercise id or file: message} for changed files their schema rejects
+    (validate-content.py's TARGETS and schemas, one file at a time)."""
+    from fnmatch import fnmatch
+    from jsonschema import Draft7Validator
+    spec_v = importlib.util.spec_from_file_location("validate_content", ROOT / "scripts/validate-content.py")
+    vc = importlib.util.module_from_spec(spec_v)
+    spec_v.loader.exec_module(vc)
+    out = {}
+    for rel, text in texts.items():
+        parts = Path(rel).parts
+        if len(parts) < 3 or parts[0] != "content":
+            continue
+        inner = Path(*parts[2:]).as_posix()
+        name = next((n for n, g in vc.TARGETS.items() if fnmatch(inner, g)), None)
+        path = ROOT / "content" / parts[1] / "schemas" / f"{name}.schema.json"
+        if not name or not path.is_file():
+            continue
+        data = json.loads(text)
+        for err in Draft7Validator(json.loads(path.read_text(encoding="utf-8"))).iter_errors(data):
+            node, eid = data, None
+            for step in err.absolute_path:
+                node = node[step]
+                if isinstance(node, dict) and node.get("id"):
+                    eid = node["id"]
+            out.setdefault(eid or rel, f"schema: {err.message[:160]}")
+    return out
+
+
 def findings(course, level, unit):
     return {(f[3], f[4], f[5]) for f in cc.run(cc.Source(), course, [level], unit)}
 
@@ -62,6 +93,12 @@ def main():
         for p, t in originals.items():
             (ROOT / p).write_text(t, encoding="utf-8")
     new = sorted(after - before)
+    for eid, msg in schema_errors(texts).items():
+        owners = [n for n, f in enumerate(fixes) if f.get("id") == eid]
+        for n in owners:
+            rejected.setdefault(n, msg)
+        if not owners:
+            new.append(("schema", eid, msg))
 
     unclaimed = []
     for check, eid, msg in new:

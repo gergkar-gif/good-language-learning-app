@@ -62,6 +62,7 @@ const WORD_RE = /[a-zA-ZÀ-ÖØ-öø-ɏ]+/g;
 const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 const readJson = rel => { try { return JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8')); } catch (e) { return null; } };
 const lower = s => s.toLocaleLowerCase();
+const REFLEXIVE = new Set(['me', 'te', 'se', 'nos', 'os']);
 const tokens = s => (String(s || '').match(WORD_RE) || []);
 const italics = s => [...String(s || '').matchAll(/\*([^*]+)\*/g)].map(m => m[1]);
 
@@ -289,6 +290,18 @@ function targetTexts(e) {
                     if (!plainEnglish(seg)) parts.push(seg);
                 }
             }
+            // Spanish reflexive use of a verb form: a pronoun right before it
+            // (*me ducho*, also in the builder's solution), a pronoun answer
+            // filling the blank before it (*_____ ducha* / *se*), or a one-word
+            // answer to a pronoun + blank (*Ellos se _____ las manos* / *lavan*).
+            const ctx = parts.concat(Array.isArray(e.solution) ? [e.solution.join(' ')] : []);
+            const pronAnswer = parts.some(t => REFLEXIVE.has(lower(t.trim())));
+            const pronBlank = parts.some(t => /(?:^|[^\p{L}])(?:me|te|se|nos|os)\s+_{2,}/iu.test(t));
+            const esc = x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const reflexiveUse = (w, text) =>
+                ctx.some(t => new RegExp(`(?:^|[^\\p{L}])(?:me|te|se|nos|os)\\s+${esc(w)}(?!\\p{L})`, 'iu').test(t)) ||
+                (pronAnswer && ctx.some(t => new RegExp(`_{2,}\\s+${esc(w)}(?!\\p{L})`, 'iu').test(t))) ||
+                (pronBlank && tokens(text).length === 1);
             for (const text of parts) {
                 for (const tok of tokens(text)) {
                     const w = lower(tok);
@@ -300,6 +313,18 @@ function targetTexts(e) {
                     // a deliberately wrong form of a met word (*asztalek*, *könyvok*)
                     if (!lemmas.length && [...firstAt].some(([m, p]) => p <= pos && m.length >= 4 && w.startsWith(m))) continue;
                     const cands = [w, ...lemmas];
+                    // Spanish reflexives: a list gives *ducharse*, the lexicon reads
+                    // *me ducho*/*nos acostamos* as *duchar*/*acostar*: count the -se
+                    // lemma only where the form is used reflexively (above): *Lo siento*
+                    // must not be met by *sentarse*. *acostarme*: infinitive + clitic.
+                    if (Lang.code() !== 'hu') {
+                        const verbs = lemmas.filter(l => /(ar|er|ir)$/.test(l));
+                        // every verb reading: *sientes* is *sentar* or *sentir*, and
+                        // a met *sentarse* says nothing about *sentirse*
+                        if (verbs.length && reflexiveUse(w, text) && verbs.every(l => metBy(l + 'se', pos))) continue;
+                        const inf = /^(.+?(?:ar|er|ir))(?:me|te|se|nos|os)$/.exec(w);
+                        if (inf) cands.push(inf[1], inf[1] + 'se');
+                    }
                     const at = Math.min(...cands.map(c => firstAt.has(c) ? firstAt.get(c) : Infinity));
                     if (at <= pos) continue;
                     if (lemmas.some(l => own.has(l))) continue;
