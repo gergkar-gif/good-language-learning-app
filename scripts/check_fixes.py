@@ -4,9 +4,10 @@ The reader writes its fixes as JSON (format: scripts/apply_replacements.py),
 one object per fix, with two more keys:
 
     "sure": false      the reader is unsure
-    "kind": "hungarian"  the fix changes Hungarian text (a sentence, option,
-                         form or screen example), as opposed to an English
-                         gloss, prompt, tag, challenge or screen wording
+    "kind": "target"   the fix changes target-language text (a sentence,
+                       option, form or screen example), as opposed to an
+                       English gloss, prompt, tag, challenge or screen
+                       wording ("hungarian", the HU pass's name, is the same)
 
 This applies the whole list to the working tree, runs check-content on the
 unit, and always restores the files. Each fix ends up in one of three lists:
@@ -15,8 +16,8 @@ unit, and always restores the files. Each fix ends up in one of three lists:
   check-content finding on its exercise (a length give-away, an unmet word,
   a copied item…);
 - review: it applies cleanly, but it is unsure or changes Hungarian; only
-  these need the reviewer's eye (readers propose wrong Hungarian a few
-  times a level);
+  these need the reviewer's eye (readers propose wrong target-language
+  text a few times a level);
 - auto: everything else.
 
     python scripts/check_fixes.py <course> <level> <unit id> <fixes.json>
@@ -74,7 +75,7 @@ def main():
     for n, f in enumerate(fixes):
         if n in rejected:
             continue
-        (review if f.get("sure") is False or f.get("kind") == "hungarian" else auto).append(f)
+        (review if f.get("sure") is False or f.get("kind") in ("target", "hungarian") else auto).append(f)
     stem = fix_path.with_suffix("")
     Path(f"{stem}.auto.json").write_text(json.dumps(auto, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     Path(f"{stem}.review.json").write_text(json.dumps(review, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

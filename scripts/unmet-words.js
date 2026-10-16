@@ -76,6 +76,14 @@ const NUMBER_ROOTS = {
          'harminc', 'negyven', 'ötven', 'hatvan', 'hetven', 'nyolcvan', 'kilencven', 'száz', 'ezer'],
 };
 
+// Words a course's vocabulary lists leave out because every lesson uses them
+// (Spanish lists have no articles, prepositions or clitics): always met.
+const FUNCTION_WORDS = {
+    es: new Set(('el la los las lo un una unos unas al del y e o u ni pero sino que qué como cómo cuando cuándo ' +
+        'donde dónde porque si sí no a ante con contra de desde en entre hacia hasta para por según sin sobre tras ' +
+        'me te se nos os le les muy más menos también tampoco ya tan').split(' ')),
+};
+
 // Course order: every stem with its position.
 const order = new Map();
 const levelOf = new Map();
@@ -167,6 +175,7 @@ function targetTexts(e) {
         const lang = Lang.code() === 'hu' ? 'hu' : 'es';
         ignore = new Set([].concat(ig.words || [], ig.all || [], ig[lang] || []).map(lower));
     } catch (e) { /* none */ }
+    const functionWords = FUNCTION_WORDS[Lang.code() === 'hu' ? 'hu' : 'es'] || new Set();
     const cache = new Map();
     const readingsOf = w => {
         if (!cache.has(w)) {
@@ -237,6 +246,18 @@ function targetTexts(e) {
     // learner, who taps unknown words in the Reader (decided by the user 2026-10-13).
     const extras = new Map();
     const addExtra = (stem, e) => { if (order.has(stem)) (extras.get(stem) || extras.set(stem, []).get(stem)).push(e); };
+    // Stricter, for cutting English out of a target sentence: mostly English
+    // function words, or under half its words in the target dictionary.
+    // A single word missing from the dictionary is an unknown target form
+    // (*horgászni*), not English, unless it is an instruction ("Complete:").
+    const INSTRUCTION = new Set('complete choose fill translate write read answer answers order match listen'.split(' '));
+    const plainEnglish = text => {
+        const ts = tokens(text).map(lower);
+        if (!ts.length) return false;
+        if (ts.every(t => INSTRUCTION.has(t))) return true;
+        if (ts.filter(t => ENGLISH.has(t)).length * 3 >= ts.length) return true;
+        return ts.length >= 3 && ts.filter(t => readingsOf(t).length).length * 2 < ts.length;
+    };
     const challenges = readJson(`content/${course}/curriculum/challenges.json`) || {};
     for (const [stem, c] of Object.entries(challenges.challenges || challenges)) {
         if (c && typeof c.target === 'string') addExtra(stem, { id: `${stem}:challenge`, prompt: [{ text: c.target }] });
@@ -256,12 +277,24 @@ function targetTexts(e) {
                     if (!(maybe && t.filter(o => isEnglish(o, pos)).length * 2 > t.length)) texts.push(...t);
                 } else if (!(maybe && isEnglish(t, pos))) texts.push(t);
             }
-            for (const text of texts) {
+            // English set inside target text (Spanish exercises): an instruction before a
+            // colon ("Complete the greeting: Buenos ___."), a stage direction in brackets
+            // ("(Meg answers about her own sister.)"), a scene line between " / ".
+            const parts = [];
+            for (const raw of texts) {
+                for (let seg of String(raw).split(/\s+\/\s+/)) {
+                    seg = seg.replace(/\(([^)]*)\)/g, (m, inner) => (plainEnglish(inner) ? ' ' : m));
+                    const lead = /^([^:]{2,80}):\s+([\s\S]+)$/.exec(seg);
+                    if (lead && plainEnglish(lead[1])) seg = lead[2];
+                    if (!plainEnglish(seg)) parts.push(seg);
+                }
+            }
+            for (const text of parts) {
                 for (const tok of tokens(text)) {
                     const w = lower(tok);
                     if (w.length < 2 || seen.has(w) || ignore.has(w) || names.has(w) || (tok[0] !== w[0] && capNames.has(w))) continue;
                     seen.add(w);
-                    if (own.has(w) || numberMet(w, pos)) continue;
+                    if (own.has(w) || numberMet(w, pos) || functionWords.has(w)) continue;
                     const lemmas = readingsOf(w);
                     if (!lemmas.length && tok[0] !== w[0]) continue;   // a name
                     // a deliberately wrong form of a met word (*asztalek*, *könyvok*)

@@ -17,8 +17,8 @@ phrases from its *own* grammar examples. A word seen only in another
 lesson's example, a tip or a story is not met. This applies to exercises
 (prompts, right answers, wrong options) and challenge targets. **Stories
 are exempt:** they should be a little challenging, and the learner taps
-unknown words in the Reader (user, 2026-10-13). `check-content.py` (`unmet-word`)
-checks lemmas, not forms: a form taught later (*-ba/-be*, *-on*, plural
+unknown words in the Reader (user, 2026-10-13). `check-content.py` (`unmet-word`, A1–A2 in every
+course) checks lemmas, not forms: a form taught later (*-ba/-be*, *-on*, plural
 possessed *-im*, a noun possessor *Anna kulcsa*) is yours to catch.
 `skills/<lang>.json` `taught_in` says where each grammar skill is taught.
 When your prompt gives a knowledge sheet (`scripts/prior_knowledge.py`),
@@ -54,7 +54,11 @@ it is known and is never presented as new.
 7. Vary items: no three items of the same shape in one lesson, no list
    entry repeated in a vocabulary file.
 
-## 3. Metadata (HU conventions)
+## 3. Metadata
+
+Examples are Hungarian; the rules hold for every course (Spanish: a choice
+between *yo/tú/él* or *este/ese/aquel* is that paradigm's grammar skill;
+*ser*/*estar* choices are the skill the wrong answer shows).
 
 - `teaches`: exactly one slug, the skill **a wrong answer shows**. Tested
   form → its grammar skill; tested word → unit vocabulary skill
@@ -85,8 +89,8 @@ it is known and is never presented as new.
   have a key"). Fix lists naming an option index quote the option's text;
   check that the text matches before editing.
 - Review items keep the skill they review. Open writing → unit vocabulary.
-- After any tag change: `python scripts/lock_tags.py hu a1/<unit id>
-  --update --reason "..."`. The skill list is frozen: never edit
+- After any tag change: `python scripts/lock_tags.py <course>
+  <level>/<unit id> --update --reason "..."`. The skill list is frozen: never edit
   `skills/*.json` or generated registries; if no skill fits, report it.
 
 ## 4. Screens, story, challenges
@@ -97,7 +101,7 @@ it is known and is never presented as new.
   no comparisons with languages other than English; a recap states what
   the earlier unit actually taught.
 - Story: natural lines (no odd negative questions); narration matches the
-  lines. A1 comprehension questions are in Hungarian with `questionEnglish`
+  lines. HU A1 comprehension questions are in Hungarian with `questionEnglish`
   and `optionsEnglish` (same order as `options`) on each question; the
   Reader shows an English toggle.
 - Glosses read right to an English speaker (*terem* = "large room", not
@@ -118,11 +122,11 @@ it is known and is never presented as new.
   blocks, fix its cause or stop and report its output.
 - Edit JSON text in place, keeping each file's formatting; don't change
   `id`, `type`, `stage`.
-- Commands: `python scripts/check-content.py hu a1 <unit id>` (fix every
+- Commands: `python scripts/check-content.py <course> <level> <unit id>` (fix every
   error; suspects fixed or accepted with a reason);
-  `node scripts/render_lesson.js hu <stems>` (read every screen; `!!`
+  `node scripts/render_lesson.js <course> <stems>` (read every screen; `!!`
   lines are errors; substitution items showing `[object Object]` is a known
-  render-script issue); `node scripts/audit-reader-coverage.js hu --story
+  render-script issue); `node scripts/audit-reader-coverage.js <course> --story
   <story stem> --top 0` (it names every "literal compound guess" word:
   report each with a gloss, `word | lemma | pos | gloss |`, for
   `scripts/fill-dictionary-gaps.py import`; the gloss is the lemma's
@@ -132,26 +136,121 @@ it is known and is never presented as new.
 
 ## 6. Defects found before (check each one)
 
-Taught misspelling via a glued blank · *-ba/-be* before a1-56 · *utcában*
-for *utcán* · harmony rule misstated (*fürdőszoba*, *i* as a front vowel) ·
-*az a* + noun (not taught in A1) · words from a later unit in options or
-challenge targets (*szép* before a1-32, *kérem* before a1-65) · plural
-possessed (*könyveim*) at A1 · *is* before a1-80 · *kell* glossed "must" ·
-repeated screens or checklists across lessons · duplicated vocabulary
-entries · `distractor_skills` left on a replaced option · `ds` on an
-ungrammatical option · two right answers through ellipsis · a recap screen
-contradicting its unit · comma splices in goal/checklist/canDo ·
-scenario not mentioning the target's object · lesson titles using forms
-not yet taught (*dolgaim*) · a verb whose meaning needs an object not yet
-taught (*hallgat* alone = "is silent") · false spelling claims (*hova* and
-*Hová* are the same word) · a screen rule its own tip contradicts · an English gloss that lets two
-verbs or conjugations fit ("take" for *kérem*/*veszem*: write "buy") · a
-question in reported speech ("Anna asks Meg where she is going") that lets
-the third-person option fit: quote the direct question. · a screen presenting a
-word or form an earlier unit taught as new (check `taught_in` and the
-earlier screens; say "You know …") · a consolidation item copying a lesson
-item (vary the words) · a wrong option whose fault is the person, not the
-form the item tests. · Readers' wrong Hungarian (HU A2): *amit olvasok* is right (a relative
-*amit* takes the indefinite verb; never "fix" it to *olvasom*); *ki* as a relative
-(*kollégám, ki …*) is literary-correct, so never use it as a wrong option;
-*Szabad vagy foglalt vagy?* is natural. · *fog* + infinitive word order: with nothing in focus the infinitive comes first (*valószínűleg pihenni fogok*, not *valószínűleg fogok pihenni*); *fog* comes first only when a focused word sits right before it (*Holnap fogok dolgozni*) · *meg-* is a perfective prefix, not a definiteness marker (*Vettem a kabátot* is right) · *El nem fogok menni* is acceptable emphatic Hungarian, so never use it as a wrong option · a grammar pattern taught in a lesson but tagged with a neighbouring skill (a2-140's hypothetical *ha* was tagged `nek-conditional` while its skill sat at B1): check that the pattern's own skill is taught where the lesson teaches it. · a review unit's screens presenting the units they review as new (open with "You know … from Unit N") · a story or comprehension question drilling a B1 form (*megkérte volna*): stories are exempt from met words, not from the level. · Plural possessed (HU A2): a2-13 teaches only the 3rd person singular (*szülei*, *testvérei*); *-aim/-eim*, *-aid*, *-aink*, *-aitok*, *-aik* first come in a2-191, so don't use them earlier (*barátaim*, *szüleimet*, *tetteinkért*, *szavaidat* were found in units 35–38). · *segít* takes the dative (*segítek neked*): *segítelek* is not standard, never teach it as a -lak/-lek example. · Wrong options and fixes: a wrong option must be a real error of one kind, not a second option with the same fault (*Látlak nem* / *Látlak téged nem*). · Text fixes in JSON: escape a double quote inside a string (`\"`); `apply_replacements.py` refuses a fix that leaves invalid JSON. · A foreign character keeps their own name order in Hungarian (*Carlos García*); only Hungarian names go family name first. · Time *-ig* at A1–A2 is known, not a B1 defect (user, 2026-10-15): *-tól … -ig* is taught in a1-154, and time words such as *sokáig*, *estig*, *vasárnapig*, *három hétig* are accepted; flag *-ig* only for a spatial end-point (*a hídig*) or when a screen presents it as new (`terminative-case-ig` is B1). · "You know … from Unit N": N is the unit number in `content/hu/curriculum/units/<level>.json`, not the lesson number (a2-13 is in Unit 3, a2-105 in Unit 21; A1 material: "from A1"). Readers in units 39–44 wrote "from Unit 13" for a2-13. · B1 participles hide in everyday service language (units 42–44 had ~40): *lévő*, *kapott*, *megadott*, *felírt*, *lepecsételt*, *vitatott*, *nyomtatott*, *-va/-ve* (*belépve*, *felírva*), *-andó* (*tárolandó*, *elzárva tartandó*). Use a finite verb or drop the modifier. A fixed word that a lesson lists in its vocabulary (*fájdalomcsillapító*, *lázcsillapító*, *szopogató*, *kapható*, *ellopott*) is A2 vocabulary, not a defect (user, 2026-10-15); forming participles from verbs stays B1. · Plain *X miatt* is A2 (user, 2026-10-15): taught with *miattam* on a2-199-a as a postposition; before a2-199 it is a defect, after it known. `causal-postpositions` (B1) covers *emiatt* and *következtében*. · A word listed in a lesson's vocabulary with its case (*büszke valamire*, *vigyáz valamire*) is an A2 chunk (user, 2026-10-15); the general verb-government pattern (`verb-government-ra-re` and siblings) stays B1, so don't drill new verbs with it. · A hint naming the tested ending (*buli + -ra*, *anya + -nak/-nek*) gives the answer away: name the word and its role (*buli, for*); `check-content` flags it at A1–B1 (`hint-suffix`; unit 47 had six). · Experiential *már* ("Have you ever …?": *Foglaltál már asztalt online?*) is B1 (`mar-experiential`); at A2 ask *Mikor …?* or use *már* = "already" with a plain past fact. · A new unit that recaps an earlier one must check the earlier screens for the same chunks: unit 47 presented *Boldog névnapot!*, *Isten éltessen!* (a2-184, Unit 37) and *meghívlak vacsorára* (a2-189, Unit 38) as new.
+Read § 6a and the section for your course.
+
+### 6a. Any course
+
+Taught misspelling via a glued blank · words from a later unit in options or
+challenge targets (*szép* before a1-32, *kérem* before a1-65) · repeated
+screens or checklists across lessons · duplicated vocabulary entries ·
+`distractor_skills` left on a replaced option · `ds` on an ungrammatical
+option · two right answers through ellipsis · a recap screen contradicting
+its unit · comma splices in goal/checklist/canDo · scenario not mentioning
+the target's object · lesson titles using forms not yet taught (*dolgaim*) ·
+a verb whose meaning needs an object not yet taught (*hallgat* alone = "is
+silent") · false spelling claims (*hova* and *Hová* are the same word) · a
+screen rule its own tip contradicts · an English gloss that lets two verbs
+or conjugations fit ("take" for *kérem*/*veszem*: write "buy") · a question
+in reported speech ("Anna asks Meg where she is going") that lets the
+third-person option fit: quote the direct question · a screen presenting a word or
+form an earlier unit taught as new (check `taught_in` and the earlier
+screens; say "You know …") · a consolidation item copying a lesson item
+(vary the words) · a wrong option whose fault is the person, not the form
+the item tests · a grammar pattern taught in a lesson but tagged with a
+neighbouring skill (a2-140's hypothetical *ha* was tagged `nek-conditional`
+while its skill sat at B1): check that the pattern's own skill is taught
+where the lesson teaches it · a review unit's screens presenting the units
+they review as new (open with "You know … from Unit N") · a story or
+comprehension question drilling a B1 form (*megkérte volna*): stories are
+exempt from met words, not from the level · Wrong options and fixes: a wrong
+option must be a real error of one kind, not a second option with the same
+fault (*Látlak nem* / *Látlak téged nem*) · Text fixes in JSON: escape a
+double quote inside a string (`\"`); `apply_replacements.py` refuses a fix
+that leaves invalid JSON · "You know … from Unit N": N is the unit number in
+`content/<course>/curriculum/units/<level>.json`, not the lesson number
+(a2-13 is in Unit 3, a2-105 in Unit 21; A1 material: "from A1"). Readers in
+units 39–44 wrote "from Unit 13" for a2-13 · A hint naming the tested ending
+(*buli + -ra*, *anya + -nak/-nek*) gives the answer away: name the word and
+its role (*buli, for*); `check-content` flags it at A1–B1 (`hint-suffix`;
+unit 47 had six) · A new unit that recaps an earlier one must check the
+earlier screens for the same chunks: unit 47 presented *Boldog névnapot!*,
+*Isten éltessen!* (a2-184, Unit 37) and *meghívlak vacsorára* (a2-189, Unit
+38) as new.
+
+### 6b. Hungarian
+
+*-ba/-be* before a1-56 · *utcában* for *utcán* · harmony rule misstated
+(*fürdőszoba*, *i* as a front vowel) · *az a* + noun (not taught in A1) ·
+plural possessed (*könyveim*) at A1 · *is* before a1-80 · *kell* glossed
+"must" · Readers' wrong Hungarian (HU A2): *amit olvasok* is right (a
+relative *amit* takes the indefinite verb; never "fix" it to *olvasom*);
+*ki* as a relative (*kollégám, ki …*) is literary-correct, so never use it
+as a wrong option; *Szabad vagy foglalt vagy?* is natural · *fog* +
+infinitive word order: with nothing in focus the infinitive comes first
+(*valószínűleg pihenni fogok*, not *valószínűleg fogok pihenni*); *fog*
+comes first only when a focused word sits right before it (*Holnap fogok
+dolgozni*) · *meg-* is a perfective prefix, not a definiteness marker
+(*Vettem a kabátot* is right) · *El nem fogok menni* is acceptable emphatic
+Hungarian, so never use it as a wrong option · Plural possessed (HU A2):
+a2-13 teaches only the 3rd person singular (*szülei*, *testvérei*);
+*-aim/-eim*, *-aid*, *-aink*, *-aitok*, *-aik* first come in a2-191, so
+don't use them earlier (*barátaim*, *szüleimet*, *tetteinkért*, *szavaidat*
+were found in units 35–38) · *segít* takes the dative (*segítek neked*):
+*segítelek* is not standard, never teach it as a -lak/-lek example · A
+foreign character keeps their own name order in Hungarian (*Carlos García*);
+only Hungarian names go family name first · Time *-ig* at A1–A2 is known,
+not a B1 defect (user, 2026-10-15): *-tól … -ig* is taught in a1-154, and
+time words such as *sokáig*, *estig*, *vasárnapig*, *három hétig* are
+accepted; flag *-ig* only for a spatial end-point (*a hídig*) or when a
+screen presents it as new (`terminative-case-ig` is B1) · B1 participles
+hide in everyday service language (units 42–44 had ~40): *lévő*, *kapott*,
+*megadott*, *felírt*, *lepecsételt*, *vitatott*, *nyomtatott*, *-va/-ve*
+(*belépve*, *felírva*), *-andó* (*tárolandó*, *elzárva tartandó*). Use a
+finite verb or drop the modifier. A fixed word that a lesson lists in its
+vocabulary (*fájdalomcsillapító*, *lázcsillapító*, *szopogató*, *kapható*,
+*ellopott*) is A2 vocabulary, not a defect (user, 2026-10-15); forming
+participles from verbs stays B1 · Plain *X miatt* is A2 (user, 2026-10-15):
+taught with *miattam* on a2-199-a as a postposition; before a2-199 it is a
+defect, after it known. `causal-postpositions` (B1) covers *emiatt* and
+*következtében* · A word listed in a lesson's vocabulary with its case
+(*büszke valamire*, *vigyáz valamire*) is an A2 chunk (user, 2026-10-15);
+the general verb-government pattern (`verb-government-ra-re` and siblings)
+stays B1, so don't drill new verbs with it · Experiential *már* ("Have you
+ever …?": *Foglaltál már asztalt online?*) is B1 (`mar-experiential`); at A2
+ask *Mikor …?* or use *már* = "already" with a plain past fact.
+
+### 6c. Spanish (es-es, es-latam; written 2026-10-16 before the Spanish pass, from the files and ROADMAP 148/150; add what the pass finds)
+
+- **es-latam has no *vosotros*** (AGENTS.md): no *vosotros*/*os* forms in
+  readings, screens, examples, exercises or challenges; *ustedes* for
+  plural "you" (`check-content` flags it: `latam-vosotros`). Only the verb
+  drill may keep *vosotros* for recognition. es-es teaches both.
+- **Course variants are deliberate:** es-latam *jugo* for es-es *zumo*,
+  *tomar* accepted beside *beber*, *ustedes* tables without the *vosotros*
+  row. A fix to such a line is per course: mark it `"variant": "es-es"`
+  (or `"es-latam"`) in the fix JSON so it is not mirrored.
+- **Forms before their screen** (`taught_in` in `skills/es.json`; the
+  knowledge sheet's "later" list): past tenses are A2 (`preterito-perfecto`
+  a2-01-01, `preterito-indefinido` a2-11-01), yet *ayer* sentences occur in
+  A1; `numbers` is taught in a1-10-02 (A1 unit 12) while *diez*, *siete*,
+  *nueve* appear from a1-08-02; *gusta/gustan* before a1-gustar-01.
+- **Prerequisite order (ROADMAP 148(i), user's sign-off pending):** five A1
+  pairs are exempted in `KNOWN_PREREQ_ORDER` (`adjective-agreement` ←
+  `plural`, `doler` ← `gustar`, `hay` ← `estar`, `ser` ←
+  `subject-pronouns`, `tener` ← `present-tense`). Report a lesson that
+  depends on the order; don't move `taught_in` or edit `skills/es.json`.
+- **Function words count as met** (articles, prepositions, conjunctions,
+  clitics, *muy/más/ya/tan*: Spanish vocabulary lists leave them out;
+  `scripts/unmet-words.js` FUNCTION_WORDS). Every other word must be met:
+  *otro*, *durante*, *alguien* are in no list, so replace them with met
+  words, or list them in the vocabulary of the first lesson that needs
+  them.
+- **English inside target fields** ("Complete the greeting: Buenos ___.",
+  "(Meg answers about her own sister.)", a scene line before " / ") is
+  the existing Spanish format; the unmet-word check skips it. Report it
+  only when it gives the answer away or contradicts `english`.
+- **Stems are not uniform** (`a1-01-01`, `a1-03c-03`,
+  `a1-demonstrative-01`); unit numbers for "You know … from Unit N" come
+  from `content/es-es/curriculum/units/<level>.json` (the knowledge sheet
+  prints them). es-es A2 has one unit more than es-latam
+  (unit 33 `vosotros`, the last), so unit numbers match in both courses.

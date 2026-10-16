@@ -115,10 +115,11 @@ IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|te
 SUSPECTS = {"hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
-# Hungarian A1-A2. Spanish lists leave out function words (en, que, con), so the
-# check would flag words every learner knows; and from B1 the lists don't try to
-# cover every word.
-UNMET_WORD = {"hu": {"a1", "a2"}}
+# A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
+# counts those as met (FUNCTION_WORDS) and cuts the English Spanish exercises
+# put inside target text (2026-10-16). From B1 the lists don't try to cover
+# every word.
+UNMET_WORD = {"hu": {"a1", "a2"}, "es-es": {"a1", "a2"}, "es-latam": {"a1", "a2"}}
 
 ENGLISH = set(("the an to are was were of and in on at for with my your his her its it i you she we they do does did "
                "not this that have what which who how why will would can could should there their from by or but if "

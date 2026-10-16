@@ -190,7 +190,7 @@ The commonest defects in shipped content. Each rule is here because a review fou
    - an opener or marker (*Sajnos*, *Mert*, *Porque*)
    - a " / " join
    - a capital letter, final punctuation or ending that sets one option apart
-6. **Plausible and real.** No absurd, rude or cartoonish options, and no non-words (unless the item is about spelling). Options use only taught words and forms, in the item's language (`unmet-word` checks the words at HU A1–A2; a length fix never brings in an unmet word). Glosses go in brackets: if one option has a gloss, all do.
+6. **Plausible and real.** No absurd, rude or cartoonish options, and no non-words (unless the item is about spelling). Options use only taught words and forms, in the item's language (`unmet-word` checks the words at A1–A2 in hu, es-es and es-latam; a length fix never brings in an unmet word). Glosses go in brackets: if one option has a gloss, all do.
 7. **Fact items:** wrong options are real, plausible, false facts of the same kind (another real city, another real year). The question asks only what the lesson's text contains.
 8. **Word-order items:** a wrong order must break an unambiguous rule of the language (the focus slot, verb position). If another order is also natural, accept it.
 9. After writing or replacing options, **re-read the question and each option in full**. Never carry options over from a neighbouring item.

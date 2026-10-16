@@ -55,6 +55,17 @@ def main():
     for i, (lv, u) in enumerate(units):
         for s in u.get("stems", []):
             unit_of[s] = i
+
+    def stem_of(name):
+        """The stem a screen id or file name belongs to: the longest stem it
+        starts with. HU screens are `<stem>-a-gr`, Spanish ones `<stem>-gr` or
+        `<stem>-<topic>-gr` (`a1-06-02-ar-verbs-gr`)."""
+        name = re.sub(r"-gr(\.json)?$", "", name)
+        best = None
+        for s in unit_of:
+            if (name == s or name.startswith(s + "-")) and (best is None or len(s) > len(best)):
+                best = s
+        return best
     # "You know … from Unit N": N is the unit's number within its level
     num = {}
     for i, (lv, u) in enumerate(units):
@@ -76,8 +87,7 @@ def main():
         if sk.get("kind") != "grammar" or sk.get("variant") not in (None, course):
             continue
         scr = sk.get("taught_in") or ""
-        m = re.match(r"(.+)-[a-z]-gr$", scr)
-        i = unit_of.get(m.group(1)) if m else None
+        i = unit_of.get(stem_of(scr)) if scr else None
         if i is None:
             if sk.get("level", "").lower() == next_level:
                 above.append(sk)
@@ -91,20 +101,23 @@ def main():
             later.append((i, line))
 
     words = {}
+    # lesson id = "lesson." + stem with "." for "-": lesson.a1.16a, lesson.a1.01.01
+    by_lid = {"lesson." + s.replace("-", "."): s for s in unit_of}
     for lemma, lid in ((read(f"content/{course}/indexes/word-lesson-index.json") or {}).get("byLemma") or {}).items():
-        parts = lid.split(".")      # lesson.a1.16a
-        i = unit_of.get(f"{parts[1]}-{parts[2]}") if len(parts) == 3 else None
+        i = unit_of.get(by_lid.get(lid))
         if i is not None and i < pos:
             words.setdefault(i, []).append(lemma)
 
     titles = {}
-    for i in range(pos):
-        lv, un = units[i]
-        for stem in un.get("stems", []):
-            for ab in "ab":
-                g = read(f"content/{course}/grammar/{lv}/{stem}-{ab}-gr.json")
-                if isinstance(g, dict) and g.get("title"):
-                    titles.setdefault(i, []).append(f"{stem}-{ab} {g['title']}")
+    for lv in sorted({lv for lv, _ in units[:pos]}, key=LEVELS.index):
+        for f in sorted((ROOT / f"content/{course}/grammar/{lv}").glob("*-gr.json")):
+            i = unit_of.get(stem_of(f.name))
+            if i is None or i >= pos:
+                continue
+            g = read(f.relative_to(ROOT))
+            if isinstance(g, dict) and g.get("title"):
+                titles.setdefault(i, []).append((units[i][1]["stems"].index(stem_of(f.name)), f"{f.name[:-8]} {g['title']}"))
+    titles = {i: [x for _, x in sorted(v)] for i, v in titles.items()}
 
     u = units[pos][1]
     lines = [f"# Before {course} {level.upper()} Unit {num[pos]} `{unit_id}` ({', '.join(u.get('stems', []))})", "",

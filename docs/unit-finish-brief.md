@@ -80,7 +80,7 @@ it and say so.
      of the lesson uses. Use it in an existing exercise (a matching pair, an
      option, a sentence), or accept if the list is a review list and the
      word is drilled earlier in the unit.
-   - `unmet-word` (HU A1–A2): a word whose lemma is in no vocabulary list
+   - `unmet-word` (A1–A2, all courses): a word whose lemma is in no vocabulary list
      and no grammar screen at or before the lesson (`scripts/unmet-words.js`,
      which looks every word up the way the Reader does). Replace it with a
      met word. Accept only where the unknown word is the point (a line the

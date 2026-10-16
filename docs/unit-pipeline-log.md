@@ -10,60 +10,97 @@ to the next units. Repeated defects go into `docs/unit-agent-rules.md`
 § 6 at once; a recurring problem gets a script (§ "Script recurring
 problems").
 
-## Pipeline (current, as HU A1 was finished 2026-10-13/14)
+## Pipeline (current: the HU A2 method, course-neutral, 2026-10-16)
 
 Read this before working on any unit. Agents read only
 `docs/unit-agent-rules.md`; the reviewer (Claude) runs the steps below.
+Every script here takes `<course> <level>` and works for hu, es-es and
+es-latam. The HU A1 pass used regeneration first (route B); HU A2 used
+read-first (route A), which costs about half per unit on real content.
 
-0. **Knowledge sheet** for each unit (from 2026-10-14):
-   `python scripts/prior_knowledge.py <course> <level> <unit id> --out
-   <worktree>/prior-<unit id>.md`: known grammar and words by unit, every
-   earlier screen title, what this unit teaches, what comes later. Give
-   its path to the regenerating and the reading agent instead of "read the
-   earlier units" (~7k tokens a unit).
-1. **Regenerate two units per Sonnet agent** (a pair costs ~119k a unit
-   against 160–267k single; the second unit re-teaches the first's
-   material more often, so the prompt points at both units' sheets and
-   says "recap, never new"). Real, decent content can go read-first
-   instead (step 2, then decide). Each agent works in its own worktree:
-   `git worktree add --detach /home/user/parlour-<job> HEAD`, removed after.
-2. **Take each commit:** `python scripts/take_unit_commit.py hu a1 <unit
-   id> <commit>` (cherry-picks, resolves the `challenges.json` and
-   `word-lesson-index.json` conflicts, runs the checks).
-3. **Paired blind read** by one Sonnet agent (report only, ~83–108k a
-   unit). From 2026-10-14 the reader also writes its fixes as JSON, one
-   file per unit (`<worktree>/fixes-<unit id>.json`, format in
-   `scripts/apply_replacements.py`: exact `old`/`new` text or an `id` with
-   `set` fields; every fix carries the exercise `id`, `"kind":
-   "hungarian"` when it changes Hungarian, `"sure": false` when unsure).
-4. **Check the fixes by script:** `python scripts/check_fixes.py <course>
-   <level> <unit id> <fixes.json>` applies them to a scratch state, runs
-   check-content, restores the files, and splits them into rejected (no
-   exact match, or a new finding on its exercise), review (Hungarian or
-   unsure) and auto. **Read only the review list and the report's
-   non-fix notes**; readers propose wrong Hungarian a few times per level
-   (*Nem van tej*, *szürkét*). Record the outcome in
-   `imports/review/sonnet-reads/<course>-<level>-<unit id>.md` (Applied /
-   Not taken with reasons).
-5. **Apply:** `python scripts/apply_replacements.py <fixes>.auto.json`,
-   then the review file after deleting what you don't take. No Haiku
-   fixer needed when the reader's JSON is good; for a list without JSON,
-   write the JSON yourself (short lists) or give it to Haiku (long ones).
-6. **Check after every hand edit**, not only at freeze:
-   `python scripts/check-content.py <course> <level> <unit id>`; then
-   `lock_tags.py --update`, `freeze_unit.py` (`--accept
-   "<check>:<id>:<reason>"` for deliberate suspects), commit, push.
-   Refreezing a frozen unit keeps its earlier reason and accepted
-   findings; `--unfreeze` drops them, so pass them again with
-   `--accept` (keep each batch's accept list). Before committing a batch,
-   also run `python scripts/validate-content.py --warnings` and compare the
-   level's lines with origin/master: warnings never fail, so a retag that
-   leaves a skill under 6 exercises passes `--changed` silently (units
-   29–34 did this to `a2-review-work-past-opinions-vocab`; found only at
-   the level checklist).
-7. **Every 2 units:** process review below; a repeated defect goes into
-   `docs/unit-agent-rules.md` § 6 the same day, and anything recurring
-   gets a script (below).
+**Choose the route per unit.** Route A (read-first) for real content.
+Route B (regenerate, then read) for template stubs, or when a read finds
+the unit beyond fixing (HU A1 unit 16: 40+ defects). Units missing from
+the course are written from scratch with the "New unit" template (HU A2
+units 45–47: ~361k a unit, ~19 fixes a unit afterwards).
+
+**Spanish: one read for both courses.** es-es and es-latam share most
+lesson files byte for byte (A1: 147 of 156 exercise files, 115 of 134
+screens); the rest differ on purpose (*vosotros*/*os* forms in es-es,
+*ustedes*, *jugo*, *tomar* in es-latam). Read the unit in **es-es**,
+filter its fixes, then `python scripts/mirror_fixes.py <fixes> es-es
+es-latam <out>`: it copies every fix whose text or id matches the sibling
+file and lists the rest in `<out>.unmatched.json`. Read the unmatched list
+and the es-latam-only files yourself (`cmp` the unit's files first; es-es A2
+has one unit more, its last, `vosotros`, which has no es-latam copy). Then run
+`check_fixes.py`, apply, lock, check, walk and freeze **per course**:
+frozen state, accepted findings and tag locks are per course.
+
+### Route A: read-first batch (HU A2, 2026-10-14 → 2026-10-15)
+
+0. **Knowledge sheets:** `python scripts/prior_knowledge.py <course>
+   <level> <unit id> --out <worktree>/prior-<unit id>.md` for every unit
+   (known grammar and words by unit, earlier screen titles, what this unit
+   teaches, what comes later, same-family skills of the next level). ~7k
+   tokens a unit; replaces "read the earlier units". Spanish sheets work
+   since 2026-10-16 (the script read only HU screen ids before, and also
+   missed HU screens such as `a1-16a-gr`, `a1-102-def-gr`).
+1. **Readers:** two Sonnet readers at once, **three units each** (two
+   when units are heavy; cost tracks the units' defects, not the count:
+   ~113–145k a unit), one worktree each (`git worktree add --detach
+   /home/user/parlour-read-a origin/master`, removed after), the
+   "Read, paired" template below. Each reader writes per unit a fixes
+   JSON, a challenges JSON (one challenge per lesson, consolidation
+   included) and a report. **The harness often refuses the report write:
+   save the report from the reader's reply** before anything else (the
+   container can restart).
+2. **Sort each fix list:** `python scripts/check_fixes.py <course>
+   <level> <unit id> <fixes.json>` → rejected / review / auto. Read only
+   the review list (target-language and unsure fixes) and the report's
+   non-fix notes; readers propose wrong target-language text a few times a
+   batch (rulebook § 6). Delete what you don't take from the review file.
+3. **Merge and apply:** `python scripts/merge_fixes.py <batch>/merged.json
+   <each .auto.json and filtered .review.json>` (refuses when two readers
+   fixed one item differently), then `python scripts/apply_replacements.py
+   <batch>/merged.json`. Spanish: mirror here (above).
+4. **Dictionary:** the readers' compound glosses (report group 5) through
+   `python scripts/fill-dictionary-gaps.py import <reply.txt> <lang>`;
+   it stores each under its lemma, so remove a gloss that only fits the
+   inflected form (*barátnő* "with her girlfriends").
+5. **Left over by hand:** remaining check-content errors and unmet-word
+   suspects (a Sonnet fixer when there are many: HU units 42–44 had ~250,
+   212k), then `python scripts/add_challenges.py <course> <level>
+   <challenges.json>` per unit (it checks fields, level and `canDo`;
+   check-content then reports unmet words in targets).
+6. **Check, lock, freeze:** `python scripts/check-content.py <course>
+   <level> <unit id>` after every hand edit; `python scripts/lock_tags.py
+   <course> <level>/<unit id> --update --reason "..."`; `python
+   scripts/validate-content.py --changed`; then `python
+   scripts/validate-content.py --warnings` and compare the level's lines
+   with origin/master (warnings never fail, so a retag that leaves a
+   skill under 6 exercises passes `--changed` silently: units 29–34 did
+   this to `a2-review-work-past-opinions-vocab`, found only at the level
+   checklist); `python scripts/freeze_unit.py <course> <level> <unit id>
+   --reason "..." --accept "<check>:<id>:<why>"` for each deliberate
+   suspect (consolidation replays, characters' names). Keep each batch's
+   accept list in the batch folder: `--unfreeze` drops a unit's accepted
+   findings, so a later unfreeze must pass them again.
+7. **Records:** fix lists, reports, challenge drafts and accept lists in
+   `imports/review/<course>-<level>-batch-<units>/`; a measurements row;
+   a process review per batch (what recurred goes into rulebook § 6 the
+   same day, anything seen twice gets a script, below). Commit, push.
+8. **Walk:** `node scripts/walk_lessons.js <course> <level> --only
+   <stems> --jobs 4` with `python scripts/dev-server.py 8131` running,
+   after the first frozen units of a new course (an engine defect hits
+   every lesson) and at the level checklist.
+
+### Route B: regenerate, then read (HU A1, 2026-10-13)
+
+Two units per Sonnet regenerator ("Regenerate" template; ~119k a unit
+paired), each in its own worktree; take each commit with `python
+scripts/take_unit_commit.py <course> <level> <unit id> <commit>`
+(cherry-pick plus the `challenges.json` and `word-lesson-index.json`
+conflicts); then a paired blind read and steps 2–7 of route A.
 
 At most 2 agents at once (CLAUDE.md). Never let an agent bypass hooks.
 
@@ -96,7 +133,7 @@ and write a Python script, in the same session:
 ### Who does what: model choice (measured on HU A1)
 
 (From 2026-10-14 the reader's JSON plus `check_fixes.py` replaces the
-Haiku fixer for most lists; see Pipeline steps 3–5. Measure the first A2
+Haiku fixer for most lists; see Pipeline route A steps 2–3. Measure the first A2
 pairs against the A1 rows before trusting the saving.)
 
 
@@ -203,7 +240,7 @@ Units (read all; a later unit must not present an earlier one's material as new:
 - `hu a2 {U2}`: (same pattern)
 - `hu a2 {U3}`: (same pattern; omit this line for a pair)
 
-Read `{W}/docs/unit-agent-rules.md` first; it is your rulebook (open other docs only to settle a point it doesn't cover; it says "a1" in command examples: use `a2`). Read each knowledge sheet before its unit: anything listed there presented as new is a defect, and anything in its "Same family … taught at B1" list that the unit presents or drills is a defect too (report it: either the lesson goes beyond A2 or the skill's level is wrong). Run its § 5 commands for every unit (`python scripts/check-content.py hu a2 <unit id>`, `node scripts/render_lesson.js hu <stems>`, `node scripts/audit-reader-coverage.js hu --story <story stem> --top 0`). Read every exercise, screen, goal, checklist, speaking step and the story as rendered, checking § 1–4 and every item of § 6. Also write a fix for every check-content ERROR (length give-aways: make the wrong options as long as the right one, or shorten the right one, with met words and one fault each; shared checklist lines: reword one). Suspects: fix unmet words in options/prompts with met words; leave consolidation copies and characters' names alone. Do NOT report: missing Listening groups or exercise counts below the brief's numbers (course-wide, parked); vocabulary lists re-listing earlier words; sentence-builder alternative orders.
+Read `{W}/docs/unit-agent-rules.md` first (§ 1–5, § 6a and § 6b); it is your rulebook (open other docs only to settle a point it doesn't cover; it says "a1" in command examples: use `a2`). Read each knowledge sheet before its unit: anything listed there presented as new is a defect, and anything in its "Same family … taught at B1" list that the unit presents or drills is a defect too (report it: either the lesson goes beyond A2 or the skill's level is wrong). Run its § 5 commands for every unit (`python scripts/check-content.py hu a2 <unit id>`, `node scripts/render_lesson.js hu <stems>`, `node scripts/audit-reader-coverage.js hu --story <story stem> --top 0`). Read every exercise, screen, goal, checklist, speaking step and the story as rendered, checking § 1–4 and every item of § 6. Also write a fix for every check-content ERROR (length give-aways: make the wrong options as long as the right one, or shorten the right one, with met words and one fault each; shared checklist lines: reword one). Suspects: fix unmet words in options/prompts with met words; leave consolidation copies and characters' names alone. Do NOT report: missing Listening groups or exercise counts below the brief's numbers (course-wide, parked); vocabulary lists re-listing earlier words; sentence-builder alternative orders.
 
 Known false positives (don't report): *Szabad vagy foglalt vagy?* (natural); *ki* as a literary relative is acceptable Hungarian, so never propose it as a wrong option; a wrong option must never be a possible true answer (*szekrényen* for where clothes are); consolidation items reusing lesson items (the user wants replays). A2 focus: past tense and definite/indefinite conjugation used before taught (see `taught_in` in `skills/hu.json` and the sheet's "later" list); cases taught later (-hoz a2-31, -nál a2-13, -ra/-re a2-29, translative a2-171); plural possessed (-aim, -ai) before a2-13/a2-191; wrong `teaches` (a tested form → its grammar skill, a tested word → the unit vocabulary skill); `distractor_skills` on ungrammatical options; screens restating known A1 material as new.
 
@@ -211,6 +248,16 @@ Write one challenge per lesson of each unit, consolidation included (six per uni
 
 Give your full report (the four groups above, plus a 5. Dictionary group: every "literal compound guess" or "not in the dictionary" word from the audit as `word | lemma | pos | gloss |`, one per line, the gloss being the lemma's meaning, never the inflected form's: `fill-dictionary-gaps.py import` stores it under the lemma) as your final reply. Try to write it to `{W}/{REPORT}` first; the harness may refuse a subagent's report file (it did in units 35–38), and then the reply is the only copy, so make it complete. With three units, finish and write each unit's fixes and challenges files before starting the next unit.
 ```
+
+**Read, Spanish (es-es read once, mirrored to es-latam; written 2026-10-16, not yet run).** The HU template above with these changes; measure the first batch against the HU A2 rows before trusting the cost. Fill the same placeholders with `es-es <level>` lines, stems as in `content/es-es/curriculum/units/<level>.json` (A1 stems are not uniform: `a1-01-01`, `a1-03c-03`, `a1-demonstrative-01`), stories from `content/es-es/stories/manifest.json`. Replace in the template:
+
+- "the Hungarian A2 course" → "the Spanish `{LEVEL}` course (es-es, Spain; a sibling course es-latam shares most files and gets your fixes copied by script)";
+- the rulebook line: "Read `{W}/docs/unit-agent-rules.md` § 1–5, § 6a and § 6c (skip § 6b, Hungarian)";
+- the § 5 commands with `es-es` and the level; `"kind": "target"` for fixes that change Spanish;
+- the "Known false positives" and "A2 focus" paragraphs with: "Focus: forms used before their screen (`taught_in` in `skills/es.json`; the sheet's 'later' list): past tenses at A1 (all are A2: `preterito-perfecto` a2-01-01, `preterito-indefinido` a2-11-01; *ayer* appears 13 times in es-es A1), numbers before a1-10-02 (`numbers`, A1 unit 12; *diez*, *siete*, *nueve* earlier), *gusta/gustan* before a1-gustar-01; § 6c. A fix that only holds in Spain (*vosotros*, *zumo*, *coger*) is marked `\"variant\": \"es-es\"` in its JSON so the reviewer doesn't mirror it.";
+- challenges: `level` the level, the people of the es-es stories (Carlos and Meg at A1); setting as the unit's own (an es-latam challenge setting is decided per course: ROADMAP 150, open).
+
+Afterwards: as HU, plus `mirror_fixes.py` on each filtered list (route A, "Spanish"), and the es-latam-only files read by the reviewer.
 
 **New unit (from scratch; written 2026-10-14 for HU A2 units 45–47).** Fill `{W}` (the agent's worktree), `{SHEET}` (`prior_knowledge.py` output), `{UID}`, `{TITLE}`, `{NUM}`, `{S1}`…`{S5}` (lesson stems), `{PLAN}` (from `docs/hu-a1-a2-cefr-gap-proposal.md`) and `{EXTRA}` (unit-specific notes). Add the unit's row to the unit table and its vocabulary skill to `skills/<lang>.json` / `frozen-<lang>.json` in the agent's worktree before it starts (the validator needs both, and they go in the same commit as the lessons). Then run `python3 build-manifest.py` there (curriculum.json is generated from the unit table; until it is rebuilt, `build_word_lesson_index.py` skips the unit, and in units 45–46 the writers' unmet-word checks ran without their own words) and revert its es-* drift.
 
