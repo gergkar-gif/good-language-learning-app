@@ -20,3 +20,5 @@ Baseline check-content (before the read), errors / suspects:
 - naming-things: exercise files differing es-es vs es-latam: 0 of 6
 - describing-people: exercise files differing es-es vs es-latam: 0 of 6
 - family: exercise files differing es-es vs es-latam: 1 of 6
+- Reader B: 238,246 tokens, 40 tool uses, 10.4 min (03:09:17-03:19:05), 48 + 30 fixes proposed
+- Reader A: 228,856 tokens, 34 tool uses, 11.1 min (03:09:17-03:19:47), 52 + 36 fixes proposed

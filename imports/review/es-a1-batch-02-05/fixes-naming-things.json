@@ -1,0 +1,443 @@
+[
+  {
+    "file": "content/es-es/exercises/a1/a1-03-01-ex.json",
+    "id": "a1-03-01.ex01",
+    "set": {
+      "options": [
+        "Me llamo Carlos.",
+        "Me llamo de Carlos.",
+        "Me llamas Carlos."
+      ]
+    },
+    "why": "wrong options 'Soy Carlos de.' and 'Carlos llamo.' were scrambled, with more than one fault each",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-01-ex.json",
+    "id": "a1-03-01.ex02",
+    "set": {
+      "options": [
+        "Meg es de Sudáfrica.",
+        "Meg soy de Sudáfrica.",
+        "Meg eres de Sudáfrica."
+      ]
+    },
+    "why": "unmet 'está' (estar, unit 8)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-01-ex.json",
+    "id": "a1-03-01.ex12",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Qué es?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Es una foto.",
+        "Es un foto.",
+        "Son una foto."
+      ]
+    },
+    "why": "unmet 'esto' (a1-05-02); 'Es un fotos.' broke gender and number",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-01-ex.json",
+    "id": "a1-03-01.ex13",
+    "set": {
+      "options": [
+        "Son unas fotos.",
+        "Son unos fotos.",
+        "Es unas fotos."
+      ]
+    },
+    "why": "'Es una fotos.' and 'Son un foto.' each broke two things",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-03-01-indefinite-gr.json",
+    "old": "\"content\": \"Use *un* or *una* for one thing and *unos* or *unas* for more than one. The article agrees with the noun.\"",
+    "new": "\"content\": \"Use *un* or *una* for one thing and *unos* or *unas* for more than one. The article agrees with the noun. Most nouns add *-s* in the plural (*libro*, *libros*), and *es* becomes *son* when you name more than one thing (*Son unos amigos*).\"",
+    "why": "plural nouns (a1-03c-03) and 'son' are used from this lesson (unos libros, ¿Qué son?, Son unas fotos) but never taught",
+    "kind": "target",
+    "sure": false
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-02-ex.json",
+    "id": "a1-03-02.ex03",
+    "set": {
+      "sentence": "__, soy Meg.",
+      "answer": "Encantada"
+    },
+    "why": "glued blank 'Encantad__' + a (taught a stem that is not a word; checker: unmet 'encantad')",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-02-ex.json",
+    "id": "a1-03-02.ex06",
+    "set": {
+      "options": [
+        "un",
+        "una",
+        "unos"
+      ]
+    },
+    "why": "'unas' broke gender and number",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-02-ex.json",
+    "id": "a1-03-02.ex07",
+    "set": {
+      "options": [
+        "una",
+        "un",
+        "unas"
+      ]
+    },
+    "why": "'unos' broke gender and number",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-02-ex.json",
+    "id": "a1-03-02.ex11",
+    "set": {
+      "options": [
+        "una hermana",
+        "un hermana",
+        "unas hermana"
+      ]
+    },
+    "why": "'unos hermana' broke gender and number",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-03-03-definite-gr.json",
+    "old": "\"spanish\": \"Las fotos son bonitas.\",\n          \"english\": \"The photos are nice.\"",
+    "new": "\"spanish\": \"Las fotos son de Meg.\",\n          \"english\": \"The photos are Meg's.\"",
+    "why": "'bonitas' first taught a1-03c-03",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-03-ex.json",
+    "id": "a1-03-03.ex11",
+    "set": {
+      "sentence": "__ libros.",
+      "english": "The books."
+    },
+    "why": "'países' is an irregular plural (accent lost) not taught before a1-03c-03",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-03-ex.json",
+    "id": "a1-03-03.ex16",
+    "set": {
+      "options": [
+        "Las fotos son de Meg.",
+        "Los fotos son de Meg.",
+        "La fotos son de Meg."
+      ]
+    },
+    "why": "'bonitas' unmet",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-03-03-definite-gr.json",
+    "old": "\"content\": \"Compare *un libro* with *el libro*: the first introduces a book; the second refers to a specific book.\"",
+    "new": "\"content\": \"Compare *un libro* with *el libro*: the first introduces a book; the second refers to a specific book. *Está* and *están* (is, are, for where things are) appear in the examples; you will study *estar* in Unit 8.\"",
+    "why": "está/están are used (examples, ex04, ex09, ex12, ex13, speaking) with no explanation; estar is A1 unit 8"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-04-ex.json",
+    "id": "a1-03-04.ex04",
+    "set": {
+      "options": [
+        "¿Cómo es Daniela?",
+        "¿Dónde es Daniela?",
+        "¿Quién es Daniela?"
+      ]
+    },
+    "why": "unmet 'cuántos'; '¿Cuántos es Daniela?' also ungrammatical",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-04-ex.json",
+    "id": "a1-03-04.ex08",
+    "set": {
+      "sentence": "Carlos es __.",
+      "answer": "simpático"
+    },
+    "why": "glued blank 'simpát___' + ico (stem is not a word; unmet 'simpát', 'ico')",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-04-ex.json",
+    "id": "a1-03-04.ex13",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cómo es Carlos?"
+        },
+        {
+          "speaker": "Daniela",
+          "text": "_____"
+        }
+      ]
+    },
+    "why": "Carlos described himself in the third person ('Carlos es simpático'); Daniela answers, as in ex12 and a1-03-05"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-04-ex.json",
+    "id": "a1-03-04.ex15",
+    "set": {
+      "template": [
+        {
+          "prompt": "Describe two men.",
+          "answer": "Son altos. / Son simpáticos."
+        },
+        {
+          "prompt": "Describe two women.",
+          "answer": "Son altas. / Son simpáticas."
+        }
+      ]
+    },
+    "why": "'Describe two people with a mixed group' was unclear English, and the masculine-for-mixed-group rule is never taught",
+    "kind": "target",
+    "sure": false
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-05-ex.json",
+    "id": "a1-03-05.ex06",
+    "set": {
+      "options": [
+        "Carlos es un chico alto.",
+        "Carlos es un chico alta.",
+        "Carlos es un chico altos."
+      ]
+    },
+    "why": "'Carlos es una chica alto.' broke article/noun and adjective",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-05-ex.json",
+    "id": "a1-03-05.ex08",
+    "set": {
+      "english": "He is a boy. (Say what he is like.)"
+    },
+    "why": "english says 'tall' but answers accept simpático, serio, joven, guapo...; english now fits every accepted answer"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-05-ex.json",
+    "id": "a1-03-05.ex10",
+    "set": {
+      "question": "In the story, what are Meg and Carlos looking at?",
+      "options": [
+        "Objects on a table and a family photo.",
+        "A map of Hanoi and a train ticket.",
+        "A menu from a Mexican restaurant."
+      ]
+    },
+    "why": "Reading item did not test the story (it was a vocabulary question already in the practice group)"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-05-ex.json",
+    "id": "a1-03-05.ex11",
+    "set": {
+      "english": "They are friends. (Say what they are like.)"
+    },
+    "why": "english says 'friendly' but answers accept altos, serios, jóvenes...; english now fits every accepted answer"
+  },
+  {
+    "file": "content/es-es/lessons/a1/a1-03-05.json",
+    "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can introduce and identify a person.\",",
+    "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can identify a person with an article and an adjective.\",",
+    "why": "lesson never practises introducing (no presentar); overlaps unit 2's 'introduce another person'"
+  },
+  {
+    "file": "content/es-es/lessons/a1/a1-03-05.json",
+    "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can introduce and identify a person.\",",
+    "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can identify a person with an article and an adjective.\",",
+    "why": "as above"
+  },
+  {
+    "file": "content/es-es/stories/original/a1/a1-things.json",
+    "old": "Sí, guardar el libro y el teléfono en la mochila.",
+    "new": "Sí, guardamos el libro y el teléfono en la mochila.",
+    "why": "ungrammatical bare infinitive; the audio must be regenerated after this text change",
+    "kind": "target",
+    "sure": false
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-consolidation-ex.json",
+    "id": "a1-03-consolidation.ex01",
+    "set": {
+      "question": "Which phrase means \"a house\"?",
+      "options": [
+        "una casa",
+        "un casa",
+        "unas casa"
+      ]
+    },
+    "why": "copy of a1-03-01.ex06",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-consolidation-ex.json",
+    "id": "a1-03-consolidation.ex02",
+    "set": {
+      "question": "Which phrase means \"the books\"?",
+      "options": [
+        "los libros",
+        "las libros",
+        "el libros"
+      ]
+    },
+    "why": "copy of a1-03-03.ex07 (checker)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-consolidation-ex.json",
+    "id": "a1-03-consolidation.ex04",
+    "set": {
+      "question": "Which sentence correctly describes Daniela?",
+      "options": [
+        "Daniela es simpática.",
+        "Daniela es simpático.",
+        "Daniela son simpática."
+      ]
+    },
+    "why": "copy of a1-03-04.ex06",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-consolidation-ex.json",
+    "id": "a1-03-consolidation.ex06",
+    "set": {
+      "options": [
+        "Meg es una chica simpática.",
+        "Meg es una chica simpático.",
+        "Meg es una chica simpáticas."
+      ]
+    },
+    "why": "copy of a1-03-04.ex07; 'Meg es un chico alta.' broke two things",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-consolidation-ex.json",
+    "id": "a1-03-consolidation.ex10",
+    "set": {
+      "options": [
+        "unos amigos altos",
+        "unos amigos alta",
+        "unas amigos altos"
+      ]
+    },
+    "why": "identical to a1-03-04.ex16",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-consolidation-ex.json",
+    "id": "a1-03-consolidation.ex11",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Quién es él?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Es un chico simpático.",
+        "Es una chico simpático.",
+        "Es un chico simpáticos."
+      ]
+    },
+    "why": "copy of a1-03-05.ex12; 'Es un chica amable.' type options",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-consolidation-ex.json",
+    "id": "a1-03-consolidation.ex12",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Qué es?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ]
+    },
+    "why": "unmet 'esto'",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-consolidation-ex.json",
+    "id": "a1-03-consolidation.ex13",
+    "set": {
+      "options": [
+        "Es una chica alta.",
+        "Es una chica.",
+        "Es un chico alto."
+      ]
+    },
+    "why": "the marked-correct answer 'Es una chica.' does not say the girl is tall; only two options",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-consolidation-ex.json",
+    "id": "a1-03-consolidation.ex14",
+    "set": {
+      "template": [
+        {
+          "prompt": "Name a specific object.",
+          "answer": "El libro. / La foto."
+        },
+        {
+          "prompt": "Describe it simply.",
+          "answer": "Es pequeño. / Es pequeña."
+        }
+      ]
+    },
+    "why": "unmet 'bonito' (a1-03c-03)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03-consolidation-ex.json",
+    "id": "a1-03-consolidation.ex16",
+    "set": {
+      "options": [
+        "Es un chico simpático.",
+        "Es una chico simpático.",
+        "Es un chico simpática."
+      ]
+    },
+    "why": "identical to a1-03-05.ex16",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/lessons/a1/a1-03-consolidation.json",
+    "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can use articles with familiar nouns.\",",
+    "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can choose the right article for a noun.\",",
+    "why": "checklist-shared with a1-03c-consolidation"
+  },
+  {
+    "file": "content/es-es/lessons/a1/a1-03-consolidation.json",
+    "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can use articles with familiar nouns.\",",
+    "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can choose the right article for a noun.\",",
+    "why": "checklist-shared with a1-03c-consolidation"
+  }
+]

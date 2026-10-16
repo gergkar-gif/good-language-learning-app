@@ -1,0 +1,600 @@
+[
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-01-ex.json",
+    "id": "a1-03c-01-g02",
+    "set": {
+      "answers": [
+        "joven"
+      ]
+    },
+    "why": "english pins 'young' but 7 answers accepted"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-01-ex.json",
+    "id": "a1-03c-01-g03",
+    "set": {
+      "sentence": "Meg es ____.",
+      "answer": "simpática",
+      "hint": "simpático"
+    },
+    "why": "glued blank 'simpátic__'; blank the whole word",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-01-ex.json",
+    "id": "a1-03c-01-d01",
+    "set": {
+      "options": [
+        "Es joven y simpática.",
+        "Es de Hungría.",
+        "Es joven y simpático."
+      ],
+      "teaches": [
+        "adjective-agreement"
+      ]
+    },
+    "why": "wrong option 'Tiene treinta años.' uses unmet tener/treinta/años (numbers a1-10-02) and fails like 'Es de Hungría.'; make it a one-fault form",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-01-ex.json",
+    "id": "a1-03c-01-d03",
+    "set": {
+      "question": "Ana: ¿Cómo es Meg? / Carlos: _____"
+    },
+    "why": "Meg answers a question about 'Meg' in third person",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-01-ex.json",
+    "id": "a1-03c-01-g07",
+    "set": {
+      "options": [
+        "Andreas es bajo.",
+        "Andreas son bajo.",
+        "Andreas eres bajo."
+      ]
+    },
+    "why": "'Andreas es baja.' tests agreement, not ser (two skills); use a ser fault",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-01-ex.json",
+    "id": "a1-03c-01-w01",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say that Ana is young.",
+          "answer": "Ana es joven."
+        },
+        {
+          "prompt": "Add that she is also friendly.",
+          "answer": "Ana es joven y simpática."
+        }
+      ]
+    },
+    "why": "open prompt with one fixed answer; pin it"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-01-ex.json",
+    "id": "a1-03c-01-w02",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say that Carlos is tall and serious.",
+          "answer": "Carlos es alto y serio."
+        }
+      ]
+    },
+    "why": "open prompt with one fixed answer; pin it"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-02-ex.json",
+    "id": "a1-03c-02-v03",
+    "set": {
+      "options": [
+        "trabajador",
+        "divertido",
+        "simpático"
+      ]
+    },
+    "why": "length-giveaway 10 vs 6; wrong options as long as the right one, met words",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-02-ex.json",
+    "id": "a1-03c-02-g02",
+    "set": {
+      "sentence": "Carlos es trabajador. Ana es ____.",
+      "answer": "trabajadora"
+    },
+    "why": "glued blank 'trabajad__'",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-02-ex.json",
+    "id": "a1-03c-02-g03",
+    "set": {
+      "sentence": "Carlos es rubio. Ana es ____.",
+      "answer": "rubia"
+    },
+    "why": "glued blank 'rubi__'",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-02-ex.json",
+    "id": "a1-03c-02-d01",
+    "set": {
+      "options": [
+        "Es divertida y amable.",
+        "Es divertido y amable.",
+        "Son divertida y amable."
+      ]
+    },
+    "why": "'Es divertido y amables.' has two faults (gender and number)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-02-ex.json",
+    "id": "a1-03c-02-d03",
+    "set": {
+      "question": "Meg: ¿Cómo eres, Carlos? / Carlos: _____",
+      "options": [
+        "Soy trabajador.",
+        "Soy trabajadora.",
+        "Soy trabajadores."
+      ]
+    },
+    "why": "Carlos is asked about 'Carlos' and answers in first person; 'Somos trabajadores' is unmet and fails differently",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-02-ex.json",
+    "id": "a1-03c-02-w01",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say that Ana is friendly.",
+          "answer": "Ana es simpática."
+        },
+        {
+          "prompt": "Say that Carlos is serious.",
+          "answer": "Carlos es serio."
+        }
+      ]
+    },
+    "why": "open prompts with one fixed answer; pin them"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-02-ex.json",
+    "id": "a1-03c-02-w02",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say that Lauren is funny.",
+          "answer": "Lauren es divertida."
+        }
+      ]
+    },
+    "why": "answer 'Lauren es divertida.' cannot be guessed from the prompt"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-03-ex.json",
+    "id": "a1-03c-03-g02",
+    "set": {
+      "sentence": "Ana y Meg son ____.",
+      "answer": null,
+      "answers": [
+        "simpáticas",
+        "amables"
+      ],
+      "hint": "simpática"
+    },
+    "why": "glued blank 'simpátic__'; amable also means friendly",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-03-ex.json",
+    "id": "a1-03c-03-g03",
+    "set": {
+      "sentence": "Carlos y Ana son ____.",
+      "answer": "jóvenes",
+      "hint": "joven"
+    },
+    "why": "glued blank 'jóven__' (also taught the misspelling 'jóven')",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-03-ex.json",
+    "id": "a1-03c-03-v04",
+    "set": {
+      "options": [
+        "guapo",
+        "pequeño",
+        "grande"
+      ]
+    },
+    "why": "'bonito' (pretty / nice) is close to 'good-looking': two right answers",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-03-ex.json",
+    "id": "a1-03c-03-d01",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Lauren",
+          "text": "¿Cómo son Ana y Meg?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ]
+    },
+    "why": "Meg asks about 'Ana y Meg' in third person",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-03-ex.json",
+    "id": "a1-03c-03-w01",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say that Ana and Meg are friendly.",
+          "answer": "Ana y Meg son simpáticas."
+        },
+        {
+          "prompt": "Say that they are young and friendly.",
+          "answer": "Ana y Meg son jóvenes y simpáticas."
+        }
+      ]
+    },
+    "why": "open prompts with one fixed answer; pin them"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-03-ex.json",
+    "id": "a1-03c-03-w02",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say that Carlos and Andreas are tall.",
+          "answer": "Carlos y Andreas son altos."
+        }
+      ]
+    },
+    "why": "open prompt with one fixed answer; pin it"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-04-ex.json",
+    "id": "a1-03c-04-g02",
+    "set": {
+      "sentence": "Ana es una mujer ____.",
+      "answer": null,
+      "answers": [
+        "simpática",
+        "amable"
+      ],
+      "hint": "simpático"
+    },
+    "why": "glued blank 'simpátic__'; amable also means friendly",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-04-ex.json",
+    "id": "a1-03c-04-g03",
+    "set": {
+      "sentence": "Carlos es una persona ____.",
+      "answer": "amable",
+      "hint": "kind"
+    },
+    "why": "glued blank 'amabl__'",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-04-ex.json",
+    "id": "a1-03c-04-w01",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say that Carlos is a man.",
+          "answer": "Carlos es un hombre."
+        },
+        {
+          "prompt": "Say that he is a tall man.",
+          "answer": "Carlos es un hombre alto."
+        }
+      ]
+    },
+    "why": "open prompts with one fixed answer; pin them"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-05-ex.json",
+    "id": "a1-03c-05-g02",
+    "set": {
+      "answers": [
+        "serio"
+      ]
+    },
+    "why": "english pins 'serious' but 6 answers accepted"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-05-ex.json",
+    "id": "a1-03c-05-g03",
+    "set": {
+      "answers": [
+        "jóvenes"
+      ]
+    },
+    "why": "english pins 'young' but 7 answers accepted"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-05-ex.json",
+    "id": "a1-03c-05-g06",
+    "set": {
+      "question": "El profesor es un hombre ____.",
+      "options": [
+        "mayor",
+        "mayora",
+        "mayores"
+      ],
+      "english": "The teacher is an older man.",
+      "teaches": [
+        "adjective-agreement"
+      ]
+    },
+    "why": "English '(older)' inside the Spanish line; 'Meg y Daniela mayores' contradicts the story (Daniela is 'joven')",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-05-ex.json",
+    "id": "a1-03c-05-r01",
+    "set": {
+      "question": "What is Daniela like?",
+      "options": [
+        "Tall, young and friendly.",
+        "Short, older and serious.",
+        "A little shy."
+      ]
+    },
+    "why": "story a1-21 never says Daniela is a teacher (the man is)"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-05-ex.json",
+    "id": "a1-03c-05-r02",
+    "set": {
+      "question": "Who is described as funny and sociable?"
+    },
+    "why": "nobody is 'calm and organized' in the story"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-05-ex.json",
+    "id": "a1-03c-05-r03",
+    "set": {
+      "question": "Who are Lauren and Kaylee?",
+      "options": [
+        "Meg's sisters.",
+        "Meg's friends from class.",
+        "Carlos's sisters."
+      ]
+    },
+    "why": "Meg also describes Daniela and the teacher, so 'who does Meg describe' has no single answer"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-05-ex.json",
+    "id": "a1-03c-05-r04",
+    "set": {
+      "question": "What is Kaylee like?",
+      "options": [
+        "Shy, with a lovely smile.",
+        "Funny and very sociable.",
+        "Tall, young and friendly."
+      ]
+    },
+    "why": "Kaylee does no job in the story; she is shy"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-05-ex.json",
+    "id": "a1-03c-05-d01",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Quién es la mujer alta y joven?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Es Daniela.",
+        "Son Daniela.",
+        "Soy Daniela."
+      ],
+      "teaches": [
+        "ser"
+      ]
+    },
+    "why": "Carlos answers about Meg's family in a way he cannot know; 'la mujer rubia' fits Lauren and Kaylee; 'Es un hombre' is ruled out by the prompt",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-05-ex.json",
+    "id": "a1-03c-05-d03",
+    "set": {
+      "options": [
+        "Es una mujer alta.",
+        "Es un mujer alto.",
+        "Son una mujer alta."
+      ]
+    },
+    "why": "Meg calls Daniela 'seria'; the story says 'simpática', 'amable'",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-05-ex.json",
+    "id": "a1-03c-05-w01",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say that Ana is a woman.",
+          "answer": "Ana es una mujer."
+        },
+        {
+          "prompt": "Say that she is a young and friendly woman.",
+          "answer": "Ana es una mujer joven y simpática."
+        }
+      ]
+    },
+    "why": "open prompt with one fixed answer; pin it"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-consolidation-ex.json",
+    "id": "a1-03c-c-g03",
+    "set": {
+      "answers": [
+        "joven"
+      ]
+    },
+    "why": "english pins 'young' but 7 answers accepted"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-consolidation-ex.json",
+    "id": "a1-03c-c-g04",
+    "set": {
+      "answers": [
+        "simpáticos",
+        "amables"
+      ]
+    },
+    "why": "english pins 'friendly' but 7 answers accepted"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-consolidation-ex.json",
+    "id": "a1-03c-c-g06",
+    "set": {
+      "answers": [
+        "joven"
+      ]
+    },
+    "why": "english pins 'young' but 7 answers accepted"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-consolidation-ex.json",
+    "id": "a1-03c-c-w01",
+    "set": {
+      "template": [
+        {
+          "prompt": "Greet someone.",
+          "answer": "Hola."
+        },
+        {
+          "prompt": "Say that your name is Carlos.",
+          "answer": "Me llamo Carlos."
+        },
+        {
+          "prompt": "Say that you are from Hungary.",
+          "answer": "Soy de Hungría."
+        },
+        {
+          "prompt": "Say that you are tall.",
+          "answer": "Soy alto."
+        }
+      ]
+    },
+    "why": "prompts ask the learner for their own name/origin, answers are Carlos's; pin them"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-consolidation-ex.json",
+    "id": "a1-03c-c-w02",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say that you are from South Africa.",
+          "answer": "Soy de Sudáfrica."
+        },
+        {
+          "prompt": "Say that you are young.",
+          "answer": "Soy joven."
+        }
+      ]
+    },
+    "why": "prompts ask the learner for their own origin, answer is Meg's; pin them"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-consolidation-ex.json",
+    "id": "a1-03c-c-d02",
+    "set": {
+      "options": [
+        "Soy de Hungría.",
+        "Es de Hungría.",
+        "Soy en Hungría."
+      ]
+    },
+    "why": "unmet 'húngaro' (suspect); 'Soy húngaro alto' is also two faults",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-03c-consolidation-ex.json",
+    "id": "a1-03c-c-d04",
+    "set": {
+      "options": [
+        "Es de Hungría.",
+        "Soy de Hungría.",
+        "Es en Hungría."
+      ]
+    },
+    "why": "unmet 'húngaro'; 'Es húngaro de.' is a word-order non-word",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-03c-01-adjectives-gr.json",
+    "old": "Use *ser* + an adjective to describe a person's characteristics.",
+    "new": "You know *ser* from Units 1 and 2: use it with an adjective to describe a person's characteristics.",
+    "why": "presents ser as new (Units 1-2)"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-03c-01-adjectives-gr.json",
+    "old": "The adjective agrees with the person it describes. Gender and plural agreement are the focus of the next lessons.",
+    "new": "You know from Unit 3 that the adjective agrees with the person it describes. The next lessons practise gender and plural agreement.",
+    "why": "presents agreement as upcoming-new; Unit 3 (a1-03-04) taught it"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-03c-02-gender-gr.json",
+    "old": "Many adjectives ending in *-o* change",
+    "new": "You know from Unit 3 that an adjective agrees with the person it describes. Many adjectives ending in *-o* change",
+    "why": "presents gender agreement as new (a1-03-04)"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-03c-03-plural-gr.json",
+    "old": "Adjectives also agree with number. Most adjectives ending in a vowel take *-s* in the plural. Adjectives ending in a consonant such as *joven* take *-es*.",
+    "new": "You know from Unit 3 that adjectives agree with number. Most adjectives ending in a vowel take *-s* in the plural. Adjectives ending in a consonant such as *joven* or *trabajador* take *-es*; *jóvenes* adds an accent to keep the stress.",
+    "why": "plural rule presented as new; unexplained accent in jóvenes; c-g04 needs trabajadores",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/lessons/a1/a1-03c-05.json",
+    "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe someone's appearance and personality.\"",
+    "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe a person with two or more adjectives.\"",
+    "why": "line near-duplicates a1-03c-01's first line"
+  },
+  {
+    "file": "content/es-es/lessons/a1/a1-03c-05.json",
+    "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe someone's appearance and personality.\"",
+    "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe a person with two or more adjectives.\"",
+    "why": "line near-duplicates a1-03c-01's first line"
+  },
+  {
+    "file": "content/es-es/lessons/a1/a1-03c-consolidation.json",
+    "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can use articles with familiar nouns.\"",
+    "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can use un and una with words for people.\"",
+    "why": "checklist-shared with a1-03-consolidation (check-content ERROR)"
+  },
+  {
+    "file": "content/es-es/lessons/a1/a1-03c-consolidation.json",
+    "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can use articles with familiar nouns.\"",
+    "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can use un and una with words for people.\"",
+    "why": "checklist-shared with a1-03-consolidation (check-content ERROR)"
+  }
+]
