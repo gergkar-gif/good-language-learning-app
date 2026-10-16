@@ -47,9 +47,8 @@ const Lang = (function () {
     };
 
     // Courses with real content behind them — what the language picker
-    // (My Journey) offers. content/fr is still an empty folder (scaffolded
-    // per multi-language-plan) so it stays out.
-    const AVAILABLE = ['es-latam', 'es-es', 'hu'];
+    // (My Journey) offers.
+    const AVAILABLE = ['es-latam', 'es-es', 'hu', 'fr'];
 
     // Can-do cue copy shared by both Spanish courses; only the city differs.
     const ES_CAN_DO_CUES = {
@@ -191,6 +190,82 @@ const Lang = (function () {
                 B2: ['véleményem szerint', 'úgy vélem', 'meglátásom szerint', 'elsőként', 'például', 'ugyanakkor', 'mindazonáltal', 'ennek következtében', 'másrészt', 'egyrészt', 'összességében']
             },
             informalTextingNote: "When Hungarian people text, accents are often left out — these exchanges simulate that, so don't be surprised if they're missing."
+        },
+        fr: {
+            code: 'fr',
+            baseCode: 'fr',
+            name: 'French',
+            courseName: 'French',
+            voices: ['fr-FR', 'fr-CA', 'fr'],
+            sttLocale: 'fr-FR',
+            tests: ['A1', 'A2', 'B1', 'B2', 'C1'],
+            diacritics: {
+                e: ['é', 'è', 'ê', 'ë'],
+                a: ['à', 'â'],
+                i: ['î', 'ï'],
+                o: ['ô'],
+                u: ['ù', 'û', 'ü'],
+                c: ['ç'],
+                y: ['ÿ'],
+                oe: ['œ'],
+                ae: ['æ']
+            },
+            openers: {},
+            numberWords: {
+                '1': ['un', 'une'], '2': ['deux'], '3': ['trois'], '4': ['quatre'], '5': ['cinq'],
+                '6': ['six'], '7': ['sept'], '8': ['huit'], '9': ['neuf'], '10': ['dix']
+            },
+            speechAbbreviations: {
+                "j'ai": 'jai', "c'est": 'cest', "d'accord": 'daccord', "l'un": 'lun',
+                "qu'il": 'quil', "n'est": 'nest', "s'il": 'sil', "m'a": 'ma', "t'en": 'ten'
+            },
+            examLabels: {
+                trueFalseNotStated: ['Vrai', 'Faux', 'Non mentionné dans le texte']
+            },
+            paradigm: {
+                hasVosotros: false,
+                persons: {
+                    je: { key: 'je', label: "je / j'" },
+                    tu: { key: 'tu', label: 'tu' },
+                    il: { key: 'il', label: 'il / elle / on' },
+                    nous: { key: 'nous', label: 'nous' },
+                    vous: { key: 'vous', label: 'vous' },
+                    ils: { key: 'ils', label: 'ils / elles' }
+                },
+                defaultPersons: ['je', 'tu', 'il', 'nous', 'vous', 'ils'],
+                tenses: [
+                    { value: 'indicatif.present',             label: 'Présent' },
+                    { value: 'indicatif.passe_compose',       label: 'Passé composé' },
+                    { value: 'indicatif.imparfait',           label: 'Imparfait' },
+                    { value: 'indicatif.futur_simple',        label: 'Futur simple' },
+                    { value: 'indicatif.conditionnel_present', label: 'Conditionnel présent' },
+                    { value: 'subjonctif.present',            label: 'Subjonctif présent' },
+                    { value: 'indicatif.plus_que_parfait',    label: 'Plus-que-parfait' },
+                    { value: 'all',                           label: 'All Tenses' }
+                ]
+            },
+            canDoCues: {
+                city: 'Paris',
+                monthsExamples: 'janvier, février, mars...',
+                monthInEvent: 'State when an event or your birthday is using "en" (e.g. "En octobre..." or "En décembre...")',
+                daysExamples: 'lundi, mardi...',
+                dayInEvent: 'Say which day you do an activity (e.g. le lundi, le vendredi)',
+                cafeGreeting: 'Polite greeting (Bonjour / Bonsoir)',
+                cafeOrder: 'Order a drink or snack (e.g. "Un café s\'il vous plaît")',
+                cafeBill: 'Conclude politely or ask for the bill ("L\'addition, s\'il vous plaît" / "Merci beaucoup")',
+                restaurantGreeting: 'Greeting and request a table ("Une table pour deux, s\'il vous plaît")',
+                restaurantOrder: 'Order food and drinks ("En entrée je voudrais... et comme plat...")',
+                restaurantBill: 'Ask for the bill ("L\'addition, s\'il vous plaît")',
+                directionsInterruption: 'Polite opening (Excusez-moi / Pardon)',
+                directionsAsk: 'Ask for directions (e.g. "Où est la gare ?")',
+                directionsThanks: 'Thank the person (Merci beaucoup)'
+            },
+            discourseConnectors: {
+                A1: ['et', 'mais', 'parce que', 'aussi', 'alors', 'par exemple'],
+                A2: ['donc', "d'abord", 'puis', 'ensuite', 'après', 'pourtant', 'en plus', 'par exemple'],
+                B1: ['en fait', 'cependant', 'en revanche', 'par conséquent', 'à mon avis', 'tandis que'],
+                B2: ['néanmoins', 'toutefois', "d'ailleurs", 'en outre', 'ainsi', 'nonobstant']
+            }
         }
     };
 

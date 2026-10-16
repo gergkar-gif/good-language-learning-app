@@ -1,0 +1,135 @@
+{
+  "_comment": "Source of truth for the French skill registry.",
+  "language": "fr",
+  "courses": [
+    "fr"
+  ],
+  "skills": {
+    "a1-greetings-introductions-vocab": {
+      "kind": "vocabulary",
+      "level": "A1",
+      "family": [
+        "personal-identity"
+      ],
+      "title": "reading",
+      "unit": "greetings-introductions"
+    },
+    "a1-at-the-cafe-vocab": {
+      "kind": "vocabulary",
+      "level": "A1",
+      "family": [
+        "food-drink"
+      ],
+      "title": "reading",
+      "unit": "at-the-cafe"
+    },
+    "a1-daily-routine-vocab": {
+      "kind": "vocabulary",
+      "level": "A1",
+      "family": [
+        "daily-life"
+      ],
+      "title": "reading",
+      "unit": "daily-routine"
+    },
+    "a1-family-friends-vocab": {
+      "kind": "vocabulary",
+      "level": "A1",
+      "family": [
+        "relationships"
+      ],
+      "title": "reading",
+      "unit": "family-friends"
+    },
+    "fr-present-er": {
+      "kind": "grammar",
+      "level": "A1",
+      "family": "verb-forms",
+      "title": "regular -er verbs in the present tense",
+      "requires": []
+    },
+    "fr-present-etre-avoir": {
+      "kind": "grammar",
+      "level": "A1",
+      "family": "verb-forms",
+      "title": "être and avoir in the present tense",
+      "requires": []
+    },
+    "fr-articles-gender": {
+      "kind": "grammar",
+      "level": "A1",
+      "family": "articles-demonstratives",
+      "title": "definite and indefinite articles",
+      "requires": []
+    },
+    "fr-negation-ne-pas": {
+      "kind": "grammar",
+      "level": "A1",
+      "family": "negation",
+      "title": "simple negation with ne and pas",
+      "requires": []
+    },
+    "fr-passe-compose-avoir": {
+      "kind": "grammar",
+      "level": "A2",
+      "family": "past",
+      "title": "the passé composé with avoir",
+      "requires": [
+        "fr-present-etre-avoir"
+      ]
+    },
+    "fr-passe-compose-etre": {
+      "kind": "grammar",
+      "level": "A2",
+      "family": "past",
+      "title": "the passé composé with être",
+      "requires": [
+        "fr-passe-compose-avoir"
+      ]
+    },
+    "fr-cod-pronouns": {
+      "kind": "grammar",
+      "level": "A2",
+      "family": "pronouns",
+      "title": "direct object pronouns le, la, and les",
+      "requires": []
+    },
+    "fr-coi-pronouns": {
+      "kind": "grammar",
+      "level": "A2",
+      "family": "pronouns",
+      "title": "indirect object pronouns lui and leur",
+      "requires": [
+        "fr-cod-pronouns"
+      ]
+    },
+    "fr-imparfait": {
+      "kind": "grammar",
+      "level": "A2",
+      "family": "past",
+      "title": "the imperfect tense",
+      "requires": [
+        "fr-passe-compose-avoir"
+      ]
+    },
+    "fr-subjonctif-present": {
+      "kind": "grammar",
+      "level": "B1",
+      "family": "subjunctive",
+      "title": "the present subjunctive and its triggers",
+      "requires": [
+        "fr-imparfait"
+      ]
+    },
+    "fr-participle-agreement": {
+      "kind": "grammar",
+      "level": "B1",
+      "family": "non-finite",
+      "title": "past participle agreement",
+      "requires": [
+        "fr-passe-compose-etre",
+        "fr-cod-pronouns"
+      ]
+    }
+  }
+}

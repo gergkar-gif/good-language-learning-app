@@ -3648,6 +3648,161 @@
 }
 
 /* ============================================
+   FRENCH GRAMMAR & MECHANICS STUDIO
+   ============================================ */
+
+.fr-grammar-studio-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 8px 16px 32px;
+}
+
+.fr-studio-body {
+    min-height: 300px;
+}
+
+.fr-quiz-sentence {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 20px 0 24px;
+    line-height: 1.5;
+    color: var(--ink);
+}
+
+.fr-blank {
+    display: inline-block;
+    min-width: 60px;
+    border-bottom: 2px dashed var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+    text-align: center;
+    padding: 0 4px;
+}
+
+.fr-quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.fr-opt-btn {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 1.05rem;
+    border-radius: 8px;
+    transition: all 0.15s ease;
+}
+
+.fr-opt-btn.is-right {
+    background-color: rgba(40, 167, 69, 0.15) !important;
+    border-color: #28a745 !important;
+    color: #155724 !important;
+    font-weight: 600;
+}
+
+.fr-opt-btn.is-wrong {
+    background-color: rgba(220, 53, 69, 0.12) !important;
+    border-color: #dc3545 !important;
+    color: #721c24 !important;
+}
+
+.fr-quiz-progress {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--ink-secondary);
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 8px;
+}
+
+.fr-score-counter {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.wk-feedback-card {
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 16px;
+    animation: fadeIn 0.2s ease;
+}
+
+.wk-feedback-card.is-correct {
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid #28a745;
+}
+
+.wk-feedback-card.is-wrong {
+    background: rgba(220, 53, 69, 0.08);
+    border: 1px solid #dc3545;
+}
+
+.wk-feedback-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.wk-feedback-rule {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.wk-feedback-trans {
+    font-size: 0.9rem;
+    color: var(--ink-secondary);
+    margin-bottom: 12px;
+}
+
+.fr-score-badge {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.fr-score-badge.high {
+    background: rgba(40, 167, 69, 0.15);
+    color: #28a745;
+}
+
+.fr-score-badge.med {
+    background: rgba(255, 193, 7, 0.15);
+    color: #856404;
+}
+
+.fr-score-badge.low {
+    background: rgba(220, 53, 69, 0.15);
+    color: #dc3545;
+}
+
+.fr-mistakes-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.fr-mistakes-list li {
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background: var(--wash);
+    border-left: 3px solid #dc3545;
+    border-radius: 4px;
+}
+
+.fr-mistake-sentence {
+    font-weight: 600;
+}
+
+.fr-mistake-rule {
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+}
+
+/* ============================================
    CONVERSATION SCENARIOS
    ============================================ */
 

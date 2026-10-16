@@ -1,0 +1,143 @@
+{
+  "language": "fr",
+  "scenarios": [
+    {
+      "id": "fr-a1-wx01-marche",
+      "cefrLevel": "A1",
+      "title": "Au marché",
+      "titleEn": "At the Market",
+      "situation": "Votre colocataire Julien est au marché du quartier et vous envoie un SMS pour savoir ce qu'il faut acheter pour le dîner.",
+      "situationEn": "Your flatmate Julien is at the local market and texts you to ask what to buy for dinner.",
+      "roleplay": {
+        "interlocutorRole": "Julien (Colocataire)",
+        "interlocutorRoleEn": "Julien (Flatmate)",
+        "learnerRole": "Vous",
+        "learnerRoleEn": "You"
+      },
+      "targetCompetency": "I can exchange short text messages about everyday food shopping",
+      "targetSkills": [
+        "shopping",
+        "food_and_drink",
+        "requests"
+      ],
+      "unitIds": [
+        "unit.a1.01"
+      ],
+      "requiredLemmas": [
+        "salut",
+        "pain",
+        "fromage",
+        "pomme",
+        "s'il te plaît",
+        "merci"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Salut ! Je suis au marché des Batignolles. De quoi avons-nous besoin pour ce soir ?",
+          "interlocutorTranslation": "Hi! I am at the Batignolles market. What do we need for tonight?",
+          "learnerCue": "Salue Julien et demande-lui d'acheter du pain, du fromage et des pommes.",
+          "learnerCueEn": "Greet Julien and ask him to buy bread, cheese, and apples.",
+          "vocabularyHints": [
+            "salut Julien — hi Julien",
+            "achète du pain — buy some bread",
+            "du fromage et des pommes — cheese and apples",
+            "s'il te plaît — please"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "salut",
+              "pain",
+              "fromage",
+              "pommes",
+              "pomme",
+              "achète",
+              "prends",
+              "plaît"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Parfait, je prends une baguette et du comté. Veux-tu aussi une bouteille de vin ou du jus de fruits ?",
+          "interlocutorTranslation": "Great, I'll take a baguette and some comté. Do you also want a bottle of wine or fruit juice?",
+          "learnerCue": "Dis que tu préfères une bouteille de vin rouge et remercie-le.",
+          "learnerCueEn": "Say that you prefer a bottle of red wine and thank him.",
+          "vocabularyHints": [
+            "je préfère — I prefer",
+            "une bouteille de vin rouge — a bottle of red wine",
+            "merci beaucoup — thank you very much"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "vin",
+              "rouge",
+              "préfère",
+              "veux",
+              "bouteille",
+              "merci"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "fr-a2-wx01-rdv",
+      "cefrLevel": "A2",
+      "title": "Prendre un rendez-vous",
+      "titleEn": "Making an Appointment",
+      "situation": "Vous écrivez à la secrétaire du cabinet médical pour décaler un rendez-vous.",
+      "situationEn": "You write to the medical office secretary to reschedule an appointment.",
+      "roleplay": {
+        "interlocutorRole": "Secrétaire médicale",
+        "interlocutorRoleEn": "Medical secretary",
+        "learnerRole": "Patient",
+        "learnerRoleEn": "Patient"
+      },
+      "targetCompetency": "I can write a message to arrange or change an appointment",
+      "targetSkills": [
+        "appointments",
+        "politeness",
+        "time_dates"
+      ],
+      "unitIds": [
+        "unit.a2.01"
+      ],
+      "requiredLemmas": [
+        "bonjour",
+        "rendez-vous",
+        "possible",
+        "mardi",
+        "mercredi",
+        "merci"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Cabinet médical Saint-Louis, bonjour. Comment puis-je vous aider ?",
+          "interlocutorTranslation": "Saint-Louis Medical Practice, hello. How can I help you?",
+          "learnerCue": "Dis que tu as un rendez-vous mardi et que tu souhaites le décaler à mercredi si possible.",
+          "learnerCueEn": "Say you have an appointment on Tuesday and would like to move it to Wednesday if possible.",
+          "vocabularyHints": [
+            "j'ai un rendez-vous — I have an appointment",
+            "décaler à mercredi — move to Wednesday",
+            "est-ce possible — is it possible"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "rendez-vous",
+              "mardi",
+              "mercredi",
+              "décaler",
+              "changer",
+              "possible"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

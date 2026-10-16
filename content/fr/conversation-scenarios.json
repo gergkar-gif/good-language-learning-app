@@ -1,0 +1,165 @@
+{
+  "language": "fr",
+  "scenarios": [
+    {
+      "id": "fr-a1-sc01-cafe",
+      "cefrLevel": "A1",
+      "title": "Au Café parisien",
+      "titleEn": "At the Parisian Café",
+      "situation": "Vous êtes en terrasse dans un café à Paris et vous souhaitez commander une boisson, un en-cas et demander l'addition.",
+      "situationEn": "You are on the terrace of a café in Paris and want to order a drink, a snack, and ask for the bill.",
+      "roleplay": {
+        "interlocutorRole": "Serveur",
+        "interlocutorRoleEn": "Waiter",
+        "learnerRole": "Client",
+        "learnerRoleEn": "Customer",
+        "interlocutorVoice": "fr-FR"
+      },
+      "targetCompetency": "I can order food and drink in a French café and pay the bill",
+      "targetSkills": [
+        "ordering_food",
+        "social_interaction",
+        "numbers_and_prices"
+      ],
+      "unitIds": [
+        "unit.a1.01"
+      ],
+      "requiredLemmas": [
+        "bonjour",
+        "café",
+        "croissant",
+        "eau",
+        "addition",
+        "s'il vous plaît",
+        "merci"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Bonjour madame, monsieur. Que puis-je vous servir ?",
+          "interlocutorTranslation": "Good morning. What can I get you?",
+          "learnerCue": "Salue poliment et commande un café crème (ou un thé) et un croissant.",
+          "learnerCueEn": "Greet politely and order a café crème (or tea) and a croissant.",
+          "vocabularyHints": [
+            "bonjour — hello",
+            "je voudrais un café — I would like a coffee",
+            "un croissant — a croissant",
+            "s'il vous plaît — please"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "bonjour",
+              "café",
+              "thé",
+              "croissant",
+              "voudrais",
+              "prends",
+              "plaît"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Très bien, un café crème et un croissant. Désirez-vous également une carafe d'eau ?",
+          "interlocutorTranslation": "Very well, a coffee with milk and a croissant. Would you also like a jug of water?",
+          "learnerCue": "Accepte l'eau avec plaisir et remercie le serveur.",
+          "learnerCueEn": "Accept the water with pleasure and thank the waiter.",
+          "vocabularyHints": [
+            "oui, avec plaisir — yes, with pleasure",
+            "une carafe d'eau — a jug of water",
+            "merci — thank you"
+          ],
+          "validationCriteria": {
+            "minWords": 2,
+            "targetKeywords": [
+              "oui",
+              "eau",
+              "carafe",
+              "plaisir",
+              "merci"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Voilà pour vous. Tout s'est bien passé ? Vous désirez autre chose ?",
+          "interlocutorTranslation": "Here you are. Was everything fine? Would you like anything else?",
+          "learnerCue": "Dis que c'était très bon et demande l'addition.",
+          "learnerCueEn": "Say that it was very good and ask for the bill.",
+          "vocabularyHints": [
+            "c'était très bon — it was very good",
+            "l'addition, s'il vous plaît — the bill, please"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "addition",
+              "très bon",
+              "bon",
+              "plaît",
+              "note",
+              "payer"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "fr-a1-sc02-boulangerie",
+      "cefrLevel": "A1",
+      "title": "À la Boulangerie",
+      "titleEn": "At the Bakery",
+      "situation": "Vous entrez dans une boulangerie pour acheter du pain frais et des viennoiseries.",
+      "situationEn": "You enter a bakery to buy fresh bread and pastries.",
+      "roleplay": {
+        "interlocutorRole": "Boulangère",
+        "interlocutorRoleEn": "Baker",
+        "learnerRole": "Client",
+        "learnerRoleEn": "Customer",
+        "interlocutorVoice": "fr-FR"
+      },
+      "targetCompetency": "I can buy bread and pastries at a French bakery",
+      "targetSkills": [
+        "shopping",
+        "food_and_drink"
+      ],
+      "unitIds": [
+        "unit.a1.01"
+      ],
+      "requiredLemmas": [
+        "bonjour",
+        "baguette",
+        "pain",
+        "chocolat",
+        "s'il vous plaît",
+        "merci"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Bonjour ! Qu'est-ce qu'il vous faudra aujourd'hui ?",
+          "interlocutorTranslation": "Hello! What can I get you today?",
+          "learnerCue": "Demande une baguette tradition bien cuite et deux pains au chocolat.",
+          "learnerCueEn": "Ask for a well-baked traditional baguette and two chocolate croissants.",
+          "vocabularyHints": [
+            "une baguette tradition — a traditional baguette",
+            "deux pains au chocolat — two chocolate croissants",
+            "s'il vous plaît — please"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "baguette",
+              "tradition",
+              "pain",
+              "chocolat",
+              "deux",
+              "plaît"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-10-16-hu-kor';
+const CACHE_VERSION = 'v2026-10-16-french-course';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -25,10 +25,12 @@ const PRECACHE_ASSETS = [
 
     // Core Engine & Submodules
     'imports/verbs/verb-list.js',
+    'imports/verbs/fr/verb-list-fr.js',
     'engine/lang.js',
     'engine/xp.js',
     'engine/morphology/hungarian.js',
     'engine/morphology/spanish.js',
+    'engine/morphology/french.js',
     'engine/lexicon.js',
     'engine/gloss-ai.js',
     'engine/srs.js',
@@ -70,6 +72,7 @@ const PRECACHE_ASSETS = [
     'engine/drills/hu-morphology.js',
     'engine/drills/hu-verb.js',
     'engine/drills/hu-verb-studio.js',
+    'engine/drills/fr-grammar-studio.js',
     'engine/ccse-exam.js',
     'engine/workshop.js',
     'engine/exercise-audio.js',

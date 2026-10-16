@@ -1,0 +1,99 @@
+{
+  "language": "fr",
+  "prompts": [
+    {
+      "id": "fr-b2-debate",
+      "cefrLevel": "B2",
+      "taskType": "written_argument",
+      "title": "Débat : Villes sans voitures",
+      "prompt": "Dans votre ville, la municipalité débat de l'interdiction progressive des voitures individuelles dans le centre historique. Écrivez un article pour le journal local dans lequel vous présentez les arguments pour et contre cette mesure, et exposez votre propre point de vue de manière argumentée et nuancée.",
+      "minWords": 180,
+      "targetWords": 250,
+      "maxWords": 350,
+      "targetSkills": [
+        {
+          "id": "expression_opinion",
+          "description": "Nuancer son point de vue avec clarté au niveau B2"
+        },
+        {
+          "id": "argumentation",
+          "description": "Développer une argumentation logique avec thèse et antithèse"
+        },
+        {
+          "id": "connecteurs_logiques",
+          "description": "Emploi de connecteurs logiques (d'une part, néanmoins, bien que, en revanche)"
+        },
+        {
+          "id": "subjonctif_concession",
+          "description": "Emploi du subjonctif dans les structures concessives"
+        }
+      ]
+    },
+    {
+      "id": "fr-b1-recit-voyage",
+      "cefrLevel": "B1",
+      "taskType": "travel_recount",
+      "title": "Un voyage mémorable",
+      "prompt": "Racontez une expérience de voyage marquante dans un blog de voyage. Décrivez où vous êtes allé, les péripéties rencontrées, ce qui vous a surpris et pourquoi vous recommandez (ou non) cette destination.",
+      "minWords": 120,
+      "targetWords": 160,
+      "maxWords": 220,
+      "targetSkills": [
+        {
+          "id": "passe_compose_imparfait",
+          "description": "Alternance correcte entre passé composé et imparfait"
+        },
+        {
+          "id": "chronologie",
+          "description": "Marqueurs temporels (d'abord, soudain, ensuite, finalement)"
+        }
+      ]
+    },
+    {
+      "id": "fr-a2-lettre-reclamation",
+      "cefrLevel": "A2",
+      "taskType": "formal_complaint",
+      "title": "Réclamation après un séjour",
+      "prompt": "Vous avez séjourné dans un hôtel le week-end dernier et plusieurs services n'étaient pas conformes (bruit, chambre non nettoyée, petit-déjeuner manquant). Écrivez un e-mail à la direction de l'hôtel pour expliquer les problèmes et demander un dédommagement.",
+      "minWords": 70,
+      "targetWords": 90,
+      "maxWords": 130
+    },
+    {
+      "id": "fr-a1-w01",
+      "cefrLevel": "A1",
+      "taskType": "a_message_about_your_daily_routine",
+      "title": "Un message sur votre quotidien",
+      "situation": "You have a new French-speaking friend who wants to know what you usually do during the week.",
+      "task": "Write a short message to your friend.",
+      "points": [
+        "say what time you get up",
+        "say what you do during the day",
+        "say what you do in the evening",
+        "say what time you usually go to bed"
+      ],
+      "prompt": "Situation: You have a new French-speaking friend who wants to know what you usually do during the week.\n\nTask: Write a short message to your friend. Include: say what time you get up; say what you do during the day; say what you do in the evening; say what time you usually go to bed.\n\nWrite approximately 40-50 words.",
+      "minWords": 40,
+      "targetWords": 45,
+      "maxWords": 60
+    },
+    {
+      "id": "fr-a1-w02",
+      "cefrLevel": "A1",
+      "taskType": "an_invitation",
+      "title": "Une invitation",
+      "situation": "You are organizing a birthday party and want to invite a French colleague.",
+      "task": "Write a short invitation message.",
+      "points": [
+        "give the date and time",
+        "give the location or address",
+        "mention what to bring",
+        "ask for confirmation"
+      ],
+      "prompt": "Situation: You are organizing a birthday party and want to invite a French colleague.\n\nTask: Write a short invitation message. Include date, time, address, and ask for confirmation.\n\nWrite approximately 35-50 words.",
+      "minWords": 35,
+      "targetWords": 45,
+      "maxWords": 60
+    }
+  ]
+}

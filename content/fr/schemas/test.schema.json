@@ -1,0 +1,508 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "test.schema.json",
+  "title": "Level test",
+  "description": "The check at the end of a level. Multi-modal CEFR assessment covering Language in Context (cloze, text-input, communicative choice), Reading Comprehension, and optional written/spoken productive tasks.",
+  "type": "object",
+  "required": [
+    "id",
+    "level",
+    "passMark",
+    "questions"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^test\\.(a1|a2|b1|b2|c1)$",
+      "examples": [
+        "test.a1"
+      ]
+    },
+    "level": {
+      "enum": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intro": {
+      "type": "string",
+      "minLength": 1
+    },
+    "passMark": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 1,
+      "description": "Fraction correct needed to pass. 0.8 across A1-C1."
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 40,
+      "items": {
+        "$ref": "#/definitions/question"
+      }
+    },
+    "writingTask": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "prompt",
+        "minWords",
+        "targetKeywords",
+        "teaches"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context": {
+          "type": "string"
+        },
+        "minWords": {
+          "type": "integer",
+          "minimum": 10
+        },
+        "targetKeywords": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "teaches": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        }
+      }
+    },
+    "speakingTask": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "prompt",
+        "targetKeywords",
+        "teaches"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "targetKeywords": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "minSeconds": {
+          "type": "integer",
+          "minimum": 5
+        },
+        "teaches": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        }
+      }
+    },
+    "readingSection": {
+      "type": "object",
+      "description": "An unseen passage with CEFR-style comprehension questions (reading-mc, true-false-not-stated, gapped-text). Questions are in the target language at all levels. No teaches tag — reading questions test passage understanding, not a reusable grammar skill.",
+      "required": ["id", "title", "passage", "questions"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "passage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "description": "Optional attribution line shown below the passage."
+        },
+        "questions": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 8,
+          "items": {
+            "$ref": "#/definitions/readingQuestion"
+          }
+        }
+      }
+    },
+    "listeningSection": {
+      "type": "object",
+      "description": "An unseen audio passage with CEFR-style listening comprehension questions. Supports single monologue or multi-speaker dialogue turns. No teaches tag — listening questions test auditory comprehension.",
+      "required": ["id", "title", "audio", "questions"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context": {
+          "type": "string",
+          "description": "Optional scenario background (e.g. 'Vas a escuchar una conversación en una cafetería.')."
+        },
+        "audio": {
+          "type": "object",
+          "required": ["turns"],
+          "additionalProperties": false,
+          "properties": {
+            "audioUrl": {
+              "type": "string",
+              "description": "Optional URL or local path to pre-recorded audio file."
+            },
+            "turns": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": ["text"],
+                "additionalProperties": false,
+                "properties": {
+                  "speaker": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": ["male", "female"]
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "previewSeconds": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 60,
+          "description": "Seconds allowed to preview questions before audio starts. Default is 30."
+        },
+        "source": {
+          "type": "string",
+          "description": "Optional attribution line shown below the task."
+        },
+        "questions": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 8,
+          "items": {
+            "$ref": "#/definitions/listeningQuestion"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "listeningQuestion": {
+      "oneOf": [
+        {
+          "title": "listening-mc",
+          "description": "Standard multiple-choice question about the audio passage. Options shuffled at runtime.",
+          "type": "object",
+          "required": ["id", "type", "question", "options", "correct"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+            "type": { "const": "listening-mc" },
+            "question": { "type": "string", "minLength": 1 },
+            "options": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 4,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "correct": { "type": "integer", "minimum": 0 },
+            "evidence": {
+              "type": "string",
+              "description": "Transcript excerpt justifying the answer, displayed during post-assessment review."
+            },
+            "explanation": {
+              "type": "string",
+              "description": "Pedagogical explanation of why this answer is correct."
+            }
+          }
+        },
+        {
+          "title": "true-false-not-stated",
+          "description": "CEFR standard TFNS: learner listens and picks True (0) / False (1) / Not stated in the audio (2). Options are in fixed order.",
+          "type": "object",
+          "required": ["id", "type", "statement", "correct"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+            "type": { "const": "true-false-not-stated" },
+            "statement": { "type": "string", "minLength": 1 },
+            "correct": { "type": "integer", "enum": [0, 1, 2] },
+            "evidence": {
+              "type": "string",
+              "description": "Transcript excerpt justifying the answer."
+            },
+            "explanation": {
+              "type": "string",
+              "description": "Pedagogical explanation of why this answer is correct."
+            }
+          }
+        }
+      ]
+    },
+    "readingQuestion": {
+      "oneOf": [
+        {
+          "title": "reading-mc",
+          "description": "Standard multiple-choice question about the passage. Options shuffled at runtime.",
+          "type": "object",
+          "required": ["id", "type", "question", "options", "correct"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+            "type": { "const": "reading-mc" },
+            "question": { "type": "string", "minLength": 1 },
+            "options": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 4,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "correct": { "type": "integer", "minimum": 0 }
+          }
+        },
+        {
+          "title": "true-false-not-stated",
+          "description": "CEFR standard TFNS: learner reads a statement about the passage and picks True (0) / False (1) / Not stated in the text (2). Options are always in this fixed order — do not shuffle.",
+          "type": "object",
+          "required": ["id", "type", "statement", "correct"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+            "type": { "const": "true-false-not-stated" },
+            "statement": { "type": "string", "minLength": 1 },
+            "correct": { "type": "integer", "enum": [0, 1, 2] }
+          }
+        },
+        {
+          "title": "gapped-text",
+          "description": "A sentence has been removed from the passage and must be selected from options. textWithGap must contain exactly one [___] placeholder marking where the removed sentence goes. Options shuffled at runtime.",
+          "type": "object",
+          "required": ["id", "type", "textWithGap", "options", "correct"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+            "type": { "const": "gapped-text" },
+            "textWithGap": {
+              "type": "string",
+              "pattern": "\\[___\\]",
+              "description": "The passage excerpt with exactly one [___] where the removed sentence belongs."
+            },
+            "options": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 4,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "correct": { "type": "integer", "minimum": 0 }
+          }
+        }
+      ]
+    },
+    "question": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "sentence",
+            "options",
+            "correct",
+            "teaches"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+            },
+            "type": {
+              "enum": [
+                "dropdown"
+              ]
+            },
+            "sentence": {
+              "type": "string",
+              "pattern": "_{3,}"
+            },
+            "options": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 4,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "correct": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "teaches": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "type",
+            "sentence",
+            "answer",
+            "teaches"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+            },
+            "type": {
+              "const": "text-input"
+            },
+            "sentence": {
+              "type": "string",
+              "pattern": "_{3,}"
+            },
+            "answer": {
+              "type": "string",
+              "minLength": 1
+            },
+            "altAnswers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "teaches": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "type",
+            "prompt",
+            "options",
+            "correct",
+            "teaches"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+            },
+            "type": {
+              "const": "choice"
+            },
+            "prompt": {
+              "type": "string",
+              "minLength": 1
+            },
+            "context": {
+              "type": "string"
+            },
+            "options": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 4,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "correct": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "teaches": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

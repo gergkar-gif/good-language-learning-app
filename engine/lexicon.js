@@ -904,6 +904,9 @@ if (typeof HungarianMorphology !== 'undefined') {
 if (typeof SpanishMorphology !== 'undefined') {
     Lexicon.registerMorphology('es', SpanishMorphology);
 }
+if (typeof FrenchMorphology !== 'undefined') {
+    Lexicon.registerMorphology('fr', FrenchMorphology);
+}
 
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = Lexicon;

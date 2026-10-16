@@ -295,13 +295,21 @@ const Verbs = (function () {
     //  PUBLIC API
     // ================================================================
 
-    // Rebuilds _state.verbList from ALL_VERBS, filtered to only
+    var _loadedLang = null;
+
+    // Rebuilds _state.verbList from ALL_VERBS (or ALL_FRENCH_VERBS), filtered to only
     // already-taught verbs when knownOnly is on. Falls back to the
     // unfiltered list if that filter would leave nothing to drill — same
     // fail-open reasoning TaughtWords.isReached() itself documents, rather
     // than silently breaking the driller for a learner early in the course.
     function _rebuildVerbList() {
-        var base = (typeof ALL_VERBS !== 'undefined') ? ALL_VERBS.slice() : ['hablar', 'comer', 'vivir'];
+        var lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        var base;
+        if (lang === 'fr' || (typeof lang === 'string' && lang.startsWith('fr-'))) {
+            base = (typeof ALL_FRENCH_VERBS !== 'undefined') ? ALL_FRENCH_VERBS.slice() : ['parler', 'aimer', 'finir', 'aller', 'avoir', 'etre', 'faire'];
+        } else {
+            base = (typeof ALL_VERBS !== 'undefined') ? ALL_VERBS.slice() : ['hablar', 'comer', 'vivir'];
+        }
         if (_activeRenderOptions && Array.isArray(_activeRenderOptions.verbs) && _activeRenderOptions.verbs.length) {
             var explicit = base.filter(function (v) { return _activeRenderOptions.verbs.indexOf(v) !== -1; });
             if (explicit.length) {
@@ -324,6 +332,7 @@ const Verbs = (function () {
      * Loads the verb list and renders the Drills tab.
      */
     function init() {
+        _loadedLang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
         _rebuildVerbList();
 
         // Load first verb but do NOT render — avoid racing with user interactions.
@@ -341,16 +350,25 @@ const Verbs = (function () {
     /** Re-render the current state (call when the tab becomes visible). */
     function render(options) {
         _activeRenderOptions = options || null;
+        var lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        var langChanged = _loadedLang !== lang;
+        if (langChanged) {
+            _loadedLang = lang;
+            var tenses = _getTenseOptions();
+            if (tenses && tenses.length && !tenses.some(function (t) { return t.value === _state.tense; })) {
+                _state.tense = tenses[0].value;
+            }
+        }
         if (options && options.mode) {
             _state.mode = options.mode;
         }
-        if (options && options.tense && TENSE_OPTIONS.some(function (t) { return t.value === options.tense; })) {
+        if (options && options.tense && _getTenseOptions().some(function (t) { return t.value === options.tense; })) {
             _state.tense = options.tense;
         }
         if (options && typeof options.knownOnly === 'boolean') {
             _state.knownOnly = options.knownOnly;
         }
-        if (_state.knownOnly || (options && Array.isArray(options.verbs) && options.verbs.length)) {
+        if (langChanged || _state.knownOnly || (options && Array.isArray(options.verbs) && options.verbs.length)) {
             (typeof TaughtWords !== 'undefined' ? TaughtWords.load() : Promise.resolve()).then(function () {
                 _rebuildVerbList();
                 if (_state.mode === 'table') {

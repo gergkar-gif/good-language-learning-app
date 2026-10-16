@@ -55,6 +55,42 @@ All content in `content/es/` and `content/hu/` is original to Parlour unless not
 
 ---
 
+### 5. French Lexical Database & Frequency (Lexique 383)
+- **Source**: [chrplr/openlexicon](https://github.com/chrplr/openlexicon) on GitHub / [lexique.org](http://www.lexique.org)  
+- **Authors**: Boris New, Christophe Pallier, Ludovic Ferrand, et al. (CNRS)  
+- **Used for**: French word inflection, lemma mappings, frequency rankings (`freqlivres`, `freqfilms`), and phonetic transcriptions  
+- **Licence**: [Creative Commons Attribution–ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)  
+- **Files in this repo**: `imports/dictionary/Lexique383.tsv`; processed outputs in `content/fr/indexes/word-index.json` and `content/fr/indexes/frequency.json`
+
+---
+
+### 6. French Verb Conjugation Data (LEFFF)
+- **Source**: [french-verbs-lefff](https://github.com/RosaeNLG/rosaenlg) / [LEFFF](http://alpage.inria.fr/~sagot/lefff.html)  
+- **Author**: Benoît Sagot (INRIA) / RosaeNLG  
+- **Used for**: French verb conjugation tables, tenses, and reverse conjugation index  
+- **Licence**: [Lesser General Public License For Linguistic Resources (LGPL-LR)](http://alpage.inria.fr/~sagot/lefff-2.1.tar.gz)  
+- **Files in this repo**: `imports/verbs/fr/*.json`; processed output in `content/fr/indexes/verb-index.json`
+
+---
+
+### 7. French–English Dictionary
+- **Source**: [kaikki.org](https://kaikki.org/dictionary/French/) — machine-readable Wiktionary extracts by Tatu Ylonen  
+- **Derived from**: English Wiktionary, French entries  
+- **Used for**: French word definitions and translations in Reader popup  
+- **Licence**: [Creative Commons Attribution–ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) and [GNU Free Documentation Licence (GFDL)](https://www.gnu.org/licenses/fdl-1.3.html)  
+- **Files in this repo**: `imports/dictionary/french-en.json`
+
+---
+
+### 8. French Lemmatization Lists
+- **Source**: [michmech/lemmatization-lists](https://github.com/michmech/lemmatization-lists) on GitHub  
+- **Author**: Michal Měchura  
+- **Used for**: French lemma-token pair verification  
+- **Licence**: [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/)  
+- **Files in this repo**: `imports/dictionary/lemmatization-fr.txt`
+
+---
+
 ## Classic Stories
 
 The following classic literary works are adapted in the Parlour Library as simplified Spanish reading texts for language learners. All original works listed here are in the **public domain**. The simplified adaptations are original to Parlour and were written (with AI assistance) for educational use.

@@ -37,7 +37,10 @@ const Content = {
     },
 
     async verb(name) {
-        // Path remains the same (imports/verbs/ is unchanged)
+        const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        if (lang === 'fr' || (typeof lang === 'string' && lang.startsWith('fr-'))) {
+            return this.json(`imports/verbs/fr/${name}.json`);
+        }
         return this.json(`imports/verbs/${name}.json`);
     },
 

@@ -2433,9 +2433,10 @@ window.Reader = {
     makeClickable(text) {
         if (!text) return '';
         const w = this.WORD_CHARS;
-        const tokens = text.match(new RegExp('[' + w + ']+|[0-9]+|[^' + w + '0-9]+', 'g')) || [];
+        // Match compound words like aujourd'hui, elided clitics (l', c', d', j', qu', etc.), standard words, numbers, and punctuation
+        const tokens = text.match(new RegExp("aujourd['’]hui|[" + w + "]+['’]|[" + w + "]+|[0-9]+|[^" + w + "0-9'’]+|['’]", 'gi')) || [];
         const self = this;
-        const wordRe = new RegExp('^[' + w + '0-9]+$');
+        const wordRe = new RegExp("^(" + "aujourd['’]hui|[" + w + "]+['’]?|[0-9]+" + ")$", 'i');
 
         return tokens.map(function(token, i) {
             // the ending stuck to a number ("A2-es", "1948-as") is part of

@@ -1,0 +1,78 @@
+{
+  "language": "fr",
+  "prompts": [
+    {
+      "id": "fr-a1-s01",
+      "cefrLevel": "A1",
+      "taskType": "personal_information",
+      "title": "Présentation personnelle",
+      "situation": "You are meeting a French-speaking person for the first time.",
+      "task": "Answer questions about yourself.",
+      "points": [
+        "your name and where you are from",
+        "where you live",
+        "your work or studies",
+        "the languages you speak",
+        "your hobbies"
+      ],
+      "prompt": "Situation: You are meeting a French-speaking person for the first time.\n\nTask: Introduce yourself in French. Include your name, origin, city, occupation, languages, and hobbies.\n\nSpeak for approximately 1-2 minutes.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "fr-a1-s02",
+      "cefrLevel": "A1",
+      "taskType": "describe_your_family",
+      "title": "Décrire votre famille",
+      "situation": "You are showing a French friend photos of your family and friends.",
+      "task": "Describe the people in the photograph.",
+      "points": [
+        "who the people are",
+        "their names and occupations",
+        "what they are like",
+        "one activity you enjoy together"
+      ],
+      "prompt": "Situation: You are showing a French friend photos of your family.\n\nTask: Describe the people, their relationship to you, their traits, and what you do together.\n\nSpeak for approximately 1-2 minutes.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "fr-a2-s01",
+      "cefrLevel": "A2",
+      "taskType": "last_weekend",
+      "title": "Le week-end dernier",
+      "situation": "A French colleague asks you about your weekend activities.",
+      "task": "Tell what you did last weekend.",
+      "points": [
+        "where you went and with whom",
+        "what the weather was like",
+        "two or three activities you completed",
+        "how you felt about the weekend"
+      ],
+      "prompt": "Situation: A colleague asks about your weekend.\n\nTask: Recount your weekend in the past tense (passé composé). Describe where you went, what you did, and how it was.\n\nSpeak for approximately 1-2 minutes.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "fr-b1-s01",
+      "cefrLevel": "B1",
+      "taskType": "work_life_balance",
+      "title": "L'équilibre vie professionnelle et personnelle",
+      "situation": "You participate in an online French conversation club on lifestyle.",
+      "task": "Express your thoughts on telecommuting and work-life balance.",
+      "points": [
+        "the advantages of remote work",
+        "the challenges or drawbacks",
+        "your personal preferences",
+        "advice for maintaining balance"
+      ],
+      "prompt": "Task: Discuss remote work and work-life balance. Share advantages, disadvantages, and your personal experience.\n\nSpeak for approximately 2 minutes.",
+      "minSeconds": 90,
+      "targetSeconds": 120,
+      "maxSeconds": 180
+    }
+  ]
+}

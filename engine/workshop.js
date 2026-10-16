@@ -46,6 +46,15 @@ const Workshop = (function () {
             category: 'studios'
         },
         {
+            id: 'fr-grammar-studio',
+            icon: 'grammar',
+            title: 'French Grammar Studio',
+            sub: 'Clitic pronoun placement, past participle agreement, and subjunctive triggers.',
+            containerId: 'fr-grammar-studio-root',
+            langs: ['fr'],
+            category: 'studios'
+        },
+        {
             id: 'hu-cultural-exam',
             icon: 'hu-cultural-exam',
             title: 'Hungarian Cultural Exam',
@@ -151,7 +160,7 @@ const Workshop = (function () {
             title: 'Verb Practice',
             sub: 'Conjugation tables and speed drills.',
             containerId: 'verb-driller-root',
-            langs: ['es', 'es-latam', 'es-es'],
+            langs: ['es', 'es-latam', 'es-es', 'fr'],
             category: 'foundations'
         },
 
@@ -375,6 +384,7 @@ const Workshop = (function () {
             music: typeof MusicDriller !== 'undefined' ? MusicDriller : null,
             video: typeof VideoDriller !== 'undefined' ? VideoDriller : null,
             'hu-verb-studio': typeof HuVerbStudio !== 'undefined' ? HuVerbStudio : null,
+            'fr-grammar-studio': typeof FrGrammarStudio !== 'undefined' ? FrGrammarStudio : null,
             'hu-cultural-exam': typeof HuCulturalExam !== 'undefined' ? HuCulturalExam : null,
             'es-ccse-exam': typeof CcseExam !== 'undefined' ? CcseExam : null,
             'es-dele-a1-exam': typeof DeleA1Exam !== 'undefined' ? DeleA1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleA1Exam : null),

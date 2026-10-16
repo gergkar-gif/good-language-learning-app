@@ -967,7 +967,11 @@ const SpeechInput = (function () {
         /a\s+feliratokat\s+k[ée]sz[íi]tette\b[^.?!]*/gi,
         /k[öo]sz[öo]n[öo]m\s+a\s+figyelmet[^.?!]*/gi,
         /subtitles\s+by\b[^.?!]*/gi,
-        /thank\s+you\s+for\s+watching[^.?!]*/gi
+        /thank\s+you\s+for\s+watching[^.?!]*/gi,
+        /sous-titres\s+(r[ée]alis[ée]s|faits|par)\b[^.?!]*/gi,
+        /merci\s+d['’]avoir\s+regard[ée]\b[^.?!]*/gi,
+        /n['’]h[ée]sitez\s+pas\s+[àa]\s+vous\s+abonner\b[^.?!]*/gi,
+        /visionnage\b[^.?!]*/gi
     ];
 
     function stripWhisperHallucinations(text) {
@@ -1058,6 +1062,51 @@ const SpeechInput = (function () {
             .replace(/(.)\1+/g, '$1');     // collapse adjacent duplicates ('rr'->'r', sinalefa 'aa'->'a', 'ee'->'e')
     }
 
+    // French phonetic folding: resolves silent final consonants (-s, -t, -d, -p, -x, -z),
+    // silent h (both muet and aspiré), verb ending homophones (-er/-ez/-é/-és/-ée/-ées),
+    // soft/hard c & g, ç -> s, qu/k -> k, ph -> f, eau/au -> o, ai/ei -> e, ou -> u,
+    // and nasal/consonant fusions.
+    function phoneticFoldFr(word) {
+        if (!word) return '';
+        let w = String(word)
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '');
+
+        // 1. Common digraphs & sound equivalences
+        w = w
+            .replace(/ph/g, 'f')
+            .replace(/eau|au/g, 'o')
+            .replace(/ou/g, 'u')
+            .replace(/ai|ei/g, 'e')
+            .replace(/qu/g, 'k')
+            .replace(/ç/g, 's')
+            .replace(/ch/g, '\u0161'); // protect 'ch' (/ʃ/)
+
+        // Soft c and g before e/i/y
+        w = w
+            .replace(/c(?=[eiy])/g, 's')
+            .replace(/c/g, 'k')
+            .replace(/g(?=[eiy])/g, 'j');
+
+        // Silent h
+        w = w.replace(/h/g, '');
+
+        // Verb infinitives / participles ending homophones: -er, -ez -> -e
+        w = w.replace(/e[rz]$/, 'e');
+
+        // 3rd person plural verb ending -ent (e.g. parlent -> parle)
+        w = w.replace(/ent$/, 'e');
+
+        // Strip silent final consonants in French: -s, -t, -d, -p, -x, -z, -g
+        w = w.replace(/[stpd xzg]+$/, '');
+
+        // Collapse duplicate letters
+        w = w.replace(/(.)\1+/g, '$1');
+
+        return w;
+    }
+
     function genericPhoneticFold(word) {
         if (!word) return '';
         return String(word)
@@ -1069,7 +1118,8 @@ const SpeechInput = (function () {
 
     const PHONETIC_FOLDERS = {
         hu: phoneticFoldHu,
-        es: phoneticFoldEs
+        es: phoneticFoldEs,
+        fr: phoneticFoldFr
     };
 
     function registerPhoneticFolder(langCode, folderFn) {
@@ -1429,5 +1479,8 @@ const SpeechInput = (function () {
 
 if (typeof window !== 'undefined') {
     window.SpeechInput = SpeechInput;
+}
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = SpeechInput;
 }
 
