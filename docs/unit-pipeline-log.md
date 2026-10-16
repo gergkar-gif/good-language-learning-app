@@ -187,6 +187,12 @@ not verified:
 
 ## Prompt templates
 
+**Batch session (cloud, starts a fresh Claude session on one batch; first used for es A1 6–11).** Fill `{UNITS}` (one line per reader: unit numbers, ids), `{BATCH}` (`imports/review/<course>-<level>-batch-<first>-<last>`) and `{NOTES}`.
+
+```
+Run the next unit batch of the Parlour pass in this repo. Follow CLAUDE.md, then docs/unit-pipeline-log.md § "Pipeline" (route A; Spanish: read es-es once, mirror to es-latam) and the template it names. Readers: {UNITS}. Batch folder: {BATCH}. Two Sonnet readers at once, never more; worktrees /home/user/parlour-read-a and -b from origin/master, knowledge sheets in each first. Record as you go: the batch folder gets a setup.md first (start time, pairing, baseline check-content counts per unit and course) and every reader's report, fixes and challenges the moment it returns (commit and push them before filtering; the container can restart); each reader's tokens, minutes and fix counts from its completion notice. Then check_fixes, read every review item against the files (character facts against the stories), merge, apply, mirror, challenges, lock, validate (--changed, and --warnings compared with origin/master), freeze per course with an accept list, walk the batch's lessons in both courses. Records in the same commit: a measurements row and a process review in the pipeline log (compare with the previous rows; pick one or two changes), anything recurring into the rulebook § 6, anything seen twice in this batch scripted as a check-content check tested on the pre-fix content, ROADMAP 153 and ACHIEVED 153 updated. Commit, pull --rebase, push to master, remove the worktrees. Report to the user: cost per unit against the last row, fixes applied/changed, what you could not verify, and any decision that is theirs. {NOTES}
+```
+
 Fill `<…>`. Each agent reads `docs/unit-agent-rules.md` and nothing else
 by default. Reads end with "fix as an exact old → new replacement; quote
 the option text whenever you name an option" and "Run ALL its § 5
@@ -641,10 +647,12 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   reader), the same per unit as HU A2 25–28 at two per reader. HU 29–34
   and 39–44 cost ~113–139k a unit at three, so three per reader would save
   the fixed setup (~40–50k a reader) without raising per-unit cost.
-  **Proposed for the next batch (the user set two for this one, so the
-  user decides):** three units per reader (units 6–11), measured against
-  this row; back to two if a reader's per-unit cost goes above ~140k or
-  its late units show thinner reads.
+  **Decided by the user (2026-10-16): three units per reader from units
+  6–11**, measured against this row; back to two if a reader's per-unit
+  cost goes above ~140k or its late units show thinner reads.
+- **Story audio (user, 2026-10-16):** story text fixes that need new
+  narration audio are made in the JSON during the pass and logged in
+  ROADMAP 153; all A1 story audio is regenerated once, at the end of A1.
 - **Defects:** ~42 applied fixes a unit (unit 1 by Antigravity: 32). Both
   readers ran every § 5 command, wrote fixes, challenges and reports (the
   harness allowed both report files this time). 0 rejected by
