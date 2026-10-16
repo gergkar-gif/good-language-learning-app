@@ -234,12 +234,7 @@ def course_language(course, sources):
 
 # (language, skill, prerequisite) pairs the prerequisite-order check skips, each with its queue item.
 KNOWN_PREREQ_ORDER = {
-    # Spanish pairs found once every screen could be placed (2026-10-08), awaiting the user's decisions: ROADMAP 148(i)
-    ("es", "adjective-agreement", "plural"): "ROADMAP 148",
-    ("es", "doler", "gustar"): "ROADMAP 148",
-    ("es", "hay", "estar"): "ROADMAP 148",
-    ("es", "ser", "subject-pronouns"): "ROADMAP 148",
-    ("es", "tener", "present-tense"): "ROADMAP 148",
+    # Spanish B1 pairs found once every screen could be placed (2026-10-08), awaiting the user's decisions: ROADMAP 148(i); the A1 pairs were resolved 2026-10-16
     ("es", "estilo-indirecto-informacion", "estilo-indirecto"): "ROADMAP 148",
     ("es", "hypothetical-structures", "si-clauses"): "ROADMAP 148",
     ("es", "opinion-verbs-mood", "giving-opinions"): "ROADMAP 148",

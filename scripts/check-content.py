@@ -72,6 +72,7 @@ CHECKS = {
     "exchange-reference": "the question refers to an exchange that isn't shown",
     "reply-as-option": "a 'which line comes before the reply' item offers the reply itself",
     "missing-english": "a fill-blank or sentence-builder without `english`",
+    "english-in-target": "English inside a target-language line (an instruction before a colon, a bracketed stage direction, a scene line before ' / '): TTS reads it in the target voice; put it in `hint` (user, 2026-10-16)",
     "question-answer-type": "the correct option doesn't answer the question word (number, yes/no)",
     # language appendices (§ 9)
     "hu-case-noun": "an -n/-ra/-ról noun with -ban/-ba/-ból",
@@ -269,6 +270,20 @@ def string_options(e):
 
 # --- exercise checks --------------------------------------------------------
 
+INSTRUCTION_WORDS = {"complete", "choose", "fill", "translate", "write", "read", "answer", "match", "listen"}
+STAGE_WORDS = {"about", "own", "answers", "asks", "says", "talking", "someone"}  # stage directions
+
+
+def english_text(s):
+    """Plain English (no target-language letters; an instruction word first, or
+    English function words: a third of 3+ words, a fifth of 5+)."""
+    ts = re.findall(r"[A-Za-z]+", s.lower())
+    if not ts or re.search(r"[À-ɏ¿¡]", s) or "_" in s:
+        return False
+    n = sum(w in ENGLISH or w in STAGE_WORDS for w in ts)
+    return ts[0] in INSTRUCTION_WORDS or (len(ts) >= 3 and n * 3 >= len(ts)) or (len(ts) >= 5 and n * 5 >= len(ts))
+
+
 def check_exercise(e, course, lang):
     out = []
 
@@ -423,6 +438,17 @@ def check_exercise(e, course, lang):
 
     if t in ("fill-blank", "sentence-builder") and not e.get("english"):
         hit("missing-english")
+
+    lines = [e.get("sentence")] + [p.get("text") for p in e.get("prompt") or [] if isinstance(p, dict)]
+    for line in (x for x in lines if isinstance(x, str)):
+        m = re.match(r"^([^:/()]{2,80}):\s+\S", line)
+        bits = ([m.group(1)] if m else []) + re.findall(r"\(([^)]*)\)", line)
+        segs = re.split(r"\s+/\s+", line)
+        bits += segs if len(segs) > 1 else []
+        bad = next((b for b in bits if english_text(b)), None)
+        if bad:
+            hit("english-in-target", bad[:50])
+            break
 
     body = " ".join(texts(e))
     if lang == "hu":

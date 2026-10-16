@@ -396,6 +396,11 @@
         "type": {
           "const": "dialogue-complete"
         },
+        "hint": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Shown in brackets after 'Choose the missing line:': English context the lines can't carry (who answers about whom). Never inside a dialogue line, which TTS reads in the target voice."
+        },
         "prompt": {
           "type": "array",
           "minItems": 2,

@@ -8,6 +8,38 @@
         "@playwright/mcp@latest"
       ],
       "env": {}
+    },
+    "perplexity": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@perplexity-ai/mcp-server"
+      ],
+      "env": {
+        "PERPLEXITY_API_KEY": "${PERPLEXITY_API_KEY}"
+      }
+    },
+    "firecrawl": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "firecrawl-mcp"
+      ],
+      "env": {
+        "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}"
+      }
+    },
+    "local-llm": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "tools/local-llm-mcp/index.js"
+      ],
+      "env": {
+        "OLLAMA_MODEL": "qwen2.5:3b-instruct"
+      }
     }
   }
 }

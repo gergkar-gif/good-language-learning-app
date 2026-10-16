@@ -156,7 +156,7 @@ Use only these nine in lessons. `error-correction` doesn't render at all; `subst
 | `fill-blank` | `sentence` (one `____`), `answer` or `answers`, `english`, optional `hint` | § 6.4. |
 | `sentence-builder` | `tiles`, `solution` (or `solutions` when more than one order is natural), `english` | Proper nouns capitalised, everything else lowercase. `english` is the learner's only feedback, so it is always present. |
 | `sentence-order` | `sentences`, `solution` | A2 and up only, at most 2 per unit, and only for a real time, cause or logic sequence. |
-| `dialogue-complete` | `prompt` [{speaker, text}], `options` (plain strings), `correct` | § 6.3. |
+| `dialogue-complete` | `prompt` [{speaker, text}], `options` (plain strings), `correct`, optional `hint` | § 6.3. |
 | `structured-writing` | `template` [{prompt, answer}] | The prompt's person, tense and meaning match the model answer. |
 | `listening-choice` | `sentence`, `options`, `correct` | A2 and up. `sentence` is a line the learner can follow, often from the story. |
 | `dictation` | `sentence`, `english` | A2 and up. |
@@ -201,6 +201,7 @@ The commonest defects in shipped content. Each rule is here because a review fou
 
 - **The blank:** exactly one `____`, inside the sentence where the word belongs, never appended after a complete sentence. The answer never repeats letters printed next to the blank (`meg____` → the answer has no *meg*).
 - **The hint goes in the `hint` field, never in `sentence`.** The engine shows it in parentheses after the blank, and `validate-content.py` fails a hint written into the sentence. Give a hint only when the blank can't be recovered without one: a new word, an ambiguous person, case or tense, or a register choice. Most blanks need none.
+- **No English inside a target-language line** (`sentence`, a `prompt` line): no "Complete:" instruction, no bracketed stage direction, no scene sentence before " / ". TTS reads those lines in the target voice. Context the learner needs goes in `hint` (fill-blank, and dialogue-complete, where it shows after "Choose the missing line:") or `english`; `check-content` errors on it (`english-in-target`).
 - **A hint is never the answer.** Give the lemma plus the grammar (`válik, past`; `halál + -hoz`; `bailar, yo`) or English (`meanwhile`). Never the inflected form.
 - **Pin the person.** A person- or possessor-marked answer, or a sentence with the subject dropped, names the person in the hint (`I`, `his family`) or in the sentence.
 - **English-only hints need synonyms.** When the hint is English only, list every correct target word in `answers` (*consent* → *beleegyezését*, *hozzájárulását*).

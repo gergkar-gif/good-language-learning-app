@@ -234,21 +234,31 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   a2-01-01, `preterito-indefinido` a2-11-01), yet *ayer* sentences occur in
   A1; `numbers` is taught in a1-10-02 (A1 unit 12) while *diez*, *siete*,
   *nueve* appear from a1-08-02; *gusta/gustan* before a1-gustar-01.
-- **Prerequisite order (ROADMAP 148(i), user's sign-off pending):** five A1
-  pairs are exempted in `KNOWN_PREREQ_ORDER` (`adjective-agreement` ←
+- **Prerequisite order (resolved by the user 2026-10-16):** the five A1
+  requirements taught out of order were dropped (`adjective-agreement` ←
   `plural`, `doler` ← `gustar`, `hay` ← `estar`, `ser` ←
-  `subject-pronouns`, `tener` ← `present-tense`). Report a lesson that
-  depends on the order; don't move `taught_in` or edit `skills/es.json`.
+  `subject-pronouns`, `tener` ← `present-tense`). *doler* (Unit 21) now
+  explains its own pattern and *gustar* (Unit 22) opens "You know this
+  pattern from *doler* in Unit 21": a screen presenting that pattern as new,
+  or calling it "like *gustar*" before Unit 22, is a defect.
 - **Function words count as met** (articles, prepositions, conjunctions,
   clitics, *muy/más/ya/tan*: Spanish vocabulary lists leave them out;
   `scripts/unmet-words.js` FUNCTION_WORDS). Every other word must be met:
-  *otro*, *durante*, *alguien* are in no list, so replace them with met
-  words, or list them in the vocabulary of the first lesson that needs
-  them.
-- **English inside target fields** ("Complete the greeting: Buenos ___.",
-  "(Meg answers about her own sister.)", a scene line before " / ") is
-  the existing Spanish format; the unmet-word check skips it. Report it
-  only when it gives the answer away or contradicts `english`.
+  a word in **no** vocabulary list (*otro*, *durante*, *alguien*) is
+  **added to the vocabulary list of the first lesson that uses it**, with
+  its gloss (user, 2026-10-16); a word listed only in a later lesson is
+  an unmet word as in any course (replace it, or the use waits).
+- **English inside a target-language line is a defect** (user,
+  2026-10-16): an instruction before a colon ("Complete the greeting:
+  Buenos ___."), a bracketed stage direction ("(Meg answers about her own
+  sister.)"), a scene line before " / ". TTS reads it in the Spanish
+  voice. Context goes in `hint` (fill-blank and dialogue-complete show it
+  in brackets) or `english`; `check-content` errors on it
+  (`english-in-target`). The 81 items per course in A1–A2 were fixed
+  2026-10-16 (`scripts/fix_english_in_target.py`).
+- **Challenges:** es-latam uses the same setting and people as es-es
+  (user, 2026-10-16). Write them once in es-es; es-latam gets the same
+  entries with only the course variants changed (*ustedes*, *jugo*).
 - **Stems are not uniform** (`a1-01-01`, `a1-03c-03`,
   `a1-demonstrative-01`); unit numbers for "You know … from Unit N" come
   from `content/es-es/curriculum/units/<level>.json` (the knowledge sheet

@@ -1517,7 +1517,7 @@ const stepRenderers = {
                     </div>
                 `;}).join('')}
             </div>
-            <p class="lsn-question">Choose the missing line:${isMulti ? ' <span class="lsn-multi-hint">(more than one answer is acceptable — pick any)</span>' : ''}</p>
+            <p class="lsn-question">Choose the missing line:${step.hint ? ` <span class="lsn-blank-hint">(${esc(step.hint)})</span>` : ''}${isMulti ? ' <span class="lsn-multi-hint">(more than one answer is acceptable — pick any)</span>' : ''}</p>
             <div class="lsn-options">
                 ${parts.map((option, i) => `
                     <button class="lsn-option" onclick="lessonSelectOption(this, ${i})"><span class="lsn-key-hint">${i + 1}</span><span class="lsn-option-text">${escMd(option.text)}</span></button>
