@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-10-16-french-course';
+const CACHE_VERSION = 'v2026-10-17-french-media-drills';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -104,12 +104,17 @@ const PRECACHE_ASSETS = [
     'content/es-latam/curriculum/curriculum.json',
     'content/es-es/curriculum/curriculum.json',
     'content/hu/curriculum/curriculum.json',
+    'content/fr/curriculum/curriculum.json',
     'content/es-latam/stories/manifest.json',
     'content/es-es/stories/manifest.json',
     'content/hu/stories/manifest.json',
+    'content/fr/stories/manifest.json',
     'content/es-latam/decks/decks.json',
     'content/es-es/decks/decks.json',
     'content/hu/decks/decks.json',
+    'content/fr/songs.json',
+    'content/fr/videos.json',
+    'content/fr/listening-tasks.json',
     'content/es-latam/tests/diagnostic-test.json',
     'content/es-es/tests/diagnostic-test.json',
     'content/hu/tests/diagnostic-test.json'

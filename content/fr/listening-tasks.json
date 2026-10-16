@@ -1,0 +1,237 @@
+{
+  "language": "fr",
+  "tasks": [
+    {
+      "id": "ls-fr-a1-boulangerie",
+      "level": "A1",
+      "title": "À la boulangerie",
+      "topic": "Commander et faire des achats quotidiens",
+      "format": "dialogue",
+      "context": "Dans une boulangerie de quartier à Paris, Marc commande son petit-déjeuner à la vendeuse.",
+      "previewSeconds": 30,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Boulangère",
+            "gender": "female",
+            "text": "Bonjour monsieur ! Qu'est-ce qui vous ferait plaisir aujourd'hui ?",
+            "textEn": "Good morning sir! What would you like today?"
+          },
+          {
+            "speaker": "Marc",
+            "gender": "male",
+            "text": "Bonjour madame. Une baguette tradition bien cuite et deux croissants au beurre, s'il vous plaît.",
+            "textEn": "Good morning ma'am. One traditional baguette well-baked and two butter croissants, please."
+          },
+          {
+            "speaker": "Boulangère",
+            "gender": "female",
+            "text": "Très bien. Et avec ceci ? Nos tartes aux pommes sortent tout juste du four.",
+            "textEn": "Very well. And with that? Our apple tarts are just coming out of the oven."
+          },
+          {
+            "speaker": "Marc",
+            "gender": "male",
+            "text": "Elles ont l'air délicieuses. Ajoutez une part de tarte aux pommes, s'il vous plaît.",
+            "textEn": "They look delicious. Add one slice of apple tart, please."
+          },
+          {
+            "speaker": "Boulangère",
+            "gender": "female",
+            "text": "Ce sera tout ? Cela vous fera six euros et quatre-vingts centimes au total.",
+            "textEn": "Will that be all? That will be six euros and eighty cents in total."
+          },
+          {
+            "speaker": "Marc",
+            "gender": "male",
+            "text": "Voilà un billet de dix euros. Gardez la monnaie madame, bonne journée !",
+            "textEn": "Here is a ten euro note. Keep the change ma'am, have a good day!"
+          },
+          {
+            "speaker": "Boulangère",
+            "gender": "female",
+            "text": "C'est très gentil, merci beaucoup. Excellente journée à vous aussi !",
+            "textEn": "That is very kind, thank you very much. Have a wonderful day too!"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "question": "Que commande Marc comme pain ?",
+          "options": [
+            "Une baguette tradition bien cuite",
+            "Deux pains de seigle complets",
+            "Une miche de pain de campagne pas trop cuite",
+            "Trois petits pains au chocolat"
+          ],
+          "correct": 0,
+          "evidence": "Une baguette tradition bien cuite et deux croissants au beurre, s'il vous plaît.",
+          "explanation": "Marc précise explicitement qu'il souhaite une baguette tradition bien cuite."
+        },
+        {
+          "id": "q2",
+          "question": "Quelle pâtisserie Marc décide-t-il d'ajouter après la proposition de la boulangère ?",
+          "options": [
+            "Une part de tarte aux pommes",
+            "Un éclair au chocolat",
+            "Une part de gâteau au fromage",
+            "Deux macarons à la framboise"
+          ],
+          "correct": 0,
+          "evidence": "Elles ont l'air délicieuses. Ajoutez une part de tarte aux pommes, s'il vous plaît.",
+          "explanation": "La boulangère propose la tarte aux pommes qui sort du four, et Marc en accepte une part."
+        },
+        {
+          "id": "q3",
+          "question": "Comment Marc règle-t-il la note ?",
+          "options": [
+            "Avec un billet de dix euros en laissant la monnaie",
+            "Par carte bancaire sans contact",
+            "Avec l'appoint exact en pièces de monnaie",
+            "Par chèque bancaire"
+          ],
+          "correct": 0,
+          "evidence": "Voilà un billet de dix euros. Gardez la monnaie madame, bonne journée !",
+          "explanation": "Marc donne un billet de 10 € pour une note de 6,80 € et dit à la vendeuse de garder la monnaie."
+        }
+      ]
+    },
+    {
+      "id": "ls-fr-a2-gare",
+      "level": "A2",
+      "title": "Annonce et renseignements à la gare",
+      "topic": "Voyages et transports ferroviaires",
+      "format": "dialogue",
+      "context": "À la gare de Lyon à Paris, une voyageuse demande des précisions sur son train à destination de Lyon Part-Dieu.",
+      "previewSeconds": 30,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Haut-parleur SNCF",
+            "gender": "female",
+            "text": "Mesdames et messieurs, voie H, le TGV numéro 6614 à destination de Lyon Part-Dieu partira avec un retard estimé de quinze minutes en raison d'un incident technique sur la voie.",
+            "textEn": "Ladies and gentlemen, on track H, TGV number 6614 bound for Lyon Part-Dieu will depart with an estimated delay of fifteen minutes due to a technical incident on the track."
+          },
+          {
+            "speaker": "Camille",
+            "gender": "female",
+            "text": "Excusez-moi monsieur l'agent. Je dois prendre la correspondance pour Grenoble à Lyon. Vais-je avoir le temps de l'attraper ?",
+            "textEn": "Excuse me officer. I have to take the connection for Grenoble in Lyon. Will I have time to catch it?"
+          },
+          {
+            "speaker": "Agent SNCF",
+            "gender": "male",
+            "text": "Laissez-moi vérifier sur mon terminal. Vous avez initialement trente-cinq minutes de battement à Lyon Part-Dieu. Même avec quinze minutes de retard, il vous restera vingt minutes, ce qui est suffisant pour changer de quai.",
+            "textEn": "Let me check on my terminal. You initially have a thirty-five minute layover at Lyon Part-Dieu. Even with fifteen minutes delay, you will have twenty minutes left, which is sufficient to change platforms."
+          },
+          {
+            "speaker": "Camille",
+            "gender": "female",
+            "text": "Ouf, quel soulagement ! Et pour monter à bord du TGV, la voiture numéro quatre est-elle en tête ou en queue de train ?",
+            "textEn": "Phew, what a relief! And to board the TGV, is coach number four at the front or the back of the train?"
+          },
+          {
+            "speaker": "Agent SNCF",
+            "gender": "male",
+            "text": "Elle se situe en milieu de quai, repère T. Vous pouvez avancer directement sur la voie H.",
+            "textEn": "It is located in the middle of the platform, marker T. You can proceed directly onto track H."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "question": "Pourquoi le TGV vers Lyon Part-Dieu a-t-il du retard ?",
+          "options": [
+            "À cause d'un problème technique sur la voie",
+            "En raison d'une grève surprise des conducteurs",
+            "À cause de mauvaises conditions météorologiques",
+            "En raison d'un oubli de bagage à bord"
+          ],
+          "correct": 0,
+          "evidence": "en raison d'un incident technique sur la voie",
+          "explanation": "L'annonce sonore précise que le retard de 15 minutes est dû à un incident technique sur la voie."
+        },
+        {
+          "id": "q2",
+          "question": "Combien de temps restera-t-il à Camille pour prendre sa correspondance à Lyon ?",
+          "options": [
+            "Vingt minutes",
+            "Trente-cinq minutes",
+            "Cinq minutes",
+            "Aucun temps, elle manquera son train"
+          ],
+          "correct": 0,
+          "evidence": "Même avec quinze minutes de retard, il vous restera vingt minutes, ce qui est suffisant pour changer de quai.",
+          "explanation": "L'agent calcule 35 minutes initiales moins 15 minutes de retard, laissant 20 minutes."
+        }
+      ]
+    },
+    {
+      "id": "ls-fr-b1-entretien",
+      "level": "B1",
+      "title": "Entretien d'embauche",
+      "topic": "Monde professionnel et carrière",
+      "format": "dialogue",
+      "context": "Sophie passe un entretien de recrutement pour un poste de cheffe de projet dans une entreprise de technologie à Lyon.",
+      "previewSeconds": 30,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Recruteur",
+            "gender": "male",
+            "text": "Bonjour Sophie, merci d'être venue. Votre CV a particulièrement retenu notre attention. Pouvez-vous nous résumer vos trois années d'expérience en gestion de projet ?",
+            "textEn": "Hello Sophie, thank you for coming. Your CV particularly caught our attention. Could you summarize your three years of project management experience for us?"
+          },
+          {
+            "speaker": "Sophie",
+            "gender": "female",
+            "text": "Bonjour. J'ai piloté la refonte d'applications mobiles pour des clients européens, en coordonnant des équipes pluridisciplinaires composées de développeurs, de designers et de spécialistes marketing.",
+            "textEn": "Hello. I piloted the revamp of mobile applications for European clients, coordinating multidisciplinary teams composed of developers, designers and marketing specialists."
+          },
+          {
+            "speaker": "Recruteur",
+            "gender": "male",
+            "text": "Très intéressant. Notre équipe travaille selon la méthode agile, avec des livraisons toutes les deux semaines. Comment gérez-vous les imprévus et les délais serrés ?",
+            "textEn": "Very interesting. Our team works according to the agile methodology, with deliveries every two weeks. How do you handle unforeseen issues and tight deadlines?"
+          },
+          {
+            "speaker": "Sophie",
+            "gender": "female",
+            "text": "J'accorde une priorité absolue à la communication transparente et à la priorisation des fonctionnalités essentielles. Si un blocage technique survient, nous ajustons le périmètre immédiatement en accord avec le client.",
+            "textEn": "I give absolute priority to transparent communication and prioritizing essential features. If a technical blockage occurs, we adjust scope immediately in agreement with the client."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "question": "Quelle mission Sophie a-t-elle menée au cours de ses expériences précédentes ?",
+          "options": [
+            "Le pilotage de la refonte d'applications mobiles avec des équipes pluridisciplinaires",
+            "La vente de matériel informatique pour des particuliers en boutique",
+            "L'enseignement du code informatique dans une université partenaire",
+            "La comptabilité financière d'un groupe bancaire"
+          ],
+          "correct": 0,
+          "evidence": "J'ai piloté la refonte d'applications mobiles pour des clients européens, en coordonnant des équipes pluridisciplinaires",
+          "explanation": "Sophie explique qu'elle a dirigé des projets de refonte d'applications mobiles."
+        },
+        {
+          "id": "q2",
+          "question": "Comment Sophie réagit-elle en cas de blocage technique ou de délai serré ?",
+          "options": [
+            "Elle privilégie la communication et réajuste immédiatement le périmètre du projet avec le client",
+            "Elle impose des heures supplémentaires de nuit à ses développeurs",
+            "Elle annule le contrat sans consulter le client",
+            "Elle ignore les bugs jusqu'à la fin du trimestre"
+          ],
+          "correct": 0,
+          "evidence": "Si un blocage technique survient, nous ajustons le périmètre immédiatement en accord avec le client.",
+          "explanation": "Sophie souligne la priorisation et l'ajustement immédiat du périmètre."
+        }
+      ]
+    }
+  ]
+}

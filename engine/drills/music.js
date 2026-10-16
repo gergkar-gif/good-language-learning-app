@@ -375,7 +375,8 @@ const MusicDriller = (function () {
             }
         }
         if (!loaded) {
-            loaded = _FALLBACK_SONGS;
+            const currentLang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+            loaded = currentLang.startsWith('es') ? _FALLBACK_SONGS : [];
         }
         return loaded.slice().sort((a, b) => (a.title || '').localeCompare(b.title || '', undefined, { sensitivity: 'base' }));
     }
@@ -394,6 +395,16 @@ const MusicDriller = (function () {
     }
 
     function _renderBaseHtml() {
+        if (!_songs || !_songs.length) {
+            return `
+                <div class="wk-music-root" style="padding-top: 16px;">
+                    <div class="sp-setup-head">
+                        <h3 style="margin-top:0;">No songs available</h3>
+                        <p class="sp-setup-desc" style="color: var(--muted);">There are no song lyrics drills available for this language yet.</p>
+                    </div>
+                </div>
+            `;
+        }
         const current = _getCurrentSong();
         const optionsHtml = _songs.map(s => `
             <option value="${s.id}" ${s.id === current.id ? 'selected' : ''}>

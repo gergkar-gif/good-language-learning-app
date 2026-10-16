@@ -217,7 +217,10 @@ const VideoDriller = (function () {
                 // fall through
             }
         }
-        if (!loaded) loaded = _FALLBACK_VIDEOS;
+        if (!loaded) {
+            const currentLang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+            loaded = currentLang.startsWith('es') ? _FALLBACK_VIDEOS : [];
+        }
         return loaded.slice().sort((a, b) => (a.title || '').localeCompare(b.title || '', undefined, { sensitivity: 'base' }));
     }
 
@@ -235,6 +238,16 @@ const VideoDriller = (function () {
     }
 
     function _renderBaseHtml() {
+        if (!_videos || !_videos.length) {
+            return `
+                <div class="wk-music-root wk-video-root" style="padding-top: 16px;">
+                    <div class="sp-setup-head">
+                        <h3 style="margin-top:0;">No videos available</h3>
+                        <p class="sp-setup-desc" style="color: var(--muted);">There are no authentic video listening drills available for this language yet.</p>
+                    </div>
+                </div>
+            `;
+        }
         const current = _getCurrentVideo();
         const optionsHtml = _videos.map(v => `
             <option value="${v.id}" ${v.id === current.id ? 'selected' : ''}>

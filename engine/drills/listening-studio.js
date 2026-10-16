@@ -187,6 +187,60 @@ const ListeningStudio = (function () {
             ];
         }
 
+        if (base === 'fr') {
+            return [
+                {
+                    id: 'ls-fr-fallback-01',
+                    level: 'A1',
+                    title: 'À la boulangerie',
+                    topic: 'Commander son petit-déjeuner',
+                    format: 'dialogue',
+                    context: 'Dans une boulangerie parisienne, Marc commande du pain et des viennoiseries.',
+                    previewSeconds: 30,
+                    audio: {
+                        turns: [
+                            { speaker: 'Boulangère', gender: 'female', text: 'Bonjour monsieur ! Qu\'est-ce qui vous ferait plaisir aujourd\'hui ?', textEn: 'Good morning sir! What would you like today?' },
+                            { speaker: 'Marc', gender: 'male', text: 'Bonjour madame. Une baguette tradition et deux croissants, s\'il vous plaît.', textEn: 'Good morning ma\'am. One tradition baguette and two croissants, please.' },
+                            { speaker: 'Boulangère', gender: 'female', text: 'Très bien. Et avec ceci ? Nos tartes aux pommes sortent du four.', textEn: 'Very well. And with that? Our apple tarts are coming out of the oven.' },
+                            { speaker: 'Marc', gender: 'male', text: 'Une part de tarte aux pommes, s\'il vous plaît. Combien cela fait-il ?', textEn: 'A slice of apple tart, please. How much is that?' },
+                            { speaker: 'Boulangère', gender: 'female', text: 'Cela vous fera six euros et quatre-vingts centimes.', textEn: 'That will be six euros and eighty cents.' },
+                            { speaker: 'Marc', gender: 'male', text: 'Voilà un billet de dix euros. Gardez la monnaie !', textEn: 'Here is a ten euro note. Keep the change!' },
+                            { speaker: 'Boulangère', gender: 'female', text: 'Merci beaucoup monsieur, bonne journée !', textEn: 'Thank you very much sir, have a good day!' }
+                        ]
+                    },
+                    questions: [
+                        {
+                            id: 'q1',
+                            type: 'listening-mc',
+                            question: 'Que commande Marc comme pain ?',
+                            options: ['Une baguette tradition', 'Un pain complet', 'Un pain de mie'],
+                            correct: 0,
+                            evidence: 'Une baguette tradition et deux croissants, s\'il vous plaît.',
+                            explanation: 'Marc demande une baguette tradition.'
+                        },
+                        {
+                            id: 'q2',
+                            type: 'listening-mc',
+                            question: 'Quelle pâtisserie Marc choisit-il ?',
+                            options: ['Une part de tarte aux pommes', 'Un éclair au chocolat', 'Un chausson aux pommes'],
+                            correct: 0,
+                            evidence: 'Une part de tarte aux pommes, s\'il vous plaît.',
+                            explanation: 'Marc accepte la suggestion de tarte aux pommes de la boulangère.'
+                        },
+                        {
+                            id: 'q3',
+                            type: 'listening-mc',
+                            question: 'Comment Marc paie-t-il ?',
+                            options: ['Avec un billet de dix euros', 'Par carte sans contact', 'Par chèque'],
+                            correct: 0,
+                            evidence: 'Voilà un billet de dix euros. Gardez la monnaie !',
+                            explanation: 'Marc remet un billet de dix euros et laisse la monnaie.'
+                        }
+                    ]
+                }
+            ];
+        }
+
         if (base === 'es') {
             return [
             {
