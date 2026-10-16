@@ -1,0 +1,349 @@
+[
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-01-ex.json",
+  "id": "a1.cafe.01.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué toma Daniela?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "Ana is not a character of the stories",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-cafe-01-tomar-gr.json",
+  "old": "It is a regular -ar verb in the present tense.",
+  "new": "You know regular -ar verbs from Unit 6, and *tomar* is one of them.",
+  "why": "screen leaves the Unit 6 pattern unmarked as known",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-02-ex.json",
+  "id": "a1.cafe.02.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué come Daniela?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "Ana is not a character of the stories",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-cafe-02-comer-gr.json",
+  "old": "It is a regular -er verb in the present tense.",
+  "new": "You know regular -er verbs from Unit 6, and *comer* is one of them.",
+  "why": "as above",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-03-ex.json",
+  "id": "a1.cafe.03.ex09",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué quiere Daniela?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "Ana is not a character of the stories",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-03-ex.json",
+  "id": "a1.cafe.03.ex16",
+  "set": {
+   "options": [
+    "Quiero un café, por favor.",
+    "Quiero una café, por favor.",
+    "Quiere un café, por favor."
+   ]
+  },
+  "why": "'Quiero café un, por favor.' is a garbled non-phrase; use one real fault per option",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-cafe-04-voc.json",
+  "old": "\"lemma\": \"ordenar\",\n      \"translation\": \"to order\"",
+  "new": "\"lemma\": \"pedir\",\n      \"translation\": \"to order / ask for\"",
+  "why": "ordenar = tidy up in Spain; pedir is the es-es word",
+  "kind": "target",
+  "sure": false,
+  "variant": "es-es"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-04-ex.json",
+  "id": "a1.cafe.04.ex04",
+  "set": {
+   "options": [
+    "Quiero un café y un sándwich.",
+    "Quiero un café, por favor.",
+    "Quiero un té y un sándwich."
+   ]
+  },
+  "why": "length give-away ERROR (29 vs 15)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-04-ex.json",
+  "id": "a1.cafe.04.ex09",
+  "set": {
+   "options": [
+    "No, gracias. Eso es todo.",
+    "Sí, quiero un té también.",
+    "Sí, un café más, por favor."
+   ]
+  },
+  "why": "length give-away ERROR (25 vs 12)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-04-ex.json",
+  "id": "a1.cafe.04.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Camarero",
+     "text": "¿Quiere un café o un té?"
+    },
+    {
+     "speaker": "Cliente",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Un té, por favor.",
+    "Una té, por favor.",
+    "Unos té, por favor."
+   ],
+   "teaches": [
+    "gender"
+   ]
+  },
+  "why": "'Son las tres.' is clock time (Unit 14) and 'Sí, gracias. Eso es todo.' contradicts itself; ex11 duplicates cafe.05.ex11. Make it an article item",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-04-ex.json",
+  "id": "a1.cafe.04.ex15",
+  "set": {
+   "question": "Which order is correct?",
+   "options": [
+    "Quiero un sándwich, por favor.",
+    "Quiero una sándwich, por favor.",
+    "Quieres un sándwich, por favor."
+   ]
+  },
+  "why": "garbled non-phrases ('Quiero café por.', 'Por favor quiero un.') as wrong options",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-05-ex.json",
+  "id": "a1.cafe.05.ex05",
+  "set": {
+   "options": [
+    "Quiero una ensalada, por favor.",
+    "Quiero un ensalada, por favor.",
+    "Quieres una ensalada, por favor."
+   ]
+  },
+  "why": "length give-away ERROR (26 vs 19); garbled wrong options",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-05-ex.json",
+  "id": "a1.cafe.05.ex09",
+  "set": {
+   "options": [
+    "Quiero un té y un sándwich, por favor.",
+    "No, gracias. Eso es todo, por favor.",
+    "Sí, un té y un sándwich, gracias."
+   ]
+  },
+  "why": "desea, hoy unmet; wrong options were waiter lines",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-05-ex.json",
+  "id": "a1.cafe.05.ex11",
+  "set": {
+   "options": [
+    "No, gracias. Eso es todo.",
+    "Sí, gracias. Eso es todo.",
+    "Como un sándwich."
+   ]
+  },
+  "why": "'Son las tres.' is clock time (Unit 14); duplicate of cafe.04.ex11",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-05-ex.json",
+  "id": "a1.cafe.05.ex12",
+  "set": {
+   "options": [
+    "Sí, aquí tiene la cuenta.",
+    "Sí, mañana.",
+    "No, gracias. Eso es todo."
+   ]
+  },
+  "why": "mismo is first taught at a1-continuous-01",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-02.json",
+  "old": "¿Quieres algún refresco o jugo también, Carlos?",
+  "new": "¿Quieres algún refresco o zumo también, Carlos?",
+  "why": "jugo is Latin American; es-es says zumo",
+  "kind": "target",
+  "variant": "es-es"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-02.json",
+  "old": "Buenas tardes. Por favor, ¿podemos ordenar?",
+  "new": "Buenas tardes. Por favor, ¿podemos pedir?",
+  "why": "ordenar is Latin American for ordering food",
+  "kind": "target",
+  "sure": false,
+  "variant": "es-es"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-02.json",
+  "old": "\"lemma\": \"conocer\",\n          \"pos\": \"verb\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"to meet / get to know\"",
+  "new": "\"lemma\": \"camarero\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"waiter\"",
+  "why": "keyVocabulary placeholder (conocer, intercambio) is not in the story",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-02.json",
+  "old": "\"lemma\": \"intercambio\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"exchange\"",
+  "new": "\"lemma\": \"cuenta\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"bill\"",
+  "why": "as above",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-consolidation-ex.json",
+  "id": "a1.cafe.06.ex03",
+  "set": {
+   "question": "Nosotros __ agua.",
+   "options": [
+    "tomamos",
+    "toman",
+    "tomo"
+   ]
+  },
+  "why": "copy of a1.cafe.01.ex04; vary",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-consolidation-ex.json",
+  "id": "a1.cafe.06.ex04",
+  "set": {
+   "question": "Ella __ una ensalada.",
+   "options": [
+    "come",
+    "como",
+    "comen"
+   ]
+  },
+  "why": "copy of a1.cafe.02.ex04; vary",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-consolidation-ex.json",
+  "id": "a1.cafe.06.ex06",
+  "set": {
+   "question": "Which is a correct café request?",
+   "options": [
+    "Quiero un té, por favor.",
+    "Quiero una té, por favor.",
+    "Quieren un té, por favor."
+   ]
+  },
+  "why": "length give-away ERROR (26 vs 19); garbled wrong options ('Café quiero.')",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-consolidation-ex.json",
+  "id": "a1.cafe.06.ex14",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Camarero",
+     "text": "¿Qué quiere?"
+    },
+    {
+     "speaker": "Cliente",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Quiero un té y una ensalada, por favor.",
+    "Quiere un té y una ensalada, por favor.",
+    "Quieres un té y una ensalada, por favor."
+   ]
+  },
+  "why": "copy of a1.cafe.04.ex10; vary",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-consolidation-ex.json",
+  "id": "a1.cafe.06.ex20",
+  "set": {
+   "sentence": "Mi hermana _____ un sándwich en el café.",
+   "hint": "eat — comer, 3rd sing.",
+   "answer": "come",
+   "english": "My sister eats a sandwich at the café."
+  },
+  "why": "bocadillo, barra are in no vocabulary list (bocadillo/barra also Spain-only); use met words",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-cafe-04-ex.json",
+  "id": "a1.cafe.04.ex01",
+  "set": {
+   "pairs": [
+    [
+     "pedir",
+     "to order"
+    ],
+    [
+     "menú",
+     "menu"
+    ],
+    [
+     "cuenta",
+     "bill"
+    ],
+    [
+     "camarero",
+     "waiter"
+    ]
+   ]
+  },
+  "why": "ordenar is the Latin American word for ordering food; Spain says pedir",
+  "kind": "target",
+  "sure": false,
+  "variant": "es-es"
+ }
+]

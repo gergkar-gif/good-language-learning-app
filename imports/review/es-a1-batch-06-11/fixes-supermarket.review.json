@@ -1,0 +1,489 @@
+[
+ {
+  "file": "content/es-es/exercises/a1/a1-08-01-ex.json",
+  "id": "a1.08.01.ex04",
+  "set": {
+   "options": [
+    "una manzana",
+    "un manzana",
+    "unas manzana"
+   ]
+  },
+  "why": "wrong option 'unos manzana' has two faults (number and gender); unas manzana is number only",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-01-ex.json",
+  "id": "a1.08.01.ex06",
+  "set": {
+   "options": [
+    "unos",
+    "unas",
+    "un"
+   ]
+  },
+  "why": "'una' fails on gender and number; 'un' is number only",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-01-ex.json",
+  "id": "a1.08.01.ex09",
+  "set": {
+   "options": [
+    "una botella",
+    "un botella",
+    "unas botella"
+   ]
+  },
+  "why": "'unos botella' two faults; unas botella is number only",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-01-ex.json",
+  "id": "a1.08.01.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué hay en la cocina?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Hay una manzana.",
+    "Hay un manzana.",
+    "Hay unas manzana."
+   ]
+  },
+  "why": "prompt used unmet quieres/comprar; ask with hay (Unit 8) and met words; wrong options one fault each",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-01-ex.json",
+  "id": "a1.08.01.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué hay en la mesa?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Hay un pan y unos tomates.",
+    "Hay una pan y unos tomates.",
+    "Hay unos pan y unos tomates."
+   ]
+  },
+  "why": "'lista' is first taught at a1-08-05; correct option had no article (not the point of the lesson) and wrong options had two faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-01-ex.json",
+  "id": "a1.08.01.ex14",
+  "set": {
+   "sentence": "Necesito __ tomate.",
+   "answer": "un",
+   "english": "I need a tomato."
+  },
+  "why": "'una leche' is not natural for 'a carton of milk'; use a plain countable noun",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-02-ex.json",
+  "id": "a1.08.02.ex04",
+  "set": {
+   "answer": "dos",
+   "answers": null
+  },
+  "why": "siete and nueve are first taught at a1-10-02; english pins 'two' so only dos is right",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-02-ex.json",
+  "id": "a1.08.02.ex05",
+  "set": {
+   "options": [
+    "cuatro",
+    "un",
+    "unas"
+   ]
+  },
+  "why": "un and una fail the same way (singular article before a plural); give one fault each",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-02-ex.json",
+  "id": "a1.08.02.ex09",
+  "set": {
+   "options": [
+    "tres tomates",
+    "tres tomate",
+    "dos tomates"
+   ]
+  },
+  "why": "'tomatos' is a taught non-word and in no vocabulary list; use a real phrase",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-02-ex.json",
+  "id": "a1.08.02.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Cuántas manzanas hay?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "quieres is first taught at a1-08-03; ask with hay",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-02-ex.json",
+  "id": "a1.08.02.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Cuánto arroz hay?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "necesitas is first taught at a1-08-04; ask with hay",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-02-ex.json",
+  "id": "a1.08.02.ex16",
+  "set": {
+   "question": "How do you say \"five bottles\"?",
+   "options": [
+    "cinco botellas",
+    "cinco botella",
+    "dos botellas"
+   ]
+  },
+  "why": "'botellos' is a non-word in no vocabulary list; pin the answer so a real wrong option can replace it",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-02-ex.json",
+  "id": "a1.08.02.ex17",
+  "set": {
+   "question": "¿Qué significa \"diez\"? ",
+   "options": [
+    "ten",
+    "two",
+    "five"
+   ]
+  },
+  "why": "answer 'kilo' is copied from the question; ask about a number instead",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-08-03-querer-gr.json",
+  "old": "Its present-tense forms are irregular, so learn the common forms as a set.",
+  "new": "You know stem-changing verbs from Unit 7: *querer* changes *e* to *ie* in every form except *nosotros* and *vosotros*, so learn the common forms as a set.",
+  "why": "screen does not link querer to the stem-changing pattern Unit 7 taught",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-03-ex.json",
+  "id": "a1.08.03.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué quiere Daniela?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "Ana is not a character of the stories; use Daniela",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-04-ex.json",
+  "id": "a1.08.04.ex13",
+  "set": {
+   "question": "How do you say \"We need two bottles\"?",
+   "options": [
+    "Necesitamos dos botellas.",
+    "Necesitamos dos botella.",
+    "Necesitamos tres botellas."
+   ]
+  },
+  "why": "'botellos' is a non-word in no vocabulary list; pin the answer and replace it",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-05-ex.json",
+  "id": "a1.08.05.ex03",
+  "set": {
+   "options": [
+    "pagar",
+    "necesitar",
+    "querer"
+   ]
+  },
+  "why": "comprar is first taught at a1-20-01",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-05-ex.json",
+  "id": "a1.08.05.ex04",
+  "set": {
+   "options": [
+    "Quiero dos manzanas.",
+    "Quiero manzanas.",
+    "Quiero dos."
+   ]
+  },
+  "why": "comprar is unmet; 'Quiero manzanas.' and the old third option fail the same way, so use a quantity-without-item option",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-05-ex.json",
+  "id": "a1.08.05.ex06",
+  "set": {
+   "answer": "dos",
+   "answers": null
+  },
+  "why": "siete and nueve are first taught at a1-10-02; english pins 'two'",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-05-ex.json",
+  "id": "a1.08.05.ex12",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Dónde pagamos?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Pagamos en la caja.",
+    "Pagan en la caja.",
+    "Pagas en la caja."
+   ],
+   "teaches": [
+    "ar-verbs"
+   ]
+  },
+  "why": "vamos a + infinitive (ir) is Unit 25 and 'todo' is first taught at a1-cafe-04; ask with pagar",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-05-ex.json",
+  "id": "a1.08.05.ex13",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you want two apples.",
+     "answer": "Quiero dos manzanas."
+    },
+    {
+     "prompt": "Say that you need a bottle of water.",
+     "answer": "Necesito una botella de agua."
+    },
+    {
+     "prompt": "Say that you pay at the checkout.",
+     "answer": "Pago en la caja."
+    }
+   ]
+  },
+  "why": "'Voy a pagar' is ir a + infinitive (Unit 16/25), not yet taught; use pagar in the present",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-05-ex.json",
+  "id": "a1.08.05.ex19",
+  "set": {
+   "question": "How do you say \"I want five tomatoes\"?",
+   "options": [
+    "Quiero cinco tomates.",
+    "Quiero cinco tomate.",
+    "Quieres cinco tomates."
+   ]
+  },
+  "why": "repeats the right answer of ex04 and ex09; vary",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-08-05-voc.json",
+  "old": ",\n    {\n      \"lemma\": \"voy\",\n      \"translation\": \"I go (from ir, irregular)\",\n      \"pos\": \"verb\"\n    }",
+  "new": "",
+  "why": "voy (ir) is taught in Unit 16; no exercise needs it once Voy a pagar is replaced",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-consolidation-ex.json",
+  "id": "a1.08.06.ex02",
+  "set": {
+   "question": "¿Cómo se dice \"list\"? ",
+   "options": [
+    "lista",
+    "caja",
+    "carrito"
+   ]
+  },
+  "why": "copy of a1.08.02.ex02; vary the word",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-consolidation-ex.json",
+  "id": "a1.08.06.ex03",
+  "set": {
+   "options": [
+    "dos",
+    "una",
+    "unos"
+   ]
+  },
+  "why": "'una' and 'un' fail the same way; give different faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-consolidation-ex.json",
+  "id": "a1.08.06.ex04",
+  "set": {
+   "question": "Necesito __ pan.",
+   "options": [
+    "un",
+    "una",
+    "unos"
+   ]
+  },
+  "why": "the two wrong options both fail by plural article, and 'no article with a mass noun' was never taught; test un/una/unos",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-consolidation-ex.json",
+  "id": "a1.08.06.ex05",
+  "set": {
+   "question": "Mi hermano __ arroz.",
+   "options": [
+    "quiere",
+    "quiero",
+    "quieren"
+   ]
+  },
+  "why": "copy of a1.08.03.ex02; vary the subject",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-consolidation-ex.json",
+  "id": "a1.08.06.ex12",
+  "set": {
+   "question": "Which is correct?",
+   "options": [
+    "Mi hermano necesita pan.",
+    "Mi hermano necesitar pan.",
+    "Mi hermano necesitan pan."
+   ]
+  },
+  "why": "comprar/compra/compran first taught at a1-20-01; use necesitar",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-consolidation-ex.json",
+  "id": "a1.08.06.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you want three tomatoes.",
+     "answer": "Quiero tres tomates."
+    },
+    {
+     "prompt": "Say that you need a packet of rice.",
+     "answer": "Necesito un paquete de arroz."
+    },
+    {
+     "prompt": "Say that you have two brothers.",
+     "answer": "Tengo dos hermanos."
+    }
+   ]
+  },
+  "why": "two prompts copy a1.08.02.ex12 / a1.08.05.ex13; vary",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-consolidation-ex.json",
+  "id": "a1.08.06.ex18",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you want two apples and need a bottle of water.",
+     "answer": "Quiero dos manzanas y necesito una botella de agua."
+    }
+   ]
+  },
+  "why": "prompt does not pin its one stored answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-consolidation-ex.json",
+  "id": "a1.08.06.ex19",
+  "set": {
+   "sentence": "_____ dos botellas de agua.",
+   "hint": "I want — querer",
+   "answer": "Quiero",
+   "english": "I want two bottles of water."
+  },
+  "why": "comprar and tienda are unmet; the infinitive after querer is never taught",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-08-consolidation-ex.json",
+  "id": "a1.08.06.ex20",
+  "set": {
+   "sentence": "¿Qué _____ ustedes?",
+   "hint": "need — necesitar",
+   "answer": "necesitan",
+   "english": "What do you all need?",
+   "teaches": [
+    "ar-verbs"
+   ]
+  },
+  "why": "cuestan (costar) is first taught at a2-porpara-04; recap necesitar with ustedes",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-08.json",
+  "old": "\"lemma\": \"conocer\",\n          \"pos\": \"verb\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"to meet / get to know\"",
+  "new": "\"lemma\": \"paquete\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"packet\"",
+  "why": "keyVocabulary (conocer, intercambio) is a placeholder that is not in the story",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-08.json",
+  "old": "\"lemma\": \"intercambio\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"exchange\"",
+  "new": "\"lemma\": \"carrito\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"shopping trolley\"",
+  "why": "as above",
+  "sure": false
+ }
+]

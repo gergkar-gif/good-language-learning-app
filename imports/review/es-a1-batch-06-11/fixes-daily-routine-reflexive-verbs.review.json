@@ -1,0 +1,759 @@
+[
+ {
+  "file": "content/es-es/lessons/a1/a1-reflexive-01.json",
+  "old": "\"I can say what time I get up and shower using reflexive pronouns.\"",
+  "new": "\"Use reflexive pronouns to talk about getting up, showering and washing.\"",
+  "sure": false,
+  "why": "checklist line promises a time-telling the lesson only touches once; make it the lesson's own can-do (challenge canDo copies it)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-01-ex.json",
+  "id": "a1.refl.01.ex07",
+  "set": {
+   "sentence": "Ellos se _____ las manos.",
+   "english": "They wash their hands."
+  },
+  "kind": "target",
+  "why": "jabón is in no vocabulary list; lavan form of lavarse"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-01-ex.json",
+  "id": "a1.refl.01.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "Carlos, ¿a qué hora te levantas?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "teaches": [
+    "reflexives"
+   ],
+   "options": [
+    "Me levanto a las ocho.",
+    "Te levantas a las ocho.",
+    "Me levanta a las ocho."
+   ]
+  },
+  "kind": "target",
+  "why": "normalmente first taught at a1-continuous-04; wrong replies differ in a form, so the tag is reflexives"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-01-ex.json",
+  "id": "a1.refl.01.ex11",
+  "set": {
+   "options": [
+    "Me ducho por la mañana antes de la clase.",
+    "Te duchas por la mañana antes de la clase.",
+    "Me ducha por la mañana antes de la clase."
+   ],
+   "correct": 0,
+   "teaches": [
+    "reflexives"
+   ]
+  },
+  "kind": "target",
+  "why": "desayuno (noun) unmet; tag: wrong replies differ in a form"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-reflexive-02-cambio-radical-gr.json",
+  "old": "Me despierto a las seis, pero me levanto a las seis y media.",
+  "new": "Me despierto a las seis, pero me levanto a las ocho.",
+  "kind": "target",
+  "why": "'y media' is clock-time grammar of A1 Unit 14 (telling-time); also the first speaking step"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-02-ex.json",
+  "id": "a1.refl.02.ex03",
+  "set": {
+   "answers": [
+    "despierta"
+   ]
+  },
+  "kind": "target",
+  "why": "english pins wakes up; levanta is not a stem change"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-02-ex.json",
+  "id": "a1.refl.02.ex05",
+  "set": {
+   "tiles": [
+    "Yo",
+    "me",
+    "acuesto",
+    "temprano."
+   ],
+   "solution": [
+    "Yo",
+    "me",
+    "acuesto",
+    "temprano."
+   ],
+   "english": "I go to bed early."
+  },
+  "kind": "target",
+  "why": "once is first taught at a1-12-01 (numbers before a1-10-02)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-02-ex.json",
+  "id": "a1.refl.02.ex06",
+  "set": {
+   "question": "Nosotros nos __ muy tarde."
+  },
+  "kind": "target",
+  "why": "diez is a number taught in a1-08-02/a1-10-02"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-02-ex.json",
+  "id": "a1.refl.02.ex07",
+  "set": {
+   "sentence": "¿A qué hora te _____ tú los fines de semana?",
+   "answers": [
+    "acuestas"
+   ]
+  },
+  "kind": "target",
+  "why": "domingos first taught at a1-hobbies-05; english pins go to bed so levantas/despiertas are wrong; los fines de semana is this lesson's own example"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-02-ex.json",
+  "id": "a1.refl.02.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "Meg, ¿te acuestas muy tarde?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, me acuesto a medianoche.",
+    "Sí, te acuestas a medianoche.",
+    "Sí, me acuesta a medianoche."
+   ],
+   "correct": 0,
+   "teaches": [
+    "reflexives"
+   ]
+  },
+  "kind": "target",
+  "why": "siempre/normalmente unmet; Carlos goes to bed at ten in story a1-06 so he cannot answer 'a medianoche'; tag: wrong replies differ in a form"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-02-ex.json",
+  "id": "a1.refl.02.ex11",
+  "set": {
+   "options": [
+    "Se despiertan a las ocho.",
+    "Mis amigos son simpáticos.",
+    "Mi madre es muy amable."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "ERROR length-giveaway (38 vs 21); wrong options used unmet quieren/pan/gusta/verano"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-02-ex.json",
+  "id": "a1.refl.02.ex12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you wake up at six.",
+     "answer": "Me despierto a las seis."
+    },
+    {
+     "prompt": "Say that you go to bed late.",
+     "answer": "Me acuesto tarde."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "diez unmet (numbers)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-03-ex.json",
+  "id": "a1.refl.03.ex03",
+  "set": {
+   "sentence": "Carlos se _____ por la mañana.",
+   "english": "Carlos gets dressed in the morning."
+  },
+  "kind": "target",
+  "why": "diez and minutos unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-03-ex.json",
+  "id": "a1.refl.03.ex06",
+  "set": {
+   "question": "Tú te __ la chaqueta.",
+   "hint": "You take your jacket off."
+  },
+  "kind": "target",
+  "why": "Hace calor: hace and calor are first taught at a1-weather-01"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-03-ex.json",
+  "id": "a1.refl.03.ex07",
+  "set": {
+   "sentence": "Nosotros nos _____ la chaqueta.",
+   "english": "We put on our jackets."
+  },
+  "kind": "target",
+  "why": "ropa, cómoda, domingos unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-03-ex.json",
+  "id": "a1.refl.03.ex08",
+  "set": {
+   "tiles": [
+    "Meg",
+    "se",
+    "peina",
+    "por",
+    "la",
+    "mañana."
+   ],
+   "solution": [
+    "Meg",
+    "se",
+    "peina",
+    "por",
+    "la",
+    "mañana."
+   ],
+   "english": "Meg combs her hair in the morning."
+  },
+  "kind": "target",
+  "why": "frente (a2) and espejo (no vocabulary list) unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-03-ex.json",
+  "id": "a1.refl.03.ex09",
+  "set": {
+   "question": "¿Cómo se dice \"They get dressed early\"?",
+   "options": [
+    "Se visten temprano.",
+    "Se viste temprano.",
+    "Visten temprano."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "rápido unmet (a2); Se vistan is a subjunctive form (another level), not a wrong option of this skill; now Se viste (number) and Visten (no pronoun), both real forms"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-03-ex.json",
+  "id": "a1.refl.03.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué te pones por la mañana?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Me pongo la camisa y los pantalones.",
+    "Te pones la camisa y los pantalones.",
+    "Me pone la camisa y los pantalones."
+   ],
+   "correct": 0,
+   "teaches": [
+    "reflexives"
+   ]
+  },
+  "kind": "target",
+  "why": "fiesta, azul, negros unmet; tag: wrong replies differ in a form"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-03-ex.json",
+  "id": "a1.refl.03.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "Meg, ¿te quitas los zapatos en casa?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, me quito los zapatos.",
+    "Mi madre es muy amable.",
+    "Mis amigos son simpáticos."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "ERROR length-giveaway (40 vs 24); hace, frío, afuera, hoy, entonces, abrigada, gustan, coches, lloviendo all unmet; 'Está lloviendo café' is nonsense"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-reflexive-04-contraste-gr.json",
+  "old": "**Despertar**: *Despierto a mi hijo* (I wake my son up) vs.",
+  "new": "**Despertar**: *La alarma me despierta* (The alarm wakes me up) vs.",
+  "kind": "target",
+  "why": "personal a (a-personal, A1 Unit 24) before its screen"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-reflexive-04-contraste-gr.json",
+  "old": "\"La madre despierta al niño.\"",
+  "new": "\"La alarma me despierta.\"",
+  "kind": "target",
+  "why": "personal a (al niño) before Unit 24"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-reflexive-04-contraste-gr.json",
+  "old": "\"El niño se despierta solo.\"",
+  "new": "\"Me despierto a las seis.\"",
+  "kind": "target",
+  "why": "pairs with the row above"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-reflexive-04-contraste-gr.json",
+  "old": "When an action affects someone else, never use the reflexive pronoun *se/me/te* for the subject; use standard direct objects or the personal *a* (*Despierto a Meg*).",
+  "new": "When the action is done to something else, the subject has no reflexive pronoun: *Lavo la ropa*, *Pongo la taza aquí*.",
+  "kind": "target",
+  "why": "tip teaches the personal a (Unit 24) and 'never use me' contradicts its own example La alarma me despierta"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-04-ex.json",
+  "id": "a1.refl.04.ex03",
+  "set": {
+   "sentence": "La alarma nos _____ temprano.",
+   "english": "The alarm wakes us up early."
+  },
+  "kind": "target",
+  "why": "personal a (a su amigo) before Unit 24"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-04-ex.json",
+  "id": "a1.refl.04.ex04",
+  "set": {
+   "sentence": "Carlos se _____ antes de la alarma.",
+   "english": "Carlos wakes up before the alarm."
+  },
+  "kind": "target",
+  "why": "siete and punto unmet (numbers)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-04-ex.json",
+  "id": "a1.refl.04.ex05",
+  "set": {
+   "tiles": [
+    "Yo",
+    "pongo",
+    "el",
+    "libro",
+    "en",
+    "la",
+    "mesa."
+   ],
+   "solution": [
+    "Yo",
+    "pongo",
+    "el",
+    "libro",
+    "en",
+    "la",
+    "mesa."
+   ],
+   "english": "I put the book on the table."
+  },
+  "kind": "target",
+  "why": "plato first taught at a2-04-05"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-04-ex.json",
+  "id": "a1.refl.04.ex06",
+  "set": {
+   "tiles": [
+    "Yo",
+    "me",
+    "pongo",
+    "la",
+    "camisa."
+   ],
+   "solution": [
+    "Yo",
+    "me",
+    "pongo",
+    "la",
+    "camisa."
+   ],
+   "english": "I put on the shirt."
+  },
+  "kind": "target",
+  "why": "abrigo is in no vocabulary list"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-04-ex.json",
+  "id": "a1.refl.04.ex07",
+  "set": {
+   "question": "Which sentence means \"The alarm wakes me up\"?",
+   "options": [
+    "La alarma me despierta.",
+    "La alarma se despierta.",
+    "La alarma me despiertan."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "Lavo al perro uses personal a before Unit 24 (and Me lavo al perro is not natural Spanish at all); alarma was unused"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-04-ex.json",
+  "id": "a1.refl.04.ex09",
+  "set": {
+   "sentence": "Meg prepara el café y luego _____ ducha.",
+   "english": "Meg makes coffee and then takes a shower."
+  },
+  "kind": "target",
+  "why": "desayuno (noun) first taught at b1-12-01"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-04-ex.json",
+  "id": "a1.refl.04.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Por qué te despiertas tan temprano, Meg?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Porque tengo clase a las ocho.",
+    "Mi madre es alta y muy amable.",
+    "Mis amigos son simpáticos y altos."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "ERROR length-giveaway (32 vs 19); personal a (despiertas a Juan); gusta, verano, nublado unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-04-ex.json",
+  "id": "a1.refl.04.ex11",
+  "set": {
+   "options": [
+    "Sí, lavo los platos y limpio la mesa.",
+    "Me lavo la cara y los dientes.",
+    "Me peino y me pongo la camisa."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "ERROR length-giveaway (40 vs 24) and tell-absolute (siempre); gusta, bailar unmet"
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-reflexive-04.json",
+  "old": "\"I understand when to use a reflexive pronoun and when not to.\"",
+  "new": "\"Tell actions done to myself (me lavo) from actions done to something else (lavo).\"",
+  "sure": false,
+  "why": "checklist line is not a can-do (challenge canDo copies it)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-05-ex.json",
+  "id": "a1.refl.05.ex05",
+  "set": {
+   "question": "Después de __, desayuno con Carlos."
+  },
+  "kind": "target",
+  "why": "salgo (salir) first taught at a1-continuous-05"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-05-ex.json",
+  "id": "a1.refl.05.ex06",
+  "set": {
+   "sentence": "Por último, nos _____ los dientes antes de acostarnos.",
+   "english": "Finally, we brush our teeth before going to bed."
+  },
+  "kind": "target",
+  "why": "dormir first taught at a1-12-05"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-05-ex.json",
+  "id": "a1.refl.05.ex08",
+  "set": {
+   "question": "Antes de acostarte, ¿te lavas la cara?",
+   "options": [
+    "Sí, me lavo la cara.",
+    "Sí, me despierto a las seis.",
+    "Sí, leo un libro."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "haces and salgo unmet; the third reply had desayuno (noun, unmet)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-05-ex.json",
+  "id": "a1.refl.05.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "Carlos, ¿cómo es tu rutina por la mañana?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Primero tomo café y después me lavo la cara.",
+    "Soy de Hungría, pero vivo en Hanoi.",
+    "Mi padre es un hombre muy tranquilo."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "ERROR length-giveaway (37 vs 22); cuál, veintiocho, jueves unmet; 'Mañana es jueves' also plays on mañana = morning"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-05-ex.json",
+  "id": "a1.refl.05.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "Y por la noche, Meg, ¿cómo es tu rutina?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Leo un libro y luego me acuesto.",
+    "Mi madre es muy simpática.",
+    "Tengo dos hermanas divertidas."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "haces, dormir, poco, compro, fruta, mercado, alemán unmet"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-reflexive.json",
+  "old": "preparo un vaso de jugo para cada uno.\"\n    },",
+  "new": "preparo un vaso de zumo para cada uno.\"\n    },",
+  "kind": "target",
+  "variant": "es-es",
+  "why": "jugo is the es-latam word; es-es says zumo"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-reflexive.json",
+  "old": "\"Limpia la mesa y pone el jugo\"",
+  "new": "\"Limpia la mesa y pone el zumo\"",
+  "kind": "target",
+  "variant": "es-es",
+  "why": "jugo/zumo (Q2 option)"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-reflexive.json",
+  "old": "prepara un vaso de jugo para cada uno\",",
+  "new": "prepara un vaso de zumo para cada uno\",",
+  "kind": "target",
+  "variant": "es-es",
+  "why": "jugo/zumo (Q3 option)"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-reflexive.json",
+  "old": "preparo un vaso de jugo para cada uno»",
+  "new": "preparo un vaso de zumo para cada uno»",
+  "kind": "target",
+  "variant": "es-es",
+  "why": "jugo/zumo (Q3 explanation)"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-reflexive.json",
+  "old": "\"question\": \"¿Qué prepara Carlos mientras Meg se ducha?\"",
+  "new": "\"question\": \"¿Qué hace Carlos mientras Meg se ducha?\"",
+  "kind": "target",
+  "why": "the right option is about getting dressed and cleaning, not only preparing"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-consolidation-ex.json",
+  "id": "a1.refl.cons.ex03",
+  "set": {
+   "question": "Nosotros nos __ muy tarde."
+  },
+  "kind": "target",
+  "why": "once unmet (numbers)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-consolidation-ex.json",
+  "id": "a1.refl.cons.ex04",
+  "set": {
+   "sentence": "Meg se _____ antes de la clase.",
+   "english": "Meg gets dressed before class."
+  },
+  "kind": "target",
+  "why": "ligera and calor unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-consolidation-ex.json",
+  "id": "a1.refl.cons.ex05",
+  "set": {
+   "tiles": [
+    "Yo",
+    "me",
+    "pongo",
+    "la",
+    "chaqueta",
+    "y",
+    "los",
+    "zapatos."
+   ],
+   "solution": [
+    "Yo",
+    "me",
+    "pongo",
+    "la",
+    "chaqueta",
+    "y",
+    "los",
+    "zapatos."
+   ],
+   "english": "I put on the jacket and the shoes."
+  },
+  "kind": "target",
+  "why": "azul first taught at a1-10-02"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-consolidation-ex.json",
+  "id": "a1.refl.cons.ex08",
+  "set": {
+   "tiles": [
+    "Nosotros",
+    "nos",
+    "levantamos",
+    "temprano",
+    "por",
+    "la",
+    "mañana."
+   ],
+   "solution": [
+    "Nosotros",
+    "nos",
+    "levantamos",
+    "temprano",
+    "por",
+    "la",
+    "mañana."
+   ],
+   "english": "We get up early in the morning."
+  },
+  "kind": "target",
+  "why": "todos first taught at a1-cafe-04"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-consolidation-ex.json",
+  "id": "a1.refl.cons.ex09",
+  "set": {
+   "options": [
+    "Antes de acostarme, leo un libro.",
+    "Antes me acuesto, leo un libro.",
+    "Antes de acostar, leo un libro."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "third option had three faults (Después de, acostar, no object); now one fault (no reflexive pronoun)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-consolidation-ex.json",
+  "id": "a1.refl.cons.ex10",
+  "set": {
+   "sentence": "¿Cuándo te _____ tú?",
+   "english": "When do you go to bed?"
+  },
+  "kind": "target",
+  "why": "hora and domingos unmet in the consolidation"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-consolidation-ex.json",
+  "id": "a1.refl.cons.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Te despiertas muy temprano, Meg?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, me despierto a las seis, pero me levanto a las ocho.",
+    "Sí, te despiertas a las seis, pero te levantas a las ocho.",
+    "Sí, me despierta a las seis, pero me levanta a las ocho."
+   ],
+   "correct": 0,
+   "teaches": [
+    "reflexives"
+   ]
+  },
+  "kind": "target",
+  "why": "siempre, quedo/quedas/queda, diez, minutos unmet; Carlos wakes at eight in story a1-06, so Meg answers; tag: wrong replies differ in a form"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-consolidation-ex.json",
+  "id": "a1.refl.cons.ex12",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué te pones por la mañana, Meg?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Me pongo los pantalones y la camisa.",
+    "Tengo dos hermanas muy simpáticas.",
+    "Mis amigos son altos y simpáticos."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "ERROR length-giveaway (48 vs 29); hoy, salir, cómodos, camiseta, apartamento, cuatro, media unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-reflexive-consolidation-ex.json",
+  "id": "a1.refl.cons.ex13",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write about waking up and showering.",
+     "answer": "Me despierto y me ducho."
+    },
+    {
+     "prompt": "Say that afterwards you get dressed.",
+     "answer": "Después me visto."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "second prompt did not pin después"
+ }
+]
