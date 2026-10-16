@@ -2143,7 +2143,9 @@ const HungarianMorphology = (function () {
             }
         }
 
-        if (!results.length) {
+        // (skipped when the word is itself a headword: "húsvétkor" is "at
+        // Easter", not húsvét + kor "age")
+        if (!results.length && !dictionary[word]) {
             const split = splitCompound(word, dictionary);
             if (split) {
                 const shorten = sense => (typeof Lexicon !== 'undefined' && Lexicon.shortGloss)
