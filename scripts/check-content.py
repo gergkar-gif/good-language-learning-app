@@ -96,6 +96,10 @@ CHECKS = {
     "hint-suffix": "A1–B1 fill-blank whose hint spells out the tested ending (*buli + -ra* for *bulira*): name the word and its role instead (*buli, for*)",
     "glued-blank": "HU: a blank glued to a stem ending in -a/-e whose answer is a suffix (hálószoba____ + ban teaches *hálószobaban*); ES: any blank glued to a stem (simpátic__ + a): blank the whole word, hint the base (es A1 units 3-4 had 9)",
     "self-third-person": "ES dialogue: a speaker talks about themselves in the third person (Carlos asks '¿Cómo es Carlos?', or Meg answers 'Meg es…'); es A1 units 2-4 had 4",
+    "story-questions-copy": "a story's comprehension questions are word for word another story's (placeholder questions the story can't answer; es-latam A1 had one set in 26 stories, es A1 units 6-11)",
+    "answers-alternatives": "a fill-blank accepts different words (answers: trabajo, estudio, cocino…) while its `english` fits one: es A1 units 6-11 had 5 (*I work at home* accepting *estudio*)",
+    "story-voice-gender": "a story's narration gives a recurring character the wrong voice gender (Daniela 'male' in es A1 stories a1-06, a1-07: TTS reads her in a man's voice)",
+    "story-key-vocab": "a story's keyVocabulary word doesn't occur in the story (the conocer/intercambio placeholder; es A1 units 6-11 readers found it in 5 stories)",
     "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
     "unmet-word": "a word the learner hasn't met by this lesson (scripts/unmet-words.js)",
     "recap-unmarked": "a grammar screen repeats 2+ example sentences from an earlier unit's screens without saying they are known ('You know …')",
@@ -114,7 +118,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -316,6 +320,11 @@ def check_exercise(e, course, lang):
     L = LANG.get(lang)
     t = e.get("type")
     opts = string_options(e)
+    if lang == "es" and t == "fill-blank" and e.get("english") and isinstance(e.get("answers"), list):
+        # spelling variants (Hová/Hova) fold together; different words don't
+        forms = {fold(str(a)).strip(" .!?") for a in e["answers"] if a}
+        if len(forms) > 1 and len({f[:3] for f in forms}) > 1:
+            hit("answers-alternatives", ", ".join(map(str, e["answers"]))[:60] + f" for {e['english'][:40]!r}")
     if t in CHOICE and opts and re.search(r"\basks\b[^.?“\"]*\b(what|where|whether|if|when|how|who|why)\s+(she|he|they)\b", e.get("question") or "", re.I):
         hit("reported-question", (e.get("question") or "")[:60])
     if lang == "hu":
@@ -615,6 +624,57 @@ def recap_unmarked(src, course, level, unit):
     return out
 
 
+# Recurring characters' voices (narration.speakers[...].gender), by course language.
+CHARACTER_GENDER = {
+    "es": {"Meg": "female", "Carlos": "male", "Daniela": "female", "Lauren": "female", "Kaylee": "female",
+           "Ana": "female", "Andreas": "male"},
+    "hu": {"Meg": "female", "Károly": "male"},
+}
+
+
+def story_question_sets(src, course):
+    """{tuple of folded comprehension questions: [story refs]} over the course's lesson stories."""
+    key = ("story-questions", course)
+    if key not in src.cache:
+        sets = defaultdict(list)
+        for level in LEVELS:
+            for u in units_of(src, course, level):
+                for stem in u.get("stems", []):
+                    for sec in (src.read(f"content/{course}/lessons/{level}/{stem}.json") or {}).get("sections", []):
+                        if sec.get("type") == "story" and sec.get("ref"):
+                            story = src.read(f"content/{course}/{sec['ref']}") or {}
+                            qs = tuple(fold(q.get("question", "")).strip() for q in
+                                       ((story.get("narration") or {}).get("pedagogical") or {}).get("comprehensionQuestions") or [])
+                            if qs and sec["ref"] not in sets[qs]:
+                                sets[qs].append(sec["ref"])
+        src.cache[key] = sets
+    return src.cache[key]
+
+
+def check_story(src, course, level, ref, L):
+    """Placeholder content in a lesson's story: copied comprehension questions, key words it doesn't use."""
+    out, rel = [], f"content/{course}/{ref}"
+    story = src.read(rel) or {}
+    ped = (story.get("narration") or {}).get("pedagogical") or {}
+    qs = tuple(fold(q.get("question", "")).strip() for q in ped.get("comprehensionQuestions") or [])
+    others = [r for r in story_question_sets(src, course).get(qs, []) if r != ref] if qs else []
+    if others:
+        out.append(("story-questions-copy", Path(ref).stem, f"same questions as {', '.join(Path(r).stem for r in others[:3])}" + (f" (+{len(others) - 3})" if len(others) > 3 else ""), rel))
+    genders = CHARACTER_GENDER.get(course.split("-")[0], {})
+    for name, spk in ((story.get("narration") or {}).get("speakers") or {}).items():
+        want = genders.get(name)
+        if want and isinstance(spk, dict) and spk.get("gender") not in (None, want):
+            out.append(("story-voice-gender", Path(ref).stem, f"{name} is {want}, voice says {spk.get('gender')}", rel))
+    hay = set(re.findall(r"\w+", fold(" ".join(p.get("text", "") for p in story.get("paragraphs", []) if p.get("lang") != "en"))))
+    # A1-A2: B1+ key phrases are long and paraphrased (*el Desastre del 98 (1898)*)
+    for kv in ped.get("keyVocabulary") or [] if level in ("a1", "a2") else []:
+        # *levantarse* is in the text as *te levantas*: stem the verb, not the -se form
+        sw = stem_words(re.sub(r"(ar|er|ir)se$", r"\1", kv.get("lemma", "")), L.get("articles", ()))
+        if sw and not any(any(h.startswith(x) for h in hay) for x in sw):
+            out.append(("story-key-vocab", Path(ref).stem, f"{kv.get('lemma')} is not in the story", rel))
+    return out
+
+
 def check_unit(src, course, level, unit, shape):
     """Findings for one unit: [(check, id, msg, file)]."""
     lang = course.split("-")[0]
@@ -688,10 +748,14 @@ def check_unit(src, course, level, unit, shape):
                 if lemma in seen_lemmas:
                     out.append(("vocab-duplicate", stem, w.get("lemma"), f"content/{course}/{vocab_ref}"))
                 seen_lemmas.add(lemma)
-                sw = stem_words(w.get("lemma", ""), L.get("articles", ()))
+                # ES *lavarse* is used as *me lavo*: stem the verb, not the -se form
+                sw = stem_words(re.sub(r"(ar|er|ir)se$", r"\1", w.get("lemma", "")) if lang == "es" else w.get("lemma", ""), L.get("articles", ()))
                 if sw and not all(any(h.startswith(s) for h in hay_words) for s in sw):
                     out.append(("vocab-unused", stem, w.get("lemma"), f"content/{course}/{vocab_ref}"))
 
+        for sec in lesson.get("sections", []):
+            if sec.get("type") == "story" and sec.get("ref"):
+                out += check_story(src, course, level, sec["ref"], L)
         if shape:
             out += check_shape(src, course, level, stem, lesson, lesson_rel, groups, by_id, consolidation)
     out += recap_unmarked(src, course, level, unit)

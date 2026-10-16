@@ -1,6 +1,73 @@
 {
  "_comment": "Finished units (ROADMAP 153). Written only by scripts/freeze_unit.py; check-content.py --changed blocks edits to a unit listed here.",
  "units": {
+  "a1/daily-routine": {
+   "frozen": "2026-10-16",
+   "reason": "es A1 batch 6-11: read by Sonnet (route A), filtered, mirrored, challenges added, tags locked (2026-10-16)",
+   "accepted": [
+    {
+     "check": "vocab-unused",
+     "id": "a1-06-01",
+     "why": "leer is used as the form leo (06-01 answers); the checker's stem match misses an -er verb whose 1sg drops the -er"
+    }
+   ]
+  },
+  "a1/daily-routine-reflexive-verbs": {
+   "frozen": "2026-10-16",
+   "reason": "es A1 batch 6-11: read by Sonnet (route A), filtered, mirrored, challenges added, tags locked (2026-10-16)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a1.refl.02.ex06",
+     "why": "acuestamos is the deliberate wrong option (stem change wrongly applied to nosotros), the fault the lesson teaches"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a1.refl.02.ex08",
+     "why": "se sienta is sentarse (listed a1-06-04); the lexicon also reads sentir, so the checker cannot count it as met"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a1.refl.02.ex09",
+     "why": "despertan is the deliberate wrong option (missing stem change)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a1.refl.cons.ex09",
+     "why": "acostar is the deliberate wrong option (infinitive without its reflexive pronoun)"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a1-reflexive-01",
+     "why": "tarde is listed again (known from Unit 6); not drilled in this lesson"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a1-reflexive-02",
+     "why": "dormirse, el sueño, por la noche: listed on the screen, not drilled; the reader replaced the items that used them (numbers, unmet words)"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a1-reflexive-04",
+     "why": "el perro and ayudar: their only items used the personal a (Unit 24) and were rewritten"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a1-reflexive-05",
+     "why": "el vaso is used only in the story"
+    },
+    {
+     "check": "answers-alternatives",
+     "id": "a1.refl.05.ex09",
+     "why": "luego and después both mean \"then\"; the english fits both"
+    }
+   ]
+  },
+  "a1/demonstratives": {
+   "frozen": "2026-10-16",
+   "reason": "es A1 batch 6-11: read by Sonnet (route A), filtered, mirrored, challenges added, tags locked (2026-10-16)",
+   "accepted": []
+  },
   "a1/describing-people": {
    "frozen": "2026-10-16",
    "reason": "es A1 batch 2-5: Sonnet read (route A), 166 fixes filtered and applied, mirrored to es-latam, challenges added (2026-10-16)",
@@ -27,6 +94,22 @@
    "reason": "read and fixed by Antigravity (Argon), reviewed by Claude: 33 fixes, 6 challenges, 0 errors / 0 suspects (153, 2026-10-16)",
    "accepted": []
   },
+  "a1/home": {
+   "frozen": "2026-10-16",
+   "reason": "es A1 batch 6-11: read by Sonnet (route A), filtered, mirrored, challenges added, tags locked (2026-10-16)",
+   "accepted": [
+    {
+     "check": "consolidation-copy",
+     "id": "a1.07.06.ex04",
+     "why": "consolidation replay (user wants replays)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a1.07.06.ex09",
+     "why": "consolidation replay (user wants replays)"
+    }
+   ]
+  },
   "a1/meeting-someone-new": {
    "frozen": "2026-10-16",
    "reason": "es A1 batch 2-5: Sonnet read (route A), 166 fixes filtered and applied, mirrored to es-latam, challenges added (2026-10-16)",
@@ -36,7 +119,28 @@
    "frozen": "2026-10-16",
    "reason": "es A1 batch 2-5: Sonnet read (route A), 166 fixes filtered and applied, mirrored to es-latam, challenges added (2026-10-16)",
    "accepted": []
+  },
+  "a1/ordering-cafe": {
+   "frozen": "2026-10-16",
+   "reason": "es A1 batch 6-11: read by Sonnet (route A), filtered, mirrored, challenges added, tags locked (2026-10-16)",
+   "accepted": []
+  },
+  "a1/supermarket": {
+   "frozen": "2026-10-16",
+   "reason": "es A1 batch 6-11: read by Sonnet (route A), filtered, mirrored, challenges added, tags locked (2026-10-16)",
+   "accepted": []
   }
  },
- "unfrozen": []
+ "unfrozen": [
+  {
+   "unit": "a1/daily-routine",
+   "date": "2026-10-16",
+   "reason": "es A1 batch 6-11: answers-alternatives fixes after the first freeze (same session)"
+  },
+  {
+   "unit": "a1/daily-routine-reflexive-verbs",
+   "date": "2026-10-16",
+   "reason": "es A1 batch 6-11: answers-alternatives fixes after the first freeze (same session)"
+  }
+ ]
 }

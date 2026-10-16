@@ -64,8 +64,8 @@
       "question": "Which order asks for both a coffee and a sandwich?",
       "options": [
         "Quiero un café y un sándwich.",
-        "Quiero un café.",
-        "Café."
+        "Quiero un café, por favor.",
+        "Quiero un té y un sándwich."
       ],
       "correct": 0,
       "teaches": [
@@ -158,8 +158,8 @@
       "question": "What is a good response to \"¿Algo más?\" when you have finished?",
       "options": [
         "No, gracias. Eso es todo.",
-        "Sí, quiero.",
-        "Quiero café."
+        "Sí, quiero un té también.",
+        "Sí, un café más, por favor."
       ],
       "correct": 0,
       "teaches": [
@@ -197,7 +197,7 @@
       "prompt": [
         {
           "speaker": "Camarero",
-          "text": "¿Algo más?"
+          "text": "¿Quiere un café o un té?"
         },
         {
           "speaker": "Cliente",
@@ -205,13 +205,13 @@
         }
       ],
       "options": [
-        "No, gracias. Eso es todo.",
-        "Son las tres.",
-        "Sí, gracias. Eso es todo."
+        "Un té, por favor.",
+        "Una té, por favor.",
+        "Unos té, por favor."
       ],
       "correct": 0,
       "teaches": [
-        "a1-ordering-cafe-vocab"
+        "gender"
       ]
     },
     {
@@ -263,11 +263,11 @@
       "id": "a1.cafe.04.ex15",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which is the most natural order?",
+      "question": "Which order is correct?",
       "options": [
-        "Quiero un café, por favor.",
-        "Quiero café por.",
-        "Por favor quiero un."
+        "Quiero un sándwich, por favor.",
+        "Quiero una sándwich, por favor.",
+        "Quieres un sándwich, por favor."
       ],
       "correct": 0,
       "teaches": [

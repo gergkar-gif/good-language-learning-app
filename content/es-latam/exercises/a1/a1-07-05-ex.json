@@ -139,7 +139,7 @@
       "question": "Which sentence is correct?",
       "options": [
         "Hay un baño. El baño está al lado de la cocina.",
-        "Está un baño. El baño hay al lado de la cocina.",
+        "Hay un baño. El baño hay al lado de la cocina.",
         "Hay un baño. El baño están al lado de la cocina."
       ],
       "correct": 0,
@@ -201,9 +201,9 @@
         }
       ],
       "options": [
-        "Está al lado de la cocina.",
-        "Están al lado de la cocina.",
-        "Hay al lado de la cocina."
+        "Está cerca de la cocina.",
+        "Están cerca de la cocina.",
+        "Hay cerca de la cocina."
       ],
       "correct": 0,
       "teaches": [
@@ -227,7 +227,7 @@
       "options": [
         "Hay dos habitaciones.",
         "Están dos habitaciones.",
-        "Hay una habitación están."
+        "Hay dos habitación."
       ],
       "correct": 0,
       "teaches": [
@@ -240,15 +240,15 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Introduce a room in your home.",
+          "prompt": "Say that there is a kitchen.",
           "answer": "Hay una cocina."
         },
         {
-          "prompt": "Say where that room is.",
+          "prompt": "Say that the kitchen is next to the living room.",
           "answer": "La cocina está al lado de la sala."
         },
         {
-          "prompt": "Introduce another room.",
+          "prompt": "Say that there is a bathroom.",
           "answer": "Hay un baño."
         }
       ],
@@ -311,7 +311,7 @@
       "question": "Which is a natural mini-tour?",
       "options": [
         "Hay una cocina. La cocina está al lado de la sala.",
-        "Está una cocina. La cocina hay al lado de la sala.",
+        "Hay una cocina. La cocina hay al lado de la sala.",
         "Hay una cocina. La cocina están al lado de la sala."
       ],
       "correct": 0,
@@ -325,7 +325,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give a short tour of your home using hay and estar.",
+          "prompt": "Give a short tour: say there is a kitchen next to the living room, then that there is a bathroom near the kitchen.",
           "answer": "Hay una cocina. La cocina está al lado de la sala. Hay un baño. El baño está cerca de la cocina."
         }
       ],

@@ -263,6 +263,7 @@ Give your full report (the four groups above, plus a 5. Dictionary group: every 
 - the "Known false positives" and "A2 focus" paragraphs with: "Focus: forms used before their screen (`taught_in` in `skills/es.json`; the sheet's 'later' list): past tenses at A1 (all are A2: `preterito-perfecto` a2-01-01, `preterito-indefinido` a2-11-01; *ayer* appears 13 times in es-es A1), numbers before a1-10-02 (`numbers`, A1 unit 12; *diez*, *siete*, *nueve* earlier), *gusta/gustan* before a1-gustar-01; § 6c. A fix that only holds in Spain (*vosotros*, *zumo*, *coger*) is marked `\"variant\": \"es-es\"` in its JSON so the reviewer doesn't mirror it.";
 - challenges: `level` the level, the people of the es-es stories (Carlos and Meg at A1), the unit's own setting; es-latam gets the same entries with only course variants changed (user, 2026-10-16);
 - add: "check every fact about a character (origin, job, city, family, who is whose friend or teacher) against the stories before using it, in exercises and reading questions as well as challenges; reading questions must be answerable from the story as written" (units 2–5: three of the reviewer's five changes were character facts);
+- add (units 6–11): "a multiple-choice item takes neither `hint` nor `english` (the schema rejects both): put the meaning in the question, '<English>. Which sentence says this?', with whole-sentence options"; the batch-session prompt told readers to use `hint` and seven items failed the schema (`check_fixes.py` now rejects them);
 - note the story stem is the file stem (`a1-03` is Unit 2's story; Units 3 and 4 have stories `a1-things` and `a1-21` inside a lesson, not on the unit: run the audit on them too).
 
 Afterwards: as HU, plus `mirror_fixes.py` on each filtered list (route A, "Spanish"), and the es-latam-only files read by the reviewer.
@@ -339,6 +340,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-15 | HU A2 walk + level checklist | Claude, no agents | | | 0 walk failures (281/281) | ~9 min of walking; one validate warning left by a batch retag (thin skill), see § Before calling a level done |
 | 10-16 | es A1 1 greetings-introductions (both courses) | **Antigravity Argon**, read + fix + mirror + challenges from a brief | 43 min; nearly all of Antigravity's weekly allowance | | 32 applied, 0 rejected; Claude changed 3 (2 challenges, 1 near-copy) | light unit (4 errors / 13 suspects); quality comparable to a Sonnet reader, cost not sustainable for 58 units |
 | 10-16 | es A1 2–5 (both courses) | paired read, **Spanish template** (2 units/reader), es-es read once, mirrored | | 229k + 238k, 11.1 + 10.4 | 166 applied of 166, 0 rejected; Claude changed 5 + 1 schema fix | ~117k reader tokens/unit (A 2+3 ~114k, B 4+5 ~119k; = HU A2 25–28's ~117k at two per reader); fixes 52 / 36 / 48 / 30 (~42/unit); 120 of 166 went to review (Spanish text); 165/166 mirrored (the 1 had no es-latam counterpart); walk units 1–5 60/60; both report writes allowed |
+| 10-16 | es A1 6–11 (both courses) | paired read, Spanish template, **3 units/reader**, es-es read once, mirrored | | 313k + 306k, 15.3 + ~15 (B hit a Sonnet session limit after writing all its files; resumed for its last report section) | 278 proposed (32 / 57 / 26 / 40 / 89 / 34), 0 rejected for content (1 by a stale word index, restored); Claude changed 16 (10 in the filter, 6 schema), added 12 in es-es after the new checks and `--warnings` (5 answers lists, 1 thin-skill item, 3 stories' key words, 1 story line, 2 challenge glosses) and 8 in es-latam only (3 variant fixes, 5 story question sets) | ~103k reader tokens/unit (A ~104k, B ~102k; ×0.88 of units 2–5's ~117k); ~46 fixes/unit (×1.1 of ~42); 222 of 278 to review; 269/279 mirrored (10 es-es variants or es-latam text); walk 36/36 per course; B's 305,712 is the only usage figure its notices gave (the failure notice had none) |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -684,3 +686,72 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   identical item passes in es-es. Accepted at freeze; look at it if it
   shows up again.
 
+### 2026-10-16: Spanish A1 units 6–11, three units per reader
+
+- **Cost:** 313k (reader A, units 6–8) + 306k (reader B, 9–11), ~103k a
+  unit, ×0.88 of units 2–5 (~117k at two per reader), with ~10% more fixes
+  a unit (~46). Neither reader went above ~140k a unit. Reader B hit a
+  Sonnet session limit after writing every fixes and challenges file (the
+  "finish each unit's files first" instruction is what saved them) and was
+  resumed for its last report section; its 305,712 tokens come from the
+  resumed notice only, so B's figure is less certain than A's. **Keep
+  three per reader** for units 12–17.
+- **Thinner third unit?** No: the third units (8 home, 11 café) had 26
+  and 34 fixes on light baselines (1/3 and 7/9), and Claude's filter
+  changed two items in each. The misses were in the *first* unit: five
+  fill-blanks in Unit 6 accepting verbs their `english` excluded, found
+  only by the new `answers-alternatives` check after the freeze (unit
+  unfrozen, fixed, refrozen the same session).
+- **Filter changes (16 of 278):** six multiple-choice items given a
+  `hint` (my batch prompt said "use `hint`" for MC; the schema rejects
+  it); three `answers` lists the reader narrowed but not to the one
+  answer the English fits; two wrong options that are natural right
+  answers (*Tiene una cocina y un baño.*, *Sí, tiene un jardín.*); two
+  character facts (Carlos *se levanta temprano* / *a las siete*: he wakes
+  at eight in a1-06); one demonstrative answered from the wrong place
+  (seller's *esta bolsa* → Meg's *esa*); one non-word option (*estes
+  libros*); one reading answer narrowed (*refresco* → *refresco o
+  zumo*). None for Spanish grammar.
+- **What only the reviewer found:** es-latam story questions copied from
+  another story (5 in this batch, 26 A1 stories in all; the readers read
+  es-es only); the retag of Unit 10's dialogues leaving
+  `a1-demonstratives-vocab` at 5 exercises (`--warnings` diff, as the
+  pipeline warns); *coche* mirrored into es-latam, which says *carro*;
+  *gusta* in the Unit 6 story.
+- **Changes:** (1) `check_fixes.py` validates each changed file against
+  its schema and rejects the fix (seen in units 2–5 and again here; tested
+  on the pre-fix content: it rejects the reader's six MC `hint` fixes).
+  (2) The Spanish template says how MC items carry meaning. (3) Four new
+  `check-content` checks and two checker fixes, below. (4) The reviewer
+  reads the es-latam stories of each batch (questions, key words, voice)
+  as part of "es-latam-only files", since `cmp` shows them as differing
+  only by timings.
+- **Scripted (each seen twice or more in this batch), tested on the
+  pre-fix content (19791490), batch units:** `answers-alternatives`
+  (ES suspect: a fill-blank whose `answers` holds different words while
+  its `english` fits one) 14 hits in es-es, 13 real, 1 false positive
+  (*luego/después*), es-latam 15 (+ *bebes/tomas*, a course variant);
+  readers had found 8 of the 13. Course-wide it hits 77 / 94 (es-es /
+  es-latam, mostly B1, not read; false positives there include *Ve/Vaya*
+  and open "say what he is like" items); left off HU (338 hits,
+  unchecked). `story-voice-gender` (error: a recurring character with the
+  wrong narration voice) 2 of 2 real, 5 more per Spanish course (a1-04,
+  a1-10, a1-11, a1-17 Daniela; a1-13 Kaylee). `story-key-vocab` (suspect:
+  A1–A2 `keyVocabulary` absent from the story) 11 of 11 real, no false
+  positives after stemming *-se* verbs (*levantarse* → *te levantas*);
+  35 more per Spanish course. `story-questions-copy` (suspect: the same
+  comprehension questions as another story) 5 of 5 real in es-latam; 38
+  es-latam (21 A1, 17 B2) and 26 HU (25 B1 world stories plus their
+  source, a1-unit-01, the one false positive per set). **Checker fixes:**
+  `unmet-word` counted *me ducho*, *nos acostamos*, *acostarme* as unmet
+  (the lexicon reads *duchar*/*acostar*, or only the adjective *ducho*,
+  while the list gives *ducharse*): a verb form now counts as met through
+  its *-se* lemma where a reflexive pronoun stands before it or fills the
+  blank before it, and only when every verb reading's *-se* form is met
+  (*siento*/*te sientes* stay flagged: *sentarse* says nothing about
+  *sentir(se)*); es-es A1 264 → 237, A2 850 → 820, es-latam 458 → 426,
+  846 → 811, 0 new; a first, item-wide version also cleared *Lo siento*
+  and *dormir* and was tightened before committing. `vocab-unused` stems
+  *lavarse* as *lavar* (17 fewer in es-es, all reflexive verbs used in
+  their lessons).
+- **Open, the user's:** see ROADMAP 153 (Spanish pass).

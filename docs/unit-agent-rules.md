@@ -255,14 +255,29 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   voice. Context goes in `hint` (fill-blank and dialogue-complete show it
   in brackets) or `english`; `check-content` errors on it
   (`english-in-target`). The 81 items per course in A1–A2 were fixed
-  2026-10-16 (`scripts/fix_english_in_target.py`).
+  2026-10-16 (`scripts/fix_english_in_target.py`). **A multiple-choice
+  item takes neither `hint` nor `english`** (the schema rejects both:
+  units 2–5 and 6–11, seven items): put the meaning in the question and
+  make the options whole sentences ("My mother is calm. Which sentence
+  says this?" / *Mi madre es tranquila.*); `check_fixes.py` now rejects
+  such a fix.
 - **Character facts** in challenges and items match the stories (Meg is
   from South Africa, *No soy de España*; Carlos from Hungary, in Hanoi;
   Daniela is the new teacher in story a1-03; Meg's sisters are Lauren and
   Kaylee; Carlos has one brother and one sister): unit 1's first draft
   made Meg Spanish. **Reading questions** must be answerable from the
   story as written: units 4 and 5 had seven that invented scenes (a video
-  call), people's roles or traits (2026-10-16).
+  call), people's roles or traits (2026-10-16). From units 6–11: Carlos
+  wakes at eight and goes to bed at ten, Daniela wakes at six and works at
+  a school (story a1-06); Carlos's new flat has the kitchen on the right,
+  the bathroom opposite and his bedroom upstairs (a1-07); Carlos's mother
+  lives in Budapest (a1-05); at the café Meg has green tea, a salad and a
+  chicken sandwich, Carlos a black coffee, mineral water and chocolate
+  cake, and Carlos asks for the bill (a1-02); Meg buys the silk bag as a
+  gift for Lauren (a1-demonstrative). Units 6–11 had six items against
+  these (Carlos *se levanta temprano*, *a las siete*, *a medianoche*; the
+  bathroom *al lado de la cocina*; *¿Dónde está tu madre?* / *en la sala*;
+  "Tacos." as Meg's order).
 - **Found in units 2–5 (2026-10-16), each now a `check-content` check:**
   a blank glued to a stem (*simpátic__* + *a*: blank the whole word, hint
   the masculine base; `glued-blank`); a speaker talking about themselves in
@@ -275,6 +290,26 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   (demonstratives, Unit 10) taught as new in Unit 5, and structured-writing
   prompts that don't pin their one stored answer ("Describe a woman" →
   pin it: "Say that Lauren is funny.").
+- **Found in units 6–11 (2026-10-16):** a fill-blank's `answers`
+  accepting other verbs than its `english` (*I work at home* accepting
+  *estudio*, *cocino*, *como*: 13 items, check `answers-alternatives`);
+  a wrong option that is a natural right answer (*Tiene una cocina y un
+  baño.* to *¿Qué hay en tu casa?*, *Sí, tiene un jardín.*, *Mi madre está
+  amable.*); demonstratives answered from the wrong place (the seller says
+  *esta bolsa*, so Meg takes *esa*); *gusta*, stem-changing forms (*me
+  despierto*, *se acuesta*), *está*, numbers (*siete*, *diez*, *once*) and
+  clock times (*y media*) before their units; the personal *a* (Unit 24)
+  in Unit 7 (*Despierto a mi hijo*); *jugo* and *ordenar* (Latin American)
+  in es-es stories (mark the fix `"variant": "es-es"`); story metadata left
+  as placeholders: `keyVocabulary` *conocer*/*intercambio* in most A1
+  stories (`story-key-vocab`), es-latam comprehension questions copied from
+  another story in 26 A1 stories (`story-questions-copy`; nobody reads
+  es-latam stories unless the reviewer does), Daniela's narration voice
+  "male" (`story-voice-gender`). A recap screen in the next unit must say
+  "You know …": Unit 7 presented Unit 6's reflexive verbs as new, Unit 8
+  the articles of Unit 3. Fixing a listed word's only items leaves it
+  unused (`vocab-unused`), and retagging items can leave a vocabulary skill
+  under 6 exercises (`validate-content.py --warnings`; Unit 10).
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).

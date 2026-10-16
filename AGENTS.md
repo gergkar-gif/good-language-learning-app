@@ -52,7 +52,11 @@ or a *Hová* answer without *Hova* (suspects), an -ik verb's "I" form in *-k*
 (*eszek*) as a right answer, a Spanish blank glued to a stem (*simpátic__*),
 a Spanish dialogue speaker who talks about themselves in the third person
 (suspects), a bracketed English word in a Spanish line or choice question
-(*Tengo dos __. (brothers)*)…); findings
+(*Tengo dos __. (brothers)*), a story whose narration gives Daniela, Meg,
+Carlos or another recurring character the wrong voice gender, a Spanish
+fill-blank accepting different words while its `english` fits one
+(suspect), a story whose comprehension questions are copied from another
+story or whose `keyVocabulary` words aren't in it (suspects)…); findings
 already in the content stay a report. `python scripts/check-content.py
 <course> [level] [unit id]` lists everything for one scope, `--summary`
 counts it. The pre-push hook runs both checks.

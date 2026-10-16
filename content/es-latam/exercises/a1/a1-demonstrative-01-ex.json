@@ -31,7 +31,7 @@
       "id": "a1.dem.01.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Cuál es la forma para un sustantivo masculino singular?",
+      "question": "Which word means \"this\" before a masculine singular noun?",
       "options": [
         "este",
         "esta",
@@ -46,45 +46,51 @@
       "id": "a1.dem.01.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Me gusta _____ café con leche.",
+      "sentence": "Quiero _____ pan.",
       "hint": "this",
       "answer": "este",
       "teaches": [
         "demonstratives"
       ],
-      "english": "I like this coffee with milk."
+      "english": "I want this bread."
     },
     {
       "id": "a1.dem.01.ex04",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "¿Cuánto cuesta _____ manzana roja?",
+      "sentence": "_____ manzana está aquí.",
       "hint": "this",
-      "answer": "esta",
+      "answer": "Esta",
       "teaches": [
         "demonstratives"
       ],
-      "english": "How much does this red apple cost?"
+      "english": "This apple is here."
     },
     {
       "id": "a1.dem.01.ex05",
       "category": "grammar",
       "type": "sentence-builder",
       "tiles": [
-        "Este",
+        "El",
+        "precio",
+        "de",
+        "este",
         "libro",
         "es",
         "muy",
-        "interesante."
+        "bajo."
       ],
       "solution": [
-        "Este",
+        "El",
+        "precio",
+        "de",
+        "este",
         "libro",
         "es",
         "muy",
-        "interesante."
+        "bajo."
       ],
-      "english": "This book is very interesting.",
+      "english": "The price of this book is very low.",
       "teaches": [
         "demonstratives"
       ]
@@ -93,7 +99,7 @@
       "id": "a1.dem.01.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Queremos comprar __ zapatos negros.",
+      "question": "Queremos __ zapatos.",
       "options": [
         "estos",
         "estes",
@@ -108,13 +114,13 @@
       "id": "a1.dem.01.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "_____ flores huelen muy bien.",
+      "sentence": "_____ sillas son muy bonitas.",
       "hint": "these",
       "answer": "Estas",
       "teaches": [
         "demonstratives"
       ],
-      "english": "These flowers smell very good."
+      "english": "These chairs are very pretty."
     },
     {
       "id": "a1.dem.01.ex08",
@@ -143,11 +149,11 @@
       "id": "a1.dem.01.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Cómo se dice \"these notebooks\"?",
+      "question": "¿Cómo se dice \"these books\"?",
       "options": [
-        "estos cuadernos",
-        "estes cuadernos",
-        "esta cuadernos"
+        "estos libros",
+        "estas libros",
+        "este libros"
       ],
       "correct": 0,
       "teaches": [
@@ -161,7 +167,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Carlos, ¿te gusta este sombrero?"
+          "text": "Carlos, ¿es barato este libro?"
         },
         {
           "speaker": "Carlos",
@@ -169,13 +175,13 @@
         }
       ],
       "options": [
-        "Sí, este sombrero te queda muy bien.",
-        "Tengo veinticinco años.",
-        "Son las tres."
+        "Sí, este libro es muy barato.",
+        "Sí, esta libro es muy barato.",
+        "Sí, estos libro es muy barato."
       ],
       "correct": 0,
       "teaches": [
-        "a1-demonstratives-vocab"
+        "demonstratives"
       ]
     },
     {
@@ -184,22 +190,22 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "¿Cuánto cuestan estas frutas?"
+          "speaker": "Vendedor",
+          "text": "¿Qué quiere?"
         },
         {
-          "speaker": "Vendedor",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Estas frutas cuestan dos dólares el kilo.",
-        "Me despierto temprano.",
-        "No sé nadar."
+        "Quiero estos tomates y esta botella.",
+        "Quiero estos tomates y este botella.",
+        "Quiero estos tomates y estas botella."
       ],
       "correct": 0,
       "teaches": [
-        "a1-demonstratives-vocab"
+        "demonstratives"
       ]
     },
     {
@@ -208,8 +214,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say: 'This book is good.'",
-          "answer": "Este libro es bueno."
+          "prompt": "Say: 'This book is expensive.'",
+          "answer": "Este libro es caro."
         },
         {
           "prompt": "Say: 'These apples are cheap.'",
