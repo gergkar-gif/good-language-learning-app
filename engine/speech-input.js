@@ -111,7 +111,7 @@ const SpeechInput = (function () {
 
     // ---- Browser Support & State ----
     function isRecognitionSupported() {
-        return !!_getRecognitionClass();
+        return !!_getRecognitionClass() || (isRecordingSupported() && isCloudSttAvailable());
     }
 
     function isRecordingSupported() {
@@ -260,6 +260,12 @@ const SpeechInput = (function () {
     // Capture audio stream for user playback and unsupported browser fallback
     function _startRecordingStream(options = {}) {
         if (!isRecordingSupported()) return;
+
+        // Switch iOS WebKit audio route to play-and-record so microphone input is unblocked
+        // after preceding lesson steps have played media in playback-only mode
+        if (typeof navigator !== 'undefined' && navigator.audioSession) {
+            try { navigator.audioSession.type = 'play-and-record'; } catch (e) {}
+        }
 
         const lang = options.lang || getSpeechLang();
         _clearStreamIdleTimer();
@@ -495,6 +501,8 @@ const SpeechInput = (function () {
 
         if (onAudioLevel) {
             let simAngle = 0;
+            let consecutiveVoiceFrames = 0;
+            let totalVoiceDurationMs = 0;
             _meterInterval = setInterval(() => {
                 if (!_isListening) return;
 
@@ -508,9 +516,15 @@ const SpeechInput = (function () {
                         for (let i = 0; i < _audioDataArray.length; i++) sum += _audioDataArray[i];
                         const avg = sum / _audioDataArray.length;
                         realLevel = Math.min(1.0, Math.max(0, avg / 90));
-                        if (realLevel > 0.05) {
-                            _hasSpoken = true;
-                            isHearing = true;
+                        if (realLevel > 0.08) {
+                            consecutiveVoiceFrames++;
+                            if (consecutiveVoiceFrames >= 2) {
+                                _hasSpoken = true;
+                                isHearing = true;
+                                totalVoiceDurationMs += 60;
+                            }
+                        } else {
+                            consecutiveVoiceFrames = 0;
                         }
                     } catch (e) {}
                 }
@@ -526,10 +540,10 @@ const SpeechInput = (function () {
                             clearTimeout(_finishTimeout);
                             _finishTimeout = null;
                         }
-                    } else if (_hasSpoken && !_finishTimeout) {
+                    } else if (_hasSpoken && totalVoiceDurationMs >= 300 && !_finishTimeout) {
                         _finishTimeout = setTimeout(() => {
                             if (_isListening) stopListening();
-                        }, 2200);
+                        }, 3200);
                     }
                 }
 
@@ -799,6 +813,10 @@ const SpeechInput = (function () {
             try { _mediaRecorder.stop(); } catch (e) {}
         }
         _stopTracks();
+
+        if (typeof navigator !== 'undefined' && navigator.audioSession) {
+            try { navigator.audioSession.type = 'playback'; } catch (e) {}
+        }
 
         const finalText = (_accumulatedFinal + ' ' + _currentInterim).trim() || _bestTranscript || '';
         _accumulatedFinal = '';

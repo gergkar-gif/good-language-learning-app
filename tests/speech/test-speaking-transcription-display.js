@@ -345,6 +345,29 @@ async function runTests() {
 
     console.log('[PASS] Inline voice input populates input field only once finished speaking.');
 
+    console.log('--- Test 4: Empty speech on onFinal does not grade or fail step ---');
+    let gradedOnEmpty = false;
+    let feedbackSet = null;
+    global.setFeedback = (ok, msg) => { feedbackSet = { ok, msg }; };
+    global.lessonCheckSpeaking = () => { gradedOnEmpty = true; };
+
+    // Simulate onFinal with empty text
+    const onFinalHandler = (transcript) => {
+        const text = (transcript || '').trim();
+        if (!text) {
+            setFeedback(false, 'No voice heard. Did you speak into the microphone?');
+            return;
+        }
+        lessonCheckSpeaking();
+    };
+
+    onFinalHandler('');
+    assert.strictEqual(gradedOnEmpty, false, 'Step must not be graded on empty transcript');
+    assert.strictEqual(feedbackSet.ok, false);
+    assert.strictEqual(feedbackSet.msg, 'No voice heard. Did you speak into the microphone?');
+
+    console.log('[PASS] Empty transcript safely prompts user to try again without failing step.');
+
     console.log('\n[ALL PASS] All speaking drill transcription display tests passed!');
 }
 

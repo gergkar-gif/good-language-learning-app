@@ -369,7 +369,8 @@ async function buildSteps(lesson) {
                 parts.forEach(part => {
                     if (part.type === 'examples' && Array.isArray(part.items)) {
                         part.items.forEach(it => {
-                            if (it.spanish && it.english) addSpeakingCandidate(it.spanish, it.english, 3);
+                            const targetText = it.spanish || it.hungarian || it.target || '';
+                            if (targetText && (it.english || it.translation)) addSpeakingCandidate(targetText, it.english || it.translation, 3);
                         });
                     }
                     // Table rows are not candidates: their columns are forms of
@@ -449,8 +450,8 @@ async function buildSteps(lesson) {
                         // learner read the speaker names aloud; it isn't one sentence.
                         if (clean && /(^|\s)[A-ZÁÉÍÓÖŐÚÜŰÑ][A-Za-záéíóöőúüűñ]*:\s/.test(clean)) clean = '';
                         if (clean) addSpeakingCandidate(clean, exercise.english || exercise.translation, 2, exercise.teaches);
-                    } else if (exercise.spanish && exercise.english) {
-                        addSpeakingCandidate(exercise.spanish, exercise.english, 2, exercise.teaches);
+                    } else if ((exercise.spanish || exercise.hungarian || exercise.target) && (exercise.english || exercise.translation)) {
+                        addSpeakingCandidate(exercise.spanish || exercise.hungarian || exercise.target, exercise.english || exercise.translation, 2, exercise.teaches);
                     }
                     steps.push(Object.assign({}, exercise, {
                         title: !section.title ? 'Exercise'
@@ -1828,7 +1829,9 @@ const stepRenderers = {
 
     speaking(step) {
         gateStep();
-        stepState.target = step.sentence || step.spanish || '';
+        stepState.target = (typeof Lang !== 'undefined' && Lang.targetText)
+            ? Lang.targetText(step)
+            : (step.target || step.sentence || step.spanish || step.hungarian || '');
         stepState.english = step.english || step.translation || '';
         stepState.mode = step.mode || 'read-repeat';
         stepState.checkFn = 'lessonCheckSpeaking';
@@ -1968,7 +1971,9 @@ const stepRenderers = {
 
     challenge(step) {
         gateStep();
-        stepState.target = step.target || step.sentence || '';
+        stepState.target = (typeof Lang !== 'undefined' && Lang.targetText)
+            ? Lang.targetText(step)
+            : (step.target || step.sentence || step.spanish || step.hungarian || '');
         stepState.prompt = step.prompt || '';
         stepState.scenario = step.scenario || '';
         stepState.cues = step.cues || [];
@@ -3374,7 +3379,9 @@ function lessonToggleSpeaking(btn) {
         window.speechSynthesis.cancel();
     }
 
-    if (_lessonSpeakingRecording) {
+    const isCurrentlyListening = _lessonSpeakingRecording || (typeof SpeechInput !== 'undefined' && typeof SpeechInput.isListening === 'function' && SpeechInput.isListening());
+
+    if (isCurrentlyListening) {
         _lessonSpeakingRecording = false;
         if (typeof Sound !== 'undefined') Sound.speaking();
         if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
@@ -3465,8 +3472,12 @@ function lessonToggleSpeaking(btn) {
                 if (bars) bars.forEach(b => { b.style.transform = 'scaleY(0.2)'; });
                 if (statusEl) statusEl.textContent = 'Tap to speak';
 
-                const text = transcript || _lastCapturedLesson;
-                if (liveEl && text) {
+                const text = (transcript || _lastCapturedLesson || '').trim();
+                if (!text) {
+                    setFeedback(false, 'No voice heard. Did you speak into the microphone?');
+                    return;
+                }
+                if (liveEl) {
                     liveEl.textContent = text;
                     liveEl.classList.remove('hidden');
                 }
@@ -3499,7 +3510,7 @@ function lessonToggleSpeaking(btn) {
 
                 // Defensive guard: if user already spoke and transcript was captured,
                 // evaluate the captured speech rather than showing a spurious "No voice heard" error.
-                const currentText = stepState.transcript || _lastCapturedLesson || (liveEl && liveEl.textContent && liveEl.textContent !== '...' ? liveEl.textContent.trim() : '');
+                const currentText = (stepState.transcript || _lastCapturedLesson || (liveEl && liveEl.textContent && liveEl.textContent !== '...' ? liveEl.textContent.trim() : '')).trim();
                 if (currentText) {
                     if (liveEl) {
                         liveEl.textContent = currentText;
@@ -3538,8 +3549,10 @@ function lessonToggleSpeaking(btn) {
                 } else {
                     setFeedback(false, 'Could not hear clearly. Try again or skip.');
                 }
-                stepState.checkDisabled = false;
-                updateFooterButton();
+                if (stepState.transcript) {
+                    stepState.checkDisabled = false;
+                    updateFooterButton();
+                }
             }
         });
     }
@@ -4001,7 +4014,7 @@ function lessonSkipSpeaking() {
 let _inlineVoiceActive = false;
 
 function lessonInlineVoiceInput(selector, btn) {
-    if (typeof SpeechInput === 'undefined' || !SpeechInput.isRecognitionSupported()) {
+    if (typeof SpeechInput === 'undefined' || (!SpeechInput.isRecognitionSupported() && !SpeechInput.isRecordingSupported())) {
         if (typeof showToast === 'function') showToast('Voice recognition is not supported in this browser.', 'warning');
         else if (typeof UI !== 'undefined' && UI.toast) UI.toast('Voice recognition is not supported in this browser.', 'warning');
         else alert('Voice recognition is not supported in this browser.');

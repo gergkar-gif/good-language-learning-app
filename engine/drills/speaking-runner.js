@@ -263,14 +263,18 @@ const SpeakingRunner = (function () {
                 }
             },
             onFinal: transcript => {
-                const text = transcript || _capturedTranscript;
+                const text = (transcript || _capturedTranscript || '').trim();
+                _stopRecording();
+                const micLabel = _container.querySelector('.sp-mic-status');
+                if (micLabel) micLabel.textContent = 'Tap to speak';
+                if (!text) {
+                    _setFeedback(false, 'No voice heard. Did you speak into the microphone?');
+                    return;
+                }
                 if (liveText && text) {
                     liveText.textContent = text;
                     liveText.classList.remove('hidden');
                 }
-                _stopRecording();
-                const micLabel = _container.querySelector('.sp-mic-status');
-                if (micLabel) micLabel.textContent = 'Tap to speak';
                 const evalResult = SpeechInput.evaluate(_target(_exercise), text);
                 _finishEvaluation(evalResult);
             },
