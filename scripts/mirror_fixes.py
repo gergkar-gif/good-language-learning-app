@@ -10,6 +10,8 @@ checks it there in order, as apply_replacements.py would apply it:
 - a text fix whose old text occurs exactly once in the sibling file (after
   the fixes before it) is mirrored;
 - a `set` fix whose id exists once in the sibling file is mirrored;
+- a fix marked `"variant": "<from course>"` (it holds only there) is
+  listed, not mirrored;
 - anything else (the file is missing, the text differs or occurs twice, the
   id is absent) goes to <out>.unmatched.json for the reviewer: usually a
   course variant that needs its own wording, or a fix that doesn't apply.
@@ -39,6 +41,9 @@ def main():
     texts, mirrored, unmatched = {}, [], []
     for fix in fixes:
         path = fix.get("file", "").replace("\\", "/")
+        if fix.get("variant") == frm:
+            unmatched.append({**fix, "why_unmatched": f"marked variant {frm}: holds only there"})
+            continue
         prefix = f"content/{frm}/"
         if prefix not in path:
             unmatched.append({**fix, "why_unmatched": f"not a {frm} file"})
