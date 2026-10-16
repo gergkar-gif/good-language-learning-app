@@ -160,5 +160,11 @@ const Sound = (function () {
     // Kept as a no-op so existing speaking exercise call sites need no changes.
     function speaking() {}
 
-    return { correct, wrong, complete, speaking, muted, toggleMuted };
+    function suspend() {
+        if (audioCtx && audioCtx.state === 'running' && typeof audioCtx.suspend === 'function') {
+            try { audioCtx.suspend().catch(() => {}); } catch (e) {}
+        }
+    }
+
+    return { correct, wrong, complete, speaking, suspend, muted, toggleMuted };
 })();

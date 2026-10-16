@@ -51,20 +51,29 @@ global.fetch = async () => ({ ok: true, status: 200, json: async () => ({ text: 
 // AudioContext mock: 'running' controls whether resume() takes effect.
 let ctxCreatedDuringStart = 0;
 let resumeWorks = false;
+let simulatedFreqValue = 0;
 class MockAudioContext {
     constructor() { this.state = 'suspended'; ctxCreatedDuringStart++; }
     resume() { if (resumeWorks) this.state = 'running'; return Promise.resolve(); }
     close() { this.state = 'closed'; return Promise.resolve(); }
-    createMediaStreamSource() { return { connect: () => {} }; }
+    createMediaStreamSource() { return { connect: () => {}, disconnect: () => {} }; }
     createAnalyser() {
-        return { fftSize: 0, frequencyBinCount: 8, getByteFrequencyData: arr => arr.fill(0) };
+        return {
+            fftSize: 64,
+            frequencyBinCount: 8,
+            connect: () => {},
+            disconnect: () => {},
+            getByteFrequencyData: arr => arr.fill(simulatedFreqValue),
+            getByteTimeDomainData: arr => arr.fill(128)
+        };
     }
 }
 global.AudioContext = MockAudioContext;
 
-// Shrink the 10s initial-silence timer so the test runs fast.
+// Shrink the 10s initial-silence and 2.6s finish timers so the test runs fast.
 const realSetTimeout = setTimeout;
-global.setTimeout = (fn, ms, ...a) => realSetTimeout(fn, ms === 10000 ? 30 : ms, ...a);
+let silenceTimerMs = 30;
+global.setTimeout = (fn, ms, ...a) => realSetTimeout(fn, ms === 10000 ? silenceTimerMs : (ms === 2600 ? 30 : ms), ...a);
 const wait = ms => new Promise(r => realSetTimeout(r, ms));
 
 eval(fs.readFileSync(path.join(__dirname, '../../engine/speech-input.js'), 'utf8'));
@@ -89,6 +98,8 @@ async function runTests() {
     console.log('1-2. Suspended meter (iOS): recording goes to Whisper, no no-speech...');
     ctxCreatedDuringStart = 0;
     resumeWorks = false;
+    simulatedFreqValue = 0;
+    silenceTimerMs = 30;
     let r = await listenInSilence();
     assert.strictEqual(r.createdSync, 1, 'AudioContext must be created synchronously inside startListening');
     assert.deepStrictEqual(r.errors, [], 'Blind meter must not report no-speech');
@@ -97,9 +108,47 @@ async function runTests() {
 
     console.log('3. Running meter hearing silence still reports no-speech...');
     resumeWorks = true;
+    simulatedFreqValue = 0;
+    silenceTimerMs = 30;
     r = await listenInSilence();
     assert.deepStrictEqual(r.errors, ['no-speech'], 'Working meter with no voice must report no-speech');
     console.log('✓ Genuine silence still reported');
+
+    console.log('4. Short utterance (2 frames / 120ms) without onAudioLevel auto-commits via VAD...');
+    resumeWorks = true;
+    simulatedFreqValue = 40; // > 0.06 threshold
+    silenceTimerMs = 500;
+    const shortResult = { errors: [], finals: [] };
+    SpeechInput.startListening({
+        target: 'hola',
+        preferRecording: true,
+        lang: 'es-ES',
+        onError: e => shortResult.errors.push(e),
+        onFinal: t => shortResult.finals.push(t)
+    });
+    await wait(140); // 2 meter ticks (120ms) of speech
+    simulatedFreqValue = 0; // silence after short utterance
+    await wait(160); // wait for next tick + shortened _finishTimeout (40ms)
+    assert.deepStrictEqual(shortResult.errors, [], 'Short utterance must not report error');
+    assert.deepStrictEqual(shortResult.finals, ['hola'], 'Short utterance must auto-commit via _finishTimeout');
+    console.log('✓ Short utterance auto-commits cleanly without hanging');
+
+    console.log('5. cancelListening aborts session without firing onFinal or onError...');
+    const cancelResult = { errors: [], finals: [] };
+    SpeechInput.startListening({
+        target: 'hola',
+        preferRecording: true,
+        lang: 'es-ES',
+        onError: e => cancelResult.errors.push(e),
+        onFinal: t => cancelResult.finals.push(t)
+    });
+    await wait(20);
+    SpeechInput.cancelListening();
+    await wait(100);
+    assert.strictEqual(SpeechInput.isListening(), false, 'cancelListening must stop listening');
+    assert.deepStrictEqual(cancelResult.errors, [], 'cancelListening must not fire onError');
+    assert.deepStrictEqual(cancelResult.finals, [], 'cancelListening must not fire onFinal');
+    console.log('✓ cancelListening suppresses stale callbacks');
 
     console.log('\nAll iOS meter tests passed successfully!');
     process.exit(0);

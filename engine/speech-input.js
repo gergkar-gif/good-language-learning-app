@@ -179,10 +179,25 @@ const SpeechInput = (function () {
     let _bestTranscript = '';
 
     let _audioCtx = null;
+    let _audioSource = null;
+    let _audioZeroGain = null;
     let _audioAnalyser = null;
     let _audioDataArray = null;
+    let _audioTimeArray = null;
 
     function _cleanupAudioAnalysis() {
+        if (_audioSource) {
+            try { _audioSource.disconnect(); } catch (e) {}
+            _audioSource = null;
+        }
+        if (_audioAnalyser) {
+            try { _audioAnalyser.disconnect(); } catch (e) {}
+            _audioAnalyser = null;
+        }
+        if (_audioZeroGain) {
+            try { _audioZeroGain.disconnect(); } catch (e) {}
+            _audioZeroGain = null;
+        }
         if (_audioCtx) {
             try {
                 if (_audioCtx.state !== 'closed' && typeof _audioCtx.close === 'function') {
@@ -191,8 +206,8 @@ const SpeechInput = (function () {
             } catch (e) {}
             _audioCtx = null;
         }
-        _audioAnalyser = null;
         _audioDataArray = null;
+        _audioTimeArray = null;
     }
 
     function _cleanupTimers() {
@@ -229,6 +244,9 @@ const SpeechInput = (function () {
     function _stopTracks() {
         _clearStreamIdleTimer();
         if (_mediaRecorder && _mediaRecorder.state !== 'inactive') {
+            if (_mediaRecorder.state === 'recording' && typeof _mediaRecorder.requestData === 'function') {
+                try { _mediaRecorder.requestData(); } catch (e) {}
+            }
             try { _mediaRecorder.stop(); } catch (e) {}
         }
         _mediaRecorder = null;
@@ -280,14 +298,13 @@ const SpeechInput = (function () {
         if (AudioCtx) {
             try {
                 _audioCtx = new AudioCtx();
-                if (_audioCtx.state === 'suspended' && typeof _audioCtx.resume === 'function') {
+                if (_audioCtx.state !== 'running' && typeof _audioCtx.resume === 'function') {
                     _audioCtx.resume().catch(() => {});
                 }
             } catch (e) {
                 _audioCtx = null;
             }
         }
-        const meterCtx = _audioCtx;
 
         function _setupRecorder(stream) {
             if (!_isListening || currentToken !== _sessionToken) return;
@@ -299,7 +316,7 @@ const SpeechInput = (function () {
                     if (AC) _audioCtx = new AC();
                 }
                 if (_audioCtx) {
-                    if (_audioCtx.state === 'suspended' && typeof _audioCtx.resume === 'function') {
+                    if (_audioCtx.state !== 'running' && typeof _audioCtx.resume === 'function') {
                         _audioCtx.resume().catch(() => {});
                     }
                     let source = null;
@@ -311,7 +328,7 @@ const SpeechInput = (function () {
                                 const AC = (typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext));
                                 if (AC) {
                                     _audioCtx = new AC();
-                                    if (_audioCtx.state === 'suspended' && typeof _audioCtx.resume === 'function') {
+                                    if (_audioCtx.state !== 'running' && typeof _audioCtx.resume === 'function') {
                                         _audioCtx.resume().catch(() => {});
                                     }
                                     source = _audioCtx.createMediaStreamSource(stream);
@@ -320,6 +337,7 @@ const SpeechInput = (function () {
                         }
                     }
                     if (source && typeof _audioCtx.createAnalyser === 'function') {
+                        _audioSource = source;
                         _audioAnalyser = _audioCtx.createAnalyser();
                         _audioAnalyser.fftSize = 64;
                         _audioAnalyser.smoothingTimeConstant = 0.3;
@@ -333,9 +351,13 @@ const SpeechInput = (function () {
                                 zeroGain.gain.value = 0;
                                 _audioAnalyser.connect(zeroGain);
                                 zeroGain.connect(_audioCtx.destination);
+                                _audioZeroGain = zeroGain;
                             } catch (eDest) {}
                         }
                         _audioDataArray = new Uint8Array(_audioAnalyser.frequencyBinCount);
+                        if (typeof _audioAnalyser.getByteTimeDomainData === 'function') {
+                            _audioTimeArray = new Uint8Array(_audioAnalyser.fftSize || 64);
+                        }
                     }
                 }
             } catch (e) {}
@@ -348,26 +370,28 @@ const SpeechInput = (function () {
                 else if (MediaRecorder.isTypeSupported('audio/aac')) mimeType = 'audio/aac';
             }
 
+            let recorder = null;
             try {
-                _mediaRecorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
+                recorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
             } catch (e) {
                 try {
-                    _mediaRecorder = new MediaRecorder(stream);
+                    recorder = new MediaRecorder(stream);
                 } catch (e2) {
                     console.warn('SpeechInput: MediaRecorder initialization failed:', e2);
                     _mediaRecorder = null;
                     return;
                 }
             }
+            _mediaRecorder = recorder;
 
             _recordedChunks = [];
-            _mediaRecorder.ondataavailable = e => {
+            recorder.ondataavailable = e => {
                 if (currentToken === _sessionToken && e.data && e.data.size > 0) {
                     _recordedChunks.push(e.data);
                 }
             };
 
-            _mediaRecorder.onstop = async () => {
+            recorder.onstop = async () => {
                 if (currentToken !== _sessionToken) return;
 
                 if (!_recordedChunks || _recordedChunks.length === 0) {
@@ -380,7 +404,7 @@ const SpeechInput = (function () {
                 }
 
                 _cleanAudioUrl();
-                const type = (_mediaRecorder && _mediaRecorder.mimeType) || mimeType || 'audio/webm';
+                const type = (recorder && recorder.mimeType) || mimeType || 'audio/webm';
                 _recordedAudioBlob = new Blob(_recordedChunks, { type });
                 _recordedAudioUrl = URL.createObjectURL(_recordedAudioBlob);
                 if (options.onAudioReady) options.onAudioReady(_recordedAudioUrl);
@@ -393,6 +417,7 @@ const SpeechInput = (function () {
                     if (onStatus) onStatus('analyzing');
                     try {
                         const transcript = await transcribeBlob(_recordedAudioBlob, lang, options.target);
+                        if (currentToken !== _sessionToken) return;
                         if (transcript) {
                             cb(transcript);
                         } else {
@@ -401,6 +426,7 @@ const SpeechInput = (function () {
                             else cb('');
                         }
                     } catch (err) {
+                        if (currentToken !== _sessionToken) return;
                         console.warn('SpeechInput: Cloud STT transcription failed:', err);
                         const onErr = options.onError || null;
                         if (onErr) onErr('stt-failed');
@@ -411,7 +437,10 @@ const SpeechInput = (function () {
 
             try {
                 // Do not pass timeslice (e.g. 100ms) on iOS WebKit where it corrupts MP4 chunks
-                _mediaRecorder.start();
+                recorder.start();
+                if (_audioCtx && _audioCtx.state !== 'running' && typeof _audioCtx.resume === 'function') {
+                    _audioCtx.resume().catch(() => {});
+                }
             } catch (e) {
                 console.warn('SpeechInput: mediaRecorder.start failed:', e);
             }
@@ -449,8 +478,22 @@ const SpeechInput = (function () {
 
     // ---- Start Voice Capture & Recognition ----
     function startListening(options = {}) {
+        if (typeof ParlourTTS !== 'undefined' && typeof ParlourTTS.stop === 'function') {
+            ParlourTTS.stop();
+        } else if (typeof window !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
+            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+                window.speechSynthesis.cancel();
+            }
+        }
+        if (typeof Sound !== 'undefined' && typeof Sound.suspend === 'function') {
+            Sound.suspend();
+        }
+        if (typeof navigator !== 'undefined' && navigator.audioSession) {
+            try { navigator.audioSession.type = 'play-and-record'; } catch (e) {}
+        }
+
         if (_isListening) {
-            stopListening();
+            cancelListening();
         } else {
             _cleanupRecognition();
             _stopTracks();
@@ -499,63 +542,80 @@ const SpeechInput = (function () {
             }
         }, maxDurationMs);
 
-        if (onAudioLevel) {
-            let simAngle = 0;
-            let consecutiveVoiceFrames = 0;
-            let totalVoiceDurationMs = 0;
-            _meterInterval = setInterval(() => {
-                if (!_isListening) return;
+        let simAngle = 0;
+        let consecutiveVoiceFrames = 0;
+        _meterInterval = setInterval(() => {
+            if (!_isListening) return;
 
-                let realLevel = 0;
-                let isHearing = false;
+            let realLevel = 0;
+            let isHearing = false;
 
-                if (_audioAnalyser && _audioDataArray) {
-                    try {
-                        _audioAnalyser.getByteFrequencyData(_audioDataArray);
-                        let sum = 0;
-                        for (let i = 0; i < _audioDataArray.length; i++) sum += _audioDataArray[i];
-                        const avg = sum / _audioDataArray.length;
-                        realLevel = Math.min(1.0, Math.max(0, avg / 90));
-                        if (realLevel > 0.08) {
-                            consecutiveVoiceFrames++;
-                            if (consecutiveVoiceFrames >= 2) {
-                                _hasSpoken = true;
-                                isHearing = true;
-                                totalVoiceDurationMs += 60;
-                            }
-                        } else {
-                            consecutiveVoiceFrames = 0;
-                        }
-                    } catch (e) {}
-                }
-
-                // Automatic silence commit for Cloud STT sessions (matches native STT behavior)
-                if (_isCloudSttSession && !manualStop) {
-                    if (isHearing) {
-                        if (_initialSilenceTimeout) {
-                            clearTimeout(_initialSilenceTimeout);
-                            _initialSilenceTimeout = null;
-                        }
-                        if (_finishTimeout) {
-                            clearTimeout(_finishTimeout);
-                            _finishTimeout = null;
-                        }
-                    } else if (_hasSpoken && totalVoiceDurationMs >= 300 && !_finishTimeout) {
-                        _finishTimeout = setTimeout(() => {
-                            if (_isListening) stopListening();
-                        }, 3200);
+            if (_audioAnalyser && _audioDataArray) {
+                try {
+                    _audioAnalyser.getByteFrequencyData(_audioDataArray);
+                    const speechBins = Math.min(_audioDataArray.length, 10);
+                    let speechSum = 0;
+                    let fullSum = 0;
+                    for (let i = 0; i < _audioDataArray.length; i++) {
+                        fullSum += _audioDataArray[i];
+                        if (i < speechBins) speechSum += _audioDataArray[i];
                     }
-                }
+                    const speechAvg = speechBins > 0 ? speechSum / speechBins : 0;
+                    const fullAvg = _audioDataArray.length > 0 ? fullSum / _audioDataArray.length : 0;
+                    let freqLevel = Math.max(speechAvg / 75, fullAvg / 90);
 
-                if (realLevel < 0.05) {
-                    simAngle += 0.2;
-                    const basePulse = _hasSpoken ? 0.22 : 0.08 + Math.sin(simAngle) * 0.05;
-                    realLevel = Math.max(realLevel, basePulse);
-                }
+                    let timeLevel = 0;
+                    if (_audioTimeArray && typeof _audioAnalyser.getByteTimeDomainData === 'function') {
+                        _audioAnalyser.getByteTimeDomainData(_audioTimeArray);
+                        let sumSq = 0;
+                        for (let i = 0; i < _audioTimeArray.length; i++) {
+                            const dev = (_audioTimeArray[i] - 128) / 128;
+                            sumSq += dev * dev;
+                        }
+                        timeLevel = Math.sqrt(sumSq / _audioTimeArray.length) * 3.5;
+                    }
 
+                    realLevel = Math.min(1.0, Math.max(0, freqLevel, timeLevel));
+                    if (realLevel > 0.06) {
+                        consecutiveVoiceFrames++;
+                        if (consecutiveVoiceFrames >= 2) {
+                            _hasSpoken = true;
+                            isHearing = true;
+                        }
+                    } else {
+                        consecutiveVoiceFrames = 0;
+                    }
+                } catch (e) {}
+            }
+
+            // Automatic silence commit for Cloud STT sessions (matches native STT behavior)
+            if (_isCloudSttSession && !manualStop) {
+                if (isHearing) {
+                    if (_initialSilenceTimeout) {
+                        clearTimeout(_initialSilenceTimeout);
+                        _initialSilenceTimeout = null;
+                    }
+                    if (_finishTimeout) {
+                        clearTimeout(_finishTimeout);
+                        _finishTimeout = null;
+                    }
+                } else if (_hasSpoken && !_finishTimeout) {
+                    _finishTimeout = setTimeout(() => {
+                        if (_isListening) stopListening();
+                    }, 2600);
+                }
+            }
+
+            if (realLevel < 0.05) {
+                simAngle += 0.2;
+                const basePulse = _hasSpoken ? 0.22 : 0.08 + Math.sin(simAngle) * 0.05;
+                realLevel = Math.max(realLevel, basePulse);
+            }
+
+            if (onAudioLevel) {
                 onAudioLevel(realLevel, { isHearingVoice: isHearing, hasSpoken: _hasSpoken });
-            }, 60);
-        }
+            }
+        }, 60);
 
         const RecognitionClass = _getRecognitionClass();
 
@@ -810,6 +870,9 @@ const SpeechInput = (function () {
         _cleanupRecognition();
 
         if (_mediaRecorder && _mediaRecorder.state !== 'inactive') {
+            if (_mediaRecorder.state === 'recording' && typeof _mediaRecorder.requestData === 'function') {
+                try { _mediaRecorder.requestData(); } catch (e) {}
+            }
             try { _mediaRecorder.stop(); } catch (e) {}
         }
         _stopTracks();
@@ -827,6 +890,23 @@ const SpeechInput = (function () {
             const cb = _onFinalCallback;
             _onFinalCallback = null;
             cb(finalText || '');
+        }
+    }
+
+    function cancelListening() {
+        _isListening = false;
+        _sessionToken++;
+        _currentRecognitionStarter = null;
+        _onFinalCallback = null;
+        _onAudioReadyCallback = null;
+        _accumulatedFinal = '';
+        _currentInterim = '';
+        _bestTranscript = '';
+        _cleanupTimers();
+        _cleanupRecognition();
+        _stopTracks();
+        if (typeof navigator !== 'undefined' && navigator.audioSession) {
+            try { navigator.audioSession.type = 'playback'; } catch (e) {}
         }
     }
 
@@ -1328,6 +1408,7 @@ const SpeechInput = (function () {
         resumeSpeaking: resetCantSpeakNow,
         startListening,
         stopListening,
+        cancelListening,
         isListening: () => _isListening,
         releaseStream,
         getRecordedAudioUrl,

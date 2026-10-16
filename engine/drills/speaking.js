@@ -918,9 +918,23 @@ const SpeakingDriller = (function () {
                         const words = _prodTranscript.trim() ? _prodTranscript.trim().split(/\s+/).length : 0;
                         wordCountEl.textContent = `${words} words captured`;
                     }
+                    if (_prodPhase === PROD_PHASE.REVIEW) {
+                        const textarea = document.getElementById('sp-transcript-input');
+                        if (textarea && !textarea.value.trim() && _prodTranscript) {
+                            textarea.value = _prodTranscript;
+                        }
+                        _renderActiveTab();
+                    }
                 },
                 onAudioReady: (audioUrl) => {
                     _prodAudioUrl = audioUrl;
+                    if (_prodPhase === PROD_PHASE.REVIEW) {
+                        const textarea = document.getElementById('sp-transcript-input');
+                        if (textarea && textarea.value.trim()) {
+                            _prodTranscript = textarea.value;
+                        }
+                        _renderActiveTab();
+                    }
                 },
                 onAudioLevel: (level) => {
                     const ring = document.querySelector('.sp-mic-pulse-ring');
@@ -2132,9 +2146,6 @@ const SpeakingDriller = (function () {
         if (typeof ParlourTTS !== 'undefined' && typeof ParlourTTS.stop === 'function') {
             ParlourTTS.stop();
         }
-        if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
-            window.speechSynthesis.cancel();
-        }
         _scenarioTranscript = '';
         _scenarioAudioUrl = null;
         _scenarioIsRecording = true;
@@ -2146,18 +2157,33 @@ const SpeakingDriller = (function () {
         if (typeof SpeechInput !== 'undefined') {
             SpeechInput.startListening({
                 preferRecording: true,
+                manualStop: true,
                 lang: langCode,
                 onInterim: (text) => {
                     _scenarioTranscript = text;
-                    // Defer displaying transcribed text until speaker finishes speaking
                 },
                 onFinal: (text) => {
                     if (text) {
                         _scenarioTranscript = text;
                     }
+                    _scenarioIsRecording = false;
+                    if (_scenarioPhase === SCENARIO_PHASE.RECORDING) {
+                        const textarea = document.querySelector('.sp-turn-edit-field');
+                        if (textarea && textarea.value.trim() && !_scenarioTranscript) {
+                            _scenarioTranscript = textarea.value;
+                        }
+                        _renderActiveTab();
+                    }
                 },
                 onAudioReady: (audioUrl) => {
                     _scenarioAudioUrl = audioUrl;
+                    if (_scenarioPhase === SCENARIO_PHASE.RECORDING && !_scenarioIsRecording) {
+                        const textarea = document.querySelector('.sp-turn-edit-field');
+                        if (textarea && textarea.value.trim()) {
+                            _scenarioTranscript = textarea.value;
+                        }
+                        _renderActiveTab();
+                    }
                 },
                 onAudioLevel: (level) => {
                     const ring = document.querySelector('.sp-mic-pulse-ring');
@@ -2168,6 +2194,10 @@ const SpeakingDriller = (function () {
                 },
                 onError: (err) => {
                     console.warn('Scenario SpeechInput error:', err);
+                    _scenarioIsRecording = false;
+                    if (_scenarioPhase === SCENARIO_PHASE.RECORDING) {
+                        _renderActiveTab();
+                    }
                 }
             });
         }
@@ -2437,7 +2467,8 @@ const SpeakingDriller = (function () {
             _prodTimerInterval = null;
         }
         if (typeof SpeechInput !== 'undefined') {
-            SpeechInput.stopListening();
+            if (typeof SpeechInput.cancelListening === 'function') SpeechInput.cancelListening();
+            else SpeechInput.stopListening();
         }
         if (typeof ParlourTTS !== 'undefined' && ParlourTTS.stop) {
             ParlourTTS.stop();

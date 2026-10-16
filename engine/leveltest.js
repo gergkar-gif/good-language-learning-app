@@ -1393,6 +1393,39 @@ const LevelTest = (function () {
     }
 
     async function startRecording(host) {
+        if (typeof SpeechInput !== 'undefined') {
+            isRecording = true;
+            const sttLang = (typeof Lang !== 'undefined' && typeof Lang.sttLocale === 'function')
+                ? Lang.sttLocale()
+                : (test.level && test.level.startsWith('A') ? (typeof Lang !== 'undefined' && Lang.current() === 'hu' ? 'hu-HU' : 'es-ES') : 'es-ES');
+            render(test.level);
+            SpeechInput.startListening({
+                preferRecording: true,
+                manualStop: true,
+                lang: sttLang,
+                onInterim: (text) => {
+                    speakingTranscript = text;
+                },
+                onFinal: (text) => {
+                    if (text) speakingTranscript = text;
+                    isRecording = false;
+                    if (test && test.level) render(test.level);
+                },
+                onAudioReady: (audioUrl) => {
+                    speakingAudioUrl = audioUrl;
+                    if (test && test.level) render(test.level);
+                },
+                onError: (err) => {
+                    console.warn('Microphone access unavailable:', err);
+                    isRecording = false;
+                    if (test && test.level) render(test.level);
+                    if (typeof UI !== 'undefined' && UI.toast) {
+                        UI.toast('Microphone unavailable. You can type your response directly into the transcript box.', 'warning');
+                    }
+                }
+            });
+            return;
+        }
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
             activeStream = stream;
@@ -1402,7 +1435,7 @@ const LevelTest = (function () {
                 if (e.data.size > 0) audioChunks.push(e.data);
             };
             mediaRecorder.onstop = () => {
-                const blob = new Blob(audioChunks, { type: 'audio/webm' });
+                const blob = new Blob(audioChunks, { type: mediaRecorder.mimeType || 'audio/webm' });
                 speakingAudioUrl = URL.createObjectURL(blob);
                 if (activeStream) {
                     try { activeStream.getTracks().forEach(t => t.stop()); } catch (e) {}
@@ -1412,26 +1445,6 @@ const LevelTest = (function () {
             };
             mediaRecorder.start();
             isRecording = true;
-
-            const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-            if (SpeechRec) {
-                recognition = new SpeechRec();
-                recognition.continuous = true;
-                recognition.interimResults = true;
-                recognition.lang = (typeof Lang !== 'undefined' && typeof Lang.sttLocale === 'function')
-                    ? Lang.sttLocale()
-                    : (test.level && test.level.startsWith('A') ? (typeof Lang !== 'undefined' && Lang.current() === 'hu' ? 'hu-HU' : 'es-ES') : 'es-ES');
-                recognition.onresult = (e) => {
-                    let transcript = '';
-                    for (let i = 0; i < e.results.length; i++) {
-                        transcript += e.results[i][0].transcript;
-                    }
-                    speakingTranscript = transcript;
-                    // Defer displaying transcript in textarea until user stops speaking
-                };
-                try { recognition.start(); } catch (err) {}
-            }
-
             render(test.level);
         } catch (err) {
             console.warn('Microphone access unavailable:', err);
@@ -1446,6 +1459,10 @@ const LevelTest = (function () {
     function stop() {
         stopListeningAudio();
         isRecording = false;
+        if (typeof SpeechInput !== 'undefined') {
+            if (typeof SpeechInput.cancelListening === 'function') SpeechInput.cancelListening();
+            else SpeechInput.stopListening();
+        }
         if (mediaRecorder && mediaRecorder.state !== 'inactive') {
             try { mediaRecorder.stop(); } catch (e) {}
         }
@@ -1460,6 +1477,12 @@ const LevelTest = (function () {
     }
 
     function stopRecording(host) {
+        isRecording = false;
+        if (typeof SpeechInput !== 'undefined') {
+            SpeechInput.stopListening();
+            if (test && test.level) render(test.level);
+            return;
+        }
         stop();
         if (test && test.level) render(test.level);
     }

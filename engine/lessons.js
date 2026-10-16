@@ -703,13 +703,15 @@ function teardownLesson() {
         DeckMatch.stop();
     }
     if (typeof SpeechInput !== 'undefined') {
-        SpeechInput.stopListening();
+        if (typeof SpeechInput.cancelListening === 'function') SpeechInput.cancelListening();
+        else SpeechInput.stopListening();
         SpeechInput.releaseStream();
     }
     if (typeof ParlourTTS !== 'undefined') {
         ParlourTTS.stop();
     }
     _inlineVoiceActive = false;
+    _pendingInlineCheck = false;
     _lessonSpeakingRecording = false;
     const lessonFooter = document.querySelector('#lesson-screen .lesson-footer');
     if (lessonFooter) lessonFooter.style.display = '';
@@ -2167,10 +2169,14 @@ function _wireLessonEnterToCheck() {
 }
 
 function renderStep() {
-    if (_inlineVoiceActive || _lessonSpeakingRecording) {
+    if (_inlineVoiceActive || _lessonSpeakingRecording || (typeof SpeechInput !== 'undefined' && typeof SpeechInput.isListening === 'function' && SpeechInput.isListening())) {
         _inlineVoiceActive = false;
+        _pendingInlineCheck = false;
         _lessonSpeakingRecording = false;
-        if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
+        if (typeof SpeechInput !== 'undefined') {
+            if (typeof SpeechInput.cancelListening === 'function') SpeechInput.cancelListening();
+            else SpeechInput.stopListening();
+        }
     }
 
     const step = currentLesson.steps[currentStepIndex];
@@ -2249,9 +2255,11 @@ function nextLessonStep() {
         ParlourTTS.stop();
     }
     _inlineVoiceActive = false;
+    _pendingInlineCheck = false;
     _lessonSpeakingRecording = false;
     if (typeof SpeechInput !== 'undefined') {
-        SpeechInput.stopListening();
+        if (typeof SpeechInput.cancelListening === 'function') SpeechInput.cancelListening();
+        else SpeechInput.stopListening();
     }
 
     // The srs step used to need its own "Save" tap before Continue did
@@ -2317,9 +2325,11 @@ function prevLessonStep() {
         ParlourTTS.stop();
     }
     _inlineVoiceActive = false;
+    _pendingInlineCheck = false;
     _lessonSpeakingRecording = false;
     if (typeof SpeechInput !== 'undefined') {
-        SpeechInput.stopListening();
+        if (typeof SpeechInput.cancelListening === 'function') SpeechInput.cancelListening();
+        else SpeechInput.stopListening();
     }
     currentStepIndex--;
     renderStep();
@@ -2873,6 +2883,16 @@ function lessonCheckBlank() {
     if (!input || stepState.solved) return;
 
     if (!input.value.trim()) {
+        if (_inlineVoiceActive || (typeof SpeechInput !== 'undefined' && typeof SpeechInput.isListening === 'function' && SpeechInput.isListening())) {
+            _pendingInlineCheck = true;
+            _inlineVoiceActive = false;
+            const micBtn = document.querySelector('.lsn-mic-addon.is-recording');
+            if (micBtn) micBtn.classList.remove('is-recording');
+            input.placeholder = 'Transcribing speech…';
+            setFeedback(true, 'Transcribing speech…');
+            if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
+            return;
+        }
         setFeedback(false, 'Type or speak an answer first.');
         return;
     }
@@ -2928,13 +2948,20 @@ function lessonCheckBlank() {
 function lessonPlayAudio(speed) {
     if (_inlineVoiceActive) {
         _inlineVoiceActive = false;
-        if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
+        _pendingInlineCheck = false;
+        if (typeof SpeechInput !== 'undefined') {
+            if (typeof SpeechInput.cancelListening === 'function') SpeechInput.cancelListening();
+            else SpeechInput.stopListening();
+        }
         const micBtn = document.querySelector('.lsn-mic-addon.is-recording');
         if (micBtn) micBtn.classList.remove('is-recording');
     }
     if (_lessonSpeakingRecording) {
         _lessonSpeakingRecording = false;
-        if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
+        if (typeof SpeechInput !== 'undefined') {
+            if (typeof SpeechInput.cancelListening === 'function') SpeechInput.cancelListening();
+            else SpeechInput.stopListening();
+        }
         const micBtn = document.getElementById('lesson-mic-btn');
         if (micBtn) micBtn.classList.remove('sp-recording');
         const cueEl = document.getElementById('lesson-mic-stop-cue');
@@ -3375,9 +3402,6 @@ function lessonToggleSpeaking(btn) {
     if (typeof ParlourTTS !== 'undefined' && typeof ParlourTTS.stop === 'function') {
         ParlourTTS.stop();
     }
-    if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
-        window.speechSynthesis.cancel();
-    }
 
     const isCurrentlyListening = _lessonSpeakingRecording || (typeof SpeechInput !== 'undefined' && typeof SpeechInput.isListening === 'function' && SpeechInput.isListening());
 
@@ -3546,8 +3570,10 @@ function lessonToggleSpeaking(btn) {
                     }
                 } else if (err === 'no-speech') {
                     setFeedback(false, 'No voice heard. Did you speak into the microphone?');
+                    _offerLessonSpeakingSelfEval();
                 } else {
-                    setFeedback(false, 'Could not hear clearly. Try again or skip.');
+                    setFeedback(false, 'Could not hear clearly. Try again or self-evaluate below:');
+                    _offerLessonSpeakingSelfEval();
                 }
                 if (stepState.transcript) {
                     stepState.checkDisabled = false;
@@ -4012,6 +4038,7 @@ function lessonSkipSpeaking() {
 }
 
 let _inlineVoiceActive = false;
+let _pendingInlineCheck = false;
 
 function lessonInlineVoiceInput(selector, btn) {
     if (typeof SpeechInput === 'undefined' || (!SpeechInput.isRecognitionSupported() && !SpeechInput.isRecordingSupported())) {
@@ -4021,22 +4048,31 @@ function lessonInlineVoiceInput(selector, btn) {
         return;
     }
 
-    if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
-        window.speechSynthesis.cancel();
+    if (typeof ParlourTTS !== 'undefined' && typeof ParlourTTS.stop === 'function') {
+        ParlourTTS.stop();
     }
 
     const input = document.querySelector(selector);
     if (!input) return;
 
-    if (_inlineVoiceActive) {
-        SpeechInput.stopListening();
+    const isCurrentlyListening = _inlineVoiceActive || (typeof SpeechInput.isListening === 'function' && SpeechInput.isListening());
+    if (isCurrentlyListening) {
         _inlineVoiceActive = false;
-        if (btn) btn.classList.remove('is-recording');
+        if (input.dataset.origPlaceholder === undefined) {
+            input.dataset.origPlaceholder = input.placeholder || '';
+        }
+        input.placeholder = 'Transcribing speech…';
+        SpeechInput.stopListening();
         return;
     }
 
     _inlineVoiceActive = true;
+    _pendingInlineCheck = false;
     if (btn) btn.classList.add('is-recording');
+    if (input.dataset.origPlaceholder === undefined) {
+        input.dataset.origPlaceholder = input.placeholder || '';
+    }
+    input.placeholder = 'Listening… speak now (tap mic when done)';
 
     let target = null;
     let speechLang = undefined;
@@ -4050,31 +4086,58 @@ function lessonInlineVoiceInput(selector, btn) {
         target = (stepState.acceptable || (stepState.answer ? [stepState.answer] : null));
     }
 
+    const restoreInputUi = () => {
+        _inlineVoiceActive = false;
+        if (btn) btn.classList.remove('is-recording');
+        if (input && input.dataset.origPlaceholder !== undefined) {
+            input.placeholder = input.dataset.origPlaceholder;
+        }
+    };
+
     let _lastCapturedInline = '';
     SpeechInput.startListening({
         lang: speechLang,
         target: target,
+        preferRecording: true,
+        onStatusChange: status => {
+            if (!input) return;
+            if (status === 'hearing') {
+                input.placeholder = 'Hearing voice…';
+            } else if (status === 'processing') {
+                input.placeholder = 'Transcribing speech…';
+            } else if (status === 'listening') {
+                input.placeholder = 'Listening… speak now (tap mic when done)';
+            }
+        },
+        onAudioLevel: () => {},
         onInterim: interim => {
             _lastCapturedInline = interim;
-            // Defer displaying transcribed text until speaker finishes
         },
         onFinal: transcript => {
-            _inlineVoiceActive = false;
-            if (btn) btn.classList.remove('is-recording');
+            const shouldCheck = _pendingInlineCheck;
+            _pendingInlineCheck = false;
+            restoreInputUi();
             const text = transcript || _lastCapturedInline;
             if (text) {
                 input.value = text;
                 input.dispatchEvent(new Event('input', { bubbles: true }));
             }
             try { input.focus(); } catch (e) {}
+            if (shouldCheck && text && selector === '#blank-input' && typeof lessonCheckBlank === 'function') {
+                lessonCheckBlank();
+            }
         },
         onError: err => {
-            _inlineVoiceActive = false;
-            if (btn) btn.classList.remove('is-recording');
+            const shouldCheck = _pendingInlineCheck;
+            _pendingInlineCheck = false;
+            restoreInputUi();
             const text = _lastCapturedInline;
             if (text && !input.value) {
                 input.value = text;
                 input.dispatchEvent(new Event('input', { bubbles: true }));
+                if (shouldCheck && selector === '#blank-input' && typeof lessonCheckBlank === 'function') {
+                    lessonCheckBlank();
+                }
             }
         }
     });

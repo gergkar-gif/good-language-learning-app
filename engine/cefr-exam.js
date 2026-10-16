@@ -389,6 +389,10 @@ const CefrExam = (function () {
                 clearInterval(_state.speakingPrepTimer);
                 _state.speakingPrepTimer = null;
             }
+            if (typeof SpeechInput !== 'undefined') {
+                if (typeof SpeechInput.cancelListening === 'function') SpeechInput.cancelListening();
+                else SpeechInput.stopListening();
+            }
             if (_state.speakingMediaRecorder && _state.speakingIsRecording) {
                 try { _state.speakingMediaRecorder.stop(); } catch (e) {}
             }
@@ -410,6 +414,49 @@ const CefrExam = (function () {
             _state.speakingAudioChunks = [];
             _state.speakingTranscriptText = '';
 
+            if (typeof SpeechInput !== 'undefined') {
+                _state.speakingIsRecording = true;
+                _updateSpeakingUI();
+                const sttLang = (typeof Lang !== 'undefined' && typeof Lang.sttLocale === 'function')
+                    ? Lang.sttLocale()
+                    : ((typeof Lang !== 'undefined') ? Lang.code() : 'es-ES');
+                SpeechInput.startListening({
+                    preferRecording: true,
+                    manualStop: true,
+                    lang: sttLang,
+                    onInterim: (text) => {
+                        _state.speakingTranscriptText = text;
+                        const transcriptBox = document.getElementById('cefr-speaking-transcript-input');
+                        if (transcriptBox) transcriptBox.value = text;
+                    },
+                    onFinal: (text) => {
+                        if (text) {
+                            _state.speakingTranscriptText = text;
+                            const transcriptBox = document.getElementById('cefr-speaking-transcript-input');
+                            if (transcriptBox) transcriptBox.value = text;
+                        }
+                        _state.speakingIsRecording = false;
+                        _renderActiveTarea();
+                    },
+                    onAudioReady: (audioUrl) => {
+                        _state.speakingAudioBlobUrl = audioUrl;
+                        if (!_state.speakingIsRecording) {
+                            _renderActiveTarea();
+                        }
+                    },
+                    onError: (err) => {
+                        console.warn('Microphone access unavailable or denied:', err);
+                        _state.speakingIsRecording = false;
+                        _updateSpeakingUI();
+                        const isHu = _id.includes('hu');
+                        alert(isHu
+                            ? 'A mikrofonhoz való hozzáférés nem sikerült. A válaszodat a szövegmezőbe is megírhatod.'
+                            : 'No se pudo acceder al micrófono. Puedes redactar tu respuesta oral en el campo de texto.');
+                    }
+                });
+                return;
+            }
+
             try {
                 const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
                 _state.speakingMediaRecorder = new MediaRecorder(stream);
@@ -419,7 +466,7 @@ const CefrExam = (function () {
                 };
 
                 _state.speakingMediaRecorder.onstop = () => {
-                    const blob = new Blob(_state.speakingAudioChunks, { type: 'audio/webm' });
+                    const blob = new Blob(_state.speakingAudioChunks, { type: _state.speakingMediaRecorder.mimeType || 'audio/webm' });
                     _state.speakingAudioBlobUrl = URL.createObjectURL(blob);
                     stream.getTracks().forEach(track => track.stop());
                     _renderActiveTarea();
@@ -427,31 +474,6 @@ const CefrExam = (function () {
 
                 _state.speakingMediaRecorder.start();
                 _state.speakingIsRecording = true;
-
-                // Speech recognition setup
-                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-                if (SpeechRecognition) {
-                    _state.speakingRecognition = new SpeechRecognition();
-                    _state.speakingRecognition.continuous = true;
-                    _state.speakingRecognition.interimResults = true;
-                    _state.speakingRecognition.lang = (typeof Lang !== 'undefined' && typeof Lang.sttLocale === 'function')
-                        ? Lang.sttLocale()
-                        : ((typeof Lang !== 'undefined') ? Lang.code() : 'es-ES');
-
-                    _state.speakingRecognition.onresult = (event) => {
-                        let finalStr = '';
-                        for (let i = 0; i < event.results.length; ++i) {
-                            finalStr += event.results[i][0].transcript;
-                        }
-                        _state.speakingTranscriptText = finalStr;
-                        const transcriptBox = document.getElementById('cefr-speaking-transcript-input');
-                        if (transcriptBox) transcriptBox.value = finalStr;
-                    };
-
-                    _state.speakingRecognition.onerror = () => {};
-                    _state.speakingRecognition.start();
-                }
-
                 _updateSpeakingUI();
             } catch (err) {
                 console.warn('Microphone access unavailable or denied:', err);
@@ -463,6 +485,12 @@ const CefrExam = (function () {
         }
 
         function _stopSpeakingRecording() {
+            if (typeof SpeechInput !== 'undefined') {
+                _state.speakingIsRecording = false;
+                SpeechInput.stopListening();
+                _updateSpeakingUI();
+                return;
+            }
             if (_state.speakingMediaRecorder && _state.speakingIsRecording) {
                 _state.speakingMediaRecorder.stop();
             }

@@ -226,9 +226,6 @@ const SpeakingRunner = (function () {
         if (typeof ParlourTTS !== 'undefined' && typeof ParlourTTS.stop === 'function') {
             ParlourTTS.stop();
         }
-        if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
-            window.speechSynthesis.cancel();
-        }
         if (typeof Sound !== 'undefined') Sound.speaking();
 
         _capturedTranscript = '';

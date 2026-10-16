@@ -36,11 +36,6 @@ const ParlourTTS = (function () {
         if (audioCtx) return audioCtx;
         const Ctx = (typeof window !== 'undefined') && (window.AudioContext || window.webkitAudioContext);
         if (!Ctx) return null;
-        // iOS mutes Web Audio under the ring/silent switch (unlike <audio>);
-        // declaring this as media playback opts out of that (Safari 16.4+).
-        if (typeof navigator !== 'undefined' && navigator.audioSession) {
-            try { navigator.audioSession.type = 'playback'; } catch {}
-        }
         try {
             audioCtx = new Ctx();
         } catch {
@@ -261,6 +256,9 @@ const ParlourTTS = (function () {
             try { activeAudio.pause(); } catch {}
             activeAudio = null;
         }
+        if (audioCtx && audioCtx.state === 'running' && typeof audioCtx.suspend === 'function') {
+            try { audioCtx.suspend().catch(() => {}); } catch {}
+        }
         if (typeof window !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
             // Only invoke native cancel() if speechSynthesis is actually speaking or queued;
             // unconditional cancel() triggers a blocking 150ms+ OS IPC call on Android/iOS.
@@ -296,6 +294,14 @@ const ParlourTTS = (function () {
             if (btn) btn.classList.remove('is-loading', 'is-playing');
             if (activeTriggerBtn === btn) activeTriggerBtn = null;
         };
+
+        // iOS mutes Web Audio under the ring/silent switch (unlike <audio>);
+        // declaring this as media playback opts out of that (Safari 16.4+),
+        // provided the microphone is not currently recording.
+        if (typeof navigator !== 'undefined' && navigator.audioSession &&
+            !(typeof SpeechInput !== 'undefined' && typeof SpeechInput.isListening === 'function' && SpeechInput.isListening())) {
+            try { navigator.audioSession.type = 'playback'; } catch {}
+        }
 
         // Ensure Web Audio context is resumed while inside user gesture
         const ctx = getAudioCtx();
