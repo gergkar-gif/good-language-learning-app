@@ -1,6 +1,6 @@
 # Parlour
 
-*A place for language.*
+*Read, practise, and learn a language.*
 
 Learn with lessons. Read stories. Practise with purpose. Remember what matters.
 

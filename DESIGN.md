@@ -1,6 +1,6 @@
 ---
 name: Parlour
-description: A place for language. Cream paper, ink navy, sand discs, and geometry as composition, with colours that each mean one thing.
+description: Read, practise, and learn a language. Cream paper, ink navy, sand discs, and geometry as composition, with colours that each mean one thing.
 colors:
   cream-paper: "#F5F1E8"
   ink-navy: "#102A47"

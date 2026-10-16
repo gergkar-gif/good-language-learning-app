@@ -10,7 +10,7 @@ web
 Self-directed adult learners studying alone in short sessions, largely on a phone, who want real CEFR progress (Spanish is DELE-aligned) rather than gamified streaks. The owner is currently the first learner (Spanish and Hungarian); multi-user support is deferred.
 
 ## Product Purpose
-Parlour ("A place for language") is a modular, content-driven language curriculum covering CEFR A1 to C1. Learners follow lessons, read stories, practise with purpose and retain what matters. Spanish (Core plus Latin America tracks) and Hungarian are live through B1; B2 is being generated for Spanish. Success is measurable progression through CEFR levels and retained vocabulary and grammar, not time-on-app.
+Parlour ("Read, practise, and learn a language") is a modular, content-driven language curriculum covering CEFR A1 to C1. Learners follow lessons, read stories, practise with purpose and retain what matters. Spanish (Core plus Latin America tracks) and Hungarian are live through B1; B2 is being generated for Spanish. Success is measurable progression through CEFR levels and retained vocabulary and grammar, not time-on-app.
 
 ## Positioning
 - An advanced speaking and writing engine plus CEFR-exam practice tasks that take learners past beginner phrasebook sentences.
@@ -31,7 +31,7 @@ Static site served as a PWA (service worker, manifest, custom domain via CNAME).
 - Cache changes require both a `?v=` bump and a `sw.js` CACHE_VERSION bump.
 
 ## Brand Commitments
-Name: Parlour. Tagline: "A place for language." Voice is understated and slightly tongue-in-cheek ("we get it, here's what's different"). Never invent quotes or attributions for placeholder copy.
+Name: Parlour. Tagline: "Read, practise, and learn a language." Voice is understated and slightly tongue-in-cheek ("we get it, here's what's different"). Never invent quotes or attributions for placeholder copy.
 
 ## Evidence on Hand
 Real curriculum and exercise content in `content/`; ROADMAP.md and ACHIEVED.md; feature-guidance copy in `docs/feature-guidance-copy.md`. No testimonials, user metrics or press exist; do not fabricate them.

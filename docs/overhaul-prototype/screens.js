@@ -714,7 +714,7 @@
   $('screen').innerHTML = order.map(function (k) { return '<option value="' + k + '">' + S[k].label + '</option>'; }).join('');
 
   function renderNav(tab) {
-    $('nav').innerHTML = '<div class="brand"><b>Parlour</b><span>A place for language.</span></div><div class="items">' + NAV.map(function (n) {
+    $('nav').innerHTML = '<div class="brand"><b>Parlour</b><span>Read, practise, and learn a language.</span></div><div class="items">' + NAV.map(function (n) {
       return '<button data-go="' + n[0] + '"' + (n[0] === tab ? ' aria-current="page"' : '') + '><svg viewBox="0 0 32 32" aria-hidden="true">' + ICON[n[0]] + '</svg>' + n[1] + '</button>';
     }).join('') + '</div>';
   }

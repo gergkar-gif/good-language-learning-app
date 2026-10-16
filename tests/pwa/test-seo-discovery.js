@@ -42,7 +42,7 @@ assert(indexHtml.includes('<link rel="canonical" href="https://parlour.me.uk/">'
 assert(indexHtml.includes('<meta name="robots" content="index, follow">'), 'index.html must permit indexing');
 
 // Open Graph
-assert(indexHtml.includes('<meta property="og:title" content="Parlour — A place for language">'), 'index.html must have og:title');
+assert(indexHtml.includes('<meta property="og:title" content="Parlour — Read, practise, and learn a language">'), 'index.html must have og:title');
 assert(indexHtml.includes('<meta property="og:url" content="https://parlour.me.uk/">'), 'index.html must have og:url');
 assert(indexHtml.includes('<meta property="og:type" content="website">'), 'index.html must have og:type');
 
