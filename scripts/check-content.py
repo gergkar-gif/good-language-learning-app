@@ -94,7 +94,8 @@ CHECKS = {
     "ik-first-person": "HU: an -ik verb's 'I' form with -k (eszek, iszok, dolgozok) as a right answer; the course teaches -m",
     "take-gloss": "HU fill-blank: English 'take' for a kér-/vesz- answer, so both verbs fit (write 'have'/'ask for' or 'buy')",
     "hint-suffix": "A1–B1 fill-blank whose hint spells out the tested ending (*buli + -ra* for *bulira*): name the word and its role instead (*buli, for*)",
-    "glued-blank": "HU: a blank glued to a stem ending in -a/-e whose answer is a suffix (hálószoba____ + ban teaches *hálószobaban*)",
+    "glued-blank": "HU: a blank glued to a stem ending in -a/-e whose answer is a suffix (hálószoba____ + ban teaches *hálószobaban*); ES: any blank glued to a stem (simpátic__ + a): blank the whole word, hint the base (es A1 units 3-4 had 9)",
+    "self-third-person": "ES dialogue: a speaker talks about themselves in the third person (Carlos asks '¿Cómo es Carlos?', or Meg answers 'Meg es…'); es A1 units 2-4 had 4",
     "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
     "unmet-word": "a word the learner hasn't met by this lesson (scripts/unmet-words.js)",
     "recap-unmarked": "a grammar screen repeats 2+ example sentences from an earlier unit's screens without saying they are known ('You know …')",
@@ -113,7 +114,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -284,6 +285,28 @@ def english_text(s):
     return ts[0] in INSTRUCTION_WORDS or (len(ts) >= 3 and n * 3 >= len(ts)) or (len(ts) >= 5 and n * 5 >= len(ts))
 
 
+_SPANISH = []
+
+
+def spanish_words():
+    """Headwords of the Spanish dictionary (112k), loaded once, to tell a bracket hint (yo) from English (older)."""
+    if not _SPANISH:
+        try:
+            _SPANISH.append({k.lower() for k in json.loads((ROOT / "imports/dictionary/spanish-en.json").read_text(encoding="utf-8"))})
+        except (OSError, ValueError):
+            _SPANISH.append(set())
+    return _SPANISH[0]
+
+
+def bracket_english(b, lang):
+    """A bracketed bit in a Spanish line none of whose lowercase words is Spanish: '(older)', '(brothers)'."""
+    if lang != "es" or re.search(r"[À-ɏ¿¡_]", b):
+        return False
+    ts = [w.lower() for w in re.findall(r"[A-Za-z]+", b) if not w[0].isupper()]
+    known = spanish_words()
+    return bool(ts) and bool(known) and not any(w in known for w in ts)
+
+
 def check_exercise(e, course, lang):
     out = []
 
@@ -329,6 +352,26 @@ def check_exercise(e, course, lang):
         answers = e.get("answers") or [e.get("answer") or ""]
         if m and any(fold(str(a)).strip() in LENGTHENING_SUFFIXES for a in answers):
             hit("glued-blank", f"{m.group(1)}____ + {answers[0]}")
+    if t == "fill-blank" and lang == "es":
+        m = re.search(r"([^\W\d_]+)_{2,}", e.get("sentence") or "")
+        if m:
+            hit("glued-blank", f"{m.group(1)}__")
+    if lang == "es":
+        turns = [(l.get("speaker") or "", l.get("text") or "") for l in e.get("prompt") or [] if isinstance(l, dict)]
+        if not turns and re.search(r"^\s*\w+:\s.*\s/\s\w+:", e.get("question") or ""):
+            turns = [tuple(x.split(":", 1)) for x in re.split(r"\s+/\s+", e["question"]) if ":" in x]
+        right = answer_text(e)
+        for i, (who, said) in enumerate(turns):
+            if i and BLANK.search(said) and re.search(rf"\b(es|son)\s+{re.escape(who.strip())}\b", turns[i - 1][1]) and who.strip():
+                hit("self-third-person", f"{who.strip()} is asked about {who.strip()}")
+                break
+            who = who.strip()
+            if not who or not who[0].isupper():
+                continue
+            said = right if BLANK.search(said) else said
+            if re.search(rf"\b(es|son)\s+{re.escape(who)}\b|\b{re.escape(who)}\s+(es|son)\b|\b{re.escape(who)}\s+y\b|\by\s+{re.escape(who)}\b", said or ""):
+                hit("self-third-person", f"{who}: {said[:50]}")
+                break
     if t == "fill-blank" and re.match(r"(a1|a2|b1)-", str(e.get("id") or "")):
         # the hint names the base word, never the ending the item tests (units 45-47
         # had six); C1 word-formation hints give the suffix on purpose, so A1-B1 only
@@ -445,10 +488,17 @@ def check_exercise(e, course, lang):
         bits = ([m.group(1)] if m else []) + re.findall(r"\(([^)]*)\)", line)
         segs = re.split(r"\s+/\s+", line)
         bits += segs if len(segs) > 1 else []
-        bad = next((b for b in bits if english_text(b)), None)
+        bad = next((b for b in bits if english_text(b) or (b in re.findall(r"\(([^)]*)\)", line) and bracket_english(b, lang))), None)
         if bad:
             hit("english-in-target", bad[:50])
             break
+    # a choice question with a blank is a Spanish line too: only its brackets are checked, since an
+    # English instruction before it ("Choose the correct answer: …") is the item format ("Tengo dos __. (brothers)" was missed)
+    q = e.get("question")
+    if isinstance(q, str) and BLANK.search(q) and out[-1:] != [("english-in-target", "")]:
+        b = next((b for b in re.findall(r"\(([^)]*)\)", q) if bracket_english(b, lang)), None)
+        if b and not any(c == "english-in-target" for c, _ in out):
+            hit("english-in-target", b[:50])
 
     body = " ".join(texts(e))
     if lang == "hu":

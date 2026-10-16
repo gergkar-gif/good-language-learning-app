@@ -1,9 +1,46 @@
 {
  "_comment": "Finished units (ROADMAP 153). Written only by scripts/freeze_unit.py; check-content.py --changed blocks edits to a unit listed here.",
  "units": {
+  "a1/describing-people": {
+   "frozen": "2026-10-16",
+   "reason": "es A1 batch 2-5: Sonnet read (route A), 166 fixes filtered and applied, mirrored to es-latam, challenges added (2026-10-16)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a1-03c-05-r03",
+     "why": "English reading option; checker false positive in es-latam only (same item passes in es-es)"
+    }
+   ]
+  },
+  "a1/family": {
+   "frozen": "2026-10-16",
+   "reason": "es A1 batch 2-5: Sonnet read (route A), 166 fixes filtered and applied, mirrored to es-latam, challenges added (2026-10-16)",
+   "accepted": [
+    {
+     "check": "consolidation-copy",
+     "id": "a1.05.consolidation.ex04",
+     "why": "consolidation replay (user wants replays)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a1.05.consolidation.ex05",
+     "why": "consolidation replay (user wants replays)"
+    }
+   ]
+  },
   "a1/greetings-introductions": {
    "frozen": "2026-10-16",
    "reason": "read and fixed by Antigravity (Argon), reviewed by Claude: 33 fixes, 6 challenges, 0 errors / 0 suspects (153, 2026-10-16)",
+   "accepted": []
+  },
+  "a1/meeting-someone-new": {
+   "frozen": "2026-10-16",
+   "reason": "es A1 batch 2-5: Sonnet read (route A), 166 fixes filtered and applied, mirrored to es-latam, challenges added (2026-10-16)",
+   "accepted": []
+  },
+  "a1/naming-things": {
+   "frozen": "2026-10-16",
+   "reason": "es A1 batch 2-5: Sonnet read (route A), 166 fixes filtered and applied, mirrored to es-latam, challenges added (2026-10-16)",
    "accepted": []
   }
  },

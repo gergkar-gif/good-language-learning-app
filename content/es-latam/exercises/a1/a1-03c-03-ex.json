@@ -64,23 +64,28 @@
       "id": "a1-03c-03-g02",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Ana y Meg son simpátic__.",
-      "answer": "as",
+      "sentence": "Ana y Meg son ____.",
       "teaches": [
         "plural"
       ],
-      "english": "Ana and Meg are friendly."
+      "english": "Ana and Meg are friendly.",
+      "answers": [
+        "simpáticas",
+        "amables"
+      ],
+      "hint": "simpática"
     },
     {
       "id": "a1-03c-03-g03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Carlos y Ana son jóven__.",
-      "answer": "es",
+      "sentence": "Carlos y Ana son ____.",
+      "answer": "jóvenes",
       "teaches": [
         "plural"
       ],
-      "english": "Carlos and Ana are young."
+      "english": "Carlos and Ana are young.",
+      "hint": "joven"
     },
     {
       "id": "a1-03c-03-g04",
@@ -126,7 +131,7 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
+          "speaker": "Lauren",
           "text": "¿Cómo son Ana y Meg?"
         },
         {
@@ -174,11 +179,11 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe two people with a plural adjective.",
+          "prompt": "Say that Ana and Meg are friendly.",
           "answer": "Ana y Meg son simpáticas."
         },
         {
-          "prompt": "Add a second plural adjective.",
+          "prompt": "Say that they are young and friendly.",
           "answer": "Ana y Meg son jóvenes y simpáticas."
         }
       ],
@@ -208,7 +213,7 @@
       "question": "Which word means **good-looking**?",
       "options": [
         "guapo",
-        "bonito",
+        "pequeño",
         "grande"
       ],
       "correct": 0,
@@ -282,7 +287,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe two men with a plural adjective.",
+          "prompt": "Say that Carlos and Andreas are tall.",
           "answer": "Carlos y Andreas son altos."
         }
       ],

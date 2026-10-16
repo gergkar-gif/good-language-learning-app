@@ -67,13 +67,7 @@
       "type": "fill-blank",
       "sentence": "Ana es ____.",
       "answers": [
-        "joven",
-        "simpática",
-        "alta",
-        "seria",
-        "amable",
-        "trabajadora",
-        "guapa"
+        "joven"
       ],
       "teaches": [
         "adjective-agreement"
@@ -84,12 +78,13 @@
       "id": "a1-03c-01-g03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Meg es simpátic__.",
-      "answer": "a",
+      "sentence": "Meg es ____.",
+      "answer": "simpática",
       "teaches": [
         "adjective-agreement"
       ],
-      "english": "Meg is friendly."
+      "english": "Meg is friendly.",
+      "hint": "simpático"
     },
     {
       "id": "a1-03c-01-g04",
@@ -127,11 +122,11 @@
       "options": [
         "Es joven y simpática.",
         "Es de Hungría.",
-        "Tiene treinta años."
+        "Es joven y simpático."
       ],
       "correct": 0,
       "teaches": [
-        "a1-describing-people-vocab"
+        "adjective-agreement"
       ]
     },
     {
@@ -164,11 +159,11 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe one person. Start with their name.",
+          "prompt": "Say that Ana is young.",
           "answer": "Ana es joven."
         },
         {
-          "prompt": "Add one more adjective.",
+          "prompt": "Add that she is also friendly.",
           "answer": "Ana es joven y simpática."
         }
       ],
@@ -225,7 +220,7 @@
       "id": "a1-03c-01-d03",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Carlos: ¿Cómo es Meg? / Meg: _____",
+      "question": "Ana: ¿Cómo es Meg? / Carlos: _____",
       "options": [
         "Es simpática.",
         "Son simpática.",
@@ -242,7 +237,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe a second person with two adjectives.",
+          "prompt": "Say that Carlos is tall and serious.",
           "answer": "Carlos es alto y serio."
         }
       ],
@@ -258,7 +253,7 @@
       "options": [
         "Andreas es bajo.",
         "Andreas son bajo.",
-        "Andreas es baja."
+        "Andreas eres bajo."
       ],
       "correct": 0,
       "teaches": [

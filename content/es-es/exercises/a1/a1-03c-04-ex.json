@@ -57,23 +57,28 @@
       "id": "a1-03c-04-g02",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Ana es una mujer simpátic__.",
-      "answer": "a",
+      "sentence": "Ana es una mujer ____.",
       "teaches": [
         "adjective-agreement"
       ],
-      "english": "Ana is a friendly woman."
+      "english": "Ana is a friendly woman.",
+      "answers": [
+        "simpática",
+        "amable"
+      ],
+      "hint": "simpático"
     },
     {
       "id": "a1-03c-04-g03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Carlos es una persona amabl__.",
-      "answer": "e",
+      "sentence": "Carlos es una persona ____.",
+      "answer": "amable",
       "teaches": [
         "adjective-agreement"
       ],
-      "english": "Carlos is a kind person."
+      "english": "Carlos is a kind person.",
+      "hint": "kind"
     },
     {
       "id": "a1-03c-04-g04",
@@ -144,11 +149,11 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Identify someone as a man or woman.",
+          "prompt": "Say that Carlos is a man.",
           "answer": "Carlos es un hombre."
         },
         {
-          "prompt": "Add an adjective.",
+          "prompt": "Say that he is a tall man.",
           "answer": "Carlos es un hombre alto."
         }
       ],

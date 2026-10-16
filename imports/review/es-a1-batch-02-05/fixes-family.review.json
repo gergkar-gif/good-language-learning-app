@@ -1,311 +1,311 @@
 [
- {
-  "file": "content/es-es/exercises/a1/a1-05-01-ex.json",
-  "id": "a1.05.01.ex06",
-  "set": {
-   "question": "Ana y Andreas __ tres hijos."
-  },
-  "why": "Carlos and Ana as parents of three contradicts the story (Carlos has a brother, a sister, no children)",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-01-ex.json",
-  "id": "a1.05.01.ex10",
-  "set": {
-   "question": "Meg __ dos hermanas."
-  },
-  "why": "'Mi padre' uses mi before a1-05-02 (possessives)",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-01-ex.json",
-  "id": "a1.05.01.ex12",
-  "set": {
-   "prompt": [
-    {
-     "speaker": "Meg",
-     "text": "¿Cuántos hermanos tienes?"
+  {
+    "file": "content/es-es/exercises/a1/a1-05-01-ex.json",
+    "id": "a1.05.01.ex06",
+    "set": {
+      "question": "Los padres de Carlos __ tres hijos."
     },
-    {
-     "speaker": "Carlos",
-     "text": "_____"
-    }
-   ],
-   "options": [
-    "Tengo dos hermanos.",
-    "Tiene dos hermanos.",
-    "Tienen dos hermanos."
-   ]
+    "why": "Carlos and Ana as parents of three contradicts the story (Carlos has a brother, a sister, no children)",
+    "kind": "target"
   },
-  "why": "'tu madre' uses tu before a1-05-02; 'dos hijos' contradicts the story (Carlos's mother has three children)",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/vocabulary/a1/a1-05-01-voc.json",
-  "old": "      \"lemma\": \"cuánto\",\n      \"translation\": \"how much / how many\",\n      \"pos\": \"pronoun\"\n    }",
-  "new": "      \"lemma\": \"cuánto\",\n      \"translation\": \"how much / how many\",\n      \"pos\": \"pronoun\"\n    },\n    {\n      \"lemma\": \"dos\",\n      \"translation\": \"two\",\n      \"pos\": \"adverb\"\n    },\n    {\n      \"lemma\": \"tres\",\n      \"translation\": \"three\",\n      \"pos\": \"adverb\"\n    }",
-  "why": "dos/tres are used from the first lesson (numbers are a1-10-02; 'dos' is listed only at a1-08-02, 'tres' in no list); add them here (rule 6c) or replace every use with un/una",
-  "kind": "target",
-  "sure": false
- },
- {
-  "file": "content/es-es/vocabulary/a1/a1-05-01-voc.json",
-  "old": "\"lemma\": \"hijo\",\n      \"translation\": \"son\"",
-  "new": "\"lemma\": \"hijo\",\n      \"translation\": \"son / child\"",
-  "why": "hijos = 'children' is used in grammar examples and exercises (Ana tiene dos hijos; two children) but only 'son' is glossed",
-  "sure": false
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-02-ex.json",
-  "id": "a1.05.02.ex09",
-  "set": {
-   "question": "__ padres son de Hungría. (yo)"
-  },
-  "why": "'viven' is regular -ir conjugation (Unit 6) used before its screen",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-02-ex.json",
-  "id": "a1.05.02.ex15",
-  "set": {
-   "template": [
-    {
-     "prompt": "Say that she is your mother.",
-     "answer": "Ella es mi madre."
+  {
+    "file": "content/es-es/exercises/a1/a1-05-01-ex.json",
+    "id": "a1.05.01.ex10",
+    "set": {
+      "question": "Meg __ dos hermanas."
     },
-    {
-     "prompt": "Say that he is your father.",
-     "answer": "Él es mi padre."
-    }
-   ]
+    "why": "'Mi padre' uses mi before a1-05-02 (possessives)",
+    "kind": "target"
   },
-  "why": "'Esta es / Este es' is a demonstrative (A1 Unit 10); answer is also not pinned by the prompt",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/grammar/a1/a1-05-02-possessives-gr.json",
-  "old": "\"title\": \"Introducing someone: *este* / *esta*\",\n      \"content\": \"Use *este* (masculine) or *esta* (feminine) with *es* to introduce a person: \\\"this is...\\\". *este*/*esta* agrees with the gender of the person you're introducing, not with your own gender.\"",
-  "new": "\"title\": \"Introducing someone: *él es* / *ella es*\",\n      \"content\": \"You know *él es* and *ella es* from Unit 2. To introduce a family member, add a possessive: *Ella es mi madre*. *Él* or *ella* depends on the person you are introducing, not on you.\"",
-  "why": "screen teaches este/esta (demonstratives, A1 Unit 10) as new; recap Unit 2's él/ella es instead",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/grammar/a1/a1-05-02-possessives-gr.json",
-  "old": "\"spanish\": \"Esta es mi madre.\",\n          \"english\": \"This is my mother.\"",
-  "new": "\"spanish\": \"Ella es mi madre.\",\n          \"english\": \"She is my mother.\"",
-  "why": "este/esta example",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/grammar/a1/a1-05-02-possessives-gr.json",
-  "old": "\"spanish\": \"Este es mi padre.\",\n          \"english\": \"This is my father.\"",
-  "new": "\"spanish\": \"Él es mi padre.\",\n          \"english\": \"He is my father.\"",
-  "why": "este/esta example",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/grammar/a1/a1-05-02-possessives-gr.json",
-  "old": "\"spanish\": \"Esta es mi hermana.\",\n          \"english\": \"This is my sister.\"",
-  "new": "\"spanish\": \"Ella es mi hermana.\",\n          \"english\": \"She is my sister.\"",
-  "why": "este/esta example",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/grammar/a1/a1-05-03-possessives-tener-gr.json",
-  "old": "\"spanish\": \"Esta es mi madre.\",\n          \"english\": \"This is my mother.\"",
-  "new": "\"spanish\": \"Ella es mi madre.\",\n          \"english\": \"She is my mother.\"",
-  "why": "este/esta is a demonstrative (A1 Unit 10); also feeds the speaking step",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/grammar/a1/a1-05-04-ser-adjective-agreement-gr.json",
-  "old": "Use *ser* + adjective to describe people. Adjectives such as *tranquilo* and *divertido* change to agree with gender and number. *Amable* stays the same in the singular.",
-  "new": "You know *ser* + adjective and agreement from Units 1 to 4: the adjective agrees with the person in gender and number. Here the people are your family. Adjectives such as *tranquilo* and *divertido* change (*tranquila*, *tranquilos*, *tranquilas*); *amable* stays the same in the singular.",
-  "why": "screen presents ser + adjective agreement as new (A1 Units 3-4)",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
-  "id": "a1.05.05.ex03",
-  "set": {
-   "options": [
-    "presentar",
-    "conocer",
-    "familia"
-   ]
-  },
-  "why": "length-giveaway 9 vs 5; wrong options as long as the right one, met words",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
-  "id": "a1.05.05.ex04",
-  "set": {
-   "question": "Carlos tiene un hermano y una hermana. Tiene dos __."
-  },
-  "why": "English '(brothers)' inside the Spanish line; give the context in Spanish (story: one brother, one sister)",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
-  "id": "a1.05.05.ex05",
-  "set": {
-   "question": "__ padres tienen una foto juntos. (tú)"
-  },
-  "why": "'están' is estar (A1 Unit 8) used before its screen",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
-  "id": "a1.05.05.ex14",
-  "set": {
-   "question": "En la historia, ¿cuántos hermanos tiene Carlos?",
-   "options": [
-    "Un hermano y una hermana.",
-    "Dos hermanas y un hermano.",
-    "Una hermana y un primo."
-   ]
-  },
-  "why": "story a1-05 has no videollamada",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
-  "id": "a1.05.05.ex15",
-  "set": {
-   "question": "En la historia, ¿cómo es el padre de Carlos?",
-   "options": [
-    "Tranquilo y amable.",
-    "Serio y bajo.",
-    "Alto y divertido."
-   ]
-  },
-  "why": "nobody calls the mother in the story; Andreas, Ana, Daniela, Lauren, Kaylee are not in it",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
-  "id": "a1.05.05.ex16",
-  "set": {
-   "question": "¿Qué dice Meg sobre la familia de Carlos al final?",
-   "options": [
-    "Que es muy divertida.",
-    "Que es muy pequeña.",
-    "Que es muy seria."
-   ]
-  },
-  "why": "Meg says the family is 'divertida y unida', not 'amable'",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
-  "id": "a1.05.05.ex18",
-  "set": {
-   "template": [
-    {
-     "prompt": "Say that she is your mother and that she is kind.",
-     "answer": "Ella es mi madre. Es amable."
+  {
+    "file": "content/es-es/exercises/a1/a1-05-01-ex.json",
+    "id": "a1.05.01.ex12",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cuántos hermanos tienes?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Tengo dos hermanos.",
+        "Tiene dos hermanos.",
+        "Tienen dos hermanos."
+      ]
     },
-    {
-     "prompt": "Say that you have two brothers.",
-     "answer": "Tengo dos hermanos."
-    },
-    {
-     "prompt": "Say that your father is calm.",
-     "answer": "Mi padre es tranquilo."
-    }
-   ]
+    "why": "'tu madre' uses tu before a1-05-02; 'dos hijos' contradicts the story (Carlos's mother has three children)",
+    "kind": "target"
   },
-  "why": "open prompts with fixed answers; 'Esta es' is a demonstrative",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
-  "id": "a1.05.05.ex19",
-  "set": {
-   "template": [
-    {
-     "prompt": "Say that she is your sister and that she is funny.",
-     "answer": "Ella es mi hermana. Es divertida."
-    },
-    {
-     "prompt": "Say that you have a family photo.",
-     "answer": "Tengo una foto de mi familia."
-    }
-   ]
+  {
+    "file": "content/es-es/vocabulary/a1/a1-05-01-voc.json",
+    "old": "      \"lemma\": \"cuánto\",\n      \"translation\": \"how much / how many\",\n      \"pos\": \"pronoun\"\n    }",
+    "new": "      \"lemma\": \"cuánto\",\n      \"translation\": \"how much / how many\",\n      \"pos\": \"pronoun\"\n    },\n    {\n      \"lemma\": \"dos\",\n      \"translation\": \"two\",\n      \"pos\": \"adverb\"\n    },\n    {\n      \"lemma\": \"tres\",\n      \"translation\": \"three\",\n      \"pos\": \"adverb\"\n    }",
+    "why": "dos/tres are used from the first lesson (numbers are a1-10-02; 'dos' is listed only at a1-08-02, 'tres' in no list); add them here (rule 6c) or replace every use with un/una",
+    "kind": "target",
+    "sure": false
   },
-  "why": "open prompts with fixed answers; 'Esta es' is a demonstrative",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/grammar/a1/a1-05-05-integrated-gr.json",
-  "old": "\"spanish\": \"Tengo dos hermanos. Mi hermano es joven.\",\n          \"english\": \"I have two brothers. My brother is young.\"",
-  "new": "\"spanish\": \"Tengo un hermano. Mi hermano es joven.\",\n          \"english\": \"I have a brother. My brother is young.\"",
-  "why": "'two brothers' then 'my brother' is incoherent; also feeds speaking and the lesson's first challenge",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/grammar/a1/a1-05-05-integrated-gr.json",
-  "old": "\"spanish\": \"Esta es mi madre. Es muy amable.\",\n          \"english\": \"This is my mother. She is very kind.\"",
-  "new": "\"spanish\": \"Ella es mi madre. Es muy amable.\",\n          \"english\": \"She is my mother. She is very kind.\"",
-  "why": "este/esta is a demonstrative (A1 Unit 10); also feeds speaking",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-consolidation-ex.json",
-  "id": "a1.05.consolidation.ex10",
-  "set": {
-   "question": "__ padre es de Hungría."
+  {
+    "file": "content/es-es/vocabulary/a1/a1-05-01-voc.json",
+    "old": "\"lemma\": \"hijo\",\n      \"translation\": \"son\"",
+    "new": "\"lemma\": \"hijo\",\n      \"translation\": \"son / child\"",
+    "why": "hijos = 'children' is used in grammar examples and exercises (Ana tiene dos hijos; two children) but only 'son' is glossed",
+    "sure": false
   },
-  "why": "'húngaro' is unmet",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-consolidation-ex.json",
-  "id": "a1.05.consolidation.ex14",
-  "set": {
-   "prompt": [
-    {
-     "speaker": "Carlos",
-     "text": "¿Quién es Daniela?"
+  {
+    "file": "content/es-es/exercises/a1/a1-05-02-ex.json",
+    "id": "a1.05.02.ex09",
+    "set": {
+      "question": "__ padres son de Hungría. (yo)"
     },
-    {
-     "speaker": "Meg",
-     "text": "_____"
-    }
-   ],
-   "options": [
-    "Es mi amiga.",
-    "Soy mi amiga.",
-    "Tengo mi amiga."
-   ],
-   "teaches": [
-    "a1-family-vocab"
-   ]
+    "why": "'viven' is regular -ir conjugation (Unit 6) used before its screen",
+    "kind": "target"
   },
-  "why": "'Se llama' is reflexive (A1 Unit 6) and unmet 'llama'",
-  "kind": "target"
- },
- {
-  "file": "content/es-es/exercises/a1/a1-05-consolidation-ex.json",
-  "id": "a1.05.consolidation.ex17",
-  "set": {
-   "template": [
-    {
-     "prompt": "Say hello and say that she is your mother.",
-     "answer": "Hola. Ella es mi madre."
+  {
+    "file": "content/es-es/exercises/a1/a1-05-02-ex.json",
+    "id": "a1.05.02.ex15",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say that she is your mother.",
+          "answer": "Ella es mi madre."
+        },
+        {
+          "prompt": "Say that he is your father.",
+          "answer": "Él es mi padre."
+        }
+      ]
     },
-    {
-     "prompt": "Say that your family is from Hungary.",
-     "answer": "Mi familia es de Hungría."
-    },
-    {
-     "prompt": "Say that your sister is kind.",
-     "answer": "Mi hermana es amable."
-    }
-   ]
+    "why": "'Esta es / Este es' is a demonstrative (A1 Unit 10); answer is also not pinned by the prompt",
+    "kind": "target"
   },
-  "why": "open prompts with fixed answers; 'Esta es' is a demonstrative",
-  "kind": "target"
- }
+  {
+    "file": "content/es-es/grammar/a1/a1-05-02-possessives-gr.json",
+    "old": "\"title\": \"Introducing someone: *este* / *esta*\",\n      \"content\": \"Use *este* (masculine) or *esta* (feminine) with *es* to introduce a person: \\\"this is...\\\". *este*/*esta* agrees with the gender of the person you're introducing, not with your own gender.\"",
+    "new": "\"title\": \"Introducing someone: *él es* / *ella es*\",\n      \"content\": \"You know *él es* and *ella es* from Unit 2. To introduce a family member, add a possessive: *Ella es mi madre*. *Él* or *ella* depends on the person you are introducing, not on you.\"",
+    "why": "screen teaches este/esta (demonstratives, A1 Unit 10) as new; recap Unit 2's él/ella es instead",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-05-02-possessives-gr.json",
+    "old": "\"spanish\": \"Esta es mi madre.\",\n          \"english\": \"This is my mother.\"",
+    "new": "\"spanish\": \"Ella es mi madre.\",\n          \"english\": \"She is my mother.\"",
+    "why": "este/esta example",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-05-02-possessives-gr.json",
+    "old": "\"spanish\": \"Este es mi padre.\",\n          \"english\": \"This is my father.\"",
+    "new": "\"spanish\": \"Él es mi padre.\",\n          \"english\": \"He is my father.\"",
+    "why": "este/esta example",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-05-02-possessives-gr.json",
+    "old": "\"spanish\": \"Esta es mi hermana.\",\n          \"english\": \"This is my sister.\"",
+    "new": "\"spanish\": \"Ella es mi hermana.\",\n          \"english\": \"She is my sister.\"",
+    "why": "este/esta example",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-05-03-possessives-tener-gr.json",
+    "old": "\"spanish\": \"Esta es mi madre.\",\n          \"english\": \"This is my mother.\"",
+    "new": "\"spanish\": \"Ella es mi madre.\",\n          \"english\": \"She is my mother.\"",
+    "why": "este/esta is a demonstrative (A1 Unit 10); also feeds the speaking step",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-05-04-ser-adjective-agreement-gr.json",
+    "old": "Use *ser* + adjective to describe people. Adjectives such as *tranquilo* and *divertido* change to agree with gender and number. *Amable* stays the same in the singular.",
+    "new": "You know *ser* + adjective and agreement from Units 1 to 4: the adjective agrees with the person in gender and number. Here the people are your family. Adjectives such as *tranquilo* and *divertido* change (*tranquila*, *tranquilos*, *tranquilas*); *amable* stays the same in the singular.",
+    "why": "screen presents ser + adjective agreement as new (A1 Units 3-4)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
+    "id": "a1.05.05.ex03",
+    "set": {
+      "options": [
+        "presentar",
+        "conocer",
+        "familia"
+      ]
+    },
+    "why": "length-giveaway 9 vs 5; wrong options as long as the right one, met words",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
+    "id": "a1.05.05.ex04",
+    "set": {
+      "question": "Carlos tiene un hermano y una hermana. Tiene dos __."
+    },
+    "why": "English '(brothers)' inside the Spanish line; give the context in Spanish (story: one brother, one sister)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
+    "id": "a1.05.05.ex05",
+    "set": {
+      "question": "__ padres son simpáticos. (tú)"
+    },
+    "why": "'están' is estar (A1 Unit 8) used before its screen",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
+    "id": "a1.05.05.ex14",
+    "set": {
+      "question": "En la historia, ¿cuántos hermanos tiene Carlos?",
+      "options": [
+        "Un hermano y una hermana.",
+        "Dos hermanas y un hermano.",
+        "Una hermana y un primo."
+      ]
+    },
+    "why": "story a1-05 has no videollamada",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
+    "id": "a1.05.05.ex15",
+    "set": {
+      "question": "En la historia, ¿cómo es el padre de Carlos?",
+      "options": [
+        "Tranquilo y amable.",
+        "Serio y bajo.",
+        "Alto y divertido."
+      ]
+    },
+    "why": "nobody calls the mother in the story; Andreas, Ana, Daniela, Lauren, Kaylee are not in it",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
+    "id": "a1.05.05.ex16",
+    "set": {
+      "question": "¿Qué dice Meg sobre la familia de Carlos al final?",
+      "options": [
+        "Que es muy divertida.",
+        "Que es muy pequeña.",
+        "Que es muy seria."
+      ]
+    },
+    "why": "Meg says the family is 'divertida y unida', not 'amable'",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
+    "id": "a1.05.05.ex18",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say that she is your mother and that she is kind.",
+          "answer": "Ella es mi madre. Es amable."
+        },
+        {
+          "prompt": "Say that you have two brothers.",
+          "answer": "Tengo dos hermanos."
+        },
+        {
+          "prompt": "Say that your father is calm.",
+          "answer": "Mi padre es tranquilo."
+        }
+      ]
+    },
+    "why": "open prompts with fixed answers; 'Esta es' is a demonstrative",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-05-05-ex.json",
+    "id": "a1.05.05.ex19",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say that she is your sister and that she is funny.",
+          "answer": "Ella es mi hermana. Es divertida."
+        },
+        {
+          "prompt": "Say that you have a family photo.",
+          "answer": "Tengo una foto de mi familia."
+        }
+      ]
+    },
+    "why": "open prompts with fixed answers; 'Esta es' is a demonstrative",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-05-05-integrated-gr.json",
+    "old": "\"spanish\": \"Tengo dos hermanos. Mi hermano es joven.\",\n          \"english\": \"I have two brothers. My brother is young.\"",
+    "new": "\"spanish\": \"Tengo un hermano. Mi hermano es joven.\",\n          \"english\": \"I have a brother. My brother is young.\"",
+    "why": "'two brothers' then 'my brother' is incoherent; also feeds speaking and the lesson's first challenge",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-05-05-integrated-gr.json",
+    "old": "\"spanish\": \"Esta es mi madre. Es muy amable.\",\n          \"english\": \"This is my mother. She is very kind.\"",
+    "new": "\"spanish\": \"Ella es mi madre. Es muy amable.\",\n          \"english\": \"She is my mother. She is very kind.\"",
+    "why": "este/esta is a demonstrative (A1 Unit 10); also feeds speaking",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-05-consolidation-ex.json",
+    "id": "a1.05.consolidation.ex10",
+    "set": {
+      "question": "__ padre es de Hungría."
+    },
+    "why": "'húngaro' is unmet",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-05-consolidation-ex.json",
+    "id": "a1.05.consolidation.ex14",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Quién es Daniela?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Es profesora.",
+        "Soy profesora.",
+        "Eres profesora."
+      ],
+      "teaches": [
+        "ser"
+      ]
+    },
+    "why": "'Se llama' is reflexive (A1 Unit 6) and unmet 'llama'",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-05-consolidation-ex.json",
+    "id": "a1.05.consolidation.ex17",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say hello and say that she is your mother.",
+          "answer": "Hola. Ella es mi madre."
+        },
+        {
+          "prompt": "Say that your family is from Hungary.",
+          "answer": "Mi familia es de Hungría."
+        },
+        {
+          "prompt": "Say that your sister is kind.",
+          "answer": "Mi hermana es amable."
+        }
+      ]
+    },
+    "why": "open prompts with fixed answers; 'Esta es' is a demonstrative",
+    "kind": "target"
+  }
 ]

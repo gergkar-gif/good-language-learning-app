@@ -249,13 +249,15 @@ Write one challenge per lesson of each unit, consolidation included (six per uni
 Give your full report (the four groups above, plus a 5. Dictionary group: every "literal compound guess" or "not in the dictionary" word from the audit as `word | lemma | pos | gloss |`, one per line, the gloss being the lemma's meaning, never the inflected form's: `fill-dictionary-gaps.py import` stores it under the lemma) as your final reply. Try to write it to `{W}/{REPORT}` first; the harness may refuse a subagent's report file (it did in units 35–38), and then the reply is the only copy, so make it complete. With three units, finish and write each unit's fixes and challenges files before starting the next unit.
 ```
 
-**Read, Spanish (es-es read once, mirrored to es-latam; written 2026-10-16, not yet run).** The HU template above with these changes; measure the first batch against the HU A2 rows before trusting the cost. Decided by the user (2026-10-16): English inside target lines is a defect (fix to `hint`/`english`); a word in no vocabulary list is added to the first lesson that uses it; es-latam challenges as es-es; the A1 prerequisite pairs are resolved. Fill the same placeholders with `es-es <level>` lines, stems as in `content/es-es/curriculum/units/<level>.json` (A1 stems are not uniform: `a1-01-01`, `a1-03c-03`, `a1-demonstrative-01`), stories from `content/es-es/stories/manifest.json`. Replace in the template:
+**Read, Spanish (es-es read once, mirrored to es-latam; written 2026-10-16, first run on A1 units 2–5 the same day).** The HU template above with these changes; measure the first batch against the HU A2 rows before trusting the cost. Decided by the user (2026-10-16): English inside target lines is a defect (fix to `hint`/`english`); a word in no vocabulary list is added to the first lesson that uses it; es-latam challenges as es-es; the A1 prerequisite pairs are resolved. Fill the same placeholders with `es-es <level>` lines, stems as in `content/es-es/curriculum/units/<level>.json` (A1 stems are not uniform: `a1-01-01`, `a1-03c-03`, `a1-demonstrative-01`), stories from `content/es-es/stories/manifest.json`. Replace in the template:
 
 - "the Hungarian A2 course" → "the Spanish `{LEVEL}` course (es-es, Spain; a sibling course es-latam shares most files and gets your fixes copied by script)";
 - the rulebook line: "Read `{W}/docs/unit-agent-rules.md` § 1–5, § 6a and § 6c (skip § 6b, Hungarian)";
 - the § 5 commands with `es-es` and the level; `"kind": "target"` for fixes that change Spanish;
 - the "Known false positives" and "A2 focus" paragraphs with: "Focus: forms used before their screen (`taught_in` in `skills/es.json`; the sheet's 'later' list): past tenses at A1 (all are A2: `preterito-perfecto` a2-01-01, `preterito-indefinido` a2-11-01; *ayer* appears 13 times in es-es A1), numbers before a1-10-02 (`numbers`, A1 unit 12; *diez*, *siete*, *nueve* earlier), *gusta/gustan* before a1-gustar-01; § 6c. A fix that only holds in Spain (*vosotros*, *zumo*, *coger*) is marked `\"variant\": \"es-es\"` in its JSON so the reviewer doesn't mirror it.";
-- challenges: `level` the level, the people of the es-es stories (Carlos and Meg at A1), the unit's own setting; es-latam gets the same entries with only course variants changed (user, 2026-10-16).
+- challenges: `level` the level, the people of the es-es stories (Carlos and Meg at A1), the unit's own setting; es-latam gets the same entries with only course variants changed (user, 2026-10-16);
+- add: "check every fact about a character (origin, job, city, family, who is whose friend or teacher) against the stories before using it, in exercises and reading questions as well as challenges; reading questions must be answerable from the story as written" (units 2–5: three of the reviewer's five changes were character facts);
+- note the story stem is the file stem (`a1-03` is Unit 2's story; Units 3 and 4 have stories `a1-things` and `a1-21` inside a lesson, not on the unit: run the audit on them too).
 
 Afterwards: as HU, plus `mirror_fixes.py` on each filtered list (route A, "Spanish"), and the es-latam-only files read by the reviewer.
 
@@ -330,6 +332,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 
 | 10-15 | HU A2 walk + level checklist | Claude, no agents | | | 0 walk failures (281/281) | ~9 min of walking; one validate warning left by a batch retag (thin skill), see § Before calling a level done |
 | 10-16 | es A1 1 greetings-introductions (both courses) | **Antigravity Argon**, read + fix + mirror + challenges from a brief | 43 min; nearly all of Antigravity's weekly allowance | | 32 applied, 0 rejected; Claude changed 3 (2 challenges, 1 near-copy) | light unit (4 errors / 13 suspects); quality comparable to a Sonnet reader, cost not sustainable for 58 units |
+| 10-16 | es A1 2–5 (both courses) | paired read, **Spanish template** (2 units/reader), es-es read once, mirrored | | 229k + 238k, 11.1 + 10.4 | 166 applied of 166, 0 rejected; Claude changed 5 + 1 schema fix | ~117k reader tokens/unit (A 2+3 ~114k, B 4+5 ~119k; = HU A2 25–28's ~117k at two per reader); fixes 52 / 36 / 48 / 30 (~42/unit); 120 of 166 went to review (Spanish text); 165/166 mirrored (the 1 had no es-latam counterpart); walk units 1–5 60/60; both report writes allowed |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -631,4 +634,45 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
 - **New rule for challenge drafts:** check every character fact against
   the story (origin, job, city) before adding; the challenge checks don't
   read stories.
+
+### 2026-10-16: Spanish A1 units 2–5, first Sonnet batch on the Spanish template
+
+- **Cost:** 467k reader tokens for four units (~117k a unit, 11 min per
+  reader), the same per unit as HU A2 25–28 at two per reader. HU 29–34
+  and 39–44 cost ~113–139k a unit at three, so three per reader would save
+  the fixed setup (~40–50k a reader) without raising per-unit cost.
+  **Proposed for the next batch (the user set two for this one, so the
+  user decides):** three units per reader (units 6–11), measured against
+  this row; back to two if a reader's per-unit cost goes above ~140k or
+  its late units show thinner reads.
+- **Defects:** ~42 applied fixes a unit (unit 1 by Antigravity: 32). Both
+  readers ran every § 5 command, wrote fixes, challenges and reports (the
+  harness allowed both report files this time). 0 rejected by
+  `check_fixes.py`; my filter changed 5 of the 120 review items, none for
+  Spanish grammar: three character/story facts (Carlos's parents named
+  "Ana y Andreas", which no story says; Daniela as Meg's "amiga" when story
+  a1-03 makes her the new teacher), one awkward line (*tienen una foto
+  juntos*), one weak option set (*por que*). **Change:** the Spanish template
+  now tells readers to check character facts in exercises and reading
+  questions too, not only in challenges (rulebook § 6c).
+- **Missed by `check_fixes.py`:** a fix gave a multiple-choice item an
+  `english` field, which the schema rejects; only `validate-content.py
+  --changed` caught it after applying. First sighting; if it recurs,
+  `check_fixes.py` should validate the schema of each changed file.
+- **Scripted the same day (each defect seen 2+ times in this batch):**
+  `glued-blank` now covers Spanish (any blank glued to a stem; tested on
+  the pre-fix content: all 9 reader finds plus a real one in Unit 6,
+  a1-04-03.ex03); new suspect `self-third-person` (4 of 4 reader finds, no
+  other hits in es A1–B2); `english-in-target` now flags a bracketed word
+  that is in no Spanish dictionary headword (`imports/dictionary/
+  spanish-en.json`), in lines and in choice questions with a blank: both
+  reader finds (*(older)*, *(brothers)*) plus four real ones in units not
+  yet read (a1.06.01.ex10 *(I walk)*, a1.06.06.ex10, a1.07.02.ex06
+  *(some)*, a2.imperfectocontraste.01.ex01), no false positives (*(yo)*,
+  *(ella)*, *(costar)* pass). The first version used the course word
+  index and flagged *(ella)*, *(costar)*: tightened before committing.
+- **Checker false positive, open:** `unmet-word` flags the English reading
+  option *Meg's friends from class.* (a1-03c-05-r03) in es-latam only; the
+  identical item passes in es-es. Accepted at freeze; look at it if it
+  shows up again.
 

@@ -1,0 +1,622 @@
+[
+  {
+    "file": "content/es-es/exercises/a1/a1-02-01-ex.json",
+    "id": "a1-02-01.ex04",
+    "set": {
+      "options": [
+        "Soy Meg.",
+        "Es Meg.",
+        "Eres Meg."
+      ]
+    },
+    "why": "unmet 'ella' in option 'Ella soy Meg.'; replaced with one-fault form",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-01-ex.json",
+    "id": "a1-02-01.ex08",
+    "set": {
+      "options": [
+        "Carlos presenta a Meg.",
+        "Carlos presenta Meg.",
+        "Carlos a presenta Meg."
+      ]
+    },
+    "why": "both wrong options ('Carlos presenta Meg es.', 'Carlos es presenta Meg.') had two faults and the same extra 'es'",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-01-ex.json",
+    "id": "a1-02-01.ex10",
+    "set": {
+      "options": [
+        "persona",
+        "ciudad",
+        "país"
+      ]
+    },
+    "why": "unmet 'grupo' (a1-02-04) and 'clase' (a1-02-03) as options",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-01-ex.json",
+    "id": "a1-02-01.ex13",
+    "set": {
+      "options": [
+        "Encantado.",
+        "Encantada.",
+        "Adiós."
+      ]
+    },
+    "why": "'Porque sí.' uses porque (taught a1-02-03); 'Hola, soy.' is a truncated non-word; wrong option now one fault (speaker gender)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-02-01-presenting-gr.json",
+    "old": "\"content\": \"After saying hello, Spanish speakers commonly use fixed expressions such as *mucho* *gusto* and *encantado* or *encantada* when meeting someone. You can also use *presentar* to introduce another person.\"",
+    "new": "\"content\": \"You know *mucho* *gusto* and *encantado* or *encantada* from Unit 1. Use them to answer when someone introduces you to a new person. You can also use *presentar* to introduce another person.\"",
+    "why": "screen presents Unit 1 phrases as new (sheet: mucho gusto, encantado/a known)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-02-01-presenting-gr.json",
+    "old": "          \"Carlos presenta a Meg.\",\n          \"Carlos introduces Meg.\"\n        ]\n      ]",
+    "new": "          \"Carlos presenta a Meg.\",\n          \"Carlos introduces Meg.\"\n        ],\n        [\n          \"Te presento a Meg.\",\n          \"Let me introduce Meg to you.\"\n        ],\n        [\n          \"Presento a Carlos.\",\n          \"I introduce Carlos.\"\n        ]\n      ]",
+    "why": "'Te presento a' / 'Presento a' are used in dialogues, writing and the consolidation but never taught (only 'presenta')",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-02-ex.json",
+    "id": "a1-02-02.ex06",
+    "set": {
+      "options": [
+        "ella",
+        "él",
+        "yo"
+      ]
+    },
+    "why": "unmet plural 'ellos' as option",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-02-ex.json",
+    "id": "a1-02-02.ex12",
+    "set": {
+      "options": [
+        "Ella es Daniela.",
+        "Él es Daniela.",
+        "Soy Daniela."
+      ]
+    },
+    "why": "third option 'Soy Daniela es.' broke two things; now one fault (person)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-02-ex.json",
+    "id": "a1-02-02.ex13",
+    "set": {
+      "options": [
+        "Él es mi amigo.",
+        "Ella es mi amiga.",
+        "Él soy mi amigo."
+      ]
+    },
+    "why": "Carlos answered about himself in the third person ('Él es mi amigo Carlos'); options 2 and 3 had two faults or were garbled",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-02-ex.json",
+    "id": "a1-02-02.ex16",
+    "set": {
+      "options": [
+        "Ella es de Sudáfrica.",
+        "Ella soy de Sudáfrica.",
+        "Ella eres de Sudáfrica."
+      ]
+    },
+    "why": "unmet 'está' (estar is A1 unit 8)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-03-ex.json",
+    "id": "a1-02-03.ex04",
+    "set": {
+      "question": "Carlos says that he is new. Which sentence is correct?",
+      "options": [
+        "Yo soy nuevo.",
+        "Yo es nuevo.",
+        "Yo eres nuevo."
+      ]
+    },
+    "why": "Meg is not the newcomer: Carlos is 'nuevo aquí' in story a1-01 and story a1-03 has Meg welcome him",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-03-ex.json",
+    "id": "a1-02-03.ex07",
+    "set": {
+      "options": [
+        "porque",
+        "por qué",
+        "qué"
+      ]
+    },
+    "why": "'porqué' is in no vocabulary list (it is also a real noun, el porqué)",
+    "kind": "target",
+    "sure": true
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-03-ex.json",
+    "id": "a1-02-03.ex09",
+    "set": {
+      "sentence": "Soy nuevo aquí __ soy estudiante.",
+      "english": "I am new here because I am a student."
+    },
+    "why": "unmet 'estudio' and 'me gusta' (gustar is unit 22)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-03-ex.json",
+    "id": "a1-02-03.ex11",
+    "set": {
+      "options": [
+        "intercambio",
+        "compañera",
+        "estudiante"
+      ]
+    },
+    "why": "length-giveaway: 'intercambio' 11 vs 'persona' 7",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-03-ex.json",
+    "id": "a1-02-03.ex12",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Por qué eres nuevo aquí?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Porque soy de Hungría.",
+        "Por qué soy de Hungría.",
+        "Mucho gusto."
+      ]
+    },
+    "why": "'me gusta aprender' (gustar unit 22, aprender unmet)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-03-ex.json",
+    "id": "a1-02-03.ex13",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Por qué estudias español?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Porque soy estudiante.",
+        "Por qué soy estudiante.",
+        "Ella es Carlos."
+      ]
+    },
+    "why": "'vienes' (venir, unit 6) and 'estudio' (unmet)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-03-ex.json",
+    "id": "a1-02-03.ex14",
+    "set": {
+      "template": [
+        {
+          "prompt": "Ask why someone studies Spanish.",
+          "answer": "¿Por qué estudias español?"
+        },
+        {
+          "prompt": "Give a reason.",
+          "answer": "Porque soy estudiante."
+        }
+      ]
+    },
+    "why": "'me gusta aprender' (gustar unit 22, aprender unmet)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-03-ex.json",
+    "id": "a1-02-03.ex15",
+    "set": {
+      "template": [
+        {
+          "prompt": "Ask Carlos why he is new here.",
+          "answer": "¿Por qué eres nuevo aquí?"
+        },
+        {
+          "prompt": "Give a reason.",
+          "answer": "Porque soy de Hungría."
+        }
+      ]
+    },
+    "why": "'vienes' (venir) and 'estudio'",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-03-ex.json",
+    "id": "a1-02-03.ex16",
+    "set": {
+      "question": "Choose the correct completion: ¿Por qué estudias español? __ soy estudiante."
+    },
+    "why": "'me gusta' (gustar unit 22)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-02-03-porque-gr.json",
+    "old": "          \"¿Por qué estudias español?\",\n          \"Why do you study Spanish?\"\n        ],\n        [\n          \"Porque me gusta.\",\n          \"Because I like it.\"\n        ],\n        [\n          \"¿Por qué vienes?\",\n          \"Why are you coming?\"\n        ],\n        [\n          \"Porque es una clase nueva.\",\n          \"Because it is a new class.\"\n        ]",
+    "new": "          \"¿Por qué eres nuevo aquí?\",\n          \"Why are you new here?\"\n        ],\n        [\n          \"Porque soy de Hungría.\",\n          \"Because I am from Hungary.\"\n        ],\n        [\n          \"¿Por qué estudias español?\",\n          \"Why do you study Spanish?\"\n        ],\n        [\n          \"Porque soy estudiante.\",\n          \"Because I am a student.\"\n        ]",
+    "why": "table used 'me gusta' (gustar, unit 22) and 'vienes' (venir, unit 6)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-02-03-porque-gr.json",
+    "old": "          \"spanish\": \"Porque me gusta aprender.\",\n          \"english\": \"Because I like learning.\"",
+    "new": "          \"spanish\": \"Porque soy estudiante.\",\n          \"english\": \"Because I am a student.\"",
+    "why": "example used 'me gusta aprender' (also the read-repeat speaking line)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/vocabulary/a1/a1-02-03-voc.json",
+    "old": "      \"lemma\": \"clase\",\n      \"translation\": \"class\",\n      \"pos\": \"noun\"\n    }",
+    "new": "      \"lemma\": \"clase\",\n      \"translation\": \"class\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"estudiar\",\n      \"translation\": \"to study\",\n      \"pos\": \"verb\"\n    }",
+    "why": "'estudias' is the core chunk of this lesson and unit 2 but 'estudiar' is first listed at a1-06-01; list it where first used (chunk, conjugation taught in unit 6)",
+    "kind": "target",
+    "sure": false
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-04-ex.json",
+    "id": "a1-02-04.ex07",
+    "set": {
+      "sentence": "Meg __ es mi amiga.",
+      "hint": null,
+      "answer": "también",
+      "english": "Meg is also my friend."
+    },
+    "why": "'está' (estar, unit 8) in 'Aquí está mi grupo'; the hint gave the answer in English",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-04-ex.json",
+    "id": "a1-02-04.ex08",
+    "set": {
+      "options": [
+        "Carlos presenta a Meg.",
+        "Carlos a Meg presenta.",
+        "Carlos presenta Meg a."
+      ]
+    },
+    "why": "both wrong options were garbled with two faults and the same extra 'es'",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-04-ex.json",
+    "id": "a1-02-04.ex10",
+    "set": {
+      "tiles": [
+        "presenta",
+        "Daniela",
+        "a",
+        "Meg"
+      ],
+      "solution": [
+        "Meg",
+        "presenta",
+        "a",
+        "Daniela"
+      ],
+      "english": "Meg introduces Daniela."
+    },
+    "why": "same builder as a1-02-01.ex09 and consolidation.ex11",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-04-ex.json",
+    "id": "a1-02-04.ex12",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "Meg, él es mi compañero."
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Mucho gusto.",
+        "Hasta luego.",
+        "Buenas noches."
+      ]
+    },
+    "why": "'está' unmet; wrong options 'Porque grupo.' and 'Ella soy.' were not real phrases",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-04-ex.json",
+    "id": "a1-02-04.ex15",
+    "set": {
+      "options": [
+        "Carlos presenta a Meg.",
+        "Meg es mi amiga.",
+        "Ella es mi compañera."
+      ]
+    },
+    "why": "length-giveaway 22 vs 16; only two options; 'su' (possessive, unit 5)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-04-ex.json",
+    "id": "a1-02-04.ex16",
+    "set": {
+      "options": [
+        "Ella es mi amiga.",
+        "Ella es Meg.",
+        "Ella presenta a Meg."
+      ]
+    },
+    "why": "wrong options 'Porque mi amiga.' and 'Presenta es amiga.' were garbled non-sentences",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-02-04-integrating-gr.json",
+    "old": "          \"spanish\": \"Aquí está mi grupo.\",\n          \"english\": \"Here is my group.\"",
+    "new": "          \"spanish\": \"Meg también es mi amiga.\",\n          \"english\": \"Meg is also my friend.\"",
+    "why": "'está' (estar, unit 8); also the read-repeat speaking line",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-05-ex.json",
+    "id": "a1-02-05.ex01",
+    "set": {
+      "question": "Meg asks Carlos \"¿De dónde eres?\" Which answer fits?",
+      "options": [
+        "Soy de Hungría.",
+        "Me llamo Hungría.",
+        "Buenos días."
+      ]
+    },
+    "why": "the right answer 'Soy de Sudáfrica.' is Meg's origin, but Meg is the one asking; Carlos is from Hungary",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-05-ex.json",
+    "id": "a1-02-05.ex07",
+    "set": {
+      "options": [
+        "Ella es mi amiga.",
+        "Ella soy mi amiga.",
+        "Ella eres mi amiga."
+      ]
+    },
+    "why": "'Él soy mi amiga.' broke two things (pronoun gender and verb)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-05-ex.json",
+    "id": "a1-02-05.ex09",
+    "set": {
+      "tiles": [
+        "estudiante",
+        "soy",
+        "Porque"
+      ],
+      "solution": [
+        "Porque",
+        "soy",
+        "estudiante"
+      ],
+      "english": "Because I am a student."
+    },
+    "why": "'me gusta aprender' (gustar unit 22, aprender unmet)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-05-ex.json",
+    "id": "a1-02-05.ex12",
+    "set": {
+      "options": [
+        "Mucho gusto.",
+        "Buenas noches.",
+        "Adiós, amigo."
+      ]
+    },
+    "why": "'Porque amigo.' is not a real phrase",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-05-ex.json",
+    "id": "a1-02-05.ex13",
+    "set": {
+      "options": [
+        "Porque soy estudiante.",
+        "Por qué soy estudiante.",
+        "Mucho gusto."
+      ]
+    },
+    "why": "'me gusta aprender' (gustar); 'Mucho gusto, español.' is garbled",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-05-ex.json",
+    "id": "a1-02-05.ex14",
+    "set": {
+      "template": [
+        {
+          "prompt": "Introduce one person.",
+          "answer": "Presento a ______."
+        },
+        {
+          "prompt": "Say who the person is.",
+          "answer": "Él es mi amigo. / Ella es mi amiga."
+        },
+        {
+          "prompt": "Give a reason for studying Spanish.",
+          "answer": "Porque soy estudiante."
+        }
+      ]
+    },
+    "why": "'me gusta aprender' (gustar, aprender)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-05-ex.json",
+    "id": "a1-02-05.ex16",
+    "set": {
+      "options": [
+        "Ella es nueva porque es estudiante.",
+        "Ella es nueva por qué es estudiante.",
+        "Ella soy nueva porque es estudiante."
+      ]
+    },
+    "why": "unmet 'estudia'; 'Ella soy mi amiga por qué…' had two faults",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/grammar/a1/a1-02-05-integration-gr.json",
+    "old": "          \"Porque me gusta.\",\n          \"Because I like it.\"",
+    "new": "          \"Porque soy estudiante.\",\n          \"Because I am a student.\"",
+    "why": "'me gusta' (gustar, unit 22)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-consolidation-ex.json",
+    "id": "a1-02-consolidation.ex02",
+    "set": {
+      "question": "Which sentence says that Carlos is from Hungary?",
+      "options": [
+        "Carlos es de Hungría.",
+        "Carlos soy de Hungría.",
+        "Carlos eres de Hungría."
+      ]
+    },
+    "why": "unmet 'está'; same fault as 02-02.ex16",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-consolidation-ex.json",
+    "id": "a1-02-consolidation.ex04",
+    "set": {
+      "sentence": "Me __ Meg.",
+      "english": "My name is Meg."
+    },
+    "why": "copy of a1-02-01.ex03",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-consolidation-ex.json",
+    "id": "a1-02-consolidation.ex07",
+    "set": {
+      "question": "Daniela is a woman. Which sentence says who she is?",
+      "options": [
+        "Ella es Daniela.",
+        "Él es Daniela.",
+        "Ella eres Daniela."
+      ]
+    },
+    "why": "same item as a1-02-02.ex07; 'Ella soy Meg.' pattern; prompt did not fix the gender",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-consolidation-ex.json",
+    "id": "a1-02-consolidation.ex10",
+    "set": {
+      "sentence": "Carlos es nuevo aquí __ es de Hungría.",
+      "english": "Carlos is new here because he is from Hungary."
+    },
+    "why": "unmet 'estudio'; copy of a1-02-03.ex09",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-consolidation-ex.json",
+    "id": "a1-02-consolidation.ex11",
+    "set": {
+      "tiles": [
+        "a",
+        "Carlos",
+        "Meg",
+        "presenta"
+      ],
+      "solution": [
+        "Meg",
+        "presenta",
+        "a",
+        "Carlos"
+      ],
+      "english": "Meg introduces Carlos."
+    },
+    "why": "copy of a1-02-01.ex09",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-consolidation-ex.json",
+    "id": "a1-02-consolidation.ex12",
+    "set": {
+      "options": [
+        "Te presento a Carlos.",
+        "Mucho gusto, Carlos.",
+        "Adiós, Carlos."
+      ]
+    },
+    "why": "'Porque Carlos.' and 'Carlos soy.' are not real phrases",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-consolidation-ex.json",
+    "id": "a1-02-consolidation.ex14",
+    "set": {
+      "options": [
+        "Porque eres mi amiga.",
+        "Por qué eres mi amiga.",
+        "Ella es Carlos."
+      ]
+    },
+    "why": "'me gusta aprender' (gustar, aprender)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-consolidation-ex.json",
+    "id": "a1-02-consolidation.ex15",
+    "set": {
+      "options": [
+        "Meg presenta a Daniela.",
+        "Daniela es mi amiga.",
+        "Ella es mi compañera."
+      ]
+    },
+    "why": "only two options; 'su' (possessive, unit 5)",
+    "kind": "target"
+  },
+  {
+    "file": "content/es-es/exercises/a1/a1-02-consolidation-ex.json",
+    "id": "a1-02-consolidation.ex18",
+    "set": {
+      "question": "Which answer fits: ¿Por qué eres nuevo aquí?",
+      "options": [
+        "Porque soy de Hungría.",
+        "Mucho gusto, Carlos.",
+        "Ella es mi compañera."
+      ]
+    },
+    "why": "length-giveaway 23 vs 17; 'estudio' unmet",
+    "kind": "target"
+  }
+]

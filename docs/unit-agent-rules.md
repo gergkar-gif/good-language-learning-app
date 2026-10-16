@@ -257,8 +257,24 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   (`english-in-target`). The 81 items per course in A1–A2 were fixed
   2026-10-16 (`scripts/fix_english_in_target.py`).
 - **Character facts** in challenges and items match the stories (Meg is
-  from South Africa, *No soy de España*; Carlos from Hungary, in Hanoi):
-  unit 1's first draft made Meg Spanish.
+  from South Africa, *No soy de España*; Carlos from Hungary, in Hanoi;
+  Daniela is the new teacher in story a1-03; Meg's sisters are Lauren and
+  Kaylee; Carlos has one brother and one sister): unit 1's first draft
+  made Meg Spanish. **Reading questions** must be answerable from the
+  story as written: units 4 and 5 had seven that invented scenes (a video
+  call), people's roles or traits (2026-10-16).
+- **Found in units 2–5 (2026-10-16), each now a `check-content` check:**
+  a blank glued to a stem (*simpátic__* + *a*: blank the whole word, hint
+  the masculine base; `glued-blank`); a speaker talking about themselves in
+  the third person (Carlos asked "¿Cómo es Carlos?", Meg answering "Meg
+  es…"; `self-third-person`); a one-word English gloss in brackets in a
+  Spanish line or choice question (*(older)*, *(brothers)*;
+  `english-in-target`). Also seen: wrong options with two faults (*Es
+  divertido y amables.*), garbled non-phrases as wrong options (*Porque
+  grupo.*), *está* (estar, Unit 8) used before Unit 8, *este/esta*
+  (demonstratives, Unit 10) taught as new in Unit 5, and structured-writing
+  prompts that don't pin their one stored answer ("Describe a woman" →
+  pin it: "Say that Lauren is funny.").
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).
