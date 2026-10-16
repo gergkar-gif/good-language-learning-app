@@ -1,0 +1,519 @@
+[
+ {
+  "file": "content/es-es/exercises/a1/a1-01-01-ex.json",
+  "id": "a1-01-01.ex05",
+  "set": {
+   "question": "Someone greets you in the morning with \"Hola\". Which response is appropriate?",
+   "options": [
+    "Buenos días",
+    "Buenas noches",
+    "Hasta mañana"
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Fix answer-in-prompt (Hola in prompt and right option) and two-farewells distractor pair."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-01-ex.json",
+  "id": "a1-01-01.ex11",
+  "set": {
+   "options": [
+    "Hola.",
+    "Adiós.",
+    "Por favor."
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Buenas noches is also a valid greeting reply to Hola when no time of day is given; Por favor cannot answer a greeting."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-02-ex.json",
+  "id": "a1-01-02.ex01",
+  "set": {
+   "pairs": [
+    [
+     "soy",
+     "I am"
+    ],
+    [
+     "yo",
+     "I"
+    ],
+    [
+     "chico",
+     "boy / young man"
+    ],
+    [
+     "chica",
+     "girl / young woman"
+    ]
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Practice chico and chica from a1-01-02-voc.json (fixes vocab-unused) and remove duplicate nombre/también pairs across ex01 and ex08."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-02-ex.json",
+  "id": "a1-01-02.ex02",
+  "set": {
+   "options": [
+    "Soy Carlos.",
+    "Yo Carlos.",
+    "Me soy Carlos."
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "eres is not taught until a1-01-04 and Carlos soy is valid inverted word order; Yo Carlos omits soy and Me soy Carlos blends me llamo with soy."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-02-ex.json",
+  "id": "a1-01-02.ex06",
+  "set": {
+   "question": "Which sentence means \"I am a student\"?",
+   "options": [
+    "Soy estudiante.",
+    "Yo estudiante.",
+    "Me llamo estudiante."
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Meg soy yo is grammatical in Spanish, and Yo Meg repeats the ex02 error; test Soy estudiante vs missing soy and me llamo + noun."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-02-ex.json",
+  "id": "a1-01-02.ex07",
+  "set": {
+   "sentence": "Yo también ___ estudiante.",
+   "english": "I am also a student."
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Rule 2.7: avoid three Yo ___ <Name> fill-blanks in one lesson (ex03, ex07, ex10)."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-02-ex.json",
+  "id": "a1-01-02.ex08",
+  "set": {
+   "pairs": [
+    [
+     "me llamo",
+     "my name is"
+    ],
+    [
+     "nombre",
+     "name"
+    ],
+    [
+     "persona",
+     "person"
+    ],
+    [
+     "señora",
+     "Mrs / woman"
+    ]
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Practice señora from a1-01-02-voc.json (fixes vocab-unused) instead of repeating también from ex01."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-02-ex.json",
+  "id": "a1-01-02.ex09",
+  "set": {
+   "question": "Which sentence correctly uses \"yo\" and \"soy\"?",
+   "options": [
+    "Yo soy Meg.",
+    "Yo también Meg.",
+    "Me soy Meg."
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "es and son are not taught until Unit 2; test yo soy using words met in a1-01-02."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-02-ex.json",
+  "id": "a1-01-02.ex10",
+  "set": {
+   "sentence": "Buenas tardes, ___ Meg.",
+   "english": "Good afternoon, I am Meg."
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Rule 2.7: vary the third fill-blank in a1-01-02 by practising Soy + name without yo after a greeting."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-02-ex.json",
+  "id": "a1-01-02.ex11",
+  "set": {
+   "options": [
+    "Hola. Soy Meg.",
+    "Por favor, Carlos.",
+    "Adiós, Carlos."
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Buenas noches can greet Carlos if it is evening; Por favor, Carlos clearly fails as a reply to an introduction."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-02-ex.json",
+  "id": "a1-01-02.ex12",
+  "set": {
+   "options": [
+    "Hola. Soy Carlos.",
+    "Hasta mañana, Ana.",
+    "Por favor, señora Ana."
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Fix length-giveaway (17 vs 13 chars) with met words, one fault per wrong option."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-02-ex.json",
+  "id": "a1-01-02.ex13",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "Soy Meg. Soy estudiante."
+    },
+    {
+     "speaker": "Carlos",
+     "text": "Yo soy Carlos. _____"
+    }
+   ],
+   "options": [
+    "También soy estudiante.",
+    "Yo también me llamo Meg.",
+    "Adiós, hasta mañana."
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Fix length-giveaway (23 vs 12 chars) and add Soy estudiante to Meg's turn so Carlos's También soy estudiante has an antecedent."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-03-ex.json",
+  "id": "a1-01-03.ex01",
+  "set": {
+   "pairs": [
+    [
+     "cómo",
+     "how"
+    ],
+    [
+     "qué",
+     "what"
+    ],
+    [
+     "quién",
+     "who"
+    ],
+    [
+     "mucho",
+     "much / a lot"
+    ]
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Practice mucho from a1-01-03-voc.json (fixes vocab-unused) and remove duplicate ¿y tú? pair across ex01 and ex07."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-03-ex.json",
+  "id": "a1-01-03.ex02",
+  "set": {
+   "options": [
+    "¿Cómo te llamas?",
+    "¿Quién te llamas?",
+    "¿Qué te llamas?"
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Fix length-giveaway (16 vs 11 chars) and remove unmet es; contrast cómo, quién and qué in the same frame."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-03-ex.json",
+  "id": "a1-01-03.ex07",
+  "set": {
+   "pairs": [
+    [
+     "¿y tú?",
+     "and you?"
+    ],
+    [
+     "conocer",
+     "to meet / know"
+    ],
+    [
+     "llamo",
+     "I am called"
+    ],
+    [
+     "llamas",
+     "you are called"
+    ]
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Practice conocer from a1-01-03-voc.json (fixes vocab-unused)."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-03-ex.json",
+  "id": "a1-01-03.ex13",
+  "set": {
+   "options": [
+    "¿Y tú?",
+    "¿Quién soy?",
+    "¿Cómo me llamo?"
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Fix tell-punctuation (first-letter case) where only the right option was a question starting with ¿."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-04-ex.json",
+  "id": "a1-01-04.ex10",
+  "set": {
+   "options": [
+    "eres",
+    "soy",
+    "llamas"
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "es is not taught until Unit 2; replace with met 2nd-person verb form llamas."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-04-ex.json",
+  "id": "a1-01-04.ex13",
+  "set": {
+   "options": [
+    "Yo soy de Vietnam.",
+    "Eres de Vietnam.",
+    "Yo soy Vietnam."
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Replace Buenas noches (wrong by meaning alone) with Yo soy Vietnam (missing de in soy de + place)."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-05-ex.json",
+  "id": "a1-01-05.ex05",
+  "set": {
+   "pairs": [
+    [
+     "mucho gusto",
+     "nice to meet you"
+    ],
+    [
+     "encantado",
+     "pleased / nice to meet you (masculine speaker)"
+    ],
+    [
+     "conocer",
+     "to meet / know"
+    ],
+    [
+     "primero",
+     "first"
+    ],
+    [
+     "aquí",
+     "here"
+    ],
+    [
+     "ahora",
+     "now"
+    ]
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Include conocer and primero from a1-01-05-voc.json (fixes vocab-unused)."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-05-ex.json",
+  "id": "a1-01-05.ex07",
+  "set": {
+   "tiles": [
+    "llamo",
+    "Hola,",
+    "Meg.",
+    "me"
+   ],
+   "solution": [
+    "Hola,",
+    "me",
+    "llamo",
+    "Meg."
+   ],
+   "english": "Hello, my name is Meg."
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Vary sentence-builder instead of repeating ¿Cómo te llamas? verbatim from a1-01-03.ex06."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-05-ex.json",
+  "id": "a1-01-05.ex08",
+  "set": {
+   "tiles": [
+    "de",
+    "también",
+    "soy",
+    "Yo",
+    "España."
+   ],
+   "solution": [
+    "Yo",
+    "también",
+    "soy",
+    "de",
+    "España."
+   ],
+   "english": "I am also from Spain."
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Vary sentence-builder instead of repeating Soy de Hungría verbatim from a1-01-04.ex06, and practice también from a1-01-05-voc.json (fixes vocab-unused)."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-05-ex.json",
+  "id": "a1-01-05.ex14",
+  "set": {
+   "options": [
+    "Mucho gusto.",
+    "Por favor.",
+    "Hasta mañana."
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Rule 2.2: avoid two wrong options failing the same way (Adiós and Hasta mañana are both farewells)."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-consolidation-ex.json",
+  "id": "a1-01-consolidation.ex01",
+  "set": {
+   "pairs": [
+    [
+     "hola",
+     "hello"
+    ],
+    [
+     "¿Cómo te llamas?",
+     "What's your name?"
+    ],
+    [
+     "¿De dónde eres?",
+     "Where are you from?"
+    ],
+    [
+     "mucho gusto",
+     "nice to meet you"
+    ]
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Natural casing in matching pairs: lowercase expressions without final punctuation, capitalize full sentences."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-consolidation-ex.json",
+  "id": "a1-01-consolidation.ex03",
+  "set": {
+   "options": [
+    "Soy Carlos.",
+    "Yo Carlos.",
+    "Eres Carlos."
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "es is not taught in Unit 1 (first taught in Unit 2); replace Es Carlos with Yo Carlos (missing soy)."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-consolidation-ex.json",
+  "id": "a1-01-consolidation.ex06",
+  "set": {
+   "sentence": "Yo soy ___ España.",
+   "english": "I am from Spain."
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Fix consolidation-copy of a1-01-04.ex03 by varying the subject and country."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-consolidation-ex.json",
+  "id": "a1-01-consolidation.ex07",
+  "set": {
+   "tiles": [
+    "llamas?",
+    "te",
+    "Hola,",
+    "¿cómo"
+   ],
+   "solution": [
+    "Hola,",
+    "¿cómo",
+    "te",
+    "llamas?"
+   ],
+   "english": "Hello, what's your name?"
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Vary consolidation sentence-builder instead of repeating ¿Cómo te llamas? verbatim from a1-01-03.ex06."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-consolidation-ex.json",
+  "id": "a1-01-consolidation.ex08",
+  "set": {
+   "tiles": [
+    "Vietnam.",
+    "soy",
+    "de",
+    "Yo"
+   ],
+   "solution": [
+    "Yo",
+    "soy",
+    "de",
+    "Vietnam."
+   ],
+   "english": "I am from Vietnam."
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Vary consolidation sentence-builder instead of repeating Soy de Hungría verbatim from a1-01-04.ex06."
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-01-consolidation-ex.json",
+  "id": "a1-01-consolidation.ex09",
+  "set": {
+   "question": "Someone greets you in the morning with \"Hola.\" Which reply fits?",
+   "options": [
+    "Buenos días.",
+    "Soy de Vietnam.",
+    "Hasta mañana."
+   ]
+  },
+  "kind": "target",
+  "sure": true,
+  "why": "Fix answer-in-prompt (Hola in question and right option) and replace ¿Cómo te llamas? (which can follow a greeting) with a farewell."
+ }
+]
