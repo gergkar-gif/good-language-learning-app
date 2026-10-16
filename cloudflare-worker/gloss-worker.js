@@ -34,7 +34,7 @@ const CANDIDATE_MODELS = [
     '@cf/mistralai/mistral-small-3.1-24b-instruct'
 ];
 
-const LANG_NAME = { hu: 'Hungarian', es: 'Spanish' };
+const LANG_NAME = { hu: 'Hungarian', es: 'Spanish', fr: 'French' };
 const POS_VALUES = ['noun', 'verb', 'adjective', 'adverb', 'pronoun', 'numeral', 'preposition',
     'postposition', 'conjunction', 'interjection', 'particle', 'determiner', 'phrase'];
 const DEFAULT_DAILY_CAP = 600;

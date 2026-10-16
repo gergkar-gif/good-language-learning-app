@@ -334,24 +334,55 @@ function _sentenceAround(text, word) {
 }
 
 // Machine-suggested gloss (engine/gloss-ai.js) shown under "Not in the
-// dictionary yet". Labelled as a suggestion, never saved to a deck, and a
-// stale-tap guard keeps a slow answer from landing on the next word's popup.
-async function _showAiGloss(word, contextText, tapId) {
+// dictionary yet" or when a morphological reading lacks a translation. Labelled
+// as a suggestion, never saved to a deck, and a stale-tap guard keeps a slow
+// answer from landing on the next word's popup.
+async function _showAiGloss(word, contextText, tapId, primaryReading) {
     if (typeof GlossAI === 'undefined' || !GlossAI.available()) return;
     const body = document.getElementById('popup-body');
     const analysisEl = document.getElementById('popup-analysis');
     const empty = '<p class="wp-empty">Not in the dictionary yet.</p>';
-    body.innerHTML = empty + '<p class="wp-ai-note">Looking for a suggestion…</p>';
+
+    if (!primaryReading) {
+        body.innerHTML = empty + '<p class="wp-ai-note">Looking for a suggestion…</p>';
+    } else {
+        const contextualEl = body.querySelector('.wp-contextual');
+        if (contextualEl && contextualEl.textContent.includes('no translation available')) {
+            contextualEl.textContent = '— looking for suggestion… —';
+        }
+    }
 
     const answer = await GlossAI.lookup(word, _sentenceAround(contextText, word), Lang.code());
     if (tapId !== _wordPopupTapId) return;
-    if (!answer || !answer.found) { body.innerHTML = empty; return; }
+    if (!answer || !answer.found) {
+        if (!primaryReading) {
+            body.innerHTML = empty;
+        } else {
+            const contextualEl = body.querySelector('.wp-contextual');
+            if (contextualEl && contextualEl.textContent.includes('looking for suggestion')) {
+                contextualEl.textContent = '— no translation available —';
+            }
+        }
+        return;
+    }
 
-    analysisEl.textContent = 'machine suggestion';
-    body.innerHTML =
-        '<p class="wp-meaning">' + Reader.escapeHtml(answer.gloss) + '</p>' +
-        '<p class="wp-lemma">from <strong>' + Reader.escapeHtml(answer.lemma) + '</strong> · ' + Reader.escapeHtml(answer.pos) + '</p>' +
-        '<p class="wp-ai-note">A machine suggestion, not from the dictionary. It may be wrong.</p>';
+    if (primaryReading) {
+        const contextualEl = body.querySelector('.wp-contextual');
+        if (contextualEl) {
+            contextualEl.textContent = answer.gloss;
+        }
+        analysisEl.textContent = 'machine suggestion';
+        const aiNote = document.createElement('p');
+        aiNote.className = 'wp-ai-note';
+        aiNote.textContent = 'A machine suggestion, not from the dictionary. It may be wrong.';
+        body.appendChild(aiNote);
+    } else {
+        analysisEl.textContent = 'machine suggestion';
+        body.innerHTML =
+            '<p class="wp-meaning">' + Reader.escapeHtml(answer.gloss) + '</p>' +
+            '<p class="wp-lemma">from <strong>' + Reader.escapeHtml(answer.lemma) + '</strong> · ' + Reader.escapeHtml(answer.pos) + '</p>' +
+            '<p class="wp-ai-note">A machine suggestion, not from the dictionary. It may be wrong.</p>';
+    }
 }
 
 // Identifies which call to showWord() is the most recent one, so an async
@@ -384,10 +415,11 @@ async function showWord(spanish, contextTokens, tokenIndex, looksLikeName, conte
     const lookup = Lexicon.lookup(spanish);
     const readings = lookup.readings;
     _renderWordReadings(spanish, readings, phrase, lookup.ladder, !!looksLikeName);
-    // Nothing from the dictionary or the rules, and not a name: ask the gloss
-    // service for a machine suggestion rather than leaving the learner empty-handed.
-    if (!readings.length && !phrase && !looksLikeName) {
-        _showAiGloss(spanish, contextText, tapId);
+    // Nothing from the dictionary or the rules (or reading lacks translation),
+    // and not a name: ask the gloss service for a machine suggestion rather than leaving the learner empty-handed.
+    const hasTranslation = readings.length > 0 && readings.some(r => r.translation);
+    if (!hasTranslation && !phrase && !looksLikeName) {
+        _showAiGloss(spanish, contextText, tapId, readings[0]);
     }
 
     // The deck stores dictionary forms, so a tapped "días" is saved as "día".

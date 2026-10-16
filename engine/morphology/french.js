@@ -38,7 +38,15 @@ const FrenchMorphology = (function () {
         "m'": { lemma: 'me', pos: 'pronoun', translation: 'me, to me, myself', analysis: '1st person object pronoun (elided)' },
         'm':  { lemma: 'me', pos: 'pronoun', translation: 'me, to me, myself', analysis: '1st person object pronoun (elided)' },
         "t'": { lemma: 'te', pos: 'pronoun', translation: 'you, to you, yourself', analysis: '2nd person object pronoun (elided)' },
-        't':  { lemma: 'te', pos: 'pronoun', translation: 'you, to you, yourself', analysis: '2nd person object pronoun (elided)' }
+        't':  { lemma: 'te', pos: 'pronoun', translation: 'you, to you, yourself', analysis: '2nd person object pronoun (elided)' },
+        "jusqu'": { lemma: 'jusque', pos: 'preposition', translation: 'until, up to, as far as', analysis: 'preposition (elided)' },
+        'jusqu':  { lemma: 'jusque', pos: 'preposition', translation: 'until, up to, as far as', analysis: 'preposition (elided)' },
+        "lorsqu'": { lemma: 'lorsque', pos: 'conjunction', translation: 'when', analysis: 'conjunction (elided)' },
+        'lorsqu':  { lemma: 'lorsque', pos: 'conjunction', translation: 'when', analysis: 'conjunction (elided)' },
+        "puisqu'": { lemma: 'puisque', pos: 'conjunction', translation: 'since, because', analysis: 'conjunction (elided)' },
+        'puisqu':  { lemma: 'puisque', pos: 'conjunction', translation: 'since, because', analysis: 'conjunction (elided)' },
+        "quoiqu'": { lemma: 'quoique', pos: 'conjunction', translation: 'although, even though', analysis: 'conjunction (elided)' },
+        'quoiqu':  { lemma: 'quoique', pos: 'conjunction', translation: 'although, even though', analysis: 'conjunction (elided)' }
     };
 
     const IRREGULAR_VERBS = {
@@ -574,6 +582,9 @@ const FrenchMorphology = (function () {
         // Feminine plural -es -> masculine base
         if (form.endsWith('es') && form.length > 3) {
             tryLemma(form.slice(0, -2), 'adjective', 'feminine plural');
+            if (form.endsWith('lles')) tryLemma(form.slice(0, -4) + 'l', 'adjective', 'feminine plural');
+            if (form.endsWith('nnes')) tryLemma(form.slice(0, -4) + 'n', 'adjective', 'feminine plural');
+            if (form.endsWith('ttes')) tryLemma(form.slice(0, -4) + 't', 'adjective', 'feminine plural');
         }
 
         // Feminine singular -e -> masculine base
@@ -693,6 +704,9 @@ const FrenchMorphology = (function () {
             const nounMatches = analyzeWord(cleanKey, dict);
             nounMatches.forEach(n => addReading(n.lemma, n.pos, n.analysis));
         }
+
+        // Prioritize readings that have an actual English translation
+        readings.sort((a, b) => (Boolean(b.translation) - Boolean(a.translation)));
 
         return { word, readings };
     }

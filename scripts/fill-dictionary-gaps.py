@@ -65,23 +65,27 @@ VERB_HOMOGRAPHS = ROOT / 'imports/dictionary/spanish-verb-homographs.json'
 DICTS = {
     'hu': ROOT / 'imports/dictionary/hungarian-en.json',
     'es': ROOT / 'imports/dictionary/spanish-en.json',
+    'fr': ROOT / 'imports/dictionary/french-en.json',
 }
 ADDITIONS = {
     'hu': ROOT / 'imports/dictionary/additions-hu.json',
     'es': ROOT / 'imports/dictionary/additions-es.json',
+    'fr': ROOT / 'imports/dictionary/additions-fr.json',
 }
 BATCH_DIR = ROOT / 'imports/dictionary/gap-batches'
-COURSES = {'hu': ['hu'], 'es': ['es-es', 'es-latam']}
-LANG_NAME = {'hu': 'Hungarian', 'es': 'Spanish'}
+COURSES = {'hu': ['hu'], 'es': ['es-es', 'es-latam'], 'fr': ['fr']}
+LANG_NAME = {'hu': 'Hungarian', 'es': 'Spanish', 'fr': 'French'}
 
 POS = {
     'hu': {'noun', 'verb', 'adjective', 'adverb', 'pronoun', 'numeral', 'postposition',
            'conjunction', 'interjection', 'particle', 'determiner'},
     'es': {'noun', 'verb', 'adjective', 'adverb', 'proper noun', 'pronoun', 'numeral',
            'preposition', 'conjunction', 'interjection', 'determiner'},
+    'fr': {'noun', 'verb', 'adjective', 'adverb', 'proper noun', 'pronoun', 'numeral',
+           'preposition', 'conjunction', 'interjection', 'determiner'},
 }
 GENDERS = {'', 'm', 'f', 'm; f', 'mf'}
-LEMMA_RE = re.compile(r"^[a-záéíóöőúüűñ][a-záéíóöőúüűñ' -]*$")
+LEMMA_RE = re.compile(r"^[a-záéíóöőúüűñàâäéèêëîïôöùûüçœæ][a-záéíóöőúüűñàâäéèêëîïôöùûüçœæ' -]*$")
 
 
 def audit(lang):

@@ -74,11 +74,11 @@ All content in `content/es/` and `content/hu/` is original to Parlour unless not
 ---
 
 ### 7. French–English Dictionary
-- **Source**: [kaikki.org](https://kaikki.org/dictionary/French/) — machine-readable Wiktionary extracts by Tatu Ylonen  
-- **Derived from**: English Wiktionary, French entries  
-- **Used for**: French word definitions and translations in Reader popup  
-- **Licence**: [Creative Commons Attribution–ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) and [GNU Free Documentation Licence (GFDL)](https://www.gnu.org/licenses/fdl-1.3.html)  
-- **Files in this repo**: `imports/dictionary/french-en.json`
+- **Source**: [Vuizur/Wiktionary-Dictionaries](https://github.com/Vuizur/Wiktionary-Dictionaries) on GitHub, [kaikki.org](https://kaikki.org/dictionary/French/) (Wiktionary extracts), and [FreeDict](https://freedict.org/) (`fra-eng`)
+- **Derived from**: English Wiktionary, French entries
+- **Used for**: French word definitions and translations in Reader popup
+- **Licence**: [Creative Commons Attribution–ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) and [GNU Free Documentation Licence (GFDL)](https://www.gnu.org/licenses/fdl-1.3.html)
+- **Files in this repo**: `imports/dictionary/french-en.json`, `imports/dictionary/French-English Wiktionary dictionary.tsv`
 
 ---
 

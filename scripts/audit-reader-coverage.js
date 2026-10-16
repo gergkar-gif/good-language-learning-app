@@ -56,6 +56,7 @@ const load = rel => vm.runInThisContext(fs.readFileSync(path.join(root, rel), 'u
 load('engine/lang.js');
 load('engine/morphology/spanish.js');
 load('engine/morphology/hungarian.js');
+load('engine/morphology/french.js');
 load('engine/lexicon.js');
 
 // The Reader's own tokenizer (engine/reader.js WORD_CHARS): letters incl.
