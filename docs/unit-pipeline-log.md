@@ -329,6 +329,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-15 | HU A2 45–47 (new units) | **New unit** template, 1 Sonnet writer per unit (45 ∥ 46, then 47); 1 paired reader (3 units) | writers 238k / 273k / 259k, 12.6 / 15.4 / 13.6 | 311k, 15.4 | 56 applied of 56, 0 rejected (45: 5, 46: 12, 47: 39) | ~257k writer + ~104k reader tokens/unit (~361k/unit); reader ×0.75 of 39–44's ~139k, ~19 applied fixes/unit (×0.26 of ~71): written-from-scratch units with the knowledge sheet came back far cleaner than the regenerated/read-first ones; 47's fixes are mostly one rename (*fenyőfa*, 15) and six hints; reader's report write refused again |
 
 | 10-15 | HU A2 walk + level checklist | Claude, no agents | | | 0 walk failures (281/281) | ~9 min of walking; one validate warning left by a batch retag (thin skill), see § Before calling a level done |
+| 10-16 | es A1 1 greetings-introductions (both courses) | **Antigravity Argon**, read + fix + mirror + challenges from a brief | 43 min; nearly all of Antigravity's weekly allowance | | 32 applied, 0 rejected; Claude changed 3 (2 challenges, 1 near-copy) | light unit (4 errors / 13 suspects); quality comparable to a Sonnet reader, cost not sustainable for 58 units |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -610,4 +611,24 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   step (Pipeline step 6). If it recurs, script it: `freeze_unit.py` or
   `lock_tags.py --update` should refuse when a unit's tags leave a skill
   under 6 without `thin_ok`.
+
+### 2026-10-16: Spanish A1 unit 1 by Antigravity (Argon), first Spanish unit
+
+- **Quality:** good on a light unit. It followed the brief to the letter
+  (fix JSON, `check_fixes.py`, mirror, `add_challenges.py`, report in the
+  set structure) and found the real defects a Sonnet reader finds: two
+  right answers in greeting items, forms before their screen as options,
+  grammatical "wrong" word orders, same-shape items. Its misses were the
+  kind a reviewer catches by reading: a challenge contradicting the story
+  (Meg is from South Africa), a near-copy between consolidation and lesson.
+  Not measured: what a blind second read would still find.
+- **Cost:** 43 minutes and nearly a whole week of Antigravity's allowance
+  for the lightest unit. It cannot carry 58 Spanish units; Sonnet readers
+  (route A, ~100–150k tokens a unit) stay the default. Antigravity only for
+  work its allowance covers.
+- **The two-course method worked:** 32/32 fixes mirrored; the unit's
+  exercise files stayed identical in both courses.
+- **New rule for challenge drafts:** check every character fact against
+  the story (origin, job, city) before adding; the challenge checks don't
+  read stories.
 

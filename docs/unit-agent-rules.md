@@ -256,6 +256,9 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   in brackets) or `english`; `check-content` errors on it
   (`english-in-target`). The 81 items per course in A1–A2 were fixed
   2026-10-16 (`scripts/fix_english_in_target.py`).
+- **Character facts** in challenges and items match the stories (Meg is
+  from South Africa, *No soy de España*; Carlos from Hungary, in Hanoi):
+  unit 1's first draft made Meg Spanish.
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).
