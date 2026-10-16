@@ -78,3 +78,47 @@ All 8 errors and 75 suspects are fixed: applied to a scratch copy, check-content
 
 ### 5. Dictionary
 (audit: 0 not in the dictionary, 0 literal compound guesses)
+
+## UNIT 11 ordering-cafe (a1-cafe-*): 34 fixes in fixes-ordering-cafe.json
+
+All 7 errors and 9 suspects are fixed: applied to a scratch copy (after rebuilding word-lesson-index), check-content gives 0 errors, 0 suspects.
+
+### 1. Found by reading
+- a1.cafe.04.ex11 and a1.cafe.05.ex11: wrong option "Son las tres." is clock time (telling-time, Unit 14); "Sí, gracias. Eso es todo." contradicts itself; the two items were identical. Fix: 04.ex11 becomes an article item (Camarero: "¿Quiere un café o un té?" / Un té, por favor. / Una té... / Unos té...), teaches gender; 05.ex11 "Son las tres." -> "Como un sándwich."
+- a1.cafe.05.ex16: the marked right answer is "Tacos." but the story has a salad, a chicken sandwich and chocolate cake. Fix: "What does Meg order to eat?" / A salad and a sandwich. / Tacos and rice. / An apple and bread.
+- a1.cafe.05.ex15 "What does the customer order first? A drink.": Meg orders tea, salad and sandwich in one line; fits nobody. Fix: "What does Meg order to drink?" / A green tea. / A black coffee. / A mineral water.
+- a1.cafe.05.ex17 "What does the waiter ask after the order?": the waiter never speaks in the story; Meg asks Carlos "¿Quieres algún refresco o jugo también?". Also length give-away ERROR. Fix: "What does Meg ask Carlos at the end of the order?" / If he wants a soft drink. ...
+- a1.cafe.05.ex18 "The customer thanks the waiter and finishes the order.": Carlos asks for the bill and Meg thanks Carlos, not the waiter; length give-away ERROR. Fix: "How does the visit end?" / Carlos asks for the bill. / Meg asks for the bill. / They order more coffee.
+- Story a1-02 (es-es): "¿Quieres algún refresco o jugo también, Carlos?" -> "zumo" (variant es-es). "¿podemos ordenar?" -> "¿podemos pedir?" (variant es-es, unsure).
+- Vocabulary a1-cafe-04 "ordenar = to order": in Spain ordenar means to tidy; ordering is pedir. Fix: vocab entry "pedir = to order / ask for" and matching a1.cafe.04.ex01 pair (variant es-es, unsure; check_fixes rejects it only because word-lesson-index is stale, so rebuild the index after applying).
+- Garbled non-phrases as wrong options: a1.cafe.03.ex16 "Quiero café un, por favor."; 04.ex15 "Quiero café por." / "Por favor quiero un."; 05.ex05 "Quiero un café por." / "Café quiero un." (length ERROR); cons.ex06 "Quiero un café por." / "Café quiero." (length ERROR). Replaced by one-fault options (una café / Quieres...), varied nouns (café, sándwich, ensalada, té).
+- a1.cafe.04.ex04 length ERROR (29 vs 15): wrong options now "Quiero un café, por favor." / "Quiero un té y un sándwich." 04.ex09 length ERROR (25 vs 12): "Sí, quiero un té también." / "Sí, un café más, por favor."
+- a1.cafe.01.ex15 length ERROR (10 vs 6): options soft drink / hot coffee / green tea.
+- a1.cafe.05.ex09: wrong options "¿Desea algo más para tomar hoy?" / "Eso es todo lo que tenemos hoy." use unmet desea (A2), hoy (a1-weather-03); replaced with met-word replies.
+- a1.cafe.05.ex12: "Sí, ahora mismo." mismo first taught a1-continuous-01; fix "Sí, aquí tiene la cuenta."
+- a1.cafe.06.ex20: "Ella _____ un bocadillo en la barra." bocadillo, barra in no vocabulary list; fix "Mi hermana _____ un sándwich en el café." (speaking step reads it).
+- a1.cafe.06.ex03, ex04, ex14: copies of 01.ex04, 02.ex04, 04.ex10; varied (Nosotros __ agua; Ella __ una ensalada; té y una ensalada).
+- a1.cafe.06.ex18 "Give a short café order using at least three target verbs." does not pin the stored answer; pinned. a1.cafe.05.ex13 "Greet the waiter" does not pin buenas tardes; added "(good afternoon)".
+- a1.cafe.01.ex11, 02.ex11, 03.ex09: "¿Qué toma/come/quiere Ana?" Ana is no character of the stories; Daniela (unsure).
+- No past tense or gusta in the unit; numbers only dos/tres (met).
+
+### 2. Metadata
+- a1.cafe.04.ex11 now teaches `gender` (was `a1-ordering-cafe-vocab`). The tag changes in all three units (a1.08.05.ex12, a1.08.06.ex20, the Unit 10 dialogues, a1.cafe.04.ex11) hit locked tags: run scripts/lock_tags.py with a reason when applying (validate-content fails otherwise).
+- Story a1-02.json: keyVocabulary placeholder (conocer, intercambio); fix to camarero / cuenta (unsure).
+- Existing challenge screens are generic ("You are at a café in Madrid", "Put your Spanish skills into practice"); the story is in Hanoi. Six new entries in challenges-ordering-cafe.json.
+
+### 3. Goals / checklists
+- a1-cafe-03 grammar: "You've already met *querer*" -> "You know *querer* (to want) from Unit 9."
+- a1-cafe-01 / 02 grammar: "It is a regular -ar/-er verb" -> "You know regular -ar/-er verbs from Unit 6, and *tomar*/*comer* is one of them." (unsure)
+- a1-cafe-03 vocabulary lists más but nothing used it; ex14 now asks "¿Qué significa "más"?".
+- Goals and checklists otherwise distinct and fine.
+
+### 4. Doubtful
+- a1.cafe.06.ex09/ex10 ("Tengo dos hermanos", "Mi madre está amable") are the same items as a1.08.06.ex09/ex10 in Unit 9's consolidation; "Mi madre está amable." can be acceptable Spanish.
+- Story: "¿podemos ordenar?" and "jugo" changes desync nothing structural but the story audio may need regenerating.
+- a1.cafe.01.ex14 / 02.ex14 / 03.ex12 English "You drink/eat/want..." for ustedes does not show the plural.
+
+### 5. Dictionary
+(audit: 0 not in the dictionary, 0 literal compound guesses)
+
+Fix count: Unit 9 supermarket 40, Unit 10 demonstratives 89, Unit 11 ordering-cafe 34.

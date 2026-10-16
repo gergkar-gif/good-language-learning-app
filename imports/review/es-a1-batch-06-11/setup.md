@@ -33,3 +33,4 @@ Differing files: a1-06-02-ex.json, a1-06-03-ex.json, a1-06-02-ar-verbs-gr.json, 
 - Readers launched 03:44:11Z (Sonnet, background); prompts in prompt-a.txt / prompt-b.txt.
 - Reader A: 312,954 tokens, 53 tool uses, 15.3 min (03:42-03:58), 32 + 57 + 26 = 115 fixes proposed (~104k a unit); report file write allowed
 - Reader B: stopped 03:5x on a Sonnet session limit (429, reset 04:30 UTC) after writing all three fixes files (40 + 89 + 34) and challenges files; its report file covered Units 9-10 only. Resumed 04:39 for the Unit 11 report.
+- Reader B (resumed 04:39-04:40, 2 tool uses, 44 s): completion notice reports 305,712 tokens (the first run's failure notice carried no usage, so this is the only figure; read time 03:42-03:57, ~15 min); fixes 40 + 89 + 34 = 163; report file write allowed (Unit 11 appended on resume)
