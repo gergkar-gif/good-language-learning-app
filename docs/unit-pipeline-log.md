@@ -55,7 +55,12 @@ Read this before working on any unit. Agents read only
    "<check>:<id>:<reason>"` for deliberate suspects), commit, push.
    Refreezing a frozen unit keeps its earlier reason and accepted
    findings; `--unfreeze` drops them, so pass them again with
-   `--accept` (keep each batch's accept list).
+   `--accept` (keep each batch's accept list). Before committing a batch,
+   also run `python scripts/validate-content.py --warnings` and compare the
+   level's lines with origin/master: warnings never fail, so a retag that
+   leaves a skill under 6 exercises passes `--changed` silently (units
+   29–34 did this to `a2-review-work-past-opinions-vocab`; found only at
+   the level checklist).
 7. **Every 2 units:** process review below; a repeated defect goes into
    `docs/unit-agent-rules.md` § 6 the same day, and anything recurring
    gets a script (below).
@@ -136,7 +141,10 @@ not verified:
   `python scripts/dev-server.py 8131` running: every lesson plays to its
   summary with no console errors and no failed requests (TTS is stubbed;
   `--live-tts` and the live site can't be reached from the cloud
-  container; the user checks audio).
+  container; the user checks audio). A walk counts only for content as it
+  is now: rerun the units edited since their last walk (HU A2 units 1–24
+  were walked 2026-10-14, then edited, and had to be rerun). Cost: ~2 s a
+  lesson at `--jobs 4` in the cloud container (281 HU A2 lessons, ~9 min).
 - Not covered by any of this: speaking/challenge steps, wrong-answer
   paths, and a native speaker's eye (the user spot-checks).
 
@@ -272,6 +280,8 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-15 | HU A2 35–38 | paired read (2 units/reader) | | 301k + 280k, 19 + 17 | 210 applied of 211, 0 rejected; 13 more by Claude | ~145k reader tokens/unit (×1.24 of 25–28); applied reader fixes 56 / 52 / 48 / 54 (~52/unit, ×1.6 of ~32); both report-file writes refused by the harness |
 | 10-15 | HU A2 39–44 | paired read (**3 units/reader**) | Sonnet fixer for 42–44 unmet words: 212k, 12 | 386k + 449k, 23 + 33 | 426 applied of 426, 0 rejected; ~20 more by Claude | ~139k reader tokens/unit (A ~129k, B ~150k; ×0.96 of 35–38's ~145k); applied reader fixes 72 / 70 / 58 / 77 / 74 / 75 (~71/unit, ×1.36 of ~52); ~250 unmet-word suspects left in 42–44 needed a fixer (~71k/unit); reader B's report write refused, A's allowed |
 | 10-15 | HU A2 45–47 (new units) | **New unit** template, 1 Sonnet writer per unit (45 ∥ 46, then 47); 1 paired reader (3 units) | writers 238k / 273k / 259k, 12.6 / 15.4 / 13.6 | 311k, 15.4 | 56 applied of 56, 0 rejected (45: 5, 46: 12, 47: 39) | ~257k writer + ~104k reader tokens/unit (~361k/unit); reader ×0.75 of 39–44's ~139k, ~19 applied fixes/unit (×0.26 of ~71): written-from-scratch units with the knowledge sheet came back far cleaner than the regenerated/read-first ones; 47's fixes are mostly one rename (*fenyőfa*, 15) and six hints; reader's report write refused again |
+
+| 10-15 | HU A2 walk + level checklist | Claude, no agents | | | 0 walk failures (281/281) | ~9 min of walking; one validate warning left by a batch retag (thin skill), see § Before calling a level done |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -538,3 +548,19 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   *húsvétkor / karácsonykor / szilveszterkor* as *kor* "age" (engine); digit
   years *1848-ban*, *1956-ban* and TTS; the HU A2 walk test and the level
   checklist.
+
+### 2026-10-15: HU A2 walk test and level checklist
+
+- Walk: units 25–47 137/137 on the first run, units 1–24 rerun 144/144
+  (edited after their 2026-10-14 walk). No engine or content fix needed;
+  the A1 walk had found the only real walk defects so far (the two
+  `learnerModel.js` probe 404s). For Spanish A1/A2, run the walk once the
+  first units are frozen, not only at the end: it is cheap and an engine
+  defect would hit every lesson.
+- Checklist: frozen 47/47, check-content 0/0, one validate warning
+  (`a2-review-work-past-opinions-vocab` 5 exercises) from a correct retag
+  in the units 29–34 batch, logged then as "validate passes". Now a batch
+  step (Pipeline step 6). If it recurs, script it: `freeze_unit.py` or
+  `lock_tags.py --update` should refuse when a unit's tags leave a skill
+  under 6 without `thin_ok`.
+
