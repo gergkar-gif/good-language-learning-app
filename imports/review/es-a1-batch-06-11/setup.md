@@ -30,3 +30,4 @@ Stems and stories checked against content/es-es/curriculum/units/a1.json and con
 | 11 ordering-cafe | 2 of 6 | 0 of 6 | 3 of 5 | 1 of 5 | 1 of 1 |
 
 Differing files: a1-06-02-ex.json, a1-06-03-ex.json, a1-06-02-ar-verbs-gr.json, a1-06-03-er-ir-verbs-gr.json, a1-06-04-reflexive-verbs-gr.json, a1-reflexive-01-ex.json, a1-reflexive-01-pronombres-gr.json, a1-reflexive-02-cambio-radical-gr.json, a1-reflexive-03-vestirse-ponerse-gr.json, a1-reflexive-04-contraste-gr.json, a1-reflexive-04-voc.json, a1-reflexive.json, a1-07-03-estar-location-gr.json, a1-07.json, a1-08-03-querer-gr.json, a1-08-04-necesitar-gr.json, a1-08.json, a1-demonstrative.json, a1-cafe-01-ex.json, a1-cafe-consolidation-ex.json, a1-cafe-01-tomar-gr.json, a1-cafe-02-comer-gr.json, a1-cafe-03-querer-gr.json, a1-cafe-01-voc.json, a1-02.json
+- Readers launched 03:44:11Z (Sonnet, background); prompts in prompt-a.txt / prompt-b.txt.
