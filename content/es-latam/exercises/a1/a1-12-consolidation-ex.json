@@ -65,11 +65,11 @@
       "id": "a1.12.06.ex05",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which means \"What time do you work?\"",
+      "question": "Which means \"What time is Meg's class?\"",
       "options": [
-        "¿A qué hora trabajas?",
-        "¿Cuándo trabajas?",
-        "¿Qué hora trabajas?"
+        "¿A qué hora es la clase de Meg?",
+        "¿Qué hora es la clase de Meg?",
+        "¿A qué hora son la clase de Meg?"
       ],
       "correct": 0,
       "teaches": [
@@ -80,15 +80,15 @@
       "id": "a1.12.06.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which means \"I study at six\"?",
+      "question": "Which sentence says \"I have class at six\"?",
       "options": [
-        "Estudio a las seis.",
-        "Estudias a las seis.",
-        "Estudia a las seis."
+        "Tengo clase a las seis.",
+        "Soy clase a las seis.",
+        "Tienes clase a las seis."
       ],
       "correct": 0,
       "teaches": [
-        "ar-verbs"
+        "tener"
       ]
     },
     {
@@ -109,8 +109,8 @@
           "It is three o'clock."
         ],
         [
-          "Trabajo a las ocho.",
-          "I work at eight."
+          "La clase es a las nueve.",
+          "The class is at nine."
         ]
       ],
       "teaches": [
@@ -136,11 +136,11 @@
       "id": "a1.12.06.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which translates \"I want two coffees\"?",
+      "question": "Which translates \"I have two brothers\"?",
       "options": [
-        "Quiero dos cafés.",
-        "Quiero dos café.",
-        "Quieren dos cafés."
+        "Tengo dos hermanos.",
+        "Tengo dos hermano.",
+        "Tengo dos hermanoes."
       ],
       "correct": 0,
       "teaches": [
@@ -151,15 +151,15 @@
       "id": "a1.12.06.ex10",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which is correct?",
+      "question": "Which says \"My brother is twenty-two years old\"?",
       "options": [
-        "Hay tres platos.",
-        "Hay tres plato.",
-        "Está tres platos."
+        "Mi hermano tiene veintidós años.",
+        "Mi hermano es veintidós años.",
+        "Mi hermano tengo veintidós años."
       ],
       "correct": 0,
       "teaches": [
-        "hay"
+        "tener"
       ]
     },
     {
@@ -170,47 +170,49 @@
         "telling-time"
       ],
       "tiles": [
+        "clase",
         "a",
+        "Tengo",
         "ocho.",
-        "las",
-        "Trabajo"
+        "las"
       ],
       "solution": [
-        "Trabajo",
+        "Tengo",
+        "clase",
         "a",
         "las",
         "ocho."
       ],
-      "english": "I work at eight."
+      "english": "I have class at eight."
     },
     {
       "id": "a1.12.06.ex12",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which combines time with comer?",
+      "question": "Which number is 15?",
       "options": [
-        "Como a la una.",
-        "Comes a la una.",
-        "Como la una."
+        "quince",
+        "cinco",
+        "cincuenta"
       ],
       "correct": 0,
       "teaches": [
-        "er-ir-verbs"
+        "numbers"
       ]
     },
     {
       "id": "a1.12.06.ex13",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which combines a schedule with an earlier café activity?",
+      "question": "Which says \"Breakfast is at eight and dinner is at nine\"?",
       "options": [
-        "Como a la una y tomo café a las cuatro.",
-        "Comes a la una y tomo café a las cuatro.",
-        "Como la una y tomo café las cuatro."
+        "El desayuno es a las ocho y la cena es a las nueve.",
+        "El desayuno es a las ocho y la cena son a las nueve.",
+        "El desayuno es a las ocho y la cena es las nueve."
       ],
       "correct": 0,
       "teaches": [
-        "present-tense"
+        "telling-time"
       ]
     },
     {
@@ -244,7 +246,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿A qué hora comes?"
+          "text": "¿A qué hora es el desayuno?"
         },
         {
           "speaker": "Carlos",
@@ -252,13 +254,13 @@
         }
       ],
       "options": [
-        "Como a la una.",
-        "Comes a la una.",
-        "Como la una."
+        "El desayuno es a las nueve.",
+        "El desayuno es en las nueve.",
+        "El desayuno es a la nueve."
       ],
       "correct": 0,
       "teaches": [
-        "er-ir-verbs"
+        "telling-time"
       ]
     },
     {
@@ -268,7 +270,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿A qué hora estudias?"
+          "text": "¿Cuántos años tiene tu madre?"
         },
         {
           "speaker": "Meg",
@@ -276,13 +278,13 @@
         }
       ],
       "options": [
-        "Estudio a las seis.",
-        "Estudias a las seis.",
-        "Estudio las seis."
+        "Tiene cincuenta años.",
+        "Es cincuenta años.",
+        "Tienes cincuenta años."
       ],
       "correct": 0,
       "teaches": [
-        "ar-verbs"
+        "tener"
       ]
     },
     {
@@ -291,12 +293,12 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give two activities and their times.",
-          "answer": "Trabajo a las ocho y estudio a las seis."
+          "prompt": "Say that the class is at nine.",
+          "answer": "La clase es a las nueve."
         },
         {
-          "prompt": "Say when you eat and sleep.",
-          "answer": "Como a la una y duermo a las once."
+          "prompt": "Say that breakfast is at eight.",
+          "answer": "El desayuno es a las ocho."
         }
       ],
       "teaches": [
@@ -309,8 +311,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe a short daily schedule using at least three times and present-tense verbs.",
-          "answer": "Trabajo a las ocho. Como a la una. Estudio a las seis y duermo a las once."
+          "prompt": "Give the times of breakfast (8), class (9) and dinner (10).",
+          "answer": "El desayuno es a las ocho. La clase es a las nueve. La cena es a las diez."
         }
       ],
       "teaches": [
@@ -321,25 +323,24 @@
       "id": "a1.12.06.ex19",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Son las tres y _____ de la tarde.",
+      "sentence": "Son las tres y _____.",
       "hint": "half",
       "answer": "media",
       "teaches": [
         "telling-time"
       ],
-      "english": "It is half past three in the afternoon."
+      "english": "It is half past three."
     },
     {
       "id": "a1.12.06.ex20",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Estudio _____ las seis.",
-      "hint": "at — time preposition",
+      "sentence": "La clase es _____ las seis.",
       "answer": "a",
       "teaches": [
         "telling-time"
       ],
-      "english": "I study at six."
+      "english": "The class is at six."
     }
   ]
 }

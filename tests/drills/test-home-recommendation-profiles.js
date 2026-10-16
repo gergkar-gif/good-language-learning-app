@@ -213,18 +213,18 @@ profile('practice taken → not offered again in the same sitting', async () => 
 });
 
 profile('just finished a unit with a roleplay → unit milestone', async () => {
-    const unit = coreUnits('A1').find(u => u.id === 'unit.a1.11');
+    const unit = coreUnits('A1').find(u => u.slug === 'ordering-cafe');
     const last = unit.lessons[unit.lessons.length - 1];
     const p = await recommend(world({ progress: progressThrough(last.id) }));
     assert.strictEqual(p.kind, 'unit-nudge');
-    assert.strictEqual(p.unit.id, 'unit.a1.11');
+    assert.strictEqual(p.unit.id, unit.id);
 });
 
 profile('unit milestone skipped → Continue', async () => {
-    const unit = coreUnits('A1').find(u => u.id === 'unit.a1.11');
+    const unit = coreUnits('A1').find(u => u.slug === 'ordering-cafe');
     const last = unit.lessons[unit.lessons.length - 1];
     const w = world({ progress: progressThrough(last.id) });
-    w.run(`RecommendationEngine.dismissUnit('unit.a1.11')`);
+    w.run(`RecommendationEngine.dismissUnit('${unit.id}')`);
     const p = await recommend(w);
     assert.strictEqual(p.kind, 'continue', `got ${p.kind}`);
 });
@@ -464,7 +464,7 @@ profile('recent conjugation miss in Verb Speed → Verb Practice on that tense',
 });
 
 profile('finished a verb-tense unit with zero mistakes → Verb Practice on encountered verbs in that tense', async () => {
-    const verbUnit = coreUnits('A1').find(u => u.id === 'unit.a1.06');
+    const verbUnit = coreUnits('A1').find(u => u.slug === 'daily-routine');
     const lastLesson = verbUnit.lessons[verbUnit.lessons.length - 1];
     const w = world({ progress: progressThrough(lastLesson.id) });
     const p = await recommend(w);

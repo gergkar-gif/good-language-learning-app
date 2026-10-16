@@ -153,8 +153,10 @@ const RecommendationEngine = require('../../engine/recommendationEngine.js');
 
 (async () => {
     // Test _scenarioForUnit
-    const cafeScenario = await RecommendationEngine._scenarioForUnit('unit.a1.11');
-    assert(cafeScenario, 'unit.a1.11 should match café scenario');
+    // positional unit ids move when the unit table is reordered: find the café unit by its permanent id
+    const cafeId = esCurriculum.levels.A1.units.find(u => u.slug === 'ordering-cafe').id;
+    const cafeScenario = await RecommendationEngine._scenarioForUnit(cafeId);
+    assert(cafeScenario, cafeId + ' (ordering-cafe) should match café scenario');
     assert.strictEqual(cafeScenario.id, 'es-a1-sc01-cafe');
 
     const noScenario = await RecommendationEngine._scenarioForUnit('unit.nonexistent');
@@ -164,10 +166,10 @@ const RecommendationEngine = require('../../engine/recommendationEngine.js');
 
     console.log('\n--- Test 3: Milestone Capstone Practice Nudge Surfaces Scenario ---');
 
-    // Unit unit.a1.11 has lessons. Let's find the last lesson of unit.a1.11
+    // The café unit has lessons. Let's find its last lesson
     const a1Units = esCurriculum.levels.A1.units;
-    const cafeUnit = a1Units.find(u => u.id === 'unit.a1.11');
-    assert(cafeUnit, 'unit.a1.11 must exist in A1');
+    const cafeUnit = a1Units.find(u => u.id === cafeId);
+    assert(cafeUnit, cafeId + ' must exist in A1');
     const lastLesson = cafeUnit.lessons[cafeUnit.lessons.length - 1];
 
     global.LearnerPath = {
@@ -184,7 +186,7 @@ const RecommendationEngine = require('../../engine/recommendationEngine.js');
     assert(nudge, 'Practice nudge should be generated');
     assert.strictEqual(nudge.type, 'scenario', 'Nudge type must be scenario');
     assert.strictEqual(nudge.scenario.id, 'es-a1-sc01-cafe', 'Nudge scenario must be es-a1-sc01-cafe');
-    assert.strictEqual(nudge.unit.id, 'unit.a1.11');
+    assert.strictEqual(nudge.unit.id, cafeId);
     console.log('✓ Unit completion generates scenario milestone nudge');
 
     // Regression: recommend() wraps this result via

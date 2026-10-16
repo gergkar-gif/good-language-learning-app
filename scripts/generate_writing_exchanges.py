@@ -12,6 +12,7 @@ Strict Parlour requirements:
 """
 
 import json
+import sys
 import re
 from pathlib import Path
 
@@ -36,7 +37,7 @@ ES_EXCHANGES = [
         },
         "targetCompetency": "I can write short, simple notes and messages relating to everyday matters",
         "targetSkills": ["shopping", "food_and_drink", "requests"],
-        "unitIds": ["unit.a1.09"],
+        "unitIds": ["unit.a1.10"],
         "requiredLemmas": ["hola", "pan", "arroz", "tomate", "agua", "mesa", "casa", "gracias"],
         "turns": [
             {
@@ -108,7 +109,7 @@ ES_EXCHANGES = [
         },
         "targetCompetency": "I can exchange basic text messages to arrange meeting times and locations",
         "targetSkills": ["making_plans", "telling_time", "apologizing"],
-        "unitIds": ["unit.a1.14", "unit.a1.16", "unit.a1.19"],
+        "unitIds": ["unit.a1.06", "unit.a1.16", "unit.a1.19"],
         "requiredLemmas": ["hola", "camino", "diez", "minuto", "llegar", "cafetería", "esperar", "gracias"],
         "turns": [
             {
@@ -179,7 +180,7 @@ ES_EXCHANGES = [
         },
         "targetCompetency": "I can respond in writing to an invitation and ask basic logistical questions",
         "targetSkills": ["invitations", "social_interaction", "dates_and_events"],
-        "unitIds": ["unit.a1.12", "unit.a1.23"],
+        "unitIds": ["unit.a1.13", "unit.a1.23"],
         "requiredLemmas": ["cumpleaños", "amigo", "sábado", "gracias", "refresco", "calle", "casa"],
         "turns": [
             {
@@ -1197,8 +1198,11 @@ def main():
     hu_path = root / "content" / "hu" / "writing-exchanges.json"
 
     es_latam_path.parent.mkdir(parents=True, exist_ok=True)
+    # es-latam: its own words (*mesero*, *jugo*, scripts/course_variants.py)
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import course_variants as cv
     with open(es_latam_path, "w", encoding="utf-8") as f:
-        json.dump(es_data, f, ensure_ascii=False, indent=2)
+        json.dump(cv.convert_data(es_data, "es-latam"), f, ensure_ascii=False, indent=2)
     print(f"Wrote {len(ES_EXCHANGES)} Spanish exchanges to {es_latam_path}")
 
     if es_es_path.parent.exists():

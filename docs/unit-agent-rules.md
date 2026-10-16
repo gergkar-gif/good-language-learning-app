@@ -225,15 +225,27 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   readings, screens, examples, exercises or challenges; *ustedes* for
   plural "you" (`check-content` flags it: `latam-vosotros`). Only the verb
   drill may keep *vosotros* for recognition. es-es teaches both.
-- **Course variants are deliberate:** es-latam *jugo* for es-es *zumo*,
-  *tomar* accepted beside *beber*, *ustedes* tables without the *vosotros*
-  row. A fix to such a line is per course: mark it `"variant": "es-es"`
-  (or `"es-latam"`) in the fix JSON so it is not mirrored.
+- **Course variants are deliberate:** each course uses its own words
+  (user, 2026-10-16; `scripts/course_variants.py`, check `course-variant`):
+  es-es *zumo, coche, ordenador, móvil, patata, billete, camarero, salón*;
+  es-latam *jugo, carro, computadora, celular, papa, boleto, mesero, sala*.
+  es-latam also accepts *tomar* beside *beber* and has *ustedes* tables
+  without the *vosotros* row; **es-latam has no *vosotros* at all**, not even
+  as a wrong option or in a screen's aside ("except *nosotros* and
+  *vosotros*" is es-es only). A fix to such a line is per course: mark it
+  `"variant": "es-es"` (or `"es-latam"`) in the fix JSON so it is not
+  mirrored, and give the other course its own fix.
 - **Forms before their screen** (`taught_in` in `skills/es.json`; the
   knowledge sheet's "later" list): past tenses are A2 (`preterito-perfecto`
   a2-01-01, `preterito-indefinido` a2-11-01), yet *ayer* sentences occur in
-  A1; `numbers` is taught in a1-10-02 (A1 unit 12) while *diez*, *siete*,
-  *nueve* appear from a1-08-02; *gusta/gustan* before a1-gustar-01.
+  A1; *gusta/gustan* before a1-gustar-01. **Unit order (2026-10-16):**
+  `numbers-time-schedules` moved from Unit 14 to Unit 6 (numbers and clock
+  times before daily routine, home, supermarket and café use them); Units
+  6–13 became 7–14 (daily routine 7, reflexives 8, home 9, supermarket 10,
+  demonstratives 11, café 12, birthdays 13, kitchen 14). `numbers` is taught
+  in a1-12-01 (Unit 6), `telling-time` in a1-12-03; birthdays' a1-10-02 age
+  screen recaps numbers. Unit numbers in this sheet's older notes are the
+  old ones where marked. Use `scripts/move_unit.py` for any later move.
 - **Prerequisite order (resolved by the user 2026-10-16):** the five A1
   requirements taught out of order were dropped (`adjective-agreement` ←
   `plural`, `doler` ← `gustar`, `hay` ← `estar`, `ser` ←
@@ -286,11 +298,11 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   Spanish line or choice question (*(older)*, *(brothers)*;
   `english-in-target`). Also seen: wrong options with two faults (*Es
   divertido y amables.*), garbled non-phrases as wrong options (*Porque
-  grupo.*), *está* (estar, Unit 8) used before Unit 8, *este/esta*
-  (demonstratives, Unit 10) taught as new in Unit 5, and structured-writing
+  grupo.*), *está* (estar, now Unit 9) used before its unit, *este/esta*
+  (demonstratives, now Unit 11) taught as new in Unit 5, and structured-writing
   prompts that don't pin their one stored answer ("Describe a woman" →
   pin it: "Say that Lauren is funny.").
-- **Found in units 6–11 (2026-10-16):** a fill-blank's `answers`
+- **Found in units 6–11 (2026-10-16; old numbers, now 7–12):** a fill-blank's `answers`
   accepting other verbs than its `english` (*I work at home* accepting
   *estudio*, *cocino*, *como*: 13 items, check `answers-alternatives`);
   a wrong option that is a natural right answer (*Tiene una cocina y un

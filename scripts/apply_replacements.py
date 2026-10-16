@@ -68,6 +68,10 @@ def apply(fixes):
         path = fix["file"]
         if path not in texts:
             p = ROOT / path
+            if Path(path).is_absolute() or ".." in Path(path).parts:
+                # a reader's absolute path into its own worktree applied there, not here (2026-10-16)
+                errors[n] = f"path must be relative to the repository: {path}"
+                continue
             if not p.is_file():
                 errors[n] = f"no file {path}"
                 continue

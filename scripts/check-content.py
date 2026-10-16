@@ -41,6 +41,8 @@ if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+import course_variants  # noqa: E402
 LEGACY_COURSES = {"hu", "es-es", "es-latam"}
 LEVELS = ["a1", "a2", "b1", "b2", "c1", "c2"]
 CHOICE = ("multiple-choice", "dialogue-complete", "listening-choice")
@@ -97,6 +99,7 @@ CHECKS = {
     "glued-blank": "HU: a blank glued to a stem ending in -a/-e whose answer is a suffix (hálószoba____ + ban teaches *hálószobaban*); ES: any blank glued to a stem (simpátic__ + a): blank the whole word, hint the base (es A1 units 3-4 had 9)",
     "self-third-person": "ES dialogue: a speaker talks about themselves in the third person (Carlos asks '¿Cómo es Carlos?', or Meg answers 'Meg es…'); es A1 units 2-4 had 4",
     "story-questions-copy": "a story's comprehension questions are word for word another story's (placeholder questions the story can't answer; es-latam A1 had one set in 26 stories, es A1 units 6-11)",
+    "course-variant": "a word of the other Spanish course (es-latam *coche, billete, camarero, el salón*; es-es *jugo, carro, mesero, la sala*): each course uses its own (user, 2026-10-16; scripts/course_variants.py, fixer scripts/fix_variant_vocab.py)",
     "answers-alternatives": "a fill-blank accepts different words (answers: trabajo, estudio, cocino…) while its `english` fits one: es A1 units 6-11 had 5 (*I work at home* accepting *estudio*)",
     "story-voice-gender": "a story's narration gives a recurring character the wrong voice gender (Daniela 'male' in es A1 stories a1-06, a1-07: TTS reads her in a man's voice)",
     "story-key-vocab": "a story's keyVocabulary word doesn't occur in the story (the conocer/intercambio placeholder; es A1 units 6-11 readers found it in 5 stories)",
@@ -118,7 +121,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -166,6 +169,16 @@ HU_CASE = re.compile(r"\b" + HU_ON_NOUNS + r"(ba|be|ban|ben|ból|ből)\b", re.I)
 # -tet verb (egyeztetik, késztetik), so a -tetik passive needs the read.
 HU_ARCHAIC = re.compile(r"\w+tatik\b", re.I)
 VOSOTROS = re.compile(r"\b(vosotros|vosotras|vuestro|vuestra|vuestros|vuestras|os)\b|\b\w+(áis|(?<!s)éis)\b", re.I)  # not dieciséis
+
+
+def vosotros_hit(text):
+    """The first vosotros form, skipping capitalised words mid-sentence (*Monsiváis*, Portuguese *Os Mutantes*)."""
+    for m in VOSOTROS.finditer(text):
+        w = m.group(0)
+        if w[0].isupper() and m.start() > 0 and not re.search(r"[.!?¡¿«\"]\s*$", text[:m.start()]):
+            continue
+        return w
+    return None
 EXCHANGE = re.compile(r"\b((starts?|begins?|opens?|continues?|follows?|ends?|finishes) (this|the|that) (exchange|conversation|dialogue)|this exchange)\b", re.I)
 ES_PERSON = re.compile(r"\b(yo|t[uú]|[eé]l|ella|usted|nosotros|nosotras|vosotros|vosotras|ellos|ellas|ustedes|I|you|he|she|we|they)\b", re.I)
 ES_AUX = {"he", "has", "ha", "hemos", "habéis", "han"}
@@ -518,9 +531,9 @@ def check_exercise(e, course, lang):
         if m:
             hit("hu-archaic", m.group(0))
     if course == "es-latam":
-        m = VOSOTROS.search(body)
-        if m:
-            hit("latam-vosotros", m.group(0))
+        w = vosotros_hit(body)
+        if w:
+            hit("latam-vosotros", w)
     return out
 
 
@@ -696,6 +709,10 @@ def check_unit(src, course, level, unit, shape):
             eid = e.get("id")
             for check, msg in check_exercise(e, course, lang):
                 out.append((check, eid, msg, ex_rel))
+            if course in ("es-es", "es-latam"):
+                found = [w for t in texts(e) for w in course_variants.find(t, course)]
+                if found:
+                    out.append(("course-variant", eid, ", ".join(dict.fromkeys(found))[:80], ex_rel))
             key = json.dumps({k: e.get(k) for k in COPY_KEYS if k in e}, ensure_ascii=False, sort_keys=True)
             key = re.sub(r"\s*\((?:Lesson|Lecke|Lección) ?\d+\)", "", key)
             if not consolidation:
@@ -756,6 +773,15 @@ def check_unit(src, course, level, unit, shape):
         for sec in lesson.get("sections", []):
             if sec.get("type") == "story" and sec.get("ref"):
                 out += check_story(src, course, level, sec["ref"], L)
+            if course == "es-latam" and sec.get("type") in ("grammar", "vocabulary", "story") and sec.get("ref"):
+                # exercises are checked item by item (check_exercise); screens and stories here
+                w = vosotros_hit(" ".join(texts(src.read(f"content/{course}/{sec['ref']}") or {})))
+                if w:
+                    out.append(("latam-vosotros", stem, f"{sec['type']}: {w}", f"content/{course}/{sec['ref']}"))
+            if course in ("es-es", "es-latam") and sec.get("type") in ("grammar", "vocabulary", "story") and sec.get("ref"):
+                found = [w for t in texts(src.read(f"content/{course}/{sec['ref']}") or {}) for w in course_variants.find(t, course)]
+                if found:
+                    out.append(("course-variant", stem, f"{sec['type']}: " + ", ".join(dict.fromkeys(found))[:80], f"content/{course}/{sec['ref']}"))
         if shape:
             out += check_shape(src, course, level, stem, lesson, lesson_rel, groups, by_id, consolidation)
     out += recap_unmarked(src, course, level, unit)
@@ -839,6 +865,21 @@ def run(src, course, levels, unit_id=None, shape=False):
     return found
 
 
+def story_units(src, course):
+    """{story ref ("stories/original/a1/a1-05.json"): {(course, level, unit id)}} from the lessons' story sections."""
+    key = ("story-units", course)
+    if key not in src.cache:
+        refs = defaultdict(set)
+        for level in LEVELS:
+            for u in units_of(src, course, level):
+                for stem in u.get("stems", []):
+                    for sec in (src.read(f"content/{course}/lessons/{level}/{stem}.json") or {}).get("sections", []):
+                        if sec.get("type") == "story" and sec.get("ref"):
+                            refs[sec["ref"]].add((course, level, u.get("id")))
+        src.cache[key] = refs
+    return src.cache[key]
+
+
 def changed_units():
     """{(course, level, unit id)} for every content file that differs from origin/master."""
     names = set()
@@ -859,6 +900,12 @@ def changed_units():
             before = {u.get("id"): u for u in units_of(base, course, level)}
             out |= {(course, level, u.get("id")) for u in units_of(head, course, level)
                     if before.get(u.get("id")) != u}
+            continue
+        if parts[2] == "stories":
+            # a story file is named by story (a1-05.json), not by lesson stem: map it
+            # through the lessons that show it, or a frozen unit's story could be
+            # edited without unfreezing it (found 2026-10-16)
+            out |= story_units(head, course).get("/".join(parts[2:]), set())
             continue
         level = parts[3] if len(parts) > 4 else None
         stem = re.sub(r"(-ex|-voc|-gr|-[ab]-gr)?\.json$", "", parts[-1])

@@ -46,11 +46,11 @@
       "id": "a1.12.04.ex03",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "¿Cómo se dice \"at what time\"? ",
+      "question": "¿Qué significa \"a qué hora\"?",
       "options": [
-        "a qué hora",
-        "cuándo",
-        "a qué día"
+        "at what time",
+        "for what reason",
+        "at what place"
       ],
       "correct": 0,
       "teaches": [
@@ -61,11 +61,11 @@
       "id": "a1.12.04.ex04",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which asks what time someone eats?",
+      "question": "Which asks what time the class is?",
       "options": [
-        "¿A qué hora comes?",
-        "¿Cuándo comes?",
-        "¿Qué hora comes?"
+        "¿A qué hora es la clase?",
+        "¿A qué hora son la clase?",
+        "¿A hora qué es la clase?"
       ],
       "correct": 0,
       "teaches": [
@@ -87,11 +87,11 @@
       "id": "a1.12.04.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which asks when the party is?",
+      "question": "Which asks \"When is the party?\"",
       "options": [
         "¿Cuándo es la fiesta?",
-        "¿A qué hora es la fiesta?",
-        "¿Qué hora es la fiesta?"
+        "¿Cuándo hora es la fiesta?",
+        "¿Cuándo son la fiesta?"
       ],
       "correct": 0,
       "teaches": [
@@ -103,20 +103,24 @@
       "category": "grammar",
       "type": "sentence-builder",
       "tiles": [
-        "¿A",
         "qué",
         "hora",
-        "trabajas",
-        "?"
+        "es",
+        "la",
+        "clase",
+        "?",
+        "¿A"
       ],
       "solution": [
         "¿A",
         "qué",
         "hora",
-        "trabajas",
+        "es",
+        "la",
+        "clase",
         "?"
       ],
-      "english": "What time do you work?",
+      "english": "What time is the class?",
       "teaches": [
         "questions"
       ]
@@ -127,20 +131,20 @@
       "type": "matching",
       "pairs": [
         [
-          "¿A qué hora comes?",
-          "What time do you eat?"
-        ],
-        [
-          "¿Cuándo es la clase?",
-          "When is the class?"
-        ],
-        [
-          "¿A qué hora trabajas?",
-          "What time do you work?"
+          "¿A qué hora es la clase?",
+          "What time is the class?"
         ],
         [
           "¿Cuándo es la fiesta?",
           "When is the party?"
+        ],
+        [
+          "La clase es a las nueve.",
+          "The class is at nine."
+        ],
+        [
+          "La fiesta es a las ocho.",
+          "The party is at eight."
         ]
       ],
       "teaches": [
@@ -151,11 +155,11 @@
       "id": "a1.12.04.ex09",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which is a good answer to \"¿A qué hora comes?\"",
+      "question": "Which is a good answer to \"¿A qué hora es la clase?\"",
       "options": [
-        "Como a la una.",
-        "Es el lunes.",
-        "Como cuándo."
+        "La clase es a las nueve.",
+        "La clase es muy divertida.",
+        "La clase es pequeña y bonita."
       ],
       "correct": 0,
       "teaches": [
@@ -169,7 +173,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿A qué hora trabajas?"
+          "text": "¿A qué hora es la clase?"
         },
         {
           "speaker": "Meg",
@@ -177,9 +181,9 @@
         }
       ],
       "options": [
-        "Trabajo a las ocho.",
-        "Trabajo en las ocho.",
-        "Trabajo a la ocho."
+        "La clase es a las nueve.",
+        "La clase es en las nueve.",
+        "La clase es a la nueve."
       ],
       "correct": 0,
       "teaches": [
@@ -193,7 +197,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Cuándo es la clase?"
+          "text": "¿Cuándo es la fiesta?"
         },
         {
           "speaker": "Carlos",
@@ -201,9 +205,9 @@
         }
       ],
       "options": [
-        "La clase es a las nueve.",
-        "La clase es cuándo.",
-        "La clase tiene a las nueve."
+        "La fiesta es a las ocho.",
+        "La fiesta tiene a las ocho.",
+        "La fiesta son a las ocho."
       ],
       "correct": 0,
       "teaches": [
@@ -216,12 +220,12 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Ask what time someone works.",
-          "answer": "¿A qué hora trabajas?"
+          "prompt": "Ask what time the party is.",
+          "answer": "¿A qué hora es la fiesta?"
         },
         {
-          "prompt": "Say that you work at eight.",
-          "answer": "Trabajo a las ocho."
+          "prompt": "Say that the party is at eight.",
+          "answer": "La fiesta es a las ocho."
         }
       ],
       "teaches": [
@@ -247,12 +251,12 @@
       "id": "a1.12.04.ex14",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Como __ las dos.",
+      "sentence": "La clase es __ las dos.",
       "answer": "a",
       "teaches": [
         "telling-time"
       ],
-      "english": "I eat at two."
+      "english": "The class is at two."
     },
     {
       "id": "a1.12.04.ex15",
@@ -288,11 +292,11 @@
       "id": "a1.12.04.ex17",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which is a natural question?",
+      "question": "Which question is correct?",
       "options": [
-        "¿A qué hora estudias?",
-        "¿A qué hora estudia tú?",
-        "¿Qué hora estudias?"
+        "¿A qué hora es la fiesta?",
+        "¿Qué hora es la fiesta?",
+        "¿A qué hora es fiesta?"
       ],
       "correct": 0,
       "teaches": [

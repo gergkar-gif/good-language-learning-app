@@ -171,7 +171,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Cuántos estudiantes hay?"
+          "text": "¿Cuántos estudiantes tiene la clase?"
         },
         {
           "speaker": "Meg",
@@ -179,9 +179,9 @@
         }
       ],
       "options": [
-        "Hay cuarenta y dos estudiantes.",
-        "Hay cuarenta dos estudiantes.",
-        "Hay cuatro y dos estudiantes."
+        "La clase tiene cuarenta y dos estudiantes.",
+        "La clase tiene cuarenta dos estudiantes.",
+        "La clase tiene cuatro y dos estudiantes."
       ],
       "correct": 0,
       "teaches": [
@@ -194,11 +194,11 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "¿Cuántos años tiene Carlos?"
+          "speaker": "Carlos",
+          "text": "¿Cuántos años tiene tu hermana?"
         },
         {
-          "speaker": "Ana",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
@@ -210,7 +210,8 @@
       "correct": 0,
       "teaches": [
         "tener"
-      ]
+      ],
+      "hint": "Her sister is thirty-five."
     },
     {
       "id": "a1.12.02.ex12",
@@ -218,8 +219,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Write 28 in Spanish.",
-          "answer": "veintiocho"
+          "prompt": "Write 25 in Spanish.",
+          "answer": "veinticinco"
         },
         {
           "prompt": "Write 54 in Spanish.",
@@ -263,8 +264,8 @@
       "question": "Which means 100?",
       "options": [
         "cien",
-        "ciento",
-        "ciento cero"
+        "cincuenta",
+        "cuarenta"
       ],
       "correct": 0,
       "teaches": [

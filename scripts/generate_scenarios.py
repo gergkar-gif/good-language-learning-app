@@ -12,6 +12,7 @@ Outputs:
 """
 
 import json
+import sys
 from pathlib import Path
 
 ES_SCENARIOS = [
@@ -34,7 +35,7 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can order food and drink in a café and ask for the bill",
         "targetSkills": ["ordering_food", "social_interaction", "numbers_and_prices"],
-        "unitIds": ["unit.a1.11"],
+        "unitIds": ["unit.a1.12"],
         "requiredLemmas": ["café", "agua", "leche", "cuenta", "camarero", "gracias"],
         "turns": [
             {
@@ -109,7 +110,7 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can enquire about room availability and check into a hotel",
         "targetSkills": ["hotel_checkin", "dates_and_duration", "enquiring_services"],
-        "unitIds": ["unit.a1.08"],
+        "unitIds": ["unit.a1.09"],
         "requiredLemmas": ["habitación", "noche", "llave", "gracias"],
         "turns": [
             {
@@ -184,7 +185,7 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can ask for grocery items, quantities, and complete a store checkout",
         "targetSkills": ["shopping_food", "asking_location", "transactions_and_payment"],
-        "unitIds": ["unit.a1.09"],
+        "unitIds": ["unit.a1.10"],
         "requiredLemmas": ["pan", "kilo", "manzana", "pagar", "caja", "gracias"],
         "turns": [
             {
@@ -329,7 +330,7 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can ask for clothing sizes, colors, and ask for the fitting room",
         "targetSkills": ["shopping_clothes", "describing_items", "asking_assistance"],
-        "unitIds": ["unit.a1.07", "unit.a1.10"],
+        "unitIds": ["unit.a1.08", "unit.a1.11"],
         "requiredLemmas": ["camisa", "chaqueta", "barato", "caro", "preferir", "gracias"],
         "turns": [
             {
@@ -544,7 +545,7 @@ ES_SCENARIOS = [
         },
         "targetCompetency": "I can request a table, order dishes from a menu, and ask for tableware",
         "targetSkills": ["restaurant_dining", "food_ordering", "polite_requests"],
-        "unitIds": ["unit.a1.11", "unit.a1.13"],
+        "unitIds": ["unit.a1.12", "unit.a1.14"],
         "requiredLemmas": ["camarero", "menú", "ensalada", "comida", "cuenta", "gracias"],
         "turns": [
             {
@@ -2295,8 +2296,12 @@ def main():
         "scenarios": HU_EXPANDED_SCENARIOS
     }
 
+    # es-latam: its own words (*mesero*, *jugo*, scripts/course_variants.py) and a Latin American voice
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import course_variants as cv
+    es_latam_data = cv.latam_voice(cv.convert_data(es_data, "es-latam"))
     print(f"Writing {len(ES_SCENARIOS)} scenarios to {es_latam_path}...")
-    es_latam_path.write_text(json.dumps(es_data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    es_latam_path.write_text(json.dumps(es_latam_data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     print(f"Writing {len(ES_SCENARIOS)} scenarios to {es_es_path}...")
     es_es_path.write_text(json.dumps(es_data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

@@ -205,7 +205,9 @@ Carried over from `docs/archive/PLANNING.md`; the rules that still apply to cont
 
 **Teaching style.** Grammar explanations are short, explicit and natural, and explain why a structure works, not only which form to memorise. Give concepts unfamiliar to English speakers enough explanation before drilling. Prefer natural wording (`uses`, `is used to`, `means`) over awkward phrasing such as `run on`. Context lives inside lessons and exercises, not in a separate tab.
 
-**Latin American Spanish (`es-latam`).** No `vosotros` in readings, grammar explanations, examples or normal course content; use `ustedes` for plural "you". `vosotros` may remain in the dedicated verb drill as optional recognition. Keep vocabulary and examples broadly suitable for Latin America.
+**Latin American Spanish (`es-latam`).** No `vosotros` anywhere in es-latam: readings, grammar explanations, examples, exercises, drills (not even as wrong options) and challenges; use `ustedes` for plural "you". Only es-es teaches `vosotros` (user, 2026-10-16). `check-content` reports it (`latam-vosotros`, exercises, screens and stories).
+
+**Each Spanish course uses its own words (user, 2026-10-16).** es-es: *zumo, coche, ordenador, móvil, patata, billete, camarero, salón* (living room), *aparcar, enfadado*; es-latam: *jugo, carro, computadora, celular, papa, boleto, mesero, sala, estacionar, enojado*. The list is `scripts/course_variants.py`; `check-content` reports the other course's word (`course-variant`, suspect); `python scripts/fix_variant_vocab.py <course> <level> --write` converts a level and fixes the article when the gender changes (*el salón* → *la sala*), refusing what it can't place. Words both use (*conducir, chaqueta, autobús, apartamento, sándwich*) stay. Shared es-latam files written from one Spanish source (conversation scenarios, writing exchanges) are converted by their generators.
 
 **Readings.** Early readings are short and simple. The Carlos and Meg narrative should visibly develop, including the relationship. Avoid vocabulary and grammar not yet taught, and avoid repeating the same word (`sonreir`, `sonrisa`) across readings.
 

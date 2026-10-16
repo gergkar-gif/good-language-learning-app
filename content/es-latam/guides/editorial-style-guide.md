@@ -2,8 +2,8 @@
 
 ## General
 
-- Use a neutral tú/ustedes variant — no vosotros, per the convention in the archived `docs/archive/guides/B1_GUIDE.md` §17 (now in `AGENTS.md`) (A1, A2, and Core B1 all use tú/ustedes only).
-  Peninsular vocabulary and register otherwise.
+- Use a neutral tú/ustedes variant — no vosotros anywhere, drills included (`AGENTS.md`).
+- Use Latin American vocabulary, never Peninsular (user, 2026-10-16): *jugo, carro, computadora, celular, papa, boleto, mesero, sala* (the list: `scripts/course_variants.py`; `check-content` reports `course-variant`).
 - Use neutral, modern vocabulary.
 - Avoid slang unless the lesson specifically introduces it.
 - Prefer natural language over textbook language.
