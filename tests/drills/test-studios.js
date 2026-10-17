@@ -92,7 +92,11 @@ const esStudio = Workshop.activeDriller();
 assert(esStudio && esStudio.id === 'es-grammar-studio', 'es-grammar-studio should open in Workshop');
 const esDrillerDef = Workshop.getDriller('es-grammar-studio');
 assert(esDrillerDef && esDrillerDef.langs.includes('es-es') && esDrillerDef.langs.includes('es-latam'), 'es-grammar-studio must support both es-es and es-latam');
-console.log('[PASS] Spanish Grammar Studio module and Workshop integration verified.');
+for (const tab of EsGrammarStudio.TABS) {
+    const pool = EsGrammarStudio._poolFor(tab.id);
+    assert(Array.isArray(pool) && pool.length >= 30, `Tab ${tab.id} must have at least 30 questions, found ${pool ? pool.length : 0}`);
+}
+console.log('[PASS] Spanish Grammar Studio module, Workshop integration, and 30+ questions per drill tab verified.');
 
 
 

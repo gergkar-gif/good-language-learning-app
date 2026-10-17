@@ -12,6 +12,7 @@
 // - Zero 'vosotros' (valid for both es-es and es-latam)
 // - Zero dialect-conflicting vocabulary (neutral shared lexicon)
 // - Immediate diagnostic rule feedback on answer selection
+// - At least 30 carefully authored questions per drill tab (150 total)
 
 const EsGrammarStudio = (function () {
     'use strict';
@@ -94,6 +95,146 @@ const EsGrammarStudio = (function () {
             answer: "está",
             translation: "This homemade chocolate cake tastes delicious; you have to try it.",
             rule: "Sensory tasting evaluation of food at the moment of eating takes 'estar bueno/rico'."
+        },
+        {
+            sentence: "Mis abuelos maternos ___ de un pueblo pequeño en las montañas.",
+            options: ["son", "están", "sean", "estén"],
+            answer: "son",
+            translation: "My maternal grandparents are from a small town in the mountains.",
+            rule: "Geographic origin and nationality are expressed with 'ser de'."
+        },
+        {
+            sentence: "Mi hermana mayor ___ arquitecta en una empresa internacional.",
+            options: ["es", "está", "sea", "esté"],
+            answer: "es",
+            translation: "My older sister is an architect at an international company.",
+            rule: "Professions, trades, and occupations use 'ser'."
+        },
+        {
+            sentence: "Hoy ___ martes y ya pasan de las tres de la tarde.",
+            options: ["es", "está", "son", "están"],
+            answer: "es",
+            translation: "Today is Tuesday and it is already past three in the afternoon.",
+            rule: "Days of the week and dates with singular subjects use 'ser'."
+        },
+        {
+            sentence: "Esta mesa antigua del comedor ___ de madera de roble macizo.",
+            options: ["es", "está", "sea", "esté"],
+            answer: "es",
+            translation: "This antique dining table is made of solid oak wood.",
+            rule: "Material composition of an object takes 'ser de'."
+        },
+        {
+            sentence: "Ese paraguas negro no es mío; ___ de Lucía.",
+            options: ["es", "está", "sea", "esté"],
+            answer: "es",
+            translation: "That black umbrella is not mine; it belongs to Lucía.",
+            rule: "Ownership and possession are expressed with 'ser de'."
+        },
+        {
+            sentence: "¿Cuánto ___ todo junto, por favor? — Cincuenta euros en total.",
+            options: ["es", "está", "sea", "esté"],
+            answer: "es",
+            translation: "How much is everything together, please? — Fifty euros in total.",
+            rule: "Asking for or stating the definitive total price uses 'ser'."
+        },
+        {
+            sentence: "Las manzanas en el mercado hoy ___ a dos euros el kilo.",
+            options: ["están", "son", "estén", "sean"],
+            answer: "están",
+            translation: "The apples at the market today are at two euros per kilo.",
+            rule: "Fluctuating or daily variable market prices take 'estar a'."
+        },
+        {
+            sentence: "Felipe no vino a trabajar hoy porque ___ con fiebre en cama.",
+            options: ["está", "es", "esté", "sea"],
+            answer: "está",
+            translation: "Felipe didn't come to work today because he is in bed with a fever.",
+            rule: "Temporary illnesses and health conditions take 'estar'."
+        },
+        {
+            sentence: "Mis tíos ___ casados desde hace veinticinco años.",
+            options: ["están", "son", "estén", "sean"],
+            answer: "están",
+            translation: "My aunt and uncle have been married for twenty-five years.",
+            rule: "Marital or civil status (casado, soltero, divorciado) standardly takes 'estar'."
+        },
+        {
+            sentence: "Ese médico del hospital ___ una persona muy buena y compasiva.",
+            options: ["es", "está", "sea", "esté"],
+            answer: "es",
+            translation: "That hospital doctor is a very good and compassionate person.",
+            rule: "'Ser bueno' expresses moral goodness, high quality, or virtue."
+        },
+        {
+            sentence: "El café recién preparado ___ muy bueno esta mañana.",
+            options: ["está", "es", "esté", "sea"],
+            answer: "está",
+            translation: "The freshly brewed coffee tastes very good this morning.",
+            rule: "'Estar bueno' applied to food or drinks refers to delicious taste at the moment."
+        },
+        {
+            sentence: "Fumar tabaco ___ sumamente malo para la salud de los pulmones.",
+            options: ["es", "está", "sea", "esté"],
+            answer: "es",
+            translation: "Smoking tobacco is extremely bad for lung health.",
+            rule: "'Ser malo' denotes that something is inherently detrimental, harmful, or poor quality."
+        },
+        {
+            sentence: "No bebas esa leche del refrigerador; creo que ya ___ mala.",
+            options: ["está", "es", "esté", "sea"],
+            answer: "está",
+            translation: "Don't drink that milk from the refrigerator; I think it has gone bad.",
+            rule: "'Estar malo' applied to food means spoiled or sour; applied to people it means sick."
+        },
+        {
+            sentence: "Ese empresario internacional ___ inmensamente rico.",
+            options: ["es", "está", "sea", "esté"],
+            answer: "es",
+            translation: "That international businessman is immensely wealthy.",
+            rule: "'Ser rico' means to possess great wealth or financial resources."
+        },
+        {
+            sentence: "La paella que cocinaste para todos ___ verdaderamente rica.",
+            options: ["está", "es", "esté", "sea"],
+            answer: "está",
+            translation: "The paella you cooked for everyone tastes truly delicious.",
+            rule: "'Estar rico' evaluates the culinary flavor of food."
+        },
+        {
+            sentence: "Las manzanas de esta variedad especial ___ verdes por naturaleza.",
+            options: ["son", "están", "sean", "estén"],
+            answer: "son",
+            translation: "Apples of this special variety are naturally green in color.",
+            rule: "Permanent, characteristic colors of objects use 'ser'."
+        },
+        {
+            sentence: "No comas esos plátanos todavía; todavía ___ muy verdes.",
+            options: ["están", "son", "estén", "sean"],
+            answer: "están",
+            translation: "Don't eat those bananas yet; they are still very unripe.",
+            rule: "'Estar verde' applied to fruit means unripe or not ready to eat."
+        },
+        {
+            sentence: "La fiesta de bienvenida ___ en el jardín del club social.",
+            options: ["es", "está", "sea", "esté"],
+            answer: "es",
+            translation: "The welcome party takes place in the social club garden.",
+            rule: "Events, celebrations, and gatherings take place using 'ser', not 'estar'."
+        },
+        {
+            sentence: "En este momento todos nosotros ___ preparando los informes finales.",
+            options: ["estamos", "somos", "estemos", "seamos"],
+            answer: "estamos",
+            translation: "Right now all of us are preparing the final reports.",
+            rule: "The progressive aspect (estar + gerundio) strictly uses auxiliary 'estar'."
+        },
+        {
+            sentence: "El tratado de paz ___ firmado por ambos presidentes en Ginebra.",
+            options: ["fue", "estuvo", "era", "había"],
+            answer: "fue",
+            translation: "The peace treaty was signed by both presidents in Geneva.",
+            rule: "The true passive voice expressing an action with an agent uses 'ser + participio'."
         }
     ];
 
@@ -167,6 +308,146 @@ const EsGrammarStudio = (function () {
             answer: "por",
             translation: "Tomás works tirelessly for the sake of his family.",
             rule: "Doing something on behalf of or for the sake/benefit of someone takes 'por'."
+        },
+        {
+            sentence: "El tren de alta velocidad sale a las ocho con destino ___ Valencia.",
+            options: ["para", "por", "hacia", "sobre"],
+            answer: "para",
+            translation: "The high-speed train leaves at eight bound for Valencia.",
+            rule: "Physical destination or directional destination takes 'para'."
+        },
+        {
+            sentence: "Vivimos tranquilamente en esa pequeña ciudad ___ más de diez años.",
+            options: ["por", "para", "en", "con"],
+            answer: "por",
+            translation: "We lived peacefully in that small city for more than ten years.",
+            rule: "Duration of an action over a period of time uses 'por'."
+        },
+        {
+            sentence: "¿Hay alguna farmacia de turno abierta ___ aquí cerca?",
+            options: ["por", "para", "en", "de"],
+            answer: "por",
+            translation: "Is there a 24-hour pharmacy open around here nearby?",
+            rule: "Approximate location or spatial vicinity takes 'por'."
+        },
+        {
+            sentence: "Fui rápidamente a la biblioteca ___ un diccionario que me faltaba.",
+            options: ["por", "para", "hacia", "sobre"],
+            answer: "por",
+            translation: "I went quickly to the library to fetch a dictionary I was missing.",
+            rule: "Going in search of or to fetch something takes 'ir por'."
+        },
+        {
+            sentence: "Compré esta chaqueta de cuero marrón ___ solo cuarenta euros.",
+            options: ["por", "para", "con", "en"],
+            answer: "por",
+            translation: "I bought this brown leather jacket for only forty euros.",
+            rule: "Cost, price, or financial transaction takes 'por'."
+        },
+        {
+            sentence: "El límite de velocidad en esta vía es de cien kilómetros ___ hora.",
+            options: ["por", "para", "de", "en"],
+            answer: "por",
+            translation: "The speed limit on this road is one hundred kilometers per hour.",
+            rule: "Unit rates, frequencies, and percentages take 'por'."
+        },
+        {
+            sentence: "Muchas gracias ___ haberme ayudado con todas esas cajas pesadas.",
+            options: ["por", "para", "de", "con"],
+            answer: "por",
+            translation: "Thank you very much for having helped me with all those heavy boxes.",
+            rule: "Expressing gratitude for a cause or action takes 'gracias por'."
+        },
+        {
+            sentence: "El monumento conmemorativo fue diseñado ___ un arquitecto famoso.",
+            options: ["por", "para", "de", "con"],
+            answer: "por",
+            translation: "The commemorative monument was designed by a famous architect.",
+            rule: "The performing agent in a passive construction takes 'por'."
+        },
+        {
+            sentence: "Este vaso de cristal fino es exclusivamente ___ vino blanco.",
+            options: ["para", "por", "de", "con"],
+            answer: "para",
+            translation: "This fine crystal glass is exclusively for white wine.",
+            rule: "The specific intended utility or suitability of an object takes 'para'."
+        },
+        {
+            sentence: "___ mí, la tranquilidad y la salud son más valiosas que el dinero.",
+            options: ["Para", "Por", "Según", "Hacia"],
+            answer: "Para",
+            translation: "In my opinion, peace of mind and health are more valuable than money.",
+            rule: "Personal opinion or subjective viewpoint takes 'para mí'."
+        },
+        {
+            sentence: "El agua ya está hirviendo en la tetera; está lista ___ servir el té.",
+            options: ["para", "por", "con", "en"],
+            answer: "para",
+            translation: "The water is already boiling in the kettle; it is ready to serve the tea.",
+            rule: "Readiness for a specific intended purpose ('listo para') takes 'para'."
+        },
+        {
+            sentence: "Todavía quedan varios puntos importantes ___ discutir en la agenda.",
+            options: ["por", "para", "de", "con"],
+            answer: "por",
+            translation: "There are still several important points yet to be discussed on the agenda.",
+            rule: "Pending actions that remain to be done take 'quedar por + infinitivo'."
+        },
+        {
+            sentence: "Después de catorce horas de viaje, ___ fin llegamos a la posada.",
+            options: ["por", "para", "en", "al"],
+            answer: "por",
+            translation: "After fourteen hours of travel, at last we arrived at the inn.",
+            rule: "The fixed temporal idiom 'por fin' (at last / finally) takes 'por'."
+        },
+        {
+            sentence: "Un adulto debería dormir ___ lo menos siete horas cada noche.",
+            options: ["por", "para", "a", "de"],
+            answer: "por",
+            translation: "An adult should sleep at least seven hours each night.",
+            rule: "The restrictive idiom 'por lo menos' (at least) takes 'por'."
+        },
+        {
+            sentence: "Se me olvidaron las llaves y, ___ colmo, comenzó a llover a cántaros.",
+            options: ["para", "por", "de", "en"],
+            answer: "para",
+            translation: "I forgot my keys and, to top it all off, it started pouring rain.",
+            rule: "The idiom 'para colmo' (to make matters worse / to top it off) takes 'para'."
+        },
+        {
+            sentence: "___ desgracia, se agotaron todas las entradas para el concierto.",
+            options: ["Por", "Para", "De", "Con"],
+            answer: "Por",
+            translation: "Unfortunately, all tickets for the concert sold out.",
+            rule: "The adverbial expression 'por desgracia' (unfortunately) takes 'por'."
+        },
+        {
+            sentence: "El profesor entregó dos hojas de ejercicios ___ cada alumno del grupo.",
+            options: ["por", "para", "en", "con"],
+            answer: "por",
+            translation: "The teacher handed out two exercise sheets per student in the group.",
+            rule: "Distributive allocation takes 'por' (per individual)."
+        },
+        {
+            sentence: "Ella trabaja desde hace tres años como abogada ___ el Ministerio de Justicia.",
+            options: ["para", "por", "hacia", "sobre"],
+            answer: "para",
+            translation: "She has worked for three years as a lawyer for the Ministry of Justice.",
+            rule: "Employment by or service to an organization takes 'trabajar para'."
+        },
+        {
+            sentence: "Para llegar al museo histórico, tienes que cruzar ___ la plaza principal.",
+            options: ["por", "para", "hacia", "con"],
+            answer: "por",
+            translation: "To get to the historical museum, you have to cross through the main square.",
+            rule: "Passage across or transit through an area takes 'por'."
+        },
+        {
+            sentence: "Aquel viaje por los Andes quedará grabado en mi memoria ___ siempre.",
+            options: ["para", "por", "de", "con"],
+            answer: "para",
+            translation: "That journey through the Andes will remain etched in my memory forever.",
+            rule: "The permanent temporal expression 'para siempre' (forever) takes 'para'."
         }
     ];
 
@@ -240,6 +521,146 @@ const EsGrammarStudio = (function () {
             answer: "salí",
             translation: "Yesterday I woke up early, ate breakfast quickly, and left for work.",
             rule: "A sequence of completed chronological events in a narrative takes the preterite ('salí')."
+        },
+        {
+            sentence: "Cuando yo ___ diez años, vivía en una granja pequeña con mis abuelos.",
+            options: ["tenía", "tuve", "había tenido", "tuviera"],
+            answer: "tenía",
+            translation: "When I was ten years old, I lived on a small farm with my grandparents.",
+            rule: "Stating age in the past provides background context and uses the imperfect ('tenía')."
+        },
+        {
+            sentence: "El antiguo profesor era alto, delgado y siempre ___ unas gafas oscuras.",
+            options: ["llevaba", "llevó", "ha llevado", "lleve"],
+            answer: "llevaba",
+            translation: "The former teacher was tall, slender, and always wore dark glasses.",
+            rule: "Describing physical characteristics or habitual clothing in the past takes the imperfect ('llevaba')."
+        },
+        {
+            sentence: "Ayer revisé mi estado bancario y ___ que me habían cobrado una suscripción errónea.",
+            options: ["supe", "sabía", "he sabido", "supiera"],
+            answer: "supe",
+            translation: "Yesterday I checked my bank statement and found out they had charged me an erroneous subscription.",
+            rule: "'Saber' in the preterite means to discover or find out at a specific moment ('supe')."
+        },
+        {
+            sentence: "Le ofrecí llevar su maleta pesada hasta la entrada, pero él no ___ aceptar.",
+            options: ["quiso", "quería", "ha querido", "quisiera"],
+            answer: "quiso",
+            translation: "I offered to carry his heavy suitcase to the entrance, but he refused to accept.",
+            rule: "'No quiso' in the preterite expresses an active refusal to do something."
+        },
+        {
+            sentence: "El verano pasado yo ___ viajar a Italia, pero no tenía presupuesto suficiente.",
+            options: ["quería", "quise", "he querido", "quisiera"],
+            answer: "quería",
+            translation: "Last summer I wanted to travel to Italy, but I didn't have enough budget.",
+            rule: "An ongoing mental wish or intention without a completed outcome uses the imperfect ('quería')."
+        },
+        {
+            sentence: "Durante tres años continuos yo ___ en esa misma oficina antes de mudarme.",
+            options: ["trabajé", "trabajaba", "he trabajado", "trabajara"],
+            answer: "trabajé",
+            translation: "For three continuous years I worked in that same office before moving.",
+            rule: "Actions with explicitly stated beginning and ending boundaries use the preterite ('trabajé')."
+        },
+        {
+            sentence: "Mientras mi madre preparaba la cena en la cocina, mi padre ___ la prensa del día.",
+            options: ["leía", "leyó", "ha leído", "leyera"],
+            answer: "leía",
+            translation: "While my mother was preparing dinner in the kitchen, my father was reading the day's press.",
+            rule: "Two simultaneous ongoing actions linked by 'mientras' both take the imperfect ('leía')."
+        },
+        {
+            sentence: "Todos los domingos por la mañana nosotros ___ a pasear por el malecón.",
+            options: ["salíamos", "salimos", "hemos salido", "saliéramos"],
+            answer: "salíamos",
+            translation: "Every Sunday morning we used to go out for a walk along the boardwalk.",
+            rule: "Customary habitual actions repeated on a regular schedule use the imperfect ('salíamos')."
+        },
+        {
+            sentence: "En cuanto sonó la campana del timbre, los estudiantes ___ a salir al patio.",
+            options: ["empezaron", "empezaban", "han empezado", "empezaran"],
+            answer: "empezaron",
+            translation: "As soon as the bell rang, the students began to go out to the courtyard.",
+            rule: "The sudden punctual initiation of an action takes the preterite ('empezaron')."
+        },
+        {
+            sentence: "A las doce en punto de la noche, la música del festival ___ por completo.",
+            options: ["terminó", "terminaba", "ha terminado", "terminara"],
+            answer: "terminó",
+            translation: "At twelve o'clock sharp at night, the festival music finished completely.",
+            rule: "The definitive termination of an event at a fixed moment takes the preterite ('terminó')."
+        },
+        {
+            sentence: "Te ___ por teléfono tres veces seguidas esta mañana, pero no respondiste.",
+            options: ["llamé", "llamaba", "he llamado", "llamara"],
+            answer: "llamé",
+            translation: "I called you on the phone three consecutive times this morning, but you didn't answer.",
+            rule: "Actions repeated a specific counted number of times use the preterite ('llamé')."
+        },
+        {
+            sentence: "Yo caminaba tranquilamente por la acera cuando de repente ___ un ruido ensordecedor.",
+            options: ["oí", "oía", "he oído", "oyera"],
+            answer: "oí",
+            translation: "I was walking peacefully on the sidewalk when suddenly I heard a deafening noise.",
+            rule: "A sudden sensory perception interrupting an ongoing activity takes the preterite ('oí')."
+        },
+        {
+            sentence: "Nuestra casa de campo ___ en lo alto de una colina con vista al valle.",
+            options: ["estaba", "estuvo", "ha estado", "estuviera"],
+            answer: "estaba",
+            translation: "Our country house was on top of a hill overlooking the valley.",
+            rule: "Static geographical location in a past descriptive narrative takes the imperfect ('estaba')."
+        },
+        {
+            sentence: "Ayer por la tarde ___ una discusión acalorada con el director del proyecto.",
+            options: ["tuve", "tenía", "he tenido", "tuviera"],
+            answer: "tuve",
+            translation: "Yesterday afternoon I had a heated argument with the project director.",
+            rule: "'Tener' in the preterite denotes experiencing an event or incident at a specific time ('tuve')."
+        },
+        {
+            sentence: "En aquella época difícil, nosotros ___ que levantarnos a las cinco cada mañana.",
+            options: ["teníamos", "tuvimos", "hemos tenido", "tuviéramos"],
+            answer: "teníamos",
+            translation: "In that difficult era, we had to get up at five every morning.",
+            rule: "Continuous, habitual obligation over an extended period uses the imperfect ('teníamos')."
+        },
+        {
+            sentence: "Ella siempre almorzaba en casa, pero el martes pasado ___ en una cafetería.",
+            options: ["almorzó", "almorzaba", "ha almorzado", "almorzara"],
+            answer: "almorzó",
+            translation: "She always had lunch at home, but last Tuesday she had lunch at a cafeteria.",
+            rule: "An exceptional, singular event that breaks a past habit takes the preterite ('almorzó')."
+        },
+        {
+            sentence: "El día de nuestra boda en la playa fue perfecto; no ___ en absoluto.",
+            options: ["llovió", "llovía", "ha llovido", "lloviera"],
+            answer: "llovió",
+            translation: "Our wedding day on the beach was perfect; it didn't rain at all.",
+            rule: "Summary evaluation of weather over an entire completed day takes the preterite ('llovió')."
+        },
+        {
+            sentence: "Al ver el obstáculo en la carretera, el chofer ___ el pedal de freno de golpe.",
+            options: ["pisó", "pisaba", "ha pisado", "pisara"],
+            answer: "pisó",
+            translation: "Upon seeing the obstacle on the road, the driver stepped on the brake pedal abruptly.",
+            rule: "An immediate instinctive reaction to a trigger takes the preterite ('pisó')."
+        },
+        {
+            sentence: "De niño, yo siempre ___ mucha hambre al terminar las clases de natación.",
+            options: ["tenía", "tuve", "he tenido", "tuviera"],
+            answer: "tenía",
+            translation: "As a child, I always used to be very hungry upon finishing swimming lessons.",
+            rule: "A recurrent physical sensation in childhood takes the imperfect ('tenía')."
+        },
+        {
+            sentence: "La restauración completa del puente histórico ___ en mayo del año pasado.",
+            options: ["concluyó", "concluía", "ha concluido", "concluyera"],
+            answer: "concluyó",
+            translation: "The complete restoration of the historic bridge concluded in May of last year.",
+            rule: "Historical milestones with an explicit completion date take the preterite ('concluyó')."
         }
     ];
 
@@ -313,6 +734,146 @@ const EsGrammarStudio = (function () {
             answer: "se la",
             translation: "That flower is for mom; please don't take it from her.",
             rule: "Negative command with 3rd-person indirect and direct objects uses pre-verbal 'se la'."
+        },
+        {
+            sentence: "¿Has visto mi sombrero nuevo por la casa? — No, todavía no ___ he visto.",
+            options: ["lo", "le", "la", "se"],
+            answer: "lo",
+            translation: "Have you seen my new hat around the house? — No, I haven't seen it yet.",
+            rule: "A masculine singular direct object noun ('el sombrero') is replaced by 'lo'."
+        },
+        {
+            sentence: "¿Compraste la fruta fresca en la tienda? — Sí, ya ___ compré toda.",
+            options: ["la", "le", "lo", "las"],
+            answer: "la",
+            translation: "Did you buy the fresh fruit at the store? — Yes, I already bought all of it.",
+            rule: "A feminine singular direct object noun ('la fruta') is replaced by 'la'."
+        },
+        {
+            sentence: "¿Invitaste a tus primos a la celebración? — Sí, ___ invité ayer por teléfono.",
+            options: ["los", "les", "se", "lo"],
+            answer: "los",
+            translation: "Did you invite your cousins to the celebration? — Yes, I invited them yesterday by phone.",
+            rule: "Direct object replacing masculine plural people ('a tus primos') is 'los'."
+        },
+        {
+            sentence: "¿Terminaron las tareas de matemáticas? — Sí, ya ___ terminamos todas.",
+            options: ["las", "les", "los", "se"],
+            answer: "las",
+            translation: "Did you finish the math homework? — Yes, we already finished all of it.",
+            rule: "Direct object replacing feminine plural things ('las tareas') is 'las'."
+        },
+        {
+            sentence: "A mí no ___ gusta nada madrugar los domingos por la mañana.",
+            options: ["me", "te", "le", "se"],
+            answer: "me",
+            translation: "I don't like getting up early on Sunday mornings at all.",
+            rule: "Verbs like 'gustar' require an indirect object pronoun matching the experiencer ('a mí' -> 'me')."
+        },
+        {
+            sentence: "A mis padres ___ encantan los paseos tranquilos por la naturaleza.",
+            options: ["les", "los", "se", "le"],
+            answer: "les",
+            translation: "My parents love quiet walks through nature.",
+            rule: "Third-person plural experiencers ('a mis padres') take the indirect pronoun 'les'."
+        },
+        {
+            sentence: "___ di las gracias al médico por toda su paciencia y dedicación.",
+            options: ["Le", "Lo", "Se", "Me"],
+            answer: "Le",
+            translation: "I thanked the doctor for all his patience and dedication.",
+            rule: "Spanish standardly requires the redundant indirect object pronoun 'le' with explicit recipients."
+        },
+        {
+            sentence: "Esa canción tradicional es hermosa; ¿puedes ___ otra vez?",
+            options: ["cantárnosla", "cantárnoslo", "nos la cantar", "cantarnos la"],
+            answer: "cantárnosla",
+            translation: "That traditional song is beautiful; can you sing it to us again?",
+            rule: "Attaching 'nos' + 'la' to an infinitive requires an accent on the stressed vowel: 'cantárnosla'."
+        },
+        {
+            sentence: "¿Quién nos explicará las instrucciones? — El profesor ___ explicará mañana.",
+            options: ["nos las", "las nos", "se las", "nos los"],
+            answer: "nos las",
+            translation: "Who will explain the instructions to us? — The teacher will explain them to us tomorrow.",
+            rule: "Indirect 'nos' precedes feminine plural direct object 'las' before a conjugated verb."
+        },
+        {
+            sentence: "Si necesitas esa regla de medir sobre la mesa, ___ ahora mismo.",
+            options: ["tómala", "la toma", "tómatela", "tómalo"],
+            answer: "tómala",
+            translation: "If you need that ruler on the table, take it right now.",
+            rule: "Affirmative command 'toma' attaches the direct object 'la' with a written accent: 'tómala'."
+        },
+        {
+            sentence: "Señor Gómez, si tiene el contrato firmado, por favor ___ a la oficina.",
+            options: ["tráiganoslo", "nos lo traiga", "tráiganosla", "tráigalo nos"],
+            answer: "tráiganoslo",
+            translation: "Mr. Gómez, if you have the signed contract, please bring it to us at the office.",
+            rule: "Formal imperative 'traiga' attaches 'nos' + 'lo' with an accent: 'tráiganoslo'."
+        },
+        {
+            sentence: "¿Te devolvió Ana los libros prestados? — Sí, ya ___ ha devuelto todos.",
+            options: ["me los", "los me", "se los", "te los"],
+            answer: "me los",
+            translation: "Did Ana return the borrowed books to you? — Yes, she has already returned them to me.",
+            rule: "Indirect pronoun 'me' precedes direct pronoun 'los' before auxiliary 'ha devuelto'."
+        },
+        {
+            sentence: "Estaba buscando mis llaves perdidas y mi hermana estaba ___ en el jardín.",
+            options: ["buscándomelas", "buscándoselas", "me las buscando", "buscándomelos"],
+            answer: "buscándomelas",
+            translation: "I was looking for my lost keys and my sister was looking for them for me in the garden.",
+            rule: "Attaching 'me' + 'las' to a gerund adds an accent over the stem vowel: 'buscándomelas'."
+        },
+        {
+            sentence: "Ese libro es un regalo sorpresa para papá; por favor, no ___ compres todavía.",
+            options: ["se lo", "lo se", "te lo", "le lo"],
+            answer: "se lo",
+            translation: "That book is a surprise gift for dad; please don't buy it for him yet.",
+            rule: "Negative command places indirect 'se' (from 'le') before direct 'lo': 'no se lo compres'."
+        },
+        {
+            sentence: "El paquete postal llegó ayer por la tarde y yo se lo entregué ___ personalmente.",
+            options: ["a ella", "ella", "para ella", "de ella"],
+            answer: "a ella",
+            translation: "The postal package arrived yesterday afternoon and I delivered it to her personally.",
+            rule: "Because 'se' is ambiguous, the prepositional phrase 'a ella' clarifies the recipient."
+        },
+        {
+            sentence: "¿Por qué caminas con dificultad? ¿___ duele la pierna derecha?",
+            options: ["Te", "La", "Se", "Le"],
+            answer: "Te",
+            translation: "Why are you walking with difficulty? Does your right leg hurt?",
+            rule: "Body parts causing pain with 'doler' take an indirect object pronoun ('te duele la pierna')."
+        },
+        {
+            sentence: "Ponte la chaqueta antes de salir al frío. — Sí, ya ___ pongo ahora mismo.",
+            options: ["me la", "la me", "se la", "te la"],
+            answer: "me la",
+            translation: "Put on your jacket before going out into the cold. — Yes, I am putting it on right now.",
+            rule: "Reflexive/pronominal 'me' precedes direct object 'la': 'me la pongo'."
+        },
+        {
+            sentence: "Quiero enviar este archivo a los clientes. — Puedes ___ de inmediato.",
+            options: ["enviárselo", "enviárlelo", "se lo enviar", "enviártelo"],
+            answer: "enviárselo",
+            translation: "I want to send this file to the clients. — You can send it to them right away.",
+            rule: "Attached to the infinitive, 'les lo' dissimilates into 'se lo': 'enviárselo'."
+        },
+        {
+            sentence: "Señora Pérez, ese informe contiene varios errores; por favor, no ___ envíe todavía.",
+            options: ["se lo", "lo se", "le lo", "se la"],
+            answer: "se lo",
+            translation: "Mrs. Pérez, that report contains several errors; please don't send it to them yet.",
+            rule: "Negative formal command places 'se' + 'lo' before the verb: 'no se lo envíe'."
+        },
+        {
+            sentence: "Carlos y su hermano se respetan mucho y ___ ayudan mutuamente en todo.",
+            options: ["se", "les", "los", "nos"],
+            answer: "se",
+            translation: "Carlos and his brother respect each other very much and help each other in everything.",
+            rule: "Reciprocal actions between plural subjects take the reflexive reciprocal pronoun 'se'."
         }
     ];
 
@@ -386,6 +947,146 @@ const EsGrammarStudio = (function () {
             answer: "haga",
             translation: "We will go on the mountain excursion even if it is cold tomorrow.",
             rule: "Concessive 'aunque' referring to an uncertain future condition triggers the subjunctive ('haga')."
+        },
+        {
+            sentence: "Aunque ___ bastante frío hoy en la calle, saldré a dar un paseo.",
+            options: ["hace", "haga", "haría", "haya"],
+            answer: "hace",
+            translation: "Although it is quite cold on the street today, I will go out for a walk.",
+            rule: "Concessive 'aunque' introducing an acknowledged factual reality takes the indicative ('hace')."
+        },
+        {
+            sentence: "Mis padres quieren que yo ___ una carrera universitaria completa.",
+            options: ["estudie", "estudio", "estudiaré", "estudiaba"],
+            answer: "estudie",
+            translation: "My parents want me to study a complete university degree.",
+            rule: "Verbs of volition, wish, or demand ('querer que') trigger the subjunctive ('estudie')."
+        },
+        {
+            sentence: "¡Ojalá que mañana ___ un día despejado para poder navegar!",
+            options: ["sea", "es", "será", "era"],
+            answer: "sea",
+            translation: "Hopefully tomorrow will be a clear day so we can sail!",
+            rule: "The wish particle 'ojalá' always triggers the subjunctive mood ('sea')."
+        },
+        {
+            sentence: "Me alegro mucho de que tú ___ mucho mejor de tu resfriado.",
+            options: ["estés", "estás", "estarás", "estabas"],
+            answer: "estés",
+            translation: "I am very glad that you are feeling much better from your cold.",
+            rule: "Verbs expressing emotion, feeling, or psychological reaction trigger the subjunctive ('estés')."
+        },
+        {
+            sentence: "Temo que nosotros no ___ llegar a tiempo para el comienzo de la función.",
+            options: ["podamos", "podemos", "podremos", "podríamos"],
+            answer: "podamos",
+            translation: "I fear that we won't be able to arrive in time for the beginning of the show.",
+            rule: "Verbs of fear or apprehension ('temer que') require the subjunctive ('podamos')."
+        },
+        {
+            sentence: "El médico me recomendó que ___ al menos dos litros de agua al día.",
+            options: ["beba", "bebo", "beberé", "bebía"],
+            answer: "beba",
+            translation: "The doctor recommended that I drink at least two liters of water a day.",
+            rule: "Verbs of advice, recommendation, or suggestion trigger the subjunctive ('beba')."
+        },
+        {
+            sentence: "El reglamento del museo prohíbe que los visitantes ___ fotos con flash.",
+            options: ["tomen", "toman", "tomarán", "tomaban"],
+            answer: "tomen",
+            translation: "The museum rules prohibit visitors from taking photos with flash.",
+            rule: "Verbs of prohibition ('prohibir que') require the subjunctive mood ('tomen')."
+        },
+        {
+            sentence: "No estoy completamente seguro de que ellos ___ la dirección correcta.",
+            options: ["tengan", "tienen", "tendrán", "tenían"],
+            answer: "tengan",
+            translation: "I am not completely sure that they have the correct address.",
+            rule: "Expressions of uncertainty ('no estar seguro de que') take the subjunctive ('tengan')."
+        },
+        {
+            sentence: "Estoy completamente seguro de que ellos ___ la dirección correcta.",
+            options: ["tienen", "tengan", "tuvieran", "tuviesen"],
+            answer: "tienen",
+            translation: "I am completely sure that they have the correct address.",
+            rule: "Expressions of absolute certainty ('estar seguro de que') take the indicative ('tienen')."
+        },
+        {
+            sentence: "Te presto estas notas para que ___ repasar antes del examen final.",
+            options: ["puedas", "puedes", "podrás", "podías"],
+            answer: "puedas",
+            translation: "I lend you these notes so that you can review before the final exam.",
+            rule: "Purpose clauses introduced by 'para que' always require the subjunctive ('puedas')."
+        },
+        {
+            sentence: "Salieron de la reunión en completo silencio sin que nadie los ___.",
+            options: ["viera", "vio", "veía", "verá"],
+            answer: "viera",
+            translation: "They left the meeting in complete silence without anyone seeing them.",
+            rule: "Conjunctions of negative circumstance ('sin que') always require the subjunctive ('viera')."
+        },
+        {
+            sentence: "Iremos a caminar por el bosque esta tarde a menos que ___ a llover.",
+            options: ["empiece", "empieza", "empezará", "empezaba"],
+            answer: "empiece",
+            translation: "We will go walking in the forest this afternoon unless it begins to rain.",
+            rule: "Conditional conjunctions ('a menos que') always take the subjunctive ('empiece')."
+        },
+        {
+            sentence: "Debemos organizar toda la sala antes de que ___ los primeros invitados.",
+            options: ["lleguen", "llegan", "llegarán", "llegaban"],
+            answer: "lleguen",
+            translation: "We must organize the entire living room before the first guests arrive.",
+            rule: "Temporal 'antes de que' always requires the subjunctive, regardless of tense."
+        },
+        {
+            sentence: "Te ayudaré con la mudanza después de que ___ mis exámenes finales.",
+            options: ["termine", "termino", "terminaré", "terminaba"],
+            answer: "termine",
+            translation: "I will help you with the move after I finish my final exams.",
+            rule: "Temporal 'después de que' referring to a future event triggers the subjunctive ('termine')."
+        },
+        {
+            sentence: "Esperaremos pacientemente en la estación hasta que ___ el próximo tren.",
+            options: ["venga", "viene", "vendrá", "venía"],
+            answer: "venga",
+            translation: "We will wait patiently at the station until the next train arrives.",
+            rule: "Temporal 'hasta que' pointing to an anticipated future moment triggers the subjunctive ('venga')."
+        },
+        {
+            sentence: "Ayer nos quedamos esperando en la sala hasta que ___ el médico de guardia.",
+            options: ["llegó", "llegara", "llegue", "llegase"],
+            answer: "llegó",
+            translation: "Yesterday we stayed waiting in the room until the on-call doctor arrived.",
+            rule: "Temporal 'hasta que' describing an actual completed past fact takes the indicative ('llegó')."
+        },
+        {
+            sentence: "En esta pequeña empresa no hay nadie que ___ hablar alemán.",
+            options: ["sepa", "sabe", "sabrá", "sabía"],
+            answer: "sepa",
+            translation: "In this small company there is no one who knows how to speak German.",
+            rule: "Negated existence in the main clause ('no hay nadie que') requires the subjunctive ('sepa')."
+        },
+        {
+            sentence: "Es una verdadera lástima que tú no ___ acompañarnos al viaje.",
+            options: ["puedas", "puedes", "podrás", "podías"],
+            answer: "puedas",
+            translation: "It is a real shame that you cannot accompany us on the trip.",
+            rule: "Impersonal expressions conveying emotional evaluation ('es una lástima que') take the subjunctive."
+        },
+        {
+            sentence: "Es completamente verdad que la práctica constante ___ la perfección.",
+            options: ["hace", "haga", "hiciera", "hiciese"],
+            answer: "hace",
+            translation: "It is completely true that constant practice makes perfection.",
+            rule: "Impersonal expressions stating truth or fact ('es verdad que') take the indicative ('hace')."
+        },
+        {
+            sentence: "El profesor de química exige que todos los alumnos ___ puntuales al laboratorio.",
+            options: ["sean", "son", "serán", "fueron"],
+            answer: "sean",
+            translation: "The chemistry teacher demands that all students be punctual to the laboratory.",
+            rule: "Verbs of demand or insistence ('exigir que') trigger the subjunctive mood ('sean')."
         }
     ];
 
@@ -502,6 +1203,7 @@ const EsGrammarStudio = (function () {
                     <div class="btn-group" role="group">
                         <button type="button" class="btn btn-outline-primary" data-count="5">5</button>
                         <button type="button" class="btn btn-outline-primary" data-count="10">10</button>
+                        <button type="button" class="btn btn-outline-primary" data-count="20">20</button>
                         <button type="button" class="btn btn-outline-primary" data-count="${pool.length}">Todas (${pool.length})</button>
                     </div>
                 </div>
@@ -644,7 +1346,8 @@ const EsGrammarStudio = (function () {
     return {
         TABS,
         render,
-        stop
+        stop,
+        _poolFor
     };
 })();
 
