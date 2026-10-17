@@ -207,6 +207,32 @@ async function runTests() {
     global.navigator.mediaDevices.getUserMedia = origGetUserMedia;
     console.log('✓ Async iOS MediaRecorder flush preserves recording and transcribes cleanly');
 
+    console.log('7. Running iOS AudioContext whose pre-getUserMedia MediaStreamAudioSourceNode outputs 0.0 falls through to Whisper instead of no-speech...');
+    class ZeroFloatIosAudioContext {
+        constructor() { this.state = 'running'; }
+        resume() { this.state = 'running'; return Promise.resolve(); }
+        close() { this.state = 'closed'; return Promise.resolve(); }
+        createMediaStreamSource() { return { connect: () => {}, disconnect: () => {} }; }
+        createAnalyser() {
+            return {
+                fftSize: 256,
+                frequencyBinCount: 128,
+                connect: () => {},
+                disconnect: () => {},
+                getByteFrequencyData: arr => arr.fill(0),
+                getByteTimeDomainData: arr => arr.fill(128),
+                getFloatTimeDomainData: arr => arr.fill(0)
+            };
+        }
+    }
+    global.AudioContext = ZeroFloatIosAudioContext;
+    silenceTimerMs = 40;
+    const zeroFloatRes = await listenInSilence();
+    assert.deepStrictEqual(zeroFloatRes.errors, [], 'Running iOS AudioContext with 0.0 float output must not falsely report no-speech');
+    assert.deepStrictEqual(zeroFloatRes.finals, ['hola'], 'Recording must be sent to Whisper when createMediaStreamSource outputs 0.0');
+    global.AudioContext = MockAudioContext;
+    console.log('✓ Running iOS AudioContext with zero-float WebKit bug sends recording to Whisper');
+
     console.log('\nAll iOS meter tests passed successfully!');
     process.exit(0);
 }

@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-10-17-ios-speaking-fix';
+const CACHE_VERSION = 'v2026-10-17-ios-speaking-v2';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -128,10 +128,10 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(SHELL_CACHE_NAME).then(cache => {
             return cache.addAll(PRECACHE_ASSETS);
-        }).then(() => {
-            return self.skipWaiting();
         }).catch(err => {
             console.error('ServiceWorker precache failed:', err);
+        }).then(() => {
+            return self.skipWaiting();
         })
     );
 });
@@ -210,22 +210,18 @@ self.addEventListener('fetch', event => {
     }
 
     // C. App Shell (HTML, CSS, JS, icons)
-    // Strategy: Stale-While-Revalidate with Precache
+    // Strategy: Network-First with Cache Fallback so code updates apply immediately online
     event.respondWith(
-        caches.match(request, { ignoreSearch: true }).then(cachedResponse => {
-            const fetchPromise = fetch(request).then(networkResponse => {
-                if (networkResponse && networkResponse.status === 200) {
-                    const responseClone = networkResponse.clone();
-                    caches.open(SHELL_CACHE_NAME).then(cache => {
-                        cache.put(request, responseClone);
-                    });
-                }
-                return networkResponse;
-            }).catch(() => {
-                // Offline and no network - return cachedResponse if present
-            });
-
-            return cachedResponse || fetchPromise;
+        fetch(request).then(networkResponse => {
+            if (networkResponse && networkResponse.status === 200) {
+                const responseClone = networkResponse.clone();
+                caches.open(SHELL_CACHE_NAME).then(cache => {
+                    cache.put(request, responseClone);
+                });
+            }
+            return networkResponse;
+        }).catch(() => {
+            return caches.match(request, { ignoreSearch: true });
         })
     );
 });

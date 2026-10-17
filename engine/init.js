@@ -425,16 +425,28 @@ function _initServiceWorker() {
         return;
     }
 
+    const hadController = !!navigator.serviceWorker.controller;
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (hadController && !refreshing) {
+            refreshing = true;
+            window.location.reload();
+        }
+    });
+
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').then(reg => {
+        navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' }).then(reg => {
             console.log('Parlour: ServiceWorker registered successfully, scope:', reg.scope);
+            if (typeof reg.update === 'function') {
+                reg.update().catch(() => {});
+            }
 
             reg.addEventListener('updatefound', () => {
                 const newWorker = reg.installing;
                 if (!newWorker) return;
                 newWorker.addEventListener('statechange', () => {
                     if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                        console.log('Parlour: New content available; will apply on refresh.');
+                        newWorker.postMessage({ type: 'SKIP_WAITING' });
                     }
                 });
             });

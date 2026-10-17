@@ -71,6 +71,119 @@ const SpeechInput = (function () {
         return !!getSttEndpoint() && typeof fetch === 'function';
     }
 
+    function _encodeWav16k(samples, srcRate) {
+        const targetRate = 16000;
+        const ratio = (srcRate && srcRate > 0) ? (srcRate / targetRate) : 1;
+        const outLength = Math.max(1, Math.floor(samples.length / ratio));
+        const buffer = new ArrayBuffer(44 + outLength * 2);
+        const view = new DataView(buffer);
+        const writeStr = (off, s) => { for (let i = 0; i < s.length; i++) view.setUint8(off + i, s.charCodeAt(i)); };
+
+        writeStr(0, 'RIFF');
+        view.setUint32(4, 36 + outLength * 2, true);
+        writeStr(8, 'WAVE');
+        writeStr(12, 'fmt ');
+        view.setUint32(16, 16, true);
+        view.setUint16(20, 1, true);
+        view.setUint16(22, 1, true);
+        view.setUint32(24, targetRate, true);
+        view.setUint32(28, targetRate * 2, true);
+        view.setUint16(32, 2, true);
+        view.setUint16(34, 16, true);
+        writeStr(36, 'data');
+        view.setUint32(40, outLength * 2, true);
+
+        let offset = 44;
+        for (let i = 0; i < outLength; i++) {
+            const srcIdx = Math.min(samples.length - 1, Math.floor(i * ratio));
+            const s = Math.max(-1, Math.min(1, samples[srcIdx] || 0));
+            view.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+            offset += 2;
+        }
+        return new Blob([buffer], { type: 'audio/wav' });
+    }
+
+    function _encodePcmChunksToWav(chunks, sampleRate) {
+        if (!chunks || chunks.length === 0) return null;
+        let totalLen = 0;
+        for (let i = 0; i < chunks.length; i++) totalLen += chunks[i].length;
+        if (totalLen === 0) return null;
+        const merged = new Float32Array(totalLen);
+        let offset = 0;
+        for (let i = 0; i < chunks.length; i++) {
+            merged.set(chunks[i], offset);
+            offset += chunks[i].length;
+        }
+        return _encodeWav16k(merged, sampleRate || 44100);
+    }
+
+    async function _decodeBlobToWav16k(audioBlob) {
+        if (!audioBlob || typeof audioBlob.arrayBuffer !== 'function') return null;
+        const AudioCtx = (typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext));
+        if (!AudioCtx) return null;
+        let ctx = null;
+        try {
+            const rawBuf = await audioBlob.arrayBuffer();
+            if (!rawBuf || rawBuf.byteLength < 64) return null;
+            ctx = new AudioCtx();
+            if (typeof ctx.decodeAudioData !== 'function') {
+                if (typeof ctx.close === 'function') ctx.close().catch(() => {});
+                return null;
+            }
+            const decoded = await new Promise(resolve => {
+                try {
+                    const p = ctx.decodeAudioData(
+                        rawBuf.slice(0),
+                        buf => resolve(buf || null),
+                        () => resolve(null)
+                    );
+                    if (p && typeof p.then === 'function') {
+                        p.then(buf => resolve(buf || null)).catch(() => resolve(null));
+                    }
+                } catch (e) {
+                    resolve(null);
+                }
+            });
+            if (typeof ctx.close === 'function') ctx.close().catch(() => {});
+            if (!decoded || typeof decoded.getChannelData !== 'function' || decoded.length === 0) return null;
+            const ch0 = decoded.getChannelData(0);
+            let peak = 0;
+            for (let i = 0; i < ch0.length; i += 8) {
+                const a = Math.abs(ch0[i]);
+                if (a > peak) peak = a;
+            }
+            if (peak === 0) return null;
+            return _encodeWav16k(ch0, decoded.sampleRate || 44100);
+        } catch (e) {
+            if (ctx && typeof ctx.close === 'function') {
+                try { ctx.close().catch(() => {}); } catch (e2) {}
+            }
+            return null;
+        }
+    }
+
+    async function _postBlobToStt(blob, url, cleanLang, cleanHint) {
+        const type = (blob && blob.type) || 'audio/webm';
+        const headers = {
+            'Content-Type': type,
+            'X-Language': cleanLang
+        };
+        if (cleanHint) {
+            headers['X-Prompt'] = cleanHint;
+        }
+        const response = await fetch(url, {
+            method: 'POST',
+            headers,
+            body: blob
+        });
+        if (!response.ok) {
+            const errData = await response.json().catch(() => ({}));
+            throw new Error(errData.error || `STT HTTP ${response.status}`);
+        }
+        const data = await response.json();
+        return stripWhisperHallucinations((data && (data.text || data.transcript || '')).trim());
+    }
+
     async function transcribeBlob(audioBlob, lang, hint) {
         const endpoint = getSttEndpoint();
         if (!endpoint) throw new Error('No STT endpoint configured');
@@ -84,28 +197,26 @@ const SpeechInput = (function () {
             url += `&prompt=${encodeURIComponent(cleanHint)}`;
         }
 
-        const type = (audioBlob && audioBlob.type) || 'audio/webm';
-        const headers = {
-            'Content-Type': type,
-            'X-Language': cleanLang
-        };
-        if (cleanHint) {
-            headers['X-Prompt'] = cleanHint;
+        // On iOS WebKit, MediaRecorder outputs fragmented MP4 (fMP4 with empty moov stbl)
+        // which backend decoders can read as 0 samples. When real browser audio data or
+        // captured PCM is available for MP4/AAC, convert to 16kHz 16-bit mono WAV first.
+        let primaryBlob = audioBlob;
+        let fallbackBlob = null;
+        const mime = ((audioBlob && audioBlob.type) || '').toLowerCase();
+        if (audioBlob && typeof audioBlob.arrayBuffer === 'function' && (mime.includes('mp4') || mime.includes('aac') || mime.includes('m4a'))) {
+            const decodedWav = await _decodeBlobToWav16k(audioBlob);
+            if (decodedWav) {
+                primaryBlob = decodedWav;
+                fallbackBlob = audioBlob;
+            }
         }
 
-        const response = await fetch(url, {
-            method: 'POST',
-            headers,
-            body: audioBlob
-        });
-
-        if (!response.ok) {
-            const errData = await response.json().catch(() => ({}));
-            throw new Error(errData.error || `STT HTTP ${response.status}`);
+        let rawText = await _postBlobToStt(primaryBlob, url, cleanLang, cleanHint);
+        if (!rawText && fallbackBlob) {
+            try {
+                rawText = await _postBlobToStt(fallbackBlob, url, cleanLang, cleanHint);
+            } catch (e) {}
         }
-
-        const data = await response.json();
-        const rawText = stripWhisperHallucinations((data && (data.text || data.transcript || '')).trim());
         return hint ? canonicalizeTranscript(hint, rawText, cleanLang) : rawText;
     }
 
@@ -180,11 +291,17 @@ const SpeechInput = (function () {
 
     let _audioCtx = null;
     let _audioSource = null;
+    let _audioProcessor = null;
     let _audioZeroGain = null;
     let _audioAnalyser = null;
     let _audioDataArray = null;
     let _audioTimeArray = null;
     let _audioFloatTimeArray = null;
+    let _pcmChunks = [];
+    let _pcmSampleRate = 44100;
+    let _pcmPeak = 0;
+    let _pcmLevel = 0;
+    let _meterSawSignal = false;
     let _stopFlushTimer = null;
     let _armInitialSilenceFn = null;
 
@@ -195,7 +312,11 @@ const SpeechInput = (function () {
         }
     }
 
-    function _cleanupAudioAnalysis() {
+    function _disconnectAudioNodes() {
+        if (_audioProcessor) {
+            try { _audioProcessor.onaudioprocess = null; _audioProcessor.disconnect(); } catch (e) {}
+            _audioProcessor = null;
+        }
         if (_audioSource) {
             try { _audioSource.disconnect(); } catch (e) {}
             _audioSource = null;
@@ -211,6 +332,19 @@ const SpeechInput = (function () {
         _audioDataArray = null;
         _audioTimeArray = null;
         _audioFloatTimeArray = null;
+    }
+
+    function _cleanupAudioAnalysis() {
+        _disconnectAudioNodes();
+        if (_audioCtx) {
+            try {
+                if (_audioCtx.state !== 'closed' && typeof _audioCtx.close === 'function') {
+                    _audioCtx.close().catch(() => {});
+                }
+            } catch (e) {}
+            _audioCtx = null;
+        }
+        _pcmLevel = 0;
     }
 
     function _cleanupTimers() {
@@ -290,6 +424,81 @@ const SpeechInput = (function () {
         }
     }
 
+    function _connectStreamToAudioContext(ctx, stream) {
+        if (!ctx || !stream) return false;
+        _disconnectAudioNodes();
+        try {
+            ctx.onstatechange = () => {
+                if (_isListening && _audioCtx === ctx && (ctx.state === 'suspended' || ctx.state === 'interrupted') && typeof ctx.resume === 'function') {
+                    ctx.resume().catch(() => {});
+                }
+            };
+            if (ctx.state === 'suspended' && typeof ctx.resume === 'function') {
+                ctx.resume().catch(() => {});
+            }
+            if (typeof ctx.createMediaStreamSource !== 'function' || typeof ctx.createAnalyser !== 'function') {
+                return false;
+            }
+            const source = ctx.createMediaStreamSource(stream);
+            _audioSource = source;
+            _audioAnalyser = ctx.createAnalyser();
+            _audioAnalyser.fftSize = 256;
+            try {
+                _audioAnalyser.minDecibels = -90;
+                _audioAnalyser.maxDecibels = -10;
+            } catch (eDb) {}
+            _audioAnalyser.smoothingTimeConstant = 0.25;
+            source.connect(_audioAnalyser);
+
+            _audioDataArray = new Uint8Array(_audioAnalyser.frequencyBinCount || 128);
+            if (typeof _audioAnalyser.getByteTimeDomainData === 'function') {
+                _audioTimeArray = new Uint8Array(_audioAnalyser.fftSize || 256);
+            }
+            if (typeof _audioAnalyser.getFloatTimeDomainData === 'function') {
+                _audioFloatTimeArray = new Float32Array(_audioAnalyser.fftSize || 256);
+            }
+
+            if (typeof ctx.createScriptProcessor === 'function' && typeof ctx.createGain === 'function' && ctx.destination) {
+                try {
+                    const proc = ctx.createScriptProcessor(2048, 1, 1);
+                    const zeroGain = ctx.createGain();
+                    zeroGain.gain.value = 0;
+                    _pcmSampleRate = ctx.sampleRate || 44100;
+                    proc.onaudioprocess = ev => {
+                        if (!_isListening || !ev || !ev.inputBuffer) return;
+                        const ch = ev.inputBuffer.getChannelData(0);
+                        if (!ch || ch.length === 0) return;
+                        let sumSq = 0;
+                        let peak = 0;
+                        for (let i = 0; i < ch.length; i++) {
+                            const s = ch[i];
+                            const abs = Math.abs(s);
+                            if (abs > peak) peak = abs;
+                            sumSq += s * s;
+                        }
+                        if (peak > 0) {
+                            _meterSawSignal = true;
+                            if (peak > _pcmPeak) _pcmPeak = peak;
+                            const rms = Math.sqrt(sumSq / ch.length);
+                            _pcmLevel = Math.min(1.0, Math.max(rms * 16, peak * 5.0));
+                            if (_pcmChunks.length < 6500) {
+                                _pcmChunks.push(new Float32Array(ch));
+                            }
+                        }
+                    };
+                    source.connect(proc);
+                    proc.connect(zeroGain);
+                    zeroGain.connect(ctx.destination);
+                    _audioProcessor = proc;
+                    _audioZeroGain = zeroGain;
+                } catch (eProc) {}
+            }
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+
     // Capture audio stream for user playback and unsupported browser fallback
     function _startRecordingStream(options = {}) {
         if (!isRecordingSupported()) return;
@@ -305,27 +514,20 @@ const SpeechInput = (function () {
         _clearStopFlushTimer();
         const currentToken = ++_sessionToken;
 
-        // Create or resume the level-meter AudioContext synchronously inside the user tap
-        // that started listening. Reusing a single unlocked AudioContext prevents iOS Safari
-        // from leaving a newly created context suspended after getUserMedia resolves.
+        // Create the level-meter AudioContext synchronously inside the tap
+        // that started listening. iOS Safari leaves a context created later
+        // suspended if not unlocked during the tap.
         _cleanupAudioAnalysis();
+        _pcmChunks = [];
+        _pcmPeak = 0;
+        _pcmLevel = 0;
+        _meterSawSignal = false;
         const AudioCtx = (typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext));
         if (AudioCtx) {
             try {
-                if (!_audioCtx || _audioCtx.state === 'closed') {
-                    _audioCtx = new AudioCtx();
-                }
-                if (_audioCtx.state !== 'running' && typeof _audioCtx.resume === 'function') {
+                _audioCtx = new AudioCtx();
+                if (_audioCtx.state === 'suspended' && typeof _audioCtx.resume === 'function') {
                     _audioCtx.resume().catch(() => {});
-                }
-                if (typeof _audioCtx.createBuffer === 'function' && typeof _audioCtx.createBufferSource === 'function' && _audioCtx.destination) {
-                    try {
-                        const unlockBuf = _audioCtx.createBuffer(1, 1, 22050);
-                        const unlockSrc = _audioCtx.createBufferSource();
-                        unlockSrc.buffer = unlockBuf;
-                        unlockSrc.connect(_audioCtx.destination);
-                        if (typeof unlockSrc.start === 'function') unlockSrc.start(0);
-                    } catch (eUnlock) {}
                 }
             } catch (e) {
                 _audioCtx = null;
@@ -338,6 +540,10 @@ const SpeechInput = (function () {
                 return;
             }
             _mediaStream = stream;
+
+            if (typeof navigator !== 'undefined' && navigator.audioSession) {
+                try { navigator.audioSession.type = 'play-and-record'; } catch (e) {}
+            }
 
             // Reset grace period once microphone hardware actually starts streaming
             _listenStartTime = Date.now();
@@ -353,61 +559,11 @@ const SpeechInput = (function () {
                     const AC = (typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext));
                     if (AC) _audioCtx = new AC();
                 }
-                if (_audioCtx) {
-                    _audioCtx.onstatechange = () => {
-                        if (_isListening && _audioCtx && (_audioCtx.state === 'suspended' || _audioCtx.state === 'interrupted') && typeof _audioCtx.resume === 'function') {
-                            _audioCtx.resume().catch(() => {});
-                        }
-                    };
-                    if (_audioCtx.state !== 'running' && typeof _audioCtx.resume === 'function') {
-                        _audioCtx.resume().catch(() => {});
-                    }
-                    let source = null;
-                    if (typeof _audioCtx.createMediaStreamSource === 'function') {
-                        try {
-                            source = _audioCtx.createMediaStreamSource(stream);
-                        } catch (errSource) {
-                            try {
-                                const AC = (typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext));
-                                if (AC) {
-                                    _audioCtx = new AC();
-                                    if (_audioCtx.state !== 'running' && typeof _audioCtx.resume === 'function') {
-                                        _audioCtx.resume().catch(() => {});
-                                    }
-                                    source = _audioCtx.createMediaStreamSource(stream);
-                                }
-                            } catch (errSource2) {}
-                        }
-                    }
-                    if (source && typeof _audioCtx.createAnalyser === 'function') {
-                        _audioSource = source;
-                        _audioAnalyser = _audioCtx.createAnalyser();
-                        _audioAnalyser.fftSize = 256;
-                        try {
-                            _audioAnalyser.minDecibels = -90;
-                            _audioAnalyser.maxDecibels = -10;
-                        } catch (eDb) {}
-                        _audioAnalyser.smoothingTimeConstant = 0.25;
-                        source.connect(_audioAnalyser);
-
-                        // Connect analyser through a zero-gain node to destination so mobile Chrome and
-                        // iOS Safari WebKit audio engines pull mic frames through the analyser
-                        if (typeof _audioCtx.createGain === 'function' && _audioCtx.destination) {
-                            try {
-                                const zeroGain = _audioCtx.createGain();
-                                zeroGain.gain.value = 0;
-                                _audioAnalyser.connect(zeroGain);
-                                zeroGain.connect(_audioCtx.destination);
-                                _audioZeroGain = zeroGain;
-                            } catch (eDest) {}
-                        }
-                        _audioDataArray = new Uint8Array(_audioAnalyser.frequencyBinCount || 128);
-                        if (typeof _audioAnalyser.getByteTimeDomainData === 'function') {
-                            _audioTimeArray = new Uint8Array(_audioAnalyser.fftSize || 256);
-                        }
-                        if (typeof _audioAnalyser.getFloatTimeDomainData === 'function') {
-                            _audioFloatTimeArray = new Float32Array(_audioAnalyser.fftSize || 256);
-                        }
+                if (_audioCtx && !_connectStreamToAudioContext(_audioCtx, stream)) {
+                    const AC = (typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext));
+                    if (AC) {
+                        _audioCtx = new AC();
+                        _connectStreamToAudioContext(_audioCtx, stream);
                     }
                 }
             } catch (e) {}
@@ -449,7 +605,13 @@ const SpeechInput = (function () {
                 }
                 if (currentToken !== _sessionToken) return;
 
-                if (!_recordedChunks || _recordedChunks.length === 0) {
+                const pcmWavBlob = (_pcmChunks.length > 0 && _pcmPeak > 0.002)
+                    ? _encodePcmChunksToWav(_pcmChunks, _pcmSampleRate)
+                    : null;
+                _pcmChunks = [];
+
+                const hasRecorderChunks = _recordedChunks && _recordedChunks.length > 0;
+                if (!hasRecorderChunks && !pcmWavBlob) {
                     if (_isCloudSttSession) {
                         const onErr = options.onError || null;
                         if (onErr) onErr('no-speech');
@@ -460,7 +622,7 @@ const SpeechInput = (function () {
 
                 _cleanAudioUrl();
                 const type = (recorder && recorder.mimeType) || mimeType || 'audio/webm';
-                _recordedAudioBlob = new Blob(_recordedChunks, { type });
+                _recordedAudioBlob = hasRecorderChunks ? new Blob(_recordedChunks, { type }) : pcmWavBlob;
                 _recordedAudioUrl = URL.createObjectURL(_recordedAudioBlob);
                 const audioCb = _onAudioReadyCallback || options.onAudioReady || null;
                 _onAudioReadyCallback = null;
@@ -472,7 +634,16 @@ const SpeechInput = (function () {
                     const onStatus = options.onStatusChange || null;
                     if (onStatus) onStatus('analyzing');
                     try {
-                        const transcript = await transcribeBlob(_recordedAudioBlob, lang, options.target);
+                        // Prefer clean 16kHz PCM WAV on iOS MP4 sessions when live PCM was captured,
+                        // falling back to the MediaRecorder blob if needed.
+                        const isMp4 = String(type).toLowerCase().includes('mp4') || String(type).toLowerCase().includes('aac');
+                        let transcript = '';
+                        if (pcmWavBlob && isMp4 && typeof _recordedAudioBlob.arrayBuffer === 'function') {
+                            transcript = await transcribeBlob(pcmWavBlob, lang, options.target);
+                        }
+                        if (!transcript) {
+                            transcript = await transcribeBlob(_recordedAudioBlob, lang, options.target);
+                        }
                         if (currentToken !== _sessionToken) return;
                         if (transcript) {
                             cb(transcript);
@@ -492,8 +663,11 @@ const SpeechInput = (function () {
             };
 
             try {
-                // Do not pass timeslice (e.g. 100ms) on iOS WebKit where it corrupts MP4 chunks
-                recorder.start();
+                try {
+                    recorder.start(200);
+                } catch (eSlice) {
+                    recorder.start();
+                }
                 if (_audioCtx && _audioCtx.state !== 'running' && typeof _audioCtx.resume === 'function') {
                     _audioCtx.resume().catch(() => {});
                 }
@@ -544,9 +718,6 @@ const SpeechInput = (function () {
         if (typeof Sound !== 'undefined' && typeof Sound.suspend === 'function') {
             Sound.suspend();
         }
-        if (typeof navigator !== 'undefined' && navigator.audioSession) {
-            try { navigator.audioSession.type = 'play-and-record'; } catch (e) {}
-        }
 
         if (_isListening) {
             cancelListening();
@@ -555,9 +726,17 @@ const SpeechInput = (function () {
             _stopTracks();
         }
 
+        if (typeof navigator !== 'undefined' && navigator.audioSession) {
+            try { navigator.audioSession.type = 'play-and-record'; } catch (e) {}
+        }
+
         _cleanAudioUrl();
         _cleanupTimers();
         _recordedChunks = [];
+        _pcmChunks = [];
+        _pcmPeak = 0;
+        _pcmLevel = 0;
+        _meterSawSignal = false;
         _accumulatedFinal = '';
         _currentInterim = '';
         _bestTranscript = '';
@@ -577,15 +756,30 @@ const SpeechInput = (function () {
         const manualStop = !!options.manualStop;
         const maxDurationMs = options.maxDurationMs || (manualStop ? 300000 : 30000);
 
+        const RecognitionClass = _getRecognitionClass();
+
+        // Mobile browsers (both iOS WebKit and Android Chrome) require single-shot recognition (continuous: false).
+        // Android Chrome does not support continuous: true reliably and aborts or fires premature no-speech errors.
+        const isMobile = typeof navigator !== 'undefined' && (
+            /iPad|iPhone|iPod|Android/i.test(navigator.userAgent) ||
+            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+        );
+
+        const isAndroid = typeof navigator !== 'undefined' && /Android/i.test(navigator.userAgent);
+
         // Allow learner to read prompt/prepare before speaking (30s in manual mode, 10s in quick drills)
         _armInitialSilenceFn = () => {
             if (_initialSilenceTimeout) clearTimeout(_initialSilenceTimeout);
             _initialSilenceTimeout = setTimeout(() => {
                 if (_isListening && !_hasSpoken && !manualStop) {
                     // In a cloud session, a meter that never got a running AudioContext
+                    // or never received non-zero float signal from WebKit's MediaStreamAudioSourceNode
                     // can't tell silence from speech -- send the recording to Whisper
                     // (stopListening does) instead of declaring 'no-speech'.
-                    const meterBlind = _isCloudSttSession && !(_audioCtx && _audioCtx.state === 'running');
+                    const meterBlind = _isCloudSttSession && (
+                        !(_audioCtx && _audioCtx.state === 'running') ||
+                        (!!_audioFloatTimeArray && !_meterSawSignal)
+                    );
                     stopListening();
                     if (meterBlind) return;
                     _onFinalCallback = null;
@@ -605,6 +799,8 @@ const SpeechInput = (function () {
         let simAngle = 0;
         let consecutiveVoiceFrames = 0;
         let lastNotifiedHearing = false;
+        let zeroSignalTicks = 0;
+        let retriedPostGumCtx = false;
         _meterInterval = setInterval(() => {
             if (!_isListening) return;
 
@@ -626,7 +822,8 @@ const SpeechInput = (function () {
                     }
                     const speechAvg = speechBins > 0 ? speechSum / speechBins : 0;
                     const fullAvg = _audioDataArray.length > 0 ? fullSum / _audioDataArray.length : 0;
-                    let freqLevel = Math.max(speechAvg / 60, fullAvg / 75);
+                    let freqLevel = Math.max(speechAvg / 55, fullAvg / 70);
+                    if (fullSum > 0) _meterSawSignal = true;
 
                     let timeLevel = 0;
                     if (_audioFloatTimeArray && typeof _audioAnalyser.getFloatTimeDomainData === 'function') {
@@ -639,9 +836,31 @@ const SpeechInput = (function () {
                             if (abs > peak) peak = abs;
                             sumSq += s * s;
                         }
+                        if (peak > 0) {
+                            _meterSawSignal = true;
+                        } else if (_mediaStream && !retriedPostGumCtx) {
+                            zeroSignalTicks++;
+                            // iOS WebKit Bug 216762/230878: an AudioContext created before getUserMedia()
+                            // activates VoiceProcessingIO outputs pure 0.0 from createMediaStreamSource.
+                            // Recreate the AudioContext now that the mic stream is live.
+                            if (zeroSignalTicks >= 3) {
+                                retriedPostGumCtx = true;
+                                const AC = (typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext));
+                                if (AC) {
+                                    try {
+                                        if (_audioCtx && _audioCtx.state !== 'closed' && typeof _audioCtx.close === 'function') {
+                                            _audioCtx.close().catch(() => {});
+                                        }
+                                        _audioCtx = new AC();
+                                        _connectStreamToAudioContext(_audioCtx, _mediaStream);
+                                    } catch (eRebind) {}
+                                }
+                            }
+                        }
                         const rms = Math.sqrt(sumSq / _audioFloatTimeArray.length);
-                        timeLevel = Math.max(rms * 7.5, peak * 2.2);
+                        timeLevel = Math.max(rms * 16, peak * 5.0);
                     } else if (_audioTimeArray && typeof _audioAnalyser.getByteTimeDomainData === 'function') {
+                        if (_audioCtx && _audioCtx.state === 'running') _meterSawSignal = true;
                         _audioAnalyser.getByteTimeDomainData(_audioTimeArray);
                         let sumSq = 0;
                         let peakDev = 0;
@@ -651,10 +870,13 @@ const SpeechInput = (function () {
                             if (abs > peakDev) peakDev = abs;
                             sumSq += dev * dev;
                         }
-                        timeLevel = Math.max(Math.sqrt(sumSq / _audioTimeArray.length) * 4.5, peakDev * 2.0);
+                        timeLevel = Math.max(Math.sqrt(sumSq / _audioTimeArray.length) * 8.0, peakDev * 4.0);
+                    } else if (_audioCtx && _audioCtx.state === 'running') {
+                        _meterSawSignal = true;
                     }
 
-                    realLevel = Math.min(1.0, Math.max(0, freqLevel, timeLevel));
+                    realLevel = Math.min(1.0, Math.max(0, freqLevel, timeLevel, _pcmLevel));
+                    _pcmLevel *= 0.6;
                     if (realLevel > 0.05) {
                         consecutiveVoiceFrames++;
                         if (consecutiveVoiceFrames >= 2) {
@@ -702,17 +924,6 @@ const SpeechInput = (function () {
                 onAudioLevel(realLevel, { isHearingVoice: isHearing, hasSpoken: _hasSpoken });
             }
         }, 60);
-
-        const RecognitionClass = _getRecognitionClass();
-
-        // Mobile browsers (both iOS WebKit and Android Chrome) require single-shot recognition (continuous: false).
-        // Android Chrome does not support continuous: true reliably and aborts or fires premature no-speech errors.
-        const isMobile = typeof navigator !== 'undefined' && (
-            /iPad|iPhone|iPod|Android/i.test(navigator.userAgent) ||
-            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
-        );
-
-        const isAndroid = typeof navigator !== 'undefined' && /Android/i.test(navigator.userAgent);
 
         // STT Provider resolution: 'auto' (default), 'cloud', 'native'
         const requestedProvider = options.sttProvider || 'auto';
