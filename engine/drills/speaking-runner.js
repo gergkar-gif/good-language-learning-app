@@ -297,10 +297,12 @@ const SpeakingRunner = (function () {
                     }
                 }
                 if (bars && bars.length > 0) {
-                    const factors = [0.6, 1.1, 1.5, 1.1, 0.7];
+                    const now = Date.now() / 140;
+                    const factors = [0.75, 1.15, 1.55, 1.2, 0.8];
                     bars.forEach((bar, idx) => {
-                        const h = Math.min(1.0, Math.max(0.18, level * factors[idx % factors.length]));
-                        bar.style.transform = `scaleY(${h})`;
+                        const waveOffset = Math.sin(now + idx * 0.9) * 0.07;
+                        const h = Math.min(1.0, Math.max(0.15, (level * factors[idx % factors.length]) + waveOffset));
+                        bar.style.transform = `scaleY(${h.toFixed(3)})`;
                     });
                 }
             },

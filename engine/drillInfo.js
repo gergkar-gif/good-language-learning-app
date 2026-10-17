@@ -18,6 +18,20 @@ const DrillInfo = (function () {
     // Each entry: what this trains, why it might feel strange at first,
     // what "getting better" actually looks like — not a feature list.
     const COPY = {
+        'es-grammar-studio': {
+            title: 'About Spanish Grammar Studio',
+            body: [
+                "Targeted contrastive practice on the core mechanics of Spanish: Ser vs Estar, Por vs Para, Pretérito vs Imperfecto, Clitic Pronouns & Se Lo, and Subjunctive Triggers.",
+                "Rather than testing rules in isolation, exercises pair confusing structures directly against each other with instant feedback explaining why one form fits and the other fails."
+            ]
+        },
+        'fr-grammar-studio': {
+            title: 'About French Grammar Studio',
+            body: [
+                "Focused French structural mechanics practice covering clitic pronoun placement, past participle agreement, and subjunctive vs indicative triggers.",
+                "Direct comparative items with immediate rule feedback to turn common grammar friction points into reliable instincts."
+            ]
+        },
         'hu-verb-studio': {
             title: 'About Verb & Morphology Practice',
             body: [

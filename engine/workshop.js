@@ -55,6 +55,15 @@ const Workshop = (function () {
             category: 'studios'
         },
         {
+            id: 'es-grammar-studio',
+            icon: 'grammar',
+            title: 'Spanish Grammar Studio',
+            sub: 'Ser vs estar, por vs para, preterite vs imperfect, clitic pronouns, and subjunctive triggers.',
+            containerId: 'es-grammar-studio-root',
+            langs: ['es', 'es-latam', 'es-es'],
+            category: 'studios'
+        },
+        {
             id: 'hu-cultural-exam',
             icon: 'hu-cultural-exam',
             title: 'Hungarian Cultural Exam',
@@ -385,6 +394,7 @@ const Workshop = (function () {
             video: typeof VideoDriller !== 'undefined' ? VideoDriller : null,
             'hu-verb-studio': typeof HuVerbStudio !== 'undefined' ? HuVerbStudio : null,
             'fr-grammar-studio': typeof FrGrammarStudio !== 'undefined' ? FrGrammarStudio : null,
+            'es-grammar-studio': typeof EsGrammarStudio !== 'undefined' ? EsGrammarStudio : null,
             'hu-cultural-exam': typeof HuCulturalExam !== 'undefined' ? HuCulturalExam : null,
             'es-ccse-exam': typeof CcseExam !== 'undefined' ? CcseExam : null,
             'es-dele-a1-exam': typeof DeleA1Exam !== 'undefined' ? DeleA1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleA1Exam : null),

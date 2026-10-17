@@ -436,22 +436,31 @@ const CefrExam = (function () {
                             if (transcriptBox) transcriptBox.value = text;
                         }
                         _state.speakingIsRecording = false;
-                        _renderActiveTarea();
+                        render(_container);
                     },
                     onAudioReady: (audioUrl) => {
                         _state.speakingAudioBlobUrl = audioUrl;
                         if (!_state.speakingIsRecording) {
-                            _renderActiveTarea();
+                            render(_container);
+                        }
+                    },
+                    onAudioLevel: (level, meta) => {
+                        const statusEl = document.getElementById('cefr-mic-status-label');
+                        if (statusEl && _state.speakingIsRecording && meta && meta.isHearingVoice) {
+                            const isHu = _id.includes('hu');
+                            statusEl.textContent = isHu ? 'Hang érzékelve — beszélj tovább…' : 'Detectando voz — sigue hablando…';
                         }
                     },
                     onError: (err) => {
-                        console.warn('Microphone access unavailable or denied:', err);
+                        console.warn('Microphone error:', err);
                         _state.speakingIsRecording = false;
-                        _updateSpeakingUI();
-                        const isHu = _id.includes('hu');
-                        alert(isHu
-                            ? 'A mikrofonhoz való hozzáférés nem sikerült. A válaszodat a szövegmezőbe is megírhatod.'
-                            : 'No se pudo acceder al micrófono. Puedes redactar tu respuesta oral en el campo de texto.');
+                        render(_container);
+                        if (err === 'permission-denied' || err === 'service-not-allowed' || err === 'insecure-context' || err === 'device-busy') {
+                            const isHu = _id.includes('hu');
+                            alert(isHu
+                                ? 'A mikrofonhoz való hozzáférés nem sikerült. A válaszodat a szövegmezőbe is megírhatod.'
+                                : 'No se pudo acceder al micrófono. Puedes redactar tu respuesta oral en el campo de texto.');
+                        }
                     }
                 });
                 return;

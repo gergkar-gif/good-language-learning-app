@@ -150,6 +150,63 @@ async function runTests() {
     assert.deepStrictEqual(cancelResult.finals, [], 'cancelListening must not fire onFinal');
     console.log('✓ cancelListening suppresses stale callbacks');
 
+    console.log('6. Async iOS WebKit MediaRecorder.stop() flushes chunks before stopping tracks or leaving play-and-record...');
+    let trackAliveAtFlush = false;
+    let sessionAtFlush = null;
+    let trackStoppedAfterOnstop = false;
+    global.navigator.audioSession = { type: 'playback' };
+    const asyncTrack = {
+        readyState: 'live',
+        stop() { this.readyState = 'ended'; trackStoppedAfterOnstop = true; }
+    };
+    const origGetUserMedia = global.navigator.mediaDevices.getUserMedia;
+    global.navigator.mediaDevices.getUserMedia = async () => ({
+        active: true,
+        getAudioTracks: () => [asyncTrack],
+        getTracks: () => [asyncTrack]
+    });
+    class AsyncIosMediaRecorder {
+        constructor() { this.state = 'inactive'; this.mimeType = 'audio/mp4'; }
+        start() { this.state = 'recording'; }
+        stop() {
+            this.state = 'inactive';
+            realSetTimeout(() => {
+                trackAliveAtFlush = (asyncTrack.readyState === 'live');
+                sessionAtFlush = global.navigator.audioSession.type;
+                // Simulate iOS WebKit AVAssetWriter producing 0 bytes if track was already killed
+                const size = trackAliveAtFlush ? 500 : 0;
+                if (this.ondataavailable) this.ondataavailable({ data: { size } });
+                if (this.onstop) this.onstop();
+            }, 25);
+        }
+    }
+    AsyncIosMediaRecorder.isTypeSupported = () => true;
+    global.MediaRecorder = AsyncIosMediaRecorder;
+
+    const asyncRecResult = { audioUrls: [], finals: [], errors: [] };
+    SpeechInput.startListening({
+        target: 'hola',
+        preferRecording: true,
+        lang: 'es-ES',
+        onAudioReady: u => asyncRecResult.audioUrls.push(u),
+        onFinal: t => asyncRecResult.finals.push(t),
+        onError: e => asyncRecResult.errors.push(e)
+    });
+    await wait(20);
+    SpeechInput.stopListening();
+    assert.strictEqual(asyncTrack.readyState, 'live', 'Track must remain live while async MediaRecorder.stop() flushes');
+    await wait(60);
+    assert.strictEqual(trackAliveAtFlush, true, 'Track must still be live when ondataavailable flushes');
+    assert.strictEqual(sessionAtFlush, 'play-and-record', 'audioSession must stay play-and-record until flush finishes');
+    assert.strictEqual(trackStoppedAfterOnstop, true, 'Track must be stopped once recorder.onstop runs');
+    assert.strictEqual(global.navigator.audioSession.type, 'playback', 'audioSession must return to playback after recorder.onstop');
+    assert.strictEqual(asyncRecResult.audioUrls.length, 1, 'onAudioReady must receive recorded blob URL');
+    assert.deepStrictEqual(asyncRecResult.finals, ['hola'], 'onFinal must receive transcribed speech');
+    assert.deepStrictEqual(asyncRecResult.errors, [], 'Must not report no-speech');
+    global.MediaRecorder = MockMediaRecorder;
+    global.navigator.mediaDevices.getUserMedia = origGetUserMedia;
+    console.log('✓ Async iOS MediaRecorder flush preserves recording and transcribes cleanly');
+
     console.log('\nAll iOS meter tests passed successfully!');
     process.exit(0);
 }

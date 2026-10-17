@@ -80,6 +80,21 @@ const huStudio = Workshop.activeDriller();
 assert(huStudio && huStudio.id === 'hu-verb-studio', 'hu-verb-studio should open');
 console.log('[PASS] Verb & Morphology Studio opens successfully.');
 
+// Test EsGrammarStudio
+require('../../engine/drills/es-grammar-studio.js');
+assert(typeof EsGrammarStudio !== 'undefined', 'EsGrammarStudio must be defined');
+assert(typeof EsGrammarStudio.render === 'function', 'EsGrammarStudio must export render()');
+assert(typeof EsGrammarStudio.stop === 'function', 'EsGrammarStudio must export stop()');
+assert(Array.isArray(EsGrammarStudio.TABS) && EsGrammarStudio.TABS.length === 5, 'EsGrammarStudio must define 5 tabs');
+Workshop.close();
+Workshop.open('es-grammar-studio');
+const esStudio = Workshop.activeDriller();
+assert(esStudio && esStudio.id === 'es-grammar-studio', 'es-grammar-studio should open in Workshop');
+const esDrillerDef = Workshop.getDriller('es-grammar-studio');
+assert(esDrillerDef && esDrillerDef.langs.includes('es-es') && esDrillerDef.langs.includes('es-latam'), 'es-grammar-studio must support both es-es and es-latam');
+console.log('[PASS] Spanish Grammar Studio module and Workshop integration verified.');
+
+
 
 
 // 4. Test GraderEngine with Oral Modality Context

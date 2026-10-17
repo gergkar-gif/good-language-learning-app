@@ -184,6 +184,16 @@ const SpeechInput = (function () {
     let _audioAnalyser = null;
     let _audioDataArray = null;
     let _audioTimeArray = null;
+    let _audioFloatTimeArray = null;
+    let _stopFlushTimer = null;
+    let _armInitialSilenceFn = null;
+
+    function _clearStopFlushTimer() {
+        if (_stopFlushTimer) {
+            clearTimeout(_stopFlushTimer);
+            _stopFlushTimer = null;
+        }
+    }
 
     function _cleanupAudioAnalysis() {
         if (_audioSource) {
@@ -198,20 +208,14 @@ const SpeechInput = (function () {
             try { _audioZeroGain.disconnect(); } catch (e) {}
             _audioZeroGain = null;
         }
-        if (_audioCtx) {
-            try {
-                if (_audioCtx.state !== 'closed' && typeof _audioCtx.close === 'function') {
-                    _audioCtx.close().catch(() => {});
-                }
-            } catch (e) {}
-            _audioCtx = null;
-        }
         _audioDataArray = null;
         _audioTimeArray = null;
+        _audioFloatTimeArray = null;
     }
 
     function _cleanupTimers() {
         _cleanupAudioAnalysis();
+        _armInitialSilenceFn = null;
         if (_finishTimeout) {
             clearTimeout(_finishTimeout);
             _finishTimeout = null;
@@ -241,12 +245,23 @@ const SpeechInput = (function () {
         }
     }
 
+    function _releaseStream(targetStream) {
+        _clearStreamIdleTimer();
+        const s = targetStream || _mediaStream;
+        if (!s) return;
+        if (_isListening && s === _mediaStream) return;
+        s.getTracks().forEach(track => {
+            try { track.stop(); } catch (e) {}
+        });
+        if (_mediaStream === s) {
+            _mediaStream = null;
+        }
+    }
+
     function _stopTracks() {
         _clearStreamIdleTimer();
+        _clearStopFlushTimer();
         if (_mediaRecorder && _mediaRecorder.state !== 'inactive') {
-            if (_mediaRecorder.state === 'recording' && typeof _mediaRecorder.requestData === 'function') {
-                try { _mediaRecorder.requestData(); } catch (e) {}
-            }
             try { _mediaRecorder.stop(); } catch (e) {}
         }
         _mediaRecorder = null;
@@ -287,19 +302,30 @@ const SpeechInput = (function () {
 
         const lang = options.lang || getSpeechLang();
         _clearStreamIdleTimer();
+        _clearStopFlushTimer();
         const currentToken = ++_sessionToken;
 
-        // Create the level-meter AudioContext now, synchronously inside the tap
-        // that started listening. iOS Safari leaves a context created later (in
-        // the getUserMedia .then) suspended, so the meter reads silence forever
-        // and the initial-silence timer reports 'no-speech' after 10s.
+        // Create or resume the level-meter AudioContext synchronously inside the user tap
+        // that started listening. Reusing a single unlocked AudioContext prevents iOS Safari
+        // from leaving a newly created context suspended after getUserMedia resolves.
         _cleanupAudioAnalysis();
         const AudioCtx = (typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext));
         if (AudioCtx) {
             try {
-                _audioCtx = new AudioCtx();
+                if (!_audioCtx || _audioCtx.state === 'closed') {
+                    _audioCtx = new AudioCtx();
+                }
                 if (_audioCtx.state !== 'running' && typeof _audioCtx.resume === 'function') {
                     _audioCtx.resume().catch(() => {});
+                }
+                if (typeof _audioCtx.createBuffer === 'function' && typeof _audioCtx.createBufferSource === 'function' && _audioCtx.destination) {
+                    try {
+                        const unlockBuf = _audioCtx.createBuffer(1, 1, 22050);
+                        const unlockSrc = _audioCtx.createBufferSource();
+                        unlockSrc.buffer = unlockBuf;
+                        unlockSrc.connect(_audioCtx.destination);
+                        if (typeof unlockSrc.start === 'function') unlockSrc.start(0);
+                    } catch (eUnlock) {}
                 }
             } catch (e) {
                 _audioCtx = null;
@@ -307,8 +333,20 @@ const SpeechInput = (function () {
         }
 
         function _setupRecorder(stream) {
-            if (!_isListening || currentToken !== _sessionToken) return;
+            if (!_isListening || currentToken !== _sessionToken) {
+                _releaseStream(stream);
+                return;
+            }
             _mediaStream = stream;
+
+            // Reset grace period once microphone hardware actually starts streaming
+            _listenStartTime = Date.now();
+            if (!_hasSpoken && typeof _armInitialSilenceFn === 'function') {
+                _armInitialSilenceFn();
+            }
+            if (typeof options.onStatusChange === 'function') {
+                options.onStatusChange('listening');
+            }
 
             try {
                 if (!_audioCtx || _audioCtx.state === 'closed') {
@@ -316,6 +354,11 @@ const SpeechInput = (function () {
                     if (AC) _audioCtx = new AC();
                 }
                 if (_audioCtx) {
+                    _audioCtx.onstatechange = () => {
+                        if (_isListening && _audioCtx && (_audioCtx.state === 'suspended' || _audioCtx.state === 'interrupted') && typeof _audioCtx.resume === 'function') {
+                            _audioCtx.resume().catch(() => {});
+                        }
+                    };
                     if (_audioCtx.state !== 'running' && typeof _audioCtx.resume === 'function') {
                         _audioCtx.resume().catch(() => {});
                     }
@@ -339,8 +382,12 @@ const SpeechInput = (function () {
                     if (source && typeof _audioCtx.createAnalyser === 'function') {
                         _audioSource = source;
                         _audioAnalyser = _audioCtx.createAnalyser();
-                        _audioAnalyser.fftSize = 64;
-                        _audioAnalyser.smoothingTimeConstant = 0.3;
+                        _audioAnalyser.fftSize = 256;
+                        try {
+                            _audioAnalyser.minDecibels = -90;
+                            _audioAnalyser.maxDecibels = -10;
+                        } catch (eDb) {}
+                        _audioAnalyser.smoothingTimeConstant = 0.25;
                         source.connect(_audioAnalyser);
 
                         // Connect analyser through a zero-gain node to destination so mobile Chrome and
@@ -354,9 +401,12 @@ const SpeechInput = (function () {
                                 _audioZeroGain = zeroGain;
                             } catch (eDest) {}
                         }
-                        _audioDataArray = new Uint8Array(_audioAnalyser.frequencyBinCount);
+                        _audioDataArray = new Uint8Array(_audioAnalyser.frequencyBinCount || 128);
                         if (typeof _audioAnalyser.getByteTimeDomainData === 'function') {
-                            _audioTimeArray = new Uint8Array(_audioAnalyser.fftSize || 64);
+                            _audioTimeArray = new Uint8Array(_audioAnalyser.fftSize || 256);
+                        }
+                        if (typeof _audioAnalyser.getFloatTimeDomainData === 'function') {
+                            _audioFloatTimeArray = new Float32Array(_audioAnalyser.fftSize || 256);
                         }
                     }
                 }
@@ -392,6 +442,11 @@ const SpeechInput = (function () {
             };
 
             recorder.onstop = async () => {
+                _clearStopFlushTimer();
+                _releaseStream(stream);
+                if (!_isListening && typeof navigator !== 'undefined' && navigator.audioSession) {
+                    try { navigator.audioSession.type = 'playback'; } catch (e) {}
+                }
                 if (currentToken !== _sessionToken) return;
 
                 if (!_recordedChunks || _recordedChunks.length === 0) {
@@ -407,8 +462,9 @@ const SpeechInput = (function () {
                 const type = (recorder && recorder.mimeType) || mimeType || 'audio/webm';
                 _recordedAudioBlob = new Blob(_recordedChunks, { type });
                 _recordedAudioUrl = URL.createObjectURL(_recordedAudioBlob);
-                if (options.onAudioReady) options.onAudioReady(_recordedAudioUrl);
-                if (_onAudioReadyCallback) _onAudioReadyCallback(_recordedAudioUrl);
+                const audioCb = _onAudioReadyCallback || options.onAudioReady || null;
+                _onAudioReadyCallback = null;
+                if (audioCb) audioCb(_recordedAudioUrl);
 
                 if (_isCloudSttSession && _onFinalCallback) {
                     const cb = _onFinalCallback;
@@ -522,18 +578,22 @@ const SpeechInput = (function () {
         const maxDurationMs = options.maxDurationMs || (manualStop ? 300000 : 30000);
 
         // Allow learner to read prompt/prepare before speaking (30s in manual mode, 10s in quick drills)
-        _initialSilenceTimeout = setTimeout(() => {
-            if (_isListening && !_hasSpoken && !manualStop) {
-                // In a cloud session, a meter that never got a running AudioContext
-                // can't tell silence from speech -- send the recording to Whisper
-                // (stopListening does) instead of declaring 'no-speech'.
-                const meterBlind = _isCloudSttSession && !(_audioCtx && _audioCtx.state === 'running');
-                stopListening();
-                if (meterBlind) return;
-                _onFinalCallback = null;
-                onError('no-speech');
-            }
-        }, manualStop ? 30000 : 10000);
+        _armInitialSilenceFn = () => {
+            if (_initialSilenceTimeout) clearTimeout(_initialSilenceTimeout);
+            _initialSilenceTimeout = setTimeout(() => {
+                if (_isListening && !_hasSpoken && !manualStop) {
+                    // In a cloud session, a meter that never got a running AudioContext
+                    // can't tell silence from speech -- send the recording to Whisper
+                    // (stopListening does) instead of declaring 'no-speech'.
+                    const meterBlind = _isCloudSttSession && !(_audioCtx && _audioCtx.state === 'running');
+                    stopListening();
+                    if (meterBlind) return;
+                    _onFinalCallback = null;
+                    onError('no-speech');
+                }
+            }, manualStop ? 30000 : 10000);
+        };
+        _armInitialSilenceFn();
 
         // Safety cap: default 30s for quick drills, up to 5 minutes (300s) for extended verbal production
         _maxDurationTimeout = setTimeout(() => {
@@ -544,6 +604,7 @@ const SpeechInput = (function () {
 
         let simAngle = 0;
         let consecutiveVoiceFrames = 0;
+        let lastNotifiedHearing = false;
         _meterInterval = setInterval(() => {
             if (!_isListening) return;
 
@@ -552,8 +613,11 @@ const SpeechInput = (function () {
 
             if (_audioAnalyser && _audioDataArray) {
                 try {
+                    if (_audioCtx && (_audioCtx.state === 'suspended' || _audioCtx.state === 'interrupted') && typeof _audioCtx.resume === 'function') {
+                        _audioCtx.resume().catch(() => {});
+                    }
                     _audioAnalyser.getByteFrequencyData(_audioDataArray);
-                    const speechBins = Math.min(_audioDataArray.length, 10);
+                    const speechBins = Math.min(_audioDataArray.length, 16);
                     let speechSum = 0;
                     let fullSum = 0;
                     for (let i = 0; i < _audioDataArray.length; i++) {
@@ -562,21 +626,36 @@ const SpeechInput = (function () {
                     }
                     const speechAvg = speechBins > 0 ? speechSum / speechBins : 0;
                     const fullAvg = _audioDataArray.length > 0 ? fullSum / _audioDataArray.length : 0;
-                    let freqLevel = Math.max(speechAvg / 75, fullAvg / 90);
+                    let freqLevel = Math.max(speechAvg / 60, fullAvg / 75);
 
                     let timeLevel = 0;
-                    if (_audioTimeArray && typeof _audioAnalyser.getByteTimeDomainData === 'function') {
+                    if (_audioFloatTimeArray && typeof _audioAnalyser.getFloatTimeDomainData === 'function') {
+                        _audioAnalyser.getFloatTimeDomainData(_audioFloatTimeArray);
+                        let sumSq = 0;
+                        let peak = 0;
+                        for (let i = 0; i < _audioFloatTimeArray.length; i++) {
+                            const s = _audioFloatTimeArray[i];
+                            const abs = Math.abs(s);
+                            if (abs > peak) peak = abs;
+                            sumSq += s * s;
+                        }
+                        const rms = Math.sqrt(sumSq / _audioFloatTimeArray.length);
+                        timeLevel = Math.max(rms * 7.5, peak * 2.2);
+                    } else if (_audioTimeArray && typeof _audioAnalyser.getByteTimeDomainData === 'function') {
                         _audioAnalyser.getByteTimeDomainData(_audioTimeArray);
                         let sumSq = 0;
+                        let peakDev = 0;
                         for (let i = 0; i < _audioTimeArray.length; i++) {
                             const dev = (_audioTimeArray[i] - 128) / 128;
+                            const abs = Math.abs(dev);
+                            if (abs > peakDev) peakDev = abs;
                             sumSq += dev * dev;
                         }
-                        timeLevel = Math.sqrt(sumSq / _audioTimeArray.length) * 3.5;
+                        timeLevel = Math.max(Math.sqrt(sumSq / _audioTimeArray.length) * 4.5, peakDev * 2.0);
                     }
 
                     realLevel = Math.min(1.0, Math.max(0, freqLevel, timeLevel));
-                    if (realLevel > 0.06) {
+                    if (realLevel > 0.05) {
                         consecutiveVoiceFrames++;
                         if (consecutiveVoiceFrames >= 2) {
                             _hasSpoken = true;
@@ -586,6 +665,13 @@ const SpeechInput = (function () {
                         consecutiveVoiceFrames = 0;
                     }
                 } catch (e) {}
+            }
+
+            if (isHearing !== lastNotifiedHearing) {
+                lastNotifiedHearing = isHearing;
+                if (typeof options.onStatusChange === 'function') {
+                    options.onStatusChange(isHearing ? 'hearing' : 'listening');
+                }
             }
 
             // Automatic silence commit for Cloud STT sessions (matches native STT behavior)
@@ -607,8 +693,8 @@ const SpeechInput = (function () {
             }
 
             if (realLevel < 0.05) {
-                simAngle += 0.2;
-                const basePulse = _hasSpoken ? 0.22 : 0.08 + Math.sin(simAngle) * 0.05;
+                simAngle += 0.25;
+                const basePulse = _hasSpoken ? 0.24 : 0.18 + Math.sin(simAngle) * 0.08;
                 realLevel = Math.max(realLevel, basePulse);
             }
 
@@ -694,7 +780,7 @@ const SpeechInput = (function () {
 
                         onInterim(combined);
                         if (onAudioLevel) {
-                            onAudioLevel(0.5 + Math.random() * 0.45);
+                            onAudioLevel(0.5 + Math.random() * 0.45, { isHearingVoice: true, hasSpoken: true });
                         }
 
                         // Auto-stop recording immediately if learner hits 100% accuracy on target
@@ -870,15 +956,34 @@ const SpeechInput = (function () {
         _cleanupRecognition();
 
         if (_mediaRecorder && _mediaRecorder.state !== 'inactive') {
-            if (_mediaRecorder.state === 'recording' && typeof _mediaRecorder.requestData === 'function') {
-                try { _mediaRecorder.requestData(); } catch (e) {}
+            const activeRecorder = _mediaRecorder;
+            const activeStream = _mediaStream;
+            _mediaRecorder = null;
+            _clearStopFlushTimer();
+            _stopFlushTimer = setTimeout(() => {
+                _stopFlushTimer = null;
+                _releaseStream(activeStream);
+                if (!_isListening && typeof navigator !== 'undefined' && navigator.audioSession) {
+                    try { navigator.audioSession.type = 'playback'; } catch (e) {}
+                }
+            }, 1500);
+            try {
+                // Do not call requestData() before stop(): stop() flushes the final segment,
+                // and requestData()+stop() back-to-back corrupts fMP4 on iOS WebKit.
+                // Tracks and audioSession are released inside recorder.onstop once flushed.
+                activeRecorder.stop();
+            } catch (e) {
+                _clearStopFlushTimer();
+                _releaseStream(activeStream);
+                if (!_isListening && typeof navigator !== 'undefined' && navigator.audioSession) {
+                    try { navigator.audioSession.type = 'playback'; } catch (e2) {}
+                }
             }
-            try { _mediaRecorder.stop(); } catch (e) {}
-        }
-        _stopTracks();
-
-        if (typeof navigator !== 'undefined' && navigator.audioSession) {
-            try { navigator.audioSession.type = 'playback'; } catch (e) {}
+        } else {
+            _stopTracks();
+            if (typeof navigator !== 'undefined' && navigator.audioSession) {
+                try { navigator.audioSession.type = 'playback'; } catch (e) {}
+            }
         }
 
         const finalText = (_accumulatedFinal + ' ' + _currentInterim).trim() || _bestTranscript || '';

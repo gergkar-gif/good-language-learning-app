@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-10-17-french-media-drills';
+const CACHE_VERSION = 'v2026-10-17-ios-speaking-fix';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -73,6 +73,7 @@ const PRECACHE_ASSETS = [
     'engine/drills/hu-verb.js',
     'engine/drills/hu-verb-studio.js',
     'engine/drills/fr-grammar-studio.js',
+    'engine/drills/es-grammar-studio.js',
     'engine/ccse-exam.js',
     'engine/workshop.js',
     'engine/exercise-audio.js',

@@ -83,6 +83,7 @@ const SpeakingDriller = (function () {
     let _prodLevelFilter = 'all';
     let _prodTranscript = '';
     let _prodAudioUrl = null;
+    let _prodTranscribing = false;
     let _prodElapsedSeconds = 0;
     let _prodTimerInterval = null;
     let _prodAssessmentResult = null;
@@ -877,6 +878,7 @@ const SpeakingDriller = (function () {
         }
         _prodTranscript = '';
         _prodAudioUrl = null;
+        _prodTranscribing = false;
         _prodElapsedSeconds = 0;
         _prodPhase = PROD_PHASE.RECORDING;
         _renderActiveTab();
@@ -903,6 +905,12 @@ const SpeakingDriller = (function () {
                 preferRecording: true,
                 manualStop: true,
                 maxDurationMs: _prodMaxSeconds * 1000,
+                onStatusChange: (status) => {
+                    if (status === 'analyzing') {
+                        _prodTranscribing = true;
+                        if (_prodPhase === PROD_PHASE.REVIEW) _renderActiveTab();
+                    }
+                },
                 onInterim: (text) => {
                     _prodTranscript = text;
                     const wordCountEl = document.querySelector('.sp-prod-word-count');
@@ -912,6 +920,7 @@ const SpeakingDriller = (function () {
                     }
                 },
                 onFinal: (text) => {
+                    _prodTranscribing = false;
                     if (text) _prodTranscript = text;
                     const wordCountEl = document.querySelector('.sp-prod-word-count');
                     if (wordCountEl) {
@@ -936,16 +945,30 @@ const SpeakingDriller = (function () {
                         _renderActiveTab();
                     }
                 },
-                onAudioLevel: (level) => {
+                onAudioLevel: (level, meta) => {
                     const ring = document.querySelector('.sp-mic-pulse-ring');
                     if (ring) {
                         const scale = 1 + (level * 0.45);
                         ring.style.transform = `scale(${scale.toFixed(2)})`;
                         ring.style.opacity = Math.min(1, 0.4 + level).toFixed(2);
                     }
+                    if (!_prodTranscript) {
+                        const wordCountEl = document.querySelector('.sp-prod-word-count');
+                        if (wordCountEl) {
+                            if (meta && meta.isHearingVoice) {
+                                wordCountEl.textContent = 'Hearing your voice — keep speaking…';
+                            } else if (meta && meta.hasSpoken) {
+                                wordCountEl.textContent = 'Voice captured — transcribing when you finish';
+                            }
+                        }
+                    }
                 },
                 onError: (err) => {
                     console.warn('SpeechInput oral error:', err);
+                    _prodTranscribing = false;
+                    if (_prodPhase === PROD_PHASE.REVIEW) {
+                        _renderActiveTab();
+                    }
                 }
             });
         }
@@ -1056,7 +1079,7 @@ const SpeakingDriller = (function () {
         // fine but the transcript never arrives. Without this, the honour-
         // system box just looks blank and the learner reads it as the app
         // failing to recognise them, when really it just needs typing.
-        const transcriptMissing = !!audioUrl && !_prodTranscript.trim();
+        const transcriptMissing = !!audioUrl && !_prodTranscript.trim() && !_prodTranscribing;
 
         body.innerHTML = `
             <div class="sp-driller-wrap sp-prod-review-wrap">
@@ -1075,7 +1098,7 @@ const SpeakingDriller = (function () {
                     ${audioUrl ? `
                         <audio controls class="sp-own-voice-player" src="${audioUrl}"></audio>
                     ` : `
-                        <p class="sp-audio-empty-note">Your recording wasn't captured for playback this time — your answer was still recognised and graded normally.</p>
+                        <p class="sp-audio-empty-note">${_prodTranscribing ? 'Finalizing your audio recording…' : 'Your recording wasn\'t captured for playback this time — your answer was still recognised and graded normally.'}</p>
                     `}
                 </div>
 
@@ -1087,7 +1110,7 @@ const SpeakingDriller = (function () {
                             : 'Speech-to-text preview — feel free to fix any words misheard by the microphone before submitting:'
                         }</span>
                     </label>
-                    <textarea id="sp-transcript-input" class="sp-transcript-input" rows="7" placeholder="Your transcribed words will appear here...">${_esc(_prodTranscript)}</textarea>
+                    <textarea id="sp-transcript-input" class="sp-transcript-input" rows="7" placeholder="${_prodTranscribing ? 'Transcribing your speech…' : 'Your transcribed words will appear here...'}">${_esc(_prodTranscript)}</textarea>
                 </div>
 
                 <div class="sp-prod-review-actions">
@@ -2185,11 +2208,19 @@ const SpeakingDriller = (function () {
                         _renderActiveTab();
                     }
                 },
-                onAudioLevel: (level) => {
+                onAudioLevel: (level, meta) => {
                     const ring = document.querySelector('.sp-mic-pulse-ring');
                     if (ring) {
                         const scale = 1 + (level * 0.45);
                         ring.style.transform = `scale(${scale.toFixed(2)})`;
+                    }
+                    const liveEl = document.querySelector('.sp-turn-live-transcript');
+                    if (liveEl && !_scenarioTranscript) {
+                        if (meta && meta.isHearingVoice) {
+                            liveEl.textContent = 'Hearing your voice — keep speaking…';
+                        } else if (meta && meta.hasSpoken) {
+                            liveEl.textContent = 'Voice captured — tap Stop & Review when done.';
+                        }
                     }
                 },
                 onError: (err) => {
