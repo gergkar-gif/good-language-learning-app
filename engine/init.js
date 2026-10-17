@@ -294,7 +294,7 @@ async function initialiseApp() {
             if (!handled) {
                 if (minigameParam.startsWith('hu-') && Lang.code() !== 'hu') {
                     Lang.set('hu');
-                } else if (minigameParam === 'verbs' && !Lang.code().startsWith('es')) {
+                } else if (minigameParam === 'verbs' && !Lang.code().startsWith('es') && Lang.code() !== 'fr' && Lang.code() !== 'it') {
                     Lang.set(Lang.defaultCode());
                 }
             }
@@ -361,7 +361,7 @@ async function initialiseApp() {
     // no language scoping (same reason Workshop's own DRILLERS list gates
     // the Verb Driller card to Spanish), so initialising it under any
     // non-Spanish course fetches Spanish verb data nobody can reach and fails.
-    if (typeof Verbs !== 'undefined' && (typeof Lang === 'undefined' || Lang.code().startsWith('es'))) {
+    if (typeof Verbs !== 'undefined' && (typeof Lang === 'undefined' || Lang.code().startsWith('es') || Lang.code() === 'fr' || Lang.code() === 'it')) {
         Verbs.init();
     }
 

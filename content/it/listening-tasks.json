@@ -1,0 +1,70 @@
+{
+  "language": "it",
+  "tasks": [
+    {
+      "id": "ls-it-a1-pasticceria",
+      "level": "A1",
+      "title": "In pasticceria",
+      "topic": "Ordinare dolci e bevande",
+      "format": "dialogue",
+      "context": "In una pasticceria a Firenze, Marco ordina la colazione.",
+      "previewSeconds": 30,
+      "audio": {
+        "turns": [
+          {
+            "speaker": "Commessa",
+            "gender": "female",
+            "text": "Buongiorno! Cosa desidera oggi?",
+            "textEn": "Good morning! What would you like today?"
+          },
+          {
+            "speaker": "Marco",
+            "gender": "male",
+            "text": "Buongiorno! Vorrei un cappuccino e due sfogliatelle calde, per favore.",
+            "textEn": "Good morning! I'd like a cappuccino and two warm pastries, please."
+          },
+          {
+            "speaker": "Commessa",
+            "gender": "female",
+            "text": "Certamente! Le sfogliatelle sono appena uscite dal forno. Desidera anche una spremuta d'arancia?",
+            "textEn": "Certainly! The pastries just came out of the oven. Would you also like a fresh orange juice?"
+          },
+          {
+            "speaker": "Marco",
+            "gender": "male",
+            "text": "Sì, grazie, una spremuta fresca è perfetta.",
+            "textEn": "Yes, thank you, a fresh juice is perfect."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Che cosa ordina Marco insieme al cappuccino?",
+          "promptEn": "What does Marco order along with the cappuccino?",
+          "options": [
+            "Due sfogliatelle calde",
+            "Un cornetto al cioccolato",
+            "Un tramezzino salato",
+            "Un gelato alla crema"
+          ],
+          "answer": 0,
+          "explanation": "Marco dice chiaramente: 'Vorrei un cappuccino e due sfogliatelle calde, per favore'."
+        },
+        {
+          "id": "q2",
+          "prompt": "Che bevanda aggiunge Marco su suggerimento della commessa?",
+          "promptEn": "What drink does Marco add on the shop assistant's suggestion?",
+          "options": [
+            "Una spremuta d'arancia",
+            "Un bicchiere di latte",
+            "Un tè caldo al limone",
+            "Una bottiglietta d'acqua frizzante"
+          ],
+          "answer": 0,
+          "explanation": "La commessa propone una spremuta d'arancia e Marco accetta."
+        }
+      ]
+    }
+  ]
+}

@@ -599,7 +599,7 @@ const LearnerModel = (function () {
         if (typeof Workshop !== 'undefined' && typeof Workshop.isAvailable === 'function') {
             return Workshop.isAvailable(id);
         }
-        if (id === 'verbs') return (typeof Lang !== 'undefined') && Lang.code().startsWith('es');
+        if (id === 'verbs') return (typeof Lang !== 'undefined') && (Lang.code().startsWith('es') || Lang.code() === 'fr' || Lang.code() === 'it');
         if (id.indexOf('hu-') === 0) return (typeof Lang !== 'undefined') && Lang.code() === 'hu';
         return true;
     }

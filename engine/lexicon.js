@@ -859,8 +859,14 @@ const Lexicon = (function () {
     // article, so every screen that lists Spanish words (Decks, Library) does
     // it the same way rather than each re-implementing the m/f check.
     function withArticle(lemma) {
+        const morph = getMorphology(_lang);
+        if (morph && typeof morph.withArticle === 'function') {
+            const entry = define(lemma);
+            return morph.withArticle(lemma, entry ? entry.gender : null);
+        }
         const a = article(lemma);
-        return a ? a + ' ' + lemma : lemma;
+        if (!a) return lemma;
+        return a.endsWith("'") ? a + lemma : a + ' ' + lemma;
     }
 
     // Articles a typed answer may put before this noun: the definite and
@@ -907,7 +913,11 @@ if (typeof SpanishMorphology !== 'undefined') {
 if (typeof FrenchMorphology !== 'undefined') {
     Lexicon.registerMorphology('fr', FrenchMorphology);
 }
+if (typeof ItalianMorphology !== 'undefined') {
+    Lexicon.registerMorphology('it', ItalianMorphology);
+}
 
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = Lexicon;
 }
+

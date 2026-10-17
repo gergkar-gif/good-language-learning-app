@@ -1305,6 +1305,8 @@ const SpeechInput = (function () {
             if (typeof PHONETIC_FOLDERS !== 'undefined' && PHONETIC_FOLDERS[l]) return l;
             if (l.startsWith('hu')) return 'hu';
             if (l.startsWith('es')) return 'es';
+            if (l.startsWith('fr')) return 'fr';
+            if (l.startsWith('it')) return 'it';
         }
         if (textSample) {
             const s = String(textSample);
@@ -1423,6 +1425,37 @@ const SpeechInput = (function () {
         return w;
     }
 
+    // Italian phonetic folding: resolves silent h (ho/o, hanno/anno, ha/a),
+    // ch/gh velars, soft c/g before e/i, sc before e/i, gn, gl,
+    // and double consonant degemination.
+    function phoneticFoldIt(word) {
+        if (!word) return '';
+        let w = String(word)
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '');
+
+        // 1. ch and gh before e/i are velars (/k/ and /g/)
+        w = w.replace(/ch/g, 'k').replace(/gh/g, 'g');
+        // Silent h in Italian: ho -> o, ha -> a, hanno -> anno
+        w = w.replace(/h/g, '');
+
+        // 2. Soft c and g before e/i
+        w = w.replace(/c(?=[ei])/g, '\u010d');
+        w = w.replace(/g(?=[ei])/g, '\u01f5');
+        w = w.replace(/c/g, 'k');
+
+        // 3. Digraphs sc (/ʃ/), gl (/ʎ/), gn (/ɲ/)
+        w = w.replace(/sc(?=[ei])/g, '\u0161');
+        w = w.replace(/gli(?=[aeou])/g, '\u028e');
+        w = w.replace(/gn/g, '\u0272');
+
+        // 4. Degemination: collapse double consonants
+        w = w.replace(/(.)\1+/g, '$1');
+
+        return w;
+    }
+
     function genericPhoneticFold(word) {
         if (!word) return '';
         return String(word)
@@ -1435,7 +1468,8 @@ const SpeechInput = (function () {
     const PHONETIC_FOLDERS = {
         hu: phoneticFoldHu,
         es: phoneticFoldEs,
-        fr: phoneticFoldFr
+        fr: phoneticFoldFr,
+        it: phoneticFoldIt
     };
 
     function registerPhoneticFolder(langCode, folderFn) {

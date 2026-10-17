@@ -1,0 +1,89 @@
+{
+  "language": "it",
+  "scenarios": [
+    {
+      "id": "it-a1-wx01-mercato",
+      "cefrLevel": "A1",
+      "title": "Al mercato rionale",
+      "titleEn": "At the Local Market",
+      "situation": "Il tuo coinquilino Matteo è al mercato e ti manda un messaggio WhatsApp per sapere cosa serve per la cena.",
+      "situationEn": "Your flatmate Matteo is at the market and texts you to ask what is needed for dinner.",
+      "roleplay": {
+        "interlocutorRole": "Matteo (Coinquilino)",
+        "interlocutorRoleEn": "Matteo (Flatmate)",
+        "learnerRole": "Tu",
+        "learnerRoleEn": "You"
+      },
+      "targetCompetency": "I can exchange short text messages about everyday groceries",
+      "targetSkills": [
+        "groceries",
+        "food_and_drink",
+        "requests"
+      ],
+      "unitIds": [
+        "saluti-e-presentazioni",
+        "al-bar"
+      ],
+      "requiredLemmas": [
+        "ciao",
+        "pane",
+        "formaggio",
+        "pomodoro",
+        "per favore",
+        "grazie"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Ciao! Sono al mercato di Campo de' Fiori. Di cosa abbiamo bisogno per stasera?",
+          "interlocutorTranslation": "Hi! I am at Campo de' Fiori market. What do we need for tonight?",
+          "learnerCue": "Saluta Matteo e chiedigli di comprare pane fresco, formaggio e pomodori.",
+          "learnerCueEn": "Greet Matteo and ask him to buy fresh bread, cheese, and tomatoes.",
+          "vocabularyHints": [
+            "ciao — hi",
+            "puoi prendere — can you get",
+            "del pane fresco — some fresh bread",
+            "pomodori — tomatoes"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "ciao",
+              "pane",
+              "formaggio",
+              "pomodori",
+              "pomodoro",
+              "prendi",
+              "compra",
+              "grazie"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Perfetto, trovato tutto! Serve anche della frutta fresca o del vino per gli ospiti?",
+          "interlocutorTranslation": "Great, found everything! Do we also need fresh fruit or wine for the guests?",
+          "learnerCue": "Chiedi di prendere una bottiglia di vino rosso e delle mele.",
+          "learnerCueEn": "Ask to get a bottle of red wine and some apples.",
+          "vocabularyHints": [
+            "vino rosso — red wine",
+            "mele — apples",
+            "una bottiglia — a bottle"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "vino",
+              "rosso",
+              "mele",
+              "bottiglia",
+              "frutta",
+              "sì",
+              "grazie"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

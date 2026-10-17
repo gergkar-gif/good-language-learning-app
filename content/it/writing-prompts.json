@@ -1,0 +1,73 @@
+{
+  "language": "it",
+  "prompts": [
+    {
+      "id": "it-b2-centri-senza-auto",
+      "cefrLevel": "B2",
+      "taskType": "written_argument",
+      "title": "Dibattito: Centri storici pedonali",
+      "prompt": "Nella tua città si discute della chiusura totale del centro storico al traffico automobilistico. Scrivi un articolo per il giornale cittadino esponendo vantaggi e svantaggi della misura, e argomenta la tua opinione personale in modo equilibrato.",
+      "minWords": 180,
+      "targetWords": 250,
+      "maxWords": 350,
+      "targetSkills": [
+        {
+          "id": "expression_opinion",
+          "description": "Esprimere opinioni con sfumature di registro a livello B2"
+        },
+        {
+          "id": "argumentation",
+          "description": "Strutturare tesi e antitesi coerenti"
+        },
+        {
+          "id": "connectori_testuali",
+          "description": "Uso di connettori logici (da un lato, d'altronde, tuttavia, benché)"
+        },
+        {
+          "id": "congiuntivo",
+          "description": "Uso corretto del congiuntivo presente e imperfetto nelle subordinate"
+        }
+      ]
+    },
+    {
+      "id": "it-b1-viaggio-memorabile",
+      "cefrLevel": "B1",
+      "taskType": "travel_recount",
+      "title": "Un viaggio memorabile in Italia",
+      "prompt": "Racconta in un post per un blog di viaggi una vacanza o una visita a una città italiana. Descrivi dove sei andato, cosa hai visitato, i piatti che hai assaggiato e perché consiglieresti questa meta.",
+      "minWords": 120,
+      "targetWords": 160,
+      "maxWords": 220,
+      "targetSkills": [
+        {
+          "id": "passato_prossimo_imperfetto",
+          "description": "Alternanza passato prossimo e imperfetto nella narrazione"
+        },
+        {
+          "id": "descrizione_luoghi",
+          "description": "Descrivere città, cibi e sensazioni"
+        }
+      ]
+    },
+    {
+      "id": "it-a2-email-amico",
+      "cefrLevel": "A2",
+      "taskType": "informal_letter",
+      "title": "Invito a un amico",
+      "prompt": "Scrivi un'email a un tuo amico italiano per invitarlo a passare qualche giorno da te. Spiega cosa farete, dove alloggerà e chiedi quando può arrivare.",
+      "minWords": 60,
+      "targetWords": 90,
+      "maxWords": 130,
+      "targetSkills": [
+        {
+          "id": "inviti_informali",
+          "description": "Formulare inviti e proposte informali"
+        },
+        {
+          "id": "futuro_progetti",
+          "description": "Parlare di programmi e progetti futuri"
+        }
+      ]
+    }
+  ]
+}

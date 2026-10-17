@@ -307,6 +307,8 @@ const Verbs = (function () {
         var base;
         if (lang === 'fr' || (typeof lang === 'string' && lang.startsWith('fr-'))) {
             base = (typeof ALL_FRENCH_VERBS !== 'undefined') ? ALL_FRENCH_VERBS.slice() : ['parler', 'aimer', 'finir', 'aller', 'avoir', 'etre', 'faire'];
+        } else if (lang === 'it' || (typeof lang === 'string' && lang.startsWith('it-'))) {
+            base = (typeof ALL_ITALIAN_VERBS !== 'undefined') ? ALL_ITALIAN_VERBS.slice() : ['parlare', 'credere', 'dormire', 'andare', 'avere', 'essere', 'fare'];
         } else {
             base = (typeof ALL_VERBS !== 'undefined') ? ALL_VERBS.slice() : ['hablar', 'comer', 'vivir'];
         }

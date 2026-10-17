@@ -27,7 +27,8 @@ const Lang = (function () {
         'es-latam': ['es-MX', 'es-US', 'es-419', 'es-CO', 'es-AR', 'es-ES', 'es'],
         'es-es':    ['es-ES', 'es'],
         hu:         ['hu-HU', 'hu'],
-        fr:         ['fr-FR', 'fr-CA', 'fr']
+        fr:         ['fr-FR', 'fr-CA', 'fr'],
+        it:         ['it-IT', 'it']
     };
 
     // Course-level names for pickers and track settings
@@ -35,7 +36,8 @@ const Lang = (function () {
         'es-latam': 'Spanish (Latin America)',
         'es-es':    'Spanish (Spain)',
         hu:         'Hungarian',
-        fr:         'French'
+        fr:         'French',
+        it:         'Italian'
     };
 
     // Natural language names for learner-facing prompts, exercises, and drills
@@ -43,12 +45,13 @@ const Lang = (function () {
         'es-latam': 'Spanish',
         'es-es':    'Spanish',
         hu:         'Hungarian',
-        fr:         'French'
+        fr:         'French',
+        it:         'Italian'
     };
 
     // Courses with real content behind them — what the language picker
     // (My Journey) offers.
-    const AVAILABLE = ['es-latam', 'es-es', 'hu', 'fr'];
+    const AVAILABLE = ['es-latam', 'es-es', 'hu', 'fr', 'it'];
 
     // Can-do cue copy shared by both Spanish courses; only the city differs.
     const ES_CAN_DO_CUES = {
@@ -266,6 +269,79 @@ const Lang = (function () {
                 B1: ['en fait', 'cependant', 'en revanche', 'par conséquent', 'à mon avis', 'tandis que'],
                 B2: ['néanmoins', 'toutefois', "d'ailleurs", 'en outre', 'ainsi', 'nonobstant']
             }
+        },
+        it: {
+            code: 'it',
+            baseCode: 'it',
+            name: 'Italian',
+            courseName: 'Italian',
+            voices: ['it-IT', 'it'],
+            sttLocale: 'it-IT',
+            tests: ['A1', 'A2', 'B1', 'B2', 'C1'],
+            diacritics: {
+                a: ['à'],
+                e: ['è', 'é'],
+                i: ['ì', 'í'],
+                o: ['ò', 'ó'],
+                u: ['ù', 'ú']
+            },
+            openers: {},
+            numberWords: {
+                '1': ['uno', 'una', 'un'], '2': ['due'], '3': ['tre'], '4': ['quattro'], '5': ['cinque'],
+                '6': ['sei'], '7': ['sette'], '8': ['otto'], '9': ['nove'], '10': ['dieci']
+            },
+            speechAbbreviations: {
+                "d'accordo": 'daccordo', "c'è": 'ce', "c'era": 'cera', "l'ho": 'lho',
+                "all'": 'all', "dell'": 'dell', "nell'": 'nell', "sull'": 'sull', "dall'": 'dall'
+            },
+            examLabels: {
+                trueFalseNotStated: ['Vero', 'Falso', 'Non indicato nel testo']
+            },
+            paradigm: {
+                hasVosotros: false,
+                persons: {
+                    io: { key: 'io', label: 'io' },
+                    tu: { key: 'tu', label: 'tu' },
+                    lui: { key: 'lui', label: 'lui / lei / Lei' },
+                    noi: { key: 'noi', label: 'noi' },
+                    voi: { key: 'voi', label: 'voi' },
+                    loro: { key: 'loro', label: 'loro' }
+                },
+                defaultPersons: ['io', 'tu', 'lui', 'noi', 'voi', 'loro'],
+                tenses: [
+                    { value: 'indicativo.presente',             label: 'Presente' },
+                    { value: 'indicativo.passato_prossimo',       label: 'Passato prossimo' },
+                    { value: 'indicativo.imperfetto',           label: 'Imperfetto' },
+                    { value: 'indicativo.futuro_semplice',        label: 'Futuro semplice' },
+                    { value: 'indicativo.condizionale_presente', label: 'Condizionale presente' },
+                    { value: 'congiuntivo.presente',            label: 'Congiuntivo presente' },
+                    { value: 'congiuntivo.imperfetto',          label: 'Congiuntivo imperfetto' },
+                    { value: 'indicativo.passato_remoto',        label: 'Passato remoto' },
+                    { value: 'all',                           label: 'All Tenses' }
+                ]
+            },
+            canDoCues: {
+                city: 'Rome',
+                monthsExamples: 'gennaio, febbraio, marzo...',
+                monthInEvent: 'State when an event or your birthday is using "a" or "in" (e.g. "A ottobre..." or "In dicembre...")',
+                daysExamples: 'lunedì, martedì...',
+                dayInEvent: 'Say which day you do an activity (e.g. il lunedì, il venerdì)',
+                cafeGreeting: 'Polite greeting (Buongiorno / Ciao)',
+                cafeOrder: 'Order a drink or snack (e.g. "Un caffè e un cornetto, per favore")',
+                cafeBill: 'Conclude politely or ask for the bill ("Il conto, per favore" / "Grazie mille")',
+                restaurantGreeting: 'Greeting and request a table ("Un tavolo per due, per favore")',
+                restaurantOrder: 'Order food and drinks ("Come primo prendo... e di secondo...")',
+                restaurantBill: 'Ask for the bill ("Il conto, per favore")',
+                directionsInterruption: 'Polite opening (Scusi / Scusa)',
+                directionsAsk: 'Ask for directions (e.g. "Dov\'è la stazione ferroviaria?")',
+                directionsThanks: 'Thank the person (Grazie mille)'
+            },
+            discourseConnectors: {
+                A1: ['e', 'ma', 'perché', 'anche', 'allora', 'per esempio'],
+                A2: ['quindi', 'prima', 'poi', 'dopo', 'tuttavia', 'inoltre', 'per esempio'],
+                B1: ['in realtà', 'tuttavia', 'd\'altronde', 'di conseguenza', 'secondo me', 'mentre'],
+                B2: ['nondimeno', 'ciononostante', 'd\'altra parte', 'inoltre', 'pertanto', 'benché']
+            }
         }
     };
 
@@ -385,8 +461,8 @@ const Lang = (function () {
         return AVAILABLE.slice();
     }
 
-    function voices() {
-        return VOICES[current] || [current];
+    function voices(code) {
+        return VOICES[code || current] || [code || current];
     }
 
     // A path inside the current course: content('lessons/a1/a1-01.json').
@@ -510,3 +586,11 @@ const Lang = (function () {
         paradigm
     };
 })();
+
+if (typeof window !== 'undefined') {
+    window.Lang = Lang;
+}
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = Lang;
+}
+

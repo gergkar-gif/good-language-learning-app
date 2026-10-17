@@ -1,0 +1,189 @@
+{
+  "language": "it",
+  "scenarios": [
+    {
+      "id": "it-a1-sc01-bar",
+      "cefrLevel": "A1",
+      "title": "Al bar italiano",
+      "titleEn": "At the Italian Café",
+      "situation": "Sei al bancone di un bar a Roma e vuoi ordinare un caffè, una brioche e pagare il conto.",
+      "situationEn": "You are at the counter of a café in Rome and want to order a coffee, a pastry, and pay the bill.",
+      "roleplay": {
+        "interlocutorRole": "Barista",
+        "interlocutorRoleEn": "Barista",
+        "learnerRole": "Cliente",
+        "learnerRoleEn": "Customer",
+        "interlocutorVoice": "it-IT"
+      },
+      "targetCompetency": "I can order drinks and breakfast items in an Italian bar and pay",
+      "targetSkills": [
+        "ordering_food",
+        "social_interaction",
+        "numbers_and_prices"
+      ],
+      "unitIds": [
+        "saluti-e-presentazioni",
+        "al-bar"
+      ],
+      "requiredLemmas": [
+        "buongiorno",
+        "caffè",
+        "cornetto",
+        "acqua",
+        "conto",
+        "per favore",
+        "grazie"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Buongiorno! Prego, cosa Le preparo oggi?",
+          "interlocutorTranslation": "Good morning! What can I get for you today?",
+          "learnerCue": "Saluta educatamente e chiedi un espresso (o cappuccino) e un cornetto.",
+          "learnerCueEn": "Greet politely and order an espresso (or cappuccino) and a croissant.",
+          "vocabularyHints": [
+            "buongiorno — good morning",
+            "vorrei un caffè — I would like a coffee",
+            "un cornetto alla crema — a cream croissant",
+            "per favore — please"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "buongiorno",
+              "caffè",
+              "cappuccino",
+              "cornetto",
+              "vorrei",
+              "prendo",
+              "favore"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Subito! Desidera anche un bicchiere d'acqua naturale o frizzante?",
+          "interlocutorTranslation": "Right away! Would you also like a glass of still or sparkling water?",
+          "learnerCue": "Rispondi confermando l'acqua naturale (o frizzante) e ringrazia.",
+          "learnerCueEn": "Confirm still (or sparkling) water and say thank you.",
+          "vocabularyHints": [
+            "naturale — still",
+            "frizzante — sparkling",
+            "grazie — thank you"
+          ],
+          "validationCriteria": {
+            "minWords": 2,
+            "targetKeywords": [
+              "naturale",
+              "frizzante",
+              "acqua",
+              "grazie",
+              "sì"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Ecco a Lei. Sono due euro e cinquanta in tutto.",
+          "interlocutorTranslation": "Here you go. That's two euros fifty altogether.",
+          "learnerCue": "Chiedi se puoi pagare con la carta oppure offri i contanti.",
+          "learnerCueEn": "Ask if you can pay by card or offer cash.",
+          "vocabularyHints": [
+            "posso pagare con la carta — can I pay by card",
+            "ecco a Lei — here you are",
+            "il conto — the bill"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "posso",
+              "carta",
+              "contanti",
+              "pagare",
+              "ecco",
+              "grazie"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "it-a2-sc01-stazione",
+      "cefrLevel": "A2",
+      "title": "Alla biglietteria della stazione",
+      "titleEn": "At the Train Station Ticket Desk",
+      "situation": "Sei alla stazione Termini di Roma e devi acquistare un biglietto per Firenze.",
+      "situationEn": "You are at Roma Termini station and need to buy a train ticket to Florence.",
+      "roleplay": {
+        "interlocutorRole": "Bigliettaio",
+        "interlocutorRoleEn": "Ticket agent",
+        "learnerRole": "Viaggiatore",
+        "learnerRoleEn": "Traveller",
+        "interlocutorVoice": "it-IT"
+      },
+      "targetCompetency": "I can buy a train ticket, specify class and time, and ask about track details",
+      "targetSkills": [
+        "travel_and_transport",
+        "transactions",
+        "asking_for_information"
+      ],
+      "unitIds": [
+        "saluti-e-presentazioni"
+      ],
+      "requiredLemmas": [
+        "buongiorno",
+        "biglietto",
+        "treno",
+        "partire",
+        "orario",
+        "binario",
+        "grazie"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Buongiorno, dica pure. Dove deve andare?",
+          "interlocutorTranslation": "Good morning. Where do you need to travel?",
+          "learnerCue": "Chiedi un biglietto per Firenze con il prossimo treno ad alta velocità.",
+          "learnerCueEn": "Ask for a ticket to Florence on the next high-speed train.",
+          "vocabularyHints": [
+            "vorrei un biglietto per Firenze — I'd like a ticket to Florence",
+            "prossimo treno — next train",
+            "Frecciarossa — high speed train"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "biglietto",
+              "firenze",
+              "treno",
+              "prossimo",
+              "vorrei"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "C'è un Frecciarossa alle 11:20 con posti liberi in seconda classe. Le va bene?",
+          "interlocutorTranslation": "There is a Frecciarossa at 11:20 with seats available in standard class. Does that suit you?",
+          "learnerCue": "Conferma che va bene e chiedi da quale binario parte.",
+          "learnerCueEn": "Confirm that it's good and ask which platform it departs from.",
+          "vocabularyHints": [
+            "va benissimo — that's great",
+            "da quale binario parte? — which platform does it leave from?"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "bene",
+              "binario",
+              "parte",
+              "quale",
+              "sì"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

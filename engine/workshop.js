@@ -55,6 +55,15 @@ const Workshop = (function () {
             category: 'studios'
         },
         {
+            id: 'it-grammar-studio',
+            icon: 'grammar',
+            title: 'Italian Grammar Studio',
+            sub: 'Preposizioni articolate, essere vs avere, pronomi combinati, ci & ne, and congiuntivo triggers.',
+            containerId: 'it-grammar-studio-root',
+            langs: ['it'],
+            category: 'studios'
+        },
+        {
             id: 'es-grammar-studio',
             icon: 'grammar',
             title: 'Spanish Grammar Studio',
@@ -164,12 +173,22 @@ const Workshop = (function () {
             level: 'B2'
         },
         {
+            id: 'it-cils-exam',
+            icon: 'es-dele-exam',
+            title: 'CILS B1 Exam Prep',
+            sub: 'Certificazione di Italiano come Lingua Straniera · Università per Stranieri di Siena. Ascolto, lettura, produzione scritta e orale.',
+            containerId: 'it-cils-exam-root',
+            langs: ['it'],
+            category: 'exams',
+            level: 'B1'
+        },
+        {
             id: 'verbs',
             icon: 'verbs',
             title: 'Verb Practice',
             sub: 'Conjugation tables and speed drills.',
             containerId: 'verb-driller-root',
-            langs: ['es', 'es-latam', 'es-es', 'fr'],
+            langs: ['es', 'es-latam', 'es-es', 'fr', 'it'],
             category: 'foundations'
         },
 
@@ -394,7 +413,9 @@ const Workshop = (function () {
             video: typeof VideoDriller !== 'undefined' ? VideoDriller : null,
             'hu-verb-studio': typeof HuVerbStudio !== 'undefined' ? HuVerbStudio : null,
             'fr-grammar-studio': typeof FrGrammarStudio !== 'undefined' ? FrGrammarStudio : null,
+            'it-grammar-studio': typeof ItGrammarStudio !== 'undefined' ? ItGrammarStudio : null,
             'es-grammar-studio': typeof EsGrammarStudio !== 'undefined' ? EsGrammarStudio : null,
+            'it-cils-exam': typeof CefrExam !== 'undefined' ? CefrExam.CilsB1Exam : null,
             'hu-cultural-exam': typeof HuCulturalExam !== 'undefined' ? HuCulturalExam : null,
             'es-ccse-exam': typeof CcseExam !== 'undefined' ? CcseExam : null,
             'es-dele-a1-exam': typeof DeleA1Exam !== 'undefined' ? DeleA1Exam : (typeof CefrExam !== 'undefined' ? CefrExam.DeleA1Exam : null),

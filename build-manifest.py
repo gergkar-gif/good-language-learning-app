@@ -437,6 +437,10 @@ FREQUENCY_SOURCES = {
            ROOT / "imports" / "dictionary" / "spanish-en.json"),
     "hu": (ROOT / "content" / "hu" / "indexes" / "frequency.json",
            ROOT / "imports" / "dictionary" / "hungarian-en.json"),
+    "fr": (ROOT / "content" / "fr" / "indexes" / "frequency.json",
+           ROOT / "imports" / "dictionary" / "french-en.json"),
+    "it": (ROOT / "content" / "it" / "indexes" / "frequency.json",
+           ROOT / "imports" / "dictionary" / "italian-en.json"),
 }
 
 # The dictionary's first sense for a handful of very common Spanish words is

@@ -1,0 +1,78 @@
+{
+  "language": "it",
+  "prompts": [
+    {
+      "id": "it-a1-s01",
+      "cefrLevel": "A1",
+      "taskType": "personal_information",
+      "title": "Presentazione personale",
+      "situation": "Incontri una persona italiana per la prima volta.",
+      "task": "Presentati parlando di te.",
+      "points": [
+        "il tuo nome e da dove vieni",
+        "dove vivi attualmente",
+        "il tuo lavoro o i tuoi studi",
+        "le lingue che parli",
+        "i tuoi passatempi preferiti"
+      ],
+      "prompt": "Situazione: Incontri una persona italiana per la prima volta.\n\nCompito: Presentati in italiano. Indica il tuo nome, la tua provenienza, dove abiti, che cosa fai e quali sono i tuoi hobby.\n\nParla per circa 1-2 minuti.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "it-a1-s02",
+      "cefrLevel": "A1",
+      "taskType": "describe_your_family",
+      "title": "Descrivere la famiglia",
+      "situation": "Mostri a un amico italiano delle foto della tua famiglia.",
+      "task": "Descrivi i membri della tua famiglia.",
+      "points": [
+        "chi sono le persone nella foto",
+        "i loro nomi ed età",
+        "che cosa fanno nella vita",
+        "un'attività che vi piace fare insieme"
+      ],
+      "prompt": "Situazione: Mostri delle foto a un amico italiano.\n\nCompito: Descrivi la tua famiglia, le loro professioni e che cosa vi piace fare insieme.\n\nParla per circa 1-2 minuti.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "it-a2-s01",
+      "cefrLevel": "A2",
+      "taskType": "last_weekend",
+      "title": "Il fine settimana scorso",
+      "situation": "Un collega italiano ti chiede come hai passato il fine settimana.",
+      "task": "Racconta che cosa hai fatto lo scorso weekend.",
+      "points": [
+        "dove sei andato e con chi",
+        "che tempo faceva",
+        "due o tre attività svolte",
+        "se ti sei divertito e perché"
+      ],
+      "prompt": "Situazione: Un collega ti chiede del tuo weekend.\n\nCompito: Racconta al passato prossimo che cosa hai fatto, dove sei andato e com'è stata l'esperienza.\n\nParla per circa 1-2 minuti.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "it-b1-s01",
+      "cefrLevel": "B1",
+      "taskType": "travel_experience",
+      "title": "Un viaggio indimenticabile",
+      "situation": "Partecipi a una conversazione informale sui viaggi più memorabili.",
+      "task": "Descrivi un viaggio importante che hai fatto.",
+      "points": [
+        "la destinazione e il motivo del viaggio",
+        "un aneddoto o un momento imprevisto",
+        "il cibo o le abitudini locali che ti hanno colpito",
+        "perché questo viaggio ti è rimasto nel cuore"
+      ],
+      "prompt": "Situazione: Stai parlando di viaggi con amici italiani.\n\nCompito: Racconta un viaggio significativo, alternando passato prossimo e imperfetto, descrivendo luoghi ed emozioni.\n\nParla per circa 2-3 minuti.",
+      "minSeconds": 90,
+      "targetSeconds": 150,
+      "maxSeconds": 240
+    }
+  ]
+}
