@@ -2003,3 +2003,111 @@ body.in-lesson .nav { display: none !important; }
    draws them as outlines in the primary colour, which is also the button's own
    fill, so the icon vanished (navy on navy in light mode, cream on cream in dark). */
 .ssp-play-btn svg.art .ink-line { fill: currentColor; stroke: currentColor; }
+
+/* Lessons Coming Soon state */
+.lessons-coming-soon-wrap {
+  padding: 32px 16px 64px;
+  max-width: 580px;
+  margin: 0 auto;
+}
+.lcs-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 16px);
+  padding: 32px 24px;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+.lcs-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--wash, rgba(192, 86, 33, 0.1));
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.lcs-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 12px;
+  line-height: 1.25;
+}
+.lcs-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+.lcs-sub {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+.lcs-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lcs-feature-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius, 10px);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--dur-fast) var(--ease-standard);
+  width: 100%;
+}
+@media (hover: hover) {
+  .lcs-feature-btn:hover {
+    background: var(--surface);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .lcs-feature-btn:hover .lcs-feature-arrow {
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+}
+.lcs-feature-icon {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lcs-art-icon {
+  width: 24px;
+  height: 24px;
+}
+.lcs-feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-grow: 1;
+}
+.lcs-feature-text strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.lcs-feature-text span {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.lcs-feature-arrow {
+  font-size: 16px;
+  color: var(--muted);
+  transition: transform var(--dur-fast) var(--ease-standard);
+}

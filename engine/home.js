@@ -96,6 +96,25 @@ const Home = (function () {
     // leads whatever else is waiting.
     function continueCard(step) {
         if (!step) {
+            const data = window._curriculumData;
+            const total = data && data.levels ? Object.values(data.levels).reduce((sum, lvl) => {
+                return sum + ((lvl && lvl.units) ? lvl.units.reduce((uSum, u) => uSum + (u.lessons || []).length, 0) : 0);
+            }, 0) : 0;
+
+            if (total === 0) {
+                return `
+                    <button class="hm-continue" data-go="drills">
+                        <span class="hm-eyebrow">${esc(Lang.name())} course</span>
+                        <span class="hm-continue-title">Lessons coming soon!</span>
+                        <span class="hm-continue-sub">Lessons for ${esc(Lang.name())} are in development. Explore the Workshop, Library, and Decks in the meantime.</span>
+                        <span class="hm-continue-foot">
+                            <span class="hm-cta">Explore Workshop</span>
+                            <span class="hm-rule" aria-hidden="true"></span>
+                        </span>
+                    </button>
+                `;
+            }
+
             return `
                 <section class="hm-continue is-done">
                     <span class="hm-eyebrow">The course</span>

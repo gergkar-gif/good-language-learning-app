@@ -7,6 +7,12 @@ queue numbering and wording (not renumbered or edited) so old references
 and commit messages that cite an item number still resolve. Nothing here
 needs re-reading before starting new work; it's reference only.
 
+## Completed work (2026-10-17)
+
+- **feat(ui): "Lessons Coming Soon" Empty State & Responsive Listening Studio Navigation (Done 2026-10-17).**
+  - **"Lessons Coming Soon" Empty State (`engine/curriculum.js`, `engine/home.js`, `styles/layout.css`):** Courses with unauthored lessons (e.g. French `'fr'`) now display an informative and beautifully styled "Lessons coming soon!" card on the Learn tab rather than an empty 0/0 level list. The view outlines CEFR curriculum authoring status and offers direct action links into Workshop, Library, and Decks. Home tab continue cards similarly report "Lessons coming soon!" with a direct "Explore Workshop" CTA instead of asserting "Every lesson is finished".
+  - **Responsive Listening Studio Navigation & Affordance (`engine/drills/listening-studio.js`, `styles/workshop.css`):** Resolved hidden navigation tabs in Listening Practice. Added SVG visual icons to all four tabs (*Listening Comprehension*, *Decoding Drills*, *Learn from Music*, *Learn from Video*). Converted `.ls-studio-nav` to wrap responsively, laying out as a clean 2x2 grid on mobile/narrow viewports (<= 680px) and styled thin horizontal scrollbars for `.sp-studio-nav` so all functions are discoverable without hidden scrolling.
+
 ## Completed work (2026-10-16)
 
 - **fix(fr): Authentic French Video, Song Lyrics, and Listening Comprehension Studio Datasets & Elimination of Spanish Bleedover (Done 2026-10-16).**

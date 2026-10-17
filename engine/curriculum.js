@@ -197,6 +197,61 @@ async function loadCurriculumData() {
     }
 }
 
+function _totalCourseLessons() {
+    const data = window._curriculumData;
+    if (!data || !data.levels) return 0;
+    return Object.values(data.levels).reduce((sum, lvl) => {
+        return sum + ((lvl && lvl.units) ? lvl.units.reduce((uSum, u) => uSum + (u.lessons || []).length, 0) : 0);
+    }, 0);
+}
+
+function lessonsComingSoonHtml() {
+    const langName = (typeof Lang !== 'undefined' && typeof Lang.name === 'function') ? Lang.name() : 'this language';
+    const workshopIcon = (typeof Art !== 'undefined' && Art.icon) ? Art.icon('workshop', 'lcs-art-icon') : '';
+    const readerIcon = (typeof Art !== 'undefined' && Art.icon) ? Art.icon('reader', 'lcs-art-icon') : '';
+    const decksIcon = (typeof Art !== 'undefined' && Art.icon) ? Art.icon('decks', 'lcs-art-icon') : '';
+    return `
+        <div class="lessons-coming-soon-wrap">
+            <div class="lcs-card">
+                <div class="lcs-badge">Curriculum in development</div>
+                <h2 class="lcs-title">Lessons coming soon!</h2>
+                <p class="lcs-desc">
+                    Structured lessons for <strong>${UI.escape(langName)}</strong> are currently being authored.
+                </p>
+                <p class="lcs-sub">
+                    In the meantime, the interactive practice tools are fully operational:
+                </p>
+                <div class="lcs-features">
+                    <button type="button" class="lcs-feature-btn" data-open-tab="drills">
+                        <span class="lcs-feature-icon">${workshopIcon}</span>
+                        <span class="lcs-feature-text">
+                            <strong>Workshop</strong>
+                            <span>Verb conjugation, listening lab, grammar drills, music & video learning</span>
+                        </span>
+                        <span class="lcs-feature-arrow">→</span>
+                    </button>
+                    <button type="button" class="lcs-feature-btn" data-open-tab="reader">
+                        <span class="lcs-feature-icon">${readerIcon}</span>
+                        <span class="lcs-feature-text">
+                            <strong>Library</strong>
+                            <span>Graded readings with instant tap-to-translate & morphological breakdown</span>
+                        </span>
+                        <span class="lcs-feature-arrow">→</span>
+                    </button>
+                    <button type="button" class="lcs-feature-btn" data-open-tab="decks">
+                        <span class="lcs-feature-icon">${decksIcon}</span>
+                        <span class="lcs-feature-text">
+                            <strong>Decks</strong>
+                            <span>Spaced repetition flashcards and vocabulary practice</span>
+                        </span>
+                        <span class="lcs-feature-arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
 async function renderCurriculum() {
     const renderToken = ++curriculumRenderToken;
 
@@ -217,6 +272,12 @@ async function renderCurriculum() {
                 renderCurriculum();
             }
         });
+        return;
+    }
+
+    if (_totalCourseLessons() === 0) {
+        root.innerHTML = lessonsComingSoonHtml();
+        attachCurriculumEvents(root);
         return;
     }
 
@@ -1085,6 +1146,13 @@ function attachCurriculumEvents(root) {
             DiagnosticTest.open({
                 onExit: () => renderCurriculum()
             });
+            return;
+        }
+
+        const tabBtn = e.target.closest('[data-open-tab]');
+        if (tabBtn && typeof showTab === 'function') {
+            const targetTab = tabBtn.getAttribute('data-open-tab');
+            showTab(targetTab, document.querySelector(`.nav button[data-tab="${targetTab}"]`));
             return;
         }
     });
