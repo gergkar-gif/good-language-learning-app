@@ -1092,11 +1092,13 @@ const EsGrammarStudio = (function () {
 
     let _container = null;
     let _activeTab = 'ser-estar';
+    let _questionCount = 10;
     let _queue = [];
     let _idx = 0;
     let _score = 0;
     let _mistakes = [];
     let _state = 'settings'; // 'settings' | 'quiz' | 'summary'
+    let _keyHandlerAttached = false;
 
     function _esc(s) {
         if (!s) return '';
@@ -1128,12 +1130,15 @@ const EsGrammarStudio = (function () {
         _state = 'settings';
         _queue = [];
         _idx = 0;
+        _score = 0;
+        _mistakes = [];
     }
 
     function _startSession(count) {
         const pool = _poolFor(_activeTab);
         const shuffled = _shuffle(pool);
-        _queue = (count && count > 0) ? shuffled.slice(0, count) : shuffled;
+        const targetCount = (count && count > 0) ? count : _questionCount;
+        _queue = shuffled.slice(0, Math.min(targetCount, pool.length));
         _idx = 0;
         _score = 0;
         _mistakes = [];
@@ -1154,20 +1159,26 @@ const EsGrammarStudio = (function () {
         if (!feedbackEl) return;
 
         feedbackEl.innerHTML = `
-            <div class="wk-feedback-card ${isCorrect ? 'is-correct' : 'is-wrong'}">
-                <div class="wk-feedback-title">${isCorrect ? '✓ ¡Correcto!' : '✗ No exactamente'}</div>
-                <div class="wk-feedback-rule"><strong>Regla:</strong> ${_esc(item.rule)}</div>
-                <div class="wk-feedback-trans"><em>${_esc(item.translation)}</em></div>
-                <button type="button" class="btn btn-primary wk-next-btn" id="es-next-btn">Continuar</button>
+            <div class="gd-feedback ${isCorrect ? 'gd-feedback-correct' : 'gd-feedback-wrong'}" style="margin-top: 18px; padding: 14px 16px; border-radius: var(--radius-sm); border: 1px solid ${isCorrect ? 'var(--success)' : 'var(--danger)'}; background: ${isCorrect ? 'var(--success-bg, rgba(47,122,77,0.08))' : 'var(--danger-bg, rgba(178,58,34,0.08))'};">
+                <div style="font-weight: 600; font-size: 15px; margin-bottom: 6px; color: ${isCorrect ? 'var(--success)' : 'var(--danger)'};">
+                    ${isCorrect ? '✓ Correct' : '✗ Not quite'}
+                </div>
+                <div style="font-size: 14px; line-height: 1.45; color: var(--text); margin-bottom: 6px;">
+                    <strong>Rule:</strong> ${_esc(item.rule)}
+                </div>
+                <div style="font-size: 13.5px; font-style: italic; color: var(--muted); margin-bottom: 14px;">
+                    ${_esc(item.translation)}
+                </div>
+                <button type="button" class="vbtn vbtn-primary" id="es-next-btn" style="min-width: 140px;">Continue</button>
             </div>
         `;
 
-        document.querySelectorAll('.es-opt-btn').forEach(btn => {
+        document.querySelectorAll('.gd-option').forEach(btn => {
             btn.disabled = true;
             if (btn.dataset.opt === item.answer) {
-                btn.classList.add('is-right');
+                btn.classList.add('correct');
             } else if (btn.dataset.opt === selected) {
-                btn.classList.add('is-wrong');
+                btn.classList.add('wrong');
             }
         });
 
@@ -1190,46 +1201,72 @@ const EsGrammarStudio = (function () {
         const drillInfoBtn = (typeof DrillInfo !== 'undefined') ? DrillInfo.buttonHtml('es-grammar-studio') : '';
 
         return `
-            <div class="es-studio-settings">
-                <div class="wk-settings-header">
-                    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
-                        <h3>${_esc(tabMeta.label)}</h3>
-                        ${drillInfoBtn}
-                    </div>
-                    <p class="text-muted" style="margin-top: 4px;">${_esc(tabMeta.desc)}</p>
+            <div class="gd-settings">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px;">
+                    <h2 class="gd-title" style="margin-bottom: 0;">Spanish Grammar Studio</h2>
+                    ${drillInfoBtn}
                 </div>
-                <div class="es-settings-counts" style="margin-top: 24px;">
-                    <p style="margin-bottom: 12px; font-weight: 500;">Número de preguntas:</p>
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-outline-primary" data-count="5">5</button>
-                        <button type="button" class="btn btn-outline-primary" data-count="10">10</button>
-                        <button type="button" class="btn btn-outline-primary" data-count="20">20</button>
-                        <button type="button" class="btn btn-outline-primary" data-count="${pool.length}">Todas (${pool.length})</button>
+
+                <div class="gd-tab-switcher" role="tablist">
+                    ${TABS.map(tab => `
+                        <button type="button" class="gd-tab-btn ${_activeTab === tab.id ? 'active' : ''}" data-es-tab="${tab.id}" role="tab" aria-selected="${_activeTab === tab.id}">
+                            ${tab.label}
+                        </button>
+                    `).join('')}
+                </div>
+
+                <p class="gd-hint" style="margin-bottom: 22px;">${_esc(tabMeta.desc)}</p>
+
+                <div class="gd-setting">
+                    <label>Number of questions</label>
+                    <div class="gd-count-chips">
+                        ${[5, 10, 20, 30].map(n => `
+                            <button type="button" class="gd-chip ${_questionCount === n ? 'active' : ''}" data-count="${n}">
+                                ${n === 30 ? 'All (30)' : n}
+                            </button>
+                        `).join('')}
                     </div>
                 </div>
+
+                <button type="button" class="vbtn vbtn-primary vbtn-block" id="es-start-btn" style="margin-top: 24px;">Start Practice</button>
             </div>
         `;
     }
 
     function _renderQuiz() {
         const item = _queue[_idx];
+        const tabMeta = TABS.find(t => t.id === _activeTab) || TABS[0];
         const options = _shuffle(item.options);
-        const promptSentence = item.sentence.replace('___', '<span class="es-blank">____</span>');
+        const progressPct = Math.round(((_idx) / Math.max(1, _queue.length)) * 100);
+        const promptSentence = item.sentence.replace('___', '<span class="gd-blank" style="display: inline-block; min-width: 48px; border-bottom: 2px solid var(--primary); color: var(--primary); font-weight: 600; text-align: center; padding: 0 4px;">_____</span>');
 
         return `
-            <div class="es-quiz-container">
-                <div class="es-quiz-progress">
-                    <span>Pregunta ${_idx + 1} / ${_queue.length}</span>
-                    <span class="es-score-counter">Aciertos: ${_score}</span>
-                </div>
-                <div class="es-quiz-sentence">${promptSentence}</div>
-                <div class="es-quiz-options">
-                    ${options.map(opt => `
-                        <button type="button" class="btn btn-outline-secondary es-opt-btn" data-opt="${_esc(opt)}">
-                            ${_esc(opt)}
+            <div class="driller-progress-track" aria-hidden="true">
+                <div class="driller-progress-bar" style="width: ${progressPct}%;"></div>
+            </div>
+            <div class="gd-hud">
+                <span class="gd-hud-score">Question ${_idx + 1} of ${_queue.length}</span>
+                <button class="gd-change-skill" id="es-exit-btn">← Exit</button>
+            </div>
+            <div class="gd-hud-subline">
+                <span class="gd-hud-skill-tag">${_esc(tabMeta.label)}</span>
+                <span style="font-size: 13px; font-weight: 500; color: var(--secondary); font-variant-numeric: tabular-nums;">Score: ${_score}</span>
+            </div>
+
+            <div class="gd-exercise" style="max-width: 540px; margin: 0 auto; padding: 0 16px;">
+                <p class="gd-question" style="font-family: var(--font-display, Georgia, serif); font-size: 1.25rem; line-height: 1.5; color: var(--text); margin: 18px 0 22px;">
+                    ${promptSentence}
+                </p>
+
+                <div class="gd-options">
+                    ${options.map((opt, i) => `
+                        <button type="button" class="gd-option" data-opt="${_esc(opt)}">
+                            <span class="lsn-key-hint">${i + 1}</span>
+                            <span>${_esc(opt)}</span>
                         </button>
                     `).join('')}
                 </div>
+
                 <div id="es-quiz-feedback"></div>
             </div>
         `;
@@ -1240,29 +1277,61 @@ const EsGrammarStudio = (function () {
         const pct = Math.round((_score / total) * 100);
 
         return `
-            <div class="es-quiz-summary">
-                <h3>¡Sesión completada!</h3>
-                <div class="es-score-badge ${pct >= 80 ? 'high' : (pct >= 50 ? 'med' : 'low')}">
-                    ${pct}% (${_score} / ${total})
-                </div>
-                ${_mistakes.length > 0 ? `
-                    <div class="es-mistakes-review">
-                        <h4>Puntos para repasar:</h4>
-                        <ul class="es-mistakes-list">
-                            ${_mistakes.map(m => `
-                                <li>
-                                    <div class="es-mistake-sentence">${_esc(m.item.sentence.replace('___', m.item.answer))}</div>
-                                    <div class="es-mistake-rule">${_esc(m.item.rule)}</div>
-                                </li>
-                            `).join('')}
-                        </ul>
+            <div class="gd-settings">
+                <div class="gd-clean-state" style="padding: 36px 24px; text-align: center;">
+                    <h3 class="gd-clean-title" style="font-size: 1.4rem; margin-bottom: 8px;">Practice Complete</h3>
+                    <div style="font-size: 2.4rem; font-family: var(--font-display, Georgia, serif); font-weight: 600; color: ${pct >= 80 ? 'var(--success)' : (pct >= 50 ? 'var(--ochre, #855A08)' : 'var(--danger)')}; margin: 12px 0;">
+                        ${pct}%
                     </div>
-                ` : `<p class="text-success font-weight-bold" style="color: var(--pine-success, #2f7a4d);">¡Excelente! No cometiste ningún error.</p>`}
-                <div class="es-summary-actions" style="margin-top: 24px;">
-                    <button type="button" class="btn btn-primary" id="es-restart-btn">Volver a practicar</button>
+                    <p class="gd-clean-desc" style="margin-bottom: 24px;">You answered ${_score} of ${total} questions correctly.</p>
+
+                    ${_mistakes.length > 0 ? `
+                        <div style="text-align: left; margin: 24px 0 20px; border-top: 1px solid var(--border); padding-top: 18px;">
+                            <h4 style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 12px;">Points to review</h4>
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                ${_mistakes.map(m => `
+                                    <div style="padding: 12px 14px; background: var(--wash, rgba(16,42,71,0.03)); border-left: 3px solid var(--danger); border-radius: var(--radius-sm);">
+                                        <div style="font-weight: 500; font-size: 14.5px; color: var(--text); margin-bottom: 4px;">${_esc(m.item.sentence.replace('___', m.item.answer))}</div>
+                                        <div style="font-size: 13px; color: var(--muted);">${_esc(m.item.rule)}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : `
+                        <p style="font-weight: 600; color: var(--success); margin-bottom: 20px;">Outstanding! No mistakes made.</p>
+                    `}
+
+                    <div class="gd-clean-actions" style="margin-top: 24px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                        <button type="button" class="vbtn vbtn-primary" id="es-restart-btn">Practise Again</button>
+                        <button type="button" class="vbtn vbtn-secondary" id="es-choose-tab-btn">Change Topic</button>
+                    </div>
                 </div>
             </div>
         `;
+    }
+
+    function _handleGlobalKey(e) {
+        if (!_container || _state !== 'quiz') return;
+
+        // If feedback Continue button is active, Enter or Space advances
+        const nextBtn = document.getElementById('es-next-btn');
+        if (nextBtn) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                nextBtn.click();
+            }
+            return;
+        }
+
+        // 1-4 keys to select option
+        if (['1', '2', '3', '4'].includes(e.key)) {
+            const index = parseInt(e.key, 10) - 1;
+            const optionBtns = _container.querySelectorAll('.gd-option');
+            if (optionBtns && optionBtns[index] && !optionBtns[index].disabled) {
+                e.preventDefault();
+                optionBtns[index].click();
+            }
+        }
     }
 
     function _attachEvents() {
@@ -1272,64 +1341,81 @@ const EsGrammarStudio = (function () {
             DrillInfo.attach(_container);
         }
 
-        // Nav tabs
-        _container.querySelectorAll('[data-es-tab]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                _activeTab = btn.dataset.esTab;
-                _state = 'settings';
-                _render();
-            });
-        });
+        if (!_keyHandlerAttached && typeof document !== 'undefined') {
+            document.addEventListener('keydown', _handleGlobalKey);
+            _keyHandlerAttached = true;
+        }
 
-        // Settings start
-        _container.querySelectorAll('[data-count]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const count = parseInt(btn.dataset.count, 10);
-                _startSession(count);
+        // Settings events
+        if (_state === 'settings') {
+            _container.querySelectorAll('[data-es-tab]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    _activeTab = btn.dataset.esTab;
+                    _render();
+                });
             });
-        });
 
-        // Quiz option click
-        _container.querySelectorAll('.es-opt-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                _onAnswer(btn.dataset.opt);
+            _container.querySelectorAll('.gd-chip').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    _questionCount = parseInt(btn.dataset.count, 10);
+                    _container.querySelectorAll('.gd-chip').forEach(b => b.classList.toggle('active', b === btn));
+                });
             });
-        });
 
-        // Restart
-        const restartBtn = _container.querySelector('#es-restart-btn');
-        if (restartBtn) {
-            restartBtn.addEventListener('click', () => {
-                _state = 'settings';
-                _render();
+            const startBtn = _container.querySelector('#es-start-btn');
+            if (startBtn) {
+                startBtn.addEventListener('click', () => {
+                    _startSession(_questionCount);
+                });
+            }
+        }
+
+        // Quiz events
+        if (_state === 'quiz') {
+            const exitBtn = _container.querySelector('#es-exit-btn');
+            if (exitBtn) {
+                exitBtn.addEventListener('click', () => {
+                    _state = 'settings';
+                    _render();
+                });
+            }
+
+            _container.querySelectorAll('.gd-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    _onAnswer(btn.dataset.opt);
+                });
             });
+        }
+
+        // Summary events
+        if (_state === 'summary') {
+            const restartBtn = _container.querySelector('#es-restart-btn');
+            if (restartBtn) {
+                restartBtn.addEventListener('click', () => {
+                    _startSession(_questionCount);
+                });
+            }
+
+            const chooseTabBtn = _container.querySelector('#es-choose-tab-btn');
+            if (chooseTabBtn) {
+                chooseTabBtn.addEventListener('click', () => {
+                    _state = 'settings';
+                    _render();
+                });
+            }
         }
     }
 
     function _render() {
         if (!_container) return;
 
-        let bodyHtml = '';
         if (_state === 'settings') {
-            bodyHtml = _renderSettings();
+            _container.innerHTML = _renderSettings();
         } else if (_state === 'quiz') {
-            bodyHtml = _renderQuiz();
+            _container.innerHTML = _renderQuiz();
         } else if (_state === 'summary') {
-            bodyHtml = _renderSummary();
+            _container.innerHTML = _renderSummary();
         }
-
-        _container.innerHTML = `
-            <div class="sp-studio-wrap es-grammar-studio-wrap">
-                <div class="sp-studio-nav" role="tablist">
-                    ${TABS.map(tab => `
-                        <button type="button" class="sp-studio-tab ${_activeTab === tab.id ? 'active' : ''}" data-es-tab="${tab.id}" role="tab" aria-selected="${_activeTab === tab.id}">
-                            ${tab.label}
-                        </button>
-                    `).join('')}
-                </div>
-                <div class="es-studio-body">${bodyHtml}</div>
-            </div>
-        `;
 
         _attachEvents();
     }
