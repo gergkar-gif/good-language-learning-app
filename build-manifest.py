@@ -998,7 +998,15 @@ def main():
         lessons_dir = BASE_LESSONS / lang / "lessons"
         curriculum_dir = BASE_LESSONS / lang / "curriculum"
         if not lessons_dir.exists():
-            print(f"Skipping curriculum for {lang}: no {lessons_dir} folder yet")
+            if (curriculum_dir / "curriculum.json").exists():
+                try:
+                    with open(curriculum_dir / "curriculum.json", "r", encoding="utf-8") as f:
+                        curricula[lang] = json.load(f)
+                    print(f"Loaded existing curriculum skeleton for {lang}")
+                except Exception as e:
+                    print(f"Skipping curriculum for {lang}: {e}")
+            else:
+                print(f"Skipping curriculum for {lang}: no {lessons_dir} folder yet")
             continue
         if not curriculum_dir.exists():
             print(f"Skipping curriculum for {lang}: no {curriculum_dir} folder yet")
