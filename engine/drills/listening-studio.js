@@ -456,20 +456,16 @@ const ListeningStudio = (function () {
             <div class="sp-studio-wrap ls-studio-wrap">
                 <div class="sp-studio-nav ls-studio-nav" role="tablist">
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.COMPREHENSION ? 'active' : ''}" data-studio-tab="comprehension" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.COMPREHENSION}">
-                        <svg class="sp-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
-                        <span class="sp-tab-label">Listening Comprehension</span>
+                        Exam-Style Listening
                     </button>
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.DECODING ? 'active' : ''}" data-studio-tab="decoding" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.DECODING}">
-                        <svg class="sp-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                        <span class="sp-tab-label">Decoding Drills</span>
+                        Train Your Ear
                     </button>
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.MUSIC ? 'active' : ''}" data-studio-tab="music" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.MUSIC}">
-                        <svg class="sp-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                        <span class="sp-tab-label">Learn from Music</span>
+                        Learn from Music
                     </button>
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.VIDEO ? 'active' : ''}" data-studio-tab="video" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.VIDEO}">
-                        <svg class="sp-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
-                        <span class="sp-tab-label">Learn from Video</span>
+                        Learn from Video
                     </button>
                 </div>
                 <div class="sp-studio-body ls-studio-body" id="ls-studio-mount"></div>
@@ -510,7 +506,7 @@ const ListeningStudio = (function () {
             if (typeof ListeningDriller !== 'undefined') {
                 ListeningDriller.render(mount, _subOptions);
             } else {
-                mount.innerHTML = '<div class="gd-loading">Loading Decoding Drills…</div>';
+                mount.innerHTML = '<div class="gd-loading">Loading Train Your Ear…</div>';
             }
         } else {
             _renderComprehension(mount);
@@ -548,7 +544,7 @@ const ListeningStudio = (function () {
         mount.innerHTML = `
             <div class="sp-driller-wrap sp-studio-body">
                 <div class="sp-setup-head">
-                    <h2 class="sp-setup-title">Listening Comprehension Studio</h2>
+                    <h2 class="sp-setup-title">Exam-Style Listening Studio</h2>
                     <p class="sp-setup-desc">
                         Simulate CEFR exam listening tasks. Listen to authentic multi-speaker dialogues and announcements, answer comprehension questions, and inspect detailed evidence quotes.
                     </p>
