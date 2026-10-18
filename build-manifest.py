@@ -470,6 +470,117 @@ FREQUENCY_GLOSS = {
     "amar": "to love",
 }
 
+FREQUENCY_GLOSS_FR = {
+    "le": "the; him, it", "la": "the; her, it", "les": "the; them",
+    "un": "a, an, one", "une": "a, an, one", "des": "some; of the", "du": "some; of the",
+    "au": "to the, at the", "aux": "to the, at the",
+    "de": "of, from", "à": "to, at, in", "en": "in, to; of it", "dans": "in, inside",
+    "sur": "on, upon", "pour": "for, in order to", "par": "by, through", "avec": "with",
+    "sans": "without", "sous": "under", "vers": "towards, around", "chez": "at the home of",
+    "je": "I", "tu": "you", "il": "he, it", "elle": "she, it", "on": "one, we, people",
+    "nous": "we, us", "vous": "you", "ils": "they", "elles": "they",
+    "me": "me, to me", "te": "you, to you", "se": "oneself, himself, herself",
+    "lui": "him, to him, to her", "leur": "their; to them", "y": "there, to it",
+    "mon": "my", "ma": "my", "mes": "my", "ton": "your", "ta": "your", "tes": "your",
+    "son": "his, her, its", "sa": "his, her, its", "ses": "his, her, its",
+    "notre": "our", "nos": "our", "votre": "your", "vos": "your", "leurs": "their",
+    "ce": "this, that, it", "cet": "this, that", "cette": "this, that", "ces": "these, those",
+    "ça": "that, this, it", "cela": "that, it", "celui": "the one", "celle": "the one",
+    "qui": "who, which, that", "que": "that, what, than", "quoi": "what",
+    "dont": "whose, of which", "où": "where, when",
+    "ne": "not", "pas": "not; step", "plus": "more; no longer", "jamais": "never, ever",
+    "rien": "nothing, anything", "personne": "nobody, anyone; person",
+    "et": "and", "ou": "or", "mais": "but", "donc": "so, therefore", "car": "because, for",
+    "ni": "neither, nor", "si": "if, whether; so; yes", "comme": "like, as",
+    "être": "to be", "avoir": "to have", "faire": "to do, to make", "dire": "to say, to tell",
+    "aller": "to go", "voir": "to see", "savoir": "to know", "pouvoir": "can, to be able to",
+    "vouloir": "to want", "venir": "to come", "falloir": "to be necessary",
+    "devoir": "must, to have to", "prendre": "to take", "croire": "to believe",
+    "aimer": "to love, to like", "passer": "to pass, to spend", "mettre": "to put, to place",
+    "parler": "to speak, to talk", "trouver": "to find", "donner": "to give",
+    "comprendre": "to understand", "connaître": "to know, to be familiar with",
+    "demander": "to ask", "rester": "to stay, to remain", "tenir": "to hold, to keep",
+    "porter": "to wear, to carry", "sortir": "to go out", "entendre": "to hear",
+    "attendre": "to wait for", "laisser": "to leave, to let", "appeler": "to call",
+    "tout": "all, everything, very", "tous": "all, everyone", "autre": "other, another",
+    "même": "same, even", "bien": "well, good", "très": "very", "aussi": "also, too, as",
+    "encore": "still, again, yet", "alors": "then, so", "toujours": "always, still",
+    "oui": "yes", "non": "no", "merci": "thank you", "peu": "little, few",
+    "beaucoup": "much, many, a lot", "bon": "good", "grand": "big, tall, great",
+    "petit": "small, little", "nouveau": "new", "jeune": "young", "vieux": "old",
+    "beau": "beautiful, handsome", "vrai": "true, real", "seul": "alone, only",
+    "temps": "time; weather", "jour": "day", "homme": "man", "femme": "woman, wife",
+    "chose": "thing", "vie": "life", "fois": "time, occasion", "monde": "world, people",
+    "main": "hand", "coup": "blow, shot, move", "tête": "head", "père": "father",
+    "mère": "mother", "enfant": "child", "ami": "friend", "maison": "house, home",
+    "travail": "work, job", "heure": "hour, time", "an": "year", "année": "year",
+    "nuit": "night", "ville": "city, town", "soir": "evening", "matin": "morning",
+    "moment": "moment", "place": "place, square, seat", "argent": "money, silver",
+    "histoire": "story, history", "eau": "water", "voiture": "car", "porte": "door",
+}
+
+FREQUENCY_GLOSS_IT = {
+    "essere": "to be", "avere": "to have", "fare": "to do, to make", "dire": "to say, to tell",
+    "potere": "can, to be able to", "volere": "to want", "sapere": "to know",
+    "stare": "to stay, to be", "dovere": "must, to have to", "vedere": "to see",
+    "andare": "to go", "venire": "to come", "dare": "to give", "parlare": "to speak, to talk",
+    "trovare": "to find", "sentire": "to hear, to feel", "lasciare": "to leave, to let",
+    "prendere": "to take", "guardare": "to look at, to watch", "mettere": "to put, to place",
+    "pensare": "to think", "passare": "to pass, to spend", "credere": "to believe",
+    "portare": "to bring, to carry", "parere": "to seem", "tornare": "to return, to come back",
+    "sembrare": "to seem, to appear", "tenere": "to hold, to keep", "capire": "to understand",
+    "morire": "to die", "chiamare": "to call", "conoscere": "to know, to meet",
+    "rimanere": "to stay, to remain", "chiedere": "to ask", "cercare": "to look for, to try",
+    "entrare": "to enter", "vivere": "to live", "aprire": "to open", "uscire": "to go out",
+    "ricordare": "to remember", "bisognare": "to be necessary", "cominciare": "to begin, to start",
+    "rispondere": "to answer", "aspettare": "to wait for", "riuscire": "to succeed, to manage",
+    "chiudere": "to close", "finire": "to finish, to end", "arrivare": "to arrive",
+    "piacere": "to like, to be pleasing", "succedere": "to happen", "scusare": "to excuse, to forgive",
+    "il": "the", "lo": "the; him, it", "la": "the; her, it", "i": "the",
+    "gli": "the; to him, to them", "le": "the; them, to her", "un": "a, an, one",
+    "uno": "a, an, one", "una": "a, an, one",
+    "di": "of, from", "a": "to, at, in", "da": "from, by, since", "in": "in, into, to",
+    "con": "with", "su": "on, upon, up", "per": "for, in order to", "tra": "between, among",
+    "fra": "between, among", "senza": "without", "contro": "against", "verso": "towards",
+    "dopo": "after, afterwards", "prima": "before, earlier; first", "sotto": "under, below",
+    "sopra": "above, on top of", "dentro": "inside", "fuori": "outside",
+    "del": "of the, some", "dello": "of the, some", "della": "of the, some",
+    "dei": "of the, some", "degli": "of the, some", "delle": "of the, some",
+    "al": "to the, at the", "allo": "to the, at the", "alla": "to the, at the",
+    "ai": "to the, at the", "agli": "to the, at the", "alle": "to the, at the",
+    "dal": "from the, by the", "dalla": "from the, by the", "nel": "in the", "nella": "in the",
+    "nei": "in the", "nelle": "in the", "sul": "on the", "sulla": "on the",
+    "e": "and", "o": "or", "ma": "but", "che": "that, which, who, what",
+    "se": "if, whether; oneself", "perché": "why, because", "come": "how, as, like",
+    "quando": "when", "dove": "where", "mentre": "while", "quindi": "therefore, so",
+    "però": "however, but", "anche": "also, too, even",
+    "non": "not", "no": "no", "sì": "yes", "più": "more, plus", "mai": "never, ever",
+    "sempre": "always", "ancora": "still, yet, again", "già": "already", "ora": "now; hour",
+    "adesso": "now", "poi": "then, afterwards", "subito": "immediately, right away",
+    "forse": "maybe, perhaps", "quasi": "almost", "proprio": "really, just; one's own",
+    "solo": "only, alone", "così": "so, like this, thus", "molto": "very, much, many",
+    "poco": "little, few", "tanto": "so much, so many", "troppo": "too much, too",
+    "tutto": "all, everything, whole", "niente": "nothing, anything", "nulla": "nothing",
+    "qualcosa": "something", "qualcuno": "someone, anyone", "nessuno": "nobody, no one, none",
+    "ogni": "every, each", "altro": "other, another", "stesso": "same, self",
+    "certo": "certain, sure, of course", "vero": "true, real", "bene": "well, good",
+    "male": "badly, evil", "meglio": "better", "peggio": "worse", "insieme": "together",
+    "qui": "here", "qua": "here", "lì": "there", "là": "there", "oggi": "today",
+    "ieri": "yesterday", "domani": "tomorrow", "allora": "then, so", "davvero": "really, truly",
+    "io": "I", "tu": "you", "lui": "he, him", "lei": "she, her; formal you",
+    "noi": "we, us", "voi": "you all", "loro": "they, them, their",
+    "mi": "me, to me", "ti": "you, to you", "si": "oneself, himself, herself",
+    "ci": "us, to us; there", "vi": "you all, to you; there", "li": "them",
+    "ne": "of it, of them, some", "me": "me", "te": "you", "chi": "who, whom",
+    "mio": "my, mine", "tuo": "your, yours", "suo": "his, her, its",
+    "nostro": "our, ours", "vostro": "your, yours", "questo": "this", "quello": "that",
+    "quale": "which, what", "quanto": "how much, how many",
+    "primo": "first", "ultimo": "last, latest", "nuovo": "new", "vecchio": "old",
+    "bello": "beautiful, nice", "buono": "good", "grande": "big, large, great",
+    "piccolo": "small, little", "alto": "tall, high", "lungo": "long", "giovane": "young",
+    "grazie": "thank you, thanks",
+}
+
 # decks.json's shared word table (read by topic decks, frequency decks and the
 # Vocabulary Driller) keeps the first gloss the course gives a word. For these
 # Spanish words that first gloss is a unit-specific sense from a grammar or
@@ -488,8 +599,8 @@ SHARED_GLOSS = {
 # A gloss that begins like this is describing the word rather than translating
 # it, and makes a useless flashcard.
 JUNK_GLOSS = re.compile(
-    r"^(letter|abbreviation|obsolete|pronunciation spelling|alternative form"
-    r"|apocopic|misspelling|eye dialect|initialism|acronym)", re.I)
+    r"^(letter|the name of the latin|abbreviation|obsolete|pronunciation spelling"
+    r"|alternative form|apocopic|misspelling|eye dialect|initialism|acronym|iso 3166)", re.I)
 
 
 def _strip_balanced(text, open_ch, close_ch):
@@ -709,11 +820,9 @@ def build_decks(lang="es", curriculum=None):
     the same curriculum structure the Learn tab uses, not re-derived from filenames."""
     base = BASE_LESSONS / lang
     vocab_dir = base / "vocabulary"
-    if not vocab_dir.exists():
-        return None
 
     if curriculum is None:
-        curriculum = build_curriculum(lang)
+        curriculum = build_curriculum(lang) or {"levels": {}}
     lesson_to_unit = _lesson_id_to_unit(curriculum)
     vocab_to_unit = _vocab_unit_index(lang, curriculum)
 
@@ -741,55 +850,56 @@ def build_decks(lang="es", curriculum=None):
             words[lemma] = {"en": shared_overrides.get(lemma) or translation or "",
                             "pos": pos or "unknown"}
 
-    for level_dir in sorted(p for p in vocab_dir.iterdir() if p.is_dir()):
-        for f in sorted(level_dir.glob("*-voc.json")):
-            try:
-                data = json.loads(f.read_text(encoding="utf-8"))
-            except (OSError, json.JSONDecodeError):
-                continue
-
-            lemmas = []
-            glosses = {}
-            for w in data.get("words", []):
-                lemma = w.get("lemma")
-                if not lemma:
+    if vocab_dir.exists():
+        for level_dir in sorted(p for p in vocab_dir.iterdir() if p.is_dir()):
+            for f in sorted(level_dir.glob("*-voc.json")):
+                try:
+                    data = json.loads(f.read_text(encoding="utf-8"))
+                except (OSError, json.JSONDecodeError):
                     continue
-                remember(lemma, w.get("translation"), w.get("pos"))
-                lemmas.append(lemma)
-                glosses.setdefault(lemma, w.get("translation") or "")
-            if not lemmas:
-                continue
 
-            lesson_key = data.get("lesson", f.stem.replace("-voc", ""))
-            rel_ref = f"vocabulary/{level_dir.name}/{f.name}"
-            unit = (vocab_to_unit.get(rel_ref) or
-                    vocab_to_unit.get(f.name) or
-                    vocab_to_unit.get(lesson_key) or
-                    vocab_to_unit.get(f.stem.replace("-voc", "")) or
-                    lesson_to_unit.get("lesson." + lesson_key.replace("-", ".")))
+                lemmas = []
+                glosses = {}
+                for w in data.get("words", []):
+                    lemma = w.get("lemma")
+                    if not lemma:
+                        continue
+                    remember(lemma, w.get("translation"), w.get("pos"))
+                    lemmas.append(lemma)
+                    glosses.setdefault(lemma, w.get("translation") or "")
+                if not lemmas:
+                    continue
 
-            if unit:
-                key = unit["id"]
-                if key not in by_unit:
-                    by_unit[key] = {
-                        "name": unit["title"],
-                        "label": unit["label"],
-                        "level": unit["level"],
-                        "track": unit.get("track", "core"),
-                        "lemmas": [],
-                        "seen": set()
-                    }
-                    unit_order.append(key)
-                bucket = by_unit[key]
-                for lemma in lemmas:
-                    if lemma not in bucket["seen"]:
-                        bucket["seen"].add(lemma)
-                        bucket["lemmas"].append(lemma)
-                        bucket.setdefault("glosses", {})[lemma] = glosses[lemma]
+                lesson_key = data.get("lesson", f.stem.replace("-voc", ""))
+                rel_ref = f"vocabulary/{level_dir.name}/{f.name}"
+                unit = (vocab_to_unit.get(rel_ref) or
+                        vocab_to_unit.get(f.name) or
+                        vocab_to_unit.get(lesson_key) or
+                        vocab_to_unit.get(f.stem.replace("-voc", "")) or
+                        lesson_to_unit.get("lesson." + lesson_key.replace("-", ".")))
 
-            theme = data.get("theme")
-            if theme:
-                by_theme.setdefault(theme, []).extend(lemmas)
+                if unit:
+                    key = unit["id"]
+                    if key not in by_unit:
+                        by_unit[key] = {
+                            "name": unit["title"],
+                            "label": unit["label"],
+                            "level": unit["level"],
+                            "track": unit.get("track", "core"),
+                            "lemmas": [],
+                            "seen": set()
+                        }
+                        unit_order.append(key)
+                    bucket = by_unit[key]
+                    for lemma in lemmas:
+                        if lemma not in bucket["seen"]:
+                            bucket["seen"].add(lemma)
+                            bucket["lemmas"].append(lemma)
+                            bucket.setdefault("glosses", {})[lemma] = glosses[lemma]
+
+                theme = data.get("theme")
+                if theme:
+                    by_theme.setdefault(theme, []).extend(lemmas)
 
     # The shared gloss is only right for some units ("llevar" is "to have been
     # doing" in one, "to take / carry" in another), so a lesson deck carries
@@ -857,7 +967,12 @@ def build_decks(lang="es", curriculum=None):
         except (OSError, json.JSONDecodeError):
             ranked, lexicon = [], {}
 
-        gloss_overrides = FREQUENCY_GLOSS if lang.startswith("es") else {}
+        gloss_overrides = (
+            FREQUENCY_GLOSS if lang.startswith("es")
+            else FREQUENCY_GLOSS_FR if base_lang == "fr"
+            else FREQUENCY_GLOSS_IT if base_lang == "it"
+            else {}
+        )
 
         for low, high in FREQUENCY_BANDS:
             band, band_glosses = [], {}
@@ -905,10 +1020,14 @@ def build_decks(lang="es", curriculum=None):
                     deck["glosses"] = band_glosses
                 frequency_decks.append(deck)
 
+    all_decks = lesson_decks + topic_decks + frequency_decks
+    if not all_decks:
+        return None
+
     return {
         "generated": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "words": words,
-        "decks": lesson_decks + topic_decks + frequency_decks
+        "decks": all_decks
     }
 
 

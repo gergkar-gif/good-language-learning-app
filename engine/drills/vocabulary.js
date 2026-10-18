@@ -318,8 +318,8 @@ const VocabularyDriller = (function () {
             if (combined.length) return _filterByTrack(combined);
         }
 
-        // 4. Article stripping (e.g. 'el perro' -> 'perro', 'la casa' -> 'casa')
-        const noArt = lower.replace(/^(el|la|los|las|un|una)\s+/i, '').trim();
+        // 4. Article stripping (e.g. 'el perro' -> 'perro', 'le chat' -> 'chat', 'il cane' -> 'cane')
+        const noArt = lower.replace(/^(el|la|los|las|un|una|le|les|des|du|il|lo|i|gli|uno)\s+|^(l'|un'|d')/i, '').trim();
         if (noArt !== lower) {
             if (_contextIndex[noArt] && _contextIndex[noArt].length) return _filterByTrack(_contextIndex[noArt]);
             if (typeof Lexicon !== 'undefined' && typeof Lexicon.lookup === 'function') {

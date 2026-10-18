@@ -86,8 +86,12 @@ def process():
                 if entry not in word_index[ortho]:
                     word_index[ortho].append(entry)
 
-    # Sort frequency by descending freq
-    sorted_lemmas = [lemma for lemma, _ in sorted(lemma_freq.items(), key=lambda x: -x[1]) if lemma]
+    # Sort frequency by descending freq, skipping elided fragments and single-letter alphabet noise
+    fr_skip = {"c", "d", "j", "l", "m", "n", "qu", "s", "t", "b", "f", "g", "h", "k", "p", "q", "r", "v", "w", "x", "z"}
+    sorted_lemmas = [
+        lemma for lemma, _ in sorted(lemma_freq.items(), key=lambda x: -x[1])
+        if lemma and "'" not in lemma and "’" not in lemma and lemma not in fr_skip
+    ]
 
     print(f"Writing {len(word_index):,} word-index surface forms to {OUTPUT_WORD_INDEX}...")
     with open(OUTPUT_WORD_INDEX, "w", encoding="utf-8") as f:

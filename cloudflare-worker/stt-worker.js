@@ -58,7 +58,9 @@ function normaliseWhisperLang(lang) {
 // Whisper absorbs the target word spellings without trying to continue a dialogue turn.
 const DEFAULT_LANGUAGE_PRIMERS = {
     hu: 'Tiszta magyar kiejtés és helyesírás: hogy vagy, hol laksz, köszönöm szépen, jó napot kívánok.',
-    es: 'Pronunciación en español claro y estándar: hola, buenos días, cómo estás, dónde vives, muchas gracias.'
+    es: 'Pronunciación en español claro y estándar: hola, buenos días, cómo estás, dónde vives, muchas gracias.',
+    fr: "Prononciation française claire et standard : bonjour, comment allez-vous, où habitez-vous, merci beaucoup, s'il vous plaît.",
+    it: 'Pronuncia italiana chiara e standard: buongiorno, come stai, dove abiti, molte grazie, per favore.'
 };
 
 function buildInitialPrompt(targetLang, hint) {
@@ -73,10 +75,20 @@ function buildInitialPrompt(targetLang, hint) {
             ? `Pronunciación en español claro y estándar. Vocabulario: ${cleanHint}.`
             : DEFAULT_LANGUAGE_PRIMERS.es;
     }
+    if (targetLang === 'fr') {
+        return cleanHint
+            ? `Prononciation française claire et standard. Vocabulaire : ${cleanHint}.`
+            : DEFAULT_LANGUAGE_PRIMERS.fr;
+    }
+    if (targetLang === 'it') {
+        return cleanHint
+            ? `Pronuncia italiana chiara e standard. Vocabolario: ${cleanHint}.`
+            : DEFAULT_LANGUAGE_PRIMERS.it;
+    }
     return cleanHint || DEFAULT_LANGUAGE_PRIMERS[targetLang] || '';
 }
 
-// Known Whisper training-set subtitle/outro hallucinations in Spanish, Hungarian, and English
+// Known Whisper training-set subtitle/outro hallucinations in Spanish, Hungarian, French, Italian, and English
 // that can trigger on quiet or short recordings.
 const WHISPER_HALLUCINATION_PATTERNS = [
     /subt[íi]tulos\s+(realizados|creados|hechos|por)\b[^.?!]*/gi,
@@ -87,6 +99,11 @@ const WHISPER_HALLUCINATION_PATTERNS = [
     /feliratozta\b[^.?!]*/gi,
     /a\s+feliratokat\s+k[ée]sz[íi]tette\b[^.?!]*/gi,
     /k[öo]sz[öo]n[öo]m\s+a\s+figyelmet[^.?!]*/gi,
+    /sous-titrage\s+(st'?501|soci[ée]t[ée]\s+radio-canada)\b[^.?!]*/gi,
+    /sous-titres\s+r[ée]alis[ée]s\s+par\b[^.?!]*/gi,
+    /merci\s+d'avoir\s+regard[ée]\b[^.?!]*/gi,
+    /sottotitoli\s+(creati|a\s+cura\s+di)\b[^.?!]*/gi,
+    /grazie\s+per\s+la\s+visione\b[^.?!]*/gi,
     /subtitles\s+by\b[^.?!]*/gi,
     /thank\s+you\s+for\s+watching[^.?!]*/gi
 ];

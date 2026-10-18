@@ -20,6 +20,13 @@ const CefrExam = (function () {
         const _id = config.id;
         const _dataFile = config.dataFile;
         const _storageKey = `parlour_cefr_v1_${_id}`;
+        const _lang = _id.includes('hu') ? 'hu' : (_id.includes('fr') ? 'fr' : (_id.includes('it') ? 'it' : 'es'));
+        function _t(esStr, huStr, frStr, itStr) {
+            if (_lang === 'hu') return huStr;
+            if (_lang === 'fr') return frStr !== undefined ? frStr : esStr;
+            if (_lang === 'it') return itStr !== undefined ? itStr : esStr;
+            return esStr;
+        }
 
         let _data = null;
         let _container = null;
@@ -263,8 +270,6 @@ const CefrExam = (function () {
             const tarea = _getCurrentTarea();
             if (!tarea) return;
 
-            const isHu = _id.includes('hu');
-
             // Case A: Continuous Audio Tarea (like Tarea 2 Interview)
             if (tarea.audio && tarea.audio.turns) {
                 const turns = tarea.audio.turns;
@@ -274,40 +279,52 @@ const CefrExam = (function () {
 
                 if (_state.listeningPlaying) {
                     const turn = turns[_state.listeningCurrentTurn];
-                    statusText = isHu
-                        ? `${_state.listeningPass} / 2. meghallgatás: Hang lejátszása`
-                        : `Pase ${_state.listeningPass} de 2: Reproduciendo audio`;
+                    statusText = _t(
+                        `Pase ${_state.listeningPass} de 2: Reproduciendo audio`,
+                        `${_state.listeningPass} / 2. meghallgatás: Hang lejátszása`,
+                        `Écoute ${_state.listeningPass} sur 2 : Lecture en cours`,
+                        `Ascolto ${_state.listeningPass} di 2: Riproduzione in corso`
+                    );
                     subText = turn
-                        ? (isHu ? `Beszélő: ${turn.speaker}` : `Voz: ${turn.speaker}`)
-                        : (isHu ? 'Figyelmes hallgatás...' : 'Escuchando con atención...');
+                        ? _t(`Voz: ${turn.speaker}`, `Beszélő: ${turn.speaker}`, `Voix : ${turn.speaker}`, `Voce: ${turn.speaker}`)
+                        : _t('Escuchando con atención...', 'Figyelmes hallgatás...', 'Écoute attentive...', 'Ascolto attento...');
                     btnHtml = `
-                        <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="audio-pause">${isHu ? 'Lejátszás szüneteltetése' : 'Detener audio'}</button>
+                        <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="audio-pause">${_t('Detener audio', 'Lejátszás szüneteltetése', 'Arrêter l\'audio', 'Ferma audio')}</button>
                         <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="audio-speed">${_state.listeningSpeed}x</button>
                     `;
                 } else if (_state.listeningIntermission) {
-                    statusText = isHu ? 'Szünet a meghallgatások között' : 'Pausa entre audiciones';
-                    subText = isHu
-                        ? `A második meghallgatás ${_state.listeningIntermissionCountdown} másodperc múlva kezdődik. Nézd át a válaszlehetőségeket.`
-                        : `La segunda audición comenzará en ${_state.listeningIntermissionCountdown} segundos. Revisa tus opciones.`;
+                    statusText = _t('Pausa entre audiciones', 'Szünet a meghallgatások között', 'Pause entre les écoutes', 'Pausa tra gli ascolti');
+                    subText = _t(
+                        `La segunda audición comenzará en ${_state.listeningIntermissionCountdown} segundos. Revisa tus opciones.`,
+                        `A második meghallgatás ${_state.listeningIntermissionCountdown} másodperc múlva kezdődik. Nézd át a válaszlehetőségeket.`,
+                        `La deuxième écoute commencera dans ${_state.listeningIntermissionCountdown} secondes. Relisez vos options.`,
+                        `Il secondo ascolto inizierà tra ${_state.listeningIntermissionCountdown} secondi. Rivedi le opzioni.`
+                    );
                     btnHtml = `
-                        <button type="button" class="btn btn-primary cefr-ctrl-btn" data-action="skip-intermission">${isHu ? 'Második meghallgatás indítása' : 'Comenzar segunda audición'}</button>
+                        <button type="button" class="btn btn-primary cefr-ctrl-btn" data-action="skip-intermission">${_t('Comenzar segunda audición', 'Második meghallgatás indítása', 'Lancer la deuxième écoute', 'Avvia secondo ascolto')}</button>
                     `;
                 } else if (_state.listeningPass === 2 && !_state.listeningPlaying) {
-                    statusText = isHu ? 'Meghallgatás befejezve' : 'Audición completada';
-                    subText = isHu
-                        ? 'Mindkét hivatalos meghallgatás befejeződött. Jelöld be a válaszaidat és ellenőrizd a feladatot.'
-                        : 'Has escuchado los dos pases oficiales. Selecciona tus respuestas y comprueba la tarea.';
+                    statusText = _t('Audición completada', 'Meghallgatás befejezve', 'Écoute terminée', 'Ascolto completato');
+                    subText = _t(
+                        'Has escuchado los dos pases oficiales. Selecciona tus respuestas y comprueba la tarea.',
+                        'Mindkét hivatalos meghallgatás befejeződött. Jelöld be a válaszaidat és ellenőrizd a feladatot.',
+                        'Vous avez entendu les deux écoutes officielles. Sélectionnez vos réponses et vérifiez l\'exercice.',
+                        'Hai completato entrambi gli ascolti ufficiali. Seleziona le risposte e verifica la prova.'
+                    );
                     btnHtml = `
-                        <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="replay-pass-2">${isHu ? 'Második meghallgatás ismétlése' : 'Repetir segundo pase'}</button>
+                        <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="replay-pass-2">${_t('Repetir segundo pase', 'Második meghallgatás ismétlése', 'Réécouter le second passage', 'Ripeti secondo ascolto')}</button>
                         <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="audio-speed">${_state.listeningSpeed}x</button>
                     `;
                 } else {
-                    statusText = isHu
-                        ? `${_state.listeningPass} / 2. meghallgatás készen áll`
-                        : `Pase ${_state.listeningPass} de 2 preparado`;
-                    subText = isHu ? 'Kattints a lejátszásra, amikor készen állsz.' : 'Pulsa reproducir cuando estés listo.';
+                    statusText = _t(
+                        `Pase ${_state.listeningPass} de 2 preparado`,
+                        `${_state.listeningPass} / 2. meghallgatás készen áll`,
+                        `Écoute ${_state.listeningPass} sur 2 prête`,
+                        `Ascolto ${_state.listeningPass} di 2 pronto`
+                    );
+                    subText = _t('Pulsa reproducir cuando estés listo.', 'Kattints a lejátszásra, amikor készen állsz.', 'Appuyez sur lecture lorsque vous êtes prêt.', 'Premi riproduci quando sei pronto.');
                     btnHtml = `
-                        <button type="button" class="btn btn-primary cefr-ctrl-btn" data-action="audio-play">${isHu ? `${_state.listeningPass}. meghallgatás lejátszása` : `Reproducir pase ${_state.listeningPass}`}</button>
+                        <button type="button" class="btn btn-primary cefr-ctrl-btn" data-action="audio-play">${_t(`Reproducir pase ${_state.listeningPass}`, `${_state.listeningPass}. meghallgatás lejátszása`, `Écouter le passage ${_state.listeningPass}`, `Riproduci ascolto ${_state.listeningPass}`)}</button>
                         <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="audio-speed">${_state.listeningSpeed}x</button>
                     `;
                 }
@@ -354,12 +371,12 @@ const CefrExam = (function () {
 
                 el.innerHTML = `
                     <div class="cefr-audio-status-wrap">
-                        <span class="cefr-audio-status-label">${isHu ? `${tarea.items.length} rövid hanganyag` : `${tarea.items.length} avisos y mensajes breves`}</span>
-                        <span class="cefr-audio-status-sub">${isPlaying && activeItem ? (isHu ? `${activeItem.num}. szöveg lejátszása...` : `Reproduciendo mensaje ${activeItem.num}...`) : (isHu ? 'Kattints az egyes kérdések hangfájljára a meghallgatáshoz (legfeljebb 2 lejátszás kérdésenként).' : 'Pulsa en cada pregunta para escuchar su mensaje correspondiente (hasta 2 pases por mensaje).')}</span>
+                        <span class="cefr-audio-status-label">${_t(`${tarea.items.length} avisos y mensajes breves`, `${tarea.items.length} rövid hanganyag`, `${tarea.items.length} annonces et messages courts`, `${tarea.items.length} annunci e brevi messaggi`)}</span>
+                        <span class="cefr-audio-status-sub">${isPlaying && activeItem ? _t(`Reproduciendo mensaje ${activeItem.num}...`, `${activeItem.num}. szöveg lejátszása...`, `Lecture du message ${activeItem.num}...`, `Riproduzione messaggio ${activeItem.num}...`) : _t('Pulsa en cada pregunta para escuchar su mensaje correspondiente (hasta 2 pases por mensaje).', 'Kattints az egyes kérdések hangfájljára a meghallgatáshoz (legfeljebb 2 lejátszás kérdésenként).', 'Cliquez sur chaque question pour écouter le message correspondant (jusqu\'à 2 écoutes par message).', 'Clicca su ciascuna domanda per ascoltare il messaggio corrispondente (fino a 2 ascolti per messaggio).')}</span>
                     </div>
                     <div class="cefr-audio-controls">
                         ${isPlaying ? `
-                            <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="audio-pause">${isHu ? 'Leállítás' : 'Detener audio'}</button>
+                            <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="audio-pause">${_t('Detener audio', 'Leállítás', 'Arrêter l\'audio', 'Ferma audio')}</button>
                         ` : ''}
                         <button type="button" class="btn btn-secondary cefr-ctrl-btn" data-action="audio-speed">${_state.listeningSpeed}x</button>
                     </div>
@@ -447,8 +464,12 @@ const CefrExam = (function () {
                     onAudioLevel: (level, meta) => {
                         const statusEl = document.getElementById('cefr-mic-status-label');
                         if (statusEl && _state.speakingIsRecording && meta && meta.isHearingVoice) {
-                            const isHu = _id.includes('hu');
-                            statusEl.textContent = isHu ? 'Hang érzékelve — beszélj tovább…' : 'Detectando voz — sigue hablando…';
+                            statusEl.textContent = _t(
+                                'Detectando voz — sigue hablando…',
+                                'Hang érzékelve — beszélj tovább…',
+                                'Voix détectée — continuez à parler…',
+                                'Voce rilevata — continua a parlare…'
+                            );
                         }
                     },
                     onError: (err) => {
@@ -456,10 +477,12 @@ const CefrExam = (function () {
                         _state.speakingIsRecording = false;
                         render(_container);
                         if (err === 'permission-denied' || err === 'service-not-allowed' || err === 'insecure-context' || err === 'device-busy') {
-                            const isHu = _id.includes('hu');
-                            alert(isHu
-                                ? 'A mikrofonhoz való hozzáférés nem sikerült. A válaszodat a szövegmezőbe is megírhatod.'
-                                : 'No se pudo acceder al micrófono. Puedes redactar tu respuesta oral en el campo de texto.');
+                            alert(_t(
+                                'No se pudo acceder al micrófono. Puedes redactar tu respuesta oral en el campo de texto.',
+                                'A mikrofonhoz való hozzáférés nem sikerült. A válaszodat a szövegmezőbe is megírhatod.',
+                                'Impossible d\'accéder au microphone. Vous pouvez rédiger votre réponse orale dans le champ de texte.',
+                                'Impossibile accedere al microfono. Puoi scrivere la tua risposta orale nel campo di testo.'
+                            ));
                         }
                     }
                 });
@@ -486,10 +509,12 @@ const CefrExam = (function () {
                 _updateSpeakingUI();
             } catch (err) {
                 console.warn('Microphone access unavailable or denied:', err);
-                const isHu = _id.includes('hu');
-                alert(isHu
-                    ? 'A mikrofonhoz való hozzáférés nem sikerült. A válaszodat a szövegmezőbe is megírhatod.'
-                    : 'No se pudo acceder al micrófono. Puedes redactar tu respuesta oral en el campo de texto.');
+                alert(_t(
+                    'No se pudo acceder al micrófono. Puedes redactar tu respuesta oral en el campo de texto.',
+                    'A mikrofonhoz való hozzáférés nem sikerült. A válaszodat a szövegmezőbe is megírhatod.',
+                    'Impossible d\'accéder au microphone. Vous pouvez rédiger votre réponse orale dans le champ de texte.',
+                    'Impossibile accedere al microfono. Puoi scrivere la tua risposta orale nel campo di testo.'
+                ));
             }
         }
 
@@ -515,15 +540,24 @@ const CefrExam = (function () {
             const statusEl = document.getElementById('cefr-mic-status-label');
             if (!btn || !statusEl) return;
 
-            const isHu = _id.includes('hu');
             if (_state.speakingIsRecording) {
-                btn.textContent = isHu ? 'Felvétel leállítása' : 'Detener grabación';
+                btn.textContent = _t('Detener grabación', 'Felvétel leállítása', 'Arrêter l\'enregistrement', 'Ferma registrazione');
                 btn.className = 'btn btn-secondary cefr-record-btn is-recording';
-                statusEl.textContent = isHu ? 'Hangfelvétel folyamatban... Beszélj természetesen.' : 'Grabando voz... Habla con naturalidad.';
+                statusEl.textContent = _t(
+                    'Grabando voz... Habla con naturalidad.',
+                    'Hangfelvétel folyamatban... Beszélj természetesen.',
+                    'Enregistrement en cours... Parlez naturellement.',
+                    'Registrazione in corso... Parla con naturalezza.'
+                );
             } else {
-                btn.textContent = isHu ? 'Hangfelvétel indítása' : 'Iniciar grabación de voz';
+                btn.textContent = _t('Iniciar grabación de voz', 'Hangfelvétel indítása', 'Démarrer l\'enregistrement vocal', 'Avvia registrazione vocale');
                 btn.className = 'btn btn-primary cefr-record-btn';
-                statusEl.textContent = isHu ? 'A mikrofon készen áll. Kattints a felvételhez.' : 'Micrófono listo. Pulsa para comenzar tu producción oral.';
+                statusEl.textContent = _t(
+                    'Micrófono listo. Pulsa para comenzar tu producción oral.',
+                    'A mikrofon készen áll. Kattints a felvételhez.',
+                    'Microphone prêt. Cliquez pour commencer votre production orale.',
+                    'Microfono pronto. Clicca per iniziare la tua produzione orale.'
+                );
             }
         }
 
@@ -553,7 +587,7 @@ const CefrExam = (function () {
             const isA2 = (_data && _data.level === 'A2') || _id.includes('a2');
             const isB2 = (_data && _data.level === 'B2') || _id.includes('b2');
             const levelCode = isA1 ? 'A1' : (isA2 ? 'A2' : (isB2 ? 'B2' : 'B1'));
-            const langCode = isHu ? 'hu' : (typeof Lang !== 'undefined' ? Lang.code() : 'es');
+            const langCode = _lang !== 'es' ? _lang : (typeof Lang !== 'undefined' ? Lang.code() : 'es');
             const profileConnectors = (typeof Lang !== 'undefined' && typeof Lang.discourseConnectors === 'function')
                 ? Lang.discourseConnectors(levelCode, langCode)
                 : [];
@@ -649,7 +683,7 @@ const CefrExam = (function () {
             const isA2 = (_data && _data.level === 'A2') || _id.includes('a2');
             const isB2 = (_data && _data.level === 'B2') || _id.includes('b2');
             const levelCode = isA1 ? 'A1' : (isA2 ? 'A2' : (isB2 ? 'B2' : 'B1'));
-            const langCode = isHu ? 'hu' : (typeof Lang !== 'undefined' ? Lang.code() : 'es');
+            const langCode = _lang !== 'es' ? _lang : (typeof Lang !== 'undefined' ? Lang.code() : 'es');
             const profileConnectors = (typeof Lang !== 'undefined' && typeof Lang.discourseConnectors === 'function')
                 ? Lang.discourseConnectors(levelCode, langCode)
                 : [];
@@ -695,10 +729,10 @@ const CefrExam = (function () {
 
         function _renderTabs() {
             const tabs = [
-                { id: 'tasks', label: (_id.includes('hu')) ? 'Hivatalos feladattípusok' : 'Tareas oficiales' },
-                { id: 'strategies', label: (_id.includes('hu')) ? 'Stratégiák és tanácsok' : 'Guía y estrategias' },
-                { id: 'mocks', label: (_id.includes('hu')) ? 'Teljes próbavizsga' : 'Simulacro completo' },
-                { id: 'history', label: (_id.includes('hu')) ? 'Eredmények' : 'Mis resultados' }
+                { id: 'tasks', label: _t('Tareas oficiales', 'Hivatalos feladattípusok', 'Épreuves officielles', 'Prove ufficiali') },
+                { id: 'strategies', label: _t('Guía y estrategias', 'Stratégiák és tanácsok', 'Guide et stratégies', 'Guida e strategie') },
+                { id: 'mocks', label: _t('Simulacro completo', 'Teljes próbavizsga', 'Examen blanc complet', 'Simulazione completa') },
+                { id: 'history', label: _t('Mis resultados', 'Eredmények', 'Mes résultats', 'I miei risultati') }
             ];
 
             return `
@@ -715,10 +749,10 @@ const CefrExam = (function () {
         function _renderTasksTab() {
             const skillOrder = ['reading', 'listening', 'writing', 'speaking'];
             const skillLabels = {
-                reading: (_id.includes('hu')) ? 'Olvasásértés' : 'Comprensión de lectura',
-                listening: (_id.includes('hu')) ? 'Hallásértés' : 'Comprensión auditiva',
-                writing: (_id.includes('hu')) ? 'Írásbeli kommunikáció' : 'Expresión escrita',
-                speaking: (_id.includes('hu')) ? 'Szóbeli kommunikáció' : 'Expresión oral'
+                reading: _t('Comprensión de lectura', 'Olvasásértés', 'Compréhension des écrits', 'Comprensione della lettura'),
+                listening: _t('Comprensión auditiva', 'Hallásértés', "Compréhension de l'oral", "Comprensione dell'ascolto"),
+                writing: _t('Expresión escrita', 'Írásbeli kommunikáció', 'Production écrite', 'Produzione scritta'),
+                speaking: _t('Expresión oral', 'Szóbeli kommunikáció', 'Production orale', 'Produzione orale')
             };
 
             const prog = _loadProgress().scores || {};
@@ -732,7 +766,7 @@ const CefrExam = (function () {
                         return `
                             <button type="button" class="cefr-skill-chip ${_state.activeSkill === s ? 'is-active' : ''}" data-cefr-skill="${s}">
                                 <span class="cefr-chip-title">${_esc(skillLabels[s] || skillData.name)}</span>
-                                <span class="cefr-chip-count">${taskCount} ${_id.includes('hu') ? 'feladat' : 'tareas'}</span>
+                                <span class="cefr-chip-count">${taskCount} ${_t('tareas', 'feladat', 'exercices', 'prove')}</span>
                             </button>
                         `;
                     }).join('')}
@@ -746,7 +780,7 @@ const CefrExam = (function () {
 
         function _renderTareasCards(prog) {
             const skill = _getCurrentSkill();
-            if (!skill || !skill.tareas) return `<p class="cefr-empty">${_id.includes('hu') ? 'Nincsenek elérhető feladatok.' : 'No hay tareas disponibles.'}</p>`;
+            if (!skill || !skill.tareas) return `<p class="cefr-empty">${_t('No hay tareas disponibles.', 'Nincsenek elérhető feladatok.', 'Aucun exercice disponible.', 'Nessuna prova disponibile.')}</p>`;
 
             const skillProg = prog[_state.activeSkill] || {};
 
@@ -754,19 +788,19 @@ const CefrExam = (function () {
                 const recorded = skillProg[t.id];
                 const badgeHtml = recorded
                     ? `<span class="cefr-status-pill is-completed">${recorded.pct}% (${recorded.score}/${recorded.maxScore})</span>`
-                    : `<span class="cefr-status-pill is-pending">${_id.includes('hu') ? 'Nincs kitöltve' : 'Pendiente'}</span>`;
+                    : `<span class="cefr-status-pill is-pending">${_t('Pendiente', 'Nincs kitöltve', 'À faire', 'Da completare')}</span>`;
 
                 return `
                     <div class="cefr-task-card" data-cefr-open-tarea="${_esc(t.id)}">
                         <div class="cefr-task-card-header">
-                            <span class="cefr-task-pill">${_esc(t.title || (_id.includes('hu') ? `${t.tareaNum}. feladat` : `Tarea ${t.tareaNum}`))}</span>
+                            <span class="cefr-task-pill">${_esc(t.title || _t(`Tarea ${t.tareaNum}`, `${t.tareaNum}. feladat`, `Exercice ${t.tareaNum}`, `Prova ${t.tareaNum}`))}</span>
                             ${badgeHtml}
                         </div>
                         <div class="cefr-task-card-body">
                             <p class="cefr-task-inst">${_esc(t.instructions || t.prompt || '')}</p>
                         </div>
                         <div class="cefr-task-card-footer">
-                            <span class="cefr-task-meta">${_id.includes('hu') ? 'Kattints a gyakorlás megkezdéséhez' : 'Comenzar práctica'}</span>
+                            <span class="cefr-task-meta">${_t('Comenzar práctica', 'Kattints a gyakorlás megkezdéséhez', "Commencer l'entraînement", 'Inizia la pratica')}</span>
                             <span class="cefr-task-arrow geo-triangle" aria-hidden="true"></span>
                         </div>
                     </div>
@@ -792,12 +826,13 @@ const CefrExam = (function () {
                 contentHtml = _renderSpeakingTarea(tarea);
             }
 
+            const backLabel = _t('Volver a tareas', 'Vissza a feladatokhoz', 'Retour aux épreuves', 'Torna alle prove');
             return `
                 <div class="cefr-runner-container">
                     <div class="cefr-runner-topbar">
-                        <button type="button" class="cefr-back-btn" data-action="back-to-tasks" aria-label="${_id.includes('hu') ? 'Vissza a feladatokhoz' : 'Volver a tareas'}">
+                        <button type="button" class="cefr-back-btn" data-action="back-to-tasks" aria-label="${backLabel}">
                             <svg class="art icon cefr-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="15 18 9 12 15 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>${_id.includes('hu') ? 'Vissza a feladatokhoz' : 'Volver a tareas'}</span>
+                            <span>${backLabel}</span>
                         </button>
                         <h3 class="cefr-runner-title">${_esc(tarea.title)}</h3>
                     </div>
@@ -807,12 +842,14 @@ const CefrExam = (function () {
         }
 
         function _formatGappedPassage(text) {
-            const isHu = _id.includes('hu');
+            const tokenHtml = _t(
+                '<span class="cefr-inline-gap-token">[ Hueco $1 ]</span>',
+                '<span class="cefr-inline-gap-token">[ $1. ]</span>',
+                '<span class="cefr-inline-gap-token">[ Lacune $1 ]</span>',
+                '<span class="cefr-inline-gap-token">[ Spazio $1 ]</span>'
+            );
             return (text || '').split('\n\n').map(p => {
                 const escaped = _esc(p);
-                const tokenHtml = isHu
-                    ? '<span class="cefr-inline-gap-token">[ $1. ]</span>'
-                    : '<span class="cefr-inline-gap-token">[ Hueco $1 ]</span>';
                 const withTokens = escaped.replace(/\[___(\d+)___\]/g, tokenHtml);
                 return `<p class="cefr-passage-paragraph">${withTokens}</p>`;
             }).join('');
@@ -885,16 +922,16 @@ const CefrExam = (function () {
                     </div>
                 `;
             } else if (tarea.type === 'reading-mc') {
-                stimulusTitle = isHu ? 'Olvasandó szöveg' : 'Texto de lectura';
-                stimulusSubtitle = isHu ? 'Olvasd el a cikket a kérdések megválaszolása előtt' : 'Lee el texto con atención antes de responder';
+                stimulusTitle = _t('Texto de lectura', 'Olvasandó szöveg', 'Texte de lecture', 'Testo di lettura');
+                stimulusSubtitle = _t('Lee el texto con atención antes de responder', 'Olvasd el a cikket a kérdések megválaszolása előtt', 'Lisez attentivement le texte avant de répondre', 'Leggi attentamente il testo prima di rispondere');
                 stimulusHtml = `
                     <div class="cefr-passage-editorial-wrap">
                         ${(tarea.passage || '').split('\n\n').map(p => `<p class="cefr-passage-paragraph">${_esc(p)}</p>`).join('')}
                     </div>
                 `;
 
-                questionsTitle = isHu ? 'Kérdések' : 'Preguntas de comprensión';
-                questionsSubtitle = isHu ? 'Válaszd ki a helyes opciót (A, B vagy C)' : 'Selecciona la opción correcta (A, B o C)';
+                questionsTitle = _t('Preguntas de comprensión', 'Kérdések', 'Questions de compréhension', 'Domande di comprensione');
+                questionsSubtitle = _t('Selecciona la opción correcta (A, B o C)', 'Válaszd ki a helyes opciót (A, B vagy C)', 'Sélectionnez la bonne réponse (A, B ou C)', "Seleziona l'opzione corretta (A, B o C)");
                 questionsHtml = `
                     <div class="cefr-questions-stack">
                         ${(tarea.questions || []).map((q, qIdx) => {
@@ -919,7 +956,7 @@ const CefrExam = (function () {
                                     </div>
                                     ${isSubmitted ? `
                                         <div class="cefr-explanation-box">
-                                            <strong>${isHu ? 'Magyarázat' : 'Justificación'}:</strong> ${_esc(q.explanation || '')}
+                                            <strong>${_t('Justificación', 'Magyarázat', 'Explication', 'Spiegazione')}:</strong> ${_esc(q.explanation || '')}
                                             ${q.evidence ? `<div class="cefr-evidence-quote"><em>"${_esc(q.evidence)}"</em></div>` : ''}
                                         </div>
                                     ` : ''}
@@ -987,17 +1024,20 @@ const CefrExam = (function () {
                 const optLetterRange = (tarea.options && tarea.options.length)
                     ? `(${tarea.options[0].letter}–${tarea.options[tarea.options.length - 1].letter})`
                     : '';
-                stimulusTitle = isHu ? 'Szöveg' : 'Texto principal';
-                stimulusSubtitle = isHu
-                    ? 'Figyeld meg a hiányzó mondatok helyét a szövegben'
-                    : `Observa la posición de los ${gapsCount || 6} fragmentos omitidos`;
+                stimulusTitle = _t('Texto principal', 'Szöveg', 'Texte principal', 'Testo principale');
+                stimulusSubtitle = _t(
+                    `Observa la posición de los ${gapsCount || 6} fragmentos omitidos`,
+                    'Figyeld meg a hiányzó mondatok helyét a szövegben',
+                    "Observez l'emplacement des phrases manquantes dans le texte",
+                    'Osserva la posizione delle frasi mancanti nel testo'
+                );
                 stimulusHtml = `
                     <div class="cefr-passage-editorial-wrap">
                         ${_formatGappedPassage(tarea.passage || '')}
                     </div>
 
                     <div class="cefr-gaps-options-pool-wrap">
-                        <h5 class="cefr-gaps-pool-title">${isHu ? `Hiányzó mondatok ${optLetterRange}`.trim() : `Opciones de oraciones para los huecos ${optLetterRange}`.trim()}</h5>
+                        <h5 class="cefr-gaps-pool-title">${_t(`Opciones de oraciones para los huecos ${optLetterRange}`, `Hiányzó mondatok ${optLetterRange}`, `Phrases proposées pour les lacunes ${optLetterRange}`, `Frasi disponibili per gli spazi ${optLetterRange}`).trim()}</h5>
                         <div class="cefr-gaps-options-pool">
                             ${(tarea.options || []).map(o => `
                                 <div class="cefr-gap-pool-item">
@@ -1010,8 +1050,8 @@ const CefrExam = (function () {
                 `;
 
                 const gapNumRange = gapsCount ? `(1–${gapsCount})` : '';
-                questionsTitle = isHu ? `Hiányzó mondatok beillesztése ${gapNumRange}`.trim() : `Completar los huecos ${gapNumRange}`.trim();
-                questionsSubtitle = isHu ? 'Válaszd ki a megfelelő mondatot az egyes helyekre' : 'Selecciona la oración correcta para cada posición';
+                questionsTitle = _t(`Completar los huecos ${gapNumRange}`, `Hiányzó mondatok beillesztése ${gapNumRange}`, `Compléter les lacunes ${gapNumRange}`, `Completare gli spazi ${gapNumRange}`).trim();
+                questionsSubtitle = _t('Selecciona la oración correcta para cada posición', 'Válaszd ki a megfelelő mondatot az egyes helyekre', 'Choisissez la phrase appropriée pour chaque lacune', 'Seleziona la frase corretta per ogni spazio');
                 questionsHtml = `
                     <div class="cefr-gaps-rows-stack">
                         ${(tarea.gaps || []).map(g => {
@@ -1022,9 +1062,9 @@ const CefrExam = (function () {
 
                             return `
                                 <div class="cefr-gap-row-card ${isCorrect ? 'is-correct' : (isWrong ? 'is-wrong' : '')}">
-                                    <span class="cefr-gap-row-label">${isHu ? `[ ${g.num}. ]` : `Hueco [___${g.num}___]:`}</span>
+                                    <span class="cefr-gap-row-label">${_t(`Hueco [___${g.num}___]:`, `[ ${g.num}. ]`, `Lacune ${g.num} :`, `Spazio ${g.num}:`)}</span>
                                     <select class="cefr-select" data-gap-qid="${_esc(g.id)}" ${isSubmitted ? 'disabled' : ''}>
-                                        <option value="">-- ${isHu ? 'Válassz megoldást' : 'Selecciona letra'} --</option>
+                                        <option value="">-- ${_t('Selecciona letra', 'Válassz megoldást', 'Choisir une lettre', 'Scegli lettera')} --</option>
                                         ${(tarea.options || []).map(o => `
                                             <option value="${_esc(o.letter)}" ${chosen === o.letter ? 'selected' : ''}>
                                                 [${_esc(o.letter)}] ${_esc(o.text.substring(0, 60))}...
@@ -1033,7 +1073,7 @@ const CefrExam = (function () {
                                     </select>
                                     ${isSubmitted ? `
                                         <div class="cefr-gap-feedback ${isCorrect ? 'is-correct' : 'is-wrong'}">
-                                            ${isCorrect ? (isHu ? 'Helyes' : 'Correcto') : `${isHu ? 'Megoldás' : 'Solución'}: [${g.correct}]`}
+                                            ${isCorrect ? _t('Correcto', 'Helyes', 'Correct', 'Corretto') : `${_t('Solución', 'Megoldás', 'Solution', 'Soluzione')}: [${g.correct}]`}
                                         </div>
                                     ` : ''}
                                 </div>
@@ -1109,11 +1149,11 @@ const CefrExam = (function () {
                         <div class="cefr-action-bar">
                             ${!_state.readingSubmitted ? `
                                 <button type="button" class="btn btn-primary cefr-submit-btn" data-action="submit-reading">
-                                    ${isHu ? 'Feladat ellenőrzése' : 'Comprobar tarea'}
+                                    ${_t('Comprobar tarea', 'Feladat ellenőrzése', 'Vérifier les réponses', 'Verifica le risposte')}
                                 </button>
                             ` : `
                                 <button type="button" class="btn btn-secondary cefr-reset-btn" data-action="reset-reading">
-                                    ${isHu ? 'Újrapróbálás' : 'Repetir tarea'}
+                                    ${_t('Repetir tarea', 'Újrapróbálás', 'Recommencer', 'Riprova')}
                                 </button>
                             `}
                         </div>
@@ -1149,7 +1189,7 @@ const CefrExam = (function () {
                                     <svg class="art icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                         ${isThisPlaying ? '<rect x="6" y="6" width="12" height="12" fill="currentColor"/>' : '<polygon points="7 5 19 12 7 19 7 5" fill="currentColor"/>'}
                                     </svg>
-                                    <span>${isThisPlaying ? (isHu ? 'Leállítás' : 'Detener reproducción') : (passes > 0 ? (isHu ? `Újrahallgatás (${passes}/2)` : `Repetir audio (${passes}/2 pases)`) : (isHu ? 'Meghallgatás (1/2)' : 'Escuchar audio (Pase 1/2)'))}</span>
+                                    <span>${isThisPlaying ? _t('Detener reproducción', 'Leállítás', 'Arrêter', 'Ferma riproduzione') : (passes > 0 ? _t(`Repetir audio (${passes}/2 pases)`, `Újrahallgatás (${passes}/2)`, `Réécouter (${passes}/2)`, `Riascolta (${passes}/2)`) : _t('Escuchar audio (Pase 1/2)', 'Meghallgatás (1/2)', 'Écouter (1/2)', 'Ascolta audio (1/2)'))}</span>
                                 </button>
                             </div>
 
@@ -1166,11 +1206,11 @@ const CefrExam = (function () {
 
                             ${isSubmitted ? `
                                 <div class="cefr-explanation-box">
-                                    <strong>${isHu ? 'Magyarázat' : 'Justificación'}:</strong> ${_esc(item.explanation || '')}
+                                    <strong>${_t('Justificación', 'Magyarázat', 'Explication', 'Spiegazione')}:</strong> ${_esc(item.explanation || '')}
                                     ${item.evidence ? `<div class="cefr-evidence-quote"><em>"${_esc(item.evidence)}"</em></div>` : ''}
                                     ${(item.audio && item.audio.turns) ? `
                                         <div class="cefr-item-transcript">
-                                            <strong>${isHu ? 'Szöveg' : 'Transcripción'}:</strong>
+                                            <strong>${_t('Transcripción', 'Szöveg', 'Transcription', 'Trascrizione')}:</strong>
                                             ${item.audio.turns.map(t => `<p><em>${_esc(t.speaker)}:</em> ${_esc(t.text)}</p>`).join('')}
                                         </div>
                                     ` : ''}
@@ -1200,7 +1240,7 @@ const CefrExam = (function () {
                             </div>
                             ${isSubmitted ? `
                                 <div class="cefr-explanation-box">
-                                    <strong>${isHu ? 'Magyarázat' : 'Justificación'}:</strong> ${_esc(q.explanation || '')}
+                                    <strong>${_t('Justificación', 'Magyarázat', 'Explication', 'Spiegazione')}:</strong> ${_esc(q.explanation || '')}
                                     ${q.evidence ? `<div class="cefr-evidence-quote"><em>"${_esc(q.evidence)}"</em></div>` : ''}
                                 </div>
                             ` : ''}
@@ -1222,7 +1262,7 @@ const CefrExam = (function () {
                     ${_state.listeningSubmitted && tarea.audio && tarea.audio.turns ? `
                         <div class="cefr-transcript-section">
                             <div class="cefr-transcript-header">
-                                <h4>${isHu ? 'Teljes hanganyag szövege' : 'Transcripción completa de la audición'}</h4>
+                                <h4>${_t('Transcripción completa de la audición', 'Teljes hanganyag szövege', "Transcription complète de l'enregistrement", "Trascrizione completa dell'ascolto")}</h4>
                             </div>
                             <div class="cefr-transcript-turns">
                                 ${tarea.audio.turns.map(t => `
@@ -1237,11 +1277,11 @@ const CefrExam = (function () {
                     <div class="cefr-action-bar">
                         ${!_state.listeningSubmitted ? `
                             <button type="button" class="btn btn-primary cefr-submit-btn" data-action="submit-listening">
-                                ${_id.includes('hu') ? 'Válaszok ellenőrzése' : 'Comprobar respuestas'}
+                                ${_t('Comprobar respuestas', 'Válaszok ellenőrzése', 'Vérifier les réponses', 'Verifica le risposte')}
                             </button>
                         ` : `
                             <button type="button" class="btn btn-secondary cefr-reset-btn" data-action="reset-listening">
-                                ${_id.includes('hu') ? 'Újrahallgatás' : 'Repetir audición'}
+                                ${_t('Repetir audición', 'Újrahallgatás', "Recommencer l'écoute", "Ripeti l'ascolto")}
                             </button>
                         `}
                     </div>
@@ -1264,7 +1304,7 @@ const CefrExam = (function () {
 
                 optionSwitcherHtml = `
                     <div class="cefr-option-switcher">
-                        <span class="cefr-option-label">${_id.includes('hu') ? 'Válassz opciót' : 'Elige opción de redacción'}:</span>
+                        <span class="cefr-option-label">${_t('Elige opción de redacción', 'Válassz opciót', 'Choisissez un sujet', 'Scegli opzione')}:</span>
                         ${tarea.options.map(o => `
                             <button type="button" class="btn btn-secondary cefr-opt-toggle ${o.optionLetter === _state.writingActiveOption ? 'is-active' : ''}" data-writing-option="${_esc(o.optionLetter)}">
                                 ${_esc(o.title)}
@@ -1276,60 +1316,60 @@ const CefrExam = (function () {
 
             const currentWords = _countWords(_state.writingDraftText);
             const isWordCountGood = currentWords >= minWords && currentWords <= maxWords;
+            const lvlTag = (_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : (_id.includes('b2') ? 'B2' : 'B1')));
 
-                    const isHu = _id.includes('hu');
-                    return `
+            return `
                 <div class="cefr-writing-wrapper">
                     ${optionSwitcherHtml}
 
                     <div class="cefr-writing-prompt-card">
-                        <div class="cefr-prompt-title">${isHu ? 'A feladat leírása:' : 'Instrucciones de la tarea:'}</div>
+                        <div class="cefr-prompt-title">${_t('Instrucciones de la tarea:', 'A feladat leírása:', 'Consignes de la tâche :', 'Istruzioni della prova:')}</div>
                         <div class="cefr-prompt-text">${_esc(activePrompt).split('\n\n').map(p => `<p>${_esc(p)}</p>`).join('')}</div>
                     </div>
 
                     <div class="cefr-editor-container">
                         <div class="cefr-editor-toolbar">
                             <span class="cefr-word-counter ${isWordCountGood ? 'is-good' : (currentWords > maxWords ? 'is-over' : '')}">
-                                ${isHu ? 'Szavak száma:' : 'Palabras:'} <strong>${currentWords}</strong> / ${minWords}–${maxWords}
+                                ${_t('Palabras:', 'Szavak száma:', 'Mots :', 'Parole:')} <strong>${currentWords}</strong> / ${minWords}–${maxWords}
                             </span>
-                            <span class="cefr-draft-status">${isHu ? 'Piszkozat automatikusan mentve' : 'Borrador guardado automáticamente'}</span>
+                            <span class="cefr-draft-status">${_t('Borrador guardado automáticamente', 'Piszkozat automatikusan mentve', 'Brouillon enregistré automatiquement', 'Bozza salvata automaticamente')}</span>
                         </div>
-                        <textarea id="cefr-writing-textarea" class="cefr-textarea" placeholder="${isHu ? 'Írd ide a fogalmazásodat...' : 'Escribe tu redacción aquí...'}" rows="12">${_esc(_state.writingDraftText)}</textarea>
+                        <textarea id="cefr-writing-textarea" class="cefr-textarea" placeholder="${_t('Escribe tu redacción aquí...', 'Írd ide a fogalmazásodat...', 'Rédigez votre texte ici...', 'Scrivi qui il tuo testo...')}" rows="12">${_esc(_state.writingDraftText)}</textarea>
                     </div>
 
                     <div class="cefr-action-bar">
                         <button type="button" class="btn btn-primary cefr-submit-btn" data-action="submit-writing">
-                            ${isHu ? 'Fogalmazás értékelése' : 'Evaluar redacción (Rúbrica CEFR)'}
+                            ${_t('Evaluar redacción (Rúbrica CEFR)', 'Fogalmazás értékelése', 'Évaluer la production écrite', 'Valuta produzione scritta')}
                         </button>
                     </div>
 
                     ${_state.writingResult ? `
                         <div class="cefr-writing-results-card">
                             <div class="cefr-res-header">
-                                <h4>${isHu ? `${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : (_id.includes('b2') ? 'B2' : 'B1')))} Értékelési jelentés` : `Informe de evaluación ${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : (_id.includes('b2') ? 'B2' : 'B1')))}`}</h4>
-                                <span class="cefr-score-badge">${_state.writingResult.totalScore} / 25 ${isHu ? 'pont' : 'puntos'}</span>
+                                <h4>${_t(`Informe de evaluación ${lvlTag}`, `${lvlTag} Értékelési jelentés`, `Rapport d'évaluation ${lvlTag}`, `Rapporto di valutazione ${lvlTag}`)}</h4>
+                                <span class="cefr-score-badge">${_state.writingResult.totalScore} / 25 ${_t('puntos', 'pont', 'points', 'punti')}</span>
                             </div>
                             <div class="cefr-rubric-breakdown">
                                 <div class="cefr-rubric-item">
-                                    <span>${isHu ? `Tartalmi megfelelés és terjedelem (${_state.writingResult.wordCount} szó):` : `Adecuación y extensión (${_state.writingResult.wordCount} palabras):`}</span>
+                                    <span>${_t(`Adecuación y extensión (${_state.writingResult.wordCount} palabras):`, `Tartalmi megfelelés és terjedelem (${_state.writingResult.wordCount} szó):`, `Respect de la consigne et longueur (${_state.writingResult.wordCount} mots) :`, `Adeguatezza e lunghezza (${_state.writingResult.wordCount} parole):`)}</span>
                                     <strong>${_state.writingResult.criteria.adecuacion} / 7 pts</strong>
                                 </div>
                                 <div class="cefr-rubric-item">
-                                    <span>${isHu ? `Szövegösszefüggés és kötőszavak (${_state.writingResult.foundConnectors.length} észlelve):` : `Coherencia y conectores (${_state.writingResult.foundConnectors.length} detectados):`}</span>
+                                    <span>${_t(`Coherencia y conectores (${_state.writingResult.foundConnectors.length} detectados):`, `Szövegösszefüggés és kötőszavak (${_state.writingResult.foundConnectors.length} észlelve):`, `Cohérence et connecteurs (${_state.writingResult.foundConnectors.length} détectés) :`, `Coerenza e connettivi (${_state.writingResult.foundConnectors.length} rilevati):`)}</span>
                                     <strong>${_state.writingResult.criteria.coherencia} / 6 pts</strong>
                                 </div>
                                 <div class="cefr-rubric-item">
-                                    <span>${isHu ? 'Bekezdések és tagolás:' : 'Párrafos y estructuración:'}</span>
+                                    <span>${_t('Párrafos y estructuración:', 'Bekezdések és tagolás:', 'Paragraphes et structure :', 'Paragrafi e struttura:')}</span>
                                     <strong>${_state.writingResult.criteria.estructura} / 6 pts</strong>
                                 </div>
                                 <div class="cefr-rubric-item">
-                                    <span>${isHu ? 'Irányítási szempontok és szókincs:' : 'Puntos guía y riqueza léxica:'}</span>
+                                    <span>${_t('Puntos guía y riqueza léxica:', 'Irányítási szempontok és szókincs:', 'Points clés et richesse lexicale :', 'Punti guida e ricchezza lessicale:')}</span>
                                     <strong>${_state.writingResult.criteria.leves} / 6 pts</strong>
                                 </div>
                             </div>
                             ${_state.writingResult.foundConnectors.length > 0 ? `
                                 <div class="cefr-detected-connectors">
-                                    <span>${isHu ? `Használt ${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : (_id.includes('b2') ? 'B2' : 'B1')))} kötőszavak:` : `Conectores ${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : (_id.includes('b2') ? 'B2' : 'B1')))} empleados:`}</span>
+                                    <span>${_t(`Conectores ${lvlTag} empleados:`, `Használt ${lvlTag} kötőszavak:`, `Connecteurs ${lvlTag} utilisés :`, `Connettivi ${lvlTag} utilizzati:`)}</span>
                                     <em>${_esc(_state.writingResult.foundConnectors.join(', '))}</em>
                                 </div>
                             ` : ''}
@@ -1341,7 +1381,7 @@ const CefrExam = (function () {
 
         // 4. Speaking Tarea View
         function _renderSpeakingTarea(tarea) {
-            const isHu = _id.includes('hu');
+            const lvlTag = (_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'));
             return `
                 <div class="cefr-speaking-wrapper">
                     <div class="cefr-speaking-prompt-card">
@@ -1357,44 +1397,44 @@ const CefrExam = (function () {
                     <div class="cefr-mic-console">
                         <div class="cefr-mic-status-wrap">
                             <span id="cefr-mic-status-label" class="cefr-mic-status-label">
-                                ${isHu ? 'A mikrofon készen áll. Kattints a felvételhez.' : 'Micrófono listo. Pulsa para comenzar tu producción oral.'}
+                                ${_t('Micrófono listo. Pulsa para comenzar tu producción oral.', 'A mikrofon készen áll. Kattints a felvételhez.', 'Microphone prêt. Cliquez pour commencer votre production orale.', 'Microfono pronto. Premi per iniziare la produzione orale.')}
                             </span>
                         </div>
                         <div class="cefr-mic-controls">
                             <button type="button" id="cefr-mic-toggle-btn" class="btn btn-primary cefr-record-btn" data-action="toggle-mic">
-                                ${isHu ? 'Hangfelvétel indítása' : 'Iniciar grabación de voz'}
+                                ${_t('Iniciar grabación de voz', 'Hangfelvétel indítása', "Démarrer l'enregistrement", 'Avvia registrazione vocale')}
                             </button>
                         </div>
                     </div>
 
                     <div class="cefr-speaking-transcript-wrap">
                         <label for="cefr-speaking-transcript-input" class="cefr-transcript-label">
-                            ${isHu ? 'A válaszod leirata (átnézheted vagy szerkesztheted az értékelés előtt):' : 'Transcripción de tu respuesta (puedes revisarla o editarla antes de evaluar):'}
+                            ${_t('Transcripción de tu respuesta (puedes revisarla o editarla antes de evaluar):', 'A válaszod leirata (átnézheted vagy szerkesztheted az értékelés előtt):', 'Transcription de votre réponse (modifiable avant évaluation) :', 'Trascrizione della tua risposta (modificabile prima della valutazione):')}
                         </label>
-                        <textarea id="cefr-speaking-transcript-input" class="cefr-textarea cefr-transcript-textarea" rows="5" placeholder="${isHu ? 'A beszéded valós időben jelenik meg itt...' : 'Tu voz se transcribirá aquí en tiempo real...'}">${_esc(_state.speakingTranscriptText)}</textarea>
+                        <textarea id="cefr-speaking-transcript-input" class="cefr-textarea cefr-transcript-textarea" rows="5" placeholder="${_t('Tu voz se transcribirá aquí en tiempo real...', 'A beszéded valós időben jelenik meg itt...', 'Votre voix sera transcrite ici...', 'La tua voce verrà trascritta qui...')}">${_esc(_state.speakingTranscriptText)}</textarea>
                     </div>
 
                     ${_state.speakingAudioBlobUrl ? `
                         <div class="cefr-playback-card">
-                            <span>${isHu ? 'Hallgasd vissza a felvételt:' : 'Escucha tu grabación:'}</span>
+                            <span>${_t('Escucha tu grabación:', 'Hallgasd vissza a felvételt:', 'Écoutez votre enregistrement :', 'Riascolta la tua registrazione:')}</span>
                             <audio controls src="${_state.speakingAudioBlobUrl}" class="cefr-audio-player"></audio>
                         </div>
                     ` : ''}
 
                     <div class="cefr-action-bar">
                         <button type="button" class="btn btn-primary cefr-submit-btn" data-action="submit-speaking">
-                            ${isHu ? 'Beszédkészség értékelése' : 'Evaluar expresión oral'}
+                            ${_t('Evaluar expresión oral', 'Beszédkészség értékelése', 'Évaluer la production orale', 'Valuta produzione orale')}
                         </button>
                     </div>
 
                     ${_state.speakingResult ? `
                         <div class="cefr-speaking-results-card">
                             <div class="cefr-res-header">
-                                <h4>${isHu ? `${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'))} Szóbeli értékelés` : `Informe oral ${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'))}`}</h4>
-                                <span class="cefr-score-badge">${_state.speakingResult.totalScore} / 25 ${isHu ? 'pont' : 'puntos'}</span>
+                                <h4>${_t(`Informe oral ${lvlTag}`, `${lvlTag} Szóbeli értékelés`, `Évaluation orale ${lvlTag}`, `Valutazione orale ${lvlTag}`)}</h4>
+                                <span class="cefr-score-badge">${_state.speakingResult.totalScore} / 25 ${_t('puntos', 'pont', 'points', 'punti')}</span>
                             </div>
-                            <p>${isHu ? 'Kimondott szavak száma:' : 'Palabras producidas:'} <strong>${_state.speakingResult.wordCount}</strong></p>
-                            <p>${isHu ? 'Észlelt beszédkötőszavak:' : 'Conectores orales detectados:'} <em>${_esc(_state.speakingResult.foundConnectors.join(', ') || (isHu ? 'Egyik sem észlelhető' : 'Ninguno detectado'))}</em></p>
+                            <p>${_t('Palabras producidas:', 'Kimondott szavak száma:', 'Mots prononcés :', 'Parole pronunciate:')} <strong>${_state.speakingResult.wordCount}</strong></p>
+                            <p>${_t('Conectores orales detectados:', 'Észlelt beszédkötőszavak:', 'Connecteurs détectés :', 'Connettivi rilevati:')} <em>${_esc(_state.speakingResult.foundConnectors.join(', ') || _t('Ninguno detectado', 'Egyik sem észlelhető', 'Aucun détecté', 'Nessuno rilevato'))}</em></p>
                         </div>
                     ` : ''}
                 </div>
@@ -1403,13 +1443,13 @@ const CefrExam = (function () {
 
         // Strategies Tab
         function _renderStrategiesTab() {
-            const isHu = _id.includes('hu');
-            if (!_data || !_data.strategies) return `<p class="cefr-empty">${isHu ? 'Nincsenek elérhető stratégiák.' : 'Guía no disponible.'}</p>`;
+            if (!_data || !_data.strategies) return `<p class="cefr-empty">${_t('Guía no disponible.', 'Nincsenek elérhető stratégiák.', 'Guide non disponible.', 'Guida non disponibile.')}</p>`;
             const s = _data.strategies;
+            const lvlTag = (_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'));
 
             return `
                 <div class="cefr-strategies-wrapper">
-                    <h3 class="cefr-sec-title">${_esc(s.title || (isHu ? 'Hivatalos vizsgaútmutató' : 'Guía oficial del examen'))}</h3>
+                    <h3 class="cefr-sec-title">${_esc(s.title || _t('Guía oficial del examen', 'Hivatalos vizsgaútmutató', "Guide officiel de l'examen", "Guida ufficiale dell'esame"))}</h3>
                     
                     <div class="cefr-strat-grid">
                         ${(s.structure || []).map(item => `
@@ -1421,7 +1461,7 @@ const CefrExam = (function () {
                     </div>
 
                     <div class="cefr-connectors-section">
-                        <h4>${isHu ? `Kötőszavak és szövegösszekötők (${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'))} szint)` : `Conectores y marcadores del discurso (Nivel ${(_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : 'B1'))})`}</h4>
+                        <h4>${_t(`Conectores y marcadores del discurso (Nivel ${lvlTag})`, `Kötőszavak és szövegösszekötők (${lvlTag} szint)`, `Connecteurs et articulateurs logiques (Niveau ${lvlTag})`, `Connettivi e segnali discorsivi (Livello ${lvlTag})`)}</h4>
                         <div class="cefr-connectors-grid">
                             ${(s.connectors || []).map(cat => `
                                 <div class="cefr-connector-card">
@@ -1441,7 +1481,7 @@ const CefrExam = (function () {
         function _renderMocksTab() {
             const isHu = _id.includes('hu');
             const lvl = (_data && _data.level) || (_id.includes('a1') ? 'A1' : (_id.includes('a2') ? 'A2' : (_id.includes('b2') ? 'B2' : 'B1')));
-            const title = (_data && _data.title) || (isHu ? `ECL ${lvl} Nyelvvizsga` : `Prueba DELE ${lvl}`);
+            const title = (_data && _data.title) || _t(`Prueba DELE ${lvl}`, `ECL ${lvl} Nyelvvizsga`, `Épreuve DELF ${lvl}`, `Esame CILS ${lvl}`);
             const rTime = (_data && _data.skills && _data.skills.reading && _data.skills.reading.officialTimeMinutes) || 45;
             const wTime = (_data && _data.skills && _data.skills.writing && _data.skills.writing.officialTimeMinutes) || 45;
             const lTime = (_data && _data.skills && _data.skills.listening && _data.skills.listening.officialTimeMinutes) || 30;
@@ -1487,29 +1527,29 @@ const CefrExam = (function () {
             return `
                 <div class="cefr-mocks-wrapper">
                     <div class="cefr-mock-intro-card">
-                        <h3>Simulacro oficial ${_esc(title)} completo (4 Destrezas)</h3>
-                        <p>El examen oficial evalúa las cuatro destrezas divididas en dos bloques eliminatorios:</p>
+                        <h3>${_t(`Simulacro oficial ${_esc(title)} completo (4 Destrezas)`, '', `Examen blanc complet ${_esc(title)} (4 Compétences)`, `Simulazione ufficiale ${_esc(title)} completa (4 Abilità)`)}</h3>
+                        <p>${_t('El examen oficial evalúa las cuatro destrezas divididas en dos bloques:', '', "L'examen officiel évalue les quatre compétences réparties en deux pôles :", "L'esame ufficiale valuta le quattro abilità linguistiche:")}</p>
                         <div class="cefr-blocks-spec">
                             <div class="cefr-spec-card">
-                                <strong>Bloque 1: Destrezas escritas (50 pts)</strong>
+                                <strong>${_t('Bloque 1: Destrezas escritas (50 pts)', '', 'Pôle 1 : Compétences écrites (50 pts)', 'Parte 1: Abilità scritte (50 pt)')}</strong>
                                 <ul>
-                                    <li>Comprensión de lectura (${rTime} min · 25 pts)</li>
-                                    <li>Expresión escrita (${wTime} min · 25 pts)</li>
+                                    <li>${_t(`Comprensión de lectura (${rTime} min · 25 pts)`, '', `Compréhension des écrits (${rTime} min · 25 pts)`, `Comprensione della lettura (${rTime} min · 25 pt)`)}</li>
+                                    <li>${_t(`Expresión escrita (${wTime} min · 25 pts)`, '', `Production écrite (${wTime} min · 25 pts)`, `Produzione scritta (${wTime} min · 25 pt)`)}</li>
                                 </ul>
-                                <span class="cefr-pass-pill">Apto: Mínimo 30 / 50 pts</span>
+                                <span class="cefr-pass-pill">${_t('Apto: Mínimo 30 / 50 pts', '', 'Seuil de réussite : 30 / 50 pts', 'Idoneo: Minimo 30 / 50 pt')}</span>
                             </div>
                             <div class="cefr-spec-card">
-                                <strong>Bloque 2: Destrezas orales (50 pts)</strong>
+                                <strong>${_t('Bloque 2: Destrezas orales (50 pts)', '', 'Pôle 2 : Compétences orales (50 pts)', 'Parte 2: Abilità orali (50 pt)')}</strong>
                                 <ul>
-                                    <li>Comprensión auditiva (${lTime} min · 25 pts)</li>
-                                    <li>Expresión oral (${sTime} min · 25 pts)</li>
+                                    <li>${_t(`Comprensión auditiva (${lTime} min · 25 pts)`, '', `Compréhension de l'oral (${lTime} min · 25 pts)`, `Comprensione dell'ascolto (${lTime} min · 25 pt)`)}</li>
+                                    <li>${_t(`Expresión oral (${sTime} min · 25 pts)`, '', `Production orale (${sTime} min · 25 pts)`, `Produzione orale (${sTime} min · 25 pt)`)}</li>
                                 </ul>
-                                <span class="cefr-pass-pill">Apto: Mínimo 30 / 50 pts</span>
+                                <span class="cefr-pass-pill">${_t('Apto: Mínimo 30 / 50 pts', '', 'Seuil de réussite : 30 / 50 pts', 'Idoneo: Minimo 30 / 50 pt')}</span>
                             </div>
                         </div>
                         <div class="cefr-mock-cta-wrap">
                             <button type="button" class="btn btn-primary cefr-mock-btn" data-action="start-full-mock">
-                                Iniciar simulacro completo cronometrado
+                                ${_t('Iniciar simulacro completo cronometrado', '', "Lancer l'examen blanc complet", 'Avvia simulazione completa')}
                             </button>
                         </div>
                     </div>
@@ -1519,7 +1559,6 @@ const CefrExam = (function () {
 
         // History Tab
         function _renderHistoryTab() {
-            const isHu = _id.includes('hu');
             const prog = _loadProgress();
             const scores = prog.scores || {};
 
@@ -1540,14 +1579,14 @@ const CefrExam = (function () {
             });
 
             const overallPct = sumMax > 0 ? Math.round((sumScore / sumMax) * 100) : 0;
-            const passLabel = isHu ? 'MEGFELELT' : 'APTO';
-            const inProgLabel = isHu ? 'FOLYAMATBAN' : 'EN PROCESO';
+            const passLabel = _t('APTO', 'MEGFELELT', 'ADMIS', 'IDONEO');
+            const inProgLabel = _t('EN PROCESO', 'FOLYAMATBAN', 'EN COURS', 'IN CORSO');
 
             const skillNames = {
-                reading: isHu ? 'Olvasásértés' : 'Lectura',
-                listening: isHu ? 'Hallásértés' : 'Audición',
-                writing: isHu ? 'Írásbeli' : 'Escritura',
-                speaking: isHu ? 'Szóbeli' : 'Oral'
+                reading: _t('Lectura', 'Olvasásértés', 'Écrits', 'Lettura'),
+                listening: _t('Audición', 'Hallásértés', 'Oral (écoute)', 'Ascolto'),
+                writing: _t('Escritura', 'Írásbeli', 'Production écrite', 'Scrittura'),
+                speaking: _t('Oral', 'Szóbeli', 'Production orale', 'Orale')
             };
 
             return `
@@ -1555,30 +1594,30 @@ const CefrExam = (function () {
                     <div class="cefr-history-summary">
                         <div class="cefr-sum-metric">
                             <span class="cefr-sum-val">${totalAttempted}</span>
-                            <span class="cefr-sum-label">${isHu ? 'Elvégzett feladatok' : 'Tareas realizadas'}</span>
+                            <span class="cefr-sum-label">${_t('Tareas realizadas', 'Elvégzett feladatok', 'Exercices réalisés', 'Prove completate')}</span>
                         </div>
                         <div class="cefr-sum-metric">
                             <span class="cefr-sum-val">${overallPct}%</span>
-                            <span class="cefr-sum-label">${isHu ? 'Átlagos eredmény' : 'Puntuación media'}</span>
+                            <span class="cefr-sum-label">${_t('Puntuación media', 'Átlagos eredmény', 'Score moyen', 'Punteggio medio')}</span>
                         </div>
                         <div class="cefr-sum-metric">
                             <span class="cefr-sum-val">${overallPct >= 60 ? passLabel : (totalAttempted > 0 ? inProgLabel : '–')}</span>
-                            <span class="cefr-sum-label">${isHu ? 'Összesített értékelés' : 'Calificación global'}</span>
+                            <span class="cefr-sum-label">${_t('Calificación global', 'Összesített értékelés', 'Résultat global', 'Esito complessivo')}</span>
                         </div>
                     </div>
 
                     <div class="cefr-history-table-card">
-                        <h4>${isHu ? 'Részletes feladateredmények' : 'Registro detallado de tareas'}</h4>
+                        <h4>${_t('Registro detallado de tareas', 'Részletes feladateredmények', 'Détail des résultats par exercice', 'Registro dettagliato delle prove')}</h4>
                         ${rows.length === 0 ? `
-                            <p class="cefr-empty">${isHu ? "Még nem fejeztél be egyetlen feladatot sem. Gyakorolj a 'Hivatalos feladattípusok' fülön!" : "Aún no has completado ninguna tarea. Entrena en la pestaña 'Tareas oficiales'."}</p>
+                            <p class="cefr-empty">${_t("Aún no has completado ninguna tarea. Entrena en la pestaña 'Tareas oficiales'.", "Még nem fejeztél be egyetlen feladatot sem. Gyakorolj a 'Hivatalos feladattípusok' fülön!", "Vous n'avez encore terminé aucun exercice. Entraînez-vous dans l'onglet « Épreuves officielles ».", "Non hai ancora completato nessuna prova. Esercitati nella scheda 'Prove ufficiali'.")}</p>
                         ` : `
                             <table class="cefr-table">
                                 <thead>
                                     <tr>
-                                        <th>${isHu ? 'Készség' : 'Destreza'}</th>
-                                        <th>${isHu ? 'Feladat' : 'Tarea'}</th>
-                                        <th>${isHu ? 'Pontszám' : 'Puntos'}</th>
-                                        <th>${isHu ? 'Százalék' : 'Porcentaje'}</th>
+                                        <th>${_t('Destreza', 'Készség', 'Compétence', 'Abilità')}</th>
+                                        <th>${_t('Tarea', 'Feladat', 'Exercice', 'Prova')}</th>
+                                        <th>${_t('Puntos', 'Pontszám', 'Points', 'Punti')}</th>
+                                        <th>${_t('Porcentaje', 'Százalék', 'Pourcentage', 'Percentuale')}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -1752,7 +1791,7 @@ const CefrExam = (function () {
                     _stopListeningTimers();
                     _state.listeningActiveItemId = itemId;
                     _state.listeningPlaying = true;
-                    _state.listeningItemPasses[itemId] = (_state.listeningItemPasses[itemId] || 0) + 1;
+                    _state.listeningItemPasses[itemId] = (_state.listeningItemPasses[item.id] || 0) + 1;
                     render(_container);
 
                     _playTurnSequence(item.audio.turns, 0, () => {
@@ -1983,6 +2022,20 @@ const CefrExam = (function () {
         subtitle: 'Európai Közös Referenciakeret (KER) · B2 szintű komplex nyelvvizsga-felkészítő'
     });
 
+    const CilsB1Exam = createModule({
+        id: 'it-cils-exam',
+        dataFile: 'cils-b1-exam.json',
+        title: 'Esame CILS Uno-B1',
+        subtitle: 'Certificazione di Italiano come Lingua Straniera · Quadro Comune Europeo (QCER B1)'
+    });
+
+    const DelfB1Exam = createModule({
+        id: 'fr-delf-exam',
+        dataFile: 'delf-b1-exam.json',
+        title: 'Épreuve DELF B1',
+        subtitle: "Diplôme d'études en langue française · Cadre européen commun de référence (CECRL B1)"
+    });
+
     return {
         createModule: createModule,
         DeleA1Exam: DeleA1Exam,
@@ -1992,7 +2045,9 @@ const CefrExam = (function () {
         EclA1Exam: EclA1Exam,
         EclA2Exam: EclA2Exam,
         EclB1Exam: EclB1Exam,
-        EclB2Exam: EclB2Exam
+        EclB2Exam: EclB2Exam,
+        CilsB1Exam: CilsB1Exam,
+        DelfB1Exam: DelfB1Exam
     };
 })();
 
@@ -2007,6 +2062,8 @@ if (typeof window !== 'undefined') {
     window.EclA2Exam = CefrExam.EclA2Exam;
     window.EclB1Exam = CefrExam.EclB1Exam;
     window.EclB2Exam = CefrExam.EclB2Exam;
+    window.CilsB1Exam = CefrExam.CilsB1Exam;
+    window.DelfB1Exam = CefrExam.DelfB1Exam;
 }
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = CefrExam;

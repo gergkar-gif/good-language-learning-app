@@ -28,8 +28,15 @@ const DrillInfo = (function () {
         'fr-grammar-studio': {
             title: 'About French Grammar Studio',
             body: [
-                "Focused French structural mechanics practice covering clitic pronoun placement, past participle agreement, and subjunctive vs indicative triggers.",
-                "Direct comparative items with immediate rule feedback to turn common grammar friction points into reliable instincts."
+                "Targeted contrastive practice on the core mechanics of French: Passé composé vs Imparfait, Partitive & Articles, Clitic Pronouns, Past Participle Agreement, and Subjunctive Triggers.",
+                "Direct comparative items with immediate rule feedback to turn common French grammar friction points into reliable instincts."
+            ]
+        },
+        'it-grammar-studio': {
+            title: 'About Italian Grammar Studio',
+            body: [
+                "Targeted contrastive practice on the core mechanics of Italian: Preposizioni Articolate, Essere vs Avere, Pronomi Combinati, Particelle Ci vs Ne, and Congiuntivo Triggers.",
+                "Rather than testing rules in isolation, exercises pair confusing structures directly against each other with instant feedback explaining why one form fits and the other fails."
             ]
         },
         'hu-verb-studio': {

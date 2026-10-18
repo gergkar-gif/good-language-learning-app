@@ -34,7 +34,7 @@ const CANDIDATE_MODELS = [
     '@cf/mistralai/mistral-small-3.1-24b-instruct'
 ];
 
-const LANG_NAME = { hu: 'Hungarian', es: 'Spanish', fr: 'French' };
+const LANG_NAME = { hu: 'Hungarian', es: 'Spanish', fr: 'French', it: 'Italian' };
 const POS_VALUES = ['noun', 'verb', 'adjective', 'adverb', 'pronoun', 'numeral', 'preposition',
     'postposition', 'conjunction', 'interjection', 'particle', 'determiner', 'phrase'];
 const DEFAULT_DAILY_CAP = 600;
@@ -165,7 +165,7 @@ async function handleGloss(request, env, cors) {
     try { payload = await request.json(); } catch (e) { return json({ error: 'Invalid JSON body' }, 400, cors); }
     const lang = payload && payload.lang;
     const word = payload && payload.word;
-    if (!LANG_NAME[lang]) return json({ error: 'lang must be hu or es' }, 400, cors);
+    if (!LANG_NAME[lang]) return json({ error: 'lang must be hu, es, fr, or it' }, 400, cors);
     if (!validWord(word)) return json({ error: 'word must be 2-40 letters' }, 400, cors);
     const sentence = cleanSentence(payload.sentence);
 
@@ -204,7 +204,7 @@ async function handleExport(request, url, env, cors) {
     }
     if (!env.GLOSS_CACHE) return json({ error: 'No cache bound' }, 503, cors);
     const lang = url.searchParams.get('lang');
-    if (!LANG_NAME[lang]) return json({ error: 'lang must be hu or es' }, 400, cors);
+    if (!LANG_NAME[lang]) return json({ error: 'lang must be hu, es, fr, or it' }, 400, cors);
     const prefix = 'v2:' + lang + ':';
     const page = await env.GLOSS_CACHE.list({ prefix: prefix, cursor: url.searchParams.get('cursor') || undefined, limit: 200 });
     const entries = [];

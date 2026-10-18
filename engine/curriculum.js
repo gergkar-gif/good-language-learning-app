@@ -238,7 +238,7 @@ function lessonsComingSoonHtml() {
                         </span>
                         <span class="lcs-feature-arrow">→</span>
                     </button>
-                    <button type="button" class="lcs-feature-btn" data-open-tab="decks">
+                    <button type="button" class="lcs-feature-btn" data-open-tab="review">
                         <span class="lcs-feature-icon">${decksIcon}</span>
                         <span class="lcs-feature-text">
                             <strong>Decks</strong>

@@ -66,15 +66,17 @@ DICTS = {
     'hu': ROOT / 'imports/dictionary/hungarian-en.json',
     'es': ROOT / 'imports/dictionary/spanish-en.json',
     'fr': ROOT / 'imports/dictionary/french-en.json',
+    'it': ROOT / 'imports/dictionary/italian-en.json',
 }
 ADDITIONS = {
     'hu': ROOT / 'imports/dictionary/additions-hu.json',
     'es': ROOT / 'imports/dictionary/additions-es.json',
     'fr': ROOT / 'imports/dictionary/additions-fr.json',
+    'it': ROOT / 'imports/dictionary/additions-it.json',
 }
 BATCH_DIR = ROOT / 'imports/dictionary/gap-batches'
-COURSES = {'hu': ['hu'], 'es': ['es-es', 'es-latam'], 'fr': ['fr']}
-LANG_NAME = {'hu': 'Hungarian', 'es': 'Spanish', 'fr': 'French'}
+COURSES = {'hu': ['hu'], 'es': ['es-es', 'es-latam'], 'fr': ['fr'], 'it': ['it']}
+LANG_NAME = {'hu': 'Hungarian', 'es': 'Spanish', 'fr': 'French', 'it': 'Italian'}
 
 POS = {
     'hu': {'noun', 'verb', 'adjective', 'adverb', 'pronoun', 'numeral', 'postposition',
@@ -83,9 +85,11 @@ POS = {
            'preposition', 'conjunction', 'interjection', 'determiner'},
     'fr': {'noun', 'verb', 'adjective', 'adverb', 'proper noun', 'pronoun', 'numeral',
            'preposition', 'conjunction', 'interjection', 'determiner'},
+    'it': {'noun', 'verb', 'adjective', 'adverb', 'proper noun', 'pronoun', 'numeral',
+           'preposition', 'conjunction', 'interjection', 'determiner'},
 }
 GENDERS = {'', 'm', 'f', 'm; f', 'mf'}
-LEMMA_RE = re.compile(r"^[a-záéíóöőúüűñàâäéèêëîïôöùûüçœæ][a-záéíóöőúüűñàâäéèêëîïôöùûüçœæ' -]*$")
+LEMMA_RE = re.compile(r"^[a-záéíóöőúüűñàâäéèêëîïìòôöùûüçœæ][a-záéíóöőúüűñàâäéèêëîïìòôöùûüçœæ' -]*$")
 
 
 def audit(lang):

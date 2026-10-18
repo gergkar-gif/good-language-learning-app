@@ -49,7 +49,7 @@ function json(data, status, cors) {
     });
 }
 
-const LANGUAGE_CODE = { en: 'en-US', es: 'es-ES', hu: 'hu-HU' };
+const LANGUAGE_CODE = { en: 'en-US', es: 'es-ES', hu: 'hu-HU', fr: 'fr-FR', it: 'it-IT' };
 
 // Chirp3-HD voice names are used for Spanish and Hungarian alike. Enceladus (deep
 // male) is the main voice for both: words, drills and readings. English short-form uses Neural2.

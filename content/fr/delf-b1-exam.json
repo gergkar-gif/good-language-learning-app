@@ -1,0 +1,329 @@
+{
+  "id": "fr-delf-exam",
+  "board": "France Éducation international · Ministère de l'Éducation nationale",
+  "level": "B1",
+  "title": "Épreuve DELF B1",
+  "subtitle": "Diplôme d'études en langue française · Cadre européen commun de référence (CECRL B1)",
+  "passingScorePercentage": 60,
+  "skills": {
+    "reading": {
+      "id": "reading",
+      "name": "Compréhension des écrits",
+      "officialTimeMinutes": 45,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "fr-reading-t1",
+          "tareaNum": 1,
+          "type": "gapped-text",
+          "title": "Exercice 1 : Comprendre la structure d'un article (Phrases manquantes)",
+          "instructions": "Lisez cet article sur le développement des mobilités douces dans les villes françaises dont 5 phrases ont été retirées. Choisissez parmi les propositions (A–G) la phrase qui convient pour chaque lacune. Deux propositions sont inutiles.",
+          "passage": "Le vélo s'impose au cœur des villes françaises\n\nDepuis quelques années, le paysage urbain des grandes agglomérations françaises comme Lyon, Strasbourg, Bordeaux ou Paris s'est profondément transformé. De nombreuses voies autrefois réservées aux voitures ont été réaménagées en pistes cyclables sécurisées et séparées de la circulation. [___1___] Ce changement ne concerne plus seulement les étudiants ou les sportifs, mais aussi les familles et les salariés qui se rendent au travail.\n\nPour encourager cette pratique, les collectivités locales ont multiplié les services d'aide financière et de location longue durée. [___2___] Grâce à l'assistance électrique, les trajets plus longs ou les rues en pente ne représentent plus un obstacle pour les usagers quotidiens.\n\nLes commerçants des centres-villes, d'abord inquiets de la réduction du stationnement automobile, constatent aujourd'hui des effets positifs. [___3___] Contrairement aux automobilistes qui privilégient souvent les grands centres commerciaux en périphérie, les cyclistes s'arrêtent volontiers dans les boulangeries, les librairies et les marchés de quartier.\n\nCependant, cette croissance rapide pose de nouveaux défis d'aménagement et de sécurité. [___4___] La création d'abris fermés près des gares permet désormais de combiner facilement le vélo et le train régional pour les déplacements quotidiens.\n\nSelon les urbanistes, l'apaisement de la circulation profite finalement à l'ensemble des habitants. [___5___] En réduisant le bruit et la pollution de l'air, la ville redevient un espace de promenade et de rencontre plus agréable pour tous.",
+          "gaps": [
+            { "id": "gap-1", "num": 1, "correct": "C" },
+            { "id": "gap-2", "num": 2, "correct": "A" },
+            { "id": "gap-3", "num": 3, "correct": "E" },
+            { "id": "gap-4", "num": 4, "correct": "B" },
+            { "id": "gap-5", "num": 5, "correct": "D" }
+          ],
+          "options": [
+            { "letter": "A", "text": "Les habitants peuvent ainsi bénéficier d'une prime pour l'achat d'un vélo classique ou électrique." },
+            { "letter": "B", "text": "Le manque de places de stationnement protégées contre le vol reste en effet le premier frein signalé par les usagers." },
+            { "letter": "C", "text": "En conséquence, le nombre de déplacements quotidiens à deux-roues a doublé dans plusieurs métropoles." },
+            { "letter": "D", "text": "Les piétons retrouvent eux aussi des trottoirs plus larges et des places arborées." },
+            { "letter": "E", "text": "Les études montrent que les clients à vélo fréquentent plus régulièrement les commerces de proximité." },
+            { "letter": "F", "text": "La circulation des trains à grande vitesse a été définitivement suspendue sur tout le territoire." },
+            { "letter": "G", "text": "Les mairies ont décidé d'interdire la marche à pied dans les parcs publics le dimanche." }
+          ]
+        },
+        {
+          "id": "fr-reading-t2",
+          "tareaNum": 2,
+          "type": "reading-mc",
+          "title": "Exercice 2 : Lire un article de presse et répondre à un questionnaire",
+          "instructions": "Lisez cet article sur les cafés associatifs en France, puis répondez aux questions en choisissant la bonne option (A, B ou C).",
+          "passage": "Le renouveau des cafés associatifs dans les villages français\n\nDans de nombreuses communes rurales françaises, la fermeture du dernier bistrot a longtemps été vécue comme la fin de la vie sociale du village. Pourtant, depuis une dizaine d'années, une initiative citoyenne redonne vie à ces lieux : les cafés associatifs et solidaires, gérés par des bénévoles et soutenus par les municipalités.\n\nContrairement à un établissement commercial classique, l'objectif principal d'un café associatif n'est pas le profit financier, mais le maintien du lien social entre les générations. On y vient pour boire un café à prix libre ou très modéré, mais aussi pour participer à une soirée jeux de société, assister à un concert acoustique, réparer un appareil électroménager lors d'un atelier d'entraide ou récupérer un panier de légumes cultivés par les agriculteurs locaux.\n\nCes lieux jouent également un rôle précieux contre l'isolement des personnes âgées et facilitent l'intégration des nouveaux habitants venus de la ville. En tenant le comptoir à tour de rôle quelques heures par mois, les bénévoles apprennent à se connaître et construisent ensemble la programmation culturelle du trimestre.\n\nLe réseau national qui accompagne ces projets compte désormais plus de mille cafés citoyens à travers la France, prouvant que la convivialité reste un moteur essentiel du dynamisme local.",
+          "questions": [
+            {
+              "id": "fr-rt2-q1",
+              "question": "1. Quel est le but principal des cafés associatifs décrits dans l'article ?",
+              "options": [
+                "Créer un lieu de rencontre et de solidarité entre les habitants du village.",
+                "Remplacer les supermarchés par des restaurants gastronomiques de luxe.",
+                "Former des serveurs professionnels pour les grands hôtels parisiens."
+              ],
+              "correct": 0,
+              "evidence": "l'objectif principal d'un café associatif n'est pas le profit financier, mais le maintien du lien social entre les générations.",
+              "explanation": "L'article souligne que ces cafés visent avant tout à recréer du lien social entre les habitants."
+            },
+            {
+              "id": "fr-rt2-q2",
+              "question": "2. Quelles activités peut-on trouver dans ces cafés en plus des boissons ?",
+              "options": [
+                "Uniquement des cours d'informatique obligatoires pour les lycéens.",
+                "Des concerts, des ateliers de réparation et des distributions de produits locaux.",
+                "Des ventes aux enchères de voitures anciennes chaque matin."
+              ],
+              "correct": 1,
+              "evidence": "assister à un concert acoustique, réparer un appareil électroménager lors d'un atelier d'entraide ou récupérer un panier de légumes cultivés par les agriculteurs locaux.",
+              "explanation": "Ces cafés proposent des activités culturelles, des ateliers d'entraide et des paniers de producteurs locaux."
+            },
+            {
+              "id": "fr-rt2-q3",
+              "question": "3. Comment fonctionnent ces établissements au quotidien ?",
+              "options": [
+                "Ils sont animés à tour de rôle par des habitants bénévoles.",
+                "Ils sont dirigés à distance par une grande entreprise internationale.",
+                "Ils n'ouvrent qu'une seule journée par an pendant l'été."
+              ],
+              "correct": 0,
+              "evidence": "En tenant le comptoir à tour de rôle quelques heures par mois, les bénévoles apprennent à se connaître",
+              "explanation": "Ce sont les habitants bénévoles qui assurent l'accueil et la programmation."
+            },
+            {
+              "id": "fr-rt2-q4",
+              "question": "4. Quel effet ces lieux ont-ils sur les nouveaux arrivants venus de la ville ?",
+              "options": [
+                "Ils leur permettent de s'intégrer plus facilement à la vie du village.",
+                "Ils les obligent à quitter la commune après six mois.",
+                "Ils leur offrent un logement gratuit au-dessus du café."
+              ],
+              "correct": 0,
+              "evidence": "Ces lieux jouent également un rôle précieux contre l'isolement des personnes âgées et facilitent l'intégration des nouveaux habitants venus de la ville.",
+              "explanation": "La participation à l'association aide les nouveaux résidents à rencontrer les habitants du village."
+            }
+          ]
+        }
+      ]
+    },
+    "listening": {
+      "id": "listening",
+      "name": "Compréhension de l'oral",
+      "officialTimeMinutes": 25,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "fr-listening-t1",
+          "tareaNum": 1,
+          "type": "audio-mc",
+          "title": "Exercice 1 : Annonces publiques et messages vocaux",
+          "instructions": "Vous allez entendre de courts messages. Pour chaque question, choisissez la bonne réponse (A, B ou C). Vous avez 30 secondes pour lire les questions.",
+          "previewSeconds": 30,
+          "items": [
+            {
+              "id": "fr-l1-q1",
+              "num": 1,
+              "situation": "Annonce dans une gare SNCF.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Annonce SNCF",
+                    "gender": "female",
+                    "text": "Mesdames, messieurs, votre attention s'il vous plaît : le TGV numéro 6614 à destination de Lyon Part-Dieu, départ initialement prévu à quatorze heures trente, est annoncé avec un retard d'environ vingt minutes en raison d'un incident technique sur la voie. Le départ s'effectuera voie B. Nous vous remercions de votre compréhension."
+                  }
+                ]
+              },
+              "question": "Pourquoi le TGV à destination de Lyon partira-t-il en retard ?",
+              "options": [
+                "À cause d'un problème technique sur la ligne ferroviaire.",
+                "Parce que la gare de Lyon Part-Dieu est fermée pour travaux.",
+                "En raison d'une tempête de neige dans le sud de la France."
+              ],
+              "correct": 0,
+              "evidence": "est annoncé avec un retard d'environ vingt minutes en raison d'un incident technique sur la voie.",
+              "explanation": "Le retard de vingt minutes est dû à un incident technique sur la voie."
+            },
+            {
+              "id": "fr-l1-q2",
+              "num": 2,
+              "situation": "Message sur un répondeur téléphonique.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Centre sportif",
+                    "gender": "male",
+                    "text": "Bonjour madame Moreau, c'est Julien de l'association sportive du Parc. Je vous appelle au sujet du cours de yoga du mercredi soir : comme le gymnase municipal accueille le forum des métiers cette semaine, notre séance aura lieu exceptionnellement jeudi à dix-huit heures trente dans la salle des fêtes. N'oubliez pas d'apporter votre tapis !"
+                  }
+                ]
+              },
+              "question": "Quel changement Julien annonce-t-il à madame Moreau ?",
+              "options": [
+                "Le cours de yoga est déplacé à jeudi soir dans une autre salle.",
+                "Les cours de sport sont annulés jusqu'à la fin de l'année.",
+                "Le tarif de l'inscription annuelle a augmenté de vingt euros."
+              ],
+              "correct": 0,
+              "evidence": "notre séance aura lieu exceptionnellement jeudi à dix-huit heures trente dans la salle des fêtes.",
+              "explanation": "La séance du mercredi est reportée au jeudi à 18h30 dans la salle des fêtes."
+            }
+          ]
+        },
+        {
+          "id": "fr-listening-t2",
+          "tareaNum": 2,
+          "type": "audio-interview",
+          "title": "Exercice 2 : Entretien radio avec une libraire indépendante",
+          "instructions": "Vous allez entendre une interview avec Claire, qui a ouvert une librairie-café à Nantes. Choisissez la bonne réponse (A, B ou C) pour chaque question.",
+          "previewSeconds": 30,
+          "audio": {
+            "turns": [
+              {
+                "speaker": "Journaliste",
+                "gender": "male",
+                "text": "Bonjour à tous ! Aujourd'hui nous recevons Claire Mercier, qui a quitté son poste dans la communication à Paris pour ouvrir une librairie indépendante à Nantes il y a trois ans. Claire, qu'est-ce qui distingue votre librairie des plateformes de vente en ligne ?"
+              },
+              {
+                "speaker": "Claire",
+                "gender": "female",
+                "text": "Bonjour ! Sur Internet, un algorithme vous propose toujours le même genre de livres que ceux que vous avez déjà lus. Dans notre librairie, les lecteurs viennent chercher un conseil personnalisé, une découverte inattendue et un échange humain autour d'une tasse de thé."
+              },
+              {
+                "speaker": "Journaliste",
+                "gender": "male",
+                "text": "Vous organisez aussi des rencontres chaque semaine. Quel public y participe ?"
+              },
+              {
+                "speaker": "Claire",
+                "gender": "female",
+                "text": "Un public très varié ! Le vendredi soir, nous invitons de jeunes auteurs ou des illustrateurs de bande dessinée pour discuter avec les lecteurs. Beaucoup de personnes qui pensaient ne pas aimer lire ont repris goût à la lecture grâce à ces soirées conviviales."
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "fr-l2-q1",
+              "question": "1. Selon Claire, quel est le principal atout d'une librairie indépendante face à Internet ?",
+              "options": [
+                "Le conseil personnalisé et la découverte d'ouvrages inattendus.",
+                "La livraison gratuite par drone en moins de quinze minutes.",
+                "La vente exclusive de manuels scolaires d'occasion."
+              ],
+              "correct": 0,
+              "evidence": "Dans notre librairie, les lecteurs viennent chercher un conseil personnalisé, une découverte inattendue et un échange humain",
+              "explanation": "Le conseil humain permet de découvrir des livres qu'un algorithme n'aurait pas suggérés."
+            },
+            {
+              "id": "fr-l2-q2",
+              "question": "2. Que se passe-t-il le vendredi soir dans la librairie de Claire ?",
+              "options": [
+                "La boutique ferme plus tôt pour faire l'inventaire.",
+                "Des auteurs et illustrateurs viennent rencontrer et échanger avec les lecteurs.",
+                "Un professeur donne des cours particuliers de mathématiques."
+              ],
+              "correct": 1,
+              "evidence": "Le vendredi soir, nous invitons de jeunes auteurs ou des illustrateurs de bande dessinée pour discuter avec les lecteurs.",
+              "explanation": "Elle organise des rencontres conviviales avec des auteurs et des illustrateurs."
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "id": "writing",
+      "name": "Production écrite",
+      "officialTimeMinutes": 45,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "fr-writing-t1",
+          "tareaNum": 1,
+          "title": "Exercice 1 : Courriel amical (Projet de week-end en France)",
+          "prompt": "Votre amie française Camille, qui habite à Lyon, vous propose de passer un long week-end chez elle au printemps.\n\nVous lui écrivez un courriel (100 à 120 mots) dans lequel :\n- Vous la remerciez chaleureusement et acceptez son invitation.\n- Vous lui précisez vos dates de voyage et votre heure d'arrivée en train.\n- Vous lui proposez une activité culturelle ou gastronomique que vous aimeriez faire ensemble.\n- Vous lui demandez ce que vous pouvez apporter pour le dîner du premier soir.",
+          "minWords": 100,
+          "maxWords": 120,
+          "targetKeywords": [
+            "merci pour ton invitation",
+            "avec plaisir",
+            "j'arriverai en train",
+            "j'aimerais visiter",
+            "à bientôt"
+          ]
+        },
+        {
+          "id": "fr-writing-t2",
+          "tareaNum": 2,
+          "title": "Exercice 2 : Essai argumenté (Forum sur le télétravail et la qualité de vie)",
+          "prompt": "Vous lisez sur un forum francophone un débat intitulé : « Le télétravail améliore-t-il vraiment notre vie quotidienne ? » Vous rédigez une contribution argumentée (100 à 120 mots) :\n\n- Vous expliquez les avantages du travail à distance (gain de temps, moins de transports, souplesse).\n- Vous mentionnez les limites possibles (sentiment d'isolement, frontière floue entre vie privée et travail).\n- Vous donnez votre avis personnel sur la formule idéale.",
+          "minWords": 100,
+          "maxWords": 120,
+          "targetKeywords": [
+            "à mon avis",
+            "d'une part",
+            "d'autre part",
+            "cependant",
+            "en conclusion"
+          ]
+        }
+      ]
+    },
+    "speaking": {
+      "id": "speaking",
+      "name": "Production orale",
+      "officialTimeMinutes": 15,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "fr-speaking-t1",
+          "tareaNum": 1,
+          "title": "Exercice 1 : Entretien dirigé (Loisirs, études et projets)",
+          "prompt": "Présentez vos habitudes quotidiennes, vos centres d'intérêt et vos projets pour l'année à venir.\n\nPoints à aborder :\n- Quelles activités aimez-vous pratiquer pendant votre temps libre et pourquoi ?\n- Depuis combien de temps apprenez-vous le français et dans quel but ?\n- Quel voyage ou quel projet souhaiteriez-vous réaliser prochainement ?",
+          "bulletPoints": [
+            "Activités de loisirs et passions personnelles",
+            "Parcours et motivations pour l'apprentissage du français",
+            "Projets de voyage ou objectifs futurs"
+          ]
+        },
+        {
+          "id": "fr-speaking-t2",
+          "tareaNum": 2,
+          "title": "Exercice 2 : Monologue suivi (Exprimer un point de vue sur les transports urbains)",
+          "prompt": "Pensez-vous qu'il faille limiter la place des voitures individuelles dans le centre des grandes villes ?\n\nPoints à aborder :\n- Quels sont les avantages d'un centre-ville piéton et cyclable pour les habitants ?\n- Quelles difficultés cela peut-il poser à certains travailleurs ou commerçants ?\n- Quelles solutions concrètes proposeriez-vous à votre mairie ?",
+          "bulletPoints": [
+            "Qualité de vie, écologie et sécurité en ville",
+            "Besoins de déplacement et solutions de transport public",
+            "Proposition équilibrée et conclusion personnelle"
+          ]
+        }
+      ]
+    }
+  },
+  "strategies": {
+    "title": "Guide et stratégies pour réussir le DELF B1",
+    "structure": [
+      {
+        "prueba": "Compréhension des écrits (45 min · 2 exercices)",
+        "tip": "Commencez par une lecture globale du document avant de regarder les options. Pour l'exercice des phrases manquantes, repérez les connecteurs logiques ('cependant', 'ainsi', 'en effet') et les pronoms qui renvoient au paragraphe précédent."
+      },
+      {
+        "prueba": "Compréhension de l'oral (25 min · 2 exercices)",
+        "tip": "Utilisez les 30 secondes de préparation pour identifier les mots-clés dans chaque question. Lors de la première écoute, concentrez-vous sur la situation générale et l'intention des locuteurs ; vérifiez vos réponses à la seconde écoute."
+      },
+      {
+        "prueba": "Production écrite (45 min · 2 exercices)",
+        "tip": "Structurez clairement votre texte en paragraphes distincts et respectez la consigne de longueur (100–120 mots). Utilisez des articulateurs logiques B1 et gardez cinq minutes à la fin pour vérifier les accords du participe passé et l'emploi du subjonctif."
+      },
+      {
+        "prueba": "Production orale (15 min)",
+        "tip": "Présentez votre point de vue avec un plan simple : introduction du thème, deux arguments illustrés par des exemples personnels et une courte conclusion."
+      }
+    ],
+    "connectors": [
+      {
+        "category": "Structurer ses idées",
+        "examples": ["Tout d'abord", "D'une part / d'autre part", "Ensuite / De plus", "En conclusion"]
+      },
+      {
+        "category": "Exprimer l'opposition",
+        "examples": ["Cependant / Toutefois", "En revanche", "Pourtant", "Bien que (+ subjonctif)"]
+      },
+      {
+        "category": "Cause et conséquence",
+        "examples": ["Puisque / Comme", "Grâce à", "Par conséquent", "C'est pourquoi"]
+      },
+      {
+        "category": "Donner son opinion",
+        "examples": ["À mon avis", "Selon moi", "Il me semble que", "Je considère que"]
+      }
+    ]
+  }
+}

@@ -57,6 +57,7 @@ load('engine/lang.js');
 load('engine/morphology/spanish.js');
 load('engine/morphology/hungarian.js');
 load('engine/morphology/french.js');
+load('engine/morphology/italian.js');
 load('engine/lexicon.js');
 
 // The Reader's own tokenizer (engine/reader.js WORD_CHARS): letters incl.
@@ -99,7 +100,7 @@ function sentenceAround(text, start, end) {
 async function auditCourse(course) {
     Lang.set(course);
     await Lexicon.load();
-    const lang = Lang.code() === 'hu' ? 'hu' : 'es';
+    const lang = (typeof Lang.baseCode === 'function') ? Lang.baseCode() : Lang.code().split('-')[0];
 
     const words = new Map();   // lower-cased token -> {count, stories:Set, capitalised, lower, sample}
     let tokenTotal = 0;

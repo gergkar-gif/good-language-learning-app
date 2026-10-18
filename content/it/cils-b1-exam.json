@@ -1,0 +1,329 @@
+{
+  "id": "it-cils-exam",
+  "board": "Università per Stranieri di Siena · Centro CILS",
+  "level": "B1",
+  "title": "Esame CILS Uno-B1",
+  "subtitle": "Certificazione di Italiano come Lingua Straniera · Quadro Comune Europeo (QCER B1)",
+  "passingScorePercentage": 60,
+  "skills": {
+    "reading": {
+      "id": "reading",
+      "name": "Comprensione della lettura",
+      "officialTimeMinutes": 50,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "it-reading-t1",
+          "tareaNum": 1,
+          "type": "gapped-text",
+          "title": "Prova 1: Ricostruzione di un testo (Frasi mancanti)",
+          "instructions": "Leggi l'articolo sul turismo lento nei borghi italiani da cui sono state tolte 5 frasi. Scegli tra le opzioni (A–G) la frase giusta per ogni spazio. Due opzioni sono in più.",
+          "passage": "La rinascita dei borghi storici grazie al turismo lento\n\nNegli ultimi anni molti piccoli comuni dell'Appennino e delle zone interne d'Italia hanno conosciuto una nuova stagione di vitalità. I viaggiatori cercano sempre più spesso luoghi lontani dal turismo di massa, dove sia possibile camminare nella natura e scoprire le tradizioni gastronomiche locali. [___1___] Questo fenomeno, chiamato 'turismo lento', valorizza i sentieri storici, le antiche ferrovie panoramiche e l'ospitalità familiare.\n\nMolte famiglie e giovani imprenditori hanno deciso di restaurare vecchie case in pietra per trasformarle in alberghi diffusi. [___2___] In questo modo i visitatori non dormono in strutture isolate, ma vivono fianco a fianco con gli abitanti del paese, facendo colazione al bar della piazza e acquistando il pane nel forno storico.\n\nAnche il lavoro a distanza ha contribuito al ripopolamento di questi centri minori. Grazie alla diffusione della fibra ottica, diversi professionisti scelgono di trasferirsi nei borghi per alcuni mesi all'anno. [___3___] Il costo della vita più contenuto e l'assenza di traffico permettono infatti di conciliare meglio gli impegni lavorativi con il benessere personale.\n\nLe amministrazioni comunali sostengono questa transizione organizzando mercati contadini, festival culturali e laboratori di artigianato. [___4___] Imparare a lavorare la ceramica o a preparare la pasta fresca con gli anziani del posto crea un legame autentico tra chi arriva e chi custodisce la memoria del territorio.\n\nSecondo gli esperti, la sfida dei prossimi anni sarà mantenere l'equilibrio tra accoglienza e servizi essenziali per i residenti. [___5___] Solo garantendo scuole, trasporti pubblici e assistenza sanitaria questi gioielli d'arte e natura potranno avere un futuro duraturo.",
+          "gaps": [
+            { "id": "gap-1", "num": 1, "correct": "C" },
+            { "id": "gap-2", "num": 2, "correct": "A" },
+            { "id": "gap-3", "num": 3, "correct": "E" },
+            { "id": "gap-4", "num": 4, "correct": "B" },
+            { "id": "gap-5", "num": 5, "correct": "D" }
+          ],
+          "options": [
+            { "letter": "A", "text": "Le camere sono distribuite in diversi edifici del centro storico invece che in un unico grande albergo." },
+            { "letter": "B", "text": "Queste iniziative permettono ai turisti di partecipare attivamente alla vita quotidiana della comunità." },
+            { "letter": "C", "text": "Non si tratta più di visitare dieci monumenti in un solo giorno, ma di assaporare il ritmo autentico del territorio." },
+            { "letter": "D", "text": "Non basta infatti attirare visitatori d'estate se durante l'inverno mancano i collegamenti con le città vicine." },
+            { "letter": "E", "text": "Lavorare al computer con vista sulle colline offre una qualità della vita difficile da trovare nelle grandi metropoli." },
+            { "letter": "F", "text": "Il Ministero dei Trasporti ha vietato l'ingresso ai pedoni in tutti i centri storici sotto i mille abitanti." },
+            { "letter": "G", "text": "I grattacieli costruiti sulle spiagge hanno sostituito completamente le antiche botteghe artigiane." }
+          ]
+        },
+        {
+          "id": "it-reading-t2",
+          "tareaNum": 2,
+          "type": "reading-mc",
+          "title": "Prova 2: Comprensione di un articolo e scelta multipla",
+          "instructions": "Leggi il testo sulle biblioteche di quartiere in Italia e rispondi alle domande scegliendo l'opzione corretta (A, B o C).",
+          "passage": "Le biblioteche di quartiere: nuove piazze della cultura\n\nIn molte città italiane, da Bologna a Torino fino a Bari, le biblioteche comunali stanno cambiando volto. Non sono più soltanto sale silenziose riservate agli studenti universitari o agli studiosi, ma veri e propri centri civici aperti a persone di tutte le età e provenienze.\n\nAccanto al tradizionale prestito dei libri, oggi queste strutture offrono spazi per il lavoro condiviso, corsi gratuiti di alfabetizzazione digitale per gli anziani, gruppi di lettura pomeridiani e laboratori creativi per i bambini. Inoltre, molte biblioteche hanno inaugurato una 'biblioteca degli oggetti', dove i cittadini iscritti possono prendere in prestito gratuitamente attrezzi da giardino, macchine da cucire o strumenti musicali invece di acquistarli per usarli una sola volta.\n\nSecondo i bibliotecari, il successo di questo modello nasce dal bisogno di luoghi d'incontro gratuiti e accessibili. In una città moderna, quasi ogni spazio chiuso richiede il pagamento di un biglietto o di una consumazione; la biblioteca resta invece uno spazio pubblico dove chiunque può entrare, leggere il giornale, studiare o conversare nel cortile senza spendere nulla.\n\nPer rispondere alle esigenze di chi lavora o studia fino a tardi, diverse amministrazioni hanno prolungato gli orari di apertura anche alla sera e alla domenica, affidando la gestione di alcuni eventi culturali alle associazioni giovanili del quartiere.",
+          "questions": [
+            {
+              "id": "it-rt2-q1",
+              "question": "1. Come si sono trasformate molte biblioteche comunali italiane negli ultimi anni?",
+              "options": [
+                "Sono diventate luoghi d'incontro aperti a tutta la cittadinanza con molteplici attività.",
+                "Sono state riservate esclusivamente ai ricercatori universitari su prenotazione.",
+                "Hanno eliminato i libri cartacei per trasformarsi in negozi di elettronica."
+              ],
+              "correct": 0,
+              "evidence": "Non sono più soltanto sale silenziose riservate agli studenti universitari o agli studiosi, ma veri e propri centri civici aperti a persone di tutte le età",
+              "explanation": "L'articolo spiega che le biblioteche sono diventate centri civici aperti a tutti i cittadini."
+            },
+            {
+              "id": "it-rt2-q2",
+              "question": "2. Che cos'è la 'biblioteca degli oggetti' citata nel testo?",
+              "options": [
+                "Una mostra permanente di strumenti musicali antichi.",
+                "Un servizio che permette di prendere in prestito utensili e strumenti di uso occasionale.",
+                "Un mercato dove gli anziani vendono mobili usati agli studenti."
+              ],
+              "correct": 1,
+              "evidence": "i cittadini iscritti possono prendere in prestito gratuitamente attrezzi da giardino, macchine da cucire o strumenti musicali invece di acquistarli per usarli una sola volta.",
+              "explanation": "Serve a prestare gratuitamente oggetti che si usano raramente, evitando acquisti inutili."
+            },
+            {
+              "id": "it-rt2-q3",
+              "question": "3. Perché, secondo i bibliotecari, questi spazi sono così importanti nelle città moderne?",
+              "options": [
+                "Perché offrono uno dei pochi spazi coperti gratuiti in cui stare senza obbligo di consumo.",
+                "Perché distribuiscono buoni pasto gratuiti a tutti i visitatori della domenica.",
+                "Perché sostituiscono le lezioni obbligatorie delle scuole superiori."
+              ],
+              "correct": 0,
+              "evidence": "la biblioteca resta invece uno spazio pubblico dove chiunque può entrare, leggere il giornale, studiare o conversare nel cortile senza spendere nulla.",
+              "explanation": "Rappresentano uno spazio pubblico gratuito e inclusivo, senza obbligo di pagare un biglietto o una consumazione."
+            },
+            {
+              "id": "it-rt2-q4",
+              "question": "4. Quale novità riguarda gli orari di diverse biblioteche?",
+              "options": [
+                "Aprono solo due mattine alla settimana per risparmiare energia.",
+                "Rimangono aperte anche di sera e di domenica con il coinvolgimento di associazioni giovanili.",
+                "Chiudono durante tutto il fine settimana per lavori di restauro."
+              ],
+              "correct": 1,
+              "evidence": "diverse amministrazioni hanno prolungato gli orari di apertura anche alla sera e alla domenica, affidando la gestione di alcuni eventi culturali alle associazioni giovanili",
+              "explanation": "Gli orari sono stati estesi alla sera e alla domenica per favorire lavoratori e studenti."
+            }
+          ]
+        }
+      ]
+    },
+    "listening": {
+      "id": "listening",
+      "name": "Comprensione dell'ascolto",
+      "officialTimeMinutes": 30,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "it-listening-t1",
+          "tareaNum": 1,
+          "type": "audio-mc",
+          "title": "Prova 1: Brevi annunci e comunicazioni",
+          "instructions": "Ascolterai brevi messaggi ed annunci. Per ciascuno scegli la risposta corretta (A, B o C). Hai 30 secondi per leggere le domande.",
+          "previewSeconds": 30,
+          "items": [
+            {
+              "id": "it-l1-q1",
+              "num": 1,
+              "situation": "Annuncio alla stazione ferroviaria.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Altoparlante",
+                    "gender": "female",
+                    "text": "Attenzione: il treno regionale veloce 2418 di Trenitalia proveniente da Firenze Santa Maria Novella e diretto a Bologna Centrale delle ore sedici e venti partirà dal binario sette anziché dal binario quattro. Si ricorda inoltre ai viaggiatori che i posti per le biciclette si trovano nella carrozza di coda."
+                  }
+                ]
+              },
+              "question": "Che cosa comunica l'annuncio ai passeggeri diretti a Bologna?",
+              "options": [
+                "Il treno è stato soppresso a causa di un guasto tecnico.",
+                "Il binario di partenza del treno è cambiato.",
+                "È vietato salire a bordo con le biciclette."
+              ],
+              "correct": 1,
+              "evidence": "partirà dal binario sette anziché dal binario quattro.",
+              "explanation": "L'annuncio avvisa che il treno partirà dal binario 7 invece che dal binario 4."
+            },
+            {
+              "id": "it-l1-q2",
+              "num": 2,
+              "situation": "Messaggio in segreteria telefonica.",
+              "audio": {
+                "turns": [
+                  {
+                    "speaker": "Libreria",
+                    "gender": "male",
+                    "text": "Buongiorno signora Ferri, la chiamo dalla libreria Il Girasole di via Mazzini. Volevo informarla che è appena arrivato il dizionario illustrato di botanica che aveva ordinato la settimana scorsa. Lo teniamo da parte alla cassa fino a sabato sera; se preferisce la consegna a domicilio, può richiamarci a questo numero."
+                  }
+                ]
+              },
+              "question": "Perché il libraio telefona alla signora Ferri?",
+              "options": [
+                "Per avvisarla che il libro ordinato è disponibile in negozio.",
+                "Per dirle che l'ordine è stato annullato dalla casa editrice.",
+                "Per invitarla alla presentazione di un romanzo sabato sera."
+              ],
+              "correct": 0,
+              "evidence": "Volevo informarla che è appena arrivato il dizionario illustrato di botanica che aveva ordinato",
+              "explanation": "Il volume ordinato è arrivato ed è pronto per il ritiro fino a sabato."
+            }
+          ]
+        },
+        {
+          "id": "it-listening-t2",
+          "tareaNum": 2,
+          "type": "audio-interview",
+          "title": "Prova 2: Intervista radiofonica a una restauratrice",
+          "instructions": "Ascolterai un'intervista a Chiara, una giovane restauratrice di affreschi. Scegli l'opzione corretta (A, B o C) per ogni domanda.",
+          "previewSeconds": 30,
+          "audio": {
+            "turns": [
+              {
+                "speaker": "Conduttore",
+                "gender": "male",
+                "text": "Bentornati ai nostri ascoltatori! Oggi parliamo di mestieri d'arte con Chiara Conti, restauratrice che lavora nei cantieri storici dell'Umbria. Chiara, com'è nata questa passione?"
+              },
+              {
+                "speaker": "Chiara",
+                "gender": "female",
+                "text": "Buongiorno a tutti! È nata al liceo, quando la mia classe ha visitato il cantiere di restauro della Basilica di Assisi dopo il terremoto. Vedere i tecnici che ricomponevano migliaia di piccoli frammenti d'affresco con una pazienza infinita mi ha fatto capire che volevo dedicare la mia vita a salvare la bellezza del passato."
+              },
+              {
+                "speaker": "Conduttore",
+                "gender": "male",
+                "text": "Qual è l'aspetto più delicato del tuo lavoro quotidiano?"
+              },
+              {
+                "speaker": "Chiara",
+                "gender": "female",
+                "text": "Senz'altro il rispetto dell'opera originale. Un buon restauratore non deve mai inventare o ridipingere sopra il lavoro dell'artista antico: il nostro compito è pulire le superfici, consolidare i colori che rischiano di staccarsi e rendere ogni intervento riconoscibile e reversibile."
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "it-l2-q1",
+              "question": "1. Quando ha deciso Chiara di diventare restauratrice?",
+              "options": [
+                "Durante una visita scolastica al cantiere della Basilica di Assisi.",
+                "Dopo aver lavorato per dieci anni come architetto a Milano.",
+                "Seguendo il consiglio di suo nonno che vendeva cornici antiche."
+              ],
+              "correct": 0,
+              "evidence": "È nata al liceo, quando la mia classe ha visitato il cantiere di restauro della Basilica di Assisi",
+              "explanation": "La visita al cantiere di Assisi durante il liceo ha ispirato la sua scelta professionale."
+            },
+            {
+              "id": "it-l2-q2",
+              "question": "2. Qual è la regola fondamentale del restauro secondo Chiara?",
+              "options": [
+                "Sostituire i colori antichi con vernici moderne molto più brillanti.",
+                "Conservare l'opera originale senza inventare e con interventi reversibili.",
+                "Terminare ogni lavoro in meno di quarantotto ore."
+              ],
+              "correct": 1,
+              "evidence": "Un buon restauratore non deve mai inventare o ridipingere sopra il lavoro dell'artista antico... rendere ogni intervento riconoscibile e reversibile.",
+              "explanation": "Il restauro deve consolidare e rispettare l'originale con interventi reversibili."
+            }
+          ]
+        }
+      ]
+    },
+    "writing": {
+      "id": "writing",
+      "name": "Produzione scritta",
+      "officialTimeMinutes": 55,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "it-writing-t1",
+          "tareaNum": 1,
+          "title": "Prova 1: Email informale a un amico italiano",
+          "prompt": "Il tuo amico Marco, che vive a Firenze, ti ha invitato a trascorrere qualche giorno a casa sua il mese prossimo.\n\nScrivigli un'email (100–120 parole) in cui:\n- Lo ringrazi per l'invito e accetti con entusiasmo.\n- Gli comunichi le date esatte del tuo arrivo e con quale mezzo viaggerai.\n- Gli proponi una mostra, un museo o una gita fuori porta da fare insieme.\n- Gli chiedi che cosa puoi portare dal tuo Paese per fare un regalo alla sua famiglia.",
+          "minWords": 100,
+          "maxWords": 120,
+          "targetKeywords": [
+            "grazie per l'invito",
+            "non vedo l'ora",
+            "arriverò in treno",
+            "mi piacerebbe visitare",
+            "a presto"
+          ]
+        },
+        {
+          "id": "it-writing-t2",
+          "tareaNum": 2,
+          "title": "Prova 2: Testo argomentativo (Opinione su lavoro e studio a distanza)",
+          "prompt": "Una rivista culturale italiana raccoglie le opinioni dei lettori sui vantaggi e gli svantaggi dello studio e del lavoro da casa. Scrivi un breve testo (100–120 parole) seguendo questi punti:\n\n- Hai mai studiato o lavorato a distanza? Come ti sei trovato?\n- Quali sono i principali benefici per il tempo libero e per l'ambiente?\n- Quali rischi comporta per i rapporti umani e come si può trovare un buon equilibrio?",
+          "minWords": 100,
+          "maxWords": 120,
+          "targetKeywords": [
+            "secondo me",
+            "da un lato",
+            "dall'altro",
+            "tuttavia",
+            "in conclusione"
+          ]
+        }
+      ]
+    },
+    "speaking": {
+      "id": "speaking",
+      "name": "Produzione orale",
+      "officialTimeMinutes": 15,
+      "maxPoints": 25,
+      "tareas": [
+        {
+          "id": "it-speaking-t1",
+          "tareaNum": 1,
+          "title": "Prova 1: Presentazione ed esperienze personali (Viaggi e cultura)",
+          "prompt": "Parla di un viaggio o di un'esperienza culturale che ti è rimasta impressa nella memoria.\n\nPunti guida:\n- Dove sei andato, con chi e in quale periodo dell'anno?\n- Che cosa ti ha colpito di più della cucina, dell'architettura o delle persone del posto?\n-Perché consiglieresti questa meta a un amico che studia l'italiano?",
+          "bulletPoints": [
+            "Destinazione, compagni di viaggio e periodo",
+            "Aspetti culturali e gastronomici più interessanti",
+            "Motivi per cui consigliare questa esperienza"
+          ]
+        },
+        {
+          "id": "it-speaking-t2",
+          "tareaNum": 2,
+          "title": "Prova 2: Monologo argomentativo (Vita in centro storico o in campagna)",
+          "prompt": "Confronta i vantaggi e le difficoltà di vivere nel centro storico di una città d'arte rispetto a vivere in un piccolo paese circondato dalla natura.\n\nPunti guida:\n- Quali servizi e opportunità culturali offre la città?\n- Quali vantaggi offre un piccolo centro per la salute e la tranquillità?\n- Dove preferiresti abitare nei prossimi anni e perché?",
+          "bulletPoints": [
+            "Servizi, trasporti e vita culturale in città",
+            "Qualità della vita e ritmi più lenti nei piccoli centri",
+            "Preferenza personale motivata"
+          ]
+        }
+      ]
+    }
+  },
+  "strategies": {
+    "title": "Guida e strategie per l'esame CILS Uno-B1",
+    "structure": [
+      {
+        "prueba": "Comprensione della lettura (50 min · 2 prove)",
+        "tip": "Leggi prima tutto il testo rapidamente per coglierne il senso generale. Nella prova delle frasi mancanti, presta attenzione ai pronomi, ai connettivi ('inoltre', 'tuttavia', 'in questo modo') e alla coerenza dei tempi verbali."
+      },
+      {
+        "prueba": "Comprensione dell'ascolto (30 min · 2 prove)",
+        "tip": "Sfrutta i 30 secondi iniziali per sottolineare le parole chiave nelle domande. Al primo ascolto individua l'idea principale; al secondo ascolto verifica i dettagli specifici."
+      },
+      {
+        "prueba": "Produzione scritta (55 min · 2 prove)",
+        "tip": "Rispondi a tutti i punti richiesti dalla traccia e rispetta il limite di parole (100–120 parole). Usa connettivi variati e riserva cinque minuti finali per controllare gli accordi, le preposizioni articolate e gli ausiliari essere/avere."
+      },
+      {
+        "prueba": "Produzione orale (15 min)",
+        "tip": "Organizza il discorso in introduzione, sviluppo ed esempi concreti. Non preoccuparti di piccole esitazioni: nella fascia B1 contano soprattutto la chiarezza comunicativa e la capacità di argomentare la propria opinione."
+      }
+    ],
+    "connectors": [
+      {
+        "category": "Ordinare il discorso",
+        "examples": ["Prima di tutto", "Da un lato / dall'altro", "Inoltre", "Infine / In conclusione"]
+      },
+      {
+        "category": "Esprimere contrasto",
+        "examples": ["Tuttavia", "Nonostante ciò", "Anche se", "Al contrario"]
+      },
+      {
+        "category": "Causa e conseguenza",
+        "examples": ["Perciò / Quindi", "Siccome / Poiché", "Di conseguenza", "Per questo motivo"]
+      },
+      {
+        "category": "Esprimere un'opinione",
+        "examples": ["Secondo me", "A mio avviso", "Ritengo che (+ congiuntivo)", "Sono convinto/a che"]
+      }
+    ]
+  }
+}

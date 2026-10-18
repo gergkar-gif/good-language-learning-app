@@ -201,7 +201,7 @@ const Lang = (function () {
             courseName: 'French',
             voices: ['fr-FR', 'fr-CA', 'fr'],
             sttLocale: 'fr-FR',
-            tests: ['A1', 'A2', 'B1', 'B2', 'C1'],
+            tests: [],
             diacritics: {
                 e: ['é', 'è', 'ê', 'ë'],
                 a: ['à', 'â'],
@@ -277,7 +277,7 @@ const Lang = (function () {
             courseName: 'Italian',
             voices: ['it-IT', 'it'],
             sttLocale: 'it-IT',
-            tests: ['A1', 'A2', 'B1', 'B2', 'C1'],
+            tests: [],
             diacritics: {
                 a: ['à'],
                 e: ['è', 'é'],
