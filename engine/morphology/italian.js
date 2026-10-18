@@ -536,6 +536,201 @@ const ItalianMorphology = (function () {
         return ['il', 'un'];
     }
 
+    const TENSE_LABELS = {
+        presente: 'Present',
+        imperfetto: 'Imperfect',
+        futuro_semplice: 'Future',
+        condizionale_presente: 'Conditional',
+        passato_remoto: 'Past historic'
+    };
+    const MOOD_LABELS = {
+        indicativo: 'Indicative',
+        congiuntivo: 'Subjunctive',
+        condizionale: 'Conditional',
+        imperativo: 'Imperative'
+    };
+    const PERSON_LABELS = {
+        '1-singular': '1st person singular',
+        '2-singular': '2nd person singular',
+        '3-singular': '3rd person singular',
+        '1-plural': '1st person plural',
+        '2-plural': '2nd person plural',
+        '3-plural': '3rd person plural'
+    };
+
+    function cleanItalianWord(word) {
+        return String(word || '').toLowerCase().replace(/[.,!?¡¿;:"'()«»—]/g, '').trim();
+    }
+
+    function describeVerb(v) {
+        if (!v) return '';
+        if (v.mood === 'participle' || v.tense === 'past') return 'past participle';
+        if (v.mood === 'gerund') return 'gerund';
+        const bits = [];
+        if (v.tense) bits.push(TENSE_LABELS[v.tense] || v.tense);
+        if (v.mood) bits.push(MOOD_LABELS[v.mood] || v.mood);
+        if (v.person) bits.push(PERSON_LABELS[v.person] || v.person);
+        return bits.join(', ');
+    }
+
+    function describeWord(form, lemma, wordEntry) {
+        const bits = [];
+        if (wordEntry && wordEntry.gender) bits.push(wordEntry.gender);
+        if (wordEntry && wordEntry.number) bits.push(wordEntry.number);
+        if (bits.length) return bits.join(' ');
+
+        if (form && lemma) {
+            const isPlural = (form.endsWith('i') || form.endsWith('e')) && !lemma.endsWith(form.slice(-1));
+            const isFeminine = (form.endsWith('a') || form.endsWith('e')) && lemma.endsWith('o');
+            if (isPlural && isFeminine) return 'feminine plural';
+            if (isPlural) return 'plural';
+            if (isFeminine) return 'feminine';
+        }
+        return '';
+    }
+
+    function lookup(rawWord, ctx) {
+        const word = String(rawWord || '').trim();
+        if (!word) return { word: '', readings: [] };
+
+        // 1. Direct elisions (e.g. l', d', c', un')
+        const lowerRaw = word.toLowerCase();
+        if (ELISIONS[lowerRaw]) {
+            const el = ELISIONS[lowerRaw];
+            return {
+                word: word,
+                readings: [{
+                    lemma: el.lemma,
+                    pos: el.pos,
+                    gender: undefined,
+                    translation: el.translation,
+                    analysis: el.analysis
+                }]
+            };
+        }
+
+        // 2. Contractions (del, allo, sulla, dell'...)
+        const cleanKey = cleanItalianWord(word);
+        if (CONTRACTIONS[cleanKey]) {
+            const ct = CONTRACTIONS[cleanKey];
+            return {
+                word: word,
+                readings: [{
+                    lemma: ct.lemma,
+                    pos: ct.pos,
+                    gender: undefined,
+                    translation: ct.translation,
+                    analysis: ct.analysis
+                }]
+            };
+        }
+        if (CONTRACTIONS[lowerRaw]) {
+            const ct = CONTRACTIONS[lowerRaw];
+            return {
+                word: word,
+                readings: [{
+                    lemma: ct.lemma,
+                    pos: ct.pos,
+                    gender: undefined,
+                    translation: ct.translation,
+                    analysis: ct.analysis
+                }]
+            };
+        }
+
+        const dict = (ctx && ctx.dictionary) || {};
+        const wordIndex = (ctx && ctx.wordIndex) || {};
+        const verbIndex = (ctx && ctx.verbIndex) || {};
+        const readings = [];
+        const seen = new Set();
+
+        function addReading(lemma, pos, analysis, gender) {
+            const dedupe = lemma + '|' + (analysis || '');
+            if (seen.has(dedupe)) return;
+            seen.add(dedupe);
+            const entry = dict[lemma] || {};
+            readings.push({
+                lemma: lemma,
+                pos: entry.type || pos || 'unknown',
+                gender: entry.gender || gender,
+                translation: entry.en || null,
+                analysis: analysis || ''
+            });
+        }
+
+        // A. Direct headword match (if it's in the clean lemma dictionary)
+        if (dict[cleanKey]) {
+            addReading(cleanKey, dict[cleanKey].type, '', dict[cleanKey].gender);
+        }
+
+        // B. Inflected nouns/adjectives from wordIndex
+        if (wordIndex[cleanKey]) {
+            const entries = Array.isArray(wordIndex[cleanKey]) ? wordIndex[cleanKey] : [wordIndex[cleanKey]];
+            entries.forEach(e => {
+                const analysis = describeWord(cleanKey, e.lemma, e);
+                addReading(e.lemma, e.pos || 'noun', analysis, e.gender);
+            });
+        }
+
+        // C. Conjugated verbs from verbIndex
+        if (verbIndex[cleanKey]) {
+            const entries = Array.isArray(verbIndex[cleanKey]) ? verbIndex[cleanKey] : [verbIndex[cleanKey]];
+            entries.forEach(e => {
+                const analysis = describeVerb(e);
+                addReading(e.lemma, 'verb', analysis);
+            });
+        }
+
+        // D. Enclitic pronoun splitting (e.g. vederlo -> vedere + lo)
+        if (!readings.length || !readings.some(r => r.translation)) {
+            const stems = encliticStems(cleanKey);
+            for (const stem of stems) {
+                if (verbIndex[stem]) {
+                    const entries = Array.isArray(verbIndex[stem]) ? verbIndex[stem] : [verbIndex[stem]];
+                    entries.forEach(e => {
+                        const analysis = (describeVerb(e) || 'verb') + ' + pronoun';
+                        addReading(e.lemma, 'verb', analysis);
+                    });
+                } else if (dict[stem]) {
+                    addReading(stem, dict[stem].type || 'verb', 'infinitive + pronoun');
+                }
+            }
+        }
+
+        // E. Runtime verb analysis fallback
+        if (!readings.length) {
+            const verbMatches = analyze(cleanKey, dict);
+            verbMatches.forEach(v => {
+                const analysis = describeVerb(v);
+                addReading(v.lemma, 'verb', analysis);
+            });
+        }
+
+        // F. Runtime adjective/noun analysis fallback
+        if (!readings.length || !readings.some(r => r.translation)) {
+            const nounMatches = analyzeWord(cleanKey, dict);
+            nounMatches.forEach(n => {
+                const analysis = describeWord(cleanKey, n.lemma, n);
+                addReading(n.lemma, n.pos || 'adjective', analysis);
+            });
+        }
+
+        // Prioritize readings with an actual translation, and common words over proper nouns
+        readings.sort((a, b) => {
+            const aHasTrans = Boolean(a.translation);
+            const bHasTrans = Boolean(b.translation);
+            if (aHasTrans !== bHasTrans) return bHasTrans - aHasTrans;
+
+            const aIsProper = a.pos === 'proper noun';
+            const bIsProper = b.pos === 'proper noun';
+            if (aIsProper !== bIsProper) return aIsProper - bIsProper;
+
+            return 0;
+        });
+
+        return { word: word, readings: readings };
+    }
+
     return {
         contractions: CONTRACTIONS,
         elisions: ELISIONS,
@@ -544,7 +739,11 @@ const ItalianMorphology = (function () {
         analyzeWord: analyzeWord,
         article: article,
         acceptedArticles: acceptedArticles,
-        withArticle: withArticle
+        withArticle: withArticle,
+        lookup: lookup,
+        describeVerb: describeVerb,
+        describeWord: describeWord,
+        cleanItalianWord: cleanItalianWord
     };
 })();
 

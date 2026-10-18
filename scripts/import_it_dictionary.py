@@ -89,11 +89,86 @@ def download():
     else:
         print(f"Using cached {KAIKKI_FILE}")
 
+FORM_RE = re.compile(
+    r'^(?:(?:first|second|third)-person|(?:singular|plural) of|inflection of|past participle of|present participle of|gerund of|feminine (?:plural|singular) of|masculine plural of|alternative (?:form|spelling) of|obsolete (?:form|spelling) of)\b',
+    re.I
+)
+DEPRIORITISE_TAGS = {'obsolete', 'archaic', 'dated', 'rare', 'poetic', 'heraldry', 'dialectal'}
+HERALDRY_RE = re.compile(r'\b(?:per pale|divided into two equal parts vertically|fess|chevron|tincture|coat of arms)\b', re.I)
+
+POS_PRIORITY = {
+    'verb': 1, 'noun': 2, 'adjective': 3, 'adverb': 4, 'preposition': 5,
+    'conjunction': 6, 'pronoun': 7, 'determiner': 8, 'article': 9, 'numeral': 10, 'interjection': 11
+}
+
+GLOSS_OVERRIDES = {
+    'partito': {'en': 'party, political party', 'type': 'noun', 'gender': 'm'},
+    'grande': {'en': 'big, large; tall', 'type': 'adjective', 'gender': None},
+    'stato': {'en': 'state; status', 'type': 'noun', 'gender': 'm'},
+    'governo': {'en': 'government, administration', 'type': 'noun', 'gender': 'm'},
+    'politica': {'en': 'politics; policy', 'type': 'noun', 'gender': 'f'},
+    'fronte': {'en': 'front; forehead, brow', 'type': 'noun', 'gender': 'f'},
+    'camera': {'en': 'room; chamber, house', 'type': 'noun', 'gender': 'f'},
+    'legge': {'en': 'law, statute', 'type': 'noun', 'gender': 'f'},
+    'caso': {'en': 'case; chance, coincidence', 'type': 'noun', 'gender': 'm'},
+    'tempo': {'en': 'time; weather', 'type': 'noun', 'gender': 'm'},
+    'piano': {'en': 'plan, project; floor; slow, flat', 'type': 'noun', 'gender': 'm'},
+    'bene': {'en': 'well, good; goods, property', 'type': 'adverb', 'gender': 'm'},
+    'forza': {'en': 'strength, force, power', 'type': 'noun', 'gender': 'f'},
+    'modo': {'en': 'way, manner', 'type': 'noun', 'gender': 'm'},
+    'parte': {'en': 'part, portion; side', 'type': 'noun', 'gender': 'f'},
+    'punto': {'en': 'point, spot; full stop', 'type': 'noun', 'gender': 'm'},
+    'fine': {'en': 'end; aim, purpose', 'type': 'noun', 'gender': 'm'},
+    'storia': {'en': 'story; history', 'type': 'noun', 'gender': 'f'},
+    'cittadino': {'en': 'citizen; civic', 'type': 'noun', 'gender': 'm'},
+    'svolta': {'en': 'turn, curve; turning point', 'type': 'noun', 'gender': 'f'},
+    'elezione': {'en': 'election; choice', 'type': 'noun', 'gender': 'f'},
+    'riforma': {'en': 'reform', 'type': 'noun', 'gender': 'f'},
+    'avere': {'en': 'to have', 'type': 'verb', 'gender': None},
+    'essere': {'en': 'to be', 'type': 'verb', 'gender': None},
+    'andare': {'en': 'to go', 'type': 'verb', 'gender': None},
+    'fare': {'en': 'to do, to make', 'type': 'verb', 'gender': None},
+    'potere': {'en': 'can, to be able to', 'type': 'verb', 'gender': None},
+    'volere': {'en': 'to want', 'type': 'verb', 'gender': None},
+    'dovere': {'en': 'must, to have to', 'type': 'verb', 'gender': None},
+    'sapere': {'en': 'to know', 'type': 'verb', 'gender': None},
+    'dire': {'en': 'to say, to tell', 'type': 'verb', 'gender': None},
+    'venire': {'en': 'to come', 'type': 'verb', 'gender': None},
+    'stare': {'en': 'to stay, to remain; to be', 'type': 'verb', 'gender': None},
+    'dare': {'en': 'to give', 'type': 'verb', 'gender': None},
+    'vedere': {'en': 'to see', 'type': 'verb', 'gender': None},
+    'parlare': {'en': 'to speak, to talk', 'type': 'verb', 'gender': None},
+    'prendere': {'en': 'to take, to catch', 'type': 'verb', 'gender': None},
+    'trovare': {'en': 'to find', 'type': 'verb', 'gender': None},
+    'sentire': {'en': 'to hear, to feel', 'type': 'verb', 'gender': None},
+    'pensare': {'en': 'to think', 'type': 'verb', 'gender': None},
+    'mettere': {'en': 'to put, to place', 'type': 'verb', 'gender': None},
+    'portare': {'en': 'to bring, to carry', 'type': 'verb', 'gender': None},
+    'uscire': {'en': 'to go out, to exit', 'type': 'verb', 'gender': None},
+    'chiamare': {'en': 'to call', 'type': 'verb', 'gender': None},
+    'credere': {'en': 'to believe', 'type': 'verb', 'gender': None},
+    'vivere': {'en': 'to live', 'type': 'verb', 'gender': None},
+    'lasciare': {'en': 'to leave, to let', 'type': 'verb', 'gender': None},
+    'chiedere': {'en': 'to ask', 'type': 'verb', 'gender': None},
+    'capire': {'en': 'to understand', 'type': 'verb', 'gender': None},
+    'partire': {'en': 'to leave, to depart', 'type': 'verb', 'gender': None}
+}
+
 def clean_gloss(text):
     if not text:
         return ""
     text = re.sub(r'\(.*?\)', '', text)  # remove parentheticals
-    text = re.sub(r'\s+', ' ', text).strip()
+    text = re.sub(r'\[.*?\]', '', text)  # remove bracketed tags
+    text = re.sub(r'See Category:.*', '', text, flags=re.I)
+    text = re.sub(r'See also:.*', '', text, flags=re.I)
+    text = re.sub(r'^of greater physical dimensions or numerosity;?\s*', '', text, flags=re.I)
+    text = re.sub(r'\s+', ' ', text).strip(' ,;:')
+    if HERALDRY_RE.search(text):
+        return ""
+    # Cap comma-separated synonyms to at most 3
+    parts = [p.strip() for p in text.split(',') if p.strip()]
+    if len(parts) > 3:
+        text = ', '.join(parts[:3])
     return text
 
 def parse_frequency():
@@ -189,6 +264,7 @@ def process_all():
     VERBS_DIR.mkdir(parents=True, exist_ok=True)
 
     dictionary = {}
+    lemma_candidates = defaultdict(lambda: defaultdict(lambda: {"senses": [], "gender": None, "deprioritised": True}))
     word_index = defaultdict(list)
     verb_index = defaultdict(list)
     verb_data = defaultdict(lambda: {
@@ -214,29 +290,32 @@ def process_all():
             pos = item.get("pos", "")
             mapped_pos = POS_MAP.get(pos, pos)
             senses = item.get("senses", [])
+            item_tags = set(item.get("tags", []))
 
-            # Extract definition/gloss
-            glosses = []
-            for s in senses:
-                for g in s.get("glosses", []):
+            # Only harvest dictionary glosses for genuine headwords (skip form-of entries)
+            if word and mapped_pos in POS_MAP and 'form-of' not in item_tags:
+                gender = "m" if "masculine" in item_tags else "f" if "feminine" in item_tags else None
+                cand = lemma_candidates[word][mapped_pos]
+                if gender and not cand["gender"]:
+                    cand["gender"] = gender
+
+                for s in senses:
+                    stags = set(s.get("tags", []))
+                    if 'form-of' in stags:
+                        continue
+                    gloss_list = s.get("glosses", [])
+                    if not gloss_list:
+                        continue
+                    # Wiktextract puts the specific gloss at the end when taxonomic categories precede it
+                    g = gloss_list[-1]
+                    if FORM_RE.search(g):
+                        continue
                     c = clean_gloss(g)
-                    if c and c not in glosses:
-                        glosses.append(c)
-            def_text = "; ".join(glosses[:3])
-
-            gender = None
-            tags = item.get("tags", [])
-            if "masculine" in tags:
-                gender = "m"
-            elif "feminine" in tags:
-                gender = "f"
-
-            if word and def_text and word not in dictionary:
-                dictionary[word] = {
-                    "en": def_text,
-                    "type": mapped_pos,
-                    "gender": gender
-                }
+                    if c and len(c) >= 2 and c not in cand["senses"]:
+                        cand["senses"].append(c)
+                        is_dep = bool((item_tags | stags) & DEPRIORITISE_TAGS)
+                        if not is_dep:
+                            cand["deprioritised"] = False
 
             # Process inflected forms
             forms = item.get("forms", [])
@@ -402,6 +481,41 @@ def process_all():
         "ci sono": {"en": "there are", "type": "verb", "gender": None},
         "c'erano": {"en": "there were", "type": "verb", "gender": None}
     }
+
+    print(f"Building concise dictionary from {len(lemma_candidates):,} lemma candidates...")
+    for word, pos_entries in lemma_candidates.items():
+        if word in GLOSS_OVERRIDES:
+            dictionary[word] = GLOSS_OVERRIDES[word]
+            continue
+
+        valid_pos = {p: info for p, info in pos_entries.items() if info["senses"]}
+        if not valid_pos:
+            continue
+
+        sorted_pos = sorted(
+            valid_pos.keys(),
+            key=lambda p: (1 if valid_pos[p]["deprioritised"] else 0, POS_PRIORITY.get(p, 99))
+        )
+        best_pos = sorted_pos[0]
+        best_entry = valid_pos[best_pos]
+
+        # Combine up to 2 distinct concise senses
+        def_text = "; ".join(best_entry["senses"][:2])
+        if len(def_text) > 60:
+            cut = def_text[:60].rfind("; ")
+            if cut > 20:
+                def_text = def_text[:cut]
+            else:
+                cut_c = def_text[:60].rfind(", ")
+                if cut_c > 20:
+                    def_text = def_text[:cut_c]
+
+        dictionary[word] = {
+            "en": def_text,
+            "type": best_pos,
+            "gender": best_entry["gender"]
+        }
+
     for w, entry in CORE_TOKENS.items():
         if w not in dictionary:
             dictionary[w] = entry
