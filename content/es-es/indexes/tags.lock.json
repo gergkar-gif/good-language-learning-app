@@ -2,14 +2,14 @@
  "_comment": "Reviewed exercise tags (ROADMAP 125). Written only by scripts/lock_tags.py when a unit has been read; the validator fails any change to a locked exercise's teaches or distractor_skills that is not recorded here.",
  "units": {
   "A1/around-town": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-21",
    "exercises": 98,
-   "reason": "read-through, lessons 01-05 + consolidation (Sonnet tagging, reviewed)"
+   "reason": "es A1 batch 13-18 read and fixed (ROADMAP 153)"
   },
   "A1/birthdays-celebrations": {
-   "locked": "2026-10-07",
+   "locked": "2026-10-21",
    "exercises": 100,
-   "reason": "retagged onto new/re-levelled gap skills (ROADMAP 144(5))"
+   "reason": "es A1 batch 13-18 read and fixed (ROADMAP 153)"
   },
   "A1/daily-routine": {
    "locked": "2026-10-16",
@@ -32,9 +32,9 @@
    "reason": "es A1 batch 2-5 Sonnet read, fixes applied and mirrored (2026-10-16)"
   },
   "A1/directions": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-21",
    "exercises": 106,
-   "reason": "read-through, lessons 01-05 + consolidation (Sonnet tagging, reviewed)"
+   "reason": "es A1 batch 13-18 read and fixed (ROADMAP 153)"
   },
   "A1/family": {
    "locked": "2026-10-16",
@@ -67,9 +67,9 @@
    "reason": "es A1 batch 6-11 read (route A, Sonnet readers, 2026-10-16)"
   },
   "A1/kitchen": {
-   "locked": "2026-10-06",
-   "exercises": 106,
-   "reason": "read-through, lessons 01-05 + consolidation (Sonnet tagging, reviewed)"
+   "locked": "2026-10-21",
+   "exercises": 110,
+   "reason": "es A1 batch 13-18 read and fixed (ROADMAP 153)"
   },
   "A1/likes-dislikes": {
    "locked": "2026-10-06",
@@ -117,9 +117,9 @@
    "reason": "read-through, lessons 01-05 + consolidation (Sonnet tagging, reviewed)"
   },
   "A1/weather": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-21",
    "exercises": 106,
-   "reason": "read-through, lessons 01-05 + consolidation (Sonnet tagging, reviewed)"
+   "reason": "es A1 batch 13-18 read and fixed (ROADMAP 153)"
   },
   "A1/what-hurts": {
    "locked": "2026-10-07",
@@ -127,9 +127,9 @@
    "reason": "new exercises for thin skills (ROADMAP 144(4))"
   },
   "A1/work-obligations": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-21",
    "exercises": 106,
-   "reason": "read-through, lessons 01-05 + consolidation (Sonnet tagging, reviewed)"
+   "reason": "es A1 batch 13-18 read and fixed (ROADMAP 153)"
   },
   "A2/asking-politely-giving-advice": {
    "locked": "2026-10-06",
@@ -3511,9 +3511,7 @@
    "distractor_skills": {}
   },
   "a1-04-05.ex10": {
-   "teaches": [
-    "a1-around-town-vocab"
-   ],
+   "teaches": [],
    "distractor_skills": {}
   },
   "a1-04-05.ex11": {
@@ -3629,7 +3627,8 @@
     "hay"
    ],
    "distractor_skills": {
-    "1": "estar"
+    "1": "estar",
+    "2": "estar"
    }
   },
   "a1-04-consolidation.ex14": {
@@ -6642,7 +6641,7 @@
   },
   "a1.10.05.ex17": {
    "teaches": [
-    "a1-birthdays-celebrations-vocab"
+    "saber-infinitivo"
    ],
    "distractor_skills": {}
   },
@@ -6698,7 +6697,7 @@
   },
   "a1.10.consolidation.ex09": {
    "teaches": [
-    "a1-birthdays-celebrations-vocab"
+    "ar-verbs"
    ],
    "distractor_skills": {}
   },
@@ -10275,7 +10274,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.directions.03.ex10": {
@@ -10363,7 +10363,7 @@
   },
   "a1.directions.04.ex05": {
    "teaches": [
-    "preposiciones-movimiento"
+    "estar"
    ],
    "distractor_skills": {}
   },
@@ -10419,7 +10419,7 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "stem-changes"
+    "1": "ar-verbs"
    }
   },
   "a1.directions.04.ex14": {
@@ -10438,7 +10438,9 @@
    "teaches": [
     "imperativo-afirmativo"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "ir"
+   }
   },
   "a1.directions.04.ex17": {
    "teaches": [
@@ -10487,7 +10489,7 @@
   },
   "a1.directions.05.ex07": {
    "teaches": [
-    "preposiciones-movimiento"
+    "estar"
    ],
    "distractor_skills": {}
   },
@@ -13690,6 +13692,30 @@
    ],
    "distractor_skills": {}
   },
+  "a1.kitchen.02.ex18": {
+   "teaches": [
+    "present-irregular-yo"
+   ],
+   "distractor_skills": {}
+  },
+  "a1.kitchen.02.ex19": {
+   "teaches": [
+    "present-irregular-yo"
+   ],
+   "distractor_skills": {}
+  },
+  "a1.kitchen.02.ex20": {
+   "teaches": [
+    "present-irregular-yo"
+   ],
+   "distractor_skills": {}
+  },
+  "a1.kitchen.02.ex21": {
+   "teaches": [
+    "present-irregular-yo"
+   ],
+   "distractor_skills": {}
+  },
   "a1.kitchen.03.ex01": {
    "teaches": [
     "a1-kitchen-vocab"
@@ -13815,7 +13841,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.kitchen.04.ex05": {
@@ -13829,7 +13856,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.kitchen.04.ex07": {
@@ -13849,7 +13877,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.kitchen.04.ex10": {
@@ -13857,7 +13886,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.kitchen.04.ex11": {
@@ -13865,7 +13895,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.kitchen.04.ex12": {
@@ -13893,7 +13924,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "er-ir-verbs"
+    "1": "er-ir-verbs",
+    "2": "er-ir-verbs"
    }
   },
   "a1.kitchen.04.ex16": {
@@ -13909,6 +13941,7 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
+    "1": "ar-verbs",
     "2": "ar-verbs"
    }
   },
@@ -13995,7 +14028,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.kitchen.05.ex15": {
@@ -14009,7 +14043,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.kitchen.05.ex17": {
@@ -14025,7 +14060,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.kitchen.06.ex01": {
@@ -14057,7 +14093,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.kitchen.06.ex06": {
@@ -14113,7 +14150,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.kitchen.06.ex15": {
@@ -14982,7 +15020,7 @@
   },
   "a1.weather.04.ex16": {
    "teaches": [
-    "ar-verbs"
+    "reflexives"
    ],
    "distractor_skills": {}
   },
@@ -15092,7 +15130,7 @@
   },
   "a1.weather.05.ex19": {
    "teaches": [
-    "a1-weather-vocab"
+    "ar-verbs"
    ],
    "distractor_skills": {}
   },
@@ -15186,7 +15224,7 @@
   },
   "a1.weather.06.ex15": {
    "teaches": [
-    "ar-verbs"
+    "reflexives"
    ],
    "distractor_skills": {}
   },
@@ -15210,7 +15248,7 @@
   },
   "a1.weather.06.ex19": {
    "teaches": [
-    "hay"
+    "a1-weather-vocab"
    ],
    "distractor_skills": {}
   },
@@ -15312,7 +15350,7 @@
   },
   "a1.work.01.ex16": {
    "teaches": [
-    "ar-verbs"
+    "ser"
    ],
    "distractor_skills": {}
   },
@@ -15374,17 +15412,13 @@
    "teaches": [
     "tener-que"
    ],
-   "distractor_skills": {
-    "1": "hay-que"
-   }
+   "distractor_skills": {}
   },
   "a1.work.02.ex11": {
    "teaches": [
     "tener-que"
    ],
-   "distractor_skills": {
-    "2": "hay-que"
-   }
+   "distractor_skills": {}
   },
   "a1.work.02.ex12": {
    "teaches": [
@@ -15485,9 +15519,7 @@
    "teaches": [
     "hay-que"
    ],
-   "distractor_skills": {
-    "1": "tener-que"
-   }
+   "distractor_skills": {}
   },
   "a1.work.03.ex11": {
    "teaches": [
@@ -15605,9 +15637,7 @@
    "teaches": [
     "hay-que"
    ],
-   "distractor_skills": {
-    "1": "tener-que"
-   }
+   "distractor_skills": {}
   },
   "a1.work.04.ex12": {
    "teaches": [
@@ -15726,9 +15756,7 @@
    "teaches": [
     "hay-que"
    ],
-   "distractor_skills": {
-    "1": "tener-que"
-   }
+   "distractor_skills": {}
   },
   "a1.work.05.ex12": {
    "teaches": [
@@ -15776,7 +15804,7 @@
   },
   "a1.work.06.ex02": {
    "teaches": [
-    "a1-work-obligations-vocab"
+    "tener"
    ],
    "distractor_skills": {}
   },
@@ -15857,17 +15885,13 @@
    "teaches": [
     "tener-que"
    ],
-   "distractor_skills": {
-    "1": "hay-que"
-   }
+   "distractor_skills": {}
   },
   "a1.work.06.ex15": {
    "teaches": [
     "hay-que"
    ],
-   "distractor_skills": {
-    "1": "tener-que"
-   }
+   "distractor_skills": {}
   },
   "a1.work.06.ex16": {
    "teaches": [

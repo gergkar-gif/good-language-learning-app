@@ -1,6 +1,48 @@
 {
  "_comment": "Finished units (ROADMAP 153). Written only by scripts/freeze_unit.py; check-content.py --changed blocks edits to a unit listed here.",
  "units": {
+  "a1/around-town": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 13-18: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "accepted": [
+    {
+     "check": "consolidation-copy",
+     "id": "a1-04-consolidation.ex04",
+     "why": "consolidation replay (user wants replays)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a1-04-consolidation.ex07",
+     "why": "consolidation replay (user wants replays)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a1-04-consolidation.ex08",
+     "why": "consolidation replay (user wants replays)"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a1-04-consolidation.ex12",
+     "why": "consolidation replay (user wants replays)"
+    }
+   ]
+  },
+  "a1/birthdays-celebrations": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 13-18: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "accepted": [
+    {
+     "check": "consolidation-copy",
+     "id": "a1.10.consolidation.ex01",
+     "why": "consolidation replay (user wants replays)"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a1-10-02",
+     "why": "the numbers cuatro…veintiocho are re-listed from Unit 6 for the age screen (re-listing parked course-wide); rojo appears in story a1-10 (velas rojas)"
+    }
+   ]
+  },
   "a1/daily-routine": {
    "frozen": "2026-10-16",
    "reason": "es A1 batch 6-11: read by Sonnet (route A), filtered, mirrored, challenges added, tags locked (2026-10-16)",
@@ -104,6 +146,11 @@
     }
    ]
   },
+  "a1/directions": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 13-18: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "accepted": []
+  },
   "a1/family": {
    "frozen": "2026-10-16",
    "reason": "es A1 batch 2-5: Sonnet read (route A), 166 fixes filtered and applied, mirrored to es-latam, challenges added (2026-10-16) | refrozen: variant vocabulary, story metadata and unit order (user, 2026-10-16)",
@@ -143,6 +190,22 @@
     {
      "check": "consolidation-copy",
      "id": "a1.07.06.ex09",
+     "why": "consolidation replay (user wants replays)"
+    }
+   ]
+  },
+  "a1/kitchen": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 13-18: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "accepted": [
+    {
+     "check": "answers-alternatives",
+     "id": "a1.kitchen.05.ex13",
+     "why": "luego and después both mean \"then\"; the english fits both"
+    },
+    {
+     "check": "consolidation-copy",
+     "id": "a1.kitchen.06.ex04",
      "why": "consolidation replay (user wants replays)"
     }
    ]
@@ -187,6 +250,16 @@
   "a1/supermarket": {
    "frozen": "2026-10-16",
    "reason": "es A1 batch 6-11: read by Sonnet (route A), filtered, mirrored, challenges added, tags locked (2026-10-16) | refrozen: variant vocabulary, story metadata and unit order (user, 2026-10-16)",
+   "accepted": []
+  },
+  "a1/weather": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 13-18: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "accepted": []
+  },
+  "a1/work-obligations": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 13-18: read, fixed, mirrored, challenges (ROADMAP 153)",
    "accepted": []
   }
  },

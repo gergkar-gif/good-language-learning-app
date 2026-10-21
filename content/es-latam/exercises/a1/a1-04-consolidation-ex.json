@@ -214,12 +214,14 @@
         "hay"
       ],
       "distractor_skills": {
-        "1": "estar"
+        "1": "estar",
+        "2": "estar"
       },
       "question": "Which sentence says what exists in the neighbourhood?",
       "options": [
         "Hay una farmacia en el barrio.",
-        "La farmacia está cerca."
+        "La farmacia está cerca del banco.",
+        "La farmacia está en el centro."
       ],
       "correct": 0
     },
@@ -229,11 +231,11 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say what there is in your neighbourhood.",
+          "prompt": "Say there is a park in your neighbourhood.",
           "answer": "En mi barrio hay un parque."
         },
         {
-          "prompt": "Say where it is.",
+          "prompt": "Say the park is nearby.",
           "answer": "El parque está cerca."
         }
       ],
@@ -247,11 +249,11 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Ask where a place is.",
+          "prompt": "Ask where the museum is.",
           "answer": "¿Dónde está el museo?"
         },
         {
-          "prompt": "Answer with a location.",
+          "prompt": "Say it is on the right.",
           "answer": "Está a la derecha."
         }
       ],
@@ -295,11 +297,11 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe an area with two places.",
+          "prompt": "Say there is a park and a pharmacy in your neighbourhood.",
           "answer": "En mi barrio hay un parque y una farmacia."
         },
         {
-          "prompt": "Give one location.",
+          "prompt": "Say the pharmacy is nearby.",
           "answer": "La farmacia está cerca."
         }
       ],

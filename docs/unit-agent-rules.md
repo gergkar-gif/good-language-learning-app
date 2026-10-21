@@ -322,6 +322,26 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   the articles of Unit 3. Fixing a listed word's only items leaves it
   unused (`vocab-unused`), and retagging items can leave a vocabulary skill
   under 6 exercises (`validate-content.py --warnings`; Unit 10).
+- **Found in units 13–18 (2026-10-21):** reading questions about "the
+  character" or the text type ("What kind of text is the story?", "the
+  diary"), in five of six units: the story is a dialogue between named
+  people, so ask what they say and do (`reading-generic`, 13 hits); usted
+  and subjunctive forms (*corte*, *mezcle*, *mezcles*, *Coma la
+  ensalada.*) and negative commands (*No cortes*) as wrong options in the
+  Unit 14 imperative lessons: they are A2 forms, and a correct usted
+  command is a second right answer; an infinitive option (*Primero, cortar
+  los tomates.*) is a normal written recipe instruction, so it is a right
+  answer too; *hay que* used in the *tener que* lesson before its own
+  screen (a1-work-03), *ir*/*voy*/*vamos* (Unit 16) and *ir a* +
+  infinitive (Unit 25) in Units 13 and 15, *venir* (no A1 list before
+  Unit 24) in Unit 16; weather items tagged `ar-verbs` whose wrong options
+  differ only in the weather phrase (*Está calor*): every wrong option
+  must show the tagged skill's fault; *Hace nublado* is regional, so use
+  *Es nublado* as the wrong option. **New skill `present-irregular-yo`**
+  (user, 2026-10-21): *hago*, *pongo*, *salgo*, taught in a1-kitchen-02
+  (Unit 14); an item whose wrong answer is a wrong yo form (*salo*,
+  *haco*) gets this tag; before Unit 14 these forms are before their
+  screen.
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).

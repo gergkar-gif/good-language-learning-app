@@ -5,11 +5,11 @@
       "id": "a1.work.06.ex01",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "¿Cómo se dice \"office\"?",
+      "question": "¿Cómo se dice \"report\"?",
       "options": [
-        "oficina",
         "informe",
-        "reunión"
+        "oficina",
+        "tarea"
       ],
       "correct": 0,
       "teaches": [
@@ -18,17 +18,17 @@
     },
     {
       "id": "a1.work.06.ex02",
-      "category": "vocabulary",
+      "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Cómo se dice \"meeting\"?",
+      "question": "Which means \"I have a meeting\"?",
       "options": [
-        "reunión",
-        "tarea",
-        "horario"
+        "Tengo una reunión.",
+        "Tienes una reunión.",
+        "Tiene una reunión."
       ],
       "correct": 0,
       "teaches": [
-        "a1-work-obligations-vocab"
+        "tener"
       ]
     },
     {
@@ -72,11 +72,11 @@
       "id": "a1.work.06.ex05",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which means \"We have to go to the office\"?",
+      "question": "Which means \"She has to write a report\"?",
       "options": [
-        "Tenemos que ir a la oficina.",
-        "Tenemos ir a la oficina.",
-        "Hay que vamos a la oficina."
+        "Tiene que escribir un informe.",
+        "Tiene escribir un informe.",
+        "Tengo que escribir un informe."
       ],
       "correct": 0,
       "teaches": [
@@ -87,11 +87,11 @@
       "id": "a1.work.06.ex06",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which combines an obligation with time?",
+      "question": "Which means \"We have to work at eight\"?",
       "options": [
-        "Tengo que trabajar a las ocho.",
-        "Tengo trabajar a las ocho.",
-        "Hay que trabajo a las ocho."
+        "Tenemos que trabajar a las ocho.",
+        "Tenemos trabajar a las ocho.",
+        "Tengo que trabajar a las ocho."
       ],
       "correct": 0,
       "teaches": [
@@ -180,7 +180,7 @@
       "options": [
         "Trabajo a las ocho.",
         "Trabajas a las ocho.",
-        "Trabajo las ocho."
+        "Trabaja a las ocho."
       ],
       "correct": 0,
       "teaches": [
@@ -209,7 +209,7 @@
       "question": "Which combines a location with a work activity?",
       "options": [
         "Estoy en la oficina y escribo informes.",
-        "Estoy a la oficina y escribo informes.",
+        "Está en la oficina y escribo informes.",
         "Hay en la oficina y escribo informes."
       ],
       "correct": 0,
@@ -223,26 +223,23 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Carlos",
-          "text": "¿Qué tienes que hacer hoy?"
+          "speaker": "Meg",
+          "text": "¿Qué tienes que hacer mañana?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Tengo que trabajar.",
-        "Hay que trabajar.",
-        "Tengo trabajar."
+        "Tengo que preparar un informe.",
+        "Tiene que preparar un informe.",
+        "Tengo preparar un informe."
       ],
       "correct": 0,
       "teaches": [
         "tener-que"
-      ],
-      "distractor_skills": {
-        "1": "hay-que"
-      }
+      ]
     },
     {
       "id": "a1.work.06.ex15",
@@ -250,26 +247,23 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "¿Qué hay que hacer antes de la reunión?"
+          "speaker": "Carlos",
+          "text": "¿Qué hay que hacer en la oficina?"
         },
         {
-          "speaker": "Carlos",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Hay que preparar el informe.",
-        "Tengo que preparar el informe.",
-        "Hay que prepara el informe."
+        "Hay que llegar temprano.",
+        "Hay llegar temprano.",
+        "Hay que llegas temprano."
       ],
       "correct": 0,
       "teaches": [
         "hay-que"
-      ],
-      "distractor_skills": {
-        "1": "tener-que"
-      }
+      ]
     },
     {
       "id": "a1.work.06.ex16",
@@ -277,18 +271,18 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Carlos",
-          "text": "¿Dónde trabajas?"
+          "speaker": "Meg",
+          "text": "¿Dónde trabaja tu amigo?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "Trabajo en una oficina.",
         "Trabaja en una oficina.",
-        "Estoy una oficina."
+        "Trabajo en una oficina.",
+        "Trabajan en una oficina."
       ],
       "correct": 0,
       "teaches": [
@@ -301,11 +295,11 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say what you personally have to do today.",
+          "prompt": "Say that you have to work today.",
           "answer": "Tengo que trabajar hoy."
         },
         {
-          "prompt": "State one general work obligation.",
+          "prompt": "Say that it is necessary to arrive early.",
           "answer": "Hay que llegar temprano."
         }
       ],
@@ -319,7 +313,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe a short working day using work activities, one personal obligation and one general obligation.",
+          "prompt": "Say that you work in an office, that you have to write reports at eight, and that it is necessary to arrive early and that afterwards you work in the office.",
           "answer": "Trabajo en una oficina. Tengo que escribir informes a las ocho. Hay que llegar temprano y después trabajo en la oficina."
         }
       ],
@@ -331,25 +325,25 @@
       "id": "a1.work.06.ex19",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Ella _____ que entregar el informe mañana.",
+      "sentence": "Ella _____ que terminar el informe mañana.",
       "hint": "have to — tener que, 3rd sing.",
       "answer": "tiene",
       "teaches": [
         "tener-que"
       ],
-      "english": "She has to hand in the report tomorrow."
+      "english": "She has to finish the report tomorrow."
     },
     {
       "id": "a1.work.06.ex20",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "_____ que llegar puntual al trabajo.",
+      "sentence": "_____ que llegar temprano al trabajo.",
       "hint": "it is necessary, impersonal",
       "answer": "Hay",
       "teaches": [
         "hay-que"
       ],
-      "english": "It is necessary to arrive on time at work."
+      "english": "It is necessary to arrive early at work."
     }
   ]
 }

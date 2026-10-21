@@ -103,6 +103,7 @@ CHECKS = {
     "answers-alternatives": "a fill-blank accepts different words (answers: trabajo, estudio, cocino…) while its `english` fits one: es A1 units 6-11 had 5 (*I work at home* accepting *estudio*)",
     "story-voice-gender": "a story's narration gives a recurring character the wrong voice gender (Daniela 'male' in es A1 stories a1-06, a1-07: TTS reads her in a man's voice)",
     "story-key-vocab": "a story's keyVocabulary word doesn't occur in the story (the conocer/intercambio placeholder; es A1 units 6-11 readers found it in 5 stories)",
+    "reading-generic": "a reading question about 'the character' or the text type ('What kind of text is the story?', 'the diary'): placeholder questions the story can't answer; ask about what its people say and do (es A1 units 16-18 and 14 had 13, all real; none elsewhere in es or hu)",
     "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
     "unmet-word": "a word the learner hasn't met by this lesson (scripts/unmet-words.js)",
     "recap-unmarked": "a grammar screen repeats 2+ example sentences from an earlier unit's screens without saying they are known ('You know …')",
@@ -121,7 +122,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -338,6 +339,10 @@ def check_exercise(e, course, lang):
         forms = {fold(str(a)).strip(" .!?") for a in e["answers"] if a}
         if len(forms) > 1 and len({f[:3] for f in forms}) > 1:
             hit("answers-alternatives", ", ".join(map(str, e["answers"]))[:60] + f" for {e['english'][:40]!r}")
+    if e.get("category") == "reading" and re.search(
+            r"\bthe (main )?characters?\b|\bwhat kind of text\b|\btype of (text|obligation)\b|\bthe diary\b",
+            e.get("question") or "", re.I):
+        hit("reading-generic", (e.get("question") or "")[:60])
     if t in CHOICE and opts and re.search(r"\basks\b[^.?“\"]*\b(what|where|whether|if|when|how|who|why)\s+(she|he|they)\b", e.get("question") or "", re.I):
         hit("reported-question", (e.get("question") or "")[:60])
     if lang == "hu":

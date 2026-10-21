@@ -23,7 +23,7 @@
       "question": "¿Cómo se dice \"cloudy\"?",
       "options": [
         "está nublado",
-        "hace nublado",
+        "es nublado",
         "hay nublado"
       ],
       "correct": 0,
@@ -35,11 +35,11 @@
       "id": "a1.weather.06.ex03",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which means \"It is hot and I drink water\"?",
+      "question": "Which means \"It is windy and I cook at home\"?",
       "options": [
-        "Hace calor y tomo agua.",
-        "Hace calor y toma agua.",
-        "Está calor y tomo agua."
+        "Hace viento y cocino en casa.",
+        "Hace viento y cocina en casa.",
+        "Hace viento y cocinas en casa."
       ],
       "correct": 0,
       "teaches": [
@@ -50,11 +50,11 @@
       "id": "a1.weather.06.ex04",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which means \"When it rains, I study at home\"?",
+      "question": "Which means \"When it is hot, I rest at home\"?",
       "options": [
-        "Cuando llueve, estudio en casa.",
-        "Cuando llueve, estudias en casa.",
-        "Cuando hace lluvia, estudio en casa."
+        "Cuando hace calor, descanso en casa.",
+        "Cuando hace calor, descansas en casa.",
+        "Cuando hace calor, descansa en casa."
       ],
       "correct": 0,
       "teaches": [
@@ -65,11 +65,11 @@
       "id": "a1.weather.06.ex05",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which means \"Tomorrow it is cold\"?",
+      "question": "Which means \"On Monday it is windy\"?",
       "options": [
-        "Mañana hace frío.",
-        "Mañana está frío.",
-        "Mañana hay frío."
+        "El lunes hace viento.",
+        "El lunes está viento.",
+        "El lunes hay viento."
       ],
       "correct": 0,
       "teaches": [
@@ -80,11 +80,11 @@
       "id": "a1.weather.06.ex06",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Which means \"On Friday it is hot\"?",
+      "question": "Which means \"Tomorrow it is sunny\"?",
       "options": [
-        "El viernes hace calor.",
-        "El viernes está calor.",
-        "El viernes hay calor."
+        "Mañana hace sol.",
+        "Mañana está sol.",
+        "Mañana es sol."
       ],
       "correct": 0,
       "teaches": [
@@ -139,7 +139,7 @@
       "id": "a1.weather.06.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which is correct?",
+      "question": "My mother is a kind person. Which sentence says this?",
       "options": [
         "Mi madre es amable.",
         "Mi madre son amable.",
@@ -172,11 +172,11 @@
       "id": "a1.weather.06.ex11",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which combines time and a present-tense activity?",
+      "question": "I work at eight. Which sentence says this?",
       "options": [
         "Trabajo a las ocho.",
         "Trabajas a las ocho.",
-        "Trabajo las ocho."
+        "Trabajan a las ocho."
       ],
       "correct": 0,
       "teaches": [
@@ -205,7 +205,7 @@
       "question": "Which combines location and activity?",
       "options": [
         "Estoy en casa y estudio.",
-        "Estoy a casa y estudio.",
+        "Está en casa y estudio.",
         "Hay en casa y estudio."
       ],
       "correct": 0,
@@ -220,7 +220,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Qué tiempo hace hoy?"
+          "text": "¿Qué tiempo hace en el parque?"
         },
         {
           "speaker": "Meg",
@@ -228,9 +228,9 @@
         }
       ],
       "options": [
-        "Hace sol.",
-        "Está sol.",
-        "Es sol."
+        "Hace viento.",
+        "Está viento.",
+        "Es viento."
       ],
       "correct": 0,
       "teaches": [
@@ -243,22 +243,22 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "¿Qué haces cuando llueve?"
+          "speaker": "Carlos",
+          "text": "¿Qué haces cuando hace viento?"
         },
         {
-          "speaker": "Carlos",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Estudio en casa.",
-        "Estudias en casa.",
-        "Estudio a casa."
+        "Me quedo en casa.",
+        "Te quedas en casa.",
+        "Se queda en casa."
       ],
       "correct": 0,
       "teaches": [
-        "ar-verbs"
+        "reflexives"
       ]
     },
     {
@@ -268,7 +268,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Qué tiempo hace mañana?"
+          "text": "¿Qué tiempo hace el lunes?"
         },
         {
           "speaker": "Meg",
@@ -276,9 +276,9 @@
         }
       ],
       "options": [
-        "Mañana hace frío.",
-        "Mañana está frío.",
-        "Mañana hay frío."
+        "El lunes llueve.",
+        "El lunes hace lluvia.",
+        "El lunes es lluvia."
       ],
       "correct": 0,
       "teaches": [
@@ -291,11 +291,11 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe today's weather and one activity.",
+          "prompt": "Say that today is sunny and you go to the park.",
           "answer": "Hoy hace sol y voy al parque."
         },
         {
-          "prompt": "Say what you do when it rains.",
+          "prompt": "Say that when it rains you study at home.",
           "answer": "Cuando llueve, estudio en casa."
         }
       ],
@@ -309,7 +309,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe a short weather forecast for three days and include activities.",
+          "prompt": "Say that today is sunny and you go to the park, tomorrow it rains and you study at home, and on Friday it is hot and you drink water.",
           "answer": "Hoy hace sol y voy al parque. Mañana llueve y estudio en casa. El viernes hace calor y tomo agua."
         }
       ],
@@ -319,27 +319,27 @@
     },
     {
       "id": "a1.weather.06.ex19",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "fill-blank",
-      "sentence": "Hoy _____ mucho viento en la ciudad.",
-      "hint": "haber, there is",
-      "answer": "hay",
+      "sentence": "Hoy _____ mucho en la ciudad.",
+      "hint": "llover",
+      "answer": "llueve",
       "teaches": [
-        "hay"
+        "a1-weather-vocab"
       ],
-      "english": "Today there is a lot of wind in the city."
+      "english": "Today it rains a lot in the city."
     },
     {
       "id": "a1.weather.06.ex20",
       "category": "vocabulary",
       "type": "fill-blank",
-      "sentence": "Cuando _____ frío, me pongo un abrigo.",
+      "sentence": "Cuando _____ frío, me pongo la chaqueta.",
       "hint": "it is — hacer, 3rd sing.",
       "answer": "hace",
       "teaches": [
         "a1-weather-vocab"
       ],
-      "english": "When it is cold, I put on a coat."
+      "english": "When it is cold, I put on a jacket."
     }
   ]
 }

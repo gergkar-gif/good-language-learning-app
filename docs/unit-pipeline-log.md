@@ -341,6 +341,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-16 | es A1 1 greetings-introductions (both courses) | **Antigravity Argon**, read + fix + mirror + challenges from a brief | 43 min; nearly all of Antigravity's weekly allowance | | 32 applied, 0 rejected; Claude changed 3 (2 challenges, 1 near-copy) | light unit (4 errors / 13 suspects); quality comparable to a Sonnet reader, cost not sustainable for 58 units |
 | 10-16 | es A1 2–5 (both courses) | paired read, **Spanish template** (2 units/reader), es-es read once, mirrored | | 229k + 238k, 11.1 + 10.4 | 166 applied of 166, 0 rejected; Claude changed 5 + 1 schema fix | ~117k reader tokens/unit (A 2+3 ~114k, B 4+5 ~119k; = HU A2 25–28's ~117k at two per reader); fixes 52 / 36 / 48 / 30 (~42/unit); 120 of 166 went to review (Spanish text); 165/166 mirrored (the 1 had no es-latam counterpart); walk units 1–5 60/60; both report writes allowed |
 | 10-16 | es A1 6–11 (both courses) | paired read, Spanish template, **3 units/reader**, es-es read once, mirrored | | 313k + 306k, 15.3 + ~15 (B hit a Sonnet session limit after writing all its files; resumed for its last report section) | 278 proposed (32 / 57 / 26 / 40 / 89 / 34), 0 rejected for content (1 by a stale word index, restored); Claude changed 16 (10 in the filter, 6 schema), added 12 in es-es after the new checks and `--warnings` (5 answers lists, 1 thin-skill item, 3 stories' key words, 1 story line, 2 challenge glosses) and 8 in es-latam only (3 variant fixes, 5 story question sets) | ~103k reader tokens/unit (A ~104k, B ~102k; ×0.88 of units 2–5's ~117k); ~46 fixes/unit (×1.1 of ~42); 222 of 278 to review; 269/279 mirrored (10 es-es variants or es-latam text); walk 36/36 per course; B's 305,712 is the only usage figure its notices gave (the failure notice had none) |
+| 10-21 | es A1 13–18 (both courses) | paired read, Spanish template, 3 units/reader, es-es read once, mirrored | | 346k + 291k, 16.5 + 15.4 | 262 proposed (38 / 41 / 34 / 38 / 59 / 52), 0 rejected; Claude changed 2 and added 1 es-latam-only fix | ~106k reader tokens/unit (A ~115k, B ~97k; ×1.03 of 6–11's ~103k); ~44 fixes/unit (×0.95); 189 of 262 to review; 261/262 mirrored (1 es-es variant), 4 put in es-latam words by the mirror; walk 36/36 per course; A's report write refused, B's allowed |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -755,3 +756,35 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   *lavarse* as *lavar* (17 fewer in es-es, all reflexive verbs used in
   their lessons).
 - **Open, the user's:** see ROADMAP 153 (Spanish pass).
+
+### 2026-10-21: Spanish A1 units 13–18, three units per reader
+
+- **Cost:** 346k (reader A, units 13–15) + 291k (reader B, 16–18), ~106k
+  a unit, ×1.03 of units 6–11 (~103k), with about the same fixes a unit
+  (~44). Reader A's higher cost matches its extra work: four new
+  exercises for the new skill, ten checklist rewrites in Unit 14. Neither
+  went above ~140k a unit. **Keep three per reader** for units 19–24.
+- **Filter:** 189 of 262 fixes went to review (Spanish text); I changed 2
+  (a hint printing the answer in English; an -ir endings tip that must
+  name *vosotros* in es-es only) and dropped one fix of my own
+  (*afuera* → *fuera*: the word is taught in a1-weather-04, so it is a
+  course-variant decision, not a story fix). None for Spanish grammar.
+  Fewer filter changes than 6–11 (16): the template's MC rule and
+  character-fact rule held (0 schema rejections, 0 wrong character
+  facts).
+- **What only the reviewer found:** the mirror copied *salón* into four
+  es-latam items through `set` fixes (the third time a Spain word reached
+  es-latam this way after *coche* in 6–11); one es-latam story option
+  *Zumo de naranja* (a1-14, pre-existing).
+- **Changes:** (1) `mirror_fixes.py` converts mirrored `set` values and
+  new texts to the target course's words with `course_variants.convert`
+  and lists what it changed (seen twice, scripted; on this batch's list it
+  converted exactly the four *salón* items and nothing else). (2) New
+  suspect `reading-generic` (reading questions about "the character" or
+  the text type; five units of this batch; 13 hits on the pre-fix
+  content, all real, 0 elsewhere). (3) Rulebook § 6c: this batch's
+  defects, and the new skill's tagging rule for later readers.
+- **Not scripted (once each or not mechanical):** usted/subjunctive forms
+  as wrong imperative options (Unit 14 only); infinitive recipe options;
+  *hay que* before its screen (the `taught-later` check works from tags,
+  and these wrong options carried no `distractor_skills`).

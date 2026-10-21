@@ -12,6 +12,13 @@ checks it there in order, as apply_replacements.py would apply it:
 - a `set` fix whose id exists once in the sibling file is mirrored;
 - a fix marked `"variant": "<from course>"` (it holds only there) is
   listed, not mirrored;
+- between es-es and es-latam, the mirrored new text and `set` values are
+  put in the target course's words (`course_variants.convert`: *salón* ->
+  *sala*, *zumo* -> *jugo*), and an old text is also looked up in its
+  converted form; a value the converter refuses (a gendered word next to
+  the noun) goes to the unmatched list. Before 2026-10-21 `set` values were
+  copied verbatim, which put *coche* (units 6-11) and *salón* (units 13-18)
+  into es-latam;
 - anything else (the file is missing, the text differs or occurs twice, the
   id is absent) goes to <out>.unmatched.json for the reviewer: usually a
   course variant that needs its own wording, or a fix that doesn't apply.
@@ -31,6 +38,24 @@ ROOT = Path(__file__).resolve().parent.parent
 spec = importlib.util.spec_from_file_location("apply_replacements", ROOT / "scripts/apply_replacements.py")
 ar = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(ar)
+sys.path.insert(0, str(ROOT / "scripts"))
+import course_variants as cv  # noqa: E402
+
+SPANISH = ("es-es", "es-latam")
+
+
+def to_course(value, course, changes, refused):
+    """value with every string in the course's words; collects what changed and what was refused."""
+    if isinstance(value, str):
+        new, ch, rf = cv.convert(value, course)
+        changes += ch
+        refused += rf
+        return new
+    if isinstance(value, list):
+        return [to_course(v, course, changes, refused) for v in value]
+    if isinstance(value, dict):
+        return {k: to_course(v, course, changes, refused) for k, v in value.items()}
+    return value
 
 
 def main():
@@ -38,7 +63,7 @@ def main():
         sys.exit(__doc__)
     src, frm, to, out = sys.argv[1], sys.argv[2], sys.argv[3], Path(sys.argv[4])
     fixes = [ar.norm(f) for f in json.loads(Path(src).read_text(encoding="utf-8"))]
-    texts, mirrored, unmatched = {}, [], []
+    texts, mirrored, unmatched, converted = {}, [], [], []
     for fix in fixes:
         path = fix.get("file", "").replace("\\", "/")
         if fix.get("variant") == frm:
@@ -54,6 +79,18 @@ def main():
             unmatched.append({**fix, "why_unmatched": f"no {p.relative_to(ROOT)}"})
             continue
         text = texts.get(p, p.read_text(encoding="utf-8"))
+        fix, changes, refused = dict(fix), [], []
+        if frm in SPANISH and to in SPANISH:
+            if "set" in fix:
+                fix["set"] = to_course(fix["set"], to, changes, refused)
+            elif fix.get("old"):
+                old_conv = to_course(fix["old"], to, [], [])
+                if text.count(fix["old"]) != 1 and text.count(old_conv) == 1:
+                    fix["old"] = old_conv
+                fix["new"] = to_course(fix.get("new", ""), to, changes, refused)
+        if refused:
+            unmatched.append({**fix, "file": new_path, "why_unmatched": f"course words refused: {refused}"})
+            continue
         if "set" in fix:
             new_text, err = ar.set_fields(text, fix.get("id"), fix["set"])
         elif text.count(fix.get("old", "")) == 1 and fix.get("old"):
@@ -64,11 +101,16 @@ def main():
             unmatched.append({**fix, "file": new_path, "why_unmatched": err})
             continue
         texts[p] = new_text
+        if changes:
+            fix["course_words"] = sorted({f"{o} -> {n}" for o, n in changes})
+            converted.append(fix)
         mirrored.append({**fix, "file": new_path})
     out.write_text(json.dumps(mirrored, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     um = out.with_suffix(".unmatched.json")
     um.write_text(json.dumps(unmatched, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print(f"{len(mirrored)} mirrored to {out}, {len(unmatched)} unmatched in {um}")
+    print(f"{len(mirrored)} mirrored to {out} ({len(converted)} put in {to} words), {len(unmatched)} unmatched in {um}")
+    for f in converted:
+        print(f"  {to} words: {f.get('id') or repr(f.get('old', ''))[:40]}: {', '.join(f['course_words'])}")
     for f in unmatched:
         print(f"  unmatched: {f.get('file')} {f.get('id') or repr(f.get('old', ''))[:60]}  ({f['why_unmatched']})")
 

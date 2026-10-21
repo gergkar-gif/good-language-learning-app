@@ -192,15 +192,15 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give the first step of a simple recipe.",
+          "prompt": "Say first to wash the tomatoes.",
           "answer": "Primero, lava los tomates."
         },
         {
-          "prompt": "Give the next step.",
+          "prompt": "Say then to cut the tomatoes.",
           "answer": "Después, corta los tomates."
         },
         {
-          "prompt": "Give the final step.",
+          "prompt": "Say finally to mix the ingredients.",
           "answer": "Finalmente, mezcla los ingredientes."
         }
       ],
@@ -245,14 +245,15 @@
       "options": [
         "Finalmente, mezcla los ingredientes.",
         "Finalmente, mezclas los ingredientes.",
-        "Finalmente, mezcles los ingredientes."
+        "Finalmente, mezclo los ingredientes."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "ar-verbs"
+        "1": "ar-verbs",
+        "2": "ar-verbs"
       }
     },
     {
@@ -278,25 +279,26 @@
       "options": [
         "Primero, corta los tomates. Después, mezcla los ingredientes.",
         "Primero, cortas los tomates. Después, mezclas los ingredientes.",
-        "Primero, cortar los tomates. Después, mezclar los ingredientes."
+        "Primero, corto los tomates. Después, mezclo los ingredientes."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "ar-verbs"
+        "1": "ar-verbs",
+        "2": "ar-verbs"
       }
     },
     {
       "id": "a1.kitchen.05.ex17",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "What kind of text is the Unit 11 story?",
+      "question": "What do Carlos and Meg cook in the story?",
       "options": [
-        "A recipe or cooking sequence.",
-        "A birthday invitation.",
-        "A shopping list."
+        "Tacos and guacamole",
+        "Pizza and a salad",
+        "Soup and bread"
       ],
       "correct": 0
     },
@@ -304,11 +306,11 @@
       "id": "a1.kitchen.05.ex18",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "What is the purpose of the cooking sequence?",
+      "question": "What does Carlos tell Meg to cut?",
       "options": [
-        "To show how to prepare food step by step.",
-        "To describe someone's family.",
-        "To give directions around a city."
+        "The tomatoes and the onion",
+        "The chicken and the rice",
+        "The lemon and the garlic"
       ],
       "correct": 0
     },
@@ -320,14 +322,15 @@
       "options": [
         "Primero, corta los tomates.",
         "Primero, cortas los tomates.",
-        "Primero, cortar los tomates."
+        "Primero, corto los tomates."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "ar-verbs"
+        "1": "ar-verbs",
+        "2": "ar-verbs"
       }
     }
   ]
