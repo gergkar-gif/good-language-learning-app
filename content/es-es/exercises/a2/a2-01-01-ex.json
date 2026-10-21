@@ -62,7 +62,7 @@
       "id": "a2.01.01.ex04",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Cuál es el participio de reservar?",
+      "question": "What is the participle of reservar?",
       "options": [
         "reservado",
         "reservido",
@@ -71,7 +71,10 @@
       "correct": 0,
       "teaches": [
         "past-participles"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "progressive"
+      }
     },
     {
       "id": "a2.01.01.ex05",
@@ -98,7 +101,7 @@
       "id": "a2.01.01.ex06",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "¿Qué significa «viajar»?",
+      "question": "What does «viajar» mean?",
       "options": [
         "to travel",
         "to arrive",
@@ -146,7 +149,7 @@
       "id": "a2.01.01.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Cuál es el participio de llegar?",
+      "question": "What is the participle of llegar?",
       "options": [
         "llegado",
         "llegido",
@@ -155,7 +158,10 @@
       "correct": 0,
       "teaches": [
         "past-participles"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "progressive"
+      }
     },
     {
       "id": "a2.01.01.ex10",
@@ -191,7 +197,7 @@
       "id": "a2.01.01.ex12",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Cuál es correcta?",
+      "question": "Which sentence is correct?",
       "options": [
         "Han viajado.",
         "Han viajar.",
@@ -206,21 +212,21 @@
       "id": "a2.01.01.ex13",
       "category": "grammar",
       "type": "sentence-builder",
-      "english": "We have arrived at the hotel.",
+      "english": "We have travelled to Vietnam.",
       "teaches": [
         "preterito-perfecto"
       ],
       "tiles": [
-        "al",
+        "a",
         "Hemos",
-        "hotel",
-        "llegado"
+        "Vietnam",
+        "viajado"
       ],
       "solution": [
         "Hemos",
-        "llegado",
-        "al",
-        "hotel"
+        "viajado",
+        "a",
+        "Vietnam"
       ]
     },
     {
@@ -254,7 +260,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Han llegado al hotel?"
+          "text": "¿Han llegado Daniela y Lauren al hotel?"
         },
         {
           "speaker": "Carlos",
@@ -280,11 +286,11 @@
       ],
       "template": [
         {
-          "prompt": "Say that you have travelled somewhere recently.",
+          "prompt": "Say that you have travelled to Vietnam.",
           "answer": "He viajado a Vietnam."
         },
         {
-          "prompt": "Say that you have arrived at a hotel.",
+          "prompt": "Say that you have arrived at the hotel.",
           "answer": "He llegado al hotel."
         }
       ]

@@ -1,0 +1,92 @@
+[
+ {
+  "file": "content/es-latam/exercises/a2/a2-01-03-ex.json",
+  "id": "a2.01.03.ex09",
+  "set": {
+   "question": "In Spain, which question is correct for vosotros (informal)?"
+  },
+  "why": "\"correcta\" is in no vocabulary list; ask in English.",
+  "why_unmatched": "es-latam differs from es-es on ['question']"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-01-03-ex.json",
+  "id": "a2.01.03.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué habéis hecho?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "Friends in Spain say vosotros, not ustedes (unit teaches habéis in the same lesson).",
+  "kind": "target",
+  "sure": false,
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-01-04-ex.json",
+  "id": "a2.01.04.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Habéis llegado bien?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "Meg asks her friends informally: in Spain vosotros, not ustedes.",
+  "kind": "target",
+  "sure": false,
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-01-05-ex.json",
+  "id": "a2.01.05.ex18",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Lauren",
+     "text": "¿Habéis reservado el hotel?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "Lauren asks her friends informally: in Spain vosotros, not ustedes.",
+  "kind": "target",
+  "sure": false,
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-03-01-ex.json",
+  "id": "a2.03.01.ex13",
+  "set": {
+   "options": [
+    "Hemos comprado los boletos.",
+    "Vamos a comprar los boletos.",
+    "Compro los boletos."
+   ],
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "ar-verbs"
+   }
+  },
+  "why": "ayer + preterite (tell-time-word): the preterite is first taught in a2-11-01 and is not a perfecto marker; wrong options use known forms instead (ir a + infinitive, A1 Unit 25).",
+  "kind": "target",
+  "why_unmatched": "es-latam differs from es-es on ['options']"
+ }
+]

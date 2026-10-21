@@ -371,6 +371,19 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   2026-10-21; `course-variant` flags *afuera*/*adentro* in es-es). *poder*
   is taught with *querer* in a1-08-03 (Unit 10), so it is known from Unit
   10 on.
+- **Found in A2 units 1–6 (2026-10-21):** the *pretérito perfecto* with a
+  finished-past marker (*Lauren ha comprado el mapa el día anterior*, *He
+  viajado más que el año pasado*): wrong in Spain (and Latin America), so
+  use *hoy*, *esta mañana*, *este año* (`perfecto-marker`, stories and
+  items); preterites (*fue*, *compró*, *descansaron*) and the pluperfect
+  (*había preparado*, B1) in stories and options before Unit 11; a
+  reflexive action in the perfecto without its pronoun (*He lavado las
+  manos* → *Me he lavado las manos*; the pronoun goes before *he*);
+  reading questions about another story (every Unit 5 question invented a
+  rainy day) or generic ("¿De qué trata el texto?", "¿Cuál es la idea
+  principal?"): ask what the people do; checklists "I can say what *you*
+  have done" (`checklist-you`); A1 material (*antes de*, *porque*) recapped
+  as new; the same three-row table on every screen of a unit.
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).

@@ -300,8 +300,8 @@ function targetTexts(e) {
                     if (!plainEnglish(seg)) parts.push(seg);
                 }
             }
-            // Spanish reflexive use of a verb form: a pronoun right before it
-            // (*me ducho*, also in the builder's solution), a pronoun answer
+            // Spanish reflexive use of a verb form: a pronoun right before it, or
+            // before its perfect auxiliary (*me ducho*, *nos hemos mojado*, also in the builder's solution), a pronoun answer
             // filling the blank before it (*_____ ducha* / *se*), or a one-word
             // answer to a pronoun + blank (*Ellos se _____ las manos* / *lavan*).
             const ctx = parts.concat(Array.isArray(e.solution) ? [e.solution.join(' ')] : []);
@@ -309,7 +309,7 @@ function targetTexts(e) {
             const pronBlank = parts.some(t => /(?:^|[^\p{L}])(?:me|te|se|nos|os)\s+_{2,}/iu.test(t));
             const esc = x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             const reflexiveUse = (w, text) =>
-                ctx.some(t => new RegExp(`(?:^|[^\\p{L}])(?:me|te|se|nos|os)\\s+${esc(w)}(?!\\p{L})`, 'iu').test(t)) ||
+                ctx.some(t => new RegExp(`(?:^|[^\\p{L}])(?:me|te|se|nos|os)\\s+(?:(?:he|has|ha|hemos|habéis|han)\\s+)?${esc(w)}(?!\\p{L})`, 'iu').test(t)) ||
                 (pronAnswer && ctx.some(t => new RegExp(`_{2,}\\s+${esc(w)}(?!\\p{L})`, 'iu').test(t))) ||
                 (pronBlank && tokens(text).length === 1);
             for (const text of parts) {
@@ -334,6 +334,14 @@ function targetTexts(e) {
                         if (verbs.length && reflexiveUse(w, text) && verbs.every(l => metBy(l + 'se', pos))) continue;
                         const inf = /^(.+?(?:ar|er|ir))(?:me|te|se|nos|os)$/.exec(w);
                         if (inf) cands.push(inf[1], inf[1] + 'se');
+                        // a regular participle after *haber* (*hemos mojado*): the lexicon
+                        // may read it only as the adjective (*mojado*), so count its verb
+                        const part = /^(.+)(ad|id)[oa]s?$/.exec(w);
+                        if (part && ctx.some(t => new RegExp(`(?:he|has|ha|hemos|habéis|han)\\s+${esc(w)}(?!\\p{L})`, 'iu').test(t))) {
+                            const infs = part[2] === 'ad' ? [part[1] + 'ar'] : [part[1] + 'er', part[1] + 'ir'];
+                            cands.push(...infs);
+                            if (reflexiveUse(w, text)) cands.push(...infs.map(x => x + 'se'));
+                        }
                     }
                     const at = Math.min(...cands.map(c => firstAt.has(c) ? firstAt.get(c) : Infinity));
                     if (at <= pos) continue;

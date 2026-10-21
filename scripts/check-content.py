@@ -105,6 +105,8 @@ CHECKS = {
     "story-key-vocab": "a story's keyVocabulary word doesn't occur in the story (the conocer/intercambio placeholder; es A1 units 6-11 readers found it in 5 stories)",
     "infinitive-reply": "ES: a wrong option is the right option with its verb in the infinitive (*Descansa y toma agua.* / *Descansar y tomar agua.*, *Leo en casa.* / *Leer en casa.*): an infinitive is a natural elliptical reply or written instruction, so a second right answer; make the wrong option another person (es A1 units 14, 20, 23 readers fixed 20)",
     "reading-generic": "a reading question about 'the character' or the text type ('What kind of text is the story?', 'the diary'): placeholder questions the story can't answer; ask about what its people say and do (es A1 units 16-18 and 14 had 13, all real; none elsewhere in es or hu)",
+    "perfecto-marker": "ES: a right answer, sentence or prompt line in the pretérito perfecto with a finished-past marker (*Ayer he comido*, *He viajado más que el año pasado*, *ha comprado el día anterior*): Spain uses the preterite there, Latin America too, so it is wrong Spanish; use a perfecto marker (*hoy*, *esta mañana*, *este año*) or wait for the preterite (es A2 units 1, 2, 6 readers fixed 9)",
+    "checklist-you": "a checklist line 'I can say what you have …': the learner talks about themselves ('what I have done'); es A2 units 2-4 had 8",
     "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
     "unmet-word": "a word the learner hasn't met by this lesson (scripts/unmet-words.js)",
     "recap-unmarked": "a grammar screen repeats 2+ example sentences from an earlier unit's screens without saying they are known ('You know …')",
@@ -123,7 +125,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -326,6 +328,22 @@ def bracket_english(b, lang):
     return bool(ts) and bool(known) and not any(w in known for w in ts)
 
 
+PERFECTO = re.compile(r"\b(?:he|has|ha|hemos|habéis|han)\s+(?:[a-záéíóúñ]+[aií]do|hecho|visto|puesto|dicho|escrito|vuelto|roto|abierto|_{2,})\b", re.I)
+PAST_MARKER = re.compile(r"(?<!desde )(?<!que )(?<!como )(?<!_ )\b(?:ayer|anoche|anteayer|(?:el|la)\s+(?:año|mes|semana|lunes|martes|miércoles|jueves|viernes|sábado|domingo|fin de semana|verano|invierno)\s+pasad[oa]|el día anterior|(?<!desde )hace\s+(?:\w+\s+)?(?:días?|semanas?|meses|mes|años?)|en (?:19|20)\d\d)\b", re.I)
+
+
+def perfecto_marker(text):
+    """The first clause of `text` with a pretérito perfecto and a finished-past
+    marker, or None. One clause at a time (*He aprendido mucho y la clase
+    terminó ayer* is right); a marker after *desde* (*desde el año pasado*), a
+    blank (*__ el mes pasado*) or compared with *que*/*como* (*Este año he
+    viajado más que el año pasado*) is too."""
+    for sent in re.split(r"(?<=[.?!])\s+|[,;:«»—]\s*|\s+(?:y|pero|porque|cuando|mientras)\s+", str(text)):
+        if PERFECTO.search(sent) and PAST_MARKER.search(sent):
+            return sent
+    return None
+
+
 def check_exercise(e, course, lang):
     out = []
 
@@ -356,6 +374,20 @@ def check_exercise(e, course, lang):
                     and all(re.fullmatch(r"[a-záéíóúñ]{2,}(ar|er|ir)(se)?", b) and b[:2] == a[:2]
                             and not re.fullmatch(r"[a-záéíóúñ]+(ar|er|ir)", a) for a, b in diff)):
                 hit("infinitive-reply", str(o)[:60])
+                break
+    if lang == "es":
+        pm_texts = [str(e.get(k)) for k in ("sentence", "answer") if isinstance(e.get(k), str)]
+        pm_texts += [str(a) for a in e.get("answers") or [] if isinstance(a, str)]
+        if opts and isinstance(e.get("correct"), int) and 0 <= e["correct"] < len(opts):
+            pm_texts.append(str(opts[e["correct"]]))
+        pm_texts += [str(l.get("text", "")) for l in e.get("prompt") or [] if isinstance(l, dict)]
+        pm_texts += [str(x.get("answer", "")) for x in e.get("template") or [] if isinstance(x, dict)]
+        if isinstance(e.get("solution"), list):
+            pm_texts.append(" ".join(map(str, e["solution"])))
+        for x in pm_texts:
+            sent = perfecto_marker(x)
+            if sent:
+                hit("perfecto-marker", sent[:60])
                 break
     if e.get("category") == "reading" and re.search(
             r"\bthe (main )?characters?\b|\bwhat kind of text\b|\btype of (text|obligation)\b|\bthe diary\b",
@@ -701,6 +733,11 @@ def check_story(src, course, level, ref, L):
         want = genders.get(name)
         if want and isinstance(spk, dict) and spk.get("gender") not in (None, want):
             out.append(("story-voice-gender", Path(ref).stem, f"{name} is {want}, voice says {spk.get('gender')}", rel))
+    if course.startswith("es-"):
+        for p in story.get("paragraphs", []):
+            sent = perfecto_marker(p.get("text", "")) if p.get("lang") != "en" else None
+            if sent:
+                out.append(("perfecto-marker", Path(ref).stem, sent[:60], rel))
     hay = set(re.findall(r"\w+", fold(" ".join(p.get("text", "") for p in story.get("paragraphs", []) if p.get("lang") != "en"))))
     # A1-A2: B1+ key phrases are long and paraphrased (*el Desastre del 98 (1898)*)
     for kv in ped.get("keyVocabulary") or [] if level in ("a1", "a2") else []:
@@ -762,6 +799,8 @@ def check_unit(src, course, level, unit, shape):
             if sec.get("type") == "checklist":
                 for it in sec.get("items") or []:
                     others = [x for x in shared.get(fold(it).strip(), []) if x != stem] if isinstance(it, str) else []
+                    if isinstance(it, str) and re.match(r"I can (say|describe|talk about|tell|explain|list)\b[^.]*\b(what|where|how|why) you (?!know|have to)", it.strip()) and not re.search(r"\bI (am|have|was)\b", it):
+                        out.append(("checklist-you", stem, it.strip()[:60], lesson_rel))
                     if others:
                         out.append(("checklist-shared", stem, f"{it.strip()[:60]!r} also in {', '.join(others[:3])}", lesson_rel))
         groups = lesson_groups(lesson)

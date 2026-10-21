@@ -143,7 +143,10 @@ def main():
             sys.exit(f"unfilled placeholders: {left}")
         (batch / f"prompt-{key.lower()}.txt").write_text(prompt, encoding="utf-8")
     setup += ["", "## Baseline check-content, errors / suspects", ""] + table
-    setup += ["", "## Files differing es-es vs es-latam", ""] + differ + [""]
+    setup += ["", "## Files differing es-es vs es-latam", ""] + differ
+    stems = [s for nums in readers.values() for n in nums for s in units[n - 1]["stems"]]
+    setup += ["", "## Walk (with `python scripts/dev-server.py 8131` running)", "",
+              f"    node scripts/walk_lessons.js <course> {level} --jobs 4 --only {' '.join(stems)}", ""]
     (batch / "setup.md").write_text("\n".join(setup), encoding="utf-8")
     print((batch / "setup.md").read_text(encoding="utf-8"))
 

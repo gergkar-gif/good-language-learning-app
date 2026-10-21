@@ -38,7 +38,14 @@ frozen state, accepted findings and tag locks are per course.
 
 ### Route A: read-first batch (HU A2, 2026-10-14 → 2026-10-15)
 
-0. **Knowledge sheets:** `python scripts/prior_knowledge.py <course>
+0. **Batch setup (Spanish, 2026-10-21):** `python scripts/batch_setup.py
+   <level> imports/review/<course>-<level>-batch-<first>-<last> A=<n>,<n>,<n>
+   B=<n>,<n>,<n> --focus <focus.txt>` adds both worktrees, writes every
+   knowledge sheet, the setup.md (pairing, stories, baselines per course,
+   files differing es-es/es-latam, the walk command) and both reader
+   prompts from `scripts/templates/read-spanish.txt` (the Spanish template
+   below, kept there now); write only the batch's focus notes by hand.
+   **Knowledge sheets** (HU, or by hand): `python scripts/prior_knowledge.py <course>
    <level> <unit id> --out <worktree>/prior-<unit id>.md` for every unit
    (known grammar and words by unit, earlier screen titles, what this unit
    teaches, what comes later, same-family skills of the next level). ~7k
@@ -71,7 +78,9 @@ frozen state, accepted findings and tag locks are per course.
    suspects (a Sonnet fixer when there are many: HU units 42–44 had ~250,
    212k), then `python scripts/add_challenges.py <course> <level>
    <challenges.json>` per unit (it checks fields, level and `canDo`;
-   check-content then reports unmet words in targets).
+   check-content then reports unmet words in targets). Spanish: `python
+   scripts/latam_challenges.py <drafts> <drafts.latam.json>` first (course
+   words converted, *vosotros* drafts left out for the reviewer).
 6. **Check, lock, freeze:** `python scripts/check-content.py <course>
    <level> <unit id>` after every hand edit; `python scripts/lock_tags.py
    <course> <level>/<unit id> --update --reason "..."`; `python
@@ -343,6 +352,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-16 | es A1 6–11 (both courses) | paired read, Spanish template, **3 units/reader**, es-es read once, mirrored | | 313k + 306k, 15.3 + ~15 (B hit a Sonnet session limit after writing all its files; resumed for its last report section) | 278 proposed (32 / 57 / 26 / 40 / 89 / 34), 0 rejected for content (1 by a stale word index, restored); Claude changed 16 (10 in the filter, 6 schema), added 12 in es-es after the new checks and `--warnings` (5 answers lists, 1 thin-skill item, 3 stories' key words, 1 story line, 2 challenge glosses) and 8 in es-latam only (3 variant fixes, 5 story question sets) | ~103k reader tokens/unit (A ~104k, B ~102k; ×0.88 of units 2–5's ~117k); ~46 fixes/unit (×1.1 of ~42); 222 of 278 to review; 269/279 mirrored (10 es-es variants or es-latam text); walk 36/36 per course; B's 305,712 is the only usage figure its notices gave (the failure notice had none) |
 | 10-21 | es A1 13–18 (both courses) | paired read, Spanish template, 3 units/reader, es-es read once, mirrored | | 346k + 291k, 16.5 + 15.4 | 262 proposed (38 / 41 / 34 / 38 / 59 / 52), 0 rejected; Claude changed 2 and added 1 es-latam-only fix | ~106k reader tokens/unit (A ~115k, B ~97k; ×1.03 of 6–11's ~103k); ~44 fixes/unit (×0.95); 189 of 262 to review; 261/262 mirrored (1 es-es variant), 4 put in es-latam words by the mirror; walk 36/36 per course; A's report write refused, B's allowed |
 | 10-21 | es A1 19–24 (both courses) | paired read, Spanish template, 3 units/reader, es-es read once, mirrored | | 395k + 332k, 21.7 + 17.1 | 273 proposed (55 / 45 / 45 / 29 / 47 / 52), 0 rejected; Claude changed 5 (2 retags kept, 1 story logic, 1 option set, 1 spelling) and added 4 (es-latam twins and *pedir*/*clínica*), plus 4 after the new check | ~121k reader tokens/unit (A ~132k, B ~111k; ×1.14 of 13–18's ~106k); ~46 fixes/unit (×1.04); 226 of 273 to review; 272/273 mirrored (1 es-es variant), 1 put in es-latam words; walk 36/36 per course; both report writes allowed |
+| 10-21 | es A2 1–6 (both courses) | paired read, Spanish template from `batch_setup.py`, 3 units/reader, mirrored | | 347k + 313k, 21.5 + 17.6 | 263 proposed (58 / 44 / 60 / 36 / 24 / 41), 0 rejected; Claude changed 0, added 8 plus one reflexive pass (84 changes per course) | ~110k reader tokens/unit (A ~116k, B ~104k; ×0.91 of A1 19–24's ~121k on lighter baselines: 22 errors / 143 suspects for six units against 43 / 183); ~44 fixes/unit (×0.95); 186 of 263 to review; 257/263 mirrored, 6 es-latam fixes by hand; walk 36/36 per course; both report writes allowed |
 | 10-21 | es A1 25–26 (both courses) | **one** reader, 2 units, Spanish template, mirrored | | 244k (the resumed notice only; stopped by a Sonnet session limit after 3 of 4 files) | 84 proposed (31 / 53), 0 rejected; Claude changed 3 and fixed one cross-story contradiction | ~122k reader tokens/unit (uncertain: one notice); ~42 fixes/unit; 59 of 84 to review; 84/84 mirrored, 5 put in es-latam words (*billete* → *boleto*); level walk 156/156 per course |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -842,3 +852,51 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   / *boleto*). Run the test suite (or push) before calling a batch done,
   not only check-content and validate.
 - **Level checklist:** summary in `imports/review/es-a1-level-check/`.
+
+### 2026-10-21: Spanish A2 units 1–6 (first A2 batch)
+
+- **Cost:** 347k (reader A, units 1–3) + 313k (reader B, 4–6), ~110k a
+  unit (×0.91 of A1 19–24), ~44 fixes a unit. The early A2 units start
+  lighter (3.7 errors / 24 suspects a unit). **Keep three per reader.**
+- **Filter:** 186 of 263 to review, none changed: the template's rules
+  (character facts, MC meaning, one fault) held for the third batch
+  running. The reviewer's work was elsewhere: a doubtful item the reader
+  left unfixed (*he lavado las manos* in ~40 lines of Unit 4, made
+  reflexive by script), one item my own change made a copy of another
+  (`unit-copy`: run check-content after every scripted edit), es-latam
+  items with their own text.
+- **Changes made this batch:** (1) `batch_setup.py` replaces the setup I
+  wrote by hand each batch (sheets, baselines, cmp list, two prompts):
+  measure on the next batch whether it cuts the reviewer's setup tokens.
+  (2) `latam_challenges.py` replaces the inline es-latam challenge
+  conversion. (3) `mirror_fixes.py` refuses a `set` fix where es-latam's
+  committed value already differs (it would have put *vosotros* questions
+  into three es-latam *ustedes* items; caught on the A1 stem list, 3 of
+  3). (4) `unmet-word` reads Spanish MC question stems (the A1 open
+  item): 67 new hits in frozen A1, all real (Spanish metalanguage such as
+  *¿Cuál es correcta?*, *gerundio*, reading questions with *hace* before
+  Unit 14); A2 +103. A first version read every stem sentence and flagged
+  English words (*fits*, *sentence*) and ~200 *¿Cómo se dice / Qué
+  significa?* formulas: tightened to Spanish questions (¿…?) and the two
+  formulas left out.
+- **Scripted (seen twice or more in this batch), tested on the pre-fix
+  content:** `checklist-you` (units 2, 3, 4: all 7 pre-fix lines; 3 more
+  in A2 units 8, 12, 16 and 6 in B1; first versions also flagged "using
+  what you know" and HU "where I am, where you are": tightened, 0 false
+  positives now); `perfecto-marker` (units 1, 2, 6): weak, it catches the
+  story line *ha comprado el día anterior* and nothing in the current
+  content, because the Unit 6 lines (*He viajado más que el año pasado*)
+  compare with the marker, which I let pass, and *por la mañana* is not a
+  finished-past marker. A first version named `texts` crashed every
+  exercise check (the shadowing trap of units 19–24): read a new check's
+  output, never only its count. `unmet-words.js`: a regular participle
+  after *haber* counts through its verb (*nos hemos mojado*: the lexicon
+  reads *mojado* as the adjective; 5 A2 and 11 B1 false hits gone, none
+  hidden).
+- **Not scripted:** reading questions that ask about another story (Unit
+  5, five items; no script can tell), the same table on every screen
+  (Units 4–6; a reader's call whether the screen still teaches).
+- **Open, the user's:** Unit 3 has no grammar of its own; the MC
+  formulas left out of `unmet-word`; *ustedes* among friends in es-es
+  dialogues (ROADMAP 153).
+
