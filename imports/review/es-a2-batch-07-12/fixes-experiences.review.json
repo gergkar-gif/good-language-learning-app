@@ -1,0 +1,378 @@
+[
+ {
+  "file": "content/es-es/exercises/a2/a2-09-01-ex.json",
+  "id": "a2.09.01.ex02",
+  "set": {
+   "options": [
+    "¿Has visitado alguna vez la playa?",
+    "¿Quieres visitar la playa mañana?",
+    "¿Cuándo vas a visitar la playa?"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute (Nunca only in a wrong option) and tell-punctuation (only the right option has ¿): wrong options are other questions"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-01-ex.json",
+  "id": "a2.09.01.ex14",
+  "set": {
+   "options": [
+    "Sí, he visitado la playa.",
+    "No, he visitado la playa.",
+    "Sí, visitado la playa."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute (nunca only in a wrong option); \"Sí, nunca …\" had two faults: \"Sí, visitado la playa.\" has one"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-01-ex.json",
+  "id": "a2.09.01.ex15",
+  "set": {
+   "options": [
+    "Sí, he estado en la costa.",
+    "No, he estado en la costa.",
+    "Sí, estado en la costa."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute (nunca only in a wrong option)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-02-ex.json",
+  "id": "a2.09.02.ex02",
+  "set": {
+   "options": [
+    "¿Has estado alguna vez en el puerto?",
+    "¿Quieres estar en el puerto hoy?",
+    "¿Cuándo vas a estar en el puerto?"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute and tell-punctuation: wrong options are other questions"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-03-ex.json",
+  "id": "a2.09.03.ex02",
+  "set": {
+   "options": [
+    "¿Has conocido alguna vez a un pescador?",
+    "¿Quieres conocer a un pescador hoy?",
+    "¿Cuándo vas a conocer a un pescador?"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute and tell-punctuation: wrong options are other questions"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-03-ex.json",
+  "id": "a2.09.03.ex15",
+  "set": {
+   "options": [
+    "Sí, he visto muchas.",
+    "No, he visto muchas.",
+    "Sí, he visto muchos."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute: \"Sí, nunca he visto una barca.\" has two faults; \"muchos\" for barcas has one"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-09-03-gr.json",
+  "old": "\"content\": \"Short answers drop *alguna* *vez* completely: *sí, he visto muchas* needs no *alguna vez* tacked on, and *no, nunca he estado*... works the same way — repeating it in the answer just sounds unnatural.\"",
+  "new": "\"content\": \"Short answers usually leave out *alguna vez*: *sí, he visto muchas* needs no *alguna vez* tacked on, and *no, nunca he estado*… already says it with *nunca*.\"",
+  "kind": "target",
+  "why": "the tip says repeating alguna vez \"just sounds unnatural\" (Alguna vez he estado… is fine, and a2.09.02.ex12 uses it)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-04-ex.json",
+  "id": "a2.09.04.ex02",
+  "set": {
+   "options": [
+    "¿Has comido alguna vez en ese restaurante?",
+    "¿Quieres comer en ese restaurante hoy?",
+    "¿Cuándo vas a comer en ese restaurante?"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute and tell-punctuation: wrong options are other questions"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-04-ex.json",
+  "id": "a2.09.04.ex10",
+  "set": {
+   "options": [
+    "restaurant",
+    "excursion",
+    "fisherman"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (10 vs 5): wrong options are other words of the unit"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-04-ex.json",
+  "id": "a2.09.04.ex15",
+  "set": {
+   "options": [
+    "Sí, he visitado la costa.",
+    "No, he visitado la costa.",
+    "Sí, visitado la costa."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute (nunca only in a wrong option)"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-09-04-gr.json",
+  "old": "\"content\": \"*alguna* *vez* only ever shows up in the question that opens the door; the answer, positive or negative, never repeats it — *sí* or *nunca* alone carries the weight of the reply.\"",
+  "new": "\"content\": \"*Alguna vez* belongs in the question. In the answer you can leave it out: *Sí, he hecho una excursión*, or use *nunca* for a negative answer.\"",
+  "kind": "target",
+  "why": "the tip says the answer \"never repeats\" alguna vez, which is wrong (and a2.09.02.ex12 uses it)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex02",
+  "set": {
+   "options": [
+    "¿Has comprado alguna vez un recuerdo?",
+    "¿Quieres comprar un recuerdo hoy?",
+    "¿Cuándo vas a comprar un recuerdo?"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute and tell-punctuation: wrong options are other questions"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex11",
+  "set": {
+   "question": "¿Quién quiere hacer una excursión a la costa?"
+  },
+  "kind": "target",
+  "why": "propone is unmet (b1-monarquia-02)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex12",
+  "set": {
+   "options": [
+    "Porque no han visitado ese pueblo.",
+    "Porque todos han vivido allí.",
+    "Porque conocen muy bien el pueblo."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (55 vs 34); ninguno and pesquero are unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex13",
+  "set": {
+   "options": [
+    "«¿Habéis visto alguna vez muchas barcas?»",
+    "«¿Habéis comprado recuerdos en el mercado?»",
+    "«¿Habéis probado el marisco del restaurante?»"
+   ]
+  },
+  "kind": "target",
+  "why": "friends in Spain say vosotros",
+  "variant": "es-es"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex14",
+  "set": {
+   "options": [
+    "Nunca ha estado en un puerto como ese.",
+    "Ha estado allí muchas veces con Lucía.",
+    "Nunca ha visto el mar de Vietnam."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (38 vs 28): lengthen the wrong options"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Has visto alguna vez muchas barcas en un puerto?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "No, nunca he visto muchas barcas en un puerto.",
+    "Sí, nunca he visto muchas barcas en un puerto.",
+    "No, alguna vez he visto muchas barcas en un puerto."
+   ]
+  },
+  "kind": "target",
+  "why": "tantas / juntas unmet; in the story Daniela asks (not Meg) and \"¿Han…?\" to one person who answers in the singular"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex17",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Has estado alguna vez en un puerto como ese?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "in the story Carlos has never been to such a port: Meg asks, Carlos answers"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex18",
+  "set": {
+   "options": [
+    "Sí, he probado el marisco.",
+    "No, he probado el marisco.",
+    "Sí, probado el marisco."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute (nunca only in a wrong option)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-consolidation-ex.json",
+  "id": "a2.09.consolidation.ex01",
+  "set": {
+   "options": [
+    "¿Has visto alguna vez el mar?",
+    "¿Quieres ver el mar mañana?",
+    "¿Cuándo vas a ver el mar?"
+   ]
+  },
+  "kind": "target",
+  "why": "copy of a2.09.01.ex02; tell-absolute; tell-punctuation"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-consolidation-ex.json",
+  "id": "a2.09.consolidation.ex02",
+  "set": {
+   "sentence": "¿Has comido __ vez en un restaurante?",
+   "english": "Have you ever eaten in a restaurant?"
+  },
+  "kind": "target",
+  "why": "copy of a2.09.01.ex03: vary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-consolidation-ex.json",
+  "id": "a2.09.consolidation.ex11",
+  "set": {
+   "options": [
+    "Nunca he probado el marisco.",
+    "Nunca he probar el marisco.",
+    "Nunca probado el marisco."
+   ],
+   "distractor_skills": null
+  },
+  "kind": "target",
+  "why": "\"Nunca probé el marisco.\" is a preterite (Unit 11) and a correct sentence, so a second right answer; replaced by a one-fault non-sentence"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-consolidation-ex.json",
+  "id": "a2.09.consolidation.ex14",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Has probado alguna vez el pescado?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, he probado el pescado.",
+    "No, he probado el pescado.",
+    "Sí, probado el pescado."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute (nunca only in a wrong option); copy of 09-01.ex14 with swapped speakers: new fish item"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-consolidation-ex.json",
+  "id": "a2.09.consolidation.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Has estado alguna vez en un mercado costero?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "No, nunca he estado en un mercado costero.",
+    "Sí, nunca he estado en un mercado costero.",
+    "No, alguna vez he estado en un mercado costero."
+   ]
+  },
+  "kind": "target",
+  "why": "copy of 09-01.ex15 with swapped speakers: new market item"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-consolidation-ex.json",
+  "id": "a2.09.consolidation.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Has estado alguna vez en Ninh Bình?"
+    },
+    {
+     "speaker": "Lucía",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "No, nunca he estado en Ninh Bình.",
+    "Sí, nunca he estado en Ninh Bình.",
+    "No, alguna vez he estado en Ninh Bình."
+   ]
+  },
+  "kind": "target",
+  "why": "same dialogue as a2.09.05.ex18: new excursion item"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-09.json",
+  "old": "que nunca olvidarán.",
+  "new": "que nunca van a olvidar.",
+  "kind": "target",
+  "why": "future tense (olvidarán, Unit 19) in the story"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-09.json",
+  "old": "al atardecer mientras todos contemplan el mar",
+  "new": "al atardecer: todos contemplan el mar",
+  "kind": "target",
+  "why": "mientras (cuando-mientras) is Unit 13",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-09.json",
+  "old": "«¿Han visto alguna vez tantas barcas juntas?», pregunta Daniela.",
+  "new": "«¿Habéis visto alguna vez tantas barcas juntas?», pregunta Daniela.",
+  "kind": "target",
+  "why": "friends in Spain say vosotros",
+  "variant": "es-es"
+ }
+]

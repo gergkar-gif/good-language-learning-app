@@ -1,6 +1,6 @@
 # Review report: es-es A2 Units 10, 11, 12 (reader B)
 
-## Unit 10 keeping-touch (62 fixes in fixes-keeping-touch.json, 6 challenges in challenges-keeping-touch.json)
+## Unit 10 keeping-touch (63 fixes in fixes-keeping-touch.json, 6 challenges in challenges-keeping-touch.json)
 
 Unit 10 teaches no new grammar (perfecto / ya / todavía no / porque are known from Units 1, 2, 5). check-content: 8 errors and 12 suspects before; after the fixes (applied in a scratch copy, word-lesson index rebuilt) 0 errors and 0 suspects, and check_fixes.py rejects none.
 
@@ -39,7 +39,7 @@ Unit 10 teaches no new grammar (perfecto / ya / todavía no / porque are known f
 ### 5. Dictionary
 No "literal compound guess" or "not in the dictionary" word except the name *andreas* (look-alike of a name; skipped).
 
-Fix count Unit 10: 62 (16 auto, 46 for review per check_fixes.py; 0 rejected).
+Fix count Unit 10: 63 (17 auto, 46 for review per check_fixes.py; 0 rejected). Also the a2-10-05 goal is fixed in curriculum.json.
 
 ---
 
@@ -81,3 +81,43 @@ Unit 11 teaches the regular preterite (a2-11-01), irregular stems (a2-11-02), qu
 Nothing: the audit reports 0 words not in the dictionary and 0 literal compound guesses for story a2-11.
 
 Fix count Unit 11: 61 (3 auto, 58 for review per check_fixes.py; 0 rejected).
+
+---
+
+## Unit 12 giving-receiving-things (64 fixes in fixes-giving-receiving-things.json, 6 challenges in challenges-giving-receiving-things.json)
+
+Unit 12 teaches the direct object pronouns (a2-12-01). No lo/la/los/las occurs earlier in Units 10-11 (only *les hizo* in the a2-11 story). check-content: 2 errors and 11 suspects before; after the fixes (scratch copy, index rebuilt) 0 errors and 1 suspect (*envolvieron* in ex08: a form of the listed *envolver*, false positive); check_fixes.py rejects none. No tag changes.
+
+### 1. Found by reading
+- a2-12-03 grammar, ex03, ex05, ex11, ex14, ex15, ex16: *¿Qué compraste?* answered with *Lo compré.* (examples, table, fill-blanks with the noun as a hint, dialogues *¿Qué compraste? ¿El regalo?*). A "what" question asks for the thing, so "it" says nothing. Screen rewritten around yes/no questions (*¿Compraste el regalo? ¿Lo compraste? Sí, lo compré.*; *¿Qué compraste?* is answered with the noun), and the items now use yes/no questions with the noun in the question (hints removed).
+- a2-12-02 and later lessons use *di* (ex04 *La di.*, a2-12-04 example *la di*) and *dieron* (a2-12-05 example, ex19) but no screen teaches dar in the preterite (Unit 11 has no dar). a2-12-02 screen now teaches di, diste, dio, dimos, dieron (text, example, table row); its fourth example's English also lacked the arrow half.
+- a2.12.05.ex05 *Kaylee lo eligió* (e>i stem change, not taught): now *Lucía lo recibió.*
+- Reading questions a2.12.05.ex12-ex15 invent things the story never says (*¿Qué envolvieron? El regalo*, *Lucía recibió ... El aeropuerto / La bicicleta*, a "regalo" bought, *Un libro* also possible since Kaylee chooses a book) and use unmet *reaccionó*. Now *¿Qué compró Meg?*, *¿Qué preparó Daniela?*, *¿Qué escribió Lauren?*, *¿Qué hizo Lucía?* (story p9 now says *se sorprendió, se alegró mucho*, which also keeps the listed words alegrarse / sorprenderse in use). ex15 length error 26 vs 14 fixed with similar-length options.
+- Story a2-12 (shown in a2-12-05): pluperfect *habían vivido* (B1) and imperfect *era el mejor recuerdo* (Unit 21): now *han vivido*, *es el mejor recuerdo de este año*. Story comprehension: Q1 *¿Cuál es el tema principal del texto?* generic -> *¿Quién tuvo la idea de la sorpresa?*; Q3 options in pluperfect / imperfect (*había ayudado*, *era el cumpleaños*, *había pedido*) simplified; the Q1 explanation had the typo *dárselas gracias*.
+- Titles/goals promising what the lesson does not practise: a2-12-02 *I Gave It to Her* / "Say who received an object" (indirect objects, Unit 25; the lesson only drills placement and agreement) -> *Where the Pronoun Goes* / "Place the direct object pronoun before the verb and choose lo, la, los or las."; a2-12-03 *What Did You Give Them?* / "what people gave" (no dar exercise) -> *Did You Buy It?* / "what people bought or received." (lesson, vocabulary file and curriculum.json).
+- Unmet *carta*: a2.12.03.ex12 (flagged) and a2.12.01.ex12 (same sentence, not flagged) -> *tarjeta* / *regalo* / *caja*.
+- Same lo/la/los/las table on a2-12-01, 04 and 05: 04 now a verb table (comprar -> lo compré ...), 05 a table of the story's verb forms.
+- Prompts say "you" but the stored answer is nosotros: a2.12.04.ex17 (*Preparamos la sorpresa y la llevamos.*), a2.12.05.ex19 (*... a Lucía*): prompts now "we".
+- a2.12.05.ex17 *¿Qué recibió Lucía? ¿El regalo?* / *Lo recibió.* -> *¿Recibió Lucía el regalo?* / *Sí, lo recibió.* a2.12.consolidation.ex15 same pattern -> *¿Recibiste la noticia?*
+- Consolidation copies (8): ex01, ex02, ex03, ex04, ex06, ex07, ex13, ex16 copied a2-12-01 / 04 items: new nouns (mapa, noticia, cajas, flores). ex12 *We bought the gifts and bought them* is a nonsense sentence -> *Preparamos las cajas y las llevamos.* ex14 is a2-12-01 ex14 with swapped speakers -> *¿Compraste el mapa?*
+- Character facts checked against story a2-12 (Meg buys flowers, Daniela makes a cake, Lauren writes a card, Kaylee chooses a book, Carlos has the idea, at Lucía's flat): consistent after the reading fixes.
+
+### 2. Metadata
+- All items teach objeto-directo (or vocabulary); the wrong options are wrong forms of the tested skill, so no distractor_skills are needed. No tag change in this unit.
+
+### 3. Goals / checklists
+- a2-12-01 checklist-you: *I can say what you bought...* -> *what I bought* (canDo of its challenge follows).
+- a2-12-02 and a2-12-03 goal, goal screen, checklist and curriculum.json goal corrected (see above); other goals fine.
+
+### 4. Doubtful
+- a2-12-02 re-explains placement and agreement already taught in a2-12-01 (screen now says "You know from the last lesson" and adds dar); a2-12-04 and a2-12-05 screens also restate it (unsure).
+- Story a2-12 *les dio un abrazo*, *darle las gracias* use indirect object pronouns (Unit 25); stories are exempt, kept (unsure).
+- *camiseta* (a2.12.01.ex05) is not flagged but I could not find where it is taught (unsure).
+
+### 5. Dictionary
+Nothing: the audit reports 0 words not in the dictionary and 0 literal compound guesses for story a2-12.
+
+Fix count Unit 12: 64 (15 auto, 49 for review per check_fixes.py; 0 rejected).
+
+## Totals
+Unit 10: 63 fixes, 6 challenges. Unit 11: 61 fixes, 6 challenges. Unit 12: 64 fixes, 6 challenges.

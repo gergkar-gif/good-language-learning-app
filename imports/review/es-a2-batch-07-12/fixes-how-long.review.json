@@ -1,0 +1,501 @@
+[
+ {
+  "file": "content/es-es/exercises/a2/a2-07-01-ex.json",
+  "id": "a2.07.01.ex12",
+  "set": {
+   "options": [
+    "desde hace dos años",
+    "desde dos años",
+    "desde hace enero"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (19 vs 14): lengthen a wrong option; \"desde el año\" was not clearly wrong"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-01-ex.json",
+  "id": "a2.07.01.ex14",
+  "set": {
+   "options": [
+    "Estudio español desde hace un año.",
+    "Estudio español desde un año.",
+    "Estudio español desde hace enero."
+   ]
+  },
+  "kind": "target",
+  "why": "wrong options \"desde enero\"/\"desde el año pasado\" are natural answers to ¿Cuánto tiempo…?: make each one clearly faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-01-ex.json",
+  "id": "a2.07.01.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kaylee",
+     "text": "¿Cuánto tiempo vives en Hanói?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Vivo en Hanói desde hace tres meses.",
+    "Vivo en Hanói desde tres meses.",
+    "Vivo en Hanói desde hace enero."
+   ]
+  },
+  "kind": "target",
+  "why": "Meg asks Carlos in the plural about the two of them who live together (self-third-person); wrong options are natural answers: Kaylee asks Carlos, options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-02-ex.json",
+  "id": "a2.07.02.ex15",
+  "set": {
+   "options": [
+    "Desde el año pasado.",
+    "Desde hace el año pasado.",
+    "Desde un año."
+   ]
+  },
+  "kind": "target",
+  "why": "\"Desde hace un año\" / \"Desde hace tres meses\" are natural answers to ¿Desde cuándo…?: make wrong options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-02-ex.json",
+  "id": "a2.07.02.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kaylee",
+     "text": "¿Desde cuándo vives en Vietnam?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Desde enero.",
+    "Desde hace enero.",
+    "Desde tres meses."
+   ]
+  },
+  "kind": "target",
+  "why": "Meg asks Carlos about \"ustedes\" (herself and Carlos); wrong options natural answers: Kaylee asks, options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-03-ex.json",
+  "id": "a2.07.03.ex13",
+  "set": {
+   "options": [
+    "desde hace dos años / desde enero",
+    "desde dos años / desde enero",
+    "desde hace dos años / desde hace enero"
+   ]
+  },
+  "kind": "target",
+  "why": "both wrong options have two faults (both halves wrong): one fault each"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-03-ex.json",
+  "id": "a2.07.03.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Desde cuándo conoces a Meg?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "Carlos and Meg meet Lucía for the first time in the 07-05 story, so \"since last year\" contradicts it: Daniela asks about Meg"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-03-ex.json",
+  "id": "a2.07.03.ex16",
+  "set": {
+   "options": [
+    "Desde hace un año.",
+    "Desde un año.",
+    "Desde hace enero."
+   ]
+  },
+  "kind": "target",
+  "why": "\"Desde el año pasado\" / \"Desde enero\" are natural answers to ¿Cuánto tiempo?: make wrong options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-03-ex.json",
+  "id": "a2.07.03.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you have known a friend for three months.",
+     "answer": "Conozco a mi amiga desde hace tres meses."
+    },
+    {
+     "prompt": "Say that you have studied Spanish since last year.",
+     "answer": "Estudio español desde el año pasado."
+    },
+    {
+     "prompt": "Say that you have studied Spanish since Monday.",
+     "answer": "He estudiado español desde el lunes."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "\"practicado\" is listed only in a2-07-04 (unmet word): use estudiado"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-03-ex.json",
+  "id": "a2.07.03.ex19",
+  "set": {
+   "sentence": "He estudiado español desde el lunes.",
+   "english": "I have studied Spanish since Monday."
+  },
+  "kind": "target",
+  "why": "\"practicado\" is listed only in a2-07-04 (unmet word): use estudiado"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-04-ex.json",
+  "id": "a2.07.04.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Cuánto tiempo practicas español?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Practico español desde hace dos semanas.",
+    "Practico español desde dos semanas.",
+    "Practico español desde hace enero."
+   ]
+  },
+  "kind": "target",
+  "why": "Carlos asks Meg in the plural about themselves; wrong options natural answers: Daniela asks Carlos, options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-04-ex.json",
+  "id": "a2.07.04.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Lauren",
+     "text": "¿Desde cuándo conoces a Carlos?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Conozco a Carlos desde el año pasado.",
+    "Conozco a Carlos desde hace el año pasado.",
+    "Conozco a Carlos desde tres meses."
+   ]
+  },
+  "kind": "target",
+  "why": "Meg asks Carlos how long \"they\" know each other (self-third-person); Lauren asks Meg"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex05",
+  "set": {
+   "options": [
+    "La compañera nueva vive aquí desde hace tres meses.",
+    "La compañera nueva vive aquí desde hace febrero.",
+    "La compañera nueva vive aquí desde tres meses."
+   ]
+  },
+  "kind": "target",
+  "why": "Lucía has lived in Vietnam three months (story); \"la compañera nueva\" says two"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex09",
+  "set": {
+   "options": [
+    "Meg estudia español desde hace un año.",
+    "Meg estudia español desde hace marzo.",
+    "Meg estudia español desde un año."
+   ]
+  },
+  "kind": "target",
+  "why": "Lucía meets the group in the story that afternoon, so \"practica español con nosotros desde hace tres semanas\" is false; Meg has studied Spanish a year"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex13",
+  "set": {
+   "options": [
+    "Para ser profesora de español.",
+    "Para trabajar en una oficina.",
+    "Para viajar con su familia."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (59 vs 32), and enseñar / universidad are unmet: short right answer, met words"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex15",
+  "set": {
+   "options": [
+    "Toman algo en una cafetería.",
+    "Viajan a Ninh Bình en tren.",
+    "Estudian español en casa."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (28 vs 17): lengthen the wrong options"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex16",
+  "set": {
+   "options": [
+    "Vive en Vietnam desde hace tres meses.",
+    "Vive en Vietnam desde hace enero.",
+    "Vive en Vietnam desde tres meses."
+   ]
+  },
+  "kind": "target",
+  "why": "\"desde el año pasado\" / \"desde enero\" are natural answers to ¿Cuánto tiempo lleva…?: make wrong options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex17",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Lucía",
+     "text": "¿Desde cuándo estudias español?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "in the story Meg tells Lucía she has studied Spanish since last year: Lucía asks"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex18",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Lucía",
+     "text": "¿Cuánto tiempo conoces a Meg?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Conozco a Meg desde hace un año.",
+    "Conozco a Meg desde un año.",
+    "Conozco a Meg desde hace enero."
+   ]
+  },
+  "kind": "target",
+  "why": "Meg asks Carlos how long \"they\" know each other (self-third-person): Lucía asks Carlos about Meg"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex02",
+  "set": {
+   "sentence": "Vivimos en Vietnam desde __ cuatro meses.",
+   "english": "We have lived in Vietnam for four months."
+  },
+  "kind": "target",
+  "why": "copy of a2.07.01.ex03: vary the words"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex08",
+  "set": {
+   "options": [
+    "desde el lunes",
+    "desde hace dos años",
+    "desde hace una semana"
+   ]
+  },
+  "kind": "target",
+  "why": "copy of a2.07.02.ex12: vary the words"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex12",
+  "set": {
+   "english": "My classmate has lived here for a month.",
+   "tiles": [
+    "Mi",
+    "compañera",
+    "vive",
+    "aquí",
+    "desde",
+    "hace",
+    "un",
+    "mes"
+   ],
+   "solution": [
+    "Mi",
+    "compañera",
+    "vive",
+    "aquí",
+    "desde",
+    "hace",
+    "un",
+    "mes"
+   ]
+  },
+  "kind": "target",
+  "why": "duplicate of ex07 (same sentence, same tiles): different sentence"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex14",
+  "set": {
+   "options": [
+    "Estudio español desde hace un año.",
+    "Estudio español desde un año.",
+    "Estudio español desde hace enero."
+   ]
+  },
+  "kind": "target",
+  "why": "wrong options are natural answers to ¿Cuánto tiempo…?: make them faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Desde cuándo conoces a Carlos?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Desde el año pasado.",
+    "Desde hace el año pasado.",
+    "Desde tres meses."
+   ]
+  },
+  "kind": "target",
+  "why": "Lucía is met for the first time in 07-05; \"Desde hace tres meses\" is a natural answer to ¿Desde cuándo?: Daniela asks about Carlos, options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Desde cuándo practicas español con Meg?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Practico español con Meg desde enero.",
+    "Practico español con Meg desde hace enero.",
+    "Practico español con Meg desde dos semanas."
+   ]
+  },
+  "kind": "target",
+  "why": "Meg asks Carlos in the plural about the two of them; wrong options natural answers"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex19",
+  "set": {
+   "sentence": "Vivimos en Hanói desde el mes pasado.",
+   "options": [
+    "We have lived in Hanoi since last month.",
+    "We have lived in Hanoi for a month.",
+    "We lived in Hanoi last month.",
+    "We have lived in Hanoi since last year."
+   ]
+  },
+  "kind": "target",
+  "why": "copy of a2.07.03.ex18: vary the sentence"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex20",
+  "set": {
+   "sentence": "Mi compañera vive aquí desde hace un mes.",
+   "english": "My classmate has lived here for a month."
+  },
+  "kind": "target",
+  "why": "copy of a2.07.05.ex21: vary the sentence"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-07-05-voc.json",
+  "old": "      \"translation\": \"café / cafeteria\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"café / cafeteria\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"vietnamita\",\n      \"translation\": \"Vietnamese\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "kind": "target",
+  "why": "vietnamita is in no vocabulary list and is used in a2.07.05.ex08: add it to the first lesson that uses it",
+  "id": "a2.07.05.ex08"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-07-05-gr.json",
+  "old": "          \"spanish\": \"Nos conocemos desde hace tres meses.\",\n          \"english\": \"We have known each other for three months.\"",
+  "new": "          \"spanish\": \"Hemos viajado juntos desde hace tres meses.\",\n          \"english\": \"We have travelled together for three months.\"",
+  "kind": "target",
+  "why": "the screen says \"combine the pretérito perfecto with desde\", but its fourth example is in the present (and repeats 07-04)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "que deberían visitar algún día",
+  "new": "que pueden visitar algún día",
+  "kind": "target",
+  "why": "conditional (Unit 26) in the story"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "«Espero que nos volvamos a ver pronto», dice Lucía.",
+  "new": "«¡Hasta pronto!», dice Lucía.",
+  "kind": "target",
+  "why": "present subjunctive (Unit 27) in the story"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "¿Por qué vino Lucía a vivir a Vietnam?",
+  "new": "¿Por qué ha venido Lucía a vivir a Vietnam?",
+  "kind": "target",
+  "why": "preterite (vino) before Unit 11"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "Preocupados porque Lucía no hablaba bien inglés.",
+  "new": "Preocupados porque Lucía no habla bien inglés.",
+  "kind": "target",
+  "why": "imperfect (hablaba) before Unit 21"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "Sorprendidos porque perdieron sus números de teléfono.",
+  "new": "Sorprendidos porque han perdido sus números de teléfono.",
+  "kind": "target",
+  "why": "preterite (perdieron) before Unit 11"
+ }
+]

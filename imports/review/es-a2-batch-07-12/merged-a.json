@@ -1,0 +1,2005 @@
+[
+ {
+  "file": "content/es-es/exercises/a2/a2-07-04-ex.json",
+  "id": "a2.07.04.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you have known your friend for three months.",
+     "answer": "Conozco a mi amiga desde hace tres meses."
+    },
+    {
+     "prompt": "Say that you have been practising Spanish for two weeks.",
+     "answer": "Practico español desde hace dos semanas."
+    },
+    {
+     "prompt": "Say that you have been speaking Spanish since January.",
+     "answer": "Hablo español desde enero."
+    }
+   ]
+  },
+  "kind": "other",
+  "why": "English prompts do not fit the stored answers (\"practise ... for two weeks\", \"speak ... since January\")"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-07-02-gr.json",
+  "old": "\"rows\": [\n        [\n          \"desde hace + duration\",\n          \"for + period of time\"\n        ],\n        [\n          \"desde + starting point\",\n          \"since + starting point\"\n        ]\n      ]",
+  "new": "\"rows\": [\n        [\n          \"desde enero\",\n          \"since January\"\n        ],\n        [\n          \"desde el lunes\",\n          \"since Monday\"\n        ],\n        [\n          \"desde el año pasado\",\n          \"since last year\"\n        ]\n      ]",
+  "kind": "other",
+  "why": "the same two-row table is on all five grammar screens of the unit: give 07-02 its own (starting points)"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-07-04-gr.json",
+  "old": "\"rows\": [\n        [\n          \"desde hace + duration\",\n          \"for + period of time\"\n        ],\n        [\n          \"desde + starting point\",\n          \"since + starting point\"\n        ]\n      ]",
+  "new": "\"rows\": [\n        [\n          \"conocer a alguien\",\n          \"Nos conocemos desde…\"\n        ],\n        [\n          \"estudiar / hablar / practicar un idioma\",\n          \"Estudio español desde…\"\n        ]\n      ]",
+  "kind": "other",
+  "why": "same table on all five screens: give 07-04 its own"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-07-05-gr.json",
+  "old": "\"rows\": [\n        [\n          \"desde hace + duration\",\n          \"for + period of time\"\n        ],\n        [\n          \"desde + starting point\",\n          \"since + starting point\"\n        ]\n      ]",
+  "new": "\"rows\": [\n        [\n          \"He estudiado español desde el año pasado\",\n          \"starting point: desde\"\n        ],\n        [\n          \"He practicado español desde hace tres meses\",\n          \"duration: desde hace\"\n        ]\n      ]",
+  "kind": "other",
+  "why": "same table on all five screens: give 07-05 its own"
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-07-01.json",
+  "old": "\"I can say how long you have been doing something using desde hace.\"",
+  "new": "\"I can say how long I have been doing something using desde hace.\"",
+  "kind": "other",
+  "why": "checklist-you"
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-07-04.json",
+  "old": "\"I can talk about how long you have known people and studied languages.\"",
+  "new": "\"I can talk about how long I have known people and studied languages.\"",
+  "kind": "other",
+  "why": "checklist-you"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "¿De qué trata principalmente la historia?",
+  "new": "¿Qué hacen Carlos y Meg esa tarde en el intercambio de idiomas?",
+  "kind": "other",
+  "why": "generic reading question (reading-generic): ask what the people do"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "De una fiesta de cumpleaños en un colegio de idiomas.",
+  "new": "Organizan una fiesta de cumpleaños para Daniela.",
+  "kind": "other",
+  "why": "reword options to answer the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "De cómo Carlos y Meg conocen a Lucía y entablan una nueva amistad.",
+  "new": "Conocen a Lucía, una estudiante española.",
+  "kind": "other",
+  "why": "reword options to answer the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "De un examen oral de español para profesores extranjeros.",
+  "new": "Hacen un examen oral de español.",
+  "kind": "other",
+  "why": "reword options to answer the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "De la búsqueda de un piso de alquiler en el centro de Madrid.",
+  "new": "Buscan un piso de alquiler en Madrid.",
+  "kind": "other",
+  "why": "reword options to answer the new question"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-01-ex.json",
+  "id": "a2.07.01.ex12",
+  "set": {
+   "options": [
+    "desde hace dos años",
+    "desde dos años",
+    "desde hace enero"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (19 vs 14): lengthen a wrong option; \"desde el año\" was not clearly wrong"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-01-ex.json",
+  "id": "a2.07.01.ex14",
+  "set": {
+   "options": [
+    "Estudio español desde hace un año.",
+    "Estudio español desde un año.",
+    "Estudio español desde hace enero."
+   ]
+  },
+  "kind": "target",
+  "why": "wrong options \"desde enero\"/\"desde el año pasado\" are natural answers to ¿Cuánto tiempo…?: make each one clearly faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-01-ex.json",
+  "id": "a2.07.01.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kaylee",
+     "text": "¿Cuánto tiempo vives en Hanói?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Vivo en Hanói desde hace tres meses.",
+    "Vivo en Hanói desde tres meses.",
+    "Vivo en Hanói desde hace enero."
+   ]
+  },
+  "kind": "target",
+  "why": "Meg asks Carlos in the plural about the two of them who live together (self-third-person); wrong options are natural answers: Kaylee asks Carlos, options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-02-ex.json",
+  "id": "a2.07.02.ex15",
+  "set": {
+   "options": [
+    "Desde el año pasado.",
+    "Desde hace el año pasado.",
+    "Desde un año."
+   ]
+  },
+  "kind": "target",
+  "why": "\"Desde hace un año\" / \"Desde hace tres meses\" are natural answers to ¿Desde cuándo…?: make wrong options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-02-ex.json",
+  "id": "a2.07.02.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kaylee",
+     "text": "¿Desde cuándo vives en Vietnam?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Desde enero.",
+    "Desde hace enero.",
+    "Desde tres meses."
+   ]
+  },
+  "kind": "target",
+  "why": "Meg asks Carlos about \"ustedes\" (herself and Carlos); wrong options natural answers: Kaylee asks, options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-03-ex.json",
+  "id": "a2.07.03.ex13",
+  "set": {
+   "options": [
+    "desde hace dos años / desde enero",
+    "desde dos años / desde enero",
+    "desde hace dos años / desde hace enero"
+   ]
+  },
+  "kind": "target",
+  "why": "both wrong options have two faults (both halves wrong): one fault each"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-03-ex.json",
+  "id": "a2.07.03.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Desde cuándo conoces a Meg?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "Carlos and Meg meet Lucía for the first time in the 07-05 story, so \"since last year\" contradicts it: Daniela asks about Meg"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-03-ex.json",
+  "id": "a2.07.03.ex16",
+  "set": {
+   "options": [
+    "Desde hace un año.",
+    "Desde un año.",
+    "Desde hace enero."
+   ]
+  },
+  "kind": "target",
+  "why": "\"Desde el año pasado\" / \"Desde enero\" are natural answers to ¿Cuánto tiempo?: make wrong options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-03-ex.json",
+  "id": "a2.07.03.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you have known a friend for three months.",
+     "answer": "Conozco a mi amiga desde hace tres meses."
+    },
+    {
+     "prompt": "Say that you have studied Spanish since last year.",
+     "answer": "Estudio español desde el año pasado."
+    },
+    {
+     "prompt": "Say that you have studied Spanish since Monday.",
+     "answer": "He estudiado español desde el lunes."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "\"practicado\" is listed only in a2-07-04 (unmet word): use estudiado"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-03-ex.json",
+  "id": "a2.07.03.ex19",
+  "set": {
+   "sentence": "He estudiado español desde el lunes.",
+   "english": "I have studied Spanish since Monday."
+  },
+  "kind": "target",
+  "why": "\"practicado\" is listed only in a2-07-04 (unmet word): use estudiado"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-04-ex.json",
+  "id": "a2.07.04.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Cuánto tiempo practicas español?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Practico español desde hace dos semanas.",
+    "Practico español desde dos semanas.",
+    "Practico español desde hace enero."
+   ]
+  },
+  "kind": "target",
+  "why": "Carlos asks Meg in the plural about themselves; wrong options natural answers: Daniela asks Carlos, options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-04-ex.json",
+  "id": "a2.07.04.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Lauren",
+     "text": "¿Desde cuándo conoces a Carlos?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Conozco a Carlos desde el año pasado.",
+    "Conozco a Carlos desde hace el año pasado.",
+    "Conozco a Carlos desde tres meses."
+   ]
+  },
+  "kind": "target",
+  "why": "Meg asks Carlos how long \"they\" know each other (self-third-person); Lauren asks Meg"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex05",
+  "set": {
+   "options": [
+    "La compañera nueva vive aquí desde hace tres meses.",
+    "La compañera nueva vive aquí desde hace febrero.",
+    "La compañera nueva vive aquí desde tres meses."
+   ]
+  },
+  "kind": "target",
+  "why": "Lucía has lived in Vietnam three months (story); \"la compañera nueva\" says two"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex09",
+  "set": {
+   "options": [
+    "Meg estudia español desde hace un año.",
+    "Meg estudia español desde hace marzo.",
+    "Meg estudia español desde un año."
+   ]
+  },
+  "kind": "target",
+  "why": "Lucía meets the group in the story that afternoon, so \"practica español con nosotros desde hace tres semanas\" is false; Meg has studied Spanish a year"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex13",
+  "set": {
+   "options": [
+    "Para ser profesora de español.",
+    "Para trabajar en una oficina.",
+    "Para viajar con su familia."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (59 vs 32), and enseñar / universidad are unmet: short right answer, met words"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex15",
+  "set": {
+   "options": [
+    "Toman algo en una cafetería.",
+    "Viajan a Ninh Bình en tren.",
+    "Estudian español en casa."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (28 vs 17): lengthen the wrong options"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex16",
+  "set": {
+   "options": [
+    "Vive en Vietnam desde hace tres meses.",
+    "Vive en Vietnam desde hace enero.",
+    "Vive en Vietnam desde tres meses."
+   ]
+  },
+  "kind": "target",
+  "why": "\"desde el año pasado\" / \"desde enero\" are natural answers to ¿Cuánto tiempo lleva…?: make wrong options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex17",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Lucía",
+     "text": "¿Desde cuándo estudias español?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "in the story Meg tells Lucía she has studied Spanish since last year: Lucía asks"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-05-ex.json",
+  "id": "a2.07.05.ex18",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Lucía",
+     "text": "¿Cuánto tiempo conoces a Meg?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Conozco a Meg desde hace un año.",
+    "Conozco a Meg desde un año.",
+    "Conozco a Meg desde hace enero."
+   ]
+  },
+  "kind": "target",
+  "why": "Meg asks Carlos how long \"they\" know each other (self-third-person): Lucía asks Carlos about Meg"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex02",
+  "set": {
+   "sentence": "Vivimos en Vietnam desde __ cuatro meses.",
+   "english": "We have lived in Vietnam for four months."
+  },
+  "kind": "target",
+  "why": "copy of a2.07.01.ex03: vary the words"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex08",
+  "set": {
+   "options": [
+    "desde el lunes",
+    "desde hace dos años",
+    "desde hace una semana"
+   ]
+  },
+  "kind": "target",
+  "why": "copy of a2.07.02.ex12: vary the words"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex12",
+  "set": {
+   "english": "My classmate has lived here for a month.",
+   "tiles": [
+    "Mi",
+    "compañera",
+    "vive",
+    "aquí",
+    "desde",
+    "hace",
+    "un",
+    "mes"
+   ],
+   "solution": [
+    "Mi",
+    "compañera",
+    "vive",
+    "aquí",
+    "desde",
+    "hace",
+    "un",
+    "mes"
+   ]
+  },
+  "kind": "target",
+  "why": "duplicate of ex07 (same sentence, same tiles): different sentence"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex14",
+  "set": {
+   "options": [
+    "Estudio español desde hace un año.",
+    "Estudio español desde un año.",
+    "Estudio español desde hace enero."
+   ]
+  },
+  "kind": "target",
+  "why": "wrong options are natural answers to ¿Cuánto tiempo…?: make them faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Desde cuándo conoces a Carlos?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Desde el año pasado.",
+    "Desde hace el año pasado.",
+    "Desde tres meses."
+   ]
+  },
+  "kind": "target",
+  "why": "Lucía is met for the first time in 07-05; \"Desde hace tres meses\" is a natural answer to ¿Desde cuándo?: Daniela asks about Carlos, options faulty"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Desde cuándo practicas español con Meg?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Practico español con Meg desde enero.",
+    "Practico español con Meg desde hace enero.",
+    "Practico español con Meg desde dos semanas."
+   ]
+  },
+  "kind": "target",
+  "why": "Meg asks Carlos in the plural about the two of them; wrong options natural answers"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex19",
+  "set": {
+   "sentence": "Vivimos en Hanói desde el mes pasado.",
+   "options": [
+    "We have lived in Hanoi since last month.",
+    "We have lived in Hanoi for a month.",
+    "We lived in Hanoi last month.",
+    "We have lived in Hanoi since last year."
+   ]
+  },
+  "kind": "target",
+  "why": "copy of a2.07.03.ex18: vary the sentence"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-07-consolidation-ex.json",
+  "id": "a2.07.consolidation.ex20",
+  "set": {
+   "sentence": "Mi compañera vive aquí desde hace un mes.",
+   "english": "My classmate has lived here for a month."
+  },
+  "kind": "target",
+  "why": "copy of a2.07.05.ex21: vary the sentence"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-07-05-voc.json",
+  "old": "      \"translation\": \"café / cafeteria\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "new": "      \"translation\": \"café / cafeteria\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"vietnamita\",\n      \"translation\": \"Vietnamese\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "kind": "target",
+  "why": "vietnamita is in no vocabulary list and is used in a2.07.05.ex08: add it to the first lesson that uses it",
+  "id": "a2.07.05.ex08"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-07-05-gr.json",
+  "old": "          \"spanish\": \"Nos conocemos desde hace tres meses.\",\n          \"english\": \"We have known each other for three months.\"",
+  "new": "          \"spanish\": \"Hemos viajado juntos desde hace tres meses.\",\n          \"english\": \"We have travelled together for three months.\"",
+  "kind": "target",
+  "why": "the screen says \"combine the pretérito perfecto with desde\", but its fourth example is in the present (and repeats 07-04)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "que deberían visitar algún día",
+  "new": "que pueden visitar algún día",
+  "kind": "target",
+  "why": "conditional (Unit 26) in the story"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "«Espero que nos volvamos a ver pronto», dice Lucía.",
+  "new": "«¡Hasta pronto!», dice Lucía.",
+  "kind": "target",
+  "why": "present subjunctive (Unit 27) in the story"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "¿Por qué vino Lucía a vivir a Vietnam?",
+  "new": "¿Por qué ha venido Lucía a vivir a Vietnam?",
+  "kind": "target",
+  "why": "preterite (vino) before Unit 11"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "Preocupados porque Lucía no hablaba bien inglés.",
+  "new": "Preocupados porque Lucía no habla bien inglés.",
+  "kind": "target",
+  "why": "imperfect (hablaba) before Unit 21"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-07.json",
+  "old": "Sorprendidos porque perdieron sus números de teléfono.",
+  "new": "Sorprendidos porque han perdido sus números de teléfono.",
+  "kind": "target",
+  "why": "preterite (perdieron) before Unit 11"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-01-ex.json",
+  "id": "a2.08.01.ex05",
+  "set": {
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "other",
+  "why": "wrong options answer a different question: unit vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-01-ex.json",
+  "id": "a2.08.01.ex14",
+  "set": {
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "other",
+  "why": "wrong replies answer a different question: unit vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-04-ex.json",
+  "id": "a2.08.04.ex05",
+  "set": {
+   "question": "Which is a positive response to an invitation to a typical dinner?",
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "other",
+  "why": "stem says \"traditional\" (now typical); wrong options answer another function: vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-04-ex.json",
+  "id": "a2.08.04.ex12",
+  "set": {
+   "english": "I haven't bought the drink yet."
+  },
+  "kind": "other",
+  "why": "English says \"drinks\", the sentence \"la bebida\""
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-04-ex.json",
+  "id": "a2.08.04.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you have already prepared the dish.",
+     "answer": "Ya he preparado el plato."
+    },
+    {
+     "prompt": "Say that you have not bought the drink yet.",
+     "answer": "Todavía no he comprado la bebida."
+    },
+    {
+     "prompt": "Say that you and your friends have already prepared the food.",
+     "answer": "Ya hemos preparado la comida."
+    }
+   ]
+  },
+  "kind": "other",
+  "why": "third prompt says \"you have\" (singular) but the stored answer is \"hemos\""
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-consolidation-ex.json",
+  "id": "a2.08.consolidation.ex14",
+  "set": {
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "other",
+  "why": "wrong replies answer a different question: unit vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-consolidation-ex.json",
+  "id": "a2.08.consolidation.ex15",
+  "set": {
+   "distractor_skills": {
+    "2": "present-tense"
+   }
+  },
+  "kind": "other",
+  "why": "\"Ya preparo la cena.\" is a well-formed present: distractor_skills"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-01-gr.json",
+  "old": "\"rows\": [\n        [\n          \"ya + pretérito perfecto\",\n          \"already + present perfect\"\n        ],\n        [\n          \"todavía no + pretérito perfecto\",\n          \"not yet + present perfect\"\n        ]\n      ]",
+  "new": "\"rows\": [\n        [\n          \"¿Quieres + infinitive?\",\n          \"Do you want to …?\"\n        ],\n        [\n          \"¿Puedes + infinitive?\",\n          \"Can you …?\"\n        ]\n      ]",
+  "kind": "other",
+  "why": "the table on the invitation screen was the ya/todavía no table"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-02-gr.json",
+  "old": "\"rows\": [\n        [\n          \"ya + pretérito perfecto\",\n          \"already + present perfect\"\n        ],\n        [\n          \"todavía no + pretérito perfecto\",\n          \"not yet + present perfect\"\n        ]\n      ]",
+  "new": "\"rows\": [\n        [\n          \"ya he / ya hemos + participle\",\n          \"I have / we have already …\"\n        ],\n        [\n          \"Lo siento, ya he hecho un plan.\",\n          \"I'm sorry, I have already made a plan.\"\n        ]\n      ]",
+  "kind": "other",
+  "why": "same table on every screen of the unit"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-03-gr.json",
+  "old": "\"rows\": [\n        [\n          \"ya + pretérito perfecto\",\n          \"already + present perfect\"\n        ],\n        [\n          \"todavía no + pretérito perfecto\",\n          \"not yet + present perfect\"\n        ]\n      ]",
+  "new": "\"rows\": [\n        [\n          \"todavía no he + participle\",\n          \"I have not … yet\"\n        ],\n        [\n          \"todavía no hemos + participle\",\n          \"we have not … yet\"\n        ]\n      ]",
+  "kind": "other",
+  "why": "same table on every screen of the unit"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-04-gr.json",
+  "old": "\"rows\": [\n        [\n          \"ya + pretérito perfecto\",\n          \"already + present perfect\"\n        ],\n        [\n          \"todavía no + pretérito perfecto\",\n          \"not yet + present perfect\"\n        ]\n      ]",
+  "new": "\"rows\": [\n        [\n          \"ya + what is done\",\n          \"Ya he preparado el plato.\"\n        ],\n        [\n          \"todavía no + what is still to do\",\n          \"Todavía no he comprado la bebida.\"\n        ]\n      ]",
+  "kind": "other",
+  "why": "same table on every screen of the unit"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-05-gr.json",
+  "old": "\"rows\": [\n        [\n          \"ya + pretérito perfecto\",\n          \"already + present perfect\"\n        ],\n        [\n          \"todavía no + pretérito perfecto\",\n          \"not yet + present perfect\"\n        ]\n      ]",
+  "new": "\"rows\": [\n        [\n          \"¿Quieres venir a …?\",\n          \"invite\"\n        ],\n        [\n          \"Sí, claro. Ya he preparado …\",\n          \"accept and say what is done\"\n        ],\n        [\n          \"Todavía no he comprado …\",\n          \"say what is not done yet\"\n        ]\n      ]",
+  "kind": "other",
+  "why": "same table on every screen of the unit"
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-08-02.json",
+  "old": "\"I can say that you have already made plans when responding to an invitation.\"",
+  "new": "\"I can say that I have already made plans when responding to an invitation.\"",
+  "kind": "other",
+  "why": "checklist-you"
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-08-03.json",
+  "old": "\"I can say that you have not done something yet in an invitation context.\"",
+  "new": "\"I can say that I have not done something yet in an invitation context.\"",
+  "kind": "other",
+  "why": "checklist-you"
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-08-04.json",
+  "old": "\"I can talk about what you have already prepared and what you have not prepared yet.\"",
+  "new": "\"I can talk about what I have already prepared and what I have not prepared yet.\"",
+  "kind": "other",
+  "why": "checklist-you"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-08.json",
+  "old": "¿Cuál es el acontecimiento principal del relato?",
+  "new": "¿Dónde cenan los amigos?",
+  "kind": "other",
+  "why": "generic reading question (reading-generic)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-08.json",
+  "old": "Un viaje sorpresa de los amigos a una ciudad española.",
+  "new": "En un restaurante de Hanói.",
+  "kind": "other",
+  "why": "options for the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-08.json",
+  "old": "Una cena en casa de Lucía donde aprenden sobre comida y cultura española.",
+  "new": "En el apartamento de Lucía.",
+  "kind": "other",
+  "why": "options for the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-08.json",
+  "old": "Una discusión sobre cuál es el mejor restaurante de Hanói.",
+  "new": "En casa de Carlos y Meg.",
+  "kind": "other",
+  "why": "options for the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-08.json",
+  "old": "La inauguración de una escuela de cocina en el barrio.",
+  "new": "En una escuela de cocina.",
+  "kind": "other",
+  "why": "options for the new question"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-01-ex.json",
+  "id": "a2.08.01.ex02",
+  "set": {
+   "options": [
+    "¿Quieres venir a la fiesta?",
+    "¿Has preparado la comida?",
+    "¿Has cocinado la cena?"
+   ],
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-punctuation (only the right option starts with ¿); wrong options are of another function, so a wrong answer shows the invitation was not understood: unit vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-01-ex.json",
+  "id": "a2.08.01.ex07",
+  "set": {
+   "sentence": "Sí, __. Puedo ir.",
+   "english": "Yes, of course. I can go."
+  },
+  "kind": "target",
+  "why": "\"Me gustaría\" is polite-softening (conditional, Unit 26): use Puedo ir"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-01-ex.json",
+  "id": "a2.08.01.ex08",
+  "set": {
+   "english": "Can you come on Saturday?",
+   "tiles": [
+    "¿Puedes",
+    "venir",
+    "el",
+    "sábado?"
+   ],
+   "solution": [
+    "¿Puedes",
+    "venir",
+    "el",
+    "sábado?"
+   ],
+   "teaches": [
+    "querer-poder"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: ¿Te gustaría…? is polite-softening (a2-condicionalsimple-03); use ¿Puedes…? (poder, Unit 10)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-01-ex.json",
+  "id": "a2.08.01.ex09",
+  "set": {
+   "options": [
+    "Sí, puedo ir.",
+    "Todavía no he cocinado.",
+    "Ya he preparado la comida."
+   ],
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: Me gustaría; wrong options answer another question: vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-01-ex.json",
+  "id": "a2.08.01.ex11",
+  "set": {
+   "sentence": "¿Puedes __ a la fiesta?",
+   "english": "Can you come to the party?"
+  },
+  "kind": "target",
+  "why": "¿Te gustaría? is polite-softening (Unit 26): use ¿Puedes?"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-01-ex.json",
+  "id": "a2.08.01.ex13",
+  "set": {
+   "options": [
+    "¿Puedes venir el sábado?",
+    "¿Puedes venir sábado el?",
+    "¿Puedes el venir sábado?"
+   ],
+   "teaches": [
+    "querer-poder"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: ¿Te gustaría…? (polite-softening); word-order choice on ¿Puedes…?"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-01-ex.json",
+  "id": "a2.08.01.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Puedes venir el sábado?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, claro. Puedo ir.",
+    "Todavía no he comprado la comida.",
+    "Ya he preparado la cena."
+   ],
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: ¿Te gustaría…?/Me gustaría; wrong options \"Sí, todavía no.\" and \"Sí, ya he.\" are garbled; tagged ya-todavia-no although nothing tests it"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-01-ex.json",
+  "id": "a2.08.01.ex16",
+  "set": {
+   "template": [
+    {
+     "prompt": "Ask someone if they want to come to the party.",
+     "answer": "¿Quieres venir a la fiesta?"
+    },
+    {
+     "prompt": "Say yes, of course, and that you want to go.",
+     "answer": "Sí, claro. Quiero ir."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "both invitations and acceptances now have two natural forms (quieres / puedes): pin the stored answers"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-02-ex.json",
+  "id": "a2.08.02.ex02",
+  "set": {
+   "options": [
+    "¿Puedes cenar con nosotros?",
+    "¿Ya has preparado la cena?",
+    "¿Ya hemos aceptado el plan?"
+   ],
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: ¿Te gustaría…? (polite-softening); wrong options of another function: vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-02-ex.json",
+  "id": "a2.08.02.ex03",
+  "set": {
+   "sentence": "¿Quieres __ con nosotros el sábado?",
+   "english": "Do you want to have dinner with us on Saturday?"
+  },
+  "kind": "target",
+  "why": "¿Te gustaría? is polite-softening (Unit 26)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-02-ex.json",
+  "id": "a2.08.02.ex08",
+  "set": {
+   "english": "I want to accept the plan.",
+   "tiles": [
+    "Quiero",
+    "aceptar",
+    "el",
+    "plan"
+   ],
+   "solution": [
+    "Quiero",
+    "aceptar",
+    "el",
+    "plan"
+   ],
+   "teaches": [
+    "querer-poder"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: Me gustaría (polite-softening)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-02-ex.json",
+  "id": "a2.08.02.ex09",
+  "set": {
+   "options": [
+    "Sí, claro. Puedo cenar el sábado.",
+    "Ya he aceptado otro plan.",
+    "Todavía no he preparado la cena."
+   ],
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: Me gustaría…; es-latam keeps ustedes; wrong options answer another question: vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-02-ex.json",
+  "id": "a2.08.02.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Quieres venir a cenar el sábado?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Lo siento, ya he hecho un plan.",
+    "Lo siento, ya han hecho un plan.",
+    "Lo siento, ya has hecho un plan."
+   ]
+  },
+  "kind": "target",
+  "why": "\"Ya he preparado la cena\" does not answer ¿Quieres venir a cenar? (a non sequitur, though it is the keyed answer); the lesson teaches \"I have already made plans\""
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-03-ex.json",
+  "id": "a2.08.03.ex02",
+  "set": {
+   "options": [
+    "¿Quieres venir a una clase de cocina?",
+    "¿Has comprado la comida para la clase?",
+    "¿Has cocinado algo para la clase?"
+   ],
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-punctuation (only the right option starts with ¿); wrong options are of another function: unit vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-03-ex.json",
+  "id": "a2.08.03.ex05",
+  "set": {
+   "options": [
+    "Sí, claro. Voy con vosotros.",
+    "Todavía no he comprado la comida.",
+    "Todavía no he cocinado."
+   ],
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "friends in Spain say vosotros, not ustedes; wrong options answer another question: vocabulary",
+  "variant": "es-es"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-03-ex.json",
+  "id": "a2.08.03.ex07",
+  "set": {
+   "sentence": "Sí, __ ir con vosotros.",
+   "english": "Yes, I want to go with you all."
+  },
+  "kind": "target",
+  "why": "friends in Spain say vosotros, not ustedes",
+  "variant": "es-es"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-03-ex.json",
+  "id": "a2.08.03.ex08",
+  "set": {
+   "english": "Can you cook on Saturday?",
+   "tiles": [
+    "¿Puedes",
+    "cocinar",
+    "el",
+    "sábado?"
+   ],
+   "solution": [
+    "¿Puedes",
+    "cocinar",
+    "el",
+    "sábado?"
+   ],
+   "teaches": [
+    "querer-poder"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: ¿Te gustaría…? (polite-softening)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-03-ex.json",
+  "id": "a2.08.03.ex09",
+  "set": {
+   "options": [
+    "Sí, claro. Puedo ir a la clase.",
+    "Todavía no he comprado la comida.",
+    "Todavía no he cocinado hoy."
+   ],
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: Me gustaría…; wrong options answer another question: vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-04-ex.json",
+  "id": "a2.08.04.ex02",
+  "set": {
+   "question": "Which sentence invites someone to a typical dinner?",
+   "options": [
+    "¿Quieres venir a una cena típica?",
+    "¿Has comprado la bebida para la cena?",
+    "¿Has preparado el plato para la cena?"
+   ],
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "tradicional is unmet (first at b1-12-02): típica (A2 Unit 3); wrong options answer another function: vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-04-ex.json",
+  "id": "a2.08.04.ex04",
+  "set": {
+   "english": "Do you want to bring a typical dish?",
+   "tiles": [
+    "¿Quieres",
+    "traer",
+    "un",
+    "plato",
+    "típico?"
+   ],
+   "solution": [
+    "¿Quieres",
+    "traer",
+    "un",
+    "plato",
+    "típico?"
+   ]
+  },
+  "kind": "target",
+  "why": "tradicional is unmet: típico"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-04-ex.json",
+  "id": "a2.08.04.ex07",
+  "set": {
+   "sentence": "Sí, quiero __ la tradición.",
+   "english": "Yes, I want to celebrate the tradition."
+  },
+  "kind": "target",
+  "why": "\"Me gustaría\" is polite-softening (Unit 26)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-04-ex.json",
+  "id": "a2.08.04.ex08",
+  "set": {
+   "english": "Can you bring a drink?",
+   "tiles": [
+    "¿Puedes",
+    "traer",
+    "una",
+    "bebida?"
+   ],
+   "solution": [
+    "¿Puedes",
+    "traer",
+    "una",
+    "bebida?"
+   ],
+   "teaches": [
+    "querer-poder"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: ¿Te gustaría…? (polite-softening)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-04-ex.json",
+  "id": "a2.08.04.ex09",
+  "set": {
+   "options": [
+    "Sí, claro. Puedo traer un plato.",
+    "Todavía no he preparado la bebida.",
+    "Ya he comprado el plato."
+   ],
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: Me gustaría…; wrong options answer another question: vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-05-ex.json",
+  "id": "a2.08.05.ex02",
+  "set": {
+   "options": [
+    "¿Quieres venir a una celebración especial?",
+    "¿Has comprado la bebida para la celebración?",
+    "¿Has aceptado la invitación a la celebración?"
+   ],
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-punctuation (only the right option starts with ¿); wrong options are of another function: unit vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-05-ex.json",
+  "id": "a2.08.05.ex05",
+  "set": {
+   "options": [
+    "Sí, gracias. Quiero ir.",
+    "Todavía no he comprado la bebida.",
+    "Todavía no he cocinado."
+   ],
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (43 vs 33): shorten the right answer; wrong options answer another function: vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-05-ex.json",
+  "id": "a2.08.05.ex08",
+  "set": {
+   "english": "Can you come to the celebration?",
+   "tiles": [
+    "¿Puedes",
+    "venir",
+    "a",
+    "la",
+    "celebración?"
+   ],
+   "solution": [
+    "¿Puedes",
+    "venir",
+    "a",
+    "la",
+    "celebración?"
+   ],
+   "teaches": [
+    "querer-poder"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: ¿Te gustaría…? (polite-softening)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-05-ex.json",
+  "id": "a2.08.05.ex09",
+  "set": {
+   "options": [
+    "Sí, gracias. Puedo ir a la celebración.",
+    "Todavía no he aceptado la invitación.",
+    "Todavía no he preparado el plato."
+   ],
+   "teaches": [
+    "a2-making-responding-invitations-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: Me gustaría…; wrong options answer another question: vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-05-ex.json",
+  "id": "a2.08.05.ex12",
+  "set": {
+   "question": "¿Qué plato preparan los amigos con Lucía?",
+   "options": [
+    "Una tortilla española.",
+    "Una ensalada española.",
+    "Un pastel español."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (22 vs 11); enseña, paella, sopa unmet (tortilla is added to the vocabulary list: the story and the question need it)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-05-ex.json",
+  "id": "a2.08.05.ex13",
+  "set": {
+   "question": "¿Ha probado Kaylee este plato?",
+   "options": [
+    "«No, todavía no».",
+    "«Sí, claro que sí».",
+    "«Sí, ya hemos probado»."
+   ]
+  },
+  "kind": "target",
+  "why": "veces is first taught at a2-09-01 (unmet); question-answer-type: yes/no replies to an open question"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-05-ex.json",
+  "id": "a2.08.05.ex14",
+  "set": {
+   "options": [
+    "Les muestra fotografías de su ciudad.",
+    "Prepara una ensalada para todos.",
+    "Cena con sus amigos en el parque."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (37 vs 24); enseña unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-05-ex.json",
+  "id": "a2.08.05.ex15",
+  "set": {
+   "options": [
+    "Dan las gracias a Lucía.",
+    "Preparan otra cena en casa.",
+    "Compran una bebida para todos."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (37 vs 21 ...) ; \"dan\" first taught at a2-12-02"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-05-ex.json",
+  "id": "a2.08.05.ex16",
+  "set": {
+   "options": [
+    "Sí, claro. Ya he preparado la comida.",
+    "Todavía no he venido a la celebración.",
+    "Todavía he venido a la celebración."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (37 vs 21): lengthen the wrong options"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-05-ex.json",
+  "id": "a2.08.05.ex17",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Has aceptado la invitación?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Todavía no he aceptado la invitación.",
+    "Ya no he aceptado la invitación.",
+    "Todavía no acepto la invitación."
+   ]
+  },
+  "kind": "target",
+  "why": "duplicate of a2.08.04.ex16 / consolidation ex16 with the speakers swapped"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-05-ex.json",
+  "id": "a2.08.05.ex18",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Has cocinado la cena?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, ya he cocinado la cena.",
+    "Sí, todavía no he cocinado la cena.",
+    "Sí, todavía he cocinado la cena."
+   ]
+  },
+  "kind": "target",
+  "why": "duplicate of a2.08.04.ex15 with the speakers swapped"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-consolidation-ex.json",
+  "id": "a2.08.consolidation.ex03",
+  "set": {
+   "english": "Do you want to come to the dinner?",
+   "tiles": [
+    "¿Quieres",
+    "venir",
+    "a",
+    "la",
+    "cena?"
+   ],
+   "solution": [
+    "¿Quieres",
+    "venir",
+    "a",
+    "la",
+    "cena?"
+   ]
+  },
+  "kind": "target",
+  "why": "copy of a2.08.01.ex04: vary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-consolidation-ex.json",
+  "id": "a2.08.consolidation.ex08",
+  "set": {
+   "options": [
+    "Todavía no he cocinado la cena.",
+    "Ya he cocinado la cena.",
+    "Todavía he cocinado la cena."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-time-word ayer + length give-away; \"He cocinado ayer\" also mixes a preterite marker with the perfecto"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-consolidation-ex.json",
+  "id": "a2.08.consolidation.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Has preparado la bebida?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Todavía no he preparado la bebida.",
+    "Ya no he preparado la bebida.",
+    "Todavía no preparo la bebida."
+   ],
+   "distractor_skills": {
+    "2": "present-tense"
+   }
+  },
+  "kind": "target",
+  "why": "duplicate of a2.08.04.ex16 / 05.ex17"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-consolidation-ex.json",
+  "id": "a2.08.consolidation.ex19",
+  "set": {
+   "sentence": "Ya hemos aceptado la invitación.",
+   "options": [
+    "We have already accepted the invitation.",
+    "We have not accepted the invitation yet.",
+    "We accept the invitation now.",
+    "We will accept the invitation tomorrow."
+   ]
+  },
+  "kind": "target",
+  "why": "copy of a2.08.02.ex18"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-08-consolidation-ex.json",
+  "id": "a2.08.consolidation.ex20",
+  "set": {
+   "sentence": "Todavía no hemos preparado la cena.",
+   "english": "We have not prepared dinner yet."
+  },
+  "kind": "target",
+  "why": "copy of a2.08.05.ex21"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-08-05-voc.json",
+  "old": "      \"translation\": \"special\",\n      \"pos\": \"adjective\"\n    }\n  ]",
+  "new": "      \"translation\": \"special\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"la tortilla\",\n      \"translation\": \"omelette\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "kind": "target",
+  "why": "tortilla is in no list before b1 and a2.08.05.ex12 needs it",
+  "id": "a2.08.05.ex12"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-01-gr.json",
+  "old": "\"content\": \"Use simple invitation forms such as ¿*Quieres* *venir*? and ¿Te *gustaría* *venir*? to invite someone. Positive responses can use *Sí*, *claro*, *Me gustaría* or *Sí*, *quiero* *ir*. Keep the invitation focused on the event, time or activity. In this lesson the main aim is making and accepting invitations naturally.\"",
+  "new": "\"content\": \"Use *¿Quieres* + infinitive? to invite someone: *¿Quieres venir a la fiesta?* You know *querer* and *poder* from Unit 10, so you can also ask *¿Puedes* + infinitive? to check that the person is free: *¿Puedes venir el sábado?* To accept, say *Sí, claro* and add *Quiero ir* or *Puedo ir*. Keep the invitation focused on the event, time or activity.\"",
+  "kind": "target",
+  "why": "08-01 teaches ¿Te gustaría…? (polite-softening, Unit 26) and its table is about ya/todavía no: rewrite with quieres/puedes"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-01-gr.json",
+  "old": "\"items\": [\n        {\n          \"spanish\": \"¿Quieres venir a la fiesta?\",\n          \"english\": \"Do you want to come to the party?\"\n        },\n        {\n          \"spanish\": \"Sí, claro. Quiero ir.\",\n          \"english\": \"Yes, of course. I want to go.\"\n        },\n        {\n          \"spanish\": \"¿Te gustaría venir el sábado?\",\n          \"english\": \"Would you like to come on Saturday?\"\n        },\n        {\n          \"spanish\": \"Sí, me gustaría.\",\n          \"english\": \"Yes, I would.\"\n        }\n      ]",
+  "new": "\"items\": [\n        {\n          \"spanish\": \"¿Quieres venir a la fiesta?\",\n          \"english\": \"Do you want to come to the party?\"\n        },\n        {\n          \"spanish\": \"Sí, claro. Quiero ir.\",\n          \"english\": \"Yes, of course. I want to go.\"\n        },\n        {\n          \"spanish\": \"¿Puedes venir el sábado?\",\n          \"english\": \"Can you come on Saturday?\"\n        },\n        {\n          \"spanish\": \"Sí, claro. Puedo ir.\",\n          \"english\": \"Yes, of course. I can go.\"\n        }\n      ]",
+  "kind": "target",
+  "why": "gustaría examples replaced"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-01-gr.json",
+  "old": "\"content\": \"*Quieres* and *gustaría* are not interchangeable in tone: ¿*Quieres* *venir*? is direct and casual, while ¿Te *gustaría* *venir*? softens the invitation — reach for *gustaría* when you want to sound more polite or less pushy.\"",
+  "new": "\"content\": \"*¿Quieres venir?* asks whether the person wants to come; *¿Puedes venir?* asks whether they are free. Both are friendly invitations, and *Sí, claro* answers either one.\"",
+  "kind": "target",
+  "why": "tip about gustaría replaced"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-02-gr.json",
+  "old": "\"content\": \"Use *ya* with the *pretérito* *perfecto* to say that something has already happened or has already been done. *Ya* normally appears before the participle or after the auxiliary: *Ya he preparado la cena*. In invitation contexts, it can explain that you have already made plans or preparations.\"",
+  "new": "\"content\": \"You know *ya* with the *pretérito perfecto* from Unit 2: *Ya he preparado la cena*. Here you use it to answer an invitation: when you have already made plans or preparations, say so. *Ya* comes before *he* or *hemos*, and the participle follows.\"",
+  "kind": "target",
+  "why": "presents ya + pretérito perfecto as new (Unit 2); and states a position (\"before the participle or after the auxiliary\") that its own example contradicts"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-02-gr.json",
+  "old": "\"items\": [\n        {\n          \"spanish\": \"Ya he preparado la cena.\",\n          \"english\": \"I have already prepared dinner.\"\n        },\n        {\n          \"spanish\": \"Ya he hecho un plan.\",\n          \"english\": \"I have already made a plan.\"\n        },\n        {\n          \"spanish\": \"Ya hemos aceptado la invitación.\",\n          \"english\": \"We have already accepted the invitation.\"\n        },\n        {\n          \"spanish\": \"Ya he preparado todo.\",\n          \"english\": \"I have already prepared everything.\"\n        }\n      ]",
+  "new": "\"items\": [\n        {\n          \"spanish\": \"Ya he preparado la cena.\",\n          \"english\": \"I have already prepared dinner.\"\n        },\n        {\n          \"spanish\": \"Lo siento, ya he hecho un plan.\",\n          \"english\": \"I'm sorry, I have already made a plan.\"\n        },\n        {\n          \"spanish\": \"Ya hemos aceptado la invitación.\",\n          \"english\": \"We have already accepted the invitation.\"\n        },\n        {\n          \"spanish\": \"Ya he preparado todo.\",\n          \"english\": \"I have already prepared everything.\"\n        }\n      ]",
+  "kind": "target",
+  "why": "example 2 shows the lesson's point (declining with ya)"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-03-gr.json",
+  "old": "\"content\": \"Use *todavía no* with the *pretérito* *perfecto* to say that something has not happened or has not been done yet. *Todavía no* normally comes before the auxiliary: *Todavía no he preparado la comida*. It is useful when responding to an invitation and explaining that preparations are incomplete.\"",
+  "new": "\"content\": \"You know *todavía no* with the *pretérito perfecto* from Unit 2: *Todavía no he preparado la comida*. Here you use it to answer an invitation and say that your preparations are not finished. *Todavía no* comes before *he* or *hemos*.\"",
+  "kind": "target",
+  "why": "presents todavía no + pretérito perfecto as new (Unit 2)"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-04-gr.json",
+  "old": "\"content\": \"Use *ya* to say that a preparation has been completed and *todavía no* to say that it remains unfinished. Combine these forms with food, drinks, dishes and traditions. The *pretérito* *perfecto* makes the connection with the present clear: *Ya he preparado el plato, pero todavía no he comprado la bebida*.\"",
+  "new": "\"content\": \"You know *ya* and *todavía no* from Unit 2. Here you combine them with food, drinks, dishes and traditions to say what is ready and what is still missing: *Ya he preparado el plato, pero todavía no he comprado la bebida*.\"",
+  "kind": "target",
+  "why": "presents ya / todavía no as new (Unit 2)"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-05-gr.json",
+  "old": "\"content\": \"Combine invitations with *ya* and *todavía no* to talk about plans and preparations. Use *ya* for completed preparations and *todavía no* for unfinished ones. Respond to invitations by accepting, explaining what you have already done, or saying what you have not done yet.\"",
+  "new": "\"content\": \"Combine invitations with *ya* and *todavía no*, which you know from Unit 2, to talk about plans and preparations. Use *ya* for completed preparations and *todavía no* for unfinished ones. Respond to invitations by accepting, explaining what you have already done, or saying what you have not done yet.\"",
+  "kind": "target",
+  "why": "ya / todavía no are known from Unit 2 (the lesson presents them as new)"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-08-05-gr.json",
+  "old": "\"content\": \"Notice that stating what you have already done can work as an implicit yes: *Ya he preparado la comida* answers an invitation without needing a separate *sí* — the preparation itself signals you are coming.\"",
+  "new": "\"content\": \"Add *Sí, claro* first when you accept, then say what you have already done: *Sí, claro. Ya he preparado la comida.*\"",
+  "kind": "target",
+  "why": "the tip claims that stating a preparation answers an invitation \"without needing a separate sí\": it does not, a bare Ya he preparado la comida does not say yes"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-08.json",
+  "old": "«¿Ya han probado este plato alguna vez?», pregunta.",
+  "new": "«¿Ya han probado este plato?», pregunta.",
+  "kind": "target",
+  "why": "alguna vez is Unit 9 (alguna-vez, a2-09-01)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-08.json",
+  "old": "«¿Ya han probado este plato?», pregunta.",
+  "new": "«¿Habéis probado ya este plato?», pregunta.",
+  "kind": "target",
+  "why": "friends in Spain say vosotros (second step after the fix above)",
+  "variant": "es-es"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-08.json",
+  "old": "Mientras cocinan, hablan de las diferencias",
+  "new": "Cocinan juntos y hablan de las diferencias",
+  "kind": "target",
+  "why": "mientras (cuando-mientras) is Unit 13",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-08.json",
+  "old": "¿Por qué llegaron Carlos y Meg antes que los demás invitados?",
+  "new": "¿Por qué llegan Carlos y Meg antes que los demás invitados?",
+  "kind": "target",
+  "why": "preterite (llegaron) before Unit 11"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-08.json",
+  "old": "Porque se habían equivocado con la hora de la cena.",
+  "new": "Porque se equivocan con la hora de la cena.",
+  "kind": "target",
+  "why": "pluperfect (B1)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-08.json",
+  "old": "Porque no tenían comida en su propio apartamento.",
+  "new": "Porque no tienen comida en su propio apartamento.",
+  "kind": "target",
+  "why": "imperfect before Unit 21"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-09-02-gr.json",
+  "old": "\"rows\": [\n        [\n          \"alguna vez\",\n          \"ever\"\n        ],\n        [\n          \"nunca\",\n          \"never\"\n        ]\n      ]",
+  "new": "\"rows\": [\n        [\n          \"Nunca he visitado ese pueblo.\",\n          \"I have never visited that village.\"\n        ],\n        [\n          \"No he visitado nunca ese pueblo.\",\n          \"the same, with no before the verb\"\n        ]\n      ]",
+  "kind": "other",
+  "why": "the same alguna vez / nunca table is on all five screens of the unit"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-09-03-gr.json",
+  "old": "\"rows\": [\n        [\n          \"alguna vez\",\n          \"ever\"\n        ],\n        [\n          \"nunca\",\n          \"never\"\n        ]\n      ]",
+  "new": "\"rows\": [\n        [\n          \"Sí, he + participle\",\n          \"Yes, I have …\"\n        ],\n        [\n          \"No, nunca he + participle\",\n          \"No, I have never …\"\n        ]\n      ]",
+  "kind": "other",
+  "why": "same table on every screen"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-09-04-gr.json",
+  "old": "\"rows\": [\n        [\n          \"alguna vez\",\n          \"ever\"\n        ],\n        [\n          \"nunca\",\n          \"never\"\n        ]\n      ]",
+  "new": "\"rows\": [\n        [\n          \"¿Has comido alguna vez …?\",\n          \"Have you ever eaten …?\"\n        ],\n        [\n          \"Nunca he probado …\",\n          \"I have never tried …\"\n        ]\n      ]",
+  "kind": "other",
+  "why": "same table on every screen"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-09-05-gr.json",
+  "old": "\"rows\": [\n        [\n          \"alguna vez\",\n          \"ever\"\n        ],\n        [\n          \"nunca\",\n          \"never\"\n        ]\n      ]",
+  "new": "\"rows\": [\n        [\n          \"¿Has estado alguna vez en …?\",\n          \"question\"\n        ],\n        [\n          \"Sí, he estado … / No, nunca he estado …\",\n          \"answer\"\n        ]\n      ]",
+  "kind": "other",
+  "why": "same table on every screen"
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-09-02.json",
+  "old": "\"I can say that you have never had an experience using nunca.\"",
+  "new": "\"I can say that I have never had an experience using nunca.\"",
+  "kind": "other",
+  "why": "checklist-you"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-09.json",
+  "old": "¿De qué trata principalmente la lectura?",
+  "new": "¿Adónde van los amigos en la excursión?",
+  "kind": "other",
+  "why": "generic reading question (reading-generic)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-09.json",
+  "old": "De una jornada de pesca deportiva en alta mar.",
+  "new": "A una jornada de pesca deportiva en alta mar.",
+  "kind": "other",
+  "why": "options for the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-09.json",
+  "old": "De un viaje de compras por los grandes centros de Hanói.",
+  "new": "A los grandes centros de compras de Hanói.",
+  "kind": "other",
+  "why": "options for the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-09.json",
+  "old": "De una excursión de un día a un pueblo pesquero en la costa.",
+  "new": "A un pueblo pesquero en la costa.",
+  "kind": "other",
+  "why": "options for the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-09.json",
+  "old": "De una competición de natación en la playa.",
+  "new": "A una competición de natación en la playa.",
+  "kind": "other",
+  "why": "options for the new question"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-01-ex.json",
+  "id": "a2.09.01.ex02",
+  "set": {
+   "options": [
+    "¿Has visitado alguna vez la playa?",
+    "¿Quieres visitar la playa mañana?",
+    "¿Cuándo vas a visitar la playa?"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute (Nunca only in a wrong option) and tell-punctuation (only the right option has ¿): wrong options are other questions"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-01-ex.json",
+  "id": "a2.09.01.ex14",
+  "set": {
+   "options": [
+    "Sí, he visitado la playa.",
+    "No, he visitado la playa.",
+    "Sí, visitado la playa."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute (nunca only in a wrong option); \"Sí, nunca …\" had two faults: \"Sí, visitado la playa.\" has one"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-01-ex.json",
+  "id": "a2.09.01.ex15",
+  "set": {
+   "options": [
+    "Sí, he estado en la costa.",
+    "No, he estado en la costa.",
+    "Sí, estado en la costa."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute (nunca only in a wrong option)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-02-ex.json",
+  "id": "a2.09.02.ex02",
+  "set": {
+   "options": [
+    "¿Has estado alguna vez en el puerto?",
+    "¿Quieres estar en el puerto hoy?",
+    "¿Cuándo vas a estar en el puerto?"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute and tell-punctuation: wrong options are other questions"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-03-ex.json",
+  "id": "a2.09.03.ex02",
+  "set": {
+   "options": [
+    "¿Has conocido alguna vez a un pescador?",
+    "¿Quieres conocer a un pescador hoy?",
+    "¿Cuándo vas a conocer a un pescador?"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute and tell-punctuation: wrong options are other questions"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-03-ex.json",
+  "id": "a2.09.03.ex15",
+  "set": {
+   "options": [
+    "Sí, he visto muchas.",
+    "No, he visto muchas.",
+    "Sí, he visto muchos."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute: \"Sí, nunca he visto una barca.\" has two faults; \"muchos\" for barcas has one"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-09-03-gr.json",
+  "old": "\"content\": \"Short answers drop *alguna* *vez* completely: *sí, he visto muchas* needs no *alguna vez* tacked on, and *no, nunca he estado*... works the same way — repeating it in the answer just sounds unnatural.\"",
+  "new": "\"content\": \"Short answers usually leave out *alguna vez*: *sí, he visto muchas* needs no *alguna vez* tacked on, and *no, nunca he estado*… already says it with *nunca*.\"",
+  "kind": "target",
+  "why": "the tip says repeating alguna vez \"just sounds unnatural\" (Alguna vez he estado… is fine, and a2.09.02.ex12 uses it)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-04-ex.json",
+  "id": "a2.09.04.ex02",
+  "set": {
+   "options": [
+    "¿Has comido alguna vez en ese restaurante?",
+    "¿Quieres comer en ese restaurante hoy?",
+    "¿Cuándo vas a comer en ese restaurante?"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute and tell-punctuation: wrong options are other questions"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-04-ex.json",
+  "id": "a2.09.04.ex10",
+  "set": {
+   "options": [
+    "restaurant",
+    "excursion",
+    "fisherman"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (10 vs 5): wrong options are other words of the unit"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-04-ex.json",
+  "id": "a2.09.04.ex15",
+  "set": {
+   "options": [
+    "Sí, he visitado la costa.",
+    "No, he visitado la costa.",
+    "Sí, visitado la costa."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute (nunca only in a wrong option)"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-09-04-gr.json",
+  "old": "\"content\": \"*alguna* *vez* only ever shows up in the question that opens the door; the answer, positive or negative, never repeats it — *sí* or *nunca* alone carries the weight of the reply.\"",
+  "new": "\"content\": \"*Alguna vez* belongs in the question. In the answer you can leave it out: *Sí, he hecho una excursión*, or use *nunca* for a negative answer.\"",
+  "kind": "target",
+  "why": "the tip says the answer \"never repeats\" alguna vez, which is wrong (and a2.09.02.ex12 uses it)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex02",
+  "set": {
+   "options": [
+    "¿Has comprado alguna vez un recuerdo?",
+    "¿Quieres comprar un recuerdo hoy?",
+    "¿Cuándo vas a comprar un recuerdo?"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute and tell-punctuation: wrong options are other questions"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex11",
+  "set": {
+   "question": "¿Quién quiere hacer una excursión a la costa?"
+  },
+  "kind": "target",
+  "why": "propone is unmet (b1-monarquia-02)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex12",
+  "set": {
+   "options": [
+    "Porque no han visitado ese pueblo.",
+    "Porque todos han vivido allí.",
+    "Porque conocen muy bien el pueblo."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (55 vs 34); ninguno and pesquero are unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex13",
+  "set": {
+   "options": [
+    "«¿Habéis visto alguna vez muchas barcas?»",
+    "«¿Habéis comprado recuerdos en el mercado?»",
+    "«¿Habéis probado el marisco del restaurante?»"
+   ]
+  },
+  "kind": "target",
+  "why": "friends in Spain say vosotros",
+  "variant": "es-es"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex14",
+  "set": {
+   "options": [
+    "Nunca ha estado en un puerto como ese.",
+    "Ha estado allí muchas veces con Lucía.",
+    "Nunca ha visto el mar de Vietnam."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (38 vs 28): lengthen the wrong options"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Has visto alguna vez muchas barcas en un puerto?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "No, nunca he visto muchas barcas en un puerto.",
+    "Sí, nunca he visto muchas barcas en un puerto.",
+    "No, alguna vez he visto muchas barcas en un puerto."
+   ]
+  },
+  "kind": "target",
+  "why": "tantas / juntas unmet; in the story Daniela asks (not Meg) and \"¿Han…?\" to one person who answers in the singular"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex17",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Has estado alguna vez en un puerto como ese?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "in the story Carlos has never been to such a port: Meg asks, Carlos answers"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-05-ex.json",
+  "id": "a2.09.05.ex18",
+  "set": {
+   "options": [
+    "Sí, he probado el marisco.",
+    "No, he probado el marisco.",
+    "Sí, probado el marisco."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute (nunca only in a wrong option)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-consolidation-ex.json",
+  "id": "a2.09.consolidation.ex01",
+  "set": {
+   "options": [
+    "¿Has visto alguna vez el mar?",
+    "¿Quieres ver el mar mañana?",
+    "¿Cuándo vas a ver el mar?"
+   ]
+  },
+  "kind": "target",
+  "why": "copy of a2.09.01.ex02; tell-absolute; tell-punctuation"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-consolidation-ex.json",
+  "id": "a2.09.consolidation.ex02",
+  "set": {
+   "sentence": "¿Has comido __ vez en un restaurante?",
+   "english": "Have you ever eaten in a restaurant?"
+  },
+  "kind": "target",
+  "why": "copy of a2.09.01.ex03: vary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-consolidation-ex.json",
+  "id": "a2.09.consolidation.ex11",
+  "set": {
+   "options": [
+    "Nunca he probado el marisco.",
+    "Nunca he probar el marisco.",
+    "Nunca probado el marisco."
+   ],
+   "distractor_skills": null
+  },
+  "kind": "target",
+  "why": "\"Nunca probé el marisco.\" is a preterite (Unit 11) and a correct sentence, so a second right answer; replaced by a one-fault non-sentence"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-consolidation-ex.json",
+  "id": "a2.09.consolidation.ex14",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Has probado alguna vez el pescado?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, he probado el pescado.",
+    "No, he probado el pescado.",
+    "Sí, probado el pescado."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-absolute (nunca only in a wrong option); copy of 09-01.ex14 with swapped speakers: new fish item"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-consolidation-ex.json",
+  "id": "a2.09.consolidation.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Has estado alguna vez en un mercado costero?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "No, nunca he estado en un mercado costero.",
+    "Sí, nunca he estado en un mercado costero.",
+    "No, alguna vez he estado en un mercado costero."
+   ]
+  },
+  "kind": "target",
+  "why": "copy of 09-01.ex15 with swapped speakers: new market item"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-09-consolidation-ex.json",
+  "id": "a2.09.consolidation.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Has estado alguna vez en Ninh Bình?"
+    },
+    {
+     "speaker": "Lucía",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "No, nunca he estado en Ninh Bình.",
+    "Sí, nunca he estado en Ninh Bình.",
+    "No, alguna vez he estado en Ninh Bình."
+   ]
+  },
+  "kind": "target",
+  "why": "same dialogue as a2.09.05.ex18: new excursion item"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-09.json",
+  "old": "que nunca olvidarán.",
+  "new": "que nunca van a olvidar.",
+  "kind": "target",
+  "why": "future tense (olvidarán, Unit 19) in the story"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-09.json",
+  "old": "al atardecer mientras todos contemplan el mar",
+  "new": "al atardecer: todos contemplan el mar",
+  "kind": "target",
+  "why": "mientras (cuando-mientras) is Unit 13",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-09.json",
+  "old": "«¿Han visto alguna vez tantas barcas juntas?», pregunta Daniela.",
+  "new": "«¿Habéis visto alguna vez tantas barcas juntas?», pregunta Daniela.",
+  "kind": "target",
+  "why": "friends in Spain say vosotros",
+  "variant": "es-es"
+ }
+]
