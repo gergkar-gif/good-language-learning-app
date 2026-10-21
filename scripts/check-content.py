@@ -103,6 +103,7 @@ CHECKS = {
     "answers-alternatives": "a fill-blank accepts different words (answers: trabajo, estudio, cocino…) while its `english` fits one: es A1 units 6-11 had 5 (*I work at home* accepting *estudio*)",
     "story-voice-gender": "a story's narration gives a recurring character the wrong voice gender (Daniela 'male' in es A1 stories a1-06, a1-07: TTS reads her in a man's voice)",
     "story-key-vocab": "a story's keyVocabulary word doesn't occur in the story (the conocer/intercambio placeholder; es A1 units 6-11 readers found it in 5 stories)",
+    "infinitive-reply": "ES: a wrong option is the right option with its verb in the infinitive (*Descansa y toma agua.* / *Descansar y tomar agua.*, *Leo en casa.* / *Leer en casa.*): an infinitive is a natural elliptical reply or written instruction, so a second right answer; make the wrong option another person (es A1 units 14, 20, 23 readers fixed 20)",
     "reading-generic": "a reading question about 'the character' or the text type ('What kind of text is the story?', 'the diary'): placeholder questions the story can't answer; ask about what its people say and do (es A1 units 16-18 and 14 had 13, all real; none elsewhere in es or hu)",
     "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
     "unmet-word": "a word the learner hasn't met by this lesson (scripts/unmet-words.js)",
@@ -122,7 +123,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -339,6 +340,23 @@ def check_exercise(e, course, lang):
         forms = {fold(str(a)).strip(" .!?") for a in e["answers"] if a}
         if len(forms) > 1 and len({f[:3] for f in forms}) > 1:
             hit("answers-alternatives", ", ".join(map(str, e["answers"]))[:60] + f" for {e['english'][:40]!r}")
+    q = str(e.get("question") or "")
+    if (lang == "es" and t in CHOICE and opts and isinstance(e.get("correct"), int) and 0 <= e["correct"] < len(opts)
+            and "_" not in q and not re.search(r"\bmeans?\b|\bsays?( this| that)\b|translat|how do you say", q, re.I)
+            and not any("_" in str(l.get("text", "")) and str(l.get("text", "")).strip(" _") for l in (e.get("prompt") or []) if isinstance(l, dict))):
+        def toks(o):
+            return re.findall(r"[a-záéíóúüñ]+", str(o).lower())
+        right = toks(opts[e["correct"]])
+        for i, o in enumerate(opts):
+            w = toks(o)
+            if i == e["correct"] or len(w) != len(right) or not w:
+                continue
+            diff = [(a, b) for a, b in zip(right, w) if a != b]
+            if (diff and diff[0][1] == w[0] and str(o)[:1].isupper() and w[0] not in ("estar", "ser", "haber")
+                    and all(re.fullmatch(r"[a-záéíóúñ]{2,}(ar|er|ir)(se)?", b) and b[:2] == a[:2]
+                            and not re.fullmatch(r"[a-záéíóúñ]+(ar|er|ir)", a) for a, b in diff)):
+                hit("infinitive-reply", str(o)[:60])
+                break
     if e.get("category") == "reading" and re.search(
             r"\bthe (main )?characters?\b|\bwhat kind of text\b|\btype of (text|obligation)\b|\bthe diary\b",
             e.get("question") or "", re.I):

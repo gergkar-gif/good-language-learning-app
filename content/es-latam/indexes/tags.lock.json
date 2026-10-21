@@ -52,14 +52,14 @@
    "reason": "ROADMAP 148(g)(h): 8 pronunciation exercises added in a1-01-01; a1-01-05 ex09-ex11 rewritten as story questions"
   },
   "A1/health": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-21",
    "exercises": 106,
-   "reason": "read-through, lessons 01-05 + consolidation (Sonnet tagging, reviewed)"
+   "reason": "infinitive-reply fixes (ROADMAP 153)"
   },
   "A1/hobbies-free-time": {
-   "locked": "2026-10-06",
-   "exercises": 106,
-   "reason": "read-through, lessons 01-05 + consolidation (Sonnet tagging, reviewed)"
+   "locked": "2026-10-21",
+   "exercises": 107,
+   "reason": "es A1 batch 19-24 read and fixed (ROADMAP 153)"
   },
   "A1/home": {
    "locked": "2026-10-16",
@@ -72,9 +72,9 @@
    "reason": "es A1 batch 13-18 read and fixed (ROADMAP 153)"
   },
   "A1/likes-dislikes": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-21",
    "exercises": 73,
-   "reason": "read-through, lessons 01-05 + consolidation (Sonnet tagging, reviewed)"
+   "reason": "es A1 batch 19-24 read and fixed (ROADMAP 153)"
   },
   "A1/meeting-someone-new": {
    "locked": "2026-10-16",
@@ -97,14 +97,14 @@
    "reason": "es A1 batch 6-11 read (route A, Sonnet readers, 2026-10-16)"
   },
   "A1/present-continuous": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-21",
    "exercises": 73,
-   "reason": "read-through, lessons 01-05 + consolidation (Sonnet tagging, reviewed)"
+   "reason": "es A1 batch 19-24 read and fixed (ROADMAP 153)"
   },
   "A1/skills-abilities": {
-   "locked": "2026-10-06",
-   "exercises": 73,
-   "reason": "read-through, lessons 01-05 + consolidation (Sonnet tagging, reviewed)"
+   "locked": "2026-10-21",
+   "exercises": 74,
+   "reason": "es A1 batch 19-24 read and fixed (ROADMAP 153)"
   },
   "A1/supermarket": {
    "locked": "2026-10-16",
@@ -122,14 +122,14 @@
    "reason": "es A1 batch 13-18 read and fixed (ROADMAP 153)"
   },
   "A1/what-hurts": {
-   "locked": "2026-10-07",
+   "locked": "2026-10-21",
    "exercises": 74,
-   "reason": "new exercises for thin skills (ROADMAP 144(4))"
+   "reason": "es A1 batch 19-24 read and fixed (ROADMAP 153)"
   },
   "A1/work-obligations": {
    "locked": "2026-10-21",
    "exercises": 106,
-   "reason": "es A1 batch 13-18 read and fixed (ROADMAP 153)"
+   "reason": "infinitive-reply fixes (ROADMAP 153)"
   },
   "A2/asking-politely-giving-advice": {
    "locked": "2026-10-06",
@@ -8114,13 +8114,21 @@
   },
   "a1.abi.01.ex11": {
    "teaches": [
-    "a1-skills-abilities-vocab"
+    "querer-poder"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "saber-infinitivo"
+   }
   },
   "a1.abi.01.ex12": {
    "teaches": [
     "querer-poder"
+   ],
+   "distractor_skills": {}
+  },
+  "a1.abi.01.ex13": {
+   "teaches": [
+    "present-irregular-yo"
    ],
    "distractor_skills": {}
   },
@@ -8324,13 +8332,13 @@
   },
   "a1.abi.04.ex10": {
    "teaches": [
-    "a1-skills-abilities-vocab"
+    "a-personal"
    ],
    "distractor_skills": {}
   },
   "a1.abi.04.ex11": {
    "teaches": [
-    "a1-skills-abilities-vocab"
+    "a-personal"
    ],
    "distractor_skills": {}
   },
@@ -8348,7 +8356,7 @@
   },
   "a1.abi.05.ex02": {
    "teaches": [
-    "a1-skills-abilities-vocab"
+    "querer-poder"
    ],
    "distractor_skills": {}
   },
@@ -8446,9 +8454,7 @@
    "teaches": [
     "saber-infinitivo"
    ],
-   "distractor_skills": {
-    "2": "querer-poder"
-   }
+   "distractor_skills": {}
   },
   "a1.abi.cons.ex07": {
    "teaches": [
@@ -8476,7 +8482,7 @@
   },
   "a1.abi.cons.ex11": {
    "teaches": [
-    "a1-skills-abilities-vocab"
+    "a-personal"
    ],
    "distractor_skills": {}
   },
@@ -9178,7 +9184,7 @@
   },
   "a1.cont.01.ex11": {
    "teaches": [
-    "a1-present-continuous-vocab"
+    "estar"
    ],
    "distractor_skills": {}
   },
@@ -9250,7 +9256,7 @@
   },
   "a1.cont.02.ex11": {
    "teaches": [
-    "a1-present-continuous-vocab"
+    "progressive"
    ],
    "distractor_skills": {}
   },
@@ -9322,7 +9328,7 @@
   },
   "a1.cont.03.ex11": {
    "teaches": [
-    "a1-present-continuous-vocab"
+    "estar"
    ],
    "distractor_skills": {}
   },
@@ -9391,25 +9397,23 @@
    "teaches": [
     "present-tense"
    ],
-   "distractor_skills": {
-    "1": "progressive"
-   }
+   "distractor_skills": {}
   },
   "a1.cont.04.ex10": {
    "teaches": [
-    "a1-present-continuous-vocab"
+    "progressive"
    ],
    "distractor_skills": {}
   },
   "a1.cont.04.ex11": {
    "teaches": [
-    "a1-present-continuous-vocab"
+    "progressive"
    ],
    "distractor_skills": {}
   },
   "a1.cont.04.ex12": {
    "teaches": [
-    "a1-present-continuous-vocab"
+    "progressive"
    ],
    "distractor_skills": {}
   },
@@ -9459,9 +9463,7 @@
    "teaches": [
     "progressive"
    ],
-   "distractor_skills": {
-    "2": "present-tense"
-   }
+   "distractor_skills": {}
   },
   "a1.cont.05.ex09": {
    "teaches": [
@@ -9491,9 +9493,7 @@
    "teaches": [
     "progressive"
    ],
-   "distractor_skills": {
-    "2": "present-tense"
-   }
+   "distractor_skills": {}
   },
   "a1.cont.cons.ex02": {
    "teaches": [
@@ -9505,7 +9505,9 @@
    "teaches": [
     "gerundios-irregulares"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "stem-changes"
+   }
   },
   "a1.cont.cons.ex04": {
    "teaches": [
@@ -9553,13 +9555,13 @@
   },
   "a1.cont.cons.ex11": {
    "teaches": [
-    "a1-present-continuous-vocab"
+    "progressive"
    ],
    "distractor_skills": {}
   },
   "a1.cont.cons.ex12": {
    "teaches": [
-    "a1-present-continuous-vocab"
+    "progressive"
    ],
    "distractor_skills": {}
   },
@@ -10736,13 +10738,13 @@
   },
   "a1.dol.01.ex10": {
    "teaches": [
-    "a1-what-hurts-vocab"
+    "doler"
    ],
    "distractor_skills": {}
   },
   "a1.dol.01.ex11": {
    "teaches": [
-    "a1-what-hurts-vocab"
+    "doler"
    ],
    "distractor_skills": {}
   },
@@ -10882,13 +10884,13 @@
   },
   "a1.dol.03.ex10": {
    "teaches": [
-    "a1-what-hurts-vocab"
+    "doler"
    ],
    "distractor_skills": {}
   },
   "a1.dol.03.ex11": {
    "teaches": [
-    "a1-what-hurts-vocab"
+    "estar"
    ],
    "distractor_skills": {}
   },
@@ -10924,7 +10926,7 @@
   },
   "a1.dol.04.ex04": {
    "teaches": [
-    "imperativo-afirmativo"
+    "hay-que"
    ],
    "distractor_skills": {}
   },
@@ -10966,7 +10968,7 @@
   },
   "a1.dol.04.ex11": {
    "teaches": [
-    "a1-what-hurts-vocab"
+    "hay-que"
    ],
    "distractor_skills": {}
   },
@@ -11080,7 +11082,7 @@
   },
   "a1.dol.cons.ex06": {
    "teaches": [
-    "estar"
+    "adjective-agreement"
    ],
    "distractor_skills": {}
   },
@@ -11116,7 +11118,7 @@
   },
   "a1.dol.cons.ex12": {
    "teaches": [
-    "a1-what-hurts-vocab"
+    "doler"
    ],
    "distractor_skills": {}
   },
@@ -12183,7 +12185,7 @@
   },
   "a1.gustar.cons.ex11": {
    "teaches": [
-    "a1-likes-dislikes-vocab"
+    "gustar"
    ],
    "distractor_skills": {}
   },
@@ -12666,7 +12668,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.health.05.ex11": {
@@ -12674,7 +12677,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.health.05.ex12": {
@@ -12688,7 +12692,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "stem-changes"
+    "1": "er-ir-verbs",
+    "2": "er-ir-verbs"
    }
   },
   "a1.health.05.ex14": {
@@ -12708,7 +12713,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "present-tense"
+    "1": "present-tense",
+    "2": "present-tense"
    }
   },
   "a1.health.05.ex17": {
@@ -12716,7 +12722,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.health.05.ex18": {
@@ -12724,7 +12731,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ir"
+    "1": "stem-changes",
+    "2": "stem-changes"
    }
   },
   "a1.health.05.ex19": {
@@ -12732,7 +12740,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "present-tense",
+    "2": "present-tense"
    }
   },
   "a1.health.06.ex01": {
@@ -12764,7 +12773,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "ar-verbs",
+    "2": "ar-verbs"
    }
   },
   "a1.health.06.ex06": {
@@ -12826,7 +12836,8 @@
     "imperativo-afirmativo"
    ],
    "distractor_skills": {
-    "1": "ar-verbs"
+    "1": "present-tense",
+    "2": "present-tense"
    }
   },
   "a1.health.06.ex16": {
@@ -13287,7 +13298,7 @@
   },
   "a1.hobbies.05.ex05": {
    "teaches": [
-    "present-tense"
+    "present-irregular-yo"
    ],
    "distractor_skills": {}
   },
@@ -13317,7 +13328,7 @@
   },
   "a1.hobbies.05.ex10": {
    "teaches": [
-    "present-tense"
+    "present-irregular-yo"
    ],
    "distractor_skills": {}
   },
@@ -13361,7 +13372,13 @@
   },
   "a1.hobbies.05.ex19": {
    "teaches": [
-    "present-tense"
+    "present-irregular-yo"
+   ],
+   "distractor_skills": {}
+  },
+  "a1.hobbies.05.ex20": {
+   "teaches": [
+    "present-irregular-yo"
    ],
    "distractor_skills": {}
   },
@@ -13417,9 +13434,7 @@
    "teaches": [
     "ser"
    ],
-   "distractor_skills": {
-    "2": "estar"
-   }
+   "distractor_skills": {}
   },
   "a1.hobbies.06.ex10": {
    "teaches": [

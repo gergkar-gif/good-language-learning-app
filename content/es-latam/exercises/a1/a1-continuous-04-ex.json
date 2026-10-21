@@ -31,11 +31,11 @@
       "id": "a1.cont.04.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Todos los días yo __ a las siete.",
+      "question": "Todos los días yo __ en la oficina.",
       "options": [
-        "me levanto",
-        "estoy levantándome",
-        "me levantando"
+        "trabajo",
+        "estoy trabajando",
+        "trabajando"
       ],
       "correct": 0,
       "teaches": [
@@ -49,10 +49,10 @@
       "id": "a1.cont.04.ex03",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¡Silencio! Carlos __ en su habitación ahora mismo.",
+      "question": "Carlos __ en su habitación ahora mismo.",
       "options": [
         "está durmiendo",
-        "duerme siempre",
+        "duerme todos los días",
         "dormir"
       ],
       "correct": 0,
@@ -67,13 +67,13 @@
       "id": "a1.cont.04.ex04",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Normalmente tomo agua, pero ahora _____ tomando un jugo de naranja.",
+      "sentence": "Normalmente tomo agua, pero ahora _____ tomando un café.",
       "hint": "I am",
       "answer": "estoy",
       "teaches": [
         "estar"
       ],
-      "english": "Normally I drink water, but now I am drinking an orange juice."
+      "english": "Normally I drink water, but now I am drinking a coffee."
     },
     {
       "id": "a1.cont.04.ex05",
@@ -158,19 +158,16 @@
       "id": "a1.cont.04.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Carlos __ en un banco, pero hoy no está trabajando.",
+      "question": "Carlos __ en una oficina, pero hoy no está trabajando.",
       "options": [
         "trabaja",
-        "está trabajando siempre",
+        "estar trabajando",
         "trabajando"
       ],
       "correct": 0,
       "teaches": [
         "present-tense"
-      ],
-      "distractor_skills": {
-        "1": "progressive"
-      }
+      ]
     },
     {
       "id": "a1.cont.04.ex10",
@@ -179,7 +176,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Carlos, ¿a qué te dedicas?"
+          "text": "Carlos, ¿qué haces normalmente por la tarde?"
         },
         {
           "speaker": "Carlos",
@@ -187,13 +184,13 @@
         }
       ],
       "options": [
-        "Soy profesor, pero en este momento estoy de vacaciones.",
-        "Eres profesor, pero en este momento estás descansando.",
-        "Vivo cerca de aquí, pero en este momento voy al parque."
+        "Normalmente estudio español, pero hoy estoy descansando.",
+        "Normalmente estudio español, pero hoy estás descansando.",
+        "Normalmente estoy estudiando español, pero hoy descanso."
       ],
       "correct": 0,
       "teaches": [
-        "a1-present-continuous-vocab"
+        "progressive"
       ]
     },
     {
@@ -211,13 +208,13 @@
         }
       ],
       "options": [
-        "Casi siempre, pero hoy estoy tomando té verde.",
-        "Casi siempre, pero hoy estás tomando té caliente.",
-        "Casi siempre, pero ayer tomé té negro en mi casa."
+        "Sí, siempre, pero hoy estoy tomando té verde.",
+        "Sí, siempre, pero hoy estás tomando té verde.",
+        "Sí, siempre, pero hoy tomando té verde."
       ],
       "correct": 0,
       "teaches": [
-        "a1-present-continuous-vocab"
+        "progressive"
       ]
     },
     {
@@ -226,16 +223,16 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say: 'Normally I work.'",
+          "prompt": "Say (every day): 'Normally I work.'",
           "answer": "Normalmente trabajo."
         },
         {
-          "prompt": "Say: 'Now I am resting.'",
+          "prompt": "Say (happening now): 'Now I am resting.'",
           "answer": "Ahora estoy descansando."
         }
       ],
       "teaches": [
-        "a1-present-continuous-vocab"
+        "progressive"
       ]
     }
   ]

@@ -342,6 +342,23 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   (Unit 14); an item whose wrong answer is a wrong yo form (*salo*,
   *haco*) gets this tag; before Unit 14 these forms are before their
   screen.
+- **Found in units 19–24 (2026-10-21):** infinitive wrong options that
+  are natural replies or advice (*Leer en casa.* to *¿Qué haces?*,
+  *Descansar y tomar agua.* to *¿Qué hago?*; 20 items; check
+  `infinitive-reply`): make the wrong option another person (*Lee en
+  casa.*); usted commands (*Tome una pastilla*, A2) at the pharmacy: use
+  *hay que* + infinitive (Unit 18); *poder* (*puedo*, *podemos*) before
+  Unit 24: the `querer-poder` screen a1-08-03 (Unit 10) teaches only
+  *querer*, so *poder* is new in a1-abilities-01 (the knowledge sheets
+  list it as known: don't trust that line); subjunctive and conditional
+  forms in options and stories (*duela*, *Que te mejores*, *me
+  encantaría*); preterites in stories (a1-16 *fui*, *recetó*); words in
+  no list (*clínica*, *mexicana*, *picante*, *latina*, *venir*); unmet
+  Spanish metalanguage in multiple-choice question stems (*¿Cuál opción
+  es correcta…?*, *oración*): `unmet-word` doesn't read MC question
+  stems, so read them; ask in English. es-latam has no *pedir* in A1
+  lists (es-es lists it in a1-cafe-04): an item using it in es-latam
+  needs the word listed there.
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).

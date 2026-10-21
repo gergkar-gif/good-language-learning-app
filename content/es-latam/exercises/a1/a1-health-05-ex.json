@@ -80,7 +80,7 @@
       "category": "grammar",
       "type": "fill-blank",
       "sentence": "__ agua.",
-      "hint": "drink, tú",
+      "hint": "tomar, tú",
       "answer": "Toma",
       "teaches": [
         "imperativo-afirmativo"
@@ -179,7 +179,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "Me duele la cabeza. ¿Qué hago?"
+          "text": "Tengo dolor de cabeza. ¿Qué hago?"
         },
         {
           "speaker": "Meg",
@@ -187,16 +187,17 @@
         }
       ],
       "options": [
-        "Toma una aspirina.",
-        "Tomas una aspirina.",
-        "Tomar una aspirina."
+        "Toma la medicina.",
+        "Tomo la medicina.",
+        "Toman la medicina."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "ar-verbs"
+        "1": "ar-verbs",
+        "2": "ar-verbs"
       }
     },
     {
@@ -219,15 +220,16 @@
       ],
       "options": [
         "Descansa y toma agua.",
-        "Descansas y tomas agua.",
-        "Descansar y tomar agua."
+        "Descanso y tomo agua.",
+        "Descansan y toman agua."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "ar-verbs"
+        "1": "ar-verbs",
+        "2": "ar-verbs"
       }
     },
     {
@@ -240,7 +242,7 @@
           "answer": "Descansa."
         },
         {
-          "prompt": "Tell someone to drink water.",
+          "prompt": "Tell someone to drink water (use tomar).",
           "answer": "Toma agua."
         }
       ],
@@ -252,18 +254,19 @@
       "id": "a1.health.05.ex13",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which means \"Sleep well\"?",
+      "question": "Which means \"Eat something\"?",
       "options": [
-        "Duerme bien.",
-        "Duermes bien.",
-        "Dormir bien."
+        "Come algo.",
+        "Como algo.",
+        "Comen algo."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "stem-changes"
+        "1": "er-ir-verbs",
+        "2": "er-ir-verbs"
       }
     },
     {
@@ -301,14 +304,15 @@
       "options": [
         "Descansa y duerme bien.",
         "Descansas y duermes bien.",
-        "Descansar y dormir bien."
+        "Descanso y duermo bien."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "present-tense"
+        "1": "present-tense",
+        "2": "present-tense"
       }
     },
     {
@@ -319,32 +323,34 @@
       "options": [
         "Toma agua.",
         "Tomas agua.",
-        "Tomar agua."
+        "Tomo agua."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "ar-verbs"
+        "1": "ar-verbs",
+        "2": "ar-verbs"
       }
     },
     {
       "id": "a1.health.05.ex18",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which is a suitable simple response to a health problem?",
+      "question": "A friend says \"Estoy muy cansado.\" Which advice is right?",
       "options": [
-        "Ve al médico.",
-        "Vas al médico.",
-        "Ir al médico."
+        "Duerme y descansa.",
+        "Duermo y descanso.",
+        "Duermen y descansan."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "ir"
+        "1": "stem-changes",
+        "2": "stem-changes"
       }
     },
     {
@@ -353,16 +359,17 @@
       "type": "multiple-choice",
       "question": "Which combines two commands naturally?",
       "options": [
-        "Descansa y toma agua.",
-        "Descansas y tomas agua.",
-        "Descansar y tomar agua."
+        "Come algo y descansa.",
+        "Como algo y descanso.",
+        "Comen algo y descansan."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "ar-verbs"
+        "1": "present-tense",
+        "2": "present-tense"
       }
     }
   ]

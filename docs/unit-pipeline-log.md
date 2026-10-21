@@ -342,6 +342,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-16 | es A1 2–5 (both courses) | paired read, **Spanish template** (2 units/reader), es-es read once, mirrored | | 229k + 238k, 11.1 + 10.4 | 166 applied of 166, 0 rejected; Claude changed 5 + 1 schema fix | ~117k reader tokens/unit (A 2+3 ~114k, B 4+5 ~119k; = HU A2 25–28's ~117k at two per reader); fixes 52 / 36 / 48 / 30 (~42/unit); 120 of 166 went to review (Spanish text); 165/166 mirrored (the 1 had no es-latam counterpart); walk units 1–5 60/60; both report writes allowed |
 | 10-16 | es A1 6–11 (both courses) | paired read, Spanish template, **3 units/reader**, es-es read once, mirrored | | 313k + 306k, 15.3 + ~15 (B hit a Sonnet session limit after writing all its files; resumed for its last report section) | 278 proposed (32 / 57 / 26 / 40 / 89 / 34), 0 rejected for content (1 by a stale word index, restored); Claude changed 16 (10 in the filter, 6 schema), added 12 in es-es after the new checks and `--warnings` (5 answers lists, 1 thin-skill item, 3 stories' key words, 1 story line, 2 challenge glosses) and 8 in es-latam only (3 variant fixes, 5 story question sets) | ~103k reader tokens/unit (A ~104k, B ~102k; ×0.88 of units 2–5's ~117k); ~46 fixes/unit (×1.1 of ~42); 222 of 278 to review; 269/279 mirrored (10 es-es variants or es-latam text); walk 36/36 per course; B's 305,712 is the only usage figure its notices gave (the failure notice had none) |
 | 10-21 | es A1 13–18 (both courses) | paired read, Spanish template, 3 units/reader, es-es read once, mirrored | | 346k + 291k, 16.5 + 15.4 | 262 proposed (38 / 41 / 34 / 38 / 59 / 52), 0 rejected; Claude changed 2 and added 1 es-latam-only fix | ~106k reader tokens/unit (A ~115k, B ~97k; ×1.03 of 6–11's ~103k); ~44 fixes/unit (×0.95); 189 of 262 to review; 261/262 mirrored (1 es-es variant), 4 put in es-latam words by the mirror; walk 36/36 per course; A's report write refused, B's allowed |
+| 10-21 | es A1 19–24 (both courses) | paired read, Spanish template, 3 units/reader, es-es read once, mirrored | | 395k + 332k, 21.7 + 17.1 | 273 proposed (55 / 45 / 45 / 29 / 47 / 52), 0 rejected; Claude changed 5 (2 retags kept, 1 story logic, 1 option set, 1 spelling) and added 4 (es-latam twins and *pedir*/*clínica*), plus 4 after the new check | ~121k reader tokens/unit (A ~132k, B ~111k; ×1.14 of 13–18's ~106k); ~46 fixes/unit (×1.04); 226 of 273 to review; 272/273 mirrored (1 es-es variant), 1 put in es-latam words; walk 36/36 per course; both report writes allowed |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -788,3 +789,35 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   as wrong imperative options (Unit 14 only); infinitive recipe options;
   *hay que* before its screen (the `taught-later` check works from tags,
   and these wrong options carried no `distractor_skills`).
+
+### 2026-10-21: Spanish A1 units 19–24
+
+- **Cost:** 395k (reader A, units 19–21) + 332k (reader B, 22–24), ~121k
+  a unit (×1.14 of 13–18). Reader A reached ~132k a unit: Unit 19 started
+  with 15 errors and 69 suspects and Unit 21 with 9 / 33, the heaviest
+  baselines so far. Still under the ~140k limit: **keep three per reader**
+  for the last batch (25–26, one reader).
+- **Filter:** 226 of 273 to review; I changed 5: two *sé* items moved to
+  `present-irregular-yo` (kept on `saber-infinitivo`, the user's scope is
+  the -go forms), a story rewrite that gave Carlos an appointment later
+  that day but the doctor's medicine already, a wrong option (*conozco un
+  profesor*) that can pass because the personal *a* is optional before an
+  indefinite person, "favor" → "favour". Added es-latam twins: the *jugo*
+  variant fix, *pedir* in an es-latam list, *clínica* (in no list).
+- **Scripted:** `infinitive-reply` (seen in units 14, 20, 23): 26 hits on
+  the pre-fix A1 content after tightening (a first version also flagged
+  *Mi hermana trabajar…* and "Which means …" items, where the infinitive
+  is plainly wrong, and lowercase form drills); it then found 2 more real
+  ones in frozen units 18 and 20 (fixed, refrozen) and 3 in Unit 26 (next
+  batch); A2 2, B1–B2 0. A first version crashed check-content (a helper
+  named `words` shadowed a later local), which made two test runs report
+  0 hits: read a check's output before trusting a zero.
+- **Open, the user's:** `querer-poder` is taught_in a1-08-03, whose screen
+  teaches only *querer*; *poder* is first explained in a1-abilities-01
+  (Unit 24), and the readers treated earlier *poder* as before its screen.
+  Either the Unit 10 screen gets *poder* (unfreeze Unit 10) or the skill
+  is split; a registry decision.
+- **Not scripted:** unmet Spanish metalanguage in MC question stems
+  (`unmet-word` reads options, sentences and prompts, not MC questions);
+  reader A found five. Extending `unmet-words.js` to question stems is a
+  checker change across all courses: queued.

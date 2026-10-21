@@ -46,13 +46,13 @@
       "id": "a1.abi.01.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "¿_____ ayudarme con este ejercicio?",
+      "sentence": "¿_____ ayudarme con la tarea?",
       "hint": "poder, tú",
       "answer": "Puedes",
       "teaches": [
         "querer-poder"
       ],
-      "english": "Can you help me with this exercise?"
+      "english": "Can you help me with the task?"
     },
     {
       "id": "a1.abi.01.ex04",
@@ -72,17 +72,17 @@
       "type": "sentence-builder",
       "tiles": [
         "¿Puedo",
-        "hacer",
-        "una",
-        "pregunta?"
+        "pasar,",
+        "por",
+        "favor?"
       ],
       "solution": [
         "¿Puedo",
-        "hacer",
-        "una",
-        "pregunta?"
+        "pasar,",
+        "por",
+        "favor?"
       ],
-      "english": "May I ask a question?",
+      "english": "May I come in, please?",
       "teaches": [
         "querer-poder"
       ]
@@ -106,13 +106,13 @@
       "id": "a1.abi.01.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "¿Ustedes _____ repetir la frase, por favor?",
+      "sentence": "¿Ustedes _____ repetir la pregunta, por favor?",
       "hint": "poder",
       "answer": "pueden",
       "teaches": [
         "querer-poder"
       ],
-      "english": "Can you repeat the sentence, please?"
+      "english": "Can you repeat the question, please?"
     },
     {
       "id": "a1.abi.01.ex08",
@@ -139,11 +139,11 @@
       "id": "a1.abi.01.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "How do you politely ask \"Can you help me?\"?",
+      "question": "How do you ask \"Can you help me?\"",
       "options": [
         "¿Puedes ayudarme?",
-        "¿Ayudas me?",
-        "¿Poder tú ayudar?"
+        "¿Puedo ayudarme?",
+        "¿Podemos ayudarme?"
       ],
       "correct": 0,
       "teaches": [
@@ -157,7 +157,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Carlos, ¿puedes explicarme esta palabra?"
+          "text": "Carlos, ¿puedes explicarme esta regla?"
         },
         {
           "speaker": "Carlos",
@@ -165,9 +165,9 @@
         }
       ],
       "options": [
-        "¡Claro que sí! Con mucho gusto.",
-        "Ayer fue martes.",
-        "No tengo paraguas."
+        "Sí, puedo explicar la regla.",
+        "Hoy es lunes por la tarde.",
+        "Tengo dos hermanos mayores."
       ],
       "correct": 0,
       "teaches": [
@@ -191,12 +191,15 @@
       "options": [
         "Sí, puedo llegar a las ocho después de clase.",
         "Sí, puedes llegar a las ocho después de clase.",
-        "Sí, sabes llegar a las ocho después de clase."
+        "Sí, sé llegar a las ocho después de clase."
       ],
       "correct": 0,
       "teaches": [
-        "a1-skills-abilities-vocab"
-      ]
+        "querer-poder"
+      ],
+      "distractor_skills": {
+        "2": "saber-infinitivo"
+      }
     },
     {
       "id": "a1.abi.01.ex12",
@@ -215,6 +218,18 @@
       "teaches": [
         "querer-poder"
       ]
+    },
+    {
+      "id": "a1.abi.01.ex13",
+      "category": "grammar",
+      "type": "fill-blank",
+      "sentence": "Hoy no _____ a clase porque estoy enfermo.",
+      "hint": "venir, yo",
+      "answer": "vengo",
+      "teaches": [
+        "present-irregular-yo"
+      ],
+      "english": "I am not coming to class today because I am ill."
     }
   ]
 }

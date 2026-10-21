@@ -1,0 +1,42 @@
+[
+ {
+  "file": "content/es-latam/exercises/a1/a1-continuous-04-ex.json",
+  "id": "a1.cont.04.ex04",
+  "set": {
+   "sentence": "Normalmente tomo agua, pero ahora _____ tomando un café.",
+   "english": "Normally I drink water, but now I am drinking a coffee."
+  },
+  "why": "es-latam twin of the es-es variant fix (old text says jugo)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-consolidation-ex.json",
+  "id": "a1.health.06.ex12",
+  "set": {
+   "options": [
+    "Estoy en la farmacia.",
+    "Estoy a la farmacia.",
+    "Hay en la farmacia."
+   ]
+  },
+  "why": "clínica is in no vocabulary list (es-latam flags it); farmacia is known from Unit 15"
+ },
+ {
+  "file": "content/es-latam/exercises/a1/a1-health-consolidation-ex.json",
+  "id": "a1.health.06.ex12",
+  "set": {
+   "options": [
+    "Estoy en la farmacia.",
+    "Estoy a la farmacia.",
+    "Hay en la farmacia."
+   ]
+  },
+  "why": "clínica is in no vocabulary list (es-latam flags it); farmacia is known from Unit 15"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a1/a1-continuous-03-voc.json",
+  "old": "      \"lemma\": \"el sofá\",\n      \"translation\": \"sofa / couch\",\n      \"pos\": \"noun\"\n    }",
+  "new": "      \"lemma\": \"el sofá\",\n      \"translation\": \"sofa / couch\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"pedir\",\n      \"translation\": \"to ask for, to order\",\n      \"pos\": \"verb\"\n    }",
+  "why": "es-latam: pedir (gerund pidiendo in the screen and a1.cont.cons.ex03) is in no es-latam A1 list (es-es lists it in a1-cafe-04); first lesson that uses it"
+ }
+]

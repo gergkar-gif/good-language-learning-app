@@ -157,6 +157,28 @@
    "reason": "read and fixed by Antigravity (Argon), reviewed by Claude: 33 fixes, 6 challenges, 0 errors / 0 suspects (153, 2026-10-16)",
    "accepted": []
   },
+  "a1/health": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 19-24: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a1.health.05.ex15",
+     "why": "medicine is an English reading option, not Spanish (checker false positive)"
+    }
+   ]
+  },
+  "a1/hobbies-free-time": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 19-24: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "accepted": [
+    {
+     "check": "consolidation-copy",
+     "id": "a1.hobbies.06.ex06",
+     "why": "consolidation replay (user wants replays)"
+    }
+   ]
+  },
   "a1/home": {
    "frozen": "2026-10-16",
    "reason": "es A1 batch 6-11: read by Sonnet (route A), filtered, mirrored, challenges added, tags locked (2026-10-16) | refrozen: variant vocabulary, story metadata and unit order (user, 2026-10-16)",
@@ -188,6 +210,11 @@
      "why": "consolidation replay (user wants replays)"
     }
    ]
+  },
+  "a1/likes-dislikes": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 19-24: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "accepted": []
   },
   "a1/meeting-someone-new": {
    "frozen": "2026-10-16",
@@ -226,6 +253,48 @@
    "reason": "es A1 batch 6-11: read by Sonnet (route A), filtered, mirrored, challenges added, tags locked (2026-10-16) | refrozen: variant vocabulary, story metadata and unit order (user, 2026-10-16)",
    "accepted": []
   },
+  "a1/present-continuous": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 19-24: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a1.cont.01.ex02",
+     "why": "caminiendo is the deliberate wrong gerund (-iendo on an -ar verb)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a1.cont.03.ex02",
+     "why": "leendo is the deliberate wrong gerund (leer takes -yendo)"
+    },
+    {
+     "check": "unmet-word",
+     "id": "a1.cont.cons.ex09",
+     "why": "aprendado is the deliberate wrong gerund (-ando on an -er verb)"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a1-continuous-03",
+     "why": "dormir and oír are drilled as their gerunds durmiendo and oyendo, the point of the lesson"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a1-continuous-04",
+     "why": "la diferencia names the lesson's contrast on the screen; no natural A1 item"
+    }
+   ]
+  },
+  "a1/skills-abilities": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 19-24: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a1.abi.03.ex02",
+     "why": "conozce is the deliberate wrong form (conocer's yo form is conozco)"
+    }
+   ]
+  },
   "a1/supermarket": {
    "frozen": "2026-10-16",
    "reason": "es A1 batch 6-11: read by Sonnet (route A), filtered, mirrored, challenges added, tags locked (2026-10-16) | refrozen: variant vocabulary, story metadata and unit order (user, 2026-10-16)",
@@ -236,9 +305,35 @@
    "reason": "es A1 batch 13-18: read, fixed, mirrored, challenges (ROADMAP 153)",
    "accepted": []
   },
+  "a1/what-hurts": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 19-24: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "accepted": [
+    {
+     "check": "vocab-unused",
+     "id": "a1-doler-01",
+     "why": "doler is drilled as duele/duelen in every item"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a1-doler-02",
+     "why": "el cuerpo has no natural A1 item; the lesson's body parts are drilled"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a1-doler-04",
+     "why": "recomendar is drilled as recomienda (a1.dol.04.ex09)"
+    },
+    {
+     "check": "vocab-unused",
+     "id": "a1-doler-05",
+     "why": "sentirse is drilled as me siento"
+    }
+   ]
+  },
   "a1/work-obligations": {
    "frozen": "2026-10-21",
-   "reason": "es A1 batch 13-18: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "reason": "es A1 batch 13-18: read, fixed, mirrored, challenges (ROADMAP 153) | refrozen: es A1 batch 19-24 and infinitive-reply fixes (ROADMAP 153)",
    "accepted": []
   }
  },
@@ -287,6 +382,11 @@
    "unit": "a1/supermarket",
    "date": "2026-10-16",
    "reason": "variant vocabulary, story metadata and unit order (user, 2026-10-16)"
+  },
+  {
+   "unit": "a1/work-obligations",
+   "date": "2026-10-21",
+   "reason": "es A1 batch 19-24 and infinitive-reply fixes (ROADMAP 153)"
   }
  ]
 }

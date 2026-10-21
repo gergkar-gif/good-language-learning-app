@@ -20,11 +20,11 @@
       "id": "a1.health.06.ex02",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "¿Cómo se dice \"doctor\"?",
+      "question": "¿Cómo se dice \"appointment\"?",
       "options": [
+        "cita",
         "médico",
-        "paciente",
-        "cita"
+        "paciente"
       ],
       "correct": 0,
       "teaches": [
@@ -69,14 +69,15 @@
       "options": [
         "Descansa.",
         "Descansas.",
-        "Descansar."
+        "Descanso."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "ar-verbs"
+        "1": "ar-verbs",
+        "2": "ar-verbs"
       }
     },
     {
@@ -186,9 +187,9 @@
       "type": "multiple-choice",
       "question": "Which uses estar for location?",
       "options": [
-        "Estoy en la clínica.",
-        "Estoy a la clínica.",
-        "Hay en la clínica."
+        "Estoy en la farmacia.",
+        "Estoy a la farmacia.",
+        "Hay en la farmacia."
       ],
       "correct": 0,
       "teaches": [
@@ -240,25 +241,26 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Médico",
+          "speaker": "Paciente",
           "text": "¿Qué hago?"
         },
         {
-          "speaker": "Paciente",
+          "speaker": "Médico",
           "text": "_____"
         }
       ],
       "options": [
-        "Descansa y toma agua.",
-        "Descansas y tomas agua.",
-        "Descansar y tomar agua."
+        "Descansa y duerme bien.",
+        "Descanso y duermo bien.",
+        "Descansan y duermen bien."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "ar-verbs"
+        "1": "present-tense",
+        "2": "present-tense"
       }
     },
     {
@@ -268,7 +270,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Cómo estás?"
+          "text": "¿Cómo estás, Meg?"
         },
         {
           "speaker": "Meg",
@@ -276,9 +278,9 @@
         }
       ],
       "options": [
-        "Estoy enferma.",
-        "Tengo enferma.",
-        "Soy enferma."
+        "Estoy cansada y tengo tos.",
+        "Soy cansada y tengo tos.",
+        "Estoy cansada y estoy tos."
       ],
       "correct": 0,
       "teaches": [
@@ -291,7 +293,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say that you have two symptoms.",
+          "prompt": "Say that you have a fever and a cough.",
           "answer": "Tengo fiebre y tos."
         },
         {
@@ -309,7 +311,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give two simple pieces of health advice.",
+          "prompt": "Tell someone to rest and drink water (use tomar).",
           "answer": "Descansa y toma agua."
         }
       ],
