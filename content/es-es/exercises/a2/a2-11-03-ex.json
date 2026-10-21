@@ -86,13 +86,13 @@
       ],
       "distractor_skills": {
         "1": "present-tense",
-        "2": "futuro-simple"
+        "2": "preterito-perfecto"
       },
       "question": "Which sentence describes a completed past action?",
       "options": [
         "Ayer el artista respondió una pregunta.",
         "Ayer el artista responde una pregunta.",
-        "Ayer el artista responderá una pregunta."
+        "Ayer el artista ha respondido una pregunta."
       ],
       "correct": 0
     },
@@ -154,14 +154,11 @@
       "teaches": [
         "preterito-indefinido"
       ],
-      "distractor_skills": {
-        "2": "futuro-simple"
-      },
       "question": "Which form completes the sentence? Ayer nosotros __ al artista.",
       "options": [
         "visitamos",
-        "visitar",
-        "visitaremos"
+        "visité",
+        "visitaron"
       ],
       "correct": 0
     },
@@ -196,16 +193,19 @@
       "id": "a2.11.03.ex12",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which question is correct?",
+      "question": "Which question means 'Where were you?'",
       "options": [
         "¿Dónde estuviste?",
-        "¿Dónde estuviste has?",
-        "¿Dónde estuvistes?"
+        "¿Dónde estuvistes?",
+        "¿Dónde estás?"
       ],
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "present-tense"
+      }
     },
     {
       "id": "a2.11.03.ex13",
@@ -268,11 +268,11 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "¿Qué compraste?"
+          "speaker": "Carlos",
+          "text": "¿Qué compraste ayer?"
         },
         {
-          "speaker": "Carlos",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
@@ -284,7 +284,11 @@
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.11.03.ex17",

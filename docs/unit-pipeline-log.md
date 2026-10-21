@@ -353,6 +353,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-21 | es A1 13–18 (both courses) | paired read, Spanish template, 3 units/reader, es-es read once, mirrored | | 346k + 291k, 16.5 + 15.4 | 262 proposed (38 / 41 / 34 / 38 / 59 / 52), 0 rejected; Claude changed 2 and added 1 es-latam-only fix | ~106k reader tokens/unit (A ~115k, B ~97k; ×1.03 of 6–11's ~103k); ~44 fixes/unit (×0.95); 189 of 262 to review; 261/262 mirrored (1 es-es variant), 4 put in es-latam words by the mirror; walk 36/36 per course; A's report write refused, B's allowed |
 | 10-21 | es A1 19–24 (both courses) | paired read, Spanish template, 3 units/reader, es-es read once, mirrored | | 395k + 332k, 21.7 + 17.1 | 273 proposed (55 / 45 / 45 / 29 / 47 / 52), 0 rejected; Claude changed 5 (2 retags kept, 1 story logic, 1 option set, 1 spelling) and added 4 (es-latam twins and *pedir*/*clínica*), plus 4 after the new check | ~121k reader tokens/unit (A ~132k, B ~111k; ×1.14 of 13–18's ~106k); ~46 fixes/unit (×1.04); 226 of 273 to review; 272/273 mirrored (1 es-es variant), 1 put in es-latam words; walk 36/36 per course; both report writes allowed |
 | 10-21 | es A2 1–6 (both courses) | paired read, Spanish template from `batch_setup.py`, 3 units/reader, mirrored | | 347k + 313k, 21.5 + 17.6 | 263 proposed (58 / 44 / 60 / 36 / 24 / 41), 0 rejected; Claude changed 0, added 8 plus one reflexive pass (84 changes per course) | ~110k reader tokens/unit (A ~116k, B ~104k; ×0.91 of A1 19–24's ~121k on lighter baselines: 22 errors / 143 suspects for six units against 43 / 183); ~44 fixes/unit (×0.95); 186 of 263 to review; 257/263 mirrored, 6 es-latam fixes by hand; walk 36/36 per course; both report writes allowed |
+| 10-21 | es A2 7–12 (both courses) | paired read, `batch_setup.py`, 3 units/reader, mirrored | | 351k + 382k (B by its resumed notice), 23.4 + ~20 | 347 proposed (45 / 75 / 39 / 63 / 61 / 64), 0 rejected after 1 reworded; Claude changed 7, added a unit-wide fix (16 lines per course), synced 6 es-latam story question sets, reopened Units 4–6 for `table-repeat` | ~122k reader tokens/unit (A ~117k, B ~127k; ×1.11 of A2 1–6's ~110k on heavier baselines: 50 errors / 106 suspects against 22 / 143); ~58 fixes/unit (×1.32); 245 of 347 to review; 334/347 mirrored; walk 36/36 per course; both report writes allowed |
 | 10-21 | es A1 25–26 (both courses) | **one** reader, 2 units, Spanish template, mirrored | | 244k (the resumed notice only; stopped by a Sonnet session limit after 3 of 4 files) | 84 proposed (31 / 53), 0 rejected; Claude changed 3 and fixed one cross-story contradiction | ~122k reader tokens/unit (uncertain: one notice); ~42 fixes/unit; 59 of 84 to review; 84/84 mirrored, 5 put in es-latam words (*billete* → *boleto*); level walk 156/156 per course |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -899,4 +900,37 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
 - **Open, the user's:** Unit 3 has no grammar of its own; the MC
   formulas left out of `unmet-word`; *ustedes* among friends in es-es
   dialogues (ROADMAP 153).
+
+### 2026-10-21: Spanish A2 units 7–12
+
+- **Cost:** 351k (A) + 382k (B), ~122k a unit (×1.11 of units 1–6),
+  with ~58 fixes a unit (×1.32): the per-fix cost fell. Reader B hit a
+  Sonnet session limit after writing Units 10–11's files ("finish each
+  unit's files first" saved them again) and was resumed after the reset;
+  its figure comes from the resumed notice. Under ~140k a unit: **keep
+  three per reader.**
+- **`batch_setup.py`, first use:** the setup took one command and a
+  focus file (the prompt, sheets, baselines and walk line came out
+  right); before, it took a dozen tool calls a batch. Keep.
+- **Filter:** 245 of 347 to review, 7 changed (one character fact, two
+  story lines, one reply in the wrong person, three wordings); and one
+  defect the reader repeated in its own fixes: *¿Cuánto tiempo* + present
+  (16 lines in Unit 7). Readers copy a unit's own pattern when writing
+  new items, so a pattern wrong across a unit is the reviewer's to catch.
+- **es-latam:** the mirror left 13 fixes; 6 were story-question
+  explanations that es-latam words differently (old, often quoting text
+  that the fixes removed, *hubo un festival*). Seen in A1 6–11 too:
+  **scripted** as `sync_story_questions.py` (copies es-es questions in
+  es-latam words after the batch; it refuses *vosotros* forms).
+- **Scripted (seen in three batches):** `table-repeat` (suspect: one
+  table on 3+ screens of a unit): on the pre-batch content it lists all
+  of Units 4–10 and 12 (30 screens), where readers had rewritten the
+  tables in 7–10 and 12 but left 4–6, which were reopened and fixed; 0
+  hits in later A2 units, B1 or HU. `unmet-words.js`: shortened
+  adjectives (*buen*, *gran*) count through their full form.
+- **Seen once, not scripted:** `merge_fixes.py` refusing a reader's
+  es-es/es-latam pair on one item (rule written into the rulebook § 6c
+  instead).
+- **Open, the user's:** *¿Te gustaría…?* removed from the invitations
+  unit (ROADMAP 153).
 

@@ -1,0 +1,77 @@
+[
+ {
+  "file": "content/es-latam/exercises/a2/a2-10-05-ex.json",
+  "id": "a2.10.05.ex15",
+  "set": {
+   "question": "¿Cómo se sienten los amigos después de las llamadas?",
+   "options": [
+    "Más cerca de casa.",
+    "Más lejos de casa.",
+    "Más cerca de la playa."
+   ]
+  },
+  "why": "Reading question was not answerable from the story as written (it invented a mother who calls, a \"protagonista\", an airport); asks what the story's people say and do instead.",
+  "kind": "target",
+  "why_unmatched": "es-latam differs from es-es on ['options']"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-10.json",
+  "id": "a2-original-10",
+  "old": "\"El domingo por la tarde, todos deciden llamar a sus familias para contarles los lugares que han visitado y las personas que han conocido en Vietnam.\"",
+  "new": "\"El domingo por la tarde, los amigos deciden llamar a sus familias.\"",
+  "why": "Comprehension question was generic (\"tema central\") or not answerable from the story as written; asks what the people say and do.",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-10.json",
+  "id": "a2-original-10",
+  "old": "\"Lauren lo dice riendo después de que todos compararon las preguntas entusiastas que sus familias les hicieron; Carlos añade: «Después de todo lo que hemos contado, no me extraña».\"",
+  "new": "\"Lauren lo dice riendo: «Todos quieren venir a Vietnam algún día».\"",
+  "why": "Comprehension question was generic (\"tema central\") or not answerable from the story as written; asks what the people say and do.",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"El fin de semana pasado hubo un festival en el centro de Hanói y Lucía invitó a todos a pasar el día juntos disfrutando de música, comida, espectáculos y un concierto al aire libre.\"",
+  "new": "\"Daniela habló con varios artistas e hizo fotografías.\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"Carlos probó un dulce tradicional, Daniela habló con artistas, Kaylee participó en un juego tradicional y todos asistieron al concierto, lo que muestra su curiosidad y entusiasmo por la cultura vietnamita.\"",
+  "new": "\"Antes de volver a casa, cenaron juntos en un mercado nocturno.\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-12-05-ex.json",
+  "id": "a2.12.05.ex12",
+  "set": {
+   "question": "¿Qué compró Meg?",
+   "options": [
+    "Unas flores.",
+    "Un pastel.",
+    "Una tarjeta."
+   ]
+  },
+  "why": "Reading question invented things the story never says (a wrapped gift, an airport, a bicycle) or asked about unmet words (reaccionó); asks what the story says. \"Un libro\" was also a possible right answer (Kaylee chooses a book).",
+  "kind": "target",
+  "why_unmatched": "es-latam differs from es-es on ['options']"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-12.json",
+  "id": "a2-original-12",
+  "old": "\"Carlos propone la sorpresa recordando que «Lucía nos ha ayudado mucho desde que la conocimos», y todos preparan regalos y van a su apartamento para dárselas gracias.\"",
+  "new": "\"Carlos tuvo una idea después del festival del fin de semana.\"",
+  "why": "Comprehension question was generic (\"tema principal\") or its options used pluperfect / imperfect (había ayudado, era el cumpleaños, había pedido); simplified.",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ }
+]

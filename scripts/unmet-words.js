@@ -323,6 +323,9 @@ function targetTexts(e) {
                     // a deliberately wrong form of a met word (*asztalek*, *könyvok*)
                     if (!lemmas.length && [...firstAt].some(([m, p]) => p <= pos && m.length >= 4 && w.startsWith(m))) continue;
                     const cands = [w, ...lemmas];
+                    // Spanish shortened adjectives before a noun: *buen* is *bueno*, *gran* *grande*
+                    const APOCOPE = { buen: 'bueno', mal: 'malo', gran: 'grande', primer: 'primero', tercer: 'tercero', algún: 'alguno', ningún: 'ninguno', cualquier: 'cualquiera' };
+                    if (Lang.code() !== 'hu' && APOCOPE[w]) cands.push(APOCOPE[w]);
                     // Spanish reflexives: a list gives *ducharse*, the lexicon reads
                     // *me ducho*/*nos acostamos* as *duchar*/*acostar*: count the -se
                     // lemma only where the form is used reflexively (above): *Lo siento*

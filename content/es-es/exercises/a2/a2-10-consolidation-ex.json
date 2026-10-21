@@ -7,17 +7,14 @@
       "type": "multiple-choice",
       "question": "Which sentence uses the pretérito perfecto correctly?",
       "options": [
-        "Mi madre ha llamado.",
-        "Mi madre ha llamar.",
-        "Mi madre llamó ayer."
+        "Mi hermana ha escrito.",
+        "Mi hermana ha escribir.",
+        "Mi hermana has escrito."
       ],
       "correct": 0,
       "teaches": [
         "preterito-perfecto"
-      ],
-      "distractor_skills": {
-        "2": "preterito-indefinido"
-      }
+      ]
     },
     {
       "id": "a2.10.consolidation.ex02",
@@ -61,16 +58,19 @@
       "id": "a2.10.consolidation.ex04",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence means 'I have not called yet'?",
+      "question": "Which sentence means 'I have not called my mother yet'?",
       "options": [
-        "Todavía no he llamado.",
-        "Ya he llamado.",
-        "Todavía llamo."
+        "Todavía no he llamado a mi madre.",
+        "Ya he llamado a mi madre.",
+        "Todavía no llamo a mi madre."
       ],
       "correct": 0,
       "teaches": [
         "ya-todavia-no"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "present-tense"
+      }
     },
     {
       "id": "a2.10.consolidation.ex05",
@@ -137,16 +137,16 @@
       "question": "Which sentence combines the three target structures?",
       "options": [
         "Ya he contestado porque he recibido el mensaje.",
-        "Ya contesté porque recibí el mensaje.",
-        "Todavía contesto porque recibo el mensaje."
+        "Ya contesto porque recibo el mensaje.",
+        "Ya he contestado el mensaje."
       ],
       "correct": 0,
       "teaches": [
         "preterito-perfecto"
       ],
       "distractor_skills": {
-        "1": "preterito-indefinido",
-        "2": "present-tense"
+        "1": "present-tense",
+        "2": "ya-todavia-no"
       }
     },
     {
@@ -188,9 +188,9 @@
       "type": "multiple-choice",
       "question": "Which sentence gives a reason for a recent action?",
       "options": [
-        "He contestado porque he recibido una noticia.",
-        "He contestado ya.",
-        "Todavía no he contestado."
+        "He llamado porque necesito ayuda.",
+        "Ya he llamado a mi familia.",
+        "Todavía no he llamado a mi madre."
       ],
       "correct": 0,
       "teaches": [
@@ -201,26 +201,30 @@
       "id": "a2.10.consolidation.ex12",
       "category": "grammar",
       "type": "sentence-builder",
-      "english": "I have not called yet because I am busy.",
+      "english": "My brother has not called yet because he is busy.",
       "teaches": [
         "ya-todavia-no"
       ],
       "tiles": [
-        "Todavía",
+        "Mi",
+        "hermano",
+        "todavía",
         "no",
-        "he",
+        "ha",
         "llamado",
         "porque",
-        "estoy",
+        "está",
         "ocupado"
       ],
       "solution": [
-        "Todavía",
+        "Mi",
+        "hermano",
+        "todavía",
         "no",
-        "he",
+        "ha",
         "llamado",
         "porque",
-        "estoy",
+        "está",
         "ocupado"
       ]
     },
@@ -230,16 +234,16 @@
       "type": "matching",
       "pairs": [
         [
-          "ya he contestado",
-          "I have already answered"
+          "ya ha llamado",
+          "has already called"
         ],
         [
-          "todavía no he llamado",
-          "I have not called yet"
+          "todavía no ha escrito",
+          "has not written yet"
         ],
         [
-          "he contestado porque",
-          "I have answered because"
+          "ha contestado porque",
+          "has answered because"
         ]
       ],
       "teaches": [
@@ -268,7 +272,10 @@
       "correct": 0,
       "teaches": [
         "preterito-perfecto"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "a2.10.consolidation.ex15",
@@ -277,7 +284,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Por qué has contestado?"
+          "text": "¿Por qué has escrito a tu padre?"
         },
         {
           "speaker": "Meg",
@@ -285,9 +292,9 @@
         }
       ],
       "options": [
-        "He contestado porque he recibido una noticia.",
-        "He contestado ya.",
-        "Todavía no he contestado."
+        "Porque he recibido una noticia.",
+        "Ya he escrito a mi padre.",
+        "Todavía no he escrito a mi padre."
       ],
       "correct": 0,
       "teaches": [

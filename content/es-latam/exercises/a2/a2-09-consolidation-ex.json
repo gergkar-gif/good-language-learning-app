@@ -7,9 +7,9 @@
       "type": "multiple-choice",
       "question": "Which sentence asks about an experience?",
       "options": [
-        "¿Has visitado alguna vez la playa?",
-        "Nunca he visitado la playa.",
-        "He visitado la playa."
+        "¿Has visto alguna vez el mar?",
+        "¿Quieres ver el mar mañana?",
+        "¿Cuándo vas a ver el mar?"
       ],
       "correct": 0,
       "teaches": [
@@ -24,8 +24,8 @@
       "teaches": [
         "alguna-vez"
       ],
-      "sentence": "¿Has visitado __ vez la costa?",
-      "english": "Have you ever visited the coast?"
+      "sentence": "¿Has comido __ vez en un restaurante?",
+      "english": "Have you ever eaten in a restaurant?"
     },
     {
       "id": "a2.09.consolidation.ex03",
@@ -180,16 +180,13 @@
       "question": "Which sentence correctly combines the perfect tense and nunca?",
       "options": [
         "Nunca he probado el marisco.",
-        "Nunca probé el marisco.",
-        "Nunca he probar el marisco."
+        "Nunca he probar el marisco.",
+        "Nunca probado el marisco."
       ],
       "correct": 0,
       "teaches": [
         "preterito-perfecto"
-      ],
-      "distractor_skills": {
-        "1": "preterito-indefinido"
-      }
+      ]
     },
     {
       "id": "a2.09.consolidation.ex12",
@@ -245,7 +242,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Has visitado alguna vez la playa?"
+          "text": "¿Has probado alguna vez el pescado?"
         },
         {
           "speaker": "Carlos",
@@ -253,9 +250,9 @@
         }
       ],
       "options": [
-        "Sí, he visitado la playa.",
-        "No, he visitado la playa.",
-        "Sí, nunca he visitado la playa."
+        "Sí, he probado el pescado.",
+        "No, he probado el pescado.",
+        "Sí, probado el pescado."
       ],
       "correct": 0,
       "teaches": [
@@ -269,7 +266,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Has estado alguna vez en la costa?"
+          "text": "¿Has estado alguna vez en un mercado costero?"
         },
         {
           "speaker": "Meg",
@@ -277,9 +274,9 @@
         }
       ],
       "options": [
-        "No, nunca he estado en la costa.",
-        "Sí, nunca he estado en la costa.",
-        "No, alguna vez he estado en la costa."
+        "No, nunca he estado en un mercado costero.",
+        "Sí, nunca he estado en un mercado costero.",
+        "No, alguna vez he estado en un mercado costero."
       ],
       "correct": 0,
       "teaches": [
@@ -292,18 +289,18 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "¿Has probado alguna vez el marisco?"
+          "speaker": "Carlos",
+          "text": "¿Has estado alguna vez en Ninh Bình?"
         },
         {
-          "speaker": "Carlos",
+          "speaker": "Lucía",
           "text": "_____"
         }
       ],
       "options": [
-        "No, nunca he probado el marisco.",
-        "Sí, nunca he probado el marisco.",
-        "No, alguna vez he probado el marisco."
+        "No, nunca he estado en Ninh Bình.",
+        "Sí, nunca he estado en Ninh Bình.",
+        "No, alguna vez he estado en Ninh Bình."
       ],
       "correct": 0,
       "teaches": [

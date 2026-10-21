@@ -84,13 +84,13 @@
       ],
       "distractor_skills": {
         "1": "present-tense",
-        "2": "futuro-simple"
+        "2": "preterito-perfecto"
       },
       "question": "Which sentence describes a completed past action?",
       "options": [
         "Ayer Carlos compró una fotografía en el mercado.",
         "Ayer Carlos compra una fotografía en el mercado.",
-        "Ayer Carlos comprará una fotografía en el mercado."
+        "Ayer Carlos ha comprado una fotografía en el mercado."
       ],
       "correct": 0
     },
@@ -152,14 +152,11 @@
       "teaches": [
         "preterito-indefinido"
       ],
-      "distractor_skills": {
-        "2": "futuro-simple"
-      },
       "question": "Which form completes the sentence? Ayer nosotros __ por la ciudad.",
       "options": [
-        "paseamos",
-        "pasear",
-        "pasearemos"
+        "caminamos",
+        "caminar",
+        "caminaron"
       ],
       "correct": 0
     },
@@ -182,11 +179,11 @@
       "id": "a2.11.05.ex11",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "¿Dónde hubo un festival?",
+      "question": "¿Adónde fueron los amigos el fin de semana pasado?",
       "options": [
-        "En el centro de Hanói.",
-        "En el aeropuerto.",
-        "En un hotel."
+        "A un festival.",
+        "A la playa.",
+        "A un hotel."
       ],
       "correct": 0
     },
@@ -220,7 +217,7 @@
       "type": "multiple-choice",
       "question": "¿Qué compró Meg?",
       "options": [
-        "Un pequeño abanico hecho a mano.",
+        "Un pequeño abanico.",
         "Una fotografía.",
         "Un libro de cocina."
       ],
@@ -230,11 +227,11 @@
       "id": "a2.11.05.ex15",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "¿Qué hizo Kaylee?",
+      "question": "¿Con quiénes habló Daniela?",
       "options": [
-        "Participó en un juego.",
-        "Compró una novela.",
-        "Habló con los artistas."
+        "Con los artistas.",
+        "Con Kaylee y Lauren.",
+        "Con Lucía y Carlos."
       ],
       "correct": 0
     },
@@ -244,11 +241,11 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Carlos",
-          "text": "¿Qué probaste?"
+          "speaker": "Meg",
+          "text": "¿Qué probaste ayer?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
@@ -260,7 +257,11 @@
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.11.05.ex17",
@@ -268,11 +269,11 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "¿Qué compraste?"
+          "speaker": "Carlos",
+          "text": "¿Qué compraste ayer?"
         },
         {
-          "speaker": "Carlos",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
@@ -284,7 +285,11 @@
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.11.05.ex18",
@@ -293,7 +298,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Qué hicieron por la tarde?"
+          "text": "¿Qué hicieron ayer por la tarde?"
         },
         {
           "speaker": "Meg",
@@ -301,14 +306,18 @@
         }
       ],
       "options": [
-        "Asistieron a un concierto al aire libre.",
-        "Asisten a un concierto al aire libre.",
-        "Han asistido a un concierto al aire libre."
+        "Fuimos a un concierto.",
+        "Vamos a un concierto.",
+        "Hemos ido a un concierto."
       ],
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.11.05.ex19",

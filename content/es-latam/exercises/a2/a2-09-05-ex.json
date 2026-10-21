@@ -30,8 +30,8 @@
       "question": "Which sentence asks whether someone has ever bought a souvenir?",
       "options": [
         "¿Has comprado alguna vez un recuerdo?",
-        "Nunca he comprado un recuerdo.",
-        "He comprado un recuerdo."
+        "¿Quieres comprar un recuerdo hoy?",
+        "¿Cuándo vas a comprar un recuerdo?"
       ],
       "correct": 0,
       "teaches": [
@@ -179,7 +179,7 @@
       "id": "a2.09.05.ex11",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "¿Quién propone hacer una excursión a la costa?",
+      "question": "¿Quién quiere hacer una excursión a la costa?",
       "options": [
         "Lucía.",
         "Carlos.",
@@ -193,7 +193,7 @@
       "type": "multiple-choice",
       "question": "¿Por qué aceptan todos la excursión?",
       "options": [
-        "Porque ninguno ha visitado ese pequeño pueblo pesquero.",
+        "Porque no han visitado ese pueblo.",
         "Porque todos han vivido allí.",
         "Porque conocen muy bien el pueblo."
       ],
@@ -205,9 +205,9 @@
       "type": "multiple-choice",
       "question": "¿Qué pregunta Daniela al llegar al mar?",
       "options": [
-        "Si han visto alguna vez tantas barcas juntas.",
-        "Si han comprado recuerdos.",
-        "Si han probado el marisco."
+        "«¿Han visto alguna vez muchas barcas?»",
+        "«¿Han comprado recuerdos en el mercado?»",
+        "«¿Han probado el marisco del restaurante?»"
       ],
       "correct": 0
     },
@@ -218,8 +218,8 @@
       "question": "¿Qué dice Carlos sobre el puerto?",
       "options": [
         "Nunca ha estado en un puerto como ese.",
-        "Ha estado allí muchas veces.",
-        "Nunca ha visto el mar."
+        "Ha estado allí muchas veces con Lucía.",
+        "Nunca ha visto el mar de Vietnam."
       ],
       "correct": 0
     },
@@ -241,8 +241,8 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "¿Han visto alguna vez tantas barcas juntas?"
+          "speaker": "Daniela",
+          "text": "¿Has visto alguna vez muchas barcas en un puerto?"
         },
         {
           "speaker": "Carlos",
@@ -250,9 +250,9 @@
         }
       ],
       "options": [
-        "No, nunca he visto tantas barcas juntas.",
-        "Sí, nunca he visto tantas barcas juntas.",
-        "No, alguna vez he visto tantas barcas juntas."
+        "No, nunca he visto muchas barcas en un puerto.",
+        "Sí, nunca he visto muchas barcas en un puerto.",
+        "No, alguna vez he visto muchas barcas en un puerto."
       ],
       "correct": 0,
       "teaches": [
@@ -265,11 +265,11 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Carlos",
+          "speaker": "Meg",
           "text": "¿Has estado alguna vez en un puerto como ese?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
@@ -300,7 +300,7 @@
       "options": [
         "Sí, he probado el marisco.",
         "No, he probado el marisco.",
-        "Sí, nunca he probado el marisco."
+        "Sí, probado el marisco."
       ],
       "correct": 0,
       "teaches": [

@@ -88,13 +88,13 @@
       ],
       "distractor_skills": {
         "1": "present-tense",
-        "2": "futuro-simple"
+        "2": "preterito-perfecto"
       },
       "question": "Which sentence describes a completed past action?",
       "options": [
         "Ayer Lucía llegó al concierto.",
         "Ayer Lucía llega al concierto.",
-        "Ayer Lucía llegará al concierto."
+        "Ayer Lucía ha llegado al concierto."
       ],
       "correct": 0
     },
@@ -123,10 +123,10 @@
       "teaches": [
         "preterito-indefinido"
       ],
-      "sentence": "Después Carlos __ con los artistas.",
+      "sentence": "Después Daniela __ con los artistas.",
       "hint": "hablar",
       "answer": "habló",
-      "english": "Afterwards Carlos talked with the artists."
+      "english": "Afterwards Daniela talked with the artists."
     },
     {
       "id": "a2.11.04.ex08",
@@ -158,14 +158,11 @@
       "teaches": [
         "preterito-indefinido"
       ],
-      "distractor_skills": {
-        "2": "futuro-simple"
-      },
       "question": "Which form completes the sentence? Ayer por la tarde nosotros __ con el artista.",
       "options": [
         "hablamos",
         "hablar",
-        "hablaremos"
+        "hablaron"
       ],
       "correct": 0
     },
@@ -193,7 +190,6 @@
         "secuencia-narrativa"
       ],
       "sentence": "__ visitamos el festival.",
-      "hint": "first",
       "english": "First we visited the festival."
     },
     {
@@ -308,15 +304,15 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say that you first visited the festival.",
+          "prompt": "Say that first we visited the festival.",
           "answer": "Primero visitamos el festival."
         },
         {
-          "prompt": "Say that afterwards you bought a fan.",
+          "prompt": "Say that afterwards we bought a fan.",
           "answer": "Después compramos un abanico."
         },
         {
-          "prompt": "Say that in the afternoon you went to the concert.",
+          "prompt": "Say that in the afternoon we went to the concert.",
           "answer": "Por la tarde fuimos al concierto."
         }
       ],

@@ -384,6 +384,23 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   principal?"): ask what the people do; checklists "I can say what *you*
   have done" (`checklist-you`); A1 material (*antes de*, *porque*) recapped
   as new; the same three-row table on every screen of a unit.
+- **Found in A2 units 7–12 (2026-10-21):** *¿Cuánto tiempo* + present
+  (*¿Cuánto tiempo estudias español?*) is not standard: *¿Desde hace
+  cuánto tiempo estudias…?* (or *¿Cuánto tiempo hace que…?*); *desde* /
+  *desde hace* wrong options that answer the question anyway (*desde
+  enero* to *¿Cuánto tiempo…?*): give each one clear fault (*desde hace
+  enero*, *desde un año*); *¿Te gustaría…?* / *me gustaría* (conditional,
+  Unit 26) in Units 1–25: use *¿Quieres / Puedes + infinitive?*; a
+  pronoun answer that says nothing (*¿Qué compraste? — Lo compré.*): ask
+  yes/no (*¿Compraste el regalo? — Sí, lo compré.*); a reply in the
+  asker's person (*¿Celebraste…? — celebraste*) or answering for others
+  (*¿Prepararon las cajas? — Sí, las prepararon.* from one of them);
+  description in the preterite before the imperfect (*Las calles
+  estuvieron llenas*: *se llenaron*); the same table on every screen of a
+  unit (`table-repeat`). A course-variant pair (es-es *habéis*, es-latam
+  *han*) is two fixes on one item: mark the es-es one `"variant":
+  "es-es"`; the reviewer splits the other into the es-latam list
+  (`merge_fixes.py` refuses the pair).
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).

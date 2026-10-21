@@ -106,6 +106,7 @@ CHECKS = {
     "infinitive-reply": "ES: a wrong option is the right option with its verb in the infinitive (*Descansa y toma agua.* / *Descansar y tomar agua.*, *Leo en casa.* / *Leer en casa.*): an infinitive is a natural elliptical reply or written instruction, so a second right answer; make the wrong option another person (es A1 units 14, 20, 23 readers fixed 20)",
     "reading-generic": "a reading question about 'the character' or the text type ('What kind of text is the story?', 'the diary'): placeholder questions the story can't answer; ask about what its people say and do (es A1 units 16-18 and 14 had 13, all real; none elsewhere in es or hu)",
     "perfecto-marker": "ES: a right answer, sentence or prompt line in the pretérito perfecto with a finished-past marker (*Ayer he comido*, *He viajado más que el año pasado*, *ha comprado el día anterior*): Spain uses the preterite there, Latin America too, so it is wrong Spanish; use a perfecto marker (*hoy*, *esta mañana*, *este año*) or wait for the preterite (es A2 units 1, 2, 6 readers fixed 9)",
+    "table-repeat": "the same table on three or more grammar screens of one unit: each screen restates the first instead of teaching its own point (es A2 units 3-6, 8-10 readers rewrote 20)",
     "checklist-you": "a checklist line 'I can say what you have …': the learner talks about themselves ('what I have done'); es A2 units 2-4 had 8",
     "checklist-shared": "a checklist line another lesson of the course also has (each lesson gets its own)",
     "unmet-word": "a word the learner hasn't met by this lesson (scripts/unmet-words.js)",
@@ -125,7 +126,7 @@ LENGTHENING_SUFFIXES = set(
     "ban ben ba be bol bol rol ra re n nak nek val vel hoz hez tol ig "
     "t k m d nk tok tek ul ert va ve".split())
 IK_K = re.compile(r"\b(eszek|iszok|dolgozok|lakok|reggelizek|játszok|focizok|teniszezek|találkozok|alszok|úszok)\b", re.I)
-SUSPECTS = {"perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
+SUSPECTS = {"table-repeat", "perfecto-marker", "checklist-you", "infinitive-reply", "reading-generic", "course-variant", "answers-alternatives", "story-key-vocab", "story-questions-copy", "hova-variant", "hint-suffix", "article-blank", "reported-question", "consolidation-copy", "take-gloss", "glued-blank", "self-third-person", "tell-opener", "tell-punctuation", "option-language", "question-answer-type",
             "answer-in-prompt", "hu-case-noun", "vocab-unused", "unmet-word", "recap-unmarked"}
 # unmet-word runs where the vocabulary lists are complete enough to define "met":
 # A1-A2. Spanish lists leave out function words (en, que, con): unmet-words.js
@@ -673,6 +674,28 @@ def screen_items(src, course, level):
     return src.cache[key]
 
 
+def table_repeat(src, course, level, unit):
+    """Grammar screens of `unit` that carry the same table as two or more
+    other screens of the unit (the bulk-generated A2 units copied one table
+    onto every screen)."""
+    tables = defaultdict(list)
+    for stem in unit.get("stems", []):
+        for sec in (src.read(f"content/{course}/lessons/{level}/{stem}.json") or {}).get("sections", []):
+            if sec.get("type") != "grammar" or not sec.get("ref"):
+                continue
+            g = src.read(f"content/{course}/{sec['ref']}") or {}
+            for t in g.get("sections", []) if isinstance(g, dict) else []:
+                if t.get("type") == "table" and t.get("rows"):
+                    tables[json.dumps(t["rows"], ensure_ascii=False)].append(sec["ref"])
+    out = []
+    for refs in tables.values():
+        refs = list(dict.fromkeys(refs))
+        if len(refs) >= 3:
+            for r in refs[1:]:
+                out.append(("table-repeat", Path(r).stem, f"same table as {Path(refs[0]).stem} (+{len(refs) - 2} more)", f"content/{course}/{r}"))
+    return out
+
+
 def recap_unmarked(src, course, level, unit):
     """Screens of `unit` that reuse 2+ sentences an earlier unit's screens
     showed, with no 'You know'-style wording (a recap presented as new)."""
@@ -847,6 +870,7 @@ def check_unit(src, course, level, unit, shape):
         if shape:
             out += check_shape(src, course, level, stem, lesson, lesson_rel, groups, by_id, consolidation)
     out += recap_unmarked(src, course, level, unit)
+    out += table_repeat(src, course, level, unit)
     return out
 
 
