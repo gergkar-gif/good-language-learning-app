@@ -1203,7 +1203,7 @@ ES_SCENARIOS = [
         "targetCompetency": "I can explain a product issue, present proof of purchase, and request a size exchange",
         "targetSkills": ["returns_and_exchanges", "explaining_defects", "consumer_interaction"],
         "unitIds": ["unit.a2.05", "unit.a2.25"],
-        "requiredLemmas": ["cambiar", "ticket", "pequeño", "grande", "comprar", "gracias"],
+        "requiredLemmas": ["cambiar", "pequeño", "grande", "comprar", "gracias"],
         "turns": [
             {
                 "turnIndex": 1,
