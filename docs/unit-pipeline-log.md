@@ -343,6 +343,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-16 | es A1 6–11 (both courses) | paired read, Spanish template, **3 units/reader**, es-es read once, mirrored | | 313k + 306k, 15.3 + ~15 (B hit a Sonnet session limit after writing all its files; resumed for its last report section) | 278 proposed (32 / 57 / 26 / 40 / 89 / 34), 0 rejected for content (1 by a stale word index, restored); Claude changed 16 (10 in the filter, 6 schema), added 12 in es-es after the new checks and `--warnings` (5 answers lists, 1 thin-skill item, 3 stories' key words, 1 story line, 2 challenge glosses) and 8 in es-latam only (3 variant fixes, 5 story question sets) | ~103k reader tokens/unit (A ~104k, B ~102k; ×0.88 of units 2–5's ~117k); ~46 fixes/unit (×1.1 of ~42); 222 of 278 to review; 269/279 mirrored (10 es-es variants or es-latam text); walk 36/36 per course; B's 305,712 is the only usage figure its notices gave (the failure notice had none) |
 | 10-21 | es A1 13–18 (both courses) | paired read, Spanish template, 3 units/reader, es-es read once, mirrored | | 346k + 291k, 16.5 + 15.4 | 262 proposed (38 / 41 / 34 / 38 / 59 / 52), 0 rejected; Claude changed 2 and added 1 es-latam-only fix | ~106k reader tokens/unit (A ~115k, B ~97k; ×1.03 of 6–11's ~103k); ~44 fixes/unit (×0.95); 189 of 262 to review; 261/262 mirrored (1 es-es variant), 4 put in es-latam words by the mirror; walk 36/36 per course; A's report write refused, B's allowed |
 | 10-21 | es A1 19–24 (both courses) | paired read, Spanish template, 3 units/reader, es-es read once, mirrored | | 395k + 332k, 21.7 + 17.1 | 273 proposed (55 / 45 / 45 / 29 / 47 / 52), 0 rejected; Claude changed 5 (2 retags kept, 1 story logic, 1 option set, 1 spelling) and added 4 (es-latam twins and *pedir*/*clínica*), plus 4 after the new check | ~121k reader tokens/unit (A ~132k, B ~111k; ×1.14 of 13–18's ~106k); ~46 fixes/unit (×1.04); 226 of 273 to review; 272/273 mirrored (1 es-es variant), 1 put in es-latam words; walk 36/36 per course; both report writes allowed |
+| 10-21 | es A1 25–26 (both courses) | **one** reader, 2 units, Spanish template, mirrored | | 244k (the resumed notice only; stopped by a Sonnet session limit after 3 of 4 files) | 84 proposed (31 / 53), 0 rejected; Claude changed 3 and fixed one cross-story contradiction | ~122k reader tokens/unit (uncertain: one notice); ~42 fixes/unit; 59 of 84 to review; 84/84 mirrored, 5 put in es-latam words (*billete* → *boleto*); level walk 156/156 per course |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -821,3 +822,23 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   (`unmet-word` reads options, sentences and prompts, not MC questions);
   reader A found five. Extending `unmet-words.js` to question stems is a
   checker change across all courses: queued.
+
+### 2026-10-21: Spanish A1 units 25–26 and the level checklist (A1 26/26)
+
+- **Cost:** one reader for the last two units, 244k by its resumed notice
+  (it stopped at a Sonnet session limit with three of its four files
+  written; "finish each unit's files first" again saved the work, and a
+  SendMessage after the reset finished it).
+- **Filter:** 59 of 84 to review; changed 3 (a wrong option that passes
+  colloquially, two `variant` marks the mirror now handles) and fixed a
+  contradiction across stories the reader flagged: a1-17 sent Meg south
+  with her sisters while a1-19/a1-20 put her on the mountain train with
+  Carlos. Reading stories in sequence, not one per unit, is what catches
+  this: the last unit of a level should read the level's stories in order.
+- **A gate the content checks don't cover:** the push failed on
+  `tests/drills/test-scenario-learner-path.js`: a conversation scenario
+  required the lemma *ticket*, which existed only because an A1
+  vocabulary list had the English word as a Spanish lemma (now *billete*
+  / *boleto*). Run the test suite (or push) before calling a batch done,
+  not only check-content and validate.
+- **Level checklist:** summary in `imports/review/es-a1-level-check/`.
