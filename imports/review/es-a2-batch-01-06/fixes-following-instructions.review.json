@@ -1,0 +1,300 @@
+[
+ {
+  "file": "content/es-es/exercises/a2/a2-04-01-ex.json",
+  "id": "a2.04.01.ex13",
+  "set": {
+   "options": [
+    "Antes de empezar, hemos lavado las manos.",
+    "Antes de empezar, hemos lavar las manos.",
+    "Antes de empezamos, hemos lavado las manos."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-time-word ayer and a preterite (lavamos) before a2-11-01; wrong option now one fault: conjugated verb after de"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-04-01-ex.json",
+  "id": "a2.04.01.ex15",
+  "set": {
+   "options": [
+    "Sí, hemos preparado los ingredientes.",
+    "Sí, hemos preparar los ingredientes.",
+    "Sí, hemos preparados los ingredientes."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-time-word ayer and a preterite (preparamos) before a2-11-01; wrong option now a participle agreeing with the object"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-04-02-ex.json",
+  "id": "a2.04.02.ex15",
+  "set": {
+   "options": [
+    "Sí, hemos servido la comida.",
+    "Sí, hemos servir la comida.",
+    "Sí, hemos servido la comida antes de cocinar."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-time-word ayer and a preterite (servimos) before a2-11-01"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-04-01-ex.json",
+  "id": "a2.04.01.ex12",
+  "set": {
+   "options": [
+    "He cortado las verduras antes de cocinar.",
+    "He cortado las verduras antes de cocino.",
+    "He cortado las verduras antes cocinar."
+   ]
+  },
+  "kind": "target",
+  "why": "preterite cociné is before a2-11-01; present cocino keeps the one fault (conjugated verb after de)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-04-02-ex.json",
+  "id": "a2.04.02.ex12",
+  "set": {
+   "options": [
+    "He servido la comida después de cocinar.",
+    "He servido la comida después cocinar.",
+    "He servido la comida después de cocino."
+   ]
+  },
+  "kind": "target",
+  "why": "preterite cociné is before a2-11-01"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-04-consolidation-ex.json",
+  "id": "a2.04.consolidation.ex01",
+  "set": {
+   "options": [
+    "He lavado las manos antes de empezar.",
+    "He lavado las manos antes empezar.",
+    "He lavado las manos antes de empiezo."
+   ]
+  },
+  "kind": "target",
+  "why": "empecé is a preterite before a2-11-01"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-04-05-ex.json",
+  "id": "a2.04.05.ex11",
+  "set": {
+   "question": "¿Qué clase tienen los amigos?",
+   "options": [
+    "Una clase de cocina.",
+    "Una clase de español.",
+    "Una clase de fotografía."
+   ]
+  },
+  "kind": "target",
+  "why": "length-giveaway; tradicional is b1-12-02; se han apuntado (apuntarse) is in no list"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-04-05-ex.json",
+  "id": "a2.04.05.ex12",
+  "set": {
+   "options": [
+    "Se lavan las manos.",
+    "Prueban la comida.",
+    "Salen de la clase."
+   ]
+  },
+  "kind": "target",
+  "why": "length-giveaway; marchan unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-04-05-ex.json",
+  "id": "a2.04.05.ex14",
+  "set": {
+   "options": [
+    "Prueban la comida juntos.",
+    "Se van a Hanói en tren.",
+    "Preparan la salsa."
+   ]
+  },
+  "kind": "target",
+  "why": "inmediatamente and otra unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-04-05-ex.json",
+  "id": "a2.04.05.ex15",
+  "set": {
+   "options": [
+    "Hacen una foto.",
+    "Preparan el arroz.",
+    "Compran un delantal."
+   ]
+  },
+  "kind": "target",
+  "why": "length-giveaway; otra unmet"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-04-01-voc.json",
+  "old": "    {\n      \"lemma\": \"los ingredientes\",\n      \"translation\": \"ingredients\",\n      \"pos\": \"noun\"\n    }",
+  "new": "    {\n      \"lemma\": \"los ingredientes\",\n      \"translation\": \"ingredients\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"las verduras\",\n      \"translation\": \"vegetables\",\n      \"pos\": \"noun\"\n    }",
+  "kind": "target",
+  "why": "verduras is in no list; a2-04-01 is the first lesson to use it"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-04-02-voc.json",
+  "old": "    {\n      \"lemma\": \"la cuchara\",\n      \"translation\": \"spoon\",\n      \"pos\": \"noun\"\n    }",
+  "new": "    {\n      \"lemma\": \"la cuchara\",\n      \"translation\": \"spoon\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"probar\",\n      \"translation\": \"to try, to taste\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"servir\",\n      \"translation\": \"to serve\",\n      \"pos\": \"verb\"\n    }",
+  "kind": "target",
+  "why": "probar (ex02, ex09, ex13, ex14) and servir (ex15) are used here but listed in a2-04-03 / a2-04-04; the lesson's own example sentences use them"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-04-05-voc.json",
+  "old": "    {\n      \"lemma\": \"el plato\",\n      \"translation\": \"dish\",\n      \"pos\": \"noun\"\n    }",
+  "new": "    {\n      \"lemma\": \"el plato\",\n      \"translation\": \"dish\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"marcharse\",\n      \"translation\": \"to leave, to go away\",\n      \"pos\": \"verb\"\n    }",
+  "kind": "target",
+  "why": "marcharse is used in this lesson's example, story question, items and in the consolidation, but listed only at a2-subjuntivobasico-05"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-04-03-ex.json",
+  "id": "a2.04.03.ex02",
+  "set": {
+   "question": "You cut the vegetables, then you cook. Which sentence says this?"
+  },
+  "kind": "target",
+  "why": "the question never says which action comes first, so Despues de cocinar, hemos cortado is also a valid order"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-04-03-ex.json",
+  "id": "a2.04.03.ex05",
+  "set": {
+   "options": [
+    "después de",
+    "antes de",
+    "sin"
+   ]
+  },
+  "kind": "target",
+  "why": "desde is taught in Unit 7 (desde-desde-hace)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-04-03-ex.json",
+  "id": "a2.04.03.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué han hecho después de lavar las manos?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Hemos preparado los ingredientes.",
+    "Hemos preparar los ingredientes.",
+    "Hemos preparado los ingredientes antes de lavar las manos."
+   ]
+  },
+  "kind": "target",
+  "why": "ex15 is the same dialogue as ex14 (same prompt, same three options)"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-04-01-gr.json",
+  "old": "Use *antes de* + infinitive to say that one action happened before another. When the main action is expressed with the *pretérito perfecto*, the perfect form shows the completed action, while *antes de* introduces the action that happened first. The infinitive does not change for the subject.",
+  "new": "You know *antes de* from A1 Unit 7 and the *pretérito perfecto* from Unit 1. Put them together: the *pretérito perfecto* says what you have done, and *antes de* + infinitive names the action that comes later. The infinitive does not change for the subject.",
+  "kind": "target",
+  "why": "A1 Unit 7 (a1-reflexive-05) already taught antes de; the old sentence is muddled"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-04-01-gr.json",
+  "old": "Unlike English, which can slide into a fully conjugated clause ('before I start'), Spanish *antes de* is always followed by the bare infinitive, no matter who is doing the action: *antes de empezar* covers *yo*, *tú* or *ellos* without changing.",
+  "new": "When the same person does both actions, *antes de* is followed by the bare infinitive, just like English 'before starting': *antes de empezar* covers *yo*, *tú* or *ellos* without changing.",
+  "kind": "target",
+  "why": "false: with a different subject Spanish needs antes de que + subjunctive, and English does use 'before starting'"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-04-02-gr.json",
+  "old": "Use *después de* + infinitive to say that one action happened after another. With the *pretérito perfecto*, the completed action is linked to the sequence. The infinitive after *después de* stays in its infinitive form.",
+  "new": "You know *después de* from A1 Unit 7. Use *después de* + infinitive to name the action that came first, and the *pretérito perfecto* for what you have done after it. The infinitive after *después de* stays in its infinitive form.",
+  "kind": "target",
+  "why": "recap of A1 Unit 7; the old middle sentence says nothing"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-04-02-gr.json",
+  "old": "Treat *de* before *antes* or *después* like a locked door: only an infinitive is the right key. As soon as you see *antes de* or *después de*, the next verb form is decided for you.",
+  "new": "As with *antes de*, the verb after *después de* is always the bare infinitive: *después de cocinar*, never *después de cocino*. The *de* belongs to the phrase, so do not drop it.",
+  "kind": "target",
+  "why": "'de before antes or después' is wrong: de comes after them"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-04.json",
+  "old": "Al día siguiente, los amigos se han apuntado a una clase de cocina tradicional.",
+  "new": "Hoy, los amigos se han apuntado a una clase de cocina tradicional.",
+  "kind": "target",
+  "why": "pretérito perfecto with Al día siguiente (a past, not today) is not Spain Spanish; Hoy takes the perfecto"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-04.json",
+  "old": "«Nunca había preparado este plato», comenta Lauren.",
+  "new": "«Nunca he preparado este plato», comenta Lauren.",
+  "kind": "target",
+  "why": "había preparado is the pluscuamperfecto (B1)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-04.json",
+  "old": "Meg dice que quiere cocinarlo otra vez cuando vuelva a Hanói.",
+  "new": "Meg dice que quiere cocinarlo otra vez en Hanói.",
+  "kind": "target",
+  "why": "vuelva is a present subjunctive (A2 Unit 27)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-04.json",
+  "old": "¿De qué trata el texto?",
+  "new": "¿Qué hacen los amigos en la escuela de cocina?",
+  "kind": "target",
+  "why": "reading-generic: asks about the text, not what the people do"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-04.json",
+  "old": "De una visita a un restaurante lujoso en Hanói.",
+  "new": "Comen en un restaurante lujoso en Hanói.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-04.json",
+  "old": "De cómo los amigos aprenden a cocinar un plato tradicional juntos.",
+  "new": "Aprenden a cocinar un plato tradicional con la profesora.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-04.json",
+  "old": "De la compra de verduras exóticas en un supermercado.",
+  "new": "Compran verduras exóticas en un supermercado.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-04.json",
+  "old": "De un examen difícil de cocina profesional.",
+  "new": "Hacen un examen difícil de cocina profesional.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-04.json",
+  "old": "Cortar las verduras para el plato.",
+  "new": "Corta las verduras para el plato.",
+  "kind": "target",
+  "why": "the right answer was the only infinitive among finite verbs"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-04.json",
+  "old": "Porque la profesora le puso una mala nota en la clase.",
+  "new": "Porque la profesora le da una mala nota en la clase.",
+  "kind": "target",
+  "why": "preterite puso before a2-11-01"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-04.json",
+  "old": "Porque perdió el libro de texto del curso de idiomas.",
+  "new": "Porque pierde el libro de texto del curso de idiomas.",
+  "kind": "target",
+  "why": "preterite perdió before a2-11-01"
+ }
+]

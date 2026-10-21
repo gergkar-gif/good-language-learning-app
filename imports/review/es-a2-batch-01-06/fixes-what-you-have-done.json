@@ -1,0 +1,501 @@
+[
+ {
+  "file": "content/es-es/lessons/a2/a2-02-01.json",
+  "old": "\"I can say what you have already done using ya + pretérito perfecto.\"",
+  "new": "\"I can say what I have already done using ya + pretérito perfecto.\"",
+  "why": "Checklist says \"I can say what you have ...\"; first person."
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-02-02.json",
+  "old": "\"I can say what you have not done yet using todavía no + pretérito perfecto.\"",
+  "new": "\"I can say what I have not done yet using todavía no + pretérito perfecto.\"",
+  "why": "Checklist says \"I can say what you have ...\"; first person."
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-02-04.json",
+  "old": "\"I can talk about things you have already done and things you have not done yet while travelling.\"",
+  "new": "\"I can talk about things I have already done and things I have not done yet while travelling.\"",
+  "why": "Checklist says \"things you have ...\"; first person."
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-02-01-gr.json",
+  "old": "*Ya* normally appears between the auxiliary verb and the participle: *He ya viajado* is incorrect; *Ya he viajado* is the natural form.",
+  "new": "*Ya* normally goes before the auxiliary verb: *Ya he viajado* is the natural form, and *He ya viajado* sounds wrong.",
+  "why": "Rule contradicts itself and its examples: it says ya sits between auxiliary and participle, then calls that order (He ya viajado) incorrect.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-02-03-gr.json",
+  "old": "The question form changes the subject and auxiliary as needed, but the participle stays the same.",
+  "new": "The auxiliary changes for the subject as needed, but the participle stays the same.",
+  "why": "A question does not change the subject; only the auxiliary agrees.",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-02-04-gr.json",
+  "old": "forms you learned in the first three lessons.",
+  "new": "forms you know from Unit 1.",
+  "why": "The perfecto forms come from Unit 1; the first three lessons of this unit taught ya and todavía no."
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-01-ex.json",
+  "id": "a2.02.01.ex10",
+  "set": {
+   "question": "What does «el mapa» mean?"
+  },
+  "why": "Spanish metalanguage \"significa\" is unmet (first b1-27-03); ask in English."
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-02-ex.json",
+  "id": "a2.02.02.ex10",
+  "set": {
+   "question": "What does «el tráfico» mean?"
+  },
+  "why": "Spanish metalanguage \"significa\" is unmet (first b1-27-03); ask in English."
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-02-ex.json",
+  "id": "a2.02.02.ex13",
+  "set": {
+   "options": [
+    "Todavía no hemos llegado.",
+    "Ya hemos llegado al hotel.",
+    "Hemos llegado al hotel."
+   ]
+  },
+  "why": "length-giveaway 30 vs 22: the right option is longest; wrong options now as long (one fault each).",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-02-ex.json",
+  "id": "a2.02.02.ex16",
+  "set": {
+   "question": "Which sentence says that they have not visited the rice field yet?",
+   "options": [
+    "Todavía no han visitado el arrozal.",
+    "Ya han visitado el arrozal.",
+    "Todavía han visitado el arrozal."
+   ]
+  },
+  "why": "Same item as ex02 (not seen the temple yet, same three options).",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-03-ex.json",
+  "id": "a2.02.03.ex05",
+  "set": {
+   "options": [
+    "No, todavía no.",
+    "No, ya.",
+    "No, no todavía."
+   ]
+  },
+  "why": "\"No, todavía.\" is a natural short answer in Spain too (second right answer); the wrong option is now a word-order fault.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-03-ex.json",
+  "id": "a2.02.03.ex09",
+  "set": {
+   "options": [
+    "No, todavía no.",
+    "Sí, todavía no.",
+    "No, ya hemos alquilado."
+   ]
+  },
+  "why": "\"No, ya sí.\" is a garbled non-phrase.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-03-ex.json",
+  "id": "a2.02.03.ex10",
+  "set": {
+   "question": "What does «navegar» mean?"
+  },
+  "why": "Spanish metalanguage \"significa\" is unmet (first b1-27-03); ask in English."
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-03-ex.json",
+  "id": "a2.02.03.ex12",
+  "set": {
+   "english": "No, I have not seen the river yet.",
+   "tiles": [
+    "No",
+    "todavía",
+    "no",
+    "el",
+    "he",
+    "río",
+    "visto"
+   ],
+   "solution": [
+    "No",
+    "todavía",
+    "no",
+    "he",
+    "visto",
+    "el",
+    "río"
+   ]
+  },
+  "why": "Uses the pronoun lo (direct object pronouns, a2-12-01) before its screen.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-03-ex.json",
+  "id": "a2.02.03.ex13",
+  "set": {
+   "options": [
+    "¿Ya has visto el camino?",
+    "¿Ya has ver el camino?",
+    "¿Ya visto has el camino?"
+   ]
+  },
+  "why": "recorrer is listed only in a2-02-04, after this lesson.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-03-ex.json",
+  "id": "a2.02.03.ex16",
+  "set": {
+   "question": "How do you ask 'Have they already rented the bicycles?'",
+   "options": [
+    "¿Ya han alquilado las bicicletas?",
+    "¿Ya han alquilar las bicicletas?",
+    "¿Ya alquilado han las bicicletas?"
+   ]
+  },
+  "why": "Same item as ex02 (already seen the mountains, same options).",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-04-ex.json",
+  "id": "a2.02.04.ex02",
+  "set": {
+   "options": [
+    "Ya han recorrido la zona.",
+    "Todavía no han recorrido la zona.",
+    "Ya han recorrer la zona."
+   ]
+  },
+  "why": "\"Han ya recorrer la zona.\" has two faults (position of ya and infinitive).",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-04-ex.json",
+  "id": "a2.02.04.ex10",
+  "set": {
+   "question": "What does «recorrer» mean?",
+   "options": [
+    "to travel around",
+    "to rent bicycles",
+    "to stop and rest"
+   ]
+  },
+  "why": "length-giveaway 16 vs 7 (and \"significa\" unmet): wrong options as long as the right one."
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-04-ex.json",
+  "id": "a2.02.04.ex15",
+  "set": {
+   "options": [
+    "No, todavía no hemos llegado.",
+    "No, ya hemos llegado al pueblo.",
+    "No, todavía no hemos llegar."
+   ]
+  },
+  "why": "length-giveaway 29 vs 22: wrong options as long as the right one.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-05-ex.json",
+  "id": "a2.02.05.ex02",
+  "set": {
+   "question": "Which sentence says that they have already rented five bicycles?"
+  },
+  "why": "The question points to \"the bike ride story\", which comes later in the lesson."
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-05-ex.json",
+  "id": "a2.02.05.ex05",
+  "set": {
+   "options": [
+    "Todavía no han navegado entre las montañas.",
+    "Ya han visto los arrozales y los templos.",
+    "Ya han alquilado cinco bicicletas hoy."
+   ]
+  },
+  "why": "length-giveaway 43 vs 32: wrong options as long as the right one.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-05-ex.json",
+  "id": "a2.02.05.ex10",
+  "set": {
+   "question": "Which sentence says that they have already seen the temples?",
+   "options": [
+    "Ya han visto los templos.",
+    "Todavía no han visto los templos.",
+    "Ya han ver los templos."
+   ]
+  },
+  "why": "Same item as ex02 (already rented five bicycles, same options).",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-05-ex.json",
+  "id": "a2.02.05.ex11",
+  "set": {
+   "options": [
+    "Arrozales y pequeños templos.",
+    "El museo y la estación.",
+    "La playa y el parque."
+   ]
+  },
+  "why": "búfalos is in no list, aeropuerto is first taught at a2-18-01, mar at a2-09-01; length-giveaway 38 vs 28.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-05-ex.json",
+  "id": "a2.02.05.ex12",
+  "set": {
+   "question": "¿Qué ha hecho Meg durante el paseo?",
+   "options": [
+    "Ha hecho fotografías del paisaje.",
+    "Ha navegado entre las montañas.",
+    "Ha escrito muchos mensajes."
+   ]
+  },
+  "why": "varias, veces, otra, detenido are unmet; length-giveaway 38 vs 28; the right answer is now the photographs from the story.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-05-ex.json",
+  "id": "a2.02.05.ex13",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "past-participles"
+   ]
+  },
+  "why": "Fill-blank producing a participle (navegado) is the participle skill, as in Unit 1 (Hemos __ al hotel); it was tagged vocabulary.",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-05-ex.json",
+  "id": "a2.02.05.ex14",
+  "set": {
+   "question": "¿Dónde descansan los amigos al mediodía?",
+   "options": [
+    "Cerca de un río.",
+    "En el hotel.",
+    "En un templo."
+   ]
+  },
+  "why": "propone, día, siguiente, barco unmet; the story says they rest by a river at midday.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-05-ex.json",
+  "id": "a2.02.05.ex15",
+  "set": {
+   "question": "¿Por qué quieren navegar los amigos?",
+   "options": [
+    "Porque todavía no han navegado.",
+    "Porque ya han visto el río.",
+    "Porque hay mucho tráfico."
+   ]
+  },
+  "why": "length-giveaway 50 vs 27; idea/aceptan unmet. (Exercise is not in any section of the lesson file: put it in the Reading group or delete it.)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-05-ex.json",
+  "id": "a2.02.05.ex19",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you have already rented a bicycle.",
+     "answer": "Ya he alquilado una bicicleta."
+    },
+    {
+     "prompt": "Say that you have already seen the rice fields and temples.",
+     "answer": "Ya he visto los arrozales y los templos."
+    },
+    {
+     "prompt": "Say that you have not travelled by boat between the mountains yet.",
+     "answer": "Todavía no he navegado entre las montañas."
+    },
+    {
+     "prompt": "Say that you have experienced an unforgettable adventure.",
+     "answer": "He vivido una aventura inolvidable."
+    }
+   ]
+  },
+  "why": "\"Ha sido un día inolvidable\": día is unmet and the participle sido is not among the irregular participles Unit 1 teaches.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-05-ex.json",
+  "id": "a2.02.05.ex20",
+  "set": {
+   "sentence": "Hemos vivido una aventura inolvidable.",
+   "options": [
+    "We have experienced an unforgettable adventure.",
+    "We have experienced a boring adventure.",
+    "We have seen an unforgettable adventure.",
+    "We have planned an unforgettable adventure."
+   ]
+  },
+  "why": "Ha sido un día: día unmet, sido not taught (see ex19).",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-consolidation-ex.json",
+  "id": "a2.02.consolidation.ex01",
+  "set": {
+   "options": [
+    "Ya hemos visto el paisaje.",
+    "Todavía no hemos visto el paisaje.",
+    "Ya hemos ver el paisaje."
+   ]
+  },
+  "why": "\"Hemos ya ver el paisaje.\" has two faults (position of ya and infinitive).",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-02-consolidation-ex.json",
+  "id": "a2.02.consolidation.ex12",
+  "set": {
+   "english": "No, I have not seen the river yet.",
+   "tiles": [
+    "No",
+    "todavía",
+    "no",
+    "el",
+    "he",
+    "río",
+    "visto"
+   ],
+   "solution": [
+    "No",
+    "todavía",
+    "no",
+    "he",
+    "visto",
+    "el",
+    "río"
+   ]
+  },
+  "why": "Uses the pronoun lo (a2-12-01) before its screen (copy of a2.02.03.ex12, fixed the same way).",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-02.json",
+  "old": "Carlos guía al grupo con el mapa que Lauren ha comprado el día anterior.",
+  "new": "Carlos guía al grupo con el mapa que Lauren ha comprado en el pueblo.",
+  "why": "Perfecto with \"el día anterior\" is wrong in Spain (preterite, Unit 11): drop the past marker.",
+  "id": "a2-02 story",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-02.json",
+  "old": "\"text\": \"Al mediodía descansan junto a un río y comen la comida que han preparado por la mañana.\"",
+  "new": "\"text\": \"Al mediodía descansan junto a un río y comen la comida que han preparado esta mañana.\"",
+  "why": "Perfecto goes with esta mañana in Spain.",
+  "id": "a2-02 story",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-02.json",
+  "old": "\"El texto dice que al mediodía descansan junto a un río y comen la comida que han preparado por la mañana.\"",
+  "new": "\"El texto dice que al mediodía descansan junto a un río y comen la comida que han preparado esta mañana.\"",
+  "why": "Explanation follows the story line.",
+  "id": "a2-02 story",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-02.json",
+  "old": "¿Cuál es el tema principal de esta lectura?",
+  "new": "¿Qué hacen los amigos después del desayuno?",
+  "why": "Generic comprehension question (reading-generic): ask what the people do.",
+  "id": "a2-02 story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-02.json",
+  "old": "La preparación de una cena tradicional en el hotel.",
+  "new": "Han preparado una cena tradicional en el hotel.",
+  "why": "Options of the rewritten question 1.",
+  "id": "a2-02 story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-02.json",
+  "old": "Un recorrido en bicicleta por los campos de Ninh Bình.",
+  "new": "Han alquilado cinco bicicletas para recorrer la zona.",
+  "why": "Right option of the rewritten question 1.",
+  "id": "a2-02 story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-02.json",
+  "old": "La reparación de varias bicicletas rotas en un taller.",
+  "new": "Han reparado varias bicicletas rotas en un taller.",
+  "why": "Options of the rewritten question 1.",
+  "id": "a2-02 story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-02.json",
+  "old": "Un viaje en barco hacia una isla lejana.",
+  "new": "Han tomado un barco hacia una isla lejana.",
+  "why": "Options of the rewritten question 1.",
+  "id": "a2-02 story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-02.json",
+  "old": "El texto relata la excursión en bicicleta que hacen los amigos por los caminos rurales y paisajes de Ninh Bình.",
+  "new": "Después del desayuno, los amigos han alquilado cinco bicicletas para recorrer la zona.",
+  "why": "Explanation of the rewritten question 1.",
+  "id": "a2-02 story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-02.json",
+  "old": "La comida que prepararon por la mañana.",
+  "new": "La comida que han preparado esta mañana.",
+  "why": "Preterite (prepararon) before Unit 11: use the perfecto.",
+  "id": "a2-02 story",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-02.json",
+  "old": "Pescado fresco que compraron a unos pescadores.",
+  "new": "Pescado fresco que han comprado a unos pescadores.",
+  "why": "Preterite (compraron) before Unit 11: use the perfecto.",
+  "id": "a2-02 story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-02.json",
+  "old": "Frutas exóticas que recogieron en los templos.",
+  "new": "Frutas exóticas que han recogido en los templos.",
+  "why": "Preterite (recogieron) before Unit 11: use the perfecto.",
+  "id": "a2-02 story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-02.json",
+  "old": "Porque sus bicicletas se rompieron al final del día.",
+  "new": "Porque sus bicicletas se han roto al final del día.",
+  "why": "Preterite (se rompieron) before Unit 11: use the perfecto.",
+  "id": "a2-02 story",
+  "kind": "target"
+ }
+]

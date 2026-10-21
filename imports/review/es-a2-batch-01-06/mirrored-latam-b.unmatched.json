@@ -1,0 +1,33 @@
+[
+ {
+  "file": "content/es-latam/exercises/a2/a2-05-05-ex.json",
+  "id": "a2.05.05.ex11",
+  "set": {
+   "question": "¿Qué hacen después del desayuno?",
+   "options": [
+    "No saben qué hacer.",
+    "Hacen las maletas.",
+    "Van a la estación."
+   ]
+  },
+  "kind": "target",
+  "why": "reading question not answerable from the story (it asks why the excursion changes because of rain; the story has good weather and no change of plan)",
+  "why_unmatched": "es-latam differs from es-es on ['options']"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-05-ex.json",
+  "id": "a2.06.05.ex14",
+  "set": {
+   "question": "¿Qué hacen después de desayunar?",
+   "options": [
+    "Hacen las maletas.",
+    "Compran unos billetes.",
+    "Prueban la comida."
+   ]
+  },
+  "kind": "target",
+  "why": "ERROR length-giveaway 52 vs 29; the question is generic and unmet actividades, durante, escuela; billetes is Spain-only (es-latam: boletos)",
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ }
+]
