@@ -137,8 +137,8 @@
    "accepted": []
   },
   "a1/family": {
-   "frozen": "2026-10-16",
-   "reason": "es A1 batch 2-5: Sonnet read (route A), 166 fixes filtered and applied, mirrored to es-latam, challenges added (2026-10-16) | refrozen: variant vocabulary, story metadata and unit order (user, 2026-10-16)",
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 2-5: Sonnet read (route A), 166 fixes filtered and applied, mirrored to es-latam, challenges added (2026-10-16) | refrozen: variant vocabulary, story metadata and unit order (user, 2026-10-16) | refrozen: numbers pos number in A1 vocabulary (ROADMAP 153)",
    "accepted": [
     {
      "check": "consolidation-copy",
@@ -153,9 +153,15 @@
    ]
   },
   "a1/greetings-introductions": {
-   "frozen": "2026-10-16",
-   "reason": "read and fixed by Antigravity (Argon), reviewed by Claude: 33 fixes, 6 challenges, 0 errors / 0 suspects (153, 2026-10-16)",
-   "accepted": []
+   "frozen": "2026-10-21",
+   "reason": "read and fixed by Antigravity (Argon), reviewed by Claude: 33 fixes, 6 challenges, 0 errors / 0 suspects (153, 2026-10-16) | refrozen: story a1-01 stiff lines fixed (ROADMAP 153, left from unit 1)",
+   "accepted": [
+    {
+     "check": "answers-alternatives",
+     "id": "a1-01-01.ex06",
+     "why": "the english gives both farewells (See you later. / See you tomorrow.), so both answers fit"
+    }
+   ]
   },
   "a1/health": {
    "frozen": "2026-10-21",
@@ -238,8 +244,8 @@
    ]
   },
   "a1/numbers-time-schedules": {
-   "frozen": "2026-10-16",
-   "reason": "moved from Unit 14 to Unit 6 and reworked to Units 1-5 (2026-10-16)",
+   "frozen": "2026-10-21",
+   "reason": "moved from Unit 14 to Unit 6 and reworked to Units 1-5 (2026-10-16) | refrozen: numbers pos number in A1 vocabulary (ROADMAP 153)",
    "accepted": [
     {
      "check": "story-key-vocab",
@@ -387,6 +393,21 @@
    "unit": "a1/work-obligations",
    "date": "2026-10-21",
    "reason": "es A1 batch 19-24 and infinitive-reply fixes (ROADMAP 153)"
+  },
+  {
+   "unit": "a1/greetings-introductions",
+   "date": "2026-10-21",
+   "reason": "story a1-01 stiff lines fixed (ROADMAP 153, left from unit 1)"
+  },
+  {
+   "unit": "a1/family",
+   "date": "2026-10-21",
+   "reason": "numbers pos number in A1 vocabulary (ROADMAP 153)"
+  },
+  {
+   "unit": "a1/numbers-time-schedules",
+   "date": "2026-10-21",
+   "reason": "numbers pos number in A1 vocabulary (ROADMAP 153)"
   }
  ]
 }
