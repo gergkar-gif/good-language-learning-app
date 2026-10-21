@@ -63,6 +63,13 @@ def main():
         run = lambda *a: subprocess.run(["python3", str(ROOT / "scripts/freeze_unit.py"), *a], cwd=ROOT,
                                         capture_output=True, text=True, check=True)
         run("--unfreeze", course, level, uid, "--reason", reason)
+        # an accepted finding the edit removed (a rewritten consolidation copy) is
+        # dropped: freeze_unit refuses to accept what is no longer reported
+        present = {(f[3], f[4]) for f in cc.run(cc.Source(), course, [level], uid)}
+        gone = [a for a in accepted if (a["check"], a["id"]) not in present]
+        if gone:
+            print(f"    dropped {len(gone)} accepted finding(s) no longer reported: " + ", ".join(f"{a['check']}:{a['id']}" for a in gone))
+        accepted = [a for a in accepted if (a["check"], a["id"]) in present]
         args = [course, level, uid, "--reason", (was.get("reason") or "") + f" | refrozen: {reason}"]
         for a in accepted:
             args += ["--accept", f"{a['check']}:{a['id']}:{a.get('why', '')}"]

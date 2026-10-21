@@ -5,61 +5,65 @@
       "id": "a2.03.consolidation.ex01",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence says 'We have already seen the caves'?",
+      "question": "Which sentence says 'Today the group has arrived at the market'?",
       "options": [
-        "Ya hemos visto las cuevas.",
-        "Todavía no hemos visto las cuevas.",
-        "Ya hemos ver las cuevas."
+        "Hoy el grupo ha llegado al mercado.",
+        "Hoy el grupo han llegado al mercado.",
+        "Hoy el grupo ha llegar al mercado."
       ],
       "correct": 0,
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto"
       ]
     },
     {
       "id": "a2.03.consolidation.ex02",
       "category": "grammar",
       "type": "fill-blank",
-      "answer": "hemos",
+      "answer": "tomado",
       "teaches": [
-        "preterito-perfecto"
+        "past-participles"
       ],
-      "sentence": "Todavía no __ hablado con los vendedores.",
-      "hint": "nosotros",
-      "english": "We have not spoken with the sellers yet."
+      "sentence": "Meg ha __ muchas fotografías hoy.",
+      "hint": "tomar",
+      "english": "Meg has taken a lot of photographs today."
     },
     {
       "id": "a2.03.consolidation.ex03",
       "category": "grammar",
       "type": "sentence-builder",
-      "english": "They have already visited the market.",
+      "english": "This year Carlos has travelled with Meg.",
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto"
       ],
       "tiles": [
-        "Ya",
-        "han",
-        "visitado",
-        "el",
-        "mercado"
+        "Este",
+        "Meg",
+        "Carlos",
+        "ha",
+        "año",
+        "viajado",
+        "con"
       ],
       "solution": [
-        "Ya",
-        "han",
-        "visitado",
-        "el",
-        "mercado"
+        "Este",
+        "año",
+        "Carlos",
+        "ha",
+        "viajado",
+        "con",
+        "Meg"
       ]
     },
     {
       "id": "a2.03.consolidation.ex04",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which pair is correct?",
+      "question": "Which sentence says 'Lauren has not tried the fruit yet'?",
       "options": [
-        "ya = already; todavía no = not yet",
-        "ya = not yet; todavía no = already",
-        "ya = never; todavía no = always"
+        "Lauren todavía no ha probado la fruta.",
+        "Lauren todavía ha probado la fruta.",
+        "Lauren todavía no ha probar la fruta."
       ],
       "correct": 0,
       "teaches": [
@@ -72,16 +76,20 @@
       "type": "matching",
       "pairs": [
         [
-          "la barca",
-          "boat"
+          "la barquera",
+          "boatwoman"
         ],
         [
-          "el río",
-          "river"
+          "el mercado",
+          "market"
         ],
         [
-          "la experiencia",
-          "experience"
+          "la terraza",
+          "terrace"
+        ],
+        [
+          "el vendedor",
+          "seller"
         ]
       ],
       "teaches": [
@@ -90,49 +98,33 @@
     },
     {
       "id": "a2.03.consolidation.ex06",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "fill-blank",
-      "answer": "he",
+      "answer": "tarde",
       "teaches": [
-        "preterito-perfecto"
+        "a2-day-out-vocab"
       ],
-      "sentence": "Ya __ probado la fruta.",
-      "hint": "yo",
-      "english": "I have already tried the fruit."
+      "sentence": "Esta __ hemos descansado en la terraza.",
+      "english": "This afternoon we have rested on the terrace."
     },
     {
       "id": "a2.03.consolidation.ex07",
       "category": "grammar",
       "type": "dialogue-complete",
-      "teaches": [
-        "ya-todavia-no"
-      ],
       "prompt": [
         {
-          "speaker": "Carlos",
-          "text": "¿Habéis descansado en la terraza?"
+          "speaker": "Meg",
+          "text": "¿Ya has hablado con la barquera?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Carlos",
           "text": "_____"
         }
       ],
       "options": [
-        "No, todavía no.",
-        "Sí, todavía no.",
-        "No, ya hemos descansado."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a2.03.consolidation.ex08",
-      "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Which question is correct?",
-      "options": [
-        "¿Ya has visto el río?",
-        "¿Ya has ver el río?",
-        "¿Ya visto has el río?"
+        "No, todavía no he hablado con la barquera.",
+        "No, ya he hablado con la barquera.",
+        "No, todavía no he hablar con la barquera."
       ],
       "correct": 0,
       "teaches": [
@@ -140,79 +132,99 @@
       ]
     },
     {
+      "id": "a2.03.consolidation.ex08",
+      "category": "grammar",
+      "type": "multiple-choice",
+      "question": "Which sentence says 'Lately we have eaten a lot of fruit'?",
+      "options": [
+        "Últimamente hemos comido mucha fruta.",
+        "Últimamente hemos comer mucha fruta.",
+        "Últimamente vamos a comer mucha fruta."
+      ],
+      "correct": 0,
+      "teaches": [
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "2": "ir-infinitive"
+      }
+    },
+    {
       "id": "a2.03.consolidation.ex09",
       "category": "vocabulary",
       "type": "matching",
-      "teaches": [
-        "a2-day-out-vocab"
-      ],
       "pairs": [
         [
-          "el mercado",
-          "market"
+          "este año",
+          "this year"
         ],
         [
-          "recordar",
-          "to remember"
+          "este mes",
+          "this month"
         ],
         [
-          "favorito",
-          "favourite"
+          "hasta ahora",
+          "so far"
+        ],
+        [
+          "últimamente",
+          "lately"
         ]
+      ],
+      "teaches": [
+        "a2-day-out-vocab"
       ]
     },
     {
       "id": "a2.03.consolidation.ex10",
       "category": "grammar",
       "type": "fill-blank",
-      "answer": "hemos",
+      "answer": "viajado",
       "teaches": [
-        "preterito-perfecto"
+        "past-participles"
       ],
-      "sentence": "Todavía no __ probado más comida típica.",
-      "hint": "nosotros",
-      "english": "We have not tried more typical food yet."
+      "sentence": "Este mes Carlos y Meg han __ mucho.",
+      "hint": "viajar",
+      "english": "This month Carlos and Meg have travelled a lot."
     },
     {
       "id": "a2.03.consolidation.ex11",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which answer means 'No, not yet'?",
+      "question": "Which sentence says 'We have spoken to the boatwoman this afternoon'?",
       "options": [
-        "No, todavía no.",
-        "Sí, ya he visto el río.",
-        "No, ya."
+        "Hemos hablado con la barquera esta tarde.",
+        "Hemos esta tarde hablado con la barquera.",
+        "Hemos hablar con la barquera esta tarde."
       ],
       "correct": 0,
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto"
       ]
     },
     {
       "id": "a2.03.consolidation.ex12",
       "category": "grammar",
       "type": "sentence-builder",
-      "english": "We have already seen the caves and the river.",
+      "english": "So far we have not seen the river.",
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto"
       ],
       "tiles": [
-        "las",
-        "Ya",
-        "y",
+        "no",
         "hemos",
         "el",
-        "cuevas",
         "visto",
-        "río"
+        "Hasta",
+        "río",
+        "ahora"
       ],
       "solution": [
-        "Ya",
+        "Hasta",
+        "ahora",
+        "no",
         "hemos",
         "visto",
-        "las",
-        "cuevas",
-        "y",
         "el",
         "río"
       ]
@@ -221,11 +233,11 @@
       "id": "a2.03.consolidation.ex13",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence correctly contrasts the two forms?",
+      "question": "Which question asks 'Have you already tried the fruit?'",
       "options": [
-        "Ya hemos visitado el mercado, pero todavía no hemos descansado.",
-        "Ya hemos visitar el mercado, pero todavía no hemos descansado.",
-        "Todavía no hemos visitado el mercado, pero ya no hemos descansado."
+        "¿Ya has probado la fruta?",
+        "¿Ya has probar la fruta?",
+        "¿Ya probado has la fruta?"
       ],
       "correct": 0,
       "teaches": [
@@ -239,7 +251,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Habéis visto las cuevas?"
+          "text": "¿Qué habéis hecho esta mañana?"
         },
         {
           "speaker": "Carlos",
@@ -247,14 +259,17 @@
         }
       ],
       "options": [
-        "Sí, ya hemos visto las cuevas.",
-        "Sí, todavía no hemos visto las cuevas.",
-        "Sí, ya hemos ver las cuevas."
+        "Esta mañana hemos remado en el río.",
+        "Esta mañana hemos remar en el río.",
+        "Esta mañana vamos a remar en el río."
       ],
       "correct": 0,
       "teaches": [
-        "ya-todavia-no"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "2": "ir-infinitive"
+      }
     },
     {
       "id": "a2.03.consolidation.ex15",
@@ -263,17 +278,17 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Habéis probado más comida típica?"
+          "text": "¿Ya habéis comprado fruta?"
         },
         {
-          "speaker": "Kaylee",
+          "speaker": "Daniela",
           "text": "_____"
         }
       ],
       "options": [
-        "No, todavía no.",
-        "Sí, todavía no.",
-        "No, ya hemos probado la comida típica."
+        "Sí, ya hemos comprado fruta.",
+        "Sí, todavía no hemos comprado fruta.",
+        "Sí, ya hemos comprar fruta."
       ],
       "correct": 0,
       "teaches": [
@@ -287,7 +302,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Habéis visitado el mercado?"
+          "text": "¿Qué ha hecho Kaylee últimamente?"
         },
         {
           "speaker": "Daniela",
@@ -295,14 +310,17 @@
         }
       ],
       "options": [
-        "Sí, ya hemos visitado el mercado.",
-        "Sí, todavía no hemos visitado el mercado.",
-        "Sí, ya hemos visitar el mercado."
+        "Últimamente ha probado mucha comida típica.",
+        "Últimamente he probado mucha comida típica.",
+        "Últimamente va a probar mucha comida típica."
       ],
       "correct": 0,
       "teaches": [
-        "ya-todavia-no"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "2": "ir-infinitive"
+      }
     },
     {
       "id": "a2.03.consolidation.ex17",
@@ -310,20 +328,20 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say that you have already seen the river.",
-          "answer": "Ya he visto el río."
+          "prompt": "Say that so far you have seen the caves. Start with the time word.",
+          "answer": "Hasta ahora he visto las cuevas."
         },
         {
-          "prompt": "Say that you have not visited the market yet.",
-          "answer": "Todavía no he visitado el mercado."
+          "prompt": "Say that this week you have rested on the terrace. Start with the time word.",
+          "answer": "Esta semana he descansado en la terraza."
         },
         {
-          "prompt": "Say that you have already tried the fruit.",
-          "answer": "Ya he probado la fruta."
+          "prompt": "Say that you have not tried the fruit yet. Start with the time word.",
+          "answer": "Todavía no he probado la fruta."
         }
       ],
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto"
       ]
     },
     {
@@ -332,47 +350,47 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Ask whether someone has already seen the caves.",
-          "answer": "¿Ya has visto las cuevas?"
+          "prompt": "Ask a friend whether he or she has already crossed the river.",
+          "answer": "¿Ya has atravesado el río?"
         },
         {
-          "prompt": "Ask whether someone has already visited the market.",
-          "answer": "¿Ya has visitado el mercado?"
+          "prompt": "Ask a friend what he or she has done this morning.",
+          "answer": "¿Qué has hecho esta mañana?"
         },
         {
-          "prompt": "Answer no, not yet.",
-          "answer": "No, todavía no."
+          "prompt": "Say that lately you have walked a lot. Start with the time word.",
+          "answer": "Últimamente he caminado mucho."
         }
       ],
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto"
       ]
     },
     {
       "id": "a2.03.consolidation.ex19",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "¿Ya has visto las cuevas?",
+      "sentence": "Esta semana hemos visitado el mercado.",
       "options": [
-        "Have you already seen the caves?",
-        "Have you already seen the market?",
-        "Have you not seen the caves yet?",
-        "Did you see the caves?"
+        "This week we have visited the market.",
+        "This month we have visited the market.",
+        "This week we have visited the river.",
+        "This week I have visited the market."
       ],
       "correct": 0,
       "teaches": [
-        "ya-todavia-no"
+        "a2-day-out-vocab"
       ]
     },
     {
       "id": "a2.03.consolidation.ex20",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Todavía no he visitado el mercado.",
+      "sentence": "Hoy hemos comprado fruta en el mercado.",
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto"
       ],
-      "english": "I have not visited the market yet."
+      "english": "Today we have bought fruit at the market."
     }
   ]
 }

@@ -27,63 +27,64 @@
       "id": "a2.03.05.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence says 'We have already seen very beautiful places'?",
+      "question": "Which sentence says 'So far we have seen very beautiful places'?",
       "options": [
-        "Ya hemos visto lugares muy bonitos.",
-        "Todavía no hemos visto lugares muy bonitos.",
-        "Ya hemos ver lugares muy bonitos."
+        "Hasta ahora hemos visto lugares muy bonitos.",
+        "Hasta ahora hemos ver lugares muy bonitos.",
+        "Hasta ahora vamos a ver lugares muy bonitos."
       ],
       "correct": 0,
       "teaches": [
-        "ya-todavia-no"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "2": "ir-infinitive"
+      }
     },
     {
       "id": "a2.03.05.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "answer": "hemos",
+      "answer": "atravesado",
       "teaches": [
-        "preterito-perfecto"
+        "past-participles"
       ],
-      "sentence": "Ya __ visto lugares muy bonitos.",
-      "hint": "nosotros",
-      "english": "We have already seen very beautiful places."
+      "sentence": "Esta mañana la barquera ha __ el río.",
+      "hint": "atravesar",
+      "english": "This morning the boatwoman has crossed the river."
     },
     {
       "id": "a2.03.05.ex04",
       "category": "vocabulary",
       "type": "sentence-builder",
-      "english": "I still want to try more typical food.",
+      "english": "This is my favourite boat ride.",
       "teaches": [
         "a2-day-out-vocab"
       ],
       "tiles": [
-        "probar",
-        "Todavía",
-        "típica",
-        "quiero",
-        "comida",
-        "más"
+        "favorito",
+        "es",
+        "mi",
+        "paseo",
+        "Este"
       ],
       "solution": [
-        "Todavía",
-        "quiero",
-        "probar",
-        "más",
-        "comida",
-        "típica"
+        "Este",
+        "es",
+        "mi",
+        "paseo",
+        "favorito"
       ]
     },
     {
       "id": "a2.03.05.ex05",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence says what has already happened?",
+      "question": "Which sentence says 'We have not tried typical food yet'?",
       "options": [
-        "Ya hemos visto lugares muy bonitos.",
-        "Todavía quiere probar más comida típica.",
-        "Todavía no hemos hecho algo más."
+        "Todavía no hemos probado comida típica.",
+        "Todavía no hemos probar comida típica.",
+        "Ya hemos probado comida típica."
       ],
       "correct": 0,
       "teaches": [
@@ -96,12 +97,20 @@
       "type": "matching",
       "pairs": [
         [
-          "la experiencia",
-          "experience"
+          "hoy",
+          "today"
         ],
         [
-          "favorito",
-          "favourite"
+          "esta semana",
+          "this week"
+        ],
+        [
+          "últimamente",
+          "lately"
+        ],
+        [
+          "hasta ahora",
+          "so far"
         ]
       ],
       "teaches": [
@@ -112,25 +121,22 @@
       "id": "a2.03.05.ex07",
       "category": "grammar",
       "type": "fill-blank",
-      "answer": "han",
+      "answer": "descansado",
       "teaches": [
-        "preterito-perfecto"
+        "past-participles"
       ],
-      "sentence": "Las vacaciones __ empezado de la mejor manera posible.",
-      "hint": "ellos/ustedes",
-      "english": "The holidays have started in the best possible way."
+      "sentence": "Esta tarde los amigos han __ en una terraza.",
+      "hint": "descansar",
+      "english": "This afternoon the friends have rested on a terrace."
     },
     {
       "id": "a2.03.05.ex08",
       "category": "grammar",
       "type": "dialogue-complete",
-      "teaches": [
-        "ya-todavia-no"
-      ],
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Han visto lugares muy bonitos?"
+          "text": "¿Han visto lugares muy bonitos hasta ahora?"
         },
         {
           "speaker": "Carlos",
@@ -138,43 +144,45 @@
         }
       ],
       "options": [
-        "Sí, ya hemos visto lugares muy bonitos.",
-        "Sí, todavía no hemos visto lugares muy bonitos.",
-        "Sí, ya hemos ver lugares muy bonitos."
+        "Sí, hasta ahora hemos visto lugares muy bonitos.",
+        "Sí, hasta ahora hemos ver lugares muy bonitos.",
+        "Sí, hasta ahora vamos a ver lugares muy bonitos."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "2": "ir-infinitive"
+      }
     },
     {
       "id": "a2.03.05.ex09",
       "category": "vocabulary",
       "type": "matching",
-      "teaches": [
-        "a2-day-out-vocab"
-      ],
       "pairs": [
         [
-          "ya hemos visto",
-          "we have already seen"
+          "favorito",
+          "favourite"
         ],
         [
-          "ya hemos recorrido",
-          "we have already explored"
-        ],
-        [
-          "ya han empezado",
-          "they have already started"
+          "típico",
+          "typical"
         ]
+      ],
+      "teaches": [
+        "a2-day-out-vocab"
       ]
     },
     {
       "id": "a2.03.05.ex10",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which sentence says that the holidays have already started?",
+      "question": "Kaylee says «Todavía no hemos probado la comida típica.» What does she mean?",
       "options": [
-        "Las vacaciones ya han empezado.",
-        "Las vacaciones todavía no han empezado.",
-        "Las vacaciones ya han empezar."
+        "They have not tried the typical food yet.",
+        "They have already tried the typical food.",
+        "They do not want to try the typical food."
       ],
       "correct": 0,
       "teaches": [
@@ -247,7 +255,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Han visto lugares bonitos?"
+          "text": "¿Han visto lugares bonitos hoy?"
         },
         {
           "speaker": "Carlos",
@@ -255,14 +263,17 @@
         }
       ],
       "options": [
-        "Sí, ya hemos visto muchos.",
-        "Sí, todavía no hemos visto muchos.",
-        "Sí, ya hemos ver muchos."
+        "Sí, hoy hemos visto muchos.",
+        "Sí, hoy hemos ver muchos.",
+        "Sí, hoy vamos a ver muchos."
       ],
       "correct": 0,
       "teaches": [
-        "ya-todavia-no"
-      ]
+        "preterito-perfecto"
+      ],
+      "distractor_skills": {
+        "2": "ir-infinitive"
+      }
     },
     {
       "id": "a2.03.05.ex17",
@@ -295,7 +306,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Han visitado el mercado?"
+          "text": "¿Han visitado ya el mercado?"
         },
         {
           "speaker": "Daniela",
@@ -318,16 +329,16 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say that you have already seen beautiful places during the trip.",
-          "answer": "Ya hemos visto lugares muy bonitos."
+          "prompt": "Say that so far we have seen very beautiful places. Start with the time word.",
+          "answer": "Hasta ahora hemos visto lugares muy bonitos."
         },
         {
-          "prompt": "Say that you have not tried more typical food yet.",
-          "answer": "Todavía no hemos probado más comida típica."
+          "prompt": "Say that we have not tried more typical food yet. Start with the time word.",
+          "answer": "Todavía no hemos probado la comida típica."
         },
         {
-          "prompt": "Say that you have already visited the market.",
-          "answer": "Ya hemos visitado el mercado."
+          "prompt": "Say that this morning we have arrived at the pier. Start with the time word.",
+          "answer": "Esta mañana hemos llegado al embarcadero."
         },
         {
           "prompt": "Say that the holidays have started in the best possible way.",
@@ -335,7 +346,7 @@
         }
       ],
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto"
       ]
     },
     {
@@ -358,11 +369,11 @@
       "id": "a2.03.05.ex21",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Ya hemos visto lugares muy bonitos.",
+      "sentence": "Hasta ahora hemos visto lugares muy bonitos.",
       "teaches": [
-        "ya-todavia-no"
+        "preterito-perfecto"
       ],
-      "english": "We have already seen very beautiful places."
+      "english": "So far we have seen very beautiful places."
     }
   ]
 }
