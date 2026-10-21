@@ -8,8 +8,8 @@
       "question": "¿Cómo se dice \"next week\"?",
       "options": [
         "la próxima semana",
-        "mañana",
-        "el sábado"
+        "el fin de semana",
+        "el próximo mes"
       ],
       "correct": 0,
       "teaches": [
@@ -59,17 +59,20 @@
       "correct": 0,
       "teaches": [
         "tener-que"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "ir-infinitive"
+      }
     },
     {
       "id": "a1.future.06.ex05",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which means \"What are you going to do?\"",
+      "question": "Which means \"What is she going to do?\"",
       "options": [
-        "¿Qué vas a hacer?",
-        "¿Qué vas hacer?",
-        "¿Qué vas a haces?"
+        "¿Qué va a hacer?",
+        "¿Qué va hacer?",
+        "¿Qué vas a hacer?"
       ],
       "correct": 0,
       "teaches": [
@@ -181,11 +184,11 @@
       "id": "a1.future.06.ex12",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which uses estar for location?",
+      "question": "I am at the station. Which sentence says this?",
       "options": [
         "Estoy en la estación.",
-        "Estoy a la estación.",
-        "Hay en la estación."
+        "Soy en la estación.",
+        "Estás en la estación."
       ],
       "correct": 0,
       "teaches": [
@@ -238,7 +241,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Qué tienes que hacer antes del viaje?"
+          "text": "¿Qué tienes que hacer hoy?"
         },
         {
           "speaker": "Carlos",
@@ -246,9 +249,9 @@
         }
       ],
       "options": [
-        "Tengo que preparar la maleta.",
-        "Tengo preparar la maleta.",
-        "Tienes que preparar la maleta."
+        "Tengo que trabajar.",
+        "Tengo trabajar.",
+        "Tienes que trabajar."
       ],
       "correct": 0,
       "teaches": [
@@ -285,11 +288,11 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say what you are going to do tomorrow.",
+          "prompt": "Say that you are going to study tomorrow.",
           "answer": "Voy a estudiar mañana."
         },
         {
-          "prompt": "Say one thing you have to do.",
+          "prompt": "Say that you have to work.",
           "answer": "Tengo que trabajar."
         }
       ],
@@ -303,7 +306,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe a short upcoming trip using a time expression, two future plans and one obligation.",
+          "prompt": "Say that next week you are going to travel, that on Saturday you are going to take the train, and that you have to prepare the suitcase.",
           "answer": "La próxima semana voy a viajar. El sábado voy a tomar el tren. Tengo que preparar la maleta."
         }
       ],

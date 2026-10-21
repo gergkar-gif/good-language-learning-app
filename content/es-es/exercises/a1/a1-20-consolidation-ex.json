@@ -35,11 +35,11 @@
       "id": "a1.20.06.ex03",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which means \"I have to prepare the suitcase\"?",
+      "question": "Which means \"I have to check the ticket\"?",
       "options": [
-        "Tengo que preparar la maleta.",
-        "Tengo preparar la maleta.",
-        "Voy a preparo la maleta."
+        "Tengo que comprobar el billete.",
+        "Tengo comprobar el billete.",
+        "Tienes que comprobar el billete."
       ],
       "correct": 0,
       "teaches": [
@@ -65,11 +65,11 @@
       "id": "a1.20.06.ex05",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which means \"Where is the station?\"",
+      "question": "Which means \"Where is platform three?\"",
       "options": [
-        "¿Dónde está la estación?",
-        "¿Dónde es la estación?",
-        "¿Dónde hay la estación?"
+        "¿Dónde está el andén tres?",
+        "¿Dónde es el andén tres?",
+        "¿Dónde hay el andén tres?"
       ],
       "correct": 0,
       "teaches": [
@@ -87,7 +87,7 @@
       "options": [
         "Voy a la estación.",
         "Voy la estación.",
-        "Voy a estación la."
+        "Voy en la estación."
       ],
       "correct": 0,
       "teaches": [
@@ -146,15 +146,12 @@
       "options": [
         "Mi madre es amable.",
         "Mi madre son amable.",
-        "Mi madre está amable."
+        "Mi madre eres amable."
       ],
       "correct": 0,
       "teaches": [
         "ser"
-      ],
-      "distractor_skills": {
-        "2": "estar"
-      }
+      ]
     },
     {
       "id": "a1.20.06.ex10",
@@ -190,19 +187,16 @@
       "id": "a1.20.06.ex12",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which uses estar for location?",
+      "question": "I am at the station. Which sentence says this?",
       "options": [
         "Estoy en la estación.",
-        "Estoy a la estación.",
-        "Hay en la estación."
+        "Soy en la estación.",
+        "Estás en la estación."
       ],
       "correct": 0,
       "teaches": [
         "estar"
-      ],
-      "distractor_skills": {
-        "2": "hay"
-      }
+      ]
     },
     {
       "id": "a1.20.06.ex13",
@@ -229,7 +223,7 @@
       "prompt": [
         {
           "speaker": "Viajero",
-          "text": "¿Dónde está el andén tres?"
+          "text": "¿Dónde está la estación?"
         },
         {
           "speaker": "Empleado",
@@ -255,18 +249,18 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Viajero",
+          "speaker": "Empleado",
           "text": "¿Qué necesitas?"
         },
         {
-          "speaker": "Empleado",
+          "speaker": "Viajero",
           "text": "_____"
         }
       ],
       "options": [
         "Necesito mi billete.",
         "Necesitas mi billete.",
-        "Necesitar mi billete."
+        "Necesita mi billete."
       ],
       "correct": 0,
       "teaches": [
@@ -279,11 +273,11 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Viajero",
+          "speaker": "Empleado",
           "text": "¿Qué vas a hacer?"
         },
         {
-          "speaker": "Empleado",
+          "speaker": "Viajero",
           "text": "_____"
         }
       ],
@@ -321,7 +315,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe the start of a journey using a preparation, an essential and a future action.",
+          "prompt": "Say that you have to prepare the suitcase, that you need your ticket and that you are going to take the train.",
           "answer": "Tengo que preparar la maleta. Necesito mi billete. Voy a tomar el tren."
         }
       ],
@@ -345,13 +339,13 @@
       "id": "a1.20.06.ex20",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "El vuelo _____ a las seis de la mañana.",
+      "sentence": "El tren _____ a las seis de la mañana.",
       "hint": "to leave — salir, 3rd sing.",
       "answer": "sale",
       "teaches": [
         "present-tense"
       ],
-      "english": "The flight leaves at six in the morning."
+      "english": "The train leaves at six in the morning."
     }
   ]
 }

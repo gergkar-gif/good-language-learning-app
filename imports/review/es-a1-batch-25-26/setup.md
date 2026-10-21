@@ -17,4 +17,4 @@ Started 2026-10-21T04:29:32Z from origin/master 1844ed1c. Two Sonnet readers, th
 - travel-getting-away: a1-20-01-ex.json, a1-20-02-ex.json, a1-20-05-ex.json, a1-20-consolidation-ex.json, a1-20-01-preparations-gr.json, a1-20-02-tener-querer-necesitar-gr.json, a1-20-05-integrated-travel-gr.json, a1-20-01-voc.json
 - Reader launched 04:30:08Z (one reader, two units).
 - Reader stopped ~04:40Z on a Sonnet session limit (reset 05:10Z) after writing fixes-future-plans, challenges-future-plans and fixes-travel-getting-away; resumed 05:32Z
-- Reader finished 05:33Z: fixes 31 + 53 = 84; report file write allowed
+- Reader finished 05:33Z: fixes 31 + 53 = 84; report file write allowed; usage 244,167 tokens (the resumed notice; the failure notice had none)

@@ -167,6 +167,11 @@
     }
    ]
   },
+  "a1/future-plans": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 25-26: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "accepted": []
+  },
   "a1/greetings-introductions": {
    "frozen": "2026-10-21",
    "reason": "read and fixed by Antigravity (Argon), reviewed by Claude: 33 fixes, 6 challenges, 0 errors / 0 suspects (153, 2026-10-16) | refrozen: variant vocabulary, story metadata and unit order (user, 2026-10-16) | refrozen: story a1-01 stiff lines fixed (ROADMAP 153, left from unit 1)",
@@ -331,6 +336,17 @@
    "frozen": "2026-10-16",
    "reason": "es A1 batch 6-11: read by Sonnet (route A), filtered, mirrored, challenges added, tags locked (2026-10-16) | refrozen: variant vocabulary, story metadata and unit order (user, 2026-10-16)",
    "accepted": []
+  },
+  "a1/travel-getting-away": {
+   "frozen": "2026-10-21",
+   "reason": "es A1 batch 25-26: read, fixed, mirrored, challenges (ROADMAP 153)",
+   "accepted": [
+    {
+     "check": "unmet-word",
+     "id": "a1.20.02.ex13",
+     "why": "money is an English option, not Spanish (checker false positive)"
+    }
+   ]
   },
   "a1/weather": {
    "frozen": "2026-10-21",

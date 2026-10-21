@@ -30,12 +30,12 @@
     {
       "type": "dialogue",
       "speaker": "Carlos",
-      "text": "Meg, mira las luces reflejadas en el agua. La ciudad se ve mágica al atardecer."
+      "text": "Meg, mira las luces en el agua. La ciudad se ve mágica al atardecer."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Es hermoso, Carlos. Recuerdo mi primera semana aquí, cuando no conocía a nadie y me sentía sola."
+      "text": "Es hermoso, Carlos. Recuerdo mi primera semana aquí. Ahora estoy muy contenta."
     },
     {
       "type": "dialogue",
@@ -54,7 +54,7 @@
     {
       "type": "dialogue",
       "speaker": "Carlos",
-      "text": "Sí, maleta hecha y boleto en mano. Mañana empieza una nueva aventura."
+      "text": "Sí, maleta lista y boleto en mano. Mañana empieza una nueva aventura."
     },
     {
       "type": "dialogue",
@@ -241,10 +241,16 @@
           "gloss": "to meet / get to know"
         },
         {
-          "lemma": "intercambio",
+          "lemma": "maleta",
           "pos": "noun",
           "cefr": "A1",
-          "gloss": "exchange"
+          "gloss": "suitcase"
+        },
+        {
+          "lemma": "viaje",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "trip"
         }
       ],
       "targetGrammar": [
@@ -264,26 +270,26 @@
           "explanation": "La narración indica que Carlos y Meg dan un paseo tranquilo al atardecer alrededor del lago."
         },
         {
-          "question": "¿Cómo se sentía Meg durante su primera semana en la ciudad?",
+          "question": "Según Carlos, ¿qué hace Meg todos los días?",
           "options": [
-            "Muy contenta y con muchos amigos",
-            "Sola, porque no conocía a nadie",
-            "Cansada del trabajo",
-            "Emocionada por las clases de español"
+            "Trabaja en una oficina",
+            "Habla español",
+            "Cocina en casa",
+            "Viaja en tren"
           ],
           "correctIndex": 1,
-          "explanation": "Meg recuerda: 'mi primera semana aquí, cuando no conocía a nadie y me sentía sola'."
+          "explanation": "Carlos dice: 'hablas español todos los días'."
         },
         {
           "question": "¿Qué tiene ya listo Carlos para el viaje del día siguiente?",
           "options": [
             "Solo el pasaporte",
-            "El boleto, pero aún no ha hecho la maleta",
-            "La maleta hecha y el boleto en mano",
+            "El boleto, pero la maleta no está lista",
+            "La maleta lista y el boleto en mano",
             "Una reserva de hotel y dinero"
           ],
           "correctIndex": 2,
-          "explanation": "Carlos dice: 'Sí, maleta hecha y boleto en mano. Mañana empieza una nueva aventura'."
+          "explanation": "Carlos dice: 'Sí, maleta lista y boleto en mano. Mañana empieza una nueva aventura'."
         }
       ]
     }
