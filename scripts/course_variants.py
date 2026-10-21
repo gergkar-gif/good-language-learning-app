@@ -66,6 +66,8 @@ VERBS_TO_LATAM = {
     "aparquen": "estacionen", "aparcaba": "estacionaba",
 }
 VERBS_TO_ES = {v: k for k, v in VERBS_TO_LATAM.items() if k.startswith("aparc") or k.startswith("aparq")}
+# es-es says *fuera*/*dentro* (user, 2026-10-21); es-latam keeps *afuera*/*adentro* (both are used there)
+VERBS_TO_ES.update({"afuera": "fuera", "adentro": "dentro"})
 # enfadar(se) / enojar(se) and their forms: a prefix swap (enfado -> enojo, enfadada -> enojada)
 PREFIX = {"es-latam": ("enfad", "enoj"), "es-es": ("enoj", "enfad")}
 
@@ -79,7 +81,7 @@ KEEP_AFTER = {
               "lentes": r"\s+de\s+contacto"},
 }
 # *móvil* the adjective: *banca móvil*, *aplicación móvil* (mobile banking/app) in both
-KEEP_BEFORE = {"es-latam": {"móvil": r"\b(banca|aplicación|app|telefonía|unidad)\s+$",
+KEEP_BEFORE = {"es-es": {"adentro": r"\bMar\s+$"}, "es-latam": {"móvil": r"\b(banca|aplicación|app|telefonía|unidad)\s+$",
                             "móviles": r"\b(aplicaciones|apps|unidades)\s+$"}}
 DET = {"el": "la", "los": "las", "un": "una", "unos": "unas", "este": "esta", "estos": "estas", "ese": "esa",
        "esos": "esas", "aquel": "aquella", "aquellos": "aquellas", "nuestro": "nuestra", "nuestros": "nuestras",

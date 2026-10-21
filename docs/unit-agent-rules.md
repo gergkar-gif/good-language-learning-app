@@ -359,6 +359,17 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   stems, so read them; ask in English. es-latam has no *pedir* in A1
   lists (es-es lists it in a1-cafe-04): an item using it in es-latam
   needs the word listed there.
+- **Character facts set by the user (2026-10-21), every level from A1:**
+  Carlos works in an office from the first story on (he studies Spanish at
+  the language exchange; he is not a student and never starts a "new" job);
+  Meg is a student; from the end of A1 (story a1-20) Carlos and Meg are a
+  couple, and A2 and later treat them as one (a2-06: they move in
+  together). A story, item or challenge that contradicts this is a defect
+  (A2 to check: a2-educacionyestudios has Carlos accepted at a university).
+  es-es says *fuera*/*dentro*, es-latam keeps *afuera*/*adentro* (user,
+  2026-10-21; `course-variant` flags *afuera*/*adentro* in es-es). *poder*
+  is taught with *querer* in a1-08-03 (Unit 10), so it is known from Unit
+  10 on.
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).
