@@ -31,6 +31,7 @@ the sibling course, then apply_replacements.py, as for any list.
 """
 import importlib.util
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -56,6 +57,37 @@ def to_course(value, course, changes, refused):
     if isinstance(value, dict):
         return {k: to_course(v, course, changes, refused) for k, v in value.items()}
     return value
+
+
+def find_item(node, fid):
+    """The dict with this id anywhere in a parsed JSON file, or None."""
+    if isinstance(node, dict):
+        if node.get("id") == fid:
+            return node
+        node = list(node.values())
+    if isinstance(node, list):
+        for x in node:
+            hit = find_item(x, fid)
+            if hit is not None:
+                return hit
+    return None
+
+
+def sibling_differs(path, new_text, fid, keys):
+    """The `set` keys whose value in the sibling file differs from the source
+    file's committed value: a deliberate variant (*ustedes* where es-es asks
+    about *vosotros*), so the fix isn't copied over it (2026-10-21: three
+    vosotros questions were mirrored into es-latam's ustedes items)."""
+    r = subprocess.run(["git", "show", f"HEAD:{path}"], cwd=ROOT, capture_output=True, text=True, encoding="utf-8")
+    if r.returncode:
+        return []
+    try:
+        a, b = find_item(json.loads(r.stdout), fid), find_item(json.loads(new_text), fid)
+    except ValueError:
+        return []
+    if a is None or b is None:
+        return []
+    return [k for k in keys if a.get(k) != b.get(k)]
 
 
 def main():
@@ -92,6 +124,10 @@ def main():
             unmatched.append({**fix, "file": new_path, "why_unmatched": f"course words refused: {refused}"})
             continue
         if "set" in fix:
+            differs = sibling_differs(path[path.index("content/"):], text, fix.get("id"), fix["set"])
+            if differs:
+                unmatched.append({**fix, "file": new_path, "why_unmatched": f"{to} differs from {frm} on {differs}"})
+                continue
             new_text, err = ar.set_fields(text, fix.get("id"), fix["set"])
         elif text.count(fix.get("old", "")) == 1 and fix.get("old"):
             new_text, err = text.replace(fix["old"], fix["new"], 1), None

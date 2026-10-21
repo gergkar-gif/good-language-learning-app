@@ -355,8 +355,9 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   encantaría*); preterites in stories (a1-16 *fui*, *recetó*); words in
   no list (*clínica*, *mexicana*, *picante*, *latina*, *venir*); unmet
   Spanish metalanguage in multiple-choice question stems (*¿Cuál opción
-  es correcta…?*, *oración*): `unmet-word` doesn't read MC question
-  stems, so read them; ask in English. es-latam has no *pedir* in A1
+  es correcta…?*, *oración*): ask in English (`unmet-word` reads the
+  Spanish questions in a stem since 2026-10-21, except the formulas
+  *¿Cómo se dice …?* and *¿Qué significa …?*). es-latam has no *pedir* in A1
   lists (es-es lists it in a1-cafe-04): an item using it in es-latam
   needs the word listed there.
 - **Character facts set by the user (2026-10-21), every level from A1:**

@@ -164,6 +164,16 @@ function targetTexts(e) {
     italics(q).forEach(x => add(x, true));
     for (const m of q.matchAll(/[“"„]([^”"]+)[”"]/g)) add(m[1], true);
     for (const m of q.matchAll(/(?:^|[.?!]\s+)[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]+:\s*([^:]+?)(?=\s+[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]+:|$)/g)) add(m[1], false);
+    // The rest of the question is English as a rule, but a Spanish question in
+    // it (*¿Cuál opción es correcta?*) is read by the learner too. The two
+    // classroom formulas *¿Cómo se dice …?* / *¿Qué significa …?* are left out
+    // (~200 A1 stems, accepted as instructions).
+    if (Lang.code() !== 'hu') {
+        const rest = q.replace(/\*[^*]+\*/g, ' ').replace(/[“"„][^”"]+[”"]/g, ' ');
+        for (const m of rest.matchAll(/[¿¡][^?!]*[?!]?/g)) {
+            if (!/^¿\s*(?:cómo se dice|qué significa)\b/i.test(m[0])) add(m[0], false);
+        }
+    }
     return out;
 }
 
