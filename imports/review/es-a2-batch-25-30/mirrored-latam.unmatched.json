@@ -1,0 +1,210 @@
+[
+ {
+  "file": "content/es-latam/exercises/a2/a2-pronombrescliticos-04-ex.json",
+  "id": "a2.pronombrescliticos.04.ex06",
+  "set": {
+   "tiles": [
+    "el",
+    "jefe",
+    "se",
+    "las",
+    "dio",
+    "a",
+    "carlos"
+   ],
+   "solution": [
+    "el",
+    "jefe",
+    "se",
+    "las",
+    "dio",
+    "a",
+    "carlos"
+   ],
+   "english": "The boss gave them to Carlos."
+  },
+  "kind": "target",
+  "why": "amablemente is in no list; 'to them' for se was one of three possible readings",
+  "why_unmatched": "es-latam differs from es-es on ['tiles', 'solution']"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-pronombrescliticos.json",
+  "old": "Carlos está preocupado en la cafetería del lago Hoan Kiem porque ha perdido los apuntes de la profesora García y tiene un examen al día siguiente; Meg los saca de su mochila y se los deja toda la tarde.",
+  "new": "Meg está preocupada en la cafetería del lago Hoan Kiem porque ha perdido los apuntes de la profesora García y tiene un examen al día siguiente; Carlos los tiene en su mochila y va a dárselos ahora mismo.",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-pronombrescliticos.json",
+  "old": "Carlos explica que mañana tiene un examen crucial sobre historia de América Latina, pero ha perdido sus apuntes principales.",
+  "new": "El narrador cuenta que Meg tiene mañana un examen crucial sobre historia de América Latina, pero ha perdido sus apuntes principales.",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-pronombrescliticos.json",
+  "old": "Meg saca los apuntes de su mochila amarilla sin dudar y dice: «Los amigos están para ayudarse», animando a Carlos a no preocuparse por devolverlos rápido.",
+  "new": "Carlos dice que Meg dejó los apuntes anoche en el sofá de casa y que va a dárselos ahora mismo.",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-pronombrescliticos-consolidation-ex.json",
+  "id": "a2.pronombrescliticos.consolidation.ex02",
+  "set": {
+   "question": "Carlos tiene tus llaves. ¿Puedes _____ a él?"
+  },
+  "kind": "target",
+  "why": "gafas is in no vocabulary list",
+  "why_unmatched": "es-latam differs from es-es on ['question']"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-condicionalsimple-03-ex.json",
+  "id": "a2.condicionalsimple.03.ex07",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Cliente",
+     "text": "Buenas tardes, ¿nos traería la carta y un poco de agua, por favor?"
+    },
+    {
+     "speaker": "Mesero",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Con mucho gusto, enseguida les traigo la carta y el agua.",
+    "Con mucho gusto, enseguida les traigo la cuenta y el agua.",
+    "Con mucho gusto, enseguida les traigo la carta y el pan."
+   ]
+  },
+  "kind": "target",
+  "why": "the right reply mentioned water that the request never asked for; wrong options had two faults (preterite + ayer: tell-time-word error) and 'ni' (negation, Unit 31); length give-away; the item now tests vocabulary only",
+  "why_unmatched": "es-latam differs from es-es on ['prompt']"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-condicionalsimple-03-ex.json",
+  "id": "a2.condicionalsimple.03.ex08",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Mesero",
+     "text": "¿Desean pedir ya?"
+    },
+    {
+     "speaker": "Cliente",
+     "text": "_____"
+    }
+   ],
+   "hint": "politely",
+   "options": [
+    "Desearíamos probar el plato del día.",
+    "Quiero probar el plato del día ya.",
+    "Tráeme el plato del día ahora mismo."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "imperativo-afirmativo"
+   }
+  },
+  "kind": "target",
+  "why": "tell-time-word errors (ayer, mañana) and length give-away; algún is first taught at a2-indefinidosnegacion-03; 'Deseamos probar…' would be a natural right answer, so the wrong options are now the blunt forms the screen contrasts",
+  "why_unmatched": "es-latam differs from es-es on ['prompt']"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-condicionalsimple-05-ex.json",
+  "id": "a2.condicionalsimple.05.ex05",
+  "set": {
+   "pairs": [
+    [
+     "Empezaría por Colombia",
+     "I would start with Colombia"
+    ],
+    [
+     "Visitaría Machu Picchu",
+     "I would visit Machu Picchu"
+    ],
+    [
+     "Alquilaríamos un carro",
+     "We would rent a car"
+    ],
+    [
+     "Sería inolvidable",
+     "It would be unforgettable"
+    ]
+   ]
+  },
+  "kind": "target",
+  "why": "subiría is first taught at b1-19-02",
+  "why_unmatched": "es-latam differs from es-es on ['pairs']"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-condicionalsimple-consolidation-ex.json",
+  "id": "a2.condicionalsimple.consolidation.ex01",
+  "set": {
+   "question": "Which sentence is a polite request to a waiter?",
+   "options": [
+    "¿Podría traerme la sal, por favor?",
+    "¡Tráeme la sal ahora mismo!",
+    "Quiero la sal de la mesa ya.",
+    "Tráigame la sal ahora mismo."
+   ],
+   "distractor_skills": {
+    "1": "imperativo-afirmativo",
+    "2": "present-tense",
+    "3": "imperativo-formal-usted"
+   }
+  },
+  "kind": "target",
+  "why": "length give-away (23 vs 17); the Spanish stem used unmet words (forma, expresa, petición, educada): multiple-choice stems are asked in English",
+  "why_unmatched": "es-latam differs from es-es on ['question']"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-subjuntivobasico-05-gr.json",
+  "old": "Sentimos que tengáis que marcharos tan pronto.",
+  "new": "Sentimos que tengas que marcharte tan pronto.",
+  "kind": "target",
+  "why": "vosotros subjunctive (tengáis) and marcharos are Unit 33 forms; also speaking 2",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-educacionyestudios-04-ex.json",
+  "id": "a2.educacionyestudios.04.ex02",
+  "set": {
+   "question": "Do you prefer to take notes in class or at home? Which sentence says this?",
+   "options": [
+    "¿Prefieres tomar apuntes en clase o en casa?",
+    "¿Prefieres poner apuntes en clase o en casa?",
+    "¿Prefieres dar apuntes en clase o en casa?",
+    "¿Prefieres ver apuntes en clase o en casa?"
+   ]
+  },
+  "why": "English '(to take)' inside a Spanish line; ordenador is in no list; wrong options as collocations with the meaning in English",
+  "kind": "target",
+  "why_unmatched": "es-latam differs from es-es on ['question']"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-porpara-04-ex.json",
+  "id": "a2.porpara.04.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "Mira, este regalo es para ti."
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "¡Muchas gracias por el regalo!",
+    "¡Muchas gracias para el regalo!",
+    "¡Muchas gracias a el regalo!"
+   ]
+  },
+  "why": "the reply does not answer the compliment; tarta, rica, merendar are in no list; 'Amiga' is nobody in the story",
+  "kind": "target",
+  "why_unmatched": "es-latam differs from es-es on ['prompt']"
+ }
+]

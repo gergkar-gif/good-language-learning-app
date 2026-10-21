@@ -46,13 +46,13 @@
       "id": "a2.subjuntivobasico.03.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Es mejor que nosotros _____ temprano para evitar el tráfico.",
+      "sentence": "Es mejor que nosotros _____ temprano para llegar a tiempo.",
       "hint": "salir",
       "answer": "salgamos",
       "teaches": [
         "subjunctive-value-judgments"
       ],
-      "english": "It is better that we leave early to avoid traffic."
+      "english": "It is better that we leave early to arrive on time."
     },
     {
       "id": "a2.subjuntivobasico.03.ex04",
@@ -80,12 +80,12 @@
           "It's better that you rest"
         ],
         [
-          "Es bueno que hagas deporte",
-          "It's good that you do sports"
+          "Es bueno que practiques",
+          "It's good that you practice"
         ],
         [
-          "Es una pena que te vayas",
-          "It's a shame that you leave"
+          "Es una lástima que te vayas",
+          "It's a pity that you leave"
         ]
       ],
       "teaches": [
@@ -126,7 +126,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿A qué hora debemos estar en el aeropuerto mañana?"
+          "text": "¿Qué debemos hacer antes del viaje de mañana?"
         },
         {
           "speaker": "Carlos",
@@ -136,12 +136,16 @@
       "options": [
         "Es fundamental que seamos puntuales y lleguemos con antelación.",
         "Es fundamental que somos puntuales y llegamos con antelación.",
-        "Fue fundamental que fuimos puntuales y llegamos con antelación."
+        "Es fundamental que fuimos puntuales y llegamos con antelación."
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-value-judgments"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterite-irregular-stems"
+      }
     },
     {
       "id": "a2.subjuntivobasico.03.ex08",
@@ -149,8 +153,8 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Daniela",
-          "text": "¿Qué me aconsejas para mantener una buena salud?"
+          "speaker": "Ana",
+          "text": "¿Qué debo hacer para tener buena salud?"
         },
         {
           "speaker": "Meg",
@@ -158,14 +162,18 @@
         }
       ],
       "options": [
-        "Es aconsejable que tengas hábitos saludables y bebas suficiente agua.",
-        "Es aconsejable que tienes hábitos saludables y bebes suficiente agua.",
-        "Fue aconsejable que tenías hábitos saludables y bebías suficiente agua."
+        "Es aconsejable que tengas hábitos saludables y bebas mucha agua.",
+        "Es aconsejable que tienes hábitos saludables y bebes mucha agua.",
+        "Es aconsejable que tenías hábitos saludables y bebías mucha agua."
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-value-judgments"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "imperfect"
+      }
     },
     {
       "id": "a2.subjuntivobasico.03.ex09",
@@ -173,12 +181,12 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Express an impersonal opinion about travel: It is important to renew your passport in advance.",
-          "answer": "Es importante que renueves el pasaporte con antelación."
+          "prompt": "Say that it is important that you bring your passport.",
+          "answer": "Es importante que traigas el pasaporte."
         },
         {
-          "prompt": "Express that it is a pity: It is a pity that they cannot come.",
-          "answer": "Es una lástima que no puedan acompañarnos hoy."
+          "prompt": "Say that it is a pity that they cannot come.",
+          "answer": "Es una lástima que no puedan venir."
         }
       ],
       "teaches": [
@@ -205,11 +213,11 @@
       "id": "a2.subjuntivobasico.03.ex11",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Es aconsejable tener hábitos saludables con antelación.",
+      "sentence": "Es aconsejable tener hábitos saludables.",
       "teaches": [
         "a2-expressing-wishes-feelings-vocab"
       ],
-      "english": "It is advisable to have healthy habits in advance."
+      "english": "It is advisable to have healthy habits."
     }
   ]
 }

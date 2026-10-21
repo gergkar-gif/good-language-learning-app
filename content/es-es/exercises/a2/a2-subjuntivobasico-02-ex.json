@@ -5,12 +5,12 @@
       "id": "a2.subjuntivobasico.02.ex01",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Yo quiero _____ (ir) al cine esta tarde. (mismo sujeto)",
+      "question": "I want to go to the museum this afternoon. Which sentence says this?",
       "options": [
-        "ir",
-        "vaya",
-        "que voy",
-        "que vaya"
+        "Yo quiero ir al museo esta tarde.",
+        "Yo quiero vaya al museo esta tarde.",
+        "Yo quiero que voy al museo esta tarde.",
+        "Yo quiero que vaya al museo esta tarde."
       ],
       "correct": 0,
       "teaches": [
@@ -21,12 +21,12 @@
       "id": "a2.subjuntivobasico.02.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Yo quiero que tú _____ (ir) conmigo al cine. (dos sujetos)",
+      "question": "I want you to go to the museum with me. Which sentence says this?",
       "options": [
-        "vayas",
-        "vas",
-        "ir",
-        "fueras"
+        "Yo quiero que tú vayas conmigo al museo.",
+        "Yo quiero que tú vas conmigo al museo.",
+        "Yo quiero que tú ir conmigo al museo.",
+        "Yo quiero que tú vaya conmigo al museo."
       ],
       "correct": 0,
       "teaches": [
@@ -40,13 +40,13 @@
       "id": "a2.subjuntivobasico.02.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Necesito que me _____ a mover este sofá.",
+      "sentence": "Necesito que me _____ a llevar esta maleta.",
       "hint": "ayudar",
       "answer": "ayudes",
       "teaches": [
         "subjuntivo-deseos"
       ],
-      "english": "I need you to help me move this sofa."
+      "english": "I need you to help me carry this suitcase."
     },
     {
       "id": "a2.subjuntivobasico.02.ex04",
@@ -117,23 +117,26 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "¿A qué hora comienza la reunión con los clientes?"
+          "speaker": "Carlos",
+          "text": "¿A qué hora empieza tu clase mañana?"
         },
         {
-          "speaker": "Carlos",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "A las diez; te pido que vengas temprano para preparar el informe.",
-        "A las diez; te pido que vienes temprano para preparar el informe.",
-        "A las diez; te pedí que vinieras temprano para preparar el informe."
+        "A las diez; te voy a pedir que me despiertes temprano para estudiar.",
+        "A las diez; te voy a pedir que me despiertas temprano para estudiar.",
+        "A las diez; te voy a pedir que me despertar temprano para estudiar."
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-deseos"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "a2.subjuntivobasico.02.ex08",
@@ -141,8 +144,8 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Daniela",
-          "text": "¿Quieres que vayamos a almorzar por separado?"
+          "speaker": "Carlos",
+          "text": "¿Quieres que comamos en un restaurante?"
         },
         {
           "speaker": "Meg",
@@ -150,14 +153,17 @@
         }
       ],
       "options": [
-        "No, prefiero que comamos juntos si tienes tiempo libre.",
-        "No, prefiero que comemos juntos si tienes tiempo libre.",
-        "No, preferí que comiéramos juntos si tenías tiempo libre."
+        "No, prefiero que comamos en casa.",
+        "No, prefiero que comemos en casa.",
+        "No, prefiero que comer en casa."
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-deseos"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "a2.subjuntivobasico.02.ex09",
@@ -165,12 +171,12 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Ask a friend for help: I need you to accompany me to the office.",
-          "answer": "Necesito que me acompañes a la oficina esta mañana."
+          "prompt": "Say to a friend that you need him to go with you to the office.",
+          "answer": "Necesito que me acompañes a la oficina."
         },
         {
-          "prompt": "Ask someone politely for help: I ask that you help me with this task.",
-          "answer": "Te pido que me ayudes a revisar este informe."
+          "prompt": "Politely ask a friend to help you with the report.",
+          "answer": "Te pido que me ayudes con el informe."
         }
       ],
       "teaches": [

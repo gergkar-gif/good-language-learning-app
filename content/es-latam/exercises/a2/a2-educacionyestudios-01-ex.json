@@ -5,7 +5,7 @@
       "id": "a2.educacionyestudios.01.ex01",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "A mí se me _____ (dar) muy bien los idiomas extranjeros.",
+      "question": "A mí se me _____ (dar) muy bien los idiomas.",
       "options": [
         "dan",
         "da",
@@ -38,7 +38,6 @@
       "category": "vocabulary",
       "type": "fill-blank",
       "sentence": "Mi _____ favorita en el colegio era la literatura.",
-      "hint": "school subject",
       "answer": "asignatura",
       "teaches": [
         "a2-studying-school-life-vocab"
@@ -49,13 +48,13 @@
       "id": "a2.educacionyestudios.01.ex04",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "A Meg se le _____ genial la biología.",
+      "sentence": "A Meg se le _____ genial la literatura.",
       "hint": "dar",
       "answer": "da",
       "teaches": [
         "gustar"
       ],
-      "english": "Meg is great at biology."
+      "english": "Meg is great at literature."
     },
     {
       "id": "a2.educacionyestudios.01.ex05",
@@ -67,16 +66,16 @@
           "I'm good at languages"
         ],
         [
-          "Me cuesta la química",
-          "I find chemistry difficult"
+          "Me cuesta la historia",
+          "I find history difficult"
         ],
         [
           "Mi asignatura favorita",
           "My favorite subject"
         ],
         [
-          "Aprobar el examen",
-          "To pass the exam"
+          "La materia es fácil",
+          "The subject is easy"
         ]
       ],
       "teaches": [
@@ -88,22 +87,24 @@
       "category": "grammar",
       "type": "sentence-builder",
       "tiles": [
+        "me",
+        "gustan",
         "las",
         "matemáticas",
-        "me",
-        "parecen",
-        "muy",
-        "interesantes"
+        "porque",
+        "son",
+        "fáciles"
       ],
       "solution": [
+        "me",
+        "gustan",
         "las",
         "matemáticas",
-        "me",
-        "parecen",
-        "muy",
-        "interesantes"
+        "porque",
+        "son",
+        "fáciles"
       ],
-      "english": "Math seems very interesting to me.",
+      "english": "I like mathematics because it is easy.",
       "teaches": [
         "gustar"
       ]
@@ -114,18 +115,18 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
+          "speaker": "Carlos",
           "text": "¿Cuál es tu asignatura favorita este año?"
         },
         {
-          "speaker": "Carlos",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Me apasiona la historia y la literatura, aunque son materias difíciles.",
-        "Me apasiona la historia y la literatura, aunque son materias fácil.",
-        "Me apasionó la historia y la literatura ayer en clase."
+        "Me gustan la historia y la literatura, aunque son materias difíciles.",
+        "Me gustan la historia y la literatura, aunque son materias difícil.",
+        "Me gustan la historia y la literatura, aunque son materia difíciles."
       ],
       "correct": 0,
       "teaches": [
@@ -138,8 +139,8 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Daniela",
-          "text": "¿Qué opinas de la clase de ciencias y matemáticas?"
+          "speaker": "Carlos",
+          "text": "¿Cómo van tus clases de ciencias y matemáticas?"
         },
         {
           "speaker": "Meg",
@@ -148,8 +149,8 @@
       ],
       "options": [
         "La materia de ciencias es muy interesante, pero las matemáticas no son fáciles.",
-        "La materia de ciencias es muy fácil, pero matemáticas son fácil.",
-        "La materia de ciencias fue interesante el año que viene."
+        "La materia de ciencias es muy interesante, pero las matemáticas no son fácil.",
+        "La materia de ciencias es muy interesantes, pero las matemáticas no son fáciles."
       ],
       "correct": 0,
       "teaches": [
@@ -162,11 +163,11 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say what subjects you study: I study language and history because they are interesting.",
+          "prompt": "Say that you study languages and history because they are interesting subjects.",
           "answer": "Estudio idiomas e historia porque son asignaturas interesantes."
         },
         {
-          "prompt": "Say that mathematics is difficult but science is easy for you.",
+          "prompt": "Say that for you mathematics is difficult but the science subject is easy.",
           "answer": "Para mí las matemáticas son difíciles, pero la materia de ciencias es fácil."
         }
       ],
@@ -194,11 +195,11 @@
       "id": "a2.educacionyestudios.01.ex11",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Aprender un idioma es una asignatura interesante y fácil.",
+      "sentence": "Esta asignatura es interesante y no es difícil.",
       "teaches": [
         "a2-studying-school-life-vocab"
       ],
-      "english": "Learning a language is an interesting and easy subject."
+      "english": "This subject is interesting and not difficult."
     }
   ]
 }

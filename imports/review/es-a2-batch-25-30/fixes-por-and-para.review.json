@@ -1,0 +1,621 @@
+[
+ {
+  "file": "content/es-es/grammar/a2/a2-porpara-01-gr.json",
+  "old": "*Estudio español para viajar por el mundo.*",
+  "new": "*Estudio español para hablar con mi familia.*",
+  "why": "the para screen's first example uses por (por el mundo), which is taught in lesson 02",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-01-ex.json",
+  "id": "a2.porpara.01.ex02",
+  "set": {
+   "sentence": "Tengo que preparar el paquete _____ el director.",
+   "english": "I have to prepare the package for the director."
+  },
+  "why": "urgente is B1; uses preparar (vocab-unused)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-01-ex.json",
+  "id": "a2.porpara.01.ex04",
+  "set": {
+   "question": "Which word means 'recipient'?",
+   "options": [
+    "destinatario",
+    "entregar",
+    "salir para",
+    "objetivo"
+   ]
+  },
+  "why": "length give-away (12 vs 8): ask the word meaning with words from the list as wrong options (also uses entregar: vocab-unused)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-01-ex.json",
+  "id": "a2.porpara.01.ex05",
+  "set": {
+   "sentence": "Mi meta es ahorrar dinero _____ viajar a España.",
+   "english": "My goal is to save money to travel to Spain."
+  },
+  "why": "verano is B1; uses meta (vocab-unused)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-01-ex.json",
+  "id": "a2.porpara.01.ex09",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Para qué compraste ese mapa?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Es útil para conocer mejor los museos de la ciudad.",
+    "Es útil por conocer mejor los museos de la ciudad.",
+    "Es útil de conocer mejor los museos de la ciudad."
+   ]
+  },
+  "why": "guía is in no list; uses útil (vocab-unused); the answer repeats the question's para",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-01-ex.json",
+  "id": "a2.porpara.01.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Recepcionista",
+     "text": "¿Para quién es la reserva de la habitación?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Para Meg y para mí.",
+    "Por Meg y por mí.",
+    "A Meg y a mí."
+   ]
+  },
+  "why": "Carlos answers about himself in the third person with an invented surname (self-third-person; *Carlos Ruiz*)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-porpara-02.json",
+  "old": "\"goal\": \"Explain the reasons, causes, and means of transport or communication using por.\"",
+  "new": "\"goal\": \"Explain reasons, causes and means of communication using por.\"",
+  "why": "Spanish does not use por for ordinary transport (en tren, en coche, en avión)",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-porpara-02.json",
+  "old": "\"items\": [\n        \"Explain the reasons, causes, and means of transport or communication using por.\"\n      ]",
+  "new": "\"items\": [\n        \"Explain reasons, causes and means of communication using por.\"\n      ]",
+  "why": "same (goal line)",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-porpara-02.json",
+  "old": "I can use 'por' to describe means of transport and communication.",
+  "new": "I can use 'por' to say how I send or say something (por teléfono, por correo).",
+  "why": "por is not the preposition for ordinary transport",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-02-ex.json",
+  "id": "a2.porpara.02.ex06",
+  "set": {
+   "pairs": [
+    [
+     "Por la lluvia",
+     "Because of the rain"
+    ],
+    [
+     "Por ejemplo",
+     "For example"
+    ],
+    [
+     "Por teléfono",
+     "By phone"
+    ],
+    [
+     "Por casualidad",
+     "By chance"
+    ]
+   ]
+  },
+  "why": "'Por avión' presents por for transport (en avión is the normal way to say it); vocab-unused por ejemplo",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-02-ex.json",
+  "id": "a2.porpara.02.ex07",
+  "set": {
+   "sentence": "El tren llegó tarde por la lluvia.",
+   "options": [
+    "Por la lluvia.",
+    "Por el calor.",
+    "Por el tráfico."
+   ]
+  },
+  "why": "avería and vía are B1",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-02-ex.json",
+  "id": "a2.porpara.02.ex09",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Por qué no viniste a cenar ayer?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Por un dolor de cabeza.",
+    "Para un dolor de cabeza.",
+    "A un dolor de cabeza."
+   ]
+  },
+  "why": "'por la tarde' is first taught in lesson 03; fuerte is in no list",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-03-ex.json",
+  "id": "a2.porpara.03.ex02",
+  "set": {
+   "sentence": "El gato salió _____ la ventana.",
+   "english": "The cat went out through the window."
+  },
+  "why": "the Retiro is in Madrid (the characters live in Hanoi); uses ventana (vocab-unused)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-03-ex.json",
+  "id": "a2.porpara.03.ex06",
+  "set": {
+   "pairs": [
+    [
+     "Para el lunes",
+     "By Monday"
+    ],
+    [
+     "Por la noche",
+     "At night"
+    ],
+    [
+     "Por el centro",
+     "Around downtown"
+    ],
+    [
+     "Por la tarde",
+     "In the afternoon"
+    ]
+   ]
+  },
+  "why": "vocab-unused para el lunes",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-03-ex.json",
+  "id": "a2.porpara.03.ex08",
+  "set": {
+   "sentence": "Llegamos a tiempo para la reserva del sábado.",
+   "english": "We arrived on time for Saturday's reservation."
+  },
+  "why": "vocab-unused a tiempo",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-03-ex.json",
+  "id": "a2.porpara.03.ex09",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Para cuándo es el trabajo de historia?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Es para el próximo lunes.",
+    "Es por el próximo lunes.",
+    "Es en el próximo lunes."
+   ]
+  },
+  "why": "ensayo is in no list; Carlos is not a student, and the teacher asking him is invented",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-03-ex.json",
+  "id": "a2.porpara.03.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Turista",
+     "text": "¿Por dónde se va a la estación?"
+    },
+    {
+     "speaker": "Guía",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Siga recto por esta calle.",
+    "Siga recto de esta calle.",
+    "Siga recto a esta calle."
+   ]
+  },
+  "why": "comercial is B1; Plaza Mayor is in Madrid; 'Vaya para esta calle' could be accepted (para = toward)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-04-ex.json",
+  "id": "a2.porpara.04.ex02",
+  "set": {
+   "sentence": "Muchas gracias _____ ayudarme con las maletas."
+  },
+  "why": "muchísimas (-ísimo) is in no list",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-04-ex.json",
+  "id": "a2.porpara.04.ex08",
+  "set": {
+   "sentence": "Disculpa por llegar tarde a la cita."
+  },
+  "why": "perdona (perdonar) is in no list; the screen has Disculpa por...",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-04-ex.json",
+  "id": "a2.porpara.04.ex09",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Cuánto costó esa bicicleta?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Fue barata: la pagué por cien euros.",
+    "Fue barata: la pagué para cien euros.",
+    "Fue barata: la pagué de cien euros."
+   ]
+  },
+  "why": "a customer asks a seller what the seller paid for his own bike; vocab-unused costar, barato",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-04-ex.json",
+  "id": "a2.porpara.04.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "Mira, este regalo es para ti."
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "¡Muchas gracias por el regalo!",
+    "¡Muchas gracias para el regalo!",
+    "¡Muchas gracias a el regalo!"
+   ]
+  },
+  "why": "the reply does not answer the compliment; tarta, rica, merendar are in no list; 'Amiga' is nobody in the story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-porpara-05.json",
+  "old": "\"goal\": \"Integrate por and para seamlessly in travel planning, personal decisions, and narrative storytelling.\"",
+  "new": "\"goal\": \"Choose between por and para in sentences about trips and decisions.\"",
+  "why": "'seamlessly' and 'narrative storytelling' are not practised",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-porpara-05.json",
+  "old": "\"items\": [\n        \"Integrate por and para seamlessly in travel planning, personal decisions, and narrative storytelling.\"\n      ]",
+  "new": "\"items\": [\n        \"Choose between por and para in sentences about trips and decisions.\"\n      ]",
+  "why": "same (goal line)",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-porpara-05-gr.json",
+  "old": "*Salgo para Madrid (destino) por la mañana (tiempo) por tren (medio) para ver a mi tía (propósito).*",
+  "new": "*Salgo para Madrid (destino) por la mañana (tiempo) y te aviso por teléfono (medio) para no llegar tarde (propósito).*",
+  "why": "'por tren' is not how Spanish says travel by train (en tren)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-05-ex.json",
+  "id": "a2.porpara.05.ex05",
+  "set": {
+   "sentence": "No pudimos caminar mucho _____ el calor.",
+   "english": "We couldn't walk much because of the heat."
+  },
+  "why": "autobús, obras, avenida are unmet",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-05-ex.json",
+  "id": "a2.porpara.05.ex08",
+  "set": {
+   "sentence": "Salimos temprano para llegar a tiempo.",
+   "english": "We left early in order to arrive on time."
+  },
+  "why": "evitar is B1",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-05-ex.json",
+  "id": "a2.porpara.05.ex09",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Guía",
+     "text": "¿Tienen alguna pregunta sobre el horario del viaje?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "vocab-unused horario",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-05-ex.json",
+  "id": "a2.porpara.05.ex11",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say: In my opinion, Spain is a great country for traveling.",
+     "answer": "Para mí, España es un país genial para viajar."
+    },
+    {
+     "prompt": "Say: We walked around downtown in the afternoon.",
+     "answer": "Paseamos por el centro por la tarde."
+    }
+   ]
+  },
+  "why": "ideal and casco are unmet; the prompts add 'a country' and 'old town' that the answers vary",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-consolidation-ex.json",
+  "id": "a2.porpara.cons.ex10",
+  "set": {
+   "sentence": "El tren para Barcelona sale por la mañana.",
+   "options": [
+    "Sale hacia Barcelona por la mañana.",
+    "Llega de Barcelona por la mañana.",
+    "Sale para Sevilla por la tarde."
+   ]
+  },
+  "why": "vía is B1",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-consolidation-ex.json",
+  "id": "a2.porpara.cons.ex12",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Para cuándo necesitas el informe?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "completo is in no list; the asker 'Elena' is not in the scene; becomes live with the group fix",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-consolidation-ex.json",
+  "id": "a2.porpara.cons.ex13",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Para qué decidiste estudiar español?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Para poder hablar con tu abuela en Madrid.",
+    "Por poder hablar con tu abuela en Madrid.",
+    "De poder hablar con tu abuela en Madrid."
+   ]
+  },
+  "why": "'Pablo' is nobody in the story line; Meg's reason for Spanish: Carlos's grandmother",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-porpara-consolidation-ex.json",
+  "id": "a2.porpara.cons.ex14",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say: I am leaving for Seville in the morning.",
+     "answer": "Salgo para Sevilla por la mañana."
+    },
+    {
+     "prompt": "Say: We traveled by train through Andalusia.",
+     "answer": "Viajamos en tren por Andalucía."
+    }
+   ]
+  },
+  "why": "'por tren' for travel: en tren is the normal way (the item now tests por + place)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "\"title\": \"El encargo urgente en Madrid\"",
+  "new": "\"title\": \"El encargo urgente en Hanói\"",
+  "why": "story line: Carlos and Meg live in Hanoi",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "Meg y Carlos deben entregar un paquete urgente por el centro de Madrid antes de las cinco de la tarde.",
+  "new": "Meg y Carlos deben entregar un paquete urgente por el centro de Hanói antes de las cinco de la tarde.",
+  "why": "story line",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "\"location\": \"Madrid\"",
+  "new": "\"location\": \"Hanói\"",
+  "why": "story line",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "Meg y Carlos reciben una llamada urgente de su amiga Elena desde la oficina central en Madrid.",
+  "new": "Meg y Carlos reciben una llamada urgente de Elena, una compañera de la oficina de Carlos en Hanói.",
+  "why": "story line: Elena works at Carlos's office in Hanoi",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "Tengo un paquete de documentos para el notario que debe entregarse hoy antes de las cinco de la tarde",
+  "new": "Tengo un paquete de documentos para el director de un hotel. Hay que entregarlo hoy antes de las cinco de la tarde",
+  "why": "a notary does not fit Hanoi; 'debe entregarse' (passive se) avoided",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "Nosotros nos encargamos de llevarlo para que llegues a tiempo a tu reunión",
+  "new": "Nosotros nos encargamos de llevarlo. Tú ve a tu reunión",
+  "why": "'para que llegues' is a B1 purpose clause with the subjunctive (the story is exempt from met words, not from the level)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "caminan por las concurridas calles de Malasaña hacia la Gran Vía.",
+  "new": "caminan por las concurridas calles del Barrio Antiguo hacia el lago Hoàn Kiếm.",
+  "why": "story line",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "cruzan por la Plaza de España y toman el metro para evitar el tráfico de la tarde.",
+  "new": "cruzan por el puente rojo del lago y toman un taxi para evitar el tráfico de la tarde.",
+  "why": "story line (a taxi does not avoid traffic; a motorbike taxi does)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "Llegan al despacho del notario a las cuatro y media. «¡Llegamos a tiempo!», exclama Meg aliviada al entregar el paquete para el abogado.",
+  "new": "Llegan al hotel a las cuatro y media. «¡Llegamos a tiempo!», exclama Meg aliviada cuando entrega el paquete para el director.",
+  "why": "story line; 'al entregar' is al + infinitive, taught in Unit 32",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "¿De qué trata principalmente la lectura?",
+  "new": "¿Qué les pide Elena a Meg y a Carlos?",
+  "why": "generic question: ask what the people say and do",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "\"De una reunión de negocios con un grupo de abogados internacionales.\",\n            \"De una carrera contrarreloj por el centro de Madrid para entregar unos documentos urgentes a un notario.\",\n            \"De un paseo turístico por las tiendas de la Gran Vía y la Plaza de España.\",\n            \"De la búsqueda de una oficina de correos abierta después de las cinco de la tarde.\"\n          ],\n          ",
+  "new": "\"Que lleven una reunión de negocios a un grupo de abogados.\",\n       \"Que lleven un paquete de documentos a un hotel antes de las cinco.\",\n       \"Que den un paseo turístico por las tiendas del Barrio Antiguo.\",\n       \"Que busquen una oficina de correos abierta después de las cinco.\"\n      ],\n      ",
+  "why": "options for the new first question",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "La lectura sigue la misión de Carlos y Meg de entregar a tiempo un encargo importante para ayudar a su amiga Elena.",
+  "new": "Elena dice: «Tengo un paquete de documentos para el director de un hotel. Hay que entregarlo hoy antes de las cinco de la tarde».",
+  "why": "explanation of the new first question",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "¿A qué hora consiguen entregar los documentos en el despacho del notario?",
+  "new": "¿A qué hora llegan al hotel con el paquete?",
+  "why": "story line",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "El texto señala claramente: «Llegan al despacho del notario a las cuatro y media».",
+  "new": "El texto señala claramente: «Llegan al hotel a las cuatro y media».",
+  "why": "story line",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "¿Por qué deciden tomar el metro en lugar de continuar caminando o pedir un taxi?",
+  "new": "¿Por qué toman un taxi?",
+  "why": "story line",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "Para esquivar el tráfico congestionado de la tarde y asegurarse de llegar a tiempo.",
+  "new": "Para evitar el tráfico de la tarde y llegar a tiempo.",
+  "why": "story line (wording)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "Porque comenzó a llover fuertemente en la Plaza de España.",
+  "new": "Porque comenzó a llover fuertemente en el puente.",
+  "why": "story line",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "Porque Elena les compró billetes de transporte gratis.",
+  "new": "Porque Elena les pagó el viaje.",
+  "why": "story line",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "Porque no sabían la dirección exacta del despacho notarial.",
+  "new": "Porque no sabían la dirección exacta del hotel.",
+  "why": "story line",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-porpara.json",
+  "old": "El texto explica que cruzan por la Plaza de España y «toman el metro para evitar el tráfico de la tarde».",
+  "new": "El texto explica que cruzan por el puente rojo y «toman un taxi para evitar el tráfico de la tarde».",
+  "why": "story line",
+  "kind": "target"
+ }
+]

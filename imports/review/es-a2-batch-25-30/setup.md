@@ -29,4 +29,5 @@ Started 2026-10-21T22:34:56Z from origin/master f3d75341. 2 Sonnet reader(s); es
 
     node scripts/walk_lessons.js <course> a2 --jobs 4 --only a2-pronombrescliticos-01 a2-pronombrescliticos-02 a2-pronombrescliticos-03 a2-pronombrescliticos-04 a2-pronombrescliticos-05 a2-pronombrescliticos-consolidation a2-condicionalsimple-01 a2-condicionalsimple-02 a2-condicionalsimple-03 a2-condicionalsimple-04 a2-condicionalsimple-05 a2-condicionalsimple-consolidation a2-subjuntivobasico-01 a2-subjuntivobasico-02 a2-subjuntivobasico-03 a2-subjuntivobasico-04 a2-subjuntivobasico-05 a2-subjuntivobasico-consolidation a2-perifrasisverbales-01 a2-perifrasisverbales-02 a2-perifrasisverbales-03 a2-perifrasisverbales-04 a2-perifrasisverbales-05 a2-perifrasisverbales-consolidation a2-educacionyestudios-01 a2-educacionyestudios-02 a2-educacionyestudios-03 a2-educacionyestudios-04 a2-educacionyestudios-05 a2-educacionyestudios-consolidation a2-porpara-01 a2-porpara-02 a2-porpara-03 a2-porpara-04 a2-porpara-05 a2-porpara-consolidation
 - Readers launched 22:35:48Z.
-- Reader A finished 23:04Z: fixes 73 + 73 + 65 = 211; report file allowed
+- Reader A finished 23:04Z: 438,036 tokens, 85 tool uses, 28 min (~146k a unit); fixes 73 + 73 + 65 = 211; report file allowed
+- Reader B finished 23:05Z: 430,858 tokens, 82 tool uses, 28.8 min (~144k a unit); fixes 88 + 93 + 57 = 238

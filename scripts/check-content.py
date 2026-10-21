@@ -611,6 +611,31 @@ def unmet_words(src, course, level):
     return src.cache[key]
 
 
+ES_IRREGULAR_STEMS = {
+    "decir": ["dig", "dic", "dij", "dir", "dich"], "hacer": ["hag", "hic", "hiz", "har", "hech"],
+    "tener": ["teng", "tien", "tuv", "tendr"], "venir": ["veng", "vien", "vin", "vendr"],
+    "poder": ["pued", "pud", "podr"], "poner": ["pong", "pus", "pondr", "pues"],
+    "querer": ["quier", "quis", "querr"], "saber": ["sep", "sup", "sabr"], "salir": ["salg", "saldr"],
+    "ir": ["voy", "vas", "va", "vam", "van", "fui", "fue", "iba", "vay"], "ser": ["soy", "eres", "es", "som", "son", "fui", "fue", "era", "sea"],
+    "estar": ["estoy", "est"], "dar": ["doy", "di", "dio", "dier", "das", "da", "dam", "dan"], "ver": ["veo", "ves", "ve", "vi", "vist"],
+    "traer": ["traig", "traj"], "conducir": ["conduzc", "conduj"], "conocer": ["conozc"], "oir": ["oig", "oy"],
+}
+
+
+def es_verb_stems(verb):
+    """Other stems a Spanish verb shows in inflected text: the stem change of
+    its last e/o (*quier-*, *sient-*, *duerm-*, *pid-*) and irregular stems
+    (*dij-*, *hic-*). vocab-unused flagged *querer*, *sentir*, *decir* in
+    lessons that used *quiero*, *siento*, *dijo* (es A2 units 25, 27)."""
+    stem = verb[:-2]
+    out = list(ES_IRREGULAR_STEMS.get(verb, []))
+    m = re.match(r"^(.*)([eo])([^aeiou]*)$", stem)
+    if m:
+        a, v, b = m.groups()
+        out += [a + ("ie" if v == "e" else "ue") + b] + ([a + "i" + b] if v == "e" else []) + ([a + "u" + b] if v == "o" else [])
+    return [x for x in out if len(x) >= 2]
+
+
 def stem_words(lemma, articles):
     """Prefixes that stand for a lemma in an inflected text. A "(Madrid)" note is
     dropped, and of "a / b" alternatives the first is taken."""
@@ -852,7 +877,10 @@ def check_unit(src, course, level, unit, shape):
                 seen_lemmas.add(lemma)
                 # ES *lavarse* is used as *me lavo*: stem the verb, not the -se form
                 sw = stem_words(re.sub(r"(ar|er|ir)se$", r"\1", w.get("lemma", "")) if lang == "es" else w.get("lemma", ""), L.get("articles", ()))
-                if sw and not all(any(h.startswith(s) for h in hay_words) for s in sw):
+                verb = fold(re.sub(r"(ar|er|ir)se$", r"\1", w.get("lemma", "")))
+                alts = es_verb_stems(verb) if lang == "es" and re.fullmatch(r"[a-zñ]+(ar|er|ir)", verb) else []
+                if sw and not all(any(h.startswith(s) for h in hay_words) for s in sw) \
+                        and not any(h.startswith(a) for a in alts for h in hay_words):
                     out.append(("vocab-unused", stem, w.get("lemma"), f"content/{course}/{vocab_ref}"))
 
         for sec in lesson.get("sections", []):

@@ -5,12 +5,12 @@
       "id": "a2.condicionalsimple.03.ex01",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Buenas tardes, ¿_____ (desear, usted) ver la carta de postres?",
+      "question": "Buenas tardes, ¿_____ (desear, usted) ver la carta?",
       "options": [
         "desearía",
-        "desearon",
-        "deseas",
-        "desearás"
+        "deseó",
+        "desearías",
+        "deseará"
       ],
       "correct": 0,
       "teaches": [
@@ -18,7 +18,6 @@
       ],
       "distractor_skills": {
         "1": "preterito-indefinido",
-        "2": "present-tense",
         "3": "futuro-simple"
       }
     },
@@ -29,29 +28,30 @@
       "question": "Mesero, ¿_____ (poder, usted) traerme un poco más de pan?",
       "options": [
         "podría",
-        "pueda",
+        "pudo",
         "podrías",
-        "pudo"
+        "podrá"
       ],
       "correct": 0,
       "teaches": [
         "polite-softening"
       ],
       "distractor_skills": {
-        "3": "preterito-indefinido"
+        "1": "preterito-indefinido",
+        "3": "futuro-simple"
       }
     },
     {
       "id": "a2.condicionalsimple.03.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "A nosotros nos _____ reservar una habitación doble.",
+      "sentence": "A nosotros nos _____ reservar una habitación para dos.",
       "hint": "gustar",
       "answer": "gustaría",
       "teaches": [
         "polite-softening"
       ],
-      "english": "We would like to book a double room."
+      "english": "We would like to book a room for two."
     },
     {
       "id": "a2.condicionalsimple.03.ex04",
@@ -125,7 +125,7 @@
       "prompt": [
         {
           "speaker": "Cliente",
-          "text": "Buenas tardes, ¿nos traería la carta, por favor?"
+          "text": "Buenas tardes, ¿nos traería la carta y un poco de agua, por favor?"
         },
         {
           "speaker": "Mesero",
@@ -133,9 +133,9 @@
         }
       ],
       "options": [
-        "Con mucho gusto, enseguida les traigo la carta y un poco de agua.",
-        "Con mucho gusto, les traje la carta y un poco de agua ayer.",
-        "No, no quiero traerles la carta ni el agua ahora."
+        "Con mucho gusto, enseguida les traigo la carta y el agua.",
+        "Con mucho gusto, enseguida les traigo la cuenta y el agua.",
+        "Con mucho gusto, enseguida les traigo la carta y el pan."
       ],
       "correct": 0,
       "teaches": [
@@ -149,7 +149,7 @@
       "prompt": [
         {
           "speaker": "Mesero",
-          "text": "¿Desean pedir algún plato especial hoy?"
+          "text": "¿Desean pedir ya?"
         },
         {
           "speaker": "Cliente",
@@ -157,9 +157,9 @@
         }
       ],
       "options": [
-        "Desearíamos probar el plato del día, si es tan amable.",
-        "Deseamos probar el plato del día ayer.",
-        "Deseé probar el plato del día mañana."
+        "Desearíamos probar el plato del día.",
+        "Quiero probar el plato del día ya.",
+        "Tráeme el plato del día ahora mismo."
       ],
       "correct": 0,
       "teaches": [
@@ -167,8 +167,9 @@
       ],
       "distractor_skills": {
         "1": "present-tense",
-        "2": "preterito-indefinido"
-      }
+        "2": "imperativo-afirmativo"
+      },
+      "hint": "politely"
     },
     {
       "id": "a2.condicionalsimple.03.ex09",
@@ -176,11 +177,11 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Politely ask to reserve a table for two: We would like to reserve a table.",
-          "answer": "Buenas tardes, desearíamos reservar una mesa para dos personas."
+          "prompt": "Politely say that you would like to book a table for two, using me gustaría.",
+          "answer": "Me gustaría reservar una mesa para dos."
         },
         {
-          "prompt": "Politely ask the waiter for the bill: Could you bring us the bill, please?",
+          "prompt": "Politely ask the waiter to bring you the bill, using ¿Sería tan amable de…?",
           "answer": "¿Sería tan amable de traernos la cuenta, por favor?"
         }
       ],
@@ -208,11 +209,11 @@
       "id": "a2.condicionalsimple.03.ex11",
       "category": "listening",
       "type": "dictation",
-      "sentence": "¿Podría reservar una mesa para probar este plato?",
+      "sentence": "¿Podría reservar una mesa para dos, por favor?",
       "teaches": [
         "polite-softening"
       ],
-      "english": "Could I reserve a table to try this dish?"
+      "english": "Could I book a table for two, please?"
     }
   ]
 }

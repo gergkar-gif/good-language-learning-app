@@ -360,6 +360,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-21 | es A2 7–12 (both courses) | paired read, `batch_setup.py`, 3 units/reader, mirrored | | 351k + 382k (B by its resumed notice), 23.4 + ~20 | 347 proposed (45 / 75 / 39 / 63 / 61 / 64), 0 rejected after 1 reworded; Claude changed 7, added a unit-wide fix (16 lines per course), synced 6 es-latam story question sets, reopened Units 4–6 for `table-repeat` | ~122k reader tokens/unit (A ~117k, B ~127k; ×1.11 of A2 1–6's ~110k on heavier baselines: 50 errors / 106 suspects against 22 / 143); ~58 fixes/unit (×1.32); 245 of 347 to review; 334/347 mirrored; walk 36/36 per course; both report writes allowed |
 | 10-21 | es A2 13–18 (both courses) | paired read, `batch_setup.py`, 3 units/reader, mirrored | | 342k + 366k, 21.5 + 21.3 | 277 proposed (43 / 56 / 45 / 50 / 35 / 48), 0 rejected; Claude changed 4, added 17 *vosotros* questions and 6 es-latam items | ~118k reader tokens/unit (×0.97 of 7–12's ~122k); ~46 fixes/unit; 209 of 277 to review; 270/277 mirrored; walk 36/36 per course **with challenges typed and graded** |
 | 10-21 | es A2 19–24 (both courses) | paired read, 3 units/reader, both resumed after a session limit, mirrored | | A ~300k (resumed notice), B lost in a container restart | 329 proposed (49 / 65 / 40 / 58 / 50 / 67), 0 rejected after the `check_fixes` index fix; Claude dropped 1, adjusted 3, added 3 item fixes, 7 es-latam items, 6 *vosotros* questions and the user's story-line edits | ~100–120k reader tokens/unit (uncertain: one notice); ~55 fixes/unit; 270 of 329 to review; 316/329 mirrored; walk 36/36 per course with challenges |
+| 10-21 | es A2 25–30 (both courses) | paired read, 3 units/reader, mirrored | | 438k + 431k, 28 + 28.8 | 449 proposed (73 / 73 / 65 / 88 / 93 / 57), 0 rejected; Claude adjusted 4, added 2, moved 52 Daniela items/challenges | ~145k reader tokens/unit (**over the ~140k line**); ~75 fixes/unit (×1.36 of 19–24); 397 of 449 to review; 437/449 mirrored; walk 60/60 per course (21–30) |
 | 10-21 | es A1 25–26 (both courses) | **one** reader, 2 units, Spanish template, mirrored | | 244k (the resumed notice only; stopped by a Sonnet session limit after 3 of 4 files) | 84 proposed (31 / 53), 0 rejected; Claude changed 3 and fixed one cross-story contradiction | ~122k reader tokens/unit (uncertain: one notice); ~42 fixes/unit; 59 of 84 to review; 84/84 mirrored, 5 put in es-latam words (*billete* → *boleto*); level walk 156/156 per course |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -988,4 +989,23 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
 - **Not scripted:** orphan error-correction items in Unit 21–22 files that
   no lesson references (*comiba*, *vivíban*): harmless, accepted; a check
   for exercises no lesson uses is a candidate if it shows up again.
+
+### 2026-10-21: Spanish A2 units 25–30
+
+- **Cost:** ~145k a unit, over the ~140k line set in the A1 review, with
+  ~75 fixes a unit (the late A2 units were bulk-generated with B1 forms
+  and invented scenarios). Per fix the cost fell again. The last batch
+  (31–33) goes as two units for one reader and one for the other.
+- **Story facts in the focus note worked:** the five contradictions named
+  up front (Carlos's exam, scholarship, Meg's work trip, "seis meses",
+  Madrid) were all fixed by the readers in the story, its questions and
+  the items, with nothing for the reviewer to change. Writing the story
+  line into the prompt before the read is cheaper than fixing it after.
+- **Course-wide character fix by script:** Daniela speaking in person
+  after leaving (a2-20), flagged by both readers: one script moved her
+  lines to Ana (with Meg) or Kaylee (otherwise) in Units 21–30 and their
+  challenges, both courses, and four frozen units were refrozen with
+  `refreeze_changed.py`, which now drops accepted findings that are gone.
+- **Scripted:** `vocab-unused` reads stem changes and irregular stems
+  (readers flagged the false positive in units 25 and 27).
 

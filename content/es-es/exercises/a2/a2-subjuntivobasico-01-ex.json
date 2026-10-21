@@ -45,13 +45,13 @@
       "id": "a2.subjuntivobasico.01.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Deseo que nosotros _____ en paz.",
+      "sentence": "Deseo que nosotros _____ juntos.",
       "hint": "vivir",
       "answer": "vivamos",
       "teaches": [
         "subjuntivo-morfologia"
       ],
-      "english": "I wish that we live in peace."
+      "english": "I wish that we live together."
     },
     {
       "id": "a2.subjuntivobasico.01.ex04",
@@ -123,7 +123,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¡Mañana empiezo mi nuevo trabajo en el hospital!"
+          "text": "¡Mañana tengo mi examen de historia!"
         },
         {
           "speaker": "Carlos",
@@ -131,14 +131,18 @@
         }
       ],
       "options": [
-        "¡Ojalá tengas mucho éxito y seas muy feliz allí!",
-        "¡Ojalá tienes mucho éxito y eres muy feliz allí!",
-        "¡Ojalá tuviste mucho éxito y fuiste muy feliz allí!"
+        "¡Ojalá tengas mucho éxito!",
+        "¡Ojalá tienes mucho éxito!",
+        "¡Ojalá tuviste mucho éxito!"
       ],
       "correct": 0,
       "teaches": [
         "subjuntivo-morfologia"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterite-irregular-stems"
+      }
     },
     {
       "id": "a2.subjuntivobasico.01.ex08",
@@ -146,7 +150,7 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Daniela",
+          "speaker": "Kaylee",
           "text": "Salgo de viaje para México en dos horas."
         },
         {
@@ -162,7 +166,11 @@
       "correct": 0,
       "teaches": [
         "subjuntivo-morfologia"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.subjuntivobasico.01.ex09",
@@ -170,11 +178,11 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Wish someone luck: I hope that everything goes well and you have good luck.",
+          "prompt": "Say that you hope everything goes well and that your friend has a lot of luck.",
           "answer": "Espero que todo salga bien y que tengas mucha suerte."
         },
         {
-          "prompt": "Express a wish for a friend: I want you to be happy in your new home.",
+          "prompt": "Say that you want your friend to be very happy in the new home.",
           "answer": "Quiero que seas muy feliz en tu nueva casa."
         }
       ],

@@ -10,7 +10,7 @@
         "aprobó",
         "aprobaba",
         "aprueba",
-        "aprobase"
+        "aprobará"
       ],
       "correct": 0,
       "teaches": [
@@ -18,17 +18,18 @@
       ],
       "distractor_skills": {
         "1": "imperfect",
-        "2": "present-tense"
+        "2": "present-tense",
+        "3": "futuro-simple"
       }
     },
     {
       "id": "a2.educacionyestudios.03.ex02",
       "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "En España, una nota de 9 o 10 se llama un _____.",
+      "question": "En España, una nota de 7 u 8 se llama un _____.",
       "options": [
-        "sobresaliente",
         "notable",
+        "sobresaliente",
         "aprobado",
         "suspenso"
       ],
@@ -42,7 +43,6 @@
       "category": "vocabulary",
       "type": "fill-blank",
       "sentence": "Estaba muy nervioso, pero saqué muy buena _____.",
-      "hint": "mark",
       "answer": "nota",
       "teaches": [
         "a2-studying-school-life-vocab"
@@ -54,7 +54,6 @@
       "category": "vocabulary",
       "type": "fill-blank",
       "sentence": "El próximo viernes tenemos el examen _____ del curso.",
-      "hint": "last",
       "answer": "final",
       "teaches": [
         "a2-studying-school-life-vocab"
@@ -72,15 +71,15 @@
         ],
         [
           "suspender el examen",
-          "to fail the exam"
+          "to fail the exam (Spain)"
+        ],
+        [
+          "reprobar el examen",
+          "to fail the exam (Latin America)"
         ],
         [
           "sacar buena nota",
           "to get a good grade"
-        ],
-        [
-          "hacer un examen parcial",
-          "to take a midterm exam"
         ]
       ],
       "teaches": [
@@ -92,7 +91,7 @@
       "category": "vocabulary",
       "type": "sentence-builder",
       "tiles": [
-        "carlos",
+        "Meg",
         "sacó",
         "un",
         "sobresaliente",
@@ -100,14 +99,14 @@
         "historia"
       ],
       "solution": [
-        "carlos",
+        "Meg",
         "sacó",
         "un",
         "sobresaliente",
         "en",
         "historia"
       ],
-      "english": "Carlos got an outstanding grade in history.",
+      "english": "Meg got an outstanding grade in history.",
       "teaches": [
         "a2-studying-school-life-vocab"
       ]
@@ -118,25 +117,26 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
+          "speaker": "Carlos",
           "text": "¿Cómo te fue en el examen parcial de historia?"
         },
         {
-          "speaker": "Carlos",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "¡Excelente! Logré aprobar con una nota sobresaliente.",
-        "¡Excelente! Logro aprobar con una nota sobresaliente.",
-        "¡Excelente! Aprobé pero voy a suspender el examen."
+        "¡Muy bien! Logré aprobar con una nota sobresaliente.",
+        "¡Muy bien! Logro aprobar con una nota sobresaliente.",
+        "¡Muy bien! Lograré aprobar con una nota sobresaliente."
       ],
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
       ],
       "distractor_skills": {
-        "1": "present-tense"
+        "1": "present-tense",
+        "2": "futuro-simple"
       }
     },
     {
@@ -145,8 +145,8 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Daniela",
-          "text": "¿Estás nervioso por el examen final de mañana?"
+          "speaker": "Carlos",
+          "text": "¿Estás nerviosa por el examen final de mañana?"
         },
         {
           "speaker": "Meg",
@@ -154,9 +154,9 @@
         }
       ],
       "options": [
-        "Un poco nervioso; si llego a suspender o reprobar, tendré que repetir el curso.",
-        "Un poco nervioso; si llego a aprobar, tendré que repetir el curso.",
-        "Nada nervioso; el examen final fue cancelado ayer."
+        "Un poco nerviosa; si suspendo, tendré que repetir el curso.",
+        "Un poco nerviosa; si apruebo, tendré que repetir el curso.",
+        "Un poco nerviosa; si suspendo, tendré que aprobar el curso."
       ],
       "correct": 0,
       "teaches": [
@@ -173,8 +173,8 @@
           "answer": "Estudié mucho y saqué una nota sobresaliente en el examen final."
         },
         {
-          "prompt": "State what happens if someone fails: If you fail the exam, you have to repeat the test.",
-          "answer": "Si un estudiante llega a suspender, debe repetir la evaluación."
+          "prompt": "Say that if you fail the exam, you have to repeat it.",
+          "answer": "Si suspendes el examen, tienes que repetirlo."
         }
       ],
       "teaches": [
@@ -201,11 +201,11 @@
       "id": "a2.educacionyestudios.03.ex11",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Logró aprobar el examen final con una nota sobresaliente.",
+      "sentence": "Meg logró aprobar el examen final con una nota sobresaliente.",
       "teaches": [
         "a2-studying-school-life-vocab"
       ],
-      "english": "He managed to pass the final exam with an outstanding grade."
+      "english": "Meg managed to pass the final exam with an outstanding grade."
     }
   ]
 }

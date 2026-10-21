@@ -419,7 +419,8 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   where the move happens. Carlos grew up in Hungary (a village by a lake;
   his parents, Ana and Andreas); his father's mother lives in Madrid (the
   tortilla recipe, Ana's studies there). Lucía is back in Spain after
-  a2-18: calls and messages only.
+  a2-18 and Daniela in Chile after a2-20: calls and messages only (their
+  lines in Units 21–30 went to Ana or Kaylee).
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).

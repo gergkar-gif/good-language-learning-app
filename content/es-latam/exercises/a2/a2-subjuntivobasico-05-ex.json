@@ -47,19 +47,19 @@
       "id": "a2.subjuntivobasico.05.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Nos encanta que _____ tanta gente alegre en la reunión.",
-      "hint": "haber",
-      "answer": "haya",
+      "sentence": "Nos encanta que _____ tanta gente a la reunión.",
+      "hint": "venir",
+      "answer": "venga",
       "teaches": [
         "subjunctive-emotion"
       ],
-      "english": "We love that there are so many cheerful people at the gathering."
+      "english": "We love that so many people come to the gathering."
     },
     {
       "id": "a2.subjuntivobasico.05.ex04",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Me da pena que te _____ tan pronto.",
+      "sentence": "Me da tristeza que te _____ tan pronto.",
       "hint": "ir",
       "answer": "vayas",
       "teaches": [
@@ -77,16 +77,16 @@
           "I'm glad that you come"
         ],
         [
-          "Siento que estés mal",
-          "I'm sorry you feel bad"
+          "Sentimos que estés enfermo",
+          "We're sorry you are ill"
         ],
         [
           "Me sorprende que sepa tanto",
           "It surprises me he knows so much"
         ],
         [
-          "Me molesta que griten",
-          "It bothers me that they shout"
+          "Me molesta que hagan ruido",
+          "It bothers me that they make noise"
         ]
       ],
       "teaches": [
@@ -101,19 +101,19 @@
         "me",
         "alegra",
         "que",
-        "tengas",
-        "esta",
-        "oportunidad"
+        "estés",
+        "aquí",
+        "hoy"
       ],
       "solution": [
         "me",
         "alegra",
         "que",
-        "tengas",
-        "esta",
-        "oportunidad"
+        "estés",
+        "aquí",
+        "hoy"
       ],
-      "english": "I'm glad you have this opportunity.",
+      "english": "I'm glad you are here today.",
       "teaches": [
         "subjunctive-emotion"
       ]
@@ -122,11 +122,11 @@
       "id": "a2.subjuntivobasico.05.ex07",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "¿Por qué motivo tiene que viajar Meg a Ciudad Ho Chi Minh?",
+      "question": "¿Para qué tiene que viajar Meg a Ciudad Ho Chi Minh?",
       "options": [
-        "Por motivos de trabajo",
+        "Para hacer un curso de un mes",
         "Para visitar a su familia",
-        "Para aprender vietnamita",
+        "Para trabajar en una oficina",
         "Por vacaciones"
       ],
       "correct": 0
@@ -135,13 +135,13 @@
       "id": "a2.subjuntivobasico.05.ex08",
       "category": "vocabulary",
       "type": "fill-blank",
-      "sentence": "Ana le entrega a Meg un _____ artesanal como regalo de despedida.",
+      "sentence": "Ana le entrega a Meg un _____ como regalo.",
       "hint": "notebook",
       "answer": "cuaderno",
       "teaches": [
         "a2-expressing-wishes-feelings-vocab"
       ],
-      "english": "Ana hands Meg a handcrafted notebook as a farewell gift."
+      "english": "Ana gives Meg a notebook as a gift."
     },
     {
       "id": "a2.subjuntivobasico.05.ex09",
@@ -150,7 +150,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¡Al fin pude venir a visitarte a Madrid!"
+          "text": "¡Por fin he vuelto de Ciudad Ho Chi Minh!"
         },
         {
           "speaker": "Carlos",
@@ -160,12 +160,16 @@
       "options": [
         "Me alegra mucho que estés aquí; es una maravilla verte tan contenta.",
         "Me alegra mucho que estás aquí; es una maravilla verte tan contenta.",
-        "Me alegró mucho que estuviste aquí; fue una maravilla verte tan contenta."
+        "Me alegra mucho que estuviste aquí; es una maravilla verte tan contenta."
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-emotion"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "estar",
+        "2": "preterite-irregular-stems"
+      }
     },
     {
       "id": "a2.subjuntivobasico.05.ex10",
@@ -173,8 +177,8 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Daniela",
-          "text": "¿Cómo sigue tu hermano con la gripe?"
+          "speaker": "Kaylee",
+          "text": "¿Cómo está tu hermano Andreas?"
         },
         {
           "speaker": "Carlos",
@@ -182,14 +186,18 @@
         }
       ],
       "options": [
-        "Siento mucho que siga enfermo y me da tristeza que tenga que guardar cama.",
-        "Siento mucho que sigue enfermo y me da tristeza que tiene que guardar cama.",
-        "Sentí mucho que siguió enfermo y me dio tristeza que tuvo que guardar cama."
+        "Siento mucho que esté enfermo y me da tristeza que no pueda venir.",
+        "Siento mucho que está enfermo y me da tristeza que no puede venir.",
+        "Siento mucho que estuvo enfermo y me da tristeza que no pudo venir."
       ],
       "correct": 0,
       "teaches": [
         "subjunctive-emotion"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense",
+        "2": "preterite-irregular-stems"
+      }
     },
     {
       "id": "a2.subjuntivobasico.05.ex11",
@@ -197,12 +205,12 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Express that you are sorry someone has to leave: I am sorry that you have to march off.",
-          "answer": "Siento mucha tristeza de que te tengas que marchar tan pronto."
+          "prompt": "Say to a friend: I'm sorry that you have to leave so soon.",
+          "answer": "Siento que tengas que marcharte tan pronto."
         },
         {
-          "prompt": "Express emotion about a friend: It surprises me and bothers me that they did not tell you.",
-          "answer": "Me sorprende y me molesta que no te hayan avisado."
+          "prompt": "Say that it bothers you that they make so much noise.",
+          "answer": "Me molesta que hagan tanto ruido."
         }
       ],
       "teaches": [
@@ -213,9 +221,9 @@
       "id": "a2.subjuntivobasico.05.ex12",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "Me alegra que estés contento y disfrutes de esta maravilla.",
+      "sentence": "Me alegra que estés contento y que vengas pronto.",
       "options": [
-        "I am glad you are happy and enjoying this wonderful thing.",
+        "I am glad you are happy and that you are coming soon.",
         "He was happy because the trip was wonderful.",
         "I am sad that you have to leave tomorrow morning.",
         "It surprises me that you are not feeling well today."
