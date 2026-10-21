@@ -25,3 +25,4 @@ Started 2026-10-21T03:20:18Z from origin/master 7c0af07f. Two Sonnet readers, th
 - weather: none
 - work-obligations: none
 - Readers launched 03:22:15Z (Sonnet, background); prompts in prompt-a.txt / prompt-b.txt.
+- Reader B finished 03:37Z: fixes 38 + 59 + 52 = 149; report file write allowed; usage not given in its hand-back

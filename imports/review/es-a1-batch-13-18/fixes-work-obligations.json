@@ -1,0 +1,701 @@
+[
+ {
+  "file": "content/es-es/grammar/a1/a1-work-01-present-review-gr.json",
+  "old": "\"content\": \"Use familiar present-tense verbs to say what you do at work and where you work.\"",
+  "new": "\"content\": \"You know the present tense from Unit 7. Use it to say what you do at work and where you work, and add the names of jobs: *Soy periodista*.\"",
+  "why": "recap must say \"You know … from Unit 7\"; the lesson also teaches jobs",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-work-02-tener-que-gr.json",
+  "old": "\"content\": \"Use *tener que* + infinitive to express a personal obligation.\"",
+  "new": "\"content\": \"You know *tener* from Unit 5 (*tengo dos hermanos*). Use *tener que* + infinitive to express a personal obligation.\"",
+  "why": "recap of tener (Unit 5)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-work-03-hay-que-gr.json",
+  "old": "\"content\": \"Use hay que + infinitive when something needs to be done in general, without naming a specific person.\"",
+  "new": "\"content\": \"You know *hay* from Unit 9. Use *hay que* + infinitive when something needs to be done in general, without naming a specific person.\"",
+  "why": "recap of hay (Unit 9)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-work-03-hay-que-gr.json",
+  "old": "\"content\": \"Hay que is impersonal. Do not change hay according to the person: hay que trabajar, not *tienes que trabajar when you mean a general rule.\"",
+  "new": "\"content\": \"*Hay que* is impersonal: it never changes for the person (*hay que trabajar*). Use *tienes que trabajar* only when you mean one person, \\\"you\\\".\"",
+  "why": "broken markup (unclosed asterisk) and unclear rule",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-01-ex.json",
+  "id": "a1.work.01.ex02",
+  "set": {
+   "question": "¿Cómo se dice \"worker\"?",
+   "options": [
+    "trabajador",
+    "informe",
+    "oficina"
+   ]
+  },
+  "why": "unmet-word reunión (first taught in lesson 02); vocab-unused trabajador",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-01-ex.json",
+  "id": "a1.work.01.ex04",
+  "set": {
+   "options": [
+    "Trabajo en una oficina.",
+    "Trabaja en una oficina.",
+    "Trabajamos en una oficina."
+   ]
+  },
+  "why": "*Estoy trabajo en una oficina.* is a garbled non-phrase with two faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-01-ex.json",
+  "id": "a1.work.01.ex06",
+  "set": {
+   "options": [
+    "Estudio por la mañana.",
+    "Estudia por la mañana.",
+    "Estudias por la mañana."
+   ]
+  },
+  "why": "*Estudio la mañana* has a different fault (preposition) under ar-verbs",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-01-ex.json",
+  "id": "a1.work.01.ex10",
+  "set": {
+   "options": [
+    "Trabajo en una oficina.",
+    "Trabaja en una oficina.",
+    "Trabajan en una oficina."
+   ]
+  },
+  "why": "*Estoy una oficina.* is a garbled non-phrase",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-01-ex.json",
+  "id": "a1.work.01.ex11",
+  "set": {
+   "options": [
+    "Escribo informes.",
+    "Escribes informes.",
+    "Escribimos informes."
+   ]
+  },
+  "why": "*Escribir informes.* is a plausible elliptical reply to ¿Qué haces?",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-01-ex.json",
+  "id": "a1.work.01.ex16",
+  "set": {
+   "question": "Which means \"I am a journalist\"?",
+   "options": [
+    "Soy periodista.",
+    "Eres periodista.",
+    "Es periodista."
+   ],
+   "teaches": [
+    "ser"
+   ]
+  },
+  "why": "vocab-unused periodista and no item uses a job in a sentence (the goal is \"name common jobs\"); the old item repeated ex04 for the fifth time",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-02-ex.json",
+  "id": "a1.work.02.ex04",
+  "set": {
+   "options": [
+    "Tengo que trabajar.",
+    "Tengo trabajar.",
+    "Tienes que trabajar."
+   ]
+  },
+  "why": "*Hay que* is taught in lesson 03; wrong option used it (and had two faults)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-02-ex.json",
+  "id": "a1.work.02.ex06",
+  "set": {
+   "options": [
+    "Tenemos que ir a la oficina.",
+    "Tenemos ir a la oficina.",
+    "Tengo que ir a la oficina."
+   ]
+  },
+  "why": "*Hay que vamos* used hay que before its lesson (two faults)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-02-ex.json",
+  "id": "a1.work.02.ex10",
+  "set": {
+   "options": [
+    "Tengo que trabajar.",
+    "Tiene que trabajar.",
+    "Tengo trabajar."
+   ],
+   "distractor_skills": null
+  },
+  "why": "*Hay que trabajar.* (lesson 03) is also a natural reply to ¿Qué tienes que hacer hoy?",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-02-ex.json",
+  "id": "a1.work.02.ex11",
+  "set": {
+   "options": [
+    "Sí, tengo que escribir el informe.",
+    "Sí, tengo escribir el informe.",
+    "Sí, tiene que escribir el informe."
+   ],
+   "distractor_skills": null
+  },
+  "why": "hay que before lesson 03",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-02-ex.json",
+  "id": "a1.work.02.ex13",
+  "set": {
+   "options": [
+    "Tiene que estudiar.",
+    "Tiene estudiar.",
+    "Tengo que estudiar."
+   ]
+  },
+  "why": "hay que before lesson 03",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-02-ex.json",
+  "id": "a1.work.02.ex15",
+  "set": {
+   "question": "¿Qué significa \"necesitar\"?",
+   "options": [
+    "to need",
+    "to finish",
+    "to start"
+   ]
+  },
+  "why": "vocab-unused necesitar",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-02-ex.json",
+  "id": "a1.work.02.ex16",
+  "set": {
+   "question": "You have to work. Which sentence says this?",
+   "options": [
+    "Tienes que trabajar.",
+    "Tienes trabajar.",
+    "Tengo que trabajar."
+   ]
+  },
+  "why": "bare \"Which is correct?\" fitted *Tengo que trabajar* too; hay que before lesson 03",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-02-ex.json",
+  "id": "a1.work.02.ex17",
+  "set": {
+   "options": [
+    "Tengo que empezar.",
+    "Tengo empezar.",
+    "Tienes que empezar."
+   ]
+  },
+  "why": "*Hay que empiezo* used hay que before lesson 03 (two faults)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-03-ex.json",
+  "id": "a1.work.03.ex04",
+  "set": {
+   "question": "Which means \"It is necessary to work\"?"
+  },
+  "why": "awkward \"You have to work / It is necessary to work in a general sense\""
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-03-ex.json",
+  "id": "a1.work.03.ex06",
+  "set": {
+   "options": [
+    "Hay que estudiar.",
+    "Hay que estudia.",
+    "Hay estudiar."
+   ]
+  },
+  "why": "two options with the same fault (finite verb after que)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-03-ex.json",
+  "id": "a1.work.03.ex13",
+  "set": {
+   "options": [
+    "Hay que limpiar.",
+    "Hay que limpias.",
+    "Hay limpiar."
+   ]
+  },
+  "why": "same fault twice",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-03-ex.json",
+  "id": "a1.work.03.ex16",
+  "set": {
+   "options": [
+    "Hay que trabajar hoy.",
+    "Hay que trabaja hoy.",
+    "Hay trabajar hoy."
+   ]
+  },
+  "why": "same fault twice",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-03-ex.json",
+  "id": "a1.work.03.ex17",
+  "set": {
+   "options": [
+    "Hay que empezar temprano.",
+    "Hay que empiezas temprano.",
+    "Hay empezar temprano."
+   ]
+  },
+  "why": "same fault twice",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-03-ex.json",
+  "id": "a1.work.03.ex10",
+  "set": {
+   "options": [
+    "Hay que trabajar.",
+    "Hay trabajar.",
+    "Hay que trabajo."
+   ],
+   "distractor_skills": null
+  },
+  "why": "*Tengo que trabajar.* is a natural reply to ¿Qué hay que hacer hoy?",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-04-ex.json",
+  "id": "a1.work.04.ex05",
+  "set": {
+   "english": "It is necessary to arrive early."
+  },
+  "why": "*Tienes que llegar temprano* also fits \"You have to arrive early\" (two right answers)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-04-ex.json",
+  "id": "a1.work.04.ex11",
+  "set": {
+   "options": [
+    "Hay que preparar el informe.",
+    "Hay preparar el informe.",
+    "Hay que prepara el informe."
+   ],
+   "distractor_skills": null
+  },
+  "why": "*Tengo que preparar el informe.* is a natural reply to ¿Qué hay que hacer antes de la reunión?",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-05-ex.json",
+  "id": "a1.work.05.ex02",
+  "set": {
+   "options": [
+    "working day",
+    "coffee break",
+    "office desk"
+   ]
+  },
+  "why": "length-giveaway ERROR (11 vs 6)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-05-ex.json",
+  "id": "a1.work.05.ex03",
+  "set": {
+   "options": [
+    "afterwards",
+    "at first",
+    "too early"
+   ]
+  },
+  "why": "length-giveaway ERROR (10 vs 5)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-05-ex.json",
+  "id": "a1.work.05.ex09",
+  "set": {
+   "options": [
+    "Tengo que trabajar y escribo informes.",
+    "Hay que trabajar y escribo informes.",
+    "Tengo trabajar y escribo informes."
+   ],
+   "distractor_skills": {
+    "1": "hay-que"
+   }
+  },
+  "why": "*Hay que trabajar y escribes informes* had two faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-05-ex.json",
+  "id": "a1.work.05.ex11",
+  "set": {
+   "options": [
+    "Hay que terminar el informe.",
+    "Hay terminar el informe.",
+    "Hay que termino el informe."
+   ],
+   "distractor_skills": null
+  },
+  "why": "*Tengo que terminar el informe.* is a natural reply to ¿qué hay que hacer?",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-05-ex.json",
+  "id": "a1.work.05.ex19",
+  "set": {
+   "options": [
+    "Tengo que trabajar hoy. Hay que llegar temprano.",
+    "Tengo que trabajar hoy. Hay que llegas temprano.",
+    "Tengo que trabajar hoy. Hay llegar temprano."
+   ]
+  },
+  "why": "wrong options had two faults each",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-05-ex.json",
+  "id": "a1.work.05.ex13",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that first you have to work.",
+     "answer": "Primero, tengo que trabajar."
+    },
+    {
+     "prompt": "Say that afterwards you write reports.",
+     "answer": "Después, escribo informes."
+    },
+    {
+     "prompt": "Say that it is necessary to arrive early.",
+     "answer": "Hay que llegar temprano."
+    }
+   ]
+  },
+  "why": "prompts did not pin the answers",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-05-ex.json",
+  "id": "a1.work.05.ex14",
+  "set": {
+   "question": "How was Carlos's first day at work?",
+   "options": [
+    "Very interesting.",
+    "Rather boring.",
+    "Rather stressful."
+   ]
+  },
+  "why": "reading: \"what kind of text\" is not answerable from the story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-05-ex.json",
+  "id": "a1.work.05.ex15",
+  "set": {
+   "question": "Which jobs does Carlos mention?",
+   "options": [
+    "Engineer, journalists, translator.",
+    "Doctor, teacher, waiter, cook.",
+    "Chef, driver, nurse, pilot."
+   ]
+  },
+  "why": "reading: invented content (sightseeing, birthday party)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-05-ex.json",
+  "id": "a1.work.05.ex16",
+  "set": {
+   "question": "What does Carlos have to do tomorrow?",
+   "options": [
+    "Prepare a report and attend a meeting.",
+    "Visit the doctor and clean the flat.",
+    "Travel to Budapest and see his family."
+   ]
+  },
+  "why": "reading: the story has no \"arrives at work\" scene",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-05-ex.json",
+  "id": "a1.work.05.ex17",
+  "set": {
+   "question": "What does Meg say about Carlos?",
+   "options": [
+    "He is very hard-working.",
+    "He is always late for work.",
+    "He talks too much at work."
+   ]
+  },
+  "why": "reading: \"which type of obligation appears\" is not a question about the story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-05-ex.json",
+  "id": "a1.work.05.ex18",
+  "set": {
+   "question": "What does Carlos want to do now?",
+   "options": [
+    "Rest to start tomorrow with energy.",
+    "Go out with his new colleagues.",
+    "Write the report tonight."
+   ]
+  },
+  "why": "reading: the day does not \"finish with a holiday or party\"",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-consolidation-ex.json",
+  "id": "a1.work.06.ex01",
+  "set": {
+   "question": "¿Cómo se dice \"report\"?",
+   "options": [
+    "informe",
+    "oficina",
+    "tarea"
+   ]
+  },
+  "why": "consolidation-copy of 01.ex02",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-consolidation-ex.json",
+  "id": "a1.work.06.ex02",
+  "set": {
+   "question": "Which means \"I have a meeting\"?",
+   "options": [
+    "Tengo una reunión.",
+    "Tienes una reunión.",
+    "Tiene una reunión."
+   ],
+   "category": "grammar",
+   "teaches": [
+    "tener"
+   ]
+  },
+  "why": "consolidation-copy of 02.ex02; reviews tener with the new word",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-consolidation-ex.json",
+  "id": "a1.work.06.ex05",
+  "set": {
+   "question": "Which means \"She has to write a report\"?",
+   "options": [
+    "Tiene que escribir un informe.",
+    "Tiene escribir un informe.",
+    "Tengo que escribir un informe."
+   ]
+  },
+  "why": "consolidation-copy of 02.ex06; hay que vamos had two faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-consolidation-ex.json",
+  "id": "a1.work.06.ex06",
+  "set": {
+   "question": "Which means \"We have to work at eight\"?",
+   "options": [
+    "Tenemos que trabajar a las ocho.",
+    "Tenemos trabajar a las ocho.",
+    "Tengo que trabajar a las ocho."
+   ]
+  },
+  "why": "*Hay que trabajo a las ocho* had two faults; prompt fitted all options",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-consolidation-ex.json",
+  "id": "a1.work.06.ex11",
+  "set": {
+   "options": [
+    "Trabajo a las ocho.",
+    "Trabajas a las ocho.",
+    "Trabaja a las ocho."
+   ]
+  },
+  "why": "*Trabajo las ocho* is a second kind of fault (time) under ar-verbs",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-consolidation-ex.json",
+  "id": "a1.work.06.ex13",
+  "set": {
+   "options": [
+    "Estoy en la oficina y escribo informes.",
+    "Está en la oficina y escribo informes.",
+    "Hay en la oficina y escribo informes."
+   ]
+  },
+  "why": "*Estoy a la oficina* is a preposition fault, the item tests estar",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-consolidation-ex.json",
+  "id": "a1.work.06.ex14",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué tienes que hacer mañana?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Tengo que preparar un informe.",
+    "Tiene que preparar un informe.",
+    "Tengo preparar un informe."
+   ],
+   "distractor_skills": null
+  },
+  "why": "consolidation-copy of 02.ex10",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-consolidation-ex.json",
+  "id": "a1.work.06.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué hay que hacer en la oficina?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Hay que llegar temprano.",
+    "Hay llegar temprano.",
+    "Hay que llegas temprano."
+   ],
+   "distractor_skills": null
+  },
+  "why": "consolidation-copy of 04.ex11 (and *Tengo que* is a natural reply)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-consolidation-ex.json",
+  "id": "a1.work.06.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Dónde trabaja tu amigo?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Trabaja en una oficina.",
+    "Trabajo en una oficina.",
+    "Trabajan en una oficina."
+   ]
+  },
+  "why": "consolidation-copy of 01.ex10",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-consolidation-ex.json",
+  "id": "a1.work.06.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you have to work today.",
+     "answer": "Tengo que trabajar hoy."
+    },
+    {
+     "prompt": "Say that it is necessary to arrive early.",
+     "answer": "Hay que llegar temprano."
+    }
+   ]
+  },
+  "why": "prompts did not pin the answers",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-consolidation-ex.json",
+  "id": "a1.work.06.ex18",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you work in an office, that you have to write reports at eight, and that it is necessary to arrive early and that afterwards you work in the office.",
+     "answer": "Trabajo en una oficina. Tengo que escribir informes a las ocho. Hay que llegar temprano y después trabajo en la oficina."
+    }
+   ]
+  },
+  "why": "prompt did not pin the answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-consolidation-ex.json",
+  "id": "a1.work.06.ex19",
+  "set": {
+   "sentence": "Ella _____ que terminar el informe mañana.",
+   "english": "She has to finish the report tomorrow."
+  },
+  "why": "unmet-word entregar (A2)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-work-consolidation-ex.json",
+  "id": "a1.work.06.ex20",
+  "set": {
+   "sentence": "_____ que llegar temprano al trabajo.",
+   "english": "It is necessary to arrive early at work."
+  },
+  "why": "unmet-word puntual (A2)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-15.json",
+  "old": "¿Cómo fue tu primer día de trabajo en la oficina?",
+  "new": "¿Qué tal tu primer día de trabajo en la oficina?",
+  "why": "*fue* is a preterite (A2, preterito-indefinido)",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-15.json",
+  "old": "y lo vas a hacer genial.",
+  "new": "y seguro que lo haces genial.",
+  "why": "ir a + infinitive is Unit 25",
+  "kind": "target",
+  "sure": false
+ }
+]

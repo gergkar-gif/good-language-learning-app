@@ -1,0 +1,812 @@
+[
+ {
+  "file": "content/es-es/grammar/a1/a1-weather-01-weather-gr.json",
+  "old": "and *hay* or *está* for other common conditions.",
+  "new": "*llueve* for rain and *está nublado* for clouds.",
+  "why": "text promises hay for weather but no row or example shows it; hay is not taught as a weather pattern here",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-weather-02-weather-conditions-gr.json",
+  "old": "\"content\": \"Use familiar weather expressions to say whether it is hot, cold, rainy, sunny, windy or cloudy.\"",
+  "new": "\"content\": \"You know the weather phrases from the last lesson. Now ask *¿Qué tiempo hace?*, add *hace fresco* and talk about the sky with *hay nubes*.\"",
+  "why": "screen 02 repeats screen 01 (same six phrases, same examples)",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-weather-02-weather-conditions-gr.json",
+  "old": "        [\n          \"hace calor\",\n          \"hot\"\n        ],\n        [\n          \"hace frío\",\n          \"cold\"\n        ],\n        [\n          \"llueve\",\n          \"rainy / it is raining\"\n        ],\n        [\n          \"hace sol\",\n          \"sunny\"\n        ],\n        [\n          \"hace viento\",\n          \"windy\"\n        ],\n        [\n          \"está nublado\",\n          \"cloudy\"\n        ]\n",
+  "new": "        [\n          \"¿Qué tiempo hace?\",\n          \"What is the weather like?\"\n        ],\n        [\n          \"Hace fresco.\",\n          \"It is cool.\"\n        ],\n        [\n          \"Hay nubes en el cielo.\",\n          \"There are clouds in the sky.\"\n        ],\n        [\n          \"Hoy hace calor.\",\n          \"Today it is hot.\"\n        ],\n        [\n          \"Llueve.\",\n          \"It is raining.\"\n        ]\n",
+  "why": "new rows for lesson 02 (tiempo, fresco, nube, cielo)",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-weather-02-weather-conditions-gr.json",
+  "old": "        {\n          \"spanish\": \"Hoy hace calor.\",\n          \"english\": \"Today it is hot.\"\n        },\n        {\n          \"spanish\": \"Hoy llueve.\",\n          \"english\": \"Today it is raining.\"\n        },\n        {\n          \"spanish\": \"Hace viento.\",\n          \"english\": \"It is windy.\"\n        },\n        {\n          \"spanish\": \"Está nublado.\",\n          \"english\": \"It is cloudy.\"\n        }\n",
+  "new": "        {\n          \"spanish\": \"¿Qué tiempo hace hoy?\",\n          \"english\": \"What is the weather like today?\"\n        },\n        {\n          \"spanish\": \"Hace fresco.\",\n          \"english\": \"It is cool.\"\n        },\n        {\n          \"spanish\": \"Hay nubes en el cielo.\",\n          \"english\": \"There are clouds in the sky.\"\n        },\n        {\n          \"spanish\": \"Hoy llueve.\",\n          \"english\": \"Today it is raining.\"\n        }\n",
+  "why": "new examples for lesson 02",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-weather-02-weather-conditions-gr.json",
+  "old": "Weather expressions often use different structures. Learn the complete phrase: *hace calor*, *hace frío*, *hace sol*, *hace viento*, *llueve*, *está nublado*.",
+  "new": "Here *tiempo* means \\\"weather\\\", not \\\"time\\\". Answer *¿Qué tiempo hace?* with a complete phrase: *Hace fresco*, *Llueve*, *Está nublado*.",
+  "why": "tip repeats lesson 01 and does not say what tiempo means",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-weather-04-voc.json",
+  "old": "    },\n    {\n      \"lemma\": \"plan\",\n      \"translation\": \"plan\",\n      \"pos\": \"noun\"\n    }\n",
+  "new": "    }\n",
+  "why": "vocab-unused plan (a cognate used nowhere)",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-01-ex.json",
+  "id": "a1.weather.01.ex03",
+  "set": {
+   "question": "¿Cómo se dice \"to rain\"?",
+   "options": [
+    "llover",
+    "nublado",
+    "viento"
+   ]
+  },
+  "why": "vocab-unused: llover",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-01-ex.json",
+  "id": "a1.weather.01.ex09",
+  "set": {
+   "options": [
+    "Llueve.",
+    "Hace sol.",
+    "Está nublado."
+   ]
+  },
+  "why": "lluvia is first listed in lesson 02 (unmet in 01); *Hace lluvia.* / *Está lluvia.* removed",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-01-ex.json",
+  "id": "a1.weather.01.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Hace sol o llueve?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "unmet-word tiempo (first taught in lesson 02)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-01-ex.json",
+  "id": "a1.weather.01.ex13",
+  "set": {
+   "options": [
+    "Está nublado.",
+    "Es nublado.",
+    "Hay nublado."
+   ]
+  },
+  "why": "*Hace nublado* is used in some regions; a clear fault (ser) instead",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-01-ex.json",
+  "id": "a1.weather.01.ex16",
+  "set": {
+   "question": "It is cold today. Which sentence says this?"
+  },
+  "why": "bare \"Which is correct?\": *Está frío* is correct for a cold soup"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-02-ex.json",
+  "id": "a1.weather.02.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué tiempo hace?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Está nublado.",
+    "Es nublado.",
+    "Hay nublado."
+   ]
+  },
+  "why": "vocab-unused tiempo; *Hace nublado* replaced",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-02-ex.json",
+  "id": "a1.weather.02.ex13",
+  "set": {
+   "question": "Which means \"It is cool\"?",
+   "options": [
+    "Hace fresco.",
+    "Hace frío.",
+    "Hace calor."
+   ]
+  },
+  "why": "vocab-unused fresco; the old item duplicated 01.ex16",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-02-ex.json",
+  "id": "a1.weather.02.ex16",
+  "set": {
+   "question": "Which means \"It is cloudy and windy\"?",
+   "options": [
+    "Está nublado y hace viento.",
+    "Es nublado y hace viento.",
+    "Está nublado y está viento."
+   ]
+  },
+  "why": "duplicated 01.ex13 (same triple, vague prompt)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-03-ex.json",
+  "id": "a1.weather.03.ex02",
+  "set": {
+   "options": [
+    "hoy",
+    "mañana",
+    "noche"
+   ]
+  },
+  "why": "unmet-word semana (first taught in lesson 05)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-03-ex.json",
+  "id": "a1.weather.03.ex04",
+  "set": {
+   "options": [
+    "Hace calor y tomo agua.",
+    "Hace calor y toma agua.",
+    "Hace calor y tomas agua."
+   ]
+  },
+  "why": "*Está calor* is a weather-phrase fault under an ar-verbs tag; both wrong options now show the verb form",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-03-ex.json",
+  "id": "a1.weather.03.ex06",
+  "set": {
+   "options": [
+    "Hace sol y camino en el parque.",
+    "Hace sol y camina en el parque.",
+    "Hace sol y caminas en el parque."
+   ]
+  },
+  "why": "same: retag-by-fault, ar-verbs",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-03-ex.json",
+  "id": "a1.weather.03.ex09",
+  "set": {
+   "question": "It is cold and I work. Which sentence says this?",
+   "options": [
+    "Hace frío y trabajo.",
+    "Hace frío y trabajas.",
+    "Hace frío y trabaja."
+   ]
+  },
+  "why": "prompt fitted all three options; mixed faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-03-ex.json",
+  "id": "a1.weather.03.ex13",
+  "set": {
+   "question": "Which means \"It is cold and I study at home\"?",
+   "options": [
+    "Hace frío y estudio en casa.",
+    "Hace frío y estudia en casa.",
+    "Hace frío y estudias en casa."
+   ]
+  },
+  "why": "verbatim duplicate of ex04",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-03-ex.json",
+  "id": "a1.weather.03.ex16",
+  "set": {
+   "options": [
+    "Llueve y trabajo.",
+    "Llueve y trabajas.",
+    "Llueve y trabaja."
+   ]
+  },
+  "why": "*Hace lluvia* is a weather-phrase fault under an ar-verbs tag",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-03-ex.json",
+  "id": "a1.weather.03.ex17",
+  "set": {
+   "question": "Which means \"It is sunny and I walk\"?",
+   "options": [
+    "Hace sol y camino.",
+    "Hace sol y caminas.",
+    "Hace sol y camina."
+   ]
+  },
+  "why": "mixed faults (missing y, weather verb) under ar-verbs",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-03-ex.json",
+  "id": "a1.weather.03.ex10",
+  "set": {
+   "options": [
+    "Estudio en casa.",
+    "Estudias en casa.",
+    "Estudian en casa."
+   ]
+  },
+  "why": "*Estudio la casa.* has a different fault (preposition)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-03-ex.json",
+  "id": "a1.weather.03.ex11",
+  "set": {
+   "options": [
+    "Camino en el parque.",
+    "Caminas en el parque.",
+    "Camina en el parque."
+   ]
+  },
+  "why": "*Camino al parque en.* is a garbled non-phrase",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-04-ex.json",
+  "id": "a1.weather.04.ex04",
+  "set": {
+   "options": [
+    "Cuando hace sol, camino.",
+    "Cuando hace sol, caminas.",
+    "Cuando hace sol, camina."
+   ]
+  },
+  "why": "*Cuando está sol* is a weather fault under ar-verbs",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-04-ex.json",
+  "id": "a1.weather.04.ex06",
+  "set": {
+   "options": [
+    "Cuando hace calor, tomo agua.",
+    "Cuando hace calor, toma agua.",
+    "Cuando hace calor, tomas agua."
+   ]
+  },
+  "why": "same",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-04-ex.json",
+  "id": "a1.weather.04.ex09",
+  "set": {
+   "options": [
+    "Cuando llueve, estudio.",
+    "Cuando llueve, estudias.",
+    "Cuando llueve, estudia."
+   ]
+  },
+  "why": "same",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-04-ex.json",
+  "id": "a1.weather.04.ex13",
+  "set": {
+   "options": [
+    "Cuando hace frío, trabajo en casa.",
+    "Cuando hace frío, trabajas en casa.",
+    "Cuando hace frío, trabaja en casa."
+   ]
+  },
+  "why": "same",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-04-ex.json",
+  "id": "a1.weather.04.ex16",
+  "set": {
+   "question": "Which means \"When it rains, I stay at home\"?",
+   "options": [
+    "Cuando llueve, me quedo en casa.",
+    "Cuando llueve, te quedas en casa.",
+    "Cuando llueve, se queda en casa."
+   ],
+   "teaches": [
+    "reflexives"
+   ]
+  },
+  "why": "quedarse (listed) is never used; *Cuando lluvia* was a garbled non-phrase",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-04-ex.json",
+  "id": "a1.weather.04.ex17",
+  "set": {
+   "question": "Which means \"When it is cold, I drink tea\"?",
+   "options": [
+    "Cuando hace frío, tomo té.",
+    "Cuando hace frío, tomas té.",
+    "Cuando hace frío, toma té."
+   ]
+  },
+  "why": "verbatim duplicate of ex06",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-04-ex.json",
+  "id": "a1.weather.04.ex10",
+  "set": {
+   "options": [
+    "Tomo agua.",
+    "Tomas agua.",
+    "Toma agua."
+   ]
+  },
+  "why": "*Tomo el agua en.* is a garbled non-phrase",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-04-ex.json",
+  "id": "a1.weather.04.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué haces cuando hace frío?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Trabajo en casa.",
+    "Trabajas en casa.",
+    "Trabaja en casa."
+   ]
+  },
+  "why": "duplicate of 03.ex10 (and a preposition fault in *Estudio a casa*)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-05-ex.json",
+  "id": "a1.weather.05.ex09",
+  "set": {
+   "question": "Which means \"On Monday it rains\"?",
+   "options": [
+    "El lunes llueve.",
+    "El lunes hace lluvia.",
+    "El lunes es lluvia."
+   ]
+  },
+  "why": "prompt \"combines a day with weather\" fitted all options; duplicated ex06",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-05-ex.json",
+  "id": "a1.weather.05.ex11",
+  "set": {
+   "options": [
+    "El viernes voy al parque.",
+    "El viernes va al parque.",
+    "El viernes vamos al parque."
+   ]
+  },
+  "why": "*voy en parque* has two faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-05-ex.json",
+  "id": "a1.weather.05.ex12",
+  "set": {
+   "options": [
+    "El lunes llueve y estudio en casa.",
+    "El lunes llueve y estudias en casa.",
+    "El lunes llueve y estudia en casa."
+   ]
+  },
+  "why": "*hace lluvia* is a weather fault under ar-verbs",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-05-ex.json",
+  "id": "a1.weather.05.ex19",
+  "set": {
+   "category": "grammar",
+   "teaches": [
+    "ar-verbs"
+   ],
+   "question": "Which means \"Tomorrow it is cold and I work at home\"?",
+   "options": [
+    "Mañana hace frío y trabajo en casa.",
+    "Mañana hace frío y trabaja en casa.",
+    "Mañana hace frío y trabajas en casa."
+   ]
+  },
+  "why": "length-giveaway ERROR on ex15; wrong options had two faults (weather and verb); the item tests the verb form -> ar-verbs",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-05-ex.json",
+  "id": "a1.weather.05.ex13",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that today is sunny and you go to the park.",
+     "answer": "Hoy hace sol y voy al parque."
+    },
+    {
+     "prompt": "Say that tomorrow is cold and you work at home.",
+     "answer": "Mañana hace frío y trabajo en casa."
+    },
+    {
+     "prompt": "Say that on Friday it is hot.",
+     "answer": "El viernes hace calor."
+    }
+   ]
+  },
+  "why": "prompts did not pin the answers",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-05-ex.json",
+  "id": "a1.weather.05.ex14",
+  "set": {
+   "question": "What is the weather like at the start of the story?",
+   "options": [
+    "Cloudy and windy.",
+    "Hot and sunny.",
+    "Cold and snowy."
+   ]
+  },
+  "why": "reading: the story is a dialogue, not a weather diary; invented text type",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-05-ex.json",
+  "id": "a1.weather.05.ex15",
+  "set": {
+   "question": "Why can Carlos and Meg not go to the park?",
+   "options": [
+    "It starts to rain.",
+    "It is too hot.",
+    "The park is closed."
+   ]
+  },
+  "why": "reading: \"what does the character record\" is not in the story; ERROR length-giveaway",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-05-ex.json",
+  "id": "a1.weather.05.ex16",
+  "set": {
+   "question": "What does Carlos make for the two of them?",
+   "options": [
+    "Hot tea.",
+    "A big salad.",
+    "Cold lemonade."
+   ]
+  },
+  "why": "reading: not in the story (no beach, no drink order)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-05-ex.json",
+  "id": "a1.weather.05.ex17",
+  "set": {
+   "question": "What will the weather be like on Monday?",
+   "options": [
+    "Sun and heat return.",
+    "Rain gets stronger.",
+    "It gets cold."
+   ]
+  },
+  "why": "reading: there is no diary in the story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-05-ex.json",
+  "id": "a1.weather.05.ex18",
+  "set": {
+   "question": "What do Carlos and Meg do in the end?",
+   "options": [
+    "They stay at home.",
+    "They go to the park.",
+    "They go to a café."
+   ]
+  },
+  "why": "reading: \"plan activities\" is not in the story",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex02",
+  "set": {
+   "options": [
+    "está nublado",
+    "es nublado",
+    "hay nublado"
+   ]
+  },
+  "why": "*hace nublado* is used in some regions",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex03",
+  "set": {
+   "question": "Which means \"It is windy and I cook at home\"?",
+   "options": [
+    "Hace viento y cocino en casa.",
+    "Hace viento y cocina en casa.",
+    "Hace viento y cocinas en casa."
+   ]
+  },
+  "why": "consolidation-copy of 03.ex04",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex04",
+  "set": {
+   "question": "Which means \"When it is hot, I rest at home\"?",
+   "options": [
+    "Cuando hace calor, descanso en casa.",
+    "Cuando hace calor, descansas en casa.",
+    "Cuando hace calor, descansa en casa."
+   ]
+  },
+  "why": "copy of the lesson 04 items; *hace lluvia* weather fault under ar-verbs",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex05",
+  "set": {
+   "question": "Which means \"On Monday it is windy\"?",
+   "options": [
+    "El lunes hace viento.",
+    "El lunes está viento.",
+    "El lunes hay viento."
+   ]
+  },
+  "why": "consolidation-copy of 05.ex04",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex06",
+  "set": {
+   "question": "Which means \"Tomorrow it is sunny\"?",
+   "options": [
+    "Mañana hace sol.",
+    "Mañana está sol.",
+    "Mañana es sol."
+   ]
+  },
+  "why": "consolidation-copy of 05.ex06",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex09",
+  "set": {
+   "question": "My mother is a kind person. Which sentence says this?"
+  },
+  "why": "\"Mi madre está amable.\" is real Spanish, so \"Which is correct?\" has two answers"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex11",
+  "set": {
+   "question": "I work at eight. Which sentence says this?",
+   "options": [
+    "Trabajo a las ocho.",
+    "Trabajas a las ocho.",
+    "Trabajan a las ocho."
+   ]
+  },
+  "why": "prompt fitted all options; *Trabajo las ocho* was a second kind of fault",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex13",
+  "set": {
+   "options": [
+    "Estoy en casa y estudio.",
+    "Está en casa y estudio.",
+    "Hay en casa y estudio."
+   ]
+  },
+  "why": "*Estoy a casa* was a preposition fault, the item tests estar",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex14",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué tiempo hace en el parque?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Hace viento.",
+    "Está viento.",
+    "Es viento."
+   ]
+  },
+  "why": "consolidation-copy of 01.ex10",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué haces cuando hace viento?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Me quedo en casa.",
+    "Te quedas en casa.",
+    "Se queda en casa."
+   ],
+   "teaches": [
+    "reflexives"
+   ]
+  },
+  "why": "consolidation-copy of 04.ex11",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué tiempo hace el lunes?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "El lunes llueve.",
+    "El lunes hace lluvia.",
+    "El lunes es lluvia."
+   ]
+  },
+  "why": "consolidation-copy of 05.ex10",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that today is sunny and you go to the park.",
+     "answer": "Hoy hace sol y voy al parque."
+    },
+    {
+     "prompt": "Say that when it rains you study at home.",
+     "answer": "Cuando llueve, estudio en casa."
+    }
+   ]
+  },
+  "why": "prompt did not pin the answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex18",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that today is sunny and you go to the park, tomorrow it rains and you study at home, and on Friday it is hot and you drink water.",
+     "answer": "Hoy hace sol y voy al parque. Mañana llueve y estudio en casa. El viernes hace calor y tomo agua."
+    }
+   ]
+  },
+  "why": "prompt did not pin the answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex19",
+  "set": {
+   "sentence": "Hoy _____ mucho en la ciudad.",
+   "hint": "it rains",
+   "answer": "llueve",
+   "english": "Today it rains a lot in the city.",
+   "category": "vocabulary",
+   "teaches": [
+    "a1-weather-vocab"
+   ]
+  },
+  "why": "*hay viento* is never taught in the unit (the screen shows only *hace viento*); the old item also made *hace* a second right answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-weather-consolidation-ex.json",
+  "id": "a1.weather.06.ex20",
+  "set": {
+   "sentence": "Cuando _____ frío, me pongo la chaqueta.",
+   "english": "When it is cold, I put on a jacket."
+  },
+  "why": "unmet-word abrigo (no vocabulary list); chaqueta is known from Unit 8",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-14.json",
+  "old": "\"text\": \"La temperatura bajó con la lluvia",
+  "new": "\"text\": \"La temperatura baja con la lluvia",
+  "why": "*bajó* is a preterite (A2, preterito-indefinido)",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-14.json",
+  "old": "Carlos dice: 'La temperatura bajó con la lluvia",
+  "new": "Carlos dice: 'La temperatura baja con la lluvia",
+  "why": "same in the question explanation",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-14.json",
+  "old": "nos quedamos en casa leyendo y descansando.",
+  "new": "nos quedamos en casa, leemos y descansamos.",
+  "why": "gerunds belong to Unit 19",
+  "kind": "target",
+  "sure": false
+ }
+]

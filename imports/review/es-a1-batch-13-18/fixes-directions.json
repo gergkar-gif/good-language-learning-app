@@ -1,0 +1,448 @@
+[
+ {
+  "file": "content/es-es/grammar/a1/a1-directions-01-movement-location-gr.json",
+  "old": "\"content\": \"Use *ir* + a to say where someone is going. Use *estar* to say where someone or a place is located.\"",
+  "new": "\"content\": \"Use *ir* + *a* to say where someone is going: *voy*, *vas*, *va*, *vamos*, *van*. You know *estar* from Unit 9: it says where someone or a place is located. *A* + *el* becomes *al*: *Voy al mercado*.\"",
+  "why": "screen presents estar as if new (known from Unit 9), never gives the forms of ir that the exercises use (vas, va) and never explains al",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-directions-01-voc.json",
+  "old": "    {\n      \"lemma\": \"hacia\",\n      \"translation\": \"towards\",\n      \"pos\": \"preposition\"\n    },\n",
+  "new": "",
+  "why": "vocab-unused: hacia is listed (and used) in a1-directions-02"
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-directions-01-voc.json",
+  "old": "    {\n      \"lemma\": \"camino\",\n      \"translation\": \"way / route\",\n      \"pos\": \"noun\"\n    },\n",
+  "new": "",
+  "why": "vocab-unused: camino (noun) is never used and clashes with the verb Camino of lesson 02"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-directions-02-movement-prepositions-gr.json",
+  "old": "\"content\": \"Use simple movement prepositions to describe going to, *into*, *through* and towards places.\"",
+  "new": "\"content\": \"Use simple movement prepositions to describe going to, from, along and towards places.\"",
+  "why": "text promises \"into\" which no row or example shows"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-directions-02-movement-prepositions-gr.json",
+  "old": "        [\n          \"a\",\n          \"into\"\n        ],\n",
+  "new": "",
+  "why": "duplicate row a with a wrong gloss \"into\" (no example)"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-directions-02-movement-prepositions-gr.json",
+  "old": "        [\n          \"por\",\n          \"up\"\n        ],\n",
+  "new": "",
+  "why": "false row: por does not mean \"up\""
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-directions-02-movement-prepositions-gr.json",
+  "old": "\"Vengo del parque.\"",
+  "new": "\"Voy del parque al centro.\"",
+  "why": "venir is in no A1 vocabulary list before abilities-01 (Unit 24; vengo is also a yo form): use ir",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-directions-02-movement-prepositions-gr.json",
+  "old": "\"I come from the park.\"",
+  "new": "\"I go from the park to the centre.\"",
+  "why": "matches the new example"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-directions-03-commands-gr.json",
+  "old": "\"content\": \"Use familiar affirmative *tú* commands to give short directional instructions.\"",
+  "new": "\"content\": \"You know affirmative *tú* commands from Unit 14 (*corta*, *mezcla*, *abre*). Use them to give short directional instructions: *gira*, *camina*, *sigue*, *para*. *Ve* (from *ir*) is a special form: learn it as it is.\"",
+  "why": "recap must say \"You know … from Unit 14\"; ve is irregular, which Unit 14 said it did not introduce",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-directions-05-full-directions-gr.json",
+  "old": "\"content\": \"Combine questions about location and destination with simple directions to help someone find a place.\"",
+  "new": "\"content\": \"You know *¿Dónde está…?* from Unit 15 and the commands from lessons 3 and 4. Combine questions about location and destination with simple directions to help someone find a place.\"",
+  "why": "recap of Unit 15 and this unit, written as new",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-02-ex.json",
+  "id": "a1.directions.02.ex06",
+  "set": {
+   "question": "Which means \"I go from the park to the centre\"?",
+   "options": [
+    "Voy del parque al centro.",
+    "Voy al parque del centro.",
+    "Voy por el parque al centro."
+   ]
+  },
+  "why": "vengo (venir) is unmet and a yo form; item rebuilt with ir",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-02-ex.json",
+  "id": "a1.directions.02.ex14",
+  "set": {
+   "sentence": "Voy __ parque al centro.",
+   "english": "I go from the park to the centre."
+  },
+  "why": "vengo (venir) unmet; matches the new screen example",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-02-ex.json",
+  "id": "a1.directions.02.ex11",
+  "set": {
+   "options": [
+    "Camino por la calle.",
+    "Camino hacia la calle.",
+    "Camino de la calle."
+   ]
+  },
+  "why": "\"Camino del calle.\" has two faults (gender and contraction)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-02-ex.json",
+  "id": "a1.directions.02.ex16",
+  "set": {
+   "question": "Which means \"I walk towards the park\"?",
+   "options": [
+    "Camino hacia el parque.",
+    "Camino del parque.",
+    "Camino por el parque."
+   ]
+  },
+  "why": "duplicate of ex04 (\"I walk along the street\", same sentence and options)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-03-ex.json",
+  "id": "a1.directions.03.ex06",
+  "set": {
+   "options": [
+    "Sigue recto.",
+    "Sigues recto.",
+    "Sigue a la derecha."
+   ]
+  },
+  "why": "\"Sigue derecha.\" is not a Spanish phrase; make it a real sentence with one fault (meaning)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-03-ex.json",
+  "id": "a1.directions.03.ex09",
+  "set": {
+   "options": [
+    "Gira a la izquierda.",
+    "Giras a la izquierda.",
+    "Giro a la izquierda."
+   ],
+   "distractor_skills": {
+    "1": "ar-verbs",
+    "2": "ar-verbs"
+   }
+  },
+  "why": "\"Giras en la derecha.\" has two faults (person and en); the new triple is not the same as ex17",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-04-ex.json",
+  "id": "a1.directions.04.ex09",
+  "set": {
+   "question": "Which sentence gives the location of a known place?",
+   "options": [
+    "El museo está a la derecha.",
+    "Hay un museo y un parque.",
+    "Ve al museo y al parque."
+   ]
+  },
+  "why": "length-giveaway ERROR (27 vs 13); prompt \"specific place\" is vague",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-04-ex.json",
+  "id": "a1.directions.04.ex13",
+  "set": {
+   "question": "Which means \"Walk along the street and cross at the corner\"?",
+   "options": [
+    "Camina por la calle y cruza en la esquina.",
+    "Caminas por la calle y cruza en la esquina.",
+    "Camina de la calle y cruza en la esquina."
+   ],
+   "distractor_skills": {
+    "1": "ar-verbs"
+   }
+  },
+  "why": "identical to ex06 (same sentence, same options)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-04-ex.json",
+  "id": "a1.directions.04.ex16",
+  "set": {
+   "options": [
+    "Ve al museo. El museo está a la derecha.",
+    "Vas al museo. El museo está a la derecha.",
+    "Ve al museo. El museo hay a la derecha."
+   ],
+   "distractor_skills": {
+    "1": "ir"
+   }
+  },
+  "why": "wrong options had two or three faults each; now one fault each",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-04-ex.json",
+  "id": "a1.directions.04.ex05",
+  "set": {
+   "teaches": [
+    "estar"
+   ]
+  },
+  "why": "\"está a la izquierda\" is a location phrase with estar, not a movement preposition"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-05-ex.json",
+  "id": "a1.directions.05.ex06",
+  "set": {
+   "answers": [
+    "Ve"
+   ]
+  },
+  "why": "answers-alternatives: Vaya (usted, A2) does not fit the tú command gira in the same sentence",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-05-ex.json",
+  "id": "a1.directions.05.ex07",
+  "set": {
+   "teaches": [
+    "estar"
+   ]
+  },
+  "why": "location phrase with estar, not a movement preposition"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-05-ex.json",
+  "id": "a1.directions.05.ex14",
+  "set": {
+   "question": "Where is Kaylee at the start of the story?",
+   "options": [
+    "Lost in the old quarter.",
+    "At the café with Meg.",
+    "At home with Carlos."
+   ]
+  },
+  "why": "question did not match the story (the character was said to start in the centre of Hanoi; length-giveaway ERROR)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-05-ex.json",
+  "id": "a1.directions.05.ex15",
+  "set": {
+   "question": "What is Kaylee trying to find?",
+   "options": [
+    "The café.",
+    "A market.",
+    "A museum."
+   ]
+  },
+  "why": "story: Kaylee looks for the café (cafetería), not a market",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-05-ex.json",
+  "id": "a1.directions.05.ex16",
+  "set": {
+   "question": "What does Carlos tell Kaylee to do?",
+   "options": [
+    "Go straight, then turn right.",
+    "Turn left, then go home.",
+    "Wait where she is."
+   ]
+  },
+  "why": "vague and \"the character\"; now answerable from Carlos's lines",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-05-ex.json",
+  "id": "a1.directions.05.ex17",
+  "set": {
+   "question": "What helps Kaylee find the café?",
+   "options": [
+    "A traffic light and a pharmacy.",
+    "A bus timetable at the stop.",
+    "A menu in the café window."
+   ]
+  },
+  "why": "story: the landmarks are the traffic light, the corner and the pharmacy",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-05-ex.json",
+  "id": "a1.directions.05.ex18",
+  "set": {
+   "question": "What does Kaylee say she can see at the end?",
+   "options": [
+    "The green sign.",
+    "A bus stop.",
+    "The old bridge."
+   ]
+  },
+  "why": "story: she has not arrived yet (\"Ya estoy llegando\"); she sees the green sign; length-giveaway ERROR (35 vs 20)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-consolidation-ex.json",
+  "id": "a1.directions.06.ex05",
+  "set": {
+   "question": "Which is a directional command?",
+   "options": [
+    "Cruza la calle.",
+    "Cruzas la calle.",
+    "Cruzo la calle."
+   ]
+  },
+  "why": "same options as a1.directions.03.ex17 (Gira/Giras/Giro a la derecha)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-consolidation-ex.json",
+  "id": "a1.directions.06.ex06",
+  "set": {
+   "question": "Which asks how to get to the pharmacy?",
+   "options": [
+    "¿Cómo voy a la farmacia?",
+    "¿Dónde voy a la farmacia?",
+    "¿Adónde está la farmacia?"
+   ]
+  },
+  "why": "consolidation-copy of a1.directions.05.ex05",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-consolidation-ex.json",
+  "id": "a1.directions.06.ex09",
+  "set": {
+   "question": "My mother is a kind person. Which sentence says this?"
+  },
+  "why": "\"Mi madre está amable.\" is real Spanish (\"is being kind\"), so a bare \"Which is correct?\" has two answers"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-consolidation-ex.json",
+  "id": "a1.directions.06.ex13",
+  "set": {
+   "options": [
+    "Voy al mercado. El mercado está cerca.",
+    "Voy en el mercado. El mercado está cerca.",
+    "Voy al mercado. El mercado hay cerca."
+   ]
+  },
+  "why": "second option had two faults (en and hay)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-consolidation-ex.json",
+  "id": "a1.directions.06.ex14",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Dónde está el banco?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Está cerca de la farmacia.",
+    "Hay cerca de la farmacia.",
+    "Están cerca de la farmacia."
+   ]
+  },
+  "why": "copy of the lesson dialogues (¿Dónde está el museo/mercado? Está en el centro.)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-consolidation-ex.json",
+  "id": "a1.directions.06.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Cómo voy a la estación?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sigue recto y gira a la izquierda.",
+    "Sigo recto y gira a la izquierda.",
+    "Estás recto y gira a la izquierda."
+   ]
+  },
+  "why": "exact copy of a1.directions.04.ex11 (Ve al centro y gira a la derecha)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-consolidation-ex.json",
+  "id": "a1.directions.06.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that the museum is in the centre and tell someone to turn right.",
+     "answer": "El museo está en el centro. Gira a la derecha."
+    },
+    {
+     "prompt": "Say that you go to the market and afterwards eat in a café.",
+     "answer": "Voy al mercado y después como en un café."
+    }
+   ]
+  },
+  "why": "prompts did not pin the one stored answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-consolidation-ex.json",
+  "id": "a1.directions.06.ex18",
+  "set": {
+   "template": [
+    {
+     "prompt": "Tell someone the way to the museum: go to the centre, continue straight along the street, turn left, and say the museum is nearby.",
+     "answer": "Ve al centro. Sigue recto por la calle y gira a la izquierda. El museo está cerca."
+    }
+   ]
+  },
+  "why": "unmet-word giro (and first-person route); prompt did not pin the answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-13.json",
+  "old": "cruza el semáforo y sigue todo recto",
+  "new": "cruza la calle en el semáforo y sigue todo recto",
+  "why": "\"cruzar el semáforo\" is not natural (\"cross the traffic light\"); audio must be re-narrated",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-13.json",
+  "old": "Vas a ver una farmacia y nuestro café al lado.",
+  "new": "Ves una farmacia y nuestro café al lado.",
+  "why": "ir a + infinitive is Unit 25; story must stay A1; audio re-narration",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-13.json",
+  "old": "Ya estoy llegando.",
+  "new": "Ya llego.",
+  "why": "estar + gerund is Unit 19; audio re-narration",
+  "kind": "target",
+  "sure": false
+ }
+]
