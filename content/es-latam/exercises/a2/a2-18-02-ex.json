@@ -87,13 +87,13 @@
       "category": "grammar",
       "type": "multiple-choice",
       "teaches": [
-        "ir-infinitive"
+        "preterito-indefinido"
       ],
       "question": "Which sentence is correct?",
       "options": [
-        "El avión va a despegar a las ocho.",
-        "El avión va despegar a las ocho.",
-        "El avión va a despegó a las ocho."
+        "El avión despegó a las ocho.",
+        "El avión despegar a las ocho.",
+        "El avión despegué a las ocho."
       ],
       "correct": 0
     },
@@ -154,15 +154,18 @@
       "category": "grammar",
       "type": "multiple-choice",
       "teaches": [
-        "ir-infinitive"
+        "preterito-indefinido"
       ],
-      "question": "Which verb stays in the infinitive after «voy a»?",
+      "question": "Which form means 'they returned'?",
       "options": [
-        "llegar",
-        "llegué",
-        "llegué ayer"
+        "volvieron",
+        "vuelven",
+        "volvió"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "stem-changes"
+      }
     },
     {
       "id": "a2.18.02.ex10",
@@ -198,7 +201,7 @@
       "options": [
         "Llegamos al aeropuerto temprano.",
         "Vamos a llegar al aeropuerto mañana.",
-        "Llegaremos pronto."
+        "Llego al aeropuerto temprano."
       ],
       "correct": 0,
       "teaches": [
@@ -206,7 +209,7 @@
       ],
       "distractor_skills": {
         "1": "ir-infinitive",
-        "2": "futuro-simple"
+        "2": "ar-verbs"
       }
     },
     {
@@ -260,9 +263,9 @@
         }
       ],
       "options": [
-        "Llegamos al aeropuerto temprano.",
+        "Ayer llegamos al aeropuerto temprano.",
         "Vamos a llegar al aeropuerto mañana.",
-        "Hemos llegado ayer."
+        "Hemos llegado al aeropuerto ayer."
       ],
       "correct": 0,
       "teaches": [
@@ -303,7 +306,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say that you arrived at the airport early.",
+          "prompt": "Say that we arrived at the airport early.",
           "answer": "Llegamos al aeropuerto temprano."
         },
         {

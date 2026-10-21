@@ -1,0 +1,611 @@
+[
+ {
+  "file": "content/es-es/exercises/a2/a2-18-01-ex.json",
+  "id": "a2.18.01.ex02",
+  "set": {
+   "options": [
+    "Voy a preparar la maleta.",
+    "Preparé la maleta.",
+    "He preparado la maleta."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "tell-time-word: \"ayer\" only in a wrong option"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-01-ex.json",
+  "id": "a2.18.01.ex09",
+  "set": {
+   "options": [
+    "preparar",
+    "preparamos",
+    "preparé"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ar-verbs",
+    "2": "preterito-indefinido"
+   }
+  },
+  "kind": "target",
+  "why": "tell-time-word (\"preparamos ayer\") and two wrong options failing the same way: one present form, one preterite"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-01-ex.json",
+  "id": "a2.18.01.ex14",
+  "set": {
+   "options": [
+    "Voy a preparar la maleta.",
+    "Preparé la maleta.",
+    "He preparado la maleta."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "kind": "target",
+  "why": "tell-time-word: \"ayer\" only in wrong options (and \"el año pasado\" + perfecto is two faults)"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-18-02-voc.json",
+  "old": "\"lemma\": \"despegar\",\n      \"translation\": \"to take off\",\n      \"pos\": \"verb\"\n    }",
+  "new": "\"lemma\": \"despegar\",\n      \"translation\": \"to take off\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"el avión\",\n      \"translation\": \"plane\",\n      \"pos\": \"noun\"\n    }",
+  "kind": "target",
+  "why": "*avión* (grammar example, ex05, ex13; a2-18-05 ex13, consolidation ex07) is in no vocabulary list: added where first used"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-02-ex.json",
+  "id": "a2.18.02.ex05",
+  "set": {
+   "options": [
+    "El avión despegó a las ocho.",
+    "El avión despegar a las ocho.",
+    "El avión despegué a las ocho."
+   ],
+   "correct": 0,
+   "teaches": [
+    "preterito-indefinido"
+   ]
+  },
+  "kind": "target",
+  "why": "the preterite lesson drills ir a in 7 of 14 practice items: this one tests the preterite"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-02-ex.json",
+  "id": "a2.18.02.ex09",
+  "set": {
+   "question": "Which form means 'they returned'?",
+   "options": [
+    "volvieron",
+    "vuelven",
+    "volvió"
+   ],
+   "correct": 0,
+   "teaches": [
+    "preterito-indefinido"
+   ],
+   "distractor_skills": {
+    "1": "stem-changes"
+   }
+  },
+  "kind": "target",
+  "why": "tell-time-word (\"llegué ayer\") in a lesson about the preterite: ask for the preterite form instead"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-02-ex.json",
+  "id": "a2.18.02.ex12",
+  "set": {
+   "options": [
+    "Llegamos al aeropuerto temprano.",
+    "Vamos a llegar al aeropuerto mañana.",
+    "Llego al aeropuerto temprano."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "ar-verbs"
+   }
+  },
+  "kind": "target",
+  "why": "wrong option *Llegaremos pronto.* is the simple future (Unit 19) with ds `futuro-simple`"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-02-ex.json",
+  "id": "a2.18.02.ex15",
+  "set": {
+   "options": [
+    "Ayer llegamos al aeropuerto temprano.",
+    "Vamos a llegar al aeropuerto mañana.",
+    "Hemos llegado al aeropuerto ayer."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "preterito-perfecto"
+   }
+  },
+  "kind": "target",
+  "why": "tell-time-word: \"ayer\" only in a wrong option; *ayer* now in the right answer too, so the wrong options differ in tense only"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-02-ex.json",
+  "id": "a2.18.02.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that we arrived at the airport early.",
+     "answer": "Llegamos al aeropuerto temprano."
+    },
+    {
+     "prompt": "Say that the plane took off at eight.",
+     "answer": "El avión despegó a las ocho."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "the prompt says \"you arrived\" but the stored answer is *Llegamos* (we): the prompt must pin the person"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-03-ex.json",
+  "id": "a2.18.03.ex02",
+  "set": {
+   "options": [
+    "Voy a visitar una ciudad nueva.",
+    "Visité una ciudad nueva.",
+    "He visitado una ciudad nueva."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "tell-time-word: \"ayer\" only in a wrong option"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-03-ex.json",
+  "id": "a2.18.03.ex05",
+  "set": {
+   "question": "We have visited several cities. Which sentence says this?",
+   "options": [
+    "Hemos visitado varias ciudades.",
+    "Han visitado varias ciudades.",
+    "Hemos visitamos varias ciudades."
+   ],
+   "correct": 0,
+   "teaches": [
+    "preterito-perfecto"
+   ]
+  },
+  "kind": "target",
+  "why": "\"conocer a Lucía mañana\" says they have not met Lucía (they have known her since a2-07); also an ir a drill in the perfecto lesson: perfecto item instead"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-03-ex.json",
+  "id": "a2.18.03.ex09",
+  "set": {
+   "question": "Which form means 'I have visited'?",
+   "options": [
+    "he visitado",
+    "visité",
+    "ha visitado"
+   ],
+   "correct": 0,
+   "teaches": [
+    "preterito-perfecto"
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido"
+   }
+  },
+  "kind": "target",
+  "why": "tell-time-word (\"conoció ayer\") in a lesson about the perfecto: ask for the perfecto form"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-03-ex.json",
+  "id": "a2.18.03.ex14",
+  "set": {
+   "english": "Have you got to know a new place?"
+  },
+  "kind": "target",
+  "why": "gloss: \"discovered\" does not fit *conocer* (\"get to know / meet\")"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-18-04-gr.json",
+  "old": "English needs a full clause here — 'before we left' — but Spanish only needs the infinitive when the subject stays the same: *antes de salir*, not a separate clause. Save *antes de que* / *después de que* for when the two halves have different subjects.",
+  "new": "As in English 'before leaving', Spanish uses the infinitive after *antes de* and *después de* when the subject stays the same: *antes de salir*. When the two halves have different subjects, Spanish needs a full clause instead.",
+  "kind": "target",
+  "why": "the tip says English needs a full clause ('before we left') while the examples translate 'Before leaving'; it also previews *antes de que* (subjunctive, Unit 27)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-04-ex.json",
+  "id": "a2.18.04.ex02",
+  "set": {
+   "options": [
+    "Voy a esperar a Lucía en el aeropuerto.",
+    "Esperé a Lucía en el aeropuerto.",
+    "He esperado a Lucía en el aeropuerto."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "tell-time-word: \"ayer\" only in a wrong option"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-04-ex.json",
+  "id": "a2.18.04.ex05",
+  "set": {
+   "options": [
+    "Después de comer, vamos a salir.",
+    "Después comer, vamos a salir.",
+    "Después de comemos, vamos a salir."
+   ],
+   "correct": 0,
+   "teaches": [
+    "antes-despues-infinitive"
+   ]
+  },
+  "kind": "target",
+  "why": "the antes/después lesson drills ir a in 7 of 14 practice items: this one tests the lesson's structure"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-04-ex.json",
+  "id": "a2.18.04.ex09",
+  "set": {
+   "question": "Which verb form follows «antes de»?",
+   "options": [
+    "salir",
+    "salimos",
+    "salió"
+   ],
+   "correct": 0,
+   "teaches": [
+    "antes-despues-infinitive"
+   ],
+   "distractor_skills": {
+    "1": "er-ir-verbs",
+    "2": "preterito-indefinido"
+   }
+  },
+  "kind": "target",
+  "why": "tell-time-word (\"esperamos ayer\") and two wrong options failing the same way: ask for the form after *antes de*"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-04-ex.json",
+  "id": "a2.18.04.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that before leaving, we prepared the suitcases.",
+     "answer": "Antes de salir, preparamos las maletas."
+    },
+    {
+     "prompt": "Say that after arriving, we visited the city.",
+     "answer": "Después de llegar, visitamos la ciudad."
+    },
+    {
+     "prompt": "Say that after returning, we have remembered the trip.",
+     "answer": "Después de volver, hemos recordado el viaje."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "the prompts say \"you\" but the stored answers are *preparamos / visitamos / hemos recordado* (we): pin the person"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-18-05-voc.json",
+  "old": "\"lemma\": \"la suerte\",\n      \"translation\": \"luck\",\n      \"pos\": \"noun\"\n    }",
+  "new": "\"lemma\": \"la suerte\",\n      \"translation\": \"luck\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"despedirse\",\n      \"translation\": \"to say goodbye\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"la postal\",\n      \"translation\": \"postcard\",\n      \"pos\": \"noun\"\n    }",
+  "kind": "target",
+  "why": "*despedirse* (grammar example, ex11, ex14, ex19) and *postal* (story, ex13, ex16) are in no vocabulary list / only in B1: added where first used"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-05-ex.json",
+  "id": "a2.18.05.ex02",
+  "set": {
+   "options": [
+    "Voy a preparar la despedida de Lucía.",
+    "Preparé la despedida de Lucía.",
+    "He preparado la despedida de Lucía."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "kind": "target",
+  "why": "tell-time-word (\"ayer\"); *organizar* is first taught at a2-pronombrescliticos-05 (unmet): *preparar* (a2-18-01)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-05-ex.json",
+  "id": "a2.18.05.ex07",
+  "set": {
+   "sentence": "Mis amigos __ preparar la despedida el domingo.",
+   "english": "My friends are going to prepare the goodbye on Sunday."
+  },
+  "kind": "target",
+  "why": "*organizar* is unmet (first taught at a2-pronombrescliticos-05)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-05-ex.json",
+  "id": "a2.18.05.ex09",
+  "set": {
+   "options": [
+    "abrazar",
+    "abrazo",
+    "abracé"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ar-verbs",
+    "2": "preterito-indefinido"
+   }
+  },
+  "kind": "target",
+  "why": "tell-time-word (\"abracé ayer\") and two wrong options failing the same way"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-05-ex.json",
+  "id": "a2.18.05.ex12",
+  "set": {
+   "options": [
+    "De sus mejores momentos.",
+    "De una clase de cocina.",
+    "De sus maletas."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "length-giveaway (43 vs 23); the story no longer uses the pluperfect (*habían compartido*)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-05-ex.json",
+  "id": "a2.18.05.ex13",
+  "set": {
+   "question": "¿Qué regalo dio Lucía a cada uno?"
+  },
+  "kind": "target",
+  "why": "*les* (indirect object pronoun, Unit 25) in the stem"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-05-ex.json",
+  "id": "a2.18.05.ex14",
+  "set": {
+   "question": "¿Qué hicieron todos al decir adiós?",
+   "options": [
+    "Se abrazaron mucho.",
+    "Prepararon las maletas.",
+    "Compraron unos billetes."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "*anunciaron* and *embarque* are unmet (B1 / later), *despidieron* in no list, *inmediatamente* unmet: ask about the story's \"Todos se abrazaron\"",
+  "variant": "es-es"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-05-ex.json",
+  "id": "a2.18.05.ex15",
+  "set": {
+   "options": [
+    "Tristes, pero también felices.",
+    "Cansados y enfermos.",
+    "Sorprendidos por el vuelo."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "*enfadados* is in no vocabulary list"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-05-ex.json",
+  "id": "a2.18.05.ex16",
+  "set": {
+   "options": [
+    "Dio una postal a cada uno.",
+    "Va a dar una postal a cada uno.",
+    "Da una postal a cada uno."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "present-tense"
+   }
+  },
+  "kind": "target",
+  "why": "*nos dio* is an indirect object pronoun (Unit 25) before its screen and \"Nos dará\" the simple future (Unit 19, ds `futuro-simple`)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-05-ex.json",
+  "id": "a2.18.05.ex17",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué pasó en el aeropuerto?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Llegó el momento de decir adiós.",
+    "Va a llegar el momento de decir adiós.",
+    "Llegamos el momento de decir adiós."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive"
+   }
+  },
+  "kind": "target",
+  "why": "*anunciaron* / *embarque* unmet; \"Ha llegado mañana\" is garbled (perfecto + mañana) and the other wrong option fails on a different thing"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-05-ex.json",
+  "id": "a2.18.05.ex18",
+  "set": {
+   "options": [
+    "Estuvimos tristes, pero también felices.",
+    "Vamos a estar tristes mañana.",
+    "Hemos estado tristes el año pasado."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "preterito-perfecto"
+   }
+  },
+  "kind": "target",
+  "why": "Meg (who was there) answers in the third person (\"Estuvieron\") to \"¿Cómo se sintieron?\": answering for others"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-18.json",
+  "old": "\"text\": \"Mientras esperaban, hablaron de los mejores momentos que habían compartido.\"",
+  "new": "\"text\": \"En la sala de espera, hablaron de los mejores momentos juntos.\"",
+  "kind": "target",
+  "why": "*mientras* + imperfect (Unit 21) and the pluperfect *habían compartido* (B1)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-18.json",
+  "old": "\"text\": \"Meg dijo que seguiría escribiéndole para practicar español.\"",
+  "new": "\"text\": \"Meg dijo que va a escribir a Lucía para practicar español.\"",
+  "kind": "target",
+  "why": "conditional *seguiría* (Unit 26), seguir + gerund (Unit 28) and *le* (Unit 25)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-18.json",
+  "old": "\"text\": \"Después salieron del aeropuerto con sentimientos mezclados: estaban tristes, pero también felices por todo lo que habían vivido.\"",
+  "new": "\"text\": \"Después salieron del aeropuerto con sentimientos mezclados: estuvieron tristes, pero también felices por todo lo que vivieron.\"",
+  "kind": "target",
+  "why": "imperfect *estaban* (Unit 21) and the pluperfect *habían vivido* (B1)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-18.json",
+  "old": "\"text\": \"Sabían que la amistad continuaría, aunque ahora los separaran miles de kilómetros.\"",
+  "new": "\"text\": \"Ahora Lucía está lejos, pero la amistad va a continuar.\"",
+  "kind": "target",
+  "why": "imperfect, conditional (*continuaría*) and imperfect subjunctive (*separaran*) with *aunque* (Unit 28)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-18.json",
+  "old": "\"question\": \"¿Cuál es el tema principal de esta lectura?\",\n          \"options\": [\n            \"Los problemas de equipaje durante un vuelo internacional.\",\n            \"La despedida de Lucía en el aeropuerto antes de regresar a España.\",\n            \"La llegada de nuevos turistas españoles a Hanói.\",\n            \"Un viaje sorpresa de todo el grupo a Europa.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"La historia relata el emotivo momento en que los amigos acompañan a Lucía al aeropuerto y se despiden de ella.\"",
+  "new": "\"question\": \"¿Adónde fueron los amigos para despedirse de Lucía?\",\n          \"options\": [\n            \"A una estación de tren.\",\n            \"Al aeropuerto.\",\n            \"A un hotel.\",\n            \"A la casa de Lucía.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"El párrafo 2 dice: «Todos fueron al aeropuerto para despedirse de ella».\"",
+  "kind": "target",
+  "why": "generic reading question (\"tema principal\"): ask what the people do"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-18.json",
+  "old": "\"question\": \"¿Qué convicción reconforta a los amigos tras despedir a Lucía?\",\n          \"options\": [\n            \"Saben que su amistad permanecerá viva a pesar de los kilómetros que los separan.\",\n            \"Confían en que Lucía perderá el vuelo y volverá a la ciudad esa misma noche.\",\n            \"Creen que pronto olvidarán los momentos que compartieron en Hanói.\",\n            \"Piensan que es mejor no hacer amigos que viven en otros continentes.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"La historia termina afirmando que «sabían que la amistad continuaría, aunque ahora los separaran miles de kilómetros».\"",
+  "new": "\"question\": \"¿Qué hizo Lucía al final?\",\n          \"options\": [\n            \"Cruzó el control de seguridad y saludó con la mano.\",\n            \"Perdió el vuelo y volvió a la ciudad.\",\n            \"Se quedó a vivir en Hanói.\",\n            \"Escribió una carta a Meg.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"El párrafo 9 dice: «Lucía cruzó el control de seguridad y saludó por última vez con la mano».\"",
+  "kind": "target",
+  "why": "\"convicción\" question is an inference with abstract options; ask what Lucía does"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-consolidation-ex.json",
+  "id": "a2.18.consolidation.ex01",
+  "set": {
+   "options": [
+    "Voy a preparar la maleta.",
+    "Preparé la maleta.",
+    "He preparado la maleta."
+   ],
+   "correct": 0,
+   "question": "Which sentence describes a future travel plan?"
+  },
+  "kind": "target",
+  "why": "tell-time-word: \"ayer\" only in a wrong option"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-consolidation-ex.json",
+  "id": "a2.18.consolidation.ex04",
+  "set": {
+   "options": [
+    "Llegaron al aeropuerto temprano.",
+    "Van a llegar al aeropuerto mañana.",
+    "Llegan al aeropuerto temprano."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "ar-verbs"
+   }
+  },
+  "kind": "target",
+  "why": "length-giveaway (32 vs 22) and *Llegaremos* is the simple future (Unit 19, ds `futuro-simple`); words varied so the item is not a copy of a lesson item"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-consolidation-ex.json",
+  "id": "a2.18.consolidation.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Cómo fue el viaje?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Ayer llegué al aeropuerto temprano.",
+    "Voy a llegar al aeropuerto mañana.",
+    "He llegado al aeropuerto ayer."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "preterito-perfecto"
+   }
+  },
+  "kind": "target",
+  "why": "length-giveaway (32 vs 22) and tell-time-word (\"ayer\" only in a wrong option); the item is varied so it does not copy a2-18-02 ex15"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-consolidation-ex.json",
+  "id": "a2.18.consolidation.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you are going to prepare your suitcase.",
+     "answer": "Voy a preparar la maleta."
+    },
+    {
+     "prompt": "Say that we arrived at the airport early.",
+     "answer": "Llegamos al aeropuerto temprano."
+    },
+    {
+     "prompt": "Say that you have travelled a lot this year.",
+     "answer": "He viajado mucho este año."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "the prompt says \"you arrived\" but the stored answer is *Llegamos* (we)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-consolidation-ex.json",
+  "id": "a2.18.consolidation.ex18",
+  "set": {
+   "template": [
+    {
+     "prompt": "Ask what someone is going to do before the journey.",
+     "answer": "¿Qué vas a hacer antes del viaje?"
+    },
+    {
+     "prompt": "Ask what happened after arriving.",
+     "answer": "¿Qué pasó después de llegar?"
+    },
+    {
+     "prompt": "Ask whether someone has travelled this year.",
+     "answer": "¿Has viajado este año?"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "*recientemente* is listed only in a later lesson (a2-perifrasisduracion-01)"
+ }
+]

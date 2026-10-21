@@ -1,0 +1,271 @@
+[
+ {
+  "file": "content/es-es/exercises/a2/a2-13-01-ex.json",
+  "id": "a2.13.01.ex02",
+  "set": {
+   "options": [
+    "cuando",
+    "porque",
+    "después"
+   ],
+   "category": "vocabulary",
+   "teaches": [
+    "a2-describing-events-time-vocab"
+   ]
+  },
+  "kind": "target",
+  "why": "vocabulary-meaning item tagged grammar; mientras is not met in 13-01 (taught in 13-02): replace with met porque"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-13-01-ex.json",
+  "id": "a2.13.01.ex05",
+  "set": {
+   "options": [
+    "Cuando llegamos, recibimos los guantes.",
+    "Cuando llegar, recibimos los guantes.",
+    "Cuando llegamos, recibimos los guantes llegamos."
+   ]
+  },
+  "kind": "target",
+  "why": "unmet mientras in a wrong option; one fault per option (infinitive instead of the preterite)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-13-01-ex.json",
+  "id": "a2.13.01.ex09",
+  "set": {
+   "options": [
+    "Cuando terminó el día, volvimos a casa.",
+    "Cuando terminar el día, volvimos a casa.",
+    "Cuando termina el día, volvemos a casa."
+   ]
+  },
+  "kind": "target",
+  "why": "unmet mientras in a wrong option; one fault (infinitive)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-13-01-ex.json",
+  "id": "a2.13.01.ex14",
+  "set": {
+   "options": [
+    "Cuando llegamos.",
+    "Después llegamos.",
+    "Porque llegamos."
+   ]
+  },
+  "kind": "target",
+  "why": "unmet mientras in two wrong options (and the garbled \"Después mientras.\"): met words, real replies that answer a different question"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-13-01-ex.json",
+  "id": "a2.13.01.ex15",
+  "set": {
+   "options": [
+    "Cuando terminó la actividad.",
+    "Después terminó la actividad.",
+    "Porque terminó la actividad."
+   ]
+  },
+  "kind": "target",
+  "why": "unmet mientras in two wrong options: met words, real replies that answer a different question"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-13-02-gr.json",
+  "old": "\"spanish\": \"Mientras colaboramos, conocemos a nuevas personas.\",\n          \"english\": \"While we collaborate, we meet new people.\"",
+  "new": "\"spanish\": \"Mientras comimos, hablamos con los voluntarios.\",\n          \"english\": \"While we ate, we spoke with the volunteers.\"",
+  "kind": "target",
+  "why": "example 4 is in the present (\"While we collaborate, we meet\") on a screen about past actions; replaced with a clear preterite (comimos, -er verb)"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-13-02-gr.json",
+  "old": "\"trabajamos\",\n          \"we worked\"",
+  "new": "\"comimos\",\n          \"we ate\"",
+  "kind": "target",
+  "why": "table row \"trabajamos = we worked\" is ambiguous (nosotros -ar looks like the present); an -er preterite shows the tense"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-13-02-voc.json",
+  "old": "    {\n      \"lemma\": \"plantar\",\n      \"translation\": \"to plant\",\n      \"pos\": \"verb\"\n    }",
+  "new": "    {\n      \"lemma\": \"plantar\",\n      \"translation\": \"to plant\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"mientras\",\n      \"translation\": \"while\",\n      \"pos\": \"conjunction\"\n    }",
+  "kind": "target",
+  "why": "mientras is the point of 13-02 but is listed only in 13-03 (a later lesson): add it to this lesson's list"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-13-03-ex.json",
+  "id": "a2.13.03.ex02",
+  "set": {
+   "question": "Which word introduces one single moment, as in 'the moment we arrived'?",
+   "options": [
+    "cuando",
+    "mientras",
+    "después"
+   ]
+  },
+  "kind": "target",
+  "why": "answer-in-prompt (cuando quoted in the question), and a noun (el barrio) as a distractor among connectors"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-13-03-ex.json",
+  "id": "a2.13.03.ex09",
+  "set": {
+   "options": [
+    "Mientras colaboramos, otros voluntarios plantaron flores.",
+    "Mientras colaboramos, otros voluntarios recogieron basura.",
+    "Mientras colaboramos, otros voluntarios limpiaron el parque."
+   ]
+  },
+  "kind": "target",
+  "why": "unmet lago (listed in 13-04) in a wrong option: use a met word"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-13-05-ex.json",
+  "id": "a2.13.05.ex10",
+  "set": {
+   "options": [
+    "organisation",
+    "neighbourhood",
+    "community"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (12 vs 6): make the wrong options as long as the right one, with met words"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-13-05-ex.json",
+  "id": "a2.13.05.ex11",
+  "set": {
+   "question": "¿Qué hicieron los amigos en el parque?",
+   "options": [
+    "Limpiaron el parque.",
+    "Hicieron una fiesta.",
+    "Visitaron un museo."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "question and key use organizó/local (unmet) and the length gives the answer away (35 vs 20): ask what the volunteers did, options of similar length"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-13-05-ex.json",
+  "id": "a2.13.05.ex13",
+  "set": {
+   "options": [
+    "Recogieron basura.",
+    "Limpiaron el lago.",
+    "Plantaron flores."
+   ]
+  },
+  "kind": "target",
+  "why": "pintaron is in no vocabulary list: use met words (Carlos and Kaylee collected rubbish)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-13-05-ex.json",
+  "id": "a2.13.05.ex14",
+  "set": {
+   "options": [
+    "Plantaron flores.",
+    "Recogieron basura.",
+    "Limpiaron el lago."
+   ]
+  },
+  "kind": "target",
+  "why": "pintaron is in no vocabulary list: use met words"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-13-05-ex.json",
+  "id": "a2.13.05.ex15",
+  "set": {
+   "options": [
+    "Comieron juntos en el parque.",
+    "Volvieron juntos a casa.",
+    "Visitaron juntos un museo."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "length give-away (29 vs 19): wrong options as long as the right one"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-13.json",
+  "old": "Mientras Carlos y Kaylee recogían basura, Meg y Daniela plantaban flores.",
+  "new": "Mientras Carlos y Kaylee recogieron basura, Meg y Daniela plantaron flores.",
+  "kind": "target",
+  "why": "imperfect (recogían, plantaban) is Unit 21; use the preterite (this unit's grammar)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-13.json",
+  "old": "Carlos dijo que nunca había participado en una actividad parecida.",
+  "new": "Carlos dijo: «Nunca he participado en una actividad parecida.»",
+  "kind": "target",
+  "why": "pluperfect (había participado) is B1 and reported speech is Unit 14; use direct speech with the perfecto"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-13.json",
+  "old": "Lucía respondió que le gustaba colaborar siempre que tenía tiempo.",
+  "new": "Lucía respondió: «Me gusta colaborar siempre que tengo tiempo.»",
+  "kind": "target",
+  "why": "imperfect (gustaba, tenía) and le (Unit 25) before their screens; direct speech in the present"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-13.json",
+  "old": "Al terminar, el parque estaba mucho más limpio y lleno de flores.",
+  "new": "Al terminar, el parque quedó mucho más limpio y lleno de flores.",
+  "kind": "target",
+  "why": "imperfect (estaba) is Unit 21"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-13.json",
+  "old": "con el día que habían pasado.",
+  "new": "con el día que pasaron.",
+  "kind": "target",
+  "why": "pluperfect (habían pasado) is B1"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-13.json",
+  "old": "\"question\": \"¿De qué trata principalmente la lectura?\",",
+  "new": "\"question\": \"¿Qué hicieron los amigos en el parque de Hanói?\",",
+  "kind": "target",
+  "why": "reading-generic: the question is about \"la lectura\", not what the people do"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-13.json",
+  "old": "\"De una jornada de voluntariado comunitario para mejorar y limpiar un parque.\",",
+  "new": "\"Limpiaron el parque junto con otros voluntarios del barrio.\",",
+  "kind": "target",
+  "why": "answer rewritten to match the new question (what the people did)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-13.json",
+  "old": "\"De una competición deportiva en un parque municipal.\",",
+  "new": "\"Jugaron un partido de fútbol con los vecinos.\",",
+  "kind": "target",
+  "why": "distractor rewritten to match the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-13.json",
+  "old": "\"De la compra de plantas exóticas para el jardín de Lucía.\",",
+  "new": "\"Compraron plantas para el jardín de Lucía.\",",
+  "kind": "target",
+  "why": "distractor rewritten to match the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-13.json",
+  "old": "\"De un curso de pintura al aire libre junto al lago.\"",
+  "new": "\"Hicieron un curso de pintura junto al lago.\"",
+  "kind": "target",
+  "why": "distractor rewritten to match the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-13.json",
+  "old": "\"explanation\": \"La lectura relata cómo el grupo participa voluntariamente en la limpieza y cuidado de un parque local de Hanói junto a los vecinos.\"",
+  "new": "\"explanation\": \"El grupo participa como voluntario en la limpieza de un parque de Hanói y conoce a muchas personas del barrio.\"",
+  "kind": "target",
+  "why": "explanation matches the rewritten question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-13.json",
+  "old": "\"Plantan flores en los jardines.\",",
+  "new": "\"Plantan flores en el parque.\",",
+  "kind": "target",
+  "why": "\"los jardines\" is not in the story"
+ }
+]

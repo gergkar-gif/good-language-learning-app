@@ -41,7 +41,7 @@
       "question": "Which sentence describes a future travel plan?",
       "options": [
         "Voy a visitar una ciudad nueva.",
-        "Visité una ciudad nueva ayer.",
+        "Visité una ciudad nueva.",
         "He visitado una ciudad nueva."
       ],
       "correct": 0
@@ -85,13 +85,13 @@
       "category": "grammar",
       "type": "multiple-choice",
       "teaches": [
-        "ir-infinitive"
+        "preterito-perfecto"
       ],
-      "question": "Which sentence is correct?",
+      "question": "We have visited several cities. Which sentence says this?",
       "options": [
-        "Vamos a conocer a Lucía mañana.",
-        "Vamos conocer a Lucía mañana.",
-        "Vamos a conocemos a Lucía mañana."
+        "Hemos visitado varias ciudades.",
+        "Han visitado varias ciudades.",
+        "Hemos visitamos varias ciudades."
       ],
       "correct": 0
     },
@@ -156,15 +156,18 @@
       "category": "grammar",
       "type": "multiple-choice",
       "teaches": [
-        "ir-infinitive"
+        "preterito-perfecto"
       ],
-      "question": "Which verb stays in the infinitive after «va a»?",
+      "question": "Which form means 'I have visited'?",
       "options": [
-        "conocer",
-        "conoce",
-        "conoció ayer"
+        "he visitado",
+        "visité",
+        "ha visitado"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.18.03.ex10",
@@ -241,7 +244,7 @@
         "preterito-perfecto"
       ],
       "sentence": "¿__ conocido un lugar nuevo?",
-      "english": "Have you discovered a new place?"
+      "english": "Have you got to know a new place?"
     },
     {
       "id": "a2.18.03.ex15",

@@ -1,0 +1,99 @@
+[
+ {
+  "file": "content/es-latam/exercises/a2/a2-15-05-ex.json",
+  "id": "a2.15.05.ex14",
+  "set": {
+   "question": "¿Qué hicieron los amigos al oír la noticia?",
+   "options": [
+    "Se alegraron por ella.",
+    "Se quedaron en la estación.",
+    "Se fueron a casa."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "reading question invents feelings (sorprendida, aburrida, enfadada: unmet and not in the story): the friends are glad for Lucía but a little sad",
+  "why_unmatched": "es-latam differs from es-es on ['options']"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-16-05-ex.json",
+  "id": "a2.16.05.ex15",
+  "set": {
+   "question": "¿Dónde guardó Kaylee la caja?",
+   "options": [
+    "En la sala.",
+    "En la cocina.",
+    "En el jardín."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "length-giveaway (28 vs 16); *estantería* and *escondió* are in no vocabulary list: story line now says Kaylee put the box in the salón",
+  "why_unmatched": "es-latam differs from es-es on ['options']"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-17-04-gr.json",
+  "old": "Unlike *este año* or *el año pasado*, connectors such as *ya* and *todavía* don't lock you into one tense — *Ya he terminado* and *ya terminé* are both correct. It's the rest of the sentence that decides which one fits.",
+  "new": "Unlike *este año* or *el año pasado*, connectors such as *ya* and *porque* don't lock you into one tense: *Ya he terminado el curso* (an open period, *ya* goes with the perfecto in Spain) but *Descansé porque terminé el curso ayer* (a finished moment). The rest of the sentence decides which tense fits.",
+  "kind": "target",
+  "why": "\"ya terminé\" is not the Spain norm (ya goes with the perfecto in Spain, the unit's own rule) and *todavía* appears only with *no* + perfecto",
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-17-05-ex.json",
+  "id": "a2.17.05.ex15",
+  "set": {
+   "question": "¿Qué intercambiaron muchos compañeros?",
+   "options": [
+    "Teléfonos y direcciones.",
+    "Regalos y fotografías.",
+    "Boletos y mapas."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "*correos* is unmet and the story says \"direcciones de correo electrónico\"; the story's \"Muchos\" are classmates, not only \"los amigos\"; Billetes would be es-es only",
+  "why_unmatched": "es-latam differs from es-es on ['options']"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-17.json",
+  "old": "\"question\": \"¿De qué trata principalmente el texto?\",\n          \"options\": [\n            \"De la matriculación en un nuevo curso escolar de nivel avanzado.\",\n            \"De la celebración de la última sesión del grupo de intercambio de idiomas.\",\n            \"De la despedida del profesor que se jubila de la enseñanza.\",\n            \"De una prueba sorpresa de gramática con notas individuales.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"El grupo repasa lo aprendido, hace un concurso por equipos, el profesor felicita a todos y Carlos mira el aula por última vez antes de salir.\"",
+  "new": "\"question\": \"¿Qué hicieron los amigos después de las actividades?\",\n          \"options\": [\n            \"Hicieron un examen de gramática.\",\n            \"Hicieron un pequeño concurso por equipos.\",\n            \"Hicieron una excursión a un lago.\",\n            \"Hicieron una cena en un restaurante.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"El párrafo 6 dice: «Después hicieron un pequeño concurso por equipos».\"",
+  "kind": "target",
+  "why": "generic reading question (\"¿De qué trata principalmente el texto?\"): ask what the people do",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-18-05-ex.json",
+  "id": "a2.18.05.ex14",
+  "set": {
+   "question": "¿Qué hicieron todos al decir adiós?",
+   "options": [
+    "Se abrazaron mucho.",
+    "Prepararon las maletas.",
+    "Compraron unos billetes."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "*anunciaron* and *embarque* are unmet (B1 / later), *despidieron* in no list, *inmediatamente* unmet: ask about the story's \"Todos se abrazaron\"",
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-18-05-ex.json",
+  "id": "a2.18.05.ex15",
+  "set": {
+   "options": [
+    "Tristes, pero también felices.",
+    "Cansados y enfermos.",
+    "Sorprendidos por el vuelo."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "*enfadados* is in no vocabulary list",
+  "why_unmatched": "es-latam differs from es-es on ['options']"
+ }
+]

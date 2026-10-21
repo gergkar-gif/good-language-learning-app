@@ -62,7 +62,7 @@
       "question": "Which sentence describes a completed past event?",
       "options": [
         "La clase terminó ayer.",
-        "La clase terminará este año.",
+        "La clase va a terminar este año.",
         "La clase termina mañana."
       ],
       "correct": 0,
@@ -70,7 +70,7 @@
         "preterito-indefinido"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "ir-infinitive"
       }
     },
     {
@@ -135,8 +135,8 @@
       "question": "Which pair correctly contrasts the two tenses?",
       "options": [
         "Este año he aprendido. / El año pasado aprendí.",
-        "Este año aprendí. / El año pasado he aprendido.",
-        "Este año aprendo. / El año pasado aprendía."
+        "Este año aprendí. / El año pasado aprendí.",
+        "Este año he aprendido. / El año pasado he aprendido."
       ],
       "correct": 0,
       "teaches": [
@@ -271,14 +271,15 @@
       "options": [
         "He aprendido mucho.",
         "Aprendí mucho el año pasado.",
-        "Aprendo mucho ayer."
+        "Voy a aprender mucho."
       ],
       "correct": 0,
       "teaches": [
         "preterito-perfecto"
       ],
       "distractor_skills": {
-        "1": "preterito-indefinido"
+        "1": "preterito-indefinido",
+        "2": "ir-infinitive"
       }
     },
     {
@@ -324,8 +325,8 @@
       ],
       "options": [
         "He aprendido mucho este año y la clase terminó ayer.",
-        "Aprendí mucho este año y la clase ha terminado ayer.",
-        "Aprendo mucho este año y la clase termina ayer."
+        "Aprendí mucho este año y la clase terminó ayer.",
+        "He aprendido mucho este año y la clase ha terminado ayer."
       ],
       "correct": 0,
       "teaches": [
@@ -360,8 +361,8 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Ask what someone has experienced this year (use experimentar).",
-          "answer": "¿Qué has experimentado este año?"
+          "prompt": "Ask what someone has learned this year.",
+          "answer": "¿Qué has aprendido este año?"
         },
         {
           "prompt": "Ask what happened yesterday.",

@@ -1,0 +1,514 @@
+[
+ {
+  "file": "content/es-es/vocabulary/a2/a2-14-01-voc.json",
+  "old": "\"lemma\": \"taller\"",
+  "new": "\"lemma\": \"el taller\"",
+  "kind": "target",
+  "why": "article missing (14-02 lists \"el taller\"; every other noun has its article)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-01-ex.json",
+  "id": "a2.14.01.ex05",
+  "set": {
+   "options": [
+    "¿Dónde trabajaste ayer?",
+    "¿Dónde trabajas ayer?",
+    "¿Dónde trabajar ayer?"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-time-word: ayer only in the wrong options; put it in every option"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-01-ex.json",
+  "id": "a2.14.01.ex07",
+  "set": {
+   "sentence": "¿__ trabajaste?",
+   "answer": "Dónde",
+   "english": "Where did you work?",
+   "teaches": [
+    "questions"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: indirect question (14-02) used in 14-01; direct question instead"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-01-ex.json",
+  "id": "a2.14.01.ex08",
+  "set": {
+   "english": "How did the interview start?",
+   "tiles": [
+    "¿Cómo",
+    "empezó",
+    "la",
+    "entrevista",
+    "?"
+   ],
+   "solution": [
+    "¿Cómo",
+    "empezó",
+    "la",
+    "entrevista",
+    "?"
+   ],
+   "teaches": [
+    "questions"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: indirect question (14-02) used in 14-01; direct question builder instead"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-01-ex.json",
+  "id": "a2.14.01.ex09",
+  "set": {
+   "question": "Which question asks where something happened?",
+   "options": [
+    "¿Dónde trabajaste?",
+    "¿Cuándo llegaste?",
+    "¿Cómo empezó la entrevista?"
+   ],
+   "correct": 0,
+   "teaches": [
+    "questions"
+   ]
+  },
+  "kind": "target",
+  "why": "taught-later: \"Which is an indirect question?\" in 14-01 (and tell-punctuation: only the right option lacks ¿?); ask about a direct question word"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-01-ex.json",
+  "id": "a2.14.01.ex12",
+  "set": {
+   "options": [
+    "¿Cómo empezó la entrevista ayer?",
+    "¿Cómo empieza la entrevista ayer?",
+    "¿Cómo empezar la entrevista ayer?"
+   ]
+  },
+  "kind": "target",
+  "why": "tell-time-word: ayer only in the wrong options; put it in every option"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-01-ex.json",
+  "id": "a2.14.01.ex14",
+  "set": {
+   "options": [
+    "La entrevista empezó ayer.",
+    "La entrevista empezar ayer.",
+    "La entrevista empieza ayer."
+   ],
+   "distractor_skills": {
+    "2": "stem-changes"
+   }
+  },
+  "kind": "target",
+  "why": "tell-time-word (ayer only in one wrong option) and distractor_skills (stem-changes) sits on \"empezar bien\", the infinitive, not on the stem-changing form: ayer in every option, ds on \"empieza\""
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-01-ex.json",
+  "id": "a2.14.01.ex15",
+  "set": {
+   "options": [
+    "Trabajé en un taller ayer.",
+    "Trabajo en un taller ayer.",
+    "Trabajó en un taller ayer."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-time-word and infinitive-reply (\"Trabajar en un taller.\" is a natural reply): ayer in every option, wrong person instead of the infinitive"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-02-ex.json",
+  "id": "a2.14.02.ex09",
+  "set": {
+   "question": "Which sentence reports the question «¿Cuándo llegó el artesano?»?",
+   "options": [
+    "Preguntó cuándo llegó el artesano.",
+    "Preguntó llegó cuándo el artesano.",
+    "Preguntó llegó el artesano."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "tell-punctuation (only the right option lacks ¿?) and \"Which is an indirect question?\" repeated in four lessons: report a given question with one fault per option (word order, missing question word)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-02-ex.json",
+  "id": "a2.14.02.ex10",
+  "set": {
+   "options": [
+    "craftsperson",
+    "journalist",
+    "interviewee"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (12 vs 8): wrong options as long as the right one"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-02-ex.json",
+  "id": "a2.14.02.ex12",
+  "set": {
+   "options": [
+    "Preguntó qué pasó ayer.",
+    "Preguntó pasó qué ayer.",
+    "Preguntó qué pasa ayer."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-time-word and \"¿qué pasó?\" with question marks and a glued fault: ayer in every option, order fault, present fault"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-02-ex.json",
+  "id": "a2.14.02.ex15",
+  "set": {
+   "options": [
+    "Preguntó qué pasó.",
+    "Preguntó pasó qué.",
+    "Preguntó qué pasar."
+   ]
+  },
+  "kind": "target",
+  "why": "garbled wrong option \"Preguntó ¿qué pasó?.\" (stray full stop after ?): one clear fault, word order"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-02-ex.json",
+  "id": "a2.14.02.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué quiso saber la periodista del artesano?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Quiso saber dónde trabajó ayer.",
+    "Quiso saber dónde trabaja ayer.",
+    "Quiso saber trabajó dónde ayer."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-time-word; the reply uses the asker's person (\"dónde trabajaste\" to Meg's question about what the journalist wanted to know): third person, ayer in every option"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-14-03-voc.json",
+  "old": "\"lemma\": \"opción\"",
+  "new": "\"lemma\": \"la opción\"",
+  "kind": "target",
+  "why": "article missing"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-03-ex.json",
+  "id": "a2.14.03.ex07",
+  "set": {
+   "sentence": "Quiso saber __ llegó a la entrevista.",
+   "english": "She wanted to know who arrived at the interview."
+  },
+  "kind": "target",
+  "why": "unmet entrevistó (in no vocabulary list): use met words"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-03-ex.json",
+  "id": "a2.14.03.ex09",
+  "set": {
+   "question": "Which sentence reports the question «¿Cuál elegiste?»?",
+   "options": [
+    "Quiso saber cuál elegiste.",
+    "Quiso saber elegiste cuál.",
+    "Quiso saber elegiste."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "tell-punctuation (only the right option lacks ¿?): report a given question with one fault per option"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-04-ex.json",
+  "id": "a2.14.04.ex09",
+  "set": {
+   "question": "Which sentence reports the question «¿Qué contó?»?",
+   "options": [
+    "Quiso saber qué contó.",
+    "Quiso saber contó qué.",
+    "Quiso saber contó."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "tell-punctuation (only the right option lacks ¿?): report a given question with one fault per option"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-04-ex.json",
+  "id": "a2.14.04.ex13",
+  "set": {
+   "options": [
+    "Preguntó quién llegó primero.",
+    "Preguntó qué llegó primero.",
+    "Preguntó cuándo llegó primero."
+   ]
+  },
+  "kind": "target",
+  "why": "\"Preguntó cuál llegó primero.\" can be about people too (cuál = which of them): a second possible right answer"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-04-ex.json",
+  "id": "a2.14.04.ex15",
+  "set": {
+   "options": [
+    "Quiso saber cuándo empezó.",
+    "Quiso saber empezó cuándo.",
+    "Quiso saber empezó."
+   ]
+  },
+  "kind": "target",
+  "why": "garbled \"¿cuándo empezó?.\" and tell-time-word: order and omission faults instead"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-04-ex.json",
+  "id": "a2.14.04.ex16",
+  "set": {
+   "options": [
+    "Quiso saber dónde trabajó ayer.",
+    "Quiso saber dónde trabaja ayer.",
+    "Quiso saber trabajó dónde ayer."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-time-word and garbled \"¿dónde trabajó?.\": ayer in every option, order fault"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-05-ex.json",
+  "id": "a2.14.05.ex09",
+  "set": {
+   "question": "Which sentence reports the question «¿Dónde empezó la conversación?»?",
+   "options": [
+    "Preguntó dónde empezó la conversación.",
+    "Preguntó empezó dónde la conversación.",
+    "Preguntó empezó la conversación."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "tell-punctuation (only the right option lacks ¿?): report a given question with one fault per option"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-05-ex.json",
+  "id": "a2.14.05.ex11",
+  "set": {
+   "question": "¿Quién respondió las preguntas de los amigos?",
+   "options": [
+    "Un artesano.",
+    "Un médico.",
+    "Un periodista."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "unmet piloto/entrevistaron and the story does not say \"entrevistaron\": ask who answered the questions"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-05-ex.json",
+  "id": "a2.14.05.ex12",
+  "set": {
+   "options": [
+    "En un taller.",
+    "En un restaurante.",
+    "En un hotel."
+   ]
+  },
+  "kind": "target",
+  "why": "unmet aeropuerto (a2-18) in a wrong option"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-05-ex.json",
+  "id": "a2.14.05.ex13",
+  "set": {
+   "options": [
+    "Cuándo empezó a trabajar allí.",
+    "Qué comieron en el taller.",
+    "Quién llegó primero al taller."
+   ]
+  },
+  "kind": "target",
+  "why": "unmet aeropuerto and imperfect (estaba) in a wrong option; wrong options as long as the right one"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-05-ex.json",
+  "id": "a2.14.05.ex14",
+  "set": {
+   "options": [
+    "Que aprendió el oficio de su abuelo.",
+    "Cómo llegó a la playa con su familia.",
+    "Cómo preparó una fiesta con su familia."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (36 vs 24): wrong options as long as the right one"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-05-ex.json",
+  "id": "a2.14.05.ex15",
+  "set": {
+   "question": "¿Qué hizo Daniela durante la visita?",
+   "options": [
+    "Hizo fotografías.",
+    "Fue al parque.",
+    "Habló por teléfono."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "unmet notas/canción in the options: ask about Daniela, who takes photos in the story"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-05-ex.json",
+  "id": "a2.14.05.ex16",
+  "set": {
+   "options": [
+    "Explicó cómo usó la herramienta ayer.",
+    "Explicó cómo usa la herramienta ayer.",
+    "Explicó usó cómo la herramienta ayer."
+   ],
+   "distractor_skills": {
+    "1": "ar-verbs"
+   }
+  },
+  "kind": "target",
+  "why": "garbled \"¿cómo usó la herramienta?.\" and tell-time-word: ayer in every option, order fault"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-05-ex.json",
+  "id": "a2.14.05.ex17",
+  "set": {
+   "options": [
+    "Quiso saber cómo empezó.",
+    "Quiso saber empezó cómo.",
+    "Quiso saber empezó."
+   ],
+   "distractor_skills": null
+  },
+  "kind": "target",
+  "why": "tell-time-word and garbled \"¿cómo empezó?.\": order and omission faults"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-05-ex.json",
+  "id": "a2.14.05.ex18",
+  "set": {
+   "options": [
+    "Preguntó quién llegó primero.",
+    "Preguntó qué llegó primero.",
+    "Preguntó cuándo llegó primero."
+   ]
+  },
+  "kind": "target",
+  "why": "\"Preguntó cuál llegó primero.\" can be about people too: a second possible right answer"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-consolidation-ex.json",
+  "id": "a2.14.consolidation.ex04",
+  "set": {
+   "question": "Which sentence reports the question «¿Dónde trabajaste?»?",
+   "options": [
+    "Preguntó dónde trabajaste.",
+    "Preguntó trabajaste dónde.",
+    "Preguntó trabajaste."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "tell-punctuation (only the right option lacks ¿?): report a given question with one fault per option"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-consolidation-ex.json",
+  "id": "a2.14.consolidation.ex11",
+  "set": {
+   "options": [
+    "Quiso saber qué pasó ayer.",
+    "Quiso saber pasó qué ayer.",
+    "Quiso saber qué pasa ayer."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-time-word and \"Quiso saber ¿qué pasó?\": ayer in every option, order fault"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-consolidation-ex.json",
+  "id": "a2.14.consolidation.ex14",
+  "set": {
+   "options": [
+    "La entrevista empezó ayer.",
+    "La entrevista empieza ayer.",
+    "La entrevista empezar ayer."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-time-word: ayer in every option"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-consolidation-ex.json",
+  "id": "a2.14.consolidation.ex15",
+  "set": {
+   "options": [
+    "Preguntó qué pasó.",
+    "Preguntó pasó qué.",
+    "Preguntó qué pasar."
+   ]
+  },
+  "kind": "target",
+  "why": "garbled \"Preguntó ¿qué pasó?.\": one clear fault, word order"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-14-consolidation-ex.json",
+  "id": "a2.14.consolidation.ex16",
+  "set": {
+   "options": [
+    "Quiso saber dónde trabajó ayer.",
+    "Quiso saber trabajó dónde ayer.",
+    "Quiso saber dónde trabaja ayer."
+   ]
+  },
+  "kind": "target",
+  "why": "tell-time-word and garbled \"¿dónde trabajó?.\": ayer in every option, order fault"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-14.json",
+  "old": "El artesano explica que aprendió el oficio de su abuelo cuando era niño.",
+  "new": "El artesano explica que aprendió el oficio de su abuelo.",
+  "kind": "target",
+  "why": "imperfect (era) is Unit 21"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-14.json",
+  "old": "Después les enseña cómo trabaja el barro con las manos.",
+  "new": "Después enseña al grupo cómo trabaja el barro con las manos.",
+  "kind": "target",
+  "why": "les (indirect object pronoun) is Unit 25"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-14.json",
+  "old": "\"question\": \"¿Cuál es el objetivo principal de la actividad que propone Lucía?\",",
+  "new": "\"question\": \"¿Qué propone Lucía a sus amigos?\",",
+  "kind": "target",
+  "why": "reading-generic (\"objetivo principal\"): ask what the people do"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-14.json",
+  "old": "\"De su propio abuelo cuando era niño.\"",
+  "new": "\"De su propio abuelo.\"",
+  "kind": "target",
+  "why": "imperfect (era) in an option"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-14.json",
+  "old": "\"explanation\": \"El ceramista cuenta que aprendió el oficio de su abuelo cuando era pequeño.\"",
+  "new": "\"explanation\": \"El ceramista explica que aprendió el oficio de su abuelo.\"",
+  "kind": "target",
+  "why": "imperfect (era) in the explanation"
+ }
+]

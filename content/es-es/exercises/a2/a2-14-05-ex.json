@@ -25,7 +25,7 @@
     },
     {
       "id": "a2.14.05.ex02",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "multiple-choice",
       "question": "Which word means 'where'?",
       "options": [
@@ -35,7 +35,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "questions"
+        "a2-asking-what-happened-vocab"
       ]
     },
     {
@@ -146,11 +146,11 @@
       "id": "a2.14.05.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which is an indirect question?",
+      "question": "Which sentence reports the question «¿Dónde empezó la conversación?»?",
       "options": [
         "Preguntó dónde empezó la conversación.",
-        "¿Dónde empezó la conversación?",
-        "¿Quién usó la herramienta?"
+        "Preguntó empezó dónde la conversación.",
+        "Preguntó empezó la conversación."
       ],
       "correct": 0,
       "teaches": [
@@ -176,11 +176,11 @@
       "id": "a2.14.05.ex11",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "¿A quién entrevistaron los amigos?",
+      "question": "¿Quién respondió las preguntas de los amigos?",
       "options": [
-        "A un artesano.",
-        "A un piloto.",
-        "A un médico."
+        "Un artesano.",
+        "Un médico.",
+        "Un periodista."
       ],
       "correct": 0
     },
@@ -191,7 +191,7 @@
       "question": "¿Dónde trabaja el entrevistado?",
       "options": [
         "En un taller.",
-        "En un aeropuerto.",
+        "En un restaurante.",
         "En un hotel."
       ],
       "correct": 0
@@ -203,8 +203,8 @@
       "question": "¿Qué preguntó Carlos?",
       "options": [
         "Cuándo empezó a trabajar allí.",
-        "Qué comieron.",
-        "Dónde estaba el aeropuerto."
+        "Qué comieron en el taller.",
+        "Quién llegó primero al taller."
       ],
       "correct": 0
     },
@@ -215,8 +215,8 @@
       "question": "¿Qué explicó el entrevistado?",
       "options": [
         "Que aprendió el oficio de su abuelo.",
-        "Cómo llegó a la playa.",
-        "Cómo preparó una fiesta."
+        "Cómo llegó a la playa con su familia.",
+        "Cómo preparó una fiesta con su familia."
       ],
       "correct": 0
     },
@@ -224,11 +224,11 @@
       "id": "a2.14.05.ex15",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "¿Qué hizo Lauren durante la visita?",
+      "question": "¿Qué hizo Daniela durante la visita?",
       "options": [
-        "Tomó notas.",
-        "Cantó una canción.",
-        "Fue al parque."
+        "Hizo fotografías.",
+        "Fue al parque.",
+        "Habló por teléfono."
       ],
       "correct": 0
     },
@@ -247,14 +247,17 @@
         }
       ],
       "options": [
-        "Explicó cómo usó la herramienta.",
-        "Explicó ¿cómo usó la herramienta?.",
-        "Explicó cómo usa ayer la herramienta."
+        "Explicó cómo usó la herramienta ayer.",
+        "Explicó cómo usa la herramienta ayer.",
+        "Explicó usó cómo la herramienta ayer."
       ],
       "correct": 0,
       "teaches": [
         "preguntas-indirectas"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ar-verbs"
+      }
     },
     {
       "id": "a2.14.05.ex17",
@@ -272,16 +275,13 @@
       ],
       "options": [
         "Quiso saber cómo empezó.",
-        "Quiso saber cómo empieza ayer.",
-        "Quiso saber ¿cómo empezó?."
+        "Quiso saber empezó cómo.",
+        "Quiso saber empezó."
       ],
       "correct": 0,
       "teaches": [
         "preguntas-indirectas"
-      ],
-      "distractor_skills": {
-        "1": "stem-changes"
-      }
+      ]
     },
     {
       "id": "a2.14.05.ex18",
@@ -300,7 +300,7 @@
       "options": [
         "Preguntó quién llegó primero.",
         "Preguntó qué llegó primero.",
-        "Preguntó cuál llegó primero."
+        "Preguntó cuándo llegó primero."
       ],
       "correct": 0,
       "teaches": [
@@ -317,7 +317,7 @@
           "answer": "La periodista preguntó qué pasó."
         },
         {
-          "prompt": "Report that she wanted to know where someone worked.",
+          "prompt": "Report that she wanted to know where he worked.",
           "answer": "Quiso saber dónde trabajó."
         },
         {

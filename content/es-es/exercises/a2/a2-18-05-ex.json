@@ -36,9 +36,9 @@
       },
       "question": "Which sentence describes a future travel plan?",
       "options": [
-        "Voy a organizar la despedida de Lucía.",
-        "Organicé la despedida de Lucía ayer.",
-        "He organizado la despedida de Lucía."
+        "Voy a preparar la despedida de Lucía.",
+        "Preparé la despedida de Lucía.",
+        "He preparado la despedida de Lucía."
       ],
       "correct": 0
     },
@@ -116,9 +116,9 @@
       "teaches": [
         "ir-infinitive"
       ],
-      "sentence": "Mis amigos __ organizar la despedida el domingo.",
+      "sentence": "Mis amigos __ preparar la despedida el domingo.",
       "answer": "van a",
-      "english": "My friends are going to organise the goodbye on Sunday."
+      "english": "My friends are going to prepare the goodbye on Sunday."
     },
     {
       "id": "a2.18.05.ex08",
@@ -156,9 +156,13 @@
       "options": [
         "abrazar",
         "abrazo",
-        "abracé ayer"
+        "abracé"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "ar-verbs",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.18.05.ex10",
@@ -193,7 +197,7 @@
       "type": "multiple-choice",
       "question": "¿De qué hablaron en el aeropuerto?",
       "options": [
-        "De los mejores momentos que han compartido.",
+        "De sus mejores momentos.",
         "De una clase de cocina.",
         "De sus maletas."
       ],
@@ -203,7 +207,7 @@
       "id": "a2.18.05.ex13",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "¿Qué regalo les dio Lucía?",
+      "question": "¿Qué regalo dio Lucía a cada uno?",
       "options": [
         "Una postal de su ciudad en España.",
         "Una fotografía del aeropuerto.",
@@ -215,11 +219,11 @@
       "id": "a2.18.05.ex14",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "¿Qué hicieron cuando anunciaron el embarque?",
+      "question": "¿Qué hicieron todos al decir adiós?",
       "options": [
-        "Se despidieron y se abrazaron.",
+        "Se abrazaron mucho.",
         "Prepararon las maletas.",
-        "Volvieron a casa inmediatamente."
+        "Compraron unos billetes."
       ],
       "correct": 0
     },
@@ -230,7 +234,7 @@
       "question": "¿Cómo se sintieron los amigos después de salir del aeropuerto?",
       "options": [
         "Tristes, pero también felices.",
-        "Enfadados y cansados.",
+        "Cansados y enfermos.",
         "Sorprendidos por el vuelo."
       ],
       "correct": 0
@@ -250,16 +254,17 @@
         }
       ],
       "options": [
-        "Nos dio una postal.",
-        "Nos dará una postal mañana.",
-        "Nos da una postal mañana."
+        "Dio una postal a cada uno.",
+        "Va a dar una postal a cada uno.",
+        "Da una postal a cada uno."
       ],
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
       ],
       "distractor_skills": {
-        "1": "futuro-simple"
+        "1": "ir-infinitive",
+        "2": "present-tense"
       }
     },
     {
@@ -269,7 +274,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Qué pasó cuando anunciaron el embarque?"
+          "text": "¿Qué pasó en el aeropuerto?"
         },
         {
           "speaker": "Carlos",
@@ -279,7 +284,7 @@
       "options": [
         "Llegó el momento de decir adiós.",
         "Va a llegar el momento de decir adiós.",
-        "Ha llegado mañana."
+        "Llegamos el momento de decir adiós."
       ],
       "correct": 0,
       "teaches": [
@@ -296,7 +301,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Cómo se sintieron después?"
+          "text": "¿Cómo os sentisteis después?"
         },
         {
           "speaker": "Meg",
@@ -304,16 +309,17 @@
         }
       ],
       "options": [
-        "Estuvieron tristes, pero también felices.",
-        "Van a estar tristes mañana.",
-        "Han estado tristes el año pasado."
+        "Estuvimos tristes, pero también felices.",
+        "Vamos a estar tristes mañana.",
+        "Hemos estado tristes el año pasado."
       ],
       "correct": 0,
       "teaches": [
         "preterito-indefinido"
       ],
       "distractor_skills": {
-        "1": "ir-infinitive"
+        "1": "ir-infinitive",
+        "2": "preterito-perfecto"
       }
     },
     {
