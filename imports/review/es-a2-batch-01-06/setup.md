@@ -25,3 +25,4 @@ Started 2026-10-21T06:51:33Z from origin/master 0828a604. 2 Sonnet reader(s); es
 - giving-reasons-opinions: a2-05-05-ex.json
 - comparing-trips-memories: a2-06.json
 - Readers launched 06:53:00Z.
+- Reader B finished 07:10Z: fixes 36 + 24 + 41 = 101; report file write allowed; token count not in the hand-back

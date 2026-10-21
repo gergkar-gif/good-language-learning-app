@@ -1,0 +1,462 @@
+[
+ {
+  "file": "content/es-es/vocabulary/a2/a2-06-01-voc.json",
+  "old": "    {\n      \"lemma\": \"igual\",\n      \"translation\": \"equal / same\",\n      \"pos\": \"adjective\"\n    }",
+  "new": "    {\n      \"lemma\": \"igual\",\n      \"translation\": \"equal / same\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"anterior\",\n      \"translation\": \"previous\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"otro\",\n      \"translation\": \"other, another\",\n      \"pos\": \"adjective\"\n    }",
+  "kind": "target",
+  "why": "anterior (06-01 ex02/03/04/14/16/18, 06-05, consolidation) and otro (06-02 ex16, 06-03 ex02/19, consolidation) are used from this lesson on but listed only at a2-imperfectocontraste-03 / b1-23-02"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-06-01-gr.json",
+  "old": "\"spanish\": \"El hotel es menos cómodo que el alojamiento.\",\n          \"english\": \"The hotel is less comfortable than the accommodation.\"",
+  "new": "\"spanish\": \"El hotel es menos cómodo que la casa.\",\n          \"english\": \"The hotel is less comfortable than the house.\"",
+  "kind": "target",
+  "why": "a hotel is a kind of alojamiento: the comparison makes no sense"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-01-ex.json",
+  "id": "a2.06.01.ex11",
+  "set": {
+   "sentence": "El hotel es menos __ que la casa.",
+   "english": "The hotel is less comfortable than the house."
+  },
+  "kind": "target",
+  "why": "same nonsense comparison as the screen example"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-consolidation-ex.json",
+  "id": "a2.06.consolidation.ex02",
+  "set": {
+   "sentence": "El hotel es menos __ que la casa.",
+   "english": "The hotel is less comfortable than the house."
+  },
+  "kind": "target",
+  "why": "same nonsense comparison (copy of a2.06.01.ex11)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-01-ex.json",
+  "id": "a2.06.01.ex15",
+  "set": {
+   "options": [
+    "Sí, este ha sido tan interesante como el otro.",
+    "Sí, este ha sido más interesante como el otro.",
+    "Sí, este ha sido tan interesante que el otro."
+   ]
+  },
+  "kind": "target",
+  "why": "'¿Han sido iguales los dos viajes?' answered 'han sido tan interesantes como el otro' compares two trips with one of them"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-consolidation-ex.json",
+  "id": "a2.06.consolidation.ex15",
+  "set": {
+   "options": [
+    "Sí, este ha sido tan interesante como el otro.",
+    "Sí, este ha sido tan interesantes como el otro.",
+    "Sí, este ha sido más interesante como el otro."
+   ]
+  },
+  "kind": "target",
+  "why": "same as a2.06.01.ex15"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-06-01-gr.json",
+  "old": "The adjective agrees with the noun it describes.",
+  "new": "The adjective agrees with the noun it describes. *Mejor* and *peor* already contain the idea of *más*: say *Este viaje es mejor que el otro*, never *más mejor*.",
+  "kind": "target",
+  "sure": false,
+  "why": "mejor and peor are listed in the vocabulary of a2-06-01 but no screen of the unit teaches them (goal says más, menos, tan)"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-06-02-voc.json",
+  "old": "    {\n      \"lemma\": \"bonito\",\n      \"translation\": \"beautiful\",\n      \"pos\": \"adjective\"\n    }",
+  "new": "    {\n      \"lemma\": \"bonito\",\n      \"translation\": \"beautiful\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"el lugar\",\n      \"translation\": \"place\",\n      \"pos\": \"noun\"\n    }",
+  "kind": "target",
+  "why": "lugar/lugares used in 06-02 ex15, ex16, 06-04 ex03, 06-05, consolidation; listed only at a2-condicionalsimple-02"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-02-ex.json",
+  "id": "a2.06.02.ex10",
+  "set": {
+   "options": [
+    "comfortable",
+    "beautiful",
+    "interesting"
+   ]
+  },
+  "kind": "target",
+  "why": "check-content ERROR length-giveaway 11 vs 4"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-02-ex.json",
+  "id": "a2.06.02.ex14",
+  "set": {
+   "sentence": "He viajado __ que Meg.",
+   "english": "I have travelled more than Meg."
+  },
+  "kind": "target",
+  "sure": false,
+  "why": "perfecto with el año pasado (not Spain Spanish)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-02-ex.json",
+  "id": "a2.06.02.ex16",
+  "set": {
+   "options": [
+    "Sí, este es tan bonito como el otro.",
+    "Sí, este es más bonito como el otro.",
+    "Sí, este es tan bonita como el otro."
+   ]
+  },
+  "kind": "target",
+  "why": "'¿Son iguales los dos lugares?' answered 'son tan bonitos como el otro' compares two places with one of them"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-consolidation-ex.json",
+  "id": "a2.06.consolidation.ex06",
+  "set": {
+   "sentence": "Este año he viajado __ que el año pasado.",
+   "english": "This year I have travelled more than last year."
+  },
+  "kind": "target",
+  "sure": false,
+  "why": "perfecto with el año pasado: needs the current-period marker Este año"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-03-ex.json",
+  "id": "a2.06.03.ex03",
+  "set": {
+   "sentence": "El viaje en tren ha sido más __ que el paseo.",
+   "english": "The train trip has been longer than the walk."
+  },
+  "kind": "target",
+  "why": "autobús is b1-01-02"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-03-ex.json",
+  "id": "a2.06.03.ex10",
+  "set": {
+   "options": [
+    "experience",
+    "unforgettable",
+    "short"
+   ]
+  },
+  "kind": "target",
+  "why": "check-content ERROR length-giveaway 10 vs 4"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-03-ex.json",
+  "id": "a2.06.03.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that this experience has been more unforgettable than the previous one.",
+     "answer": "Esta experiencia ha sido más inolvidable que la anterior."
+    },
+    {
+     "prompt": "Say that the train trip has been as long as the excursion.",
+     "answer": "El viaje en tren ha sido tan largo como la excursión."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "autobús is b1-01-02"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-06-03-gr.json",
+  "old": "\"spanish\": \"He viajado más que el año pasado.\",\n          \"english\": \"I have travelled more than last year.\"",
+  "new": "\"spanish\": \"Este año he viajado más que el año pasado.\",\n          \"english\": \"This year I have travelled more than last year.\"",
+  "kind": "target",
+  "sure": false,
+  "why": "perfecto goes with este año, not with a bare el año pasado"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-06-03-gr.json",
+  "old": "*He viajado más que el año pasado* needs no adjective at all",
+  "new": "*Este año he viajado más que el año pasado* needs no adjective at all",
+  "kind": "target",
+  "sure": false,
+  "why": "same"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-06-04-gr.json",
+  "old": "Spanish keeps the adjective after the noun even inside a comparison, so the structure slots in between the verb and *que*: *la ciudad es más bonita que el pueblo*, not a fronted 'more beautiful city' the way English would build it.",
+  "new": "Name both things you compare: the first before the verb, the second after *que* or *como*: *El mirador es más bonito que el hotel*.",
+  "kind": "target",
+  "why": "the tip is wrong/meaningless: in the examples the adjective is a predicate after es, not after a noun"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-04-ex.json",
+  "id": "a2.06.04.ex19",
+  "set": {
+   "sentence": "Este año he viajado más que el año pasado.",
+   "english": "This year I have travelled more than last year."
+  },
+  "kind": "target",
+  "sure": false,
+  "why": "perfecto with el año pasado"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-06-05-gr.json",
+  "old": "*tan ... como* only ever measures two things against each other; once you are ranking three or more experiences to say which was your favourite, you need *más* or *menos* again, not *tan ... como*.",
+  "new": "Each comparison measures two things against each other. To say which experience you preferred, compare it with the other one: *La excursión ha sido más interesante que el paseo*.",
+  "kind": "target",
+  "why": "the tip hints at the superlative (la actividad más divertida), a B1 skill (superlatives, b1-07-04), without teaching it"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-06-05-gr.json",
+  "old": "\"spanish\": \"Hemos viajado más que el año pasado.\",\n          \"english\": \"We have travelled more than last year.\"",
+  "new": "\"spanish\": \"Este año hemos viajado más que el año pasado.\",\n          \"english\": \"This year we have travelled more than last year.\"",
+  "kind": "target",
+  "sure": false,
+  "why": "perfecto with el año pasado"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-05-ex.json",
+  "id": "a2.06.05.ex11",
+  "set": {
+   "question": "¿Qué compran antes del viaje en tren?",
+   "options": [
+    "Unos recuerdos.",
+    "Un hotel nuevo.",
+    "Una bicicleta."
+   ]
+  },
+  "kind": "target",
+  "why": "unmet algunos; stem *subir* (b1-19-02)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-05-ex.json",
+  "id": "a2.06.05.ex12",
+  "set": {
+   "question": "¿Qué le ha gustado más a Meg?",
+   "options": [
+    "El paseo en barco.",
+    "La excursión al mirador.",
+    "La clase de cocina."
+   ]
+  },
+  "kind": "target",
+  "why": "the stem uses actividad (a2-13-04)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-05-ex.json",
+  "id": "a2.06.05.ex13",
+  "set": {
+   "question": "¿Qué ha sido muy divertido para Lauren?",
+   "options": [
+    "La clase de cocina.",
+    "El paseo en barco.",
+    "El viaje de regreso."
+   ]
+  },
+  "kind": "target",
+  "why": "actividad unmet; the story's 'la actividad más divertida' is a relative superlative (B1)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-05-ex.json",
+  "id": "a2.06.05.ex14",
+  "set": {
+   "question": "¿Qué hacen después de desayunar?",
+   "options": [
+    "Hacen las maletas.",
+    "Compran unos billetes.",
+    "Prueban la comida."
+   ]
+  },
+  "kind": "target",
+  "why": "ERROR length-giveaway 52 vs 29; the question is generic and unmet actividades, durante, escuela; billetes is Spain-only (es-latam: boletos)",
+  "variant": "es-es"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-05-ex.json",
+  "id": "a2.06.05.ex15",
+  "set": {
+   "question": "¿En qué piensa Kaylee?",
+   "options": [
+    "En los arrozales y los pueblos.",
+    "En el hotel y en el mirador.",
+    "En la clase y en el paseo."
+   ]
+  },
+  "kind": "target",
+  "why": "ERROR tell-absolute (Nunca); unmet nunca, lugares, olvidado"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-05-ex.json",
+  "id": "a2.06.05.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué te ha gustado más?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "actividad is a2-13-04"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-05-ex.json",
+  "id": "a2.06.05.ex17",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué ha sido más divertido, la clase de cocina o el paseo en barco?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "La clase de cocina ha sido más divertida que el paseo en barco.",
+    "La clase de cocina ha sido más divertido que el paseo en barco.",
+    "La clase de cocina ha sido más divertida como el paseo en barco."
+   ]
+  },
+  "kind": "target",
+  "why": "right answer 'la actividad más divertida' is a relative superlative (B1); wrong option 'tan divertida como la actividad' was nonsense; duplicated reading ex13"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-05-ex.json",
+  "id": "a2.06.05.ex19",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that this year you have travelled more than last year.",
+     "answer": "Este año he viajado más que el año pasado."
+    },
+    {
+     "prompt": "Say that the boat trip has been more interesting than the excursion.",
+     "answer": "El paseo en barco ha sido más interesante que la excursión."
+    },
+    {
+     "prompt": "Say that the viewpoint has been as beautiful as the landscape.",
+     "answer": "El mirador ha sido tan bonito como el paisaje."
+    },
+    {
+     "prompt": "Say that the return trip has been less comfortable than the previous trip.",
+     "answer": "El regreso ha sido menos cómodo que el viaje anterior."
+    }
+   ]
+  },
+  "kind": "target",
+  "sure": false,
+  "why": "perfecto with el año pasado"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-consolidation-ex.json",
+  "id": "a2.06.consolidation.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that this year you have travelled more than last year.",
+     "answer": "Este año he viajado más que el año pasado."
+    },
+    {
+     "prompt": "Say that the excursion has been more interesting than the trip.",
+     "answer": "La excursión ha sido más interesante que el viaje."
+    },
+    {
+     "prompt": "Say that the return trip has been less comfortable than the previous trip.",
+     "answer": "El regreso ha sido menos cómodo que el viaje anterior."
+    }
+   ]
+  },
+  "kind": "target",
+  "sure": false,
+  "why": "perfecto with el año pasado"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-06-consolidation-ex.json",
+  "id": "a2.06.consolidation.ex18",
+  "set": {
+   "template": [
+    {
+     "prompt": "Ask whether this trip has been as interesting as the other one.",
+     "answer": "¿Ha sido este viaje tan interesante como el otro?"
+    },
+    {
+     "prompt": "Ask which place has been more beautiful.",
+     "answer": "¿Qué lugar ha sido más bonito?"
+    },
+    {
+     "prompt": "Ask a friend (use tú) which trip he or she prefers.",
+     "answer": "¿Qué viaje prefieres?"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "'¿Han sido los dos viajes tan interesantes como el otro?' compares two trips with one of them; 'someone' does not pin tú"
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-06-02.json",
+  "old": "        \"Compare people, places and experiences using comparative adjectives with correct agreement.\"",
+  "new": "        \"Compare places and experiences using comparative adjectives with correct agreement.\"",
+  "why": "the lesson never compares people (goal promises more than it practises)"
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-06-02.json",
+  "old": "\"goal\": \"Compare people, places and experiences using comparative adjectives with correct agreement.\"",
+  "new": "\"goal\": \"Compare places and experiences using comparative adjectives with correct agreement.\"",
+  "why": "same"
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-06-02.json",
+  "old": "\"I can compare people, places and experiences using comparative adjectives with correct agreement.\"",
+  "new": "\"I can compare places and experiences using comparative adjectives with correct agreement.\"",
+  "why": "same (checklist line; the challenge canDo copies it)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-06.json",
+  "old": "Lauren dice que la clase de cocina ha sido la actividad más divertida.",
+  "new": "Lauren dice que la clase de cocina ha sido muy divertida.",
+  "kind": "target",
+  "why": "la actividad más divertida is a relative superlative (superlatives, b1-07-04)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-06.json",
+  "old": "¿Qué resume mejor el contenido del texto?",
+  "new": "¿Adónde vuelven los amigos?",
+  "kind": "target",
+  "why": "reading-generic"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-06.json",
+  "old": "La llegada de nuevos estudiantes a la ciudad de Hanói.",
+  "new": "A su país, en avión.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-06.json",
+  "old": "El regreso de los amigos a Hanói y los recuerdos de su viaje.",
+  "new": "A Hanói, en tren.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-06.json",
+  "old": "La pérdida del equipaje del grupo en la estación de tren.",
+  "new": "A Ninh Bình, en barco.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-06.json",
+  "old": "La compra de billetes de avión para viajar por el sudeste asiático.",
+  "new": "A Budapest, en autobús.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-06.json",
+  "old": "¿Cuál fue la actividad favorita de Meg durante las vacaciones?",
+  "new": "¿Cuál es la actividad favorita de Meg en las vacaciones?",
+  "kind": "target",
+  "why": "preterite fue in a question stem (a2-11-01)"
+ }
+]
