@@ -191,8 +191,12 @@ not verified:
   is now: rerun the units edited since their last walk (HU A2 units 1–24
   were walked 2026-10-14, then edited, and had to be rerun). Cost: ~2 s a
   lesson at `--jobs 4` in the cloud container (281 HU A2 lessons, ~9 min).
-- Not covered by any of this: speaking/challenge steps, wrong-answer
-  paths, and a native speaker's eye (the user spot-checks).
+- Challenges are walked since 2026-10-21: each lesson's hand-written
+  entry must be the one on screen and its target, typed, must pass the
+  app's grader; a lesson with no entry (generated placeholder) fails.
+- Not covered by any of this: speaking steps (microphone), spoken
+  challenge answers, wrong-answer paths, and a native speaker's eye (the
+  user spot-checks).
 
 ## Prompt templates
 

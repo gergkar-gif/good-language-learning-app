@@ -401,6 +401,14 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   *han*) is two fixes on one item: mark the es-es one `"variant":
   "es-es"`; the reviewer splits the other into the es-latam list
   (`merge_fixes.py` refuses the pair).
+- **es-es *vosotros* (user, 2026-10-21):** use *vosotros* where a Spanish
+  speaker would: friends asking each other in the plural (*¿Habéis visto
+  la puesta de sol?*, *¿Qué hicisteis ayer?*); *ustedes* only for formal
+  speakers (receptionist, guide, seller). A1 (4 items) and A2 Units 1–12
+  (50 items) were converted; the preterite screens of Unit 11 show the
+  *vosotros* forms in es-es. es-latam keeps *ustedes* everywhere. The
+  classroom formulas *¿Cómo se dice …?* / *¿Qué significa …?* stay in
+  Spanish (user, 2026-10-21).
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).

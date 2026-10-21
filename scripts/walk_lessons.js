@@ -30,9 +30,14 @@
 //     driven with real clicks and typing. The correct answer is read from the
 //     engine's own stepState (it holds the shuffled option index, accepted
 //     answers, tile solution), so shuffling does not matter.
-//   * Speaking and communicative-challenge steps need a microphone: they use
-//     the app's "Can't speak right now" button (which also snoozes later mic
-//     steps) and are reported as "skipped: speaking" / "skipped: challenge".
+//   * Speaking steps need a microphone: they use the app's "Can't speak right
+//     now" button (its snooze disabled, so later mic steps still render) and
+//     are reported as "skipped: speaking".
+//   * Communicative challenges (2026-10-21): the lesson's hand-written entry in
+//     content/<course>/curriculum/challenges.json must be the one on screen;
+//     its target is typed in "Or type your response" and must be accepted by
+//     the app's grader. A lesson with no entry (a generated placeholder) or a
+//     rejected target fails. --skip-challenges restores the old skip.
 //   * ParlourTTS posts to a cloud worker. By default that endpoint and all
 //     other third-party hosts are stubbed (silent WAV / 204) so the run is
 //     offline and deterministic; the TTS request count is reported. With
@@ -61,6 +66,7 @@ function parseArgs(argv) {
         else if (a === '--out') o.out = argv[++i];
         else if (a === '--jobs') o.jobs = Number(argv[++i]) || 1;
         else if (a === '--live-tts') o.liveTts = true;
+        else if (a === '--skip-challenges') o.skipChallenges = true;
         else if (a === '--only') { while (argv[i + 1] && !argv[i + 1].startsWith('--')) o.only.push(argv[++i]); }
         else o.pos.push(a);
     }
@@ -132,7 +138,19 @@ const PLAN = () => {
     return p;
 };
 
+const CHALLENGES = {};
+function challengesOf(course) {
+    if (!CHALLENGES[course]) {
+        try {
+            const c = JSON.parse(fs.readFileSync(path.join(ROOT, `content/${course}/curriculum/challenges.json`), 'utf8'));
+            CHALLENGES[course] = c.challenges || c;
+        } catch (e) { CHALLENGES[course] = {}; }
+    }
+    return CHALLENGES[course];
+}
+
 async function walkLesson(browser, opts, stem) {
+    const challenges = challengesOf(opts.course);
     const res = { stem, ok: true, reasons: [], steps: 0, skipped: [], consoleErrors: [], pageErrors: [], failedRequests: [], audio: [], notes: [], tts: { requests: 0, speechSynthesis: 0 }, stuck: null };
     const fail = r => { res.ok = false; res.reasons.push(r); };
     const origin = new URL(opts.base).origin;
@@ -258,8 +276,36 @@ async function walkLesson(browser, opts, stem) {
                     await footer().click({ timeout: 4000 });
                 } else if (plan.type === 'substitution') {
                     for (let i = 0; i < plan.options; i++) await page.locator(`[data-sub-index="${i}"]`).click({ timeout: 4000 });
-                } else if (plan.type === 'speaking' || plan.type === 'challenge') {
-                    // Needs a microphone: use the app's own skip path.
+                } else if (plan.type === 'challenge') {
+                    // The hand-written challenge (content/<course>/curriculum/challenges.json):
+                    // type its model answer in "Or type your response" and check it; the
+                    // app's own grader must accept it. A lesson without one gets a
+                    // generated placeholder from its checklist line: a content defect.
+                    const cur = challenges[stem];
+                    if (!cur) { fail(`${here}: no hand-written challenge for ${stem} (generated placeholder)`); }
+                    if (!cur || !cur.target || opts.skipChallenges) {
+                        await page.locator('.sp-cant-speak-btn').click({ timeout: 4000 });
+                        res.skipped.push('challenge');
+                        advanced = true;
+                    } else {
+                        const shown = await page.evaluate(() => stepState.target || '');
+                        if (shown !== cur.target) fail(`${here}: challenge on screen is not the hand-written one (target ${JSON.stringify(shown).slice(0, 60)})`);
+                        await page.locator('.sp-challenge-alt-input summary').click({ timeout: 4000 });
+                        await page.locator('#lesson-challenge-input').fill(cur.target, { timeout: 4000 });
+                        await footer().click({ timeout: 4000 });
+                        await page.waitForFunction(() => stepState.solved || stepState.attempts > 0, null, { timeout: 8000 }).catch(() => {});
+                        const ok = await page.evaluate(() => !!stepState.solved);
+                        if (!ok) {
+                            const fb = await page.evaluate(() => (document.querySelector('#lesson-content .lsn-feedback, #lesson-feedback') || {}).textContent || '');
+                            fail(`${here}: the challenge's own target was not accepted (${fb.trim().slice(0, 80)})`);
+                            await page.locator('.sp-cant-speak-btn').click({ timeout: 4000 });
+                            advanced = true;
+                        } else res.challenges = (res.challenges || 0) + 1;
+                    }
+                } else if (plan.type === 'speaking') {
+                    // Needs a microphone: use the app's own skip path, without its
+                    // 10-minute snooze (it would also skip the lesson's challenge).
+                    if (!opts.skipChallenges) await page.evaluate(() => { if (typeof SpeechInput !== 'undefined') SpeechInput.setCantSpeakNow = () => {}; });
                     await page.locator('.sp-cant-speak-btn').click({ timeout: 4000 });
                     res.skipped.push(plan.type);
                     advanced = true;
@@ -344,7 +390,7 @@ async function walkLesson(browser, opts, stem) {
             const r = await walkLesson(browser, o, stems[i]).catch(e => ({ stem: stems[i], ok: false, reasons: ['harness error: ' + e.message], consoleErrors: [], pageErrors: [], failedRequests: [], audio: [], skipped: [], notes: [], tts: {} }));
             results[i] = r;
             console.log(`${r.ok ? 'OK  ' : 'FAIL'} ${r.stem.padEnd(22)} ${String(r.steps || 0).padStart(3)} steps` +
-                `${r.skipped && r.skipped.length ? '  [' + r.skipped.join(', ') + ']' : ''}${r.ok ? '' : '  ' + r.reasons.join('; ')}`);
+                `${r.challenges ? '  challenge ✓' : ''}${r.skipped && r.skipped.length ? '  [' + r.skipped.join(', ') + ']' : ''}${r.ok ? '' : '  ' + r.reasons.join('; ')}`);
         }
     }
     await Promise.all(Array.from({ length: Math.min(o.jobs, stems.length) }, worker));
