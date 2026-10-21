@@ -1,0 +1,755 @@
+[
+ {
+  "file": "content/es-es/exercises/a2/a2-11-01-ex.json",
+  "id": "a2.11.01.ex05",
+  "set": {
+   "options": [
+    "Lucía celebró una tradición.",
+    "Lucía celebra una tradición.",
+    "Lucía va a celebrar una tradición."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "ir-infinitive"
+   }
+  },
+  "why": "Wrong option is a simple future (futuro-simple is Unit 19), before its screen. Replaced by ir a + infinitive (A1), tagged.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-01-ex.json",
+  "id": "a2.11.01.ex09",
+  "set": {
+   "options": [
+    "visitamos",
+    "visité",
+    "visitaron"
+   ],
+   "distractor_skills": null
+  },
+  "why": "Wrong option is a simple future (futuro-simple is Unit 19), before its screen. \"visitamos hemos\" was also a garbled non-phrase. Replaced by two real preterite forms of other persons.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-01-ex.json",
+  "id": "a2.11.01.ex10",
+  "set": {
+   "question": "¿Qué significa «bailar»?",
+   "options": [
+    "to dance",
+    "to sing",
+    "to visit"
+   ]
+  },
+  "why": "answer-in-prompt: \"festival\" is the same word in both languages; asks the meaning of a lesson verb instead.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-01-ex.json",
+  "id": "a2.11.01.ex11",
+  "set": {
+   "sentence": "El sábado pasado nosotros __ en el festival.",
+   "hint": "comer",
+   "answer": "comimos",
+   "english": "Last Saturday we ate at the festival."
+  },
+  "why": "The lesson teaches -er/-ir endings but no exercise uses an -er/-ir verb; also \"bailamos\" is identical in the present, so the sentence had no tense marker. Now an -er verb with a past marker.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-01-ex.json",
+  "id": "a2.11.01.ex14",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Bailaste ayer en el festival?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "Without a time word \"Sí, he bailado en el festival.\" is a natural second answer; ayer rules it out.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-01-ex.json",
+  "id": "a2.11.01.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Celebraste ayer una tradición?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, celebré una tradición.",
+    "Sí, celebro una tradición.",
+    "Sí, he celebrado una tradición."
+   ]
+  },
+  "why": "The question was plural (\"¿Celebraron...?\") and the right answer copied the form (\"Sí, celebraron\"): Carlos should say celebramos. Now a tú question with a yo answer; ayer rules out the perfecto.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-11-01-voc.json",
+  "id": "a2-11-01-voc",
+  "old": "{\n      \"lemma\": \"la tradición\",\n      \"translation\": \"tradition\",\n      \"pos\": \"noun\"\n    }",
+  "new": "{\n      \"lemma\": \"la tradición\",\n      \"translation\": \"tradition\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"ayer\",\n      \"translation\": \"yesterday\",\n      \"pos\": \"adverb\"\n    }",
+  "why": "ayer is listed only at a2-16-02 but the preterite lessons need it from a2-11-01 (grammar example, ex02, ex03); causes 12 unmet-word suspects and the tell-time-word error.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-11-01-gr.json",
+  "id": "a2-11-01-gr",
+  "old": "[\n        [\n          \"bailé\",\n          \"I danced\"\n        ],\n        [\n          \"bailaste\",\n          \"you danced\"\n        ],\n        [\n          \"bailó\",\n          \"he/she danced\"\n        ],\n        [\n          \"bailaron\",\n          \"they danced\"\n        ]\n      ]",
+  "new": "[\n        [\n          \"bailé\",\n          \"I danced\"\n        ],\n        [\n          \"bailaste\",\n          \"you danced\"\n        ],\n        [\n          \"bailó\",\n          \"he/she danced\"\n        ],\n        [\n          \"bailamos\",\n          \"we danced\"\n        ],\n        [\n          \"bailaron\",\n          \"they danced\"\n        ],\n        [\n          \"comí\",\n          \"I ate\"\n        ],\n        [\n          \"comió\",\n          \"he/she ate\"\n        ],\n        [\n          \"comimos\",\n          \"we ate\"\n        ]\n      ]",
+  "why": "Table lacks bailamos (the text lists -amos and ex11 uses it) and has no -er/-ir verb although the text teaches -í, -ió, -imos.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-11-01-gr.json",
+  "id": "a2-11-01-gr",
+  "old": "{\n          \"spanish\": \"Ellos hablaron de música.\",\n          \"english\": \"They talked about music.\"\n        }",
+  "new": "{\n          \"spanish\": \"Ellos hablaron de música.\",\n          \"english\": \"They talked about music.\"\n        },\n        {\n          \"spanish\": \"Comimos en el festival.\",\n          \"english\": \"We ate at the festival.\"\n        }",
+  "why": "No example of an -er/-ir verb although the text teaches -er/-ir endings.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-11-01-gr.json",
+  "id": "a2-11-01-gr",
+  "old": "\"The written accent on *bailé* and *bailó* isn't decorative: drop it and *bailo* (I dance, present tense) collides with *bailó* (he danced) — same letters, a different subject and a different tense.\"",
+  "new": "\"The written accent on *bailé* and *bailó* isn't decorative: drop it and *bailo* (I dance, present tense) collides with *bailó* (he danced) — same letters, a different subject and a different tense. Careful: *bailamos* means both \\\"we dance\\\" and \\\"we danced\\\"; a word like *ayer* tells you which.\"",
+  "why": "The nosotros form of -ar verbs is the same in present and preterite; the screen never says so (ex04, ex09, ex11 depend on a time word).",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-02-ex.json",
+  "id": "a2.11.02.ex05",
+  "set": {
+   "options": [
+    "Ayer Meg compró un abanico.",
+    "Ayer Meg compra un abanico.",
+    "Ayer Meg ha comprado un abanico."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "Wrong option is a simple future (futuro-simple is Unit 19), before its screen. Also Meg (not Carlos) buys the fan in story a2-11.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-02-ex.json",
+  "id": "a2.11.02.ex09",
+  "set": {
+   "options": [
+    "probamos",
+    "probar",
+    "probaron"
+   ],
+   "distractor_skills": null
+  },
+  "why": "Wrong option is a simple future (futuro-simple is Unit 19), before its screen.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-02-ex.json",
+  "id": "a2.11.02.ex12",
+  "set": {
+   "options": [
+    "hice",
+    "hizo",
+    "hiciste"
+   ]
+  },
+  "why": "\"hací\" is a garbled non-form (check-content: unmet word); other persons of hacer are real forms.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-11-02-voc.json",
+  "id": "a2-11-02-voc",
+  "old": "{\n      \"lemma\": \"el abanico\",\n      \"translation\": \"fan\",\n      \"pos\": \"noun\"\n    }",
+  "new": "{\n      \"lemma\": \"el abanico\",\n      \"translation\": \"fan\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"el día\",\n      \"translation\": \"day\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"bueno\",\n      \"translation\": \"good\",\n      \"pos\": \"adjective\"\n    }",
+  "why": "día and buen are used from a2-11-02 (grammar example, ex13) but listed only at a2-imperfectobasico-01 / a2-subjuntivobasico-consolidation.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-11-02-gr.json",
+  "id": "a2-11-02-gr",
+  "old": "\"Several very common verbs have irregular stems in the *pretérito* *indefinido*. Key forms include *fui*, *hice*, *tuve*, *estuve* and *pude*. These forms refer to completed actions just like regular forms.\"",
+  "new": "\"Several very common verbs have irregular stems in the *pretérito* *indefinido*. Key forms include *fui*, *hice*, *tuve*, *estuve* and *pude*. These forms refer to completed actions just like regular forms. The *tú* form ends in *-iste* and the *nosotros* form in *-imos*: *fuiste*, *fuimos*.\"",
+  "why": "The dialogues of this lesson use fuiste / hiciste and a2-11-04 uses fuimos, but only the yo forms are shown before them.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-11-02-gr.json",
+  "id": "a2-11-02-gr",
+  "old": "[\n        [\n          \"fui\",\n          \"I went / was\"\n        ],\n        [\n          \"hice\",\n          \"I did / made\"\n        ],\n        [\n          \"tuve\",\n          \"I had\"\n        ],\n        [\n          \"estuve\",\n          \"I was\"\n        ],\n        [\n          \"pude\",\n          \"I was able to\"\n        ]\n      ]",
+  "new": "[\n        [\n          \"fui, fuiste, fuimos\",\n          \"I went / was, you went / were, we went / were\"\n        ],\n        [\n          \"hice, hiciste, hicimos\",\n          \"I did / made, you did / made, we did / made\"\n        ],\n        [\n          \"tuve, tuviste, tuvimos\",\n          \"I had, you had, we had\"\n        ],\n        [\n          \"estuve, estuviste, estuvimos\",\n          \"I was, you were, we were\"\n        ],\n        [\n          \"pude, pudiste, pudimos\",\n          \"I was able to, you were able to, we were able to\"\n        ]\n      ]",
+  "why": "Add the tú and nosotros forms the lessons use before their screen (fuiste ex15, hiciste ex16, fuimos a2-11-04).",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-03-ex.json",
+  "id": "a2.11.03.ex05",
+  "set": {
+   "options": [
+    "Ayer el artista respondió una pregunta.",
+    "Ayer el artista responde una pregunta.",
+    "Ayer el artista ha respondido una pregunta."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "Wrong option is a simple future (futuro-simple is Unit 19), before its screen. Wrong option is a perfecto with ayer (a real, single-fault error in Spain), instead of a future before its screen.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-03-ex.json",
+  "id": "a2.11.03.ex09",
+  "set": {
+   "options": [
+    "visitamos",
+    "visité",
+    "visitaron"
+   ],
+   "distractor_skills": null
+  },
+  "why": "Wrong option is a simple future (futuro-simple is Unit 19), before its screen.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-03-ex.json",
+  "id": "a2.11.03.ex12",
+  "set": {
+   "question": "Which question means 'Where were you?'",
+   "options": [
+    "¿Dónde estuviste?",
+    "¿Dónde estuvistes?",
+    "¿Dónde estás?"
+   ],
+   "distractor_skills": {
+    "2": "present-tense"
+   }
+  },
+  "why": "\"¿Dónde estuviste has?\" is a garbled non-phrase, and without a meaning in the stem \"¿Dónde estuve?\"-type questions would be right too; the stem now gives the meaning.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-03-ex.json",
+  "id": "a2.11.03.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué compraste ayer?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "Meg buys the fan in story a2-11 (speakers swapped); ayer rules out the perfecto as a second natural answer; the other options are well-formed forms of other skills.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-11-03-gr.json",
+  "id": "a2-11-03-gr",
+  "old": "\"Match the person when you answer: *¿Qué hiciste?* asks about *tú*, so a natural reply switches back to *yo* — *Hice una tarta*, not *hiciste*.\"",
+  "new": "\"Match the person when you answer: *¿Qué hiciste?* asks about *tú*, so a natural reply switches back to *yo* — *Hice fotografías*, not *hiciste*.\"",
+  "why": "tarta is in no vocabulary list.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-04-ex.json",
+  "id": "a2.11.04.ex05",
+  "set": {
+   "options": [
+    "Ayer Lucía llegó al concierto.",
+    "Ayer Lucía llega al concierto.",
+    "Ayer Lucía ha llegado al concierto."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "Wrong option is a simple future (futuro-simple is Unit 19), before its screen. Wrong option is a perfecto with ayer (a real, single-fault error in Spain), instead of a future before its screen.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-04-ex.json",
+  "id": "a2.11.04.ex07",
+  "set": {
+   "sentence": "Después Daniela __ con los artistas.",
+   "english": "Afterwards Daniela talked with the artists."
+  },
+  "why": "In story a2-11 Daniela (not Carlos) talks with the artists.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-04-ex.json",
+  "id": "a2.11.04.ex09",
+  "set": {
+   "options": [
+    "hablamos",
+    "hablar",
+    "hablaron"
+   ],
+   "distractor_skills": null
+  },
+  "why": "Wrong option is a simple future (futuro-simple is Unit 19), before its screen.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-04-ex.json",
+  "id": "a2.11.04.ex11",
+  "set": {
+   "hint": null
+  },
+  "why": "The hint \"first\" is the answer in English (the english field already gives the sentence)."
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-04-ex.json",
+  "id": "a2.11.04.ex17",
+  "old": "\"Say that you first visited the festival.\"",
+  "new": "\"Say that first we visited the festival.\"",
+  "why": "Prompt says \"you\" but the stored answer is \"Primero visitamos el festival.\" (we): pin the person.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-04-ex.json",
+  "id": "a2.11.04.ex17",
+  "old": "\"Say that afterwards you bought a fan.\"",
+  "new": "\"Say that afterwards we bought a fan.\"",
+  "why": "Same: stored answer is \"Después compramos un abanico.\" (we).",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-04-ex.json",
+  "id": "a2.11.04.ex17",
+  "old": "\"Say that in the afternoon you went to the concert.\"",
+  "new": "\"Say that in the afternoon we went to the concert.\"",
+  "why": "Same: stored answer is \"Por la tarde fuimos al concierto.\" (we).",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-05-ex.json",
+  "id": "a2.11.05.ex05",
+  "set": {
+   "options": [
+    "Ayer Carlos compró una fotografía en el mercado.",
+    "Ayer Carlos compra una fotografía en el mercado.",
+    "Ayer Carlos ha comprado una fotografía en el mercado."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "Wrong option is a simple future (futuro-simple is Unit 19), before its screen. Wrong option is a perfecto with ayer (a real, single-fault error in Spain), instead of a future before its screen.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-05-ex.json",
+  "id": "a2.11.05.ex09",
+  "set": {
+   "options": [
+    "caminamos",
+    "caminar",
+    "caminaron"
+   ],
+   "distractor_skills": null
+  },
+  "why": "Wrong option is a simple future (futuro-simple is Unit 19), before its screen. pasear / paseamos / pasearemos are also unmet (first taught a2-imperfectocontraste-01); caminar is known.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-11-05-voc.json",
+  "id": "a2-11-05-voc",
+  "old": "{\n      \"lemma\": \"la fotografía\",\n      \"translation\": \"photograph\",\n      \"pos\": \"noun\"\n    }",
+  "new": "{\n      \"lemma\": \"la fotografía\",\n      \"translation\": \"photograph\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"mirar\",\n      \"translation\": \"to look at\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"el dulce\",\n      \"translation\": \"sweet\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tradicional\",\n      \"translation\": \"traditional\",\n      \"pos\": \"adjective\"\n    }",
+  "why": "mirar (ex03, ex08) is listed only at a2-imperativoafirmativo-01, dulce (ex13, ex16, ex19, ex20, story) in no list, tradicional (same items) only at b1-12-02.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-05-ex.json",
+  "id": "a2.11.05.ex11",
+  "set": {
+   "question": "¿Adónde fueron los amigos el fin de semana pasado?",
+   "options": [
+    "A un festival.",
+    "A la playa.",
+    "A un hotel."
+   ]
+  },
+  "why": "Question used hubo (\"¿Dónde hubo un festival?\"), not taught at A2 in Unit 11, and the options included an airport/hotel unrelated to the story.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-05-ex.json",
+  "id": "a2.11.05.ex14",
+  "set": {
+   "options": [
+    "Un pequeño abanico.",
+    "Una fotografía.",
+    "Un libro de cocina."
+   ]
+  },
+  "why": "length-giveaway 32 vs 19 and unmet \"mano\" (hecho a mano): the shorter right option still matches the story.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-05-ex.json",
+  "id": "a2.11.05.ex15",
+  "set": {
+   "question": "¿Con quiénes habló Daniela?",
+   "options": [
+    "Con los artistas.",
+    "Con Kaylee y Lauren.",
+    "Con Lucía y Carlos."
+   ]
+  },
+  "why": "Unmet participó / juego (b1) in the old question; asks a story fact with met words (Daniela talked with the artists).",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-05-ex.json",
+  "id": "a2.11.05.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué probaste ayer?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "In story a2-11 Carlos tries the sweet (speakers swapped); ayer rules out the perfecto.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-05-ex.json",
+  "id": "a2.11.05.ex17",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué compraste ayer?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "In story a2-11 Meg buys the fan (speakers swapped); ayer rules out the perfecto.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-05-ex.json",
+  "id": "a2.11.05.ex18",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué hicieron ayer por la tarde?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Fuimos a un concierto.",
+    "Vamos a un concierto.",
+    "Hemos ido a un concierto."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "asistieron / asisten / asistido and aire are unmet (a2-indefinidosnegacion-01, no list); fuimos is taught in a2-11-02 / a2-11-04. ayer rules out the perfecto.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"El fin de semana pasado hubo un festival en el centro de Hanói.\"",
+  "new": "\"El fin de semana pasado los amigos fueron a un festival en el centro de Hanói.\"",
+  "why": "hubo is not taught at A2 in Unit 11 (the imperfect is Unit 21); stories may use unmet words but not forms of a later unit.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"Las calles estaban llenas de música, comida y espectáculos.\"",
+  "new": "\"Las calles estuvieron llenas de música, comida y espectáculos.\"",
+  "why": "Imperfect (estaban) in a Unit 11 story; the imperfect is Unit 21.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"Carlos probó un dulce tradicional que nunca había visto.\"",
+  "new": "\"Carlos probó un dulce tradicional muy diferente.\"",
+  "why": "Pluperfect (había visto) is B1.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"¿De qué trata principalmente este texto?\"",
+  "new": "\"¿Qué hizo Daniela en el festival?\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"De una conferencia sobre literatura española moderna.\"",
+  "new": "\"Compró una novela en español.\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"De un día festivo en el centro de Hanói donde los amigos disfrutan de actividades culturales.\"",
+  "new": "\"Habló con varios artistas y les hizo muchas fotografías.\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"De la preparación de un concierto benéfico en un colegio.\"",
+  "new": "\"Participó en un juego tradicional.\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"De una competición de juegos de mesa en la universidad.\"",
+  "new": "\"Probó un dulce tradicional.\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"El fin de semana pasado hubo un festival en el centro de Hanói y Lucía invitó a todos a pasar el día juntos disfrutando de música, comida, espectáculos y un concierto al aire libre.\"",
+  "new": "\"Daniela habló con varios artistas y les hizo muchas fotografías.\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"¿Qué demuestra la experiencia del grupo a lo largo del día en el festival?\"",
+  "new": "\"¿Dónde cenaron los amigos antes de volver a casa?\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"Que el grupo tiene un gran interés por descubrir y aprender sobre las tradiciones locales.\"",
+  "new": "\"En un mercado nocturno.\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"Que ninguno de ellos disfruta de los espectáculos de música al aire libre.\"",
+  "new": "\"En casa de Lucía.\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"Que prefieren quedarse en casa leyendo en vez de salir a la calle.\"",
+  "new": "\"En un restaurante de marisco.\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"Que no les gustó la comida del mercado nocturno.\"",
+  "new": "\"En el concierto.\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-11.json",
+  "id": "a2-original-11",
+  "old": "\"Carlos probó un dulce tradicional, Daniela habló con artistas, Kaylee participó en un juego tradicional y todos asistieron al concierto, lo que muestra su curiosidad y entusiasmo por la cultura vietnamita.\"",
+  "new": "\"Antes de volver a casa, cenaron juntos en un mercado nocturno.\"",
+  "why": "Comprehension question was generic (\"¿De qué trata principalmente este texto?\") or an abstract inference (\"¿Qué demuestra la experiencia...?\"); asks what the people do.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-consolidation-ex.json",
+  "id": "a2.11.consolidation.ex02",
+  "set": {
+   "sentence": "Ayer __ en el concierto.",
+   "hint": "cantar",
+   "answer": "canté",
+   "english": "Yesterday I sang at the concert."
+  },
+  "why": "consolidation-copy of a2.11.01.ex03: vary the words.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-consolidation-ex.json",
+  "id": "a2.11.consolidation.ex07",
+  "set": {
+   "english": "Afterwards we talked with the artist.",
+   "tiles": [
+    "Después",
+    "hablamos",
+    "con",
+    "el",
+    "artista"
+   ],
+   "solution": [
+    "Después",
+    "hablamos",
+    "con",
+    "el",
+    "artista"
+   ]
+  },
+  "why": "consolidation-copy of a2.11.04.ex12: vary the words.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-consolidation-ex.json",
+  "id": "a2.11.consolidation.ex10",
+  "set": {
+   "sentence": "Ayer nosotros __ en casa de Lucía.",
+   "hint": "estar",
+   "answer": "estuvimos",
+   "english": "Yesterday we were at Lucía's house."
+  },
+  "why": "consolidation-copy of a2.11.02.ex14: vary the words.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-consolidation-ex.json",
+  "id": "a2.11.consolidation.ex11",
+  "set": {
+   "question": "Which sentence recounts what we did yesterday?",
+   "options": [
+    "Primero visitamos el festival.",
+    "Primero visito el festival.",
+    "Primero hemos visitado el festival."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer / mañana inside the wrong options; the stem now carries \"yesterday\" and the options are plain one-fault sentences.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-consolidation-ex.json",
+  "id": "a2.11.consolidation.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Estuviste ayer en el concierto?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ]
+  },
+  "why": "Without ayer \"Sí, he estado en el concierto.\" is a natural second answer.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-consolidation-ex.json",
+  "id": "a2.11.consolidation.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué hicieron ayer después?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Después compramos un abanico.",
+    "Después comprar un abanico.",
+    "Después hemos comprado un abanico."
+   ],
+   "distractor_skills": {
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "\"Después compramos un abanico mañana.\" has a tell-time word and contradicts itself; ayer rules out the perfecto.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-11-consolidation-ex.json",
+  "id": "a2.11.consolidation.ex20",
+  "set": {
+   "sentence": "Ayer fuimos al concierto.",
+   "english": "Yesterday we went to the concert."
+  },
+  "why": "consolidation-copy of a2.11.03.ex19: vary the words.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-11-consolidation.json",
+  "id": "a2-11-consolidation",
+  "old": "\n        \"Recount completed past events using the pretérito indefinido.\"",
+  "new": "\n        \"Use the pretérito indefinido to recount a day at the festival.\"",
+  "why": "checklist-shared: this goal line is word for word the goal of a2-17-02."
+ },
+ {
+  "file": "content/es-es/lessons/a2/a2-11-consolidation.json",
+  "id": "a2-11-consolidation",
+  "old": "\"I can recount completed past events using the pretérito indefinido.\"",
+  "new": "\"I can use the pretérito indefinido to recount a day at the festival.\"",
+  "why": "checklist-shared: this checklist line is word for word the one in a2-17-02 (error)."
+ }
+]
