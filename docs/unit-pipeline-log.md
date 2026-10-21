@@ -358,6 +358,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-21 | es A1 19–24 (both courses) | paired read, Spanish template, 3 units/reader, es-es read once, mirrored | | 395k + 332k, 21.7 + 17.1 | 273 proposed (55 / 45 / 45 / 29 / 47 / 52), 0 rejected; Claude changed 5 (2 retags kept, 1 story logic, 1 option set, 1 spelling) and added 4 (es-latam twins and *pedir*/*clínica*), plus 4 after the new check | ~121k reader tokens/unit (A ~132k, B ~111k; ×1.14 of 13–18's ~106k); ~46 fixes/unit (×1.04); 226 of 273 to review; 272/273 mirrored (1 es-es variant), 1 put in es-latam words; walk 36/36 per course; both report writes allowed |
 | 10-21 | es A2 1–6 (both courses) | paired read, Spanish template from `batch_setup.py`, 3 units/reader, mirrored | | 347k + 313k, 21.5 + 17.6 | 263 proposed (58 / 44 / 60 / 36 / 24 / 41), 0 rejected; Claude changed 0, added 8 plus one reflexive pass (84 changes per course) | ~110k reader tokens/unit (A ~116k, B ~104k; ×0.91 of A1 19–24's ~121k on lighter baselines: 22 errors / 143 suspects for six units against 43 / 183); ~44 fixes/unit (×0.95); 186 of 263 to review; 257/263 mirrored, 6 es-latam fixes by hand; walk 36/36 per course; both report writes allowed |
 | 10-21 | es A2 7–12 (both courses) | paired read, `batch_setup.py`, 3 units/reader, mirrored | | 351k + 382k (B by its resumed notice), 23.4 + ~20 | 347 proposed (45 / 75 / 39 / 63 / 61 / 64), 0 rejected after 1 reworded; Claude changed 7, added a unit-wide fix (16 lines per course), synced 6 es-latam story question sets, reopened Units 4–6 for `table-repeat` | ~122k reader tokens/unit (A ~117k, B ~127k; ×1.11 of A2 1–6's ~110k on heavier baselines: 50 errors / 106 suspects against 22 / 143); ~58 fixes/unit (×1.32); 245 of 347 to review; 334/347 mirrored; walk 36/36 per course; both report writes allowed |
+| 10-21 | es A2 13–18 (both courses) | paired read, `batch_setup.py`, 3 units/reader, mirrored | | 342k + 366k, 21.5 + 21.3 | 277 proposed (43 / 56 / 45 / 50 / 35 / 48), 0 rejected; Claude changed 4, added 17 *vosotros* questions and 6 es-latam items | ~118k reader tokens/unit (×0.97 of 7–12's ~122k); ~46 fixes/unit; 209 of 277 to review; 270/277 mirrored; walk 36/36 per course **with challenges typed and graded** |
 | 10-21 | es A1 25–26 (both courses) | **one** reader, 2 units, Spanish template, mirrored | | 244k (the resumed notice only; stopped by a Sonnet session limit after 3 of 4 files) | 84 proposed (31 / 53), 0 rejected; Claude changed 3 and fixed one cross-story contradiction | ~122k reader tokens/unit (uncertain: one notice); ~42 fixes/unit; 59 of 84 to review; 84/84 mirrored, 5 put in es-latam words (*billete* → *boleto*); level walk 156/156 per course |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -937,4 +938,32 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   instead).
 - **Open, the user's:** *¿Te gustaría…?* removed from the invitations
   unit (ROADMAP 153).
+
+### 2026-10-21: Spanish A2 units 13–18, and the user's decisions
+
+- **Cost:** ~118k a unit, flat against 7–12; neither reader hit a limit.
+  **Keep three per reader.**
+- **Decisions (user, 2026-10-21):** Unit 3 recast around time words (a
+  Sonnet writer in a third slot after the readers; reviewed separately);
+  es-es uses *vosotros* where it is natural (friends in the plural; formal
+  speakers keep *ustedes*): 50 A2 items in Units 1–12, 4 in A1 and 17 in
+  this batch converted by a script with a keep-list I read, the Unit 11
+  preterite tables given their es-es *vosotros* rows, and the reader
+  template now says it; *¿Cómo se dice / Qué significa?* stay in Spanish.
+- **Challenges are walked now** (user asked why they weren't checked):
+  `walk_lessons.js` types each lesson's hand-written target into the
+  challenge's "Or type your response", requires the app's grader to
+  accept it, and fails a lesson with no entry (generated placeholder) or
+  a different challenge on screen. The skip on speaking steps no longer
+  snoozes later mic steps (the snooze had hidden every challenge after
+  the first speaking step). First runs: A1 156/156 and A2 1–12 72/72 per
+  course, then 36/36 per batch; a Unit 13 lesson without an entry failed
+  as it should before its challenges were added.
+- **Readers' *vosotros* work:** reader B did none despite the focus
+  note; a script plus a read keep-list was cheaper than prompting again.
+  The template now carries the rule for 19–33.
+- **Seen once:** a reader marked *salón* fixes `variant: es-es`, which
+  made the mirror skip what it would have converted (*sala*). Noted.
+- **Open, the user's:** *mientras* with the preterite in Unit 13
+  (ROADMAP 153).
 
