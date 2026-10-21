@@ -24,3 +24,4 @@ Started 2026-10-21T03:20:18Z from origin/master 7c0af07f. Two Sonnet readers, th
 - directions: none
 - weather: none
 - work-obligations: none
+- Readers launched 03:22:15Z (Sonnet, background); prompts in prompt-a.txt / prompt-b.txt.
