@@ -1,0 +1,438 @@
+[
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-01-ex.json",
+  "id": "a1.gustar.01.ex06",
+  "set": {
+   "options": [
+    "No me gusta la música.",
+    "No me gusto la música.",
+    "No me gusta música."
+   ]
+  },
+  "kind": "target",
+  "why": "each wrong option had two faults (pronoun+verb; order+article); one fault each"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-01-ex.json",
+  "id": "a1.gustar.01.ex07",
+  "set": {
+   "sentence": "Me _____ la comida.",
+   "english": "I like food."
+  },
+  "kind": "target",
+  "why": "mexicana is in no vocabulary list"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-01-ex.json",
+  "id": "a1.gustar.01.ex10",
+  "set": {
+   "options": [
+    "Me gusta el café.",
+    "Soy de Sudáfrica.",
+    "Tengo una hermana."
+   ]
+  },
+  "kind": "target",
+  "why": "hambre unmet (b1-38-03)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-02-ex.json",
+  "id": "a1.gustar.02.ex04",
+  "set": {
+   "sentence": "Me _____ los tacos.",
+   "english": "I like tacos."
+  },
+  "kind": "target",
+  "why": "mexicanos is in no vocabulary list"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-02-ex.json",
+  "id": "a1.gustar.02.ex08",
+  "set": {
+   "sentence": "Me _____ los deportes y las películas.",
+   "english": "I like sports and movies."
+  },
+  "kind": "target",
+  "why": "a mí (gustar-03) and historia (gustar-05) used before their lessons"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-02-ex.json",
+  "id": "a1.gustar.02.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Te gustan estos tacos?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Me gustan mucho.",
+    "Me gusta mucho.",
+    "No son libros."
+   ]
+  },
+  "kind": "target",
+  "why": "parecen unmet; tell-punctuation (only the right option had !)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-02-ex.json",
+  "id": "a1.gustar.02.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Te gustan las películas?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "acción unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-03-ex.json",
+  "id": "a1.gustar.03.ex03",
+  "set": {
+   "sentence": "A Carlos _____ gusta la comida.",
+   "english": "Carlos likes the food."
+  },
+  "kind": "target",
+  "why": "picante is in no vocabulary list"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-03-ex.json",
+  "id": "a1.gustar.03.ex04",
+  "set": {
+   "options": [
+    "nos",
+    "les",
+    "le"
+   ]
+  },
+  "kind": "target",
+  "why": "option os is vosotros (A2, unit 33; es-latam has none, no vosotros anywhere before)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-03-ex.json",
+  "id": "a1.gustar.03.ex09",
+  "set": {
+   "tiles": [
+    "A",
+    "mí",
+    "me",
+    "gusta",
+    "Hanói."
+   ],
+   "solution": [
+    "A",
+    "mí",
+    "me",
+    "gusta",
+    "Hanói."
+   ],
+   "english": "I like Hanoi."
+  },
+  "kind": "target",
+  "why": "vocab-unused: a mí is listed but no item uses it"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-03-ex.json",
+  "id": "a1.gustar.03.ex08",
+  "set": {
+   "english": "Do you all like music?"
+  },
+  "kind": "english",
+  "why": "English 'Do you like' fits the singular te; the sentence says a ustedes"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-03-ex.json",
+  "id": "a1.gustar.03.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿A Carlos le gusta la comida de Vietnam?"
+    },
+    {
+     "speaker": "Daniela",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, a él le gusta mucho.",
+    "No, no tengo tiempo.",
+    "Es de Hungría."
+   ]
+  },
+  "kind": "target",
+  "why": "vietnamita unmet; hambre unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-03-ex.json",
+  "id": "a1.gustar.03.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿A ustedes les gusta la música?"
+    },
+    {
+     "speaker": "Meg y Lauren",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, nos gusta mucho.",
+    "Sí, te gusta mucho.",
+    "No, somos de Hanói."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away 20 vs 13; viajar is taught in gustar-04 (gustar + infinitive)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-04-ex.json",
+  "id": "a1.gustar.04.ex03",
+  "set": {
+   "sentence": "¿Qué te gusta _____ por la noche?",
+   "english": "What do you like to do at night?"
+  },
+  "kind": "target",
+  "why": "fines unmet (hobbies-03)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-04-ex.json",
+  "id": "a1.gustar.04.ex04",
+  "set": {
+   "tiles": [
+    "Me",
+    "gusta",
+    "viajar",
+    "por",
+    "España."
+   ],
+   "solution": [
+    "Me",
+    "gusta",
+    "viajar",
+    "por",
+    "España."
+   ],
+   "english": "I like to travel around Spain."
+  },
+  "kind": "target",
+  "why": "mundo unmet (a2)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-04-ex.json",
+  "id": "a1.gustar.04.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué te gusta hacer en casa?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Me gusta leer y cocinar.",
+    "Tengo veintiocho años.",
+    "Soy estudiante de español."
+   ]
+  },
+  "kind": "target",
+  "why": "domingos unmet (hobbies-05); length give-away 24 vs 15"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-04-ex.json",
+  "id": "a1.gustar.04.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Te gusta bailar?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, me gusta bailar.",
+    "No, me llamo Meg.",
+    "Sí, vivo en Hanói."
+   ]
+  },
+  "kind": "target",
+  "why": "salsa unmet; me encanta used before gustar-05; length give-away 23 vs 14; tell-punctuation"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-05-ex.json",
+  "id": "a1.gustar.05.ex02",
+  "set": {
+   "question": "¡Me __ la música!"
+  },
+  "kind": "target",
+  "why": "latina is in no vocabulary list"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-05-ex.json",
+  "id": "a1.gustar.05.ex08",
+  "set": {
+   "sentence": "¿A ti te _____ el arte?",
+   "english": "Are you interested in art?"
+  },
+  "kind": "target",
+  "why": "moderno is in no vocabulary list"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-05-ex.json",
+  "id": "a1.gustar.05.ex10",
+  "set": {
+   "options": [
+    "Sí, me encanta.",
+    "No tengo tiempo.",
+    "Soy profesor."
+   ]
+  },
+  "kind": "target",
+  "why": "hambre unmet; tell-punctuation"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-05-ex.json",
+  "id": "a1.gustar.05.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué te interesa?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Me interesa la historia.",
+    "Tengo dos hermanas.",
+    "Vivo en una casa."
+   ]
+  },
+  "kind": "target",
+  "why": "parece and pintura unmet; length give-away 29 vs 16"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-consolidation-ex.json",
+  "id": "a1.gustar.cons.ex08",
+  "set": {
+   "sentence": "A ellos les _____ las ciudades grandes.",
+   "english": "They are interested in big cities."
+  },
+  "kind": "target",
+  "why": "culturas and asiáticas unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-consolidation-ex.json",
+  "id": "a1.gustar.cons.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué te gusta escuchar?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Me gusta la música.",
+    "Te gusta la música.",
+    "Yo gusto la música."
+   ],
+   "teaches": [
+    "gustar"
+   ]
+  },
+  "kind": "target",
+  "why": "jazz, latina, clásica unmet; wrong options differed from the right one in two ways; wrong options show gustar forms, not another question"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-consolidation-ex.json",
+  "id": "a1.gustar.cons.ex12",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿A tus amigos les gusta el café?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "picante unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-gustar-consolidation-ex.json",
+  "id": "a1.gustar.cons.ex13",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you like music and reading.",
+     "answer": "Me gusta la música y leer."
+    },
+    {
+     "prompt": "Say that we like apples.",
+     "answer": "Nos gustan las manzanas."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "mexicanos unmet"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-gustar-02-gusta-gustan-gr.json",
+  "old": "Remember: *yo* does not change the ending of *gustar*. It is always either *gusta* or *gustan*.",
+  "new": "Remember: *me*, *te*, *le* and the other pronouns never change the ending of *gustar*. Only the thing you like decides between *gusta* and *gustan*.",
+  "kind": "target",
+  "why": "tip brings in yo, which the pattern never uses; says 'always' though other endings exist",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-gustar-05-encantar-gr.json",
+  "old": "Do NOT say *Me encanta mucho*. *Encantar* already means to like very much, so *mucho* is redundant!",
+  "new": "Avoid *Me encanta mucho*: *encantar* already means to like very much, so *mucho* adds nothing.",
+  "kind": "english",
+  "why": "*Me encanta mucho* is heard and accepted; 'Do NOT' overstates",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-gustar-01.json",
+  "old": "Understand that the thing you like is the subject of the sentence.",
+  "new": "Use the definite article with the thing you like: *el café*, *la música*.",
+  "kind": "english",
+  "why": "goal not practised by any item; the article is (ex09, tip)",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-gustar-05.json",
+  "old": "I can express strong passion with encantar.",
+  "new": "I can say what I love with me encanta.",
+  "kind": "english",
+  "why": "awkward checklist/canDo wording",
+  "sure": false
+ }
+]

@@ -1,0 +1,713 @@
+[
+ {
+  "file": "content/es-es/vocabulary/a1/a1-abilities-01-voc.json",
+  "old": "      \"lemma\": \"claro que sí\",",
+  "new": "      \"lemma\": \"venir\",\n      \"translation\": \"to come\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"claro que sí\",",
+  "kind": "english",
+  "why": "venir is used in ex06/ex11 and the grammar screen but is in no vocabulary list; listed in the first lesson that uses it"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-01-ex.json",
+  "id": "a1.abi.01.ex03",
+  "set": {
+   "sentence": "¿_____ ayudarme con la tarea?",
+   "english": "Can you help me with the task?"
+  },
+  "kind": "target",
+  "why": "ejercicio unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-01-ex.json",
+  "id": "a1.abi.01.ex05",
+  "set": {
+   "tiles": [
+    "¿Puedo",
+    "pasar,",
+    "por",
+    "favor?"
+   ],
+   "solution": [
+    "¿Puedo",
+    "pasar,",
+    "por",
+    "favor?"
+   ],
+   "english": "May I come in, please?"
+  },
+  "kind": "target",
+  "why": "vocab-unused: pasar is listed but no item uses it"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-01-ex.json",
+  "id": "a1.abi.01.ex07",
+  "set": {
+   "sentence": "¿Ustedes _____ repetir la pregunta, por favor?",
+   "english": "Can you repeat the question, please?"
+  },
+  "kind": "target",
+  "why": "frase is in no vocabulary list"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-01-ex.json",
+  "id": "a1.abi.01.ex09",
+  "set": {
+   "question": "How do you ask \"Can you help me?\"",
+   "options": [
+    "¿Puedes ayudarme?",
+    "¿Puedo ayudarme?",
+    "¿Podemos ayudarme?"
+   ]
+  },
+  "kind": "target",
+  "why": "garbled wrong options (two faults: '¿Poder tú ayudar?'); question ends '?\"?'"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-01-ex.json",
+  "id": "a1.abi.01.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "Carlos, ¿puedes explicarme esta regla?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, puedo explicar la regla.",
+    "Hoy es lunes por la tarde.",
+    "Tengo dos hermanos mayores."
+   ]
+  },
+  "kind": "target",
+  "why": "palabra unmet; Ayer/martes/paraguas unmet and a past form at A1 (tell-time-word); length give-away 31 vs 18; tell-opener claro; first-letter case"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-01-ex.json",
+  "id": "a1.abi.01.ex11",
+  "set": {
+   "options": [
+    "Sí, puedo llegar a las ocho después de clase.",
+    "Sí, puedes llegar a las ocho después de clase.",
+    "Sí, sé llegar a las ocho después de clase."
+   ],
+   "teaches": [
+    "querer-poder"
+   ],
+   "distractor_skills": {
+    "2": "saber-infinitivo"
+   }
+  },
+  "kind": "target",
+  "why": "wrong option 3 had two faults (saber and 2nd person); wrong options show poder/saber forms, not vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-01-ex.json",
+  "old": "      \"teaches\": [\n        \"querer-poder\"\n      ]\n    }\n  ]\n}",
+  "new": "      \"teaches\": [\n        \"querer-poder\"\n      ]\n    },\n    {\n      \"id\": \"a1.abi.01.ex13\",\n      \"category\": \"grammar\",\n      \"type\": \"fill-blank\",\n      \"sentence\": \"Hoy no _____ a clase porque estoy enfermo.\",\n      \"hint\": \"venir, yo\",\n      \"answer\": \"vengo\",\n      \"teaches\": [\n        \"present-irregular-yo\"\n      ],\n      \"english\": \"I am not coming to class today because I am ill.\"\n    }\n  ]\n}",
+  "kind": "target",
+  "sure": false,
+  "why": "new item for the new skill present-irregular-yo (vengo; venir is now listed in this lesson); must stay the last fix on this exercises file"
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-abilities-01.json",
+  "old": "\"a1.abi.01.ex09\"\n      ]",
+  "new": "\"a1.abi.01.ex09\",\n        \"a1.abi.01.ex13\"\n      ]",
+  "kind": "tag",
+  "why": "add the new item to the Practice group",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-abilities-01-poder-gr.json",
+  "old": "The verb **poder** (can / to be able to) is an *o → ue* stem-changing verb in the present tense. It is followed directly by an infinitive verb:",
+  "new": "You know stem-changing verbs from Unit 8 and *querer* from Unit 10 (*quiero*, *quieres*). The verb **poder** (can / to be able to) changes *o → ue* in the same way. It is followed directly by an infinitive verb:",
+  "kind": "english",
+  "why": "screen presents a stem-changing verb as brand new; Unit 8 (stem-changes) and Unit 10 (querer) are known. NB the Unit 10 screen a1-08-03 teaches only querer although skill querer-poder is described as 'querer and poder': this is the first screen with poder"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-02-ex.json",
+  "id": "a1.abi.02.ex02",
+  "set": {
+   "options": [
+    "yo sé",
+    "yo sabo",
+    "yo sabe"
+   ],
+   "teaches": [
+    "present-irregular-yo"
+   ]
+  },
+  "kind": "target",
+  "why": "'yo supe' is a pretérito (A2) form at A1; the item tests the irregular yo form",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-02-ex.json",
+  "id": "a1.abi.02.ex03",
+  "set": {
+   "sentence": "Yo _____ hablar inglés muy bien.",
+   "english": "I know how to speak English very well.",
+   "teaches": [
+    "present-irregular-yo"
+   ]
+  },
+  "kind": "target",
+  "why": "mar unmet; fill-blank tests the irregular yo form; also gives the new vocabulary entry inglés a use",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-02-ex.json",
+  "id": "a1.abi.02.ex05",
+  "set": {
+   "tiles": [
+    "Carlos",
+    "sabe",
+    "cocinar",
+    "arroz",
+    "y",
+    "pollo."
+   ],
+   "solution": [
+    "Carlos",
+    "sabe",
+    "cocinar",
+    "arroz",
+    "y",
+    "pollo."
+   ],
+   "english": "Carlos knows how to cook rice and chicken."
+  },
+  "kind": "target",
+  "why": "mexicana unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-02-ex.json",
+  "id": "a1.abi.02.ex06",
+  "set": {
+   "options": [
+    "sabemos",
+    "sabe",
+    "saben"
+   ]
+  },
+  "kind": "target",
+  "why": "wrong option sabéis is a vosotros form (A2 skill; es-latam's file already has 'sabe')"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-02-ex.json",
+  "id": "a1.abi.02.ex07",
+  "set": {
+   "sentence": "Meg y Carlos _____ bailar.",
+   "english": "Meg and Carlos know how to dance."
+  },
+  "kind": "target",
+  "why": "salsa unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-02-ex.json",
+  "id": "a1.abi.02.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "Carlos, ¿qué sabes tocar?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sé tocar el piano.",
+    "Tengo fiebre hoy.",
+    "Son las tres y media."
+   ]
+  },
+  "kind": "target",
+  "why": "contradicts the story (Carlos plays the piano, not the guitar); algún, instrumento, acústica, punto unmet; length give-away 42 vs 22; el piano listed but unused"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-02-ex.json",
+  "id": "a1.abi.02.ex11",
+  "set": {
+   "options": [
+    "Sí, sé nadar muy bien.",
+    "Sí, sabes nadar muy bien.",
+    "Sí, sé nado muy bien."
+   ]
+  },
+  "kind": "target",
+  "why": "'iba' (imperfect, A2), playa and piscina unmet; wrong option 2 mixes person and verb; conozco+nadar presents the saber/conocer contrast before a1-abilities-03"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-abilities-02-saber-gr.json",
+  "old": "To say that you *know how to do* something through learning or practice, Spanish uses **saber + infinitivo** (without needing a word for *how*):",
+  "new": "You know *saber* + infinitive from Unit 13 (*¿Sabes bailar?*, *No sé cocinar*). To say that you *know how to do* something through learning or practice, Spanish uses **saber + infinitivo** (without needing a word for *how*):",
+  "kind": "english",
+  "why": "screen presents Unit 13's saber + infinitive as new"
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-abilities-02.json",
+  "old": "Learn the irregular yo form of saber: yo sé.",
+  "new": "Review the irregular yo form of saber: yo sé.",
+  "kind": "english",
+  "why": "yo sé was taught in Unit 13 (a1-10-05)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-03-ex.json",
+  "id": "a1.abi.03.ex02",
+  "set": {
+   "question": "Yo __ esa cafetería; es muy bonita."
+  },
+  "kind": "target",
+  "why": "agradable is in no vocabulary list"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-03-ex.json",
+  "id": "a1.abi.03.ex06",
+  "set": {
+   "question": "¿Qué verbo usas para hablar de información, como una dirección o un número?"
+  },
+  "kind": "target",
+  "why": "'dato' unmet; la información listed but unused"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-03-ex.json",
+  "id": "a1.abi.03.ex09",
+  "set": {
+   "options": [
+    "Conozco a Carlos.",
+    "Sé a Carlos.",
+    "Conozco con Carlos."
+   ]
+  },
+  "kind": "target",
+  "why": "wrong option 'Conozco Carlos.' tests the personal a, which is taught in a1-abilities-04"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-03-ex.json",
+  "id": "a1.abi.03.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "Carlos, ¿conoces Sudáfrica?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "No, todavía no conozco Sudáfrica.",
+    "No, todavía no sé Sudáfrica.",
+    "No, todavía no puedo Sudáfrica."
+   ]
+  },
+  "kind": "target",
+  "why": "'Cabo' unmet; 'me encantaría' is a conditional (A2); wrong options differ in several ways"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-03-ex.json",
+  "id": "a1.abi.03.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Sabes a qué hora empieza la clase?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, sé que empieza a las ocho.",
+    "Tengo veinticinco años.",
+    "No me gustan los coches."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away 39 vs 24; cierra unmet"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-03-ex.json",
+  "id": "a1.abi.03.ex12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you are familiar with the city.",
+     "answer": "Conozco la ciudad."
+    },
+    {
+     "prompt": "Say that you know the address.",
+     "answer": "Sé la dirección."
+    }
+   ]
+  },
+  "kind": "english",
+  "why": "respuesta unmet; the verb in the prompt ('(conocer)', '(saber)') gives the answer away in the lesson that tests the choice"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-abilities-03-saber-conocer-gr.json",
+  "old": "If it's a fact, detail, or skill, use **saber**.",
+  "new": "If it's a fact, detail, or skill, use **saber**. (The *a* in *Conozco a Carlos* is explained in the next lesson.)",
+  "kind": "english",
+  "why": "screen shows the personal a unexplained",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-abilities-03.json",
+  "old": "I can distinguish between saber and conocer accurately.",
+  "new": "I can use saber for facts and conocer for people and places.",
+  "kind": "english",
+  "why": "'accurately' is not something a learner can tick; canDo copies it",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-04-ex.json",
+  "id": "a1.abi.04.ex02",
+  "set": {
+   "question": "Conozco __ Carlos en la clase."
+  },
+  "kind": "target",
+  "why": "'desde hace un mes' is an A2 time construction"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-04-ex.json",
+  "id": "a1.abi.04.ex04",
+  "set": {
+   "question": "Which sentence is correct?",
+   "options": [
+    "Llamo a mis amigos.",
+    "Llamo mis amigos.",
+    "Llamo de mis amigos."
+   ]
+  },
+  "kind": "english",
+  "why": "the correct option already contains the 'a' the question names (answer copied from the question)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-04-ex.json",
+  "id": "a1.abi.04.ex08",
+  "set": {
+   "tiles": [
+    "Quiero",
+    "conocer",
+    "a",
+    "la",
+    "gente",
+    "de",
+    "Hanói."
+   ],
+   "solution": [
+    "Quiero",
+    "conocer",
+    "a",
+    "la",
+    "gente",
+    "de",
+    "Hanói."
+   ],
+   "english": "I want to meet the people of Hanoi."
+  },
+  "kind": "target",
+  "why": "la gente is listed but unused"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-04-ex.json",
+  "id": "a1.abi.04.ex09",
+  "set": {
+   "options": [
+    "Veo el museo.",
+    "Veo a Juan.",
+    "Veo a la profesora."
+   ]
+  },
+  "kind": "target",
+  "why": "doctora is in no vocabulary list"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-04-ex.json",
+  "id": "a1.abi.04.ex10",
+  "set": {
+   "options": [
+    "Sí, conozco a Lucía; es una estudiante muy simpática.",
+    "Sí, conozco Lucía; es una estudiante muy simpática.",
+    "Sí, conozco de Lucía; es una estudiante muy simpática."
+   ],
+   "teaches": [
+    "a-personal"
+   ]
+  },
+  "kind": "target",
+  "why": "wrong options test the verb (sé) and the person (conoces), not the personal a the lesson teaches"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-04-ex.json",
+  "id": "a1.abi.04.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿A quién estás llamando?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Estoy llamando a mi madre.",
+    "Estoy llamando mi madre.",
+    "Estoy llamando de mi madre."
+   ],
+   "teaches": [
+    "a-personal"
+   ]
+  },
+  "kind": "target",
+  "why": "mamá and avisarle unmet; 'para avisarle' is para + infinitive (por/para, A2); wrong option 1 fails by person"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-04-ex.json",
+  "id": "a1.abi.04.ex12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say: 'I know Carlos.'",
+     "answer": "Conozco a Carlos."
+    },
+    {
+     "prompt": "Say: 'I see the teacher (male).'",
+     "answer": "Veo al profesor."
+    }
+   ]
+  },
+  "kind": "english",
+  "why": "'(al)' in the prompt gives the answer away"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-abilities-04-a-personal-gr.json",
+  "old": "\"Ayer conocí a Meg en la escuela.\"",
+  "new": "\"Conozco a Meg de la escuela.\"",
+  "kind": "target",
+  "why": "pretérito indefinido (A2) at A1; also feeds the speaking step"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-abilities-04-a-personal-gr.json",
+  "old": "\"Yesterday I met Meg at school.\"",
+  "new": "\"I know Meg from school.\"",
+  "kind": "english",
+  "why": "English for the changed example"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-abilities-04-a-personal-gr.json",
+  "old": "\"Llamo al taxi (special case).\"",
+  "new": "\"Pido la cuenta.\"",
+  "kind": "target",
+  "why": "the right-hand column is the 'no a' column; 'Llamo al taxi' has an a and contradicts the rule"
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-abilities-04.json",
+  "old": "Master the obligatory personal 'a' before human direct objects.",
+  "new": "Use the personal 'a' before human direct objects.",
+  "kind": "english",
+  "why": "'Master' overpromises",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-abilities-04.json",
+  "old": "I always use the personal 'a' when a direct object is a specific person.",
+  "new": "I can use the personal a before a specific person.",
+  "kind": "english",
+  "why": "not a can-do ('I always …'); canDo copies it"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-05-ex.json",
+  "id": "a1.abi.05.ex02",
+  "set": {
+   "category": "grammar",
+   "question": "Can you do me a favor? Which sentence says this?",
+   "options": [
+    "¿Me puedes hacer un favor?",
+    "¿Te puedes hacer un favor?",
+    "¿Se puedes hacer un favor?"
+   ],
+   "teaches": [
+    "querer-poder"
+   ]
+  },
+  "kind": "target",
+  "why": "the item has no English and Te / Se also make real sentences; options not tied to a meaning",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-05-ex.json",
+  "id": "a1.abi.05.ex03",
+  "set": {
+   "sentence": "¿Te _____ ayudar con las bolsas?",
+   "english": "Can I help you with the bags?"
+  },
+  "kind": "target",
+  "why": "maletas first taught a1-future-02"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-05-ex.json",
+  "id": "a1.abi.05.ex05",
+  "set": {
+   "options": [
+    "Con mucho gusto.",
+    "Tengo veinte años.",
+    "No me gusta el té."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away 31 vs 18; tell-opener claro; first-letter case"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-05-ex.json",
+  "id": "a1.abi.05.ex08",
+  "set": {
+   "options": [
+    "Yes, like \"ayudarme\".",
+    "No, not in any case.",
+    "Only in formal writing."
+   ]
+  },
+  "kind": "english",
+  "why": "length give-away 21 vs 16"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-05-ex.json",
+  "id": "a1.abi.05.ex10",
+  "set": {
+   "options": [
+    "Sí, la pongo en la mesa.",
+    "Es la una de la tarde.",
+    "Tengo dolor de muelas."
+   ]
+  },
+  "kind": "target",
+  "why": "supuesto unmet; length give-away 42 vs 22"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-05-ex.json",
+  "id": "a1.abi.05.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Puedo usar tu teléfono un momento?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "cargador is in no vocabulary list"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-05-ex.json",
+  "id": "a1.abi.05.ex12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Ask 'Can you help me?' with the pronoun before the verb.",
+     "answer": "¿Me puedes ayudar?"
+    },
+    {
+     "prompt": "Say: 'Thank you for your help.'",
+     "answer": "Gracias por tu ayuda."
+    }
+   ]
+  },
+  "kind": "english",
+  "why": "¿Puedes ayudarme? is equally correct (the lesson says both are natural); the prompt does not pin the stored answer"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-consolidation-ex.json",
+  "id": "a1.abi.cons.ex04",
+  "set": {
+   "sentence": "Hoy veo _____ Carlos en el centro.",
+   "english": "Today I see Carlos in the centre."
+  },
+  "kind": "target",
+  "why": "'Ayer conocí' is a pretérito (A2) at A1; also feeds the speaking step"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-consolidation-ex.json",
+  "id": "a1.abi.cons.ex06",
+  "set": {
+   "question": "Yo __ nadar, pero hoy no puedo ir al parque.",
+   "options": [
+    "sé",
+    "sabes",
+    "conozco"
+   ],
+   "distractor_skills": null
+  },
+  "kind": "target",
+  "why": "piscina unmet; 'puedo' also fits (two right answers)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-consolidation-ex.json",
+  "id": "a1.abi.cons.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "Carlos, ¿conoces a un profesor de guitarra?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, conozco a un profesor de música.",
+    "Sí, conozco un profesor de música.",
+    "Sí, conozco de un profesor de música."
+   ],
+   "teaches": [
+    "a-personal"
+   ]
+  },
+  "kind": "target",
+  "why": "excelente, buen unmet; wrong option 2 fails by person; teaches should show the tested personal a"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-consolidation-ex.json",
+  "id": "a1.abi.cons.ex12",
+  "set": {
+   "options": [
+    "Sí, ¿qué necesitas?",
+    "Vivo en Sudáfrica.",
+    "Tengo mucho sueño hoy."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away 34 vs 18; tell-opener; 'dime' is an irregular imperative"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-abilities-consolidation-ex.json",
+  "id": "a1.abi.cons.ex02",
+  "set": {
+   "sentence": "¿_____ repetir la pregunta?",
+   "english": "Can you repeat the question?"
+  },
+  "kind": "target",
+  "why": "explicación first taught b1-37-03"
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-abilities-02-voc.json",
+  "old": "      \"lemma\": \"el idioma\",",
+  "new": "      \"lemma\": \"el inglés\",\n      \"translation\": \"English\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"el idioma\",",
+  "kind": "english",
+  "why": "inglés is in no vocabulary list; first used in this lesson (grammar example, cons.ex01/ex13)"
+ }
+]
