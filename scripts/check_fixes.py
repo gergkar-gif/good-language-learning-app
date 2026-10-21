@@ -30,6 +30,7 @@ the reviewer doesn't take), then lock_tags / check-content / freeze as usual.
 """
 import importlib.util
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -84,10 +85,18 @@ def main():
     rejected = {n: e for n, e in errors.items()}
 
     before = findings(course, level, unit)
-    originals = {p: (ROOT / p).read_text(encoding="utf-8") for p in texts}
+    # a fix that adds a word to a vocabulary list makes it met for the other
+    # fixes only once the word index is rebuilt (es A2 units 4, 10, 24 had a
+    # fix rejected for a word another fix in the same list had just listed)
+    voc = any(p.endswith("-voc.json") for p in texts)
+    index = f"content/{course}/indexes/word-lesson-index.json"
+    originals = {p: (ROOT / p).read_text(encoding="utf-8") for p in list(texts) + ([index] if voc else [])}
     try:
         for p, t in texts.items():
             (ROOT / p).write_text(t, encoding="utf-8")
+        if voc:
+            subprocess.run([sys.executable, str(ROOT / "scripts/build_word_lesson_index.py"), course],
+                           cwd=ROOT, capture_output=True, check=True)
         after = findings(course, level, unit)
     finally:
         for p, t in originals.items():

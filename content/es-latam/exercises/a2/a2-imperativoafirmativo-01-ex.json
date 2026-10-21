@@ -5,21 +5,21 @@
       "id": "a2.imperativoafirmativo.01.ex01",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Cuál es la forma correcta del imperativo (tú) para 'hablar'?",
+      "question": "Which is the tú command for hablar?",
       "options": [
         "Habla",
-        "Hables",
-        "Hable",
-        "Hablas"
+        "Hablas",
+        "Hablé",
+        "Hablaba"
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "imperativo-negativo",
-        "2": "imperativo-formal-usted",
-        "3": "present-tense"
+        "1": "present-tense",
+        "2": "preterito-indefinido",
+        "3": "imperfect"
       }
     },
     {
@@ -29,18 +29,18 @@
       "question": "Carlos, ¡_____ (abrir) la ventana, por favor!",
       "options": [
         "abre",
-        "abra",
         "abres",
-        "abras"
+        "abrió",
+        "abría"
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "imperativo-formal-usted",
-        "2": "er-ir-verbs",
-        "3": "imperativo-negativo"
+        "1": "present-tense",
+        "2": "preterito-indefinido",
+        "3": "imperfect"
       }
     },
     {
@@ -100,20 +100,20 @@
       "tiles": [
         "pasa",
         "y",
-        "toma",
-        "asiento",
+        "espera",
+        "aquí",
         "por",
         "favor"
       ],
       "solution": [
         "pasa",
         "y",
-        "toma",
-        "asiento",
+        "espera",
+        "aquí",
         "por",
         "favor"
       ],
-      "english": "Come in and take a seat, please.",
+      "english": "Come in and wait here, please.",
       "teaches": [
         "imperativo-afirmativo"
       ]
@@ -134,13 +134,17 @@
       ],
       "options": [
         "Lee la primera página y escribe una respuesta.",
-        "Leas la primera página y escribas una respuesta.",
+        "Leía la primera página y escribía una respuesta.",
         "Leyó la primera página y escribió una respuesta."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.imperativoafirmativo.01.ex08",
@@ -158,13 +162,17 @@
       ],
       "options": [
         "Abre la ventana y descansa un momento.",
-        "Abras la ventana y descanses un momento.",
+        "Abría la ventana y descansaba un momento.",
         "Abrió la ventana y descansó un momento."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.imperativoafirmativo.01.ex09",
@@ -173,7 +181,7 @@
       "template": [
         {
           "prompt": "Tell a friend to speak slowly and listen.",
-          "answer": "Habla despacio y escucha con atención."
+          "answer": "Habla despacio y escucha."
         },
         {
           "prompt": "Tell a friend to wait here and eat something.",
@@ -204,7 +212,7 @@
       "id": "a2.imperativoafirmativo.01.ex11",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Pasa adelante y habla despacio, por favor.",
+      "sentence": "Pasa y habla despacio, por favor.",
       "teaches": [
         "imperativo-afirmativo"
       ],

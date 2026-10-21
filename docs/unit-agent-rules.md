@@ -414,6 +414,12 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   items with the unit vocabulary skill, not `polite-softening`); Unit 26
   recaps it as known. Unit 13 uses *mientras* with the preterite and says
   so; Units 21–22 present *mientras* + imperfect as the normal use.
+- **Story line (user, 2026-10-21):** Carlos and Meg decide in Unit 19 to
+  move to Budapest *algún día*; they live in Hanoi until the end of A2,
+  where the move happens. Carlos grew up in Hungary (a village by a lake;
+  his parents, Ana and Andreas); his father's mother lives in Madrid (the
+  tortilla recipe, Ana's studies there). Lucía is back in Spain after
+  a2-18: calls and messages only.
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).

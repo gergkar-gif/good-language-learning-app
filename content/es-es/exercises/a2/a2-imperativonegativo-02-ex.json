@@ -5,7 +5,7 @@
       "id": "a2.imperativonegativo.02.ex01",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Carlos, ¡no _____ (ir) solo al bosque de noche!",
+      "question": "Carlos, ¡no _____ (ir) solo al parque de noche!",
       "options": [
         "vayas",
         "ve",
@@ -47,25 +47,25 @@
       "id": "a2.imperativonegativo.02.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "¡No _____ tonterías con el coche!",
+      "sentence": "¡No _____ eso con el coche!",
       "hint": "hacer, tú",
       "answer": "hagas",
       "teaches": [
         "imperativo-negativo-irregular"
       ],
-      "english": "Don't do anything foolish with the car!"
+      "english": "Don't do that with the car!"
     },
     {
       "id": "a2.imperativonegativo.02.ex04",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Por favor, no le _____ nada sobre la fiesta sorpresa.",
+      "sentence": "Por favor, no _____ nada sobre la fiesta sorpresa.",
       "hint": "decir, tú",
       "answer": "digas",
       "teaches": [
         "imperativo-negativo-irregular"
       ],
-      "english": "Please don't tell him anything about the surprise party."
+      "english": "Please don't say anything about the surprise party."
     },
     {
       "id": "a2.imperativonegativo.02.ex05",
@@ -81,8 +81,8 @@
           "Don't put that there!"
         ],
         [
-          "¡No seas pesado!",
-          "Don't be annoying!"
+          "¡No seas tímido!",
+          "Don't be shy!"
         ],
         [
           "¡No vengas tarde!",
@@ -125,7 +125,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Debo contarle lo que pasó a Carlos?"
+          "text": "Carlos no sabe lo que pasó. ¿Qué hago?"
         },
         {
           "speaker": "Daniela",
@@ -149,7 +149,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Está bien salir a caminar por el bosque ahora?"
+          "text": "¿Está bien salir a caminar por el parque ahora?"
         },
         {
           "speaker": "Daniela",
@@ -158,13 +158,17 @@
       ],
       "options": [
         "No vayas solo porque ya está oscuro y es peligroso.",
-        "No vas solo porque ya está oscuro y es peligroso.",
+        "No iba solo porque ya estaba oscuro y era peligroso.",
         "No fue solo porque ya estaba oscuro y era peligroso."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-negativo-irregular"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.imperativonegativo.02.ex09",
@@ -172,12 +176,12 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Tell a friend not to be shy and not to feel ashamed.",
+          "prompt": "Tell a friend not to be shy and not to feel ashamed when speaking.",
           "answer": "No seas tímido y no tengas vergüenza al hablar."
         },
         {
-          "prompt": "Tell a friend not to say anything to anyone until you are sure.",
-          "answer": "No digas nada a nadie hasta estar seguro."
+          "prompt": "Tell a friend not to say anything to anyone.",
+          "answer": "No digas nada a nadie."
         }
       ],
       "teaches": [

@@ -32,16 +32,17 @@
       "category": "grammar",
       "type": "multiple-choice",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "ir-infinitive"
       ],
       "distractor_skills": {
-        "1": "preterito-indefinido"
+        "1": "preterito-indefinido",
+        "2": "preterito-perfecto"
       },
-      "question": "Which sentence uses the pretérito perfecto correctly?",
+      "question": "Which sentence uses ir a + infinitive?",
       "options": [
-        "Hoy han continuado sus proyectos.",
-        "Continuaron sus proyectos mañana.",
-        "Van a continuar sus proyectos ayer."
+        "Voy a volver mañana.",
+        "Volví mañana.",
+        "He vuelto mañana."
       ],
       "correct": 0
     },
@@ -50,31 +51,34 @@
       "category": "grammar",
       "type": "fill-blank",
       "teaches": [
-        "preterito-perfecto"
+        "ir-infinitive"
       ],
-      "sentence": "__ empezado un nuevo capítulo hoy.",
-      "answer": "Hemos",
-      "english": "We have begun a new chapter today."
+      "sentence": "Mañana yo __ a empezar un nuevo capítulo.",
+      "answer": "voy",
+      "english": "Tomorrow I am going to begin a new chapter.",
+      "hint": "ir"
     },
     {
       "id": "a2.20.03.ex04",
       "category": "grammar",
       "type": "sentence-builder",
       "teaches": [
-        "preterito-perfecto"
+        "ir-infinitive"
       ],
-      "english": "We have continued our projects.",
+      "english": "We are going to continue the project.",
       "tiles": [
-        "Hemos",
-        "continuado",
-        "nuestros",
-        "proyectos"
+        "Vamos",
+        "a",
+        "continuar",
+        "el",
+        "proyecto"
       ],
       "solution": [
-        "Hemos",
-        "continuado",
-        "nuestros",
-        "proyectos"
+        "Vamos",
+        "a",
+        "continuar",
+        "el",
+        "proyecto"
       ]
     },
     {
@@ -82,15 +86,16 @@
       "category": "grammar",
       "type": "multiple-choice",
       "teaches": [
-        "past-participles"
+        "ir-infinitive"
       ],
-      "question": "Which sentence is correct?",
+      "question": "Lauren is going to go back home. Which sentence says this?",
       "options": [
-        "Lauren ha vuelto a casa.",
-        "Lauren ha volvido a casa.",
-        "Lauren ha volver a casa."
+        "Lauren va a volver a casa.",
+        "Lauren va volver a casa.",
+        "Lauren va a vuelve a casa."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {}
     },
     {
       "id": "a2.20.03.ex06",
@@ -115,35 +120,35 @@
       "category": "grammar",
       "type": "fill-blank",
       "teaches": [
-        "preterito-perfecto"
+        "ir-infinitive"
       ],
-      "sentence": "¿__ empezado el capítulo?",
-      "answers": [
-        "Has",
-        "Ha"
-      ],
-      "english": "Have you begun the chapter?"
+      "sentence": "Carlos y Meg __ a empezar un proyecto.",
+      "english": "Carlos and Meg are going to start a project.",
+      "hint": "ir",
+      "answer": "van"
     },
     {
       "id": "a2.20.03.ex08",
       "category": "grammar",
       "type": "sentence-builder",
       "teaches": [
-        "preterito-perfecto"
+        "ir-infinitive"
       ],
-      "english": "Carlos has started the project.",
+      "english": "Meg is going to continue her project.",
       "tiles": [
-        "Carlos",
-        "ha",
-        "empezado",
-        "el",
+        "Meg",
+        "va",
+        "a",
+        "continuar",
+        "su",
         "proyecto"
       ],
       "solution": [
-        "Carlos",
-        "ha",
-        "empezado",
-        "el",
+        "Meg",
+        "va",
+        "a",
+        "continuar",
+        "su",
         "proyecto"
       ]
     },
@@ -152,15 +157,16 @@
       "category": "grammar",
       "type": "multiple-choice",
       "teaches": [
-        "preterito-perfecto"
+        "ir-infinitive"
       ],
-      "question": "Which auxiliary verb is used with «tú»?",
+      "question": "Which form of ir goes with «nosotros» in ir a + infinitive?",
       "options": [
-        "has",
-        "han",
-        "he"
+        "vamos",
+        "voy",
+        "vas"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {}
     },
     {
       "id": "a2.20.03.ex10",
@@ -195,9 +201,9 @@
       "type": "multiple-choice",
       "question": "Which sentence describes an immediate future plan?",
       "options": [
-        "Vamos a empezar un nuevo capítulo.",
-        "Empezamos un nuevo capítulo ayer.",
-        "Hemos empezado un nuevo capítulo."
+        "Meg va a empezar un nuevo capítulo.",
+        "Meg empezó un nuevo capítulo.",
+        "Meg ha empezado un nuevo capítulo."
       ],
       "correct": 0,
       "teaches": [
@@ -238,10 +244,7 @@
       ],
       "sentence": "¿Qué __ hacer después?",
       "english": "What are you going to do afterwards?",
-      "answers": [
-        "vas a",
-        "va a"
-      ]
+      "answer": "vas a"
     },
     {
       "id": "a2.20.03.ex15",
@@ -259,16 +262,15 @@
       ],
       "options": [
         "Vamos a continuar nuestros proyectos.",
-        "Continuamos nuestros proyectos ayer.",
-        "Hemos continuado nuestros proyectos."
+        "Hemos continuado nuestros proyectos.",
+        "Vamos continuar nuestros proyectos."
       ],
       "correct": 0,
       "teaches": [
         "ir-infinitive"
       ],
       "distractor_skills": {
-        "1": "preterito-indefinido",
-        "2": "preterito-perfecto"
+        "1": "preterito-perfecto"
       }
     },
     {
@@ -287,16 +289,15 @@
       ],
       "options": [
         "Voy a volver a casa.",
-        "Volví a casa ayer.",
-        "He vuelto a casa."
+        "He vuelto a casa.",
+        "Voy volver a casa."
       ],
       "correct": 0,
       "teaches": [
         "ir-infinitive"
       ],
       "distractor_skills": {
-        "1": "preterito-indefinido",
-        "2": "preterito-perfecto"
+        "1": "preterito-perfecto"
       }
     },
     {

@@ -5,12 +5,12 @@
       "id": "a2.imperativoafirmativo.02.ex01",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Cuál es la forma de imperativo (tú) del verbo 'hacer'?",
+      "question": "Which is the tú command for hacer?",
       "options": [
         "haz",
         "hace",
-        "haga",
-        "hagas"
+        "hizo",
+        "hacía"
       ],
       "correct": 0,
       "teaches": [
@@ -18,8 +18,8 @@
       ],
       "distractor_skills": {
         "1": "present-tense",
-        "2": "imperativo-formal-usted",
-        "3": "imperativo-negativo"
+        "2": "preterite-irregular-stems",
+        "3": "imperfect"
       }
     },
     {
@@ -30,8 +30,8 @@
       "options": [
         "Pon",
         "Pone",
-        "Ponga",
-        "Pones"
+        "Puso",
+        "Ponía"
       ],
       "correct": 0,
       "teaches": [
@@ -39,8 +39,8 @@
       ],
       "distractor_skills": {
         "1": "present-tense",
-        "2": "imperativo-formal-usted",
-        "3": "present-tense"
+        "2": "preterite-irregular-stems",
+        "3": "imperfect"
       }
     },
     {
@@ -59,13 +59,13 @@
       "id": "a2.imperativoafirmativo.02.ex04",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "¡_____ cuidado con el suelo mojado!",
+      "sentence": "¡_____ cuidado con el perro!",
       "hint": "tener, tú",
       "answer": "Ten",
       "teaches": [
         "imperativo-afirmativo-irregular"
       ],
-      "english": "Be careful with the wet floor!"
+      "english": "Be careful with the dog!"
     },
     {
       "id": "a2.imperativoafirmativo.02.ex05",
@@ -123,7 +123,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Tengo dudas sobre qué hacer ahora."
+          "text": "¿Qué hago ahora, Carlos?"
         },
         {
           "speaker": "Carlos",
@@ -131,14 +131,18 @@
         }
       ],
       "options": [
-        "Ten cuidado y dime la verdad.",
-        "Tengas cuidado y me digas la verdad.",
-        "Tuvo cuidado y me dijo la verdad."
+        "Ten cuidado y di la verdad.",
+        "Tenía cuidado y decía la verdad.",
+        "Tuvo cuidado y dijo la verdad."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo-irregular"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterite-irregular-stems"
+      }
     },
     {
       "id": "a2.imperativoafirmativo.02.ex08",
@@ -156,13 +160,17 @@
       ],
       "options": [
         "Ven a las cinco y sal con tiempo de casa.",
-        "Vengas a las cinco y salgas con tiempo de casa.",
+        "Venías a las cinco y salías con tiempo de casa.",
         "Vino a las cinco y salió con tiempo de casa."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo-irregular"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterite-irregular-stems"
+      }
     },
     {
       "id": "a2.imperativoafirmativo.02.ex09",
@@ -170,7 +178,7 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Tell a friend to do their homework and be nice.",
+          "prompt": "Tell a friend to do their homework and be nice to everyone.",
           "answer": "Haz tu tarea y sé amable con todos."
         },
         {
@@ -186,11 +194,11 @@
       "id": "a2.imperativoafirmativo.02.ex10",
       "category": "listening",
       "type": "listening-choice",
-      "sentence": "Ten cuidado en la calle y pon atención.",
+      "sentence": "Ten cuidado en la calle y ve despacio.",
       "options": [
-        "Be careful on the street and pay attention.",
-        "He was careful when crossing the street.",
-        "Walk quickly and do not pay attention.",
+        "Be careful on the street and go slowly.",
+        "He was careful when he crossed the street.",
+        "Go fast on the street and be at home soon.",
         "You are careful on the street today."
       ],
       "correct": 0,

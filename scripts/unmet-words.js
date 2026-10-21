@@ -337,6 +337,13 @@ function targetTexts(e) {
                         if (verbs.length && reflexiveUse(w, text) && verbs.every(l => metBy(l + 'se', pos))) continue;
                         const inf = /^(.+?(?:ar|er|ir))(?:me|te|se|nos|os)$/.exec(w);
                         if (inf) cands.push(inf[1], inf[1] + 'se');
+                        // a command with its pronoun attached (*quédate*, *acuéstate*,
+                        // *siéntese*): the bare command, accent dropped, read as its verb
+                        const cmd = /^(.+?)(?:me|te|se|nos)$/.exec(w);
+                        if (!inf && cmd && /[áéíóú]/.test(cmd[1])) {
+                            const bare = cmd[1].normalize('NFD').replace(/[́]/g, '').normalize('NFC');
+                            for (const l of readingsOf(bare).filter(l => /(ar|er|ir)$/.test(l))) cands.push(l, l + 'se');
+                        }
                         // a regular participle after *haber* (*hemos mojado*): the lexicon
                         // may read it only as the adjective (*mojado*), so count its verb
                         const part = /^(.+)(ad|id)[oa]s?$/.exec(w);

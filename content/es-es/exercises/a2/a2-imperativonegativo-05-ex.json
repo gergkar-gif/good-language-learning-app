@@ -5,7 +5,7 @@
       "id": "a2.imperativonegativo.05.ex01",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "En el dormitorio del hostel, ¡no _____ (hacer, tú) ruido de noche!",
+      "question": "En el dormitorio del albergue, ¡no _____ (hacer, tú) ruido de noche!",
       "options": [
         "hagas",
         "haces",
@@ -26,7 +26,7 @@
       "id": "a2.imperativonegativo.05.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Por favor, _____ (apagar, usted) la luz al salir de la sala.",
+      "question": "Por favor, _____ (apagar, usted) la luz al salir de la habitación.",
       "options": [
         "apague",
         "apaga",
@@ -58,13 +58,13 @@
       "id": "a2.imperativonegativo.05.ex04",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "_____ silencio en los pasillos a partir de las diez.",
+      "sentence": "_____ silencio en el edificio a partir de las diez.",
       "hint": "guardar, usted",
       "answer": "Guarde",
       "teaches": [
         "imperativo-formal-usted"
       ],
-      "english": "Keep quiet in the hallways after ten o'clock."
+      "english": "Keep quiet in the building after ten o'clock."
     },
     {
       "id": "a2.imperativonegativo.05.ex05",
@@ -80,8 +80,8 @@
           "Keep quiet"
         ],
         [
-          "No deje objetos de valor",
-          "Do not leave valuables"
+          "No deje su dinero aquí",
+          "Do not leave your money here"
         ],
         [
           "Cierre la puerta con llave",
@@ -121,7 +121,7 @@
       "id": "a2.imperativonegativo.05.ex07",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "¿A qué hora deben guardar silencio los huéspedes según las normas del albergue?",
+      "question": "¿A qué hora hay que guardar silencio según las normas del albergue?",
       "options": [
         "A las diez de la noche",
         "A medianoche",
@@ -134,7 +134,7 @@
       "id": "a2.imperativonegativo.05.ex08",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "¿Qué no deben dejar los huéspedes en la cocina común?",
+      "question": "¿Qué no hay que dejar en la cocina del albergue?",
       "options": [
         "Platos sucios",
         "Platos limpios",
@@ -150,7 +150,7 @@
       "prompt": [
         {
           "speaker": "Huésped",
-          "text": "¿Cuáles son las normas principales de este albergue?"
+          "text": "¿Cuáles son las normas de este albergue?"
         },
         {
           "speaker": "Recepcionista",
@@ -158,9 +158,9 @@
         }
       ],
       "options": [
-        "Respete las reglas comunes y no haga ruido después de las diez.",
-        "Respeta las reglas comunes y no haces ruido después de las diez.",
-        "Respetó las reglas comunes y no hizo ruido después de las diez."
+        "Respete las reglas y no haga ruido después de las diez.",
+        "Respeta las reglas y no haces ruido después de las diez.",
+        "Respetó las reglas y no hizo ruido después de las diez."
       ],
       "correct": 0,
       "teaches": [
@@ -174,7 +174,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Qué debemos hacer en la cocina compartida?"
+          "text": "¿Qué hay que hacer en la cocina?"
         },
         {
           "speaker": "Daniela",
@@ -182,14 +182,18 @@
         }
       ],
       "options": [
-        "No dejes platos sucios en el fregadero; mantén todo limpio.",
-        "Dejes platos sucios en el fregadero; mantengas todo limpio.",
-        "No dejó platos sucios en el fregadero; mantuvo todo limpio."
+        "No dejes platos sucios en el fregadero; limpia todo.",
+        "No dejó platos sucios en el fregadero; limpió todo.",
+        "No dejarás platos sucios en el fregadero; limpiarás todo."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-negativo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "futuro-simple"
+      }
     },
     {
       "id": "a2.imperativonegativo.05.ex11",
@@ -197,12 +201,12 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Write a room rule (usted): Turn off the lights when leaving the room; do not leave them on.",
-          "answer": "Apague las luces al salir de la habitación; no las deje encendidas."
+          "prompt": "Write a room rule (usted): Turn off the lights when leaving the room.",
+          "answer": "Apague las luces al salir de la habitación."
         },
         {
-          "prompt": "Write a hostel rule (usted): Respect other guests and keep the common areas clean.",
-          "answer": "Respete las normas del albergue y mantenga los espacios limpios."
+          "prompt": "Write a hostel rule (usted): Respect the rules and keep the kitchen clean.",
+          "answer": "Respete las normas y mantenga limpia la cocina."
         }
       ],
       "teaches": [
@@ -229,11 +233,11 @@
       "id": "a2.imperativonegativo.05.ex13",
       "category": "listening",
       "type": "dictation",
-      "sentence": "Respeta las normas del albergue y mantén la habitación limpia.",
+      "sentence": "Respeta las normas del albergue y limpia la habitación.",
       "teaches": [
         "imperativo-afirmativo"
       ],
-      "english": "Respect the hostel rules and keep the room clean."
+      "english": "Respect the hostel rules and clean the room."
     }
   ]
 }

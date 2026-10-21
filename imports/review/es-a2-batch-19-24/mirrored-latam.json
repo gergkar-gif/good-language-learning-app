@@ -1,0 +1,4554 @@
+[
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-19-04-voc.json",
+  "old": "\"lemma\": \"seguir\",\n      \"translation\": \"to continue\",\n      \"pos\": \"verb\"\n    }",
+  "new": "\"lemma\": \"seguir\",\n      \"translation\": \"to continue\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"lograr\",\n      \"translation\": \"to achieve\",\n      \"pos\": \"verb\"\n    }",
+  "why": "unmet-word lograremos/lograrán: lograr is used from this lesson (grammar example, ex03, ex08, ex13) but listed only in a2-19-05",
+  "id": "vocab.a2.19.04"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-19-05-voc.json",
+  "old": "\"lemma\": \"lograr\",\n      \"translation\": \"to achieve\",\n      \"pos\": \"verb\"\n    }",
+  "new": "\"lemma\": \"lograr\",\n      \"translation\": \"to achieve\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"encontrar\",\n      \"translation\": \"to find\",\n      \"pos\": \"verb\"\n    }",
+  "why": "encontrar is in no vocabulary list; first used in a2-19-05 (grammar example, ex02, ex13)",
+  "id": "vocab.a2.19.05"
+ },
+ {
+  "file": "content/es-latam/lessons/a2/a2-19-05.json",
+  "old": "\"goal\": \"Discuss future expectations, plans and goals in an integrated A2 narrative.\"",
+  "new": "\"goal\": \"Talk about what you and your friends will do in the future.\"",
+  "why": "goal wording \"integrated A2 narrative\" is course jargon"
+ },
+ {
+  "file": "content/es-latam/lessons/a2/a2-19-05.json",
+  "old": "\"items\": [\n        \"Discuss future expectations, plans and goals in an integrated A2 narrative.\"",
+  "new": "\"items\": [\n        \"Talk about what you and your friends will do in the future.\"",
+  "why": "same"
+ },
+ {
+  "file": "content/es-latam/lessons/a2/a2-19-05.json",
+  "old": "\"I can discuss future expectations, plans and goals in an integrated A2 narrative.\"",
+  "new": "\"I can talk about what I and my friends will do in the future.\"",
+  "why": "checklist wording"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-01-ex.json",
+  "id": "a2.19.01.ex02",
+  "set": {
+   "options": [
+    "Viajaré mañana.",
+    "Voy a viajar mañana.",
+    "Viajé mañana."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "preterito-indefinido"
+   }
+  },
+  "why": "tell-time-word: \"Viajé ayer\" gave the answer away; keep mañana in every option so only the tense differs",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-01-ex.json",
+  "id": "a2.19.01.ex12",
+  "set": {
+   "options": [
+    "Viajarán mañana.",
+    "Viajaron mañana.",
+    "Han viajado mañana."
+   ],
+   "correct": 0,
+   "question": "They will travel tomorrow. Which sentence says this?",
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "\"Which sentence is correct?\" with no meaning to pin it; \"Viajar mañana.\" is a natural fragment (infinitive-reply). Put the English in the question and use two real tense faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-01-ex.json",
+  "id": "a2.19.01.ex14",
+  "set": {
+   "options": [
+    "Viajaré mañana.",
+    "Viajé mañana.",
+    "He viajado mañana."
+   ],
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Cuándo viajarás?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "¿Qué harás? (irregular stem har-) is first shown on the a2-19-02 screen; ask a regular verb in 01. Same time word in every option (tell-time-word)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-02-ex.json",
+  "id": "a2.19.02.ex08",
+  "set": {
+   "tiles": [
+    "¿Dónde",
+    "vivirán",
+    "ellos",
+    "el",
+    "próximo",
+    "año?"
+   ],
+   "solution": [
+    "¿Dónde",
+    "vivirán",
+    "ellos",
+    "el",
+    "próximo",
+    "año?"
+   ],
+   "english": "Where will they live next year?"
+  },
+  "why": "es-es friends say vosotros, so \"ustedes\" (a formal you) is wrong for this question and vosotros forms are Unit 33; ask about \"ellos\"",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-02-ex.json",
+  "id": "a2.19.02.ex04",
+  "set": {
+   "tiles": [
+    "Tomaré",
+    "una",
+    "decisión",
+    "mañana"
+   ],
+   "solution": [
+    "Tomaré",
+    "una",
+    "decisión",
+    "mañana"
+   ],
+   "english": "I will make a decision tomorrow."
+  },
+  "why": "\"Cambiaré mi decisión\" is not natural (cambiar de opinión/tomar una decisión); tomar is met (A1 Unit 26)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-03-ex.json",
+  "id": "a2.19.03.ex12",
+  "set": {
+   "options": [
+    "Probablemente sucederá pronto.",
+    "Probablemente sucedió pronto.",
+    "Probablemente ha sucedido pronto."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer + length-giveaway (30 vs 20); \"Voy a hacerlo ahora\" removed",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-03-ex.json",
+  "id": "a2.19.03.ex15",
+  "set": {
+   "options": [
+    "Sucederá pronto.",
+    "Sucedió pronto.",
+    "Ha sucedido pronto."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word: \"Sucedió ayer.\" / \"Sucede ayer.\" had two faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-03-ex.json",
+  "id": "a2.19.03.ex16",
+  "set": {
+   "options": [
+    "Sí, será una buena experiencia.",
+    "Sí, fue una buena experiencia.",
+    "Sí, ha sido una buena experiencia."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word: ayer removed",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-03-ex.json",
+  "id": "a2.19.03.ex07",
+  "set": {
+   "sentence": "Creo que los planes __ pronto.",
+   "hint": "cambiar",
+   "answer": "cambiarán",
+   "english": "I think the plans will change soon."
+  },
+  "why": "unmet-word cambios (first taught a2-perifrasisverbales-01): use plans (el plan, met) with cambiar",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-19-03-gr.json",
+  "old": "*Quizá* can also pair with the subjunctive for a more hesitant prediction (*quizá viaje*) — a form for later. Stated as plainly as it is here, the futuro simple indicative is exactly right.",
+  "new": "*Quizá* and *probablemente* make a prediction softer. Here they come with the futuro simple: *Quizá viajaremos el próximo año.*",
+  "why": "subjunctive form (quizá viaje) shown in a Unit 19 tip, before Unit 27",
+  "id": "a2-19-03-tip",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-19-04-gr.json",
+  "old": "\"spanish\": \"Seguiré estudiando español.\",\n          \"english\": \"I will continue studying Spanish.\"",
+  "new": "\"spanish\": \"Estudiaré más español.\",\n          \"english\": \"I will study more Spanish.\"",
+  "why": "seguir + gerund is Unit 28 (perifrasis-verbales)",
+  "id": "a2-19-04-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-19-04-gr.json",
+  "old": "\"seguiré\",\n          \"I will continue\"",
+  "new": "\"estudiaré\",\n          \"I will study\"",
+  "why": "table row follows the example",
+  "id": "a2-19-04-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-19-04-gr.json",
+  "old": "*Seguiré estudiando* works the same way *seguir* + gerund always does — it's just wearing the *futuro simple* on the outer verb instead of *ir a*. Spot *seguir* as 'keep on' regardless of which tense carries it.",
+  "new": "Time phrases such as *el próximo año* and *en el futuro* can start or end the sentence: *El próximo año lograré mis objetivos.* / *Lograré mis objetivos en el futuro.*",
+  "why": "tip presents seguir + gerund as known (Unit 28); replaced by a true tip about the time phrase",
+  "id": "a2-19-04-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-04-ex.json",
+  "id": "a2.19.04.ex02",
+  "set": {
+   "options": [
+    "Ahorraremos dinero para el proyecto.",
+    "Vamos a ahorrar dinero para el proyecto.",
+    "Ahorramos dinero para el proyecto."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "present-tense"
+   }
+  },
+  "why": "tell-time-word ayer (\"Ahorramos dinero ayer\" was also the present form); the wrong option is now a plain present",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-04-ex.json",
+  "id": "a2.19.04.ex12",
+  "set": {
+   "options": [
+    "Estudiaré más español.",
+    "Estudié más español.",
+    "He estudiado más español."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "seguir + gerund (Unit 28) and tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-04-ex.json",
+  "id": "a2.19.04.ex15",
+  "set": {
+   "options": [
+    "Estudiaré más español.",
+    "Estudié más español.",
+    "He estudiado más español."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "seguir + gerund (Unit 28) and tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-04-ex.json",
+  "id": "a2.19.04.ex16",
+  "set": {
+   "options": [
+    "Ahorraré dinero para viajar.",
+    "Ahorré dinero para viajar.",
+    "He ahorrado dinero para viajar."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word + length-giveaway 28 vs 19",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-04-ex.json",
+  "id": "a2.19.04.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you will save money to travel.",
+     "answer": "Ahorraré dinero para viajar."
+    },
+    {
+     "prompt": "Say that you will study more Spanish.",
+     "answer": "Estudiaré más español."
+    },
+    {
+     "prompt": "Say that you will achieve your goals.",
+     "answer": "Lograré mis objetivos."
+    }
+   ]
+  },
+  "why": "seguir + gerund (Unit 28)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-04-ex.json",
+  "id": "a2.19.04.ex18",
+  "set": {
+   "sentence": "Estudiaré más español.",
+   "options": [
+    "I will study more Spanish.",
+    "I studied more Spanish.",
+    "I have studied more Spanish.",
+    "I study more Spanish every day."
+   ]
+  },
+  "why": "seguir + gerund (Unit 28)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex02",
+  "set": {
+   "options": [
+    "Daniela encontrará su camino.",
+    "Daniela va a encontrar su camino.",
+    "Daniela encontró su camino."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "preterito-indefinido"
+   }
+  },
+  "why": "tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex05",
+  "set": {
+   "options": [
+    "seremos",
+    "somos",
+    "fuimos"
+   ],
+   "correct": 0,
+   "question": "Which is the futuro simple of ser for nosotros?",
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-indefinido"
+   }
+  },
+  "why": "unmet-word \"seramos\" (non-word in no list): use real forms of other skills",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex11",
+  "set": {
+   "question": "¿Dónde están los amigos?"
+  },
+  "why": "unmet-word reunirse (first taught b1-05-02)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex12",
+  "set": {
+   "options": [
+    "Viajará por Vietnam.",
+    "Vivirá en Hanói.",
+    "Trabajará en España."
+   ],
+   "correct": 0
+  },
+  "why": "length-giveaway 30 vs 20: shorten the right answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex13",
+  "set": {
+   "options": [
+    "Encontrar trabajo.",
+    "Viajar a Chile.",
+    "Comprar una casa."
+   ],
+   "correct": 0
+  },
+  "why": "length-giveaway 27 vs 17; \"un nuevo\" cut (encontrar is added to the a2-19-05 vocabulary)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex15",
+  "set": {
+   "question": "¿Dónde dice Carlos que vivirán él y Meg?",
+   "options": [
+    "Vivirán juntos en Hungría.",
+    "Vivirán juntos en Chile.",
+    "Vivirán juntos en España."
+   ],
+   "correct": 0
+  },
+  "why": "length-giveaway 46 vs 27; unmet dejará/mudará and continuar + gerund in the options; answerable from paragraph 8 (Viviremos juntos en Hungría)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex17",
+  "set": {
+   "options": [
+    "Viviremos en Budapest.",
+    "Vivimos en Budapest.",
+    "Hemos vivido en Budapest."
+   ],
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Dónde viviremos algún día?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "ex17 repeated reading ex14 (Kaylee, para qué ahorrará) and ayer tell; new item matches paragraph 7",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex18",
+  "set": {
+   "options": [
+    "Estudiaré español en Budapest.",
+    "Estudié español en Budapest.",
+    "He estudiado español en Budapest."
+   ],
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué harás tú el próximo año?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "\"Seguiré viviendo en Hanói\" contradicts the story (Meg moves to Budapest); seguir + gerund; ayer tell",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex19",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you will travel next year.",
+     "answer": "Viajaré el próximo año."
+    },
+    {
+     "prompt": "Say that you will study more Spanish.",
+     "answer": "Estudiaré más español."
+    },
+    {
+     "prompt": "Say that you will save money to visit Spain.",
+     "answer": "Ahorraré dinero para visitar España."
+    },
+    {
+     "prompt": "Say that we will always be friends.",
+     "answer": "Siempre seremos amigos."
+    }
+   ]
+  },
+  "why": "\"Say that you will always be friends\" but the answer is nosotros (seremos); seguir + gerund",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-19-05-gr.json",
+  "old": "*Daniela viajará*, not *Daniela ella viajará* — once the subject is already named, Spanish never doubles it with a pronoun, even in a tense where English speakers might feel tempted to add 'she' for clarity.",
+  "new": "Once the subject is named (*Daniela viajará*), you don't add *ella*: the ending *-á* already shows who acts.",
+  "why": "\"never doubles it with a pronoun\" is false (Daniela, ella viajará is possible for emphasis)",
+  "id": "a2-19-05-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-19.json",
+  "old": "\"question\": \"¿De qué trata principalmente la conversación de los amigos en la cafetería?\",\n          \"options\": [\n            \"De los planes de futuro de cada miembro del grupo y el gran anuncio de Carlos y Meg.\",\n            \"De una discusión sobre los gastos del apartamento compartido.\",\n            \"De la preparación de una fiesta de bienvenida para nuevos estudiantes.\",\n            \"Del precio de las clases de idiomas en el sur de Vietnam.\"",
+  "new": "\"question\": \"¿Qué anuncian Carlos y Meg a sus amigos?\",\n          \"options\": [\n            \"Que se mudarán juntos a Budapest.\",\n            \"Que Lucía vuelve a Hanói.\",\n            \"Que Daniela se queda en Vietnam.\",\n            \"Que Lauren y Kaylee viajarán a Chile.\"",
+  "why": "reading-generic (\"¿De qué trata…?\"); ask what the people say",
+  "id": "a2-original-19",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-19.json",
+  "old": "\"question\": \"¿Qué significa la mudanza a Budapest para Carlos y Meg?\",\n          \"options\": [\n            \"Una decisión obligatoria porque no tenían visado para quedarse en Vietnam.\",\n            \"El fin de su interés por la lengua y la cultura en español.\",\n            \"El comienzo de un proyecto de vida compartido como pareja en Europa.\",\n            \"Una solución temporal mientras buscan trabajo en Sudáfrica.\"",
+  "new": "\"question\": \"¿Dónde dice Carlos que vivirán él y Meg?\",\n          \"options\": [\n            \"En Chile.\",\n            \"En Vietnam.\",\n            \"En Hungría.\",\n            \"En España.\"",
+  "why": "abstract question with invented options (visado, Sudáfrica) and an imperfect (tenían); answerable from paragraph 8",
+  "id": "a2-original-19",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-19.json",
+  "old": "\"explanation\": \"Meg y Carlos anuncian que vivirán juntos en Hungría para crear un nuevo hogar y avanzar en su relación.\"",
+  "new": "\"explanation\": \"Carlos dice: «Viviremos juntos en Hungría» (párrafo 8).\"",
+  "why": "explanation follows the new question",
+  "id": "a2-original-19",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-19.json",
+  "old": "\"explanation\": \"En la reunión, cada amigo expone sus proyectos y Carlos y Meg comparten su decisión de mudarse a Budapest.\"",
+  "new": "\"explanation\": \"Meg dice: «nos mudaremos juntos a Budapest» (párrafo 7).\"",
+  "why": "explanation follows the new question",
+  "id": "a2-original-19",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-19.json",
+  "old": "\"Buscar un nuevo trabajo en Hanói con Lauren.\",\n            \"Viajar por el sur de Vietnam.\",\n            \"Comprar un boleto directo a Hungría.\",\n            \"Empezar un curso intensivo de gramática.\"",
+  "new": "\"Buscar un nuevo trabajo en Hanói con Lauren.\",\n            \"Viajar por el sur de Vietnam.\",\n            \"Comprar un boleto a Hungría.\",\n            \"Empezar un curso de gramática.\"",
+  "why": "trims invented details; (minor)",
+  "id": "a2-original-19",
+  "kind": "target",
+  "sure": false,
+  "course_words": [
+   "billete -> boleto"
+  ]
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex01",
+  "set": {
+   "options": [
+    "Cambiaré de plan mañana.",
+    "Voy a cambiar de plan mañana.",
+    "Cambié de plan mañana."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "preterito-indefinido"
+   }
+  },
+  "why": "consolidation-copy of 01.ex02 + tell-time-word",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex02",
+  "set": {
+   "sentence": "El próximo año Meg __ a Budapest.",
+   "hint": "viajar",
+   "answer": "viajará",
+   "english": "Next year Meg will travel to Budapest."
+  },
+  "why": "consolidation-copy of 01.ex03",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex03",
+  "set": {
+   "tiles": [
+    "Viviremos",
+    "en",
+    "otra",
+    "ciudad"
+   ],
+   "solution": [
+    "Viviremos",
+    "en",
+    "otra",
+    "ciudad"
+   ],
+   "english": "We will live in another city."
+  },
+  "why": "consolidation-copy of 01.ex04",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex07",
+  "set": {
+   "tiles": [
+    "¿Dónde",
+    "trabajarás",
+    "el",
+    "próximo",
+    "año?"
+   ],
+   "solution": [
+    "¿Dónde",
+    "trabajarás",
+    "el",
+    "próximo",
+    "año?"
+   ],
+   "english": "Where will you work next year?"
+  },
+  "why": "consolidation-copy of 02.ex13",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex08",
+  "set": {
+   "options": [
+    "Sucederá pronto.",
+    "Sucedió pronto.",
+    "Ha sucedido pronto."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer; \"Sucede ayer\" had two faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex11",
+  "set": {
+   "options": [
+    "Lograré mis objetivos.",
+    "Logré mis objetivos.",
+    "He logrado mis objetivos."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex15",
+  "set": {
+   "options": [
+    "Creo que cambiará mucho.",
+    "Creo que cambió mucho.",
+    "Creo que ha cambiado mucho."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "length-giveaway 30 vs 17 + tell-time-word",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex16",
+  "set": {
+   "options": [
+    "Trabajaré en un nuevo proyecto.",
+    "Trabajé en un nuevo proyecto.",
+    "He trabajado en un nuevo proyecto."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "seguir + gerund (Unit 28) + tell-time-word",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you will travel next year.",
+     "answer": "Viajaré el próximo año."
+    },
+    {
+     "prompt": "Say that you will probably change your plans.",
+     "answer": "Probablemente cambiaré mis planes."
+    },
+    {
+     "prompt": "Say that you will study more Spanish.",
+     "answer": "Estudiaré más español."
+    }
+   ]
+  },
+  "why": "seguir + gerund (Unit 28)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-20-01-gr.json",
+  "old": "Use the pretérito perfecto for recent experiences and actions connected to the present.",
+  "new": "You know the pretérito perfecto from Unit 1. Use it for recent experiences and actions connected to the present.",
+  "why": "review screen presents the perfecto without a recap ('You know … from Unit 1')",
+  "id": "a2-20-01-gr"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-20-01-gr.json",
+  "old": " That fixed *-o* is different from participles used with *estar* or *ser*, which do agree — don't let those patterns bleed into this one.",
+  "new": "",
+  "why": "tip mentions estar/ser participle agreement, which this course has not taught",
+  "id": "a2-20-01-gr"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-20-02-voc.json",
+  "old": "\"lemma\": \"terminar\",\n      \"translation\": \"to finish\",\n      \"pos\": \"verb\"\n    }",
+  "new": "\"lemma\": \"terminar\",\n      \"translation\": \"to finish\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"regresar\",\n      \"translation\": \"to return\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"junto a\",\n      \"translation\": \"next to\",\n      \"pos\": \"preposition\"\n    }",
+  "why": "unmet-word regresó/regresará (first listed b1-01-05) and junto (in no list): both used from this lesson's grammar",
+  "id": "vocab.a2.20.02"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-20-02-gr.json",
+  "old": "Use the pretérito indefinido for completed events in a finished past period and for recounting a sequence of events.",
+  "new": "You know the pretérito indefinido from Unit 11. Use it for completed events in a finished past period and for recounting a sequence of events.",
+  "why": "review screen without recap",
+  "id": "a2-20-02-gr"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-20-03-gr.json",
+  "old": "Use ir a + infinitive for immediate or planned future actions.",
+  "new": "You know ir a + infinitive from A1. Use it for immediate or planned future actions.",
+  "why": "review screen without recap",
+  "id": "a2-20-03-gr"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-20-04-voc.json",
+  "old": "\"lemma\": \"lograr\",\n      \"translation\": \"to achieve\",\n      \"pos\": \"verb\"\n    }",
+  "new": "\"lemma\": \"lograr\",\n      \"translation\": \"to achieve\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"diferente\",\n      \"translation\": \"different\",\n      \"pos\": \"adjective\"\n    }",
+  "why": "unmet-word diferente (first listed a2-imperfectobasico-03) used from this lesson",
+  "id": "vocab.a2.20.04"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-20-04-gr.json",
+  "old": "Use the *futuro* simple for predictions, expectations and future goals. Regular endings are attached to the full infinitive: *seguiré*, logrará, volveremos, empezarán.",
+  "new": "You know the futuro simple from Unit 19. Use it for predictions, expectations and future goals. Regular endings are attached to the full infinitive: *estudiaré*, logrará, volveremos, empezarán.",
+  "why": "review screen without recap; seguir + gerund is Unit 28",
+  "id": "a2-20-04-gr"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-20-05-gr.json",
+  "old": "It's fitting that the course's last grammar point is also a map of all four tenses: *hemos aprendido* closes the loop back to day one, while *caminaron*, *van a empezar* and *será* send the story — and you — forward.",
+  "new": "*Hemos aprendido* looks back to what we have done, *caminaron* tells what happened, and *van a empezar* and *será* look forward.",
+  "why": "false claim: this is not the course's last grammar point (Units 21–33 follow)",
+  "id": "a2-20-05-gr"
+ },
+ {
+  "file": "content/es-latam/lessons/a2/a2-20-05.json",
+  "old": "\"goal\": \"Talk about experiences, memories and new beginnings using familiar A2 past and future forms.\"",
+  "new": "\"goal\": \"Talk about what you have done, what happened and what you will do.\"",
+  "why": "\"familiar A2 past and future forms\" is course jargon"
+ },
+ {
+  "file": "content/es-latam/lessons/a2/a2-20-05.json",
+  "old": "\"items\": [\n        \"Talk about experiences, memories and new beginnings using familiar A2 past and future forms.\"",
+  "new": "\"items\": [\n        \"Talk about what you have done, what happened and what you will do.\"",
+  "why": "same"
+ },
+ {
+  "file": "content/es-latam/lessons/a2/a2-20-05.json",
+  "old": "\"I can talk about experiences, memories and new beginnings using familiar A2 past and future forms.\"",
+  "new": "\"I can talk about what I have done, what happened and what I will do.\"",
+  "why": "same"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-01-ex.json",
+  "id": "a2.20.01.ex02",
+  "set": {
+   "question": "We have learnt a lot. Which sentence says this?",
+   "options": [
+    "Hemos aprendido mucho.",
+    "Aprendimos mucho.",
+    "Hemos aprender mucho."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido"
+   },
+   "teaches": [
+    "preterito-perfecto"
+   ],
+   "category": "grammar"
+  },
+  "why": "garbled options ('Aprendimos mañana', 'Vamos aprendimos mucho'); English pins the meaning",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-01-ex.json",
+  "id": "a2.20.01.ex07",
+  "set": {
+   "answer": "Has",
+   "answers": null
+  },
+  "why": "answers-alternatives: 'Ha' (usted/él) does not fit 'Have you…?' with tú; narrow to Has",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-01-ex.json",
+  "id": "a2.20.01.ex14",
+  "set": {
+   "options": [
+    "Hemos compartido muchos recuerdos.",
+    "Compartiremos muchos recuerdos.",
+    "Vamos a compartir muchos recuerdos."
+   ],
+   "distractor_skills": {
+    "1": "futuro-simple",
+    "2": "ir-infinitive"
+   }
+  },
+  "why": "garbled wrong options ('Vamos compartimos…') and a time clash; wrong options are future forms so the preterite is not a possible reply",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-01-ex.json",
+  "id": "a2.20.01.ex15",
+  "set": {
+   "options": [
+    "Sí, he terminado el curso.",
+    "Sí, terminaré el curso.",
+    "Sí, he terminar el curso."
+   ],
+   "distractor_skills": {
+    "1": "futuro-simple"
+   }
+  },
+  "why": "garbled wrong options ('Sí, terminé mañana', 'voy a terminado')",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-02-ex.json",
+  "id": "a2.20.02.ex02",
+  "set": {
+   "question": "They remembered the goodbye. Which sentence says this?",
+   "options": [
+    "Recordaron la despedida.",
+    "Recordarán la despedida.",
+    "Han recordado la despedida."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "futuro-simple",
+    "2": "preterito-perfecto"
+   },
+   "teaches": [
+    "preterito-indefinido"
+   ]
+  },
+  "why": "lesson a2-20-02 teaches the pretérito indefinido but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-02-ex.json",
+  "id": "a2.20.02.ex03",
+  "set": {
+   "sentence": "Carlos __ el curso ayer.",
+   "hint": "terminar",
+   "answer": "terminó",
+   "answers": null,
+   "english": "Carlos finished the course yesterday.",
+   "teaches": [
+    "preterito-indefinido"
+   ]
+  },
+  "why": "lesson a2-20-02 teaches the pretérito indefinido but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-02-ex.json",
+  "id": "a2.20.02.ex04",
+  "set": {
+   "tiles": [
+    "Meg",
+    "y",
+    "Carlos",
+    "recordaron",
+    "la",
+    "despedida"
+   ],
+   "solution": [
+    "Meg",
+    "y",
+    "Carlos",
+    "recordaron",
+    "la",
+    "despedida"
+   ],
+   "english": "Meg and Carlos remembered the goodbye.",
+   "teaches": [
+    "preterito-indefinido"
+   ]
+  },
+  "why": "lesson a2-20-02 teaches the pretérito indefinido but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-02-ex.json",
+  "id": "a2.20.02.ex05",
+  "set": {
+   "question": "Lauren finished the course. Which sentence says this?",
+   "options": [
+    "Lauren terminó el curso.",
+    "Lauren termino el curso.",
+    "Lauren terminar el curso."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "present-tense"
+   },
+   "teaches": [
+    "preterito-indefinido"
+   ]
+  },
+  "why": "lesson a2-20-02 teaches the pretérito indefinido but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-02-ex.json",
+  "id": "a2.20.02.ex07",
+  "set": {
+   "sentence": "Ayer yo __ ese momento.",
+   "hint": "recordar",
+   "answer": "recordé",
+   "answers": null,
+   "english": "Yesterday I remembered that moment.",
+   "teaches": [
+    "preterito-indefinido"
+   ]
+  },
+  "why": "lesson a2-20-02 teaches the pretérito indefinido but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-02-ex.json",
+  "id": "a2.20.02.ex08",
+  "set": {
+   "tiles": [
+    "Meg",
+    "y",
+    "Lauren",
+    "terminaron",
+    "el",
+    "curso"
+   ],
+   "solution": [
+    "Meg",
+    "y",
+    "Lauren",
+    "terminaron",
+    "el",
+    "curso"
+   ],
+   "english": "Meg and Lauren finished the course.",
+   "teaches": [
+    "preterito-indefinido"
+   ]
+  },
+  "why": "lesson a2-20-02 teaches the pretérito indefinido but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-02-ex.json",
+  "id": "a2.20.02.ex09",
+  "set": {
+   "question": "Which is the pretérito indefinido of terminar for «ellos»?",
+   "options": [
+    "terminaron",
+    "terminan",
+    "terminar"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "present-tense"
+   },
+   "teaches": [
+    "preterito-indefinido"
+   ]
+  },
+  "why": "lesson a2-20-02 teaches the pretérito indefinido but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-02-ex.json",
+  "id": "a2.20.02.ex12",
+  "set": {
+   "options": [
+    "Lauren encontró un nuevo trabajo.",
+    "Lauren encontrará un nuevo trabajo.",
+    "Lauren tiene un nuevo trabajo."
+   ],
+   "distractor_skills": {
+    "1": "futuro-simple",
+    "2": "present-tense"
+   }
+  },
+  "why": "unmet-word encuentra (stem-changing form of encontrar); tiene is met",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-03-ex.json",
+  "id": "a2.20.03.ex02",
+  "set": {
+   "question": "Which sentence uses ir a + infinitive?",
+   "options": [
+    "Voy a volver mañana.",
+    "Volví mañana.",
+    "He vuelto mañana."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   },
+   "teaches": [
+    "ir-infinitive"
+   ]
+  },
+  "why": "lesson a2-20-03 teaches ir a + infinitive but this item (copied from the lesson 01 template) tests the pretérito perfecto; also tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-03-ex.json",
+  "id": "a2.20.03.ex03",
+  "set": {
+   "sentence": "Mañana yo __ a empezar un nuevo capítulo.",
+   "hint": "ir",
+   "answer": "voy",
+   "answers": null,
+   "english": "Tomorrow I am going to begin a new chapter.",
+   "teaches": [
+    "ir-infinitive"
+   ]
+  },
+  "why": "lesson a2-20-03 teaches ir a + infinitive but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-03-ex.json",
+  "id": "a2.20.03.ex04",
+  "set": {
+   "tiles": [
+    "Vamos",
+    "a",
+    "continuar",
+    "el",
+    "proyecto"
+   ],
+   "solution": [
+    "Vamos",
+    "a",
+    "continuar",
+    "el",
+    "proyecto"
+   ],
+   "english": "We are going to continue the project.",
+   "teaches": [
+    "ir-infinitive"
+   ]
+  },
+  "why": "lesson a2-20-03 teaches ir a + infinitive but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-03-ex.json",
+  "id": "a2.20.03.ex05",
+  "set": {
+   "question": "Lauren is going to go back home. Which sentence says this?",
+   "options": [
+    "Lauren va a volver a casa.",
+    "Lauren va volver a casa.",
+    "Lauren va a vuelve a casa."
+   ],
+   "correct": 0,
+   "distractor_skills": {},
+   "teaches": [
+    "ir-infinitive"
+   ]
+  },
+  "why": "lesson a2-20-03 teaches ir a + infinitive but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-03-ex.json",
+  "id": "a2.20.03.ex07",
+  "set": {
+   "sentence": "Carlos y Meg __ a empezar un proyecto.",
+   "hint": "ir",
+   "answer": "van",
+   "answers": null,
+   "english": "Carlos and Meg are going to start a project.",
+   "teaches": [
+    "ir-infinitive"
+   ]
+  },
+  "why": "lesson a2-20-03 teaches ir a + infinitive but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-03-ex.json",
+  "id": "a2.20.03.ex08",
+  "set": {
+   "tiles": [
+    "Meg",
+    "va",
+    "a",
+    "continuar",
+    "su",
+    "proyecto"
+   ],
+   "solution": [
+    "Meg",
+    "va",
+    "a",
+    "continuar",
+    "su",
+    "proyecto"
+   ],
+   "english": "Meg is going to continue her project.",
+   "teaches": [
+    "ir-infinitive"
+   ]
+  },
+  "why": "lesson a2-20-03 teaches ir a + infinitive but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-03-ex.json",
+  "id": "a2.20.03.ex09",
+  "set": {
+   "question": "Which form of ir goes with «nosotros» in ir a + infinitive?",
+   "options": [
+    "vamos",
+    "voy",
+    "vas"
+   ],
+   "correct": 0,
+   "distractor_skills": {},
+   "teaches": [
+    "ir-infinitive"
+   ]
+  },
+  "why": "lesson a2-20-03 teaches ir a + infinitive but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-03-ex.json",
+  "id": "a2.20.03.ex14",
+  "set": {
+   "answer": "vas a",
+   "answers": null
+  },
+  "why": "answers-alternatives: 'va a' (usted/él) does not fit 'you' with tú",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-03-ex.json",
+  "id": "a2.20.03.ex12",
+  "set": {
+   "options": [
+    "Meg va a empezar un nuevo capítulo.",
+    "Meg empezó un nuevo capítulo.",
+    "Meg ha empezado un nuevo capítulo."
+   ],
+   "correct": 0,
+   "question": "Which sentence describes an immediate future plan?",
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-03-ex.json",
+  "id": "a2.20.03.ex15",
+  "set": {
+   "options": [
+    "Vamos a continuar nuestros proyectos.",
+    "Hemos continuado nuestros proyectos.",
+    "Vamos continuar nuestros proyectos."
+   ],
+   "distractor_skills": {
+    "1": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer; present Continuamos is also a natural answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-03-ex.json",
+  "id": "a2.20.03.ex16",
+  "set": {
+   "options": [
+    "Voy a volver a casa.",
+    "He vuelto a casa.",
+    "Voy volver a casa."
+   ],
+   "distractor_skills": {
+    "1": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-04-ex.json",
+  "id": "a2.20.04.ex02",
+  "set": {
+   "question": "Which sentence uses the futuro simple?",
+   "options": [
+    "Lograremos nuestros objetivos.",
+    "Vamos a lograr nuestros objetivos.",
+    "Hemos logrado nuestros objetivos."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "preterito-perfecto"
+   },
+   "teaches": [
+    "futuro-simple"
+   ]
+  },
+  "why": "lesson a2-20-04 teaches the futuro simple but this item (copied from the lesson 01 template) tests the pretérito perfecto; also tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-04-ex.json",
+  "id": "a2.20.04.ex03",
+  "set": {
+   "sentence": "El próximo año yo __ mi objetivo.",
+   "hint": "lograr",
+   "answer": "lograré",
+   "answers": null,
+   "english": "Next year I will achieve my goal.",
+   "teaches": [
+    "futuro-simple"
+   ]
+  },
+  "why": "lesson a2-20-04 teaches the futuro simple but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-04-ex.json",
+  "id": "a2.20.04.ex04",
+  "set": {
+   "tiles": [
+    "Lograremos",
+    "un",
+    "objetivo",
+    "importante"
+   ],
+   "solution": [
+    "Lograremos",
+    "un",
+    "objetivo",
+    "importante"
+   ],
+   "english": "We will achieve an important goal.",
+   "teaches": [
+    "futuro-simple"
+   ]
+  },
+  "why": "lesson a2-20-04 teaches the futuro simple but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-04-ex.json",
+  "id": "a2.20.04.ex05",
+  "set": {
+   "question": "They will return soon. Which sentence says this?",
+   "options": [
+    "Volverán pronto.",
+    "Volvieron pronto.",
+    "Han vuelto pronto."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   },
+   "teaches": [
+    "futuro-simple"
+   ]
+  },
+  "why": "lesson a2-20-04 teaches the futuro simple but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-04-ex.json",
+  "id": "a2.20.04.ex07",
+  "set": {
+   "sentence": "Ellos __ sus objetivos.",
+   "hint": "lograr",
+   "answer": "lograrán",
+   "answers": null,
+   "english": "They will achieve their goals.",
+   "teaches": [
+    "futuro-simple"
+   ]
+  },
+  "why": "lesson a2-20-04 teaches the futuro simple but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-04-ex.json",
+  "id": "a2.20.04.ex08",
+  "set": {
+   "tiles": [
+    "Daniela",
+    "encontrará",
+    "su",
+    "camino"
+   ],
+   "solution": [
+    "Daniela",
+    "encontrará",
+    "su",
+    "camino"
+   ],
+   "english": "Daniela will find her path.",
+   "teaches": [
+    "futuro-simple"
+   ]
+  },
+  "why": "lesson a2-20-04 teaches the futuro simple but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-04-ex.json",
+  "id": "a2.20.04.ex09",
+  "set": {
+   "question": "Which is the futuro simple of lograr for «yo»?",
+   "options": [
+    "lograré",
+    "logré",
+    "logro"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "present-tense"
+   },
+   "teaches": [
+    "futuro-simple"
+   ]
+  },
+  "why": "lesson a2-20-04 teaches the futuro simple but this item (copied from the lesson 01 template) tests the pretérito perfecto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-04-ex.json",
+  "id": "a2.20.04.ex12",
+  "set": {
+   "options": [
+    "El futuro será diferente.",
+    "El futuro fue diferente.",
+    "El futuro ha sido diferente."
+   ],
+   "correct": 0,
+   "question": "Which sentence expresses a prediction?",
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-04-ex.json",
+  "id": "a2.20.04.ex15",
+  "set": {
+   "options": [
+    "Será diferente.",
+    "Fue diferente.",
+    "Ha sido diferente."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-04-ex.json",
+  "id": "a2.20.04.ex16",
+  "set": {
+   "options": [
+    "Lograremos nuestros objetivos.",
+    "Lograron nuestros objetivos.",
+    "Hemos logrado nuestros objetivos."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-20-04-gr.json",
+  "old": "\"spanish\": \"Seguiré estudiando español.\",\n          \"english\": \"I will continue studying Spanish.\"",
+  "new": "\"spanish\": \"Estudiaré más español.\",\n          \"english\": \"I will study more Spanish.\"",
+  "why": "seguir + gerund is Unit 28",
+  "id": "a2-20-04-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-20-04-gr.json",
+  "old": "\"seguiré\",\n          \"I will continue\"",
+  "new": "\"estudiaré\",\n          \"I will study\"",
+  "why": "follows the example",
+  "id": "a2-20-04-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-05-ex.json",
+  "id": "a2.20.05.ex02",
+  "set": {
+   "options": [
+    "Ya han empezado un capítulo de su vida.",
+    "Empezaron un capítulo de su vida mañana.",
+    "Ya han empezaron un capítulo de su vida."
+   ],
+   "correct": 0
+  },
+  "why": "unmet-word cerrado/cerraron; tell-time ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-05-ex.json",
+  "id": "a2.20.05.ex13",
+  "set": {
+   "options": [
+    "Junto al lago.",
+    "En el aeropuerto.",
+    "En una cafetería."
+   ],
+   "correct": 0,
+   "question": "¿Dónde caminan Carlos y Meg?"
+  },
+  "why": "unmet-word quedaron + length-giveaway 24 vs 17",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-05-ex.json",
+  "id": "a2.20.05.ex20",
+  "set": {
+   "options": [
+    "We have learnt a lot.",
+    "We learnt a lot yesterday.",
+    "We are going to learn a lot.",
+    "We will learn a lot."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "ir-infinitive",
+    "3": "futuro-simple"
+   }
+  },
+  "why": "garbled options with time clashes (We learnt a lot tomorrow)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-05-ex.json",
+  "id": "a2.20.05.ex17",
+  "set": {
+   "options": [
+    "Hemos aprendido mucho.",
+    "Aprenderemos mucho.",
+    "Vamos a aprender mucho."
+   ],
+   "distractor_skills": {
+    "1": "futuro-simple",
+    "2": "ir-infinitive"
+   }
+  },
+  "why": "tell-time-word ayer / garbled clash",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-05-ex.json",
+  "id": "a2.20.05.ex18",
+  "set": {
+   "options": [
+    "Vamos a empezar un nuevo capítulo.",
+    "Hemos empezado un nuevo capítulo.",
+    "Vamos empezar un nuevo capítulo."
+   ],
+   "distractor_skills": {
+    "1": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer; present Empezamos is also a natural answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-20-05-gr.json",
+  "old": "Combine the main A2 time frames.",
+  "new": "You know these four time frames from earlier units: the pretérito perfecto (Unit 1), the pretérito indefinido (Unit 11), ir a + infinitive (A1) and the futuro simple (Unit 19). Here they work together.",
+  "why": "review screen without recap",
+  "id": "a2-20-05-gr",
+  "sure": false
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-20.json",
+  "old": "donde se habían conocido muchos meses antes",
+  "new": "donde se conocieron hace muchos meses",
+  "why": "pluperfect (había conocido) is B1",
+  "id": "a2-original-20",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-20.json",
+  "old": "A partir de ahora, el mundo entero sería su aula",
+  "new": "A partir de ahora, el mundo entero será su aula",
+  "why": "conditional (sería) is Unit 26",
+  "id": "a2-original-20",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-20.json",
+  "old": "\"question\": \"¿Cuál es el tema principal de esta historia de cierre?\",\n          \"options\": [\n            \"La despedida definitiva de Hanói y la ilusión de Carlos y Meg por comenzar su vida juntos en Budapest.\",\n            \"La búsqueda de un piso de alquiler económico junto al lago Hoàn Kiếm.\",\n            \"La llegada de los familiares de Meg desde Sudáfrica para visitarla.\",\n            \"Una clase práctica de español impartida a orillas del lago.\"",
+  "new": "\"question\": \"¿Dónde dice Carlos que estarán algún día él y Meg?\",\n          \"options\": [\n            \"En Budapest.\",\n            \"En Chile.\",\n            \"En Sudáfrica.\",\n            \"En el aeropuerto de Hanói.\"",
+  "why": "reading-generic (\"tema principal\")",
+  "id": "a2-original-20",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-20.json",
+  "old": "\"explanation\": \"La historia muestra a Carlos y Meg en el lugar donde se conocieron, reflexionando sobre lo vivido y mirando con ilusión su futuro en Europa.\"",
+  "new": "\"explanation\": \"Carlos dice: «Algún día estaremos en Budapest» (párrafo 9).\"",
+  "why": "follows the new question",
+  "id": "a2-original-20",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-20.json",
+  "old": "\"question\": \"¿Qué representa para ellos la frase «el mundo entero sería su aula»?\",\n          \"options\": [\n            \"Que planean matricularse en todas las universidades de Europa.\",\n            \"Que continuarán aprendiendo y creciendo juntos a través de cada nueva experiencia de vida.\",\n            \"Que ya no necesitan hablar ningún idioma extranjero.\",\n            \"Que trabajarán como profesores de geografía por todo el mundo.\"",
+  "new": "\"question\": \"¿Qué hicieron Carlos y Meg al final?\",\n          \"options\": [\n            \"Una fotografía junto al lago.\",\n            \"Una maleta para Budapest.\",\n            \"Una carta para Lucía.\",\n            \"Una clase de español.\"",
+  "why": "abstract question about a phrase with invented options; ask what they do",
+  "id": "a2-original-20",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-20.json",
+  "old": "\"explanation\": \"La frase refleja que su aprendizaje no se limita a un aula formal, sino que la vida, sus viajes y su relación son una continua escuela.\"",
+  "new": "\"explanation\": \"Párrafo 10: «hicieron una fotografía juntos junto al lago».\"",
+  "why": "follows the new question",
+  "id": "a2-original-20",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-consolidation-ex.json",
+  "id": "a2.20.consolidation.ex08",
+  "set": {
+   "options": [
+    "Voy a empezar un nuevo capítulo.",
+    "Empecé un nuevo capítulo.",
+    "He empezado un nuevo capítulo."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-consolidation-ex.json",
+  "id": "a2.20.consolidation.ex11",
+  "set": {
+   "options": [
+    "Los amigos volverán pronto.",
+    "Los amigos volvieron pronto.",
+    "Los amigos han vuelto pronto."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "consolidation-copy of 20-04.ex12 + tell-time-word",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-consolidation-ex.json",
+  "id": "a2.20.consolidation.ex12",
+  "set": {
+   "tiles": [
+    "Volveremos",
+    "a",
+    "Hanói",
+    "pronto"
+   ],
+   "solution": [
+    "Volveremos",
+    "a",
+    "Hanói",
+    "pronto"
+   ],
+   "english": "We will return to Hanoi soon."
+  },
+  "why": "consolidation-copy of 20-04.ex13",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-consolidation-ex.json",
+  "id": "a2.20.consolidation.ex14",
+  "set": {
+   "options": [
+    "Hemos aprendido mucho.",
+    "Aprenderemos mucho.",
+    "Vamos a aprender mucho."
+   ],
+   "distractor_skills": {
+    "1": "futuro-simple",
+    "2": "ir-infinitive"
+   }
+  },
+  "why": "tell-time-word / garbled clash",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-consolidation-ex.json",
+  "id": "a2.20.consolidation.ex15",
+  "set": {
+   "options": [
+    "Hicieron una última fotografía.",
+    "Harán una última fotografía.",
+    "Han hecho una última fotografía."
+   ],
+   "distractor_skills": {
+    "1": "futuro-simple",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "garbled \"Han hecho … mañana\"",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-consolidation-ex.json",
+  "id": "a2.20.consolidation.ex16",
+  "set": {
+   "options": [
+    "Será diferente.",
+    "Fue diferente.",
+    "Ha sido diferente."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-20-consolidation-ex.json",
+  "id": "a2.20.consolidation.ex19",
+  "set": {
+   "sentence": "Probablemente volverán pronto.",
+   "options": [
+    "They will probably return soon.",
+    "They probably returned yesterday.",
+    "They have probably returned.",
+    "They probably return every day."
+   ]
+  },
+  "why": "consolidation-copy of 20-04.ex18",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-03-ex.json",
+  "id": "a2.imperfectobasico.03.ex07",
+  "set": {
+   "teaches": [
+    "imperfect"
+   ],
+   "category": "grammar"
+  },
+  "why": "listening choice differs by tense, so it shows the imperfect skill, not the unit vocabulary"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-03-ex.json",
+  "id": "a2.imperfectobasico.03.ex08",
+  "set": {
+   "teaches": [
+    "imperfect"
+   ],
+   "category": "grammar"
+  },
+  "why": "same"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-04-ex.json",
+  "id": "a2.imperfectobasico.04.ex08",
+  "set": {
+   "teaches": [
+    "imperfect"
+   ],
+   "category": "grammar"
+  },
+  "why": "listening choice differs by tense: imperfect, not vocabulary"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperfectobasico-05-gr.json",
+  "old": "Here is the complete paradigm for reference.",
+  "new": "You know *mientras* from Unit 13: with the imperfect it is the normal use (*Mientras trabajábamos, hablábamos*), because both actions were going on at the same time. Here is the complete paradigm for reference.",
+  "why": "recap of mientras + imperfect",
+  "id": "a2-imperfectobasico-05-gr"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperfectobasico-consolidation-gr.json",
+  "old": "Consolidation of all imperfecto forms and their three main uses.",
+  "new": "Consolidation of all imperfecto forms and their three main uses. You know *mientras* from Unit 13: with the imperfect it is the normal use (*Mientras ella cocinaba, nosotros jugábamos*).",
+  "why": "mientras note",
+  "id": "a2-imperfectobasico-consolidation-gr"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperfectobasico-01-gr.json",
+  "old": "\"spanish\": \"Cuando era niño, vivía en Madrid.\",\n          \"english\": \"When I was a child, I lived in Madrid.\"",
+  "new": "\"spanish\": \"De niño, Carlos nadaba en el lago.\",\n          \"english\": \"As a child, Carlos used to swim in the lake.\"",
+  "why": "example uses era (lesson 03) and vivía (-IR, lesson 02) before their screens, and puts a Hungarian childhood in Madrid; speaking step 1 uses this line",
+  "id": "a2-imperfectobasico-01-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-01-ex.json",
+  "id": "a2.imperfectobasico.01.ex07",
+  "set": {
+   "options": [
+    "Mi madre cocinaba los domingos.",
+    "Mi madre cocina los domingos.",
+    "Mi madre ha cocinado los domingos.",
+    "Mi madre cocinará los domingos."
+   ],
+   "correct": 0,
+   "question": "My mother used to cook on Sundays. Which sentence says this?",
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto",
+    "3": "futuro-simple"
+   }
+  },
+  "why": "length-giveaway 34 vs 22, tell-time-word Ayer; comía is -ER (lesson 02), paella unmet, comería is a conditional (Unit 26)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-01-ex.json",
+  "id": "a2.imperfectobasico.01.ex02",
+  "set": {
+   "sentence": "Cuando era pequeño, Carlos _____ en el lago cada día.",
+   "english": "When he was little, Carlos swam in the lake every day."
+  },
+  "why": "unmet-word verano; Carlos grew up by a lake in Hungary (a2-imperfecto1-01), not by the sea",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-01-ex.json",
+  "id": "a2.imperfectobasico.01.ex10",
+  "set": {
+   "options": [
+    "Normalmente viajaba a la playa con mis abuelos.",
+    "Normalmente viajé a la playa con mis abuelos.",
+    "Normalmente viajo a la playa con mis abuelos."
+   ],
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué hacías en las vacaciones de niño?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "present-tense"
+   }
+  },
+  "why": "prompt uses hacías (-ER, lesson 02) and eras (lesson 03) before their screens; unmet campo (consolidation); Meg grew up in South Africa, so the beach fits",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-01-ex.json",
+  "id": "a2.imperfectobasico.01.ex11",
+  "set": {
+   "options": [
+    "Sí, practicaba frecuentemente con un amigo.",
+    "Sí, practico frecuentemente con un amigo.",
+    "Sí, practicaré frecuentemente con un amigo."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "futuro-simple"
+   }
+  },
+  "why": "tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-02-ex.json",
+  "id": "a2.imperfectobasico.02.ex02",
+  "set": {
+   "sentence": "Cuando estudiaba, Ana _____ en Madrid.",
+   "english": "When she was studying, Ana lived in Madrid."
+  },
+  "why": "prompt uses era (lesson 03) before its screen",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-02-ex.json",
+  "id": "a2.imperfectobasico.02.ex10",
+  "set": {
+   "options": [
+    "Vivía en un apartamento pequeño cerca del centro.",
+    "Vivo en un apartamento pequeño cerca del centro.",
+    "Viviré en un apartamento pequeño cerca del centro."
+   ],
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Dónde vivías antes de venir a Hanói?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "futuro-simple"
+   }
+  },
+  "why": "tell-time-word Ayer; unmet universidad; \"Ayer viví\" clashes with the answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperfectobasico-03-gr.json",
+  "old": "\"spanish\": \"Ibamos al parque todos los sábados.\"",
+  "new": "\"spanish\": \"Íbamos al parque todos los sábados.\"",
+  "why": "missing accent on capital Í (also in the speaking step)",
+  "id": "a2-imperfectobasico-03-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-03-ex.json",
+  "id": "a2.imperfectobasico.03.ex01",
+  "set": {
+   "options": [
+    "éramos",
+    "erámos",
+    "fuimos",
+    "somos"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "2": "preterito-indefinido",
+    "3": "ser"
+   }
+  },
+  "why": "seríamos is a conditional (Unit 26) used as a wrong option",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-03-ex.json",
+  "id": "a2.imperfectobasico.03.ex02",
+  "set": {
+   "sentence": "De niño, mi padre _____ muy tranquilo.",
+   "english": "As a child, my father was very calm."
+  },
+  "why": "unmet-word deportista",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-03-ex.json",
+  "id": "a2.imperfectobasico.03.ex10",
+  "set": {
+   "options": [
+    "Siempre iba a la casa de mis abuelos en la montaña.",
+    "Siempre voy a la casa de mis abuelos en la montaña.",
+    "Siempre iré a la casa de mis abuelos en la montaña."
+   ],
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Adónde ibas durante las vacaciones?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "ir",
+    "2": "futuro-simple"
+   }
+  },
+  "why": "tell-time-word Ayer; unmet verano and tíos",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-03-ex.json",
+  "id": "a2.imperfectobasico.03.ex11",
+  "set": {
+   "options": [
+    "Sí, veía películas con mi hermana; todo era diferente.",
+    "Sí, veo películas con mi hermana; todo era diferente.",
+    "Sí, veré películas con mi hermana; todo era diferente."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "futuro-simple"
+   }
+  },
+  "why": "unmet entonces (lesson 05); \"vi películas\" is also a possible answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-04-ex.json",
+  "id": "a2.imperfectobasico.04.ex01",
+  "set": {
+   "options": [
+    "había mucha gente",
+    "habían mucha gente",
+    "habrá mucha gente",
+    "hay mucha gente"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "2": "futuro-simple",
+    "3": "present-tense"
+   }
+  },
+  "why": "\"hubieron muchas personas\" had two faults (tense and noun); the tip says había is always singular, so test habían",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-04-ex.json",
+  "id": "a2.imperfectobasico.04.ex03",
+  "set": {
+   "sentence": "Ella _____ muy cansada después del trabajo.",
+   "english": "She felt very tired after work."
+  },
+  "why": "unmet-words nerviosa, examen",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-04-ex.json",
+  "id": "a2.imperfectobasico.04.ex04",
+  "set": {
+   "sentence": "La casa _____ cerca del parque.",
+   "hint": "estar",
+   "answer": "estaba",
+   "english": "The house was near the park."
+  },
+  "why": "unmet-word árboles; vocab-unused: estaba is listed but no item uses it",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-04-ex.json",
+  "id": "a2.imperfectobasico.04.ex07",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that it was very cold and it rained in the afternoons.",
+     "answer": "Hacía mucho frío y llovía por las tardes."
+    }
+   ]
+  },
+  "why": "open prompt did not pin the stored answer; unmet verano",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-04-ex.json",
+  "id": "a2.imperfectobasico.04.ex10",
+  "set": {
+   "options": [
+    "Me sentía muy cansada, pero la clase parecía divertida.",
+    "Me siento muy cansada, pero la clase parecía divertida.",
+    "Me sentiré muy cansada, pero la clase parecía divertida."
+   ],
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Cómo te sentías en tu primer día de clase?"
+    },
+    {
+     "speaker": "Daniela",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "futuro-simple"
+   }
+  },
+  "why": "Daniela teaches (no office); tell-time-word Ayer; unmet nerviosa, agradable",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperfectobasico-05-gr.json",
+  "old": "\"spanish\": \"De niño, vivía en Madrid, iba al colegio en metro y comía en casa.\",\n          \"english\": \"As a child, I lived in Madrid, went to school by metro and ate at home.\"",
+  "new": "\"spanish\": \"De niño, vivía en Budapest, iba al colegio en metro y comía en casa.\",\n          \"english\": \"As a child, I lived in Budapest, went to school by metro and ate at home.\"",
+  "why": "Carlos grew up in Hungary (a2-imperfecto1-01); also the speaking step",
+  "id": "a2-imperfectobasico-05-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperfectobasico-05-gr.json",
+  "old": "\"spanish\": \"Mi abuela era muy cariñosa. Siempre nos traía regalos.\",\n          \"english\": \"My grandmother was very affectionate. She always brought us gifts.\"\n        }",
+  "new": "\"spanish\": \"Mi abuela era muy cariñosa. Siempre nos traía regalos.\",\n          \"english\": \"My grandmother was very affectionate. She always brought us gifts.\"\n        },\n        {\n          \"spanish\": \"Mientras mi madre cocinaba, mi padre leía el periódico.\",\n          \"english\": \"While my mother cooked, my father read the newspaper.\"\n        }",
+  "why": "user decision 2026-10-21: mientras + imperfect is the normal use",
+  "id": "a2-imperfectobasico-05-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-05-ex.json",
+  "id": "a2.imperfectobasico.05.ex02",
+  "set": {
+   "sentence": "Mientras mi madre cocinaba, mi padre _____ el periódico.",
+   "hint": "leer",
+   "answer": "leía",
+   "english": "While my mother cooked, my father read the newspaper."
+  },
+  "why": "near-duplicate of ex01 (same sentence, other blank); replaced by a mientras + imperfect item",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-05-ex.json",
+  "id": "a2.imperfectobasico.05.ex05",
+  "set": {
+   "question": "As a child, I always played in the street. Which sentence says this?",
+   "options": [
+    "De niño, siempre jugaba en la calle.",
+    "De niño, siempre juego en la calle.",
+    "De niño, siempre jugaré en la calle."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "futuro-simple"
+   }
+  },
+  "why": "length-giveaway 36 vs 26, tell-time-word Ayer, misspelt \"jugé\"",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-05-ex.json",
+  "id": "a2.imperfectobasico.05.ex06",
+  "set": {
+   "tiles": [
+    "Mi",
+    "madre",
+    "trabajaba",
+    "en",
+    "un",
+    "colegio",
+    "y",
+    "mi",
+    "padre",
+    "trabajaba",
+    "en",
+    "una",
+    "tienda"
+   ],
+   "solution": [
+    "Mi",
+    "madre",
+    "trabajaba",
+    "en",
+    "un",
+    "colegio",
+    "y",
+    "mi",
+    "padre",
+    "trabajaba",
+    "en",
+    "una",
+    "tienda"
+   ],
+   "english": "My mother used to work at a school and my father used to work at a shop"
+  },
+  "why": "unmet enseñaba (a2-pronombrescliticos-02) and escuela (b1)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-05-ex.json",
+  "id": "a2.imperfectobasico.05.ex07",
+  "set": {
+   "options": [
+    "Siempre traía un pastel.",
+    "Siempre trae un pastel.",
+    "Siempre ha traído un pastel."
+   ],
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué recuerdas de tu abuela?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "unmet infancia and delicioso",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-05-ex.json",
+  "id": "a2.imperfectobasico.05.ex08",
+  "set": {
+   "options": [
+    "Eran muy cariñosos y siempre nos contaban historias divertidas.",
+    "Son muy cariñosos y siempre nos cuentan historias divertidas.",
+    "Han sido muy cariñosos y siempre nos han contado historias divertidas."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "\"Fueron … contaron\" with siempre is a possible answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-05-ex.json",
+  "id": "a2.imperfectobasico.05.ex11",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that as a child you remembered your school and your dear teachers.",
+     "answer": "De niño recordaba mi colegio y a mis queridos profesores."
+    }
+   ]
+  },
+  "why": "unmet maestros",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-05-ex.json",
+  "id": "a2.imperfectobasico.05.ex12",
+  "set": {
+   "options": [
+    "In that era, my dear grandfather used to visit us every Sunday.",
+    "My dear grandfather visited us last Sunday afternoon.",
+    "Now my dear grandfather visits us every single weekend.",
+    "In that era, my dear grandmother lived in a different country."
+   ]
+  },
+  "why": "length-giveaway 63 vs 48",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-consolidation-ex.json",
+  "id": "a2.imperfectobasico.consolidation.ex05",
+  "set": {
+   "sentence": "Mientras la abuela hacía la comida, nosotros _____ en el jardín.",
+   "english": "While grandmother made the food, we played in the garden."
+  },
+  "why": "copy of ex04 (same sentence, other blank); now mientras + imperfect",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-consolidation-ex.json",
+  "id": "a2.imperfectobasico.consolidation.ex06",
+  "set": {
+   "question": "We always used to eat together. Which sentence says this?",
+   "options": [
+    "Siempre comíamos juntos.",
+    "Siempre comemos juntos.",
+    "Siempre comeremos juntos.",
+    "Siempre hemos comido juntos."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "futuro-simple",
+    "3": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word Ayer; unmet ruidoso; fui/fue wrong options are preterite irregulars (Unit 22 contrast)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-consolidation-ex.json",
+  "id": "a2.imperfectobasico.consolidation.ex08",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you lived with your parents when you were ten.",
+     "answer": "Cuando tenía diez años, vivía con mis padres."
+    },
+    {
+     "prompt": "Say that your family was very close.",
+     "answer": "Mi familia era muy unida."
+    },
+    {
+     "prompt": "Say that on Sundays you all went to the park.",
+     "answer": "Los domingos íbamos todos al parque."
+    }
+   ]
+  },
+  "why": "open paragraph prompt does not pin one stored answer (4–5 sentences)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-consolidation-ex.json",
+  "id": "a2.imperfectobasico.consolidation.ex10",
+  "set": {
+   "sentence": "Daniela: ¿Cómo eras cuando eras pequeña? / Meg: _____ muy tímida pero me gustaba mucho leer.",
+   "english": "Daniela asks Meg about her childhood. / Daniela: What were you like when you were little? / Meg: I was very shy, but I really liked to read."
+  },
+  "why": "speakers: Lucía (the teacher, back in Spain by A2 Unit 18) cannot be a student; use Daniela and Meg",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-consolidation-ex.json",
+  "id": "a2.imperfectobasico.consolidation.ex11",
+  "set": {
+   "sentence": "Daniela: ¿Cómo eras cuando eras pequeña? / Meg: Era muy tímida pero me _____ mucho leer.",
+   "english": "Daniela asks Meg about her childhood. / Daniela: What were you like when you were little? / Meg: I was very shy, but I really liked to read."
+  },
+  "why": "speakers: Lucía (the teacher, back in Spain by A2 Unit 18) cannot be a student; use Daniela and Meg",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-consolidation-ex.json",
+  "id": "a2.imperfectobasico.consolidation.ex12",
+  "set": {
+   "sentence": "Daniela: ¿Cómo eras cuando eras pequeña? / Meg: Era muy tímida pero me gustaba mucho leer. / Daniela: ¿Dónde vivías? / Meg: _____ en un pueblo. Iba al colegio en bicicleta.",
+   "english": "Daniela asks Meg about her childhood. / Daniela: What were you like when you were little? / Meg: I was very shy, but I really liked to read. / Daniela: Where did you live? / Meg: I lived in a town. I went to school by bicycle."
+  },
+  "why": "speakers: Lucía (the teacher, back in Spain by A2 Unit 18) cannot be a student; use Daniela and Meg",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-consolidation-ex.json",
+  "id": "a2.imperfectobasico.consolidation.ex13",
+  "set": {
+   "sentence": "Daniela: ¿Cómo eras cuando eras pequeña? / Meg: Era muy tímida pero me gustaba mucho leer. / Daniela: ¿Dónde vivías? / Meg: Vivía en un pueblo. _____ al colegio en bicicleta.",
+   "english": "Daniela asks Meg about her childhood. / Daniela: What were you like when you were little? / Meg: I was very shy, but I really liked to read. / Daniela: Where did you live? / Meg: I lived in a town. I went to school by bicycle."
+  },
+  "why": "speakers: Lucía (the teacher, back in Spain by A2 Unit 18) cannot be a student; use Daniela and Meg",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-consolidation-ex.json",
+  "id": "a2.imperfectobasico.consolidation.ex14",
+  "set": {
+   "sentence": "Daniela: ¿Cómo eras cuando eras pequeña? / Meg: Era muy tímida pero me gustaba mucho leer. / Daniela: ¿Dónde vivías? / Meg: Vivía en un pueblo. Iba al colegio en bicicleta. / Daniela: ¿Y qué hacías los fines de semana? / Meg: Mi familia _____ siempre al campo. Era muy bonito.",
+   "english": "Daniela asks Meg about her childhood. / Daniela: What were you like when you were little? / Meg: I was very shy, but I really liked to read. / Daniela: Where did you live? / Meg: I lived in a town. I went to school by bicycle. / Daniela: And what did you do on the weekends? / Meg: My family always went to the countryside. It was very beautiful."
+  },
+  "why": "speakers: Lucía (the teacher, back in Spain by A2 Unit 18) cannot be a student; use Daniela and Meg",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectobasico-consolidation-ex.json",
+  "id": "a2.imperfectobasico.consolidation.ex15",
+  "set": {
+   "sentence": "Daniela: ¿Cómo eras cuando eras pequeña? / Meg: Era muy tímida pero me gustaba mucho leer. / Daniela: ¿Dónde vivías? / Meg: Vivía en un pueblo. Iba al colegio en bicicleta. / Daniela: ¿Y qué hacías los fines de semana? / Meg: Mi familia iba siempre al campo. _____ muy bonito.",
+   "english": "Daniela asks Meg about her childhood. / Daniela: What were you like when you were little? / Meg: I was very shy, but I really liked to read. / Daniela: Where did you live? / Meg: I lived in a town. I went to school by bicycle. / Daniela: And what did you do on the weekends? / Meg: My family always went to the countryside. It was very beautiful."
+  },
+  "why": "speakers: Lucía (the teacher, back in Spain by A2 Unit 18) cannot be a student; use Daniela and Meg",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-01-ex.json",
+  "id": "a2.imperfectocontraste.01.ex09",
+  "set": {
+   "options": [
+    "I was strolling through the park when, suddenly, it started to rain.",
+    "I walked through the park because it was raining all afternoon.",
+    "I will stroll in the park later if the rain stops this evening.",
+    "Suddenly, it rained while we were all at home watching a film."
+   ]
+  },
+  "why": "length give-away 68 vs 49"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-01-ex.json",
+  "id": "a2.imperfectocontraste.01.ex13",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that once, while you were cooking, someone knocked on the door.",
+     "answer": "Una vez, mientras cocinaba, alguien llamó a la puerta."
+    },
+    {
+     "prompt": "Say that then we left the house.",
+     "answer": "Entonces salimos de la casa."
+    }
+   ]
+  },
+  "why": "'someone called' also fits a phone call; 'llamó a la puerta' is a knock"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperfectocontraste-01-gr.json",
+  "old": "Spanish has two simple past tenses. The pretérito imperfecto",
+  "new": "You know both simple past tenses: the indefinido from Unit 11 and the imperfecto from Unit 21. This unit shows how to choose between them. The pretérito imperfecto",
+  "why": "screen presents known tenses as new; open with 'You know'"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-02-ex.json",
+  "id": "a2.imperfectocontraste.02.ex12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that while Carlos was reading, Daniela entered the room.",
+     "answer": "Mientras Carlos leía, Daniela entró en la habitación."
+    },
+    {
+     "prompt": "Say that we were listening to music and studying at the same time.",
+     "answer": "Escuchábamos música y estudiábamos al mismo tiempo."
+    }
+   ]
+  },
+  "why": "'listened/studied' also fits the preterite; pin the imperfect"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperfectocontraste-02-gr.json",
+  "old": "While (I was) cooking, I listened to the radio.",
+  "new": "While I was cooking, I was listening to the radio."
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-imperfectocontraste-02-voc.json",
+  "old": "\"pos\": \"verb\"\n    }\n  ]",
+  "new": "\"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"timbre\",\n      \"translation\": \"doorbell\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"profundamente\",\n      \"translation\": \"deeply\",\n      \"pos\": \"adverb\"\n    }\n  ]"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperfectocontraste-02-gr.json",
+  "old": "'Mientras' (while) is the most common conjunction used with the imperfecto.",
+  "new": "You know 'mientras' (while) from Unit 13, where it was used in a simple way. With the imperfecto it is the normal pattern.",
+  "why": "known word presented as new; Unit 21 gives mientras + imperfect as the normal use"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-03-ex.json",
+  "id": "a2.imperfectocontraste.03.ex09",
+  "set": {
+   "options": [
+    "I was very nervous before the exam, but I felt relieved when I finished.",
+    "I was very happy during the exam and I finished it early.",
+    "He was relieved because the exam was easy and very short.",
+    "We felt nervous after we received the results of the exam."
+   ]
+  },
+  "why": "length give-away 71 vs 47"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-imperfectocontraste-03-voc.json",
+  "old": "\"pos\": \"adjective\"\n    }\n  ]",
+  "new": "\"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"examen\",\n      \"translation\": \"exam\",\n      \"pos\": \"noun\"\n    }\n  ]",
+  "why": "examen is used in five items; only listed in a2-perifrasisverbales-03"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-05-ex.json",
+  "id": "a2.imperfectocontraste.05.ex09b",
+  "set": {
+   "pairs": [
+    [
+     "había niebla",
+     "there was fog"
+    ],
+    [
+     "cielo despejado",
+     "clear sky"
+    ],
+    [
+     "encendió una vela",
+     "she lit a candle"
+    ],
+    [
+     "llegó de madrugada",
+     "arrived in the early hours"
+    ]
+   ]
+  },
+  "why": "madrugada glossed 'early hours' but paired with 'dawn'"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-05-ex.json",
+  "id": "a2.imperfectocontraste.05.ex12",
+  "set": {
+   "english": "There was a lot of fog on the road in the early hours of the morning."
+  },
+  "why": "'at dawn' is not madrugada"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-imperfectocontraste-05-voc.json",
+  "old": "\"pos\": \"noun\"\n    }\n  ]",
+  "new": "\"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"carretera\",\n      \"translation\": \"road\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"anoche\",\n      \"translation\": \"last night\",\n      \"pos\": \"adverb\"\n    },\n    {\n      \"lemma\": \"iluminar\",\n      \"translation\": \"to light up\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"luz\",\n      \"translation\": \"light, power\",\n      \"pos\": \"noun\"\n    }\n  ]"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-imperfectocontraste-consolidation-voc.json",
+  "old": "\"lemma\": \"inesperado\",\n      \"translation\": \"unexpected\",\n      \"pos\": \"adjective\"",
+  "new": "\"lemma\": \"email\",\n      \"translation\": \"email\",\n      \"pos\": \"noun\"",
+  "why": "unused or unmet word swapped for a word the items need"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-imperfectocontraste-consolidation-voc.json",
+  "old": "\"lemma\": \"increíble\",\n      \"translation\": \"incredible\",\n      \"pos\": \"adjective\"",
+  "new": "\"lemma\": \"raro\",\n      \"translation\": \"strange, odd\",\n      \"pos\": \"adjective\"",
+  "why": "unused or unmet word swapped for a word the items need"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-imperfectocontraste-consolidation-voc.json",
+  "old": "\"lemma\": \"ofrecer\",\n      \"translation\": \"to offer\",\n      \"pos\": \"verb\"",
+  "new": "\"lemma\": \"normal\",\n      \"translation\": \"normal, ordinary\",\n      \"pos\": \"adjective\"",
+  "why": "unused or unmet word swapped for a word the items need"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-imperfectocontraste-consolidation-voc.json",
+  "old": "\"lemma\": \"a punto de\",\n      \"translation\": \"about to\",\n      \"pos\": \"expression\"",
+  "new": "\"lemma\": \"director\",\n      \"translation\": \"director, head\",\n      \"pos\": \"noun\"",
+  "why": "unused or unmet word swapped for a word the items need"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-imperfectocontraste-consolidation-voc.json",
+  "old": "\"lemma\": \"creer\",\n      \"translation\": \"to believe, to think\",\n      \"pos\": \"verb\"",
+  "new": "\"lemma\": \"silencio\",\n      \"translation\": \"silence\",\n      \"pos\": \"noun\"",
+  "why": "unused or unmet word swapped for a word the items need"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-consolidation-ex.json",
+  "id": "a2.imperfectocontraste.consolidation.ex10",
+  "set": {
+   "answers": [
+    "Fue"
+   ],
+   "hint": "ser, ind"
+  },
+  "why": "Fue and Era both fit the English (answers-alternatives); narrowed to the event reading"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-01-ex.json",
+  "id": "a2.imperfectocontraste.01.ex01",
+  "set": {
+   "question": "'Hacía frío cuando _____ (salir) de casa.' Which form of salir shows one completed event?",
+   "distractor_skills": {
+    "1": "imperfect",
+    "2": "futuro-simple",
+    "3": "present-irregular-yo"
+   }
+  },
+  "kind": "target",
+  "why": "English tell inside the Spanish line (check-content ERROR); salgo is a present-irregular-yo form"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-01-ex.json",
+  "id": "a2.imperfectocontraste.01.ex08",
+  "set": {
+   "tiles": [
+    "Hacía",
+    "sol",
+    "cuando",
+    "llegaron",
+    "los",
+    "amigos"
+   ],
+   "solution": [
+    "Hacía",
+    "sol",
+    "cuando",
+    "llegaron",
+    "los",
+    "amigos"
+   ],
+   "english": "It was sunny when the friends arrived"
+  },
+  "kind": "target",
+  "why": "turistas in no vocab list"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-01-ex.json",
+  "id": "a2.imperfectocontraste.01.ex10",
+  "set": {
+   "sentence": "En ese momento llamó mi madre y me levanté.",
+   "english": "At that moment, my mother called and I got up."
+  },
+  "kind": "target",
+  "why": "sonó is first met in lesson 02"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-01-ex.json",
+  "id": "a2.imperfectocontraste.01.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué hacías cuando pasó eso?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "ocurrió is first taught at a2-indefinidosnegacion-02"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-01-ex.json",
+  "id": "a2.imperfectocontraste.01.ex12",
+  "set": {
+   "options": [
+    "Había mucho tráfico, pero por fin llegué a las seis.",
+    "Había mucho tráfico, pero por fin llego a las seis.",
+    "Hay mucho tráfico, pero por fin llegué a las seis."
+   ]
+  },
+  "kind": "target",
+  "sure": false,
+  "why": "'por fin llegué al final de la tarde' is odd and does not answer 'a tiempo?'"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperfectocontraste-01-gr.json",
+  "old": "Signals for IMPERFECTO: siempre, normalmente, cada día, cuando era niño, de repente (for what was already happening).",
+  "new": "Signals for IMPERFECTO: siempre, normalmente, cada día, cuando era niño.",
+  "kind": "target",
+  "why": "de repente always introduces the new event, never the background; it is already listed under INDEFINIDO"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-02-ex.json",
+  "id": "a2.imperfectocontraste.02.ex03",
+  "set": {
+   "sentence": "Mientras mis padres _____, yo hacía la tarea."
+  },
+  "kind": "target",
+  "why": "deberes first taught at a2-condicionalsimple-04; tarea is A1"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-02-ex.json",
+  "id": "a2.imperfectocontraste.02.ex04",
+  "set": {
+   "sentence": "Mientras mis padres comían, yo _____ la tarea."
+  },
+  "kind": "target",
+  "why": "deberes unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-02-ex.json",
+  "id": "a2.imperfectocontraste.02.ex05",
+  "set": {
+   "options": [
+    "caminaba",
+    "caminaré",
+    "camino",
+    "caminar"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "futuro-simple",
+    "2": "ar-verbs"
+   }
+  },
+  "kind": "target",
+  "why": "'Mientras caminé' is not simply wrong after the Unit 21 pattern (reviewer, 2026-10-21): the wrong options must show another fault"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-02-ex.json",
+  "id": "a2.imperfectocontraste.02.ex10",
+  "set": {
+   "options": [
+    "Mientras esperaba, un gato se cayó de la ventana.",
+    "Mientras esperaba, un gato se cae de la ventana.",
+    "Mientras esperaba, un gato se caerá de la ventana."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "futuro-simple"
+   }
+  },
+  "kind": "target",
+  "why": "'Mientras esperé' was the only fault of option 2 (mientras + preterite is acceptable); árbol and cercano unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-03-ex.json",
+  "id": "a2.imperfectocontraste.03.ex03",
+  "set": {
+   "sentence": "_____ mucho frío, así que compré una chaqueta.",
+   "english": "I was very cold, so I bought a jacket."
+  },
+  "kind": "target",
+  "why": "abrigo in no vocab list"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-03-ex.json",
+  "id": "a2.imperfectocontraste.03.ex04",
+  "set": {
+   "sentence": "Tenía mucho frío, así que _____ una chaqueta.",
+   "english": "I was very cold, so I bought a jacket."
+  },
+  "kind": "target",
+  "why": "abrigo"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-03-ex.json",
+  "id": "a2.imperfectocontraste.03.ex05",
+  "set": {
+   "options": [
+    "Estaba cansada pero fui al trabajo.",
+    "Estuve cansada pero fui al trabajo.",
+    "Estaba cansada pero iba al trabajo.",
+    "Estaba cansada pero voy al trabajo."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterite-irregular-stems",
+    "2": "imperfect",
+    "3": "ir"
+   }
+  },
+  "kind": "target",
+  "why": "'era al trabajo' is a non-phrase and option 4 had two faults"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-03-ex.json",
+  "id": "a2.imperfectocontraste.03.ex06",
+  "set": {
+   "pairs": [
+    [
+     "estaba nervioso",
+     "I was nervous"
+    ],
+    [
+     "entré en la clase",
+     "I went into the class"
+    ],
+    [
+     "tenía fiebre",
+     "I had a fever"
+    ],
+    [
+     "me sentía bien",
+     "I felt fine"
+    ],
+    [
+     "tener miedo",
+     "to be afraid"
+    ],
+    [
+     "tener ganas de",
+     "to feel like"
+    ]
+   ]
+  },
+  "kind": "target",
+  "why": "three identical right-hand sides (any left item fits); aula and hambre unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-03-ex.json",
+  "id": "a2.imperfectocontraste.03.ex08",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you were very nervous before the exam.",
+     "answer": "Estaba muy nervioso antes del examen."
+    },
+    {
+     "prompt": "Say that you were afraid of the difficult questions.",
+     "answer": "Tenía miedo de las preguntas difíciles."
+    },
+    {
+     "prompt": "Say that you went into the class at nine.",
+     "answer": "Entré en la clase a las nueve."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "one unpinned 4-sentence stored answer; aula unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-03-ex.json",
+  "id": "a2.imperfectocontraste.03.ex10",
+  "set": {
+   "sentence": "Tenía miedo de caminar por la noche.",
+   "english": "I was afraid of walking at night."
+  },
+  "kind": "target",
+  "why": "solo first taught at a2-imperativonegativo-02"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-03-ex.json",
+  "id": "a2.imperfectocontraste.03.ex12",
+  "set": {
+   "options": [
+    "Estaba asustado por los ruidos de la noche anterior.",
+    "Estuvo asustado por los ruidos de la noche anterior.",
+    "Está asustado por los ruidos de la noche anterior."
+   ]
+  },
+  "kind": "target",
+  "why": "tormenta is first met in lesson 05"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-imperfectocontraste-03-voc.json",
+  "old": "\"translation\": \"to feel relieved\"",
+  "new": "\"translation\": \"to get better, to be relieved (of pain)\"",
+  "sure": false,
+  "why": "aliviarse does not mean 'feel relieved' (that is sentirse aliviado)"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-04-ex.json",
+  "id": "a2.imperfectocontraste.04.ex03",
+  "set": {
+   "sentence": "_____ por el parque cuando vio algo en el camino.",
+   "english": "He was walking through the park when he saw something on the path."
+  },
+  "kind": "target",
+  "why": "suelo first taught at a2-imperativonegativo-04"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-04-ex.json",
+  "id": "a2.imperfectocontraste.04.ex04",
+  "set": {
+   "sentence": "Caminaba por el parque cuando _____ algo en el camino.",
+   "english": "He was walking through the park when he saw something on the path."
+  },
+  "kind": "target",
+  "why": "suelo"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-04-ex.json",
+  "id": "a2.imperfectocontraste.04.ex07",
+  "set": {
+   "sentences": [
+    "Vio una cartera en el camino.",
+    "Era un domingo de octubre.",
+    "Se puso el abrigo y salió.",
+    "El cielo estaba nublado y hacía frío.",
+    "Caminaba por el parque."
+   ]
+  },
+  "kind": "target",
+  "why": "suelo and gris are unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-04-ex.json",
+  "id": "a2.imperfectocontraste.04.ex06b",
+  "set": {
+   "question": "I was walking down the street when I saw a wallet. Which sentence says this?",
+   "options": [
+    "Caminaba por la calle cuando vi una cartera.",
+    "Caminaba por la calle cuando veía una cartera.",
+    "Camino por la calle cuando vi una cartera."
+   ],
+   "distractor_skills": {
+    "1": "imperfect",
+    "2": "ar-verbs"
+   }
+  },
+  "kind": "target",
+  "why": "Spanish question stem (unmet metalanguage); encontré, encontraba unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-04-ex.json",
+  "id": "a2.imperfectocontraste.04.ex08",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say it was a Saturday afternoon.",
+     "answer": "Era un sábado por la tarde."
+    },
+    {
+     "prompt": "Say it was very hot.",
+     "answer": "Hacía mucho calor."
+    },
+    {
+     "prompt": "Say that suddenly your friend called on the phone.",
+     "answer": "De repente, mi amigo llamó por teléfono."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "unpinned five-sentence stored answer with bañador unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-04-ex.json",
+  "id": "a2.imperfectocontraste.04.ex09",
+  "set": {
+   "sentence": "Vi una cartera en la calle y la entregué en la comisaría cercana.",
+   "options": [
+    "I saw a wallet in the street and handed it in at the nearby police station.",
+    "I lost my wallet in the street and went to the nearby police station.",
+    "He bought a new wallet at the nearby shop and paid with a card.",
+    "We went to the police station to ask for directions to the street."
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away 77 vs 52; encontré unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-04-ex.json",
+  "id": "a2.imperfectocontraste.04.ex10",
+  "set": {
+   "sentence": "El tren estaba vacío cuando escuché un ruido extraño.",
+   "english": "The train was empty when I heard a strange noise."
+  },
+  "kind": "target",
+  "why": "autobús is first taught at b1-01-02"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-04-ex.json",
+  "id": "a2.imperfectocontraste.04.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué pasó con tu tarjeta?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Una persona amable recogió mi tarjeta y me llamó.",
+    "Una persona amable recoge mi tarjeta y me llamó.",
+    "Una persona amable recogerá mi tarjeta y me llamó."
+   ]
+  },
+  "kind": "target",
+  "why": "recuperar, perdidos unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-04-ex.json",
+  "id": "a2.imperfectocontraste.04.ex12",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Qué hacía ese hombre en la estación?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Esperaba tranquilo y hablaba consigo mismo.",
+    "Esperó tranquilo y hablaba consigo mismo.",
+    "Espera tranquilo y hablaba consigo mismo."
+   ]
+  },
+  "kind": "target",
+  "why": "autobús, tranquilamente unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-05-ex.json",
+  "id": "a2.imperfectocontraste.05.ex06",
+  "set": {
+   "sentence": "_____ mucho frío y por eso compré un café caliente."
+  },
+  "kind": "target",
+  "why": "así is first taught at b1-01-04"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-05-ex.json",
+  "id": "a2.imperfectocontraste.05.ex07",
+  "set": {
+   "sentence": "Hacía mucho frío y por eso _____ un café caliente."
+  },
+  "kind": "target",
+  "why": "así"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-05-ex.json",
+  "id": "a2.imperfectocontraste.05.ex08",
+  "set": {
+   "options": [
+    "Llovía cuando llegué.",
+    "Llovió cuando llegaba.",
+    "Llueve cuando llegué.",
+    "Está lloviendo cuando llegué."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "stem-changes",
+    "3": "progressive"
+   }
+  },
+  "kind": "target",
+  "why": "Llovería is the conditional (Unit 26) used before its screen"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-05-ex.json",
+  "id": "a2.imperfectocontraste.05.ex10",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say it was midnight.",
+     "answer": "Era medianoche."
+    },
+    {
+     "prompt": "Say it was raining a lot.",
+     "answer": "Llovía mucho."
+    },
+    {
+     "prompt": "Say that suddenly the phone rang.",
+     "answer": "De repente sonó el teléfono."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "unpinned five-sentence answer with invierno, luz, silencio, vecinos unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-05-ex.json",
+  "id": "a2.imperfectocontraste.05.ex13",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Viste los relámpagos anoche desde tu ventana?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "Meg lives with Carlos, so she would not ask about 'your window'"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperfectocontraste-05-gr.json",
+  "old": "Weather, time expressions, and atmospheric descriptions are always in the imperfecto — they are ongoing background conditions, not completed events.",
+  "new": "Weather, time expressions, and atmospheric descriptions are normally in the imperfecto when you set a scene — they are ongoing background conditions, not completed events.",
+  "kind": "target",
+  "why": "'always' is false (Ayer llovió todo el día)"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperfectocontraste-05-gr.json",
+  "old": "These always describe the background, never a completed event.",
+  "new": "In a scene they describe the background, not a completed event.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-consolidation-ex.json",
+  "id": "a2.imperfectocontraste.consolidation.ex08",
+  "set": {
+   "sentences": [
+    "De repente, recibió un email de Barcelona.",
+    "Era un martes normal.",
+    "Llamó a su novia enseguida.",
+    "Carlos trabajaba como siempre.",
+    "Mientras leía el email, le temblaban las manos."
+   ]
+  },
+  "kind": "target",
+  "sure": false,
+  "why": "inmediatamente in no list; enseguida is in the unit's list and unused"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-consolidation-ex.json",
+  "id": "a2.imperfectocontraste.consolidation.ex09",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say it was a quiet Saturday.",
+     "answer": "Era un sábado tranquilo."
+    },
+    {
+     "prompt": "Say it was sunny and you were at home.",
+     "answer": "Hacía sol y yo estaba en casa."
+    },
+    {
+     "prompt": "Say that suddenly someone knocked on the door.",
+     "answer": "De repente, alguien llamó a la puerta."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "unpinned nine-sentence answer with supuesto, maravillosa unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-consolidation-ex.json",
+  "id": "a2.imperfectocontraste.consolidation.ex15",
+  "set": {
+   "sentence": "Marta: ¿Qué pasó ayer en la reunión? / Luis: Fue muy raro. El director entró muy serio. / Marta: ¿Y qué dijo? / Luis: Mientras hablaba, todos escuchaban en silencio. / Marta: ¿Y al final qué _____ el director?",
+   "english": "Two colleagues are talking about an unexpected event at work. / Marta: What happened yesterday at the meeting? / Luis: It was very strange. The director came in looking very serious. / Marta: And what did he say? / Luis: While he was speaking, everyone was listening in silence. / Marta: And in the end, what did the director do?",
+   "hint": "hacer",
+   "answer": "hizo"
+  },
+  "kind": "target",
+  "why": "ocurrió is first taught at a2-indefinidosnegacion-02; the lines after it already said pasó"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-consolidation-ex.json",
+  "id": "a2.imperfectocontraste.consolidation.ex16",
+  "set": {
+   "sentence": "Marta: ¿Qué pasó ayer en la reunión? / Luis: Fue muy raro. El director entró muy serio. / Marta: ¿Y qué dijo? / Luis: Mientras hablaba, todos escuchaban en silencio. / Marta: ¿Y al final qué hizo el director? / Luis: _____ que la empresa abría una nueva oficina en Lisboa.",
+   "english": "Two colleagues are talking about an unexpected event at work. / Marta: What happened yesterday at the meeting? / Luis: It was very strange. The director came in looking very serious. / Marta: And what did he say? / Luis: While he was speaking, everyone was listening in silence. / Marta: And in the end, what did the director do? / Luis: He announced that the company was opening a new office in Lisbon."
+  },
+  "kind": "target",
+  "why": "ocurrió is first taught at a2-indefinidosnegacion-02; the lines after it already said pasó"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperfectocontraste-consolidation-ex.json",
+  "id": "a2.imperfectocontraste.consolidation.ex17",
+  "set": {
+   "sentence": "Marta: ¿Qué pasó ayer en la reunión? / Luis: Fue muy raro. El director entró muy serio. / Marta: ¿Y qué dijo? / Luis: Mientras hablaba, todos escuchaban en silencio. / Marta: ¿Y al final qué hizo el director? / Luis: Anunció que la empresa _____ una nueva oficina en Lisboa.",
+   "english": "Two colleagues are talking about an unexpected event at work. / Marta: What happened yesterday at the meeting? / Luis: It was very strange. The director came in looking very serious. / Marta: And what did he say? / Luis: While he was speaking, everyone was listening in silence. / Marta: And in the end, what did the director do? / Luis: He announced that the company was opening a new office in Lisbon."
+  },
+  "kind": "target",
+  "why": "ocurrió is first taught at a2-indefinidosnegacion-02; the lines after it already said pasó"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-imperativoafirmativo-01-voc.json",
+  "old": "\"pos\": \"adverb\"\n    }\n  ]",
+  "new": "\"pos\": \"adverb\"\n    },\n    {\n      \"lemma\": \"página\",\n      \"translation\": \"page\",\n      \"pos\": \"noun\"\n    }\n  ]"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativoafirmativo-01-gr.json",
+  "old": "To tell a friend or family member to do something (informal 'tú'), use the affirmative imperative.",
+  "new": "You know the basic affirmative commands from A1 (kitchen and directions). This lesson reviews the regular tú form: to tell a friend or family member to do something (informal 'tú'), use the affirmative imperative.",
+  "why": "known material presented as new"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-02-ex.json",
+  "id": "a2.imperativoafirmativo.02.ex09",
+  "set": {
+   "template": [
+    {
+     "prompt": "Tell a friend to do their homework and be nice to everyone.",
+     "answer": "Haz tu tarea y sé amable con todos."
+    },
+    {
+     "prompt": "Tell a friend to go now and put the books on the table.",
+     "answer": "Ve ahora y pon los libros en la mesa."
+    }
+   ]
+  },
+  "why": "'con todos' not in the prompt"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativoafirmativo-03-gr.json",
+  "old": "Sign here with pen.",
+  "new": "Sign here with a pen."
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-04-ex.json",
+  "id": "a2.imperativoafirmativo.04.ex09",
+  "set": {
+   "template": [
+    {
+     "prompt": "Give directions (tú) to go straight until the corner and turn left (use doblar).",
+     "answer": "Sigue recto hasta la esquina y dobla a la izquierda."
+    },
+    {
+     "prompt": "Give directions (tú) to cross the street and turn right at the traffic light (use girar).",
+     "answer": "Cruza la calle y gira a la derecha en el semáforo."
+    }
+   ]
+  },
+  "why": "girar and doblar are both taught, so 'turn' did not pin the verb"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativoafirmativo-04-gr.json",
+  "old": "When asking for or giving directions on the street, both tú (casual) and usted (formal/stranger) forms are common. Here are the core directional verbs in both forms:",
+  "new": "You know basic directions from A1 (Unit 16). On the street both tú (casual) and usted (formal/stranger) forms are common. Here are the core directional verbs in both forms:",
+  "why": "known material presented as new"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativoafirmativo-05-gr.json",
+  "old": "Cooking recipes and manual instructions frequently use imperative commands,",
+  "new": "You know recipe commands from A1 (kitchen). Cooking recipes and manual instructions frequently use imperative commands,",
+  "why": "known material presented as new"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativoafirmativo-consolidation-gr.json",
+  "old": "Summary of affirmative commands across registers: informal (tú) vs. formal (usted / ustedes).",
+  "new": "You know affirmative commands from this unit. Summary across registers: informal (tú) vs. formal (usted / ustedes).",
+  "why": "recap must open with 'You know'"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-01-ex.json",
+  "id": "a2.imperativoafirmativo.01.ex01",
+  "set": {
+   "question": "Which is the tú command for hablar?",
+   "options": [
+    "Habla",
+    "Hablas",
+    "Hablé",
+    "Hablaba"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-indefinido",
+    "3": "imperfect"
+   }
+  },
+  "kind": "target",
+  "why": "Spanish question stem is unmet; Hables (negative command) and Hable (usted) come before their screens"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-01-ex.json",
+  "id": "a2.imperativoafirmativo.01.ex02",
+  "set": {
+   "options": [
+    "abre",
+    "abres",
+    "abrió",
+    "abría"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-indefinido",
+    "3": "imperfect"
+   }
+  },
+  "kind": "target",
+  "why": "abra (usted, lesson 03) and abras (negative, Unit 24) before their screens"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-01-ex.json",
+  "id": "a2.imperativoafirmativo.01.ex06",
+  "set": {
+   "tiles": [
+    "pasa",
+    "y",
+    "espera",
+    "aquí",
+    "por",
+    "favor"
+   ],
+   "solution": [
+    "pasa",
+    "y",
+    "espera",
+    "aquí",
+    "por",
+    "favor"
+   ],
+   "english": "Come in and wait here, please."
+  },
+  "kind": "target",
+  "why": "asiento is first taught in lesson 03"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-01-ex.json",
+  "id": "a2.imperativoafirmativo.01.ex07",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué hago con esta carta importante?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Lee la primera página y escribe una respuesta.",
+    "Leía la primera página y escribía una respuesta.",
+    "Leyó la primera página y escribió una respuesta."
+   ],
+   "distractor_skills": {
+    "1": "imperfect",
+    "2": "preterito-indefinido"
+   }
+  },
+  "kind": "target",
+  "why": "página in no list (add to lesson 01 list); Leas/escribas is a negative command (Unit 24) and the item had no distractor_skills"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-01-ex.json",
+  "id": "a2.imperativoafirmativo.01.ex08",
+  "set": {
+   "options": [
+    "Abre la ventana y descansa un momento.",
+    "Abría la ventana y descansaba un momento.",
+    "Abrió la ventana y descansó un momento."
+   ],
+   "distractor_skills": {
+    "1": "imperfect",
+    "2": "preterito-indefinido"
+   }
+  },
+  "kind": "target",
+  "why": "Abras/descanses is a negative command (Unit 24)"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-01-ex.json",
+  "id": "a2.imperativoafirmativo.01.ex09",
+  "set": {
+   "template": [
+    {
+     "prompt": "Tell a friend to speak slowly and listen.",
+     "answer": "Habla despacio y escucha."
+    },
+    {
+     "prompt": "Tell a friend to wait here and eat something.",
+     "answer": "Espera aquí y come algo."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "'con atención' is not in the prompt and atención is unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-01-ex.json",
+  "id": "a2.imperativoafirmativo.01.ex11",
+  "set": {
+   "sentence": "Pasa y habla despacio, por favor.",
+   "english": "Come in and speak slowly, please."
+  },
+  "kind": "target",
+  "why": "adelante is first taught in lesson 03"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-02-ex.json",
+  "id": "a2.imperativoafirmativo.02.ex01",
+  "set": {
+   "question": "Which is the tú command for hacer?",
+   "options": [
+    "haz",
+    "hace",
+    "hizo",
+    "hacía"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterite-irregular-stems",
+    "3": "imperfect"
+   }
+  },
+  "kind": "target",
+  "why": "Spanish stem unmet; haga (usted) and hagas (negative) come later"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-02-ex.json",
+  "id": "a2.imperativoafirmativo.02.ex02",
+  "set": {
+   "options": [
+    "Pon",
+    "Pone",
+    "Puso",
+    "Ponía"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterite-irregular-stems",
+    "3": "imperfect"
+   }
+  },
+  "kind": "target",
+  "why": "Ponga (usted, lesson 03) before its screen"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-02-ex.json",
+  "id": "a2.imperativoafirmativo.02.ex04",
+  "set": {
+   "sentence": "¡_____ cuidado con el perro!",
+   "english": "Be careful with the dog!"
+  },
+  "kind": "target",
+  "why": "suelo first taught at a2-imperativonegativo-04"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-02-ex.json",
+  "id": "a2.imperativoafirmativo.02.ex07",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué hago ahora, Carlos?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Ten cuidado y di la verdad.",
+    "Tenía cuidado y decía la verdad.",
+    "Tuvo cuidado y dijo la verdad."
+   ],
+   "distractor_skills": {
+    "1": "imperfect",
+    "2": "preterite-irregular-stems"
+   }
+  },
+  "kind": "target",
+  "why": "dudas and dime (pronoun after a command, Unit 24) unmet; the reply did not answer Meg; Tengas/digas is a negative command"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-02-ex.json",
+  "id": "a2.imperativoafirmativo.02.ex08",
+  "set": {
+   "options": [
+    "Ven a las cinco y sal con tiempo de casa.",
+    "Venías a las cinco y salías con tiempo de casa.",
+    "Vino a las cinco y salió con tiempo de casa."
+   ],
+   "distractor_skills": {
+    "1": "imperfect",
+    "2": "preterite-irregular-stems"
+   }
+  },
+  "kind": "target",
+  "why": "Vengas/salgas is a negative command (Unit 24)"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-02-ex.json",
+  "id": "a2.imperativoafirmativo.02.ex10",
+  "set": {
+   "sentence": "Ten cuidado en la calle y ve despacio.",
+   "options": [
+    "Be careful on the street and go slowly.",
+    "He was careful when he crossed the street.",
+    "Go fast on the street and be at home soon.",
+    "You are careful on the street today."
+   ]
+  },
+  "kind": "target",
+  "why": "atención is unmet (and 'pon atención' is not Spain Spanish)"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-03-ex.json",
+  "id": "a2.imperativoafirmativo.03.ex02",
+  "set": {
+   "question": "Señores, por favor _____ (esperar) un momento en la entrada."
+  },
+  "kind": "target",
+  "why": "la sala is flagged for es-es (salón)"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-03-ex.json",
+  "id": "a2.imperativoafirmativo.03.ex03",
+  "set": {
+   "sentence": "Señor, _____ aquí, por favor.",
+   "english": "Sir, sign here, please."
+  },
+  "kind": "target",
+  "why": "línea and punteada are unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-03-ex.json",
+  "id": "a2.imperativoafirmativo.03.ex06",
+  "set": {
+   "tiles": [
+    "firme",
+    "este",
+    "formulario",
+    "por",
+    "favor"
+   ],
+   "solution": [
+    "firme",
+    "este",
+    "formulario",
+    "por",
+    "favor"
+   ],
+   "english": "Sign this form, please."
+  },
+  "kind": "target",
+  "why": "complete (completar) is unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-03-ex.json",
+  "id": "a2.imperativoafirmativo.03.ex07",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Cliente",
+     "text": "Buenos días, ¿dónde puedo entregar mi documento?"
+    },
+    {
+     "speaker": "Empleado",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Pase adelante, tome asiento y firme aquí, por favor.",
+    "Pasen adelante, tomen asiento y firmen aquí, por favor.",
+    "Pasó adelante, tomó asiento y firmó aquí, por favor."
+   ]
+  },
+  "kind": "target",
+  "why": "solicitud unmet; Pases/tomes/firmes is a negative command (Unit 24)"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-03-ex.json",
+  "id": "a2.imperativoafirmativo.03.ex08",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Señor García",
+     "text": "Buenos días, tengo una cita."
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Pase a la oficina y espere un momento, por favor.",
+    "Pasen a la oficina y esperen un momento, por favor.",
+    "Pasó a la oficina y esperó un momento, por favor."
+   ]
+  },
+  "kind": "target",
+  "why": "Señor García (the guest being served) answered with commands to Carlos in usted; sea tan amable (irregular sea) is not taught; Entres/esperes is negative"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-03-ex.json",
+  "id": "a2.imperativoafirmativo.03.ex09",
+  "set": {
+   "template": [
+    {
+     "prompt": "Politely ask a customer (usted) to sign the form here.",
+     "answer": "Firme el formulario aquí, por favor."
+    },
+    {
+     "prompt": "Politely ask visitors (ustedes) to take a seat and read the document.",
+     "answer": "Tomen asiento y lean el documento, por favor."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "'fill out' fits complete/rellene and complete is unmet; calma unmet"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativoafirmativo-03-gr.json",
+  "old": " (from the present subjunctive)",
+  "new": "",
+  "kind": "target",
+  "why": "the subjunctive is Unit 27; do not name it before it is taught"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativoafirmativo-03-gr.json",
+  "old": "Firme aquí con bolígrafo.",
+  "new": "Firme aquí con un bolígrafo.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-04-ex.json",
+  "id": "a2.imperativoafirmativo.04.ex01",
+  "set": {
+   "options": [
+    "siga",
+    "sigue",
+    "seguí",
+    "seguía"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "imperativo-afirmativo",
+    "2": "preterito-indefinido",
+    "3": "imperfect"
+   }
+  },
+  "kind": "target",
+  "why": "sigas is a negative command (Unit 24)"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-04-ex.json",
+  "id": "a2.imperativoafirmativo.04.ex02",
+  "set": {
+   "options": [
+    "dobla",
+    "doble",
+    "doblaste",
+    "doblaba"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "imperativo-formal-usted",
+    "2": "preterito-indefinido",
+    "3": "imperfect"
+   }
+  },
+  "kind": "target",
+  "why": "dobles is a negative command (Unit 24); doblas (present) is also a normal way to give directions"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-04-ex.json",
+  "id": "a2.imperativoafirmativo.04.ex03",
+  "set": {
+   "sentence": "Para ir al banco, _____ la calle en el semáforo.",
+   "english": "To go to the bank, cross the street at the traffic light."
+  },
+  "kind": "target",
+  "why": "cebra unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-04-ex.json",
+  "id": "a2.imperativoafirmativo.04.ex04",
+  "set": {
+   "sentence": "_____ la segunda calle a la derecha.",
+   "english": "Take the second street on the right."
+  },
+  "kind": "target",
+  "why": "rotonda unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-04-ex.json",
+  "id": "a2.imperativoafirmativo.04.ex07",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Turista",
+     "text": "Perdón, ¿cómo llego a la plaza?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sigue recto dos calles y gira a la derecha en el semáforo.",
+    "Seguía recto dos calles y giraba a la derecha en el semáforo.",
+    "Siguió recto dos calles y giró a la derecha en el semáforo."
+   ],
+   "distractor_skills": {
+    "1": "imperfect",
+    "2": "preterito-indefinido"
+   }
+  },
+  "kind": "target",
+  "why": "Disculpe and principal unmet; Sigas/gires is a negative command (Unit 24)"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-04-ex.json",
+  "id": "a2.imperativoafirmativo.04.ex08",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Dónde está la estación más cercana?"
+    },
+    {
+     "speaker": "Daniela",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Cruza el puente y dobla a la izquierda en la esquina.",
+    "Cruzaba el puente y doblaba a la izquierda en la esquina.",
+    "Cruzó el puente y dobló a la izquierda en la esquina."
+   ],
+   "distractor_skills": {
+    "1": "imperfect",
+    "2": "preterito-indefinido"
+   }
+  },
+  "kind": "target",
+  "why": "metro is first taught at a2-porpara-02; Cruces/dobles is a negative command (Unit 24)"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativoafirmativo-04-gr.json",
+  "old": "In Latin America, 'doblar' is very commonly heard for 'to turn', while in Spain 'girar' is standard. Both are understood everywhere.",
+  "new": "Both 'girar' and 'doblar' mean 'to turn' and are understood everywhere.",
+  "sure": false,
+  "why": "'in Spain girar is standard' is doubtful: doble/gire/tuerza are all heard in Spain"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-05-ex.json",
+  "id": "a2.imperativoafirmativo.05.ex01",
+  "set": {
+   "options": [
+    "corta",
+    "corte",
+    "cortó",
+    "cortaba"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "imperativo-formal-usted",
+    "2": "preterito-indefinido",
+    "3": "imperfect"
+   }
+  },
+  "kind": "target",
+  "why": "cortes is a negative command (Unit 24); cortas is also a normal recipe present"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-05-ex.json",
+  "id": "a2.imperativoafirmativo.05.ex03",
+  "set": {
+   "sentence": "_____ una pizca de sal al gusto.",
+   "english": "Add a pinch of salt to taste."
+  },
+  "kind": "target",
+  "why": "pimienta in no list"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-05-ex.json",
+  "id": "a2.imperativoafirmativo.05.ex04",
+  "set": {
+   "sentence": "_____ el aceite en la sartén a fuego lento.",
+   "english": "Heat the oil in the frying pan over low heat."
+  },
+  "kind": "target",
+  "why": "medio is first taught at a2-porpara-consolidation"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-05-ex.json",
+  "id": "a2.imperativoafirmativo.05.ex08",
+  "set": {
+   "question": "¿Qué dice la abuela sobre darle la vuelta a la tortilla?",
+   "options": [
+    "Ten cuidado.",
+    "Corta más papas.",
+    "Añade más sal.",
+    "Espera un momento."
+   ]
+  },
+  "kind": "target",
+  "why": "the abuela speaks to Meg, not Carlos; options used subjunctive (Que tenga/baje/añada, Unit 27) and baje, media unmet",
+  "course_words": [
+   "patatas -> papas"
+  ]
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-05-ex.json",
+  "id": "a2.imperativoafirmativo.05.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Qué hago con los huevos?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Mezcla bien todo, añade una pizca de sal y calienta el aceite.",
+    "Mezclaba bien todo, añadía una pizca de sal y calentaba el aceite.",
+    "Mezcló bien todo, añadió una pizca de sal y calentó el aceite."
+   ],
+   "distractor_skills": {
+    "1": "imperfect",
+    "2": "preterito-indefinido"
+   }
+  },
+  "kind": "target",
+  "why": "batidos unmet, baja el fuego unmet, the reply did not answer 'cuándo'; Mezcles/añadas is negative"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-05-ex.json",
+  "id": "a2.imperativoafirmativo.05.ex11",
+  "set": {
+   "template": [
+    {
+     "prompt": "Give instructions (tú) to heat oil in the frying pan and add the ingredients.",
+     "answer": "Calienta el aceite en la sartén y añade los ingredientes."
+    },
+    {
+     "prompt": "Give instructions (tú) to mix with a pinch of salt and serve immediately.",
+     "answer": "Mezcla con una pizca de sal y sirve de inmediato."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "prompt says 'immediately', answer said 'sirve caliente'"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-imperativoafirmativo.json",
+  "old": "Primero, pelad y cortad las papas en rodajas finas",
+  "new": "Primero, Carlos, pela y corta las papas en rodajas finas",
+  "kind": "target",
+  "why": "pelad/cortad is a vosotros command, taught only in Unit 33; use tú",
+  "course_words": [
+   "patatas -> papas"
+  ]
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-consolidation-ex.json",
+  "id": "a2.imperativoafirmativo.consolidation.ex01",
+  "set": {
+   "question": "Which is the usted command for venir?"
+  },
+  "kind": "target",
+  "why": "Spanish question stem unmet (forma, instrucción)"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-consolidation-ex.json",
+  "id": "a2.imperativoafirmativo.consolidation.ex02",
+  "set": {
+   "question": "Amigo, ¡_____ (tener) cuidado!"
+  },
+  "kind": "target",
+  "why": "paciencia unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-consolidation-ex.json",
+  "id": "a2.imperativoafirmativo.consolidation.ex08",
+  "set": {
+   "sentence": "—Perdón, ¿puedo pasar? —Sí, adelante, _____ usted.",
+   "english": "—Excuse me, may I come in? —Yes, go ahead, please come in."
+  },
+  "kind": "target",
+  "why": "Disculpe in no list"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativoafirmativo-consolidation-ex.json",
+  "id": "a2.imperativoafirmativo.consolidation.ex09",
+  "set": {
+   "sentence": "Por favor, señores, _____ aquí un momento.",
+   "hint": "esperar, ustedes",
+   "answer": "esperen",
+   "english": "Please, gentlemen, wait here a moment."
+  },
+  "kind": "target",
+  "why": "atención, siguientes, normas unmet"
+ },
+ {
+  "file": "content/es-latam/lessons/a2/a2-imperativoafirmativo-consolidation.json",
+  "old": "I can fluidly provide directions, instructions, and requests in Spanish.",
+  "new": "I can give instructions with tú and usted commands, including the eight irregular ones.",
+  "sure": false,
+  "why": "'fluidly ... requests' promises more than the lesson practises"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-01-gr.json",
+  "old": "Negative commands tell someone NOT to do something.",
+  "new": "You know the affirmative tú commands from Unit 23. Negative commands tell someone NOT to do something.",
+  "why": "recap: open with 'You know'"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-02-gr.json",
+  "old": "Negative commands are formed from the 'yo' form of the present tense (with opposite endings), so verbs with irregular 'yo' forms keep that irregularity in negative commands:",
+  "new": "You know the irregular tú commands from Unit 23. Negative commands are formed from the 'yo' form of the present tense (with opposite endings), so verbs with irregular 'yo' forms keep that irregularity (ir and ser are the exceptions: vayas, seas):",
+  "why": "ser and ir do not follow the yo form (soy, voy), and the screen opened as if the unit were new"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-imperativonegativo-03-voc.json",
+  "old": "\"pos\": \"adjective\"\n    }\n  ]",
+  "new": "\"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"dejar\",\n      \"translation\": \"to leave (behind), to let\",\n      \"pos\": \"verb\"\n    }\n  ]",
+  "why": "dejar is used in lessons 03 and 05 and is first listed at a2-perifrasisverbales-01"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-03-gr.json",
+  "old": "Good news: unlike informal 'tú' commands,",
+  "new": "You know usted and ustedes commands from Unit 23. Good news: unlike informal 'tú' commands,",
+  "why": "recap: open with 'You know'"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-04-ex.json",
+  "id": "a2.imperativonegativo.04.ex01",
+  "set": {
+   "question": "Which is the correct tú command for 'Do it'?"
+  },
+  "why": "Spanish question stem is unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-04-ex.json",
+  "id": "a2.imperativonegativo.04.ex02",
+  "set": {
+   "question": "Which is the correct tú command for 'Don't tell me'?"
+  },
+  "why": "Spanish question stem is unmet"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-04-gr.json",
+  "old": "If you have a question, tell it to me now.",
+  "new": "If you have a question, ask it now."
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-04-gr.json",
+  "old": "The golden rule of Spanish command pronouns:",
+  "new": "You know the commands from Units 23 and 24. The golden rule of Spanish command pronouns:",
+  "why": "recap: open with 'You know'"
+ },
+ {
+  "file": "content/es-latam/vocabulary/a2/a2-imperativonegativo-05-voc.json",
+  "old": "\"pos\": \"verb\"\n    }\n  ]",
+  "new": "\"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"luz\",\n      \"translation\": \"light\",\n      \"pos\": \"noun\"\n    }\n  ]"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-consolidation-ex.json",
+  "id": "a2.imperativonegativo.consolidation.ex01",
+  "set": {
+   "question": "Which is the correct tú command for 'Don't go away'?"
+  },
+  "why": "Spanish question stem is unmet"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-consolidation-gr.json",
+  "old": "Mastering the contrast between affirmative and negative commands:",
+  "new": "You know all the command forms from Units 23 and 24. Review the contrast between affirmative and negative commands:",
+  "why": "recap: open with 'You know'"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-01-ex.json",
+  "id": "a2.imperativonegativo.01.ex01",
+  "set": {
+   "question": "Carlos, ¡no _____ (hablar) tan alto en la biblioteca!"
+  },
+  "kind": "target",
+  "why": "fuerte in no vocab list"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-01-ex.json",
+  "id": "a2.imperativonegativo.01.ex03",
+  "set": {
+   "sentence": "¡No _____ eso, hay peligro!",
+   "english": "Don't eat that, it's dangerous!"
+  },
+  "kind": "target",
+  "why": "caducado in no vocab list"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-01-ex.json",
+  "id": "a2.imperativonegativo.01.ex05",
+  "set": {
+   "pairs": [
+    [
+     "¡No toques eso!",
+     "Don't touch that!"
+    ],
+    [
+     "¡No hables tan rápido!",
+     "Don't speak so fast!"
+    ],
+    [
+     "¡No llegues tarde!",
+     "Don't arrive late!"
+    ],
+    [
+     "¡No gastes más dinero!",
+     "Don't spend more money!"
+    ]
+   ]
+  },
+  "kind": "target",
+  "why": "tanto is first taught at a2-perifrasisverbales-03"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-01-ex.json",
+  "id": "a2.imperativonegativo.01.ex06",
+  "set": {
+   "tiles": [
+    "no",
+    "toques",
+    "el",
+    "cuadro",
+    "en",
+    "el",
+    "museo"
+   ],
+   "solution": [
+    "no",
+    "toques",
+    "el",
+    "cuadro",
+    "en",
+    "el",
+    "museo"
+   ],
+   "english": "Don't touch the painting in the museum"
+  },
+  "kind": "target",
+  "why": "boca and llena unmet; tocar is listed but unused"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-01-ex.json",
+  "id": "a2.imperativonegativo.01.ex07",
+  "set": {
+   "options": [
+    "No te preocupes y no corras tan rápido, hay peligro.",
+    "No te preocupas y no corres tan rápido, hay peligro.",
+    "No te preocupó y no corrió tan rápido, hay peligro."
+   ]
+  },
+  "kind": "target",
+  "why": "conduzcas is an irregular spelling form before lesson 02"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-01-ex.json",
+  "id": "a2.imperativonegativo.01.ex08",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Abro la puerta a este hombre?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "No abras a un desconocido y no hables tan alto.",
+    "No abres a un desconocido y no hablas tan alto.",
+    "No abrió a un desconocido y no habló tan alto."
+   ]
+  },
+  "kind": "target",
+  "why": "hagas is an irregular form before lesson 02; the old question did not fit the reply"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-01-ex.json",
+  "id": "a2.imperativonegativo.01.ex11",
+  "set": {
+   "sentence": "No te preocupes, no corras y no llegues tarde.",
+   "english": "Don't worry, don't run and don't be late."
+  },
+  "kind": "target",
+  "why": "hagas is an irregular form before lesson 02"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-02-ex.json",
+  "id": "a2.imperativonegativo.02.ex01",
+  "set": {
+   "question": "Carlos, ¡no _____ (ir) solo al parque de noche!"
+  },
+  "kind": "target",
+  "why": "bosque is first taught at b1-16-01"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-02-ex.json",
+  "id": "a2.imperativonegativo.02.ex04",
+  "set": {
+   "sentence": "Por favor, no _____ nada sobre la fiesta sorpresa.",
+   "english": "Please don't say anything about the surprise party."
+  },
+  "kind": "target",
+  "why": "le (indirect object pronoun) is taught in Unit 25"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-02-ex.json",
+  "id": "a2.imperativonegativo.02.ex05",
+  "set": {
+   "pairs": [
+    [
+     "¡No salgas ahora!",
+     "Don't go out now!"
+    ],
+    [
+     "¡No pongas eso ahí!",
+     "Don't put that there!"
+    ],
+    [
+     "¡No seas tímido!",
+     "Don't be shy!"
+    ],
+    [
+     "¡No vengas tarde!",
+     "Don't come late!"
+    ]
+   ]
+  },
+  "kind": "target",
+  "why": "pesado is not in any vocabulary list"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-02-ex.json",
+  "id": "a2.imperativonegativo.02.ex07",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "Carlos no sabe lo que pasó. ¿Qué hago?"
+    },
+    {
+     "speaker": "Daniela",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "debo (deber) and contarle (le) come later"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-02-ex.json",
+  "id": "a2.imperativonegativo.02.ex08",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Está bien salir a caminar por el parque ahora?"
+    },
+    {
+     "speaker": "Daniela",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "No vayas solo porque ya está oscuro y es peligroso.",
+    "No iba solo porque ya estaba oscuro y era peligroso.",
+    "No fue solo porque ya estaba oscuro y era peligroso."
+   ],
+   "distractor_skills": {
+    "1": "imperfect",
+    "2": "preterito-indefinido"
+   }
+  },
+  "kind": "target",
+  "sure": false,
+  "why": "bosque unmet; 'No vas solo porque...' is a natural reply, so it was a second right answer"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-02-ex.json",
+  "id": "a2.imperativonegativo.02.ex09",
+  "set": {
+   "template": [
+    {
+     "prompt": "Tell a friend not to be shy and not to feel ashamed when speaking.",
+     "answer": "No seas tímido y no tengas vergüenza al hablar."
+    },
+    {
+     "prompt": "Tell a friend not to say anything to anyone.",
+     "answer": "No digas nada a nadie."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "'al hablar' not in the prompt; 'until you are sure' also fits hasta que estés"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-03-ex.json",
+  "id": "a2.imperativonegativo.03.ex04",
+  "set": {
+   "sentence": "Señores, no _____ sus cosas aquí.",
+   "english": "Gentlemen, do not leave your things here."
+  },
+  "kind": "target",
+  "why": "clientes, pertenencias, vigilancia unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-03-ex.json",
+  "id": "a2.imperativonegativo.03.ex05",
+  "set": {
+   "pairs": [
+    [
+     "No pase",
+     "Do not enter (formal)"
+    ],
+    [
+     "No fumen",
+     "Do not smoke (plural)"
+    ],
+    [
+     "No se preocupe",
+     "Don't worry (formal)"
+    ],
+    [
+     "No toque la pared",
+     "Do not touch the wall"
+    ]
+   ]
+  },
+  "kind": "target",
+  "why": "obras is not in any vocabulary list"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-03-ex.json",
+  "id": "a2.imperativonegativo.03.ex08",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Visitante",
+     "text": "¿Podemos entrar en esta oficina?"
+    },
+    {
+     "speaker": "Recepcionista",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "No pasen sin permiso y no hagan ruido en el edificio.",
+    "No pasan sin permiso y no hacen ruido en el edificio.",
+    "No pasaron sin permiso y no hicieron ruido en el edificio."
+   ]
+  },
+  "kind": "target",
+  "why": "sala, privada, mantengan unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-03-ex.json",
+  "id": "a2.imperativonegativo.03.ex09",
+  "set": {
+   "template": [
+    {
+     "prompt": "Formulate a formal prohibition (usted): Do not smoke here; it is not permitted in this building.",
+     "answer": "No fume aquí; no está permitido en este edificio."
+    },
+    {
+     "prompt": "Formulate a formal request to visitors (ustedes): Do not open this door without permission.",
+     "answer": "No abran esta puerta sin permiso."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "'en este edificio' and 'previo' were not in the prompt; previo unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-04-ex.json",
+  "id": "a2.imperativonegativo.04.ex05",
+  "set": {
+   "pairs": [
+    [
+     "¡Dime!",
+     "Tell me!"
+    ],
+    [
+     "¡No me digas!",
+     "Don't tell me!"
+    ],
+    [
+     "¡Vete ya!",
+     "Go away now!"
+    ],
+    [
+     "¡No te vayas!",
+     "Don't go away!"
+    ],
+    [
+     "lleva acento",
+     "carries an accent"
+    ]
+   ]
+  },
+  "kind": "target",
+  "why": "¡Dímelo!/¡No me lo digas! are double object pronouns (Unit 25)"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-04-ex.json",
+  "id": "a2.imperativonegativo.04.ex06",
+  "set": {
+   "tiles": [
+    "escúchame",
+    "bien",
+    "por",
+    "favor"
+   ],
+   "solution": [
+    "escúchame",
+    "bien",
+    "por",
+    "favor"
+   ],
+   "english": "Listen to me carefully, please"
+  },
+  "kind": "target",
+  "why": "atención is first taught at a2-vosotrospeninsular-02"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-04-ex.json",
+  "id": "a2.imperativonegativo.04.ex07",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Me voy de la reunión ahora?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "debo and marcharme unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-04-ex.json",
+  "id": "a2.imperativonegativo.04.ex08",
+  "set": {
+   "options": [
+    "No te sientes allí; el suelo está mojado.",
+    "No te sientas allí; el suelo está mojado.",
+    "No te sentó allí; el suelo estaba mojado."
+   ]
+  },
+  "kind": "target",
+  "why": "alrededor unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-04-ex.json",
+  "id": "a2.imperativonegativo.04.ex09",
+  "set": {
+   "template": [
+    {
+     "prompt": "Tell a friend not to get up yet and to stay.",
+     "answer": "No te levantes todavía; quédate."
+    },
+    {
+     "prompt": "Tell a friend not to go away yet.",
+     "answer": "No te vayas todavía."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "sentado, ningún unmet; the second prompt asked for a vocabulary the lesson lacks"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-04-gr.json",
+  "old": "¡Cómetelo! (Eat it!)",
+  "new": "¡Cómpralo! (Buy it!)",
+  "kind": "target",
+  "why": "double object pronouns (te lo) belong to Unit 25"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-04-gr.json",
+  "old": "¡No te lo comas! (Don't eat it!)",
+  "new": "¡No lo compres! (Don't buy it!)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-04-gr.json",
+  "old": "Si tienes una pregunta, dímela ahora.",
+  "new": "Si tienes una pregunta, hazla ahora.",
+  "kind": "target",
+  "why": "dímela is a double pronoun (Unit 25)"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-04-gr.json",
+  "old": "di → dímelo.",
+  "new": "di → dime.",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-05-ex.json",
+  "id": "a2.imperativonegativo.05.ex01",
+  "set": {
+   "question": "En el dormitorio del albergue, ¡no _____ (hacer, tú) ruido de noche!"
+  },
+  "kind": "target",
+  "why": "'hostel' is English inside a Spanish line; the word taught is albergue"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-05-ex.json",
+  "id": "a2.imperativonegativo.05.ex02",
+  "set": {
+   "question": "Por favor, _____ (apagar, usted) la luz al salir de la habitación."
+  },
+  "kind": "target",
+  "why": "la sala flagged for es-es (salón)"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-05-ex.json",
+  "id": "a2.imperativonegativo.05.ex04",
+  "set": {
+   "sentence": "_____ silencio en el edificio a partir de las diez.",
+   "english": "Keep quiet in the building after ten o'clock."
+  },
+  "kind": "target",
+  "why": "pasillos in no vocab list"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-05-ex.json",
+  "id": "a2.imperativonegativo.05.ex05",
+  "set": {
+   "pairs": [
+    [
+     "Prohibido fumar",
+     "No smoking"
+    ],
+    [
+     "Guarde silencio",
+     "Keep quiet"
+    ],
+    [
+     "No deje su dinero aquí",
+     "Do not leave your money here"
+    ],
+    [
+     "Cierre la puerta con llave",
+     "Lock the door"
+    ]
+   ]
+  },
+  "kind": "target",
+  "why": "objetos and valor unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-05-ex.json",
+  "id": "a2.imperativonegativo.05.ex07",
+  "set": {
+   "question": "¿A qué hora hay que guardar silencio según las normas del albergue?"
+  },
+  "kind": "target",
+  "why": "deben and huéspedes unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-05-ex.json",
+  "id": "a2.imperativonegativo.05.ex08",
+  "set": {
+   "question": "¿Qué no hay que dejar en la cocina del albergue?"
+  },
+  "kind": "target",
+  "why": "deben, huéspedes, común unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-05-ex.json",
+  "id": "a2.imperativonegativo.05.ex09",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Huésped",
+     "text": "¿Cuáles son las normas de este albergue?"
+    },
+    {
+     "speaker": "Recepcionista",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Respete las reglas y no haga ruido después de las diez.",
+    "Respeta las reglas y no haces ruido después de las diez.",
+    "Respetó las reglas y no hizo ruido después de las diez."
+   ]
+  },
+  "kind": "target",
+  "why": "principales and comunes unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-05-ex.json",
+  "id": "a2.imperativonegativo.05.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué hay que hacer en la cocina?"
+    },
+    {
+     "speaker": "Daniela",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "No dejes platos sucios en el fregadero; limpia todo.",
+    "No dejó platos sucios en el fregadero; limpió todo.",
+    "No dejarás platos sucios en el fregadero; limpiarás todo."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "futuro-simple"
+   }
+  },
+  "kind": "target",
+  "why": "(check_fixes rejects this alone only because dejar is added to lesson 03 by another fix in this list) debemos, mantén, compartida unmet; the wrong option 'Dejes ... mantengas' was a bare subjunctive"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-05-ex.json",
+  "id": "a2.imperativonegativo.05.ex11",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a room rule (usted): Turn off the lights when leaving the room.",
+     "answer": "Apague las luces al salir de la habitación."
+    },
+    {
+     "prompt": "Write a hostel rule (usted): Respect the rules and keep the kitchen clean.",
+     "answer": "Respete las normas y mantenga limpia la cocina."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "the old prompts did not match the answers (other guests / rules), encendidas and espacios unmet"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-05-ex.json",
+  "id": "a2.imperativonegativo.05.ex13",
+  "set": {
+   "sentence": "Respeta las normas del albergue y limpia la habitación.",
+   "english": "Respect the hostel rules and clean the room."
+  },
+  "kind": "target",
+  "why": "mantén unmet"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-imperativonegativo.json",
+  "old": "Por favor, escuchad las normas de convivencia de la casa",
+  "new": "Por favor, escuchen las normas de convivencia de la casa",
+  "kind": "target",
+  "why": "vosotros commands (escuchad, hagáis, dejéis, limpiad, olvidéis, disfrutad) are taught only in Unit 33; the receptionist is formal, so ustedes"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-imperativonegativo.json",
+  "old": "¿Cuál es el propósito central del diálogo con la recepcionista?",
+  "new": "¿Qué les explica la recepcionista a Carlos y Meg?",
+  "kind": "target",
+  "why": "generic reading question (reading-generic): ask what the people say"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-consolidation-ex.json",
+  "id": "a2.imperativonegativo.consolidation.ex02",
+  "set": {
+   "question": "¡_____ (decir, tú) la verdad y no _____ (tener, tú) miedo!",
+   "options": [
+    "Di / tengas",
+    "Dices / tengas",
+    "Di / tenga",
+    "Dijo / tengas"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "imperativo-formal-usted",
+    "3": "preterite-irregular-stems"
+   }
+  },
+  "kind": "target",
+  "why": "mentir is in no list; each wrong option had two faults"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-consolidation-ex.json",
+  "id": "a2.imperativonegativo.consolidation.ex04",
+  "set": {
+   "sentence": "Este libro es muy bueno, _____ ya.",
+   "hint": "comprar, tú",
+   "answer": "cómpralo",
+   "english": "This book is very good, buy it now."
+  },
+  "kind": "target",
+  "why": "dale = dar + le (indirect object pronoun, Unit 25)"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-consolidation-ex.json",
+  "id": "a2.imperativonegativo.consolidation.ex05",
+  "set": {
+   "pairs": [
+    [
+     "¡Hazlo ya!",
+     "Do it now!"
+    ],
+    [
+     "¡No lo hagas!",
+     "Don't do it!"
+    ],
+    [
+     "¡Dime todo!",
+     "Tell me everything!"
+    ],
+    [
+     "¡No me digas!",
+     "Don't tell me!"
+    ]
+   ]
+  },
+  "kind": "target",
+  "why": "¡Dímelo!/¡No me lo digas! are double object pronouns (Unit 25)"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-consolidation-ex.json",
+  "id": "a2.imperativonegativo.consolidation.ex08",
+  "set": {
+   "sentence": "—Tengo sueño. —Entonces _____ temprano.",
+   "english": "—I'm sleepy. —Then go to bed early."
+  },
+  "kind": "target",
+  "why": "pues in no vocab list"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-imperativonegativo-consolidation-ex.json",
+  "id": "a2.imperativonegativo.consolidation.ex09",
+  "set": {
+   "sentence": "Señores, no _____ todavía, por favor.",
+   "english": "Gentlemen, do not get up yet, please."
+  },
+  "kind": "target",
+  "why": "'hasta que el avión se detenga' is the subjunctive after hasta que (Unit 27); pasajeros unmet"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-consolidation-gr.json",
+  "old": "¡Dímelo!",
+  "new": "¡Dime!",
+  "kind": "target",
+  "why": "double object pronouns are Unit 25"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-consolidation-gr.json",
+  "old": "¡No me lo digas!",
+  "new": "¡No me digas!",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-consolidation-gr.json",
+  "old": "¡Pase! / ¡Páselo!",
+  "new": "¡Pase! / ¡Hágalo!",
+  "kind": "target",
+  "why": "¡Páselo! means 'pass it', not 'come in'; the row contrasts one verb"
+ },
+ {
+  "file": "content/es-latam/grammar/a2/a2-imperativonegativo-consolidation-gr.json",
+  "old": "¡No pase! / ¡No lo pase!",
+  "new": "¡No pase! / ¡No lo haga!",
+  "kind": "target"
+ }
+]

@@ -8,18 +8,18 @@
       "question": "Primero, _____ (cortar, tú) las patatas en rodajas finas.",
       "options": [
         "corta",
-        "cortes",
         "corte",
-        "cortas"
+        "cortó",
+        "cortaba"
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
       ],
       "distractor_skills": {
-        "1": "imperativo-negativo",
-        "2": "imperativo-formal-usted",
-        "3": "ar-verbs"
+        "1": "imperativo-formal-usted",
+        "2": "preterito-indefinido",
+        "3": "imperfect"
       }
     },
     {
@@ -46,25 +46,25 @@
       "id": "a2.imperativoafirmativo.05.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "_____ una pizca de sal y pimienta al gusto.",
+      "sentence": "_____ una pizca de sal al gusto.",
       "hint": "añadir, tú",
       "answer": "Añade",
       "teaches": [
         "imperativo-afirmativo"
       ],
-      "english": "Add a pinch of salt and pepper to taste."
+      "english": "Add a pinch of salt to taste."
     },
     {
       "id": "a2.imperativoafirmativo.05.ex04",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "_____ el aceite en la sartén a fuego medio.",
+      "sentence": "_____ el aceite en la sartén a fuego lento.",
       "hint": "calentar, usted",
       "answer": "Caliente",
       "teaches": [
         "imperativo-formal-usted"
       ],
-      "english": "Heat the oil in the frying pan over medium heat."
+      "english": "Heat the oil in the frying pan over low heat."
     },
     {
       "id": "a2.imperativoafirmativo.05.ex05",
@@ -122,9 +122,9 @@
       "question": "¿Qué plato quieren cocinar Carlos y Meg con la abuela?",
       "options": [
         "Una tortilla de patatas",
-        "Una paella valenciana",
-        "Una sopa de verduras",
-        "Un pastel de manzana"
+        "Una ensalada de verduras",
+        "Un pastel de manzana",
+        "Un sándwich de pollo"
       ],
       "correct": 0
     },
@@ -132,12 +132,12 @@
       "id": "a2.imperativoafirmativo.05.ex08",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "¿Qué le dice la abuela a Carlos que haga al darle la vuelta a la tortilla?",
+      "question": "¿Qué dice la abuela sobre darle la vuelta a la tortilla?",
       "options": [
-        "Que tenga cuidado",
-        "Que baje el fuego",
-        "Que añada más sal",
-        "Que espere media hora"
+        "Ten cuidado.",
+        "Corta más patatas.",
+        "Añade más sal.",
+        "Espera un momento."
       ],
       "correct": 0
     },
@@ -157,13 +157,17 @@
       ],
       "options": [
         "Corta las patatas y calienta un poco de aceite en la sartén.",
-        "Cortes las patatas y calientes un poco de aceite en la sartén.",
+        "Cortaba las patatas y calentaba un poco de aceite en la sartén.",
         "Cortó las patatas y calentó un poco de aceite en la sartén."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.imperativoafirmativo.05.ex10",
@@ -172,7 +176,7 @@
       "prompt": [
         {
           "speaker": "Daniela",
-          "text": "¿Cuándo pongo los huevos batidos?"
+          "text": "¿Qué hago con los huevos?"
         },
         {
           "speaker": "Meg",
@@ -180,14 +184,18 @@
         }
       ],
       "options": [
-        "Mezcla bien todo, añade una pizca de sal y baja el fuego.",
-        "Mezcles bien todo, añadas una pizca de sal y bajes el fuego.",
-        "Mezcló bien todo, añadió una pizca de sal y bajó el fuego."
+        "Mezcla bien todo, añade una pizca de sal y calienta el aceite.",
+        "Mezclaba bien todo, añadía una pizca de sal y calentaba el aceite.",
+        "Mezcló bien todo, añadió una pizca de sal y calentó el aceite."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.imperativoafirmativo.05.ex11",
@@ -200,7 +208,7 @@
         },
         {
           "prompt": "Give instructions (tú) to mix with a pinch of salt and serve immediately.",
-          "answer": "Mezcla con una pizca de sal y sirve caliente."
+          "answer": "Mezcla con una pizca de sal y sirve de inmediato."
         }
       ],
       "teaches": [

@@ -31,7 +31,7 @@
       "options": [
         "Daniela encontrará su camino.",
         "Daniela va a encontrar su camino.",
-        "Daniela encontró su camino ayer."
+        "Daniela encontró su camino."
       ],
       "correct": 0,
       "teaches": [
@@ -82,15 +82,16 @@
       "question": "Which is the futuro simple of ser for nosotros?",
       "options": [
         "seremos",
-        "seramos",
-        "somos"
+        "somos",
+        "fuimos"
       ],
       "correct": 0,
       "teaches": [
         "futuro-simple"
       ],
       "distractor_skills": {
-        "2": "present-tense"
+        "1": "present-tense",
+        "2": "preterito-indefinido"
       }
     },
     {
@@ -182,11 +183,11 @@
       "id": "a2.19.05.ex11",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "¿Dónde vuelven a reunirse los amigos?",
+      "question": "¿Dónde están los amigos?",
       "options": [
         "En su cafetería favorita.",
         "En el aeropuerto.",
-        "En una escuela de cocina."
+        "En una clase de cocina."
       ],
       "correct": 0
     },
@@ -196,7 +197,7 @@
       "type": "multiple-choice",
       "question": "¿Qué hará Daniela?",
       "options": [
-        "Viajará por el sur de Vietnam.",
+        "Viajará por Vietnam.",
         "Vivirá en Hanói.",
         "Trabajará en España."
       ],
@@ -208,7 +209,7 @@
       "type": "multiple-choice",
       "question": "¿Qué espera hacer Lauren?",
       "options": [
-        "Encontrar un nuevo trabajo.",
+        "Encontrar trabajo.",
         "Viajar a Chile.",
         "Comprar una casa."
       ],
@@ -220,7 +221,7 @@
       "type": "multiple-choice",
       "question": "¿Para qué ahorrará dinero Kaylee?",
       "options": [
-        "Para visitar España el año siguiente.",
+        "Para visitar España.",
         "Para comprar un coche.",
         "Para estudiar en Chile."
       ],
@@ -230,11 +231,11 @@
       "id": "a2.19.05.ex15",
       "category": "reading",
       "type": "multiple-choice",
-      "question": "¿Qué dice Carlos que hará?",
+      "question": "¿Dónde dice Carlos que vivirán él y Meg?",
       "options": [
-        "Continuará aprendiendo español todos los días.",
-        "Dejará de estudiar español.",
-        "Se mudará a España."
+        "Vivirán juntos en Hungría.",
+        "Vivirán juntos en Chile.",
+        "Vivirán juntos en España."
       ],
       "correct": 0
     },
@@ -272,25 +273,25 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "¿Para qué ahorrará dinero Kaylee?"
+          "speaker": "Carlos",
+          "text": "¿Dónde viviremos en el futuro?"
         },
         {
-          "speaker": "Carlos",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Para visitar España.",
-        "Para visitar España ayer.",
-        "Ha visitado España."
+        "Viviremos en Budapest.",
+        "Vivimos en Budapest.",
+        "Hemos vivido en Budapest."
       ],
       "correct": 0,
       "teaches": [
         "futuro-simple"
       ],
       "distractor_skills": {
-        "1": "preterito-indefinido",
+        "1": "present-tense",
         "2": "preterito-perfecto"
       }
     },
@@ -301,7 +302,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Qué harás tú en el futuro?"
+          "text": "¿Qué harás tú el próximo año?"
         },
         {
           "speaker": "Meg",
@@ -309,9 +310,9 @@
         }
       ],
       "options": [
-        "Seguiré viviendo en Hanói.",
-        "Viví en Hanói ayer.",
-        "He vivido en Hanói."
+        "Estudiaré español en Budapest.",
+        "Estudié español en Budapest.",
+        "He estudiado español en Budapest."
       ],
       "correct": 0,
       "teaches": [
@@ -332,15 +333,15 @@
           "answer": "Viajaré el próximo año."
         },
         {
-          "prompt": "Say that you will continue studying Spanish.",
-          "answer": "Seguiré estudiando español."
+          "prompt": "Say that you will study more Spanish.",
+          "answer": "Estudiaré más español."
         },
         {
           "prompt": "Say that you will save money to visit Spain.",
           "answer": "Ahorraré dinero para visitar España."
         },
         {
-          "prompt": "Say that you will always be friends.",
+          "prompt": "Say that we will always be friends.",
           "answer": "Siempre seremos amigos."
         }
       ],

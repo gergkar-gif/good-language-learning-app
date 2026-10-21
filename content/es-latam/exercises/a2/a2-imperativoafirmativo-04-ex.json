@@ -9,8 +9,8 @@
       "options": [
         "siga",
         "sigue",
-        "sigas",
-        "seguí"
+        "seguí",
+        "seguía"
       ],
       "correct": 0,
       "teaches": [
@@ -18,8 +18,8 @@
       ],
       "distractor_skills": {
         "1": "imperativo-afirmativo",
-        "2": "imperativo-negativo",
-        "3": "preterito-indefinido"
+        "2": "preterito-indefinido",
+        "3": "imperfect"
       }
     },
     {
@@ -30,8 +30,8 @@
       "options": [
         "dobla",
         "doble",
-        "doblas",
-        "dobles"
+        "doblaste",
+        "doblaba"
       ],
       "correct": 0,
       "teaches": [
@@ -39,33 +39,33 @@
       ],
       "distractor_skills": {
         "1": "imperativo-formal-usted",
-        "2": "ar-verbs",
-        "3": "imperativo-negativo"
+        "2": "preterito-indefinido",
+        "3": "imperfect"
       }
     },
     {
       "id": "a2.imperativoafirmativo.04.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Para ir al banco, _____ la calle en el paso de cebra.",
+      "sentence": "Para ir al banco, _____ la calle en el semáforo.",
       "hint": "cruzar, usted",
       "answer": "cruce",
       "teaches": [
         "imperativo-formal-usted"
       ],
-      "english": "To go to the bank, cross the street at the zebra crossing."
+      "english": "To go to the bank, cross the street at the traffic light."
     },
     {
       "id": "a2.imperativoafirmativo.04.ex04",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "_____ la segunda salida de la rotonda.",
+      "sentence": "_____ la segunda calle a la derecha.",
       "hint": "tomar, tú",
       "answer": "Toma",
       "teaches": [
         "imperativo-afirmativo"
       ],
-      "english": "Take the second exit at the roundabout."
+      "english": "Take the second street on the right."
     },
     {
       "id": "a2.imperativoafirmativo.04.ex05",
@@ -125,7 +125,7 @@
       "prompt": [
         {
           "speaker": "Turista",
-          "text": "Disculpe, ¿cómo llego a la plaza principal?"
+          "text": "Perdón, ¿cómo llego a la plaza?"
         },
         {
           "speaker": "Carlos",
@@ -134,13 +134,17 @@
       ],
       "options": [
         "Sigue recto dos calles y gira a la derecha en el semáforo.",
-        "Sigas recto dos calles y gires a la derecha en el semáforo.",
+        "Seguía recto dos calles y giraba a la derecha en el semáforo.",
         "Siguió recto dos calles y giró a la derecha en el semáforo."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.imperativoafirmativo.04.ex08",
@@ -149,7 +153,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Dónde está la estación de metro más cercana?"
+          "text": "¿Dónde está la estación más cercana?"
         },
         {
           "speaker": "Daniela",
@@ -158,13 +162,17 @@
       ],
       "options": [
         "Cruza el puente y dobla a la izquierda en la esquina.",
-        "Cruces el puente y dobles a la izquierda en la esquina.",
+        "Cruzaba el puente y doblaba a la izquierda en la esquina.",
         "Cruzó el puente y dobló a la izquierda en la esquina."
       ],
       "correct": 0,
       "teaches": [
         "imperativo-afirmativo"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "imperfect",
+        "2": "preterito-indefinido"
+      }
     },
     {
       "id": "a2.imperativoafirmativo.04.ex09",
@@ -172,11 +180,11 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Give directions (tú) to go straight until the corner and turn left.",
+          "prompt": "Give directions (tú) to go straight until the corner and turn left (use doblar).",
           "answer": "Sigue recto hasta la esquina y dobla a la izquierda."
         },
         {
-          "prompt": "Give directions (tú) to cross the street and turn right at the traffic light.",
+          "prompt": "Give directions (tú) to cross the street and turn right at the traffic light (use girar).",
           "answer": "Cruza la calle y gira a la derecha en el semáforo."
         }
       ],

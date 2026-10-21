@@ -1,0 +1,713 @@
+[
+ {
+  "file": "content/es-es/exercises/a2/a2-19-01-ex.json",
+  "id": "a2.19.01.ex02",
+  "set": {
+   "options": [
+    "Viajaré mañana.",
+    "Voy a viajar mañana.",
+    "Viajé mañana."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "preterito-indefinido"
+   }
+  },
+  "why": "tell-time-word: \"Viajé ayer\" gave the answer away; keep mañana in every option so only the tense differs",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-01-ex.json",
+  "id": "a2.19.01.ex12",
+  "set": {
+   "options": [
+    "Viajarán mañana.",
+    "Viajaron mañana.",
+    "Han viajado mañana."
+   ],
+   "correct": 0,
+   "question": "They will travel tomorrow. Which sentence says this?",
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "\"Which sentence is correct?\" with no meaning to pin it; \"Viajar mañana.\" is a natural fragment (infinitive-reply). Put the English in the question and use two real tense faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-01-ex.json",
+  "id": "a2.19.01.ex14",
+  "set": {
+   "options": [
+    "Viajaré mañana.",
+    "Viajé mañana.",
+    "He viajado mañana."
+   ],
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Cuándo viajarás?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "¿Qué harás? (irregular stem har-) is first shown on the a2-19-02 screen; ask a regular verb in 01. Same time word in every option (tell-time-word)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-02-ex.json",
+  "id": "a2.19.02.ex08",
+  "set": {
+   "tiles": [
+    "¿Dónde",
+    "vivirán",
+    "ellos",
+    "el",
+    "próximo",
+    "año?"
+   ],
+   "solution": [
+    "¿Dónde",
+    "vivirán",
+    "ellos",
+    "el",
+    "próximo",
+    "año?"
+   ],
+   "english": "Where will they live next year?"
+  },
+  "why": "es-es friends say vosotros, so \"ustedes\" (a formal you) is wrong for this question and vosotros forms are Unit 33; ask about \"ellos\"",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-02-ex.json",
+  "id": "a2.19.02.ex04",
+  "set": {
+   "tiles": [
+    "Tomaré",
+    "una",
+    "decisión",
+    "mañana"
+   ],
+   "solution": [
+    "Tomaré",
+    "una",
+    "decisión",
+    "mañana"
+   ],
+   "english": "I will make a decision tomorrow."
+  },
+  "why": "\"Cambiaré mi decisión\" is not natural (cambiar de opinión/tomar una decisión); tomar is met (A1 Unit 26)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-03-ex.json",
+  "id": "a2.19.03.ex12",
+  "set": {
+   "options": [
+    "Probablemente sucederá pronto.",
+    "Probablemente sucedió pronto.",
+    "Probablemente ha sucedido pronto."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer + length-giveaway (30 vs 20); \"Voy a hacerlo ahora\" removed",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-03-ex.json",
+  "id": "a2.19.03.ex15",
+  "set": {
+   "options": [
+    "Sucederá pronto.",
+    "Sucedió pronto.",
+    "Ha sucedido pronto."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word: \"Sucedió ayer.\" / \"Sucede ayer.\" had two faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-03-ex.json",
+  "id": "a2.19.03.ex16",
+  "set": {
+   "options": [
+    "Sí, será una buena experiencia.",
+    "Sí, fue una buena experiencia.",
+    "Sí, ha sido una buena experiencia."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word: ayer removed",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-03-ex.json",
+  "id": "a2.19.03.ex07",
+  "set": {
+   "sentence": "Creo que los planes __ pronto.",
+   "hint": "cambiar",
+   "answer": "cambiarán",
+   "english": "I think the plans will change soon."
+  },
+  "why": "unmet-word cambios (first taught a2-perifrasisverbales-01): use plans (el plan, met) with cambiar",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-19-03-gr.json",
+  "old": "*Quizá* can also pair with the subjunctive for a more hesitant prediction (*quizá viaje*) — a form for later. Stated as plainly as it is here, the futuro simple indicative is exactly right.",
+  "new": "*Quizá* and *probablemente* make a prediction softer. Here they come with the futuro simple: *Quizá viajaremos el próximo año.*",
+  "why": "subjunctive form (quizá viaje) shown in a Unit 19 tip, before Unit 27",
+  "id": "a2-19-03-tip",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-19-04-gr.json",
+  "old": "\"spanish\": \"Seguiré estudiando español.\",\n          \"english\": \"I will continue studying Spanish.\"",
+  "new": "\"spanish\": \"Estudiaré más español.\",\n          \"english\": \"I will study more Spanish.\"",
+  "why": "seguir + gerund is Unit 28 (perifrasis-verbales)",
+  "id": "a2-19-04-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-19-04-gr.json",
+  "old": "\"seguiré\",\n          \"I will continue\"",
+  "new": "\"estudiaré\",\n          \"I will study\"",
+  "why": "table row follows the example",
+  "id": "a2-19-04-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-19-04-gr.json",
+  "old": "*Seguiré estudiando* works the same way *seguir* + gerund always does — it's just wearing the *futuro simple* on the outer verb instead of *ir a*. Spot *seguir* as 'keep on' regardless of which tense carries it.",
+  "new": "Time phrases such as *el próximo año* and *en el futuro* can start or end the sentence: *El próximo año lograré mis objetivos.* / *Lograré mis objetivos en el futuro.*",
+  "why": "tip presents seguir + gerund as known (Unit 28); replaced by a true tip about the time phrase",
+  "id": "a2-19-04-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-04-ex.json",
+  "id": "a2.19.04.ex02",
+  "set": {
+   "options": [
+    "Ahorraremos dinero para el proyecto.",
+    "Vamos a ahorrar dinero para el proyecto.",
+    "Ahorramos dinero para el proyecto."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "present-tense"
+   }
+  },
+  "why": "tell-time-word ayer (\"Ahorramos dinero ayer\" was also the present form); the wrong option is now a plain present",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-04-ex.json",
+  "id": "a2.19.04.ex12",
+  "set": {
+   "options": [
+    "Estudiaré más español.",
+    "Estudié más español.",
+    "He estudiado más español."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "seguir + gerund (Unit 28) and tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-04-ex.json",
+  "id": "a2.19.04.ex15",
+  "set": {
+   "options": [
+    "Estudiaré más español.",
+    "Estudié más español.",
+    "He estudiado más español."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "seguir + gerund (Unit 28) and tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-04-ex.json",
+  "id": "a2.19.04.ex16",
+  "set": {
+   "options": [
+    "Ahorraré dinero para viajar.",
+    "Ahorré dinero para viajar.",
+    "He ahorrado dinero para viajar."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word + length-giveaway 28 vs 19",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-04-ex.json",
+  "id": "a2.19.04.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you will save money to travel.",
+     "answer": "Ahorraré dinero para viajar."
+    },
+    {
+     "prompt": "Say that you will study more Spanish.",
+     "answer": "Estudiaré más español."
+    },
+    {
+     "prompt": "Say that you will achieve your goals.",
+     "answer": "Lograré mis objetivos."
+    }
+   ]
+  },
+  "why": "seguir + gerund (Unit 28)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-04-ex.json",
+  "id": "a2.19.04.ex18",
+  "set": {
+   "sentence": "Estudiaré más español.",
+   "options": [
+    "I will study more Spanish.",
+    "I studied more Spanish.",
+    "I have studied more Spanish.",
+    "I study more Spanish every day."
+   ]
+  },
+  "why": "seguir + gerund (Unit 28)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex02",
+  "set": {
+   "options": [
+    "Daniela encontrará su camino.",
+    "Daniela va a encontrar su camino.",
+    "Daniela encontró su camino."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "preterito-indefinido"
+   }
+  },
+  "why": "tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex05",
+  "set": {
+   "options": [
+    "seremos",
+    "somos",
+    "fuimos"
+   ],
+   "correct": 0,
+   "question": "Which is the futuro simple of ser for nosotros?",
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-indefinido"
+   }
+  },
+  "why": "unmet-word \"seramos\" (non-word in no list): use real forms of other skills",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex11",
+  "set": {
+   "question": "¿Dónde están los amigos?"
+  },
+  "why": "unmet-word reunirse (first taught b1-05-02)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex12",
+  "set": {
+   "options": [
+    "Viajará por Vietnam.",
+    "Vivirá en Hanói.",
+    "Trabajará en España."
+   ],
+   "correct": 0
+  },
+  "why": "length-giveaway 30 vs 20: shorten the right answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex13",
+  "set": {
+   "options": [
+    "Encontrar trabajo.",
+    "Viajar a Chile.",
+    "Comprar una casa."
+   ],
+   "correct": 0
+  },
+  "why": "length-giveaway 27 vs 17; \"un nuevo\" cut (encontrar is added to the a2-19-05 vocabulary)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex14",
+  "set": {
+   "options": [
+    "Para visitar España.",
+    "Para comprar un coche.",
+    "Para estudiar en Chile."
+   ],
+   "correct": 0
+  },
+  "why": "unmet-word siguiente (b1-33-04) + length-giveaway 37 vs 23",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex15",
+  "set": {
+   "question": "¿Dónde dice Carlos que vivirán él y Meg?",
+   "options": [
+    "Vivirán juntos en Hungría.",
+    "Vivirán juntos en Chile.",
+    "Vivirán juntos en España."
+   ],
+   "correct": 0
+  },
+  "why": "length-giveaway 46 vs 27; unmet dejará/mudará and continuar + gerund in the options; answerable from paragraph 8 (Viviremos juntos en Hungría)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex17",
+  "set": {
+   "options": [
+    "Viviremos en Budapest.",
+    "Vivimos en Budapest.",
+    "Hemos vivido en Budapest."
+   ],
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Dónde viviremos algún día?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "ex17 repeated reading ex14 (Kaylee, para qué ahorrará) and ayer tell; new item matches paragraph 7",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex18",
+  "set": {
+   "options": [
+    "Estudiaré español en Budapest.",
+    "Estudié español en Budapest.",
+    "He estudiado español en Budapest."
+   ],
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué harás tú el próximo año?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "\"Seguiré viviendo en Hanói\" contradicts the story (Meg moves to Budapest); seguir + gerund; ayer tell",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-05-ex.json",
+  "id": "a2.19.05.ex19",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you will travel next year.",
+     "answer": "Viajaré el próximo año."
+    },
+    {
+     "prompt": "Say that you will study more Spanish.",
+     "answer": "Estudiaré más español."
+    },
+    {
+     "prompt": "Say that you will save money to visit Spain.",
+     "answer": "Ahorraré dinero para visitar España."
+    },
+    {
+     "prompt": "Say that we will always be friends.",
+     "answer": "Siempre seremos amigos."
+    }
+   ]
+  },
+  "why": "\"Say that you will always be friends\" but the answer is nosotros (seremos); seguir + gerund",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-19-05-gr.json",
+  "old": "*Daniela viajará*, not *Daniela ella viajará* — once the subject is already named, Spanish never doubles it with a pronoun, even in a tense where English speakers might feel tempted to add 'she' for clarity.",
+  "new": "Once the subject is named (*Daniela viajará*), you don't add *ella*: the ending *-á* already shows who acts.",
+  "why": "\"never doubles it with a pronoun\" is false (Daniela, ella viajará is possible for emphasis)",
+  "id": "a2-19-05-gr",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-19.json",
+  "old": "\"question\": \"¿De qué trata principalmente la conversación de los amigos en la cafetería?\",\n          \"options\": [\n            \"De los planes de futuro de cada miembro del grupo y el gran anuncio de Carlos y Meg.\",\n            \"De una discusión sobre los gastos del apartamento compartido.\",\n            \"De la preparación de una fiesta de bienvenida para nuevos estudiantes.\",\n            \"Del precio de las clases de idiomas en el sur de Vietnam.\"",
+  "new": "\"question\": \"¿Qué anuncian Carlos y Meg a sus amigos?\",\n          \"options\": [\n            \"Que se mudarán juntos a Budapest.\",\n            \"Que Lucía vuelve a Hanói.\",\n            \"Que Daniela se queda en Vietnam.\",\n            \"Que Lauren y Kaylee viajarán a Chile.\"",
+  "why": "reading-generic (\"¿De qué trata…?\"); ask what the people say",
+  "id": "a2-original-19",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-19.json",
+  "old": "\"question\": \"¿Qué significa la mudanza a Budapest para Carlos y Meg?\",\n          \"options\": [\n            \"Una decisión obligatoria porque no tenían visado para quedarse en Vietnam.\",\n            \"El fin de su interés por la lengua y la cultura en español.\",\n            \"El comienzo de un proyecto de vida compartido como pareja en Europa.\",\n            \"Una solución temporal mientras buscan trabajo en Sudáfrica.\"",
+  "new": "\"question\": \"¿Dónde dice Carlos que vivirán él y Meg?\",\n          \"options\": [\n            \"En Chile.\",\n            \"En Vietnam.\",\n            \"En Hungría.\",\n            \"En España.\"",
+  "why": "abstract question with invented options (visado, Sudáfrica) and an imperfect (tenían); answerable from paragraph 8",
+  "id": "a2-original-19",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-19.json",
+  "old": "\"explanation\": \"Meg y Carlos anuncian que vivirán juntos en Hungría para crear un nuevo hogar y avanzar en su relación.\"",
+  "new": "\"explanation\": \"Carlos dice: «Viviremos juntos en Hungría» (párrafo 8).\"",
+  "why": "explanation follows the new question",
+  "id": "a2-original-19",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-19.json",
+  "old": "\"explanation\": \"En la reunión, cada amigo expone sus proyectos y Carlos y Meg comparten su decisión de mudarse a Budapest.\"",
+  "new": "\"explanation\": \"Meg dice: «nos mudaremos juntos a Budapest» (párrafo 7).\"",
+  "why": "explanation follows the new question",
+  "id": "a2-original-19",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-19.json",
+  "old": "\"Buscar un nuevo trabajo en Hanói con Lauren.\",\n            \"Viajar por el sur de Vietnam.\",\n            \"Comprar un billete directo a Hungría.\",\n            \"Empezar un curso intensivo de gramática.\"",
+  "new": "\"Buscar un nuevo trabajo en Hanói con Lauren.\",\n            \"Viajar por el sur de Vietnam.\",\n            \"Comprar un billete a Hungría.\",\n            \"Empezar un curso de gramática.\"",
+  "why": "trims invented details; (minor)",
+  "id": "a2-original-19",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex01",
+  "set": {
+   "options": [
+    "Cambiaré de plan mañana.",
+    "Voy a cambiar de plan mañana.",
+    "Cambié de plan mañana."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "ir-infinitive",
+    "2": "preterito-indefinido"
+   }
+  },
+  "why": "consolidation-copy of 01.ex02 + tell-time-word",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex02",
+  "set": {
+   "sentence": "El próximo año Meg __ a Budapest.",
+   "hint": "viajar",
+   "answer": "viajará",
+   "english": "Next year Meg will travel to Budapest."
+  },
+  "why": "consolidation-copy of 01.ex03",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex03",
+  "set": {
+   "tiles": [
+    "Viviremos",
+    "en",
+    "otra",
+    "ciudad"
+   ],
+   "solution": [
+    "Viviremos",
+    "en",
+    "otra",
+    "ciudad"
+   ],
+   "english": "We will live in another city."
+  },
+  "why": "consolidation-copy of 01.ex04",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex07",
+  "set": {
+   "tiles": [
+    "¿Dónde",
+    "trabajarás",
+    "el",
+    "próximo",
+    "año?"
+   ],
+   "solution": [
+    "¿Dónde",
+    "trabajarás",
+    "el",
+    "próximo",
+    "año?"
+   ],
+   "english": "Where will you work next year?"
+  },
+  "why": "consolidation-copy of 02.ex13",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex08",
+  "set": {
+   "options": [
+    "Sucederá pronto.",
+    "Sucedió pronto.",
+    "Ha sucedido pronto."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer; \"Sucede ayer\" had two faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex11",
+  "set": {
+   "options": [
+    "Lograré mis objetivos.",
+    "Logré mis objetivos.",
+    "He logrado mis objetivos."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "tell-time-word ayer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex15",
+  "set": {
+   "options": [
+    "Creo que cambiará mucho.",
+    "Creo que cambió mucho.",
+    "Creo que ha cambiado mucho."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "length-giveaway 30 vs 17 + tell-time-word",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex16",
+  "set": {
+   "options": [
+    "Trabajaré en un nuevo proyecto.",
+    "Trabajé en un nuevo proyecto.",
+    "He trabajado en un nuevo proyecto."
+   ],
+   "distractor_skills": {
+    "1": "preterito-indefinido",
+    "2": "preterito-perfecto"
+   }
+  },
+  "why": "seguir + gerund (Unit 28) + tell-time-word",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-19-consolidation-ex.json",
+  "id": "a2.19.consolidation.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you will travel next year.",
+     "answer": "Viajaré el próximo año."
+    },
+    {
+     "prompt": "Say that you will probably change your plans.",
+     "answer": "Probablemente cambiaré mis planes."
+    },
+    {
+     "prompt": "Say that you will study more Spanish.",
+     "answer": "Estudiaré más español."
+    }
+   ]
+  },
+  "why": "seguir + gerund (Unit 28)",
+  "kind": "target"
+ }
+]

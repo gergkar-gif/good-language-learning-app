@@ -359,6 +359,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-21 | es A2 1–6 (both courses) | paired read, Spanish template from `batch_setup.py`, 3 units/reader, mirrored | | 347k + 313k, 21.5 + 17.6 | 263 proposed (58 / 44 / 60 / 36 / 24 / 41), 0 rejected; Claude changed 0, added 8 plus one reflexive pass (84 changes per course) | ~110k reader tokens/unit (A ~116k, B ~104k; ×0.91 of A1 19–24's ~121k on lighter baselines: 22 errors / 143 suspects for six units against 43 / 183); ~44 fixes/unit (×0.95); 186 of 263 to review; 257/263 mirrored, 6 es-latam fixes by hand; walk 36/36 per course; both report writes allowed |
 | 10-21 | es A2 7–12 (both courses) | paired read, `batch_setup.py`, 3 units/reader, mirrored | | 351k + 382k (B by its resumed notice), 23.4 + ~20 | 347 proposed (45 / 75 / 39 / 63 / 61 / 64), 0 rejected after 1 reworded; Claude changed 7, added a unit-wide fix (16 lines per course), synced 6 es-latam story question sets, reopened Units 4–6 for `table-repeat` | ~122k reader tokens/unit (A ~117k, B ~127k; ×1.11 of A2 1–6's ~110k on heavier baselines: 50 errors / 106 suspects against 22 / 143); ~58 fixes/unit (×1.32); 245 of 347 to review; 334/347 mirrored; walk 36/36 per course; both report writes allowed |
 | 10-21 | es A2 13–18 (both courses) | paired read, `batch_setup.py`, 3 units/reader, mirrored | | 342k + 366k, 21.5 + 21.3 | 277 proposed (43 / 56 / 45 / 50 / 35 / 48), 0 rejected; Claude changed 4, added 17 *vosotros* questions and 6 es-latam items | ~118k reader tokens/unit (×0.97 of 7–12's ~122k); ~46 fixes/unit; 209 of 277 to review; 270/277 mirrored; walk 36/36 per course **with challenges typed and graded** |
+| 10-21 | es A2 19–24 (both courses) | paired read, 3 units/reader, both resumed after a session limit, mirrored | | A ~300k (resumed notice), B lost in a container restart | 329 proposed (49 / 65 / 40 / 58 / 50 / 67), 0 rejected after the `check_fixes` index fix; Claude dropped 1, adjusted 3, added 3 item fixes, 7 es-latam items, 6 *vosotros* questions and the user's story-line edits | ~100–120k reader tokens/unit (uncertain: one notice); ~55 fixes/unit; 270 of 329 to review; 316/329 mirrored; walk 36/36 per course with challenges |
 | 10-21 | es A1 25–26 (both courses) | **one** reader, 2 units, Spanish template, mirrored | | 244k (the resumed notice only; stopped by a Sonnet session limit after 3 of 4 files) | 84 proposed (31 / 53), 0 rejected; Claude changed 3 and fixed one cross-story contradiction | ~122k reader tokens/unit (uncertain: one notice); ~42 fixes/unit; 59 of 84 to review; 84/84 mirrored, 5 put in es-latam words (*billete* → *boleto*); level walk 156/156 per course |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
@@ -966,4 +967,25 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   made the mirror skip what it would have converted (*sala*). Noted.
 - **Open, the user's:** *mientras* with the preterite in Unit 13
   (ROADMAP 153).
+
+### 2026-10-21: Spanish A2 units 19–24
+
+- **Limits and restarts:** both readers hit the Sonnet session limit after
+  two units; "finish each unit's files first" kept their work, and both
+  resumed after the reset. A container restart then lost reader B's
+  completion notice (so its tokens), but not its files or its reply,
+  which were read back from the subagent transcript on disk. Cost per
+  unit is uncertain for this batch.
+- **Story-line questions went to the user** before applying (Budapest
+  move, Carlos's childhood): both readers had flagged contradictions they
+  couldn't settle, and fixing them one way inside a frozen sequence of
+  stories would have been guessing. Answers are in the rulebook § 6c.
+- **Scripted:** `check_fixes.py` rebuilds the word index when the list
+  adds vocabulary (third sighting of a fix rejected for a word another fix
+  had just listed); `unmet-words.js` lemmatises enclitic commands (3 false
+  hits in A2, none hidden). `--warnings` again caught a retag that left a
+  vocabulary skill at 5: keep the diff in every batch.
+- **Not scripted:** orphan error-correction items in Unit 21–22 files that
+  no lesson references (*comiba*, *vivíban*): harmless, accepted; a check
+  for exercises no lesson uses is a candidate if it shows up again.
 

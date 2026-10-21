@@ -32,16 +32,17 @@
       "category": "grammar",
       "type": "multiple-choice",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "preterito-indefinido"
       ],
       "distractor_skills": {
-        "1": "preterito-indefinido"
+        "1": "futuro-simple",
+        "2": "preterito-perfecto"
       },
-      "question": "Which sentence uses the pretérito perfecto correctly?",
+      "question": "They remembered the goodbye. Which sentence says this?",
       "options": [
-        "Hoy han recordado ese momento.",
-        "Recordaron ese momento mañana.",
-        "Hoy han recordaron ese momento."
+        "Recordaron la despedida.",
+        "Recordarán la despedida.",
+        "Han recordado la despedida."
       ],
       "correct": 0
     },
@@ -50,38 +51,35 @@
       "category": "grammar",
       "type": "fill-blank",
       "teaches": [
-        "preterito-perfecto"
+        "preterito-indefinido"
       ],
-      "sentence": "__ recordado muchos momentos juntos.",
-      "answer": "Hemos",
-      "english": "We have remembered many moments together."
+      "sentence": "Carlos __ el curso ayer.",
+      "answer": "terminó",
+      "english": "Carlos finished the course yesterday.",
+      "hint": "terminar"
     },
     {
       "id": "a2.20.02.ex04",
       "category": "grammar",
       "type": "sentence-builder",
       "teaches": [
-        "preterito-perfecto"
+        "preterito-indefinido"
       ],
-      "english": "Daniela and Lauren have had a good goodbye.",
+      "english": "Meg and Carlos remembered the goodbye.",
       "tiles": [
-        "Daniela",
+        "Meg",
         "y",
-        "Lauren",
-        "han",
-        "tenido",
-        "una",
-        "buena",
+        "Carlos",
+        "recordaron",
+        "la",
         "despedida"
       ],
       "solution": [
-        "Daniela",
+        "Meg",
         "y",
-        "Lauren",
-        "han",
-        "tenido",
-        "una",
-        "buena",
+        "Carlos",
+        "recordaron",
+        "la",
         "despedida"
       ]
     },
@@ -90,15 +88,18 @@
       "category": "grammar",
       "type": "multiple-choice",
       "teaches": [
-        "past-participles"
+        "preterito-indefinido"
       ],
-      "question": "Which sentence is correct?",
+      "question": "Lauren finished the course. Which sentence says this?",
       "options": [
-        "Lauren ha terminado el curso.",
-        "Lauren ha terminar el curso.",
-        "Lauren ha terminó el curso."
+        "Lauren terminó el curso.",
+        "Lauren termino el curso.",
+        "Lauren terminar el curso."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "a2.20.02.ex06",
@@ -123,36 +124,36 @@
       "category": "grammar",
       "type": "fill-blank",
       "teaches": [
-        "preterito-perfecto"
+        "preterito-indefinido"
       ],
-      "sentence": "¿__ recordado ese momento?",
-      "answers": [
-        "Has",
-        "Ha"
-      ],
-      "english": "Have you remembered that moment?"
+      "sentence": "Ayer yo __ ese momento.",
+      "english": "Yesterday I remembered that moment.",
+      "hint": "recordar",
+      "answer": "recordé"
     },
     {
       "id": "a2.20.02.ex08",
       "category": "grammar",
       "type": "sentence-builder",
       "teaches": [
-        "preterito-perfecto"
+        "preterito-indefinido"
       ],
-      "english": "Carlos has remembered the goodbye.",
+      "english": "Meg and Lauren finished the course.",
       "tiles": [
-        "Carlos",
-        "ha",
-        "recordado",
-        "la",
-        "despedida"
+        "Meg",
+        "y",
+        "Lauren",
+        "terminaron",
+        "el",
+        "curso"
       ],
       "solution": [
-        "Carlos",
-        "ha",
-        "recordado",
-        "la",
-        "despedida"
+        "Meg",
+        "y",
+        "Lauren",
+        "terminaron",
+        "el",
+        "curso"
       ]
     },
     {
@@ -160,15 +161,18 @@
       "category": "grammar",
       "type": "multiple-choice",
       "teaches": [
-        "preterito-perfecto"
+        "preterito-indefinido"
       ],
-      "question": "Which auxiliary verb is used with «Daniela y Lauren»?",
+      "question": "Which is the pretérito indefinido of terminar for «ellos»?",
       "options": [
-        "han",
-        "hemos",
-        "ha"
+        "terminaron",
+        "terminan",
+        "terminar"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "present-tense"
+      }
     },
     {
       "id": "a2.20.02.ex10",
@@ -205,7 +209,7 @@
       "options": [
         "Lauren encontró un nuevo trabajo.",
         "Lauren encontrará un nuevo trabajo.",
-        "Lauren encuentra un nuevo trabajo."
+        "Lauren tiene un nuevo trabajo."
       ],
       "correct": 0,
       "teaches": [
@@ -290,7 +294,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Qué hicieron ayer junto al lago?"
+          "text": "¿Qué hicisteis ayer junto al lago?"
         },
         {
           "speaker": "Carlos",

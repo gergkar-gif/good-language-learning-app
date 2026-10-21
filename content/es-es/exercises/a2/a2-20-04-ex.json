@@ -32,16 +32,17 @@
       "category": "grammar",
       "type": "multiple-choice",
       "teaches": [
-        "preterito-perfecto-vs-indefinido"
+        "futuro-simple"
       ],
       "distractor_skills": {
-        "1": "preterito-indefinido"
+        "1": "ir-infinitive",
+        "2": "preterito-perfecto"
       },
-      "question": "Which sentence uses the pretérito perfecto correctly?",
+      "question": "Which sentence uses the futuro simple?",
       "options": [
-        "Ya han logrado su objetivo.",
-        "Lograron su objetivo mañana.",
-        "Lograrán su objetivo ayer."
+        "Lograremos nuestros objetivos.",
+        "Vamos a lograr nuestros objetivos.",
+        "Hemos logrado nuestros objetivos."
       ],
       "correct": 0
     },
@@ -50,30 +51,29 @@
       "category": "grammar",
       "type": "fill-blank",
       "teaches": [
-        "preterito-perfecto"
+        "futuro-simple"
       ],
-      "sentence": "__ encontrado un buen camino.",
-      "answer": "Hemos",
-      "english": "We have found a good path."
+      "sentence": "El próximo año yo __ mi objetivo.",
+      "answer": "lograré",
+      "english": "Next year I will achieve my goal.",
+      "hint": "lograr"
     },
     {
       "id": "a2.20.04.ex04",
       "category": "grammar",
       "type": "sentence-builder",
       "teaches": [
-        "preterito-perfecto"
+        "futuro-simple"
       ],
-      "english": "We have achieved an important goal.",
+      "english": "We will achieve an important goal.",
       "tiles": [
-        "Hemos",
-        "logrado",
+        "Lograremos",
         "un",
         "objetivo",
         "importante"
       ],
       "solution": [
-        "Hemos",
-        "logrado",
+        "Lograremos",
         "un",
         "objetivo",
         "importante"
@@ -84,15 +84,19 @@
       "category": "grammar",
       "type": "multiple-choice",
       "teaches": [
-        "past-participles"
+        "futuro-simple"
       ],
-      "question": "Which sentence is correct?",
+      "question": "They will return soon. Which sentence says this?",
       "options": [
-        "Carlos ha escrito sus objetivos.",
-        "Carlos ha escribido sus objetivos.",
-        "Carlos ha escribir sus objetivos."
+        "Volverán pronto.",
+        "Volvieron pronto.",
+        "Han vuelto pronto."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "preterito-perfecto"
+      }
     },
     {
       "id": "a2.20.04.ex06",
@@ -117,35 +121,31 @@
       "category": "grammar",
       "type": "fill-blank",
       "teaches": [
-        "preterito-perfecto"
+        "futuro-simple"
       ],
-      "sentence": "¿__ logrado tu objetivo?",
-      "answers": [
-        "Has",
-        "Ha"
-      ],
-      "english": "Have you achieved your goal?"
+      "sentence": "Ellos __ sus objetivos.",
+      "english": "They will achieve their goals.",
+      "hint": "lograr",
+      "answer": "lograrán"
     },
     {
       "id": "a2.20.04.ex08",
       "category": "grammar",
       "type": "sentence-builder",
       "teaches": [
-        "preterito-perfecto"
+        "futuro-simple"
       ],
-      "english": "Daniela has found the path.",
+      "english": "Daniela will find her path.",
       "tiles": [
         "Daniela",
-        "ha",
-        "encontrado",
-        "el",
+        "encontrará",
+        "su",
         "camino"
       ],
       "solution": [
         "Daniela",
-        "ha",
-        "encontrado",
-        "el",
+        "encontrará",
+        "su",
         "camino"
       ]
     },
@@ -154,15 +154,19 @@
       "category": "grammar",
       "type": "multiple-choice",
       "teaches": [
-        "preterito-perfecto"
+        "futuro-simple"
       ],
-      "question": "Which auxiliary verb is used with «Meg»?",
+      "question": "Which is the futuro simple of lograr for «yo»?",
       "options": [
-        "ha",
-        "han",
-        "he"
+        "lograré",
+        "logré",
+        "logro"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "preterito-indefinido",
+        "2": "present-tense"
+      }
     },
     {
       "id": "a2.20.04.ex10",
@@ -198,7 +202,7 @@
       "question": "Which sentence expresses a prediction?",
       "options": [
         "El futuro será diferente.",
-        "El futuro fue diferente ayer.",
+        "El futuro fue diferente.",
         "El futuro ha sido diferente."
       ],
       "correct": 0,
@@ -257,7 +261,7 @@
       ],
       "options": [
         "Será diferente.",
-        "Fue diferente ayer.",
+        "Fue diferente.",
         "Ha sido diferente."
       ],
       "correct": 0,
@@ -285,7 +289,7 @@
       ],
       "options": [
         "Lograremos nuestros objetivos.",
-        "Logramos nuestros objetivos ayer.",
+        "Lograron nuestros objetivos.",
         "Hemos logrado nuestros objetivos."
       ],
       "correct": 0,
