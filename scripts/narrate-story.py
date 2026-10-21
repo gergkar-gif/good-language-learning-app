@@ -13,6 +13,15 @@ Workflow:
 3. Generates pedagogical annotations: target vocabulary, comprehension check questions.
 4. Estimates paragraph-level timing from word count and CEFR pacing (not measured audio).
 5. Injects narration metadata into the story JSON file.
+
+Existing metadata wins (2026-10-21): a story that already has a narration
+block keeps its speakers' genders and its `pedagogical` block (key
+vocabulary and comprehension questions); only durations and segments are
+recomputed. The generated pedagogy is a fixed placeholder (*conocer*,
+*intercambio*, "¿Dónde se encuentran Carlos y Meg?") and the gender guess
+calls every name outside a short list male, so a rerun over reviewed
+stories put both defects back (found on es A1 a1-13: Kaylee "male", Unit 1's
+questions). Pass --rebuild-pedagogy only for a new story with no questions.
 """
 
 import argparse
@@ -257,7 +266,7 @@ def analyze_story_text(story_data, course_lang="es"):
         "pedagogical": pedagogical
     }
 
-def process_story(story_path, dry_run=False):
+def process_story(story_path, dry_run=False, rebuild_pedagogy=False):
     path = Path(story_path)
     if not path.exists():
         print(f"[ERROR] Story file not found: {story_path}")
@@ -272,12 +281,21 @@ def process_story(story_path, dry_run=False):
 
     analysis = analyze_story_text(story_data, course_lang=course_lang)
 
+    old = story_data.get("narration") or {}
+    speakers = analysis["speakers"]
+    for name, sp in (old.get("speakers") or {}).items():
+        if name in speakers and isinstance(sp, dict) and sp.get("gender"):
+            speakers[name]["gender"] = sp["gender"]
+    pedagogical = analysis["pedagogical"]
+    if old.get("pedagogical") and not rebuild_pedagogy:
+        pedagogical = old["pedagogical"]
+
     narration_block = {
         "durationSeconds": analysis["durationSeconds"],
         "pacing": analysis["pacing"],
-        "speakers": analysis["speakers"],
+        "speakers": speakers,
         "segments": analysis["segments"],
-        "pedagogical": analysis["pedagogical"]
+        "pedagogical": pedagogical
     }
 
     story_data["narration"] = narration_block
@@ -297,6 +315,7 @@ def main():
     parser.add_argument("file", nargs="?", default=None, help="Path to story JSON file")
     parser.add_argument("--batch", help="Glob pattern or directory of story JSON files to narrate (e.g. content/es/stories/original/a1/*.json)")
     parser.add_argument("--dry-run", action="store_true", help="Print narration metadata without writing to file")
+    parser.add_argument("--rebuild-pedagogy", action="store_true", help="Overwrite existing keyVocabulary and comprehension questions with the generated placeholders (new stories only)")
     args = parser.parse_args()
 
     files = []
@@ -314,7 +333,7 @@ def main():
 
     print(f"Narrating {len(files)} story file(s)...")
     for story_file in files:
-        process_story(str(story_file), dry_run=args.dry_run)
+        process_story(str(story_file), dry_run=args.dry_run, rebuild_pedagogy=args.rebuild_pedagogy)
 
 if __name__ == "__main__":
     main()
