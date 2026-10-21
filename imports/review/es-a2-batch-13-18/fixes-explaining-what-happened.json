@@ -1,0 +1,483 @@
+[
+ {
+  "file": "content/es-es/grammar/a2/a2-15-01-gr.json",
+  "old": "Use *porque* to explain the cause of a completed past event. The main event and its reason can both be expressed with the *pretérito* *indefinido*: *Se fue porque recibió una noticia*. You can also put the reason first: *Porque recibió una noticia, se fue*.",
+  "new": "You know *porque* from A1 Unit 2 and Unit 5, and the *pretérito* *indefinido* from Unit 11. Here you put them together to explain the cause of a completed past event: the main event and its reason are both in the *pretérito* *indefinido*: *Se fue porque recibió una noticia*. The *porque* clause normally comes after the main event.",
+  "kind": "screen",
+  "why": "recap: porque (A1 Unit 2, Unit 5) and the preterite (Unit 11) presented as new; and the claim that the reason can come first (*Porque recibió una noticia, se fue*) is not natural Spanish (a sentence does not open with porque; that needs como)"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-15-02-gr.json",
+  "old": "Use *por eso* to introduce a consequence.",
+  "new": "You know *por eso* from Unit 5. Use it to introduce a consequence of a completed past event.",
+  "kind": "screen",
+  "why": "recap: por eso was taught in Unit 5 (a2-05-02) and is presented as new"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-15-03-gr.json",
+  "old": "*Porque* gives the reason for an event. *Por eso* gives the consequence of an event.",
+  "new": "You know both connectors from Unit 5. *Porque* gives the reason for an event. *Por eso* gives the consequence of an event.",
+  "kind": "screen",
+  "why": "recap: Unit 5 taught both connectors"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-15-03-gr.json",
+  "old": "*Porque* is flexible — it can open or close the sentence.",
+  "new": "*Porque* normally follows the main event (*Se fue porque recibió una noticia*); a sentence almost never opens with it, except as a short answer to *¿Por qué?*.",
+  "kind": "screen",
+  "why": "false claim: porque cannot freely open a sentence (the reason-first order needs como)"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-15-04-gr.json",
+  "old": "Use *porque* to explain why someone left, stayed or said goodbye,",
+  "new": "You know *porque* and *por eso* from Unit 5. Use *porque* to explain why someone left, stayed or said goodbye,",
+  "kind": "screen",
+  "why": "recap: Unit 5 taught both connectors"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-15-05-gr.json",
+  "old": "Combine *porque* and *por eso* with the",
+  "new": "You know *porque* and *por eso* from Unit 5. Combine them with the",
+  "kind": "screen",
+  "why": "recap: Unit 5 taught both connectors"
+ },
+ {
+  "file": "content/es-es/vocabulary/a2/a2-15-01-voc.json",
+  "old": "      \"lemma\": \"triste\",\n      \"translation\": \"sad\",\n      \"pos\": \"adjective\"\n    }",
+  "new": "      \"lemma\": \"triste\",\n      \"translation\": \"sad\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"la situación\",\n      \"translation\": \"situation\",\n      \"pos\": \"noun\"\n    }",
+  "kind": "target",
+  "why": "situación is used from 15-01 (grammar example, then 8 consolidation items) but listed only in a2-condicionalsimple-02: add to the first lesson that uses it"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-01-ex.json",
+  "id": "a2.15.01.ex02",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "a2-explaining-what-happened-vocab"
+   ]
+  },
+  "kind": "tag",
+  "why": "\"Which word means because\" is word meaning: vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-02-ex.json",
+  "id": "a2.15.02.ex02",
+  "set": {
+   "question": "In the sentence «The trip ended, so we said goodbye», which Spanish words introduce the consequence?",
+   "options": [
+    "por eso",
+    "el viaje",
+    "nos despedimos"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "answer-in-prompt (por eso quoted in the question): English sentence in the question"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-02-ex.json",
+  "id": "a2.15.02.ex05",
+  "set": {
+   "options": [
+    "Entendió la situación, por eso se quedó.",
+    "Entendió la situación, porque por eso se quedó.",
+    "Entendió la situación, porque se quedó."
+   ]
+  },
+  "kind": "target",
+  "why": "two wrong options fail the same way (both double the connector): second one swaps the connector"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-02-ex.json",
+  "id": "a2.15.02.ex09",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "a2-explaining-what-happened-vocab"
+   ]
+  },
+  "kind": "tag",
+  "why": "\"What does por eso mean\" is word meaning: vocabulary"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-02-ex.json",
+  "id": "a2.15.02.ex10",
+  "set": {
+   "options": [
+    "consequence",
+    "situation",
+    "emotion"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (11 vs 7): wrong options as long as the right one"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-02-ex.json",
+  "id": "a2.15.02.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that someone received some news, so they left.",
+     "answer": "Recibió una noticia, por eso se fue."
+    },
+    {
+     "prompt": "Say that the trip ended, so we said goodbye.",
+     "answer": "Terminó el viaje, por eso nos despedimos."
+    }
+   ]
+  },
+  "kind": "prompt",
+  "why": "prompt \"so you said goodbye\" does not pin nos despedimos (you = tú)"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-03-ex.json",
+  "id": "a2.15.03.ex02",
+  "set": {
+   "question": "In «She cried because she understood the situation», which Spanish sentence names the cause?",
+   "options": [
+    "Entendió la situación.",
+    "Lloró en la estación.",
+    "Recibió una noticia."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "unmet tristeza and answer-in-prompt (the cause quoted in the question; and a 21 vs 6 length gap): English sentence, three Spanish sentences of similar length"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-03-ex.json",
+  "id": "a2.15.03.ex05",
+  "set": {
+   "options": [
+    "Se fue porque terminó el viaje.",
+    "Se fue porque por eso terminó el viaje.",
+    "Se fue por eso terminó el viaje."
+   ]
+  },
+  "kind": "target",
+  "why": "two wrong options fail the same way (double connector): second one swaps the connector"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-03-ex.json",
+  "id": "a2.15.03.ex09",
+  "set": {
+   "options": [
+    "Recibió una noticia, por eso lloró.",
+    "Recibió una noticia, porque por eso lloró.",
+    "Recibió una noticia, porque lloró."
+   ]
+  },
+  "kind": "target",
+  "why": "two wrong options fail the same way (double connector): second one swaps the connector"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-03-ex.json",
+  "id": "a2.15.03.ex15",
+  "set": {
+   "options": [
+    "Lloró porque terminó el viaje.",
+    "Lloró porque por eso terminó el viaje.",
+    "Lloró por eso terminó el viaje."
+   ]
+  },
+  "kind": "target",
+  "why": "two wrong options fail the same way (double connector): second one swaps the connector"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-04-ex.json",
+  "id": "a2.15.04.ex02",
+  "set": {
+   "options": [
+    "the consequence",
+    "the first cause",
+    "a short question"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "length give-away (15 vs 10): wrong options as long as the right one"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-04-ex.json",
+  "id": "a2.15.04.ex05",
+  "set": {
+   "options": [
+    "Sonrió porque recordó el viaje.",
+    "Sonrió porque por eso recordó el viaje.",
+    "Sonrió por eso recordó el viaje."
+   ]
+  },
+  "kind": "target",
+  "why": "two wrong options fail the same way (double connector): second one swaps the connector"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-04-ex.json",
+  "id": "a2.15.04.ex09",
+  "set": {
+   "options": [
+    "Recibió un mensaje, por eso sonrió.",
+    "Recibió un mensaje, porque por eso sonrió.",
+    "Recibió un mensaje, porque sonrió."
+   ]
+  },
+  "kind": "target",
+  "why": "two wrong options fail the same way (double connector): second one swaps the connector"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-05-ex.json",
+  "id": "a2.15.05.ex02",
+  "set": {
+   "question": "Which word gives the reason in the sentence «She left the station because she received a message»?",
+   "options": [
+    "porque",
+    "por eso",
+    "después"
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "answer-in-prompt (porque quoted in the question): English sentence in the question"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-05-ex.json",
+  "id": "a2.15.05.ex05",
+  "set": {
+   "options": [
+    "Lloró en la estación porque recibió un mensaje.",
+    "Lloró en la estación porque por eso recibió un mensaje.",
+    "Lloró en la estación por eso recibió un mensaje."
+   ]
+  },
+  "kind": "target",
+  "why": "two wrong options fail the same way (double connector): second one swaps the connector"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-05-ex.json",
+  "id": "a2.15.05.ex09",
+  "set": {
+   "options": [
+    "Terminó el viaje, por eso nos despedimos en la estación.",
+    "Terminó el viaje, porque por eso nos despedimos en la estación.",
+    "Terminó el viaje, porque nos despedimos en la estación."
+   ]
+  },
+  "kind": "target",
+  "why": "two wrong options fail the same way (double connector): second one swaps the connector"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-05-ex.json",
+  "id": "a2.15.05.ex11",
+  "set": {
+   "question": "¿Qué recibió Lucía?",
+   "options": [
+    "Una noticia de España.",
+    "Un regalo de sus amigos.",
+    "Un billete de tren."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "reading question invents a scene (\"alguien\", \"tuvo que irse\"; length 51 vs 28): the story says Lucía received news from Spain"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-05-ex.json",
+  "id": "a2.15.05.ex12",
+  "set": {
+   "question": "¿Qué llevó cada uno al parque?",
+   "options": [
+    "Algo de comida.",
+    "Una guitarra.",
+    "Un cuaderno."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "reading question invents a scene (\"la persona\", \"una carta de un hotel\"; carta is unmet): ask what each friend took to the park"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-05-ex.json",
+  "id": "a2.15.05.ex13",
+  "set": {
+   "question": "¿Dónde celebraron los amigos la noticia?",
+   "options": [
+    "En un parque.",
+    "En un restaurante.",
+    "En la estación."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "reading question invents a scene (\"Se fue\", \"en la estación\"): the story is a picnic in a park"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-05-ex.json",
+  "id": "a2.15.05.ex14",
+  "set": {
+   "question": "¿Qué hicieron los amigos al oír la noticia?",
+   "options": [
+    "Se alegraron por ella.",
+    "Se quedaron en la estación.",
+    "Se fueron a casa."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "reading question invents feelings (sorprendida, aburrida, enfadada: unmet and not in the story): the friends are glad for Lucía but a little sad"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-05-ex.json",
+  "id": "a2.15.05.ex15",
+  "set": {
+   "question": "¿Qué hicieron los amigos antes de marcharse?",
+   "options": [
+    "Hicieron otra foto de grupo.",
+    "Bailaron en el parque.",
+    "Cocinaron una tortilla."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "reading question invents scenes (fueron a cocinar, limpiaron un parque; despidieron is unmet): ask what they did before leaving the picnic"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-05-ex.json",
+  "id": "a2.15.05.ex16",
+  "set": {
+   "options": [
+    "Lloró porque recibió una noticia.",
+    "Lloró porque por eso recibió una noticia.",
+    "Lloró por eso recibió una noticia."
+   ]
+  },
+  "kind": "target",
+  "why": "two wrong options fail the same way (double connector): second one swaps the connector"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-05-ex.json",
+  "id": "a2.15.05.ex20",
+  "set": {
+   "sentence": "Porque Lucía recibió una noticia y tuvo que irse.",
+   "options": [
+    "Because Lucía received some news and had to leave.",
+    "Because Lucía cried and had to leave.",
+    "Because Lucía left and received some news.",
+    "Because Lucía stayed and received a message."
+   ],
+   "correct": 0
+  },
+  "kind": "target",
+  "why": "\"alguien\" is in no vocabulary list and the sentence refers to no one: name Lucía"
+ },
+ {
+  "file": "content/es-es/exercises/a2/a2-15-consolidation-ex.json",
+  "id": "a2.15.consolidation.ex01",
+  "set": {
+   "category": "vocabulary",
+   "teaches": [
+    "a2-explaining-what-happened-vocab"
+   ]
+  },
+  "kind": "tag",
+  "why": "\"Which word means because\" is word meaning: vocabulary"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "Su universidad le ofreció un nuevo trabajo y tenía que volver el mes siguiente.",
+  "new": "Una universidad de España ofreció un nuevo trabajo a Lucía y ella decidió volver el mes siguiente.",
+  "kind": "target",
+  "why": "imperfect (tenía) is Unit 21 and le is Unit 25"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "Cuando se lo contó a sus amigos, todos se alegraron por ella, aunque también se sintieron un poco tristes.",
+  "new": "Cuando contó la noticia a sus amigos, todos se alegraron por ella, pero también se sintieron un poco tristes.",
+  "kind": "target",
+  "why": "se lo (double object pronoun, Unit 25) and aunque (Unit 28) before their screens"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "sobre todo lo que habían vivido juntos desde que se conocieron.",
+  "new": "sobre todo lo que vivieron juntos desde que se conocieron.",
+  "kind": "target",
+  "why": "pluperfect (habían vivido) is B1"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "Carlos le dio las gracias por haberles enseñado tantas cosas sobre España.",
+  "new": "Carlos dio las gracias a Lucía por enseñar tantas cosas sobre España.",
+  "kind": "target",
+  "why": "le/les (Unit 25) and the compound infinitive haber + participle (B1)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "Meg dijo que esperaba visitarla algún día.",
+  "new": "Meg dijo: «Quiero visitarte algún día.»",
+  "kind": "target",
+  "why": "imperfect (esperaba) before Unit 21; direct speech in the present"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "Lucía respondió que siempre tendrían una casa donde quedarse.",
+  "new": "Lucía respondió: «Siempre hay una habitación para ti en mi casa.»",
+  "kind": "target",
+  "why": "conditional (tendrían, Unit 26)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "Aunque la despedida todavía no había llegado, todos comprendieron que una nueva etapa estaba a punto de comenzar.",
+  "new": "Todos comprendieron que empezó una nueva etapa para el grupo.",
+  "kind": "target",
+  "why": "pluperfect (había llegado, B1), imperfect (estaba) and aunque (Unit 28)"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "\"question\": \"¿De qué trata principalmente el texto?\",",
+  "new": "\"question\": \"¿Qué noticia recibió Lucía?\",",
+  "kind": "target",
+  "why": "reading-generic (\"¿De qué trata principalmente el texto?\"): ask what the people do and say"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "\"Del anuncio del regreso de Lucía a España y la reunión de despedida con sus amigos.\",",
+  "new": "\"Que debe volver a España por un nuevo trabajo.\",",
+  "kind": "target",
+  "why": "answer rewritten to match the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "\"De la búsqueda de empleo para estudiantes en una universidad de Hanói.\",",
+  "new": "\"Que va a abrir una escuela de español en Madrid.\",",
+  "kind": "target",
+  "why": "distractor rewritten to match the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "\"De una excursión de acampada durante un fin de semana lluvioso.\",",
+  "new": "\"Que ganó un viaje a una isla de Vietnam.\",",
+  "kind": "target",
+  "why": "distractor rewritten to match the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "\"De la apertura de una nueva escuela de español en Madrid.\"",
+  "new": "\"Que sus amigos van a vivir en otra ciudad.\"",
+  "kind": "target",
+  "why": "distractor rewritten to match the new question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "\"explanation\": \"El texto se centra en la oferta laboral que recibe Lucía en España y el pícnic que organiza para despedirse de sus amigos en Hanói.\"",
+  "new": "\"explanation\": \"Una universidad de España ofrece un nuevo trabajo a Lucía y ella decide volver el mes siguiente.\"",
+  "kind": "target",
+  "why": "explanation matches the rewritten question"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-15.json",
+  "old": "El texto explica que «todos se alegraron por ella, aunque también se sintieron un poco tristes».",
+  "new": "El texto explica que «todos se alegraron por ella, pero también se sintieron un poco tristes».",
+  "kind": "target",
+  "why": "quote follows the changed story line"
+ }
+]

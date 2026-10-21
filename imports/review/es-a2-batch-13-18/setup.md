@@ -30,3 +30,4 @@ Started 2026-10-21T10:54:39Z from origin/master bfa0a254. 2 Sonnet reader(s); es
     node scripts/walk_lessons.js <course> a2 --jobs 4 --only a2-13-01 a2-13-02 a2-13-03 a2-13-04 a2-13-05 a2-13-consolidation a2-14-01 a2-14-02 a2-14-03 a2-14-04 a2-14-05 a2-14-consolidation a2-15-01 a2-15-02 a2-15-03 a2-15-04 a2-15-05 a2-15-consolidation a2-16-01 a2-16-02 a2-16-03 a2-16-04 a2-16-05 a2-16-consolidation a2-17-01 a2-17-02 a2-17-03 a2-17-04 a2-17-05 a2-17-consolidation a2-18-01 a2-18-02 a2-18-03 a2-18-04 a2-18-05 a2-18-consolidation
 - Readers launched 10:55:57Z.
 - Reader B finished 11:17Z: 365,875 tokens, 70 tool uses, 21.3 min (~122k a unit); fixes 50 + 35 + 48 = 133; report file allowed
+- Reader A finished 11:17Z: 341,525 tokens, 65 tool uses, 21.5 min (~114k a unit); fixes 43 + 56 + 45 = 144; report file allowed
