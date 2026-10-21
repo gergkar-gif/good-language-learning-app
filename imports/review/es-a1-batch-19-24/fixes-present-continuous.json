@@ -1,0 +1,756 @@
+[
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-01-ex.json",
+  "id": "a1.cont.01.ex10",
+  "set": {
+   "options": [
+    "Estoy cocinando arroz con pollo.",
+    "Tengo mucho frío en este momento.",
+    "Mi hermano es muy alto y simpático."
+   ]
+  },
+  "why": "length give-away, ayer/dolor/muelas/sopa/verduras unmet; wrong options met words and as long as the right one",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-01-ex.json",
+  "id": "a1.cont.01.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "Meg, ¿tienes un minuto?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Ahora mismo estoy estudiando, ¿te llamo después?",
+    "Ahora mismo estás estudiando, ¿te llamo después?",
+    "Ahora mismo está estudiando, ¿te llamo después?"
+   ],
+   "teaches": [
+    "estar"
+   ]
+  },
+  "why": "ayer + past + examen/final unmet, puedes unmet; wrong options now two wrong forms of estar, so tag estar",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-01-ex.json",
+  "id": "a1.cont.01.ex12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say (happening now): 'I am studying.'",
+     "answer": "Estoy estudiando."
+    },
+    {
+     "prompt": "Say (happening now): 'Carlos is working.'",
+     "answer": "Carlos está trabajando."
+    }
+   ]
+  },
+  "why": "prompts do not pin the progressive (Estudio. / Carlos trabaja. also fit)",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-02-ex.json",
+  "id": "a1.cont.02.ex03",
+  "set": {
+   "sentence": "Meg está _____ una ensalada grande.",
+   "english": "Meg is eating a big salad."
+  },
+  "why": "deliciosa unmet",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-02-ex.json",
+  "id": "a1.cont.02.ex04",
+  "set": {
+   "sentence": "Nosotros estamos _____ café en la terraza.",
+   "english": "We are drinking coffee on the terrace."
+  },
+  "why": "vietnamita unmet; uses unused vocab la terraza",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-02-ex.json",
+  "id": "a1.cont.02.ex05",
+  "set": {
+   "tiles": [
+    "Estoy",
+    "escribiendo",
+    "un",
+    "artículo",
+    "para",
+    "la",
+    "clase."
+   ],
+   "solution": [
+    "Estoy",
+    "escribiendo",
+    "un",
+    "artículo",
+    "para",
+    "la",
+    "clase."
+   ],
+   "english": "I am writing an article for the class."
+  },
+  "why": "correo electrónico unmet (A2/B1); uses unused vocab el artículo",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-02-ex.json",
+  "id": "a1.cont.02.ex10",
+  "set": {
+   "options": [
+    "Sí, estoy comiendo arroz con pollo.",
+    "Tengo mucho frío en la habitación.",
+    "La estación está cerca de la plaza."
+   ]
+  },
+  "why": "length give-away; plato, verduras, metro unmet",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-02-ex.json",
+  "id": "a1.cont.02.ex11",
+  "set": {
+   "options": [
+    "Estoy escribiendo una lista de comida.",
+    "Estás escribiendo una lista de comida.",
+    "Estoy escribir una lista de comida."
+   ],
+   "teaches": [
+    "progressive"
+   ]
+  },
+  "why": "resumen, cartas, domingos unmet; the habit option was a possible natural reply; both wrong options now fail on the progressive form",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-02-ex.json",
+  "id": "a1.cont.02.ex12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say (happening now): 'I am eating an apple.'",
+     "answer": "Estoy comiendo una manzana."
+    },
+    {
+     "prompt": "Say (happening now): 'We are writing a message.'",
+     "answer": "Estamos escribiendo un mensaje."
+    }
+   ]
+  },
+  "why": "prompts do not pin the progressive",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-continuous-02.json",
+  "old": "\"title\": \"Reading & Writing: -ER and -IR Verbs\"",
+  "new": "\"title\": \"Eating, Drinking & Writing: -ER and -IR Verbs\"",
+  "why": "title promises reading; leer is the irregular gerund of lesson 03",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-continuous-02.json",
+  "old": "\"Talk about eating, drinking, reading, and writing in progress.\"",
+  "new": "\"Talk about eating, drinking, writing, and learning in progress.\"",
+  "why": "goal promises reading, which lesson 03 teaches",
+  "kind": "other"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-03-ex.json",
+  "id": "a1.cont.03.ex02",
+  "set": {
+   "question": "¿Cuál es el gerundio de \"leer\"?"
+  },
+  "why": "'del verbo' and 'correcto' are unmet Spanish metalanguage in a question stem",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-03-ex.json",
+  "id": "a1.cont.03.ex09",
+  "set": {
+   "question": "¿Cuál es el gerundio de \"ir\"?"
+  },
+  "why": "'del verbo' is unmet Spanish metalanguage in a question stem",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-03-ex.json",
+  "id": "a1.cont.03.ex03",
+  "set": {
+   "sentence": "Carlos está _____ un mensaje en su teléfono.",
+   "english": "Carlos is reading a message on his phone."
+  },
+  "why": "noticias unmet (A2)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-03-ex.json",
+  "id": "a1.cont.03.ex04",
+  "set": {
+   "sentence": "El gato de mi hermana está _____ en el sofá.",
+   "english": "My sister's cat is sleeping on the sofa."
+  },
+  "why": "silencio, bebé unmet; uses unused vocab el gato, el sofá",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-03-ex.json",
+  "id": "a1.cont.03.ex06",
+  "set": {
+   "options": [
+    "diciendo",
+    "deciendo",
+    "decir"
+   ]
+  },
+  "why": "decando had two faults (no stem change and -ando); deciendo has one, decir (infinitive) another",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-03-ex.json",
+  "id": "a1.cont.03.ex08",
+  "set": {
+   "tiles": [
+    "Meg",
+    "está",
+    "leyendo",
+    "una",
+    "novela",
+    "interesante."
+   ],
+   "solution": [
+    "Meg",
+    "está",
+    "leyendo",
+    "una",
+    "novela",
+    "interesante."
+   ],
+   "english": "Meg is reading an interesting novel."
+  },
+  "why": "uses unused vocab la novela",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-03-ex.json",
+  "id": "a1.cont.03.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "Carlos, ¿dónde estás? Estamos en el restaurante."
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Ya estoy yendo hacia el restaurante.",
+    "Mi padre es alto y trabaja en un banco.",
+    "Mi madre vive en una casa muy grande."
+   ]
+  },
+  "why": "length give-away; ayer, compré, gusta unmet; esperando is a1-continuous-05 vocabulary; same final punctuation on all options",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-03-ex.json",
+  "id": "a1.cont.03.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Hablamos con Juan?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "teaches": [
+    "estar"
+   ]
+  },
+  "why": "podemos unmet (poder is taught in Unit 24); wrong options differ in the form of estar, so tag estar",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-03-ex.json",
+  "id": "a1.cont.03.ex12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say (happening now): 'I am reading a book.'",
+     "answer": "Estoy leyendo un libro."
+    },
+    {
+     "prompt": "Say with estar + a gerund: 'I am going to the park.'",
+     "answer": "Estoy yendo al parque."
+    }
+   ]
+  },
+  "why": "prompts do not pin the progressive (Voy al parque. also fits)",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-continuous-03.json",
+  "old": "Learn spelling changes with double vowels: leer",
+  "new": "Learn the spelling change when an i falls between two vowels: leer",
+  "why": "'double vowels' is wrong: the i sits between two vowels, it is not a double vowel",
+  "kind": "other"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-04-ex.json",
+  "id": "a1.cont.04.ex02",
+  "set": {
+   "question": "Todos los días yo __ en la oficina.",
+   "options": [
+    "trabajo",
+    "estoy trabajando",
+    "trabajando"
+   ]
+  },
+  "why": "estoy levantándome uses an attached pronoun that only the tip of lesson 05 shows; use a verb without a pronoun",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-04-ex.json",
+  "id": "a1.cont.04.ex03",
+  "set": {
+   "question": "Carlos __ en su habitación ahora mismo.",
+   "options": [
+    "está durmiendo",
+    "duerme todos los días",
+    "dormir"
+   ]
+  },
+  "why": "tell-absolute siempre; silencio unmet",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-04-ex.json",
+  "id": "a1.cont.04.ex04",
+  "set": {
+   "sentence": "Normalmente tomo agua, pero ahora _____ tomando un café.",
+   "english": "Normally I drink water, but now I am drinking a coffee."
+  },
+  "why": "naranja unmet; zumo de naranja is es-es only (es-latam old text says jugo de naranja)",
+  "kind": "target",
+  "variant": "es-es"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-04-ex.json",
+  "id": "a1.cont.04.ex09",
+  "set": {
+   "question": "Carlos __ en una oficina, pero hoy no está trabajando.",
+   "options": [
+    "trabaja",
+    "estar trabajando",
+    "trabajando"
+   ],
+   "distractor_skills": null
+  },
+  "why": "tell-absolute siempre; Carlos works in an office (story a1-15), not at a bank; estar trabajando and trabajando are ungrammatical, so no distractor_skills",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-04-ex.json",
+  "id": "a1.cont.04.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "Carlos, ¿qué haces normalmente por la tarde?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Normalmente estudio español, pero hoy estoy descansando.",
+    "Normalmente estudio español, pero hoy estás descansando.",
+    "Normalmente estoy estudiando español, pero hoy descanso."
+   ],
+   "teaches": [
+    "progressive"
+   ]
+  },
+  "why": "dedicas, vacaciones unmet; Carlos is not a profesor (Daniela is, story a1-03; Carlos works in an office, a1-15)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-04-ex.json",
+  "id": "a1.cont.04.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Siempre tomas café por la tarde?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, siempre, pero hoy estoy tomando té verde.",
+    "Sí, siempre, pero hoy estás tomando té verde.",
+    "Sí, siempre, pero hoy tomando té verde."
+   ],
+   "teaches": [
+    "progressive"
+   ]
+  },
+  "why": "casi, caliente, negro unmet; ayer + past option; wrong options now fail on the progressive form",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-04-ex.json",
+  "id": "a1.cont.04.ex12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say (every day): 'Normally I work.'",
+     "answer": "Normalmente trabajo."
+    },
+    {
+     "prompt": "Say (happening now): 'Now I am resting.'",
+     "answer": "Ahora estoy descansando."
+    }
+   ],
+   "teaches": [
+    "progressive"
+   ]
+  },
+  "why": "prompts do not pin the tense; the item tests the contrast, not vocabulary",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-continuous-04.json",
+  "old": "\"I know when to use the simple present and when to use the present continuous.\"",
+  "new": "\"I can tell when to use the simple present and when to use the present continuous.\"",
+  "why": "checklist line is not a can-do statement",
+  "kind": "other"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-continuous-04-contraste-gr.json",
+  "old": "Choose between the two tenses based on time frame:",
+  "new": "You know the simple present from Unit 7 and the present continuous from this unit. Choose between the two tenses based on time frame:",
+  "why": "screen does not say the simple present is known",
+  "kind": "other",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-05-ex.json",
+  "id": "a1.cont.05.ex02",
+  "set": {
+   "options": [
+    "Estoy saliendo",
+    "Estoy salgo",
+    "Estoy salir"
+   ]
+  },
+  "why": "Salgo ayer: ayer + salgo, a present form with a past time word; wrong options now show the progressive faults (finite verb, infinitive)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-05-ex.json",
+  "id": "a1.cont.05.ex06",
+  "set": {
+   "sentence": "Hay mucho ruido en la llamada; no te estoy _____.",
+   "english": "There is a lot of noise on the call; I am not hearing you."
+  },
+  "why": "english 'cannot hear' fits other verbs; uses unused vocab la llamada",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-05-ex.json",
+  "id": "a1.cont.05.ex08",
+  "set": {
+   "options": [
+    "Estoy saliendo ahora.",
+    "Estás saliendo ahora.",
+    "Estoy salir ahora."
+   ],
+   "distractor_skills": null
+  },
+  "why": "Salí ayer (past, ayer) and Salgo mañana (a correct sentence about another time) replaced by progressive faults; stale distractor_skills removed",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-05-ex.json",
+  "id": "a1.cont.05.ex10",
+  "set": {
+   "options": [
+    "¡Hola Meg! Estoy saliendo del hotel, llego pronto.",
+    "¡Hola Meg! Estás saliendo del hotel y vas al museo ahora.",
+    "¡Hola Meg! El museo abre a las nueve y está cerca de la plaza."
+   ]
+  },
+  "why": "cierra unmet (A2); uses unused vocab pronto",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-05-ex.json",
+  "id": "a1.cont.05.ex11",
+  "set": {
+   "options": [
+    "Estoy tomando café y leyendo un mensaje.",
+    "Es de noche y hace mucho frío aquí.",
+    "Tengo veinticinco años y soy simpática."
+   ]
+  },
+  "why": "length give-away; periódico unmet",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-05-ex.json",
+  "id": "a1.cont.05.ex12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say (happening now): 'I am leaving the house.'",
+     "answer": "Estoy saliendo de la casa."
+    },
+    {
+     "prompt": "Say (happening now): 'I am arriving at the station.'",
+     "answer": "Estoy llegando a la estación."
+    }
+   ]
+  },
+  "why": "prompts do not pin the progressive (Salgo de la casa. / Llego a la estación. also fit)",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-continuous-05-telefono-gr.json",
+  "old": "\"spanish\": \"Hola Carlos, ¿dónde estás? Estoy saliendo del metro.\"",
+  "new": "\"spanish\": \"Hola Carlos, ¿dónde estás? Estoy saliendo del hotel.\"",
+  "why": "metro is A2 vocabulary; this example is also the lesson's speaking prompt",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-continuous-05-telefono-gr.json",
+  "old": "\"english\": \"Hello Carlos, where are you? I'm coming out of the subway.\"",
+  "new": "\"english\": \"Hello Carlos, where are you? I'm leaving the hotel.\"",
+  "why": "matches the new example",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-continuous-05-telefono-gr.json",
+  "old": "\"spanish\": \"Te mando un mensaje, estoy conduciendo.\"",
+  "new": "\"spanish\": \"Te llamo luego, estoy cocinando.\"",
+  "why": "mandar and conducir are not in any A1 list",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-continuous-05-telefono-gr.json",
+  "old": "\"english\": \"I'll text you, I am driving.\"",
+  "new": "\"english\": \"I'll call you later, I am cooking.\"",
+  "why": "matches the new example",
+  "kind": "other",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-continuous-01-ando-gr.json",
+  "old": "Spanish uses **estar** followed by the gerund",
+  "new": "Spanish uses **estar** (you know it from Unit 9) followed by the gerund",
+  "why": "estar is known from Unit 9: recap it",
+  "kind": "other"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-consolidation-ex.json",
+  "id": "a1.cont.cons.ex01",
+  "set": {
+   "distractor_skills": null
+  },
+  "why": "'están caminan' is ungrammatical: no distractor_skills on an ungrammatical option",
+  "kind": "other"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-consolidation-ex.json",
+  "id": "a1.cont.cons.ex02",
+  "set": {
+   "sentence": "Nosotros estamos _____ en un café muy bonito.",
+   "english": "We are eating in a very nice café."
+  },
+  "why": "agradable unmet (also the lesson's speaking line and challenge target)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-consolidation-ex.json",
+  "id": "a1.cont.cons.ex03",
+  "set": {
+   "question": "¿Cuál es el gerundio de \"pedir\"?",
+   "options": [
+    "pidiendo",
+    "pediendo",
+    "pido"
+   ],
+   "distractor_skills": {
+    "2": "stem-changes"
+   }
+  },
+  "why": "copies a1.cont.03.ex02 (leer, same options); pedir is in the lesson 03 screen",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-consolidation-ex.json",
+  "id": "a1.cont.cons.ex04",
+  "set": {
+   "sentence": "El perro está _____ en el jardín.",
+   "english": "The dog is sleeping in the garden."
+  },
+  "why": "tranquilamente unmet (also the lesson's speaking line)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-consolidation-ex.json",
+  "id": "a1.cont.cons.ex06",
+  "set": {
+   "question": "Which sentence describes an action happening right now?",
+   "options": [
+    "Estoy escribiendo un mensaje.",
+    "Escribo mensajes los viernes.",
+    "Estoy escribir un mensaje."
+   ]
+  },
+  "why": "oración, acción, ocurre, instante are unmet Spanish metalanguage in a question stem (the checker does not read stems); Escribí is a past tense (A2); correo, carta unmet",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-consolidation-ex.json",
+  "id": "a1.cont.cons.ex09",
+  "set": {
+   "question": "How do you say \"We are learning a lot\"?"
+  },
+  "why": "English meaning inside a Spanish question line; same wording as a1.cont.01.ex09",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-consolidation-ex.json",
+  "id": "a1.cont.cons.ex10",
+  "set": {
+   "sentence": "¿Me estás _____? Hay mucho ruido.",
+   "english": "Are you listening to me? There is a lot of noise."
+  },
+  "why": "interferencia unmet",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-consolidation-ex.json",
+  "id": "a1.cont.cons.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "Meg, ¿estás lista para salir?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Un momento; me estoy poniendo los zapatos.",
+    "Un momento; me estás poniendo los zapatos.",
+    "Un momento; me poniendo los zapatos."
+   ],
+   "teaches": [
+    "progressive"
+   ]
+  },
+  "why": "length give-away; casi, dolor, estómago, ayer unmet; wrong options now fail on the progressive form",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-consolidation-ex.json",
+  "id": "a1.cont.cons.ex12",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "¿Qué están haciendo los chicos en la plaza?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Dos chicos están bailando y tres están tomando fotos.",
+    "Dos chicos bailan y tres toman fotos todos los días.",
+    "Dos chicos son bailando y tres son tomando fotos."
+   ],
+   "teaches": [
+    "progressive"
+   ]
+  },
+  "why": "gente, otros, árboles unmet; the question could be answered in the simple present (habit): now it asks what they are doing",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-continuous-consolidation-ex.json",
+  "id": "a1.cont.cons.ex13",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say (happening now): 'I am reading now.'",
+     "answer": "Estoy leyendo ahora."
+    },
+    {
+     "prompt": "Say (happening now): 'They are eating.'",
+     "answer": "Ellos están comiendo."
+    }
+   ]
+  },
+  "why": "'eating lunch' has no 'lunch' in the stored answer; prompts do not pin the progressive",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-continuous.json",
+  "old": "\"lemma\": \"conocer\"",
+  "new": "\"lemma\": \"cocinar\"",
+  "why": "keyVocabulary placeholder (conocer is not in the story)",
+  "kind": "other"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-continuous.json",
+  "old": "\"gloss\": \"to meet / get to know\"",
+  "new": "\"gloss\": \"to cook\"",
+  "why": "matches the new lemma",
+  "kind": "other"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-continuous.json",
+  "old": "\"lemma\": \"intercambio\"",
+  "new": "\"lemma\": \"terraza\"",
+  "why": "keyVocabulary placeholder (intercambio is not in the story)",
+  "kind": "other"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-continuous.json",
+  "old": "\"gloss\": \"exchange\"",
+  "new": "\"gloss\": \"terrace\"",
+  "why": "matches the new lemma",
+  "kind": "other"
+ }
+]

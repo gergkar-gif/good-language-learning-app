@@ -1,0 +1,550 @@
+[
+ {
+  "file": "content/es-es/exercises/a1/a1-health-01-ex.json",
+  "id": "a1.health.01.ex16",
+  "set": {
+   "question": "Which means \"My mother is sick\"?",
+   "options": [
+    "Mi madre está enferma.",
+    "Mi madre tiene enferma.",
+    "Mi madre es enferma."
+   ]
+  },
+  "why": "identical to a1.health.01.ex04 (same three options)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-health-01-descriptive-gr.json",
+  "old": "Use *estar* + adjective to describe a current physical state.",
+  "new": "You know *estar* from Unit 9 and *tener* from Unit 5. Use *estar* + adjective to describe a current physical state.",
+  "why": "recap: estar and tener are known",
+  "kind": "other"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-02-ex.json",
+  "id": "a1.health.02.ex16",
+  "set": {
+   "question": "Which means \"Do you have a fever?\"",
+   "options": [
+    "¿Tienes fiebre?",
+    "¿Estás fiebre?",
+    "¿Hay fiebre?"
+   ]
+  },
+  "why": "near copy of a1.health.02.ex09 (same options)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-02-ex.json",
+  "id": "a1.health.02.ex17",
+  "set": {
+   "options": [
+    "Tengo tos y fiebre.",
+    "Estoy tos y fiebre.",
+    "Hay tos y fiebre."
+   ]
+  },
+  "why": "'Tengo tos y tengo está fiebre.' is garbled and has two faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-health-02-tener-expressions-gr.json",
+  "old": "Many common health problems are expressed with *tener* + noun.",
+  "new": "You know *tener* from Unit 5. Many common health problems are expressed with *tener* + noun.",
+  "why": "recap: tener is known",
+  "kind": "other"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-03-ex.json",
+  "id": "a1.health.03.ex09",
+  "set": {
+   "options": [
+    "Tengo fiebre y tos.",
+    "Tengo fiebre y soy tos.",
+    "Estoy fiebre y tengo tos."
+   ]
+  },
+  "why": "'Tengo fiebre está tos.' is garbled (two verbs)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-03-ex.json",
+  "id": "a1.health.03.ex10",
+  "set": {
+   "options": [
+    "Tengo fiebre y tos.",
+    "Estoy fiebre y tos.",
+    "Hay fiebre y tos."
+   ]
+  },
+  "why": "'Tengo fiebre está tos.' is garbled (two verbs)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-03-ex.json",
+  "id": "a1.health.03.ex13",
+  "set": {
+   "question": "Which means \"She has a cough\"?",
+   "options": [
+    "Ella tiene tos.",
+    "Ella está tos.",
+    "Ella tengo tos."
+   ]
+  },
+  "why": "identical to a1.health.02.ex13 (stomachache, same options)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-03-ex.json",
+  "id": "a1.health.03.ex16",
+  "set": {
+   "options": [
+    "Tengo dolor de cabeza y fiebre.",
+    "Hay dolor de cabeza y fiebre.",
+    "Estoy dolor de cabeza y fiebre."
+   ]
+  },
+  "why": "'Tengo dolor de cabeza está fiebre.' is garbled (two verbs)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-03-ex.json",
+  "id": "a1.health.03.ex17",
+  "set": {
+   "question": "Which is a natural answer to \"¿Tienes gripe o un resfriado?\"",
+   "options": [
+    "Tengo un resfriado.",
+    "Estoy un resfriado.",
+    "Soy un resfriado."
+   ]
+  },
+  "why": "same question and answer as dialogue a1.health.03.ex10; 'Hay tos y tengo.' is garbled",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-health-03-symptoms-gr.json",
+  "old": "\"Tengo dolor de cabeza.\",\n          \"I have a headache.\"",
+  "new": "\"Tengo dolor de cabeza y tos.\",\n          \"I have a headache and a cough.\"",
+  "why": "table repeats the lesson 02 table row for row; new rows combine symptoms and use gripe/resfriado (lesson 03 vocabulary)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-health-03-symptoms-gr.json",
+  "old": "\"Tengo tos.\",\n          \"I have a cough.\"",
+  "new": "\"Tengo gripe.\",\n          \"I have the flu.\"",
+  "why": "table repeats the lesson 02 table row for row; new rows combine symptoms and use gripe/resfriado (lesson 03 vocabulary)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-health-03-symptoms-gr.json",
+  "old": "\"Tengo fiebre.\",\n          \"I have a fever.\"",
+  "new": "\"Tengo un resfriado.\",\n          \"I have a cold.\"",
+  "why": "table repeats the lesson 02 table row for row; new rows combine symptoms and use gripe/resfriado (lesson 03 vocabulary)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-health-03-symptoms-gr.json",
+  "old": "\"Tengo dolor de garganta.\",\n          \"I have a sore throat.\"",
+  "new": "\"Tengo dolor de garganta y fiebre.\",\n          \"I have a sore throat and a fever.\"",
+  "why": "table repeats the lesson 02 table row for row; new rows combine symptoms and use gripe/resfriado (lesson 03 vocabulary)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-health-03-symptoms-gr.json",
+  "old": "\"Tengo dolor de estómago.\",\n          \"I have a stomachache.\"",
+  "new": "\"Tengo dolor de estómago y tos.\",\n          \"I have a stomachache and a cough.\"",
+  "why": "table repeats the lesson 02 table row for row; new rows combine symptoms and use gripe/resfriado (lesson 03 vocabulary)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-04-ex.json",
+  "id": "a1.health.04.ex16",
+  "set": {
+   "question": "Which means \"I have an appointment with the doctor\"?",
+   "options": [
+    "Tengo una cita con el médico.",
+    "Estoy una cita con el médico.",
+    "Soy una cita con el médico."
+   ]
+  },
+  "why": "duplicate of a1.health.04.ex06 (same exchange)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-04-ex.json",
+  "id": "a1.health.04.ex17",
+  "set": {
+   "question": "Which means \"Since when do you have a fever?\"",
+   "options": [
+    "¿Desde cuándo tienes fiebre?",
+    "¿Desde cuándo estás fiebre?",
+    "¿Desde cuándo hay fiebre?"
+   ]
+  },
+  "why": "duplicate of dialogue a1.health.04.ex11 (same question and answer)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-05-ex.json",
+  "id": "a1.health.05.ex05",
+  "set": {
+   "hint": "tomar, tú"
+  },
+  "why": "'Bebe agua' also fits 'Drink water' (beber is Unit 7): the hint names the verb",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-05-ex.json",
+  "id": "a1.health.05.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "Tengo dolor de cabeza. ¿Qué hago?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Toma la medicina.",
+    "Tomo la medicina.",
+    "Toman la medicina."
+   ],
+   "distractor_skills": {
+    "1": "ar-verbs",
+    "2": "ar-verbs"
+   }
+  },
+  "why": "'Me duele la cabeza' is doler (Unit 21); aspirina unmet; the infinitive option 'Tomar una aspirina.' is a natural piece of advice; 'Tomas una aspirina.' also",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-05-ex.json",
+  "id": "a1.health.05.ex11",
+  "set": {
+   "options": [
+    "Descansa y toma agua.",
+    "Descanso y tomo agua.",
+    "Descansan y toman agua."
+   ],
+   "distractor_skills": {
+    "1": "ar-verbs",
+    "2": "ar-verbs"
+   }
+  },
+  "why": "'Descansar y tomar agua.' (infinitive) and 'Descansas y tomas agua.' are natural pieces of advice in answer to ¿Qué hago?",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-05-ex.json",
+  "id": "a1.health.05.ex12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Tell someone to rest.",
+     "answer": "Descansa."
+    },
+    {
+     "prompt": "Tell someone to drink water (use tomar).",
+     "answer": "Toma agua."
+    }
+   ]
+  },
+  "why": "'Bebe agua.' also fits the prompt",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-05-ex.json",
+  "id": "a1.health.05.ex13",
+  "set": {
+   "question": "Which means \"Eat something\"?",
+   "options": [
+    "Come algo.",
+    "Como algo.",
+    "Comen algo."
+   ],
+   "distractor_skills": {
+    "1": "er-ir-verbs",
+    "2": "er-ir-verbs"
+   }
+  },
+  "why": "same options as a1.health.05.ex09 (Duerme bien)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-05-ex.json",
+  "id": "a1.health.05.ex16",
+  "set": {
+   "options": [
+    "Descansa y duerme bien.",
+    "Descansas y duermes bien.",
+    "Descanso y duermo bien."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "present-tense"
+   }
+  },
+  "why": "infinitive option is a natural piece of advice",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-05-ex.json",
+  "id": "a1.health.05.ex17",
+  "set": {
+   "options": [
+    "Toma agua.",
+    "Tomas agua.",
+    "Tomo agua."
+   ],
+   "distractor_skills": {
+    "1": "ar-verbs",
+    "2": "ar-verbs"
+   }
+  },
+  "why": "infinitive option is a natural piece of advice",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-05-ex.json",
+  "id": "a1.health.05.ex18",
+  "set": {
+   "question": "A friend says \"Estoy muy cansado.\" Which advice is right?",
+   "options": [
+    "Duerme y descansa.",
+    "Duermo y descanso.",
+    "Duermen y descansan."
+   ],
+   "distractor_skills": {
+    "1": "stem-changes",
+    "2": "stem-changes"
+   }
+  },
+  "why": "same options as a1.health.05.ex06 (Ve al médico) and infinitive option is natural advice",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-05-ex.json",
+  "id": "a1.health.05.ex19",
+  "set": {
+   "options": [
+    "Come algo y descansa.",
+    "Como algo y descanso.",
+    "Comen algo y descansan."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "present-tense"
+   }
+  },
+  "why": "repeats ex07/ex11 (Descansa y toma agua) and the infinitive option is natural advice",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-health-05-commands-advice-gr.json",
+  "old": "Use familiar affirmative *tú* commands to give simple advice:",
+  "new": "You know affirmative *tú* commands from Unit 14 and *ve* from Unit 16. Use them to give simple advice:",
+  "why": "recap: commands are known",
+  "kind": "other"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-consolidation-ex.json",
+  "id": "a1.health.06.ex02",
+  "set": {
+   "question": "¿Cómo se dice \"appointment\"?",
+   "options": [
+    "cita",
+    "médico",
+    "paciente"
+   ]
+  },
+  "why": "copy of a1.health.04.ex02",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-consolidation-ex.json",
+  "id": "a1.health.06.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Paciente",
+     "text": "¿Qué hago?"
+    },
+    {
+     "speaker": "Médico",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Descansa y duerme bien.",
+    "Descanso y duermo bien.",
+    "Descansan y duermen bien."
+   ],
+   "distractor_skills": {
+    "1": "present-tense",
+    "2": "present-tense"
+   }
+  },
+  "why": "the doctor asks 'What do I do?' and the patient gives the advice (speakers reversed); copies a1.health.05.ex11",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-consolidation-ex.json",
+  "id": "a1.health.06.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Cómo estás, Meg?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Estoy cansada y tengo tos.",
+    "Soy cansada y tengo tos.",
+    "Estoy cansada y estoy tos."
+   ]
+  },
+  "why": "copy of a1.health.01.ex10",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-consolidation-ex.json",
+  "id": "a1.health.06.ex17",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you have a fever and a cough.",
+     "answer": "Tengo fiebre y tos."
+    },
+    {
+     "prompt": "Ask what someone has.",
+     "answer": "¿Qué tienes?"
+    }
+   ]
+  },
+  "why": "'two symptoms' does not pin the stored answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-health-consolidation-ex.json",
+  "id": "a1.health.06.ex18",
+  "set": {
+   "template": [
+    {
+     "prompt": "Tell someone to rest and drink water (use tomar).",
+     "answer": "Descansa y toma agua."
+    }
+   ]
+  },
+  "why": "'two pieces of advice' does not pin the stored answer",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-health-consolidation.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can use health vocabulary, tener expressions, questions, and commands.\",\n        \"I can describe a simple health problem and give basic advice using cumulative A1.\"",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can use health vocabulary, tener expressions, questions, and commands.\",\n        \"I can describe a simple health problem and give basic advice using what I know from A1.\"",
+  "why": "'using cumulative A1' is not English",
+  "kind": "other"
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-health-consolidation.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can use health vocabulary, tener expressions, questions, and commands.\",\n        \"I can describe a simple health problem and give basic advice using cumulative A1.\"",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can use health vocabulary, tener expressions, questions, and commands.\",\n        \"I can describe a simple health problem and give basic advice using what I know from A1.\"",
+  "why": "'using cumulative A1' is not English",
+  "kind": "other"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-16.json",
+  "old": "¿Cómo te sientes del cuerpo?",
+  "new": "¿Cómo te sientes?",
+  "why": "'¿Cómo te sientes del cuerpo?' is not natural Spanish; audio must be re-narrated",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-16.json",
+  "old": "¿Fuiste a la consulta del médico?",
+  "new": "¿Tienes cita con el médico?",
+  "why": "preterite (A2, preterito-indefinido) in an A1 story; audio must be re-narrated",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-16.json",
+  "old": "Sí, fui temprano a la clínica. El médico me recetó esta medicina y me dijo que debo descansar.",
+  "new": "Sí, tengo cita en la clínica por la tarde. Hoy tomo esta medicina y debo descansar.",
+  "why": "three preterites (fui, recetó, dijo); audio must be re-narrated",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-16.json",
+  "old": "Agradezco mucho que me cuides. Me tomo la medicina y voy a dormir.",
+  "new": "Muchas gracias por venir. Me tomo la medicina y duermo un rato.",
+  "why": "subjunctive cuides (B1) and ir a + infinitive (Unit 25); audio must be re-narrated",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-16.json",
+  "old": "Que te mejores pronto, amigo. Descansa.",
+  "new": "Descansa mucho, amigo. Hasta pronto.",
+  "why": "subjunctive Que te mejores (B1); audio must be re-narrated",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-16.json",
+  "old": "\"question\": \"¿Qué le recetó el médico a Carlos?\"",
+  "new": "\"question\": \"¿Qué debe hacer Carlos hoy?\"",
+  "why": "question with a preterite; follows the story change",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-16.json",
+  "old": "Carlos cuenta: 'El médico me recetó esta medicina y me dijo que debo descansar'.",
+  "new": "Carlos dice: 'Hoy tomo esta medicina y debo descansar'.",
+  "why": "follows the story change",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-16.json",
+  "old": "\"Que vaya al trabajo de todos modos\"",
+  "new": "\"Ir al trabajo de todos modos\"",
+  "why": "subjunctive (B1) in a comprehension option",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-16.json",
+  "old": "\"Que beba agua, duerma muchas horas y deje el trabajo por hoy\"",
+  "new": "\"Beber agua, dormir muchas horas y dejar el trabajo por hoy\"",
+  "why": "subjunctive (B1) in the right option",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-16.json",
+  "old": "\"Que coma mucho y salga a pasear\"",
+  "new": "\"Comer mucho y salir a pasear\"",
+  "why": "subjunctive (B1) in a comprehension option",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-16.json",
+  "old": "\"Que llame a otro médico\"",
+  "new": "\"Llamar a otro médico\"",
+  "why": "subjunctive (B1) in a comprehension option",
+  "kind": "target",
+  "sure": false
+ }
+]

@@ -1,0 +1,597 @@
+[
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-01-ex.json",
+  "id": "a1.dol.01.ex03",
+  "set": {
+   "sentence": "Después de caminar me _____ los pies.",
+   "english": "After walking, my feet hurt."
+  },
+  "why": "paseo unmet (A2)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-01-ex.json",
+  "id": "a1.dol.01.ex04",
+  "set": {
+   "question": "Which sentence says \"My legs hurt\"?"
+  },
+  "why": "Spanish question with opción (unmet metalanguage); the stems of multiple-choice items are not checked by unmet-word, so read by hand",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-01-ex.json",
+  "id": "a1.dol.01.ex08",
+  "set": {
+   "tiles": [
+    "Me",
+    "duelen",
+    "los",
+    "ojos",
+    "después",
+    "de",
+    "leer."
+   ],
+   "solution": [
+    "Me",
+    "duelen",
+    "los",
+    "ojos",
+    "después",
+    "de",
+    "leer."
+   ],
+   "english": "My eyes hurt after reading."
+  },
+  "why": "pantalla unmet (B1)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-01-ex.json",
+  "id": "a1.dol.01.ex09",
+  "set": {
+   "question": "With plural body parts such as los pies and las manos, you use:"
+  },
+  "why": "'Con sustantivos en plural ... se usa' is unmet Spanish metalanguage at A1",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-01-ex.json",
+  "id": "a1.dol.01.ex10",
+  "set": {
+   "options": [
+    "No mucho; me duele la cabeza.",
+    "No mucho; me duelen la cabeza.",
+    "No mucho; te duele la cabeza."
+   ],
+   "teaches": [
+    "doler"
+   ]
+  },
+  "why": "bastante is lesson 03 vocabulary; the wrong options differ in the form of doler, so tag doler",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-doler-01-duele-gr.json",
+  "old": "\"spanish\": \"Me duele la garganta desde ayer.\"",
+  "new": "\"spanish\": \"Me duele la garganta desde esta mañana.\"",
+  "why": "ayer is A2 vocabulary; this example is also the lesson's speaking line and challenge target",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-doler-01-duele-gr.json",
+  "old": "\"english\": \"My throat hurts since yesterday.\"",
+  "new": "\"english\": \"My throat has hurt since this morning.\"",
+  "why": "matches the new example",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-doler-01-duele-gr.json",
+  "old": "\"spanish\": \"Después de caminar tanto, me duelen las piernas.\"",
+  "new": "\"spanish\": \"Después de caminar, me duelen las piernas.\"",
+  "why": "tanto is A2 vocabulary; speaking line",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-doler-01-duele-gr.json",
+  "old": "\"english\": \"After walking so much, my legs hurt.\"",
+  "new": "\"english\": \"After walking, my legs hurt.\"",
+  "why": "matches the new example",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-02-ex.json",
+  "id": "a1.dol.02.ex01",
+  "set": {
+   "pairs": [
+    [
+     "el brazo",
+     "arm"
+    ],
+    [
+     "el hombro",
+     "shoulder"
+    ],
+    [
+     "la rodilla",
+     "knee"
+    ],
+    [
+     "la oreja",
+     "outer ear"
+    ]
+   ]
+  },
+  "why": "el oído / 'ear' is ambiguous with la oreja and la oreja was unused; el oído stays in ex11",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-02-ex.json",
+  "id": "a1.dol.02.ex10",
+  "set": {
+   "options": [
+    "Me duele mucho el hombro izquierdo.",
+    "Tengo una hermana y un hermano.",
+    "Vivo en Hanói y trabajo en una oficina."
+   ]
+  },
+  "why": "length give-away; lápices unmet; 'Mañana voy a estudiar.' is ir a + infinitive (Unit 25); facts match Carlos (one brother and one sister, Hanoi, office job)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-02-ex.json",
+  "id": "a1.dol.02.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Médico",
+     "text": "¿Qué le duele a su hijo?"
+    },
+    {
+     "speaker": "Madre",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Le duele mucho el oído y tiene fiebre.",
+    "Mi hijo tiene nueve años y es muy alto.",
+    "Vivimos cerca del centro y de la plaza."
+   ]
+  },
+  "why": "length give-away; ayer, compramos unmet; the question word order is unnatural",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-03-ex.json",
+  "id": "a1.dol.03.ex02",
+  "set": {
+   "question": "Me duele __ la espalda y necesito descansar."
+  },
+  "why": "puedo is Unit 24 (poder is not taught in a1-08-03 although the knowledge sheet lists it as known); casi unmet",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-03-ex.json",
+  "id": "a1.dol.03.ex04",
+  "set": {
+   "question": "Which word means \"dizzy\"?",
+   "options": [
+    "mareado",
+    "cansado",
+    "enfermo"
+   ]
+  },
+  "why": "Siento que la habitación da vueltas (unmet Spanish); contento and ocupado unmet",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-03-ex.json",
+  "id": "a1.dol.03.ex05",
+  "set": {
+   "tiles": [
+    "Me",
+    "duele",
+    "bastante",
+    "la",
+    "garganta."
+   ],
+   "solution": [
+    "Me",
+    "duele",
+    "bastante",
+    "la",
+    "garganta."
+   ],
+   "english": "My throat hurts quite a lot."
+  },
+  "why": "bastante is listed but unused; ex13 already drills un poco",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-03-ex.json",
+  "id": "a1.dol.03.ex06",
+  "set": {
+   "options": [
+    "No me duele nada.",
+    "No me duele algo.",
+    "No me duele mucho."
+   ]
+  },
+  "why": "tell-absolute ninguno; 'No me duelen ninguno.' has two faults",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-03-ex.json",
+  "id": "a1.dol.03.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Meg",
+     "text": "Carlos, ¿te duele el pie hoy?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Solo me duele un poco cuando camino.",
+    "Solo me duelen un poco cuando camino.",
+    "Solo te duele un poco cuando caminas."
+   ],
+   "teaches": [
+    "doler"
+   ]
+  },
+  "why": "todavía, rápido unmet; the wrong options differ in the form of doler, so tag doler",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-03-ex.json",
+  "id": "a1.dol.03.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "Meg, ¿estás bien? ¿Tienes calor?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "teaches": [
+    "estar"
+   ]
+  },
+  "why": "veo, pálida unmet; the wrong options differ in the form of estar (Estar / Estás), so tag estar",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-03-ex.json",
+  "id": "a1.dol.03.ex12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say: 'My back hurts a lot.'",
+     "answer": "Me duele mucho la espalda."
+    },
+    {
+     "prompt": "Say (you are a man): 'I feel dizzy.'",
+     "answer": "Estoy mareado."
+    }
+   ]
+  },
+  "why": "gender is not pinned (mareada also fits)",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-03-ex.json",
+  "id": "a1.dol.03.ex13",
+  "set": {
+   "sentence": "Me duele _____ la cabeza, pero trabajo.",
+   "english": "My head hurts a little, but I work."
+  },
+  "why": "puedo is Unit 24",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-04-ex.json",
+  "id": "a1.dol.04.ex04",
+  "set": {
+   "tiles": [
+    "Hay",
+    "que",
+    "tomar",
+    "una",
+    "pastilla",
+    "con",
+    "agua."
+   ],
+   "solution": [
+    "Hay",
+    "que",
+    "tomar",
+    "una",
+    "pastilla",
+    "con",
+    "agua."
+   ],
+   "english": "You have to take one pill with water.",
+   "teaches": [
+    "hay-que"
+   ]
+  },
+  "why": "'Tome una pastilla' is an usted command (A2, imperativo-formal-usted); hay que is known from Unit 18",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-04-ex.json",
+  "id": "a1.dol.04.ex05",
+  "set": {
+   "options": [
+    "un jarabe",
+    "un café",
+    "un libro"
+   ]
+  },
+  "why": "helado unmet",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-04-ex.json",
+  "id": "a1.dol.04.ex08",
+  "set": {
+   "options": [
+    "¿Tiene algo para el dolor de cabeza?",
+    "¿Tiene algo con el dolor de cabeza?",
+    "¿Tiene algo por el dolor de cabeza?"
+   ]
+  },
+  "why": "length give-away: the wrong options are as long as the right one and each has one fault (the preposition)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-04-ex.json",
+  "id": "a1.dol.04.ex09",
+  "set": {
+   "sentence": "El médico me _____ descansar dos días.",
+   "english": "The doctor recommends that I rest for two days."
+  },
+  "why": "farmacéutico unmet (B1)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-04-ex.json",
+  "id": "a1.dol.04.ex10",
+  "set": {
+   "options": [
+    "Sí, este jarabe es para la garganta.",
+    "Son las tres y media de la tarde.",
+    "Mi hermano vive cerca de la plaza."
+   ]
+  },
+  "why": "length give-away; 'No me gusta la música.' uses gusta (Unit 22)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-04-ex.json",
+  "id": "a1.dol.04.ex11",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Cuántas pastillas tomo?"
+    },
+    {
+     "speaker": "Farmacéutica",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Hay que tomar una pastilla cada ocho horas.",
+    "Hay tomar una pastilla cada ocho horas.",
+    "Tomo una pastilla cada ocho horas."
+   ],
+   "teaches": [
+    "hay-que"
+   ]
+  },
+  "why": "usted command Tome (A2); debo, cuestan, euros unmet",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-doler-04-farmacia-gr.json",
+  "old": "\"spanish\": \"Tome una pastilla cada ocho horas con agua.\"",
+  "new": "\"spanish\": \"Hay que tomar una pastilla cada ocho horas con agua.\"",
+  "why": "usted command (A2); also the lesson's speaking line",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-doler-04-farmacia-gr.json",
+  "old": "\"english\": \"Take one pill every eight hours with water.\"",
+  "new": "\"english\": \"You have to take one pill every eight hours with water.\"",
+  "why": "matches the new example",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-05-ex.json",
+  "id": "a1.dol.05.ex10",
+  "set": {
+   "options": [
+    "Me recupero bien, gracias. Ya no me duele la espalda.",
+    "Mi madre vive en Budapest y es muy amable.",
+    "Trabajo en una oficina y vivo en Hanói."
+   ]
+  },
+  "why": "length give-away (48 vs 25); uses the unused word recuperarse",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-05-ex.json",
+  "id": "a1.dol.05.ex11",
+  "set": {
+   "options": [
+    "Tienes que cuidarte; ve al dentista hoy mismo.",
+    "Mi hermana tiene un gato muy grande.",
+    "Hoy hace mucho calor y no hay nubes."
+   ]
+  },
+  "why": "Me gusta el helado de fresa (gusta is Unit 22; helado, fresa unmet); uses the unused word cuidarse",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-consolidation-ex.json",
+  "id": "a1.dol.cons.ex01",
+  "set": {
+   "question": "A Carlos le __ la espalda después de trabajar.",
+   "options": [
+    "duele",
+    "duelen",
+    "duelo"
+   ]
+  },
+  "why": "cargar, maletas unmet; duela is a subjunctive form (A2)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-consolidation-ex.json",
+  "id": "a1.dol.cons.ex02",
+  "set": {
+   "sentence": "A Meg le _____ los pies después de caminar.",
+   "english": "Meg's feet hurt after walking."
+  },
+  "why": "tanto unmet (also the lesson's speaking line and challenge target)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-consolidation-ex.json",
+  "id": "a1.dol.cons.ex04",
+  "set": {
+   "sentence": "A mi madre _____ duelen las rodillas.",
+   "answer": "le",
+   "english": "My mother's knees hurt."
+  },
+  "why": "copies the lesson 02 table row 'A nosotros nos duelen las piernas.' and a1.dol.02.ex04",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-consolidation-ex.json",
+  "id": "a1.dol.cons.ex06",
+  "set": {
+   "question": "Carlos está un poco __ por el calor.",
+   "options": [
+    "mareado",
+    "mareada",
+    "mareados"
+   ],
+   "teaches": [
+    "adjective-agreement"
+   ]
+  },
+  "why": "'mareada mente' is garbled and marear is an infinitive; the stem did not pin the gender (mareada also fits)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-consolidation-ex.json",
+  "id": "a1.dol.cons.ex07",
+  "set": {
+   "sentence": "Tengo mucho dolor _____ cabeza.",
+   "english": "I have a bad headache."
+  },
+  "why": "fuerte unmet",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-consolidation-ex.json",
+  "id": "a1.dol.cons.ex09",
+  "set": {
+   "options": [
+    "¿Dónde te duele?",
+    "¿Dónde me duele?",
+    "¿Dónde te duelen?"
+   ]
+  },
+  "why": "'¿Dónde tienes dolor tú?' is a natural second right answer; '¿Qué te duele dónde?' is garbled",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-consolidation-ex.json",
+  "id": "a1.dol.cons.ex10",
+  "set": {
+   "sentence": "Hay que tomar estas pastillas con un vaso de _____.",
+   "english": "You have to take these pills with a glass of water."
+  },
+  "why": "usted command Tome (A2)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-consolidation-ex.json",
+  "id": "a1.dol.cons.ex11",
+  "set": {
+   "options": [
+    "Sí, necesito pastillas; me duele la cabeza.",
+    "Mi madre vive en Budapest y es muy amable.",
+    "Hoy hace mucho calor y no hay nubes."
+   ]
+  },
+  "why": "length give-away; ayer, tren unmet",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-consolidation-ex.json",
+  "id": "a1.dol.cons.ex12",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Farmacéutica",
+     "text": "Buenos días, ¿qué necesita?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ],
+   "teaches": [
+    "doler"
+   ]
+  },
+  "why": "puedo unmet; the wrong options differ in the form of doler, so tag doler",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-doler-consolidation-ex.json",
+  "id": "a1.dol.cons.ex13",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say: 'My back hurts.'",
+     "answer": "Me duele la espalda."
+    },
+    {
+     "prompt": "Say (you are a man, use estar): 'I am sick.'",
+     "answer": "Estoy enfermo."
+    }
+   ]
+  },
+  "why": "'I feel sick' also fits Me siento mal; gender not pinned",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-doler.json",
+  "old": "Vamos a entrar para pedir una pastilla y agua fresca»",
+  "new": "Entramos para pedir una pastilla y agua fresca»",
+  "why": "ir a + infinitive (Unit 25); explanation of question 2",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-doler.json",
+  "old": "\"text\": \"Allí enfrente hay una farmacia abierta. Vamos a entrar para pedir una pastilla y agua fresca.\"",
+  "new": "\"text\": \"Allí enfrente hay una farmacia abierta. Entramos para pedir una pastilla y agua fresca.\"",
+  "why": "ir a + infinitive (Unit 25); audio must be re-narrated",
+  "kind": "target",
+  "sure": false
+ }
+]
