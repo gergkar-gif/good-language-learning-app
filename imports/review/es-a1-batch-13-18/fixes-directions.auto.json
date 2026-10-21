@@ -1,0 +1,66 @@
+[
+ {
+  "file": "content/es-es/vocabulary/a1/a1-directions-01-voc.json",
+  "old": "    {\n      \"lemma\": \"hacia\",\n      \"translation\": \"towards\",\n      \"pos\": \"preposition\"\n    },\n",
+  "new": "",
+  "why": "vocab-unused: hacia is listed (and used) in a1-directions-02"
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-directions-01-voc.json",
+  "old": "    {\n      \"lemma\": \"camino\",\n      \"translation\": \"way / route\",\n      \"pos\": \"noun\"\n    },\n",
+  "new": "",
+  "why": "vocab-unused: camino (noun) is never used and clashes with the verb Camino of lesson 02"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-directions-02-movement-prepositions-gr.json",
+  "old": "\"content\": \"Use simple movement prepositions to describe going to, *into*, *through* and towards places.\"",
+  "new": "\"content\": \"Use simple movement prepositions to describe going to, from, along and towards places.\"",
+  "why": "text promises \"into\" which no row or example shows"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-directions-02-movement-prepositions-gr.json",
+  "old": "        [\n          \"a\",\n          \"into\"\n        ],\n",
+  "new": "",
+  "why": "duplicate row a with a wrong gloss \"into\" (no example)"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-directions-02-movement-prepositions-gr.json",
+  "old": "        [\n          \"por\",\n          \"up\"\n        ],\n",
+  "new": "",
+  "why": "false row: por does not mean \"up\""
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-directions-02-movement-prepositions-gr.json",
+  "old": "\"I come from the park.\"",
+  "new": "\"I go from the park to the centre.\"",
+  "why": "matches the new example"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-04-ex.json",
+  "id": "a1.directions.04.ex05",
+  "set": {
+   "teaches": [
+    "estar"
+   ]
+  },
+  "why": "\"está a la izquierda\" is a location phrase with estar, not a movement preposition"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-05-ex.json",
+  "id": "a1.directions.05.ex07",
+  "set": {
+   "teaches": [
+    "estar"
+   ]
+  },
+  "why": "location phrase with estar, not a movement preposition"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-directions-consolidation-ex.json",
+  "id": "a1.directions.06.ex09",
+  "set": {
+   "question": "My mother is a kind person. Which sentence says this?"
+  },
+  "why": "\"Mi madre está amable.\" is real Spanish (\"is being kind\"), so a bare \"Which is correct?\" has two answers"
+ }
+]

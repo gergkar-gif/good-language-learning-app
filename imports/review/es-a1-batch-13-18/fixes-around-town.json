@@ -1,0 +1,412 @@
+[
+ {
+  "file": "content/es-es/exercises/a1/a1-04-consolidation-ex.json",
+  "id": "a1-04-consolidation.ex13",
+  "set": {
+   "options": [
+    "Hay una farmacia en el barrio.",
+    "La farmacia está cerca del banco.",
+    "La farmacia está en el centro."
+   ],
+   "distractor_skills": {
+    "1": "estar",
+    "2": "estar"
+   }
+  },
+  "kind": "target",
+  "why": "ERROR length-giveaway (30 vs 23); two-option item: make the wrong options as long as the right one and add a third"
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-04-02.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can name common places in a neighbourhood.\",\n        \"I can say what places there are in an area.\"\n      ]",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can name common places in a neighbourhood.\",\n        \"I can use hay with the names of places.\"\n      ]",
+  "why": "ERROR checklist-shared: line also in a1-04-05 and the consolidation (goal list)"
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-04-02.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can name common places in a neighbourhood.\",\n        \"I can say what places there are in an area.\"\n      ]",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can name common places in a neighbourhood.\",\n        \"I can use hay with the names of places.\"\n      ]",
+  "why": "ERROR checklist-shared: line also in a1-04-05 and the consolidation (checklist)"
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-04-05.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can say what places there are in an area.\",\n        \"I can ask and answer where something is.\"\n      ]",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can describe a neighbourhood with hay and estar.\",\n        \"I can use cerca de and al lado de to say where a place is.\"\n      ]",
+  "why": "ERROR checklist-shared: both lines are also in the consolidation (and line 1 in a1-04-02); reworded to what a1-04-05 practises (goal list)"
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-04-05.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can say what places there are in an area.\",\n        \"I can ask and answer where something is.\"\n      ]",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can describe a neighbourhood with hay and estar.\",\n        \"I can use cerca de and al lado de to say where a place is.\"\n      ]",
+  "why": "ERROR checklist-shared: both lines are also in the consolidation (and line 1 in a1-04-02); reworded to what a1-04-05 practises (checklist)"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-04-01-hay-gr.json",
+  "old": "\"content\": \"Use *hay* to say that a person, place or thing exists or is present.",
+  "new": "\"content\": \"You know *hay* from Unit 9; here it names the places in a town. Use *hay* to say that a person, place or thing exists or is present.",
+  "why": "screen presents hay as new (Unit 9 taught it)"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-04-02-places-gr.json",
+  "old": "You can combine *hay* with the articles and place vocabulary you already know.\"",
+  "new": "You know *hay* from Unit 9 and the articles from Unit 3, so you only need the new place names.\"",
+  "why": "recap wording names the unit"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-04-03-estar-gr.json",
+  "old": "\"content\": \"Use *estar* to say where a person or thing is located.",
+  "new": "\"content\": \"You know *estar* for location from Unit 9; here you use it for places in a town. Use *estar* to say where a person or thing is located.",
+  "why": "screen presents estar for location as new (Unit 9 taught it)"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-04-04-donde-gr.json",
+  "old": "\"content\": \"Use ¿*Dónde*...? to ask where a person or thing is.",
+  "new": "\"content\": \"You know *dónde* from Unit 1 and *está* / *están* from Unit 9. Use ¿*Dónde*...? to ask where a person or thing is.",
+  "why": "screen presents dónde + estar as new (Unit 1, Unit 9)"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-04-04-donde-gr.json",
+  "old": "\"content\": \"Match *está* with one thing and *están* with more than one.\"",
+  "new": "\"content\": \"Match *está* with one thing and *están* with more than one. *a la izquierda* and *a la derecha* are fixed phrases: learn them whole.\"",
+  "kind": "target",
+  "why": "the exercises use \"a la derecha / a la izquierda\" and no screen explains them"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-04-05-integration-gr.json",
+  "old": "\"content\": \"Describe an area with *hay*, then",
+  "new": "\"content\": \"You know *hay*, *estar* and ¿*dónde*...? from Units 9 and 1; here they work together. Describe an area with *hay*, then",
+  "why": "screen presents hay + estar as new"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-01-ex.json",
+  "id": "a1-04-01.ex12",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué hay en la ciudad?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "\"calle\" is first taught in a1-04-03 (suspect unmet-word); \"ciudad\" is met (Unit 1)"
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-04-02-voc.json",
+  "old": "\"translation\": \"center / downtown\"",
+  "new": "\"translation\": \"centre / downtown\"",
+  "why": "US spelling; a1-04-03 lists the same word as \"centre\""
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-02-ex.json",
+  "id": "a1-04-02.ex03",
+  "set": {
+   "sentence": "Hasta ___, Carlos.",
+   "answer": "luego",
+   "english": "See you later, Carlos."
+  },
+  "kind": "target",
+  "why": "\"presenta a Meg\" is the personal a, taught in Unit 24; the blank is the glued \"a\""
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-02-ex.json",
+  "id": "a1-04-02.ex14",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say there is a park in your neighbourhood.",
+     "answer": "En mi barrio hay un parque."
+    },
+    {
+     "prompt": "Add that there is a library.",
+     "answer": "Hay una biblioteca."
+    }
+   ]
+  },
+  "why": "prompts do not pin the stored answers"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-02-ex.json",
+  "id": "a1-04-02.ex15",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say there are three restaurants.",
+     "answer": "Hay tres restaurantes."
+    },
+    {
+     "prompt": "Say there are two supermarkets.",
+     "answer": "Hay dos supermercados."
+    }
+   ]
+  },
+  "why": "\"several\" does not pin \"tres\""
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-03-ex.json",
+  "id": "a1-04-03.ex01",
+  "set": {
+   "options": [
+    "Adiós, Carlos.",
+    "Hola, Carlos.",
+    "¿Cómo te llamas, Carlos?"
+   ]
+  },
+  "kind": "target",
+  "why": "\"Buenos días, Carlos.\" can be said when leaving in the morning, so a wrong option can be right"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-03-ex.json",
+  "id": "a1-04-03.ex02",
+  "set": {
+   "question": "Which sentence says that Daniela is a teacher?",
+   "options": [
+    "Daniela es profesora.",
+    "Daniela está profesora.",
+    "Daniela soy profesora."
+   ]
+  },
+  "kind": "target",
+  "why": "Daniela's origin is not in any story (a1-03 offers \"de México\" only as a wrong answer); she is the teacher"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-03-ex.json",
+  "id": "a1-04-03.ex03",
+  "set": {
+   "sentence": "_____, soy Daniela.",
+   "hint": "encantado (masculine form)",
+   "answer": "Encantada"
+  },
+  "kind": "target",
+  "why": "glued blank \"Encantad__\" teaches the spelling and \"encantad\" is unmet; blank the whole word and hint the masculine base"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-03-ex.json",
+  "id": "a1-04-03.ex12",
+  "set": {
+   "options": [
+    "Está en la calle.",
+    "Están en la calle.",
+    "Hay en la calle."
+   ]
+  },
+  "kind": "target",
+  "why": "\"calle\" (vocab-unused suspect) gets a use; the dialogue still tests está/están/hay"
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-04-03-voc.json",
+  "old": "    },\n    {\n      \"lemma\": \"centro\",\n      \"translation\": \"centre\",\n      \"pos\": \"noun\"\n    }",
+  "new": "    }",
+  "sure": false,
+  "why": "\"centro\" is listed again here (also a1-04-02) and never used in this lesson (vocab-unused suspect)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-03-ex.json",
+  "id": "a1-04-03.ex14",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say the pharmacy is nearby.",
+     "answer": "La farmacia está cerca."
+    },
+    {
+     "prompt": "Say the hotel is there.",
+     "answer": "El hotel está allí."
+    }
+   ]
+  },
+  "why": "prompts do not pin the stored answers"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-03-ex.json",
+  "id": "a1-04-03.ex15",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say the shops are here.",
+     "answer": "Las tiendas están aquí."
+    },
+    {
+     "prompt": "Say the restaurants are far away.",
+     "answer": "Los restaurantes están lejos."
+    }
+   ]
+  },
+  "why": "both prompts read \"Say where several places are.\" and do not pin the answers"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-04-ex.json",
+  "id": "a1-04-04.ex07",
+  "set": {
+   "options": [
+    "derecha",
+    "izquierda",
+    "delante"
+   ]
+  },
+  "kind": "target",
+  "why": "\"delante\" is listed but never used (vocab-unused suspect)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-04-ex.json",
+  "id": "a1-04-04.ex11",
+  "set": {
+   "sentence": "La biblioteca está a la ___.",
+   "answer": "izquierda"
+  },
+  "kind": "target",
+  "sure": false,
+  "why": "the blank tests the preposition a (movement prepositions are Unit 16); blank the vocabulary word"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-04-ex.json",
+  "id": "a1-04-04.ex14",
+  "set": {
+   "template": [
+    {
+     "prompt": "Ask where the bank is.",
+     "answer": "¿Dónde está el banco?"
+    },
+    {
+     "prompt": "Say it is on the right.",
+     "answer": "Está a la derecha."
+    }
+   ]
+  },
+  "why": "\"Answer.\" does not pin the stored answer"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-04-ex.json",
+  "id": "a1-04-04.ex15",
+  "set": {
+   "template": [
+    {
+     "prompt": "Ask where the shops are.",
+     "answer": "¿Dónde están las tiendas?"
+    },
+    {
+     "prompt": "Say they are on the left.",
+     "answer": "Están a la izquierda."
+    }
+   ]
+  },
+  "why": "\"Answer.\" does not pin the stored answer"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-05-ex.json",
+  "id": "a1-04-05.ex10",
+  "set": {
+   "type": "multiple-choice",
+   "category": "reading",
+   "teaches": null,
+   "question": "Why does Carlos want to go to the bank?",
+   "options": [
+    "To take out some money",
+    "To buy some food",
+    "To pay for the hotel"
+   ],
+   "correct": 0
+  },
+  "sure": false,
+  "why": "the \"Reading\" group has no reading question; ask what the story says"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-05-ex.json",
+  "id": "a1-04-05.ex11",
+  "set": {
+   "sentence": "El banco está __ lado de la farmacia.",
+   "english": "The bank is next to the pharmacy."
+  },
+  "kind": "target",
+  "why": "story says the bank is next to the pharmacy and the museum is behind the main square; the item said the museum is next to the bank"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-05-ex.json",
+  "id": "a1-04-05.ex14",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say there is a park and a pharmacy in your neighbourhood.",
+     "answer": "En mi barrio hay un parque y una farmacia."
+    },
+    {
+     "prompt": "Ask where the pharmacy is.",
+     "answer": "¿Dónde está la farmacia?"
+    }
+   ]
+  },
+  "why": "prompt does not pin the stored answer"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-05-ex.json",
+  "id": "a1-04-05.ex15",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say it is near the square.",
+     "answer": "Está cerca de la plaza."
+    },
+    {
+     "prompt": "Say it is next to the bank.",
+     "answer": "Está al lado del banco."
+    }
+   ]
+  },
+  "why": "prompts do not pin the stored answers"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-consolidation-ex.json",
+  "id": "a1-04-consolidation.ex14",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say there is a park in your neighbourhood.",
+     "answer": "En mi barrio hay un parque."
+    },
+    {
+     "prompt": "Say the park is nearby.",
+     "answer": "El parque está cerca."
+    }
+   ]
+  },
+  "why": "prompts do not pin the stored answers"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-consolidation-ex.json",
+  "id": "a1-04-consolidation.ex15",
+  "set": {
+   "template": [
+    {
+     "prompt": "Ask where the museum is.",
+     "answer": "¿Dónde está el museo?"
+    },
+    {
+     "prompt": "Say it is on the right.",
+     "answer": "Está a la derecha."
+    }
+   ]
+  },
+  "why": "prompts do not pin the stored answers"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-consolidation-ex.json",
+  "id": "a1-04-consolidation.ex18",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say there is a park and a pharmacy in your neighbourhood.",
+     "answer": "En mi barrio hay un parque y una farmacia."
+    },
+    {
+     "prompt": "Say the pharmacy is nearby.",
+     "answer": "La farmacia está cerca."
+    }
+   ]
+  },
+  "why": "prompts do not pin the stored answers"
+ }
+]

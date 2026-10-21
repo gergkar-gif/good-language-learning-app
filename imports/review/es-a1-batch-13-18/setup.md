@@ -25,4 +25,5 @@ Started 2026-10-21T03:20:18Z from origin/master 7c0af07f. Two Sonnet readers, th
 - weather: none
 - work-obligations: none
 - Readers launched 03:22:15Z (Sonnet, background); prompts in prompt-a.txt / prompt-b.txt.
-- Reader B finished 03:37Z: fixes 38 + 59 + 52 = 149; report file write allowed; usage not given in its hand-back
+- Reader B finished 03:37Z: fixes 38 + 59 + 52 = 149; report file write allowed; 291,410 tokens, 56 tool uses, 15.4 min (~97k a unit)
+- Reader A finished 03:38Z: 345,569 tokens, 58 tool uses, 16.5 min (~115k a unit); fixes 38 + 41 + 34 = 113; report file write refused (saved from its reply)

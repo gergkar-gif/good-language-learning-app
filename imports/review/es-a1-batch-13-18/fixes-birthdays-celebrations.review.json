@@ -1,0 +1,348 @@
+[
+ {
+  "file": "content/es-es/exercises/a1/a1-10-01-ex.json",
+  "id": "a1.10.01.ex06",
+  "set": {
+   "options": [
+    "Es genial. Quiero escribir en español.",
+    "Es genial. Mi madre vive en Budapest.",
+    "Es genial. Hay una ventana en la cocina."
+   ]
+  },
+  "kind": "target",
+  "why": "unmet words perfecto/gusta/cuesta/apartamento/luminoso; gusta before Unit 22"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-01-ex.json",
+  "id": "a1.10.01.ex07",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say it's your male friend's birthday.",
+     "answer": "Es el cumpleaños de mi amigo."
+    },
+    {
+     "prompt": "Say you decorate the living room with balloons.",
+     "answer": "Decoro el salón con globos."
+    },
+    {
+     "prompt": "Say you need a cake and a present.",
+     "answer": "Necesito un pastel y un regalo."
+    },
+    {
+     "prompt": "Say everyone sings and he opens his presents.",
+     "answer": "Todos cantan y él abre sus regalos."
+    },
+    {
+     "prompt": "Say the present is a notebook.",
+     "answer": "El regalo es un cuaderno."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "\"Compro\" is unmet (comprar first in a1-abilities-04); item 1 prompt does not pin amigo/amiga"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-01-ex.json",
+  "id": "a1.10.01.ex12",
+  "set": {
+   "options": [
+    "Ella decora el salón.",
+    "Ella corre en el jardín.",
+    "Ella se ducha en el baño."
+   ]
+  },
+  "kind": "target",
+  "why": "unmet compra/mapa/carta in the wrong options"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-01-ex.json",
+  "id": "a1.10.01.ex15",
+  "set": {
+   "options": [
+    "Necesitamos un pastel, velas y globos.",
+    "Necesitamos una cama, un sofá y un perro.",
+    "Necesito un cuaderno para trabajar."
+   ]
+  },
+  "kind": "target",
+  "why": "mapa and viaje are taught in a1-10-04 (later)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-01-ex.json",
+  "id": "a1.10.01.ex16",
+  "set": {
+   "options": [
+    "Decoran el salón y cantan.",
+    "Decora el salón y canta.",
+    "Decoramos el salón y cantamos."
+   ]
+  },
+  "kind": "target",
+  "why": "wrong option 3 differs from the English by meaning alone (pastel); make it a person fault like option 2"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-02-ex.json",
+  "id": "a1.10.02.ex02",
+  "set": {
+   "options": [
+    "¿Cuántos años tienes?",
+    "¿Cuántos hermanos tienes?",
+    "¿Cómo es tu cumpleaños?"
+   ]
+  },
+  "kind": "target",
+  "why": "cuestan is unmet (a2); wrong option replaced with a met, real question"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-10-04-integracion-gr.json",
+  "old": "\"spanish\": \"Vamos sin mapa.\"",
+  "new": "\"spanish\": \"Hacemos el viaje sin mapa.\"",
+  "kind": "target",
+  "why": "vamos (ir) is taught in Unit 16"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-04-ex.json",
+  "id": "a1.10.04.ex02",
+  "set": {
+   "options": [
+    "Tengo veinticinco años y mi cumpleaños es el doce de mayo.",
+    "Soy veinticinco años y mi cumpleaños es el doce de mayo.",
+    "Tengo el doce de mayo y mi cumpleaños es veinticinco años."
+   ]
+  },
+  "kind": "target",
+  "why": "option 2 has two faults (soy + en); keep only the ser fault"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-04-ex.json",
+  "id": "a1.10.04.ex06",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Daniela",
+     "text": "¿Quieres viajar para tu cumpleaños?"
+    },
+    {
+     "speaker": "Carlos",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sí, quiero viajar con Meg.",
+    "Tengo veinticinco años.",
+    "Es un cuaderno especial."
+   ]
+  },
+  "kind": "target",
+  "why": "ir a + infinitive (Unit 25) and voy/vas (Unit 16) before their screens"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-04-ex.json",
+  "id": "a1.10.04.ex12",
+  "set": {
+   "options": [
+    "sin regalo",
+    "con regalo",
+    "para regalo"
+   ]
+  },
+  "kind": "target",
+  "why": "\"pero regalo\" is a garbled non-phrase"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-04-ex.json",
+  "id": "a1.10.04.ex15",
+  "set": {
+   "options": [
+    "No, quiero viajar sin mapa.",
+    "Sí, tengo veinte años.",
+    "El viaje es especial."
+   ]
+  },
+  "kind": "target",
+  "why": "\"voy\" (ir) is taught in Unit 16"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-04-ex.json",
+  "id": "a1.10.04.ex17",
+  "set": {
+   "options": [
+    "con Daniela",
+    "sin Daniela",
+    "para Daniela"
+   ]
+  },
+  "kind": "target",
+  "why": "\"pero Daniela\" is a garbled non-phrase"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-10-05-celebracion-gr.json",
+  "old": "\"content\": \"You already know *conocer*, for knowing a person or place. *saber* is different: use it for facts and information, and with an infinitive for knowing how to do something. The reading uses it already: *Meg no sabe que sus amigos preparan una sorpresa.*\"",
+  "new": "\"content\": \"*saber* means to know a fact or a piece of information, and with an infinitive it means to know how to do something. The reading uses it already: *Meg no sabe nada de la sorpresa.*\"",
+  "kind": "target",
+  "why": "the saber/conocer contrast is taught in Unit 24; the reading line quoted is not in the story"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-05-ex.json",
+  "id": "a1.10.05.ex01",
+  "set": {
+   "question": "Which sentence tells what happens first at Meg's party?",
+   "options": [
+    "Carlos y Daniela preparan una sorpresa.",
+    "Todos cantan 'Feliz cumpleaños.'",
+    "Meg está muy feliz con el pastel.",
+    "Todos cantan y comen el pastel."
+   ]
+  },
+  "kind": "target",
+  "why": "compra/llega/dice/abre unmet; \"morning\" and Kaylee are not in the story"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-05-ex.json",
+  "id": "a1.10.05.ex03",
+  "set": {
+   "question": "¿Cómo se dice \"surprise\"?",
+   "options": [
+    "la sorpresa",
+    "la celebración",
+    "la tradición"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (35 vs 20) and unmet \"espera\""
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-05-ex.json",
+  "id": "a1.10.05.ex10",
+  "set": {
+   "options": [
+    "Feliz cumpleaños, Meg.",
+    "Tengo veinte años, Meg.",
+    "No hay velas, Meg."
+   ]
+  },
+  "kind": "target",
+  "why": "siento/puedo/gusta unmet (gusta is Unit 22)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-05-ex.json",
+  "id": "a1.10.05.ex11",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say it's Meg's birthday.",
+     "answer": "Es el cumpleaños de Meg."
+    },
+    {
+     "prompt": "Say you need a cake and some drinks.",
+     "answer": "Necesito un pastel y unas bebidas."
+    },
+    {
+     "prompt": "Say you decorate the living room with coloured balloons.",
+     "answer": "Decoro el salón con globos de colores."
+    },
+    {
+     "prompt": "Say everyone sings and Meg is very happy.",
+     "answer": "Todos cantan y Meg está muy feliz."
+    },
+    {
+     "prompt": "Say the celebration is a surprise.",
+     "answer": "La celebración es una sorpresa."
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "hoy, día, compro and abre are unmet in this lesson"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-05-ex.json",
+  "id": "a1.10.05.ex12",
+  "set": {
+   "options": [
+    "saber",
+    "vivir",
+    "tener"
+   ]
+  },
+  "kind": "target",
+  "why": "conocer as an option is the saber/conocer contrast (Unit 24)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-05-ex.json",
+  "id": "a1.10.05.ex17",
+  "set": {
+   "options": [
+    "Sí, sé bailar.",
+    "Sí, sabes bailar.",
+    "Sí, tengo veinticinco años."
+   ],
+   "teaches": [
+    "saber-infinitivo"
+   ]
+  },
+  "kind": "target",
+  "why": "\"No, no sé cocinar.\" can pass as a reply; make the faults clear (person, wrong question) and tag the skill"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-consolidation-ex.json",
+  "id": "a1.10.consolidation.ex03",
+  "set": {
+   "options": [
+    "¿Cuántos años tienes?",
+    "¿Cuántos hermanos tienes?",
+    "¿Dónde vives ahora?"
+   ]
+  },
+  "kind": "target",
+  "why": "length give-away (21 vs 16) and unmet \"cuesta\""
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-consolidation-ex.json",
+  "id": "a1.10.consolidation.ex09",
+  "set": {
+   "question": "Which sentence means \"We sing 'Happy Birthday'.\"?",
+   "options": [
+    "Cantamos 'Feliz cumpleaños'.",
+    "Cantan 'Feliz cumpleaños'.",
+    "Canto 'Feliz cumpleaños'."
+   ],
+   "category": "grammar",
+   "teaches": [
+    "ar-verbs"
+   ]
+  },
+  "kind": "target",
+  "why": "compramos/abre unmet; nothing in the unit is \"in the morning\"; retag to the form tested"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-consolidation-ex.json",
+  "id": "a1.10.consolidation.ex10",
+  "set": {
+   "options": [
+    "Tengo veintiocho años y mi cumpleaños es el nueve de julio.",
+    "Soy veintiocho años y mi cumpleaños es el nueve de julio.",
+    "Tengo veintiocho años y mi hermana vive en Hanói."
+   ]
+  },
+  "kind": "target",
+  "why": "\"viajo a España\" is unmet (viajo first taught a1-gustar-04)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-10-consolidation-ex.json",
+  "id": "a1.10.consolidation.ex14",
+  "set": {
+   "sentence": "Quiero cenar _____ Carlos.",
+   "english": "I want to have dinner with Carlos."
+  },
+  "kind": "target",
+  "why": "\"Voy\" (ir) is taught in Unit 16"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-10.json",
+  "old": "\"explanation\": \"El narrador dice: 'Hoy es el veintiocho de octubre, el cumpleaños de Meg'.\"",
+  "new": "\"explanation\": \"El narrador dice que hoy es el veintiocho de octubre, el cumpleaños de Meg.\"",
+  "kind": "target",
+  "why": "the narration is in English; the quoted Spanish sentence is not in the story"
+ }
+]

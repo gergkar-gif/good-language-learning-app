@@ -1,0 +1,165 @@
+[
+ {
+  "file": "content/es-es/exercises/a1/a1-04-consolidation-ex.json",
+  "id": "a1-04-consolidation.ex13",
+  "set": {
+   "options": [
+    "Hay una farmacia en el barrio.",
+    "La farmacia está cerca del banco.",
+    "La farmacia está en el centro."
+   ],
+   "distractor_skills": {
+    "1": "estar",
+    "2": "estar"
+   }
+  },
+  "kind": "target",
+  "why": "ERROR length-giveaway (30 vs 23); two-option item: make the wrong options as long as the right one and add a third"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-04-04-donde-gr.json",
+  "old": "\"content\": \"Match *está* with one thing and *están* with more than one.\"",
+  "new": "\"content\": \"Match *está* with one thing and *están* with more than one. *a la izquierda* and *a la derecha* are fixed phrases: learn them whole.\"",
+  "kind": "target",
+  "why": "the exercises use \"a la derecha / a la izquierda\" and no screen explains them"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-01-ex.json",
+  "id": "a1-04-01.ex12",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Carlos",
+     "text": "¿Qué hay en la ciudad?"
+    },
+    {
+     "speaker": "Meg",
+     "text": "_____"
+    }
+   ]
+  },
+  "kind": "target",
+  "why": "\"calle\" is first taught in a1-04-03 (suspect unmet-word); \"ciudad\" is met (Unit 1)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-02-ex.json",
+  "id": "a1-04-02.ex03",
+  "set": {
+   "sentence": "Hasta ___, Carlos.",
+   "answer": "luego",
+   "english": "See you later, Carlos."
+  },
+  "kind": "target",
+  "why": "\"presenta a Meg\" is the personal a, taught in Unit 24; the blank is the glued \"a\""
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-03-ex.json",
+  "id": "a1-04-03.ex01",
+  "set": {
+   "options": [
+    "Adiós, Carlos.",
+    "Hola, Carlos.",
+    "¿Cómo te llamas, Carlos?"
+   ]
+  },
+  "kind": "target",
+  "why": "\"Buenos días, Carlos.\" can be said when leaving in the morning, so a wrong option can be right"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-03-ex.json",
+  "id": "a1-04-03.ex02",
+  "set": {
+   "question": "Which sentence says that Daniela is a teacher?",
+   "options": [
+    "Daniela es profesora.",
+    "Daniela está profesora.",
+    "Daniela soy profesora."
+   ]
+  },
+  "kind": "target",
+  "why": "Daniela's origin is not in any story (a1-03 offers \"de México\" only as a wrong answer); she is the teacher"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-03-ex.json",
+  "id": "a1-04-03.ex03",
+  "set": {
+   "sentence": "_____, soy Daniela.",
+   "hint": "encantado (masculine form)",
+   "answer": "Encantada"
+  },
+  "kind": "target",
+  "why": "glued blank \"Encantad__\" teaches the spelling and \"encantad\" is unmet; blank the whole word and hint the masculine base"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-03-ex.json",
+  "id": "a1-04-03.ex12",
+  "set": {
+   "options": [
+    "Está en la calle.",
+    "Están en la calle.",
+    "Hay en la calle."
+   ]
+  },
+  "kind": "target",
+  "why": "\"calle\" (vocab-unused suspect) gets a use; the dialogue still tests está/están/hay"
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-04-03-voc.json",
+  "old": "    },\n    {\n      \"lemma\": \"centro\",\n      \"translation\": \"centre\",\n      \"pos\": \"noun\"\n    }",
+  "new": "    }",
+  "sure": false,
+  "why": "\"centro\" is listed again here (also a1-04-02) and never used in this lesson (vocab-unused suspect)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-04-ex.json",
+  "id": "a1-04-04.ex07",
+  "set": {
+   "options": [
+    "derecha",
+    "izquierda",
+    "delante"
+   ]
+  },
+  "kind": "target",
+  "why": "\"delante\" is listed but never used (vocab-unused suspect)"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-04-ex.json",
+  "id": "a1-04-04.ex11",
+  "set": {
+   "sentence": "La biblioteca está a la ___.",
+   "answer": "izquierda"
+  },
+  "kind": "target",
+  "sure": false,
+  "why": "the blank tests the preposition a (movement prepositions are Unit 16); blank the vocabulary word"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-05-ex.json",
+  "id": "a1-04-05.ex10",
+  "set": {
+   "type": "multiple-choice",
+   "category": "reading",
+   "teaches": null,
+   "question": "Why does Carlos want to go to the bank?",
+   "options": [
+    "To take out some money",
+    "To buy some food",
+    "To pay for the hotel"
+   ],
+   "correct": 0
+  },
+  "sure": false,
+  "why": "the \"Reading\" group has no reading question; ask what the story says"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-04-05-ex.json",
+  "id": "a1-04-05.ex11",
+  "set": {
+   "sentence": "El banco está __ lado de la farmacia.",
+   "english": "The bank is next to the pharmacy."
+  },
+  "kind": "target",
+  "why": "story says the bank is next to the pharmacy and the museum is behind the main square; the item said the museum is next to the bank"
+ }
+]
