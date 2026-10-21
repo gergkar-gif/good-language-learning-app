@@ -1,0 +1,544 @@
+[
+ {
+  "file": "content/es-es/grammar/a1/a1-20-01-preparations-gr.json",
+  "old": "Use the familiar present tense to talk about preparations. Use *tener que* + infinitive for things you personally have to do before travelling.",
+  "new": "You know the present tense (Unit 7) and *tener que* + infinitive (Unit 18). Use the present tense for what you do to prepare, and *tener que* + infinitive for things you personally have to do before travelling.",
+  "why": "screen has no \"You know\" recap"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-01-ex.json",
+  "id": "a1.20.01.ex04",
+  "set": {
+   "options": [
+    "Tengo que preparar la maleta.",
+    "Tengo preparar la maleta.",
+    "Tienes que preparar la maleta."
+   ]
+  },
+  "why": "wrong option 3 mixes ir a with a conjugated verb (two faults) and repeats ex10; also a1.20.06.ex03 copies this item",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-20-01-voc.json",
+  "old": "\"lemma\": \"agua\",\n      \"translation\": \"water\",\n      \"pos\": \"noun\"\n    },",
+  "new": "\"lemma\": \"agua\",\n      \"translation\": \"water\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"comprar\",\n      \"translation\": \"to buy\",\n      \"pos\": \"verb\"\n    },",
+  "why": "comprar is in no A1 vocabulary list; a1-20-01 is the first lesson to use it (grammar table, ex08, ex09, ex16)"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-20-02-tener-querer-necesitar-gr.json",
+  "old": "Use *tener*, *querer* and *necesitar* to say what you have, what you want and what you need.",
+  "new": "You know *tener* (Unit 5), *querer* and *necesitar* (Unit 10). Use them to say what you have, what you want and what you need.",
+  "why": "screen has no \"You know\" recap"
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-20-02-voc.json",
+  "old": "\"lemma\": \"ticket\",\n      \"translation\": \"ticket\",",
+  "new": "\"lemma\": \"billete\",\n      \"translation\": \"ticket\",",
+  "why": "English word \"ticket\" listed as a Spanish lemma (also becomes an SRS card); the lesson teaches billete",
+  "kind": "target",
+  "variant": "es-es"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-02-ex.json",
+  "id": "a1.20.02.ex05",
+  "set": {
+   "hint": null
+  },
+  "why": "hint \"water\" is the English of the answer; the english already pins it"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-02-ex.json",
+  "id": "a1.20.02.ex10",
+  "set": {
+   "options": [
+    "Necesito agua.",
+    "Necesitas agua.",
+    "Necesita agua."
+   ]
+  },
+  "why": "infinitive-reply: \"Necesitar agua.\" is a natural reply; make each wrong option another person",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-02-ex.json",
+  "id": "a1.20.02.ex16",
+  "set": {
+   "options": [
+    "Necesito agua.",
+    "Necesito a agua.",
+    "Necesito para agua."
+   ]
+  },
+  "why": "\"Necesito de agua\" is used in Spanish (necesitar de), a possible second right answer",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-02-ex.json",
+  "id": "a1.20.02.ex17",
+  "set": {
+   "question": "I have a ticket, I want a suitcase and I need water. Which sentence says this?",
+   "options": [
+    "Tengo un billete, quiero una maleta y necesito agua.",
+    "Tengo un billete, necesito una maleta y quiero agua.",
+    "Quiero un billete, tengo una maleta y necesito agua."
+   ],
+   "correct": 0
+  },
+  "why": "options 1 and 3 both use tener, querer and necesitar once, so two options \"distinguish the three meanings\"; ask for a pinned meaning",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-20-03-station-questions-gr.json",
+  "old": "Use familiar question structures to ask about tickets, times, destinations and platforms at a station.",
+  "new": "You know *¿Dónde está...?* (Unit 15) and *¿A qué hora...?* (Unit 6). Use them to ask about times, destinations and platforms at a station.",
+  "why": "screen has no \"You know\" recap; \"tickets\" is not in its examples"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-20-03-station-questions-gr.json",
+  "old": "\"What time is the train?\"",
+  "new": "\"What time does the train leave?\"",
+  "why": "table gloss \"What time is the train?\" does not translate ¿A qué hora sale el tren?"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-03-ex.json",
+  "id": "a1.20.03.ex06",
+  "set": {
+   "options": [
+    "¿A qué hora sale el tren?",
+    "¿A qué hora salgo el tren?",
+    "¿A qué hora está el tren?"
+   ],
+   "distractor_skills": {
+    "1": "present-irregular-yo"
+   }
+  },
+  "why": "wrong option 3 \"¿Qué hora está el tren?\" has two faults; option 2 \"salgo\" is a well-formed present-irregular-yo form",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-03-ex.json",
+  "id": "a1.20.03.ex17",
+  "set": {
+   "options": [
+    "¿A qué hora llega el tren?",
+    "¿A qué hora llego el tren?",
+    "¿Qué hora llega el tren?"
+   ],
+   "distractor_skills": {
+    "1": "ar-verbs"
+   }
+  },
+  "why": "duplicate of ex06 (same options); new sentence, one fault each",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-20-04-movement-gr.json",
+  "old": "Use *ir* to say where you are going. Use *ir a* + infinitive to say what you are going to do.",
+  "new": "You know *ir* (Unit 16) and *ir a* + infinitive (Unit 25). Use *ir a* + a place to say where you are going, and *ir a* + infinitive to say what you are going to do.",
+  "why": "screen presents ir and ir a + infinitive as new; recap Units 16 and 25"
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-20-04-voc.json",
+  "old": "    {\n      \"lemma\": \"destino\",\n      \"translation\": \"destination\",\n      \"pos\": \"noun\"\n    },\n",
+  "new": "",
+  "why": "vocab-unused: destino is listed but never used in this lesson (a1-20-03 lists and uses it)"
+ },
+ {
+  "file": "content/es-es/vocabulary/a1/a1-20-04-voc.json",
+  "old": "\"translation\": \"to where\",",
+  "new": "\"translation\": \"where to\",",
+  "why": "gloss \"to where\" differs from Unit 25 (\"where to\")"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-04-ex.json",
+  "id": "a1.20.04.ex10",
+  "set": {
+   "options": [
+    "Voy a la estación.",
+    "Vas a la estación.",
+    "Voy la estación."
+   ]
+  },
+  "why": "wrong option \"Voy a la estación voy.\" is a garbled non-phrase; use another person",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-04-ex.json",
+  "id": "a1.20.04.ex16",
+  "set": {
+   "options": [
+    "Voy a la estación.",
+    "Voy la estación.",
+    "Voy en la estación."
+   ]
+  },
+  "why": "wrong option \"Voy a estación la.\" is a garbled word order; use a real preposition fault",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-19.json",
+  "old": "mira las luces reflejadas en el agua.",
+  "new": "mira las luces en el agua.",
+  "why": "participle adjective \"reflejadas\" is above A1 (stories are exempt from met words, not from level)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-19.json",
+  "old": "Recuerdo mi primera semana aquí, cuando no conocía a nadie y me sentía sola.",
+  "new": "Recuerdo mi primera semana aquí. Ahora estoy muy contenta.",
+  "why": "imperfect \"conocía\", \"sentía\" are A2 past forms at A1",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-19.json",
+  "old": "\"text\": \"Sí, maleta hecha y billete en mano.",
+  "new": "\"text\": \"Sí, maleta lista y billete en mano.",
+  "why": "\"hecha\" is a past participle (A2 perfect); \"lista\" is known",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-19.json",
+  "old": "¿Cómo se sentía Meg durante su primera semana en la ciudad?",
+  "new": "Según Carlos, ¿qué hace Meg todos los días?",
+  "why": "question used the imperfect (A2) and asked about the line that is now in the present; ask about what Carlos says",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-19.json",
+  "old": "\"Muy contenta y con muchos amigos\"",
+  "new": "\"Trabaja en una oficina\"",
+  "why": "new option for the rewritten question 2",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-19.json",
+  "old": "\"Sola, porque no conocía a nadie\"",
+  "new": "\"Habla español\"",
+  "why": "right answer of the rewritten question 2 (Carlos: hablas español todos los días)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-19.json",
+  "old": "\"Cansada del trabajo\"",
+  "new": "\"Cocina en casa\"",
+  "why": "new option for the rewritten question 2",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-19.json",
+  "old": "\"Emocionada por las clases de español\"",
+  "new": "\"Viaja en tren\"",
+  "why": "new option for the rewritten question 2",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-19.json",
+  "old": "Meg recuerda: 'mi primera semana aquí, cuando no conocía a nadie y me sentía sola'.",
+  "new": "Carlos dice: 'hablas español todos los días'.",
+  "why": "explanation of the rewritten question 2",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-19.json",
+  "old": "\"El billete, pero aún no ha hecho la maleta\"",
+  "new": "\"El billete, pero la maleta no está lista\"",
+  "why": "present perfect \"ha hecho\" is A2",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-19.json",
+  "old": "\"La maleta hecha y el billete en mano\"",
+  "new": "\"La maleta lista y el billete en mano\"",
+  "why": "participle \"hecha\" is A2",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-19.json",
+  "old": "Carlos dice: 'Sí, maleta hecha y billete en mano.",
+  "new": "Carlos dice: 'Sí, maleta lista y billete en mano.",
+  "why": "explanation follows the story line",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-19.json",
+  "old": "\"lemma\": \"intercambio\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"exchange\"\n        }",
+  "new": "\"lemma\": \"maleta\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"suitcase\"\n        },\n        {\n          \"lemma\": \"viaje\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"trip\"\n        }",
+  "why": "placeholder keyVocabulary \"intercambio\" is not in the story; maleta and viaje are"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-20-05-integrated-travel-gr.json",
+  "old": "Combine familiar *travel* vocabulary, present tense, *tener que*, *tener*, *querer*, *necesitar* and *ir a* + infinitive to describe the start of a journey.",
+  "new": "You know all of these: the present tense, *tener que*, *tener*, *querer*, *necesitar* and *ir a* + infinitive. Combine them with the travel words of this unit to describe the start of a journey.",
+  "why": "italicised English word \"travel\" in a Spanish-forms sentence; no recap"
+ },
+ {
+  "file": "content/es-es/grammar/a1/a1-20-05-integrated-travel-gr.json",
+  "old": "A *travel* interaction can combine several familiar structures:",
+  "new": "A travel conversation can combine several familiar structures:",
+  "why": "italicised English word \"travel\""
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-05-ex.json",
+  "id": "a1.20.05.ex06",
+  "set": {
+   "hint": null
+  },
+  "why": "hint \"arrive\" is the English of the answer; the english already pins llegar"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-05-ex.json",
+  "id": "a1.20.05.ex09",
+  "set": {
+   "options": [
+    "Tengo que llegar a la estación.",
+    "Tengo llegar a la estación.",
+    "Tengo que llego a la estación."
+   ]
+  },
+  "why": "same sentence and options as ex04 and ex14; new sentence",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-05-ex.json",
+  "id": "a1.20.05.ex10",
+  "set": {
+   "options": [
+    "Necesito mi billete.",
+    "Necesitas mi billete.",
+    "Necesita mi billete."
+   ]
+  },
+  "why": "infinitive-reply: \"Necesitar mi billete.\" is a natural reply; make each wrong option another person",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-05-ex.json",
+  "id": "a1.20.05.ex14",
+  "set": {
+   "question": "Which means \"We have to go to the station\"?",
+   "options": [
+    "Tenemos que ir a la estación.",
+    "Tenemos ir a la estación.",
+    "Tenemos que vamos a la estación."
+   ]
+  },
+  "why": "same sentence and options as ex04 and ex09; new sentence",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-05-ex.json",
+  "id": "a1.20.05.ex15",
+  "set": {
+   "options": [
+    "Necesito mi billete.",
+    "Necesito a mi billete.",
+    "Necesito para mi billete."
+   ]
+  },
+  "why": "\"Necesito de mi billete\" is used in Spanish (necesitar de), a possible second right answer",
+  "kind": "target",
+  "sure": false
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-20.json",
+  "old": "Todo comprobado.\"",
+  "new": "Todo está bien.\"",
+  "why": "participle \"comprobado\" (A2)",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-20.json",
+  "old": "el billete de tren. Todo comprobado'.",
+  "new": "el billete de tren. Todo está bien'.",
+  "why": "explanation follows the story line",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/stories/original/a1/a1-20.json",
+  "old": "Cuánto aprendimos en este curso de A1.",
+  "new": "Cuánto aprendemos en este curso de A1.",
+  "why": "preterite \"aprendimos\" is A2",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-20-consolidation.json",
+  "old": "using cumulative A1 language.\"\n      ]\n    },\n    {\n      \"type\": \"recycle\"",
+  "new": "using what you know from A1.\"\n      ]\n    },\n    {\n      \"type\": \"recycle\"",
+  "why": "awkward \"cumulative A1 language\" in goal line"
+ },
+ {
+  "file": "content/es-es/lessons/a1/a1-20-consolidation.json",
+  "old": "using cumulative A1 language.\"\n      ]\n    }\n  ]",
+  "new": "using what you know from A1.\"\n      ]\n    }\n  ]",
+  "why": "checklist line, keep identical to goal"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-consolidation-ex.json",
+  "id": "a1.20.06.ex03",
+  "set": {
+   "question": "Which means \"I have to check the ticket\"?",
+   "options": [
+    "Tengo que comprobar el billete.",
+    "Tengo comprobar el billete.",
+    "Tienes que comprobar el billete."
+   ]
+  },
+  "why": "consolidation-copy of a1.20.01.ex04",
+  "kind": "target",
+  "variant": "es-es"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-consolidation-ex.json",
+  "id": "a1.20.06.ex05",
+  "set": {
+   "question": "Which means \"Where is platform three?\"",
+   "options": [
+    "¿Dónde está el andén tres?",
+    "¿Dónde es el andén tres?",
+    "¿Dónde hay el andén tres?"
+   ]
+  },
+  "why": "consolidation-copy of a1.20.03.ex04",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-consolidation-ex.json",
+  "id": "a1.20.06.ex06",
+  "set": {
+   "options": [
+    "Voy a la estación.",
+    "Voy la estación.",
+    "Voy en la estación."
+   ]
+  },
+  "why": "wrong option \"Voy a estación la.\" is a garbled word order",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-consolidation-ex.json",
+  "id": "a1.20.06.ex09",
+  "set": {
+   "options": [
+    "Mi madre es amable.",
+    "Mi madre son amable.",
+    "Mi madre eres amable."
+   ],
+   "distractor_skills": null
+  },
+  "why": "wrong option \"Mi madre está amable.\" is a natural right answer (found in units 6-11); use another person",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-consolidation-ex.json",
+  "id": "a1.20.06.ex12",
+  "set": {
+   "question": "I am at the station. Which sentence says this?",
+   "options": [
+    "Estoy en la estación.",
+    "Soy en la estación.",
+    "Estás en la estación."
+   ],
+   "correct": 0,
+   "distractor_skills": null
+  },
+  "why": "wrong option \"Hay en la estación.\" is not a sentence; stem is meta",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-consolidation-ex.json",
+  "id": "a1.20.06.ex14",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Viajero",
+     "text": "¿Dónde está la estación?"
+    },
+    {
+     "speaker": "Empleado",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Está allí.",
+    "Es allí.",
+    "Hay allí."
+   ],
+   "correct": 0
+  },
+  "why": "copy of a1.20.03.ex10 with one word removed",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-consolidation-ex.json",
+  "id": "a1.20.06.ex15",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Empleado",
+     "text": "¿Qué necesitas?"
+    },
+    {
+     "speaker": "Viajero",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Necesito mi billete.",
+    "Necesitas mi billete.",
+    "Necesita mi billete."
+   ],
+   "correct": 0
+  },
+  "why": "infinitive-reply: \"Necesitar mi billete.\" is a natural reply; make each wrong option another person. The employee asks, the traveller answers",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-consolidation-ex.json",
+  "id": "a1.20.06.ex16",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Empleado",
+     "text": "¿Qué vas a hacer?"
+    },
+    {
+     "speaker": "Viajero",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Voy a tomar el tren.",
+    "Voy tomar el tren.",
+    "Voy a tomo el tren."
+   ],
+   "correct": 0
+  },
+  "why": "a station employee does not say Voy a tomar el tren; the employee asks, the traveller answers",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-consolidation-ex.json",
+  "id": "a1.20.06.ex18",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that you have to prepare the suitcase, that you need your ticket and that you are going to take the train.",
+     "answer": "Tengo que preparar la maleta. Necesito mi billete. Voy a tomar el tren."
+    }
+   ]
+  },
+  "why": "prompt cannot pin one long answer; pin it",
+  "kind": "target"
+ },
+ {
+  "file": "content/es-es/exercises/a1/a1-20-consolidation-ex.json",
+  "id": "a1.20.06.ex20",
+  "set": {
+   "sentence": "El tren _____ a las seis de la mañana.",
+   "english": "The train leaves at six in the morning."
+  },
+  "why": "unmet word vuelo (A2, a2-18-01); the unit is about trains",
+  "kind": "target"
+ }
+]
