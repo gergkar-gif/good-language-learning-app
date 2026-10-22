@@ -110,9 +110,9 @@
       "type": "sentence-order",
       "category": "vocabulary",
       "sentences": [
-        "Már jártam Japánban, de most jártam ott először egyedül.",
-        "Nagyon ideges voltam, mielőtt nekivágtam az útnak.",
-        "Egy kedves helyi lakos mély benyomást tett rám.",
+        "Már jártam Japánban, de most jártam ott először.",
+        "Nagyon ideges voltam, mielőtt nekivágtam a kihívásnak.",
+        "Egy kedves nő mély benyomást tett rám.",
         "Azóta sokat változtam, és egyre bátrabb lettem."
       ],
       "solution": [
@@ -211,7 +211,7 @@
       "prompt": [
         {
           "speaker": "Petra",
-          "text": "Mennyire vagy ma magabiztos, a régi önmagadhoz képest?"
+          "text": "Mennyire vagy ma magabiztos, a régi énedhez képest?"
         },
         {
           "speaker": "Meg",
@@ -220,7 +220,7 @@
       ],
       "options": [
         "Ehhez képest ma sokkal bátrabb vagyok.",
-        "Ehhez képest ma sokkal félénkebb voltam."
+        "Ehhez képest ma sokkal bátrabb voltam."
       ],
       "correct": 0,
       "teaches": [
@@ -237,7 +237,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Melyik út volt izgalmasabb, az első vagy a mostani?"
+          "text": "Melyik utazásod volt izgalmasabb, az első vagy a mostani?"
         },
         {
           "speaker": "Meg",
@@ -246,15 +246,12 @@
       ],
       "options": [
         "A mostani sokkal izgalmasabb volt, mint az első.",
-        "Az első ugyanolyan volt, mint a mostani."
+        "A mostani sokkal izgalmasabb volt az első."
       ],
       "correct": 0,
       "teaches": [
         "comparative-bb"
-      ],
-      "distractor_skills": {
-        "1": "olyan-mint"
-      }
+      ]
     },
     {
       "id": "b1-02-05-writing-1",
@@ -304,10 +301,10 @@
       "id": "b1-02-05-check-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Egyre bátrabb lettem, ____ többször próbáltam ki új dolgokat.",
+      "sentence": "Minél többször próbáltam ki új dolgokat, ____ bátrabb lettem.",
       "hint": "the more",
-      "english": "I became increasingly brave the more times I tried new things.",
-      "answer": "minél",
+      "english": "The more often I tried new things, the braver I became.",
+      "answer": "annál",
       "teaches": [
         "correlative-minel-annal"
       ],
@@ -317,11 +314,11 @@
       "id": "b1-02-05-reading-1",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mit keresett az édesanya a történet elején?",
+      "question": "Mit keresett az édesanya a házban?",
       "options": [
-        "Hét krajcárt, hogy szappant vehessen.",
-        "Egy elveszett kabátot.",
-        "A gyerekek iskolatáskáját."
+        "Egy kis pénzt.",
+        "Az elveszett kulcsot.",
+        "A régi kabátját."
       ],
       "correct": 0
     },
@@ -329,11 +326,11 @@
       "id": "b1-02-05-reading-2",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mi tett mély benyomást az elbeszélőre gyerekkorában?",
+      "question": "Mi tett mély benyomást az elbeszélőre?",
       "options": [
-        "Az, ahogyan édesanyja a nehéz helyzetben is megőrizte a jókedvét.",
+        "Az, hogy az anyja nevetett a nehéz napon.",
         "Az, hogy sok pénzt találtak a házban.",
-        "Az, hogy új ruhát kaptak."
+        "Az, hogy az anyja új ruhát kapott."
       ],
       "correct": 0
     },
@@ -341,11 +338,11 @@
       "id": "b1-02-05-reading-3",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mire jött rá az elbeszélő, amikor visszatekint arra a délutánra?",
+      "question": "Mit értett meg az elbeszélő csak felnőttként?",
       "options": [
-        "Hogy egy emlék legfontosabb részletei nem a pénzről szólnak, hanem az emberekről.",
-        "Hogy sosem szabad szegénynek lenni.",
-        "Hogy a pénz mindig fontosabb, mint az emberek."
+        "Hogy az anyjának nagy bátorság kellett.",
+        "Hogy az anyja sok pénzt keresett.",
+        "Hogy az anyja beteg volt."
       ],
       "correct": 0
     },
@@ -370,48 +367,48 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "az",
-        "első",
-        "úthoz",
-        "képest",
         "a",
         "mostani",
+        "utam",
+        "az",
+        "elsőhöz",
+        "képest",
         "izgalmasabb",
         "volt"
       ],
       "solutions": [
         [
           "az",
-          "első",
-          "úthoz",
+          "elsőhöz",
           "képest",
           "a",
           "mostani",
+          "utam",
           "izgalmasabb",
           "volt"
         ],
         [
           "a",
           "mostani",
-          "izgalmasabb",
-          "volt",
+          "utam",
           "az",
-          "első",
-          "úthoz",
-          "képest"
-        ],
-        [
-          "az",
-          "első",
-          "úthoz",
+          "elsőhöz",
           "képest",
           "izgalmasabb",
-          "volt",
+          "volt"
+        ],
+        [
           "a",
-          "mostani"
+          "mostani",
+          "utam",
+          "izgalmasabb",
+          "volt",
+          "az",
+          "elsőhöz",
+          "képest"
         ]
       ],
-      "english": "Compared to the first trip, this one was more exciting.",
+      "english": "Compared to the first one, my present trip was more exciting.",
       "teaches": [
         "kepest"
       ],

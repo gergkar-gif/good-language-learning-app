@@ -59,9 +59,9 @@
       "category": "reading",
       "question": "Miért nem szól a válasz egyetlen népről, ha megkérdezik, kik éltek a Kárpát-medencében a magyarok előtt?",
       "options": [
-        "Mert egymást követő és néha egyidejűleg élő népek sora lakta a medencét.",
-        "Mert a római birodalom bukása után évszázadokon át lakatlan maradt a vidék.",
-        "Mert az avarok és a szlávok teljesen beolvadtak az ókori kelta lakosságba."
+        "Mert a népek egymás után, néha egyidejűleg éltek itt.",
+        "Mert a rómaiak után nem lakott itt nép.",
+        "Mert az avarok után a rómaiak jöttek vissza."
       ],
       "correct": 0
     },
@@ -72,8 +72,8 @@
       "question": "Mi történt az avarok hatalmával a 9. század elejére?",
       "options": [
         "Meggyengült és eltűnt.",
-        "Tovább erősödött.",
-        "Egyesült a magyar törzsekkel."
+        "Még erős maradt.",
+        "Még sokáig uralkodott a medencében."
       ],
       "correct": 0
     },
@@ -98,9 +98,9 @@
       "category": "reading",
       "question": "Hogyan maradt fenn a korábbi népek hatása, ha politikai hatalmuk eltűnt?",
       "options": [
-        "Helynevekben, régészeti leletekben és a táj kultúrájában.",
-        "Sehogyan, teljesen nyomtalanul eltűntek.",
-        "Csak írott könyvekben, amelyeket ők maguk írtak."
+        "Helynevekben és régészeti leletekben.",
+        "Egyetlen nyomuk sem maradt meg.",
+        "Csak a római városokban."
       ],
       "correct": 0
     },
@@ -115,8 +115,8 @@
         "nyugaton,",
         "míg",
         "keleten",
-        "szláv",
-        "törzsek",
+        "más",
+        "népek",
         "éltek."
       ],
       "solution": [
@@ -126,11 +126,11 @@
         "nyugaton,",
         "míg",
         "keleten",
-        "szláv",
-        "törzsek",
+        "más",
+        "népek",
         "éltek."
       ],
-      "english": "The Romans ruled in the west, while Slavic tribes lived in the east.",
+      "english": "The Romans ruled in the west, while other peoples lived in the east.",
       "teaches": [
         "mig-egyidejuseg"
       ]
@@ -138,11 +138,11 @@
     {
       "id": "b1-karpatmedence-04.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "A",
-          "text": "Egyetlen nép uralta valaha az egész Kárpát-medencét a honfoglalás előtt?"
+          "text": "A 9. század végén egyetlen nép uralkodott az egész Kárpát-medencében?"
         },
         {
           "speaker": "B",
@@ -150,21 +150,24 @@
         }
       ],
       "options": [
-        "Nem, egyik nép uralma sem tartott örökké vagy terjedt ki az egészre.",
-        "Igen, mindig a rómaiak uralták az egészet.",
-        "Igen, az avarok uralták örökre az egészet."
+        "Nem, a medencében sok nép és uralkodó élt egymás mellett.",
+        "Igen, a rómaiak uralkodtak az egész medencében.",
+        "Igen, az avarok uralkodtak még az egész medencében."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-carpathian-basin-before-magyars-vocab"
+      ]
     },
     {
       "id": "b1-karpatmedence-04.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Ezeknek a népeknek a hatása a mai napig megtalálható a táj kultúrájában.",
+      "sentence": "Ezeknek a népeknek a hatása ma is látszik a vidék kultúrájában.",
       "options": [
-        "The influence of these peoples can still be found in the region's culture today.",
-        "These peoples left no trace at all.",
-        "Only the Romans left any lasting influence."
+        "The influence of these peoples can still be seen in the region's culture today.",
+        "These peoples left no trace in the culture of the region at all.",
+        "Only the Romans left any lasting influence on the region today."
       ],
       "correct": 0,
       "teaches": [

@@ -59,9 +59,9 @@
       "category": "reading",
       "question": "Mi volt a vérszerződés célja a hagyomány szerint?",
       "options": [
-        "A hét törzs vezetőinek egyesítése egy közös vezetés alatt.",
-        "Egy kereskedelmi szerződés a rómaiakkal.",
-        "A besenyők legyőzése csatában."
+        "Hogy a nép egyesüljön egy közös vezetés alatt.",
+        "Hogy a nép megtámadja a besenyőket és a kazárokat.",
+        "Hogy a nép a besenyőkkel együtt nyugatra menjen."
       ],
       "correct": 0
     },
@@ -131,11 +131,11 @@
     {
       "id": "b1-honfoglalas-03.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "A",
-          "text": "Kicsoda Árpád?"
+          "text": "Ki volt Árpád?"
         },
         {
           "speaker": "B",
@@ -143,11 +143,14 @@
         }
       ],
       "options": [
-        "Az a vezér, aki bevezette a magyar törzseket a Kárpát-medencébe, és megalapította az Árpád-házat.",
-        "A besenyők vezére, aki megtámadta az etelközi magyarokat, és a Kárpátok felé szorította őket.",
-        "Egy frank uralkodó, aki a bajor seregeket vezette a magyar törzsek ellen a pozsonyi csatában."
+        "A magyarok vezére, aki bevezette a törzseket a Kárpát-medencébe.",
+        "A besenyők vezére, aki megtámadta a magyarokat Etelközben.",
+        "Egy bajor vezér, aki megtámadta a magyarokat Pozsonynál."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-honfoglalas-vocab"
+      ]
     },
     {
       "id": "b1-honfoglalas-03.ex08",
@@ -156,8 +159,8 @@
       "sentence": "Az Árpád-ház közel négyszáz évig uralkodott Magyarországon.",
       "options": [
         "The Árpád dynasty ruled Hungary for nearly four hundred years.",
-        "The Árpád dynasty ruled for only ten years.",
-        "The Árpád dynasty never actually ruled Hungary."
+        "The Árpád dynasty ruled Hungary for nearly four decades.",
+        "The Árpád dynasty ruled Hungary for nearly two hundred years."
       ],
       "correct": 0,
       "teaches": [

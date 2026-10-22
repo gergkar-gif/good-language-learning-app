@@ -93,11 +93,11 @@
       "id": "b1-03-05-controlled-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Amikor egy tervet ____, az egy hosszú távú célt ér el. (achieves/realizes)",
+      "question": "Which word means \"to achieve, to realize\"?",
       "options": [
         "megvalósít",
-        "elképzel",
-        "aggódik"
+        "elköteleződik",
+        "elképzel"
       ],
       "correct": 0,
       "teaches": [
@@ -110,10 +110,10 @@
       "type": "sentence-order",
       "category": "vocabulary",
       "sentences": [
-        "Van egy hosszú távú tervem: szeretném, ha öt éven belül saját üzletem lenne.",
-        "Minden nap teszek egy lépést azért, hogy közelebb kerüljek a célomhoz.",
-        "Néha akadályok és kétségek jelennek meg az utamban.",
-        "De elköteleztem magam a terv mellett, és minden mérföldkövet ünneplek."
+        "Van egy hosszú távú tervem: szeretném, ha öt éven belül saját cégem lenne.",
+        "Minden nap teszek egy lépést azért, hogy elérjem a célomat.",
+        "Néha akadályok és kétségek is vannak.",
+        "De aki elköteleződik a terv mellett, az minden mérföldkövet ünnepel."
       ],
       "solution": [
         0,
@@ -203,14 +203,18 @@
       "question": "Which sentence correctly combines a wish with the purpose behind it?",
       "options": [
         "Szeretném, ha sikerülne a tervem, ezért mindent megteszek azért, hogy ez megvalósuljon.",
-        "Szeretném, hogy sikerül a tervem, azért mindent megteszek, hogy ez megvalósul.",
-        "Szeretnék sikerülni a tervemnek, azért teszek mindent."
+        "Szeretném, ha sikerülne a tervem, ezért mindent megteszek azért, hogy ez megvalósul.",
+        "Szeretném, ha sikerülne a tervem, ezért mindent megteszek, nehogy ez megvalósuljon."
       ],
       "correct": 0,
       "teaches": [
         "azert-hogy-purpose"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "nehogy-purpose"
+      }
     },
     {
       "id": "b1-03-05-dialogue-1",
@@ -228,11 +232,11 @@
       ],
       "options": [
         "Szeretném, ha öt éven belül megvalósulna a jövőképem, ezért minden lépést megteszek érte.",
-        "Nincs semmilyen tervem, csak élek napról napra."
+        "Szeretném, hogy öt éven belül megvalósulna a jövőképem, ezért minden lépést megteszek érte."
       ],
       "correct": 0,
       "teaches": [
-        "b1-plans-ambitions-vocab"
+        "barcsak-wish"
       ]
     },
     {
@@ -242,7 +246,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hogyan maradsz elkötelezett egy ilyen hosszú terv mellett?"
+          "text": "Mi segít neked a hosszú távú terveidben?"
         },
         {
           "speaker": "Meg",
@@ -250,8 +254,8 @@
         }
       ],
       "options": [
-        "Minden mérföldkövet ünneplek, az segít kitartani.",
-        "Sosem gondolok a tervemre, elfelejtem."
+        "Minden mérföldkövet ünneplek, az sokat segít.",
+        "Szeretném, ha öt éven belül saját cégem lenne."
       ],
       "correct": 0,
       "teaches": [
@@ -293,8 +297,8 @@
       "question": "Which sentence uses the more formal, written version of a purpose clause?",
       "options": [
         "Minden hónapban félreteszek pénzt, annak érdekében, hogy megvalósuljon a tervem.",
-        "Minden hónapban félreteszek pénzt, ezért megvalósul a tervem.",
-        "Minden hónapban félreteszek pénzt, mert megvalósul a tervem."
+        "Minden hónapban félreteszek pénzt, ezért hamarosan megvalósul a tervem.",
+        "Minden hónapban félreteszek pénzt, mert hamarosan megvalósul a tervem."
       ],
       "correct": 0,
       "teaches": [
@@ -306,9 +310,9 @@
       "id": "b1-03-05-check-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Minden újabb ____ azt bizonyítja, hogy a terve valóban megvalósul.",
+      "sentence": "Minden ____ azt mutatja, hogy a terve sikerül.",
       "hint": "milestone",
-      "english": "Every new milestone proves that his/her plan is truly being realized.",
+      "english": "Every milestone shows that his/her plan is succeeding.",
       "answer": "mérföldkő",
       "teaches": [
         "b1-plans-ambitions-vocab"
@@ -319,11 +323,11 @@
       "id": "b1-03-05-reading-1",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Miről álmodozott Tímár Mihály, amíg egyszerű hajósként dolgozott?",
+      "question": "Mit akart Tímár Mihály fiatalon?",
       "options": [
-        "Hogy egyszer saját hajója és saját üzlete legyen.",
-        "Hogy visszatérjen a szülőfalujába.",
-        "Hogy elhagyja a Dunát, és tengerre szálljon."
+        "Azt akarta, hogy saját hajója legyen.",
+        "Azt akarta, hogy külföldön dolgozzon.",
+        "Azt akarta, hogy tanár legyen."
       ],
       "correct": 0
     },
@@ -331,11 +335,11 @@
       "id": "b1-03-05-reading-2",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hogyan bizonyította Mihály a rátermettségét a viharos éjszakán?",
+      "question": "Mit csinált Mihály a viharos éjszakán?",
       "options": [
-        "Higgadtan a szigetre irányította a hajót, és mindenkit megmentett.",
-        "Elszökött a hajóról, amikor veszélybe kerültek.",
-        "Feladta, és hagyta elsüllyedni a hajót."
+        "Nyugodtan egy szigethez vezette a hajót.",
+        "Elment a hajóról, és hazament.",
+        "Egész éjjel aludt a hajón, a szobájában."
       ],
       "correct": 0
     },
@@ -343,11 +347,11 @@
       "id": "b1-03-05-reading-3",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mit tanulhatunk Tímár Mihály történetéből, amikor visszatekint a fiatalkorára?",
+      "question": "Miért valósult meg Mihály álma?",
       "options": [
-        "Hogy egy hosszú távú terv és a kitartás segít valóra váltani egy álmot.",
-        "Hogy a pénz mindig fontosabb, mint a tervek.",
-        "Hogy jobb sosem kockáztatni semmit."
+        "Mert minden nap tett egy lépést.",
+        "Mert véletlenül sok pénzt talált.",
+        "Mert egy barátja sok pénzt adott neki."
       ],
       "correct": 0
     }

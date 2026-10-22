@@ -24,8 +24,8 @@
       "question": "Which word means \"so that... doesn't\" and already contains a negative?",
       "options": [
         "nehogy",
-        "nem hogy",
-        "sehogy"
+        "azért nem",
+        "hogy nem"
       ],
       "correct": 0,
       "teaches": [
@@ -191,10 +191,10 @@
           "gloss": "succeeds"
         },
         {
-          "word": "fejlődik",
-          "inflected": "fejlődjön",
-          "sentence": "Spórolok, azért, hogy fejlődjön az álmom.",
-          "gloss": "develops"
+          "word": "elér",
+          "inflected": "elérjem",
+          "sentence": "Spórolok, azért, hogy elérjem az álmomat.",
+          "gloss": "reach"
         }
       ],
       "teaches": [
@@ -210,13 +210,16 @@
       "options": [
         "Nehogy elfelejtsem a tervet.",
         "Nehogy ne felejtsem el a tervet.",
-        "Nehogy nem felejtsem el a tervet."
+        "Nehogy elfelejtem a tervet."
       ],
       "correct": 0,
       "teaches": [
         "nehogy-purpose"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "2": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-03-04-dialogue-1",
@@ -225,7 +228,7 @@
       "prompt": [
         {
           "speaker": "Petra",
-          "text": "Mi lehet a legnagyobb akadály a terved útjában?"
+          "text": "Mi lehet a legnagyobb akadály a terved előtt?"
         },
         {
           "speaker": "Meg",
@@ -233,8 +236,8 @@
         }
       ],
       "options": [
-        "A legnagyobb nehézség az időhiány és néha a saját kétségeim.",
-        "Semmi sem állhat a tervem útjába."
+        "A legnagyobb nehézség az, hogy kevés az időm.",
+        "Azért, hogy jobban beszéljek magyarul."
       ],
       "correct": 0,
       "teaches": [
@@ -256,13 +259,16 @@
         }
       ],
       "options": [
-        "Nehogy hibázzak, mert nagy kockázat lenne egy hiba.",
-        "Azért, mert szeretem a hibákat."
+        "Nehogy hibát csináljak, mert nagy kockázat lenne egy hiba.",
+        "Nehogy hibát csinálok, mert nagy kockázat lenne egy hiba."
       ],
       "correct": 0,
       "teaches": [
-        "b1-plans-ambitions-vocab"
-      ]
+        "nehogy-purpose"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-03-04-writing-1",
@@ -296,17 +302,20 @@
       "id": "b1-03-04-check-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word can carry the purpose clause after the main verb, split from hogy later in the sentence?",
+      "question": "Which word fills the gap and points ahead to the hogy-clause? ____ dolgozom keményen, hogy sikerüljön a projektem.",
       "options": [
-        "azért",
-        "hogy",
-        "nehogy"
+        "Azért",
+        "Nehogy",
+        "Azóta"
       ],
       "correct": 0,
       "teaches": [
         "azert-hogy-purpose"
       ],
-      "stage": "check"
+      "stage": "check",
+      "distractor_skills": {
+        "1": "nehogy-purpose"
+      }
     },
     {
       "id": "b1-03-04-check-2",

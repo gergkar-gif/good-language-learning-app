@@ -9,7 +9,7 @@
       "options": [
         "már",
         "még",
-        "soha"
+        "most"
       ],
       "correct": 0,
       "teaches": [
@@ -24,14 +24,17 @@
       "question": "Which phrase means \"never yet\"?",
       "options": [
         "még soha nem",
-        "már nem",
-        "most nem"
+        "már soha nem",
+        "most már nem"
       ],
       "correct": 0,
       "teaches": [
         "mar-experiential"
       ],
-      "stage": "introduce"
+      "stage": "introduce",
+      "distractor_skills": {
+        "1": "soha-needs-nem-negative-concord"
+      }
     },
     {
       "id": "b1-02-01-controlled-1",
@@ -39,20 +42,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "már",
-          "already, ever"
-        ],
-        [
-          "még soha nem",
-          "never yet"
-        ],
-        [
           "valaha",
           "ever"
         ],
         [
           "sosem",
           "never"
+        ],
+        [
+          "kipróbál",
+          "to try out"
+        ],
+        [
+          "megtapasztal",
+          "to experience"
         ]
       ],
       "teaches": [
@@ -97,7 +100,7 @@
       "options": [
         "már",
         "még",
-        "soha"
+        "néha"
       ],
       "correct": 0,
       "teaches": [
@@ -168,10 +171,10 @@
           "gloss": "sushi"
         },
         {
-          "word": "osztriga",
-          "inflected": "osztrigát",
-          "sentence": "Már ettem osztrigát.",
-          "gloss": "oyster"
+          "word": "hal",
+          "inflected": "halat",
+          "sentence": "Már ettem halat.",
+          "gloss": "fish"
         }
       ],
       "teaches": [
@@ -215,7 +218,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "yes-no-questions"
+        "mar-experiential"
       ]
     },
     {
@@ -225,7 +228,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Próbáltál már szörfözni?"
+          "text": "Kipróbáltad már a halászlét?"
         },
         {
           "speaker": "Anna",
@@ -233,8 +236,8 @@
         }
       ],
       "options": [
-        "Nem, még soha nem próbáltam.",
-        "Igen, még soha nem próbáltam."
+        "Nem, még soha nem próbáltam ki.",
+        "Igen, még soha nem próbáltam ki."
       ],
       "correct": 0,
       "teaches": [
@@ -276,7 +279,7 @@
       "question": "Which sentence means \"Have you ever tried sushi?\"",
       "options": [
         "Próbáltál már szusit?",
-        "Próbálsz szusit?",
+        "Szoktál szusit enni?",
         "Ettél egy szusit ebédre?"
       ],
       "correct": 0,

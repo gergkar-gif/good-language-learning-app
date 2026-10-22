@@ -15,7 +15,10 @@
       "teaches": [
         "nek-conditional"
       ],
-      "stage": "recognize"
+      "stage": "recognize",
+      "distractor_skills": {
+        "2": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-03-consolidation-2",
@@ -147,9 +150,9 @@
       "category": "vocabulary",
       "sentences": [
         "Már régóta elképzelem, milyen lehetne a jövőm.",
-        "Bárcsak sikerülne végre elindítanom a saját vállalkozásomat!",
-        "Minden nap teszek egy lépést azért, hogy közelebb kerüljek a célomhoz.",
-        "Nehogy feladjam, még ha nehézségek is jönnek az utamba."
+        "Bárcsak sikerülne végre saját céget alapítanom!",
+        "Minden nap teszek egy lépést azért, hogy elérjem a célomat.",
+        "Nehogy feladjam, még ha nehézségek is vannak."
       ],
       "solution": [
         0,
@@ -177,12 +180,12 @@
         }
       ],
       "options": [
-        "Szeretném, ha öt éven belül sikerülne saját vállalkozást indítanom, de a legnagyobb kétségem az időhiány.",
-        "Szeretnéd, ha öt éven belül sikerülne saját vállalkozást indítanod, de a legnagyobb kétséged az időhiány."
+        "Szeretném, ha öt év múlva sikerülne saját céget alapítanom, de a legnagyobb kétségem az, hogy kevés az időm.",
+        "Szeretnéd, ha öt év múlva sikerülne saját céget alapítanod, de a legnagyobb kétséged az, hogy kevés az időd."
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language"
+        "nek-conditional"
       ],
       "stage": "in-context"
     },
@@ -204,8 +207,8 @@
           "answer": "Azt akarom, hogy fejlődjön a karrierem."
         },
         {
-          "prompt": "Say you work hard so that your project succeeds.",
-          "answer": "Azért dolgozom keményen, hogy sikerüljön a projektem."
+          "prompt": "Say you work a lot so that your project succeeds.",
+          "answer": "Azért dolgozom sokat, hogy sikerüljön a projektem."
         }
       ],
       "teaches": [

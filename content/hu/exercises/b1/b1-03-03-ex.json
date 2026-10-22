@@ -183,10 +183,10 @@
           "gloss": "intention"
         },
         {
-          "word": "vállalkozás",
-          "inflected": "vállalkozásom",
-          "sentence": "Azt akarom, hogy sikerüljön a vállalkozásom.",
-          "gloss": "business"
+          "word": "vizsga",
+          "inflected": "vizsgám",
+          "sentence": "Azt akarom, hogy sikerüljön a vizsgám.",
+          "gloss": "exam"
         }
       ],
       "teaches": [
@@ -229,11 +229,11 @@
       ],
       "options": [
         "Minden nap gyakorlok egy kicsit, lépésről lépésre haladok.",
-        "Nincs semmi célom, sosem gondolok erre."
+        "Minden nap gyakorlok egy kicsit, lépésről lépésre haladtam."
       ],
       "correct": 0,
       "teaches": [
-        "b1-plans-ambitions-vocab"
+        "past-tense-indefinite"
       ]
     },
     {
@@ -252,12 +252,15 @@
       ],
       "options": [
         "Azt szeretném, hogy sikerüljön, és fejlődjön belőle valami nagyobb.",
-        "Azt szeretnéd, hogy sikerüljön, és fejlődj belőle."
+        "Azt szeretném, hogy sikerüljön, és fejlődik belőle valami nagyobb."
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language"
-      ]
+        "hogy-jon-jen"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-03-03-writing-1",
@@ -279,7 +282,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Politely ask someone (formal) to have a seat.",
+          "prompt": "Politely ask someone (formal) to take a seat, using the verb foglal.",
           "answer": "Kérem, foglaljon helyet!"
         }
       ],

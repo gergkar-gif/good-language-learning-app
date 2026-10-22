@@ -57,11 +57,11 @@
       "id": "b1-honfoglalas-05.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mikor van Magyarország hivatalos állami ünnepe?",
+      "question": "Melyik napon van Szent István napja, az állami ünnep?",
       "options": [
-        "Augusztus 20-án, Szent István napján.",
-        "Október 23-án.",
-        "895. szeptember 1-jén."
+        "Augusztus 20-án.",
+        "Március 15-én.",
+        "Október 23-án."
       ],
       "correct": 0
     },
@@ -81,9 +81,9 @@
       "id": "b1-honfoglalas-05.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A honfoglalás öröksége a mai napig élénken él a magyar nemzeti ___.",
+      "sentence": "A honfoglalás öröksége ma is fontos a magyar nemzeti ___.",
       "hint": "in identity",
-      "english": "The legacy of the Conquest still lives on vividly in Hungarian national identity today.",
+      "english": "The legacy of the honfoglalás is still important in Hungarian national identity today.",
       "answer": "identitásban",
       "teaches": [
         "ban-ben-in"
@@ -93,11 +93,11 @@
       "id": "b1-honfoglalas-05.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mit ábrázol a Hősök terén álló emlékmű oszlopa?",
+      "question": "Kiket ábrázol a Millenniumi emlékmű a Hősök terén a történet szerint?",
       "options": [
-        "A turul madarat.",
-        "Szent Istvánt.",
-        "A pozsonyi csatát."
+        "Árpádot és a vezéreket.",
+        "A besenyőket és a kazárokat.",
+        "Szent Istvánt és a bajor sereget."
       ],
       "correct": 0
     },
@@ -108,26 +108,28 @@
       "tiles": [
         "A",
         "honfoglalás",
-        "895",
-        "óta",
+        "ma",
+        "is",
+        "fontos",
+        "része",
         "a",
         "magyar",
         "nemzeti",
-        "identitás",
-        "alapköve."
+        "identitásnak."
       ],
       "solution": [
         "A",
         "honfoglalás",
-        "895",
-        "óta",
+        "ma",
+        "is",
+        "fontos",
+        "része",
         "a",
         "magyar",
         "nemzeti",
-        "identitás",
-        "alapköve."
+        "identitásnak."
       ],
-      "english": "The honfoglalás has been a cornerstone of Hungarian national identity since 895.",
+      "english": "The honfoglalás is still an important part of Hungarian national identity.",
       "teaches": [
         "b1-honfoglalas-vocab"
       ]
@@ -135,7 +137,7 @@
     {
       "id": "b1-honfoglalas-05.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Kata",
@@ -147,11 +149,14 @@
         }
       ],
       "options": [
-        "Nincs, Magyarország hivatalos ünnepe augusztus 20., Szent István napja.",
-        "Igen, minden év szeptemberében ünneplik.",
-        "Igen, ez az ország legrégebbi ünnepe."
+        "Nincs, az állami ünnep augusztus 20., Szent István napja.",
+        "Igen, a honfoglalás állami ünnepe szeptember 1.",
+        "Igen, a honfoglalás állami ünnepe augusztus 20."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-honfoglalas-vocab"
+      ]
     },
     {
       "id": "b1-honfoglalas-05.ex08",
@@ -160,8 +165,8 @@
       "sentence": "A honfoglalás öröksége ma is élénken él a magyar mondákban és jelképekben.",
       "options": [
         "The legacy of the honfoglalás is still very much alive in Hungarian legends and symbols today.",
-        "Nobody in Hungary remembers the honfoglalás today.",
-        "The honfoglalás is only mentioned in foreign textbooks."
+        "The legacy of the honfoglalás is mostly forgotten in Hungarian legends and symbols today.",
+        "The legacy of the honfoglalás is alive only in foreign legends and symbols today."
       ],
       "correct": 0,
       "teaches": [

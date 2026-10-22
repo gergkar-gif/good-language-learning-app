@@ -365,6 +365,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-22 | es A2 31–33 (31–32 both courses, 33 es-es only) | paired read, 2 units + 1, both stopped by a Sonnet session limit before writing a file, resumed | | A 233k, B 182k (resumed notices only; the first runs' usage was lost with the limit) | 213 proposed (61 / 75 / 77), 4 rejected by `check_fixes` (3 builders with an `answer` key, fixed and kept; 1 deliberate *nunca/jamás*, kept); Claude changed 9, restored 7 `distractor_skills` entries the reader removed, added 2 (a B1 option set the es-es unmet check missed, an unmet story option) | cost/unit uncertain (≥ ~140k: the resumed notices alone give 116k + 182k); ~71 fixes/unit; 174 of 213 to review; 102/122 mirrored, 3 es-latam twins by hand, the rest es-es variants or es-latam text the reader fixed directly; level walk 198/198 es-es, 192/192 es-latam with challenges |
 | 10-22 | HU A1 + A2 re-walk **with challenges** (first since challenge walking began 10-21) | Claude, no agents | ~18 min | | 0 walk failures (198/198 A1, 281/281 A2) | HU and Spanish A1–A2 now pass the same checklist |
 | 10-22 | **HU B1 pilot**: Unit 1 longer-stories (language) ∥ Unit 2 hungary-today-land-symbols (history, facts block) | mechanical pre-pass (1 Sonnet fixer, 25 items) then 1 unit per reader | fixer 83k, 1.5 | A 257k, 13.6; B 326k, 22.4 | 154 proposed (48 / 106), 3 rejected (new tells, option language; rewritten by Claude), Claude added 4 (vármegye official since 2023, double-cross tradition) | ~257k language / ~326k history per unit at **one unit per reader** (fixed per-reader overhead not spread); pre-pass: 24 of 25 applied, then readers rewrote most of them; Unit 2 had 256 unmet-word hits before the pre-pass (6 after the read), Unit 1 37 → 20; walk 12/12 |
+| 10-22 | HU B1 3–6 (core 3, 5; citizenship 4, 6) | paired read, **2 units/reader** (one core + one citizenship each), facts block, vocabulary rule (citizenship keeps words) | | A 532k, 43.7; B 554k, 39.7 | 344 proposed (71 / 113 / 51 / 109), 0 rejected; Claude changed 2 (Árpád-ház *1301-ig*, an apposition) | **~272k reader tokens/unit** (no cheaper than the one-unit pilot's 257k / 326k): the cost follows the defects (~86 fixes/unit, ×1.7 of A2), not the per-reader overhead; both readers re-tested their fixes in scratch copies (111 and 118 tool calls; now forbidden in the template); 10 copied question sets rewritten; facts: Aug 20 state holiday and the Pozsony 907 name confirmed; walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1077,3 +1078,21 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   vocabulary (words added to the lesson lists) or are rewritten to met
   words, as the pilot reader did. It decides most of the history units'
   cost.
+
+### 2026-10-22: HU B1 units 3–6
+
+- **Cost:** ~272k a unit at two per reader, the same as the one-unit
+  pilot. B1 cost follows the defects (~86 fixes a unit against ~50 in
+  A2: later-B1 forms everywhere, absurd wrong options, placeholder
+  questions, invented facts), so batch size barely matters. All of B1 at
+  this rate is ~20M reader tokens.
+- **Change:** the template now forbids testing fixes in scratch copies
+  (both readers did it, 111 and 118 tool calls, and the pilot reader of
+  Unit 2 too); the reviewer's `check_fixes` already does it. Track order
+  changes as the user decided: core units next, three per reader.
+- **Facts:** the readers flagged ~95 claims as "check" in two units;
+  most are now hedged as tradition in the text (Verecke, the blood oath,
+  Álmos and Árpád). Verified on the web: August 20 is the official state
+  holiday (Alaptörvény: three national holidays), the 907 battle is real
+  but its site uncertain (*pozsonyi csata* kept as the standard name).
+  Changed by Claude: the Árpád dynasty "nearly 400 years" → *1301-ig*.

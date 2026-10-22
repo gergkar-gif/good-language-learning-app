@@ -240,13 +240,16 @@
         }
       ],
       "options": [
-        "Nagyon sokat, ma már sokkal érettebb vagyok, mint azelőtt.",
-        "Nagyon sokat, egyáltalán nem változtam semmit."
+        "Nagyon sokat, ma már érett ember vagyok.",
+        "Nagyon sokat, ma már érett ember voltam."
       ],
       "correct": 0,
       "teaches": [
-        "b1-experiences-memories-vocab"
-      ]
+        "van-zero-copula"
+      ],
+      "distractor_skills": {
+        "1": "van-past"
+      }
     },
     {
       "id": "b1-02-04-dialogue-2",
@@ -264,11 +267,11 @@
       ],
       "options": [
         "Ha visszatekintek rá, egészen más volt.",
-        "Ha visszatekintesz rá, egészen más voltál."
+        "Ha visszatekintek rá, egészen más lesz."
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language"
+        "van-past"
       ]
     },
     {
@@ -306,8 +309,8 @@
       "question": "Which word points back to before the change you're currently discussing?",
       "options": [
         "azelőtt",
-        "azután",
-        "mindig"
+        "utána",
+        "később"
       ],
       "correct": 0,
       "teaches": [
@@ -318,13 +321,13 @@
     {
       "id": "b1-02-04-check-2",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Sokkal ____ lettem, mint azelőtt voltam.",
-      "hint": "more mature",
-      "english": "I became much more mature than I was before that.",
-      "answer": "érettebb",
+      "category": "vocabulary",
+      "sentence": "Ma már ____ ember vagyok, nem olyan, mint azelőtt.",
+      "hint": "mature",
+      "english": "Today I am a mature person, not like I was before that.",
+      "answer": "érett",
       "teaches": [
-        "comparative-bb"
+        "b1-experiences-memories-vocab"
       ],
       "stage": "check"
     }

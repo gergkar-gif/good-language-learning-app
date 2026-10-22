@@ -15,7 +15,10 @@
       "teaches": [
         "nek-conditional"
       ],
-      "stage": "introduce"
+      "stage": "introduce",
+      "distractor_skills": {
+        "2": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-03-01-intro-2",
@@ -90,11 +93,11 @@
       "id": "b1-03-01-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Szeretném ____ az álmom.",
+      "question": "Szeretném ____ a tervem.",
       "options": [
-        "ha megvalósulna",
-        "hogy megvalósul",
-        "megvalósul"
+        "ha sikerülne",
+        "hogy sikerül",
+        "sikerülne"
       ],
       "correct": 0,
       "teaches": [
@@ -173,20 +176,20 @@
       "type": "substitution",
       "category": "grammar",
       "base_sentence": "Szeretném, ha sikerülne a tervem.",
-      "base_word": "sikerülne",
+      "base_word": "tervem",
       "base_gloss": "I wish my plan would succeed.",
       "options": [
         {
-          "word": "megvalósul",
-          "inflected": "megvalósulna",
-          "sentence": "Szeretném, ha megvalósulna a tervem.",
-          "gloss": "would come true"
+          "word": "projekt",
+          "inflected": "projektem",
+          "sentence": "Szeretném, ha sikerülne a projektem.",
+          "gloss": "project"
         },
         {
-          "word": "fejlődik",
-          "inflected": "fejlődne",
-          "sentence": "Szeretném, ha fejlődne a tervem.",
-          "gloss": "would develop"
+          "word": "vizsga",
+          "inflected": "vizsgám",
+          "sentence": "Szeretném, ha sikerülne a vizsgám.",
+          "gloss": "exam"
         }
       ],
       "teaches": [
@@ -217,7 +220,7 @@
       "prompt": [
         {
           "speaker": "Petra",
-          "text": "Hogyan képzeled el magad öt év múlva?"
+          "text": "Hogyan látod magad öt év múlva?"
         },
         {
           "speaker": "Anna",
@@ -225,8 +228,8 @@
         }
       ],
       "options": [
-        "Céltudatos és önbizalommal teli embernek látom magam.",
-        "Nem szeretem elképzelni a jövőt."
+        "Céltudatos és magabiztos embernek látom magam.",
+        "Öt évvel ezelőtt még nem voltam ilyen céltudatos."
       ],
       "correct": 0,
       "teaches": [
@@ -248,12 +251,12 @@
         }
       ],
       "options": [
-        "Szeretném, ha sikerülne saját vállalkozást indítanom.",
-        "Szeretnéd, ha sikerülne saját vállalkozást indítanod."
+        "Szeretném, ha sikerülne saját céget alapítanom.",
+        "Szeretnéd, ha sikerülne saját céget alapítanod."
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language"
+        "nek-conditional"
       ]
     },
     {
@@ -291,14 +294,17 @@
       "question": "Which sentence means \"I wish life were easier\"?",
       "options": [
         "Szeretném, ha könnyebb lenne az élet.",
-        "Szeretnék könnyebb életet.",
-        "Az élet könnyebb lesz."
+        "Szeretem, ha könnyebb lesz az élet.",
+        "Szerintem az élet könnyebb lesz."
       ],
       "correct": 0,
       "teaches": [
         "barcsak-wish"
       ],
-      "stage": "check"
+      "stage": "check",
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-03-01-check-2",

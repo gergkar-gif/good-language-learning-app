@@ -9,7 +9,7 @@
       "options": [
         "már",
         "még",
-        "soha"
+        "most"
       ],
       "correct": 0,
       "teaches": [
@@ -24,14 +24,17 @@
       "question": "Which phrase marks that something has never happened, even once?",
       "options": [
         "még soha nem",
-        "már nem",
-        "most nem"
+        "már soha nem",
+        "most már nem"
       ],
       "correct": 0,
       "teaches": [
         "mar-experiential"
       ],
-      "stage": "recognize"
+      "stage": "recognize",
+      "distractor_skills": {
+        "1": "soha-needs-nem-negative-concord"
+      }
     },
     {
       "id": "b1-02-consolidation-3",
@@ -93,9 +96,9 @@
       "id": "b1-02-consolidation-6",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Ha ____ az elmúlt évekre, sokat változtam.",
+      "sentence": "Ha ____ a régi életemre, sokat változtam.",
       "hint": "I look back",
-      "english": "If I look back at the past years, I have changed a lot.",
+      "english": "If I look back at my old life, I have changed a lot.",
       "answer": "visszatekintek",
       "teaches": [
         "b1-experiences-memories-vocab"
@@ -116,7 +119,8 @@
         "de",
         "most",
         "először",
-        "elutazom",
+        "utazom",
+        "oda",
         "."
       ],
       "solution": [
@@ -129,7 +133,8 @@
         "de",
         "most",
         "először",
-        "elutazom",
+        "utazom",
+        "oda",
         "."
       ],
       "english": "I've never yet been to Japan, but now I'm traveling there for the first time.",
@@ -143,10 +148,10 @@
       "type": "sentence-order",
       "category": "vocabulary",
       "sentences": [
-        "Már sokszor gondoltam arra az útra.",
-        "Életemben először utaztam egyedül.",
-        "Egy kedves asszony bátorsága mély benyomást tett rám.",
-        "Azóta egyre bátrabb lettem."
+        "Már gyakran gondoltam arra az utazásra.",
+        "Életemben először utaztam Japánba.",
+        "Egy kedves nő bátorsága mély benyomást tett rám.",
+        "Azóta egyre jobban érzem magam."
       ],
       "solution": [
         0,
@@ -166,7 +171,7 @@
       "prompt": [
         {
           "speaker": "Petra",
-          "text": "Milyen volt visszatekintve az az első nagy utazás?"
+          "text": "Milyen volt az első nagy utazásod?"
         },
         {
           "speaker": "Meg",
@@ -174,12 +179,12 @@
         }
       ],
       "options": [
-        "Ijesztő volt, de mély benyomást tett rám, és azóta sokat változtam.",
-        "Ijesztő lesz, de mély benyomást tesz rám."
+        "Nehéz volt, de mély benyomást tett rám, és azóta sokat változtam.",
+        "Nehéz volt, de mély benyomást tettem rá, és azóta sokat változtam."
       ],
       "correct": 0,
       "teaches": [
-        "van-past"
+        "case-inflected-pronouns"
       ],
       "stage": "in-context"
     },
@@ -201,8 +206,8 @@
           "answer": "Az anyám által elkészített étel felejthetetlen volt."
         },
         {
-          "prompt": "Say compared to today, you used to be shy.",
-          "answer": "A mai önmagamhoz képest, régen félénk voltam."
+          "prompt": "Say that compared to your self today, you used to be nervous.",
+          "answer": "A mai énemhez képest, régen ideges voltam."
         }
       ],
       "teaches": [
@@ -216,8 +221,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say you've never yet tried out sushi.",
-          "answer": "Még soha nem próbáltam ki a szusit."
+          "prompt": "Say you've never yet tried out the fish soup.",
+          "answer": "Még soha nem próbáltam ki a halászlét."
         }
       ],
       "teaches": [
@@ -231,8 +236,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say that looking back, you've become increasingly braver.",
-          "answer": "Visszatekintve, egyre bátrabb lettem."
+          "prompt": "Say that since then you have been feeling better and better.",
+          "answer": "Azóta egyre jobban érzem magam."
         }
       ],
       "teaches": [

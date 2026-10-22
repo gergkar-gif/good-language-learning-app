@@ -9,13 +9,16 @@
       "options": [
         "elkészített étel",
         "elkészít étel",
-        "készít étel"
+        "étel elkészített"
       ],
       "correct": 0,
       "teaches": [
         "past-participle-adjective"
       ],
-      "stage": "introduce"
+      "stage": "introduce",
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-02-03-intro-2",
@@ -94,13 +97,17 @@
       "options": [
         "elveszett",
         "elveszít",
-        "elveszik"
+        "elveszítettem"
       ],
       "correct": 0,
       "teaches": [
         "past-participle-adjective"
       ],
-      "stage": "controlled"
+      "stage": "controlled",
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "past-tense-indefinite"
+      }
     },
     {
       "id": "b1-02-03-practice-1",
@@ -169,16 +176,16 @@
       "base_gloss": "This is a written letter.",
       "options": [
         {
-          "word": "elküld",
-          "inflected": "elküldött",
-          "sentence": "Ez egy elküldött levél.",
-          "gloss": "sent"
+          "word": "aláír",
+          "inflected": "aláírt",
+          "sentence": "Ez egy aláírt levél.",
+          "gloss": "signed"
         },
         {
-          "word": "megkap",
-          "inflected": "megkapott",
-          "sentence": "Ez egy megkapott levél.",
-          "gloss": "received"
+          "word": "felad",
+          "inflected": "feladott",
+          "sentence": "Ez egy feladott levél.",
+          "gloss": "posted"
         }
       ],
       "teaches": [
@@ -217,12 +224,12 @@
         }
       ],
       "options": [
-        "Nagyon finom volt, mély benyomást tett rám.",
-        "Nagyon finom volt, mély benyomást tettem rá."
+        "Felejthetetlen volt, mély benyomást tett rám.",
+        "Felejthetetlen volt, mély benyomást tettem rá."
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language"
+        "case-inflected-pronouns"
       ]
     },
     {
@@ -232,7 +239,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Megtaláltad a régen elveszett kulcsot?"
+          "text": "Hol találtad meg a régen elveszett kulcsot?"
         },
         {
           "speaker": "Anna",
@@ -240,16 +247,13 @@
         }
       ],
       "options": [
-        "Igen, tegnap végre megtaláltam.",
-        "Nem, holnap fogom elveszteni."
+        "Az asztal alatt találtam meg, tegnap.",
+        "Igen, az asztal alatt találtam meg, tegnap."
       ],
       "correct": 0,
       "teaches": [
         "yes-no-questions"
-      ],
-      "distractor_skills": {
-        "1": "fog-infinitive"
-      }
+      ]
     },
     {
       "id": "b1-02-03-writing-1",
