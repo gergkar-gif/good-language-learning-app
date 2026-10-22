@@ -83,6 +83,10 @@ between *yo/tú/él* or *este/ese/aquel* is that paradigm's grammar skill;
   that is a **well-formed** form of **another** skill (*három székek* →
   `plural-nouns-k`). None for an ungrammatical option (*a nagyok asztalok*,
   *Itt nem lámpa.*), none for a wrong form of the tested skill itself.
+  "Well-formed" means the form itself, not the sentence: in *lleva toda la
+  tarde ___*, *llueve* is a real present form and keeps `present-tense`,
+  *llovido* keeps `past-participles` (es A2 31–33: a reader removed seven
+  such entries as "ungrammatical options").
   Whenever an option changes, re-check its entry. The entry goes on the
   option that *is* the other skill's form (*Nincs kulcs.* → `van-and-nincs`),
   never on a wrong form of the tested skill (*Van kulcsom.* for "I don't
@@ -421,6 +425,14 @@ ask *Mikor …?* or use *már* = "already" with a plain past fact.
   tortilla recipe, Ana's studies there). Lucía is back in Spain after
   a2-18 and Daniela in Chile after a2-20: calls and messages only (their
   lines in Units 21–30 went to Ana or Kaylee).
+- **A2 finale (2026-10-22):** Units 31–33 are the journey from Hanoi to
+  Budapest. Carlos and Meg stay a few weeks in Madrid at his grandmother's
+  (Carlos works some days in his company's Madrid office, a2-31), take a
+  train to Valencia (a2-32), and spend a last evening in Malasaña with Lucía
+  and her friends Javier and Marcos (a2-33, es-es); es-es ends with
+  *Mañana volamos a Budapest*, es-latam (no Unit 33) with the flight at the
+  end of a2-32. In these units they are visitors in Spain, not residents.
+  B1 starts in Budapest.
 - **Challenges:** es-latam uses the same setting and people as es-es
   (user, 2026-10-16). Write them once in es-es; es-latam gets the same
   entries with only the course variants changed (*ustedes*, *jugo*).

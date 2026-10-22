@@ -362,6 +362,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-21 | es A2 19–24 (both courses) | paired read, 3 units/reader, both resumed after a session limit, mirrored | | A ~300k (resumed notice), B lost in a container restart | 329 proposed (49 / 65 / 40 / 58 / 50 / 67), 0 rejected after the `check_fixes` index fix; Claude dropped 1, adjusted 3, added 3 item fixes, 7 es-latam items, 6 *vosotros* questions and the user's story-line edits | ~100–120k reader tokens/unit (uncertain: one notice); ~55 fixes/unit; 270 of 329 to review; 316/329 mirrored; walk 36/36 per course with challenges |
 | 10-21 | es A2 25–30 (both courses) | paired read, 3 units/reader, mirrored | | 438k + 431k, 28 + 28.8 | 449 proposed (73 / 73 / 65 / 88 / 93 / 57), 0 rejected; Claude adjusted 4, added 2, moved 52 Daniela items/challenges | ~145k reader tokens/unit (**over the ~140k line**); ~75 fixes/unit (×1.36 of 19–24); 397 of 449 to review; 437/449 mirrored; walk 60/60 per course (21–30) |
 | 10-21 | es A1 25–26 (both courses) | **one** reader, 2 units, Spanish template, mirrored | | 244k (the resumed notice only; stopped by a Sonnet session limit after 3 of 4 files) | 84 proposed (31 / 53), 0 rejected; Claude changed 3 and fixed one cross-story contradiction | ~122k reader tokens/unit (uncertain: one notice); ~42 fixes/unit; 59 of 84 to review; 84/84 mirrored, 5 put in es-latam words (*billete* → *boleto*); level walk 156/156 per course |
+| 10-22 | es A2 31–33 (31–32 both courses, 33 es-es only) | paired read, 2 units + 1, both stopped by a Sonnet session limit before writing a file, resumed | | A 233k, B 182k (resumed notices only; the first runs' usage was lost with the limit) | 213 proposed (61 / 75 / 77), 4 rejected by `check_fixes` (3 builders with an `answer` key, fixed and kept; 1 deliberate *nunca/jamás*, kept); Claude changed 9, restored 7 `distractor_skills` entries the reader removed, added 2 (a B1 option set the es-es unmet check missed, an unmet story option) | cost/unit uncertain (≥ ~140k: the resumed notices alone give 116k + 182k); ~71 fixes/unit; 174 of 213 to review; 102/122 mirrored, 3 es-latam twins by hand, the rest es-es variants or es-latam text the reader fixed directly; level walk 198/198 es-es, 192/192 es-latam with challenges |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1009,3 +1010,33 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
 - **Scripted:** `vocab-unused` reads stem changes and irregular stems
   (readers flagged the false positive in units 25 and 27).
 
+### 2026-10-22: Spanish A2 units 31–33 (last A2 batch, the finale)
+
+- **Cost:** not measurable this time. Both readers hit a Sonnet session
+  limit before writing any file and were resumed after the reset; only
+  the resumed runs' usage was reported (233k for 31–32, 182k for 33).
+  "Write each unit's files before the next" did not help here, because the
+  limit came during the first unit. Resuming by message worked again.
+- **The finale in the focus note worked:** the readers rewrote the three
+  stories to the Madrid → Valencia → farewell → Budapest line, with
+  separate es-es and es-latam endings, and moved items and challenges to
+  "visitors in Spain". The reviewer changed only the story logic (why Meg
+  is in Carlos's office and has his keys).
+- **Reader misreading of a rule:** one reader removed seven
+  `distractor_skills` entries because the options "don't fit the
+  sentence", though they are real forms (*llueve*, *llovido*). The rulebook
+  § 6 and the template now say "well-formed" means the form, not the
+  sentence. Three builder fixes carried an `answer` key; the template now
+  names the builder fields.
+- **Checker blind spot (seen once; not scripted yet):** `unmet-words.js`
+  skipped the es-es options of a2.indefinidosnegacion.03.ex07 (*disponibles*,
+  *cancelado*, both B1) as English, while es-latam, with *boletos* in place
+  of *entradas*, flagged them. The `isEnglish` heuristic for option sets
+  ("most options look English") can hide a whole Spanish option set. If it
+  recurs, make option sets English only when the item's `question` asks
+  for an English meaning.
+- **Stories read in order (A1 lesson):** all 33 A2 stories read in
+  sequence at the end. No contradictions left. Two weak points for the
+  user: no story shows Carlos and Meg leaving Hanoi (Unit 31 opens in
+  Madrid "de camino"), and the grandmother in Madrid (father's mother) and
+  the grandmother of the Hungarian childhood stories are never told apart.

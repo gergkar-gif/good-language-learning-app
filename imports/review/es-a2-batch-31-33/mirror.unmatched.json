@@ -1,0 +1,207 @@
+[
+ {
+  "file": "content/es-latam/exercises/a2/a2-perifrasisduracion-02-ex.json",
+  "id": "a2.perifrasisduracion.02.ex10",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Marcos",
+     "text": "¿Puedes salir ahora?"
+    },
+    {
+     "speaker": "Ana",
+     "text": "No, lleva toda la tarde _____ sin parar."
+    }
+   ],
+   "distractor_skills": null
+  },
+  "why": "unmet mal; distractor_skills on ungrammatical options (not well-formed forms of another skill): removed",
+  "kind": "target",
+  "why_unmatched": "es-latam differs from es-es on ['prompt']"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-perifrasisduracion-04-gr.json",
+  "old": "Al entrar al museo, compramos la entrada.",
+  "new": "Al entrar en el museo, compramos la entrada.",
+  "why": "entrar en (Spain)",
+  "kind": "target",
+  "sure": false,
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "Llevan casi seis meses estudiando español con mucha dedicación, y este viaje es su primera gran aventura por el Mediterráneo.",
+  "new": "Llevan más de un año estudiando español con mucha dedicación, y este viaje desde Madrid es su primera gran aventura por el Mediterráneo.",
+  "why": "they have studied for well over a year; the trip starts in Madrid (user, 2026-10-21)",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "\"summary\": \"Meg y Carlos viajan en tren a Valencia para celebrar seis meses viviendo en España, enfrentando una repentina tormenta con buen humor.\"",
+  "new": "\"summary\": \"Meg y Carlos viajan en tren de Madrid a Valencia, durante sus semanas en España antes de vivir en Budapest, y enfrentan una repentina tormenta con buen humor.\"",
+  "why": "they are visitors, not residents; 'seis meses viviendo en España' is false",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "hacia el centro histórico.\"",
+  "new": "hacia el centro histórico. Dos días después volvieron a Madrid para pasar una última semana en casa de la abuela de Carlos, antes de volar a Budapest.\"",
+  "why": "es-es ending: leads to one last week in Madrid (Unit 33)",
+  "kind": "target",
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "\"¿De qué trata principalmente la lectura?\"",
+  "new": "\"¿Adónde corren Carlos y Meg cuando empieza a llover?\"",
+  "why": "reading-generic question",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "\"De la avería de un tren de alta velocidad en su trayecto hacia el este de España.\"",
+  "new": "\"A un museo.\"",
+  "why": "Q1 option 0",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "\"De la llegada de Carlos y Meg a Valencia y cómo disfrutan de una merienda típica mientras esperan a que pase un chaparrón.\"",
+  "new": "\"Al toldo de un café.\"",
+  "why": "Q1 right answer was by far the longest",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "\"De una visita guiada por los museos de la Ciudad de las Artes y las Ciencias.\"",
+  "new": "\"A una tienda de ropa.\"",
+  "why": "Q1 option 2",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "\"De la compra de ropa de lluvia en una tienda cerca de la estación.\"",
+  "new": "\"A la estación de tren.\"",
+  "why": "Q1 option 3",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "\"explanation\": \"Carlos y Meg bajan del tren en la estación Joaquín Sorolla de Valencia, les sorprende un aguacero, se refugian bajo el toldo de un café y piden cafés con leche y churros mientras espera a que escampe.\"",
+  "new": "\"explanation\": \"Cuando empieza a llover, Carlos y Meg corren bajo el toldo de un café tradicional.\"",
+  "why": "Q1 explanation",
+  "kind": "target",
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "\"Enfado y quejas contra los pronósticos del tiempo en internet.\"",
+  "new": "\"Se enfada con Meg.\"",
+  "why": "Q3 option",
+  "kind": "target",
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ },
+ {
+  "file": "content/es-es/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "\"Temor a resfriarse y perder sus billetes de vuelta.\"",
+  "new": "\"Compra un paraguas.\"",
+  "why": "Q3 option",
+  "kind": "target",
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "\"¿Qué actitud muestran Carlos y Meg ante la inesperada tormenta valenciana?\"",
+  "new": "\"¿Cómo reacciona Carlos al ver la lluvia?\"",
+  "why": "abstract question; right answer was the longest",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "\"Buen humor, flexibilidad y disfrute de los pequeños momentos imprevistos del viaje.\"",
+  "new": "\"Se ríe y dice «¡Vaya sorpresa!»\"",
+  "why": "Q3 right answer",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-perifrasisduracion.json",
+  "old": "\"Decepción y ganas de subirse al siguiente tren para regresar a Madrid.\"",
+  "new": "\"Quiere volver a Madrid.\"",
+  "why": "Q3 option",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-indefinidosnegacion-02-ex.json",
+  "id": "a2.indefinidosnegacion.02.ex09",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Mesero",
+     "text": "¿Desean tomar algo de beber?"
+    },
+    {
+     "speaker": "Cliente",
+     "text": "No, gracias, no queremos _____."
+    }
+   ],
+   "options": [
+    "nada",
+    "algo",
+    "todo",
+    "alguien"
+   ],
+   "correct": 0
+  },
+  "why": "unmet postre; tell-absolute nadie",
+  "kind": "target",
+  "why_unmatched": "es-latam differs from es-es on ['prompt']"
+ },
+ {
+  "file": "content/es-latam/exercises/a2/a2-indefinidosnegacion-03-ex.json",
+  "id": "a2.indefinidosnegacion.03.ex07",
+  "set": {
+   "sentence": "Lo siento, pero no tenemos ninguna entrada para el concierto.",
+   "options": [
+    "No hay entradas disponibles.",
+    "Hay muchas entradas.",
+    "El concierto fue cancelado."
+   ],
+   "correct": 0
+  },
+  "why": "unmet queda/quedan; no hay is met (reviewer: entrada, not billete, for a concert)",
+  "kind": "target",
+  "why_unmatched": "es-latam differs from es-es on ['sentence']"
+ },
+ {
+  "file": "content/es-es/grammar/a2/a2-indefinidosnegacion-01-gr.json",
+  "old": "\"¿Hay alguien en la sala?\"",
+  "new": "\"¿Hay alguien en el salón?\"",
+  "why": "course-variant: la sala -> el salón (Spain)",
+  "kind": "target",
+  "variant": "es-es",
+  "why_unmatched": "marked variant es-es: holds only there"
+ },
+ {
+  "file": "content/es-latam/stories/original/a2/a2-indefinidosnegacion.json",
+  "old": "\"correctIndex\": 1,\n          \"explanation\": \"Carlos y Meg buscaron las llaves del archivo confidencial por todos los rincones de la oficina hasta que Meg se miró el bolsillo y exclamó: «¡Nadie las perdió, las tenía yo guardadas desde la mañana!»\"",
+  "new": "\"correctIndex\": 0,\n          \"explanation\": \"Carlos y Meg están en Madrid, en casa de la abuela de Carlos, de camino a su nueva vida en Budapest.\"",
+  "why": "Q1 answer index and explanation",
+  "kind": "target",
+  "why_unmatched": "old text found 0x"
+ }
+]

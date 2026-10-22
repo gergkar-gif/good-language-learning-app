@@ -1,0 +1,61 @@
+[
+  {
+    "file": "content/es-latam/exercises/a2/a2-perifrasisduracion-02-ex.json",
+    "id": "a2.perifrasisduracion.02.ex10",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Marcos",
+          "text": "¿Puedes salir ahora?"
+        },
+        {
+          "speaker": "Ana",
+          "text": "No, lleva toda la tarde _____ sin parar."
+        }
+      ],
+      "distractor_skills": null
+    },
+    "kind": "target",
+    "why": "es-latam twin of the es-es fix (mal unmet)"
+  },
+  {
+    "file": "content/es-latam/exercises/a2/a2-indefinidosnegacion-02-ex.json",
+    "id": "a2.indefinidosnegacion.02.ex09",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Mesero",
+          "text": "¿Desean tomar algo de beber?"
+        },
+        {
+          "speaker": "Cliente",
+          "text": "No, gracias, no queremos _____."
+        }
+      ],
+      "options": [
+        "nada",
+        "algo",
+        "todo",
+        "alguien"
+      ],
+      "correct": 0
+    },
+    "kind": "target",
+    "why": "es-latam twin (postre unmet, nadie tell)"
+  },
+  {
+    "file": "content/es-latam/exercises/a2/a2-indefinidosnegacion-03-ex.json",
+    "id": "a2.indefinidosnegacion.03.ex07",
+    "set": {
+      "sentence": "Lo siento, pero no tenemos ningún boleto para el concierto.",
+      "options": [
+        "No hay boletos disponibles.",
+        "Hay muchos boletos.",
+        "El concierto fue cancelado."
+      ],
+      "correct": 0
+    },
+    "kind": "target",
+    "why": "es-latam twin (queda unmet)"
+  }
+]
