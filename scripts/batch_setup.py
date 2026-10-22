@@ -70,6 +70,13 @@ def counts(course, level, uid):
     return f"{m.group(1)} / {m.group(2)}" if m else "?"
 
 
+def copied_questions(course, level, uid):
+    """Stories whose reading questions check-content reports as copies of
+    another story's (HU B1: 25 world segments carry the A1 café questions)."""
+    r = run([sys.executable, "scripts/check-content.py", course, level, uid])
+    return re.findall(r"story-questions-copy\s+(\S+)", r.stdout)
+
+
 def main():
     args = sys.argv[1:]
     focus, worktrees, course = "", True, "es-es"
@@ -125,7 +132,11 @@ def main():
             hist = hist or u.get("track") == "citizenship"
             lines.append(f"- `{course} {level} {uid}` ({level.upper()} Unit {n}): lessons {' '.join(stems)}, "
                          f"stories {story_txt}. Knowledge sheet: `{w}/prior-{uid}.md`. "
-                         f"Fixes file: `{w}/fixes-{uid}.json`. Challenges file: `{w}/challenges-{uid}.json`.")
+                         f"Fixes file: `{w}/fixes-{uid}.json`. Challenges file: `{w}/challenges-{uid}.json`."
+                         + ("" if not (cq := copied_questions(course, level, uid)) else
+                            f" The reading questions of {', '.join(f'`{x}`' for x in cq)} are copies of another "
+                            "story's (placeholders): write three new questions for each from its own text, as "
+                            "old → new text fixes on the question, its options, `correctIndex` and `explanation`."))
             desc.append(f"Unit {n} {uid} ({' '.join(stems)}; stories {st})")
             if not spanish:
                 table.append(f"| {n} {uid} | {u.get('track', '')} | {counts(course, level, uid)} |")
