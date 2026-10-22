@@ -1,0 +1,788 @@
+[
+ {
+  "file": "content/hu/grammar/b1/b1-09-01-b-gr.json",
+  "old": "A rendelőben bejelentkezés nélkül is lehet orvossal beszélni.",
+  "new": "A rendelőben ma is lehet orvossal beszélni.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "bejelentkezés is a verbal noun in -és (Unit 31, later)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-01-ex.json",
+  "id": "b1-09-01-controlled-3",
+  "set": {
+   "sentence": "Az egészséges életmód jó a ____.",
+   "hint": "body (for the)",
+   "answer": "szervezetnek",
+   "english": "A healthy lifestyle is good for the body.",
+   "teaches": [
+    "b1-health-wellbeing-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "erősíti and emberi unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-01-ex.json",
+  "id": "b1-09-01-controlled-4",
+  "set": {
+   "options": [
+    "Az egészséges életmód fontos az embernek.",
+    "Az egészséges életmód nem fontos az embernek.",
+    "Az egészséges életmód rossz az embernek."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Right option 63 vs 34 chars; soha is a tell (ERRORS); helyes, hozzátartozik, betegség unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-01-ex.json",
+  "id": "b1-09-01-practice-1",
+  "set": {
+   "pairs": [
+    [
+     "egészséges életmód",
+     "healthy lifestyle"
+    ],
+    [
+     "jó táplálkozás",
+     "good nutrition"
+    ],
+    [
+     "a baj megelőzése",
+     "preventing trouble"
+    ],
+    [
+     "az ember szervezete",
+     "a person's body"
+    ]
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "kiegyensúlyozott, betegségek, emberi unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-01-ex.json",
+  "id": "b1-09-01-practice-2",
+  "set": {
+   "question": "Miért fontos a megelőzés?",
+   "options": [
+    "Mert a megelőzés olcsóbb, mint a gyógyszer.",
+    "Mert a megelőzés drágább, mint a gyógyszer.",
+    "Mert a megelőzés rosszabb, mint a gyógyszer."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Right option 68 vs 37 chars; senki is a tell (ERRORS); megelőzni, gyógyítani, súlyos, betegséget, ingyen unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-01-ex.json",
+  "id": "b1-09-01-dialogue-1",
+  "set": {
+   "question": "— Mit teszel az egészségedért?\n— ...",
+   "options": [
+    "Figyelek a táplálkozásra és heti háromszor úszni járok.",
+    "Figyelsz a táplálkozásra és heti háromszor úszni jársz.",
+    "Figyelek a táplálkozást és heti háromszor úszni járok."
+   ],
+   "distractor_skills": {
+    "2": "how-the-accusative-t-works"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "soha is a tell (ERROR); megőrzéséért is a verbal noun (Unit 31); third option mixed two things."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-01-ex.json",
+  "id": "b1-09-01-dialogue-2",
+  "set": {
+   "options": [
+    "De igen, az embernek néha pihennie kell.",
+    "De igen, az embernek néha pihenned kell.",
+    "De igen, nagyon jól érzem magam."
+   ],
+   "teaches": [
+    "inflected-infinitives"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "egyáltalán is a tell (ERROR); úgy unmet; the third option contradicts De igen."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-01-ex.json",
+  "id": "b1-09-01-writing-1",
+  "set": {
+   "question": "How do you say: 'Prevention is better than medicine.'?",
+   "options": [
+    "A megelőzés jobb, mint a gyógyszer.",
+    "A gyógyszer jobb, mint a megelőzés.",
+    "A megelőzés rosszabb, mint a gyógyszer."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "gyógyítás, betegség, gyorsabban unmet (and the idiom needs gyógyítás)."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-09-02-gr.json",
+  "old": "Gyógyszerszedés mellett nem szabad alkoholt fogyasztani.",
+  "new": "Gyógyszer mellett nem szabad alkoholt inni.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Gyógyszerszedés (-és compound) and fogyasztani are unmet / later."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-02-ex.json",
+  "id": "b1-09-02-controlled-3",
+  "set": {
+   "sentence": "A sok cukor nagyon ____ az egészségre.",
+   "english": "A lot of sugar is very harmful to health."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "túlzott and rendkívül unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-02-ex.json",
+  "id": "b1-09-02-controlled-4",
+  "set": {
+   "options": [
+    "A táplálkozásban nagyon fontos a mérték.",
+    "A táplálkozásban nagyon fontos a cukor.",
+    "A táplálkozásban nem fontos a mérték."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Right option 57 vs 41 chars; bármennyi, korlátlanul, legfontosabb unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-02-ex.json",
+  "id": "b1-09-02-practice-1",
+  "set": {
+   "pairs": [
+    [
+     "káros szokás",
+     "a harmful habit"
+    ],
+    [
+     "jó mérték",
+     "a good measure"
+    ],
+    [
+     "sok fogyasztás",
+     "a lot of consumption"
+    ],
+    [
+     "egészséges szokások",
+     "healthy habits"
+    ]
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "szenvedély, helyes, túlzott unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-02-ex.json",
+  "id": "b1-09-02-practice-3",
+  "set": {
+   "sentence": "A rossz ____ nehéz lemondani, de lehet.",
+   "english": "It is hard to give up bad habits, but it is possible."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "megpróbálni unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-02-ex.json",
+  "id": "b1-09-02-dialogue-1",
+  "set": {
+   "options": [
+    "Sajnos nem, az egész területen tilos a dohányzás.",
+    "Sajnos nem, az egész területben tilos a dohányzás.",
+    "Igen, az egész területen tilos a dohányzás."
+   ],
+   "distractor_skills": {
+    "1": "ban-ben-in"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Option 2 has two faults; option 3 uses parkolás/épület (unmet)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-02-ex.json",
+  "id": "b1-09-02-dialogue-2",
+  "set": {
+   "options": [
+    "Először kevés kávét ittam, aztán teát ittam.",
+    "Először kevés kávét ittál, aztán teát ittál.",
+    "Először több kávét ittam, aztán még több kávét ittam."
+   ],
+   "teaches": [
+    "irregular-past"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "csökkentettem, gyógyteát, úgy, feketekávét unmet; option 2 two faults. The verbs are past (*ittam*), so the tag was wrong."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-02-ex.json",
+  "id": "b1-09-02-writing-1",
+  "set": {
+   "question": "How do you say: 'Too much salt is harmful to the body.'?",
+   "options": [
+    "A sok só káros a szervezetre.",
+    "A sok só jó a szervezetnek.",
+    "A sok cukor káros a szervezetre."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "túlzott, sófogyasztás unmet; soha is a tell (ERROR)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-03-ex.json",
+  "id": "b1-09-03-intro-2",
+  "set": {
+   "question": "What does a Hungarian doctor do with a 'recept'?",
+   "options": [
+    "felírja",
+    "kiváltja",
+    "megvizsgálja"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "eltépi, megeszi unmet and absurd; 'an Hungarian' in the question."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-03-ex.json",
+  "id": "b1-09-03-controlled-3",
+  "set": {
+   "sentence": "Az orvos ____ után felírt egy gyógyszert.",
+   "english": "After the examination, the doctor prescribed a medicine."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "alapos and hatékony unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-03-ex.json",
+  "id": "b1-09-03-controlled-4",
+  "set": {
+   "question": "Hol lehet kiváltani a receptet?"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "orvosság unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-03-ex.json",
+  "id": "b1-09-03-practice-1",
+  "set": {
+   "pairs": [
+    [
+     "orvosi vizsgálat",
+     "medical examination"
+    ],
+    [
+     "receptet felír",
+     "to prescribe medication"
+    ],
+    [
+     "gyógyszert kivált",
+     "to pick up prescription"
+    ],
+    [
+     "recept nélkül",
+     "without a prescription"
+    ]
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "meghallgat unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-03-ex.json",
+  "id": "b1-09-03-practice-2",
+  "set": {
+   "options": [
+    "„Mi a panasza? Hol fáj?”",
+    "„Mikor utazik Bécsbe?”",
+    "„Mennyi pénze van?”"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "pénztárcájában unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-03-ex.json",
+  "id": "b1-09-03-dialogue-1",
+  "set": {
+   "options": [
+    "Van láza is?",
+    "Van lázad is?",
+    "Lesz láza is?"
+   ],
+   "teaches": [
+    "possessive-suffixes"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "megvizsgálom, megvizsgálja, teljesen (tell, ERROR), kórosat unmet; rebuilt as a doctor's question with one fault each."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-03-ex.json",
+  "id": "b1-09-03-dialogue-2",
+  "set": {
+   "options": [
+    "A sarkon túl, a posta mellett van egy patika.",
+    "A sarkon túl, a posta mellé van egy patika.",
+    "A sarkon túl, a posta mellett vannak egy patika."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "semmilyen is a tell (ERROR); option 2 has two faults."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-04-ex.json",
+  "id": "b1-09-04-intro-2",
+  "set": {
+   "options": [
+    "levezet",
+    "felvesz",
+    "kikapcsol"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "megállít unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-04-ex.json",
+  "id": "b1-09-04-controlled-3",
+  "set": {
+   "sentence": "A munka és a magánélet között fontos az ____.",
+   "hint": "balance",
+   "answer": "egyensúly",
+   "english": "Balance between work and private life is important.",
+   "teaches": [
+    "b1-health-wellbeing-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "megtartani and közötti unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-04-ex.json",
+  "id": "b1-09-04-controlled-4",
+  "set": {
+   "options": [
+    "Csendes pihenés egy jó könyvvel.",
+    "Egész éjjel dolgozni az irodában.",
+    "Sokat veszekedni a kollégákkal."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Right option 54 vs 35 chars; kiadós, feszülten, vitatkozni unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-04-ex.json",
+  "id": "b1-09-04-practice-1",
+  "set": {
+   "pairs": [
+    [
+     "jó egyensúly",
+     "good balance"
+    ],
+    [
+     "napi stressz",
+     "daily stress"
+    ],
+    [
+     "csendes pihenés",
+     "quiet rest"
+    ],
+    [
+     "sok feszültség",
+     "a lot of tension"
+    ]
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "lelki, aktív, feszültségmentes, környezet unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-04-ex.json",
+  "id": "b1-09-04-practice-2",
+  "set": {
+   "options": [
+    "Hogy egészséges legyen.",
+    "Hogy beteg legyen.",
+    "Hogy fáradt legyen."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Right option 53 vs 31 chars; soha is a tell (ERRORS); regenerálódjon, belső unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-04-ex.json",
+  "id": "b1-09-04-practice-3",
+  "set": {
+   "sentence": "Hétvégén mindenkinek szüksége van a ____.",
+   "english": "On the weekend, everyone needs rest."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "zavartalan unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-04-ex.json",
+  "id": "b1-09-04-dialogue-1",
+  "set": {
+   "question": "— Nagyon fáradtnak látszol, mi a baj?\n— ...",
+   "options": [
+    "Túl sok a feszültség a munkahelyemen, kellene egy kis pihenés.",
+    "Túl sok a feszültség a munkahelyeden, kellene egy kis pihenés.",
+    "Túl sok a feszültség a munkahelyemen, kellett egy kis pihenés."
+   ],
+   "teaches": [
+    "possessive-suffixes"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "kimerültnek, férne, kipihent unmet; third option absurd; rám/rád tag does not show."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-04-ex.json",
+  "id": "b1-09-04-dialogue-2",
+  "set": {
+   "options": [
+    "Futni járok a parkba vagy halk zenét hallgatok otthon.",
+    "Futni jársz a parkban vagy halk zenét hallgatsz otthon.",
+    "Sokat dolgozom éjszaka a gép előtt."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "késő and megnyugodjak unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-04-ex.json",
+  "id": "b1-09-04-writing-1",
+  "set": {
+   "options": [
+    "A sport segít levezetni a feszültséget.",
+    "A sport nem segít levezetni a feszültséget.",
+    "A sport segít levezetned a feszültséget."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "semmilyen is a tell (ERROR); nincsen, növeli unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-04-ex.json",
+  "id": "b1-09-04-writing-2",
+  "set": {
+   "options": [
+    "Egyensúlyt kell találnunk az életben.",
+    "Nem kell egyensúlyt találnunk az életben.",
+    "Egyensúlyt kell találniuk az életben."
+   ],
+   "question": "How do you say: 'We must find balance in life.'?"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "megtalálnunk unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-04-ex.json",
+  "id": "b1-09-04-check-2",
+  "set": {
+   "options": [
+    "levezetni",
+    "kikapcsolni",
+    "felvenni"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "elvinni, behozni unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05-controlled-3",
+  "set": {
+   "sentence": "A jó orvosi ____ segített.",
+   "english": "The good medical treatment helped."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "helyes and meghozta unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05-controlled-4",
+  "set": {
+   "options": [
+    "Érdemes naponta sétálni.",
+    "Orvoshoz menni tilos.",
+    "Mindennap ágyban kell maradni."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Right option 58 vs 41 chars; Soha is a tell (ERRORS); elmúlik unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05-practice-1",
+  "set": {
+   "pairs": [
+    [
+     "gyors gyógyulás",
+     "quick recovery"
+    ],
+    [
+     "orvosi kezelés",
+     "medical treatment"
+    ],
+    [
+     "jóllét és egészség",
+     "wellbeing and health"
+    ],
+    [
+     "egészséges szervezet",
+     "a healthy body"
+    ]
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "teljes, fizikai unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05-practice-2",
+  "set": {
+   "question": "Mi segít a gyógyulásban?",
+   "options": [
+    "Sok víz és pihenés.",
+    "Sok kávé és munka.",
+    "Sok munka és kevés alvás."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "bőséges, éjszakai, elutasításával unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05-practice-3",
+  "set": {
+   "sentence": "Neked is gyors ____ kívánok.",
+   "english": "I wish you a quick recovery too."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "szívből and mielőbbi unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05-dialogue-2",
+  "set": {
+   "options": [
+    "Érdemes forró teát inni és sok C-vitamint szedni.",
+    "Érdemes forró teát iszol és sok C-vitamint szedsz.",
+    "Nem érdemes teát inni, igyál inkább hideg vizet."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "mézes, jeges unmet; semmilyen is a tell (ERROR)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05-writing-1",
+  "set": {
+   "question": "How do you say: 'I wish you a quick recovery.'?",
+   "options": [
+    "Gyors gyógyulást kívánok neked.",
+    "Gyors gyógyulást kívánsz nekem.",
+    "Gyors gyógyulás kívánok neked."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "mielőbbi unmet; semmilyen is a tell (ERROR); option 2 a non-answer."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05-writing-2",
+  "set": {
+   "options": [
+    "Ajánlott sokat pihenni.",
+    "Pihenni tilos az ágyban.",
+    "Tilos sokat pihenni."
+   ],
+   "distractor_skills": {
+    "1": "szabad-infinitive",
+    "2": "szabad-infinitive"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "betegség unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05-reading-1",
+  "set": {
+   "question": "Hová megy Esti Kornél a történetben?",
+   "options": [
+    "Az orvosi rendelőbe.",
+    "A színházba.",
+    "A gyógyszertárba."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "budai (taught in Unit 20, later) unmet; length 28 vs 20 (ERROR)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05-reading-2",
+  "set": {
+   "question": "Mit mond az orvos Estinek?",
+   "options": [
+    "Hogy Esti egészséges.",
+    "Hogy Esti nagyon beteg.",
+    "Hogy Estinek kórházba kell mennie."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Length 50 vs 36 (ERROR); szíve, teljesen, feküdnie, elvesztette unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-05-ex.json",
+  "id": "b1-09-05-reading-3",
+  "set": {
+   "question": "Mit ír a receptre a professzor?",
+   "options": [
+    "Napi két óra sétát.",
+    "Erős gyógyszert.",
+    "Sok kávét."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Length 34 vs 25 (ERROR); belső, békét, altatót, kórházi, diétát unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-consolidation-ex.json",
+  "id": "b1-09-consolidation-4",
+  "set": {
+   "question": "Complete: 'A kórházban ... a dohányzás.'"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "szigorúan unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-consolidation-ex.json",
+  "id": "b1-09-consolidation-5",
+  "set": {
+   "sentence": "A beteg a ____ ment, mert fáj a torka.",
+   "hint": "to the family doctor",
+   "answer": "háziorvoshoz",
+   "english": "The patient went to the family doctor because his throat hurts.",
+   "teaches": [
+    "hoz-suffix"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "panaszkodott is in no vocabulary list (only on the 09-03 screen); rebuilt on the allative."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-consolidation-ex.json",
+  "id": "b1-09-consolidation-6",
+  "set": {
+   "options": [
+    "a gyógyszertárban",
+    "a pályaudvaron",
+    "a vágányon"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Right option 29 vs 17 chars (parenthetical)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-consolidation-ex.json",
+  "id": "b1-09-consolidation-8",
+  "set": {
+   "sentence": "A gyors gyógyuláshoz sok pihenés és orvosi ____ kell.",
+   "english": "For a quick recovery, plenty of rest and medical treatment are needed."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "felépüléshez and szükséges unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-consolidation-ex.json",
+  "id": "b1-09-consolidation-10",
+  "set": {
+   "question": "Translate: 'One must pay attention to nutrition.'",
+   "options": [
+    "Az embernek figyelnie kell a táplálkozásra.",
+    "Az ember figyelnie kell a táplálkozásra.",
+    "Az embernek tilos figyelnie a táplálkozásra."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "mindennapi and odafigyelnie unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-09-consolidation-ex.json",
+  "id": "b1-09-consolidation-11",
+  "set": {
+   "question": "Translate: 'Smoking is forbidden here.'",
+   "options": [
+    "Itt tilos a dohányzás.",
+    "Itt szabad a dohányzás.",
+    "Ott tilos a dohányzás."
+   ],
+   "distractor_skills": {
+    "2": "itt-ott-here-there"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "szigorúan and dohányoztunk unmet."
+ }
+]
