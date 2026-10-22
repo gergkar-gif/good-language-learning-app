@@ -130,7 +130,8 @@ def main():
                 sys.exit(r.stderr)
             story_txt = ", ".join(f"`{s}`" for s in st) or "none"
             hist = hist or u.get("track") == "citizenship"
-            lines.append(f"- `{course} {level} {uid}` ({level.upper()} Unit {n}): lessons {' '.join(stems)}, "
+            lines.append(f"- `{course} {level} {uid}` ({level.upper()} Unit {n}"
+                         f"{', *citizenship track*' if u.get('track') == 'citizenship' else ''}): lessons {' '.join(stems)}, "
                          f"stories {story_txt}. Knowledge sheet: `{w}/prior-{uid}.md`. "
                          f"Fixes file: `{w}/fixes-{uid}.json`. Challenges file: `{w}/challenges-{uid}.json`."
                          + ("" if not (cq := copied_questions(course, level, uid)) else
@@ -161,7 +162,7 @@ def main():
                   .replace("{LEVEL_UP}", level.upper()).replace("{LEVEL}", level)
                   .replace("{W}", str(w)).replace("{UNIT_LINES}", "\n".join(lines))
                   .replace("{REPORT}", f"report-{first}.md").replace("{FOCUS}", focus)
-                  .replace("{HISTORY}", history.replace("{W}", str(w)) if hist else ""))
+                  .replace("{HISTORY}", history.replace("{W}", str(w)).replace("{LEVEL}", level) if hist else ""))
         if len(nums) == 1:
             prompt = prompt.replace("units of the", "unit of the").replace("with them", "with it")
         left = re.findall(r"\{[A-Z_]+\}", prompt)
