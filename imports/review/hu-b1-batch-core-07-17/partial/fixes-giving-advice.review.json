@@ -1,538 +1,531 @@
 [
- {
-  "file": "content/hu/exercises/b1/b1-04-01-ex.json",
-  "id": "b1-04-01-intro-2",
-  "set": {
-   "options": [
-    "Ha én a helyedben lennék, ...",
-    "Ha én a helyedben vagyok, ...",
-    "Ha én a te helyedben lennél, ..."
-   ]
-  },
-  "kind": "hungarian",
-  "why": "length-giveaway (29 vs 20): both wrong options are now as long as the right one, each with one fault (indicative instead of conditional; lennél with én)"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-01-ex.json",
-  "id": "b1-04-01-dialogue-1",
-  "set": {
-   "prompt": [
-    {
-     "speaker": "Petra",
-     "text": "Új állást kaptam, de nagyon bizonytalan vagyok. Mit csináljak?"
+  {
+    "file": "content/hu/exercises/b1/b1-04-01-ex.json",
+    "id": "b1-04-01-intro-2",
+    "set": {
+      "options": [
+        "Ha én a helyedben lennék, ...",
+        "Ha én a helyedben vagyok, ...",
+        "Ha én a te helyedben lennél, ..."
+      ]
     },
-    {
-     "speaker": "Károly",
-     "text": "_____"
-    }
-   ],
-   "options": [
-    "A helyedben én elfogadnám — nagy lehetőség.",
-    "A helyedben te elfogadnád — nagy lehetőség."
-   ]
+    "kind": "hungarian",
+    "why": "length-giveaway (29 vs 20): both wrong options are now as long as the right one, each with one fault (indicative instead of conditional; lennél with én)"
   },
-  "kind": "hungarian",
-  "why": "length-giveaway (43 vs 31); the prompt used -e in an indirect question (elfogadjam-e, B1 Unit 25 indirect-questions) and unmet annyira, fogadnád; the wrong option is now a plausible reply with one fault (te instead of én)"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-01-ex.json",
-  "id": "b1-04-01-dialogue-2",
-  "set": {
-   "prompt": [
-    {
-     "speaker": "Anna",
-     "text": "Nagy dilemma előtt állok."
+  {
+    "file": "content/hu/exercises/b1/b1-04-01-ex.json",
+    "id": "b1-04-01-dialogue-1",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Petra",
+          "text": "Új állást kaptam, de nagyon bizonytalan vagyok. Mit csináljak?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A helyedben én elfogadnám — nagy lehetőség.",
+        "A helyedben te elfogadnád — nagy lehetőség."
+      ]
     },
-    {
-     "speaker": "Meg",
-     "text": "_____"
-    }
-   ],
-   "options": [
-    "Ha én a helyedben lennék, először megbeszélném a dolgot a főnökkel.",
-    "Ha én a helyedben lennék, először megbeszélem a dolgot a főnökkel."
-   ],
-   "distractor_skills": {
-    "1": "present-tense-routine-language"
-   }
+    "kind": "hungarian",
+    "why": "length-giveaway (43 vs 31); the prompt used -e in an indirect question (elfogadjam-e, B1 Unit 25 indirect-questions) and unmet annyira, fogadnád; the wrong option is now a plausible reply with one fault (te instead of én)"
   },
-  "kind": "hungarian",
-  "why": "átgondol is vocabulary of b1-04-02 (used before its lesson), dilemmában unmet form; the wrong option now differs in one thing (present instead of conditional, which a2-140 says never pairs with ha lennék)"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-02-ex.json",
-  "id": "b1-04-02-intro-1",
-  "set": {
-   "options": [
-    "Kipróbálhatnád ezt.",
-    "Próbáld ki ezt!",
-    "Kipróbálod ezt?"
-   ]
-  },
-  "kind": "hungarian",
-  "why": "length-giveaway (15 vs 11): all three options now carry ezt"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-02-ex.json",
-  "id": "b1-04-02-controlled-2",
-  "set": {
-   "sentence": "____ vele erről, mielőtt döntesz.",
-   "hint": "You could talk",
-   "english": "You could talk to him/her about this before you decide.",
-   "answer": "Beszélhetnél"
-  },
-  "kind": "hungarian",
-  "why": "várhatnál is flagged by unmet-words (the form is not in the screens); Beszélhetnél is the lesson's own example"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-02-ex.json",
-  "id": "b1-04-02-dialogue-1",
-  "set": {
-   "options": [
-    "Jobb lenne, ha inkább pihennél egy kicsit.",
-    "Jobb lenne, ha inkább pihentél egy kicsit."
-   ],
-   "teaches": [
-    "hypothetical-ha-conditional"
-   ],
-   "distractor_skills": {
-    "1": "past-tense-indefinite"
-   }
-  },
-  "kind": "hungarian",
-  "why": "length-giveaway (42 vs 23) and an absurd wrong reply (Jobb, hogy fáradt vagy.); the wrong option now differs in one form (past instead of conditional), so the item shows the ha-clause skill, not unit vocabulary"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-02-ex.json",
-  "id": "b1-04-02-dialogue-2",
-  "set": {
-   "options": [
-    "Kérhetnél tanácsot egy szakértőtől.",
-    "Kértél tanácsot egy szakértőtől."
-   ],
-   "teaches": [
-    "potential-hat-het"
-   ],
-   "distractor_skills": {
-    "1": "past-tense-indefinite"
-   }
-  },
-  "kind": "hungarian",
-  "why": "the wrong option (Megoldottad már a problémát.) is a statement, not a reply with one fault; now one form differs (past instead of -hat + conditional) and the tag follows the form"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-03-ex.json",
-  "id": "b1-04-03-intro-1",
-  "set": {
-   "options": [
-    "egyrészt... másrészt...",
-    "nem csak... hanem is...",
-    "vagy ez..., vagy az..."
-   ]
-  },
-  "kind": "hungarian",
-  "why": "length-giveaway (23 vs 15)"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-03-ex.json",
-  "id": "b1-04-03-controlled-4",
-  "set": {
-   "options": [
-    "előnye",
-    "hátránya",
-    "hibája"
-   ]
-  },
-  "kind": "hungarian",
-  "why": "kockázata is vocabulary of b1-04-04 (used a lesson early)"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-03-ex.json",
-  "id": "b1-04-03-practice-4",
-  "set": {
-   "options": [
-    "A te helyedben inkább várnék egy kicsit, mint azonnal döntenék.",
-    "A te helyedben inkább várnék egy kicsit, mint azonnal döntök.",
-    "A te helyedben inkább vártam egy kicsit, mint azonnal döntöttem."
-   ]
-  },
-  "kind": "hungarian",
-  "sure": false,
-  "why": "the wrong options had two faults each (te + vársz/vártál: person and tense, against the lesson 1 rule that the verb stays én); now one tense fault each"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-03-ex.json",
-  "id": "b1-04-03-dialogue-1",
-  "set": {
-   "prompt": [
-    {
-     "speaker": "Petra",
-     "text": "Új állást kaptam, de a régi is jó. Mit csináljak?"
+  {
+    "file": "content/hu/exercises/b1/b1-04-01-ex.json",
+    "id": "b1-04-01-dialogue-2",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Anna",
+          "text": "Nagy dilemma előtt állok."
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Ha én a helyedben lennék, először megbeszélném a dolgot a főnökkel.",
+        "Ha én a helyedben lennék, először megbeszélem a dolgot a főnökkel."
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
-    {
-     "speaker": "Meg",
-     "text": "_____"
-    }
-   ],
-   "options": [
-    "Egyrészt az új állás jobban fizet, másrészt a régi közel van.",
-    "Egyrészt az új állás jobban fizet, egyrészt a régi közel van."
-   ],
-   "teaches": [
-    "egyreszt-masreszt"
-   ]
+    "kind": "hungarian",
+    "why": "átgondol is vocabulary of b1-04-02 (used before its lesson), dilemmában unmet form; the wrong option now differs in one thing (present instead of conditional, which a2-140 says never pairs with ha lennék)"
   },
-  "kind": "hungarian",
-  "why": "the wrong reply (Én is beadtam a jelentkezésemet, ...) was off topic and 36 vs 54 long, and the prompt had unmet nyugodtabb, izgalmasabb, beadtam, jelentkezésemet, felvételi, fogadjam; now one fault (egyrészt twice); tag follows the form"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-03-ex.json",
-  "id": "b1-04-03-dialogue-2",
-  "set": {
-   "prompt": [
-    {
-     "speaker": "Károly",
-     "text": "Moziba vagy koncertre menjünk?"
+  {
+    "file": "content/hu/exercises/b1/b1-04-02-ex.json",
+    "id": "b1-04-02-intro-1",
+    "set": {
+      "options": [
+        "Kipróbálhatnád ezt.",
+        "Próbáld ki ezt!",
+        "Kipróbálod ezt?"
+      ]
     },
-    {
-     "speaker": "Anna",
-     "text": "_____"
-    }
-   ],
-   "options": [
-    "Én inkább moziba mennék, mint koncertre.",
-    "Én inkább moziba mentem, mint koncertre."
-   ],
-   "teaches": [
-    "inkabb-mint"
-   ],
-   "distractor_skills": {
-    "1": "irregular-past"
-   }
+    "kind": "hungarian",
+    "why": "length-giveaway (15 vs 11): all three options now carry ezt"
   },
-  "kind": "hungarian",
-  "why": "length-giveaway (54 vs 36), wrong option Én már választottam ... answered nothing; rövid/rövidebb unmet; now one fault (past mentem instead of conditional mennék)"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-03-ex.json",
-  "id": "b1-04-03-check-1",
-  "set": {
-   "question": "Egyrészt olcsó a busz, ____ lassú. Which word completes the pair?",
-   "options": [
-    "másrészt",
-    "ezért",
-    "vagy"
-   ]
-  },
-  "kind": "hungarian",
-  "why": "answer-in-prompt (másrészt and egyrészt both in the question); the item now asks for the partner word in a sentence"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-04-ex.json",
-  "id": "b1-04-04-controlled-4",
-  "set": {
-   "question": "Which form completes the warning? Nehogy ____ a találkozóról! (Don't be late for the meeting.)",
-   "options": [
-    "elkéss",
-    "elkésel",
-    "elkésnél"
-   ],
-   "teaches": [
-    "nehogy-purpose"
-   ],
-   "distractor_skills": {
-    "1": "present-tense-routine-language",
-    "2": "nek-conditional"
-   }
-  },
-  "kind": "hungarian",
-  "why": "length-giveaway (25 vs 11) in a metalanguage item (what mood is elkéss in?; Unit 5 calls the form subjunctive, the screen calls it imperative); now a form choice with one fault each"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-04-ex.json",
-  "id": "b1-04-04-practice-3",
-  "set": {
-   "options": [
-    {
-     "word": "forró",
-     "inflected": "forró",
-     "sentence": "Vigyázz, ez forró lehet!",
-     "gloss": "hot"
+  {
+    "file": "content/hu/exercises/b1/b1-04-02-ex.json",
+    "id": "b1-04-02-controlled-2",
+    "set": {
+      "sentence": "____ vele erről, mielőtt döntesz.",
+      "hint": "You could talk",
+      "english": "You could talk to him/her about this before you decide.",
+      "answer": "Beszélhetnél"
     },
-    {
-     "word": "drága",
-     "inflected": "drága",
-     "sentence": "Vigyázz, ez drága lehet!",
-     "gloss": "expensive"
-    }
-   ]
+    "kind": "hungarian",
+    "why": "várhatnál is flagged by unmet-words (the form is not in the screens); Beszélhetnél is the lesson's own example"
   },
-  "kind": "hungarian",
-  "why": "kockázatos is a b2-04-04 word (unmet; the unmet-words script does not read substitution options)"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-04-ex.json",
-  "id": "b1-04-04-dialogue-1",
-  "set": {
-   "prompt": [
-    {
-     "speaker": "Petra",
-     "text": "Holnap túrázni megyek a hegyekbe, de nagyon hideg lesz."
+  {
+    "file": "content/hu/exercises/b1/b1-04-02-ex.json",
+    "id": "b1-04-02-dialogue-1",
+    "set": {
+      "options": [
+        "Jobb lenne, ha inkább pihennél egy kicsit.",
+        "Jobb lenne, ha inkább pihentél egy kicsit."
+      ],
+      "teaches": [
+        "hypothetical-ha-conditional"
+      ],
+      "distractor_skills": {
+        "1": "past-tense-indefinite"
+      }
     },
-    {
-     "speaker": "Meg",
-     "text": "_____"
-    }
-   ],
-   "options": [
-    "Nehogy elindulj, az veszélyes lehet!",
-    "Nehogy elindulsz, az veszélyes lehet!"
-   ],
-   "distractor_skills": {
-    "1": "present-tense-routine-language"
-   }
+    "kind": "hungarian",
+    "why": "length-giveaway (42 vs 23) and an absurd wrong reply (Jobb, hogy fáradt vagy.); the wrong option now differs in one form (past instead of conditional), so the item shows the ha-clause skill, not unit vocabulary"
   },
-  "kind": "hungarian",
-  "why": "the wrong option had two faults (indulsz and volt); egyedül is a b2 word; now one fault (present after nehogy)"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-04-ex.json",
-  "id": "b1-04-04-dialogue-2",
-  "set": {
-   "options": [
-    "Ha nem szólsz, később megbánhatod — komoly következményei lehetnek.",
-    "Ha nem szólsz, később megbánhatom — komoly következményei lehetnek."
-   ],
-   "distractor_skills": null
-  },
-  "kind": "hungarian",
-  "why": "length-giveaway (67 vs 38), absurd wrong option with unmet megbántad; now one fault (person: megbánhatom for Károly); the old distractor_skills entry is removed"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-04-ex.json",
-  "id": "b1-04-04-controlled-3",
-  "set": {
-   "answer": null,
-   "answers": [
-    "járhat",
-    "járhatna"
-   ]
-  },
-  "kind": "hungarian",
-  "sure": false,
-  "why": "járhatna (the lesson-2 conditional) also fits 'could carry'; two right answers"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-05-ex.json",
-  "id": "b1-04-05-controlled-2",
-  "set": {
-   "sentence": "Petra ____ Annát arról, hogy lemondja a találkozót.",
-   "english": "Petra talked Anna out of cancelling the meeting."
-  },
-  "kind": "hungarian",
-  "why": "jegyző, hivatalnokot, ilyet unmet (story words) in a core item; the sentence now uses met words and the unit's people"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-05-ex.json",
-  "id": "b1-04-05-controlled-3",
-  "set": {
-   "sentence": "Károly nyugodt hangja ____ Annát, hogy nincs miért aggódnia.",
-   "english": "Károly's calm voice convinced Anna that she had nothing to worry about."
-  },
-  "kind": "hungarian",
-  "why": "asszonyt unmet and the item used the story's character as if known; now the unit's people"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-05-ex.json",
-  "id": "b1-04-05-controlled-4",
-  "set": {
-   "question": "Amikor elköszönt, még egyszer ____: „Menj csak haza nyugodtan.” (encouraged her)"
-  },
-  "kind": "hungarian",
-  "why": "follows the story fix: the notary tutoyed the widow all through the scene (a helyedben, te ne aggódj) and only the last line said Menjen / bízza"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-05-ex.json",
-  "id": "b1-04-05-practice-4",
-  "set": {
-   "question": "Which reply gives advice but leaves the final decision to the other person?",
-   "options": [
-    "A helyedben várnék, de a döntés a tiéd.",
-    "Nem kell gondolkodnod, majd én döntök.",
-    "Azt kell tenned, amit mondok."
-   ]
-  },
-  "kind": "hungarian",
-  "why": "egyik, eszköz, végső, parancs, tanácsadó, eldönti are unmet and the item asked about the unit in abstract Hungarian; now a concrete reply with met words"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-05-ex.json",
-  "id": "b1-04-05-dialogue-1",
-  "set": {
-   "prompt": [
-    {
-     "speaker": "Petra",
-     "text": "Új állást kaptam, és nagyon tanácstalan vagyok."
+  {
+    "file": "content/hu/exercises/b1/b1-04-02-ex.json",
+    "id": "b1-04-02-dialogue-2",
+    "set": {
+      "options": [
+        "Kérhetnél tanácsot egy szakértőtől.",
+        "Kértél tanácsot egy szakértőtől."
+      ],
+      "teaches": [
+        "potential-hat-het"
+      ],
+      "distractor_skills": {
+        "1": "past-tense-indefinite"
+      }
     },
-    {
-     "speaker": "Meg",
-     "text": "_____"
-    }
-   ],
-   "options": [
-    "A helyedben én mérlegelném az előnyöket és a hátrányokat, mielőtt döntesz.",
-    "A helyedben te mérlegelnéd az előnyöket és a hátrányokat, mielőtt döntesz."
-   ],
-   "teaches": [
-    "hypothetical-ha-conditional"
-   ]
+    "kind": "hungarian",
+    "why": "the wrong option (Megoldottad már a problémát.) is a statement, not a reply with one fault; now one form differs (past instead of -hat + conditional) and the tag follows the form"
   },
-  "kind": "hungarian",
-  "why": "-e in an indirect question (B1 Unit 25), unmet ajánlatot, teljesen, eldöntötted; the wrong option was absurd and 62 vs 37; now one fault (te instead of én)"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-05-ex.json",
-  "id": "b1-04-05-dialogue-2",
-  "set": {
-   "prompt": [
-    {
-     "speaker": "Károly",
-     "text": "Azt hiszem, lemondom a találkozót."
+  {
+    "file": "content/hu/exercises/b1/b1-04-03-ex.json",
+    "id": "b1-04-03-intro-1",
+    "set": {
+      "options": [
+        "egyrészt... másrészt...",
+        "nem csak... hanem is...",
+        "vagy ez..., vagy az..."
+      ]
     },
-    {
-     "speaker": "Anna",
-     "text": "_____"
-    }
-   ],
-   "options": [
-    "Nehogy siess a döntéssel — beszélhetnél még egy barátoddal is.",
-    "Nehogy sietsz a döntéssel — beszélhetnél még egy barátoddal is."
-   ],
-   "teaches": [
-    "nehogy-purpose"
-   ],
-   "distractor_skills": {
-    "1": "present-tense-routine-language"
-   }
+    "kind": "hungarian",
+    "why": "length-giveaway (23 vs 15)"
   },
-  "kind": "hungarian",
-  "why": "the wrong reply (Jó, akkor biztos ez a legjobb döntés.) is a natural reply and 62 vs 37 long; úgyis and kockázatos unmet; now one fault (present after nehogy)"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-05-ex.json",
-  "id": "b1-04-05-writing-2",
-  "set": {
-   "template": [
-    {
-     "prompt": "Say that Károly encouraged Anna.",
-     "answer": "Károly bátorította Annát."
-    }
-   ]
-  },
-  "kind": "hungarian",
-  "why": "jegyző, hivatalnokot, ilyet unmet"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-05-ex.json",
-  "id": "b1-04-05-reading-1",
-  "set": {
-   "question": "Miért kapott levelet Bede Jánosné?",
-   "options": [
-    "Mert a lánya nem fizette ki a könyveit.",
-    "Mert az asszony új házat akart venni.",
-    "Mert az asszony nem fizette ki a lakását."
-   ]
-  },
-  "kind": "hungarian",
-  "why": "length-giveaway (47 vs 26); tartozását, behajtani, nyert, lottón unmet; the lottery option is not in the story either"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-05-ex.json",
-  "id": "b1-04-05-reading-2",
-  "set": {
-   "options": [
-    "Hogy ne válaszoljon a levélre, ő majd megoldja.",
-    "Hogy azonnal fizesse ki az egész pénzt.",
-    "Hogy írjon még egy levelet a városba."
-   ]
-  },
-  "kind": "hungarian",
-  "why": "hivatalnak, elintézi, teljes, forduljon, bírósághoz unmet"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-05-ex.json",
-  "id": "b1-04-05-reading-3",
-  "set": {
-   "question": "Mit üzent Fábián úr a fiatal férfinak, aki a levelet küldte?",
-   "options": [
-    "Hogy legközelebb gondolja át, mielőtt ilyen levelet küld.",
-    "Hogy küldjön még több ilyen levelet az asszonynak.",
-    "Hogy mondja el mindenkinek a történetet."
-   ]
-  },
-  "kind": "hungarian",
-  "why": "length-giveaway (70 vs 40); hivatalnok, alaposabban unmet"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-consolidation-ex.json",
-  "id": "b1-04-consolidation-8",
-  "set": {
-   "sentences": [
-    "Petra tanácstalan volt, mert két állást kapott.",
-    "Elment Meghez, hogy tanácsot kérjen.",
-    "Meg azt mondta: a helyedben én mérlegelném az előnyöket és a hátrányokat.",
-    "Petra jobban érezte magát, és hazament."
-   ]
-  },
-  "kind": "hungarian",
-  "why": "the last line used -va/-ve participles (megnyugodva, bátorítva: B1 Unit 57) and the lines used story words (jegyző) the unmet-words script does not read in sentence-order items"
- },
- {
-  "file": "content/hu/exercises/b1/b1-04-consolidation-ex.json",
-  "id": "b1-04-consolidation-9",
-  "set": {
-   "prompt": [
-    {
-     "speaker": "Petra",
-     "text": "Nem tudom, vonattal vagy busszal menjek."
+  {
+    "file": "content/hu/exercises/b1/b1-04-03-ex.json",
+    "id": "b1-04-03-controlled-4",
+    "set": {
+      "options": [
+        "előnye",
+        "hátránya",
+        "hibája"
+      ]
     },
-    {
-     "speaker": "Meg",
-     "text": "_____"
-    }
-   ],
-   "options": [
-    "Egyrészt a vonat olcsó, másrészt a busz gyors.",
-    "Másrészt a vonat olcsó, egyrészt a busz gyors."
-   ],
-   "teaches": [
-    "egyreszt-masreszt"
-   ]
+    "kind": "hungarian",
+    "why": "kockázata is vocabulary of b1-04-04 (used a lesson early)"
   },
-  "kind": "hungarian",
-  "why": "the wrong reply (Nekem mindegy, merre megyünk ...) is a natural reply; rövidebb, gyorsabb, szebbik, élvezetesebb, érjünk unmet; now one fault (the pair in reverse order); tag follows the form"
- },
- {
-  "file": "content/hu/stories/classics/b1/b1-04-bedeanna.json",
-  "old": "„Menjen csak haza nyugodtan, bízza rám, semmi baj nem lesz a világon.”",
-  "new": "„Menj csak haza nyugodtan, bízd rám, semmi baj nem lesz a világon.”",
-  "kind": "hungarian",
-  "why": "Fábián úr tutoies the widow all through the scene (a helyedben, te ne aggódj) and switches to Menjen / bízza in his last line"
- },
- {
-  "file": "content/hu/stories/classics/b1/b1-04-bedeanna.json",
-  "old": "amikor a nevét kimondva olvassa egy idegen papíron",
-  "new": "amikor a lánya nevét olvassa egy idegen papíron",
-  "kind": "hungarian",
-  "sure": false,
-  "why": "kimondva olvassa is not natural (reading a name 'saying it') and is a -va/-ve form (B1 Unit 57)"
- },
- {
-  "file": "content/hu/stories/classics/b1/b1-04-bedeanna.json",
-  "old": "Miután az asszony megnyugodva hazament, Fábián úr",
-  "new": "Miután az asszony megnyugodott és hazament, Fábián úr",
-  "kind": "hungarian",
-  "sure": false,
-  "why": "-va/-ve participle (megnyugodva, B1 Unit 57) in a story that otherwise stays at this level; also the audit has no entry for megnyugodva or hazament"
- }
+  {
+    "file": "content/hu/exercises/b1/b1-04-03-ex.json",
+    "id": "b1-04-03-practice-4",
+    "set": {
+      "options": [
+        "A te helyedben inkább várnék egy kicsit, mint azonnal döntenék.",
+        "A te helyedben inkább várnék egy kicsit, mint azonnal döntök.",
+        "A te helyedben inkább vártam egy kicsit, mint azonnal döntöttem."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "the wrong options had two faults each (te + vársz/vártál: person and tense, against the lesson 1 rule that the verb stays én); now one tense fault each"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-03-ex.json",
+    "id": "b1-04-03-dialogue-1",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Petra",
+          "text": "Új állást kaptam, de a régi is jó. Mit csináljak?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Egyrészt az új állás jobban fizet, másrészt a régi közel van.",
+        "Egyrészt az új állás jobban fizet, egyrészt a régi közel van."
+      ],
+      "teaches": [
+        "egyreszt-masreszt"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "the wrong reply (Én is beadtam a jelentkezésemet, ...) was off topic and 36 vs 54 long, and the prompt had unmet nyugodtabb, izgalmasabb, beadtam, jelentkezésemet, felvételi, fogadjam; now one fault (egyrészt twice); tag follows the form"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-03-ex.json",
+    "id": "b1-04-03-dialogue-2",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Moziba vagy koncertre menjünk?"
+        },
+        {
+          "speaker": "Anna",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Én inkább moziba mennék, mint koncertre.",
+        "Én inkább moziba mentem, mint koncertre."
+      ],
+      "teaches": [
+        "inkabb-mint"
+      ],
+      "distractor_skills": {
+        "1": "irregular-past"
+      }
+    },
+    "kind": "hungarian",
+    "why": "length-giveaway (54 vs 36), wrong option Én már választottam ... answered nothing; rövid/rövidebb unmet; now one fault (past mentem instead of conditional mennék)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-03-ex.json",
+    "id": "b1-04-03-check-1",
+    "set": {
+      "question": "Egyrészt olcsó a busz, ____ lassú. Which word completes the pair?",
+      "options": [
+        "másrészt",
+        "ezért",
+        "vagy"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "answer-in-prompt (másrészt and egyrészt both in the question); the item now asks for the partner word in a sentence"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-04-ex.json",
+    "id": "b1-04-04-controlled-4",
+    "set": {
+      "question": "Which form completes the warning? Nehogy ____ a találkozóról! (Don't be late for the meeting.)",
+      "options": [
+        "elkéss",
+        "elkésel",
+        "elkésnél"
+      ],
+      "teaches": [
+        "nehogy-purpose"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "nek-conditional"
+      }
+    },
+    "kind": "hungarian",
+    "why": "length-giveaway (25 vs 11) in a metalanguage item (what mood is elkéss in?; Unit 5 calls the form subjunctive, the screen calls it imperative); now a form choice with one fault each"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-04-ex.json",
+    "id": "b1-04-04-practice-3",
+    "set": {
+      "options": [
+        {
+          "word": "forró",
+          "inflected": "forró",
+          "sentence": "Vigyázz, ez forró lehet!",
+          "gloss": "hot"
+        },
+        {
+          "word": "drága",
+          "inflected": "drága",
+          "sentence": "Vigyázz, ez drága lehet!",
+          "gloss": "expensive"
+        }
+      ]
+    },
+    "kind": "hungarian",
+    "why": "kockázatos is a b2-04-04 word (unmet; the unmet-words script does not read substitution options)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-04-ex.json",
+    "id": "b1-04-04-dialogue-1",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Petra",
+          "text": "Holnap túrázni megyek a hegyekbe, de nagyon hideg lesz."
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Nehogy elindulj, az veszélyes lehet!",
+        "Nehogy elindulsz, az veszélyes lehet!"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
+    },
+    "kind": "hungarian",
+    "why": "the wrong option had two faults (indulsz and volt); egyedül is a b2 word; now one fault (present after nehogy)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-04-ex.json",
+    "id": "b1-04-04-dialogue-2",
+    "set": {
+      "options": [
+        "Ha nem szólsz, később megbánhatod — komoly következményei lehetnek.",
+        "Ha nem szólsz, később megbánhatom — komoly következményei lehetnek."
+      ],
+      "distractor_skills": null
+    },
+    "kind": "hungarian",
+    "why": "length-giveaway (67 vs 38), absurd wrong option with unmet megbántad; now one fault (person: megbánhatom for Károly); the old distractor_skills entry is removed"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-04-ex.json",
+    "id": "b1-04-04-controlled-3",
+    "set": {
+      "answer": null,
+      "answers": [
+        "járhat",
+        "járhatna"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "járhatna (the lesson-2 conditional) also fits 'could carry'; two right answers"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-05-ex.json",
+    "id": "b1-04-05-controlled-2",
+    "set": {
+      "sentence": "Petra ____ Annát arról, hogy lemondja a találkozót.",
+      "english": "Petra talked Anna out of cancelling the meeting."
+    },
+    "kind": "hungarian",
+    "why": "jegyző, hivatalnokot, ilyet unmet (story words) in a core item; the sentence now uses met words and the unit's people"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-05-ex.json",
+    "id": "b1-04-05-controlled-3",
+    "set": {
+      "sentence": "Károly nyugodt hangja ____ Annát, hogy nincs miért aggódnia.",
+      "english": "Károly's calm voice convinced Anna that she had nothing to worry about."
+    },
+    "kind": "hungarian",
+    "why": "asszonyt unmet and the item used the story's character as if known; now the unit's people"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-05-ex.json",
+    "id": "b1-04-05-controlled-4",
+    "set": {
+      "question": "Amikor elköszönt, még egyszer ____: „Menjen csak haza nyugodtan.” (encouraged her)"
+    },
+    "kind": "hungarian",
+    "why": "follows the story fix: the notary tutoyed the widow all through the scene (a helyedben, te ne aggódj) and only the last line said Menjen / bízza (reviewer: Fábián uses formal Menjen with the old woman, as in the story)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-05-ex.json",
+    "id": "b1-04-05-practice-4",
+    "set": {
+      "question": "Which reply gives advice but leaves the final decision to the other person?",
+      "options": [
+        "A helyedben várnék, de a döntés a tiéd.",
+        "Nem kell gondolkodnod, majd én döntök.",
+        "Azt kell tenned, amit mondok."
+      ]
+    },
+    "kind": "hungarian",
+    "why": "egyik, eszköz, végső, parancs, tanácsadó, eldönti are unmet and the item asked about the unit in abstract Hungarian; now a concrete reply with met words"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-05-ex.json",
+    "id": "b1-04-05-dialogue-1",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Petra",
+          "text": "Új állást kaptam, és nagyon tanácstalan vagyok."
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A helyedben én mérlegelném az előnyöket és a hátrányokat, mielőtt döntesz.",
+        "A helyedben te mérlegelnéd az előnyöket és a hátrányokat, mielőtt döntesz."
+      ],
+      "teaches": [
+        "hypothetical-ha-conditional"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "-e in an indirect question (B1 Unit 25), unmet ajánlatot, teljesen, eldöntötted; the wrong option was absurd and 62 vs 37; now one fault (te instead of én)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-05-ex.json",
+    "id": "b1-04-05-dialogue-2",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Károly",
+          "text": "Azt hiszem, lemondom a találkozót."
+        },
+        {
+          "speaker": "Anna",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Nehogy siess a döntéssel — beszélhetnél még egy barátoddal is.",
+        "Nehogy sietsz a döntéssel — beszélhetnél még egy barátoddal is."
+      ],
+      "teaches": [
+        "nehogy-purpose"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
+    },
+    "kind": "hungarian",
+    "why": "the wrong reply (Jó, akkor biztos ez a legjobb döntés.) is a natural reply and 62 vs 37 long; úgyis and kockázatos unmet; now one fault (present after nehogy)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-05-ex.json",
+    "id": "b1-04-05-writing-2",
+    "set": {
+      "template": [
+        {
+          "prompt": "Say that Károly encouraged Anna.",
+          "answer": "Károly bátorította Annát."
+        }
+      ]
+    },
+    "kind": "hungarian",
+    "why": "jegyző, hivatalnokot, ilyet unmet"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-05-ex.json",
+    "id": "b1-04-05-reading-1",
+    "set": {
+      "question": "Miért kapott levelet Bede Jánosné?",
+      "options": [
+        "Mert a lánya nem fizette ki a könyveit.",
+        "Mert az asszony új házat akart venni.",
+        "Mert az asszony nem fizette ki a lakását."
+      ]
+    },
+    "kind": "hungarian",
+    "why": "length-giveaway (47 vs 26); tartozását, behajtani, nyert, lottón unmet; the lottery option is not in the story either"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-05-ex.json",
+    "id": "b1-04-05-reading-2",
+    "set": {
+      "options": [
+        "Hogy ne válaszoljon a levélre, ő majd megoldja.",
+        "Hogy azonnal fizesse ki az egész pénzt.",
+        "Hogy írjon még egy levelet a városba."
+      ]
+    },
+    "kind": "hungarian",
+    "why": "hivatalnak, elintézi, teljes, forduljon, bírósághoz unmet"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-05-ex.json",
+    "id": "b1-04-05-reading-3",
+    "set": {
+      "question": "Mit üzent Fábián úr a fiatal férfinak, aki a levelet küldte?",
+      "options": [
+        "Hogy legközelebb gondolja át, mielőtt ilyen levelet küld.",
+        "Hogy küldjön még több ilyen levelet az asszonynak.",
+        "Hogy mondja el mindenkinek a történetet."
+      ]
+    },
+    "kind": "hungarian",
+    "why": "length-giveaway (70 vs 40); hivatalnok, alaposabban unmet"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-consolidation-ex.json",
+    "id": "b1-04-consolidation-8",
+    "set": {
+      "sentences": [
+        "Petra tanácstalan volt, mert két állást kapott.",
+        "Elment Meghez, hogy tanácsot kérjen.",
+        "Meg azt mondta: a helyedben én mérlegelném az előnyöket és a hátrányokat.",
+        "Petra jobban érezte magát, és hazament."
+      ]
+    },
+    "kind": "hungarian",
+    "why": "the last line used -va/-ve participles (megnyugodva, bátorítva: B1 Unit 57) and the lines used story words (jegyző) the unmet-words script does not read in sentence-order items"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-04-consolidation-ex.json",
+    "id": "b1-04-consolidation-9",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Petra",
+          "text": "Nem tudom, vonattal vagy busszal menjek."
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Egyrészt a vonat olcsó, másrészt a busz gyors.",
+        "Másrészt a vonat olcsó, egyrészt a busz gyors."
+      ],
+      "teaches": [
+        "egyreszt-masreszt"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "the wrong reply (Nekem mindegy, merre megyünk ...) is a natural reply; rövidebb, gyorsabb, szebbik, élvezetesebb, érjünk unmet; now one fault (the pair in reverse order); tag follows the form"
+  },
+  {
+    "file": "content/hu/stories/classics/b1/b1-04-bedeanna.json",
+    "old": "amikor a nevét kimondva olvassa egy idegen papíron",
+    "new": "amikor a lánya nevét olvassa egy idegen papíron",
+    "kind": "hungarian",
+    "sure": false,
+    "why": "kimondva olvassa is not natural (reading a name 'saying it') and is a -va/-ve form (B1 Unit 57)"
+  },
+  {
+    "file": "content/hu/stories/classics/b1/b1-04-bedeanna.json",
+    "old": "Miután az asszony megnyugodva hazament, Fábián úr",
+    "new": "Miután az asszony megnyugodott és hazament, Fábián úr",
+    "kind": "hungarian",
+    "sure": false,
+    "why": "-va/-ve participle (megnyugodva, B1 Unit 57) in a story that otherwise stays at this level; also the audit has no entry for megnyugodva or hazament"
+  }
 ]
