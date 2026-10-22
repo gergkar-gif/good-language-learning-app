@@ -223,6 +223,20 @@ stays B1, so don't drill new verbs with it · Experiential *már* ("Have you
 ever …?": *Foglaltál már asztalt online?*) is B1 (`mar-experiential`); at A2
 ask *Mikor …?* or use *már* = "already" with a plain past fact.
 
+**HU B1 (pilot 2026-10-22, Units 1–2).** Forms that B1 teaches late and
+units use early: present participles *-ó/-ő* (*fekvő*, *lévő*, Unit 11),
+past participles as modifiers (*vetett*, *tiltott*, Unit 3), verbal nouns
+*-ás/-és* (*elhelyezkedése*, Unit 31), *-va/-ve* (*haladva*, Unit 57),
+*ahol* (Unit 10), *míg* (Unit 4), past conditional *volna* (Unit 39),
+*hogy* + subjunctive (Unit 5), reported commands (Unit 53): check
+`taught_in` before letting any of them into a screen, item or question
+(stories may keep them). B1 screens present A1–A2 endings and
+postpositions (*-ból*, *-val*, *-ra*, *mellett*) as new: recap them. In
+the citizenship units, check every fact (the facts block) and hedge
+traditions (*a hagyomány szerint*: the four rivers, the three mountains,
+the bent cross); *vármegye* is the official name since 2023. Two-option
+dialogue items need a plausible wrong reply with one fault.
+
 ### 6c. Spanish (es-es, es-latam; written 2026-10-16 before the Spanish pass, from the files and ROADMAP 148/150; add what the pass finds)
 
 - **es-latam has no *vosotros*** (AGENTS.md): no *vosotros*/*os* forms in

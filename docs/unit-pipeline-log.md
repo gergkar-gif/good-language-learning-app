@@ -364,6 +364,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-21 | es A1 25–26 (both courses) | **one** reader, 2 units, Spanish template, mirrored | | 244k (the resumed notice only; stopped by a Sonnet session limit after 3 of 4 files) | 84 proposed (31 / 53), 0 rejected; Claude changed 3 and fixed one cross-story contradiction | ~122k reader tokens/unit (uncertain: one notice); ~42 fixes/unit; 59 of 84 to review; 84/84 mirrored, 5 put in es-latam words (*billete* → *boleto*); level walk 156/156 per course |
 | 10-22 | es A2 31–33 (31–32 both courses, 33 es-es only) | paired read, 2 units + 1, both stopped by a Sonnet session limit before writing a file, resumed | | A 233k, B 182k (resumed notices only; the first runs' usage was lost with the limit) | 213 proposed (61 / 75 / 77), 4 rejected by `check_fixes` (3 builders with an `answer` key, fixed and kept; 1 deliberate *nunca/jamás*, kept); Claude changed 9, restored 7 `distractor_skills` entries the reader removed, added 2 (a B1 option set the es-es unmet check missed, an unmet story option) | cost/unit uncertain (≥ ~140k: the resumed notices alone give 116k + 182k); ~71 fixes/unit; 174 of 213 to review; 102/122 mirrored, 3 es-latam twins by hand, the rest es-es variants or es-latam text the reader fixed directly; level walk 198/198 es-es, 192/192 es-latam with challenges |
 | 10-22 | HU A1 + A2 re-walk **with challenges** (first since challenge walking began 10-21) | Claude, no agents | ~18 min | | 0 walk failures (198/198 A1, 281/281 A2) | HU and Spanish A1–A2 now pass the same checklist |
+| 10-22 | **HU B1 pilot**: Unit 1 longer-stories (language) ∥ Unit 2 hungary-today-land-symbols (history, facts block) | mechanical pre-pass (1 Sonnet fixer, 25 items) then 1 unit per reader | fixer 83k, 1.5 | A 257k, 13.6; B 326k, 22.4 | 154 proposed (48 / 106), 3 rejected (new tells, option language; rewritten by Claude), Claude added 4 (vármegye official since 2023, double-cross tradition) | ~257k language / ~326k history per unit at **one unit per reader** (fixed per-reader overhead not spread); pre-pass: 24 of 25 applied, then readers rewrote most of them; Unit 2 had 256 unmet-word hits before the pre-pass (6 after the read), Unit 1 37 → 20; walk 12/12 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1041,3 +1042,38 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   user: no story shows Carlos and Meg leaving Hanoi (Unit 31 opens in
   Madrid "de camino"), and the grandmother in Madrid (father's mother) and
   the grandmother of the Hungarian childhood stories are never told apart.
+
+### 2026-10-22: HU B1 pilot (Units 1 and 2)
+
+- **Cost:** 257k for the language unit and 326k for the history unit, at
+  one unit per reader, against ~140k a unit in A2 at two or three per
+  reader. Part of it is per-reader overhead (rulebook, sheet, tools) that
+  a single unit doesn't share; most of the history unit's is the 256
+  unmet-word hits it started with (`check-content` doesn't run
+  `unmet-word` from B1: `UNMET_WORD` is A1–A2), which the reader rewrote
+  one by one, and the facts list.
+- **The mechanical pre-pass is dropped.** 24 of its 25 fixes passed
+  `check_fixes`, but the readers then rewrote most of them: absurd wrong
+  options (*az egész ország egyetlen hegycsúcs*), two faults, a true wrong
+  option, words beyond the level. Evening out lengths without reading the
+  item moves the work rather than saving it. Readers fix length give-aways
+  and tells in the read, as in A2. `dump_flagged.py` and the fixer
+  template stay for a batch of purely mechanical items.
+- **Facts block worked:** the reader listed 30 claims and marked the
+  uncertain ones; the web check confirmed Romania's Schengen land borders
+  (1 Jan 2025) and that the simplified (ethnic-Hungarian) naturalisation
+  has no constitutional exam, and found one error the reader had passed:
+  *vármegye* has been the official name since 1 Jan 2023, not a
+  "traditional" one. Hedged as tradition: the four rivers, the three
+  mountains, the bent cross, the double cross's link to St Stephen.
+- **B1 findings for the rulebook § 6b:** later-B1 forms used early
+  (present participles *-ó/-ő* Unit 11, past participles Unit 3, verbal
+  nouns *-ás/-és* Unit 31, *-va/-ve* Unit 57, *ahol* Unit 10, *míg*
+  Unit 4, past conditional Unit 39, *hogy* + subjunctive Unit 5); A1–A2
+  cases presented as new on B1 screens (*-ból*, *-val*, *-ra*,
+  postpositions); the generated challenge screens of the citizenship
+  lessons are broken (replaced by the hand-written ones).
+- **Decision for the user:** whether B1 history items keep their
+  vocabulary (words added to the lesson lists) or are rewritten to met
+  words, as the pilot reader did. It decides most of the history units'
+  cost.

@@ -25,7 +25,7 @@
       "options": [
         "korábban",
         "később",
-        "azóta"
+        "ritkán"
       ],
       "correct": 0,
       "teaches": [
@@ -193,18 +193,22 @@
     {
       "id": "b1-01-01-practice-4",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which sentence correctly sets a scene, not an event?",
+      "category": "grammar",
+      "question": "Which sentence opens a story about the past?",
       "options": [
         "Akkoriban egy kis faluban laktunk.",
-        "Mostanában egy kis faluban lakunk.",
-        "Jelenleg a városban lakunk."
+        "Most egy kis faluban lakunk.",
+        "Egy kis faluban fogunk lakni."
       ],
       "correct": 0,
       "teaches": [
-        "b1-longer-stories-vocab"
+        "past-tense-indefinite"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "fog-infinitive"
+      }
     },
     {
       "id": "b1-01-01-dialogue-1",
@@ -248,11 +252,11 @@
       ],
       "options": [
         "Korábban egészen más volt itt az élet.",
-        "Korábban egészen más lesz itt az élet."
+        "Korábban egészen más voltak itt az élet."
       ],
       "correct": 0,
       "teaches": [
-        "b1-longer-stories-vocab"
+        "van-past"
       ]
     },
     {
@@ -261,7 +265,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say that back then, you lived in a small village.",
+          "prompt": "Say that back then, we lived in a small village.",
           "answer": "Akkoriban egy kis faluban laktunk."
         }
       ],
@@ -305,7 +309,7 @@
       "category": "vocabulary",
       "sentence": "____ a nagyapám fiatal volt, korábban egészen más volt itt az élet.",
       "hint": "When",
-      "english": "When my grandfather was young, life here was earlier completely different.",
+      "english": "When my grandfather was young, life here used to be completely different.",
       "answer": "Amikor",
       "teaches": [
         "b1-longer-stories-vocab"

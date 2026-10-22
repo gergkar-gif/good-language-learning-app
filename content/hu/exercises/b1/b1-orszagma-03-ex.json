@@ -71,9 +71,9 @@
       "category": "reading",
       "question": "Milyen elemek láthatók a magyar címerpajzs jobb és bal oldalán?",
       "options": [
-        "A bal oldalon a nyolc Árpád-sáv, a jobb oldalon a zöld hármas halom, a korona és a kettős kereszt.",
-        "A bal oldalon egy kétfejű sas és egy kard, a jobb oldalon egy arany oroszlán és egy tölgyfaág.",
-        "A bal oldalon egy kard és egy zöld tölgyfaág, a jobb oldalon egy arany oroszlán és egy sas."
+        "A bal oldalon a nyolc Árpád-sáv, a jobb oldalon a zöld hármas halom és a kettős kereszt.",
+        "A bal oldalon a nyolc Árpád-sáv, a jobb oldalon a piros hármas halom és a kettős kereszt.",
+        "A bal oldalon a három Árpád-sáv, a jobb oldalon a zöld hármas halom és a kettős kereszt."
       ],
       "correct": 0
     },
@@ -95,11 +95,11 @@
       "id": "b1-orszagma-03.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hol őrzik ma a Szent Koronát, és miért ferde a tetején lévő kereszt?",
+      "question": "Hol őrzik ma a Szent Koronát?",
       "options": [
-        "Az Országház kupolacsarnokában őrzik; a kereszt egy 17. századi viharos rejtés során görbült meg.",
-        "A Nemzeti Galériában őrzik; a keresztet a mesterek szándékosan készítették ferdére.",
-        "A Mátyás-templomban őrzik; a kereszt a második világháborúban sérült meg."
+        "Budapesten, az Országházban.",
+        "Debrecenben, a múzeumban.",
+        "Szegeden, a templomban."
       ],
       "correct": 0
     },
@@ -111,7 +111,7 @@
         "A",
         "címer",
         "egy",
-        "hasított",
+        "kettéosztott",
         "pajzsból",
         "és",
         "a",
@@ -123,7 +123,7 @@
         "A",
         "címer",
         "egy",
-        "hasított",
+        "kettéosztott",
         "pajzsból",
         "és",
         "a",
@@ -151,9 +151,9 @@
         }
       ],
       "options": [
-        "A négy folyót (Duna, Tisza, Dráva, Száva) és a Tátra, Mátra, Fátra hegyeket.",
-        "A négy királyi várat az ország közepén és a három legnagyobb magyar tavat.",
-        "Az ország négy évszakát, valamint a három legnagyobb magyar országrészét."
+        "A négy folyót és a Tátra, a Mátra és a Fátra hegyeit.",
+        "A négy évszakot és a három legnagyobb magyar várost.",
+        "A négy országot és a három legnagyobb magyar tavat."
       ],
       "correct": 0,
       "teaches": [
@@ -164,11 +164,11 @@
       "id": "b1-orszagma-03.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "A címer jobb oldalán lévő hármas halomból kiemelkedő kettős kereszt Szent István keresztény államalapítására utal.",
+      "sentence": "A zöld hármas halom a Tátrát, a Mátrát és a Fátrát jelképezi.",
       "options": [
-        "The double cross rising from the triple mound refers to Saint Stephen's founding of the Christian state.",
-        "The coat of arms features a single cross, which represents the Protestant reformation in Hungary.",
-        "The triple mound in the coat of arms is located on the left side of the shield, not on the right."
+        "The green triple mound symbolizes the Tátra, the Mátra and the Fátra.",
+        "The green triple mound symbolizes the four rivers of the Carpathian Basin.",
+        "The green triple mound symbolizes the four seasons of the year."
       ],
       "correct": 0,
       "teaches": [
@@ -181,23 +181,27 @@
       "category": "grammar",
       "question": "Which sentence correctly says \"The flag consists of three horizontal stripes\"?",
       "options": [
-        "A zászló három vízszintes sávokból áll.",
-        "A zászló három vízszintes sávból áll.",
-        "A zászló három vízszintes sávra áll."
+        "A lobogó három vízszintes sávokból áll.",
+        "A lobogó három vízszintes sávból áll.",
+        "A lobogó három vízszintes sávra áll."
       ],
       "correct": 1,
       "teaches": [
         "verb-government-bol-bol"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "plural-nouns-k",
+        "2": "ra-re"
+      }
     },
     {
       "id": "b1-orszagma-03.ex10",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A címer a pajzs____ és a Szent Koronából áll.",
+      "sentence": "A címer a ___ és a Szent Koronából áll.",
       "hint": "the shield",
       "english": "The coat of arms consists of the shield and the Holy Crown.",
-      "answer": "ból",
+      "answer": "pajzsból",
       "teaches": [
         "verb-government-bol-bol"
       ]

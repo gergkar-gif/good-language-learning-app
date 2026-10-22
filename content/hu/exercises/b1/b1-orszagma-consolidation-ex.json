@@ -39,7 +39,7 @@
       "options": [
         "határon túli magyarok",
         "külföldi turisták",
-        "átutazó vendégek"
+        "külföldi vendégek"
       ],
       "correct": 0,
       "teaches": [
@@ -52,20 +52,24 @@
       "category": "grammar",
       "question": "Melyik mondat fejezi ki helyesen és formálisan Magyarország elhelyezkedését?",
       "options": [
-        "Magyarország a Kárpát-medence szívében helyezkedik el.",
-        "Magyarország a Kárpát-medence van.",
-        "Magyarország elhelyezkedik a Kárpát-medence."
+        "Magyarország a Kárpát-medencében helyezkedik el.",
+        "Magyarország a Kárpát-medencébe helyezkedik el.",
+        "Magyarország a Kárpát-medencén helyezkedik el."
       ],
       "correct": 0,
       "teaches": [
         "ban-ben-in"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "on-en-on"
+      }
     },
     {
       "id": "b1-orszagma-consolidation.ex04",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik névutó fejezi ki azt, hogy 'valaminek a hosszában / partja mellett haladva'?",
+      "question": "Which postposition means \"along\" (the Danube)?",
       "options": [
         "mentén",
         "alatt",
@@ -80,16 +84,20 @@
       "id": "b1-orszagma-consolidation.ex05",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat használja helyesen a -ból/-ből áll szerkezetet a nemzeti zászlóra?",
+      "question": "Which sentence says correctly that the coat of arms consists of the shield and the Holy Crown?",
       "options": [
-        "A magyar zászló három vízszintes sávból áll.",
-        "A magyar zászló áll három sávokból.",
-        "A magyar zászló három sávból van állva."
+        "A címer a pajzsból és a Szent Koronából áll.",
+        "A címer a pajzsban és a Szent Koronában áll.",
+        "A címer a pajzsról és a Szent Koronáról áll."
       ],
       "correct": 0,
       "teaches": [
         "verb-government-bol-bol"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "delative-rol-rel"
+      }
     },
     {
       "id": "b1-orszagma-consolidation.ex06",
@@ -97,15 +105,16 @@
       "category": "grammar",
       "question": "Melyik mondat helyes a határos szerkezet használatával?",
       "options": [
-        "Magyarország északon Szlovákiával, keleten Romániával határos.",
-        "Magyarország határos Szlovákia és Románia.",
-        "Magyarország Szlovákiától és Romániától határos."
+        "Magyarország keleten Romániával, nyugaton Ausztriával határos.",
+        "Magyarország keleten Romániába, nyugaton Ausztriába határos.",
+        "Magyarország keleten Romániától, nyugaton Ausztriától határos."
       ],
       "correct": 0,
       "teaches": [
         "verb-government-val-vel"
       ],
       "distractor_skills": {
+        "1": "movement-with-ba-be",
         "2": "tol-tol"
       }
     },
@@ -113,8 +122,8 @@
       "id": "b1-orszagma-consolidation.ex07",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Budapest a Duna két partján, hegyek és síkságok ___ terül el.",
-      "english": "Budapest stretches along both banks of the Danube, between hills and plains.",
+      "sentence": "Buda és Pest ___ folyik a Duna.",
+      "english": "The Danube flows between Buda and Pest.",
       "answer": "között",
       "teaches": [
         "postpositions-basic"
@@ -138,9 +147,9 @@
       "id": "b1-orszagma-consolidation.ex09",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ausztria Magyarországtól ___ fekszik a térképen.",
-      "english": "Austria lies to the west of Hungary on the map.",
-      "answer": "nyugatra",
+      "sentence": "Szlovákia Magyarországtól ___ fekszik a térképen.",
+      "english": "Slovakia lies to the north of Hungary on the map.",
+      "answer": "északra",
       "teaches": [
         "ra-re"
       ]
@@ -149,23 +158,26 @@
       "id": "b1-orszagma-consolidation.ex10",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A hegykoszorúval védett Kárpát-medencében szárazföldi államként ___ el hazánk.",
+      "sentence": "Magyarország szárazföldi országként ___ el a Kárpát-medencében.",
       "hint": "is located",
-      "english": "Our homeland lies as a landlocked state in the Carpathian Basin, protected by a ring of mountains.",
-      "answer": "helyezkedik",
+      "english": "Hungary lies in the Carpathian Basin as a landlocked country.",
       "teaches": [
         "b1-hungary-today-land-symbols-vocab"
+      ],
+      "answers": [
+        "helyezkedik",
+        "terül"
       ]
     },
     {
       "id": "b1-orszagma-consolidation.ex11",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mit jelképez a magyar címer bal oldalán lévő négy ezüst sáv?",
+      "question": "Mit jelképez a címer négy ezüst sávja a hagyomány szerint?",
       "options": [
-        "A Kárpát-medence négy történelmi fő folyóját: a Dunát, a Tiszát, a Drávát és a Szávát.",
-        "A négy történelmi királyi dinasztiát: az Árpád-, Anjou-, Hunyadi- és Jagelló-házat.",
-        "A történelmi Magyar Királyság négy legfontosabb tengerparti kikötővárosát az Adrián."
+        "A négy nagy folyót: a Dunát, a Tiszát, a Drávát és a Szávát.",
+        "A négy nagy várost: Budapestet, Debrecent, Szegedet és Pécset.",
+        "A négy évszakot: a tavaszt, a nyarat, az őszt és a telet."
       ],
       "correct": 0
     },
@@ -173,11 +185,11 @@
       "id": "b1-orszagma-consolidation.ex12",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Melyik három hegycsúcsot szimbolizálja a címerben látható zöld hármas halom?",
+      "question": "Melyik három hegyet szimbolizálja a zöld hármas halom?",
       "options": [
         "A Tátrát, a Mátrát és a Fátrát.",
         "A Kékest, a Dobogókőt és a Gellért-hegyet.",
-        "Az Alpokat, a Kárpátokat és az Urál-hegységet."
+        "Az Alpokat, a Kárpátokat és a Pireneusokat."
       ],
       "correct": 0
     },
@@ -185,11 +197,11 @@
       "id": "b1-orszagma-consolidation.ex13",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hány országgal határos Magyarország, és melyik két ország felé van külső schengeni határ?",
+      "question": "Hány országgal határos Magyarország, és melyik két ország felé van határellenőrzés a schengeni övezet szerint?",
       "options": [
-        "Hét országgal határos; Szerbia és Ukrajna felé van szigorú külső schengeni határ.",
-        "Öt országgal határos; Szerbia és Ukrajna felé van szigorú külső schengeni határ.",
-        "Hét országgal határos; Ausztria és Szlovákia felé van szigorú külső schengeni határ."
+        "Hét országgal határos; Szerbia és Ukrajna felé van határellenőrzés.",
+        "Öt országgal határos; Szerbia és Ukrajna felé van határellenőrzés.",
+        "Hét országgal határos; Ausztria és Szlovákia felé van határellenőrzés."
       ],
       "correct": 0
     },
@@ -199,37 +211,33 @@
       "category": "vocabulary",
       "tiles": [
         "A",
-        "nemzeti",
-        "trikolór",
-        "piros,",
-        "fehér",
-        "és",
-        "zöld",
-        "színei",
+        "lobogó",
+        "három",
+        "színe",
         "az",
         "erőt,",
+        "a",
         "hűséget",
         "és",
+        "a",
         "reményt",
-        "hirdetik."
+        "jelképezi."
       ],
       "solution": [
         "A",
-        "nemzeti",
-        "trikolór",
-        "piros,",
-        "fehér",
-        "és",
-        "zöld",
-        "színei",
+        "lobogó",
+        "három",
+        "színe",
         "az",
         "erőt,",
+        "a",
         "hűséget",
         "és",
+        "a",
         "reményt",
-        "hirdetik."
+        "jelképezi."
       ],
-      "english": "The red, white, and green colours of the national tricolour proclaim strength, loyalty, and hope.",
+      "english": "The three colours of the flag symbolize strength, loyalty and hope.",
       "teaches": [
         "b1-hungary-today-land-symbols-vocab"
       ]
@@ -239,28 +247,26 @@
       "type": "sentence-builder",
       "category": "vocabulary",
       "tiles": [
-        "Közigazgatásilag",
-        "az",
-        "ország",
+        "Magyarországon",
         "tizenkilenc",
-        "vármegyére",
+        "vármegye",
+        "van,",
         "és",
         "a",
-        "fővárosra",
-        "oszlik."
+        "főváros",
+        "Budapest."
       ],
       "solution": [
-        "Közigazgatásilag",
-        "az",
-        "ország",
+        "Magyarországon",
         "tizenkilenc",
-        "vármegyére",
+        "vármegye",
+        "van,",
         "és",
         "a",
-        "fővárosra",
-        "oszlik."
+        "főváros",
+        "Budapest."
       ],
-      "english": "Administratively, the country is divided into nineteen counties and the capital.",
+      "english": "There are nineteen counties in Hungary, and the capital is Budapest.",
       "teaches": [
         "b1-hungary-today-land-symbols-vocab"
       ]
@@ -269,12 +275,14 @@
       "id": "b1-orszagma-consolidation.ex16",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A Szent Korona tetején lévő kereszt a történelem viharaiban ___ meg.",
-      "hint": "was damaged",
-      "english": "The cross on top of the Holy Crown was damaged in the storms of history.",
-      "answer": "sérült",
+      "sentence": "A piros sáv az erőt ___.",
+      "english": "The red stripe symbolizes strength.",
       "teaches": [
         "b1-hungary-today-land-symbols-vocab"
+      ],
+      "answers": [
+        "jelképezi",
+        "szimbolizálja"
       ]
     },
     {
@@ -284,7 +292,7 @@
       "prompt": [
         {
           "speaker": "Kérdező",
-          "text": "Kérem, mutassa be röviden a két legfontosabb magyar tájegységet!"
+          "text": "Hol van a Dunántúl, és hol van az Alföld?"
         },
         {
           "speaker": "Kérelmező",
@@ -292,9 +300,9 @@
         }
       ],
       "options": [
-        "A dombos Dunántúlt a Duna nyugati oldalán és a sík Alföldet a Duna és Tisza mentén.",
-        "A Magas-Tátra gleccsereit a Duna mentén és az Adriai-tenger öbleit a Tisza mentén.",
-        "Magyarországon nincsenek különálló tájegységek, az egész ország egyetlen hegycsúcs."
+        "A Dunántúl nyugaton van, az Alföld pedig keleten.",
+        "A Dunántúl keleten van, az Alföld pedig nyugaton.",
+        "A Dunántúl nyugaton van, az Alföld pedig délnyugaton."
       ],
       "correct": 0,
       "teaches": [
@@ -317,11 +325,11 @@
       "id": "b1-orszagma-consolidation.ex19",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "A magyar állampolgárság megszerzése az ezeréves kultúra és a nemzeti közösség iránti elkötelezettséget fejezi ki.",
+      "sentence": "Magyarország hét országgal határos, és szárazföldi ország.",
       "options": [
-        "Acquiring Hungarian citizenship expresses commitment to a thousand-year-old culture and community.",
-        "Hungarian citizenship requires giving up all historical knowledge of Central Europe.",
-        "The citizenship interview focuses on modern commercial maritime law and trade statistics."
+        "Hungary borders seven countries and is a landlocked country.",
+        "Hungary borders seven countries and is an island country.",
+        "Hungary borders five countries and is a landlocked country."
       ],
       "correct": 0,
       "teaches": [
@@ -332,11 +340,11 @@
       "id": "b1-orszagma-consolidation.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hol tekinthető meg ma a magyar államiság legfőbb szimbóluma, a Szent Korona?",
+      "question": "Hol van ma a Szent Korona?",
       "options": [
-        "Budapesten, az Országház kupolacsarnokában.",
-        "Visegrádon, a fellegvár bástyáján.",
-        "Esztergomban, a Keresztény Múzeum pincéjében."
+        "Budapesten, az Országházban.",
+        "Bécsben, az Országházban.",
+        "Budapesten, egy múzeumban."
       ],
       "correct": 0
     }
