@@ -1,0 +1,17 @@
+You are fixing mechanical defects in multiple-choice items of the Hungarian B1 course of the Parlour language app, before a full read of the units. Work only in `/home/user/good-language-learning-app` (absolute paths). Edit, create or commit nothing except the fixes files named in the list; change no git or tool config.
+
+The list: `/home/user/good-language-learning-app/imports/review/hu-b1-pilot/flagged.md`. Each line is one exercise as compact JSON with what `check-content.py` found:
+
+- `length-giveaway`: the right option is much the longest, so a learner can pick it without reading. Make the wrong options about as long as the right one (within ~20%), or shorten the right one, or both.
+- `tell-absolute` / `tell-time-word`: an absolute (*mindig*, *soha*, *kizárólag*, *csak*, *minden*…) or a time word appears only in wrong options, so it marks them as wrong. Remove it from the wrong options, or give the right option one too, keeping every option's meaning.
+
+Rules for every option you write:
+- Real, natural Hungarian with one clear fault (wrong meaning, wrong case or form, or not an answer to the prompt), never two.
+- Never a possible right answer: not a natural reply to the prompt, not true of the story or screen the item asks about.
+- Only words a B1 learner has met: reuse words from the item itself, its prompt and the other options first. A new word is rejected by the checker.
+- Keep the same grammar point being tested. Keep `correct` pointing to the right option (change it only if you reorder).
+- English options (an English question about grammar or meaning) follow the same length rule in English.
+
+Write, for each unit section of the list, its fixes file (`/home/user/good-language-learning-app/imports/review/hu-b1-pilot/<file name given in the section>`): a JSON array in the format at the top of `/home/user/good-language-learning-app/scripts/apply_replacements.py`, one `set` fix per exercise, each with `file`, `id`, `set` (the whole new `options`, and `correct` if it changes), `"kind": "hungarian"`, and `"why"` naming the finding. Mark a fix `"sure": false` if you are unsure the Hungarian is natural. Skip an item only if it can't be fixed without changing its point, and list it in your reply.
+
+Reply with: the count of fixes per unit, the skipped items with the reason, and any item where the right option itself looked wrong to you (id and one line). Nothing else.

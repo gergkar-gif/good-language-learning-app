@@ -3,9 +3,13 @@
 start of every batch.
 
     python scripts/batch_setup.py <level> <batch dir> A=<n>,<n>,<n> [B=<n>,...]
-        [--focus focus.txt] [--no-worktrees]
+        [--focus focus.txt] [--no-worktrees] [--course hu]
 
-Unit numbers are 1-based positions in content/es-es/curriculum/units/<level>.json.
+Unit numbers are 1-based positions in content/<course>/curriculum/units/<level>.json
+(the course is es-es unless --course hu: Spanish is read in es-es and mirrored).
+Hungarian uses scripts/templates/read-hungarian.txt, and a unit of the
+`citizenship` track (HU B1 history and civics) gets the facts block
+scripts/templates/history-block.txt (user, 2026-10-22).
 For each reader (A, B) it:
 
 - adds the worktree /home/user/parlour-read-<a|b> from origin/master (unless
@@ -68,7 +72,11 @@ def counts(course, level, uid):
 
 def main():
     args = sys.argv[1:]
-    focus, worktrees = "", True
+    focus, worktrees, course = "", True, "es-es"
+    if "--course" in args:
+        i = args.index("--course")
+        course = args[i + 1]
+        del args[i:i + 2]
     if "--focus" in args:
         i = args.index("--focus")
         focus = Path(args[i + 1]).read_text(encoding="utf-8").strip()
@@ -83,17 +91,19 @@ def main():
     for a in args[2:]:
         k, v = a.split("=")
         readers[k.upper()] = [int(x) for x in v.split(",")]
-    units = read(ROOT / f"content/es-es/curriculum/units/{level}.json")
-    latam_ids = {u["id"] for u in read(ROOT / f"content/es-latam/curriculum/units/{level}.json") or []}
-    template = (ROOT / "scripts/templates/read-spanish.txt").read_text(encoding="utf-8")
+    units = read(ROOT / f"content/{course}/curriculum/units/{level}.json")
+    spanish = course.startswith("es")
+    latam_ids = {u["id"] for u in read(ROOT / f"content/es-latam/curriculum/units/{level}.json") or []} if spanish else set()
+    template = (ROOT / f"scripts/templates/read-{'spanish' if spanish else 'hungarian'}.txt").read_text(encoding="utf-8")
+    history = (ROOT / "scripts/templates/history-block.txt").read_text(encoding="utf-8")
     batch.mkdir(parents=True, exist_ok=True)
     base = run(["git", "rev-parse", "--short", "origin/master"]).stdout.strip()
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     setup = [f"# es {level.upper()} batch: {batch.name}", "",
              f"Started {now} from origin/master {base}. "
-             f"{len(readers)} Sonnet reader(s); es-es read once, fixes mirrored to es-latam.", ""]
-    table = ["| Unit | es-es | es-latam |", "|---|---|---|"]
+             f"{len(readers)} Sonnet reader(s)" + ("; es-es read once, fixes mirrored to es-latam." if spanish else "."), ""]
+    table = ["| Unit | es-es | es-latam |", "|---|---|---|"] if spanish else ["| Unit | track | errors / suspects |", "|---|---|---|"]
     differ = []
     for key, nums in readers.items():
         w = Path(f"/home/user/parlour-read-{key.lower()}")
@@ -101,21 +111,25 @@ def main():
             r = run(["git", "worktree", "add", "--detach", str(w), "origin/master"])
             if r.returncode:
                 sys.exit(r.stderr)
-        lines, desc = [], []
+        lines, desc, hist = [], [], False
         for n in nums:
             u = units[n - 1]
             uid, stems = u["id"], u["stems"]
-            st = stories("es-es", level, stems)
+            st = stories(course, level, stems)
             sheet = w / f"prior-{uid}.md"
-            r = run([sys.executable, "scripts/prior_knowledge.py", "es-es", level, uid, "--out", str(sheet)],
+            r = run([sys.executable, "scripts/prior_knowledge.py", course, level, uid, "--out", str(sheet)],
                     cwd=w if w.exists() else ROOT)
             if r.returncode:
                 sys.exit(r.stderr)
             story_txt = ", ".join(f"`{s}`" for s in st) or "none"
-            lines.append(f"- `es-es {level} {uid}` ({level.upper()} Unit {n}): lessons {' '.join(stems)}, "
+            hist = hist or u.get("track") == "citizenship"
+            lines.append(f"- `{course} {level} {uid}` ({level.upper()} Unit {n}): lessons {' '.join(stems)}, "
                          f"stories {story_txt}. Knowledge sheet: `{w}/prior-{uid}.md`. "
                          f"Fixes file: `{w}/fixes-{uid}.json`. Challenges file: `{w}/challenges-{uid}.json`.")
             desc.append(f"Unit {n} {uid} ({' '.join(stems)}; stories {st})")
+            if not spanish:
+                table.append(f"| {n} {uid} | {u.get('track', '')} | {counts(course, level, uid)} |")
+                continue
             table.append(f"| {n} {uid} | {counts('es-es', level, uid)} | "
                          f"{counts('es-latam', level, uid) if uid in latam_ids else 'no es-latam unit'} |")
             if uid in latam_ids:
@@ -135,7 +149,8 @@ def main():
         prompt = (template.replace("{N_WORD}", WORDS.get(len(nums), str(len(nums))))
                   .replace("{LEVEL_UP}", level.upper()).replace("{LEVEL}", level)
                   .replace("{W}", str(w)).replace("{UNIT_LINES}", "\n".join(lines))
-                  .replace("{REPORT}", f"report-{first}.md").replace("{FOCUS}", focus))
+                  .replace("{REPORT}", f"report-{first}.md").replace("{FOCUS}", focus)
+                  .replace("{HISTORY}", history.replace("{W}", str(w)) if hist else ""))
         if len(nums) == 1:
             prompt = prompt.replace("units of the", "unit of the").replace("with them", "with it")
         left = re.findall(r"\{[A-Z_]+\}", prompt)
@@ -143,10 +158,11 @@ def main():
             sys.exit(f"unfilled placeholders: {left}")
         (batch / f"prompt-{key.lower()}.txt").write_text(prompt, encoding="utf-8")
     setup += ["", "## Baseline check-content, errors / suspects", ""] + table
-    setup += ["", "## Files differing es-es vs es-latam", ""] + differ
-    stems = [s for nums in readers.values() for n in nums for s in units[n - 1]["stems"]]
+    if spanish:
+        setup += ["", "## Files differing es-es vs es-latam", ""] + differ
+    stems = [x for nums in readers.values() for n in nums for x in units[n - 1]["stems"]]
     setup += ["", "## Walk (with `python scripts/dev-server.py 8131` running)", "",
-              f"    node scripts/walk_lessons.js <course> {level} --jobs 4 --only {' '.join(stems)}", ""]
+              f"    node scripts/walk_lessons.js {'<course>' if spanish else course} {level} --jobs 4 --only {' '.join(stems)}", ""]
     (batch / "setup.md").write_text("\n".join(setup), encoding="utf-8")
     print((batch / "setup.md").read_text(encoding="utf-8"))
 
