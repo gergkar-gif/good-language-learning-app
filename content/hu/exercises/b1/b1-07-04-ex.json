@@ -80,9 +80,9 @@
       "id": "b1-07-04-controlled-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A sikeres érettségi után mindenki átvehette a ____.",
+      "sentence": "Az érettségi után a diák megkapja a ____.",
       "hint": "his/her certificate",
-      "english": "After the successful school-leaving exam, everyone could pick up his/her certificate.",
+      "english": "After the school-leaving exam, the student receives his/her certificate.",
       "teaches": [
         "acc-poss"
       ],
@@ -115,20 +115,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "kitűnő érdemjegy",
-          "excellent grade (5)"
+          "jó érdemjegy",
+          "a good grade"
         ],
         [
-          "elégtelen osztályzat",
-          "failing grade (1)"
+          "rossz érdemjegy",
+          "a bad grade"
         ],
         [
-          "szóbeli felelet",
-          "oral recitation"
+          "a vizsga eredménye",
+          "the result of the exam"
         ],
         [
-          "írásbeli teszt",
-          "written test"
+          "az iskola vége",
+          "the end of school"
         ]
       ],
       "teaches": [
@@ -140,11 +140,11 @@
       "id": "b1-07-04-practice-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Milyen érdemjegy a legjobb a magyar iskolákban?",
+      "question": "Melyik a legjobb érdemjegy a magyar iskolákban?",
       "options": [
-        "Az ötös (jeles/kitűnő).",
-        "Az egyes.",
-        "A tízes."
+        "Az 5.",
+        "Az 1.",
+        "A 10."
       ],
       "correct": 0,
       "teaches": [
@@ -156,13 +156,13 @@
       "id": "b1-07-04-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Sokat tanultam, ezért biztosan nem ____ meg a vizsgán.",
+      "sentence": "Nem tanultam, ezért biztosan ____ a vizsgán.",
       "hint": "I fail",
-      "english": "I studied a lot, so I definitely will not fail the exam.",
+      "english": "I did not study, so I will surely fail the exam.",
       "teaches": [
         "ik-verbs-dolgozom-not-dolgozok"
       ],
-      "answer": "bukom",
+      "answer": "megbukom",
       "stage": "practice"
     },
     {
@@ -171,8 +171,8 @@
       "category": "vocabulary",
       "question": "Mit jelent a 'bizonyítványosztás'?",
       "options": [
-        "Distribution of end-of-year report cards.",
-        "Writing an exam.",
+        "Handing out report cards.",
+        "Taking an oral exam.",
         "Buying school textbooks."
       ],
       "correct": 0,
@@ -187,13 +187,13 @@
       "category": "grammar",
       "question": "— Hogy sikerült a szóbeli vizsgád?\n— ...",
       "options": [
-        "Nagyon jól, ötöst kaptam a tanár úrtól!",
-        "Nagyon jól, ötöst kapott a tanár úrtól!",
+        "Nagyon jól, jó érdemjegyet kaptam a tanár úrtól!",
+        "Nagyon jól, jó érdemjegyet kapott a tanár úrtól!",
         "Nagyon jól, de megbuktam a szóbeli vizsgán."
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language"
+        "past-tense-indefinite"
       ]
     },
     {
@@ -202,16 +202,16 @@
       "category": "grammar",
       "question": "— Mikor kapjátok meg a bizonyítványt?\n— ...",
       "options": [
-        "Június végén, a tanévzáró ünnepségen.",
-        "Június végén, a tanévzáró ünnepségben.",
-        "Június végéig, a tanévzáró ünnepségről."
+        "Június végén, az iskolában.",
+        "Június végén, az iskolába.",
+        "Június végén, az iskola."
       ],
       "correct": 0,
       "teaches": [
-        "on-en-on"
+        "ban-ben-in"
       ],
       "distractor_skills": {
-        "1": "ban-ben-in"
+        "1": "movement-with-ba-be"
       }
     },
     {
@@ -221,24 +221,27 @@
       "question": "How do you say: 'I passed both the written and oral exams.'?",
       "options": [
         "Az írásbeli és a szóbeli vizsgán is átmentem.",
-        "Az írásbeliről és szóbeliről eljöttem.",
-        "Írásban és szóban vizsgát csináltam."
+        "Az írásbeli és a szóbeli vizsgán is megbuktam.",
+        "Az írásbeli és a szóbeli vizsgára is átmentem."
       ],
       "correct": 0,
       "teaches": [
         "b1-education-learning-vocab"
       ],
-      "stage": "production"
+      "stage": "production",
+      "distractor_skills": {
+        "2": "ra-re"
+      }
     },
     {
       "id": "b1-07-04-writing-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "How do you say: 'He received a good grade on his essay.'?",
+      "question": "How do you say: 'He got a good grade for the exam.'?",
       "options": [
-        "Jó érdemjegyet kapott az esszéjére.",
-        "Jó bizonyítvánnyal esszét írt.",
-        "Érdemes volt esszét olvasnia."
+        "Jó érdemjegyet kapott a vizsgára.",
+        "Rossz érdemjegyet kapott a vizsgára.",
+        "Jó érdemjegyet kaptam a vizsgára."
       ],
       "correct": 0,
       "teaches": [
@@ -269,8 +272,8 @@
       "question": "Which verb pairs with 'a vizsgán' to mean fail?",
       "options": [
         "megbukik",
-        "megy",
-        "áll"
+        "átmegy",
+        "megérkezik"
       ],
       "correct": 0,
       "teaches": [

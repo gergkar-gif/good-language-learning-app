@@ -75,7 +75,7 @@
       "id": "b1-09-consolidation-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Complete: 'A kórházban szigorúan ... a dohányzás.'",
+      "question": "Complete: 'A kórházban ... a dohányzás.'",
       "options": [
         "tilos",
         "szabad",
@@ -91,12 +91,12 @@
       "id": "b1-09-consolidation-5",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A beteg erős torokfájásra ____ a háziorvosnak.",
-      "hint": "complained / past",
-      "english": "The patient complained of a severe sore throat to the family doctor.",
-      "answer": "panaszkodott",
+      "sentence": "A beteg a ____ ment, mert fáj a torka.",
+      "hint": "to the family doctor",
+      "english": "The patient went to the family doctor because his throat hurts.",
+      "answer": "háziorvoshoz",
       "teaches": [
-        "past-tense-indefinite"
+        "hoz-suffix"
       ],
       "stage": "recall"
     },
@@ -106,8 +106,8 @@
       "category": "vocabulary",
       "question": "Where does one pick up prescription medication in Hungarian?",
       "options": [
-        "a gyógyszertárban (patikában)",
-        "a postahivatalban",
+        "a gyógyszertárban",
+        "a pályaudvaron",
         "a vágányon"
       ],
       "correct": 0,
@@ -136,9 +136,9 @@
       "id": "b1-09-consolidation-8",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A gyors felépüléshez sok pihenés és orvosi ____ szükséges.",
+      "sentence": "A gyors gyógyuláshoz sok pihenés és orvosi ____ kell.",
       "hint": "treatment / nom",
-      "english": "For a speedy recovery, plenty of rest and medical treatment are necessary.",
+      "english": "For a quick recovery, plenty of rest and medical treatment are needed.",
       "answer": "kezelés",
       "teaches": [
         "b1-health-wellbeing-vocab"
@@ -165,11 +165,11 @@
       "id": "b1-09-consolidation-10",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Translate: 'One must pay attention to daily nutrition.'",
+      "question": "Translate: 'One must pay attention to nutrition.'",
       "options": [
-        "Az embernek oda kell figyelnie a mindennapi táplálkozásra.",
-        "Az ember táplálkozás nélkül él a városban.",
-        "Az embernek tilos odafigyelnie a táplálkozásra."
+        "Az embernek figyelnie kell a táplálkozásra.",
+        "Az ember figyelnie kell a táplálkozásra.",
+        "Az embernek tilos figyelnie a táplálkozásra."
       ],
       "correct": 0,
       "stage": "produce",
@@ -181,17 +181,20 @@
       "id": "b1-09-consolidation-11",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Translate: 'Smoking is strictly forbidden here.'",
+      "question": "Translate: 'Smoking is forbidden here.'",
       "options": [
-        "Itt szigorúan tilos a dohányzás.",
-        "Itt szabad dohányozni reggel.",
-        "Nem dohányoztunk az irodában."
+        "Itt tilos a dohányzás.",
+        "Itt szabad a dohányzás.",
+        "Ott tilos a dohányzás."
       ],
       "correct": 0,
       "stage": "produce",
       "teaches": [
         "szabad-infinitive"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "itt-ott-here-there"
+      }
     },
     {
       "id": "b1-09-consolidation-12",

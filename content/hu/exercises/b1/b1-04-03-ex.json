@@ -8,8 +8,8 @@
       "question": "Which pair of words means \"on one hand... on the other hand...\"?",
       "options": [
         "egyrészt... másrészt...",
-        "vagy... vagy...",
-        "sem... sem..."
+        "nem csak... hanem is...",
+        "vagy ez..., vagy az..."
       ],
       "correct": 0,
       "teaches": [
@@ -94,7 +94,7 @@
       "options": [
         "előnye",
         "hátránya",
-        "kockázata"
+        "hibája"
       ],
       "correct": 0,
       "teaches": [
@@ -207,8 +207,8 @@
       "question": "Which sentence correctly states a gentle preference between two options?",
       "options": [
         "A te helyedben inkább várnék egy kicsit, mint azonnal döntenék.",
-        "A te helyedben te inkább vársz egy kicsit, mint azonnal döntesz.",
-        "A te helyedben inkább vártál egy kicsit, mint azonnal döntöttél."
+        "A te helyedben inkább várnék egy kicsit, mint azonnal döntök.",
+        "A te helyedben inkább vártam egy kicsit, mint azonnal döntöttem."
       ],
       "correct": 0,
       "teaches": [
@@ -227,7 +227,7 @@
       "prompt": [
         {
           "speaker": "Petra",
-          "text": "Melyik állást fogadjam el — a biztosat vagy az izgalmasabbat?"
+          "text": "Új állást kaptam, de a régi is jó. Mit csináljak?"
         },
         {
           "speaker": "Meg",
@@ -235,12 +235,12 @@
         }
       ],
       "options": [
-        "Egyrészt a biztos állás nyugodtabb, másrészt az izgalmasabb sokkal érdekesebb lenne.",
-        "Én is beadtam a jelentkezésemet, de engem még nem hívtak be a felvételi beszélgetésre."
+        "Egyrészt az új állás jobban fizet, másrészt a régi közel van.",
+        "Egyrészt az új állás jobban fizet, egyrészt a régi közel van."
       ],
       "correct": 0,
       "teaches": [
-        "b1-giving-advice-vocab"
+        "egyreszt-masreszt"
       ]
     },
     {
@@ -250,7 +250,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Melyik utat válasszuk, a rövidebbet vagy a szebbet?"
+          "text": "Moziba vagy koncertre menjünk?"
         },
         {
           "speaker": "Anna",
@@ -258,13 +258,16 @@
         }
       ],
       "options": [
-        "Én inkább a szebb utat választanám, mint a rövidebbet.",
-        "Én már választottam a rövidebb utat."
+        "Én inkább moziba mennék, mint koncertre.",
+        "Én inkább moziba mentem, mint koncertre."
       ],
       "correct": 0,
       "teaches": [
-        "b1-giving-advice-vocab"
-      ]
+        "inkabb-mint"
+      ],
+      "distractor_skills": {
+        "1": "irregular-past"
+      }
     },
     {
       "id": "b1-04-03-writing-1",
@@ -298,11 +301,11 @@
       "id": "b1-04-03-check-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word always needs its partner (egyrészt or másrészt) to make sense?",
+      "question": "Egyrészt olcsó a busz, ____ lassú. Which word completes the pair?",
       "options": [
         "másrészt",
-        "viszont",
-        "mérlegel"
+        "ezért",
+        "vagy"
       ],
       "correct": 0,
       "teaches": [

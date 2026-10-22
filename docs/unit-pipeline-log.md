@@ -366,6 +366,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-22 | HU A1 + A2 re-walk **with challenges** (first since challenge walking began 10-21) | Claude, no agents | ~18 min | | 0 walk failures (198/198 A1, 281/281 A2) | HU and Spanish A1–A2 now pass the same checklist |
 | 10-22 | **HU B1 pilot**: Unit 1 longer-stories (language) ∥ Unit 2 hungary-today-land-symbols (history, facts block) | mechanical pre-pass (1 Sonnet fixer, 25 items) then 1 unit per reader | fixer 83k, 1.5 | A 257k, 13.6; B 326k, 22.4 | 154 proposed (48 / 106), 3 rejected (new tells, option language; rewritten by Claude), Claude added 4 (vármegye official since 2023, double-cross tradition) | ~257k language / ~326k history per unit at **one unit per reader** (fixed per-reader overhead not spread); pre-pass: 24 of 25 applied, then readers rewrote most of them; Unit 2 had 256 unmet-word hits before the pre-pass (6 after the read), Unit 1 37 → 20; walk 12/12 |
 | 10-22 | HU B1 3–6 (core 3, 5; citizenship 4, 6) | paired read, **2 units/reader** (one core + one citizenship each), facts block, vocabulary rule (citizenship keeps words) | | A 532k, 43.7; B 554k, 39.7 | 344 proposed (71 / 113 / 51 / 109), 0 rejected; Claude changed 2 (Árpád-ház *1301-ig*, an apposition) | **~272k reader tokens/unit** (no cheaper than the one-unit pilot's 257k / 326k): the cost follows the defects (~86 fixes/unit, ×1.7 of A2), not the per-reader overhead; both readers re-tested their fixes in scratch copies (111 and 118 tool calls; now forbidden in the template); 10 copied question sets rewritten; facts: Aug 20 state holiday and the Pozsony 907 name confirmed; walk 24/24 |
+| 10-22 | HU B1 core 7, 9, 11, 13, 15, 17 | paired read, **3 core units/reader**, no-self-testing rule | | A ≥470k, B ≥427k (resumed notices only: both stopped at a Sonnet session limit mid-batch) | 386 proposed (47 / 58 / 51 / 81 / 78 / 71), 6 rejected by the checker (rewritten by Claude), Claude dropped 1 (*elmondott volna* in a story) and restored 1 it had wrongly reversed (Fábián's *te*); 51 Unit 13 fixes first refused by a missing final newline (164 files fixed, `apply_replacements.py` tolerant) | cost/unit not measurable (≥ ~150k from the resumed parts alone); ~64 fixes/unit (×0.75 of 3–6: core units have fewer defects than citizenship ones); reader B ran only the named commands; walk 36/36 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1096,3 +1097,23 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   holiday (Alaptörvény: three national holidays), the 907 battle is real
   but its site uncertain (*pozsonyi csata* kept as the standard name).
   Changed by Claude: the Árpád dynasty "nearly 400 years" → *1301-ig*.
+
+### 2026-10-22: HU B1 core units 7–17 (odd)
+
+- **Cost:** not measurable; both readers hit a Sonnet session limit and
+  only their resumed runs reported usage. Fix counts fell to ~64 a unit
+  (core units have fewer defects than citizenship units: no invented
+  facts, no placeholder questions).
+- **Tooling bug found by the batch:** 164 HU B1 files lacked a final
+  newline, so `apply_replacements.py` refused every `set` fix on them as
+  "doesn't round-trip". Fixed in the files and in the script (a missing
+  final newline now counts as round-tripping), so other levels won't hit
+  it.
+- **Reviewer error, corrected:** I first reversed a reader fix that made
+  Fábián's last line in *Bede Anna* informal, reading the scene as
+  formal; the adapted story has him use *te* throughout (*a helyedben*,
+  the form the lesson teaches). Read the whole scene before overruling a
+  register fix.
+- **For the user:** `egyreszt-masreszt` has `taught_in` a2-21-b-gr, which
+  teaches only *nem csak … hanem … is*; *egyrészt … másrészt* is first
+  taught on b1-04-03-a-gr. The skill list is frozen.

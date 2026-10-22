@@ -25,7 +25,7 @@
       "options": [
         "alkalmas",
         "alkalom",
-        "alkalmatlan"
+        "alkalmazott"
       ],
       "correct": 0,
       "teaches": [
@@ -64,9 +64,9 @@
       "id": "b1-06-03-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Szeretnék ____ a meghirdetett állásra.",
+      "sentence": "Szeretnék ____ az új állásra.",
       "hint": "to apply",
-      "english": "I would like to apply for the advertised job.",
+      "english": "I would like to apply for the new job.",
       "answer": "jelentkezni",
       "teaches": [
         "building-the-infinitive-the-suffix-ni"
@@ -78,7 +78,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "Úgy érzem, megfelelek az ____.",
-      "hint": "to the expectations - dative: -nek",
+      "hint": "expectations",
       "english": "I feel that I meet the expectations.",
       "answer": "elvárásoknak",
       "teaches": [
@@ -107,22 +107,22 @@
       "type": "sentence-builder",
       "category": "vocabulary",
       "tiles": [
-        "Csatoltam",
+        "Megírtam",
         "az",
         "önéletrajzomat",
         "a",
-        "levélhez",
+        "cégnek",
         "."
       ],
       "solution": [
-        "Csatoltam",
+        "Megírtam",
         "az",
         "önéletrajzomat",
         "a",
-        "levélhez",
+        "cégnek",
         "."
       ],
-      "english": "I attached my CV to the letter.",
+      "english": "I wrote my CV for the company.",
       "teaches": [
         "b1-work-professional-life-vocab"
       ],
@@ -156,9 +156,9 @@
       "id": "b1-06-03-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Több vezetői posztra is beadtam a ____.",
+      "sentence": "Több cégnek is küldtem a ____.",
       "hint": "my application",
-      "english": "I submitted my application for several managerial positions too.",
+      "english": "I sent my application to several companies too.",
       "answer": "pályázatomat",
       "teaches": [
         "acc-poss"
@@ -168,18 +168,21 @@
     {
       "id": "b1-06-03-practice-4",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Which sentence means \"He is completely suitable for this role\"?",
+      "category": "grammar",
+      "question": "Which sentence means \"He is very suitable for this task\"?",
       "options": [
-        "Tökéletesen alkalmas erre a szerepre.",
-        "Tökéletesen alkalmatlan erre a szerepre.",
-        "Tökéletesen alkalmazkodik erre a szerepre."
+        "Nagyon alkalmas erre a feladatra.",
+        "Nagyon alkalmas ezen a feladaton.",
+        "Nagyon alkalmas ez a feladat."
       ],
       "correct": 0,
       "teaches": [
-        "b1-work-professional-life-vocab"
+        "verb-government-ra-re"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "1": "on-en-on"
+      }
     },
     {
       "id": "b1-06-03-dialogue-1",
@@ -214,7 +217,7 @@
       "prompt": [
         {
           "speaker": "Barát",
-          "text": "Elküldted már a jelentkezésedet?"
+          "text": "Jelentkeztél már arra az állásra?"
         },
         {
           "speaker": "Te",
@@ -222,8 +225,8 @@
         }
       ],
       "options": [
-        "Igen, tegnap elküldtem az önéletrajzomat és a motivációs levelemet.",
-        "Igen, tegnap elküldtél az önéletrajzodat és a motivációs leveledet."
+        "Igen, tegnap jelentkeztem, és küldtem önéletrajzot is.",
+        "Igen, tegnap jelentkeztél, és küldtél önéletrajzot is."
       ],
       "correct": 0,
       "teaches": [
@@ -282,7 +285,7 @@
       "id": "b1-06-03-check-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Sikeres volt a tegnapi ____.",
+      "sentence": "Jó volt a tegnapi ____.",
       "hint": "job interview",
       "english": "Yesterday's job interview was successful.",
       "answer": "állásinterjú",

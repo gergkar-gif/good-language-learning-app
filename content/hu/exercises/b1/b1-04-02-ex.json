@@ -7,9 +7,9 @@
       "category": "grammar",
       "question": "Which phrase means \"you could try it\" — a gentle suggestion rather than a command?",
       "options": [
-        "Kipróbálhatnád.",
-        "Próbáld ki!",
-        "Kipróbálod?"
+        "Kipróbálhatnád ezt.",
+        "Próbáld ki ezt!",
+        "Kipróbálod ezt?"
       ],
       "correct": 0,
       "teaches": [
@@ -68,10 +68,10 @@
       "id": "b1-04-02-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "____ egy kicsit, mielőtt döntesz.",
-      "hint": "You could wait",
-      "english": "You could wait a little before you decide.",
-      "answer": "Várhatnál",
+      "sentence": "____ vele erről, mielőtt döntesz.",
+      "hint": "You could talk",
+      "english": "You could talk to him/her about this before you decide.",
+      "answer": "Beszélhetnél",
       "teaches": [
         "potential-hat-het"
       ],
@@ -97,8 +97,8 @@
       "question": "What does \"Kérhetnél tanácsot egy szakértőtől\" suggest?",
       "options": [
         "A gentle suggestion that you could ask an expert for advice.",
-        "A command to ask an expert immediately.",
-        "A statement that you already asked an expert."
+        "A command that you must ask an expert immediately.",
+        "A statement that you have already asked an expert."
       ],
       "correct": 0,
       "teaches": [
@@ -222,12 +222,15 @@
       ],
       "options": [
         "Jobb lenne, ha inkább pihennél egy kicsit.",
-        "Jobb, hogy fáradt vagy."
+        "Jobb lenne, ha inkább pihentél egy kicsit."
       ],
       "correct": 0,
       "teaches": [
-        "b1-giving-advice-vocab"
-      ]
+        "hypothetical-ha-conditional"
+      ],
+      "distractor_skills": {
+        "1": "past-tense-indefinite"
+      }
     },
     {
       "id": "b1-04-02-dialogue-2",
@@ -245,12 +248,15 @@
       ],
       "options": [
         "Kérhetnél tanácsot egy szakértőtől.",
-        "Megoldottad már a problémát."
+        "Kértél tanácsot egy szakértőtől."
       ],
       "correct": 0,
       "teaches": [
-        "b1-giving-advice-vocab"
-      ]
+        "potential-hat-het"
+      ],
+      "distractor_skills": {
+        "1": "past-tense-indefinite"
+      }
     },
     {
       "id": "b1-04-02-writing-1",

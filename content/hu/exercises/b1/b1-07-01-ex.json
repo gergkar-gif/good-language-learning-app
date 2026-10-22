@@ -97,11 +97,11 @@
       "id": "b1-07-01-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which word order is natural?",
+      "question": "Which sentence means 'Before the school-leaving exam, the students study a lot'?",
       "options": [
         "Az érettségi előtt a diákok sokat tanulnak.",
-        "Előtt az érettségi a diákok tanulnak sokat.",
-        "A diákok az előtt érettségi tanulnak."
+        "Az érettségi után a diákok sokat tanulnak.",
+        "Az érettségi közben a diákok sokat tanulnak."
       ],
       "correct": 0,
       "teaches": [
@@ -127,8 +127,8 @@
           "he/she can study"
         ],
         [
-          "kérdezhet",
-          "he/she may ask"
+          "felvételizhet",
+          "he/she may sit the entrance exam"
         ]
       ],
       "teaches": [
@@ -156,9 +156,9 @@
       "id": "b1-07-01-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Az állami iskolákban minden gyermek ingyen ____.",
+      "sentence": "Az állami iskolákban minden diák ingyenesen ____.",
       "hint": "can study",
-      "english": "In state schools, every child can study for free.",
+      "english": "In state schools, every student can study for free.",
       "teaches": [
         "potential-hat-het"
       ],
@@ -173,7 +173,7 @@
       "options": [
         "Érettségi vizsgát tesznek.",
         "Általános iskolába mennek.",
-        "Nyugdíjba mennek."
+        "Gimnáziumba jelentkeznek."
       ],
       "correct": 0,
       "teaches": [
@@ -187,9 +187,9 @@
       "category": "grammar",
       "question": "— Hová jelentkezik a fiad az általános iskola után?\n— ...",
       "options": [
-        "Egy jó nevű gimnáziumba szeretne járni.",
-        "Egy jó nevű gimnáziumban szeretne járni.",
-        "Egy jó nevű gimnáziumból szeretne járni."
+        "Egy jó gimnáziumba szeretne járni.",
+        "Egy jó gimnáziumban szeretne járni.",
+        "Egy jó gimnáziumból szeretne járni."
       ],
       "correct": 0,
       "teaches": [
@@ -207,39 +207,47 @@
       "question": "— Nehéz volt az érettségi vizsga?\n— ...",
       "options": [
         "Igen, de szerencsére jól sikerült.",
-        "Igen, de szerencsére jól sikerülni.",
-        "Nem, de szerencsére rosszul sikerül."
+        "Igen, de szerencsére jól sikerül.",
+        "Igen, de szerencsére jól sikerülni."
       ],
       "correct": 0,
       "teaches": [
-        "yes-no-questions"
-      ]
+        "past-tense-indefinite"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     },
     {
       "id": "b1-07-01-writing-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "How do you say: 'Anyone can apply for this course.'?",
+      "question": "How do you say: 'Students can apply for this course.'?",
       "options": [
-        "Bárki jelentkezhet erre a képzésre.",
-        "Mindenki jelentkezik a képzésről.",
-        "Bárki jelentkezett a képzésen."
+        "A diákok jelentkezhetnek erre a képzésre.",
+        "A diákok jelentkeznek erre a képzésre.",
+        "A diákok jelentkezhetnek a képzésről."
       ],
       "correct": 0,
       "teaches": [
         "potential-hat-het"
       ],
-      "stage": "production"
+      "stage": "production",
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "delative-rol-rel"
+      }
     },
     {
       "id": "b1-07-01-writing-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "How do you say: 'The Hungarian school system is well structured.'?",
+      "question": "How do you say: 'After primary school, students go to grammar school.'?",
       "options": [
-        "A magyar iskolarendszer jól felépített.",
-        "A magyar iskola rendszere rosszul van.",
-        "Az iskolában a rendszer állandóan működik."
+        "Az általános iskola után a diákok gimnáziumba mennek.",
+        "Az általános iskola után a diákok egyetemre mennek.",
+        "A gimnázium után a diákok általános iskolába mennek."
       ],
       "correct": 0,
       "teaches": [
@@ -255,7 +263,7 @@
       "options": [
         "választhat",
         "választott",
-        "választás"
+        "választ"
       ],
       "correct": 0,
       "teaches": [
@@ -263,7 +271,7 @@
       ],
       "distractor_skills": {
         "1": "past-tense-indefinite",
-        "2": "nominalization"
+        "2": "present-tense-routine-language"
       },
       "stage": "check"
     },
@@ -274,8 +282,8 @@
       "question": "Which school comes immediately after primary school for academic students?",
       "options": [
         "gimnázium",
-        "óvoda",
-        "bölcsőde"
+        "általános iskola",
+        "egyetem"
       ],
       "correct": 0,
       "teaches": [

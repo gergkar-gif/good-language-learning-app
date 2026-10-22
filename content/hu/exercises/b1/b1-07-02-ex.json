@@ -84,7 +84,7 @@
       "id": "b1-07-02-controlled-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A cég képzést szervez, hogy ____ a dolgozók szaktudását.",
+      "sentence": "A cég képzést szervez, hogy ____ a dolgozók szakismeretét.",
       "hint": "to develop / subjunctive",
       "english": "The company is organizing training to develop the employees' expertise.",
       "teaches": [
@@ -143,30 +143,33 @@
     {
       "id": "b1-07-02-practice-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "Miért fontos a szakmai képzés a mai világban?",
       "options": [
-        "Azért, hogy a munkavállalók korszerű ismeretekkel rendelkezzenek.",
-        "Azért, hogy senki ne dolgozzon soha.",
-        "Azért, hogy a könyvtárak bezárjanak."
+        "Azért, hogy a diákok új dolgokat tanuljanak.",
+        "Azért, hogy a diákok új dolgokat tanulnak.",
+        "Azért, hogy a diákok új dolgokat tanuljon."
       ],
       "correct": 0,
       "teaches": [
-        "b1-education-learning-vocab"
+        "hogy-jon-jen"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-07-02-practice-3",
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "Azért költöztem Budapestre, hogy egyetemre ____.",
-      "hint": "so that I could attend",
-      "english": "I moved to Budapest so that I could attend university.",
+      "hint": "so that I go",
+      "english": "I moved to Budapest so that I could go to university.",
       "teaches": [
         "hogy-jon-jen"
       ],
-      "answer": "járhassak",
+      "answer": "járjak",
       "stage": "practice"
     },
     {
@@ -191,9 +194,9 @@
       "category": "grammar",
       "question": "— Miért iratkoztál be erre az esti tanfolyamra?\n— ...",
       "options": [
-        "Azért, hogy elmélyítsem a szakmai tudásomat.",
-        "Azért, hogy elmélyítem a szakmai tudásomat.",
-        "Azért, hogy elmélyítsd a szakmai tudásomat."
+        "Azért, hogy fejlesszem a szakismeretemet.",
+        "Azért, hogy fejlesztem a szakismeretemet.",
+        "Azért, hogy fejlesszed a szakismeretemet."
       ],
       "correct": 0,
       "teaches": [
@@ -211,12 +214,15 @@
       "options": [
         "Szeretném sikeresen befejezni a nyelvi képzést.",
         "Szeretnéd sikeresen befejezni a nyelvi képzést.",
-        "Szeretnénk sikeresen befejezed a nyelvi képzést."
+        "Sikeresen befejeztem a nyelvi képzést."
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language"
-      ]
+        "nek-conditional"
+      ],
+      "distractor_skills": {
+        "2": "definite-past"
+      }
     },
     {
       "id": "b1-07-02-writing-1",
@@ -225,30 +231,36 @@
       "question": "How do you express: 'I practice every day so that I can improve.'?",
       "options": [
         "Minden nap gyakorlok azért, hogy fejlődjek.",
-        "Minden nap gyakoroltam, mikor fejlődtem.",
-        "Gyakorolni fogok, holott fejlődök."
+        "Minden nap gyakorlok azért, hogy fejlődöm.",
+        "Minden nap gyakorlok azért, hogy fejlődjél."
       ],
       "correct": 0,
       "teaches": [
         "azert-hogy-purpose"
       ],
-      "stage": "production"
+      "stage": "production",
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-07-02-writing-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "How do you express: 'Specialized knowledge is necessary for the position.'?",
+      "category": "grammar",
+      "question": "How do you say: 'What is your objective?'?",
       "options": [
-        "A beosztáshoz megfelelő szakismeret szükséges.",
-        "A beosztásban nincsen semmilyen ismeret.",
-        "A pozícióról senki nem tud semmit."
+        "Mi a célkitűzésed?",
+        "Mi a célkitűzése?",
+        "Ki a célkitűzésed?"
       ],
       "correct": 0,
       "teaches": [
-        "b1-education-learning-vocab"
+        "possessive-suffixes"
       ],
-      "stage": "production"
+      "stage": "production",
+      "distractor_skills": {
+        "1": "3rd-person-possessive"
+      }
     },
     {
       "id": "b1-07-02-check-1",

@@ -25,7 +25,7 @@
       "options": [
         "levezet",
         "felvesz",
-        "megállít"
+        "kikapcsol"
       ],
       "correct": 0,
       "teaches": [
@@ -79,13 +79,13 @@
     {
       "id": "b1-09-04-controlled-3",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Fontos megtartani a munka és a magánélet közötti ____.",
-      "hint": "balance / acc",
-      "english": "It is important to maintain the balance between work and private life.",
-      "answer": "egyensúlyt",
+      "category": "vocabulary",
+      "sentence": "A munka és a magánélet között fontos az ____.",
+      "hint": "balance",
+      "english": "Balance between work and private life is important.",
+      "answer": "egyensúly",
       "teaches": [
-        "how-the-accusative-t-works"
+        "b1-health-wellbeing-vocab"
       ],
       "stage": "controlled"
     },
@@ -95,9 +95,9 @@
       "category": "vocabulary",
       "question": "Which activity supports mental relaxation?",
       "options": [
-        "Csendes pihenés egy jó könyvvel vagy egy kiadós alvás.",
-        "Egész éjjel túlórázni az irodában.",
-        "Feszülten vitatkozni a kollégákkal."
+        "Csendes pihenés egy jó könyvvel.",
+        "Egész éjjel dolgozni az irodában.",
+        "Sokat veszekedni a kollégákkal."
       ],
       "correct": 0,
       "teaches": [
@@ -111,20 +111,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "lelki egyensúly",
-          "mental balance"
+          "jó egyensúly",
+          "good balance"
         ],
         [
           "napi stressz",
           "daily stress"
         ],
         [
-          "aktív pihenés",
-          "active recreation / rest"
+          "csendes pihenés",
+          "quiet rest"
         ],
         [
-          "feszültségmentes környezet",
-          "stress-free environment"
+          "sok feszültség",
+          "a lot of tension"
         ]
       ],
       "teaches": [
@@ -138,9 +138,9 @@
       "category": "vocabulary",
       "question": "Miért van szüksége a szervezetnek rendszeres pihenésre?",
       "options": [
-        "Hogy regenerálódjon és megőrizze a belső egyensúlyát.",
-        "Hogy ne kelljen soha dolgozni.",
-        "Hogy elfelejtsük a barátainkat."
+        "Hogy egészséges legyen.",
+        "Hogy beteg legyen.",
+        "Hogy fáradt legyen."
       ],
       "correct": 0,
       "teaches": [
@@ -152,9 +152,9 @@
       "id": "b1-09-04-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Hétvégén mindenkinek szüksége van a zavartalan ____.",
+      "sentence": "Hétvégén mindenkinek szüksége van a ____.",
       "hint": "rest / sublative",
-      "english": "On the weekend, everyone needs undisturbed rest.",
+      "english": "On the weekend, everyone needs rest.",
       "answer": "pihenésre",
       "teaches": [
         "ra-re"
@@ -165,9 +165,9 @@
       "id": "b1-09-04-practice-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent az 'aktív kikapcsolódás'?",
+      "question": "Mit jelent a 'sportos kikapcsolódás'?",
       "options": [
-        "Active recreation through sports.",
+        "Relaxing with sport.",
         "Turning off the lights.",
         "Drinking coffee at night."
       ],
@@ -181,15 +181,15 @@
       "id": "b1-09-04-dialogue-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "— Nagyon kimerültnek látszol, mi a baj?\n— ...",
+      "question": "— Nagyon fáradtnak látszol, mi a baj?\n— ...",
       "options": [
-        "Túl sok a feszültség a munkahelyemen, rám férne egy kis pihenés.",
-        "Túl sok a feszültség a munkahelyemen, rád férne egy kis pihenés.",
-        "Nagyon kipihent vagyok, mert egész éjjel nem aludtam semmit."
+        "Túl sok a feszültség a munkahelyemen, kellene egy kis pihenés.",
+        "Túl sok a feszültség a munkahelyeden, kellene egy kis pihenés.",
+        "Túl sok a feszültség a munkahelyemen, kellett egy kis pihenés."
       ],
       "correct": 0,
       "teaches": [
-        "case-inflected-pronouns"
+        "possessive-suffixes"
       ]
     },
     {
@@ -200,7 +200,7 @@
       "options": [
         "Futni járok a parkba vagy halk zenét hallgatok otthon.",
         "Futni jársz a parkban vagy halk zenét hallgatsz otthon.",
-        "Sokat dolgozom még késő éjszaka is a gép előtt, hogy megnyugodjak."
+        "Sokat dolgozom éjszaka a gép előtt."
       ],
       "correct": 0,
       "teaches": [
@@ -214,8 +214,8 @@
       "question": "How do you say: 'Sport helps relieve stress.'?",
       "options": [
         "A sport segít levezetni a feszültséget.",
-        "A sportban nincsen semmilyen feszültség.",
-        "A sport növeli a mindennapi feszültséget."
+        "A sport nem segít levezetni a feszültséget.",
+        "A sport segít levezetned a feszültséget."
       ],
       "correct": 0,
       "teaches": [
@@ -229,9 +229,9 @@
       "category": "vocabulary",
       "question": "How do you say: 'We must find balance in life.'?",
       "options": [
-        "Meg kell találnunk az egyensúlyt az életben.",
-        "Nem kell megtalálnunk az egyensúlyt az életben.",
-        "Az egyensúly nem fontos az életünkben."
+        "Egyensúlyt kell találnunk az életben.",
+        "Nem kell egyensúlyt találnunk az életben.",
+        "Egyensúlyt kell találniuk az életben."
       ],
       "correct": 0,
       "teaches": [
@@ -262,8 +262,8 @@
       "question": "Complete: 'A sport segít ... a feszültséget.' (relieve / wind down)",
       "options": [
         "levezetni",
-        "elvinni",
-        "behozni"
+        "kikapcsolni",
+        "felvenni"
       ],
       "correct": 0,
       "teaches": [

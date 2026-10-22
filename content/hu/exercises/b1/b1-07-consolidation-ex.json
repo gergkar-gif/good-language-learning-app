@@ -95,9 +95,9 @@
       "id": "b1-07-consolidation-5",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A nehéz tananyagra kell ____.",
+      "sentence": "A nehéz feladatra kell ____.",
       "hint": "we must concentrate",
-      "english": "We must concentrate on the difficult curriculum.",
+      "english": "We must concentrate on the difficult task.",
       "answer": "összpontosítanunk",
       "stage": "recall",
       "teaches": [
@@ -108,11 +108,11 @@
       "id": "b1-07-consolidation-6",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "What is the highest grade in the Hungarian school system?",
+      "question": "What is the best grade in the Hungarian school system?",
       "options": [
-        "ötös (5)",
-        "egyes (1)",
-        "tízes (10)"
+        "Az 5.",
+        "Az 1.",
+        "A 10."
       ],
       "correct": 0,
       "stage": "recall",
@@ -140,7 +140,7 @@
       "id": "b1-07-consolidation-8",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A tanfolyam célja, hogy ____ a diákok szaktudását.",
+      "sentence": "A képzés célja, hogy ____ a diákok szakismeretét.",
       "hint": "to develop / subjunctive",
       "english": "The purpose of the course is to develop the students' expertise.",
       "answer": "fejlessze",
@@ -155,9 +155,9 @@
       "category": "vocabulary",
       "question": "Mit jelent az 'élethosszig tartó tanulás' a felnőttek számára?",
       "options": [
-        "Folyamatos önképzést és új készségek elsajátítását.",
-        "Hogy soha nem hagyhatják el az iskolapadot.",
-        "Hogy minden évben érettségizniük kell."
+        "Azt, hogy az ember egész életében tanul.",
+        "Azt, hogy az ember csak iskolában tanul.",
+        "Azt, hogy az ember csak gyerekként tanul."
       ],
       "correct": 0,
       "stage": "in-context",
@@ -169,27 +169,31 @@
       "id": "b1-07-consolidation-10",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Translate: 'Anyone can study in state schools.'",
+      "question": "Translate: 'Students can study in state schools.'",
       "options": [
-        "Bárki tanulhat az állami iskolákban.",
-        "Mindenki tanult az iskola előtt.",
-        "Senki nem tanulhat az iskolában."
+        "A diákok tanulhatnak az állami iskolákban.",
+        "A diákok tanulnak az állami iskolákban.",
+        "A diákok tanulhatnak az állami iskolákra."
       ],
       "correct": 0,
       "stage": "produce",
       "teaches": [
         "b1-education-learning-vocab"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "ra-re"
+      }
     },
     {
       "id": "b1-07-consolidation-11",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Translate: 'I take notes attentively during the lecture.'",
+      "question": "Translate: 'I take notes quickly during the lesson.'",
       "options": [
-        "Figyelmesen jegyzetelek az előadás alatt.",
-        "Figyelmesen jegyzetelek az előadás után.",
-        "Figyelmetlenül jegyzetelek az előadás alatt."
+        "Gyorsan jegyzetelek az óra alatt.",
+        "Gyorsan jegyzetelek az óra után.",
+        "Lassan jegyzetelek az óra alatt."
       ],
       "correct": 0,
       "stage": "produce",
@@ -204,14 +208,17 @@
       "question": "Translate: 'We passed both the oral and written examinations.'",
       "options": [
         "A szóbeli és az írásbeli vizsgán is átmentünk.",
-        "A szóbeli és írásbeli vizsgát megbuktuk.",
-        "A vizsgáról szóban és írásban hallottunk."
+        "A szóbeli és az írásbeli vizsgán is megbuktunk.",
+        "A szóbeli és az írásbeli vizsgára is átmentünk."
       ],
       "correct": 0,
       "stage": "produce",
       "teaches": [
         "b1-education-learning-vocab"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "ra-re"
+      }
     }
   ]
 }

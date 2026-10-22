@@ -64,9 +64,9 @@
       "id": "b1-04-05-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A jegyző ____ a fiatal hivatalnokot arról, hogy még egyszer ilyet tegyen.",
+      "sentence": "Petra ____ Annát arról, hogy lemondja a találkozót.",
       "hint": "talked out of",
-      "english": "The notary talked the young clerk out of doing such a thing again.",
+      "english": "Petra talked Anna out of cancelling the meeting.",
       "answer": "lebeszélte",
       "teaches": [
         "definite-past"
@@ -77,9 +77,9 @@
       "id": "b1-04-05-controlled-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Fábián úr nyugodt hangja ____ az asszonyt, hogy nincs miért aggódnia.",
+      "sentence": "Károly nyugodt hangja ____ Annát, hogy nincs miért aggódnia.",
       "hint": "convinced",
-      "english": "Mr. Fábián's calm voice convinced the woman that she had nothing to worry about.",
+      "english": "Károly's calm voice convinced Anna that she had nothing to worry about.",
       "answer": "meggyőzte",
       "teaches": [
         "definite-past"
@@ -90,7 +90,7 @@
       "id": "b1-04-05-controlled-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Amikor elköszönt, még egyszer ____: „Menjen csak haza nyugodtan.” (encouraged her)",
+      "question": "Amikor elköszönt, még egyszer ____: „Menj csak haza nyugodtan.” (encouraged her)",
       "options": [
         "bátorította",
         "lebeszélte",
@@ -189,11 +189,11 @@
       "id": "b1-04-05-practice-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which sentence best sums up the pragmatic point of Hungarian advice-giving language in this unit?",
+      "question": "Which reply gives advice but leaves the final decision to the other person?",
       "options": [
-        "Egyik eszköz sem dönt a másik ember helyett — a végső döntés mindig az övé marad.",
-        "Minden tanács egyben parancs is.",
-        "A jó tanácsadó mindig eldönti helyetted a dolgot."
+        "A helyedben várnék, de a döntés a tiéd.",
+        "Nem kell gondolkodnod, majd én döntök.",
+        "Azt kell tenned, amit mondok."
       ],
       "correct": 0,
       "teaches": [
@@ -208,7 +208,7 @@
       "prompt": [
         {
           "speaker": "Petra",
-          "text": "Nem tudom, elfogadjam-e az ajánlatot. Teljesen tanácstalan vagyok."
+          "text": "Új állást kaptam, és nagyon tanácstalan vagyok."
         },
         {
           "speaker": "Meg",
@@ -217,11 +217,11 @@
       ],
       "options": [
         "A helyedben én mérlegelném az előnyöket és a hátrányokat, mielőtt döntesz.",
-        "A helyedben te már régen eldöntötted, hogy elfogadod-e az új ajánlatot."
+        "A helyedben te mérlegelnéd az előnyöket és a hátrányokat, mielőtt döntesz."
       ],
       "correct": 0,
       "teaches": [
-        "b1-giving-advice-vocab"
+        "hypothetical-ha-conditional"
       ]
     },
     {
@@ -231,7 +231,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Azt hiszem, lemondom a találkozót — úgyis csak kockázatos lenne elmenni."
+          "text": "Azt hiszem, lemondom a találkozót."
         },
         {
           "speaker": "Anna",
@@ -240,12 +240,15 @@
       ],
       "options": [
         "Nehogy siess a döntéssel — beszélhetnél még egy barátoddal is.",
-        "Jó, akkor biztos ez a legjobb döntés."
+        "Nehogy sietsz a döntéssel — beszélhetnél még egy barátoddal is."
       ],
       "correct": 0,
       "teaches": [
-        "b1-giving-advice-vocab"
-      ]
+        "nehogy-purpose"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-04-05-writing-1",
@@ -267,8 +270,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Say that the notary talked the young clerk out of sending such a letter again.",
-          "answer": "A jegyző lebeszélte a fiatal hivatalnokot arról, hogy még egyszer ilyet tegyen."
+          "prompt": "Say that Károly encouraged Anna.",
+          "answer": "Károly bátorította Annát."
         }
       ],
       "teaches": [
@@ -279,7 +282,7 @@
       "id": "b1-04-05-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Which verb would you use to describe convincing someone with calm, confident words?",
+      "question": "Which verb means \"to convince\"?",
       "options": [
         "meggyőz",
         "lebeszél",
@@ -308,11 +311,11 @@
       "id": "b1-04-05-reading-1",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Miért kapott levelet Bede Jánosné az adóhivataltól?",
+      "question": "Miért kapott levelet Bede Jánosné?",
       "options": [
-        "Mert a lánya régi tartozását akarták behajtani.",
-        "Mert nyert egy lottón.",
-        "Mert új házat akart venni."
+        "Mert a lánya nem fizette ki a könyveit.",
+        "Mert az asszony új házat akart venni.",
+        "Mert az asszony nem fizette ki a lakását."
       ],
       "correct": 0
     },
@@ -322,9 +325,9 @@
       "category": "reading",
       "question": "Mit tanácsolt Fábián úr az asszonynak?",
       "options": [
-        "Hogy ne is válaszoljon a hivatalnak, ő majd elintézi.",
-        "Hogy azonnal fizesse ki a teljes összeget.",
-        "Hogy forduljon bírósághoz."
+        "Hogy ne válaszoljon a levélre, ő majd megoldja.",
+        "Hogy azonnal fizesse ki az egész pénzt.",
+        "Hogy írjon még egy levelet a városba."
       ],
       "correct": 0
     },
@@ -332,10 +335,10 @@
       "id": "b1-04-05-reading-3",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mit üzent Fábián úr a fiatal hivatalnoknak?",
+      "question": "Mit üzent Fábián úr a fiatal férfinak, aki a levelet küldte?",
       "options": [
-        "Hogy legközelebb alaposabban nézzen utána, mielőtt ilyen levelet küld.",
-        "Hogy küldjön még több ilyen levelet.",
+        "Hogy legközelebb gondolja át, mielőtt ilyen levelet küld.",
+        "Hogy küldjön még több ilyen levelet az asszonynak.",
         "Hogy mondja el mindenkinek a történetet."
       ],
       "correct": 0

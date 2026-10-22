@@ -24,8 +24,8 @@
       "question": "Which sentence spells out the full hypothetical \"if I were in your place\"?",
       "options": [
         "Ha én a helyedben lennék, ...",
-        "Te vagy a helyedben.",
-        "A helyeden állok."
+        "Ha én a helyedben vagyok, ...",
+        "Ha én a te helyedben lennél, ..."
       ],
       "correct": 0,
       "teaches": [
@@ -211,7 +211,7 @@
       "prompt": [
         {
           "speaker": "Petra",
-          "text": "Nem tudom, elfogadjam-e az állásajánlatot. Annyira bizonytalan vagyok."
+          "text": "Új állást kaptam, de nagyon bizonytalan vagyok. Mit csináljak?"
         },
         {
           "speaker": "Károly",
@@ -220,7 +220,7 @@
       ],
       "options": [
         "A helyedben én elfogadnám — nagy lehetőség.",
-        "A helyedben te nem fogadnád el."
+        "A helyedben te elfogadnád — nagy lehetőség."
       ],
       "correct": 0,
       "teaches": [
@@ -234,7 +234,7 @@
       "prompt": [
         {
           "speaker": "Anna",
-          "text": "Ilyen nagy dilemmában sosem voltam még."
+          "text": "Nagy dilemma előtt állok."
         },
         {
           "speaker": "Meg",
@@ -242,13 +242,16 @@
         }
       ],
       "options": [
-        "Ha én a helyedben lennék, először alaposan átgondolnám a dolgot.",
-        "Ha én a helyedben lennék, először átgondolod a dolgot."
+        "Ha én a helyedben lennék, először megbeszélném a dolgot a főnökkel.",
+        "Ha én a helyedben lennék, először megbeszélem a dolgot a főnökkel."
       ],
       "correct": 0,
       "teaches": [
         "hypothetical-ha-conditional"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-04-01-writing-1",

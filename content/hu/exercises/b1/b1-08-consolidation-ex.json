@@ -94,9 +94,9 @@
       "id": "b1-08-consolidation-5",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A vonat a hosszú hegyi ____ haladt keresztül.",
+      "sentence": "A vonat a hosszú ____ haladt keresztül.",
       "hint": "through the tunnel",
-      "english": "The train traveled through the long mountain tunnel.",
+      "english": "The train traveled through the long tunnel.",
       "answer": "alagúton",
       "stage": "recall",
       "teaches": [
@@ -123,11 +123,11 @@
       "id": "b1-08-consolidation-7",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "A vágányzár idején az utasokat ... szállítják az állomások között.",
+      "question": "A vágányzár idején ... járnak az állomások között.",
       "options": [
         "pótlóbuszok",
-        "repülőgépek",
-        "hajók"
+        "csomagok",
+        "menetrendek"
       ],
       "correct": 0,
       "stage": "in-context",
@@ -139,9 +139,9 @@
       "id": "b1-08-consolidation-8",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Időben el kell intézni a ____ a nyári szezonra.",
+      "sentence": "Időben el kell intézni a ____ a nyárra.",
       "hint": "accommodation booking",
-      "english": "One must arrange the accommodation booking in time for the summer season.",
+      "english": "One must arrange the accommodation booking in time for the summer.",
       "answer": "szállásfoglalást",
       "stage": "in-context",
       "teaches": [
@@ -152,11 +152,11 @@
       "id": "b1-08-consolidation-9",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent az 'útiterv' egy utazó számára?",
+      "question": "Mit jelent az 'útiterv'?",
       "options": [
-        "A megtekinteni kívánt helyek és időpontok pontos listáját.",
-        "A megvásárolt menetjegyek és bérletek árát.",
-        "A feladott poggyászok megengedett súlyát."
+        "A helyek és az idők terve.",
+        "A jegyek és a bérletek ára.",
+        "A csomagok és a bőröndök ára."
       ],
       "correct": 0,
       "stage": "in-context",
@@ -171,14 +171,17 @@
       "question": "Translate: 'We travelled through the mountains towards the lake.'",
       "options": [
         "A hegyeken keresztül utaztunk a tó felé.",
-        "A hegyek mellett utaztunk a tótól el.",
-        "A hegyeken át mentünk a tó nélkül."
+        "A hegyeken keresztül utaztunk a tó felől.",
+        "A hegyek mellett utaztunk a tó felé."
       ],
       "correct": 0,
       "stage": "produce",
       "teaches": [
         "keresztul"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "postpositions-basic"
+      }
     },
     {
       "id": "b1-08-consolidation-11",
@@ -187,14 +190,17 @@
       "question": "Translate: 'From morning until evening we visited the sights.'",
       "options": [
         "Reggeltől estig a látnivalókat jártuk be.",
-        "Reggel és este szállást foglaltunk.",
-        "Reggelről estére elveszett a csomagunk."
+        "Reggeltől estig szállást foglaltunk.",
+        "Reggelről estig a látnivalókat jártuk be."
       ],
       "correct": 0,
       "stage": "produce",
       "teaches": [
         "terminative-case-ig"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "delative-rol-rel"
+      }
     },
     {
       "id": "b1-08-consolidation-12",
@@ -204,7 +210,7 @@
       "options": [
         "Hányadik vágányról indul a vonat?",
         "Mikor érkezik meg a csomag?",
-        "Hol van a menetrend kiírva?"
+        "Hol van a menetrend?"
       ],
       "correct": 0,
       "stage": "produce",

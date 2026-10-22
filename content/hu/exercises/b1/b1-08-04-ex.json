@@ -80,9 +80,9 @@
       "id": "b1-08-04-controlled-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Az utas hivatalos ____ tett a megrongálódott bőrönd miatt.",
+      "sentence": "Az utas hivatalos ____ tett az elveszett bőrönd miatt.",
       "hint": "complaint",
-      "english": "The passenger filed a formal complaint because of the damaged suitcase.",
+      "english": "The passenger filed a formal complaint because of the lost suitcase.",
       "teaches": [
         "how-the-accusative-t-works"
       ],
@@ -95,8 +95,8 @@
       "category": "vocabulary",
       "question": "Which sentence describes a travel mishap?",
       "options": [
-        "A csatlakozást elkéstük, és ott maradt a peronon a csomagom.",
-        "Nagyon finom kávét ittunk a kocsiban.",
+        "Lekéstük a csatlakozást.",
+        "Finom kávét ittunk a vonaton.",
         "Sütött a nap az egész út alatt."
       ],
       "correct": 0,
@@ -115,15 +115,15 @@
           "misses the connecting train"
         ],
         [
-          "panaszt nyújt be",
-          "submits a complaint"
+          "panaszt tesz",
+          "files a complaint"
         ],
         [
           "elveszett csomag",
           "lost luggage"
         ],
         [
-          "pótlóbuszra száll át",
+          "pótlóbuszra átszáll",
           "transfers to a replacement bus"
         ]
       ],
@@ -136,11 +136,11 @@
       "id": "b1-08-04-practice-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Hová kell fordulni, ha elvész a csomagunk a repülőtéren vagy vasúton?",
+      "question": "Hova menjünk, ha elveszett a csomagunk?",
       "options": [
-        "Az elveszett tárgyak osztályához vagy az ügyfélszolgálathoz.",
-        "A vasúti vágányhoz a sínek közé.",
-        "A könyvesbolthoz az utcán."
+        "Az ügyfélszolgálatra.",
+        "A pályaudvar vágányára.",
+        "A szálloda szobájába."
       ],
       "correct": 0,
       "teaches": [
@@ -152,13 +152,11 @@
       "id": "b1-08-04-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Pályafelújítás miatt a szakaszon ____ szállítják az utasokat.",
+      "sentence": "A vonatok helyett ____ járnak az állomások között.",
       "hint": "replacement buses",
-      "english": "Due to track renovation, replacement buses transport the passengers on this section.",
+      "english": "Replacement buses run between the stations instead of the trains.",
       "answers": [
-        "pótlóbuszok",
-        "pótlóbuszokkal",
-        "pótlóbusszal"
+        "pótlóbuszok"
       ],
       "teaches": [
         "plural-nouns-k"
@@ -187,29 +185,35 @@
       "category": "grammar",
       "question": "— Segítség, ott hagytam a táskámat a vonaton!\n— ...",
       "options": [
-        "Azonnal menjünk az ügyfélszolgálatra, és jelentsük be a kalauznál!",
-        "Azonnal menjetek az ügyfélszolgálaton, és jelentsétek be a kalauzhoz!",
-        "Azonnal menjünk az ügyfélszolgálatba, és jelentsük be a kalauzt!"
+        "Azonnal menjünk az ügyfélszolgálatra, és kérjünk segítséget!",
+        "Azonnal menjünk az ügyfélszolgálaton, és kérjünk segítséget!",
+        "Azonnal menjünk az ügyfélszolgálat, és kérjünk segítséget!"
       ],
       "correct": 0,
       "teaches": [
         "ra-re"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "on-en-on"
+      }
     },
     {
       "id": "b1-08-04-dialogue-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "— Miért áll a vonat a nyílt pályán?\n— ...",
+      "question": "— Miért áll a vonat?\n— ...",
       "options": [
-        "Azt mondják, felsővezeték-szakadás van, és pótlóbusz fog jönni.",
-        "Azt mondják, felsővezeték-szakadás van, és pótlóbusz jönni fogtok.",
-        "Azt mondják, már megérkeztünk a végállomásra, azért állunk itt a réten."
+        "Hiba van a vágányon, ezért pótlóbusz jön.",
+        "Hiba van a vágányon, ezért pótlóbusz jönnek.",
+        "Hiba van a vágányon, mert pótlóbusz jön."
       ],
       "correct": 0,
       "teaches": [
-        "fog-infinitive"
-      ]
+        "mert-because"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-08-04-writing-1",
@@ -218,8 +222,8 @@
       "question": "How do you say: 'We missed the train due to the delay.'?",
       "options": [
         "A késés miatt lekéstük a vonatot.",
-        "A késéssel felszálltunk a vonatra.",
-        "A vonatról nem késtünk soha."
+        "A késés miatt felszálltunk a vonatra.",
+        "A késés miatt lekéstétek a vonatot."
       ],
       "correct": 0,
       "teaches": [

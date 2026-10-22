@@ -68,7 +68,7 @@
       "id": "b1-08-01-controlled-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "A vonat a Duna ... halad a pályaudvarról.",
+      "question": "Complete: 'A vonat a Duna ... halad.' (towards the Danube)",
       "options": [
         "felé",
         "felől",
@@ -87,9 +87,9 @@
       "id": "b1-08-01-controlled-3",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A ____ szerint a gyorsvonat tíz percen belül indul.",
+      "sentence": "A ____ szerint a vonat háromkor indul.",
       "hint": "schedule / timetable",
-      "english": "According to the schedule, the express train departs within ten minutes.",
+      "english": "According to the timetable, the train leaves at three.",
       "teaches": [
         "b1-travel-mobility-vocab"
       ],
@@ -100,17 +100,21 @@
       "id": "b1-08-01-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence is natural?",
+      "question": "Which sentence means 'We travel to Szeged without a transfer'?",
       "options": [
-        "Közvetlen vonattal, átszállás nélkül utazunk Szegedre.",
-        "Átszállásban nélkül vonattal utazunk Szeged.",
-        "Szeged felől átszállással nem megy vonatunk."
+        "Átszállás nélkül utazunk Szegedre.",
+        "Átszállás után utazunk Szegedre.",
+        "Átszállással utazunk Szegedre."
       ],
       "correct": 0,
       "teaches": [
         "postpositions-basic"
       ],
-      "stage": "controlled"
+      "stage": "controlled",
+      "distractor_skills": {
+        "1": "temporal-postpositions",
+        "2": "val-vel"
+      }
     },
     {
       "id": "b1-08-01-practice-1",
@@ -118,20 +122,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "pontos menetrend",
-          "accurate timetable"
+          "új menetrend",
+          "a new timetable"
         ],
         [
-          "közvetlen átszállás",
-          "direct transfer"
+          "hosszú átszállás",
+          "a long transfer"
         ],
         [
-          "végső célállomás",
-          "final destination"
+          "jó célállomás",
+          "a good destination"
         ],
         [
-          "automatikus jegykezelés",
-          "automated ticket validation"
+          "jegykezelés előtt",
+          "before ticket validation"
         ]
       ],
       "teaches": [
@@ -147,7 +151,7 @@
       "options": [
         "A jegykezelő automatánál.",
         "A szálloda recepcióján.",
-        "A hegyi hágónál."
+        "Az étteremben."
       ],
       "correct": 0,
       "teaches": [
@@ -159,9 +163,9 @@
       "id": "b1-08-01-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A hegyek ____ hűvös szellő érkezett a völgybe.",
+      "sentence": "A hegyek ____ hideg szél fújt az állomáson.",
       "hint": "from the direction of",
-      "english": "From the direction of the mountains, a cool breeze arrived into the valley.",
+      "english": "A cold wind was blowing at the station from the direction of the mountains.",
       "teaches": [
         "postposition-fele"
       ],
@@ -172,11 +176,11 @@
       "id": "b1-08-01-practice-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent: 'Ez a vonat közvetlenül a célállomásra megy'?",
+      "question": "Mit jelent: 'Ez a vonat átszállás nélkül megy a célállomásra'?",
       "options": [
-        "This train goes directly to the destination without transfers.",
-        "This train is cancelled.",
-        "This train only carries luggage."
+        "It goes to the destination without a transfer.",
+        "It goes to the destination with a transfer.",
+        "It does not go to the destination at all."
       ],
       "correct": 0,
       "teaches": [
@@ -188,11 +192,11 @@
       "id": "b1-08-01-dialogue-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "— Van közvetlen járat Pécsre, vagy átszállással kell menni?\n— ...",
+      "question": "— Megy vonat Pécsre átszállás nélkül, vagy át kell szállni?\n— ...",
       "options": [
-        "Szerencsére van egy közvetlen InterCity, nem kell átszállnod.",
-        "Szerencsére van egy közvetlen InterCity, nem kell átszállniad.",
-        "Közvetlen járat van, de mégis át kell szállnod rá."
+        "Átszállás nélkül megy, nem kell átszállnod.",
+        "Átszállás nélkül megy, nem kell átszállniad.",
+        "Átszállás nélkül megy, de átszállnod kell."
       ],
       "correct": 0,
       "teaches": [
@@ -221,14 +225,18 @@
       "question": "How do you say: 'We are travelling towards the capital.'?",
       "options": [
         "A főváros felé utazunk.",
-        "A fővárosból állunk.",
-        "A fővárosban fekszünk."
+        "A fővárosból utazunk.",
+        "A fővárosban utazunk."
       ],
       "correct": 0,
       "teaches": [
         "postposition-fele"
       ],
-      "stage": "production"
+      "stage": "production",
+      "distractor_skills": {
+        "1": "elative-bol-bel",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b1-08-01-writing-2",
@@ -237,8 +245,8 @@
       "question": "How do you say: 'Where is the ticket validation machine?'?",
       "options": [
         "Hol van a jegykezelő automata?",
-        "Mikor érkezik a célállomás?",
-        "Miért késik a menetrend?"
+        "Hol van a menetrend?",
+        "Mikor van a jegykezelő automata?"
       ],
       "correct": 0,
       "teaches": [

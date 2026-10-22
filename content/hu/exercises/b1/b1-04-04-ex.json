@@ -9,7 +9,7 @@
       "options": [
         "nehogy",
         "talán",
-        "szinte"
+        "inkább"
       ],
       "correct": 0,
       "teaches": [
@@ -83,27 +83,34 @@
       "sentence": "Ez a döntés komoly következményekkel ____.",
       "hint": "could carry",
       "english": "This decision could carry serious consequences.",
-      "answer": "járhat",
       "teaches": [
         "potential-hat-het"
       ],
-      "stage": "controlled"
+      "stage": "controlled",
+      "answers": [
+        "járhat",
+        "járhatna"
+      ]
     },
     {
       "id": "b1-04-04-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "\"Nehogy elkéss a találkozóról!\" — what mood is elkéss in?",
+      "question": "Which form completes the warning? Nehogy ____ a találkozóról! (Don't be late for the meeting.)",
       "options": [
-        "imperative (command form)",
-        "past tense",
-        "conditional"
+        "elkéss",
+        "elkésel",
+        "elkésnél"
       ],
       "correct": 0,
       "teaches": [
         "nehogy-purpose"
       ],
-      "stage": "controlled"
+      "stage": "controlled",
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "b1-04-04-practice-1",
@@ -172,10 +179,10 @@
       "base_gloss": "Be careful, this could be dangerous!",
       "options": [
         {
-          "word": "kockázatos",
-          "inflected": "kockázatos",
-          "sentence": "Vigyázz, ez kockázatos lehet!",
-          "gloss": "risky"
+          "word": "forró",
+          "inflected": "forró",
+          "sentence": "Vigyázz, ez forró lehet!",
+          "gloss": "hot"
         },
         {
           "word": "drága",
@@ -216,7 +223,7 @@
       "prompt": [
         {
           "speaker": "Petra",
-          "text": "Holnap indulok egyedül túrázni a hegyekbe."
+          "text": "Holnap túrázni megyek a hegyekbe, de nagyon hideg lesz."
         },
         {
           "speaker": "Meg",
@@ -224,13 +231,16 @@
         }
       ],
       "options": [
-        "Nehogy egyedül indulj, az veszélyes lehet!",
-        "Nehogy egyedül indulsz, az veszélyes volt."
+        "Nehogy elindulj, az veszélyes lehet!",
+        "Nehogy elindulsz, az veszélyes lehet!"
       ],
       "correct": 0,
       "teaches": [
         "nehogy-purpose"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-04-04-dialogue-2",
@@ -248,15 +258,12 @@
       ],
       "options": [
         "Ha nem szólsz, később megbánhatod — komoly következményei lehetnek.",
-        "Ha nem szólsz, most azonnal megbántad."
+        "Ha nem szólsz, később megbánhatom — komoly következményei lehetnek."
       ],
       "correct": 0,
       "teaches": [
         "potential-hat-het"
-      ],
-      "distractor_skills": {
-        "1": "definite-past"
-      }
+      ]
     },
     {
       "id": "b1-04-04-writing-1",
@@ -292,7 +299,7 @@
       "category": "grammar",
       "question": "\"Nehogy elfelejted.\" — what's wrong with this sentence?",
       "options": [
-        "elfelejted should be the imperative elfelejtsd",
+        "elfelejted should be elfelejtsd",
         "nehogy should be nem",
         "elfelejted should be past tense"
       ],

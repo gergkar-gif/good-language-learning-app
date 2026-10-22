@@ -1,0 +1,696 @@
+[
+ {
+  "file": "content/hu/exercises/b1/b1-05-01-ex.json",
+  "id": "b1-05-01-intro-1",
+  "set": {
+   "options": [
+    "egymás",
+    "valaki",
+    "saját"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "tell-absolute (senki) and unmet magunk (b2); wrong options now met words"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-01-ex.json",
+  "id": "b1-05-01-controlled-4",
+  "set": {
+   "question": "Anna és Péter jól ____ egymással. (they get along)"
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "jól esznek/alszanak egymással could pass for a sentence; the gloss pins the meaning"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-01-ex.json",
+  "id": "b1-05-01-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Petra",
+     "text": "Hogy jössz ki az új kollégáddal?"
+    },
+    {
+     "speaker": "Anna",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Nagyon jól kijövünk egymással, kölcsönösen segítünk egymásnak.",
+    "Nagyon jól kijövök egymással, kölcsönösen segítünk egymásnak."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "szobatársaddal unmet; the wrong option had two person faults (kijöttök + segítenek), now one (kijövök)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-01-ex.json",
+  "id": "b1-05-01-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Károly",
+     "text": "Ti ketten mindig együttműködtök a munkahelyen?"
+    },
+    {
+     "speaker": "Anna",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Igen, nagyon jól együttműködünk egymással.",
+    "Igen, nagyon jól együttműködnek egymással."
+   ],
+   "teaches": [
+    "present-tense-routine-language"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "length-giveaway (42 vs 32) and a wrong option (Igen, sosem ...) ruled out by Igen; now one person fault; tag follows the form"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-05-01-a-gr.json",
+  "old": "*egymás* means ",
+  "new": "You know *egymással* from A2 (Unit 5) and the cases from A1 and A2; this screen shows *egymás* in all of them. *egymás* means ",
+  "why": "presents egymás as new; a2-23-b taught egymással"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-05-01-b-gr.json",
+  "old": "[\"rosszul kijönnek egymással\"",
+  "new": "[\"rosszul jönnek ki egymással\"",
+  "kind": "hungarian",
+  "why": "with rosszul in focus the prefix goes behind the verb (the row above already shows nehezen jönnek ki)"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-05-01-b-gr.json",
+  "old": "*kijön* is one of the *-ik*-verbs whose plural forms drop the *-ik*: *kijönnek* (they get along), not *kijönnek-ik*. When you conjugate it for we/you-plural, remember",
+  "new": "*kijön* is built on the irregular verb *jön* (*jövünk*, *jönnek*); it is not an *-ik* verb. The prefix *ki-* stays in front in a plain statement (*kijönnek*) and moves behind the verb after a focused word like *nehezen* or *rosszul* (*jönnek ki*). With a plural subject, remember",
+  "kind": "hungarian",
+  "why": "false claim: kijön is not an -ik verb and kijönnek-ik is not a form"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-05-01.json",
+  "old": "\"I can use four new words for talking about relationships in general.\",\n    \"",
+  "new": "\"I can use five new words for talking about relationships in general.\",\n    \"",
+  "why": "the vocabulary list has five words (kapcsolat, megért, együttműködik, kölcsönös, suli)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-05-01.json",
+  "old": "\"I can use four new words for talking about relationships in general.\",\n        \"I can describe a relationship's basic dynamic in a few sentences.\"\n      ]\n    },",
+  "new": "\"I can use five new words for talking about relationships in general.\",\n        \"I can describe a relationship's basic dynamic in a few sentences.\"\n      ]\n    },",
+  "why": "the vocabulary list has five words (kapcsolat, megért, együttműködik, kölcsönös, suli)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-05-01.json",
+  "old": "\"I can use four new words for talking about relationships in general.\",\n        \"I can describe a relationship's basic dynamic in a few sentences.\"\n      ]\n    }\n",
+  "new": "\"I can use five new words for talking about relationships in general.\",\n        \"I can describe a relationship's basic dynamic in a few sentences.\"\n      ]\n    }\n",
+  "why": "the vocabulary list has five words (kapcsolat, megért, együttműködik, kölcsönös, suli)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-02-ex.json",
+  "id": "b1-05-02-intro-1",
+  "set": {
+   "question": "Which verb means \"to fall out with someone\"?",
+   "options": [
+    "összevész",
+    "kibékül",
+    "megbocsát"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "the clause 'takes -val/-vel, never an accusative object' ruled out szeret and lát"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-02-ex.json",
+  "id": "b1-05-02-practice-4",
+  "set": {
+   "options": [
+    "Összevesztünk, de aztán kibékültünk.",
+    "Jól kijöttünk, de aztán összevesztünk.",
+    "Segítettünk egymásnak, és megértettük egymást."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "length-giveaway (36 vs 22)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-02-ex.json",
+  "id": "b1-05-02-dialogue-1",
+  "set": {
+   "options": [
+    "Összevesztünk a hétvégén.",
+    "Összevesztetek a hétvégén."
+   ],
+   "teaches": [
+    "past-tense-indefinite"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "the wrong reply (Nagyon jól kijövünk ...) contradicts the question; now one person fault"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-02-ex.json",
+  "id": "b1-05-02-dialogue-2",
+  "set": {
+   "options": [
+    "Igen, tegnap kibékültünk, és megbocsátottunk egymásnak.",
+    "Igen, tegnap kibékültek, és megbocsátottak egymásnak."
+   ],
+   "teaches": [
+    "past-tense-indefinite"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "length-giveaway (55 vs 29), wrong option contradicts Igen"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-05-02-a-gr.json",
+  "old": "You've already met one kind of reflexive pattern with *érzem magam* (\\\"I feel [myself]\\\").",
+  "new": "You know *-ik* verbs such as *ismerkedik* (A2 Unit 5) and *megoldódik* (A2 Unit 31), and the reflexive *érzem magam* (\\\"I feel [myself]\\\").",
+  "why": "the -kedik/-ik family is A2 (a2-22-a, a2-155-a) but the screen presents it as new"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-05-02-a-gr.json",
+  "old": "Notice that *összevész* splits around its own coverb in questions and past tense (*Kivel vesztél össze?*, *Összevesztem vele*), the same way",
+  "new": "Notice that *összevész* keeps *össze-* in front in a plain statement (*Összevesztem vele*) and splits after a question word or *nem* (*Kivel vesztél össze?*), the same way",
+  "kind": "hungarian",
+  "why": "the tip says Összevesztem vele splits; it does not"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-05-02-b-gr.json",
+  "old": "*megbocsát* works differently:",
+  "new": "*megbocsát* works differently (you know the dative from A2: *segítek neked*):",
+  "why": "dative with verbs is known (a2-59-a)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-05-02.json",
+  "old": "\"I can tell a short story about a falling-out and how it ended.\"\n  ]",
+  "new": "\"I can say that two people fell out and then made up.\"\n  ]",
+  "why": "the lesson practises single sentences, no story"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-05-02.json",
+  "old": "\"I can tell a short story about a falling-out and how it ended.\"\n      ]\n    },",
+  "new": "\"I can say that two people fell out and then made up.\"\n      ]\n    },",
+  "why": "the lesson practises single sentences, no story"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-05-02.json",
+  "old": "\"I can tell a short story about a falling-out and how it ended.\"\n      ]\n    }\n",
+  "new": "\"I can say that two people fell out and then made up.\"\n      ]\n    }\n",
+  "why": "the lesson practises single sentences, no story"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-03-ex.json",
+  "id": "b1-05-03-intro-1",
+  "set": {
+   "question": "Which verb means \"to take care of someone\"?",
+   "options": [
+    "gondoskodik",
+    "ragaszkodik",
+    "támaszkodik"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "the clause 'takes -ról/-ről' ruled out szeret and lát"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-03-ex.json",
+  "id": "b1-05-03-practice-4",
+  "set": {
+   "options": [
+    "A gyerek nagyon ragaszkodik a nagyszüleihez.",
+    "A gyerek nagyon gondoskodik a nagyszüleiről.",
+    "A gyerek nagyon fél a nagyszüleitől."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "szereti (loves) is a near-synonym of 'attached to' and could pass as right"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-03-ex.json",
+  "id": "b1-05-03-dialogue-1",
+  "set": {
+   "options": [
+    "A családomra és a barátaimra mindig számíthatok.",
+    "A családomra és a barátaimra mindig számíthatsz."
+   ],
+   "teaches": [
+    "potential-hat-het"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "length-giveaway (48 vs 36) and tell-time-word Tegnap; now one person fault"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-03-ex.json",
+  "id": "b1-05-03-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Károly",
+     "text": "Támogatsz engem, ha bajban vagyok?"
+    },
+    {
+     "speaker": "Anna",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Igen, mindig támogatlak, nagy a bizalmam benned.",
+    "Igen, mindig támogatsz, nagy a bizalmam benned."
+   ],
+   "teaches": [
+    "lak-lek-suffix"
+   ],
+   "distractor_skills": {
+    "1": "present-tense-routine-language"
+   }
+  },
+  "kind": "hungarian",
+  "why": "length-giveaway (31 vs 22), tell-time-word, absurd wrong reply, unmet megbízol/teljes; also uses támogat, a vocabulary word no item used (vocab-unused)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-03-ex.json",
+  "id": "b1-05-03-check-1",
+  "set": {
+   "question": "Which case does the verb gondoskodik take?"
+  },
+  "kind": "hungarian",
+  "why": "the question gave the answer away (valakiről)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-04-ex.json",
+  "id": "b1-05-04-intro-1",
+  "set": {
+   "options": [
+    "annak ellenére, hogy",
+    "annak érdekében, hogy",
+    "csak azért, mert"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "attól kezdve contains kezdve (-ve participle, B1 Unit 57)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-04-ex.json",
+  "id": "b1-05-04-intro-2",
+  "set": {
+   "options": [
+    "aki",
+    "ami",
+    "amit"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "ahol is B1 Unit 10"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-04-ex.json",
+  "id": "b1-05-04-controlled-4",
+  "set": {
+   "options": [
+    "önzetlen",
+    "kedves",
+    "türelmes"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "önző unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-04-ex.json",
+  "id": "b1-05-04-practice-4",
+  "set": {
+   "options": [
+    "Még mindig barátok vagyunk, annak ellenére, hogy évek óta nem találkoztunk.",
+    "Már nem vagyunk barátok, mert évek óta nem találkoztunk egymással.",
+    "Barátok leszünk, ha évek múlva újra találkozunk egymással."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "length-giveaway (75 vs 47)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-04-ex.json",
+  "id": "b1-05-04-dialogue-1",
+  "set": {
+   "options": [
+    "Annak ellenére, hogy messze lakunk egymástól, mindig tartjuk a kapcsolatot.",
+    "Ellenére annak, hogy messze lakunk egymástól, mindig tartjuk a kapcsolatot."
+   ],
+   "teaches": [
+    "concessive-annak-ellenere"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "length-giveaway (75 vs 38) and an absurd wrong reply; now one fault (annak misplaced, as in check-1)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-04-ex.json",
+  "id": "b1-05-04-dialogue-2",
+  "set": {
+   "options": [
+    "Olyan hűséges barátom van, aki mindig mellettem áll.",
+    "Hétvégén szoktunk találkozni, és együtt kávézunk."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "belvárosban unmet (b2-31-05)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-04-ex.json",
+  "id": "b1-05-04-check-2",
+  "set": {
+   "sentence": "Olyan barátom van, ____ mindig segít.",
+   "hint": "who",
+   "english": "I have the kind of friend who always helps.",
+   "answer": "aki"
+  },
+  "kind": "hungarian",
+  "why": "akire is case-inflected relative pronoun (vonatkozoi-nevmas-esetei, B1 Unit 21): drilled before its screen"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-05-04-b-gr.json",
+  "old": "To describe a friend in more than one adjective,",
+  "new": "You know *aki* from A2 (Unit 4). To describe a friend in more than one adjective,",
+  "why": "aki is taught in a2-19-a; the screen presents it as new"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-05-04-b-gr.json",
+  "old": "I have such a loyal friend that he/she never lets me down.",
+  "new": "I have the kind of loyal friend who never lets me down.",
+  "why": "wrong English: aki is a relative clause, not a result clause"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-05-04-b-gr.json",
+  "old": "\"Önzetlen barátra van szükségem, akire mindig számíthatok.\", \"english\": \"I need a selfless friend I can always count on.\"",
+  "new": "\"Önzetlen barátra van szükségem, aki mindig segít.\", \"english\": \"I need a selfless friend who always helps.\"",
+  "kind": "hungarian",
+  "why": "akire (case-inflected relative pronoun) is B1 Unit 21"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-05-04-b-gr.json",
+  "old": "*aki* agrees in case with its own role inside its own clause, not with *barát*: in *akire mindig számíthatok*, *aki* takes *-re* because *számít* governs *-ra/-re* inside that clause — the case has nothing to do with *barátra* just before it. Track each clause's grammar separately.",
+  "new": "*aki* is the subject of its own clause, whatever the case of the noun before it: *barátra van szükségem, aki mindig segít* (*barátra* has *-ra*, *aki* stays *aki*). Forms like *akire* or *akivel* come later in B1 (Unit 21).",
+  "kind": "hungarian",
+  "why": "tip taught akire (B1 Unit 21)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-05-ex.json",
+  "id": "b1-05-05-intro-1",
+  "set": {
+   "options": [
+    "kompromisszum",
+    "kapcsolat",
+    "gondoskodik"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "length-giveaway (13 vs 8)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-05-ex.json",
+  "id": "b1-05-05-intro-2",
+  "set": {
+   "options": [
+    "közeledik valakihez",
+    "veszekedik valakivel",
+    "fél valakitől"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "távolodik unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-05-ex.json",
+  "id": "b1-05-05-controlled-4",
+  "set": {
+   "options": [
+    "Mostanában közeledünk egymáshoz.",
+    "Mostanában veszekedünk egymással.",
+    "Mostanában félünk egymástól."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "utóbbi, távolodunk unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-05-ex.json",
+  "id": "b1-05-05-practice-4",
+  "set": {
+   "options": [
+    "A jó kapcsolat titka a kompromisszum.",
+    "A jó kapcsolat titka a sok pénz.",
+    "A jó kapcsolat titka a sok munka."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "veszekedés (-és, B1 Unit 31) and magány unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-05-ex.json",
+  "id": "b1-05-05-dialogue-1",
+  "set": {
+   "options": [
+    "Bizalom, kompromisszum, és az, hogy törődjünk egymással.",
+    "Gyakran járunk együtt moziba és színházba hétvégén."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "hétvégi unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-05-ex.json",
+  "id": "b1-05-05-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Károly",
+     "text": "Hogy maradtatok ilyen közel egymáshoz?"
+    },
+    {
+     "speaker": "Anna",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Annak ellenére, hogy messze élünk egymástól, mindig közeledünk egymáshoz, ha találkozunk.",
+    "Mert mindketten nagyon elfoglaltak vagyunk, és ritkán jut időnk találkozni."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "annyi, személyes unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-05-ex.json",
+  "id": "b1-05-05-reading-1",
+  "set": {
+   "options": [
+    "Mert félt, hogy senki sem hiszi el neki, hogy nem ő vette el.",
+    "Mert ő vette el a pénzt, és nem akarta elmondani.",
+    "Mert nem érdekelte a dolog, és nem akart beszélni."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "length-giveaway (53 vs 29); igazságot, maga unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-05-ex.json",
+  "id": "b1-05-05-reading-2",
+  "set": {
+   "options": [
+    "Mert Misi nem mondta el neki az igazat.",
+    "Mert Misi nem akart vele többé ülni a padban.",
+    "Mert Misi elvette Gimesi pénzét."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "length-giveaway (86 vs 44); elárulta, titkát, elmondja unmet; wrong options now plausible and false in the story"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-05-ex.json",
+  "id": "b1-05-05-reading-3",
+  "set": {
+   "question": "Mi történt a két barát között a történet végén?",
+   "options": [
+    "Gimesi bocsánatot kért, Misi pedig megbocsátott neki.",
+    "A tanár megkérte őket, hogy kibéküljenek.",
+    "Gimesi nem kért bocsánatot, és Misi elköltözött."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "length-giveaway (64 vs 47), békültek unmet"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-05-05-gr.json",
+  "old": "\"Mind érzelmileg, mind gyakorlatilag támogatjuk egymást.\"",
+  "new": "\"Érzelmileg is, gyakorlatilag is támogatjuk egymást.\"",
+  "kind": "hungarian",
+  "why": "the screen promises is ... is but the first row shows mind ... mind (a B1 Unit 63 connector)"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-05-05-gr.json",
+  "old": "akkor is, ha nem értünk mindenben egyet.",
+  "new": "annak ellenére, hogy nem értünk mindenben egyet.",
+  "kind": "hungarian",
+  "why": "akkor is, ha is the B2 even-if pattern (even-if-ha-is)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-consolidation-ex.json",
+  "id": "b1-05-consolidation-1",
+  "set": {
+   "options": [
+    "egymás",
+    "valaki",
+    "saját"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "tell-absolute (mindenki) and unmet magunk"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-consolidation-ex.json",
+  "id": "b1-05-consolidation-2",
+  "set": {
+   "options": [
+    "annak ellenére, hogy",
+    "annak érdekében, hogy",
+    "csak azért, mert"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "amiatt, függően unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-consolidation-ex.json",
+  "id": "b1-05-consolidation-7",
+  "set": {
+   "tiles": [
+    "Annak",
+    "ellenére",
+    ",",
+    "hogy",
+    "sokat",
+    "veszekedtünk",
+    ",",
+    "gyorsan",
+    "kibékültünk",
+    "."
+   ],
+   "solution": [
+    "Annak",
+    "ellenére",
+    ",",
+    "hogy",
+    "sokat",
+    "veszekedtünk",
+    ",",
+    "gyorsan",
+    "kibékültünk",
+    "."
+   ],
+   "english": "Despite the fact that we argued a lot, we made up quickly."
+  },
+  "kind": "hungarian",
+  "why": "mégis is a b1-27-05 word"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-consolidation-ex.json",
+  "id": "b1-05-consolidation-8",
+  "set": {
+   "sentences": [
+    "Misi és Gimesi jó barátok voltak.",
+    "Egy napon nagyon összevesztek.",
+    "Gimesi bocsánatot kért Misitől.",
+    "A két fiú barátsága ezután még erősebb lett."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "félreértés is a verbal noun (B1 Unit 31)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-consolidation-ex.json",
+  "id": "b1-05-consolidation-9",
+  "set": {
+   "options": [
+    "Annak ellenére, hogy összevesztünk, remélem, hogy egyszer kibékülünk.",
+    "Annak ellenére összevesztünk, hogy remélem, egyszer kibékülünk."
+   ],
+   "teaches": [
+    "concessive-annak-ellenere"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "tell-time-word Tavaly; the wrong reply answered another question; now one fault (hogy misplaced)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-consolidation-ex.json",
+  "id": "b1-05-consolidation-10",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that they help each other every day.",
+     "answer": "Minden nap segítenek egymásnak."
+    },
+    {
+     "prompt": "Say that despite the fact that they argued, they made up quickly.",
+     "answer": "Annak ellenére, hogy veszekedtek, gyorsan kibékültek."
+    },
+    {
+     "prompt": "Say she's the kind of friend who always helps.",
+     "answer": "Olyan barát, aki mindig segít."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "meghallgat is in no vocabulary list"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-05-consolidation-ex.json",
+  "id": "b1-05-consolidation-12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Say that he cares about his friends, despite the fact that it's difficult.",
+     "answer": "Törődik a barátaival, annak ellenére, hogy nehéz."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "még akkor is, ha is the B2 even-if pattern"
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-05-legyjomindhalalig.json",
+  "old": "egy igazi barátja: Gimesi Ferit, akivel",
+  "new": "egy igazi barátja: Gimesi Feri, akivel",
+  "kind": "hungarian",
+  "why": "apposition to barátja must stay nominative"
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-05-legyjomindhalalig.json",
+  "old": "rábízott egy összeg pénzt",
+  "new": "rábízott egy kis pénzt",
+  "kind": "hungarian",
+  "why": "'egy összeg pénzt' is not Hungarian"
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-05-legyjomindhalalig.json",
+  "old": "Ahelyett, hogy azonnal mindent elmondott volna a tanárnak,",
+  "new": "Ahelyett, hogy azonnal mindent elmondana a tanárnak,",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "past conditional volna is B1 Unit 39"
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-05-legyjomindhalalig.json",
+  "old": "hogy a barátja csak megbántva és félreértve reagált egy igazságtalan helyzetre",
+  "new": "hogy a barátja félreértette a helyzetet, és ezért volt dühös",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "two -va/-ve participles (B1 Unit 57)"
+ }
+]

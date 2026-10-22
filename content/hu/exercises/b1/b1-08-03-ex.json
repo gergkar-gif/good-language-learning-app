@@ -24,8 +24,8 @@
       "question": "What is the difference between 'indulás' and 'érkezés'?",
       "options": [
         "departure vs arrival",
-        "ticket vs train",
-        "seat vs luggage"
+        "delay vs duration",
+        "ticket vs timetable"
       ],
       "correct": 0,
       "teaches": [
@@ -95,9 +95,9 @@
       "category": "vocabulary",
       "question": "Which sentence expresses travel duration?",
       "options": [
-        "Az utazás időtartama három óra volt.",
+        "Az utazás tartama három óra volt.",
         "Az utazás iránya három óra volt.",
-        "Az utazás indulása három órakor volt."
+        "Az utazás indulása háromkor volt."
       ],
       "correct": 0,
       "teaches": [
@@ -111,20 +111,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "pontos indulás",
-          "punctual departure"
+          "gyors érkezés",
+          "a quick arrival"
         ],
         [
-          "várható érkezés",
-          "expected arrival"
+          "nagy késés",
+          "a big delay"
         ],
         [
-          "jelentős késés",
-          "significant delay"
+          "az út tartama",
+          "the duration of the journey"
         ],
         [
-          "az út időtartama",
-          "duration of the journey"
+          "jó indulás",
+          "a good departure"
         ]
       ],
       "teaches": [
@@ -135,16 +135,16 @@
     {
       "id": "b1-08-03-practice-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Mikor kell a peronon várni a vonatot?",
+      "category": "grammar",
+      "question": "Mikor érdemes a peronon lenni?",
       "options": [
-        "Az indulási idő előtt legalább 10-15 perccel.",
-        "Két nappal az utazás után.",
-        "Csak este tizenegykor."
+        "Az indulás előtt egy órával.",
+        "Az indulás után egy órával.",
+        "Az indulás közben egy órával."
       ],
       "correct": 0,
       "teaches": [
-        "b1-travel-mobility-vocab"
+        "temporal-postpositions"
       ],
       "stage": "practice"
     },
@@ -152,9 +152,9 @@
       "id": "b1-08-03-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Reggeltől ____ tartott a kimerítő buszozás a hegyekben.",
+      "sentence": "Reggeltől ____ tartott az utazás.",
       "hint": "until evening",
-      "english": "The exhausting bus ride in the mountains lasted from morning until evening.",
+      "english": "The journey lasted from morning until evening.",
       "teaches": [
         "terminative-case-ig"
       ],
@@ -180,19 +180,20 @@
     {
       "id": "b1-08-03-dialogue-1",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "— Mennyi a vonat várható késése?\n— ...",
+      "category": "vocabulary",
+      "question": "— Mennyit késik a vonat?\n— ...",
       "options": [
-        "Körülbelül huszonöt perc a műszaki hiba miatt.",
-        "Körülbelül huszonöt percre a műszaki hiba felől.",
-        "Körülbelül huszonöt kilométer a vonat késése."
+        "Egy órát késik a hiba miatt.",
+        "Egy órára késik a hiba miatt.",
+        "Egy órát késik a hiba felől."
       ],
       "correct": 0,
       "teaches": [
-        "causal-postpositions"
+        "b1-travel-mobility-vocab"
       ],
       "distractor_skills": {
-        "1": "postposition-fele"
+        "1": "ra-re",
+        "2": "postposition-fele"
       }
     },
     {
@@ -221,8 +222,8 @@
       "question": "How do you say: 'We travelled as far as Lake Balaton.'?",
       "options": [
         "A Balatonig utaztunk.",
-        "A Balatonról jöttünk haza.",
-        "A Balatonban fürödtünk este."
+        "A Balatonról utaztunk.",
+        "A Balatonban utaztunk."
       ],
       "correct": 0,
       "teaches": [
@@ -238,11 +239,11 @@
       "id": "b1-08-03-writing-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "How do you say: 'What is the estimated time of arrival?'?",
+      "question": "How do you say: 'When does the train arrive?'",
       "options": [
-        "Mikorra várható az érkezés?",
-        "Mikor volt a korábbi indulás?",
-        "Hányadik vágányról indulunk?"
+        "Mikor érkezik a vonat?",
+        "Mikor indul a vonat?",
+        "Hol érkezik a vonat?"
       ],
       "correct": 0,
       "teaches": [

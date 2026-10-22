@@ -64,7 +64,7 @@
       "id": "b1-06-02-controlled-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A probléma hamarosan ____ magától.",
+      "sentence": "A probléma hamarosan ____.",
       "hint": "will resolve itself",
       "english": "The problem will soon resolve itself.",
       "answer": "megoldódik",
@@ -94,14 +94,15 @@
       "options": [
         "A projekt pénteken befejeződik.",
         "A projekt pénteken befejezi.",
-        "A projekt pénteken fejezve van."
+        "A projekt pénteken befejeződött."
       ],
       "correct": 0,
       "teaches": [
         "mediopassive-verbs-odik"
       ],
       "distractor_skills": {
-        "1": "definite-vs-indefinite-conjugation"
+        "1": "definite-vs-indefinite-conjugation",
+        "2": "past-tense-indefinite"
       },
       "stage": "controlled"
     },
@@ -112,7 +113,7 @@
       "tiles": [
         "Minden",
         "fontos",
-        "ügy",
+        "dolog",
         "gyorsan",
         "elintéződik",
         "."
@@ -120,12 +121,12 @@
       "solution": [
         "Minden",
         "fontos",
-        "ügy",
+        "dolog",
         "gyorsan",
         "elintéződik",
         "."
       ],
-      "english": "Every important matter gets sorted out quickly.",
+      "english": "Every important thing gets sorted out quickly.",
       "teaches": [
         "mediopassive-verbs-odik"
       ],
@@ -161,9 +162,9 @@
       "id": "b1-06-02-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Már ____ az összes hivatalos papírt.",
+      "sentence": "Már ____ a számlát.",
       "hint": "I arranged / sorted out",
-      "english": "I have already sorted out all the official papers.",
+      "english": "I have already sorted out the invoice.",
       "answer": "elintéztem",
       "teaches": [
         "definite-past"
@@ -197,7 +198,7 @@
       "prompt": [
         {
           "speaker": "Márk",
-          "text": "Mi a helyzet a nehéz technikai problémával?"
+          "text": "Mi a helyzet a nehéz problémával?"
         },
         {
           "speaker": "Zsuzsa",
@@ -205,8 +206,8 @@
         }
       ],
       "options": [
-        "Nyugalom, délutánra biztosan megoldódik minden.",
-        "Nyugalom, délutánra biztosan megold minden."
+        "Semmi baj, délutánra biztosan megoldódik minden.",
+        "Semmi baj, délutánra biztosan megold minden."
       ],
       "correct": 0,
       "teaches": [
@@ -220,7 +221,7 @@
       "prompt": [
         {
           "speaker": "Bálint",
-          "text": "Kihez tartozik a számlázás ebben a hónapban?"
+          "text": "Ki a felelős a számlákért ebben a hónapban?"
         },
         {
           "speaker": "Dóra",
@@ -228,13 +229,16 @@
         }
       ],
       "options": [
-        "Kata a felelős a számlák ellenőrzéséért és elküldéséért.",
-        "Kata a felelős a számlák ellenőrzésének és elküldésének."
+        "Kata a felelős a számlákért.",
+        "Kata a felelős a számláknak."
       ],
       "correct": 0,
       "teaches": [
         "verb-government-ert"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "verb-government-nak-nek"
+      }
     },
     {
       "id": "b1-06-02-writing-1",
@@ -287,9 +291,9 @@
       "id": "b1-06-02-check-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ez a pozíció óriási ____ jár.",
-      "hint": "with responsibility - instrumental: -val",
-      "english": "This position comes with huge responsibility.",
+      "sentence": "Ez a munka nagy ____ jár.",
+      "hint": "responsibility",
+      "english": "This job comes with great responsibility.",
       "answer": "felelősséggel",
       "teaches": [
         "val-vel"

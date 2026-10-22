@@ -9,13 +9,17 @@
       "options": [
         "dolgozó",
         "dolgozott",
-        "dolgozva"
+        "dolgozik"
       ],
       "correct": 0,
       "teaches": [
         "present-participle"
       ],
-      "stage": "introduce"
+      "stage": "introduce",
+      "distractor_skills": {
+        "1": "past-tense-indefinite",
+        "2": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-06-01-intro-2",
@@ -94,11 +98,11 @@
       "id": "b1-06-01-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Which sentence correctly says \"Many working people live in this district\"?",
+      "question": "Which sentence correctly says \"Many working people live in this city\"?",
       "options": [
-        "Sok dolgozó ember él ebben a kerületben.",
-        "Sok dolgozók ember él ebben a kerületben.",
-        "Sok dolgozott ember él ebben a kerületben."
+        "Sok dolgozó ember él ebben a városban.",
+        "Sok dolgozók ember él ebben a városban.",
+        "Sok dolgozott ember él ebben a városban."
       ],
       "correct": 0,
       "teaches": [
@@ -179,13 +183,17 @@
       "options": [
         "beszélő",
         "beszélt",
-        "beszélve"
+        "beszél"
       ],
       "correct": 0,
       "teaches": [
         "present-participle"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "1": "past-tense-indefinite",
+        "2": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-06-01-dialogue-1",
@@ -217,7 +225,7 @@
       "prompt": [
         {
           "speaker": "Tamás",
-          "text": "Milyen beosztásban dolgozol a vállalatnál?"
+          "text": "Milyen beosztásban dolgozol a cégnél?"
         },
         {
           "speaker": "Júlia",
@@ -225,8 +233,8 @@
         }
       ],
       "options": [
-        "Vezető beosztásban vagyok, én irányítom a marketinges feladatokat.",
-        "Vezető beosztásban vagy, te irányítod a marketinges feladatokat."
+        "Vezető beosztásban vagyok, én vezetem a csapatot.",
+        "Vezető beosztásban vagy, te vezeted a csapatot."
       ],
       "correct": 0,
       "teaches": [

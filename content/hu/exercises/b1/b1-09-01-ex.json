@@ -83,13 +83,13 @@
     {
       "id": "b1-09-01-controlled-3",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "A rendszeres testmozgás erősíti az emberi ____.",
-      "hint": "body / organism",
-      "english": "Regular exercise strengthens the human body.",
-      "answer": "szervezetet",
+      "category": "vocabulary",
+      "sentence": "Az egészséges életmód jó a ____.",
+      "hint": "body (for the)",
+      "english": "A healthy lifestyle is good for the body.",
+      "answer": "szervezetnek",
       "teaches": [
-        "how-the-accusative-t-works"
+        "b1-health-wellbeing-vocab"
       ],
       "stage": "controlled"
     },
@@ -99,9 +99,9 @@
       "category": "vocabulary",
       "question": "Which sentence expresses healthy living?",
       "options": [
-        "Az egészséges életmódhoz a helyes táplálkozás is hozzátartozik.",
-        "Az ember soha nem alszik éjszaka.",
-        "A betegség jobb, mint a megelőzés."
+        "Az egészséges életmód fontos az embernek.",
+        "Az egészséges életmód nem fontos az embernek.",
+        "Az egészséges életmód rossz az embernek."
       ],
       "correct": 0,
       "teaches": [
@@ -119,16 +119,16 @@
           "healthy lifestyle"
         ],
         [
-          "kiegyensúlyozott táplálkozás",
-          "balanced nutrition"
+          "jó táplálkozás",
+          "good nutrition"
         ],
         [
-          "a betegségek megelőzése",
-          "prevention of diseases"
+          "a baj megelőzése",
+          "preventing trouble"
         ],
         [
-          "az emberi szervezet",
-          "the human body"
+          "az ember szervezete",
+          "a person's body"
         ]
       ],
       "teaches": [
@@ -140,11 +140,11 @@
       "id": "b1-09-01-practice-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Miért fontos a megelőzés az orvostudományban?",
+      "question": "Miért fontos a megelőzés?",
       "options": [
-        "Mert könnyebb megelőzni a bajt, mint gyógyítani a súlyos betegséget.",
-        "Mert a gyógyszerek ingyen vannak.",
-        "Mert senki nem szeret orvoshoz járni."
+        "Mert a megelőzés olcsóbb, mint a gyógyszer.",
+        "Mert a megelőzés drágább, mint a gyógyszer.",
+        "Mert a megelőzés rosszabb, mint a gyógyszer."
       ],
       "correct": 0,
       "teaches": [
@@ -185,16 +185,19 @@
       "id": "b1-09-01-dialogue-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "— Mit teszel az egészséged megőrzéséért?\n— ...",
+      "question": "— Mit teszel az egészségedért?\n— ...",
       "options": [
         "Figyelek a táplálkozásra és heti háromszor úszni járok.",
         "Figyelsz a táplálkozásra és heti háromszor úszni jársz.",
-        "Figyelek az egészségemre, de soha nem mozgok semmit."
+        "Figyelek a táplálkozást és heti háromszor úszni járok."
       ],
       "correct": 0,
       "teaches": [
         "present-tense-routine-language"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b1-09-01-dialogue-2",
@@ -202,24 +205,24 @@
       "category": "grammar",
       "question": "— Nem érzed magad fáradtnak mostanában?\n— ...",
       "options": [
-        "De igen, úgy érzem, az embernek néha kötelező pihennie.",
-        "De igen, úgy érzed, az embernek néha kötelező pihenned.",
-        "De igen, egyáltalán nem vagyok fáradt soha."
+        "De igen, az embernek néha pihennie kell.",
+        "De igen, az embernek néha pihenned kell.",
+        "De igen, nagyon jól érzem magam."
       ],
       "correct": 0,
       "teaches": [
-        "present-tense-routine-language"
+        "inflected-infinitives"
       ]
     },
     {
       "id": "b1-09-01-writing-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "How do you say: 'Prevention is better than cure.'?",
+      "question": "How do you say: 'Prevention is better than medicine.'?",
       "options": [
-        "A megelőzés jobb, mint a gyógyítás.",
-        "A betegség gyorsabban jön, mint a megelőzés.",
-        "A gyógyítás jobb, mint a megelőzés."
+        "A megelőzés jobb, mint a gyógyszer.",
+        "A gyógyszer jobb, mint a megelőzés.",
+        "A megelőzés rosszabb, mint a gyógyszer."
       ],
       "correct": 0,
       "teaches": [

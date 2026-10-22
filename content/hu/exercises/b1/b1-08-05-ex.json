@@ -64,7 +64,7 @@
       "id": "b1-08-05-controlled-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Időben le kell adnunk a szállás... a főszezonban.",
+      "question": "Időben le kell adnunk a szállás... nyáron.",
       "options": [
         "foglalást",
         "látnivalót",
@@ -79,14 +79,14 @@
     {
       "id": "b1-08-05-controlled-3",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Összeállítottuk az egyhetes utazás részletes ____.",
-      "hint": "its itinerary",
-      "english": "We put together the detailed itinerary for the one-week trip.",
+      "category": "vocabulary",
+      "sentence": "Az ____ szerint három napot töltünk Egerben.",
+      "hint": "itinerary",
+      "english": "According to the itinerary, we will spend three days in Eger.",
       "teaches": [
-        "acc-poss"
+        "b1-travel-mobility-vocab"
       ],
-      "answer": "útitervét",
+      "answer": "útiterv",
       "stage": "controlled"
     },
     {
@@ -95,9 +95,9 @@
       "category": "vocabulary",
       "question": "Which sentence describes planning a trip?",
       "options": [
-        "Lefoglaltuk a szállást és összeírtuk a főbb látnivalókat.",
-        "A cipőm nagyon vizes lett az esőben.",
-        "A boltban nincs több friss tej."
+        "Foglaltam szállást a hétvégére.",
+        "A cipőm vizes lett az esőben.",
+        "A boltban nincs több tej."
       ],
       "correct": 0,
       "teaches": [
@@ -115,16 +115,16 @@
           "comfortable accommodation"
         ],
         [
-          "sikeres foglalás",
-          "successful booking"
+          "jó foglalás",
+          "a good booking"
         ],
         [
           "történelmi látnivalók",
           "historic sights"
         ],
         [
-          "részletes útiterv",
-          "detailed itinerary"
+          "hosszú útiterv",
+          "a long itinerary"
         ]
       ],
       "teaches": [
@@ -135,16 +135,16 @@
     {
       "id": "b1-08-05-practice-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Miért hasznos útitervet készíteni egy utazás előtt?",
+      "category": "grammar",
+      "question": "Miért hasznos útitervet készíteni?",
       "options": [
-        "Hogy jól beosszuk az utazás idejét.",
-        "Hogy több pénzt fizessünk a vasúton.",
-        "Hogy otthon felejtsük a csomagot."
+        "Hogy tudjuk, mit nézzünk meg.",
+        "Hogy tudjuk, mit nézzenek meg.",
+        "Hogy több pénzt fizessünk."
       ],
       "correct": 0,
       "teaches": [
-        "b1-travel-mobility-vocab"
+        "hogy-jon-jen"
       ],
       "stage": "practice"
     },
@@ -152,7 +152,7 @@
       "id": "b1-08-05-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Eger városa tele van híres történelmi ____.",
+      "sentence": "Eger városa tele van szép történelmi ____.",
       "hint": "with sights",
       "english": "The city of Eger is full of famous historical sights.",
       "teaches": [
@@ -165,11 +165,11 @@
       "id": "b1-08-05-practice-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent a 'szállásfoglalás megerősítése'?",
+      "question": "Mit jelent a 'szállásfoglalás'?",
       "options": [
-        "Confirmation of accommodation booking.",
-        "Cancelling the trip.",
-        "Paying for railway luggage."
+        "Booking a place to stay.",
+        "Paying for train tickets.",
+        "Packing the suitcases."
       ],
       "correct": 0,
       "teaches": [
@@ -183,14 +183,17 @@
       "category": "grammar",
       "question": "— Találtál már megfelelő szállást a hétvégére?\n— ...",
       "options": [
-        "Igen, foglaltam egy csendes panziót a vár közelében.",
-        "Igen, foglaltál egy csendes panzióban a vár közelről.",
-        "Igen, de a panzióban már nincsen szabad szoba."
+        "Igen, foglaltam egy szobát a vár közelében.",
+        "Igen, foglaltál egy szobát a vár közelében.",
+        "Igen, foglalok egy szobát a vár közelében."
       ],
       "correct": 0,
       "teaches": [
         "past-tense-indefinite"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "present-tense-routine-language"
+      }
     },
     {
       "id": "b1-08-05-dialogue-2",
@@ -198,14 +201,17 @@
       "category": "grammar",
       "question": "— Milyen látnivalókat nézünk meg holnap délelőtt?\n— ...",
       "options": [
-        "Először a múzeumot, utána pedig a történelmi belvárost járjuk be.",
-        "Először a múzeumban, utána pedig a történelmi belvárosban járjuk be.",
-        "Először a múzeumból, utána pedig a történelmi belvárosból járunk be."
+        "Először a múzeumot, utána a várat nézzük meg.",
+        "Először a múzeumban, utána a várban nézzük meg.",
+        "Először a múzeum, utána a vár nézzük meg."
       ],
       "correct": 0,
       "teaches": [
         "how-the-accusative-t-works"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     },
     {
       "id": "b1-08-05-writing-1",
@@ -230,24 +236,27 @@
       "question": "How do you say: 'There are many wonderful sights in this region.'?",
       "options": [
         "Sok csodálatos látnivaló van ezen a vidéken.",
-        "A vidéken nem látunk semmit a ködben.",
-        "Látnivaló nélkül utazunk Szegedre."
+        "Kevés látnivaló van ezen a vidéken.",
+        "Sok csodálatos látnivaló van azon a vidéken."
       ],
       "correct": 0,
       "teaches": [
         "b1-travel-mobility-vocab"
       ],
-      "stage": "production"
+      "stage": "production",
+      "distractor_skills": {
+        "2": "demonstrative-case-agreement"
+      }
     },
     {
       "id": "b1-08-05-reading-1",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mikszáth Kálmán elbeszélésében hová utazik Wibra Gyuri a postakocsin?",
+      "question": "Hová utazik Wibra Gyuri a postakocsin?",
       "options": [
-        "Glogova falujába, a hegyeken keresztül.",
-        "Bécsbe, egy jogi konferenciára.",
-        "A tengerpartra nyaralni."
+        "Glogova falujába.",
+        "Budapest városába.",
+        "Eger városába."
       ],
       "correct": 0
     },
@@ -255,11 +264,11 @@
       "id": "b1-08-05-reading-2",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Miért siet Gyuri a rossz idő ellenére Glogovára?",
+      "question": "Miért utazik Gyuri Glogovára?",
       "options": [
-        "Mert a híres vörös esernyőben keresi a néhai nagybácsi örökségét.",
-        "Mert meglátogatja az édesanyját.",
-        "Mert lekéste a vasúti csatlakozást."
+        "Elveszett pénzt keres.",
+        "Az anyját látogatja meg.",
+        "Egy barátját látogatja meg."
       ],
       "correct": 0
     },
@@ -267,11 +276,11 @@
       "id": "b1-08-05-reading-3",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hogyan utaznak a szereplők Mikszáth regényrészletében?",
+      "question": "Milyen idő van a történetben?",
       "options": [
-        "Postakocsin a hegyi utakon.",
-        "Modern gyorsvonattal.",
-        "Folyami gőzhajón."
+        "Esik az eső, és hideg van.",
+        "Süt a nap, és meleg van.",
+        "Havazik, és hideg van."
       ],
       "correct": 0
     }

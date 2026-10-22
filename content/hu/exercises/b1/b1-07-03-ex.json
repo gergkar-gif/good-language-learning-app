@@ -80,9 +80,9 @@
       "id": "b1-07-03-controlled-3",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A sikeres tanuláshoz jó ____ szükséges.",
+      "sentence": "Ez a ____ nagyon jó: sokat tanulok vele.",
       "hint": "method",
-      "english": "A good method is necessary for successful studying.",
+      "english": "This method is very good: I learn a lot with it.",
       "teaches": [
         "b1-education-learning-vocab"
       ],
@@ -96,8 +96,8 @@
       "question": "Which collocation means 'regular revision'?",
       "options": [
         "rendszeres ismétlés",
-        "gyors tanuló",
-        "hangos jegyzet"
+        "gyors ismétlés",
+        "hangos ismétlés"
       ],
       "correct": 0,
       "teaches": [
@@ -111,20 +111,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "figyelmesen jegyzetel",
-          "takes notes attentively"
+          "gyorsan jegyzetel",
+          "takes notes quickly"
         ],
         [
-          "a lényegre összpontosít",
-          "focuses on the essence"
+          "a feladatra összpontosít",
+          "concentrates on the task"
         ],
         [
-          "hatékony tanulási módszer",
-          "effective study method"
+          "sok ismétlés",
+          "a lot of revision"
         ],
         [
-          "alapos ismétlés",
-          "thorough revision"
+          "új módszer",
+          "a new method"
         ]
       ],
       "teaches": [
@@ -135,26 +135,30 @@
     {
       "id": "b1-07-03-practice-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Hogyan lehet a legkönnyebben megjegyezni az új szavakat?",
+      "category": "grammar",
+      "question": "Hogyan lehet megjegyezni az új szavakat?",
       "options": [
-        "Rendszeres ismétléssel és mondatokban való gyakorlással.",
-        "Úgy, hogy soha nem nyitjuk ki a könyvet.",
-        "Csak este tizenegy után tévénézéssel."
+        "Sok ismétléssel.",
+        "Sok ismétlést.",
+        "Sok ismétlésben."
       ],
       "correct": 0,
       "teaches": [
-        "b1-education-learning-vocab"
+        "val-vel"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b1-07-03-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Az előadáson a hallgatók a füzetükbe ____.",
+      "sentence": "Az órán a diákok sokat ____.",
       "hint": "they take notes",
-      "english": "At the lecture, the students take notes in their notebooks.",
+      "english": "In class, the students take a lot of notes.",
       "teaches": [
         "present-tense-routine-language"
       ],
@@ -181,18 +185,19 @@
       "id": "b1-07-03-dialogue-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "— Nem bírom megjegyezni ezt a sok szabályt!\n— ...",
+      "question": "— Nem tudom megjegyezni a sok szót!\n— ...",
       "options": [
-        "Próbálj meg sémákat rajzolni és rendszeresen ismételni!",
-        "Próbálsz meg sémákat rajzolni és rendszeresen ismételsz!",
-        "Próbálj meg sémákat rajzolsz és sokat ismételsz!"
+        "Ismételd a szavakat minden nap!",
+        "Ismétled a szavakat minden nap!",
+        "Ismételj a szavakat minden nap!"
       ],
       "correct": 0,
       "teaches": [
-        "imperative-indefinite"
+        "imperative-definite"
       ],
       "distractor_skills": {
-        "1": "present-tense-routine-language"
+        "1": "definite-vs-indefinite-conjugation",
+        "2": "imperative-indefinite"
       }
     },
     {
@@ -201,9 +206,9 @@
       "category": "grammar",
       "question": "— Szoktál jegyzetelni az órákon?\n— ...",
       "options": [
-        "Igen, mert a leírt gondolatokra jobban tudok emlékezni.",
-        "Nem, mert a leírt gondolatokra jobban tudok emlékezni.",
-        "Igen, mert a leírt gondolatokra sosem emlékszem."
+        "Igen, mert jobban megjegyzem a szavakat.",
+        "Nem, mert jobban megjegyzem a szavakat.",
+        "Igen, mert nem jegyzem meg a szavakat."
       ],
       "correct": 0,
       "teaches": [
@@ -214,11 +219,11 @@
       "id": "b1-07-03-writing-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "How do you say: 'I cannot concentrate because of the noise.'?",
+      "question": "How do you say: 'I cannot concentrate because of the music.'?",
       "options": [
-        "A zaj miatt nem tudok összpontosítani.",
-        "A zajra nem figyelek soha.",
-        "Zajosan jegyzetelek az irodában."
+        "A zene miatt nem tudok összpontosítani.",
+        "A zene miatt nem tudok jegyzetelni.",
+        "A zene miatt nem akarok összpontosítani."
       ],
       "correct": 0,
       "teaches": [
@@ -233,7 +238,7 @@
       "question": "How do you say: 'Which method do you find most effective?'?",
       "options": [
         "Melyik módszert találod a leghatékonyabbnak?",
-        "Mikor kezded a tanulást a szobában?",
+        "Mikor tanulsz a szobában?",
         "Hány füzetbe jegyzeteltél ma délután?"
       ],
       "correct": 0,
@@ -249,8 +254,8 @@
       "question": "Which noun means 'repetition' or 'revision'?",
       "options": [
         "ismétlés",
-        "tanítás",
-        "vizsgázás"
+        "módszer",
+        "vizsga"
       ],
       "correct": 0,
       "teaches": [

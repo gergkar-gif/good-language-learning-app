@@ -27,8 +27,8 @@
       "question": "What is 'hágó' in English geography?",
       "options": [
         "mountain pass",
-        "waterfall",
-        "desert"
+        "mountain peak",
+        "mountain lake"
       ],
       "correct": 0,
       "teaches": [
@@ -86,7 +86,7 @@
       "id": "b1-08-02-controlled-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Gyalog mentünk végig a szép Duna-____.",
+      "sentence": "Gyalog mentünk végig a szép ____.",
       "hint": "on the riverbank",
       "english": "We walked all the way along the beautiful Danube riverbank.",
       "teaches": [
@@ -102,16 +102,16 @@
       "question": "Which phrase means 'across the forest'?",
       "options": [
         "az erdőn keresztül",
-        "az erdő után",
-        "az erdő felől"
+        "az erdő felől",
+        "az erdő mellett"
       ],
       "correct": 0,
       "teaches": [
         "keresztul"
       ],
       "distractor_skills": {
-        "1": "temporal-postpositions",
-        "2": "postposition-fele"
+        "1": "postposition-fele",
+        "2": "postpositions-basic"
       },
       "stage": "controlled"
     },
@@ -133,8 +133,8 @@
           "walks along the riverbank"
         ],
         [
-          "megnézi a térképen",
-          "looks it up on the map"
+          "nézi a térképet",
+          "looks at the map"
         ]
       ],
       "teaches": [
@@ -145,26 +145,29 @@
     {
       "id": "b1-08-02-practice-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Miért van szükség térképre a hegyekben való túrázáshoz?",
+      "category": "grammar",
+      "question": "Miért kell térkép a hegyekben?",
       "options": [
-        "Hogy megtaláljuk a helyes ösvényt.",
-        "Hogy lefényképezzük a fákat.",
-        "Hogy megvegyük a vonatjegyet."
+        "Hogy tudjuk, merre menjünk.",
+        "Hogy tudjuk, merre menjenek.",
+        "Hogy tudjuk, merre mentünk."
       ],
       "correct": 0,
       "teaches": [
-        "b1-travel-mobility-vocab"
+        "hogy-jon-jen"
       ],
-      "stage": "practice"
+      "stage": "practice",
+      "distractor_skills": {
+        "2": "irregular-past"
+      }
     },
     {
       "id": "b1-08-02-practice-3",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A kirándulók sikeresen átkeltek a magas ____.",
+      "sentence": "A turisták sikeresen átkeltek a magas ____.",
       "hint": "on the mountain pass",
-      "english": "The hikers successfully crossed the high mountain pass.",
+      "english": "The tourists successfully crossed the high mountain pass.",
       "teaches": [
         "on-en-on"
       ],
@@ -175,11 +178,11 @@
       "id": "b1-08-02-practice-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent az 'átkelés'?",
+      "question": "Mit jelent az 'átkel'?",
       "options": [
-        "Crossing over.",
-        "Waking up.",
-        "Falling asleep."
+        "To cross over.",
+        "To wake up.",
+        "To fall asleep."
       ],
       "correct": 0,
       "teaches": [
@@ -191,16 +194,19 @@
       "id": "b1-08-02-dialogue-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "— Merre vezet a legrövidebb út a völgybe?\n— ...",
+      "question": "— Merre vezet a legrövidebb út a faluba?\n— ...",
       "options": [
-        "A hegyen keresztül, az erdős hágón át.",
-        "A hegyen keresztül, az erdős hágóban át.",
-        "A hegynek keresztül, az erdős hágóra át."
+        "A hegyen keresztül, a hágón át.",
+        "A hegyen keresztül, a hágóban át.",
+        "A hegyen keresztül, a hágó át."
       ],
       "correct": 0,
       "teaches": [
         "on-en-on"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     },
     {
       "id": "b1-08-02-dialogue-2",
@@ -208,33 +214,37 @@
       "category": "grammar",
       "question": "— Van nálad térkép a környékről?\n— ...",
       "options": [
-        "Igen, a telefonomon letöltöttem a részletes turistatérképet.",
-        "Igen, a telefonomon letöltöttél a részletes turistatérképen.",
-        "Igen, de a telefonomon nincs semmilyen térkép."
+        "Igen, a telefonomon letöltöttem a térképet.",
+        "Igen, a telefonomon letöltöttél a térképet.",
+        "Igen, a telefonomon nincs térkép."
       ],
       "correct": 0,
       "teaches": [
         "definite-past"
       ],
       "distractor_skills": {
-        "2": "yes-no-questions"
+        "2": "van-and-nincs-there-is-there-isn-t"
       }
     },
     {
       "id": "b1-08-02-writing-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "question": "How do you say: 'The road leads through a dark tunnel.'?",
       "options": [
         "Az út egy sötét alagúton keresztül vezet.",
-        "Az út az alagút előtt megállt.",
-        "Az alagútban nincsen semmilyen út."
+        "Az út egy sötét alagútban keresztül vezet.",
+        "Az út egy sötét alagút felé vezet."
       ],
       "correct": 0,
       "teaches": [
-        "b1-travel-mobility-vocab"
+        "keresztul"
       ],
-      "stage": "production"
+      "stage": "production",
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "postposition-fele"
+      }
     },
     {
       "id": "b1-08-02-writing-2",
@@ -243,14 +253,18 @@
       "question": "How do you say: 'We walked along the riverbank.'?",
       "options": [
         "A folyópart mentén sétáltunk.",
-        "A folyón átúsztunk gyorsan.",
-        "A folyópartról elkéstünk reggel."
+        "A folyópart felé sétáltunk.",
+        "A folyópart alatt sétáltunk."
       ],
       "correct": 0,
       "teaches": [
         "b1-travel-mobility-vocab"
       ],
-      "stage": "production"
+      "stage": "production",
+      "distractor_skills": {
+        "1": "postposition-fele",
+        "2": "postpositions-basic"
+      }
     },
     {
       "id": "b1-08-02-check-1",
@@ -275,8 +289,8 @@
       "question": "Complete: 'A hídon ...' (across)",
       "options": [
         "keresztül",
-        "alatt",
-        "után"
+        "mellett",
+        "között"
       ],
       "correct": 0,
       "teaches": [
