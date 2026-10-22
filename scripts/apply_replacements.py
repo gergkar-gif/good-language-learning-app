@@ -41,7 +41,9 @@ def set_fields(text, fid, fields):
     """Return (new text, error) after setting fields on the item with id fid."""
     data = json.loads(text)
     ind = indent_of(text)
-    if json.dumps(data, ensure_ascii=False, indent=ind) + "\n" != text:
+    # A file that differs only by a missing final newline round-trips too
+    # (HU B1 had 170 of them, 2026-10-22); the write adds the newline.
+    if json.dumps(data, ensure_ascii=False, indent=ind) + "\n" not in (text, text + "\n"):
         return text, "file doesn't round-trip through JSON; use a text fix"
     hits = []
     items = data.get("exercises") if isinstance(data, dict) else None

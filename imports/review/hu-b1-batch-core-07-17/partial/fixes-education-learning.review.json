@@ -1,0 +1,913 @@
+[
+ {
+  "file": "content/hu/grammar/b1/b1-07-01-a-gr.json",
+  "old": "*megtanulhatja* (he can learn it)",
+  "new": "*olvashatja* (he can read it)",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "megtanul is in no vocabulary list (unmet word in a screen tip); olvas is met."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-07-01-b-gr.json",
+  "old": "A képzés közben sok gyakorlati tapasztalatot szerzünk.",
+  "new": "A képzés közben sokat tanulunk.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "gyakorlati is unmet (in no vocabulary list)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-01-ex.json",
+  "id": "b1-07-01-practice-1",
+  "set": {
+   "pairs": [
+    [
+     "jelentkezhet",
+     "he/she may apply"
+    ],
+    [
+     "választhat",
+     "he/she can choose"
+    ],
+    [
+     "tanulhat",
+     "he/she can study"
+    ],
+    [
+     "felvételizhet",
+     "he/she may sit the entrance exam"
+    ]
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "kérdezhet is on no screen and in no list (unmet); felvételizhet is in the screen table."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-01-ex.json",
+  "id": "b1-07-01-controlled-4",
+  "set": {
+   "question": "Which sentence means 'Before the school-leaving exam, the students study a lot'?",
+   "options": [
+    "Az érettségi előtt a diákok sokat tanulnak.",
+    "Az érettségi után a diákok sokat tanulnak.",
+    "Az érettségi közben a diákok sokat tanulnak."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Wrong options were word salads with several faults each; make each differ only in the postposition."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-01-ex.json",
+  "id": "b1-07-01-practice-3",
+  "set": {
+   "sentence": "Az állami iskolákban minden diák ingyenesen ____.",
+   "english": "In state schools, every student can study for free."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "gyermek and ingyen are unmet words."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-01-ex.json",
+  "id": "b1-07-01-practice-4",
+  "set": {
+   "options": [
+    "Érettségi vizsgát tesznek.",
+    "Általános iskolába mennek.",
+    "Gimnáziumba jelentkeznek."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "nyugdíjba is unmet and absurd; a plausible wrong option with one fault."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-01-ex.json",
+  "id": "b1-07-01-dialogue-1",
+  "set": {
+   "question": "— Hová jelentkezik a fiad az általános iskola után?\n— ...",
+   "options": [
+    "Egy jó gimnáziumba szeretne járni.",
+    "Egy jó gimnáziumban szeretne járni.",
+    "Egy jó gimnáziumból szeretne járni."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "nevű is unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-01-ex.json",
+  "id": "b1-07-01-dialogue-2",
+  "set": {
+   "options": [
+    "Igen, de szerencsére jól sikerült.",
+    "Igen, de szerencsére jól sikerül.",
+    "Igen, de szerencsére jól sikerülni."
+   ],
+   "teaches": [
+    "past-tense-indefinite"
+   ],
+   "distractor_skills": {
+    "1": "present-tense-routine-language",
+    "2": "building-the-infinitive-the-suffix-ni"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "The third option ('Nem, de szerencsére rosszul sikerül.') is absurd and has two faults; the item tests the past form, not yes/no, so the tag was wrong."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-01-ex.json",
+  "id": "b1-07-01-writing-1",
+  "set": {
+   "question": "How do you say: 'Students can apply for this course.'?",
+   "options": [
+    "A diákok jelentkezhetnek erre a képzésre.",
+    "A diákok jelentkeznek erre a képzésre.",
+    "A diákok jelentkezhetnek a képzésről."
+   ],
+   "distractor_skills": {
+    "1": "present-tense-routine-language",
+    "2": "delative-rol-rel"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "bárki is unmet; Mindenki is a tell-absolute; the wrong options had two faults ('Mindenki jelentkezik a képzésről')."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-01-ex.json",
+  "id": "b1-07-01-writing-2",
+  "set": {
+   "question": "How do you say: 'After primary school, students go to grammar school.'?",
+   "options": [
+    "Az általános iskola után a diákok gimnáziumba mennek.",
+    "Az általános iskola után a diákok egyetemre mennek.",
+    "A gimnázium után a diákok általános iskolába mennek."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "felépített, rendszere and állandóan are unmet; the wrong options were non-phrases."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-01-ex.json",
+  "id": "b1-07-01-check-1",
+  "set": {
+   "options": [
+    "választhat",
+    "választott",
+    "választ"
+   ],
+   "distractor_skills": {
+    "1": "past-tense-indefinite",
+    "2": "present-tense-routine-language"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "választás (verbal noun, Unit 31, unmet) as a wrong option; use a real form of another skill."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-01-ex.json",
+  "id": "b1-07-01-check-2",
+  "set": {
+   "options": [
+    "gimnázium",
+    "általános iskola",
+    "egyetem"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "óvoda and bölcsőde are unmet and come before primary school; use real neighbouring stages."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-02-ex.json",
+  "id": "b1-07-02-controlled-3",
+  "set": {
+   "sentence": "A cég képzést szervez, hogy ____ a dolgozók szakismeretét."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "szaktudását is unmet; szakismeret is this lesson's word."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-02-ex.json",
+  "id": "b1-07-02-practice-2",
+  "set": {
+   "options": [
+    "Azért, hogy a diákok új dolgokat tanuljanak.",
+    "Azért, hogy a diákok új dolgokat tanulnak.",
+    "Azért, hogy a diákok új dolgokat tanuljon."
+   ],
+   "teaches": [
+    "hogy-jon-jen"
+   ],
+   "category": "grammar",
+   "distractor_skills": {
+    "1": "present-tense-routine-language"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Right option 65 chars vs 36; senki is a tell; munkavállalók, korszerű, ismeretekkel, bezárjanak unmet; absurd wrong options. Equal-length options that differ in mood or agreement only."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-02-ex.json",
+  "id": "b1-07-02-practice-3",
+  "set": {
+   "hint": "so that I go",
+   "answer": "járjak",
+   "english": "I moved to Budapest so that I could go to university."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "járhassak (-hat + subjunctive) is an unmet form; use járjak."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-02-ex.json",
+  "id": "b1-07-02-dialogue-1",
+  "set": {
+   "options": [
+    "Azért, hogy fejlesszem a szakismeretemet.",
+    "Azért, hogy fejlesztem a szakismeretemet.",
+    "Azért, hogy fejlesszed a szakismeretemet."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "elmélyítsem, tudásomat unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-02-ex.json",
+  "id": "b1-07-02-dialogue-2",
+  "set": {
+   "options": [
+    "Szeretném sikeresen befejezni a nyelvi képzést.",
+    "Szeretnéd sikeresen befejezni a nyelvi képzést.",
+    "Sikeresen befejeztem a nyelvi képzést."
+   ],
+   "teaches": [
+    "nek-conditional"
+   ],
+   "distractor_skills": {
+    "2": "definite-past"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Second wrong option 'Szeretnénk sikeresen befejezed' is garbled (two faults); the item tests szeretném (nek-conditional), not present-tense-routine-language."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-02-ex.json",
+  "id": "b1-07-02-writing-1",
+  "set": {
+   "options": [
+    "Minden nap gyakorlok azért, hogy fejlődjek.",
+    "Minden nap gyakorlok azért, hogy fejlődöm.",
+    "Minden nap gyakorlok azért, hogy fejlődjél."
+   ],
+   "distractor_skills": {
+    "1": "present-tense-routine-language"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "holott is unmet and Gyakorolni fogok, holott fejlődök is a non-answer with two faults."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-02-ex.json",
+  "id": "b1-07-02-writing-2",
+  "set": {
+   "question": "How do you say: 'What is your objective?'?",
+   "options": [
+    "Mi a célkitűzésed?",
+    "Mi a célkitűzése?",
+    "Ki a célkitűzésed?"
+   ],
+   "teaches": [
+    "possessive-suffixes"
+   ],
+   "category": "grammar",
+   "distractor_skills": {
+    "1": "3rd-person-possessive"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "szükséges, nincsen, semmilyen (tell), ismeret, pozícióról unmet; wrong options were non-phrases."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-03-ex.json",
+  "id": "b1-07-03-controlled-3",
+  "set": {
+   "sentence": "Ez a ____ nagyon jó: sokat tanulok vele.",
+   "english": "This method is very good: I learn a lot with it."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "sikeres, tanuláshoz, szükséges unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-03-ex.json",
+  "id": "b1-07-03-controlled-4",
+  "set": {
+   "options": [
+    "rendszeres ismétlés",
+    "gyors ismétlés",
+    "hangos ismétlés"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Right option 19 vs 14 chars; tanuló and jegyzet unmet; absurd wrong options."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-03-ex.json",
+  "id": "b1-07-03-practice-1",
+  "set": {
+   "pairs": [
+    [
+     "gyorsan jegyzetel",
+     "takes notes quickly"
+    ],
+    [
+     "a feladatra összpontosít",
+     "concentrates on the task"
+    ],
+    [
+     "sok ismétlés",
+     "a lot of revision"
+    ],
+    [
+     "új módszer",
+     "a new method"
+    ]
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "figyelmesen, hatékony, tanulási, alapos unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-03-ex.json",
+  "id": "b1-07-03-practice-2",
+  "set": {
+   "question": "Hogyan lehet megjegyezni az új szavakat?",
+   "options": [
+    "Sok ismétléssel.",
+    "Sok ismétlést.",
+    "Sok ismétlésben."
+   ],
+   "teaches": [
+    "val-vel"
+   ],
+   "category": "grammar",
+   "distractor_skills": {
+    "1": "how-the-accusative-t-works",
+    "2": "ban-ben-in"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Right option 56 vs 40, soha is a tell, úgy unmet. Short answers that differ in the case ending (-val/-vel is A1)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-03-ex.json",
+  "id": "b1-07-03-practice-3",
+  "set": {
+   "sentence": "Az órán a diákok sokat ____.",
+   "english": "In class, the students take a lot of notes."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "előadáson, hallgatók, füzetükbe unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-03-ex.json",
+  "id": "b1-07-03-dialogue-1",
+  "set": {
+   "question": "— Nem tudom megjegyezni a sok szót!\n— ...",
+   "options": [
+    "Ismételd a szavakat minden nap!",
+    "Ismétled a szavakat minden nap!",
+    "Ismételj a szavakat minden nap!"
+   ],
+   "teaches": [
+    "imperative-definite"
+   ],
+   "distractor_skills": {
+    "1": "definite-vs-indefinite-conjugation",
+    "2": "imperative-indefinite"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "próbálj, sémákat, próbálsz unmet; third option garbled (two faults). Rebuilt on the definite imperative (A2 Unit 10)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-03-ex.json",
+  "id": "b1-07-03-dialogue-2",
+  "set": {
+   "options": [
+    "Igen, mert jobban megjegyzem a szavakat.",
+    "Nem, mert jobban megjegyzem a szavakat.",
+    "Igen, mert nem jegyzem meg a szavakat."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "gondolatokra, emlékezni, emlékszem unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-03-ex.json",
+  "id": "b1-07-03-writing-1",
+  "set": {
+   "question": "How do you say: 'I cannot concentrate because of the music.'?",
+   "options": [
+    "A zene miatt nem tudok összpontosítani.",
+    "A zene miatt nem tudok jegyzetelni.",
+    "A zene miatt nem akarok összpontosítani."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "zaj, zajra unmet; soha is a tell."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-03-ex.json",
+  "id": "b1-07-03-writing-2",
+  "set": {
+   "options": [
+    "Melyik módszert találod a leghatékonyabbnak?",
+    "Mikor tanulsz a szobában?",
+    "Hány füzetbe jegyzeteltél ma délután?"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tanulást is unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-03-ex.json",
+  "id": "b1-07-03-check-1",
+  "set": {
+   "options": [
+    "ismétlés",
+    "módszer",
+    "vizsga"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tanítás and vizsgázás unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-04-ex.json",
+  "id": "b1-07-04-controlled-3",
+  "set": {
+   "sentence": "Az érettségi után a diák megkapja a ____.",
+   "english": "After the school-leaving exam, the student receives his/her certificate."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "sikeres and átvehette unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-04-ex.json",
+  "id": "b1-07-04-practice-1",
+  "set": {
+   "pairs": [
+    [
+     "jó érdemjegy",
+     "a good grade"
+    ],
+    [
+     "rossz érdemjegy",
+     "a bad grade"
+    ],
+    [
+     "a vizsga eredménye",
+     "the result of the exam"
+    ],
+    [
+     "az iskola vége",
+     "the end of school"
+    ]
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "kitűnő, elégtelen, osztályzat, felelet unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-04-ex.json",
+  "id": "b1-07-04-practice-2",
+  "set": {
+   "question": "Melyik a legjobb érdemjegy a magyar iskolákban?",
+   "options": [
+    "Az 5.",
+    "Az 1.",
+    "A 10."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Right option 23 vs 9 chars; ötös, jeles, kitűnő, egyes, tízes unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-04-ex.json",
+  "id": "b1-07-04-practice-3",
+  "set": {
+   "sentence": "Nem tanultam, ezért biztosan ____ a vizsgán.",
+   "answer": "megbukom",
+   "english": "I did not study, so I will surely fail the exam."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "bukom unmet as a lemma; blank the whole verb megbukom (affirmative, so the prefix stays attached)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-04-ex.json",
+  "id": "b1-07-04-dialogue-1",
+  "set": {
+   "options": [
+    "Nagyon jól, jó érdemjegyet kaptam a tanár úrtól!",
+    "Nagyon jól, jó érdemjegyet kapott a tanár úrtól!",
+    "Nagyon jól, de megbuktam a szóbeli vizsgán."
+   ],
+   "teaches": [
+    "past-tense-indefinite"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "ötöst unmet; the tag present-tense-routine-language does not show (the form is past kaptam)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-04-ex.json",
+  "id": "b1-07-04-dialogue-2",
+  "set": {
+   "options": [
+    "Június végén, az iskolában.",
+    "Június végén, az iskolába.",
+    "Június végén, az iskola."
+   ],
+   "teaches": [
+    "ban-ben-in"
+   ],
+   "distractor_skills": {
+    "1": "movement-with-ba-be"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tanévzáró, ünnepségen/-ben/-ről unmet; third option had two faults."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-04-ex.json",
+  "id": "b1-07-04-writing-1",
+  "set": {
+   "options": [
+    "Az írásbeli és a szóbeli vizsgán is átmentem.",
+    "Az írásbeli és a szóbeli vizsgán is megbuktam.",
+    "Az írásbeli és a szóbeli vizsgára is átmentem."
+   ],
+   "distractor_skills": {
+    "2": "ra-re"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "eljöttem and írásban unmet; the wrong options were non-phrases."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-04-ex.json",
+  "id": "b1-07-04-writing-2",
+  "set": {
+   "question": "How do you say: 'He got a good grade for the exam.'?",
+   "options": [
+    "Jó érdemjegyet kapott a vizsgára.",
+    "Rossz érdemjegyet kapott a vizsgára.",
+    "Jó érdemjegyet kaptam a vizsgára."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "esszéjére and esszét unmet; wrong options were non-phrases."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-04-ex.json",
+  "id": "b1-07-04-check-2",
+  "set": {
+   "options": [
+    "megbukik",
+    "átmegy",
+    "megérkezik"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Right option 8 vs 4 chars."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-07-05-gr.json",
+  "old": "A szellemi kíváncsiság segít abban, hogy friss maradjon a gondolkodásunk.",
+  "new": "A kíváncsiság segít abban, hogy új dolgokat tanuljunk.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "gondolkodásunk is a verbal noun in -ás (B1 Unit 31, taught later); the new example matches controlled-3."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-05-ex.json",
+  "id": "b1-07-05-controlled-2",
+  "set": {
+   "options": [
+    "lehetőségeket",
+    "vizsgákat",
+    "bizonyítványokat"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "naplókat unmet; right option 13 vs 9 chars."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-05-ex.json",
+  "id": "b1-07-05-controlled-3",
+  "set": {
+   "sentence": "A szellemi ____ segít abban, hogy mindig új dolgokat tanuljunk.",
+   "english": "Intellectual curiosity helps us always to learn new things."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "fedezzünk unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-05-ex.json",
+  "id": "b1-07-05-controlled-4",
+  "set": {
+   "options": [
+    "Az ember élete végéig tanulhat.",
+    "Az iskola után nem szabad könyvet olvasni.",
+    "Tanulni csak gyerekként lehet."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "soha is a tell; fejlődhet and tanulás unmet (tanulás is a verbal noun, Unit 31)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-05-ex.json",
+  "id": "b1-07-05-practice-1",
+  "set": {
+   "pairs": [
+    [
+     "szakmai átképzés",
+     "vocational retraining"
+    ],
+    [
+     "sok önképzés",
+     "a lot of self-study"
+    ],
+    [
+     "jó lehetőség",
+     "a good opportunity"
+    ],
+    [
+     "nagy kíváncsiság",
+     "great curiosity"
+    ]
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "folyamatos, kiváló, természetes unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-05-ex.json",
+  "id": "b1-07-05-practice-2",
+  "set": {
+   "options": [
+    "Mert a munka gyorsan változik.",
+    "Mert nincsenek általános iskolák.",
+    "Mert a tanárok sokat dolgoznak."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "Right option 50 vs 33 chars; mindenki is a tell; gazdaság, technológia unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-05-ex.json",
+  "id": "b1-07-05-practice-3",
+  "set": {
+   "sentence": "Az interneten az ____ nagyon könnyű.",
+   "english": "On the internet, self-education is very easy."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "elérhetővé unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-05-ex.json",
+  "id": "b1-07-05-dialogue-1",
+  "set": {
+   "options": [
+    "Nem, mert az átképzés nagyszerű lehetőség.",
+    "Igen, mert az átképzés nagyszerű lehetőség.",
+    "Nem, mert az átképzés nagyszerű lehetőséget."
+   ],
+   "distractor_skills": {
+    "2": "how-the-accusative-t-works"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "újrakezdésre/-ben unmet; the third option 'Igen, nem félek semmitől' is a second kind of fault."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-05-ex.json",
+  "id": "b1-07-05-dialogue-2",
+  "set": {
+   "options": [
+    "Önképzéssel: mindennap filmeket nézek és könyveket olvasok.",
+    "Önképzésben: mindennap filmeket nézek és könyveket olvasok.",
+    "Önképzéssel: nem nézek filmeket és nem olvasok könyveket."
+   ],
+   "teaches": [
+    "val-vel"
+   ],
+   "category": "grammar",
+   "distractor_skills": {
+    "1": "ban-ben-in"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "podcastokat and cikkeket unmet; option 2 had two faults (case and person)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-05-ex.json",
+  "id": "b1-07-05-writing-1",
+  "set": {
+   "question": "How do you say: 'Curiosity helps us to learn new things.'?",
+   "options": [
+    "A kíváncsiság segít nekünk új dolgokat tanulni.",
+    "A kíváncsiság segít nekem új dolgokat tanulni.",
+    "A lehetőség segít nekünk új dolgokat tanulni."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "ösztönöz, felfedezésére, kíváncsi, kíváncsian, televíziót unmet; wrong options were non-phrases; right option 54 vs 36."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-05-ex.json",
+  "id": "b1-07-05-writing-2",
+  "set": {
+   "question": "How do you say: 'Retraining offers new opportunities.'?",
+   "options": [
+    "Az átképzés új lehetőségeket kínál.",
+    "Az önképzés új lehetőségeket kínál.",
+    "Az átképzés új lehetőségeket kínálnak."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "senki is a tell; wrong options were non-answers."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-05-ex.json",
+  "id": "b1-07-05-reading-2",
+  "set": {
+   "question": "Milyen idő van kint, amikor a diák a táblánál áll?",
+   "options": [
+    "Meleg van, és süt a nap.",
+    "Hideg van, és esik az eső.",
+    "Hideg van, és havazik."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "fizikából unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-05-ex.json",
+  "id": "b1-07-05-reading-3",
+  "set": {
+   "options": [
+    "Boldog, mert most már nem kell a táblánál állnia.",
+    "Ideges, mert újra a táblához kell mennie.",
+    "Büszke, mert a tanár úr jó érdemjegyet adott."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "hatalmas, megkönnyebbülést, megpróbáltatás, haragot, ötöst, kedvet, feleljen unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-consolidation-ex.json",
+  "id": "b1-07-consolidation-5",
+  "set": {
+   "sentence": "A nehéz feladatra kell ____.",
+   "english": "We must concentrate on the difficult task."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tananyagra unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-consolidation-ex.json",
+  "id": "b1-07-consolidation-6",
+  "set": {
+   "question": "What is the best grade in the Hungarian school system?",
+   "options": [
+    "Az 5.",
+    "Az 1.",
+    "A 10."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "ötös, egyes, tízes unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-consolidation-ex.json",
+  "id": "b1-07-consolidation-8",
+  "set": {
+   "sentence": "A képzés célja, hogy ____ a diákok szakismeretét."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tanfolyam and szaktudását unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-consolidation-ex.json",
+  "id": "b1-07-consolidation-9",
+  "set": {
+   "options": [
+    "Azt, hogy az ember egész életében tanul.",
+    "Azt, hogy az ember csak iskolában tanul.",
+    "Azt, hogy az ember csak gyerekként tanul."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "folyamatos, készségek, elsajátítását, hagyhatják unmet; soha is a tell."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-consolidation-ex.json",
+  "id": "b1-07-consolidation-10",
+  "set": {
+   "question": "Translate: 'Students can study in state schools.'",
+   "options": [
+    "A diákok tanulhatnak az állami iskolákban.",
+    "A diákok tanulnak az állami iskolákban.",
+    "A diákok tanulhatnak az állami iskolákra."
+   ],
+   "distractor_skills": {
+    "1": "present-tense-routine-language",
+    "2": "ra-re"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "bárki unmet; Mindenki is a tell; wrong options had several faults."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-consolidation-ex.json",
+  "id": "b1-07-consolidation-11",
+  "set": {
+   "question": "Translate: 'I take notes quickly during the lesson.'",
+   "options": [
+    "Gyorsan jegyzetelek az óra alatt.",
+    "Gyorsan jegyzetelek az óra után.",
+    "Lassan jegyzetelek az óra alatt."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "figyelmesen and előadás unmet."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-07-consolidation-ex.json",
+  "id": "b1-07-consolidation-12",
+  "set": {
+   "options": [
+    "A szóbeli és az írásbeli vizsgán is átmentünk.",
+    "A szóbeli és az írásbeli vizsgán is megbuktunk.",
+    "A szóbeli és az írásbeli vizsgára is átmentünk."
+   ],
+   "distractor_skills": {
+    "2": "ra-re"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "megbuktuk (not a form) and írásban unmet."
+ }
+]
