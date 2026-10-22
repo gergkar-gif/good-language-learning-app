@@ -1,15 +1,109 @@
 [
   {
     "file": "content/hu/exercises/b1/b1-01-01-ex.json",
+    "id": "b1-01-01-intro-2",
+    "set": {
+      "options": [
+        "korábban",
+        "később",
+        "mindig"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "azóta is first taught in b1-02-04 (unmet): wrong option replaced with a met word"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-01-ex.json",
+    "id": "b1-01-01-practice-4",
+    "set": {
+      "question": "Which sentence opens a story about the past?",
+      "options": [
+        "Akkoriban egy kis faluban laktunk.",
+        "Most egy kis faluban lakunk.",
+        "Holnap egy kis faluban fogunk lakni."
+      ],
+      "category": "grammar",
+      "teaches": [
+        "past-tense-indefinite"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language",
+        "2": "fog-infinitive"
+      }
+    },
+    "kind": "hungarian",
+    "why": "wrong options mostanában/jelenleg are in no vocabulary list and are not 'events' anyway; each wrong option now has one fault (present / future); the wrong answer shows the tense, so the tag is past-tense-indefinite"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-01-ex.json",
     "id": "b1-01-01-dialogue-2",
     "set": {
       "options": [
         "Korábban egészen más volt itt az élet.",
-        "Korábban egészen más lesz itt az élet."
+        "Korábban egészen más voltak itt az élet."
+      ],
+      "teaches": [
+        "van-past"
       ]
     },
     "kind": "hungarian",
-    "why": "length-giveaway"
+    "why": "wrong option 'lesz' (will be) after 'korábban' was absurd; now one agreement fault (voltak); the tested form is van-past (no distractor_skills: wrong form of the tested skill)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-01-ex.json",
+    "old": "Say that back then, you lived in a small village.",
+    "new": "Say that back then, we lived in a small village.",
+    "kind": "english",
+    "why": "prompt says 'you lived' but the stored answer is laktunk (we)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-01-ex.json",
+    "id": "b1-01-01-check-2",
+    "set": {
+      "english": "When my grandfather was young, life here used to be completely different."
+    },
+    "kind": "english",
+    "why": "english 'was earlier completely different' is not English"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-01-01-a-gr.json",
+    "old": "*tegnap* or *a következő nap*",
+    "new": "*tegnap* or *ma reggel*",
+    "kind": "hungarian",
+    "why": "a következő nap is taught in b1-01-02 (this screen is lesson 1)"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-01-01-a-gr.json",
+    "old": "Hungarian doesn't switch to a separate \\\"imperfect\\\" verb form the way Spanish does.",
+    "new": "Hungarian doesn't switch to a separate verb form for background description.",
+    "kind": "english",
+    "why": "no comparisons with languages other than English (AGENTS/rules 4)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-02-ex.json",
+    "id": "b1-01-02-intro-1",
+    "set": {
+      "options": [
+        "miután",
+        "előtt",
+        "eközben"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "mielőtt is first taught in b1-01-03 (appears as a wrong option in lesson 2)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-02-ex.json",
+    "id": "b1-01-02-intro-2",
+    "set": {
+      "options": [
+        "eközben",
+        "aztán",
+        "előbb"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "azután is unmet (first b1-karpatmedence-02); aztán is A2"
   },
   {
     "file": "content/hu/exercises/b1/b1-01-02-ex.json",
@@ -17,48 +111,291 @@
     "set": {
       "options": [
         "Miután megérkeztem, elmentem sétálni.",
-        "Mielőtt megérkezem, elmegyek sétálni."
+        "Miután megérkezem, elmegyek sétálni."
       ]
     },
     "kind": "hungarian",
-    "why": "length-giveaway"
+    "why": "wrong option used mielőtt (taught in lesson 3) and also changed the tense: two faults; now only the tense differs"
   },
   {
     "file": "content/hu/exercises/b1/b1-01-02-ex.json",
     "id": "b1-01-02-dialogue-2",
     "set": {
+      "prompt": [
+        {
+          "speaker": "Petra",
+          "text": "Ki terítette meg az asztalt?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
       "options": [
         "Én főztem, eközben Károly megterítette az asztalt.",
-        "A következő héten Károly megteríti az asztalt."
+        "Én főztem, eközben Károly megterítettem az asztalt."
+      ],
+      "teaches": [
+        "definite-past"
       ]
     },
     "kind": "hungarian",
-    "why": "length-giveaway"
+    "why": "Károly asked who set the table and Meg answered 'Károly set the table' to Károly himself (Petra now asks); wrong option 'A következő héten ... megteríti' was absurd (future, unrelated); now one person-ending fault; the tested form is definite-past"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-02-ex.json",
+    "old": "\"answer\": \"Három e-mail is jött egymás után.\"",
+    "new": "\"answer\": \"Három e-mail jött egymás után.\"",
+    "kind": "hungarian",
+    "why": "the prompt does not ask for 'is' (even); the plain sentence is the natural answer and a learner has no cue for 'is'"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-02-ex.json",
+    "id": "b1-01-02-check-2",
+    "set": {
+      "answers": [
+        "következő"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "'a jövő héten' means next week from now: wrong with a past verb (felkeltünk); only következő fits"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-02-ex.json",
+    "id": "b1-01-02-intro-1",
+    "set": {
+      "category": "vocabulary",
+      "teaches": [
+        "b1-longer-stories-vocab"
+      ]
+    },
+    "kind": "english",
+    "why": "'Which word means ...' is a word-meaning item: vocabulary (rulebook 3)",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-03-ex.json",
+    "id": "b1-01-03-intro-2",
+    "set": {
+      "options": [
+        "fordulópont",
+        "eredmény",
+        "hangulat"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "kudarc is first taught in b1-01-04 (unmet in lesson 3)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-03-ex.json",
+    "id": "b1-01-03-practice-4",
+    "set": {
+      "question": "Anna rájött, hogy... — what does this mean?",
+      "options": [
+        "Anna realized that...",
+        "Anna forgot that...",
+        "Anna hoped that..."
+      ]
+    },
+    "kind": "hungarian",
+    "why": "hős is in no vocabulary list; use a name"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-03-ex.json",
+    "id": "b1-01-03-dialogue-2",
+    "set": {
+      "options": [
+        "Csak most jöttem rá, és ez elég meglepő volt.",
+        "Csak most jövök rá, és ez elég meglepő volt."
+      ]
+    },
+    "kind": "hungarian",
+    "why": "wrong option 'jössz rá' changed person and tense (two faults) and dropped 'elég'; now only the tense differs"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-03-ex.json",
+    "id": "b1-01-03-intro-1",
+    "set": {
+      "category": "vocabulary",
+      "teaches": [
+        "b1-longer-stories-vocab"
+      ]
+    },
+    "kind": "english",
+    "why": "'Which word means ...' is a word-meaning item: vocabulary (rulebook 3)",
+    "sure": false
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-01-04-a-gr.json",
+    "old": "a transitive verb, so it needs a definite or indefinite object just like any other.",
+    "new": "a transitive verb with the prefix *le-*, so it takes an object (*lezártuk a napot*).",
+    "kind": "hungarian",
+    "why": "'needs a definite or indefinite object' is meaningless; state the real point"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-04-ex.json",
+    "id": "b1-01-04-intro-2",
+    "set": {
+      "options": [
+        "lezár",
+        "elindul",
+        "elkezd"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "kinyit is in no vocabulary list"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-04-ex.json",
+    "id": "b1-01-04-controlled-4",
+    "set": {
+      "options": [
+        "tanulság",
+        "eredmény",
+        "hangulat"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "'fordulópont' is a natural right answer ('nem kudarc volt, csak egy fordulópont'): a wrong option must never be right"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-04-ex.json",
+    "id": "b1-01-04-dialogue-1",
+    "set": {
+      "options": [
+        "Az eredmény az lett, hogy mindenki elégedett volt.",
+        "Az eredmény az lesz, hogy mindenki elégedett volt."
+      ]
+    },
+    "kind": "hungarian",
+    "why": "wrong option 'lesz ... senki nem volt elégedett' was absurd (two faults); now only lett/lesz differs"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-04-ex.json",
+    "id": "b1-01-04-dialogue-1",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Petra",
+          "text": "Mi lett a projekttel?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ]
+    },
+    "kind": "hungarian",
+    "why": "végződött is in no vocabulary list; 'Mi lett a projekttel?' uses met words",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-04-ex.json",
+    "id": "b1-01-04-dialogue-2",
+    "set": {
+      "options": [
+        "Nem, nem volt kudarc, inkább egy jó tanulság.",
+        "Igen, nem volt kudarc, inkább egy jó tanulság."
+      ]
+    },
+    "kind": "hungarian",
+    "why": "wrong option used 'sikeres' (B2 word, unmet); now only Nem/Igen differs (a 'Nem, ...' that affirms)",
+    "sure": false
   },
   {
     "file": "content/hu/exercises/b1/b1-01-05-ex.json",
-    "id": "b1-01-05-controlled-4",
+    "id": "b1-01-05-controlled-2",
     "set": {
-      "options": [
-        "akkoriban + background description",
-        "végül + closing result of the story",
-        "mielőtt + turning point of the story"
+      "sentence": "Ez a részlet ____ megmaradt bennem.",
+      "english": "This detail stayed vividly in my memory."
+    },
+    "kind": "hungarian",
+    "why": "azóta (unmet) and emlékszem (in no list; emlékszik valamire is B1 verb-government-ra-re) removed; the blank still takes élénken"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-05-ex.json",
+    "id": "b1-01-05-practice-1",
+    "set": {
+      "sentences": [
+        "Akkoriban egy kis faluban laktunk.",
+        "Miután megérkezett a levél, elindultunk a városba.",
+        "Mielőtt hazamentünk, még sétáltunk a parkban.",
+        "Végül hazaértünk."
       ]
     },
     "kind": "hungarian",
-    "why": "length-giveaway"
+    "why": "the old order was illogical (after we moved away ... before we finally left) and used unmet words (elköltözik, megváltozik, véglegesen, visszanéz, letelepedik)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-05-ex.json",
+    "id": "b1-01-05-practice-4",
+    "set": {
+      "options": [
+        "Only the connectors the job needs, a few at most",
+        "Every connector at once, for maximum detail",
+        "Both miután and mielőtt in every single sentence"
+      ]
+    },
+    "kind": "english",
+    "why": "'No connectors — just short, disconnected sentences' was absurd; the old right option ('one or two at most') disagreed with the lesson 4 tip ('two or three')"
   },
   {
     "file": "content/hu/exercises/b1/b1-01-05-ex.json",
     "id": "b1-01-05-dialogue-1",
     "set": {
+      "prompt": [
+        {
+          "speaker": "Petra",
+          "text": "Mi a lényeg a történetben?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "Rendben, de a lényegre koncentrálok, nem minden apró részletre.",
-        "Nem tudok most mesélni, mert nagyon sietek, és el kell mennem."
+        "A lényeg az, hogy mindenki hazaért.",
+        "A részlet az, hogy mindenki hazaért."
       ]
     },
     "kind": "hungarian",
-    "why": "length-giveaway"
+    "why": "the wrong option ('Nem tudok most mesélni ...') was a natural reply to the request; hosszabb and apró were unmet; now one vocabulary fault (részlet for lényeg)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-05-ex.json",
+    "id": "b1-01-05-dialogue-2",
+    "set": {
+      "options": [
+        "Igen, a szerző már ír róla, szóval biztosan lesz folytatása.",
+        "Igen, a szerző már ír róla, szóval biztosan nincs folytatása."
+      ]
+    },
+    "kind": "hungarian",
+    "why": "the wrong option ('Nem, ... nincs folytatása') was a natural answer to the yes/no question; visszamegyünk was unmet; now one contradiction (lesz/nincs)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-05-ex.json",
+    "old": "Say that one detail stayed vividly in your memory.",
+    "new": "Say that one detail stayed particularly vividly in your memory.",
+    "kind": "english",
+    "why": "the stored answer has különösen (as on the screen); the prompt gave no cue for it"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-05-ex.json",
+    "old": "\"answer\": \"Egy részlet nagyon élénken megmaradt bennem.\"",
+    "new": "\"answer\": \"Egy részlet különösen élénken megmaradt bennem.\"",
+    "kind": "hungarian",
+    "why": "the screen example, builder and speaking item all use különösen; nagyon gave a second spelling of the same idea"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-05-ex.json",
+    "id": "b1-01-05-check-2",
+    "set": {
+      "sentence": "Egy jó történetben minden ____ fontos.",
+      "english": "In a good story, every detail is important."
+    },
+    "kind": "hungarian",
+    "why": "szolgálja is a B2 word in no list"
   },
   {
     "file": "content/hu/exercises/b1/b1-01-05-ex.json",
@@ -67,10 +404,141 @@
       "options": [
         "Mert néhány liba átment a tiltott mezőre.",
         "Mert Jancsi nem szerette ezt a falut.",
-        "Mert Jancsi katona akart lenni a faluban."
+        "Mert Jancsi nem akart több libát őrizni."
       ]
     },
     "kind": "hungarian",
-    "why": "length-giveaway"
+    "why": "third option 'Jancsi katona akart lenni a faluban' was not a plausible cause; story says she noticed missing geese",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-05-ex.json",
+    "id": "b1-01-05-reading-2",
+    "set": {
+      "options": [
+        "Az, hogy elhatározta: katonának áll.",
+        "Az, hogy találkozott a huszárokkal.",
+        "Az, hogy visszatért a faluba."
+      ]
+    },
+    "kind": "hungarian",
+    "why": "varázsló is not in the story and is an unmet word; the hussars are in the story"
+  },
+  {
+    "file": "content/hu/stories/classics/b1/b1-01-janosvitez.json",
+    "old": "Mielőtt elindult volna a nagyvilágba szerencsét próbálni, Jancsi még egyszer visszament a faluba, hogy elbúcsúzzon Iluskától,",
+    "new": "Mielőtt elindult a nagyvilágba szerencsét próbálni, Jancsi még egyszer visszament a faluba, és elbúcsúzott Iluskától,",
+    "kind": "hungarian",
+    "why": "past conditional (elindult volna, B1 Unit 39) contradicts lesson 3 (both verbs plain past); hogy + subjunctive is B1 Unit 5"
+  },
+  {
+    "file": "content/hu/stories/classics/b1/b1-01-janosvitez.json",
+    "old": "Mielőtt végleg útnak indult volna a poros országúton,",
+    "new": "Mielőtt végleg útnak indult a poros országúton,",
+    "kind": "hungarian",
+    "why": "past conditional (indult volna, B1 Unit 39) contradicts lesson 3"
+  },
+  {
+    "file": "content/hu/stories/classics/b1/b1-01-janosvitez.json",
+    "old": "a lány sírva kérte, hogy ne menjen messzire, ne hagyja el őt egyedül a faluban.",
+    "new": "a lány sírva kérte: „Ne menj messzire, ne hagyj egyedül a faluban!”",
+    "kind": "hungarian",
+    "why": "reported command with hogy + subjunctive is B1 Unit 53 (reported-commands); direct imperative is A2",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/classics/b1/b1-01-janosvitez.json",
+    "old": "Mi a történet legfontosabb központi témája?",
+    "new": "Mit csinált Jancsi napról napra a faluban?",
+    "kind": "hungarian",
+    "why": "reading-generic: ask what the character does, not 'the central theme'"
+  },
+  {
+    "file": "content/hu/stories/classics/b1/b1-01-janosvitez.json",
+    "old": "Egy szegény, árva fiú felemelkedése és útja a nehézségekből a bátorságig",
+    "new": "Libákat őrzött a falu szélén, a legelőn",
+    "kind": "hungarian",
+    "why": "answers the new question"
+  },
+  {
+    "file": "content/hu/stories/classics/b1/b1-01-janosvitez.json",
+    "old": "A falusi gazdák és a földesurak közötti politikai küzdelem",
+    "new": "Búzát aratott a földesúr mezején",
+    "kind": "hungarian",
+    "why": "wrong option for the new question"
+  },
+  {
+    "file": "content/hu/stories/classics/b1/b1-01-janosvitez.json",
+    "old": "A huszárok mindennapi kiképzése a bécsi udvarban",
+    "new": "Katonaként szolgált a császár seregében",
+    "kind": "hungarian",
+    "why": "wrong option for the new question"
+  },
+  {
+    "file": "content/hu/stories/classics/b1/b1-01-janosvitez.json",
+    "old": "Egy pásztorfiú gazdálkodási sikerei a szülőfalujában",
+    "new": "Halat fogott a patakban a barátaival",
+    "kind": "hungarian",
+    "why": "wrong option for the new question"
+  },
+  {
+    "file": "content/hu/stories/classics/b1/b1-01-janosvitez.json",
+    "old": "A történet Kukorica Jancsi sorsát mutatja be, aki nehéz körülmények közül indulva, kitartásával és bátorságával küzdi le a megpróbáltatásokat (The central theme is an orphaned boy's journey and rise from hardship through courage).",
+    "new": "A szöveg szerint Jancsi napról napra libákat őrzött a falu széli legelőn (Every day Jancsi guarded the geese on the pasture at the edge of the village).",
+    "kind": "hungarian",
+    "why": "explanation of the new question"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-consolidation-ex.json",
+    "id": "b1-01-consolidation-8",
+    "set": {
+      "sentences": [
+        "Akkoriban egy kis faluban laktunk.",
+        "Miután megérkezett a levél, elindultunk a városba.",
+        "Mielőtt hazamentünk, még sétáltunk a parkban.",
+        "Végül hazaértünk."
+      ]
+    },
+    "kind": "hungarian",
+    "why": "same fix as b1-01-05-practice-1 (the item is a replay of it and must stay identical)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-consolidation-ex.json",
+    "id": "b1-01-consolidation-9",
+    "set": {
+      "options": [
+        "Hirtelen jött a vihar, és ez nagyon meglepő volt.",
+        "Hirtelen jön a vihar, és ez nagyon meglepő volt."
+      ],
+      "teaches": [
+        "irregular-past"
+      ],
+      "distractor_skills": {
+        "1": "megy-jon"
+      }
+    },
+    "kind": "hungarian",
+    "why": "elsötétült, meglepődött, elsötétül, meglepődtünk are in no vocabulary list; the wrong option mixed tenses; now only jött/jön differs"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-consolidation-ex.json",
+    "old": "Set the scene: say that back then you lived in a small village.",
+    "new": "Set the scene: say that back then we lived in a small village.",
+    "kind": "english",
+    "why": "stored answer is laktunk (we)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-consolidation-ex.json",
+    "old": "Say that you still vividly remember one detail.",
+    "new": "Say that the end of the story stayed vividly in your memory.",
+    "kind": "english",
+    "why": "emlékszem is unmet and drills B1 verb government -ra/-re"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-01-consolidation-ex.json",
+    "old": "\"answer\": \"Még mindig élénken emlékszem egy részletre.\"",
+    "new": "\"answer\": \"A történet vége élénken megmaradt bennem.\"",
+    "kind": "hungarian",
+    "why": "emlékszem is unmet and drills B1 verb government -ra/-re"
   }
 ]

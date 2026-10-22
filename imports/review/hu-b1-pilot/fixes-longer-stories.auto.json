@@ -1,1 +1,46 @@
-[]
+[
+ {
+  "file": "content/hu/exercises/b1/b1-01-01-ex.json",
+  "old": "Say that back then, you lived in a small village.",
+  "new": "Say that back then, we lived in a small village.",
+  "kind": "english",
+  "why": "prompt says 'you lived' but the stored answer is laktunk (we)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-01-01-ex.json",
+  "id": "b1-01-01-check-2",
+  "set": {
+   "english": "When my grandfather was young, life here used to be completely different."
+  },
+  "kind": "english",
+  "why": "english 'was earlier completely different' is not English"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-01-01-a-gr.json",
+  "old": "Hungarian doesn't switch to a separate \\\"imperfect\\\" verb form the way Spanish does.",
+  "new": "Hungarian doesn't switch to a separate verb form for background description.",
+  "kind": "english",
+  "why": "no comparisons with languages other than English (AGENTS/rules 4)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-01-05-ex.json",
+  "old": "Say that one detail stayed vividly in your memory.",
+  "new": "Say that one detail stayed particularly vividly in your memory.",
+  "kind": "english",
+  "why": "the stored answer has különösen (as on the screen); the prompt gave no cue for it"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-01-consolidation-ex.json",
+  "old": "Set the scene: say that back then you lived in a small village.",
+  "new": "Set the scene: say that back then we lived in a small village.",
+  "kind": "english",
+  "why": "stored answer is laktunk (we)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-01-consolidation-ex.json",
+  "old": "Say that you still vividly remember one detail.",
+  "new": "Say that the end of the story stayed vividly in your memory.",
+  "kind": "english",
+  "why": "emlékszem is unmet and drills B1 verb government -ra/-re"
+ }
+]
