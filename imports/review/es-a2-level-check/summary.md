@@ -24,3 +24,5 @@ Left for the user:
 - `ponerse a` (Unit 32 lesson 04) is tagged `perifrasis-verbales`, while
   `skills/es.json` lists it under `inceptive-periphrases` (B2). The skill
   list is frozen, so moving it needs your sign-off.
+
+Decided by the user (2026-10-22): bridging line added to the Unit 31 story; the grandmothers stay as written; *ponerse a* moved to A2 (`inceptive-periphrases`, six Unit 32 items retagged); the Sagrada Família reading stays in the library (Current Events shelf, es-latam A2).
