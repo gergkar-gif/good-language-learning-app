@@ -1,0 +1,763 @@
+[
+ {
+  "file": "content/hu/exercises/b1/b1-13-01-ex.json",
+  "id": "b1-13-01.ex02",
+  "set": {
+   "question": "A reporter says: \"A tárgyalások ma kezdődnek.\" Which sentence reports this correctly?",
+   "options": [
+    "A riporter azt mondta, hogy a tárgyalások ma kezdődnek.",
+    "A riporter azt mondta, hogy a tárgyalások ma kezdődtek.",
+    "A riporter azt mondta, mert a tárgyalások ma kezdődnek."
+   ],
+   "distractor_skills": {
+    "1": "past-tense-indefinite",
+    "2": "mert-because"
+   }
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Garbled options (volna, \"érkezett volna meg volt\", \"fog megérkezni legyen\"), unmet tegnapelőtt (tell-time-word); new wrong options each break one thing (tense kept in Hungarian, conjunction)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-01-ex.json",
+  "id": "b1-13-01.ex03",
+  "set": {
+   "sentence": "Ez a hír igaz, mert a ____ megbízható.",
+   "hint": "news source",
+   "english": "This news is true, because the news source is reliable."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-01-ex.json",
+  "id": "b1-13-01.ex04",
+  "set": {
+   "sentence": "A szóvivő ____ a miniszter holnap érkezik.",
+   "english": "According to the spokesperson, the minister arrives tomorrow."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-01-ex.json",
+  "id": "b1-13-01.ex05",
+  "set": {
+   "question": "Which word names the big title at the top of a news story?",
+   "options": [
+    "főcím",
+    "tudósító",
+    "hírforrás"
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-01-ex.json",
+  "id": "b1-13-01.ex06",
+  "set": {
+   "tiles": [
+    "A",
+    "híradás",
+    "szerint",
+    "a",
+    "miniszter",
+    "holnap",
+    "érkezik."
+   ],
+   "solution": [
+    "A",
+    "híradás",
+    "szerint",
+    "a",
+    "miniszter",
+    "holnap",
+    "érkezik."
+   ],
+   "english": "According to the news report, the minister arrives tomorrow."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-01-ex.json",
+  "id": "b1-13-01.ex07",
+  "set": {
+   "category": "grammar",
+   "question": "Anna tells Meg: \"Ma érkezem.\" Meg tells Károly what Anna said. Which sentence is right?",
+   "options": [
+    "Anna azt mondta, hogy ma érkezik.",
+    "Anna azt mondta, hogy ma érkezem.",
+    "Anna azt mondta, hogy ma érkezett."
+   ],
+   "teaches": [
+    "reported-speech-statements"
+   ],
+   "distractor_skills": {
+    "2": "past-tense-indefinite"
+   }
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away 67 vs 51 and category \"reading\" with no passage; replaced by a person-shift item tagged reported-speech-statements."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-01-ex.json",
+  "id": "b1-13-01.ex08",
+  "set": {
+   "sentence": "A tévé ____ azt mondta, hogy a miniszter hamarosan megérkezik.",
+   "hint": "its reporter",
+   "english": "The TV station's reporter said that the minister will arrive soon."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Unmet lap/részletesen/beszámolt/választás; same tested form (tudósítója)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-02-ex.json",
+  "id": "b1-13-02.ex02",
+  "set": {
+   "question": "Anna asks: \"Mikor érkezik a tudósító?\" Which sentence reports the question?",
+   "options": [
+    "Anna azt kérdezte, hogy mikor érkezik a tudósító.",
+    "Anna azt kérdezte, hogy mikor érkezik-e a tudósító.",
+    "Anna azt kérdezte, hogy mikor érkezett a tudósító."
+   ],
+   "distractor_skills": {
+    "2": "past-tense-indefinite"
+   }
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-02-ex.json",
+  "id": "b1-13-02.ex03",
+  "set": {
+   "sentence": "A ____ a rendőrség nevében beszél.",
+   "english": "The spokesperson speaks on behalf of the police."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-02-ex.json",
+  "id": "b1-13-02.ex04",
+  "set": {
+   "sentence": "Anna azt kérdezte, hogy ____ a hír.",
+   "hint": "true",
+   "english": "Anna asked whether the news is true.",
+   "teaches": [
+    "indirect-questions"
+   ],
+   "answer": "igaz-e"
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-02-ex.json",
+  "id": "b1-13-02.ex05",
+  "set": {
+   "question": "Which word means ‘an official announcement from an organisation’?",
+   "options": [
+    "közlemény",
+    "állítás",
+    "szóvivő"
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-02-ex.json",
+  "id": "b1-13-02.ex06",
+  "set": {
+   "tiles": [
+    "A",
+    "szóvivő",
+    "megerősítette,",
+    "hogy",
+    "az",
+    "állítás",
+    "igaz."
+   ],
+   "solution": [
+    "A",
+    "szóvivő",
+    "megerősítette,",
+    "hogy",
+    "az",
+    "állítás",
+    "igaz."
+   ],
+   "english": "The spokesperson confirmed that the claim is true."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-02-ex.json",
+  "id": "b1-13-02.ex07",
+  "set": {
+   "sentence": "A rendőrség ma hivatalos ____ ad ki.",
+   "english": "Today the police are issuing an official statement."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-02-ex.json",
+  "id": "b1-13-02.ex08",
+  "set": {
+   "question": "The spokesperson says: \"Igen, a hír igaz.\" Which sentence reports this?",
+   "options": [
+    "A szóvivő megerősítette, hogy a hír igaz.",
+    "A szóvivő cáfolta, hogy a hír igaz.",
+    "A szóvivő azt kérdezte, hogy igaz-e a hír."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-03-ex.json",
+  "id": "b1-13-03.ex02",
+  "set": {
+   "question": "Which sentence says that the news is only hearsay?",
+   "options": [
+    "Állítólag igaz a hír.",
+    "Biztos, hogy igaz a hír.",
+    "Igaz a hír, mert láttam."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-03-ex.json",
+  "id": "b1-13-03.ex03",
+  "set": {
+   "category": "vocabulary",
+   "sentence": "A ____ után kiderült, hogy a fénykép nem valódi.",
+   "hint": "fact-checking",
+   "english": "After the fact-checking, it turned out that the photo is not genuine.",
+   "teaches": [
+    "b1-media-information-vocab"
+   ],
+   "answer": "tényellenőrzés"
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-03-ex.json",
+  "id": "b1-13-03.ex04",
+  "set": {
+   "sentence": "Az interneten van egy ____: állítólag holnap nincs iskola.",
+   "english": "There is a piece of fake news on the internet: allegedly there is no school tomorrow."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-03-ex.json",
+  "id": "b1-13-03.ex05",
+  "set": {
+   "question": "Which word means ‘a rumour that people repeat without proof’?",
+   "options": [
+    "híresztelés",
+    "megbízhatóság",
+    "tényellenőrzés"
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-03-ex.json",
+  "id": "b1-13-03.ex06",
+  "set": {
+   "tiles": [
+    "Kétséges,",
+    "hogy",
+    "ez",
+    "a",
+    "fénykép",
+    "valódi."
+   ],
+   "solution": [
+    "Kétséges,",
+    "hogy",
+    "ez",
+    "a",
+    "fénykép",
+    "valódi."
+   ],
+   "english": "It is doubtful whether this photo is genuine."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-03-ex.json",
+  "id": "b1-13-03.ex07",
+  "set": {
+   "sentence": "A hírforrás ____ fontos.",
+   "hint": "its reliability",
+   "english": "The reliability of the news source is important."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-03-ex.json",
+  "id": "b1-13-03.ex08",
+  "set": {
+   "question": "Which sentence says ‘It seems that the news is not true’?",
+   "options": [
+    "Úgy tűnik, hogy a hír nem igaz.",
+    "Úgy tűnik, hogy a hír igaz.",
+    "Biztos, hogy a hír nem igaz."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-04-ex.json",
+  "id": "b1-13-04.ex02",
+  "set": {
+   "question": "Which sentence says that the truth became known quickly?",
+   "options": [
+    "Gyorsan kiderült, hogy a hír nem igaz.",
+    "Gyorsan kérdezték, hogy igaz-e a hír.",
+    "Gyorsan mondták, hogy a hír igaz."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-04-ex.json",
+  "id": "b1-13-04.ex03",
+  "set": {
+   "sentence": "A tévé ma ____ mutat a balesetről.",
+   "english": "Today the TV shows a feature report about the accident."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-04-ex.json",
+  "id": "b1-13-04.ex04",
+  "set": {
+   "sentence": "A tudósító a balesetről kérdezi az ____.",
+   "english": "The reporter asks the interviewee about the accident."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-04-ex.json",
+  "id": "b1-13-04.ex05",
+  "set": {
+   "question": "Which word means ‘what most people think about something’?",
+   "options": [
+    "közvélemény",
+    "nyomozás",
+    "interjúalany"
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-04-ex.json",
+  "id": "b1-13-04.ex06",
+  "set": {
+   "tiles": [
+    "Miután",
+    "kiderült,",
+    "hogy",
+    "a",
+    "hír",
+    "igaz,",
+    "a",
+    "közvélemény",
+    "megnyugodott."
+   ],
+   "solution": [
+    "Miután",
+    "kiderült,",
+    "hogy",
+    "a",
+    "hír",
+    "igaz,",
+    "a",
+    "közvélemény",
+    "megnyugodott."
+   ],
+   "english": "After it turned out that the news was true, public opinion calmed down."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-04-ex.json",
+  "id": "b1-13-04.ex07",
+  "set": {
+   "sentence": "Hetekig tartott a ____, és végül kiderült, hogy a hír nem igaz.",
+   "hint": "investigation",
+   "english": "The investigation lasted for weeks, and in the end it turned out that the news was not true."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-04-ex.json",
+  "id": "b1-13-04.ex08",
+  "set": {
+   "category": "grammar",
+   "question": "Which sentence means ‘As soon as the news became public, the police started the investigation’?",
+   "options": [
+    "Amint nyilvánosságra került a hír, a rendőrség elkezdte a nyomozást.",
+    "Mielőtt nyilvánosságra került a hír, a rendőrség elkezdte a nyomozást.",
+    "Amíg nyilvánosságra került a hír, a rendőrség elkezdte a nyomozást."
+   ],
+   "teaches": [
+    "miutan-mielott"
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-05-ex.json",
+  "id": "b1-13-05.ex02",
+  "set": {
+   "question": "Which sentence uses the pair \"egyfelől … másfelől\" correctly?",
+   "options": [
+    "Egyfelől gyors a hír, másfelől sok benne a hiba.",
+    "Egyfelől gyors a hír, egyfelől sok benne a hiba.",
+    "Másfelől gyors a hír, egyfelől sok benne a hiba."
+   ],
+   "teaches": [
+    "egyreszt-masreszt"
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "additive-connectors is a B1 Unit 63 skill (taught-later); the item now drills egyfelől … másfelől (egyreszt-masreszt, Unit 7 recap)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-05-ex.json",
+  "id": "b1-13-05.ex03",
+  "set": {
+   "sentence": "A szerző a ____ ír a saját véleményéről.",
+   "hint": "in an op-ed",
+   "english": "The author writes about their own opinion in the op-ed."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-05-ex.json",
+  "id": "b1-13-05.ex04",
+  "set": {
+   "sentence": "Egyfelől gyors a hír, ____ sok benne a hiba.",
+   "english": "On the one hand the news is fast; on the other hand it has many mistakes.",
+   "answers": [
+    "másfelől",
+    "másrészt"
+   ],
+   "answer": null
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-05-ex.json",
+  "id": "b1-13-05.ex05",
+  "set": {
+   "question": "Which word means ‘the lesson you take away from a story or a debate’?",
+   "options": [
+    "tanulság",
+    "álláspont",
+    "összegzés"
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away 68 vs 36; unmet nyomtatott/papír/televíziós."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-05-ex.json",
+  "id": "b1-13-05.ex06",
+  "set": {
+   "category": "vocabulary",
+   "tiles": [
+    "A",
+    "véleménycikk",
+    "a",
+    "szerző",
+    "álláspontját",
+    "mutatja."
+   ],
+   "solution": [
+    "A",
+    "véleménycikk",
+    "a",
+    "szerző",
+    "álláspontját",
+    "mutatja."
+   ],
+   "english": "The op-ed shows the author's standpoint.",
+   "teaches": [
+    "b1-media-information-vocab"
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "additive-connectors taught-later and length 68 vs 36; builder now drills álláspont with the vocabulary tag."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-05-ex.json",
+  "id": "b1-13-05.ex07",
+  "set": {
+   "sentence": "Kérek egy rövid ____ a hírekről.",
+   "hint": "summary",
+   "english": "I would like a short summary of the news.",
+   "answer": "összegzést"
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-05-ex.json",
+  "id": "b1-13-05.ex08",
+  "set": {
+   "category": "vocabulary",
+   "question": "You read an article where the author says what they think. Which word names this kind of text?",
+   "options": [
+    "véleménycikk",
+    "híresztelés",
+    "közvélemény"
+   ],
+   "teaches": [
+    "b1-media-information-vocab"
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away 97 vs 56, reading category, unmet words; now a vocabulary item."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-consolidation-ex.json",
+  "id": "b1-13-consolidation.ex02",
+  "set": {
+   "question": "A spokesperson says: \"A hír igaz.\" Which sentence reports this?",
+   "options": [
+    "A szóvivő azt mondta, hogy a hír igaz.",
+    "A szóvivő azt mondta, hogy a hír igaz volt.",
+    "A szóvivő azt mondta, mert a hír igaz."
+   ],
+   "distractor_skills": {
+    "1": "van-past",
+    "2": "mert-because"
+   }
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-consolidation-ex.json",
+  "id": "b1-13-consolidation.ex03",
+  "set": {
+   "sentence": "Én mindig ellenőrzöm a ____.",
+   "hint": "news source",
+   "english": "I always check the news source.",
+   "answer": "hírforrást"
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-consolidation-ex.json",
+  "id": "b1-13-consolidation.ex04",
+  "set": {
+   "sentence": "Károly azt kérdezte, hogy ____ a hírforrás.",
+   "hint": "good",
+   "english": "Károly asked whether the news source is good.",
+   "teaches": [
+    "indirect-questions"
+   ],
+   "answer": "jó-e"
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "additive-connectors taught-later; item now tests indirect -e (indirect-questions)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-consolidation-ex.json",
+  "id": "b1-13-consolidation.ex05",
+  "set": {
+   "tiles": [
+    "A",
+    "szóvivő",
+    "szerint",
+    "a",
+    "hír",
+    "nem",
+    "igaz."
+   ],
+   "solution": [
+    "A",
+    "szóvivő",
+    "szerint",
+    "a",
+    "hír",
+    "nem",
+    "igaz."
+   ],
+   "english": "According to the spokesperson, the news is not true."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-consolidation-ex.json",
+  "id": "b1-13-consolidation.ex06",
+  "set": {
+   "question": "Which word means ‘a false news story’?",
+   "options": [
+    "álhír",
+    "híradás",
+    "főcím"
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-consolidation-ex.json",
+  "id": "b1-13-consolidation.ex07",
+  "set": {
+   "sentence": "A ____ a helyszínről küld híreket.",
+   "hint": "reporter",
+   "english": "The reporter sends news from the scene.",
+   "answer": "tudósító"
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Rewritten with met words (unmet-word hits listed in the report); one clear fault per wrong option; tags corrected."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-13-consolidation-ex.json",
+  "id": "b1-13-consolidation.ex08",
+  "set": {
+   "category": "grammar",
+   "question": "Meg did not see the accident, but people say it was big. Which sentence fits?",
+   "options": [
+    "Állítólag nagy baleset volt.",
+    "Biztos, hogy nagy baleset volt.",
+    "Nagy baleset volt, mert láttam."
+   ],
+   "teaches": [
+    "evidentials"
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "tell-absolute (teljesen), reading category; replaced by an evidentials item."
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-13-palutcaifiuk.json",
+  "old": "békésen száradt a hatalmas farakások",
+  "new": "békésen áradt a hatalmas farakások",
+  "sure": true,
+  "why": "száradt (dried) cannot have an illat (smell); áradt (wafted) is meant.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-13-palutcaifiuk.json",
+  "old": "Ki ront be lihegve a hírrel, és ki szegezi fel később a kiáltványt a fapalánkra?",
+  "new": "Ki szegezi fel a kiáltványt a nagy fapalánkra?",
+  "sure": true,
+  "why": "The question asks two things but the options answer one; only Nemecsek nails the proclamation up.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-13-palutcaifiuk.json",
+  "old": "Geréb Dezső és Boka János.",
+  "new": "Geréb Dezső.",
+  "sure": true,
+  "why": "Options of the reworded question 2.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-13-palutcaifiuk.json",
+  "old": "Áts Feri és a vörösingesek követe.",
+  "new": "Boka János.",
+  "sure": true,
+  "why": "Options of the reworded question 2 (Boka writes it, so a plausible wrong answer).",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-13-palutcaifiuk.json",
+  "old": "Csónakos és Nemecsek Ernő.",
+  "new": "Nemecsek Ernő.",
+  "sure": true,
+  "why": "Options of the reworded question 2.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-13-palutcaifiuk.json",
+  "old": "A fűrésztelep öreg olasz éjjeliőre.",
+  "new": "Csónakos.",
+  "sure": true,
+  "why": "Options of the reworded question 2 (an invented night watchman is not in the story).",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-13-palutcaifiuk.json",
+  "old": "A szöveg szerint Csónakos és a kis közlegény, Nemecsek Ernő hozza a hírt, majd a kiáltvány megírása után Nemecsek büszkén felszegezi azt a palánkra.",
+  "new": "A szöveg szerint a kiáltvány elkészülte után Nemecsek büszkén felszegezi a nagy fapalánkra.",
+  "sure": true,
+  "why": "Explanation of the reworded question 2.",
+  "kind": "hungarian"
+ }
+]
