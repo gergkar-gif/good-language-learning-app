@@ -275,15 +275,30 @@ def looks_english(t):
     return n >= 1 and n * 3 >= len(w)
 
 
+LOANWORDS = {"café", "cafés", "cliché", "résumé", "naïve", "fiancé", "fiancée", "déjà", "señor", "piñata", "jalapeño"}
+
+
 def looks_target(t, lang):
     """Positive evidence the text is in the course language: its accents or function words."""
     s = GLOSS.sub("", t)
     L = LANG.get(lang)
     if not L:
         return False
-    if re.search(TARGET_MARKS[lang], s, re.I):
+    # Accents in a name or an English loanword are no evidence: "In a small
+    # old inn in Óbuda.", "a big shop with a café" (HU B1 19-29, 2026-10-23,
+    # five false hits). Capitalised words (in options of more than one word) and the loanwords
+    # are left out of the accent test.
+    toks = s.split()
+    keep = [w for w in toks if not (len(toks) > 1 and w[:1].isupper()) and w.strip(".,;:!?()\"'").lower() not in LOANWORDS]
+    if re.search(TARGET_MARKS[lang], " ".join(keep), re.I):
         return True
-    return any(w in L["function"] for w in words(s))
+    # A function word or two in a long English option prove nothing: *me*
+    # ("María sent me a message about the gift.") or quoted words in an
+    # explanation ("Because nem stands before the verb, so meg moves after
+    # it"). Count them only when they are at least a quarter of the words.
+    ws = words(s)
+    fn = sum(w in L["function"] for w in ws)
+    return fn >= 1 and fn * 4 >= len(ws)
 
 
 def string_options(e):

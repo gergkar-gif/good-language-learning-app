@@ -1133,7 +1133,12 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   Run it on each later batch's units before `add_challenges.py`.
 - **Checker false positive, seen 5 times:** `option-language` reads an
   English option with an accented name (*Óbuda*, *Pósalaky*, *café*) as
-  Hungarian. Rewritten by hand this time; script it (ignore capitalised
-  words when classifying an option) if it recurs in the next batch.
+  Hungarian. **Scripted the same day:** `looks_target` ignores
+  capitalised words and English loanwords in the accent test, and counts
+  function words only when they are a quarter of the option (*me* in
+  "María sent me a message", quoted *nem*/*meg* in an English
+  explanation). Course-wide `option-language` hits: es-es B1 24 → 0,
+  hu B1 1 → 0, es-latam B1 1 → 0, hu B2 17 → 12; the synthetic true
+  mixes are still caught.
 - **Template:** reader B wrote its own lemma-lookup tool in the
   scratchpad; the template now says to use `unmet-words.js` only.
