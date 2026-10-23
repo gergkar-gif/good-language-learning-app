@@ -57,7 +57,7 @@
       "id": "b1-12-01-controlled-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik ige fejezi ki, hogy a hús puha lett a főzés során?",
+      "question": "Which verb means that the meat became soft while cooking?",
       "options": [
         "megpuhul",
         "megsóz",
@@ -72,11 +72,11 @@
       "id": "b1-12-01-controlled-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik igekötő illik az aprításra: „A fokhagymát finomra ______aprítjuk.”?",
+      "question": "Which sentence says that the soup becomes done?",
       "options": [
-        "fel",
-        "le",
-        "ki"
+        "A leves megfő.",
+        "A leves fő.",
+        "A leves főz."
       ],
       "correct": 0,
       "teaches": [
@@ -87,16 +87,19 @@
       "id": "b1-12-01-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat mutatja be helyesen a sütési folyamatot?",
+      "question": "Grandma bakes the cake. Which sentence is right?",
       "options": [
-        "A sütemény húsz perc alatt szép aranybarnára sül a forró sütőben.",
-        "A sütemény húsz perc alatt aranybarnára süt a sütő.",
-        "A sütemény húsz perc alatt sütőnek megy."
+        "Nagymama süti a süteményt.",
+        "Nagymama sül a süteményt.",
+        "Nagymama süt a süteményt."
       ],
       "correct": 0,
       "teaches": [
         "mediopassive-verbs-odik"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "definite-vs-indefinite-conjugation"
+      }
     },
     {
       "id": "b1-12-01-controlled-4",
@@ -117,10 +120,10 @@
       "id": "b1-12-01-practice-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A finom pörkölthöz a legjobb minőségű marhahús a legfontosabb ____.",
-      "hint": "basic raw ingredient",
-      "english": "For a delicious stew, the best quality beef is the most important basic raw ingredient.",
-      "answer": "alapanyag",
+      "sentence": "A hús és a zöldség a leves ____.",
+      "hint": "basic ingredients",
+      "english": "Meat and vegetables are the soup's basic ingredients.",
+      "answer": "alapanyagai",
       "teaches": [
         "b1-food-lifestyle-vocab"
       ]
@@ -129,10 +132,9 @@
       "id": "b1-12-01-practice-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Lassú tűzön a zöldség húsz perc alatt teljesen meg____.",
-      "hint": "softens / tenderizes",
-      "english": "Over low heat, the vegetables soften completely in twenty minutes.",
-      "answer": "puhul",
+      "sentence": "A zöldség két óra alatt ____.",
+      "english": "The vegetables become soft in two hours.",
+      "answer": "megpuhul",
       "teaches": [
         "b1-food-lifestyle-vocab"
       ]
@@ -141,11 +143,11 @@
       "id": "b1-12-01-practice-3",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mi a konyhai 'előkészítés' lényege?",
+      "question": "What does *előkészítés* mean?",
       "options": [
-        "A hozzávalók megtisztítása a főzés előtt.",
-        "Az ételek elfogyasztása a vendégekkel.",
-        "A tányérok elmosása az ebéd után."
+        "getting the ingredients ready before cooking",
+        "eating the meal together with the guests",
+        "washing all the plates after the lunch"
       ],
       "correct": 0,
       "teaches": [
@@ -155,24 +157,27 @@
     {
       "id": "b1-12-01-practice-4",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Melyek a leggyakoribb hagyományos magyar fűszerek?",
+      "category": "vocabulary",
+      "question": "Which of these is a *fűszer* (spice)?",
       "options": [
-        "A fűszerpaprika, a majoránna, a köménymag, a feketebors és a fokhagyma.",
-        "A curry, a gyömbér, a kurkuma, a chili és a japán wasabi.",
-        "A bazsalikom, az oregánó, a római kömény, a koriander és a csillagánizs."
+        "bors",
+        "kenyér",
+        "tojás"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-food-lifestyle-vocab"
+      ]
     },
     {
       "id": "b1-12-01-dialogue-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Mindent megvettél a piacon a vacsorához?\n— Igen, az összes szükséges ______ a kosaramban van.",
+      "question": "— Mindent megvettél a vacsorához?\n— Igen, minden ______ a kosaramban van.",
       "options": [
         "hozzávaló",
-        "defterdár",
-        "rendezvény"
+        "infrastruktúra",
+        "lakosság"
       ],
       "correct": 0,
       "teaches": [
@@ -183,11 +188,11 @@
       "id": "b1-12-01-dialogue-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Mikor ülhetünk le enni?\n— Amint a húsleves teljesen ______, már tálalom is.",
+      "question": "— Mikor ülhetünk le enni?\n— Amint a leves ______, már hozom is.",
       "options": [
         "elkészül",
-        "elnéptelenedik",
-        "felújít"
+        "megsül",
+        "megpuhul"
       ],
       "correct": 0,
       "teaches": [
@@ -198,10 +203,9 @@
       "id": "b1-12-01-writing-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A leves lassú tűzön két óra alatt meg____.",
-      "hint": "cooks / boils",
-      "english": "The soup cooks over low heat in two hours.",
-      "answer": "fő",
+      "sentence": "A leves két óra alatt ____.",
+      "english": "The soup is cooked in two hours.",
+      "answer": "megfő",
       "stage": "production",
       "teaches": [
         "b1-food-lifestyle-vocab"
@@ -211,9 +215,8 @@
       "id": "b1-12-01-writing-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A magyar ételek jellegzetes ízét a minőségi szegedi és kalocsai fűszer____ adja.",
-      "hint": "red spice",
-      "english": "High-quality paprika from Szeged and Kalocsa gives Hungarian dishes their characteristic flavor.",
+      "sentence": "A gulyás ____ nélkül nem finom.",
+      "english": "Goulash is not tasty without paprika.",
       "answer": "paprika",
       "stage": "production",
       "teaches": [
@@ -239,7 +242,7 @@
       "id": "b1-12-01-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik ige fejezi ki, hogy a kenyér elkészült a sütőben?",
+      "question": "Which verb means that the bread was baked until done?",
       "options": [
         "megsül",
         "megfőz",

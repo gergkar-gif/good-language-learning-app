@@ -31,25 +31,29 @@
       "id": "b1-14-consolidation.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondatban szerepel helyesen a beálló melléknévi igenév?",
+      "question": "Which phrase means ‘a problem that still has to be solved’?",
       "options": [
-        "A holnap elvégzendő feladatokat pontosan be kell osztani.",
-        "A tegnap elvégzendő munkát már befejeztük volt.",
-        "Az elvégzendeni munka készen állott."
+        "a megoldandó probléma",
+        "a megoldott probléma",
+        "a megoldani probléma"
       ],
       "correct": 0,
       "teaches": [
         "future-participle-ando"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-participle-adjective",
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     },
     {
       "id": "b1-14-consolidation.ex03",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A megfelelő jelszavak használata a ____ alapja.",
-      "hint": "cybersecurity",
-      "english": "The use of appropriate passwords is the foundation of cybersecurity.",
-      "answer": "kiberbiztonság",
+      "sentence": "A felhasználónak fontos az ____.",
+      "hint": "data protection",
+      "english": "Data protection is important for the user.",
+      "answer": "adatvédelem",
       "teaches": [
         "b1-technology-communication-vocab"
       ]
@@ -58,12 +62,15 @@
       "id": "b1-14-consolidation.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Az új technológiák segítségével sok nehéz folyamat teljesen automatizálttá ____.",
-      "hint": "became / has become",
-      "english": "With the help of new technologies, many difficult processes became completely automated.",
-      "answer": "vált",
+      "sentence": "A telefon fontossá ____.",
+      "hint": "became",
+      "english": "The phone became important.",
       "teaches": [
         "valik-verb"
+      ],
+      "answers": [
+        "vált",
+        "lett"
       ]
     },
     {
@@ -72,25 +79,21 @@
       "category": "vocabulary",
       "tiles": [
         "A",
-        "rendszeres",
-        "szoftverfrissítés",
-        "elengedhetetlen",
-        "a",
-        "telefon",
-        "zavartalan",
-        "működéséhez."
+        "felhasználó",
+        "letölti",
+        "az",
+        "új",
+        "frissítést."
       ],
       "solution": [
         "A",
-        "rendszeres",
-        "szoftverfrissítés",
-        "elengedhetetlen",
-        "a",
-        "telefon",
-        "zavartalan",
-        "működéséhez."
+        "felhasználó",
+        "letölti",
+        "az",
+        "új",
+        "frissítést."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "The user downloads the new update.",
       "teaches": [
         "b1-technology-communication-vocab"
       ]
@@ -99,11 +102,11 @@
       "id": "b1-14-consolidation.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Miért hasznos a mobil üzenetküldés a mindennapokban?",
+      "question": "Which word means ‘sending short messages from a phone’?",
       "options": [
-        "Mert gyors és rugalmas kapcsolattartást tesz lehetővé a családdal és kollégákkal.",
-        "Mert hivatalos bírósági iratok kézbesítésére szolgál a postahivatalban.",
-        "Mert harminc napos kötelező válaszadási határidőt ír elő a címzettnek."
+        "üzenetküldés",
+        "hálózat",
+        "értesítés"
       ],
       "correct": 0,
       "teaches": [
@@ -113,26 +116,32 @@
     {
       "id": "b1-14-consolidation.ex07",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Az új mobiltelefonos ____ segítségével könnyedén ellenőrizhetjük a vonatmenetrendet.",
+      "category": "grammar",
+      "sentence": "Minden felhasználó szereti ezt az ____.",
       "hint": "app",
-      "english": "With the help of the new mobile phone app, we can easily check the train schedule.",
-      "answer": "alkalmazás",
+      "english": "Every user likes this app.",
+      "answer": "alkalmazást",
       "teaches": [
-        "b1-technology-communication-vocab"
+        "how-the-accusative-t-works"
       ]
     },
     {
       "id": "b1-14-consolidation.ex08",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Milyen tanácsot adna egy tudatos okostelefon-használó?",
+      "category": "grammar",
+      "question": "Which sentence is a polite instruction for a stranger (Ön)?",
       "options": [
-        "Használjuk a technológiát okosan, de iktassunk be képernyőmentes időt is a pihenésre.",
-        "Töltsünk napi tizenöt órát folyamatosan a kijelző előtt.",
-        "Soha ne válaszoljunk a barátaink üzeneteire."
+        "Frissítse az alkalmazást!",
+        "Frissítsd az alkalmazást!",
+        "Frissítsen az alkalmazást!"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "imperative-definite"
+      ],
+      "distractor_skills": {
+        "2": "imperative-indefinite"
+      }
     }
   ]
 }

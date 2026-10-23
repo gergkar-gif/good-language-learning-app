@@ -33,20 +33,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "míg",
-          "while / whereas"
+          "azonban",
+          "however"
+        ],
+        [
+          "viszont",
+          "on the other hand"
         ],
         [
           "ezzel szemben",
           "in contrast"
         ],
         [
-          "ellenben",
-          "on the other hand"
-        ],
-        [
-          "ugyanakkor",
-          "at the same time"
+          "míg",
+          "while / whereas"
         ]
       ],
       "teaches": [
@@ -57,44 +57,48 @@
       "id": "b1-11-03-controlled-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik kötőszó fejez ki párhuzamos ellentétet: „Budapesten sok a munkahely, ______ vidéken tisztább a levegő.”?",
+      "question": "Which word fits? „A városban sok a munka, ______ a faluban kevés.”",
       "options": [
         "míg",
-        "mivel",
-        "mintha"
+        "mert",
+        "hogy"
       ],
       "correct": 0,
       "teaches": [
         "adversative-contrast"
       ],
       "distractor_skills": {
-        "1": "mert-because"
+        "1": "mert-because",
+        "2": "hogy-clauses"
       }
     },
     {
       "id": "b1-11-03-controlled-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Hogyan mondjuk magyarul: 'in contrast to this'?",
+      "question": "Which phrase means 'in contrast to this'?",
       "options": [
         "ezzel szemben",
         "ezért",
-        "ennek révén"
+        "ezzel együtt"
       ],
       "correct": 0,
       "teaches": [
         "b1-cities-communities-vocab"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "mert-because"
+      }
     },
     {
       "id": "b1-11-03-controlled-3",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent az 'ingázás' fogalma?",
+      "question": "What does *ingázás* mean?",
       "options": [
-        "Rendszeres napi vagy heti utazást a lakóhely és a munkahely vagy iskola között.",
-        "Egyszeri nyári üdülést vagy kirándulást egy távoli tengerparti üdülőhelyre.",
-        "Végleges elköltözést és letelepedést egy másik európai országban."
+        "travelling every day between your home and your work",
+        "a long holiday by the sea every summer",
+        "moving to another country for good and never coming back"
       ],
       "correct": 0,
       "teaches": [
@@ -105,27 +109,28 @@
       "id": "b1-11-03-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat fejezi ki helyesen az életminőség összehasonlítását?",
+      "question": "Which sentence is right?",
       "options": [
-        "A nagyvárosi élet sok lehetőséget kínál, ellenben jóval zajosabb és drágább.",
-        "A nagyvárosi élet sok lehetőséget kínál, mert nincs zaj.",
-        "A nagyvárosi élet sok lehetőséget kínál és senki nem lakik ott."
+        "A városban sok a munka. Vidéken azonban csendesebb az élet.",
+        "A városban sok a munka. Vidéken mert csendesebb az élet.",
+        "A városban sok a munka. Vidéken hogy csendesebb az élet."
       ],
       "correct": 0,
       "teaches": [
         "adversative-contrast"
       ],
       "distractor_skills": {
-        "1": "mert-because"
+        "1": "mert-because",
+        "2": "hogy-clauses"
       }
     },
     {
       "id": "b1-11-03-practice-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Sokan vállalják a napi ____ a békés, csendes kertes házért cserébe.",
+      "sentence": "Anna szereti a falut, de nem szereti az ____.",
       "hint": "commuting",
-      "english": "Many people undertake the daily commute in exchange for a peaceful, quiet house with a garden.",
+      "english": "Anna likes the village, but she does not like the commuting.",
       "answer": "ingázást",
       "teaches": [
         "how-the-accusative-t-works"
@@ -135,35 +140,40 @@
       "id": "b1-11-03-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A fővárosban élénk a forgalom, ____ a kis falvakban alig látni autókat.",
-      "hint": "whereas / while",
-      "english": "Traffic is lively in the capital, while in small villages one hardly sees cars.",
-      "answer": "míg",
+      "sentence": "A lakás a városban drága, a faluban ____ olcsóbb a ház.",
+      "english": "The flat in the city is expensive; in the village, on the other hand, a house is cheaper.",
       "teaches": [
         "adversative-contrast"
+      ],
+      "answers": [
+        "viszont",
+        "azonban"
       ]
     },
     {
       "id": "b1-11-03-practice-3",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Milyen előnyei vannak a vidéki életnek a városival szemben?",
+      "category": "vocabulary",
+      "question": "Which sentence is about *vidék* (the countryside)?",
       "options": [
-        "Kisebb a zaj, közelebb van a természet, nagyobb a privát tér és gyakran alacsonyabbak a lakásárak.",
-        "Minden utcában sűrű éjszakai buszjáratok és metróállomások találhatók.",
-        "Sokkal több a kulturális program, a színházi előadás és a nagy egyetem."
+        "Sok fa van, kevés autó, és csendes az utca.",
+        "Sok metró és busz van, és sok ember él ott.",
+        "Sok bolt van, és minden utcában van mozi."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-cities-communities-vocab"
+      ]
     },
     {
       "id": "b1-11-03-practice-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit értünk az 'életminőség' mutatói alatt?",
+      "question": "What does *életminőség* mean?",
       "options": [
-        "Az egészségi állapotot, az anyagi biztonságot, a környezet tisztaságát és a szabadidő mennyiségét.",
-        "Az országos valutatartalékok összegét és a nehézipari termelés növekedési ütemét.",
-        "A hivatalos államhatárok hosszát és a belföldi vasútvonalak kilométerben mért számát."
+        "how good and comfortable daily life is",
+        "how many people live in a town",
+        "how long a road is in kilometres"
       ],
       "correct": 0,
       "teaches": [
@@ -174,11 +184,11 @@
       "id": "b1-11-03-dialogue-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Nem túl fárasztó a mindennapos ______ a városba?\n— Vonattal gyorsan beérek, és útközben nyugodtan tudok olvasni.",
+      "question": "— Nem túl fárasztó a mindennapos ______ a városba?\n— Vonattal gyorsan beérek, és közben nyugodtan tudok olvasni.",
       "options": [
         "ingázás",
-        "felújítás",
-        "koronázás"
+        "életminőség",
+        "vidék"
       ],
       "correct": 0,
       "teaches": [
@@ -189,11 +199,11 @@
       "id": "b1-11-03-dialogue-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Miért költöztetek ki vidékre?\n— A gyerekeinknek sokkal jobb itt az ______, tiszta a levegő és nagy a kert.",
+      "question": "— Miért költöztetek ki vidékre?\n— Itt jobb az ______: csendes az élet, és nagy a kert.",
       "options": [
-        "életminősége",
-        "defterdára",
-        "főbérlője"
+        "életminőség",
+        "ingázás",
+        "városiasodás"
       ],
       "correct": 0,
       "teaches": [
@@ -204,9 +214,9 @@
       "id": "b1-11-03-writing-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A gyorsuló ____ miatt egyre többen vándorolnak be a nagyvárosokba.",
+      "sentence": "A ____ miatt sokan költöznek a városba.",
       "hint": "urbanization",
-      "english": "Due to accelerating urbanization, more and more people migrate into big cities.",
+      "english": "Because of urbanization many people move to the city.",
       "answer": "városiasodás",
       "stage": "production",
       "teaches": [
@@ -217,17 +227,14 @@
       "id": "b1-11-03-writing-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A budapesti lakások nagyon drágák, ezzel ____ a vidéki házak jóval elérhetőbbek.",
+      "sentence": "A városban sok a munka. Ezzel ____ a faluban kevés.",
       "hint": "in contrast",
-      "english": "Apartments in Budapest are very expensive; in contrast, rural houses are much more affordable.",
+      "english": "In the city there is a lot of work. In contrast, in the village there is little.",
       "stage": "production",
       "teaches": [
         "adversative-contrast"
       ],
-      "answers": [
-        "szemben",
-        "ellentétben"
-      ]
+      "answer": "szemben"
     },
     {
       "id": "b1-11-03-check-1",
@@ -248,11 +255,11 @@
       "id": "b1-11-03-check-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik szó jelenti a minőségi emberi létet?",
+      "question": "Which word means 'quality of life'?",
       "options": [
         "életminőség",
         "életmód",
-        "életrajz"
+        "időbeosztás"
       ],
       "correct": 0,
       "teaches": [

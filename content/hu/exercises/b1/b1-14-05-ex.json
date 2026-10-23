@@ -31,24 +31,28 @@
       "id": "b1-14-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik igével fejezzük ki a tartós átalakulást: 'A digitális eszközök nélkülözhetetlenné...'?",
+      "question": "Which word completes “Az okostelefon fontossá ____.”?",
       "options": [
-        "váltak",
-        "álltak",
-        "ültek"
+        "vált",
+        "ment",
+        "jött"
       ],
       "correct": 0,
       "teaches": [
         "valik-verb"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "irregular-past",
+        "2": "irregular-past"
+      }
     },
     {
       "id": "b1-14-05.ex03",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A járvány óta sok munkavállaló számára a teljes vagy részleges ____ lett az alapértelmezett.",
+      "sentence": "Ma sok ember otthon dolgozik: ez a ____.",
       "hint": "remote work",
-      "english": "Since the pandemic, full or partial remote work has become the default for many workers.",
+      "english": "Today many people work at home: this is remote work.",
       "answer": "távmunka",
       "teaches": [
         "b1-technology-communication-vocab"
@@ -58,9 +62,9 @@
       "id": "b1-14-05.ex04",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A modern munkaerőpiacon elengedhetetlen a magas szintű ____ elsajátítása.",
+      "sentence": "Ma már mindenkinek fontos a ____.",
       "hint": "digital literacy",
-      "english": "Mastering high-level digital literacy is essential in the modern labor market.",
+      "english": "Today digital literacy is important for everyone.",
       "answer": "digitális írástudás",
       "teaches": [
         "b1-technology-communication-vocab"
@@ -70,11 +74,11 @@
       "id": "b1-14-05.ex05",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent a munkafolyamatok gépesítése és szoftveres irányítása emberi beavatkozás nélkül?",
+      "question": "Which word means ‘a machine does the work, so a person does not need to do it’?",
       "options": [
         "automatizálás",
-        "kézi szövés",
-        "lóháton utazás"
+        "távmunka",
+        "mindennapi rutin"
       ],
       "correct": 0,
       "teaches": [
@@ -87,35 +91,29 @@
       "category": "vocabulary",
       "tiles": [
         "Míg",
-        "korábban",
-        "a",
-        "gyárakban",
-        "mindent",
-        "kézzel",
-        "végeztek,",
+        "régen",
+        "az",
+        "irodában",
+        "dolgoztunk,",
         "addig",
-        "mára",
-        "sok",
-        "folyamat",
-        "automatizálttá",
-        "vált."
+        "ma",
+        "sokan",
+        "távmunkában",
+        "dolgoznak."
       ],
       "solution": [
         "Míg",
-        "korábban",
-        "a",
-        "gyárakban",
-        "mindent",
-        "kézzel",
-        "végeztek,",
+        "régen",
+        "az",
+        "irodában",
+        "dolgoztunk,",
         "addig",
-        "mára",
-        "sok",
-        "folyamat",
-        "automatizálttá",
-        "vált."
+        "ma",
+        "sokan",
+        "távmunkában",
+        "dolgoznak."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "While in the past we worked in the office, today many people work remotely.",
       "teaches": [
         "b1-technology-communication-vocab"
       ]
@@ -124,9 +122,9 @@
       "id": "b1-14-05.ex07",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Az ébredés utáni hírolvasás a reggeli ____ szerves részévé vált.",
+      "sentence": "A reggeli kávé a ____ része.",
       "hint": "daily routine",
-      "english": "Reading the news after waking up has become an integral part of the morning daily routine.",
+      "english": "The morning coffee is part of the daily routine.",
       "answer": "mindennapi rutin",
       "teaches": [
         "b1-technology-communication-vocab"
@@ -135,14 +133,20 @@
     {
       "id": "b1-14-05.ex08",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Hogyan vélekedett Karinthy Frigyes az ember és a gép kapcsolatáról?",
+      "category": "grammar",
+      "question": "Which sentence means ‘The office became empty’?",
       "options": [
-        "A gépek csodálatosak, de az emberi melegséget, humort és szeretetet soha nem pótolhatják.",
-        "Hogy a gőzgépeket le kell szerelni az összes vonatról.",
-        "Hogy az embereknek gépként kellene viselkedniük."
+        "Az iroda üressé vált.",
+        "Az iroda üresvé vált.",
+        "Az iroda üresre vált."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "translative-morphology"
+      ],
+      "distractor_skills": {
+        "2": "ra-re"
+      }
     }
   ]
 }

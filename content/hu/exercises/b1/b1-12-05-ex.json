@@ -57,7 +57,7 @@
       "id": "b1-12-05-controlled-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Hogyan kérjük el udvariasan a számlát a magyar étteremben?",
+      "question": "How do you politely ask for the bill?",
       "options": [
         "„A számlát kérnénk szépen!”",
         "„Add ide a pénzt!”",
@@ -76,11 +76,11 @@
       "id": "b1-12-05-controlled-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent a 'borravaló' szokása?",
+      "question": "What is *borravaló*?",
       "options": [
-        "Önkéntes pénzbeli elismerés az udvarias és figyelmes kiszolgálásért (általában 10–15%).",
-        "Az asztalra rendelt minőségi bor palackjának külön kiszámlázott ára.",
-        "Az éttermi felszolgáló személyzet tiszta munkaruhája és köténye."
+        "extra money you give the waiter if you are happy",
+        "the price of a bottle of wine on the table",
+        "the clean clothes that the waiters wear"
       ],
       "correct": 0,
       "teaches": [
@@ -91,11 +91,11 @@
       "id": "b1-12-05-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik udvarias formula illik a pincér megszólítására?",
+      "question": "Which sentence is a polite way to ask the waiter for a menu?",
       "options": [
-        "„Legyen szíves, hozna egy étlapot?”",
-        "„Hé, gyere ide azonnal!”",
-        "„Miért állsz ott?”"
+        "Legyen szíves, hozna egy étlapot?",
+        "Gyere ide azonnal, és hozz egy étlapot!",
+        "Miért nem hozol már egy étlapot?"
       ],
       "correct": 0,
       "teaches": [
@@ -108,22 +108,25 @@
     {
       "id": "b1-12-05-controlled-4",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Hány fogásból áll egy klasszikus háromfogásos magyar vasárnapi ebéd?",
+      "category": "vocabulary",
+      "question": "Which three are the *fogások* of a Sunday lunch?",
       "options": [
-        "Levesből, főételből és desszertből.",
-        "Egyetlen szelet kenyérből.",
-        "Húsz különböző italból."
+        "leves, főétel és desszert",
+        "limonádé, pezsgő és sör",
+        "villamos, busz és metró"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-food-lifestyle-vocab"
+      ]
     },
     {
       "id": "b1-12-05-practice-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A kitűnő vacsora és a figyelmes kiszolgálás után tíz százalék ____ adtunk a pincérnek.",
+      "sentence": "Sok ____ adtunk a pincérnek.",
       "hint": "tip",
-      "english": "After the excellent dinner and attentive service, we gave the waiter a ten percent tip.",
+      "english": "We gave the waiter a big tip.",
       "answer": "borravalót",
       "teaches": [
         "how-the-accusative-t-works"
@@ -133,9 +136,9 @@
       "id": "b1-12-05-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Fő____ rántott csirkemellet rendeltünk petrezselymes burgonyával és uborkasalátával.",
-      "hint": "course, essive",
-      "english": "As a main course, we ordered fried chicken breast with parsley potatoes and cucumber salad.",
+      "sentence": "Első ____ levest rendeltünk.",
+      "hint": "course",
+      "english": "As a first course we ordered soup.",
       "answer": "fogásként",
       "teaches": [
         "essive-formal-kent"
@@ -144,36 +147,42 @@
     {
       "id": "b1-12-05-practice-3",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Mit kérdez a pincér a vacsora végén?",
+      "category": "vocabulary",
+      "question": "What does a *pincér* do?",
       "options": [
-        "„Együtt vagy külön fizetnek? Készpénzzel vagy kártyával óhajtanak fizetni?”",
-        "„Sikerült már választaniuk az étlapról, vagy kérnek még néhány percet?”",
-        "„Minden rendben van az ételekkel, hozhatok még egy kis kenyeret vagy vizet?”"
+        "brings food and drinks to the table",
+        "cooks the soup in the kitchen",
+        "cleans the windows of the restaurant"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-food-lifestyle-vocab"
+      ]
     },
     {
       "id": "b1-12-05-practice-4",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Mit jelent, ha a számla már tartalmazza a 'szervizdíjat'?",
+      "category": "vocabulary",
+      "question": "Which sentence is about a *számla*?",
       "options": [
-        "A kiszolgálás díja már benne van a végösszegben, így nem szükséges külön borravalót adni.",
-        "A vendégnek kötelező külön borravalót fizetnie a számla teljes összegén felül.",
-        "Az étteremben elfogyasztott ételek árát a helyi önkormányzat utólag megtéríti."
+        "A számla ötezer forint, kártyával fizetünk.",
+        "A leves nagyon forró, és a kenyér is friss.",
+        "A pincér már hozza a desszertet és a kávét."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-food-lifestyle-vocab"
+      ]
     },
     {
       "id": "b1-12-05-dialogue-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Jó estét kívánok! Választottak már?\n— Igen, a ______ ajánlatából a harcsapaprikást szeretnénk kérni túrós csuszával.",
+      "question": "— Ki hozza a levest az asztalhoz?\n— A ______ hozza.",
       "options": [
         "pincér",
-        "főbérlő",
-        "defterdár"
+        "vendég",
+        "számla"
       ],
       "correct": 0,
       "teaches": [
@@ -187,8 +196,8 @@
       "question": "— Hozhatom a kávét a desszerthez?\n— Igen, köszönjük, és utána a ______ is kérnénk szépen.",
       "options": [
         "számlát",
-        "fogyókúrát",
-        "vilajetet"
+        "rostot",
+        "fogyókúrát"
       ],
       "correct": 0,
       "teaches": [
@@ -199,9 +208,9 @@
       "id": "b1-12-05-writing-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Legyen ____, hozna még két pohár ásványvizet?",
+      "sentence": "Legyen ____, hozna még két pohár vizet?",
       "hint": "polite request",
-      "english": "Please, could you bring two more glasses of mineral water?",
+      "english": "Please, could you bring two more glasses of water?",
       "answer": "szíves",
       "stage": "production",
       "teaches": [
@@ -212,9 +221,9 @@
       "id": "b1-12-05-writing-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A vacsora végén a pincér kihozta az elszámoló ____.",
-      "hint": "számla, accusative",
-      "english": "At the end of dinner, the waiter brought out the itemized bill.",
+      "sentence": "A vacsora végén a pincér hozta a ____.",
+      "hint": "bill",
+      "english": "At the end of dinner the waiter brought the bill.",
       "answer": "számlát",
       "stage": "production",
       "teaches": [
@@ -225,11 +234,11 @@
       "id": "b1-12-05-reading-1",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hol játszódik a Krúdy Gyula-részlet (Szindbád)?",
+      "question": "Where does the scene take place?",
       "options": [
-        "Egy ódon óbudai kiskocsmában.",
-        "Egy tengerparti kikötőben.",
-        "A bécsi császári operaházban."
+        "In a small old inn in the town.",
+        "In a harbour by the sea.",
+        "In an opera house in Vienna."
       ],
       "correct": 0
     },
@@ -237,11 +246,11 @@
       "id": "b1-12-05-reading-2",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mit rendelt Szindbád a vendéglőstől a kiskocsmában?",
+      "question": "What does Szindbád order?",
       "options": [
-        "Forró húslevest velős csonttal.",
-        "Hideg tejet és száraz kenyeret.",
-        "Sült halat krumplival."
+        "Hot meat soup with a marrow bone.",
+        "Cold milk and a piece of dry bread.",
+        "Fried fish with potatoes and salad."
       ],
       "correct": 0
     },
@@ -249,11 +258,11 @@
       "id": "b1-12-05-reading-3",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Milyen életérzést fejez ki Szindbád gasztronómiai élvezete Krúdynál?",
+      "question": "What does Szindbád feel when he eats the first bite?",
       "options": [
-        "Hogy az élet minden költészete és szépsége egyetlen tökéletesen megfőzött falatban és pillanatban összpontosul.",
-        "Hogy a modern ember számára a sietős gyorsétkezés és az időmegtakarítás a legfontosabb érték.",
-        "Hogy az étkezés pusztán biológiai kötelesség, amelyre kár sok időt és figyelmet fordítani."
+        "That the moment is perfect and time stops.",
+        "That he is in a hurry to leave.",
+        "That the soup is cold and not good."
       ],
       "correct": 0
     }

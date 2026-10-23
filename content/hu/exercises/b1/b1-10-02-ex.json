@@ -34,19 +34,19 @@
       "pairs": [
         [
           "amely",
-          "which (formal)"
+          "which / that (a thing)"
         ],
         [
-          "amiben",
-          "in which"
+          "ami",
+          "which / what"
         ],
         [
           "ahol",
           "where"
         ],
         [
-          "amire",
-          "onto which"
+          "aki",
+          "who"
         ]
       ],
       "teaches": [
@@ -57,56 +57,65 @@
       "id": "b1-10-02-controlled-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik vonatkozó névmás kapcsolja össze helyesen: „Ez az a társasház, ______ a harmadik emeleten lakunk.”?",
+      "question": "Which word fits? „A lakás, ______ keresünk, csendes és világos.”",
       "options": [
-        "amelyben",
-        "amitől",
-        "amivé"
+        "amit",
+        "aki",
+        "ahol"
       ],
       "correct": 0,
       "teaches": [
-        "vonatkozoi-nevmas-esetei"
-      ]
+        "relative-clauses-aki-ami-amely"
+      ],
+      "distractor_skills": {
+        "2": "ahol-amikor"
+      }
     },
     {
       "id": "b1-10-02-controlled-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik vonatkozó határozószó illik a hely leírásához: „Olyan környéket keresünk, ______ sok a zöldövezet.”?",
+      "question": "Which word fits? „Olyan házat keresünk, ______ nagy kert van.”",
       "options": [
         "ahol",
         "amikor",
-        "ahogy"
+        "aki"
       ],
       "correct": 0,
       "teaches": [
         "ahol-amikor"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "relative-clauses-aki-ami-amely"
+      }
     },
     {
       "id": "b1-10-02-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Mikor használjuk igényes magyar szövegben az 'amely' névmást az 'ami' helyett?",
+      "question": "It is a thing, not a person. Which sentence is right?",
       "options": [
-        "Amikor pontosan meghatározott, konkrét főnévre utalunk vissza.",
-        "Amikor egy teljes korábbi tagmondat gondolatára utalunk vissza.",
-        "Amikor emberi személyekre vagy élő szereplőkre utalunk vissza."
+        "A társasház, amely a parkra néz, csendes.",
+        "A társasház, aki a parkra néz, csendes.",
+        "A társasház, ahol a parkra néz, csendes."
       ],
       "correct": 0,
       "teaches": [
         "relative-clauses-aki-ami-amely"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "ahol-amikor"
+      }
     },
     {
       "id": "b1-10-02-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat helyes nyelvtanilag?",
+      "question": "Which sentence is right?",
       "options": [
-        "A lakáshoz tartozik egy tágas erkély, amely a zöld parkra néz.",
-        "A lakáshoz tartozik egy tágas erkély, akire a zöld parkra néz.",
-        "A lakáshoz tartozik egy tágas erkély, amivé a zöld parkra néz."
+        "A kanapé, amelyet keresünk, kényelmes.",
+        "A kanapé, amely keresünk, kényelmes.",
+        "A kanapé, amelyt keresünk, kényelmes."
       ],
       "correct": 0,
       "teaches": [
@@ -117,26 +126,22 @@
       "id": "b1-10-02-practice-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Szeretünk kiülni az erkélyre, ____ szép kilátás nyílik a budai hegyekre.",
-      "hint": "from which",
-      "english": "We like to sit out on the balcony, from which there is a beautiful view of the Buda hills.",
+      "sentence": "Van egy kis erkélyünk, ____ reggel kávét iszunk.",
+      "english": "We have a small balcony where we drink coffee in the morning.",
       "answers": [
-        "ahonnan",
-        "ahonnét",
-        "amelyről",
-        "amiről"
+        "ahol"
       ],
       "teaches": [
-        "vonatkozoi-nevmas-esetei"
+        "ahol-amikor"
       ]
     },
     {
       "id": "b1-10-02-practice-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A belvárosi bérház közepén egy csendes, macskaköves belső ____ található.",
-      "hint": "courtyard",
-      "english": "In the middle of the downtown apartment building, a quiet, cobblestone inner courtyard can be found.",
+      "sentence": "A társasház mögött egy csendes ____ van.",
+      "hint": "yard",
+      "english": "Behind the apartment block there is a quiet yard.",
       "answer": "udvar",
       "teaches": [
         "b1-home-housing-vocab"
@@ -146,11 +151,11 @@
       "id": "b1-10-02-practice-3",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent a 'családi ház' Magyarországon?",
+      "question": "A *társasház* is ...",
       "options": [
-        "Önálló telken álló, különálló lakóépületet egy család számára.",
-        "Tízemeletes lakótelepi paneltömböt.",
-        "Kizárólag irodának használt épületet."
+        "a building with many flats",
+        "a house for only one family",
+        "a small garden behind a house"
       ],
       "correct": 0,
       "teaches": [
@@ -160,24 +165,12 @@
     {
       "id": "b1-10-02-practice-4",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Milyen előnyökkel jár egy társasházi lakás a családi házzal szemben?",
-      "options": [
-        "A közös költség tartalmazhatja a lépcsőház takarítását és karbantartását, kevesebb kerti munka hárul a lakóra.",
-        "A társasházakban a szomszédok miatt gyakran nagyobb a zaj, és jóval kevesebb a nyugalom.",
-        "A lakók önállóan dönthetnek a homlokzat átalakításáról a többi tulajdonos megkérdezése nélkül."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-10-02-dialogue-1",
-      "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Milyen típusú lakást szeretnétek bérelni?\n— Egy új építésű ______ lakást, amelyhez erkély és mélygarázs is tartozik.",
+      "question": "Which sentence is true?",
       "options": [
-        "társasházi",
-        "belső udvar",
-        "fűtési"
+        "Egy családi házban egy család lakik.",
+        "Egy családi házban sok család lakik.",
+        "Egy családi házban nincs ablak."
       ],
       "correct": 0,
       "teaches": [
@@ -185,14 +178,28 @@
       ]
     },
     {
+      "id": "b1-10-02-dialogue-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "— Milyen lakást keresel?\n— Olyat, ______ csendes és világos.",
+      "options": [
+        "amely",
+        "aki"
+      ],
+      "correct": 0,
+      "teaches": [
+        "relative-clauses-aki-ami-amely"
+      ]
+    },
+    {
       "id": "b1-10-02-dialogue-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Van a háznak saját kertje?\n— Igen, egy zárt zöld ____, ahol a gyerekek biztonságban játszhatnak.",
+      "question": "— Hol lakik Anna?\n— A tizedik emeleten, egy ______.",
       "options": [
-        "udvara",
-        "szerződése",
-        "bérlője"
+        "társasházban",
+        "családi házban",
+        "udvarban"
       ],
       "correct": 0,
       "teaches": [
@@ -203,9 +210,9 @@
       "id": "b1-10-02-writing-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Megtekintettünk egy tágas családi ____ a város szélén.",
+      "sentence": "Keresünk egy tágas családi ____.",
       "hint": "house",
-      "english": "We viewed a spacious single-family house on the edge of town.",
+      "english": "We are looking for a spacious family house.",
       "answer": "házat",
       "stage": "production",
       "teaches": [
@@ -216,32 +223,34 @@
       "id": "b1-10-02-writing-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ez az a szoba, ____ a legtöbb természetes napfény árad be délután.",
-      "hint": "into which",
-      "english": "This is the room into which the most natural sunlight streams in the afternoon.",
+      "sentence": "Keresünk egy lakást, ____ csendes udvarra néz.",
+      "english": "We are looking for a flat that looks onto a quiet yard.",
       "answers": [
-        "amibe",
-        "amelybe"
+        "amely",
+        "ami"
       ],
       "stage": "production",
       "teaches": [
-        "vonatkozoi-nevmas-esetei"
+        "relative-clauses-aki-ami-amely"
       ]
     },
     {
       "id": "b1-10-02-check-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik vonatkozó névmás illik az eszközre/tárgyra: „A fűtésrendszer, ______ korszerűsítettünk, nagyon gazdaságos.”?",
+      "question": "Which word fits? „A szőnyeg, ______ vettünk, nagyon szép.”",
       "options": [
         "amelyet",
-        "akivel",
-        "ahová"
+        "akit",
+        "ahol"
       ],
       "correct": 0,
       "teaches": [
         "relative-clauses-aki-ami-amely"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "ahol-amikor"
+      }
     },
     {
       "id": "b1-10-02-check-2",

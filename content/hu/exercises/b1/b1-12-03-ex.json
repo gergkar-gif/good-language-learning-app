@@ -57,11 +57,11 @@
       "id": "b1-12-03-controlled-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik időhatározó jelzi az első lépést egy receptben?",
+      "question": "Which word shows the first step of a recipe?",
       "options": [
         "Először",
         "Végül",
-        "Soha"
+        "Majd"
       ],
       "correct": 0,
       "teaches": [
@@ -72,11 +72,11 @@
       "id": "b1-12-03-controlled-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Hogyan mondjuk: 'cooking / baking time'?",
+      "question": "Which phrase means 'cooking / baking time'?",
       "options": [
         "sütési idő",
-        "sütőóra",
-        "időjárás"
+        "időjárás",
+        "időbeosztás"
       ],
       "correct": 0,
       "teaches": [
@@ -87,26 +87,29 @@
       "id": "b1-12-03-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat mutatja be a recept logikus lépéseit?",
+      "question": "Which sentence puts the steps in a logical order?",
       "options": [
-        "Először pirítsuk meg a hagymát, majd adjuk hozzá a húst, és miután megpuhult, ízesítsük fűszerekkel.",
-        "Végül tálaljuk a nyers ételt a sütés előtt.",
-        "Először mossuk el a tányérokat, mielőtt ételt vennénk."
+        "Először főzzük meg a rizst, majd adjuk hozzá a zöldséget.",
+        "Végül főzzük meg a rizst, majd adjuk hozzá a zöldséget.",
+        "Miután főzzük meg a rizst, adjuk hozzá a zöldséget."
       ],
       "correct": 0,
       "teaches": [
         "sequencing-elobb-aztan-utana-vegul"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "miutan-mielott"
+      }
     },
     {
       "id": "b1-12-03-controlled-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent az 'adag' szó az étlapokon vagy receptekben?",
+      "question": "What does *adag* mean?",
       "options": [
-        "Egy személyre szabott ételmennyiség (portion).",
-        "Az elkészített étel forintban megadott ára.",
-        "A konyhán dolgozó főszakács teljes neve."
+        "the amount of food for one person",
+        "the price of a dish in forints",
+        "the name of the cook in a restaurant"
       ],
       "correct": 0,
       "teaches": [
@@ -117,9 +120,9 @@
       "id": "b1-12-03-practice-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A sütemény pontos ____ lépésről lépésre megtalálható a szakácskönyvben.",
+      "sentence": "Ennek a süteménynek a ____ nagyon egyszerű.",
       "hint": "its recipe",
-      "english": "The exact recipe for the cake can be found step by step in the cookbook.",
+      "english": "The recipe for this cake is very simple.",
       "answer": "receptje",
       "teaches": [
         "3rd-person-possessive"
@@ -129,9 +132,9 @@
       "id": "b1-12-03-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A pogácsa sütési ____ körülbelül huszonöt perc 180 fokos sütőben.",
+      "sentence": "A sütemény sütési ____ egy óra.",
       "hint": "its time",
-      "english": "The baking time for the pogácsa is about twenty-five minutes in a 180-degree oven.",
+      "english": "The baking time of the cake is one hour.",
       "answer": "ideje",
       "teaches": [
         "3rd-person-possessive"
@@ -140,36 +143,42 @@
     {
       "id": "b1-12-03-practice-3",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Mit kell ellenőrizni a recept elolvasásakor a főzés megkezdése előtt?",
+      "category": "vocabulary",
+      "question": "Which sentence is about a *recept*?",
       "options": [
-        "Hogy minden hozzávaló rendelkezésre áll-e a szükséges mennyiségben.",
-        "Hogy hány oldalas a könyv borítója.",
-        "Hogy milyen színű a konyhabútor."
+        "Először keverjük össze a tojást és a cukrot.",
+        "A busz hétkor indul a pályaudvarról.",
+        "Az orvos azt mondja, hogy pihenjek."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-food-lifestyle-vocab"
+      ]
     },
     {
       "id": "b1-12-03-practice-4",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Hány adagra szólnak általában a családi receptek?",
+      "category": "vocabulary",
+      "question": "A recipe is for four *adag*. For how many people is it?",
       "options": [
-        "Négy vagy hat adagra.",
-        "Száz adagra.",
-        "Fél adagra."
+        "for four people",
+        "for forty people",
+        "for one person"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-food-lifestyle-vocab"
+      ]
     },
     {
       "id": "b1-12-03-dialogue-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Elkérhetem a híres almás pite ______?\n— Szívesen, leírom neked a hozzávalókat és a pontos elkészítési módot.",
+      "question": "— Kérhetem a gulyás ______?\n— Szívesen, leírom neked a hozzávalókat.",
       "options": [
         "receptjét",
         "számláját",
-        "önkormányzatát"
+        "kulcsát"
       ],
       "correct": 0,
       "teaches": [
@@ -180,11 +189,11 @@
       "id": "b1-12-03-dialogue-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Hány ______ süssünk a pörköltből a vacsorára?\n— Legalább négy személyre elegendő mennyiséget készítsünk.",
+      "question": "— Hány ______ levest főzzünk?\n— Négyen leszünk.",
       "options": [
-        "adagot",
-        "rostot",
-        "pincért"
+        "adag",
+        "rost",
+        "pincér"
       ],
       "correct": 0,
       "teaches": [
@@ -195,33 +204,27 @@
       "id": "b1-12-03-writing-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "____ keverjük össze a lisztet a sütőporral, majd adjuk hozzá a vajat.",
+      "sentence": "____ főzzük meg a tésztát, majd adjuk hozzá a sajtot.",
       "hint": "First",
-      "english": "First, mix the flour with the baking powder, then add the butter.",
+      "english": "First we cook the pasta, then we add the cheese.",
       "stage": "production",
       "teaches": [
         "sequencing-elobb-aztan-utana-vegul"
       ],
-      "answers": [
-        "Először",
-        "Elsőként"
-      ]
+      "answer": "Először"
     },
     {
       "id": "b1-12-03-writing-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Miután a mártás besűrűsödött, ____ szórjuk meg friss petrezselyemmel.",
+      "sentence": "Miután a leves megfőtt, ____ adjuk hozzá a sót.",
       "hint": "finally",
-      "english": "After the sauce has thickened, finally sprinkle it with fresh parsley.",
+      "english": "After the soup has cooked, finally we add the salt.",
       "stage": "production",
       "teaches": [
         "sequencing-elobb-aztan-utana-vegul"
       ],
-      "answers": [
-        "végül",
-        "végezetül"
-      ]
+      "answer": "végül"
     },
     {
       "id": "b1-12-03-check-1",
@@ -229,9 +232,9 @@
       "category": "vocabulary",
       "question": "Mit jelent az 'elkészítési mód'?",
       "options": [
-        "Method of preparation",
-        "Shopping list",
-        "Restaurant menu"
+        "The method of preparation",
+        "A long shopping list",
+        "A restaurant menu"
       ],
       "correct": 0,
       "teaches": [
@@ -242,7 +245,7 @@
       "id": "b1-12-03-check-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik szó jelenti a tányérra mért ételmennyiséget?",
+      "question": "Which word means 'portion'?",
       "options": [
         "adag",
         "alapanyag",

@@ -31,24 +31,27 @@
       "id": "b1-14-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Hogyan szól a felszólítás udvarias formája szoftvereknél?",
+      "question": "Which sentence is a polite instruction for a stranger (Ön)?",
       "options": [
-        "Kattintson a mentés gombra!",
-        "Kattintsál a mentésre voltál!",
-        "Kattintani kellene lenni a mentéshez!"
+        "Nyissa meg a beállításokat!",
+        "Nyisd meg a beállításokat!",
+        "Nyisson meg a beállításokat!"
       ],
       "correct": 0,
       "teaches": [
-        "imperative-indefinite"
-      ]
+        "imperative-definite"
+      ],
+      "distractor_skills": {
+        "2": "imperative-indefinite"
+      }
     },
     {
       "id": "b1-14-04.ex03",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A telefon új operációs rendszere sokkal letisztultabb és átláthatóbb ____ kapott.",
+      "sentence": "Az új alkalmazás szép ____ kapott.",
       "hint": "user interface",
-      "english": "The phone's new operating system received a much cleaner and clearer user interface.",
+      "english": "The new app got a nice user interface.",
       "answer": "kezelőfelületet",
       "teaches": [
         "b1-technology-communication-vocab"
@@ -58,9 +61,9 @@
       "id": "b1-14-04.ex04",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A banki ____ segítségével sorban állás nélkül fizethetjük be a számlákat.",
+      "sentence": "A telefonomon van egy új ____.",
       "hint": "app",
-      "english": "With the help of the banking app, we can pay bills without waiting in line.",
+      "english": "There is a new app on my phone.",
       "answer": "alkalmazás",
       "teaches": [
         "b1-technology-communication-vocab"
@@ -70,11 +73,11 @@
       "id": "b1-14-04.ex05",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit kell letölteni a programhoz, ha javítani akarják a hibáit?",
+      "question": "Which word means ‘a new version of an app that fixes mistakes’?",
       "options": [
-        "egy frissítést",
-        "egy konyhai receptet",
-        "egy régi újságot"
+        "frissítés",
+        "beállítás",
+        "kezelőfelület"
       ],
       "correct": 0,
       "teaches": [
@@ -86,34 +89,26 @@
       "type": "sentence-builder",
       "category": "vocabulary",
       "tiles": [
-        "Amennyiben",
-        "a",
-        "telefon",
+        "Ha",
+        "az",
+        "alkalmazás",
         "lefagy,",
         "indítsa",
         "újra",
         "a",
-        "készüléket",
-        "a",
-        "főgomb",
-        "hosszú",
-        "megnyomásával."
+        "telefont."
       ],
       "solution": [
-        "Amennyiben",
-        "a",
-        "telefon",
+        "Ha",
+        "az",
+        "alkalmazás",
         "lefagy,",
         "indítsa",
         "újra",
         "a",
-        "készüléket",
-        "a",
-        "főgomb",
-        "hosszú",
-        "megnyomásával."
+        "telefont."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "If the app freezes, restart the phone.",
       "teaches": [
         "b1-technology-communication-vocab"
       ]
@@ -122,10 +117,10 @@
       "id": "b1-14-04.ex07",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A menüben módosíthatja a hangerő és a kijelző egyéni ____.",
+      "sentence": "Először nyissa meg a ____, aztán frissítse a programot.",
       "hint": "settings",
-      "english": "In the menu, you can modify the individual settings for the volume and display.",
-      "answer": "beállításait",
+      "english": "First open the settings, then update the program.",
+      "answer": "beállításokat",
       "teaches": [
         "b1-technology-communication-vocab"
       ]
@@ -133,14 +128,21 @@
     {
       "id": "b1-14-04.ex08",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Mit jelent az, hogy egy alkalmazás felhasználóbarát?",
+      "category": "grammar",
+      "question": "Which word completes “____ az alkalmazás nem indul el, törölje és telepítse újra.”?",
       "options": [
-        "Hogy a kezelőfelülete egyszerűen, logikusan és könnyen megtanulható.",
-        "Hogy az alkalmazás képeket rajzol a falra.",
-        "Hogy az alkalmazás csak angol nyelven működik."
+        "Ha",
+        "Mert",
+        "Hogy"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "ha-clause"
+      ],
+      "distractor_skills": {
+        "1": "mert-because",
+        "2": "hogy-clauses"
+      }
     }
   ]
 }

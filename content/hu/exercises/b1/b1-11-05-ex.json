@@ -34,19 +34,19 @@
       "pairs": [
         [
           "részt vesz",
-          "to participate in"
+          "to take part in"
         ],
         [
-          "hozzájárul",
-          "to contribute to"
+          "bízik",
+          "to trust"
         ],
         [
-          "együttműködik",
-          "to cooperate with"
+          "hisz",
+          "to believe in"
         ],
         [
-          "megszervez",
-          "to organize / arrange"
+          "csalódik",
+          "to be disappointed in"
         ]
       ],
       "teaches": [
@@ -57,11 +57,11 @@
       "id": "b1-11-05-controlled-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Milyen vonzattal áll a 'részt vesz' ige a mondatban: „A lakók részt vesznek a ______.”?",
+      "question": "Which form fits? „A szomszédok részt vesznek a közös ______.”",
       "options": [
-        "rendezvényen",
-        "rendezvényhez",
-        "rendezvényből"
+        "programban",
+        "programhoz",
+        "programból"
       ],
       "correct": 0,
       "teaches": [
@@ -76,26 +76,30 @@
       "id": "b1-11-05-controlled-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Milyen ragot kíván a 'hozzájárul' ige?",
+      "question": "Which sentence is right?",
       "options": [
-        "-hoz / -hez / -höz",
-        "-ban / -ben",
-        "-ról / -ről"
+        "Csatlakozom a programhoz.",
+        "Csatlakozom a programban.",
+        "Csatlakozom a programról."
       ],
       "correct": 0,
       "teaches": [
         "verb-government-hoz-hez"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "delative-rol-rel"
+      }
     },
     {
       "id": "b1-11-05-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat fejezi ki helyesen az együttműködést?",
+      "question": "Which sentence uses the right ending with együttműködik?",
       "options": [
-        "A helyi egyesület szorosan együttműködik az önkormányzattal.",
-        "A helyi egyesület szorosan együttműködik az önkormányzatot.",
-        "A helyi egyesület szorosan együttműködik az önkormányzathoz."
+        "A helyi egyesület jól együttműködik az önkormányzattal.",
+        "A helyi egyesület jól együttműködik az önkormányzatot.",
+        "A helyi egyesület jól együttműködik az önkormányzathoz."
       ],
       "correct": 0,
       "teaches": [
@@ -110,11 +114,11 @@
       "id": "b1-11-05-controlled-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mi a szerepe a helyi 'önkormányzatnak' egy településen?",
+      "question": "What is an *önkormányzat*?",
       "options": [
-        "A helyi közügyek (iskolák, utak, tisztaság, fejlesztések) demokratikus irányítása és intézése.",
-        "Az országos külpolitikai kapcsolatok és a külföldi nagykövetségek fenntartása.",
-        "A határellenőrzés működtetése és a katonai sorozás országos lebonyolítása."
+        "the local government of a town or village",
+        "a big shop in the middle of the town",
+        "a school for children over ten years"
       ],
       "correct": 0,
       "teaches": [
@@ -125,9 +129,9 @@
       "id": "b1-11-05-practice-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A felújított művelődési ház modern ____ vált a fiatalok számára.",
-      "hint": "tér, translative",
-      "english": "The renovated community center became a modern space for young people.",
+      "sentence": "A régi iskola közösségi ____ vált.",
+      "hint": "space",
+      "english": "The old school became a community space.",
       "answer": "térré",
       "teaches": [
         "translative-morphology"
@@ -137,10 +141,10 @@
       "id": "b1-11-05-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A lakók önkéntes munkával járulnak ____ a park megtisztításához.",
-      "hint": "to it / contribute",
-      "english": "The residents contribute to cleaning up the park through volunteer work.",
-      "answer": "hozzá",
+      "sentence": "Én is ____ a programhoz.",
+      "hint": "join",
+      "english": "I am joining the programme too.",
+      "answer": "csatlakozom",
       "teaches": [
         "verb-government-hoz-hez"
       ]
@@ -148,36 +152,42 @@
     {
       "id": "b1-11-05-practice-3",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Milyen kulturális rendezvényeket szerveznek a magyar városokban nyaranta?",
+      "category": "vocabulary",
+      "question": "Which one is a *rendezvény*?",
       "options": [
-        "Fesztiválokat, színházi esteket, kézműves vásárokat és koncerteket a főtereken.",
-        "Csak kötelező katonai felvonulásokat.",
-        "Semmilyen nyilvános esemény nem engedélyezett."
+        "a street party or a concert in the town",
+        "a bus that goes to the airport",
+        "a quiet room in a house"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-cities-communities-vocab"
+      ]
     },
     {
       "id": "b1-11-05-practice-4",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Hogyan erősítheti egy civil egyesület a helyi közösséget?",
+      "category": "vocabulary",
+      "question": "What is an *egyesület*?",
       "options": [
-        "Közös célokért dolgozva összefogja a hasonló érdeklődésű polgárokat és támogatja a rászorulókat.",
-        "Megakadályozza a szomszédok közötti beszélgetést.",
-        "Bezárja a közösségi tereket."
+        "a group of people with the same interest",
+        "a big shop with many floors",
+        "a long road between two big towns"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-cities-communities-vocab"
+      ]
     },
     {
       "id": "b1-11-05-dialogue-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Ki szervezi a hétvégi falunapot?\n— A helyi ______ a civil egyesületekkel közösen rendezi meg.",
+      "question": "— Ki szervezi a programot szombaton?\n— Az ______, az egyesületekkel együtt.",
       "options": [
         "önkormányzat",
-        "zsoldos",
-        "szultán"
+        "infrastruktúra",
+        "életminőség"
       ],
       "correct": 0,
       "teaches": [
@@ -187,25 +197,27 @@
     {
       "id": "b1-11-05-dialogue-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "— Részt veszel a holnapi faültetésen?\n— Természetesen, szívesen hozzájárulok a környékünk szebbé ______.",
+      "category": "grammar",
+      "question": "— Részt veszel a holnapi programban?\n— Igen, szívesen ______.",
       "options": [
-        "tételéhez",
-        "rombolásához",
-        "eladásihoz"
+        "részt veszek benne",
+        "részt veszek belőle"
       ],
       "correct": 0,
       "teaches": [
-        "b1-cities-communities-vocab"
-      ]
+        "verb-government-ban-ben"
+      ],
+      "distractor_skills": {
+        "1": "case-inflected-pronouns"
+      }
     },
     {
       "id": "b1-11-05-writing-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A sport____ célja, hogy minden gyermek számára biztosítsa a mozgás örömét.",
-      "hint": "association / club",
-      "english": "The goal of the sports club is to ensure the joy of movement for every child.",
+      "sentence": "A helyi ____ minden szombaton programot szervez.",
+      "hint": "association",
+      "english": "The local association organizes a programme every Saturday.",
       "answer": "egyesület",
       "stage": "production",
       "teaches": [
@@ -216,9 +228,9 @@
       "id": "b1-11-05-writing-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A múlt hétvégi kulturális ____ több ezer érdeklődő látogatott el.",
+      "sentence": "Szombaton elmegyünk a ____.",
       "hint": "to the event",
-      "english": "Several thousand visitors attended last weekend's cultural event.",
+      "english": "On Saturday we are going to the event.",
       "answer": "rendezvényre",
       "stage": "production",
       "teaches": [
@@ -229,11 +241,11 @@
       "id": "b1-11-05-reading-1",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hol játszódik a Móricz Zsigmond-részlet (Légy jó mindhalálig)?",
+      "question": "Where does the story take place?",
       "options": [
-        "Debrecenben, a kollégiumban.",
-        "Egy osztrák hegyi faluban.",
-        "A budai várnegyedben."
+        "In Debrecen.",
+        "In a village by Lake Balaton.",
+        "In a big hotel in Budapest."
       ],
       "correct": 0
     },
@@ -241,11 +253,11 @@
       "id": "b1-11-05-reading-2",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Kihez ment felolvasni Nyilas Misi délutánonként?",
+      "question": "Who does Misi visit in the afternoons to read aloud?",
       "options": [
-        "A vak Pósalaky úrhoz.",
-        "A polgármesterhez zongorázni.",
-        "Az egri várkapitányhoz."
+        "A blind old man.",
+        "The mayor, who likes music.",
+        "The captain of the old castle."
       ],
       "correct": 0
     },
@@ -253,11 +265,11 @@
       "id": "b1-11-05-reading-3",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Milyen érzés töltötte el Misit a debreceni utcákon sétálva?",
+      "question": "What does Misi feel after reading to Mr Pósalaky?",
       "options": [
-        "Hogy hasznos tagja lett a közösségnek.",
-        "Nagyon unatkozott és haza akart szökni.",
-        "Haragudott az összes emberre."
+        "That it is good to help others.",
+        "That he is bored and wants to go home.",
+        "That he is angry with everybody."
       ],
       "correct": 0
     }

@@ -31,24 +31,28 @@
       "id": "b1-13-01.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Hogyan mondjuk helyesen közvetett beszédben: 'A tudósító azt mondta, hogy...'?",
+      "question": "A reporter says: \"A tárgyalások ma kezdődnek.\" Which sentence reports this correctly?",
       "options": [
-        "A tudósító azt mondta, hogy a miniszter most érkezik meg.",
-        "A tudósító azt mondta, hogy a miniszter tegnapelőtt érkezett volna meg volt.",
-        "A tudósító azt mondta, hogy a miniszter fog megérkezni legyen."
+        "A riporter azt mondta, hogy a tárgyalások ma kezdődnek.",
+        "A riporter azt mondta, hogy a tárgyalások ma kezdődtek.",
+        "A riporter azt mondta, mert a tárgyalások ma kezdődnek."
       ],
       "correct": 0,
       "teaches": [
         "reported-speech-statements"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-tense-indefinite",
+        "2": "mert-because"
+      }
     },
     {
       "id": "b1-13-01.ex03",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Az újságíró nem árulta el, hogy ki volt a titkos ____ a cikkhez.",
-      "hint": "source of news",
-      "english": "The journalist did not reveal who the secret source of news was for the article.",
+      "sentence": "Ez a hír igaz, mert a ____ megbízható.",
+      "hint": "news source",
+      "english": "This news is true, because the news source is reliable.",
       "answer": "hírforrás",
       "teaches": [
         "b1-media-information-vocab"
@@ -58,9 +62,9 @@
       "id": "b1-13-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A rendőrségi közlemény ____ a balesetben senki sem sérült meg súlyosan.",
+      "sentence": "A szóvivő ____ a miniszter holnap érkezik.",
       "hint": "according to",
-      "english": "According to the police statement, no one was seriously injured in the accident.",
+      "english": "According to the spokesperson, the minister arrives tomorrow.",
       "answer": "szerint",
       "teaches": [
         "evidentials"
@@ -70,11 +74,11 @@
       "id": "b1-13-01.ex05",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mi a lap tetején lévő, nagy betűkkel szedett cím?",
+      "question": "Which word names the big title at the top of a news story?",
       "options": [
         "főcím",
-        "lábjegyzet",
-        "apróhirdetés"
+        "tudósító",
+        "hírforrás"
       ],
       "correct": 0,
       "teaches": [
@@ -87,27 +91,23 @@
       "category": "grammar",
       "tiles": [
         "A",
-        "hírek",
+        "híradás",
         "szerint",
-        "holnap",
-        "jelentős",
-        "havazás",
-        "várható",
         "a",
-        "hegyekben."
+        "miniszter",
+        "holnap",
+        "érkezik."
       ],
       "solution": [
         "A",
-        "hírek",
+        "híradás",
         "szerint",
-        "holnap",
-        "jelentős",
-        "havazás",
-        "várható",
         "a",
-        "hegyekben."
+        "miniszter",
+        "holnap",
+        "érkezik."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "According to the news report, the minister arrives tomorrow.",
       "teaches": [
         "evidentials"
       ]
@@ -115,22 +115,28 @@
     {
       "id": "b1-13-01.ex07",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Miért fontos a hírforrás megbízhatósága a híradásban?",
+      "category": "grammar",
+      "question": "Anna tells Meg: \"Ma érkezem.\" Meg tells Károly what Anna said. Which sentence is right?",
       "options": [
-        "Mert a hiteles híradás csak pontos és ellenőrzött adatokra épülhet.",
-        "Mert a tévében csak rövid filmeket szabad vetíteni.",
-        "Mert a nyomdákban nincs elég fekete festék."
+        "Anna azt mondta, hogy ma érkezik.",
+        "Anna azt mondta, hogy ma érkezem.",
+        "Anna azt mondta, hogy ma érkezett."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "reported-speech-statements"
+      ],
+      "distractor_skills": {
+        "2": "past-tense-indefinite"
+      }
     },
     {
       "id": "b1-13-01.ex08",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A lap külföldi ____ részletesen beszámolt a választás eredményéről.",
-      "hint": "its correspondent",
-      "english": "The newspaper's foreign correspondent reported in detail on the results of the election.",
+      "sentence": "A tévé ____ azt mondta, hogy a miniszter hamarosan megérkezik.",
+      "hint": "its reporter",
+      "english": "The TV station's reporter said that the minister will arrive soon.",
       "answer": "tudósítója",
       "teaches": [
         "3rd-person-possessive"

@@ -83,7 +83,7 @@
       "id": "b1-12-consolidation-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik mediopasszív ige fejezi ki, hogy a hús jól megpuhult a főzésben?",
+      "question": "Which verb means that the meat became soft?",
       "options": [
         "megpuhul",
         "megkeményedik",
@@ -98,22 +98,26 @@
       "id": "b1-12-consolidation-5",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik időhatározó köti össze az egymást követő lépéseket: „Először pirítsuk meg a hagymát, ______ adjuk hozzá a húst.”?",
+      "question": "Which word fits? „Először főzzük meg a rizst, ______ adjuk hozzá a zöldséget.”",
       "options": [
         "majd",
-        "soha",
-        "alatt"
+        "mert",
+        "hogy"
       ],
       "correct": 0,
       "teaches": [
         "sequencing-elobb-aztan-utana-vegul"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "mert-because",
+        "2": "hogy-clauses"
+      }
     },
     {
       "id": "b1-12-consolidation-6",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Hogyan kérjük el a számlát a legudvariasabban?",
+      "question": "How do you ask for the bill politely?",
       "options": [
         "A számlát kérnénk szépen!",
         "Fizetni kell azonnal!",
@@ -128,10 +132,10 @@
       "id": "b1-12-consolidation-7",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A tészta a sütőben szép pirosra ____.",
-      "hint": "bakes",
-      "english": "The pastry bakes to a nice golden brown in the oven.",
-      "answer": "sül",
+      "sentence": "A hús két óra alatt ____.",
+      "hint": "gets soft",
+      "english": "The meat becomes soft in two hours.",
+      "answer": "megpuhul",
       "teaches": [
         "b1-food-lifestyle-vocab"
       ]
@@ -140,10 +144,10 @@
       "id": "b1-12-consolidation-8",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A magyar konyha gazdag fűszerezésű ____ világszerte ismert.",
-      "hint": "flavor profile",
-      "english": "The richly seasoned flavor profile of Hungarian cuisine is known worldwide.",
-      "answer": "ízvilága",
+      "sentence": "A gulyásnak nagyon egyszerű a ____.",
+      "hint": "its recipe",
+      "english": "The recipe for goulash is very simple.",
+      "answer": "receptje",
       "teaches": [
         "3rd-person-possessive"
       ]
@@ -164,35 +168,42 @@
       "id": "b1-12-consolidation-10",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Melyik író örökítette meg a magyar vendéglők hangulatát és a húsleves velős csonttal való rituáléját?",
+      "question": "Which author wrote the reading in this unit?",
       "options": [
-        "Krúdy Gyula a Szindbád-történetekben.",
-        "Gárdonyi Géza az Egri csillagokban.",
-        "Karinthy Frigyes a Tanár úr kéremben."
+        "Krúdy Gyula: Szindbád",
+        "Móricz Zsigmond: Légy jó mindhalálig",
+        "Kosztolányi Dezső: Édes Anna"
       ],
       "correct": 0
     },
     {
       "id": "b1-12-consolidation-11",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Milyen hagyományos magyar ételek ismertek hungarikumként?",
+      "category": "grammar",
+      "question": "Which sentence is right?",
       "options": [
-        "A gulyásleves és a csabai kolbász.",
-        "A bécsi szelet és a spagetti.",
-        "A hot dog és a sült krumpli."
+        "A gulyás igazi magyar hungarikum.",
+        "A gulyás igazi magyar hungarikumot.",
+        "A gulyás igazi magyar hungarikumban."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "van-zero-copula"
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b1-12-consolidation-12",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit fejez ki a vendéglátásban a borravaló adása?",
+      "question": "Why do you give *borravaló*?",
       "options": [
-        "A figyelmes, udvarias felszolgálásért nyújtott önkéntes elismerést.",
-        "Egy kötelező állami adófajtát.",
-        "A rossz kiszolgálás miatti panaszt."
+        "to say thank you for good service",
+        "to pay the bill for the food",
+        "to ask for a table"
       ],
       "correct": 0,
       "teaches": [

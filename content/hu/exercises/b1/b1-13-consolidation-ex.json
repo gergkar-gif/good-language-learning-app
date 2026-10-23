@@ -31,25 +31,29 @@
       "id": "b1-13-consolidation.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat alkalmaz helyes közvetett beszédet magyarul?",
+      "question": "A spokesperson says: \"A hír igaz.\" Which sentence reports this?",
       "options": [
-        "A riporter azt mondta, hogy a tárgyalások ma fejeződnek be.",
-        "A riporter azt mondta, hogy a tárgyalások ma fejeződnének be volt.",
-        "A riporter mondta azt, hogy befejeződnek lennének ma a tárgyalások."
+        "A szóvivő azt mondta, hogy a hír igaz.",
+        "A szóvivő azt mondta, hogy a hír igaz volt.",
+        "A szóvivő azt mondta, mert a hír igaz."
       ],
       "correct": 0,
       "teaches": [
         "reported-speech-statements"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "van-past",
+        "2": "mert-because"
+      }
     },
     {
       "id": "b1-13-consolidation.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A tudatos olvasó mindig végez alapos ____, mielőtt megoszt egy hírt az interneten.",
-      "hint": "fact-checking",
-      "english": "The conscious reader always conducts thorough fact-checking before sharing a news item on the internet.",
-      "answer": "tényellenőrzést",
+      "sentence": "Én mindig ellenőrzöm a ____.",
+      "hint": "news source",
+      "english": "I always check the news source.",
+      "answer": "hírforrást",
       "teaches": [
         "how-the-accusative-t-works"
       ]
@@ -58,12 +62,12 @@
       "id": "b1-13-consolidation.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Mindent ____, a kritikus gondolkodás elengedhetetlen az információs társadalomban.",
-      "hint": "all things considered",
-      "english": "All things considered, critical thinking is essential in the information society.",
-      "answer": "összevetve",
+      "sentence": "Károly azt kérdezte, hogy ____ a hírforrás.",
+      "hint": "good",
+      "english": "Károly asked whether the news source is good.",
+      "answer": "jó-e",
       "teaches": [
-        "additive-connectors"
+        "indirect-questions"
       ]
     },
     {
@@ -72,31 +76,23 @@
       "category": "grammar",
       "tiles": [
         "A",
-        "hivatalos",
-        "közlemény",
+        "szóvivő",
         "szerint",
         "a",
-        "kár",
-        "sokkal",
-        "kisebb",
-        "volt",
-        "a",
-        "vártnál."
+        "hír",
+        "nem",
+        "igaz."
       ],
       "solution": [
         "A",
-        "hivatalos",
-        "közlemény",
+        "szóvivő",
         "szerint",
         "a",
-        "kár",
-        "sokkal",
-        "kisebb",
-        "volt",
-        "a",
-        "vártnál."
+        "hír",
+        "nem",
+        "igaz."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "According to the spokesperson, the news is not true.",
       "teaches": [
         "evidentials"
       ]
@@ -105,11 +101,11 @@
       "id": "b1-13-consolidation.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik szó jelenti a híradás összefoglaló fő üzenetét?",
+      "question": "Which word means ‘a false news story’?",
       "options": [
-        "összegzés",
-        "nyomtatás",
-        "helyesírás"
+        "álhír",
+        "híradás",
+        "főcím"
       ],
       "correct": 0,
       "teaches": [
@@ -120,10 +116,10 @@
       "id": "b1-13-consolidation.ex07",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A lap címoldalán feltűnő nagy ____ azonnal magára vonta az olvasók figyelmét.",
-      "hint": "headline",
-      "english": "The large headline appearing on the front page of the paper immediately drew the readers' attention.",
-      "answer": "főcím",
+      "sentence": "A ____ a helyszínről küld híreket.",
+      "hint": "reporter",
+      "english": "The reporter sends news from the scene.",
+      "answer": "tudósító",
       "teaches": [
         "b1-media-information-vocab"
       ]
@@ -131,14 +127,17 @@
     {
       "id": "b1-13-consolidation.ex08",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Miért érdemes egy hírt több forrásból is ellenőrizni?",
+      "category": "grammar",
+      "question": "Meg did not see the accident, but people say it was big. Which sentence fits?",
       "options": [
-        "Mert így könnyebb észrevenni a hamis vagy egyoldalú információt.",
-        "Mert minden forrás szó szerint ugyanazt írja, ezért teljesen mindegy.",
-        "Mert a hírek ellenőrzése tilos, és büntetést von maga után."
+        "Állítólag nagy baleset volt.",
+        "Biztos, hogy nagy baleset volt.",
+        "Nagy baleset volt, mert láttam."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "evidentials"
+      ]
     }
   ]
 }

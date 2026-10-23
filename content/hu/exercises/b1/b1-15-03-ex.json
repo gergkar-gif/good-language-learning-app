@@ -31,11 +31,11 @@
       "id": "b1-15-03.ex02",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik kifejezés dicséri a színészi játékot egy kritikában?",
+      "question": "Which phrase praises an actor’s performance?",
       "options": [
-        "hiteles és megrázó alakítás",
-        "unalmas és zavaros cselekmény",
-        "rosszul megvilágított díszlet"
+        "hiteles alakítás",
+        "fordulatos cselekmény",
+        "kiváló rendezés"
       ],
       "correct": 0,
       "teaches": [
@@ -46,9 +46,9 @@
       "id": "b1-15-03.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A film fiatal ____ nemzetközi díjat nyert a cannes-i fesztiválon.",
+      "sentence": "A film ____ ma este a moziban lesz.",
       "hint": "its director",
-      "english": "The film's young director won an international award at the Cannes festival.",
+      "english": "The director of the film will be at the cinema this evening.",
       "answer": "rendezője",
       "teaches": [
         "3rd-person-possessive"
@@ -57,24 +57,28 @@
     {
       "id": "b1-15-03.ex04",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Bár a forgatókönyv kissé hosszú volt, a zene és a látványvilág ____ lenyűgöző maradt.",
-      "hint": "completely",
-      "english": "Although the script was a bit long, the music and visual world remained completely stunning.",
-      "answer": "teljesen",
+      "category": "grammar",
+      "sentence": "____ a film hosszú volt, mindenkinek tetszett.",
+      "hint": "although",
+      "english": "Although the film was long, everyone liked it.",
       "teaches": [
-        "b1-culture-entertainment-vocab"
+        "concessive-annak-ellenere"
+      ],
+      "answers": [
+        "Bár",
+        "Noha",
+        "Habár"
       ]
     },
     {
       "id": "b1-15-03.ex05",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Hogyan nevezzük a darabban játszó színészek együttesét?",
+      "question": "Which word means ‘all the actors who play in a film or a play’?",
       "options": [
         "szereposztás",
-        "zenekari árok",
-        "ruhatár"
+        "rendező",
+        "főszereplő"
       ],
       "correct": 0,
       "teaches": [
@@ -87,33 +91,19 @@
       "category": "vocabulary",
       "tiles": [
         "A",
-        "szigorú",
         "filmkritika",
         "kiemelte",
         "a",
-        "dráma",
-        "rendkívüli",
-        "erejét",
-        "és",
-        "a",
-        "főszereplő",
-        "tehetségét."
+        "főszereplőt."
       ],
       "solution": [
         "A",
-        "szigorú",
         "filmkritika",
         "kiemelte",
         "a",
-        "dráma",
-        "rendkívüli",
-        "erejét",
-        "és",
-        "a",
-        "főszereplő",
-        "tehetségét."
+        "főszereplőt."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "The film review highlighted the lead actor.",
       "teaches": [
         "b1-culture-entertainment-vocab"
       ]
@@ -122,9 +112,9 @@
       "id": "b1-15-03.ex07",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A történelmi dráma tehetséges ____ könnyekig meghatotta a nézőket.",
+      "sentence": "A film ____ nagyon jól játszik.",
       "hint": "its lead actor",
-      "english": "The historical drama's talented lead actor moved the audience to tears.",
+      "english": "The lead actor of the film acts very well.",
       "answer": "főszereplője",
       "teaches": [
         "3rd-person-possessive"
@@ -133,14 +123,21 @@
     {
       "id": "b1-15-03.ex08",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Mi a jó kritikus legfőbb feladata?",
+      "category": "grammar",
+      "question": "Which sentence means ‘Although the music was good, the story was boring’?",
       "options": [
-        "Hogy tárgyilagosan és szakmai érvekkel mutassa be az alkotás értékeit és hiányosságait.",
-        "Hogy elárulja a bűnügyi film összes poénját az első mondatban.",
-        "Hogy elmondja, mennyi pattogatott kukoricát evett a moziban."
+        "Bár a zene jó volt, a történet unalmas volt.",
+        "Mert a zene jó volt, a történet unalmas volt.",
+        "Hogy a zene jó volt, a történet unalmas volt."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "concessive-annak-ellenere"
+      ],
+      "distractor_skills": {
+        "1": "mert-because",
+        "2": "hogy-clauses"
+      }
     }
   ]
 }

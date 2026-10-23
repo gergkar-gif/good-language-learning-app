@@ -57,11 +57,11 @@
       "id": "b1-12-02-controlled-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik határozószó fejezi ki az ismétlődő napi rutint?",
+      "question": "Which word means 'every day'?",
       "options": [
         "naponta",
         "egyszer",
-        "mindjárt"
+        "hétvégén"
       ],
       "correct": 0,
       "teaches": [
@@ -72,7 +72,7 @@
       "id": "b1-12-02-controlled-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Hogyan mondjuk magyarul: 'before eating / before meals'?",
+      "question": "Which phrase means 'before meals'?",
       "options": [
         "étkezés előtt",
         "étkezés után",
@@ -86,34 +86,42 @@
     {
       "id": "b1-12-02-controlled-3",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Miért fontos a rostban gazdag táplálkozás?",
+      "category": "vocabulary",
+      "question": "What does *rost* mean?",
       "options": [
-        "Mert támogatja az emésztést és a kiegyensúlyozott bélflórát.",
-        "Mert azonnal elaltatja az embert.",
-        "Mert helyettesíti a vizet."
+        "fibre, found in fruit, vegetables and bread",
+        "a vitamin that you take as a small pill",
+        "a diet that helps you to lose weight"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-food-lifestyle-vocab"
+      ]
     },
     {
       "id": "b1-12-02-controlled-4",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Melyik állítás felel meg a modern egészségtudatos életmódnak?",
+      "category": "grammar",
+      "question": "Which sentence is right?",
       "options": [
-        "A túlzott cukor és zsiradék kerülése, valamint a bőséges zöldségfogyasztás.",
-        "Napi tíz liter energiaital fogyasztása.",
-        "Minden friss zöldség mellőzése."
+        "Naponta kétszer eszem gyümölcsöt.",
+        "Naponta kétszer eszek gyümölcsöt.",
+        "Naponta kétszer eszem gyümölcs."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "ik-verbs-dolgozom-not-dolgozok"
+      ],
+      "distractor_skills": {
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b1-12-02-practice-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A téli hónapokban citrusfélékkel és savanyú káposztával biztosítható a megfelelő ____.",
-      "hint": "vitamin intake",
-      "english": "In the winter months, adequate vitamin intake can be ensured with citrus fruits and sauerkraut.",
+      "sentence": "Sok zöldséget eszem, ezért jó a ____.",
+      "english": "I eat a lot of vegetables, so my vitamin intake is good.",
       "answer": "vitaminbevitel",
       "teaches": [
         "b1-food-lifestyle-vocab"
@@ -123,9 +131,9 @@
       "id": "b1-12-02-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A teljes kiőrlésű gabonák sok értékes élelmi ____ tartalmaznak.",
-      "hint": "rost, accusative",
-      "english": "Whole grains contain a lot of valuable dietary fiber.",
+      "sentence": "Kevés ____ eszem, ezért több zöldség kell.",
+      "hint": "fibre",
+      "english": "I eat little fibre, so I need more vegetables.",
       "answer": "rostot",
       "teaches": [
         "how-the-accusative-t-works"
@@ -135,11 +143,11 @@
       "id": "b1-12-02-practice-3",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent a 'fogyókúra' kifejezés?",
+      "question": "What is a *fogyókúra*?",
       "options": [
-        "Tudatosan szabályozott étrend a testsúly csökkentése érdekében.",
-        "Egy gyorséttermi menüsor rendelése.",
-        "Az ételek elégetése a tűzhelyen."
+        "a diet to lose weight",
+        "a lunch in a restaurant",
+        "a visit to the doctor"
       ],
       "correct": 0,
       "teaches": [
@@ -149,24 +157,27 @@
     {
       "id": "b1-12-02-practice-4",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Milyen tényezők befolyásolják egy ember táplálkozási szokásait?",
+      "category": "vocabulary",
+      "question": "Which sentence is about a *táplálkozási szokás*?",
       "options": [
-        "A családi hagyományok, a kultúra, az életkor, a fizikai aktivitás és az egészségi állapot.",
-        "A személyi igazolvány száma és a mobiltelefon képernyőjének mérete.",
-        "A lakóhely postai irányítószáma és a ház építésének pontos éve."
+        "Reggelire mindig teát iszom.",
+        "A busz mindennap hétkor indul innen.",
+        "A szomszéd új autót vett."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-food-lifestyle-vocab"
+      ]
     },
     {
       "id": "b1-12-02-dialogue-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Miért változtattál a táplálkozásodon?\n— Mert a régi ______ sok fáradtságot és emésztési panaszokat okoztak.",
+      "question": "— Miért változtattál az életmódodon?\n— Mert a régi ______ nem voltak egészségesek.",
       "options": [
         "szokásaim",
-        "receptjeim",
-        "pincéreim"
+        "pincéreim",
+        "szomszédaim"
       ],
       "correct": 0,
       "teaches": [
@@ -177,11 +188,11 @@
       "id": "b1-12-02-dialogue-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Nem túl nehéz ez a szigorú ______?\n— Nem, ha sok zöldséget és elegendő fehérjét eszem mellette.",
+      "question": "— Nehéz ez a ______?\n— Nem, sok zöldséget eszem, és nem vagyok éhes.",
       "options": [
         "fogyókúra",
-        "infrastruktúra",
-        "kancellária"
+        "lakosság",
+        "település"
       ],
       "correct": 0,
       "teaches": [
@@ -192,9 +203,9 @@
       "id": "b1-12-02-writing-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A dietetikus szerint érdemes naponta legalább két liter vizet inni ____.",
+      "sentence": "Érdemes ____ inni vizet.",
       "hint": "regularly",
-      "english": "According to the dietitian, it is worth drinking at least two liters of water regularly every day.",
+      "english": "It is worth drinking water regularly.",
       "answer": "rendszeresen",
       "stage": "production",
       "teaches": [
@@ -205,9 +216,9 @@
       "id": "b1-12-02-writing-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A reggeli zabkása gazdag élelmi ____ forrása.",
-      "hint": "fiber",
-      "english": "Morning oatmeal is a rich source of dietary fiber.",
+      "sentence": "A zöldségben és a gyümölcsben sok ____ van.",
+      "hint": "fibre",
+      "english": "There is a lot of fibre in vegetables and fruit.",
       "answer": "rost",
       "stage": "production",
       "teaches": [
@@ -237,7 +248,7 @@
       "options": [
         "naponta kétszer",
         "naponta kettő",
-        "napi kettőkor"
+        "naponta kétszeres"
       ],
       "correct": 0,
       "teaches": [

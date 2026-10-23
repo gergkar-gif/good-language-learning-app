@@ -83,7 +83,7 @@
       "id": "b1-10-consolidation-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Hogyan alakul a 'szép' melléknév translativus alakja a mondatban: „A virágok ______ tették a teraszt.”?",
+      "question": "Which form fits? „A virágok ______ teszik a szobát.” (They make the room beautiful.)",
       "options": [
         "széppé",
         "szépvé",
@@ -98,22 +98,25 @@
       "id": "b1-10-consolidation-5",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik vonatkozó névmás utal helyesen az élettelen tárgyra?",
+      "question": "Which sentence is right?",
       "options": [
-        "Kibéreltük azt a lakást, amely a belső kertre néz.",
-        "Kibéreltük azt a lakást, aki a belső kertre néz.",
-        "Kibéreltük azt a lakást, amivel a belső kertre néz."
+        "A lakás, amely a kertre néz, csendes.",
+        "A lakás, aki a kertre néz, csendes.",
+        "A lakás, ahol a kertre néz, csendes."
       ],
       "correct": 0,
       "teaches": [
         "relative-clauses-aki-ami-amely"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "ahol-amikor"
+      }
     },
     {
       "id": "b1-10-consolidation-6",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik névutós kifejezés helyes: 'next to it'?",
+      "question": "Which form means 'next to it'?",
       "options": [
         "mellette",
         "mögötte",
@@ -128,10 +131,10 @@
       "id": "b1-10-consolidation-7",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A felújítás után a régi lakás modern otthon____ alakult át.",
-      "hint": "into - translative",
-      "english": "After the renovation, the old apartment was transformed into a modern home.",
-      "answer": "ná",
+      "sentence": "A felújítás után a régi lakás modern ____ vált.",
+      "hint": "home",
+      "english": "After the renovation the old flat became a modern home.",
+      "answer": "otthonná",
       "teaches": [
         "translative-morphology"
       ]
@@ -140,9 +143,9 @@
       "id": "b1-10-consolidation-8",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A bérlő szerződéskötéskor két havi ____ fizet a főbérlőnek.",
+      "sentence": "A főbérlő két havi ____ kér a lakásért.",
       "hint": "deposit",
-      "english": "Upon signing the contract, the tenant pays two months' deposit to the landlord.",
+      "english": "The landlord asks for a two-month deposit for the flat.",
       "answer": "kauciót",
       "teaches": [
         "how-the-accusative-t-works"
@@ -152,9 +155,8 @@
       "id": "b1-10-consolidation-9",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A téli fűtésszámlát a korszerű fal____ és a modern ablakok csökkentik.",
-      "hint": "insulation",
-      "english": "Modern wall insulation and modern windows reduce the winter heating bill.",
+      "sentence": "Télen a lakásban meleg van, mert jó a ____.",
+      "english": "In winter it is warm in the flat, because the insulation is good.",
       "answer": "szigetelés",
       "teaches": [
         "b1-home-housing-vocab"
@@ -163,38 +165,44 @@
     {
       "id": "b1-10-consolidation-10",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Mit kell tisztázni a bérleti szerződésben a beköltözés előtt?",
+      "category": "vocabulary",
+      "question": "Which sentence is about the *kaució*?",
       "options": [
-        "A havi bérleti díjat, a kaució összegét, a rezsi fizetésének módját és a felmondási időt.",
-        "A lakásvásárlási hitel havi kamatait és az ingatlan öröklési feltételeit.",
-        "A szomszédok pontos munkahelyét és a közös képviselő magánéleti adatait."
+        "Két havi kauciót fizetünk a főbérlőnek.",
+        "Havonta fizetjük a gázszámlát és az áramszámlát.",
+        "A főbérlő és mi aláírjuk a bérleti szerződést."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-home-housing-vocab"
+      ]
     },
     {
       "id": "b1-10-consolidation-11",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Melyik klasszikus magyar regény mutatja be a krisztinavárosi polgári lakás világát és Édes Anna történetét?",
+      "question": "Which book is the reading in this unit from?",
       "options": [
-        "Kosztolányi Dezső: Édes Anna.",
-        "Gárdonyi Géza: Egri csillagok.",
-        "Móricz Zsigmond: Légy jó mindhalálig."
+        "Kosztolányi Dezső: Édes Anna",
+        "Jókai Mór: Az aranyember",
+        "Petőfi Sándor: János vitéz"
       ],
       "correct": 0
     },
     {
       "id": "b1-10-consolidation-12",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Mit fejez ki a mondat: „Számomra a legfontosabb szempont egy csendes, zöld környék.”?",
+      "category": "vocabulary",
+      "question": "Which sentence says that a quiet area matters most to the speaker?",
       "options": [
-        "A beszélő számára a lakás helyszíne és nyugalma a legfőbb döntési tényező.",
-        "A beszélő egy forgalmas belvárosi autópálya mellett akar lakni.",
-        "A beszélő nem akar lakást vásárolni vagy bérelni."
+        "Nekem az a fontos, hogy a környék csendes legyen.",
+        "Nekem az a fontos, hogy a környék forgalmas legyen.",
+        "Nekem az a fontos, hogy a környék zajos legyen."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-home-housing-vocab"
+      ]
     }
   ]
 }

@@ -367,6 +367,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-22 | **HU B1 pilot**: Unit 1 longer-stories (language) ∥ Unit 2 hungary-today-land-symbols (history, facts block) | mechanical pre-pass (1 Sonnet fixer, 25 items) then 1 unit per reader | fixer 83k, 1.5 | A 257k, 13.6; B 326k, 22.4 | 154 proposed (48 / 106), 3 rejected (new tells, option language; rewritten by Claude), Claude added 4 (vármegye official since 2023, double-cross tradition) | ~257k language / ~326k history per unit at **one unit per reader** (fixed per-reader overhead not spread); pre-pass: 24 of 25 applied, then readers rewrote most of them; Unit 2 had 256 unmet-word hits before the pre-pass (6 after the read), Unit 1 37 → 20; walk 12/12 |
 | 10-22 | HU B1 3–6 (core 3, 5; citizenship 4, 6) | paired read, **2 units/reader** (one core + one citizenship each), facts block, vocabulary rule (citizenship keeps words) | | A 532k, 43.7; B 554k, 39.7 | 344 proposed (71 / 113 / 51 / 109), 0 rejected; Claude changed 2 (Árpád-ház *1301-ig*, an apposition) | **~272k reader tokens/unit** (no cheaper than the one-unit pilot's 257k / 326k): the cost follows the defects (~86 fixes/unit, ×1.7 of A2), not the per-reader overhead; both readers re-tested their fixes in scratch copies (111 and 118 tool calls; now forbidden in the template); 10 copied question sets rewritten; facts: Aug 20 state holiday and the Pozsony 907 name confirmed; walk 24/24 |
 | 10-22 | HU B1 core 7, 9, 11, 13, 15, 17 | paired read, **3 core units/reader**, no-self-testing rule | | A ≥470k, B ≥427k (resumed notices only: both stopped at a Sonnet session limit mid-batch) | 386 proposed (47 / 58 / 51 / 81 / 78 / 71), 6 rejected by the checker (rewritten by Claude), Claude dropped 1 (*elmondott volna* in a story) and restored 1 it had wrongly reversed (Fábián's *te*); 51 Unit 13 fixes first refused by a missing final newline (164 files fixed, `apply_replacements.py` tolerant) | cost/unit not measurable (≥ ~150k from the resumed parts alone); ~64 fixes/unit (×0.75 of 3–6: core units have fewer defects than citizenship ones); reader B ran only the named commands; walk 36/36 |
+| 10-23 | HU B1 core 19, 21, 23, 25, 27, 29 | paired read, 3 core units/reader | | A 581k, 39.2; B 430k, 38.9 | 662 proposed (159 / 155 / 151 / 63 / 69 / 65), 7 rejected (5 checker false positives on accented names in English options, 1 `answer`/`answers`, 1 tell; rewritten by Claude), Claude changed 2 story/screen lines | **~194k/unit (A: Units 19–23 were rewritten almost whole, ~155 fixes each) and ~143k/unit (B: Units 25–29, half-size lessons)**; 18 lessons had no checklist, so no `canDo` to copy: `add_missing_checklists.py` (goal lines; consolidations from the challenge drafts); walk 36/36 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1117,3 +1118,22 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
 - **For the user:** `egyreszt-masreszt` has `taught_in` a2-21-b-gr, which
   teaches only *nem csak … hanem … is*; *egyrészt … másrészt* is first
   taught on b1-04-03-a-gr. The skill list is frozen.
+
+### 2026-10-23: HU B1 core units 19–29
+
+- **Cost:** 581k (Units 19, 21, 23) and 430k (25, 27, 29). Reader A's
+  units were trade and contract Hungarian far above B1 and got ~155
+  fixes each; Units 25–29 are half-size lessons (one exercise group of 8
+  per lesson, 48 exercises a unit against ~93), which is why B was cheaper.
+- **Structural gap found:** from B1 Unit 25 on, 51 lesson groups (core
+  and citizenship) have no "Can you do this?" checklist and no review
+  step, so a challenge can't copy its `canDo`. `add_missing_checklists.py`
+  builds them from the lesson's goal lines and, for consolidations, which
+  have no goals, from the reader's challenge draft (`--from-challenges`).
+  Run it on each later batch's units before `add_challenges.py`.
+- **Checker false positive, seen 5 times:** `option-language` reads an
+  English option with an accented name (*Óbuda*, *Pósalaky*, *café*) as
+  Hungarian. Rewritten by hand this time; script it (ignore capitalised
+  words when classifying an option) if it recurs in the next batch.
+- **Template:** reader B wrote its own lemma-lookup tool in the
+  scratchpad; the template now says to use `unmet-words.js` only.

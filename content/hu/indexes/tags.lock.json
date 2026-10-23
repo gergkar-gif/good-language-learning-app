@@ -437,9 +437,9 @@
    "reason": "HU B1 read-through 2026-10-06"
   },
   "B1/cities-communities": {
-   "locked": "2026-10-07",
+   "locked": "2026-10-23",
    "exercises": 94,
-   "reason": "new exercises for thin skills (ROADMAP 144(4))"
+   "reason": "HU B1 core batch 19-29 (ROADMAP 153)"
   },
   "B1/complex-opinions": {
    "locked": "2026-10-06",
@@ -457,9 +457,9 @@
    "reason": "HU B1 read-through 2026-10-06"
   },
   "B1/culture-entertainment": {
-   "locked": "2026-10-05",
+   "locked": "2026-10-23",
    "exercises": 48,
-   "reason": "HU B1 read-through 2026-10-05"
+   "reason": "HU B1 core batch 19-29 (ROADMAP 153)"
   },
   "B1/culture-language-society": {
    "locked": "2026-10-07",
@@ -487,9 +487,9 @@
    "reason": "HU B1 read batch 3-6 (ROADMAP 153)"
   },
   "B1/food-lifestyle": {
-   "locked": "2026-10-07",
+   "locked": "2026-10-23",
    "exercises": 93,
-   "reason": "retagged onto new/re-levelled gap skills (ROADMAP 144(5))"
+   "reason": "HU B1 core batch 19-29 (ROADMAP 153)"
   },
   "B1/fundamental-law": {
    "locked": "2026-10-06",
@@ -517,9 +517,9 @@
    "reason": "HU B1 core batch 7-17 (ROADMAP 153)"
   },
   "B1/home-housing": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-23",
    "exercises": 93,
-   "reason": "history and civics fact questions retagged as untagged reading (ROADMAP 144(7))"
+   "reason": "HU B1 core batch 19-29 (ROADMAP 153)"
   },
   "B1/honfoglalas": {
    "locked": "2026-10-22",
@@ -602,9 +602,9 @@
    "reason": "history and civics fact questions retagged as untagged reading (ROADMAP 144(7))"
   },
   "B1/media-information": {
-   "locked": "2026-10-05",
+   "locked": "2026-10-23",
    "exercises": 48,
-   "reason": "HU B1 read-through 2026-10-05"
+   "reason": "HU B1 core batch 19-29 (ROADMAP 153)"
   },
   "B1/migration-identity": {
    "locked": "2026-10-23",
@@ -727,9 +727,9 @@
    "reason": "new exercises for thin skills (ROADMAP 144(4))"
   },
   "B1/technology-communication": {
-   "locked": "2026-10-05",
+   "locked": "2026-10-23",
    "exercises": 48,
-   "reason": "HU B1 read-through 2026-10-05"
+   "reason": "HU B1 core batch 19-29 (ROADMAP 153)"
   },
   "B1/tenancy-contracts": {
    "locked": "2026-10-06",
@@ -60345,7 +60345,9 @@
    "teaches": [
     "relative-clauses-aki-ami-amely"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "ahol-amikor"
+   }
   },
   "b1-10-02-check-2": {
    "teaches": [
@@ -60355,21 +60357,27 @@
   },
   "b1-10-02-controlled-1": {
    "teaches": [
-    "vonatkozoi-nevmas-esetei"
+    "relative-clauses-aki-ami-amely"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "ahol-amikor"
+   }
   },
   "b1-10-02-controlled-2": {
    "teaches": [
     "ahol-amikor"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "relative-clauses-aki-ami-amely"
+   }
   },
   "b1-10-02-controlled-3": {
    "teaches": [
     "relative-clauses-aki-ami-amely"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "ahol-amikor"
+   }
   },
   "b1-10-02-controlled-4": {
    "teaches": [
@@ -60379,7 +60387,7 @@
   },
   "b1-10-02-dialogue-1": {
    "teaches": [
-    "b1-home-housing-vocab"
+    "relative-clauses-aki-ami-amely"
    ],
    "distractor_skills": {}
   },
@@ -60403,7 +60411,7 @@
   },
   "b1-10-02-practice-1": {
    "teaches": [
-    "vonatkozoi-nevmas-esetei"
+    "ahol-amikor"
    ],
    "distractor_skills": {}
   },
@@ -60420,7 +60428,9 @@
    "distractor_skills": {}
   },
   "b1-10-02-practice-4": {
-   "teaches": [],
+   "teaches": [
+    "b1-home-housing-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-10-02-writing-1": {
@@ -60431,7 +60441,7 @@
   },
   "b1-10-02-writing-2": {
    "teaches": [
-    "vonatkozoi-nevmas-esetei"
+    "relative-clauses-aki-ami-amely"
    ],
    "distractor_skills": {}
   },
@@ -60443,7 +60453,7 @@
   },
   "b1-10-03-check-2": {
    "teaches": [
-    "b1-home-housing-vocab"
+    "formal-obligation"
    ],
    "distractor_skills": {}
   },
@@ -60455,15 +60465,14 @@
   },
   "b1-10-03-controlled-2": {
    "teaches": [
-    "b1-home-housing-vocab"
+    "formal-obligation"
    ],
-   "distractor_skills": {
-    "1": "causal-postpositions",
-    "2": "concessive-postpositions"
-   }
+   "distractor_skills": {}
   },
   "b1-10-03-controlled-3": {
-   "teaches": [],
+   "teaches": [
+    "b1-home-housing-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-10-03-controlled-4": {
@@ -60528,7 +60537,7 @@
   },
   "b1-10-03-writing-2": {
    "teaches": [
-    "b1-home-housing-vocab"
+    "formal-obligation"
    ],
    "distractor_skills": {}
   },
@@ -60570,7 +60579,7 @@
   },
   "b1-10-04-dialogue-1": {
    "teaches": [
-    "b1-home-housing-vocab"
+    "inflected-postpositions"
    ],
    "distractor_skills": {}
   },
@@ -60632,7 +60641,9 @@
    "teaches": [
     "hogy-jon-jen"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "building-the-infinitive-the-suffix-ni"
+   }
   },
   "b1-10-05-controlled-2": {
    "teaches": [
@@ -60695,7 +60706,9 @@
    "distractor_skills": {}
   },
   "b1-10-05-practice-4": {
-   "teaches": [],
+   "teaches": [
+    "b1-home-housing-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-10-05-reading-1": {
@@ -60729,7 +60742,9 @@
    "distractor_skills": {}
   },
   "b1-10-consolidation-10": {
-   "teaches": [],
+   "teaches": [
+    "b1-home-housing-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-10-consolidation-11": {
@@ -60737,7 +60752,9 @@
    "distractor_skills": {}
   },
   "b1-10-consolidation-12": {
-   "teaches": [],
+   "teaches": [
+    "b1-home-housing-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-10-consolidation-2": {
@@ -60762,7 +60779,9 @@
    "teaches": [
     "relative-clauses-aki-ami-amely"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "ahol-amikor"
+   }
   },
   "b1-10-consolidation-6": {
    "teaches": [
@@ -60796,7 +60815,7 @@
   },
   "b1-11-01-check-2": {
    "teaches": [
-    "relative-clauses-aki-ami-amely"
+    "vonatkozoi-nevmas-esetei"
    ],
    "distractor_skills": {}
   },
@@ -60816,7 +60835,9 @@
    "teaches": [
     "relative-clauses-aki-ami-amely"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "vonatkozoi-nevmas-esetei"
+   }
   },
   "b1-11-01-controlled-4": {
    "teaches": [
@@ -60850,7 +60871,7 @@
   },
   "b1-11-01-practice-1": {
    "teaches": [
-    "relative-clauses-aki-ami-amely"
+    "vonatkozoi-nevmas-esetei"
    ],
    "distractor_skills": {}
   },
@@ -60861,7 +60882,9 @@
    "distractor_skills": {}
   },
   "b1-11-01-practice-3": {
-   "teaches": [],
+   "teaches": [
+    "b1-cities-communities-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-11-01-practice-4": {
@@ -60916,7 +60939,9 @@
    "distractor_skills": {}
   },
   "b1-11-02-controlled-4": {
-   "teaches": [],
+   "teaches": [
+    "b1-cities-communities-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-11-02-dialogue-1": {
@@ -60956,11 +60981,15 @@
    "distractor_skills": {}
   },
   "b1-11-02-practice-3": {
-   "teaches": [],
+   "teaches": [
+    "b1-cities-communities-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-11-02-practice-4": {
-   "teaches": [],
+   "teaches": [
+    "b1-cities-communities-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-11-02-practice-5": {
@@ -60998,14 +61027,17 @@
     "adversative-contrast"
    ],
    "distractor_skills": {
-    "1": "mert-because"
+    "1": "mert-because",
+    "2": "hogy-clauses"
    }
   },
   "b1-11-03-controlled-2": {
    "teaches": [
     "b1-cities-communities-vocab"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "mert-because"
+   }
   },
   "b1-11-03-controlled-3": {
    "teaches": [
@@ -61018,7 +61050,8 @@
     "adversative-contrast"
    ],
    "distractor_skills": {
-    "1": "mert-because"
+    "1": "mert-because",
+    "2": "hogy-clauses"
    }
   },
   "b1-11-03-dialogue-1": {
@@ -61058,7 +61091,9 @@
    "distractor_skills": {}
   },
   "b1-11-03-practice-3": {
-   "teaches": [],
+   "teaches": [
+    "b1-cities-communities-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-11-03-practice-4": {
@@ -61117,7 +61152,8 @@
     "kellene"
    ],
    "distractor_skills": {
-    "1": "imperative-indefinite"
+    "1": "szabad-infinitive",
+    "2": "kell-infinitive"
    }
   },
   "b1-11-04-dialogue-1": {
@@ -61157,7 +61193,9 @@
    "distractor_skills": {}
   },
   "b1-11-04-practice-3": {
-   "teaches": [],
+   "teaches": [
+    "b1-cities-communities-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-11-04-practice-4": {
@@ -61191,7 +61229,10 @@
    "teaches": [
     "verb-government-hoz-hez"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "ban-ben-in",
+    "2": "delative-rol-rel"
+   }
   },
   "b1-11-05-controlled-3": {
    "teaches": [
@@ -61216,9 +61257,11 @@
   },
   "b1-11-05-dialogue-2": {
    "teaches": [
-    "b1-cities-communities-vocab"
+    "verb-government-ban-ben"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "case-inflected-pronouns"
+   }
   },
   "b1-11-05-intro-1": {
    "teaches": [
@@ -61245,11 +61288,15 @@
    "distractor_skills": {}
   },
   "b1-11-05-practice-3": {
-   "teaches": [],
+   "teaches": [
+    "b1-cities-communities-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-11-05-practice-4": {
-   "teaches": [],
+   "teaches": [
+    "b1-cities-communities-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-11-05-reading-1": {
@@ -61293,7 +61340,9 @@
    "distractor_skills": {}
   },
   "b1-11-consolidation-12": {
-   "teaches": [],
+   "teaches": [
+    "b1-cities-communities-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-11-consolidation-2": {
@@ -61310,7 +61359,7 @@
   },
   "b1-11-consolidation-4": {
    "teaches": [
-    "relative-clauses-aki-ami-amely"
+    "vonatkozoi-nevmas-esetei"
    ],
    "distractor_skills": {}
   },
@@ -61378,7 +61427,9 @@
    "teaches": [
     "mediopassive-verbs-odik"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "definite-vs-indefinite-conjugation"
+   }
   },
   "b1-12-01-controlled-4": {
    "teaches": [
@@ -61429,7 +61480,9 @@
    "distractor_skills": {}
   },
   "b1-12-01-practice-4": {
-   "teaches": [],
+   "teaches": [
+    "b1-food-lifestyle-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-12-01-writing-1": {
@@ -61469,12 +61522,18 @@
    "distractor_skills": {}
   },
   "b1-12-02-controlled-3": {
-   "teaches": [],
+   "teaches": [
+    "b1-food-lifestyle-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-12-02-controlled-4": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "ik-verbs-dolgozom-not-dolgozok"
+   ],
+   "distractor_skills": {
+    "2": "how-the-accusative-t-works"
+   }
   },
   "b1-12-02-dialogue-1": {
    "teaches": [
@@ -61519,7 +61578,9 @@
    "distractor_skills": {}
   },
   "b1-12-02-practice-4": {
-   "teaches": [],
+   "teaches": [
+    "b1-food-lifestyle-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-12-02-writing-1": {
@@ -61562,7 +61623,9 @@
    "teaches": [
     "sequencing-elobb-aztan-utana-vegul"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "miutan-mielott"
+   }
   },
   "b1-12-03-controlled-4": {
    "teaches": [
@@ -61607,11 +61670,15 @@
    "distractor_skills": {}
   },
   "b1-12-03-practice-3": {
-   "teaches": [],
+   "teaches": [
+    "b1-food-lifestyle-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-12-03-practice-4": {
-   "teaches": [],
+   "teaches": [
+    "b1-food-lifestyle-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-12-03-writing-1": {
@@ -61651,7 +61718,9 @@
    "distractor_skills": {}
   },
   "b1-12-04-controlled-3": {
-   "teaches": [],
+   "teaches": [
+    "b1-food-lifestyle-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-12-04-controlled-4": {
@@ -61697,11 +61766,15 @@
    "distractor_skills": {}
   },
   "b1-12-04-practice-3": {
-   "teaches": [],
+   "teaches": [
+    "b1-food-lifestyle-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-12-04-practice-4": {
-   "teaches": [],
+   "teaches": [
+    "b1-food-lifestyle-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-12-04-writing-1": {
@@ -61740,7 +61813,9 @@
    }
   },
   "b1-12-05-controlled-4": {
-   "teaches": [],
+   "teaches": [
+    "b1-food-lifestyle-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-12-05-dialogue-1": {
@@ -61780,11 +61855,15 @@
    "distractor_skills": {}
   },
   "b1-12-05-practice-3": {
-   "teaches": [],
+   "teaches": [
+    "b1-food-lifestyle-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-12-05-practice-4": {
-   "teaches": [],
+   "teaches": [
+    "b1-food-lifestyle-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-12-05-reading-1": {
@@ -61822,8 +61901,13 @@
    "distractor_skills": {}
   },
   "b1-12-consolidation-11": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "van-zero-copula"
+   ],
+   "distractor_skills": {
+    "1": "how-the-accusative-t-works",
+    "2": "ban-ben-in"
+   }
   },
   "b1-12-consolidation-12": {
    "teaches": [
@@ -61853,7 +61937,10 @@
    "teaches": [
     "sequencing-elobb-aztan-utana-vegul"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "mert-because",
+    "2": "hogy-clauses"
+   }
   },
   "b1-12-consolidation-6": {
    "teaches": [
@@ -61889,7 +61976,10 @@
    "teaches": [
     "reported-speech-statements"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "past-tense-indefinite",
+    "2": "mert-because"
+   }
   },
   "b1-13-01.ex03": {
    "teaches": [
@@ -61916,8 +62006,12 @@
    "distractor_skills": {}
   },
   "b1-13-01.ex07": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "reported-speech-statements"
+   ],
+   "distractor_skills": {
+    "2": "past-tense-indefinite"
+   }
   },
   "b1-13-01.ex08": {
    "teaches": [
@@ -61935,7 +62029,9 @@
    "teaches": [
     "indirect-questions"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "past-tense-indefinite"
+   }
   },
   "b1-13-02.ex03": {
    "teaches": [
@@ -61945,7 +62041,7 @@
   },
   "b1-13-02.ex04": {
    "teaches": [
-    "verb-government-ra-re"
+    "indirect-questions"
    ],
    "distractor_skills": {}
   },
@@ -61987,7 +62083,7 @@
   },
   "b1-13-03.ex03": {
    "teaches": [
-    "verb-government-nak-nek"
+    "b1-media-information-vocab"
    ],
    "distractor_skills": {}
   },
@@ -62064,7 +62160,9 @@
    "distractor_skills": {}
   },
   "b1-13-04.ex08": {
-   "teaches": [],
+   "teaches": [
+    "miutan-mielott"
+   ],
    "distractor_skills": {}
   },
   "b1-13-05.ex01": {
@@ -62075,7 +62173,7 @@
   },
   "b1-13-05.ex02": {
    "teaches": [
-    "additive-connectors"
+    "egyreszt-masreszt"
    ],
    "distractor_skills": {}
   },
@@ -62099,7 +62197,7 @@
   },
   "b1-13-05.ex06": {
    "teaches": [
-    "additive-connectors"
+    "b1-media-information-vocab"
    ],
    "distractor_skills": {}
   },
@@ -62110,7 +62208,9 @@
    "distractor_skills": {}
   },
   "b1-13-05.ex08": {
-   "teaches": [],
+   "teaches": [
+    "b1-media-information-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-13-consolidation.ex01": {
@@ -62123,7 +62223,10 @@
    "teaches": [
     "reported-speech-statements"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "van-past",
+    "2": "mert-because"
+   }
   },
   "b1-13-consolidation.ex03": {
    "teaches": [
@@ -62133,7 +62236,7 @@
   },
   "b1-13-consolidation.ex04": {
    "teaches": [
-    "additive-connectors"
+    "indirect-questions"
    ],
    "distractor_skills": {}
   },
@@ -62156,7 +62259,9 @@
    "distractor_skills": {}
   },
   "b1-13-consolidation.ex08": {
-   "teaches": [],
+   "teaches": [
+    "evidentials"
+   ],
    "distractor_skills": {}
   },
   "b1-14-01.ex01": {
@@ -62170,7 +62275,8 @@
     "future-participle-ando"
    ],
    "distractor_skills": {
-    "1": "past-participle-adjective"
+    "1": "past-participle-adjective",
+    "2": "building-the-infinitive-the-suffix-ni"
    }
   },
   "b1-14-01.ex03": {
@@ -62204,8 +62310,13 @@
    "distractor_skills": {}
   },
   "b1-14-01.ex08": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "future-participle-ando"
+   ],
+   "distractor_skills": {
+    "1": "past-participle-adjective",
+    "2": "building-the-infinitive-the-suffix-ni"
+   }
   },
   "b1-14-02.ex01": {
    "teaches": [
@@ -62217,7 +62328,10 @@
    "teaches": [
     "on-en-on"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "ban-ben-in",
+    "2": "ra-re"
+   }
   },
   "b1-14-02.ex03": {
    "teaches": [
@@ -62250,7 +62364,9 @@
    "distractor_skills": {}
   },
   "b1-14-02.ex08": {
-   "teaches": [],
+   "teaches": [
+    "directional-preverbs"
+   ],
    "distractor_skills": {}
   },
   "b1-14-03.ex01": {
@@ -62264,7 +62380,8 @@
     "formal-purpose"
    ],
    "distractor_skills": {
-    "2": "concessive-postpositions"
+    "1": "postpositions-altal-reven",
+    "2": "temporal-postpositions"
    }
   },
   "b1-14-03.ex03": {
@@ -62298,7 +62415,9 @@
    "distractor_skills": {}
   },
   "b1-14-03.ex08": {
-   "teaches": [],
+   "teaches": [
+    "b1-technology-communication-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-14-04.ex01": {
@@ -62309,9 +62428,11 @@
   },
   "b1-14-04.ex02": {
    "teaches": [
-    "imperative-indefinite"
+    "imperative-definite"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "imperative-indefinite"
+   }
   },
   "b1-14-04.ex03": {
    "teaches": [
@@ -62344,8 +62465,13 @@
    "distractor_skills": {}
   },
   "b1-14-04.ex08": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "ha-clause"
+   ],
+   "distractor_skills": {
+    "1": "mert-because",
+    "2": "hogy-clauses"
+   }
   },
   "b1-14-05.ex01": {
    "teaches": [
@@ -62357,7 +62483,10 @@
    "teaches": [
     "valik-verb"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "irregular-past",
+    "2": "irregular-past"
+   }
   },
   "b1-14-05.ex03": {
    "teaches": [
@@ -62390,8 +62519,12 @@
    "distractor_skills": {}
   },
   "b1-14-05.ex08": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "translative-morphology"
+   ],
+   "distractor_skills": {
+    "2": "ra-re"
+   }
   },
   "b1-14-consolidation.ex01": {
    "teaches": [
@@ -62403,7 +62536,10 @@
    "teaches": [
     "future-participle-ando"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "past-participle-adjective",
+    "2": "building-the-infinitive-the-suffix-ni"
+   }
   },
   "b1-14-consolidation.ex03": {
    "teaches": [
@@ -62431,13 +62567,17 @@
   },
   "b1-14-consolidation.ex07": {
    "teaches": [
-    "b1-technology-communication-vocab"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
   "b1-14-consolidation.ex08": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "imperative-definite"
+   ],
+   "distractor_skills": {
+    "2": "imperative-indefinite"
+   }
   },
   "b1-15-01.ex01": {
    "teaches": [
@@ -62485,7 +62625,9 @@
    "teaches": [
     "superlative"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "comparative-bb"
+   }
   },
   "b1-15-02.ex01": {
    "teaches": [
@@ -62532,8 +62674,13 @@
    "distractor_skills": {}
   },
   "b1-15-02.ex08": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "hypothetical-ha-conditional"
+   ],
+   "distractor_skills": {
+    "1": "present-tense-routine-language",
+    "2": "irregular-past"
+   }
   },
   "b1-15-03.ex01": {
    "teaches": [
@@ -62555,7 +62702,7 @@
   },
   "b1-15-03.ex04": {
    "teaches": [
-    "b1-culture-entertainment-vocab"
+    "concessive-annak-ellenere"
    ],
    "distractor_skills": {}
   },
@@ -62578,8 +62725,13 @@
    "distractor_skills": {}
   },
   "b1-15-03.ex08": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "concessive-annak-ellenere"
+   ],
+   "distractor_skills": {
+    "1": "mert-because",
+    "2": "hogy-clauses"
+   }
   },
   "b1-15-04.ex01": {
    "teaches": [
@@ -62589,7 +62741,7 @@
   },
   "b1-15-04.ex02": {
    "teaches": [
-    "b1-culture-entertainment-vocab"
+    "delative-rol-rel"
    ],
    "distractor_skills": {}
   },
@@ -62624,8 +62776,13 @@
    "distractor_skills": {}
   },
   "b1-15-04.ex08": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "past-participle-adjective"
+   ],
+   "distractor_skills": {
+    "1": "definite-past",
+    "2": "building-the-infinitive-the-suffix-ni"
+   }
   },
   "b1-15-05.ex01": {
    "teaches": [
@@ -62665,12 +62822,14 @@
   },
   "b1-15-05.ex07": {
    "teaches": [
-    "verb-government-val-vel"
+    "3rd-person-possessive"
    ],
    "distractor_skills": {}
   },
   "b1-15-05.ex08": {
-   "teaches": [],
+   "teaches": [
+    "case-inflected-pronouns"
+   ],
    "distractor_skills": {}
   },
   "b1-15-consolidation.ex01": {
@@ -62711,13 +62870,18 @@
   },
   "b1-15-consolidation.ex07": {
    "teaches": [
-    "plural-nouns-k"
+    "singular-after-numbers"
    ],
    "distractor_skills": {}
   },
   "b1-15-consolidation.ex08": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "kellene"
+   ],
+   "distractor_skills": {
+    "1": "irregular-past",
+    "2": "delative-rol-rel"
+   }
   },
   "b1-16-01.ex01": {
    "teaches": [

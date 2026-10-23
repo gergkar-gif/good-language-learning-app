@@ -57,7 +57,7 @@
       "id": "b1-11-01-controlled-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik vonatkozó névmás utal személyekre?",
+      "question": "Which relative word is for people?",
       "options": [
         "aki",
         "amely",
@@ -72,7 +72,7 @@
       "id": "b1-11-01-controlled-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik alak helyes a mondatban: „A település, ______ élünk, rendezett és tiszta.”?",
+      "question": "Which form fits? „A bolt, ______ dolgozom, nagyon nagy.”",
       "options": [
         "amelyben",
         "amelyről",
@@ -87,16 +87,19 @@
       "id": "b1-11-01-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat köti össze szabályosan az egész tagmondatra vonatkozó gondolatot?",
+      "question": "Which sentence is right?",
       "options": [
-        "Minden bolt közel van, ami nagyon megkönnyíti a bevásárlást.",
-        "Minden bolt közel van, aki nagyon megkönnyíti a bevásárlást.",
-        "Minden bolt közel van, akitől nagyon megkönnyíti a bevásárlást."
+        "Sok bolt van a városban, ami nagyon kényelmes.",
+        "Sok bolt van a városban, aki nagyon kényelmes.",
+        "Sok bolt van a városban, akitől nagyon kényelmes."
       ],
       "correct": 0,
       "teaches": [
         "relative-clauses-aki-ami-amely"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "vonatkozoi-nevmas-esetei"
+      }
     },
     {
       "id": "b1-11-01-controlled-4",
@@ -117,21 +120,23 @@
       "id": "b1-11-01-practice-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ez az a csendes kisváros, ____ kiváló iskolákkal és parkokkal rendelkezik.",
-      "hint": "which / formal",
-      "english": "This is the quiet small town which has excellent schools and parks.",
-      "answer": "amely",
+      "sentence": "A könyv, ____ tegnap beszéltünk, nagyon érdekes.",
+      "hint": "about which",
+      "english": "The book we talked about yesterday is very interesting.",
       "teaches": [
-        "relative-clauses-aki-ami-amely"
+        "vonatkozoi-nevmas-esetei"
+      ],
+      "answers": [
+        "amiről",
+        "amelyről"
       ]
     },
     {
       "id": "b1-11-01-practice-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A modern közlekedési ____ révén a főváros fél óra alatt elérhető.",
-      "hint": "infrastructure",
-      "english": "Thanks to the modern transport infrastructure, the capital is reachable in half an hour.",
+      "sentence": "A városban jó az ____: sok busz és villamos van.",
+      "english": "The town has good infrastructure: there are many buses and trams.",
       "answer": "infrastruktúra",
       "teaches": [
         "b1-cities-communities-vocab"
@@ -140,24 +145,27 @@
     {
       "id": "b1-11-01-practice-3",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Milyen szolgáltatásokat igényel egy modern település lakossága?",
+      "category": "vocabulary",
+      "question": "Which two are *szolgáltatások* in a town?",
       "options": [
-        "Egészségügyi ellátást, jó tömegközlekedést, iskolákat, üzleteket és banki szolgáltatásokat.",
-        "Katonai laktanyákat, repülőgépgyárakat és nehézipari vegyi üzemeket.",
-        "Luxusszállodákat, kaszinókat és nemzetközi magánrepülőtereket."
+        "A posta és a bank.",
+        "A fa és a kert.",
+        "A ház és az utca."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-cities-communities-vocab"
+      ]
     },
     {
       "id": "b1-11-01-practice-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent a 'fejlett infrastruktúra' kifejezés?",
+      "question": "What does *település* mean?",
       "options": [
-        "Korszerű utakat, csatornázást, gyors internetet és megbízható villamoshálózatot.",
-        "A régi műemlék épületek felújítását és a belvárosi szobrok tisztítását.",
-        "A sűrű, érintetlen természeti erdőket és a hegyi gyalogos túraösvényeket."
+        "a place where people live: a village or a town",
+        "a big shop in the middle of a city centre",
+        "a long road between two small villages"
       ],
       "correct": 0,
       "teaches": [
@@ -168,11 +176,11 @@
       "id": "b1-11-01-dialogue-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Miért költöztetek ebbe a külvárosi településre?\n— Mert kiváló a közlekedési ______ és gyönyörű a környezet.",
+      "question": "— Miért költöztetek ide?\n— Mert jó az ______: sok busz és villamos jár, és közel van az iskola.",
       "options": [
         "infrastruktúra",
-        "kancellária",
-        "kaució"
+        "szomszédság",
+        "lakosság"
       ],
       "correct": 0,
       "teaches": [
@@ -183,11 +191,11 @@
       "id": "b1-11-01-dialogue-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "— Ismered a szomszédot?\n— Igen, ő az az orvos, ______ a rendelője a sarok túloldalán van.",
+      "question": "— Ismered az új orvost?\n— Igen, ő az orvos, ______ a lánya a barátnőm.",
       "options": [
         "akinek",
-        "amelyik",
-        "amire"
+        "amelynek",
+        "akit"
       ],
       "correct": 0,
       "teaches": [
@@ -198,10 +206,10 @@
       "id": "b1-11-01-writing-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A helyi ____ száma az utóbbi tíz évben jelentősen megemelkedett.",
-      "hint": "population / residents",
-      "english": "The number of local residents has increased significantly in the last ten years.",
-      "answer": "lakosság",
+      "sentence": "A település ____ nagyon barátságos.",
+      "hint": "population",
+      "english": "The population of the town is very friendly.",
+      "answer": "lakossága",
       "stage": "production",
       "teaches": [
         "b1-cities-communities-vocab"
@@ -211,12 +219,14 @@
       "id": "b1-11-01-writing-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Meglátogattunk egy hangulatos falut, ____ sok hagyományos ház maradt fenn.",
-      "hint": "in which",
-      "english": "We visited a cozy village in which many traditional houses have survived.",
+      "sentence": "A város, ____ jövő héten megyünk, nagyon szép.",
+      "hint": "to where",
+      "english": "The town we are going to next week is very beautiful.",
       "answers": [
-        "amelyben",
-        "amiben"
+        "ahová",
+        "ahova",
+        "amelybe",
+        "amibe"
       ],
       "stage": "production",
       "teaches": [
@@ -227,11 +237,11 @@
       "id": "b1-11-01-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik szó jelenti az emberi lakóhelyet, falut vagy várost?",
+      "question": "Which word means a village or town (a place where people live)?",
       "options": [
         "település",
-        "tanácsadás",
-        "táplálkozás"
+        "szolgáltatás",
+        "infrastruktúra"
       ],
       "correct": 0,
       "teaches": [
@@ -242,15 +252,15 @@
       "id": "b1-11-01-check-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik vonatkozó névmás a legpontosabb választékos stílusban konkrét dologra?",
+      "question": "Which sentence is right?",
       "options": [
-        "amely",
-        "akik",
-        "ahogy"
+        "A város, amelyről beszélünk, nagyon szép.",
+        "A város, akiről beszélünk, nagyon szép.",
+        "A város, amelyből beszélünk, nagyon szép."
       ],
       "correct": 0,
       "teaches": [
-        "relative-clauses-aki-ami-amely"
+        "vonatkozoi-nevmas-esetei"
       ]
     }
   ]

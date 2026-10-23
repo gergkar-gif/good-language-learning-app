@@ -31,27 +31,28 @@
       "id": "b1-14-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik kifejezéssel adunk hivatalos megelőző tanácsot?",
+      "question": "Which sentence means ‘For the sake of the children’s health, we limit screen time’?",
       "options": [
-        "az adatvesztés elkerülése érdekében",
-        "az adatvesztés kedvéért",
-        "az adatvesztés ellenére"
+        "A gyerekek egészsége érdekében korlátozzuk a képernyőidőt.",
+        "A gyerekek egészsége helyett korlátozzuk a képernyőidőt.",
+        "A gyerekek egészsége után korlátozzuk a képernyőidőt."
       ],
       "correct": 0,
       "teaches": [
         "formal-purpose"
       ],
       "distractor_skills": {
-        "2": "concessive-postpositions"
+        "1": "postpositions-altal-reven",
+        "2": "temporal-postpositions"
       }
     },
     {
       "id": "b1-14-03.ex03",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A szakemberek szerint a napi öt órát meghaladó ____ káros a gyermekek fejlődésére.",
+      "sentence": "Túl sok ____ káros a gyerekeknek.",
       "hint": "screen time",
-      "english": "According to experts, screen time exceeding five hours a day is harmful to children's development.",
+      "english": "Too much screen time is harmful for children.",
       "answer": "képernyőidő",
       "teaches": [
         "b1-technology-communication-vocab"
@@ -61,9 +62,9 @@
       "id": "b1-14-03.ex04",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A pénzügyi adatok védelmében kiemelten fontos a szigorú ____.",
+      "sentence": "A cégnél a ____ nagyon fontos.",
       "hint": "cybersecurity",
-      "english": "In protecting financial data, strict cybersecurity is of utmost importance.",
+      "english": "Cybersecurity is very important at the company.",
       "answer": "kiberbiztonság",
       "teaches": [
         "b1-technology-communication-vocab"
@@ -73,11 +74,11 @@
       "id": "b1-14-03.ex05",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Hogyan hívjuk azt az állapotot, amikor valaki képtelen letenni a telefonját?",
+      "question": "Which word means ‘when you cannot stop using something, even if it harms you’?",
       "options": [
-        "digitális függőség",
-        "jókedvű pihenés",
-        "egészséges sportolás"
+        "függőség",
+        "adatvédelem",
+        "kiberbiztonság"
       ],
       "correct": 0,
       "teaches": [
@@ -90,29 +91,19 @@
       "category": "vocabulary",
       "tiles": [
         "A",
-        "személyes",
-        "adatvédelem",
-        "megsértése",
-        "súlyos",
-        "jogi",
-        "következményekkel",
-        "járhat",
+        "felhasználóknak",
+        "fontos",
         "az",
-        "interneten."
+        "adatvédelem."
       ],
       "solution": [
         "A",
-        "személyes",
-        "adatvédelem",
-        "megsértése",
-        "súlyos",
-        "jogi",
-        "következményekkel",
-        "járhat",
+        "felhasználóknak",
+        "fontos",
         "az",
-        "interneten."
+        "adatvédelem."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "Data protection is important for users.",
       "teaches": [
         "b1-technology-communication-vocab"
       ]
@@ -121,12 +112,11 @@
       "id": "b1-14-03.ex07",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A vírusfertőzések megelőzése ____ soha ne nyissunk meg gyanús e-maileket!",
-      "hint": "in order to / for the purpose of",
-      "english": "In order to prevent virus infections, let us never open suspicious emails!",
+      "sentence": "Annak ____, hogy ne vesszen el adat, mentést csinálunk.",
+      "hint": "for the purpose",
+      "english": "So that no data is lost, we make a backup.",
       "answers": [
-        "érdekében",
-        "céljából"
+        "érdekében"
       ],
       "teaches": [
         "formal-purpose"
@@ -135,14 +125,17 @@
     {
       "id": "b1-14-03.ex08",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Milyen módszerrel csökkenthetjük az okostelefon-függőséget?",
+      "category": "vocabulary",
+      "question": "Which sentence means ‘Too much screen time causes addiction’?",
       "options": [
-        "Tudatos digitális szünetekkel és a képernyőidő ésszerű korlátozásával.",
-        "Ha még több játékot töltünk le a telefonra.",
-        "Ha éjszaka sem kapcsoljuk ki az értesítéseket."
+        "A sok képernyőidő függőséget okoz.",
+        "A sok képernyőidő függőséget kér.",
+        "A sok képernyőidő függőséget vesz."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-technology-communication-vocab"
+      ]
     }
   ]
 }

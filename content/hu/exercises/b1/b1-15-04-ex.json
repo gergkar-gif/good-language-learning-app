@@ -30,25 +30,25 @@
     {
       "id": "b1-15-04.ex02",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Melyik állandósult szókapcsolattal fejezzük ki a szokások továbbadását?",
+      "category": "grammar",
+      "question": "Which sentence means ‘The tradition is passed down from generation to generation’?",
       "options": [
-        "nemzedékről nemzedékre öröklődik",
-        "fáról fára ugrál",
-        "szóról szóra felejtődik"
+        "A hagyomány nemzedékről nemzedékre öröklődik.",
+        "A hagyomány nemzedékre nemzedékről öröklődik.",
+        "A hagyomány nemzedékről nemzedékről öröklődik."
       ],
       "correct": 0,
       "teaches": [
-        "b1-culture-entertainment-vocab"
+        "delative-rol-rel"
       ]
     },
     {
       "id": "b1-15-04.ex03",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A busójárás és a matyó hímzés a magyar ____ kiemelkedő értéke.",
+      "sentence": "A zene is a magyar ____ része.",
       "hint": "cultural heritage",
-      "english": "The Busójárás and Matyó embroidery are outstanding values of Hungarian cultural heritage.",
+      "english": "Music is also part of Hungarian cultural heritage.",
       "answer": "kulturális örökség",
       "teaches": [
         "b1-culture-entertainment-vocab"
@@ -58,9 +58,9 @@
       "id": "b1-15-04.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A táncházmozgalom méltán ____ Hungarikumként az egész világon.",
-      "hint": "recognized / acknowledged",
-      "english": "The dance house movement is deservedly recognized as a Hungarikum worldwide.",
+      "sentence": "Ez egy nagyon ____ fesztivál.",
+      "hint": "recognized",
+      "english": "This is a very well-regarded festival.",
       "answer": "elismert",
       "teaches": [
         "past-participle-adjective"
@@ -70,11 +70,11 @@
       "id": "b1-15-04.ex05",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Hogyan hívjuk a ma élő alkotók által létrehozott modern műveket?",
+      "question": "Which word means ‘art made today by living artists’?",
       "options": [
         "kortárs művészet",
-        "őskori lelet",
-        "óegyiptomi szobor"
+        "néphagyomány",
+        "kulturális örökség"
       ],
       "correct": 0,
       "teaches": [
@@ -87,31 +87,21 @@
       "category": "vocabulary",
       "tiles": [
         "A",
-        "nyári",
-        "zenei",
-        "fesztivál",
-        "tízezreket",
-        "vonz",
-        "Magyarországra",
+        "néphagyomány",
         "a",
-        "világ",
-        "minden",
-        "tájáról."
+        "magyar",
+        "kultúra",
+        "része."
       ],
       "solution": [
         "A",
-        "nyári",
-        "zenei",
-        "fesztivál",
-        "tízezreket",
-        "vonz",
-        "Magyarországra",
+        "néphagyomány",
         "a",
-        "világ",
-        "minden",
-        "tájáról."
+        "magyar",
+        "kultúra",
+        "része."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "Folk tradition is part of Hungarian culture.",
       "teaches": [
         "b1-culture-entertainment-vocab"
       ]
@@ -120,9 +110,9 @@
       "id": "b1-15-04.ex07",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A falusi közösségekben máig büszkén él a gazdag népi zenei ____.",
+      "sentence": "A falvakban ma is él a ____.",
       "hint": "folk tradition",
-      "english": "In village communities, the rich folk music tradition lives on proudly to this day.",
+      "english": "In the villages the folk tradition is still alive today.",
       "answer": "néphagyomány",
       "teaches": [
         "b1-culture-entertainment-vocab"
@@ -131,14 +121,21 @@
     {
       "id": "b1-15-04.ex08",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Miért fontos a néphagyományok és a kortárs művészet párbeszéde?",
+      "category": "grammar",
+      "question": "Which phrase means ‘an artist recognized all over the world’?",
       "options": [
-        "Mert a gyökerek megőrzése mellett új és friss gondolatokkal gazdagítja a kultúrát.",
-        "Mert a múzeumok nem szeretik a régi tárgyakat.",
-        "Mert a népdalokat csak modern hangszereken szabad énekelni."
+        "világszerte elismert művész",
+        "világszerte elismerte művész",
+        "világszerte elismerni művész"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "past-participle-adjective"
+      ],
+      "distractor_skills": {
+        "1": "definite-past",
+        "2": "building-the-infinitive-the-suffix-ni"
+      }
     }
   ]
 }

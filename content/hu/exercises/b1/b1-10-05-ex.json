@@ -33,20 +33,20 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "energiatakarékos",
-          "energy-efficient"
+          "csendes",
+          "quiet"
         ],
         [
-          "hőszigetelt",
-          "thermally insulated"
+          "tágas",
+          "spacious"
         ],
         [
-          "zajmentes",
-          "noise-free / quiet"
+          "világos",
+          "bright / light"
         ],
         [
-          "zöldövezet",
-          "green belt / green area"
+          "kényelmes",
+          "comfortable"
         ]
       ],
       "teaches": [
@@ -57,26 +57,29 @@
       "id": "b1-10-05-controlled-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik szerkezet fejezi ki legválasztékosabban a személyes prioritást?",
+      "question": "Which sentence is right? 'It is important that the area is quiet.'",
       "options": [
-        "Számomra az a legfontosabb szempont, hogy a környék csendes és biztonságos legyen.",
-        "Számomra az a legfontosabb szempont, hogy a környék csendes és biztonságos lenni.",
-        "Számomra az a legfontosabb szempont, hogy a környék csendes és biztonságos volt."
+        "Fontos, hogy a környék csendes legyen.",
+        "Fontos, hogy a környék csendes lenni.",
+        "Fontos, hogy a környék csendes van."
       ],
       "correct": 0,
       "teaches": [
         "hogy-jon-jen"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "building-the-infinitive-the-suffix-ni"
+      }
     },
     {
       "id": "b1-10-05-controlled-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik szókapcsolat fejezi ki a jó hőtartást?",
+      "question": "Which phrase means 'good insulation'?",
       "options": [
-        "korszerű hőszigetelés",
-        "magas rezsi",
-        "zajos lépcsőház"
+        "jó szigetelés",
+        "drága fűtés",
+        "zajos környék"
       ],
       "correct": 0,
       "teaches": [
@@ -87,11 +90,11 @@
       "id": "b1-10-05-controlled-3",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent a kifejezés: „ideális esetben”?",
+      "question": "Which word means 'livable' (a good place to live)?",
       "options": [
-        "In an ideal scenario",
-        "In a bad case",
-        "Never"
+        "élhető",
+        "zajos",
+        "drága"
       ],
       "correct": 0,
       "teaches": [
@@ -102,11 +105,11 @@
       "id": "b1-10-05-controlled-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik állítás helyes az energiahatékonyságról?",
+      "question": "Which sentence is true?",
       "options": [
-        "A megfelelő nyílászárók és a jó szigetelés jelentősen csökkentik a fűtési költségeket.",
-        "A szigetelés növeli a téli fűtésszámlát.",
-        "A fűtést kizárólag nyáron használják Magyarországon."
+        "A jó szigetelés miatt olcsóbb a fűtés.",
+        "A jó szigetelés miatt drágább a fűtés.",
+        "A jó szigetelés miatt hidegebb a lakás."
       ],
       "correct": 0,
       "teaches": [
@@ -117,9 +120,9 @@
       "id": "b1-10-05-practice-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Olyan lakást keresünk, amely egy nyugodt, családbarát ____ található.",
-      "hint": "neighborhood",
-      "english": "We are looking for an apartment that is located in a quiet, family-friendly neighborhood.",
+      "sentence": "Olyan ____ szeretnénk lakni, ahol csendes az utca.",
+      "hint": "area",
+      "english": "We would like to live in an area where the street is quiet.",
       "answer": "környéken",
       "teaches": [
         "on-en-on"
@@ -129,10 +132,9 @@
       "id": "b1-10-05-practice-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A ház külső falaira korszerű hőszigetelő réteg került, így a téli ____ nagyon gazdaságos.",
-      "hint": "heating",
-      "english": "A modern thermal insulation layer was placed on the external walls of the house, so winter heating is very economical.",
-      "answer": "fűtés",
+      "sentence": "A jó ____ miatt olcsó a fűtés.",
+      "english": "Because of the good insulation, heating is cheap.",
+      "answer": "szigetelés",
       "teaches": [
         "b1-home-housing-vocab"
       ]
@@ -141,11 +143,11 @@
       "id": "b1-10-05-practice-3",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mitől válik egy lakókörnyezet igazán 'élhetővé' a városlakók számára?",
+      "question": "Which place is *élhető*?",
       "options": [
-        "Jó közlekedéstől, tiszta levegőtől, zöld parkoktól és közeli szolgáltatásoktól (boltok, orvos, iskola).",
-        "A sűrű kamionforgalomtól, a zajos gyáraktól és a poros ipari létesítményektől.",
-        "A drága bevásárlóközpontoktól, a felhőkarcolóktól és a nagy parkolóktól."
+        "Csendes, zöld környék, ahol sok a park.",
+        "Zajos utca, ahol sok a busz és a villamos.",
+        "Forgalmas, piszkos környék, ahol sok a gyár."
       ],
       "correct": 0,
       "teaches": [
@@ -155,24 +157,27 @@
     {
       "id": "b1-10-05-practice-4",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Milyen modern fűtési megoldások terjednek Magyarországon?",
+      "category": "vocabulary",
+      "question": "What does *szigetelés* do?",
       "options": [
-        "A hőszivattyús fűtés, a padlófűtés és a napkollektorok.",
-        "Csak a nyílt tábortűz.",
-        "Kizárólag a petróleumlámpák."
+        "It keeps the heat inside the flat.",
+        "It lets the cold air into the flat.",
+        "It brings water into the flat."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-home-housing-vocab"
+      ]
     },
     {
       "id": "b1-10-05-dialogue-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Mi a legfontosabb szempontotok az új otthon kiválasztásakor?\n— Számunkra az, hogy a lakás valóban ______ legyen, közel a munkahelyünkhöz és a természethez.",
+      "question": "— Milyen lakást szeretnétek?\n— Olyat, ami ______ és közel van a munkahelyünkhöz.",
       "options": [
         "élhető",
-        "széthúzó",
-        "kiváltó"
+        "drága",
+        "zajos"
       ],
       "correct": 0,
       "teaches": [
@@ -183,11 +188,11 @@
       "id": "b1-10-05-dialogue-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Nem aggódtok a téli gázszámla miatt?\n— Egyáltalán nem, mert az új műanyag ablakok és a vastag ______ minimálisra csökkentik a hőveszteséget.",
+      "question": "— Nem aggódtok a gázszámla miatt?\n— Nem, mert jó a ______, és a fűtés is olcsó.",
       "options": [
         "szigetelés",
-        "kaució",
-        "parasztfelkelés"
+        "környék",
+        "udvar"
       ],
       "correct": 0,
       "teaches": [
@@ -198,10 +203,10 @@
       "id": "b1-10-05-writing-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Ideális esetben a lakáshoz külön garázs és zöld ____ is tartozik.",
-      "hint": "yard / courtyard",
-      "english": "Ideally, a separate garage and a green yard also belong to the apartment.",
-      "answer": "udvar",
+      "sentence": "Télen drága a ____, ezért jó szigetelés kell.",
+      "hint": "heating",
+      "english": "In winter the heating is expensive, so we need good insulation.",
+      "answer": "fűtés",
       "stage": "production",
       "teaches": [
         "b1-home-housing-vocab"
@@ -211,9 +216,9 @@
       "id": "b1-10-05-writing-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Számomra elengedhetetlen, hogy a lakás világos és csendes ____.",
-      "hint": "be - subjunctive / optative",
-      "english": "For me it is essential that the apartment be bright and quiet.",
+      "sentence": "Fontos, hogy a lakás világos és csendes ____.",
+      "hint": "be (that it is)",
+      "english": "It is important that the flat is bright and quiet.",
       "answer": "legyen",
       "stage": "production",
       "teaches": [
@@ -224,11 +229,11 @@
       "id": "b1-10-05-reading-1",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hol játszódik az adapted Kosztolányi-részlet (Édes Anna)?",
+      "question": "Where does the scene take place?",
       "options": [
-        "Budapesten, a krisztinavárosi bérházban Vizyék lakásában.",
-        "Egy debreceni tanyán.",
-        "Bécsben a császári palotában."
+        "Budapesten, Vizyék lakásában.",
+        "Egy kis faluban, egy régi házban.",
+        "Bécsben, egy szállodában."
       ],
       "correct": 0
     },
@@ -236,11 +241,11 @@
       "id": "b1-10-05-reading-2",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Milyen benyomást tett a lakás Annára, amikor belépett az előszobába?",
+      "question": "How does the flat look to Anna?",
       "options": [
-        "Rendkívül tiszta és csillogó volt.",
-        "Piszkos és elhanyagolt volt.",
-        "Üres volt minden bútor nélkül."
+        "Very clean and shiny.",
+        "Dirty and untidy.",
+        "Empty, with no furniture."
       ],
       "correct": 0
     },
@@ -248,11 +253,11 @@
       "id": "b1-10-05-reading-3",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hogyan érezte magát Vizyné asszony Anna érkezésekor?",
+      "question": "How does Mrs Vizy feel when Anna arrives?",
       "options": [
-        "Büszkén mutatta meg a lakást, érezve, hogy a ház végre valódi otthonná válik.",
-        "Azonnal elküldte a lányt vissza a falujába.",
-        "Nagyon dühös volt a bútorok miatt."
+        "She is proud and shows Anna the flat.",
+        "She is angry and sends Anna back home.",
+        "She is afraid and leaves Anna alone."
       ],
       "correct": 0
     }

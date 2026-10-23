@@ -12,7 +12,7 @@
         ],
         [
           "főbérlő",
-          "landlord / property owner"
+          "landlord / main tenant"
         ],
         [
           "kaució",
@@ -37,16 +37,16 @@
           "obliged to"
         ],
         [
-          "jogosult",
-          "entitled to"
+          "kénytelen",
+          "forced to / has no choice"
         ],
         [
-          "esetén",
-          "in case of"
+          "kell",
+          "must / have to"
         ],
         [
-          "felmondási idő",
-          "notice period"
+          "muszáj",
+          "must / have to (no way round it)"
         ]
       ],
       "teaches": [
@@ -57,11 +57,11 @@
       "id": "b1-10-03-controlled-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Mit követel a szerződéses 'köteles' segédszó?",
+      "question": "Which sentence is right? 'We are obliged to pay the utilities.'",
       "options": [
-        "Főnévi igenevet.",
-        "Tárgyragos főnevet.",
-        "Birtokos ragot."
+        "Kötelesek vagyunk fizetni a rezsit.",
+        "Köteles vagyunk fizetni a rezsit.",
+        "Kötelesek vagyunk fizetünk a rezsit."
       ],
       "correct": 0,
       "teaches": [
@@ -71,43 +71,42 @@
     {
       "id": "b1-10-03-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Hogyan mondjuk: 'in case of damage' a szerződésben?",
+      "category": "grammar",
+      "question": "The bus is not running. Which word fits? „A busz nem jár, ezért ______ vagyok gyalog menni.”",
       "options": [
-        "Kár esetén",
-        "Kár miatt",
-        "Kár ellenére"
+        "kénytelen",
+        "kötelező",
+        "kénytelenek"
       ],
       "correct": 0,
       "teaches": [
-        "b1-home-housing-vocab"
-      ],
-      "distractor_skills": {
-        "1": "causal-postpositions",
-        "2": "concessive-postpositions"
-      }
+        "formal-obligation"
+      ]
     },
     {
       "id": "b1-10-03-controlled-3",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Melyik állítás helyes a kaucióról Magyarországon?",
+      "category": "vocabulary",
+      "question": "What is a *kaució*?",
       "options": [
-        "Kiköltözéskor visszajár, ha nincs kár a lakásban.",
-        "A kaució egy vissza nem térítendő adó.",
-        "A kauciót az önkormányzatnak kell befizetni."
+        "money you pay before you move in, which you can get back",
+        "the monthly bill for water, gas and electricity",
+        "the paper that you and the landlord sign"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-home-housing-vocab"
+      ]
     },
     {
       "id": "b1-10-03-controlled-4",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat hivatalos és szabályos megfogalmazás?",
+      "question": "Which sentence is right? 'Anna has no choice but to wait.'",
       "options": [
-        "A bérlő jogosult a lakást rendeltetésszerűen használni.",
-        "A bérlő jogosult a lakást eladni másnak.",
-        "A bérlő köteles a bérleti díjat soha be nem fizetni."
+        "Anna kénytelen várni.",
+        "Anna kénytelen van várni.",
+        "Anna kénytelenek várni."
       ],
       "correct": 0,
       "teaches": [
@@ -118,9 +117,9 @@
       "id": "b1-10-03-practice-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Szerződéskötéskor a bérlő két havi ____ fizetett letétbe.",
+      "sentence": "A bérleti szerződés aláírása után két havi ____ fizetünk.",
       "hint": "deposit",
-      "english": "Upon signing the contract, the tenant paid two months' deposit as a security deposit.",
+      "english": "After signing the lease we pay a two-month deposit.",
       "answer": "kauciót",
       "teaches": [
         "how-the-accusative-t-works"
@@ -130,9 +129,8 @@
       "id": "b1-10-03-practice-2",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A téli hónapokban a fűtés miatt némileg megemelkedik a havi ____.",
-      "hint": "utilities cost",
-      "english": "In the winter months, monthly utilities cost increases somewhat due to heating.",
+      "sentence": "Télen nagyobb a havi ____, mert drága a fűtés.",
+      "english": "In winter the monthly utilities are higher, because heating is expensive.",
       "answer": "rezsi",
       "teaches": [
         "b1-home-housing-vocab"
@@ -142,11 +140,11 @@
       "id": "b1-10-03-practice-3",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit tartalmaz általában a lakás rezsiköltsége?",
+      "question": "Which of these is part of the *rezsi*?",
       "options": [
-        "A víz-, gáz-, villanyszámlát, a fűtést, a szemétszállítást és a közös költséget.",
-        "A lakás vásárlásakor felvett banki hitel törlesztőrészletét és kamatait.",
-        "A bútorok, szőnyegek és konyhai háztartási gépek megvásárlásának árát."
+        "A gázszámla és az áramszámla.",
+        "Az új kanapé és az új szék ára.",
+        "A busz és a vonat ára."
       ],
       "correct": 0,
       "teaches": [
@@ -157,11 +155,11 @@
       "id": "b1-10-03-practice-4",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mi az a 'felmondási idő' a bérleti jogviszonyban?",
+      "question": "Who is the *főbérlő*?",
       "options": [
-        "A felmondás és a kiköltözés közötti időtartam.",
-        "A kulcsok átadásának perce.",
-        "A kaució visszafizetésének végső határideje."
+        "the person you pay the rent to",
+        "the neighbour on your floor",
+        "the person who repairs the flat"
       ],
       "correct": 0,
       "teaches": [
@@ -172,11 +170,11 @@
       "id": "b1-10-03-dialogue-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Mikor kell aláírnunk a papírokat?\n— Holnap találkozunk a ______-vel, és aláírjuk a bérleti szerződést.",
+      "question": "— Kitől kapjuk a kulcsot?\n— ______, ő hozza a bérleti szerződést is.",
       "options": [
-        "főbérlővel",
-        "tárolóval",
-        "szigeteléssel"
+        "A főbérlőtől",
+        "A szerződéstől",
+        "A rezsitől"
       ],
       "correct": 0,
       "teaches": [
@@ -187,11 +185,11 @@
       "id": "b1-10-03-dialogue-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Mennyi a havi bérleti díj?\n— Kétszázezer forint plusz a havi ______ fogyasztás alapján.",
+      "question": "— Mennyit fizetünk havonta?\n— Százötvenezer forintot a lakásért, és a ______ is drága.",
       "options": [
         "rezsi",
-        "sarok",
-        "erkély"
+        "szerződés",
+        "főbérlő"
       ],
       "correct": 0,
       "teaches": [
@@ -202,9 +200,9 @@
       "id": "b1-10-03-writing-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A felek határozott idejű bérleti ____ kötöttek egymással egy évre.",
-      "hint": "contract / agreement",
-      "english": "The parties entered into a fixed-term rental contract with each other for one year.",
+      "sentence": "Tegnap aláírtuk a bérleti ____.",
+      "hint": "contract",
+      "english": "Yesterday we signed the lease.",
       "answer": "szerződést",
       "stage": "production",
       "teaches": [
@@ -214,25 +212,25 @@
     {
       "id": "b1-10-03-writing-2",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Késedelmes fizetés ____ a bérbeadó késedelmi kamatot számíthat fel.",
-      "hint": "in case of",
-      "english": "In case of late payment, the landlord may charge default interest.",
-      "answer": "esetén",
+      "category": "grammar",
+      "sentence": "Kénytelen vagyok ____ a bérleti szerződést.",
+      "hint": "sign",
+      "english": "I have no choice but to sign the lease.",
+      "answer": "aláírni",
       "stage": "production",
       "teaches": [
-        "b1-home-housing-vocab"
+        "formal-obligation"
       ]
     },
     {
       "id": "b1-10-03-check-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Ki a 'főbérlő'?",
+      "question": "What do you sign before you move in?",
       "options": [
-        "A lakás tulajdonosa vagy bérbeadója.",
-        "Aki a lakást bérli.",
-        "A szomszéd."
+        "A bérleti szerződést.",
+        "Az áramszámlát és a gázszámlát.",
+        "A havi kauciót és a rezsit."
       ],
       "correct": 0,
       "teaches": [
@@ -242,16 +240,16 @@
     {
       "id": "b1-10-03-check-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Melyik kifejezés jelenti azt, hogy joga van valamihez?",
+      "category": "grammar",
+      "question": "Which word fits? „Anna ______ aláírni a bérleti szerződést.”",
       "options": [
-        "jogosult valamire",
-        "köteles valamire",
-        "rászorul valamire"
+        "köteles",
+        "kötelesek",
+        "kötelező"
       ],
       "correct": 0,
       "teaches": [
-        "b1-home-housing-vocab"
+        "formal-obligation"
       ]
     }
   ]

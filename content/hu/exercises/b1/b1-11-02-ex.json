@@ -34,19 +34,19 @@
       "pairs": [
         [
           "környékbeli",
-          "local / from neighborhood"
+          "from the neighbourhood"
         ],
         [
           "helybeli",
-          "local resident"
+          "local"
         ],
         [
           "városbeli",
-          "townsperson"
+          "from the town"
         ],
         [
           "falubeli",
-          "fellow villager"
+          "from the village"
         ]
       ],
       "teaches": [
@@ -57,7 +57,7 @@
       "id": "b1-11-02-controlled-1",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Hogyan képezzük a 'környék' szóból az ottani lakókra utaló melléknevet?",
+      "question": "Which word means 'from the neighbourhood'?",
       "options": [
         "környékbeli",
         "környékben",
@@ -76,11 +76,11 @@
       "id": "b1-11-02-controlled-2",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Mit fejez ki a '-beli' képző?",
+      "question": "What does *-beli* say?",
       "options": [
-        "Térbeli vagy közösségi hovatartozást (pl. falubeli, helybeli).",
-        "Időbeli befejezettséget vagy múltbeli történést (pl. múltkori).",
-        "Mondattani tagadást vagy tiltó felszólítást (pl. sehol, sehova)."
+        "which place a person or thing is from or belongs to",
+        "when something happened and how long it lasted",
+        "that something is forbidden or not allowed here"
       ],
       "correct": 0,
       "teaches": [
@@ -91,7 +91,7 @@
       "id": "b1-11-02-controlled-3",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik kifejezés jelenti a környék biztonsági állapotát?",
+      "question": "Which word means 'public safety'?",
       "options": [
         "közbiztonság",
         "lakótelep",
@@ -105,22 +105,25 @@
     {
       "id": "b1-11-02-controlled-4",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Melyik állítás igaz a magyarországi lakótelepekre?",
+      "category": "vocabulary",
+      "question": "What is a *lakótelep*?",
       "options": [
-        "Sok lakótelepen az utóbbi években szigetelték a panelházakat és zöld parkokat alakítottak ki.",
-        "Egy lakótelepen sincs villany vagy víz.",
-        "A lakótelepek kizárólag földszintes családi házakból állnak."
+        "a group of tall blocks of flats built together",
+        "a small house with a big garden and a lot of trees",
+        "a street full of shops, cafés and small restaurants"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-cities-communities-vocab"
+      ]
     },
     {
       "id": "b1-11-02-practice-1",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A házak között egy árnyas fás ____ húzódik játszótérrel és sétánnyal.",
-      "hint": "green belt",
-      "english": "Between the houses stretches a shady wooded green belt with a playground and a promenade.",
+      "sentence": "A házak között van egy nagy ____: sok fa és sok virág van ott.",
+      "hint": "green area",
+      "english": "Between the houses there is a big green area: there are many trees and many flowers there.",
       "answer": "zöldövezet",
       "teaches": [
         "b1-cities-communities-vocab"
@@ -130,10 +133,10 @@
       "id": "b1-11-02-practice-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A környék____ lakosok minden évben közös utcabált szerveznek.",
-      "hint": "local / neighborhood",
-      "english": "The neighborhood residents organize a joint street party every year.",
-      "answer": "beli",
+      "sentence": "A ____ emberek minden évben közös ünnepet szerveznek.",
+      "hint": "from the neighbourhood",
+      "english": "The people of the neighbourhood organize a joint celebration every year.",
+      "answer": "környékbeli",
       "teaches": [
         "spatial-belonging-beli"
       ]
@@ -141,36 +144,42 @@
     {
       "id": "b1-11-02-practice-3",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Mitől válik egy lakóközösség igazán összetartóvá?",
+      "category": "vocabulary",
+      "question": "What does *összetartás* mean?",
       "options": [
-        "A kölcsönös odafigyeléstől, a közös programoktól és a szomszédok közötti segítőkészségtől.",
-        "Attól, ha senki sem beszél egymással a házban.",
-        "A magas kerítésektől és a hangos vitáktól."
+        "people stay together and help each other",
+        "people move away from each other",
+        "people live in very tall buildings"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-cities-communities-vocab"
+      ]
     },
     {
       "id": "b1-11-02-practice-4",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Milyen tényezők növelik egy környék közbiztonságát?",
+      "category": "vocabulary",
+      "question": "Which sentence is about *közbiztonság*?",
       "options": [
-        "A jó közvilágítás és a rendőri jelenlét.",
-        "A sötét, elhagyatott utcák.",
-        "Az utcai kamerák kikapcsolása."
+        "Este is lehet sétálni az utcán, nem veszélyes.",
+        "A házak között sok fa van, és csendes az utca.",
+        "A piacon szombaton friss zöldség van."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "b1-cities-communities-vocab"
+      ]
     },
     {
       "id": "b1-11-02-dialogue-1",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Nem félsz este egyedül hazasétálni?\n— Nem, nálunk nagyon jó a ______, a rendőrség gyakran járőrözik.",
+      "question": "— Nem félsz este sétálni?\n— Nem, nálunk nagyon jó a ______, a rendőrség sokat segít.",
       "options": [
         "közbiztonság",
-        "megtorlás",
-        "vilajet"
+        "zöldövezet",
+        "lakótelep"
       ],
       "correct": 0,
       "teaches": [
@@ -181,11 +190,11 @@
       "id": "b1-11-02-dialogue-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "— Milyen a hangulat a házatokban?\n— Kiváló, igazi szomszédi ______ van, mindig számíthatunk egymásra.",
+      "question": "— Milyen a hangulat a házban?\n— Nagyon jó, igazi szomszédi ______ van, mindig számíthatunk egymásra.",
       "options": [
         "összetartás",
         "széthúzás",
-        "zsoldoshiány"
+        "közbiztonság"
       ],
       "correct": 0,
       "teaches": [
@@ -196,9 +205,9 @@
       "id": "b1-11-02-writing-1",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A barátunk egy felújított óbudai ____ lakik a Duna közelében.",
-      "hint": "housing estate / complex",
-      "english": "Our friend lives in a renovated Óbuda housing estate near the Danube.",
+      "sentence": "A barátunk egy nagy ____ lakik a Duna közelében.",
+      "hint": "housing estate",
+      "english": "Our friend lives on a big housing estate near the Danube.",
       "answer": "lakótelepen",
       "stage": "production",
       "teaches": [
@@ -209,10 +218,10 @@
       "id": "b1-11-02-writing-2",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A hely____ lakosság büszke a város gazdag történelmi emlékeire.",
-      "hint": "local",
-      "english": "The local population is proud of the city's rich historical monuments.",
-      "answer": "beli",
+      "sentence": "Anna ____ barátai szombaton jönnek hozzánk.",
+      "hint": "from the village",
+      "english": "Anna's friends from the village are coming to us on Saturday.",
+      "answer": "falubeli",
       "stage": "production",
       "teaches": [
         "spatial-belonging-beli"
@@ -237,11 +246,11 @@
       "id": "b1-11-02-check-2",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik szó jelöli a sok lakásból álló paneltömböket?",
+      "question": "Which word means 'green area'?",
       "options": [
+        "zöldövezet",
         "lakótelep",
-        "szigetelés",
-        "kincstár"
+        "összetartás"
       ],
       "correct": 0,
       "teaches": [
@@ -254,31 +263,25 @@
       "category": "grammar",
       "tiles": [
         "a",
-        "falubeli",
-        "lakók",
-        "baráti",
-        "közösséget",
-        "alkotnak"
+        "helybeli",
+        "piac",
+        "szombaton",
+        "is",
+        "nyitva",
+        "van"
       ],
       "solutions": [
         [
           "a",
-          "falubeli",
-          "lakók",
-          "baráti",
-          "közösséget",
-          "alkotnak"
-        ],
-        [
-          "baráti",
-          "közösséget",
-          "alkotnak",
-          "a",
-          "falubeli",
-          "lakók"
+          "helybeli",
+          "piac",
+          "szombaton",
+          "is",
+          "nyitva",
+          "van"
         ]
       ],
-      "english": "The villagers form a friendly community.",
+      "english": "The local market is open on Saturday too.",
       "teaches": [
         "spatial-belonging-beli"
       ],
