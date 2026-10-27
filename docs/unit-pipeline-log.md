@@ -86,7 +86,7 @@ frozen state, accepted findings and tag locks are per course.
    <course> <level>/<unit id> --update --reason "..."`; `python
    scripts/validate-content.py --changed`; then `python
    scripts/validate-content.py --warnings` and compare the level's lines
-   with origin/master (warnings never fail, so a retag that leaves a
+   with origin/master; `python scripts/check_unit_refs.py <course> <level> <unit ids>` for the recaps readers write (warnings never fail, so a retag that leaves a
    skill under 6 exercises passes `--changed` silently: units 29–34 did
    this to `a2-review-work-past-opinions-vocab`, found only at the level
    checklist); `python scripts/freeze_unit.py <course> <level> <unit id>
@@ -368,6 +368,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-22 | HU B1 3–6 (core 3, 5; citizenship 4, 6) | paired read, **2 units/reader** (one core + one citizenship each), facts block, vocabulary rule (citizenship keeps words) | | A 532k, 43.7; B 554k, 39.7 | 344 proposed (71 / 113 / 51 / 109), 0 rejected; Claude changed 2 (Árpád-ház *1301-ig*, an apposition) | **~272k reader tokens/unit** (no cheaper than the one-unit pilot's 257k / 326k): the cost follows the defects (~86 fixes/unit, ×1.7 of A2), not the per-reader overhead; both readers re-tested their fixes in scratch copies (111 and 118 tool calls; now forbidden in the template); 10 copied question sets rewritten; facts: Aug 20 state holiday and the Pozsony 907 name confirmed; walk 24/24 |
 | 10-22 | HU B1 core 7, 9, 11, 13, 15, 17 | paired read, **3 core units/reader**, no-self-testing rule | | A ≥470k, B ≥427k (resumed notices only: both stopped at a Sonnet session limit mid-batch) | 386 proposed (47 / 58 / 51 / 81 / 78 / 71), 6 rejected by the checker (rewritten by Claude), Claude dropped 1 (*elmondott volna* in a story) and restored 1 it had wrongly reversed (Fábián's *te*); 51 Unit 13 fixes first refused by a missing final newline (164 files fixed, `apply_replacements.py` tolerant) | cost/unit not measurable (≥ ~150k from the resumed parts alone); ~64 fixes/unit (×0.75 of 3–6: core units have fewer defects than citizenship ones); reader B ran only the named commands; walk 36/36 |
 | 10-23 | HU B1 core 19, 21, 23, 25, 27, 29 | paired read, 3 core units/reader | | A 581k, 39.2; B 430k, 38.9 | 662 proposed (159 / 155 / 151 / 63 / 69 / 65), 7 rejected (5 checker false positives on accented names in English options, 1 `answer`/`answers`, 1 tell; rewritten by Claude), Claude changed 2 story/screen lines | **~194k/unit (A: Units 19–23 were rewritten almost whole, ~155 fixes each) and ~143k/unit (B: Units 25–29, half-size lessons)**; 18 lessons had no checklist, so no `canDo` to copy: `add_missing_checklists.py` (goal lines; consolidations from the challenge drafts); walk 36/36 |
+| 10-27 | HU B1 core 31, 33, 35, 37, 39, 41 | paired read, 3 core units/reader; both stopped by the weekly Sonnet limit with Units 35 and 41 written but not reported, resumed after the reset | | not measurable (limit mid-batch; A's last resume 407k cumulative) | 446 proposed (89 / 84 / 90 / 59 / 54 / 70), 9 rejected by the checker (6 length give-aways, 1 *az ____* article blank, 1 *volna* in the prompt, 1 `distractor_skills` naming the item's own skill; rewritten by Claude); Claude dropped 10 (8 screen rewrites that replaced the taught phrases *meg vagyok győződve*, *továbbá*, *tekintettel arra, hogy* with A2 words; a wrong "met in Unit 26" recap; a story line), corrected 2 recap unit numbers and removed 2 unchecked ones, fixed 5 *volna*-in-both-clauses suspects, 1 tell, 1 challenge whose target missed its `canDo` | ~74 fixes/unit; 36 lessons got checklists; `noun-compounds` fell to 5 exercises after a correct retag, one item added; new `check_unit_refs.py` found 5 more wrong recap units (Units 19, 27, 29, 31, 35); walk 36/36 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1142,3 +1143,34 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
   mixes are still caught.
 - **Template:** reader B wrote its own lemma-lookup tool in the
   scratchpad; the template now says to use `unmet-words.js` only.
+
+### 2026-10-27: HU B1 core units 31–41
+
+- **Cost:** not measurable: both readers hit the weekly Sonnet limit with
+  Units 35 and 41 half reported; reader B had in fact finished Unit 41,
+  reader A wrote Unit 35's challenges and report on resume (64 s).
+- **Recaps name the wrong unit.** Readers rewrite "new" screens as "You
+  know *X* from Unit N"; in Unit 35, 2 of about 10 named a unit where *X*
+  isn't (*noha* "Unit 24", *megengedett* "B1 Unit 3"; 2 more gave
+  unchecked numbers), and one in Unit 39 said the past conditional
+  was met in Unit 26 when Unit 39 teaches it. **Scripted:**
+  `scripts/check_unit_refs.py <course> <level> [units]` finds the first
+  unit whose files contain each recapped word; on all of B1 it found 5
+  more, in Units 19, 27, 29, 31 and 35, where the recap copies a skill
+  title that names a word its A1/A2 screen never shows (`kell-infinitive`
+  promises *muszáj*, `mert-because` *ezért*, `kellene` *ajánlott*,
+  `ha-clause` *amennyiben*, `concessive-annak-ellenere` *habár*). Fixed
+  on the B1 screens; the skill titles are frozen, **for the user**. One
+  known false positive: a recap of a form (*adjuk hozzá*, imperative).
+  Run it after applying each batch (pipeline step 5).
+- **Readers emptied screens to meet the unmet-word rule:** Unit 41's
+  argument phrases were swapped for A2 words (*Biztos, hogy*, *Aztán*,
+  *Mivel*). Rejected; the template now says a screen's own new phrases
+  stay.
+- **My own error, scripted:** rerunning `check_fixes.py` on a list I had
+  already reviewed overwrote the edited review file and brought back a
+  story fix I had dropped. It now refuses to replace a review list that
+  differs unless `--overwrite` is given.
+- **Retag left a skill under 6:** the reader rightly moved *ökológiai
+  lábnyom* off `noun-compounds` (it is not a compound), leaving 5; the
+  `--warnings` diff caught it and one compound item replaced it.

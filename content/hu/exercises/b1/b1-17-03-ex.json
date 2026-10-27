@@ -31,25 +31,28 @@
       "id": "b1-17-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat használja helyesen a -ként vagy -nként ragot? (Lesson 3)",
+      "question": "Which sentence says: As a child, Kata gets free school meals?",
       "options": [
-        "Rászorulóként ingyenes iskolai étkezésben részesül a gyermek.",
-        "Rászorulómint ingyenes iskolai étkezésben részesül a gyermek.",
-        "Rászoruló ingyenes iskolai étkezés részesül ként a gyermek."
+        "Gyerekként ingyenes iskolai étkezésben részesül Kata.",
+        "Gyereknek ingyenes iskolai étkezésben részesül Kata.",
+        "Gyerekké ingyenes iskolai étkezésben részesül Kata."
       ],
       "correct": 0,
       "teaches": [
         "essive-formal-kent"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "translative-morphology"
+      }
     },
     {
       "id": "b1-17-03.ex03",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A segélyek elosztásában a _____ azt jelenti, hogy mindenki helyzetét figyelembe veszik.",
-      "hint": "fairness",
-      "english": "In distributing aid, fairness means taking everyone's situation into account.",
-      "answer": "méltányosság",
+      "sentence": "Az _____ az, ha valaki rosszabb helyzetben van, és senki nem segít neki.",
+      "hint": "injustice",
+      "english": "Injustice is when someone is worse off and nobody helps them.",
+      "answer": "igazságtalanság",
       "teaches": [
         "b1-society-inequality-vocab"
       ]
@@ -58,10 +61,10 @@
       "id": "b1-17-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Rászoruló____ Kata ingyenes iskolai étkezésben részesül.",
-      "hint": "as a person in need",
-      "english": "As a person in need, Kata receives free school meals.",
-      "answer": "ként",
+      "sentence": "_____ Kata ingyenes iskolai étkezésben részesül.",
+      "hint": "student (as a)",
+      "english": "As a student, Kata receives free school meals.",
+      "answer": "Diákként",
       "teaches": [
         "essive-formal-kent"
       ]
@@ -70,11 +73,11 @@
       "id": "b1-17-03.ex05",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent a segélyezés?",
+      "question": "What does segélyezés mean?",
       "options": [
-        "Azt, hogy az állam vagy egy szervezet pénzzel vagy más támogatással segíti a rászorulókat.",
-        "Azt, hogy valaki hivatalos iratokat másol egy irodában.",
-        "Azt, hogy a polgárok megszavazzák az új adót."
+        "giving money or other help to people in need",
+        "copying documents in a government office",
+        "voting for a new tax on shops"
       ],
       "correct": 0,
       "teaches": [
@@ -85,10 +88,10 @@
       "id": "b1-17-03.ex06",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A segélyezés összegét család____ állapítják meg.",
-      "hint": "per family",
-      "english": "The amount of aid is determined per family.",
-      "answer": "onként",
+      "sentence": "_____ kapnak segítséget az emberek.",
+      "hint": "family (per)",
+      "english": "People get help per family.",
+      "answer": "Családonként",
       "teaches": [
         "distributive-nkent"
       ]
@@ -100,33 +103,27 @@
       "tiles": [
         "A",
         "segélyezés",
+        "segít",
         "a",
-        "méltányosság",
-        "egyik",
-        "fontos",
-        "eszköze."
+        "családoknak."
       ],
       "solutions": [
         [
           "A",
           "segélyezés",
+          "segít",
           "a",
-          "méltányosság",
-          "egyik",
-          "fontos",
-          "eszköze."
+          "családoknak."
         ],
         [
           "A",
-          "méltányosság",
-          "egyik",
-          "fontos",
-          "eszköze",
+          "segélyezés",
           "a",
-          "segélyezés."
+          "családoknak",
+          "segít."
         ]
       ],
-      "english": "Welfare aid is one important instrument of fairness.",
+      "english": "Welfare aid helps families.",
       "teaches": [
         "b1-society-inequality-vocab"
       ]
@@ -134,14 +131,17 @@
     {
       "id": "b1-17-03.ex08",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Egy hír szerint több ezer rászoruló gyermek részesül ingyenes iskolai étkezésben. Miről szól a hír?",
+      "category": "grammar",
+      "question": "Which sentence says: It is important that those in need get proper help?",
       "options": [
-        "Arról, hogy az iskolák támogatják a nehéz helyzetű gyerekeket.",
-        "Arról, hogy az iskolai étkezések ára jelentősen emelkedik.",
-        "Arról, hogy a tanárok fizetését csökkentik."
+        "Fontos, hogy a rászorulók megfelelő segítséget kapjanak.",
+        "Fontos, hogy a rászorulók megfelelő segítséget kapnak.",
+        "Fontos, hogy a rászorulók megfelelő segítséget kapni."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "hogy-jon-jen"
+      ]
     }
   ]
 }

@@ -1,0 +1,124 @@
+[
+  {
+    "file": "content/hu/exercises/b1/b1-19-02-ex.json",
+    "id": "b1-19-02.ex08",
+    "set": {
+      "question": "Miért nem ad hitelt a bank embere Garanvölgyi úrnak?",
+      "options": [
+        "Mert Garanvölgyi úr tavaly sem fizetett vissza semmit.",
+        "Mert a banknak ebben az évben már nincs több pénze.",
+        "Mert Garanvölgyi úr idén egy forint hitelt sem kér."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "reader fix had a length give-away (reviewer: even lengths)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-19-consolidation-ex.json",
+    "id": "b1-19-consolidation.ex07",
+    "set": {
+      "sentence": "Az ügyfél minden évben időben elküldi a ____.",
+      "hint": "tax return",
+      "english": "Every year the customer sends in the tax return on time.",
+      "answer": "bevallást"
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "unmet words; reader's 'az ____' gave the answer's first letter away"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-20-01-ex.json",
+    "id": "b1-20-01.ex04",
+    "set": {
+      "sentence": "Időben szóltam ____, de senki nem mondta el nekem.",
+      "hint": "would have",
+      "english": "I would have said so in time, but nobody told me.",
+      "teaches": [
+        "past-conditional-volna"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "kellett-volna is taught in 20-02; reader's fix had volna in the prompt"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-20-02-ex.json",
+    "id": "b1-20-02.ex05",
+    "set": {
+      "question": "Mit jelent a megelőzés?",
+      "options": [
+        "Azt, hogy időben figyelünk, és nem lesz baj.",
+        "Azt, hogy csak a baj után segítünk egymásnak.",
+        "Azt, hogy a bajról senkinek nem beszélünk."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "unmet words; reader fix had a length give-away"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-20-02-ex.json",
+    "id": "b1-20-02.ex08",
+    "set": {
+      "question": "Mi van a diák zsebében?",
+      "options": [
+        "A bizonyítványa.",
+        "A régi tankönyve.",
+        "A zsebpénze."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "question didn't match the story; reader fix had a length give-away"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-20-05-ex.json",
+    "id": "b1-20-05.ex08",
+    "set": {
+      "question": "Mit mond a diák az apjának?",
+      "options": [
+        "Holnap korán felkel, és gyakorol.",
+        "Holnap egész nap nem megy iskolába.",
+        "Holnap délután segít az apjának."
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "question didn't match the story; reader fix had a length give-away"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-21-04-ex.json",
+    "id": "b1-21-04.ex02",
+    "set": {
+      "question": "Melyik mondat helyes?",
+      "options": [
+        "Állítólag részben egyetértenek a javaslattal, de az árat túl magasnak találják.",
+        "Állítólag hogy részben egyetértenek a javaslattal, de az árat túl magasnak találják.",
+        "Állítólag részben egyetértenek a javaslattal, de az árat túl magasnak találnak."
+      ],
+      "distractor_skills": {
+        "2": "definite-vs-indefinite-conjugation"
+      }
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "Hungarian metalanguage stem and two-fault options; keeps the lesson's evidential point (reviewer)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-18-02-ex.json",
+    "id": "b1-18-02.ex08",
+    "set": {
+      "question": "What does koalíció mean?",
+      "options": [
+        "several parties governing together",
+        "one party that governs on its own",
+        "a small group of local voters"
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "unmet words in Hungarian options; reader fix had a length give-away"
+  }
+]

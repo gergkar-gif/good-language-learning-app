@@ -31,24 +31,27 @@
       "id": "b1-20-consolidation.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat fogalmazza meg helyesen az elmaradt cselekvést?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Jobb lett volna, ha már a kezdet kezdetén megbeszéljük a felmerülő kétségeket.",
-        "Jobb volt ha megbeszélni volt kezdettől a kétségeket volna.",
-        "Kellett volna hogy megbeszélni lett kétség nélkül."
+        "Jobb lett volna, ha időben megbeszéljük a hibát.",
+        "Jobb lenne volna, ha időben megbeszéljük a hibát.",
+        "Jobb lett volt, ha időben megbeszéljük a hibát."
       ],
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "irregular-nek-conditional"
+      }
     },
     {
       "id": "b1-20-consolidation.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A bizottság elfogadta a mérnök új szakmai ____.",
-      "hint": "proposal -át",
-      "english": "The committee accepted the engineer's new professional proposal.",
+      "sentence": "A főnök elfogadta a csapat ____.",
+      "hint": "proposal",
+      "english": "The boss accepted the team's proposal.",
       "answer": "javaslatát",
       "teaches": [
         "acc-poss"
@@ -58,9 +61,9 @@
       "id": "b1-20-consolidation.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ha nem segítettél volna, nem tudtam ____ megoldani a feladatot.",
-      "hint": "would have",
-      "english": "If you had not helped, I would not have been able to solve the task.",
+      "sentence": "Ha nem segítettél ____, most sem tudnám megoldani a feladatot.",
+      "hint": "if you had",
+      "english": "If you had not helped, I still could not solve the task now.",
       "answer": "volna",
       "teaches": [
         "past-conditional-volna"
@@ -72,7 +75,7 @@
       "category": "vocabulary",
       "tiles": [
         "A",
-        "pozitív",
+        "jó",
         "hozzáállás",
         "és",
         "az",
@@ -84,7 +87,7 @@
       ],
       "solution": [
         "A",
-        "pozitív",
+        "jó",
         "hozzáállás",
         "és",
         "az",
@@ -94,7 +97,7 @@
         "fejlődés",
         "alapja."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "A good attitude and honest self-criticism are the basis of development.",
       "teaches": [
         "b1-problems-solutions-vocab"
       ]
@@ -103,11 +106,11 @@
       "id": "b1-20-consolidation.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent az 'alternatíva' kifejezés?",
+      "question": "Mit jelent az alternatíva?",
       "options": [
-        "Egy másik lehetséges választási lehetőséget vagy megoldási módot.",
-        "Egy szigorú, megfellebbezhetetlen büntetést.",
-        "Egy régi, elavult számítógépes programot."
+        "Egy másik megoldás.",
+        "Egy nagy hiba.",
+        "Egy rossz tanács."
       ],
       "correct": 0,
       "teaches": [
@@ -118,10 +121,10 @@
       "id": "b1-20-consolidation.ex07",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A tapasztalt vezető felelősséget ____ az egész csapat munkájáért.",
-      "hint": "takes / bears",
-      "english": "The experienced leader takes responsibility for the whole team's work.",
-      "answer": "vállal",
+      "sentence": "Egy hiba után fontos a ____.",
+      "hint": "taking responsibility",
+      "english": "After a mistake, taking responsibility is important.",
+      "answer": "felelősségvállalás",
       "teaches": [
         "b1-problems-solutions-vocab"
       ]
@@ -130,11 +133,11 @@
       "id": "b1-20-consolidation.ex08",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hogyan kezeli Karinthy diák-hőse a rossz bizonyítvány problémáját a klasszikus novellában?",
+      "question": "Hogyan magyarázza a diák a rossz jegyet?",
       "options": [
-        "Bravúros szóbeli logikával magyarázza, hogy miért a véletlen és a tanárok szigora a hibás.",
-        "Azonnal bevallja a teljes igazságot és bocsánatot kér az apjától.",
-        "Eltépi a bizonyítványt, és új iskolát keres a szomszéd városban."
+        "Azt mondja, hogy valaki köhögött az órán.",
+        "Azt mondja, hogy ő nem tanult semmit.",
+        "Azt mondja, hogy nem volt tanár az órán."
       ],
       "correct": 0
     }

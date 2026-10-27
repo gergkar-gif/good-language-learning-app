@@ -22,9 +22,11 @@ unit, and always restores the files. Each fix ends up in one of three lists:
   text a few times a level);
 - auto: everything else.
 
-    python scripts/check_fixes.py <course> <level> <unit id> <fixes.json>
+    python scripts/check_fixes.py <course> <level> <unit id> <fixes.json> [--overwrite]
 
-Writes <fixes>.auto.json and <fixes>.review.json next to the input. Apply
+Writes <fixes>.auto.json and <fixes>.review.json next to the input; it
+refuses to replace a review list that differs from the new one (the
+reviewer's edits) unless --overwrite is given. Apply
 with scripts/apply_replacements.py (auto as is; review after deleting what
 the reviewer doesn't take), then lock_tags / check-content / freeze as usual.
 """
@@ -77,9 +79,11 @@ def findings(course, level, unit):
 
 
 def main():
-    if len(sys.argv) != 5:
+    flags = {a for a in sys.argv[1:] if a.startswith("--")}
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if len(args) != 4:
         sys.exit(__doc__)
-    course, level, unit, fix_path = sys.argv[1], sys.argv[2].lower(), sys.argv[3], Path(sys.argv[4])
+    course, level, unit, fix_path = args[0], args[1].lower(), args[2], Path(args[3])
     fixes = [ar.norm(f) for f in json.loads(fix_path.read_text(encoding="utf-8"))]
     texts, errors = ar.apply(fixes)
     rejected = {n: e for n, e in errors.items()}
@@ -123,6 +127,13 @@ def main():
             continue
         (review if f.get("sure") is False or f.get("kind") in ("target", "hungarian") else auto).append(f)
     stem = fix_path.with_suffix("")
+    out = json.dumps(review, ensure_ascii=False, indent=1) + "\n"
+    old = Path(f"{stem}.review.json")
+    if old.exists() and old.read_text(encoding="utf-8") != out and "--overwrite" not in flags:
+        # a rerun once the reviewer has edited the review list would silently
+        # undo the review (HU B1 batch 31-41: a Unit 37 rejection came back)
+        sys.exit(f"{old} exists and differs (edited by the reviewer?); nothing written. "
+                 "Check a new list under another name, or pass --overwrite.")
     Path(f"{stem}.auto.json").write_text(json.dumps(auto, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     Path(f"{stem}.review.json").write_text(json.dumps(review, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 

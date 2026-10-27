@@ -31,25 +31,28 @@
       "id": "b1-20-01.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat fejezi ki helyesen a múltbeli feltételt? (Lesson 1)",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Ha időben szóltál volna, elkerültük volna ezt a súlyos hibát.",
-        "Ha időben szólnál volt, elkerüljük a hibát lett volna.",
-        "Ha szólni időben ezért nem hiba van volt."
+        "Ha időben szóltál volna, elkerültük volna a hibát.",
+        "Ha időben szólnál volna, elkerültük volna a hibát.",
+        "Ha időben szóltál volna, elkerültük volt a hibát."
       ],
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "nek-conditional"
+      }
     },
     {
       "id": "b1-20-01.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A nehéz helyzetben közös erővel megtaláltuk a helyes ____.",
-      "hint": "solution -t",
-      "english": "In the difficult situation, we found the right solution by joining forces.",
-      "answer": "megoldást",
+      "sentence": "Néha mindenki követ el ____.",
+      "hint": "mistake",
+      "english": "Everybody makes a mistake sometimes.",
+      "answer": "hibát",
       "teaches": [
         "how-the-accusative-t-works"
       ]
@@ -58,23 +61,23 @@
       "id": "b1-20-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Sokkal körültekintőbbnek kellett ____ lennünk a döntés meghozatalakor.",
-      "hint": "should have",
-      "english": "We should have been much more circumspect when making the decision.",
+      "sentence": "Időben szóltam ____, de senki nem mondta el nekem.",
+      "hint": "would have",
+      "english": "I would have said so in time, but nobody told me.",
       "answer": "volna",
       "teaches": [
-        "kellett-volna"
+        "past-conditional-volna"
       ]
     },
     {
       "id": "b1-20-01.ex05",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent a felelősségvállalás egy hiba elkövetése után?",
+      "question": "Mit jelent a következmény?",
       "options": [
-        "Elismerjük a tévedést, és megpróbáljuk helyrehozni a következményeket.",
-        "Más munkatársakra hárítjuk a hibát, és titokban tartjuk az esetet.",
-        "Azonnal felmondunk a munkahelyünkön szó nélkül."
+        "Azt, ami egy hiba után történik.",
+        "Azt, ami egy hiba előtt történik.",
+        "Azt, amit egy hiba miatt érzünk."
       ],
       "correct": 0,
       "teaches": [
@@ -85,9 +88,9 @@
       "id": "b1-20-01.ex06",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Bárcsak jobban figyeltem ____ a tanár úr magyarázatára!",
+      "sentence": "Bárcsak jobban figyeltem ____ a tanácsra!",
       "hint": "if only I had",
-      "english": "If only I had paid better attention to the teacher's explanation!",
+      "english": "If only I had paid more attention to the advice!",
       "answer": "volna",
       "teaches": [
         "past-conditional-volna"
@@ -98,28 +101,18 @@
       "type": "sentence-builder",
       "category": "vocabulary",
       "tiles": [
-        "A",
-        "hibákból",
-        "levont",
-        "tanulság",
-        "segít",
-        "a",
-        "jövőbeli",
-        "helyes",
-        "döntésekben."
+        "Minden",
+        "hibának",
+        "van",
+        "következménye."
       ],
       "solution": [
-        "A",
-        "hibákból",
-        "levont",
-        "tanulság",
-        "segít",
-        "a",
-        "jövőbeli",
-        "helyes",
-        "döntésekben."
+        "Minden",
+        "hibának",
+        "van",
+        "következménye."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "Every mistake has a consequence.",
       "teaches": [
         "b1-problems-solutions-vocab"
       ]
@@ -128,11 +121,11 @@
       "id": "b1-20-01.ex08",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Miért fontos a konstruktív hozzáállás egy váratlan probléma esetén?",
+      "question": "Hová megy a diák?",
       "options": [
-        "Mert a hibáztatás helyett a lehetséges kiutakra és megoldásokra összpontosít.",
-        "Mert automatikusan törli a múltbeli eseményeket mindenki emlékezetéből.",
-        "Mert megakadályozza, hogy valaha bármilyen új feladatba kezdjünk."
+        "Haza.",
+        "Az iskolába.",
+        "A barátjához."
       ],
       "correct": 0
     }

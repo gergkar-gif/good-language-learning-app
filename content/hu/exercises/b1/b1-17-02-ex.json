@@ -31,24 +31,27 @@
       "id": "b1-17-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat használja helyesen a -ként vagy -nként ragot? (Lesson 2)",
+      "question": "Which sentence says that the support is calculated per family and per head?",
       "options": [
         "A támogatást családonként és fejenként számolják ki.",
-        "A támogatást családmint és fejmint számolják ki.",
-        "A támogatást családok és fejek számolják ki ként."
+        "A támogatást családként és fejként számolják ki.",
+        "A támogatást családonként és fej számolják ki."
       ],
       "correct": 0,
       "teaches": [
-        "essive-formal-kent"
-      ]
+        "distributive-nkent"
+      ],
+      "distractor_skills": {
+        "1": "essive-formal-kent"
+      }
     },
     {
       "id": "b1-17-02.ex03",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A társadalomban fontos cél a hátrányos helyzetű családok támogatása és az _____ biztosítása.",
-      "hint": "equal opportunities",
-      "english": "In society, an important goal is supporting disadvantaged families and ensuring equal opportunities.",
+      "sentence": "Az _____ azt jelenti, hogy mindenki egyformán indul.",
+      "hint": "equal opportunity",
+      "english": "Equal opportunity means that everyone starts the same.",
       "answer": "esélyegyenlőség",
       "teaches": [
         "b1-society-inequality-vocab"
@@ -58,10 +61,10 @@
       "id": "b1-17-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Munkanélküli____ Anna már fél éve keres állást.",
-      "hint": "as an unemployed person",
-      "english": "As an unemployed person, Anna has already been looking for a job for half a year.",
-      "answer": "ként",
+      "sentence": "_____ Kata sokat tanul.",
+      "hint": "university student (as a)",
+      "english": "As a university student, Kata studies a lot.",
+      "answer": "Egyetemistaként",
       "teaches": [
         "essive-formal-kent"
       ]
@@ -70,11 +73,11 @@
       "id": "b1-17-02.ex05",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent az esélyegyenlőség kifejezés?",
+      "question": "What does esélyegyenlőség mean?",
       "options": [
-        "Azt, hogy mindenki egyenlő esélyekkel indulhat az oktatásban és a munkában.",
-        "Hogy minden ember pontosan ugyanolyan ruhát kénytelen hordani.",
-        "Hogy senki sem tanulhat tovább az alapiskola után."
+        "everyone starts with the same chances",
+        "everyone earns the same money",
+        "everyone lives in the same town"
       ],
       "correct": 0,
       "teaches": [
@@ -85,12 +88,16 @@
       "id": "b1-17-02.ex06",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A felmérést havi rendszerességgel, hónap____ végzik el a szakemberek.",
-      "hint": "per month",
-      "english": "Experts conduct the survey on a monthly basis, per month.",
-      "answer": "onként",
+      "sentence": "_____ egyszer találkozunk.",
+      "hint": "month (per)",
+      "english": "We meet once a month.",
       "teaches": [
         "distributive-nkent"
+      ],
+      "answers": [
+        "Hónaponként",
+        "Havonta",
+        "Havonként"
       ]
     },
     {
@@ -99,29 +106,17 @@
       "category": "vocabulary",
       "tiles": [
         "Az",
-        "emberi",
-        "méltóság",
-        "tisztelete",
-        "a",
-        "békés",
-        "és",
-        "igazságos",
-        "együttélés",
-        "alapköve."
+        "esélyegyenlőség",
+        "mindenkinek",
+        "fontos."
       ],
       "solution": [
         "Az",
-        "emberi",
-        "méltóság",
-        "tisztelete",
-        "a",
-        "békés",
-        "és",
-        "igazságos",
-        "együttélés",
-        "alapköve."
+        "esélyegyenlőség",
+        "mindenkinek",
+        "fontos."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "Equal opportunity is important for everyone.",
       "teaches": [
         "b1-society-inequality-vocab"
       ]
@@ -129,14 +124,17 @@
     {
       "id": "b1-17-02.ex08",
       "type": "multiple-choice",
-      "category": "reading",
-      "question": "Milyen szerepet játszanak a civil szervezetek a társadalomban?",
+      "category": "grammar",
+      "question": "Which sentence says that in the cities there is a lot of work, in contrast to the countryside?",
       "options": [
-        "Közvetlen segítséget nyújtanak és erősítik a társadalmi szolidaritást.",
-        "Csak adókat szednek be a lakosságtól az állam nevében.",
-        "Megtiltják a polgároknak az önkéntes segítségnyújtást."
+        "A városokban sok a munka, ezzel szemben vidéken kevés.",
+        "A városokban sok a munka, ezért vidéken kevés.",
+        "A városokban sok a munka, hanem vidéken kevés."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "adversative-contrast"
+      ]
     }
   ]
 }

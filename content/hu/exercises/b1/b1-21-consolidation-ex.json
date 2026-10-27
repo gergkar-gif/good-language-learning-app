@@ -30,25 +30,29 @@
     {
       "id": "b1-21-consolidation.ex02",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Melyik mondat mutat be érett és árnyalt vitastílust?",
+      "category": "grammar",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "Részben egyetértek az álláspontoddal, ugyanakkor a gazdasági szempontokat sem szabad figyelmen kívül hagyni.",
-        "Állítólag te tévedsz mert én mindig mindent jobban tudok volna.",
-        "Biztosan nincs semmi vita mert senki sem beszélhet semmit."
+        "Részben egyetértek veled, de van egy másik szempont is.",
+        "Részben egyetértek veled, de van egy másik szempontot is.",
+        "Részben egyetértek veled, de van egy másik szempontnak is."
       ],
       "correct": 0,
       "teaches": [
-        "b1-opinions-arguments-vocab"
-      ]
+        "van-and-nincs-there-is-there-isn-t"
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "verb-government-nak-nek"
+      }
     },
     {
       "id": "b1-21-consolidation.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A bemutatott bizonyítékok alapján a szakértők meggyőző ____ jutottak.",
-      "hint": "következtetés, sublative",
-      "english": "Based on the evidence presented, the experts reached a convincing conclusion.",
+      "sentence": "A bizonyítékok szerint a diákok meggyőző ____ jutottak.",
+      "hint": "conclusion",
+      "english": "According to the evidence, the students reached a convincing conclusion.",
       "answer": "következtetésre",
       "teaches": [
         "verb-government-ra-re"
@@ -58,9 +62,9 @@
       "id": "b1-21-consolidation.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Összegzésképpen megállapítható, ____ a felkészülés alapos volt.",
+      "sentence": "Szerintem fontos, ____ mindenki elmondja a véleményét.",
       "hint": "that",
-      "english": "In summary, it can be stated that the preparation was thorough.",
+      "english": "I think it is important that everyone says their opinion.",
       "answer": "hogy",
       "teaches": [
         "hogy-clauses"
@@ -72,31 +76,29 @@
       "category": "vocabulary",
       "tiles": [
         "A",
-        "logikus",
-        "következtetés",
+        "jó",
+        "érvek",
         "és",
         "a",
-        "kölcsönös",
-        "tisztelet",
+        "tények",
         "a",
-        "kulturált",
-        "vita",
+        "meggyőző",
+        "érvelés",
         "alapja."
       ],
       "solution": [
         "A",
-        "logikus",
-        "következtetés",
+        "jó",
+        "érvek",
         "és",
         "a",
-        "kölcsönös",
-        "tisztelet",
+        "tények",
         "a",
-        "kulturált",
-        "vita",
+        "meggyőző",
+        "érvelés",
         "alapja."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "Good arguments and facts are the basis of convincing reasoning.",
       "teaches": [
         "b1-opinions-arguments-vocab"
       ]
@@ -105,11 +107,11 @@
       "id": "b1-21-consolidation.ex06",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent a 'kétségtelenül' szó egy érvelő szövegben?",
+      "question": "Mit jelent a kétségtelenül?",
       "options": [
-        "Azt, hogy valami teljesen bizonyos és vitathatatlan.",
-        "Azt, hogy valami rendkívül bizonytalan és valószínűtlen.",
-        "Azt, hogy a kérdésről tilos véleményt nyilvánítani."
+        "Azt, hogy valami biztosan igaz.",
+        "Azt, hogy valami valószínűleg igaz.",
+        "Azt, hogy valaki ezt hallotta."
       ],
       "correct": 0,
       "teaches": [
@@ -120,10 +122,10 @@
       "id": "b1-21-consolidation.ex07",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A vitapartnerem érvei rendkívül meg____ bizonyultak a záróbeszédben.",
+      "sentence": "A kutató érvei nagyon ____ voltak.",
       "hint": "convincing",
-      "english": "My debate partner's arguments proved to be extremely convincing in the closing speech.",
-      "answer": "győzőnek",
+      "english": "The researcher's arguments were very convincing.",
+      "answer": "meggyőzőek",
       "teaches": [
         "b1-opinions-arguments-vocab"
       ]
