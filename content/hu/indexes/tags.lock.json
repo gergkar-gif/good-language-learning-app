@@ -432,9 +432,9 @@
    "reason": "HU B1 read batch 3-6 (ROADMAP 153)"
   },
   "B1/change-development": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-27",
    "exercises": 48,
-   "reason": "HU B1 read-through 2026-10-06"
+   "reason": "HU B1 core batch 43-53 read and fixed (ROADMAP 153)"
   },
   "B1/cities-communities": {
    "locked": "2026-10-23",
@@ -717,9 +717,9 @@
    "reason": "HU B1 read-through 2026-10-05"
   },
   "B1/social-life-communication": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-27",
    "exercises": 48,
-   "reason": "HU B1 read-through 2026-10-06"
+   "reason": "HU B1 core batch 43-53 read and fixed (ROADMAP 153)"
   },
   "B1/society-inequality": {
    "locked": "2026-10-27",
@@ -757,9 +757,9 @@
    "reason": "history and civics fact questions retagged as untagged reading (ROADMAP 144(7))"
   },
   "B1/work-ambition-balance": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-27",
    "exercises": 48,
-   "reason": "HU B1 read-through 2026-10-06"
+   "reason": "HU B1 core batch 43-53 read and fixed (ROADMAP 153)"
   },
   "B1/work-professional-life": {
    "locked": "2026-10-22",
@@ -65594,9 +65594,11 @@
   },
   "b1-25-01.ex06": {
    "teaches": [
-    "mediopassive-verbs-odik"
+    "valik-verb"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "ban-ben-in"
+   }
   },
   "b1-25-01.ex07": {
    "teaches": [
@@ -65636,19 +65638,19 @@
   },
   "b1-25-02.ex05": {
    "teaches": [
-    "past-tense-indefinite"
+    "b1-change-development-vocab"
    ],
    "distractor_skills": {}
   },
   "b1-25-02.ex06": {
    "teaches": [
-    "b1-change-development-vocab"
+    "delative-rol-rel"
    ],
    "distractor_skills": {}
   },
   "b1-25-02.ex07": {
    "teaches": [
-    "b1-change-development-vocab"
+    "past-tense-indefinite"
    ],
    "distractor_skills": {}
   },
@@ -65690,9 +65692,11 @@
   },
   "b1-25-03.ex06": {
    "teaches": [
-    "b1-change-development-vocab"
+    "val-vel"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "on-en-on"
+   }
   },
   "b1-25-03.ex07": {
    "teaches": [
@@ -65807,8 +65811,7 @@
     "valik-verb"
    ],
    "distractor_skills": {
-    "1": "ban-ben-in",
-    "2": "delative-rol-rel"
+    "0": "ban-ben-in"
    }
   },
   "b1-25-consolidation.ex02": {
@@ -65885,7 +65888,10 @@
    "teaches": [
     "verb-government-ban-ben"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "0": "val-vel",
+    "2": "ra-re"
+   }
   },
   "b1-26-01.ex07": {
    "teaches": [
@@ -66078,8 +66084,8 @@
     "verb-government-hoz-hez"
    ],
    "distractor_skills": {
-    "1": "verb-government-val-vel",
-    "2": "verb-government-ra-re"
+    "1": "val-vel",
+    "2": "ra-re"
    }
   },
   "b1-26-05.ex07": {
@@ -66160,13 +66166,16 @@
   },
   "b1-27-01.ex04": {
    "teaches": [
-    "b1-social-life-communication-vocab"
+    "verb-government-nak-nek"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "how-the-accusative-t-works",
+    "2": "ra-re"
+   }
   },
   "b1-27-01.ex05": {
    "teaches": [
-    "nominalization"
+    "b1-social-life-communication-vocab"
    ],
    "distractor_skills": {}
   },
@@ -66196,7 +66205,7 @@
   },
   "b1-27-02.ex02": {
    "teaches": [
-    "present-tense-routine-language"
+    "indirect-questions"
    ],
    "distractor_skills": {}
   },
@@ -66214,7 +66223,7 @@
   },
   "b1-27-02.ex05": {
    "teaches": [
-    "nominalization"
+    "b1-social-life-communication-vocab"
    ],
    "distractor_skills": {}
   },
@@ -66265,7 +66274,7 @@
   },
   "b1-27-03.ex05": {
    "teaches": [
-    "meg-meaning"
+    "verb-government-ban-ben"
    ],
    "distractor_skills": {}
   },
@@ -66313,7 +66322,7 @@
   },
   "b1-27-04.ex05": {
    "teaches": [
-    "past-tense-indefinite"
+    "b1-social-life-communication-vocab"
    ],
    "distractor_skills": {}
   },
@@ -66361,7 +66370,7 @@
   },
   "b1-27-05.ex05": {
    "teaches": [
-    "nominalization"
+    "b1-social-life-communication-vocab"
    ],
    "distractor_skills": {}
   },
@@ -66421,7 +66430,7 @@
   },
   "b1-27-consolidation.ex07": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "acc-poss"
    ],
    "distractor_skills": {}
   },

@@ -1,3 +1,26 @@
+### 2026-10-27: HU B1 core units 43–53
+
+- **Cost:** 326k and 421k for three units each (~109k and ~140k a
+  unit), the lowest yet: half-size lessons and no session limit.
+- **Same generator defects in every unit:** shared goal lines, a template
+  first checklist line, glued blanks, builders whose `english` is "Build
+  the sentence in the correct order.", screens that are bare phrase
+  lists. The readers rewrote nearly every item; the checker counts
+  (10–12 errors a unit) understate the work.
+- **Unmet words after the read:** reader A did not run `unmet-words.js`
+  (it said so). Run it yourself after applying each batch (step 5): here
+  it found screen phrases reused in later lessons (*átértékel*, *kiállja
+  az idő próbáját*, *megbízik*) that are on no vocabulary list; they go on
+  the list of the lesson whose screen teaches them, and the resulting
+  `vocab-unused` suspects are accepted at freeze.
+- **`check_unit_refs.py`:** reader B wrote recaps as "*X* (A2 Unit 35)";
+  the check now reads that form too. Its false positives are recaps of a
+  form rather than a word (*kapcsolataimat*, *áttörést*, *adjuk hozzá*).
+- **For the user:** 17 of the 36 core units (13, 17, 23, 29, 35, 37, 41,
+  43–51, 55, 61, 65, 67, 72) have no skill whose `taught_in` is one of
+  their screens, so what they teach (*lehet, hogy*, *kétlem*, *dönt
+  vmiről*, *hiába* …) carries A1–A2 tags or the unit vocabulary skill.
+  The skill list is frozen (ROADMAP 125).
 # Unit pipeline: prompts, measurements, process reviews
 
 How the reviewer (Claude) runs units through Sonnet agents, what each step
@@ -86,7 +109,7 @@ frozen state, accepted findings and tag locks are per course.
    <course> <level>/<unit id> --update --reason "..."`; `python
    scripts/validate-content.py --changed`; then `python
    scripts/validate-content.py --warnings` and compare the level's lines
-   with origin/master; `python scripts/check_unit_refs.py <course> <level> <unit ids>` for the recaps readers write (warnings never fail, so a retag that leaves a
+   with origin/master; `python scripts/check_unit_refs.py <course> <level> <unit ids>` for the recaps readers write, and for B1 and above `node scripts/unmet-words.js <course> <level> --stems …` on the applied fixes (readers skip it) (warnings never fail, so a retag that leaves a
    skill under 6 exercises passes `--changed` silently: units 29–34 did
    this to `a2-review-work-past-opinions-vocab`, found only at the level
    checklist); `python scripts/freeze_unit.py <course> <level> <unit id>
@@ -369,6 +392,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-22 | HU B1 core 7, 9, 11, 13, 15, 17 | paired read, **3 core units/reader**, no-self-testing rule | | A ≥470k, B ≥427k (resumed notices only: both stopped at a Sonnet session limit mid-batch) | 386 proposed (47 / 58 / 51 / 81 / 78 / 71), 6 rejected by the checker (rewritten by Claude), Claude dropped 1 (*elmondott volna* in a story) and restored 1 it had wrongly reversed (Fábián's *te*); 51 Unit 13 fixes first refused by a missing final newline (164 files fixed, `apply_replacements.py` tolerant) | cost/unit not measurable (≥ ~150k from the resumed parts alone); ~64 fixes/unit (×0.75 of 3–6: core units have fewer defects than citizenship ones); reader B ran only the named commands; walk 36/36 |
 | 10-23 | HU B1 core 19, 21, 23, 25, 27, 29 | paired read, 3 core units/reader | | A 581k, 39.2; B 430k, 38.9 | 662 proposed (159 / 155 / 151 / 63 / 69 / 65), 7 rejected (5 checker false positives on accented names in English options, 1 `answer`/`answers`, 1 tell; rewritten by Claude), Claude changed 2 story/screen lines | **~194k/unit (A: Units 19–23 were rewritten almost whole, ~155 fixes each) and ~143k/unit (B: Units 25–29, half-size lessons)**; 18 lessons had no checklist, so no `canDo` to copy: `add_missing_checklists.py` (goal lines; consolidations from the challenge drafts); walk 36/36 |
 | 10-27 | HU B1 core 31, 33, 35, 37, 39, 41 | paired read, 3 core units/reader; both stopped by the weekly Sonnet limit with Units 35 and 41 written but not reported, resumed after the reset | | not measurable (limit mid-batch; A's last resume 407k cumulative) | 446 proposed (89 / 84 / 90 / 59 / 54 / 70), 9 rejected by the checker (6 length give-aways, 1 *az ____* article blank, 1 *volna* in the prompt, 1 `distractor_skills` naming the item's own skill; rewritten by Claude); Claude dropped 10 (8 screen rewrites that replaced the taught phrases *meg vagyok győződve*, *továbbá*, *tekintettel arra, hogy* with A2 words; a wrong "met in Unit 26" recap; a story line), corrected 2 recap unit numbers and removed 2 unchecked ones, fixed 5 *volna*-in-both-clauses suspects, 1 tell, 1 challenge whose target missed its `canDo` | ~74 fixes/unit; 36 lessons got checklists; `noun-compounds` fell to 5 exercises after a correct retag, one item added; new `check_unit_refs.py` found 5 more wrong recap units (Units 19, 27, 29, 31, 35); walk 36/36 |
+| 10-27 | HU B1 core 43, 45, 47, 49, 51, 53 | paired read, 3 core units/reader, no limit hit | | A 326k, 56 tool calls (~109k/unit); B 421k, 70 (~140k/unit) | 433 proposed (72 / 64 / 65 / 79 / 79 / 74), 7 rejected by the checker (5 length, 1 tell, 1 hint = answer, 1 article blank; rewritten by Claude); Claude changed 6 (*arra az eshetőségre* → *esetre*, a story option true of the story, a 94-character story answer, a *noha* unit, the *mielőtt* item's tag) | **cheapest batch so far** (half-size lessons, ~72 fixes/unit); reader A skipped `unmet-words.js`: Claude's run found 19 hits after both lists were applied, 15 of them screen phrases on no vocabulary list (added), 4 lemmatizer false positives; 36 checklists, 92 glosses; walk 36/36 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 

@@ -6,12 +6,14 @@ the recap follows a skill title that names a word its screen never shows).
 
     python scripts/check_unit_refs.py <course> <level> [<unit id> ...]
 
-For each italic word or phrase directly before "from <level> Unit <n>", it
+For each italic word or phrase directly before "from <level> Unit <n>" or
+"*X* (<level> Unit <n>)" right after it (reader B, batch 43-53), it
 finds the first unit (in course order) whose grammar screens, vocabulary,
 exercises or lesson files contain it, and reports the recap when that unit is
 later than the one claimed, or when the word appears nowhere. Matching is by
 text, so a recap of a form rather than a word (*adjuk hozzá* for the
-imperative taught in A2 Unit 10) can be a false positive: read each hit.
+imperative taught in A2 Unit 10, *kapcsolataimat* for plural possessed nouns)
+can be a false positive: read each hit.
 Exit 1 when anything is reported.
 """
 import glob
@@ -22,7 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ORDER = ["a1", "a2", "b1", "b2", "c1"]
-REF = re.compile(r"\*([^*]+)\*[^*]{0,40}?\bfrom (A1|A2|B1|B2|C1) Unit (\d+)")
+REF = re.compile(r"\*([^*]+)\*(?:[^*]{0,40}?\bfrom | \()(A1|A2|B1|B2|C1) Unit (\d+)")
 LETTER = "a-záéíóöőúüű"
 
 
