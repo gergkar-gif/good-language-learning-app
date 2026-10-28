@@ -123,6 +123,34 @@ The user took the four recommended options:
   a Unit 9 recap blank) were replaced with *hiába* items, vocabulary-tagged.
 - 12 frozen units were unfrozen for these edits and refrozen with their
   accepted findings; all 36 core units check clean, walk 216/216.
+### 2026-10-28: HU B1 citizenship Units 8, 10, 12, 14
+
+- **Cost:** not measurable for the first run (the 5-hour limit hit
+  both readers before any file was written); the resumed runs reported
+  307k and 344k for two units each. The readers' fix counts (~84 a unit)
+  match the core units', so the texts, not the items, drove the work:
+  every segment had overclaims, mind-reading or national-romantic lines
+  (*az egész keresztény Európa lélegzetvisszafojtva figyelt*, *dicső
+  férfiág*, "saved Christian Europe") and facts the items asked for that
+  no segment stated (Vajk, Koppány, Julianus, Rogerius, Körmöcbánya).
+- **Recaps of *amely* again.** Reader A wrote "you know *amely* from A2
+  Unit 4" on three Unit 10 screens; *amely* is taught on b1-arpadhaz-02.
+  `check_unit_refs.py` would have caught it, but given unit ids it
+  skipped every citizenship screen (it matched file stems without the
+  topic suffix): **fixed**, and Units 2, 4, 6 rechecked clean.
+- **Unmet words in the readers' own new options** (17–85 a batch since
+  core 43–53, found only by the reviewer's run after applying): **scripted.**
+  `check_fixes.py` now runs `unmet-words.js` before and after applying a
+  list (B1 and up) and prints the words each fix brings, so they are
+  listed while sorting, not after the merge. Tested on the pre-fix Unit 14:
+  23 hits, the same words found by hand.
+- **Change for the next batches:** the focus file names *amely* (Unit 10),
+  *-ható* (Unit 61) and verbal nouns among the forms to watch in
+  options, the three slips found after applying here.
+- **Template slip:** reader B wrote "generator scripts" to build its fix
+  JSON despite the template's "don't write your own tools"; its fixes were
+  sound, so no change beyond the existing rule.
+
 ### Route A: read-first batch (HU A2, 2026-10-14 → 2026-10-15)
 
 0. **Batch setup (Spanish, 2026-10-21):** `python scripts/batch_setup.py
@@ -153,6 +181,8 @@ The user took the four recommended options:
    the review list (target-language and unsure fixes) and the report's
    non-fix notes; readers propose wrong target-language text a few times a
    batch (rulebook § 6). Delete what you don't take from the review file.
+   From B1 it also prints the unmet words each fix brings (`unmet-words.js`
+   before and after; 2026-10-28): list them or, in core units, rewrite them.
 3. **Merge and apply:** `python scripts/merge_fixes.py <batch>/merged.json
    <each .auto.json and filtered .review.json>` (refuses when two readers
    fixed one item differently), then `python scripts/apply_replacements.py
@@ -459,6 +489,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-27 | HU B1 core 43, 45, 47, 49, 51, 53 | paired read, 3 core units/reader, no limit hit | | A 326k, 56 tool calls (~109k/unit); B 421k, 70 (~140k/unit) | 433 proposed (72 / 64 / 65 / 79 / 79 / 74), 7 rejected by the checker (5 length, 1 tell, 1 hint = answer, 1 article blank; rewritten by Claude); Claude changed 6 (*arra az eshetőségre* → *esetre*, a story option true of the story, a 94-character story answer, a *noha* unit, the *mielőtt* item's tag) | **cheapest batch so far** (half-size lessons, ~72 fixes/unit); reader A skipped `unmet-words.js`: Claude's run found 19 hits after both lists were applied, 15 of them screen phrases on no vocabulary list (added), 4 lemmatizer false positives; 36 checklists, 92 glosses; walk 36/36 |
 | 10-28 | HU B1 core 55, 57, 59, 61, 63, 65 | paired read, 3 core units/reader; both stopped by the 5-hour Sonnet limit after two units, resumed after the reset | | A 384k, B 396k as reported on resume (~128k and ~132k a unit if cumulative) | 443 proposed (68 / 66 / 64 / 81 / 80 / 84), 15 rejected by the checker (9 tells, 3 length, 1 article blank, 1 copy, 1 *take* gloss; rewritten by Claude); Claude changed 6 (*köteles*/*kénytelen* as two answers, a story claim about Gina, 4 wrong recap units) and fixed 8 more recap units with `check_unit_refs.py` | ~74 fixes/unit; unmet-words after applying: 17 hits, 7 added to vocabulary lists, the rest inflected forms the lemma lookup misses; 18 checklists, 36 challenges, 62 glosses; walk 36/36 |
 | 10-28 | HU B1 core 67, 70, 72 (last core batch) | paired read, 2 units + 1 | | A 357k (~178k/unit), B 271k (one unit) | 242 proposed (88 / 76 / 78), 0 rejected; Claude corrected 3 recap units | **core track done: 36/36 frozen; every core unit check-content clean, walk 216/216**; the reader audit's `--top 0` had hidden every "not in the dictionary" word since the template began (fixed): 62 story words across the 32 core classics, 44 glossed as surface forms, the rest names |
+| 10-28 | HU B1 citizenship 8, 10, 12, 14 (first citizenship batch) | paired read, 2 units/reader, facts block; both stopped by the 5-hour Sonnet limit before writing a file, resumed after the reset | | A 307k, B 344k (resumed notices only) | 337 proposed (101 / 87 / 72 / 77), 7 rejected by the checker (rewritten by Claude); Claude changed 3, dropped 2 (track-numbered consolidation titles), added 10 item fixes, 77 vocabulary entries, 4 challenge edits | ~150–170k reader tokens/unit if the notices are cumulative; 15 placeholder question sets rewritten (none left in HU B1); 85 unmet words after applying (77 listed, 4 forms before their unit rewritten); `check_unit_refs.py` unit filter fixed (it skipped every citizenship screen) and found 2 wrong *amely* recaps; facts web-checked, none disputed; walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 

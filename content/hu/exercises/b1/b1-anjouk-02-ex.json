@@ -81,13 +81,17 @@
       "id": "b1-anjouk-02.ex04",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "A három uralkodó megállapodott abban, hogy ...",
+      "question": "A három uralkodó megállapodott, hogy ...",
       "options": [
         "új kereskedelmi utat nyitnak.",
-        "új kereskedelmi utat nyitottak régen.",
-        "nem beszélnek egymással soha."
+        "új kereskedelmi utat nyitottak.",
+        "új kereskedelmi utat nyitnának."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "past-tense-indefinite",
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "b1-anjouk-02.ex05",
@@ -110,9 +114,9 @@
       "category": "reading",
       "question": "Miért hívják a mai közép-európai együttműködést 'Visegrádi Négyeknek' (V4)?",
       "options": [
-        "Mert az 1335-ös történelmi visegrádi királytalálkozó örökségére épül.",
-        "Mert ott épült fel az első parlament.",
-        "Mert ott született az Alaptörvény."
+        "Mert a nevét az 1335-ös visegrádi találkozóról kapta.",
+        "Mert Visegrádon építették fel az első magyar parlamentet.",
+        "Mert az Alaptörvényt Visegrádon fogadták el 2011-ben."
       ],
       "correct": 0,
       "stage": "civics"
@@ -123,7 +127,7 @@
       "category": "reading",
       "question": "Milyen gazdasági célt szolgált az új visegrádi kereskedelmi út?",
       "options": [
-        "Hogy elkerüljék Bécs árumegállító jogát és a magas vámokat.",
+        "Hogy elkerüljék Bécs árumegállító jogát.",
         "Hogy a Dunát eltereljék a várostól.",
         "Hogy leállítsák a kereskedelmet."
       ],
@@ -136,9 +140,9 @@
       "category": "reading",
       "question": "Hol fogadta Károly Róbert a vendég uralkodókat?",
       "options": [
-        "A visegrádi palotában.",
-        "A budai várban.",
-        "Esztergomban."
+        "A visegrádi királyi palotában.",
+        "A budai királyi várban.",
+        "Az esztergomi érseki palotában."
       ],
       "correct": 0
     }

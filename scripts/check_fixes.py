@@ -78,6 +78,25 @@ def findings(course, level, unit):
     return {(f[3], f[4], f[5]) for f in cc.run(cc.Source(), course, [level], unit)}
 
 
+def unmet(course, level, unit):
+    """{(item id, word)} from unmet-words.js for the unit's stems, from B1
+    on, where check-content runs no `unmet-word` (HU B1 batches 43-53, 55-65
+    and cit-08-14: the readers' own new options brought 17-85 unmet words a
+    batch, found only after applying)."""
+    if level in ("a1", "a2"):
+        return set()
+    units = json.loads((ROOT / f"content/{course}/curriculum/units/{level}.json").read_text(encoding="utf-8"))
+    stems = next((u["stems"] for u in units if u["id"] == unit), None)
+    if not stems:
+        return set()
+    r = subprocess.run(["node", str(ROOT / "scripts/unmet-words.js"), course, level, "--stems", ",".join(stems)],
+                       cwd=ROOT, capture_output=True, text=True, encoding="utf-8")
+    try:
+        return {(h["id"], h["word"]) for h in json.loads(r.stdout or "[]")}
+    except json.JSONDecodeError:
+        return set()
+
+
 def main():
     flags = {a for a in sys.argv[1:] if a.startswith("--")}
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
@@ -89,6 +108,7 @@ def main():
     rejected = {n: e for n, e in errors.items()}
 
     before = findings(course, level, unit)
+    unmet_before = unmet(course, level, unit)
     # a fix that adds a word to a vocabulary list makes it met for the other
     # fixes only once the word index is rebuilt (es A2 units 4, 10, 24 had a
     # fix rejected for a word another fix in the same list had just listed)
@@ -102,6 +122,7 @@ def main():
             subprocess.run([sys.executable, str(ROOT / "scripts/build_word_lesson_index.py"), course],
                            cwd=ROOT, capture_output=True, check=True)
         after = findings(course, level, unit)
+        unmet_after = unmet(course, level, unit)
     finally:
         for p, t in originals.items():
             (ROOT / p).write_text(t, encoding="utf-8")
@@ -144,6 +165,17 @@ def main():
         print("  new findings no fix names by id (give text fixes an \"id\"; check these by hand):")
         for u in unclaimed:
             print("    " + u)
+    brought = sorted(unmet_after - unmet_before)
+    if brought:
+        # reported, not rejected: citizenship units keep their words and list
+        # them (user, 2026-10-22); core units rewrite them
+        by = {}
+        for eid, word in brought:
+            by.setdefault(eid, []).append(word)
+        print(f"  unmet words the fixes bring ({len(brought)}; list each on the first lesson using it, "
+              "or rewrite it in a core unit; lookup misses of split verbs and names included):")
+        for eid, words in by.items():
+            print(f"    {eid}: {', '.join(words)}")
     print(f"wrote {stem}.auto.json, {stem}.review.json")
 
 

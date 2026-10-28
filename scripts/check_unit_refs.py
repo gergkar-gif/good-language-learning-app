@@ -75,7 +75,7 @@ def main():
         wanted = {st for (lvl, uid), sts in stems_of.items() if lvl == level and uid in only for st in sts}
     hits = 0
     for f in sorted(glob.glob(str(ROOT / f"content/{course}/grammar/{level}/*.json"))):
-        if wanted is not None and stem_of(f) not in wanted:
+        if wanted is not None and stem_of(f, pos) not in wanted:
             continue
         for m in REF.finditer(Path(f).read_text(encoding="utf-8")):
             word = re.split(r"\.\.\.|…", m.group(1))[0].strip(" ,.'")

@@ -1,707 +1,700 @@
 [
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
-  "old": "Ő felismerte, hogy a pogány világ ideje lejárt.",
-  "new": "Úgy látta, hogy a keresztény szomszédok között a pogány hit nem maradhat fenn tartósan.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
-  "old": "A megmaradás érdekében az ország kereszténységre való vezetése mellett döntött. Elhatározta, hogy a nép áttér az új hitre.",
-  "new": "Az ország megmaradása érdekében a kereszténység felé fordult. Azt akarta, hogy népe áttérjen az új hitre.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
-  "old": "Nyugati hittérítő papokat hívott be, hogy terjesszék a keresztény vallást. Az egyház gyorsan építeni kezdte az első templomokat.",
-  "new": "Nyugati hittérítő papokat hívott az országba, hogy terjesszék a keresztény vallást. Ekkor kezdték építeni az első templomokat és kolostorokat is.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
-  "old": "Géza megkeresztelkedett, és fiát, Istvánt is megkereszteltette. Erős dinasztikus szövetségeket kötött a szomszédos keresztény államokkal.",
-  "new": "Géza megkeresztelkedett, és fiát, Vajkot is megkereszteltette, aki a keresztségben az István nevet kapta. Az írott források szerint azonban a régi hitet sem hagyta el teljesen.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
-  "old": "Géza fejedelem békét teremtett a határokon, és előkészítette fiának az utat a királyi trón felé.",
-  "new": "Fia, István a bajor herceg lányát, Gizellát vette feleségül, így a magyar fejedelmi család a nyugati uralkodókhoz kötődött. Géza 997-ben halt meg; utódjának fiát, Istvánt jelölte ki.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
-  "old": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"könyv\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"book\"\n        },\n        {\n          \"lemma\": \"telefon\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"telephone\"\n        },\n        {\n          \"lemma\": \"ház\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"house\"\n        }\n      ]",
-  "new": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"fejedelem\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"prince, ruling chieftain\"\n        },\n        {\n          \"lemma\": \"kereszténység\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"Christianity\"\n        },\n        {\n          \"lemma\": \"megkeresztel\",\n          \"pos\": \"verb\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"to baptize\"\n        }\n      ]",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
-  "old": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Hol van Meg és Károly?\",\n          \"options\": [\n            \"Budapesten\",\n            \"Londonban\",\n            \"Bécsben\",\n            \"Madridban\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg Budapesten van Károllyal (Meg is in Budapest with Károly).\"\n        },\n        {\n          \"question\": \"Mi van az asztalon?\",\n          \"options\": [\n            \"Egy könyv és egy telefon\",\n            \"Egy autó és egy kulcs\",\n            \"Egy kutya és egy macska\",\n            \"Csak egy pohár tej\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon).\"\n        },\n        {\n          \"question\": \"Milyen nyelven beszélnek a párbeszédekben?\",\n          \"options\": [\n            \"Magyarul\",\n            \"Spanyolul\",\n            \"Németül\",\n            \"Olaszul\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg magyarul gyakorolja az alapvető szavakat Károllyal.\"\n        }\n      ]",
-  "new": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Mikor halt meg Géza fejedelem?\",\n          \"options\": [\n            \"1000-ben.\",\n            \"997-ben.\",\n            \"955-ben.\",\n            \"1038-ban.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"Géza 997-ben halt meg (Géza died in 997).\"\n        },\n        {\n          \"question\": \"Mit kezdtek építeni Géza idején?\",\n          \"options\": [\n            \"Az első templomokat és kolostorokat.\",\n            \"Egy nagy fővárost.\",\n            \"Pogány áldozóhelyeket.\",\n            \"Erős várakat a határokon.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"A szöveg szerint ekkor kezdték építeni az első templomokat és kolostorokat (the first churches and monasteries were begun).\"\n        },\n        {\n          \"question\": \"Mit mondanak az írott források Géza hitéről?\",\n          \"options\": [\n            \"Soha nem keresztelkedett meg.\",\n            \"Csak a régi hitben hitt.\",\n            \"A régi hitet sem hagyta el teljesen.\",\n            \"Mindenkit megkereszteltetett.\"\n          ],\n          \"correctIndex\": 2,\n          \"explanation\": \"Az írott források szerint a régi hitet sem hagyta el teljesen (he did not entirely give up the old faith).\"\n        }\n      ]",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
-  "old": "Esztergom, az 1000. év karácsonya. Az egész keresztény Európa lélegzetvisszafojtva figyelt.",
-  "new": "A hagyomány szerint Esztergomban koronázták királlyá Istvánt, 1000 karácsonyán vagy 1001 elején. A pontos dátumot a történészek vitatják.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
-  "old": "A fiatal István apjától, Gézától örökölte a fejedelmi hatalmat, de most királyként akart uralkodni.",
-  "new": "Géza halála után István örökölte a fejedelmi hatalmat, de Koppány, Géza rokona, magának akarta a hatalmat. István fegyverrel legyőzte őt 997 körül.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
-  "old": "II. Szilveszter pápa áldását adta, és díszes királyi koronát küldött Rómából az új államnak.",
-  "new": "A legenda szerint II. Szilveszter pápa áldását adta, és koronát küldött Rómából. A történészek szerint a mai Szent Korona későbbi eredetű.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
-  "old": "A főpapok szent olajjal kenték fel az uralkodót. Az ünnepélyes koronázás pillanatában István elfoglalta a magyar trónt.",
-  "new": "A nyugati szokás szerint a főpapok szent olajjal kenhették fel az uralkodót. A koronázással István Magyarország első királya lett.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
-  "old": "István tudta, hogy a hatalom óriási felelősség. Erős és független keresztény országot akart hagyni minden későbbi utód számára.",
-  "new": "Az új királyság ettől kezdve a keresztény Európa része volt, és a hagyomány szerint nem tartozott a Német-római Birodalom fennhatósága alá.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
-  "old": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"könyv\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"book\"\n        },\n        {\n          \"lemma\": \"telefon\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"telephone\"\n        },\n        {\n          \"lemma\": \"ház\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"house\"\n        }\n      ]",
-  "new": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"koronázás\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"coronation\"\n        },\n        {\n          \"lemma\": \"király\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"king\"\n        },\n        {\n          \"lemma\": \"pápa\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"pope\"\n        }\n      ]",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
-  "old": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Hol van Meg és Károly?\",\n          \"options\": [\n            \"Budapesten\",\n            \"Londonban\",\n            \"Bécsben\",\n            \"Madridban\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg Budapesten van Károllyal (Meg is in Budapest with Károly).\"\n        },\n        {\n          \"question\": \"Mi van az asztalon?\",\n          \"options\": [\n            \"Egy könyv és egy telefon\",\n            \"Egy autó és egy kulcs\",\n            \"Egy kutya és egy macska\",\n            \"Csak egy pohár tej\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon).\"\n        },\n        {\n          \"question\": \"Milyen nyelven beszélnek a párbeszédekben?\",\n          \"options\": [\n            \"Magyarul\",\n            \"Spanyolul\",\n            \"Németül\",\n            \"Olaszul\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg magyarul gyakorolja az alapvető szavakat Károllyal.\"\n        }\n      ]",
-  "new": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Mi történt Koppánnyal?\",\n          \"options\": [\n            \"Királlyá koronázták.\",\n            \"István fegyverrel legyőzte.\",\n            \"Rómába ment a pápához.\",\n            \"Együtt uralkodott Istvánnal.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"István fegyverrel legyőzte Koppányt (István defeated Koppány by force).\"\n        },\n        {\n          \"question\": \"Hol koronázták meg Istvánt a hagyomány szerint?\",\n          \"options\": [\n            \"Esztergomban.\",\n            \"Budán.\",\n            \"Pécsett.\",\n            \"Egerben.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"A hagyomány szerint Esztergomban koronázták meg (according to tradition, in Esztergom).\"\n        },\n        {\n          \"question\": \"Mit mondanak a történészek a mai Szent Koronáról?\",\n          \"options\": [\n            \"Hogy István koronája volt.\",\n            \"Hogy a pápa küldte.\",\n            \"Hogy Koppány viselte.\",\n            \"Hogy későbbi eredetű.\"\n          ],\n          \"correctIndex\": 3,\n          \"explanation\": \"A történészek szerint a mai Szent Korona későbbi eredetű (it is of later origin).\"\n        }\n      ]",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
-  "old": "A korona megszerzése után István király azonnal hozzálátott az ország megszervezéséhez. Hatalmas munka várt rá.",
-  "new": "Királyként István 1038-ig uralkodott, és az országot a nyugati keresztény államok mintájára szervezte meg.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
-  "old": "A pogány törzsfők lázadásait fegyverrel verte le, biztosítva a belső békét. Szigorú, de igazságos törvénykönyveket adott ki.",
-  "new": "A törzsfők lázadásait fegyverrel verte le; a krónikák szerint Koppányt, Gyulát és Ajtonyt is legyőzte. Szigorú törvényeket adott ki.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
-  "old": "Tíz egyházmegyét alapított, élükre püspököket állított, és megkezdte a gazdag kolostorok építését. Elrendelte, hogy minden tíz falu építsen egy templomot.",
-  "new": "Tíz egyházmegyét szervezett, élükre püspököket állított; az esztergomi érsekség lett az egyház központja. Kolostorokat is alapított, és törvényben rendelte el, hogy minden tíz falu építsen egy templomot.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
-  "old": "Bevezette a tized fizetését az egyház és az állam fenntartására. A keresztény hit a mindennapi élet alapjává vált.",
-  "new": "Bevezette a tized fizetését az egyház fenntartására. A keresztény hit azonban csak lassan terjedt el: a régi hithez sokan sokáig ragaszkodtak.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
-  "old": "István király kemény kézzel, de tiszta szívvel vezette népét a civilizáció és az európai jövő felé.",
-  "new": "Uralkodása alatt Magyarország a keresztény európai államok közé került.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
-  "old": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"könyv\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"book\"\n        },\n        {\n          \"lemma\": \"telefon\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"telephone\"\n        },\n        {\n          \"lemma\": \"ház\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"house\"\n        }\n      ]",
-  "new": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"egyházmegye\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"diocese\"\n        },\n        {\n          \"lemma\": \"püspök\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"bishop\"\n        },\n        {\n          \"lemma\": \"kolostor\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"monastery\"\n        }\n      ]",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
-  "old": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Hol van Meg és Károly?\",\n          \"options\": [\n            \"Budapesten\",\n            \"Londonban\",\n            \"Bécsben\",\n            \"Madridban\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg Budapesten van Károllyal (Meg is in Budapest with Károly).\"\n        },\n        {\n          \"question\": \"Mi van az asztalon?\",\n          \"options\": [\n            \"Egy könyv és egy telefon\",\n            \"Egy autó és egy kulcs\",\n            \"Egy kutya és egy macska\",\n            \"Csak egy pohár tej\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon).\"\n        },\n        {\n          \"question\": \"Milyen nyelven beszélnek a párbeszédekben?\",\n          \"options\": [\n            \"Magyarul\",\n            \"Spanyolul\",\n            \"Németül\",\n            \"Olaszul\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg magyarul gyakorolja az alapvető szavakat Károllyal.\"\n        }\n      ]",
-  "new": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Meddig uralkodott István király?\",\n          \"options\": [\n            \"1031-ig.\",\n            \"1000-ig.\",\n            \"1083-ig.\",\n            \"1038-ig.\"\n          ],\n          \"correctIndex\": 3,\n          \"explanation\": \"Királyként 1038-ig uralkodott (he reigned as king until 1038).\"\n        },\n        {\n          \"question\": \"Mi lett az egyház központja?\",\n          \"options\": [\n            \"Az esztergomi érsekség.\",\n            \"A pannonhalmi kolostor.\",\n            \"A pécsi püspökség.\",\n            \"Az egri vár.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Az esztergomi érsekség lett az egyház központja (the archbishopric of Esztergom became the centre).\"\n        },\n        {\n          \"question\": \"Miért terjedt el lassan a keresztény hit?\",\n          \"options\": [\n            \"Mert nem volt templom.\",\n            \"Mert a pápa tiltotta.\",\n            \"Mert a régi hithez sokan sokáig ragaszkodtak.\",\n            \"Mert István nem akarta.\"\n          ],\n          \"correctIndex\": 2,\n          \"explanation\": \"A régi hithez sokan sokáig ragaszkodtak (many clung to the old faith for a long time).\"\n        }\n      ]",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-04-szentistvanoroksege.json",
-  "old": "1038-ban elhunyt az első király, de hatalmas öröksége örökre fennmaradt az utókor számára.",
-  "new": "1038. augusztus 15-én elhunyt az első király, de öröksége fennmaradt az utókor számára.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-04-szentistvanoroksege.json",
-  "old": "István király bölcs intelmeket írt fiának, Imre hercegnek a keresztény hitről és az igazságos kormányzásról.",
-  "new": "A hagyomány szerint István király intelmeket írt fiának, Imre hercegnek a keresztény hitről és a kormányzásról; a történészek vitatják, hogy ki és mikor fogalmazta meg az Intelmeket. Imre herceg 1031-ben meghalt, a hagyomány szerint vadászat közben, ezért István halála után trónharcok következtek.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-04-szentistvanoroksege.json",
-  "old": "1083-ban István királyt a katolikus egyház szentté avatta, és ő lett Magyarország fő védőszentje.",
-  "new": "1083-ban Istvánt, fiát, Imrét és Gellért püspököt szentté avatták, és István Magyarország egyik védőszentje lett.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-04-szentistvanoroksege.json",
-  "old": "Augusztus 20-a, Szent István napja ma Magyarország legfontosabb hivatalos nemzeti ünnepe.",
-  "new": "Augusztus 20-a, Szent István napja ma az államalapítás ünnepe és Magyarország hivatalos nemzeti ünnepe.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-04-szentistvanoroksege.json",
-  "old": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"könyv\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"book\"\n        },\n        {\n          \"lemma\": \"telefon\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"telephone\"\n        },\n        {\n          \"lemma\": \"ház\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"house\"\n        }\n      ]",
-  "new": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"szentté avat\",\n          \"pos\": \"verb\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"to canonize\"\n        },\n        {\n          \"lemma\": \"védőszent\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"patron saint\"\n        },\n        {\n          \"lemma\": \"intelem\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"admonition, counsel\"\n        }\n      ]",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-04-szentistvanoroksege.json",
-  "old": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Hol van Meg és Károly?\",\n          \"options\": [\n            \"Budapesten\",\n            \"Londonban\",\n            \"Bécsben\",\n            \"Madridban\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg Budapesten van Károllyal (Meg is in Budapest with Károly).\"\n        },\n        {\n          \"question\": \"Mi van az asztalon?\",\n          \"options\": [\n            \"Egy könyv és egy telefon\",\n            \"Egy autó és egy kulcs\",\n            \"Egy kutya és egy macska\",\n            \"Csak egy pohár tej\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon).\"\n        },\n        {\n          \"question\": \"Milyen nyelven beszélnek a párbeszédekben?\",\n          \"options\": [\n            \"Magyarul\",\n            \"Spanyolul\",\n            \"Németül\",\n            \"Olaszul\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg magyarul gyakorolja az alapvető szavakat Károllyal.\"\n        }\n      ]",
-  "new": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Kikkel együtt avatták szentté Istvánt?\",\n          \"options\": [\n            \"Gizellával és Koppánnyal.\",\n            \"Imrével és Gellért püspökkel.\",\n            \"Gézával és Sarolttal.\",\n            \"A pápával és a császárral.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"1083-ban Istvánt, Imrét és Gellért püspököt avatták szentté (Stephen, Imre and Bishop Gellért were canonized).\"\n        },\n        {\n          \"question\": \"Mit vitatnak a történészek az Intelmekkel kapcsolatban?\",\n          \"options\": [\n            \"Hogy ki és mikor fogalmazta meg őket.\",\n            \"Hogy kinek szóltak.\",\n            \"Hogy megmaradtak-e.\",\n            \"Hogy latinul íródtak-e.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Vitatják, hogy ki és mikor fogalmazta meg az Intelmeket (historians dispute who wrote them and when).\"\n        },\n        {\n          \"question\": \"Mi következett István halála után?\",\n          \"options\": [\n            \"Hosszú béke.\",\n            \"Trónharcok.\",\n            \"Új honfoglalás.\",\n            \"A pápa uralma.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"István halála után trónharcok következtek (a struggle for the throne followed).\"\n        }\n      ]",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
-  "old": "A magyar történelem legszentebb kincse a Szent Korona és az ezeréves koronázási jelvények együttese.",
-  "new": "A Szent Korona a magyar koronázási jelvények legfontosabb darabja. A történészek szerint a mai korona részei a 11–12. században készültek.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
-  "old": "A királyi szimbólumok közé tartozik még a díszes jogar, az arany országalma és a selyemből szőtt koronázási palást.",
-  "new": "A koronázási jelvényekhez tartozik még a jogar, az országalma és a koronázási palást is.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
-  "old": "Ez a felbecsülhetetlen értékű ereklye a független keresztény államiság és a nemzeti folytonosság legfőbb jelképe.",
-  "new": "Sokan szent ereklyeként tisztelik, és a magyar államiság folytonosságának jelképének tekintik.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
-  "old": "Bár az első királyi dinasztia kihalt, a Szent Korona eszméje évszázadokon át összetartotta a nemzetet.",
-  "new": "Az Árpád-ház 1301-ben kihalt, de a Szent Korona a későbbi századokban is az államhatalom jelképe maradt.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
-  "old": "A koronát ma fegyveres katonák őrzik a Parlament Kupolacsarnokában, ahol mindenki megcsodálhatja.",
-  "new": "A második világháború végén a koronát nyugatra vitték, és az amerikaiak kezébe került; 1978-ban az Egyesült Államok visszaadta Magyarországnak. 2000 óta a Parlament Kupolacsarnokában őrzik, díszőrség áll mellette.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
-  "old": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"könyv\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"book\"\n        },\n        {\n          \"lemma\": \"telefon\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"telephone\"\n        },\n        {\n          \"lemma\": \"ház\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"house\"\n        }\n      ]",
-  "new": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"korona\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"crown\"\n        },\n        {\n          \"lemma\": \"jogar\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"sceptre\"\n        },\n        {\n          \"lemma\": \"ereklye\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"relic\"\n        }\n      ]",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
-  "old": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Hol van Meg és Károly?\",\n          \"options\": [\n            \"Budapesten\",\n            \"Londonban\",\n            \"Bécsben\",\n            \"Madridban\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg Budapesten van Károllyal (Meg is in Budapest with Károly).\"\n        },\n        {\n          \"question\": \"Mi van az asztalon?\",\n          \"options\": [\n            \"Egy könyv és egy telefon\",\n            \"Egy autó és egy kulcs\",\n            \"Egy kutya és egy macska\",\n            \"Csak egy pohár tej\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon).\"\n        },\n        {\n          \"question\": \"Milyen nyelven beszélnek a párbeszédekben?\",\n          \"options\": [\n            \"Magyarul\",\n            \"Spanyolul\",\n            \"Németül\",\n            \"Olaszul\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg magyarul gyakorolja az alapvető szavakat Károllyal.\"\n        }\n      ]",
-  "new": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Kinek a kezébe került a korona a háború végén?\",\n          \"options\": [\n            \"Az oroszok kezébe.\",\n            \"Az amerikaiak kezébe.\",\n            \"A németek kezébe.\",\n            \"A törökök kezébe.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"Az amerikaiak kezébe került (it came into American hands).\"\n        },\n        {\n          \"question\": \"Mikor halt ki az Árpád-ház?\",\n          \"options\": [\n            \"1038-ban.\",\n            \"1083-ban.\",\n            \"1301-ben.\",\n            \"1978-ban.\"\n          ],\n          \"correctIndex\": 2,\n          \"explanation\": \"Az Árpád-ház 1301-ben kihalt (the Árpád dynasty died out in 1301).\"\n        },\n        {\n          \"question\": \"Hogyan tisztelik sokan a Szent Koronát?\",\n          \"options\": [\n            \"Szent ereklyeként.\",\n            \"Egyszerű ékszerként.\",\n            \"Katonai zászlóként.\",\n            \"Régi pénzként.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Sokan szent ereklyeként tisztelik (many revere it as a holy relic).\"\n        }\n      ]",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-01-ex.json",
-  "id": "b1-istvankiraly-01.ex02",
-  "set": {
-   "question": "Miért fordult Géza fejedelem a kereszténység felé?",
-   "options": [
-    "Mert meg akarta menteni az országot.",
-    "Mert a magyarok már régóta keresztények voltak.",
-    "Mert a nyugati papok ezt kérték tőle."
-   ]
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
+    "old": "Ő felismerte, hogy a pogány világ ideje lejárt.",
+    "new": "Úgy látta, hogy a keresztény szomszédok között a pogány hit nem maradhat fenn tartósan.",
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-01-ex.json",
-  "id": "b1-istvankiraly-01.ex05",
-  "set": {
-   "options": [
-    "Bajor Gizellát.",
-    "Egy lengyel fejedelem lányát.",
-    "Koppány húgát."
-   ]
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
+    "old": "A megmaradás érdekében az ország kereszténységre való vezetése mellett döntött. Elhatározta, hogy a nép áttér az új hitre.",
+    "new": "Az ország megmaradása érdekében a kereszténység felé fordult. Azt akarta, hogy népe áttérjen az új hitre.",
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-01-ex.json",
-  "id": "b1-istvankiraly-01.ex07",
-  "set": {
-   "options": [
-    "Mert így közelebb került a keresztény Nyugathoz.",
-    "Mert a pogány fejedelmek ezt kérték tőle.",
-    "Mert a magyarok mindig is keresztények voltak."
-   ]
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
+    "old": "Nyugati hittérítő papokat hívott be, hogy terjesszék a keresztény vallást. Az egyház gyorsan építeni kezdte az első templomokat.",
+    "new": "Nyugati hittérítő papokat hívott az országba, hogy terjesszék a keresztény vallást. Ekkor kezdték építeni az első templomokat és kolostorokat is.",
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-02-ex.json",
-  "id": "b1-istvankiraly-02.ex02",
-  "set": {
-   "options": [
-    "Géza rokona, aki magának akarta a hatalmat.",
-    "István fia, aki megörökölte a hatalmat.",
-    "Gizella apja, a bajor herceg."
-   ]
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
+    "old": "Géza megkeresztelkedett, és fiát, Istvánt is megkereszteltette. Erős dinasztikus szövetségeket kötött a szomszédos keresztény államokkal.",
+    "new": "Géza megkeresztelkedett, és fiát, Vajkot is megkereszteltette, aki a keresztségben az István nevet kapta. Az írott források szerint azonban a régi hitet sem hagyta el teljesen.",
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-02-ex.json",
-  "id": "b1-istvankiraly-02.ex03",
-  "set": {
-   "options": [
-    "Az 1000. év végén vagy 1001 elején.",
-    "A honfoglalás évében, 895-ben.",
-    "A 15. században."
-   ]
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
+    "old": "Géza fejedelem békét teremtett a határokon, és előkészítette fiának az utat a királyi trón felé.",
+    "new": "Fia, István a bajor herceg lányát, Gizellát vette feleségül, így a magyar fejedelmi család a nyugati uralkodókhoz kötődött. Géza 997-ben halt meg; utódjának fiát, Istvánt jelölte ki.",
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-02-ex.json",
-  "id": "b1-istvankiraly-02.ex05",
-  "set": {
-   "options": [
-    "II. Szilveszter pápa küldte.",
-    "Géza fejedelem küldte el.",
-    "Koppány küldte el neki."
-   ]
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
+    "old": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"könyv\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"book\"\n        },\n        {\n          \"lemma\": \"telefon\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"telephone\"\n        },\n        {\n          \"lemma\": \"ház\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"house\"\n        }\n      ]",
+    "new": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"fejedelem\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"prince, ruling chieftain\"\n        },\n        {\n          \"lemma\": \"kereszténység\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"Christianity\"\n        },\n        {\n          \"lemma\": \"megkeresztel\",\n          \"pos\": \"verb\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"to baptize\"\n        }\n      ]",
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-02-ex.json",
-  "id": "b1-istvankiraly-02.ex07",
-  "set": {
-   "options": [
-    "Mert Magyarország így a keresztény királyságok közé tartozott.",
-    "Mert Magyarország így német tartomány lett, és nem királyság.",
-    "Mert Magyarország így a pogány törzsek szövetségese maradt."
-   ]
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-01-gezafejedelem.json",
+    "old": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Hol van Meg és Károly?\",\n          \"options\": [\n            \"Budapesten\",\n            \"Londonban\",\n            \"Bécsben\",\n            \"Madridban\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg Budapesten van Károllyal (Meg is in Budapest with Károly).\"\n        },\n        {\n          \"question\": \"Mi van az asztalon?\",\n          \"options\": [\n            \"Egy könyv és egy telefon\",\n            \"Egy autó és egy kulcs\",\n            \"Egy kutya és egy macska\",\n            \"Csak egy pohár tej\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon).\"\n        },\n        {\n          \"question\": \"Milyen nyelven beszélnek a párbeszédekben?\",\n          \"options\": [\n            \"Magyarul\",\n            \"Spanyolul\",\n            \"Németül\",\n            \"Olaszul\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg magyarul gyakorolja az alapvető szavakat Károllyal.\"\n        }\n      ]",
+    "new": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Mikor halt meg Géza fejedelem?\",\n          \"options\": [\n            \"1000-ben.\",\n            \"997-ben.\",\n            \"955-ben.\",\n            \"1038-ban.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"Géza 997-ben halt meg (Géza died in 997).\"\n        },\n        {\n          \"question\": \"Mit kezdtek építeni Géza idején?\",\n          \"options\": [\n            \"Az első templomokat és kolostorokat.\",\n            \"Egy nagy fővárost.\",\n            \"Pogány áldozóhelyeket.\",\n            \"Erős várakat a határokon.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"A szöveg szerint ekkor kezdték építeni az első templomokat és kolostorokat (the first churches and monasteries were begun).\"\n        },\n        {\n          \"question\": \"Mit mondanak az írott források Géza hitéről?\",\n          \"options\": [\n            \"Soha nem keresztelkedett meg.\",\n            \"Csak a régi hitben hitt.\",\n            \"A régi hitet sem hagyta el teljesen.\",\n            \"Mindenkit megkereszteltetett.\"\n          ],\n          \"correctIndex\": 2,\n          \"explanation\": \"Az írott források szerint a régi hitet sem hagyta el teljesen (he did not entirely give up the old faith).\"\n        }\n      ]",
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-03-ex.json",
-  "id": "b1-istvankiraly-03.ex02",
-  "set": {
-   "options": [
-    "Tízet.",
-    "Hármat.",
-    "Húszat."
-   ]
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
+    "old": "Esztergom, az 1000. év karácsonya. Az egész keresztény Európa lélegzetvisszafojtva figyelt.",
+    "new": "A hagyomány szerint Esztergomban koronázták királlyá Istvánt, 1000 karácsonyán vagy 1001 elején. A pontos dátumot a történészek vitatják.",
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-03-ex.json",
-  "id": "b1-istvankiraly-03.ex03",
-  "set": {
-   "question": "Mit rendelt el István a törvényében a falvakról?",
-   "options": [
-    "Hogy minden tíz falu építsen egy templomot.",
-    "Hogy minden falu építsen egy templomot.",
-    "Hogy minden tíz falu építsen egy kolostort."
-   ]
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
+    "old": "A fiatal István apjától, Gézától örökölte a fejedelmi hatalmat, de most királyként akart uralkodni.",
+    "new": "Géza halála után István örökölte a fejedelmi hatalmat, de Koppány, Géza rokona, magának akarta a hatalmat. István fegyverrel legyőzte őt 997 körül.",
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-03-ex.json",
-  "id": "b1-istvankiraly-03.ex05",
-  "set": {
-   "question": "Mit vezetett be István az egyház fenntartására?",
-   "options": [
-    "A tized fizetését.",
-    "A katonák fizetését.",
-    "A vásárok megnyitását."
-   ]
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
+    "old": "II. Szilveszter pápa áldását adta, és díszes királyi koronát küldött Rómából az új államnak.",
+    "new": "A legenda szerint II. Szilveszter pápa áldását adta, és koronát küldött Rómából. A történészek szerint a mai Szent Korona későbbi eredetű.",
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-03-ex.json",
-  "id": "b1-istvankiraly-03.ex07",
-  "set": {
-   "options": [
-    "Tíz egyházmegyét szervezett, és kolostorokat alapított.",
-    "Három egyházmegyét szervezett, és kolostorokat alapított.",
-    "Koppány tíz egyházmegyét szervezett, és kolostorokat alapított."
-   ]
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
+    "old": "A főpapok szent olajjal kenték fel az uralkodót. Az ünnepélyes koronázás pillanatában István elfoglalta a magyar trónt.",
+    "new": "A nyugati szokás szerint a főpapok szent olajjal kenhették fel az uralkodót. A koronázással István Magyarország első királya lett.",
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-04-ex.json",
-  "id": "b1-istvankiraly-04.ex02",
-  "set": {
-   "question": "Kinek szólnak a hagyomány szerint István Intelmei?",
-   "options": [
-    "Fiának, Imrének.",
-    "Feleségének, Gizellának.",
-    "A pápának."
-   ]
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
+    "old": "István tudta, hogy a hatalom óriási felelősség. Erős és független keresztény országot akart hagyni minden későbbi utód számára.",
+    "new": "Az új királyság ettől kezdve a keresztény Európa része volt, és a hagyomány szerint nem tartozott a Német-római Birodalom fennhatósága alá.",
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-04-ex.json",
-  "id": "b1-istvankiraly-04.ex06",
-  "set": {
-   "tiles": [
-    "Az",
-    "utókorra",
-    "megőrzött",
-    "Intelmeket",
-    "máig",
-    "olvassák."
-   ],
-   "solution": [
-    "Az",
-    "utókorra",
-    "megőrzött",
-    "Intelmeket",
-    "máig",
-    "olvassák."
-   ],
-   "english": "People still read the Admonitions, preserved for posterity."
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
+    "old": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"könyv\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"book\"\n        },\n        {\n          \"lemma\": \"telefon\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"telephone\"\n        },\n        {\n          \"lemma\": \"ház\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"house\"\n        }\n      ]",
+    "new": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"koronázás\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"coronation\"\n        },\n        {\n          \"lemma\": \"király\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"king\"\n        },\n        {\n          \"lemma\": \"pápa\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"pope\"\n        }\n      ]",
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-04-ex.json",
-  "id": "b1-istvankiraly-04.ex07",
-  "set": {
-   "prompt": [
-    {
-     "speaker": "Zsófi",
-     "text": "Mi történt a trón körül István halála után?"
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-02-koronazas.json",
+    "old": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Hol van Meg és Károly?\",\n          \"options\": [\n            \"Budapesten\",\n            \"Londonban\",\n            \"Bécsben\",\n            \"Madridban\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg Budapesten van Károllyal (Meg is in Budapest with Károly).\"\n        },\n        {\n          \"question\": \"Mi van az asztalon?\",\n          \"options\": [\n            \"Egy könyv és egy telefon\",\n            \"Egy autó és egy kulcs\",\n            \"Egy kutya és egy macska\",\n            \"Csak egy pohár tej\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon).\"\n        },\n        {\n          \"question\": \"Milyen nyelven beszélnek a párbeszédekben?\",\n          \"options\": [\n            \"Magyarul\",\n            \"Spanyolul\",\n            \"Németül\",\n            \"Olaszul\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg magyarul gyakorolja az alapvető szavakat Károllyal.\"\n        }\n      ]",
+    "new": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Mi történt Koppánnyal?\",\n          \"options\": [\n            \"Királlyá koronázták.\",\n            \"István fegyverrel legyőzte.\",\n            \"Rómába ment a pápához.\",\n            \"Együtt uralkodott Istvánnal.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"István fegyverrel legyőzte Koppányt (István defeated Koppány by force).\"\n        },\n        {\n          \"question\": \"Hol koronázták meg Istvánt a hagyomány szerint?\",\n          \"options\": [\n            \"Esztergomban.\",\n            \"Budán.\",\n            \"Pécsett.\",\n            \"Egerben.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"A hagyomány szerint Esztergomban koronázták meg (according to tradition, in Esztergom).\"\n        },\n        {\n          \"question\": \"Mit mondanak a történészek a mai Szent Koronáról?\",\n          \"options\": [\n            \"Hogy István koronája volt.\",\n            \"Hogy a pápa küldte.\",\n            \"Hogy Koppány viselte.\",\n            \"Hogy későbbi eredetű.\"\n          ],\n          \"correctIndex\": 3,\n          \"explanation\": \"A történészek szerint a mai Szent Korona későbbi eredetű (it is of later origin).\"\n        }\n      ]",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
+    "old": "A korona megszerzése után István király azonnal hozzálátott az ország megszervezéséhez. Hatalmas munka várt rá.",
+    "new": "Királyként István 1038-ig uralkodott, és az országot a nyugati keresztény államok mintájára szervezte meg.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
+    "old": "A pogány törzsfők lázadásait fegyverrel verte le, biztosítva a belső békét. Szigorú, de igazságos törvénykönyveket adott ki.",
+    "new": "A törzsfők lázadásait fegyverrel verte le; a krónikák szerint Koppányt, Gyulát és Ajtonyt is legyőzte. Szigorú törvényeket adott ki.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
+    "old": "Tíz egyházmegyét alapított, élükre püspököket állított, és megkezdte a gazdag kolostorok építését. Elrendelte, hogy minden tíz falu építsen egy templomot.",
+    "new": "Tíz egyházmegyét szervezett, élükre püspököket állított; az esztergomi érsekség lett az egyház központja. Kolostorokat is alapított, és törvényben rendelte el, hogy minden tíz falu építsen egy templomot.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
+    "old": "Bevezette a tized fizetését az egyház és az állam fenntartására. A keresztény hit a mindennapi élet alapjává vált.",
+    "new": "Bevezette a tized fizetését az egyház fenntartására. A keresztény hit azonban csak lassan terjedt el: a régi hithez sokan sokáig ragaszkodtak.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
+    "old": "István király kemény kézzel, de tiszta szívvel vezette népét a civilizáció és az európai jövő felé.",
+    "new": "Uralkodása alatt Magyarország a keresztény európai államok közé került.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
+    "old": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"könyv\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"book\"\n        },\n        {\n          \"lemma\": \"telefon\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"telephone\"\n        },\n        {\n          \"lemma\": \"ház\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"house\"\n        }\n      ]",
+    "new": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"egyházmegye\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"diocese\"\n        },\n        {\n          \"lemma\": \"püspök\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"bishop\"\n        },\n        {\n          \"lemma\": \"kolostor\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"monastery\"\n        }\n      ]",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-03-keresztenykiralysag.json",
+    "old": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Hol van Meg és Károly?\",\n          \"options\": [\n            \"Budapesten\",\n            \"Londonban\",\n            \"Bécsben\",\n            \"Madridban\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg Budapesten van Károllyal (Meg is in Budapest with Károly).\"\n        },\n        {\n          \"question\": \"Mi van az asztalon?\",\n          \"options\": [\n            \"Egy könyv és egy telefon\",\n            \"Egy autó és egy kulcs\",\n            \"Egy kutya és egy macska\",\n            \"Csak egy pohár tej\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon).\"\n        },\n        {\n          \"question\": \"Milyen nyelven beszélnek a párbeszédekben?\",\n          \"options\": [\n            \"Magyarul\",\n            \"Spanyolul\",\n            \"Németül\",\n            \"Olaszul\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg magyarul gyakorolja az alapvető szavakat Károllyal.\"\n        }\n      ]",
+    "new": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Meddig uralkodott István király?\",\n          \"options\": [\n            \"1031-ig.\",\n            \"1000-ig.\",\n            \"1083-ig.\",\n            \"1038-ig.\"\n          ],\n          \"correctIndex\": 3,\n          \"explanation\": \"Királyként 1038-ig uralkodott (he reigned as king until 1038).\"\n        },\n        {\n          \"question\": \"Mi lett az egyház központja?\",\n          \"options\": [\n            \"Az esztergomi érsekség.\",\n            \"A pannonhalmi kolostor.\",\n            \"A pécsi püspökség.\",\n            \"Az egri vár.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Az esztergomi érsekség lett az egyház központja (the archbishopric of Esztergom became the centre).\"\n        },\n        {\n          \"question\": \"Miért terjedt el lassan a keresztény hit?\",\n          \"options\": [\n            \"Mert nem volt templom.\",\n            \"Mert a pápa tiltotta.\",\n            \"Mert a régi hithez sokan sokáig ragaszkodtak.\",\n            \"Mert István nem akarta.\"\n          ],\n          \"correctIndex\": 2,\n          \"explanation\": \"A régi hithez sokan sokáig ragaszkodtak (many clung to the old faith for a long time).\"\n        }\n      ]",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-04-szentistvanoroksege.json",
+    "old": "1038-ban elhunyt az első király, de hatalmas öröksége örökre fennmaradt az utókor számára.",
+    "new": "1038. augusztus 15-én elhunyt az első király, de öröksége fennmaradt az utókor számára.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-04-szentistvanoroksege.json",
+    "old": "István király bölcs intelmeket írt fiának, Imre hercegnek a keresztény hitről és az igazságos kormányzásról.",
+    "new": "A hagyomány szerint István király intelmeket írt fiának, Imre hercegnek a keresztény hitről és a kormányzásról; a történészek vitatják, hogy ki és mikor fogalmazta meg az Intelmeket. Imre herceg 1031-ben meghalt, a hagyomány szerint vadászat közben, ezért István halála után trónharcok következtek.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-04-szentistvanoroksege.json",
+    "old": "1083-ban István királyt a katolikus egyház szentté avatta, és ő lett Magyarország fő védőszentje.",
+    "new": "1083-ban Istvánt, fiát, Imrét és Gellért püspököt szentté avatták, és István Magyarország egyik védőszentje lett.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-04-szentistvanoroksege.json",
+    "old": "Augusztus 20-a, Szent István napja ma Magyarország legfontosabb hivatalos nemzeti ünnepe.",
+    "new": "Augusztus 20-a, Szent István napja ma az államalapítás ünnepe és Magyarország hivatalos állami ünnepe.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-04-szentistvanoroksege.json",
+    "old": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"könyv\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"book\"\n        },\n        {\n          \"lemma\": \"telefon\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"telephone\"\n        },\n        {\n          \"lemma\": \"ház\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"house\"\n        }\n      ]",
+    "new": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"szentté avat\",\n          \"pos\": \"verb\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"to canonize\"\n        },\n        {\n          \"lemma\": \"védőszent\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"patron saint\"\n        },\n        {\n          \"lemma\": \"intelem\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"admonition, counsel\"\n        }\n      ]",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-04-szentistvanoroksege.json",
+    "old": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Hol van Meg és Károly?\",\n          \"options\": [\n            \"Budapesten\",\n            \"Londonban\",\n            \"Bécsben\",\n            \"Madridban\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg Budapesten van Károllyal (Meg is in Budapest with Károly).\"\n        },\n        {\n          \"question\": \"Mi van az asztalon?\",\n          \"options\": [\n            \"Egy könyv és egy telefon\",\n            \"Egy autó és egy kulcs\",\n            \"Egy kutya és egy macska\",\n            \"Csak egy pohár tej\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon).\"\n        },\n        {\n          \"question\": \"Milyen nyelven beszélnek a párbeszédekben?\",\n          \"options\": [\n            \"Magyarul\",\n            \"Spanyolul\",\n            \"Németül\",\n            \"Olaszul\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg magyarul gyakorolja az alapvető szavakat Károllyal.\"\n        }\n      ]",
+    "new": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Kikkel együtt avatták szentté Istvánt?\",\n          \"options\": [\n            \"Gizellával és Koppánnyal.\",\n            \"Imrével és Gellért püspökkel.\",\n            \"Gézával és Sarolttal.\",\n            \"A pápával és a császárral.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"1083-ban Istvánt, Imrét és Gellért püspököt avatták szentté (Stephen, Imre and Bishop Gellért were canonized).\"\n        },\n        {\n          \"question\": \"Mit vitatnak a történészek az Intelmekkel kapcsolatban?\",\n          \"options\": [\n            \"Hogy ki és mikor fogalmazta meg őket.\",\n            \"Hogy kinek szóltak.\",\n            \"Hogy megmaradtak-e.\",\n            \"Hogy latinul íródtak-e.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Vitatják, hogy ki és mikor fogalmazta meg az Intelmeket (historians dispute who wrote them and when).\"\n        },\n        {\n          \"question\": \"Mi következett István halála után?\",\n          \"options\": [\n            \"Hosszú béke.\",\n            \"Trónharcok.\",\n            \"Új honfoglalás.\",\n            \"A pápa uralma.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"István halála után trónharcok következtek (a struggle for the throne followed).\"\n        }\n      ]",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
+    "old": "A magyar történelem legszentebb kincse a Szent Korona és az ezeréves koronázási jelvények együttese.",
+    "new": "A Szent Korona a magyar koronázási jelvények legfontosabb darabja. A történészek szerint a mai korona részei a 11–12. században készültek.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
+    "old": "A királyi szimbólumok közé tartozik még a díszes jogar, az arany országalma és a selyemből szőtt koronázási palást.",
+    "new": "A koronázási jelvényekhez tartozik még a jogar, az országalma és a koronázási palást is.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
+    "old": "Ez a felbecsülhetetlen értékű ereklye a független keresztény államiság és a nemzeti folytonosság legfőbb jelképe.",
+    "new": "Sokan szent ereklyeként tisztelik, és a magyar államiság folytonosságának jelképének tekintik.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
+    "old": "Bár az első királyi dinasztia kihalt, a Szent Korona eszméje évszázadokon át összetartotta a nemzetet.",
+    "new": "Az Árpád-ház 1301-ben kihalt, de a Szent Korona a későbbi századokban is az államhatalom jelképe maradt.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
+    "old": "A koronát ma fegyveres katonák őrzik a Parlament Kupolacsarnokában, ahol mindenki megcsodálhatja.",
+    "new": "A második világháború végén a koronát nyugatra vitték, és az amerikaiak kezébe került; 1978-ban az Egyesült Államok visszaadta Magyarországnak. 2000 óta a Parlament Kupolacsarnokában őrzik, díszőrség áll mellette.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
+    "old": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"könyv\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"book\"\n        },\n        {\n          \"lemma\": \"telefon\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"telephone\"\n        },\n        {\n          \"lemma\": \"ház\",\n          \"pos\": \"noun\",\n          \"cefr\": \"A1\",\n          \"gloss\": \"house\"\n        }\n      ]",
+    "new": "\"keyVocabulary\": [\n        {\n          \"lemma\": \"korona\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"crown\"\n        },\n        {\n          \"lemma\": \"jogar\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"sceptre\"\n        },\n        {\n          \"lemma\": \"ereklye\",\n          \"pos\": \"noun\",\n          \"cefr\": \"B1\",\n          \"gloss\": \"relic\"\n        }\n      ]",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-istvankiraly-05-szentkorona.json",
+    "old": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Hol van Meg és Károly?\",\n          \"options\": [\n            \"Budapesten\",\n            \"Londonban\",\n            \"Bécsben\",\n            \"Madridban\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg Budapesten van Károllyal (Meg is in Budapest with Károly).\"\n        },\n        {\n          \"question\": \"Mi van az asztalon?\",\n          \"options\": [\n            \"Egy könyv és egy telefon\",\n            \"Egy autó és egy kulcs\",\n            \"Egy kutya és egy macska\",\n            \"Csak egy pohár tej\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon).\"\n        },\n        {\n          \"question\": \"Milyen nyelven beszélnek a párbeszédekben?\",\n          \"options\": [\n            \"Magyarul\",\n            \"Spanyolul\",\n            \"Németül\",\n            \"Olaszul\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Meg magyarul gyakorolja az alapvető szavakat Károllyal.\"\n        }\n      ]",
+    "new": "\"comprehensionQuestions\": [\n        {\n          \"question\": \"Kinek a kezébe került a korona a háború végén?\",\n          \"options\": [\n            \"Az oroszok kezébe.\",\n            \"Az amerikaiak kezébe.\",\n            \"A németek kezébe.\",\n            \"A törökök kezébe.\"\n          ],\n          \"correctIndex\": 1,\n          \"explanation\": \"Az amerikaiak kezébe került (it came into American hands).\"\n        },\n        {\n          \"question\": \"Mikor halt ki az Árpád-ház?\",\n          \"options\": [\n            \"1038-ban.\",\n            \"1083-ban.\",\n            \"1301-ben.\",\n            \"1978-ban.\"\n          ],\n          \"correctIndex\": 2,\n          \"explanation\": \"Az Árpád-ház 1301-ben kihalt (the Árpád dynasty died out in 1301).\"\n        },\n        {\n          \"question\": \"Hogyan tisztelik sokan a Szent Koronát?\",\n          \"options\": [\n            \"Szent ereklyeként.\",\n            \"Egyszerű ékszerként.\",\n            \"Katonai zászlóként.\",\n            \"Régi pénzként.\"\n          ],\n          \"correctIndex\": 0,\n          \"explanation\": \"Sokan szent ereklyeként tisztelik (many revere it as a holy relic).\"\n        }\n      ]",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-01-ex.json",
+    "id": "b1-istvankiraly-01.ex02",
+    "set": {
+      "question": "Miért fordult Géza fejedelem a kereszténység felé?",
+      "options": [
+        "Mert meg akarta menteni az országot.",
+        "Mert a magyarok már régóta keresztények voltak.",
+        "Mert a nyugati papok ezt kérték tőle."
+      ]
     },
-    {
-     "speaker": "Dávid",
-     "text": "_____"
-    }
-   ],
-   "options": [
-    "Imre már nem élt, ezért harcok kezdődtek a trónért.",
-    "Imre király lett, de a trónért harcok kezdődtek.",
-    "Imre már nem élt, ezért békés évek következtek."
-   ]
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-05-ex.json",
-  "id": "b1-istvankiraly-05.ex02",
-  "set": {
-   "question": "Mi tartozik a Szent Korona mellett a koronázási jelvényekhez?",
-   "options": [
-    "A jogar, az országalma és a palást.",
-    "A jogar, a trón és a palást.",
-    "Az országalma, a templom és a palást."
-   ]
-  },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-05-ex.json",
-  "id": "b1-istvankiraly-05.ex03",
-  "set": {
-   "options": [
-    "A Parlament Kupolacsarnokában.",
-    "Egy bécsi múzeumban, Ausztriában.",
-    "Egy római templomban, Olaszországban."
-   ]
-  },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-05-ex.json",
-  "id": "b1-istvankiraly-05.ex06",
-  "set": {
-   "tiles": [
-    "Az",
-    "István",
-    "által",
-    "alapított",
-    "egyházmegyék",
-    "máig",
-    "működnek."
-   ],
-   "solution": [
-    "Az",
-    "István",
-    "által",
-    "alapított",
-    "egyházmegyék",
-    "máig",
-    "működnek."
-   ],
-   "english": "The dioceses founded by István still operate today."
-  },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-05-ex.json",
-  "id": "b1-istvankiraly-05.ex07",
-  "set": {
-   "options": [
-    "A magyar államiság folytonosságát.",
-    "A magyar egyház folytonosságát.",
-    "A magyar nyelv folytonosságát."
-   ]
-  },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-05-ex.json",
-  "id": "b1-istvankiraly-05.ex08",
-  "set": {
-   "sentence": "A Szent Koronát 1978-ban adták vissza Magyarországnak, 2000 óta pedig a Parlamentben őrzik.",
-   "options": [
-    "The Holy Crown was returned to Hungary in 1978, and has been kept in Parliament since 2000.",
-    "The Holy Crown was returned to Hungary in 1978, and has been kept in a museum in Vienna since 2000.",
-    "The Holy Crown was returned to Hungary in 1948, and has been kept in Parliament since 2000."
-   ]
-  },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
-  "id": "b1-istvankiraly-consolidation.ex03",
-  "set": {
-   "options": [
-    "A megkeresztelt fejedelem szövetséget keresett a Nyugattal.",
-    "A megkeresztel fejedelem szövetséget keresett a Nyugattal.",
-    "A megkeresztelte fejedelem szövetséget keresett a Nyugattal."
-   ],
-   "distractor_skills": {
-    "2": "definite-past"
-   }
-  },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
-  "id": "b1-istvankiraly-consolidation.ex04",
-  "set": {
-   "question": "Melyik mondat helyes?",
-   "options": [
-    "István 1000 körül megkoronázott király lett.",
-    "István 1000 körül megkoronáz király lett.",
-    "István 1000 körül megkoronázta király lett."
-   ],
-   "distractor_skills": {
-    "2": "definite-past"
-   }
-  },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
-  "id": "b1-istvankiraly-consolidation.ex06",
-  "set": {
-   "options": [
-    "A szentté avatott király ma Magyarország védőszentje.",
-    "A szentté avat király ma Magyarország védőszentje.",
-    "A szentté avatta király ma Magyarország védőszentje."
-   ],
-   "distractor_skills": {
-    "2": "definite-past"
-   }
-  },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
-  "id": "b1-istvankiraly-consolidation.ex08",
-  "set": {
-   "sentence": "A ___ király új törvényeket adott ki.",
-   "hint": "crowned",
-   "english": "The crowned king issued new laws.",
-   "answer": "megkoronázott"
-  },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
-  "id": "b1-istvankiraly-consolidation.ex09",
-  "set": {
-   "sentence": "Az István által ___ egyházmegyék máig működnek.",
-   "english": "The dioceses founded by Stephen still operate today."
-  },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
-  "id": "b1-istvankiraly-consolidation.ex10",
-  "set": {
-   "sentence": "Az utókorra ___ Intelmeket máig olvassák.",
-   "english": "People still read the Admonitions preserved for posterity."
-  },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
-  "id": "b1-istvankiraly-consolidation.ex15",
-  "set": {
-   "options": [
-    "Magyarország első megkoronázott, később szentté avatott királya.",
-    "Magyarország utolsó megkoronázott, később szentté avatott királya.",
-    "A honfoglaló magyarok vezére, Árpád fejedelem."
-   ]
-  },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
-  "id": "b1-istvankiraly-consolidation.ex16",
-  "set": {
-   "prompt": [
-    {
-     "speaker": "A",
-     "text": "Mit kapott vissza Magyarország 1978-ban?"
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-01-ex.json",
+    "id": "b1-istvankiraly-01.ex05",
+    "set": {
+      "options": [
+        "Bajor Gizellát.",
+        "Egy lengyel fejedelem lányát.",
+        "Koppány húgát."
+      ]
     },
-    {
-     "speaker": "B",
-     "text": "_____"
-    }
-   ],
-   "options": [
-    "A Szent Koronát, az Egyesült Államoktól.",
-    "A Szent Koronát, Ausztriától.",
-    "A Szent Koronát, Olaszországtól."
-   ]
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
-  "id": "b1-istvankiraly-consolidation.ex17",
-  "set": {
-   "sentence": "István 1000 körül megkoronázott király lett, majd 1083-ban szentté avatták.",
-   "options": [
-    "István became a crowned king around the year 1000, and was canonized in 1083.",
-    "István became a crowned king around the year 1000, and was canonized in 1038.",
-    "István became a crowned king in 1083, and was canonized around the year 1000."
-   ]
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-01-ex.json",
+    "id": "b1-istvankiraly-01.ex07",
+    "set": {
+      "options": [
+        "Mert így közelebb került a keresztény Nyugathoz.",
+        "Mert a pogány fejedelmek ezt kérték tőle.",
+        "Mert a magyarok mindig is keresztények voltak."
+      ]
+    },
+    "kind": "hungarian"
   },
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-01-igenev-cim-gr.json",
-  "old": "Core Unit 2 introduced",
-  "new": "B1 Unit 3 introduced",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-01-igenev-cim-gr.json",
-  "old": "Géza fejedelem az elfogadott keresztény hitet fia házassága által is igyekezett megerősíteni.",
-  "new": "Az elfogadott keresztény hit mellett Géza a régi hagyományokat sem hagyta el teljesen.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-01-igenev-cim-gr.json",
-  "old": "Prince Géza tried to strengthen the newly accepted Christian faith also through his son's marriage.",
-  "new": "Besides the accepted Christian faith, Géza did not completely abandon the old traditions.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-02-koronazott-kiraly-gr.json",
-  "old": "Historical Hungarian is full of fixed",
-  "new": "You know the past participle as a modifier from B1 Unit 3. Historical Hungarian is full of fixed",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-02-koronazott-kiraly-gr.json",
-  "old": "István Kr.u. 1000 körül, karácsonykor lett megkoronázott király.",
-  "new": "István 1000 körül lett megkoronázott király.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-02-koronazott-kiraly-gr.json",
-  "old": "István became a crowned king around the year 1000, at Christmas.",
-  "new": "István became a crowned king around the year 1000.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-03-alapitott-intezmenyek-gr.json",
-  "old": "A tíz faluban felépített templomok a keresztény rend jelei voltak.",
-  "new": "A falvakban felépített templomok az új keresztény rend jelei voltak.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-03-alapitott-intezmenyek-gr.json",
-  "old": "The churches built across every ten villages were signs of the new Christian order.",
-  "new": "The churches built in the villages were signs of the new Christian order.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-03-alapitott-intezmenyek-gr.json",
-  "old": "A bevezetett törvények védték az egyház vagyonát, és büntették a pogány szokásokhoz való visszatérést.",
-  "new": "A bevezetett törvények védték az egyház vagyonát, és büntették azokat, akik visszatértek a pogány szokásokhoz.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-03-alapitott-intezmenyek-gr.json",
-  "old": "The introduced laws protected the church's property, and punished a return to pagan customs.",
-  "new": "The introduced laws protected the church's property, and punished those who returned to pagan customs.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-03-alapitott-intezmenyek-gr.json",
-  "old": "*a kolostor, amelyet István alapított* (\\\"the monastery that István founded\\\", long)",
-  "new": "*a kolostor, amely István idejében épült* (\\\"the monastery that was built in István's time\\\", long)",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-04-szentte-avatott-gr.json",
-  "old": "a case ending meaning roughly \\\"into\\\" — you don't need to master that ending yet, just recognize the fixed expression and its participle.",
-  "new": "the translative ending *-vá/-vé* (\\\"into\\\"), which you know from A2 Unit 35. The fixed expression *szentté avat* then gives the participle *szentté avatott*.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-04-szentte-avatott-gr.json",
-  "old": "Az utókorra megőrzött Intelmek máig olvashatók.",
-  "new": "Az utókorra megőrzött Intelmeket máig olvassák.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-04-szentte-avatott-gr.json",
-  "old": "The Admonitions, preserved for posterity, can still be read today.",
-  "new": "People still read the Admonitions, preserved for posterity.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-05-synthesis-gr.json",
-  "old": "One more piece completes the toolkit: naming WHO performed the action behind a participle, using *által* (\\\"by\\\").",
-  "new": "You know *által* (\\\"by\\\") from A2 Unit 18. Here it names WHO performed the action behind a participle.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-05-synthesis-gr.json",
-  "old": "A Szent Korona, amelyet az államiság folytonosságának jelképeként őriznek, ma is a magyar nemzet egyik legfontosabb jelképe.",
-  "new": "A Szent Koronát az államiság folytonosságának jelképeként őrzik.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/grammar/b1/b1-istvankiraly-05-synthesis-gr.json",
-  "old": "The Holy Crown, kept as a symbol of the continuity of statehood, is still one of the most important symbols of the Hungarian nation today.",
-  "new": "The Holy Crown is kept as a symbol of the continuity of statehood.",
-  "kind": "hungarian"
- },
- {
-  "file": "content/hu/lessons/b1/b1-istvankiraly-consolidation.json",
-  "old": "\"title\": \"Unit 4 Consolidation\"",
-  "new": "\"title\": \"Unit 8 Consolidation\"",
-  "kind": "english",
-  "sure": false
- }
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-02-ex.json",
+    "id": "b1-istvankiraly-02.ex02",
+    "set": {
+      "options": [
+        "Géza rokona, aki magának akarta a hatalmat.",
+        "István fia, aki megörökölte a hatalmat.",
+        "Gizella apja, a bajor herceg."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-02-ex.json",
+    "id": "b1-istvankiraly-02.ex03",
+    "set": {
+      "options": [
+        "Az 1000. év végén vagy 1001 elején.",
+        "A honfoglalás évében, 895-ben.",
+        "A 15. században."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-02-ex.json",
+    "id": "b1-istvankiraly-02.ex05",
+    "set": {
+      "options": [
+        "II. Szilveszter pápa küldte.",
+        "Géza fejedelem küldte el.",
+        "Koppány küldte el neki."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-02-ex.json",
+    "id": "b1-istvankiraly-02.ex07",
+    "set": {
+      "options": [
+        "Mert Magyarország így a keresztény királyságok közé tartozott.",
+        "Mert Magyarország így német tartomány lett, és nem királyság.",
+        "Mert Magyarország így a pogány törzsek szövetségese maradt."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-03-ex.json",
+    "id": "b1-istvankiraly-03.ex02",
+    "set": {
+      "options": [
+        "Tízet.",
+        "Hármat.",
+        "Húszat."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-03-ex.json",
+    "id": "b1-istvankiraly-03.ex03",
+    "set": {
+      "question": "Mit rendelt el István a törvényében a falvakról?",
+      "options": [
+        "Hogy minden tíz falu építsen egy templomot.",
+        "Hogy minden falu építsen egy templomot.",
+        "Hogy minden tíz falu építsen egy kolostort."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-03-ex.json",
+    "id": "b1-istvankiraly-03.ex05",
+    "set": {
+      "question": "Mit vezetett be István az egyház fenntartására?",
+      "options": [
+        "A tized fizetését.",
+        "A katonák fizetését.",
+        "A vásárok megnyitását."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-03-ex.json",
+    "id": "b1-istvankiraly-03.ex07",
+    "set": {
+      "options": [
+        "Tíz egyházmegyét szervezett, és kolostorokat alapított.",
+        "Három egyházmegyét szervezett, és kolostorokat alapított.",
+        "Koppány tíz egyházmegyét szervezett, és kolostorokat alapított."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-04-ex.json",
+    "id": "b1-istvankiraly-04.ex02",
+    "set": {
+      "question": "Kinek szólnak a hagyomány szerint István Intelmei?",
+      "options": [
+        "Fiának, Imrének.",
+        "Feleségének, Gizellának.",
+        "A pápának."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-04-ex.json",
+    "id": "b1-istvankiraly-04.ex06",
+    "set": {
+      "tiles": [
+        "Az",
+        "utókorra",
+        "megőrzött",
+        "Intelmeket",
+        "máig",
+        "olvassák."
+      ],
+      "solution": [
+        "Az",
+        "utókorra",
+        "megőrzött",
+        "Intelmeket",
+        "máig",
+        "olvassák."
+      ],
+      "english": "People still read the Admonitions, preserved for posterity."
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-04-ex.json",
+    "id": "b1-istvankiraly-04.ex07",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "Zsófi",
+          "text": "Mi történt a trón körül István halála után?"
+        },
+        {
+          "speaker": "Dávid",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Imre már nem élt, ezért harcok kezdődtek a trónért.",
+        "Imre király lett, de a trónért harcok kezdődtek.",
+        "Imre már nem élt, ezért békés évek következtek."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-05-ex.json",
+    "id": "b1-istvankiraly-05.ex02",
+    "set": {
+      "question": "Mi tartozik a Szent Korona mellett a koronázási jelvényekhez?",
+      "options": [
+        "A jogar, az országalma és a palást.",
+        "A jogar, a trón és a palást.",
+        "Az országalma, a templom és a palást."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-05-ex.json",
+    "id": "b1-istvankiraly-05.ex03",
+    "set": {
+      "options": [
+        "A Parlament Kupolacsarnokában.",
+        "Egy bécsi múzeumban, Ausztriában.",
+        "Egy római templomban, Olaszországban."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-05-ex.json",
+    "id": "b1-istvankiraly-05.ex06",
+    "set": {
+      "tiles": [
+        "Az",
+        "István",
+        "által",
+        "alapított",
+        "egyházmegyék",
+        "máig",
+        "működnek."
+      ],
+      "solution": [
+        "Az",
+        "István",
+        "által",
+        "alapított",
+        "egyházmegyék",
+        "máig",
+        "működnek."
+      ],
+      "english": "The dioceses founded by István still operate today."
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-05-ex.json",
+    "id": "b1-istvankiraly-05.ex07",
+    "set": {
+      "options": [
+        "A magyar államiság folytonosságát.",
+        "A magyar egyház folytonosságát.",
+        "A magyar nyelv folytonosságát."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-05-ex.json",
+    "id": "b1-istvankiraly-05.ex08",
+    "set": {
+      "sentence": "A Szent Koronát 1978-ban adták vissza Magyarországnak, 2000 óta pedig a Parlamentben őrzik.",
+      "options": [
+        "The Holy Crown was returned to Hungary in 1978, and has been kept in Parliament since 2000.",
+        "The Holy Crown was returned to Hungary in 1978, and has been kept in a museum in Vienna since 2000.",
+        "The Holy Crown was returned to Hungary in 1948, and has been kept in Parliament since 2000."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
+    "id": "b1-istvankiraly-consolidation.ex03",
+    "set": {
+      "options": [
+        "A megkeresztelt fejedelem szövetséget keresett a Nyugattal.",
+        "A megkeresztel fejedelem szövetséget keresett a Nyugattal.",
+        "A megkeresztelte fejedelem szövetséget keresett a Nyugattal."
+      ],
+      "distractor_skills": {
+        "2": "definite-past"
+      }
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
+    "id": "b1-istvankiraly-consolidation.ex04",
+    "set": {
+      "question": "Melyik mondat helyes?",
+      "options": [
+        "István 1000 körül megkoronázott király lett.",
+        "István 1000 körül megkoronáz király lett.",
+        "István 1000 körül megkoronázta király lett."
+      ],
+      "distractor_skills": {
+        "2": "definite-past"
+      }
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
+    "id": "b1-istvankiraly-consolidation.ex06",
+    "set": {
+      "options": [
+        "A szentté avatott király ma Magyarország védőszentje.",
+        "A szentté avat király ma Magyarország védőszentje.",
+        "A szentté avatta király ma Magyarország védőszentje."
+      ],
+      "distractor_skills": {
+        "2": "definite-past"
+      }
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
+    "id": "b1-istvankiraly-consolidation.ex08",
+    "set": {
+      "sentence": "A ___ király új törvényeket adott ki.",
+      "hint": "crowned",
+      "english": "The crowned king issued new laws.",
+      "answer": "megkoronázott"
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
+    "id": "b1-istvankiraly-consolidation.ex09",
+    "set": {
+      "sentence": "Az István által ___ egyházmegyék máig működnek.",
+      "english": "The dioceses founded by Stephen still operate today."
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
+    "id": "b1-istvankiraly-consolidation.ex10",
+    "set": {
+      "sentence": "Az utókorra ___ Intelmeket máig olvassák.",
+      "english": "People still read the Admonitions preserved for posterity."
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
+    "id": "b1-istvankiraly-consolidation.ex15",
+    "set": {
+      "options": [
+        "Magyarország első megkoronázott, később szentté avatott királya.",
+        "Magyarország utolsó megkoronázott, később szentté avatott királya.",
+        "A honfoglaló magyarok vezére, Árpád fejedelem."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
+    "id": "b1-istvankiraly-consolidation.ex16",
+    "set": {
+      "prompt": [
+        {
+          "speaker": "A",
+          "text": "Mit kapott vissza Magyarország 1978-ban?"
+        },
+        {
+          "speaker": "B",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A Szent Koronát, az Egyesült Államoktól.",
+        "A Szent Koronát, Ausztriától.",
+        "A Szent Koronát, Olaszországtól."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json",
+    "id": "b1-istvankiraly-consolidation.ex17",
+    "set": {
+      "sentence": "István 1000 körül megkoronázott király lett, majd 1083-ban szentté avatták.",
+      "options": [
+        "István became a crowned king around the year 1000, and was canonized in 1083.",
+        "István became a crowned king around the year 1000, and was canonized in 1038.",
+        "István became a crowned king in 1083, and was canonized around the year 1000."
+      ]
+    },
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-01-igenev-cim-gr.json",
+    "old": "Core Unit 2 introduced",
+    "new": "B1 Unit 3 introduced",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-01-igenev-cim-gr.json",
+    "old": "Géza fejedelem az elfogadott keresztény hitet fia házassága által is igyekezett megerősíteni.",
+    "new": "Az elfogadott keresztény hit mellett Géza a régi hagyományokat sem hagyta el teljesen.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-01-igenev-cim-gr.json",
+    "old": "Prince Géza tried to strengthen the newly accepted Christian faith also through his son's marriage.",
+    "new": "Besides the accepted Christian faith, Géza did not completely abandon the old traditions.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-02-koronazott-kiraly-gr.json",
+    "old": "Historical Hungarian is full of fixed",
+    "new": "You know the past participle as a modifier from B1 Unit 3. Historical Hungarian is full of fixed",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-02-koronazott-kiraly-gr.json",
+    "old": "István Kr.u. 1000 körül, karácsonykor lett megkoronázott király.",
+    "new": "István 1000 körül lett megkoronázott király.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-02-koronazott-kiraly-gr.json",
+    "old": "István became a crowned king around the year 1000, at Christmas.",
+    "new": "István became a crowned king around the year 1000.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-03-alapitott-intezmenyek-gr.json",
+    "old": "A tíz faluban felépített templomok a keresztény rend jelei voltak.",
+    "new": "A falvakban felépített templomok az új keresztény rend jelei voltak.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-03-alapitott-intezmenyek-gr.json",
+    "old": "The churches built across every ten villages were signs of the new Christian order.",
+    "new": "The churches built in the villages were signs of the new Christian order.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-03-alapitott-intezmenyek-gr.json",
+    "old": "A bevezetett törvények védték az egyház vagyonát, és büntették a pogány szokásokhoz való visszatérést.",
+    "new": "A bevezetett törvények védték az egyház vagyonát, és büntették azokat, akik visszatértek a pogány szokásokhoz.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-03-alapitott-intezmenyek-gr.json",
+    "old": "The introduced laws protected the church's property, and punished a return to pagan customs.",
+    "new": "The introduced laws protected the church's property, and punished those who returned to pagan customs.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-03-alapitott-intezmenyek-gr.json",
+    "old": "*a kolostor, amelyet István alapított* (\\\"the monastery that István founded\\\", long)",
+    "new": "*a kolostor, amely István idejében épült* (\\\"the monastery that was built in István's time\\\", long)",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-04-szentte-avatott-gr.json",
+    "old": "a case ending meaning roughly \\\"into\\\" — you don't need to master that ending yet, just recognize the fixed expression and its participle.",
+    "new": "the translative ending *-vá/-vé* (\\\"into\\\"), which you know from A2 Unit 35. The fixed expression *szentté avat* then gives the participle *szentté avatott*.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-04-szentte-avatott-gr.json",
+    "old": "Az utókorra megőrzött Intelmek máig olvashatók.",
+    "new": "Az utókorra megőrzött Intelmeket máig olvassák.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-04-szentte-avatott-gr.json",
+    "old": "The Admonitions, preserved for posterity, can still be read today.",
+    "new": "People still read the Admonitions, preserved for posterity.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-05-synthesis-gr.json",
+    "old": "One more piece completes the toolkit: naming WHO performed the action behind a participle, using *által* (\\\"by\\\").",
+    "new": "You know *által* (\\\"by\\\") from A2 Unit 18. Here it names WHO performed the action behind a participle.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-05-synthesis-gr.json",
+    "old": "A Szent Korona, amelyet az államiság folytonosságának jelképeként őriznek, ma is a magyar nemzet egyik legfontosabb jelképe.",
+    "new": "A Szent Koronát az államiság folytonosságának jelképeként őrzik.",
+    "kind": "hungarian"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-istvankiraly-05-synthesis-gr.json",
+    "old": "The Holy Crown, kept as a symbol of the continuity of statehood, is still one of the most important symbols of the Hungarian nation today.",
+    "new": "The Holy Crown is kept as a symbol of the continuity of statehood.",
+    "kind": "hungarian"
+  }
 ]

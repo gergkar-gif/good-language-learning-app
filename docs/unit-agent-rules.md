@@ -245,7 +245,15 @@ runs `check_unit_refs.py`. B2 forms stay out of B1 screens and items:
 *olyannyira/olyan …, hogy* (`annyira-hogy`), cataphoric *arról, hogy*
 (`b2-cataphoric-clauses`), preverb inversion (*olvastam el*,
 `b2-focus-inversion`), *bármi/bármilyen … is* (`concessive-indefinites`),
-*ugyebár*, *elvégre*.
+*ugyebár*, *elvégre*. *amely* is taught on b1-arpadhaz-02 (Unit 10): a screen before it
+must not use it, and a recap of it names B1 Unit 10, never A2 Unit 4
+(A2 Unit 4 teaches *aki*); citizenship batch 08-14 had both. **Citizenship
+texts (batch 08-14):** check that every fact an item or question asks for
+is stated in its segment (add a hedged sentence when it is true but
+missing); remove mind-reading (*felismerte, hogy*, *tudta, hogy*),
+"all of Europe watched" and glorifying lines (*dicső*, "saved the
+nation"); consolidation titles count within the track ("Unit 4
+Consolidation" for the track's fourth unit) and stay.
 
 ### 6c. Spanish (es-es, es-latam; written 2026-10-16 before the Spanish pass, from the files and ROADMAP 148/150; add what the pass finds)
 

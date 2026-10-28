@@ -1,0 +1,734 @@
+[
+ {
+  "file": "content/hu/stories/world/b1/b1-anjouk-01-karolyrobert.json",
+  "old": "és bevezette az értékálló magyar aranyforintot.",
+  "new": "és bevezette az értékálló magyar aranyforintot, amelyet Körmöcbányán vertek.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "ex03 asks where the florin was minted; the segment did not say (Kremnica mint)."
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-anjouk-02-visegrad.json",
+  "old": "A három király megállapodott abban, hogy új kereskedelmi utat nyitnak, amely elkerüli a gazdag Bécs városának vámjait.",
+  "new": "A három király megállapodott: új kereskedelmi utat nyitnak, amely elkerüli a gazdag Bécs árumegállító jogát és vámjait.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Cataphoric 'abban, hogy' is B2; the staple right is in the goal and ex07 but not the segment."
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-anjouk-02-visegrad.json",
+  "old": "Ez a visegrádi királytalálkozó szilárd szövetséget teremtett, amely évszázadokon át formálta a térség történelmét.",
+  "new": "A találkozó emlékét őrzi a Visegrádi Négyek (V4) neve: a közép-európai országok 1991-ben Visegrádon kezdték meg az együttműködést.",
+  "sure": false,
+  "kind": "hungarian",
+  "why": "Overclaim ('shaped the region for centuries'); gives the V4 link that goal 4 and ex06 need."
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-anjouk-03-nagylajos.json",
+  "old": "a nép és az utókor Nagy Lajosnak nevezte őt.",
+  "new": "a nép és az utókor Nagy Lajosnak, a lovagkirálynak nevezte őt.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "The epithet lovagkirály is asked about (ex02) but absent from the segment."
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-anjouk-04-zsigmond.json",
+  "old": "új védelmi stratégiát dolgozott ki a birodalom megóvására.",
+  "new": "új védelmi stratégiát dolgozott ki az ország megóvására.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Hungary was a kingdom, not an empire."
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-anjouk-04-zsigmond.json",
+  "old": "Később Zsigmondot német-római császárrá koronázták, de Magyarország védelme mindig központi feladata maradt.",
+  "new": "Zsigmond 1408-ban megalapította a Sárkány Lovagrendet, és ő hívta össze a konstanzi zsinatot (1414–1418). 1433-ban német-római császárrá koronázták, de Magyarország védelme mindig fontos feladata maradt.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "ex07 (Constance) and ex08 (Order of the Dragon) are not answerable from the segment; 'Később' was out of order."
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-anjouk-05-nandorfehervar.json",
+  "old": "1456 nyarán II. Mehmed szultán százezres hadsereggel vette ostrom alá",
+  "new": "1456 nyarán II. Mehmed szultán több tízezres hadsereggel vette ostrom alá",
+  "sure": false,
+  "kind": "hungarian",
+  "why": "Estimates of the Ottoman army range widely; 'százezres' is the traditional upper figure."
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-anjouk-05-nandorfehervar.json",
+  "old": "Hunyadi János kormányzó és a lánglelkű Kapisztrán János keresztesei siettek a vár védőinek megsegítésére.",
+  "new": "Hunyadi János, az ország egykori kormányzója a vár védőinek megsegítésére sietett, vele együtt Kapisztrán János ferences szerzetes és keresztesei.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Hunyadi was governor only 1446-53; in 1456 he was captain-general."
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-anjouk-05-nandorfehervar.json",
+  "old": "A hős védők július 22-én áttörték az oszmán hajózárat a Dunán, és merész rohammal szétverték a szultán seregét.",
+  "new": "A védők július 14-én áttörték az oszmán hajózárat a Dunán, július 21–22-én pedig a védők és a keresztesek visszaverték az ostromló sereg rohamát.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "The river blockade was broken on 14 July; the decisive assault was 21-22 July."
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-anjouk-05-nandorfehervar.json",
+  "old": "A győzelem megállította az oszmán hódítást hetven évre, és a pápa elrendelte a déli harangszót a keresztény templomokban.",
+  "new": "A győzelem több mint hat évtizedre megállította az oszmán előretörést Magyarország felé. A pápa még a győzelem előtt déli harangszót rendelt el a keresztes hadjáratért való imádkozásra; a hagyomány szerint a harangszó a nándorfehérvári győzelem emlékét is őrzi.",
+  "sure": false,
+  "kind": "hungarian",
+  "why": "Belgrade fell in 1521 (65 years, not 70); the noon-bell order predates the victory, so the link is tradition (disputed)."
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-anjouk-05-nandorfehervar.json",
+  "old": "Bár a dicső Hunyadi János a csata után pestisben meghalt, neve a nemzeti önfeláldozás örök jelképévé vált.",
+  "new": "Hunyadi János néhány héttel a csata után, 1456 augusztusában pestisben meghalt; a hagyomány törökverőnek nevezi.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Removes a glorifying judgement ('örök jelkép'); adds the death date and the epithet used in the goal."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-01-ex.json",
+  "id": "b1-anjouk-01.ex03",
+  "set": {
+   "question": "Hol verték a híres középkori magyar aranyforintot?",
+   "options": [
+    "Körmöcbányán, a bányavárosban.",
+    "Bécsben, a hercegi udvarban.",
+    "Rómában, a pápai udvarban."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away (13 vs 8)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-01-ex.json",
+  "id": "b1-anjouk-01.ex04",
+  "set": {
+   "question": "Complete with the chronicler phrase: '... Károly Róbert erős kézzel kormányzott.'",
+   "options": [
+    "A krónikák szerint",
+    "A krónikákkal együtt",
+    "A krónikákhoz közel"
+   ],
+   "category": "vocabulary",
+   "teaches": [
+    "b1-angevin-kings-vocab"
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away; 'szerint' evidentials is taught at Unit 25 (taught-later): item retagged as the unit's phrase vocabulary."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-01-ex.json",
+  "id": "b1-anjouk-01.ex06",
+  "set": {
+   "question": "Miért fontos Károly Róbert gazdasági reformja?",
+   "options": [
+    "Mert bevezette a stabil aranyforintot.",
+    "Mert ő hozta létre az Európai Uniót.",
+    "Mert megszüntette a hadsereget."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "'honosítási vizsga' premise is unsupported."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-01-ex.json",
+  "id": "b1-anjouk-01.ex07",
+  "set": {
+   "question": "Kiket hívtak 'kiskirályoknak' a 14. század elején?",
+   "options": [
+    "Az önálló tartományurakat.",
+    "A király gyermekeit.",
+    "A szomszédos országok uralkodóit."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "'hatalmaskodó' is an unlisted legal term; the segment says they ruled with their own armies."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-02-ex.json",
+  "id": "b1-anjouk-02.ex04",
+  "set": {
+   "question": "A három uralkodó megállapodott, hogy ...",
+   "options": [
+    "új kereskedelmi utat nyitnak.",
+    "új kereskedelmi utat nyitottak.",
+    "új kereskedelmi utat nyitnának."
+   ],
+   "distractor_skills": {
+    "1": "past-tense-indefinite",
+    "2": "nek-conditional"
+   }
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "'soha' tell (tell-absolute); the wrong 'nem beszélnek' carried a wrong nek-conditional tag; 'abban, hogy' is B2; options now differ in one form each."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-02-ex.json",
+  "id": "b1-anjouk-02.ex06",
+  "set": {
+   "question": "Miért hívják a mai közép-európai együttműködést 'Visegrádi Négyeknek' (V4)?",
+   "options": [
+    "Mert a nevét az 1335-ös visegrádi találkozóról kapta.",
+    "Mert Visegrádon építették fel az első magyar parlamentet.",
+    "Mert az Alaptörvényt Visegrádon fogadták el 2011-ben."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away; 'örökségére épül' vague."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-02-ex.json",
+  "id": "b1-anjouk-02.ex07",
+  "set": {
+   "question": "Milyen gazdasági célt szolgált az új visegrádi kereskedelmi út?",
+   "options": [
+    "Hogy elkerüljék Bécs árumegállító jogát.",
+    "Hogy a Dunát eltereljék a várostól.",
+    "Hogy leállítsák a kereskedelmet."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-02-ex.json",
+  "id": "b1-anjouk-02.ex08",
+  "set": {
+   "question": "Hol fogadta Károly Róbert a vendég uralkodókat?",
+   "options": [
+    "A visegrádi királyi palotában.",
+    "A budai királyi várban.",
+    "Az esztergomi érseki palotában."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-03-ex.json",
+  "id": "b1-anjouk-03.ex02",
+  "set": {
+   "question": "Miért nevezték Nagy Lajost lovagkirálynak?",
+   "options": [
+    "Mert bátor, hívő és lovagias volt.",
+    "Mert csak lovon szeretett utazni.",
+    "Mert ő készítette a páncélokat a vitézeknek."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away; 'példaképül szolgált Európában' overclaims."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-03-ex.json",
+  "id": "b1-anjouk-03.ex03",
+  "set": {
+   "question": "Melyik törvényt vezette be Nagy Lajos 1351-ben a nemesi birtok öröklésére?",
+   "options": [
+    "Az ősiség törvényét.",
+    "A jobbágyfelszabadítást.",
+    "A nemesi adómentesség eltörlését."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away; 'szabad költözés' replaced (not safely wrong)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-03-ex.json",
+  "id": "b1-anjouk-03.ex04",
+  "set": {
+   "question": "Nagy Lajost igazi lovagkirály... tisztelték."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "'Európa-szerte' is an unsupported claim."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-03-ex.json",
+  "id": "b1-anjouk-03.ex06",
+  "set": {
+   "question": "Mit mondott ki az ősiség (aviticitas) törvénye?",
+   "options": [
+    "Hogy a birtok nem adható el, a családban marad.",
+    "Hogy a birtok a királyé lesz azonnal.",
+    "Hogy a jobbágyok feloszthatják a földet egymás között."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-03-ex.json",
+  "id": "b1-anjouk-03.ex07",
+  "set": {
+   "question": "Mi volt a 'kilenced' az 1351-es törvények szerint?",
+   "options": [
+    "A földesúrnak járó terményadó a jobbágyoktól.",
+    "A kilencedik hónapban fizetett vám a városokban.",
+    "A királyi udvar kilenc szolgája."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "'fizetendő' is a future participle (Unit 27); length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-04-ex.json",
+  "id": "b1-anjouk-04.ex02",
+  "set": {
+   "question": "Milyen birodalmi címet kapott Luxemburgi Zsigmond a magyar királyi korona mellett?",
+   "options": [
+    "Német-római császárrá koronázták.",
+    "Az orosz cári címet kapta.",
+    "Angol királlyá koronázták."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-04-ex.json",
+  "id": "b1-anjouk-04.ex03",
+  "set": {
+   "question": "Melyik birodalom jelent meg Európa déli határain a 14. század végén?",
+   "options": [
+    "Az Oszmán Birodalom.",
+    "A Római Birodalom.",
+    "A Mongol Birodalom."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "'felkelő' means rebelling/rising sun, not 'rising power'; length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-04-ex.json",
+  "id": "b1-anjouk-04.ex06",
+  "set": {
+   "question": "Mi volt a célja a déli végvárrendszer felépítésének?",
+   "options": [
+    "Megállítani az oszmán betöréseket.",
+    "Megakadályozni a magyarok utazását délre.",
+    "Vámot szedni a belföldi halászoktól."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-04-ex.json",
+  "id": "b1-anjouk-04.ex07",
+  "set": {
+   "question": "Melyik fontos nemzetközi egyházi zsinatot hívta össze Zsigmond?",
+   "options": [
+    "A konstanzi zsinatot (1414–1418).",
+    "A tridenti zsinatot (1545–1563).",
+    "A pannonhalmi egyházi gyűlést."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-05-ex.json",
+  "id": "b1-anjouk-05.ex03",
+  "set": {
+   "question": "Ki vezette a magyar felmentő sereget Nándorfehérvár védelmében?",
+   "options": [
+    "Hunyadi János.",
+    "Szent István király.",
+    "Károly Róbert király."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "He was no longer governor in 1456."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-05-ex.json",
+  "id": "b1-anjouk-05.ex05",
+  "set": {
+   "question": "Hunyadi János ____ és katonai tehetsége megvédte Nándorfehérvárat."
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "'Saved Europe's gate' is a judgement."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-05-ex.json",
+  "id": "b1-anjouk-05.ex06",
+  "set": {
+   "question": "A hagyomány szerint mire emlékeztet a templomok déli harangszója?",
+   "options": [
+    "A nándorfehérvári diadalra.",
+    "A tatárjárás utáni újjáépítésre.",
+    "A trianoni békeszerződés aláírására."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "The noon-bell link is tradition, not settled fact."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-05-ex.json",
+  "id": "b1-anjouk-05.ex07",
+  "set": {
+   "question": "Melyik szultán vezette a török ostromot Nándorfehérvárnál?",
+   "options": [
+    "II. Mehmed szultán.",
+    "Szulejmán szultán.",
+    "I. Bajazid szultán."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Batu kán is not a sultan (tell); Bayezid I fits the Nicopolis lesson."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-05-ex.json",
+  "id": "b1-anjouk-05.ex08",
+  "set": {
+   "question": "Hogyan halt meg Hunyadi János a diadal után?",
+   "options": [
+    "A táborban pestisben halt meg.",
+    "Csatában esett el nyílvesszőtől.",
+    "Időskori békés betegségben."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-consolidation-ex.json",
+  "id": "b1-anjouk-consolidation.ex07",
+  "set": {
+   "question": "Kivel szemben győzött Hunyadi János 1456-ban Nándorfehérvárnál?",
+   "options": [
+    "II. Mehmed szultán seregével szemben.",
+    "Batu kán mongol hadával szemben.",
+    "A német-római császárral szemben."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-consolidation-ex.json",
+  "id": "b1-anjouk-consolidation.ex08",
+  "set": {
+   "question": "A hagyomány szerint miért szól délben a harang?",
+   "options": [
+    "A nándorfehérvári győzelem emlékére.",
+    "Az ebédidő jelzésére.",
+    "Szent István koronázásának emlékére."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away; 'az összes keresztény templom' and 'pápai ima' overclaim; -va option 'emlékezve' removed."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-consolidation-ex.json",
+  "id": "b1-anjouk-consolidation.ex06",
+  "set": {
+   "options": [
+    "A nemesi birtok a nemzetségen belül öröklődik, eladni nem szabad.",
+    "A legrégebbi falvak polgárai nem fizetnek adót a királyi kincstárnak.",
+    "A királyi aranybányák után fizetett különadó a városok kincstárába jár."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "'fizetendő' is a future participle (Unit 27)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-consolidation-ex.json",
+  "id": "b1-anjouk-consolidation.ex11",
+  "set": {
+   "question": "Melyik bányavárosban verték a híres aranyforintokat?",
+   "options": [
+    "Körmöcbányán.",
+    "Selmecbányán.",
+    "Esztergomban."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-consolidation-ex.json",
+  "id": "b1-anjouk-consolidation.ex12",
+  "set": {
+   "question": "Hogyan nevezték a déli határ védelmére felépített erődök láncolatát?",
+   "options": [
+    "Végvárrendszernek.",
+    "Határőrségnek.",
+    "Kincstári rendszernek."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-consolidation-ex.json",
+  "id": "b1-anjouk-consolidation.ex15",
+  "set": {
+   "question": "Hány évre állította meg az oszmán terjeszkedést a nándorfehérvári diadal?",
+   "options": [
+    "Több mint hat évtizedre.",
+    "Mindössze egyetlen hétre.",
+    "Körülbelül ötszáz évre."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Belgrade fell in 1521: 'seventy years' overstates; length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-consolidation-ex.json",
+  "id": "b1-anjouk-consolidation.ex16",
+  "set": {
+   "question": "Hogyan mondjuk magyarul: 'According to the chronicles'?",
+   "options": [
+    "A krónikák szerint",
+    "A krónikákkal együtt",
+    "A krónikák mellett"
+   ],
+   "category": "vocabulary",
+   "teaches": [
+    "b1-angevin-kings-vocab"
+   ],
+   "distractor_skills": {
+    "1": "val-vel",
+    "2": "postpositions-basic"
+   }
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away; taught-later evidentials: retagged as vocabulary."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-consolidation-ex.json",
+  "id": "b1-anjouk-consolidation.ex17",
+  "set": {
+   "question": "Hogyan mondjuk magyarul: 'The parties agreed that...'?",
+   "options": [
+    "A felek megállapodtak, hogy...",
+    "A felek megálltak, hogy...",
+    "A felek megkérdezték, hogy..."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Cataphoric 'abban/arról, hogy' is B2 (b2-cataphoric-clauses)."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-consolidation-ex.json",
+  "id": "b1-anjouk-consolidation.ex18",
+  "set": {
+   "question": "Melyik város mai neve Belgrád?",
+   "options": [
+    "Nándorfehérvár.",
+    "Székesfehérvár.",
+    "Gyulafehérvár."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-consolidation-ex.json",
+  "id": "b1-anjouk-consolidation.ex19",
+  "set": {
+   "question": "Melyik tisztséget viselte Hunyadi János 1446 és 1453 között?",
+   "options": [
+    "Az ország kormányzója volt.",
+    "Német-római császár volt.",
+    "A pápa tanácsosa volt."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "'nemesi tisztség' is wrong; dates added; length give-away."
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-anjouk-consolidation-ex.json",
+  "id": "b1-anjouk-consolidation.ex20",
+  "set": {
+   "question": "Melyik király építette ki a déli végvárrendszert?",
+   "options": [
+    "Zsigmond király.",
+    "Károly Róbert.",
+    "Nagy Lajos."
+   ]
+  },
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Judgement-laden 92-character answer and unsupported exam premise replaced."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-01-gr.json",
+  "old": "Chronicler Reporting: A krónikák szerint, úgy mondják",
+  "new": "Chronicle Phrases: a krónikák szerint, úgy mondják",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Screen taught evidentials (Unit 25) as a form: now presented as two fixed history phrases."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-01-gr.json",
+  "old": "\"title\": \"Attributing historical claims in Hungarian\"",
+  "new": "\"title\": \"Two phrases for old sources\"",
+  "sure": true,
+  "kind": "hungarian",
+  "why": ""
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-01-gr.json",
+  "old": "When narrating medieval history, Hungarian frequently uses framing expressions like *a krónikák szerint* (according to the chronicles) or *azt mondják, hogy...* (it is said that...). This allows the speaker to report historical traditions without claiming direct eyewitness certainty.",
+  "new": "Learn two fixed phrases for talking about the Middle Ages: *a krónikák szerint* (according to the chronicles) and *úgy mondják, hogy...* (it is said that...). They show that a statement comes from old sources or tradition, not from a witness. Treat them as set phrases here; *szerint* is taught as a pattern later in B1.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "*azt mondják, hogy* is reported speech (Unit 25) and the evidentials are Unit 25; the screen now teaches phrases only."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-01-gr.json",
+  "old": "értékálló aranyforintot veretett Körmöcbányán.",
+  "new": "értékálló aranyforintot vezetett be.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "*veretett* is a B2 causative (-tat/-tet)."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-01-gr.json",
+  "old": "Charles Robert minted stable gold florins in Körmöcbánya.",
+  "new": "Charles Robert introduced a stable gold florin.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "English of the same example (and the speaking screen)."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-01-gr.json",
+  "old": "Notice that *szerint* takes the nominative case (*a krónikák szerint*, *a történészek szerint*). It is an essential marker for natural historical and civic discussions.",
+  "new": "Notice the word order: *a krónikák szerint* comes first, then the statement. You can swap in *a történészek szerint* (according to the historians).",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "A tip that called szerint a case rule; replaced by a phrase tip."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-02-gr.json",
+  "old": "Diplomatic Reporting: megállapodtak abban, hogy...",
+  "new": "Diplomatic Words: megállapodtak, egyezséget kötöttek",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Screen taught cataphoric abban, hogy (B2); now a phrase list."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-02-gr.json",
+  "old": "In diplomatic narration, agreements between rulers are introduced with prepositional verbs: *megállapodik vmiben* (to agree on something) followed by *abban, hogy...* (in that...). This pattern is central to describing historical treaties like the 1335 Congress of Visegrád.",
+  "new": "To describe treaties like the 1335 Congress of Visegrád, learn these fixed phrases: *megállapodtak, hogy...* (they agreed that...), *egyezséget kötöttek* (they concluded an agreement), *közvetítő szerepet vállalt* (he took on the role of mediator) and *új utat nyitottak* (they opened a new route).",
+  "sure": true,
+  "kind": "hungarian",
+  "why": ""
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-02-gr.json",
+  "old": "A három király megállapodott abban, hogy új kereskedelmi utat nyitnak.",
+  "new": "A három király megállapodott, hogy új kereskedelmi utat nyitnak.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Cataphoric abban (B2); also the speaking screen."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-02-gr.json",
+  "old": "A felek egyezséget kötöttek a bécsi árumegállító jog elkerüléséről.",
+  "new": "A felek egyezséget kötöttek, hogy elkerülik a bécsi árumegállító jogot.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Verbal noun elkerülés (Unit 31)."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-02-gr.json",
+  "old": "The parties concluded an agreement on bypassing Vienna's staple right.",
+  "new": "The parties concluded an agreement to bypass Vienna's staple right.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": ""
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-03-gr.json",
+  "old": "Nagy Lajost Európa-szerte igazi lovagkirályként tisztelték.",
+  "new": "Nagy Lajost igazi lovagkirályként tisztelték.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Unsupported \"across Europe\"."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-03-gr.json",
+  "old": "Louis the Great was respected across Europe as a true knight-king.",
+  "new": "Louis the Great was honoured as a true knight-king.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": ""
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-04-gr.json",
+  "old": "*védelmet nyújt* (to provide protection)",
+  "new": "*védelmet nyújt* (to provide protection; you know it from earlier units)",
+  "sure": true,
+  "kind": "hungarian",
+  "why": "Phrase taught in the Mongol Invasion unit: recap, not new."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-05-gr.json",
+  "old": "Hunyadi János hősiessége megmentette a keresztény Európát az oszmán hódítástól.",
+  "new": "Hunyadi János tiszteletére sok magyar városban szobrot állítottak.",
+  "sure": false,
+  "kind": "hungarian",
+  "why": "\"Saved Christian Europe\" is a judgement; example now shows tiszteletére."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-05-gr.json",
+  "old": "János Hunyadi's heroism saved Christian Europe from Ottoman conquest.",
+  "new": "Statues were put up in many Hungarian towns in honour of János Hunyadi.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": ""
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-05-gr.json",
+  "old": "A pápa a keresztény világban imát és harangzúgást rendelt el a védők tiszteletére.",
+  "new": "A hagyomány szerint a déli harangszó a védők emlékére szól.",
+  "sure": false,
+  "kind": "hungarian",
+  "why": "The pope ordered the noon bell for the crusade prayer before the victory; the \"in honour of the defenders\" link is tradition."
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-anjouk-05-gr.json",
+  "old": "The Pope ordered prayer and ringing of church bells across Christendom in honour of the defenders.",
+  "new": "According to tradition, the noon bell rings in memory of the defenders.",
+  "sure": true,
+  "kind": "hungarian",
+  "why": ""
+ }
+]

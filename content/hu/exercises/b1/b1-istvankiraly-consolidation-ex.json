@@ -53,43 +53,52 @@
       "question": "Melyik mondat használja helyesen a melléknévi igenevet jelzőként?",
       "options": [
         "A megkeresztelt fejedelem szövetséget keresett a Nyugattal.",
-        "A fejedelem megkeresztel a Nyugattal.",
-        "A megkeresztel fejedelem szövetség Nyugattal."
+        "A megkeresztel fejedelem szövetséget keresett a Nyugattal.",
+        "A megkeresztelte fejedelem szövetséget keresett a Nyugattal."
       ],
       "correct": 0,
       "teaches": [
         "past-participle-adjective"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "definite-past"
+      }
     },
     {
       "id": "b1-istvankiraly-consolidation.ex04",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat fejezi ki helyesen, hogy Istvánt megkoronázták?",
+      "question": "Melyik mondat helyes?",
       "options": [
-        "István Kr.u. 1000 körül megkoronázott király lett.",
-        "István soha nem lett király.",
-        "István megkoronáz volt."
+        "István 1000 körül megkoronázott király lett.",
+        "István 1000 körül megkoronáz király lett.",
+        "István 1000 körül megkoronázta király lett."
       ],
       "correct": 0,
       "teaches": [
         "past-participle-adjective"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "definite-past"
+      }
     },
     {
       "id": "b1-istvankiraly-consolidation.ex05",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat írja le helyesen egy István által alapított intézményt?",
+      "question": "Melyik mondat helyes az István által alapított kolostorokról?",
       "options": [
-        "Az alapított kolostorokban szerzetesek éltek.",
-        "A kolostor alapít Istvánt.",
-        "István alapított a kolostorban."
+        "Az István által alapított kolostorokban szerzetesek éltek.",
+        "Az István által alapít kolostorokban szerzetesek éltek.",
+        "Az István által alapította kolostorokban szerzetesek éltek."
       ],
       "correct": 0,
       "teaches": [
         "past-participle-adjective"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "definite-past"
+      }
     },
     {
       "id": "b1-istvankiraly-consolidation.ex06",
@@ -98,13 +107,16 @@
       "question": "Melyik mondat helyes a szentté avatott király leírására?",
       "options": [
         "A szentté avatott király ma Magyarország védőszentje.",
-        "A király szentté avat Magyarországot.",
-        "Magyarország szentté avatott a királyt."
+        "A szentté avat király ma Magyarország védőszentje.",
+        "A szentté avatta király ma Magyarország védőszentje."
       ],
       "correct": 0,
       "teaches": [
         "past-participle-adjective"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "definite-past"
+      }
     },
     {
       "id": "b1-istvankiraly-consolidation.ex07",
@@ -122,9 +134,9 @@
       "id": "b1-istvankiraly-consolidation.ex08",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "István Kr.u. 1000 körül ___ király lett.",
+      "sentence": "A ___ király új törvényeket adott ki.",
       "hint": "crowned",
-      "english": "Around 1000 AD, Stephen became a crowned king.",
+      "english": "The crowned king issued new laws.",
       "answer": "megkoronázott",
       "teaches": [
         "past-participle-adjective"
@@ -134,9 +146,9 @@
       "id": "b1-istvankiraly-consolidation.ex09",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Az István által ___ egyházmegyék máig fennmaradtak.",
+      "sentence": "Az István által ___ egyházmegyék máig működnek.",
       "hint": "founded",
-      "english": "The dioceses founded by Stephen have survived to this day.",
+      "english": "The dioceses founded by Stephen still operate today.",
       "answer": "alapított",
       "teaches": [
         "past-participle-adjective"
@@ -146,9 +158,9 @@
       "id": "b1-istvankiraly-consolidation.ex10",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Az utókorra ___ Intelmek máig olvashatók.",
+      "sentence": "Az utókorra ___ Intelmeket máig olvassák.",
       "hint": "preserved",
-      "english": "The Admonitions, preserved for posterity, can still be read today.",
+      "english": "People still read the Admonitions preserved for posterity.",
       "answer": "megőrzött",
       "teaches": [
         "past-participle-adjective"
@@ -260,8 +272,8 @@
       ],
       "options": [
         "Magyarország első megkoronázott, később szentté avatott királya.",
-        "Egy 20. századi politikus.",
-        "A honfoglaló magyar törzsek egyik vezére 895-ben."
+        "Magyarország utolsó megkoronázott, később szentté avatott királya.",
+        "A honfoglalás vezére, Árpád fejedelem."
       ],
       "correct": 0,
       "teaches": [
@@ -275,7 +287,7 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "Mit jelképez ma a Szent Korona?"
+          "text": "Mit kapott vissza Magyarország 1978-ban?"
         },
         {
           "speaker": "B",
@@ -283,9 +295,9 @@
         }
       ],
       "options": [
-        "A magyar államiság folytonosságát Szent István koronázása óta.",
-        "Semmilyen jelentősége nincs ma már.",
-        "Csak egy múzeumi tárgy Bécsben."
+        "A Szent Koronát, az Egyesült Államoktól.",
+        "A Szent Koronát, Ausztriától.",
+        "A Szent Koronát, Olaszországtól."
       ],
       "correct": 0,
       "teaches": [
@@ -296,11 +308,11 @@
       "id": "b1-istvankiraly-consolidation.ex17",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "István Kr.u. 1000 körül megkoronázott király lett, majd 1083-ban szentté avatták.",
+      "sentence": "István 1000 körül megkoronázott király lett, majd 1083-ban szentté avatták.",
       "options": [
         "István became a crowned king around the year 1000, and was canonized in 1083.",
-        "István was never crowned king.",
-        "István was canonized while he was still a child."
+        "István became a crowned king around the year 1000, and was canonized in 1038.",
+        "István became a crowned king in 1083, and was canonized around the year 1000."
       ],
       "correct": 0,
       "teaches": [

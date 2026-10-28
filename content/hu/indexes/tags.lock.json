@@ -407,14 +407,14 @@
    "reason": "history and civics fact questions retagged as untagged reading (ROADMAP 144(7))"
   },
   "B1/angevin-kings": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-28",
    "exercises": 65,
-   "reason": "history and civics fact questions retagged as untagged reading (ROADMAP 144(7))"
+   "reason": "citizenship read-through, batch 08-14 (2026-10-28)"
   },
   "B1/arpad-dynasty": {
-   "locked": "2026-10-07",
+   "locked": "2026-10-28",
    "exercises": 66,
-   "reason": "new exercises for thin skills (ROADMAP 144(4))"
+   "reason": "citizenship read-through, batch 08-14 (2026-10-28)"
   },
   "B1/austria-hungary": {
    "locked": "2026-10-06",
@@ -627,9 +627,9 @@
    "reason": "HU B1 core batch 31-41 read and fixed (ROADMAP 153)"
   },
   "B1/mongol-invasion": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-28",
    "exercises": 65,
-   "reason": "history and civics fact questions retagged as untagged reading (ROADMAP 144(7))"
+   "reason": "citizenship read-through, batch 08-14 (2026-10-28)"
   },
   "B1/national-holidays-remembrance-days": {
    "locked": "2026-10-06",
@@ -712,9 +712,9 @@
    "reason": "HU B1 core batch 55-65 read and fixed (ROADMAP 153)"
   },
   "B1/saint-stephen": {
-   "locked": "2026-10-05",
+   "locked": "2026-10-28",
    "exercises": 65,
-   "reason": "HU B1 read-through 2026-10-05"
+   "reason": "citizenship read-through, batch 08-14 (2026-10-28)"
   },
   "B1/social-life-communication": {
    "locked": "2026-10-28",
@@ -70070,7 +70070,7 @@
   },
   "b1-anjouk-01.ex04": {
    "teaches": [
-    "evidentials"
+    "b1-angevin-kings-vocab"
    ],
    "distractor_skills": {
     "1": "val-vel",
@@ -70117,7 +70117,10 @@
   },
   "b1-anjouk-02.ex04": {
    "teaches": [],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "past-tense-indefinite",
+    "2": "nek-conditional"
+   }
   },
   "b1-anjouk-02.ex05": {
    "teaches": [
@@ -70339,11 +70342,11 @@
   },
   "b1-anjouk-consolidation.ex16": {
    "teaches": [
-    "evidentials"
+    "b1-angevin-kings-vocab"
    ],
    "distractor_skills": {
     "1": "val-vel",
-    "2": "ban-ben-in"
+    "2": "postpositions-basic"
    }
   },
   "b1-anjouk-consolidation.ex17": {
@@ -70478,7 +70481,7 @@
   },
   "b1-arpadhaz-03.ex04": {
    "teaches": [
-    "vonatkozoi-nevmas-esetei"
+    "relative-clauses-aki-ami-amely"
    ],
    "distractor_skills": {}
   },
@@ -70488,7 +70491,7 @@
   },
   "b1-arpadhaz-03.ex06": {
    "teaches": [
-    "vonatkozoi-nevmas-esetei"
+    "relative-clauses-aki-ami-amely"
    ],
    "distractor_skills": {}
   },
@@ -70625,16 +70628,14 @@
     "relative-clauses-aki-ami-amely"
    ],
    "distractor_skills": {
-    "2": "vonatkozoi-nevmas-esetei"
+    "2": "ahol-amikor"
    }
   },
   "b1-arpadhaz-consolidation.ex05": {
    "teaches": [
-    "vonatkozoi-nevmas-esetei"
+    "relative-clauses-aki-ami-amely"
    ],
-   "distractor_skills": {
-    "1": "relative-clauses-aki-ami-amely"
-   }
+   "distractor_skills": {}
   },
   "b1-arpadhaz-consolidation.ex06": {
    "teaches": [
@@ -70658,7 +70659,7 @@
   },
   "b1-arpadhaz-consolidation.ex09": {
    "teaches": [
-    "vonatkozoi-nevmas-esetei"
+    "relative-clauses-aki-ami-amely"
    ],
    "distractor_skills": {}
   },
@@ -73024,25 +73025,33 @@
    "teaches": [
     "past-participle-adjective"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "definite-past"
+   }
   },
   "b1-istvankiraly-consolidation.ex04": {
    "teaches": [
     "past-participle-adjective"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "definite-past"
+   }
   },
   "b1-istvankiraly-consolidation.ex05": {
    "teaches": [
     "past-participle-adjective"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "definite-past"
+   }
   },
   "b1-istvankiraly-consolidation.ex06": {
    "teaches": [
     "past-participle-adjective"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "definite-past"
+   }
   },
   "b1-istvankiraly-consolidation.ex07": {
    "teaches": [
@@ -79100,7 +79109,7 @@
   },
   "b1-tatarjaras-03.ex04": {
    "teaches": [
-    "mediopassive-verbs-odik"
+    "meg-meaning"
    ],
    "distractor_skills": {}
   },
