@@ -59,6 +59,18 @@ has one unit more, its last, `vosotros`, which has no es-latam copy). Then run
 `check_fixes.py`, apply, lock, check, walk and freeze **per course**:
 frozen state, accepted findings and tag locks are per course.
 
+### 2026-10-28: HU B1 core units 55–65
+
+- **Recap units are still the main reviewer fix.** Both readers wrote
+  "You know *X* from Unit N" recaps from skill titles (*mivel*, *ezért*
+  from A1 Unit 24, *amennyiben* from A2 Unit 13, *muszáj*); 8 were wrong,
+  all caught by `check_unit_refs.py`. Its remaining hits across B1 are
+  five known false positives (forms, and *nemcsak* spelled as one word).
+- **Readers checked unmet words by hand, not with the script** (B said
+  so); the reviewer run after applying found 17 hits, most of them
+  inflected forms the lookup misses (*hagytak*, *érvelek*, *eljövök*).
+- **Unit 65 `reported-speech` teaches nothing new:** it repeats Units 25
+  and 53 (reader B). For the user, with the 17 skill-less core units.
 ### Route A: read-first batch (HU A2, 2026-10-14 → 2026-10-15)
 
 0. **Batch setup (Spanish, 2026-10-21):** `python scripts/batch_setup.py
@@ -393,6 +405,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-23 | HU B1 core 19, 21, 23, 25, 27, 29 | paired read, 3 core units/reader | | A 581k, 39.2; B 430k, 38.9 | 662 proposed (159 / 155 / 151 / 63 / 69 / 65), 7 rejected (5 checker false positives on accented names in English options, 1 `answer`/`answers`, 1 tell; rewritten by Claude), Claude changed 2 story/screen lines | **~194k/unit (A: Units 19–23 were rewritten almost whole, ~155 fixes each) and ~143k/unit (B: Units 25–29, half-size lessons)**; 18 lessons had no checklist, so no `canDo` to copy: `add_missing_checklists.py` (goal lines; consolidations from the challenge drafts); walk 36/36 |
 | 10-27 | HU B1 core 31, 33, 35, 37, 39, 41 | paired read, 3 core units/reader; both stopped by the weekly Sonnet limit with Units 35 and 41 written but not reported, resumed after the reset | | not measurable (limit mid-batch; A's last resume 407k cumulative) | 446 proposed (89 / 84 / 90 / 59 / 54 / 70), 9 rejected by the checker (6 length give-aways, 1 *az ____* article blank, 1 *volna* in the prompt, 1 `distractor_skills` naming the item's own skill; rewritten by Claude); Claude dropped 10 (8 screen rewrites that replaced the taught phrases *meg vagyok győződve*, *továbbá*, *tekintettel arra, hogy* with A2 words; a wrong "met in Unit 26" recap; a story line), corrected 2 recap unit numbers and removed 2 unchecked ones, fixed 5 *volna*-in-both-clauses suspects, 1 tell, 1 challenge whose target missed its `canDo` | ~74 fixes/unit; 36 lessons got checklists; `noun-compounds` fell to 5 exercises after a correct retag, one item added; new `check_unit_refs.py` found 5 more wrong recap units (Units 19, 27, 29, 31, 35); walk 36/36 |
 | 10-27 | HU B1 core 43, 45, 47, 49, 51, 53 | paired read, 3 core units/reader, no limit hit | | A 326k, 56 tool calls (~109k/unit); B 421k, 70 (~140k/unit) | 433 proposed (72 / 64 / 65 / 79 / 79 / 74), 7 rejected by the checker (5 length, 1 tell, 1 hint = answer, 1 article blank; rewritten by Claude); Claude changed 6 (*arra az eshetőségre* → *esetre*, a story option true of the story, a 94-character story answer, a *noha* unit, the *mielőtt* item's tag) | **cheapest batch so far** (half-size lessons, ~72 fixes/unit); reader A skipped `unmet-words.js`: Claude's run found 19 hits after both lists were applied, 15 of them screen phrases on no vocabulary list (added), 4 lemmatizer false positives; 36 checklists, 92 glosses; walk 36/36 |
+| 10-28 | HU B1 core 55, 57, 59, 61, 63, 65 | paired read, 3 core units/reader; both stopped by the 5-hour Sonnet limit after two units, resumed after the reset | | A 384k, B 396k as reported on resume (~128k and ~132k a unit if cumulative) | 443 proposed (68 / 66 / 64 / 81 / 80 / 84), 15 rejected by the checker (9 tells, 3 length, 1 article blank, 1 copy, 1 *take* gloss; rewritten by Claude); Claude changed 6 (*köteles*/*kénytelen* as two answers, a story claim about Gina, 4 wrong recap units) and fixed 8 more recap units with `check_unit_refs.py` | ~74 fixes/unit; unmet-words after applying: 17 hits, 7 added to vocabulary lists, the rest inflected forms the lemma lookup misses; 18 checklists, 36 challenges, 62 glosses; walk 36/36 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 

@@ -1,0 +1,1300 @@
+[
+ {
+  "file": "content/hu/exercises/b1/b1-33-01-ex.json",
+  "id": "b1-33-01.ex01",
+  "set": {
+   "question": "Péter azt mondta: „Ma beteg vagyok.” Melyik mondat helyes?",
+   "options": [
+    "Péter azt mondta, hogy ma beteg vagyok.",
+    "Péter azt mondta, hogy aznap beteg.",
+    "Péter azt mondta, hogy aznap beteg volt."
+   ],
+   "correct": 1,
+   "category": "grammar",
+   "teaches": [
+    "reported-speech-statements"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length/meta question with unmet words (igeidő-visszaléptetés, automatikusan, ...); now one fault each: no shift / tense backshifted"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-01-ex.json",
+  "id": "b1-33-01.ex03",
+  "set": {
+   "tiles": [
+    "Azt",
+    "mondta,",
+    "hogy",
+    "másnap",
+    "korán",
+    "érkezik."
+   ],
+   "solution": [
+    "Azt",
+    "mondta,",
+    "hogy",
+    "másnap",
+    "korán",
+    "érkezik."
+   ],
+   "english": "He said that he would arrive early the next day.",
+   "category": "grammar",
+   "teaches": [
+    "reported-speech-statements"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "english was a placeholder"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-01-ex.json",
+  "id": "b1-33-01.ex04",
+  "set": {
+   "question": "Azt mondta: „Itt várok.” Mi lesz az „itt” a függő beszédben?",
+   "options": [
+    "innen",
+    "ide",
+    "ott"
+   ],
+   "correct": 2,
+   "category": "grammar",
+   "teaches": [
+    "reported-speech-statements"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet onnét"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-01-ex.json",
+  "id": "b1-33-01.ex05",
+  "set": {
+   "sentence": "Anna azt mondta, hogy másnap _____.",
+   "english": "Anna said that she would travel away the next day.",
+   "category": "grammar",
+   "teaches": [
+    "reported-speech-statements"
+   ],
+   "hint": "travels away (utazik)",
+   "answer": "elutazik"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem (elutaz_____)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-01-ex.json",
+  "id": "b1-33-01.ex07",
+  "set": {
+   "sentence": "Ez fontos _____: a vonat késik.",
+   "english": "This is an important announcement: the train is late.",
+   "category": "vocabulary",
+   "teaches": [
+    "b1-reported-speech-vocab"
+   ],
+   "hint": "announcement",
+   "answer": "közlés"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem (kijelentés_____); tartalmazott unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-01-ex.json",
+  "id": "b1-33-01.ex08",
+  "set": {
+   "tiles": [
+    "Azt",
+    "mondta,",
+    "hogy",
+    "a",
+    "vonat",
+    "késni",
+    "fog."
+   ],
+   "solution": [
+    "Azt",
+    "mondta,",
+    "hogy",
+    "a",
+    "vonat",
+    "késni",
+    "fog."
+   ],
+   "english": "He said that the train would be late.",
+   "category": "grammar",
+   "teaches": [
+    "reported-speech-statements"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "közölték unmet; english placeholder"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-01-a-gr.json",
+  "old": "Unlike English or Spanish, Hungarian reported speech does not shift tenses backwards into the past.",
+  "new": "You know *azt mondta, hogy …* and the unchanged tense from B1 Units 25 and 53. Unlike English, Hungarian reported speech does not shift tenses backwards into the past.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "reported statements and tense retention are taught in B1 Units 25 and 53 (recap); comparison with Spanish is not allowed"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-01-a-gr.json",
+  "old": "Péter: „Beteg vagyok.” -> Péter azt mondta, hogy beteg.",
+  "new": "Péter azt mondta, hogy beteg.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the arrow notation is read aloud in the speaking step; example reduced to the Hungarian sentence"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-01-a-gr.json",
+  "old": "Peter: 'I am sick.' -> Peter said that he was sick (lit. is sick).",
+  "new": "Peter said that he was sick (lit. is sick).",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "matches the example"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-01-a-gr.json",
+  "old": "Anna: „Holnap elutazom.” -> Anna azt mondta, hogy másnap elutazik.",
+  "new": "Anna azt mondta, hogy másnap elutazik.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "arrow notation read aloud in the speaking step"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-01-a-gr.json",
+  "old": "Anna: 'I will travel tomorrow.' -> Anna said that she would travel the next day.",
+  "new": "Anna said that she would travel the next day.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "matches the example"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-01-b-gr.json",
+  "old": "While tense remains unchanged in Hungarian indirect speech,",
+  "new": "You know *aznap* from A2 Unit 25. While tense remains unchanged in Hungarian indirect speech,",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "recap of a known word"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-01.json",
+  "old": "I can report direct statements in Hungarian without tense backshifting.",
+  "new": "I can report what someone said with azt mondta, hogy ….",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-01.json",
+  "old": "I can shift personal pronouns, persons, and temporal adverbs accurately.",
+  "new": "I can change én to ő and itt, ma, holnap to ott, aznap, másnap.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-01.json",
+  "old": "I can use 4 key terms for reported statements and citing.",
+  "new": "I can name a statement, a quotation and a message.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-01.json",
+  "old": "I can transform direct utterances into elegant indirect discourse.",
+  "new": "I can tell reported speech from a direct quotation.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-02-ex.json",
+  "id": "b1-33-02.ex01",
+  "set": {
+   "question": "A szóvivő _____, hogy új program indul. Melyik ige illik ide?",
+   "options": [
+    "kérte",
+    "bejelentette",
+    "kérdezte"
+   ],
+   "correct": 1,
+   "category": "grammar",
+   "teaches": [
+    "reported-speech-statements"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet suttogja, pletykálja; absurd options"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-02-ex.json",
+  "id": "b1-33-02.ex02",
+  "set": {
+   "sentence": "A szóvivő határozottan _____ a hírt.",
+   "english": "The spokesperson firmly denied the news.",
+   "category": "grammar",
+   "teaches": [
+    "definite-past"
+   ],
+   "hint": "denied (tagad)",
+   "answer": "tagadta"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem (tagad_____); valótlan unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-02-ex.json",
+  "id": "b1-33-02.ex03",
+  "set": {
+   "tiles": [
+    "A",
+    "hírforrás",
+    "azt",
+    "állítja,",
+    "hogy",
+    "a",
+    "helyzet",
+    "stabil."
+   ],
+   "solution": [
+    "A",
+    "hírforrás",
+    "azt",
+    "állítja,",
+    "hogy",
+    "a",
+    "helyzet",
+    "stabil."
+   ],
+   "english": "The news source claims that the situation is stable.",
+   "category": "vocabulary",
+   "teaches": [
+    "b1-reported-speech-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "vocab-unused hírforrás; english placeholder"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-02-ex.json",
+  "id": "b1-33-02.ex04",
+  "set": {
+   "question": "Mit jelent az, hogy a szóvivő cáfolja a hírt?",
+   "options": [
+    "Azt mondja, hogy a hír igaz.",
+    "Azt kérdezi, hogy a hír igaz-e.",
+    "Azt mondja, hogy a hír nem igaz."
+   ],
+   "correct": 2,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-reported-speech-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (61 vs 44); unmet words"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-02-ex.json",
+  "id": "b1-33-02.ex05",
+  "set": {
+   "sentence": "A minisztérium hivatalos _____ adott ki.",
+   "english": "The ministry issued an official position statement.",
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "position statement, the object",
+   "answer": "állásfoglalást"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem (állásfoglalás_____)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-02-ex.json",
+  "id": "b1-33-02.ex06",
+  "set": {
+   "question": "Melyik mondat helyes?",
+   "options": [
+    "A szóvivő megjegyezték, hogy a helyzet jó.",
+    "A szóvivő megjegyezte, hogy a helyzet jó.",
+    "A szóvivő megjegyzett, hogy a helyzet jó."
+   ],
+   "correct": 1,
+   "category": "grammar",
+   "teaches": [
+    "definite-past"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "garbled wrong options (feladatok voltak volna; megjegyzés tette arról); kutató unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-02-ex.json",
+  "id": "b1-33-02.ex07",
+  "set": {
+   "sentence": "A szóvivő fontos _____ tett.",
+   "english": "The spokesperson made an important statement.",
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "statement, the object",
+   "answer": "nyilatkozatot"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem (sajtóértesülés_____); szóló unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-02-ex.json",
+  "id": "b1-33-02.ex08",
+  "set": {
+   "tiles": [
+    "A",
+    "hivatalos",
+    "szóvivő",
+    "nyilatkozatot",
+    "tett",
+    "az",
+    "eseményről."
+   ],
+   "solution": [
+    "A",
+    "hivatalos",
+    "szóvivő",
+    "nyilatkozatot",
+    "tett",
+    "az",
+    "eseményről."
+   ],
+   "english": "The official spokesperson made a statement about the event.",
+   "category": "vocabulary",
+   "teaches": [
+    "b1-reported-speech-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "english was a placeholder"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-02-a-gr.json",
+  "old": "In news discourse and formal writing, *mondja* is replaced by nuanced verbs:",
+  "new": "You know *hangsúlyoz*, *állít* and *cáfol* from B1 Unit 25. In news discourse and formal writing, *mondja* is replaced by nuanced verbs:",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "hangsúlyoz, állít, cáfol are taught in B1 Unit 25 (nuanced reporting verbs)"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-02-a-gr.json",
+  "old": "These verbs anchor the subordinate clause with the demonstrative *azt* or *arról*.",
+  "new": "These verbs take a *hogy* clause, as *azt mondta, hogy …* does.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "the claim about azt/arról is contradicted by all three examples (none has azt or arról)"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-02-b-gr.json",
+  "old": "To report denials or rejections, Hungarian uses",
+  "new": "You know *cáfol* from B1 Unit 25. To report denials or rejections, Hungarian uses",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "recap"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-02-b-gr.json",
+  "old": "Notice that unlike colloquial English, Hungarian keeps the subordinate clause affirmative or matches the factual intent.",
+  "new": "Notice that the *hogy* clause is not negated: the denial is in the main verb. The clause often has *volna* or the conditional (*lenne*), which marks a claim the speaker rejects.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the original sentence is unclear and does not describe the examples"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-02.json",
+  "old": "I can use formal reporting verbs in press releases and official statements.",
+  "new": "I can report an official statement with bejelentette, hogy … and hangsúlyozta, hogy ….",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-02.json",
+  "old": "I can formulate clear denials and refutations using tagadja and cáfolja.",
+  "new": "I can report a denial with tagadta, hogy … and cáfolta, hogy ….",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-02.json",
+  "old": "I can acquire 4 media and press reporting terms.",
+  "new": "I can name a news source, a spokesperson and a statement.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-02.json",
+  "old": "I can summarize news reports with accurate attribution.",
+  "new": "I can say what a position statement is.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-03-ex.json",
+  "id": "b1-33-03.ex01",
+  "set": {
+   "question": "Melyik mondat helyes?",
+   "options": [
+    "Azt kérdezte, hogy mikor eljövök-e.",
+    "Azt kérdezte, hogy eljövök-e.",
+    "Azt kérdezte, hogy eljövök."
+   ],
+   "correct": 1,
+   "category": "grammar",
+   "teaches": [
+    "indirect-questions"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length/meta question with unmet words (eldöntendő, kérdőszós, fókuszhoz)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-03-ex.json",
+  "id": "b1-33-03.ex03",
+  "set": {
+   "tiles": [
+    "Érdeklődött,",
+    "hogy",
+    "mikor",
+    "érkezik",
+    "meg",
+    "a",
+    "vonat."
+   ],
+   "solution": [
+    "Érdeklődött,",
+    "hogy",
+    "mikor",
+    "érkezik",
+    "meg",
+    "a",
+    "vonat."
+   ],
+   "english": "He inquired when the train arrives.",
+   "category": "grammar",
+   "teaches": [
+    "indirect-questions"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "english was a placeholder"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-03-ex.json",
+  "id": "b1-33-03.ex04",
+  "set": {
+   "question": "Melyik mondat helyes?",
+   "options": [
+    "Azt kérdezte, hogy hol van-e a könyvtár.",
+    "Azt kérdezte, hogy hol van a könyvtár.",
+    "Azt kérdezte, hol hogy van a könyvtár."
+   ],
+   "correct": 1,
+   "category": "grammar",
+   "teaches": [
+    "indirect-questions"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "metalanguage question with unmet words; two of three options were explanations, not sentences"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-03-ex.json",
+  "id": "b1-33-03.ex05",
+  "set": {
+   "sentence": "A recepción jó _____ kaptunk a programokról.",
+   "english": "At the reception we received good information about the programs.",
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "information, the object",
+   "answer": "felvilágosítást"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem (felvilágosítás_____); részletes unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-03-ex.json",
+  "id": "b1-33-03.ex06",
+  "set": {
+   "question": "Mit jelent a kérdezősködés?",
+   "options": [
+    "Azt, hogy mindenre válaszolunk.",
+    "Azt, hogy sosem beszélünk.",
+    "Azt, hogy sok kérdést teszünk fel."
+   ],
+   "correct": 2,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-reported-speech-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (46 vs 27); unmet words"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-03-ex.json",
+  "id": "b1-33-03.ex08",
+  "set": {
+   "tiles": [
+    "Jó",
+    "tájékozódás",
+    "után",
+    "hoztuk",
+    "meg",
+    "a",
+    "döntést."
+   ],
+   "solution": [
+    "Jó",
+    "tájékozódás",
+    "után",
+    "hoztuk",
+    "meg",
+    "a",
+    "döntést."
+   ],
+   "english": "After finding things out well, we made the decision.",
+   "category": "vocabulary",
+   "teaches": [
+    "b1-reported-speech-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "alapos unmet; english placeholder"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-03-a-gr.json",
+  "old": "When converting a direct polar (yes/no) question into indirect speech,",
+  "new": "You know indirect questions with *hogy* and *-e* from B1 Units 25 and 53. When converting a direct polar (yes/no) question into indirect speech,",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "taught in B1 Units 25 and 53; recap"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-03-a-gr.json",
+  "old": "„Ismered a várost?” -> Azt kérdezte, hogy ismerem-e a várost.",
+  "new": "Azt kérdezte, hogy ismerem-e a várost.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "arrow notation read aloud in the speaking step"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-03-a-gr.json",
+  "old": "'Do you know the town?' -> He asked whether I knew the town.",
+  "new": "He asked whether I knew the town.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "matches the example"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-03-a-gr.json",
+  "old": "„Sikerült a vizsga?” -> Megkérdezte tőlem, hogy sikerült-e a vizsgám.",
+  "new": "Megkérdezte tőlem, hogy sikerült-e a vizsgám.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "arrow notation read aloud in the speaking step"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-03-a-gr.json",
+  "old": "'Did the exam succeed?' -> She asked me if my exam had succeeded.",
+  "new": "She asked me if my exam had succeeded.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "matches the example"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-03-b-gr.json",
+  "old": "When reporting questions that begin with an interrogative pronoun or adverb",
+  "new": "You know this from B1 Unit 25. When reporting questions that begin with an interrogative pronoun or adverb",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "recap"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-03.json",
+  "old": "I can form indirect polar questions using the enclitic -e on verbs or focus.",
+  "new": "I can report a yes/no question with hogy … -e.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-03.json",
+  "old": "I can report information questions beginning with question words without -e.",
+  "new": "I can report a question with a question word, without -e.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-03.json",
+  "old": "I can use 4 inquiry and information-gathering vocabulary words.",
+  "new": "I can name inquiry, interest and information in Hungarian.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-03.json",
+  "old": "I can conduct polite inquiries and report interview questions.",
+  "new": "I can say what orientation and information mean.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-04-ex.json",
+  "id": "b1-33-04.ex01",
+  "set": {
+   "question": "Melyik mondat helyes?",
+   "options": [
+    "Azt kérte, hogy segítek neki.",
+    "Azt kérte, hogy segítsek neki.",
+    "Azt kérte, hogy segítenék neki."
+   ],
+   "correct": 1,
+   "category": "grammar",
+   "teaches": [
+    "reported-commands"
+   ],
+   "distractor_skills": {
+    "2": "nek-conditional"
+   }
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "metalanguage question with unmet words (igemód, főnévi igenevet, kötőszó)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-04-ex.json",
+  "id": "b1-33-04.ex02",
+  "set": {
+   "sentence": "Megkért engem, hogy _____ neki.",
+   "english": "He asked me to help him.",
+   "category": "grammar",
+   "teaches": [
+    "reported-commands"
+   ],
+   "hint": "help (segít)",
+   "answer": "segítsek"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem (segítse_____ + k): check-content suspect glued-blank"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-04-ex.json",
+  "id": "b1-33-04.ex04",
+  "set": {
+   "question": "Mit jelent az utasítás?",
+   "options": [
+    "Amit valaki csinált tegnap.",
+    "Amit valakinek meg kell tennie.",
+    "Amit valaki szívesen kér."
+   ],
+   "correct": 1,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-reported-speech-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet words (elrendelését, megválaszolását)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-04-ex.json",
+  "id": "b1-33-04.ex05",
+  "set": {
+   "sentence": "Az orvos arra utasította a beteget, hogy _____ sokat.",
+   "english": "The doctor instructed the patient to rest a lot.",
+   "category": "grammar",
+   "teaches": [
+    "reported-commands"
+   ],
+   "hint": "rest (pihen)",
+   "answer": "pihenjen"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem (pihen_____)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-04-ex.json",
+  "id": "b1-33-04.ex07",
+  "set": {
+   "sentence": "A rendőrség _____ küldött a szabálysértőnek.",
+   "english": "The police sent a notice to the offender.",
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "notice, the object",
+   "answer": "felszólítást"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem (felszólítás_____)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-04-ex.json",
+  "id": "b1-33-04.ex03",
+  "set": {
+   "tiles": [
+    "A",
+    "tanár",
+    "felszólította",
+    "a",
+    "diákokat,",
+    "hogy",
+    "figyeljenek."
+   ],
+   "solution": [
+    "A",
+    "tanár",
+    "felszólította",
+    "a",
+    "diákokat,",
+    "hogy",
+    "figyeljenek."
+   ],
+   "english": "The teacher called on the students to pay attention.",
+   "category": "grammar",
+   "teaches": [
+    "reported-commands"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "english was a placeholder"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-04-ex.json",
+  "id": "b1-33-04.ex08",
+  "set": {
+   "tiles": [
+    "Arra",
+    "kértem",
+    "őt,",
+    "hogy",
+    "várjon",
+    "meg",
+    "engem."
+   ],
+   "solution": [
+    "Arra",
+    "kértem",
+    "őt,",
+    "hogy",
+    "várjon",
+    "meg",
+    "engem."
+   ],
+   "english": "I asked him to wait for me.",
+   "category": "grammar",
+   "teaches": [
+    "reported-commands"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "english was a placeholder"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-04-a-gr.json",
+  "old": "Direct commands (",
+  "new": "You know reported commands with *hogy* and *-jon/-jen* from B1 Unit 53, and *hogy* + *-jon/-jen* from B1 Unit 5. Direct commands (",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "taught in B1 Units 5 and 53; recap"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-04-a-gr.json",
+  "old": "„Azonnal fejezd be a munkát!” -> Azt parancsolta, hogy azonnal fejezzem be a munkát.",
+  "new": "Azt parancsolta, hogy azonnal fejezzem be a munkát.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "arrow notation read aloud in the speaking step"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-04-a-gr.json",
+  "old": "'Finish the work immediately!' -> He ordered me to finish the work immediately.",
+  "new": "He ordered me to finish the work immediately.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "matches the example"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-04-b-gr.json",
+  "old": "Polite requests and appeals are reported using",
+  "new": "You know reported requests from B1 Unit 53. Polite requests and appeals are reported using",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "recap"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-04.json",
+  "old": "I can report imperative commands using subjunctive clauses with hogy.",
+  "new": "I can report a command with hogy and -jon/-jen.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-04.json",
+  "old": "I can report polite requests using kéri, hogy... and governing structures.",
+  "new": "I can report a polite request with megkérte, hogy ….",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-04.json",
+  "old": "I can use 4 directive, petition, and claim vocabulary words.",
+  "new": "I can name an instruction, a notice, a petition and a demand.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-04.json",
+  "old": "I can adjust reporting tone from strict orders to polite invitations.",
+  "new": "I can say when a request is formal (kérelem) and when it is a demand (követelés).",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-05-ex.json",
+  "id": "b1-33-05.ex01",
+  "set": {
+   "question": "Mit jelent az, hogy 'úgy hírlik'?",
+   "options": [
+    "Azt, hogy mindenki látta.",
+    "Azt, hogy ezt mondják, de nem biztos.",
+    "Azt, hogy a szóvivő biztosan tudja."
+   ],
+   "correct": 1,
+   "category": "grammar",
+   "teaches": [
+    "evidentials"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "story question before the story is read; length give-away (87 vs 46); unmet words"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-05-ex.json",
+  "id": "b1-33-05.ex02",
+  "set": {
+   "sentence": "_____ csoda történt a faluban az esernyővel.",
+   "english": "Allegedly, a miracle happened in the village with the umbrella.",
+   "category": "grammar",
+   "teaches": [
+    "evidentials"
+   ],
+   "hint": "allegedly",
+   "answer": "Állítólag"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "glogovai unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-05-ex.json",
+  "id": "b1-33-05.ex03",
+  "set": {
+   "tiles": [
+    "Úgy",
+    "hírlik,",
+    "hogy",
+    "nagy",
+    "vagyon",
+    "rejtőzik",
+    "az",
+    "esernyőben."
+   ],
+   "solution": [
+    "Úgy",
+    "hírlik,",
+    "hogy",
+    "nagy",
+    "vagyon",
+    "rejtőzik",
+    "az",
+    "esernyőben."
+   ],
+   "english": "Rumor has it that a great fortune is hidden in the umbrella.",
+   "category": "grammar",
+   "teaches": [
+    "evidentials"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "english was a placeholder"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-05-ex.json",
+  "id": "b1-33-05.ex04",
+  "set": {
+   "question": "Mi a cáfolat?",
+   "options": [
+    "Amikor valaki azt mondja, hogy a hír nem igaz.",
+    "Amikor valaki egy új hírt kér.",
+    "Amikor valaki azt mondja, hogy a hír igaz."
+   ],
+   "correct": 0,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-reported-speech-vocab"
+   ],
+   "distractor_skills": null
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "story question before the story (Gregorics Pál's umbrella); vocab-unused cáfolat"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-05-ex.json",
+  "id": "b1-33-05.ex05",
+  "set": {
+   "sentence": "Senki sem hitte el a _____.",
+   "english": "Nobody believed the rumor.",
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "hint": "rumor, the object",
+   "answer": "híresztelést"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem (híresztelés_____)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-05-ex.json",
+  "id": "b1-33-05.ex06",
+  "set": {
+   "question": "Mi a pletyka?",
+   "options": [
+    "Amit a szóvivő hivatalosan bejelent a hírekben.",
+    "Amit az emberek egymásnak mesélnek, de nem biztos.",
+    "Amit a tanár mond az órán a diákoknak."
+   ],
+   "correct": 1,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-reported-speech-vocab"
+   ],
+   "distractor_skills": null
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "story question ('beleszeretett' is not in the story) before the story is read; unmet words"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-05-ex.json",
+  "id": "b1-33-05.ex07",
+  "set": {
+   "sentence": "_____ hírlik, hogy nagy vagyon van a házban.",
+   "english": "Rumor has it that there is a great fortune in the house.",
+   "category": "grammar",
+   "teaches": [
+    "evidentials"
+   ],
+   "hint": "(a phrase for rumor has it)",
+   "answer": "Úgy"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem (hivatkoz_____ + va); tanúk, rekonstruálták unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-05-ex.json",
+  "id": "b1-33-05.ex08",
+  "set": {
+   "tiles": [
+    "A",
+    "sajtóértesülés",
+    "szerint",
+    "a",
+    "tárgyalások",
+    "hamarosan",
+    "befejeződnek."
+   ],
+   "solution": [
+    "A",
+    "sajtóértesülés",
+    "szerint",
+    "a",
+    "tárgyalások",
+    "hamarosan",
+    "befejeződnek."
+   ],
+   "english": "According to the press report the negotiations will end soon.",
+   "category": "grammar",
+   "teaches": [
+    "evidentials"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "vocab-unused sajtóértesülés; english placeholder"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-33-05-a-gr.json",
+  "old": "Hungarian uses evidential adverbs and impersonal expressions to frame unverified hearsay:",
+  "new": "You know *állítólag* and *szerint* from B1 Unit 25. Hungarian uses evidential adverbs and impersonal expressions to frame unverified hearsay:",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "evidentials taught in B1 Unit 25; recap"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-05.json",
+  "old": "I can express unverified rumors and hearsay using állítólag and úgy hírlik.",
+  "new": "I can mark a rumour with állítólag and úgy hírlik, hogy ….",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-05.json",
+  "old": "I can cite and attribute sources using arra hivatkozik and szavai szerint.",
+  "new": "I can give a source with a hírek szerint and a sajtóértesülés szerint.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-05.json",
+  "old": "I can use 4 vocabulary terms for rumors, gossip, and media coverage.",
+  "new": "I can name a rumour, gossip, a denial and a press report.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-33-05.json",
+  "old": "I can read and analyze Mikszáth Kálmán's classic 'Szent Péter esernyője'.",
+  "new": "I can say what a denial is.",
+  "kind": "goal",
+  "sure": true,
+  "why": "goal line rewritten (own, practised)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-consolidation-ex.json",
+  "id": "b1-33-consolidation.ex01",
+  "set": {
+   "question": "Anna azt mondja: „Itt vagyok.” Melyik mondat helyes?",
+   "options": [
+    "Anna azt mondja, hogy itt vagyok.",
+    "Anna azt mondja, hogy ott volt.",
+    "Anna azt mondja, hogy ott van."
+   ],
+   "correct": 2,
+   "category": "grammar",
+   "teaches": [
+    "reported-speech-statements"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "másnap unmet; item copied lesson shape"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-consolidation-ex.json",
+  "id": "b1-33-consolidation.ex02",
+  "set": {
+   "sentence": "Az orvos arra kérte a beteget, hogy _____ eleget.",
+   "english": "The doctor asked the patient to rest enough.",
+   "category": "grammar",
+   "teaches": [
+    "reported-commands"
+   ],
+   "hint": "rest (pihen)",
+   "answer": "pihenjen"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem (pihen_____)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-consolidation-ex.json",
+  "id": "b1-33-consolidation.ex03",
+  "set": {
+   "tiles": [
+    "Azt",
+    "kérdezte,",
+    "hogy",
+    "megérkezett-e",
+    "már",
+    "a",
+    "küldemény."
+   ],
+   "solution": [
+    "Azt",
+    "kérdezte,",
+    "hogy",
+    "megérkezett-e",
+    "már",
+    "a",
+    "küldemény."
+   ],
+   "english": "He asked whether the package had already arrived.",
+   "category": "grammar",
+   "teaches": [
+    "indirect-questions"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "english was a placeholder"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-consolidation-ex.json",
+  "id": "b1-33-consolidation.ex04",
+  "set": {
+   "question": "Mi a cáfolat?",
+   "options": [
+    "Amikor valaki egy új hírt kér.",
+    "Amikor valaki azt mondja, hogy a hír igaz.",
+    "Amikor valaki azt mondja, hogy a hír nem igaz."
+   ],
+   "correct": 2,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-reported-speech-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (65 vs 39); unmet words"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-consolidation-ex.json",
+  "id": "b1-33-consolidation.ex05",
+  "set": {
+   "sentence": "A tanár arra kérte a diákokat, hogy _____ részt a vitában.",
+   "english": "The teacher asked the students to take part in the debate.",
+   "category": "grammar",
+   "teaches": [
+    "reported-commands"
+   ],
+   "hint": "take (vesz)",
+   "answer": "vegyenek"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem (fórum_____ + on); polgármester unmet; was tagged on-en-on"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-consolidation-ex.json",
+  "id": "b1-33-consolidation.ex06",
+  "set": {
+   "question": "Mi védte meg Veronkát az esőben?",
+   "options": [
+    "Egy nagy kabát.",
+    "Egy piros esernyő.",
+    "Egy kis ház."
+   ],
+   "correct": 1,
+   "category": "reading",
+   "teaches": null
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet kopott, hatalmas, sekrestyéből, ácsolt, házikó"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-consolidation-ex.json",
+  "id": "b1-33-consolidation.ex07",
+  "set": {
+   "sentence": "A _____ szerint a tárgyalások hamarosan befejeződnek.",
+   "english": "According to the press report the negotiations will end soon.",
+   "category": "grammar",
+   "teaches": [
+    "evidentials"
+   ],
+   "hint": "press report",
+   "answers": [
+    "sajtóértesülés",
+    "hírek"
+   ],
+   "answer": null
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "blank glued to the stem; szemtanúk, korábbi unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-33-consolidation-ex.json",
+  "id": "b1-33-consolidation.ex08",
+  "set": {
+   "tiles": [
+    "A",
+    "szóvivő",
+    "hangsúlyozta,",
+    "hogy",
+    "a",
+    "hír",
+    "nem",
+    "igaz."
+   ],
+   "solution": [
+    "A",
+    "szóvivő",
+    "hangsúlyozta,",
+    "hogy",
+    "a",
+    "hír",
+    "nem",
+    "igaz."
+   ],
+   "english": "The spokesperson emphasized that the news is not true.",
+   "category": "grammar",
+   "teaches": [
+    "reported-speech-statements"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "valótlan unmet; english placeholder"
+ }
+]

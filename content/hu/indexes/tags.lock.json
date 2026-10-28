@@ -452,9 +452,9 @@
    "reason": "HU B1 read-through 2026-10-05"
   },
   "B1/connecting-ideas": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-28",
    "exercises": 48,
-   "reason": "HU B1 read-through 2026-10-06"
+   "reason": "HU B1 core batch 55-65 read and fixed (ROADMAP 153)"
   },
   "B1/culture-entertainment": {
    "locked": "2026-10-23",
@@ -462,9 +462,9 @@
    "reason": "HU B1 core batch 19-29 (ROADMAP 153)"
   },
   "B1/culture-language-society": {
-   "locked": "2026-10-07",
+   "locked": "2026-10-28",
    "exercises": 50,
-   "reason": "new exercises for thin skills (ROADMAP 144(4))"
+   "reason": "HU B1 core batch 55-65 read and fixed (ROADMAP 153)"
   },
   "B1/driving-out-ottomans": {
    "locked": "2026-10-06",
@@ -607,9 +607,9 @@
    "reason": "HU B1 core batch 19-29 (ROADMAP 153)"
   },
   "B1/migration-identity": {
-   "locked": "2026-10-23",
+   "locked": "2026-10-28",
    "exercises": 49,
-   "reason": "skill split egyreszt-masreszt / nem-csak-hanem (user, 2026-10-23)"
+   "reason": "HU B1 core batch 55-65 read and fixed (ROADMAP 153)"
   },
   "B1/modern-democratic-hungary": {
    "locked": "2026-10-06",
@@ -692,9 +692,9 @@
    "reason": "HU B1 core batch 7-17 (ROADMAP 153)"
   },
   "B1/reported-speech": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-28",
    "exercises": 48,
-   "reason": "HU B1 read-through 2026-10-06"
+   "reason": "HU B1 core batch 55-65 read and fixed (ROADMAP 153)"
   },
   "B1/revolution-1848": {
    "locked": "2026-10-06",
@@ -66864,7 +66864,9 @@
    "teaches": [
     "nem-csak-hanem"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "mert-because"
+   }
   },
   "b1-29-03.ex05": {
    "teaches": [
@@ -66880,7 +66882,7 @@
   },
   "b1-29-03.ex07": {
    "teaches": [
-    "present-tense-routine-language"
+    "ik-verbs-dolgozom-not-dolgozok"
    ],
    "distractor_skills": {}
   },
@@ -66898,7 +66900,7 @@
   },
   "b1-29-04.ex02": {
    "teaches": [
-    "present-tense-routine-language"
+    "ik-verbs-dolgozom-not-dolgozok"
    ],
    "distractor_skills": {}
   },
@@ -66909,8 +66911,13 @@
    "distractor_skills": {}
   },
   "b1-29-04.ex04": {
-   "teaches": [],
-   "distractor_skills": {}
+   "teaches": [
+    "verb-government-bol-bol"
+   ],
+   "distractor_skills": {
+    "1": "delative-rol-rel",
+    "2": "on-en-on"
+   }
   },
   "b1-29-04.ex05": {
    "teaches": [
@@ -66919,7 +66926,9 @@
    "distractor_skills": {}
   },
   "b1-29-04.ex06": {
-   "teaches": [],
+   "teaches": [
+    "b1-migration-identity-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-29-04.ex07": {
@@ -66958,7 +66967,7 @@
    ],
    "distractor_skills": {
     "1": "building-the-infinitive-the-suffix-ni",
-    "2": "present-participle"
+    "2": "how-the-accusative-t-works"
    }
   },
   "b1-29-05.ex05": {
@@ -66990,12 +66999,12 @@
     "causal-postpositions"
    ],
    "distractor_skills": {
-    "2": "concessive-postpositions"
+    "1": "concessive-postpositions"
    }
   },
   "b1-29-consolidation.ex02": {
    "teaches": [
-    "acc-poss"
+    "concessive-postpositions"
    ],
    "distractor_skills": {}
   },
@@ -67207,7 +67216,10 @@
    "teaches": [
     "b1-culture-language-society-vocab"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "temporal-postpositions",
+    "2": "ban-ben-in"
+   }
   },
   "b1-30-04.ex05": {
    "teaches": [
@@ -67223,7 +67235,7 @@
   },
   "b1-30-04.ex07": {
    "teaches": [
-    "tol-tol"
+    "val-vel"
    ],
    "distractor_skills": {}
   },
@@ -67252,7 +67264,9 @@
    "distractor_skills": {}
   },
   "b1-30-05.ex04": {
-   "teaches": [],
+   "teaches": [
+    "b1-culture-language-society-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-30-05.ex05": {
@@ -67262,7 +67276,9 @@
    "distractor_skills": {}
   },
   "b1-30-05.ex06": {
-   "teaches": [],
+   "teaches": [
+    "b1-culture-language-society-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-30-05.ex07": {
@@ -67301,7 +67317,7 @@
   },
   "b1-30-consolidation.ex05": {
    "teaches": [
-    "3rd-person-possessive"
+    "acc-poss"
    ],
    "distractor_skills": {}
   },
@@ -67313,7 +67329,7 @@
   },
   "b1-30-consolidation.ex07": {
    "teaches": [
-    "3rd-person-possessive"
+    "acc-poss"
    ],
    "distractor_skills": {}
   },
@@ -67624,7 +67640,7 @@
   },
   "b1-32-01.ex02": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "additive-connectors"
    ],
    "distractor_skills": {}
   },
@@ -67642,7 +67658,7 @@
   },
   "b1-32-01.ex05": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "b1-connecting-ideas-vocab"
    ],
    "distractor_skills": {}
   },
@@ -67672,7 +67688,7 @@
   },
   "b1-32-02.ex02": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "additive-connectors"
    ],
    "distractor_skills": {}
   },
@@ -67690,7 +67706,7 @@
   },
   "b1-32-02.ex05": {
    "teaches": [
-    "acc-poss"
+    "b1-connecting-ideas-vocab"
    ],
    "distractor_skills": {}
   },
@@ -67720,7 +67736,7 @@
   },
   "b1-32-03.ex02": {
    "teaches": [
-    "directional-preverbs"
+    "adversative-contrast"
    ],
    "distractor_skills": {}
   },
@@ -67738,7 +67754,7 @@
   },
   "b1-32-03.ex05": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "b1-connecting-ideas-vocab"
    ],
    "distractor_skills": {}
   },
@@ -67768,7 +67784,7 @@
   },
   "b1-32-04.ex02": {
    "teaches": [
-    "present-tense-routine-language"
+    "mert-because"
    ],
    "distractor_skills": {}
   },
@@ -67786,7 +67802,7 @@
   },
   "b1-32-04.ex05": {
    "teaches": [
-    "plural-nouns-k"
+    "how-the-accusative-t-works"
    ],
    "distractor_skills": {}
   },
@@ -67798,7 +67814,7 @@
   },
   "b1-32-04.ex07": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "past-tense-indefinite"
    ],
    "distractor_skills": {}
   },
@@ -67816,7 +67832,7 @@
   },
   "b1-32-05.ex02": {
    "teaches": [
-    "ban-ben-in"
+    "additive-connectors"
    ],
    "distractor_skills": {}
   },
@@ -67830,16 +67846,20 @@
    "teaches": [
     "additive-connectors"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "0": "how-the-accusative-t-works"
+   }
   },
   "b1-32-05.ex05": {
    "teaches": [
-    "verb-government-val-vel"
+    "3rd-person-possessive"
    ],
    "distractor_skills": {}
   },
   "b1-32-05.ex06": {
-   "teaches": [],
+   "teaches": [
+    "b1-connecting-ideas-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-32-05.ex07": {
@@ -67862,7 +67882,7 @@
   },
   "b1-32-consolidation.ex02": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "additive-connectors"
    ],
    "distractor_skills": {}
   },
@@ -67874,11 +67894,9 @@
   },
   "b1-32-consolidation.ex04": {
    "teaches": [
-    "egyreszt-masreszt"
+    "adversative-contrast"
    ],
-   "distractor_skills": {
-    "1": "mert-because"
-   }
+   "distractor_skills": {}
   },
   "b1-32-consolidation.ex05": {
    "teaches": [
@@ -67894,7 +67912,7 @@
   },
   "b1-32-consolidation.ex07": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "b1-connecting-ideas-vocab"
    ],
    "distractor_skills": {}
   },
@@ -67940,7 +67958,7 @@
   },
   "b1-33-01.ex07": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "b1-reported-speech-vocab"
    ],
    "distractor_skills": {}
   },
@@ -67952,7 +67970,7 @@
   },
   "b1-33-02.ex01": {
    "teaches": [
-    "b1-reported-speech-vocab"
+    "reported-speech-statements"
    ],
    "distractor_skills": {}
   },
@@ -67964,7 +67982,7 @@
   },
   "b1-33-02.ex03": {
    "teaches": [
-    "reported-speech-statements"
+    "b1-reported-speech-vocab"
    ],
    "distractor_skills": {}
   },
@@ -67982,7 +68000,7 @@
   },
   "b1-33-02.ex06": {
    "teaches": [
-    "reported-speech-statements"
+    "definite-past"
    ],
    "distractor_skills": {}
   },
@@ -68050,7 +68068,9 @@
    "teaches": [
     "reported-commands"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "2": "nek-conditional"
+   }
   },
   "b1-33-04.ex02": {
    "teaches": [
@@ -68095,7 +68115,9 @@
    "distractor_skills": {}
   },
   "b1-33-05.ex01": {
-   "teaches": [],
+   "teaches": [
+    "evidentials"
+   ],
    "distractor_skills": {}
   },
   "b1-33-05.ex02": {
@@ -68111,7 +68133,9 @@
    "distractor_skills": {}
   },
   "b1-33-05.ex04": {
-   "teaches": [],
+   "teaches": [
+    "b1-reported-speech-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-33-05.ex05": {
@@ -68121,7 +68145,9 @@
    "distractor_skills": {}
   },
   "b1-33-05.ex06": {
-   "teaches": [],
+   "teaches": [
+    "b1-reported-speech-vocab"
+   ],
    "distractor_skills": {}
   },
   "b1-33-05.ex07": {
@@ -68162,7 +68188,7 @@
   },
   "b1-33-consolidation.ex05": {
    "teaches": [
-    "on-en-on"
+    "reported-commands"
    ],
    "distractor_skills": {}
   },
@@ -68172,7 +68198,7 @@
   },
   "b1-33-consolidation.ex07": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "evidentials"
    ],
    "distractor_skills": {}
   },
