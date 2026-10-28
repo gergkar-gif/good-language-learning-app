@@ -253,7 +253,13 @@ is stated in its segment (add a hedged sentence when it is true but
 missing); remove mind-reading (*felismerte, hogy*, *tudta, hogy*),
 "all of Europe watched" and glorifying lines (*dicső*, "saved the
 nation"); consolidation titles count within the track ("Unit 4
-Consolidation" for the track's fourth unit) and stay.
+Consolidation" for the track's fourth unit) and stay. *révén* is first taught in B1 Unit 28 and *amint* in
+B1 Unit 24, although the skills `postpositions-altal-reven` (A2) and
+`miutan-mielott` (B1 Unit 1) list them in their titles: never recap them
+"from A2 Unit 18" or "from B1 Unit 1" (batch cit-16-22). Question stems
+are plain questions (*Melyik szó illik a mondatba?*) or carry an English
+meaning line, never Hungarian grammar terms (*megengedő kötőszó*,
+*névutó*, *ige*, *melléknévi igenév*): they are unmet words.
 
 ### 6c. Spanish (es-es, es-latam; written 2026-10-16 before the Spanish pass, from the files and ROADMAP 148/150; add what the pass finds)
 
