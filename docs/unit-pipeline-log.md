@@ -123,6 +123,29 @@ The user took the four recommended options:
   a Unit 9 recap blank) were replaced with *hiába* items, vocabulary-tagged.
 - 12 frozen units were unfrozen for these edits and refrozen with their
   accepted findings; all 36 core units check clean, walk 216/216.
+### 2026-10-28: HU B1 citizenship Units 16, 18, 20, 22
+
+- **Cost:** ~190k and ~220k a unit, up from ~160k in the first
+  batch. Reader B's two units drew ~170 fixes each: every segment
+  carried national-romantic lines and claims the items asked for but no
+  segment stated, and every screen taught known A1–B1 material as new.
+- **Recaps from skill titles, again:** *révén* "from A2 Unit 18" and
+  *amint* "from B1 Unit 1" name the units of skills whose titles list
+  the word (`postpositions-altal-reven`, `miutan-mielott`) but whose
+  screens never show it. `check_unit_refs.py` caught both; the focus
+  file now names them, with *amely* (Unit 10).
+- **Hungarian grammar terms in question stems** (*megengedő kötőszó*,
+  *névutó*, *ige*): unmet words and the wrong register for a learner.
+  Reader A removed them, B only some; the focus file now says stems use
+  plain questions or an English meaning line.
+- **Scripted:** `add_vocab_words.py` (the list → fixes step for the
+  history words, ~100 a batch), which refuses a `pos` the schema rejects
+  and a multi-word lemma not tagged `expression`; my hand-made list had
+  put `determiner` on *mindkét*.
+- **Thin skill after a correct retag:** `historical-routines` (Unit 20,
+  the only citizenship-taught skill with few items) fell to 5; caught by
+  the `--warnings` diff, as the rulebook says.
+
 ### 2026-10-28: HU B1 citizenship Units 8, 10, 12, 14
 
 - **Cost:** not measurable for the first run (the 5-hour limit hit
@@ -183,6 +206,9 @@ The user took the four recommended options:
    batch (rulebook § 6). Delete what you don't take from the review file.
    From B1 it also prints the unmet words each fix brings (`unmet-words.js`
    before and after; 2026-10-28): list them or, in core units, rewrite them.
+   Words to list go through `python scripts/add_vocab_words.py <course>
+   <level> <words.txt> <out.json>` (`stem | lemma | translation | pos`
+   per line), then `apply_replacements.py` and `build_word_lesson_index.py`.
 3. **Merge and apply:** `python scripts/merge_fixes.py <batch>/merged.json
    <each .auto.json and filtered .review.json>` (refuses when two readers
    fixed one item differently), then `python scripts/apply_replacements.py
@@ -490,6 +516,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-28 | HU B1 core 55, 57, 59, 61, 63, 65 | paired read, 3 core units/reader; both stopped by the 5-hour Sonnet limit after two units, resumed after the reset | | A 384k, B 396k as reported on resume (~128k and ~132k a unit if cumulative) | 443 proposed (68 / 66 / 64 / 81 / 80 / 84), 15 rejected by the checker (9 tells, 3 length, 1 article blank, 1 copy, 1 *take* gloss; rewritten by Claude); Claude changed 6 (*köteles*/*kénytelen* as two answers, a story claim about Gina, 4 wrong recap units) and fixed 8 more recap units with `check_unit_refs.py` | ~74 fixes/unit; unmet-words after applying: 17 hits, 7 added to vocabulary lists, the rest inflected forms the lemma lookup misses; 18 checklists, 36 challenges, 62 glosses; walk 36/36 |
 | 10-28 | HU B1 core 67, 70, 72 (last core batch) | paired read, 2 units + 1 | | A 357k (~178k/unit), B 271k (one unit) | 242 proposed (88 / 76 / 78), 0 rejected; Claude corrected 3 recap units | **core track done: 36/36 frozen; every core unit check-content clean, walk 216/216**; the reader audit's `--top 0` had hidden every "not in the dictionary" word since the template began (fixed): 62 story words across the 32 core classics, 44 glossed as surface forms, the rest names |
 | 10-28 | HU B1 citizenship 8, 10, 12, 14 (first citizenship batch) | paired read, 2 units/reader, facts block; both stopped by the 5-hour Sonnet limit before writing a file, resumed after the reset | | A 307k, B 344k (resumed notices only) | 337 proposed (101 / 87 / 72 / 77), 7 rejected by the checker (rewritten by Claude); Claude changed 3, dropped 2 (track-numbered consolidation titles), added 10 item fixes, 77 vocabulary entries, 4 challenge edits | ~150–170k reader tokens/unit if the notices are cumulative; 15 placeholder question sets rewritten (none left in HU B1); 85 unmet words after applying (77 listed, 4 forms before their unit rewritten); `check_unit_refs.py` unit filter fixed (it skipped every citizenship screen) and found 2 wrong *amely* recaps; facts web-checked, none disputed; walk 24/24 |
+| 10-28 | HU B1 citizenship 16, 18, 20, 22 | paired read, 2 units/reader, no limit hit | | A 380k, 25 min; B 439k, 31 min | 534 proposed (98 / 102 / 160 / 174), 4 rejected by the checker (2 false rejections restored, 2 rewritten); Claude changed 10, added 9 item/screen fixes, 96 vocabulary entries, 2 challenge edits | **~190k (A) and ~220k (B) a unit**; B's units had ~170 fixes each (every segment rewritten for overclaims, every screen a recap); `check_fixes.py` listed the readers' unmet words while sorting (27 / 19 / 14 / 22); 2 wrong recaps (*révén*, *amint*); `historical-routines` thinned to 5 by a correct retag and topped up; walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 

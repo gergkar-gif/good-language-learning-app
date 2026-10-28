@@ -60,8 +60,8 @@
       "question": "Mi volt a Bibliotheca Corviniana?",
       "options": [
         "Mátyás király reneszánsz könyvtára Budán.",
-        "A fekete sereg fegyverraktára.",
-        "Egy visegrádi lovagi torna."
+        "A fekete sereg nagy fegyverraktára.",
+        "Egy visegrádi palota a Duna mellett."
       ],
       "correct": 0
     },
@@ -72,7 +72,7 @@
       "question": "Hogyan nevezték Mátyás könyvtárának értékes, kézzel másolt köteteit?",
       "options": [
         "Corvináknak.",
-        "Naptáraknak.",
+        "Térképeknek.",
         "Krónikáknak."
       ],
       "correct": 0
@@ -85,12 +85,15 @@
       "options": [
         "virágzott",
         "virágzik volt",
-        "virágozni fogott"
+        "virágzani fog"
       ],
       "correct": 0,
       "teaches": [
         "past-tense-indefinite"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "fog-infinitive"
+      }
     },
     {
       "id": "b1-matyas-03.ex05",
@@ -102,7 +105,7 @@
         "alagút"
       ],
       "correct": 0,
-      "question": "Beatrix királyné révén itáliai ____ művészek érkeztek Budára.",
+      "question": "Mátyás udvarában sok itáliai ____ tudós és művész dolgozott.",
       "teaches": [
         "b1-matthias-corvinus-vocab"
       ]
@@ -111,11 +114,11 @@
       "id": "b1-matyas-03.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Miért büszke az utókor a magyar reneszánsz kultúrára?",
+      "question": "Mit szoktak mondani Mátyás korának reneszánsz művészetéről?",
       "options": [
-        "Mert Magyarország volt az első ország Itálián kívül, ahol felvirágzott a reneszánsz.",
-        "Mert itt találták fel a könyvnyomtatást.",
-        "Mert minden magyar ember megtanult olaszul."
+        "Hogy Olaszországon kívül itt virágzott először a reneszánsz.",
+        "Hogy Magyarországon találták fel a könyvnyomtatást.",
+        "Hogy csak az olaszok ismerték a reneszánszot."
       ],
       "correct": 0,
       "stage": "civics"
@@ -124,10 +127,10 @@
       "id": "b1-matyas-03.ex07",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Melyik két királyi rezidencia volt a magyar reneszánsz építészet csúcsa?",
+      "question": "Melyik két város lett reneszánsz központ Mátyás és Beatrix idején?",
       "options": [
-        "A budai várpalota és a visegrádi királyi palota.",
-        "Esztergom és Székesfehérvár.",
+        "Buda és Visegrád.",
+        "Győr és Sopron.",
         "Debrecen és Szeged."
       ],
       "correct": 0,
@@ -137,9 +140,9 @@
       "id": "b1-matyas-03.ex08",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Honnan származott Mátyás felesége, Beatrix királyné?",
+      "question": "Melyik városból származott Mátyás felesége, Beatrix királyné?",
       "options": [
-        "Nápolyból (Itáliából).",
+        "Nápolyból.",
         "Párizsból.",
         "Madridból."
       ],

@@ -1,0 +1,1046 @@
+[
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-01-onallo.json",
+  "old": "\"text\": \"Buda 1541-es eleste után Fráter György és Izabella királyné a keleti országrészbe vonult vissza a csecsemő János Zsigmonddal.\"",
+  "new": "\"text\": \"Miután Buda 1541-ben török kézre került, Fráter György és Izabella királyné a keleti országrészbe vonult vissza a csecsemő János Zsigmonddal.\"",
+  "id": "story.b1.erdelyaranykora.01",
+  "kind": "hungarian",
+  "why": "'1541-es eleste' (a fixed phrase) is replaced by a clause so that the question can quote it without a verbal noun; same facts"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-01-onallo.json",
+  "old": "\"text\": \"A Kárpátok védelmében kialakult az Erdélyi Fejedelemség, amely a szultán hűbéreseként, de belső ügyeiben önállóan létezett.\"",
+  "new": "\"text\": \"A keleti országrészből fokozatosan alakult ki az Erdélyi Fejedelemség (hivatalosan 1570-ben), amely a szultán hűbéreseként, de belső ügyeiben önállóan létezett.\"",
+  "id": "story.b1.erdelyaranykora.01",
+  "kind": "hungarian",
+  "why": "'A Kárpátok védelmében' is poetic, the date is missing, and the Principality was founded in 1570 (the story of Unit 20 says so)"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-01-onallo.json",
+  "old": "\"text\": \"A fejedelmi székhely a gyönyörű fekvésű Gyulafehérvár lett, ahol a magyar, székely és szász rendek közösen tanácskoztak.\"",
+  "new": "\"text\": \"A fejedelmi székhely Gyulafehérvár lett. Az erdélyi országgyűlésen a magyar nemesek, a székelyek és a szászok képviselői tanácskoztak.\"",
+  "id": "story.b1.erdelyaranykora.01",
+  "kind": "hungarian",
+  "why": "'gyönyörű fekvésű' is subjective, and the diet did not meet only in Gyulafehérvár ('ahol ... közösen tanácskoztak'); the three nations are what ex06 asks"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-01-onallo.json",
+  "old": "\"text\": \"Az új állam feladata az volt, hogy a Habsburg és az Oszmán Birodalom között lavírozva megőrizze a magyar államiság folytonosságát.\"",
+  "new": "\"text\": \"Az Erdélyi Fejedelemség első fejedelme János Zsigmond volt, utána Báthory István lett a fejedelem.\"",
+  "id": "story.b1.erdelyaranykora.01",
+  "kind": "hungarian",
+  "why": "'Az új állam feladata az volt, hogy ... megőrizze a magyar államiság folytonosságát' is a teleological judgement (and has a -va participle, lavírozva); ex08 asks for the first prince, which the text never named"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-01-onallo.json",
+  "old": "\"text\": \"Az erdélyi fejedelmek határozott külpolitikájukkal békés éveket és gazdasági stabilitást teremtettek a határokon belül.\"",
+  "new": "\"text\": \"A fejedelmek a Habsburg Monarchia és az Oszmán Birodalom között egyensúlyoztak.\"",
+  "id": "story.b1.erdelyaranykora.01",
+  "kind": "hungarian",
+  "why": "'határozott külpolitikájukkal békés éveket és gazdasági stabilitást teremtettek' is an unsupported generalisation (Transylvania had wars and crises under Báthory, Bocskai and others)"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-erdelyaranykora-01-voc.json",
+  "old": "\"lemma\": \"békés építkezés\",\n      \"translation\": \"peaceful state-building\"",
+  "new": "\"lemma\": \"székely\",\n      \"translation\": \"Székely (Hungarian-speaking people of eastern Transylvania)\"",
+  "id": "vocab.b1.erdelyaranykora.01",
+  "kind": "hungarian",
+  "why": "see ex01b"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-01-ex.json",
+  "id": "b1-erdelyaranykora-01.ex02",
+  "set": {
+   "question": "Melyik város volt az Erdélyi Fejedelemség fejedelmi székhelye?",
+   "options": [
+    "Gyulafehérvár",
+    "Székesfehérvár",
+    "Marosvásárhely"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (13 vs 7)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-01-ex.json",
+  "id": "b1-erdelyaranykora-01.ex03",
+  "set": {
+   "question": "Milyen volt az Erdélyi Fejedelemség kapcsolata a szultánnal?",
+   "options": [
+    "Évente adót fizetett, de belső ügyeiben önálló volt.",
+    "Török tartomány volt, amelyet a budai pasa irányított.",
+    "Évente adót kapott a szultántól, és a törökök védték."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (83 vs 56) and tell 'Semmilyen'; 'pashákkal', 'megszállás' unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-01-ex.json",
+  "id": "b1-erdelyaranykora-01.ex04",
+  "set": {
+   "question": "Melyik szó illik a mondatba: „Erdély önálló ______ működött.”?",
+   "options": [
+    "államként",
+    "államtól",
+    "államra"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "tol-tol",
+    "2": "ra-re"
+   }
+  },
+  "kind": "hungarian",
+  "why": "glued blank: the blank was attached to the stem (állam______ + ként); now whole words"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-01-ex.json",
+  "id": "b1-erdelyaranykora-01.ex05",
+  "set": {
+   "sentence": "Gyulafehérvár a fejedelmek ____ az erdélyi politika központjává vált.",
+   "hint": "as the seat",
+   "answer": "székhelyeként",
+   "english": "As the seat of the princes, Gyulafehérvár became the centre of Transylvanian politics."
+  },
+  "kind": "hungarian",
+  "why": "glued blank (székhelye____ with the answer 'ként'): blank the whole word; 'the centre of Hungarian culture' is not claimed by the text"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-01-ex.json",
+  "id": "b1-erdelyaranykora-01.ex06",
+  "set": {
+   "question": "Kiknek a képviselői tanácskoztak az erdélyi országgyűlésen?",
+   "options": [
+    "A magyar nemesek, a székelyek és a szászok.",
+    "A papok, a katonák és a polgárok.",
+    "A fejedelem, a király és a szultán."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (52 vs 36); '(három rendjét)' is wrong: the three were nations, not estates; 'a bécsi udvar és a török janicsárok' absurd"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-01-ex.json",
+  "id": "b1-erdelyaranykora-01.ex07",
+  "set": {
+   "question": "Hova vonult vissza Izabella királyné, miután Buda török kézre került?",
+   "options": [
+    "A keleti országrészbe.",
+    "A nyugati országrészbe.",
+    "A déli országrészbe."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (84 vs 45); the old question asked for a 'historical significance' the text never states"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-01-ex.json",
+  "id": "b1-erdelyaranykora-01.ex08",
+  "set": {
+   "question": "Ki volt az Erdélyi Fejedelemség első fejedelme?",
+   "options": [
+    "János Zsigmond.",
+    "Báthory István.",
+    "Bethlen Gábor."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'Mátyás király' and 'Szent István' are absurd options"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-erdelyaranykora-01-voc.json",
+  "old": "    }\n  ]\n}",
+  "new": "    },\n    {\n      \"lemma\": \"szász\",\n      \"translation\": \"Saxon (German-speaking settler of Transylvania)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"csecsemő\",\n      \"translation\": \"infant\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"visszavonul\",\n      \"translation\": \"to withdraw, retreat\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"tanácskozik\",\n      \"translation\": \"to deliberate, hold a council\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"képviselő\",\n      \"translation\": \"representative\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "id": "vocab.b1.erdelyaranykora.01",
+  "kind": "hungarian",
+  "why": "unmet word (unmet-words.js): listed in the first lesson that uses it"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-01-gr.json",
+  "old": "\"id\": \"grammar.b1.erdelyaranykora.01.essive-formal-kent\",\n  \"title\": \"The Essive-Formal Suffix: -ként (Acting as, In the Role of)\"",
+  "new": "\"id\": \"grammar.b1.erdelyaranykora.01.essive-formal-kent\",\n  \"title\": \"Recap: -ként for Rulers, Towns and Roles\"",
+  "id": "grammar.b1.erdelyaranykora.01.essive-formal-kent",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-01-gr.json",
+  "old": "\"content\": \"The essive-formal suffix *-ként* expresses the capacity or role in which someone or something acts ('as a...'): *fejedelemként* (as a prince), *székhelyként* (as a capital/seat), *önálló államként* (as an independent state), *védelmezőként* (as a protector).\"",
+  "new": "\"content\": \"You know *-ként* ('as') from A2 Unit 36. History texts use it to say in what role a ruler, a town or a state acted: *fejedelemként* ('as a prince'), *székhelyként* ('as a seat'), *államként* ('as a state'). The table lists this lesson's new words.\"",
+  "id": "grammar.b1.erdelyaranykora.01.essive-formal-kent",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-01-gr.json",
+  "old": "    {\n      \"type\": \"examples\",",
+  "new": "    {\n      \"type\": \"table\",\n      \"title\": \"This lesson's words\",\n      \"rows\": [\n        [\"fejedelemség\", \"principality\"],\n        [\"hűbérúr\", \"suzerain, feudal overlord\"],\n        [\"belső önállóság\", \"internal autonomy\"],\n        [\"fejedelmi székhely\", \"the princely seat\"],\n        [\"rendi országgyűlés\", \"the diet of the estates\"]\n      ]\n    },\n    {\n      \"type\": \"examples\",",
+  "id": "grammar.b1.erdelyaranykora.01.essive-formal-kent",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-01-gr.json",
+  "old": "\"spanish\": \"Erdély önálló fejedelemségként működött több mint egy évszázadon át.\"",
+  "new": "\"spanish\": \"Erdély fejedelemségként működött több mint egy évszázadon át.\"",
+  "id": "grammar.b1.erdelyaranykora.01.essive-formal-kent",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-01-gr.json",
+  "old": "\"spanish\": \"Gyulafehérvár a fejedelmek székhelyeként a magyar reneszánsz és reformáció központja lett.\"",
+  "new": "\"spanish\": \"Gyulafehérvár a fejedelmek székhelyeként az erdélyi politika központja lett.\"",
+  "id": "grammar.b1.erdelyaranykora.01.essive-formal-kent",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-01-gr.json",
+  "old": "\"spanish\": \"A fejedelem a nemzet védelmezőjeként lépett fel a Habsburg központosítással szemben.\"",
+  "new": "\"spanish\": \"János Zsigmond az Erdélyi Fejedelemség első fejedelmeként uralkodott.\"",
+  "id": "grammar.b1.erdelyaranykora.01.essive-formal-kent",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-02-vallasbeke.json",
+  "old": "\"text\": \"A 16. században Európát véres vallásháborúk szaggatták szét a reformáció és az ellenreformáció összecsapásai miatt.\"",
+  "new": "\"text\": \"A 16. században Európa több országában vallásháborúk dúltak a katolikusok és a protestánsok között.\"",
+  "id": "story.b1.erdelyaranykora.02",
+  "kind": "hungarian",
+  "why": "'véres vallásháborúk szaggatták szét' overstated; 'összecsapásai miatt' dropped"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-02-vallasbeke.json",
+  "old": "\"text\": \"Ezzel éles ellentétben Erdélyben 1568 januárjában, a tordai katolikus templomban rendkívüli országgyűlés ült össze.\"",
+  "new": "\"text\": \"Erdélyben ezzel szemben 1568 januárjában Tordán országgyűlés ült össze.\"",
+  "id": "story.b1.erdelyaranykora.02",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'a tordai katolikus templomban rendkívüli országgyűlés' - the building and the 'extraordinary' status are not certain (check)"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-02-vallasbeke.json",
+  "old": "\"text\": \"János Zsigmond fejedelem és Dávid Ferenc prédikátor javaslatára a rendek kinyilvánították: 'a hit Isten ajándéka'.\"",
+  "new": "\"text\": \"János Zsigmond támogatásával, Dávid Ferenc udvari prédikátor, az erdélyi unitárius egyház alapítója hatására az országgyűlés kimondta: a hit Isten ajándéka, és senkit sem szabad a hite miatt fogságba vetni.\"",
+  "id": "story.b1.erdelyaranykora.02",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the king's initiative is described as 'javaslatára' (proposal), which is stronger than the sources; ex05 and ex07 ask for the 'fogságba' clause and the Unitarian church, which the text never gave (check the wording of the decree)"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-02-vallasbeke.json",
+  "old": "\"text\": \"A tordai ediktum a világon legelőször garantálta négy keresztény felekezet (katolikus, evangélikus, református, unitárius) szabad vallásgyakorlatát.\"",
+  "new": "\"text\": \"A katolikus, az evangélikus, a református és az unitárius vallás később egyaránt bevett vallás lett. Sok történész ezt a vallási türelem egyik első európai törvényének tartja.\"",
+  "id": "story.b1.erdelyaranykora.02",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'a világon legelőször garantálta négy felekezet' is a disputed superlative, and the four 'received religions' date from a few years after 1568 (Unitarians 1571) - check"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-02-vallasbeke.json",
+  "old": "\"text\": \"Ez a páratlan bölcsesség és türelem évszázadokra megmentette Erdélyt a belső felekezeti háborúk pusztításától.\"",
+  "new": "\"text\": \"A türelem nem volt korlátlan: Dávid Ferencet 1579-ben fogságba vetették, és a dévai várban halt meg. A 17. században Erdélyben mégsem tört ki olyan nagy felekezeti háború, mint Nyugat-Európában.\"",
+  "id": "story.b1.erdelyaranykora.02",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'páratlan bölcsesség és türelem évszázadokra megmentette Erdélyt a belső felekezeti háborúktól' is a glorifying claim; Transylvania also had religious conflict (Dávid Ferenc's imprisonment) - check"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-02-ex.json",
+  "id": "b1-erdelyaranykora-02.ex03",
+  "set": {
+   "question": "Hány vallás lett később bevett vallás Erdélyben?",
+   "options": [
+    "Négy.",
+    "Kettő.",
+    "Hat."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "the 1568 decree itself did not name four equal religions (the Unitarians followed in 1571); 'Csak egyet' has a tell"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-02-ex.json",
+  "id": "b1-erdelyaranykora-02.ex04",
+  "set": {
+   "question": "Melyik szó illik a mondatba: „Az 1568-as tordai országgyűlés ______ a vallásszabadságot.”?",
+   "options": [
+    "kimondta",
+    "megtiltotta",
+    "elfelejtette"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "*törvénybe utalta* and *törvénybe vonta* are not Hungarian collocations (not real strings with one fault)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-02-ex.json",
+  "id": "b1-erdelyaranykora-02.ex06",
+  "set": {
+   "question": "Mit mondtak ki a rendek 1568-ban a hitről?",
+   "options": [
+    "A hit Isten ajándéka.",
+    "A hit az uralkodó parancsa.",
+    "A hit a nemesek kiváltsága."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'világtörténelmi jelentőségű', 'Európában elsőként' are disputed claims; unmet words (lelkészválasztás, államvallás)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-02-ex.json",
+  "id": "b1-erdelyaranykora-02.ex07",
+  "set": {
+   "question": "Melyik egyház alakult ki Erdélyben Dávid Ferenc hatására?",
+   "options": [
+    "Az unitárius egyház.",
+    "Az anglikán egyház.",
+    "A baptista egyház."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'született és terjedt el ... vezetésével' not in the text; the Orthodox church (option) did exist in Transylvania"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-02-ex.json",
+  "id": "b1-erdelyaranykora-02.ex08",
+  "set": {
+   "question": "Mi történt Dávid Ferenccel 1579-ben?",
+   "options": [
+    "Fogságba vetették, és a dévai várban halt meg.",
+    "Magyar királlyá választották.",
+    "Elhagyta Erdélyt, és Lengyelországba költözött."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'megakadályozta a vallási polgárháborúkat, így ... szellemi virágzásban élhetett' is a glorifying claim; the other options were absurd"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-erdelyaranykora-02-voc.json",
+  "old": "    }\n  ]\n}",
+  "new": "    },\n    {\n      \"lemma\": \"hit\",\n      \"translation\": \"faith, belief\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fogság\",\n      \"translation\": \"captivity, prison\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"prédikátor\",\n      \"translation\": \"preacher\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"evangélikus\",\n      \"translation\": \"Lutheran (the usual Hungarian word)\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"anglikán\",\n      \"translation\": \"Anglican\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"baptista\",\n      \"translation\": \"Baptist\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"vallásháború\",\n      \"translation\": \"war of religion\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"megtilt\",\n      \"translation\": \"to forbid\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"udvari prédikátor\",\n      \"translation\": \"court preacher\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "id": "vocab.b1.erdelyaranykora.02",
+  "kind": "hungarian",
+  "why": "unmet word (unmet-words.js): listed in the first lesson that uses it"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-02-gr.json",
+  "old": "\"id\": \"grammar.b1.erdelyaranykora.02.statutory-decrees\",\n  \"title\": \"Reporting Historic Laws & Religious Decrees: törvénybe iktat, kimondja, hogy...\"",
+  "new": "\"id\": \"grammar.b1.erdelyaranykora.02.statutory-decrees\",\n  \"title\": \"Recap: kimondta, hogy ... and Verbs for Laws\"",
+  "id": "grammar.b1.erdelyaranykora.02.statutory-decrees",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-02-gr.json",
+  "old": "\"content\": \"To narrate the enactment of landmark civil statutes, Hungarian uses verbal expressions like *törvénybe iktat* ('enact into law'), *kinyilvánít* ('proclaim'), and *kimondja, hogy...* ('decrees/declares that...').\"",
+  "new": "\"content\": \"You know *hogy*-clauses from A2 Unit 11, and you met the Diet of Torda and *vallásszabadság* in B1 Unit 20. History texts report what a law said with *kimondta, hogy* ('declared that'). Two more verbs for laws are new words here: *törvénybe iktat* ('enact into law') and *kinyilvánít* ('proclaim').\"",
+  "id": "grammar.b1.erdelyaranykora.02.statutory-decrees",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-02-gr.json",
+  "old": "    {\n      \"type\": \"examples\",",
+  "new": "    {\n      \"type\": \"table\",\n      \"title\": \"Verbs for laws and decrees\",\n      \"rows\": [\n        [\"kimondta, hogy ...\", \"declared that ...\"],\n        [\"törvénybe iktatta\", \"enacted into law\"],\n        [\"kinyilvánította\", \"proclaimed\"],\n        [\"bevett vallás\", \"received (officially recognised) religion\"]\n      ]\n    },\n    {\n      \"type\": \"examples\",",
+  "id": "grammar.b1.erdelyaranykora.02.statutory-decrees",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-02-gr.json",
+  "old": "\"spanish\": \"Az 1568-as tordai országgyűlés a világon elsőként iktatta törvénybe a vallásszabadságot.\"",
+  "new": "\"spanish\": \"Az 1568-as tordai országgyűlés törvénybe iktatta a vallásszabadságot.\"",
+  "id": "grammar.b1.erdelyaranykora.02.statutory-decrees",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-02-gr.json",
+  "old": "\"spanish\": \"A híres törvény kimondta, hogy a hitért senkit sem szabad bántalmazni vagy fogságba vetni.\"",
+  "new": "\"spanish\": \"A híres törvény kimondta, hogy a hitért senkit sem szabad fogságba vetni.\"",
+  "id": "grammar.b1.erdelyaranykora.02.statutory-decrees",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-02-gr.json",
+  "old": "\"spanish\": \"Négy felekezetet ismertek el egyenrangú bevett vallásként: a katolikus, lutheránus, református és unitárius egyházat.\"",
+  "new": "\"spanish\": \"Később négy vallás lett bevett vallás Erdélyben: a katolikus, az evangélikus, a református és az unitárius.\"",
+  "id": "grammar.b1.erdelyaranykora.02.statutory-decrees",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-03-bethlen.json",
+  "old": "\"text\": \"1613-ban a tehetséges diplomata és kiváló hadvezér, Bethlen Gábor lépett az Erdélyi Fejedelemség trónjára.\"",
+  "new": "\"text\": \"Bethlen Gábor 1613-tól 1629-ig volt Erdély fejedelme. Uralkodását gyakran Erdély aranykorának nevezik.\"",
+  "id": "story.b1.erdelyaranykora.03",
+  "kind": "hungarian",
+  "why": "'tehetséges diplomata és kiváló hadvezér' is praise; ex02 asks which reign is called the golden age, which the text never said"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-03-bethlen.json",
+  "old": "\"text\": \"Uralkodása alatt Erdély gazdasága páratlan virágzásnak indult: a fejedelem modern merkantilista gazdaságpolitikát vezetett be.\"",
+  "new": "\"text\": \"Uralkodása alatt Erdély gazdasága virágzásnak indult: a fejedelem merkantilista gazdaságpolitikát folytatott.\"",
+  "id": "story.b1.erdelyaranykora.03",
+  "kind": "hungarian",
+  "why": "'páratlan' (unparalleled) is hype"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-03-bethlen.json",
+  "old": "\"text\": \"Állami monopóliummá tette a nemesfémek, a marha és a só kivitelét, és felvidéki német bányászokat telepített be a termelés növelésére.\"",
+  "new": "\"text\": \"A nemesfémek, a marha és a só kivitelét állami monopóliummá tette, és külföldi mestereket és bányászokat telepített be.\"",
+  "id": "story.b1.erdelyaranykora.03",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'felvidéki német bányászokat' is more specific than I can confirm (the foreign craftsmen included Germans, Moravian Anabaptists and others) - check"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-03-bethlen.json",
+  "old": "\"text\": \"Gyulafehérváron hatalmas fejedelmi palotát építtetett és híres protestáns akadémiát alapított európai hírű professzorokkal.\"",
+  "new": "\"text\": \"Gyulafehérváron fejedelmi palotát építtetett, és 1622-ben protestáns kollégiumot alapított, ahol külföldi professzorok is tanítottak.\"",
+  "id": "story.b1.erdelyaranykora.03",
+  "kind": "hungarian",
+  "why": "'hatalmas' and 'európai hírű' removed; the foundation year added (the Gyulafehérvár college, 1622)"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-03-bethlen.json",
+  "old": "\"text\": \"Bethlen kincstára megtelt arannyal, így erős zsoldoshadsereget tudott fenntartani és bőkezű mecénásként támogatta a tehetséges diákokat.\"",
+  "new": "\"text\": \"Bethlen kincstára megtelt, így zsoldoshadsereget tarthatott fenn, és diákokat is támogatott külföldi egyetemeken.\"",
+  "id": "story.b1.erdelyaranykora.03",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'megtelt arannyal' and 'bőkezű mecénás' are colour; the support of students abroad is attested - check"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-03-ex.json",
+  "id": "b1-erdelyaranykora-03.ex03",
+  "set": {
+   "question": "Mit alapított Bethlen Gábor 1622-ben Gyulafehérváron?",
+   "options": [
+    "Egy protestáns kollégiumot.",
+    "Egy katolikus egyetemet.",
+    "Egy jezsuita rendházat."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (59 vs 39); 'gazdag könyvtárral' not in the text; 'Csak egy katonai börtönt' is absurd"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-03-ex.json",
+  "id": "b1-erdelyaranykora-03.ex05",
+  "set": {
+   "sentence": "A fejedelem nagylelkű ____ támogatta a magyar diákokat külföldi egyetemeken.",
+   "english": "As a generous patron, the prince supported Hungarian students at foreign universities."
+  },
+  "kind": "hungarian",
+  "why": "'egyetemi tanulmányait' unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-03-ex.json",
+  "id": "b1-erdelyaranykora-03.ex06",
+  "set": {
+   "question": "Mivel növelte Bethlen Gábor a fejedelmi kincstár bevételeit?",
+   "options": [
+    "Állami monopóliumot vezetett be a nemesfémek, a marha és a só kivitelére.",
+    "Megszüntette a külföldi kereskedelmet, és bezárta a bányákat.",
+    "Eltörölte a vámokat, és külföldi pénzből élt."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "many unmet words (hadiadó, banki hitel, elhanyagol ...); the old correct answer said 'fejlesztette a bányászatot' which the text never claims"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-03-ex.json",
+  "id": "b1-erdelyaranykora-03.ex07",
+  "set": {
+   "question": "Kiket telepített be Bethlen Gábor Erdélybe?",
+   "options": [
+    "Külföldi mestereket és bányászokat.",
+    "Török katonákat és pasákat.",
+    "Lengyel nemeseket és katonákat."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (68 vs 35) and tell 'Senkit sem'; the old option 'Csak spanyol katonákat' is absurd"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-03-ex.json",
+  "id": "b1-erdelyaranykora-03.ex08",
+  "set": {
+   "question": "Mit építtetett Bethlen Gábor Gyulafehérváron?",
+   "options": [
+    "Fejedelmi palotát.",
+    "Török fürdőt.",
+    "Gótikus székesegyházat."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'díszes kertekkel és gazdag könyvtárral' not in the text"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-erdelyaranykora-03-voc.json",
+  "old": "    }\n  ]\n}",
+  "new": "    },\n    {\n      \"lemma\": \"monopólium\",\n      \"translation\": \"monopoly\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"jezsuita\",\n      \"translation\": \"Jesuit\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"kollégium\",\n      \"translation\": \"college (school)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"protestáns\",\n      \"translation\": \"Protestant\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"telepít\",\n      \"translation\": \"to settle (people)\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"mester\",\n      \"translation\": \"master craftsman\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"bányász\",\n      \"translation\": \"miner\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"rendház\",\n      \"translation\": \"monastery, house of a religious order\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"megszüntet\",\n      \"translation\": \"to abolish, end\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"bezár\",\n      \"translation\": \"to close\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"vám\",\n      \"translation\": \"customs duty\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"eltöröl\",\n      \"translation\": \"to abolish\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"egyetem\",\n      \"translation\": \"university\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kincstár\",\n      \"translation\": \"treasury\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "id": "vocab.b1.erdelyaranykora.03",
+  "kind": "hungarian",
+  "why": "unmet word (unmet-words.js): listed in the first lesson that uses it"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-03-gr.json",
+  "old": "\"id\": \"grammar.b1.erdelyaranykora.03.economic-boom\",\n  \"title\": \"Narrating Economic Flourishing: virágzásnak indult, fellendült\"",
+  "new": "\"id\": \"grammar.b1.erdelyaranykora.03.economic-boom\",\n  \"title\": \"Words for a Flourishing Time (Recap: -ként, -nak/-nek, révén)\"",
+  "id": "grammar.b1.erdelyaranykora.03.economic-boom",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-03-gr.json",
+  "old": "\"content\": \"To describe golden ages and prosperity, Hungarian uses inchoative and perfective verbal expressions: *virágzásnak indult* (began to flourish), *fellendült a kereskedelem* (trade boomed/surged), and *megteremtette az alapjait* (laid the foundations of).\"",
+  "new": "\"content\": \"You know *-ként* from A2 Unit 36, verbs with *-nak/-nek* from A2 Unit 12 and *révén* ('through') from A2 Unit 18. History texts describe a good time with set phrases: *virágzásnak indult* ('began to flourish', literally 'set out into flourishing') and *fellendült* ('boomed'). These two phrases are new words here.\"",
+  "id": "grammar.b1.erdelyaranykora.03.economic-boom",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-03-gr.json",
+  "old": "    {\n      \"type\": \"examples\",",
+  "new": "    {\n      \"type\": \"table\",\n      \"title\": \"Phrases for a flourishing time\",\n      \"rows\": [\n        [\"virágzásnak indult\", \"began to flourish\"],\n        [\"fellendült a kereskedelem\", \"trade boomed\"],\n        [\"mecénásként támogatta\", \"supported as a patron\"],\n        [\"a politikája révén\", \"through his policy\"]\n      ]\n    },\n    {\n      \"type\": \"examples\",",
+  "id": "grammar.b1.erdelyaranykora.03.economic-boom",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-03-gr.json",
+  "old": "\"spanish\": \"Bethlen Gábor uralkodása alatt Erdély gazdasága és kultúrája páratlan virágzásnak indult.\"",
+  "new": "\"spanish\": \"Bethlen Gábor uralkodása alatt Erdély gazdasága és kultúrája virágzásnak indult.\"",
+  "id": "grammar.b1.erdelyaranykora.03.economic-boom",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-03-gr.json",
+  "old": "\"spanish\": \"A fejedelmi merkantilista politika révén fellendült a bányászat és a külkereskedelem.\"",
+  "new": "\"spanish\": \"A fejedelem merkantilista politikája révén fellendült a bányászat és a külkereskedelem.\"",
+  "id": "grammar.b1.erdelyaranykora.03.economic-boom",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-04-europa.json",
+  "old": "\"text\": \"Amikor 1618-ban kitört a harmincéves háború, Bethlen Gábor felismerte a történelmi lehetőséget a magyar nemzeti jogok védelmére.\"",
+  "new": "\"text\": \"1618-ban kitört a harmincéves háború. Bethlen Gábor 1619-ben a cseh rendek oldalán beavatkozott a háborúba.\"",
+  "id": "story.b1.erdelyaranykora.04",
+  "kind": "hungarian",
+  "why": "'felismerte a történelmi lehetőséget a magyar nemzeti jogok védelmére' is mind-reading and a political judgement"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-04-europa.json",
+  "old": "\"text\": \"A fejedelem a cseh és protestáns szövetségesek oldalán hadjáratot indított a Habsburgok ellen, és csapataival még Bécset is ostrom alá vette.\"",
+  "new": "\"text\": \"A fejedelem a cseh és más protestáns szövetségesek oldalán hadjáratot indított a Habsburgok ellen, és csapatai Bécs alá is eljutottak.\"",
+  "id": "story.b1.erdelyaranykora.04",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'még Bécset is ostrom alá vette' is stronger than the sources (his troops reached Vienna in 1619 but there was no real siege) - check"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-04-europa.json",
+  "old": "\"text\": \"1620-ban a besztercebányai országgyűlésen a rendek magyar királlyá választották Bethlent, de ő nem koronáztatta meg magát a Szent Koronával.\"",
+  "new": "\"text\": \"1620-ban a besztercebányai országgyűlésen a rendek magyar királlyá választották Bethlent, de ő nem koronáztatta meg magát. Ennek okait a történészek különbözőképpen magyarázzák.\"",
+  "id": "story.b1.erdelyaranykora.04",
+  "kind": "hungarian",
+  "why": "'a Szent Koronával' dropped; why he refused is disputed, and ex06 had given a reason ('politikai megfontoltságból') as fact"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-04-europa.json",
+  "old": "\"text\": \"Az 1621-es nikolsburgi békében megerősítette a Királyi Magyarország rendi jogait, és Erdélyhez csatolt hét felső-magyarországi vármegyét.\"",
+  "new": "\"text\": \"Az 1621-es nikolsburgi békében a császár megerősítette a magyar rendek jogait, Bethlen pedig hét felső-magyarországi vármegyét kapott élete végéig.\"",
+  "id": "story.b1.erdelyaranykora.04",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'Erdélyhez csatolt' suggests a permanent union; the counties were granted for Bethlen's lifetime (with two Silesian duchies) - check"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-04-europa.json",
+  "old": "\"text\": \"Sikerei révén az Erdélyi Fejedelemség Európa-szerte elismert tényezővé vált a nemzetközi diplomáciában.\"",
+  "new": "\"text\": \"Bethlen a protestáns hatalmakkal, például Hollandiával és Angliával is tárgyalt, így Erdély a nemzetközi diplomáciában is szerepet kapott.\"",
+  "id": "story.b1.erdelyaranykora.04",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'Európa-szerte elismert tényezővé vált' overstates; negotiations with the Dutch Republic and England are attested - check"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-04-ex.json",
+  "id": "b1-erdelyaranykora-04.ex02",
+  "set": {
+   "question": "Melyik háborúba kapcsolódott be Bethlen Gábor a protestáns hatalmak oldalán?",
+   "options": [
+    "A harmincéves háborúba.",
+    "A százéves háborúba.",
+    "A hétéves háborúba."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (35 vs 22); 'napóleoni' is an unmet word and an absurd option"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-04-ex.json",
+  "id": "b1-erdelyaranykora-04.ex03",
+  "set": {
+   "question": "Melyik békét kötötte Bethlen Gábor 1621-ben a császárral?",
+   "options": [
+    "A nikolsburgi békét.",
+    "A karlócai békét.",
+    "A szatmári békét."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "Bethlen made several campaigns (1619-21, 1623-24, 1626); the question names the peace of 1621"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-04-ex.json",
+  "id": "b1-erdelyaranykora-04.ex05",
+  "set": {
+   "sentence": "A nikolsburgi békében Bethlen hét felső-magyarországi vármegyét kapott ____ végéig.",
+   "hint": "his life",
+   "answer": "élete",
+   "english": "In the Peace of Nikolsburg Bethlen received seven Upper Hungarian counties until the end of his life.",
+   "category": "grammar",
+   "teaches": [
+    "3rd-person-possessive"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "the hint 'allative' named the ending; and the counties were not permanently 'attached to the territory of Transylvania' (Bethlen held them for life)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-04-ex.json",
+  "id": "b1-erdelyaranykora-04.ex06",
+  "set": {
+   "question": "Mit döntöttek a magyar rendek 1620-ban a besztercebányai országgyűlésen?",
+   "options": [
+    "Magyar királlyá választották Bethlent.",
+    "A Habsburg-házat örökös uralkodóvá nyilvánították.",
+    "Erdélyt a Hódoltsághoz csatolták."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'politikai megfontoltságból' is mind-reading; options with 'teljhatalmú', 'főparancsnokság' unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-04-ex.json",
+  "id": "b1-erdelyaranykora-04.ex07",
+  "set": {
+   "question": "Melyik évben tört ki a harmincéves háború?",
+   "options": [
+    "1618-ban.",
+    "1648-ban.",
+    "1526-ban."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (106 vs 54) and tell 'Teljesen'; 'megbecsült szövetséges', 'elismert szereplő' are praise, not facts"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-04-ex.json",
+  "id": "b1-erdelyaranykora-04.ex08",
+  "set": {
+   "question": "Kiknek az oldalán indított hadjáratot Bethlen Gábor a Habsburgok ellen?",
+   "options": [
+    "A cseh rendek és más protestánsok oldalán.",
+    "A pápa és a spanyol király oldalán.",
+    "A lengyel király és a katolikusok oldalán."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "the old wrong option with Venice is partly true (Bethlen did have relations with Venice); the listed allies (England, Dutch, German princes) are stronger than the sources"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-erdelyaranykora-04-voc.json",
+  "old": "    }\n  ]\n}",
+  "new": "    },\n    {\n      \"lemma\": \"cseh\",\n      \"translation\": \"Czech, Bohemian\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"százéves háború\",\n      \"translation\": \"Hundred Years' War\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"hétéves háború\",\n      \"translation\": \"Seven Years' War\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"tárgyal\",\n      \"translation\": \"to negotiate\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"felső-magyarországi\",\n      \"translation\": \"of Upper Hungary\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"pápa\",\n      \"translation\": \"pope\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"spanyol\",\n      \"translation\": \"Spanish\",\n      \"pos\": \"adjective\"\n    }\n  ]\n}",
+  "id": "vocab.b1.erdelyaranykora.04",
+  "kind": "hungarian",
+  "why": "unmet word (unmet-words.js): listed in the first lesson that uses it"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-04-gr.json",
+  "old": "\"id\": \"grammar.b1.erdelyaranykora.04.diplomatic-intentions\",\n  \"title\": \"Diplomatic Intentions & Alliances: annak érdekében, hogy...\"",
+  "new": "\"id\": \"grammar.b1.erdelyaranykora.04.diplomatic-intentions\",\n  \"title\": \"Recap: annak érdekében, hogy (Purpose)\"",
+  "id": "grammar.b1.erdelyaranykora.04.diplomatic-intentions",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-04-gr.json",
+  "old": "\"content\": \"Formal diplomacy and military alliances utilize the complex purpose conjunction *annak érdekében, hogy...* ('in order that... / with the aim of...') followed by the subjunctive mood (*-jon / -jen*).\"",
+  "new": "\"content\": \"You know *érdekében* and *hogy* + subjunctive from B1 Unit 5. Diplomatic and military texts use the same pattern: *Bethlen hadjáratot indított annak érdekében, hogy segítse a cseh rendeket* ('in order to help the Bohemian estates'). The table lists this lesson's new words.\"",
+  "id": "grammar.b1.erdelyaranykora.04.diplomatic-intentions",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-04-gr.json",
+  "old": "    {\n      \"type\": \"examples\",",
+  "new": "    {\n      \"type\": \"table\",\n      \"title\": \"This lesson's words\",\n      \"rows\": [\n        [\"harmincéves háború\", \"the Thirty Years' War\"],\n        [\"szövetséges\", \"ally\"],\n        [\"hadjárat\", \"military campaign\"],\n        [\"békeszerződés\", \"peace treaty\"]\n      ]\n    },\n    {\n      \"type\": \"examples\",",
+  "id": "grammar.b1.erdelyaranykora.04.diplomatic-intentions",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-04-gr.json",
+  "old": "\"spanish\": \"Bethlen Gábor hadjáratokat indított annak érdekében, hogy megvédje a magyar rendi jogokat és a vallásszabadságot.\"",
+  "new": "\"spanish\": \"Bethlen Gábor hadjáratot indított annak érdekében, hogy segítse a cseh rendeket.\"",
+  "id": "grammar.b1.erdelyaranykora.04.diplomatic-intentions",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-04-gr.json",
+  "old": "\"spanish\": \"Az 1621-es nikolsburgi béke nemzetközi elismertséget és hét felső-magyarországi vármegyét biztosított a fejedelemnek.\"",
+  "new": "\"spanish\": \"Az 1621-es nikolsburgi békében Bethlen hét felső-magyarországi vármegyét kapott élete végéig.\"",
+  "id": "grammar.b1.erdelyaranykora.04.diplomatic-intentions",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-05-hagyatek.json",
+  "old": "\"text\": \"A hódoltság másfél évszázada alatt, amikor az ország szíve romokban hevert, Erdély a magyar anyanyelv és műveltség menedékévé vált.\"",
+  "new": "\"text\": \"A 16–17. században Erdélyben és a Tiszántúlon sok magyar nyelvű iskola és nyomda működött.\"",
+  "id": "story.b1.erdelyaranykora.05",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'Erdély a magyar anyanyelv és műveltség menedékévé vált ... az ország szíve romokban hevert' is a national-romantic judgement - check the claim about the Tiszántúl"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-05-hagyatek.json",
+  "old": "\"text\": \"Itt működtek a leghíresebb nyomdák, ahol Károli Gáspár első teljes magyar nyelvű Bibliája (1590) és Szenczi Molnár Albert zsoltárai megjelentek.\"",
+  "new": "\"text\": \"Károli Gáspár első teljes magyar nyelvű Bibliája 1590-ben Vizsolyban jelent meg, Szenczi Molnár Albert pedig a genfi zsoltárokat fordította magyarra (1607, Herborn).\"",
+  "id": "story.b1.erdelyaranykora.05",
+  "kind": "hungarian",
+  "why": "FACT: the text said the Vizsoly Bible and the psalms were printed in Transylvania ('Itt működtek ... nyomdák'). Vizsoly lies in Abaúj (the north-east of the Kingdom of Hungary), and the psalms were printed at Herborn in Germany"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-05-hagyatek.json",
+  "old": "\"text\": \"A fejedelmek által bőkezűen támogatott kollégiumokból nemzedékek sora került ki, akik a magyar nyelvet tudományos és irodalmi szintre emelték.\"",
+  "new": "\"text\": \"A fejedelmek kollégiumokat és nyomdákat támogattak; Gyulafehérváron Bethlen kollégiuma működött, Debrecenben pedig a Református Kollégium.\"",
+  "id": "story.b1.erdelyaranykora.05",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'nemzedékek sora ... a magyar nyelvet tudományos és irodalmi szintre emelték' is praise; Debrecen lay in the Tiszántúl, in the princes' sphere - check"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-05-hagyatek.json",
+  "old": "\"text\": \"Erdély nem csupán politikai bástya volt, hanem a magyar szellem és öntudat őrzője a legsötétebb történelmi viharok közepette.\"",
+  "new": "\"text\": \"Debrecent a 17. században a „kálvinista Rómának” is nevezték.\"",
+  "id": "story.b1.erdelyaranykora.05",
+  "kind": "hungarian",
+  "why": "'Erdély ... a magyar szellem és öntudat őrzője a legsötétebb történelmi viharok közepette' is purple prose and a political judgement; ex06 asks the Debrecen nickname, which the text did not give"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-erdelyaranykora-05-hagyatek.json",
+  "old": "\"text\": \"Ez az aranykor mindmáig a nemzeti összetartozás, a szabadságvágy és az intellektuális büszkeség örök példája.\"",
+  "new": "\"text\": \"Ezek a könyvek és iskolák ma is a magyar kulturális örökség részei.\"",
+  "id": "story.b1.erdelyaranykora.05",
+  "kind": "hungarian",
+  "why": "'a nemzeti összetartozás, a szabadságvágy és az intellektuális büszkeség örök példája' is a modern political/identity judgement"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-05-ex.json",
+  "id": "b1-erdelyaranykora-05.ex03",
+  "set": {
+   "question": "Ki fordította le a genfi zsoltárokat magyar nyelvre?"
+  },
+  "kind": "hungarian",
+  "why": "'megteremtve' is a -va participle (Unit 57)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-05-ex.json",
+  "id": "b1-erdelyaranykora-05.ex04",
+  "set": {
+   "question": "Mi a nyomda?",
+   "options": [
+    "Olyan hely, ahol könyveket nyomtatnak.",
+    "Olyan hely, ahol ételt főznek.",
+    "Olyan hely, ahol gyerekek játszanak."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'Erdély a magyar kultúra bástyája volt' presents a national metaphor as fact; the options romja/ága are not real answers"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-05-ex.json",
+  "id": "b1-erdelyaranykora-05.ex05",
+  "set": {
+   "sentence": "Károli Gáspár fordította le az első teljes magyar nyelvű ____.",
+   "hint": "the Bible",
+   "answer": "Bibliát",
+   "english": "Gáspár Károli translated the first complete Hungarian-language Bible.",
+   "category": "grammar",
+   "teaches": [
+    "how-the-accusative-t-works"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "'művelődését' is a verbal noun (Unit 31) and the claim that mother-tongue education 'made possible the education of broad strata' is not in the text (the colleges taught mostly in Latin)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-05-ex.json",
+  "id": "b1-erdelyaranykora-05.ex06",
+  "set": {
+   "question": "Melyik várost nevezték „kálvinista Rómának”?",
+   "options": [
+    "Debrecent.",
+    "Pozsonyt.",
+    "Gyulafehérvárt."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "the old correct answer ('fellegvára') used 'révén', 'legfőbb' and made claims beyond the text"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-05-ex.json",
+  "id": "b1-erdelyaranykora-05.ex07",
+  "set": {
+   "question": "Mit támogattak az erdélyi fejedelmek?",
+   "options": [
+    "Kollégiumokat és nyomdákat.",
+    "Hadihajókat és kikötőket.",
+    "Színházakat és operaházakat."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (99 vs 51) and tell 'Kizárólag'; 'ösztöndíjak' and 'pénzhiány' not in the text"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-05-ex.json",
+  "id": "b1-erdelyaranykora-05.ex08",
+  "set": {
+   "question": "Hol nyomtatták ki Károli Gáspár Bibliáját 1590-ben?",
+   "options": [
+    "Vizsolyban.",
+    "Gyulafehérváron.",
+    "Pozsonyban."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "the old item asked what the golden age 'means in today's national consciousness', a political judgement (length give-away 98 vs 75)"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-erdelyaranykora-05-voc.json",
+  "old": "    }\n  ]\n}",
+  "new": "    },\n    {\n      \"lemma\": \"Vizsoly\",\n      \"translation\": \"Vizsoly (village in Abaúj, where the first complete Hungarian Bible was printed)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Biblia\",\n      \"translation\": \"Bible\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"zsoltár\",\n      \"translation\": \"psalm\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"nyomtat\",\n      \"translation\": \"to print\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"nyomda\",\n      \"translation\": \"printing house\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kálvinista\",\n      \"translation\": \"Calvinist\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"Róma\",\n      \"translation\": \"Rome\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Tiszántúl\",\n      \"translation\": \"the region east of the Tisza\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Herborn\",\n      \"translation\": \"Herborn (German town where the psalms were printed)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fordító\",\n      \"translation\": \"translator\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "id": "vocab.b1.erdelyaranykora.05",
+  "kind": "hungarian",
+  "why": "unmet word (unmet-words.js): listed in the first lesson that uses it"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-05-gr.json",
+  "old": "\"id\": \"grammar.b1.erdelyaranykora.05.metaphorical-stronghold\",\n  \"title\": \"Metaphorical Roles in National Identity: a kultúra bástyája, menedékként\"",
+  "new": "\"id\": \"grammar.b1.erdelyaranykora.05.metaphorical-stronghold\",\n  \"title\": \"Words for Books and Schools (Recap: -ként)\"",
+  "id": "grammar.b1.erdelyaranykora.05.metaphorical-stronghold",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-05-gr.json",
+  "old": "\"content\": \"Hungarian cultural memory characterizes Transylvania through symbolic metaphors: *a magyar kultúra és nyelv bástyája* (the bulwark of Hungarian culture and language), *menedékként szolgált* (served as a haven/refuge), and *őrizte a folytonosságot* (preserved continuity).\"",
+  "new": "\"content\": \"You know *-ként* ('as') from A2 Unit 36. It also says in what role a person became known: *Károli Gáspár a Biblia fordítójaként*, *Szenczi Molnár Albert a zsoltárok fordítójaként*. The table lists this lesson's new words.\"",
+  "id": "grammar.b1.erdelyaranykora.05.metaphorical-stronghold",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-05-gr.json",
+  "old": "    {\n      \"type\": \"examples\",",
+  "new": "    {\n      \"type\": \"table\",\n      \"title\": \"This lesson's words\",\n      \"rows\": [\n        [\"nyomda\", \"printing house\"],\n        [\"Biblia\", \"Bible\"],\n        [\"zsoltár\", \"psalm\"],\n        [\"kollégium\", \"college\"],\n        [\"fordító\", \"translator\"]\n      ]\n    },\n    {\n      \"type\": \"examples\",",
+  "id": "grammar.b1.erdelyaranykora.05.metaphorical-stronghold",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-05-gr.json",
+  "old": "\"spanish\": \"A három részre szakadt ország legnehezebb évszázadában Erdély a magyar nyelv és műveltség igazi bástyájaként szolgált.\"",
+  "new": "\"spanish\": \"Károli Gáspár a Biblia fordítójaként lett híres.\"",
+  "id": "grammar.b1.erdelyaranykora.05.metaphorical-stronghold",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-05-gr.json",
+  "old": "\"spanish\": \"A vizsolyi biblia kinyomtatása és a debreceni meg gyulafehérvári kollégiumok megalapítása biztosította a nemzeti megmaradást.\"",
+  "new": "\"spanish\": \"A vizsolyi Bibliát 1590-ben nyomtatták ki.\"",
+  "id": "grammar.b1.erdelyaranykora.05.metaphorical-stronghold",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-erdelyaranykora-05-gr.json",
+  "old": "\"spanish\": \"Az erdélyi aranykor öröksége mindmáig a nemzeti büszkeség és az európai nyitottság szimbóluma.\"",
+  "new": "\"spanish\": \"Szenczi Molnár Albert a genfi zsoltárok fordítójaként ismert.\"",
+  "id": "grammar.b1.erdelyaranykora.05.metaphorical-stronghold",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json",
+  "id": "b1-erdelyaranykora-consolidation.ex06",
+  "set": {
+   "question": "Melyik város volt az Erdélyi Fejedelemség fejedelmi székhelye?",
+   "options": [
+    "Gyulafehérvár",
+    "Székesfehérvár",
+    "Marosvásárhely",
+    "Nagyszeben"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (13 vs 9); Kolozsvár also served as a princely residence, so 'állandó székhely' is unsafe"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json",
+  "id": "b1-erdelyaranykora-consolidation.ex08",
+  "set": {
+   "question": "Ki készítette az első teljes magyar nyelvű Bibliát, amelyet Vizsolyban nyomtattak ki?"
+  },
+  "kind": "hungarian",
+  "why": "Károli Gáspár translated it (in Gönc); Vizsoly is where it was printed"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json",
+  "id": "b1-erdelyaranykora-consolidation.ex11",
+  "set": {
+   "sentence": "Bethlen Gábor idején az ország gazdasága virágzásnak ____.",
+   "english": "Under Gábor Bethlen the country's economy began to flourish."
+  },
+  "kind": "hungarian",
+  "why": "'köszönhetően' is a -hető participle (Unit 61)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json",
+  "id": "b1-erdelyaranykora-consolidation.ex12",
+  "set": {
+   "sentence": "A fejedelem hadjáratot indított annak ____, hogy segítse a cseh rendeket.",
+   "english": "The prince launched a campaign in order to help the Bohemian estates."
+  },
+  "kind": "hungarian",
+  "why": "'szabadságjogokat' unmet; 'védje a rendi szabadságjogokat' states a motive as fact"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json",
+  "id": "b1-erdelyaranykora-consolidation.ex13",
+  "set": {
+   "sentence": "Gyulafehérvár a fejedelemség ____ volt ismert.",
+   "hint": "as the seat",
+   "answer": "székhelyeként",
+   "english": "Gyulafehérvár was known as the seat of the principality."
+  },
+  "kind": "hungarian",
+  "why": "glued blank (székhelye____, answer 'ként'); 'Európa-szerte' unmet and unsupported"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json",
+  "id": "b1-erdelyaranykora-consolidation.ex14",
+  "set": {
+   "question": "Melyik négy vallás lett bevett vallás Erdélyben?"
+  },
+  "kind": "hungarian",
+  "why": "the 1568 decree itself did not name four religions"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json",
+  "id": "b1-erdelyaranykora-consolidation.ex15",
+  "set": {
+   "question": "Mit tett az Erdélyi Fejedelemség a két nagyhatalom között?",
+   "options": [
+    "Adót fizetett a szultánnak, és tárgyalt a Habsburgokkal.",
+    "A Habsburg császárnak fizetett adót, és Bécsből irányították.",
+    "Nem fizetett adót senkinek, és nem tárgyalt senkivel.",
+    "Török tartomány lett, amelyet pasa irányított."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (138 vs 99) and tell 'teljesen'; 'ügyes diplomáciával' is praise"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json",
+  "id": "b1-erdelyaranykora-consolidation.ex16",
+  "set": {
+   "question": "Melyik békét kötötte Bethlen Gábor 1621-ben a császárral?",
+   "options": [
+    "A nikolsburgi békét",
+    "A bécsi békét",
+    "A karlócai békét",
+    "A szatmári békét"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "*tordai ediktum* is not a peace; the stem 'harmincéves háborús hadjárata' is vague"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json",
+  "id": "b1-erdelyaranykora-consolidation.ex17",
+  "set": {
+   "question": "Mivel növelte Bethlen a kincstár bevételeit?",
+   "options": [
+    "Állami monopóliumot vezetett be a nemesfémek, a marha és a só kivitelére.",
+    "Megszüntette a külkereskedelmet, és bezárta a bányákat.",
+    "Eltörölte a vámokat, és külföldi hitelekből élt.",
+    "A bányákat a nemeseknek adta, és eltörölte a monopóliumot."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "vámmentesség, államosít, nehézipari beruházás ... unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json",
+  "id": "b1-erdelyaranykora-consolidation.ex18",
+  "set": {
+   "question": "Mi volt a „három nemzet uniója” az erdélyi rendi berendezkedésben?",
+   "options": [
+    "A magyar nemesek, a székelyek és a szászok szövetsége.",
+    "Magyarország, Lengyelország és Csehország katonai szövetsége.",
+    "A bécsi udvar, a pápa és a szultán megállapodása.",
+    "A nádor, a király és a pápa közös tanácsa."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (89 vs 61); 'a parasztok és jobbágyok szakszervezete' is absurd"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json",
+  "id": "b1-erdelyaranykora-consolidation.ex19",
+  "set": {
+   "question": "Melyik évben jelent meg a vizsolyi Biblia?",
+   "options": [
+    "1590-ben",
+    "1568-ban",
+    "1613-ban",
+    "1621-ben"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (122 vs 92); the old options talked about 'kizárólagos latin használat' etc., not in the unit"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json",
+  "id": "b1-erdelyaranykora-consolidation.ex20",
+  "set": {
+   "question": "Melyik évben választották magyar királlyá Bethlen Gábort a besztercebányai országgyűlésen?",
+   "options": [
+    "1620-ban",
+    "1619-ben",
+    "1621-ben",
+    "1629-ben"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "the old item asked why 'the modern Hungarian nation is proud' of the Torda peace on the citizenship exam, with 'legelső a világon': a political judgement and a disputed claim (length give-away 118 vs 88)"
+ }
+]

@@ -1,0 +1,1014 @@
+[
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-01-kiralyi.json",
+  "old": "\"text\": \"A mohácsi csata után a Habsburg-házi I. Ferdinándot is magyar királlyá választották.\"",
+  "new": "\"text\": \"A mohácsi csata után, 1526-ban két királyt is választottak Magyarországon: Szapolyai Jánost és a Habsburg-házi I. Ferdinándot.\"",
+  "id": "story.b1.haromresz.01",
+  "kind": "hungarian",
+  "why": "'is' had no antecedent (Szapolyai missing); year and the two elections added"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-01-kiralyi.json",
+  "old": "\"text\": \"Az ország északi és nyugati területeiből alakult ki a Királyi Magyarország, amely a Habsburg Birodalom részévé vált.\"",
+  "new": "\"text\": \"Az ország északi és nyugati területeiből alakult ki a Királyi Magyarország, amelynek királyai a Habsburg-ház tagjai voltak.\"",
+  "id": "story.b1.haromresz.01",
+  "kind": "hungarian",
+  "why": "'a Habsburg Birodalom részévé vált' is anachronistic (the Austrian Empire dates from 1804) and the Kingdom stayed a separate realm; ex03 asks for the dynasty, so the text now says it"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-01-kiralyi.json",
+  "old": "\"text\": \"Mivel Buda török kézre került, a Magyar Királyság új fővárosa és koronázó városa Pozsony lett.\"",
+  "new": "\"text\": \"Pozsony már 1536-tól az országgyűlések színhelye volt; Buda 1541-es eleste után ez lett a Királyi Magyarország fővárosa, 1563-tól 1830-ig pedig a koronázások városa.\"",
+  "id": "story.b1.haromresz.01",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'Mivel Buda török kézre került' gave a wrong cause (Pozsony became the capital in 1536, before Buda fell in 1541); coronations in Pozsony 1563-1830 added (ex07 asks for it) - check"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-01-kiralyi.json",
+  "old": "\"text\": \"Pozsonyban működött a magyar kancellária és a kamara, és a Szent Márton-dómban koronázták meg a magyar királyokat.\"",
+  "new": "\"text\": \"Pozsonyban működött a magyar kamara, a Szent Márton-dómban pedig a magyar királyokat koronázták meg. Az országgyűlések élén a király helyettese, a nádor állt.\"",
+  "id": "story.b1.haromresz.01",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the Hungarian chancellery sat in Vienna, not Pozsony (check); nádor was never in the story but ex05 asked for him"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-01-kiralyi.json",
+  "old": "\"text\": \"A magyar rendek a pozsonyi országgyűléseken küzdöttek az alkotmányos jogokért és a végvárrendszer fenntartásáért.\"",
+  "new": "\"text\": \"A magyar rendek a pozsonyi országgyűléseken megszavazták az adót, amelyből a végvárakat tartották fenn, és vitatkoztak a király hatalmáról.\"",
+  "id": "story.b1.haromresz.01",
+  "kind": "hungarian",
+  "why": "'küzdöttek az alkotmányos jogokért' is a modern-sounding judgement; ex06 asks what the tax paid for, and the old answer (defending Vienna and 'Christian Europe') was not in the text"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-01-ex.json",
+  "id": "b1-haromresz-01.ex02",
+  "set": {
+   "question": "Melyik város lett a Királyi Magyarország fővárosa, miután Buda török kézre került?"
+  },
+  "kind": "hungarian",
+  "why": "'kerülése' is a verbal noun (-és, Unit 31)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-01-ex.json",
+  "id": "b1-haromresz-01.ex05",
+  "set": {
+   "sentence": "Az országgyűlés élén a király helyettese, a ____ állt.",
+   "english": "The king's deputy, the palatine, stood at the head of the diet."
+  },
+  "kind": "hungarian",
+  "why": "the old sentence said the palatine 'led the diet' and was 'the most important secular dignitary', neither in the text; unmet words legfontosabb, méltóság removed"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-01-ex.json",
+  "id": "b1-haromresz-01.ex06",
+  "set": {
+   "question": "Mit tartottak fenn a rendek az országgyűlésen megszavazott adóból?",
+   "options": [
+    "A végvárakat.",
+    "A pozsonyi dómot.",
+    "A bécsi egyetemet."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "old item used verbal nouns (fenntartása, megszállása, kormányzása), asked for 'defending Vienna and Christian Europe' (not in the text, glorifying) and had an absurd option"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-01-ex.json",
+  "id": "b1-haromresz-01.ex07",
+  "set": {
+   "question": "Hol koronázták meg a magyar királyokat 1563 és 1830 között?",
+   "options": [
+    "Pozsonyban, a Szent Márton-dómban.",
+    "Budán, a Mátyás-templomban.",
+    "Esztergomban, a bazilikában."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "the old stem 'a török hódoltság évszázadaiban' is vague (kings were crowned in Buda in 1867 and 1916); dates now in the text"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-01-ex.json",
+  "id": "b1-haromresz-01.ex08",
+  "set": {
+   "question": "Kiket választottak magyar királlyá 1526-ban a mohácsi csata után?",
+   "options": [
+    "Szapolyai Jánost és I. Ferdinándot.",
+    "Hunyadi Jánost és Mátyás királyt.",
+    "II. Lajost és Szapolyai Jánost."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "old item repeated ex02 (where the diet met); the Diet seat is now ex06's neighbour; new item tests the first sentence"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-haromresz-01-voc.json",
+  "old": "    }\n  ]\n}",
+  "new": "    },\n    {\n      \"lemma\": \"országgyűlés\",\n      \"translation\": \"parliament, diet\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kamara\",\n      \"translation\": \"chamber (royal treasury office)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"koronáz\",\n      \"translation\": \"to crown\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"koronázó\",\n      \"translation\": \"coronation (adjective)\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"dóm\",\n      \"translation\": \"cathedral\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"bazilika\",\n      \"translation\": \"basilica\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Mátyás-templom\",\n      \"translation\": \"Matthias Church (Buda)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"helyettes\",\n      \"translation\": \"deputy\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"élén\",\n      \"translation\": \"at the head of\",\n      \"pos\": \"expression\"\n    },\n    {\n      \"lemma\": \"rend\",\n      \"translation\": \"estate (social order of the diet)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fenntart\",\n      \"translation\": \"to maintain, keep up\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"adó\",\n      \"translation\": \"tax\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"megszavaz\",\n      \"translation\": \"to vote through, approve\",\n      \"pos\": \"verb\"\n    }\n  ]\n}",
+  "id": "vocab.b1.haromresz.01",
+  "kind": "hungarian",
+  "why": "unmet word (unmet-words.js): listed in the first lesson that uses it"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-01-gr.json",
+  "old": "\"id\": \"grammar.b1.haromresz.01.administrative-framing\",\n  \"title\": \"Administrative Framing & Capital Seats: Pozsony székhellyel, központként\"",
+  "new": "\"id\": \"grammar.b1.haromresz.01.administrative-framing\",\n  \"title\": \"Recap: -val/-vel and -ként for Seats and Roles\"",
+  "id": "grammar.b1.haromresz.01.administrative-framing",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-01-gr.json",
+  "old": "\"content\": \"In historical and legal descriptions, administrative centers use the sociative construction *valamilyen székhellyel* ('with ... as seat/capital') or the essive-formal suffix *-ként* (*fővárosként, központként* = 'as a capital, as a center').\"",
+  "new": "\"content\": \"You know *-val/-vel* from A1 Unit 28 and *-ként* ('as') from A2 Unit 36. History texts use them to say what a town or an office was: *Pozsony székhellyel működött* ('it worked with Pozsony as its seat'), *központként* ('as a centre'), *helyetteseként* ('as a deputy'). The table lists this lesson's new words and phrases.\"",
+  "id": "grammar.b1.haromresz.01.administrative-framing",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-01-gr.json",
+  "old": "    {\n      \"type\": \"examples\",",
+  "new": "    {\n      \"type\": \"table\",\n      \"title\": \"This lesson's words and phrases\",\n      \"rows\": [\n        [\"Királyi Magyarország\", \"Royal Hungary: the northern and western part, ruled by the Habsburg kings\"],\n        [\"Pozsony székhellyel\", \"with Pozsony as its seat\"],\n        [\"a pozsonyi országgyűlés\", \"the diet that met in Pozsony\"],\n        [\"a király helyettese, a nádor\", \"the king's deputy, the palatine\"],\n        [\"a végvárak\", \"the border fortresses\"]\n      ]\n    },\n    {\n      \"type\": \"examples\",",
+  "id": "grammar.b1.haromresz.01.administrative-framing",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-01-gr.json",
+  "old": "\"spanish\": \"A nádor a király után a legmagasabb méltóságként vezette az ország ügyeit.\"",
+  "new": "\"spanish\": \"A nádor a király helyetteseként állt az országgyűlés élén.\"",
+  "id": "grammar.b1.haromresz.01.administrative-framing",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-02-hodoltsag.json",
+  "old": "\"text\": \"1541. augusztus 29-én, pontosan tizenöt évvel a mohácsi csata után Szulejmán szultán hatalmas sereggel érkezett Buda alá.\"",
+  "new": "\"text\": \"1541 augusztusában Szulejmán szultán hatalmas sereggel érkezett Buda alá, és augusztus 29-én, pontosan tizenöt évvel a mohácsi csata után a török csapatok bevonultak a várba.\"",
+  "id": "story.b1.haromresz.02",
+  "kind": "hungarian",
+  "why": "'érkezett Buda alá' on 29 August conflated the arrival (26 August) and the entry"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-02-hodoltsag.json",
+  "old": "\"text\": \"A török katonák barátként, békésen sétáltak be a várba, majd egy adott jelre kardot rántottak és elfoglalták az erődöt.\"",
+  "new": "\"text\": \"A korabeli beszámolók szerint a török katonák csellel, harc nélkül jutottak be, és elfoglalták az erődöt.\"",
+  "id": "story.b1.haromresz.02",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'barátként, békésen sétáltak be ... adott jelre kardot rántottak' is a legend-like detail told as fact; reduced to what the sources say (ruse, no fight) - check"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-02-hodoltsag.json",
+  "old": "\"text\": \"Ezzel a csellel megkezdődött az ország középső területeit magában foglaló, 150 évig tartó Török Hódoltság korszaka.\"",
+  "new": "\"text\": \"Ezzel kezdődött a Török Hódoltság, amely az ország középső részén mintegy 150 évig tartott. Buda vilajetközponttá vált, a budai pasa irányította a tartományt, a pénzügyeket pedig a defterdár vezette.\"",
+  "id": "story.b1.haromresz.02",
+  "kind": "hungarian",
+  "why": "'150 évig' is approximate (1541-1686/1699); defterdár was never in the story but ex04 asks for him"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-02-hodoltsag.json",
+  "old": "\"text\": \"Buda vilajetközponttá vált, a budai pasa irányította a tartományt, a keresztény templomokat pedig dzsámikká alakították át.\"",
+  "new": "\"text\": \"Több keresztény templomot dzsámivá alakítottak át. A lakosság gyakran a töröknek és a magyar földesuraknak is adózott; ezt nevezik kettős adóztatásnak.\"",
+  "id": "story.b1.haromresz.02",
+  "kind": "hungarian",
+  "why": "'a keresztény templomokat' (all of them) overstated; double taxation now explained (ex05, consolidation ex12/ex15 rely on it); 'szenvedett' removed"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-02-hodoltsag.json",
+  "old": "\"text\": \"A lakosság kettős adóztatástól szenvedett, de a török kor emlékei — mint a gyógyfürdők és minaretek — máig láthatók Magyarországon.\"",
+  "new": "\"text\": \"A török korból máig láthatók emlékek Magyarországon, például a törökfürdők, a minaretek és Gül Baba türbéje Budán.\"",
+  "id": "story.b1.haromresz.02",
+  "kind": "hungarian",
+  "why": "'gyógyfürdők' conflicted with the vocabulary word törökfürdő; ex06 asks for türbe"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-02-ex.json",
+  "id": "b1-haromresz-02.ex02",
+  "set": {
+   "question": "Melyik évben vonultak be a török csapatok Buda várába?"
+  },
+  "kind": "hungarian",
+  "why": "the story no longer says 'Szulejmán foglalta el csellel' as a flat fact"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-02-ex.json",
+  "id": "b1-haromresz-02.ex03",
+  "set": {
+   "question": "Ki irányította a budai vilajetet?",
+   "options": [
+    "A budai pasa.",
+    "A pozsonyi nádor.",
+    "Az erdélyi fejedelem."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'legfőbb vezetője a Hódoltság területén' is not in the text; option 'az egri várkapitány' is an unmet word"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-02-ex.json",
+  "id": "b1-haromresz-02.ex04",
+  "set": {
+   "question": "Melyik szó jelenti az oszmán tartomány pénzügyi vezetőjét?"
+  },
+  "kind": "hungarian",
+  "why": "a defterdar was the finance chief, not a 'tax register official'; the story now says it"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-02-ex.json",
+  "id": "b1-haromresz-02.ex06",
+  "set": {
+   "options": [
+    "Törökfürdők, minaretek és türbék.",
+    "Gótikus katedrálisok a Dunakanyarban.",
+    "Barokk kastélyok az Alföldön."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "story and item now both say törökfürdő"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-02-ex.json",
+  "id": "b1-haromresz-02.ex07",
+  "set": {
+   "question": "A korabeli beszámolók szerint hogyan jutottak be a török csapatok Buda várába 1541-ben?",
+   "options": [
+    "Csellel, harc nélkül.",
+    "Egyéves ostrommal és ágyúzással.",
+    "A magyar rendek önként átadták a kulcsokat."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'megszállva' is a -va participle (Unit 57); 'tartó' removed; wording hedged"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-02-ex.json",
+  "id": "b1-haromresz-02.ex08",
+  "set": {
+   "question": "Mi volt a vilajet az oszmán közigazgatásban?",
+   "options": [
+    "Egy tartomány, amelyet pasa vezetett.",
+    "A szultán palotája Isztambulban.",
+    "Egy kis falu a határ mellett."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'a legnagyobb közigazgatási tartomány' was not in the text and 'a janicsárok különleges fegyvere' was absurd"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-haromresz-02-voc.json",
+  "old": "    }\n  ]\n}",
+  "new": "    },\n    {\n      \"lemma\": \"pénzügy\",\n      \"translation\": \"finances\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"janicsár\",\n      \"translation\": \"janissary\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szpáhi\",\n      \"translation\": \"sipahi (Ottoman cavalryman)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"türbe\",\n      \"translation\": \"tomb of a Muslim holy man or pasha\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"gótikus\",\n      \"translation\": \"Gothic\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"katedrális\",\n      \"translation\": \"cathedral\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"barokk\",\n      \"translation\": \"Baroque\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"kastély\",\n      \"translation\": \"manor house, castle\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"csel\",\n      \"translation\": \"ruse, trick\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"ostrom\",\n      \"translation\": \"siege\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"ágyúzás\",\n      \"translation\": \"bombardment\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"bevonul\",\n      \"translation\": \"to march in\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"beszámoló\",\n      \"translation\": \"account, report\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"adózik\",\n      \"translation\": \"to pay tax\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"hódoltsági\",\n      \"translation\": \"of the Ottoman-ruled territory\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"Alföld\",\n      \"translation\": \"the Great Plain\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"csapat\",\n      \"translation\": \"troop, unit of soldiers\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Dunakanyar\",\n      \"translation\": \"the Danube Bend\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "id": "vocab.b1.haromresz.02",
+  "kind": "hungarian",
+  "why": "unmet word (unmet-words.js): listed in the first lesson that uses it"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-02-gr.json",
+  "old": "\"id\": \"grammar.b1.haromresz.02.ottoman-terminology\",\n  \"title\": \"Ottoman Terminology & Complex Administrative Systems in Hungarian\"",
+  "new": "\"id\": \"grammar.b1.haromresz.02.ottoman-terminology\",\n  \"title\": \"Ottoman Words with Endings You Know\"",
+  "id": "grammar.b1.haromresz.02.ottoman-terminology",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-02-gr.json",
+  "old": "\"content\": \"Discussing the Ottoman occupation (*Török Hódoltság*) involves integrating historical loanwords into Hungarian morphology (*vilajet, vilajetben, vilajetekre; budai pasa, pasaság; defterdár*). Notice compound nouns like *kettős adóztatás* (double taxation).\"",
+  "new": "\"content\": \"You know *-ban/-ben* (A1 Unit 5), *-ra/-re* (A2 Unit 6) and *-ként* (A2 Unit 36). Ottoman words take them like any other noun: *a vilajetben*, *vilajetekre*, *a szultán képviselőjeként*. Notice compound nouns like *kettős adóztatás* ('double taxation'). The table lists this lesson's new words.\"",
+  "id": "grammar.b1.haromresz.02.ottoman-terminology",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-02-gr.json",
+  "old": "    {\n      \"type\": \"examples\",",
+  "new": "    {\n      \"type\": \"table\",\n      \"title\": \"This lesson's words\",\n      \"rows\": [\n        [\"vilajet\", \"a province of the Ottoman Empire\"],\n        [\"budai pasa\", \"the pasha: the governor of the province of Buda\"],\n        [\"defterdár\", \"the finance chief of a province\"],\n        [\"dzsámi\", \"mosque\"],\n        [\"minaret\", \"the tower of a mosque\"],\n        [\"türbe\", \"the tomb of a Muslim holy man or pasha\"]\n      ]\n    },\n    {\n      \"type\": \"examples\",",
+  "id": "grammar.b1.haromresz.02.ottoman-terminology",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-02-gr.json",
+  "old": "\"spanish\": \"Buda 1541-es cseles elfoglalása után az oszmánok vilajetekre osztották a meghódított területeket.\"",
+  "new": "\"spanish\": \"Miután az oszmánok 1541-ben csellel elfoglalták Budát, vilajetet szerveztek a meghódított területekből.\"",
+  "id": "grammar.b1.haromresz.02.ottoman-terminology",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-03-erdely.json",
+  "old": "\"title\": \"Erdély: A magyar kultúra és a vallásszabadság bástyája\"",
+  "new": "\"title\": \"Erdély: magyar kultúra és vallásszabadság\"",
+  "id": "story.b1.haromresz.03",
+  "kind": "hungarian",
+  "why": "'bástyája' (bastion) is a romanticising judgement"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-03-erdely.json",
+  "old": "\"text\": \"A Kárpátok keleti hegyei között létrejött az Erdélyi Fejedelemség Szapolyai János fia, János Zsigmond vezetésével.\"",
+  "new": "\"text\": \"A Magyar Királyság keleti részéből Szapolyai János fia, János Zsigmond idején, 1570-ben alakult meg az Erdélyi Fejedelemség.\"",
+  "id": "story.b1.haromresz.03",
+  "kind": "hungarian",
+  "why": "'A Kárpátok keleti hegyei között' is not how the principality is placed; 1570 (Treaty of Speyer) added"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-03-erdely.json",
+  "old": "\"text\": \"Bár Erdély a török szultán hűbérese volt és éves adót fizetett Isztambulnak, belső függetlenséget élvezett.\"",
+  "new": "\"text\": \"Bár Erdély a török szultán hűbérese volt és évente adót fizetett Isztambulnak, belső ügyeiben önálló maradt.\"",
+  "id": "story.b1.haromresz.03",
+  "kind": "hungarian",
+  "why": "'belső függetlenséget élvezett' overstates (it was autonomy, not independence); ex08 asks who got the tribute"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-03-erdely.json",
+  "old": "\"text\": \"Gyulafehérvár lett a fejedelmi székhely, ahol a reformáció eszméi termékeny talajra találtak, és virágzott a magyar nyelvű irodalom.\"",
+  "new": "\"text\": \"Gyulafehérvár lett a fejedelmi székhely. A reformáció gyorsan elterjedt Erdélyben, és magyar nyelvű iskolák és nyomdák is működtek.\"",
+  "id": "story.b1.haromresz.03",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'ahol virágzott a magyar nyelvű irodalom' tied literature to Gyulafehérvár alone; ex07 now rests on schools and printing presses - check"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-03-erdely.json",
+  "old": "\"text\": \"1568-ban a tordai országgyűlésen a világon legelőször iktatták törvénybe a vallásszabadságot négy keresztény felekezet számára.\"",
+  "new": "\"text\": \"1568-ban a tordai országgyűlés kimondta, hogy mindenki szabadon követheti a vallását. A katolikus, az evangélikus, a református és az unitárius vallás később egyaránt bevett vallás lett. Ezt a törvényt gyakran a vallási türelem egyik első európai törvényeként említik.\"",
+  "id": "story.b1.haromresz.03",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'a világon legelőször' is a disputed superlative (earlier tolerance acts exist, e.g. Kutná Hora 1485) and the four 'received religions' date from a few years later; hedged - check"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-03-erdely.json",
+  "old": "\"text\": \"Erdély évszázadokon át a magyar önállóság, az anyanyelvi műveltség és a diplomáciai egyensúlyozás jelképévé vált.\"",
+  "new": "\"text\": \"A 16–17. században Erdély a magyar nyelvű könyvnyomtatás egyik fontos központja volt, a fejedelmek pedig két birodalom között egyensúlyoztak.\"",
+  "id": "story.b1.haromresz.03",
+  "kind": "hungarian",
+  "why": "'évszázadokon át ... jelképévé vált' is a modern judgement and the principality lasted about 140 years"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-03-ex.json",
+  "id": "b1-haromresz-03.ex02",
+  "set": {
+   "question": "Melyik város volt az Erdélyi Fejedelemség fejedelmi székhelye?",
+   "options": [
+    "Gyulafehérvár",
+    "Székesfehérvár",
+    "Marosvásárhely"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (13 vs 7); the story gives the seat, not the 'cultural centre'"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-03-ex.json",
+  "id": "b1-haromresz-03.ex03",
+  "set": {
+   "question": "Hol mondták ki a vallásszabadságot 1568-ban?",
+   "options": [
+    "Tordán, az országgyűlésen.",
+    "Pozsonyban, az országgyűlésen.",
+    "Gyulafehérváron, a fejedelmi udvarban."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (24 vs 18); 'diétán' and 'rákosi' unmet; 'iktatták törvénybe' replaced by the story's verb"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-03-ex.json",
+  "id": "b1-haromresz-03.ex04",
+  "set": {
+   "question": "Melyik szó illik a mondatba: „______ Erdély adót fizetett a töröknek, belső önállóságát megőrizte.”?",
+   "options": [
+    "Bár",
+    "Mert",
+    "Azért"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "mert-because"
+   }
+  },
+  "kind": "hungarian",
+  "why": "noha is taught in a later unit (recaps elsewhere name Unit 29) and mintha is Unit 70 (mixed-conditionals)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-03-ex.json",
+  "id": "b1-haromresz-03.ex05",
+  "set": {
+   "sentence": "Az 1568-as tordai országgyűlés kimondta a ____.",
+   "english": "The 1568 Diet of Torda declared religious freedom."
+  },
+  "kind": "hungarian",
+  "why": "'a világon elsőként ... négy keresztény felekezet' is a disputed superlative and the four denominations are later; 'ediktum', 'felekezet' unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-03-ex.json",
+  "id": "b1-haromresz-03.ex06",
+  "set": {
+   "question": "Mit mondott ki az 1568-as tordai országgyűlés?",
+   "options": [
+    "Mindenki szabadon követheti a vallását.",
+    "A katolikus vallás lesz az ország egyetlen vallása.",
+    "A fejedelem dönt mindenki vallásáról."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (122 vs 84); 'Európában egyedülálló' is a disputed claim; wrong options false and near equal length"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-03-ex.json",
+  "id": "b1-haromresz-03.ex07",
+  "set": {
+   "question": "Melyik nyelvű könyvnyomtatásnak volt Erdély fontos központja?",
+   "options": [
+    "A magyar nyelvűnek.",
+    "A török nyelvűnek.",
+    "A lengyel nyelvűnek."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (96 vs 49) and tell 'Teljesen'; 'bástyája' and 'reformáció idején' not in the text"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-03-ex.json",
+  "id": "b1-haromresz-03.ex08",
+  "set": {
+   "question": "Kinek fizetett évente adót az Erdélyi Fejedelemség?",
+   "options": [
+    "A török szultánnak.",
+    "A Habsburg császárnak.",
+    "A lengyel királynak."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'ügyes diplomáciával', 'Orosz Birodalom és Velence', 'teljes elszigeteltség' are not in the text; asks the stated fact (tribute to Istanbul)"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-haromresz-03-voc.json",
+  "old": "    }\n  ]\n}",
+  "new": "    },\n    {\n      \"lemma\": \"Székesfehérvár\",\n      \"translation\": \"Székesfehérvár (medieval coronation city)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Marosvásárhely\",\n      \"translation\": \"Marosvásárhely (Târgu Mureș)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"bár\",\n      \"translation\": \"although\",\n      \"pos\": \"conjunction\"\n    },\n    {\n      \"lemma\": \"katolikus\",\n      \"translation\": \"Catholic\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"evangélikus\",\n      \"translation\": \"Lutheran\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"unitárius\",\n      \"translation\": \"Unitarian\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"kimond\",\n      \"translation\": \"to declare, pronounce\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"bevett vallás\",\n      \"translation\": \"received (officially recognised) religion\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"hűbéres\",\n      \"translation\": \"vassal\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"egyensúlyoz\",\n      \"translation\": \"to balance\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"nyomda\",\n      \"translation\": \"printing press, printing house\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"belső\",\n      \"translation\": \"internal\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"önálló\",\n      \"translation\": \"independent, autonomous\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"Torda\",\n      \"translation\": \"Torda (Turda)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"ügy\",\n      \"translation\": \"matter, affair\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"császár\",\n      \"translation\": \"emperor\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "id": "vocab.b1.haromresz.03",
+  "kind": "hungarian",
+  "why": "unmet word (unmet-words.js): listed in the first lesson that uses it"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-03-gr.json",
+  "old": "\"id\": \"grammar.b1.haromresz.03.concessive-clauses\",\n  \"title\": \"Diplomatic Balance & Concession: noha, bár, jóllehet, ugyanakkor\"",
+  "new": "\"id\": \"grammar.b1.haromresz.03.concessive-clauses\",\n  \"title\": \"Concession with bár: Transylvania Between Two Empires\"",
+  "id": "grammar.b1.haromresz.03.concessive-clauses",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-03-gr.json",
+  "old": "\"content\": \"Narrating Transylvania's balancing act between two empires requires concessive conjunctions: *bár / noha / jóllehet* ('although, even though') and contrasting adverbs like *ugyanakkor* ('at the same time') and *mindazonáltal* ('nonetheless').\"",
+  "new": "\"content\": \"You know *annak ellenére, hogy* from B1 Unit 9. *Bár* also means 'although': it starts the clause that names the obstacle, and the main clause says what happened anyway. Put a comma between the two clauses: *Bár Erdély adót fizetett a szultánnak, belső ügyeiben önálló maradt.* Use *bár* for the contrast in this unit's texts.\"",
+  "id": "grammar.b1.haromresz.03.concessive-clauses",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-03-gr.json",
+  "old": "    {\n      \"type\": \"examples\",",
+  "new": "    {\n      \"type\": \"table\",\n      \"title\": \"Two ways to say 'although'\",\n      \"rows\": [\n        [\"Bár Erdély adót fizetett, önálló maradt.\", \"Although Transylvania paid tribute, it stayed independent.\"],\n        [\"Annak ellenére, hogy Erdély adót fizetett, önálló maradt.\", \"Even though Transylvania paid tribute, it stayed independent.\"]\n      ]\n    },\n    {\n      \"type\": \"examples\",",
+  "id": "grammar.b1.haromresz.03.concessive-clauses",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-03-gr.json",
+  "old": "\"spanish\": \"Noha Erdély adót fizetett a szultánnak, belső önállóságát és magyar kultúráját megőrizte.\"",
+  "new": "\"spanish\": \"Bár Erdély adót fizetett a szultánnak, belső önállóságát és magyar kultúráját megőrizte.\"",
+  "id": "grammar.b1.haromresz.03.concessive-clauses",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-03-gr.json",
+  "old": "\"spanish\": \"Bár a fejedelemség két hatalmas birodalom között lavírozott, virágzó kulturális központtá fejlődött.\"",
+  "new": "\"spanish\": \"Bár a fejedelemség két hatalmas birodalom között egyensúlyozott, virágzó kulturális központtá fejlődött.\"",
+  "id": "grammar.b1.haromresz.03.concessive-clauses",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-03-gr.json",
+  "old": "\"spanish\": \"Az 1568-as tordai országgyűlésen törvénybe iktatták a vallásszabadságot, ami Európában egyedülálló volt.\"",
+  "new": "\"spanish\": \"Bár Erdély két birodalom között élt, a tordai országgyűlés 1568-ban kimondta a vallásszabadságot.\"",
+  "id": "grammar.b1.haromresz.03.concessive-clauses",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-04-veghazak.json",
+  "old": "\"text\": \"A három országrész határán több száz kilométer hosszan kiépült a híres magyar végvárvonal.\"",
+  "new": "\"text\": \"A Királyi Magyarország és a Hódoltság határán több száz kilométer hosszan kiépült a végvárvonal.\"",
+  "id": "story.b1.haromresz.04",
+  "kind": "hungarian",
+  "why": "'A három országrész határán' is vague - the line ran between Royal Hungary and the Ottoman-ruled land; 'híres' removed"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-04-veghazak.json",
+  "old": "\"text\": \"Eger, Győr, Kanizsa és Szigetvár falainál a végvári vitézek mindennapos harcokban, bajvívásokban és portyákban védték a hazát.\"",
+  "new": "\"text\": \"Eger, Győr, Kanizsa és Szigetvár környékén a végvári vitézek mindennapos harcokban és portyákban védték a határvidéket.\"",
+  "id": "story.b1.haromresz.04",
+  "kind": "hungarian",
+  "why": "'falainál ... védték a hazát': Győr, Szigetvár and Kanizsa fell at different dates (1594, 1566, 1600), 'a hazát' is patriotic colouring"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-04-veghazak.json",
+  "old": "\"text\": \"Ugyanakkor a háborús pusztítás közepette az alföldi mezővárosok — mint Kecskemét, Nagykőrös és Debrecen — megerősödtek.\"",
+  "new": "\"text\": \"A két sereg bajnokai között szokás volt bajvívásban megmérkőzni a várak falai előtt.\"",
+  "id": "story.b1.haromresz.04",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the lesson teaches szokás volt + infinitive and the story had no example of it; single combat before the walls is well attested - check"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-04-veghazak.json",
+  "old": "\"text\": \"A tőzsérek évente több tízezer magyar szürkemarhát hajtottak lábon a bécsi, nürnbergi és velencei piacokra.\"",
+  "new": "\"text\": \"Közben az alföldi mezővárosok — például Kecskemét, Nagykőrös és Debrecen — megerősödtek. A hódoltsági mezővárosok közül sok közvetlenül a szultánnak adózott, ezért viszonylag nagy önállóságot kapott.\"",
+  "id": "story.b1.haromresz.04",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "ex06 asks about direct taxation to the sultan (the 'hász' towns), which the story never said - check"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-04-veghazak.json",
+  "old": "\"text\": \"A kereskedelemből származó jövedelem segített a lakosságnak túlélni a nehéz évtizedeket és fenntartani a református iskolákat.\"",
+  "new": "\"text\": \"A tőzsérek évente több tízezer magyar szürkemarhát hajtottak lábon a bécsi, nürnbergi és velencei piacokra. A kereskedelemből származó jövedelem segített a lakosságnak túlélni a nehéz évtizedeket, és több városban fenntartani a református iskolákat.\"",
+  "id": "story.b1.haromresz.04",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'a lakosságnak fenntartani a református iskolákat' generalised; hedged to 'több városban' - check"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-04-ex.json",
+  "id": "b1-haromresz-04.ex04",
+  "set": {
+   "options": [
+    "szokás",
+    "kötelező",
+    "tilos"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'ritka' and 'lehetetlen' are unmet; kötelező and tilos are known"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-04-ex.json",
+  "id": "b1-haromresz-04.ex05",
+  "set": {
+   "sentence": "A végvári vitézek rendszeresen ____ indultak a határ túloldalára.",
+   "english": "The border fortress warriors regularly set out on a raid across the border."
+  },
+  "kind": "hungarian",
+  "why": "'feltartóztatására' is a verbal noun (Unit 31), 'portyázók', 'ellenséges' unmet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-04-ex.json",
+  "id": "b1-haromresz-04.ex06",
+  "set": {
+   "options": [
+    "Közvetlenül a szultánnak adóztak.",
+    "Fegyverrel kiűzték a törököket az országból.",
+    "Lemondtak a keresztény vallásukról."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'így autonómiát élveztek' and 'összes' dropped; options near equal length"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-04-ex.json",
+  "id": "b1-haromresz-04.ex07",
+  "set": {
+   "question": "Mivel telt a végvári vitézek mindennapi élete?",
+   "options": [
+    "Harcokkal, portyákkal és bajvívásokkal.",
+    "Marhakereskedelemmel és vásárokkal.",
+    "Iskolai órákkal és vásárokkal."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "tell 'Kizárólag'; 'bajtársi szolidaritás' and 'udvari élet' not in the text"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-04-ex.json",
+  "id": "b1-haromresz-04.ex08",
+  "set": {
+   "options": [
+    "Nagy nyugat-európai városok piacaira.",
+    "A szomszédos falvak piacaira.",
+    "Moszkva és Kijev piacaira."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'Csak' tell; cattle to Constantinople for the sultan is not what the text says"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-04-ex.json",
+  "id": "b1-haromresz-04.ex09",
+  "set": {
+   "options": [
+    "Szokás volt portyázni a határvidéken.",
+    "Szokás lesz portyázni a határvidéken.",
+    "Szokás volt portyázik a határvidéken."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "*Szokás vagyok* breaks two things (person and tense)"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-haromresz-04-voc.json",
+  "old": "    }\n  ]\n}",
+  "new": "    },\n    {\n      \"lemma\": \"portyázik\",\n      \"translation\": \"to go on a raid\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"hajt\",\n      \"translation\": \"to drive (animals)\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"tőzsér\",\n      \"translation\": \"cattle dealer\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szürkemarha\",\n      \"translation\": \"Hungarian grey cattle\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"végvár\",\n      \"translation\": \"border fortress\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"selyem\",\n      \"translation\": \"silk\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fűszer\",\n      \"translation\": \"spice\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"vas\",\n      \"translation\": \"iron\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szolgál\",\n      \"translation\": \"to serve\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"parancs\",\n      \"translation\": \"order, command\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"vásár\",\n      \"translation\": \"fair, market\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"megmérkőzik\",\n      \"translation\": \"to fight (a duel)\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"bajnok\",\n      \"translation\": \"champion\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Eger\",\n      \"translation\": \"Eger (border fortress town)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"harcol\",\n      \"translation\": \"to fight\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"Moszkva\",\n      \"translation\": \"Moscow\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Kijev\",\n      \"translation\": \"Kyiv\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "id": "vocab.b1.haromresz.04",
+  "kind": "hungarian",
+  "why": "unmet word (unmet-words.js): listed in the first lesson that uses it"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-04-gr.json",
+  "old": "\"id\": \"grammar.b1.haromresz.04.historical-routines\",\n  \"title\": \"Describing Historical Routines & Habitual Past: rendszeresen, gyakran, szokás volt\"",
+  "new": "\"id\": \"grammar.b1.haromresz.04.historical-routines\",\n  \"title\": \"szokott → szokás volt: Customs of the Past\"",
+  "id": "grammar.b1.haromresz.04.historical-routines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-04-gr.json",
+  "old": "\"content\": \"To depict habitual life along the frontier, Hungarian uses frequency adverbs (*rendszeresen* = regularly, *gyakran* = often, *folyamatosan* = continuously) and impersonal expressions like *szokás volt* (+ infinitive: 'it was customary to...').\"",
+  "new": "\"content\": \"You know *szokott* + infinitive and *gyakran* from A1 Unit 17, and adverbs in *-an/-en* such as *folyamatosan* from A2 Unit 19. History texts say what was customary in the past with *szokás volt* + infinitive: *Szokás volt portyázni* ('it was the custom to raid'). *rendszeresen* ('regularly') and *folyamatosan* ('continuously') say how often.\"",
+  "id": "grammar.b1.haromresz.04.historical-routines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-04-gr.json",
+  "old": "    {\n      \"type\": \"examples\",",
+  "new": "    {\n      \"type\": \"table\",\n      \"title\": \"How to say it was the custom\",\n      \"rows\": [\n        [\"Szokás volt portyázni.\", \"It was the custom to raid.\"],\n        [\"Szokás volt a szürkemarhát nyugatra hajtani.\", \"It was the custom to drive the grey cattle west.\"],\n        [\"A vitézek rendszeresen portyáztak.\", \"The warriors raided regularly.\"]\n      ]\n    },\n    {\n      \"type\": \"examples\",",
+  "id": "grammar.b1.haromresz.04.historical-routines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-04-gr.json",
+  "old": "\"spanish\": \"A mezővárosok kereskedői százezrével hajtották a szürkemarhát a nyugati piacokra.\"",
+  "new": "\"spanish\": \"A mezővárosok kereskedői évente több tízezer szürkemarhát hajtottak a nyugati piacokra.\"",
+  "id": "grammar.b1.haromresz.04.historical-routines",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-05-megosztottsag.json",
+  "old": "\"text\": \"Magyarország másfél évszázadon keresztül, 1541-től 1699-ig három részre szakadva harcolt a túlélésért.\"",
+  "new": "\"text\": \"A 16. század közepétől a 17. század végéig Magyarország három részre szakadt: a Királyi Magyarországra, a Hódoltságra és az Erdélyi Fejedelemségre. Ez a megosztottság mintegy másfél évszázadig tartott.\"",
+  "id": "story.b1.haromresz.05",
+  "kind": "hungarian",
+  "why": "'három részre szakadva harcolt a túlélésért' (a -va participle and dramatic); the three parts are now named (consolidation ex05 asks for them)"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-05-megosztottsag.json",
+  "old": "\"text\": \"A folyamatos harcok miatt a déli és középső országrészek falvai elnéptelenedtek, virágzó szántóföldek váltak pusztává.\"",
+  "new": "\"text\": \"A hosszú háborúk miatt a déli és középső országrészben sok falu elnéptelenedett, és a szántóföldek egy része pusztává vált.\"",
+  "id": "story.b1.haromresz.05",
+  "kind": "hungarian",
+  "why": "'virágzó szántóföldek váltak pusztává' overstated"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-05-megosztottsag.json",
+  "old": "\"text\": \"A nemzet azonban a tragikus szétszakítottság ellenére sem veszítette el kulturális és jogi egységét.\"",
+  "new": "\"text\": \"A három országrészben ugyanazt a nyelvet beszélték, és a jogi hagyomány is közös maradt.\"",
+  "id": "story.b1.haromresz.05",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "'nem veszítette el kulturális és jogi egységét' is an identity judgement; the shared language and legal tradition (Werbőczy's Hármaskönyv) are the factual core - check"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-05-megosztottsag.json",
+  "old": "\"text\": \"1686-ban az egyesült európai keresztény seregek véres ostromban visszafoglalták Budát a törököktől.\"",
+  "new": "\"text\": \"1686-ban a Habsburg-vezetésű szövetséges seregek hosszú ostrom után visszafoglalták Budát a törököktől.\"",
+  "id": "story.b1.haromresz.05",
+  "kind": "hungarian",
+  "why": "'egyesült európai keresztény seregek ... véres ostrom' is a religious and dramatic framing; the army was Habsburg-led (Holy League)"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-haromresz-05-megosztottsag.json",
+  "old": "\"text\": \"Az 1699-es karlócai békével lezárult a hódoltság korszaka, és megkezdődött a szétrombolt ország hatalmas újjáépítése.\"",
+  "new": "\"text\": \"Az 1699-es karlócai békében a törökök lemondtak Magyarország nagy részéről a Temesköz kivételével. Ezután kezdődött meg az elnéptelenedett ország újjáépítése.\"",
+  "id": "story.b1.haromresz.05",
+  "kind": "hungarian",
+  "why": "the Peace of Karlowitz did not end the Ottoman presence everywhere (the Temesköz stayed Ottoman until 1718); 'hatalmas újjáépítés' dropped"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-05-ex.json",
+  "id": "b1-haromresz-05.ex02",
+  "set": {
+   "question": "Melyik évben foglalták vissza a szövetséges seregek Buda várát a töröktől?"
+  },
+  "kind": "hungarian",
+  "why": "'keresztény szövetséges hadak' is a religious framing"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-05-ex.json",
+  "id": "b1-haromresz-05.ex03",
+  "set": {
+   "question": "Melyik békében mondtak le a törökök 1699-ben Magyarország nagy részéről?",
+   "options": [
+    "A karlócai békében.",
+    "A pozsonyi békében.",
+    "A szatmári békében."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'hivatalosan lezárta a hódoltságot' is too strong (Temesköz); 'tordai ediktum' is not a peace"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-05-ex.json",
+  "id": "b1-haromresz-05.ex04",
+  "set": {
+   "question": "Melyik szó illik a mondatba: „Három országrész létezett egymás mellett másfél évszázadon ______.”?",
+   "options": [
+    "keresztül",
+    "alatt",
+    "helyett"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "postpositions-basic",
+    "2": "postpositions-altal-reven"
+   }
+  },
+  "kind": "hungarian",
+  "why": "*ellenére* is Unit 57 (concessive-postpositions) and the stem had a -va participle (szakadva)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-05-ex.json",
+  "id": "b1-haromresz-05.ex07",
+  "set": {
+   "question": "Mi történt sok faluval a déli és középső országrészben a háborúk idején?",
+   "options": [
+    "Sok falu elnéptelenedett.",
+    "Sok falu lakossága gyorsan megnőtt.",
+    "Sok falu városi rangot kapott."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (127 vs 79); verbal nouns (elpusztulásával, megváltozásával, létrejöttével, működésével) and claims (ethnic proportions, resettlement) not in the text"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-05-ex.json",
+  "id": "b1-haromresz-05.ex08",
+  "set": {
+   "question": "Mi kötötte össze a három országrészt a megosztottság idején?",
+   "options": [
+    "A közös nyelv és a közös jogi hagyomány.",
+    "Egy közös király, aki Budán élt.",
+    "A török szultán közös adórendszere."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'nemzeti egység', 'révén', 'nyelvhasználattal', 'működésével' - unmet words, verbal nouns and a national-unity judgement"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-haromresz-05-voc.json",
+  "old": "    }\n  ]\n}",
+  "new": "    },\n    {\n      \"lemma\": \"megkezdődik\",\n      \"translation\": \"to begin\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"Temesköz\",\n      \"translation\": \"Temesköz (the Banat of Temes)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szövetséges\",\n      \"translation\": \"allied\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"karlócai béke\",\n      \"translation\": \"Peace of Karlowitz (1699)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szatmári béke\",\n      \"translation\": \"Peace of Szatmár (1711)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"pozsonyi béke\",\n      \"translation\": \"Peace of Pozsony (1626)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"lemond\",\n      \"translation\": \"to give up, renounce\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"kivétel\",\n      \"translation\": \"exception\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"rang\",\n      \"translation\": \"rank, status\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"megnő\",\n      \"translation\": \"to grow\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"sereg\",\n      \"translation\": \"army\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"katona\",\n      \"translation\": \"soldier\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Moldva\",\n      \"translation\": \"Moldavia\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Havasalföld\",\n      \"translation\": \"Wallachia\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Dunántúl\",\n      \"translation\": \"Transdanubia\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"Felvidék\",\n      \"translation\": \"Upper Hungary (the northern part of the old kingdom)\",\n      \"pos\": \"noun\"\n    }\n  ]\n}",
+  "id": "vocab.b1.haromresz.05",
+  "kind": "hungarian",
+  "why": "unmet word (unmet-words.js): listed in the first lesson that uses it"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-05-gr.json",
+  "old": "\"id\": \"grammar.b1.haromresz.05.temporal-durations\",\n  \"title\": \"Long-Duration Historical Expressions: másfél évszázadon át, évtizedekig\"",
+  "new": "\"id\": \"grammar.b1.haromresz.05.temporal-durations\",\n  \"title\": \"Long Periods: keresztül and -ig in History Texts\"",
+  "id": "grammar.b1.haromresz.05.temporal-durations",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-05-gr.json",
+  "old": "\"content\": \"To measure extended historical periods, use postpositions and adverbial case suffixes: *másfél évszázadon keresztül / át* (across a century and a half), *évtizedekig tartó* (lasting for decades), and *végig* (throughout).\"",
+  "new": "\"content\": \"You know *keresztül* ('through, throughout') from A2 Unit 5 and *-ig* ('until, for') from B1 Unit 15. History texts use them for long periods: *másfél évszázadon keresztül* ('for a century and a half'), *évtizedekig* ('for decades'), *1541-től 1699-ig* ('from 1541 to 1699').\"",
+  "id": "grammar.b1.haromresz.05.temporal-durations",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-05-gr.json",
+  "old": "    {\n      \"type\": \"examples\",",
+  "new": "    {\n      \"type\": \"table\",\n      \"title\": \"Long periods\",\n      \"rows\": [\n        [\"másfél évszázadon keresztül\", \"for a century and a half\"],\n        [\"évtizedekig\", \"for decades\"],\n        [\"1541-től 1699-ig\", \"from 1541 to 1699\"],\n        [\"az újjáépítés\", \"the rebuilding\"]\n      ]\n    },\n    {\n      \"type\": \"examples\",",
+  "id": "grammar.b1.haromresz.05.temporal-durations",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-05-gr.json",
+  "old": "\"spanish\": \"Magyarország másfél évszázadon keresztül három részre szakadva létezett.\"",
+  "new": "\"spanish\": \"Magyarország másfél évszázadon keresztül három részből állt.\"",
+  "id": "grammar.b1.haromresz.05.temporal-durations",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-haromresz-05-gr.json",
+  "old": "\"spanish\": \"A megosztottság ellenére a magyar jog és nemzeti öntudat folytonossága fennmaradt.\"",
+  "new": "\"spanish\": \"Bár az ország három részre szakadt, a jogi hagyomány mindhárom részben közös maradt.\"",
+  "id": "grammar.b1.haromresz.05.temporal-durations",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex05",
+  "set": {
+   "question": "Mely három részre szakadt Magyarország 1541 után?",
+   "options": [
+    "A Királyi Magyarországra, a Hódoltságra és Erdélyre.",
+    "Erdélyre, Moldvára és Havasalföldre.",
+    "A Dunántúlra, az Alföldre és a Felvidékre."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'középkori Magyarország 1541 után' is wrong (the medieval kingdom ended in 1526); options absurd ('Poroszország', 'külön királyokkal')"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex06",
+  "set": {
+   "question": "Melyik évben került török kézre Buda vára?"
+  },
+  "kind": "hungarian",
+  "why": "'megpecsételve az ország három részre szakadását' has a -va participle and a verbal noun"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex07",
+  "set": {
+   "question": "Melyik városban volt az Erdélyi Fejedelemség székhelye?",
+   "options": [
+    "Gyulafehérváron.",
+    "Székesfehérváron.",
+    "Marosvásárhelyen.",
+    "Pozsonyban."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (16 vs 11); 'székhelye működött' is not Hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex08",
+  "set": {
+   "question": "Melyik évben foglalták vissza Budát a szövetséges seregek?"
+  },
+  "kind": "hungarian",
+  "why": "'keresztény' framing"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex09",
+  "set": {
+   "options": [
+    "Bár Erdély adót fizetett a szultánnak, belső önállóságát megőrizte.",
+    "Mert Erdély adót fizetett a szultánnak, belső önállóságát megőrizte.",
+    "Bár Erdély adót fizetett a szultánnak, ezért belső önállóságát megőrizte."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "mert-because"
+   }
+  },
+  "kind": "hungarian",
+  "why": "the old wrong options broke two things each (mert after bár plus a negation; a missing comma)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex12",
+  "set": {
+   "sentence": "A hódoltsági parasztok ____ adóztatástól szenvedtek: a töröknek és a magyar földesuraknak is fizettek.",
+   "english": "The peasants of the Ottoman-ruled territory suffered from double taxation: they paid both the Turks and the Hungarian landlords."
+  },
+  "kind": "hungarian",
+  "why": "'a két hatalom felé' is not natural Hungarian after adóztatás"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex13",
+  "set": {
+   "sentence": "A török uralom Magyarország egy részén ____ évszázadon keresztül tartott.",
+   "english": "Turkish rule in part of Hungary lasted for a century and a half."
+  },
+  "kind": "hungarian",
+  "why": "'nehezedett' unmet; 'Turkish rule weighed on Hungary' suggests the whole country"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex14",
+  "set": {
+   "question": "Melyik békét kötötték 1699-ben a törökökkel?",
+   "options": [
+    "A karlócai békét.",
+    "A pozsonyi békét.",
+    "A bécsi békét.",
+    "A szatmári békét."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'végleg' too strong; 'tordai ediktum' is not a peace"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex15",
+  "set": {
+   "question": "Mit jelentett a „kettős adóztatás” a hódoltságban élő jobbágyoknak?",
+   "options": [
+    "A töröknek és a földesúrnak is adót fizettek.",
+    "Csak az egyháznak és a királynak fizettek adót.",
+    "Két különböző pénznemben fizették az adójukat.",
+    "Az adójuk felét a szomszéd falunak adták."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (86 vs 47) and tell 'Egyáltalán'; 'elmenekült magyar nemesek' was not in the text"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex16",
+  "set": {
+   "question": "Melyik állítás igaz az Erdélyi Fejedelemségre?",
+   "options": [
+    "A szultánnak adót fizetett, de belső ügyeiben önálló volt.",
+    "A Habsburg császárnak fizetett adót, és Bécsből irányították.",
+    "Nem volt fejedelme, mert a budai pasa vezette.",
+    "Pozsony volt a székhelye, és a nádor irányította."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "bibliafordítások, liturgia, kiemelkedő... unmet and not in the text; rewritten on the story's own facts"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex17",
+  "set": {
+   "question": "Kik voltak a végvári vitézek?",
+   "options": [
+    "Katonák, akik a végvárakban szolgáltak és portyákon harcoltak.",
+    "Jobbágyok, akik a földeken dolgoztak a földesúrnak.",
+    "Török katonák, akik a budai pasa parancsára harcoltak.",
+    "Kereskedők, akik szürkemarhát hajtottak nyugatra."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "'robotmunkát', 'délszláv segédcsapatok', 'parancsnoksága' unmet; options now name real groups"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex18",
+  "set": {
+   "question": "Mivel erősödtek meg az alföldi mezővárosok?",
+   "options": [
+    "A szürkemarha-kereskedelemmel.",
+    "A selyemkereskedelemmel.",
+    "A fűszerkereskedelemmel.",
+    "A vaskereskedelemmel."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "textilipar, selyemszövés, üveggyártás etc. unmet and not in the text"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex19",
+  "set": {
+   "question": "Milyen emlékek maradtak a török korból Budán?",
+   "options": [
+    "Törökfürdők és Gül Baba türbéje.",
+    "Gótikus katedrálisok és hidak.",
+    "Barokk kastélyok és színházak."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (83 vs 58); 'sírkápolna' is the wrong word for türbe (mausoleum); unmet words"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-haromresz-consolidation-ex.json",
+  "id": "b1-haromresz-consolidation.ex20",
+  "set": {
+   "question": "Mi maradt közös a három országrészben?",
+   "options": [
+    "A nyelv és a jogi hagyomány.",
+    "A király és a főváros.",
+    "A pénz és az adó."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "a question on how 'the historiography looks with pride' is a modern judgement; length give-away (134 vs 98)"
+ }
+]

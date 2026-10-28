@@ -126,7 +126,7 @@
       "options": [
         "I. Szulejmán szultán",
         "II. Mehmed szultán",
-        "Ibrahim pasa",
+        "Dózsa György",
         "Murád szultán"
       ],
       "correct": 0
@@ -138,9 +138,9 @@
       "question": "Ki vezette a magyar sereget fővezérként Mohácsnál?",
       "options": [
         "Tomori Pál kalocsai érsek",
-        "Hunyadi János",
-        "Zrínyi Miklós",
-        "Dózsa György"
+        "Hunyadi János egykori kormányzó",
+        "Dózsa György, a felkelők vezére",
+        "Mátyás király, a nagy hadvezér"
       ],
       "correct": 0
     },
@@ -150,27 +150,30 @@
       "category": "reading",
       "question": "Hol és hogyan halt meg a fiatal II. Lajos király?",
       "options": [
-        "A megáradt Csele-patakba fulladt nehéz páncéljában.",
-        "A csatamezőn érte ágyúgolyó.",
+        "A Csele-patakba fulladt a menekülés közben.",
+        "A csatában esett el török ágyútűzben.",
         "Török fogságban halt meg Isztambulban.",
-        "Budán halt meg mérgezésben."
+        "Budán halt meg betegségben."
       ],
       "correct": 0
     },
     {
       "id": "b1-mohacs-consolidation.ex09",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Melyik mondat fejezi ki helyesen a következményt?",
+      "category": "vocabulary",
+      "question": "Melyik mondat fejezi ki helyesen az okot?",
       "options": [
-        "A belső viszályok következtében az ország nem tudott felkészülni a háborúra.",
-        "A belső viszályok általában az ország nem tudott.",
-        "A belső viszályok felett az ország nem tudott."
+        "A belső viszályok miatt az ország nem tudott felkészülni.",
+        "A belső viszályok helyett az ország nem tudott felkészülni.",
+        "A belső viszályok nélkül az ország nem tudott felkészülni."
       ],
       "correct": 0,
       "teaches": [
-        "causal-postpositions"
-      ]
+        "b1-mohacs-1526-vocab"
+      ],
+      "distractor_skills": {
+        "1": "postpositions-altal-reven"
+      }
     },
     {
       "id": "b1-mohacs-consolidation.ex10",
@@ -187,23 +190,23 @@
     {
       "id": "b1-mohacs-consolidation.ex11",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "sentence": "A királyi haderő a nemesi széthúzás ____ gyengült meg.",
       "hint": "because of",
       "english": "The royal armed forces weakened because of dissension among the nobility.",
       "answer": "miatt",
       "teaches": [
-        "causal-postpositions"
+        "b1-mohacs-1526-vocab"
       ]
     },
     {
       "id": "b1-mohacs-consolidation.ex12",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Alighogy megindult a magyar roham, ____ pusztító ágyútűzbe ütközött.",
+      "sentence": "Amint megindult a magyar roham, ____ pusztító ágyútűzbe ütközött.",
       "hint": "already",
-      "english": "Hardly had the Hungarian charge begun, it already ran into devastating cannon fire.",
-      "answer": "máris",
+      "english": "As soon as the Hungarian charge began, it already ran into devastating cannon fire.",
+      "answer": "már",
       "teaches": [
         "b1-mohacs-1526-vocab"
       ]
@@ -224,12 +227,12 @@
       "id": "b1-mohacs-consolidation.ex14",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Melyik várat hívták a középkori Magyar Királyság kulcsának, amely 1521-ben elesett?",
+      "question": "Melyik várat vette ostrom alá a török fősereg 1521-ben?",
       "options": [
-        "Nándorfehérvárt (Belgrád)",
-        "Eger várát",
-        "Buda várát",
-        "Pozsony várát"
+        "Nándorfehérvárt.",
+        "Buda várát.",
+        "Pozsony várát.",
+        "Esztergom várát."
       ],
       "correct": 0,
       "stage": "civics"
@@ -238,12 +241,12 @@
       "id": "b1-mohacs-consolidation.ex15",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mihez vezetett II. Lajos gyermektelen halála a csata után?",
+      "question": "Mi történt, mert Lajos királynak nem volt gyermeke?",
       "options": [
-        "Kettős királyválasztáshoz és dinasztikus polgárháborúhoz Szapolyai János és Habsburg Ferdinánd között.",
-        "A Habsburg-ház azonnali és békés, ellenállás nélküli trónra lépéséhez.",
-        "A lengyel Jagelló-dinasztia hatalmának megszilárdulásához az országban.",
-        "Az Oszmán Birodalom seregeinek azonnali és végleges kivonulásához."
+        "Két királyt választottak, és harc indult.",
+        "A Habsburg-ház békésen átvette a trónt.",
+        "A Jagelló-dinasztia tovább uralkodott.",
+        "Az oszmán sereg elhagyta az országot."
       ],
       "correct": 0,
       "stage": "civics"
@@ -252,12 +255,12 @@
       "id": "b1-mohacs-consolidation.ex16",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Milyen geopolitikai következménye lett a mohácsi vereségnek a 16. században?",
+      "question": "Mi lett a mohácsi vereség egyik következménye a 16. században?",
       "options": [
-        "Az ország három részre szakadt: a Királyi Magyarországra, az Erdélyi Fejedelemségre és a Török Hódoltságra.",
-        "A Magyar Királyság és a Habsburg Ausztria békés, egységes birodalommá egyesült.",
-        "Az Oszmán Birodalom csapatai békésen visszavonultak a Balkán-félsziget déli részére.",
-        "Magyarország és Lengyelország perszonálunióban egyesült egyetlen közös állammá."
+        "Az ország három részre szakadt, és Buda török kézre került.",
+        "A Magyar Királyság és Ausztria egy birodalommá egyesült.",
+        "Az oszmánok békésen elhagyták az országot.",
+        "Magyarország és Lengyelország egy állammá egyesült."
       ],
       "correct": 0,
       "stage": "civics"
@@ -266,12 +269,12 @@
       "id": "b1-mohacs-consolidation.ex17",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Milyen társadalmi feszültség előzte meg Mohácsot 1514-ben?",
+      "question": "Ki vezette az 1514-es parasztfelkelést?",
       "options": [
-        "A Dózsa György-féle parasztfelkelés és annak véres megtorlása.",
-        "A budai céhek sztrájkja.",
-        "A reformáció kezdete Debrecenben.",
-        "A bányászok felkelése Selmecbányán."
+        "Dózsa György",
+        "Tomori Pál",
+        "Szapolyai János",
+        "Hunyadi János"
       ],
       "correct": 0
     },
@@ -279,12 +282,11 @@
       "id": "b1-mohacs-consolidation.ex18",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit fejez ki a magyar kultúrában a „Több is veszett Mohácsnál” kifejezés használata?",
+      "question": "Mikor mondják a magyarok: „Több is veszett Mohácsnál”?",
       "options": [
-        "Vigasztalást és kitartást nehéz helyzetekben, emlékeztetve a nemzet túlélő képességére.",
-        "A katonai bosszú és az azonnali fegyveres megtorlás követelését minden áron.",
-        "A történelmi múlt teljes elfelejtését és a jövő felé fordulás igényét.",
-        "A mindennapi anyagi károk és gazdasági veszteségek feletti sajnálkozást."
+        "Ha kisebb baj történik.",
+        "Ha nagy győzelmet ünnepelnek.",
+        "Ha jó híreket hallanak."
       ],
       "correct": 0,
       "stage": "civics",
@@ -296,12 +298,12 @@
       "id": "b1-mohacs-consolidation.ex19",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelentett az 1526-os mohácsi vereség a magyar történelemben?",
+      "question": "Mi ért véget az 1526-os mohácsi vereséggel?",
       "options": [
-        "Az önálló középkori államiság lezárulásával.",
-        "A tatárjárás utáni azonnali békével.",
-        "A honfoglalás befejezésével.",
-        "Az aranybulla kiadásával."
+        "A független középkori királyság.",
+        "A tatárok pusztító támadása.",
+        "A honfoglalás utáni időszak.",
+        "Az Árpád-ház hosszú uralma."
       ],
       "correct": 0,
       "stage": "civics",
@@ -313,12 +315,12 @@
       "id": "b1-mohacs-consolidation.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hol található ma a csata emlékére kialakított Nemzeti Emlékhely?",
+      "question": "Hol található a nemzeti emlékhely?",
       "options": [
-        "Mohács mellett, Sátorhely közelében.",
-        "Budapesten a Hősök terén.",
+        "A mohácsi csatatéren.",
+        "Budapesten, a Hősök terén.",
         "A Hortobágyon.",
-        "Esztergomban a Bazilikánál."
+        "Esztergomban, a Bazilikánál."
       ],
       "correct": 0
     }
