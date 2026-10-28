@@ -115,10 +115,10 @@ The user took the four recommended options:
   *persze*; preverb inversion *olvastam el*). Rule added to
   unit-agent-rules § 6b.
 - **Unit 65 is now "Review: Reported Speech"** (unit and lesson titles).
-- **Skills for the units that teach none:** proposed to the user for
-  sign-off (*hiába*, *lehet, hogy / kétlem, hogy*, *az ember*); the
-  other 14 units teach recaps or set phrases and keep the vocabulary
-  tag. *Hiába* has a screen (Unit 35) but no item drills it.
+- **Skills for the units that teach none: none added.** Claude proposed
+  *hiába*, *lehet, hogy / kétlem, hogy* and *az ember*; the user judged
+  them vocabulary items, not grammar skills, so all 17 units keep the
+  vocabulary tag. *Hiába* has a screen (Unit 35) but no item drills it.
 - 12 frozen units were unfrozen for these edits and refrozen with their
   accepted findings; all 36 core units check clean, walk 216/216.
 ### Route A: read-first batch (HU A2, 2026-10-14 → 2026-10-15)
