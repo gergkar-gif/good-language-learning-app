@@ -123,6 +123,23 @@ The user took the four recommended options:
   a Unit 9 recap blank) were replaced with *hiába* items, vocabulary-tagged.
 - 12 frozen units were unfrozen for these edits and refrozen with their
   accepted findings; all 36 core units check clean, walk 216/216.
+### 2026-10-28: HU B1 citizenship Units 32, 34, 36, 38
+
+- **Lost run:** a container restart stopped both readers before either
+  wrote a file; the rerun from the same prompts cost ~175k a unit. The
+  prompt already says to write each unit's files before the next; a
+  restart inside the first unit loses the whole read either way.
+- **Generator pattern:** every lesson's ex02 in these units had garbled
+  wrong options with several faults and "(Lesson N)" in the stem; both
+  readers rewrote all twenty. The later citizenship units come from the
+  same generator, so the focus file names it.
+- **Cross-reader duplicates:** the two readers wrote the same goal line
+  for Unit 36 L4 and Unit 38 L1 (the dual system); `checklist-shared`
+  caught it after applying.
+- **Invented quotes:** both readers kept the segments' speeches of real
+  people (Kossuth, Deák, Andrássy, Bem) as illustrative dialogue; items
+  must not teach them as facts (Unit 36 ex03 did).
+
 ### 2026-10-28: HU B1 citizenship Units 24, 26, 28, 30
 
 - **Cost:** not measurable (the 5-hour limit before any file); the
@@ -533,6 +550,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-28 | HU B1 citizenship 8, 10, 12, 14 (first citizenship batch) | paired read, 2 units/reader, facts block; both stopped by the 5-hour Sonnet limit before writing a file, resumed after the reset | | A 307k, B 344k (resumed notices only) | 337 proposed (101 / 87 / 72 / 77), 7 rejected by the checker (rewritten by Claude); Claude changed 3, dropped 2 (track-numbered consolidation titles), added 10 item fixes, 77 vocabulary entries, 4 challenge edits | ~150–170k reader tokens/unit if the notices are cumulative; 15 placeholder question sets rewritten (none left in HU B1); 85 unmet words after applying (77 listed, 4 forms before their unit rewritten); `check_unit_refs.py` unit filter fixed (it skipped every citizenship screen) and found 2 wrong *amely* recaps; facts web-checked, none disputed; walk 24/24 |
 | 10-28 | HU B1 citizenship 16, 18, 20, 22 | paired read, 2 units/reader, no limit hit | | A 380k, 25 min; B 439k, 31 min | 534 proposed (98 / 102 / 160 / 174), 4 rejected by the checker (2 false rejections restored, 2 rewritten); Claude changed 10, added 9 item/screen fixes, 96 vocabulary entries, 2 challenge edits | **~190k (A) and ~220k (B) a unit**; B's units had ~170 fixes each (every segment rewritten for overclaims, every screen a recap); `check_fixes.py` listed the readers' unmet words while sorting (27 / 19 / 14 / 22); 2 wrong recaps (*révén*, *amint*); `historical-routines` thinned to 5 by a correct retag and topped up; walk 24/24 |
 | 10-28 | HU B1 citizenship 24, 26, 28, 30 | paired read, 2 units/reader; both stopped by the 5-hour limit before writing a file, resumed | | A 299k, B 290k (resumed runs only) | 431 proposed (94 / 109 / 115 / 113), 10 rejected by the checker (8 rewritten, 2 applied by hand); Claude changed 8, added 8 fixes, 76 vocabulary entries, 24 checklists, 3 challenge edits | lessons from Unit 24 on have goal lines but no checklist (24 built); facts all standard, none disputed; one cross-reader recap break (*annak dacára* recapped from a screen the other reader rewrote); walk 24/24 |
+| 10-28 | HU B1 citizenship 32, 34, 36, 38 | paired read, 2 units/reader; first pair lost to a container restart before any file, relaunched | | A 338k, B 372k (rerun) | 411 proposed (96 / 107 / 102 / 106), 2 rejected and rewritten; Claude changed 4, reworded 2 shared lines | ~175k a unit; every lesson's ex02 was a garbled-options generator item, rewritten by both readers; no facts in dispute; walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
