@@ -442,9 +442,9 @@
    "reason": "HU B1 core batch 19-29 (ROADMAP 153)"
   },
   "B1/complex-opinions": {
-   "locked": "2026-10-06",
+   "locked": "2026-10-28",
    "exercises": 42,
-   "reason": "HU B1 read-through 2026-10-06"
+   "reason": "HU B1 core batch 67-72 read and fixed (ROADMAP 153)"
   },
   "B1/compromise-1867": {
    "locked": "2026-10-05",
@@ -547,9 +547,9 @@
    "reason": "HU B1 pilot read (ROADMAP 153)"
   },
   "B1/hypotheticals-possibilities": {
-   "locked": "2026-10-07",
+   "locked": "2026-10-28",
    "exercises": 45,
-   "reason": "new exercises for thin skills (ROADMAP 144(4))"
+   "reason": "HU B1 core batch 67-72 read and fixed (ROADMAP 153)"
   },
   "B1/independent-hungarian": {
    "locked": "2026-10-28",
@@ -68276,7 +68276,7 @@
   },
   "b1-34-02.ex05": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "b1-complex-opinions-vocab"
    ],
    "distractor_skills": {}
   },
@@ -68284,7 +68284,10 @@
    "teaches": [
     "adversative-contrast"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "additive-connectors",
+    "2": "additive-connectors"
+   }
   },
   "b1-34-02.ex07": {
    "teaches": [
@@ -68296,7 +68299,10 @@
    "teaches": [
     "concessive-annak-ellenere"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "mig-egyidejuseg",
+    "2": "additive-connectors"
+   }
   },
   "b1-34-03.ex02": {
    "teaches": [
@@ -68327,7 +68333,8 @@
     "ha-clause"
    ],
    "distractor_skills": {
-    "1": "miutan-mielott"
+    "1": "miutan-mielott",
+    "2": "mig-egyidejuseg"
    }
   },
   "b1-34-03.ex07": {
@@ -68362,7 +68369,7 @@
   },
   "b1-34-04.ex05": {
    "teaches": [
-    "val-vel"
+    "b1-complex-opinions-vocab"
    ],
    "distractor_skills": {}
   },
@@ -68386,7 +68393,7 @@
   },
   "b1-34-05.ex02": {
    "teaches": [
-    "ban-ben-in"
+    "b1-complex-opinions-vocab"
    ],
    "distractor_skills": {}
   },
@@ -68444,7 +68451,7 @@
   },
   "b1-34-consolidation.ex05": {
    "teaches": [
-    "how-the-accusative-t-works"
+    "plural-nouns-k"
    ],
    "distractor_skills": {}
   },
@@ -68464,11 +68471,14 @@
    "teaches": [
     "past-conditional-volna"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "1": "ha-clause",
+    "2": "hypothetical-ha-conditional"
+   }
   },
   "b1-35-01.ex02": {
    "teaches": [
-    "past-tense-indefinite"
+    "irregular-past"
    ],
    "distractor_skills": {}
   },
@@ -68496,12 +68506,12 @@
    ],
    "distractor_skills": {
     "1": "barcsak-wish",
-    "2": "present-tense-routine-language"
+    "2": "definite-past"
    }
   },
   "b1-35-01.ex07": {
    "teaches": [
-    "kell-infinitive"
+    "b1-hypotheticals-possibilities-vocab"
    ],
    "distractor_skills": {}
   },
@@ -68534,7 +68544,7 @@
   },
   "b1-35-02.ex05": {
    "teaches": [
-    "postpositions-basic"
+    "b1-hypotheticals-possibilities-vocab"
    ],
    "distractor_skills": {}
   },
@@ -68546,7 +68556,7 @@
   },
   "b1-35-02.ex07": {
    "teaches": [
-    "definite-past"
+    "b1-hypotheticals-possibilities-vocab"
    ],
    "distractor_skills": {}
   },
@@ -68554,7 +68564,9 @@
    "teaches": [
     "mixed-conditionals"
    ],
-   "distractor_skills": {}
+   "distractor_skills": {
+    "0": "past-conditional-volna"
+   }
   },
   "b1-35-02.ex09": {
    "teaches": [
@@ -68597,7 +68609,7 @@
   },
   "b1-35-03.ex05": {
    "teaches": [
-    "past-tense-indefinite"
+    "b1-hypotheticals-possibilities-vocab"
    ],
    "distractor_skills": {}
   },
@@ -68621,7 +68633,7 @@
   },
   "b1-35-04.ex02": {
    "teaches": [
-    "past-tense-indefinite"
+    "mixed-conditionals"
    ],
    "distractor_skills": {}
   },
@@ -68651,7 +68663,7 @@
   },
   "b1-35-04.ex07": {
    "teaches": [
-    "kell-infinitive"
+    "b1-hypotheticals-possibilities-vocab"
    ],
    "distractor_skills": {}
   },
@@ -68730,11 +68742,10 @@
   },
   "b1-35-consolidation.ex06": {
    "teaches": [
-    "reported-speech-statements"
+    "mixed-conditionals"
    ],
    "distractor_skills": {
-    "1": "present-tense-routine-language",
-    "2": "nek-conditional"
+    "1": "past-conditional-volna"
    }
   },
   "b1-35-consolidation.ex07": {

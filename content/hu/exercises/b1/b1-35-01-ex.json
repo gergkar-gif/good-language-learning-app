@@ -5,27 +5,31 @@
       "id": "b1-35-01.ex01",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Hogyan fejezzük ki a múltbeli feltételt a magyarban?",
+      "question": "Melyik mondat mondja, hogy valami nem történt meg a múltban?",
       "options": [
-        "A múlt idejű igéhez a 'volna' szócskát kapcsoljuk",
-        "A jelen idejű igéhez a '-na/-ne' toldalékot tesszük",
-        "A jövő idő segédigéjét használjuk"
+        "Ha nem esett volna az eső, a szabadban sétáltunk volna.",
+        "Ha nem esik az eső, akkor a szabadban sétálunk.",
+        "Ha nem esne az eső, akkor a szabadban sétálnánk."
       ],
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ha-clause",
+        "2": "hypothetical-ha-conditional"
+      }
     },
     {
       "id": "b1-35-01.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ha tudtam volna, eljött_____ volna.",
+      "sentence": "Ha tudtam volna, _____ volna.",
       "hint": "I would have come",
       "english": "If I had known, I would have come.",
-      "answer": "em",
+      "answer": "eljöttem",
       "teaches": [
-        "past-tense-indefinite"
+        "irregular-past"
       ]
     },
     {
@@ -48,7 +52,7 @@
         "a",
         "problémáról!"
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "If only you had told me about the problem earlier!",
       "teaches": [
         "past-conditional-volna"
       ]
@@ -57,11 +61,11 @@
       "id": "b1-35-01.ex04",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent a 'képzeletbeli' szó?",
+      "question": "Mit jelent az, hogy képzeletbeli?",
       "options": [
-        "A valóságban nem létező, csupán a fantáziában élő dolog",
-        "Egy festőművész által készített rajz",
-        "Egy pontos fényképfelvétel"
+        "Csak a fejünkben van, a valóságban nincs.",
+        "A valóságban van, és meg lehet nézni.",
+        "Régen volt, de ma már nincs."
       ],
       "correct": 0,
       "teaches": [
@@ -72,10 +76,10 @@
       "id": "b1-35-01.ex05",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "Ez csupán egy hipotetikus feltételezés, nem pedig valós té_____.",
-      "hint": "fact",
-      "english": "This is merely a hypothetical assumption, rather than a real fact.",
-      "answer": "ny",
+      "sentence": "Ez nem tény, csak egy _____.",
+      "hint": "assumption",
+      "english": "This is not a fact, just an assumption.",
+      "answer": "feltételezés",
       "teaches": [
         "b1-hypotheticals-possibilities-vocab"
       ]
@@ -86,9 +90,9 @@
       "category": "grammar",
       "question": "Melyik mondat fejez ki elmulasztott múltbeli kívánságot?",
       "options": [
-        "Bárcsak megnéztem volna azt a filmet!",
-        "Bárcsak megnézném azt a filmet!",
-        "Mindig megnézem a filmeket moziban."
+        "Bárcsak tudtam volna a választ!",
+        "Bárcsak tudnám a választ!",
+        "Már tudtam a választ."
       ],
       "correct": 0,
       "teaches": [
@@ -96,32 +100,36 @@
       ],
       "distractor_skills": {
         "1": "barcsak-wish",
-        "2": "present-tense-routine-language"
+        "2": "definite-past"
       }
     },
     {
       "id": "b1-35-01.ex07",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "tiles": [
-        "Minden",
-        "lehetőséget",
-        "alaposan",
-        "meg",
-        "kellett",
-        "fontolni."
+        "Volt",
+        "egy",
+        "jó",
+        "elképzelésem,",
+        "de",
+        "nem",
+        "volt",
+        "lehetőségem."
       ],
       "solution": [
-        "Minden",
-        "lehetőséget",
-        "alaposan",
-        "meg",
-        "kellett",
-        "fontolni."
+        "Volt",
+        "egy",
+        "jó",
+        "elképzelésem,",
+        "de",
+        "nem",
+        "volt",
+        "lehetőségem."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "I had a good idea, but I had no opportunity.",
       "teaches": [
-        "kell-infinitive"
+        "b1-hypotheticals-possibilities-vocab"
       ]
     }
   ]

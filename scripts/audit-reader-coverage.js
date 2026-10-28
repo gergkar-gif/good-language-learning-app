@@ -200,7 +200,9 @@ async function auditCourse(course) {
             console.log(`      ${x.word} = ${[].concat(x.parts || []).map(p => typeof p === 'string' ? p : (p.form || p.lemma || JSON.stringify(p))).join(' + ')}   ${x.sample ? '| ' + x.sample.slice(0, 80) : ''}`));
         console.log(`    lookup throws (tap would fail): ${r.crashes.length}`);
         r.crashes.slice(0, 10).forEach(x => console.log(`      ${x.word}: ${x.error}`));
-        r.misses.slice(0, topN).forEach(x =>
+        // a --story audit names every miss, as it does the compound guesses: the
+        // reader template passes --top 0, which listed none (HU B1 batch 67-72)
+        r.misses.slice(0, onlyStories ? r.misses.length : topN).forEach(x =>
             console.log(`    ${String(x.count).padStart(4)}x ${x.likelyName ? '[name] ' : '       '}${x.word}   ${x.sample ? '| ' + x.sample.slice(0, 90) : ''}`));
     }
     if (outFile) {

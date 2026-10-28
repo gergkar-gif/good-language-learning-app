@@ -8,7 +8,7 @@
       "question": "Melyik mondat kapcsolja a múltbeli feltételt a jelenbeli eredményhez (vegyes feltétel)?",
       "options": [
         "Ha akkor többet tanultál volna, most nem aggódnál a vizsga miatt.",
-        "Ha akkor többet tanultál volna, nem buktál volna meg a vizsgán.",
+        "Ha akkor többet tanultál volna, jó jegyet kaptál volna.",
         "Ha most többet tanulnál, nem aggódnál a vizsga miatt."
       ],
       "correct": 0,
@@ -24,10 +24,10 @@
       "id": "b1-35-02.ex02",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Időben indultunk, máskülönben lekést_____ volna a gépet.",
+      "sentence": "Időben indultunk, máskülönben _____ volna a gépet.",
       "hint": "we would have missed",
       "english": "We set off in time, otherwise we would have missed the plane.",
-      "answer": "ük",
+      "answer": "lekéstük",
       "teaches": [
         "definite-past"
       ]
@@ -56,7 +56,7 @@
         "az",
         "életünk."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "If we had decided differently, our life would be different.",
       "teaches": [
         "mixed-conditionals"
       ]
@@ -65,11 +65,11 @@
       "id": "b1-35-02.ex04",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelent a 'fordulat' a történetmesélésben?",
+      "question": "Mi a fordulat egy történetben?",
       "options": [
-        "Váratlan, döntő változás az események menetében",
-        "A gépkocsi kerekének megfordulása",
-        "A könyv lapjainak számozása"
+        "Váratlan változás a történetben.",
+        "Egy régi történet a könyvben.",
+        "A történet első szava."
       ],
       "correct": 0,
       "teaches": [
@@ -79,13 +79,13 @@
     {
       "id": "b1-35-02.ex05",
       "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Jelentős eltérés mutatkozott a két beszámoló köz_____.",
-      "hint": "between",
-      "english": "A significant discrepancy appeared between the two accounts.",
-      "answer": "ött",
+      "category": "vocabulary",
+      "sentence": "A két terv között nagy _____ van.",
+      "hint": "difference",
+      "english": "There is a big difference between the two plans.",
+      "answer": "eltérés",
       "teaches": [
-        "postpositions-basic"
+        "b1-hypotheticals-possibilities-vocab"
       ]
     },
     {
@@ -106,33 +106,35 @@
     {
       "id": "b1-35-02.ex07",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "tiles": [
         "A",
         "váratlan",
         "fordulat",
-        "megváltoztatta",
-        "a",
-        "terveket."
+        "után",
+        "minden",
+        "más",
+        "volt."
       ],
       "solution": [
         "A",
         "váratlan",
         "fordulat",
-        "megváltoztatta",
-        "a",
-        "terveket."
+        "után",
+        "minden",
+        "más",
+        "volt."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "After the unexpected turn of events everything was different.",
       "teaches": [
-        "definite-past"
+        "b1-hypotheticals-possibilities-vocab"
       ]
     },
     {
       "id": "b1-35-02.ex08",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat kapcsolja a múltbeli feltételt a jelenbeli eredményhez?",
+      "question": "Mit mondunk, ha a múlt miatt ma más a helyzet?",
       "options": [
         "Ha akkor időben indultam volna, most nem késtem volna.",
         "Ha akkor időben indultam volna, most nem késnék.",
@@ -141,16 +143,19 @@
       "correct": 1,
       "teaches": [
         "mixed-conditionals"
-      ]
+      ],
+      "distractor_skills": {
+        "0": "past-conditional-volna"
+      }
     },
     {
       "id": "b1-35-02.ex09",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ha akkor több szót tanultam volna, most jobban beszél____ magyarul.",
+      "sentence": "Ha akkor több szót tanultam volna, most jobban _____ magyarul.",
       "hint": "I would speak",
       "english": "If I had learned more words back then, I would speak Hungarian better now.",
-      "answer": "nék",
+      "answer": "beszélnék",
       "teaches": [
         "mixed-conditionals"
       ]

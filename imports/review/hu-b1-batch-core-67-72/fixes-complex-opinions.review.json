@@ -1,0 +1,905 @@
+[
+ {
+  "file": "content/hu/exercises/b1/b1-34-01-ex.json",
+  "id": "b1-34-01.ex01",
+  "set": {
+   "question": "Mi az álláspont?",
+   "options": [
+    "Az, amit valaki egy kérdésről gondol.",
+    "Az, amit valaki a boltban vesz.",
+    "Az, amit valaki az utcán keres."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (62 vs 36) and unmet words (határozott, nézőpontja, vasútállomás, munkavállalók); absurd wrong options"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-01-ex.json",
+  "id": "b1-34-01.ex02",
+  "set": {
+   "sentence": "Azt gondolom, _____ a javaslat megvalósítható.",
+   "english": "I think that the proposal is feasible."
+  },
+  "kind": "hungarian",
+  "why": "unmet word gyakorlatban (b2)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-01-ex.json",
+  "id": "b1-34-01.ex03",
+  "set": {
+   "tiles": [
+    "Úgy",
+    "vélem,",
+    "hogy",
+    "a",
+    "döntés",
+    "helyes",
+    "volt."
+   ],
+   "solution": [
+    "Úgy",
+    "vélem,",
+    "hogy",
+    "a",
+    "döntés",
+    "helyes",
+    "volt."
+   ],
+   "english": "I believe that the decision was correct."
+  },
+  "kind": "hungarian",
+  "why": "english line was the instruction \"Build the sentence in the correct order.\" instead of the translation"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-01-ex.json",
+  "id": "b1-34-01.ex04",
+  "set": {
+   "question": "Mi az érvelés?",
+   "options": [
+    "Amikor okokat mondunk a véleményünk mellett.",
+    "Amikor a vitában nem beszélünk senkivel.",
+    "Amikor a másik ember véleményét kérdezzük."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet word tiltakozás (c1); one-word options with a vague question; definition item like b1-32"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-01-ex.json",
+  "id": "b1-34-01.ex05",
+  "set": {
+   "sentence": "_____ úgy vélem, hogy nem szabad feladnunk a terveinket.",
+   "answer": "Határozottan"
+  },
+  "kind": "hungarian",
+  "why": "unmet word Határozott (blank glued to a stem); blank the whole word"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-01-ex.json",
+  "id": "b1-34-01.ex06",
+  "set": {
+   "question": "Hogyan mondjuk, hogy csak részben értünk egyet?",
+   "options": [
+    "Részben egyetértek veled.",
+    "Nem értek egyet veled.",
+    "Egyetértek veled."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "tell-absolute (Soha) and unmet word tökéletesen; wrong options now one fault each"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-01-ex.json",
+  "id": "b1-34-01.ex07",
+  "set": {
+   "tiles": [
+    "Meglátásom",
+    "szerint",
+    "fontos",
+    "a",
+    "szabad",
+    "véleménynyilvánítás."
+   ],
+   "solution": [
+    "Meglátásom",
+    "szerint",
+    "fontos",
+    "a",
+    "szabad",
+    "véleménynyilvánítás."
+   ],
+   "english": "In my view, free expression of opinion is important."
+  },
+  "kind": "hungarian",
+  "why": "unmet word személyes; english line was an instruction; véleménynyilvánítás was listed but never used"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-02-ex.json",
+  "id": "b1-34-02.ex03",
+  "set": {
+   "tiles": [
+    "Egyfelől",
+    "értem,",
+    "másfelől",
+    "nem",
+    "értek",
+    "egyet."
+   ],
+   "solution": [
+    "Egyfelől",
+    "értem,",
+    "másfelől",
+    "nem",
+    "értek",
+    "egyet."
+   ],
+   "english": "On the one hand I understand it, on the other hand I disagree."
+  },
+  "kind": "hungarian",
+  "why": "english line was an instruction"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-02-ex.json",
+  "id": "b1-34-02.ex04",
+  "set": {
+   "question": "Mi a mérlegelés?",
+   "options": [
+    "Amikor döntés előtt több szempontra gondolunk.",
+    "Amikor a vitában nagyon hangosak vagyunk.",
+    "Amikor gyorsan egyetértünk a másikkal."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet words (megfontolása, súlyának, azonnali, meghosszabbítása, kontra, alapos); absurd post-office options"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-02-ex.json",
+  "id": "b1-34-02.ex05",
+  "set": {
+   "category": "vocabulary",
+   "sentence": "Az ár fontos _____ a döntésben.",
+   "hint": "aspect",
+   "answer": "szempont",
+   "english": "Price is an important aspect in the decision.",
+   "teaches": [
+    "b1-complex-opinions-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet word figyelembe (b2); blank glued to the stem szempon+t; a noun-meaning blank is vocabulary, not the accusative"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-02-ex.json",
+  "id": "b1-34-02.ex06",
+  "set": {
+   "question": "Melyik szó mondja ugyanazt, mint a *viszont*?",
+   "options": [
+    "Ellenben",
+    "Tehát",
+    "Ráadásul"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "additive-connectors",
+    "2": "additive-connectors"
+   }
+  },
+  "kind": "hungarian",
+  "why": "English quote inside a Hungarian question; Tehát and Ráadásul are real forms of additive-connectors"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-02-ex.json",
+  "id": "b1-34-02.ex07",
+  "set": {
+   "tiles": [
+    "Meg",
+    "kell",
+    "találnunk",
+    "az",
+    "egészséges",
+    "egyensúlyt."
+   ],
+   "solution": [
+    "Meg",
+    "kell",
+    "találnunk",
+    "az",
+    "egészséges",
+    "egyensúlyt."
+   ],
+   "english": "We have to find the healthy balance."
+  },
+  "kind": "hungarian",
+  "why": "english line was an instruction"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-03-ex.json",
+  "id": "b1-34-03.ex01",
+  "set": {
+   "question": "Melyik szó jelenti ugyanazt, mint a *noha*?",
+   "options": [
+    "Jóllehet",
+    "Miközben",
+    "Továbbá"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "mig-egyidejuseg",
+    "2": "additive-connectors"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet words minthogy, hacsak, feltéve; \"a mondatban\" refers to no sentence; slash options"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-03-ex.json",
+  "id": "b1-34-03.ex02",
+  "set": {
+   "sentence": "Bár sok a nehézség, _____ hiszek a sikerben.",
+   "answer": "mégis"
+  },
+  "kind": "hungarian",
+  "why": "blank glued to még; blank the whole word"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-03-ex.json",
+  "id": "b1-34-03.ex03",
+  "set": {
+   "tiles": [
+    "Jóllehet",
+    "fáradt",
+    "vagyok,",
+    "mégis",
+    "szívesen",
+    "segítek",
+    "neked."
+   ],
+   "solution": [
+    "Jóllehet",
+    "fáradt",
+    "vagyok,",
+    "mégis",
+    "szívesen",
+    "segítek",
+    "neked."
+   ],
+   "english": "Although I am tired, I still gladly help you."
+  },
+  "kind": "hungarian",
+  "why": "unmet words megéri, megpróbálni; english line was an instruction"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-03-ex.json",
+  "id": "b1-34-03.ex04",
+  "set": {
+   "question": "Mi az árnyalás?",
+   "options": [
+    "Amikor a véleményben finom különbségeket látunk.",
+    "Amikor a véleményünk nem változik.",
+    "Amikor a vitában nagyon hangosak vagyunk."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "tell-absolute (Teljesen) and unmet words (vakon, megosztja, figyelmen kívül, hagyja); árnyalás was listed but never asked"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-03-ex.json",
+  "id": "b1-34-03.ex05",
+  "set": {
+   "sentence": "A szabály jó, de van egy _____.",
+   "answer": "kivétel",
+   "english": "The rule is good, but there is one exception."
+  },
+  "kind": "hungarian",
+  "why": "unmet words alól, akad; blank glued to kivé+tel"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-03-ex.json",
+  "id": "b1-34-03.ex06",
+  "set": {
+   "question": "Melyik szó jelenti ugyanazt, mint a hivatalos *ha*?",
+   "options": [
+    "Amennyiben",
+    "Miután",
+    "Miközben"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "miutan-mielott",
+    "2": "mig-egyidejuseg"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet word anélkül; English \"Insofar as\" in a Hungarian question; Miközben is a real form of mig-egyidejuseg"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-03-ex.json",
+  "id": "b1-34-03.ex07",
+  "set": {
+   "tiles": [
+    "Támogatom",
+    "a",
+    "tervet,",
+    "de",
+    "van",
+    "egy",
+    "fenntartásom."
+   ],
+   "solution": [
+    "Támogatom",
+    "a",
+    "tervet,",
+    "de",
+    "van",
+    "egy",
+    "fenntartásom."
+   ],
+   "english": "I support the plan, but I have one reservation."
+  },
+  "kind": "hungarian",
+  "why": "unmet words gondolatok, pontos; english line was an instruction; árnyalás moves to ex04, fenntartás is now practised in a sentence"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-04-ex.json",
+  "id": "b1-34-04.ex01",
+  "set": {
+   "question": "Mi az ellenérv?",
+   "options": [
+    "A másik ember érve a mi álláspontunk ellen.",
+    "A másik ember érve a mi álláspontunk mellett.",
+    "A mi érvünk a másik ember kérdésére."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (47 vs 35) and unmet words felhozott, indok, elnapolása; absurd medicine/court options"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-04-ex.json",
+  "id": "b1-34-04.ex02",
+  "set": {
+   "sentence": "Ezzel szemben úgy tartom, hogy a tények mást _____.",
+   "answer": "mutatnak"
+  },
+  "kind": "hungarian",
+  "why": "blank glued to the stem mutat+nak; blank the whole word"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-04-ex.json",
+  "id": "b1-34-04.ex03",
+  "set": {
+   "tiles": [
+    "Nem",
+    "állja",
+    "meg",
+    "a",
+    "helyét",
+    "a",
+    "vád."
+   ],
+   "solution": [
+    "Nem",
+    "állja",
+    "meg",
+    "a",
+    "helyét",
+    "a",
+    "vád."
+   ],
+   "english": "The accusation does not hold water."
+  },
+  "kind": "hungarian",
+  "why": "english line was an instruction"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-04-ex.json",
+  "id": "b1-34-04.ex04",
+  "set": {
+   "question": "Melyik szó fejezi ki, hogy valami biztos?",
+   "options": [
+    "Kétségkívül",
+    "Valószínűleg",
+    "Aligha"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (29 vs 15), slash options, unmet-looking hard question word megfellebbezhetetlen"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-04-ex.json",
+  "id": "b1-34-04.ex05",
+  "set": {
+   "category": "vocabulary",
+   "sentence": "Nagyon erős a _____, hogy igazam van.",
+   "hint": "conviction",
+   "answer": "meggyőződésem",
+   "answers": null,
+   "english": "My conviction that I am right is very strong.",
+   "teaches": [
+    "b1-complex-opinions-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet words határozott, védte; blank glued to meggyőződés+; the tag val-vel did not match a vocabulary item"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-04-ex.json",
+  "id": "b1-34-04.ex06",
+  "set": {
+   "question": "Mi a cáfolat?",
+   "options": [
+    "Amikor azt mondjuk: az állítás nem igaz.",
+    "Amikor azt mondjuk: az állítás igaz.",
+    "Amikor azt kérdezzük: igaz az állítás?"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet words jóváhagyás, dicséret; absurd options"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-04-ex.json",
+  "id": "b1-34-04.ex07",
+  "set": {
+   "tiles": [
+    "Kétségkívül",
+    "szükség",
+    "van",
+    "a",
+    "bizonyításra."
+   ],
+   "solution": [
+    "Kétségkívül",
+    "szükség",
+    "van",
+    "a",
+    "bizonyításra."
+   ],
+   "english": "Undoubtedly proof is needed."
+  },
+  "kind": "hungarian",
+  "why": "unmet word alapos; english line was an instruction"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-05-ex.json",
+  "id": "b1-34-05.ex01",
+  "set": {
+   "question": "Melyik kifejezéssel kezdhetjük a vita összegzését?",
+   "options": [
+    "Mindent egybevetve",
+    "Ezzel szemben azonban",
+    "Egyrészt, másrészt"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet words felindulásból; nonsense wrong options (Mindennek ellenére tilos, Hirtelen felindulásból)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-05-ex.json",
+  "id": "b1-34-05.ex02",
+  "set": {
+   "category": "vocabulary",
+   "sentence": "A fentiek _____ a javaslat elfogadása indokolt.",
+   "answer": "tükrében",
+   "teaches": [
+    "b1-complex-opinions-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "blank glued to tükré+; the item tests the fixed phrase, not the -ben case"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-05-ex.json",
+  "id": "b1-34-05.ex03",
+  "set": {
+   "tiles": [
+    "Mindent",
+    "egybevetve",
+    "jó",
+    "volt",
+    "a",
+    "tárgyalás."
+   ],
+   "solution": [
+    "Mindent",
+    "egybevetve",
+    "jó",
+    "volt",
+    "a",
+    "tárgyalás."
+   ],
+   "english": "All things considered, the negotiation was good."
+  },
+  "kind": "hungarian",
+  "why": "unmet word sikeresnek; english line was an instruction"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-05-ex.json",
+  "id": "b1-34-05.ex04",
+  "set": {
+   "question": "Mi a kompromisszum?",
+   "options": [
+    "Amikor a két fél valamit kap a megegyezésért.",
+    "Amikor csak egy fél kap valamit a vitából.",
+    "Amikor a két fél nem beszél egymással."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet words teljes, megszakítása",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-05-ex.json",
+  "id": "b1-34-05.ex05",
+  "set": {
+   "sentence": "Meglátásom _____ a helyzet jobb lesz.",
+   "english": "In my view, the situation will be better."
+  },
+  "kind": "hungarian",
+  "why": "unmet word javulni"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-05-ex.json",
+  "id": "b1-34-05.ex06",
+  "set": {
+   "question": "Mit gondol a professzor az álmokról?",
+   "options": [
+    "Szerinte az álmok nem a valóság, csak álmok.",
+    "Szerinte az álmok igazabbak, mint a valóság.",
+    "Szerinte az álmok jobbak, mint a könyvek."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "reading question: length give-away (46 vs 31), unmet words (éjszakai, rémálmaiban, katonájával, kancellárjával) and wrong options that invent an army and a chancellor; now answerable from the professor's line \"mégsem szabad összetévesztenünk a ... képzelet játékát a valóság szilárd tényeivel\"",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-05-ex.json",
+  "id": "b1-34-05.ex07",
+  "set": {
+   "tiles": [
+    "A",
+    "vita",
+    "végkövetkeztetése",
+    "mindenki",
+    "számára",
+    "fontos",
+    "volt."
+   ],
+   "solution": [
+    "A",
+    "vita",
+    "végkövetkeztetése",
+    "mindenki",
+    "számára",
+    "fontos",
+    "volt."
+   ],
+   "english": "The conclusion of the debate was important for everyone."
+  },
+  "kind": "hungarian",
+  "why": "unmet word tanulságos; english line was an instruction"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-consolidation-ex.json",
+  "id": "b1-34-consolidation.ex01",
+  "set": {
+   "options": [
+    "Részben egyetértek, de van egy fenntartásom.",
+    "Egyetértek, és nincs több kérdésem.",
+    "Nem értek egyet, és nem kérdezek többet."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (73 vs 48) and unmet words egyfelől, szakértők, sincs, tiltani"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-consolidation-ex.json",
+  "id": "b1-34-consolidation.ex02",
+  "set": {
+   "sentence": "Bár voltak viták, _____ sikerült kompromisszumot kötni.",
+   "answer": "mégis"
+  },
+  "kind": "hungarian",
+  "why": "blank glued to még; blank the whole word"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-consolidation-ex.json",
+  "id": "b1-34-consolidation.ex03",
+  "set": {
+   "tiles": [
+    "Meglátásom",
+    "szerint",
+    "fontos",
+    "az",
+    "érvek",
+    "mérlegelése."
+   ],
+   "solution": [
+    "Meglátásom",
+    "szerint",
+    "fontos",
+    "az",
+    "érvek",
+    "mérlegelése."
+   ],
+   "english": "In my view, weighing the arguments is important."
+  },
+  "kind": "hungarian",
+  "why": "english line was an instruction"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-consolidation-ex.json",
+  "id": "b1-34-consolidation.ex04",
+  "set": {
+   "question": "Mit fejez ki a 'tanulság' szó?",
+   "options": [
+    "Az, amit egy történetből tanulunk.",
+    "Az, amit egy történetben olvasunk.",
+    "Az, amit egy történetről kérdezünk."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away (66 vs 40) and unmet words (levont, bölcsességet, okulást, iskolai, tanóra, időtartamát, szereplő)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-consolidation-ex.json",
+  "id": "b1-34-consolidation.ex05",
+  "set": {
+   "category": "grammar",
+   "sentence": "Az _____ is fontosak a vitában.",
+   "hint": "counter-arguments",
+   "answer": "ellenérvek",
+   "english": "The counter-arguments are important in the debate too.",
+   "teaches": [
+    "plural-nouns-k"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet words elhangzott, alaposan; blank glued to ellenérv+"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-consolidation-ex.json",
+  "id": "b1-34-consolidation.ex06",
+  "set": {
+   "options": [
+    "Azt jelenti, hogy az állítás nem igaz.",
+    "Azt jelenti, hogy az állítás igaz.",
+    "Azt jelenti, hogy a vita hosszú volt."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet words alaptalan, megalapozatlan, felállni; absurd wrong options (stand up, venue)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-34-consolidation-ex.json",
+  "id": "b1-34-consolidation.ex07",
+  "set": {
+   "tiles": [
+    "A",
+    "kompromisszum",
+    "és",
+    "a",
+    "fenntartás",
+    "is",
+    "fontos",
+    "a",
+    "vitában."
+   ],
+   "solution": [
+    "A",
+    "kompromisszum",
+    "és",
+    "a",
+    "fenntartás",
+    "is",
+    "fontos",
+    "a",
+    "vitában."
+   ],
+   "english": "Compromise and reservation are both important in a debate."
+  },
+  "kind": "hungarian",
+  "why": "unmet words egybevetve, indokolt, kezelése (a multi-word screen phrase is not met outside its lesson)"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-01-a-gr.json",
+  "id": "grammar.b1.34.01.nested-opinion-clauses",
+  "old": "In Hungarian, expressing nuanced beliefs involves nesting causal clauses under mental evaluation verbs (*gondol, vél, hisz, tart*). The primary matrix uses an anticipatory demonstrative pronoun (*azt gondolom, úgy vélem, amellett vagyok*), followed by *hogy* and an explanatory conjunction like *mert* or *mivel*.",
+  "new": "You know *azt hiszem, hogy* and *szerintem* from A2 Unit 12, and *mert* from A1. Here you add more ways to open an opinion (*azt gondolom, hogy …*, *úgy vélem, hogy …*, *amellett vagyok, hogy …*) and a reason after it with *mert*, *mivel* or *hiszen*.",
+  "kind": "hungarian",
+  "why": "presents the A2 pattern azt hiszem, hogy + mert as new without a recap; the \"anticipatory demonstrative\" description is the B2 family b2-cataphoric-clauses"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-01-b-gr.json",
+  "id": "grammar.b1.34.01.degree-and-nuance-adverbs",
+  "old": "Rather than flat agreement or disagreement, B1 Hungarian uses degree adverbs to calibrate commitment:",
+  "new": "You know *Részben egyetértek, de …* from B1 Unit 41 and adverbs in -an/-en from A2 Unit 19. To say how far you agree, add more degree words:",
+  "kind": "hungarian",
+  "why": "recap: részben egyetértek is B1 Unit 41; -an/-en adverbs are A2 Unit 19"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-02-a-gr.json",
+  "id": "grammar.b1.34.02.correlative-balance",
+  "old": "To weigh conflicting perspectives, Hungarian pairs correlative adverbs: *egyrészt... másrészt...* (on the one hand... on the other hand...) or the more formal *egyfelől... másfelől...*. Each coordinate clause presents a distinct argument.",
+  "new": "You know *egyrészt … másrészt …* from B1 Unit 7 and *egyfelől … másfelől …* from B1 Unit 25. To weigh two sides of a question, give one argument in each clause: *egyrészt... másrészt...* (on the one hand... on the other hand...) or the more formal *egyfelől... másfelől...*.",
+  "kind": "hungarian",
+  "why": "presents egyrészt … másrészt (B1 Unit 7) and egyfelől … másfelől (B1 Unit 25) as new"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-02-b-gr.json",
+  "id": "grammar.b1.34.02.adversative-connectors",
+  "old": "To pivot between contrasting arguments within nuanced discussions, Hungarian uses post-positive *viszont* (however), literary *ellenben* (by contrast), and dignified *mindazonáltal* (nevertheless).",
+  "new": "You know *viszont* from B1 Unit 21 and *mindazonáltal* from B1 Unit 35. New here is *ellenben* (by contrast), a literary word that works like *viszont*. Both usually stand after the word they contrast; *mindazonáltal* (nevertheless) opens its clause.",
+  "kind": "hungarian",
+  "why": "presents viszont (Unit 21) and mindazonáltal (Unit 35) as new"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-03-a-gr.json",
+  "id": "grammar.b1.34.03.concession-in-opinion",
+  "old": "In sophisticated argumentation, conceding a valid counterpoint strengthens one's credibility. Hungarian uses *bár... mégis* (although... still), *jóllehet* (even though), or *noha* (albeit). The subordinate clause introduces the concession while the main clause asserts the primary thesis.",
+  "new": "You know *bár*, *habár* and *annak ellenére, hogy* from B1 Unit 9. *Noha* and *jóllehet* work the same way, and you have met them in earlier units. Admitting a fair point makes your own view stronger: *bár... mégis* (although... still), *jóllehet* (even though), *noha* (albeit). The first clause admits the point and the main clause, often with *mégis*, gives your view.",
+  "kind": "hungarian",
+  "why": "presents bár/noha/jóllehet (B1 Unit 9, Unit 35) as new"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-03-b-gr.json",
+  "id": "grammar.b1.34.03.stipulations-and-reservations",
+  "old": "To attach conditions to one's agreement, use *azzal a feltétellel / kikötéssel, hogy...* (on the condition that...) or formal conditional *amennyiben... úgy...* (insofar as... then...).",
+  "new": "You know *ha* and *amennyiben* from A2 Unit 13, and *feltéve, hogy* from B1 Unit 55. To attach a condition to your agreement, say what you support and then name your *fenntartás* (reservation) or *megkötés* (condition), or use the formal *amennyiben* (= *ha*, if); the main clause may then begin with *úgy* (then).",
+  "kind": "hungarian",
+  "why": "amennyiben (A2 Unit 13) is not \"insofar as\"; azzal a feltétellel/kikötéssel in the text does not match the examples; the azzal a …, hogy anchor is the B2 family b2-cataphoric-clauses; amennyiben ... úgy ... pair is not in the examples"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-03-b-gr.json",
+  "id": "grammar.b1.34.03.stipulations-and-reservations",
+  "old": "Támogatom a javaslatot azzal a fenntartással, hogy átlátható marad a végrehajtás.",
+  "new": "Támogatom a javaslatot, de van egy fenntartásom: legyen átlátható a végrehajtás.",
+  "kind": "hungarian",
+  "why": "example 1 uses the anchor azzal a fenntartással, hogy (B2 family b2-cataphoric-clauses); the text named a different phrase",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-04-a-gr.json",
+  "id": "grammar.b1.34.04.refuting-counterarguments",
+  "old": "To actively dismantle a counterargument, formal Hungarian uses *ezzel szemben úgy vélem, hogy...* (in contrast to this I hold that...) or the idiomatic rejection *nem állja meg a helyét az az állítás, hogy...* (the assertion that... does not hold water).",
+  "new": "You know *ezzel szemben* from B1 Unit 21 and *cáfol* from B1 Unit 25. New here is the idiom *nem állja meg a helyét* (does not hold water). To answer a claim, say *ezzel szemben úgy vélem, hogy...* (in contrast to this I believe that...) or *nem állja meg a helyét a vád, hogy...* (the accusation that... does not hold water).",
+  "kind": "hungarian",
+  "why": "presents ezzel szemben (Unit 21) as new; az az állítás, hogy is the cataphoric anchor of the B2 family b2-cataphoric-clauses (and az a + noun)"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-04-a-gr.json",
+  "id": "grammar.b1.34.04.refuting-counterarguments",
+  "old": "Nem állja meg a helyét az a vád, hogy nem tájékoztattuk a lakosságot.",
+  "new": "Nem állja meg a helyét a vád, hogy nem tájékoztattuk a lakosságot.",
+  "kind": "hungarian",
+  "why": "cataphoric anchor az a vád, hogy (B2 family)"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-04-a-gr.json",
+  "id": "grammar.b1.34.04.refuting-counterarguments",
+  "old": "Cáfoljuk azt a megállapítást, miszerint elkésett a beavatkozás.",
+  "new": "Cáfoljuk a megállapítást, hogy elkésett a beavatkozás.",
+  "kind": "hungarian",
+  "why": "cataphoric anchor azt a megállapítást, miszerint (B2 family; miszerint is above B1)"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-04-b-gr.json",
+  "id": "grammar.b1.34.04.reinforcing-certainty",
+  "old": "When defending an argument with confidence, speakers deploy modal disjuncts such as *kétségkívül* (undoubtedly), *minden bizonnyal* (in all probability / most certainly), *nyilvánvalóan* (obviously), and *vitathatatlanul* (indisputably).",
+  "new": "You know *kétségkívül* and *nyilvánvalóan* from B1 Unit 30, and *minden bizonnyal* from B1 Unit 43. New here is *vitathatatlanul* (indisputably). Use these words when you are sure of your argument: *kétségkívül* (undoubtedly), *minden bizonnyal* (in all probability), *nyilvánvalóan* (obviously), *vitathatatlanul* (indisputably).",
+  "kind": "hungarian",
+  "why": "presents kétségkívül, nyilvánvalóan (Unit 30) and minden bizonnyal (Unit 43) as new; \"most certainly\" overstates minden bizonnyal; \"disjuncts\" is jargon"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-05-a-gr.json",
+  "id": "grammar.b1.34.05.concluding-syntheses",
+  "old": "To deliver a synthesizing final verdict after weighing multiple perspectives, use introductory idioms:",
+  "new": "You know *mindent összevetve* and *végeredményben* from B1 Unit 25, and *összegzésképpen megállapítható, hogy …* from B1 Unit 41. To close a discussion, use one of these openers:",
+  "kind": "hungarian",
+  "why": "presents mindent összevetve/végeredményben (Unit 25) and összegzésképpen (Unit 41) as new"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-05-b-gr.json",
+  "id": "grammar.b1.34.05.pragmatic-opinion-hedges",
+  "old": "Cultivated Hungarian speakers frame personal assessments with polite hedging formulas:",
+  "new": "You know *szerintem* from A2 Unit 12 and *valaki szerint* from B1 Unit 41. To sound careful and polite when you give your view, add a hedge:",
+  "kind": "hungarian",
+  "why": "presents szerint opinions (A2 Unit 12, B1 Unit 41) as new; no recap"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-34-05-b-gr.json",
+  "id": "grammar.b1.34.05.pragmatic-opinion-hedges",
+  "old": "Meglátásom szerint a kérdés sokkal összetettebb annál, semhogy gyorsan döntsünk.",
+  "new": "Meglátásom szerint a kérdés összetettebb, mint gondoljuk.",
+  "kind": "hungarian",
+  "why": "*annál, semhogy* is a C1-level construction; the English gloss (\"than to decide hastily\") is not what it says"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-34-02.json",
+  "id": "b1-34-02 title",
+  "old": "\"title\": \"Egyrészről..., másrészről... (On the One Hand, On the Other)\"",
+  "new": "\"title\": \"Egyrészt..., másrészt... (On the One Hand, On the Other)\"",
+  "kind": "hungarian",
+  "why": "the title uses egyrészről/másrészről, forms the lesson never teaches (it teaches egyrészt/másrészt)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-34-consolidation.json",
+  "id": "b1-34-consolidation goal 1",
+  "old": "Review all 20 vocabulary items for advanced argumentation and perspective.",
+  "new": "I can give a balanced opinion that agrees in part and names a reservation.",
+  "kind": "hungarian",
+  "why": "the consolidation practises a handful of words, not all 20; \"Review\" is not a can-do line"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-34-consolidation.json",
+  "id": "b1-34-consolidation goal 2",
+  "old": "Synthesize nested opinion clauses, concession structures, and epistemic reinforcement.",
+  "new": "I can use bár … mégis to admit a point and keep my view.",
+  "kind": "hungarian",
+  "why": "epistemic reinforcement is not practised here"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-34-consolidation.json",
+  "id": "b1-34-consolidation goal 3",
+  "old": "Confirm mastery of balancing counter-arguments with fair-minded deliberation.",
+  "new": "I can say what ellenérv, tanulság and nem állja meg a helyét mean.",
+  "kind": "hungarian",
+  "why": "vague"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-34-consolidation.json",
+  "id": "b1-34-consolidation goal 4",
+  "old": "Demonstrate readiness for expressing nuanced B1-level discourse.",
+  "new": "I can sum up my view with meglátásom szerint and name an argument.",
+  "kind": "hungarian",
+  "why": "vague"
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-34-babits.json",
+  "id": "story b1-34-babits narration 1",
+  "old": "mintha a fizikai hűvösséggel akarná elcsitítani",
+  "new": "és a fizikai hűvösséggel próbálta elcsitítani",
+  "kind": "hungarian",
+  "why": "*mintha … akarná* is the later skill mixed-conditionals-and-mintha (b1-35-02-a, Unit 70)",
+  "sure": false
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-34-babits.json",
+  "id": "story b1-34-babits narration 2",
+  "old": "Tudta, hogy bármilyen nehéz és félelmetes is a kettős lét lélektani rejtélye, meg kell küzdenie önmagáért a sötétség ellenében.",
+  "new": "Tudta, hogy a kettős lét lélektani rejtélye nehéz és félelmetes, de meg kell küzdenie önmagáért a sötétség ellenében.",
+  "kind": "hungarian",
+  "why": "*bármilyen … is* is the B2 skill concessive-indefinites",
+  "sure": false
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-34-babits.json",
+  "id": "story b1-34-babits narration 2",
+  "old": "szembe kell néznie az igazság minden oldalával, bármilyen árat kérjen is a valóság.",
+  "new": "szembe kell néznie az igazság minden oldalával, mert a valóság nagy árat kérhet.",
+  "kind": "hungarian",
+  "why": "*bármilyen … is* is the B2 skill concessive-indefinites",
+  "sure": false
+ },
+ {
+  "file": "content/hu/stories/classics/b1/b1-34-babits.json",
+  "id": "story b1-34-babits question 2",
+  "old": "Egy szegény, megalázott asztaloslegényként a rideg valóságban.",
+  "new": "Egy szegény, megalázott asztaloslegényként a rémálmaiban.",
+  "kind": "hungarian",
+  "why": "option contradicts the story: Elemér lives the apprentice in his nightmares, not in cold reality"
+ }
+]
