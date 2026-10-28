@@ -238,7 +238,7 @@ the bent cross); *vármegye* is the official name since 2023. Two-option
 dialogue items need a plausible wrong reply with one fault.
 A recap ("You know *X* from B1 Unit N") names the unit whose screen
 teaches *X*, never the unit a skill title promises: titles listed words
-their screens never showed (*muszáj*, *ezért*, *amely*, *bár*), so 20
+their screens never showed (*muszáj*, *ezért*, *amely*, *bár*), so 34
 B1 recaps pointed to the wrong unit (core close-out, 2026-10-28). Give a
 number only when the knowledge sheet names it for *X*; the reviewer
 runs `check_unit_refs.py`. B2 forms stay out of B1 screens and items:
