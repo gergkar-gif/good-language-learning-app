@@ -118,7 +118,9 @@ The user took the four recommended options:
 - **Skills for the units that teach none: none added.** Claude proposed
   *hiába*, *lehet, hogy / kétlem, hogy* and *az ember*; the user judged
   them vocabulary items, not grammar skills, so all 17 units keep the
-  vocabulary tag. *Hiába* has a screen (Unit 35) but no item drills it.
+  vocabulary tag. *Hiába* had a screen (Unit 35) but no item drilled it:
+  three weak items (a weekday blank, an off-topic *azt mondta, hogy*,
+  a Unit 9 recap blank) were replaced with *hiába* items, vocabulary-tagged.
 - 12 frozen units were unfrozen for these edits and refrozen with their
   accepted findings; all 36 core units check clean, walk 216/216.
 ### Route A: read-first batch (HU A2, 2026-10-14 → 2026-10-15)
