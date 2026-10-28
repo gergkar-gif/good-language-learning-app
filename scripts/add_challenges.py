@@ -63,7 +63,11 @@ def problems(stem, c, stems, table, replace, course, level):
         out.append("lesson has no checklist line to copy into canDo")
     elif c.get("canDo") != line:
         out.append(f"canDo must be the first checklist line: {line!r}")
-    if isinstance(c.get("target"), str) and len([s for s in re.split(r"[.!?]+", c["target"]) if s.strip()]) > 3:
+    # a regnal or ordinal numeral's full stop (II. József, IV. Béla, 1848.
+    # március 15.) ends no sentence (HU B1 citizenship batches: refused four
+    # three-sentence targets about kings)
+    target = re.sub(r"\b([IVXLC]+|\d+)\.(?=\s)", r"\1", c["target"]) if isinstance(c.get("target"), str) else None
+    if target is not None and len([s for s in re.split(r"[.!?]+", target) if s.strip()]) > 3:
         out.append("target has more than 3 sentences")
     return out
 

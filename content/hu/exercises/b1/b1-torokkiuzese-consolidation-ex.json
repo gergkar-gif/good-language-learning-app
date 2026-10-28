@@ -111,7 +111,7 @@
       "category": "reading",
       "question": "Melyik évben foglalták vissza Budát a szövetséges keresztény hadak?",
       "options": [
-        "1686-ban.",
+        "1686-ban",
         "1541-ben",
         "1526-ban",
         "1703-ban"
@@ -161,16 +161,19 @@
       "id": "b1-torokkiuzese-consolidation.ex09",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat fejezi ki helyesen a célt és a következményt?",
+      "question": "Melyik mondat helyes? (so that the Turks would be driven out)",
       "options": [
-        "A Szent Liga serege azért ostromolta Budát, hogy kiűzze a törököket.",
-        "A Szent Liga serege azért ostromolta Budát, mert kiűzte a törököket volt.",
-        "A Szent Liga serege ezért ostromolta Budát ahová ment."
+        "A Szent Liga azért vette ostrom alá Budát, hogy kiűzzék a törököket.",
+        "A Szent Liga azért vette ostrom alá Budát, hogy kiűzik a törököket.",
+        "A Szent Liga azért vette ostrom alá Budát, mert kiűzzék a törököket."
       ],
       "correct": 0,
       "teaches": [
         "azert-hogy-purpose"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "mert-because"
+      }
     },
     {
       "id": "b1-torokkiuzese-consolidation.ex10",
@@ -188,10 +191,10 @@
       "id": "b1-torokkiuzese-consolidation.ex11",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A visszafoglalt birtokokért a nemeseknek tíz százalék fegyver____ kellett fizetniük.",
-      "hint": "ransom / fee",
-      "english": "For the recaptured estates, the nobles had to pay a ten percent weapon redemption fee.",
-      "answer": "váltságot",
+      "sentence": "A visszafoglalt birtokokért a nemeseknek tíz százalék ____ kellett fizetniük.",
+      "hint": "ransom fee, as the object",
+      "english": "For the recovered estates, the nobles had to pay a ten percent weapon ransom.",
+      "answer": "fegyverváltságot",
       "teaches": [
         "how-the-accusative-t-works"
       ]
@@ -200,9 +203,9 @@
       "id": "b1-torokkiuzese-consolidation.ex12",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A nép terhei miatt az újabb szabadságharc kirobbanása elkerülhetetlenné ____.",
+      "sentence": "A nép terhei miatt egy új felkelés elkerülhetetlenné ____.",
       "hint": "válik, past",
-      "english": "Due to the burdens on the people, the outbreak of a new war of independence became inevitable.",
+      "english": "Because of the burdens on the people, a new uprising became inevitable.",
       "answer": "vált",
       "teaches": [
         "valik-verb"
@@ -212,9 +215,9 @@
       "id": "b1-torokkiuzese-consolidation.ex13",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A kuruc felkelők élére a brezáni kiáltvány után II. Rákóczi ____ lépett.",
+      "sentence": "A kuruc felkelők élére 1703-ban II. Rákóczi ____ állt.",
       "hint": "first name",
-      "english": "After the Brezán Proclamation, Francis II Rákóczi stepped to the head of the Kuruc rebels.",
+      "english": "In 1703, Ferenc Rákóczi II stood at the head of the Kuruc rebels.",
       "answer": "Ferenc",
       "teaches": [
         "b1-driving-out-ottomans-vocab"
@@ -227,9 +230,9 @@
       "question": "Hány évig tartott a török hódoltság Magyarországon (1541-től 1686/1699-ig)?",
       "options": [
         "Körülbelül 150 évig.",
-        "Ötven évig.",
-        "Négyszáz évig.",
-        "Tíz évig."
+        "Körülbelül 50 évig.",
+        "Körülbelül 400 évig.",
+        "Körülbelül 10 évig."
       ],
       "correct": 0,
       "stage": "civics"
@@ -255,12 +258,12 @@
       "id": "b1-torokkiuzese-consolidation.ex16",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Melyik két ősi alkotmányos jogról mondott le a magyar rendi országgyűlés 1687-ben?",
+      "question": "Melyik két ősi jogról mondtak le a rendek 1687-ben?",
       "options": [
-        "A szabad királyválasztás jogáról és az Aranybulla fegyveres ellenállási záradékáról.",
-        "A borkészítés és a sóbányászat jogáról.",
-        "A magyar nyelv és az anyanyelvi oktatás jogáról.",
-        "A bírósági tárgyalások tartásáról."
+        "A szabad királyválasztásról és az ellenállási jogról.",
+        "A magyar nyelv használatáról és az iskolák jogáról.",
+        "A nemesi adómentességről és a vármegyei hivatalokról.",
+        "A borkészítés és a sóbányászat jogáról."
       ],
       "correct": 0,
       "stage": "civics"
@@ -296,12 +299,12 @@
       "id": "b1-torokkiuzese-consolidation.ex19",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Milyen demográfiai változások történtek a török kor utáni betelepítések következtében?",
+      "question": "Milyen változást hoztak a török kor után érkező telepesek?",
       "options": [
-        "Magyarország soknemzetiségű országgá vált a svábok, szlovákok, szerbek és románok betelepülése miatt.",
-        "Kizárólag magyarok éltek az egész Kárpát-medencében.",
-        "A lakosság teljesen kihalt.",
-        "Minden város lakossága azonnal francia lett."
+        "Az ország sokszínűbb lett: német, szerb és szlovák telepesek jöttek.",
+        "Csak magyarok éltek az egész Kárpát-medencében, más nem.",
+        "A lakosság kihalt, nem maradt ember az országban.",
+        "A telepesek mind visszamentek a hazájukba egy év alatt."
       ],
       "correct": 0,
       "stage": "civics"
@@ -310,12 +313,12 @@
       "id": "b1-torokkiuzese-consolidation.ex20",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Milyen történelmi tanulságot hordoz Buda 1686-os visszafoglalása a magyar állampolgársági vizsgán?",
+      "question": "Kik foglalták vissza Budát 1686-ban?",
       "options": [
-        "Az európai keresztény összefogás és a nemzeti hősök önfeláldozása révén a nemzet képes volt feltámadni a legsúlyosabb hódoltság után is.",
-        "A nemzetközi hadviselésben egyedül a nagyhatalmak számítanak, a hazai ellenállás eredménytelen.",
-        "A szövetséges hadjárat bizonyította, hogy a politikai kompromisszumok nem pótolják a katonai erőt.",
-        "A várak megerősítése és védelme teljesen elavult stratégia volt az új tüzérséggel szemben."
+        "A Szent Liga seregei.",
+        "Rákóczi kuruc seregei.",
+        "A francia király serege.",
+        "A svéd király serege."
       ],
       "correct": 0
     }
