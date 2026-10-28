@@ -8,8 +8,8 @@ the recap follows a skill title that names a word its screen never shows).
 
 For each italic word or phrase directly before "from <level> Unit <n>" or
 "*X* (<level> Unit <n>)" right after it (reader B, batch 43-53), it
-finds the first unit (in course order) whose grammar screens, vocabulary,
-exercises or lesson files contain it, and reports the recap when that unit is
+finds the first unit (in course order) that teaches it, as an italicised
+form on a grammar screen other than the recapped word itself or as a vocabulary lemma, and reports the recap when that unit is
 later than the one claimed, or when the word appears nowhere. Matching is by
 text, so a recap of a form rather than a word (*adjuk hozzá* for the
 imperative taught in A2 Unit 10, *kapcsolataimat* for plural possessed nouns)
@@ -28,9 +28,13 @@ REF = re.compile(r"\*([^*]+)\*(?:[^*]{0,40}?\bfrom | \()(A1|A2|B1|B2|C1) Unit (\
 LETTER = "a-záéíóöőúüű"
 
 
-def stem_of(f):
-    b = Path(f).stem
-    return re.sub(r"-(voc|ex)$|-[abc]-gr$|-gr$", "", b)
+def stem_of(f, pos=None):
+    b = re.sub(r"-(voc|ex)$|-[abc]-gr$|-gr$", "", Path(f).stem)
+    # citizenship screens carry a topic after the stem
+    # (b1-karpatmedence-03-mig-egyidejuseg-gr is lesson b1-karpatmedence-03)
+    while pos is not None and b not in pos and "-" in b:
+        b = b.rsplit("-", 1)[0]
+    return b
 
 
 def main():
@@ -47,11 +51,20 @@ def main():
             for st in u["stems"]:
                 pos[st] = (li, i + 1)
     texts = {}
-    for d in ("grammar", "vocabulary", "exercises", "lessons"):
-        for f in glob.glob(str(ROOT / f"content/{course}/{d}/*/*.json")):
-            p = pos.get(stem_of(f))
-            if p:
-                texts.setdefault(p, []).append(Path(f).read_text(encoding="utf-8").lower())
+    # where a word is taught: an italicised form on a grammar screen (the recapped
+    # words themselves left out, they teach nothing) or a vocabulary-list lemma. A
+    # passing use in an exercise is not teaching it (*bár* turns up in B1
+    # Unit 5 items; its screen is Unit 29, so "*bár* from B1 Unit 9" was wrong).
+    for f in glob.glob(str(ROOT / f"content/{course}/grammar/*/*.json")):
+        p = pos.get(stem_of(f, pos))
+        if p:
+            text = REF.sub("", Path(f).read_text(encoding="utf-8"))
+            texts.setdefault(p, []).append(" | ".join(re.findall(r"\*([^*]+)\*", text)).lower())
+    for f in glob.glob(str(ROOT / f"content/{course}/vocabulary/*/*.json")):
+        p = pos.get(stem_of(f, pos))
+        if p:
+            words = json.loads(Path(f).read_text(encoding="utf-8")).get("words", [])
+            texts.setdefault(p, []).append(" | ".join(w.get("lemma", "") for w in words).lower())
 
     def first(word):
         pat = re.compile(rf"(?<![{LETTER}]){re.escape(word.lower())}")

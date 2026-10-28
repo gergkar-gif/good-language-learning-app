@@ -89,6 +89,38 @@ frozen state, accepted findings and tag locks are per course.
   216/216 with challenges. Not covered: the citizenship track (39 units,
   3 frozen), the B1 level checklist (run once the citizenship track is
   done), and the 17 core units that teach no registry skill.
+### 2026-10-28: HU B1 core close-out (user's decisions)
+
+The user took the four recommended options:
+- **Skill titles reworded to what their screens teach** (slugs and tags
+  unchanged): `kell-infinitive` "obligation with kell + infinitive",
+  `mert-because` "causal clauses with mert", `kellene` "giving advice
+  with kellene", `ha-clause` "conditional sentences with ha",
+  `concessive-annak-ellenere` "concessive clauses with annak ellenére,
+  hogy", and, found in the same check, `relative-clauses-aki-ami-amely`
+  "relative clauses with aki".
+- **`check_unit_refs.py` now counts a word as taught only where it is**
+  (italicised on a grammar screen, other than the recapped word, or a
+  vocabulary lemma; citizenship screens with a topic in the file name
+  map to their lesson). It found 9 more wrong recaps (*amely* "from A2
+  Unit 4" on six screens: it is first taught in B1 Unit 10; *bár*,
+  *habár*, *majd*, *végeredményben*), all fixed. Its 12 remaining hits
+  on B1 are false positives: recaps of a form (*adjuk hozzá*,
+  *kapcsolataimat*, *áttörést*, *leg-*), multi-word phrases the screens
+  quote rather than italicise, and *nemcsak* against A2's *nem csak*.
+  The noun *bár* ('bar') on an early vocabulary list hides the
+  conjunction from it, so *bár* was fixed by hand.
+- **B2 forms removed from B1 screens:** Unit 63 (*olyannyira/olyan …,
+  hogy*, *arról, hogy*), Unit 72 (*ugyebár*, *elvégre* → *hiszen*,
+  *persze*; preverb inversion *olvastam el*). Rule added to
+  unit-agent-rules § 6b.
+- **Unit 65 is now "Review: Reported Speech"** (unit and lesson titles).
+- **Skills for the units that teach none:** proposed to the user for
+  sign-off (*hiába*, *lehet, hogy / kétlem, hogy*, *az ember*); the
+  other 14 units teach recaps or set phrases and keep the vocabulary
+  tag. *Hiába* has a screen (Unit 35) but no item drills it.
+- 12 frozen units were unfrozen for these edits and refrozen with their
+  accepted findings; all 36 core units check clean, walk 216/216.
 ### Route A: read-first batch (HU A2, 2026-10-14 → 2026-10-15)
 
 0. **Batch setup (Spanish, 2026-10-21):** `python scripts/batch_setup.py

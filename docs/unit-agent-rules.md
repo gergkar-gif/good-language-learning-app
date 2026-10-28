@@ -236,6 +236,16 @@ the citizenship units, check every fact (the facts block) and hedge
 traditions (*a hagyomány szerint*: the four rivers, the three mountains,
 the bent cross); *vármegye* is the official name since 2023. Two-option
 dialogue items need a plausible wrong reply with one fault.
+A recap ("You know *X* from B1 Unit N") names the unit whose screen
+teaches *X*, never the unit a skill title promises: titles listed words
+their screens never showed (*muszáj*, *ezért*, *amely*, *bár*), so 20
+B1 recaps pointed to the wrong unit (core close-out, 2026-10-28). Give a
+number only when the knowledge sheet names it for *X*; the reviewer
+runs `check_unit_refs.py`. B2 forms stay out of B1 screens and items:
+*olyannyira/olyan …, hogy* (`annyira-hogy`), cataphoric *arról, hogy*
+(`b2-cataphoric-clauses`), preverb inversion (*olvastam el*,
+`b2-focus-inversion`), *bármi/bármilyen … is* (`concessive-indefinites`),
+*ugyebár*, *elvégre*.
 
 ### 6c. Spanish (es-es, es-latam; written 2026-10-16 before the Spanish pass, from the files and ROADMAP 148/150; add what the pass finds)
 
