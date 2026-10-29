@@ -1,0 +1,870 @@
+[
+ {
+  "file": "content/hu/stories/world/b1/b1-kormanyablak.json",
+  "old": "a központi Kormányablakba",
+  "new": "a központi kormányablakba",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "kormányablak is a common noun: lower case"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-kormanyablak.json",
+  "old": "Amikor belépett az ügyfélszolgálatra, a bejáratnál lévő érintőképernyős automatánál beütötte az online kapott foglalási kódot",
+  "new": "Amikor belépett az ügyfélszolgálati térbe, a bejáratnál lévő érintőképernyős automatánál beütötte az e-mailben kapott foglalási kódot",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"belépett az ügyfélszolgálatra\" is not Hungarian (belép takes -ba/-be; ügyfélszolgálat is the service, not a room); \"az online kapott kód\" is unnatural"
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-kormanyablak.json",
+  "old": "elkészítette az új digitális fényképet és ujjnyomatot",
+  "new": "elkészítette az új digitális fényképet, és levette az ujjlenyomatát",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"ujjlenyomat\" is the usual word (ujjnyomat is not in the dictionary); a fingerprint is taken, not \"made\""
+ },
+ {
+  "file": "content/hu/stories/world/b1/b1-kormanyablak.json",
+  "old": "Péter kérte az Ügyfélkapu+ aktiválását is",
+  "new": "Péter kérte az Ügyfélkapu-regisztrációja aktiválását is",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"Ügyfélkapu+\" was the old higher security level; check whether the name is still used in 2026 (the portal is now just \"Ügyfélkapu\", with two-factor login)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-01.json",
+  "old": "Master essential Hungarian administrative terms for időpontfoglalás és sorszámhúzás a kormányablakban.",
+  "new": "I can say that I booked an appointment for a day and time at the government window.",
+  "kind": "goal",
+  "sure": true,
+  "why": "template goal line -> plain can-do line"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-01.json",
+  "old": "Understand how to navigate official procedures at the Kormányablak.",
+  "new": "I can follow a number display and see which window to go to.",
+  "kind": "goal",
+  "sure": true,
+  "why": "shared/generic goal line reworded (it was identical in lessons 1-5)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-01.json",
+  "old": "Complete structured reading, dialogue, and grammatical exercises.",
+  "new": "I can understand short sentences about waiting and queuing.",
+  "kind": "goal",
+  "sure": true,
+  "why": "generic goal line (identical in lessons 1-5)"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-kormanyablak-01-gr.json",
+  "old": "Official appointments at the *Kormányablak* take the sublative (*-ra/-re*): *Időpontot foglalok személyi igazolvány cseréjére.* When queuing in person, you draw a ticket (*sorszámot húz*), and wait until your number is called (*amikor a számomat szólítják*).",
+  "new": "You know the ending *-ra/-re* from A2 Unit 6. An appointment at the *kormányablak* (government window) takes it: *Időpontot foglalok személyi igazolvány cseréjére.* When you queue in person, you draw a ticket (*sorszámot húz*) and wait for your number to be called (*amikor a számomat szólítják* = when they call my number).",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "the screen presented -ra/-re as new (A2 Unit 6); \"wait until\" does not translate amikor; kormányablak lower case"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-kormanyablak-01-gr.json",
+  "old": "Időpontot foglaltam a Kormányablakba péntek reggel kilenc órára.",
+  "new": "Időpontot foglaltam a kormányablakba péntek reggel kilenc órára.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "kormányablak is a common noun"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-01-ex.json",
+  "id": "b1-kormanyablak-01.ex01",
+  "set": {
+   "question": "Mit tett Péter a sorszámhúzó automatánál?",
+   "options": [
+    "Megadta a foglalási kódot, és kapott egy sorszámot",
+    "Megadta a nevét, és kapott egy új személyit",
+    "Fizetett a bankkártyájával, és kapott egy sorszámot"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "reading item asked a fact the story does not state (walk-in rule) and had absurd wrong options; now asks what the story says (paragraph 2); each wrong option has one fault; uses the unused word sorszámhúzó automata"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-01-ex.json",
+  "id": "b1-kormanyablak-01.ex04",
+  "set": {
+   "question": "Mi jelzi Péternek, hogy melyik ablakhoz kell mennie?",
+   "options": [
+    "A digitális kijelző, amely kiírja a sorszámot és az ablakot",
+    "Egy SMS, amelyet az ügyintéző küld a telefonjára",
+    "A foglalási kód, amely tartalmazza az ablak számát"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (74 vs 51); absurd wrong options (shouting guard, registered letter) replaced by plausible ones; story paragraph 3: the display shows the number and the window"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-01-ex.json",
+  "id": "b1-kormanyablak-01.ex07",
+  "set": {
+   "options": [
+    "Itt van a visszaigazoló e-mail a foglalási kóddal.",
+    "Köszönöm, a sorszámot már megkaptam az automatából.",
+    "Szerdán délután is ráérek, ha az önnek jobb."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "two-option-style dialogue with absurd wrong replies (shop, getting up early): plausible replies that do not give the booking code"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-02.json",
+  "old": "Master essential Hungarian administrative terms for személyazonosító okmányok és lakcímkártya ügyintézés.",
+  "new": "I can say that my identity card expires next month and that I have my address registration form.",
+  "kind": "goal",
+  "sure": true,
+  "why": "template goal line -> plain can-do line"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-02.json",
+  "old": "Understand how to navigate official procedures at the Kormányablak.",
+  "new": "I can say who has to sign the address registration form.",
+  "kind": "goal",
+  "sure": true,
+  "why": "generic goal line reworded"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-02.json",
+  "old": "Complete structured reading, dialogue, and grammatical exercises.",
+  "new": "I can read short sentences about identity documents and the address card.",
+  "kind": "goal",
+  "sure": true,
+  "why": "generic goal line"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-kormanyablak-02-gr.json",
+  "old": "To prove one's identity, Hungarian uses the instrumental (*-val/-vel*): *Személyi igazolvánnyal vagy útlevéllel igazolom magam.* Address registration uses *bejelent* with the allative or inessive: *Állandó lakcímet jelent be a lakcímkártyáján.*",
+  "new": "You know the ending *-val/-vel* from A1 Unit 28. You prove who you are with a document: *Személyi igazolvánnyal vagy útlevéllel igazolom magamat.* You know the accusative *-t* from A1 Unit 19: *bejelent* takes it for the thing you register: *Új állandó lakcímet jelentek be.*",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "false rule: bejelent takes the accusative, not \"allative or inessive\", and the example (a lakcímkártyáján) was not even a bejelent construction; \"igazolom magam\" contradicted the exercise (magamat); both endings were presented as new"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-02-ex.json",
+  "id": "b1-kormanyablak-02.ex01",
+  "set": {
+   "options": [
+    "A lakcímkártya (a lakcímet igazoló igazolvány)",
+    "Az érvényes személyazonosító igazolvány",
+    "A hatósági erkölcsi bizonyítvány"
+   ],
+   "correct": 0,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-kormanyablak-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (53 vs 40) and final-punctuation tell; the item asks for a fact the story does not state, so it is a vocabulary item (lakcímkártya)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-02-ex.json",
+  "id": "b1-kormanyablak-02.ex02",
+  "set": {
+   "hint": "myself"
+  },
+  "kind": "hint",
+  "sure": true,
+  "why": "hint named the tested ending (\"accusative ending\")"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-02-ex.json",
+  "id": "b1-kormanyablak-02.ex04",
+  "set": {
+   "options": [
+    "Az okmány a megadott dátum után hatóságilag nem használható fel",
+    "Az okmány a lejárat után is érvényes marad a hatóságnál",
+    "Az okmány tulajdonosa ezután már nem lehet magyar állampolgár"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "absurd wrong options (turns yellow, cut up with scissors) replaced by plausible misreadings of \"lejár\""
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-02-ex.json",
+  "id": "b1-kormanyablak-02.ex05",
+  "set": {
+   "sentence": "Kérjük, ellenőrizze az okmányon szereplő személyes adatait és az érvényességi időt!",
+   "english": "Please check your personal data on the document and the validity period!"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "vocab-unused: érvényességi idő was in no item"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-02-ex.json",
+  "id": "b1-kormanyablak-02.ex07",
+  "set": {
+   "options": [
+    "Itt vannak az eredeti kártyák, parancsoljon.",
+    "Holnap reggel kilenc órára van időpontom itt.",
+    "Az új lakásom a harmadik emeleten van."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "final-punctuation tell and absurd wrong replies (bread and milk, cinema ticket); plausible replies that do not hand over the documents"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-02-ex.json",
+  "id": "b1-kormanyablak-02.ex08",
+  "set": {
+   "tiles": [
+    "A",
+    "tartózkodási",
+    "helyet",
+    "is",
+    "be",
+    "lehet",
+    "jelenteni",
+    "a",
+    "kormányablakban."
+   ],
+   "solution": [
+    "A",
+    "tartózkodási",
+    "helyet",
+    "is",
+    "be",
+    "lehet",
+    "jelenteni",
+    "a",
+    "kormányablakban."
+   ],
+   "english": "A temporary address can also be registered at the government window."
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "unsafe claim: a registered stay is not \"valid for five years\" in the registry (check); sentence replaced by a safe one using the same vocabulary"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-03.json",
+  "old": "Ügyfélkapu+ és elektronikus közigazgatás",
+  "new": "Ügyfélkapu és elektronikus közigazgatás",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"Ügyfélkapu+\" is the old security level name; check (title)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-03.json",
+  "old": "Master essential Hungarian administrative terms for ügyfélkapu+ és elektronikus közigazgatás.",
+  "new": "I can say what the Ügyfélkapu portal is used for and that I log in with two-factor authentication.",
+  "kind": "goal",
+  "sure": true,
+  "why": "template goal line -> plain can-do line"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-03.json",
+  "old": "Understand how to navigate official procedures at the Kormányablak.",
+  "new": "I can understand where official letters arrive in the online mailbox.",
+  "kind": "goal",
+  "sure": true,
+  "why": "generic goal line reworded"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-03.json",
+  "old": "Complete structured reading, dialogue, and grammatical exercises.",
+  "new": "I can follow a short exchange about activating the Ügyfélkapu registration.",
+  "kind": "goal",
+  "sure": true,
+  "why": "generic goal line"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-kormanyablak-03-gr.json",
+  "old": "Digital public administration uses specific motion verbs and cases: *belép az Ügyfélkapu felületére*, *hitelesíti a dokumentumot*, and *megtekinti a határozatot a tárhelyen*. Two-factor authentication uses instrumental: *kétlépcsős azonosítással jelentkezik be*.",
+  "new": "Digital administration uses endings you already know: *belép az Ügyfélkapu felületére* (*-ra/-re*, A2 Unit 6), *hitelesíti a dokumentumot* (accusative *-t*, A1 Unit 19) and *megtekinti a határozatot a tárhelyen* (*-n/-on/-en*, A1 Unit 16). You know *-val/-vel* from A1 Unit 28: *kétlépcsős azonosítással jelentkezik be* (he logs in with two-factor authentication).",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "the screen presented four known endings as new (\"specific motion verbs and cases\"); recap with unit numbers from the knowledge sheet"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-03-ex.json",
+  "id": "b1-kormanyablak-03.ex01",
+  "set": {
+   "options": [
+    "Biztonságos elektronikus azonosításra és online hivatali ügyintézésre",
+    "Személyes ügyintézésre a kormányablakban, ügyfélhívó rendszerrel",
+    "Bankkártyás fizetésre a bolti pénztáraknál, készpénz helyett"
+   ],
+   "correct": 0,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-kormanyablak-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "absurd wrong options (cancelling travel insurance at the border, free films); the fact is not in the story, so a vocabulary item"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-03-ex.json",
+  "id": "b1-kormanyablak-03.ex04",
+  "set": {
+   "options": [
+    "A polgár saját, hivatalos digitális tárhelyére",
+    "A polgár postaládájába, minden esetben papíron",
+    "A kormányablak nyilvános hirdetőtáblájára"
+   ],
+   "correct": 0,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-kormanyablak-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "absurd wrong options (social media wall, railway station notice board); not stated in the story, so a vocabulary item"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-03-ex.json",
+  "id": "b1-kormanyablak-03.ex07",
+  "set": {
+   "question": "– Hogyan tudom aktiválni az Ügyfélkapu regisztrációmat?\n– Bármelyik kormányablakban személyesen vagy elektronikus személyivel.",
+   "options": [
+    "Köszönöm, akkor személyesen kérem a regisztrációt az ablaknál",
+    "Köszönöm, akkor a regisztrációt a postán kérem majd",
+    "Köszönöm, de nekem csak az útlevelemet kell megújítani"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "length give-away (62 vs 44), \"!\" tell, absurd wrong replies (computer games, carrier pigeons); kormányablak lower case. Claim \"any kormányablak, in person or with the eSzemélyi\" is present-day: check"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-03-ex.json",
+  "id": "b1-kormanyablak-03.ex08",
+  "set": {
+   "tiles": [
+    "A",
+    "kétlépcsős",
+    "azonosítás",
+    "növeli",
+    "a",
+    "belépés",
+    "biztonságát."
+   ],
+   "solution": [
+    "A",
+    "kétlépcsős",
+    "azonosítás",
+    "növeli",
+    "a",
+    "belépés",
+    "biztonságát."
+   ],
+   "english": "Two-factor authentication increases the security of logging in."
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "legal claim \"a downloaded certificate is a private deed of full probative value\" is not safe (a downloaded document can be an official document; check) -> neutral sentence"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-04.json",
+  "old": "Master essential Hungarian administrative terms for hivatalos kérelmek, nyomtatványok és meghatalmazás.",
+  "new": "I can say that I submit an application in writing on a form and attach the original documents.",
+  "kind": "goal",
+  "sure": true,
+  "why": "template goal line -> plain can-do line"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-04.json",
+  "old": "Understand how to navigate official procedures at the Kormányablak.",
+  "new": "I can say what an attachment (melléklet) to an application is.",
+  "kind": "goal",
+  "sure": true,
+  "why": "generic goal line reworded"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-04.json",
+  "old": "Complete structured reading, dialogue, and grammatical exercises.",
+  "new": "I can follow a short exchange about witnesses for a power of attorney.",
+  "kind": "goal",
+  "sure": true,
+  "why": "generic goal line"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-kormanyablak-04-gr.json",
+  "old": "Submitting a petition uses *kérelmet nyújt be* or *előterjeszt*. Third-party representation requires *meghatalmazás* (power of attorney), taking the dative (*-nak/-nek*): *Meghatalmazást ad a kollégájának.*",
+  "new": "Submitting an application uses *kérelmet nyújt be* (or *kérelmet terjeszt elő*). Acting for somebody else requires a *meghatalmazás* (power of attorney); you give it to a person with the dative ending *-nak/-nek*, which you know from earlier units: *Meghatalmazást ad a kollégájának.*",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "dative presented as new; \"előterjeszt\" alone is not the phrase (kérelmet terjeszt elő)"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-kormanyablak-04-gr.json",
+  "old": "Ha nem tud személyesen megjelenni, két tanúval ellátott meghatalmazás szükséges.",
+  "new": "Ha nem tud személyesen megjelenni, általában két tanúval ellátott meghatalmazás szükséges.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "overstated: a power of attorney can also be countersigned by a lawyer or notary (check)"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-kormanyablak-04-gr.json",
+  "old": "If you cannot appear in person, a power of attorney signed by two witnesses is required.",
+  "new": "If you cannot appear in person, a power of attorney with two witnesses is usually required.",
+  "kind": "english",
+  "sure": false,
+  "why": "english follows the hedge"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-04-ex.json",
+  "id": "b1-kormanyablak-04.ex01",
+  "set": {
+   "options": [
+    "Szabályszerű, tanúkkal ellátott meghatalmazást",
+    "A saját születési anyakönyvi kivonatát és fényképét",
+    "Csak a saját személyi igazolványának másolatát"
+   ],
+   "correct": 0,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-kormanyablak-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "absurd wrong options (bank statement, handwritten recipe); fact not in the story, so a vocabulary item"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-04-ex.json",
+  "id": "b1-kormanyablak-04.ex04",
+  "set": {
+   "options": [
+    "A kérelemhez csatolt igazoló irat vagy bizonyító okmány",
+    "A hatóság döntése, amelyet az ügyfél postán megkap",
+    "Az a díj, amelyet az ügyfél a hivatalban fizet"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "absurd wrong options (staff list on the door, a phone number in the phone book); plausible mix-ups with határozat and illeték"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-04-ex.json",
+  "id": "b1-kormanyablak-04.ex05",
+  "set": {
+   "sentence": "Kérjük, hozza magával a nyomtatványt és az összes irat eredeti példányát!",
+   "english": "Please bring the form and the original copy of all documents with you!"
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "vocab-unused: nyomtatvány was in no item"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-04-ex.json",
+  "id": "b1-kormanyablak-04.ex07",
+  "set": {
+   "options": [
+    "Értem, akkor a kollégáim aláírják a dokumentumot tanúként.",
+    "Értem, akkor az aláírásuk helyett elég a telefonszámuk.",
+    "Értem, akkor egy tanú elég, és a lakcímét nem kell megadni."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "absurd wrong replies (swimming in the Balaton, delayed train): plausible replies that each contradict the clerk"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-04-ex.json",
+  "id": "b1-kormanyablak-04.ex08",
+  "set": {
+   "tiles": [
+    "A",
+    "hatósági",
+    "bizonyítvány",
+    "csak",
+    "a",
+    "megadott",
+    "ideig",
+    "használható",
+    "fel."
+   ],
+   "solution": [
+    "A",
+    "hatósági",
+    "bizonyítvány",
+    "csak",
+    "a",
+    "megadott",
+    "ideig",
+    "használható",
+    "fel."
+   ],
+   "english": "The official certificate can only be used for the period stated."
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"valid for thirty days\" is not a general rule (the certificate of good conduct, for example, is valid for 90 days; check)"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-05.json",
+  "old": "Master essential Hungarian administrative terms for hiánypótlás, illetékfizetés és hatósági határozatok.",
+  "new": "I can say what happens when documents are missing from an application.",
+  "kind": "goal",
+  "sure": true,
+  "why": "template goal line -> plain can-do line"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-05.json",
+  "old": "Understand how to navigate official procedures at the Kormányablak.",
+  "new": "I can say that I can appeal against a decision and pay the fee by bank card.",
+  "kind": "goal",
+  "sure": true,
+  "why": "generic goal line reworded"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-05.json",
+  "old": "Complete structured reading, dialogue, and grammatical exercises.",
+  "new": "I can understand what a processing deadline is.",
+  "kind": "goal",
+  "sure": true,
+  "why": "generic goal line"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-kormanyablak-05-gr.json",
+  "old": "When documents are missing, the authority issues a *hiánypótlási felhívás*, setting a strict deadline: *tizenöt napon belül köteles pótolni a hiányzó iratokat*. An appeal against a ruling takes the instrumental: *fellebbezéssel él a döntés ellen*.",
+  "new": "When documents are missing, the authority sends a *hiánypótlási felhívás* (a notice to remedy deficiencies) and sets a deadline, for example *nyolc napon belül köteles pótolni a hiányzó iratokat*. You know *-val/-vel* from A1 Unit 28: an appeal uses it: *fellebbezéssel él a döntés ellen* (he lodges an appeal against the decision).",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the screen said \"tizenöt\" (15) days while its own first example says \"nyolc\" (8): contradiction; instrumental presented as new (check the 8 days: deadline is set by the authority)"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-kormanyablak-05-gr.json",
+  "old": "A határozat kézhezvételétől számított harminc napon belül fellebbezés nyújtható be.",
+  "new": "A határozat kézhezvételétől számított tizenöt napon belül fellebbezés nyújtható be.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the general administrative appeal deadline is 15 days, 30 days is the deadline for a court action (Ákr.; check)"
+ },
+ {
+  "file": "content/hu/grammar/b1/b1-kormanyablak-05-gr.json",
+  "old": "An appeal may be submitted within thirty days from the receipt of the decision.",
+  "new": "An appeal may be submitted within fifteen days from the receipt of the decision.",
+  "kind": "english",
+  "sure": false,
+  "why": "english follows the fix"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-05-ex.json",
+  "id": "b1-kormanyablak-05.ex01",
+  "set": {
+   "options": [
+    "A határidőn belül pótolnia kell a hiányzó iratokat",
+    "Azonnal fellebbeznie kell a hatóság felhívása ellen",
+    "Csak az eljárási illetéket kell ismét kifizetnie"
+   ],
+   "correct": 0,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-kormanyablak-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "absurd wrong options (report the clerk to the police, travel abroad on holiday); fact not in the story, so a vocabulary item"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-05-ex.json",
+  "id": "b1-kormanyablak-05.ex03",
+  "set": {
+   "tiles": [
+    "A",
+    "határozat",
+    "kézhezvételétől",
+    "számított",
+    "tizenöt",
+    "napon",
+    "belül",
+    "fellebbezhet."
+   ],
+   "solution": [
+    "A",
+    "határozat",
+    "kézhezvételétől",
+    "számított",
+    "tizenöt",
+    "napon",
+    "belül",
+    "fellebbezhet."
+   ],
+   "english": "You can appeal within fifteen days of receiving the decision."
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "appeal deadline is 15 days (30 is the court deadline); check"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-05-ex.json",
+  "id": "b1-kormanyablak-05.ex04",
+  "set": {
+   "options": [
+    "A jogszabályban előírt idő, amely alatt a hatóságnak döntenie kell",
+    "Az az időtartam, ameddig a kérelmező az ügyfélszolgálaton várakozhat",
+    "A hivatal nyitvatartási ideje, amely alatt ügyfelet fogadnak"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "final-punctuation tell (wrong options ended with a full stop, the right one did not); plain wording"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-05-ex.json",
+  "id": "b1-kormanyablak-05.ex05",
+  "set": {
+   "sentence": "Az illetéket bankkártyás fizetéssel is ki lehet fizetni a kormányablakban.",
+   "english": "The fee can also be paid by bank card at the government window."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "vocab-unused: bankkártyás fizetés was in no item; \"decree\" gloss of határozat dropped"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-05-ex.json",
+  "id": "b1-kormanyablak-05.ex07",
+  "set": {
+   "question": "– Mennyi ideig tart a személyi igazolvány elkészítése?\n– Az általános ügyintézési határidő néhány hét, de gyakran korábban elkészül.",
+   "options": [
+    "Köszönöm, akkor SMS-értesítést fogok kapni, ha átvehető.",
+    "Köszönöm, akkor a hiánypótlási felhívást holnap átveszem.",
+    "Köszönöm, akkor jövő héten fellebbezek a személyi ellen."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"húsz nap\" is not a safe figure (the general deadline in the Ákr. is longer/varies; check); garbled third option (\"inkább postán nem kérem\")"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-consolidation.json",
+  "old": "Review all essential terminology for appointments, documents, and online administration.",
+  "new": "I can follow and retell a short account of renewing an ID card and registering a new address.",
+  "kind": "goal",
+  "sure": true,
+  "why": "template goal line -> plain can-do line"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-consolidation.json",
+  "old": "Consolidate understanding of official administrative decrees, filings, and remedies.",
+  "new": "I can understand sentences about applications, missing documents and appeals.",
+  "kind": "goal",
+  "sure": true,
+  "why": "generic goal line"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-consolidation.json",
+  "old": "Read the reading passage about Kormányablak procedures.",
+  "new": "I can read a short text about a visit to the government window.",
+  "kind": "goal",
+  "sure": true,
+  "why": "awkward goal line"
+ },
+ {
+  "file": "content/hu/lessons/b1/b1-kormanyablak-consolidation.json",
+  "old": "Achieve full independent capability in Hungarian public administrative scenarios.",
+  "new": "I can use the words for appointments, documents and online administration.",
+  "kind": "goal",
+  "sure": true,
+  "why": "over-promising goal line"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-consolidation-ex.json",
+  "id": "b1-kormanyablak-consolidation.ex01",
+  "set": {
+   "options": [
+    "A kormányablak, azaz a kormányzati ügyfélszolgálat",
+    "A vasúti pályaudvar menetjegyirodája és csomagmegőrzője",
+    "A helyi futballklub szurkolói ügyfélszolgálata"
+   ],
+   "correct": 0,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-kormanyablak-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (54 vs 36); \"the\" unit that handles general administration is overstated; not stated in the story: vocabulary item"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-consolidation-ex.json",
+  "id": "b1-kormanyablak-consolidation.ex02",
+  "set": {
+   "sentence": "A lakcímbejelentést három munkanapon belül köteles _____ az új lakásba költözés után.",
+   "answer": "megtenni",
+   "hint": "to make",
+   "english": "You are obliged to make the address registration within three working days after moving into the new flat."
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "blank glued to a non-word stem (megten + ni): blank the whole word; the deadline is three working days (munkanap; check)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-consolidation-ex.json",
+  "id": "b1-kormanyablak-consolidation.ex04",
+  "set": {
+   "options": [
+    "Haladéktalanul be kell jelenteni a kormányablakban vagy a rendőrségen",
+    "Várni kell fél évet, hátha valaki visszaküldi a személyit a postán",
+    "Az elveszett igazolvány nélkül is érvényes marad, nem kell tenni semmit"
+   ],
+   "correct": 0,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-kormanyablak-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (82 vs 55), absurd wrong options (choose a new name and move to the country); not in the story: vocabulary item. Reporting a lost or stolen ID card: check"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-consolidation-ex.json",
+  "id": "b1-kormanyablak-consolidation.ex05",
+  "set": {
+   "sentence": "A meghatalmazott személy átveheti az elkészült iratokat a hivatalban.",
+   "english": "The authorised person can collect the completed documents at the office."
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "an ID card cannot be collected by proxy as a rule (check); \"iratok\" is safe"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-consolidation-ex.json",
+  "id": "b1-kormanyablak-consolidation.ex06",
+  "set": {
+   "english": "The authority rejected the incomplete application in an official decision."
+  },
+  "kind": "english",
+  "sure": true,
+  "why": "határozat = decision, not \"decree\""
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-consolidation-ex.json",
+  "id": "b1-kormanyablak-consolidation.ex08",
+  "set": {
+   "options": [
+    "Igen, a tulajdonos már aláírta a lapot.",
+    "A lakcímkártyámat sajnos otthon felejtettem.",
+    "Az új lakás a harmadik emeleten van, a lift mellett."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (67 vs 43); absurd wrong replies (no breakfast, the tram just left)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-consolidation-ex.json",
+  "id": "b1-kormanyablak-consolidation.ex09",
+  "set": {
+   "tiles": [
+    "Az",
+    "illetékmentességet",
+    "külön",
+    "jogszabály",
+    "határozza",
+    "meg."
+   ],
+   "solution": [
+    "Az",
+    "illetékmentességet",
+    "külön",
+    "jogszabály",
+    "határozza",
+    "meg."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"illeték mentességet\" must be one word: illetékmentesség"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-consolidation-ex.json",
+  "id": "b1-kormanyablak-consolidation.ex10",
+  "set": {
+   "options": [
+    "A küldemény megnyitása hivatalos átvételnek számít",
+    "A küldeményt csak postai úton lehet hivatalosan átvenni",
+    "A küldemény csak a kormányablakban nyitható meg"
+   ],
+   "correct": 0,
+   "category": "vocabulary",
+   "teaches": [
+    "b1-kormanyablak-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "absurd wrong options (deleted after three days, only advertisements); legal terms (joghatással) dropped; delivery rules for the Tárhely: check (the document is also deemed delivered on the 5th working day if never opened)"
+ },
+ {
+  "file": "content/hu/exercises/b1/b1-kormanyablak-consolidation-ex.json",
+  "id": "b1-kormanyablak-consolidation.ex12",
+  "set": {
+   "sentence": "A kormányablakban sok hatósági ügyet lehet intézni.",
+   "english": "Many official matters can be dealt with at the government window."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "praise of a government institution (\"fast and professional\") removed"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-kormanyablak-01-voc.json",
+  "old": "    {\n      \"lemma\": \"ügyfélhívó rendszer\",\n      \"translation\": \"client calling display / queue system\",\n      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "new": "    {\n      \"lemma\": \"ügyfélhívó rendszer\",\n      \"translation\": \"client calling display / queue system\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"perc\",\n      \"translation\": \"minute\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fáradjon\",\n      \"translation\": \"please go (polite request, literally 'take the trouble')\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"hetes\",\n      \"translation\": \"number seven (e.g. window seven)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"visszaigazoló\",\n      \"translation\": \"confirming (e.g. confirmation e-mail)\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"foglalási\",\n      \"translation\": \"booking, reservation (adj.)\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"készségesen\",\n      \"translation\": \"readily, willingly\",\n      \"pos\": \"adv\"\n    },\n    {\n      \"lemma\": \"megkap\",\n      \"translation\": \"to receive, to get\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"bankkártya\",\n      \"translation\": \"bank card\",\n      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "kind": "vocabulary",
+  "sure": true,
+  "why": "unmet word listed (first lesson that uses it)"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-kormanyablak-02-voc.json",
+  "old": "    {\n      \"lemma\": \"tartózkodási hely\",\n      \"translation\": \"temporary residence / registered stay\",\n      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "new": "    {\n      \"lemma\": \"tartózkodási hely\",\n      \"translation\": \"temporary residence / registered stay\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"hatósági\",\n      \"translation\": \"official, issued by an authority\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"erkölcsi\",\n      \"translation\": \"moral; of good character\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"megadott\",\n      \"translation\": \"given, stated\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"használható\",\n      \"translation\": \"usable\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"szereplő\",\n      \"translation\": \"appearing, featured\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"eredeti\",\n      \"translation\": \"original\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"igazoló\",\n      \"translation\": \"proving, certifying\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"tulajdonos\",\n      \"translation\": \"owner, holder\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"lejárat\",\n      \"translation\": \"expiry\",\n      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "kind": "vocabulary",
+  "sure": true,
+  "why": "unmet word listed (first lesson that uses it)"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-kormanyablak-03-voc.json",
+  "old": "    {\n      \"lemma\": \"tárhely\",\n      \"translation\": \"official citizen digital mailbox / storage\",\n      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "new": "    {\n      \"lemma\": \"tárhely\",\n      \"translation\": \"official citizen digital mailbox / storage\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"biztonságos\",\n      \"translation\": \"safe, secure\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"biztonság\",\n      \"translation\": \"safety, security\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"hivatali\",\n      \"translation\": \"official, of an office\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"felület\",\n      \"translation\": \"interface, surface (here: the portal page)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"megkönnyít\",\n      \"translation\": \"to make easier\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"hitelesít\",\n      \"translation\": \"to authenticate, to certify\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"nyilvános\",\n      \"translation\": \"public\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"regisztráció\",\n      \"translation\": \"registration\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"postaláda\",\n      \"translation\": \"letterbox, postbox\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"belépés\",\n      \"translation\": \"entry, logging in\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"növel\",\n      \"translation\": \"to increase\",\n      \"pos\": \"verb\"\n    }\n  ]\n}\n",
+  "kind": "vocabulary",
+  "sure": true,
+  "why": "unmet word listed (first lesson that uses it)"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-kormanyablak-04-voc.json",
+  "old": "    {\n      \"lemma\": \"eredeti példány\",\n      \"translation\": \"original copy\",\n      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "new": "    {\n      \"lemma\": \"eredeti példány\",\n      \"translation\": \"original copy\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szabályszerű\",\n      \"translation\": \"proper, in due form\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"tanú\",\n      \"translation\": \"witness\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"dokumentum\",\n      \"translation\": \"document\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"irat\",\n      \"translation\": \"document, paper (official)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"bizonyító\",\n      \"translation\": \"proving, evidential\",\n      \"pos\": \"adj\"\n    }\n  ]\n}\n",
+  "kind": "vocabulary",
+  "sure": true,
+  "why": "unmet word listed (first lesson that uses it)"
+ },
+ {
+  "file": "content/hu/vocabulary/b1/b1-kormanyablak-05-voc.json",
+  "old": "    {\n      \"lemma\": \"bankkártyás fizetés\",\n      \"translation\": \"payment by bank card (POS terminal)\",\n      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "new": "    {\n      \"lemma\": \"bankkártyás fizetés\",\n      \"translation\": \"payment by bank card (POS terminal)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fellebbez\",\n      \"translation\": \"to appeal\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"elutasító\",\n      \"translation\": \"rejecting, negative (e.g. a rejection decision)\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"átvesz\",\n      \"translation\": \"to collect, to take over\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"hiánypótlás\",\n      \"translation\": \"remedying of deficiencies (completing missing documents)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"elmulasztás\",\n      \"translation\": \"failure, omission\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"eljárás\",\n      \"translation\": \"procedure, proceedings\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"ameddig\",\n      \"translation\": \"until, for as long as\",\n      \"pos\": \"conj\"\n    },\n    {\n      \"lemma\": \"várakozik\",\n      \"translation\": \"to wait\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"nyitvatartási\",\n      \"translation\": \"opening-hours (adj.)\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"pótol\",\n      \"translation\": \"to make up, to supply\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"hiányos\",\n      \"translation\": \"incomplete\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"elutasít\",\n      \"translation\": \"to reject, to refuse\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"benyújt\",\n      \"translation\": \"to submit\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"jogosult\",\n      \"translation\": \"entitled\",\n      \"pos\": \"adj\"\n    },\n    {\n      \"lemma\": \"megtesz\",\n      \"translation\": \"to make, to take (a step, a report)\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"haladéktalanul\",\n      \"translation\": \"immediately, without delay\",\n      \"pos\": \"adv\"\n    },\n    {\n      \"lemma\": \"visszaküld\",\n      \"translation\": \"to send back\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"meghatároz\",\n      \"translation\": \"to define, to specify\",\n      \"pos\": \"verb\"\n    }\n  ]\n}\n",
+  "kind": "vocabulary",
+  "sure": true,
+  "why": "unmet words of the consolidation lesson (it has no vocabulary file): listed on the last lesson list"
+ }
+]
