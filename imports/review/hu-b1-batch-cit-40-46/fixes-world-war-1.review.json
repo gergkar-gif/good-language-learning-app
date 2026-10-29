@@ -1,0 +1,655 @@
+[
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-01-ex.json",
+    "id": "b1-vilaghaboru-01.ex02",
+    "set": {
+      "question": "Which sentence says: 'If the assassination had not happened, the war might not have broken out'?",
+      "options": [
+        "Ha nem történt volna meg a merénylet, talán nem tört volna ki a háború.",
+        "Ha nem történne volna meg a merénylet, talán nem tört volna ki a háború.",
+        "Ha nem történt volna meg a merénylet, talán nem törne volna ki a háború."
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "nek-conditional",
+        "2": "nek-conditional"
+      }
+    },
+    "kind": "hungarian",
+    "why": "stem had '(Lesson 1)', garbled wrong options; now one fault each (present conditional + volna) with an English meaning line; no unmet összeomlás/elkerülhette"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-01-ex.json",
+    "id": "b1-vilaghaboru-01.ex03",
+    "set": {
+      "hint": "declaration of war"
+    },
+    "kind": "hungarian",
+    "why": "hint named the tested ending (-t)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-01-ex.json",
+    "id": "b1-vilaghaboru-01.ex04",
+    "set": {
+      "sentence": "Ha Tisza István meg tudta volna akadályozni a háborút, nem ____ volna el annyi magyar katona.",
+      "hint": "fall (past), he",
+      "english": "If István Tisza had been able to prevent the war, so many Hungarian soldiers would not have fallen.",
+      "answer": "esett",
+      "teaches": [
+        "past-tense-indefinite"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "answer volna was in the prompt (answer-in-prompt) and the hint gave it away; blank the past form instead",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-01-ex.json",
+    "id": "b1-vilaghaboru-01.ex05",
+    "set": {
+      "question": "Mit jelent a mozgósítás?",
+      "options": [
+        "A katonák behívását a hadseregbe a háború kezdetén.",
+        "A háború befejezését és a katonák hazaengedését.",
+        "A béke megkötését a háború első napján."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "length give-away (97 vs 68) and the item asked about rationing, which is lesson 2; now a word from this lesson"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-01-ex.json",
+    "id": "b1-vilaghaboru-01.ex06",
+    "set": {
+      "sentence": "A vidám dalok a ____ és a fagyos lövészárok poklába vezették a fiatalokat.",
+      "hint": "front line",
+      "english": "The cheerful songs led the young men into the hell of the front line and the freezing trench.",
+      "answer": "frontvonal"
+    },
+    "kind": "hungarian",
+    "why": "item was about the Aster Revolution (lesson 4, before its screen); now uses frontvonal/lövészárok from this lesson (vocab-unused)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-01-ex.json",
+    "id": "b1-vilaghaboru-01.ex07",
+    "set": {
+      "tiles": [
+        "Tisza",
+        "István",
+        "ellenezte",
+        "a",
+        "háborút."
+      ],
+      "solution": [
+        "Tisza",
+        "István",
+        "ellenezte",
+        "a",
+        "háborút."
+      ],
+      "english": "István Tisza opposed the war."
+    },
+    "kind": "hungarian",
+    "why": "builder was about Doberdó (lesson 3) with ~6 unmet words; now a sentence from this lesson"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-01-ex.json",
+    "id": "b1-vilaghaboru-01.ex08",
+    "set": {
+      "question": "Ki ellenezte kezdetben a Szerbia elleni háborút a történet szerint?",
+      "options": [
+        "Tisza István miniszterelnök.",
+        "A német császár.",
+        "Ferenc Ferdinánd trónörökös."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "question asked about the aster (lesson 4), not answerable from segment 01; now answerable from the segment"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-01-hadbaindulas.json",
+    "old": "Egyetlen ember mert nyíltan ellentmondani a császári udvarban: a magyar miniszterelnök, gróf Tisza István.",
+    "new": "A magyar miniszterelnök, gróf Tisza István kezdetben ellenezte a Szerbia elleni háborút.",
+    "kind": "hungarian",
+    "why": "'only one man dared to contradict' is overstated and a judgement; Tisza's early opposition is the established fact"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-01-hadbaindulas.json",
+    "old": "Július 28-án megszületett a hadüzenet, és másnap Magyarországon is megkezdődött az általános mozgósítás.",
+    "new": "Július 28-án az Osztrák–Magyar Monarchia hadat üzent Szerbiának, július végén pedig elrendelték az általános mozgósítást.",
+    "kind": "hungarian",
+    "why": "general mobilisation was ordered on 31 July, not the day after the declaration (partial mobilisation had begun on 25 July)"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-01-hadbaindulas.json",
+    "old": "különös, szinte hisztérikus lelkesedés",
+    "new": "nagy lelkesedés",
+    "kind": "hungarian",
+    "why": "'hysterical' is a judgement; the enthusiasm is the established point (unsure about its extent)",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-01-hadbaindulas.json",
+    "old": "a modern történelem legvéresebb vágóhídjára",
+    "new": "a modern történelem egyik legvéresebb vágóhídjára",
+    "kind": "hungarian",
+    "why": "'the bloodiest' is wrong: the Second World War was bloodier"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-vilaghaboru-01-gr.json",
+    "old": "Ha a trónörökös nem utazott volna Szarajevóba, elkerülhető lett volna a háború.",
+    "new": "Ha a trónörökös nem utazott volna Szarajevóba, talán nem tört volna ki a háború.",
+    "kind": "hungarian",
+    "why": "elkerülhető is a -hető form (Unit 61, later)"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-vilaghaboru-01-gr.json",
+    "old": "Tisza István miniszterelnök kezdetben ellenezte a hadüzenetet a szerbeknek.",
+    "new": "Tisza István miniszterelnök kezdetben ellenezte a Szerbia elleni háborút.",
+    "kind": "hungarian",
+    "why": "'hadüzenetet a szerbeknek' is not natural; Tisza opposed the war against Serbia"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-02-ex.json",
+    "id": "b1-vilaghaboru-02.ex02",
+    "set": {
+      "question": "Which sentence says: 'If they had not introduced rationing, the shortage would have been greater'?",
+      "distractor_skills": {
+        "1": "nek-conditional",
+        "2": "irregular-nek-conditional"
+      }
+    },
+    "kind": "hungarian",
+    "why": "stem had '(Lesson 2)' and no meaning line; wrong options are real conditional forms of other skills"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-02-ex.json",
+    "id": "b1-vilaghaboru-02.ex03",
+    "set": {
+      "hint": "rationing system"
+    },
+    "kind": "hungarian",
+    "why": "hint named the tested ending (-t)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-02-ex.json",
+    "id": "b1-vilaghaboru-02.ex04",
+    "set": {
+      "sentence": "Ha a nők nem ____ volna át a férfiak helyét, a villamosok nem jártak volna a Nagykörúton.",
+      "hint": "take over (past), they",
+      "english": "If women had not taken over the men's places, the trams would not have run on the Grand Boulevard.",
+      "answer": "vették",
+      "teaches": [
+        "definite-past"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "answer volna was in the prompt; közlekedtek unmet"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-02-ex.json",
+    "id": "b1-vilaghaboru-02.ex05",
+    "set": {
+      "question": "Mit jelent a hadikölcsön?",
+      "options": [
+        "A háború költségeire a polgároktól kért kölcsönt.",
+        "A katonáknak ingyen adott élelmet a fronton.",
+        "A külföldi hadseregek által fizetett pénzt."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "length give-away (63 vs 48); unmet kiosztott, fedező, jegyzett, kárpótlást"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-02-ex.json",
+    "id": "b1-vilaghaboru-02.ex06",
+    "set": {
+      "sentence": "A napi ____ miatt üresek voltak a boltok polcai.",
+      "english": "Because of the daily shortage of goods, the shop shelves were empty."
+    },
+    "kind": "hungarian",
+    "why": "unmet mindennapos"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-02-ex.json",
+    "id": "b1-vilaghaboru-02.ex08",
+    "set": {
+      "options": [
+        "Mert a férje a villamostársaság vezetője volt.",
+        "Mert a kormány megtiltotta, hogy a nők gyárban dolgozzanak.",
+        "Mert a férje a fronton volt, és valakinek haza kellett vinnie a kenyeret."
+      ],
+      "correct": 2
+    },
+    "kind": "hungarian",
+    "why": "unmet igazgatója"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-02-hatorszag.json",
+    "old": "Nők vezették a villamosokat a Nagykörúton és szerelték",
+    "new": "Nők dolgoztak a villamosokon a Nagykörúton, és szerelték",
+    "kind": "hungarian",
+    "why": "women as tram drivers (as opposed to conductors) in Budapest is unverified",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-03-ex.json",
+    "id": "b1-vilaghaboru-03.ex02",
+    "set": {
+      "question": "Which sentence says: 'If the soldiers had not defended their positions, the front line would have collapsed sooner'?",
+      "options": [
+        "Ha a honvédek nem védték volna hősiesen az állásokat, a frontvonal korábban összeomlott volna.",
+        "Ha a honvédek nem védtek volna hősiesen az állásokat, a frontvonal korábban összeomlott volna.",
+        "Ha a honvédek nem védenék volna hősiesen az állásokat, a frontvonal korábban összeomlott volna."
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "past-tense-indefinite",
+        "2": "nek-conditional"
+      }
+    },
+    "kind": "hungarian",
+    "why": "stem had '(Lesson 3)'; wrong option 2 had two faults; hamarabb unmet"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-03-ex.json",
+    "id": "b1-vilaghaboru-03.ex03",
+    "set": {
+      "hint": "battle"
+    },
+    "kind": "hungarian",
+    "why": "hint named the tested ending (-t)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-03-ex.json",
+    "id": "b1-vilaghaboru-03.ex04",
+    "set": {
+      "sentence": "Ha a föld puhább lett volna, a katonák árkokat ____ volna.",
+      "hint": "dig (past), they",
+      "english": "If the ground had been softer, the soldiers would have dug trenches.",
+      "answer": "ástak",
+      "teaches": [
+        "past-tense-indefinite"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "answer volna was in the prompt; talaja, kőkemény unmet",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-03-ex.json",
+    "id": "b1-vilaghaboru-03.ex05",
+    "set": {
+      "options": [
+        "A fogságba esett, majd hazatért katonát.",
+        "A háború végén hazatért sebesült katonát.",
+        "A hazáért a harcokban elesett katonát."
+      ],
+      "correct": 2
+    },
+    "kind": "hungarian",
+    "why": "unmet ellenség, kitüntetett, harctéren"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-03-ex.json",
+    "id": "b1-vilaghaboru-03.ex07",
+    "set": {
+      "tiles": [
+        "A",
+        "katonák",
+        "hetekig",
+        "víz",
+        "nélkül",
+        "éltek."
+      ],
+      "solution": [
+        "A",
+        "katonák",
+        "hetekig",
+        "víz",
+        "nélkül",
+        "éltek."
+      ],
+      "english": "The soldiers lived without water for weeks.",
+      "solutions": null
+    },
+    "kind": "hungarian",
+    "why": "unmet perzselő, karszti, hőségben; the old 'solutions' list no longer fits the tiles",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-03-doberdo.json",
+    "old": "Az Isonzó-csata tizenkét felvonásban tombolt az alpesi sziklák között.",
+    "new": "Az Isonzó mentén 1915 és 1917 között tizenkét csatát vívtak.",
+    "kind": "hungarian",
+    "why": "'felvonásban' is theatre language; the twelve battles of the Isonzo, June 1915 to October 1917, are established"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-03-doberdo.json",
+    "old": "A szörnyű küzdelemben minden magyar falu adott egy-egy hősi halottat, akinek neve ma is ott áll a helyi emlékműveken.",
+    "new": "A hősi halottak neve ma is ott áll a magyar falvak és városok emlékművein.",
+    "kind": "hungarian",
+    "why": "'every village gave one dead' is false (villages lost many men)"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-03-doberdo.json",
+    "old": "Sokan hadifogságba estek és Szibéria távoli lágereibe kerültek, míg",
+    "new": "Sokan hadifogságba estek; az orosz fronton elfogottak közül sokan Szibéria távoli lágereibe kerültek, míg",
+    "kind": "hungarian",
+    "why": "men taken on the Italian front went to Italian camps, not Siberia"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-03-doberdo.json",
+    "old": "Kimegyek a doberdói harctérre, feltekintek a csillagos nagy égre... Istenem, csak még egyszer láthassam a Tiszát és a szülőfalum harangtornyát!",
+    "new": "„Kimegyek a doberdói harctérre, feltekintek a csillagos nagy égre…” – énekelte a népdalt egy alföldi közkatona.",
+    "kind": "hungarian",
+    "why": "the first line is the folk song 'Kimegyek a doberdói harctérre'; the rest was an invented quote"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-03-doberdo.json",
+    "old": "\"speaker\": \"Szegedi honvédtiszt\"",
+    "new": "\"speaker\": \"Szegedi tiszt\"",
+    "kind": "hungarian",
+    "why": "the 46th (Szeged) regiment belonged to the common army, not the honvéd; the officer's quote is invented (unsure)",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-03-doberdo.json",
+    "old": "\"Szegedi honvédtiszt\",\n    \"Közkatona",
+    "new": "\"Szegedi tiszt\",\n    \"Közkatona",
+    "kind": "hungarian",
+    "why": "character list follows the speaker",
+    "sure": false
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-vilaghaboru-03-gr.json",
+    "old": "Több mint hatszázezer magyar katona esett el a frontvonalakon hősi halottként.",
+    "new": "Több százezer magyar katona esett el a frontvonalakon hősi halottként.",
+    "kind": "hungarian",
+    "why": "the total of Hungarian war dead (about 530,000-660,000 depending on the count) is not firm"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-04-ex.json",
+    "id": "b1-vilaghaboru-04.ex02",
+    "set": {
+      "question": "Which sentence says: 'If the soldiers had not torn off the imperial emblem, they would not have pinned an aster in its place'?",
+      "distractor_skills": {
+        "1": "past-tense-indefinite",
+        "2": "nek-conditional"
+      },
+      "options": [
+        "Ha a katonák nem tépték volna le a császári címert, nem tűztek volna őszirózsát a helyére.",
+        "Ha a katonák nem téptek volna le a császári címert, nem tűztek volna őszirózsát a helyére.",
+        "Ha a katonák nem tépnék volna le a császári címert, nem tűztek volna őszirózsát a helyére."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "stem had '(Lesson 4)'; wrong option 2 had two faults (tépnék + tűznének)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-04-ex.json",
+    "id": "b1-vilaghaboru-04.ex03",
+    "set": {
+      "hint": "emblem"
+    },
+    "kind": "hungarian",
+    "why": "hint named the tested ending (-t)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-04-ex.json",
+    "id": "b1-vilaghaboru-04.ex04",
+    "set": {
+      "sentence": "Ha a katonák nem hagyták volna ____ az állásokat, nem indultak volna haza.",
+      "hint": "prefix: away",
+      "english": "If the soldiers had not left their positions, they would not have set off home.",
+      "answer": "el",
+      "teaches": [
+        "prefix-word-order"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "answer volna was in the prompt; omlottak, százezrei unmet",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-04-ex.json",
+    "id": "b1-vilaghaboru-04.ex05",
+    "set": {
+      "options": [
+        "Az a megállapodás, amelyben a felek abbahagyják a harcot.",
+        "Az a döntés, amellyel a király új kormányt nevez ki.",
+        "Az a törvény, amely új egyenruhát vezet be a katonáknak."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "unmet államügyek, intézéséről, egyenruhájának, bevezetését, beszüntetéséről, egyezményt; correct option was the longest"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-04-ex.json",
+    "id": "b1-vilaghaboru-04.ex06",
+    "set": {
+      "sentence": "A forradalom idején Budapesten megalakult a ____.",
+      "hint": "soldiers' council",
+      "english": "During the revolution the soldiers' council was formed in Budapest."
+    },
+    "kind": "hungarian",
+    "why": "unmet munkások, stratégiai"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-04-ex.json",
+    "id": "b1-vilaghaboru-04.ex07",
+    "set": {
+      "tiles": [
+        "1918.",
+        "október",
+        "31-én",
+        "Károlyi",
+        "Mihály",
+        "kormányt",
+        "alakított."
+      ],
+      "solution": [
+        "1918.",
+        "október",
+        "31-én",
+        "Károlyi",
+        "Mihály",
+        "kormányt",
+        "alakított."
+      ],
+      "english": "On 31 October 1918 Mihály Károlyi formed a government.",
+      "solutions": null
+    },
+    "kind": "hungarian",
+    "why": "unmet tízezres, szálló; the old 'solutions' no longer fits",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-04-ex.json",
+    "id": "b1-vilaghaboru-04.ex08",
+    "set": {
+      "options": [
+        "Az államügyek intézéséről való lemondását.",
+        "A háború folytatását a keleti fronton.",
+        "Az új köztársaság elismerését."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "the third option was an absurd new declaration of war on Italy (the Monarchy was collapsing)",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-04-oszirozsa.json",
+    "old": "Károlyi kormánya azonnal megkötötte a fegyverszünet egyezményét, bízva a wilsoni igazságos békében.",
+    "new": "Október 31-én Károlyi Mihály kormányt alakított. Kormánya november 13-án Belgrádban fegyverszünetet kötött a szövetségesekkel; Károlyi a wilsoni elvek alapján remélt igazságos békét.",
+    "kind": "hungarian",
+    "why": "the Padua armistice (3 Nov) was signed by the Monarchy's army; Károlyi's government signed the Belgrade armistice on 13 Nov; the lesson's items need the 31 October government"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-04-oszirozsa.json",
+    "old": "százezres tömeg éljenzése közepette megtörtént az első független köztársaság kikiáltása.",
+    "new": "tömeg előtt kikiáltották a köztársaságot.",
+    "kind": "hungarian",
+    "why": "crowd size unverified; 'first independent republic' is arguable",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-05-ex.json",
+    "id": "b1-vilaghaboru-05.ex02",
+    "set": {
+      "question": "Which sentence says: 'If the Monarchy had not been defeated, it would not have broken up'?",
+      "options": [
+        "Ha a Monarchia nem szenvedett volna vereséget, nem bomlott volna fel.",
+        "Ha a Monarchia nem szenvedne volna vereséget, nem bomlott volna fel.",
+        "Ha a Monarchia nem szenvedett volna vereséget, nem bomlana volna fel."
+      ],
+      "correct": 0,
+      "distractor_skills": {
+        "1": "nek-conditional",
+        "2": "nek-conditional"
+      }
+    },
+    "kind": "hungarian",
+    "why": "stem had '(Lesson 5)'; the old sentence blamed the nationalities for the break-up (a political judgement) and wrong option 2 had a garbled 'fel volna'",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-05-ex.json",
+    "id": "b1-vilaghaboru-05.ex03",
+    "set": {
+      "hint": "society"
+    },
+    "kind": "hungarian",
+    "why": "hint named the tested ending (-t)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-05-ex.json",
+    "id": "b1-vilaghaboru-05.ex05",
+    "set": {
+      "options": [
+        "A nemzetiségek kiválását és csatlakozását a szomszédos államokhoz.",
+        "A nemzetiségek költözését Magyarországra a szomszédos államokból.",
+        "A nemzetiségek részvételét a hadikölcsön jegyzésében."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "length give-away (81 vs 52); unmet tömeges, betelepülését, kiválását"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-05-ex.json",
+    "id": "b1-vilaghaboru-05.ex06",
+    "set": {
+      "sentence": "A szomszédos államok a nemzeti ____ elvére hivatkoztak.",
+      "hint": "self-determination",
+      "english": "The neighbouring states referred to the principle of national self-determination.",
+      "answer": "önrendelkezés",
+      "teaches": [
+        "b1-world-war-1-vocab"
+      ],
+      "category": "vocabulary"
+    },
+    "kind": "hungarian",
+    "why": "'irreversible fact' is a judgement and visszafordíthatatlan/ténnyé unmet; the item now uses the unused vocabulary word nemzeti önrendelkezés",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-05-ex.json",
+    "id": "b1-vilaghaboru-05.ex07",
+    "set": {
+      "tiles": [
+        "Román",
+        "csapatok",
+        "nyomultak",
+        "Erdélybe."
+      ],
+      "solution": [
+        "Román",
+        "csapatok",
+        "nyomultak",
+        "Erdélybe."
+      ],
+      "english": "Romanian troops advanced into Transylvania.",
+      "solutions": null
+    },
+    "kind": "hungarian",
+    "why": "unmet elenyészett; the new sentence is from the segment; the old 'solutions' no longer fits",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-05-osszeomlas.json",
+    "old": "cseh légiók vonultak be a Felvidékre",
+    "new": "csehszlovák légiók vonultak be a Felvidékre",
+    "kind": "hungarian",
+    "why": "the legions were Czechoslovak (Czech and Slovak), the state was Czechoslovakia"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-vilaghaboru-05-osszeomlas.json",
+    "old": "A nemzetiségi elszakadás visszafordíthatatlan ténnyé vált. Ezeréves határok omlottak össze néhány hét leforgása alatt, kijelölve az utat a trianoni békediktátum felé.",
+    "new": "Néhány hét alatt az ország nagy része idegen csapatok kezére került; az új határokat az 1920-as trianoni békeszerződés rögzítette.",
+    "kind": "hungarian",
+    "why": "'békediktátum' and 'marking the road to Trianon' are loaded; the 1920 treaty is the established fact"
+  },
+  {
+    "file": "content/hu/vocabulary/b1/b1-vilaghaboru-05-voc.json",
+    "old": "national self-determination (Wilson's 14 Points)",
+    "new": "national self-determination (Wilsonian principle)",
+    "kind": "english",
+    "why": "the Fourteen Points do not use that phrase",
+    "sure": false
+  },
+  {
+    "file": "content/hu/vocabulary/b1/b1-vilaghaboru-05-voc.json",
+    "old": "epochal historical turning point (end of historical Hungary)",
+    "new": "epochal historical turning point (the end of the old Kingdom of Hungary)",
+    "kind": "english",
+    "why": "loose gloss",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-consolidation-ex.json",
+    "id": "b1-vilaghaboru-consolidation.ex04",
+    "set": {
+      "sentence": "Néhány nappal a köztársaság kikiáltása előtt a király lemondott az államügyek ____.",
+      "hint": "management, his",
+      "english": "A few days before the proclamation of the republic, the king renounced taking part in the management of state affairs."
+    },
+    "kind": "hungarian",
+    "why": "the sentence said the king renounced AFTER the republic: the segment says before (13 vs 16 November)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-consolidation-ex.json",
+    "id": "b1-vilaghaboru-consolidation.ex06",
+    "set": {
+      "options": [
+        "Károlyi Mihály",
+        "Tisza István",
+        "Horthy Miklós"
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "length give-away (19 vs 13)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-vilaghaboru-consolidation-ex.json",
+    "id": "b1-vilaghaboru-consolidation.ex08",
+    "set": {
+      "question": "Melyik csapatok nyomultak be Erdélybe 1918 végén a történet szerint?",
+      "options": [
+        "Román csapatok.",
+        "Csehszlovák légiók.",
+        "Szerb katonai erők."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "all three options were plainly absurd and the first was a length give-away; now the wrong options are true of other regions"
+  }
+]

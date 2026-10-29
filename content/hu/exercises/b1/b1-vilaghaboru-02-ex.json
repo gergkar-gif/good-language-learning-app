@@ -31,7 +31,7 @@
       "id": "b1-vilaghaboru-02.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat elemzi helyesen az első világháborús eseményeket? (Lesson 2)",
+      "question": "Which sentence says: 'If they had not introduced rationing, the shortage would have been greater'?",
       "options": [
         "Ha nem vezették volna be a jegyrendszert, nagyobb lett volna az áruhiány.",
         "Ha nem vezetnék volna be a jegyrendszert, nagyobb lett volna az áruhiány.",
@@ -40,14 +40,18 @@
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "nek-conditional",
+        "2": "irregular-nek-conditional"
+      }
     },
     {
       "id": "b1-vilaghaboru-02.ex03",
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A kormány a háború alatt szigorú ____ vezetett be.",
-      "hint": "rationing system -t",
+      "hint": "rationing system",
       "english": "During the war, the government introduced a strict rationing system.",
       "answer": "jegyrendszert",
       "teaches": [
@@ -58,12 +62,12 @@
       "id": "b1-vilaghaboru-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ha a nők nem vették volna át a férfiak helyét, a villamosok nem közlekedtek ____ a Nagykörúton.",
-      "hint": "would have",
-      "english": "If women had not taken the place of men, trams would not have run on the Grand Boulevard.",
-      "answer": "volna",
+      "sentence": "Ha a nők nem ____ volna át a férfiak helyét, a villamosok nem jártak volna a Nagykörúton.",
+      "hint": "take over (past), they",
+      "english": "If women had not taken over the men's places, the trams would not have run on the Grand Boulevard.",
+      "answer": "vették",
       "teaches": [
-        "past-conditional-volna"
+        "definite-past"
       ]
     },
     {
@@ -72,11 +76,11 @@
       "category": "vocabulary",
       "question": "Mit jelent a hadikölcsön?",
       "options": [
-        "A katonák számára kiosztott ingyenes élelmet.",
-        "A háború költségeit fedező, a polgárok által jegyzett kölcsönt.",
-        "A külföldi hadseregek által fizetett kárpótlást."
+        "A háború költségeire a polgároktól kért kölcsönt.",
+        "A katonáknak ingyen adott élelmet a fronton.",
+        "A külföldi hadseregek által fizetett pénzt."
       ],
-      "correct": 1,
+      "correct": 0,
       "teaches": [
         "b1-world-war-1-vocab"
       ]
@@ -85,9 +89,9 @@
       "id": "b1-vilaghaboru-02.ex06",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A mindennapos ____ miatt üresek voltak a boltok polcai.",
+      "sentence": "A napi ____ miatt üresek voltak a boltok polcai.",
       "hint": "shortage of goods",
-      "english": "Due to the daily shortage of goods, the store shelves were empty.",
+      "english": "Because of the daily shortage of goods, the shop shelves were empty.",
       "answer": "áruhiány",
       "teaches": [
         "b1-world-war-1-vocab"
@@ -143,7 +147,7 @@
       "category": "reading",
       "question": "Miért állt munkába a villamosnál a történet asszonya?",
       "options": [
-        "Mert a férje a villamostársaság igazgatója volt.",
+        "Mert a férje a villamostársaság vezetője volt.",
         "Mert a kormány megtiltotta, hogy a nők gyárban dolgozzanak.",
         "Mert a férje a fronton volt, és valakinek haza kellett vinnie a kenyeret."
       ],

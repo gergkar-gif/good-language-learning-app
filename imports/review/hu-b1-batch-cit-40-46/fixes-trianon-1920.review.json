@@ -1,0 +1,678 @@
+[
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-01-ex.json",
+    "id": "b1-trianon-01.ex02",
+    "set": {
+      "question": "Which sentence says: 'The delegation showed the Red Map so that it could show where Hungarians live'?",
+      "options": [
+        "A békedelegáció azért mutatta be a vörös térképet, hogy megmutassa, hol élnek magyarok.",
+        "A békedelegáció azért mutatta be a vörös térképet, mert megmutassa, hol élnek magyarok.",
+        "A békedelegáció azért mutatta be a vörös térképet, hogy megmutatta, hol élnek magyarok."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "stem had '(Lesson 1)', garbled wrong options and a length give-away; 'valós etnikai határok' was a judgement; each wrong option now has one fault (mert / indicative after hogy)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-01-ex.json",
+    "id": "b1-trianon-01.ex03",
+    "set": {
+      "sentence": "1920. június 4-én délután írták alá a versailles-i Nagy Trianon kastélyban a ____.",
+      "hint": "peace treaty, accusative",
+      "answer": "békeszerződést",
+      "english": "On the afternoon of 4 June 1920, the peace treaty was signed in the Grand Trianon palace in Versailles."
+    },
+    "kind": "hungarian",
+    "why": "'békediktátum' is a loaded label used as the neutral word; békeszerződés is the neutral name"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-01-ex.json",
+    "id": "b1-trianon-01.ex05",
+    "set": {
+      "question": "Mit nevezünk a 'vörös térképnek' a békekonferenciával kapcsolatban?",
+      "options": [
+        "Teleki Pál térképét, amely vörös színnel mutatta a magyarokat.",
+        "A francia hadsereg térképét a nyugati frontról.",
+        "A budapesti villamosok vonalainak térképét a városról."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "length give-away (83 vs 50); unmet jelölte, titkos, belvárosának, közlekedési, hálózati, rajzát"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-01-ex.json",
+    "id": "b1-trianon-01.ex08",
+    "set": {
+      "options": [
+        "Apponyi Albert",
+        "Teleki Pál",
+        "Tisza István"
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "length give-away (20 vs 15); Kossuth and Hunyadi were absurd options; Teleki was a delegate and Tisza died in 1918"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-01-apponyi.json",
+    "old": "akit a franciák a Neuilly-sur-Seine-i Château de Madrid szállodába internáltak: a magyar diplomaták még a szálloda kertjét sem hagyhatták el engedély nélkül.",
+    "new": "akit a küldöttséggel együtt a Neuilly-sur-Seine-i Château de Madrid szállodában szállásoltak el; a küldöttek mozgását a francia hatóságok korlátozták.",
+    "kind": "hungarian",
+    "why": "'internment' and the garden detail are overstated (check)",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-01-apponyi.json",
+    "old": "A győztesek csendben hallgatták a lenyűgöző szónoklatot, de a geopolitikai döntések már régen megszülettek: a szerződés valódi békediktátum volt.",
+    "new": "A győztesek végighallgatták a beszédet. A szerződés szövegét a delegáció megkapta, de a feltételekről nem tárgyalhatott, csak írásbeli észrevételeket tehetett; ezért nevezik sokan Magyarországon békediktátumnak.",
+    "kind": "hungarian",
+    "why": "'the decisions were long made / a real diktat' is a political judgement; the established fact is that Hungary could only submit written observations, and the dispute over the label is named"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-trianon-01-gr.json",
+    "old": "Teleki Pál vörös térképe pontosan bemutatta a Kárpát-medence nemzetiségi arányait.",
+    "new": "Teleki Pál vörös térképe az 1910-es népszámlálás adatai alapján mutatta be a Kárpát-medence nemzetiségi arányait.",
+    "kind": "hungarian",
+    "why": "'accurately' is disputed; the map used the 1910 census"
+  },
+  {
+    "file": "content/hu/lessons/b1/b1-trianon-02.json",
+    "old": "A trianoni békediktátum (1920. június 4.) (What Trianon Changed)",
+    "new": "A trianoni békeszerződés (1920. június 4.) (What Trianon Changed)",
+    "kind": "hungarian",
+    "why": "'békediktátum' is a loaded label in a lesson title"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-02-alairas.json",
+    "old": "1920. június 4.: A békediktátum aláírása",
+    "new": "1920. június 4.: A békeszerződés aláírása",
+    "kind": "hungarian",
+    "why": "neutral name in the story title"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-02-ex.json",
+    "id": "b1-trianon-02.ex02",
+    "set": {
+      "question": "Which sentence says: 'According to Benárd Ágost, they signed the treaty so that the country could start rebuilding'?",
+      "options": [
+        "Benárd Ágost szerint azért írták alá a szerződést, hogy az ország megkezdhesse az újjáépítést.",
+        "Benárd Ágost szerint azért írták alá a szerződést, mert az ország megkezdhesse az újjáépítést.",
+        "Benárd Ágost szerint azért írták alá a szerződést, hogy az ország megkezdte az újjáépítést."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "wrong options had two faults and 'villamosok' filler; each now has one fault"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-02-ex.json",
+    "id": "b1-trianon-02.ex03",
+    "set": {
+      "sentence": "A magyar küldöttek aláírták a ____.",
+      "hint": "treaty, accusative",
+      "answer": "szerződést",
+      "english": "The Hungarian delegates signed the treaty."
+    },
+    "kind": "hungarian",
+    "why": "unmet perckor, toll, sercegése, pecsételte; the sentence stated the 16:32 detail as the exact fact"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-02-ex.json",
+    "id": "b1-trianon-02.ex04",
+    "set": {
+      "sentence": "A szerződés értelmében Magyarország elveszítette a területe több mint ____.",
+      "hint": "two thirds, accusative",
+      "answer": "kétharmadát",
+      "english": "Under the treaty, Hungary lost more than two thirds of its territory.",
+      "teaches": [
+        "how-the-accusative-t-works"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "'idegen államhatárok közé' is not natural Hungarian (közé does not fit); the item now tests a stated fact"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-02-ex.json",
+    "id": "b1-trianon-02.ex05",
+    "set": {
+      "options": [
+        "A gyász napján megszólaló harangot.",
+        "Az ünnep napján megszólaló harangot.",
+        "A villamos indulásakor megszólaló csengőt."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "unmet megszólaltatott, megnyitását, hirdető, jelző, jelzőcsengőt, jeléül; the story no longer says the bells were rung everywhere at 16:32",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-02-ex.json",
+    "id": "b1-trianon-02.ex06",
+    "set": {
+      "sentence": "1920. június 4-én írták ____ a trianoni békeszerződést a versailles-i kastélyban.",
+      "english": "On 4 June 1920, the Trianon peace treaty was signed in the palace at Versailles."
+    },
+    "kind": "hungarian",
+    "why": "neutral name"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-02-alairas.json",
+    "old": "Mindketten fekete díszmagyarban voltak, arcuk sápadt volt a történelmi felelősség súlya alatt.",
+    "new": "Ők írták alá a szerződést Magyarország nevében.",
+    "kind": "hungarian",
+    "why": "invented details (clothing, pale faces) removed",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-02-alairas.json",
+    "old": "Pontosan 16 óra 32 perckor a toll sercegése pecsételte meg a döntést: a területelcsatolás révén Magyarország elveszítette területének több mint kétharmadát és lakosságának felét, miközben az új államhatárok több mint hárommillió magyart zártak a határokon kívülre.",
+    "new": "A hagyomány szerint 16 óra 32 perckor írták alá a szerződést. A területelcsatolás következtében Magyarország elveszítette történelmi területének több mint kétharmadát és lakosságának csaknem kétharmadát; a magyar anyanyelvűek nagyjából egyharmada, több mint hárommillió ember az új államhatárokon kívül maradt.",
+    "kind": "hungarian",
+    "why": "population share: Hungary lost more than half of its population, about a third of the Hungarian speakers stayed outside; 16:32 is hedged as the traditional time"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-02-alairas.json",
+    "old": "Ugyanebben a percben Budapesten megállt az élet: a villamosok tíz percre leállították motorjaikat, a boltok bezártak, az iskolákban megszólalt a gyászharang. Az egész ország fekete zászlókba öltözött: ez volt a modern magyar történelem legnagyobb nemzeti tragédiája.",
+    "new": "Magyarországon gyásznapot tartottak: a harangok megszólaltak, a boltok bezártak, és fekete zászlókat tűztek ki. Sokan a modern magyar történelem legnagyobb nemzeti tragédiájának tartják a békeszerződést.",
+    "kind": "hungarian",
+    "why": "the tram detail is unverified; 'the greatest national tragedy' is stated as an opinion held by many, not as a fact",
+    "sure": false
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-trianon-02-gr.json",
+    "old": "1920. június 4-én írták alá a trianoni békediktátumot a versailles-i kastélyban.",
+    "new": "1920. június 4-én írták alá a trianoni békeszerződést a versailles-i kastélyban.",
+    "kind": "hungarian",
+    "why": "neutral name"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-03-ex.json",
+    "id": "b1-trianon-03.ex02",
+    "set": {
+      "question": "Which sentence says: 'Kós Károly shouted this so that Hungarians would not give up their homeland'?",
+      "options": [
+        "Kós Károly azért kiáltotta ezt, hogy a magyarok ne adják fel a szülőföldjüket.",
+        "Kós Károly azért kiáltotta ezt, mert a magyarok ne adják fel a szülőföldjüket.",
+        "Kós Károly azért kiáltotta ezt, hogy a magyarok nem adják fel a szülőföldjüket."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "garbled wrong options and an irrelevant teacher option; one fault each now"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-03-ex.json",
+    "id": "b1-trianon-03.ex06",
+    "set": {
+      "sentence": "Magyarország felelősséget visel a határain kívül élő magyarok ____.",
+      "hint": "fate, for it",
+      "english": "Hungary bears responsibility for the fate of Hungarians living outside its borders."
+    },
+    "kind": "hungarian",
+    "why": "glued blank (sorsá + ért): blank the whole word"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-03-ex.json",
+    "id": "b1-trianon-03.ex08",
+    "set": {
+      "question": "Mit korlátoztak a határon túli magyarok számára a történet szerint?",
+      "options": [
+        "Az anyanyelv használatát a hivatalokban.",
+        "A magyar nyelvű lapok olvasását.",
+        "A templomba járást."
+      ],
+      "correct": 0,
+      "category": "reading"
+    },
+    "kind": "hungarian",
+    "why": "the question asked about 'the lesson' and its correct option (study in the mother tongue) is not stated in the segment; now answerable from the segment",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-03-kisebbseg.json",
+    "old": "Több mint hárommillió magyar ember ébredt fel úgy egyik napról a másikra, hogy anélkül, hogy elhagyta volna szülőházát, egy idegen ország alattvalójává vált.",
+    "new": "Több mint hárommillió magyar úgy lett egy másik ország állampolgára, hogy el sem hagyta a szülőházát.",
+    "kind": "hungarian",
+    "why": "clumsy 'hogy anélkül, hogy' and 'alattvaló'"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-03-kisebbseg.json",
+    "old": "A trianoni határhúzás legfájdalmasabb következménye",
+    "new": "A trianoni határhúzás egyik legnagyobb következménye",
+    "kind": "hungarian",
+    "why": "'most painful' is an opinion"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-03-kisebbseg.json",
+    "old": "és a délszláv államban azonnal megkezdődött",
+    "new": "és a délszláv államban megkezdődött",
+    "kind": "hungarian",
+    "why": "'immediately' is overstated"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-03-kisebbseg.json",
+    "old": "önálló magyar iskola hálózatot szerveztek",
+    "new": "önálló magyar iskolahálózatot szerveztek",
+    "kind": "hungarian",
+    "why": "spelling: iskolahálózat is one word"
+  },
+  {
+    "file": "content/hu/vocabulary/b1/b1-trianon-03-voc.json",
+    "old": "ethnic discrimination and minority rights restrictions",
+    "new": "oppression of a national minority (a term used in Hungarian history writing)",
+    "kind": "english",
+    "why": "loose gloss for a loaded term",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-04-ex.json",
+    "id": "b1-trianon-04.ex02",
+    "set": {
+      "question": "Which sentence says: 'Many left their homes because they refused the oath'?",
+      "options": [
+        "Sokan azért hagyták el az otthonukat, mert megtagadták a hűségesküt.",
+        "Sokan azért hagyták el az otthonukat, hogy megtagadták a hűségesküt.",
+        "Sokan mert hagyták el az otthonukat, azért megtagadták a hűségesküt."
+      ],
+      "correct": 0,
+      "teaches": [
+        "mert-because"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "the old correct option misread the story (the lawyer's 'magyar szót hallunk' is a consolation, not the reason for fleeing); wrong options were garbled",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-04-ex.json",
+    "id": "b1-trianon-04.ex03",
+    "set": {
+      "sentence": "Sok iskolában minden reggel a Magyar ____ mondták.",
+      "hint": "Hiszekegy, accusative",
+      "answer": "Hiszekegyet",
+      "english": "In many schools they recited the Hungarian Creed every morning."
+    },
+    "kind": "hungarian",
+    "why": "the 'Trianon-ima' of the story is the Magyar Hiszekegy (Hungarian Creed)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-04-ex.json",
+    "id": "b1-trianon-04.ex04",
+    "set": {
+      "sentence": "A háború ____ nagy menekülthullám indult el az elcsatolt országrészekből.",
+      "english": "After the war, a large wave of refugees set off from the detached parts of the country."
+    },
+    "kind": "hungarian",
+    "why": "unmet hatalmas; 'annexed' wrong for elcsatolt"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-04-ex.json",
+    "id": "b1-trianon-04.ex05",
+    "set": {
+      "options": [
+        "A mozgalom, amely vissza akarta szerezni az elcsatolt területeket.",
+        "A politika, amely barátságot akart a szomszéd országokkal.",
+        "A program, amely lakásokat akart építeni a menekülteknek."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "unmet elvesztett, törekvő, államokkal, barátsági, letelepítését, célzó (participles)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-04-ex.json",
+    "id": "b1-trianon-04.ex06",
+    "set": {
+      "sentence": "A budapesti diák az ____ küzd.",
+      "hint": "sense of justice, for it",
+      "answer": "igazságérzetéért",
+      "english": "The Budapest student fights for his sense of justice."
+    },
+    "kind": "hungarian",
+    "why": "glued blank (igazságérzet + éért): blank the whole word"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-04-ex.json",
+    "id": "b1-trianon-04.ex08",
+    "set": {
+      "options": [
+        "Vasúti vagonokban, vagonlakóként.",
+        "Új, kényelmes kastélyokban.",
+        "Budapesti szállodákban."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "unmet kocsikban, egyetemi; foreign student halls was absurd"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-04-trauma.json",
+    "old": "bírák, tanárok, vasutasok és gazdák százezrei kényszerültek elhagyni otthonukat, mert megtagadták az új államokra tett hűségesküt.",
+    "new": "bírák, tanárok, vasutasok és más állami alkalmazottak családjukkal együtt kényszerültek elhagyni otthonukat, sokan azért, mert megtagadták az új államra tett hűségesküt.",
+    "kind": "hungarian",
+    "why": "refugees were mostly officials, teachers and railway staff, not farmers; the oath was one reason among others"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-04-trauma.json",
+    "old": "Közel négyszázezer menekült érkezett a romokban heverő csonka Magyarországra.",
+    "new": "Becslések szerint 350–400 ezer menekült érkezett a háború után a megmaradt Magyarországra.",
+    "kind": "hungarian",
+    "why": "figure is an estimate (check)",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-04-trauma.json",
+    "old": "megszületett a vagonlakók szívszorító jelensége: családok ezrei éltek éveken át a pályaudvarok mellékvágányain veszteglő fagyos marhavagonokban.",
+    "new": "megszületett a vagonlakók jelensége: családok ezrei éltek éveken át a pályaudvarok mellékvágányain álló vasúti vagonokban.",
+    "kind": "hungarian",
+    "why": "emotive wording removed"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-04-trauma.json",
+    "old": "A megalázó nélkülözés és az ország feldarabolása mély kollektív traumát vésett a nemzet tudatába. Az iskolákban minden reggel a Trianon-imát mondták, a köztereken felállították a revízió emlékműveit, és az 'irredentizmus' a hivatalos állampolitika vezérfonalává vált.",
+    "new": "A nélkülözés és az ország területének elvesztése sokak számára mély, tartós traumát jelentett. Sok iskolában a Magyar Hiszekegyet mondták, a köztereken a revízió emlékműveit állították fel, és a határok módosítása a magyar külpolitika egyik fő célja lett.",
+    "kind": "hungarian",
+    "why": "'Trianon-ima' is the Magyar Hiszekegy; 'official state policy guided by irredentism' is a judgement; the revision aim of foreign policy is the established fact"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-04-trauma.json",
+    "old": "A 'Nem, nem, soha!' jelszava két évtizeden át határozta meg a magyar közéletet, megalapozva azt a külpolitikai irányt, amely később a határok békés vagy fegyveres módosítását, az országgyarapítás lehetőségét kereste.",
+    "new": "A 'Nem, nem, soha!' jelszó két évtizeden át jelen volt a magyar közéletben. 1938 és 1941 között Magyarország az elcsatolt területek egy részét visszakapta; ezt akkor országgyarapításnak nevezték.",
+    "kind": "hungarian",
+    "why": "'determined public life' and the teleology are judgements; the 1938-41 returns are the established fact"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-04-trauma.json",
+    "old": "Nem a bosszú vezérel minket, hanem az igazságérzet. Egy nemzetet nem lehet örökre bezárni a mesterségesen meghúzott határok közé!",
+    "new": "Mi nem bosszút akarunk, hanem igazságot! Szerintünk a határokról újra kell tárgyalni.",
+    "kind": "hungarian",
+    "why": "'artificially drawn borders' stated a political position as fact; now clearly one view",
+    "sure": false
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-trianon-04-gr.json",
+    "old": "nemzedékeken át érezhető maradt",
+    "new": "nemzedékeken át éreztette a hatását",
+    "kind": "hungarian",
+    "why": "érezhető is a -hető form (Unit 61, later)"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-trianon-04-gr.json",
+    "old": "A trianoni döntés mély traumát okozott a magyar társadalom egészében.",
+    "new": "A trianoni döntés sokak számára mély traumát jelentett a magyar társadalomban.",
+    "kind": "hungarian",
+    "why": "hedge: the trauma is described as felt by many",
+    "sure": false
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-trianon-04-gr.json",
+    "old": "The Trianon decision caused deep trauma across the whole of Hungarian society.",
+    "new": "For many, the Trianon decision meant a deep trauma in Hungarian society.",
+    "kind": "english",
+    "why": "English follows",
+    "sure": false
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-trianon-04-gr.json",
+    "old": "Több százezer menekült érkezett vagonlakóként Budapestre az elcsatolt területekről.",
+    "new": "Több százezer menekült érkezett Budapestre az elcsatolt területekről, közülük sokan vagonlakók lettek.",
+    "kind": "hungarian",
+    "why": "not all refugees lived in wagons"
+  },
+  {
+    "file": "content/hu/vocabulary/b1/b1-trianon-04-voc.json",
+    "old": "territorial regain (brief re-annexations 1938–41)",
+    "new": "territorial gain (the returns of territory in 1938–41)",
+    "kind": "english",
+    "why": "'re-annexations' is loaded",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-05-ex.json",
+    "id": "b1-trianon-05.ex02",
+    "set": {
+      "question": "Which sentence says: 'Pupils from Hungary visit schools beyond the border so that they can make friends'?",
+      "options": [
+        "A magyarországi iskolások azért látogatják a határon túli iskolákat, hogy barátságokat kössenek.",
+        "A magyarországi iskolások azért látogatják a határon túli iskolákat, hogy barátságokat kötnek.",
+        "A magyarországi iskolások azért látogatják a határon túli iskolákat, hogy barátságokat kötni."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "tell 'teljesen' and garbled wrong options; one fault each now"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-05-ex.json",
+    "id": "b1-trianon-05.ex04",
+    "set": {
+      "sentence": "A közös jövő az egymás iránti ____ épül.",
+      "hint": "respect, on it",
+      "answer": "tiszteleten",
+      "english": "The common future is built on mutual respect.",
+      "teaches": [
+        "on-en-on"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "unmet iránti as the answer; now the tested form is the ending -en"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-05-ex.json",
+    "id": "b1-trianon-05.ex05",
+    "set": {
+      "question": "Mit jelent a megbékélés?",
+      "options": [
+        "Azt, hogy a felek békében élnek egymás mellett, és tisztelik egymást.",
+        "Azt, hogy az egyik fél elfoglalja a másik fél területét.",
+        "Azt, hogy a felek nem tartanak többé kapcsolatot egymással."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "the old item asked what 'megbékélés' means in present-day foreign policy and its wrong options were absurd; unmet erőszakos, átrajzolását, rendezését, elcsatolt"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-05-ex.json",
+    "id": "b1-trianon-05.ex06",
+    "set": {
+      "sentence": "A középiskolás szerint az ____ érdemes küzdeni.",
+      "hint": "belonging together, for it",
+      "answer": "összetartozásért",
+      "english": "According to the secondary-school pupil, it is worth fighting for the sense of belonging together."
+    },
+    "kind": "hungarian",
+    "why": "glued blank (összetartozás + ért)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-05-ex.json",
+    "id": "b1-trianon-05.ex07",
+    "set": {
+      "tiles": [
+        "A",
+        "Nemzeti",
+        "Összetartozás",
+        "Napja",
+        "június",
+        "4-én",
+        "van."
+      ],
+      "solution": [
+        "A",
+        "Nemzeti",
+        "Összetartozás",
+        "Napja",
+        "június",
+        "4-én",
+        "van."
+      ],
+      "english": "The Day of National Unity is on 4 June.",
+      "solutions": null
+    },
+    "kind": "hungarian",
+    "why": "unmet átívelő (participle); the old 'solutions' no longer fits",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-05-osszetartozas.json",
+    "old": "Egy évszázaddal a trianoni békediktátum után a történelmi trauma helyét fokozatosan az érett történelmi emlékezet és a méltóságteljes összetartozás eszméje vette át.",
+    "new": "A trianoni békeszerződés évfordulóján ma emléknapot tartanak, és a határon túli magyar közösségekkel való kapcsolat áll a középpontban.",
+    "kind": "hungarian",
+    "why": "a claim about a national 'maturing' of memory is a judgement"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-05-osszetartozas.json",
+    "old": "június 4-ét hivatalosan a Nemzeti Összetartozás Napja emlékévévé nyilvánította",
+    "new": "június 4-ét a Nemzeti Összetartozás Napjává nyilvánította",
+    "kind": "hungarian",
+    "why": "wrong word: emlékéve (memorial year) for emléknap; the 2010 law declared 4 June the Day of National Unity"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-05-osszetartozas.json",
+    "old": "A 21. században már nem határok átrajzolásáról beszélünk, hanem a határok légiessé válásáról. Az Európai Unió tagjaiként szabadon járhatunk át a határokon, és a kulturális egység erősebb, mint valaha!",
+    "new": "A 21. században az Európai Unió több szomszédos országában a határok már könnyen átjárhatók, így sokkal könnyebb tartani a kapcsolatot egymással.",
+    "kind": "hungarian",
+    "why": "'we do not talk about redrawing borders / stronger than ever' is a political statement; free crossing does not hold for non-EU Serbia and Ukraine"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-05-osszetartozas.json",
+    "old": "magyarországi iskolások tízezrei látogatják meg évről évre Erdély, a Felvidék, Kárpátalja és a Vajdaság magyar iskoláit, életre szóló barátságokat kötve a határon túli fiatalokkal.",
+    "new": "magyarországi iskolások évről évre ezrével látogatják meg Erdély, a Felvidék, Kárpátalja és a Vajdaság magyar iskoláit, és barátságokat kötnek a határon túli fiatalokkal.",
+    "kind": "hungarian",
+    "why": "the yearly figure is unverified, 'lifelong' is rhetoric",
+    "sure": false
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-trianon-05-osszetartozas.json",
+    "old": "A megbékélés a szomszédos népekkel és a Kárpát-medencei együttműködés a modern magyar külpolitika sarokköve lett. A közös történelem sebei lassan gyógyulnak, miközben a közös jövő az egymás iránti tiszteleten épül.",
+    "new": "A Kárpát-medencei együttműködést ma szerződések, az uniós tagság és a kulturális kapcsolatok segítik. A megbékélés a szomszédos népekkel azt jelenti, hogy a közös jövő az egymás iránti tiszteleten épül.",
+    "kind": "hungarian",
+    "why": "'cornerstone of modern Hungarian foreign policy' praises a present-day policy; removed"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-trianon-05-gr.json",
+    "old": "A megbékélés és az együttműködés a békés közép-európai jövő záloga.",
+    "new": "A határon túli közösségek támogatásáról az Alaptörvény is rendelkezik.",
+    "kind": "hungarian",
+    "why": "a political slogan; the Fundamental Law (Article D) is the established source"
+  },
+  {
+    "file": "content/hu/vocabulary/b1/b1-trianon-05-voc.json",
+    "old": "Day of National Unity (memorialized on June 4th since 2010)",
+    "new": "Day of National Unity (4 June, since 2010)",
+    "kind": "english",
+    "why": "wording",
+    "sure": false
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-consolidation-ex.json",
+    "id": "b1-trianon-consolidation.ex02",
+    "set": {
+      "options": [
+        "Magyarország elveszítette területe kétharmadát, és több mint hárommillió magyar került kisebbségbe.",
+        "Magyarország megkapta a szomszédos országok területének kétharmadát, és sok millió ember visszatért.",
+        "A békeszerződés visszaadta Magyarországnak a Monarchia egész területét és minden korábbi határát."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "length give-away (107 vs 77); unmet kétszeresére, növekedett, győztes, jóvoltából, helyreállította"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-consolidation-ex.json",
+    "id": "b1-trianon-consolidation.ex03",
+    "set": {
+      "sentence": "A békedelegáció vezetője, gróf Apponyi Albert három nyelven tartotta meg híres ____.",
+      "hint": "defence speech, his",
+      "answer": "védőbeszédét",
+      "english": "The head of the peace delegation, Count Albert Apponyi, delivered his famous defence speech in three languages."
+    },
+    "kind": "hungarian",
+    "why": "glued blank (védő + beszédét)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-consolidation-ex.json",
+    "id": "b1-trianon-consolidation.ex04",
+    "set": {
+      "sentence": "A trianoni békeszerződés napján megszólaltak a ____ az országban.",
+      "hint": "mourning bells",
+      "answer": "gyászharangok",
+      "english": "On the day of the Trianon treaty, the mourning bells rang in the country."
+    },
+    "kind": "hungarian",
+    "why": "glued blank (gyász + harangok); perckor unmet; the story no longer states 16:32 for the whole country"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-consolidation-ex.json",
+    "id": "b1-trianon-consolidation.ex05",
+    "set": {
+      "tiles": [
+        "A",
+        "határon",
+        "túli",
+        "magyarok",
+        "megőrizték",
+        "az",
+        "anyanyelvüket."
+      ],
+      "solution": [
+        "A",
+        "határon",
+        "túli",
+        "magyarok",
+        "megőrizték",
+        "az",
+        "anyanyelvüket."
+      ],
+      "english": "The Hungarians beyond the border preserved their mother tongue."
+    },
+    "kind": "hungarian",
+    "why": "unmet magyarság, önazonosságát"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-consolidation-ex.json",
+    "id": "b1-trianon-consolidation.ex06",
+    "set": {
+      "options": [
+        "Az elcsatolt területeken élő magyarok megváltozott helyzetét.",
+        "A Monarchia katonáinak fogságban töltött éveit.",
+        "A menekültek vagonokban töltött életét."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "length give-away (93 vs 68) and absurd/unmet wrong options"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-consolidation-ex.json",
+    "id": "b1-trianon-consolidation.ex07",
+    "set": {
+      "sentence": "A határon túli magyar iskolák és egyházak a magyar kultúrát ____.",
+      "hint": "preserve (past), they",
+      "answer": "megőrizték",
+      "english": "The Hungarian schools and churches beyond the border preserved Hungarian culture.",
+      "teaches": [
+        "definite-past"
+      ]
+    },
+    "kind": "hungarian",
+    "why": "unmet bástyái; 'bastions' was rhetorical"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-trianon-consolidation-ex.json",
+    "id": "b1-trianon-consolidation.ex08",
+    "set": {
+      "options": [
+        "Magyarország felelősséget visel a határain kívül élő magyarok sorsáért.",
+        "Magyarország szerint a határon túli magyarok sorsa a szomszéd államokra tartozik.",
+        "Magyarországnak nincs felelőssége a határain kívül élő magyarokért."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "why": "length give-away (110 vs 76), 'teljesen' tell, and absurd wrong options"
+  }
+]

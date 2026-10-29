@@ -31,23 +31,27 @@
       "id": "b1-vilaghaboru-01.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat elemzi helyesen az első világháborús eseményeket? (Lesson 1)",
+      "question": "Which sentence says: 'If the assassination had not happened, the war might not have broken out'?",
       "options": [
-        "Ha nem történt volna meg a merénylet, a Monarchia talán elkerülhette volna az összeomlást.",
-        "Ha nem merénylet lett volt, ezért nem háború van volt.",
-        "Mivel hadüzenet történt volna ezért tilos volt a katonáknak harcolni."
+        "Ha nem történt volna meg a merénylet, talán nem tört volna ki a háború.",
+        "Ha nem történne volna meg a merénylet, talán nem tört volna ki a háború.",
+        "Ha nem történt volna meg a merénylet, talán nem törne volna ki a háború."
       ],
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "nek-conditional",
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "b1-vilaghaboru-01.ex03",
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "1914 júliusában az Osztrák–Magyar Monarchia ____ küldött Szerbiának.",
-      "hint": "declaration of war -t",
+      "hint": "declaration of war",
       "english": "In July 1914, the Austro-Hungarian Monarchy sent a declaration of war to Serbia.",
       "answer": "hadüzenetet",
       "teaches": [
@@ -58,23 +62,23 @@
       "id": "b1-vilaghaboru-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ha Tisza István meg tudta volna akadályozni a háborút, nem veszett ____ annyi magyar honvéd.",
-      "hint": "would have",
-      "english": "If István Tisza had been able to prevent the war, so many Hungarian soldiers would not have perished.",
-      "answer": "volna",
+      "sentence": "Ha Tisza István meg tudta volna akadályozni a háborút, nem ____ volna el annyi magyar katona.",
+      "hint": "fall (past), he",
+      "english": "If István Tisza had been able to prevent the war, so many Hungarian soldiers would not have fallen.",
+      "answer": "esett",
       "teaches": [
-        "past-conditional-volna"
+        "past-tense-indefinite"
       ]
     },
     {
       "id": "b1-vilaghaboru-01.ex05",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Mit jelentett a jegyrendszer bevezetése a hátországban?",
+      "question": "Mit jelent a mozgósítás?",
       "options": [
-        "Az élelmiszerek és alapvető áruk fejadagjának hatósági korlátozását és jegyekkel való elosztását.",
-        "Ingyenes színházjegyek biztosítását minden budapesti polgár számára.",
-        "A vasúti menetjegyek kötelező megvásárlását minden reggel."
+        "A katonák behívását a hadseregbe a háború kezdetén.",
+        "A háború befejezését és a katonák hazaengedését.",
+        "A béke megkötését a háború első napján."
       ],
       "correct": 0,
       "teaches": [
@@ -85,10 +89,10 @@
       "id": "b1-vilaghaboru-01.ex06",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "1918. október 31-én győzött az őszirózsás ____.",
-      "hint": "revolution",
-      "english": "On October 31, 1918, the Aster Revolution triumphed.",
-      "answer": "forradalom",
+      "sentence": "A vidám dalok a ____ és a fagyos lövészárok poklába vezették a fiatalokat.",
+      "hint": "front line",
+      "english": "The cheerful songs led the young men into the hell of the front line and the freezing trench.",
+      "answer": "frontvonal",
       "teaches": [
         "b1-world-war-1-vocab"
       ]
@@ -98,32 +102,20 @@
       "type": "sentence-builder",
       "category": "vocabulary",
       "tiles": [
-        "A",
-        "Doberdó",
-        "szikláin",
-        "harcoló",
-        "katonák",
-        "hősies",
-        "áldozatára",
-        "örökre",
-        "emlékezik",
+        "Tisza",
+        "István",
+        "ellenezte",
         "a",
-        "nemzet."
+        "háborút."
       ],
       "solution": [
-        "A",
-        "Doberdó",
-        "szikláin",
-        "harcoló",
-        "katonák",
-        "hősies",
-        "áldozatára",
-        "örökre",
-        "emlékezik",
+        "Tisza",
+        "István",
+        "ellenezte",
         "a",
-        "nemzet."
+        "háborút."
       ],
-      "english": "Build the sentence in the correct order.",
+      "english": "István Tisza opposed the war.",
       "teaches": [
         "b1-world-war-1-vocab"
       ]
@@ -132,11 +124,11 @@
       "id": "b1-vilaghaboru-01.ex08",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Melyik virág vált az 1918. október végi budapesti forradalom jelképévé?",
+      "question": "Ki ellenezte kezdetben a Szerbia elleni háborút a történet szerint?",
       "options": [
-        "Az őszirózsa, amit a katonák a sapkájukra tűztek a császári címer helyett.",
-        "A piros tulipán, amit a városháza előtt osztogattak.",
-        "A fehér liliom, amit a miniszterelnök viselt a gomblyukában."
+        "Tisza István miniszterelnök.",
+        "A német császár.",
+        "Ferenc Ferdinánd trónörökös."
       ],
       "correct": 0
     }

@@ -16,7 +16,7 @@
         ],
         [
           "demarkációs vonal",
-          "demarcation line (allied advance borders)"
+          "demarcation line (armistice line)"
         ],
         [
           "bizonytalanság",
@@ -31,23 +31,27 @@
       "id": "b1-vilaghaboru-05.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat elemzi helyesen az első világháborús eseményeket? (Lesson 5)",
+      "question": "Which sentence says: 'If the Monarchy had not been defeated, it would not have broken up'?",
       "options": [
-        "Ha a nemzetiségek nem mondták volna ki az elszakadást, a birodalom nem bomlott volna fel.",
-        "Ha a nemzetiségek nem mondtak volna ki az elszakadást, a birodalom nem bomlott volna fel.",
-        "Ha a nemzetiségek nem mondanák volna ki az elszakadást, a birodalom nem bomlana fel volna."
+        "Ha a Monarchia nem szenvedett volna vereséget, nem bomlott volna fel.",
+        "Ha a Monarchia nem szenvedne volna vereséget, nem bomlott volna fel.",
+        "Ha a Monarchia nem szenvedett volna vereséget, nem bomlana volna fel."
       ],
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "nek-conditional",
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "b1-vilaghaboru-05.ex03",
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A gazdasági blokád az egész ____ fojtogatta.",
-      "hint": "society -t",
+      "hint": "society",
       "english": "The economic blockade strangled the entire society.",
       "answer": "társadalmat",
       "teaches": [
@@ -58,12 +62,12 @@
       "id": "b1-vilaghaboru-05.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ha a magyar hadsereg nem zilálódott volna szét, az ország nem maradt ____ védtelen.",
-      "hint": "would have",
-      "english": "If the Hungarian army had not disintegrated, the country would not have remained defenseless.",
-      "answer": "volna",
+      "sentence": "Ha a hadsereg együtt maradt volna, az ország nem ____ volna védtelen.",
+      "hint": "be, become (past)",
+      "english": "If the army had stayed together, the country would not have been left defenceless.",
+      "answer": "lett",
       "teaches": [
-        "past-conditional-volna"
+        "irregular-past"
       ]
     },
     {
@@ -72,11 +76,11 @@
       "category": "vocabulary",
       "question": "Mit jelent a nemzetiségi elszakadás?",
       "options": [
-        "A nemzetiségek tömeges betelepülését Magyarországra.",
-        "A nemzetiségek kiválását az országból és csatlakozásukat a szomszédos államokhoz.",
-        "A nemzetiségek hozzájárulását a hadikölcsönhöz."
+        "A nemzetiségek kiválását és csatlakozását a szomszédos államokhoz.",
+        "A nemzetiségek költözését Magyarországra a szomszédos államokból.",
+        "A nemzetiségek részvételét a hadikölcsön jegyzésében."
       ],
-      "correct": 1,
+      "correct": 0,
       "teaches": [
         "b1-world-war-1-vocab"
       ]
@@ -85,10 +89,10 @@
       "id": "b1-vilaghaboru-05.ex06",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A ____ elszakadás visszafordíthatatlan ténnyé vált.",
-      "hint": "of the nationalities",
-      "english": "The secession of the nationalities became an irreversible fact.",
-      "answer": "nemzetiségi",
+      "sentence": "A szomszédos államok a nemzeti ____ elvére hivatkoztak.",
+      "hint": "self-determination",
+      "english": "The neighbouring states referred to the principle of national self-determination.",
+      "answer": "önrendelkezés",
       "teaches": [
         "b1-world-war-1-vocab"
       ]
@@ -98,37 +102,20 @@
       "type": "sentence-builder",
       "category": "vocabulary",
       "tiles": [
-        "A",
-        "régi",
-        "Magyarország",
-        "a",
-        "háború",
-        "tüzében",
-        "elenyészett."
+        "Román",
+        "csapatok",
+        "nyomultak",
+        "Erdélybe."
       ],
-      "solutions": [
-        [
-          "A",
-          "régi",
-          "Magyarország",
-          "a",
-          "háború",
-          "tüzében",
-          "elenyészett."
-        ],
-        [
-          "A",
-          "háború",
-          "tüzében",
-          "a",
-          "régi",
-          "Magyarország",
-          "elenyészett."
-        ]
-      ],
-      "english": "The old Hungary perished in the fire of the war.",
+      "english": "Romanian troops advanced into Transylvania.",
       "teaches": [
         "b1-world-war-1-vocab"
+      ],
+      "solution": [
+        "Román",
+        "csapatok",
+        "nyomultak",
+        "Erdélybe."
       ]
     },
     {

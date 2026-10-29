@@ -16,7 +16,7 @@
         ],
         [
           "katonatanács",
-          "soldiers' council (mutinous revolutionary body)"
+          "soldiers' council (revolutionary body)"
         ],
         [
           "köztársaság kikiáltása",
@@ -31,23 +31,27 @@
       "id": "b1-vilaghaboru-04.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat elemzi helyesen az első világháborús eseményeket? (Lesson 4)",
+      "question": "Which sentence says: 'If the soldiers had not torn off the imperial emblem, they would not have pinned an aster in its place'?",
       "options": [
         "Ha a katonák nem tépték volna le a császári címert, nem tűztek volna őszirózsát a helyére.",
         "Ha a katonák nem téptek volna le a császári címert, nem tűztek volna őszirózsát a helyére.",
-        "Ha a katonák nem tépnék volna le a császári címert, nem tűznének volna őszirózsát a helyére."
+        "Ha a katonák nem tépnék volna le a császári címert, nem tűztek volna őszirózsát a helyére."
       ],
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-tense-indefinite",
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "b1-vilaghaboru-04.ex03",
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A katonák letépték a sapkájukról a császári ____.",
-      "hint": "emblem -t",
+      "hint": "emblem",
       "english": "The soldiers tore the imperial emblem off their caps.",
       "answer": "címert",
       "teaches": [
@@ -58,12 +62,12 @@
       "id": "b1-vilaghaboru-04.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ha a frontok nem omlottak volna össze, a katonák százezrei nem hagyták ____ el az állásokat.",
-      "hint": "would have",
-      "english": "If the fronts had not collapsed, hundreds of thousands of soldiers would not have abandoned their positions.",
-      "answer": "volna",
+      "sentence": "Ha a katonák nem hagyták volna ____ az állásokat, nem indultak volna haza.",
+      "hint": "prefix: away",
+      "english": "If the soldiers had not left their positions, they would not have set off home.",
+      "answer": "el",
       "teaches": [
-        "past-conditional-volna"
+        "prefix-word-order"
       ]
     },
     {
@@ -72,11 +76,11 @@
       "category": "vocabulary",
       "question": "Mit jelent a fegyverszünet?",
       "options": [
-        "A király lemondását az államügyek intézéséről.",
-        "A katonák új egyenruhájának bevezetését.",
-        "A harcok beszüntetéséről kötött egyezményt."
+        "Az a megállapodás, amelyben a felek abbahagyják a harcot.",
+        "Az a döntés, amellyel a király új kormányt nevez ki.",
+        "Az a törvény, amely új egyenruhát vezet be a katonáknak."
       ],
-      "correct": 2,
+      "correct": 0,
       "teaches": [
         "b1-world-war-1-vocab"
       ]
@@ -85,9 +89,9 @@
       "id": "b1-vilaghaboru-04.ex06",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A felkelő munkások és a ____ fegyveresei elfoglalták a város stratégiai pontjait.",
+      "sentence": "A forradalom idején Budapesten megalakult a ____.",
       "hint": "soldiers' council",
-      "english": "The insurgent workers and armed men of the soldiers' council occupied the strategic points of the city.",
+      "english": "During the revolution the soldiers' council was formed in Budapest.",
       "answer": "katonatanács",
       "teaches": [
         "b1-world-war-1-vocab"
@@ -98,46 +102,26 @@
       "type": "sentence-builder",
       "category": "vocabulary",
       "tiles": [
-        "A",
-        "tízezres",
-        "tömeg",
-        "az",
-        "Astoria",
-        "Szálló",
-        "előtt",
+        "1918.",
+        "október",
+        "31-én",
         "Károlyi",
-        "Mihályt",
-        "ünnepelte."
+        "Mihály",
+        "kormányt",
+        "alakított."
       ],
-      "solutions": [
-        [
-          "A",
-          "tízezres",
-          "tömeg",
-          "az",
-          "Astoria",
-          "Szálló",
-          "előtt",
-          "Károlyi",
-          "Mihályt",
-          "ünnepelte."
-        ],
-        [
-          "A",
-          "tízezres",
-          "tömeg",
-          "Károlyi",
-          "Mihályt",
-          "az",
-          "Astoria",
-          "Szálló",
-          "előtt",
-          "ünnepelte."
-        ]
-      ],
-      "english": "The crowd of ten thousand celebrated Mihály Károlyi in front of the Astoria Hotel.",
+      "english": "On 31 October 1918 Mihály Károlyi formed a government.",
       "teaches": [
         "b1-world-war-1-vocab"
+      ],
+      "solution": [
+        "1918.",
+        "október",
+        "31-én",
+        "Károlyi",
+        "Mihály",
+        "kormányt",
+        "alakított."
       ]
     },
     {
@@ -148,7 +132,7 @@
       "options": [
         "Az államügyek intézéséről való lemondását.",
         "A háború folytatását a keleti fronton.",
-        "A Monarchia új hadüzenetét Olaszország ellen."
+        "Az új köztársaság elismerését."
       ],
       "correct": 0
     }

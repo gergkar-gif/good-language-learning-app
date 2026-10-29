@@ -31,23 +31,27 @@
       "id": "b1-vilaghaboru-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat elemzi helyesen az első világháborús eseményeket? (Lesson 3)",
+      "question": "Which sentence says: 'If the soldiers had not defended their positions, the front line would have collapsed sooner'?",
       "options": [
-        "Ha a honvédek nem védték volna hősiesen az állásokat, a frontvonal hamarabb összeomlott volna.",
-        "Ha a honvédek nem védtek volna hősiesen az állásokat, a frontvonal hamarabb összeomlott volna.",
-        "Ha a honvédek nem védenék volna hősiesen az állásokat, a frontvonal hamarabb összeomlana volna."
+        "Ha a honvédek nem védték volna hősiesen az állásokat, a frontvonal korábban összeomlott volna.",
+        "Ha a honvédek nem védtek volna hősiesen az állásokat, a frontvonal korábban összeomlott volna.",
+        "Ha a honvédek nem védenék volna hősiesen az állásokat, a frontvonal korábban összeomlott volna."
       ],
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-tense-indefinite",
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "b1-vilaghaboru-03.ex03",
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "Az Isonzónál tizenkét ____ vívtak a seregek.",
-      "hint": "battle -t",
+      "hint": "battle",
       "english": "At the Isonzo, the armies fought twelve battles.",
       "answer": "csatát",
       "teaches": [
@@ -58,12 +62,12 @@
       "id": "b1-vilaghaboru-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ha a Doberdó talaja nem lett volna kőkemény, a katonák árkokat ástak ____.",
-      "hint": "would have",
-      "english": "If the soil of Doberdò had not been rock-hard, the soldiers would have dug trenches.",
-      "answer": "volna",
+      "sentence": "Ha a föld puhább lett volna, a katonák árkokat ____ volna.",
+      "hint": "dig (past), they",
+      "english": "If the ground had been softer, the soldiers would have dug trenches.",
+      "answer": "ástak",
       "teaches": [
-        "past-conditional-volna"
+        "past-tense-indefinite"
       ]
     },
     {
@@ -72,9 +76,9 @@
       "category": "vocabulary",
       "question": "Kit nevez a történetírás hősi halottnak?",
       "options": [
-        "Az ellenség fogságába esett tisztet.",
-        "A háború végén hazatért, kitüntetett katonát.",
-        "A hazáért a harctéren elesett katonát."
+        "A fogságba esett, majd hazatért katonát.",
+        "A háború végén hazatért sebesült katonát.",
+        "A hazáért a harcokban elesett katonát."
       ],
       "correct": 2,
       "teaches": [
@@ -103,41 +107,19 @@
         "hetekig",
         "víz",
         "nélkül",
-        "éltek",
-        "a",
-        "perzselő",
-        "karszti",
-        "hőségben."
+        "éltek."
       ],
-      "solutions": [
-        [
-          "A",
-          "katonák",
-          "hetekig",
-          "víz",
-          "nélkül",
-          "éltek",
-          "a",
-          "perzselő",
-          "karszti",
-          "hőségben."
-        ],
-        [
-          "A",
-          "katonák",
-          "hetekig",
-          "éltek",
-          "víz",
-          "nélkül",
-          "a",
-          "perzselő",
-          "karszti",
-          "hőségben."
-        ]
-      ],
-      "english": "For weeks the soldiers lived without water in the scorching heat of the karst.",
+      "english": "The soldiers lived without water for weeks.",
       "teaches": [
         "b1-world-war-1-vocab"
+      ],
+      "solution": [
+        "A",
+        "katonák",
+        "hetekig",
+        "víz",
+        "nélkül",
+        "éltek."
       ]
     },
     {
