@@ -16,3 +16,8 @@
 | nemzetiunnepek-04: Arad "a szabadságharc tizenhárom tábornokát" | the thirteen were not all generals (Lázár Vilmos was a colonel); say "tizenhárom honvédtisztjét"; "bosszúszomjas" is a judgement | standard; named for the reader to check |
 | nemzetiunnepek-05: Holocaust "pusztították el a nácik és a nyilasok" | omits the Hungarian authorities' part in the 1944 deportations (gendarmerie, administration): say so plainly | batch 40-46 sources (437,000 deported from the countryside with Hungarian authorities' help) |
 | nemzetijelkepek-04: Szatmárcseke "a szabolcsi csendben" | Szatmárcseke was in Szatmár county (today Szabolcs-Szatmár-Bereg); say *szatmári* | standard |
+| nemzetiunnepek-05: "Az Országgyűlés két emléknapot jelölt ki" | right enough: 25 February by OGY resolution 58/2000 (VI. 16.); 16 April proposed by the education minister in January 2000 and adopted that year | njt.jog.gov.hu/jogszabaly/2000-58-30-41; brusszel.mfa.gov.hu/en/articles/a-holocauszt-magyarorszagi-aldozatainak-emleknapja |
+| alaptorveny-02/03/04/05: Articles R, II, XV, B, XXX, XXXI, P, 9, T as the readers restated them | match the Fundamental Law text | net.jogtar.hu/alaptorveny |
+| demokracia-03: NATO accession 12 March 1999 in Independence, Missouri, with Poland and Czechia; 1997 referendum ~85 % yes | right | standard |
+| demokracia-05: simplified naturalisation (2010): ancestor a Hungarian citizen or probable Hungarian origin, plus Hungarian; over a million | right | standard (Act XLIV of 2010) |
+| nemzetijelkepek-02: Fort Knox 1953–1978; crown in Parliament since 2000 (Act I of 2000) | right | standard |
