@@ -262,7 +262,8 @@ meaning line, never Hungarian grammar terms (*megengedő kötőszó*,
 *névutó*, *ige*, *melléknévi igenév*): they are unmet words. A passive with *lett* + *-va/-ve* (*lett korlátozva*) is a
 *-va/-ve* form (B1 Unit 57). Loaded period labels (*békediktátum*, *felszabadulás*,
 *megszállás*) are named as labels or as disputed, never used as the neutral word (batch
-cit-40-46). A fill-blank carries `answer` or `answers`, never both.
+cit-40-46). A fill-blank carries `answer` or `answers`, never both. Never add `checklist` or `goal` sections to a lesson file: the
+reviewer adds checklists with `add_missing_checklists.py` (batch cit-48-54).
 
 ### 6c. Spanish (es-es, es-latam; written 2026-10-16 before the Spanish pass, from the files and ROADMAP 148/150; add what the pass finds)
 

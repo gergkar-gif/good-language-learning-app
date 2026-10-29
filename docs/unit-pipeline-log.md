@@ -123,6 +123,19 @@ The user took the four recommended options:
   a Unit 9 recap blank) were replaced with *hiába* items, vocabulary-tagged.
 - 12 frozen units were unfrozen for these edits and refrozen with their
   accepted findings; all 36 core units check clean, walk 216/216.
+### 2026-10-29: HU B1 citizenship Units 48, 50, 52, 54
+
+- **Readers add checklists by hand:** reader B wrote checklist and
+  consolidation-goal sections into the lesson files (14 fixes).
+  `add_missing_checklists.py` builds them with the review step before
+  them, so the reviewer dropped them. The rulebook now says so.
+- **Cross-unit figures:** the same events (the 1956 executions, the
+  1989 reburial) appear in two units read by different readers, with
+  different numbers. The reviewer made them agree; the batch facts file
+  is the place to fix one figure for the batch.
+- **A fix that misses its own target:** one reader fix left a length
+  give-away (`check-content` after applying caught it).
+
 ### 2026-10-29: HU B1 citizenship Units 40, 42, 44, 46
 
 - **Reviewer reads while readers run:** both readers waited on the
@@ -567,6 +580,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-28 | HU B1 citizenship 24, 26, 28, 30 | paired read, 2 units/reader; both stopped by the 5-hour limit before writing a file, resumed | | A 299k, B 290k (resumed runs only) | 431 proposed (94 / 109 / 115 / 113), 10 rejected by the checker (8 rewritten, 2 applied by hand); Claude changed 8, added 8 fixes, 76 vocabulary entries, 24 checklists, 3 challenge edits | lessons from Unit 24 on have goal lines but no checklist (24 built); facts all standard, none disputed; one cross-reader recap break (*annak dacára* recapped from a screen the other reader rewrote); walk 24/24 |
 | 10-28 | HU B1 citizenship 32, 34, 36, 38 | paired read, 2 units/reader; first pair lost to a container restart before any file, relaunched | | A 338k, B 372k (rerun) | 411 proposed (96 / 107 / 102 / 106), 2 rejected and rewritten; Claude changed 4, reworded 2 shared lines | ~175k a unit; every lesson's ex02 was a garbled-options generator item, rewritten by both readers; no facts in dispute; walk 24/24 |
 | 10-29 | HU B1 citizenship 40, 42, 44, 46 | paired read, 2 units/reader; both hit the 5-hour limit and were resumed | | A 284k, B 307k (resumed runs) | 365 proposed (90 / 102 / 84 / 89), 6 rejected and rewritten; Claude changed 20, added 5 text fixes | ~150k a unit (resumed only); most facts errors of any batch so far; walk 24/24 |
+| 10-29 | HU B1 citizenship 48, 50, 52, 54 | paired read, 2 units/reader, no limit hit | | A 321k, B 373k | 422 proposed (78 / 92 / 123 / 129), 0 rejected; Claude changed 14, dropped 14 hand-made checklist sections | ~175k a unit; figures shared between units made to agree; walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
