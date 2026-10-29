@@ -123,6 +123,17 @@ The user took the four recommended options:
   a Unit 9 recap blank) were replaced with *hiába* items, vocabulary-tagged.
 - 12 frozen units were unfrozen for these edits and refrozen with their
   accepted findings; all 36 core units check clean, walk 216/216.
+### 2026-10-29: HU B1 citizenship Units 56, 58, 60, 62
+
+- **Civics units are mostly "review":** readers marked nearly every fix
+  `kind: hungarian` (451 of 482 to review). Reading them was still
+  worth it: the reviewer found a misquoted Nemzeti hitvallás sentence,
+  a contested museum used as a neutral fact, and the Fundamental Law's
+  opening line attributed to the Avowal, each only in the review list.
+- **A thin skill fixed by the next batch:** naming the missing item in
+  the focus file (one `concessive-postpositions` item in Unit 58)
+  worked first time.
+
 ### 2026-10-29: HU B1 citizenship Units 48, 50, 52, 54
 
 - **Readers add checklists by hand:** reader B wrote checklist and
@@ -581,6 +592,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-28 | HU B1 citizenship 32, 34, 36, 38 | paired read, 2 units/reader; first pair lost to a container restart before any file, relaunched | | A 338k, B 372k (rerun) | 411 proposed (96 / 107 / 102 / 106), 2 rejected and rewritten; Claude changed 4, reworded 2 shared lines | ~175k a unit; every lesson's ex02 was a garbled-options generator item, rewritten by both readers; no facts in dispute; walk 24/24 |
 | 10-29 | HU B1 citizenship 40, 42, 44, 46 | paired read, 2 units/reader; both hit the 5-hour limit and were resumed | | A 284k, B 307k (resumed runs) | 365 proposed (90 / 102 / 84 / 89), 6 rejected and rewritten; Claude changed 20, added 5 text fixes | ~150k a unit (resumed only); most facts errors of any batch so far; walk 24/24 |
 | 10-29 | HU B1 citizenship 48, 50, 52, 54 | paired read, 2 units/reader, no limit hit | | A 321k, B 373k | 422 proposed (78 / 92 / 123 / 129), 0 rejected; Claude changed 14, dropped 14 hand-made checklist sections | ~175k a unit; figures shared between units made to agree; walk 24/24 |
+| 10-29 | HU B1 citizenship 56, 58, 60, 62 | paired read, 2 units/reader; both hit the 5-hour limit and were resumed | | A 294k, B 284k (resumed runs) | 481 proposed (120 / 137 / 116 / 108), 2 rejected and rewritten; Claude changed 9, added 3 text fixes | ~145k a unit (resumed only); civics facts checked against the Fundamental Law; walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
