@@ -263,7 +263,11 @@ meaning line, never Hungarian grammar terms (*megengedő kötőszó*,
 *-va/-ve* form (B1 Unit 57). Loaded period labels (*békediktátum*, *felszabadulás*,
 *megszállás*) are named as labels or as disputed, never used as the neutral word (batch
 cit-40-46). A fill-blank carries `answer` or `answers`, never both. Never add `checklist` or `goal` sections to a lesson file: the
-reviewer adds checklists with `add_missing_checklists.py` (batch cit-48-54).
+reviewer adds checklists with `add_missing_checklists.py` (batch cit-48-54). Present-day facts
+(institutions, office names, office holders, numbers) can change after the content was written:
+the counties are *megye* again and their government office heads *kormánymegbízott* since
+1 October 2026 (not *vármegye*, *főispán*); flag every present-day claim "check" (batch
+cit-64-69).
 
 ### 6c. Spanish (es-es, es-latam; written 2026-10-16 before the Spanish pass, from the files and ROADMAP 148/150; add what the pass finds)
 

@@ -123,6 +123,18 @@ The user took the four recommended options:
   a Unit 9 recap blank) were replaced with *hiába* items, vocabulary-tagged.
 - 12 frozen units were unfrozen for these edits and refrozen with their
   accepted findings; all 36 core units check clean, walk 216/216.
+### 2026-10-29: HU B1 citizenship Units 64, 66, 68, 69
+
+- **Present-day facts age:** the counties became *megye* again on
+  1 October 2026, after the content was written; two frozen units and
+  the mock exam carried the old term. The reviewer's segment read before
+  the readers finish caught it in time to tell the reader of Unit 66.
+  For present-day units, search for changes since the content was
+  written (laws, office names, office holders) before calling a fact
+  "standard"; the rulebook § 6b now says so.
+- **Cost:** ~150k a unit for the civics units, ~180k for the long culture
+  units (Unit 69's segments are the longest in the track).
+
 ### 2026-10-29: HU B1 citizenship Units 56, 58, 60, 62
 
 - **Civics units are mostly "review":** readers marked nearly every fix
@@ -593,6 +605,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-29 | HU B1 citizenship 40, 42, 44, 46 | paired read, 2 units/reader; both hit the 5-hour limit and were resumed | | A 284k, B 307k (resumed runs) | 365 proposed (90 / 102 / 84 / 89), 6 rejected and rewritten; Claude changed 20, added 5 text fixes | ~150k a unit (resumed only); most facts errors of any batch so far; walk 24/24 |
 | 10-29 | HU B1 citizenship 48, 50, 52, 54 | paired read, 2 units/reader, no limit hit | | A 321k, B 373k | 422 proposed (78 / 92 / 123 / 129), 0 rejected; Claude changed 14, dropped 14 hand-made checklist sections | ~175k a unit; figures shared between units made to agree; walk 24/24 |
 | 10-29 | HU B1 citizenship 56, 58, 60, 62 | paired read, 2 units/reader; both hit the 5-hour limit and were resumed | | A 294k, B 284k (resumed runs) | 481 proposed (120 / 137 / 116 / 108), 2 rejected and rewritten; Claude changed 9, added 3 text fixes | ~145k a unit (resumed only); civics facts checked against the Fundamental Law; walk 24/24 |
+| 10-29 | HU B1 citizenship 64, 66, 68, 69 | paired read, 2 units/reader, no limit hit; reader A told of the 2026 megye change mid-read | | A 221k, B 365k | 430 proposed (77 / 82 / 143 / 128), 2 rejected and rewritten; Claude changed 9 | ~145k a unit; Units 2 and 56 refrozen for the megye change; walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
