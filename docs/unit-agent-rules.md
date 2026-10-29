@@ -259,7 +259,10 @@ B1 Unit 24, although the skills `postpositions-altal-reven` (A2) and
 "from A2 Unit 18" or "from B1 Unit 1" (batch cit-16-22). Question stems
 are plain questions (*Melyik szó illik a mondatba?*) or carry an English
 meaning line, never Hungarian grammar terms (*megengedő kötőszó*,
-*névutó*, *ige*, *melléknévi igenév*): they are unmet words.
+*névutó*, *ige*, *melléknévi igenév*): they are unmet words. A passive with *lett* + *-va/-ve* (*lett korlátozva*) is a
+*-va/-ve* form (B1 Unit 57). Loaded period labels (*békediktátum*, *felszabadulás*,
+*megszállás*) are named as labels or as disputed, never used as the neutral word (batch
+cit-40-46). A fill-blank carries `answer` or `answers`, never both.
 
 ### 6c. Spanish (es-es, es-latam; written 2026-10-16 before the Spanish pass, from the files and ROADMAP 148/150; add what the pass finds)
 
