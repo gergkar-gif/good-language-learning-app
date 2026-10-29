@@ -21,3 +21,7 @@
 | rendszervaltas-03: "Háromszázezer ember" at the reburial | about 250,000 (as otvenhat-05) | catalog-legacy.osaarchivum.org/catalog/nOdMjJov |
 | rendszervaltas-03: Orbán Viktor's speech "villámként járták be az országot"; "a kádárizmus erkölcsileg összeomlott" | praise of a present-day politician and a judgement; state what he demanded | — |
 | rendszervaltas-01/02/05: "a vérontás nélküli forradalom példája"; "Ez a bátor döntés döntötte le az első dominót" | judgements; name as a common view | — |
+| rakosikorszak-03: 1951 summer deportation to the Hortobágy | right: the June 1951 deportations from the southern border zone went to the Hortobágy camps (1950–53); Budapest deportees (May–July 1951) went to villages in the east. No change | standard |
+| rakosikorszak-03: Recsk stone (reader: andesite) | not confirmed; text says *követ* | — |
+| otvenhat-05: "összedrótozott kézzel" | not confirmed in the sources searched; dropped | — |
+| otvenhat-05: 23 October a national holiday "since 1989" | made a holiday by the 1990 law on national holidays; the text says *ma nemzeti ünnep* | — |
