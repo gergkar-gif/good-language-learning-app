@@ -123,6 +123,17 @@ The user took the four recommended options:
   a Unit 9 recap blank) were replaced with *hiába* items, vocabulary-tagged.
 - 12 frozen units were unfrozen for these edits and refrozen with their
   accepted findings; all 36 core units check clean, walk 216/216.
+### 2026-10-30: HU B1 citizenship Units 71, 73, 74, 75 (last batch)
+
+- **Glued blanks scripted:** 31 fill-blanks with the blank inside a word
+  were left after the read (readers had fixed most in earlier batches).
+  `scripts/fix_glued_blanks.py` now makes them whole-word blanks; run it
+  on every batch's units after applying (Pipeline step 3), then fix the
+  hints that named an ending.
+- **A reader can "fix" a fact backwards:** Ügyfélkapu+ (2025) was turned
+  back into the retired Ügyfélkapu. Present-day fixes need the same
+  check as history ones.
+
 ### 2026-10-29: HU B1 citizenship Units 64, 66, 68, 69
 
 - **Present-day facts age:** the counties became *megye* again on
@@ -606,6 +617,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-29 | HU B1 citizenship 48, 50, 52, 54 | paired read, 2 units/reader, no limit hit | | A 321k, B 373k | 422 proposed (78 / 92 / 123 / 129), 0 rejected; Claude changed 14, dropped 14 hand-made checklist sections | ~175k a unit; figures shared between units made to agree; walk 24/24 |
 | 10-29 | HU B1 citizenship 56, 58, 60, 62 | paired read, 2 units/reader; both hit the 5-hour limit and were resumed | | A 294k, B 284k (resumed runs) | 481 proposed (120 / 137 / 116 / 108), 2 rejected and rewritten; Claude changed 9, added 3 text fixes | ~145k a unit (resumed only); civics facts checked against the Fundamental Law; walk 24/24 |
 | 10-29 | HU B1 citizenship 64, 66, 68, 69 | paired read, 2 units/reader, no limit hit; reader A told of the 2026 megye change mid-read | | A 221k, B 365k | 430 proposed (77 / 82 / 143 / 128), 2 rejected and rewritten; Claude changed 9 | ~145k a unit; Units 2 and 56 refrozen for the megye change; walk 24/24 |
+| 10-30 | HU B1 citizenship 71, 73, 74, 75 | paired read, 2 units/reader; both hit the 5-hour limit after one unit and were resumed | | A 305k, B 275k (resumed runs) | 300 proposed (71 / 95 / 71 / 63), 5 rejected and rewritten; Claude changed 25, plus 31 glued blanks by script | ~145k a unit; HU B1 75/75 frozen; walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
