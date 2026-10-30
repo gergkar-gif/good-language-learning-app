@@ -24,9 +24,9 @@ How the 152 decisions were made (by what a wrong answer shows):
 
 | Class | Tag | Items |
 |---|---|---|
-| governed case with a registry skill (*ragaszkodik -hoz*, *hivatkozik -ra*, *beszámol -ról*, *részesül -ban*, *helyt ad -nak*, *elszámol -val*, *bízik -ban*) | `verb-government-*` (B1/A2), with `distractor_skills` on wrong options that are other governed cases | 40 |
-| a governed case with no skill (*eltekint -tól*, *ellen*, *iránt*), a supplied word, a connector no screen teaches as a skill (*jóllehet*, *következésképp*, *egyszersmind*, *mindamellett*, *szíveskedjék*), builders, mixed-fault dialogues, meta questions | the unit vocabulary skill | 91 |
-| *mindazonáltal* (taught on b2-16-02-a, the skill's screen) | `contrastive-discourse-markers` | 5 |
+| governed case with a registry skill (*ragaszkodik -hoz*, *hivatkozik -ra*, *beszámol -ról*, *részesül -ban*, *helyt ad -nak*, *elszámol -val*, *bízik -ban*) | `verb-government-*` (B1/A2), with `distractor_skills` on wrong options that are other governed cases | 39 |
+| a governed case with no skill (*eltekint -tól*, *ellen*, *iránt*), a supplied word, a connector no screen teaches as a skill (*jóllehet*, *következésképp*, *egyszersmind*, *mindamellett*, *szíveskedjék*), builders, mixed-fault dialogues, meta questions | the unit vocabulary skill | 94 |
+| *mindazonáltal* (taught on b2-16-02-a, the skill's screen) | `contrastive-discourse-markers` | 4 |
 | focus and preverb inversion | `b2-focus-inversion` | 4 |
 | left-branching participial phrases | `participial-clauses` | 3 |
 | conditional hedges (*indokolt volna*) | `diplomatic-softening` | 4 |
