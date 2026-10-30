@@ -20,6 +20,30 @@ after). `.claude/hooks/session-start.sh` turns on the pre-push gate there.
 The container can restart mid-task: anything not committed or written to a
 file (an agent's reply, for one) can be lost.
 
+**Everything goes on `master`, no other branches (user, 2026-10-30).** Commit
+and push to `master` (`git push origin HEAD:master`), also when the session
+was started on a feature branch: if a harness-named branch has commits, fast-
+forward `master` to it and work on `master` from then on. The cloud git proxy
+refuses branch deletes and tag pushes, so don't create branches you can't
+remove; tell the user which branches are left for them to delete on GitHub.
+
+## Session practices (learned on HU B1, 2026-10-30)
+
+- **Commit as you go**, in small commits: every reader file the moment it
+  arrives, every fact-check file, every applied batch. A restart loses the rest.
+- **Use the wait.** While subagents run, do the reviewer's own read and fact
+  check (pipeline doc § "Best practices"), not idle polling.
+- **A subagent stopped by the usage limit is resumed, not replaced:**
+  SendMessage to the same agent after the reset time its failure notice names.
+- **Facts about today age.** Check present-day claims (offices, laws,
+  procedures, figures) for changes since the content was written, not only
+  for whether they were once true. The counties are *megye* again since
+  1 October 2026.
+- **Never quote a law, a speech or a poem from memory.** Quote it only from a
+  source you could read; otherwise paraphrase it and say so to the user.
+- **Shell safety:** `rm` with a shell variable in the path is blocked; use
+  literal paths. Write reader scratch files to the scratchpad, not `/tmp`.
+
 ## Exercise metadata is required on all generated content
 
 Every exercise you write or edit must carry the metadata the learner model

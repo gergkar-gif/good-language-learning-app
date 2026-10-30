@@ -137,6 +137,29 @@ between *yo/tú/él* or *este/ese/aquel* is that paradigm's grammar skill;
   meaning, never the inflected form's, as it is stored under the lemma); `python scripts/validate-content.py --changed`.
 - Parked, don't report or fix: sentence-builder alternative orders
   (ROADMAP 148(b)); vocabulary lists re-listing earlier words.
+- **Fix-list hygiene (HU B1 citizenship pass, 2026-10-30).** Each of
+  these cost the reviewer a rewrite in several batches:
+  - **One vocabulary append per `-voc.json` file:** put all the new
+    entries for a lesson in one fix on its file; a second append to the
+    same file finds its `old` text gone and is rejected.
+  - **Part of speech** in a vocabulary entry or a gloss line is one of
+    `noun verb adjective adverb pronoun preposition postposition
+    conjunction article interjection expression number`, spelled out
+    (not `adj`, `adv`, `conj`, `numeral`, `phrase`, `proper noun`); a
+    name in a gloss line is a `noun`.
+  - **Check every fill-blank in the unit for a glued blank**, not only
+    the ones you edit (rule 2.5): in the last batch 31 were left.
+  - **A time word only in a wrong option** (*holnap*, *tegnap*, *reggel*)
+    gives the answer away; use it in no option or in the right one too.
+  - **Never add `checklist` or `goal` sections** to a lesson file; rewrite
+    the existing goal lines only.
+  - **Present-day facts:** office names, institutions, procedures, fees,
+    deadlines and figures change; flag every present-day claim "check"
+    and never "correct" a current name back to an older one (Ügyfélkapu+
+    replaced Ügyfélkapu in 2025; *megye* replaced *vármegye* again on
+    1 October 2026).
+  - **Quote a law, a speech or a poem only word for word**, or paraphrase
+    it without quotation marks; flag the wording "check".
 
 ## 6. Defects found before (check each one)
 

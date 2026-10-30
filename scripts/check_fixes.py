@@ -32,6 +32,7 @@ the reviewer doesn't take), then lock_tags / check-content / freeze as usual.
 """
 import importlib.util
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -97,13 +98,30 @@ def unmet(course, level, unit):
         return set()
 
 
+POS_FULL = {"adj": "adjective", "adv": "adverb", "conj": "conjunction", "postp": "postposition",
+            "prep": "preposition", "pron": "pronoun", "numeral": "number", "num": "number",
+            "phrase": "expression", "interj": "interjection"}
+# a "pos" key inside a fix's JSON text, where its quotes are escaped
+POS_ALIAS = re.compile(r'(\\"pos\\":\s*\\")(' + "|".join(POS_FULL) + r')(\\")')
+
+
 def main():
     flags = {a for a in sys.argv[1:] if a.startswith("--")}
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     if len(args) != 4:
         sys.exit(__doc__)
     course, level, unit, fix_path = args[0], args[1].lower(), args[2], Path(args[3])
-    fixes = [ar.norm(f) for f in json.loads(fix_path.read_text(encoding="utf-8"))]
+    # Readers write short or invented part-of-speech labels in vocabulary
+    # fixes ("adj", "adv", "conj", "postp", "numeral", "phrase"); the schema
+    # takes only the full names, so each such fix used to fail validation
+    # (HU B1 citizenship batches 48-54 to 71-75: five batches running).
+    # The mapping is one-to-one, so rewrite the input list and say so.
+    raw = fix_path.read_text(encoding="utf-8")
+    fixed_raw, n_pos = POS_ALIAS.subn(lambda m: m.group(1) + POS_FULL[m.group(2)] + m.group(3), raw)
+    if n_pos:
+        fix_path.write_text(fixed_raw, encoding="utf-8")
+        print(f"rewrote {n_pos} part-of-speech label(s) to the schema's names in {fix_path.name}")
+    fixes = [ar.norm(f) for f in json.loads(fixed_raw)]
     texts, errors = ar.apply(fixes)
     rejected = {n: e for n, e in errors.items()}
 

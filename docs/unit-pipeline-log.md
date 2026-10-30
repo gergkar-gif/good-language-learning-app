@@ -1,38 +1,3 @@
-### 2026-10-27: HU B1 core units 43–53
-
-- **Cost:** 326k and 421k for three units each (~109k and ~140k a
-  unit), the lowest yet: half-size lessons and no session limit.
-- **Same generator defects in every unit:** shared goal lines, a template
-  first checklist line, glued blanks, builders whose `english` is "Build
-  the sentence in the correct order.", screens that are bare phrase
-  lists. The readers rewrote nearly every item; the checker counts
-  (10–12 errors a unit) understate the work.
-- **Unmet words after the read:** reader A did not run `unmet-words.js`
-  (it said so). Run it yourself after applying each batch (step 5): here
-  it found screen phrases reused in later lessons (*átértékel*, *kiállja
-  az idő próbáját*, *megbízik*) that are on no vocabulary list; they go on
-  the list of the lesson whose screen teaches them, and the resulting
-  `vocab-unused` suspects are accepted at freeze.
-- **`check_unit_refs.py`:** reader B wrote recaps as "*X* (A2 Unit 35)";
-  the check now reads that form too. Its false positives are recaps of a
-  form rather than a word (*kapcsolataimat*, *áttörést*, *adjuk hozzá*).
-- **For the user:** 17 of the 36 core units (13, 17, 23, 29, 35, 37, 41,
-  43–51, 55, 61, 65, 67, 72) have no skill whose `taught_in` is one of
-  their screens, so what they teach (*lehet, hogy*, *kétlem*, *dönt
-  vmiről*, *hiába* …) carries A1–A2 tags or the unit vocabulary skill.
-  The skill list is frozen (ROADMAP 125).
-# Unit pipeline: prompts, measurements, process reviews
-
-How the reviewer (Claude) runs units through Sonnet agents, what each step
-costs, and what changed at each review. **Every 2 finished units, the
-reviewer reviews the process** (decided by the user 2026-10-13, under
-time and usage pressure): add the units' numbers to the table, compare
-with the previous rows, pick one or two changes that cut tokens or
-reviewer work without losing defects, record them below, and apply them
-to the next units. Repeated defects go into `docs/unit-agent-rules.md`
-§ 6 at once; a recurring problem gets a script (§ "Script recurring
-problems").
-
 ## Pipeline (current: the HU A2 method, course-neutral, 2026-10-16)
 
 Read this before working on any unit. Agents read only
@@ -59,214 +24,69 @@ has one unit more, its last, `vosotros`, which has no es-latam copy). Then run
 `check_fixes.py`, apply, lock, check, walk and freeze **per course**:
 frozen state, accepted findings and tag locks are per course.
 
-### 2026-10-28: HU B1 core units 55–65
+### Best practices (learned on HU B1, 2026-10-22 → 2026-10-30)
 
-- **Recap units are still the main reviewer fix.** Both readers wrote
-  "You know *X* from Unit N" recaps from skill titles (*mivel*, *ezért*
-  from A1 Unit 24, *amennyiben* from A2 Unit 13, *muszáj*); 8 were wrong,
-  all caught by `check_unit_refs.py`. Its remaining hits across B1 are
-  five known false positives (forms, and *nemcsak* spelled as one word).
-- **Readers checked unmet words by hand, not with the script** (B said
-  so); the reviewer run after applying found 17 hits, most of them
-  inflected forms the lookup misses (*hagytak*, *érvelek*, *eljövök*).
-- **Unit 65 `reported-speech` teaches nothing new:** it repeats Units 25
-  and 53 (reader B). For the user, with the 17 skill-less core units.
-### 2026-10-28: HU B1 core units 67–72 (core track finished)
+These held across nine citizenship batches and the core track; follow
+them unless a step below says otherwise.
 
-- **Audit flag hid the dictionary gaps.** The reader template runs
-  `audit-reader-coverage.js --story … --top 0`, and `--top 0` printed no
-  "not in the dictionary" words (reader A, Unit 67, noticed). So the
-  readers' dictionary lists only ever held the compound guesses.
-  **Scripted:** a `--story` audit now lists every miss. Run over the 32
-  core classics it found 62 misses; 44 were glossed.
-- **Lemma-keyed glosses don't reach every form.** `fill-dictionary-gaps.py`
-  stores a gloss under its lemma, so a form the morphology rules can't
-  reduce (*feküdt*, *pátosszal*, *vasággyal*, *gúnnyal*) stays a gap after
-  its lemma is added. Those went in as surface-form headwords
-  (`word | word | pos | gloss`). The remaining misses are names.
-- **Core track check, 2026-10-28:** all 36 core units frozen;
-  `check-content` reports nothing unaccepted on any of them; walk
-  216/216 with challenges. Not covered: the citizenship track (39 units,
-  3 frozen), the B1 level checklist (run once the citizenship track is
-  done), and the 17 core units that teach no registry skill.
-### 2026-10-28: HU B1 core close-out (user's decisions)
-
-The user took the four recommended options:
-- **Skill titles reworded to what their screens teach** (slugs and tags
-  unchanged): `kell-infinitive` "obligation with kell + infinitive",
-  `mert-because` "causal clauses with mert", `kellene` "giving advice
-  with kellene", `ha-clause` "conditional sentences with ha",
-  `concessive-annak-ellenere` "concessive clauses with annak ellenére,
-  hogy", and, found in the same check, `relative-clauses-aki-ami-amely`
-  "relative clauses with aki".
-- **`check_unit_refs.py` now counts a word as taught only where it is**
-  (italicised on a grammar screen, other than the recapped word, or a
-  vocabulary lemma; citizenship screens with a topic in the file name
-  map to their lesson). It found 9 more wrong recaps (*amely* "from A2
-  Unit 4" on six screens: it is first taught in B1 Unit 10; *bár*,
-  *habár*, *majd*, *végeredményben*), all fixed. Its 12 remaining hits
-  on B1 are false positives: recaps of a form (*adjuk hozzá*,
-  *kapcsolataimat*, *áttörést*, *leg-*), multi-word phrases the screens
-  quote rather than italicise, and *nemcsak* against A2's *nem csak*.
-  The noun *bár* ('bar') on an early vocabulary list hides the
-  conjunction from it, so *bár* was fixed by hand.
-- **B2 forms removed from B1 screens:** Unit 63 (*olyannyira/olyan …,
-  hogy*, *arról, hogy*), Unit 72 (*ugyebár*, *elvégre* → *hiszen*,
-  *persze*; preverb inversion *olvastam el*). Rule added to
-  unit-agent-rules § 6b.
-- **Unit 65 is now "Review: Reported Speech"** (unit and lesson titles).
-- **Skills for the units that teach none: none added.** Claude proposed
-  *hiába*, *lehet, hogy / kétlem, hogy* and *az ember*; the user judged
-  them vocabulary items, not grammar skills, so all 17 units keep the
-  vocabulary tag. *Hiába* had a screen (Unit 35) but no item drilled it:
-  three weak items (a weekday blank, an off-topic *azt mondta, hogy*,
-  a Unit 9 recap blank) were replaced with *hiába* items, vocabulary-tagged.
-- 12 frozen units were unfrozen for these edits and refrozen with their
-  accepted findings; all 36 core units check clean, walk 216/216.
-### 2026-10-30: HU B1 citizenship Units 71, 73, 74, 75 (last batch)
-
-- **Glued blanks scripted:** 31 fill-blanks with the blank inside a word
-  were left after the read (readers had fixed most in earlier batches).
-  `scripts/fix_glued_blanks.py` now makes them whole-word blanks; run it
-  on every batch's units after applying (Pipeline step 3), then fix the
-  hints that named an ending.
-- **A reader can "fix" a fact backwards:** Ügyfélkapu+ (2025) was turned
-  back into the retired Ügyfélkapu. Present-day fixes need the same
-  check as history ones.
-
-### 2026-10-29: HU B1 citizenship Units 64, 66, 68, 69
-
-- **Present-day facts age:** the counties became *megye* again on
-  1 October 2026, after the content was written; two frozen units and
-  the mock exam carried the old term. The reviewer's segment read before
-  the readers finish caught it in time to tell the reader of Unit 66.
-  For present-day units, search for changes since the content was
-  written (laws, office names, office holders) before calling a fact
-  "standard"; the rulebook § 6b now says so.
-- **Cost:** ~150k a unit for the civics units, ~180k for the long culture
-  units (Unit 69's segments are the longest in the track).
-
-### 2026-10-29: HU B1 citizenship Units 56, 58, 60, 62
-
-- **Civics units are mostly "review":** readers marked nearly every fix
-  `kind: hungarian` (451 of 482 to review). Reading them was still
-  worth it: the reviewer found a misquoted Nemzeti hitvallás sentence,
-  a contested museum used as a neutral fact, and the Fundamental Law's
-  opening line attributed to the Avowal, each only in the review list.
-- **A thin skill fixed by the next batch:** naming the missing item in
-  the focus file (one `concessive-postpositions` item in Unit 58)
-  worked first time.
-
-### 2026-10-29: HU B1 citizenship Units 48, 50, 52, 54
-
-- **Readers add checklists by hand:** reader B wrote checklist and
-  consolidation-goal sections into the lesson files (14 fixes).
-  `add_missing_checklists.py` builds them with the review step before
-  them, so the reviewer dropped them. The rulebook now says so.
-- **Cross-unit figures:** the same events (the 1956 executions, the
-  1989 reburial) appear in two units read by different readers, with
-  different numbers. The reviewer made them agree; the batch facts file
-  is the place to fix one figure for the batch.
-- **A fix that misses its own target:** one reader fix left a length
-  give-away (`check-content` after applying caught it).
-
-### 2026-10-29: HU B1 citizenship Units 40, 42, 44, 46
-
-- **Reviewer reads while readers run:** both readers waited on the
-  5-hour limit; the reviewer used the wait to read all 22 segments and
-  verify the doubtful claims on the web. Most of the readers' "check"
-  lines were then already answered, and four errors the readers left
-  (the red-map scene, Bethlen's motto, the paprika line, the kidnapping
-  order) were caught only by that read.
-- **20th-century texts:** more wrong facts than the earlier units
-  (dates a day off, invented quotes of real people, loaded labels used
-  as neutral words). The rulebook § 6b now names the labels.
-- **Thin skill:** retagging an item that used a form before its unit
-  left `concessive-postpositions` at 5 exercises; the unit that teaches
-  it is frozen, so a later citizenship batch adds one.
-
-### 2026-10-28: HU B1 citizenship Units 32, 34, 36, 38
-
-- **Lost run:** a container restart stopped both readers before either
-  wrote a file; the rerun from the same prompts cost ~175k a unit. The
-  prompt already says to write each unit's files before the next; a
-  restart inside the first unit loses the whole read either way.
-- **Generator pattern:** every lesson's ex02 in these units had garbled
-  wrong options with several faults and "(Lesson N)" in the stem; both
-  readers rewrote all twenty. The later citizenship units come from the
-  same generator, so the focus file names it.
-- **Cross-reader duplicates:** the two readers wrote the same goal line
-  for Unit 36 L4 and Unit 38 L1 (the dual system); `checklist-shared`
-  caught it after applying.
-- **Invented quotes:** both readers kept the segments' speeches of real
-  people (Kossuth, Deák, Andrássy, Bem) as illustrative dialogue; items
-  must not teach them as facts (Unit 36 ex03 did).
-
-### 2026-10-28: HU B1 citizenship Units 24, 26, 28, 30
-
-- **Cost:** not measurable (the 5-hour limit before any file); the
-  resumed runs alone were ~150k a unit. Fix counts ~108 a unit, lower
-  than 16–22: these units' segments are shorter (~6.7k characters).
-- **Cross-reader recaps:** reader B recapped *annak dacára, hogy* "from
-  B1 Unit 24", a screen reader A rewrote in the same batch.
-  `check_unit_refs.py` after applying caught it; reading the readers'
-  lists together is not enough, so the script stays the last step.
-- **Readers still put verbal nouns into their own new options** (Units
-  24 and 30), now listed by `check_fixes.py` before merging, so they
-  cost minutes rather than a second pass.
-- **Scripted:** `add_challenges.py` stops counting "II." and "1848."
-  as sentence ends (four refused targets about kings across batches).
-
-### 2026-10-28: HU B1 citizenship Units 16, 18, 20, 22
-
-- **Cost:** ~190k and ~220k a unit, up from ~160k in the first
-  batch. Reader B's two units drew ~170 fixes each: every segment
-  carried national-romantic lines and claims the items asked for but no
-  segment stated, and every screen taught known A1–B1 material as new.
-- **Recaps from skill titles, again:** *révén* "from A2 Unit 18" and
-  *amint* "from B1 Unit 1" name the units of skills whose titles list
-  the word (`postpositions-altal-reven`, `miutan-mielott`) but whose
-  screens never show it. `check_unit_refs.py` caught both; the focus
-  file now names them, with *amely* (Unit 10).
-- **Hungarian grammar terms in question stems** (*megengedő kötőszó*,
-  *névutó*, *ige*): unmet words and the wrong register for a learner.
-  Reader A removed them, B only some; the focus file now says stems use
-  plain questions or an English meaning line.
-- **Scripted:** `add_vocab_words.py` (the list → fixes step for the
-  history words, ~100 a batch), which refuses a `pos` the schema rejects
-  and a multi-word lemma not tagged `expression`; my hand-made list had
-  put `determiner` on *mindkét*.
-- **Thin skill after a correct retag:** `historical-routines` (Unit 20,
-  the only citizenship-taught skill with few items) fell to 5; caught by
-  the `--warnings` diff, as the rulebook says.
-
-### 2026-10-28: HU B1 citizenship Units 8, 10, 12, 14
-
-- **Cost:** not measurable for the first run (the 5-hour limit hit
-  both readers before any file was written); the resumed runs reported
-  307k and 344k for two units each. The readers' fix counts (~84 a unit)
-  match the core units', so the texts, not the items, drove the work:
-  every segment had overclaims, mind-reading or national-romantic lines
-  (*az egész keresztény Európa lélegzetvisszafojtva figyelt*, *dicső
-  férfiág*, "saved Christian Europe") and facts the items asked for that
-  no segment stated (Vajk, Koppány, Julianus, Rogerius, Körmöcbánya).
-- **Recaps of *amely* again.** Reader A wrote "you know *amely* from A2
-  Unit 4" on three Unit 10 screens; *amely* is taught on b1-arpadhaz-02.
-  `check_unit_refs.py` would have caught it, but given unit ids it
-  skipped every citizenship screen (it matched file stems without the
-  topic suffix): **fixed**, and Units 2, 4, 6 rechecked clean.
-- **Unmet words in the readers' own new options** (17–85 a batch since
-  core 43–53, found only by the reviewer's run after applying): **scripted.**
-  `check_fixes.py` now runs `unmet-words.js` before and after applying a
-  list (B1 and up) and prints the words each fix brings, so they are
-  listed while sorting, not after the merge. Tested on the pre-fix Unit 14:
-  23 hits, the same words found by hand.
-- **Change for the next batches:** the focus file names *amely* (Unit 10),
-  *-ható* (Unit 61) and verbal nouns among the forms to watch in
-  options, the three slips found after applying here.
-- **Template slip:** reader B wrote "generator scripts" to build its fix
-  JSON despite the template's "don't write your own tools"; its fixes were
-  sound, so no change beyond the existing rule.
+- **Use the reader wait.** While the two readers run (~10–25 min, or
+  hours when they hit the 5-hour limit), read the batch's texts yourself
+  (`python3` dump of the segments' `text`/`hu` fields) and check every
+  doubtful claim on the web *before* their files arrive. Write the
+  verdicts to `<batch>/reviewer-facts.md` (claim | verdict | source) and
+  commit it. In HU B1 this read caught errors no reader fixed (Margit
+  híd, Teleki's quote, the red-map scene, the paprika line, the 2026
+  *megye* change) and made the review of their lists fast.
+- **Tell a running reader** (SendMessage) when your read finds something
+  that changes its work (a law changed, a figure is wrong): Unit 66 used
+  the 2026 terms only because its reader was told mid-read.
+- **Present-day facts age.** For anything about today (office names,
+  institutions, procedures, fees, deadlines, figures, office holders),
+  search for changes since the content was written (WebSearch "<topic>
+  2026"), not only whether it was ever true. The counties became *megye*
+  again on 1 October 2026; a reader turned Ügyfélkapu+ back into the
+  retired Ügyfélkapu.
+- **Readers stop at the 5-hour limit.** The failure notice names the
+  reset time. After it, resume the *same* agent with SendMessage
+  (instructions path plus "continue from where you stopped"; add any
+  reviewer note); never start a new reader. Copy each unit's files from
+  the worktree into the batch folder and commit them the moment they
+  exist: a container restart loses an agent's unsaved work.
+- **Readers' fix lists need four mechanical repairs; they are scripted.**
+  Short part-of-speech labels (`adj`, `adv`, `conj`, `numeral`…) are
+  rewritten by `check_fixes.py`; glued blanks are fixed after applying by
+  `scripts/fix_glued_blanks.py <course> <level> <stem prefixes> --apply`;
+  several vocabulary appends to one `-voc.json` collide (the second finds
+  its old text gone): drop the collider and put its words through
+  `add_vocab_words.py`; a reader's hand-written `checklist`/`goal`
+  sections are dropped (checklists come from `add_missing_checklists.py`).
+- **Read every review item against your facts file, not only for
+  language.** Readers in this pass misquoted laws (Article D, the Avowal),
+  stated a contested source as neutral (the Terror Háza), and asserted
+  causes the segment didn't state. Give each disputed matter one line,
+  name loaded labels as labels (*békediktátum*), and keep figures that
+  recur across units the same (the 1956 executions, the 1989 reburial).
+- **Rewrite rejected fixes in `<batch>/extra-<unit>.json`** and run
+  `check_fixes.py` on that file, not on the reader's list (which would
+  overwrite your edits to its review list).
+- **Challenges:** before `add_challenges.py`, check each target against
+  the texts (a target may state a fact the story doesn't, or misattribute
+  one: "Beethoven szerezte az Örömódát") and each `canDo` against the
+  lesson's first goal line.
+- **Focus file per batch:** copy the previous batch's `focus.txt`, update
+  the "known by Unit N" list (a `skills/hu.json` query on `taught_in` for
+  the core units in between), the frozen-unit range and the topic
+  paragraph (what to state plainly, what to name as disputed). Between
+  batches, move the worktrees to the new HEAD (`git -C <worktree>
+  checkout --detach <HEAD>`) and delete the old reader files by literal
+  path (`rm` with a shell variable in the path is blocked).
+- **Web tools:** WebSearch works; Wikipedia and the Hungarian law
+  databases (njt.hu, jogtar) refuse the fetch tools, and perplexity and
+  firecrawl are unreliable. When a wording can't be verified (the
+  citizenship oath), paraphrase it and tell the user; never quote from
+  memory.
+- **Cost:** ~145–180k tokens a unit at two units per reader (history and
+  civics units read slower than core units).
 
 ### Route A: read-first batch (HU A2, 2026-10-14 → 2026-10-15)
 
@@ -304,9 +124,14 @@ The user took the four recommended options:
    <level> <words.txt> <out.json>` (`stem | lemma | translation | pos`
    per line), then `apply_replacements.py` and `build_word_lesson_index.py`.
 3. **Merge and apply:** `python scripts/merge_fixes.py <batch>/merged.json
-   <each .auto.json and filtered .review.json>` (refuses when two readers
-   fixed one item differently), then `python scripts/apply_replacements.py
-   <batch>/merged.json`. Spanish: mirror here (above).
+   <each .auto.json and filtered .review.json and extra-*.review.json>`
+   (refuses when two readers fixed one item differently), then `python
+   scripts/apply_replacements.py <batch>/merged.json`. Spanish: mirror
+   here (above). Then `python scripts/fix_glued_blanks.py <course> <level>
+   <stem prefixes> --apply` and fix the hints that named an ending; for
+   citizenship units restitch each unit reading
+   (`stitch_track_unit_stories.py --unit <course> <level> citizenship
+   <unit id>`) and rebuild the word index.
 4. **Dictionary:** the readers' compound glosses (report group 5) through
    `python scripts/fill-dictionary-gaps.py import <reply.txt> <lang>`;
    it stores each under its lemma, so remove a gloss that only fits the
@@ -331,10 +156,15 @@ The user took the four recommended options:
    suspect (consolidation replays, characters' names). Keep each batch's
    accept list in the batch folder: `--unfreeze` drops a unit's accepted
    findings, so a later unfreeze must pass them again.
-7. **Records:** fix lists, reports, challenge drafts and accept lists in
-   `imports/review/<course>-<level>-batch-<units>/`; a measurements row;
-   a process review per batch (what recurred goes into rulebook § 6 the
-   same day, anything seen twice gets a script, below). Commit, push.
+7. **Records:** fix lists, reports, challenge drafts, `reviewer-facts.md`
+   and accept lists in `imports/review/<course>-<level>-batch-<units>/`,
+   with a `review.md` (counts, facts corrected with sources, what the
+   user must decide); a measurements row; a process review per batch
+   under § Process reviews at the end of this file, never in this
+   section (what recurred goes into rulebook § 6 the same day, anything
+   seen twice gets a script, below); ROADMAP 153 and ACHIEVED 153. Commit
+   and push to `master` (user, 2026-10-30: everything on master, no other
+   branches).
 8. **Walk:** `node scripts/walk_lessons.js <course> <level> --only
    <stems> --jobs 4` with `python scripts/dev-server.py 8131` running,
    after the first frozen units of a new course (an engine defect hits
@@ -1424,3 +1254,250 @@ Reads before unit 9's second read used the full docs (brief, AGENTS, spec, regis
 - **Retag left a skill under 6:** the reader rightly moved *ökológiai
   lábnyom* off `noun-compounds` (it is not a compound), leaving 5; the
   `--warnings` diff caught it and one compound item replaced it.
+
+### 2026-10-27: HU B1 core units 43–53
+
+- **Cost:** 326k and 421k for three units each (~109k and ~140k a
+  unit), the lowest yet: half-size lessons and no session limit.
+- **Same generator defects in every unit:** shared goal lines, a template
+  first checklist line, glued blanks, builders whose `english` is "Build
+  the sentence in the correct order.", screens that are bare phrase
+  lists. The readers rewrote nearly every item; the checker counts
+  (10–12 errors a unit) understate the work.
+- **Unmet words after the read:** reader A did not run `unmet-words.js`
+  (it said so). Run it yourself after applying each batch (step 5): here
+  it found screen phrases reused in later lessons (*átértékel*, *kiállja
+  az idő próbáját*, *megbízik*) that are on no vocabulary list; they go on
+  the list of the lesson whose screen teaches them, and the resulting
+  `vocab-unused` suspects are accepted at freeze.
+- **`check_unit_refs.py`:** reader B wrote recaps as "*X* (A2 Unit 35)";
+  the check now reads that form too. Its false positives are recaps of a
+  form rather than a word (*kapcsolataimat*, *áttörést*, *adjuk hozzá*).
+- **For the user:** 17 of the 36 core units (13, 17, 23, 29, 35, 37, 41,
+  43–51, 55, 61, 65, 67, 72) have no skill whose `taught_in` is one of
+  their screens, so what they teach (*lehet, hogy*, *kétlem*, *dönt
+  vmiről*, *hiába* …) carries A1–A2 tags or the unit vocabulary skill.
+  The skill list is frozen (ROADMAP 125).
+# Unit pipeline: prompts, measurements, process reviews
+
+How the reviewer (Claude) runs units through Sonnet agents, what each step
+costs, and what changed at each review. **Every 2 finished units, the
+reviewer reviews the process** (decided by the user 2026-10-13, under
+time and usage pressure): add the units' numbers to the table, compare
+with the previous rows, pick one or two changes that cut tokens or
+reviewer work without losing defects, record them below, and apply them
+to the next units. Repeated defects go into `docs/unit-agent-rules.md`
+§ 6 at once; a recurring problem gets a script (§ "Script recurring
+problems").
+
+### 2026-10-28: HU B1 core units 55–65
+
+- **Recap units are still the main reviewer fix.** Both readers wrote
+  "You know *X* from Unit N" recaps from skill titles (*mivel*, *ezért*
+  from A1 Unit 24, *amennyiben* from A2 Unit 13, *muszáj*); 8 were wrong,
+  all caught by `check_unit_refs.py`. Its remaining hits across B1 are
+  five known false positives (forms, and *nemcsak* spelled as one word).
+- **Readers checked unmet words by hand, not with the script** (B said
+  so); the reviewer run after applying found 17 hits, most of them
+  inflected forms the lookup misses (*hagytak*, *érvelek*, *eljövök*).
+- **Unit 65 `reported-speech` teaches nothing new:** it repeats Units 25
+  and 53 (reader B). For the user, with the 17 skill-less core units.
+
+### 2026-10-28: HU B1 core units 67–72 (core track finished)
+
+- **Audit flag hid the dictionary gaps.** The reader template runs
+  `audit-reader-coverage.js --story … --top 0`, and `--top 0` printed no
+  "not in the dictionary" words (reader A, Unit 67, noticed). So the
+  readers' dictionary lists only ever held the compound guesses.
+  **Scripted:** a `--story` audit now lists every miss. Run over the 32
+  core classics it found 62 misses; 44 were glossed.
+- **Lemma-keyed glosses don't reach every form.** `fill-dictionary-gaps.py`
+  stores a gloss under its lemma, so a form the morphology rules can't
+  reduce (*feküdt*, *pátosszal*, *vasággyal*, *gúnnyal*) stays a gap after
+  its lemma is added. Those went in as surface-form headwords
+  (`word | word | pos | gloss`). The remaining misses are names.
+- **Core track check, 2026-10-28:** all 36 core units frozen;
+  `check-content` reports nothing unaccepted on any of them; walk
+  216/216 with challenges. Not covered: the citizenship track (39 units,
+  3 frozen), the B1 level checklist (run once the citizenship track is
+  done), and the 17 core units that teach no registry skill.
+
+### 2026-10-28: HU B1 core close-out (user's decisions)
+
+The user took the four recommended options:
+- **Skill titles reworded to what their screens teach** (slugs and tags
+  unchanged): `kell-infinitive` "obligation with kell + infinitive",
+  `mert-because` "causal clauses with mert", `kellene` "giving advice
+  with kellene", `ha-clause` "conditional sentences with ha",
+  `concessive-annak-ellenere` "concessive clauses with annak ellenére,
+  hogy", and, found in the same check, `relative-clauses-aki-ami-amely`
+  "relative clauses with aki".
+- **`check_unit_refs.py` now counts a word as taught only where it is**
+  (italicised on a grammar screen, other than the recapped word, or a
+  vocabulary lemma; citizenship screens with a topic in the file name
+  map to their lesson). It found 9 more wrong recaps (*amely* "from A2
+  Unit 4" on six screens: it is first taught in B1 Unit 10; *bár*,
+  *habár*, *majd*, *végeredményben*), all fixed. Its 12 remaining hits
+  on B1 are false positives: recaps of a form (*adjuk hozzá*,
+  *kapcsolataimat*, *áttörést*, *leg-*), multi-word phrases the screens
+  quote rather than italicise, and *nemcsak* against A2's *nem csak*.
+  The noun *bár* ('bar') on an early vocabulary list hides the
+  conjunction from it, so *bár* was fixed by hand.
+- **B2 forms removed from B1 screens:** Unit 63 (*olyannyira/olyan …,
+  hogy*, *arról, hogy*), Unit 72 (*ugyebár*, *elvégre* → *hiszen*,
+  *persze*; preverb inversion *olvastam el*). Rule added to
+  unit-agent-rules § 6b.
+- **Unit 65 is now "Review: Reported Speech"** (unit and lesson titles).
+- **Skills for the units that teach none: none added.** Claude proposed
+  *hiába*, *lehet, hogy / kétlem, hogy* and *az ember*; the user judged
+  them vocabulary items, not grammar skills, so all 17 units keep the
+  vocabulary tag. *Hiába* had a screen (Unit 35) but no item drilled it:
+  three weak items (a weekday blank, an off-topic *azt mondta, hogy*,
+  a Unit 9 recap blank) were replaced with *hiába* items, vocabulary-tagged.
+- 12 frozen units were unfrozen for these edits and refrozen with their
+  accepted findings; all 36 core units check clean, walk 216/216.
+
+### 2026-10-28: HU B1 citizenship Units 8, 10, 12, 14
+
+- **Cost:** not measurable for the first run (the 5-hour limit hit
+  both readers before any file was written); the resumed runs reported
+  307k and 344k for two units each. The readers' fix counts (~84 a unit)
+  match the core units', so the texts, not the items, drove the work:
+  every segment had overclaims, mind-reading or national-romantic lines
+  (*az egész keresztény Európa lélegzetvisszafojtva figyelt*, *dicső
+  férfiág*, "saved Christian Europe") and facts the items asked for that
+  no segment stated (Vajk, Koppány, Julianus, Rogerius, Körmöcbánya).
+- **Recaps of *amely* again.** Reader A wrote "you know *amely* from A2
+  Unit 4" on three Unit 10 screens; *amely* is taught on b1-arpadhaz-02.
+  `check_unit_refs.py` would have caught it, but given unit ids it
+  skipped every citizenship screen (it matched file stems without the
+  topic suffix): **fixed**, and Units 2, 4, 6 rechecked clean.
+- **Unmet words in the readers' own new options** (17–85 a batch since
+  core 43–53, found only by the reviewer's run after applying): **scripted.**
+  `check_fixes.py` now runs `unmet-words.js` before and after applying a
+  list (B1 and up) and prints the words each fix brings, so they are
+  listed while sorting, not after the merge. Tested on the pre-fix Unit 14:
+  23 hits, the same words found by hand.
+- **Change for the next batches:** the focus file names *amely* (Unit 10),
+  *-ható* (Unit 61) and verbal nouns among the forms to watch in
+  options, the three slips found after applying here.
+- **Template slip:** reader B wrote "generator scripts" to build its fix
+  JSON despite the template's "don't write your own tools"; its fixes were
+  sound, so no change beyond the existing rule.
+
+### 2026-10-28: HU B1 citizenship Units 16, 18, 20, 22
+
+- **Cost:** ~190k and ~220k a unit, up from ~160k in the first
+  batch. Reader B's two units drew ~170 fixes each: every segment
+  carried national-romantic lines and claims the items asked for but no
+  segment stated, and every screen taught known A1–B1 material as new.
+- **Recaps from skill titles, again:** *révén* "from A2 Unit 18" and
+  *amint* "from B1 Unit 1" name the units of skills whose titles list
+  the word (`postpositions-altal-reven`, `miutan-mielott`) but whose
+  screens never show it. `check_unit_refs.py` caught both; the focus
+  file now names them, with *amely* (Unit 10).
+- **Hungarian grammar terms in question stems** (*megengedő kötőszó*,
+  *névutó*, *ige*): unmet words and the wrong register for a learner.
+  Reader A removed them, B only some; the focus file now says stems use
+  plain questions or an English meaning line.
+- **Scripted:** `add_vocab_words.py` (the list → fixes step for the
+  history words, ~100 a batch), which refuses a `pos` the schema rejects
+  and a multi-word lemma not tagged `expression`; my hand-made list had
+  put `determiner` on *mindkét*.
+- **Thin skill after a correct retag:** `historical-routines` (Unit 20,
+  the only citizenship-taught skill with few items) fell to 5; caught by
+  the `--warnings` diff, as the rulebook says.
+
+### 2026-10-28: HU B1 citizenship Units 24, 26, 28, 30
+
+- **Cost:** not measurable (the 5-hour limit before any file); the
+  resumed runs alone were ~150k a unit. Fix counts ~108 a unit, lower
+  than 16–22: these units' segments are shorter (~6.7k characters).
+- **Cross-reader recaps:** reader B recapped *annak dacára, hogy* "from
+  B1 Unit 24", a screen reader A rewrote in the same batch.
+  `check_unit_refs.py` after applying caught it; reading the readers'
+  lists together is not enough, so the script stays the last step.
+- **Readers still put verbal nouns into their own new options** (Units
+  24 and 30), now listed by `check_fixes.py` before merging, so they
+  cost minutes rather than a second pass.
+- **Scripted:** `add_challenges.py` stops counting "II." and "1848."
+  as sentence ends (four refused targets about kings across batches).
+
+### 2026-10-28: HU B1 citizenship Units 32, 34, 36, 38
+
+- **Lost run:** a container restart stopped both readers before either
+  wrote a file; the rerun from the same prompts cost ~175k a unit. The
+  prompt already says to write each unit's files before the next; a
+  restart inside the first unit loses the whole read either way.
+- **Generator pattern:** every lesson's ex02 in these units had garbled
+  wrong options with several faults and "(Lesson N)" in the stem; both
+  readers rewrote all twenty. The later citizenship units come from the
+  same generator, so the focus file names it.
+- **Cross-reader duplicates:** the two readers wrote the same goal line
+  for Unit 36 L4 and Unit 38 L1 (the dual system); `checklist-shared`
+  caught it after applying.
+- **Invented quotes:** both readers kept the segments' speeches of real
+  people (Kossuth, Deák, Andrássy, Bem) as illustrative dialogue; items
+  must not teach them as facts (Unit 36 ex03 did).
+
+### 2026-10-29: HU B1 citizenship Units 40, 42, 44, 46
+
+- **Reviewer reads while readers run:** both readers waited on the
+  5-hour limit; the reviewer used the wait to read all 22 segments and
+  verify the doubtful claims on the web. Most of the readers' "check"
+  lines were then already answered, and four errors the readers left
+  (the red-map scene, Bethlen's motto, the paprika line, the kidnapping
+  order) were caught only by that read.
+- **20th-century texts:** more wrong facts than the earlier units
+  (dates a day off, invented quotes of real people, loaded labels used
+  as neutral words). The rulebook § 6b now names the labels.
+- **Thin skill:** retagging an item that used a form before its unit
+  left `concessive-postpositions` at 5 exercises; the unit that teaches
+  it is frozen, so a later citizenship batch adds one.
+
+### 2026-10-29: HU B1 citizenship Units 48, 50, 52, 54
+
+- **Readers add checklists by hand:** reader B wrote checklist and
+  consolidation-goal sections into the lesson files (14 fixes).
+  `add_missing_checklists.py` builds them with the review step before
+  them, so the reviewer dropped them. The rulebook now says so.
+- **Cross-unit figures:** the same events (the 1956 executions, the
+  1989 reburial) appear in two units read by different readers, with
+  different numbers. The reviewer made them agree; the batch facts file
+  is the place to fix one figure for the batch.
+- **A fix that misses its own target:** one reader fix left a length
+  give-away (`check-content` after applying caught it).
+
+### 2026-10-29: HU B1 citizenship Units 56, 58, 60, 62
+
+- **Civics units are mostly "review":** readers marked nearly every fix
+  `kind: hungarian` (451 of 482 to review). Reading them was still
+  worth it: the reviewer found a misquoted Nemzeti hitvallás sentence,
+  a contested museum used as a neutral fact, and the Fundamental Law's
+  opening line attributed to the Avowal, each only in the review list.
+- **A thin skill fixed by the next batch:** naming the missing item in
+  the focus file (one `concessive-postpositions` item in Unit 58)
+  worked first time.
+
+### 2026-10-29: HU B1 citizenship Units 64, 66, 68, 69
+
+- **Present-day facts age:** the counties became *megye* again on
+  1 October 2026, after the content was written; two frozen units and
+  the mock exam carried the old term. The reviewer's segment read before
+  the readers finish caught it in time to tell the reader of Unit 66.
+  For present-day units, search for changes since the content was
+  written (laws, office names, office holders) before calling a fact
+  "standard"; the rulebook § 6b now says so.
+- **Cost:** ~150k a unit for the civics units, ~180k for the long culture
+  units (Unit 69's segments are the longest in the track).
+
+### 2026-10-30: HU B1 citizenship Units 71, 73, 74, 75 (last batch)
+
+- **Glued blanks scripted:** 31 fill-blanks with the blank inside a word
+  were left after the read (readers had fixed most in earlier batches).
+  `scripts/fix_glued_blanks.py` now makes them whole-word blanks; run it
+  on every batch's units after applying (Pipeline step 3), then fix the
+  hints that named an ending.
+- **A reader can "fix" a fact backwards:** Ügyfélkapu+ (2025) was turned
+  back into the retired Ügyfélkapu. Present-day fixes need the same
+  check as history ones.
