@@ -1,0 +1,535 @@
+[
+  {
+    "file": "content/hu/stories/world/b1/b1-alberlet.json",
+    "old": "átadta a kapukódot és a három kulcscsomót",
+    "new": "átadta a kapukódot és a lakás három kulcsát",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "three key bunches for one tenant is odd"
+  },
+  {
+    "file": "content/hu/stories/world/b1/b1-alberlet.json",
+    "old": "Anna átutalta az első havi bérleti díjat és a kéthavi kauciót, majd boldogan elkezdett kicsomagolni az új otthonában, tudva, hogy a pontos és szabályos szerződés mindkettőjük biztonságát garantálja.",
+    "new": "Anna átutalta az első havi bérleti díjat és a kéthavi kauciót, majd elkezdett kicsomagolni az új otthonában.",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "mind-reading (\"boldogan\", \"tudva, hogy\") and the overstated claim that a contract \"guarantees\" safety removed"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-alberlet-01-gr.json",
+    "old": "When inspecting an apartment, Hungarian uses specific adverbial phrases: *megtekintett állapotban bérbe vesz* (rents in inspected condition), *jó állapotban van*, and *bútorozottan / gépesítve bérli*.",
+    "new": "You know the ending *-ban/-ben* from A1 Unit 5. Tenancy texts use it for the condition of a flat: *megtekintett állapotban* (in the condition seen at the viewing), *jó állapotban van* (is in good condition). A flat is *bútorozott* (furnished) or *gépesített* (with appliances), and you rent it with *bérbe vesz*.",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "the screen called a known ending \"specific adverbial phrases\" and offered unnatural forms (bútorozottan bérli); recap -ban/-ben (A1 Unit 5)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-01-ex.json",
+    "id": "b1-alberlet-01.ex01",
+    "set": {
+      "question": "Mit jelent az, ha egy kiadó lakás bútorozott és gépesített?",
+      "options": [
+        "Van benne alapvető bútor, mosógép és hűtőszekrény",
+        "Üres a lakás, a bérlőnek mindent magának kell hoznia",
+        "Csak bútor van benne, gép egy sincs"
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "tell-absolute (\"Teljesen\"); absurd wrong options (industrial machine tools); \"bérbeadó lakás\" -> \"kiadó lakás\"; \"gépesített\" must mean appliances are there"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-01-ex.json",
+    "id": "b1-alberlet-01.ex04",
+    "set": {
+      "options": [
+        "Az a személy, aki az ingatlant használatra átadja a bérleti díj fejében",
+        "Az a személy, aki bérli az ingatlant, és havonta fizet érte",
+        "Az a személy, aki az ingatlanokat hirdeti és közvetíti"
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "absurd wrong option (the postman) replaced by the real mix-up with the agent; the tenant option reworded"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-01-ex.json",
+    "id": "b1-alberlet-01.ex06",
+    "set": {
+      "sentence": "A lakás remek helyen van, és csendes _____ néznek az ablakai.",
+      "answer": "utcára",
+      "answers": null,
+      "hint": "street, onto",
+      "english": "The flat is in a great spot, and its windows face a quiet street."
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "\"remek elhelyezkedésű\" is a heavy derived adjective for B1 screens; plain wording"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-01-ex.json",
+    "id": "b1-alberlet-01.ex07",
+    "set": {
+      "options": [
+        "Nagyszerű, holnap ötkor ott leszek a megbeszélt címen.",
+        "Nem, a lakás már nem kiadó senkinek.",
+        "Nagyszerű, holnap reggel nyolckor ott leszek a megbeszélt címen."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "absurd wrong reply (the sea in summer) -> plausible reply with the wrong time"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-01-ex.json",
+    "id": "b1-alberlet-01.ex08",
+    "set": {
+      "tiles": [
+        "Az",
+        "ingatlanközvetítő",
+        "segít",
+        "megtalálni",
+        "a",
+        "megfelelő",
+        "lakást."
+      ],
+      "solution": [
+        "Az",
+        "ingatlanközvetítő",
+        "segít",
+        "megtalálni",
+        "a",
+        "megfelelő",
+        "lakást."
+      ],
+      "english": "The real estate agent helps to find a suitable flat."
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "\"the agent's fee is generally paid by the owner\" is not safe (in practice usually the tenant or both; check)"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-alberlet-02-gr.json",
+    "old": "Lease agreements establish durations: *határozott időre* (for a fixed term) or *határozatlan időre* (open-ended). The deposit uses *kaucióként letétbe helyez*: *Kéthavi bérleti díjnak megfelelő összeget kaucióként átad.*",
+    "new": "You know the ending *-ra/-re* from A2 Unit 6: *határozott időre* (for a fixed term), *határozatlan időre* (for an indefinite term). You know *-ként* from B1 Unit 33: *kaucióként* (as a deposit): *Kéthavi bérleti díjnak megfelelő összeget kaucióként ad át.*",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "known endings presented as new; the sentence did not match the phrase it illustrated (letétbe helyez / átad)"
+  },
+  {
+    "file": "content/hu/vocabulary/b1/b1-alberlet-02-voc.json",
+    "old": "security deposit (typically 2-3 months rent)",
+    "new": "security deposit (often one to three months' rent)",
+    "kind": "vocabulary",
+    "sure": false,
+    "why": "\"typically 2-3\" stated more strongly than the sources allow"
+  },
+  {
+    "file": "content/hu/vocabulary/b1/b1-alberlet-02-voc.json",
+    "old": "formal legal guarantee / bailment deposit",
+    "new": "deposit given as security (legal term; also bail)",
+    "kind": "vocabulary",
+    "sure": false,
+    "why": "gloss"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-02-ex.json",
+    "id": "b1-alberlet-02.ex01",
+    "set": {
+      "question": "Hány havi bérleti díjnak megfelelő kauciót kért Kovács úr?",
+      "options": [
+        "Kéthavi bérleti díjnak megfelelő kauciót",
+        "Egyhavi bérleti díjnak megfelelő kauciót",
+        "Háromhavi bérleti díjnak megfelelő kauciót"
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "asked a general custom the story does not state and had absurd options (gold coins, a handshake); now asks what the story says (paragraph 2), the wrong options differ by the number only"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-02-ex.json",
+    "id": "b1-alberlet-02.ex04",
+    "set": {
+      "options": [
+        "Végrehajtható okirat, amely a bérbeadót védi nemfizetés esetén",
+        "Kötelező okirat, amely a bérlőt védi a kilakoltatástól",
+        "Az okirat a bérleti díjat automatikusan csökkenti"
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away (85 vs 63); absurd wrong options (owner after ten years, notary cleans the stairs); the second wrong option is the real reversal"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-02-ex.json",
+    "id": "b1-alberlet-02.ex05",
+    "set": {
+      "sentence": "A bérleti szerződést mindkét félnek alá kell írnia.",
+      "english": "Both parties must sign the lease agreement."
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "\"in writing\" as a legal requirement is not safe for every tenancy (check)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-02-ex.json",
+    "id": "b1-alberlet-02.ex08",
+    "set": {
+      "tiles": [
+        "A",
+        "felek",
+        "a",
+        "szerződést",
+        "határozatlan",
+        "időtartamra",
+        "is",
+        "megköthetik."
+      ],
+      "solution": [
+        "A",
+        "felek",
+        "a",
+        "szerződést",
+        "határozatlan",
+        "időtartamra",
+        "is",
+        "megköthetik."
+      ],
+      "english": "The parties can also conclude the contract for an indefinite period."
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "vocab-unused: határozatlan időtartam, óvadék (óvadék used in ex06 below)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-02-ex.json",
+    "id": "b1-alberlet-02.ex06",
+    "set": {
+      "sentence": "A kaució, vagyis az óvadék összege _____ szolgál az esetleges károkozásra.",
+      "answer": "fedezetül",
+      "answers": null,
+      "hint": "as cover",
+      "english": "The deposit, that is the security, serves as cover for possible damage."
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "vocab-unused: óvadék"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-alberlet-03-gr.json",
+    "old": "The handover uses *jegyzőkönyvet vesz fel / vesznek fel* (draw up a protocol) and records readings: *rögzíti a villanyóra és a gázóra állását*. The premises must be preserved according to *rendeltetésszerű használat*.",
+    "new": "You know the accusative *-t* from A1 Unit 19. The handover uses *jegyzőkönyvet vesz fel* (to draw up a protocol) and records the meter readings: *rögzíti a villanyóra és a gázóra állását*. The tenant must use the flat in line with its purpose (*rendeltetésszerű használat*).",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "known accusative presented without recap; clumsy \"premises must be preserved according to\""
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-03-ex.json",
+    "id": "b1-alberlet-03.ex01",
+    "set": {
+      "question": "Mit tettek Anna és Kovács úr a mérők állásának felírása után?",
+      "options": [
+        "Lefotózták a mérőket",
+        "Elvitték a mérőket a szolgáltatóhoz",
+        "Kicserélték a mérőket újakra"
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "asked a general reason the story does not state, absurd wrong options (free internet, dog walking); now asks what the story says (paragraph 3)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-03-ex.json",
+    "id": "b1-alberlet-03.ex02",
+    "set": {
+      "sentence": "A felek pontosan rögzítették a villanyóra _____.",
+      "answer": "állását",
+      "answers": null,
+      "hint": "reading, its",
+      "english": "The parties accurately recorded the electricity meter reading."
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "\"villanyóra mérőóra-állását\" says the same thing twice"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-03-ex.json",
+    "id": "b1-alberlet-03.ex04",
+    "set": {
+      "question": "Melyik mérőórák állását írták fel Anna és Kovács úr?",
+      "options": [
+        "A villanyóra, a gázóra és a vízóra állását",
+        "A villanyóra és a gázóra állását, a vízóráét nem",
+        "Csak a villanyóra és a vízóra állását"
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "absurd wrong options (cuckoo clock, speedometer); now story-based (paragraph 3); wrong options each leave one meter out"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-03-ex.json",
+    "id": "b1-alberlet-03.ex05",
+    "set": {
+      "sentence": "Kérjük, fotózza le a mérőóra állását!",
+      "english": "Please photograph the meter reading!"
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "\"fotózzák le\" (3rd person plural) is not how a tenant is addressed; \"gyári szám\" is \"gyártási szám\""
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-03-ex.json",
+    "id": "b1-alberlet-03.ex07",
+    "set": {
+      "options": [
+        "Nagyszerű, így kiköltözéskor ebből nem lesz semmilyen félreértés.",
+        "Nagyszerű, így beköltözéskor ebből nem lesz semmilyen félreértés.",
+        "Nagyszerű, így kiköltözéskor ebből nem lesz semmilyen félreértést."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "absurd wrong reply (glasses in the coat pocket) -> plausible reply with the wrong moment; distractor_skills entry on option 2 stays"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-alberlet-04-gr.json",
+    "old": "Responsibility for charges uses the verb *terhel* (burden/charge to): *A fogyasztás alapján számított rezsi a bérlőt terheli.* Common expenses use *közös költséget fizet a társasháznak*.",
+    "new": "You know the accusative *-t* from A1 Unit 19. The verb *terhel* (to fall on, to be charged to) takes it: *A fogyasztás alapján számított rezsi a bérlőt terheli.* A tenant or owner pays the common cost to the condominium: *közös költséget fizet a társasháznak* (dative, known from earlier units).",
+    "kind": "hungarian",
+    "sure": true,
+    "why": "accusative and dative presented as new; the sentence was fine but the rule was missing"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-04-ex.json",
+    "id": "b1-alberlet-04.ex01",
+    "set": {
+      "options": [
+        "A lépcsőház takarítását, világítását és a szemétszállítást",
+        "A lakás villany- és gázfogyasztását és a telefonszámlát",
+        "A bérlő havi bérleti díját és a kaució összegét"
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away (81 vs 59); absurd wrong option (meals, plane tickets)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-04-ex.json",
+    "id": "b1-alberlet-04.ex02",
+    "set": {
+      "sentence": "A rezsiköltségeket havonta, a tényleges fogyasztás _____ számolják el.",
+      "answer": "alapján",
+      "hint": "on the basis of",
+      "english": "Utility costs are settled monthly on the basis of actual consumption.",
+      "category": "vocabulary",
+      "teaches": [
+        "b1-tenancy-contracts-vocab"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "blank glued to a non-word stem (alapj + án): blank the whole word; postposition alapján is not the skill postpositions-altal-reven (által, révén, helyett), so it is a vocabulary item"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-04-ex.json",
+    "id": "b1-alberlet-04.ex04",
+    "set": {
+      "options": [
+        "A bérbeadó megmutatja a számlákat, a bérlő átutalja az összeget",
+        "A bérlő félévente egyszer ad készpénzt, számla nélkül",
+        "A társasház fizeti ki a számlákat a bérlő helyett"
+      ],
+      "correct": 0,
+      "category": "vocabulary",
+      "teaches": [
+        "b1-tenancy-contracts-vocab"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away (77 vs 59); absurd wrong options (neighbours pay as a favour); the general custom is not in the story, so a vocabulary item"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-04-ex.json",
+    "id": "b1-alberlet-04.ex07",
+    "set": {
+      "options": [
+        "Rendben, máris elküldöm a számlamásolatokat e-mailben.",
+        "Rendben, máris elküldöm a bérleti szerződést postán.",
+        "Rendben, máris elküldjük a számlamásolatokat e-mailben."
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "final-punctuation tell (\"!\" on the right reply only), a reply thanking for \"pontos fizetés\" (the landlord's line) and absurd wrong replies (bike chain, post office queue)"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-alberlet-05-gr.json",
+    "old": "Terminating a lease uses *felmondással él*: *Harminc napos felmondási idővel élhet.* Returning the deposit takes the sublative: *A bérbeadó köteles visszatéríteni a kauciót a bérlőnek.*",
+    "new": "You know *-val/-vel* from A1 Unit 28: a lease is ended with a notice, *felmondással él*, *a megállapodott felmondási idővel mondja fel*. The deposit goes back to the tenant (dative *-nak/-nek*, known from earlier units): *A bérbeadó köteles visszatéríteni a kauciót a bérlőnek.*",
+    "kind": "hungarian",
+    "sure": false,
+    "why": "\"sublative\" is wrong for the deposit (it is the dative); \"harminc napos\" contradicted the \"kéthavi\" examples; notice periods depend on the contract and the type of lease (check)"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-alberlet-05-gr.json",
+    "old": "Bármelyik fél jogosult a szerződést kéthavi felmondási idővel írásban felmondani.",
+    "new": "Bármelyik fél jogosult a szerződést a megállapodott felmondási idővel írásban felmondani.",
+    "kind": "hungarian",
+    "sure": false,
+    "why": "the notice period is set by the contract and by law, not always two months (check)"
+  },
+  {
+    "file": "content/hu/grammar/b1/b1-alberlet-05-gr.json",
+    "old": "Either party is entitled to terminate the contract in writing with a two-month notice period.",
+    "new": "Either party is entitled to terminate the contract in writing with the agreed notice period.",
+    "kind": "english",
+    "sure": false,
+    "why": "english follows the fix"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-05-ex.json",
+    "id": "b1-alberlet-05.ex01",
+    "set": {
+      "options": [
+        "A bérlő kiköltözéskor kifesti a falakat, ha a szerződés így rendelkezik",
+        "A bérbeadó kifesti a falakat, mielőtt a bérlő beköltözik",
+        "A bérlő kiköltözéskor új bútorokat vesz a lakásba"
+      ],
+      "correct": 0
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "length give-away (84 vs 61); absurd wrong options (frescoes, tearing out the tiles); painting on moving out is a contract term (check)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-05-ex.json",
+    "id": "b1-alberlet-05.ex02",
+    "set": {
+      "sentence": "A bérlő a megállapodott felmondási _____ mondhatja fel a szerződést.",
+      "answer": "idővel",
+      "answers": null,
+      "hint": "period, with",
+      "english": "The tenant can terminate the contract with the agreed notice period."
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "two-month figure not safe (see screen)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-05-ex.json",
+    "id": "b1-alberlet-05.ex04",
+    "set": {
+      "options": [
+        "Ha a másik fél súlyosan megszegi a szerződést, például nem fizet",
+        "Ha a bérlő nyáron két hétre elutazik szabadságra",
+        "Ha a bérbeadó szóban kéri a bérlőt, hogy költözzön ki"
+      ],
+      "correct": 0,
+      "category": "vocabulary",
+      "teaches": [
+        "b1-tenancy-contracts-vocab"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away (79 vs 59); absurd wrong options (dislikes the autumn rain, the dog barked at the postman); not in the story, so a vocabulary item"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-05-ex.json",
+    "id": "b1-alberlet-05.ex08",
+    "set": {
+      "tiles": [
+        "A",
+        "kisebb",
+        "karbantartási",
+        "kötelezettség",
+        "a",
+        "bérlőt",
+        "terheli."
+      ],
+      "solution": [
+        "A",
+        "kisebb",
+        "karbantartási",
+        "kötelezettség",
+        "a",
+        "bérlőt",
+        "terheli."
+      ],
+      "english": "The minor maintenance obligation falls on the tenant."
+    },
+    "kind": "hungarian",
+    "sure": false,
+    "why": "vocab-unused: karbantartási kötelezettség (division of repairs: check)"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-consolidation-ex.json",
+    "id": "b1-alberlet-consolidation.ex01",
+    "set": {
+      "options": [
+        "Az írásba foglalt lakásbérleti szerződés",
+        "Az átadás-átvételi jegyzőkönyv",
+        "A társasház házirendje a közös költségről"
+      ],
+      "correct": 0,
+      "category": "vocabulary",
+      "teaches": [
+        "b1-tenancy-contracts-vocab"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "absurd wrong options (a flyer on the notice board, a talk on the stairs); not in the story: vocabulary item"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-consolidation-ex.json",
+    "id": "b1-alberlet-consolidation.ex04",
+    "set": {
+      "options": [
+        "Kiköltözéskor, ha rendben átadta a lakást, és nincs tartozása",
+        "Csak akkor, ha újabb bérlőt hoz maga helyett a barátai közül",
+        "Nem jár vissza, mert a tulajdonos megtarthatja a kauciót"
+      ],
+      "correct": 0,
+      "category": "vocabulary",
+      "teaches": [
+        "b1-tenancy-contracts-vocab"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away (88 vs 63), tell-absolute (\"soha\"); the return conditions are not in the story: vocabulary item"
+  },
+  {
+    "file": "content/hu/exercises/b1/b1-alberlet-consolidation-ex.json",
+    "id": "b1-alberlet-consolidation.ex10",
+    "set": {
+      "options": [
+        "Nincs végdátuma, bármelyik fél felmondhatja a felmondási idővel",
+        "Van előre megadott végdátuma, de a felek meghosszabbíthatják",
+        "Csak a bérbeadó mondhatja fel a szerződést, a bérlő nem tudja"
+      ],
+      "correct": 0,
+      "category": "vocabulary",
+      "teaches": [
+        "b1-tenancy-contracts-vocab"
+      ]
+    },
+    "kind": "hungarian",
+    "sure": true,
+    "why": "length give-away (107 vs 59); absurd wrong options (tenant must live there for life, retyping each month)"
+  }
+]
