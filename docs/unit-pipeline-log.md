@@ -449,6 +449,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-29 | HU B1 citizenship 64, 66, 68, 69 | paired read, 2 units/reader, no limit hit; reader A told of the 2026 megye change mid-read | | A 221k, B 365k | 430 proposed (77 / 82 / 143 / 128), 2 rejected and rewritten; Claude changed 9 | ~145k a unit; Units 2 and 56 refrozen for the megye change; walk 24/24 |
 | 10-30 | HU B1 citizenship 71, 73, 74, 75 | paired read, 2 units/reader; both hit the 5-hour limit after one unit and were resumed | | A 305k, B 275k (resumed runs) | 300 proposed (71 / 95 / 71 / 63), 5 rejected and rewritten; Claude changed 25, plus 31 glued blanks by script | ~145k a unit; HU B1 75/75 frozen; walk 24/24 |
 | 10-30 | HU B1 walk + level checklist | Claude, no agents | | | 0 walk failures (450/450) | ~9 min of walking; check-content 0/0, no B1 validator warning (`imports/review/hu-b1-level-check/summary.md`) |
+| 10-30 | **HU B2 pilot**: core Unit 1 `nuance-focus-emphasis-narrative` ∥ Unit 3 `memory-nostalgia-sensory-description` | 1 unit per reader; both stopped by the 5-hour limit before any file, resumed | | A 201,538, 4.3; B 190,621, 3.8 (resumed runs) | 157 proposed (70 / 87), 2 rejected and rewritten; Claude changed 3 dialogue items, 3 challenges (invented facts), 1 recap unit, 4 unmet words | **~200k a unit** at one per reader; Unit 3 built on Unit 4's `participial-clauses` (66 `taught-later`), Unit 1 lesson 3 on Unit 2's `b2-contrastive-topic`: for the user; check-content 0/0; walk 12/12 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1501,3 +1502,25 @@ The user took the four recommended options:
 - **A reader can "fix" a fact backwards:** Ügyfélkapu+ (2025) was turned
   back into the retired Ügyfélkapu. Present-day fixes need the same
   check as history ones.
+
+### 2026-10-30: HU B2 pilot (core Units 1 and 3)
+
+- **Cost:** ~200k a unit at one unit per reader (resumed runs only; both
+  readers hit the 5-hour limit within three minutes of starting). Fix counts
+  (70, 87) are in the B1 core range; the core track goes on at three units
+  per reader, as in B1.
+- **The B2 generator's main defect is order:** core units teach the next
+  culture unit's skill (Unit 3 is built on `participial-clauses`, taught in
+  Unit 4; Unit 1 lesson 3 on `b2-contrastive-topic`, Unit 2) and use forms
+  before their own screen (preverb inversion in Unit 1 lesson 1). The
+  readers retagged to the B1/A1 skills a wrong answer shows; where the skill
+  should be taught is for the user. The focus file for the next batch names
+  the culture skill of each core unit's neighbour.
+- **Recaps without italics** ("You know viszont … from B1 Unit 21"), from
+  both readers, were invisible to `check_unit_refs.py`. **Scripted:** its
+  `--bare` flag lists them for a check by hand; the template asks for the
+  recapped word in italics. One was wrong (*csak* "from A2 Unit 5").
+- **Challenge drafts invent character facts** (a new dress; Pacsirta
+  "doesn't like music"): checked against the story before `add_challenges`,
+  as § Best practices says.
+

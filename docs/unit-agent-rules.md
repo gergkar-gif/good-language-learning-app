@@ -292,6 +292,16 @@ the counties are *megye* again and their government office heads *kormánymegbí
 1 October 2026 (not *vármegye*, *főispán*); flag every present-day claim "check" (batch
 cit-64-69).
 
+**HU B2 (pilot 2026-10-30, Units 1 and 3).** Core units teach the next culture
+unit's skill and use B2 forms before their screen: check `taught_in` for every
+B2 pattern a screen or item uses (`participial-clauses` b2-szecesszio-02, Unit 4;
+`b2-contrastive-topic` b2-kavehazikultura-01, Unit 2; `b2-focus-inversion`
+b2-01-02). The focus slot before the verb is A1 (`basic-hungarian-word-order`),
+participles *-ó/-ő* and *-t/-tt* are B1 (Units 11 and 3): recap them. Write a
+recap with the recapped word in italics (*viszont*), or the reviewer's check can't
+read it. Challenge targets state only what the story states (no invented dress,
+habit or dislike).
+
 ### 6c. Spanish (es-es, es-latam; written 2026-10-16 before the Spanish pass, from the files and ROADMAP 148/150; add what the pass finds)
 
 - **es-latam has no *vosotros*** (AGENTS.md): no *vosotros*/*os* forms in

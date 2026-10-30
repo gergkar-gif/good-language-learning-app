@@ -4,7 +4,10 @@ and 2 of 10 in Unit 35 named a unit where the word isn't, one in Unit 39 a
 form that is new on that screen; checking the words found 5 more in Units 19-35, where
 the recap follows a skill title that names a word its screen never shows).
 
-    python scripts/check_unit_refs.py <course> <level> [<unit id> ...]
+    python scripts/check_unit_refs.py <course> <level> [<unit id> ...] [--bare]
+
+--bare also lists recaps with no italicised word ("You know the imperative from
+A2 Unit 10"), which the check can't read: check those by hand (HU B2 pilot).
 
 For each italic word or phrase directly before "from <level> Unit <n>" or
 "*X* (<level> Unit <n>)" right after it (reader B, batch 43-53), it
@@ -26,6 +29,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ORDER = ["a1", "a2", "b1", "b2", "c1"]
 REF = re.compile(r"\*([^*]+)\*(?:[^*]{0,40}?\bfrom | \()(A1|A2|B1|B2|C1) Unit (\d+)")
 LETTER = "a-záéíóöőúüű"
+BARE = re.compile(r"[Yy]ou (?:already )?know [^.\"]{0,120}?\bfrom (?:A1|A2|B1|B2|C1) Unit \d+")
 
 
 def stem_of(f, pos=None):
@@ -40,7 +44,9 @@ def stem_of(f, pos=None):
 def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
-    course, level, only = sys.argv[1], sys.argv[2].lower(), set(sys.argv[3:])
+    bare = "--bare" in sys.argv
+    args = [a for a in sys.argv if a != "--bare"]
+    course, level, only = args[1], args[2].lower(), set(args[3:])
     pos, stems_of = {}, {}
     for li, lvl in enumerate(ORDER):
         p = ROOT / f"content/{course}/curriculum/units/{lvl}.json"
@@ -87,6 +93,12 @@ def main():
                 where = "nowhere" if seen is None else f"{ORDER[seen[0]].upper()} Unit {seen[1]}"
                 print(f"{Path(f).name}: *{word}* claimed from {m.group(2)} Unit {m.group(3)}, first appears {where}")
                 hits += 1
+        # a recap with no italicised word can't be checked (HU B2 pilot: both
+        # readers wrote "You know viszont … from B1 Unit 21"): list it
+        text = Path(f).read_text(encoding="utf-8")
+        for m in BARE.finditer(text) if bare else ():
+            if not REF.search(m.group(0)):
+                print(f"{Path(f).name}: unchecked recap, check by hand (italicise a recapped word): {m.group(0)[:90]}")
     print(f"{hits} recap reference(s) to check")
     sys.exit(1 if hits else 0)
 

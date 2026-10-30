@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Which noun means 'relief' after a period of tension?",
+      "question": "What does 'megkönnyebbülés' mean?",
       "options": [
-        "megkönnyebbülés",
-        "szorongás",
-        "hallgatás"
+        "relief",
+        "anxiety",
+        "silence"
       ],
       "correct": 0,
       "teaches": [
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A szülők között ott lebegett a ____ igazság.",
+      "sentence": "A szülők között ott volt a ____ igazság.",
       "hint": "unspoken",
       "answer": "kimondatlan",
-      "english": "The unspoken truth hovered between the parents.",
+      "english": "The unspoken truth was there between the parents.",
       "teaches": [
         "b2-nuance-focus-emphasis-narrative-vocab"
       ]
@@ -82,15 +82,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "In 'Ákos a távolodó vonatot nézte', which element is in the pre-verbal focus position?",
+      "question": "Which sentence says 'It was the train that Ákos was watching'?",
       "options": [
-        "a távolodó vonatot",
-        "Ákos",
-        "nézte"
+        "Ákos a vonatot figyelte.",
+        "A vonatot Ákos figyelte.",
+        "Figyelte Ákos a vonatot."
       ],
       "correct": 0,
       "teaches": [
-        "b2-focus-inversion"
+        "basic-hungarian-word-order"
       ]
     },
     {
@@ -98,12 +98,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Nem a szavai, hanem a ____ árulta el az érzéseit.",
+      "sentence": "Nem a szavai, hanem a ____ okozta a szorongást.",
       "hint": "silence",
       "answer": "hallgatása",
-      "english": "It was not his words, but his silence that betrayed his feelings.",
+      "english": "It was not his words, but his silence that caused the anxiety.",
       "teaches": [
-        "b2-focus-inversion"
+        "basic-hungarian-word-order"
       ]
     },
     {
@@ -131,7 +131,7 @@
       ],
       "english": "It was the unspoken words that caused the anxiety.",
       "teaches": [
-        "b2-focus-inversion"
+        "basic-hungarian-word-order"
       ]
     },
     {
@@ -157,7 +157,7 @@
         }
       ],
       "teaches": [
-        "b2-focus-inversion"
+        "basic-hungarian-word-order"
       ]
     },
     {
@@ -165,10 +165,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A vonat indulása után különös ____ töltötte el a szívüket.",
+      "sentence": "Az utazás után nagy ____ volt a családban.",
       "hint": "relief",
       "answer": "megkönnyebbülés",
-      "english": "After the departure of the train, a strange relief filled their hearts.",
+      "english": "After the journey there was great relief in the family.",
       "teaches": [
         "b2-nuance-focus-emphasis-narrative-vocab"
       ]
@@ -178,15 +178,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "practice",
-      "question": "Which sentence emphasizes that it was SPECIFICALLY the silence (and nothing else) that frightened him?",
+      "question": "Which sentence means 'It was Antónia, not Ákos, who watched the train'?",
       "options": [
-        "A hirtelen csend ijesztette meg Ákost.",
-        "Ákos megijedt a hirtelen csendtől.",
-        "Megijesztette Ákost a hirtelen csend."
+        "Antónia figyelte a vonatot, nem Ákos.",
+        "Ákos figyelte a vonatot, nem Antónia.",
+        "Antónia a vonatot figyelte, nem Ákos."
       ],
       "correct": 0,
       "teaches": [
-        "b2-focus-inversion"
+        "basic-hungarian-word-order"
       ]
     },
     {
@@ -197,7 +197,7 @@
       "prompt": [
         {
           "speaker": "Ákos",
-          "text": "Miért vagy ilyen feszült, mióta elindult a vonat?"
+          "text": "A vonat okozza a szorongásodat?"
         },
         {
           "speaker": "Antónia",
@@ -205,13 +205,13 @@
         }
       ],
       "options": [
-        "A szokatlan csend aggaszt ennyire.",
-        "Aggaszt ennyire a szokatlan csend.",
-        "A szokatlan csend aggasztasz ennyire."
+        "Nem a vonat, hanem a csend okozza a szorongásomat.",
+        "Nem a vonat, hanem okozza a csend a szorongásomat.",
+        "Nem a vonat, hanem a csend a szorongásomat okozza."
       ],
       "correct": 0,
       "teaches": [
-        "b2-focus-inversion"
+        "basic-hungarian-word-order"
       ]
     },
     {
@@ -222,7 +222,7 @@
       "prompt": [
         {
           "speaker": "Barát",
-          "text": "A hosszú utazás fárasztotta ki ennyire a családot?"
+          "text": "A hosszú utazás okozta ezt a feszültséget?"
         },
         {
           "speaker": "Ákos",
@@ -230,13 +230,13 @@
         }
       ],
       "options": [
-        "Nem, a kimondatlan szavak fárasztottak ki minket.",
-        "Nem, kifárasztottak minket a kimondatlan szavak.",
-        "Nem, a kimondatlan szavakat fárasztottak ki minket."
+        "Nem az utazás, hanem a kimondatlan szavak okozták.",
+        "Nem az utazás, hanem a kimondatlan szavakat okozták.",
+        "Nem az utazás, hanem a kimondatlan szavak okozta."
       ],
       "correct": 0,
       "teaches": [
-        "b2-focus-inversion"
+        "basic-hungarian-word-order"
       ]
     },
     {
@@ -246,12 +246,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write that it was the silence that betrayed their secret relief.",
-          "answer": "A hallgatás árulta el a titkos megkönnyebbülésüket."
+          "prompt": "Write that it was the silence that caused their anxiety.",
+          "answer": "A hallgatás okozta a szorongásukat."
         }
       ],
       "teaches": [
-        "b2-focus-inversion"
+        "basic-hungarian-word-order"
       ]
     },
     {
@@ -266,7 +266,7 @@
         }
       ],
       "teaches": [
-        "b2-focus-inversion"
+        "basic-hungarian-word-order"
       ]
     },
     {
@@ -278,7 +278,7 @@
       "options": [
         "szorongás",
         "megkönnyebbülés",
-        "búcsúzás"
+        "hallgatás"
       ],
       "correct": 0,
       "teaches": [
@@ -290,15 +290,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "Nem a búcsú, hanem az ____ ijesztette meg őket.",
-      "hint": "solitude / being alone",
-      "english": "It was not the farewell, but being alone that frightened them.",
+      "sentence": "Nem a vonat, hanem a ____ okozta a szorongást.",
+      "hint": "silence",
+      "english": "It was not the train, but the silence that caused the anxiety.",
       "teaches": [
-        "b2-focus-inversion"
+        "basic-hungarian-word-order"
       ],
       "answers": [
-        "egyedüllét",
-        "magány"
+        "hallgatás",
+        "csend"
       ]
     }
   ]
