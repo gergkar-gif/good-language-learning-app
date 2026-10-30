@@ -1523,4 +1523,7 @@ The user took the four recommended options:
 - **Challenge drafts invent character facts** (a new dress; Pacsirta
   "doesn't like music"): checked against the story before `add_challenges`,
   as § Best practices says.
-
+- **Decided by the user (2026-10-30):** the two skills' `taught_in` moved to
+  the core lessons that teach them first (Unit 3, Unit 1 lesson 3); 47 items
+  retagged, both units frozen. Expect the same pattern in later core units:
+  bring each case to the user, don't move a `taught_in` without sign-off.

@@ -294,9 +294,9 @@ cit-64-69).
 
 **HU B2 (pilot 2026-10-30, Units 1 and 3).** Core units teach the next culture
 unit's skill and use B2 forms before their screen: check `taught_in` for every
-B2 pattern a screen or item uses (`participial-clauses` b2-szecesszio-02, Unit 4;
-`b2-contrastive-topic` b2-kavehazikultura-01, Unit 2; `b2-focus-inversion`
-b2-01-02). The focus slot before the verb is A1 (`basic-hungarian-word-order`),
+B2 pattern a screen or item uses (`b2-focus-inversion` b2-01-02; since 2026-10-30,
+user: `participial-clauses` b2-02-01, Unit 3, and `b2-contrastive-topic` b2-01-03,
+Unit 1, so the culture Units 2 and 4 recap them). The focus slot before the verb is A1 (`basic-hungarian-word-order`),
 participles *-ó/-ő* and *-t/-tt* are B1 (Units 11 and 3): recap them. Write a
 recap with the recapped word in italics (*viszont*), or the reviewer's check can't
 read it. Challenge targets state only what the story states (no invented dress,

@@ -59,7 +59,21 @@ Unit 1 lesson 1's focus items → `basic-hungarian-word-order` (its title is
 `present-participle` / `past-participle-adjective` (B1) where a wrong answer
 is a wrong participle, the unit vocabulary skill where it is the phrase's order.
 
-## For the user
+## Decided by the user (2026-10-30): option (a)
+
+`participial-clauses` `taught_in` moved to b2-02-01-a-gr (Unit 3) and
+`b2-contrastive-topic` to b2-01-03-a-gr (Unit 1 lesson 3); `skills/hu.json`, the
+generated registries and the two entries in `frozen-hu.json` updated. 43 Unit 3
+items that test an expanded participial phrase (its order, its negation, which
+word modifies the noun, a phrase built or written) now carry `participial-clauses`;
+items whose wrong answer is one wrong participle form keep the B1 skill; meaning
+questions stay vocabulary. Unit 1's four *Ami … illeti* items carry
+`b2-contrastive-topic`. Both units relocked and frozen (2/72); check-content 0/0,
+no new warning. **For the culture batches:** the Unit 2 (b2-kavehazikultura-01)
+and Unit 4 (b2-szecesszio-02) screens must open with a recap ("You know … from B2
+Unit 1/3"), not present these patterns as new.
+
+## The question put to the user
 
 **`participial-clauses` (and `b2-contrastive-topic`): where are they taught?**
 Unit 3 (core) teaches expanded participial phrases on every screen before
