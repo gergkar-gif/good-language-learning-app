@@ -107,7 +107,7 @@ def main():
     base = run(["git", "rev-parse", "--short", "origin/master"]).stdout.strip()
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    setup = [f"# es {level.upper()} batch: {batch.name}", "",
+    setup = [f"# {course.split('-')[0]} {level.upper()} batch: {batch.name}", "",
              f"Started {now} from origin/master {base}. "
              f"{len(readers)} Sonnet reader(s)" + ("; es-es read once, fixes mirrored to es-latam." if spanish else "."), ""]
     table = ["| Unit | es-es | es-latam |", "|---|---|---|"] if spanish else ["| Unit | track | errors / suspects |", "|---|---|---|"]
