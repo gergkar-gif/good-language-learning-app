@@ -541,16 +541,26 @@ function dualTrackPathHtml(level, data, units, progress) {
     const longest = Math.max(...byTrack.map(a => a.length));
     for (let i = 0; i < longest; i++) {
         byTrack.forEach((arr, ti) => {
-            if (arr[i]) rows.push({ unit: arr[i], ti: ti });
+            if (arr[i]) rows.push({ unit: arr[i], ti: ti, round: i });
         });
     }
 
-    // While more than one track is still running, each keeps its own side.
-    const braidEnd = rows.reduce((last, r, i) => (r.ti !== 0 ? i : last), -1);
+    // While more than one track is still running, each keeps its own side;
+    // after that the one track left alternates sides, starting opposite its
+    // last unit, so its line keeps winding. The braid lasts as many rounds
+    // as the second-longest track has units, whichever track is longer: it
+    // used to end at the last row of any track but the first, which assumed
+    // track 0 was the longest, so in HU B1 (Citizenship 39 units, Core 36)
+    // the extra Citizenship units stayed on one side and the line ran
+    // straight down.
+    const lengths = byTrack.map(a => a.length).sort((a, b) => b - a);
+    const braidRounds = lengths.length > 1 ? lengths[1] : 0;
+    const lastSx = {};
     rows.forEach((r, i) => {
         r.y = 60 + i * spacing;
-        r.sx = i <= braidEnd ? (r.ti === 0 ? 1 : -1)
-                             : ((i - braidEnd) % 2 === 1 ? -1 : 1);
+        r.sx = r.round < braidRounds ? (r.ti === 0 ? 1 : -1)
+                                     : -(lastSx[r.ti] === undefined ? 1 : lastSx[r.ti]);
+        lastSx[r.ti] = r.sx;
     });
 
     const height = rows[rows.length - 1].y + 60;
