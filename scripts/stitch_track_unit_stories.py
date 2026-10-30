@@ -190,6 +190,9 @@ def stitch_language_track(lang: str, level: str, track_id: str, lang_audio_code:
 
 
 def main():
+    if sys.argv[1:] and sys.argv[1] != "--unit":
+        # any other argument (e.g. --help) used to fall through to the full restitch
+        sys.exit("usage: stitch_track_unit_stories.py [--unit <lang> <level> <track> <unit id>]")
     if sys.argv[1:2] == ["--unit"]:
         if len(sys.argv) != 6:
             sys.exit("usage: stitch_track_unit_stories.py --unit <lang> <level> <track> <unit id>")

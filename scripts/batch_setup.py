@@ -32,6 +32,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 COURSES = ("es-es", "es-latam")
+# tracks whose units get the facts block: HU B1 citizenship, HU B2 culture (user, 2026-10-30)
+FACT_TRACKS = ("citizenship", "culture")
 WORDS = {1: "ONE", 2: "TWO", 3: "THREE", 4: "FOUR"}
 
 
@@ -129,9 +131,9 @@ def main():
             if r.returncode:
                 sys.exit(r.stderr)
             story_txt = ", ".join(f"`{s}`" for s in st) or "none"
-            hist = hist or u.get("track") == "citizenship"
+            hist = hist or u.get("track") in FACT_TRACKS
             lines.append(f"- `{course} {level} {uid}` ({level.upper()} Unit {n}"
-                         f"{', *citizenship track*' if u.get('track') == 'citizenship' else ''}): lessons {' '.join(stems)}, "
+                         f"{', *' + u['track'] + ' track*' if u.get('track') in FACT_TRACKS else ''}): lessons {' '.join(stems)}, "
                          f"stories {story_txt}. Knowledge sheet: `{w}/prior-{uid}.md`. "
                          f"Fixes file: `{w}/fixes-{uid}.json`. Challenges file: `{w}/challenges-{uid}.json`."
                          + ("" if not (cq := copied_questions(course, level, uid)) else
