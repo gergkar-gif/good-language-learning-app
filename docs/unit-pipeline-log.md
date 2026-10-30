@@ -618,6 +618,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-29 | HU B1 citizenship 56, 58, 60, 62 | paired read, 2 units/reader; both hit the 5-hour limit and were resumed | | A 294k, B 284k (resumed runs) | 481 proposed (120 / 137 / 116 / 108), 2 rejected and rewritten; Claude changed 9, added 3 text fixes | ~145k a unit (resumed only); civics facts checked against the Fundamental Law; walk 24/24 |
 | 10-29 | HU B1 citizenship 64, 66, 68, 69 | paired read, 2 units/reader, no limit hit; reader A told of the 2026 megye change mid-read | | A 221k, B 365k | 430 proposed (77 / 82 / 143 / 128), 2 rejected and rewritten; Claude changed 9 | ~145k a unit; Units 2 and 56 refrozen for the megye change; walk 24/24 |
 | 10-30 | HU B1 citizenship 71, 73, 74, 75 | paired read, 2 units/reader; both hit the 5-hour limit after one unit and were resumed | | A 305k, B 275k (resumed runs) | 300 proposed (71 / 95 / 71 / 63), 5 rejected and rewritten; Claude changed 25, plus 31 glued blanks by script | ~145k a unit; HU B1 75/75 frozen; walk 24/24 |
+| 10-30 | HU B1 walk + level checklist | Claude, no agents | | | 0 walk failures (450/450) | ~9 min of walking; check-content 0/0, no B1 validator warning (`imports/review/hu-b1-level-check/summary.md`) |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
