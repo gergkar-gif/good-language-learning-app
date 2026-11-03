@@ -95,7 +95,7 @@ CHECKS = {
     "article-blank": "HU fill-blank: 'a ____' before an answer starting with a vowel, or 'az ____' before a consonant",
     "ik-first-person": "HU: an -ik verb's 'I' form with -k (eszek, iszok, dolgozok) as a right answer; the course teaches -m",
     "take-gloss": "HU fill-blank: English 'take' for a kér-/vesz- answer, so both verbs fit (write 'have'/'ask for' or 'buy')",
-    "hint-suffix": "A1–B1 fill-blank whose hint spells out the tested ending (*buli + -ra* for *bulira*): name the word and its role instead (*buli, for*)",
+    "hint-suffix": "A1–B2 fill-blank whose hint spells out the tested ending (*buli + -ra* for *bulira*, *összevet -> -va/-ve*): name the word and its role instead (*buli, for*)",
     "glued-blank": "HU: a blank glued to a stem ending in -a/-e whose answer is a suffix (hálószoba____ + ban teaches *hálószobaban*); ES: any blank glued to a stem (simpátic__ + a): blank the whole word, hint the base (es A1 units 3-4 had 9)",
     "self-third-person": "ES dialogue: a speaker talks about themselves in the third person (Carlos asks '¿Cómo es Carlos?', or Meg answers 'Meg es…'); es A1 units 2-4 had 4",
     "story-questions-copy": "a story's comprehension questions are word for word another story's (placeholder questions the story can't answer; es-latam A1 had one set in 26 stories, es A1 units 6-11)",
@@ -465,11 +465,12 @@ def check_exercise(e, course, lang):
             if re.search(rf"\b(es|son)\s+{re.escape(who)}\b|\b{re.escape(who)}\s+(es|son)\b|\b{re.escape(who)}\s+y\b|\by\s+{re.escape(who)}\b", said or ""):
                 hit("self-third-person", f"{who}: {said[:50]}")
                 break
-    if t == "fill-blank" and re.match(r"(a1|a2|b1)-", str(e.get("id") or "")):
+    if t == "fill-blank" and re.match(r"(a1|a2|b1|b2)-", str(e.get("id") or "")):
         # the hint names the base word, never the ending the item tests (units 45-47
-        # had six); C1 word-formation hints give the suffix on purpose, so A1-B1 only
+        # had six); C1 word-formation hints give the suffix on purpose, so A1-B2 only.
+        # The B2 generator writes it as an arrow, "összevet -> -va/-ve" (HU B2 batch 5-15)
         h = e.get("hint")
-        if isinstance(h, str) and re.search(r"\+\s*-\w", h):
+        if isinstance(h, str) and re.search(r"(\+|->)\s*-\w", h):
             hit("hint-suffix", h[:40])
     if t in CHOICE and opts:
         k = e.get("correct")
