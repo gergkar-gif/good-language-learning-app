@@ -1,0 +1,1021 @@
+[
+ {
+  "file": "content/hu/exercises/b2/b2-03-01-ex.json",
+  "id": "b2-03-01-controlled-2",
+  "set": {
+   "sentence": "Az új szavak ____ nagy tehetséget igényelt.",
+   "english": "The creation of the new words required great talent."
+  },
+  "kind": "hungarian",
+  "why": "unmet kifejezések (b2-36-04)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-01-ex.json",
+  "id": "b2-03-01-controlled-3",
+  "set": {
+   "sentence": "Ez a könyv a modorosság ____ volt.",
+   "english": "This book was the exposure of mannerism."
+  },
+  "kind": "hungarian",
+  "why": "unmet paródia, hamis, pátosz"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-01-ex.json",
+  "id": "b2-03-01-practice-2",
+  "set": {
+   "base_sentence": "Anna a szöveg frissességét szereti.",
+   "base_gloss": "Anna likes the freshness of the text.",
+   "options": [
+    {
+     "word": "rugalmasság",
+     "inflected": "rugalmasságát",
+     "sentence": "Anna a szöveg rugalmasságát szereti.",
+     "gloss": "its flexibility"
+    },
+    {
+     "word": "eredetiség",
+     "inflected": "eredetiségét",
+     "sentence": "Anna a szöveg eredetiségét szereti.",
+     "gloss": "its originality"
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet kritikus, stílus, dicsérte"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-01-ex.json",
+  "id": "b2-03-01-practice-3",
+  "set": {
+   "sentence": "Minden írónak vannak saját nyelvi ____."
+  },
+  "kind": "hungarian",
+  "why": "unmet megvannak"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-01-ex.json",
+  "id": "b2-03-01-practice-4",
+  "set": {
+   "question": "Why does 'leleplezés' end in -és, while 'megalkotás' ends in -ás?",
+   "options": [
+    "Front-vowel stems take -és, back-vowel stems take -ás (vowel harmony).",
+    "Verbs with a preverb take -és, verbs without a preverb take -ás.",
+    "-és names a finished action, while -ás names a continuing one."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "meta question with absurd wrong options (transitive/intransitive, 'nouns referring to people'); now plausible wrong rules of equal length"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-01-ex.json",
+  "id": "b2-03-01-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Szerkesztő",
+     "text": "Mi tetszik a legjobban ebben az új könyvben?"
+    },
+    {
+     "speaker": "Kritikus",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "A modorosság leleplezése tetszik nekem a legjobban.",
+    "A modorosság leleplezést tetszik nekem a legjobban.",
+    "A modorosság leleplezni tetszik nekem a legjobban."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet paródiakötetben, szellemes, nyűgözött (also misspelt: lenyűgözött le); wrong options now one fault each (accusative; infinitive)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-01-ex.json",
+  "id": "b2-03-01-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Író",
+     "text": "Nem félsz, hogy ez a mondat túl hosszú?"
+    },
+    {
+     "speaker": "Szerkesztő",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Igen, túl sok szó halmozása könnyen modorossággá válik.",
+    "Igen, túl sok szó halmozás könnyen modorossággá válik.",
+    "Igen, túl sok szó halmozását könnyen modorossággá válik."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet jelzők, túlzott, válhat, mesterkéltnek; wrong options one fault each (missing possessive; accusative)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-01-ex.json",
+  "id": "b2-03-01-check-2",
+  "set": {
+   "sentence": "Egy kedvelt szó állandó ____ unalmassá válik.",
+   "hint": "repetition, its",
+   "english": "The constant repetition of a favorite word becomes tedious."
+  },
+  "kind": "hungarian",
+  "why": "ERROR hint-is-answer (hint contained 'ismétlése'); unmet hamar"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-03-01-a-gr.json",
+  "old": "Almost any Hungarian verb—including prefixed verbs—can be turned into a verbal noun (folyamat- vagy eredménynév) by adding",
+  "new": "You know verbal nouns in *-ás/-és* from B1 Unit 31 (*újrahasznosítás*). Almost any Hungarian verb—including prefixed verbs—can be turned into a verbal noun by adding",
+  "kind": "english",
+  "why": "screen presented B1 verbal nouns (-ás/-és, B1 Unit 31) as new; Hungarian term removed"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-03-01-a-gr.json",
+  "old": "Unlike conjugated verbs, nominalizations in -ás/-és NEVER split their preverb—even after 'nem' or focus ('a nem kellő előkészítés', 'az átfogalmazás').",
+  "new": "Unlike a conjugated verb, which can split its preverb after 'nem' or a focused word ('nem alkotta meg'), a noun in -ás/-és keeps the preverb in front: 'a megalkotás', 'az átfogalmazás'.",
+  "kind": "english",
+  "why": "tip's example 'a nem kellő előkészítés' is a participle, not a nominalization"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-03-02-a-gr.json",
+  "old": "When that nominalization itself possesses another abstract noun (such as 'titka', 'fontossága', 'célja'), the first nominalization takes the dative possessor ending -nak/-nek:",
+  "new": "When a possessed noun is itself the possessor of another noun (such as 'titka', 'fontossága', 'célja'), it takes the possessor ending -nak/-nek:",
+  "kind": "english",
+  "why": "rule said 'that nominalization possesses another noun' but its example 'a kötet sikerének a titka' has siker, not a nominalization, and the nominalization is the possessor, not the possessing noun"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-02-ex.json",
+  "id": "b2-03-02-controlled-3",
+  "set": {
+   "sentence": "A kötet átütő ____ a titka a pontos megfigyelésben rejlett.",
+   "english": "The secret of the volume's breakthrough success lay in accurate observation."
+  },
+  "kind": "hungarian",
+  "why": "unmet humorban"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-02-ex.json",
+  "id": "b2-03-02-controlled-4",
+  "set": {
+   "options": [
+    "a kérdés megválaszolása",
+    "a kérdést megválaszolása",
+    "a kérdés megválaszolását"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "wrong options had two faults each (garbled order plus accusative); now one fault each (object keeps -t; accusative on the noun)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-02-ex.json",
+  "id": "b2-03-02-practice-1",
+  "set": {
+   "tiles": [
+    "A",
+    "finom",
+    "jelentésárnyalatok",
+    "szétválasztása",
+    "sok",
+    "időt",
+    "vesz",
+    "igénybe",
+    "."
+   ],
+   "solution": [
+    "A",
+    "finom",
+    "jelentésárnyalatok",
+    "szétválasztása",
+    "sok",
+    "időt",
+    "vesz",
+    "igénybe",
+    "."
+   ],
+   "english": "Distinguishing subtle shades of meaning takes a lot of time."
+  },
+  "kind": "hungarian",
+  "why": "unmet pontosságot"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-02-ex.json",
+  "id": "b2-03-02-practice-2",
+  "set": {
+   "base_sentence": "A cikk átfogalmazása nagy munka volt.",
+   "base_gloss": "Rephrasing the article was a lot of work.",
+   "options": [
+    {
+     "word": "a mondatfűzés egyszerűsítése",
+     "inflected": "A mondatfűzés egyszerűsítése",
+     "sentence": "A mondatfűzés egyszerűsítése nagy munka volt.",
+     "gloss": "simplifying the sentence construction"
+    },
+    {
+     "word": "a felesleges szavak kihúzása",
+     "inflected": "A felesleges szavak kihúzása",
+     "sentence": "A felesleges szavak kihúzása nagy munka volt.",
+     "gloss": "crossing out unnecessary words"
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet javított, stíluson (and jelzők)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-02-ex.json",
+  "id": "b2-03-02-practice-3",
+  "set": {
+   "sentence": "Karinthy a kortárs írók ____ jól ismerte.",
+   "english": "Karinthy knew the sentence construction of contemporary writers well."
+  },
+  "kind": "hungarian",
+  "why": "unmet tanulmányozta"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-02-ex.json",
+  "id": "b2-03-02-practice-4",
+  "set": {
+   "question": "Which double possessive chain means 'the difficulty of rephrasing the text'?",
+   "options": [
+    "a szöveg átfogalmazásának a nehézsége",
+    "a szöveg átfogalmazása a nehézsége",
+    "a szöveget átfogalmazásának a nehézsége"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet lefordításának; wrong options garbled (2 faults); now one fault each (missing -nak/-nek; accusative)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-02-ex.json",
+  "id": "b2-03-02-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Tanár",
+     "text": "Mi okozta a legtöbb gondot az írásban?"
+    },
+    {
+     "speaker": "Diák",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "A hosszú mondatok átfogalmazása okozta a legtöbb gondot.",
+    "A hosszú mondatok átfogalmazás okozta a legtöbb gondot.",
+    "A hosszú mondatokat átfogalmazása okozta a legtöbb gondot."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "ERROR length-giveaway; unmet körmondatok, esszé, javításakor, legnehezebb; absurd wrong option ('Majd megírom az esszét.')"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-02-ex.json",
+  "id": "b2-03-02-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Olvasó",
+     "text": "Miért olyan jó ez a könyv?"
+    },
+    {
+     "speaker": "Kritikus",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Mert a mondatok utánzásának a titka a pontos megfigyelés.",
+    "Mert a mondatok utánzásnak a titka a pontos megfigyelés.",
+    "Mert a mondatokat utánzásának a titka a pontos megfigyelés."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet stílus, pontossága, lenyűgöző, karikatúrák; wrong options one fault each"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-02-ex.json",
+  "id": "b2-03-02-check-2",
+  "set": {
+   "sentence": "A könyv ____ előtt Karinthy sokat olvasott.",
+   "english": "Before the writing of the book, Karinthy read a lot."
+  },
+  "kind": "hungarian",
+  "why": "unmet paródiák, alaposan, elemezte"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-03-03-a-gr.json",
+  "old": "In formal essays, historical writing, and criticism, finite adverbial clauses",
+  "new": "You know *után* and *előtt* from A1, *helyett* from A2 Unit 18, *révén* from B1 Unit 28, *során* from B1 Unit 57 and *miután* from B1 Unit 1. In formal essays, historical writing, and criticism, finite adverbial clauses",
+  "kind": "english",
+  "why": "screen presented known postpositions as new; recap added"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-03-ex.json",
+  "id": "b2-03-03-controlled-2",
+  "set": {
+   "sentence": "A paródia elolvasása ____ a költő is megértette a kritikát.",
+   "english": "After reading the parody, even the poet understood the criticism."
+  },
+  "kind": "hungarian",
+  "why": "unmet elmosolyodott"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-03-ex.json",
+  "id": "b2-03-03-controlled-3",
+  "set": {
+   "sentence": "A szövegek elemzése ____ sok hibát találtak.",
+   "english": "In the course of analyzing the texts, they found many mistakes."
+  },
+  "kind": "hungarian",
+  "why": "unmet rejtett, bukkantak"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-03-ex.json",
+  "id": "b2-03-03-practice-2",
+  "set": {
+   "base_sentence": "A könyv megírása előtt sokat olvasott.",
+   "base_gloss": "Before writing the book, he read a lot.",
+   "options": [
+    {
+     "word": "kiadása után",
+     "inflected": "kiadása után",
+     "sentence": "A könyv kiadása után sokat olvasott.",
+     "gloss": "after its publication"
+    },
+    {
+     "word": "szerkesztése során",
+     "inflected": "szerkesztése során",
+     "sentence": "A könyv szerkesztése során sokat olvasott.",
+     "gloss": "in the course of editing it"
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet alaposan, átolvasta"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-03-ex.json",
+  "id": "b2-03-03-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Újságíró",
+     "text": "Hogyan értette meg Karinthy a kortársait?"
+    },
+    {
+     "speaker": "Irodalomtörténész",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "A könyveik elolvasása révén értette meg őket.",
+    "A könyveik elolvasás révén értette meg őket.",
+    "A könyveiket elolvasása révén értette meg őket."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "ERROR length-giveaway; tell-opener mert; unmet utánozni, tudatos, elemzés; absurd wrong option ('Mert nem olvasta el a könyveiket.')"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-03-ex.json",
+  "id": "b2-03-03-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Könyvkiadó",
+     "text": "Mikor látták az emberek, hogy ez a könyv nagy siker lesz?"
+    },
+    {
+     "speaker": "Szerkesztő",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Már a könyv elolvasása után.",
+    "Már a könyv elolvasás után.",
+    "Már a könyvet elolvasása után."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "ERROR length-giveaway; unmet derült, kötet, megjelenése; wrong options absurd/ungrammatical, now one fault each"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-03-ex.json",
+  "id": "b2-03-03-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Rewrite 'Miután elolvasta a paródiát, nevetett' using 'elolvasása után'.",
+     "answer": "A paródia elolvasása után nevetett."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet elmosolyodott"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-03-ex.json",
+  "id": "b2-03-03-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write using 'során': In the course of writing the book, he read a lot.",
+     "answer": "A könyv megírása során sokat olvasott."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet elemezte"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-03-ex.json",
+  "id": "b2-03-03-check-2",
+  "set": {
+   "sentence": "A sok gyakorlás ____ mindenki jobban ír.",
+   "english": "Through lots of practice, everyone writes better."
+  },
+  "kind": "hungarian",
+  "why": "bárki is B2 Unit 17 (concessive-indefinites) used before its screen; unmet tudatos, fejlesztheti"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-03-04-a-gr.json",
+  "old": "As Karinthy parodied so memorably, pompous essays",
+  "new": "You know clauses with *miután* from B1 Unit 1 and with *miközben* from earlier units. As Karinthy parodied so memorably, pompous essays",
+  "kind": "english",
+  "why": "recap of miután/miközben (table unpacks to them)",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-03-04-a-gr.json",
+  "old": "Az aránytévesztés leleplezése révén nevettet meg.",
+  "new": "A hibák kimutatása révén javít a szövegen.",
+  "kind": "hungarian",
+  "why": "table row used the causative nevettet (-tat/-tet, B2 Unit 19) and the wrong order (nevettet meg for megnevettet)"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-03-04-a-gr.json",
+  "old": "Úgy nevettet meg, hogy leleplezi az aránytévesztést.",
+  "new": "Úgy javít a szövegen, hogy kimutatja a hibákat.",
+  "kind": "hungarian",
+  "why": "same table row, verbal side"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-04-ex.json",
+  "id": "b2-03-04-intro-1",
+  "set": {
+   "options": [
+    "dagályos",
+    "rövid",
+    "rugalmas"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "találó is first taught in b2-03-05"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-04-ex.json",
+  "id": "b2-03-04-controlled-2",
+  "set": {
+   "sentence": "A döntés ____ után mindenki elment.",
+   "english": "After the making of the decision, everyone left."
+  },
+  "kind": "hungarian",
+  "why": "unmet értesítették"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-04-ex.json",
+  "id": "b2-03-04-controlled-4",
+  "set": {
+   "question": "Unpack 'A szöveg elolvasása során Anna nevetett' into a natural clause with a finite verb:",
+   "options": [
+    "Miközben elolvasta a szöveget, Anna nevetett.",
+    "Mielőtt elolvasta a szöveget, Anna nevetett.",
+    "Miközben elolvasta a szöveg, Anna nevetett."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet végrehajtották, hibáztak; wrong options were garbled non-sentences"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-04-ex.json",
+  "id": "b2-03-04-practice-3",
+  "set": {
+   "sentence": "A tanár nem szereti az üres ____.",
+   "hint": "fontoskodás, accusative",
+   "answer": "fontoskodást",
+   "english": "The teacher does not like empty self-importance."
+  },
+  "kind": "hungarian",
+  "why": "unmet parodista, lecsap"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-04-ex.json",
+  "id": "b2-03-04-practice-4",
+  "set": {
+   "question": "Which sentence is the crisp verbal equivalent of 'A könyv megírása után Karinthy pihent'?",
+   "options": [
+    "Miután megírta a könyvet, Karinthy pihent.",
+    "Miután megírta a könyv, Karinthy pihent.",
+    "Mielőtt megírta a könyvet, Karinthy pihent."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "ERROR length-giveaway; unmet kijavították; wrong options garbled"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-04-ex.json",
+  "id": "b2-03-04-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Szerkesztő",
+     "text": "Miért húztad át ezt a mondatot a cikkben?"
+    },
+    {
+     "speaker": "Író",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Mert a nyakatekert főnévi láncok helyett egyszerű mondatokat akartam írni.",
+    "Mert a nyakatekert főnévi láncokat helyett egyszerű mondatokat akartam írni.",
+    "Mert a nyakatekert főnévi láncok után egyszerű mondatokat akartam írni."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet igéket, hangzású, élénk; wrong options differed in the person/accusative of a different verb, not in the tested construction",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-04-ex.json",
+  "id": "b2-03-04-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Olvasó",
+     "text": "Min nevet Karinthy ebben a könyvben?"
+    },
+    {
+     "speaker": "Kritikus",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Az üres fontoskodáson és a nyakatekert mondatokon.",
+    "A költők nagy tehetségén és a szép verseken.",
+    "A kávéház hangos vendégein és a finom teán."
+   ],
+   "teaches": [
+    "b2-language-style-word-formation-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "ERROR length-giveaway; unmet figuráz, jelenetben, főnevek; absurd wrong options (pincér's pay, railway timetable); wrong replies answer a different question so tag is the unit vocabulary skill"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-04-ex.json",
+  "id": "b2-03-04-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Nominalize 'Miután kimutatták a hibákat, elmentek' using 'kimutatása után'.",
+     "answer": "A hibák kimutatása után elmentek."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet kijavították, kijavítása, kiadták"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-05-ex.json",
+  "id": "b2-03-05-controlled-2",
+  "set": {
+   "sentence": "A szavak egyszerű ____ helyett a gondolkodásmódot mutatta meg.",
+   "english": "Instead of the simple twisting of words, he showed the way of thinking."
+  },
+  "kind": "hungarian",
+  "why": "unmet leplezte"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-05-ex.json",
+  "id": "b2-03-05-controlled-4",
+  "set": {
+   "question": "Which sentence shifts 'Elolvastuk a két művet, és sok hibát találtunk' into formal essay style?",
+   "options": [
+    "A két mű elolvasása során sok hibát találtunk.",
+    "A két mű elolvasás során sok hibát találtunk.",
+    "A két művet elolvasása során sok hibát találtunk."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet összehasonlítás, hasonlóságra, bukkantunk; the right option also changed the verb; wrong options had two faults"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-05-ex.json",
+  "id": "b2-03-05-practice-1",
+  "set": {
+   "tiles": [
+    "A",
+    "két",
+    "regiszter",
+    "váratlan",
+    "ütköztetése",
+    "új",
+    "hangot",
+    "teremtett",
+    "."
+   ],
+   "solution": [
+    "A",
+    "két",
+    "regiszter",
+    "váratlan",
+    "ütköztetése",
+    "új",
+    "hangot",
+    "teremtett",
+    "."
+   ],
+   "english": "The unexpected clashing of the two registers created a new voice."
+  },
+  "kind": "hungarian",
+  "why": "unmet humort"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-05-ex.json",
+  "id": "b2-03-05-practice-2",
+  "set": {
+   "base_sentence": "A szavak kiforgatása helyett a gondolkodásmódot figyelte.",
+   "base_gloss": "Instead of twisting the words, he observed the way of thinking.",
+   "options": [
+    {
+     "word": "halmozása helyett",
+     "inflected": "halmozása helyett",
+     "sentence": "A szavak halmozása helyett a gondolkodásmódot figyelte.",
+     "gloss": "instead of piling them up"
+    },
+    {
+     "word": "elemzése során",
+     "inflected": "elemzése során",
+     "sentence": "A szavak elemzése során a gondolkodásmódot figyelte.",
+     "gloss": "in the course of analyzing them"
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet elemezte"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-05-ex.json",
+  "id": "b2-03-05-practice-4",
+  "set": {
+   "question": "Which phrase means 'the imitation of Babits's long sentences'?",
+   "options": [
+    "Babits hosszú mondatainak az utánzása",
+    "Babits hosszú mondatai az utánzása",
+    "Babits hosszú mondatait az utánzása"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "question quoted 'a körmondatoknak', which is not in the sentence (it has körmondatainak); meta question about 'dative-marked possessor' with absurd wrong options"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-05-ex.json",
+  "id": "b2-03-05-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Diák",
+     "text": "Hogyan írjam át ezt a mondatot: 'Miközben elolvastam a könyvet, nevettem'?"
+    },
+    {
+     "speaker": "Tanár",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Írd azt, hogy 'A könyv elolvasása során nevettem'!",
+    "Írd azt, hogy 'A könyv elolvasás során nevettem'!",
+    "Írd azt, hogy 'A könyvet elolvasása során nevettem'!"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet megvizsgáltuk, mellékmondat (Hungarian grammar term), választékosabbá, esszémondatot"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-05-ex.json",
+  "id": "b2-03-05-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kritikus",
+     "text": "Mitől működik ma is olyan frissen az Így írtok ti?"
+    },
+    {
+     "speaker": "Olvasó",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Attól, hogy a stílusok utánzása révén mindenki nevet.",
+    "Attól, hogy a stílusok utánzást révén mindenki nevet.",
+    "Attól, hogy a stílusok utánzása révén mindenkit nevet."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet hiúságot, leplezi, hiúság"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-05-ex.json",
+  "id": "b2-03-05-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write in formal essay register: Through the mastery of style choice, the reader understands the criticism.",
+     "answer": "A stílusválasztás elsajátítása révén az olvasó megérti a kritikát."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet mélyebb"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-05-ex.json",
+  "id": "b2-03-05-check-2",
+  "set": {
+   "sentence": "A két stílus váratlan ____ új hangot teremtett.",
+   "english": "The unexpected clashing of the two styles created a new voice."
+  },
+  "kind": "hungarian",
+  "why": "unmet humort"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-05-ex.json",
+  "id": "b2-03-05-reading-1",
+  "set": {
+   "options": [
+    "Az irodalmi gondolkodásmód leleplezésére.",
+    "A magyar nyelv új szabályainak a megírására.",
+    "A kortárs írók könyveinek az eladására."
+   ],
+   "question": "Mire vállalkozott Karinthy Frigyes az Így írtok ti megírásával?"
+  },
+  "kind": "hungarian",
+  "why": "ERROR length-giveaway; wrong option used a causative (eltiltassa, B2 Unit 19); unmet helyesírási, szótár"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-05-ex.json",
+  "id": "b2-03-05-reading-2",
+  "set": {
+   "question": "Mi volt a kötet sikerének a titka a szöveg szerint?",
+   "options": [
+    "Hogy a kritika sohasem vált rosszindulatúvá.",
+    "Hogy a költők maguk is részt vettek a megírásában.",
+    "Hogy Karinthy névtelenül adta ki a könyvet a kávéházban."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "ERROR length-giveaway; question presupposed that the poets 'did not take deadly offence', which the story does not say; the story states the secret of the success"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-05-ex.json",
+  "id": "b2-03-05-reading-3",
+  "set": {
+   "options": [
+    "Az aránytévesztés könyörtelen kimutatásából.",
+    "A szép szavak zenéjéből és a hosszú mondatokból.",
+    "A híres költők nagy tehetségéből és a barátságból."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet szótár, magolásából, témák; absurd wrong options; right option said 'üres fontoskodás' as the source (the story says only the aránytévesztés)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-consolidation-ex.json",
+  "id": "b2-03-consolidation-1",
+  "set": {
+   "options": [
+    "Because it is the possessor of 'titka' in a possessive chain.",
+    "Because it is the indirect object of the verb 'rejlett' (lay).",
+    "Because 'siker' is a plural noun, so it needs the dative."
+   ]
+  },
+  "kind": "english",
+  "why": "ERROR length-giveaway (84 vs 47)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-consolidation-ex.json",
+  "id": "b2-03-consolidation-5",
+  "set": {
+   "sentence": "A görbe tükör felmutatása ____ a kritika soha nem vált rosszindulatúvá."
+  },
+  "kind": "hungarian",
+  "why": "unmet sohasem"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-consolidation-ex.json",
+  "id": "b2-03-consolidation-7",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Szerkesztő",
+     "text": "Hogyan írjuk át ezt a nehéz mondatot?"
+    },
+    {
+     "speaker": "Író",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "A mondat átfogalmazása révén jobb lesz a szöveg.",
+    "A mondat átfogalmazást révén jobb lesz a szöveg.",
+    "A mondatot átfogalmazása révén jobb lesz a szöveg."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet főnévi, láncok, felbontása, élénkebbé, tehetjük"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-consolidation-ex.json",
+  "id": "b2-03-consolidation-8",
+  "set": {
+   "question": "Which verbal clause best unpacks 'A könyv elolvasása előtt gondolkodott'?",
+   "options": [
+    "Mielőtt elolvasta a könyvet, gondolkodott.",
+    "Miután elolvasta a könyvet, gondolkodott.",
+    "Mielőtt elolvasta a könyv, gondolkodott."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet megválaszolta/megválaszolva; wrong option 'A kérdést megválaszolva nem gondolkodott' had two faults"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-consolidation-ex.json",
+  "id": "b2-03-consolidation-9",
+  "set": {
+   "options": [
+    "körmondatainak",
+    "rakpartjainak",
+    "szobáinak"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet ingaóráinak"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-consolidation-ex.json",
+  "id": "b2-03-consolidation-11",
+  "set": {
+   "tiles": [
+    "A",
+    "könyv",
+    "sikerének",
+    "a",
+    "titka",
+    "a",
+    "munkában",
+    "rejlett",
+    "."
+   ],
+   "solution": [
+    "A",
+    "könyv",
+    "sikerének",
+    "a",
+    "titka",
+    "a",
+    "munkában",
+    "rejlett",
+    "."
+   ],
+   "english": "The secret of the book's success lay in the work."
+  },
+  "kind": "hungarian",
+  "why": "unmet kötet, humorban"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-02-ex.json",
+  "id": "b2-03-02-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a double possessive chain: The secret of the book's success lay in accurate observation.",
+     "answer": "A könyv sikerének a titka a pontos megfigyelésben rejlett."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet humorban"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-03-04-ex.json",
+  "id": "b2-03-04-check-1",
+  "set": {
+   "options": [
+    "fakad",
+    "halmoz",
+    "olvas"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet utánoz"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-02.json",
+  "old": "  \"goal\": [\n    \"I can convert 'Verb + Direct Object' phrases into possessive nominalizations ('a szöveg átfogalmazása').\",\n    \"I can chain two possessive layers using dative -nak/-nek ('a szöveg átfogalmazásának a fontossága').\",\n    \"I can use B2 editorial and analytical nouns in formal contexts.\"\n  ]",
+  "new": "  \"goal\": [\n    \"I can convert 'Verb + Direct Object' phrases into possessive nominalizations ('a szöveg átfogalmazása').\",\n    \"I can chain two possessive layers using dative -nak/-nek ('a szöveg átfogalmazásának a fontossága').\",\n    \"I can use the words for rephrasing, imitation and shades of meaning in a short remark about a text.\"\n  ]",
+  "kind": "english",
+  "why": "third line was a template ('B2 editorial and analytical nouns in formal contexts')"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-02.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can convert 'Verb + Direct Object' phrases into possessive nominalizations ('a szöveg átfogalmazása').\",\n        \"I can chain two possessive layers using dative -nak/-nek ('a szöveg átfogalmazásának a fontossága').\",\n        \"I can use B2 editorial and analytical nouns in formal contexts.\"\n      ]",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can convert 'Verb + Direct Object' phrases into possessive nominalizations ('a szöveg átfogalmazása').\",\n        \"I can chain two possessive layers using dative -nak/-nek ('a szöveg átfogalmazásának a fontossága').\",\n        \"I can use the words for rephrasing, imitation and shades of meaning in a short remark about a text.\"\n      ]",
+  "kind": "english",
+  "why": "third line was a template ('B2 editorial and analytical nouns in formal contexts')"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-02.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can convert 'Verb + Direct Object' phrases into possessive nominalizations ('a szöveg átfogalmazása').\",\n        \"I can chain two possessive layers using dative -nak/-nek ('a szöveg átfogalmazásának a fontossága').\",\n        \"I can use B2 editorial and analytical nouns in formal contexts.\"\n      ]",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can convert 'Verb + Direct Object' phrases into possessive nominalizations ('a szöveg átfogalmazása').\",\n        \"I can chain two possessive layers using dative -nak/-nek ('a szöveg átfogalmazásának a fontossága').\",\n        \"I can use the words for rephrasing, imitation and shades of meaning in a short remark about a text.\"\n      ]",
+  "kind": "english",
+  "why": "third line was a template ('B2 editorial and analytical nouns in formal contexts')"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-03.json",
+  "old": "  \"goal\": [\n    \"I can combine possessive nominalizations with postpositions ('után', 'előtt', 'során', 'révén', 'helyett').\",\n    \"I can replace temporal/manner clauses ('miután elolvasta...', 'miközben vizsgálta...') with compact postpositional nominalizations.\",\n    \"I can recognize high-register essayistic connectors.\"\n  ]",
+  "new": "  \"goal\": [\n    \"I can combine possessive nominalizations with postpositions ('után', 'előtt', 'során', 'révén', 'helyett').\",\n    \"I can replace temporal/manner clauses ('miután elolvasta...', 'miközben vizsgálta...') with compact postpositional nominalizations.\",\n    \"I can use the words for mastery, self-reflection and malicious criticism.\"\n  ]",
+  "kind": "english",
+  "why": "third line ('recognize high-register essayistic connectors') is not practised"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-03.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can combine possessive nominalizations with postpositions ('után', 'előtt', 'során', 'révén', 'helyett').\",\n        \"I can replace temporal/manner clauses ('miután elolvasta...', 'miközben vizsgálta...') with compact postpositional nominalizations.\",\n        \"I can recognize high-register essayistic connectors.\"\n      ]",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can combine possessive nominalizations with postpositions ('után', 'előtt', 'során', 'révén', 'helyett').\",\n        \"I can replace temporal/manner clauses ('miután elolvasta...', 'miközben vizsgálta...') with compact postpositional nominalizations.\",\n        \"I can use the words for mastery, self-reflection and malicious criticism.\"\n      ]",
+  "kind": "english",
+  "why": "third line ('recognize high-register essayistic connectors') is not practised"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-03.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can combine possessive nominalizations with postpositions ('után', 'előtt', 'során', 'révén', 'helyett').\",\n        \"I can replace temporal/manner clauses ('miután elolvasta...', 'miközben vizsgálta...') with compact postpositional nominalizations.\",\n        \"I can recognize high-register essayistic connectors.\"\n      ]",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can combine possessive nominalizations with postpositions ('után', 'előtt', 'során', 'révén', 'helyett').\",\n        \"I can replace temporal/manner clauses ('miután elolvasta...', 'miközben vizsgálta...') with compact postpositional nominalizations.\",\n        \"I can use the words for mastery, self-reflection and malicious criticism.\"\n      ]",
+  "kind": "english",
+  "why": "third line ('recognize high-register essayistic connectors') is not practised"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-04.json",
+  "old": "  \"goal\": [\n    \"I can diagnose 'nominalitis' (terpeszkedő kifejezések / excessive nominal chains) in bureaucratic or pretentious prose.\",\n    \"I can unpack heavy nominalizations into crisp finite Hungarian verbs.\",\n    \"I can deliberately shift between dense academic style and vivid narrative style.\"\n  ]",
+  "new": "  \"goal\": [\n    \"I can unpack a noun chain with 'után' or 'során' into a clause with a finite verb.\",\n    \"I can condense a clause into a noun chain with a postposition.\",\n    \"I can deliberately shift between dense academic style and vivid narrative style.\"\n  ]",
+  "kind": "english",
+  "why": "first line used the Hungarian term 'terpeszkedő kifejezések' and 'bureaucratic prose'; lesson practises unpacking and condensing"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-04.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can diagnose 'nominalitis' (terpeszkedő kifejezések / excessive nominal chains) in bureaucratic or pretentious prose.\",\n        \"I can unpack heavy nominalizations into crisp finite Hungarian verbs.\",\n        \"I can deliberately shift between dense academic style and vivid narrative style.\"\n      ]",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can unpack a noun chain with 'után' or 'során' into a clause with a finite verb.\",\n        \"I can condense a clause into a noun chain with a postposition.\",\n        \"I can deliberately shift between dense academic style and vivid narrative style.\"\n      ]",
+  "kind": "english",
+  "why": "first line used the Hungarian term 'terpeszkedő kifejezések' and 'bureaucratic prose'; lesson practises unpacking and condensing"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-04.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can diagnose 'nominalitis' (terpeszkedő kifejezések / excessive nominal chains) in bureaucratic or pretentious prose.\",\n        \"I can unpack heavy nominalizations into crisp finite Hungarian verbs.\",\n        \"I can deliberately shift between dense academic style and vivid narrative style.\"\n      ]",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can unpack a noun chain with 'után' or 'során' into a clause with a finite verb.\",\n        \"I can condense a clause into a noun chain with a postposition.\",\n        \"I can deliberately shift between dense academic style and vivid narrative style.\"\n      ]",
+  "kind": "english",
+  "why": "first line used the Hungarian term 'terpeszkedő kifejezések' and 'bureaucratic prose'; lesson practises unpacking and condensing"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-05.json",
+  "old": "  \"goal\": [\n    \"I can read and analyze Frigyes Karinthy's 'Így írtok ti' in B2 Hungarian.\",\n    \"I can shift a passage from everyday spoken Hungarian to formal essayistic prose and back.\",\n    \"I can combine nominalization chains, focus, and participial modifiers in a cohesive B2 text.\"\n  ]",
+  "new": "  \"goal\": [\n    \"I can read a short text about Karinthy's 'Így írtok ti' and answer questions about it.\",\n    \"I can shift a passage from everyday spoken Hungarian to formal essayistic prose and back.\",\n    \"I can write an essay-style sentence with a nominalization and 'révén' or 'során'.\"\n  ]",
+  "kind": "english",
+  "why": "first and third lines promised analysis, focus and participial modifiers, none practised"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-05.json",
+  "old": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can read and analyze Frigyes Karinthy's 'Így írtok ti' in B2 Hungarian.\",\n        \"I can shift a passage from everyday spoken Hungarian to formal essayistic prose and back.\",\n        \"I can combine nominalization chains, focus, and participial modifiers in a cohesive B2 text.\"\n      ]",
+  "new": "\"title\": \"Lesson Goals\",\n      \"items\": [\n        \"I can read a short text about Karinthy's 'Így írtok ti' and answer questions about it.\",\n        \"I can shift a passage from everyday spoken Hungarian to formal essayistic prose and back.\",\n        \"I can write an essay-style sentence with a nominalization and 'révén' or 'során'.\"\n      ]",
+  "kind": "english",
+  "why": "first and third lines promised analysis, focus and participial modifiers, none practised"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-05.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can read and analyze Frigyes Karinthy's 'Így írtok ti' in B2 Hungarian.\",\n        \"I can shift a passage from everyday spoken Hungarian to formal essayistic prose and back.\",\n        \"I can combine nominalization chains, focus, and participial modifiers in a cohesive B2 text.\"\n      ]",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can read a short text about Karinthy's 'Így írtok ti' and answer questions about it.\",\n        \"I can shift a passage from everyday spoken Hungarian to formal essayistic prose and back.\",\n        \"I can write an essay-style sentence with a nominalization and 'révén' or 'során'.\"\n      ]",
+  "kind": "english",
+  "why": "first and third lines promised analysis, focus and participial modifiers, none practised"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-consolidation.json",
+  "old": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can recognize and construct single and double possessive nominalization chains (-ás/-és, -ság/-ség).\",\n        \"I can recall B2 vocabulary for style, word formation, and literary analysis from Karinthy's 'Így írtok ti'.\",\n        \"I can convert clauses across colloquial verbal and formal nominal registers.\"\n      ]",
+  "new": "\"title\": \"Consolidation Goals\",\n      \"items\": [\n        \"I can recognize and construct single and double possessive nominalization chains (-ás/-és).\",\n        \"I can recall B2 vocabulary for style, word formation, and literary analysis from Karinthy's 'Így írtok ti'.\",\n        \"I can convert clauses across colloquial verbal and formal nominal registers.\"\n      ]",
+  "kind": "english",
+  "why": "-ság/-ség is C1 and not practised in the consolidation"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-03-consolidation.json",
+  "old": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can recognize and construct single and double possessive nominalization chains (-ás/-és, -ság/-ség).\",\n        \"I can recall B2 vocabulary for style, word formation, and literary analysis from Karinthy's 'Így írtok ti'.\",\n        \"I can convert clauses across colloquial verbal and formal nominal registers.\"\n      ]",
+  "new": "\"title\": \"Can you do this?\",\n      \"items\": [\n        \"I can recognize and construct single and double possessive nominalization chains (-ás/-és).\",\n        \"I can recall B2 vocabulary for style, word formation, and literary analysis from Karinthy's 'Így írtok ti'.\",\n        \"I can convert clauses across colloquial verbal and formal nominal registers.\"\n      ]",
+  "kind": "english",
+  "why": "-ság/-ség is C1 and not practised in the consolidation"
+ }
+]
