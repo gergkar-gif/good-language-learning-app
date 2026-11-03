@@ -40,105 +40,34 @@ Then the content checks, on the units you changed:
 python scripts/check-content.py --changed
 ```
 
-It fails only on problems your change adds (a give-away option, a hint that
-is the answer, a missing `english`, a form used before its screen, a lemma
-listed twice in one vocabulary file, `distractor_skills` on the right option or
-naming the item's own skill, a HU blank glued to a stem ending in *-a/-e*
-whose answer is a suffix, an unmet word in a challenge target, a HU fill-blank whose English "take" lets
-both *kér-* and *vesz-* fit, a consolidation item copied verbatim from a lesson
-(suspect), a question in reported speech that lets a third-person option fit
-(suspect; fine for formal *Ön*), a HU blank whose article doesn't fit its answer
-or a *Hová* answer without *Hova* (suspects), an -ik verb's "I" form in *-k*
-(*eszek*) as a right answer, a Spanish blank glued to a stem (*simpátic__*),
-a Spanish dialogue speaker who talks about themselves in the third person
-(suspects), a bracketed English word in a Spanish line or choice question
-(*Tengo dos __. (brothers)*), a story whose narration gives Daniela, Meg,
-Carlos or another recurring character the wrong voice gender, a Spanish
-fill-blank accepting different words while its `english` fits one
-(suspect), a story whose comprehension questions are copied from another
-story or whose `keyVocabulary` words aren't in it (suspects)…); findings
-already in the content stay a report. `python scripts/check-content.py
-<course> [level] [unit id]` lists everything for one scope, `--summary`
-counts it. The pre-push hook runs both checks.
+It fails only on problems your change adds (give-away options, hint == answer, missing `english`, forms used before their screen, duplicate lemmas in one vocab file, bad `distractor_skills`, HU stem/article/suffix mismatches or `-ik` verb `*-k` answers, unmet words in challenge targets, copied consolidation/comprehension items, glued blanks, bracketed English in target-language lines, wrong recurring-character gender, missing `keyVocabulary` words); pre-existing findings stay a report. `python scripts/check-content.py <course> [level] [unit id]` checks one scope (`--summary` counts it). The `.githooks/pre-push` hook runs both checks (`git config core.hooksPath .githooks`) — never bypass with `--no-verify`.
 
-Besides the schemas, it fails any content file containing letters from
-another script (Cyrillic, Arabic, Hebrew, Thai, Japanese, Chinese, Korean).
-Generated text sometimes slips them in mid-word (`reдукció`, `Mキシco`).
-Retype the word in the course's own alphabet.
+It also fails on non-course scripts (Cyrillic, Arabic, Hebrew, Thai, CJK slipped into words like `reдукció`) and duplicate story `id`s across files (keep the file a lesson's `"ref"` points to; delete or re-id the other).
 
-It also fails when two story files in a course share an `id`. That happens
-when a rewrite adds new story files without deleting the old ones. Lessons
-load stories by file path (`"ref"`), so keep the file a lesson references
-and delete the other (or give it its own id if both are wanted).
-
-**A1 story comprehension questions** are in the target language and carry
-their English: `questionEnglish` and `optionsEnglish` (same length and
-order as `options`) on every question. The Reader then shows a "Show
-English" toggle (decided by the user 2026-10-13). Stories, questions
-included, may use words the learner hasn't met: they should be a little
-challenging, and the Reader translates any word on a tap.
-
-Why: the "Sync generated content" GitHub workflow runs the same validator as
-its first step. If it fails, nothing is regenerated and the repo owner gets a
-failure email per push. A `pre-push` hook in `.githooks/` runs it for you
-(enable with `git config core.hooksPath .githooks`) — do not bypass it with
-`--no-verify`.
+**A1 story comprehension questions** are in the target language with `questionEnglish` and `optionsEnglish` (matching `options` length/order) for the Reader's "Show English" toggle (user, 2026-10-13). Stories and questions may include some untaught words since the Reader translates any word on tap.
 
 ## Project records: roadmap, achieved, docs (every agent, every session)
 
-Nothing updates these files but the agent doing the work, so they are only
-as accurate as the last session left them. Stale entries have cost whole
-sessions. These rules apply to Claude, Antigravity and anyone else.
+Stale records cost whole sessions. These rules apply to Claude, Antigravity and every subagent:
 
-**Where things live (one home each).**
+- `ROADMAP.md` ("Active & Parked Priorities"): **open work only** — never leave finished or `~~struck-through~~` text here.
+- `ACHIEVED.md`: all finished work with its original item number (never reuse or renumber numbers).
+- `docs/`, course guides and `AGENTS.md`: permanent specs and rules (commits and chat are not records).
 
-- `ROADMAP.md` "Active & Parked Priorities": **open work only**. Nothing
-  finished stays in it, not even struck through.
-- `ACHIEVED.md`: everything finished, with its original item number.
-- `docs/`, the course guides and `AGENTS.md`: specs and rules. What a future
-  author or generator must know lives here, not in the roadmap or a commit.
-- Commit messages and chat are not records. Anything only there is lost.
+**Finishing work (in the same commit as the work):**
 
-**Finishing work (in the same commit as the work).**
-
-1. **Move it to ACHIEVED.md.** A whole item: move its full entry to
-   ACHIEVED.md under "Completed queue items" (newest first), keep its number
-   and add `— **Done <date>.**` and what was done. Part of an item: delete
-   that part from the roadmap entry and log it in ACHIEVED.md under the
-   item's number. Never leave `~~done~~` text in the roadmap. Numbers are
-   never reused or renumbered.
-2. **Update every other entry that lists the same work.** Work done under one
-   item often settles parts of others. Search ROADMAP.md for the skill slugs,
-   unit ids, exercise ids and files you touched, and update or archive each
-   entry that names them. Fix any "see item N" that now points at ACHIEVED.md.
-3. **Write the lesson into the docs.** If the change fixes a class of
-   content problem, changes how an exercise or lesson type behaves, or sets a
-   new convention (for example: a form used before its screen teaches it, a
-   lesson type rendering wrong, a new required field), add the rule where
-   authors and generators read it, so future content is generated right:
+1. **Move it to `ACHIEVED.md`** under "Completed queue items" (newest first), keeping its number and adding `— **Done <date>.**` + what changed. If only part of an item finished, delete that part from `ROADMAP.md` and log it in `ACHIEVED.md` under the item's number.
+2. **Update every other entry listing the same work.** Search `ROADMAP.md` for touched skill slugs, unit/exercise ids and files; update or archive matching entries and fix any "see item N" now in `ACHIEVED.md`.
+3. **Write the lesson into the docs** whenever a change fixes a class of content problem, exercise/lesson behaviour, or convention:
    - this file, § "Teaching and exercise principles" (all courses);
-   - `content/es-latam/guides/editorial-style-guide.md` (Spanish) and
-     `content/hu/HU_Content_Authoring_Template.md` (Hungarian);
-   - `docs/skill-tagging-spec.md` § "Read-through conventions" and
-     `docs/readthrough-brief.md` for tagging decisions;
-   - and, if a machine can check it, a check in
-     `scripts/validate-content.py` or `scripts/readthrough_check.py`.
-   A fix that isn't written down gets regenerated wrong.
-4. **Queue what you found but didn't fix**, as a new numbered item with the
-   actual list (ids, files, counts). Never "see the session log" or "see the
-   subagent reports": save a subagent's findings to a file (`imports/review/`
-   or `docs/`) and link it.
+   - `content/es-latam/guides/editorial-style-guide.md` (Spanish) and `content/hu/HU_Content_Authoring_Template.md` (Hungarian);
+   - `docs/skill-tagging-spec.md` § "Read-through conventions" and `docs/readthrough-brief.md` (tagging);
+   - and a machine check in `scripts/validate-content.py` or `scripts/readthrough_check.py` where checkable.
+4. **Queue unfixed findings** as a new numbered item with the exact list (ids, files, counts) — never "see the session log"; save subagent reports to `imports/review/` or `docs/` and link them.
 
-**Shape of a queue item.** A bold title line with the date added, one or two
-sentences of context (what, why, where the spec is), then one sub-point per
-piece of open work, each marked when it needs the user: *(sign-off)*,
-**PARKED by the user**, **User: later**. Work that spans sessions carries a
-`State:` / `Next:` line, so the next session can start without the chat.
-Item 148 is the model.
+**Shape of a queue item (model: Item 148):** Bold title with date added, 1–2 sentences of context (what, why, spec link), sub-points per open task (`*(sign-off)*`, **PARKED by the user**, **User: later**), and `State:` / `Next:` lines for multi-session work so the next chat starts without chat history.
 
-**Before telling the user something is open or done**, check it against the
-files (the validator, a count, the file itself), not only against the
-roadmap text.
+**Verify on disk first:** Check the validator, counts or files before calling anything open or done.
 
 ## Content rules the validator enforces
 
