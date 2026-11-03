@@ -1,0 +1,1101 @@
+[
+ {
+  "file": "content/hu/grammar/b2/b2-04-01-a-gr.json",
+  "old": "Megtiltották, hogy bárki is elhagyja a színháztermet.",
+  "new": "Megtiltották, hogy a nézők elhagyják a színháztermet.",
+  "kind": "hungarian",
+  "why": "bárki ... is is concessive-indefinites (B2 Unit 17), used on a screen before its own screen"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-01-ex.json",
+  "id": "b2-04-01-intro-1",
+  "set": {
+   "options": [
+    "óva int",
+    "jóváhagy",
+    "elfelejt"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet elnéz"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-01-ex.json",
+  "id": "b2-04-01-controlled-4",
+  "set": {
+   "sentence": "Arra kértük a közönséget, hogy ____ beszéljenek az előadás alatt.",
+   "english": "We asked the audience not to talk during the performance.",
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet mobiltelefont; tag: ne in a hogy + subjunctive clause"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-01-ex.json",
+  "id": "b2-04-01-practice-2",
+  "set": {
+   "sentence": "A rendező arra kérte a színészt, hogy hangosan ____ a szöveget.",
+   "english": "The director asked the actor to read the text aloud.",
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet súgót, hangosabban; tag"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-01-ex.json",
+  "id": "b2-04-01-practice-4",
+  "set": {
+   "tiles": [
+    "A",
+    "rendező",
+    "azt",
+    "követelte,",
+    "hogy",
+    "várjanak",
+    "még",
+    "egy",
+    "órát",
+    "."
+   ],
+   "solution": [
+    "A",
+    "rendező",
+    "azt",
+    "követelte,",
+    "hogy",
+    "várjanak",
+    "még",
+    "egy",
+    "órát",
+    "."
+   ],
+   "english": "The director demanded that they wait another hour.",
+   "teaches": [
+    "hogy-jon-jen"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian",
+  "why": "unmet halasszák; builder of a hogy + subjunctive clause was tagged with the unit vocabulary skill"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-01-ex.json",
+  "id": "b2-04-01-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Dramaturg",
+     "text": "Mit mondott a rendező a próba után?"
+    },
+    {
+     "speaker": "Színész",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Nyomatékosan arra kért minket, hogy holnap ne késsünk el.",
+    "Nyomatékosan arra kért minket, hogy holnap nem késsünk el.",
+    "Nyomatékosan arra kért minket, hogy holnap ne késünk el."
+   ],
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet felvonásban, dialógust, főpróba; wrong options now differ in one thing each (nem for ne; indicative with ne)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-01-ex.json",
+  "id": "b2-04-01-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Tanácsadó",
+     "text": "Szerinted aláírjam ezt a levelet még ma este?"
+    },
+    {
+     "speaker": "Elnök",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Óva intelek attól, hogy még ma este aláírd!",
+    "Óva intelek attól, hogy még ma este aláírod!",
+    "Óva intelek arra, hogy még ma este aláírd!"
+   ],
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet cselekedj, cselekedni; wrong options: indicative; wrong anchor (arra for attól)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-01-ex.json",
+  "id": "b2-04-01-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence in which the director asks the actors to speak loudly (use 'arra kérte' + 'hogy').",
+     "answer": "A rendező arra kérte a színészeket, hogy beszéljenek hangosan."
+    },
+    {
+     "prompt": "Write a sentence warning a friend not to answer hastily (use 'óva intelek attól, hogy').",
+     "answer": "Óva intelek attól, hogy elhamarkodottan válaszolj."
+    }
+   ],
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet érthetőbben, színpadon, kényes; second prompt 'ne/hogy' was unclear"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-01-ex.json",
+  "id": "b2-04-01-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Report a demand that the director tell the whole truth now (use 'azt követelték, hogy').",
+     "answer": "Azt követelték, hogy a rendező most mondja el a teljes igazságot."
+    }
+   ],
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet jelenlévők, szónok"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-01-ex.json",
+  "id": "b2-04-01-check-2",
+  "set": {
+   "hint": "elhagy, 3pl",
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "ERROR hint-is-answer (hint contained 'hagyják'); tag"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-04-02-a-gr.json",
+  "old": "and keep the preverb attached to the verb (`nehogy elbukjon`, NOT `*nehogy bukjon el`).",
+  "new": "and the preverb usually stays attached to the verb (`nehogy elbukjon`; `nehogy bukjon el` is also heard).",
+  "kind": "english",
+  "why": "'NOT nehogy bukjon el' overstates: the split order after nehogy is used too",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-02-ex.json",
+  "id": "b2-04-02-intro-2",
+  "set": {
+   "options": [
+    "visszafog",
+    "elfelejt",
+    "félreért"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet kirobbant"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-02-ex.json",
+  "id": "b2-04-02-controlled-2",
+  "set": {
+   "options": [
+    "félreértsék",
+    "félreértik",
+    "ne félreértsék"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "wrong option 'értsék félre' is accepted Hungarian after nehogy (a second right answer); now indicative and double negation",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-02-ex.json",
+  "id": "b2-04-02-controlled-3",
+  "set": {
+   "sentence": "Óvatosan mondta el a választ, ____ hallják a többiek.",
+   "english": "He gave the answer carefully lest the others hear it."
+  },
+  "kind": "hungarian",
+  "why": "unmet halkan, súgta, meghallják"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-02-ex.json",
+  "id": "b2-04-02-controlled-4",
+  "set": {
+   "sentence": "A rendező el akarta kerülni a ____, ezért bocsánatot kért.",
+   "english": "The director wanted to avoid the scandal, so he apologized."
+  },
+  "kind": "hungarian",
+  "why": "unmet politikus, igyekezett"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-02-ex.json",
+  "id": "b2-04-02-practice-2",
+  "set": {
+   "sentence": "Korán elindultunk a színházba, nehogy ____.",
+   "hint": "elkésik, 1pl subjunctive",
+   "answer": "elkéssünk",
+   "english": "We left early for the theatre lest we be late."
+  },
+  "kind": "hungarian",
+  "why": "unmet felvonásról, lemaradjunk"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-02-ex.json",
+  "id": "b2-04-02-practice-4",
+  "set": {
+   "tiles": [
+    "Óvatosan",
+    "beszélt,",
+    "nehogy",
+    "valaki",
+    "félreértse",
+    "a",
+    "szándékát",
+    "."
+   ],
+   "solution": [
+    "Óvatosan",
+    "beszélt,",
+    "nehogy",
+    "valaki",
+    "félreértse",
+    "a",
+    "szándékát",
+    "."
+   ],
+   "english": "He spoke carefully lest someone misunderstand his intention.",
+   "teaches": [
+    "nehogy-purpose"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian",
+  "why": "bárki is (concessive-indefinites, B2 Unit 17) before its screen; unmet érvelt; tagged vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-02-ex.json",
+  "id": "b2-04-02-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Rendezőasszisztens",
+     "text": "Miért zártad be az ajtót?"
+    },
+    {
+     "speaker": "Rendező",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Azért, nehogy az újságírók hallják a próbát.",
+    "Azért, nehogy az újságírók nem hallják a próbát.",
+    "Azért, nehogy az újságírók halljanak a próbát."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet újságírók, kiszivárogtassák (causative -tat, B2 Unit 19); one fault per wrong option (nem after nehogy; indefinite form with a definite object)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-02-ex.json",
+  "id": "b2-04-02-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Színésznő",
+     "text": "Elmondjam neki, mit gondolok a cikkéről?"
+    },
+    {
+     "speaker": "Ügynök",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Nehogy elmondd neki, mert csak botrány lesz belőle!",
+    "Nehogy mondod el neki, mert csak botrány lesz belőle!",
+    "Nehogy elmondani neki, mert csak botrány lesz belőle!"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet premier, kelteni, megmondjam, kritikusnak; garbled wrong options"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-02-ex.json",
+  "id": "b2-04-02-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence explaining that he spoke carefully lest the others hear the plan (use 'nehogy').",
+     "answer": "Óvatosan beszélt, nehogy a többiek hallják a tervet."
+    },
+    {
+     "prompt": "Write a strong spoken warning telling a friend not to give away the secret ('Nehogy eláruld...').",
+     "answer": "Nehogy eláruld nekik a titkunkat a holnapi vitán!"
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet lehalkította, vetélytársai, meghallják"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-02-ex.json",
+  "id": "b2-04-02-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence showing how the director restrained his temper lest he cause a scandal (use 'visszafog' and 'nehogy').",
+     "answer": "A rendező visszafogta az indulatait, nehogy botrányt okozzon."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet haragját, elő"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-02-ex.json",
+  "id": "b2-04-02-check-1",
+  "set": {
+   "sentence": "Mindent kétszer ellenőriztünk, nehogy hiba ____ a műsorfüzetben.",
+   "hint": "van, 3sg subjunctive",
+   "answer": "legyen",
+   "english": "We checked everything twice lest there be a mistake in the program booklet."
+  },
+  "kind": "hungarian",
+  "why": "unmet csússzon"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-02-ex.json",
+  "id": "b2-04-02-check-2",
+  "set": {
+   "options": [
+    "botrány",
+    "rokonszenv",
+    "csend"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet harmónia"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-03-ex.json",
+  "id": "b2-04-03-intro-2",
+  "set": {
+   "options": [
+    "észérv",
+    "csend",
+    "vád"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet előítélet"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-03-ex.json",
+  "id": "b2-04-03-controlled-4",
+  "set": {
+   "sentence": "A védőügyvéd cáfolta az ____ vádakat.",
+   "english": "The defense attorney refuted the baseless accusations."
+  },
+  "kind": "hungarian",
+  "why": "unmet tételesen, megcáfolta"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-03-ex.json",
+  "id": "b2-04-03-practice-4",
+  "set": {
+   "tiles": [
+    "Nem",
+    "hisszük",
+    "el",
+    "ezt",
+    "az",
+    "alaptalan",
+    "vádat",
+    "!"
+   ],
+   "solution": [
+    "Nem",
+    "hisszük",
+    "el",
+    "ezt",
+    "az",
+    "alaptalan",
+    "vádat",
+    "!"
+   ],
+   "english": "We do not believe this baseless accusation!"
+  },
+  "kind": "hungarian",
+  "why": "unmet tűrhetjük"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-03-ex.json",
+  "id": "b2-04-03-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Tiborc",
+     "text": "Már nincs kenyerünk, nagyuram."
+    },
+    {
+     "speaker": "Bánk bán",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Mit tegyünk, hogy segítsünk az embereknek?",
+    "Mit tegyünk, hogy segítünk az embereknek?",
+    "Mit tegyenek, hogy segítsünk az embereknek?"
+   ],
+   "teaches": [
+    "mit-csinaljak"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "ERROR length-giveaway; unmet uzsorások, vetőmagot, megfékezzük, telhetetlenségüket; wrong options: indicative in the hogy clause; wrong person"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-03-ex.json",
+  "id": "b2-04-03-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kritikus",
+     "text": "Jobb lenne, ha átírná a darab végét."
+    },
+    {
+     "speaker": "Drámaíró",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Én írjam át a saját művemet pusztán azért, mert néhányan félreértették?",
+    "Én írom át a saját művemet pusztán azért, mert néhányan félreértették?",
+    "Én írjak át a saját művemet pusztán azért, mert néhányan félreértették?"
+   ],
+   "teaches": [
+    "mit-csinaljak"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet jelenetét; garbled wrong option ('Én cenzúrázni a saját művemet?')"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-03-ex.json",
+  "id": "b2-04-03-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a deliberative question asking whom we should turn to in this crisis (use 1pl subjunctive).",
+     "answer": "Kihez forduljunk ebben a súlyos válságban?"
+    },
+    {
+     "prompt": "Write an indignant subjunctive question: Am I supposed to apologize for what he did?",
+     "answer": "Én kérjek bocsánatot azért, amit ő tett?"
+    }
+   ],
+   "teaches": [
+    "mit-csinaljak"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet terjednek"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-03-ex.json",
+  "id": "b2-04-03-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a deliberative question asking how to refute this accusation with rational arguments.",
+     "answer": "Hogyan cáfoljuk meg ezt a vádat észérvekkel?"
+    }
+   ],
+   "teaches": [
+    "mit-csinaljak"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet ellenfél"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-03-ex.json",
+  "id": "b2-04-03-check-1",
+  "set": {
+   "hint": "kimond, 1sg subjunctive",
+   "teaches": [
+    "mit-csinaljak"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "ERROR hint-is-answer (hint contained 'mondjam'); tag"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-04-ex.json",
+  "id": "b2-04-04-controlled-2",
+  "set": {
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "english",
+  "why": "unit/lesson built on concessive-indefinites (taught in Unit 17); retagged to the known skill a wrong answer shows (subjunctive form)",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-04-ex.json",
+  "id": "b2-04-04-controlled-3",
+  "set": {
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "english",
+  "why": "same retag",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-04-ex.json",
+  "id": "b2-04-04-controlled-4",
+  "set": {
+   "sentence": "A hős a nagy ____ ellenére sem veszítette el a hitét.",
+   "english": "Despite the great ordeal, the hero did not lose his faith."
+  },
+  "kind": "hungarian",
+  "why": "unmet legsúlyosabb, közepette"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-04-ex.json",
+  "id": "b2-04-04-practice-1",
+  "set": {
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "english",
+  "why": "same retag",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-04-ex.json",
+  "id": "b2-04-04-practice-2",
+  "set": {
+   "sentence": "Bárki ____ is az ellenkezőjét, a tanúk vallomása világos.",
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet egyértelmű; same retag",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-04-ex.json",
+  "id": "b2-04-04-practice-3",
+  "set": {
+   "options": [
+    "megtévessze",
+    "meghívja",
+    "megvárja"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet megjutalmazza, megvigasztalja"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-04-ex.json",
+  "id": "b2-04-04-practice-4",
+  "set": {
+   "tiles": [
+    "A",
+    "tiszta",
+    "lelkiismeret",
+    "nagyon",
+    "fontos",
+    "."
+   ],
+   "solution": [
+    "A",
+    "tiszta",
+    "lelkiismeret",
+    "nagyon",
+    "fontos",
+    "."
+   ],
+   "english": "A clear conscience is very important."
+  },
+  "kind": "hungarian",
+  "why": "unmet fontosabb"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-04-ex.json",
+  "id": "b2-04-04-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Udvaronc",
+     "text": "Vigyázz, nagyuram! Ha ellenünk szólsz, bajod lesz!"
+    },
+    {
+     "speaker": "Bánk bán",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Történjék bármi, mindig a lelkiismeretemet követem!",
+    "Történik bármi, mindig a lelkiismeretemet követem!",
+    "Történjék bárki, mindig a lelkiismeretemet követem!"
+   ],
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet hízelgők, szembeszállsz, kegyenceivel, elveszítheted; garbled wrong option ('Történni bármi')",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-04-ex.json",
+  "id": "b2-04-04-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kritikus",
+     "text": "Az ellenfeleid nagyon szépen beszélnek."
+    },
+    {
+     "speaker": "Szónok",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Legyen bármilyen szép is a beszédük, az igazság az igazság marad.",
+    "Van bármilyen szép is a beszédük, az igazság az igazság marad.",
+    "Lenne bármilyen szép is a beszédük, az igazság az igazság marad."
+   ],
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet retorikájuk, ellenfeleid, rendkívül, hatásos; the right option used elhallgattat (causative -tat, B2 Unit 19)",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-04-ex.json",
+  "id": "b2-04-04-writing-1",
+  "set": {
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "english",
+  "why": "retag (concessive)",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-04-ex.json",
+  "id": "b2-04-04-writing-2",
+  "set": {
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "english",
+  "why": "retag (concessive)",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-04-ex.json",
+  "id": "b2-04-04-check-1",
+  "set": {
+   "hint": "lesz/van, 3sg subjunctive",
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "ERROR hint-is-answer (hint contained 'Legyen'); retag",
+  "sure": false
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-04-05-a-gr.json",
+  "old": "In Bánk bán (1819), Katona alternates between",
+  "new": "In the scene below, adapted from Katona's Bánk bán (1819), the story alternates between",
+  "kind": "english",
+  "why": "the screen attributed the adapted story's wording to Katona (the quoted 'óva intelek attól ...' is the adapted text); check",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-05-ex.json",
+  "id": "b2-04-05-controlled-2",
+  "set": {
+   "options": [
+    "Arra kérte a tanúkat, hogy írják alá a jegyzőkönyvet, nehogy valaki elferdítse a szavaikat.",
+    "Arra kérte a tanúkat, hogy írják alá a jegyzőkönyvet, nehogy valaki elferdíti a szavaikat.",
+    "Arra kérte a tanúkat, hogy írják alá a jegyzőkönyvet, nehogy valaki ne elferdítse a szavaikat."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "bárki (Unit 17) in the right option; wrong options had two faults and unmet ferdít forms"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-05-ex.json",
+  "id": "b2-04-05-controlled-3",
+  "set": {
+   "sentence": "Arra szólítok fel mindenkit, hogy őrizze meg a békét, ____ a viszály gyengítse a hazát!",
+   "english": "I call upon everyone to preserve the peace, lest discord weaken the homeland!"
+  },
+  "kind": "hungarian",
+  "why": "unmet romlásba"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-05-ex.json",
+  "id": "b2-04-05-controlled-4",
+  "set": {
+   "sentence": "Bánk bán ebben a ____ órában már nem tudott hallgatni.",
+   "english": "In this fateful hour, Bánk bán could no longer stay silent."
+  },
+  "kind": "hungarian",
+  "why": "unmet hallgathatott"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-05-ex.json",
+  "id": "b2-04-05-practice-1",
+  "set": {
+   "tiles": [
+    "Legyen",
+    "bármilyen",
+    "fájdalmas",
+    "is",
+    "az",
+    "igazság,",
+    "ki",
+    "kell",
+    "mondanunk",
+    "."
+   ],
+   "solution": [
+    "Legyen",
+    "bármilyen",
+    "fájdalmas",
+    "is",
+    "az",
+    "igazság,",
+    "ki",
+    "kell",
+    "mondanunk",
+    "."
+   ],
+   "english": "No matter how painful the truth may be, we must say it.",
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet hallgathatjuk; retag (concessive built on Unit 17 skill)",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-05-ex.json",
+  "id": "b2-04-05-practice-2",
+  "set": {
+   "sentence": "Bárki ____ is elferdíteni a tényeket, mi az igazat mondjuk.",
+   "english": "Whoever may try to distort the facts, we will tell the truth.",
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet bizonyítják; retag",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-05-ex.json",
+  "id": "b2-04-05-practice-4",
+  "set": {
+   "tiles": [
+    "Nem",
+    "akarjuk,",
+    "hogy",
+    "elferdítsék",
+    "a",
+    "történelmi",
+    "tényeket",
+    "."
+   ],
+   "solution": [
+    "Nem",
+    "akarjuk,",
+    "hogy",
+    "elferdítsék",
+    "a",
+    "történelmi",
+    "tényeket",
+    "."
+   ],
+   "english": "We do not want them to distort the historical facts.",
+   "teaches": [
+    "hogy-jon-jen"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian",
+  "why": "unmet hagyhatjuk; hogy + subjunctive builder tagged vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-05-ex.json",
+  "id": "b2-04-05-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Tiborc",
+     "text": "Nagyuram, meddig várjunk még?"
+    },
+    {
+     "speaker": "Bánk bán",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Arra kérlek, várjatok még egy keveset, nehogy baj legyen belőle!",
+    "Arra kérlek, vártok még egy keveset, nehogy baj legyen belőle!",
+    "Arra kérlek, várjatok még egy keveset, nehogy baj van belőle!"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet udvaroncok, jogtalanságait, tűrjük, vak, indulat; garbled wrong option"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-05-ex.json",
+  "id": "b2-04-05-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Színész",
+     "text": "Hogyan mondjam el ezt a szöveget?"
+    },
+    {
+     "speaker": "Rendező",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Mondd lassan, nehogy elfelejtsd a szöveget!",
+    "Mondd lassan, nehogy elfelejted a szöveget!",
+    "Mondd lassan, nehogy nem felejtsd el a szöveget!"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet formáljam, monológjának, csúcspontját, éreztesd, kiabálássá; garbled wrong options"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-05-ex.json",
+  "id": "b2-04-05-writing-2",
+  "set": {
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "english",
+  "why": "retag (concessive)",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-05-ex.json",
+  "id": "b2-04-05-check-1",
+  "set": {
+   "sentence": "Óvatosan beszélt, ____ bajba kerüljön.",
+   "english": "He spoke carefully lest he get into trouble."
+  },
+  "kind": "hungarian",
+  "why": "unmet fogalmazta, megsértse, társulat"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-05-ex.json",
+  "id": "b2-04-05-reading-1",
+  "set": {
+   "question": "Miért megy Tiborc éjjel Bánk bánhoz?",
+   "options": [
+    "Mert a szegény emberek nagyon rosszul élnek, és segítséget kér.",
+    "Mert Bánk bán hívta, hogy együtt vacsorázzanak a palotában.",
+    "Mert a király hazajött, és ezt el akarja mondani neki."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet elpanaszolja, nyomorúságát, udvaroncok, lakomájára, hazatérését"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-05-ex.json",
+  "id": "b2-04-05-reading-3",
+  "set": {
+   "question": "Mit ígér Bánk bán Tiborcnak?",
+   "options": [
+    "Hogy még ma éjjel a királyné elé áll.",
+    "Hogy másnap elhagyja a palotát, és hazamegy.",
+    "Hogy még ma éjjel hazaviszi Tiborcot a faluba."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "ERROR length-giveaway (107 vs 62); the question asked what he decides 'after Tiborc leaves' while the story has the promise to the queen in his words to Tiborc"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-consolidation-ex.json",
+  "id": "b2-04-consolidation-3",
+  "set": {
+   "options": [
+    "Felírta a szöveget, nehogy elfelejtsen egyetlen szót is.",
+    "Felírta a szöveget, nehogy ne felejtsen el egyetlen szót is.",
+    "Felírta a szöveget, nehogy elfelejt egyetlen szót is."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet vázlatát, kihagyjon"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-consolidation-ex.json",
+  "id": "b2-04-consolidation-4",
+  "set": {
+   "sentence": "A védőbeszéd minden ____ vádat cáfolt.",
+   "english": "The defense speech refuted every baseless accusation."
+  },
+  "kind": "hungarian",
+  "why": "unmet tételesen, megcáfolt"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-consolidation-ex.json",
+  "id": "b2-04-consolidation-5",
+  "set": {
+   "sentence": "A rendező nyomatékosan arra kérte a színészeket, hogy ____ késsenek el a próbáról.",
+   "english": "The director emphatically asked the actors not to be late for the rehearsal.",
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet főpróbáról; tag"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-consolidation-ex.json",
+  "id": "b2-04-consolidation-6",
+  "set": {
+   "hint": "lesz/van, 3sg subjunctive",
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "ERROR hint-is-answer; retag",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-consolidation-ex.json",
+  "id": "b2-04-consolidation-7",
+  "set": {
+   "question": "Which question means 'Whom should I turn to if even the judge stays silent?'",
+   "options": [
+    "Kihez forduljak, ha még a bíró is hallgat?",
+    "Kihez fordulok, ha még a bíró is hallgat?",
+    "Kihez forduljon, ha még a bíró is hallgat?"
+   ],
+   "teaches": [
+    "mit-csinaljak"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "English meaning line added to pin the deliberative reading; wrong options garbled ('Kihez fordulni?' is a natural idiom)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-consolidation-ex.json",
+  "id": "b2-04-consolidation-8",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Politikus",
+     "text": "Miért nem válaszoltál azonnal a kérdésre?"
+    },
+    {
+     "speaker": "Szóvivő",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Visszafogtam magam, nehogy elhamarkodottan válaszoljak.",
+    "Visszafogtam magam, nehogy elhamarkodottan válaszolok.",
+    "Visszafogtam magam, nehogy ne válaszoljak elhamarkodottan."
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet provokatív, robbantsak, robbantok; garbled wrong option"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-consolidation-ex.json",
+  "id": "b2-04-consolidation-10",
+  "set": {
+   "tiles": [
+    "Óva",
+    "intelek",
+    "attól,",
+    "hogy",
+    "elhamarkodottan",
+    "válaszolj,",
+    "nehogy",
+    "bajba",
+    "kerülj",
+    "!"
+   ],
+   "solution": [
+    "Óva",
+    "intelek",
+    "attól,",
+    "hogy",
+    "elhamarkodottan",
+    "válaszolj,",
+    "nehogy",
+    "bajba",
+    "kerülj",
+    "!"
+   ],
+   "english": "I warn you against answering hastily, lest you get into trouble!"
+  },
+  "kind": "hungarian",
+  "why": "unmet ítélj, megbánd"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-consolidation-ex.json",
+  "id": "b2-04-consolidation-11",
+  "set": {
+   "teaches": [
+    "hogy-jon-jen"
+   ]
+  },
+  "kind": "english",
+  "why": "retag (concessive)",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-04-consolidation-ex.json",
+  "id": "b2-04-consolidation-12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a two-part persuasive statement: first concede a difficulty with 'Legyen bármilyen ... is', then warn the audience with 'nehogy + subjunctive'.",
+     "answer": "Legyen bármilyen fárasztó is a vita, őrizzük meg a nyugalmunkat, nehogy elveszítsük a közönség rokonszenvét."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet hallgatóság"
+ }
+]
