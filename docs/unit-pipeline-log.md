@@ -451,6 +451,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-30 | HU B1 walk + level checklist | Claude, no agents | | | 0 walk failures (450/450) | ~9 min of walking; check-content 0/0, no B1 validator warning (`imports/review/hu-b1-level-check/summary.md`) |
 | 10-30 | **HU B2 pilot**: core Unit 1 `nuance-focus-emphasis-narrative` ∥ Unit 3 `memory-nostalgia-sensory-description` | 1 unit per reader; both stopped by the 5-hour limit before any file, resumed | | A 201,538, 4.3; B 190,621, 3.8 (resumed runs) | 157 proposed (70 / 87), 2 rejected and rewritten; Claude changed 3 dialogue items, 3 challenges (invented facts), 1 recap unit, 4 unmet words | **~200k a unit** at one per reader; Unit 3 built on Unit 4's `participial-clauses` (66 `taught-later`), Unit 1 lesson 3 on Unit 2's `b2-contrastive-topic`: for the user; check-content 0/0; walk 12/12 |
 | 11-04 | HU B2 core 5, 7, 9, 11, 13, 15 | paired read, 3 core units/reader; both stopped by the weekly limit mid-batch, resumed after the reset; reader B resumed again for the C1 rewrites | | A 413,177; B 340,419 + 398,629 (resumed runs) | 475 proposed (74 / 88 / 81 / 77 / 85 / 70) + 137 C1 rewrites, 6 rejected and rewritten; Claude changed ~25 items, 29 arrow hints, ~15 unmet words, a story line | ~140k a unit before the rewrites; 2 C1 lessons rewritten (Units 13, 15); 2 skills moved by the user (`concessive-indefinites` to Unit 7, `sag-seg-nouns` to B2 Unit 5); 2 classics relabelled as original; walk 36/36 |
+| 11-04 | HU B2 core 17, 19, 21, 23, 25, 27 | paired read, 3 core units/reader, no limit hit | | A 352,680, 17 min; B 348,797, 17 min | 503 proposed (72 / 77 / 96 / 79 / 90 / 89), 8 rejected (6 rewritten, 2 goal lines done by script); Claude changed ~15 items, listed 20 words | **~117k a unit, cheapest B2 batch**; 2 skills moved by the user (causatives within Unit 19, cataphoric clauses to Unit 17); walk 36/36 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1549,4 +1550,21 @@ The user took the four recommended options:
   batch's classics against the book.
 - **Cost:** ~140k a unit at three per reader (resumed runs only), about the B1 core
   rate; the weekly limit, not tokens, set the pace (four days' wait).
+
+### 2026-11-04: HU B2 core Units 17–27
+
+- **Cost fell to ~117k a unit** with no limit hit and the rules settled in the focus
+  file (C1 forms rewritten by the readers themselves, later-B2 skills reported with a
+  count): both readers reported the order cases cleanly, and the user decided them in
+  one question.
+- **Second right answers are now the main reader slip** (6 in this batch): an
+  all-conditional wrong option that is grammatical as a hypothetical, an indicative
+  *Bárki jön is*, a literary dative possessor, *eközben* after a comma. The focus file
+  names them for the next batch.
+- **A fix that only retags can leave the category wrong** (b2-12-03-practice-4: grammar
+  tag, `vocabulary` category); `check_fixes` doesn't run the validator's tag-kind rule,
+  the pre-push validator caught it. Seen once; script it if it recurs.
+- **Common words on no earlier list** (*természetes*, *tűnik*, *előző*, *hisz*): listing
+  them on the first lesson that uses them is cheaper than rewriting connector items
+  around them; 20 this batch.
 
