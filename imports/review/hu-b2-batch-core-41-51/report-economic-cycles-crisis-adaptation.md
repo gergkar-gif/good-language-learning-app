@@ -106,3 +106,75 @@ nyírfaseprűvel | nyírfaseprű | noun | birch broom |
 sajnálkozásra | sajnálkozás | noun | expression of pity or regret |
 
 Fix count Unit 43: 86 fixes.
+
+---
+
+## Unit 45 urban-space-architecture-coexistence (b2-23)
+
+Fixes: fixes-urban-space-architecture-coexistence.json (86). Challenges: challenges-urban-space-architecture-coexistence.json (6). Unmet words: all hits of `unmet-words.js` rewritten (items, options, prompts, reading questions); 23 check-content errors fixed (11 taught-later, 9 length give-aways, 3 tells *Kizárólag*, *teljesen*, *mindenki*).
+
+### 1. Found by reading
+- b2-23-01 grammar tip says "NOT *az épület, ami mellett*"; *ami mellett* is common and correct in speech. Reworded (amely preferred in formal writing). Table row 4 *A városvezetés zöldít, ...* is unnatural; replaced by *A város új parkokat épít, ami felé ...*.
+- b2-23-02 grammar: filler "hallmark of sophisticated B2-C1 Hungarian syntax" removed.
+- b2-23-01-check-1: *Clark Ádám tér ... amely felé a budai hegyek alagútja vezet* is a doubtful present-day/geography claim (check); sentence replaced by a neutral one.
+- b2-23-03-dialogue-1: wrong options were *amely mentén ... amelyet mentén ... harmóniáját nem sérül* (two faults, odd sense); rewritten with one fault each. Same for b2-23-01-dialogue-1/-2, b2-23-02-dialogue-1/-2, b2-23-04 untouched (already one fault), b2-23-05-dialogue-1/-2, b2-23-consolidation-7/-8.
+- b2-23-05-controlled-2: *amelynek révén* would be a second right answer; replaced with *amelyhez képest*.
+- b2-23-consolidation-9: meta question with an absurd wrong option ("*ami* cannot be followed by postpositions under any circumstances" is false); replaced by a plain choice.
+- b2-23-05-reading-1..3 and b2-23-consolidation-3: tells and give-aways removed; reading questions ask what Bébé and Medve say (all answers in the story).
+- Intro of b2-23-01 presents Ottlik's *Buda* as analysed "remekmű"; hedged to an adapted scene (unsure, intro text). The story is an original scene ("Adapted ... from Ottlik Géza, Buda"); story explanations say "Ottlik szövegében"; not changed.
+- Challenges: existing entries generic; six story-based ones written (Bébé, Medve Gábor).
+
+### 2. Metadata
+- b2-23-01: lesson built on `b2-relative-postpositions`, taught in b2-23-02 (11 items, check-content `taught-later`: controlled-2, -3, -4, practice-1, -2, dialogue-1, -2, check-1, writing-1, -2 plus practice items). Retagged to `relative-clauses-aki-ami-amely` (A2 Unit 4); open writing -> unit vocab; `distractor_skills` on wrong case-inflected relative pronouns (`vonatkozoi-nevmas-esetei`) and *amihez képest* (`kepest`). Screens not rewritten.
+- `distractor_skills` added elsewhere: `relative-clauses-aki-ami-amely`, `vonatkozoi-nevmas-esetei`, `how-the-accusative-t-works`.
+- Recaps added: L1 (A2 Unit 4, B1 Unit 21, A1 Unit 18, A2 Unit 18), L2 (B1 Unit 21, A2 Unit 18 *révén*, A1 Unit 9), L4 (B1 Unit 21).
+
+### 3. Goals / checklists
+- All six lessons rewritten (old: "elegant spatial and relational descriptions", "nested possessive relative clauses", "synthesize architectural critique and civic stakeholder perspectives", "defend infrastructure decisions", "noise ordinances" were not practised). canDo = first checklist line.
+
+### 4. Doubtful
+- Move question for the user: `b2-relative-postpositions` is taught in b2-23-02, but b2-23-01 (relative pronoun + postposition) is the natural place; either move `taught_in` to b2-23-01 or accept the retag.
+- Potential forms with plural subjects (*pihenhetnek*, *felújíthatjuk*) are flagged unmet; avoided throughout.
+- b2-23-03 grammar screen has no relative-clause grammar of its own (vocabulary lesson); left.
+- Present-day facts: none beyond the Clark Ádám tér sentence (replaced); *kerület* items generic.
+
+### 5. Dictionary
+várhegy | várhegy | noun | castle hill |
+felnőttkor | felnőttkor | noun | adulthood |
+körfolyosó | körfolyosó | noun | open corridor around a courtyard |
+lakóközösség | lakóközösség | noun | community of residents |
+négyszögletes | négyszögletes | adjective | rectangular |
+négyszögletű | négyszögletű | adjective | rectangular |
+rádiószó | rádiószó | noun | sound of a radio |
+vacsoraillat | vacsoraillat | noun | smell of dinner |
+városkép | városkép | noun | cityscape |
+víziváros | Víziváros | noun | Víziváros (district of Buda) |
+arányérzékről | arányérzék | noun | sense of proportion |
+átvészeli | átvészel | verb | to ride out, to survive |
+avarszaggal | avarszag | noun | smell of fallen leaves |
+felülmúlhatatlan | felülmúlhatatlan | adjective | unsurpassable |
+felvértezve | felvértez | verb | to arm, to equip |
+keretezett | keretez | verb | to frame |
+kontúrjait | kontúr | noun | contour, outline |
+konyhaablakból | konyhaablak | noun | kitchen window |
+kövezetén | kövezet | noun | paving |
+mikrotársadalomban | mikrotársadalom | noun | micro-society |
+míves | míves | adjective | finely crafted |
+öntöttvas | öntöttvas | noun | cast iron |
+őrszem | őrszem | noun | sentry |
+őrzése | őrzés | noun | keeping, guarding |
+rájöhetünk | rájön | verb | to realise, to figure out |
+sietség | sietség | noun | haste |
+sziluettje | sziluett | noun | silhouette |
+téglakémények | téglakémény | noun | brick chimney |
+tetővonala | tetővonal | noun | roofline |
+történelemkönyvek | történelemkönyv | noun | history book |
+útkeresésünk | útkeresés | noun | search for one's way |
+vakolatú | vakolat | noun | plaster, rendering |
+verődtek | verődik | verb | to bounce, to be thrown back |
+Logodi | Logodi | noun | Logodi (street name, Buda) |
+Tabán | Tabán | noun | Tabán (district of Buda) |
+
+Fix count Unit 45: 86 fixes.
+
+## Fix counts: Unit 41: 101; Unit 43: 86; Unit 45: 86.
