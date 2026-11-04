@@ -81,8 +81,12 @@
   "set": {
    "sentence": "A diákok sokat tanulnak, ____ nehéz a vizsga.",
    "hint": "even if",
-   "answer": "még akkor is, ha",
-   "english": "The students study a lot, even if the exam is hard."
+   "answer": null,
+   "english": "The students study a lot, even if the exam is hard.",
+   "answers": [
+    "még akkor is, ha",
+    "akkor is, ha"
+   ]
   },
   "why": "unmet kitartóan, szembesülnek; hint now plain 'even if'",
   "kind": "hungarian"
@@ -220,8 +224,12 @@
   "set": {
    "sentence": "A kis iskola nyitva marad, ____ kevés gyerek jár oda.",
    "hint": "even if",
-   "answer": "még akkor is, ha",
-   "english": "The small school stays open, even if few children go there."
+   "answer": null,
+   "english": "The small school stays open, even if few children go there.",
+   "answers": [
+    "még akkor is, ha",
+    "akkor is, ha"
+   ]
   },
   "why": "unmet folytatja, szűkülnek",
   "kind": "hungarian"
@@ -341,10 +349,14 @@
   "file": "content/hu/exercises/b2/b2-27-02-ex.json",
   "id": "b2-27-02-practice-1",
   "set": {
-   "sentence": "____ felajánlottak volna nekik új lakást, a család nem hagyta volna el a falut.",
+   "sentence": "____ felajánlottak volna is nekik új lakást, a család nem hagyta volna el a falut.",
    "hint": "even if (past)",
-   "answer": "Még ha",
-   "english": "Even if they had been offered a new flat, the family would not have left the village."
+   "answer": null,
+   "english": "Even if they had been offered a new flat, the family would not have left the village.",
+   "answers": [
+    "Még ha",
+    "Ha"
+   ]
   },
   "why": "'ha' alone was also right (akkor sem …, ha …); clause first so 'még ha' is needed",
   "kind": "hungarian"
@@ -469,7 +481,9 @@
    "answer": null,
    "answers": [
     "Még ha",
-    "még ha"
+    "még ha",
+    "Ha",
+    "ha"
    ],
    "english": "Even if fewer children had gone to the school, the teacher would not have left it either."
   },
@@ -562,10 +576,14 @@
   "set": {
    "sentence": "____ az iskola kicsi, a gyerekek sokat tanulnak.",
    "hint": "apart from the fact that",
-   "answer": "Attól eltekintve, hogy",
+   "answer": null,
    "english": "Apart from the fact that the school is small, the children learn a lot.",
    "teaches": [
     "b2-cataphoric-clauses"
+   ],
+   "answers": [
+    "Attól eltekintve, hogy",
+    "Eltekintve attól, hogy"
    ]
   },
   "why": "unmet nehezítik; retag to the cataphoric skill",
@@ -731,10 +749,14 @@
   "set": {
    "sentence": "A fesztivál nagy siker volt, ____ az eső miatt elmaradt a koncert.",
    "hint": "apart from the fact that",
-   "answer": "attól eltekintve, hogy",
+   "answer": null,
    "english": "The festival was a great success, apart from the fact that the concert was cancelled because of the rain.",
    "teaches": [
     "b2-cataphoric-clauses"
+   ],
+   "answers": [
+    "attól eltekintve, hogy",
+    "eltekintve attól, hogy"
    ]
   },
   "why": "unmet szabadtéri, megnyitó",
@@ -1288,7 +1310,7 @@
   "file": "content/hu/exercises/b2/b2-27-05-ex.json",
   "id": "b2-27-05-reading-3",
   "set": {
-   "question": "Mit mond az édesanya a végén, amikor azt mondja: 'anyád könnyű álmot ígér'?",
+   "question": "Mit akar az édesanya, amikor a végén azt mondja: 'anyád könnyű álmot ígér'?",
    "options": [
     "Azt szeretné, ha a fia jól aludna.",
     "Azt szeretné, ha a fia korán felkelne.",
@@ -1343,12 +1365,14 @@
   "file": "content/hu/exercises/b2/b2-27-consolidation-ex.json",
   "id": "b2-27-consolidation-6",
   "set": {
-   "sentence": "____ kevesebb pénzt kaptak volna, a tanárok nem hagyták volna ott az iskolát.",
+   "sentence": "____ kevesebb pénzt kaptak volna is, a tanárok nem hagyták volna ott az iskolát.",
    "hint": "even if (past)",
    "answer": null,
    "answers": [
     "Még ha",
-    "még ha"
+    "még ha",
+    "Ha",
+    "ha"
    ],
    "english": "Even if they had been paid less, the teachers would not have left the school."
   },
