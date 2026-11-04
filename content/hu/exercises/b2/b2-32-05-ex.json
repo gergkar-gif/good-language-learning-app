@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What is a 'fordulópont' in sports journalism?",
       "options": [
-        "a decisive moment or critical event that completely alters the momentum of the game",
-        "the painted center circle where kickoff takes place",
-        "the turnstile at the stadium gate where tickets are scanned"
+        "a moment that changes the course of the match",
+        "the moment when the referee starts the match",
+        "the moment when the fans enter the stadium"
       ],
       "correct": 0,
       "teaches": [
@@ -25,8 +25,8 @@
       "question": "Which term denotes a spectacular, extraordinary athletic save or accomplishment?",
       "options": [
         "bravúr",
-        "szabálytalanság",
-        "vereség"
+        "vereség",
+        "döntetlen"
       ],
       "correct": 0,
       "teaches": [
@@ -71,9 +71,9 @@
       "stage": "controlled",
       "question": "Select the sentence using consecutive degree in match analysis:",
       "options": [
-        "A kapus bravúrjai olyannyira elbizonytalanították a csatárokat, hogy nem mertek kapura lőni.",
-        "A kapus bravúrjai olyannyira elbizonytalanították a csatárokat mert nem mertek lőni.",
-        "A kapus bravúrjai olyannyira elbizonytalanították a csatárokat ha nem mertek lőni."
+        "A kapus bravúrjai olyannyira zavarták a csatárt, hogy nem mert lőni.",
+        "A kapus bravúrjai olyannyira zavarták a csatárt, mert nem mert lőni.",
+        "A kapus bravúrjai olyannyira zavarták a csatárt, ha nem mert lőni."
       ],
       "correct": 0,
       "teaches": [
@@ -85,28 +85,34 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Complete the live commentary sentence: 'A védő lefutotta a támadót, majd ____ a labdát a kapu elől'.",
+      "question": "Complete the live commentary sentence: 'A védő lefutotta a támadót, majd ____ a labdát'.",
       "options": [
-        "kicsúsztatta",
-        "csúsztatott ki",
-        "ki kicsúsztatta"
+        "átvette",
+        "vette át",
+        "átvett"
       ],
       "correct": 0,
       "teaches": [
-        "annyira-hogy"
-      ]
+        "prefix-word-order"
+      ],
+      "distractor_skills": {
+        "2": "definite-vs-indefinite-conjugation"
+      }
     },
     {
       "id": "b2-32-05-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A riporter hangja ____ felgyorsult a hajrában, hogy a nézők alig győzték követni az eseményeket.",
+      "sentence": "A riporter hangja ____ gyors volt, hogy alig lehetett követni.",
       "hint": "so much",
-      "answer": "olyannyira",
-      "english": "The reporter's voice accelerated so much in the final minutes that the viewers could barely keep up with the events.",
+      "english": "The reporter's voice was so fast that one could hardly follow it.",
       "teaches": [
         "annyira-hogy"
+      ],
+      "answers": [
+        "olyannyira",
+        "annyira"
       ]
     },
     {
@@ -114,46 +120,39 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A mérkőzés irama ____ mértékben fokozódott, hogy mindkét gárda teljesen feladta a védelmi óvatosságot.",
+      "sentence": "A kommentátor ____ mértékben izgatott volt, hogy a hangja megremegett.",
       "hint": "in such",
-      "answer": "oly",
-      "english": "The tempo of the match escalated in such degree that both sides completely abandoned defensive caution.",
+      "english": "The commentator was so excited that his voice trembled.",
       "teaches": [
         "annyira-hogy"
+      ],
+      "answers": [
+        "oly",
+        "olyan"
       ]
     },
     {
       "id": "b2-32-05-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
         "kapus",
         "hatalmas",
         "bravúrral",
-        "hárította",
-        "a",
-        "felső",
-        "sarokba",
-        "tartó",
-        "lövést."
+        "mentett."
       ],
       "solution": [
         "A",
         "kapus",
         "hatalmas",
         "bravúrral",
-        "hárította",
-        "a",
-        "felső",
-        "sarokba",
-        "tartó",
-        "lövést."
+        "mentett."
       ],
-      "english": "The goalkeeper parried the shot heading for the top corner with an enormous save.",
+      "english": "The goalkeeper saved with a huge feat.",
       "teaches": [
-        "annyira-hogy"
+        "b2-competition-mastery-peak-performance-vocab"
       ]
     },
     {
@@ -161,10 +160,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A televíziós ____ milliók kísérték figyelemmel a magyar válogatott történelmi győzelmét.",
+      "sentence": "Az ____ során a riporter minden részletre kitért.",
       "hint": "live broadcast",
-      "answer": "élő közvetítésben",
-      "english": "In the live broadcast millions followed with attention the historic victory of the Hungarian national team.",
+      "answer": "élő közvetítés",
+      "english": "During the live broadcast the reporter addressed every detail.",
       "teaches": [
         "b2-competition-mastery-peak-performance-vocab"
       ]
@@ -200,12 +199,12 @@
     {
       "id": "b2-32-05-dialogue-1",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "vocabulary",
       "stage": "dialogue",
       "prompt": [
         {
           "speaker": "Szerkesztő",
-          "text": "Hogyan foglalnád össze a mai derbi tanulságait az esti mérkőzéselemzésben?"
+          "text": "Milyen volt a mai mérkőzés?"
         },
         {
           "speaker": "Szakkommentátor",
@@ -213,14 +212,18 @@
         }
       ],
       "options": [
-        "A találkozó igazi fordulópontja a második félidő elején jött el, és bár a vége döntetlen lett, a kapusok bravúrjai emlékezetesek maradnak.",
-        "A találkozó igazi fordulópontja a második félidő elején jött el, és bár a vége döntetlen lett, a kapusok bravúrjai emlékezetesek maradnának.",
-        "A találkozó igazi fordulópontja a második félidő elején eljött, és minthogy a vége döntetlen lett, a kapusok bravúrjai emlékezetesre maradnak."
+        "A fordulópont a kiállítás volt, és a vége döntetlen lett.",
+        "A fordulópont a kiállítás volt, és a vége döntetlen lenne.",
+        "A fordulópont a kiállítás volt, és a vége döntetlent lett."
       ],
       "correct": 0,
       "teaches": [
-        "annyira-hogy"
-      ]
+        "b2-competition-mastery-peak-performance-vocab"
+      ],
+      "distractor_skills": {
+        "1": "nek-conditional",
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-32-05-dialogue-2",
@@ -230,7 +233,7 @@
       "prompt": [
         {
           "speaker": "Szurkoló",
-          "text": "Igazságosnak tartod a mai döntetlen eredményt a sípszó után?"
+          "text": "Igazságos a döntetlen?"
         },
         {
           "speaker": "Tudósító",
@@ -238,9 +241,9 @@
         }
       ],
       "options": [
-        "Feltétlenül! Mindkét csapat oly mértékben kitette a szívét a pályára, hogy egyik fél sem érdemelt volna vereséget.",
-        "Feltétlenül! Mindkét csapat oly mértékben kitette a szívét a pályára, mert egyik fél sem érdemelt volna vereséget.",
-        "Feltétlenül! Mindkét csapat oly mértékben tette ki a szívét a pályára, ha egyik fél sem érdemelne vereséget."
+        "Igen! Mindkét csapat oly mértékben küzdött, hogy egyik sem vesztett.",
+        "Igen! Mindkét csapat oly mértékben küzdött, mert egyik sem vesztett.",
+        "Igen! Mindkét csapat oly mértékben küzdött, ha egyik sem vesztett."
       ],
       "correct": 0,
       "teaches": [
@@ -255,11 +258,11 @@
       "template": [
         {
           "prompt": "Write a dramatic sentence for an 'élő közvetítés' using dynamic preverb verbs (pl. 'átvesz', 'belő').",
-          "answer": "Itt a kontra: a csatár mellre veszi a labdát, egyetlen csellel kicselezi a bekkeket, és védhetetlenül belövi a bal felsőbe!"
+          "answer": "Itt a csatár: átveszi a labdát, kicselezi a kapust, és belövi a hálóba!"
         }
       ],
       "teaches": [
-        "annyira-hogy"
+        "b2-competition-mastery-peak-performance-vocab"
       ]
     },
     {
@@ -270,11 +273,11 @@
       "template": [
         {
           "prompt": "Write an analytical sentence for a 'mérkőzéselemzés' using 'fordulópont' and 'bravúr'.",
-          "answer": "A mérkőzés legfőbb fordulópontját a büntető jelentette, amelyet a kapus elképesztő bravúrral tolt a lécre, megőrizve a döntetlent."
+          "answer": "A mérkőzés fordulópontja a kiállítás volt, és a kapus bravúrjai után a vége döntetlen lett."
         }
       ],
       "teaches": [
-        "annyira-hogy"
+        "b2-competition-mastery-peak-performance-vocab"
       ]
     },
     {
@@ -282,12 +285,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A döntő kimenetele ____ bizonytalan volt, hogy az utolsó másodpercig senki sem mert győztest hirdetni.",
+      "sentence": "A döntő kimenetele ____ bizonytalan volt, hogy a végéig senki sem tudta, ki nyer.",
       "hint": "so much",
-      "answer": "olyannyira",
-      "english": "The outcome of the final was so uncertain that until the final second nobody dared declare a winner.",
+      "english": "The outcome of the final was so uncertain that until the end nobody knew who would win.",
       "teaches": [
         "annyira-hogy"
+      ],
+      "answers": [
+        "olyannyira",
+        "annyira"
       ]
     },
     {
@@ -311,11 +317,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Hogyan értelmezi Esterházy Péter a futballpályát és a játékot a szövegben?",
+      "question": "Hogyan értelmezi Esterházy Péter a játékot a történetben?",
       "options": [
-        "A létezés geometriájaként, ahol a fizikai mozgás, a gondolkodás és a költészet találkozik.",
-        "Pusztán gazdasági vállalkozásként, amely a televíziós jogdíjakból él.",
-        "Szabálytalan harcként, ahol csak a nyers fizikai erőszak számít."
+        "A létezés geometriájaként, ahol a mozgás és a gondolat találkozik.",
+        "Csak versengésként, ahol a nyers erő a legfontosabb.",
+        "Egyszerű testi ügyességként, ahol csak a gyorsaság számít."
       ],
       "correct": 0
     },
@@ -324,11 +330,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Miért tekinti a kapus a büntetőterületet a legmagányosabb helynek a világon?",
+      "question": "Miért a legmagányosabb hely a kapu előtti tér a kapus szerint?",
       "options": [
-        "Mert egyetlen hibája azonnal gólt eredményez, míg a csatárnak több rontás is megbocsátható.",
-        "Mert a kapusnak tilos beszélnie a csapattársaival a szabályok szerint.",
-        "Mert a kapus soha nem kap fizetést a klubvezetéstől."
+        "Mert a kapus egy hibát sem követhet el, a csatár pedig hibázhat.",
+        "Mert a kapus nem szólhat a csapattársaihoz a pályán.",
+        "Mert a kapus kevesebbet kap, mint a többi játékos."
       ],
       "correct": 0
     },
@@ -337,11 +343,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Mit tartanak a szereplők elengedhetetlennek a csúcsteljesítmény eléréséhez?",
+      "question": "Mit mond a kapus a csúcsteljesítményről?",
       "options": [
-        "Az abszolút mentális fókuszt és geometriai intuíciót, amely kizárja a külvilág zaját.",
-        "A folyamatos veszekedést a játékvezetővel a döntések megváltoztatása érdekében.",
-        "A meccs előtti nehéz, zsíros ételek bőséges fogyasztását."
+        "Hogy nem elég az állóképesség: nagyon kell összpontosítani.",
+        "Hogy csak az erő számít, a figyelem nem fontos.",
+        "Hogy a játékosnak vitatkoznia kell a bíróval."
       ],
       "correct": 0
     }

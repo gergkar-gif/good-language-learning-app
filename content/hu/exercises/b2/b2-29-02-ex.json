@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Which case is governed by the verb 'törekszik'?",
+      "question": "What does 'törekszik' mean?",
       "options": [
-        "sublative (-ra/-re)",
-        "allative (-hoz/-hez/-höz)",
-        "dative (-nak/-nek)"
+        "to strive for something",
+        "to give something up",
+        "to wait for something"
       ],
       "correct": 0,
       "teaches": [
@@ -69,44 +69,52 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the correct case suffix: 'A két állam a feszültség békés rendezésé____ törekszik.'",
+      "question": "Which form completes the sentence? A két állam a feszültség békés ____ törekszik. (The two states aim at a peaceful settlement of the tension.)",
       "options": [
-        "-re",
-        "-hez",
-        "-től"
+        "rendezésére",
+        "rendezéséhez",
+        "rendezésétől"
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
-      ]
+        "verb-government-ra-re"
+      ],
+      "distractor_skills": {
+        "1": "hoz-suffix",
+        "2": "tol-tol"
+      }
     },
     {
       "id": "b2-29-02-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which case suffix is governed by 'hozzájárul' in 'Jelentősen hozzájárult a stabilitás____'?",
+      "question": "Which form completes the sentence? Jelentősen hozzájárult a ____. (He contributed significantly to stability.)",
       "options": [
-        "-hoz",
-        "-ra",
-        "-val"
+        "stabilitáshoz",
+        "stabilitásra",
+        "stabilitással"
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
-      ]
+        "verb-government-hoz-hez"
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "val-vel"
+      }
     },
     {
       "id": "b2-29-02-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A delegáció a korábbi bilaterális megállapodásokra ____ a vitában.",
-      "hint": "referred / invoked",
-      "answer": "hivatkozott",
-      "english": "The delegation referred to prior bilateral agreements in the debate.",
+      "sentence": "A felek a korábbi megállapodásra ____ a vitában.",
+      "hint": "hivatkozik, 3pl past",
+      "answer": "hivatkoztak",
+      "english": "The parties referred to the earlier agreement in the debate.",
       "teaches": [
-        "diplomatic-softening"
+        "verb-government-ra-re"
       ]
     },
     {
@@ -119,7 +127,7 @@
       "answer": "mellett",
       "english": "The prime minister stated that his country committed itself to democratic values.",
       "teaches": [
-        "diplomatic-softening"
+        "postpositions-basic"
       ]
     },
     {
@@ -131,7 +139,7 @@
         "A",
         "felek",
         "a",
-        "konfliktus",
+        "vita",
         "diplomáciai",
         "megoldására",
         "törekednek."
@@ -140,53 +148,53 @@
         "A",
         "felek",
         "a",
-        "konfliktus",
+        "vita",
         "diplomáciai",
         "megoldására",
         "törekednek."
       ],
-      "english": "The parties strive for the diplomatic solution of the conflict.",
+      "english": "The parties strive for a diplomatic solution of the dispute.",
       "teaches": [
-        "diplomatic-softening"
+        "verb-government-ra-re"
       ]
     },
     {
       "id": "b2-29-02-practice-3",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "practice",
-      "sentence": "Az új gazdasági csomag hatékonyan fog ____ a regionális fejlődéshez.",
+      "sentence": "Az új program sokat fog ____ a város fejlődéséhez.",
       "hint": "contribute",
       "answer": "hozzájárulni",
-      "english": "The new economic package will effectively contribute to regional development.",
+      "english": "The new programme will contribute a lot to the development of the city.",
       "teaches": [
-        "b2-diplomacy-alliances-sovereignty-vocab"
+        "verb-government-hoz-hez"
       ]
     },
     {
       "id": "b2-29-02-practice-4",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "biztonságpolitika",
+        "Az",
+        "ország",
         "a",
-        "megbízható",
+        "jó",
         "szövetségesekre",
         "támaszkodik."
       ],
       "solution": [
-        "A",
-        "biztonságpolitika",
+        "Az",
+        "ország",
         "a",
-        "megbízható",
+        "jó",
         "szövetségesekre",
         "támaszkodik."
       ],
-      "english": "Security policy relies on reliable allies.",
+      "english": "The country relies on good allies.",
       "teaches": [
-        "b2-diplomacy-alliances-sovereignty-vocab"
+        "verb-government-ra-re"
       ]
     },
     {
@@ -197,7 +205,7 @@
       "prompt": [
         {
           "speaker": "Diplomáciai tudósító",
-          "text": "Milyen irányt követ a nagykövetség a válságkezelésben?"
+          "text": "Mire törekszik a kormány a válságban?"
         },
         {
           "speaker": "Külügyi tanácsos",
@@ -205,14 +213,18 @@
         }
       ],
       "options": [
-        "A nagykövetség mindvégig a békés megegyezésre törekszik, és elkötelezte magát a nemzetközi jog normái mellett.",
-        "A nagykövetség mindvégig a békés megegyezésben törekszik, és elkötelezte magát a nemzetközi jog normái mellett.",
-        "A nagykövetség mindvégig a békés megegyezésre törekszik, és elkötelezte magát a nemzetközi jog normáira mellett."
+        "A kormány a békés megegyezésre törekszik, és elkötelezte magát a nemzetközi jog mellett.",
+        "A kormány a békés megegyezésben törekszik, és elkötelezte magát a nemzetközi jog mellett.",
+        "A kormány a békés megegyezésre törekszik, és elkötelezte magát a nemzetközi jogra mellett."
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
-      ]
+        "verb-government-ra-re"
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "ra-re"
+      }
     },
     {
       "id": "b2-29-02-dialogue-2",
@@ -222,7 +234,7 @@
       "prompt": [
         {
           "speaker": "Külügyminiszter",
-          "text": "Hogyan viszonyulnak a partnereink a közös alap létrehozásához?"
+          "text": "Mit mondanak a partnerek a közös alapról?"
         },
         {
           "speaker": "Főosztályvezető",
@@ -230,14 +242,18 @@
         }
       ],
       "options": [
-        "Valamennyi tagállam kész hozzájárulni a pénzügyi kerethez, amennyiben világosak az ellenőrzési mechanizmusok.",
-        "Valamennyi tagállam kész hozzájárulni a pénzügyi keretre, amennyiben világosak az ellenőrzési mechanizmusok.",
-        "Valamennyi tagállam kész hozzájárulni a pénzügyi kerethez, amennyiben világosak lennének az ellenőrzési mechanizmusokat."
+        "A partnerek készek hozzájárulni a közös alaphoz, ha világosak a szabályok.",
+        "A partnerek készek hozzájárulni a közös alapra, ha világosak a szabályok.",
+        "A partnerek készek hozzájárulni a közös alapot, ha világosak a szabályok."
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
-      ]
+        "verb-government-hoz-hez"
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-29-02-writing-1",
@@ -246,12 +262,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'törekszik' (-ra/-re) describing peace negotiations.",
-          "answer": "A két delegáció a határok biztonságát garantáló tartós egyezményre törekszik."
+          "prompt": "Write a sentence with 'törekszik' (-ra/-re) about peace talks.",
+          "answer": "A két fél a békés megegyezésre törekszik."
         }
       ],
       "teaches": [
-        "diplomatic-softening"
+        "verb-government-ra-re"
       ]
     },
     {
@@ -261,12 +277,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'hozzájárul' (-hoz/-hez/-höz) in an international cooperation context.",
-          "answer": "A humanitárius segélyszállítmány nagyban hozzájárult a polgári lakosság szenvedéseinek enyhítéséhez."
+          "prompt": "Write a sentence with 'hozzájárul' (-hoz/-hez/-höz): everyone contributed to the success of the agreement.",
+          "answer": "Mindenki hozzájárult a megegyezés sikeréhez."
         }
       ],
       "teaches": [
-        "diplomatic-softening"
+        "verb-government-hoz-hez"
       ]
     },
     {
@@ -274,12 +290,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A kormány határozottan elkötelezte magát a klímavédelmi egyezmény betartása ____.",
-      "hint": "in commitment to",
+      "sentence": "A kormány elkötelezte magát a béke ____.",
+      "hint": "alongside / in support of",
       "answer": "mellett",
-      "english": "The government firmly committed itself to upholding the climate agreement.",
+      "english": "The government committed itself to peace.",
       "teaches": [
-        "diplomatic-softening"
+        "postpositions-basic"
       ]
     },
     {
@@ -287,7 +303,7 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which verb requires the sublative case (-ra/-re) to express aiming toward a target?",
+      "question": "Which verb takes the ending -ra/-re (as in 'a békés megegyezésre')?",
       "options": [
         "törekszik",
         "hozzájárul",

@@ -37,11 +37,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "recognize",
-      "question": "What does 'egyensúlypolitika' aim to achieve in foreign policy?",
+      "question": "What does 'egyensúlypolitika' aim at?",
       "options": [
-        "maneuvering between powerful rivals to avoid domination by any single power",
-        "spending equal amounts of state funds on road maintenance and theater subsidies",
-        "enforcing physical fitness standards among newly recruited diplomats"
+        "balancing between strong states so that none of them rules the country",
+        "joining the strongest state and always following its decisions",
+        "staying out of all contact with other states in the world"
       ],
       "correct": 0,
       "teaches": [
@@ -53,11 +53,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Which sentence illustrates correct diplomatic conditional hedging with 'kívánatosnak tartaná'?",
+      "question": "Which sentence is correct?",
       "options": [
-        "A küldöttség kifejezetten kívánatosnak tartaná a fegyverszüneti megállapodás mielőbbi meghosszabbítását.",
-        "A küldöttség kívánatosnak tartja a vacsorát.",
-        "Kívánatos tartaná a miniszter a repülőtér lezárását azonnal."
+        "A küldöttség kívánatosnak tartaná a megállapodás gyors aláírását.",
+        "A küldöttség kívánatos tartaná a megállapodás gyors aláírását.",
+        "A küldöttség kívánatosnak tartaná a megállapodás gyors aláírása."
       ],
       "correct": 0,
       "teaches": [
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A területi integritás feladása olyan ____, amelyet a kormány semmilyen nyomásra nem fog átlépni.",
+      "sentence": "Az ország határainak feladása olyan ____, amelyet a kormány nem lép át.",
       "hint": "red line",
       "answer": "vörös vonal",
-      "english": "Abandoning territorial integrity is a red line that the government will not cross under any pressure.",
+      "english": "Giving up the country's borders is a red line that the government will not cross.",
       "teaches": [
         "b2-diplomacy-alliances-sovereignty-vocab"
       ]
@@ -82,10 +82,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A tárgyalások korai szakaszában rendkívül ____ lenne elkerülni a sajtó előtti éles nyilatkozatokat.",
+      "sentence": "A tárgyalások elején rendkívül ____ lenne elkerülni az éles nyilatkozatokat.",
       "hint": "advisable",
       "answer": "célszerű",
-      "english": "In the early phase of the negotiations, it would be extremely advisable to avoid sharp declarations before the press.",
+      "english": "At the start of the negotiations it would be extremely advisable to avoid sharp statements.",
       "teaches": [
         "diplomatic-softening"
       ]
@@ -95,12 +95,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A nemzetközi közösség elkötelezte magát a kis államok szuverenitásának tiszteletben tartása ____.",
-      "hint": "in commitment to",
+      "sentence": "A kormány elkötelezte magát a kis államok szuverenitása ____.",
+      "hint": "alongside / in support of",
       "answer": "mellett",
-      "english": "The international community committed itself to respecting the sovereignty of small states.",
+      "english": "The government committed itself to the sovereignty of small states.",
       "teaches": [
-        "diplomatic-softening"
+        "postpositions-basic"
       ]
     },
     {
@@ -108,11 +108,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'indokolt volna' chosen in formal diplomatic notes instead of 'kell'?",
+      "question": "Which sentence is the politest way to say 'The text must be clarified'?",
       "options": [
-        "Because it softens a requirement into an objective, polite recommendation, preserving negotiation goodwill.",
-        "Because 'kell' is grammatically forbidden in official written Hungarian.",
-        "Because 'indokolt volna' can only be used with past tense verbs."
+        "Indokolt volna pontosítani a szöveget.",
+        "Pontosítani kell azt a szöveget.",
+        "Pontosítsák a szöveget!"
       ],
       "correct": 0,
       "teaches": [
@@ -127,38 +127,46 @@
       "prompt": [
         {
           "speaker": "Diplomáciai tudósító",
-          "text": "Hogyan értékeli a két miniszterelnök csúcstalálkozóját Bánffy regényének szellemében?"
+          "text": "Mit mondott a kormány a találkozó után?"
         },
         {
-          "speaker": "Történész",
+          "speaker": "Külügyi szóvivő",
           "text": "____"
         }
       ],
       "options": [
-        "A felek elkötelezték magukat a békés kompromisszum mellett, miközben világossá tették a szuverenitásuk védelmét garantáló vörös vonalakat.",
-        "A felek elkötelezték magukat a békés kompromisszumra mellett, miközben világossá tették a szuverenitásuk védelmét garantáló vörös vonalakat.",
-        "A felek elkötelezték magukat a békés kompromisszum mellett, amíg világossá tették a szuverenitásuk védelmét garantáló vörös vonalakban."
+        "A kormány elkötelezte magát a békés kompromisszum mellett, és világossá tette a vörös vonalait.",
+        "A kormány elkötelezte magát a békés kompromisszumra mellett, és világossá tette a vörös vonalait.",
+        "A kormány elkötelezte magát a békés kompromisszum mellett, és világossá tette a vörös vonalaiban."
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
-      ]
+        "postpositions-basic"
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b2-29-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Select the sentence with correct case government for both 'törekszik' and 'hozzájárul':",
+      "question": "Which sentence is correct?",
       "options": [
-        "A felek a megegyezésre törekszenek, és készek hozzájárulni a regionális stabilitáshoz.",
-        "A felek a megegyezéshez törekszenek, és készek hozzájárulni a stabilitásra.",
-        "A felek megegyezéstől törekszenek, és hozzájárulnak a stabilitásban."
+        "A felek a megegyezésre törekszenek, és hozzájárulnak a stabilitáshoz.",
+        "A felek a megegyezésre törekszenek, és hozzájárulnak a stabilitásra.",
+        "A felek a megegyezéshez törekszenek, és hozzájárulnak a stabilitáshoz."
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
-      ]
+        "verb-government-hoz-hez"
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "hoz-suffix"
+      }
     },
     {
       "id": "b2-29-consolidation-10",
@@ -168,26 +176,24 @@
       "tiles": [
         "A",
         "kormány",
-        "mindvégig",
+        "mindig",
         "a",
         "békés",
-        "diplomáciai",
         "kompromisszumra",
-        "törekedett."
+        "törekszik."
       ],
       "solution": [
         "A",
         "kormány",
-        "mindvégig",
+        "mindig",
         "a",
         "békés",
-        "diplomáciai",
         "kompromisszumra",
-        "törekedett."
+        "törekszik."
       ],
-      "english": "The government strove throughout for a peaceful diplomatic compromise.",
+      "english": "The government always strives for a peaceful compromise.",
       "teaches": [
-        "diplomatic-softening"
+        "verb-government-ra-re"
       ]
     },
     {
@@ -199,9 +205,9 @@
         "A",
         "zárónyilatkozatban",
         "a",
-        "résztvevők",
-        "megerősítették",
-        "elkötelezettségüket",
+        "kormány",
+        "elkötelezte",
+        "magát",
         "a",
         "megbékélés",
         "mellett."
@@ -210,16 +216,16 @@
         "A",
         "zárónyilatkozatban",
         "a",
-        "résztvevők",
-        "megerősítették",
-        "elkötelezettségüket",
+        "kormány",
+        "elkötelezte",
+        "magát",
         "a",
         "megbékélés",
         "mellett."
       ],
-      "english": "In the final communique, the participants reaffirmed their commitment to reconciliation.",
+      "english": "In the final communique the government committed itself to reconciliation.",
       "teaches": [
-        "diplomatic-softening"
+        "postpositions-basic"
       ]
     },
     {
@@ -229,8 +235,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause diplomatic argument using 'célszerű lenne', 'hozzájárul (-hoz/-hez/-höz)', and 'vörös vonal'.",
-          "answer": "Bár a tárgyalások e szakaszában célszerű lenne bizonyos gazdasági engedményeket tenni, a nemzeti szuverenitás korlátozása vörös vonalat jelent; ezért a delegáció csak olyan feltételekhez hajlandó hozzájárulni, amelyek garantálják az ország biztonságát."
+          "prompt": "Write one sentence with 'célszerű lenne' and 'vörös vonal': it would be advisable to talk, but the protection of the borders is a red line.",
+          "answer": "Célszerű lenne tárgyalni, de a határaink védelme vörös vonal."
         }
       ],
       "teaches": [

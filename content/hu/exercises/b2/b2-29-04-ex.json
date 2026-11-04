@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What does 'szuverenitás' represent in public law and international relations?",
+      "question": "What does 'szuverenitás' mean?",
       "options": [
-        "a state's supreme, independent authority to govern its territory and people without external control",
-        "a monetary subsidy distributed to small organic farms",
-        "a ceremonial medal awarded to retired ambassadors"
+        "a state's right to decide its own affairs freely",
+        "a state's wish to join a larger alliance",
+        "the rule that all states must have the same laws"
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Which term denotes the diplomatic policy of avoiding one-sided dependence by balancing between powers?",
+      "question": "Which term means 'balancing between powers so as not to depend on one of them'?",
       "options": [
         "egyensúlypolitika",
-        "fellebbezés",
-        "kivándorlás"
+        "szövetségi rendszer",
+        "érdekszféra"
       ],
       "correct": 0,
       "teaches": [
@@ -77,7 +77,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
+        "hypothetical-ha-conditional"
       ]
     },
     {
@@ -85,71 +85,72 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the conditional verb form: 'A miniszterelnök nem ____ kockára a nemzeti szuverenitást egyetlen nagyhatalom kedvéért sem.'",
+      "question": "Which verb form completes the sentence? Az ország nem ____ kockára a szuverenitást egyetlen nagyhatalom kedvéért sem. (The country would not stake its sovereignty for any great power.)",
       "options": [
         "tenné",
         "tesz",
-        "tette volna"
+        "tett volna"
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
-      ]
+        "nek-conditional"
+      ],
+      "distractor_skills": {
+        "2": "past-conditional-volna"
+      }
     },
     {
       "id": "b2-29-04-controlled-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A többoldalú diplomáciai kapcsolatok ápolásával a kormány jelentősen bővíteni tudná a nemzetközi ____.",
-      "hint": "room for maneuver",
-      "answer": "mozgásterét",
-      "english": "By cultivating multilateral diplomatic relations, the government would be able to significantly expand its international room for maneuver.",
+      "sentence": "Ha az ország sok országgal tart kapcsolatot, nő a nemzetközi ____.",
+      "hint": "room for maneuver, possessed",
+      "answer": "mozgástere",
+      "english": "If a country keeps contact with many countries, its international room for manoeuvre grows.",
       "teaches": [
-        "diplomatic-softening"
+        "b2-diplomacy-alliances-sovereignty-vocab"
       ]
     },
     {
       "id": "b2-29-04-practice-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Ha az ország nem tartozna egy stabil ____, sokkal sebezhetőbb lenne a külső nyomással szemben.",
+      "sentence": "Ha az ország nem tartozna egy ____, nem lenne biztonságban.",
       "hint": "alliance system",
       "answer": "szövetségi rendszerhez",
-      "english": "If the country did not belong to a stable alliance system, it would be much more vulnerable against external pressure.",
+      "english": "If the country did not belong to an alliance system, it would not be safe.",
       "teaches": [
-        "diplomatic-softening"
+        "b2-diplomacy-alliances-sovereignty-vocab"
       ]
     },
     {
       "id": "b2-29-04-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
         "kis",
         "államok",
         "számára",
-        "létfontosságú",
+        "fontos",
         "a",
-        "szuverenitás",
-        "megőrzése."
+        "szuverenitás."
       ],
       "solution": [
         "A",
         "kis",
         "államok",
         "számára",
-        "létfontosságú",
+        "fontos",
         "a",
-        "szuverenitás",
-        "megőrzése."
+        "szuverenitás."
       ],
-      "english": "For small states, preserving sovereignty is of vital importance.",
+      "english": "Sovereignty is important for small states.",
       "teaches": [
-        "diplomatic-softening"
+        "b2-diplomacy-alliances-sovereignty-vocab"
       ]
     },
     {
@@ -157,10 +158,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A történelmi tapasztalatok arra intenek, hogy az egyoldalú függés egyetlen ____ sem fenntartható.",
+      "sentence": "Az ország egy nagyhatalom ____ van.",
       "hint": "sphere of influence",
-      "answer": "érdekszférában",
-      "english": "Historical experiences warn that one-sided dependence is not sustainable in any sphere of influence.",
+      "answer": "érdekszférájában",
+      "english": "The country is in the sphere of influence of a great power.",
       "teaches": [
         "b2-diplomacy-alliances-sovereignty-vocab"
       ]
@@ -171,26 +172,22 @@
       "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "A",
-        "hagyományos",
+        "Az",
         "egyensúlypolitika",
         "célja",
         "a",
         "békés",
-        "együttélés",
-        "biztosítása."
+        "együttélés."
       ],
       "solution": [
-        "A",
-        "hagyományos",
+        "Az",
         "egyensúlypolitika",
         "célja",
         "a",
         "békés",
-        "együttélés",
-        "biztosítása."
+        "együttélés."
       ],
-      "english": "The goal of traditional balance-of-power policy is ensuring peaceful coexistence.",
+      "english": "The aim of balance-of-power policy is peaceful coexistence.",
       "teaches": [
         "b2-diplomacy-alliances-sovereignty-vocab"
       ]
@@ -203,7 +200,7 @@
       "prompt": [
         {
           "speaker": "Politológus",
-          "text": "Hogyan érvényesítheti érdekeit egy közép-európai állam a globális versengésben?"
+          "text": "Mit tehet egy kis állam két nagyhatalom között?"
         },
         {
           "speaker": "Biztonságpolitikai szakértő",
@@ -211,14 +208,18 @@
         }
       ],
       "options": [
-        "A szuverenitás megőrzése mellett aktív egyensúlypolitikát kell folytatnia, kihasználva a szövetségi rendszer adta lehetőségeket.",
-        "A szuverenitás megőrzésében mellett aktív egyensúlypolitikát kell folytatnia, kihasználva a szövetségi rendszer adta lehetőségeket.",
-        "A szuverenitás megőrzése mellett aktív egyensúlypolitikára kell folytatnia, kihasználva a szövetségi rendszer adta lehetőségeket."
+        "A szövetségeseire támaszkodhat, és megtarthatja a szuverenitását.",
+        "A szövetségeitől támaszkodhat, és megtarthatja a szuverenitását.",
+        "A szövetségeseire támaszkodhat, és megtarthatja a szuverenitására."
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
-      ]
+        "verb-government-ra-re"
+      ],
+      "distractor_skills": {
+        "1": "tol-tol",
+        "2": "ra-re"
+      }
     },
     {
       "id": "b2-29-04-dialogue-2",
@@ -228,7 +229,7 @@
       "prompt": [
         {
           "speaker": "Diplomata",
-          "text": "Nem szűkül be túlságosan a mozgásterünk a nagyhatalmi blokkok árnyékában?"
+          "text": "Nem szűkül be a mozgásterünk a nagyhatalmak között?"
         },
         {
           "speaker": "Államtitkár",
@@ -236,14 +237,18 @@
         }
       ],
       "options": [
-        "Csak akkor szűkülne be, ha passzívak maradnánk; a sokrétű gazdasági és kulturális kapcsolatok bővítik a mozgásteret.",
-        "Csak akkor szűkülne be, ha passzívak maradtunk volna; a sokrétű gazdasági és kulturális kapcsolatok bővítik a mozgásteret.",
-        "Csak akkor szűkülne be, ha passzívak maradnánk; a sokrétű gazdasági és kulturális kapcsolatok bővítenék a mozgástérbe."
+        "Csak akkor lenne kisebb a mozgásterünk, ha passzívak maradnánk.",
+        "Csak akkor lenne kisebb a mozgásterünk, mert passzívak maradnánk.",
+        "Csak akkor lenne kisebb a mozgásterünk, ha passzívakat maradnánk."
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
-      ]
+        "hypothetical-ha-conditional"
+      ],
+      "distractor_skills": {
+        "1": "mert-because",
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-29-04-writing-1",
@@ -252,12 +257,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'egyensúlypolitika' to describe navigating international pressure.",
-          "answer": "A függetlenség megőrzése érdekében az ország évszázadokon át kényes egyensúlypolitikát folytatott a szomszédos birodalmak között."
+          "prompt": "Write a sentence with 'egyensúlypolitika' and 'törekszik': the country strives for a balancing policy between two great powers.",
+          "answer": "Az ország a két nagyhatalom között egyensúlypolitikára törekszik."
         }
       ],
       "teaches": [
-        "diplomatic-softening"
+        "verb-government-ra-re"
       ]
     },
     {
@@ -267,25 +272,25 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a conditional sentence using 'szuverenitás' and 'mozgástér'.",
-          "answer": "Amennyiben a kormány megvédené a nemzeti szuverenitást, úgy jelentősen megnőne a külpolitikai mozgástere a nemzetközi fórumokon."
+          "prompt": "Write a conditional sentence with 'amennyiben … úgy' and 'mozgástér': with many allies the country would have more room.",
+          "answer": "Amennyiben az országnak sok szövetségese lenne, úgy nagyobb lenne a mozgástere."
         }
       ],
       "teaches": [
-        "diplomatic-softening"
+        "hypothetical-ha-conditional"
       ]
     },
     {
       "id": "b2-29-04-check-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
       "sentence": "A szövetségesek közötti szolidaritás elengedhetetlen ahhoz, hogy a tagállamok megőrizzék nemzeti ____.",
       "hint": "sovereignty",
       "answer": "szuverenitásukat",
       "english": "Solidarity among allies is indispensable in order for member states to preserve their national sovereignty.",
       "teaches": [
-        "diplomatic-softening"
+        "b2-diplomacy-alliances-sovereignty-vocab"
       ]
     },
     {

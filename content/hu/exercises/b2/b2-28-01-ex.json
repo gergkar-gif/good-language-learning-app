@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What does 'beilleszkedik' express in sociological contexts?",
+      "question": "What does 'beilleszkedik' mean?",
       "options": [
-        "to integrate harmoniously into a new community or social environment",
-        "to violently reject foreign cultural traditions",
-        "to travel as a short-term tourist across European capitals"
+        "to fit into a new community and feel at home in it",
+        "to stay apart from a new community",
+        "to visit a new country only for a short trip"
       ],
       "correct": 0,
       "teaches": [
@@ -69,42 +69,50 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which case suffix is governed by 'beilleszkedik' in 'Sikeresen beilleszkedett a helyi társadalom____'?",
+      "question": "Which form completes the sentence? Sikeresen beilleszkedett a helyi ____. (He integrated successfully into the local community.)",
       "options": [
-        "-ba",
-        "-tól",
-        "-ként"
+        "közösségbe",
+        "közösségtől",
+        "közösségen"
       ],
       "correct": 0,
       "teaches": [
         "b2-figurative-preverbs"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "tol-tol",
+        "2": "on-en-on"
+      }
     },
     {
       "id": "b2-28-01-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the correct case suffix governed by 'elidegenedik' in 'Elidegenedett a gyökerei____':",
+      "question": "Which form completes the sentence? Elidegenedett a régi ____. (He became alienated from his old friend.)",
       "options": [
-        "-től",
-        "-be",
-        "-re"
+        "barátjától",
+        "barátjába",
+        "barátjára"
       ],
       "correct": 0,
       "teaches": [
         "b2-figurative-preverbs"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "ra-re"
+      }
     },
     {
       "id": "b2-28-01-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A nyugdíjba vonulás után az idős professzor végleg ____ Magyarországra.",
-      "hint": "repatriated",
+      "sentence": "Sok év után a professzor ____ Magyarországra.",
+      "hint": "hazatelepül, 3sg past",
       "answer": "hazatelepült",
-      "english": "After retiring, the elderly professor repatriated to Hungary permanently.",
+      "english": "After many years the professor resettled in Hungary.",
       "teaches": [
         "b2-figurative-preverbs"
       ]
@@ -114,10 +122,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az idegen környezetben élő művész nem tudott megszokni, és lassanként ____ a szülőföldjétől.",
-      "hint": "became alienated",
+      "sentence": "A művész sokáig élt külföldön, és lassan ____ a szülőföldjétől.",
+      "hint": "elidegenedik, 3sg past",
       "answer": "elidegenedett",
-      "english": "Living in an unfamiliar environment, the artist could not adjust and gradually became alienated from his homeland.",
+      "english": "The artist lived abroad for a long time and slowly became alienated from his homeland.",
       "teaches": [
         "b2-figurative-preverbs"
       ]
@@ -130,7 +138,7 @@
       "tiles": [
         "A",
         "fiatal",
-        "diplomás",
+        "tanár",
         "könnyen",
         "beilleszkedett",
         "a",
@@ -140,14 +148,14 @@
       "solution": [
         "A",
         "fiatal",
-        "diplomás",
+        "tanár",
         "könnyen",
         "beilleszkedett",
         "a",
         "nemzetközi",
         "csapatba."
       ],
-      "english": "The young graduate integrated easily into the international team.",
+      "english": "The young teacher integrated easily into the international team.",
       "teaches": [
         "b2-figurative-preverbs"
       ]
@@ -157,10 +165,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A gazdasági válság éveiben több tízezer szakmunkás ____ a régióból.",
-      "hint": "migrated away",
+      "sentence": "A gazdasági válság éveiben sok fiatal ____ a régióból.",
+      "hint": "elvándorol, 3sg past",
       "answer": "elvándorolt",
-      "english": "In the years of economic crisis, tens of thousands of skilled workers migrated away from the region.",
+      "english": "In the years of the economic crisis, many young people migrated away from the region.",
       "teaches": [
         "b2-exile-emigration-global-networks-vocab"
       ]
@@ -203,22 +211,26 @@
       "prompt": [
         {
           "speaker": "Interjúkészítő",
-          "text": "Hogyan éli meg a külföldre költöző magyarok második generációja az identitását?"
+          "text": "Hogy érzik magukat a külföldre költözött gyerekek az új iskolában?"
         },
         {
-          "speaker": "Szociológus",
+          "speaker": "Pedagógus",
           "text": "____"
         }
       ],
       "options": [
-        "A legtöbben zökkenőmentesen beilleszkednek a fogadó társadalomba, de sokan nem akarnak elidegenedni az anyanyelvüktől sem.",
-        "A legtöbben zökkenőmentesen illeszkednek be a fogadó társadalomba, de sokan nem akarnak elidegenedni az anyanyelvüktől sem.",
-        "A legtöbben zökkenőmentesen beilleszkednek a fogadó társadalomba, de sokan nem akarnak elidegenedni az anyanyelvükre sem."
+        "Sokan gyorsan beilleszkednek az iskolába, de nem akarnak elidegenedni az anyanyelvüktől.",
+        "Sokan gyorsan beilleszkednek az iskolától, de nem akarnak elidegenedni az anyanyelvüktől.",
+        "Sokan gyorsan beilleszkednek az iskolába, de nem akarnak elidegenedni az anyanyelvükbe."
       ],
       "correct": 0,
       "teaches": [
         "b2-figurative-preverbs"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "tol-tol",
+        "2": "movement-with-ba-be"
+      }
     },
     {
       "id": "b2-28-01-dialogue-2",
@@ -227,23 +239,27 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Kutató",
-          "text": "Mi ösztönözheti a magasan képzett szakembereket a visszatérésre?"
+          "speaker": "Riporter",
+          "text": "Mit terveznek a külföldön élő magyarok?"
         },
         {
-          "speaker": "Egyetemi dékán",
+          "speaker": "Pedagógus",
           "text": "____"
         }
       ],
       "options": [
-        "Ha versenyképes kutatási feltételeket teremtünk, sokan szívesen hazatelepülnek a szülőföldjükre.",
-        "Ha versenyképes kutatási feltételeket teremtünk, sokan szívesen hazatelepülnek a szülőföldjüket.",
-        "Ha versenyképes kutatási feltételeket teremtünk, sokan szívesen hazatelepülnének a szülőföldjükben."
+        "Sokan néhány év múlva hazatelepülnek Magyarországra.",
+        "Sokan néhány év múlva hazatelepülnek Magyarországot.",
+        "Sokan néhány év múlva hazatelepülnek Magyarországtól."
       ],
       "correct": 0,
       "teaches": [
         "b2-figurative-preverbs"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "tol-tol"
+      }
     },
     {
       "id": "b2-28-01-writing-1",
@@ -252,8 +268,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'beilleszkedik' with the illative case (-ba/-be) describing social adaptation.",
-          "answer": "Az új munkatárs meglepően gyorsan beilleszkedett a soknemzetiségű kutatócsoportba."
+          "prompt": "Write a sentence using 'beilleszkedik' with -ba/-be: a new colleague adapts quickly to the team.",
+          "answer": "Az új munkatárs gyorsan beilleszkedett a csapatba."
         }
       ],
       "teaches": [
@@ -280,10 +296,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A hosszú távollét miatt a diák szinte teljesen ____ a hazai kulturális élettől.",
-      "hint": "became alienated",
+      "sentence": "A diák sok évet töltött külföldön, és szinte teljesen ____ a hazai közösségtől.",
+      "hint": "elidegenedik, 3sg past",
       "answer": "elidegenedett",
-      "english": "Due to the long absence, the student became almost completely alienated from cultural life back home.",
+      "english": "The student spent many years abroad and became almost completely alienated from the community at home.",
       "teaches": [
         "b2-figurative-preverbs"
       ]

@@ -37,11 +37,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "recognize",
-      "question": "What does 'panasszal él' signify in formal administrative disputes?",
+      "question": "What does 'panasszal él' mean in an official dispute?",
       "options": [
-        "formally exercising the legal right to submit a grievance against an institutional action or defect",
-        "complaining verbally to neighbors over morning coffee",
-        "filing a medical claim for chronic fatigue at a workplace clinic"
+        "to formally file a complaint with an authority",
+        "to ask an authority for a small favour",
+        "to withdraw a request after the decision"
       ],
       "correct": 0,
       "teaches": [
@@ -53,26 +53,29 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Which sentence correctly illustrates abstract verb case government for both 'ragaszkodik' and 'eltekint'?",
+      "question": "Which sentence uses both 'ragaszkodik' and 'eltekint' correctly?",
       "options": [
-        "A felperes ragaszkodott a határidőkhöz, de a bíróság méltányosságból eltekintett a bírságtól.",
-        "A felperes ragaszkodott a határidőktől, de a bíróság eltekintett a bírsághoz.",
-        "A felperes ragaszkodik a határidőkre, és eltekint a bírságban."
+        "Az ügyfél ragaszkodik a jogaihoz, de a hivatal eltekint a határidőtől.",
+        "Az ügyfél ragaszkodik a jogaitól, de a hivatal eltekint a határidőtől.",
+        "Az ügyfél ragaszkodik a jogaihoz, de a hivatal eltekint a határidőhöz."
       ],
       "correct": 0,
       "teaches": [
         "verb-government-hoz-hez"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "tol-tol"
+      }
     },
     {
       "id": "b2-30-consolidation-4",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A döntéshozók intézményi ____ elengedhetetlen a demokrácia átlátható működéséhez.",
+      "sentence": "A képviselők ____ elengedhetetlen a demokráciához.",
       "hint": "accountability",
       "answer": "elszámoltathatósága",
-      "english": "The institutional accountability of decision-makers is indispensable for the transparent functioning of democracy.",
+      "english": "The accountability of the representatives is indispensable for democracy.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]
@@ -82,10 +85,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Az ügyfél a kézhezvételtől számított tizenöt napon belül ____ az elsőfokú határozat ellen.",
+      "sentence": "Az ügyfél tizenöt napon belül ____ az első határozat ellen.",
       "hint": "appealed",
       "answer": "fellebbezett",
-      "english": "The client appealed against the first-instance resolution within fifteen days of receipt.",
+      "english": "The client appealed against the first decision within fifteen days.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]
@@ -108,16 +111,20 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "in-context",
-      "question": "Why is 'fellebbez a határozat ellen' the only correct phrasing in administrative law?",
+      "question": "Which sentence uses 'fellebbez' correctly?",
       "options": [
-        "Because 'fellebbez' strictly governs the postposition 'ellen' to denote challenging an authority ruling.",
-        "Because 'határozat' cannot take any grammatical case suffixes in Hungarian.",
-        "Because 'ellen' is used only with past tense verbs in formal registers."
+        "Az ügyfél fellebbezett a határozat ellen.",
+        "Az ügyfél fellebbezett a határozat mellett.",
+        "Az ügyfél fellebbezett a határozatot."
       ],
       "correct": 0,
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "postpositions-basic",
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-30-consolidation-8",
@@ -127,7 +134,7 @@
       "prompt": [
         {
           "speaker": "Irodalomtörténész",
-          "text": "Hogyan jelenik meg az intézményi önkény Mikszáth Különös házasságában?"
+          "text": "Mit mutat a történet Buttler Jánosról?"
         },
         {
           "speaker": "Egyetemi hallgató",
@@ -135,16 +142,17 @@
         }
       ],
       "options": [
-        "A hatóságok ragaszkodnak a formaságokhoz, eltekintenek az igazságtól, és az áldozat hiába fellebbez a döntések ellen.",
-        "A hatóságok ragaszkodnak a formaságokban, eltekintenek az igazságtól, és az áldozat hiába fellebbez a döntések ellen.",
-        "A hatóságok ragaszkodnak a formaságokhoz, eltekintenek az igazságra, és az áldozat hiába fellebbez a döntéseknek ellen."
+        "A hatóságok ragaszkodnak az előírásokhoz, eltekintenek az igazságtól, és Buttler fellebbez a döntés ellen.",
+        "A hatóságok ragaszkodnak az előírásokban, eltekintenek az igazságtól, és Buttler fellebbez a döntés ellen.",
+        "A hatóságok ragaszkodnak az előírásokhoz, eltekintenek az igazságra, és Buttler fellebbez a döntés ellen."
       ],
       "correct": 0,
       "teaches": [
         "verb-government-hoz-hez"
       ],
       "distractor_skills": {
-        "1": "verb-government-ban-ben"
+        "1": "verb-government-ban-ben",
+        "2": "verb-government-ra-re"
       }
     },
     {
@@ -152,11 +160,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Select the sentence where 'meggyőződik' is used with its correct grammatical case government:",
+      "question": "Select the sentence where 'meggyőződik' has the correct government:",
       "options": [
-        "A vizsgálóbiztos a helyszínen győződött meg a tények valódiságáról.",
-        "A vizsgálóbiztos a tényekre győződött meg a helyszínen.",
-        "A vizsgálóbiztos meggyőződött a tényekhez a vizsgálat után."
+        "A jegyző a helyszínen meggyőződött a tényekről.",
+        "A jegyző a helyszínen meggyőződött a tényekre.",
+        "A jegyző a helyszínen meggyőződött a tényekhez."
       ],
       "correct": 0,
       "teaches": [
@@ -237,7 +245,7 @@
       "template": [
         {
           "prompt": "Write a three-clause administrative argument using 'ragaszkodik' (-hoz), 'hivatkozik' (-ra), and 'fellebbez' (ellen).",
-          "answer": "Mivel a panaszos határozottan ragaszkodik az alaptörvényben rögzített jogaihoz, a beadványában a vonatkozó közigazgatási jogszabályokra hivatkozott; és amennyiben a kérelem elutasításra kerülne, határidőn belül fellebbezni fog az elmarasztaló határozat ellen."
+          "answer": "Az ügyfél ragaszkodik a jogaihoz, a beadványában a törvényre hivatkozik, és fellebbez a határozat ellen."
         }
       ],
       "teaches": [

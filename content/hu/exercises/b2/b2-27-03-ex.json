@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is meant by 'kulturális kötelék' across borders?",
+      "question": "What is a 'kulturális kötelék' across borders?",
       "options": [
-        "intangible cultural, linguistic, and emotional ties connecting dispersed communities",
-        "a customs tariff levied on imported folk embroidery",
-        "a concrete highway barrier erected along border checkpoints"
+        "the shared language, customs and feelings that link communities",
+        "a legal paper that lets people cross a border",
+        "a trade agreement between two neighbouring states"
       ],
       "correct": 0,
       "teaches": [
@@ -20,9 +20,9 @@
     {
       "id": "b2-27-03-intro-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "introduce",
-      "question": "Which phrase introduces a premise detached from contingencies ('regardless of...')?",
+      "question": "Which phrase means 'regardless of the fact that'? (You know it from B2 Unit 17.)",
       "options": [
         "függetlenül attól, hogy",
         "annak következtében, hogy",
@@ -30,7 +30,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "b2-borders-kinship-transborder-identity-vocab"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -57,7 +57,7 @@
         ],
         [
           "elcsatolás",
-          "annexation / severance"
+          "detachment of territory"
         ]
       ],
       "teaches": [
@@ -69,16 +69,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which case suffix is governed by 'függetlenül' on the demonstrative 'az'?",
+      "question": "Which word completes the phrase? Eltekintve ____, hogy drága az út, el akarunk menni. (Apart from the fact that the trip is expensive, we want to go.)",
       "options": [
-        "ablative: attól",
-        "instrumental: azzal",
-        "dative: annak"
+        "attól",
+        "arról",
+        "azzal"
       ],
       "correct": 0,
       "teaches": [
-        "even-if-ha-is"
-      ]
+        "b2-cataphoric-clauses"
+      ],
+      "distractor_skills": {
+        "1": "demonstrative-case-agreement",
+        "2": "demonstrative-case-agreement"
+      }
     },
     {
       "id": "b2-27-03-controlled-3",
@@ -106,7 +110,7 @@
       "answer": "függetlenül attól, hogy",
       "english": "The unity of the nation persists, regardless of what state borders separate the people.",
       "teaches": [
-        "even-if-ha-is"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -114,12 +118,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "____ a bürokratikus akadályok nehezítik az együttműködést, a civil kapcsolatok virágoznak.",
-      "hint": "Apart from the fact that",
-      "answer": "Attól eltekintve, hogy",
-      "english": "Apart from the fact that bureaucratic obstacles hinder cooperation, civic relations are flourishing.",
+      "sentence": "____ az iskola kicsi, a gyerekek sokat tanulnak.",
+      "hint": "apart from the fact that",
+      "english": "Apart from the fact that the school is small, the children learn a lot.",
       "teaches": [
-        "even-if-ha-is"
+        "b2-cataphoric-clauses"
+      ],
+      "answers": [
+        "Attól eltekintve, hogy",
+        "Eltekintve attól, hogy"
       ]
     },
     {
@@ -133,7 +140,9 @@
         "hogy",
         "hol",
         "élünk,",
-        "összetartozunk."
+        "egy",
+        "közösség",
+        "vagyunk."
       ],
       "solution": [
         "Függetlenül",
@@ -141,11 +150,13 @@
         "hogy",
         "hol",
         "élünk,",
-        "összetartozunk."
+        "egy",
+        "közösség",
+        "vagyunk."
       ],
-      "english": "Regardless of where we live, we belong together.",
+      "english": "Regardless of where we live, we are one community.",
       "teaches": [
-        "even-if-ha-is"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -153,10 +164,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A határon túli írók műveiben a hűség a ____ iránt központi motívumként jelenik meg.",
-      "hint": "homeland / native soil",
+      "sentence": "A ____ az a hely, ahol az ember született.",
+      "hint": "native land",
       "answer": "szülőföld",
-      "english": "In the works of transborder writers, fidelity toward the homeland appears as a central motif.",
+      "english": "The homeland is the place where a person was born.",
       "teaches": [
         "b2-borders-kinship-transborder-identity-vocab"
       ]
@@ -168,25 +179,25 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "közös",
         "kulturális",
-        "kötelékek",
-        "erősebbnek",
-        "bizonyultak",
+        "kötelék",
+        "nem",
+        "áll",
+        "meg",
         "a",
-        "határoknál."
+        "határnál."
       ],
       "solution": [
         "A",
-        "közös",
         "kulturális",
-        "kötelékek",
-        "erősebbnek",
-        "bizonyultak",
+        "kötelék",
+        "nem",
+        "áll",
+        "meg",
         "a",
-        "határoknál."
+        "határnál."
       ],
-      "english": "The shared cultural ties proved stronger than the borders.",
+      "english": "Cultural ties do not stop at the border.",
       "teaches": [
         "b2-borders-kinship-transborder-identity-vocab"
       ]
@@ -199,22 +210,26 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Hogyan működhet a határokon átnyúló egyetemi hálózat?"
+          "text": "Hogyan dolgoznak együtt a két ország iskolái?"
         },
         {
-          "speaker": "Rektor",
+          "speaker": "Igazgató",
           "text": "____"
         }
       ],
       "options": [
-        "Függetlenül attól, hogy a partnerek különböző országokban működnek, a közös tudományos és anyanyelvi célok egységbe fogják őket.",
-        "Függetlenül arról, hogy a partnerek különböző országokban működnek, a közös tudományos és anyanyelvi célok egységbe fogják őket.",
-        "Függetlenül abban, hogy a partnerek különböző országokban működnek, a közös tudományos és anyanyelvi célok egységbe fogják őket."
+        "Függetlenül attól, hogy két országban élünk, a tanárok sokat beszélnek egymással.",
+        "Függetlenül arról, hogy két országban élünk, a tanárok sokat beszélnek egymással.",
+        "Függetlenül abban, hogy két országban élünk, a tanárok sokat beszélnek egymással."
       ],
       "correct": 0,
       "teaches": [
-        "even-if-ha-is"
-      ]
+        "b2-cataphoric-clauses"
+      ],
+      "distractor_skills": {
+        "1": "demonstrative-case-agreement",
+        "2": "demonstrative-case-agreement"
+      }
     },
     {
       "id": "b2-27-03-dialogue-2",
@@ -223,23 +238,27 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Diplomata",
-          "text": "Befolyásolják a politikai viták a szomszédos népek kulturális cseréjét?"
+          "speaker": "Újságíró",
+          "text": "Nehéz együtt dolgozni a határ két oldalán?"
         },
         {
-          "speaker": "Kulturális attasé",
+          "speaker": "Tanár",
           "text": "____"
         }
       ],
       "options": [
-        "Attól eltekintve, hogy a retorika néha feszült, az intézmények közötti szakmai kötelékek zavartalanul működnek.",
-        "Arról eltekintve, hogy a retorika néha feszült, az intézmények közötti szakmai kötelékek zavartalanul működnek.",
-        "Abban eltekintve, hogy a retorika néha feszült, az intézmények közötti szakmai kötelékek zavartalanul működnek."
+        "Attól eltekintve, hogy sokat kell várni a papírokra, minden jól megy.",
+        "Arról eltekintve, hogy sokat kell várni a papírokra, minden jól megy.",
+        "Abban eltekintve, hogy sokat kell várni a papírokra, minden jól megy."
       ],
       "correct": 0,
       "teaches": [
-        "even-if-ha-is"
-      ]
+        "b2-cataphoric-clauses"
+      ],
+      "distractor_skills": {
+        "1": "demonstrative-case-agreement",
+        "2": "demonstrative-case-agreement"
+      }
     },
     {
       "id": "b2-27-03-writing-1",
@@ -253,7 +272,7 @@
         }
       ],
       "teaches": [
-        "even-if-ha-is"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -263,12 +282,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence with 'eltekintve attól, hogy' analyzing cross-border economic ties.",
-          "answer": "Eltekintve attól, hogy az adminisztratív eljárások időigényesek, a határ menti régiók gazdasága egyre szorosabban összefonódik."
+          "prompt": "Write a sentence with 'eltekintve attól, hogy': waiting for papers takes long, but the two towns work well together.",
+          "answer": "Eltekintve attól, hogy sokat kell várni a papírokra, a két város jól dolgozik együtt."
         }
       ],
       "teaches": [
-        "even-if-ha-is"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -276,12 +295,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A színházi fesztivál óriási sikert aratott, ____ a rossz időjárás miatt elmaradt a szabadtéri megnyitó.",
+      "sentence": "A fesztivál nagy siker volt, ____ az eső miatt elmaradt a koncert.",
       "hint": "apart from the fact that",
-      "answer": "attól eltekintve, hogy",
-      "english": "The theatre festival achieved enormous success, apart from the fact that the open-air opening was cancelled due to bad weather.",
+      "english": "The festival was a great success, apart from the fact that the concert was cancelled because of the rain.",
       "teaches": [
-        "even-if-ha-is"
+        "b2-cataphoric-clauses"
+      ],
+      "answers": [
+        "attól eltekintve, hogy",
+        "eltekintve attól, hogy"
       ]
     },
     {
@@ -289,11 +311,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which phrase denotes enduring bonds of tradition, language, and arts between communities?",
+      "question": "Which word means 'the place where a person was born and grew up'?",
       "options": [
-        "kulturális kötelék",
-        "vasúti sín",
-        "vámnyilatkozat"
+        "szülőföld",
+        "főváros",
+        "külföld"
       ],
       "correct": 0,
       "teaches": [

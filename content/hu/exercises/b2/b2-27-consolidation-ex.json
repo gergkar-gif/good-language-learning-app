@@ -37,11 +37,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "recognize",
-      "question": "What does 'kisebbségi lét' embody in Central European history?",
+      "question": "What does 'kisebbségi lét' mean?",
       "options": [
-        "the historical experience, legal struggles, and cultural endurance of national communities living outside their kin-state",
-        "the diplomatic process of establishing bilateral trade agreements and consular representations between neighboring states",
-        "the demographic movement of rural laborers relocating voluntarily to capital cities during rapid industrial modernization"
+        "life as a minority in a country where another group is the majority",
+        "living in a foreign country for a short time as a tourist",
+        "being the largest group in a country"
       ],
       "correct": 0,
       "teaches": [
@@ -53,11 +53,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Which sentence correctly illustrates a counterfactual past concessive condition?",
+      "question": "Which sentence means: 'Even if the situation had been hard, the parents would not have closed the school'?",
       "options": [
-        "Még ha nehezebb lett volna is a helyzet, a szülők akkor sem adták volna fel az anyanyelvi iskolát.",
-        "Még ha nehezebb lett volna is mert senki sem akart iskolába menni.",
-        "Akkor sem mennének iskolába ha ma reggel süt a nap kint az udvaron."
+        "Még ha nehéz lett volna is a helyzet, a szülők nem zárták volna be az iskolát.",
+        "Még ha nehéz lett volna is a helyzet, a szülők nem zárják be az iskolát.",
+        "Még ha nehéz lett is a helyzet, a szülők nem zárták volna be az iskolát."
       ],
       "correct": 0,
       "teaches": [
@@ -95,12 +95,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A lakosság a nehéz időkben sem hagyta el a szülőfaluját, ____ felajánlottak volna jobb lakásokat máshol.",
-      "hint": "even if; még ha",
-      "answer": "még ha",
-      "english": "The population did not leave their native village in difficult times either, even if they had been offered better flats elsewhere.",
+      "sentence": "____ kevesebb pénzt kaptak volna is, a tanárok nem hagyták volna ott az iskolát.",
+      "hint": "even if (past)",
+      "english": "Even if they had been paid less, the teachers would not have left the school.",
       "teaches": [
         "even-if-ha-is"
+      ],
+      "answers": [
+        "Még ha",
+        "még ha",
+        "Ha",
+        "ha"
       ]
     },
     {
@@ -116,8 +121,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "even-if-ha-is"
-      ]
+        "b2-cataphoric-clauses"
+      ],
+      "distractor_skills": {
+        "1": "demonstrative-case-agreement",
+        "2": "demonstrative-case-agreement"
+      }
     },
     {
       "id": "b2-27-consolidation-8",
@@ -127,7 +136,7 @@
       "prompt": [
         {
           "speaker": "Egyetemi előadó",
-          "text": "Miért olyan ellenálló a határon túli magyar kultúra a történelem viharaiban?"
+          "text": "Miért maradnak hűek a nyelvükhöz a határon túli magyarok?"
         },
         {
           "speaker": "Kutató",
@@ -135,9 +144,9 @@
         }
       ],
       "options": [
-        "Mert a közösségi megmaradás legfőbb megtartó ereje az anyanyelv, amelyhez még akkor is hűek maradnak, ha a külső körülmények nehezek.",
-        "Mert a közösségi megmaradás legfőbb megtartó ereje az anyanyelv, amelyhez akkor sem lennének hűek, ha a külső körülmények nehezek.",
-        "Mert a közösségi megmaradás legfőbb megtartó ereje az anyanyelv, amelyet még akkor is hűek maradnak, ha a külső körülmények nehezek."
+        "Mert az anyanyelv a közösség megtartó ereje; hűek maradnak hozzá, még akkor is, ha nehéz.",
+        "Mert az anyanyelv a közösség megtartó ereje; akkor sem maradnak hűek hozzá, ha nehéz.",
+        "Mert az anyanyelv a közösség megtartó ereje; hűek maradnak hozzá, még akkor is, hogy nehéz."
       ],
       "correct": 0,
       "teaches": [
@@ -149,11 +158,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'akkor sem, ha' preferred over plain 'ha nem' in categorical assertions?",
+      "question": "Which sentence means: 'We will not give up the school, not even if it is hard'?",
       "options": [
-        "Because 'akkor sem, ha' expresses an unyielding, categorical negation that holds across all conceivable hypothetical conditions.",
-        "Because 'ha nem' can only be used in questions, never in statements.",
-        "Because 'akkor sem' is an imperative formula used only by judges."
+        "Az iskolát akkor sem adjuk fel, ha nehéz.",
+        "Az iskolát csak akkor adjuk fel, ha nehéz.",
+        "Az iskolát akkor adjuk fel, ha nehéz."
       ],
       "correct": 0,
       "teaches": [
@@ -225,7 +234,7 @@
       ],
       "english": "Regardless of where the borders lie, we are one nation.",
       "teaches": [
-        "even-if-ha-is"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -235,8 +244,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause transborder essay thesis combining 'még akkor is, ha' (concessive condition), 'függetlenül attól, hogy' (independent condition), and 'megtartó erő' (sustaining force).",
-          "answer": "Függetlenül attól, hogy milyen országhatárok választják el egymástól a közösségeket, az anyanyelv felbecsülhetetlen megtartó erőt jelent; amelyhez még akkor is hűségesek maradunk, ha a modern világ kihívásai komoly erőfeszítést követelnek tőlünk."
+          "prompt": "Write one sentence with 'még akkor is, ha' and 'megtartó erő': the mother tongue keeps the community together even if life is hard.",
+          "answer": "Az anyanyelv a közösség megtartó ereje, még akkor is, ha nehéz az élet."
         }
       ],
       "teaches": [

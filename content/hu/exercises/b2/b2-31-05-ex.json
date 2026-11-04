@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What is the focus of an 'étteremkritika' in food journalism?",
       "options": [
-        "an analytical review evaluating food quality, service, and dining ambience",
-        "a municipal health inspection document that shuts down illegal kitchens",
-        "a simple grocery list written by the restaurant's purchasing manager"
+        "a text that judges the food and service of a restaurant",
+        "a notice about a restaurant's opening hours",
+        "a list of the ingredients a restaurant buys"
       ],
       "correct": 0,
       "teaches": [
@@ -25,8 +25,8 @@
       "question": "Which adjective means absolutely flawless, without any shortcomings?",
       "options": [
         "kifogástalan",
-        "kifogásolható",
-        "középszerű"
+        "pohárköszöntő",
+        "ízlelőbimbó"
       ],
       "correct": 0,
       "teaches": [
@@ -69,42 +69,49 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which sentence uses a resultative sublative phrase appropriately in food criticism?",
+      "question": "Which sentence uses resultative phrases correctly in a review?",
       "options": [
-        "A séf a tőkehalat omlósra párolta, míg a zöldségeket ropogósra pirította.",
-        "A séf a tőkehalat omlósan párolt, míg a zöldségeket ropogósan pirított.",
-        "A séf a tőkehalat omlósból párolta a serpenyőbe."
+        "A szakács a húst omlósra párolta, a zöldséget pedig ropogósra pirította.",
+        "A szakács a húst omlósig párolta, a zöldséget pedig ropogósra pirította.",
+        "A szakács a húst omlósra párolta, a zöldséget pedig ropogósig pirította."
       ],
       "correct": 0,
       "teaches": [
-        "mintha"
-      ]
+        "ra-re"
+      ],
+      "distractor_skills": {
+        "1": "terminative-case-ig",
+        "2": "terminative-case-ig"
+      }
     },
     {
       "id": "b2-31-05-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Complete the simile: 'A leves olyan tiszta volt, mintha forrásvízből ____ volna'.",
+      "question": "Complete the simile: 'A leves olyan tiszta volt, mintha vízből ____ volna'.",
       "options": [
-        "szűrték",
-        "szűrtek",
-        "szűrni"
+        "főzték",
+        "főznék",
+        "főzni"
       ],
       "correct": 0,
       "teaches": [
         "mintha"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "nek-conditional"
+      }
     },
     {
       "id": "b2-31-05-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A degusztációs menü minden egyes fogása úgy volt felépítve, ____ egy zenei szimfóniát hallgatnánk.",
+      "sentence": "A menü minden fogása olyan volt, ____ egy szimfóniát hallgatnánk.",
       "hint": "as if",
       "answer": "mintha",
-      "english": "Every single course of the tasting menu was constructed as if we were listening to a musical symphony.",
+      "english": "Every course of the menu was like listening to a symphony.",
       "teaches": [
         "mintha"
       ]
@@ -114,12 +121,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A desszertet alkotó csokoládégömböt aranybarnára ____ a mestercukrász.",
-      "hint": "baked / browned",
+      "sentence": "A cukrász a kalácsot aranybarnára ____.",
+      "hint": "baked",
       "answer": "sütötte",
-      "english": "The master pastry chef baked the chocolate sphere forming the dessert until golden brown.",
+      "english": "The pastry chef baked the brioche until golden brown.",
       "teaches": [
-        "mintha"
+        "ra-re"
       ]
     },
     {
@@ -159,10 +166,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A belvárosi bisztróban a figyelmes szerviz és a friss alapanyagok miatt az ____ kifejezetten kedvező.",
+      "sentence": "Az étterem ____ kedvező.",
       "hint": "value for money",
-      "answer": "ár-érték arány",
-      "english": "In the downtown bistro, due to attentive service and fresh ingredients, the value for money is exceptionally favorable.",
+      "answer": "ár-érték aránya",
+      "english": "The restaurant's value for money is favorable.",
       "teaches": [
         "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
@@ -174,25 +181,23 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "szakíró",
+        "kritikus",
         "részletes",
         "étteremkritikát",
-        "publikált",
-        "a",
-        "gasztronómiai",
-        "magazinban."
+        "írt",
+        "az",
+        "étteremről."
       ],
       "solution": [
         "A",
-        "szakíró",
+        "kritikus",
         "részletes",
         "étteremkritikát",
-        "publikált",
-        "a",
-        "gasztronómiai",
-        "magazinban."
+        "írt",
+        "az",
+        "étteremről."
       ],
-      "english": "The culinary writer published a detailed restaurant review in the gastronomic magazine.",
+      "english": "The critic wrote a detailed review of the restaurant.",
       "teaches": [
         "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
@@ -205,22 +210,25 @@
       "prompt": [
         {
           "speaker": "Főszerkesztő",
-          "text": "Hogyan ítéled meg az új Michelin-csillagos étterem kóstolómenüjét a készülő kritikában?"
+          "text": "Milyen volt az új étterem?"
         },
         {
-          "speaker": "Gasztronómiai kritikus",
+          "speaker": "Kritikus",
           "text": "____"
         }
       ],
       "options": [
-        "A konyhatechnológia kifogástalan, a textúrák játéka lenyűgöző, bár az utolsó fogás talán kissé túlgondolt volt.",
-        "A konyhatechnológia kifogástalan, a textúrák játékát lenyűgöző, bár az utolsó fogás talán kissé túlgondolt volt.",
-        "A konyhatechnológia kifogástalan, a textúrák játéka lenyűgöző, minthogy az utolsó fogás talán kissé túlgondolva volt."
+        "A fogások kifogástalanok voltak, de az ár-érték arány nem jó.",
+        "A fogások kifogástalan voltak, de az ár-érték arány nem jó.",
+        "A fogások kifogástalanok voltak, de az ár-érték arányt nem jó."
       ],
       "correct": 0,
       "teaches": [
-        "mintha"
-      ]
+        "plural-predicate-adjectives-k"
+      ],
+      "distractor_skills": {
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-31-05-dialogue-2",
@@ -230,7 +238,7 @@
       "prompt": [
         {
           "speaker": "Vendég",
-          "text": "Megéri kipróbálni az öt fogásos degusztációs vacsorát a hétvégén?"
+          "text": "Érdemes elmenni abba az étterembe?"
         },
         {
           "speaker": "Ínyenc barát",
@@ -238,14 +246,18 @@
         }
       ],
       "options": [
-        "Feltétlenül! Az ár-érték arány ritka jó ebben a kategóriában, és igazi kulináris utazást kapsz a pénzedért.",
-        "Feltétlenül! Az ár-érték arányban ritka jó ebben a kategóriában, és igazi kulináris utazást kapsz a pénzedért.",
-        "Feltétlenül! Az ár-érték arány ritka jó ebben a kategóriára, és igazi kulináris utazást kapnál a pénzedért."
+        "Feltétlenül! Az ár-érték arány nagyon jó, és kifogástalan fogásokat kapsz.",
+        "Feltétlenül! Az ár-érték arányban nagyon jó, és kifogástalan fogásokat kapsz.",
+        "Feltétlenül! Az ár-érték arány nagyon jó, és kifogástalan fogásokra kapsz."
       ],
       "correct": 0,
       "teaches": [
-        "mintha"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "ra-re"
+      }
     },
     {
       "id": "b2-31-05-writing-1",
@@ -255,11 +267,11 @@
       "template": [
         {
           "prompt": "Write a critical evaluation sentence praising an entrée using 'kifogástalan' and a resultative sublative phrase.",
-          "answer": "A ropogósra sült kacsacomb és a selymesre pürésített zellerkrém párosítása egyszerűen kifogástalan kulináris élményt nyújtott."
+          "answer": "A ropogósra sült hús és a puhára főzött zöldség egyszerűen kifogástalan volt."
         }
       ],
       "teaches": [
-        "mintha"
+        "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
     },
     {
@@ -270,11 +282,11 @@
       "template": [
         {
           "prompt": "Write a concluding assessment in an 'étteremkritika' evaluating 'ár-érték arány'.",
-          "answer": "Bár az árszínvonal a prémium kategóriába tartozik, a hibátlan alapanyagok és a professzionális szerviz révén az ár-érték arány teljes mértékben meggyőző."
+          "answer": "Bár az étterem drága, a friss alapanyagok miatt az ár-érték arány kedvező."
         }
       ],
       "teaches": [
-        "mintha"
+        "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
     },
     {
@@ -313,9 +325,9 @@
       "stage": "reading",
       "question": "Hogyan fogyasztja el Szindbád a velős csontot a leírás szerint?",
       "options": [
-        "Kimért mozdulatokkal kiüti a velőt a fokhagymás pirítósra, sózza, borsozza, és lehunyt szemmel ízleli meg.",
-        "Gyorsan belekeveri a levesbe, mielőtt az teljesen kihűlne az asztalon.",
-        "Villával darabokra vágja a tányérján, és kenyér nélkül eszi meg."
+        "A velőt kenyérre simítja, megsózza, és csukott szemmel megkóstolja.",
+        "A velőt a levesbe keveri, és hangosan, gyorsan megeszi.",
+        "A csontot a kezébe veszi, és kenyér nélkül megeszi."
       ],
       "correct": 0
     },
@@ -324,11 +336,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen asszociációkat ébreszt Szindbádban a forró húsleves és a velő elfogyasztása?",
+      "question": "Mire emlékezik Szindbád a leves mellett?",
       "options": [
-        "A hajdani kisvárosi vasárnapok békéjét, fehér csipketerítőket és a letűnt ifjúság emlékeit idézi fel.",
-        "A külföldi utazások során szerzett keserű csalódásokra emlékezteti.",
-        "Kizárólag a konyhai alapanyagok árára és a vendéglő számlájára gondol."
+        "A régi vasárnapokra és az elmúlt szerelmeire.",
+        "A hajóútjaira és a hosszú külföldi utazásokra.",
+        "Arra, hogy mennyibe kerül a vacsora a vendéglőben."
       ],
       "correct": 0
     },
@@ -337,11 +349,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Miért kínál a vendéglős száraz somlói bort az étel mellé?",
+      "question": "Miért ad a vendéglős száraz somlói bort a leves mellé?",
       "options": [
-        "Mert a bor élénk savai kiválóan ellensúlyozzák a velő zsíros gazdagságát.",
-        "Mert a vendéglőben nem volt semmilyen más ital raktáron aznap.",
-        "Mert a húslevesbe szokás beleönteni egy egész pohár bort a tálalás előtt."
+        "Mert a bor savai ellensúlyozzák a velő gazdagságát.",
+        "Mert a vendéglőben csak ez a bor volt.",
+        "Mert a bor olcsóbb, mint a víz a kocsmában."
       ],
       "correct": 0
     }

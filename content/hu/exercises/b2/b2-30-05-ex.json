@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What is a 'közmeghallgatás' in local municipal governance?",
       "options": [
-        "an open public hearing where citizens can voice opinions directly to elected officials",
-        "a mandatory hearing test administered to school children",
-        "an opera concert organized in the town square for pensioners"
+        "an open meeting where residents speak to the officials",
+        "a vote in which residents choose a mayor",
+        "a report an office writes about its own work"
       ],
       "correct": 0,
       "teaches": [
@@ -25,8 +25,8 @@
       "question": "Which term designates the organized representation of citizens' social or legal interests?",
       "options": [
         "érdekérvényesítés",
-        "eljárási hiba",
-        "kivándorlás"
+        "elszámoltathatóság",
+        "hatásvizsgálat"
       ],
       "correct": 0,
       "teaches": [
@@ -69,7 +69,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which governed verb fits best: 'A lakosok a hatásvizsgálat eredményei____ hivatkoztak a vita során'?",
+      "question": "Which suffix fits best: 'A lakosok a hatásvizsgálat eredményei____ hivatkoztak a közmeghallgatáson'?",
       "options": [
         "-re",
         "-hez",
@@ -119,14 +119,14 @@
     {
       "id": "b2-30-05-practice-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A törvénytervezetet széles körű társadalmi ____ kell bocsátani a parlamenti vita előtt.",
+      "sentence": "A tervet társadalmi ____ kell bocsátani, mielőtt a parlament dönt.",
       "hint": "consultation",
       "answer": "egyeztetésre",
-      "english": "The draft bill must be submitted to broad public consultation before the parliamentary debate.",
+      "english": "The plan must be put to public consultation before parliament decides.",
       "teaches": [
-        "verb-government-ra-re"
+        "b2-civic-participation-advocacy-public-vocab"
       ]
     },
     {
@@ -164,10 +164,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A civil szervezetek hatékony ____ révén elérték a védett erdőterület megóvását.",
+      "sentence": "A civil szervezetek jó ____ révén elérték az erdő megóvását.",
       "hint": "advocacy",
       "answer": "érdekérvényesítés",
-      "english": "Through effective advocacy, civil organizations achieved the preservation of the protected forest area.",
+      "english": "Through good advocacy, civil organizations achieved the protection of the forest.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]
@@ -208,7 +208,7 @@
       "prompt": [
         {
           "speaker": "Önkormányzati képviselő",
-          "text": "Hogyan növelhetjük a lakosság bizalmát a városfejlesztési tervek iránt?"
+          "text": "Hogyan erősítsük a lakosok bizalmát a tervek iránt?"
         },
         {
           "speaker": "Civil koordinátor",
@@ -216,17 +216,17 @@
         }
       ],
       "options": [
-        "Társadalmi egyeztetést kell szervezni, ahol a lakosok hozzászólhatnak a hatásvizsgálatokhoz a közmeghallgatáson.",
-        "Társadalmi egyeztetést kell szervezni, ahol a lakosok hozzászólhatnak a hatásvizsgálatokra a közmeghallgatáson.",
-        "Társadalmi egyeztetést kell szervezni, ahol a lakosok hozzászólhatnak a hatásvizsgálatokban a közmeghallgatáson."
+        "Közmeghallgatást kell szervezni, ahol a lakosok hivatkoznak a hatásvizsgálatra.",
+        "Közmeghallgatást kell szervezni, ahol a lakosok hivatkoznak a hatásvizsgálatban.",
+        "Közmeghallgatást kell szervezni, ahol a lakosok hivatkoznak a hatásvizsgálathoz."
       ],
       "correct": 0,
       "teaches": [
-        "verb-government-hoz-hez"
+        "verb-government-ra-re"
       ],
       "distractor_skills": {
-        "1": "verb-government-ra-re",
-        "2": "verb-government-ban-ben"
+        "1": "verb-government-ban-ben",
+        "2": "verb-government-hoz-hez"
       }
     },
     {
@@ -245,14 +245,18 @@
         }
       ],
       "options": [
-        "Feltétlenül, hiszen az állampolgári részvétel és az érdekérvényesítés révén közvetlenül befolyásolhatjuk a képviselő-testület döntését.",
-        "Feltétlenül, hiszen az állampolgári részvétel és az érdekérvényesítés révén közvetlenül befolyásolhatjuk a képviselő-testület döntésére.",
-        "Feltétlenül, hiszen az állampolgári részvétel és az érdekérvényesítés révén közvetlenül befolyásolhatnánk a képviselő-testület döntésében."
+        "Feltétlenül, hiszen az érdekérvényesítés révén hatással lehetünk a döntésre.",
+        "Feltétlenül, hiszen az érdekérvényesítés révén hatással lehetünk a döntésben.",
+        "Feltétlenül, hiszen az érdekérvényesítés révén hatással lehetünk a döntéshez."
       ],
       "correct": 0,
       "teaches": [
-        "b2-civic-participation-advocacy-public-vocab"
-      ]
+        "verb-government-ra-re"
+      ],
+      "distractor_skills": {
+        "1": "verb-government-ban-ben",
+        "2": "verb-government-hoz-hez"
+      }
     },
     {
       "id": "b2-30-05-writing-1",
@@ -262,7 +266,7 @@
       "template": [
         {
           "prompt": "Write a sentence using 'társadalmi egyeztetés' in a legislative reform context.",
-          "answer": "A kormány az új oktatási törvény elfogadása előtt széles körű társadalmi egyeztetést ígért a szakmai szervezetekkel."
+          "answer": "A kormány a törvény elfogadása előtt társadalmi egyeztetést ígért."
         }
       ],
       "teaches": [
@@ -277,7 +281,7 @@
       "template": [
         {
           "prompt": "Write a sentence combining 'közmeghallgatás' and 'hatásvizsgálat'.",
-          "answer": "A közmeghallgatáson a lakosok részletesen elemezték a környezeti hatásvizsgálat aggasztó megállapításait."
+          "answer": "A közmeghallgatáson a lakosok beszéltek a hatásvizsgálat eredményeiről."
         }
       ],
       "teaches": [
@@ -320,9 +324,9 @@
       "stage": "reading",
       "question": "Miért utasította el az egyházi bíróság Buttler János kérelmét a szöveg szerint?",
       "options": [
-        "Mert mereven ragaszkodtak a formai előírásokhoz, és eltekintettek a kényszerítés vizsgálatától.",
-        "Mert Buttler elmulasztotta befizetni az illetéket a határidő lejárta előtt.",
-        "Mert a gróf ügyvédje elfelejtette benyújtani a tanúk listáját a bíróságnak."
+        "Mert az előírásokhoz ragaszkodtak, és eltekintettek a tényektől.",
+        "Mert Buttler nem tartotta be a határidőt, ezért elutasították.",
+        "Mert az ügyvéd elfelejtette beadni a kérelmet a bíróságon."
       ],
       "correct": 0
     },
@@ -331,11 +335,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen jogorvoslati stratégiát javasol az ügyvéd a további lépésekre?",
+      "question": "Mit javasol az ügyvéd a további lépésekre?",
       "options": [
-        "A törvény betűjére hivatkoznak, és részletesen beszámolnak az eljárási visszaélésekről.",
-        "Azonnal feladják a küzdelmet, és elfogadják a házasság érvényességét.",
-        "Elhagyják az országot, és soha többé nem fordulnak semmilyen bírósághoz."
+        "Hogy hivatkozzanak a törvényre, és számoljanak be az eljárási hibákról.",
+        "Hogy fogadják el a döntést, és ne fellebbezzenek tovább.",
+        "Hogy menjenek külföldre, és ott keressenek másik bíróságot."
       ],
       "correct": 0
     },
@@ -344,11 +348,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Mire döbbent rá Buttler gróf a per elhúzódása során?",
+      "question": "Mit mond Buttler gróf a nyilvánosságról?",
       "options": [
-        "Hogy a hatalommal szemben a kitartó küzdelem és a nyilvánosság ereje hozhat jogszerű döntést.",
-        "Hogy az egyházi intézmények mindig a leggyorsabban és legigazságosabban járnak el.",
-        "Hogy egy ügyvéd felfogadása teljesen felesleges pénzkidobás."
+        "Hogy a hatalom csak akkor hátrál meg, ha a nyilvánosság kényszeríti.",
+        "Hogy az egyházi bíróság gyorsan dönt, ha az ügyvéd kéri.",
+        "Hogy az ügyvédre nincs szükség, mert a gróf maga dönt."
       ],
       "correct": 0
     }

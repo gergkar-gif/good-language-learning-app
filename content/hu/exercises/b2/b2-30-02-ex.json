@@ -4,7 +4,7 @@
     {
       "id": "b2-30-02-intro-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "introduce",
       "question": "Which case is governed by the verb 'hivatkozik'?",
       "options": [
@@ -14,7 +14,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "b2-civic-participation-advocacy-public-vocab"
+        "verb-government-ra-re"
       ]
     },
     {
@@ -24,9 +24,9 @@
       "stage": "introduce",
       "question": "What is a 'beadvány' in administrative and legal procedures?",
       "options": [
-        "a formal written petition, application, or pleading submitted to a public authority",
-        "a receipt issued when purchasing stationery supplies",
-        "an identity badge worn by civil servants inside ministry buildings"
+        "a written request or complaint sent to an authority",
+        "the written decision an authority sends in reply",
+        "the minutes taken at a public hearing"
       ],
       "correct": 0,
       "teaches": [
@@ -109,10 +109,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A beadvány szerzője az Alaptörvény védelmet garantáló passzusaira ____.",
+      "sentence": "A beadvány szerzője a törvényre ____.",
       "hint": "referred / cited",
       "answer": "hivatkozott",
-      "english": "The author of the petition cited the passages of the Fundamental Law that guarantee protection.",
+      "english": "The author of the petition cited the law.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]
@@ -122,10 +122,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A vizsgálóbiztos a jelentésében külön ____ a lakossági panaszok megalapozottságára.",
+      "sentence": "A polgármester a jelentésében külön ____ a lakosok kérdéseire.",
       "hint": "touched upon",
       "answer": "kitért",
-      "english": "In his report, the inquiry commissioner specifically touched upon the groundedness of public complaints.",
+      "english": "In his report the mayor specifically addressed the residents' questions.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]
@@ -179,26 +179,22 @@
       "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "ellenőrök",
-        "a",
-        "helyszínen",
-        "győződtek",
-        "meg",
+        "A",
+        "jegyző",
+        "személyesen",
+        "meggyőződött",
         "a",
         "tényekről."
       ],
       "solution": [
-        "Az",
-        "ellenőrök",
-        "a",
-        "helyszínen",
-        "győződtek",
-        "meg",
+        "A",
+        "jegyző",
+        "személyesen",
+        "meggyőződött",
         "a",
         "tényekről."
       ],
-      "english": "The inspectors made sure of the facts on site.",
+      "english": "The town clerk personally made sure of the facts.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]
@@ -211,7 +207,7 @@
       "prompt": [
         {
           "speaker": "Állampolgár",
-          "text": "Hogyan indokoljam meg a beadványomat a hivatal felé?"
+          "text": "Mit írjak a beadványomba?"
         },
         {
           "speaker": "Ügyvéd",
@@ -219,16 +215,17 @@
         }
       ],
       "options": [
-        "Hivatkozzon a méltányosság elvére, és számoljon be részletesen a rendkívüli körülményekről.",
-        "Hivatkozzon a méltányosság elvében, és számoljon be részletesen a rendkívüli körülményekről.",
-        "Hivatkozzon a méltányosság elvére, és számoljon be részletesen a rendkívüli körülményekben."
+        "Hivatkozzon a törvényre, és számoljon be a tényekről.",
+        "Hivatkozzon a törvényben, és számoljon be a tényekről.",
+        "Hivatkozzon a törvényre, és számoljon be a tényekben."
       ],
       "correct": 0,
       "teaches": [
         "verb-government-ra-re"
       ],
       "distractor_skills": {
-        "1": "verb-government-ban-ben"
+        "1": "verb-government-ban-ben",
+        "2": "verb-government-ban-ben"
       }
     },
     {
@@ -239,7 +236,7 @@
       "prompt": [
         {
           "speaker": "Bizottsági elnök",
-          "text": "Mire terjedt ki a hatósági ellenőrzés?"
+          "text": "Mit írt a jelentés?"
         },
         {
           "speaker": "Főfelügyelő",
@@ -247,9 +244,9 @@
         }
       ],
       "options": [
-        "A felügyelők személyesen győződtek meg a biztonsági előírások betartásáról, és a jelentés külön kitért a hiányosságokra.",
-        "A felügyelők személyesen győződtek meg a biztonsági előírások betartásában, és a jelentés külön kitért a hiányosságokra.",
-        "A felügyelők személyesen győződtek meg a biztonsági előírások betartásáról, és a jelentés külön kitért a hiányosságokról."
+        "A jegyző meggyőződött a szabályok betartásáról, és a jelentés kitért a panaszokra.",
+        "A jegyző meggyőződött a szabályok betartásában, és a jelentés kitért a panaszokra.",
+        "A jegyző meggyőződött a szabályok betartásáról, és a jelentés kitért a panaszokról."
       ],
       "correct": 0,
       "teaches": [
@@ -267,7 +264,7 @@
       "template": [
         {
           "prompt": "Write a sentence using 'hivatkozik' (+ -ra/-re) citing a law in an administrative context.",
-          "answer": "A fellebbezésében az ügyfél az általános közigazgatási rendtartásról szóló törvényre hivatkozott."
+          "answer": "A beadványában az ügyfél a törvényre hivatkozott."
         }
       ],
       "teaches": [
@@ -282,7 +279,7 @@
       "template": [
         {
           "prompt": "Write a sentence using 'meggyőződik' (+ -ról/-ről) verifying factual accuracy.",
-          "answer": "A döntés meghozatala előtt a hivatalvezető személyesen győződött meg a benyújtott dokumentumok valódiságáról."
+          "answer": "A hivatalvezető a döntés előtt személyesen meggyőződött a tényekről."
         }
       ],
       "teaches": [
@@ -294,10 +291,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "check",
-      "sentence": "A polgármester beszédében nem ____ a lakossági tiltakozást kiváltó beruházásra.",
+      "sentence": "A polgármester a beszédében nem ____ a lakosok panaszaira.",
       "hint": "did not touch upon",
       "answer": "tért ki",
-      "english": "In his speech, the mayor did not touch upon the investment that elicited public protest.",
+      "english": "In his speech the mayor did not address the residents' complaints.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]

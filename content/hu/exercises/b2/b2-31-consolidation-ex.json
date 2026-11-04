@@ -37,11 +37,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "recognize",
-      "question": "What does 'fanyar' signify in tasting notes for Hungarian wines or fruits?",
+      "question": "What does 'fanyar' mean in tasting notes?",
       "options": [
-        "a pleasantly dry, astringent, tannic sensation that cleanses the palate",
-        "an overly sweet, syrupy and cloying taste profile",
-        "a completely spoiled and vinegar-like acidity"
+        "a pleasantly dry, tart taste",
+        "a very sweet, sticky taste",
+        "a salty and oily taste"
       ],
       "correct": 0,
       "teaches": [
@@ -53,26 +53,29 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Which sentence correctly illustrates both a resultative sublative phrase and a hypothetical simile?",
+      "question": "Which sentence correctly shows both a resultative phrase and a hypothetical simile?",
       "options": [
-        "A pék pirosra sütötte a kenyeret, amely olyan illatos volt, mintha most vették volna ki a kemencéből.",
-        "A pék pirosan sütötte a kenyeret, amely olyan illatos volt, mintha most veszik ki a kemencéből.",
-        "A pék pirosról sütötte a kenyeret, amely olyan illatos volt, mintha most venni a kemencéből."
+        "A szakács pirosra sütötte a kenyeret, amely olyan friss volt, mintha most sütötték volna.",
+        "A szakács pirosan sütötte a kenyeret, amely olyan friss volt, mintha most sütötték volna.",
+        "A szakács pirosra sütötte a kenyeret, amely olyan friss volt, mintha most sütnének volna."
       ],
       "correct": 0,
       "teaches": [
         "mintha"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "an-en-adverb"
+      }
     },
     {
       "id": "b2-31-consolidation-4",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A degusztációs vacsora végén a vendégek elégedettek voltak, mert a prémium minőség mellett az ____ is kedvező maradt.",
+      "sentence": "A vacsora végén a vendégek elégedettek voltak, mert a jó minőség mellett az ____ is kedvező maradt.",
       "hint": "value for money",
       "answer": "ár-érték arány",
-      "english": "At the end of the tasting dinner the guests were satisfied because alongside premium quality the value for money also remained favorable.",
+      "english": "At the end of the dinner the guests were satisfied because alongside good quality the value for money also remained favorable.",
       "teaches": [
         "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
@@ -82,12 +85,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A séf a zöldségeket vajon kíméletesen ____ párolta a sült hal mellé.",
+      "sentence": "A szakács a zöldségeket lassan ____ párolta a hal mellé.",
       "hint": "until tender",
       "answer": "puhára",
-      "english": "The chef gently braised the vegetables tender in butter beside the roasted fish.",
+      "english": "The cook slowly braised the vegetables until tender to go with the fish.",
       "teaches": [
-        "mintha"
+        "ra-re"
       ]
     },
     {
@@ -95,10 +98,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A forró fokhagymás pirítós íze olyan nosztalgiát ébresztett benne, ____ gyermekkorában ült volna a konyhában.",
+      "sentence": "A forró leves íze olyan volt neki, ____ a nagymamája konyhájában ült volna.",
       "hint": "as if",
       "answer": "mintha",
-      "english": "The taste of hot garlic toast aroused such nostalgia in him as if he had been sitting in the kitchen during his childhood.",
+      "english": "The taste of the hot soup was to him as if he had been sitting in his grandmother's kitchen.",
       "teaches": [
         "mintha"
       ]
@@ -108,16 +111,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is the sublative (-ra/-re) used instead of an adverbial (-an/-en) in 'ropogósra pirítja'?",
+      "question": "Which sentence uses 'ropogósra pirít' correctly?",
       "options": [
-        "Because it designates the resulting end state achieved by the cooking process rather than the ongoing manner of action.",
-        "Because in Hungarian all verbs of motion must take a sublative suffix.",
-        "Because 'ropogós' cannot take any other suffix according to vowel harmony rules."
+        "A szakács a szalonnát ropogósra pirította.",
+        "A szakács a szalonnát ropogósig pirította.",
+        "A szakács a szalonnát ropogósnak pirította."
       ],
       "correct": 0,
       "teaches": [
-        "mintha"
-      ]
+        "ra-re"
+      ],
+      "distractor_skills": {
+        "1": "terminative-case-ig"
+      }
     },
     {
       "id": "b2-31-consolidation-8",
@@ -127,7 +133,7 @@
       "prompt": [
         {
           "speaker": "Irodalomtörténész",
-          "text": "Hogyan ábrázolja Krúdy Gyula a gasztronómia és az emberi emlékezet kapcsolatát a Szindbád-történetekben?"
+          "text": "Mit idéz fel a húsleves illata Szindbádban?"
         },
         {
           "speaker": "Egyetemi oktató",
@@ -135,30 +141,38 @@
         }
       ],
       "options": [
-        "Az ízek, a forró húsleves és a velős csont rituáléja Prousthoz hasonlóan a letűnt idők, szerelmek és ifjúság érzéki felidézésének eszköze.",
-        "Az ízek, a forró húsleves és a velős csont rituáléja Proustban hasonlóan a letűnt idők, szerelmek és ifjúság érzéki felidézésének eszköze.",
-        "Az ízek, a forró húsleves és a velős csont rituáléja Prousthoz hasonlóan a letűnt idők, szerelmek és ifjúság érzéki felidézésére eszköze."
+        "A régi vasárnapok és az elmúlt szerelmek emlékét idézi fel.",
+        "A régi vasárnapok és az elmúlt szerelmek emlékére idézi fel.",
+        "A régi vasárnapok és az elmúlt szerelmek emlékében idézi fel."
       ],
       "correct": 0,
       "teaches": [
-        "mintha"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b2-31-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Select the sentence where the resultative sublative phrase is applied with stylistic elegance:",
+      "question": "Select the sentence where the resultative phrases are used correctly:",
       "options": [
-        "A vadast lassan sűrűre főzték, a zsemlegombócot pedig puhára gőzölték a tálalás előtt.",
-        "A vadast lassan sűrűn főzték, a zsemlegombócot pedig puhán gőzölték a tálalás előtt.",
-        "A vadast lassan sűrűig főzték, a zsemlegombócot pedig puháig gőzölték a tálalás előtt."
+        "A mártást lassan sűrűre főzték, a húst pedig puhára párolták.",
+        "A mártást lassan sűrűig főzték, a húst pedig puhára párolták.",
+        "A mártást lassan sűrűre főzték, a húst pedig puháig párolták."
       ],
       "correct": 0,
       "teaches": [
-        "mintha"
-      ]
+        "ra-re"
+      ],
+      "distractor_skills": {
+        "1": "terminative-case-ig",
+        "2": "terminative-case-ig"
+      }
     },
     {
       "id": "b2-31-consolidation-10",
@@ -168,26 +182,22 @@
       "tiles": [
         "A",
         "szakács",
-        "aranysárgára",
+        "aranybarnára",
         "pirította",
         "a",
-        "finom",
-        "vajas",
-        "galuskát."
+        "kenyeret."
       ],
       "solution": [
         "A",
         "szakács",
-        "aranysárgára",
+        "aranybarnára",
         "pirította",
         "a",
-        "finom",
-        "vajas",
-        "galuskát."
+        "kenyeret."
       ],
-      "english": "The cook toasted the fine butter dumplings golden yellow.",
+      "english": "The cook toasted the bread golden brown.",
       "teaches": [
-        "mintha"
+        "ra-re"
       ]
     },
     {
@@ -199,25 +209,27 @@
         "A",
         "pincér",
         "olyan",
-        "udvariasan",
+        "szépen",
         "szólt,",
         "mintha",
-        "főúri",
-        "kastélyban",
+        "egy",
+        "nagy",
+        "étteremben",
         "lennénk."
       ],
       "solution": [
         "A",
         "pincér",
         "olyan",
-        "udvariasan",
+        "szépen",
         "szólt,",
         "mintha",
-        "főúri",
-        "kastélyban",
+        "egy",
+        "nagy",
+        "étteremben",
         "lennénk."
       ],
-      "english": "The waiter spoke so politely as if we were in an aristocratic manor.",
+      "english": "The waiter spoke so nicely as if we were in a grand restaurant.",
       "teaches": [
         "mintha"
       ]
@@ -230,11 +242,11 @@
       "template": [
         {
           "prompt": "Write a compound sentence combining a resultative sublative phrase ('ropogósra süt / puhára párol') and a sensory comparison with 'mintha'.",
-          "answer": "A konyhafőnök omlósra párolta a marhapofát és ropogósra pirította a köretet; az ételek harmóniája oly gazdag volt, mintha egy királyi lakomán vettünk volna részt."
+          "answer": "A szakács a húst omlósra párolta, a zöldséget pedig ropogósra pirította; az étel olyan finom volt, mintha otthon ettünk volna."
         }
       ],
       "teaches": [
-        "mintha"
+        "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
     }
   ]

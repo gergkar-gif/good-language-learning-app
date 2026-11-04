@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is the meaning of 'anyanyelv' in linguistic and cultural identity?",
+      "question": "What does 'anyanyelv' mean?",
       "options": [
-        "one's native language or mother tongue acquired from birth",
-        "a foreign language learned in adulthood for travel",
-        "a dialect spoken exclusively by sailors at sea"
+        "the language you grew up speaking at home",
+        "a language you learn later at school",
+        "the language of a state's official papers"
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Which phrase introduces categorical negative condition ('not even if...')?",
+      "question": "Which phrase means 'not even if …'?",
       "options": [
         "akkor sem, ha",
-        "mivel",
-        "mintha"
+        "csak akkor, ha",
+        "annak ellenére, hogy"
       ],
       "correct": 0,
       "teaches": [
@@ -69,11 +69,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which correlative best completes: 'Hűségesek maradunk a szülőföldhöz, ____ a körülmények nehezek'?",
+      "question": "Which phrase completes the sentence? Hűségesek maradunk a szülőföldhöz, ____ a körülmények nehezek. (We stay loyal to our homeland even if conditions are hard.)",
       "options": [
         "még akkor is, ha",
-        "mivelhogy",
-        "annak ellenére"
+        "csak akkor, ha",
+        "akkor sem, ha"
       ],
       "correct": 0,
       "teaches": [
@@ -85,11 +85,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the phrase expressing absolute refusal in: 'Nem hagyjuk el az iskolát, ____ bezárással fenyegetnek':",
+      "question": "Which phrase completes the sentence? Nem hagyjuk el az iskolát, ____ bezárással fenyegetnek. (We will not leave the school, not even if they threaten to close it.)",
       "options": [
         "akkor sem, ha",
         "csak akkor, ha",
-        "feltéve, hogy"
+        "mert"
       ],
       "correct": 0,
       "teaches": [
@@ -101,12 +101,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A diákok kitartóan tanulnak, ____ nehéz vizsgakövetelményekkel szembesülnek.",
-      "hint": "even if / even in that case if",
-      "answer": "még akkor is, ha",
-      "english": "The students study persistently, even if they face difficult exam requirements.",
+      "sentence": "A diákok sokat tanulnak, ____ nehéz a vizsga.",
+      "hint": "even if",
+      "english": "The students study a lot, even if the exam is hard.",
       "teaches": [
         "even-if-ha-is"
+      ],
+      "answers": [
+        "még akkor is, ha",
+        "akkor is, ha"
       ]
     },
     {
@@ -116,10 +119,14 @@
       "stage": "practice",
       "sentence": "A közösség nem adja fel a kulturális autonómia követelését, ____ elutasítják a kérelmét.",
       "hint": "not even if",
-      "answer": "akkor sem, ha",
       "english": "The community will not give up demanding cultural autonomy, not even if its petition is rejected.",
       "teaches": [
         "even-if-ha-is"
+      ],
+      "answers": [
+        "akkor sem, ha",
+        "még akkor sem, ha",
+        "még akkor is, ha"
       ]
     },
     {
@@ -174,25 +181,23 @@
         "A",
         "kisebbségi",
         "lét",
-        "sajátos",
-        "kulturális",
-        "felelősséget",
-        "ró",
-        "az",
-        "értelmiségre."
+        "nehéz,",
+        "de",
+        "a",
+        "közösség",
+        "kitart."
       ],
       "solution": [
         "A",
         "kisebbségi",
         "lét",
-        "sajátos",
-        "kulturális",
-        "felelősséget",
-        "ró",
-        "az",
-        "értelmiségre."
+        "nehéz,",
+        "de",
+        "a",
+        "közösség",
+        "kitart."
       ],
-      "english": "Minority existence imposes a distinct cultural responsibility upon intellectuals.",
+      "english": "Life as a minority is hard, but the community holds on.",
       "teaches": [
         "b2-borders-kinship-transborder-identity-vocab"
       ]
@@ -205,7 +210,7 @@
       "prompt": [
         {
           "speaker": "Tanár",
-          "text": "Hogyan lehet fenntartani az anyanyelvi óvodát a kis létszámú szórványban?"
+          "text": "Megnyitják az új osztályt, ha csak öt gyerek jelentkezik?"
         },
         {
           "speaker": "Szülő",
@@ -213,9 +218,9 @@
         }
       ],
       "options": [
-        "Összefogással és elszántsággal; még akkor is megnyitjuk az osztályt, ha kevés gyermek jelentkezik.",
-        "Összefogással és elszántsággal; akkor is megnyitjuk az osztályt, ha nem kevés gyermek jelentkezne.",
-        "Összefogással és elszántsággal; még akkor is megnyitnánk az osztályt, mégis kevés gyermek jelentkezik."
+        "Igen, még akkor is megnyitjuk, ha csak öt gyerek jelentkezik.",
+        "Igen, még akkor is megnyitjuk, hogy csak öt gyerek jelentkezik.",
+        "Igen, még akkor is megnyitjuk, ha csak öt gyerek jelentkezett volna."
       ],
       "correct": 0,
       "teaches": [
@@ -230,7 +235,7 @@
       "prompt": [
         {
           "speaker": "Kutató",
-          "text": "Hajlandók a helyi lakosok elhagyni a szülőföldjüket a jobb állásokért?"
+          "text": "Miért maradnak a falusiak a faluban, ha a városban több pénzt kapnának?"
         },
         {
           "speaker": "Szociológus",
@@ -238,9 +243,9 @@
         }
       ],
       "options": [
-        "A legtöbben ragaszkodnak a gyökereikhez: sokan akkor sem költöznének el, ha máshol magasabb fizetést kapnának.",
-        "A legtöbben ragaszkodnak a gyökereikhez: sokan akkor sem költöznének el, ha máshol magasabb fizetést kapnak volna.",
-        "A legtöbben ragaszkodnak a gyökereikhez: sokan még akkor költöznének el, ha máshol magasabb fizetést kapnának."
+        "Mert ragaszkodnak a szülőföldjükhöz; akkor sem költöznek el, ha a városban több pénzt kapnak.",
+        "Mert ragaszkodnak a szülőföldjükhöz; akkor is költöznek el, ha a városban több pénzt kapnak.",
+        "Mert ragaszkodnak a szülőföldjükhöz; akkor sem költöznek el, hogy a városban több pénzt kapnak."
       ],
       "correct": 0,
       "teaches": [
@@ -254,8 +259,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence with 'még akkor is, ha' asserting fidelity to mother-tongue education.",
-          "answer": "Az anyanyelvi iskolához ragaszkodnunk kell, még akkor is, ha jelentős adminisztratív akadályok merülnek fel."
+          "prompt": "Write a sentence with 'még akkor is, ha': the community stays with its school although money is short.",
+          "answer": "A közösség kitart az iskola mellett, még akkor is, ha kevés a pénz."
         }
       ],
       "teaches": [
@@ -269,8 +274,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence with 'akkor sem, ha' rejecting the abandonment of cultural heritage.",
-          "answer": "A történelmi hagyományainkról akkor sem mondhatunk le, ha a modern világ gyors asszimilációra ösztönöz."
+          "prompt": "Write a sentence with 'akkor sem, ha': we will not give up our mother tongue even if our situation is hard.",
+          "answer": "Az anyanyelvünket akkor sem adjuk fel, ha nehéz a helyzetünk."
         }
       ],
       "teaches": [
@@ -282,12 +287,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A színház társulata folytatja a munkát, ____ szűkülnek az anyagi támogatások.",
-      "hint": "even if / even in that case if",
-      "answer": "még akkor is, ha",
-      "english": "The theatre company continues its work, even if financial subsidies diminish.",
+      "sentence": "A kis iskola nyitva marad, ____ kevés gyerek jár oda.",
+      "hint": "even if",
+      "english": "The small school stays open, even if few children go there.",
       "teaches": [
         "even-if-ha-is"
+      ],
+      "answers": [
+        "még akkor is, ha",
+        "akkor is, ha"
       ]
     },
     {
@@ -295,11 +303,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which compound phrase refers to the historical experience and challenges of living as an ethnic minority?",
+      "question": "Which phrase means 'life as a minority'?",
       "options": [
         "kisebbségi lét",
-        "városi élet",
-        "szabadidő"
+        "falusi élet",
+        "városi élet"
       ],
       "correct": 0,
       "teaches": [

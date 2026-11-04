@@ -24,9 +24,9 @@
       "stage": "introduce",
       "question": "What does 'kicselez' mean when a striker faces a goalkeeper?",
       "options": [
-        "to outmaneuver or dribble past the goalkeeper using deceptive body motion",
-        "to kick the ball out of the stadium intentionally",
-        "to ask the referee for permission to leave the pitch"
+        "to get past the goalkeeper with a trick",
+        "to pass the ball back to a teammate",
+        "to shoot the ball into the net"
       ],
       "correct": 0,
       "teaches": [
@@ -77,7 +77,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "annyira-hogy"
+        "prefix-word-order"
       ]
     },
     {
@@ -85,47 +85,47 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the sentence demonstrating correct consecutive degree with athletic motion:",
+      "question": "Select the correct sentence:",
       "options": [
-        "A szélső olyannyira felgyorsított, hogy könnyedén lefutotta a védőjét.",
-        "A szélső olyannyira felgyorsított hogy könnyedén lefutott a védőjét.",
-        "A szélső olyannyira felgyorsított, hogy könnyedén lefut a védőjét."
+        "A szélső olyannyira felgyorsított, hogy könnyedén lefutotta a védőt.",
+        "A szélső olyannyira felgyorsított, hogy könnyedén lefutott a védőt.",
+        "A szélső olyannyira felgyorsított, hogy könnyedén lefutotta a védő."
       ],
       "correct": 0,
       "teaches": [
-        "annyira-hogy"
+        "definite-vs-indefinite-conjugation"
       ]
     },
     {
       "id": "b2-32-02-controlled-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A támadó egy pontos passzt kapott, és a tizenhatos vonaláról a hálóba ____ a labdát.",
+      "sentence": "A csatár egy pontos passzt kapott, és a hálóba ____ a labdát.",
       "hint": "shot in",
       "answer": "belőtte",
-      "english": "The attacker received an accurate pass and shot the ball into the net from the eighteen-yard line.",
+      "english": "The striker received an accurate pass and shot the ball into the net.",
       "teaches": [
-        "annyira-hogy"
+        "b2-competition-mastery-peak-performance-vocab"
       ]
     },
     {
       "id": "b2-32-02-practice-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A villámgyors futó az utolsó kanyarban teljesen ____ a mezőnyt.",
-      "hint": "outran / left behind",
+      "sentence": "A gyors szélső könnyedén ____ a védőt.",
+      "hint": "outran",
       "answer": "lefutotta",
-      "english": "The lightning-fast runner completely outran the field in the final bend.",
+      "english": "The fast winger easily outran the defender.",
       "teaches": [
-        "annyira-hogy"
+        "b2-competition-mastery-peak-performance-vocab"
       ]
     },
     {
       "id": "b2-32-02-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -147,7 +147,7 @@
       ],
       "english": "The midfielder received the long cross pass faultlessly.",
       "teaches": [
-        "annyira-hogy"
+        "b2-competition-mastery-peak-performance-vocab"
       ]
     },
     {
@@ -170,21 +170,25 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "sprinter",
+        "szélső",
         "hirtelen",
-        "felgyorsított",
+        "felgyorsított,",
+        "és",
+        "lefutotta",
         "a",
-        "célegyenesben."
+        "védőt."
       ],
       "solution": [
         "A",
-        "sprinter",
+        "szélső",
         "hirtelen",
-        "felgyorsított",
+        "felgyorsított,",
+        "és",
+        "lefutotta",
         "a",
-        "célegyenesben."
+        "védőt."
       ],
-      "english": "The sprinter suddenly accelerated in the home straight.",
+      "english": "The winger suddenly accelerated and outran the defender.",
       "teaches": [
         "b2-competition-mastery-peak-performance-vocab"
       ]
@@ -197,7 +201,7 @@
       "prompt": [
         {
           "speaker": "Kommentátor",
-          "text": "Hogyan született meg a mérkőzést eldöntő győztes gól a hosszabbításban?"
+          "text": "Mi történt a támadásban?"
         },
         {
           "speaker": "Szakértő",
@@ -205,14 +209,18 @@
         }
       ],
       "options": [
-        "A cserecsatár lefutotta a fáradó védőt, pazar mozdulattal átvette az indítást, majd hidegvérrel belőtte a hosszú sarokba.",
-        "A cserecsatár lefutotta a fáradó védőt, pazar mozdulattal átvette az indítást, majd hidegvérrel lőtte be a hosszú sarokba.",
-        "A cserecsatár lefutotta a fáradó védőt, pazar mozdulatra vette át az indítást, majd hidegvérrel belőtte a hosszú sarokba."
+        "A szélső lefutotta a védőt, átvette a labdát, majd belőtte a hálóba.",
+        "A szélső lefutotta a védőt, átvette a labdát, majd lőtte be a hálóba.",
+        "A szélső lefutotta a védőt, átvette a labdát, majd kilőtte a hálóba."
       ],
       "correct": 0,
       "teaches": [
-        "annyira-hogy"
-      ]
+        "prefix-word-order"
+      ],
+      "distractor_skills": {
+        "1": "b2-focus-inversion",
+        "2": "b2-figurative-preverbs"
+      }
     },
     {
       "id": "b2-32-02-dialogue-2",
@@ -222,7 +230,7 @@
       "prompt": [
         {
           "speaker": "Edző",
-          "text": "Miért nem tudtad kicselezni a hátvédet az egy az egy elleni szituációban?"
+          "text": "Miért nem tudtad kicselezni a védőt?"
         },
         {
           "speaker": "Szélső",
@@ -230,9 +238,9 @@
         }
       ],
       "options": [
-        "Olyannyira szorosan rám tapadt a védő, hogy nem maradt elég területem felgyorsítani a labdával.",
-        "Olyannyira szorosan rám tapadt a védő, mert nem maradt elég területem felgyorsítani a labdával.",
-        "Olyannyira szorosan rám tapadt a védő, ha nem maradt volna elég területem felgyorsulni a labdával."
+        "Olyannyira gyors volt a védő, hogy nem tudtam kicselezni.",
+        "Olyannyira gyors volt a védő, mert nem tudtam kicselezni.",
+        "Olyannyira gyors volt a védő, ha nem tudtam kicselezni."
       ],
       "correct": 0,
       "teaches": [
@@ -247,11 +255,11 @@
       "template": [
         {
           "prompt": "Write a sentence using 'átvesz' and 'kicselez' to describe an offensive football action.",
-          "answer": "A támadó egyetlen finom mozdulattal átvette a mélységi indítást, majd villámgyorsan kicselezte a kifutó kapust."
+          "answer": "A csatár átvette a labdát, majd kicselezte a kapust."
         }
       ],
       "teaches": [
-        "annyira-hogy"
+        "b2-competition-mastery-peak-performance-vocab"
       ]
     },
     {
@@ -262,7 +270,7 @@
       "template": [
         {
           "prompt": "Write a sentence using 'lefut' and 'belő' with consecutive degree.",
-          "answer": "A szélső olyannyira könnyedén lefutotta a védelmét, hogy a kapus mellett ziccerből belőtte a vezető gólt."
+          "answer": "A szélső olyannyira könnyedén lefutotta a védőt, hogy utána belőtte a labdát a hálóba."
         }
       ],
       "teaches": [
@@ -274,10 +282,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A tehetséges játékos a döntő pillanatban elegánsan ____ a kapust.",
+      "sentence": "A tehetséges játékos a döntő pillanatban ____ a kapust.",
       "hint": "dribbled past",
       "answer": "kicselezte",
-      "english": "The talented player elegantly dribbled past the goalkeeper at the decisive moment.",
+      "english": "The talented player dribbled past the goalkeeper at the decisive moment.",
       "teaches": [
         "annyira-hogy"
       ]
@@ -287,11 +295,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which verb describes increasing running speed dramatically in a sprint?",
+      "question": "Which verb means to speed up?",
       "options": [
         "felgyorsít",
-        "lelassít",
-        "megtorpan"
+        "kicselez",
+        "lefut"
       ],
       "correct": 0,
       "teaches": [

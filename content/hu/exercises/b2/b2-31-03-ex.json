@@ -9,8 +9,8 @@
       "question": "Which adjective describes meat that is so tender it literally melts in the mouth?",
       "options": [
         "omlós",
-        "rágós",
-        "kemény"
+        "fanyar",
+        "forró"
       ],
       "correct": 0,
       "teaches": [
@@ -24,9 +24,9 @@
       "stage": "introduce",
       "question": "What does 'fanyar' describe in gastronomic sensory terminology?",
       "options": [
-        "pleasantly dry, tart, or astringent taste such as in cranberries or dry wine tannins",
-        "excessively sugary and cloying like cheap syrup",
-        "completely burnt and charcoal-flavored"
+        "a pleasantly dry and tart taste",
+        "a very sweet and sticky taste",
+        "a salty and oily taste"
       ],
       "correct": 0,
       "teaches": [
@@ -69,16 +69,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which resultative phrase correctly describes braising the duck until tender?",
+      "question": "Which resultative phrase correctly describes braising the meat until tender?",
       "options": [
-        "A kacsát omlósra párolta a séf.",
-        "A kacsát omlósan párolta a séf.",
-        "A kacsát omlóssal párolta a séf."
+        "A húst omlósra párolta a szakács.",
+        "A húst omlósan párolta a szakács.",
+        "A húst omlóssal párolta a szakács."
       ],
       "correct": 0,
       "teaches": [
-        "mintha"
-      ]
+        "ra-re"
+      ],
+      "distractor_skills": {
+        "1": "an-en-adverb",
+        "2": "val-vel"
+      }
     },
     {
       "id": "b2-31-03-controlled-3",
@@ -101,12 +105,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A vadhúst addig párolták a vörösborban, amíg teljesen ____ nem puhult.",
+      "sentence": "A húst addig párolták lassú tűzön, amíg teljesen ____ nem főtt.",
       "hint": "tender",
       "answer": "omlósra",
-      "english": "They braised the venison in red wine until it softened completely tender.",
+      "english": "They braised the meat over low heat until it was cooked completely tender.",
       "teaches": [
-        "mintha"
+        "ra-re"
       ]
     },
     {
@@ -114,10 +118,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A somlói galuska csokoládéöntete olyan gazdag volt, mintha tiszta kakaóbabból ____ volna.",
-      "hint": "had been brewed",
-      "answer": "főzték",
-      "english": "The chocolate sauce of the Somló sponge was so rich, as if it had been brewed from pure cacao beans.",
+      "sentence": "A leves olyan zamatos volt, mintha egész nap a tűzön ____ volna.",
+      "hint": "had stood",
+      "answer": "állt",
+      "english": "The soup was so flavorful as if it had stood on the fire all day.",
       "teaches": [
         "mintha"
       ]
@@ -125,15 +129,15 @@
     {
       "id": "b2-31-03-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
-        "hosszú",
-        "érlelés",
+        "lassú",
+        "főzés",
         "után",
         "a",
-        "sajt",
+        "leves",
         "íze",
         "különösen",
         "zamatos",
@@ -141,19 +145,19 @@
       ],
       "solution": [
         "A",
-        "hosszú",
-        "érlelés",
+        "lassú",
+        "főzés",
         "után",
         "a",
-        "sajt",
+        "leves",
         "íze",
         "különösen",
         "zamatos",
         "lett."
       ],
-      "english": "After the long aging, the taste of the cheese became exceptionally flavorful.",
+      "english": "After the slow cooking, the taste of the soup became especially flavorful.",
       "teaches": [
-        "mintha"
+        "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
     },
     {
@@ -161,10 +165,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A prémium minőségű étcsokoládé elfogyasztása után hosszan tartó, kellemesen ____ íz maradt a szájban.",
+      "sentence": "A bor után kellemes, hosszú ____ maradt a szájban.",
       "hint": "aftertaste",
       "answer": "utóíz",
-      "english": "After consuming the premium dark chocolate, a long-lasting, pleasant aftertaste remained in the mouth.",
+      "english": "After the wine, a pleasant, long aftertaste remained in the mouth.",
       "teaches": [
         "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
@@ -177,22 +181,20 @@
       "tiles": [
         "A",
         "magyar",
-        "borkultúra",
-        "egyedülálló",
-        "ízvilágot",
-        "képvisel",
-        "Közép-Európában."
+        "konyhának",
+        "különleges",
+        "ízvilága",
+        "van."
       ],
       "solution": [
         "A",
         "magyar",
-        "borkultúra",
-        "egyedülálló",
-        "ízvilágot",
-        "képvisel",
-        "Közép-Európában."
+        "konyhának",
+        "különleges",
+        "ízvilága",
+        "van."
       ],
-      "english": "Hungarian wine culture represents a unique flavor profile in Central Europe.",
+      "english": "Hungarian cuisine has a special flavor profile.",
       "teaches": [
         "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
@@ -204,23 +206,27 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Sommelier",
-          "text": "Milyen jegyeket érez ki ebből az egri bikavérből a kóstolás során?"
+          "speaker": "Vendég",
+          "text": "Milyen ez a bor?"
         },
         {
-          "speaker": "Borkedvelő vendég",
+          "speaker": "Pincér",
           "text": "____"
         }
       ],
       "options": [
-        "Kifejezetten zamatos szilvás aromákkal nyit, majd a korty végén kellemesen fanyar tölgyfás utóíz bontakozik ki.",
-        "Kifejezetten zamatos szilvás aromákra nyit, majd a korty végén kellemesen fanyar tölgyfás utóíz bontakozik ki.",
-        "Kifejezetten zamatos szilvás aromákkal nyit, majd a korty végében kellemesen fanyar tölgyfás utóíz kibontakozik."
+        "Zamatos, és hosszú, fanyar utóíz marad a szájban.",
+        "Zamatos, és hosszú, fanyar utóíz marad a szájból.",
+        "Zamatos, és hosszú, fanyar utóíz marad a szájra."
       ],
       "correct": 0,
       "teaches": [
-        "mintha"
-      ]
+        "ban-ben-in"
+      ],
+      "distractor_skills": {
+        "1": "elative-bol-bel",
+        "2": "ra-re"
+      }
     },
     {
       "id": "b2-31-03-dialogue-2",
@@ -230,22 +236,26 @@
       "prompt": [
         {
           "speaker": "Vendég",
-          "text": "Hogyan készítették el ezt a marhapofát, hogy ennyire vajpuha maradt?"
+          "text": "Hogyan készítették ezt a húst?"
         },
         {
-          "speaker": "Főpincér",
+          "speaker": "Szakács",
           "text": "____"
         }
       ],
       "options": [
-        "Tizenkét órán át sous-vide eljárással puhára pároltuk alacsony hőfokon, így őrizte meg omlós textúráját.",
-        "Tizenkét órán át sous-vide eljárással puhán pároltuk alacsony hőfokon, így őrizte meg omlós textúráját.",
-        "Tizenkét órán át sous-vide eljárással puhává pároltuk alacsony hőfokon, így őrizte meg omlós textúráját."
+        "Lassú tűzön puhára pároltuk, ezért olyan omlós.",
+        "Lassú tűzön puháig pároltuk, ezért olyan omlós.",
+        "Lassú tűzön puhába pároltuk, ezért olyan omlós."
       ],
       "correct": 0,
       "teaches": [
-        "mintha"
-      ]
+        "ra-re"
+      ],
+      "distractor_skills": {
+        "1": "terminative-case-ig",
+        "2": "movement-with-ba-be"
+      }
     },
     {
       "id": "b2-31-03-writing-1",
@@ -255,11 +265,11 @@
       "template": [
         {
           "prompt": "Write a sentence using 'omlós' and 'zamatos' to describe a meat dish.",
-          "answer": "A lassan sült báránycsülök kívül ropogósra pirult, belül pedig csodálatosan omlós és zamatos maradt."
+          "answer": "A lassan sült hús kívül ropogós, belül pedig omlós és zamatos maradt."
         }
       ],
       "teaches": [
-        "mintha"
+        "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
     },
     {
@@ -270,11 +280,11 @@
       "template": [
         {
           "prompt": "Write a sentence describing a wine's finish using 'fanyar' and 'utóíz'.",
-          "answer": "A száraz vörösbor kortyolását hosszan lecsengő, nemesen fanyar utóíz követte, amely harmonizált a vadhússal."
+          "answer": "A száraz bornak hosszú, fanyar utóíze van."
         }
       ],
       "teaches": [
-        "mintha"
+        "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
     },
     {
@@ -282,12 +292,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A séf a tésztát pirosra sütötte, a köretet pedig sűrűre ____ a hús mellé.",
-      "hint": "reduced / cooked",
+      "sentence": "A szakács a kenyeret pirosra sütötte, a mártást pedig sűrűre ____.",
+      "hint": "cooked",
       "answer": "főzte",
-      "english": "The chef baked the pastry until golden red and reduced the sauce thick beside the meat.",
+      "english": "The cook baked the bread until red-brown and cooked the sauce until thick.",
       "teaches": [
-        "mintha"
+        "ra-re"
       ]
     },
     {
@@ -298,7 +308,7 @@
       "question": "Which term denotes the comprehensive sensory profile and character of a cuisine?",
       "options": [
         "ízvilág",
-        "teríték",
+        "utóíz",
         "étlap"
       ],
       "correct": 0,

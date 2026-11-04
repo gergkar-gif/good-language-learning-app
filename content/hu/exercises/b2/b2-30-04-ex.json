@@ -24,9 +24,9 @@
       "stage": "introduce",
       "question": "What is a 'határozat' in Hungarian administrative terminology?",
       "options": [
-        "a formal, legally binding resolution or decree issued by a public authority",
-        "an informal telephone inquiry between two municipal clerks",
-        "a temporary pass giving access to the town hall cafeteria"
+        "a formal written decision of an authority",
+        "a written request sent to an authority",
+        "the minutes taken at a public hearing"
       ],
       "correct": 0,
       "teaches": [
@@ -69,11 +69,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "controlled",
-      "question": "Select the correct phrasing for lodging an administrative complaint: 'Az állampolgár hivatalos ____ a hivatalvezetőnél.'",
+      "question": "Select the correct phrasing for lodging an administrative complaint: 'Az ügyfél hivatalos ____ a hivatalvezetőnél.'",
       "options": [
         "panasszal élt",
-        "panaszt tett tönkre",
-        "sokat panaszkodott"
+        "panaszt élt",
+        "panasszal tett"
       ],
       "correct": 0,
       "teaches": [
@@ -114,10 +114,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A panaszos határidőn belül ____ az építési hatóság elmarasztaló határozata ellen.",
+      "sentence": "A panaszos határidőn belül ____ a hatóság határozata ellen.",
       "hint": "appealed",
       "answer": "fellebbezett",
-      "english": "The complainant appealed within the deadline against the construction authority's adverse decision.",
+      "english": "The complainant appealed within the deadline against the authority's decision.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]
@@ -157,10 +157,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A sérelmet szenvedett vállalkozó hivatalos ____ élt a jegyző törvénysértő eljárása miatt.",
+      "sentence": "Az ügyfél hivatalos ____ élt a jegyző eljárása miatt.",
       "hint": "complaint",
       "answer": "panasszal",
-      "english": "The aggrieved entrepreneur lodged an official complaint due to the notary's unlawful procedure.",
+      "english": "The client lodged an official complaint because of the clerk's procedure.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]
@@ -173,7 +173,6 @@
       "tiles": [
         "A",
         "kormányhivatal",
-        "másodfokon",
         "megsemmisítette",
         "a",
         "törvénysértő",
@@ -182,13 +181,12 @@
       "solution": [
         "A",
         "kormányhivatal",
-        "másodfokon",
         "megsemmisítette",
         "a",
         "törvénysértő",
         "határozatot."
       ],
-      "english": "The government office annulled the unlawful resolution on second instance.",
+      "english": "The government office annulled the unlawful decision.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]
@@ -201,7 +199,7 @@
       "prompt": [
         {
           "speaker": "Ügyfél",
-          "text": "Mit tehetek, ha úgy érzem, a hivatal igazságtalan határozatot hozott?"
+          "text": "A hivatal elutasította a kérelmemet. Mit csináljak?"
         },
         {
           "speaker": "Ügyvéd",
@@ -209,14 +207,17 @@
         }
       ],
       "options": [
-        "Tizenöt napon belül fellebbezhet a határozat ellen a felettes szervnél, vagy méltányossági kérelmet terjeszthet elő.",
-        "Tizenöt napon belül fellebbezhet a határozatnak ellen a felettes szervnél, vagy méltányossági kérelmet terjeszthet elő.",
-        "Tizenöt napon belül fellebbezhet a határozat ellen a felettes szervhez, vagy méltányossági kérelmet terjeszthet elő."
+        "Fellebbezzen a határozat ellen tizenöt napon belül.",
+        "Fellebbezzen a határozat mellett tizenöt napon belül.",
+        "Fellebbezzen ellen a határozat tizenöt napon belül."
       ],
       "correct": 0,
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "postpositions-basic"
+      }
     },
     {
       "id": "b2-30-04-dialogue-2",
@@ -226,7 +227,7 @@
       "prompt": [
         {
           "speaker": "Hivatali ellenőr",
-          "text": "Milyen indok alapján semmisítették meg a határozatot?"
+          "text": "Mi történt a határozattal?"
         },
         {
           "speaker": "Jegyző",
@@ -234,14 +235,17 @@
         }
       ],
       "options": [
-        "A vizsgálat során kiderült, hogy súlyos eljárási hiba történt, mert az ügyfélnek nem adtak lehetőséget a nyilatkozattételre.",
-        "A vizsgálat sorában kiderült, hogy súlyos eljárási hiba történt, mert az ügyfélnek nem adtak lehetőséget a nyilatkozattételre.",
-        "A vizsgálat során kiderült, hogy súlyos eljárási hiba történt, mert az ügyfélnek nem adtak lehetőséget a nyilatkozattételben."
+        "A kormányhivatal megsemmisítette, mert eljárási hiba történt.",
+        "A kormányhivatal megsemmisítette, mert eljárási hibát történt.",
+        "A kormányhivatal megsemmisítette, mert eljárási hiba történtek."
       ],
       "correct": 0,
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-30-04-writing-1",
@@ -251,7 +255,7 @@
       "template": [
         {
           "prompt": "Write a formal sentence using 'fellebbez' (+ ellen) challenging an administrative decree.",
-          "answer": "A kérelmező jogi képviselője útján fellebbezett az elsőfokú környezetvédelmi határozat ellen."
+          "answer": "A kérelmező az ügyvédje útján fellebbezett a hivatal határozata ellen."
         }
       ],
       "teaches": [
@@ -266,7 +270,7 @@
       "template": [
         {
           "prompt": "Write a sentence combining 'eljárási hiba' and 'panasszal él'.",
-          "answer": "A felperes panasszal élt az eljárási hiba miatt, amely megfosztotta őt a bizonyítás lehetőségétől."
+          "answer": "Az ügyfél panasszal élt az eljárási hiba miatt."
         }
       ],
       "teaches": [
@@ -278,10 +282,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "check",
-      "sentence": "Az állampolgárok jogosultak a törvénysértő közigazgatási döntések ____ fellebbezést benyújtani.",
+      "sentence": "Az ügyfél jogosult fellebbezést benyújtani a törvénysértő döntések ____.",
       "hint": "against",
       "answer": "ellen",
-      "english": "Citizens are entitled to submit an appeal against unlawful administrative decisions.",
+      "english": "The client is entitled to submit an appeal against unlawful decisions.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]

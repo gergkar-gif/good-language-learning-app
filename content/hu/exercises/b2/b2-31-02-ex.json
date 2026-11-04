@@ -9,7 +9,7 @@
       "question": "Which conjunction introduces hypothetical comparisons in Hungarian?",
       "options": [
         "mintha",
-        "minthogy",
+        "hiszen",
         "holott"
       ],
       "correct": 0,
@@ -69,11 +69,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which verb form correctly completes 'Olyan ropogós a kenyérhéj, mintha csak most ____ ki a kemencéből'?",
+      "question": "Which verb form correctly completes 'Olyan ropogós a kenyérhéj, mintha csak most ____ volna ki a kemencéből'?",
       "options": [
-        "vették volna",
-        "veszik",
-        "vegyék"
+        "vették",
+        "vennék",
+        "veszik"
       ],
       "correct": 0,
       "teaches": [
@@ -87,24 +87,27 @@
       "stage": "controlled",
       "question": "Select the correct sentence expressing a simultaneous sensory comparison:",
       "options": [
-        "A krém olyan lágy, mintha selyem lenne a nyelvemen.",
-        "A krém olyan lágy, mintha selyem van a nyelvemen.",
-        "A krém olyan lágy, mintha selyem volt a nyelvemen."
+        "A kenyér olyan puha, mintha vaj lenne a számban.",
+        "A kenyér olyan puha, mintha vaj lett volna a számban.",
+        "A kenyér olyan puha, hogy vaj lenne a számban."
       ],
       "correct": 0,
       "teaches": [
         "mintha"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-conditional-volna"
+      }
     },
     {
       "id": "b2-31-02-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A forró fűszerek illata úgy lebegett a konyhában, ____ egy keleti bazárban sétáltunk volna.",
+      "sentence": "A fűszerek illata olyan erős volt a konyhában, ____ egy piacon sétáltunk volna.",
       "hint": "as if",
       "answer": "mintha",
-      "english": "The aroma of hot spices floated in the kitchen as if we had been strolling in an oriental bazaar.",
+      "english": "The smell of the spices was so strong in the kitchen as if we had been strolling in a market.",
       "teaches": [
         "mintha"
       ]
@@ -114,10 +117,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A rétes tésztája olyan vékonyra sikerült, mintha szellő ____ azt.",
-      "hint": "had blown it",
-      "answer": "fújta volna",
-      "english": "The strudel pastry turned out so thin, as if a breeze had blown it.",
+      "sentence": "A hús olyan puha, mintha egész nap ____ volna.",
+      "hint": "had cooked it",
+      "answer": "főzték",
+      "english": "The meat is so tender as if they had cooked it all day.",
       "teaches": [
         "mintha"
       ]
@@ -159,10 +162,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A friss mézeskalács illata azonnal ____ a gyermekkorom legszebb karácsonyi emlékeit.",
+      "sentence": "A friss kenyér illata azonnal ____ a nagymamám konyháját.",
       "hint": "evoked",
       "answer": "felidézte",
-      "english": "The aroma of fresh gingerbread immediately evoked the fondest Christmas memories of my childhood.",
+      "english": "The smell of fresh bread immediately evoked my grandmother's kitchen.",
       "teaches": [
         "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
@@ -174,25 +177,19 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "sűrű",
+        "konyhában",
+        "nagy",
         "illatfelhő",
-        "azonnal",
-        "elárasztotta",
-        "az",
-        "egész",
-        "kocsmát."
+        "volt."
       ],
       "solution": [
         "A",
-        "sűrű",
+        "konyhában",
+        "nagy",
         "illatfelhő",
-        "azonnal",
-        "elárasztotta",
-        "az",
-        "egész",
-        "kocsmát."
+        "volt."
       ],
-      "english": "The thick cloud of aroma immediately flooded the entire tavern.",
+      "english": "There was a big cloud of aroma in the kitchen.",
       "teaches": [
         "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
@@ -204,18 +201,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Étteremkritikus",
-          "text": "Hogyan jellemezné ezt a különleges somlói galuskát?"
+          "speaker": "Vendég",
+          "text": "Honnan olyan finom ez a kenyér?"
         },
         {
-          "speaker": "Gasztronómus",
+          "speaker": "Szakács",
           "text": "____"
         }
       ],
       "options": [
-        "A csokoládéöntet és a dió harmóniája olyan tökéletes, mintha egy bécsi cukrászda műhelyében készítették volna.",
-        "A csokoládéöntet és a dió harmóniája olyan tökéletes, mintha egy bécsi cukrászda műhelyében készítették.",
-        "A csokoládéöntet és a dió harmóniája olyan tökéletes, mintha egy bécsi cukrászda műhelyében készítenék volna volt."
+        "Olyan friss, mintha csak most sütötték volna.",
+        "Olyan friss, mintha csak most sütik volna.",
+        "Olyan friss, mintha csak most sütnének volna."
       ],
       "correct": 0,
       "teaches": [
@@ -230,17 +227,17 @@
       "prompt": [
         {
           "speaker": "Vendég",
-          "text": "Miért van ilyen bódító illat ebben az öreg pincében?"
+          "text": "Miért olyan jó illat van a konyhában?"
         },
         {
-          "speaker": "Borász",
+          "speaker": "Szakács",
           "text": "____"
         }
       ],
       "options": [
-        "A tölgyfahordókban érlelődő aszú párolgása miatt olyan az illatfelhő, mintha sárgabaracklekvár főne a sparhelten.",
-        "A tölgyfahordókban érlelődő aszú párolgása miatt olyan az illatfelhő, mintha sárgabaracklekvár fő a sparhelten.",
-        "A tölgyfahordókban érlelődő aszú párolgása miatt olyan az illatfelhő, minthogy sárgabaracklekvár főne a sparhelten."
+        "Olyan az illata, mintha a nagymamám sütne kenyeret.",
+        "Olyan az illata, hogy a nagymamám sütne kenyeret.",
+        "Olyan az illata, mintha a nagymamám sütnék kenyeret."
       ],
       "correct": 0,
       "teaches": [
@@ -255,7 +252,7 @@
       "template": [
         {
           "prompt": "Write a sentence using 'mintha' with the past conditional to describe the nostalgic taste of an authentic dish.",
-          "answer": "A füstölt kolbász és a friss parasztkenyér íze olyan nosztalgiát ébresztett bennem, mintha újra a falusi nagyszüleim konyhájában ültem volna."
+          "answer": "A friss kenyér íze olyan volt, mintha újra a nagymamám konyhájában ültem volna."
         }
       ],
       "teaches": [
@@ -270,7 +267,7 @@
       "template": [
         {
           "prompt": "Write a sentence using 'ízlelőbimbó' and a sensory comparison.",
-          "answer": "A pikáns fűszerezés úgy stimulálta az ízlelőbimbóimat, mintha apró szikrák pattogtak volna a nyelvemen."
+          "answer": "Az erős fűszerek után az ízlelőbimbóim úgy égtek, mintha tűz lenne a számban."
         }
       ],
       "teaches": [
@@ -282,10 +279,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A finom vadhús úgy szétomlott a szájban, mintha vajból ____ volna.",
+      "sentence": "A hús olyan puha volt, mintha vajból ____ volna.",
       "hint": "had been made",
       "answer": "készült",
-      "english": "The delicate venison melted away in the mouth as if it had been made of butter.",
+      "english": "The meat was so soft as if it had been made of butter.",
       "teaches": [
         "mintha"
       ]
@@ -295,11 +292,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which word describes the sensory stimulation that conjures past memories?",
+      "question": "Which verb means to bring a memory back?",
       "options": [
         "felidéz",
-        "elrejt",
-        "megszüntet"
+        "elfelejt",
+        "befejez"
       ],
       "correct": 0,
       "teaches": [

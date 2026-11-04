@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What is the official role of the 'ombudsman' in Hungary?",
       "options": [
-        "an independent parliamentary commissioner who investigates fundamental rights violations and maladministration",
-        "a judge who issues traffic fines at regional road intersections",
-        "a bank manager in charge of national currency reserves"
+        "a commissioner elected by parliament to protect fundamental rights",
+        "a judge who decides disputes between citizens and offices",
+        "a minister who leads the government's daily work"
       ],
       "correct": 0,
       "teaches": [
@@ -105,7 +105,7 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A civil szervezet keresetet indított a bíróságon a megtagadott közérdekű adatok kiadása ____.",
+      "sentence": "A civil szervezet pert indított a bíróságon a megtagadott közérdekű adatok kiadása ____.",
       "hint": "for / regarding",
       "answer": "iránt",
       "english": "The civil organization launched a lawsuit in court for the release of refused public interest data.",
@@ -118,10 +118,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A közintézmények kötelesek biztosítani a költségvetési gazdálkodás teljes ____.",
+      "sentence": "A hivatal köteles biztosítani a döntések teljes ____.",
       "hint": "transparency",
       "answer": "átláthatóságát",
-      "english": "Public institutions are obliged to ensure the full transparency of budget management.",
+      "english": "The office is obliged to ensure the full transparency of its decisions.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]
@@ -161,10 +161,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A korrupció visszaszorításának leghatékonyabb eszköze a döntéshozók intézményi ____.",
+      "sentence": "A polgármester ____ erősíti a lakosok bizalmát.",
       "hint": "accountability",
       "answer": "elszámoltathatósága",
-      "english": "The most effective instrument for curbing corruption is the institutional accountability of decision-makers.",
+      "english": "The mayor's accountability strengthens the residents' trust.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]
@@ -207,7 +207,7 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Mit tehetünk, ha a minisztérium megtagadja a szerződések nyilvánosságra hozatalát?"
+          "text": "Mit csináljunk, ha a minisztérium nem adja ki az adatokat?"
         },
         {
           "speaker": "Jogvédő jogász",
@@ -215,14 +215,18 @@
         }
       ],
       "options": [
-        "Közérdekű adatigénylési pert indíthatunk, és az ombudsmanhoz fordulhatunk az átláthatóság érvényesítése végett.",
-        "Közérdekű adatigénylési pert indíthatunk, és az ombudsmannál fordulhatunk az átláthatóság érvényesítése végett.",
-        "Közérdekű adatigénylési pert indíthatunk, és az ombudsmanhoz fordulhatunk az átláthatóság érvényesítésében végett."
+        "Forduljunk az ombudsmanhoz, és kérjük az átláthatóságot.",
+        "Forduljunk az ombudsmannál, és kérjük az átláthatóságot.",
+        "Forduljunk az ombudsmannak, és kérjük az átláthatóságot."
       ],
       "correct": 0,
       "teaches": [
         "verb-government-hoz-hez"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "nal-nel",
+        "2": "verb-government-nak-nek"
+      }
     },
     {
       "id": "b2-30-03-dialogue-2",
@@ -232,7 +236,7 @@
       "prompt": [
         {
           "speaker": "Panaszos",
-          "text": "Mikor avatkozhat be az ombudsman az eljárásba?"
+          "text": "Mikor lehet az ombudsmanhoz fordulni?"
         },
         {
           "speaker": "Hivatali tanácsadó",
@@ -240,14 +244,17 @@
         }
       ],
       "options": [
-        "Akkor, ha a hatóság tevékenysége vagy mulasztása alapvető jogokat sért, és a jogorvoslati lehetőségeket már kimerítették.",
-        "Akkor, ha a hatóság tevékenysége vagy mulasztása alapvető jogokat sért, és a jogorvoslati lehetőségeket már kimerítették volna.",
-        "Akkor, ha a hatóság tevékenysége vagy mulasztása alapvető jogokba sért, és a jogorvoslati lehetőségeket már kimerítették."
+        "Akkor, ha a hatóság nem tartja be a törvényt.",
+        "Akkor, ha a hatóság nem tartja be a törvénynek.",
+        "Akkor, ha a hatóság nem tartja be a törvényben."
       ],
       "correct": 0,
       "teaches": [
-        "b2-civic-participation-advocacy-public-vocab"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b2-30-03-writing-1",
@@ -257,7 +264,7 @@
       "template": [
         {
           "prompt": "Write a sentence using 'közérdekű adat' asserting access to information.",
-          "answer": "Az önkormányzat köteles harminc napon belül kiadni a polgárok által kért közérdekű adatokat."
+          "answer": "Az önkormányzat köteles tizenöt napon belül kiadni a polgárok által kért közérdekű adatokat."
         }
       ],
       "teaches": [
@@ -272,7 +279,7 @@
       "template": [
         {
           "prompt": "Write a sentence using 'elszámoltathatóság' in the context of democratic governance.",
-          "answer": "A tisztségviselők elszámoltathatósága és a közpénzek átlátható felhasználása a jogállam legfontosabb sarokköve."
+          "answer": "A képviselők elszámoltathatósága fontos a demokráciában."
         }
       ],
       "teaches": [
@@ -284,10 +291,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "check",
-      "sentence": "A független hatóság alapos ____ indított a rendőri intézkedések jogszerűségének felülvizsgálatára.",
-      "hint": "inquiry / investigation",
+      "sentence": "Az ombudsman a panasz után ____ indított az ügyben.",
+      "hint": "inquiry",
       "answer": "kivizsgálást",
-      "english": "The independent authority launched a thorough inquiry to review the legality of police measures.",
+      "english": "After the complaint, the ombudsman launched an inquiry in the case.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]

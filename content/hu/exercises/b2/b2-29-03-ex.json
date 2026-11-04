@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is meant by 'vörös vonal' in multilateral diplomatic talks?",
+      "question": "What does 'vörös vonal' mean in negotiations?",
       "options": [
-        "an absolute, non-negotiable boundary or core interest that cannot be abandoned",
-        "a red ink line drawn across an invalidated diplomatic passport",
-        "a carpet placed on the tarmac for the arrival of foreign dignitaries"
+        "a limit that a country will not cross",
+        "a border line drawn on a map",
+        "a deadline set for finishing the talks"
       ],
       "correct": 0,
       "teaches": [
@@ -67,9 +67,9 @@
     {
       "id": "b2-29-03-controlled-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "question": "Choose the correct verbal collocation: 'A felek a békés megállapodás érdekében késznek mutatkoztak kompromisszumot ____.'",
+      "question": "Which verb completes the sentence? A felek készek voltak kompromisszumot ____. (The parties were ready to strike a compromise.)",
       "options": [
         "kötni",
         "tenni",
@@ -77,13 +77,13 @@
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
+        "b2-diplomacy-alliances-sovereignty-vocab"
       ]
     },
     {
       "id": "b2-29-03-controlled-3",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
       "question": "Select the correct verb pairing: 'A küldöttség hajlandó volna bizonyos engedményeket ____.'",
       "options": [
@@ -93,45 +93,44 @@
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
+        "b2-diplomacy-alliances-sovereignty-vocab"
       ]
     },
     {
       "id": "b2-29-03-controlled-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "Bár indokolt lett volna a követelések fenntartása, a delegáció végül ____ tett a gazdasági kérdésekben.",
-      "hint": "made concessions",
+      "sentence": "Bár indokolt lett volna a követelések megtartása, a küldöttség végül ____ tett.",
+      "hint": "concession, plural",
       "answer": "engedményeket",
-      "english": "Although maintaining the demands would have been justified, the delegation finally made concessions on economic matters.",
+      "english": "Although keeping the demands would have been justified, the delegation finally made concessions.",
       "teaches": [
-        "diplomatic-softening"
+        "b2-diplomacy-alliances-sovereignty-vocab"
       ]
     },
     {
       "id": "b2-29-03-practice-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A szerződésbe beépített biztonsági ____ garantálja, hogy rendkívüli helyzetben a megállapodás felfüggeszthető.",
+      "sentence": "A szerződés szövegében van egy új ____ a határidőkről.",
       "hint": "clause",
       "answer": "záradék",
-      "english": "The security clause built into the treaty guarantees that in an extraordinary situation the agreement can be suspended.",
+      "english": "There is a new clause in the text of the contract about the deadlines.",
       "teaches": [
-        "diplomatic-softening"
+        "b2-diplomacy-alliances-sovereignty-vocab"
       ]
     },
     {
       "id": "b2-29-03-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
-        "nemzeti",
-        "szuverenitás",
-        "megőrzése",
+        "határok",
+        "védelme",
         "világos",
         "vörös",
         "vonalat",
@@ -139,17 +138,16 @@
       ],
       "solution": [
         "A",
-        "nemzeti",
-        "szuverenitás",
-        "megőrzése",
+        "határok",
+        "védelme",
         "világos",
         "vörös",
         "vonalat",
         "jelent."
       ],
-      "english": "Preserving national sovereignty represents a clear red line.",
+      "english": "Protecting the borders is a clear red line.",
       "teaches": [
-        "diplomatic-softening"
+        "b2-diplomacy-alliances-sovereignty-vocab"
       ]
     },
     {
@@ -203,7 +201,7 @@
       "prompt": [
         {
           "speaker": "Főtárgyaló",
-          "text": "Meddig mehetünk el a gazdasági vitában anélkül, hogy veszítenénk a hitelességünkből?"
+          "text": "Meddig mehetünk el a vitában?"
         },
         {
           "speaker": "Külügyi szakértő",
@@ -211,14 +209,18 @@
         }
       ],
       "options": [
-        "A vámok csökkentésében tehetünk engedményeket, de az állami támogatások teljes eltörlése vörös vonal kell hogy maradjon.",
-        "A vámok csökkentésére tehetünk engedményeket, de az állami támogatások teljes eltörlése vörös vonal kell hogy maradjon.",
-        "A vámok csökkentésében tehetünk engedményeket, de az állami támogatások teljes eltörlését vörös vonal kellene hogy maradni."
+        "A vámokban tehetünk engedményeket, de a határok védelme vörös vonal marad.",
+        "A vámokra tehetünk engedményeket, de a határok védelme vörös vonal marad.",
+        "A vámokban tehetünk engedményeket, de a határok védelmét vörös vonal marad."
       ],
       "correct": 0,
       "teaches": [
-        "diplomatic-softening"
-      ]
+        "verb-government-ban-ben"
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-29-03-dialogue-2",
@@ -228,7 +230,7 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Várható áttörés a holnapi csúcstalálkozón?"
+          "text": "Várható megegyezés a holnapi találkozón?"
         },
         {
           "speaker": "Külügyminiszter",
@@ -236,14 +238,17 @@
         }
       ],
       "options": [
-        "Amennyiben mindkét fél törekszik a kompromisszumra, úgy indokolt lenne egy közös nyilatkozat elfogadása.",
-        "Amennyiben mindkét fél törekszik a kompromisszumban, úgy indokolt lenne egy közös nyilatkozat elfogadása.",
-        "Amennyiben mindkét fél törekedne a kompromisszumra, úgy indokolt volna egy közös nyilatkozat elfogadását."
+        "Amennyiben mindkét fél kompromisszumot köt, úgy indokolt lenne egy közös nyilatkozat elfogadása.",
+        "Amennyiben mindkét fél kompromisszumot köt, úgy indokolt lenne egy közös nyilatkozat elfogadni.",
+        "Amennyiben mindkét fél kompromisszumot köt, úgy indokolt lenne egy közös nyilatkozat elfogadásában."
       ],
       "correct": 0,
       "teaches": [
         "diplomatic-softening"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b2-29-03-writing-1",
@@ -257,7 +262,7 @@
         }
       ],
       "teaches": [
-        "diplomatic-softening"
+        "b2-diplomacy-alliances-sovereignty-vocab"
       ]
     },
     {
@@ -272,20 +277,20 @@
         }
       ],
       "teaches": [
-        "diplomatic-softening"
+        "b2-diplomacy-alliances-sovereignty-vocab"
       ]
     },
     {
       "id": "b2-29-03-check-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "sentence": "Ha a szövetségesek nem kötnének ____, a konfliktus tovább mélyülne.",
+      "sentence": "Ha a felek nem kötnének ____, a vita tovább tartana.",
       "hint": "compromise",
       "answer": "kompromisszumot",
-      "english": "If the allies did not strike a compromise, the conflict would deepen further.",
+      "english": "If the parties did not strike a compromise, the dispute would go on.",
       "teaches": [
-        "diplomatic-softening"
+        "b2-diplomacy-alliances-sovereignty-vocab"
       ]
     },
     {
@@ -293,11 +298,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which expression denotes making a concession in formal negotiations?",
+      "question": "Which expression means 'to make a concession'?",
       "options": [
         "engedményt tesz",
         "vonalat húz",
-        "szankciót vet ki"
+        "kompromisszumot hoz"
       ],
       "correct": 0,
       "teaches": [

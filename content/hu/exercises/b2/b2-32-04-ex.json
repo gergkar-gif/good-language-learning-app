@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What is 'talpra állás' in athletic psychology?",
       "options": [
-        "the ability to recover and rebound mentally and physically after a severe defeat or injury",
-        "a mandatory stretching exercise performed exclusively on one foot",
-        "standing up to argue with the referee during half-time"
+        "getting up again after a heavy defeat",
+        "forgetting a defeat and never talking about it",
+        "refusing to shake the winner's hand"
       ],
       "correct": 0,
       "teaches": [
@@ -71,9 +71,9 @@
       "stage": "controlled",
       "question": "Which consecutive sentence describes pressure on an athlete correctly?",
       "options": [
-        "A lélektani nyomás olyannyira bénító volt, hogy a bajnok nem tudta megismételni a selejtezőbeli idejét.",
-        "A lélektani nyomás olyannyira bénító volt mert a bajnok nem tudta megismételni az idejét.",
-        "A lélektani nyomás olyannyira bénító volt ha a bajnok nem tudta megismételni az idejét."
+        "A lélektani nyomás olyannyira nagy volt, hogy a bajnok hibázott.",
+        "A lélektani nyomás olyannyira nagy volt, mert a bajnok hibázott.",
+        "A lélektani nyomás olyannyira nagy volt, ha a bajnok hibázott."
       ],
       "correct": 0,
       "teaches": [
@@ -88,25 +88,31 @@
       "question": "Complete the consecutive clause: 'A küzdőszellem oly mértékben fűtötte a csapatot, ____ a hátrányt is ledolgozták'.",
       "options": [
         "hogy",
-        "minthogy",
-        "holott"
+        "mert",
+        "de"
       ],
       "correct": 0,
       "teaches": [
         "annyira-hogy"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "mert-because"
+      }
     },
     {
       "id": "b2-32-04-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A vereség súlya ____ nehezedett a játékosok vállára, hogy alig tudtak megszólalni a sajtótájékoztatón.",
+      "sentence": "A kudarc ____ fájt a játékosoknak, hogy alig tudtak megszólalni.",
       "hint": "so much",
-      "answer": "olyannyira",
-      "english": "The weight of defeat pressed on the players' shoulders so much that they could barely speak at the press conference.",
+      "english": "The defeat hurt the players so much that they could hardly speak.",
       "teaches": [
         "annyira-hogy"
+      ],
+      "answers": [
+        "annyira",
+        "olyannyira"
       ]
     },
     {
@@ -114,18 +120,21 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A közönség füttye ____ mértékben zavarta a büntetőt végrehajtó játékost, hogy mellé lőtte a labdát.",
+      "sentence": "A nagy nyomás ____ mértékben zavarta a játékost, hogy mellé lőtte a labdát.",
       "hint": "in such",
-      "answer": "oly",
-      "english": "The crowd's whistling disturbed the player taking the penalty in such degree that he shot the ball wide.",
+      "english": "The great pressure disturbed the player to such an extent that he shot the ball wide.",
       "teaches": [
         "annyira-hogy"
+      ],
+      "answers": [
+        "oly",
+        "olyan"
       ]
     },
     {
       "id": "b2-32-04-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -155,7 +164,7 @@
       ],
       "english": "The athlete did not break after defeat, but immediately restarted.",
       "teaches": [
-        "annyira-hogy"
+        "b2-competition-mastery-peak-performance-vocab"
       ]
     },
     {
@@ -163,10 +172,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A döntő pillanatban tapasztalható hatalmas ____ miatt a tapasztalt veteránoknak kellett vállalniuk a felelősséget.",
+      "sentence": "A döntő pillanatban a hatalmas ____ miatt a játékos hibázott.",
       "hint": "psychological pressure",
       "answer": "lélektani nyomás",
-      "english": "Due to the immense psychological pressure felt at the decisive moment, the experienced veterans had to take responsibility.",
+      "english": "Because of the huge psychological pressure at the decisive moment, the player made a mistake.",
       "teaches": [
         "b2-competition-mastery-peak-performance-vocab"
       ]
@@ -182,10 +191,9 @@
         "szellemében",
         "a",
         "két",
-        "versenyző",
-        "összeölelkezett",
-        "a",
-        "célvonalon."
+        "játékos",
+        "kezet",
+        "fogott."
       ],
       "solution": [
         "A",
@@ -193,12 +201,11 @@
         "szellemében",
         "a",
         "két",
-        "versenyző",
-        "összeölelkezett",
-        "a",
-        "célvonalon."
+        "játékos",
+        "kezet",
+        "fogott."
       ],
-      "english": "In the spirit of sportsmanship the two competitors embraced at the finish line.",
+      "english": "In the spirit of sportsmanship the two players shook hands.",
       "teaches": [
         "b2-competition-mastery-peak-performance-vocab"
       ]
@@ -211,7 +218,7 @@
       "prompt": [
         {
           "speaker": "Sportpszichológus",
-          "text": "Hogyan segíthet a mentális felkészülés a kudarcok feldolgozásában?"
+          "text": "Mit tegyen a sportoló egy nagy kudarc után?"
         },
         {
           "speaker": "Élsportoló",
@@ -219,14 +226,18 @@
         }
       ],
       "options": [
-        "A vereség nem a végállomás, hanem visszajelzés; a gyors talpra álláshoz meg kell tanulni kezelni a lélektani nyomást és a kételyeket.",
-        "A vereség nem a végállomás, hanem visszajelzés; a gyors talpra állásra meg kell tanulni kezelni a lélektani nyomást és a kételyeket.",
-        "A vereség nem a végállomás, hanem visszajelzés; a gyors talpra állásban meg kell tanulni kezelni a lélektani nyomást és a kételyeket."
+        "A gyors talpra álláshoz meg kell tanulni kezelni a lélektani nyomást.",
+        "A gyors talpra állásról meg kell tanulni kezelni a lélektani nyomást.",
+        "A gyors talpra állástól meg kell tanulni kezelni a lélektani nyomást."
       ],
       "correct": 0,
       "teaches": [
-        "annyira-hogy"
-      ]
+        "hoz-suffix"
+      ],
+      "distractor_skills": {
+        "1": "delative-rol-rel",
+        "2": "tol-tol"
+      }
     },
     {
       "id": "b2-32-04-dialogue-2",
@@ -236,7 +247,7 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Mit jelentett számodra a riválisod gesztusa, amikor felsegített a bukás után?"
+          "text": "Mit jelentett a kézfogás?"
         },
         {
           "speaker": "Bajnok",
@@ -244,14 +255,17 @@
         }
       ],
       "options": [
-        "Ez a tiszta sportszerűség pillanata volt, amely megmutatta, hogy az emberi méltóság és a tisztelet fontosabb bármilyen aranyéremnél.",
-        "Ez a tiszta sportszerűség pillanata volt, amelyet megmutatta, hogy az emberi méltóság és a tisztelet fontosabb bármilyen aranyéremnél.",
-        "Ez a tiszta sportszerűség pillanata volt, amely megmutatta, hogy az emberi méltóság és a tisztelet fontosabb bármilyen aranyéremre."
+        "Ez a sportszerűség pillanata volt, amely megmutatta, hogy a tisztelet fontosabb a győzelemnél.",
+        "Ez a sportszerűség pillanata volt, amelyet megmutatta, hogy a tisztelet fontosabb a győzelemnél.",
+        "Ez a sportszerűség pillanata volt, amely megmutatta, hogy a tisztelet fontosabb a győzelemre."
       ],
       "correct": 0,
       "teaches": [
-        "annyira-hogy"
-      ]
+        "relative-clauses-aki-ami-amely"
+      ],
+      "distractor_skills": {
+        "1": "vonatkozoi-nevmas-esetei"
+      }
     },
     {
       "id": "b2-32-04-writing-1",
@@ -261,7 +275,7 @@
       "template": [
         {
           "prompt": "Write a sentence using 'talpra állás' and 'küzdőszellem' with consecutive degree.",
-          "answer": "A bajnokcsapat küzdőszelleme olyannyira törhetetlen maradt, hogy a bravúros talpra állás után megnyerte a döntőt."
+          "answer": "A csapat küzdőszelleme olyannyira erős volt, hogy a vereség után is talpra állt."
         }
       ],
       "teaches": [
@@ -276,11 +290,11 @@
       "template": [
         {
           "prompt": "Write an ethical reflection using 'sportszerűség' and 'lélektani nyomás'.",
-          "answer": "Bár a döntőben a lélektani nyomás szinte elviselhetetlen volt, a versenyzők végig megőrizték a példamutató sportszerűséget."
+          "answer": "Bár a lélektani nyomás nagy volt, a játékosok megőrizték a sportszerűséget."
         }
       ],
       "teaches": [
-        "annyira-hogy"
+        "b2-competition-mastery-peak-performance-vocab"
       ]
     },
     {
@@ -288,12 +302,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A csalódottság ____ mértékben uralkodott el a csapaton, hogy hetekbe telt a motiváció visszaszerzése.",
+      "sentence": "A kudarc ____ mértékben fájt a csapatnak, hogy hetekig nem edzettek.",
       "hint": "in such",
-      "answer": "oly",
-      "english": "Disappointment prevailed over the team in such degree that it took weeks to regain motivation.",
+      "english": "The defeat hurt the team to such an extent that they did not train for weeks.",
       "teaches": [
         "annyira-hogy"
+      ],
+      "answers": [
+        "oly",
+        "olyan"
       ]
     },
     {
@@ -304,8 +321,8 @@
       "question": "Which term represents the relentless inner drive to fight against all odds?",
       "options": [
         "küzdőszellem",
-        "közömbösség",
-        "fáradtság"
+        "kudarc",
+        "sportszerűség"
       ],
       "correct": 0,
       "teaches": [

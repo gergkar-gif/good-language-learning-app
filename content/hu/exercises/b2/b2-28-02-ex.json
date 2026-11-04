@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is the focus of 'kivándorol' compared to 'elvándorol'?",
+      "question": "What does 'kivándorol' mean, compared with 'elvándorol'?",
       "options": [
-        "crossing an international or continental border to settle abroad",
-        "moving from one street to another within the same town",
-        "returning home after an afternoon shopping trip"
+        "crossing a national border to live abroad",
+        "leaving a village for a town in the same country",
+        "coming back to a place where one lived before"
       ],
       "correct": 0,
       "teaches": [
@@ -85,11 +85,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which preverb best completes internal regional migration: 'A fiatalok többsége ____vándorol a szegényebb falvakból'?",
+      "question": "Which verb completes the sentence? A fiatalok többsége ____ a szegényebb falvakból a fővárosba. (Most young people move away from the poorer villages to the capital.)",
       "options": [
-        "el-",
-        "ki-",
-        "vissza-"
+        "elvándorol",
+        "kivándorol",
+        "hazatér"
       ],
       "correct": 0,
       "teaches": [
@@ -101,10 +101,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az orvos a külföldi műtét elvégzése után azonnal ____ a müncheni klinikára.",
-      "hint": "returned",
+      "sentence": "Az orvos a külföldi konferencia után azonnal ____ a budapesti kórházba.",
+      "hint": "visszatér, 3sg past",
       "answer": "visszatért",
-      "english": "After performing the surgery abroad, the doctor returned immediately to the Munich clinic.",
+      "english": "After the conference abroad the doctor returned immediately to the hospital in Budapest.",
       "teaches": [
         "b2-figurative-preverbs"
       ]
@@ -114,12 +114,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A forradalom leverését követően kétszázezer magyar állampolgár ____ nyugati országokba.",
-      "hint": "emigrated abroad",
-      "answer": "vándorolt ki",
-      "english": "Following the crushing of the revolution, two hundred thousand Hungarian citizens emigrated to Western countries.",
+      "sentence": "1956 után százezrek ____ nyugati országokba.",
+      "hint": "kivándorol, 3pl past",
+      "english": "After 1956 hundreds of thousands emigrated to Western countries.",
       "teaches": [
         "b2-figurative-preverbs"
+      ],
+      "answers": [
+        "vándoroltak ki",
+        "kivándoroltak"
       ]
     },
     {
@@ -157,10 +160,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A tömeges ____ következtében egész országrészek néptelenedtek el a 19. század végén.",
+      "sentence": "A tömeges ____ következtében sok faluban kevesebb fiatal maradt.",
       "hint": "emigration",
       "answer": "kivándorlás",
-      "english": "As a consequence of mass emigration, entire parts of the country became depopulated at the end of the 19th century.",
+      "english": "As a result of mass emigration, fewer young people stayed in many villages.",
       "teaches": [
         "b2-exile-emigration-global-networks-vocab"
       ]
@@ -171,26 +174,26 @@
       "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "ünnepélyes",
+        "A",
         "hazatérés",
-        "mély",
-        "érzelmeket",
-        "váltott",
-        "ki",
-        "mindenkiből."
+        "után",
+        "a",
+        "család",
+        "nagyon",
+        "boldog",
+        "volt."
       ],
       "solution": [
-        "Az",
-        "ünnepélyes",
+        "A",
         "hazatérés",
-        "mély",
-        "érzelmeket",
-        "váltott",
-        "ki",
-        "mindenkiből."
+        "után",
+        "a",
+        "család",
+        "nagyon",
+        "boldog",
+        "volt."
       ],
-      "english": "The ceremonial homecoming elicited deep emotions from everyone.",
+      "english": "After the homecoming the family was very happy.",
       "teaches": [
         "b2-exile-emigration-global-networks-vocab"
       ]
@@ -202,23 +205,26 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Történész",
-          "text": "Mi jellemezte az 1956-os magyar menekülthullámot?"
+          "speaker": "Újságíró",
+          "text": "Hová ment az orvos a külföldi út után?"
         },
         {
-          "speaker": "Levéltáros",
+          "speaker": "Titkárnő",
           "text": "____"
         }
       ],
       "options": [
-        "A legtöbben kénytelenek voltak kivándorolni, és csak a rendszerváltás után térhettek haza.",
-        "A legtöbben kénytelenek voltak vándorolni ki, és csak a rendszerváltás után térhettek haza.",
-        "A legtöbben kénytelenek voltak kivándorolni, és csak a rendszerváltás után térhettek hazafelé volna."
+        "Az orvos hazatért Budapestre, mert ott van a családja.",
+        "Az orvos hazatért Budapestről, mert ott van a családja.",
+        "Az orvos kivándorolt Budapestre, mert ott van a családja."
       ],
       "correct": 0,
       "teaches": [
         "b2-figurative-preverbs"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "delative-rol-rel"
+      }
     },
     {
       "id": "b2-28-02-dialogue-2",
@@ -228,7 +234,7 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Miért dönt úgy egy nemzetközi karriert befutott kutató, hogy hazatér?"
+          "text": "Miért tér haza egy külföldön dolgozó kutató?"
         },
         {
           "speaker": "Professzor",
@@ -236,14 +242,17 @@
         }
       ],
       "options": [
-        "Mert a szakmai sikerek mellett a hazatérés lehetőséget ad arra, hogy a tudását a szülőföldjén kamatoztassa.",
-        "Mert a szakmai sikerek mellett a hazatérés lehetőséget ad abban, hogy a tudását a szülőföldjén kamatoztassa.",
-        "Mert a szakmai sikerek mellett a hazatérés lehetőséget ad arra, hogy a tudását a szülőföldjére kamatoztassa."
+        "Mert a hazatérés lehetőséget ad arra, hogy itthon dolgozzon.",
+        "Mert a hazatérés lehetőséget ad abban, hogy itthon dolgozzon.",
+        "Mert a hazatérés lehetőséget ad arra, hogy itthon dolgozik."
       ],
       "correct": 0,
       "teaches": [
-        "b2-figurative-preverbs"
-      ]
+        "b2-cataphoric-clauses"
+      ],
+      "distractor_skills": {
+        "1": "demonstrative-case-agreement"
+      }
     },
     {
       "id": "b2-28-02-writing-1",

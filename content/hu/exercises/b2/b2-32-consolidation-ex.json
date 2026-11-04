@@ -39,9 +39,9 @@
       "stage": "recognize",
       "question": "What does 'bravúr' designate in sports journalism?",
       "options": [
-        "a remarkable, extraordinary athletic feat or spectacular goalkeeping save",
-        "a serious foul leading to immediate expulsion",
-        "a regular scheduled pause for water during hot weather"
+        "an extraordinary feat, such as a great save",
+        "a foul that sends a player off the pitch",
+        "a break in play for the players to drink"
       ],
       "correct": 0,
       "teaches": [
@@ -53,15 +53,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Which sentence correctly combines a consecutive clause of degree with dynamic athletic action?",
+      "question": "Which sentence correctly combines a consecutive clause with dynamic athletic action?",
       "options": [
-        "A csatár olyannyira felgyorsított a szélen, hogy könnyedén lefutotta a védőjét és belőtte a győztes gólt.",
-        "A csatár olyannyira felgyorsított a szélen mert lefutott a védőjét és belőtt a gólt.",
-        "A csatár olyannyira felgyorsított a szélen ha lefutná a védőjét és belőné a gólt."
+        "A szélső olyannyira felgyorsított, hogy könnyedén lefutotta a védőt és belőtte a labdát.",
+        "A szélső olyannyira felgyorsított, hogy könnyedén lefutott a védőt és belőtte a labdát.",
+        "A szélső olyannyira felgyorsított, hogy könnyedén lefutotta a védőt és belőtt a labdát."
       ],
       "correct": 0,
       "teaches": [
-        "annyira-hogy"
+        "definite-vs-indefinite-conjugation"
       ]
     },
     {
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A sportolónak rendkívüli mentális erőre volt szüksége a súlyos vereség utáni ____ eléréséhez.",
-      "hint": "rebound / recovery",
-      "answer": "talpra állás",
-      "english": "The athlete needed extraordinary mental strength to achieve the rebound after the heavy defeat.",
+      "sentence": "A vereség után a sportolónak nagy erőre volt szüksége a ____.",
+      "hint": "rebound",
+      "answer": "talpra álláshoz",
+      "english": "After the defeat the athlete needed great strength for the rebound.",
       "teaches": [
         "b2-competition-mastery-peak-performance-vocab"
       ]
@@ -82,25 +82,28 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A döntőben a lélektani nyomás ____ mértékben nehezedett a játékosokra, hogy sorozatos technikai hibákat vétettek.",
+      "sentence": "A döntőben a lélektani nyomás ____ mértékben zavarta a játékosokat, hogy sok hibát csináltak.",
       "hint": "in such",
-      "answer": "oly",
-      "english": "In the final the psychological pressure weighed on the players in such degree that they committed successive technical errors.",
+      "english": "In the final the psychological pressure disturbed the players to such an extent that they made many mistakes.",
       "teaches": [
         "annyira-hogy"
+      ],
+      "answers": [
+        "oly",
+        "olyan"
       ]
     },
     {
       "id": "b2-32-consolidation-6",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A villámgyors szélső egy váratlan testcsellel elegánsan ____ a kapujából kifutó hálóőrt.",
+      "sentence": "A gyors szélső egy testcsellel ____ a védőt.",
       "hint": "dribbled past",
       "answer": "kicselezte",
-      "english": "The lightning-fast winger elegantly dribbled past the goalkeeper running out of his goal with an unexpected body feint.",
+      "english": "The fast winger dribbled past the defender with a body feint.",
       "teaches": [
-        "annyira-hogy"
+        "b2-competition-mastery-peak-performance-vocab"
       ]
     },
     {
@@ -108,15 +111,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'lefutotta a védőt' preferred over 'futott a védő mellett' in sports commentary?",
+      "question": "Which sentence uses 'lefut' correctly?",
       "options": [
-        "Because 'lefut' is a telic, perfective verb denoting the decisive act of outpacing and overcoming the opponent.",
-        "Because 'futott' cannot be used in the past tense in Hungarian grammar.",
-        "Because 'lefut' only applies when running downhill."
+        "A szélső lefutotta a védőt.",
+        "A szélső lefutott a védőt.",
+        "A szélső lefutotta a védő."
       ],
       "correct": 0,
       "teaches": [
-        "annyira-hogy"
+        "definite-vs-indefinite-conjugation"
       ]
     },
     {
@@ -127,7 +130,7 @@
       "prompt": [
         {
           "speaker": "Irodalomkritikus",
-          "text": "Hogyan köti össze Esterházy Péter a futballt és az írást az 'Utazás a tizenhatos mélyére' című művében?"
+          "text": "Mit mond Esterházy a játékról a történetben?"
         },
         {
           "speaker": "Egyetemi tanár",
@@ -135,25 +138,28 @@
         }
       ],
       "options": [
-        "A futballpályát a létezés és a nyelv tereként értelmezi, ahol a tizenhatos geometriája, a kapus magánya és a labda íve esztétikai mélységet kap.",
-        "A futballpályát a létezés és a nyelv tereként értelmezi, ahová a tizenhatos geometriája, a kapus magánya és a labda íve esztétikai mélységet kap.",
-        "A futballpályát a létezés és a nyelv tereként értelmezi, ahol a tizenhatos geometriája, a kapus magánya és a labda íve esztétikai mélységre kapna."
+        "A játékot művészetnek látja, ahol a mozgás és a gondolat találkozik.",
+        "A játékot művészetnek látja, ahová a mozgás és a gondolat találkozik.",
+        "A játékot művészetnek látja, ahol a mozgást és a gondolat találkozik."
       ],
       "correct": 0,
       "teaches": [
-        "annyira-hogy"
-      ]
+        "ahol-amikor"
+      ],
+      "distractor_skills": {
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-32-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Select the sentence where consecutive degree is used with impeccable stylistic register:",
+      "question": "Select the correct sentence:",
       "options": [
         "A hazai csapat oly mértékben uralta a középpályát, hogy az ellenfél nem jutott el a kapuig.",
-        "A hazai csapat oly mértékben uralta a középpályát hogy az ellenfél nem jutna el a kapuig.",
-        "A hazai csapat oly mértékben uralta a középpályát de az ellenfél nem jutott el a kapuig."
+        "A hazai csapat oly mértékben uralta a középpályát, mert az ellenfél nem jutott el a kapuig.",
+        "A hazai csapat oly mértékben uralta a középpályát, de az ellenfél nem jutott el a kapuig."
       ],
       "correct": 0,
       "teaches": [
@@ -167,33 +173,27 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "csatár",
+        "sportoló",
         "olyannyira",
-        "pontosan",
-        "célzott,",
+        "fáradt",
+        "volt,",
         "hogy",
-        "a",
-        "labda",
-        "a",
-        "kapufáról",
-        "pattant",
-        "be."
+        "alig",
+        "tudott",
+        "beszélni."
       ],
       "solution": [
         "A",
-        "csatár",
+        "sportoló",
         "olyannyira",
-        "pontosan",
-        "célzott,",
+        "fáradt",
+        "volt,",
         "hogy",
-        "a",
-        "labda",
-        "a",
-        "kapufáról",
-        "pattant",
-        "be."
+        "alig",
+        "tudott",
+        "beszélni."
       ],
-      "english": "The striker aimed so accurately that the ball bounced in off the goalpost.",
+      "english": "The athlete was so tired that he could hardly speak.",
       "teaches": [
         "annyira-hogy"
       ]
@@ -201,33 +201,29 @@
     {
       "id": "b2-32-consolidation-11",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "A",
-        "védő",
-        "hatalmas",
-        "sprinttel",
-        "beérte",
+        "szélső",
+        "felgyorsított,",
         "és",
         "lefutotta",
         "a",
-        "támadót."
+        "védőt."
       ],
       "solution": [
         "A",
-        "védő",
-        "hatalmas",
-        "sprinttel",
-        "beérte",
+        "szélső",
+        "felgyorsított,",
         "és",
         "lefutotta",
         "a",
-        "támadót."
+        "védőt."
       ],
-      "english": "The defender caught up with a huge sprint and outran the attacker.",
+      "english": "The winger accelerated and outran the defender.",
       "teaches": [
-        "annyira-hogy"
+        "b2-competition-mastery-peak-performance-vocab"
       ]
     },
     {
@@ -237,8 +233,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a post-match commentary paragraph combining consecutive degree ('olyannyira ..., hogy') with dynamic action verbs ('átvesz', 'belő').",
-          "answer": "A mérkőzés ráadásában a szélső olyannyira felgyorsított, hogy könnyedén lefutotta védőjét; ezt követően a csatár pazarul átvette a beadást, és kíméletlenül belőtte a győztes gólt a hálóba."
+          "prompt": "Write a post-match commentary sentence combining consecutive degree ('olyannyira ..., hogy') with dynamic action verbs ('lefut', 'kicselez').",
+          "answer": "A szélső olyannyira felgyorsított, hogy könnyedén lefutotta a védőt, majd kicselezte a kapust."
         }
       ],
       "teaches": [

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What does 'honvágy' signify in Hungarian literature and life?",
+      "question": "What does 'honvágy' mean?",
       "options": [
-        "a deep, painful yearning for one's homeland when living far away",
-        "a desire to buy a larger house in the suburbs",
-        "a physical allergy caused by unfamiliar foreign spices"
+        "a deep longing for one's homeland when living far away",
+        "a feeling of anger at the people of the host country",
+        "a feeling of tiredness after a long trip abroad"
       ],
       "correct": 0,
       "teaches": [
@@ -69,11 +69,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the perfective sentence indicating a completed action of settlement:",
+      "question": "Which sentence says that the family settled in Australia (a completed action)?",
       "options": [
-        "A menekült család 1957 telén végleg letelepedett Ausztráliában.",
-        "A menekült család letelepedni akart minden évben.",
-        "A menekült család telepedett lefele a dombon."
+        "A menekült család 1957 telén letelepedett Ausztráliában.",
+        "A menekült család 1957 telén telepedett Ausztráliában.",
+        "A menekült család 1957 telén letelepedett volna Ausztráliában."
       ],
       "correct": 0,
       "teaches": [
@@ -85,15 +85,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which preverb shows detaching in the negative sentence: 'Az író soha nem ____ felejtette a hazáját'?",
+      "question": "Which form completes the sentence? Az író soha nem ____ a hazáját. (The writer never forgot his homeland.)",
       "options": [
         "felejtette el",
         "elfelejtette",
-        "belefelejtette"
+        "felejtette ki"
       ],
       "correct": 0,
       "teaches": [
-        "b2-figurative-preverbs"
+        "prefix-word-order"
       ]
     },
     {
@@ -112,14 +112,14 @@
     {
       "id": "b2-28-03-practice-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A diktatúra évei alatt sok ellenzéki értelmiségi kényszerült önkéntes ____.",
-      "hint": "into exile",
-      "answer": "száműzetésbe",
-      "english": "During the years of dictatorship, many dissident intellectuals were forced into voluntary exile.",
+      "sentence": "Sok író elhagyta az országot, és évekig ____ élt.",
+      "hint": "exile",
+      "answer": "száműzetésben",
+      "english": "Many writers left the country and lived in exile for years.",
       "teaches": [
-        "b2-figurative-preverbs"
+        "b2-exile-emigration-global-networks-vocab"
       ]
     },
     {
@@ -157,10 +157,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Az első hónapok magányában a diákot szinte megbénította a kínzó ____.",
+      "sentence": "Az első hónapokban a diák nagyon rosszul érezte magát a ____ miatt.",
       "hint": "homesickness",
       "answer": "honvágy",
-      "english": "In the loneliness of the first months, the student was almost paralyzed by agonizing homesickness.",
+      "english": "In the first months the student felt very bad because of homesickness.",
       "teaches": [
         "b2-exile-emigration-global-networks-vocab"
       ]
@@ -205,7 +205,7 @@
       "prompt": [
         {
           "speaker": "Rádiós műsorvezető",
-          "text": "Hogyan tudta feldolgozni a száműzetés éveit a neves író?"
+          "text": "Hogyan élte meg a költő a száműzetést?"
         },
         {
           "speaker": "Irodalomtörténész",
@@ -213,14 +213,18 @@
         }
       ],
       "options": [
-        "A honvágyat az anyanyelvű írásba fojtotta, és az újrakezdés nehézségeit műalkotássá formálta.",
-        "A honvágyat az anyanyelvű írásba fojtotta, és az újrakezdés nehézségeit műalkotássá formálta meg volna.",
-        "A honvágyat az anyanyelvű írásban fojtotta, és az újrakezdés nehézségeit műalkotásnak formálta."
+        "Éveken át érezte a honvágyat, de a száműzetésben is anyanyelvén írt.",
+        "Éveken át érezte a honvágyra, de a száműzetésben is anyanyelvén írt.",
+        "Éveken át érezte a honvágyban, de a száműzetésben is anyanyelvén írt."
       ],
       "correct": 0,
       "teaches": [
-        "b2-figurative-preverbs"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b2-28-03-dialogue-2",
@@ -230,7 +234,7 @@
       "prompt": [
         {
           "speaker": "Egyetemista",
-          "text": "Nem okoz belső konfliktust a kettős identitás megélése?"
+          "text": "Nehéz két kultúrában élni?"
         },
         {
           "speaker": "Kutató",
@@ -238,13 +242,13 @@
         }
       ],
       "options": [
-        "Kezdetben hozhat feszültséget, de érett személyiségként az ember mindkét kultúra értékeit magáénak vallja.",
-        "Kezdetben hozhat feszültséget, de érett személyiségként az ember mindkét kultúra értékeit magának vallja.",
-        "Kezdetben hozhat feszültséget, de érett személyiségként az ember mindkét kultúra értékeit magáéban vallaná."
+        "Eleinte nehéz lehet, de a legtöbben mindkét kultúrát a magukénak érzik.",
+        "Eleinte nehéz lehet, de a legtöbben egyik kultúrát sem érzik a magukénak.",
+        "Eleinte nehéz lehet, de a legtöbben mindkét kultúra a magukénak érzik."
       ],
       "correct": 0,
       "teaches": [
-        "b2-figurative-preverbs"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -269,8 +273,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'diaszpóra' explaining the cultural preservation role of communities abroad.",
-          "answer": "A tengerentúli magyar diaszpóra hétvégi iskolák fenntartásával őrzi az anyanyelvet a fiatalok körében."
+          "prompt": "Write a sentence using 'diaszpóra': the diaspora opens weekend schools so that young people learn Hungarian.",
+          "answer": "A külföldi magyar diaszpóra hétvégi iskolákat nyit, hogy a fiatalok megtanuljanak magyarul."
         }
       ],
       "teaches": [
@@ -280,14 +284,17 @@
     {
       "id": "b2-28-03-check-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "sentence": "Az emigránsok a kezdeti bizonytalanság után sikeresen ____ az életüket az új környezetben.",
-      "hint": "restarted",
-      "answer": "újrakezdték",
-      "english": "After initial uncertainty, the emigrants successfully restarted their lives in the new environment.",
+      "sentence": "A menekültnek sok erő kellett az ____ az új országban.",
+      "hint": "fresh start",
+      "english": "The refugee needed a lot of strength to start over in the new country.",
       "teaches": [
-        "b2-figurative-preverbs"
+        "b2-exile-emigration-global-networks-vocab"
+      ],
+      "answers": [
+        "újrakezdéshez",
+        "újrakezdésre"
       ]
     },
     {
@@ -295,11 +302,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which phrase denotes possessing belonging to two cultures simultaneously?",
+      "question": "Which phrase means 'belonging to two cultures at the same time'?",
       "options": [
         "kettős identitás",
-        "egyoldalú beolvadás",
-        "ideiglenes tartózkodás"
+        "kettős állampolgárság",
+        "honvágy"
       ],
       "correct": 0,
       "teaches": [

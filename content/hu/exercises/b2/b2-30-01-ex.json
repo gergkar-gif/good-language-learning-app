@@ -4,7 +4,7 @@
     {
       "id": "b2-30-01-intro-1",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "introduce",
       "question": "Which case suffix is governed by 'ragaszkodik' in formal Hungarian?",
       "options": [
@@ -14,7 +14,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "b2-civic-participation-advocacy-public-vocab"
+        "verb-government-hoz-hez"
       ]
     },
     {
@@ -24,9 +24,9 @@
       "stage": "introduce",
       "question": "What is meant by 'jogorvoslat' in legal and administrative disputes?",
       "options": [
-        "the legal right and procedure to challenge an unlawful or contested authority decision",
-        "a medical prescription provided to elderly court witnesses",
-        "a formal apology issued by a defendant in criminal court"
+        "the right to challenge a decision of an authority",
+        "a fee paid when a request is submitted",
+        "the record kept of a public hearing"
       ],
       "correct": 0,
       "teaches": [
@@ -67,18 +67,22 @@
     {
       "id": "b2-30-01-controlled-2",
       "type": "multiple-choice",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "controlled",
-      "question": "Select the correct case suffix governed by 'eltekint': 'A hatóság méltányosságból eltekintett a bírság____.'",
+      "question": "Select the correct case suffix governed by 'eltekint': 'A hivatal eltekintett a határidő____.'",
       "options": [
-        "-tól",
-        "-hoz",
+        "-től",
+        "-höz",
         "-re"
       ],
       "correct": 0,
       "teaches": [
-        "b2-civic-participation-advocacy-public-vocab"
-      ]
+        "tol-tol"
+      ],
+      "distractor_skills": {
+        "1": "verb-government-hoz-hez",
+        "2": "verb-government-ra-re"
+      }
     },
     {
       "id": "b2-30-01-controlled-3",
@@ -117,10 +121,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A minisztérium nem járult ____ a vitatott beruházás környezetvédelmi engedélyéhez.",
+      "sentence": "A hivatal nem járult ____ a kérelem elfogadásához.",
       "hint": "did not consent",
       "answer": "hozzá",
-      "english": "The ministry did not consent to the environmental permit of the contested investment.",
+      "english": "The office did not consent to the acceptance of the request.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]
@@ -131,24 +135,20 @@
       "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "A",
-        "polgár",
+        "Az",
+        "ügyfél",
         "jogosult",
         "a",
-        "hatékony",
-        "jogorvoslat",
-        "igénybevételére."
+        "jogorvoslatra."
       ],
       "solution": [
-        "A",
-        "polgár",
+        "Az",
+        "ügyfél",
         "jogosult",
         "a",
-        "hatékony",
-        "jogorvoslat",
-        "igénybevételére."
+        "jogorvoslatra."
       ],
-      "english": "The citizen is entitled to the use of effective legal remedy.",
+      "english": "The client is entitled to legal remedy.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]
@@ -202,7 +202,7 @@
       "prompt": [
         {
           "speaker": "Ügyfél",
-          "text": "Kérhetem-e, hogy tekintsenek el a késedelmi pótlék megfizetésétől?"
+          "text": "Kérhetem, hogy tekintsenek el a határidőtől?"
         },
         {
           "speaker": "Hivatali ügyintéző",
@@ -210,14 +210,18 @@
         }
       ],
       "options": [
-        "Igen, méltányossági kérelmet nyújthat be, és a hivatal eltekinthet a pótléktól, ha igazolja a rendkívüli körülményeket.",
-        "Igen, méltányossági kérelmet nyújthat be, és a hivatal eltekinthet a pótlékra, ha igazolja a rendkívüli körülményeket.",
-        "Igen, méltányossági kérelmet nyújthat be, és a hivatal eltekinthet a pótlékban, ha igazolja a rendkívüli körülményeket."
+        "Igen, ha a hivatal elfogadja a kérelmét, eltekint a határidőtől.",
+        "Igen, ha a hivatal elfogadja a kérelmét, eltekint a határidőre.",
+        "Igen, ha a hivatal elfogadja a kérelmét, eltekint a határidőben."
       ],
       "correct": 0,
       "teaches": [
-        "b2-civic-participation-advocacy-public-vocab"
-      ]
+        "tol-tol"
+      ],
+      "distractor_skills": {
+        "1": "verb-government-ra-re",
+        "2": "verb-government-ban-ben"
+      }
     },
     {
       "id": "b2-30-01-dialogue-2",
@@ -227,7 +231,7 @@
       "prompt": [
         {
           "speaker": "Civil aktivista",
-          "text": "Mi a teendő, ha a hatóság nem járul hozzá a közérdekű adatok kiadásához?"
+          "text": "Mit csináljunk, ha a hatóság nem járul hozzá a kérelmünkhöz?"
         },
         {
           "speaker": "Jogvédő",
@@ -235,9 +239,9 @@
         }
       ],
       "options": [
-        "Ragaszkodnunk kell a jogainkhoz, és jogorvoslattal élve pert indíthatunk az adatok közzétételéért.",
-        "Ragaszkodnunk kell a jogainkban, és jogorvoslattal élve pert indíthatunk az adatok közzétételéért.",
-        "Ragaszkodnunk kell a jogainkra, és jogorvoslattal élve pert indíthatunk az adatok közzétételéért."
+        "Ragaszkodjunk a jogainkhoz, és forduljunk a bírósághoz.",
+        "Ragaszkodjunk a jogainkban, és forduljunk a bírósághoz.",
+        "Ragaszkodjunk a jogainkra, és forduljunk a bírósághoz."
       ],
       "correct": 0,
       "teaches": [
@@ -256,7 +260,7 @@
       "template": [
         {
           "prompt": "Write a formal sentence using 'ragaszkodik' (+ -hoz/-hez/-höz) to assert a citizen's procedural right.",
-          "answer": "A panaszos határozottan ragaszkodik ahhoz, hogy a hatóság írásban indokolja meg a döntését."
+          "answer": "A panaszos határozottan ragaszkodik ahhoz, hogy a hatóság írásban válaszoljon."
         }
       ],
       "teaches": [
@@ -271,7 +275,7 @@
       "template": [
         {
           "prompt": "Write a sentence using 'eltekint' (+ -tól/-től) in an official administrative context.",
-          "answer": "A hatóság a körülmények alapos mérlegelése után eltekintett a szabálysértési bírság kiszabásától."
+          "answer": "A hivatal eltekintett a határidőtől, mert az ügyfél kérte."
         }
       ],
       "teaches": [
@@ -283,10 +287,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "check",
-      "sentence": "A tisztviselők kötelesek ____ minden olyan tevékenységtől, amely összeférhetetlen a hivatali eskükkel.",
+      "sentence": "A hivatal dolgozói kötelesek ____ a nyilatkozatoktól.",
       "hint": "to refrain",
       "answer": "tartózkodni",
-      "english": "Officials are obliged to refrain from any activity that is incompatible with their official oath.",
+      "english": "Office staff are obliged to refrain from making statements.",
       "teaches": [
         "b2-civic-participation-advocacy-public-vocab"
       ]

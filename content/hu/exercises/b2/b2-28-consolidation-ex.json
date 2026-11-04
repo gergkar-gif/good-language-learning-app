@@ -37,11 +37,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "recognize",
-      "question": "What does 'kettős identitás' signify in diasporic sociological studies?",
+      "question": "What does 'kettős identitás' mean?",
       "options": [
-        "the simultaneous identification with both one's heritage culture and the host culture",
-        "carrying two passports with different false names",
-        "suffering from a severe psychological dissociative disorder"
+        "feeling that you belong to two cultures at the same time",
+        "living in one place for only a short time",
+        "forgetting the old culture and keeping only the new one"
       ],
       "correct": 0,
       "teaches": [
@@ -53,11 +53,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Which sentence correctly illustrates the directional contrast between 'hazatér' and 'visszatér'?",
+      "question": "Which sentence uses 'hazatér' and 'visszatér' correctly?",
       "options": [
-        "A professzor az emigrációból végleg hazatért szülőföldjére, majd a konferenciáról visszatért szállodájába.",
-        "A professzor hazatért a szállodájába aludni három órára.",
-        "A professzor kivándorolt a szobájából a konyhába."
+        "A professzor hazatért a szülőföldjére, majd a konferencia után visszatért a laboratóriumába.",
+        "A professzor visszatért a szülőföldjére, majd a konferencia után hazatért a laboratóriumába.",
+        "A professzor kivándorolt a szülőföldjére, majd a konferencia után visszatért a laboratóriumába."
       ],
       "correct": 0,
       "teaches": [
@@ -82,10 +82,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A hosszú külföldi tartózkodás során a művész teljesen ____ az anyanyelvi közegétől.",
-      "hint": "became alienated",
+      "sentence": "Az idős nagymama évtizedekig élt Ausztráliában, és teljesen ____ a falujától.",
+      "hint": "elidegenedik, 3sg past",
       "answer": "elidegenedett",
-      "english": "During the long stay abroad, the artist became completely alienated from his native-language milieu.",
+      "english": "The old grandmother lived in Australia for decades and became completely alienated from her village.",
       "teaches": [
         "b2-figurative-preverbs"
       ]
@@ -95,10 +95,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A nyugdíjas mérnök három évtizedes kanadai munka után végleg ____ Budapestre.",
-      "hint": "repatriated",
+      "sentence": "A mérnök sok év külföldi munka után ____ Budapestre.",
+      "hint": "hazatelepül, 3sg past",
       "answer": "hazatelepült",
-      "english": "The retired engineer repatriated to Budapest permanently after three decades of Canadian work.",
+      "english": "After many years of working abroad the engineer resettled in Budapest.",
       "teaches": [
         "b2-figurative-preverbs"
       ]
@@ -108,11 +108,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'elvándorol' chosen over 'kivándorol' in: 'A keleti megyékből tízezrek vándoroltak el a fővárosba'?",
+      "question": "Which verb fits the sentence? A keleti megyékből tízezrek ____ a fővárosba. (Tens of thousands moved from the eastern counties to the capital.)",
       "options": [
-        "Because it denotes internal movement away from a region within the country rather than crossing national borders.",
-        "Because 'kivándorol' can never take a past tense suffix in Hungarian.",
-        "Because 'elvándorol' only applies to seasonal agricultural workers."
+        "vándoroltak el",
+        "vándoroltak ki",
+        "vándoroltak vissza"
       ],
       "correct": 0,
       "teaches": [
@@ -126,8 +126,8 @@
       "stage": "in-context",
       "prompt": [
         {
-          "speaker": "Egyetemi hallgató",
-          "text": "Hogyan birkózott meg az író az emigráció magányával Márai naplója szerint?"
+          "speaker": "Hallgató",
+          "text": "Mi segített az írónak a száműzetés magányában?"
         },
         {
           "speaker": "Magyartanár",
@@ -135,25 +135,29 @@
         }
       ],
       "options": [
-        "Az anyanyelvbe kapaszkodott, és a mindennapi írás révén őrizte meg belső integritását az idegen világban.",
-        "Az anyanyelvben kapaszkodott, és a mindennapi írás révén őrizte meg belső integritását az idegen világban.",
-        "Az anyanyelvbe kapaszkodott, és a mindennapi írás révén megőrizte belső integritását az idegen világba."
+        "Az anyanyelvéhez ragaszkodott, és minden nap írt.",
+        "Az anyanyelvével ragaszkodott, és minden nap írt.",
+        "Az anyanyelvére ragaszkodott, és minden nap írt."
       ],
       "correct": 0,
       "teaches": [
-        "b2-figurative-preverbs"
-      ]
+        "verb-government-hoz-hez"
+      ],
+      "distractor_skills": {
+        "1": "val-vel",
+        "2": "ra-re"
+      }
     },
     {
       "id": "b2-28-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Select the sentence where 'gyökeret ver' is used in its correct idiomatic meaning:",
+      "question": "Which sentence says that the family settled permanently abroad?",
       "options": [
-        "A menekült család sok viszontagság után végleg gyökeret vert az új-zélandi kikötővárosban.",
-        "A kertész nemrég gyökeret vert a virágágyás közepébe a lapáttal.",
-        "A repülőgép gyökeret vert a kifutópályán a leszállás közben."
+        "A család sok év után gyökeret vert az új országban.",
+        "A család sok év után hazatért az új országban.",
+        "A család sok év után elvándorolt az új országban."
       ],
       "correct": 0,
       "teaches": [
@@ -201,9 +205,7 @@
         "Célzott",
         "támogatásokkal",
         "sikeresen",
-        "haza",
-        "lehet",
-        "vonzani",
+        "hazavonzhatjuk",
         "a",
         "külföldön",
         "élő",
@@ -213,15 +215,13 @@
         "Célzott",
         "támogatásokkal",
         "sikeresen",
-        "haza",
-        "lehet",
-        "vonzani",
+        "hazavonzhatjuk",
         "a",
         "külföldön",
         "élő",
         "mérnököket."
       ],
-      "english": "With targeted subsidies, engineers living abroad can be successfully attracted back home.",
+      "english": "With targeted subsidies we can successfully attract engineers living abroad back home.",
       "teaches": [
         "b2-figurative-preverbs"
       ]
@@ -233,8 +233,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause analytical argument contrasting 'elvándorol', 'tudástranszfer', and 'hazatelepül'.",
-          "answer": "Bár a fiatal szakemberek jelentős része jobb lehetőségek reményében elvándorol a szülőföldjéről, a nemzetközi tudástranszfer révén kapcsolatban maradnak az anyaországgal; sőt évek múltával sokan sikeresen hazatelepülnek, gazdagítva a hazai tudományos életet."
+          "prompt": "Write one sentence with 'elvándorol' and 'hazatelepül': many young people leave, but some resettle at home after years.",
+          "answer": "Sok fiatal elvándorol a szülőföldjéről, de néhányan évek múlva hazatelepülnek."
         }
       ],
       "teaches": [

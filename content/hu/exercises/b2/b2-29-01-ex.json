@@ -24,9 +24,9 @@
       "stage": "introduce",
       "question": "What is the diplomatic function of 'enyhítés' (hedging)?",
       "options": [
-        "softening definitive statements to preserve polite dialogue and negotiation leeway",
-        "terminating diplomatic relations abruptly without warning",
-        "translating official documents literally word for word"
+        "making a firm statement sound softer and more polite",
+        "making a statement sound harder and more final",
+        "making a statement longer and more detailed"
       ],
       "correct": 0,
       "teaches": [
@@ -85,16 +85,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the correct translative form: 'A miniszterelnök kifejezetten kívánatos____ tartaná a kompromisszumot.'",
+      "question": "Which form completes the sentence? A miniszterelnök ____ tartaná a kompromisszumot. (The prime minister would consider a compromise desirable.)",
       "options": [
-        "-nak",
-        "-ként",
-        "-ért"
+        "kívánatosnak",
+        "kívánatosként",
+        "kívánatosért"
       ],
       "correct": 0,
       "teaches": [
         "diplomatic-softening"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "essive-formal-kent",
+        "2": "verb-government-ert"
+      }
     },
     {
       "id": "b2-29-01-controlled-4",
@@ -157,10 +161,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A két tárgyaló fél merev ____ miatt a megbeszélések átmenetileg holtpontra jutottak.",
-      "hint": "position",
+      "sentence": "A két fél merev ____ miatt nem sikerült megegyezni.",
+      "hint": "position, possessed",
       "answer": "álláspontja",
-      "english": "Due to the rigid position of the two negotiating parties, the talks temporarily reached a deadlock.",
+      "english": "Because of the rigid position of the two sides, they could not agree.",
       "teaches": [
         "b2-diplomacy-alliances-sovereignty-vocab"
       ]
@@ -203,7 +207,7 @@
       "prompt": [
         {
           "speaker": "Diplomata",
-          "text": "Hogyan fogalmazzuk meg az észrevételeinket anélkül, hogy megsértenénk a partnert?"
+          "text": "Hogyan mondjuk el udvariasan, hogy nem értünk egyet?"
         },
         {
           "speaker": "Nagykövet",
@@ -211,9 +215,9 @@
         }
       ],
       "options": [
-        "Használjunk feltételes enyhítést: mondjuk azt, hogy indokolt volna néhány záradékot pontosítani, mert ezt kívánatosnak tartanánk.",
-        "Használjunk feltételes enyhítést: mondjuk azt, hogy indokolt lenne néhány záradékot pontosítani, mert ezt kívánatosnak tartottunk volna.",
-        "Használjunk feltételes enyhítést: mondjuk azt, hogy indokolt volna néhány záradékot pontosítani, mert ezt kívánatosra tartanánk."
+        "Mondjuk azt, hogy célszerű lenne még egyszer megbeszélni a feltételeket.",
+        "Mondjuk azt, hogy célszerű lenne még egyszer megbeszéljük a feltételeket.",
+        "Mondjuk azt, hogy célszerűnek lenne még egyszer megbeszélni a feltételeket."
       ],
       "correct": 0,
       "teaches": [
@@ -228,7 +232,7 @@
       "prompt": [
         {
           "speaker": "Külügyi szóvivő",
-          "text": "Hogyan értékelné kormánya a legújabb tervezetet?"
+          "text": "Mit gondol a kormány a tervezetről?"
         },
         {
           "speaker": "Államtitkár",
@@ -236,14 +240,17 @@
         }
       ],
       "options": [
-        "Bár látunk előremutató elemeket, célszerű lenne további szakértői egyeztetéseket folytatni a vitás kérdésekről.",
-        "Bár látunk előremutató elemeket, célszerű lenne további szakértői egyeztetéseket folytatni a vitás kérdésekre.",
-        "Bár látunk előremutató elemeket, célszerű lett volna további szakértői egyeztetésekben folytatni a vitás kérdésekről."
+        "Bár vannak jó elemei, célszerű lenne még egyszer elolvasni a szöveget.",
+        "Bár vannak jó elemei, célszerű lenne még egyszer elolvasni a szöveg.",
+        "Bár vannak jó elemei, célszerű lenne még egyszer elolvasni a szövegről."
       ],
       "correct": 0,
       "teaches": [
         "diplomatic-softening"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "delative-rol-rel"
+      }
     },
     {
       "id": "b2-29-01-writing-1",
@@ -252,8 +259,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a formal sentence using 'célszerű lenne' to propose a diplomatic consultation.",
-          "answer": "A feszültség csökkentése céljából célszerű lenne haladéktalanul kétoldalú konzultációt kezdeményezni."
+          "prompt": "Write a sentence with 'célszerű lenne': it would be advisable to meet again next week.",
+          "answer": "Célszerű lenne jövő héten újra találkozni."
         }
       ],
       "teaches": [
@@ -267,8 +274,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'kívánatosnak tartaná' to state a government's preference.",
-          "answer": "Kormányunk kifejezetten kívánatosnak tartaná a fegyverszüneti megállapodás mielőbbi aláírását."
+          "prompt": "Write a sentence with 'kívánatosnak tartaná': the government would consider a quick agreement desirable.",
+          "answer": "A kormány kívánatosnak tartaná a gyors megállapodást."
         }
       ],
       "teaches": [
@@ -280,10 +287,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A jelenlegi helyzetben nem lenne ____ egyoldalú nyilatkozatot tenni.",
+      "sentence": "Most nem lenne ____ egyedül dönteni.",
       "hint": "advisable",
       "answer": "célszerű",
-      "english": "In the current situation it would not be advisable to make a unilateral declaration.",
+      "english": "It would not be advisable to decide alone now.",
       "teaches": [
         "diplomatic-softening"
       ]
@@ -293,11 +300,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which noun denotes an official viewpoint or posture held by a delegation?",
+      "question": "Which noun means the official position that a delegation holds?",
       "options": [
         "álláspont",
         "enyhítés",
-        "útlevél"
+        "megállapodás"
       ],
       "correct": 0,
       "teaches": [

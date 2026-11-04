@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What does 'olyannyira' express in complex sentence structures?",
       "options": [
-        "an extreme degree or extent that produces a specific consequence",
-        "a vague and uncertain temporal delay",
-        "a total denial or contradiction of a prior claim"
+        "an extreme degree that leads to a result",
+        "a short delay before something happens",
+        "a denial of what was said before"
       ],
       "correct": 0,
       "teaches": [
@@ -25,8 +25,8 @@
       "question": "Which noun denotes maximum athletic output and physical excellence?",
       "options": [
         "csúcsteljesítmény",
-        "kimerültség",
-        "szabálytalanság"
+        "lélektani nyomás",
+        "sportszerűség"
       ],
       "correct": 0,
       "teaches": [
@@ -85,11 +85,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the sentence correctly punctuated and structured with 'oly mértékben ..., hogy':",
+      "question": "Select the sentence correctly punctuated with 'oly mértékben ..., hogy':",
       "options": [
-        "A sportoló oly mértékben összpontosított, hogy a közönség moraját sem hallotta.",
-        "A sportoló oly mértékben összpontosított hogy, a közönség moraját sem hallotta.",
-        "A sportoló oly, mértékben összpontosított hogy a közönség moraját sem hallotta."
+        "A futó oly mértékben összpontosított, hogy az edzőt sem hallotta.",
+        "A futó oly mértékben összpontosított hogy, az edzőt sem hallotta.",
+        "A futó oly mértékben összpontosított hogy az edzőt sem hallotta."
       ],
       "correct": 0,
       "teaches": [
@@ -101,12 +101,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A maratonfutó ____ kimerült a célvonal előtt, hogy az orvosoknak kellett felsegíteniük.",
+      "sentence": "A futó ____ kimerült a maraton végére, hogy alig tudott talpon maradni.",
       "hint": "to such an extent",
-      "answer": "olyannyira",
-      "english": "The marathon runner was exhausted to such an extent before the finish line that doctors had to help him up.",
+      "english": "The runner was so exhausted by the end of the marathon that he could barely stay on his feet.",
       "teaches": [
         "annyira-hogy"
+      ],
+      "answers": [
+        "olyannyira",
+        "annyira"
       ]
     },
     {
@@ -114,12 +117,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A bajnokság döntőjében a csapatok ____ mértékben küzdöttek a győzelemért, hogy több játékos megsérült.",
+      "sentence": "A döntőben a csapatok ____ mértékben küzdöttek, hogy több játékos megsérült.",
       "hint": "in such",
-      "answer": "oly",
-      "english": "In the championship final the teams fought for victory in such degree that several players got injured.",
+      "english": "In the final the teams fought to such an extent that several players got injured.",
       "teaches": [
         "annyira-hogy"
+      ],
+      "answers": [
+        "oly",
+        "olyan"
       ]
     },
     {
@@ -129,27 +135,25 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "versenyző",
+        "futó",
         "olyannyira",
-        "felgyorsított,",
+        "gyors",
+        "volt,",
         "hogy",
-        "világcsúcsot",
-        "döntött",
-        "a",
-        "döntőben."
+        "rekordot",
+        "döntött."
       ],
       "solution": [
         "A",
-        "versenyző",
+        "futó",
         "olyannyira",
-        "felgyorsított,",
+        "gyors",
+        "volt,",
         "hogy",
-        "világcsúcsot",
-        "döntött",
-        "a",
-        "döntőben."
+        "rekordot",
+        "döntött."
       ],
-      "english": "The competitor accelerated to such an extent that he broke the world record in the final.",
+      "english": "The runner was so fast that he broke the record.",
       "teaches": [
         "annyira-hogy"
       ]
@@ -159,10 +163,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A hegyi terepfutáshoz nemcsak gyorsaság, hanem rendkívüli fizikai ____ is szükséges.",
+      "sentence": "A maratonhoz nemcsak jó technika, hanem rendkívüli ____ is szükséges.",
       "hint": "endurance",
       "answer": "állóképesség",
-      "english": "For mountain trail running not only speed but also extraordinary physical endurance is required.",
+      "english": "For a marathon not only good technique but also extraordinary endurance is needed.",
       "teaches": [
         "b2-competition-mastery-peak-performance-vocab"
       ]
@@ -207,7 +211,7 @@
       "prompt": [
         {
           "speaker": "Sportriporter",
-          "text": "Hogyan bírta az olimpikon az utolsó száz métert a döntőben?"
+          "text": "Hogyan bírta a futó az utolsó kilométert?"
         },
         {
           "speaker": "Edző",
@@ -215,9 +219,9 @@
         }
       ],
       "options": [
-        "Olyannyira hatalmas volt benne a győzni akarás, hogy a fizikai kimerültség ellenére is meg tudta előzni a riválisát.",
-        "Olyannyira hatalmas volt benne a győzni akarás, mert a fizikai kimerültség ellenére is meg tudta előzni a riválisát.",
-        "Olyannyira hatalmas volt benne a győzni akarás, ha a fizikai kimerültség ellenére is megelőzhetné a riválisát."
+        "Olyannyira kimerült, hogy alig tudott talpon maradni.",
+        "Olyannyira kimerült, mert alig tudott talpon maradni.",
+        "Olyannyira kimerült, ha alig tudott talpon maradni."
       ],
       "correct": 0,
       "teaches": [
@@ -232,17 +236,17 @@
       "prompt": [
         {
           "speaker": "Sportorvos",
-          "text": "Milyen hatással van a túledzettség az élsportolók szervezetére?"
+          "text": "Mi történik, ha a terhelés túl nagy?"
         },
         {
-          "speaker": "Fiziológus",
+          "speaker": "Edző",
           "text": "____"
         }
       ],
       "options": [
-        "A regeneráció hiánya oly mértékben rontja az állóképességet, hogy a sérülésveszély drasztikusan megugrik.",
-        "A regeneráció hiánya oly mértékben rontja az állóképességet, mert a sérülésveszély drasztikusan megugrik.",
-        "A regeneráció hiánya oly mértékben rontja az állóképességet, ha a sérülésveszély drasztikusan megugrana."
+        "A terhelés oly mértékben megnő, hogy külön orvosi stábra van szükség.",
+        "A terhelés oly mértékben megnő, mert külön orvosi stábra van szükség.",
+        "A terhelés oly mértékben megnő, ha külön orvosi stábra van szükség."
       ],
       "correct": 0,
       "teaches": [
@@ -257,7 +261,7 @@
       "template": [
         {
           "prompt": "Write a consecutive sentence using 'olyannyira ..., hogy' describing athletic stamina.",
-          "answer": "A triatlonista állóképessége olyannyira legendás volt, hogy az embert próbáló verseny után sem látszott rajta a kimerültség."
+          "answer": "A futó állóképessége olyannyira kimagasló volt, hogy a verseny után sem látszott rajta a kimerültség."
         }
       ],
       "teaches": [
@@ -271,8 +275,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'oly mértékben ..., hogy' to explain tactical discipline.",
-          "answer": "A védők oly mértékben tartották a taktikai fegyelmet, hogy az ellenfél egyetlen kapura lövést sem tudott felmutatni."
+          "prompt": "Write a sentence using 'oly mértékben ..., hogy' about how a team defends.",
+          "answer": "A játékosok oly mértékben védekeztek, hogy az ellenfél nem tudott támadni."
         }
       ],
       "teaches": [
@@ -284,12 +288,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A kapus reakcióideje ____ gyors volt, hogy a közeli fejest is szögletre tudta tolni.",
+      "sentence": "A csapat ____ gyorsan támadott, hogy a védelem nem tudott reagálni.",
       "hint": "so much",
-      "answer": "olyannyira",
-      "english": "The goalkeeper's reaction time was so fast that he was able to tip even the close-range header for a corner.",
+      "english": "The team attacked so fast that the defense could not react.",
       "teaches": [
         "annyira-hogy"
+      ],
+      "answers": [
+        "olyannyira",
+        "annyira"
       ]
     },
     {

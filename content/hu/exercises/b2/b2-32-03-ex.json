@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What does 'letámadás' signify in modern football tactics?",
       "options": [
-        "an aggressive defensive pressing system aimed at regaining the ball in the opponent's half",
-        "a physical assault on the referee after a contested decision",
-        "leaving the field before the final whistle to protest against rain"
+        "pressing the opponent high up to win the ball",
+        "waiting deep in your own half to defend",
+        "passing the ball back to the goalkeeper"
       ],
       "correct": 0,
       "teaches": [
@@ -71,9 +71,9 @@
       "stage": "controlled",
       "question": "Select the sentence using consecutive degree to describe team coordination:",
       "options": [
-        "A játékosok oly mértékben betartották a taktikát, hogy az ellenfél nem talált rést a védelmen.",
-        "A játékosok oly mértékben betartották a taktikát mert az ellenfél nem talált rést.",
-        "A játékosok oly mértékben betartották a taktikát ha az ellenfél nem talált rést."
+        "A játékosok oly mértékben betartották a taktikát, hogy az ellenfél nem tudott támadni.",
+        "A játékosok oly mértékben betartották a taktikát, mert az ellenfél nem tudott támadni.",
+        "A játékosok oly mértékben betartották a taktikát, ha az ellenfél nem tudott támadni."
       ],
       "correct": 0,
       "teaches": [
@@ -85,15 +85,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which sentence correctly incorporates preverbs of athletic action into tactical analysis?",
+      "question": "Which sentence uses 'kicselez' correctly in tactical analysis?",
       "options": [
-        "Amint a középpályás átvette a labdát, azonnal felgyorsított és kicselezte a védőt.",
-        "Amint a középpályás labdát vett át, gyorsított fel és cselezte ki a védőt.",
-        "Amint a középpályás vette át a labdát, felgyorsított és ki cselezte a védőt."
+        "A játékos kicselezte a védőt.",
+        "A játékos kicselezett a védőt.",
+        "A játékos kicselezte a védő."
       ],
       "correct": 0,
       "teaches": [
-        "annyira-hogy"
+        "definite-vs-indefinite-conjugation"
       ]
     },
     {
@@ -101,12 +101,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A csapat összjátéka ____ tökéletes volt, hogy a közönség felállva tapsolt a lelátón.",
+      "sentence": "A csapat összjátéka ____ tökéletes volt, hogy az ellenfél nem tudott támadni.",
       "hint": "so much",
-      "answer": "olyannyira",
-      "english": "The team's passing combination was so perfect that the audience applauded standing up in the stands.",
+      "english": "The team's combination play was so perfect that the opponent could not attack.",
       "teaches": [
         "annyira-hogy"
+      ],
+      "answers": [
+        "olyannyira",
+        "annyira"
       ]
     },
     {
@@ -114,18 +117,21 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A védelem fegyelmezettsége ____ mértékben javult a szünet után, hogy nem kaptak több gólt.",
+      "sentence": "A csapat összjátéka ____ mértékben javult a szünet után, hogy az ellenfél nem tudott támadni.",
       "hint": "in such",
-      "answer": "oly",
-      "english": "The defense's discipline improved to such an extent after the break that they conceded no further goals.",
+      "english": "The team's combination play improved to such an extent after the break that the opponent could not attack.",
       "teaches": [
         "annyira-hogy"
+      ],
+      "answers": [
+        "oly",
+        "olyan"
       ]
     },
     {
       "id": "b2-32-03-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -136,8 +142,7 @@
         "ellenfél",
         "nem",
         "tudott",
-        "helyzetet",
-        "kialakítani."
+        "támadni."
       ],
       "solution": [
         "A",
@@ -148,12 +153,11 @@
         "ellenfél",
         "nem",
         "tudott",
-        "helyzetet",
-        "kialakítani."
+        "támadni."
       ],
-      "english": "Due to the deliberate pressing, the opponent could not create a scoring chance.",
+      "english": "Because of the deliberate pressing, the opponent could not attack.",
       "teaches": [
-        "annyira-hogy"
+        "b2-competition-mastery-peak-performance-vocab"
       ]
     },
     {
@@ -161,10 +165,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A bajnokcsapat sikerének kulcsa a megkérdőjelezhetetlen ____ és az önfeláldozás volt.",
+      "sentence": "A csapat sikerének kulcsa a ____ és az összjáték volt.",
       "hint": "team spirit",
       "answer": "csapatszellem",
-      "english": "The key to the champion team's success was unquestionable team spirit and self-sacrifice.",
+      "english": "The key to the team's success was team spirit and combination play.",
       "teaches": [
         "b2-competition-mastery-peak-performance-vocab"
       ]
@@ -176,27 +180,21 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "keretben",
-        "kialakított",
         "világos",
         "szerepmegosztás",
-        "megelőzte",
+        "segített",
         "a",
-        "belső",
-        "konfliktusokat."
+        "csapatnak."
       ],
       "solution": [
         "A",
-        "keretben",
-        "kialakított",
         "világos",
         "szerepmegosztás",
-        "megelőzte",
+        "segített",
         "a",
-        "belső",
-        "konfliktusokat."
+        "csapatnak."
       ],
-      "english": "The clear division of roles established in the squad prevented internal conflicts.",
+      "english": "The clear division of roles helped the team.",
       "teaches": [
         "b2-competition-mastery-peak-performance-vocab"
       ]
@@ -209,7 +207,7 @@
       "prompt": [
         {
           "speaker": "Taktikai elemző",
-          "text": "Hogyan tudta megnyerni a mérkőzést az esélytelenebbnek tartott csapat?"
+          "text": "Hogyan nyert az esélytelenebb csapat?"
         },
         {
           "speaker": "Vezetőedző",
@@ -217,9 +215,9 @@
         }
       ],
       "options": [
-        "A játékosok olyannyira fegyelmezetten követték a megbeszélt taktikát és az agresszív letámadást, hogy teljesen semlegesítették az ellenfél sztárjait.",
-        "A játékosok olyannyira fegyelmezetten követték a megbeszélt taktikát és az agresszív letámadást, mert teljesen semlegesítették az ellenfél sztárjait.",
-        "A játékosok olyannyira fegyelmezetten követték a megbeszélt taktikát és az agresszív letámadást, ha teljesen semlegesítenék az ellenfél sztárjait."
+        "A játékosok olyannyira fegyelmezetten követték a taktikát, hogy az ellenfél nem tudott támadni.",
+        "A játékosok olyannyira fegyelmezetten követték a taktikát, mert az ellenfél nem tudott támadni.",
+        "A játékosok olyannyira fegyelmezetten követték a taktikát, ha az ellenfél nem tudott támadni."
       ],
       "correct": 0,
       "teaches": [
@@ -234,7 +232,7 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Miért fontosabb a csapatszellem az egyéni képességeknél a csapatsportokban?"
+          "text": "Miért fontos a csapatszellem?"
         },
         {
           "speaker": "Csapatkapitány",
@@ -242,9 +240,9 @@
         }
       ],
       "options": [
-        "Mert a kiváló összjáték és a kölcsönös bizalom oly mértékben megsokszorozza az erőt, hogy a legnagyobb egyéniségeket is le lehet győzni.",
-        "Mert a kiváló összjáték és a kölcsönös bizalom oly mértékben megsokszorozza az erőt, mert a legnagyobb egyéniségeket is le lehet győzni.",
-        "Mert a kiváló összjáték és a kölcsönös bizalom oly mértékben megsokszorozza az erőt, ha a legnagyobb egyéniségeket is le lehetne győzni."
+        "Mert a csapatszellem oly mértékben erősíti a játékosokat, hogy a nehéz helyzetekben is támadnak.",
+        "Mert a csapatszellem oly mértékben erősíti a játékosokat, mert a nehéz helyzetekben is támadnak.",
+        "Mert a csapatszellem oly mértékben erősíti a játékosokat, ha a nehéz helyzetekben is támadnak."
       ],
       "correct": 0,
       "teaches": [
@@ -259,7 +257,7 @@
       "template": [
         {
           "prompt": "Write an analytical sentence using 'letámadás' and 'taktika' with consecutive degree.",
-          "answer": "Az edző olyannyira precízen kidolgozta a letámadás taktikáját, hogy a rivális egyetlen tiszta passzt sem tudott megvalósítani a saját térfelén."
+          "answer": "Az edző olyannyira jól kidolgozta a letámadás taktikáját, hogy az ellenfél nem tudott támadni."
         }
       ],
       "teaches": [
@@ -274,11 +272,11 @@
       "template": [
         {
           "prompt": "Write a sentence using 'összjáték' and 'csapatszellem' to explain a victory.",
-          "answer": "A győzelem nem az egyéni villanásoknak, hanem a lenyűgöző csapatszellemnek és a fegyelmezett összjátéknak volt köszönhető."
+          "answer": "A győzelem kulcsa a csapatszellem és a jó összjáték volt."
         }
       ],
       "teaches": [
-        "annyira-hogy"
+        "b2-competition-mastery-peak-performance-vocab"
       ]
     },
     {
@@ -286,12 +284,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A játékosok fizikai felkészültsége ____ mértékben növekedett, hogy a hosszabbításban is ők domináltak.",
+      "sentence": "A játékosok felkészültsége ____ mértékben növekedett, hogy a végén is ők voltak jobbak.",
       "hint": "in such",
-      "answer": "oly",
-      "english": "The physical preparedness of the players increased in such degree that they dominated in extra time as well.",
+      "english": "The players' preparedness increased to such an extent that they were better at the end too.",
       "teaches": [
         "annyira-hogy"
+      ],
+      "answers": [
+        "oly",
+        "olyan"
       ]
     },
     {
@@ -302,8 +303,8 @@
       "question": "Which term describes the harmonious combination of passes and movement between teammates?",
       "options": [
         "összjáték",
-        "magányosság",
-        "szabálytalanság"
+        "letámadás",
+        "taktika"
       ],
       "correct": 0,
       "teaches": [

@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What is a 'pohárköszöntő' in formal social gatherings?",
       "options": [
-        "a formal speech or toast delivered before or during a ceremonial meal",
-        "a special discount voucher given at the entrance of a restaurant",
-        "a machine used for washing fine wine glasses in kitchens"
+        "a short speech given before or during a ceremonial meal",
+        "a small gift given to guests when they leave",
+        "a list of the dishes served at a meal"
       ],
       "correct": 0,
       "teaches": [
@@ -25,8 +25,8 @@
       "question": "Which adjective means socially appropriate, decorous, or polite?",
       "options": [
         "illendő",
-        "illetéktelen",
-        "ellenséges"
+        "fanyar",
+        "zamatos"
       ],
       "correct": 0,
       "teaches": [
@@ -69,16 +69,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which sentence correctly expresses table etiquette with a resultative phrase?",
+      "question": "Which sentence uses the resultative phrase correctly?",
       "options": [
-        "A pék aranybarnára sütötte a friss kenyeret a díszes teríték mellé.",
-        "A pék aranybarnán sütötte a friss kenyeret a teríték mellé.",
-        "A pék aranybarnával sütötte a friss kenyeret a teríték mellé."
+        "A szakács aranybarnára sütötte a kenyeret a teríték mellé.",
+        "A szakács aranybarnán sütötte a kenyeret a teríték mellé.",
+        "A szakács aranybarnával sütötte a kenyeret a teríték mellé."
       ],
       "correct": 0,
       "teaches": [
-        "mintha"
-      ]
+        "ra-re"
+      ],
+      "distractor_skills": {
+        "1": "on-en-on",
+        "2": "val-vel"
+      }
     },
     {
       "id": "b2-31-04-controlled-3",
@@ -99,14 +103,14 @@
     {
       "id": "b2-31-04-controlled-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
       "sentence": "A házigazda poharat emelt, és a vendégek egészségére ____ a finom tokaji borral.",
       "hint": "clinked glasses",
       "answer": "koccintott",
       "english": "The host raised a glass and toasted with the fine Tokaj wine to the health of the guests.",
       "teaches": [
-        "mintha"
+        "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
     },
     {
@@ -114,18 +118,18 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A díszvacsora előtt a pincérek makulátlanul tisztára csiszolták a poharakat, és pompásra ____ a terítéket.",
-      "hint": "arranged / set",
-      "answer": "készítették",
-      "english": "Before the gala dinner, the waiters polished the glasses spotless and set the table setting magnificently.",
+      "sentence": "A vacsora előtt a pincérek a poharakat ____ mosták.",
+      "hint": "until clean",
+      "answer": "tisztára",
+      "english": "Before dinner the waiters washed the glasses clean.",
       "teaches": [
-        "mintha"
+        "ra-re"
       ]
     },
     {
       "id": "b2-31-04-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -153,7 +157,7 @@
       ],
       "english": "At a gala dinner it is not polite to stand up from the table before the host.",
       "teaches": [
-        "mintha"
+        "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
     },
     {
@@ -161,10 +165,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A magyar vidéki ____ híres a bőséges adagokról és a szívélyes fogadtatásról.",
+      "sentence": "A magyar ____ híres a bőséges ételekről.",
       "hint": "hospitality",
       "answer": "vendéglátás",
-      "english": "Hungarian rural hospitality is famous for generous portions and cordial reception.",
+      "english": "Hungarian hospitality is famous for its generous food.",
       "teaches": [
         "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
@@ -176,7 +180,7 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "családfő",
+        "házigazda",
         "rövid",
         "pohárköszöntőt",
         "mondott",
@@ -186,7 +190,7 @@
       ],
       "solution": [
         "A",
-        "családfő",
+        "házigazda",
         "rövid",
         "pohárköszöntőt",
         "mondott",
@@ -194,7 +198,7 @@
         "fiatalok",
         "tiszteletére."
       ],
-      "english": "The head of the family gave a brief toast in honor of the young couple.",
+      "english": "The host gave a short toast in honor of the young people.",
       "teaches": [
         "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
@@ -217,12 +221,16 @@
       "options": [
         "Mindig nézzen a másik fél szemébe, emelje meg a poharát, és mondja tisztán, hogy 'Egészségére!'.",
         "Mindig nézzen a másik fél szemére, emelje meg a poharát, és mondja tisztán, hogy 'Egészségére!'.",
-        "Mindig nézzen a másik fél szemébe, emelje meg a poharát, és mondja tisztán, hogy 'Egészségében!'."
+        "Mindig nézzen a másik fél szemében, emelje meg a poharát, és mondja tisztán, hogy 'Egészségére!'."
       ],
       "correct": 0,
       "teaches": [
-        "mintha"
-      ]
+        "movement-with-ba-be"
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b2-31-04-dialogue-2",
@@ -232,7 +240,7 @@
       "prompt": [
         {
           "speaker": "Házigazda",
-          "text": "Parancsol még egy adag töltött káposztát? Kifejezetten a kedvéért készítettük!"
+          "text": "Szeretnél még egy kis levest?"
         },
         {
           "speaker": "Vendég",
@@ -240,13 +248,13 @@
         }
       ],
       "options": [
-        "Nagyon köszönöm a szívélyes vendéglátást, igazán fenséges volt, de sajnos már egyetlen falat sem férne belém.",
-        "Nagyon köszönöm a szívélyes vendéglátást, igazán fenséges volt, de sajnos már egyetlen falat sem férne belőlem.",
-        "Nagyon köszönöm a szívélyes vendéglátást, igazán fenséges volt, de sajnos már egyetlen falat sem férne hozzám."
+        "Nagyon köszönöm a vendéglátást, de nekem már elég.",
+        "Nagyon köszönöm a vendéglátást, de tőlem már elég.",
+        "Nagyon köszönöm a vendéglátást, de bennem már elég."
       ],
       "correct": 0,
       "teaches": [
-        "mintha"
+        "case-inflected-pronouns"
       ]
     },
     {
@@ -257,11 +265,11 @@
       "template": [
         {
           "prompt": "Write a short formal toast ('pohárköszöntő') using 'koccint' and 'egészségére'.",
-          "answer": "Hölgyeim és Uraim, engedjék meg, hogy poharamat emeljem közös sikereinkre; koccintsunk mindannyiunk egészségére és a jövőbeli együttműködésre!"
+          "answer": "Hölgyeim és Uraim, emeljük poharunkat a házigazda egészségére, és koccintsunk együtt!"
         }
       ],
       "teaches": [
-        "mintha"
+        "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
     },
     {
@@ -272,11 +280,11 @@
       "template": [
         {
           "prompt": "Write a sentence using 'illendő' regarding table manners.",
-          "answer": "Hivatalos fogadásokon illendő megvárni, amíg az idős vendégek és a hölgyek helyet foglalnak az asztalnál."
+          "answer": "Vacsorán illendő megvárni, amíg a házigazda leül az asztalhoz."
         }
       ],
       "teaches": [
-        "mintha"
+        "b2-gastronomy-conviviality-cultural-rituals-vocab"
       ]
     },
     {
@@ -284,10 +292,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A lakodalomban a vőfély olyan hangosan kiáltott, ____ a falu túlsó végén is meghallották volna.",
+      "sentence": "A vendégek olyan hangosan beszéltek, ____ egy nagy lakodalomban lennének.",
       "hint": "as if",
       "answer": "mintha",
-      "english": "At the wedding the best man shouted so loudly as if they would have heard it at the far end of the village.",
+      "english": "The guests spoke so loudly as if they were at a big wedding feast.",
       "teaches": [
         "mintha"
       ]

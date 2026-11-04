@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is meant by 'agyelszívás' in economic and demographic discourse?",
+      "question": "What does 'agyelszívás' mean?",
       "options": [
-        "the migration of highly qualified and talented individuals to wealthier regions",
-        "a neurological surgical procedure performed in university hospitals",
-        "an advertising strategy designed to hypnotize consumers"
+        "highly educated people leaving their country for better work abroad",
+        "highly educated people returning to their country after years abroad",
+        "students from abroad studying in a country for a year"
       ],
       "correct": 0,
       "teaches": [
@@ -69,11 +69,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which preverb fits best in 'A fiatal mérnök hazatérve haza____hozta a legmodernebb technológiai ismereteket'?",
+      "question": "Which verb completes the sentence? A fiatal mérnök ____ a külföldön szerzett tudását. (The young engineer brought home the knowledge he gained abroad.)",
       "options": [
-        "-",
-        "el-",
-        "ki-"
+        "hazahozta",
+        "elvitte",
+        "kihozta"
       ],
       "correct": 0,
       "teaches": [
@@ -85,11 +85,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the verb expressing knowledge accumulation: 'A kutató évtizedeken át hatalmas tudást ____halmozott fel.'",
+      "question": "Which verb completes the sentence? A kutató sok év alatt sok tudást ____. (Over many years the researcher accumulated a lot of knowledge.)",
       "options": [
-        "fel-",
-        "le-",
-        "szét-"
+        "felhalmozott",
+        "elfelejtett",
+        "elveszített"
       ],
       "correct": 0,
       "teaches": [
@@ -99,14 +99,14 @@
     {
       "id": "b2-28-04-controlled-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A fejlett országok kutatóintézetei tudatosan igyekeznek ____ a kelet-európai tehetségeket.",
-      "hint": "to attract/draw away",
-      "answer": "elszívni",
-      "english": "Research institutes of developed countries consciously strive to drain Eastern European talent.",
+      "sentence": "Amikor a jól képzett emberek külföldre mennek dolgozni, az ____.",
+      "hint": "brain drain",
+      "answer": "agyelszívás",
+      "english": "When well-trained people go abroad to work, that is brain drain.",
       "teaches": [
-        "b2-figurative-preverbs"
+        "b2-exile-emigration-global-networks-vocab"
       ]
     },
     {
@@ -114,10 +114,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A nemzetközi konferenciákon való részvétel elősegíti a szakmai tapasztalatok hatékony ____.",
-      "hint": "exchange",
-      "answer": "kicserélését",
-      "english": "Participation in international conferences promotes the effective exchange of professional experiences.",
+      "sentence": "A kutatók a konferenciákon ____ a tapasztalataikat.",
+      "hint": "kicserél, 3pl present",
+      "answer": "kicserélik",
+      "english": "At conferences the researchers exchange their experiences.",
       "teaches": [
         "b2-figurative-preverbs"
       ]
@@ -131,23 +131,25 @@
         "A",
         "kutatói",
         "mobilitás",
-        "elősegíti",
+        "sok",
+        "új",
+        "ötletet",
+        "hoz",
         "az",
-        "innovatív",
-        "ötletek",
-        "terjedését."
+        "egyetemre."
       ],
       "solution": [
         "A",
         "kutatói",
         "mobilitás",
-        "elősegíti",
+        "sok",
+        "új",
+        "ötletet",
+        "hoz",
         "az",
-        "innovatív",
-        "ötletek",
-        "terjedését."
+        "egyetemre."
       ],
-      "english": "Researcher mobility promotes the spread of innovative ideas.",
+      "english": "Researcher mobility brings many new ideas to the university.",
       "teaches": [
         "b2-figurative-preverbs"
       ]
@@ -157,10 +159,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Az egyetemek közötti kétoldalú együttműködés felgyorsította a közvetlen ____ folyamatát.",
+      "sentence": "A két egyetem között ____ van: a kutatók átadják egymásnak a tudásukat.",
       "hint": "knowledge transfer",
       "answer": "tudástranszfer",
-      "english": "Bilateral cooperation between universities accelerated the process of direct knowledge transfer.",
+      "english": "There is knowledge transfer between the two universities: the researchers pass their knowledge on to each other.",
       "teaches": [
         "b2-exile-emigration-global-networks-vocab"
       ]
@@ -203,7 +205,7 @@
       "prompt": [
         {
           "speaker": "Oktatáspolitikus",
-          "text": "Hogyan fordítható át az agyelszívás kölcsönösen előnyös tudáscserévé?"
+          "text": "Hogyan kerülhet vissza a tudás az országba?"
         },
         {
           "speaker": "Kutatóintézet vezetője",
@@ -211,14 +213,18 @@
         }
       ],
       "options": [
-        "Olyan vendégoktatói és csereprogramokat kell finanszírozni, amelyek hazavonzzák a szellemi tőkét és erősítik a tudástranszfert.",
-        "Olyan vendégoktatói és csereprogramokat kell finanszírozni, amelyek vonzzák haza a szellemi tőkét és erősítik a tudástranszfert.",
-        "Olyan vendégoktatói és csereprogramokat kell finanszírozni, amelyek hazavonzzák a szellemi tőkét és erősítenék a tudástranszferre."
+        "Vendégoktatói programokkal hazahozhatjuk a külföldön szerzett szellemi tőkét.",
+        "Vendégoktatói programokkal hazahozhatjuk a külföldön szerzett szellemi tőkének.",
+        "Vendégoktatói programokkal hazahozhatjuk a külföldön szerzett szellemi tőkéről."
       ],
       "correct": 0,
       "teaches": [
-        "b2-figurative-preverbs"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "distractor_skills": {
+        "1": "verb-government-nak-nek",
+        "2": "delative-rol-rel"
+      }
     },
     {
       "id": "b2-28-04-dialogue-2",
@@ -227,8 +233,8 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "PhD-hallgató",
-          "text": "Érdemes néhány évre külföldi egyetemre menni posztdoktori kutatóként?"
+          "speaker": "Hallgató",
+          "text": "Érdemes egy évre külföldre menni kutatni?"
         },
         {
           "speaker": "Témavezető",
@@ -236,13 +242,13 @@
         }
       ],
       "options": [
-        "Feltétlenül, hiszen a kutatói mobilitás révén olyan kapcsolati hálót építhetsz ki, amely egész pályádon segít majd.",
-        "Feltétlenül, hiszen a kutatói mobilitás révén olyan kapcsolati hálót építhetsz ki, amely egész pályádra segít majd.",
-        "Feltétlenül, hiszen a kutatói mobilitás révén olyan kapcsolati hálót építhetsz ki, amelyet egész pályádon segítene majd."
+        "Igen, mert külföldön kapcsolati hálót szerezhetsz, amely később is segít.",
+        "Igen, mert külföldön kapcsolati hálót szerezhetsz, amelyet később is segít.",
+        "Igen, mert külföldön kapcsolati hálót szerezhetsz, amelynek később is segít."
       ],
       "correct": 0,
       "teaches": [
-        "b2-figurative-preverbs"
+        "vonatkozoi-nevmas-esetei"
       ]
     },
     {
@@ -252,8 +258,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'szellemi tőke' to describe a nation's human resource value.",
-          "answer": "A jól képzett mérnökök és orvosok jelentik egy kis ország legértékesebb szellemi tőkéjét."
+          "prompt": "Write a sentence with 'szellemi tőke': clever, hard-working people are the intellectual capital of a country.",
+          "answer": "Az okos és szorgalmas emberek jelentik az ország szellemi tőkéjét."
         }
       ],
       "teaches": [
@@ -267,8 +273,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'tudástranszfer' in an academic or industrial context.",
-          "answer": "Az egyetem és a technológiai vállalatok közötti tudástranszfer számos új munkahelyet teremtett."
+          "prompt": "Write a sentence using 'tudástranszfer': two universities pass knowledge on to each other.",
+          "answer": "A két egyetem tudástranszfer útján átadja egymásnak a tudását."
         }
       ],
       "teaches": [
@@ -280,10 +286,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A külföldről hazatérő tudósok értékes tapasztalatokat ____ haza az anyaországba.",
-      "hint": "brought home",
+      "sentence": "A külföldről hazatért tudósok sok tapasztalatot ____ haza.",
+      "hint": "hoz, 3pl past",
       "answer": "hoztak",
-      "english": "Scientists returning from abroad brought valuable experiences home to the motherland.",
+      "english": "The scientists who returned from abroad brought a lot of experience home.",
       "teaches": [
         "b2-figurative-preverbs"
       ]
