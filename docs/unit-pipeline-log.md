@@ -454,6 +454,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-04 | HU B2 core 17, 19, 21, 23, 25, 27 | paired read, 3 core units/reader, no limit hit | | A 352,680, 17 min; B 348,797, 17 min | 503 proposed (72 / 77 / 96 / 79 / 90 / 89), 8 rejected (6 rewritten, 2 goal lines done by script); Claude changed ~15 items, listed 20 words | **~117k a unit, cheapest B2 batch**; 2 skills moved by the user (causatives within Unit 19, cataphoric clauses to Unit 17); walk 36/36 |
 | 11-04 | HU B2 core 29, 31, 33, 35, 37, 39 | paired read, 3 core units/reader, no limit; a container restart lost reader A's completion notice | | A not reported (restart); B 345,347, 15 min | 494 proposed (68 / 95 / 84 / 70 / 86 / 91), 13 rejected and rewritten; Claude changed ~10 items, listed 11 words | ~115k a unit (B); 32 dialogue prompts as text, now converted by `check_fixes.py`; 1 skill moved by the user (relational compounds within Unit 39); walk 36/36 |
 | 11-04 | HU B2 core 41, 43, 45, 47, 49, 51 | paired read, 3 core units/reader; both stopped by the 5-hour Sonnet limit, resumed after the reset | | A 414,362, B 405,537 as reported on resume (~136k a unit if cumulative) | 569 proposed (101 / 86 / 86 / 103 / 100 / 93), 2 rejected and rewritten (an unescaped quote, a *mindig* tell); Claude changed ~20 items (a duplicate option of its own caught by check-content), listed 32 words, fixed 6 recap units | ~95 fixes/unit, the most in B2 so far; 1 skill moved by the user (relative postpositions to b2-23-01), 4 later-skill items rewritten (figurative preverbs); a category/tag mismatch and a bare restitch, both scripted; walk 36/36 |
+| 11-04 | HU B2 core 53, 55, 57, 59, 61, 63 | paired read, 3 core units/reader, no limit; a worker restart mid-review lost nothing | | A 438,701, B 446,836 (~148k a unit) | 612 proposed (117 / 85 / 107 / 82 / 122 / 99), 6 rejected and rewritten (3 length, a tell, a non-form, a ds on its own skill); Claude changed ~35 items (21 second right answers in two-form skills), listed 47 words | the most expensive B2 batch per unit; tags were the generator's worst here (every grammar item on the unit skill); walk 36/36 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1601,3 +1602,19 @@ The user took the four recommended options:
   reader and check-content; it reads as a calque. Culture units carry more such prose.
 - **Unmet words after applying are still ~70 a batch** at B2 (32 listed, the rest lookup
   misses); the readers rewrite most but not those their own new options bring.
+
+### 2026-11-04: HU B2 core Units 53–63
+
+- **Two-form skills give second right answers the checker can't see:** 21 fill-blanks had one
+  answer where the skill has two equal forms (*olyannyira / annyira*, *oly / olyan mértékben*,
+  *Még ha / Ha … is*). Readers write the form the screen favours. Rulebook § 6b now lists them;
+  a script would need a per-skill table of equivalents, worth it if the culture track repeats it.
+- **The generator tagged every grammar item with the unit's skill** (Units 55, 57, 61, 63),
+  whatever it tested; the readers retagged ~120 items. The focus file's "order defect" for
+  `mintha` was this tagging fault, not a lesson built on a later skill: check what an item
+  tests before reporting an order defect.
+- **Facts the readers can't check were caught by the reviewer's own read** (Abády Bálint,
+  Horváth Piroska, a non-existent Krúdy title); readers flagged them "unsure" only. The
+  reviewer's read of the stories while the readers run stays necessary.
+- **My own rewrites keep bringing defects** (a distractor taught later, a non-standard *ds*
+  ownership): run check_fixes on every extra list, as done, and unmet-words after applying.
