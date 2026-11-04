@@ -453,6 +453,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-04 | HU B2 core 5, 7, 9, 11, 13, 15 | paired read, 3 core units/reader; both stopped by the weekly limit mid-batch, resumed after the reset; reader B resumed again for the C1 rewrites | | A 413,177; B 340,419 + 398,629 (resumed runs) | 475 proposed (74 / 88 / 81 / 77 / 85 / 70) + 137 C1 rewrites, 6 rejected and rewritten; Claude changed ~25 items, 29 arrow hints, ~15 unmet words, a story line | ~140k a unit before the rewrites; 2 C1 lessons rewritten (Units 13, 15); 2 skills moved by the user (`concessive-indefinites` to Unit 7, `sag-seg-nouns` to B2 Unit 5); 2 classics relabelled as original; walk 36/36 |
 | 11-04 | HU B2 core 17, 19, 21, 23, 25, 27 | paired read, 3 core units/reader, no limit hit | | A 352,680, 17 min; B 348,797, 17 min | 503 proposed (72 / 77 / 96 / 79 / 90 / 89), 8 rejected (6 rewritten, 2 goal lines done by script); Claude changed ~15 items, listed 20 words | **~117k a unit, cheapest B2 batch**; 2 skills moved by the user (causatives within Unit 19, cataphoric clauses to Unit 17); walk 36/36 |
 | 11-04 | HU B2 core 29, 31, 33, 35, 37, 39 | paired read, 3 core units/reader, no limit; a container restart lost reader A's completion notice | | A not reported (restart); B 345,347, 15 min | 494 proposed (68 / 95 / 84 / 70 / 86 / 91), 13 rejected and rewritten; Claude changed ~10 items, listed 11 words | ~115k a unit (B); 32 dialogue prompts as text, now converted by `check_fixes.py`; 1 skill moved by the user (relational compounds within Unit 39); walk 36/36 |
+| 11-04 | HU B2 core 41, 43, 45, 47, 49, 51 | paired read, 3 core units/reader; both stopped by the 5-hour Sonnet limit, resumed after the reset | | A 414,362, B 405,537 as reported on resume (~136k a unit if cumulative) | 569 proposed (101 / 86 / 86 / 103 / 100 / 93), 2 rejected and rewritten (an unescaped quote, a *mindig* tell); Claude changed ~20 items (a duplicate option of its own caught by check-content), listed 32 words, fixed 6 recap units | ~95 fixes/unit, the most in B2 so far; 1 skill moved by the user (relative postpositions to b2-23-01), 4 later-skill items rewritten (figurative preverbs); a category/tag mismatch and a bare restitch, both scripted; walk 36/36 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1583,3 +1584,20 @@ The user took the four recommended options:
 - **A container restart lost a finished reader's notice** but not its files: copy each
   reader's files from the worktree as soon as they appear, as § Best practices says.
 
+### 2026-11-04: HU B2 core Units 41–51
+
+- **The same two slips came back, scripted now:** a fix that left `category: vocabulary` on a
+  grammar-tagged item (also batch 17–27) reached the pre-push validator; `check_fixes.py`
+  now runs the validator's metadata check on the items a fix touches. A bare
+  `stitch_track_unit_stories.py` (after a `--help` run in batch 5–15) restitched 85 readings;
+  the full run now needs `--all`.
+- **Later-skill lessons take two shapes:** a skill registered late in its own unit (Unit 45,
+  moved by the user) and a lesson built on a later unit's skill (Unit 41's preverb contrasts,
+  Unit 55's skill, rewritten). The reader's report names both; the user decides each.
+- **Fact checks need the session's network:** njt.jog.gov.hu is not on the allowlist and
+  Perplexity and Firecrawl failed; the deadlines rest on government and university pages.
+  Allowing njt.jog.gov.hu would let the culture track's law claims be read from the statutes.
+- **Read the idiom, not only the form:** *volt választásunk egymás iránt* passed both the
+  reader and check-content; it reads as a calque. Culture units carry more such prose.
+- **Unmet words after applying are still ~70 a batch** at B2 (32 listed, the rest lookup
+  misses); the readers rewrite most but not those their own new options bring.

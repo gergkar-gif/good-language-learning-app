@@ -16,7 +16,9 @@ unit, and always restores the files. Each fix ends up in one of three lists:
   check-content finding on its exercise (a length give-away, an unmet word,
   a copied item…), or it leaves its exercise invalid under the course's
   schema (a `hint` or `english` on a multiple-choice item: es A1 units 2-5
-  and 6-11, found only by validate-content after applying);
+  and 6-11, found only by validate-content after applying), or its tags
+  break validate-content's metadata rule (a grammar tag on a `vocabulary`
+  item: HU B2 batches 17-27 and 41-51);
 - review: it applies cleanly, but it is unsure or changes Hungarian; only
   these need the reviewer's eye (readers propose wrong target-language
   text a few times a level);
@@ -72,6 +74,33 @@ def schema_errors(texts):
                 if isinstance(node, dict) and node.get("id"):
                     eid = node["id"]
             out.setdefault(eid or rel, f"schema: {err.message[:160]}")
+    return out
+
+
+def tag_errors(texts):
+    """{exercise id: message} from validate-content.py's exercise metadata
+    check (category against the tag's kind, aliases, unknown slugs) on the
+    changed exercise files. A reader who retags or recategorises an item
+    could leave a grammar tag on a `vocabulary` item, found only by the
+    pre-push validator (HU B2 b2-12-03-practice-4 in batch 17-27,
+    b2-24-02-practice-4 in batch 41-51)."""
+    spec_v = importlib.util.spec_from_file_location("validate_content", ROOT / "scripts/validate-content.py")
+    vc = importlib.util.module_from_spec(spec_v)
+    spec_v.loader.exec_module(vc)
+    out, regs = {}, {}
+    for rel, text in texts.items():
+        parts = Path(rel).parts
+        if len(parts) < 4 or parts[0] != "content" or parts[2] != "exercises":
+            continue
+        if parts[1] not in regs:
+            regs[parts[1]] = vc.load_skill_registry(ROOT / "content" / parts[1])
+        canon, alias_map, kind_map = regs[parts[1]]
+        if canon is None:
+            continue
+        for loc, msg in vc.validate_exercise_metadata(json.loads(text), parts[1], canon, alias_map, kind_map):
+            m = re.search(r"\(([^)]+)\)", loc)
+            if m:
+                out.setdefault(m.group(1), f"tags: {msg[:160]}")
     return out
 
 
@@ -168,6 +197,10 @@ def main():
             rejected.setdefault(n, msg)
         if not owners:
             new.append(("schema", eid, msg))
+    # only the items a fix touches: a mismatch already in the file is not this list's
+    for eid, msg in tag_errors(texts).items():
+        for n in (n for n, f in enumerate(fixes) if f.get("id") == eid):
+            rejected.setdefault(n, msg)
 
     unclaimed = []
     for check, eid, msg in new:

@@ -190,15 +190,19 @@ def stitch_language_track(lang: str, level: str, track_id: str, lang_audio_code:
 
 
 def main():
-    if sys.argv[1:] and sys.argv[1] != "--unit":
-        # any other argument (e.g. --help) used to fall through to the full restitch
-        sys.exit("usage: stitch_track_unit_stories.py [--unit <lang> <level> <track> <unit id>]")
+    if sys.argv[1:2] not in (["--unit"], ["--all"]):
+        # a bare run or any other argument (e.g. --help) used to restitch every
+        # track (~85 files, incl. hand-edited readings); HU B2 2026-11-04 hit it twice
+        sys.exit("usage: stitch_track_unit_stories.py --unit <lang> <level> <track> <unit id>\n"
+                 "       stitch_track_unit_stories.py --all   (every track: rewrites ~85 unit readings)")
     if sys.argv[1:2] == ["--unit"]:
         if len(sys.argv) != 6:
             sys.exit("usage: stitch_track_unit_stories.py --unit <lang> <level> <track> <unit id>")
         lang, level, track_id, unit_id = sys.argv[2:6]
         stitch_language_track(lang, level, track_id, lang.split("-")[0], only_unit=unit_id)
         return
+    if len(sys.argv) != 2:
+        sys.exit("usage: stitch_track_unit_stories.py --all")
     # B1 tracks
     stitch_language_track("es-latam", "b1", "latam", "es")
     stitch_language_track("hu", "b1", "citizenship", "hu")
