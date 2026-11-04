@@ -1,0 +1,1354 @@
+[
+ {
+  "file": "content/hu/exercises/b2/b2-32-01-ex.json",
+  "id": "b2-32-01-intro-1",
+  "set": {
+   "options": [
+    "an extreme degree that leads to a result",
+    "a short delay before something happens",
+    "a denial of what was said before"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away 64 vs 48"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-01-ex.json",
+  "id": "b2-32-01-controlled-3",
+  "set": {
+   "question": "Select the sentence correctly punctuated with 'oly mértékben ..., hogy':",
+   "options": [
+    "A futó oly mértékben összpontosított, hogy az edzőt sem hallotta.",
+    "A futó oly mértékben összpontosított hogy, az edzőt sem hallotta.",
+    "A futó oly mértékben összpontosított hogy az edzőt sem hallotta."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet moraját; old wrong option 3 had two comma faults"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-01-ex.json",
+  "id": "b2-32-01-controlled-4",
+  "set": {
+   "sentence": "A futó ____ kimerült a maraton végére, hogy alig tudott talpon maradni.",
+   "hint": "to such an extent",
+   "answer": "olyannyira",
+   "english": "The runner was so exhausted by the end of the marathon that he could barely stay on his feet."
+  },
+  "kind": "hungarian",
+  "why": "unmet maratonfutó, célvonal, felsegíteniük"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-01-ex.json",
+  "id": "b2-32-01-practice-1",
+  "set": {
+   "sentence": "A döntőben a csapatok ____ mértékben küzdöttek, hogy több játékos megsérült.",
+   "hint": "in such",
+   "answer": "oly",
+   "english": "In the final the teams fought to such an extent that several players got injured."
+  },
+  "kind": "hungarian",
+  "why": "unmet bajnokság"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-01-ex.json",
+  "id": "b2-32-01-practice-2",
+  "set": {
+   "tiles": [
+    "A",
+    "futó",
+    "olyannyira",
+    "gyors",
+    "volt,",
+    "hogy",
+    "rekordot",
+    "döntött."
+   ],
+   "solution": [
+    "A",
+    "futó",
+    "olyannyira",
+    "gyors",
+    "volt,",
+    "hogy",
+    "rekordot",
+    "döntött."
+   ],
+   "english": "The runner was so fast that he broke the record."
+  },
+  "kind": "hungarian",
+  "why": "unmet versenyző, felgyorsított, világcsúcsot"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-01-ex.json",
+  "id": "b2-32-01-practice-3",
+  "set": {
+   "sentence": "A maratonhoz nemcsak jó technika, hanem rendkívüli ____ is szükséges.",
+   "hint": "endurance",
+   "answer": "állóképesség",
+   "english": "For a marathon not only good technique but also extraordinary endurance is needed."
+  },
+  "kind": "hungarian",
+  "why": "unmet gyorsaság"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-01-ex.json",
+  "id": "b2-32-01-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Sportriporter",
+     "text": "Hogyan bírta a futó az utolsó kilométert?"
+    },
+    {
+     "speaker": "Edző",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Olyannyira kimerült, hogy alig tudott talpon maradni.",
+    "Olyannyira kimerült, mert alig tudott talpon maradni.",
+    "Olyannyira kimerült, ha alig tudott talpon maradni."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet győzni, akarás, riválisát, megelőzhetné, olimpikon; old wrong option 3 changed conjunction and mood"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-01-ex.json",
+  "id": "b2-32-01-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Sportorvos",
+     "text": "Mi történik, ha a terhelés túl nagy?"
+    },
+    {
+     "speaker": "Edző",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "A terhelés oly mértékben megnő, hogy külön orvosi stábra van szükség.",
+    "A terhelés oly mértékben megnő, mert külön orvosi stábra van szükség.",
+    "A terhelés oly mértékben megnő, ha külön orvosi stábra van szükség."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet regeneráció, rontja, sérülésveszély, drasztikusan, megugrik, túledzettség, élsportolók; old wrong option 3 had two faults (ha, megugrana)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-01-ex.json",
+  "id": "b2-32-01-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a consecutive sentence using 'olyannyira ..., hogy' describing athletic stamina.",
+     "answer": "A futó állóképessége olyannyira kimagasló volt, hogy a verseny után sem látszott rajta a kimerültség."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet triatlonista, legendás, próbáló"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-01-ex.json",
+  "id": "b2-32-01-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence using 'oly mértékben ..., hogy' about how a team defends.",
+     "answer": "A játékosok oly mértékben védekeztek, hogy az ellenfél nem tudott támadni."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet taktikai, lövést"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-01-ex.json",
+  "id": "b2-32-01-check-1",
+  "set": {
+   "sentence": "A csapat ____ gyorsan támadott, hogy a védelem nem tudott reagálni.",
+   "hint": "so much",
+   "answer": "olyannyira",
+   "english": "The team attacked so fast that the defense could not react."
+  },
+  "kind": "hungarian",
+  "why": "unmet kapus, reakcióideje, fejest, szögletre, tolni"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-32-01-a-gr.json",
+  "old": "\"content\": \"In Hungarian complex sentences, consecutive clauses",
+  "new": "\"content\": \"You know *hogy* clauses from A2 Unit 11; what is new is the result clause with a degree word in the main clause. In Hungarian complex sentences, consecutive clauses",
+  "kind": "hungarian",
+  "why": "screen did not link to the known hogy clauses"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-32-01-a-gr.json",
+  "old": "Always write 'olyannyira' as a single compound word. Do not place a comma between 'oly' and 'annyira', but always place a comma before the conjunction 'hogy'.",
+  "new": "Write 'olyannyira' as one word and 'oly mértékben' as two words, and always put a comma before 'hogy'. Plain 'annyira ..., hogy' (the neutral form in the table) works in every sentence below too.",
+  "kind": "hungarian",
+  "why": "tip talked about a non-existent \"oly annyira\" and pushed the formal forms only"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-02-ex.json",
+  "id": "b2-32-02-intro-2",
+  "set": {
+   "options": [
+    "to get past the goalkeeper with a trick",
+    "to pass the ball back to a teammate",
+    "to shoot the ball into the net"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "absurd wrong options (kick the ball out of the stadium, ask the referee)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-02-ex.json",
+  "id": "b2-32-02-controlled-3",
+  "set": {
+   "question": "Select the correct sentence:",
+   "options": [
+    "A szélső olyannyira felgyorsított, hogy könnyedén lefutotta a védőt.",
+    "A szélső olyannyira felgyorsított, hogy könnyedén lefutott a védőt.",
+    "A szélső olyannyira felgyorsított, hogy könnyedén lefutotta a védő."
+   ],
+   "correct": 0,
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "the old wrong options changed definiteness and tense and a comma at once; now one fault each; tests the definite verb form"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-02-ex.json",
+  "id": "b2-32-02-controlled-4",
+  "set": {
+   "sentence": "A csatár egy pontos passzt kapott, és a hálóba ____ a labdát.",
+   "hint": "shot in",
+   "answer": "belőtte",
+   "english": "The striker received an accurate pass and shot the ball into the net.",
+   "teaches": [
+    "b2-competition-mastery-peak-performance-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "unmet támadó, tizenhatos; tests the word belő"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-02-ex.json",
+  "id": "b2-32-02-practice-1",
+  "set": {
+   "sentence": "A gyors szélső könnyedén ____ a védőt.",
+   "hint": "outran",
+   "answer": "lefutotta",
+   "english": "The fast winger easily outran the defender.",
+   "teaches": [
+    "b2-competition-mastery-peak-performance-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "unmet villámgyors, mezőnyt; tests the word lefut"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-02-ex.json",
+  "id": "b2-32-02-practice-4",
+  "set": {
+   "tiles": [
+    "A",
+    "szélső",
+    "hirtelen",
+    "felgyorsított,",
+    "és",
+    "lefutotta",
+    "a",
+    "védőt."
+   ],
+   "solution": [
+    "A",
+    "szélső",
+    "hirtelen",
+    "felgyorsított,",
+    "és",
+    "lefutotta",
+    "a",
+    "védőt."
+   ],
+   "english": "The winger suddenly accelerated and outran the defender."
+  },
+  "kind": "hungarian",
+  "why": "unmet sprinter, célegyenesben"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-02-ex.json",
+  "id": "b2-32-02-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kommentátor",
+     "text": "Mi történt a támadásban?"
+    },
+    {
+     "speaker": "Szakértő",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "A szélső lefutotta a védőt, átvette a labdát, majd belőtte a hálóba.",
+    "A szélső lefutotta a védőt, átvette a labdát, majd lőtte be a hálóba.",
+    "A szélső lefutotta a védőt, átvette a labdát, majd kilőtte a hálóba."
+   ],
+   "correct": 0,
+   "teaches": [
+    "prefix-word-order"
+   ],
+   "distractor_skills": {
+    "1": "b2-focus-inversion",
+    "2": "b2-figurative-preverbs"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet fáradó, pazar, mozdulat, eldöntő, gól, hosszabbításban; the old \"hidegvérrel lőtte be\" is a correct focus-and-inversion sentence (second right answer)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-02-ex.json",
+  "id": "b2-32-02-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Edző",
+     "text": "Miért nem tudtad kicselezni a védőt?"
+    },
+    {
+     "speaker": "Szélső",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Olyannyira gyors volt a védő, hogy nem tudtam kicselezni.",
+    "Olyannyira gyors volt a védő, mert nem tudtam kicselezni.",
+    "Olyannyira gyors volt a védő, ha nem tudtam kicselezni."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet hátvédet, szituációban, labdával, felgyorsulni, tapadt; old wrong option 3 had two faults"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-02-ex.json",
+  "id": "b2-32-02-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence using 'átvesz' and 'kicselez' to describe an offensive football action.",
+     "answer": "A csatár átvette a labdát, majd kicselezte a kapust."
+    }
+   ],
+   "teaches": [
+    "b2-competition-mastery-peak-performance-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet támadó, mozdulattal, mélységi, villámgyorsan; open writing: unit vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-02-ex.json",
+  "id": "b2-32-02-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence using 'lefut' and 'belő' with consecutive degree.",
+     "answer": "A szélső olyannyira könnyedén lefutotta a védőt, hogy utána belőtte a labdát a hálóba."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet kapus (lesson 5 word), ziccerből, gólt"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-02-ex.json",
+  "id": "b2-32-02-check-1",
+  "set": {
+   "sentence": "A tehetséges játékos a döntő pillanatban ____ a kapust.",
+   "hint": "dribbled past",
+   "answer": "kicselezte",
+   "english": "The talented player dribbled past the goalkeeper at the decisive moment."
+  },
+  "kind": "hungarian",
+  "why": "unmet elegánsan"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-32-02-a-gr.json",
+  "old": "\"content\": \"Hungarian sports narration relies heavily",
+  "new": "\"content\": \"You know the preverbs *le-, át-, ki-, be-* from A1 Unit 28 and A2 Unit 22, the preverb after *nem* or a modal from A2 Unit 10, and preverb inversion from B2 Unit 1; here they are put to work in sports commentary. Hungarian sports narration relies heavily",
+  "kind": "hungarian",
+  "why": "screen presented known preverbs and their placement as new"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-intro-1",
+  "set": {
+   "options": [
+    "pressing the opponent high up to win the ball",
+    "waiting deep in your own half to defend",
+    "passing the ball back to the goalkeeper"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away 90 vs 66; absurd wrong options (assault on the referee, leaving the field)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-controlled-2",
+  "set": {
+   "question": "Select the sentence using consecutive degree to describe team coordination:",
+   "options": [
+    "A játékosok oly mértékben betartották a taktikát, hogy az ellenfél nem tudott támadni.",
+    "A játékosok oly mértékben betartották a taktikát, mert az ellenfél nem tudott támadni.",
+    "A játékosok oly mértékben betartották a taktikát, ha az ellenfél nem tudott támadni."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet rést"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-controlled-3",
+  "set": {
+   "question": "Which sentence uses 'kicselez' correctly in tactical analysis?",
+   "options": [
+    "A játékos kicselezte a védőt.",
+    "A játékos kicselezett a védőt.",
+    "A játékos kicselezte a védő."
+   ],
+   "correct": 0,
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet középpályás, gyorsított; the old wrong options mixed preverb order and verb forms (and \"vette át a labdát\" with a focused subject is correct Hungarian)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-controlled-4",
+  "set": {
+   "sentence": "A csapat összjátéka ____ tökéletes volt, hogy az ellenfél nem tudott támadni.",
+   "hint": "so much",
+   "answer": "olyannyira",
+   "english": "The team's combination play was so perfect that the opponent could not attack."
+  },
+  "kind": "hungarian",
+  "why": "unmet felállva, tapsolt, lelátón"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-practice-1",
+  "set": {
+   "sentence": "A csapat összjátéka ____ mértékben javult a szünet után, hogy az ellenfél nem tudott támadni.",
+   "hint": "in such",
+   "answer": "oly",
+   "english": "The team's combination play improved to such an extent after the break that the opponent could not attack."
+  },
+  "kind": "hungarian",
+  "why": "unmet fegyelmezettsége, gólt"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-practice-2",
+  "set": {
+   "tiles": [
+    "A",
+    "tudatos",
+    "letámadás",
+    "miatt",
+    "az",
+    "ellenfél",
+    "nem",
+    "tudott",
+    "támadni."
+   ],
+   "solution": [
+    "A",
+    "tudatos",
+    "letámadás",
+    "miatt",
+    "az",
+    "ellenfél",
+    "nem",
+    "tudott",
+    "támadni."
+   ],
+   "english": "Because of the deliberate pressing, the opponent could not attack.",
+   "teaches": [
+    "b2-competition-mastery-peak-performance-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "unmet kialakítani; tests the word letámadás, not annyira-hogy"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-practice-3",
+  "set": {
+   "sentence": "A csapat sikerének kulcsa a ____ és az összjáték volt.",
+   "hint": "team spirit",
+   "answer": "csapatszellem",
+   "english": "The key to the team's success was team spirit and combination play."
+  },
+  "kind": "hungarian",
+  "why": "unmet megkérdőjelezhetetlen"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-practice-4",
+  "set": {
+   "tiles": [
+    "A",
+    "világos",
+    "szerepmegosztás",
+    "segített",
+    "a",
+    "csapatnak."
+   ],
+   "solution": [
+    "A",
+    "világos",
+    "szerepmegosztás",
+    "segített",
+    "a",
+    "csapatnak."
+   ],
+   "english": "The clear division of roles helped the team."
+  },
+  "kind": "hungarian",
+  "why": "unmet keretben, kialakított, konfliktusokat"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Taktikai elemző",
+     "text": "Hogyan nyert az esélytelenebb csapat?"
+    },
+    {
+     "speaker": "Vezetőedző",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "A játékosok olyannyira fegyelmezetten követték a taktikát, hogy az ellenfél nem tudott támadni.",
+    "A játékosok olyannyira fegyelmezetten követték a taktikát, mert az ellenfél nem tudott támadni.",
+    "A játékosok olyannyira fegyelmezetten követték a taktikát, ha az ellenfél nem tudott támadni."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet semlegesítették, sztárjait, megnyerni; old wrong option 3 had two faults"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Újságíró",
+     "text": "Miért fontos a csapatszellem?"
+    },
+    {
+     "speaker": "Csapatkapitány",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Mert a csapatszellem oly mértékben erősíti a játékosokat, hogy a nehéz helyzetekben is támadnak.",
+    "Mert a csapatszellem oly mértékben erősíti a játékosokat, mert a nehéz helyzetekben is támadnak.",
+    "Mert a csapatszellem oly mértékben erősíti a játékosokat, ha a nehéz helyzetekben is támadnak."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet megsokszorozza, egyéniségeket, győzni, képességeknél; old wrong option 3 had two faults"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write an analytical sentence using 'letámadás' and 'taktika' with consecutive degree.",
+     "answer": "Az edző olyannyira jól kidolgozta a letámadás taktikáját, hogy az ellenfél nem tudott támadni."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet térfelén"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence using 'összjáték' and 'csapatszellem' to explain a victory.",
+     "answer": "A győzelem kulcsa a csapatszellem és a jó összjáték volt."
+    }
+   ],
+   "teaches": [
+    "b2-competition-mastery-peak-performance-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet villanásoknak, lenyűgöző, köszönhető; open writing: unit vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-check-1",
+  "set": {
+   "sentence": "A játékosok felkészültsége ____ mértékben növekedett, hogy a végén is ők voltak jobbak.",
+   "hint": "in such",
+   "answer": "oly",
+   "english": "The players' preparedness increased to such an extent that they were better at the end too."
+  },
+  "kind": "hungarian",
+  "why": "unmet felkészültsége, hosszabbításban, domináltak"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-03-ex.json",
+  "id": "b2-32-03-check-2",
+  "set": {
+   "options": [
+    "összjáték",
+    "letámadás",
+    "taktika"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet magányosság, szabálytalanság"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-04-ex.json",
+  "id": "b2-32-04-intro-1",
+  "set": {
+   "options": [
+    "getting up again after a heavy defeat",
+    "forgetting a defeat and never talking about it",
+    "refusing to shake the winner's hand"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away 90 vs 65; absurd wrong options (stretching on one foot, arguing with the referee)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-04-ex.json",
+  "id": "b2-32-04-controlled-2",
+  "set": {
+   "question": "Which consecutive sentence describes pressure on an athlete correctly?",
+   "options": [
+    "A lélektani nyomás olyannyira nagy volt, hogy a bajnok hibázott.",
+    "A lélektani nyomás olyannyira nagy volt, mert a bajnok hibázott.",
+    "A lélektani nyomás olyannyira nagy volt, ha a bajnok hibázott."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet bénító, megismételni, selejtezőbeli"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-04-ex.json",
+  "id": "b2-32-04-controlled-3",
+  "set": {
+   "question": "Complete the consecutive clause: 'A küzdőszellem oly mértékben fűtötte a csapatot, ____ a hátrányt is ledolgozták'.",
+   "options": [
+    "hogy",
+    "mert",
+    "de"
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "mert-because"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet minthogy"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-04-ex.json",
+  "id": "b2-32-04-controlled-4",
+  "set": {
+   "sentence": "A kudarc ____ fájt a játékosoknak, hogy alig tudtak megszólalni.",
+   "hint": "so much",
+   "answer": null,
+   "answers": [
+    "annyira",
+    "olyannyira"
+   ],
+   "english": "The defeat hurt the players so much that they could hardly speak."
+  },
+  "kind": "hungarian",
+  "why": "unmet nehezedett, vállára; also gives the plain annyira ..., hogy of the registry skill a drill (it occurred in no item)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-04-ex.json",
+  "id": "b2-32-04-practice-1",
+  "set": {
+   "sentence": "A nagy nyomás ____ mértékben zavarta a játékost, hogy mellé lőtte a labdát.",
+   "hint": "in such",
+   "answer": "oly",
+   "english": "The great pressure disturbed the player to such an extent that he shot the ball wide."
+  },
+  "kind": "hungarian",
+  "why": "unmet füttye, büntetőt"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-04-ex.json",
+  "id": "b2-32-04-practice-3",
+  "set": {
+   "sentence": "A döntő pillanatban a hatalmas ____ miatt a játékos hibázott.",
+   "hint": "psychological pressure",
+   "answer": "lélektani nyomás",
+   "english": "Because of the huge psychological pressure at the decisive moment, the player made a mistake."
+  },
+  "kind": "hungarian",
+  "why": "unmet tapasztalható, veteránoknak"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-04-ex.json",
+  "id": "b2-32-04-practice-4",
+  "set": {
+   "tiles": [
+    "A",
+    "sportszerűség",
+    "szellemében",
+    "a",
+    "két",
+    "játékos",
+    "kezet",
+    "fogott."
+   ],
+   "solution": [
+    "A",
+    "sportszerűség",
+    "szellemében",
+    "a",
+    "két",
+    "játékos",
+    "kezet",
+    "fogott."
+   ],
+   "english": "In the spirit of sportsmanship the two players shook hands."
+  },
+  "kind": "hungarian",
+  "why": "unmet versenyző, célvonalon"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-04-ex.json",
+  "id": "b2-32-04-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Sportpszichológus",
+     "text": "Mit tegyen a sportoló egy nagy kudarc után?"
+    },
+    {
+     "speaker": "Élsportoló",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "A gyors talpra álláshoz meg kell tanulni kezelni a lélektani nyomást.",
+    "A gyors talpra állásról meg kell tanulni kezelni a lélektani nyomást.",
+    "A gyors talpra állástól meg kell tanulni kezelni a lélektani nyomást."
+   ],
+   "correct": 0,
+   "teaches": [
+    "hoz-suffix"
+   ],
+   "distractor_skills": {
+    "1": "delative-rol-rel",
+    "2": "tol-tol"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet visszajelzés, segíthet, felkészülés, feldolgozásában; the old options (-ra / -ban) were also possible with \"meg kell tanulni\"; the item tests the -hoz of a purpose"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-04-ex.json",
+  "id": "b2-32-04-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Újságíró",
+     "text": "Mit jelentett a kézfogás?"
+    },
+    {
+     "speaker": "Bajnok",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Ez a sportszerűség pillanata volt, amely megmutatta, hogy a tisztelet fontosabb a győzelemnél.",
+    "Ez a sportszerűség pillanata volt, amelyet megmutatta, hogy a tisztelet fontosabb a győzelemnél.",
+    "Ez a sportszerűség pillanata volt, amely megmutatta, hogy a tisztelet fontosabb a győzelemre."
+   ],
+   "correct": 0,
+   "teaches": [
+    "relative-clauses-aki-ami-amely"
+   ],
+   "distractor_skills": {
+    "1": "vonatkozoi-nevmas-esetei"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet riválisod, felsegített, bukás, aranyéremnél, aranyéremre"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-04-ex.json",
+  "id": "b2-32-04-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence using 'talpra állás' and 'küzdőszellem' with consecutive degree.",
+     "answer": "A csapat küzdőszelleme olyannyira erős volt, hogy a vereség után is talpra állt."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet törhetetlen, megnyerte"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-04-ex.json",
+  "id": "b2-32-04-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write an ethical reflection using 'sportszerűség' and 'lélektani nyomás'.",
+     "answer": "Bár a lélektani nyomás nagy volt, a játékosok megőrizték a sportszerűséget."
+    }
+   ],
+   "teaches": [
+    "b2-competition-mastery-peak-performance-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet elviselhetetlen, versenyzők, példamutató; open writing: unit vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-04-ex.json",
+  "id": "b2-32-04-check-1",
+  "set": {
+   "sentence": "A kudarc ____ mértékben fájt a csapatnak, hogy hetekig nem edzettek.",
+   "hint": "in such",
+   "answer": "oly",
+   "english": "The defeat hurt the team to such an extent that they did not train for weeks."
+  },
+  "kind": "hungarian",
+  "why": "unmet csalódottság, motiváció"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-04-ex.json",
+  "id": "b2-32-04-check-2",
+  "set": {
+   "options": [
+    "küzdőszellem",
+    "kudarc",
+    "sportszerűség"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet közömbösség, fáradtság"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-intro-1",
+  "set": {
+   "options": [
+    "a moment that changes the course of the match",
+    "the moment when the referee starts the match",
+    "the moment when the fans enter the stadium"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away 83 vs 59; absurd wrong options (center circle, turnstile)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-intro-2",
+  "set": {
+   "options": [
+    "bravúr",
+    "vereség",
+    "döntetlen"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet szabálytalanság"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-controlled-2",
+  "set": {
+   "question": "Select the sentence using consecutive degree in match analysis:",
+   "options": [
+    "A kapus bravúrjai olyannyira zavarták a csatárt, hogy nem mert lőni.",
+    "A kapus bravúrjai olyannyira zavarták a csatárt, mert nem mert lőni.",
+    "A kapus bravúrjai olyannyira zavarták a csatárt, ha nem mert lőni."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet elbizonytalanították, csatárokat"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-controlled-3",
+  "set": {
+   "question": "Complete the live commentary sentence: 'A védő lefutotta a támadót, majd ____ a labdát'.",
+   "options": [
+    "átvette",
+    "vette át",
+    "átvett"
+   ],
+   "correct": 0,
+   "teaches": [
+    "prefix-word-order"
+   ],
+   "distractor_skills": {
+    "2": "definite-vs-indefinite-conjugation"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet kicsúsztatta; tests preverb placement with the known átvesz"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-controlled-4",
+  "set": {
+   "sentence": "A riporter hangja ____ gyors volt, hogy alig lehetett követni.",
+   "hint": "so much",
+   "answer": "olyannyira",
+   "english": "The reporter's voice was so fast that one could hardly follow it."
+  },
+  "kind": "hungarian",
+  "why": "unmet felgyorsult, hajrában, győzték"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-practice-1",
+  "set": {
+   "sentence": "A kommentátor ____ mértékben izgatott volt, hogy a hangja megremegett.",
+   "hint": "in such",
+   "answer": "oly",
+   "english": "The commentator was so excited that his voice trembled."
+  },
+  "kind": "hungarian",
+  "why": "unmet irama, fokozódott, gárda"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-practice-2",
+  "set": {
+   "tiles": [
+    "A",
+    "kapus",
+    "hatalmas",
+    "bravúrral",
+    "mentett."
+   ],
+   "solution": [
+    "A",
+    "kapus",
+    "hatalmas",
+    "bravúrral",
+    "mentett."
+   ],
+   "english": "The goalkeeper saved with a huge feat.",
+   "teaches": [
+    "b2-competition-mastery-peak-performance-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "unmet lövést; tests the word bravúr"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-practice-3",
+  "set": {
+   "sentence": "Az ____ során a riporter minden részletre kitért.",
+   "hint": "live broadcast",
+   "answer": "élő közvetítés",
+   "english": "During the live broadcast the reporter addressed every detail."
+  },
+  "kind": "hungarian",
+  "why": "unmet televíziós, kísérték, válogatott"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Szerkesztő",
+     "text": "Milyen volt a mai mérkőzés?"
+    },
+    {
+     "speaker": "Szakkommentátor",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "A fordulópont a kiállítás volt, és a vége döntetlen lett.",
+    "A fordulópont a kiállítás volt, és a vége döntetlen lenne.",
+    "A fordulópont a kiállítás volt, és a vége döntetlent lett."
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-competition-mastery-peak-performance-vocab"
+   ],
+   "category": "vocabulary",
+   "distractor_skills": {
+    "1": "nek-conditional",
+    "2": "how-the-accusative-t-works"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet félidő, minthogy, derbi; old wrong option 3 had three faults"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Szurkoló",
+     "text": "Igazságos a döntetlen?"
+    },
+    {
+     "speaker": "Tudósító",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Igen! Mindkét csapat oly mértékben küzdött, hogy egyik sem vesztett.",
+    "Igen! Mindkét csapat oly mértékben küzdött, mert egyik sem vesztett.",
+    "Igen! Mindkét csapat oly mértékben küzdött, ha egyik sem vesztett."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet kitette, érdemelt, érdemelne; old wrong option 3 had two faults"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a dramatic sentence for an 'élő közvetítés' using dynamic preverb verbs (pl. 'átvesz', 'belő').",
+     "answer": "Itt a csatár: átveszi a labdát, kicselezi a kapust, és belövi a hálóba!"
+    }
+   ],
+   "teaches": [
+    "b2-competition-mastery-peak-performance-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet kontra, védhetetlenül; open writing: unit vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write an analytical sentence for a 'mérkőzéselemzés' using 'fordulópont' and 'bravúr'.",
+     "answer": "A mérkőzés fordulópontja a kiállítás volt, és a kapus bravúrjai után a vége döntetlen lett."
+    }
+   ],
+   "teaches": [
+    "b2-competition-mastery-peak-performance-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet büntető, tolt, lécre, megőrizve; open writing: unit vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-check-1",
+  "set": {
+   "sentence": "A döntő kimenetele ____ bizonytalan volt, hogy a végéig senki sem tudta, ki nyer.",
+   "hint": "so much",
+   "answer": "olyannyira",
+   "english": "The outcome of the final was so uncertain that until the end nobody knew who would win."
+  },
+  "kind": "hungarian",
+  "why": "unmet másodpercig"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-reading-1",
+  "set": {
+   "question": "Hogyan értelmezi Esterházy Péter a játékot a történetben?",
+   "options": [
+    "A létezés geometriájaként, ahol a mozgás és a gondolat találkozik.",
+    "Csak versengésként, ahol a nyers erő a legfontosabb.",
+    "Egyszerű testi ügyességként, ahol csak a gyorsaság számít."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away 90 vs 69; unmet létezés, geometriájaként, televíziós, jogdíjakból, erőszak; the wrong options now repeat what the story denies (nem egyszerű testi ügyesség vagy nyers versengés)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-reading-2",
+  "set": {
+   "question": "Miért a legmagányosabb hely a kapu előtti tér a kapus szerint?",
+   "options": [
+    "Mert a kapus egy hibát sem követhet el, a csatár pedig hibázhat.",
+    "Mert a kapus nem szólhat a csapattársaihoz a pályán.",
+    "Mert a kapus kevesebbet kap, mint a többi játékos."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "tell soha; unmet csatárnak, rontás, megbocsátható, csapattársaival, klubvezetéstől; the story: a csatár hibázhat tízszer is, a kapus ha egyszer vét, bűnbak"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-05-ex.json",
+  "id": "b2-32-05-reading-3",
+  "set": {
+   "question": "Mit mond a kapus a csúcsteljesítményről?",
+   "options": [
+    "Hogy nem elég az állóképesség: nagyon kell összpontosítani.",
+    "Hogy csak az erő számít, a figyelem nem fontos.",
+    "Hogy a játékosnak vitatkoznia kell a bíróval."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet abszolút, mentális, fókuszt, intuíciót, folyamatos, veszekedést; the question asked what \"the characters\" consider essential, and the answer (geometriai intuíció) is Esterházy's, not the goalkeeper's"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-consolidation-ex.json",
+  "id": "b2-32-consolidation-2",
+  "set": {
+   "options": [
+    "an extraordinary feat, such as a great save",
+    "a foul that sends a player off the pitch",
+    "a break in play for the players to drink"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away 73 vs 54; absurd options"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-consolidation-ex.json",
+  "id": "b2-32-consolidation-3",
+  "set": {
+   "question": "Which sentence correctly combines a consecutive clause with dynamic athletic action?",
+   "options": [
+    "A szélső olyannyira felgyorsított, hogy könnyedén lefutotta a védőt és belőtte a labdát.",
+    "A szélső olyannyira felgyorsított, hogy könnyedén lefutott a védőt és belőtte a labdát.",
+    "A szélső olyannyira felgyorsított, hogy könnyedén lefutotta a védőt és belőtt a labdát."
+   ],
+   "correct": 0,
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet csatár, gólt; old wrong options 2 and 3 had two or three faults (mert/ha, definiteness, mood)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-consolidation-ex.json",
+  "id": "b2-32-consolidation-4",
+  "set": {
+   "sentence": "A vereség után a sportolónak nagy erőre volt szüksége a ____.",
+   "hint": "rebound",
+   "answer": "talpra álláshoz",
+   "english": "After the defeat the athlete needed great strength for the rebound."
+  },
+  "kind": "hungarian",
+  "why": "unmet mentális, eléréséhez"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-consolidation-ex.json",
+  "id": "b2-32-consolidation-5",
+  "set": {
+   "sentence": "A döntőben a lélektani nyomás ____ mértékben zavarta a játékosokat, hogy sok hibát csináltak.",
+   "hint": "in such",
+   "answer": "oly",
+   "english": "In the final the psychological pressure disturbed the players to such an extent that they made many mistakes."
+  },
+  "kind": "hungarian",
+  "why": "unmet nehezedett, sorozatos, vétettek"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-consolidation-ex.json",
+  "id": "b2-32-consolidation-6",
+  "set": {
+   "sentence": "A gyors szélső egy testcsellel ____ a védőt.",
+   "hint": "dribbled past",
+   "answer": "kicselezte",
+   "english": "The fast winger dribbled past the defender with a body feint.",
+   "teaches": [
+    "b2-competition-mastery-peak-performance-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "unmet villámgyors, elegánsan, kifutó; tests the word kicselez"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-consolidation-ex.json",
+  "id": "b2-32-consolidation-7",
+  "set": {
+   "question": "Which sentence uses 'lefut' correctly?",
+   "options": [
+    "A szélső lefutotta a védőt.",
+    "A szélső lefutott a védőt.",
+    "A szélső lefutotta a védő."
+   ],
+   "correct": 0,
+   "teaches": [
+    "definite-vs-indefinite-conjugation"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "length give-away 111 vs 71; meta question with absurd options (\"lefut only applies downhill\")"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-consolidation-ex.json",
+  "id": "b2-32-consolidation-9",
+  "set": {
+   "question": "Select the correct sentence:",
+   "options": [
+    "A hazai csapat oly mértékben uralta a középpályát, hogy az ellenfél nem jutott el a kapuig.",
+    "A hazai csapat oly mértékben uralta a középpályát, mert az ellenfél nem jutott el a kapuig.",
+    "A hazai csapat oly mértékben uralta a középpályát, de az ellenfél nem jutott el a kapuig."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "the stem \"impeccable stylistic register\" is unclear; the old wrong option \"nem jutna el\" is a correct hypothetical result clause (second right answer)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-consolidation-ex.json",
+  "id": "b2-32-consolidation-10",
+  "set": {
+   "tiles": [
+    "A",
+    "sportoló",
+    "olyannyira",
+    "fáradt",
+    "volt,",
+    "hogy",
+    "alig",
+    "tudott",
+    "beszélni."
+   ],
+   "solution": [
+    "A",
+    "sportoló",
+    "olyannyira",
+    "fáradt",
+    "volt,",
+    "hogy",
+    "alig",
+    "tudott",
+    "beszélni."
+   ],
+   "english": "The athlete was so tired that he could hardly speak."
+  },
+  "kind": "hungarian",
+  "why": "unmet csatár, labda, pattant"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-consolidation-ex.json",
+  "id": "b2-32-consolidation-11",
+  "set": {
+   "tiles": [
+    "A",
+    "szélső",
+    "felgyorsított,",
+    "és",
+    "lefutotta",
+    "a",
+    "védőt."
+   ],
+   "solution": [
+    "A",
+    "szélső",
+    "felgyorsított,",
+    "és",
+    "lefutotta",
+    "a",
+    "védőt."
+   ],
+   "english": "The winger accelerated and outran the defender.",
+   "teaches": [
+    "b2-competition-mastery-peak-performance-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "unmet sprinttel, támadót; tests the words felgyorsít, lefut"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-32-consolidation-ex.json",
+  "id": "b2-32-consolidation-12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a post-match commentary sentence combining consecutive degree ('olyannyira ..., hogy') with dynamic action verbs ('lefut', 'kicselez').",
+     "answer": "A szélső olyannyira felgyorsított, hogy könnyedén lefutotta a védőt, majd kicselezte a kapust."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet ráadásában, csatár, pazarul, beadást, kíméletlenül, gólt; the prompt named átvesz, belő"
+ },
+ {
+  "file": "content/hu/stories/classics/b2/b2-32-utazasatizenhatos.json",
+  "old": "Hogyan értelmezi Esterházy Péter a labdarúgást a novella gondolatvilágában?",
+  "new": "Hogyan értelmezi Esterházy Péter a labdarúgást a történetben?",
+  "kind": "hungarian",
+  "why": "the story is an adapted scene with invented lines for a real writer"
+ },
+ {
+  "file": "content/hu/stories/classics/b2/b2-32-utazasatizenhatos.json",
+  "old": "Milyen sajátos különbséget emel ki a szerző a csatár és a kapus felelőssége között?",
+  "new": "Milyen különbséget emel ki a történet a csatár és a kapus felelőssége között?",
+  "kind": "hungarian",
+  "why": "\"the author\" for an adapted scene"
+ },
+ {
+  "file": "content/hu/stories/classics/b2/b2-32-utazasatizenhatos.json",
+  "old": "a mérkőzés lezárulta után a szerző szerint?",
+  "new": "a mérkőzés lezárulta után a történet szerint?",
+  "kind": "hungarian",
+  "why": "\"the author\" for an adapted scene"
+ }
+]
