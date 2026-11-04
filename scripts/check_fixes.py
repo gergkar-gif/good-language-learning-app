@@ -121,6 +121,23 @@ def main():
     if n_pos:
         fix_path.write_text(fixed_raw, encoding="utf-8")
         print(f"rewrote {n_pos} part-of-speech label(s) to the schema's names in {fix_path.name}")
+    # A dialogue prompt is a list of {"speaker", "text"} turns; readers copy
+    # the rendered form instead, "Anna: Hello? / Béla: ____" (HU B2 core
+    # batch 29-39: 32 fixes from one reader, which crashed check-content).
+    # Converted only when every turn has a "Speaker: " head; otherwise left
+    # for the schema check to reject.
+    data, n_pr = json.loads(fixed_raw), 0
+    for f in data:
+        pr = (f.get("set") or {}).get("prompt") if isinstance(f, dict) else None
+        if isinstance(pr, str):
+            turns = [t.strip() for t in pr.split(" / ")]
+            if all(re.match(r"[^:/]{1,40}: ", t) for t in turns):
+                f["set"]["prompt"] = [{"speaker": t.split(": ", 1)[0], "text": t.split(": ", 1)[1]} for t in turns]
+                n_pr += 1
+    if n_pr:
+        fixed_raw = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
+        fix_path.write_text(fixed_raw, encoding="utf-8")
+        print(f"rewrote {n_pr} dialogue prompt(s) from 'Speaker: text / …' to turns in {fix_path.name}")
     fixes = [ar.norm(f) for f in json.loads(fixed_raw)]
     texts, errors = ar.apply(fixes)
     rejected = {n: e for n, e in errors.items()}

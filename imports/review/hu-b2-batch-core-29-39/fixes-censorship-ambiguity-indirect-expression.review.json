@@ -1,0 +1,995 @@
+[
+ {
+  "file": "content/hu/exercises/b2/b2-15-01-ex.json",
+  "id": "b2-15-01-intro-2",
+  "set": {
+   "question": "Which sentence says that a book was banned without saying who banned it?",
+   "options": [
+    "Betiltották a könyvet.",
+    "Betiltotta a könyvet.",
+    "A könyvet betiltottak."
+   ],
+   "correct": 0,
+   "teaches": [
+    "agentless-constructions"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian",
+  "why": "meta question with absurd options; now a form choice (3sg and indefinite-object faults)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-01-ex.json",
+  "id": "b2-15-01-controlled-3",
+  "set": {
+   "sentence": "A diktatúrában szigorú ____ volt, ezért sok könyvet betiltottak.",
+   "hint": "censorship",
+   "answer": "cenzúra",
+   "english": "Under the dictatorship there was strict censorship, so many books were banned."
+  },
+  "kind": "hungarian",
+  "why": "glued blank (sajtó-____), unmet jelenhettek/valós"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-01-ex.json",
+  "id": "b2-15-01-practice-2",
+  "set": {
+   "base_sentence": "Hamarosan kiderült a dolog a tárgyaláson.",
+   "options": [
+    {
+     "word": "tisztázódott",
+     "inflected": "tisztázódott",
+     "sentence": "Hamarosan tisztázódott a dolog a tárgyaláson.",
+     "gloss": "became cleared up"
+    },
+    {
+     "word": "megoldódott",
+     "inflected": "megoldódott",
+     "sentence": "Hamarosan megoldódott a dolog a tárgyaláson.",
+     "gloss": "got resolved"
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "megoldódott az igazság is not natural Hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-01-ex.json",
+  "id": "b2-15-01-practice-3",
+  "set": {
+   "sentence": "Az újságban sokáig ____ a legfontosabb tényeket.",
+   "hint": "elhallgat, 3pl past, definite",
+   "answer": "elhallgatták",
+   "english": "For a long time they concealed the most important facts in the newspaper.",
+   "category": "grammar",
+   "teaches": [
+    "agentless-constructions"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet szándékosan/közlemény; the blank tests the 3pl form, so grammar"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-01-ex.json",
+  "id": "b2-15-01-practice-4",
+  "set": {
+   "question": "Which sentence is the natural Hungarian way to say \"The book was banned\"?",
+   "options": [
+    "Betiltották a könyvet.",
+    "A könyv be lett tiltva.",
+    "Betiltotta a könyvet."
+   ],
+   "correct": 0,
+   "teaches": [
+    "agentless-constructions"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian",
+  "why": "meta question in Hungarian with grammar terms (használandó), absurd options, length give-away; now a form choice"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-01-ex.json",
+  "id": "b2-15-01-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Feleség",
+     "text": "Miért nem tud a család semmit a mérnökről?"
+    },
+    {
+     "speaker": "Ügyvéd",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Mert az egész ügyet elhallgatták.",
+    "Mert az egész ügy elhallgatták.",
+    "Mert az egész ügyet elhallgattak."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet elől/hollétéről; wrong options had two faults"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-01-ex.json",
+  "id": "b2-15-01-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kolléga",
+     "text": "Mikor derül ki végre az igazság a mérnökről?"
+    },
+    {
+     "speaker": "Barát",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Csak akkor derül ki, ha az ügy bíróság elé kerül.",
+    "Csak akkor derül ki, ha az ügyet bíróság elé kerül.",
+    "Csak akkor derül ki, ha az ügy bíróság elé kerülnek."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet körülmény/tisztázódik/letartóztatott; wrong options had two faults and a length give-away"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-01-ex.json",
+  "id": "b2-15-01-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write: After many years the truth finally came out.",
+     "answer": "Sok év után végül kiderült az igazság."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet tartó"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-02-ex.json",
+  "id": "b2-15-02-intro-2",
+  "set": {
+   "question": "Which bureaucratic periphrase serves as a passive equivalent in administrative Hungarian?",
+   "options": [
+    "elfogadásra kerül",
+    "el fog fogadni",
+    "el kelljen fogadni"
+   ],
+   "correct": 0,
+   "teaches": [
+    "agentless-constructions"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian",
+  "why": "unmet word infinitive in the options; options now plain phrases"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-02-ex.json",
+  "id": "b2-15-02-controlled-3",
+  "set": {
+   "sentence": "A hivatalos ____ szerint minden bolt holnap zárva lesz.",
+   "hint": "decree",
+   "answer": "határozat",
+   "english": "According to the official decree, every shop will be closed tomorrow."
+  },
+  "kind": "hungarian",
+  "why": "unmet legújabb/intézkedéseket; did not test the lesson form"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-02-ex.json",
+  "id": "b2-15-02-controlled-4",
+  "set": {
+   "question": "Which phrase translates \"was adopted / accepted\" in formal government prose?",
+   "options": [
+    "elfogadásra került",
+    "elutasításra került",
+    "megvalósításra került"
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "\"elutasításra jutott\" / \"megvalósítást keresett\" are not real phrases; the item tests noun meaning, so vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-02-ex.json",
+  "id": "b2-15-02-practice-2",
+  "set": {
+   "base_sentence": "A javaslat tegnap elfogadásra került.",
+   "options": [
+    {
+     "word": "elutasításra került",
+     "inflected": "elutasításra került",
+     "sentence": "A javaslat tegnap elutasításra került.",
+     "gloss": "was rejected"
+    },
+    {
+     "word": "bevezetésre került",
+     "inflected": "bevezetésre került",
+     "sentence": "A javaslat tegnap bevezetésre került.",
+     "gloss": "was introduced"
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet bizottsági; megvitatás is first listed in b2-15-05"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-02-ex.json",
+  "id": "b2-15-02-practice-3",
+  "set": {
+   "sentence": "A terv ____ sajnos sok nehézségbe ütközött.",
+   "hint": "megvalósítás, 3sg possessive",
+   "answer": "megvalósítása",
+   "english": "Sadly, the carrying out of the plan ran into many difficulties."
+  },
+  "kind": "hungarian",
+  "why": "unmet gyakorlati/számos"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-02-ex.json",
+  "id": "b2-15-02-practice-4",
+  "set": {
+   "question": "Where would you most likely read \"A javaslat elfogadásra került\"?",
+   "options": [
+    "In an official letter.",
+    "In a chat with a friend.",
+    "In a children's story."
+   ],
+   "correct": 0,
+   "teaches": [
+    "agentless-constructions"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian",
+  "why": "tell (Kizárólag), unmet words, absurd options and length give-away in Hungarian; now English"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-02-ex.json",
+  "id": "b2-15-02-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Ügyfél",
+     "text": "Mikor lesz az új szabályozás?"
+    },
+    {
+     "speaker": "Tisztviselő",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Az új szabály a jövő hónapban bevezetésre kerül.",
+    "Az új szabály a jövő hónapban bevezetést kerül.",
+    "Az új szabály a jövő hónapban bevezetésre kerülnek."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet beadvány/tanácsülésen/érdemben/megvitatásra"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-02-ex.json",
+  "id": "b2-15-02-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Újságíró",
+     "text": "Mi lett a javaslattal?"
+    },
+    {
+     "speaker": "Tisztviselő",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Sajnos elutasításra került.",
+    "Sajnos elutasításra jött.",
+    "Sajnos elutasításban került."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "plainly absurd wrong options; unmet words; now one-fault forms"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-02-ex.json",
+  "id": "b2-15-02-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write: The plan was accepted and will soon be carried out.",
+     "answer": "A terv elfogadásra került, és hamarosan megvalósításra kerül."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet tervezet"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-02-ex.json",
+  "id": "b2-15-02-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write: The proposal was rejected yesterday.",
+     "answer": "A javaslat tegnap elutasításra került."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "\"by the authorities\" names the agent in an agentless lesson"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-02-ex.json",
+  "id": "b2-15-02-check-2",
+  "set": {
+   "sentence": "A terv sajnos nem ____ került.",
+   "hint": "megvalósítás, \"to\" case",
+   "answer": "megvalósításra",
+   "english": "Sadly, the plan was not carried out."
+  },
+  "kind": "hungarian",
+  "why": "unmet vitás/megvitatásra"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-03-ex.json",
+  "id": "b2-15-03-intro-2",
+  "set": {
+   "question": "Which word softens a harsh judgement such as \"The decision was hasty\"?",
+   "options": [
+    "némiképp",
+    "minden bizonnyal",
+    "természetesen"
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "tell (egyáltalán) and absurd options; now a vocabulary choice"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-03-ex.json",
+  "id": "b2-15-03-controlled-3",
+  "set": {
+   "sentence": "Egy kis ____ miatt nem jött el a barátom.",
+   "hint": "misunderstanding",
+   "answer": "félreértés",
+   "english": "My friend did not come because of a little misunderstanding."
+  },
+  "kind": "hungarian",
+  "why": "unmet eloszlatni/kínos"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-03-ex.json",
+  "id": "b2-15-03-controlled-4",
+  "set": {
+   "question": "Which sentence is diplomatic hedging?",
+   "options": [
+    "Úgy tűnik, a döntés némiképp elhamarkodott volt.",
+    "Ön tévedett, a javaslat egyszerűen rossz.",
+    "Ez a döntés rossz volt, és el kell felejteni."
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "tell (mindenki), unmet words, irrelevant wrong option, length give-away"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-03-ex.json",
+  "id": "b2-15-03-practice-2",
+  "set": {
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ],
+   "base_sentence": "A döntés némiképp elhamarkodott volt.",
+   "options": [
+    {
+     "word": "bizonyos értelemben",
+     "inflected": "bizonyos értelemben",
+     "sentence": "A döntés bizonyos értelemben elhamarkodott volt.",
+     "gloss": "in a certain sense"
+    },
+    {
+     "word": "talán",
+     "inflected": "talán",
+     "sentence": "A döntés talán elhamarkodott volt.",
+     "gloss": "perhaps"
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet eltér; alighanem is not a softener"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-03-ex.json",
+  "id": "b2-15-03-practice-3",
+  "set": {
+   "sentence": "Az 'átszervezés' szép szó, de gyakran csak egy ____.",
+   "hint": "euphemism",
+   "answer": "eufemizmus",
+   "english": "'Reorganisation' is a nice word, but often it is only a euphemism.",
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet politikus/elbocsátások"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-03-ex.json",
+  "id": "b2-15-03-practice-4",
+  "set": {
+   "question": "Why would a diplomat say \"Úgy tűnik, a döntés némiképp elhamarkodott volt\" instead of \"A döntés rossz volt\"?",
+   "options": [
+    "To criticise without starting a quarrel.",
+    "To hide the decision from everyone.",
+    "To make the criticism much harsher."
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "Hungarian options with absurd wrong answers, unmet words and a length give-away; now English"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-03-ex.json",
+  "id": "b2-15-03-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Riporter",
+     "text": "Mi a helyzet a tárgyalással?"
+    },
+    {
+     "speaker": "Szóvivő",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Úgy tűnik, némiképp más a véleményünk, de beszélünk.",
+    "A tárgyalás teljes kudarc volt, és vége.",
+    "Nem mondok semmit, és kész."
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet words; wrong options had two faults"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-03-ex.json",
+  "id": "b2-15-03-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kolléga",
+     "text": "Hogyan mondták el finoman a hatóságok, hol van a mérnök?"
+    },
+    {
+     "speaker": "Asszony",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Azt mondták, hogy a mérnök más megbízatást kapott.",
+    "Azt mondták, hogy a mérnök most börtönben van.",
+    "Azt mondták, hogy a mérnök elhagyta az országot."
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet words; absurd wrong options"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-03-ex.json",
+  "id": "b2-15-03-writing-1",
+  "set": {
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "open writing is tagged with the unit vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-03-ex.json",
+  "id": "b2-15-03-writing-2",
+  "set": {
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Write: In a certain sense, the misunderstanding was useful.",
+     "answer": "Bizonyos értelemben a félreértés hasznos volt."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "álláspont is first listed in b2-15-05"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-03-ex.json",
+  "id": "b2-15-03-check-2",
+  "set": {
+   "sentence": "Úgy tűnik, a jelentés ____ más, mint a tavalyi.",
+   "hint": "slightly",
+   "answer": "némiképp",
+   "english": "It seems that the report is slightly different from last year's."
+  },
+  "kind": "hungarian",
+  "why": "unmet megállapításai/eltérnek"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-04-ex.json",
+  "id": "b2-15-04-intro-2",
+  "set": {
+   "question": "What is Aesopian language (ezópusi nyelv) in Hungarian literary history?",
+   "options": [
+    "Indirect, allegorical phrasing used to convey truth without alerting censors.",
+    "The ancient Greek dialect used by philosophers in Athens.",
+    "A computer programming language used for statistics."
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "item tests a word meaning, so vocabulary (no grammar form is tested)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-04-ex.json",
+  "id": "b2-15-04-controlled-4",
+  "set": {
+   "question": "Which sentence says that a story has a hidden meaning?",
+   "options": [
+    "A történetnek több jelentésrétege van.",
+    "A történetnek nagyon sok oldala van.",
+    "A történetnek van egy kutyája is."
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "unmet gondos/tárulnak/borítója/könyvtári; irrelevant wrong options"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-04-ex.json",
+  "id": "b2-15-04-practice-1",
+  "set": {
+   "teaches": [
+    "agentless-constructions"
+   ],
+   "tiles": [
+    "A",
+    "szerző",
+    "rejtetten",
+    "bírálta",
+    "a",
+    "rendszer",
+    "döntéseit",
+    "."
+   ],
+   "solution": [
+    "A",
+    "szerző",
+    "rejtetten",
+    "bírálta",
+    "a",
+    "rendszer",
+    "döntéseit",
+    "."
+   ],
+   "english": "The author covertly criticized the decisions of the system."
+  },
+  "kind": "hungarian",
+  "why": "unmet igazságtalan"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-04-ex.json",
+  "id": "b2-15-04-practice-2",
+  "set": {
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ],
+   "base_sentence": "A megfogalmazás szándékosan kétértelmű volt a cikkben.",
+   "options": [
+    {
+     "word": "óvatos",
+     "inflected": "óvatos",
+     "sentence": "A megfogalmazás szándékosan óvatos volt a cikkben.",
+     "gloss": "cautious"
+    },
+    {
+     "word": "burkolt",
+     "inflected": "burkolt",
+     "sentence": "A megfogalmazás szándékosan burkolt volt a cikkben.",
+     "gloss": "veiled"
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "finomított volt is not natural; word-meaning item"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-04-ex.json",
+  "id": "b2-15-04-practice-3",
+  "set": {
+   "sentence": "A versnek több ____ van, nem csak egy.",
+   "hint": "jelentésréteg, 3sg possessive",
+   "answer": "jelentésrétege",
+   "english": "The poem has several layers of meaning, not just one."
+  },
+  "kind": "hungarian",
+  "why": "unmet épülő/szemlélő"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-04-ex.json",
+  "id": "b2-15-04-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kutató",
+     "text": "Miért volt kétértelmű a hatóságok válasza?"
+    },
+    {
+     "speaker": "Történész",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Mert nem akarták megmondani az igazat, de hazudni sem akartak.",
+    "Mert minden szót nagyon pontosan és világosan leírtak.",
+    "Mert a levél túl hosszú volt, és nem olvasták el."
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet words; absurd wrong options; Igen, hiszen to a Miért question"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-04-ex.json",
+  "id": "b2-15-04-writing-1",
+  "set": {
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Write: Under censorship, readers could read between the lines.",
+     "answer": "A cenzúra idején az olvasók tudtak a sorok között olvasni."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet megtanulnak"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-04-ex.json",
+  "id": "b2-15-04-writing-2",
+  "set": {
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "open writing is tagged with the unit vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-04-ex.json",
+  "id": "b2-15-04-check-2",
+  "set": {
+   "sentence": "A szerző ____ bírálta a rendszert, ezért nem tiltották be a könyvet.",
+   "hint": "covertly",
+   "answer": "rejtetten",
+   "english": "The author criticised the system covertly, so the book was not banned.",
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "unmet színpadi/értelmét; tell mindenki"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-05-ex.json",
+  "id": "b2-15-05-intro-2",
+  "set": {
+   "question": "How do we turn \"Te hibáztál!\" into diplomatic Hungarian?",
+   "options": [
+    "Describe the matter impersonally, without 'you'.",
+    "Say it louder, and name who is to blame.",
+    "Add please, but still say 'you were wrong'."
+   ],
+   "correct": 0,
+   "teaches": [
+    "agentless-constructions"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian",
+  "why": "long Hungarian-quote option and absurd wrong options (length give-away)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-05-ex.json",
+  "id": "b2-15-05-practice-3",
+  "set": {
+   "sentence": "Egy hivatalos levélben fontos a ____ hangnem.",
+   "hint": "objective",
+   "answer": "tárgyilagos",
+   "english": "In an official letter an objective tone is important."
+  },
+  "kind": "hungarian",
+  "why": "unmet elvárás/higgadt/megközelítés"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-05-ex.json",
+  "id": "b2-15-05-practice-4",
+  "set": {
+   "question": "Why is \"Az adatok pontosításra szorulnak\" more diplomatic than \"Hazudtál!\"?",
+   "options": [
+    "It does not blame a person.",
+    "It sounds louder.",
+    "It uses longer words only."
+   ],
+   "correct": 0,
+   "teaches": [
+    "agentless-constructions"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian",
+  "why": "Hungarian options with absurd wrong answers and a tell (senki)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-05-ex.json",
+  "id": "b2-15-05-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Titkár",
+     "text": "Hogyan válaszoljunk erre a mérges levélre?"
+    },
+    {
+     "speaker": "Igazgató",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Válaszoljunk tárgyilagosan, a tényekről írjunk, ne a személyről.",
+    "Válaszoljunk mi is mérgesen, és írjuk meg, hogy ő hibázott.",
+    "Ne válaszoljunk semmit, és felejtsük el a levelet."
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet words; absurd wrong options"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-05-ex.json",
+  "id": "b2-15-05-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Olvasó",
+     "text": "Ki volt Ancsa Jánosné mellett a nehéz években?"
+    },
+    {
+     "speaker": "Kritikus",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Csak a kutyája, Niki.",
+    "A szomszédok és a régi barátok.",
+    "A minisztérium tisztviselői."
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet words; wrong options contradict the story and are absurd; question now asks what the story says"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-05-ex.json",
+  "id": "b2-15-05-writing-1",
+  "set": {
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ],
+   "template": [
+    {
+     "prompt": "Write: An objective tone helps clarify the matter.",
+     "answer": "A tárgyilagos hangnem segít tisztázni az ügyet."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet megbántása"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-05-ex.json",
+  "id": "b2-15-05-writing-2",
+  "set": {
+   "teaches": [
+    "b2-censorship-ambiguity-indirect-expression-vocab"
+   ]
+  },
+  "kind": "hungarian",
+  "why": "open writing is tagged with the unit vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-05-ex.json",
+  "id": "b2-15-05-reading-1",
+  "set": {
+   "question": "Mi történt a mérnökkel egy őszi délutánon?",
+   "options": [
+    "Nem ment haza, és a család nem tudta, hol van.",
+    "Más városba ment dolgozni, és ott maradt.",
+    "Új házat vett a feleségének és a kutyának."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet words; long correct option"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-05-ex.json",
+  "id": "b2-15-05-reading-2",
+  "set": {
+   "question": "Hogyan viselkedtek a szomszédok és a régi barátok Ancsa Jánosnéval?",
+   "options": [
+    "Féltek, és nem beszéltek vele.",
+    "Minden nap segítettek neki.",
+    "Együtt mentek vele a minisztériumba."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet words; long correct option"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-05-ex.json",
+  "id": "b2-15-05-reading-3",
+  "set": {
+   "question": "Mit mutat meg a történet a kutya sorsán keresztül?",
+   "options": [
+    "Hogy mennyire nehéz volt akkor az emberek élete.",
+    "Hogy milyen jó volt akkor az emberek élete.",
+    "Hogy hogyan kell tanítani egy kutyát."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet words, length give-away; asks about \"Déry's novel\" instead of what the story says"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-consolidation-ex.json",
+  "id": "b2-15-consolidation-1",
+  "set": {
+   "question": "Which sentence says that a film was banned without saying who banned it?",
+   "options": [
+    "Betiltották a filmet.",
+    "Betiltotta a filmet.",
+    "A tanár betiltotta a filmet."
+   ],
+   "correct": 0,
+   "teaches": [
+    "agentless-constructions"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian",
+  "why": "length give-away; absurd wrong options (lett volna tiltva, -hatnék)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-consolidation-ex.json",
+  "id": "b2-15-consolidation-4",
+  "set": {
+   "sentence": "A ____ miatt sok újság nem írhatta le az igazat.",
+   "hint": "censorship",
+   "answer": "cenzúra",
+   "english": "Because of censorship, many newspapers could not write the truth."
+  },
+  "kind": "hungarian",
+  "why": "glued blank (sajtó-____), unmet rendszerkritikus/megsemmisített"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-consolidation-ex.json",
+  "id": "b2-15-consolidation-6",
+  "set": {
+   "sentence": "Úgy tűnik, a válasz ____ más, mint tegnap.",
+   "hint": "slightly",
+   "answer": "némiképp",
+   "english": "It seems that the answer is slightly different from yesterday."
+  },
+  "kind": "hungarian",
+  "why": "unmet túlzott/fakadt"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-consolidation-ex.json",
+  "id": "b2-15-consolidation-7",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Történész",
+     "text": "Hogyan értették meg az emberek, mit akar mondani az író?"
+    },
+    {
+     "speaker": "Író",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Tudtak a sorok között olvasni.",
+    "Az újságban mindent nyíltan megírtak.",
+    "Nem is akarták megérteni."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet words; absurd wrong options"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-15-consolidation-ex.json",
+  "id": "b2-15-consolidation-8",
+  "set": {
+   "question": "Which rewrite of \"Ti elrontottátok a szerződést\" is best suited for formal business communication?",
+   "options": [
+    "Úgy tűnik, a szerződés némiképp módosításra szorul.",
+    "Úgy tűnik, a szerződés némiképp módosításban szorul.",
+    "Úgy tűnik, a szerződés némiképp módosításra szorulnak."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet tervezete; the wrong options kept one fault each"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-15-02-a-gr.json",
+  "id": "grammar.b2.15.02",
+  "old": "A minisztérium határozatban rögzítette a döntést.",
+  "new": "A szerződés holnap aláírásra kerül.",
+  "kind": "hungarian",
+  "why": "the example does not show the pattern"
+ }
+]
