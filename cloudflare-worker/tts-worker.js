@@ -174,6 +174,14 @@ export default {
         // Phonetic adaptation for Hungarian: 'ly' sounds like 'y', so Károly is pronounced Károy.
         text = text.replace(/\bKároly\b/g, 'Károy').replace(/\bKaroly\b/g, 'Károy');
 
+        // English-homograph fix: Hungarian 'mind' ("all") is spelled identically to
+        // the English noun "mind", and Chirp3-HD voices default to English
+        // pronunciation for it when it stands alone, especially as an isolated
+        // vocabulary word. Doubling the 'n' is a legal Hungarian spelling pattern (a
+        // touch longer consonant) that breaks the exact match with the English word
+        // without changing the vowel sound.
+        text = text.replace(/\bmind\b/g, 'minnd').replace(/\bMind\b/g, 'Minnd');
+
         // Intonation fix: if text has no terminal punctuation, append '.' to enforce falling
         // declarative cadence. Critical for Hungarian isolated vocabulary words (e.g. "kutya" → "kutya.")
         // — without punctuation the neural model treats the word as an open clause and raises pitch.

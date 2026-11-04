@@ -126,6 +126,12 @@ const Speech = (function () {
             .trim();
         // Hungarian phonetic adjustment: 'ly' represents /j/ (sounds like 'y')
         s = s.replace(/\bKároly\b/g, 'Károy').replace(/\bKaroly\b/g, 'Károy');
+        // English-homograph fix: Hungarian 'mind' ("all") is spelled identically to
+        // the English noun "mind", and voices default to English pronunciation for
+        // it when it stands alone. Doubling the 'n' is a legal Hungarian spelling
+        // pattern (a touch longer consonant) that breaks the exact match with the
+        // English word without changing the vowel sound.
+        s = s.replace(/\bmind\b/g, 'minnd').replace(/\bMind\b/g, 'Minnd');
         return s;
     }
 
