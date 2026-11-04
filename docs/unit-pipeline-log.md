@@ -455,6 +455,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-04 | HU B2 core 29, 31, 33, 35, 37, 39 | paired read, 3 core units/reader, no limit; a container restart lost reader A's completion notice | | A not reported (restart); B 345,347, 15 min | 494 proposed (68 / 95 / 84 / 70 / 86 / 91), 13 rejected and rewritten; Claude changed ~10 items, listed 11 words | ~115k a unit (B); 32 dialogue prompts as text, now converted by `check_fixes.py`; 1 skill moved by the user (relational compounds within Unit 39); walk 36/36 |
 | 11-04 | HU B2 core 41, 43, 45, 47, 49, 51 | paired read, 3 core units/reader; both stopped by the 5-hour Sonnet limit, resumed after the reset | | A 414,362, B 405,537 as reported on resume (~136k a unit if cumulative) | 569 proposed (101 / 86 / 86 / 103 / 100 / 93), 2 rejected and rewritten (an unescaped quote, a *mindig* tell); Claude changed ~20 items (a duplicate option of its own caught by check-content), listed 32 words, fixed 6 recap units | ~95 fixes/unit, the most in B2 so far; 1 skill moved by the user (relative postpositions to b2-23-01), 4 later-skill items rewritten (figurative preverbs); a category/tag mismatch and a bare restitch, both scripted; walk 36/36 |
 | 11-04 | HU B2 core 53, 55, 57, 59, 61, 63 | paired read, 3 core units/reader, no limit; a worker restart mid-review lost nothing | | A 438,701, B 446,836 (~148k a unit) | 612 proposed (117 / 85 / 107 / 82 / 122 / 99), 6 rejected and rewritten (3 length, a tell, a non-form, a ds on its own skill); Claude changed ~35 items (21 second right answers in two-form skills), listed 47 words | the most expensive B2 batch per unit; tags were the generator's worst here (every grammar item on the unit skill); walk 36/36 |
+| 11-04 | HU B2 core 65, 67, 69, 71 (last core batch) | paired read, 2 core units/reader, no limit | | A 385,337, B 441,755 (~207k a unit at two per reader) | 423 proposed (94 / 101 / 125 / 103), 6 rejected and rewritten (3 tells, 2 length, an answer in the prompt); Claude changed ~15 items (7 second right answers), listed 27 words | **core track done: 36/36 frozen**; reader B rewrote whole screens, so 224 of 228 went to review; walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1618,3 +1619,15 @@ The user took the four recommended options:
   reviewer's read of the stories while the readers run stays necessary.
 - **My own rewrites keep bringing defects** (a distractor taught later, a non-standard *ds*
   ownership): run check_fixes on every extra list, as done, and unmet-words after applying.
+
+### 2026-11-04: HU B2 core Units 65–71 (core track done)
+
+- **Two units per reader cost ~207k a unit** against ~148k at three: the fixed cost of reading
+  the rulebook and sheets is spread over fewer units. Three per reader stays the default
+  where the limit allows.
+- **A reader who rewrites whole screens sends everything to review** (reader B: 224 of 228);
+  the review took longer, but the screens needed it (C1 *feltéve*, *mindent egybevetve*).
+- **Culture units teach C1 forms too** (*feltéve, hogy* in Unit 14 and b2-tudomanyjovo): the
+  culture focus file must carry the C1 list as the core one did.
+- **A recap that names a later unit passes `check_unit_refs.py`** (*mindazonáltal* "Unit 32" for
+  Unit 31): read every recap's unit against the sheet, not only the script's flags.
