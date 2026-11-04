@@ -24,9 +24,9 @@
       "stage": "introduce",
       "question": "Which bureaucratic periphrase serves as a passive equivalent in administrative Hungarian?",
       "options": [
-        "kerül + -ásra/-ésre: elfogadásra kerül",
-        "fog + infinitive: el fog fogadni",
-        "kell + subjunctive: el kelljen fogadni"
+        "elfogadásra kerül",
+        "el fog fogadni",
+        "el kelljen fogadni"
       ],
       "correct": 0,
       "teaches": [
@@ -82,10 +82,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A minisztérium hivatalos ____ közzétette a legújabb intézkedéseket.",
+      "sentence": "A hivatalos ____ szerint minden bolt holnap zárva lesz.",
       "hint": "decree",
-      "answer": "határozatban",
-      "english": "In an official decree, the ministry published the latest measures.",
+      "answer": "határozat",
+      "english": "According to the official decree, every shop will be closed tomorrow.",
       "teaches": [
         "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
@@ -93,17 +93,17 @@
     {
       "id": "b2-15-02-controlled-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "question": "Which phrase translates 'was adopted / accepted' in formal government prose?",
+      "question": "Which phrase translates \"was adopted / accepted\" in formal government prose?",
       "options": [
         "elfogadásra került",
-        "elutasításra jutott",
-        "megvalósítást keresett"
+        "elutasításra került",
+        "megvalósításra került"
       ],
       "correct": 0,
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     },
     {
@@ -141,20 +141,20 @@
       "type": "substitution",
       "category": "grammar",
       "stage": "practice",
-      "base_sentence": "A bizottsági javaslat elfogadásra került az ülésen.",
+      "base_sentence": "A javaslat tegnap elfogadásra került.",
       "base_word": "elfogadásra került",
       "options": [
         {
           "word": "elutasításra került",
           "inflected": "elutasításra került",
-          "sentence": "A bizottsági javaslat elutasításra került az ülésen.",
+          "sentence": "A javaslat tegnap elutasításra került.",
           "gloss": "was rejected"
         },
         {
-          "word": "megvitatásra került",
-          "inflected": "megvitatásra került",
-          "sentence": "A bizottsági javaslat megvitatásra került az ülésen.",
-          "gloss": "was discussed"
+          "word": "bevezetésre került",
+          "inflected": "bevezetésre került",
+          "sentence": "A javaslat tegnap bevezetésre került.",
+          "gloss": "was introduced"
         }
       ],
       "teaches": [
@@ -166,10 +166,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A terv gyakorlati ____ sajnos számos nehézségbe ütközött.",
-      "hint": "realization",
+      "sentence": "A terv ____ sajnos sok nehézségbe ütközött.",
+      "hint": "megvalósítás, 3sg possessive",
       "answer": "megvalósítása",
-      "english": "The practical realization of the plan unfortunately ran into numerous difficulties.",
+      "english": "Sadly, the carrying out of the plan ran into many difficulties.",
       "teaches": [
         "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
@@ -179,11 +179,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "practice",
-      "question": "In which register is the structure '-ásra/-ésre kerül' most naturally used?",
+      "question": "Where would you most likely read \"A javaslat elfogadásra került\"?",
       "options": [
-        "Hivatalos, jogi, gazdasági és bürokratikus szövegekben.",
-        "Kizárólag óvodás mesékben és gyermekversekben.",
-        "Kocsmában folytatott közvetlen baráti beszélgetésekben."
+        "In an official letter.",
+        "In a chat with a friend.",
+        "In a children's story."
       ],
       "correct": 0,
       "teaches": [
@@ -198,7 +198,7 @@
       "prompt": [
         {
           "speaker": "Ügyfél",
-          "text": "Mikor várható döntés a benyújtott kártérítési kérelemről?"
+          "text": "Mikor lesz az új szabályozás?"
         },
         {
           "speaker": "Tisztviselő",
@@ -206,9 +206,9 @@
         }
       ],
       "options": [
-        "A beadvány a jövő heti tanácsülésen érdemben megvitatásra kerül.",
-        "A beadvány a jövő heti tanácsülésen érdemben megvitatásra kerülne.",
-        "A beadvány a jövő heti tanácsülésen érdemben megvitatást kerül."
+        "Az új szabály a jövő hónapban bevezetésre kerül.",
+        "Az új szabály a jövő hónapban bevezetést kerül.",
+        "Az új szabály a jövő hónapban bevezetésre kerülnek."
       ],
       "correct": 0,
       "teaches": [
@@ -223,17 +223,17 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Miért fogalmaznak ilyen személytelenül a minisztériumi határozatokban?"
+          "text": "Mi lett a javaslattal?"
         },
         {
-          "speaker": "Jogász",
+          "speaker": "Tisztviselő",
           "text": "_____"
         }
       ],
       "options": [
-        "A személytelen szerkezetekkel a döntéshozók intézményi jelleget adnak a szövegnek.",
-        "Mert a hivatalnokok elfelejtették a magyar nyelv alapvető szavait.",
-        "Igen, hiszen minden állampolgár azonnal megérti a határozatot."
+        "Sajnos elutasításra került.",
+        "Sajnos elutasításra jött.",
+        "Sajnos elutasításban került."
       ],
       "correct": 0,
       "teaches": [
@@ -247,8 +247,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write: The project was approved and will be implemented soon.",
-          "answer": "A tervezet elfogadásra került, és hamarosan megvalósításra kerül."
+          "prompt": "Write: The plan was accepted and will soon be carried out.",
+          "answer": "A terv elfogadásra került, és hamarosan megvalósításra kerül."
         }
       ],
       "teaches": [
@@ -262,8 +262,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write: The citizen's complaint was rejected by the authorities.",
-          "answer": "Az állampolgár panasza elutasításra került a hatóságok részéről."
+          "prompt": "Write: The proposal was rejected yesterday.",
+          "answer": "A javaslat tegnap elutasításra került."
         }
       ],
       "teaches": [
@@ -291,10 +291,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A vitás pontok részletesen ____ kerültek a tegnapi jelentésben.",
-      "hint": "discussed",
-      "answer": "megvitatásra",
-      "english": "The disputed points were discussed in detail in yesterday's report.",
+      "sentence": "A terv sajnos nem ____ került.",
+      "hint": "megvalósítás, \"to\" case",
+      "answer": "megvalósításra",
+      "english": "Sadly, the plan was not carried out.",
       "teaches": [
         "agentless-constructions"
       ]

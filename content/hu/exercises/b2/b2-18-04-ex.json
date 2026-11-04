@@ -8,7 +8,7 @@
       "stage": "introduce",
       "question": "What is a 'jelmondat' in Hungarian political and cultural life?",
       "options": [
-        "a concise slogan or motto encapsulating an ideological program or campaign goal",
+        "a short slogan or motto that sums up a campaign goal",
         "a punctuation mark used exclusively in legal contracts",
         "a musical notation indicating a change of tempo"
       ],
@@ -25,7 +25,7 @@
       "question": "Which noun refers to the act of deflecting blame or passing the buck onto others?",
       "options": [
         "felelősséghárítás",
-        "állásfoglalás",
+        "hangsúlyeltolódás",
         "megerősítés"
       ],
       "correct": 0,
@@ -67,9 +67,9 @@
       "stage": "controlled",
       "question": "Which sentence demonstrates a campaign slogan using a cataphoric anchor?",
       "options": [
-        "Szavazzon arra, hogy Magyarország sikeres és európai ország maradjon!",
-        "Szavazzon holnap reggel nyolc órától a kijelölt szavazókörben!",
-        "A szavazólapokat a borítékba kell helyezni a fülkében."
+        "Szavazzon arra, hogy az ország sikeres maradjon!",
+        "Szavazzon a kijelölt helyen, a megadott időben!",
+        "A lapokat a borítékba kell tenni, nem a dobozba."
       ],
       "correct": 0,
       "teaches": [
@@ -81,11 +81,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the frame where a political campaign deflects responsibility onto external factors:",
+      "question": "Choose the frame where a government deflects responsibility onto external factors:",
       "options": [
-        "A kormány arra hivatkozik, hogy a globális energiaválság okozta a drágulást.",
-        "A kormány elismerte, hogy rossz gazdaságpolitikát folytatott.",
-        "A kormány azonnal lemondott a választási vereség után."
+        "A kormány arra hivatkozik, hogy külföldön drágább minden.",
+        "A kormány elismerte, hogy rossz döntéseket hozott.",
+        "A kormány azonnal lemondott a választások után."
       ],
       "correct": 0,
       "teaches": [
@@ -97,10 +97,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A kampánycsapat arra biztatja a támogatókat, ____ aktívan vegyenek részt a mozgósításban.",
-      "hint": "subordinating conjunction",
+      "sentence": "A kormány arra kéri az embereket, ____ vegyenek részt a vitában.",
+      "hint": "conjunction",
       "answer": "hogy",
-      "english": "The campaign team encourages supporters to take an active part in mobilization.",
+      "english": "The government asks people to take part in the debate.",
       "teaches": [
         "b2-cataphoric-clauses"
       ]
@@ -110,10 +110,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A politikai vezetés abban látja a jövőt, ____ a hazai kisvállalkozásokat részesíti előnyben.",
-      "hint": "complement conjunction",
+      "sentence": "A kormány abban látja a jövőt, ____ minden embernek segít.",
+      "hint": "conjunction",
       "answer": "hogy",
-      "english": "The political leadership sees the future in giving preference to domestic small businesses.",
+      "english": "The government sees the future in helping every person.",
       "teaches": [
         "b2-cataphoric-clauses"
       ]
@@ -157,10 +157,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A miniszter válasza nyílt ____ volt, amellyel a korábbi kormányra hárította a hibákat.",
+      "sentence": "A miniszter válasza tipikus ____ volt: szerinte mindig más a hibás.",
       "hint": "shifting of blame",
       "answer": "felelősséghárítás",
-      "english": "The minister's answer was overt shifting of blame, with which he deflected the errors onto the previous government.",
+      "english": "The minister's answer was typical blame-shifting: in his view someone else is always at fault.",
       "teaches": [
         "b2-rhetoric-framing-mass-persuasion-vocab"
       ]
@@ -172,25 +172,27 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "médiaelemzők",
-        "jelentős",
-        "hangsúlyeltolódást",
-        "észleltek",
+        "beszédben",
+        "nagy",
+        "hangsúlyeltolódás",
+        "történt",
         "a",
-        "kormányzati",
-        "kommunikációban."
+        "gazdaságról",
+        "a",
+        "biztonságra."
       ],
       "solution": [
         "A",
-        "médiaelemzők",
-        "jelentős",
-        "hangsúlyeltolódást",
-        "észleltek",
+        "beszédben",
+        "nagy",
+        "hangsúlyeltolódás",
+        "történt",
         "a",
-        "kormányzati",
-        "kommunikációban."
+        "gazdaságról",
+        "a",
+        "biztonságra."
       ],
-      "english": "Media analysts detected a significant shift in emphasis in governmental communication.",
+      "english": "In the speech there was a big shift in emphasis from the economy to security.",
       "teaches": [
         "b2-rhetoric-framing-mass-persuasion-vocab"
       ]
@@ -203,7 +205,7 @@
       "prompt": [
         {
           "speaker": "Politikai tanácsadó",
-          "text": "Hogyan értékeled az ellenfél új plakátkampányát?"
+          "text": "Mit gondolsz az ellenfél új jelmondatáról?"
         },
         {
           "speaker": "Kampánystratéga",
@@ -211,9 +213,9 @@
         }
       ],
       "options": [
-        "Ügyes tömegbefolyásolás: a jelmondatuk arra épít, hogy félelmet keltsen, és elterelje a figyelmet a gazdasági kudarcokról.",
-        "Ügyes tömegbefolyásolás: a jelmondatuk abban épít, hogy félelmet keltsen, és elterelje a figyelmet a gazdasági kudarcokról.",
-        "Ügyes tömegbefolyásolás: a jelmondatuk azzal épít, hogy félelmet keltsen, és elterelné a figyelmet a gazdasági kudarcoktól."
+        "Ügyes tömegbefolyásolás: a jelmondatuk arra épít, hogy az emberek félnek.",
+        "Ügyes tömegbefolyásolás: a jelmondatuk abban épít, hogy az emberek félnek.",
+        "Ügyes tömegbefolyásolás: a jelmondatuk azzal épít, hogy az emberek félnek."
       ],
       "correct": 0,
       "teaches": [
@@ -228,7 +230,7 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Miért bírálják a gazdasági miniszter mai sajtótájékoztatóját?"
+          "text": "Miért bírálják a miniszter beszédét?"
         },
         {
           "speaker": "Szerkesztő",
@@ -236,9 +238,9 @@
         }
       ],
       "options": [
-        "Mert a valódi megoldások helyett a puszta felelősséghárítás dominált: arra hivatkozott, hogy a külső körülmények tehetnek mindenről.",
-        "Mert a valódi megoldások helyett a puszta felelősséghárítás dominált: azzal hivatkozott, hogy a külső körülmények tehetnek mindenről.",
-        "Mert a valódi megoldások helyett a puszta felelősséghárítás dominált: abban hivatkozott, hogy a külső körülmények tehetnének mindenről."
+        "Mert megoldás helyett csak felelősséghárítás volt: arra hivatkozott, hogy mások a hibásak.",
+        "Mert megoldás helyett csak felelősséghárítás volt: azzal hivatkozott, hogy mások a hibásak.",
+        "Mert megoldás helyett csak felelősséghárítás volt: abban hivatkozott, hogy mások a hibásak."
       ],
       "correct": 0,
       "teaches": [
@@ -252,12 +254,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence analyzing a political slogan using 'arra szólítja fel a választókat, hogy...'.",
-          "answer": "A párt jelmondata arra szólítja fel a választókat, hogy szavazatukkal a biztonságot és a rendet válasszák."
+          "prompt": "Write a sentence with 'arra szólítja fel ... , hogy...': the slogan urges people to vote.",
+          "answer": "A jelmondat arra szólítja fel az embereket, hogy szavazzanak."
         },
         {
-          "prompt": "Write a sentence critiquing corporate spin using 'felelősséghárítás'.",
-          "answer": "A vállalat közleménye a felelősséghárítás tipikus esete volt, amellyel a hibát a beszállítókra hárították."
+          "prompt": "Write a sentence with 'felelősséghárítás': the minister's answer was blame-shifting because in his view others are at fault.",
+          "answer": "A miniszter válasza felelősséghárítás volt, mert szerinte mások a hibásak."
         }
       ],
       "teaches": [
@@ -271,8 +273,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'hangsúlyeltolódás' to describe an evolution in a campaign's narrative.",
-          "answer": "A kampány utolsó heteiben markáns hangsúlyeltolódás következett be a gazdasági témákról a kulturális viták felé."
+          "prompt": "Say that in the speech there was a shift in emphasis from the economy to security (use 'hangsúlyeltolódás').",
+          "answer": "A beszédben hangsúlyeltolódás történt a gazdaságról a biztonságra."
         }
       ],
       "teaches": [
@@ -284,10 +286,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A polgármesterjelölt arra kérte a lakosokat, ____ támogassák a zöld városfejlesztési programját.",
+      "sentence": "A polgármester arra kérte az embereket, ____ szavazzanak.",
       "hint": "conjunction",
       "answer": "hogy",
-      "english": "The mayoral candidate asked residents to support his green urban development program.",
+      "english": "The mayor asked people to vote.",
       "teaches": [
         "b2-cataphoric-clauses"
       ]

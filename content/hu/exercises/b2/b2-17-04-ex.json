@@ -6,9 +6,9 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is 'forráskritika' in journalism and historical research?",
+      "question": "What is \"forráskritika\" in journalism and historical research?",
       "options": [
-        "the systematic evaluation of a source's reliability, authenticity, and potential bias",
+        "checking how reliable a source is",
         "a public demonstration against the price of newspapers",
         "a printing technique used to reproduce photographs"
       ],
@@ -65,11 +65,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the correct phrase to express epistemic skepticism about a political promise:",
+      "question": "Choose the phrase that expresses doubt about a piece of news:",
       "options": [
-        "Kétséges, vajon megvalósul-e a választási ígéret.",
-        "Tudvalevő, hogy nem valósul meg a választási ígéret.",
-        "Bizonyított tény, hogy megvalósul az ígéret."
+        "Kétséges, vajon igaz-e a hír.",
+        "Biztos, hogy igaz a hír.",
+        "Köztudott, hogy igaz a hír."
       ],
       "correct": 0,
       "teaches": [
@@ -97,10 +97,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A közösségi médiában terjedő hír független forrásból származó ____ szorul.",
-      "hint": "needs confirmation",
+      "sentence": "A hír még ____ szorul.",
+      "hint": "megerősítés, to",
       "answer": "megerősítésre",
-      "english": "The news circulating on social media needs confirmation from an independent source.",
+      "english": "The news still needs confirmation.",
       "teaches": [
         "evidentials"
       ]
@@ -110,12 +110,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "____, hogy a kiszivárgott levélírói fiókot külső támadás érte.",
+      "sentence": "____, hogy a hír nem igaz.",
       "hint": "It is not ruled out that",
-      "answer": "Nem kizárt",
-      "english": "It is not ruled out that the leaked email account was subjected to an external attack.",
+      "english": "It is not ruled out that the news is not true.",
       "teaches": [
         "evidentials"
+      ],
+      "answers": [
+        "Nem kizárt",
+        "Lehet"
       ]
     },
     {
@@ -126,26 +129,20 @@
       "tiles": [
         "Kétséges,",
         "vajon",
+        "igaz-e",
         "a",
-        "bemutatott",
-        "statisztika",
-        "valóban",
-        "hiteles",
-        "adatokon",
-        "alapszik-e."
+        "hír",
+        "."
       ],
       "solution": [
         "Kétséges,",
         "vajon",
+        "igaz-e",
         "a",
-        "bemutatott",
-        "statisztika",
-        "valóban",
-        "hiteles",
-        "adatokon",
-        "alapszik-e."
+        "hír",
+        "."
       ],
-      "english": "It is doubtful whether the presented statistics are truly based on reliable data.",
+      "english": "It is doubtful whether the news is true.",
       "teaches": [
         "evidentials"
       ]
@@ -155,10 +152,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A digitális korban az alapos ____ nélkülözhetetlen a dezinformáció kiszűréséhez.",
-      "hint": "fact-checking",
-      "answer": "tényellenőrzés",
-      "english": "In the digital age, thorough fact-checking is indispensable for filtering out disinformation.",
+      "sentence": "A hírek ____ fontos munka.",
+      "hint": "tényellenőrzés, 3sg possessive",
+      "answer": "tényellenőrzése",
+      "english": "Fact-checking the news is important work.",
       "teaches": [
         "b2-information-overload-rumor-verification-vocab"
       ]
@@ -171,22 +168,20 @@
       "tiles": [
         "A",
         "szerkesztőség",
-        "kötelessége",
-        "minden",
-        "kérdéses",
+        "hitelesíti",
+        "a",
         "dokumentumot",
-        "hitelesíteni."
+        "."
       ],
       "solution": [
         "A",
         "szerkesztőség",
-        "kötelessége",
-        "minden",
-        "kérdéses",
+        "hitelesíti",
+        "a",
         "dokumentumot",
-        "hitelesíteni."
+        "."
       ],
-      "english": "It is the duty of the editorial office to authenticate every questionable document.",
+      "english": "The editorial office authenticates the document.",
       "teaches": [
         "b2-information-overload-rumor-verification-vocab"
       ]
@@ -198,8 +193,8 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Hírszerkesztő",
-          "text": "Megoszthatjuk a közösségi médiában ezt a bombahírt a miniszter lemondásáról?"
+          "speaker": "Szerkesztő",
+          "text": "Megírhatjuk, hogy a miniszter lemondott?"
         },
         {
           "speaker": "Tényellenőrző",
@@ -207,9 +202,9 @@
         }
       ],
       "options": [
-        "Még semmiképpen: a hír egyetlen névtelen blogról származik, így sürgős megerősítésre és forráskritikára szorul.",
-        "Azonnal osszuk meg, hogy mi legyünk az elsők, a pontosság nem számít.",
-        "Már hitelesítettük, holott senki sem látta még az eredeti szöveget."
+        "Még ne: a hír megerősítésre szorul, és a forrás kétséges.",
+        "Igen, írjuk meg: a forrás névtelen, de biztos, hogy igaz.",
+        "Még ne: a hír megerősítésre szorul, de a forrás hiteles."
       ],
       "correct": 0,
       "teaches": [
@@ -224,17 +219,17 @@
       "prompt": [
         {
           "speaker": "Hallgató",
-          "text": "Biztos, hogy mesterséges intelligencia generálta ezt a fényképet?"
+          "text": "Biztos, hogy ez a fénykép nem hamis?"
         },
         {
-          "speaker": "Médiaoktató",
+          "speaker": "Oktató",
           "text": "____"
         }
       ],
       "options": [
-        "Nem kizárt, hogy hamisítvány, de a szakértők még nem hitelesítették véglegesen a metaadatokat.",
-        "Biztosan igazi, mert a képernyőn látható.",
-        "Kétséges, vajon létezik-e egyáltalán mesterséges intelligencia."
+        "Nem kizárt, hogy hamis, de még ellenőrizni kell.",
+        "Biztosan nem hamis, mert a képernyőn van.",
+        "Nem kizárt, hogy hamis, de nem kell ellenőrizni."
       ],
       "correct": 0,
       "teaches": [
@@ -248,12 +243,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'Nem kizárt, hogy...' about a possible economic policy shift.",
-          "answer": "Nem kizárt, hogy a jegybank a következő ülésén a kamatok további emeléséről határoz."
+          "prompt": "Write with nem kizárt: It is not ruled out that the news is not true.",
+          "answer": "Nem kizárt, hogy a hír nem igaz."
         },
         {
-          "prompt": "Write a sentence using 'Kétséges, vajon... -e' regarding an unverified viral story.",
-          "answer": "Kétséges, vajon a videón látható jelenet valóban a tegnapi tüntetésen készült-e."
+          "prompt": "Write with kétséges, vajon: It is doubtful whether the information is true.",
+          "answer": "Kétséges, vajon igaz-e az információ."
         }
       ],
       "teaches": [
@@ -267,8 +262,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'megerősítésre szorul' in a fact-checking warning.",
-          "answer": "A katasztrófa áldozatainak számáról szóló első jelentések még független megerősítésre szorulnak."
+          "prompt": "Write with megerősítésre szorul: The first news still needs confirmation.",
+          "answer": "Az első hír még megerősítésre szorul."
         }
       ],
       "teaches": [
@@ -280,12 +275,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "____, vajon a kormány által közölt számok tartalmazzák-e a rejtett költségeket.",
+      "sentence": "____, vajon igaz-e ez a hír.",
       "hint": "It is doubtful whether",
-      "answer": "Kétséges",
-      "english": "It is doubtful whether the numbers released by the government include hidden costs.",
+      "english": "It is doubtful whether this news is true.",
       "teaches": [
         "evidentials"
+      ],
+      "answers": [
+        "Kétséges",
+        "Kérdés"
       ]
     },
     {

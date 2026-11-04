@@ -6,9 +6,9 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What does the expression 'a jelek szerint' indicate in Hungarian?",
+      "question": "What does the expression \"a jelek szerint\" indicate in Hungarian?",
       "options": [
-        "an inference based on observable signs or circumstantial clues",
+        "a conclusion drawn from visible signs",
         "a definitive divine revelation",
         "a mathematical law proven beyond any doubt"
       ],
@@ -65,11 +65,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the best inferential marker to open a deduction based on visible economic stagnation:",
+      "question": "Choose the best marker to open a conclusion drawn from what you can see: the shops are closed and the streets are empty.",
       "options": [
         "A jelek szerint",
-        "Bizonyára nem",
-        "Egyáltalán nem"
+        "Úgy hírlik, hogy",
+        "Azt mondják, hogy"
       ],
       "correct": 0,
       "teaches": [
@@ -84,8 +84,8 @@
       "question": "Select the formal expression expressing high probability in a policy brief:",
       "options": [
         "Minden valószínűség szerint",
-        "A szóbeszéd szerint",
-        "Kizárt dolog, hogy"
+        "A szóbeszéd szerint állítólag",
+        "Kizárt dolog, hogy ez így van"
       ],
       "correct": 0,
       "teaches": [
@@ -99,10 +99,13 @@
       "stage": "controlled",
       "sentence": "____ a miniszter nem veszi figyelembe a szakmai szervezetek tiltakozását.",
       "hint": "By all appearances",
-      "answer": "A jelek szerint",
-      "english": "By all appearances, the minister is not taking into account the professional organizations' protest.",
+      "english": "By all appearances, the minister is not taking the professional organizations' protest into account.",
       "teaches": [
         "evidentials"
+      ],
+      "answers": [
+        "A jelek szerint",
+        "Úgy tűnik"
       ]
     },
     {
@@ -110,12 +113,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A tárgyalások elhúzódása miatt a megállapodást ____ csak jövőre írják alá.",
+      "sentence": "A tárgyalás nagyon hosszú, ezért a megállapodást ____ csak jövőre írják alá.",
       "hint": "most likely",
-      "answer": "alighanem",
-      "english": "Due to the dragging on of negotiations, the agreement will most likely only be signed next year.",
+      "english": "The negotiation is very long, so the agreement will most likely only be signed next year.",
       "teaches": [
         "evidentials"
+      ],
+      "answers": [
+        "alighanem",
+        "valószínűleg"
       ]
     },
     {
@@ -157,10 +163,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A szakértő alapos elemzés után megalapozott ____ jutott.",
-      "hint": "conclusion [allative]",
+      "sentence": "A szakértő sokat gondolkodott, és egy fontos ____ jutott.",
+      "hint": "következtetés, to",
       "answer": "következtetésre",
-      "english": "After thorough analysis, the expert arrived at a well-founded conclusion.",
+      "english": "The expert thought a lot and came to an important conclusion.",
       "teaches": [
         "b2-information-overload-rumor-verification-vocab"
       ]
@@ -172,23 +178,23 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "jelenlegi",
-        "árfolyamok",
+        "mai",
+        "árak",
         "alapján",
-        "további",
         "áremelkedés",
-        "valószínűsíthető."
+        "valószínűsíthető",
+        "."
       ],
       "solution": [
         "A",
-        "jelenlegi",
-        "árfolyamok",
+        "mai",
+        "árak",
         "alapján",
-        "további",
         "áremelkedés",
-        "valószínűsíthető."
+        "valószínűsíthető",
+        "."
       ],
-      "english": "Based on current exchange rates, further price increases are probable.",
+      "english": "On the basis of today's prices, a price rise is probable.",
       "teaches": [
         "b2-information-overload-rumor-verification-vocab"
       ]
@@ -200,18 +206,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Külügyi elemző",
-          "text": "Mi várható a holnapi brüsszeli csúcson a szankciók ügyében?"
+          "speaker": "Elemző",
+          "text": "Mi várható a holnapi tárgyaláson?"
         },
         {
-          "speaker": "Diplomáciai tudósító",
+          "speaker": "Tudósító",
           "text": "____"
         }
       ],
       "options": [
-        "A jelek szerint kompromisszumos megállapodás születik, alighanem néhány kivétellel kiegészítve.",
-        "Mindenki háborút indít azonnal, mert senki sem tárgyal.",
-        "Úgy hírlik, hogy a csúcstalálkozót már három éve megtartották."
+        "A jelek szerint lesz megállapodás, alighanem néhány változtatással.",
+        "A jelek szerint lesz megállapodás, alighanem néhány változtatásra.",
+        "A jelek szerint lesz megállapodás, alighanem néhány változtatásban."
       ],
       "correct": 0,
       "teaches": [
@@ -225,8 +231,8 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Pénzügyi riporter",
-          "text": "Hogyan reagál a tőzsde a váratlan jegybanki döntésre?"
+          "speaker": "Riporter",
+          "text": "Mi lesz a kenyér árával?"
         },
         {
           "speaker": "Elemző",
@@ -234,9 +240,9 @@
         }
       ],
       "options": [
-        "Minden valószínűség szerint rövid távú ingadozás következik, de pánikra nincs ok.",
-        "A tőzsde megszűnik létezni a jelek szerint.",
-        "Alighanem senki sem vette észre a kamatemelést."
+        "Minden valószínűség szerint egy kicsit drágább lesz, de nincs ok aggódni.",
+        "Minden valószínűség szerint egy kicsit drágább lesz, de van ok aggódni.",
+        "Minden valószínűség szerint egy kicsit drágább lesz, de nincs ok aggódik."
       ],
       "correct": 0,
       "teaches": [
@@ -250,12 +256,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'A jelek szerint' to infer public dissatisfaction from low turnout.",
-          "answer": "A jelek szerint az alacsony részvétel a választók mélységes kiábrándultságát tükrözi."
+          "prompt": "Write with a jelek szerint: By all appearances the shop is closed today.",
+          "answer": "A jelek szerint a bolt ma zárva van."
         },
         {
-          "prompt": "Write a sentence using 'alighanem' to explain a policy delay.",
-          "answer": "A törvény elfogadását alighanem a kormánykoalíción belüli belső nézeteltérések késleltetik."
+          "prompt": "Write with alighanem: The agreement will most likely be signed next year.",
+          "answer": "A megállapodást alighanem jövőre írják alá."
         }
       ],
       "teaches": [
@@ -269,8 +275,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'Minden valószínűség szerint' in an analytical economic forecast.",
-          "answer": "Minden valószínűség szerint az energiaárak emelkedése újabb inflációs nyomást gyakorol a gazdaságra."
+          "prompt": "Write with minden valószínűség szerint: In all probability, bread will be more expensive.",
+          "answer": "Minden valószínűség szerint drágább lesz a kenyér."
         }
       ],
       "teaches": [
@@ -282,12 +288,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A rendőrségi kordonokból ítélve ____ lezárják a belvárosi utcákat a demonstráció miatt.",
+      "sentence": "Sok rendőrt látok, ezért ____ zárva lesz az utca.",
       "hint": "most likely",
-      "answer": "alighanem",
-      "english": "Judging by the police cordons, they will most likely close the downtown streets due to the demonstration.",
+      "english": "I see many policemen, so the street will most likely be closed.",
       "teaches": [
         "evidentials"
+      ],
+      "answers": [
+        "alighanem",
+        "valószínűleg"
       ]
     },
     {

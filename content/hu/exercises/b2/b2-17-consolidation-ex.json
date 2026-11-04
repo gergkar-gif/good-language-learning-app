@@ -51,9 +51,9 @@
       "stage": "recognize",
       "question": "Which sentence correctly signals that a statement is a reported rumor rather than a verified fact?",
       "options": [
-        "Úgy hírlik, hogy a cégvezetés titkos tárgyalásokat folytat a rivális vállalattal.",
-        "Bizonyított tény, hogy a cégvezetés titkos tárgyalásokat folytat.",
-        "A cégvezetés írásban beismerte a tárgyalások tényét."
+        "Úgy hírlik, hogy a bank bezár.",
+        "Bizonyított tény, hogy a bank bezár.",
+        "A bank maga is mondta, hogy bezár."
       ],
       "correct": 0,
       "teaches": [
@@ -65,10 +65,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A riporter nem kívánta megnevezni a bizalmas diplomáciai ____.",
-      "hint": "source [acc.]",
-      "answer": "forrást",
-      "english": "The reporter did not wish to name the confidential diplomatic source.",
+      "sentence": "A szerkesztő megkérdezte, mi a hír ____.",
+      "hint": "forrás, 3sg possessive",
+      "answer": "forrása",
+      "english": "The editor asked what the source of the news is.",
       "teaches": [
         "b2-information-overload-rumor-verification-vocab"
       ]
@@ -78,10 +78,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A botrányba keveredett államtitkár ____ külföldre távozott az éjszaka folyamán.",
+      "sentence": "A főnök ____ külföldre ment tegnap éjjel.",
       "hint": "allegedly",
       "answer": "állítólag",
-      "english": "The scandal-ridden state secretary allegedly departed abroad during the night.",
+      "english": "The boss allegedly went abroad last night.",
       "teaches": [
         "evidentials"
       ]
@@ -91,12 +91,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A tanúvallomásokból ítélve ____ nem baleset, hanem szándékos gyújtogatás történt.",
-      "hint": "most likely / in all probability",
-      "answer": "alighanem",
-      "english": "Judging by the witness testimonies, most likely not an accident but deliberate arson occurred.",
+      "sentence": "A sok rendőr alapján ____ nagy baj történt.",
+      "hint": "most likely",
+      "english": "Judging by the many policemen, most likely something serious has happened.",
       "teaches": [
         "evidentials"
+      ],
+      "answers": [
+        "alighanem",
+        "valószínűleg"
       ]
     },
     {
@@ -104,11 +107,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Select the sentence with accurate source attribution and epistemic caution:",
+      "question": "Select the sentence with accurate source attribution and caution:",
       "options": [
-        "A minisztérium állítása szerint a helyzet ellenőrzés alatt áll, a szemtanúk elmondása alapján viszont a hír megerősítésre szorul.",
-        "A minisztérium azt mondta, tehát senki sem kételkedhet a szavaikban.",
-        "Minden szemtanú hazudik, holott senki sem volt a helyszínen."
+        "A főnök szerint jó a helyzet, a szemtanú szerint viszont megerősítésre szorul.",
+        "A főnök azt mondta, hogy jó a helyzet, tehát biztos, hogy igaz.",
+        "A szemtanú szerint rossz a helyzet, tehát a hír biztosan igaz."
       ],
       "correct": 0,
       "teaches": [
@@ -122,18 +125,18 @@
       "stage": "in-context",
       "prompt": [
         {
-          "speaker": "Hírfőszerkesztő",
-          "text": "Hogyan hozzuk le a szenzációs leleplezést a címoldalon?"
+          "speaker": "Szerkesztő",
+          "text": "Megírjuk a hírt?"
         },
         {
-          "speaker": "Vezető tényellenőr",
+          "speaker": "Tényellenőr",
           "text": "____"
         }
       ],
       "options": [
-        "Kétséges, vajon a forrás hiteles-e; a jelek szerint a dokumentumok alapos megerősítésre szorulnak a közzététel előtt.",
-        "Kétséges, hogy vajon a forrás hiteles-e; a jelek szerint a dokumentumok alapos megerősítésben szorulnak a közzététel előtt.",
-        "Kétséges, vajon a forrás hiteles volna; a jelek szerint a dokumentumok alapos megerősítésből szorulnak a közzététel előtt."
+        "Kétséges, vajon igaz-e; a jelek szerint még megerősítésre szorul.",
+        "Kétséges, vajon igaz-e; a jelek szerint még megerősítésben szorul.",
+        "Kétséges, vajon igaz-e; a jelek szerint még megerősítésből szorul."
       ],
       "correct": 0,
       "teaches": [
@@ -145,11 +148,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'arra hivatkozva, hogy...' preferred in formal administrative reporting?",
+      "question": "What does \"arra hivatkozva, hogy ...\" tell the reader?",
       "options": [
-        "It precisely identifies the formal pretext or legal justification offered by an entity for its decision.",
-        "It transforms all verbs into the conditional mood automatically.",
-        "It is the only way to refer to an eyewitness in Hungarian."
+        "The reason that someone gives.",
+        "That the reporter saw it himself.",
+        "That the news is a joke."
       ],
       "correct": 0,
       "teaches": [
@@ -225,8 +228,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause synthesis of a contested breaking news event using 'Úgy hírlik, hogy...', 'állításuk szerint', and 'megerősítésre szorul'.",
-          "answer": "Úgy hírlik, hogy a két vállalat titkos fúziós tárgyalásokat folytat, és a szakszervezet állítása szerint jelentős leépítések várhatóak. A hírek mindazonáltal hivatalos megerősítésre szorulnak a tőzsdei felügyelet részéről."
+          "prompt": "Write with úgy hírlik: Rumor has it that the bank is closing.",
+          "answer": "Úgy hírlik, hogy a bank bezár."
         }
       ],
       "teaches": [

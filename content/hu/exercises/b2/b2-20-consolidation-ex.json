@@ -8,9 +8,9 @@
       "stage": "recognize",
       "question": "Which sentence properly demonstrates the relational contrast between 'rovására' and 'javára'?",
       "options": [
-        "A költségvetési átcsoportosítás az adminisztráció rovására történt az oktatás javára.",
-        "A költségvetési átcsoportosítás az adminisztráció javára ment az oktatás javára nélkül.",
-        "A költségvetési átcsoportosítás az adminisztráció rovására ment az oktatás rovására."
+        "A pénz a hivatal rovására ment az oktatás javára.",
+        "A pénz a hivatal javára ment az oktatás javára.",
+        "A pénz a hivatal rovására ment az oktatás rovására."
       ],
       "correct": 0,
       "teaches": [
@@ -51,9 +51,9 @@
       "stage": "recognize",
       "question": "Which sentence illustrates correct functional dependency using 'függvényében'?",
       "options": [
-        "A továbbtanulási arány a szülők iskolázottságának függvényében alakul.",
-        "A továbbtanulási arány a szülők iskolázottságának rovására alakul.",
-        "A továbbtanulási arány a szülők iskolázottságának híján alakul."
+        "A diákok esélye a szülők iskolázottságának függvényében alakul.",
+        "A diákok esélye a szülők iskolázottságának rovására alakul.",
+        "A diákok esélye a szülők iskolázottságának híján alakul."
       ],
       "correct": 0,
       "teaches": [
@@ -65,10 +65,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A szakkollégiumi mozgalom célja a tehetséges fiatalok társadalmi ____ támogatása.",
-      "hint": "upward advancement",
+      "sentence": "A mozgalom célja a fiatalok társadalmi ____ támogatása.",
+      "hint": "felemelkedés, 3sg possessed",
       "answer": "felemelkedésének",
-      "english": "The residential honors college movement's goal is supporting talented youths' upward advancement.",
+      "english": "The movement's goal is supporting the social advancement of young people.",
       "teaches": [
         "b2-social-mobility-class-opportunity-vocab"
       ]
@@ -78,10 +78,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "Az ipari modernizáció nem valósulhat meg a környezet védelmének ____.",
+      "sentence": "A fejlődés nem mehet a környezet védelmének ____.",
       "hint": "at the expense of",
       "answer": "rovására",
-      "english": "Industrial modernization cannot be realized at the expense of environmental protection.",
+      "english": "Development must not come at the expense of environmental protection.",
       "teaches": [
         "b2-relational-compounds"
       ]
@@ -91,10 +91,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "Míg a szülők még a földhöz kötötten éltek, ____ a gyermekeik egyetemi diplomát szereztek.",
+      "sentence": "Míg a szülők még a földön dolgoztak, ____ a gyermekeik egyetemre jártak.",
       "hint": "by contrast / during that time",
       "answer": "addig",
-      "english": "While the parents still lived bound to the soil, by contrast their children obtained university degrees.",
+      "english": "While the parents still worked on the land, by contrast their children went to university.",
       "teaches": [
         "b2-relational-compounds"
       ]
@@ -106,7 +106,7 @@
       "stage": "in-context",
       "question": "Select the sentence correctly analyzing an intergenerational comparison:",
       "options": [
-        "Az előző nemzedékekkel szemben a mai fiatalok számára a digitális eszközök természetesek.",
+        "Az előző nemzedékekkel szemben a mai fiatalok többet tanulhatnak.",
         "Az előző nemzedékekkel rovására a mai fiatalok nem ismerik a könyveket.",
         "Az előző nemzedékekkel híján a fiatalok nem tudnak dolgozni."
       ],
@@ -123,7 +123,7 @@
       "prompt": [
         {
           "speaker": "Oktatáskutató",
-          "text": "Hogyan javítható a hátrányos helyzetű diákok felzárkózása?"
+          "text": "Hogyan segíthetünk a hátrányos helyzetű diákoknak?"
         },
         {
           "speaker": "Minisztériumi szakértő",
@@ -131,9 +131,9 @@
         }
       ],
       "options": [
-        "A méltányosság szempontjából célzott forrásokat kell biztosítani a kistelepülési iskolák javára.",
-        "A méltányosság szempontjából célzott forrásokat kell biztosítani a kistelepülési iskolák rovására.",
-        "A méltányosságnak szempontjából célzott forrásokat kell biztosítani a kistelepülési iskoláknak javára."
+        "A méltányosság szempontjából pénzt kell adni a falusi iskolák javára.",
+        "A méltányosság szempontjából pénzt kell adni a falusi iskolák javán.",
+        "A méltányosság szempontjára pénzt kell adni a falusi iskolák javára."
       ],
       "correct": 0,
       "teaches": [
@@ -147,7 +147,7 @@
       "stage": "in-context",
       "question": "Why is 'híján' used instead of simple 'nélkül' in 'Megfelelő tőke híján a vállalkozás megbukott'?",
       "options": [
-        "Because 'híján' conveys an elevated, analytical register emphasizing a critical, fatal deficiency of a necessary condition.",
+        "Because 'híján' is more formal and stresses a missing necessary condition.",
         "Because 'nélkül' cannot be used with abstract nouns.",
         "Because 'híján' is a colloquial slang term from rural dialects."
       ],
@@ -167,8 +167,8 @@
         "nem",
         "mehet",
         "a",
-        "szociális",
-        "biztonság",
+        "gyerekek",
+        "jövője",
         "rovására."
       ],
       "solution": [
@@ -177,11 +177,11 @@
         "nem",
         "mehet",
         "a",
-        "szociális",
-        "biztonság",
+        "gyerekek",
+        "jövője",
         "rovására."
       ],
-      "english": "Development must not come at the expense of social security.",
+      "english": "Development must not come at the expense of children's future.",
       "teaches": [
         "b2-relational-compounds"
       ]
@@ -223,8 +223,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause sociological analysis combining 'a felzárkózás szempontjából' (perspective), 'függvényében' (dependency), and 'javára' (benefit).",
-          "answer": "A társadalmi felzárkózás szempontjából kulcsfontosságú, hogy az esélyek ne a családi származás függvényében alakuljanak; az oktatáspolitikának a hátrányos helyzetű tanulók javára kell átrendeznie a forrásokat; és ezáltal biztosítható a társadalom hosszú távú békéje és stabilitása."
+          "prompt": "Write a three-clause analysis combining 'a felzárkózás szempontjából', 'függvényében' and 'javára'.",
+          "answer": "A felzárkózás szempontjából fontos, hogy az esélyek ne a származás függvényében alakuljanak; a kormánynak a szegény diákok javára kell döntenie; és pénz híján a falvak nem tudnak felzárkózni."
         }
       ],
       "teaches": [

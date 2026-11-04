@@ -83,7 +83,7 @@
       "stage": "controlled",
       "question": "Which sentence effectively front-shifts the anchor to highlight an inherent strength?",
       "options": [
-        "Éppen abban rejlik a javaslat ereje, hogy egyszerű és átlátható.",
+        "Éppen abban rejlik a javaslat ereje, hogy egyszerű.",
         "A javaslat ereje abban van, hogy egyszerű.",
         "Abban bízunk, hogy egyszerű lesz a javaslat."
       ],
@@ -97,10 +97,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Éppen ____ van szükségünk a nehéz időkben, hogy összefogjunk és segítsük egymást.",
-      "hint": "sublative anchor",
+      "sentence": "Éppen ____ van szükségünk, hogy segítsük egymást.",
+      "hint": "szükség van, anchor pronoun",
       "answer": "arra",
-      "english": "It is precisely that which we need in difficult times, namely that we unite and help each other.",
+      "english": "It is precisely that which we need: that we help each other.",
       "teaches": [
         "b2-cataphoric-clauses"
       ]
@@ -110,10 +110,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Pontosan ____ áll a szerző érvelésének a gyengéje, hogy figyelmen kívül hagyja a történelmi tényeket.",
-      "hint": "inessive anchor",
+      "sentence": "Pontosan ____ áll a javaslat gyengéje, hogy nem segít az embereknek.",
+      "hint": "áll, anchor pronoun",
       "answer": "abban",
-      "english": "Precisely in that lies the weakness of the author's reasoning, that he ignores historical facts.",
+      "english": "Precisely in that lies the weakness of the proposal, that it does not help people.",
       "teaches": [
         "b2-cataphoric-clauses"
       ]
@@ -155,10 +155,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A képviselő heves parlamenti ____ óriási felháborodást váltott ki a sajtóban.",
-      "hint": "formal speech [acc.]",
+      "sentence": "A képviselő hosszú ____ nagy vitát váltott ki.",
+      "hint": "szónoklat, 3sg possessed",
       "answer": "szónoklata",
-      "english": "The representative's fierce parliamentary speech elicited huge outrage in the press.",
+      "english": "The representative's long speech caused a big debate.",
       "teaches": [
         "b2-rhetoric-framing-mass-persuasion-vocab"
       ]
@@ -170,25 +170,23 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "tudományos",
-        "érvelés",
+        "vita",
         "mindig",
-        "a",
-        "racionális",
-        "bizonyítékokra",
+        "az",
+        "ésszerű",
+        "érvekre",
         "támaszkodik."
       ],
       "solution": [
         "A",
-        "tudományos",
-        "érvelés",
+        "vita",
         "mindig",
-        "a",
-        "racionális",
-        "bizonyítékokra",
+        "az",
+        "ésszerű",
+        "érvekre",
         "támaszkodik."
       ],
-      "english": "Scientific argumentation always relies on rational evidence.",
+      "english": "A debate always relies on rational arguments.",
       "teaches": [
         "b2-rhetoric-framing-mass-persuasion-vocab"
       ]
@@ -201,7 +199,7 @@
       "prompt": [
         {
           "speaker": "Választópolgár",
-          "text": "Hogyan értékeli a tegnapi televíziós miniszterelnöki vitát?"
+          "text": "Mi a baj a mai politikai vitákkal?"
         },
         {
           "speaker": "Politikai elemző",
@@ -209,9 +207,9 @@
         }
       ],
       "options": [
-        "Sajnos az ésszerű programok helyett a hatásvadászat és az érzelmi hangulatkeltés dominált a képernyőn.",
-        "Sajnos az ésszerű programok helyett a hatásvadászatban és az érzelmi hangulatkeltésre dominált a képernyőn.",
-        "Sajnos az ésszerű programok mellett a hatásvadászat és az érzelmi hangulatkeltés domináltak a képernyőben."
+        "Pontosan abban áll a baj, hogy az érvek helyett a hangulatkeltés számít.",
+        "Pontosan arra áll a baj, hogy az érvek helyett a hangulatkeltés számít.",
+        "Pontosan azzal áll a baj, hogy az érvek helyett a hangulatkeltés számít."
       ],
       "correct": 0,
       "teaches": [
@@ -226,7 +224,7 @@
       "prompt": [
         {
           "speaker": "Retorikatanár",
-          "text": "Mire ügyeljen a szónok a zárómondat megfogalmazásakor?"
+          "text": "Mire figyeljen a szónok a beszéd végén?"
         },
         {
           "speaker": "Diák",
@@ -234,9 +232,9 @@
         }
       ],
       "options": [
-        "Pontosan arra kell helyeznie a hangsúlyt, hogy a hallgatóság egyértelmű cselekvési felhívást kapjon.",
-        "Pontosan abban kell helyeznie a hangsúlyt, hogy a hallgatóság egyértelmű cselekvési felhívást kapjon.",
-        "Pontosan arról kell helyeznie a hangsúlyt, hogy a hallgatóság egyértelmű cselekvési felhívást kapjon."
+        "Pontosan arra kell figyelnie, hogy mindenki megértse a beszédet.",
+        "Pontosan abban kell figyelnie, hogy mindenki megértse a beszédet.",
+        "Pontosan azzal kell figyelnie, hogy mindenki megértse a beszédet."
       ],
       "correct": 0,
       "teaches": [
@@ -250,12 +248,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'Pontosan arra...' to emphasize a civic duty.",
-          "answer": "Pontosan arra kell emlékeztetnünk a polgárokat, hogy a szabadság felelősséggel jár."
+          "prompt": "Write a sentence beginning 'Pontosan arra...': we must make sure everyone keeps the rules.",
+          "answer": "Pontosan arra kell figyelnünk, hogy mindenki betartsa a szabályokat."
         },
         {
-          "prompt": "Write a sentence contrasting rational argument with emotional manipulation using 'ésszerű' and 'hangulatkeltés'.",
-          "answer": "A parlamentben az ésszerű gazdasági érveknek kellene dönteniük az olcsó hangulatkeltés helyett."
+          "prompt": "Write a sentence with 'ésszerű' and 'hangulatkeltés': rational arguments matter more than rabble-rousing.",
+          "answer": "A vitában az ésszerű érvek fontosabbak, mint a hangulatkeltés."
         }
       ],
       "teaches": [
@@ -269,8 +267,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'Éppen abban rejlik...' about the core challenge of democratic institutions.",
-          "answer": "Éppen abban rejlik a demokratikus intézmények kihívása, hogy a sokféle érdeket békésen egyeztessék."
+          "prompt": "Write a sentence beginning 'Éppen abban rejlik...': the strength of democracy.",
+          "answer": "Éppen abban rejlik a demokrácia ereje, hogy mindenki elmondhatja a véleményét."
         }
       ],
       "teaches": [
@@ -282,10 +280,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "Pontosan ____ figyelmeztetett a tudós, hogy az éghajlatváltozás visszafordíthatatlan károkat okoz.",
-      "hint": "sublative anchor",
+      "sentence": "Pontosan ____ figyelmeztetett a polgármester, hogy sok ember nem bízik a kormányban.",
+      "hint": "figyelmeztet, anchor pronoun",
       "answer": "arra",
-      "english": "Precisely of that the scientist warned, namely that climate change causes irreversible damage.",
+      "english": "Precisely of that the mayor warned: that many people do not trust the government.",
       "teaches": [
         "b2-cataphoric-clauses"
       ]

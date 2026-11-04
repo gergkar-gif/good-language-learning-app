@@ -49,11 +49,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Which sentence correctly uses 'holott' to unmask false claims?",
+      "question": "Which sentence correctly uses \"holott\" to unmask false claims?",
       "options": [
-        "Bőségről és gazdagságról beszélnek, holott az emberek többsége nélkülözik.",
-        "Bőségről és gazdagságról beszélnek, mert az emberek többsége nélkülözik.",
-        "Bőségről és gazdagságról beszélnek, tehát senki sem él szegénységben."
+        "Jó helyzetről beszélnek, holott sokan szegények.",
+        "Jó helyzetről beszélnek, mert sokan szegények.",
+        "Jó helyzetről beszélnek, tehát kevesen szegények."
       ],
       "correct": 0,
       "teaches": [
@@ -65,10 +65,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A vitapartner éles logikával ____ az összes ellene felhozott vádat.",
-      "hint": "refuted [past 3sg def.]",
+      "sentence": "A szakértő tényekkel ____ a kormány érvét.",
+      "hint": "cáfol, 3sg past, definite",
       "answer": "cáfolta",
-      "english": "The debate partner refuted with sharp logic all the accusations brought against him.",
+      "english": "The expert refuted the government's argument with facts.",
       "teaches": [
         "b2-ideological-debates-public-polemics-vocab"
       ]
@@ -78,12 +78,18 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "____ a törvényjavaslat nemes szándékú, a gyakorlatban súlyos károkat okozna.",
+      "sentence": "____ a törvény jó ötlet volt, sok gondot okozott.",
       "hint": "Although / Albeit",
-      "answer": "Jóllehet",
-      "english": "Although the draft legislation is of noble intent, in practice it would cause serious damage.",
+      "english": "Although the law was a good idea, it caused a lot of trouble.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "Jóllehet",
+        "Ámbár",
+        "Bár",
+        "Habár",
+        "Noha"
       ]
     },
     {
@@ -91,12 +97,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "Sokan az azonnali lemondást követelték. ____ a pártelnök a pozíciójában maradt.",
+      "sentence": "Sokan a változást kérik. ____ a kormány a régi úton marad.",
       "hint": "In contrast to this",
-      "answer": "Ezzel szemben",
-      "english": "Many demanded an immediate resignation. In contrast to this, the party chairman remained in his position.",
+      "english": "Many ask for change. In contrast to this, the government stays on the old path.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "Ezzel szemben",
+        "Ellenben",
+        "Viszont"
       ]
     },
     {
@@ -106,13 +116,13 @@
       "stage": "in-context",
       "question": "Select the sentence with a properly formulated scalar concession:",
       "options": [
-        "Bármennyire fájdalmas is az igazság, szembe kell néznünk vele a közéletben.",
-        "Bármennyire fájdalmas az igazság, tehát nem kell beszélnünk róla.",
-        "Bármennyire fájdalmas is, holott senki sem tudja az igazságot."
+        "Bármennyire nehéz is a feladat, meg kell csinálni.",
+        "Bármennyire nehéz is a feladat, mert meg kell csinálni.",
+        "Bármennyire nehéz is a feladat, nem meg kell csinálni."
       ],
       "correct": 0,
       "teaches": [
-        "contrastive-discourse-markers"
+        "concessive-indefinites"
       ]
     },
     {
@@ -122,18 +132,18 @@
       "stage": "in-context",
       "prompt": [
         {
-          "speaker": "Egyetemi vitatárs",
-          "text": "Hogyan foglalnád össze a mai polemika tanulságát?"
+          "speaker": "Hallgató",
+          "text": "Mi a mai vita tanulsága?"
         },
         {
-          "speaker": "Vitavezető",
+          "speaker": "Vezető",
           "text": "____"
         }
       ],
       "options": [
-        "Elismerem, hogy mindkét fél felhozott érvényes szempontokat, mégis világos, hogy az adatok a reformokat igazolják.",
-        "Mindenki tévedett, holott senki sem nyitotta ki a száját.",
-        "Nem szabad vitatkozni, mert a viták csak megzavarják a kávéházi nyugalmat."
+        "Elismerem, hogy a másik félnek is van érve, mégis a javaslat jobb.",
+        "Elismerem, hogy a másik félnek is van érve, ezért a javaslat rossz.",
+        "Elismerem, hogy a másik félnek is van érve, holott a javaslat jobb."
       ],
       "correct": 0,
       "teaches": [
@@ -145,11 +155,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'csakhogy' used instead of 'de' in 'A tervezet elméletben tökéletes, csakhogy hiányzik a megvalósításához szükséges pénz'?",
+      "question": "Why is \"csakhogy\" used instead of \"de\" in \"A terv jó, csakhogy hiányzik a pénz\"?",
       "options": [
-        "It emphasizes an inescapable, critical caveat that overturns an otherwise promising assumption.",
-        "It is the only conjunction allowed before nouns.",
-        "It marks a reportative rumor without factual backing."
+        "It stresses a serious catch.",
+        "It is only used before nouns.",
+        "It marks a rumour without proof."
       ],
       "correct": 0,
       "teaches": [
@@ -200,8 +210,10 @@
         "nehézségeket",
         "okozott,",
         "mindazonáltal",
-        "nélkülözhetetlennek",
-        "bizonyult."
+        "szükség",
+        "volt",
+        "rá",
+        "."
       ],
       "solution": [
         "A",
@@ -210,10 +222,12 @@
         "nehézségeket",
         "okozott,",
         "mindazonáltal",
-        "nélkülözhetetlennek",
-        "bizonyult."
+        "szükség",
+        "volt",
+        "rá",
+        "."
       ],
-      "english": "The disputed reform caused difficulties; nevertheless, it proved indispensable.",
+      "english": "The disputed reform caused difficulties; nevertheless, it was needed.",
       "teaches": [
         "contrastive-discourse-markers"
       ]
@@ -225,8 +239,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause polemical paragraph using 'Jóllehet' (concession), 'ezzel szemben' (contrast), and 'holott' (unmasking reality).",
-          "answer": "Jóllehet a vezetés gyors gazdasági felvirágzást ígért, a valóság azonnal cáfolta a reményeket. Ezzel szemben a független közgazdászok már hónapokkal korábban figyelmeztettek a veszélyre, holott a hivatalos sajtó elhallgatta a bírálataikat."
+          "prompt": "Write with jóllehet: Although the government promised a lot, the experts see problems.",
+          "answer": "Jóllehet a kormány sokat ígért, a szakértők problémákat látnak."
         }
       ],
       "teaches": [

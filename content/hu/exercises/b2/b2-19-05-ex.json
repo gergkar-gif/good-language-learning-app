@@ -8,7 +8,7 @@
       "stage": "introduce",
       "question": "What did the social class 'cselédség' represent in pre-1945 Hungarian rural society?",
       "options": [
-        "contract-bound manorial farmhands living permanently on large agrarian estates with few legal rights",
+        "contract-bound farmhands living on large manorial estates with few legal rights",
         "independent, wealthy burghers residing in prosperous chartered royal towns",
         "university professors lecturing on modern agricultural techniques"
       ],
@@ -65,11 +65,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the sentence correctly combining participial left-branching with a spatial postposition:",
+      "question": "Select the sentence correctly combining a participle with a spatial postposition:",
       "options": [
-        "A folyó mentén elterülő árterek gazdag madárvilágnak adnak otthont.",
-        "A folyó elterülő mentén árterek madárvilágnak gazdag adnak otthont.",
-        "A mentén folyó árterek otthont adnak madárvilágnak gazdag."
+        "A folyó mentén elterülő mezők sok madárnak adnak otthont.",
+        "A folyó elterülő mentén mezők sok madárnak adnak otthont.",
+        "A mentén folyó elterülő mezők sok madárnak adnak otthont."
       ],
       "correct": 0,
       "teaches": [
@@ -81,11 +81,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which phrasing correctly describes a settlement on the other side of the river:",
+      "question": "Which phrasing correctly describes a village on the other side of the river?",
       "options": [
         "a Dunán túl fekvő falu",
-        "a Duna fekvő túl falu",
-        "a túl Dunán falu fekvő"
+        "a Dunát túl fekvő falu",
+        "a Duna túl fekvő falu"
       ],
       "correct": 0,
       "teaches": [
@@ -110,10 +110,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Szerte a vidéken a gazdák megőrizték az egy ____ ezelőtt élt elődök szerszámait.",
-      "hint": "generation / lifetime",
+      "sentence": "Szerte a vidéken egy ____ ezelőtt még minden gazda a földből élt.",
+      "hint": "emberöltő, instrumental",
       "answer": "emberöltővel",
-      "english": "Throughout the countryside, farmers preserved the tools of ancestors who lived a generation ago.",
+      "english": "Throughout the countryside, a generation ago every farmer still lived from the land.",
       "teaches": [
         "b2-spatial-postpositions"
       ]
@@ -155,10 +155,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A Tolna megyei uradalmakban a kiszolgáltatott ____ kemény fizikai munkával tartotta el családját.",
+      "sentence": "A nagy birtokon a ____ nehéz munkával tartotta el a családját.",
       "hint": "servant class",
       "answer": "cselédség",
-      "english": "In the manors of Tolna county, the vulnerable servant class supported its families with hard physical labor.",
+      "english": "On the big estate the farmhands supported their families with hard work.",
       "teaches": [
         "b2-landscape-belonging-regional-character-vocab"
       ]
@@ -203,7 +203,7 @@
       "prompt": [
         {
           "speaker": "Irodalomtörténész",
-          "text": "Miért számít Illyés Puszták népe című műve alapvető szövegnek?"
+          "text": "Mi van a fasorokon túl a történetben?"
         },
         {
           "speaker": "Egyetemi oktató",
@@ -211,9 +211,9 @@
         }
       ],
       "options": [
-        "Mert a táj leírását egybefűzi a cselédség sorsának megrázó, szociográfiai pontosságú ábrázolásával.",
-        "Mert a táj leírása egybefűzi a cselédség sorsát megrázó, szociográfiai pontosságú ábrázolással.",
-        "Mert a táj leírását egybefűzné a cselédség sorsának megrázva, szociográfiai pontosságból ábrázolásán."
+        "A fasorokon túl nincs más, csak a birtok földje.",
+        "A fasorokat túl nincs más, csak a birtok földje.",
+        "A fasorokon mentén nincs más, csak a birtok földje."
       ],
       "correct": 0,
       "teaches": [
@@ -228,7 +228,7 @@
       "prompt": [
         {
           "speaker": "Kutató",
-          "text": "Hogyan élték meg a pusztai emberek a külvilágtól való elszigeteltséget?"
+          "text": "Hol laknak a cselédek a történetben?"
         },
         {
           "speaker": "Muzeológus",
@@ -236,9 +236,9 @@
         }
       ],
       "options": [
-        "A határ mentén húzódó fasorokon túli világot szinte elérhetetlennek tartották, így belső szolidaritást alakítottak ki.",
-        "A határ mentében húzódó fasorokon túl világot szinte elérhetetlennek tartották, így belső szolidaritást alakítottak ki.",
-        "A határ mentén húzódó fasorokat túli világot szinte elérhetetlenül tartották, így belső szolidaritásban alakítottak ki."
+        "Az út mentén álló fehér házakban laknak.",
+        "Az út mentében álló fehér házakban laknak.",
+        "Az utat mentén álló fehér házakban laknak."
       ],
       "correct": 0,
       "teaches": [
@@ -252,8 +252,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence combining 'a látóhatáron túl' with 'összetartozás' in a literary description.",
-          "answer": "Bár a tanyák messze elszórtan álltak a látóhatáron túl, az összetartozás érzése összekötötte a pusztai családokat."
+          "prompt": "Write a sentence with 'a látóhatáron túl' and 'összetartozás': the farms are far away, but people feel they belong together.",
+          "answer": "A tanyák messze vannak a látóhatáron túl, de az emberek összetartozást éreznek."
         }
       ],
       "teaches": [
@@ -267,8 +267,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence evaluating Illyés Gyula's portrait of the estate servants.",
-          "answer": "Illyés Gyula könyvében a Sió mentén élő cselédség mindennapjait az emberi méltóság és a szívós kitartás fényében mutatta be."
+          "prompt": "Write a sentence about the servants in the story, using 'szívós'.",
+          "answer": "A történetben a cselédek szívós emberek, akik nehéz munkával élnek."
         }
       ],
       "teaches": [
@@ -280,10 +280,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A Duna mentén és a Dunán ____ fekvő tájak gazdag kulturális örökséget őriznek.",
+      "sentence": "A Duna mentén és a Dunán ____ fekvő falvak nagyon szépek.",
       "hint": "beyond",
       "answer": "túl",
-      "english": "The landscapes lying along the Danube and beyond the Danube preserve a rich cultural heritage.",
+      "english": "The villages lying along the Danube and beyond the Danube are very beautiful.",
       "teaches": [
         "b2-spatial-postpositions"
       ]
@@ -296,8 +296,8 @@
       "question": "Which term signifies the mutual feeling of shared identity, solidarity, and belonging?",
       "options": [
         "összetartozás",
-        "látóhatár",
-        "székhely"
+        "egyedüllét",
+        "vándorlás"
       ],
       "correct": 0,
       "teaches": [
@@ -309,11 +309,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Hogyan mérte a távolságot a cselédség a pusztai uradalmon Illyés leírása szerint?",
+      "question": "Hogyan mérik a távolságot a cselédek a történet szerint?",
       "options": [
-        "Napszámban, a munka nehézségében és a barázdák hosszában a hivatalos kilométerek helyett.",
-        "A közeli vasútállomástól mért menetidő alapján.",
-        "Kizárólag a folyók és a patakok folyásirányát követve."
+        "Nem kilométerben, hanem abban, mennyit kell dolgozni.",
+        "Azzal, hogy mennyi idő alatt érnek a vasútállomásra.",
+        "A folyók hosszával."
       ],
       "correct": 0
     },
@@ -322,11 +322,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen hatással volt a pusztai táj végtelen horizontja az ott élő emberek jellemére?",
+      "question": "Milyenek lettek az emberek a puszta miatt a történet szerint?",
       "options": [
-        "Szűkszavú, befelé forduló kitartást és szívós lelkialkatot formált bennük.",
-        "Könnyelművé és állandóan vándorlóvá tette őket.",
-        "Arra ösztönözte őket, hogy azonnal elhagyják a vidéket."
+        "Csendesek lettek, és nagyon kitartóak.",
+        "Nagyon beszédesek lettek, és könnyen elmentek.",
+        "Gyakran elköltöztek, és nem maradtak sehol."
       ],
       "correct": 0
     },
@@ -335,11 +335,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen paradoxont fogalmaz meg az idős béres a földhöz való viszonyukról?",
+      "question": "Mit mondanak a cselédek a földről a történetben?",
       "options": [
-        "Bár jogilag semmijük sincs, a munkájuk és a verejtékük révén mégis mélységesen a magukénak érzik a tájat.",
-        "Azért nem szeretik a földet, mert a földbirtokos minden jogot elvett tőlük.",
-        "A városi élet kényelmét visszasírva teljesen elidegenedtek a természettől."
+        "Nincs saját földjük, de úgy érzik, hogy a föld az övék.",
+        "Van saját földjük, de nem szeretik azt.",
+        "Mindent eladnak, és a városban akarnak élni."
       ],
       "correct": 0
     }

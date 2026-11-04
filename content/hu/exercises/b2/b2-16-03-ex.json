@@ -73,7 +73,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "contrastive-discourse-markers"
+        "concessive-indefinites"
       ]
     },
     {
@@ -97,12 +97,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "____, hogy a reformok kezdetben nehézségekkel jártak, ám hosszú távon meghozták a kívánt eredményt.",
+      "sentence": "____, hogy a terv drága, ám szükség van rá.",
       "hint": "It is indisputable",
-      "answer": "Kétségtelen",
-      "english": "It is indisputable that the reforms initially involved difficulties, however in the long run they brought the desired result.",
+      "english": "It is indisputable that the plan is expensive, but it is needed.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "Kétségtelen",
+        "Igaz"
       ]
     },
     {
@@ -110,12 +113,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Bármennyire meggyőzőnek tűnik ____ a statisztika, a helyszíni tapasztalatok mást mutatnak.",
+      "sentence": "Bármennyire jónak tűnik ____ a terv, sok pénzbe kerül.",
       "hint": "particle in scalar concession",
       "answer": "is",
-      "english": "No matter how convincing the statistics appear, on-the-ground experiences show otherwise.",
+      "english": "No matter how good the plan seems, it costs a lot of money.",
       "teaches": [
-        "contrastive-discourse-markers"
+        "concessive-indefinites"
       ]
     },
     {
@@ -155,10 +158,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A történész hiteles levéltári forrásokkal ____ a korábbi téves feltevéseket.",
-      "hint": "refuted [past 3sg def.]",
+      "sentence": "A szakértő tényekkel ____ az ellenfél véleményét.",
+      "hint": "cáfol, 3sg past, definite",
       "answer": "cáfolta",
-      "english": "The historian refuted the earlier erroneous assumptions with authentic archival sources.",
+      "english": "The expert refuted his opponent's opinion with facts.",
       "teaches": [
         "b2-ideological-debates-public-polemics-vocab"
       ]
@@ -172,23 +175,19 @@
         "A",
         "professzor",
         "érvelése",
-        "logikailag",
-        "kikezdhetetlennek",
-        "bizonyult",
-        "a",
-        "szemináriumon."
+        "meggyőző",
+        "volt",
+        "."
       ],
       "solution": [
         "A",
         "professzor",
         "érvelése",
-        "logikailag",
-        "kikezdhetetlennek",
-        "bizonyult",
-        "a",
-        "szemináriumon."
+        "meggyőző",
+        "volt",
+        "."
       ],
-      "english": "The professor's argumentation proved logically unassailable at the seminar.",
+      "english": "The professor's reasoning was convincing.",
       "teaches": [
         "b2-ideological-debates-public-polemics-vocab"
       ]
@@ -200,18 +199,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Vitatkozó A",
-          "text": "Nem látja be, hogy a digitális oktatás minden hagyományos könyvet feleslegessé tesz?"
+          "speaker": "A",
+          "text": "A telefon mindent helyettesít, a könyvekre nincs szükség."
         },
         {
-          "speaker": "Vitatkozó B",
+          "speaker": "B",
           "text": "____"
         }
       ],
       "options": [
-        "Kétségtelen, hogy a digitális eszközök hasznosak, ám a mélyreható olvasás élményét nem helyettesíthetik.",
-        "Kétségtelen, hogy minden könyvet el kell égetni az iskolákban.",
-        "Mivel a digitális eszközök léteznek, semmi szükség nincs a tanárokra."
+        "Kétségtelen, hogy a telefon hasznos, ám a könyv többet ad.",
+        "Kétségtelen, hogy a telefon hasznos, ezért a könyv többet ad.",
+        "Kétségtelen, hogy a telefon hasznos, mert a könyv többet ad."
       ],
       "correct": 0,
       "teaches": [
@@ -226,7 +225,7 @@
       "prompt": [
         {
           "speaker": "Szerkesztő",
-          "text": "Hogyan válaszolsz az ellenfeleid bírálataira a holnapi számban?"
+          "text": "Mit válaszolsz a bírálóidnak?"
         },
         {
           "speaker": "Publicista",
@@ -234,9 +233,9 @@
         }
       ],
       "options": [
-        "Elismerem a statisztikai pontatlanságokat, mégis megvédem a cikkem alapvető társadalmi tézisét.",
-        "Mindent tagadni fogok, holott nekem van teljesen igazam.",
-        "Azonnal visszavonom a cikket, mert senkivel sem akarok vitatkozni."
+        "Elismerem, hogy hibáztam, mégis igazam van.",
+        "Elismerem, hogy hibáztam, ezért igazam van.",
+        "Elismerem, hogy hibáztam, tehát igazam van."
       ],
       "correct": 0,
       "teaches": [
@@ -250,12 +249,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'Elismerem, hogy... mégis...' conceding an opponent's eloquence while rejecting their thesis.",
-          "answer": "Elismerem, hogy a vitapartner rendkívül ékesszólóan fogalmazott, mégis elutasítom a gazdasági javaslatait."
+          "prompt": "Write with elismerem: I concede that the opponent spoke well, yet I am right.",
+          "answer": "Elismerem, hogy az ellenfél jól beszélt, mégis igazam van."
         },
         {
-          "prompt": "Write a sentence using 'Bármennyire... is' to argue that hard facts outweigh political slogans.",
-          "answer": "Bármennyire hangosak is a politikai jelszavak, a gazdasági tényeket nem lehet elhallgatni."
+          "prompt": "Write with bármennyire … is: No matter how hard the task is, it must be done.",
+          "answer": "Bármennyire nehéz is a feladat, meg kell csinálni."
         }
       ],
       "teaches": [
@@ -269,8 +268,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'Kétségtelen, hogy... ám...' to balance costs and long-term benefits.",
-          "answer": "Kétségtelen, hogy a beruházás óriási áldozatokat követel, ám a jövő nemzedékek érdeke ezt megkívánja."
+          "prompt": "Write with kétségtelen: It is indisputable that the plan is expensive, but it is needed.",
+          "answer": "Kétségtelen, hogy a terv drága, ám szükség van rá."
         }
       ],
       "teaches": [
@@ -282,12 +281,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "____, hogy a költségvetés szűkös, mégis biztosítani kell az iskolák fűtését.",
+      "sentence": "____, hogy drága a terv, mégis szükség van rá.",
       "hint": "I concede that",
-      "answer": "Elismerem",
-      "english": "I concede that the budget is tight, yet the heating of schools must be ensured.",
+      "english": "I concede that the plan is expensive, yet it is needed.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "Elismerem",
+        "Igaz",
+        "Kétségtelen",
+        "Nem tagadom"
       ]
     },
     {
@@ -298,7 +302,7 @@
       "question": "Which verb means to formally dispute and disprove an opponent's statement?",
       "options": [
         "cáfol",
-        "méltat",
+        "elfogad",
         "aláír"
       ],
       "correct": 0,

@@ -8,7 +8,7 @@
       "stage": "introduce",
       "question": "What does the expression 'a sorok között olvasni' mean?",
       "options": [
-        "to read between the lines (understand hidden subtext)",
+        "to understand a hidden meaning",
         "to underline every word with a pencil",
         "to read aloud slowly"
       ],
@@ -20,17 +20,17 @@
     {
       "id": "b2-15-04-intro-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "introduce",
       "question": "What is Aesopian language (ezópusi nyelv) in Hungarian literary history?",
       "options": [
-        "Indirect, allegorical phrasing used to convey truth without alerting censors.",
+        "Indirect, allegorical phrasing that hides the truth from censors.",
         "The ancient Greek dialect used by philosophers in Athens.",
-        "A computer programming language used for statistics."
+        "A computer programming language used for statistical work."
       ],
       "correct": 0,
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     },
     {
@@ -93,17 +93,17 @@
     {
       "id": "b2-15-04-controlled-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "question": "Which sentence describes a literary work with coded depth?",
+      "question": "Which sentence says that a story has a hidden meaning?",
       "options": [
-        "A novella mélyebb jelentésrétegei csak a gondos újraolvasás során tárulnak fel.",
-        "A könyv pontosan százötven oldalból áll és kék a borítója.",
-        "Most tettem a polcra a könyvtári regényt."
+        "A történetnek több jelentésrétege van.",
+        "A történetnek nagyon sok oldala van.",
+        "A történetnek van egy kutyája is."
       ],
       "correct": 0,
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     },
     {
@@ -118,7 +118,6 @@
         "bírálta",
         "a",
         "rendszer",
-        "igazságtalan",
         "döntéseit",
         "."
       ],
@@ -129,11 +128,10 @@
         "bírálta",
         "a",
         "rendszer",
-        "igazságtalan",
         "döntéseit",
         "."
       ],
-      "english": "The author covertly criticized the system's unjust decisions.",
+      "english": "The author covertly criticized the decisions of the system.",
       "teaches": [
         "agentless-constructions"
       ]
@@ -153,14 +151,14 @@
           "gloss": "cautious"
         },
         {
-          "word": "finomított",
-          "inflected": "finomított",
-          "sentence": "A megfogalmazás szándékosan finomított volt a cikkben.",
-          "gloss": "softened"
+          "word": "burkolt",
+          "inflected": "burkolt",
+          "sentence": "A megfogalmazás szándékosan burkolt volt a cikkben.",
+          "gloss": "veiled"
         }
       ],
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     },
     {
@@ -168,10 +166,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A szöveg több egymásra épülő ____ tartalmaz az avatott szemlélő számára.",
-      "hint": "layers of meaning",
-      "answer": "jelentésréteget",
-      "english": "The text contains multiple overlapping layers of meaning for the initiated viewer.",
+      "sentence": "A versnek több ____ van, nem csak egy.",
+      "hint": "jelentésréteg, 3sg possessive",
+      "answer": "jelentésrétege",
+      "english": "The poem has several layers of meaning, not just one.",
       "teaches": [
         "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
@@ -179,17 +177,17 @@
     {
       "id": "b2-15-04-practice-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "question": "In Déry Tibor's Niki, how is political persecution conveyed?",
+      "question": "In the story, how does the writer show the fear of those years?",
       "options": [
-        "Nem politikai jelszavakkal, hanem a mindennapi hiány és a kutya szenvedésének ábrázolásával.",
-        "Nyílt parlamenti viták szó szerinti jegyzőkönyveivel.",
-        "Kizárólag angol nyelvű idézetekkel."
+        "Through the wife and the dog, not speeches.",
+        "Through long speeches made in parliament.",
+        "Through a long list of the new laws."
       ],
       "correct": 0,
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     },
     {
@@ -200,7 +198,7 @@
       "prompt": [
         {
           "speaker": "Egyetemista",
-          "text": "Hogyan tudtak a magyar írók társadalmi kritikát megfogalmazni az ötvenes években?"
+          "text": "Hogyan írhattak az írók a rendszerről a cenzúra idején?"
         },
         {
           "speaker": "Professzor",
@@ -208,13 +206,13 @@
         }
       ],
       "options": [
-        "Történelmi parabolákkal, szimbolikus állattörténetekkel és a sorok közé rejtett utalásokkal.",
-        "Úgy, hogy mindent nyíltan bekiabáltak a minisztérium folyosóján.",
-        "Mert a cenzúra kifejezetten támogatta a rendszer elleni lázadást."
+        "Rejtetten, a sorok között, sok utalással.",
+        "Nyíltan, mindent leírtak az újságban.",
+        "Sehogy: a rendszerről nem írtak semmit."
       ],
       "correct": 0,
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     },
     {
@@ -225,7 +223,7 @@
       "prompt": [
         {
           "speaker": "Kutató",
-          "text": "Miért volt kétértelmű a hatóságok válasza a mérnök feleségének levelére?"
+          "text": "Miért volt kétértelmű a hatóságok válasza?"
         },
         {
           "speaker": "Történész",
@@ -233,13 +231,13 @@
         }
       ],
       "options": [
-        "Mert nem merték leírni a letartóztatás tényét, de elismerni sem akarták az ártatlanságát.",
-        "Mivel a gépírónő véletlenül kétszer nyomtatta ki az oldalt a gépen.",
-        "Igen, hiszen a miniszter személyesen ismerte a kutyát a parkból."
+        "Mert nem akarták megmondani az igazat, de hazudni sem akartak.",
+        "Mert minden szót nagyon pontosan és világosan leírtak.",
+        "Mert a levél túl hosszú volt, és nem olvasták el."
       ],
       "correct": 0,
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     },
     {
@@ -249,12 +247,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write: Under censorship, readers learn to read between the lines.",
-          "answer": "A cenzúra idején az olvasók megtanulnak a sorok között olvasni."
+          "prompt": "Write: Under censorship, readers could read between the lines.",
+          "answer": "A cenzúra idején az olvasók tudtak a sorok között olvasni."
         }
       ],
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     },
     {
@@ -269,7 +267,7 @@
         }
       ],
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     },
     {
@@ -291,14 +289,14 @@
     {
       "id": "b2-15-04-check-2",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "sentence": "A színpadi előadás után mindenki megértette a jelenet rejtett ____.",
-      "hint": "meaning",
-      "answer": "értelmét",
-      "english": "After the stage performance, everyone understood the hidden meaning of the scene.",
+      "sentence": "A szerző ____ bírálta a rendszert, ezért nem tiltották be a könyvet.",
+      "hint": "covertly",
+      "answer": "rejtetten",
+      "english": "The author criticised the system covertly, so the book was not banned.",
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     }
   ]

@@ -68,12 +68,12 @@
       "question": "Which connector best exposes the contradiction: 'Nyugalomról beszélnek, ____ a kormánypártok között mély viszály dúl'?",
       "options": [
         "holott",
-        "jóllehet",
-        "mert"
+        "mert",
+        "tehát"
       ],
       "correct": 0,
       "teaches": [
-        "contrastive-discourse-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -89,7 +89,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "contrastive-discourse-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -97,12 +97,18 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "____ a szerző elismeri a modernizáció előnyeit, nem hagyja figyelmen kívül a szociális károkat sem.",
+      "sentence": "____ a terv jó, sok pénzbe kerül.",
       "hint": "although / albeit",
-      "answer": "Jóllehet",
-      "english": "Although the author acknowledges the benefits of modernization, he does not ignore the social damages either.",
+      "english": "Although the plan is good, it costs a lot of money.",
       "teaches": [
-        "contrastive-discourse-markers"
+        "concessive-annak-ellenere"
+      ],
+      "answers": [
+        "Jóllehet",
+        "Ámbár",
+        "Bár",
+        "Habár",
+        "Noha"
       ]
     },
     {
@@ -110,12 +116,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Minden képviselő támogatta az új javaslatot, ____ a költségvetési fedezet még hiányzott hozzá.",
+      "sentence": "Mindenki támogatta a javaslatot, ____ a pénz még hiányzott hozzá.",
       "hint": "however / the catch being that",
-      "answer": "csakhogy",
-      "english": "Every representative supported the new proposal, only that budgetary coverage was still lacking for it.",
+      "english": "Everybody supported the proposal, only the money was still missing.",
       "teaches": [
-        "contrastive-discourse-markers"
+        "adversative-contrast"
+      ],
+      "answers": [
+        "csakhogy",
+        "de",
+        "viszont",
+        "azonban"
       ]
     },
     {
@@ -124,28 +135,26 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Gazdasági",
-        "fejlődésről",
+        "Nyugalomról",
         "beszélnek,",
         "holott",
-        "az",
-        "ország",
-        "adóssága",
-        "nő."
+        "nagy",
+        "a",
+        "vita",
+        "."
       ],
       "solution": [
-        "Gazdasági",
-        "fejlődésről",
+        "Nyugalomról",
         "beszélnek,",
         "holott",
-        "az",
-        "ország",
-        "adóssága",
-        "nő."
+        "nagy",
+        "a",
+        "vita",
+        "."
       ],
-      "english": "They speak of economic growth, whereas in fact the country's debt is growing.",
+      "english": "They talk of calm, whereas in fact the dispute is big.",
       "teaches": [
-        "contrastive-discourse-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -153,10 +162,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Ady Endre éles hangvételű ____ kavart hatalmas vihart a korabeli sajtóban.",
+      "sentence": "Az újságban megjelent ____ nagy vitát okozott.",
       "hint": "polemical treatise",
-      "answer": "vitairata",
-      "english": "Endre Ady's sharply phrased polemical treatise stirred up a huge storm in the contemporary press.",
+      "answer": "vitairat",
+      "english": "The polemical treatise that appeared in the newspaper caused a big debate.",
       "teaches": [
         "b2-ideological-debates-public-polemics-vocab"
       ]
@@ -168,25 +177,23 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "demokratikus",
         "közélet",
-        "tisztasága",
         "minden",
         "állampolgár",
         "közös",
-        "felelőssége."
+        "ügye",
+        "."
       ],
       "solution": [
         "A",
-        "demokratikus",
         "közélet",
-        "tisztasága",
         "minden",
         "állampolgár",
         "közös",
-        "felelőssége."
+        "ügye",
+        "."
       ],
-      "english": "The purity of democratic public life is the shared responsibility of every citizen.",
+      "english": "Public life is the common concern of every citizen.",
       "teaches": [
         "b2-ideological-debates-public-polemics-vocab"
       ]
@@ -213,7 +220,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "contrastive-discourse-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -224,21 +231,21 @@
       "prompt": [
         {
           "speaker": "Főszerkesztő",
-          "text": "Leadhatjuk nyomdába a vitairat második részét?"
+          "text": "Mehet a vitairat második része az újságba?"
         },
         {
-          "speaker": "Olvasószerkesztő",
+          "speaker": "Szerkesztő",
           "text": "____"
         }
       ],
       "options": [
-        "Igen, jóllehet a jogászok figyelmeztettek a kockázatokra, a szerző vállalta a felelősséget.",
-        "Igen, holott a jogászok szerint nincsen semmi probléma a cikkel.",
-        "Igen, mert a cikk békés dicséretet tartalmaz a kormányról."
+        "Igen, jóllehet a jogász aggódik, a szerző vállalja a felelősséget.",
+        "Igen, holott a jogász aggódik, a szerző vállalja a felelősséget.",
+        "Igen, mert a jogász aggódik, a szerző vállalja a felelősséget."
       ],
       "correct": 0,
       "teaches": [
-        "contrastive-discourse-markers"
+        "concessive-annak-ellenere"
       ]
     },
     {
@@ -248,16 +255,16 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'holott' to contrast official claims of consensus with internal party divisions.",
-          "answer": "A pártvezetés teljes egységről beszélt, holott a színfalak mögött éles viták zajlottak."
+          "prompt": "Write with holott: They talk of peace, whereas in fact the dispute is big.",
+          "answer": "Békéről beszélnek, holott nagy a vita."
         },
         {
-          "prompt": "Write a sentence using 'jóllehet' conceding the difficulty of the reform while defending its necessity.",
-          "answer": "Jóllehet a reform végrehajtása rendkívül nehéz, a társadalmi igazságosság megköveteli a lépést."
+          "prompt": "Write with jóllehet: Although the plan is good, it costs a lot of money.",
+          "answer": "Jóllehet a terv jó, sok pénzbe kerül."
         }
       ],
       "teaches": [
-        "contrastive-discourse-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -267,12 +274,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'csakhogy' to present an excellent academic initiative hampered by lack of funding.",
-          "answer": "A kutatócsoport nagyszerű elméletet dolgozott ki, csakhogy hiányoztak a kísérleti eszközök."
+          "prompt": "Write with csakhogy: Everybody supported the proposal, only the money was missing.",
+          "answer": "Mindenki támogatta a javaslatot, csakhogy hiányzott a pénz."
         }
       ],
       "teaches": [
-        "contrastive-discourse-markers"
+        "adversative-contrast"
       ]
     },
     {
@@ -280,12 +287,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "Sokan elméleti vitának tekintik a kérdést, ____ a döntés közvetlenül érinti a mindennapi életünket.",
+      "sentence": "Sokan úgy gondolják, hogy nincs baj, ____ nagyon rossz a helyzet.",
       "hint": "whereas in fact",
-      "answer": "holott",
-      "english": "Many consider the issue a theoretical debate, whereas in fact the decision directly affects our everyday life.",
+      "english": "Many think that nothing is wrong, whereas in fact the situation is very bad.",
       "teaches": [
-        "contrastive-discourse-markers"
+        "adversative-contrast"
+      ],
+      "answers": [
+        "holott",
+        "pedig"
       ]
     },
     {
@@ -296,7 +306,7 @@
       "question": "Which noun refers to the collective sphere of political and social affairs?",
       "options": [
         "közélet",
-        "magánélet",
+        "család",
         "kávéház"
       ],
       "correct": 0,

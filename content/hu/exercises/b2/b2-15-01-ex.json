@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "introduce",
-      "question": "How does authentic Hungarian avoid the passive voice when the agent is unknown or unspecified?",
+      "question": "Which sentence says that a book was banned without saying who banned it?",
       "options": [
-        "Using agentless 3rd-person plural verbs: elhallgatják, betiltották.",
-        "Using the conditional past with 'lett volna'.",
-        "Repeating the subject noun five times in each sentence."
+        "Betiltották a könyvet.",
+        "Betiltotta a könyvet.",
+        "A könyvet betiltottak."
       ],
       "correct": 0,
       "teaches": [
@@ -82,10 +82,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A diktatúrában a szigorú sajtó-____ miatt nem jelenhettek meg a valós hírek.",
+      "sentence": "A diktatúrában szigorú ____ volt, ezért sok könyvet betiltottak.",
       "hint": "censorship",
       "answer": "cenzúra",
-      "english": "Under the dictatorship, real news could not appear due to strict press censorship.",
+      "english": "Under the dictatorship there was strict censorship, so many books were banned.",
       "teaches": [
         "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
@@ -141,19 +141,19 @@
       "type": "substitution",
       "category": "grammar",
       "stage": "practice",
-      "base_sentence": "Hamarosan kiderült az igazság a tárgyaláson.",
+      "base_sentence": "Hamarosan kiderült a dolog a tárgyaláson.",
       "base_word": "kiderült",
       "options": [
         {
           "word": "tisztázódott",
           "inflected": "tisztázódott",
-          "sentence": "Hamarosan tisztázódott az igazság a tárgyaláson.",
+          "sentence": "Hamarosan tisztázódott a dolog a tárgyaláson.",
           "gloss": "became cleared up"
         },
         {
           "word": "megoldódott",
           "inflected": "megoldódott",
-          "sentence": "Hamarosan megoldódott az igazság a tárgyaláson.",
+          "sentence": "Hamarosan megoldódott a dolog a tárgyaláson.",
           "gloss": "got resolved"
         }
       ],
@@ -164,14 +164,14 @@
     {
       "id": "b2-15-01-practice-3",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "practice",
-      "sentence": "A hivatalos közleményben szándékosan ____ a legfontosabb tényeket.",
-      "hint": "they concealed",
+      "sentence": "Az újságban sokáig ____ a legfontosabb tényeket.",
+      "hint": "elhallgat, 3pl past, definite",
       "answer": "elhallgatták",
-      "english": "In the official communiqué, they deliberately concealed the most important facts.",
+      "english": "For a long time they concealed the most important facts in the newspaper.",
       "teaches": [
-        "b2-censorship-ambiguity-indirect-expression-vocab"
+        "agentless-constructions"
       ]
     },
     {
@@ -179,11 +179,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "practice",
-      "question": "Why is 'A könyv be lett tiltva' avoided in good Hungarian writing?",
+      "question": "Which sentence is the natural Hungarian way to say \"The book was banned\"?",
       "options": [
-        "Mert idegenszerű passzív szerkezet; helyette a természetes 'Betiltották a könyvet' használandó.",
-        "Mert a 'tiltva' szót nem ismeri a magyar nyelv.",
-        "Mert csak latin szavakat szabad használni a mondatban."
+        "Betiltották a könyvet.",
+        "A könyv be lett tiltva.",
+        "Betiltotta a könyvet."
       ],
       "correct": 0,
       "teaches": [
@@ -198,7 +198,7 @@
       "prompt": [
         {
           "speaker": "Feleség",
-          "text": "Miért nem kapott értesítést a család a mérnök hollétéről a hatóságoktól?"
+          "text": "Miért nem tud a család semmit a mérnökről?"
         },
         {
           "speaker": "Ügyvéd",
@@ -206,9 +206,9 @@
         }
       ],
       "options": [
-        "Mert az ilyen politikai ügyeket a hatalom képviselői teljesen elhallgatták a nyilvánosság elől.",
-        "Mert az ilyen politikai ügyeket a hatalom képviselői teljesen elhallgattak a nyilvánosság elől.",
-        "Mert az ilyen politikai ügyek a hatalom képviselői teljesen elhallgatták a nyilvánosságnak."
+        "Mert az egész ügyet elhallgatták.",
+        "Mert az egész ügy elhallgatták.",
+        "Mert az egész ügyet elhallgattak."
       ],
       "correct": 0,
       "teaches": [
@@ -223,7 +223,7 @@
       "prompt": [
         {
           "speaker": "Kolléga",
-          "text": "Vajon mikor tisztázódik végre a letartóztatott szakemberek helyzete?"
+          "text": "Mikor derül ki végre az igazság a mérnökről?"
         },
         {
           "speaker": "Barát",
@@ -231,9 +231,9 @@
         }
       ],
       "options": [
-        "Csak akkor, ha az ügyek független bíróság elé kerülnek, és minden körülmény kiderül.",
-        "Csak akkor, ha az ügyek független bíróság elé kerülnének, és minden körülmény kiderült volna.",
-        "Csak akkor, amennyiben az ügyek független bíróság előtt kerülnek, és minden körülményt kiderül."
+        "Csak akkor derül ki, ha az ügy bíróság elé kerül.",
+        "Csak akkor derül ki, ha az ügyet bíróság elé kerül.",
+        "Csak akkor derül ki, ha az ügy bíróság elé kerülnek."
       ],
       "correct": 0,
       "teaches": [
@@ -262,8 +262,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write: After years of silence, the truth finally turned out.",
-          "answer": "Évekig tartó hallgatás után végül kiderült az igazság."
+          "prompt": "Write: After many years the truth finally came out.",
+          "answer": "Sok év után végül kiderült az igazság."
         }
       ],
       "teaches": [

@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "introduce",
-      "question": "How do we convert an accusatory statement into diplomatic Hungarian?",
+      "question": "How do we turn \"Te hibáztál!\" into diplomatic Hungarian?",
       "options": [
-        "Focus on the process impersonally: 'Úgy tűnik, a kérdés további tisztázásra szorul'.",
-        "Use capital letters and multiple exclamation marks.",
-        "Threaten the other party with immediate punishment."
+        "Describe the matter impersonally, without 'you'.",
+        "Say it louder, and name who is to blame.",
+        "Add please, but still say 'you were wrong'."
       ],
       "correct": 0,
       "teaches": [
@@ -95,11 +95,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which version is the most diplomatic rewrite of 'A cég hazudott a számokról'?",
+      "question": "Which version is the most diplomatic rewrite of \"A cég hazudott a számokról\"?",
       "options": [
-        "A közzétett adatok bizonyos tekintetben pontosításra szorulnak.",
-        "A cég vezetői mind csalók és bűnözők!",
-        "Most zárva van a cég központi irodája."
+        "Az adatok bizonyos pontosításra szorulnak.",
+        "A cég vezetői nem mondtak igazat a számokról.",
+        "A cég hazudott, a számok egyszerűen rosszak."
       ],
       "correct": 0,
       "teaches": [
@@ -168,10 +168,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A diplomáciai tárgyalásokon alapvető elvárás a higgadt és ____ megközelítés.",
+      "sentence": "Egy hivatalos levélben fontos a ____ hangnem.",
       "hint": "objective",
       "answer": "tárgyilagos",
-      "english": "In diplomatic negotiations, a calm and objective approach is a fundamental expectation.",
+      "english": "In an official letter an objective tone is important.",
       "teaches": [
         "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
@@ -181,11 +181,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "practice",
-      "question": "How does passive-avoidance through nominalization support a diplomatic tone?",
+      "question": "Why is \"Az adatok pontosításra szorulnak\" more diplomatic than \"Hazudtál!\"?",
       "options": [
-        "Elveszi a közvetlen vád élét azáltal, hogy nem nevezi meg a konkrét bűnöst.",
-        "Kötelezővé teszi a latin szavak használatát a levélben.",
-        "Lehetővé teszi, hogy senki ne válaszoljon a kérdésekre."
+        "It does not blame a person.",
+        "It sounds louder.",
+        "It uses longer words only."
       ],
       "correct": 0,
       "teaches": [
@@ -200,7 +200,7 @@
       "prompt": [
         {
           "speaker": "Titkár",
-          "text": "Hogyan válaszoljunk erre a kifejezetten agresszív hangvételű panaszra?"
+          "text": "Hogyan válaszoljunk erre a mérges levélre?"
         },
         {
           "speaker": "Igazgató",
@@ -208,13 +208,13 @@
         }
       ],
       "options": [
-        "Válaszoljunk higgadtan és tárgyilagosan, tisztázva a tényeket személyeskedés nélkül.",
-        "Azonnal hívjuk fel a rendőrséget és pereljük be az ügyfelet.",
-        "Tépjük szét a panaszt, és tegyünk úgy, mintha meg sem érkezett volna."
+        "Válaszoljunk tárgyilagosan, a tényekről írjunk, ne a személyről.",
+        "Válaszoljunk mi is mérgesen, és írjuk meg, hogy ő hibázott.",
+        "Ne válaszoljunk semmit, és felejtsük el a levelet."
       ],
       "correct": 0,
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     },
     {
@@ -225,7 +225,7 @@
       "prompt": [
         {
           "speaker": "Olvasó",
-          "text": "Mi a tanulsága Ancsa Jánosné tragikus küzdelmének Déry regényében?"
+          "text": "Ki volt Ancsa Jánosné mellett a nehéz években?"
         },
         {
           "speaker": "Kritikus",
@@ -233,13 +233,13 @@
         }
       ],
       "options": [
-        "A hűség és az erkölcsi tisztesség felülmúlja a személytelen önkényuralmi gépezetet.",
-        "Hogy a mérnököknek tilos vadászkutyát tartaniuk a budai lakásban.",
-        "Hogy a minisztérium minden beadványt huszonnégy órán belül teljesített."
+        "Csak a kutyája, Niki.",
+        "A szomszédok és a régi barátok.",
+        "A minisztérium tisztviselői."
       ],
       "correct": 0,
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     },
     {
@@ -249,12 +249,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write: An objective tone helps clarify positions without hurting others.",
-          "answer": "A tárgyilagos hangnem segít tisztázni az álláspontokat mások megbántása nélkül."
+          "prompt": "Write: An objective tone helps clarify the matter.",
+          "answer": "A tárgyilagos hangnem segít tisztázni az ügyet."
         }
       ],
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     },
     {
@@ -269,7 +269,7 @@
         }
       ],
       "teaches": [
-        "agentless-constructions"
+        "b2-censorship-ambiguity-indirect-expression-vocab"
       ]
     },
     {
@@ -306,11 +306,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Mi történt Ancsa János mérnökkel az ötvenes évek elején?",
+      "question": "Mi történt a mérnökkel egy őszi délutánon?",
       "options": [
-        "Váratlanul letartóztatták, és a hatóságok semmiféle felvilágosítást nem adtak a feleségének a hollétéről.",
-        "Külföldre utazott egy nemzetközi bányászati konferenciára, és ott telepedett le.",
-        "Önszántából elköltözött a budai házból, hogy új kutatóintézetet alapítson vidéken."
+        "Nem ment haza, és a család nem tudta, hol van.",
+        "Más városba ment dolgozni, és ott maradt.",
+        "Új házat vett a feleségének és a kutyának."
       ],
       "correct": 0
     },
@@ -319,11 +319,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Hogyan viselkedtek a szomszédok és a barátok Ancsa Jánosnéval a férje eltűnése után?",
+      "question": "Hogyan viselkedtek a szomszédok és a régi barátok Ancsa Jánosnéval?",
       "options": [
-        "A félelem miatt elfordították a fejüket, elhallgattak, és elkerülték a vele való érintkezést.",
-        "Minden nap ételt vittek neki, és tüntetést szerveztek a minisztérium előtt.",
-        "Kiköltöztették őt egy tágasabb villába a Duna partján."
+        "Féltek, és nem beszéltek vele.",
+        "Minden nap segítettek neki.",
+        "Együtt mentek vele a minisztériumba."
       ],
       "correct": 0
     },
@@ -332,11 +332,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Mi tette Déry Tibor regényét a korabeli olvasók számára felejthetetlenné?",
+      "question": "Mit mutat meg a történet a kutya sorsán keresztül?",
       "options": [
-        "A sorok között a hűséges kutya sorsán keresztül az önkényuralom és az emberi kiszolgáltatottság tragédiáját ábrázolta.",
-        "Mert részletes útmutatót adott a vadászkutyák helyes etetéséről és gondozásáról.",
-        "Mert kizárólag a budai kertek növényvilágáról és virágairól szólt."
+        "Hogy mennyire nehéz volt akkor az emberek élete.",
+        "Hogy milyen jó volt akkor az emberek élete.",
+        "Hogy hogyan kell tanítani egy kutyát."
       ],
       "correct": 0
     }

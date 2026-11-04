@@ -8,9 +8,9 @@
       "stage": "recognize",
       "question": "Which sentence demonstrates proper use of 'a Dunán túl' and 'a folyó mentén'?",
       "options": [
-        "A folyó mentén fekvő sétányról jól láthatók a Dunán túl húzódó dombok.",
-        "A folyó túl fekvő sétányról jól láthatók a Dunán mentén húzódó dombok.",
-        "A folyón mentén sétányról jól láthatók a Duna túl dombok."
+        "A folyó mentén sétáltunk, és a Dunán túl láttuk a dombokat.",
+        "A folyó mentén sétáltunk, és a Dunát túl láttuk a dombokat.",
+        "A folyót mentén sétáltunk, és a Dunán túl láttuk a dombokat."
       ],
       "correct": 0,
       "teaches": [
@@ -49,9 +49,9 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Which regional pairing correctly matches each toponym with its required case suffix?",
+      "question": "Which pair gives each region the right ending?",
       "options": [
-        "az Alföldön (surface) és a Bakonyban (enclosure)",
+        "az Alföldön és a Bakonyban",
         "az Alföldben és a Bakonyon",
         "az Alföldnél és a Bakonyhoz"
       ],
@@ -65,10 +65,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A végtelen délibábos puszta szélén a nap lassan lebukott a tágas ____ mögé.",
+      "sentence": "Messze, a ____ szélén lassan eltűnt a nap.",
       "hint": "horizon",
       "answer": "látóhatár",
-      "english": "At the edge of the endless mirage-filled steppe, the sun slowly sank behind the spacious horizon.",
+      "english": "Far away, at the edge of the horizon, the sun slowly disappeared.",
       "teaches": [
         "b2-landscape-belonging-regional-character-vocab"
       ]
@@ -78,10 +78,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A Dunán ____ szelíd dombvidék, a folyón túl végtelen síkság terül el.",
+      "sentence": "A Dunán ____ dombvidék van, a folyón túl nagy síkság.",
       "hint": "on this side of",
       "answer": "innen",
-      "english": "On this side of the Danube gentle rolling hills, beyond the river an endless plain stretches out.",
+      "english": "On this side of the Danube there is hilly country, beyond the river a big plain.",
       "teaches": [
         "b2-spatial-postpositions"
       ]
@@ -96,7 +96,7 @@
       "answer": "felutaztak",
       "english": "Over the weekend, the young researchers traveled up to the capital to the scientific conference.",
       "teaches": [
-        "b2-spatial-postpositions"
+        "directional-preverbs"
       ]
     },
     {
@@ -106,7 +106,7 @@
       "stage": "in-context",
       "question": "Choose the sentence that accurately characterizes the regional distribution of folk traditions:",
       "options": [
-        "Szerte a Kárpát-medencében a falu mentén megmaradtak az ősi kézműves mesterségek.",
+        "Szerte a Kárpát-medencében sok falu őrzi a régi hagyományokat.",
         "Végig a Kárpát-medencében a falu alatt nem éltek emberek.",
         "Túl a Kárpát-medencén nincsenek folyók vagy hegyek."
       ],
@@ -123,7 +123,7 @@
       "prompt": [
         {
           "speaker": "Helytörténész",
-          "text": "Hogyan jellemezné a Duna két partja közötti kulturális különbségeket?"
+          "text": "Mi a különbség a Duna két partja között?"
         },
         {
           "speaker": "Etnográfus",
@@ -131,9 +131,9 @@
         }
       ],
       "options": [
-        "A Dunán innen a római és nyugati hatások dominálnak, míg a folyón túl a török kor utáni alföldi kultúra hagyott mélyebb nyomokat.",
-        "A Dunát innen a római és nyugati hatások dominálnak, míg a folyót túl a török kor utáni alföldi kultúra hagyott mélyebb nyomokat.",
-        "A Dunában innen a római és nyugati hatások dominálnak, míg a folyónak túl a török kor utáni alföldi kultúra hagyott mélyebb nyomokat."
+        "A Dunán innen dombok vannak, míg a folyón túl nagy síkság terül el.",
+        "A Dunát innen dombok vannak, míg a folyón túl nagy síkság terül el.",
+        "A Dunán innen dombok vannak, míg a folyót túl nagy síkság terül el."
       ],
       "correct": 0,
       "teaches": [
@@ -147,7 +147,7 @@
       "stage": "in-context",
       "question": "Why is 'lemegy vidékre' used instead of a neutral compass direction?",
       "options": [
-        "Because Hungarian conventionally uses vertical downward preverbs for traveling away from the centralized capital to the provinces.",
+        "Because Hungarian uses downward preverbs for going from the capital to the provinces.",
         "Because all provinces in Hungary lie strictly at lower geographic elevations than Budapest.",
         "Because it is an informal slang word banned from academic essays."
       ],
@@ -227,8 +227,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause essay paragraph synthesizing 'a Dunán innen és túl' (boundaries), 'szerte az országban' (distribution), and 'a tájhoz való kötődés' (attachment to landscape).",
-          "answer": "A Dunán innen és túl eltérő tájegységek és nyelvjárások formálódtak az évszázadok során; mindazonáltal szerte az országban azonos kulturális alapok kötik össze a településeket; és a szülőföld tájához való mély kötődés máig a közösségi identitás legfontosabb forrása."
+          "prompt": "Write a three-clause paragraph with 'a Dunán innen és túl', 'szerte az országban' and 'a tájhoz való kötődés'.",
+          "answer": "A Dunán innen és túl más a táj; szerte az országban sok falu őrzi a régi hagyományokat; és az emberek mélyen kötődnek a tájhoz."
         }
       ],
       "teaches": [

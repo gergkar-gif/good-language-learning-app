@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is a 'vezércikk' in the Hungarian newspaper tradition?",
+      "question": "What is a \"vezércikk\" in the Hungarian newspaper tradition?",
       "options": [
-        "the front-page leading editorial articulating the publication's stance on key public events",
-        "a small classified advertisement printed in the back pages",
-        "a brief daily weather forecast with astrological predictions"
+        "the main article that states the paper's view",
+        "a small classified advertisement at the back",
+        "a short daily weather report with a map"
       ],
       "correct": 0,
       "teaches": [
@@ -26,7 +26,7 @@
       "options": [
         "meggyőzőerő",
         "visszhang",
-        "szóbeszéd"
+        "vita"
       ],
       "correct": 0,
       "teaches": [
@@ -68,8 +68,8 @@
       "question": "In an op-ed refutation, which connector best links an acknowledged objection to the primary thesis?",
       "options": [
         "mindazonáltal",
-        "mert",
-        "így"
+        "ennélfogva",
+        "következésképpen"
       ],
       "correct": 0,
       "teaches": [
@@ -81,11 +81,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which sequence correctly reflects the rhetorical progression of a classical polemical essay?",
+      "question": "In which order does a classical op-ed move?",
       "options": [
-        "Tézis -> Engedmény (jóllehet) -> Cáfolat (ezzel szemben) -> Szintézis",
-        "Cáfolat -> Pletyka -> Bocsánatkérés -> Hirdetés",
-        "Engedmény -> Semlegesség -> Bizonytalanság -> Csend"
+        "Thesis, concession, refutation, synthesis",
+        "Refutation, concession, thesis, synthesis",
+        "Synthesis, thesis, refutation, concession"
       ],
       "correct": 0,
       "teaches": [
@@ -97,12 +97,18 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "____ a cikk stílusa provokatív, a mondanivalója mély társadalmi igazságot hordoz.",
+      "sentence": "____ a cikk stílusa éles, igaza van.",
       "hint": "Although / Albeit",
-      "answer": "Jóllehet",
-      "english": "Although the style of the article is provocative, its message carries deep social truth.",
+      "english": "Although the style of the article is sharp, it is right.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "Jóllehet",
+        "Ámbár",
+        "Bár",
+        "Habár",
+        "Noha"
       ]
     },
     {
@@ -110,12 +116,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A konzervatív sajtó a hagyományok megőrzését követeli. ____ a modern vezércikk írója a haladás mellett kötelezi el magát.",
+      "sentence": "A kormány azt mondja, hogy jó a helyzet. ____ az újság szerint rossz.",
       "hint": "In contrast to this",
-      "answer": "Ezzel szemben",
-      "english": "The conservative press demands the preservation of traditions. In contrast to this, the author of the modern editorial commits himself to progress.",
+      "english": "The government says the situation is good. In contrast to this, according to the paper it is bad.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "Ezzel szemben",
+        "Ellenben",
+        "Viszont"
       ]
     },
     {
@@ -157,10 +167,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A vitacikk páratlan stílusbeli ____ ragadta magával az olvasókat.",
-      "hint": "persuasive power [ins.]",
+      "sentence": "A szerkesztő nagy ____ beszélt.",
+      "hint": "meggyőzőerő, with",
       "answer": "meggyőzőerővel",
-      "english": "The polemical article captivated readers with peerless stylistic persuasive power.",
+      "english": "The editor spoke with great persuasive power.",
       "teaches": [
         "b2-ideological-debates-public-polemics-vocab"
       ]
@@ -171,26 +181,22 @@
       "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "Ady",
-        "Endre",
-        "publicisztikája",
-        "mindmáig",
-        "a",
-        "magyar",
-        "újságírás",
-        "csúcsteljesítménye."
+        "A",
+        "vezércikk",
+        "nagy",
+        "visszhangot",
+        "keltett",
+        "."
       ],
       "solution": [
-        "Ady",
-        "Endre",
-        "publicisztikája",
-        "mindmáig",
-        "a",
-        "magyar",
-        "újságírás",
-        "csúcsteljesítménye."
+        "A",
+        "vezércikk",
+        "nagy",
+        "visszhangot",
+        "keltett",
+        "."
       ],
-      "english": "Endre Ady's publicistics remains to this day the peak achievement of Hungarian journalism.",
+      "english": "The editorial caused a big response.",
       "teaches": [
         "b2-ideological-debates-public-polemics-vocab"
       ]
@@ -203,7 +209,7 @@
       "prompt": [
         {
           "speaker": "Gyakornok",
-          "text": "Hogyan tehetem a vezércikkemet meggyőzőbbé a szerkesztőségi értekezleten?"
+          "text": "Hogyan írjak jó vezércikket?"
         },
         {
           "speaker": "Főszerkesztő",
@@ -211,9 +217,9 @@
         }
       ],
       "options": [
-        "Ne söpörd le az ellenfeleid érveit: tegyél engedményt, majd a tények erejével mutasd be a belső ellentmondásaikat!",
-        "Egyszerűen ismételgesd a saját véleményedet egyre hangosabban mindenféle érvelés nélkül.",
-        "Töröld ki a tézist, hogy senki se tudja, miről szól a cikk."
+        "Mondd el a tézist, tegyél engedményt, aztán cáfold az ellenfelet.",
+        "Először cáfold az ellenfelet, aztán mondd el a tézist.",
+        "Csak írd le a saját véleményedet, érvek nélkül."
       ],
       "correct": 0,
       "teaches": [
@@ -228,17 +234,17 @@
       "prompt": [
         {
           "speaker": "Olvasó",
-          "text": "Milyen visszhangot kapott a szombati számban megjelent vitairat?"
+          "text": "Mit mondott a szerkesztő a történetben a vitairatról?"
         },
         {
-          "speaker": "Szerkesztő",
+          "speaker": "Barát",
           "text": "____"
         }
       ],
       "options": [
-        "Rendkívül élénk volt a visszhang: sokan támadták, mások ellenben a bátorságát méltatták a kávéházakban.",
-        "Senki sem olvasta el, holott mindenki fejből tudta az összes bekezdést.",
-        "A hatóságok megdicsérték, mert a cikk semmilyen közéleti kérdést nem érintett."
+        "Elismerte, hogy a vitairat jó, mégis félt a cenzúrától.",
+        "Azt mondta, hogy a vitairat rossz, és nem érdemes kiadni.",
+        "Azt mondta, hogy nem érdekli a vitairat."
       ],
       "correct": 0,
       "teaches": [
@@ -252,12 +258,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write an opening sentence for an op-ed using 'Jóllehet' to concede a point before stating your thesis.",
-          "answer": "Jóllehet a gazdasági mutatók pillanatnyilag stabilitást jeleznek, a strukturális problémák azonnali cselekvést követelnek."
+          "prompt": "Write with jóllehet: Although the figures look good now, the problems remain.",
+          "answer": "Jóllehet a számok most jónak látszanak, a gondok megmaradnak."
         },
         {
-          "prompt": "Write a concluding sentence for an op-ed using 'Ezzel szemben' to highlight your moral stance.",
-          "answer": "A cinikus politikusok a megalkuvást hirdetik; ezzel szemben mi az elvekhez való hűséget tekintjük az egyetlen járható útnak."
+          "prompt": "Write with ezzel szemben: Many keep silent. In contrast, we write the truth.",
+          "answer": "Sokan hallgatnak. Ezzel szemben mi megírjuk az igazat."
         }
       ],
       "teaches": [
@@ -271,8 +277,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence reflecting on Ady Endre's publicistic impact using 'vezércikk' and 'visszhang'.",
-          "answer": "Ady Endre minden egyes vezércikke hatalmas társadalmi visszhangot keltett, és alapjaiban rázta meg a korabeli közéletet."
+          "prompt": "Write with vezércikk and visszhang: The editorial got a big response.",
+          "answer": "A vezércikk nagy visszhangot kapott."
         }
       ],
       "teaches": [
@@ -284,12 +290,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A vitairat szerzője elismeri a feladat nehézségét, ____ nem mond le a radikális átalakítás szükségességéről.",
+      "sentence": "A terv nehéz, ____ nem mondunk le róla.",
       "hint": "nevertheless",
-      "answer": "mindazonáltal",
-      "english": "The author of the polemical treatise acknowledges the difficulty of the task; nevertheless, he does not renounce the necessity of radical transformation.",
+      "english": "The plan is hard; nevertheless, we do not give it up.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "mindazonáltal",
+        "ugyanakkor"
       ]
     },
     {
@@ -313,11 +322,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Miért tartotta aggályosnak a szerkesztő Ady Endre vitairatát?",
+      "question": "Miért aggódott a szerkesztő a történetben?",
       "options": [
-        "Mert úgy vélte, a túlságosan éles bírálat sajtópert és cenzúrát vonhat maga után a lap ellen.",
-        "Mert Ady nem adott le időben elegendő kéziratot a másnapi lapzártáig.",
-        "Mert a kormánypárti újságok dicséretét akarta elnyerni egy békülékeny írással."
+        "Félt, hogy a cenzúra és a sajtóper bajt okoz a lapnak.",
+        "Nem kapott elég cikket a másnapi laphoz.",
+        "Azt akarta, hogy Ady a kormány mellett írjon."
       ],
       "correct": 0
     },
@@ -326,11 +335,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen ellentétet emel ki Ady a hivatalos állítások és a valóság között?",
+      "question": "Mit mond Ady a történetben a hivatalos sajtóról?",
       "options": [
-        "Jóllehet felvirágzást hirdetnek, az ország népe valójában elmaradottságban és szellemi sötétségben él.",
-        "A politikusok mély válságról beszélnek, holott valójában általános jólét tapasztalható.",
-        "A szerkesztők félnek a nyilvánosságtól, ellenben a politikusok támogatják a szabad sajtót."
+        "Hamis képet mutat: szerinte rossz az emberek élete.",
+        "Igazat ír: szerinte jó az emberek élete.",
+        "Nem fontos, mert kevesen olvassák."
       ],
       "correct": 0
     },
@@ -339,11 +348,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen döntést hozott végül a szerkesztő a beszélgetés lezárásakor?",
+      "question": "Mit döntött végül a szerkesztő a történetben?",
       "options": [
-        "Vállalta a kockázatot, és a vezércikket az első oldalon jelentette meg másnap reggel.",
-        "Törölte a legélesebb mondatokat a kormánypárti körök megnyugtatása érdekében.",
-        "Megkérte Adyt, hogy írjon inkább egy könnyed tárcát a kávéházi pletykákról."
+        "A vezércikk másnap megjelenik, és vállalják a kockázatot.",
+        "Nem adja ki a cikket, mert túl éles a hangja.",
+        "Másik cikket kér Adytól, egy könnyű írást."
       ],
       "correct": 0
     }

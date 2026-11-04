@@ -65,11 +65,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which frame correctly attributes a contested claim to an institution without verifying it?",
+      "question": "Which frame attributes a contested claim to a shop without checking it?",
       "options": [
-        "A vállalat állítása szerint a termék teljesen biztonságos.",
-        "A vállalat bebizonyította, hogy a termék biztonságos.",
-        "Tudjuk, hogy a termék teljesen biztonságos."
+        "A bolt állítása szerint a termék biztonságos.",
+        "Biztos, hogy a bolt terméke biztonságos.",
+        "Tudjuk, hogy a bolt terméke biztonságos."
       ],
       "correct": 0,
       "teaches": [
@@ -81,15 +81,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the correct case form: 'A miniszter a nemzetbiztonsági kockázatokra ____ utasította el a kérelmet.'",
+      "question": "Choose the form that fits: \"A miniszter a kockázatra ____ nemet mondott.\"",
       "options": [
         "hivatkozva",
-        "hivatkozás",
-        "hivatkozik"
+        "hivatkozik",
+        "hivatkozott"
       ],
       "correct": 0,
       "teaches": [
-        "evidentials"
+        "participle-actions"
       ]
     },
     {
@@ -97,12 +97,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A hatóság leállította a beruházást, ____ hivatkozva, hogy hiányoznak a környezetvédelmi engedélyek.",
+      "sentence": "A bolt zárva maradt, ____ hivatkozva, hogy beteg a főnök.",
       "hint": "cataphoric pronoun",
       "answer": "arra",
-      "english": "The authority halted the investment, citing that the environmental permits were missing.",
+      "english": "The shop stayed closed, citing that the boss is ill.",
       "teaches": [
-        "evidentials"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -110,10 +110,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A helyszínen tartózkodó lakosok ____ alapján a tűz egy elektromos zárlat miatt keletkezett.",
-      "hint": "based on their account",
+      "sentence": "A szemtanú ____ alapján a baleset a sarkon történt.",
+      "hint": "elmondás, 3sg possessive",
       "answer": "elmondása",
-      "english": "Based on the account of the residents present at the scene, the fire arose due to an electrical short circuit.",
+      "english": "Based on the eyewitness's account, the accident happened on the corner.",
       "teaches": [
         "evidentials"
       ]
@@ -128,24 +128,20 @@
         "szerint",
         "a",
         "szerződés",
-        "minden",
-        "pontja",
-        "megfelelt",
-        "a",
-        "törvényeknek."
+        "jó",
+        "volt",
+        "."
       ],
       "solution": [
         "Állításuk",
         "szerint",
         "a",
         "szerződés",
-        "minden",
-        "pontja",
-        "megfelelt",
-        "a",
-        "törvényeknek."
+        "jó",
+        "volt",
+        "."
       ],
-      "english": "According to their claim, every clause of the contract conformed to the laws.",
+      "english": "According to their claim, the contract was good.",
       "teaches": [
         "evidentials"
       ]
@@ -155,10 +151,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A nyomozó újságíró nem fedte fel a bizalmas diplomáciai ____.",
-      "hint": "sources [pl. acc.]",
-      "answer": "forrásokat",
-      "english": "The investigative journalist did not disclose the confidential diplomatic sources.",
+      "sentence": "Az újságíró nem mondta meg a ____.",
+      "hint": "forrás, 3sg possessive, accusative",
+      "answer": "forrását",
+      "english": "The journalist did not tell his source.",
       "teaches": [
         "b2-information-overload-rumor-verification-vocab"
       ]
@@ -169,28 +165,24 @@
       "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "Több",
+        "Két",
         "szemtanú",
         "is",
-        "megerősítette",
+        "beszélt",
         "a",
-        "rendőrségnek",
-        "az",
-        "események",
-        "sorrendjét."
+        "rendőrséggel",
+        "."
       ],
       "solution": [
-        "Több",
+        "Két",
         "szemtanú",
         "is",
-        "megerősítette",
+        "beszélt",
         "a",
-        "rendőrségnek",
-        "az",
-        "események",
-        "sorrendjét."
+        "rendőrséggel",
+        "."
       ],
-      "english": "Several eyewitnesses also confirmed the sequence of events to the police.",
+      "english": "Two eyewitnesses also spoke with the police.",
       "teaches": [
         "b2-information-overload-rumor-verification-vocab"
       ]
@@ -202,18 +194,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Felelős szerkesztő",
-          "text": "Hogyan fogalmazzuk meg a cég elleni vádakat a holnapi cikkben?"
+          "speaker": "Szerkesztő",
+          "text": "Hogyan írjuk meg a cég elleni vádat a cikkben?"
         },
         {
-          "speaker": "Oknyomozó újságíró",
+          "speaker": "Újságíró",
           "text": "____"
         }
       ],
       "options": [
-        "Pontosan tüntessük fel: a szakszervezet állítása szerint a vezetés megsértette a munkajogot, a cég elmondása alapján viszont minden szabályos volt.",
-        "Írjuk meg, hogy a cégvezető bűnöző, mert egy névtelen kommentelő ezt írta a fórumon.",
-        "Ne említsük meg a forrásokat, mert az csak összezavarja az olvasókat."
+        "Állításuk szerint rossz a helyzet, a cég szerint viszont minden rendben van.",
+        "Írjuk meg, hogy rossz a helyzet, mert valaki ezt írta a neten.",
+        "Ne írjuk meg, kitől kaptuk az információt."
       ],
       "correct": 0,
       "teaches": [
@@ -227,8 +219,8 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Bírósági tudósító",
-          "text": "Miért nem nyilatkozott a védőügyvéd a sajtótájékoztatón?"
+          "speaker": "Tudósító",
+          "text": "Miért nem beszélt az ügyvéd a sajtónak?"
         },
         {
           "speaker": "Gyakornok",
@@ -236,13 +228,13 @@
         }
       ],
       "options": [
-        "Arra hivatkozva tagadta meg a válaszadást, hogy a nyomozati szakaszban az iratok nem nyilvánosak.",
-        "Állítólag azért, mert nem tud beszélni magyarul.",
-        "Mert a szemtanúk már mindent elmondtak helyette a tévében."
+        "Arra hivatkozva nem beszélt, hogy az ügy még titkos.",
+        "Arra hivatkozva nem beszélt, az ügy még titkos.",
+        "Erre hivatkozva nem beszélt, hogy az ügy még titkos."
       ],
       "correct": 0,
       "teaches": [
-        "evidentials"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -252,12 +244,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence attributing an economic claim to the finance ministry using 'állításuk szerint'.",
-          "answer": "A pénzügyminisztérium állítása szerint az infláció jövőre a jegybanki célsávba mérséklődik."
+          "prompt": "Write with állításuk szerint: According to their claim, the shop was open.",
+          "answer": "Állításuk szerint a bolt nyitva volt."
         },
         {
-          "prompt": "Write a sentence using 'arra hivatkozva, hogy...' about a cancelled press conference.",
-          "answer": "A szóvivő lemondta a sajtótájékoztatót, arra hivatkozva, hogy sürgős kormányzati egyeztetésen kell részt vennie."
+          "prompt": "Write with arra hivatkozva, hogy: The mayor said no, citing that there is no money.",
+          "answer": "A polgármester nemet mondott, arra hivatkozva, hogy nincs pénz."
         }
       ],
       "teaches": [
@@ -271,8 +263,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence reporting an accident based on eyewitness testimony using 'szemtanúk elmondása alapján'.",
-          "answer": "A szemtanúk elmondása alapján a teherautó fékhiba miatt sodródott le az úttestről."
+          "prompt": "Write with a szemtanúk elmondása alapján: Based on the eyewitnesses' account, the accident happened on the corner.",
+          "answer": "A szemtanúk elmondása alapján a baleset a sarkon történt."
         }
       ],
       "teaches": [
@@ -284,12 +276,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A pártvezetés visszavonta a javaslatot, ____ hivatkozva, hogy további társadalmi egyeztetésre van szükség.",
-      "hint": "citing that",
+      "sentence": "A főnök nemet mondott, ____ hivatkozva, hogy nincs idő.",
+      "hint": "cataphoric pronoun",
       "answer": "arra",
-      "english": "The party leadership withdrew the proposal, citing that further social consultation is needed.",
+      "english": "The boss said no, citing that there is no time.",
       "teaches": [
-        "evidentials"
+        "b2-cataphoric-clauses"
       ]
     },
     {

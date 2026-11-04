@@ -6,9 +6,9 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is an 'érvelési hiba' in debate analysis?",
+      "question": "What is an \"érvelési hiba\" in debate analysis?",
       "options": [
-        "a flaw in reasoning that renders an argument logically invalid or deceptive",
+        "a flaw in how an argument is built",
         "a grammatical typo corrected by the proofreader",
         "a pause made by an orator for dramatic effect"
       ],
@@ -26,7 +26,7 @@
       "options": [
         "félrevezető",
         "kétségtelen",
-        "kikezdhetetlen"
+        "hasznos"
       ],
       "correct": 0,
       "teaches": [
@@ -65,11 +65,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the conjunction that best exposes the hypocrisy: 'Átláthatóságot követelnek a sajtótól, ____ ők maguk minden adatot eltitkolnak.'",
+      "question": "Choose the conjunction that best exposes the hypocrisy: \"Azt mondják, hogy jó a helyzet, ____ nagyon rossz.\"",
       "options": [
         "holott",
-        "ugyanis",
-        "ezért"
+        "ezért",
+        "mert"
       ],
       "correct": 0,
       "teaches": [
@@ -81,11 +81,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which sentence effectively uses 'csakhogy' to dismantle a specious promise?",
+      "question": "Choose the connector: \"A terv jónak látszik, ____ sok pénzbe kerül.\"",
       "options": [
-        "A javaslat adócsökkentést ígér, csakhogy a valóságban megvonja a szociális juttatásokat.",
-        "A javaslat adócsökkentést ígér, holott mindenki örül az adócsökkentésnek.",
-        "A javaslat adócsökkentést ígér, mert a gazdaság kiválóan működik."
+        "csakhogy",
+        "mert",
+        "ezért"
       ],
       "correct": 0,
       "teaches": [
@@ -97,12 +97,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A miniszter azt állította, hogy nincsen pénz a kórházakra, ____ a reprezentációs költségeket megduplázták.",
+      "sentence": "A kormány azt mondja, hogy nincs pénz, ____ sokat költ.",
       "hint": "whereas in fact",
-      "answer": "holott",
-      "english": "The minister claimed there was no money for hospitals, whereas in fact representational expenses were doubled.",
+      "english": "The government says there is no money, whereas in fact it spends a lot.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "holott",
+        "pedig"
       ]
     },
     {
@@ -110,12 +113,17 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Mindenki igazságosnak találta az új javaslatot, ____ a legszegényebb rétegek érdekeit teljesen figyelmen kívül hagyta.",
+      "sentence": "Jó ötlet, ____ nincs rá idő.",
       "hint": "however / the catch being that",
-      "answer": "csakhogy",
-      "english": "Everyone found the new proposal just, only that it completely ignored the interests of the poorest strata.",
+      "english": "It is a good idea, only there is no time for it.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "csakhogy",
+        "de",
+        "viszont",
+        "azonban"
       ]
     },
     {
@@ -129,10 +137,10 @@
         "cikkében",
         "leleplezte",
         "a",
-        "politikai",
-        "propaganda",
+        "terv",
         "belső",
-        "ellentmondásait."
+        "ellentmondásait",
+        "."
       ],
       "solution": [
         "A",
@@ -140,12 +148,12 @@
         "cikkében",
         "leleplezte",
         "a",
-        "politikai",
-        "propaganda",
+        "terv",
         "belső",
-        "ellentmondásait."
+        "ellentmondásait",
+        "."
       ],
-      "english": "In his article, the expert unmasked the internal contradictions of political propaganda.",
+      "english": "In his article the expert exposed the internal contradictions of the plan.",
       "teaches": [
         "contrastive-discourse-markers"
       ]
@@ -155,10 +163,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A vitapartner érvelése tele volt nyilvánvaló ____, így nem győzhette meg a bírálókat.",
-      "hint": "rhetorical fallacies [pl. ins.]",
+      "sentence": "A vitapartner beszéde tele volt ____.",
+      "hint": "érvelési hiba, plural, with",
       "answer": "érvelési hibákkal",
-      "english": "The debate partner's reasoning was full of obvious rhetorical fallacies, so it could not convince the adjudicators.",
+      "english": "The debate partner's speech was full of reasoning errors.",
       "teaches": [
         "b2-ideological-debates-public-polemics-vocab"
       ]
@@ -171,26 +179,20 @@
       "tiles": [
         "Ez",
         "a",
-        "populista",
+        "beszéd",
+        "csak",
         "álokoskodás",
-        "veszélyezteti",
-        "a",
-        "józan",
-        "közéleti",
-        "párbeszédet."
+        "."
       ],
       "solution": [
         "Ez",
         "a",
-        "populista",
+        "beszéd",
+        "csak",
         "álokoskodás",
-        "veszélyezteti",
-        "a",
-        "józan",
-        "közéleti",
-        "párbeszédet."
+        "."
       ],
-      "english": "This populist sophistry endangers sober public dialogue.",
+      "english": "This speech is just sophistry.",
       "teaches": [
         "b2-ideological-debates-public-polemics-vocab"
       ]
@@ -202,8 +204,8 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Egyetemi hallgató",
-          "text": "Hogyan válaszolhatunk, ha az ellenfél a személyünket támadja a tények helyett?"
+          "speaker": "Hallgató",
+          "text": "Az ellenfelem rólam beszél, nem az érvemről. Mit mondjak?"
         },
         {
           "speaker": "Vitavezető",
@@ -211,9 +213,9 @@
         }
       ],
       "options": [
-        "Nyugodtan rá kell mutatni, hogy a személyeskedés érvelési hiba, holott mi a valós tényekről vitatkozunk.",
-        "Azonnal vissza kell vágni még durvább sértésekkel a győzelem érdekében.",
-        "El kell ismerni a vereséget, mert a vita ezzel lezárult."
+        "Mondd meg neki, hogy ez érvelési hiba, mert a tényekről vitatkozunk.",
+        "Mondj te is rosszat róla.",
+        "Mondd meg neki, hogy igaza van, és fejezd be a vitát."
       ],
       "correct": 0,
       "teaches": [
@@ -228,7 +230,7 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Mi a legnagyobb probléma ezzel az új törvényjavaslattal?"
+          "text": "Mi a baj ezzel a javaslattal?"
         },
         {
           "speaker": "Jogász",
@@ -236,9 +238,9 @@
         }
       ],
       "options": [
-        "Kívülről hibátlannak látszik, csakhogy belső ellentmondások feszítik, és a gyakorlatban alkalmazhatatlan.",
-        "Kívülről hibátlannak látszik, mert mindenki azonnal elfogadta a parlamentben.",
-        "Semmi probléma nincsen vele, holott a törvények általában fölöslegesek."
+        "Jónak látszik, csakhogy belül ellentmondások vannak benne.",
+        "Jónak látszik, mert belül ellentmondások vannak benne.",
+        "Jónak látszik, tehát belül ellentmondások vannak benne."
       ],
       "correct": 0,
       "teaches": [
@@ -252,12 +254,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence exposing a misleading campaign promise using 'holott'.",
-          "answer": "A polgármesterjelölt adócsökkentést ígért a lakosságnak, holott az önkormányzat a csőd szélén állt."
+          "prompt": "Write with holott: The government promised a lot, whereas in fact there is no money.",
+          "answer": "A kormány sokat ígért, holott nincs pénz."
         },
         {
-          "prompt": "Write a sentence calling out sophistry in an opponent's economic speech using 'álokoskodás'.",
-          "answer": "A képviselő beszéde puszta álokoskodás volt, amely elfedte az infláció valódi okait."
+          "prompt": "Write with álokoskodás: This speech is only sophistry.",
+          "answer": "Ez a beszéd csak álokoskodás."
         }
       ],
       "teaches": [
@@ -271,8 +273,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'leleplezte' and 'ellentmondásait' to describe an investigative report.",
-          "answer": "A független újságíró cikke kíméletlenül leleplezte a hivatalos beszámoló belső ellentmondásait."
+          "prompt": "Write with leleplezte: The article exposed the contradictions of the plan.",
+          "answer": "A cikk leleplezte a terv ellentmondásait."
         }
       ],
       "teaches": [
@@ -284,12 +286,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A vitapartner a nemzeti érdekre hivatkozott, ____ kizárólag a saját pártjának anyagi hasznát tartotta szem előtt.",
+      "sentence": "A vitapartner a közösségről beszél, ____ csak magának dolgozik.",
       "hint": "whereas in truth",
-      "answer": "holott",
-      "english": "The debate partner invoked the national interest, whereas in truth he kept solely his own party's material gain in mind.",
+      "english": "The debate partner talks about the community, whereas in fact he works only for himself.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "holott",
+        "pedig"
       ]
     },
     {
@@ -300,8 +305,8 @@
       "question": "Which noun refers to an internal clash or incompatibility between two statements?",
       "options": [
         "ellentmondás",
-        "meggyőzőerő",
-        "vezércikk"
+        "egyetértés",
+        "érvelés"
       ],
       "correct": 0,
       "teaches": [

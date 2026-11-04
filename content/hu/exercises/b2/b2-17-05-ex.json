@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is 'hírzaj' in contemporary media literacy?",
+      "question": "What is \"hírzaj\" in contemporary media literacy?",
       "options": [
-        "the overwhelming volume of unverified, chaotic information that impedes clear understanding",
-        "the volume knob on a radio broadcaster's mixer",
-        "a celebratory march played at the start of a news bulletin"
+        "too much news, much of it unchecked",
+        "the volume knob on a radio mixer",
+        "a march played before the news"
       ],
       "correct": 0,
       "teaches": [
@@ -25,7 +25,7 @@
       "question": "Which verb means to carefully weigh and evaluate competing arguments or evidence?",
       "options": [
         "mérlegel",
-        "híresztel",
+        "cáfol",
         "elsimít"
       ],
       "correct": 0,
@@ -65,11 +65,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which comparative structure best balances two conflicting official reports?",
+      "question": "Choose the sentence that sets two reports side by side:",
       "options": [
-        "Míg a külügyminisztérium békés tárgyalásokról számolt be, addig a védelmi minisztérium riadókészültséget rendelt el.",
-        "A külügyminisztérium békés tárgyalásokról beszélt, mert a védelmi minisztérium riadókészültséget rendelt el.",
-        "Mivel mindenki egyetértett, senki sem számolt be semmiről."
+        "Míg a rendőrség szerint nyugalom volt, addig a szemtanúk szerint baj volt.",
+        "A rendőrség szerint nyugalom volt, mert a szemtanúk szerint baj volt.",
+        "Míg a rendőrség szerint nyugalom volt, tehát a szemtanúk szerint baj volt."
       ],
       "correct": 0,
       "teaches": [
@@ -81,11 +81,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the evidential synthesis showing proper caution when reporting casualty figures:",
+      "question": "Which sentence reports a number with proper caution?",
       "options": [
-        "A hatóságok szerint három ember megsérült, a szemtanúk elmondása alapján viszont a szám magasabb lehet; a hírek megerősítésre szorulnak.",
-        "Biztosan mindenki meghalt, holott senki sem sérült meg a valóságban.",
-        "A hatóságok mindig hazudnak, ezért a szemtanúknak van teljesen igazuk."
+        "A hatóságok szerint három sérült van, de a szám megerősítésre szorul.",
+        "Biztos, hogy három sérült van, és ez nem kérdés.",
+        "A szemtanúk szerint sok a sérült, ezért a hatóságoknak van igaza."
       ],
       "correct": 0,
       "teaches": [
@@ -97,12 +97,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Míg a vállalatvezetés állítása szerint nem lesznek elbocsátások, ____ a szakszervezet elmondása alapján a dolgozók felét elküldik.",
-      "hint": "correlative 'while... on the other hand'",
-      "answer": "addig",
-      "english": "While according to the company management's claim there will be no layoffs, on the other hand based on the trade union's account half the workers will be let go.",
+      "sentence": "Míg a főnök állítása szerint jó a helyzet, ____ a dolgozók elmondása alapján rossz.",
+      "hint": "correlative: while ... on the other hand",
+      "english": "While according to the boss the situation is good, according to the workers it is bad.",
       "teaches": [
         "evidentials"
+      ],
+      "answers": [
+        "addig",
+        "viszont",
+        "ellenben"
       ]
     },
     {
@@ -110,12 +114,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A jelek szerint a helyzet stabilizálódott, ____ az ellentétes hírek alapos megerősítésre szorulnak.",
+      "sentence": "A jelek szerint a helyzet jobb, ____ a hírek megerősítésre szorulnak.",
       "hint": "nonetheless / nevertheless",
-      "answer": "mindazonáltal",
-      "english": "By all appearances the situation has stabilized; nonetheless, conflicting reports require thorough confirmation.",
+      "english": "By all appearances the situation is better; nonetheless, the reports need confirmation.",
       "teaches": [
         "evidentials"
+      ],
+      "answers": [
+        "mindazonáltal",
+        "ugyanakkor",
+        "viszont"
       ]
     },
     {
@@ -125,27 +133,23 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "riporter",
-        "gondosan",
+        "szerkesztő",
         "mérlegelte",
         "a",
-        "két",
-        "ellentmondó",
-        "szemtanúi",
-        "vallomást."
+        "szemtanúk",
+        "elmondását",
+        "."
       ],
       "solution": [
         "A",
-        "riporter",
-        "gondosan",
+        "szerkesztő",
         "mérlegelte",
         "a",
-        "két",
-        "ellentmondó",
-        "szemtanúi",
-        "vallomást."
+        "szemtanúk",
+        "elmondását",
+        "."
       ],
-      "english": "The reporter carefully weighed the two contradictory eyewitness testimonies.",
+      "english": "The editor weighed the eyewitnesses' account.",
       "teaches": [
         "evidentials"
       ]
@@ -155,10 +159,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A közösségi hálózatokon terjedő veszélyes ____ pánikot keltettek a lakosság körében.",
-      "hint": "fake news [pl.]",
-      "answer": "álhírek",
-      "english": "Dangerous fake news circulating on social networks caused panic among the population.",
+      "sentence": "Az interneten sok ____ van.",
+      "hint": "fake news",
+      "answer": "álhír",
+      "english": "There is a lot of fake news on the internet.",
       "teaches": [
         "b2-information-overload-rumor-verification-vocab"
       ]
@@ -170,27 +174,25 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "hiteles",
         "tájékozódás",
         "érdekében",
         "több",
-        "független",
-        "hírforrást",
+        "forrást",
         "kell",
-        "követnünk."
+        "olvasnunk",
+        "."
       ],
       "solution": [
         "A",
-        "hiteles",
         "tájékozódás",
         "érdekében",
         "több",
-        "független",
-        "hírforrást",
+        "forrást",
         "kell",
-        "követnünk."
+        "olvasnunk",
+        "."
       ],
-      "english": "In the interest of reliable orientation, we must follow several independent news sources.",
+      "english": "In order to find our bearings, we must read several sources.",
       "teaches": [
         "b2-information-overload-rumor-verification-vocab"
       ]
@@ -202,22 +204,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Hírolvasó",
-          "text": "Hogyan igazodhat el egy átlagos állampolgár a mai hírzajban?"
+          "speaker": "Olvasó",
+          "text": "Mit tegyek, ha túl sok a hír?"
         },
         {
-          "speaker": "Médiaelemző",
+          "speaker": "Elemző",
           "text": "____"
         }
       ],
       "options": [
-        "A forráskritika elengedhetetlen: fel kell derítenünk az összeférhetetlenségeket, mielőtt bármit készpénznek vennénk.",
-        "A forráskritika elengedhetetlen: fel kell derítenünk az összeférhetetlenségekkel, mielőtt bármit készpénznek vennénk.",
-        "A forráskritika elengedhetetlen: fel kell derítenünk az összeférhetetlenségeket, hogy semmit se vettünk volna készpénznek."
+        "Nézd meg a forrást, mielőtt elküldöd a hírt.",
+        "Nézd meg a forrást, miután elküldöd a hírt.",
+        "Nézd meg a forrást, mielőtt elküldtél a hírt."
       ],
       "correct": 0,
       "teaches": [
-        "evidentials"
+        "b2-information-overload-rumor-verification-vocab"
       ]
     },
     {
@@ -227,18 +229,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Szerkesztőségi gyakornok",
-          "text": "Miért szerepel a cikkünkben két teljesen ellentétes állítás a balesetről?"
+          "speaker": "Gyakornok",
+          "text": "Miért van a cikkben két különböző állítás a balesetről?"
         },
         {
-          "speaker": "Vezető újságíró",
+          "speaker": "Újságíró",
           "text": "____"
         }
       ],
       "options": [
-        "Mert a rendőrség és a szemtanúk mást állítanak: a mi feladatunk mindkét fél elmondásának bemutatása megerősítésig.",
-        "Mert a rendőrség és a szemtanúk mást állítanak: a mi feladatunk mindkét fél elmondásának bemutatásáig megerősítésben.",
-        "Mert a rendőrség és a szemtanúk mást állítanak: a mi feladatunk mindkét fél elmondását bemutatni miután megerősítés nélkül."
+        "Mert a rendőrség és a szemtanúk mást mondanak, és mindkettőt megírjuk.",
+        "Mert a rendőrség és a szemtanúk mást mondanak, és mindkettő megírjuk.",
+        "Mert a rendőrség és a szemtanúk mást mondanak, és mindkettőnek megírjuk."
       ],
       "correct": 0,
       "teaches": [
@@ -252,12 +254,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence synthesizing two conflicting reports using 'Míg... addig...'.",
-          "answer": "Míg a kormány közleménye szerint az infláció megállt, addig a független intézetek szerint az árak tovább emelkednek."
+          "prompt": "Write with míg ... addig: While according to the police all was quiet, according to the eyewitnesses there was trouble.",
+          "answer": "Míg a rendőrség szerint nyugalom volt, addig a szemtanúk szerint baj volt."
         },
         {
-          "prompt": "Write a sentence warning against media bias using 'elfogultság' and 'mérlegel'.",
-          "answer": "A hírfogyasztóknak mindig körültekintően mérlegelniük kell a különböző médiumok politikai elfogultságát."
+          "prompt": "Write with elfogultság: A good editor weighs the bias of every source.",
+          "answer": "A jó szerkesztő mérlegeli minden forrás elfogultságát."
         }
       ],
       "teaches": [
@@ -271,8 +273,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence discussing the challenge of 'hírzaj' in modern digital communication.",
-          "answer": "A digitális korban az eligazodás kulcsa a közösségi média állandó hírzajának tudatos kiszűrése."
+          "prompt": "Write with hírzaj: There is a lot of information noise on the internet.",
+          "answer": "Az interneten sok a hírzaj."
         }
       ],
       "teaches": [
@@ -284,10 +286,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A két tanú elmondása szöges ellentétben áll egymással, így a vallomásaik alapos összehasonlításra és ellenőrzésre ____.",
-      "hint": "need / require",
+      "sentence": "A két szemtanú mást mond, ezért a hírek ellenőrzésre ____.",
+      "hint": "szorul, plural present",
       "answer": "szorulnak",
-      "english": "The two witnesses' accounts stand in sharp contradiction to each other, so their testimonies require thorough comparison and checking.",
+      "english": "The two eyewitnesses say different things, so the reports need checking.",
       "teaches": [
         "evidentials"
       ]
@@ -313,11 +315,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Miért volt felháborodva Nero a palota tróntermében?",
+      "question": "Miért haragudott Nero a történetben?",
       "options": [
-        "Mert úgy hírlik, a Forumon a versein és az éneklésén gúnyolódtak a szóbeszéd szerint.",
-        "Mert Seneca nem volt hajlandó átnézni a legújabb tragédiáját.",
-        "Mert a légiók megtagadták az adók beszedését a keleti provinciákban."
+        "Azt hallotta, hogy a városban nevetnek a versein.",
+        "Seneca nem akarta elolvasni a verseit.",
+        "A katonák nem akartak harcolni."
       ],
       "correct": 0
     },
@@ -326,11 +328,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Mire figyelmeztette Seneca az ifjú császárt a pletykákkal kapcsolatban?",
+      "question": "Mit mondott Seneca a hírekről?",
       "options": [
-        "Arra, hogy a mendemondák ritkán fedik a valóságot, és a gyanúsítások megerősítésre szorulnak.",
-        "Arra, hogy azonnal zárassa börtönbe a város összes költőjét és színészét.",
-        "Arra, hogy szervezzen újabb énekversenyt a Colosseumban a nép megnyugtatására."
+        "Azt, hogy a szóbeszéd ritkán igaz, és meg kell nézni a forrást.",
+        "Azt, hogy a szóbeszéd igaz, és a császárnak lépnie kell.",
+        "Azt, hogy a császár ne hallgasson a költőkre, hanem harcoljon."
       ],
       "correct": 0
     },
@@ -339,11 +341,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen következtetésre jutott Nero a kémek jelentései alapján?",
+      "question": "Mit gondol Nero a végén a jelentésekről?",
       "options": [
-        "A jelek szerint összeesküvés készül ellene, amely mögött alighanem a riválisai állnak.",
-        "A patríciusok feltétel nélkül hűségesek a császári udvarhoz.",
-        "A kémek jelentései teljesen alaptalanok, ezért elengedte a gyanúsítottakat."
+        "Szerinte alighanem a családjából akar valaki bajt okozni neki.",
+        "Szerinte a hírek nem igazak, és nincs mitől félnie a palotában.",
+        "Szerinte maga Seneca akar bajt okozni neki a szenátusban."
       ],
       "correct": 0
     }

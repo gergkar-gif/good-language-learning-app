@@ -65,11 +65,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which phrase correctly distances the speaker from an unverified rumor about an election?",
+      "question": "Which phrase correctly distances the speaker from an unverified rumor about a mayor?",
       "options": [
-        "Úgy hírlik, hogy a miniszterelnök új időpontot jelöl ki.",
-        "Tudvalevő, hogy a miniszterelnök új időpontot jelöl ki.",
-        "Köztudott, hogy a miniszterelnök új időpontot jelöl ki."
+        "Úgy hírlik, hogy a polgármester lemond.",
+        "Biztos, hogy a polgármester lemond.",
+        "Köztudott, hogy a polgármester lemond."
       ],
       "correct": 0,
       "teaches": [
@@ -81,11 +81,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the sentence where 'állítólag' functions as a reportative evidential marker:",
+      "question": "Select the sentence where \"állítólag\" works as a reportative marker:",
       "options": [
-        "A képviselő állítólag nem vett részt a titkos szavazáson.",
-        "A képviselő állva beszélt a parlamentben.",
-        "A képviselő álláspontja teljesen világos volt."
+        "A polgármester állítólag lemondott.",
+        "A polgármester állt a ház előtt.",
+        "A polgármester álláspontja világos volt."
       ],
       "correct": 0,
       "teaches": [
@@ -97,12 +97,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "____, hogy a bank eladja a veszteséges külföldi leányvállalatát.",
+      "sentence": "____, hogy a bank új irodát nyit.",
       "hint": "Rumor has it",
-      "answer": "Úgy hírlik",
-      "english": "Rumor has it that the bank is selling its loss-making foreign subsidiary.",
+      "english": "Rumor has it that the bank is opening a new office.",
       "teaches": [
         "evidentials"
+      ],
+      "answers": [
+        "Úgy hírlik",
+        "Azt mondják"
       ]
     },
     {
@@ -110,10 +113,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A botrányba keveredett polgármester ____ lemondott a tisztségéről tegnap éjjel.",
+      "sentence": "A polgármester ____ lemondott tegnap éjjel.",
       "hint": "allegedly",
       "answer": "állítólag",
-      "english": "The scandal-ridden mayor allegedly resigned from his office last night.",
+      "english": "The mayor allegedly resigned last night.",
       "teaches": [
         "evidentials"
       ]
@@ -127,23 +130,25 @@
         "A",
         "szóbeszéd",
         "szerint",
-        "jelentős",
-        "átszervezések",
-        "várhatóak",
         "a",
-        "minisztériumban."
+        "minisztérium",
+        "új",
+        "főnököt",
+        "kap",
+        "."
       ],
       "solution": [
         "A",
         "szóbeszéd",
         "szerint",
-        "jelentős",
-        "átszervezések",
-        "várhatóak",
         "a",
-        "minisztériumban."
+        "minisztérium",
+        "új",
+        "főnököt",
+        "kap",
+        "."
       ],
-      "english": "According to rumor, significant reorganizations are expected in the ministry.",
+      "english": "According to rumor, the ministry is getting a new boss.",
       "teaches": [
         "evidentials"
       ]
@@ -153,10 +158,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A szóvivő határozottan cáfolta a médiában terjedő alaptalan ____.",
-      "hint": "rumors [pl. acc.]",
-      "answer": "híreszteléseket",
-      "english": "The spokesperson firmly denied the baseless rumors circulating in the media.",
+      "sentence": "A szóvivő cáfolta azt a ____, hogy a bank bezár.",
+      "hint": "híresztelés, accusative",
+      "answer": "híresztelést",
+      "english": "The spokesperson denied the rumor that the bank is closing.",
       "teaches": [
         "b2-information-overload-rumor-verification-vocab"
       ]
@@ -168,25 +173,27 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "kormányzat",
-        "megpróbálta",
-        "elsimítani",
+        "kormány",
+        "el",
+        "akarta",
+        "simítani",
         "a",
         "kellemetlen",
-        "korrupciós",
-        "ügyet."
+        "ügyet",
+        "."
       ],
       "solution": [
         "A",
-        "kormányzat",
-        "megpróbálta",
-        "elsimítani",
+        "kormány",
+        "el",
+        "akarta",
+        "simítani",
         "a",
         "kellemetlen",
-        "korrupciós",
-        "ügyet."
+        "ügyet",
+        "."
       ],
-      "english": "The administration attempted to smooth over the unpleasant corruption affair.",
+      "english": "The government wanted to smooth over the unpleasant affair.",
       "teaches": [
         "b2-information-overload-rumor-verification-vocab"
       ]
@@ -198,18 +205,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Hírügynökségi szerkesztő",
-          "text": "Kiadhatjuk hírként a vezérigazgató letartóztatását?"
+          "speaker": "Szerkesztő",
+          "text": "Megírhatjuk, hogy az igazgató lemondott?"
         },
         {
-          "speaker": "Rendőrségi tudósító",
+          "speaker": "Tudósító",
           "text": "____"
         }
       ],
       "options": [
-        "Még ne: egyelőre csak úgy hírlik, és állítólag zajlik a kihallgatás, de hivatalos megerősítés még nincs.",
-        "Még ne: egyelőre csak úgy hírlik, és állítólag zajlik a kihallgatásnak, de hivatalos megerősítés még nincs.",
-        "Még ne: egyelőre úgy hírlene, hogy a kihallgatás zajlik volna hivatalos megerősítés nélkül."
+        "Még ne: egyelőre csak úgy hírlik, hivatalos hír még nincs.",
+        "Még ne: egyelőre csak úgy hírlik, hivatalos hírt még nincs.",
+        "Még ne: egyelőre csak úgy hírlik, hivatalos hír még nincsenek."
       ],
       "correct": 0,
       "teaches": [
@@ -224,7 +231,7 @@
       "prompt": [
         {
           "speaker": "Kolléga A",
-          "text": "Igaz, hogy bezárják az intézetünket az év végén?"
+          "text": "Igaz, hogy bezár az iroda?"
         },
         {
           "speaker": "Kolléga B",
@@ -232,9 +239,9 @@
         }
       ],
       "options": [
-        "A szóbeszéd szerint igen, de az igazgató azt állítja, hogy csupán alaptalan híresztelésről van szó.",
-        "Biztosan bezárják, hiszen senki sem beszélt róla.",
-        "Úgy hírlik, hogy mindenki fizetésemelést kap helyette."
+        "A szóbeszéd szerint igen, de az igazgató szerint ez csak híresztelés.",
+        "Biztosan bezár, hiszen az igazgató szerint ez csak híresztelés.",
+        "A szóbeszéd szerint igen, ezért az igazgató szerint ez csak híresztelés."
       ],
       "correct": 0,
       "teaches": [
@@ -248,12 +255,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'Úgy hírlik, hogy...' to report an unconfirmed corporate merger.",
-          "answer": "Úgy hírlik, hogy a két vezető telekommunikációs vállalat fúzióra készül az év végén."
+          "prompt": "Write with úgy hírlik: Rumor has it that the bank is opening a new office.",
+          "answer": "Úgy hírlik, hogy a bank új irodát nyit."
         },
         {
-          "prompt": "Write a sentence using 'állítólag' to report an alleged diplomatic breakthrough.",
-          "answer": "A két külügyminiszter állítólag titkos megállapodást kötött a vitatott határszakaszról."
+          "prompt": "Write with állítólag: The mayor allegedly resigned yesterday.",
+          "answer": "A polgármester állítólag lemondott tegnap."
         }
       ],
       "teaches": [
@@ -267,8 +274,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'a szóbeszéd szerint' and 'elsimít' about political gossip.",
-          "answer": "A szóbeszéd szerint a pártvezetés gyorsan elsimította a belső ellentéteket a kongresszus előtt."
+          "prompt": "Write with a szóbeszéd szerint: According to rumor, the ministry is getting a new boss.",
+          "answer": "A szóbeszéd szerint a minisztérium új főnököt kap."
         }
       ],
       "teaches": [
@@ -280,10 +287,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A szomszédos városban ____ felütötte a fejét egy ritka fertőző betegség.",
+      "sentence": "A szomszéd városban ____ nagy baleset történt.",
       "hint": "allegedly / reportedly",
       "answer": "állítólag",
-      "english": "In the neighboring town, a rare infectious disease has reportedly reared its head.",
+      "english": "In the neighbouring town a big accident has reportedly happened.",
       "teaches": [
         "evidentials"
       ]

@@ -35,7 +35,7 @@
       "stage": "recognize",
       "question": "What is 'felelősséghárítás'?",
       "options": [
-        "the deliberate deflection of blame onto external actors or circumstances",
+        "passing blame on to other people or outside causes",
         "a legal document confirming financial liability",
         "a polite conclusion to a ceremonial toast"
       ],
@@ -65,10 +65,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A vitapartner érvelése egy tarthatatlan logikai ____ alapult.",
-      "hint": "presupposition [sublative]",
+      "sentence": "A bizottság érvelése egy hibás ____ épült.",
+      "hint": "előfeltevés, on",
       "answer": "előfeltevésre",
-      "english": "The debate partner's reasoning was based on an untenable logical presupposition.",
+      "english": "The committee's reasoning was built on a flawed presupposition.",
       "teaches": [
         "b2-rhetoric-framing-mass-persuasion-vocab"
       ]
@@ -78,10 +78,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A bizottság nem számolt ____, hogy a döntés ekkora társadalmi ellenállást vált ki.",
-      "hint": "cataphoric pronoun with -val",
+      "sentence": "A bizottság nem számolt ____, hogy sok ember nem fog bízni a döntésben.",
+      "hint": "számol, anchor pronoun",
       "answer": "azzal",
-      "english": "The committee did not calculate with the decision triggering such great social resistance.",
+      "english": "The committee did not reckon with many people not trusting the decision.",
       "teaches": [
         "b2-cataphoric-clauses"
       ]
@@ -91,10 +91,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A szakértői testület ____ az állásponton van, hogy a reform nem tűr további halasztást.",
-      "hint": "superessive demonstrative",
+      "sentence": "A bizottság ____ az állásponton van, hogy a törvény jó.",
+      "hint": "állásponton, anchor pronoun",
       "answer": "azon",
-      "english": "The expert panel is of the standpoint that the reform tolerates no further delay.",
+      "english": "The committee is of the position that the law is good.",
       "teaches": [
         "b2-cataphoric-clauses"
       ]
@@ -106,9 +106,9 @@
       "stage": "in-context",
       "question": "Select the sentence with intense rhetorical front-shifted emphasis:",
       "options": [
-        "Pontosan arra kell törekednünk, hogy megőrizzük a nemzeti intézmények függetlenségét.",
-        "Megőrizzük a függetlenséget, mert az jó dolog.",
-        "Arra gondolunk néha, hogy a függetlenség fontos lehet."
+        "Pontosan arra kell törekednünk, hogy megőrizzük a békét.",
+        "Megőrizzük a békét, mert az nagyon jó dolog.",
+        "Arra gondolunk néha, hogy a béke fontos lehet."
       ],
       "correct": 0,
       "teaches": [
@@ -123,7 +123,7 @@
       "prompt": [
         {
           "speaker": "Frakcióvezető",
-          "text": "Hogyan indokoljuk a frakció nemleges szavazatát a plenáris ülésen?"
+          "text": "Mit mondunk a vitában a javaslatról?"
         },
         {
           "speaker": "Képviselő",
@@ -131,9 +131,9 @@
         }
       ],
       "options": [
-        "Kijelentjük: határozottan azon az állásponton vagyunk, hogy a törvényjavaslat alkotmányellenes, és arra szólítjuk fel a kormányt, hogy vonja vissza.",
-        "Kijelentjük: határozottan abban az álláspontban vagyunk, hogy a törvényjavaslat alkotmányellenes, és abban szólítjuk fel a kormányt, hogy vonja vissza.",
-        "Kijelentjük: határozottan arra az álláspontra vagyunk, hogy a törvényjavaslat alkotmányellenes, és azzal szólítjuk fel a kormányt, hogy visszavonni."
+        "Kijelentjük: határozottan azon az állásponton vagyunk, hogy a javaslat rossz, és arra kérjük a kormányt, hogy vonja vissza.",
+        "Kijelentjük: határozottan abban az álláspontban vagyunk, hogy a javaslat rossz, és arra kérjük a kormányt, hogy vonja vissza.",
+        "Kijelentjük: határozottan azon az állásponton vagyunk, hogy a javaslat rossz, és abban kérjük a kormányt, hogy vonja vissza."
       ],
       "correct": 0,
       "teaches": [
@@ -145,10 +145,10 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is the demonstrative 'arra' used in 'A vizsgálóbizottság arra a következtetésre jutott, hogy a balesetet mulasztás okozta'?",
+      "question": "Why is 'arra' used in 'A bizottság arra a következtetésre jutott, hogy a hiba az övék'?",
       "options": [
-        "Because 'következtetés' takes the sublative case (-ra) with the verb 'jut' ('jut valamire').",
-        "Because 'vizsgálóbizottság' is in the nominative case.",
+        "Because 'jutott' goes with the sublative: 'következtetésre jut'.",
+        "Because 'bizottság' is in the nominative case.",
         "Because all abstract nouns in Hungarian take the sublative case."
       ],
       "correct": 0,
@@ -231,8 +231,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause oratorical declaration combining 'Arra törekszünk, hogy...', 'abban bízunk, hogy...', and 'ahhoz ragaszkodunk, hogy...'.",
-          "answer": "Arra törekszünk, hogy megteremtsük a szilárd gazdasági alapokat; abban bízunk, hogy a nemzet összefog a célok érdekében; és ahhoz ragaszkodunk, hogy a demokratikus értékek csorbítatlanok maradjanak."
+          "prompt": "Write a three-clause declaration combining 'Arra törekszünk, hogy...', 'abban bízunk, hogy...' and 'ahhoz ragaszkodunk, hogy...'.",
+          "answer": "Arra törekszünk, hogy segítsünk az embereknek; abban bízunk, hogy minden ember segít; és ahhoz ragaszkodunk, hogy mindenki szabad legyen."
         }
       ],
       "teaches": [
