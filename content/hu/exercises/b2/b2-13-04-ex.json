@@ -30,7 +30,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
+        "mixed-conditionals"
       ]
     },
     {
@@ -74,7 +74,7 @@
       "answer": "mintha",
       "english": "The official acts as if he were directing the entire city.",
       "teaches": [
-        "discourse-particles"
+        "mixed-conditionals"
       ]
     },
     {
@@ -82,10 +82,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A komédia kíméletlenül leleplezi a kisvárosi társadalom ____.",
-      "hint": "hypocrisy",
+      "sentence": "A szatíra kíméletlenül leleplezi a kisvárosi társadalom ____.",
+      "hint": "álszentség, 3sg possessive, accusative",
       "answer": "álszentségét",
-      "english": "The comedy ruthlessly exposes the hypocrisy of small-town society.",
+      "english": "Satire ruthlessly exposes the hypocrisy of small-town society.",
       "teaches": [
         "b2-irony-satire-vocab"
       ]
@@ -99,17 +99,20 @@
       "options": [
         "Szinte már-már azt hihetnénk, hogy a gróf maga Napóleon császár.",
         "Szinte már-már azt hiszünk, hogy a gróf maga Napóleon császár.",
-        "Szinte már-már azt hinnénk, hogy a gróf maga Napóleon császárt."
+        "Szinte már-már azt hihetnénk, hogy a gróf maga Napóleon császárt."
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
-      ]
+        "nek-conditional"
+      ],
+      "distractor_skills": {
+        "1": "present-tense-routine-language"
+      }
     },
     {
       "id": "b2-13-04-practice-1",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "Aligha",
@@ -135,32 +138,32 @@
       ],
       "english": "Hardly would anyone believe that this farce is reality.",
       "teaches": [
-        "discourse-particles"
+        "b2-irony-satire-vocab"
       ]
     },
     {
       "id": "b2-13-04-practice-2",
       "type": "substitution",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "base_sentence": "Szinte már-már nevetségesnek tűnik ez a túlzott buzgalom.",
+      "base_sentence": "Szinte már-már nevetséges ez a vita.",
       "base_word": "Szinte már-már",
       "options": [
         {
           "word": "alighanem",
           "inflected": "Alighanem",
-          "sentence": "Alighanem nevetségesnek tűnik ez a túlzott buzgalom.",
+          "sentence": "Alighanem nevetséges ez a vita.",
           "gloss": "in all likelihood"
         },
         {
           "word": "korántsem",
           "inflected": "Korántsem",
-          "sentence": "Korántsem nevetségesnek tűnik ez a túlzott buzgalom.",
+          "sentence": "Korántsem nevetséges ez a vita.",
           "gloss": "by no means"
         }
       ],
       "teaches": [
-        "discourse-particles"
+        "b2-irony-satire-vocab"
       ]
     },
     {
@@ -168,10 +171,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A bátor újságíró nem rejtette véka alá a rendszerről szóló éles ____.",
+      "sentence": "A tanár nyíltan elmondta a ____ a tervről.",
       "hint": "critique",
       "answer": "bírálatát",
-      "english": "The courageous journalist did not hide his sharp critique of the system.",
+      "english": "The teacher openly stated his critique of the plan.",
       "teaches": [
         "b2-irony-satire-vocab"
       ]
@@ -179,17 +182,17 @@
     {
       "id": "b2-13-04-practice-4",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "question": "What makes Mikszáth's portrayal of Pongrácz István satirical rather than cruel?",
+      "question": "Melyik mondat finom szatíra, nem pedig nyers gúny?",
       "options": [
-        "Együttérző iróniával mutatja be a lovagi pózok és a rideg valóság ellentétét.",
-        "A szerző durva szitkokkal illeti a felvidéki nemességet.",
-        "A történetben senki sem beszél magyarul a várban."
+        "Aligha hinné bárki, hogy az élet megáll nélküle.",
+        "A hivatalnok buta, és a falu utálja őt nagyon.",
+        "Ez az ember minden nap megsért valakit."
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
+        "b2-irony-satire-vocab"
       ]
     },
     {
@@ -200,21 +203,21 @@
       "prompt": [
         {
           "speaker": "Polgármester",
-          "text": "Hogyan merészelt hadat üzenni a gróf egy egész békés városnak?"
+          "text": "Miért gondolja a gróf, hogy ő a város ura?"
         },
         {
           "speaker": "Jegyző",
-          "text": "_____"
+          "text": "____"
         }
       ],
       "options": [
-        "Úgy érezte, mintha a középkori törvények még mindig érvényben lennének a vármegyében.",
-        "Úgy érezte, mintha a középkori törvények még mindig érvényben vannak a vármegyében.",
-        "Úgy érezte, mintha a középkori törvényeket még mindig érvényben lennének a vármegyében."
+        "Úgy érzi, mintha ő lenne a város ura.",
+        "Úgy érzi, mintha ő van a város ura.",
+        "Úgy érzi, mintha ő lenne a város urát."
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
+        "mixed-conditionals"
       ]
     },
     {
@@ -225,21 +228,21 @@
       "prompt": [
         {
           "speaker": "Szerkesztő",
-          "text": "Nem tartasz attól, hogy megbántod őt ezzel a nyílt bírálattal?"
+          "text": "Nem lesz ez túl éles a bírálatban?"
         },
         {
           "speaker": "Cikkíró",
-          "text": "_____"
+          "text": "____"
         }
       ],
       "options": [
-        "Nem nyílt gúnnyal válaszolok, hanem finom iróniával figyelmeztetem a képmutatásra.",
-        "Nem nyílt gúnnyal válaszolok, hanem finom iróniával figyelmeztetem a képmutatásban.",
-        "Nem nyílt gúnyból válaszolok, hanem finom iróniával figyelmeztetlek a képmutatásra."
+        "Nem gúny lesz, hanem finom irónia.",
+        "Nem gúny lesz, hanem finom iróniát.",
+        "Nem gúnyt lesz, hanem finom irónia."
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -254,7 +257,7 @@
         }
       ],
       "teaches": [
-        "discourse-particles"
+        "nek-conditional"
       ]
     },
     {
@@ -264,12 +267,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write: Satire unmasks hypocritical behavior through polite irony.",
-          "answer": "A szatíra udvarias iróniával leplezi le a képmutató viselkedést."
+          "prompt": "Write: Satire shows hypocrisy through subtle irony.",
+          "answer": "A szatíra finom iróniával mutatja meg az álszentséget."
         }
       ],
       "teaches": [
-        "discourse-particles"
+        "b2-irony-satire-vocab"
       ]
     },
     {
@@ -279,7 +282,7 @@
       "stage": "check",
       "question": "What does the adjective 'képmutató' describe?",
       "options": [
-        "a person who pretends to have virtues they lack",
+        "someone who pretends to be good",
         "a talented painter of portraits",
         "a strict military officer"
       ],
@@ -293,12 +296,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "Olyan büszkén lépeget az udvaron, ____ ő lenne a vár egyetlen ura.",
+      "sentence": "Olyan büszkén sétál az udvaron, ____ ő lenne a vár ura.",
       "hint": "as if",
       "answer": "mintha",
-      "english": "He steps so proudly in the courtyard as if he were the sole lord of the castle.",
+      "english": "He walks so proudly in the courtyard as if he were the lord of the castle.",
       "teaches": [
-        "discourse-particles"
+        "mixed-conditionals"
       ]
     }
   ]

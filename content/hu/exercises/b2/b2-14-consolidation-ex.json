@@ -36,17 +36,17 @@
     {
       "id": "b2-14-consolidation-3",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recognize",
       "question": "Which construction captures two actions happening almost overlappingly in a flash?",
       "options": [
         "alighogy ... máris",
         "noha ... mégis",
-        "jóllehet ... mindeddig"
+        "jóllehet ... azonban"
       ],
       "correct": 0,
       "teaches": [
-        "mig-egyidejuseg"
+        "b2-visual-storytelling-perspective-time-vocab"
       ]
     },
     {
@@ -54,10 +54,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A solymászmester szigorú ____ igazgatta a telepen folyó feszült munkát.",
+      "sentence": "A mester szigorú ____ vezette a munkát.",
       "hint": "discipline",
       "answer": "fegyelemmel",
-      "english": "The master falconer directed the tense work on the station with strict discipline.",
+      "english": "The master led the work with strict discipline.",
       "teaches": [
         "b2-visual-storytelling-perspective-time-vocab"
       ]
@@ -67,12 +67,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "____ elhagyta a sólyom az öklöt, azonnal a magasba tört.",
+      "sentence": "____ elhagyta a madár a mester kezét, azonnal a magasba emelkedett.",
       "hint": "as soon as",
       "answer": "Amint",
-      "english": "As soon as the falcon left the fist, it immediately broke toward the heights.",
+      "english": "As soon as the bird left the master's hand, it immediately rose into the air.",
       "teaches": [
-        "mig-egyidejuseg"
+        "miutan-mielott"
       ]
     },
     {
@@ -80,10 +80,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A narrátor a földön állt, ____ a ragadozó madár a fellegek között körözött.",
+      "sentence": "Én a földön álltam, ____ a madár a magasban körözött.",
       "hint": "while",
       "answer": "miközben",
-      "english": "The narrator stood on the ground while the bird of prey circled among the clouds.",
+      "english": "I stood on the ground while the bird circled in the height.",
       "teaches": [
         "mig-egyidejuseg"
       ]
@@ -96,38 +96,42 @@
       "prompt": [
         {
           "speaker": "Kérdező",
-          "text": "Hogyan érezte magát a narrátor a telepen töltött hetek alatt?"
+          "text": "Hogy érezte magát a telepen?"
         },
         {
           "speaker": "Szakértő",
-          "text": "_____"
+          "text": "____"
         }
       ],
       "options": [
-        "Amióta csak megérkezett, nem tudott szabadulni a fegyelem és a szabadság kettősségétől.",
-        "Azonnal elutazott a fővárosba egy új autót vásárolni.",
-        "Mivel nem volt villany a barakkban, egész nap mélyen aludt."
+        "Amióta csak megérkezett, nem érzi jól magát.",
+        "Amióta csak megérkezett, nem érezte volna jól magát.",
+        "Amióta csak megérkezett, nem érzi jól magának."
       ],
       "correct": 0,
       "teaches": [
-        "mig-egyidejuseg"
+        "b2-visual-storytelling-perspective-time-vocab"
       ]
     },
     {
       "id": "b2-14-consolidation-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "in-context",
       "question": "Which sentence correctly uses 'valahányszor' in an iterative context?",
       "options": [
-        "Valahányszor a sólyom lecsapott, a rét felett elnémult minden madárdal.",
-        "Valahányszor a sólyom lecsapott, a rét felett elnémult volna minden madárdal.",
-        "Valahányszor a sólyom lecsapna, a rét felett elnémult minden madárdalt."
+        "Valahányszor a sólyom lecsapott, elnémult a rét.",
+        "Valahányszor a sólyom lecsapott, elnémult volna a rét.",
+        "Valahányszor a sólyom lecsapott, elnémulna a rét."
       ],
       "correct": 0,
       "teaches": [
-        "mig-egyidejuseg"
-      ]
+        "b2-visual-storytelling-perspective-time-vocab"
+      ],
+      "distractor_skills": {
+        "1": "past-conditional-volna",
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "b2-14-consolidation-9",
@@ -137,8 +141,8 @@
       "question": "Which term describes a narrative where characters and events embody abstract philosophical concepts?",
       "options": [
         "allegória",
-        "szótár",
-        "monológ"
+        "ritmus",
+        "háttér"
       ],
       "correct": 0,
       "teaches": [
@@ -148,7 +152,7 @@
     {
       "id": "b2-14-consolidation-10",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "Alighogy",
@@ -156,10 +160,10 @@
         "a",
         "kapun,",
         "máris",
-        "megcsapta",
+        "érezte",
         "a",
         "puszta",
-        "illata",
+        "illatát",
         "."
       ],
       "solution": [
@@ -168,15 +172,15 @@
         "a",
         "kapun,",
         "máris",
-        "megcsapta",
+        "érezte",
         "a",
         "puszta",
-        "illata",
+        "illatát",
         "."
       ],
-      "english": "Scarcely had he stepped through the gate when already the scent of the plain struck him.",
+      "english": "Scarcely had he stepped through the gate when he already smelled the plain.",
       "teaches": [
-        "mig-egyidejuseg"
+        "b2-visual-storytelling-perspective-time-vocab"
       ]
     },
     {
@@ -186,10 +190,11 @@
       "stage": "produce",
       "tiles": [
         "Miközben",
-        "Lilik",
+        "a",
+        "mester",
         "a",
         "madarat",
-        "idomította,",
+        "figyelte,",
         "a",
         "segéd",
         "a",
@@ -199,10 +204,11 @@
       ],
       "solution": [
         "Miközben",
-        "Lilik",
+        "a",
+        "mester",
         "a",
         "madarat",
-        "idomította,",
+        "figyelte,",
         "a",
         "segéd",
         "a",
@@ -210,7 +216,7 @@
         "járta",
         "."
       ],
-      "english": "While Lilik trained the bird, the assistant walked the field.",
+      "english": "While the master watched the bird, the assistant walked the field.",
       "teaches": [
         "mig-egyidejuseg"
       ]
@@ -222,12 +228,12 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write: As soon as the scene ends, the tension dissolves into quiet contemplation.",
-          "answer": "Amint véget ér a jelenet, a feszültség csendes elmélkedésbe oldódik."
+          "prompt": "Write: As soon as the scene ends, there is silence in the room.",
+          "answer": "Amint véget ér a jelenet, csend lesz a teremben."
         }
       ],
       "teaches": [
-        "mig-egyidejuseg"
+        "miutan-mielott"
       ]
     }
   ]

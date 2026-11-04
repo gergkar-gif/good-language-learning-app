@@ -4,7 +4,7 @@
     {
       "id": "b2-13-consolidation-1",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recognize",
       "question": "Which particle expresses that an assumption is far from being true?",
       "options": [
@@ -14,7 +14,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
+        "b2-irony-satire-vocab"
       ]
     },
     {
@@ -36,7 +36,7 @@
     {
       "id": "b2-13-consolidation-3",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recognize",
       "question": "What does 'aligha' express in B2 Hungarian prose?",
       "options": [
@@ -46,7 +46,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
+        "b2-irony-satire-vocab"
       ]
     },
     {
@@ -54,10 +54,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A bátor kritikus nyílt ____ illette a színház elavult műsorpolitikáját.",
+      "sentence": "A tanár nyílt ____ beszélt a tervről.",
       "hint": "critique",
       "answer": "bírálattal",
-      "english": "The brave critic leveled an open critique at the theater's outdated programming.",
+      "english": "The teacher spoke about the plan with open criticism.",
       "teaches": [
         "b2-irony-satire-vocab"
       ]
@@ -65,14 +65,14 @@
     {
       "id": "b2-13-consolidation-5",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recall",
       "sentence": "Nem kell aggódnod, a helyzet ____ olyan kétségbeejtő, mint hiszed.",
       "hint": "by no means",
       "answer": "korántsem",
       "english": "You don't need to worry, the situation is by no means as desperate as you think.",
       "teaches": [
-        "discourse-particles"
+        "b2-irony-satire-vocab"
       ]
     },
     {
@@ -100,33 +100,36 @@
         },
         {
           "speaker": "Bíró",
-          "text": "_____"
+          "text": "____"
         }
       ],
       "options": [
-        "Aligha, hiszen a modern törvények nem engedik a magánhadseregek működését.",
-        "Aligha nem, hiszen a modern törvények nem engednék a magánhadseregeknek működését.",
-        "Alighanem engednék, ha a modern törvények nem tiltották a működést."
+        "Aligha, hiszen a modern törvények ezt nem engedik.",
+        "Aligha nem, hiszen a modern törvények ezt nem engedik.",
+        "Aligha, hiszen a modern törvények ezt nem engednek."
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
-      ]
+        "b2-irony-satire-vocab"
+      ],
+      "distractor_skills": {
+        "2": "definite-vs-indefinite-conjugation"
+      }
     },
     {
       "id": "b2-13-consolidation-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "in-context",
-      "question": "Which sentence illustrates litotes (ironic understatement)?",
+      "question": "Which sentence criticises mildly?",
       "options": [
-        "A tegnapi fogadás nem éppen a szerénység mintaképe volt.",
-        "A tegnapi fogadás rendkívül zajos volt.",
-        "A fogadásra senki sem ment el a faluból."
+        "A tegnapi vacsora nem volt éppen finom.",
+        "A tegnapi vacsora nagyon finom volt.",
+        "A tegnapi vacsorán sok vendég volt."
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
+        "b2-irony-satire-vocab"
       ]
     },
     {
@@ -148,65 +151,59 @@
     {
       "id": "b2-13-consolidation-10",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "A",
         "gróf",
-        "szeszélyei",
-        "mögött",
         "cseppet",
         "sem",
-        "lakozott",
-        "gonoszság",
+        "volt",
+        "rossz",
+        "ember",
         "."
       ],
       "solution": [
         "A",
         "gróf",
-        "szeszélyei",
-        "mögött",
         "cseppet",
         "sem",
-        "lakozott",
-        "gonoszság",
+        "volt",
+        "rossz",
+        "ember",
         "."
       ],
-      "english": "Behind the count's whims there resided not the least wickedness.",
+      "english": "The count was not a bad man in the least.",
       "teaches": [
-        "discourse-particles"
+        "b2-irony-satire-vocab"
       ]
     },
     {
       "id": "b2-13-consolidation-11",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "A",
-        "lovagi",
         "játék",
         "végül",
         "mégiscsak",
-        "őszinte",
-        "szeretetté",
-        "vált",
+        "komoly",
+        "lett",
         "."
       ],
       "solution": [
         "A",
-        "lovagi",
         "játék",
         "végül",
         "mégiscsak",
-        "őszinte",
-        "szeretetté",
-        "vált",
+        "komoly",
+        "lett",
         "."
       ],
-      "english": "The chivalric game ultimately became, after all, sincere love.",
+      "english": "The game finally turned serious after all.",
       "teaches": [
-        "discourse-particles"
+        "b2-irony-satire-vocab"
       ]
     },
     {
@@ -216,12 +213,12 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write: True satire unmasks hypocrisy not with hatred, but with wise irony.",
-          "answer": "Az igazi szatíra nem gyűlölettel, hanem bölcs iróniával leplezi le az álszentséget."
+          "prompt": "Write: Satire does not hurt but shows hypocrisy through subtle irony.",
+          "answer": "A szatíra nem bánt, hanem finom iróniával mutatja meg az álszentséget."
         }
       ],
       "teaches": [
-        "discourse-particles"
+        "b2-irony-satire-vocab"
       ]
     }
   ]

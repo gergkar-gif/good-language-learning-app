@@ -69,12 +69,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "____ igyekezett is az utas, nem kapott jegyet a pénztárnál.",
-      "hint": "However much",
-      "answer": "Bármennyire",
-      "english": "However hard the passenger tried, he did not get a ticket at the window.",
+      "sentence": "____ siet is az utas, nem kap jegyet a pénztárnál.",
+      "hint": "however much",
+      "english": "However much the passenger hurries, he does not get a ticket at the window.",
       "teaches": [
         "concessive-indefinites"
+      ],
+      "answers": [
+        "Bármennyire",
+        "Bárhogyan"
       ]
     },
     {
@@ -82,10 +85,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "Az utas azonnal észrevette a szabályzatban rejlő logikai ____.",
+      "sentence": "Az utas azonnal látja a szabályzatban az ____.",
       "hint": "ellentmondás, accusative",
       "answer": "ellentmondást",
-      "english": "The passenger immediately noticed the logical contradiction hidden in the regulations.",
+      "english": "The passenger sees the contradiction in the regulations at once.",
       "teaches": [
         "b2-logic-paradox-abstract-reasoning-vocab"
       ]
@@ -95,11 +98,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the literary word order for 'Whatever he said, nobody believed him':",
+      "question": "Which sentence is correct for 'Whatever he said, nobody believed him'?",
       "options": [
         "Bármit mondott is, senki sem hitt neki.",
-        "Mondott bármit sem, senki hitt neki.",
-        "Akár mondott, azért nem hittek neki."
+        "Bármit mondjon is, senki sem hitt neki.",
+        "Bármit mondott is, senki hitt neki."
       ],
       "correct": 0,
       "teaches": [
@@ -113,25 +116,25 @@
       "stage": "practice",
       "tiles": [
         "Bármilyen",
-        "furcsának",
+        "nehéznek",
         "tűnik",
         "is,",
         "a",
         "levezetés",
-        "hibátlan",
+        "jó",
         "."
       ],
       "solution": [
         "Bármilyen",
-        "furcsának",
+        "nehéznek",
         "tűnik",
         "is,",
         "a",
         "levezetés",
-        "hibátlan",
+        "jó",
         "."
       ],
-      "english": "However strange it may seem, the deduction is flawless.",
+      "english": "However difficult it may seem, the deduction is good.",
       "teaches": [
         "concessive-indefinites"
       ]
@@ -141,21 +144,21 @@
       "type": "substitution",
       "category": "grammar",
       "stage": "practice",
-      "base_sentence": "Bárki kérdezi is, a válasz változatlan marad.",
+      "base_sentence": "Bárki kérdezi is, a válasz ugyanaz marad.",
       "base_word": "Bárki kérdezi is",
-      "base_gloss": "Whoever asks, the answer remains unchanged.",
+      "base_gloss": "Whoever asks, the answer stays the same.",
       "options": [
         {
           "word": "Bárhogyan kérdezik is",
           "inflected": "Bárhogyan kérdezik is",
-          "sentence": "Bárhogyan kérdezik is, a válasz változatlan marad.",
+          "sentence": "Bárhogyan kérdezik is, a válasz ugyanaz marad.",
           "gloss": "However they ask"
         },
         {
-          "word": "Bármikor kérdezik is",
-          "inflected": "Bármikor kérdezik is",
-          "sentence": "Bármikor kérdezik is, a válasz változatlan marad.",
-          "gloss": "Whenever they ask"
+          "word": "Bárhol kérdezik is",
+          "inflected": "Bárhol kérdezik is",
+          "sentence": "Bárhol kérdezik is, a válasz ugyanaz marad.",
+          "gloss": "Wherever they ask"
         }
       ],
       "teaches": [
@@ -167,10 +170,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A hibátlan ____ ellenére a végeredmény teljes képtelenségnek bizonyult.",
+      "sentence": "A hosszú ____ ellenére a végeredmény képtelenség lett.",
       "hint": "argumentation / reasoning",
       "answer": "érvelés",
-      "english": "Despite the flawless reasoning, the final result proved to be complete absurdity.",
+      "english": "Despite the long reasoning, the final result turned out to be absurd.",
       "teaches": [
         "b2-logic-paradox-abstract-reasoning-vocab"
       ]
@@ -182,9 +185,9 @@
       "stage": "practice",
       "question": "Which sentence uses a hypothetical subjunctive in a universal concessive clause?",
       "options": [
-        "Bárki jöjjön is a pénztárhoz, a hivatalnok udvariasan fogadja.",
-        "Bárki jönne is a pénztárhoz, a hivatalnok udvariasan fogadná.",
-        "Bárki jön is a pénztárhoz, a hivatalnok nem fogadja udvarias."
+        "Bárki jöjjön is a pénztárhoz, a hivatalnok mindig segít.",
+        "Bárki jönne is a pénztárhoz, a hivatalnok mindig segítene.",
+        "Bárki jöjjön is a pénztárhoz, a hivatalnok mindig segítsen."
       ],
       "correct": 0,
       "teaches": [
@@ -207,9 +210,9 @@
         }
       ],
       "options": [
-        "Bármilyen képtelennek tűnik is, a szabályzatot betű szerint be kell tartanunk.",
-        "Bármilyen képtelennek tűnne is, a szabályzatot betű szerint be kellene tartanunk.",
-        "Bármilyen képtelennek tűnik is, a szabályzatot betűvel szerint nem kell betartanunk."
+        "Bármilyen képtelennek tűnik is, a szabályzatot be kell tartanunk.",
+        "Bármilyen képtelennek tűnik, a szabályzatot is be kell tartanunk.",
+        "Bármilyen képtelennek tűnik is, a szabályzatot be kellett tartanunk."
       ],
       "correct": 0,
       "teaches": [
@@ -224,7 +227,7 @@
       "prompt": [
         {
           "speaker": "Filozófus",
-          "text": "Megoldható-e ez az önmagába visszatérő paradoxon?"
+          "text": "Megoldható-e ez az ellentmondás?"
         },
         {
           "speaker": "Logikus",
@@ -232,9 +235,9 @@
         }
       ],
       "options": [
-        "Nem; bárhogyan csűrjük-csavarjuk is a feltételeket, ugyanabba az ellentmondásba ütközünk.",
-        "Nem; bárhogyan csűrjük-csavarjuk is a feltételeket, ugyanabban az ellentmondásban ütközünk.",
-        "Igen; bárhogyan csűrjük-csavarjuk is a feltételeket, semmilyen ellentmondásba nem ütközünk."
+        "Nem; bárhogyan csűrjük-csavarjuk is a feltételeket, mindig ellentmondásba ütközünk.",
+        "Nem; bárhogyan csűrjük-csavarjuk is a feltételeket, mindig ellentmondásban ütközünk.",
+        "Igen; bárhogyan csűrjük-csavarjuk is a feltételeket, mindig ellentmondásba ütközünk."
       ],
       "correct": 0,
       "teaches": [
@@ -292,10 +295,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "Bárhogyan vizsgáljuk ____ a kérdést, a szabályzat önmagának mond ellent.",
+      "sentence": "Bárhogyan vizsgáljuk ____ a kérdést, mindig ellentmondást találunk.",
       "hint": "particle in concessive clause",
       "answer": "is",
-      "english": "However we examine the question, the regulation contradicts itself.",
+      "english": "However we examine the question, we always find a contradiction.",
       "teaches": [
         "concessive-indefinites"
       ]

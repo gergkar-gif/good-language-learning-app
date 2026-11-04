@@ -51,9 +51,9 @@
       "stage": "recognize",
       "question": "Which phrase correctly uses the obligatory participle and an instrumental postposition?",
       "options": [
-        "az új műszer segítségével elvégzendő mérések",
-        "az új műszer segítségével elvégezendő méréseket",
-        "az új műszer általában elvégzendő mérések"
+        "az új gép segítségével elvégzendő mérések",
+        "az új gépet segítségével elvégzendő mérések",
+        "az új gép általában elvégzendő mérések"
       ],
       "correct": 0,
       "teaches": [
@@ -65,10 +65,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A sorozatgyártás megkezdése előtt minden lehetséges ____ fel kell tárni.",
-      "hint": "source of error -> accusative sg.",
+      "sentence": "A gyártás előtt minden ____ meg kell találni.",
+      "hint": "hibaforrás, accusative",
       "answer": "hibaforrást",
-      "english": "Before starting serial production, every possible source of error must be uncovered.",
+      "english": "Before production, every source of error has to be found.",
       "teaches": [
         "b2-ingenuity-design-vocab"
       ]
@@ -76,14 +76,14 @@
     {
       "id": "b2-12-consolidation-5",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A tervezéskor minden figyelembe ____ kockázatot gondosan megvizsgáltak.",
-      "hint": "vesz -> obligatory participle",
-      "answer": "veendő",
-      "english": "During planning, they carefully examined every risk to be taken into account.",
+      "sentence": "A csapatnak holnap sok ____ lesz.",
+      "hint": "task to be done",
+      "answer": "teendő",
+      "english": "Tomorrow the team will have many tasks.",
       "teaches": [
-        "future-participle-ando"
+        "b2-ingenuity-design-vocab"
       ]
     },
     {
@@ -91,12 +91,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A bányatüzet egy újonnan kifejlesztett vegyi eljárás ____ fékezték meg.",
+      "sentence": "A kitartó munka ____ megoldották a problémát.",
       "hint": "by virtue of / through",
       "answer": "révén",
-      "english": "They curbed the mine fire through a newly developed chemical procedure.",
+      "english": "Through persistent work they solved the problem.",
       "teaches": [
-        "future-participle-ando"
+        "postpositions-altal-reven"
       ]
     },
     {
@@ -106,13 +106,13 @@
       "stage": "in-context",
       "question": "Choose the sentence that expresses purpose using a formal postpositional construction:",
       "options": [
-        "A balesetek megelőzése érdekében és a tárna lehűtése céljából új szellőzőt építettek.",
-        "A baleseteket megelőzni érdekében és a tárnát lehűteni céljából új szellőzőt építettek.",
-        "A balesetek megelőzése révén és a tárna lehűtése által új szellőzőt akarnak."
+        "A balesetek megelőzése érdekében és a hibák ellenőrzése céljából új gépet vettek.",
+        "A baleseteket megelőzni érdekében és a hibák ellenőrzése céljából új gépet vettek.",
+        "A balesetek megelőzése érdekében és a hibák ellenőrzése révén új gépet vettek."
       ],
       "correct": 0,
       "teaches": [
-        "future-participle-ando"
+        "formal-purpose"
       ]
     },
     {
@@ -123,7 +123,7 @@
       "prompt": [
         {
           "speaker": "Igazgatótanács",
-          "text": "Milyen lépések maradtak még hátra a szabadalom benyújtásáig?"
+          "text": "Milyen lépések maradtak még a projekt végéig?"
         },
         {
           "speaker": "Fejlesztési vezető",
@@ -131,13 +131,13 @@
         }
       ],
       "options": [
-        "Már csak a szakértők által felülvizsgálandó rajzokat kell véglegesítenünk a pontosság végett.",
-        "Már csak a szakértőkkel felülvizsgálandó rajzokat kell véglegesítenünk a pontosságot végett.",
-        "Már csak a szakértők útján felülvizsgált jövőbeli rajzokat kell véglegesítenünk."
+        "Már csak a bizottság által elfogadandó tervet kell elküldeni.",
+        "Már csak a bizottságot által elfogadandó tervet kell elküldeni.",
+        "Már csak a bizottság miatt elfogadandó tervet kell elküldeni."
       ],
       "correct": 0,
       "teaches": [
-        "future-participle-ando"
+        "postpositions-altal-reven"
       ]
     },
     {
@@ -193,27 +193,25 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "hatékonyság",
-        "növelése",
+        "munka",
+        "tervezése",
         "céljából",
-        "korszerű",
-        "berendezést",
-        "állítottak",
-        "üzembe."
+        "új",
+        "gépet",
+        "vettünk."
       ],
       "solution": [
         "A",
-        "hatékonyság",
-        "növelése",
+        "munka",
+        "tervezése",
         "céljából",
-        "korszerű",
-        "berendezést",
-        "állítottak",
-        "üzembe."
+        "új",
+        "gépet",
+        "vettünk."
       ],
-      "english": "For the purpose of increasing efficiency, they put modern equipment into operation.",
+      "english": "For the purpose of planning the work, we bought a new machine.",
       "teaches": [
-        "future-participle-ando"
+        "formal-purpose"
       ]
     },
     {
@@ -224,7 +222,7 @@
       "template": [
         {
           "prompt": "Write a two-sentence summary of a technical innovation using at least two '-andó/-endő' participles, one instrumental postposition ('révén', 'útján', or 'segítségével'), and one purposive postposition ('céljából', 'érdekében', or 'végett').",
-          "answer": "A sürgősen megoldandó bányászati problémát és a kiküszöbölendő biztonsági kockázatokat egy új védőkészülék segítségével hárították el. A munkások védelme érdekében és a tűz elfojtása céljából bevezetett eljárás révén a bánya ismét biztonságosan működhetett."
+          "answer": "A sürgősen megoldandó problémát és a kiküszöbölendő kockázatokat egy új gép segítségével hárították el. A munkások védelme érdekében és a hibák ellenőrzése céljából bevezetett eljárás révén a munka ismét jól ment."
         }
       ],
       "teaches": [

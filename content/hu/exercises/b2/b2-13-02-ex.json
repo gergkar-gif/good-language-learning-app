@@ -82,10 +82,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A szónok beszéde tele volt unalmas ____ és közhelyekkel.",
+      "sentence": "A beszéd tele volt unalmas ____.",
       "hint": "platitudes",
       "answer": "közhelyekkel",
-      "english": "The orator's speech was full of boring platitudes and clichés.",
+      "english": "The speech was full of boring platitudes.",
       "teaches": [
         "b2-irony-satire-vocab"
       ]
@@ -97,13 +97,13 @@
       "stage": "controlled",
       "question": "Select the sentence where 'ugyebár' invites consensus from the listener:",
       "options": [
-        "Ez a döntés, ugyebár, mindannyiunk jövőjét érinti.",
-        "Ez a döntés, ugyebár, mindannyiunk jövőjének érinti.",
-        "Ez a döntés, ugyebár, mindannyiunk jövőjébe érintene."
+        "A főnök, ugyebár, a barátait is meghívta.",
+        "A főnök, ugyebár, a barátai is meghívta.",
+        "A főnök, ugyebár, a barátainak is meghívta."
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -117,8 +117,6 @@
         "mindenkire",
         "vonatkoznak,",
         "ugyebár",
-        "nem",
-        "tévedek",
         "?"
       ],
       "solution": [
@@ -127,11 +125,9 @@
         "mindenkire",
         "vonatkoznak,",
         "ugyebár",
-        "nem",
-        "tévedek",
         "?"
       ],
-      "english": "The rules apply to everyone, I am not mistaken, am I?",
+      "english": "The rules apply to everyone, don't they?",
       "teaches": [
         "discourse-particles"
       ]
@@ -166,10 +162,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A cikk finom ____ élt a polgármester legutóbbi baklövésére.",
+      "sentence": "A cikk finom ____ élt a polgármesterre.",
       "hint": "allusion",
       "answer": "célzással",
-      "english": "The article made a subtle allusion to the mayor's recent blunder.",
+      "english": "The article made a subtle allusion to the mayor.",
       "teaches": [
         "b2-irony-satire-vocab"
       ]
@@ -181,13 +177,13 @@
       "stage": "practice",
       "question": "Which sentence uses 'mégiscsak' to reassert a neglected truth despite obstacles?",
       "options": [
-        "Minden nehézség ellenére mégiscsak érdemes volt elindítani a kutatást.",
-        "Minden nehézség ellenére mégiscsak érdemes lett volna elindítani a kutatásnak.",
-        "Minden nehézség ellenére mégiscsak érdemes volt elindítanunk a kutatástól."
+        "Minden nehézség ellenére mégiscsak érdemes volt megcsinálni a munkát.",
+        "Minden nehézség ellenére mégiscsak érdemes volt megcsinálni a munkának.",
+        "Minden nehézség ellenére mégiscsak érdemes volt megcsinálni a munkától."
       ],
       "correct": 0,
       "teaches": [
-        "discourse-particles"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -198,22 +194,25 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Miért vitatkozunk még mindig ezen a nyilvánvaló kérdésen?"
+          "text": "Miért beszélünk még mindig erről?"
         },
         {
           "speaker": "Főszerkesztő",
-          "text": "_____"
+          "text": "____"
         }
       ],
       "options": [
-        "Hiszen a tények magukért beszélnek, felesleges tovább húzni az időt.",
-        "Hiszen a tények maguknak beszélnek, felesleges tovább húzni az időt.",
-        "Hiszen a tények magukért beszélnek, felesleges tovább húznunk az időtől."
+        "Hiszen mindenki tudja a választ, felesleges tovább beszélni.",
+        "Hiszen mindenki tud a választ, felesleges tovább beszélni.",
+        "Hiszen mindenki tudja a választ, felesleges tovább beszéli."
       ],
       "correct": 0,
       "teaches": [
         "discourse-particles"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "definite-vs-indefinite-conjugation"
+      }
     },
     {
       "id": "b2-13-02-dialogue-2",
@@ -223,17 +222,17 @@
       "prompt": [
         {
           "speaker": "Kritikus",
-          "text": "Nem gondolod, hogy túlzottan szigorú volt a könyvről írt bírálat?"
+          "text": "Nem volt túl szigorú a bírálat a könyvről?"
         },
         {
           "speaker": "Olvasó",
-          "text": "_____"
+          "text": "____"
         }
       ],
       "options": [
-        "Mégiscsak be kell látnunk, hogy a regény nem érte el a szerző korábbi színvonalát.",
-        "Mégiscsak be kellene látnunk, hogy a regény nem érte el a szerző korábbi színvonalának.",
-        "Mégiscsak be kell látnunk, hogy a regény nem érte volna el a szerző korábbi színvonalától."
+        "Mégiscsak igaz, hogy a regény nem olyan jó, mint az előző.",
+        "Mégiscsak igaz, hogy a regény nem olyan jól, mint az előző.",
+        "Mégiscsak igaz, hogy a regény nem olyan jó, mint az előzőt."
       ],
       "correct": 0,
       "teaches": [
@@ -262,8 +261,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write: In the end, it was nonetheless worth listening to his advice.",
-          "answer": "Végül mégiscsak érdemes volt meghallgatni a tanácsát."
+          "prompt": "Write: In the end, it was nonetheless worth asking him.",
+          "answer": "Végül mégiscsak érdemes volt megkérdezni őt."
         }
       ],
       "teaches": [
@@ -291,10 +290,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A becsület, ____, mindennél fontosabb egy úriember számára.",
+      "sentence": "A becsület, ____, mindennél fontosabb egy nemesember számára.",
       "hint": "as is well known",
       "answer": "ugyebár",
-      "english": "Honor, as is well known, is more important than anything for a gentleman.",
+      "english": "Honor, as is well known, is more important than anything for a nobleman.",
       "teaches": [
         "discourse-particles"
       ]

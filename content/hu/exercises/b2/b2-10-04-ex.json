@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What is the exact difference between 'tanít' and 'taníttat'?",
       "options": [
-        "'tanít' means to teach directly, while 'taníttat' means to have someone educated.",
+        "'tanít' means to teach, 'taníttat' means to have someone taught.",
         "'tanít' is past tense, while 'taníttat' is future tense.",
-        "They are complete synonyms in every context."
+        "'taníttat' is simply the polite form of 'tanít'."
       ],
       "correct": 0,
       "teaches": [
@@ -81,10 +81,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Sátordy Imre édesapja nagy áldozatok árán ____ a fiát a híres gimnáziumban.",
-      "hint": "tanít -> past causative 3sg def.",
+      "sentence": "Sátordy Imre apja nagy áldozatok árán ____ a fiát a gimnáziumban.",
+      "hint": "tanít, past causative, definite",
       "answer": "taníttatta",
-      "english": "Imre Sátordy's father had his son educated at the famous gymnasium at the cost of great sacrifices.",
+      "english": "Imre Sátordy's father had his son educated at the gymnasium at the cost of great sacrifices.",
       "teaches": [
         "causative-verbal-derivations"
       ]
@@ -94,10 +94,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az akadémia emléktáblát ____ a tudós egykori lakóházának falán.",
-      "hint": "állít -> past causative 3sg indef.",
+      "sentence": "A város szobrot ____ a tudós egykori házánál.",
+      "hint": "állít, past causative, indefinite",
       "answer": "állíttatott",
-      "english": "The academy had a commemorative plaque erected on the wall of the scholar's former residence.",
+      "english": "The city had a statue erected at the scholar's former house.",
       "teaches": [
         "causative-verbal-derivations"
       ]
@@ -108,26 +108,24 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "rektor",
+        "Az",
+        "igazgató",
         "modern",
-        "kutatólaboratóriumot",
+        "laboratóriumot",
         "építtetett",
         "a",
-        "természettudományi",
-        "karnak."
+        "diákoknak."
       ],
       "solution": [
-        "A",
-        "rektor",
+        "Az",
+        "igazgató",
         "modern",
-        "kutatólaboratóriumot",
+        "laboratóriumot",
         "építtetett",
         "a",
-        "természettudományi",
-        "karnak."
+        "diákoknak."
       ],
-      "english": "The rector had a modern research laboratory built for the faculty of natural sciences.",
+      "english": "The director had a modern laboratory built for the students.",
       "teaches": [
         "causative-verbal-derivations"
       ]
@@ -138,7 +136,7 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "A professzor maga ____ a hallgatókat, nem az asszisztenseivel tartatja az előadásokat.",
-      "hint": "tanít -> present 3sg def.",
+      "hint": "tanít, present, definite",
       "answer": "tanítja",
       "english": "The professor teaches the students himself; he does not have his assistants hold the lectures.",
       "teaches": [
@@ -164,26 +162,24 @@
       "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "igazi",
+        "A",
+        "jó",
         "mentor",
-        "gondolkodói",
         "önállóságra",
         "neveli",
         "a",
         "tanítványait."
       ],
       "solution": [
-        "Az",
-        "igazi",
+        "A",
+        "jó",
         "mentor",
-        "gondolkodói",
         "önállóságra",
         "neveli",
         "a",
         "tanítványait."
       ],
-      "english": "A true mentor educates his pupils for intellectual autonomy.",
+      "english": "A good mentor educates his pupils for independence.",
       "teaches": [
         "b2-mentorship-discipline-intellectual-growth-vocab"
       ]
@@ -196,7 +192,7 @@
       "prompt": [
         {
           "speaker": "Történész",
-          "text": "Maga a püspök tervezte és falazta fel a kollégium új könyvtárát?"
+          "text": "A püspök maga építette a kollégium új könyvtárát?"
         },
         {
           "speaker": "Levéltáros",
@@ -204,9 +200,9 @@
         }
       ],
       "options": [
-        "Természetesen nem maga építette, hanem a kor legkiválóbb olasz építészeivel építtette fel.",
-        "Természetesen nem maga építtette, hanem az olasz építészeket építette fel.",
-        "Természetesen nem maga épült, hanem építtetett az építészeknek."
+        "Nem, nem maga építette, hanem olasz mesterekkel építtette fel.",
+        "Nem, nem maga építtette, hanem az olasz mestereket építette fel.",
+        "Nem, nem maga épült, hanem építtetett a mestereknek."
       ],
       "correct": 0,
       "teaches": [
@@ -221,7 +217,7 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Hogyan jutott el a szegény sorsú fiú a bécsi egyetemig?"
+          "text": "Hogyan jutott el a szegény fiú a bécsi egyetemig?"
         },
         {
           "speaker": "Életrajzíró",
@@ -229,9 +225,9 @@
         }
       ],
       "options": [
-        "Egy nagylelkű pártfogó felismerte a tehetségét, és saját költségén taníttatta.",
-        "Egy nagylelkű pártfogó felismerte a tehetségét, és saját költségén tanultatta.",
-        "Egy nagylelkű pártfogó tanított vele saját költségén."
+        "Egy gazdag pártfogó felismerte a tehetségét, és saját költségén taníttatta.",
+        "Egy gazdag pártfogó felismerte a tehetségét, és saját költségén tanultatta.",
+        "Egy gazdag pártfogó tanított vele saját költségén."
       ],
       "correct": 0,
       "teaches": [
@@ -245,8 +241,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence contrasting 'épít' and 'építtet' (e.g. the founder had a college built by famous architects).",
-          "answer": "Az alapító nem maga építette a kollégiumot, hanem híres építészekkel építtette fel."
+          "prompt": "Write a sentence contrasting 'épít' and 'építtet' (e.g. the count did not build the school himself, but had it built by masters).",
+          "answer": "A gróf nem maga építette az iskolát, hanem mesterekkel építtette fel."
         },
         {
           "prompt": "Write a sentence saying that the parents made great sacrifices to have their daughter educated at the academy (use 'taníttatták').",
@@ -265,7 +261,7 @@
       "template": [
         {
           "prompt": "Explain in one Hungarian sentence how strict discipline and mentorship foster intellectual autonomy ('fegyelem', 'önállóság').",
-          "answer": "A következetes fegyelem és a bölcs mentorálás szellemi önállóságra szoktatja a fiatal kutatót."
+          "answer": "A következetes fegyelem és a jó mentor önállóságra neveli a fiatal kutatót."
         }
       ],
       "teaches": [
@@ -293,10 +289,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "check",
-      "sentence": "A szülők minden ____ meghoztak azért, hogy gyermekeik jó oktatásban részesüljenek.",
-      "hint": "sacrifice -> accusative sg.",
+      "sentence": "A szülők minden ____ megtettek azért, hogy a gyermekeik jól tanuljanak.",
+      "hint": "áldozat, accusative",
       "answer": "áldozatot",
-      "english": "The parents made every sacrifice so that their children would receive a good education.",
+      "english": "The parents made every sacrifice so that their children would study well.",
       "teaches": [
         "b2-mentorship-discipline-intellectual-growth-vocab"
       ]

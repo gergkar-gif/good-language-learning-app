@@ -73,7 +73,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "mediopassive-verbs-odik"
+        "definite-vs-indefinite-conjugation"
       ]
     },
     {
@@ -81,10 +81,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Ne ____ magad felesleges önváddal, hiszen mindent megtettél!",
-      "hint": "kínoz -> imperative 2sg def.",
+      "sentence": "Ne ____ magad, mert mindent megtettél!",
+      "hint": "kínoz, imperative 2sg definite",
       "answer": "kínozd",
-      "english": "Do not torment yourself with unnecessary self-reproach, since you did everything you could!",
+      "english": "Do not torment yourself, since you did everything you could!",
       "teaches": [
         "mediopassive-verbs-odik"
       ]
@@ -94,10 +94,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A kíméletlen önvizsgálat végén a kapitány végre megbékélt ____.",
-      "hint": "önmaga -> instrumental",
+      "sentence": "A hosszú önvizsgálat végén a kapitány végre megbékélt ____.",
+      "hint": "önmaga, instrumental",
       "answer": "önmagával",
-      "english": "At the end of the ruthless self-examination, the captain finally made peace with himself.",
+      "english": "At the end of the long self-examination, the captain finally made peace with himself.",
       "teaches": [
         "mediopassive-verbs-odik"
       ]
@@ -136,11 +136,11 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "Ha folyton ____ zárkózol, senki sem tud segíteni neked.",
-      "hint": "te -> illative reflexive pronoun",
+      "hint": "te, reflexive pronoun, illative",
       "answer": "magadba",
       "english": "If you constantly withdraw into yourself, nobody will be able to help you.",
       "teaches": [
-        "mediopassive-verbs-odik"
+        "reflexive-magam"
       ]
     },
     {
@@ -148,10 +148,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A valódi gyógyuláshoz őszinte ____ és bátorságra van szükség.",
-      "hint": "self-examination -> sublative -ra",
+      "sentence": "A gyógyuláshoz őszinte ____ és bátorságra van szükség.",
+      "hint": "önvizsgálat, for",
       "answer": "önvizsgálatra",
-      "english": "Genuine healing requires honest self-examination and courage.",
+      "english": "Healing requires honest self-examination and courage.",
       "teaches": [
         "b2-unconscious-dreams-inner-conflict-vocab"
       ]
@@ -164,24 +164,22 @@
       "tiles": [
         "Az",
         "önámítás",
-        "csak",
-        "elodázza",
+        "nem",
+        "oldja",
+        "meg",
         "a",
-        "valósággal",
-        "való",
-        "szembenézést."
+        "problémát."
       ],
       "solution": [
         "Az",
         "önámítás",
-        "csak",
-        "elodázza",
+        "nem",
+        "oldja",
+        "meg",
         "a",
-        "valósággal",
-        "való",
-        "szembenézést."
+        "problémát."
       ],
-      "english": "Self-deception only postpones facing up to reality.",
+      "english": "Self-deception does not solve the problem.",
       "teaches": [
         "b2-unconscious-dreams-inner-conflict-vocab"
       ]
@@ -194,7 +192,7 @@
       "prompt": [
         {
           "speaker": "Barát",
-          "text": "Miért nem szóltál senkinek arról, hogy mekkora veszteség ért?"
+          "text": "Miért nem mondtál senkinek semmit a veszteségedről?"
         },
         {
           "speaker": "Üzletember",
@@ -203,8 +201,8 @@
       ],
       "options": [
         "Hibát követtem el: teljesen magamba zárkóztam, és még magamnak sem mertem bevallani az igazságot.",
-        "Hibát követtem el: teljesen magamban zárkóztam, és még engem sem mertem bevallani.",
-        "Hibát követtem el: teljesen magamat zárkóztam, és bevallottam magam."
+        "Hibát követtem el: teljesen magamban zárkóztam, és még magamnak sem mertem bevallani az igazságot.",
+        "Hibát követtem el: teljesen magamba zárkóztam, és még magamat sem mertem bevallani az igazságot."
       ],
       "correct": 0,
       "teaches": [
@@ -219,7 +217,7 @@
       "prompt": [
         {
           "speaker": "Lizzy",
-          "text": "Tényleg azt hitted, hogy nem veszem észre a feszültségedet?"
+          "text": "Tényleg azt hitted, hogy nem látom a feszültségedet?"
         },
         {
           "speaker": "Störr kapitány",
@@ -227,9 +225,9 @@
         }
       ],
       "options": [
-        "Hiába próbáltam nyugodtnak tettetni magam, belülről emésztett a bizonytalanság.",
-        "Hiába próbáltam nyugodtnak tettetni engem, belülről emésztődtem a bizonytalanságot.",
-        "Hiába próbáltok nyugodtnak tettetni magamat, emésztett a bizonytalanság."
+        "Hiába próbáltam nyugodtnak tettetni magam, belül nagyon izgultam.",
+        "Hiába próbáltam nyugodtnak tettetni engem, belül nagyon izgultam.",
+        "Hiába próbáltam nyugodtan tettetni magam, belül nagyon izgultam."
       ],
       "correct": 0,
       "teaches": [
@@ -262,8 +260,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "State in Hungarian that I no longer delude myself ('áltatom magam') with empty illusions.",
-          "answer": "Már nem áltatom magam üres illúziókkal, hanem szembenézek a tényekkel."
+          "prompt": "State in Hungarian that I no longer delude myself ('áltatom magam') with empty promises.",
+          "answer": "Már nem áltatom magam üres ígéretekkel, hanem szembenézek a tényekkel."
         }
       ],
       "teaches": [
@@ -277,13 +275,13 @@
       "stage": "check",
       "question": "Which sentence is grammatically correct?",
       "options": [
-        "Sokáig áltattam magam azzal, hogy minden rendben van.",
-        "Sokáig áltattam engem azzal, hogy minden rendben van.",
-        "Sokáig áltattak magamat azzal, hogy minden rendben van."
+        "Sokáig áltattam magam, pedig tudtam az igazságot.",
+        "Sokáig áltattam engem, pedig tudtam az igazságot.",
+        "Sokáig áltattak magamat, pedig tudtam az igazságot."
       ],
       "correct": 0,
       "teaches": [
-        "mediopassive-verbs-odik"
+        "reflexive-magam"
       ]
     },
     {
@@ -292,7 +290,7 @@
       "category": "vocabulary",
       "stage": "check",
       "sentence": "A belső béke első feltétele, hogy az ember megbékéljen ____.",
-      "hint": "himself -> instrumental of önmaga",
+      "hint": "önmaga, instrumental",
       "answer": "önmagával",
       "english": "The first condition of inner peace is that a person make peace with himself.",
       "teaches": [

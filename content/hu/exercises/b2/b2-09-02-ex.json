@@ -69,12 +69,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Akár van aprópénze az utasnak, ____ nincs, nem kaphat vonaljegyet.",
-      "hint": "or [in disjunctive pair]",
-      "answer": "akár",
-      "english": "Whether the passenger has small change or not, he cannot get a ticket.",
+      "sentence": "Akár van aprópénze az utasnak, akár ____, nem kap vonaljegyet.",
+      "hint": "negative of van",
+      "english": "Whether the passenger has small change or not, he does not get a ticket.",
       "teaches": [
         "concessive-indefinites"
+      ],
+      "answers": [
+        "nincs",
+        "nem"
       ]
     },
     {
@@ -82,10 +85,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A szabályzat minden lehetséges ____ kész választ ad.",
+      "sentence": "A szabályzat minden ____ kész választ ad.",
       "hint": "eshetőség, sublative",
       "answer": "eshetőségre",
-      "english": "The regulations provide a ready answer for every possible contingency.",
+      "english": "The regulations give a ready answer for every contingency.",
       "teaches": [
         "b2-logic-paradox-abstract-reasoning-vocab"
       ]
@@ -173,10 +176,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Mindketten a saját hibátlan érvelésük ____ estek.",
+      "sentence": "Mindketten a saját érvelésük ____ estek.",
       "hint": "csapda, their, illative",
       "answer": "csapdájába",
-      "english": "Both of them fell into the trap of their own flawless reasoning.",
+      "english": "Both of them fell into the trap of their own reasoning.",
       "teaches": [
         "b2-logic-paradox-abstract-reasoning-vocab"
       ]
@@ -188,9 +191,9 @@
       "stage": "practice",
       "question": "Which sentence shows that two opposite choices lead to the exact same paradox?",
       "options": [
-        "Akár bezárja a hivatalnok az ablakot, akár nyitva hagyja, megszegi a szabályzatot.",
-        "Ha bezárja a hivatalnok az ablakot, azonnal hazamehet.",
-        "Minél hamarabb bezárja az ablakot, annál több jegyet ad el."
+        "Akár bezárja az ablakot, akár nyitva hagyja, megszegi a szabályzatot.",
+        "Ha a hivatalnok bezárja az ablakot, a szabályzat szerint hazamehet.",
+        "Minél többet vár az utas az ablaknál, annál több jegyet kap tőle."
       ],
       "correct": 0,
       "teaches": [
@@ -215,7 +218,7 @@
       "options": [
         "Akár elmegy, akár itt marad, az állomás nem maradhat utas nélkül, mert akkor én válok utassá.",
         "Akár elmegy, akár itt marad, az állomás nem maradhat utas nélkül, mert akkor én válok utashoz.",
-        "Akár elmenne, akár itt maradna, az állomás utas nélkül marad, ha én nem vagyok itt."
+        "Akár elmegy, itt marad, az állomás nem maradhat utas nélkül, mert akkor én válok utassá."
       ],
       "correct": 0,
       "teaches": [
@@ -230,7 +233,7 @@
       "prompt": [
         {
           "speaker": "Kolléga",
-          "text": "Érdemes még tovább vitatkoznunk erről a mellékes részletről?"
+          "text": "Beszélnünk kell még erről a részletről?"
         },
         {
           "speaker": "Kutató",
@@ -238,9 +241,9 @@
         }
       ],
       "options": [
-        "Nem; akárhogy is nézzük, ez a részlet nem változtat a végső következtetésen.",
-        "Igen, mert akár vitatkozunk, azért igazunk van.",
-        "Csak akkor, ha sem igent, sem nemet nem mondunk."
+        "Nem; akárhogy is nézzük, ez a részlet nem változtat a következtetésen.",
+        "Nem; akárhogy is nézzük, ez a részlet nem változtat a következtetésről.",
+        "Nem; akár nézzük, ez a részlet nem változtat a következtetésen."
       ],
       "correct": 0,
       "teaches": [
@@ -298,9 +301,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "Akár tetszik az igazság, ____ nem, szembe kell néznünk vele.",
-      "hint": "whether ... or",
-      "answer": "akár",
+      "sentence": "Akár tetszik az igazság, akár ____, szembe kell néznünk vele.",
+      "hint": "negation word",
+      "answer": "nem",
       "english": "Whether we like the truth or not, we must face it.",
       "teaches": [
         "concessive-indefinites"

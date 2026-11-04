@@ -69,12 +69,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "____ következetesnek látszik is a hivatalnok érvelése, a kiindulópontja képtelenség.",
+      "sentence": "____ következetesnek látszik is a hivatalnok érvelése, az alapja képtelenség.",
       "hint": "However much",
-      "answer": "Bármennyire",
-      "english": "However consistent the clerk's reasoning may appear, its starting point is an absurdity.",
+      "english": "However consistent the clerk's reasoning may appear, its basis is an absurdity.",
       "teaches": [
         "concessive-indefinites"
+      ],
+      "answers": [
+        "Bármennyire",
+        "Bármilyen"
       ]
     },
     {
@@ -82,10 +85,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "Az utas egyszerű kérdése azonnal ____ a bürokrácia ürességét.",
+      "sentence": "Az utas egyszerű kérdése azonnal ____ a bürokrácia hibáját.",
       "hint": "leleplez, past, definite",
       "answer": "leleplezte",
-      "english": "The passenger's simple question immediately exposed the emptiness of bureaucracy.",
+      "english": "The passenger's simple question immediately exposed the flaw of bureaucracy.",
       "teaches": [
         "b2-logic-paradox-abstract-reasoning-vocab"
       ]
@@ -99,7 +102,7 @@
       "options": [
         "Bárhogyan csűrjük-csavarjuk is a szavakat, ez az érvelés körbenforgó és tarthatatlan.",
         "Mivel az érvelés következetes, a villamos már korábban megérkezett.",
-        "Amennyiben a síneket elvitték, a levezetés hibátlan."
+        "Amennyiben a síneket elvitték, a levezetés jó."
       ],
       "correct": 0,
       "teaches": [
@@ -169,10 +172,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A ____ bizonyítás azért hibás, mert azt feltételezi, amit bizonyítani kellene.",
+      "sentence": "A ____ érvelés azért rossz, mert ugyanazt mondja az elején és a végén.",
       "hint": "circular",
       "answer": "körbenforgó",
-      "english": "Circular proof is flawed because it presupposes what ought to be proven.",
+      "english": "A circular argument is bad because it says the same thing at the beginning and at the end.",
       "teaches": [
         "b2-logic-paradox-abstract-reasoning-vocab"
       ]
@@ -184,9 +187,9 @@
       "stage": "practice",
       "question": "Which sentence synthesizes both a 'bár-... is' clause and a 'tekintet nélkül' phrase?",
       "options": [
-        "Bármilyen udvarias is a hivatalnok, a szabályzat tarthatatlan, tekintet nélkül arra, hogy ki fogalmazta meg.",
-        "Mivel a hivatalnok udvarias, a villamos pontosan indul.",
-        "Ha a szabályzat tarthatatlan, a sínek mégis a helyükön maradnak."
+        "Bármilyen kedves is a hivatalnok, a szabályzat tarthatatlan, tekintet nélkül arra, hogy ki írta.",
+        "Mivel a hivatalnok kedves, a villamos pontosan indul, és az utasok gyorsan hazaérnek.",
+        "Ha a szabályzat tarthatatlan, a sínek mégis a helyükön maradnak, és a villamos jár."
       ],
       "correct": 0,
       "teaches": [
@@ -201,7 +204,7 @@
       "prompt": [
         {
           "speaker": "Vitapartner",
-          "text": "Miért állítja, hogy a javaslatunk belső ellentmondást tartalmaz?"
+          "text": "Miért állítja, hogy a javaslatunk ellentmondást tartalmaz?"
         },
         {
           "speaker": "Bíráló",
@@ -209,9 +212,9 @@
         }
       ],
       "options": [
-        "Mert akár a szigorúbb, akár az enyhébb változatot választjuk, a rendszer önmagát bénítja meg.",
-        "Mert akár a szigorúbb, akár az enyhébb változatot választanánk, a rendszer önmagát bénítana meg.",
-        "Mert akár a szigorúbb, akár az enyhébb változatra választjuk, a rendszer önmaga bénítja meg."
+        "Mert akár az elsőt, akár a másodikat választjuk, a rendszer saját magának mond ellent.",
+        "Mert akár az elsőt, akár a másodikat választjuk, a rendszer saját magának mondanak ellent.",
+        "Mert akár az elsőt, akár a másodikat választjuk, a rendszer saját maga mond ellent."
       ],
       "correct": 0,
       "teaches": [
@@ -226,7 +229,7 @@
       "prompt": [
         {
           "speaker": "Olvasó",
-          "text": "Miért nem lázad fel az utas a hivatalnok képtelen magyarázata ellen?"
+          "text": "Miért nem lázad fel az utas a hivatalnok magyarázata ellen?"
         },
         {
           "speaker": "Irodalmár",
@@ -234,9 +237,9 @@
         }
       ],
       "options": [
-        "Mert bármennyire abszurd is a helyzet, ő maga is a hibátlan formai logika bűvöletébe esik.",
-        "Mert bármennyire abszurd is a helyzet, ő maga is a hibátlan formai logikába bűvöletébe esik.",
-        "Mert bármennyire abszurd lenne a helyzet, ő maga is a hibátlan formai logika bűvöletében esne."
+        "Mert bármennyire képtelen is a helyzet, ő maga is megérti a szabály logikáját.",
+        "Mert bármennyire képtelen is a helyzet, ő maga is megérti a szabály logikát.",
+        "Mert bármennyire képtelen lenne is a helyzet, ő maga is megértené a szabály logikáját."
       ],
       "correct": 0,
       "teaches": [
@@ -307,11 +310,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Miért nem tudott a hivatalnok vonaljegyet adni az utasnak a belváros felé?",
+      "question": "Miért nem tudott a hivatalnok jegyet adni az utasnak?",
       "options": [
-        "Mert a villamosok nem közlekedtek, sőt a síneket is felszedték és elszállították.",
-        "Mert az utas otthon felejtette a pénztárcáját.",
-        "Mert a jegypénztár már egy órával korábban bezárt."
+        "Mert a sínek már nincsenek ott, és a villamos nem jár.",
+        "Mert az utas otthon felejtette a pénzét.",
+        "Mert a pénztár már egy órával korábban bezárt."
       ],
       "correct": 0
     },
@@ -333,11 +336,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Mit tett végül az utas, amikor felismerte a helyzet abszurd logikáját?",
+      "question": "Mit tett végül az utas, amikor megértette a helyzet abszurd logikáját?",
       "options": [
-        "Leült a váróterem fapadjára, és kinyitotta az újságját.",
-        "Dühösen feljelentést írt a villamostársaság igazgatójának.",
-        "Elkezdett egyedül új síneket fektetni az utcán."
+        "Leült a váróteremben, és olvasni kezdett.",
+        "Írt egy levelet a villamostársaság vezetőjének.",
+        "Elkezdett egyedül új síneket rakni az utcán."
       ],
       "correct": 0
     }

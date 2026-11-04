@@ -65,26 +65,29 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the correct obligatory participle of the front-vowel verb 'elvégez' ('to carry out'):",
+      "question": "Choose the correct form of 'követ' ('to follow') that means 'to be followed':",
       "options": [
-        "elvégzendő",
-        "elvégzandó",
-        "elvégezendő"
+        "követendő",
+        "követandó",
+        "követő"
       ],
       "correct": 0,
       "teaches": [
         "future-participle-ando"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "present-participle"
+      }
     },
     {
       "id": "b2-12-01-controlled-3",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A munkavédelmi szabályok minden műhelyben szigorúan ____ előírások.",
-      "hint": "betart -> -andó/-endő",
+      "sentence": "A műhely szabályai minden mérnök számára pontosan ____ előírások.",
+      "hint": "betart, future participle",
       "answer": "betartandó",
-      "english": "Occupational safety rules are regulations to be strictly observed in every workshop.",
+      "english": "The workshop's rules are regulations to be observed exactly by every engineer.",
       "teaches": [
         "future-participle-ando"
       ]
@@ -94,10 +97,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A bizottság összeállította a jövő héten megvitatásra ____ pontok jegyzékét.",
-      "hint": "bocsát -> bocsátandó",
-      "answer": "bocsátandó",
-      "english": "The committee compiled the list of items to be submitted for discussion next week.",
+      "sentence": "A bizottság a jövő hétig három ____ tervet kapott.",
+      "hint": "kidolgoz, future participle",
+      "answer": "kidolgozandó",
+      "english": "By next week the committee received three plans to be worked out.",
       "teaches": [
         "future-participle-ando"
       ]
@@ -111,7 +114,7 @@
         "A",
         "mérnökök",
         "pontosan",
-        "felmérték",
+        "látják",
         "a",
         "megoldandó",
         "műszaki",
@@ -121,13 +124,13 @@
         "A",
         "mérnökök",
         "pontosan",
-        "felmérték",
+        "látják",
         "a",
         "megoldandó",
         "műszaki",
         "kérdéseket."
       ],
-      "english": "The engineers accurately assessed the technical questions to be solved.",
+      "english": "The engineers see exactly which technical questions are to be solved.",
       "teaches": [
         "future-participle-ando"
       ]
@@ -138,7 +141,7 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "A tervezéskor minden figyelembe ____ tényezőt gondosan mérlegeltünk.",
-      "hint": "vesz -> obligatory participle",
+      "hint": "vesz, future participle (figyelembe vesz)",
       "answer": "veendő",
       "english": "During planning, we carefully weighed every factor to be taken into account.",
       "teaches": [
@@ -150,10 +153,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A kísérlet megkezdése előtt még számos sürgős ____ vár a kutatócsoportra.",
+      "sentence": "A kísérlet előtt még sok sürgős ____ vár a csapatra.",
       "hint": "task to be done",
       "answer": "teendő",
-      "english": "Before starting the experiment, numerous urgent tasks still await the research team.",
+      "english": "Before the experiment, many urgent tasks still await the team.",
       "teaches": [
         "b2-ingenuity-design-vocab"
       ]
@@ -196,7 +199,7 @@
       "prompt": [
         {
           "speaker": "Projektvezető",
-          "text": "Melyik szakaszban tart jelenleg a prototípus fejlesztése?"
+          "text": "Hogy áll most a munka?"
         },
         {
           "speaker": "Főmérnök",
@@ -204,9 +207,9 @@
         }
       ],
       "options": [
-        "Az alapelv már működik, de még maradt néhány részletesen kidolgozandó alkatrész és elvégzendő teszt.",
-        "Az alapelv már működik, de még maradt néhány részletesen kidolgozandó alkatrészek és elvégzendő tesztek.",
-        "Az alapelv már működik, de még maradt néhány kidolgozandónak alkatrész és elvégzendőnek teszt."
+        "A terv jó, de még maradt néhány részletesen kidolgozandó pont és elvégzendő mérés.",
+        "A terv jó, de még maradt néhány részletesen kidolgozandó pontok és elvégzendő mérések.",
+        "A terv jó, de még maradt néhány kidolgozandónak pont és elvégzendőnek mérés."
       ],
       "correct": 0,
       "teaches": [
@@ -221,7 +224,7 @@
       "prompt": [
         {
           "speaker": "Pályázó",
-          "text": "Mire ügyeljünk a műszaki dokumentáció benyújtásakor?"
+          "text": "Mire ügyeljünk a terv benyújtásakor?"
         },
         {
           "speaker": "Bíráló",
@@ -229,14 +232,17 @@
         }
       ],
       "options": [
-        "Minden csatolandó mellékletet és betartandó biztonsági előírást ellenőrizzenek kétszer!",
-        "Minden csatolandó mellékleteket és betartott jövőbeli előírást ellenőrizzenek!",
-        "Minden csatolni mellékletet és betartani előírást ellenőrizzenek!"
+        "Minden betartandó előírást és elvégzendő mérést ellenőrizzenek kétszer!",
+        "Minden betartandók előírást és elvégzendő mérést ellenőrizzenek kétszer!",
+        "Minden betartani előírást és elvégezni mérést ellenőrizzenek kétszer!"
       ],
       "correct": 0,
       "teaches": [
         "future-participle-ando"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-participle-adjective"
+      }
     },
     {
       "id": "b2-12-01-writing-1",
@@ -246,11 +252,11 @@
       "template": [
         {
           "prompt": "Rewrite 'a feladatok, amelyeket meg kell oldani' as a concise noun phrase in a complete sentence.",
-          "answer": "A megbeszélés elején tisztáztuk a sürgősen megoldandó feladatokat."
+          "answer": "A mérnökök a sürgősen megoldandó feladatokat látják."
         },
         {
           "prompt": "Write a sentence describing an engineer's method as an example to be followed ('követendő példa').",
-          "answer": "A bányamérnök lelkiismeretes módszere követendő példa minden fiatal kutató számára."
+          "answer": "A mérnök módszere követendő példa minden fiatal mérnöknek."
         }
       ],
       "teaches": [
@@ -264,8 +270,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "State that the team summarized the measurements to be carried out ('az elvégzendő méréseket').",
-          "answer": "A munkacsoport táblázatban foglalta össze a héten elvégzendő méréseket."
+          "prompt": "State that the team received the measurements to be carried out this week ('az elvégzendő méréseket').",
+          "answer": "A csapat megkapta a héten elvégzendő méréseket."
         }
       ],
       "teaches": [
@@ -281,22 +287,25 @@
       "options": [
         "a még kidolgozandó tervjavaslat",
         "a már kidolgozott tervjavaslat",
-        "a tervjavaslatot kidolgozó"
+        "a tervjavaslat, amelyet kidolgoztak"
       ],
       "correct": 0,
       "teaches": [
         "future-participle-ando"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "past-participle-adjective"
+      }
     },
     {
       "id": "b2-12-01-check-2",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "check",
-      "sentence": "A szigorú tűzvédelmi ____ megszegése súlyos balesethez vezethet.",
+      "sentence": "A műhelyben szigorú ____ vannak, és mindenkinek be kell tartania őket.",
       "hint": "regulations / specifications",
       "answer": "előírások",
-      "english": "Violating the strict fire-safety regulations can lead to a serious accident.",
+      "english": "There are strict regulations in the workshop, and everyone has to follow them.",
       "teaches": [
         "b2-ingenuity-design-vocab"
       ]

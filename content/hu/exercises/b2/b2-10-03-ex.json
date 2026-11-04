@@ -67,8 +67,8 @@
       "stage": "controlled",
       "question": "Why does 'az olvasót' take the accusative (-t) in 'A regény elgondolkodtatja az olvasót'?",
       "options": [
-        "Because the base verb 'gondolkodik' is intransitive, so its causee becomes the direct object in -t.",
-        "Because 'olvasó' is an inanimate instrument.",
+        "Because 'gondolkodik' is intransitive, so its causee takes -t.",
+        "Because 'olvasó' is an inanimate instrument and so needs -t.",
         "Because causative verbs never allow the suffix -val/-vel in Hungarian."
       ],
       "correct": 0,
@@ -81,10 +81,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az igényes edző és mentor alaposan megdolgoztatta a ____.",
-      "hint": "jelöltek -> accusative pl.",
+      "sentence": "Az igényes tanár alaposan megdolgoztatta a ____.",
+      "hint": "jelölt, accusative plural",
       "answer": "jelölteket",
-      "english": "The demanding coach and mentor made the candidates work thoroughly.",
+      "english": "The demanding teacher made the candidates work thoroughly.",
       "teaches": [
         "causative-verbal-derivations"
       ]
@@ -112,7 +112,7 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "filozófus",
+        "tanár",
         "érvelése",
         "mélyen",
         "elgondolkodtatta",
@@ -121,14 +121,14 @@
       ],
       "solution": [
         "A",
-        "filozófus",
+        "tanár",
         "érvelése",
         "mélyen",
         "elgondolkodtatta",
         "a",
         "hallgatóságot."
       ],
-      "english": "The philosopher's reasoning made the audience think deeply.",
+      "english": "The teacher's reasoning made the audience think deeply.",
       "teaches": [
         "causative-verbal-derivations"
       ]
@@ -139,7 +139,7 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "A történelemtanár minden óra elején három tanulót ____ a térképnél.",
-      "hint": "feleltet -> past 3sg indef.",
+      "hint": "feleltet, past, indefinite",
       "answer": "feleltetett",
       "english": "At the start of every class, the history teacher quizzed three pupils at the map.",
       "teaches": [
@@ -151,10 +151,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A gimnáziumi évek az ifjúkori ____ legfontosabb szakaszát jelentették számára.",
+      "sentence": "A diákévek voltak számára az ____ ideje.",
       "hint": "intellectual awakening",
       "answer": "eszmélkedés",
-      "english": "The gymnasium years represented the most important stage of youthful intellectual awakening for him.",
+      "english": "For him the school years were the time of intellectual awakening.",
       "teaches": [
         "b2-mentorship-discipline-intellectual-growth-vocab"
       ]
@@ -195,7 +195,7 @@
       "prompt": [
         {
           "speaker": "Diák",
-          "text": "Milyen volt az új docens szemináriuma?"
+          "text": "Milyen volt az új tanár órája?"
         },
         {
           "speaker": "Évfolyamtárs",
@@ -203,9 +203,9 @@
         }
       ],
       "options": [
-        "Rendkívül igényes: végig megdolgoztatott minket, és mindenkit elgondolkodtatott a kérdéseivel.",
-        "Rendkívül igényes: végig megdolgoztatott velünk, és mindenkivel elgondolkodtatott a kérdéseivel.",
-        "Rendkívül igényes: végig megdolgozott minket, és elgondolkodott minket."
+        "Nagyon igényes: végig megdolgoztatott minket, és mindenkit elgondolkodtatott a kérdéseivel.",
+        "Nagyon igényes: végig megdolgoztatott velünk, és mindenkivel elgondolkodtatott a kérdéseivel.",
+        "Nagyon igényes: végig megdolgozott minket, és mindenkit elgondolkodtatott a kérdéseivel."
       ],
       "correct": 0,
       "teaches": [
@@ -220,7 +220,7 @@
       "prompt": [
         {
           "speaker": "Kolléga",
-          "text": "Miért hívtad be az összes gyakornokot a tárgyalóba?"
+          "text": "Miért hívtad be az összes diákot az irodába?"
         },
         {
           "speaker": "Mentor",
@@ -244,12 +244,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence saying that the essay's conclusion made the readers think deeply (use 'elgondolkodtatta az olvasókat').",
-          "answer": "Az esszé végkövetkeztetése mélyen elgondolkodtatta az olvasókat."
+          "prompt": "Write a sentence saying that the ending of the book made the readers think deeply (use 'elgondolkodtatta az olvasókat').",
+          "answer": "A könyv vége mélyen elgondolkodtatta az olvasókat."
         },
         {
-          "prompt": "Write a contrasting sentence showing both patterns: the teacher quizzed the students (-t) and had them translate a passage (-val/-vel).",
-          "answer": "A tanár először feleltette a diákokat, majd lefordíttatott velük egy szemelvényt."
+          "prompt": "Write a contrasting sentence showing both patterns: the teacher quizzed the students (-t) and had them translate a text (-val/-vel).",
+          "answer": "A tanár először feleltette a diákokat, majd lefordíttatott velük egy szöveget."
         }
       ],
       "teaches": [
@@ -263,8 +263,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "State that the demanding workshop leader makes the participants work hard (use 'megdolgoztatja a résztvevőket').",
-          "answer": "Az igényes műhelyvezető minden alkalommal alaposan megdolgoztatja a résztvevőket."
+          "prompt": "State that the demanding teacher makes the students work hard (use 'megdolgoztatja a diákokat').",
+          "answer": "Az igényes tanár minden órán alaposan megdolgoztatja a diákokat."
         }
       ],
       "teaches": [
@@ -278,9 +278,9 @@
       "stage": "check",
       "question": "Which sentence is grammatically well-formed?",
       "options": [
-        "A vita elgondolkodtatta a résztvevőket.",
-        "A vita elgondolkodtatta a résztvevőkkel.",
-        "A vita elgondolkodott a résztvevőket."
+        "A vita elgondolkodtatta a diákokat.",
+        "A vita elgondolkodtatta a diákokkal.",
+        "A vita elgondolkodott a diákokat."
       ],
       "correct": 0,
       "teaches": [
@@ -292,10 +292,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "check",
-      "sentence": "Ez a kritikus rendkívül ____ saját magával és a tanítványaival szemben is.",
+      "sentence": "Ez a tanár nagyon ____ saját magával és a tanítványaival szemben is.",
       "hint": "demanding / of high standards",
       "answer": "igényes",
-      "english": "This critic is extraordinarily demanding toward both himself and his pupils.",
+      "english": "This teacher is very demanding toward himself and his pupils too.",
       "teaches": [
         "b2-mentorship-discipline-intellectual-growth-vocab"
       ]

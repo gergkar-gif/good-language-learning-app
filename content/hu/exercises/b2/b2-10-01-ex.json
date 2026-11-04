@@ -8,7 +8,7 @@
       "stage": "introduce",
       "question": "What does the causative verb 'kijavíttat' mean?",
       "options": [
-        "to have something corrected or repaired (by someone else)",
+        "to have something corrected by someone",
         "to correct something with one's own hands",
         "to make a mistake on purpose"
       ],
@@ -26,7 +26,7 @@
       "options": [
         "kézirat",
         "tankönyv",
-        "szemelvény"
+        "könyvtár"
       ],
       "correct": 0,
       "teaches": [
@@ -98,7 +98,7 @@
       "category": "grammar",
       "stage": "controlled",
       "sentence": "A szigorú professzor minden héten legalább kétszáz oldalt ____ a hallgatókkal.",
-      "hint": "olvas -> causative",
+      "hint": "olvas, causative",
       "answer": "olvastat",
       "english": "The strict professor makes the students read at least two hundred pages every week.",
       "teaches": [
@@ -111,7 +111,7 @@
       "category": "grammar",
       "stage": "practice",
       "sentence": "A szerkesztő azonnal ____ a sajtóhibákat a kéziratban.",
-      "hint": "kijavít -> past causative 3sg def.",
+      "hint": "kijavít, past causative, definite",
       "answer": "kijavíttatta",
       "english": "The editor immediately had the typographical errors corrected in the manuscript.",
       "teaches": [
@@ -126,7 +126,7 @@
       "tiles": [
         "A",
         "tanár",
-        "röpdolgozatot",
+        "esszét",
         "íratott",
         "az",
         "osztállyal."
@@ -134,12 +134,12 @@
       "solution": [
         "A",
         "tanár",
-        "röpdolgozatot",
+        "esszét",
         "íratott",
         "az",
         "osztállyal."
       ],
-      "english": "The teacher had the class write a pop quiz.",
+      "english": "The teacher had the class write an essay.",
       "teaches": [
         "causative-verbal-derivations"
       ]
@@ -149,9 +149,9 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A bíráló nem fogadta el a ____ elemzést, ezért alaposabb munkát kért.",
+      "sentence": "A tanár nem fogadta el a ____ dolgozatot, ezért jobb munkát kért.",
       "answer": "felületes",
-      "english": "The reviewer did not accept the superficial analysis and therefore asked for more thorough work.",
+      "english": "The teacher did not accept the superficial paper and therefore asked for better work.",
       "teaches": [
         "b2-mentorship-discipline-intellectual-growth-vocab"
       ]
@@ -165,7 +165,8 @@
         "A",
         "ritka",
         "kéziratot",
-        "szakértőkkel",
+        "a",
+        "tanárokkal",
         "vizsgáltatták",
         "át."
       ],
@@ -173,11 +174,12 @@
         "A",
         "ritka",
         "kéziratot",
-        "szakértőkkel",
+        "a",
+        "tanárokkal",
         "vizsgáltatták",
         "át."
       ],
-      "english": "They had the rare manuscript examined by experts.",
+      "english": "They had the rare manuscript examined by the teachers.",
       "teaches": [
         "b2-mentorship-discipline-intellectual-growth-vocab"
       ]
@@ -189,18 +191,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Doktorandusz",
-          "text": "Elfogadta már a témavezetőd a disszertációd első fejezetét?"
+          "speaker": "Diák",
+          "text": "Elfogadta már a tanárod az első fejezetet?"
         },
         {
-          "speaker": "Kutató",
+          "speaker": "Barát",
           "text": "____"
         }
       ],
       "options": [
-        "Még nem: tegnap újraíratta velem a módszertani részt, és további cikkeket olvastat hozzá.",
-        "Még nem: tegnap újraírtat velem a módszertani részt, és további cikkeket olvasat hozzá.",
-        "Még nem: tegnap újraírta velem a módszertani részt, hogy én egyedül írtam."
+        "Még nem: tegnap újraíratta velem az első részt, és több cikket olvastatott velem.",
+        "Még nem: tegnap újraírtatta velem az első részt, és több cikket olvastatott velem.",
+        "Még nem: tegnap újraírta velem az első részt, és több cikket olvastatott velem."
       ],
       "correct": 0,
       "teaches": [
@@ -215,7 +217,7 @@
       "prompt": [
         {
           "speaker": "Szerkesztő",
-          "text": "Mi legyen a kéziratban maradt pontatlan idézetekkel?"
+          "text": "Mi legyen a kéziratban maradt hibás mondatokkal?"
         },
         {
           "speaker": "Főszerkesztő",
@@ -223,9 +225,9 @@
         }
       ],
       "options": [
-        "Még a nyomdába adás előtt ellenőriztessük le és javíttassuk ki őket a szerzővel!",
-        "Még a nyomdába adás előtt ellenőrizzüktat le és javítassuk ki őket a szerzővel!",
-        "Még a nyomdába adás előtt ellenőriztesd a szerzőt a nyomdába!"
+        "Még a nyomdába küldés előtt nézessük át és javíttassuk ki őket a szerzővel!",
+        "Még a nyomdába küldés előtt nézassuk át és javíttassuk ki őket a szerzővel!",
+        "Még a nyomdába küldés előtt nézessük át és javítatassuk ki őket a szerzővel!"
       ],
       "correct": 0,
       "teaches": [
@@ -243,8 +245,8 @@
           "answer": "Az irodalomtanár minden hónapban esszét írat a diákokkal."
         },
         {
-          "prompt": "Write a sentence saying that the professor had the manuscript corrected before publication (use 'kijavíttatta').",
-          "answer": "A professzor a megjelenés előtt kijavíttatta a kéziratot."
+          "prompt": "Write a sentence saying that the professor had the manuscript corrected before it was sent to the printer (use 'kijavíttatta').",
+          "answer": "A professzor a nyomdába küldés előtt kijavíttatta a kéziratot."
         }
       ],
       "teaches": [
@@ -258,8 +260,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "State that our mentor makes us read classic philosophical works in the original language (use 'olvastat').",
-          "answer": "A mentorunk eredeti nyelven olvastat velünk klasszikus filozófiai műveket."
+          "prompt": "State that our mentor makes us read old works in the original language (use 'olvastat').",
+          "answer": "A mentorunk eredeti nyelven olvastat velünk régi műveket."
         }
       ],
       "teaches": [
@@ -287,10 +289,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "check",
-      "sentence": "Az eredeti ____ a Nemzeti Múzeum levéltárában őrzik.",
+      "sentence": "Az eredeti ____ a könyvtárban őrzik.",
       "hint": "manuscript",
       "answer": "kéziratot",
-      "english": "The original manuscript is preserved in the archives of the National Museum.",
+      "english": "The original manuscript is kept in the library.",
       "teaches": [
         "b2-mentorship-discipline-intellectual-growth-vocab"
       ]

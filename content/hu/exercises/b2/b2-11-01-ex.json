@@ -25,8 +25,8 @@
       "question": "Which noun means 'anxiety / anguish'?",
       "options": [
         "szorongás",
-        "derű",
-        "közöny"
+        "öröm",
+        "nyugalom"
       ],
       "correct": 0,
       "teaches": [
@@ -82,7 +82,7 @@
       "category": "grammar",
       "stage": "controlled",
       "sentence": "A feszültség lassan ____ a teremben, amikor mindenki őszintén megszólalt.",
-      "hint": "felold vs. feloldódik -> past 3sg",
+      "hint": "feloldódik, past 3sg",
       "answer": "feloldódott",
       "english": "The tension slowly dissolved in the room when everyone spoke up honestly.",
       "teaches": [
@@ -94,10 +94,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A megnyugtató szavak hatására a beteg végre ____.",
-      "hint": "megnyugtat vs. megnyugszik -> past 3sg",
+      "sentence": "A jó szavak hatására a beteg végre ____.",
+      "hint": "megnyugszik, past 3sg",
       "answer": "megnyugodott",
-      "english": "Under the effect of the reassuring words, the patient finally calmed down.",
+      "english": "Because of the kind words, the patient finally calmed down.",
       "teaches": [
         "mediopassive-verbs-odik"
       ]
@@ -110,7 +110,7 @@
       "tiles": [
         "A",
         "kölcsönös",
-        "bizalmatlanság",
+        "hallgatás",
         "fokozatosan",
         "elidegenítette",
         "őket",
@@ -119,13 +119,13 @@
       "solution": [
         "A",
         "kölcsönös",
-        "bizalmatlanság",
+        "hallgatás",
         "fokozatosan",
         "elidegenítette",
         "őket",
         "egymástól."
       ],
-      "english": "Mutual distrust gradually alienated them from each other.",
+      "english": "Mutual silence gradually alienated them from each other.",
       "teaches": [
         "mediopassive-verbs-odik"
       ]
@@ -135,10 +135,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A pszichológus csendben figyelte, ahogy a páciens ____ az emlékeiben.",
-      "hint": "elmélyít vs. elmélyül -> present 3sg",
+      "sentence": "Az orvos csendben figyelte, ahogy a beteg ____ az emlékeiben.",
+      "hint": "to become absorbed (present, 3sg)",
       "answer": "elmélyül",
-      "english": "The psychologist quietly watched as the patient became absorbed in his memories.",
+      "english": "The doctor quietly watched as the patient became absorbed in his memories.",
       "teaches": [
         "mediopassive-verbs-odik"
       ]
@@ -148,10 +148,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A kimondatlan félelmekből gyakran tartós belső ____ születik.",
+      "sentence": "A kimondatlan gondokból gyakran nagy belső ____ születik.",
       "hint": "anxiety",
       "answer": "szorongás",
-      "english": "Unspoken fears often give rise to lasting inner anxiety.",
+      "english": "Unspoken worries often give rise to great inner anxiety.",
       "teaches": [
         "b2-unconscious-dreams-inner-conflict-vocab"
       ]
@@ -194,7 +194,7 @@
       "prompt": [
         {
           "speaker": "Barát",
-          "text": "Miért tűntél olyan zaklatottnak a tegnapi találkozón?"
+          "text": "Miért voltál olyan nyugtalan tegnap a találkozón?"
         },
         {
           "speaker": "Kapitány",
@@ -202,9 +202,9 @@
         }
       ],
       "options": [
-        "Egy régi emlék zaklatott fel, de mire véget ért a beszélgetésünk, teljesen megnyugodtam.",
-        "Egy régi emlék megnyugodott engem, de mire véget ért a beszélgetésünk, teljesen megnyugtattam.",
-        "Egy régi emlék zaklatódott engem, és nem tudtam feloldani."
+        "Egy régi emlék felzaklatott, de mire véget ért a beszélgetésünk, megnyugodtam.",
+        "Egy régi emlék felzaklatódott engem, de mire véget ért a beszélgetésünk, megnyugodtam.",
+        "Egy régi emlék felzaklatott, de mire véget ért a beszélgetésünk, megnyugtattam."
       ],
       "correct": 0,
       "teaches": [
@@ -219,7 +219,7 @@
       "prompt": [
         {
           "speaker": "Terapeuta",
-          "text": "Hogyan változott a kapcsolatuk az elmúlt hónapokban?"
+          "text": "Hogyan változott a kapcsolatuk mostanában?"
         },
         {
           "speaker": "Páciens",
@@ -228,8 +228,8 @@
       ],
       "options": [
         "Sajnos egyre jobban elidegenedtünk egymástól, mert a hallgatás csak elmélyítette a félreértéseket.",
-        "Sajnos egyre jobban elidegenítettünk egymástól, mert a hallgatás csak elmélyült a félreértéseket.",
-        "Sajnos elidegenedtük egymást, és a félreértések elmélyítették."
+        "Sajnos egyre jobban elidegenítettünk egymástól, mert a hallgatás csak elmélyítette a félreértéseket.",
+        "Sajnos egyre jobban elidegenedtünk egymástól, mert a hallgatás csak elmélyült a félreértéseket."
       ],
       "correct": 0,
       "teaches": [
@@ -248,7 +248,7 @@
         },
         {
           "prompt": "Write a sentence using 'elmélyít' (transitive) or 'elmélyül' (intransitive) in a psychological context.",
-          "answer": "A közös önvizsgálat nem elidegenítette őket, hanem elmélyítette a köztük lévő bizalmat."
+          "answer": "A közös önvizsgálat nem elidegenítette őket, hanem elmélyítette a bizalmukat."
         }
       ],
       "teaches": [
@@ -262,8 +262,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "State that once he spoke openly about his nightmare, the inner anxiety dissolved ('feloldódott').",
-          "answer": "Miután őszintén beszélt a rémálmáról, a belső szorongás lassan feloldódott benne."
+          "prompt": "State that once he spoke openly about his dream, the inner anxiety dissolved ('feloldódott').",
+          "answer": "Miután őszintén beszélt az álmáról, a belső szorongás lassan feloldódott benne."
         }
       ],
       "teaches": [
@@ -277,9 +277,9 @@
       "stage": "check",
       "question": "Which sentence correctly uses an intransitive middle verb?",
       "options": [
-        "A két egykori jóbarát az évek során teljesen elidegenedett egymástól.",
-        "A két egykori jóbarát az évek során teljesen elidegenített egymástól.",
-        "A két egykori jóbarát az évek során teljesen felzaklatott egymástól."
+        "A két régi barát az évek során teljesen elidegenedett egymástól.",
+        "A két régi barát az évek során teljesen elidegenített egymástól.",
+        "A két régi barát az évek során teljesen felzaklatott egymástól."
       ],
       "correct": 0,
       "teaches": [
@@ -292,7 +292,7 @@
       "category": "vocabulary",
       "stage": "check",
       "sentence": "A hirtelen jött rossz hír mindenkit mélyen ____.",
-      "hint": "upset / agitated -> past 3sg indef.",
+      "hint": "felzaklat, past 3sg indefinite",
       "answer": "felzaklatott",
       "english": "The sudden bad news deeply upset everyone.",
       "teaches": [
