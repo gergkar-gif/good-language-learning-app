@@ -457,6 +457,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-04 | HU B2 core 53, 55, 57, 59, 61, 63 | paired read, 3 core units/reader, no limit; a worker restart mid-review lost nothing | | A 438,701, B 446,836 (~148k a unit) | 612 proposed (117 / 85 / 107 / 82 / 122 / 99), 6 rejected and rewritten (3 length, a tell, a non-form, a ds on its own skill); Claude changed ~35 items (21 second right answers in two-form skills), listed 47 words | the most expensive B2 batch per unit; tags were the generator's worst here (every grammar item on the unit skill); walk 36/36 |
 | 11-04 | HU B2 core 65, 67, 69, 71 (last core batch) | paired read, 2 core units/reader, no limit | | A 385,337, B 441,755 (~207k a unit at two per reader) | 423 proposed (94 / 101 / 125 / 103), 6 rejected and rewritten (3 tells, 2 length, an answer in the prompt); Claude changed ~15 items (7 second right answers), listed 27 words | **core track done: 36/36 frozen**; reader B rewrote whole screens, so 224 of 228 went to review; walk 24/24 |
 | 11-04 | HU B2 culture 2, 4, 6, 8 (first culture batch) | paired read, 2 culture units/reader, text first with facts files; both stopped by the 5-hour limit after one unit, resumed | | A 369,157, B 380,867 on resume (~187k a unit if cumulative) | 362 proposed (88 / 59 / 94 / 121), 1 rejected and rewritten; ~95 facts flagged "check", 2 of the readers' own corrections wrong (emblem, museum) | culture units: whole-unit retagging again (every item on the unit skill); walk 24/24 |
+| 11-04 | HU B2 culture 10, 12, 14, 16 | paired read, 2 culture units/reader, text first, no limit | | A 319,217, B 435,986 (~189k a unit) | 342 proposed (53 / 60 / 127 / 102), 2 rejected and rewritten; ~150 facts listed; 1 reader grammar error at scale (14 counterfactuals) | 1 later-skill lesson rewritten on the user's decision (Unit 14, `annyira-hogy`); walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1646,3 +1647,17 @@ The user took the four recommended options:
   the reviewer read the pages.
 - **A blanket text replace in my own fixes broke a fix's `old` text and a deliberate wrong
   option**; edit fixes by field and item, never by string across a list.
+
+### 2026-11-04: HU B2 culture Units 10–16
+
+- **A reader can introduce a grammar error across a unit and state it as a rule:** reader B
+  "fixed" Unit 16's present-tense counterfactuals to the plain past (*Ha … fogadta, … volna*) in
+  14 places and wrote a tip saying so. Every review list needs a read for grammar the reader
+  changed, not only facts; a regex sweep (*ha*-clause without *volna* before a *volna* main
+  clause) found the last one in the applied files. Now in rulebook § 6b.
+- **Culture units re-teach core grammar** in every batch so far (Units 6, 8, 10, 12, 14, 16):
+  recaps fix the screens, but the lessons stay thin on new material; this is a generator
+  pattern, not a reader one.
+- **The readers' corrected facts held this time** (dates, Nobel committee, patents), and my own
+  read caught what both readers missed (El Greco, the English summaries): the reviewer's own
+  facts read stays necessary.
