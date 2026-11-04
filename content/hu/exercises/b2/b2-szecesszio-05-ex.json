@@ -4,16 +4,16 @@
     {
       "id": "b2-szecesszio-05.ex01",
       "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "Mit fejez ki a 'megőrzendő műemlék' szerkezetben a '-endő' képzős melléknévi igenév?",
+      "category": "grammar",
+      "question": "Mit fejez ki a 'megőrzendő műemlék' szerkezet?",
       "options": [
-        "Azt, hogy a műemléket a jövő generációi számára kötelességünk megőrizni és megvédeni.",
-        "Azt, hogy a műemléket már régen lebontották.",
-        "Azt, hogy a műemlék saját maga őrzi a szomszédos utcát."
+        "Azt, hogy a műemléket meg kell őrizni a jövőnek.",
+        "Azt, hogy a műemléket már megőrizték.",
+        "Azt, hogy a műemlék éppen megőrzi a környezetét."
       ],
       "correct": 0,
       "teaches": [
-        "b2-fin-de-siecle-budapest-vocab"
+        "future-participle-ando"
       ]
     },
     {
@@ -37,14 +37,14 @@
       "answer": "megsérült",
       "english": "The facades damaged during the wartime siege have been carefully restored in recent years.",
       "teaches": [
-        "participial-clauses"
+        "past-participle-adjective"
       ]
     },
     {
       "id": "b2-szecesszio-05.ex04",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik melléknévi igenév fejezi ki a jövőbeli szükségszerűséget ('facades that need to be renovated')?",
+      "question": "Melyik szerkezet fejezi ki, hogy a homlokzatokat fel kell újítani?",
       "options": [
         "a sürgősen felújítandó homlokzatok",
         "a sürgősen felújító homlokzatok",
@@ -52,8 +52,12 @@
       ],
       "correct": 0,
       "teaches": [
-        "participial-clauses"
-      ]
+        "future-participle-ando"
+      ],
+      "distractor_skills": {
+        "1": "present-participle",
+        "2": "past-participle-adjective"
+      }
     },
     {
       "id": "b2-szecesszio-05.ex05",
@@ -65,7 +69,7 @@
         "restaurált",
         "homlokzatok",
         "ismét",
-        "eredeti",
+        "szép",
         "pompájukban",
         "ragyognak."
       ],
@@ -75,11 +79,11 @@
         "restaurált",
         "homlokzatok",
         "ismét",
-        "eredeti",
+        "szép",
         "pompájukban",
         "ragyognak."
       ],
-      "english": "The carefully restored facades shine once again in their original splendor.",
+      "english": "The carefully restored facades shine once again in their splendour.",
       "teaches": [
         "participial-clauses"
       ]
@@ -90,9 +94,9 @@
       "category": "reading",
       "question": "Mi jellemezte Lajta Béla 1912-es Rózsavölgyi-házát a Szervita téren?",
       "options": [
-        "A modern vasbeton és üvegkirakatok összekapcsolása a népi szőtteseket idéző geometriai Zsolnay-kerámiasávokkal.",
-        "A középkori várárok és felvonóhíd visszaépítése a belvárosban.",
-        "A teljes ablaknélküliség és a nyers téglafalak használata."
+        "Vasbeton szerkezet, üvegkirakatok és népi szőtteseket idéző kerámiasávok.",
+        "Gótikus tornyok és hatalmas kőkapuk a Dunára néző oldalon.",
+        "Zöld kupola és fehér márványlépcső a bejárat előtt, a Duna felől."
       ],
       "correct": 0
     },
@@ -132,11 +136,11 @@
       "template": [
         {
           "prompt": "Describe the Rózsavölgyi House using a pre-nominal participial modifier ('a népi szőtteseket idéző ...').",
-          "answer": "A népi szőtteseket idéző kerámiasávok egyedülálló ritmust adnak a Rózsavölgyi-ház homlokzatának."
+          "answer": "A népi szőtteseket idéző kerámiasávok sajátos ritmust adnak a Rózsavölgyi-ház homlokzatának."
         },
         {
           "prompt": "Write a sentence about protecting historic buildings using 'megőrzendő' or 'felújítandó'.",
-          "answer": "A jövő nemzedékei számára megőrzendő szecessziós paloták Budapest legértékesebb kincsei közé tartoznak."
+          "answer": "A jövő nemzedékei számára megőrzendő szecessziós paloták Budapest értékes kincsei közé tartoznak."
         }
       ],
       "teaches": [

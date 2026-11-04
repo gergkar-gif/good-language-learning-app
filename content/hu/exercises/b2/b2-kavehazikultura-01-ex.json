@@ -8,8 +8,8 @@
       "question": "Mit jelentett a pesti kávéházi nyelvben a 'kutyanyelv' kifejezés?",
       "options": [
         "Keskeny papírszeletet, amelyre az írók és újságírók a kézirataikat írták.",
-        "Egy különleges, fűszeres feketekávét.",
-        "A kávéház bejárata előtti vörös szőnyeget."
+        "Hosszú, vékony süteményt, amelyet a pincér a kávé mellé hozott a vendégnek.",
+        "Hosszú szőnyeget, amelyet a pincérek a kávéház bejárata előtt terítettek ki."
       ],
       "correct": 0,
       "teaches": [
@@ -20,10 +20,10 @@
       "id": "b2-kavehazikultura-01.ex02",
       "type": "fill-blank",
       "category": "vocabulary",
-      "sentence": "A szerkesztők a kávéház karzatán javították a nyomdából érkezett friss _____ példányokat.",
+      "sentence": "A szerkesztők a kávéház karzatán javították a friss _____ példányokat.",
       "hint": "galley proof",
       "answer": "kefelenyomat",
-      "english": "On the gallery of the coffeehouse, the editors corrected the fresh galley-proof copies arriving from the printing press.",
+      "english": "On the gallery of the coffeehouse, the editors corrected the fresh galley-proof copies.",
       "teaches": [
         "b2-nyugat-coffeehouses-vocab"
       ]
@@ -44,10 +44,10 @@
       "id": "b2-kavehazikultura-01.ex04",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat használja helyesen a szembeállító 'viszont' kötőszót?",
+      "question": "Melyik mondatban áll helyesen a 'viszont'?",
       "options": [
         "A szalonokba csak meghívóval lehetett belépni, a kávéházak viszont mindenki előtt nyitva álltak.",
-        "A szalonokba csak meghívóval lehetett belépni, viszont a kávéházak mindenki előtt nyitva álltak.",
+        "A szalonokba csak meghívóval lehetett belépni, a viszont kávéházak mindenki előtt nyitva álltak.",
         "Viszont a szalonokba csak meghívóval lehetett belépni, a kávéházak nyitva álltak."
       ],
       "correct": 0,
@@ -66,10 +66,9 @@
         "illeti,",
         "a",
         "főpincér",
-        "mindenkit",
-        "név",
-        "szerint",
-        "ismert."
+        "gyakran",
+        "hitelezett",
+        "nekik."
       ],
       "solution": [
         "Ami",
@@ -78,12 +77,11 @@
         "illeti,",
         "a",
         "főpincér",
-        "mindenkit",
-        "név",
-        "szerint",
-        "ismert."
+        "gyakran",
+        "hitelezett",
+        "nekik."
       ],
-      "english": "As for the regular patrons, the headwaiter knew everyone by name.",
+      "english": "As for the regular patrons, the headwaiter often extended them credit.",
       "teaches": [
         "b2-contrastive-topic"
       ]
@@ -94,9 +92,9 @@
       "category": "reading",
       "question": "Miért volt különösen fontos a kávéház a szegényebb sorsú fiatal írók számára a századfordulón?",
       "options": [
-        "Mert egyetlen csésze fekete áráért fűtött teret, világítást, papírt, tintát és külföldi lapokat kaptak.",
-        "Mert a kávéház tulajdonosa minden hónapban állami fizetést osztott szét közöttük.",
-        "Mert a kávéházban tilos volt politikáról és irodalomról vitatkozni."
+        "Mert egyetlen csésze fekete áráért meleg teret, világítást és külföldi lapokat kaptak.",
+        "Mert a kávéházban a vendégeknek semmiért sem kellett fizetniük, még a kávéért sem.",
+        "Mert a kávéház csak a szerkesztőket és a híres költőket engedte be a márványasztalokhoz."
       ],
       "correct": 0
     },
@@ -106,27 +104,23 @@
       "category": "vocabulary",
       "tiles": [
         "A",
-        "márványasztal",
+        "kávéházi",
+        "márványasztalok",
         "mellett",
-        "születtek",
-        "a",
-        "modern",
-        "magyar",
-        "irodalom",
-        "remekművei."
+        "sok",
+        "kézirat",
+        "született."
       ],
       "solution": [
         "A",
-        "márványasztal",
+        "kávéházi",
+        "márványasztalok",
         "mellett",
-        "születtek",
-        "a",
-        "modern",
-        "magyar",
-        "irodalom",
-        "remekművei."
+        "sok",
+        "kézirat",
+        "született."
       ],
-      "english": "The masterpieces of modern Hungarian literature were born beside the marble table.",
+      "english": "Many manuscripts were written beside the coffeehouse marble tables.",
       "teaches": [
         "b2-nyugat-coffeehouses-vocab"
       ]
@@ -138,7 +132,7 @@
       "template": [
         {
           "prompt": "Contrast 19th-century private salons with Budapest's coffeehouses using 'viszont'.",
-          "answer": "A zárt szalonok csak a kiváltságosokat fogadták be, a pesti kávéházak viszont minden tehetséges író előtt nyitva álltak."
+          "answer": "A zárt szalonok szűk körnek szóltak, a pesti kávéházak viszont mindenki előtt nyitva álltak."
         },
         {
           "prompt": "Introduce a comment about regular patrons using 'Ami a törzsvendégeket illeti, ...'.",

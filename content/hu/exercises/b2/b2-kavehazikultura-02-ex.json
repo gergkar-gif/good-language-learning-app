@@ -7,9 +7,9 @@
       "category": "vocabulary",
       "question": "Mit jelent a 'meghonosít' ige a Nyugat irodalmi programjával kapcsolatban?",
       "options": [
-        "Külföldi szellemi vagy művészeti értékeket bevezet és otthonossá tesz a hazai kultúrában.",
-        "Idegen nyelvű könyveket betilt a könyvtárakban.",
-        "Régi falusi házakat bont le a fővárosban."
+        "Külföldi értékeket bevezet, és otthonossá tesz a hazai kultúrában.",
+        "Hazai értékeket külföldön is ismertté tesz.",
+        "Külföldi értékeket elutasít, és kizár a hazai kultúrából."
       ],
       "correct": 0,
       "teaches": [
@@ -37,7 +37,7 @@
       "answer": "addig",
       "english": "Whereas the mass press sought daily sensation, Nyugat placed aesthetic quality in the foreground.",
       "teaches": [
-        "b2-contrastive-topic"
+        "mig-egyidejuseg"
       ]
     },
     {
@@ -47,13 +47,16 @@
       "question": "Melyik kifejezés illik legjobban a két mondat közötti tartalmi ellentét kifejezésére? 'Az akadémikusok elutasították a szimbolizmust. Az új nemzedék _____ lelkesen fogadta Ady verseit.'",
       "options": [
         "ezzel szemben",
-        "ennek ellenére hogy",
-        "amiatt"
+        "ennek következtében",
+        "mindezek miatt"
       ],
       "correct": 0,
       "teaches": [
-        "b2-contrastive-topic"
-      ]
+        "adversative-contrast"
+      ],
+      "distractor_skills": {
+        "1": "causal-postpositions"
+      }
     },
     {
       "id": "b2-kavehazikultura-02.ex05",
@@ -89,7 +92,7 @@
       ],
       "english": "Whereas the conservatives defended the past, Ignotus argued in favor of openness.",
       "teaches": [
-        "b2-contrastive-topic"
+        "mig-egyidejuseg"
       ]
     },
     {
@@ -98,9 +101,9 @@
       "category": "reading",
       "question": "Milyen szempont alapján válogatták a kéziratokat a Nyugat szerkesztői?",
       "options": [
-        "Kizárólag az esztétikai színvonal és az alkotói minőség alapján, nem pedig a szerző rangja szerint.",
+        "Elvileg az esztétikai színvonal számított, nem a szerző társadalmi rangja.",
         "Csak olyan szerzőket közöltek, akiknek már volt akadémiai tagságuk.",
-        "Kizárólag francia nyelven írt verseket jelentettek meg."
+        "Elsősorban a szerző családi háttere és ismeretségei számítottak."
       ],
       "correct": 0
     },
@@ -148,11 +151,11 @@
         },
         {
           "prompt": "Write a follow-up sentence using 'ezzel szemben' to describe Ignotus's viewpoint.",
-          "answer": "Ignotus ezzel szemben bebizonyította, hogy a nyugati hatások nem gyengítik, hanem gazdagítják a magyar kultúrát."
+          "answer": "Ignotus ezzel szemben azt írta, hogy a nyugati hatások nem gyengítik, hanem gazdagítják a magyar kultúrát."
         }
       ],
       "teaches": [
-        "b2-contrastive-topic"
+        "b2-nyugat-coffeehouses-vocab"
       ]
     }
   ]
