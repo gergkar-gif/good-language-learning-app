@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What is a 'piacgazdaság' in macroeconomic terminology?",
       "options": [
-        "an economic system where production and prices are determined by unrestricted competition between privately owned businesses",
-        "a government department responsible for regulating weekly flea markets",
-        "a closed agrarian commune where money is abolished completely"
+        "an economy where private firms compete and set prices",
+        "a government office that runs weekly markets",
+        "a closed farming commune without money"
       ],
       "correct": 0,
       "teaches": [
@@ -25,8 +25,8 @@
       "question": "Which noun denotes macroeconomic equilibrium, financial balance, or mental poise?",
       "options": [
         "egyensúly",
-        "látóhatár",
-        "cselédség"
+        "adósság",
+        "recesszió"
       ],
       "correct": 0,
       "teaches": [
@@ -65,27 +65,31 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the sentence demonstrating case study synthesis with proportional rates:",
+      "question": "Choose the correct sentence about prices in the crisis:",
       "options": [
-        "A hiperinfláció idején az árak a százszorosukra nőttek, miközben a reálbérek a felükre zuhantak.",
-        "A hiperinfláció mentén az árak nem változtak a Duna túloldalán.",
-        "A hiperinfláció híján a piacgazdaság soha nem létezett."
+        "A válság idején az árak a százszorosára nőttek.",
+        "A válság idején az árak a százszorosát nőttek.",
+        "A válság idején az árak a százszorosáról nőttek."
       ],
       "correct": 0,
       "teaches": [
         "b2-proportional-rates"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "delative-rol-rel"
+      }
     },
     {
       "id": "b2-21-05-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the phrasing indicating proportional equilibrium: 'A kibocsátás nagysága ____ a befektetett tőkével.'",
+      "question": "Choose the phrase meaning 'inversely proportional': 'A kockázat ____ a tapasztalattal.'",
       "options": [
+        "fordított arányban áll",
         "egyenes arányban áll",
-        "szembeáll",
-        "felére esik"
+        "szemben áll"
       ],
       "correct": 0,
       "teaches": [
@@ -97,10 +101,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A pénzügyi stabilizációs program révén az infláció a korábbi csúcsértékének ____ csökkent.",
+      "sentence": "A bank új programja révén az infláció a korábbi szint ____ csökkent.",
       "hint": "to half",
       "answer": "felére",
-      "english": "Through the financial stabilization program, inflation dropped to half of its earlier peak value.",
+      "english": "Through the bank's new programme, inflation fell to half of its earlier level.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -110,10 +114,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A vállalat exportbevétele az új piacok meghódításával a ____ emelkedett.",
+      "sentence": "A cég exportbevétele az új piacok miatt a ____ emelkedett.",
       "hint": "threefold / to three times",
       "answer": "háromszorosára",
-      "english": "The company's export revenue rose threefold with the conquest of new markets.",
+      "english": "The company's export revenue rose threefold because of the new markets.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -125,27 +129,21 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "piaci",
-        "egyensúly",
-        "helyreállítása",
-        "szigorú",
-        "költségvetési",
-        "fegyelmet",
-        "követel",
-        "meg."
+        "gazdaság",
+        "egyensúlya",
+        "fontos",
+        "a",
+        "cégeknek."
       ],
       "solution": [
         "A",
-        "piaci",
-        "egyensúly",
-        "helyreállítása",
-        "szigorú",
-        "költségvetési",
-        "fegyelmet",
-        "követel",
-        "meg."
+        "gazdaság",
+        "egyensúlya",
+        "fontos",
+        "a",
+        "cégeknek."
       ],
-      "english": "Restoring market equilibrium demands strict fiscal discipline.",
+      "english": "The economy's balance is important for companies.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -170,25 +168,19 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "szabad",
-        "piacgazdaság",
-        "működése",
-        "kiszámítható",
-        "jogi",
-        "környezetet",
-        "feltételez."
+        "piacgazdaságban",
+        "fontos",
+        "a",
+        "rugalmasság."
       ],
       "solution": [
         "A",
-        "szabad",
-        "piacgazdaság",
-        "működése",
-        "kiszámítható",
-        "jogi",
-        "környezetet",
-        "feltételez."
+        "piacgazdaságban",
+        "fontos",
+        "a",
+        "rugalmasság."
       ],
-      "english": "The operation of a free market economy presupposes a predictable legal environment.",
+      "english": "Flexibility is important in a market economy.",
       "teaches": [
         "b2-economic-cycles-crisis-adaptation-vocab"
       ]
@@ -200,23 +192,26 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Közgazdász",
-          "text": "Milyen párhuzam vonható Márai regénye és a gazdasági válságok között?"
+          "speaker": "Tanár",
+          "text": "Mit mond a történet az árakról?"
         },
         {
-          "speaker": "Irodalomtörténész",
+          "speaker": "Diák",
           "text": "____"
         }
       ],
       "options": [
-        "A gyertyák csonkig égnek a Monarchia összeomlását és a kiszámítható aranyvaluta világának eltűnését is tükrözi.",
-        "A gyertyák csonkig égnek a Monarchia összeomlására és a kiszámítható aranyvaluta világának eltűnését is tükrözi.",
-        "A gyertyák csonkig égnek a Monarchia összeomlását és a kiszámítható aranyvaluta világát eltűnésére is tükrözné."
+        "Az árak a százszorosára nőttek.",
+        "Az árak a százszorosában nőttek.",
+        "Az árak a százszorosa nőttek."
       ],
       "correct": 0,
       "teaches": [
         "b2-proportional-rates"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in"
+      }
     },
     {
       "id": "b2-21-05-dialogue-2",
@@ -226,7 +221,7 @@
       "prompt": [
         {
           "speaker": "Egyetemi oktató",
-          "text": "Miért fontos az esettanulmány módszere a pénzügyi képzésben?"
+          "text": "Miért jó egy esettanulmány?"
         },
         {
           "speaker": "Hallgató",
@@ -234,14 +229,18 @@
         }
       ],
       "options": [
-        "Mert a valós válságok adatain keresztül mutatja be az alkalmazkodás és a kockázatkezelés összefüggéseit.",
-        "Mert a valós válságok adatain keresztül mutatja be az alkalmazkodás és a kockázatkezelést összefüggéseit.",
-        "Mert a valós válságok adatait keresztül mutatja be az alkalmazkodás és a kockázatkezelés összefüggéseiben."
+        "Mert egy válságon keresztül megmutatja, hogyan működik a piacgazdaság.",
+        "Mert egy válságot keresztül megmutatja, hogyan működik a piacgazdaság.",
+        "Mert egy válságban keresztül megmutatja, hogyan működik a piacgazdaság."
       ],
       "correct": 0,
       "teaches": [
-        "b2-proportional-rates"
-      ]
+        "keresztul"
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b2-21-05-writing-1",
@@ -250,8 +249,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence combining 'infláció', '-szorosára nő', and 'egyensúly' in an economic report.",
-          "answer": "A válság idején az infláció a többszörösére nőtt, súlyosan felborítva a nemzetgazdaság pénzügyi egyensúlyát."
+          "prompt": "Say that during the crisis inflation grew threefold, so there is no balance.",
+          "answer": "A válság idején az infláció a háromszorosára nőtt, ezért nincs egyensúly."
         }
       ],
       "teaches": [
@@ -265,8 +264,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence reflecting on Márai Sándor's novel and the loss of the pre-1914 world order.",
-          "answer": "Márai Sándor művében a gyertyák csonkig égése a régi aranyvaluta és a kiszámítható polgári világ végleges elmúlását jelképezi."
+          "prompt": "Say that in the story the old world and its money are gone.",
+          "answer": "A történetben a régi világ és a régi pénz eltűnt."
         }
       ],
       "teaches": [
@@ -278,10 +277,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A strukturális reformok révén a gyár termelése a korábbi szint ____ nőtt.",
+      "sentence": "A reformok révén a gyár termelése a korábbi szint ____ nőtt.",
       "hint": "to double / twice",
       "answer": "kétszeresére",
-      "english": "Through structural reforms, the factory's production grew to double its former level.",
+      "english": "Through the reforms, the factory's output grew to double its earlier level.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -307,11 +306,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen gazdasági és társadalmi változásokra tekint vissza Henrik tábornok a Monarchia összeomlása kapcsán?",
+      "question": "Mit mond Henrik az árakról?",
       "options": [
-        "A kiszámítható aranyvaluta felbomlására, a szárnyaló inflációra és a vagyonok elértéktelenedésére.",
-        "A határok nélküli szabadkereskedelem azonnali felvirágzására.",
-        "A vidéki mezőgazdaság váratlan és tartós megerősödésére."
+        "Az árak gyorsan nőttek.",
+        "Az árak a felükre estek.",
+        "Az árak nem változtak."
       ],
       "correct": 0
     },
@@ -320,11 +319,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen összefüggést lát Konrád a gazdasági válság és az erkölcsi hanyatlás között?",
+      "question": "Mit mond Konrád a válság idejéről?",
       "options": [
-        "A túlélésért vívott küzdelem felülírta a régi becsületbeli esküket, így a rang már nem állt arányban a szavahihetőséggel.",
-        "A válság megerősítette a társadalmi szolidaritást és a baráti kapcsolatokat.",
-        "A pénzügyi nehézségek visszavezették az embereket a feudális hagyományokhoz."
+        "A túlélés fontosabb lett, mint a barátság.",
+        "A barátság fontosabb lett, mint a túlélés.",
+        "Az emberek jobban bíztak egymásban."
       ],
       "correct": 0
     },
@@ -333,11 +332,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Mi a beszélgetés végső konklúziója a két öregember számára?",
+      "question": "Mit mond Henrik a gazdaságról és a bizalomról?",
       "options": [
-        "Míg a gazdaság talpra állhat és újraszerveződhet, az elárult emberi bizalom és a múlt világa soha nem állítható vissza.",
-        "Minden anyagi kárt teljes mértékben meg kell téríteniük a hatóságoknak.",
-        "Konrádnak azonnal vissza kell költöznie a trópusokra új üzletet indítani."
+        "A gazdaság újra nőhet, de a bizalom nem.",
+        "A bizalom újra nőhet, de a gazdaság nem.",
+        "A gazdaság és a bizalom is újra nőhet."
       ],
       "correct": 0
     }

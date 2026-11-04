@@ -39,7 +39,7 @@
       "stage": "recognize",
       "question": "What is the primary function of an Environmental Impact Assessment (hatásvizsgálat)?",
       "options": [
-        "to scientifically forecast, evaluate, and mitigate the ecological consequences of an infrastructure project",
+        "to forecast and reduce the effects of a project on nature",
         "to assess the aesthetic taste of private residential garden decorations",
         "to determine the commercial retail prices of agricultural produce"
       ],
@@ -53,15 +53,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Which sentence correctly distinguishes intentional purpose from objective consequence?",
+      "question": "Which sentence means: 'To protect rare birds, they restricted the traffic'?",
       "options": [
-        "A ritka fajok megóvása érdekében korlátozták a forgalmat, aminek következtében regenerálódott a növényzet.",
-        "A ritka fajok megóvása következtében korlátozták a forgalmat, aminek érdekében regenerálódott a növényzet.",
-        "A ritka fajok megóvása végett korlátozták a forgalmat, aminek következtében regenerálódott volna a növényzetet."
+        "A ritka madárfajok megóvása érdekében korlátozták a forgalmat.",
+        "A ritka madárfajok megóvása következtében korlátozták a forgalmat.",
+        "A ritka madárfajok megóvásában érdekében korlátozták a forgalmat."
       ],
       "correct": 0,
       "teaches": [
-        "causal-postpositions"
+        "formal-purpose"
       ]
     },
     {
@@ -69,12 +69,14 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A Kárpát-medence gazdag természeti kincse a lenyűgöző ____, amelyet óvnunk kell.",
-      "hint": "biological diversity",
-      "answer": "biológiai sokféleség",
-      "english": "The rich natural treasure of the Carpathian Basin is its stunning biological diversity, which we must protect.",
+      "sentence": "A természetvédelmi terület megőrzi a vidék gazdag ____.",
+      "hint": "biodiversity (accusative)",
+      "english": "The nature reserve preserves the rich biological diversity of the region.",
       "teaches": [
         "b2-ecology-infrastructure-stewardship-vocab"
+      ],
+      "answers": [
+        "biológiai sokféleségét"
       ]
     },
     {
@@ -82,12 +84,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A talajvíz elszennyeződésének ____ szigorú monitoring rendszert vezettek be az ipari park körül.",
-      "hint": "in order to avoid [possessive]",
-      "answer": "elkerülése végett",
-      "english": "In order to avoid contamination of groundwater, they introduced a strict monitoring system around the industrial park.",
+      "sentence": "A talajszennyezés ____ szigorú szabályokat vezettek be a gyár körül.",
+      "hint": "in order to avoid (possessive)",
+      "english": "In order to avoid soil contamination, they introduced strict rules around the factory.",
       "teaches": [
-        "causal-postpositions"
+        "formal-purpose"
+      ],
+      "answers": [
+        "elkerülése végett",
+        "elkerülése érdekében",
+        "elkerülése céljából"
       ]
     },
     {
@@ -95,12 +101,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A súlyos szárazság ____ drámai mértékben leapadt a Zala folyó vízszintje.",
+      "sentence": "A szárazság ____ kiszáradtak a tavak.",
       "hint": "as a consequence of",
-      "answer": "következtében",
-      "english": "As a consequence of the severe drought, the Zala river's water level dropped dramatically.",
+      "english": "As a consequence of the drought, the lakes dried out.",
       "teaches": [
         "causal-postpositions"
+      ],
+      "answers": [
+        "következtében",
+        "folytán",
+        "hatására"
       ]
     },
     {
@@ -110,13 +120,13 @@
       "stage": "in-context",
       "question": "Select the sentence using 'céljából' to express administrative and institutional intent:",
       "options": [
-        "A Kis-Balaton vizes élőhelyeinek rehabilitációja céljából nagyszabású európai uniós projekt indult.",
-        "A Kis-Balaton vizes élőhelyeinek rehabilitációjában céljából nagyszabású európai uniós projekt indult.",
-        "A Kis-Balaton vizes élőhelyei rehabilitációja céljára nagyszabású európai uniós projekt indulnának."
+        "A vizes élőhelyek helyreállítása céljából új program indult.",
+        "A vizes élőhelyek helyreállításában céljából új program indult.",
+        "A vizes élőhelyeket helyreállítása céljából új program indult."
       ],
       "correct": 0,
       "teaches": [
-        "causal-postpositions"
+        "formal-purpose"
       ]
     },
     {
@@ -127,7 +137,7 @@
       "prompt": [
         {
           "speaker": "Főépítész",
-          "text": "Hogyan reagált a közvélemény a gátépítési tervekre a közmeghallgatáson?"
+          "text": "Mi történt a közmeghallgatás után?"
         },
         {
           "speaker": "Jegyző",
@@ -135,9 +145,9 @@
         }
       ],
       "options": [
-        "A lakosság határozott fellépésének hatására a beruházó visszavonta az eredeti tervet az élőhelyek megóvása érdekében.",
-        "A lakosság határozott fellépésének hatásában a beruházó visszavonta az eredeti tervet az élőhelyek megóvása érdekében.",
-        "A lakosság határozott fellépésének hatására a beruházó visszavonta az eredeti tervet az élőhelyek megóvásában érdekében."
+        "A lakosság tiltakozásának hatására módosították az autópálya nyomvonalát.",
+        "A lakosság tiltakozásának hatásában módosították az autópálya nyomvonalát.",
+        "A lakosság tiltakozását hatására módosították az autópálya nyomvonalát."
       ],
       "correct": 0,
       "teaches": [
@@ -149,16 +159,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'elkerülése végett' preferred over 'elkerülése miatt' in policy recommendations?",
+      "question": "Which sentence means: 'As a result of the protest, they changed the route'?",
       "options": [
-        "Because 'végett' denotes forward-looking intention and purpose, whereas 'miatt' denotes backward-looking reason or cause.",
-        "Because 'miatt' can never be preceded by a possessive noun in Hungarian.",
-        "Because 'végett' is exclusively used for informal spoken language."
+        "A tiltakozás eredményeképpen módosították a nyomvonalat.",
+        "A tiltakozás céljából módosították a nyomvonalat.",
+        "A tiltakozás ellenére módosították a nyomvonalat."
       ],
       "correct": 0,
       "teaches": [
         "causal-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "formal-purpose",
+        "2": "concessive-postpositions"
+      }
     },
     {
       "id": "b2-24-consolidation-10",
@@ -167,31 +181,27 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "védett",
-        "élőhelyek",
+        "természeti",
+        "értékek",
         "megóvása",
         "érdekében",
+        "szigorúbbak",
         "a",
-        "hatóság",
-        "felfüggesztette",
-        "a",
-        "beruházást."
+        "szabályok."
       ],
       "solution": [
         "A",
-        "védett",
-        "élőhelyek",
+        "természeti",
+        "értékek",
         "megóvása",
         "érdekében",
+        "szigorúbbak",
         "a",
-        "hatóság",
-        "felfüggesztette",
-        "a",
-        "beruházást."
+        "szabályok."
       ],
-      "english": "In the interest of preserving protected habitats, the authority suspended the investment.",
+      "english": "In the interest of safeguarding natural values, the rules are stricter.",
       "teaches": [
-        "causal-postpositions"
+        "formal-purpose"
       ]
     },
     {
@@ -207,7 +217,6 @@
         "jelentősen",
         "csökkent",
         "a",
-        "környező",
         "talajszennyezés."
       ],
       "solution": [
@@ -218,10 +227,9 @@
         "jelentősen",
         "csökkent",
         "a",
-        "környező",
         "talajszennyezés."
       ],
-      "english": "Under the effect of stricter regulations, surrounding soil contamination decreased significantly.",
+      "english": "Under the effect of stricter rules, soil contamination decreased significantly.",
       "teaches": [
         "causal-postpositions"
       ]
@@ -233,12 +241,12 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause environmental policy argument combining 'fejlesztése céljából', 'következtében', and 'elkerülése végett'.",
-          "answer": "Bár a zöld infrastruktúra fejlesztése céljából új tározókat létesítenek, a korábbi hibák következtében fellépő vízhiány intő jel marad; ezért a további természetkárosítás elkerülése végett minden egyes lépést független hatásvizsgálatnak kell alávetni."
+          "prompt": "Write a sentence combining 'fejlesztése céljából' and 'következtében' about a river.",
+          "answer": "A vízgazdálkodás fejlesztése céljából új programot indítottak, mert a szárazság következtében kiszáradtak a tavak."
         }
       ],
       "teaches": [
-        "causal-postpositions"
+        "formal-purpose"
       ]
     }
   ]

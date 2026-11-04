@@ -25,8 +25,8 @@
       "question": "Which term describes a law that is currently in force and legally effective?",
       "options": [
         "hatályos",
-        "érvénytelen",
-        "ideiglenes"
+        "hatálytalan",
+        "jogszabály"
       ],
       "correct": 0,
       "teaches": [
@@ -67,7 +67,7 @@
     {
       "id": "b2-25-01-controlled-2",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
       "question": "Which phrase correctly completes: 'A hatóság a ____ törvény rendelkezései alapján járt el'?",
       "options": [
@@ -77,7 +77,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "b2-law-justice-constitutional-principles-vocab"
       ]
     },
     {
@@ -93,7 +93,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "b2-relational-compounds"
       ]
     },
     {
@@ -101,12 +101,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A miniszteri rendeletnek teljes ____ kell állnia az uniós irányelvekkel.",
+      "sentence": "Az új rendeletnek teljes ____ kell állnia az Alaptörvénnyel.",
       "hint": "in accordance with",
       "answer": "összhangban",
-      "english": "The ministerial decree must be in full accordance with the EU directives.",
+      "english": "The new decree must be in full accordance with the Basic Law.",
       "teaches": [
-        "formal-obligation"
+        "b2-relational-compounds"
       ]
     },
     {
@@ -114,12 +114,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A bíróság a benyújtott szakvélemény ____ állapította meg a kártérítés összegét.",
+      "sentence": "A hatóság a jogszabály rendelkezései ____ járt el.",
       "hint": "on the basis of",
       "answer": "alapján",
-      "english": "The court determined the compensation amount on the basis of the submitted expert opinion.",
+      "english": "The authority acted on the basis of the provisions of the statute.",
       "teaches": [
-        "formal-obligation"
+        "b2-relational-compounds"
       ]
     },
     {
@@ -149,7 +149,7 @@
       ],
       "english": "The decision was adopted to the detriment of the client's rights.",
       "teaches": [
-        "formal-obligation"
+        "b2-relational-compounds"
       ]
     },
     {
@@ -157,10 +157,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A parlament által elfogadott új ____ a kihirdetését követő napon lép hatályba.",
+      "sentence": "A parlament által elfogadott új ____ már hatályos.",
       "hint": "statute / legal rule",
       "answer": "jogszabály",
-      "english": "The new statute passed by parliament enters into force on the day following its promulgation.",
+      "english": "The new statute passed by parliament is already in force.",
       "teaches": [
         "b2-law-justice-constitutional-principles-vocab"
       ]
@@ -176,7 +176,6 @@
         "jogszabályok",
         "minden",
         "állampolgárra",
-        "egyaránt",
         "vonatkoznak."
       ],
       "solution": [
@@ -185,10 +184,9 @@
         "jogszabályok",
         "minden",
         "állampolgárra",
-        "egyaránt",
         "vonatkoznak."
       ],
-      "english": "The statutes in force apply equally to all citizens.",
+      "english": "The statutes in force apply to every citizen.",
       "teaches": [
         "b2-law-justice-constitutional-principles-vocab"
       ]
@@ -201,7 +199,7 @@
       "prompt": [
         {
           "speaker": "Ügyvéd",
-          "text": "Hogyan kívánja alátámasztani a felperes kártérítési követelését?"
+          "text": "Mi a baj a határozattal?"
         },
         {
           "speaker": "Kolléga",
@@ -209,13 +207,13 @@
         }
       ],
       "options": [
-        "A hatályos Polgári Törvénykönyv alapján terjesztjük elő, bemutatva a jogsértés sérelmére történt károkat.",
-        "A hatályos Polgári Törvénykönyv alapján terjesztjük elő, bemutatva a jogsértés sérelmében történt károkat.",
-        "A hatályos Polgári Törvénykönyv alapján terjesztjük elő, bemutatva a jogsértést sérelmére történt károkat."
+        "Az ügyfél jogainak sérelmére született meg.",
+        "Az ügyfél jogainak sérelmében született meg.",
+        "Az ügyfél jogainak sérelmét született meg."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "b2-relational-compounds"
       ]
     },
     {
@@ -226,7 +224,7 @@
       "prompt": [
         {
           "speaker": "Jogtanácsos",
-          "text": "Megfelel az új vállalati szabályzat az európai adatvédelmi normáknak?"
+          "text": "Összhangban van az új szabályzat a törvénnyel?"
         },
         {
           "speaker": "Adatvédelmi tisztviselő",
@@ -234,13 +232,13 @@
         }
       ],
       "options": [
-        "Igen, a belső előírások teljes összhangban állnak a vonatkozó uniós rendeletekkel.",
-        "Igen, a belső előírások teljes összhangba állnak a vonatkozó uniós rendeletekkel.",
-        "Igen, a belső előírások teljes összhangban állnak a vonatkozó uniós rendeleteket."
+        "Igen, a szabályzat teljes összhangban áll a törvénnyel.",
+        "Igen, a szabályzat teljes összhangban áll a törvényvel.",
+        "Igen, a szabályzat teljes összhangban áll a törvényt."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "val-vel"
       ]
     },
     {
@@ -250,12 +248,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a formal sentence using 'alapján' to cite a statutory ground for judicial annulment.",
-          "answer": "A bíróság a hatályos jogszabály alapján megsemmisítette a jogellenes közigazgatási határozatot."
+          "prompt": "Write a formal sentence using 'alapján' to cite a statutory ground for a court decision.",
+          "answer": "A bíróság a hatályos jogszabály alapján hozta meg a döntést."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "b2-relational-compounds"
       ]
     },
     {
@@ -265,12 +263,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a formal sentence using 'összhangban' stating that local decrees must conform with the constitution.",
-          "answer": "Az önkormányzati döntéseknek minden esetben összhangban kell lenniük az alkotmányos alapelvekkel."
+          "prompt": "Write a formal sentence using 'összhangban' stating that a local decree must conform with the statute.",
+          "answer": "Az önkormányzati rendeletnek összhangban kell állnia a törvénnyel."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "b2-relational-compounds"
       ]
     },
     {
@@ -278,12 +276,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A szabálytalan eljárás az alperes eljárási jogainak súlyos ____ történt.",
+      "sentence": "Az eljárás az alperes jogainak súlyos ____ történt.",
       "hint": "to the detriment of",
       "answer": "sérelmére",
-      "english": "The irregular proceeding took place to the severe detriment of the defendant's procedural rights.",
+      "english": "The proceeding took place to the severe detriment of the defendant's rights.",
       "teaches": [
-        "formal-obligation"
+        "b2-relational-compounds"
       ]
     },
     {
@@ -295,7 +293,7 @@
       "options": [
         "hatályos",
         "korábbi",
-        "feltételes"
+        "hatálytalan"
       ],
       "correct": 0,
       "teaches": [

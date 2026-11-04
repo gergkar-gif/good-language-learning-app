@@ -8,14 +8,17 @@
       "stage": "recognize",
       "question": "Which sentence properly demonstrates multiplicative expansion with sublative -ra/-re?",
       "options": [
-        "A megújuló energia beruházások értéke az elmúlt évtizedben a négyszeresére nőtt.",
-        "A megújuló energia beruházások értéke az elmúlt évtizedben a négyszeresben nőtt.",
-        "A megújuló energia beruházások értéke az elmúlt évtizedben a négyszereshez nőtt."
+        "A cég bevétele három év alatt a négyszeresére nőtt.",
+        "A cég bevétele három év alatt a négyszeresben nőtt.",
+        "A cég bevétele három év alatt a négyszereshez nőtt."
       ],
       "correct": 0,
       "teaches": [
         "b2-proportional-rates"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "hoz-suffix"
+      }
     },
     {
       "id": "b2-21-consolidation-2",
@@ -65,10 +68,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A gazdasági ____ idején a vállalatok a költségek lefaragására kényszerülnek.",
+      "sentence": "A gazdasági ____ idején a cégek kevesebbet keresnek.",
       "hint": "recession",
       "answer": "recesszió",
-      "english": "During economic recession, companies are forced to cut costs.",
+      "english": "During an economic recession, companies earn less.",
       "teaches": [
         "b2-economic-cycles-crisis-adaptation-vocab"
       ]
@@ -78,10 +81,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A technológiai export volumene alig három év alatt a ____ nőtt.",
+      "sentence": "Az export alig három év alatt a ____ nőtt.",
       "hint": "threefold / to three times",
       "answer": "háromszorosára",
-      "english": "The volume of technology exports rose threefold in barely three years.",
+      "english": "Exports rose threefold in barely three years.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -91,10 +94,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A drasztikus takarékosság nyomán a működési hiány a ____ esett vissza.",
-      "hint": "to half",
-      "answer": "felére",
-      "english": "Following drastic austerity, the operating deficit fell back to half.",
+      "sentence": "Az új vezetés után a cég vesztesége a ____ esett vissza.",
+      "hint": "to a third",
+      "answer": "harmadára",
+      "english": "After the new management, the company's loss fell back to a third.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -104,16 +107,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Select the sentence correctly describing economic velocity and magnitude:",
+      "question": "Select the sentence that correctly describes pace and extent:",
       "options": [
-        "A digitális szolgáltatások piaca gyorsuló ütemben és példátlan mértékben bővült a pandémia alatt.",
-        "A digitális szolgáltatások piaca a felére nőtt tízszeres mértékben híján.",
-        "A digitális szolgáltatások piaca arányban áll a nullával rovására."
+        "A gazdaság gyorsuló ütemben és jelentős mértékben nőtt.",
+        "A gazdaság gyorsuló ütemre és jelentős mértékre nőtt.",
+        "A gazdaság gyorsuló ütemben és jelentős mértékben a felére nőtt."
       ],
       "correct": 0,
       "teaches": [
         "b2-proportional-rates"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ra-re"
+      }
     },
     {
       "id": "b2-21-consolidation-8",
@@ -123,7 +129,7 @@
       "prompt": [
         {
           "speaker": "Közgazdász",
-          "text": "Hogyan értékelhető a nemzetgazdaság kilábalása a válságból?"
+          "text": "Hogyan áll most a gazdaság a válság után?"
         },
         {
           "speaker": "Elemző",
@@ -131,30 +137,36 @@
         }
       ],
       "options": [
-        "A termelés stabil ütemben növekszik, és a költségvetési hiány a korábbi csúcsérték felére csökkent.",
-        "A termelés stabil ütemre növekszik, és a költségvetési hiány a korábbi csúcsérték felében csökkent.",
-        "A termelés stabil ütemmel növekedne, és a költségvetési hiány a korábbi csúcsérték felének csökkent."
+        "A termelés stabil ütemben nő, és az adósság a felére csökkent.",
+        "A termelés stabil ütemre nő, és az adósság a felére csökkent.",
+        "A termelés stabil ütemben nő, és az adósság a felében csökkent."
       ],
       "correct": 0,
       "teaches": [
         "b2-proportional-rates"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ra-re"
+      }
     },
     {
       "id": "b2-21-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'kétszer akkora' used instead of 'kétszer annyi' in 'A költségvetési hiány kétszer akkora, mint tavaly'?",
+      "question": "Choose the correct sentence: the new factory is twice as big as the old one.",
       "options": [
-        "Because 'akkora' compares non-countable conceptual or dimensional magnitude (size of deficit), while 'annyi' compares discrete countable quantities.",
-        "Because 'annyi' compares non-countable dimensional magnitude, while 'akkora' compares discrete countable quantities.",
-        "Because 'akkora' is required when comparing monetary amounts, while 'annyi' is used exclusively for physical objects."
+        "Az új gyár kétszer akkora, mint a régi.",
+        "Az új gyár kétszeres akkora, mint a régi.",
+        "Az új gyár kétszer akkorára, mint a régi."
       ],
       "correct": 0,
       "teaches": [
         "b2-proportional-rates"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "ra-re"
+      }
     },
     {
       "id": "b2-21-consolidation-10",
@@ -163,27 +175,23 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "termelés",
-        "hatékonysága",
+        "bevétel",
         "egyenes",
         "arányban",
         "áll",
         "a",
-        "technológiai",
-        "színvonallal."
+        "munkával."
       ],
       "solution": [
         "A",
-        "termelés",
-        "hatékonysága",
+        "bevétel",
         "egyenes",
         "arányban",
         "áll",
         "a",
-        "technológiai",
-        "színvonallal."
+        "munkával."
       ],
-      "english": "Production efficiency stands in direct proportion to technological level.",
+      "english": "Revenue stands in direct proportion to work.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -194,28 +202,26 @@
       "category": "grammar",
       "stage": "produce",
       "tiles": [
-        "A",
-        "szerkezeti",
+        "Az",
         "átalakulás",
         "révén",
         "a",
         "költségek",
         "a",
-        "felükre",
+        "felére",
         "csökkentek."
       ],
       "solution": [
-        "A",
-        "szerkezeti",
+        "Az",
         "átalakulás",
         "révén",
         "a",
         "költségek",
         "a",
-        "felükre",
+        "felére",
         "csökkentek."
       ],
-      "english": "Through structural restructuring, costs decreased to half.",
+      "english": "Through the restructuring, costs fell to half.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -227,8 +233,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause macroeconomic analysis combining '-szorosára nő' (multiplicative growth), 'felére csökken' (fractional drop), and 'egyensúly' (equilibrium).",
-          "answer": "A válság kitörésekor az alapanyagok ára a háromszorosára nőtt a világpiacon; a drasztikus költségcsökkentések nyomán azonban a működési hiány a felére csökkent egy év alatt; és az intézkedések révén sikerült helyreállítani a hazai piacgazdaság pénzügyi egyensúlyát."
+          "prompt": "Say that during the crisis prices grew threefold, but the company's loss fell to half.",
+          "answer": "A válság idején az árak a háromszorosára nőttek, de a cég vesztesége a felére csökkent."
         }
       ],
       "teaches": [

@@ -39,7 +39,7 @@
       "stage": "recognize",
       "question": "What does 'nemzetiségenként' mean in public statistics and cultural policy?",
       "options": [
-        "analyzed or distributed broken down by each recognized national minority group",
+        "broken down by each national minority group",
         "without regard to national or ethnic background",
         "exclusively within the national capital city"
       ],
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A kulturális fesztivál valódi ____ bizonyult a különböző anyanyelvű lakosok között.",
+      "sentence": "A kulturális fesztivál valódi ____ volt a nemzetiségek között.",
       "hint": "bridge-building",
-      "answer": "hídépítésnek",
-      "english": "The cultural festival proved to be true bridge-building between residents of different mother tongues.",
+      "answer": "hídépítés",
+      "english": "The cultural festival was true bridge-building between the nationalities.",
       "teaches": [
         "b2-pluralism-heritage-minority-perspectives-vocab"
       ]
@@ -95,12 +95,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A pályázati támogatást a regisztrált résztvevők száma alapján, ____ számolták ki.",
+      "sentence": "A támogatást a diákok száma alapján, ____ számolták ki.",
       "hint": "per capita / per head",
       "answer": "fejenként",
-      "english": "The grant funding was calculated per capita on the basis of the number of registered participants.",
+      "english": "The funding was calculated per capita on the basis of the number of students.",
       "teaches": [
-        "egymas"
+        "distributive-nkent"
       ]
     },
     {
@@ -127,7 +127,7 @@
       "prompt": [
         {
           "speaker": "Emlékezetpolitikai szakértő",
-          "text": "Hogyan szolgálja a múlt feltárása a jövő társadalmi békéjét?"
+          "text": "Mi vezet a népek megbékéléséhez?"
         },
         {
           "speaker": "Történész",
@@ -135,13 +135,13 @@
         }
       ],
       "options": [
-        "A túlélők tanúságtétele és az emberi méltóság tisztelete révén, amely elengedhetetlen a népek őszinte megbékéléséhez.",
-        "A túlélők tanúságtétele és az emberi méltóság tiszteletének révén, amely elengedhetetlen a népek őszinte megbékélésében.",
-        "A túlélők tanúságtételét és az emberi méltóság tisztelete révén, amely elengedhetetlen a népek őszinte megbékélésére."
+        "A túlélők tanúságtétele és az emberi méltóság tisztelete.",
+        "A túlélők tanúságtételét és az emberi méltóság tisztelete.",
+        "A túlélők tanúságtétele és az emberi méltóság tiszteletére."
       ],
       "correct": 0,
       "teaches": [
-        "egymas"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -149,16 +149,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'csoportonként' preferred over 'csoportban' in: 'A diákokat ____ értékelték'?",
+      "question": "Which sentence says that the students were assessed group by group?",
       "options": [
-        "Because the distributive suffix -onként conveys sequential and comparative evaluation broken down cohort by cohort.",
-        "Because 'csoportban' can only be used with singular subjects in Hungarian.",
-        "Because 'csoportonként' is an archaic legal term used only in official courts."
+        "A diákokat csoportonként értékelték.",
+        "A diákokat csoportként értékelték.",
+        "A diákokat csoportban értékelték."
       ],
       "correct": 0,
       "teaches": [
-        "egymas"
-      ]
+        "distributive-nkent"
+      ],
+      "distractor_skills": {
+        "1": "essive-formal-kent",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b2-26-consolidation-10",
@@ -167,27 +171,23 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "történelmi",
-        "együttélés",
-        "során",
-        "a",
-        "kultúrák",
+        "felek",
         "kölcsönösen",
-        "gazdagították",
-        "egymást."
+        "tiszteletben",
+        "tartják",
+        "egymás",
+        "érdekeit."
       ],
       "solution": [
         "A",
-        "történelmi",
-        "együttélés",
-        "során",
-        "a",
-        "kultúrák",
+        "felek",
         "kölcsönösen",
-        "gazdagították",
-        "egymást."
+        "tiszteletben",
+        "tartják",
+        "egymás",
+        "érdekeit."
       ],
-      "english": "In the course of historical coexistence, cultures mutually enriched each other.",
+      "english": "The parties mutually respect each other's interests.",
       "teaches": [
         "egymas"
       ]
@@ -219,7 +219,7 @@
       ],
       "english": "The committee examined the minority complaints one by one.",
       "teaches": [
-        "egymas"
+        "distributive-nkent"
       ]
     },
     {
@@ -230,11 +230,11 @@
       "template": [
         {
           "prompt": "Write a three-clause essay statement combining 'egymás iránt' (reciprocal respect), 'nemzetiségenként' (distributive allocation), and 'emberi méltóság' (human dignity).",
-          "answer": "Bár a kulturális támogatásokat nemzetiségenként elkülönítve osztják el, a közösségek mély tiszteletet tanúsítanak egymás iránt; hiszen a sokszínű társadalom legfőbb alapértéke az emberi méltóság maradéktalan védelme."
+          "answer": "A támogatást nemzetiségenként osztják szét, a közösségek mély tiszteletet éreznek egymás iránt, és az emberi méltóságot tiszteletben kell tartani."
         }
       ],
       "teaches": [
-        "egymas"
+        "b2-pluralism-heritage-minority-perspectives-vocab"
       ]
     }
   ]

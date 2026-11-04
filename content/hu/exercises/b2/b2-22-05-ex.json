@@ -8,7 +8,7 @@
       "stage": "introduce",
       "question": "What is 'fenntarthatóság' in the context of pension and welfare systems?",
       "options": [
-        "the capacity of a system to maintain financial and operational equilibrium over the long term",
+        "the ability of a system to last over the long term",
         "a temporary emergency grant awarded to distressed families",
         "a mandatory annual audit performed by tax authorities"
       ],
@@ -24,7 +24,7 @@
       "stage": "introduce",
       "question": "Who is a 'járulékfizető' in the social security framework?",
       "options": [
-        "an employed individual who pays mandatory statutory contributions into the state fund",
+        "a worker who pays contributions into the state fund",
         "a child receiving educational allowances from municipal funds",
         "a tourist paying local commercial accommodation taxes"
       ],
@@ -69,42 +69,49 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which sentence best synthesizes temporal framing with policy debate?",
+      "question": "Which sentence uses *során* correctly in a policy debate?",
       "options": [
-        "A parlamenti vita során nyilvánvalóvá vált, hogy a nyugdíjrendszer azonnali átalakításra szorul.",
-        "A parlamenti vita során nyilvánvalóvá vált, hogy a nyugdíjrendszer azonnali átalakításban szorul.",
-        "A parlamenti vita során nyilvánvalóvá vált, vajon a nyugdíjrendszer azonnali átalakításra szorul-e."
+        "A vita során kiderült, hogy a nyugdíjrendszer átalakításra szorul.",
+        "A vita során kiderült, hogy a nyugdíjrendszer átalakításban szorul.",
+        "A vita során kiderült, hogy a nyugdíjrendszer átalakítást szorul."
       ],
       "correct": 0,
       "teaches": [
         "b2-temporal-framing"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-22-05-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the sentence using anteriority to warn of fiscal pressure:",
+      "question": "Select the sentence that uses anteriority to warn about costs:",
       "options": [
-        "Mire a baby-boom nemzedék nyugdíjba vonul, a költségvetési terhek megduplázódnak.",
-        "Mire a baby-boom nemzedék nyugdíjba vonulna, a költségvetési terheket megduplázódnak.",
-        "Mire a baby-boom nemzedék nyugdíjba vonult, addigra a költségvetési terhek megduplázódni fognak."
+        "Mire a nagyszülők nyugdíjba vonulnak, a költségek nagyon megnőnek.",
+        "Mire a nagyszülők nyugdíjba vonulnak, a költségeket nagyon megnőnek.",
+        "Amíg a nagyszülők nyugdíjba vonulnak, a költségek nagyon megnőnek."
       ],
       "correct": 0,
       "teaches": [
         "b2-temporal-framing"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-22-05-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az elkövetkező évtizedek ____ garantálni kell a nyugdíjak reálértékének megőrzését.",
+      "sentence": "Az elkövetkező évtizedek ____ új szabályokat kell hozni a nyugdíjrendszerben.",
       "hint": "in the course of",
       "answer": "folyamán",
-      "english": "Over the course of the coming decades, the preservation of the real value of pensions must be guaranteed.",
+      "english": "Over the coming decades, new rules must be made in the pension system.",
       "teaches": [
         "b2-temporal-framing"
       ]
@@ -175,20 +182,18 @@
         "nemzedékek",
         "közötti",
         "szolidaritás",
-        "erősítése",
-        "közös",
-        "célunk."
+        "fontos",
+        "mindenkinek."
       ],
       "solution": [
         "A",
         "nemzedékek",
         "közötti",
         "szolidaritás",
-        "erősítése",
-        "közös",
-        "célunk."
+        "fontos",
+        "mindenkinek."
       ],
-      "english": "Strengthening intergenerational solidarity is our shared goal.",
+      "english": "Solidarity between the generations is important for everyone.",
       "teaches": [
         "b2-demographics-generations-life-course-vocab"
       ]
@@ -201,7 +206,7 @@
       "prompt": [
         {
           "speaker": "Miniszter",
-          "text": "Hogyan tartható fenn a társadalombiztosítás egyensúlya?"
+          "text": "Mi lesz a nyugdíjrendszerrel?"
         },
         {
           "speaker": "Közgazdász",
@@ -209,14 +214,17 @@
         }
       ],
       "options": [
-        "A viták során kiderült: ha a járulékfizetők száma csökken, az elkövetkező évek folyamán növelni kell a hatékonyságot.",
-        "A viták sorában kiderült: ha a járulékfizetők száma csökken, az elkövetkező évek folyamában növelni kell a hatékonyságot.",
-        "A vitákon során kiderült: ha a járulékfizetők száma csökken, az elkövetkező éveket folyamán növelni kellene a hatékonyságot."
+        "A viták során kiderült, hogy új szabályok kellenek.",
+        "A vitákat során kiderült, hogy új szabályok kellenek.",
+        "A viták során kiderült, hogy új szabályok kellek."
       ],
       "correct": 0,
       "teaches": [
         "b2-temporal-framing"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-22-05-dialogue-2",
@@ -226,7 +234,7 @@
       "prompt": [
         {
           "speaker": "Ellenzéki képviselő",
-          "text": "Nem tart attól, hogy a reformok hátrányosan érintik az időseket?"
+          "text": "Nem fél attól, hogy a reformok rosszak lesznek az időseknek?"
         },
         {
           "speaker": "Kormánypárti képviselő",
@@ -234,14 +242,18 @@
         }
       ],
       "options": [
-        "Éppen ellenkezőleg: a tervezett intézkedések célja, hogy öregségükre mindenki méltó ellátásban részesüljön.",
-        "Éppen ellenkezőleg: a tervezett intézkedések célja, hogy öregségükbe mindenki méltó ellátásban részesüljön.",
-        "Éppen ellenkezőleg: a tervezett intézkedések célja, hogy öregségükön mindenki méltó ellátásban részesülne."
+        "Éppen ellenkezőleg: a célunk, hogy idős korukra mindenki jól éljen.",
+        "Éppen ellenkezőleg: a célunk, hogy idős korukba mindenki jól éljen.",
+        "Éppen ellenkezőleg: a célunk, hogy idős korukon mindenki jól éljen."
       ],
       "correct": 0,
       "teaches": [
-        "b2-temporal-framing"
-      ]
+        "ra-re"
+      ],
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "on-en-on"
+      }
     },
     {
       "id": "b2-22-05-writing-1",
@@ -265,8 +277,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'nemzedékek közötti' and 'szolidaritás' highlighting social responsibility.",
-          "answer": "A nemzedékek közötti szolidaritás nélkül egyetlen modern társadalom sem maradhat fenn tartósan."
+          "prompt": "Say that without intergenerational solidarity no society can work.",
+          "answer": "A nemzedékek közötti szolidaritás nélkül egyetlen társadalom sem működhet."
         }
       ],
       "teaches": [
@@ -278,10 +290,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "Mire a törvény hatályba lép, ____ az érintett intézmények felkészülnek a végrehajtásra.",
+      "sentence": "Mire a törvény hatályba lép, ____ az iskolák felkészülnek.",
       "hint": "by then",
       "answer": "addigra",
-      "english": "By the time the law takes effect, by then the affected institutions will be prepared for implementation.",
+      "english": "By the time the law takes effect, by then the schools will be ready.",
       "teaches": [
         "b2-temporal-framing"
       ]
@@ -307,11 +319,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen alapvető elvet fogalmaz meg Emerenc a hűséggel kapcsolatban?",
+      "question": "Mit mond Emerenc a hűségről?",
       "options": [
-        "A valódi hűséget a tettek és nem a szavak mérik.",
-        "A hűséget csak nyilvános ígéretekkel lehet bizonyítani.",
-        "A hűség a fiatalság kiváltsága, amely öregségre elmúlik."
+        "A hűséget a tettek mutatják, nem a szavak.",
+        "A hűséget a szavak mutatják, nem a tettek.",
+        "A hűség a fiataloknak fontos, az időseknek nem."
       ],
       "correct": 0
     },
@@ -320,11 +332,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Miért tartotta Emerenc zárva a lakása ajtaját a külvilág elől?",
+      "question": "Miért tartotta Emerenc zárva a lakása ajtaját?",
       "options": [
-        "Mert a múlt emlékeit és belső függetlenségét védte a kéretlen beavatkozástól.",
-        "Mert félt a betörőktől és a városi zajártalomtól.",
-        "Mert el akarta adni az értékes bútorait anélkül, hogy mások megtudnák."
+        "Mert a múltját és a titkait védte.",
+        "Mert el akarta adni a lakását.",
+        "Mert nem szerette az írónőt."
       ],
       "correct": 0
     },
@@ -335,9 +347,9 @@
       "stage": "reading",
       "question": "Mit ígért az írónő Emerencnek a beszélgetés végén?",
       "options": [
-        "Hogy tiszteletben tartja a határait, és soha nem lépi át erőszakkal a bizalom küszöbét.",
-        "Hogy minden héten orvost hív hozzá a házhoz.",
-        "Hogy könyvet ír a titkairól az engedélye nélkül."
+        "Hogy soha nem lépi át a határait.",
+        "Hogy minden héten orvost hív hozzá.",
+        "Hogy könyvet ír a titkairól."
       ],
       "correct": 0
     }

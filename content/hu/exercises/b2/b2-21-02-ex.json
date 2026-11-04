@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What is a 'recesszió' in macroeconomic terms?",
       "options": [
-        "a period of temporary economic decline during which trade and industrial activity fall, typically indicated by GDP drop",
-        "a sudden surge in foreign direct investment accompanied by full employment",
-        "a seasonal discount program offered by retail supermarket chains"
+        "a period when the economy shrinks and output falls",
+        "a sudden rise in investment with full employment",
+        "a seasonal discount offered by supermarket chains"
       ],
       "correct": 0,
       "teaches": [
@@ -68,8 +68,8 @@
       "question": "Select the adverbial expressing dramatic magnitude: 'A munkanélküliség ____ emelkedett a pénzügyi krízis alatt.'",
       "options": [
         "drámai mértékben",
-        "lassú táján",
-        "végig"
+        "kis mértékben",
+        "drámai mérték"
       ],
       "correct": 0,
       "teaches": [
@@ -81,26 +81,30 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the phrase denoting proportional pacing: 'A megújuló energiaforrások használata ____ terjed világszerte.'",
+      "question": "Choose the phrase meaning 'at an accelerating pace': 'A megújuló energiaforrások használata ____ terjed világszerte.'",
       "options": [
         "gyorsuló ütemben",
-        "felére",
-        "híján"
+        "gyorsuló ütemre",
+        "gyorsuló ütemhez"
       ],
       "correct": 0,
       "teaches": [
         "b2-proportional-rates"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "hoz-suffix"
+      }
     },
     {
       "id": "b2-21-02-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A bérek a gazdasági teljesítmény ____ emelkedhetnek tartósan infláció nélkül.",
+      "sentence": "A jövedelem a teljesítmény ____ nő.",
       "hint": "in proportion to",
       "answer": "arányában",
-      "english": "Wages can rise sustainably without inflation in proportion to economic performance.",
+      "english": "Income grows in proportion to performance.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -110,10 +114,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A beruházások volumene sajnálatos ____ esett vissza az építőiparban.",
+      "sentence": "Az árak a válság után jelentős ____ emelkedtek.",
       "hint": "to an extent / degree",
       "answer": "mértékben",
-      "english": "The volume of investments fell back to a regrettable extent in the construction industry.",
+      "english": "Prices rose to a significant extent after the crisis.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -155,10 +159,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A nemzeti valuta hirtelen gyengülése miatt a forint ____ kedvezőtlenül alakult az euróval szemben.",
+      "sentence": "A forint ____ a válság idején hirtelen esett.",
       "hint": "exchange rate",
       "answer": "árfolyama",
-      "english": "Due to the sudden weakening of the national currency, the forint's exchange rate developed unfavorably against the euro.",
+      "english": "The forint's exchange rate fell suddenly during the crisis.",
       "teaches": [
         "b2-economic-cycles-crisis-adaptation-vocab"
       ]
@@ -170,31 +174,25 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "hosszan",
-        "tartó",
+        "hosszú",
         "recesszió",
-        "mélyreható",
-        "strukturális",
-        "átalakulást",
-        "kényszerített",
-        "ki",
+        "után",
+        "lassú",
+        "volt",
         "a",
-        "vállalatokból."
+        "kilábalás."
       ],
       "solution": [
         "A",
-        "hosszan",
-        "tartó",
+        "hosszú",
         "recesszió",
-        "mélyreható",
-        "strukturális",
-        "átalakulást",
-        "kényszerített",
-        "ki",
+        "után",
+        "lassú",
+        "volt",
         "a",
-        "vállalatokból."
+        "kilábalás."
       ],
-      "english": "The prolonged recession forced deep structural transformation out of companies.",
+      "english": "After the long recession the recovery was slow.",
       "teaches": [
         "b2-economic-cycles-crisis-adaptation-vocab"
       ]
@@ -207,7 +205,7 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Mikorra várható a gazdaság talpra állása a nehéz év után?"
+          "text": "Hogyan áll most a gazdaság?"
         },
         {
           "speaker": "Pénzügyminiszter",
@@ -215,14 +213,18 @@
         }
       ],
       "options": [
-        "Az adatok szerint a kilábalás már megindult, és a GDP fokozatosan gyorsuló ütemben bővülhet a következő negyedévekben.",
-        "Az adatok szerint a kilábalás már megindult, és a GDP fokozatosan gyorsuló ütemre bővülhet a következő negyedévekben.",
-        "Az adatok szerint a kilábalás már megindult, és a GDP fokozatosan gyorsuló ütemmel bővülhetne a következő negyedévekben."
+        "Az adatok szerint a kilábalás megindult, és a gazdaság gyorsuló ütemben nő.",
+        "Az adatok szerint a kilábalás megindult, és a gazdaság gyorsuló ütemre nő.",
+        "Az adatok szerint a kilábalás megindult, és a gazdaság gyorsuló ütemből nő."
       ],
       "correct": 0,
       "teaches": [
         "b2-proportional-rates"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "elative-bol-bel"
+      }
     },
     {
       "id": "b2-21-02-dialogue-2",
@@ -232,7 +234,7 @@
       "prompt": [
         {
           "speaker": "Befektető",
-          "text": "Milyen hatással van az árfolyam ingadozása az exportőrökre?"
+          "text": "Mi történik a külföldi bevételekkel, ha esik a forint árfolyama?"
         },
         {
           "speaker": "Elemző",
@@ -240,14 +242,17 @@
         }
       ],
       "options": [
-        "A valuta leértékelődése nagy mértékben növeli a külföldi bevételek hazai forintértékét, de drágítja az importot.",
-        "A valuta leértékelődése nagy mértékre növeli a külföldi bevételek hazai forintértékét, de drágítja az importot.",
-        "A valuta leértékelődése nagy mértékben növeli a külföldi bevételek hazai forintértéke, de drágítaná az importot."
+        "A külföldi bevételek nagy mértékben nőnek.",
+        "A külföldi bevételek nagy mértékre nőnek.",
+        "A külföldi bevételek nagy mérték nőnek."
       ],
       "correct": 0,
       "teaches": [
         "b2-proportional-rates"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ra-re"
+      }
     },
     {
       "id": "b2-21-02-writing-1",
@@ -256,8 +261,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'gyorsuló ütemben' describing technological automation in factories.",
-          "answer": "A modern üzemekben gyorsuló ütemben zajlik a gyártási folyamatok automatizálása és robotizálása."
+          "prompt": "Say that the economy is growing at an accelerating pace.",
+          "answer": "A gazdaság gyorsuló ütemben nő."
         }
       ],
       "teaches": [
@@ -271,8 +276,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'jelentős mértékben' and 'kilábalás' analyzing post-crisis stabilization.",
-          "answer": "A pénzügyi reformok jelentős mértékben elősegítették a bankrendszer stabilitását és a válságból való kilábalást."
+          "prompt": "Say that the reforms helped the recovery to a significant extent.",
+          "answer": "A reformok jelentős mértékben segítették a kilábalást."
         }
       ],
       "teaches": [
@@ -284,10 +289,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A technológiai fejlesztések rohamtempóban, példátlan ____ alakítják át a pénzügyi szektort.",
+      "sentence": "A fogyasztás példátlan ____ esett vissza a válság kitörése után.",
       "hint": "to a degree / extent",
       "answer": "mértékben",
-      "english": "Technological developments are transforming the financial sector at breakneck speed, to an unprecedented degree.",
+      "english": "Consumption fell back to an unprecedented degree after the outbreak of the crisis.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -301,7 +306,7 @@
       "options": [
         "kilábalás",
         "recesszió",
-        "leépítés"
+        "árfolyam"
       ],
       "correct": 0,
       "teaches": [

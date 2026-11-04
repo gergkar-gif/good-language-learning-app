@@ -55,9 +55,9 @@
       "stage": "recognize",
       "question": "Which sentence correctly illustrates anteriority using 'mire' and 'addigra'?",
       "options": [
-        "Mire a konferencia elkezdődött, addigra minden szakértő megérkezett a terembe.",
-        "Mire a konferencia elkezdődött, mivel senki sem érkezett meg.",
-        "Addigra a konferencia elkezdődött, holott senki sem beszélt."
+        "Mire az igazgató megérkezett, addigra minden vendég elfoglalta a helyét.",
+        "Mire az igazgató megérkezett, mivel minden vendég elfoglalta a helyét.",
+        "Addigra az igazgató megérkezett, noha minden vendég elfoglalta a helyét."
       ],
       "correct": 0,
       "teaches": [
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A tartósan alacsony ____ miatt a népesség természetes fogyása tovább folytatódik.",
+      "sentence": "Az alacsony ____ miatt kevés a gyerek.",
       "hint": "total fertility rate",
       "answer": "termékenységi arányszám",
-      "english": "Due to the persistently low total fertility rate, the natural decline of the population continues.",
+      "english": "Because of the low total fertility rate, there are few children.",
       "teaches": [
         "b2-demographics-generations-life-course-vocab"
       ]
@@ -95,10 +95,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A nyugdíjkorhatár ____ állva az ember visszatekint az elvégzett munkájára.",
+      "sentence": "Az új élet ____ áll a család.",
       "hint": "on the threshold of",
       "answer": "küszöbén",
-      "english": "Standing on the threshold of retirement age, a person looks back upon the work accomplished.",
+      "english": "The family stands on the threshold of a new life.",
       "teaches": [
         "b2-temporal-framing"
       ]
@@ -108,16 +108,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Select the sentence where 'folyamán' correctly frames an extended duration:",
+      "question": "Select the sentence where *folyamán* correctly frames a long period:",
       "options": [
-        "Az elmúlt két évtized folyamán alapvetően átalakult a családpolitikai támogatások rendszere.",
-        "Az elmúlt két évtized folyamában alapvetően átalakult a családpolitikai támogatások rendszere.",
-        "Az elmúlt két évtized folyamán alapvetően átalakultak a családpolitikai támogatás rendszere."
+        "Két évtized folyamán nagyon megváltozott a családok élete.",
+        "Két évtized folyamát nagyon megváltozott a családok élete.",
+        "Két évtized folyamán nagyon megváltoztak a családok élete."
       ],
       "correct": 0,
       "teaches": [
         "b2-temporal-framing"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-22-consolidation-8",
@@ -127,7 +130,7 @@
       "prompt": [
         {
           "speaker": "Gazdaságpolitikus",
-          "text": "Hogyan biztosítható a nyugdíjak fedezete a jövőben?"
+          "text": "Mit mutatnak a felmérések?"
         },
         {
           "speaker": "Kutatóintézeti vezető",
@@ -135,30 +138,37 @@
         }
       ],
       "options": [
-        "A felmérések során bebizonyosodott, hogy a járulékfizetők bázisát kell szélesíteni az elkövetkező évek folyamán.",
-        "A felmérések sorában bebizonyosodott, hogy a járulékfizetők bázisát kell szélesíteni az elkövetkező évek folyamában.",
-        "A felméréseket során bebizonyosodott, hogy a járulékfizetők bázisát kellene szélesíteni az elkövetkező éveket folyamán."
+        "A felmérések során kiderült, hogy a következő évek folyamán új szabályok kellenek.",
+        "A felméréseket során kiderült, hogy a következő évek folyamán új szabályok kellenek.",
+        "A felmérések során kiderült, hogy a következő évek folyamán új szabályok kellek."
       ],
       "correct": 0,
       "teaches": [
         "b2-temporal-framing"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-22-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'öregségére' preferred over 'gyerekkorában' in: 'Az idős író ____ sem hagyta abba az alkotást'?",
+      "question": "Select the correct form: 'Az idős asszony ____ egyedül maradt.'",
       "options": [
-        "Because it specifically references reaching and being in the advanced years of one's life.",
-        "Because it is an accusative form required by the verb.",
-        "Because 'gyerekkorában' can only be used with past tense passive verbs."
+        "öregségére",
+        "öregségén",
+        "öregségébe"
       ],
       "correct": 0,
       "teaches": [
-        "b2-temporal-framing"
-      ]
+        "ra-re"
+      ],
+      "distractor_skills": {
+        "1": "on-en-on",
+        "2": "movement-with-ba-be"
+      }
     },
     {
       "id": "b2-22-consolidation-10",
@@ -202,9 +212,9 @@
         "életút",
         "során",
         "minden",
-        "generáció",
-        "értékes",
-        "tapasztalatokat",
+        "nemzedék",
+        "sok",
+        "tapasztalatot",
         "szerez."
       ],
       "solution": [
@@ -212,12 +222,12 @@
         "életút",
         "során",
         "minden",
-        "generáció",
-        "értékes",
-        "tapasztalatokat",
+        "nemzedék",
+        "sok",
+        "tapasztalatot",
         "szerez."
       ],
-      "english": "In the course of the life path, every generation acquires valuable experiences.",
+      "english": "Over a lifetime, every generation gains a lot of experience.",
       "teaches": [
         "b2-temporal-framing"
       ]
@@ -229,8 +239,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause demographic analysis using 'folyamán' (duration), 'mire' (anteriority), and 'addigra' (correlation).",
-          "answer": "Az elmúlt évtizedek folyamán folyamatosan csökkent a születésszám; és mire a szakpolitikusok felismerték a veszélyt, addigra már jelentősen elöregedett a társadalom korfája."
+          "prompt": "Say that over the decades the number of births fell, and by the time people noticed, society had already become old.",
+          "answer": "Az évtizedek folyamán csökkent a születésszám, és mire az emberek észrevették, addigra a társadalom már idős lett."
         }
       ],
       "teaches": [

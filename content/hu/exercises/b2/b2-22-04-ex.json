@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What is a 'korfa' in demographic science?",
       "options": [
-        "a graphical diagram illustrating the age and sex distribution of a population",
-        "a family genealogical tree recording noble ancestors",
-        "a forestry register cataloguing protected ancient trees"
+        "a diagram of the age and sex structure of a population",
+        "a family tree recording noble ancestors",
+        "a forestry register of protected ancient trees"
       ],
       "correct": 0,
       "teaches": [
@@ -87,24 +87,27 @@
       "stage": "controlled",
       "question": "Choose the sentence correctly combining temporal framing with demographic trend description:",
       "options": [
-        "Az elmúlt évtizedek folyamán a termékenységi arányszám jelentősen mérséklődött.",
-        "Az elmúlt évtizedek folyamán a termékenységi arányszámot jelentősen mérséklődött.",
-        "Az elmúlt évtizedek folyamán a termékenységi arányszám jelentősen mérséklődne volna."
+        "Az évtizedek folyamán a termékenységi arányszám jelentősen mérséklődött.",
+        "Az évtizedek folyamán a termékenységi arányszámot jelentősen mérséklődött.",
+        "Az évtizedek folyamán a termékenységi arányszám jelentősen mérséklődni."
       ],
       "correct": 0,
       "teaches": [
         "b2-temporal-framing"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-22-04-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A népességadatok alapos elemzése ____ kiderült, hogy a fiatalok aránya csökken.",
+      "sentence": "A születésszám elemzése ____ kiderült, hogy kevesebb a gyerek.",
       "hint": "in the course of",
       "answer": "során",
-      "english": "In the course of thorough analysis of population data, it turned out that the proportion of young people is falling.",
+      "english": "In the course of analysing the number of births, it turned out that there are fewer children.",
       "teaches": [
         "b2-temporal-framing"
       ]
@@ -114,10 +117,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A válságos évek ____ a születésszám fokozatosan helyreállt.",
+      "sentence": "A nehéz évek ____ a születésszám fokozatosan nőtt.",
       "hint": "after the passing of",
       "answer": "múltával",
-      "english": "With the passing of the crisis years, the birth rate gradually recovered.",
+      "english": "With the passing of the hard years, the number of births gradually grew.",
       "teaches": [
         "b2-temporal-framing"
       ]
@@ -128,9 +131,8 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "demográfiai",
-        "átalakulás",
+        "Az",
+        "évtizedek",
         "folyamán",
         "megváltozott",
         "a",
@@ -138,16 +140,15 @@
         "alakja."
       ],
       "solution": [
-        "A",
-        "demográfiai",
-        "átalakulás",
+        "Az",
+        "évtizedek",
         "folyamán",
         "megváltozott",
         "a",
         "korfa",
         "alakja."
       ],
-      "english": "In the course of the demographic transition, the shape of the age pyramid changed.",
+      "english": "Over the decades the shape of the age pyramid changed.",
       "teaches": [
         "b2-temporal-framing"
       ]
@@ -157,10 +158,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A tartós ____ megállítása a gazdaságpolitika egyik legfontosabb célkitűzése.",
+      "sentence": "A ____ miatt egyre kevesebb ember él az országban.",
       "hint": "population decline",
       "answer": "népességfogyás",
-      "english": "Halting persistent population decline is one of the most important objectives of economic policy.",
+      "english": "Because of population decline, fewer and fewer people live in the country.",
       "teaches": [
         "b2-demographics-generations-life-course-vocab"
       ]
@@ -175,22 +176,24 @@
         "magas",
         "eltartottsági",
         "ráta",
-        "túlterheli",
+        "sok",
+        "pénzbe",
+        "kerül",
         "az",
-        "állami",
-        "költségvetést."
+        "államnak."
       ],
       "solution": [
         "A",
         "magas",
         "eltartottsági",
         "ráta",
-        "túlterheli",
+        "sok",
+        "pénzbe",
+        "kerül",
         "az",
-        "állami",
-        "költségvetést."
+        "államnak."
       ],
-      "english": "The high dependency ratio overburdens the state budget.",
+      "english": "A high dependency ratio costs the state a lot of money.",
       "teaches": [
         "b2-demographics-generations-life-course-vocab"
       ]
@@ -203,7 +206,7 @@
       "prompt": [
         {
           "speaker": "Demográfus",
-          "text": "Milyen következtetéseket vonhatunk le az idei népszámlálásból?"
+          "text": "Mit mutat a felmérés?"
         },
         {
           "speaker": "Közgazdász",
@@ -211,14 +214,17 @@
         }
       ],
       "options": [
-        "A vizsgálat során beigazolódott, hogy a születésszám elmarad a várakozásoktól, miközben az eltartottsági ráta emelkedik.",
-        "A vizsgálat sorában beigazolódott, hogy a születésszám elmarad a várakozásoktól, mihelyt az eltartottsági ráta emelkedik.",
-        "A vizsgálaton során beigazolódott, hogy a születésszám elmarad a várakozásoktól, miközben az eltartottsági rátát emelkedik."
+        "A vizsgálat során kiderült, hogy a születésszám csökken, miközben az eltartottsági ráta nő.",
+        "A vizsgálat során kiderült, hogy a születésszám csökken, miközben az eltartottsági rátát nő.",
+        "A vizsgálat során kiderült, hogy a születésszám csökken, miközben az eltartottsági ráta nőni."
       ],
       "correct": 0,
       "teaches": [
         "b2-temporal-framing"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-22-04-dialogue-2",
@@ -228,7 +234,7 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Mivel magyarázható a hazai korfa eltolódása?"
+          "text": "Miért változott meg a korfa?"
         },
         {
           "speaker": "Egyetemi tanár",
@@ -236,14 +242,17 @@
         }
       ],
       "options": [
-        "Az elmúlt évtizedek folyamán a várható élettartam nőtt, miközben a termékenységi arányszám alacsony maradt.",
-        "Az elmúlt évtizedek folyamában a várható élettartam nőtt, amíg a termékenységi arányszám alacsony maradt.",
-        "Az elmúlt évtizedeket folyamán a várható élettartam nőtt, miközben a termékenységi arányszám alacsonyan maradt volna."
+        "Az évtizedek folyamán több lett az idős ember, miközben kevés gyerek született.",
+        "Az évtizedeket folyamán több lett az idős ember, miközben kevés gyerek született.",
+        "Az évtizedek folyamán több lett az idős ember, miközben kevés gyerek születni."
       ],
       "correct": 0,
       "teaches": [
         "b2-temporal-framing"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-22-04-writing-1",
@@ -267,8 +276,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'folyamán' and 'népességfogyás' discussing long-term demographic challenges.",
-          "answer": "Az elmúlt fél évszázad folyamán a népességfogyás tartós jelenséggé vált a régióban."
+          "prompt": "Say that over the decades population decline became a big problem.",
+          "answer": "Az évtizedek folyamán a népességfogyás nagy problémává vált."
         }
       ],
       "teaches": [
@@ -280,10 +289,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "Egy történelmi demográfiai fordulat ____ állva új családtámogatási rendszert dolgoztak ki.",
+      "sentence": "Az ország egy nagy változás ____ áll.",
       "hint": "on the threshold of",
       "answer": "küszöbén",
-      "english": "Standing on the threshold of a historic demographic turning point, they developed a new family support system.",
+      "english": "The country stands on the threshold of a big change.",
       "teaches": [
         "b2-temporal-framing"
       ]

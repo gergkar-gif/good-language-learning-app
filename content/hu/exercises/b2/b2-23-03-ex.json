@@ -8,7 +8,7 @@
       "stage": "introduce",
       "question": "What is a 'műemlék' under Hungarian cultural heritage legislation?",
       "options": [
-        "a legally listed and protected historic building or structure of architectural significance",
+        "a legally protected historic building",
         "a temporary scaffolding erected around modern construction sites",
         "a newly constructed prefabricated apartment block"
       ],
@@ -101,10 +101,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Léteznek olyan történelmi terek, ____ elképzelhetetlen a magyar főváros identitása.",
+      "sentence": "Vannak olyan épületek, ____ nem szép a városkép.",
       "hint": "without which",
       "answer": "amelyek nélkül",
-      "english": "There exist historical squares without which the Hungarian capital's identity is unimaginable.",
+      "english": "There are buildings without which the cityscape is not beautiful.",
       "teaches": [
         "b2-relative-postpositions"
       ]
@@ -114,10 +114,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A rakpart felújítása volt az a beruházás, ____ közelebb került a Duna a gyalogosokhoz.",
+      "sentence": "A rakpart felújítása volt az a terv, ____ szebb lett a városkép.",
       "hint": "by means of which",
       "answer": "amely által",
-      "english": "The renovation of the embankment was the investment through which the Danube came closer to pedestrians.",
+      "english": "The renovation of the embankment was the plan through which the cityscape became more beautiful.",
       "teaches": [
         "b2-relative-postpositions"
       ]
@@ -129,27 +129,23 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "védett",
         "műemlék,",
         "amelynek",
         "homlokzatát",
-        "helyreállították,",
-        "a",
-        "város",
-        "büszkesége."
+        "felújították,",
+        "nagyon",
+        "szép."
       ],
       "solution": [
         "A",
-        "védett",
         "műemlék,",
         "amelynek",
         "homlokzatát",
-        "helyreállították,",
-        "a",
-        "város",
-        "büszkesége."
+        "felújították,",
+        "nagyon",
+        "szép."
       ],
-      "english": "The protected monument whose facade was restored is the pride of the city.",
+      "english": "The monument whose facade was renovated is very beautiful.",
       "teaches": [
         "b2-relative-postpositions"
       ]
@@ -159,10 +155,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A színház teljes körű ____ során megnövelték a nézőtér befogadóképességét.",
+      "sentence": "A színház ____ során új ablakokat tettek be.",
       "hint": "remodeling [possessive]",
       "answer": "átépítése",
-      "english": "In the course of the theater's comprehensive remodeling, they increased the auditorium's seating capacity.",
+      "english": "During the remodeling of the theatre, new windows were put in.",
       "teaches": [
         "b2-urban-space-architecture-coexistence-vocab"
       ]
@@ -177,24 +173,24 @@
         "új",
         "övezeti",
         "besorolás",
-        "szigorúan",
-        "szabályozza",
+        "szigorú",
+        "szabályokat",
+        "jelent",
         "a",
-        "belvárosi",
-        "építkezéseket."
+        "lakóknak."
       ],
       "solution": [
         "Az",
         "új",
         "övezeti",
         "besorolás",
-        "szigorúan",
-        "szabályozza",
+        "szigorú",
+        "szabályokat",
+        "jelent",
         "a",
-        "belvárosi",
-        "építkezéseket."
+        "lakóknak."
       ],
-      "english": "The new zoning classification strictly regulates downtown construction projects.",
+      "english": "The new zoning classification means strict rules for the residents.",
       "teaches": [
         "b2-urban-space-architecture-coexistence-vocab"
       ]
@@ -207,7 +203,7 @@
       "prompt": [
         {
           "speaker": "Főépítész",
-          "text": "Hogyan egyeztethető össze a modern irodaház a történelmi környezettel?"
+          "text": "Milyen házat lehet építeni a régi utcába?"
         },
         {
           "speaker": "Műemléki szakértő",
@@ -215,14 +211,17 @@
         }
       ],
       "options": [
-        "Csak olyan tervezési kompromisszum fogadható el, amely mentén a védett városkép harmóniája nem sérül.",
-        "Csak olyan tervezési kompromisszum fogadható el, amelyet mentén a védett városkép harmóniája nem sérül.",
-        "Csak olyan tervezési kompromisszum fogadható el, amelynek mentén a védett városkép harmóniáját nem sérül."
+        "Csak olyan házat, amelynek homlokzata illik a városképhez.",
+        "Csak olyan házat, amelynek homlokzat illik a városképhez.",
+        "Csak olyan házat, amelynek homlokzatát illik a városképhez."
       ],
       "correct": 0,
       "teaches": [
         "b2-relative-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-23-03-dialogue-2",
@@ -256,8 +255,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'amelynek felújítása' arguing for architectural preservation.",
-          "answer": "Meg kell mentenünk a régi vámházat, amelynek felújítása révén új kulturális központ jöhetne létre."
+          "prompt": "Say that we must save the old building whose renovation matters for the cityscape.",
+          "answer": "Meg kell mentenünk a régi házat, amelynek a felújítása fontos a városképnek."
         }
       ],
       "teaches": [
@@ -284,10 +283,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A Duna az az elem, ____ a két városrész, Buda és Pest évszázadok óta igazodik.",
-      "hint": "to which / toward which",
+      "sentence": "A Duna az a folyó, ____ Buda és Pest is közel van.",
+      "hint": "to which",
       "answer": "amelyhez",
-      "english": "The Danube is the element to which the two parts of the city, Buda and Pest, have aligned for centuries.",
+      "english": "The Danube is the river to which both Buda and Pest are close.",
       "teaches": [
         "b2-relative-postpositions"
       ]
@@ -297,11 +296,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which term defines the legal classification determining permissible land use and building heights?",
+      "question": "Which noun means 'renovation'?",
       "options": [
-        "övezeti besorolás",
-        "városkép",
-        "felújítás"
+        "felújítás",
+        "átépítés",
+        "városkép"
       ],
       "correct": 0,
       "teaches": [

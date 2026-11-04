@@ -39,9 +39,9 @@
       "stage": "recognize",
       "question": "What does 'joghézag' signify in jurisprudence?",
       "options": [
-        "an unintentional gap in statutory legislation where a norm is required but absent",
-        "a spatial boundary dispute between neighboring municipalities",
-        "a typographical error in the official parliamentary gazette"
+        "a gap in the law where a rule is needed but missing",
+        "a boundary dispute between neighboring municipalities",
+        "a typo in the official parliamentary gazette"
       ],
       "correct": 0,
       "teaches": [
@@ -53,15 +53,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Which sentence correctly illustrates statutory obligation with a prescriptive participle?",
+      "question": "Which sentence says that the conditions 'are to be observed' by everyone?",
       "options": [
-        "A szerződésben rögzített feltételek minden fél számára kötelezően betartandók.",
-        "A szerződésben rögzített feltételek ha betartotta volna.",
-        "Betartandó a szerződés mert senki sem akart olvasni semmit."
+        "A szerződésben rögzített feltételek mindenki számára betartandók.",
+        "A szerződésben rögzített feltételek mindenki számára betartottak.",
+        "A szerződésben rögzített feltételek mindenki számára betartani."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "future-participle-ando"
       ]
     },
     {
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A közigazgatási határozat ellen a felperes harminc napon belül ____ terjesztett elő.",
+      "sentence": "Az ügyfél harminc napon belül ____ terjesztett elő a határozat ellen.",
       "hint": "statement of claim / formal petition",
       "answer": "keresetlevelet",
-      "english": "Against the administrative decision, the plaintiff filed a statement of claim within thirty days.",
+      "english": "The client filed a statement of claim against the decision within thirty days.",
       "teaches": [
         "b2-law-justice-constitutional-principles-vocab"
       ]
@@ -87,7 +87,7 @@
       "answer": "alapján",
       "english": "The official measure took place on the basis of the clear provisions of the statute.",
       "teaches": [
-        "formal-obligation"
+        "b2-relational-compounds"
       ]
     },
     {
@@ -95,10 +95,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A munkáltató a törvény erejénél fogva ____ a biztonságos munkakörülmények garantálására.",
+      "sentence": "A cég ____ biztosítani a biztonságos munkafeltételeket.",
       "hint": "obligated / duty-bound",
       "answer": "köteles",
-      "english": "By virtue of law, the employer is obligated to guarantee safe working conditions.",
+      "english": "The company is obliged to ensure safe working conditions.",
       "teaches": [
         "formal-obligation"
       ]
@@ -108,15 +108,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Select the sentence where 'sérelmére' correctly denotes legal prejudice:",
+      "question": "Which sentence says that the decision was made to the detriment of the client's rights?",
       "options": [
-        "Az egyoldalú szerződésmódosítás a fogyasztó törvényes jogainak sérelmére történt.",
-        "A törvény sérelmére mindenki vidáman ünnepelt a városházán.",
-        "A sérelmére megírtuk a leckét anélkül, hogy hibáztunk volna."
+        "A határozat az ügyfél jogainak sérelmére született meg.",
+        "A határozat az ügyfél jogainak sérelmében született meg.",
+        "A határozat az ügyfél jogainak sérelmét született meg."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "b2-relational-compounds"
       ]
     },
     {
@@ -127,7 +127,7 @@
       "prompt": [
         {
           "speaker": "Alkotmánybíró",
-          "text": "Hogyan ítéli meg a vitatott törvénymódosítás alkotmányosságát?"
+          "text": "Összhangban áll a törvény az Alaptörvénnyel?"
         },
         {
           "speaker": "Szakértő",
@@ -135,13 +135,13 @@
         }
       ],
       "options": [
-        "A jogszabály sérti a jogbiztonság követelményét, mivel nem áll összhangban az Alaptörvény tisztességes eljárásra vonatkozó garanciáival.",
-        "A jogszabály sérti a jogbiztonság követelményét, mivel nem áll összhangba az Alaptörvény tisztességes eljárásra vonatkozó garanciáival.",
-        "A jogszabály sérti a jogbiztonság követelményét, mivel nem áll összhangban az Alaptörvény tisztességes eljárásra vonatkozó garanciáit."
+        "Nem, a törvény nincs összhangban az Alaptörvény garanciáival.",
+        "Nem, a törvény nincs összhangban az Alaptörvény garanciáit.",
+        "Nem, a törvény nincs összhangban az Alaptörvény garanciáin."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -149,16 +149,19 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'jogosult + infinitive' preferred over 'kell' in statutory drafting?",
+      "question": "Which sentence means: 'The client is entitled to inspect the documents'?",
       "options": [
-        "Because it explicitly assigns a subjective legal entitlement to an authorized party rather than stating an impersonal necessity.",
-        "Because 'kell' cannot be used with past tense verbs in Hungarian.",
-        "Because 'jogosult' is an archaic noun only found in 19th-century novels."
+        "Az ügyfél jogosult megismerni az iratokat.",
+        "Az ügyfél köteles megismerni az iratokat.",
+        "Az ügyfél jogosult megismerné az iratokat."
       ],
       "correct": 0,
       "teaches": [
         "formal-obligation"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "b2-25-consolidation-10",
@@ -187,39 +190,33 @@
       ],
       "english": "The decree must stand in full accordance with the Basic Law.",
       "teaches": [
-        "formal-obligation"
+        "b2-relational-compounds"
       ]
     },
     {
       "id": "b2-25-consolidation-11",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "A",
-        "bírósági",
+        "jogerős",
         "ítélet",
-        "jogerőre",
-        "emelkedése",
-        "után",
-        "megindult",
-        "a",
-        "végrehajtás."
+        "kötelező",
+        "mindenki",
+        "számára."
       ],
       "solution": [
         "A",
-        "bírósági",
+        "jogerős",
         "ítélet",
-        "jogerőre",
-        "emelkedése",
-        "után",
-        "megindult",
-        "a",
-        "végrehajtás."
+        "kötelező",
+        "mindenki",
+        "számára."
       ],
-      "english": "Following the judgment becoming final and binding, enforcement commenced.",
+      "english": "A final judgment is binding for everyone.",
       "teaches": [
-        "formal-obligation"
+        "b2-law-justice-constitutional-principles-vocab"
       ]
     },
     {
@@ -230,11 +227,11 @@
       "template": [
         {
           "prompt": "Write a three-clause legal argument combining 'alapján' (statutory ground), 'köteles' (obligation), and 'jogerős' (binding judgment).",
-          "answer": "A hatályos jogszabály alapján az alperes köteles megtéríteni az okozott kárt; amennyiben a fellebbezési határidő letelt, a bíróság jogerős ítélete haladéktalanul végrehajthatóvá válik."
+          "answer": "A hatályos jogszabály alapján a cég köteles biztosítani a biztonságos munkafeltételeket, és a jogerős ítélet mindenki számára kötelező."
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "b2-law-justice-constitutional-principles-vocab"
       ]
     }
   ]

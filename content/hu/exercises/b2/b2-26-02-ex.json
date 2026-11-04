@@ -9,8 +9,8 @@
       "question": "What is the meaning of the distributive adverb 'fejenként'?",
       "options": [
         "per person",
-        "turning one's head toward the speaker",
-        "a collective fine imposed on an entire village"
+        "per family",
+        "per year"
       ],
       "correct": 0,
       "teaches": [
@@ -69,15 +69,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which distributive suffix attaches to the noun 'község' (front rounded vowel)?",
+      "question": "Which form is correct for the noun 'csoport'?",
       "options": [
-        "-önként (községenként)",
-        "-onként (községonként)",
-        "-an (községan)"
+        "csoportonként",
+        "csoportenként",
+        "csoportnként"
       ],
       "correct": 0,
       "teaches": [
-        "egymas"
+        "distributive-nkent"
       ]
     },
     {
@@ -93,7 +93,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "egymas"
+        "distributive-nkent"
       ]
     },
     {
@@ -101,12 +101,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A felvételizőket ____ hívták be a terembe a szóbeli vizsgára.",
+      "sentence": "A tanúkat ____ hívták be a terembe.",
       "hint": "one by one",
       "answer": "egyenként",
-      "english": "The applicants were called into the room one by one for the oral examination.",
+      "english": "The witnesses were called into the room one by one.",
       "teaches": [
-        "egymas"
+        "distributive-nkent"
       ]
     },
     {
@@ -114,12 +114,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A támogatást az iskolákban tanuló diákok száma szerint, ____ határozták meg.",
+      "sentence": "A támogatást a diákok száma szerint, ____ határozták meg.",
       "hint": "per head / per capita",
       "answer": "fejenként",
-      "english": "The subsidy was determined per capita according to the number of students studying in the schools.",
+      "english": "The subsidy was determined per capita according to the number of students.",
       "teaches": [
-        "egymas"
+        "distributive-nkent"
       ]
     },
     {
@@ -129,66 +129,62 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "résztvevőket",
+        "diákokat",
         "csoportonként",
-        "osztották",
+        "hívták",
         "be",
         "a",
-        "műhelymunkára."
+        "terembe."
       ],
       "solution": [
         "A",
-        "résztvevőket",
+        "diákokat",
         "csoportonként",
-        "osztották",
+        "hívták",
         "be",
         "a",
-        "műhelymunkára."
+        "terembe."
       ],
-      "english": "The participants were assigned group by group to the workshops.",
+      "english": "The students were called into the room group by group.",
       "teaches": [
-        "egymas"
+        "distributive-nkent"
       ]
     },
     {
       "id": "b2-26-02-practice-3",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "practice",
-      "sentence": "A népszámlálási adatokat nemcsak régiónként, hanem ____ is közzétették.",
+      "sentence": "Az adatokat nemcsak régiónként, hanem ____ is közzétették.",
       "hint": "nationality by nationality",
       "answer": "nemzetiségenként",
-      "english": "The census data were published not only by region, but also nationality by nationality.",
+      "english": "The data were published not only by region, but also nationality by nationality.",
       "teaches": [
-        "b2-pluralism-heritage-minority-perspectives-vocab"
+        "distributive-nkent"
       ]
     },
     {
       "id": "b2-26-02-practice-4",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "practice",
       "tiles": [
         "A",
-        "szabályoktól",
-        "eltérő",
-        "kérelmeket",
+        "támogatást",
         "esetenként",
-        "bírálják",
-        "el."
+        "osztják",
+        "szét."
       ],
       "solution": [
         "A",
-        "szabályoktól",
-        "eltérő",
-        "kérelmeket",
+        "támogatást",
         "esetenként",
-        "bírálják",
-        "el."
+        "osztják",
+        "szét."
       ],
-      "english": "Applications departing from the rules are evaluated case by case.",
+      "english": "The funding is distributed case by case.",
       "teaches": [
-        "b2-pluralism-heritage-minority-perspectives-vocab"
+        "distributive-nkent"
       ]
     },
     {
@@ -199,7 +195,7 @@
       "prompt": [
         {
           "speaker": "Kutatásvezető",
-          "text": "Hogyan dolgozzuk fel a kérdőíves felmérés eredményeit?"
+          "text": "Hogyan mutassuk be az adatokat?"
         },
         {
           "speaker": "Adatelemző",
@@ -207,14 +203,17 @@
         }
       ],
       "options": [
-        "Érdemes az adatokat korosztályonként és nemzetiségenként külön-külön összegezni az összehasonlíthatóság végett.",
-        "Érdemes az adatokat korosztályként és nemzetiségként külön-külön összegezni az összehasonlíthatóság végett.",
-        "Érdemes az adatokat korosztályonként és nemzetiségenként külön-külön összegezni az összehasonlíthatóságban végett."
+        "Érdemes az adatokat csoportonként és nemzetiségenként külön megmutatni.",
+        "Érdemes az adatokat csoportként és nemzetiségként külön megmutatni.",
+        "Érdemes az adatokat csoportonként és nemzetiségenkén külön megmutatni."
       ],
       "correct": 0,
       "teaches": [
-        "egymas"
-      ]
+        "distributive-nkent"
+      ],
+      "distractor_skills": {
+        "1": "essive-formal-kent"
+      }
     },
     {
       "id": "b2-26-02-dialogue-2",
@@ -224,7 +223,7 @@
       "prompt": [
         {
           "speaker": "Pályázati referens",
-          "text": "Mekkora összeg jut az anyanyelvi tankönyvtámogatásra?"
+          "text": "Mennyi támogatás jut egy diákra?"
         },
         {
           "speaker": "Pénzügyi vezető",
@@ -232,14 +231,17 @@
         }
       ],
       "options": [
-        "A költségvetés fejenként húszezer forint normatív támogatást biztosít minden jogosult diáknak.",
-        "A költségvetés fejként húszezer forint normatív támogatást biztosít minden jogosult diáknak.",
-        "A költségvetés fejenként húszezer forint normatív támogatásra biztosít minden jogosult diáknak."
+        "A költségvetés fejenként húszezer forint támogatást biztosít.",
+        "A költségvetés fejként húszezer forint támogatást biztosít.",
+        "A költségvetés fejenként húszezer forint támogatásra biztosít."
       ],
       "correct": 0,
       "teaches": [
-        "egymas"
-      ]
+        "distributive-nkent"
+      ],
+      "distractor_skills": {
+        "1": "essive-formal-kent"
+      }
     },
     {
       "id": "b2-26-02-writing-1",
@@ -248,12 +250,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'egyenként' describing individual examination of heritage artifacts.",
-          "answer": "A restaurátorok egyenként vizsgálták át a múzeumba beérkezett néprajzi tárgyakat."
+          "prompt": "Write a sentence using 'egyenként' about examining applications.",
+          "answer": "A szakértők egyenként vizsgálták meg a kérelmeket."
         }
       ],
       "teaches": [
-        "egymas"
+        "distributive-nkent"
       ]
     },
     {
@@ -263,12 +265,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence with 'nemzetiségenként' detailing cultural funding allocation.",
-          "answer": "A kulturális minisztérium nemzetiségenként elkülönített pénzügyi keretet biztosít az anyanyelvi színházaknak."
+          "prompt": "Write a sentence with 'nemzetiségenként' about how funds are shared out.",
+          "answer": "A támogatási összeget nemzetiségenként osztották szét."
         }
       ],
       "teaches": [
-        "egymas"
+        "distributive-nkent"
       ]
     },
     {
@@ -276,12 +278,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A rendkívüli jogorvoslati kérelmeket a minisztérium egyedi mérlegelés alapján, ____ vizsgálja felül.",
+      "sentence": "A kérelmeket a bizottság ____ bírálja el.",
       "hint": "case by case",
       "answer": "esetenként",
-      "english": "The ministry reviews extraordinary legal remedy requests based on individual discretion, case by case.",
+      "english": "The committee judges the applications case by case.",
       "teaches": [
-        "egymas"
+        "distributive-nkent"
       ]
     },
     {
@@ -289,11 +291,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which adverb means dividing or analyzing population cohorts broken down by ethnic/national group?",
+      "question": "Which adverb means 'nationality by nationality'?",
       "options": [
         "nemzetiségenként",
-        "folyamatosan",
-        "véletlenül"
+        "csoportonként",
+        "egyenként"
       ],
       "correct": 0,
       "teaches": [

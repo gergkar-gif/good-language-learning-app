@@ -8,7 +8,7 @@
       "stage": "introduce",
       "question": "What is a traditional 'bérház' in Budapest urban architecture?",
       "options": [
-        "a multi-story historic tenement or apartment building often built around a central courtyard with open corridors",
+        "a historic apartment building around a courtyard",
         "a modern single-family detached villa in the suburban hills",
         "a commercial warehouse exclusively storing industrial freight"
       ],
@@ -77,8 +77,11 @@
       ],
       "correct": 0,
       "teaches": [
-        "b2-relative-postpositions"
-      ]
+        "relative-clauses-aki-ami-amely"
+      ],
+      "distractor_skills": {
+        "2": "kepest"
+      }
     },
     {
       "id": "b2-23-01-controlled-3",
@@ -93,7 +96,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "b2-relative-postpositions"
+        "relative-clauses-aki-ami-amely"
       ]
     },
     {
@@ -101,10 +104,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Kidolgoztak egy tervet, ____ megvalósítható a gangok biztonságos felújítása.",
+      "sentence": "Kidolgoztak egy tervet, ____ a lakók új udvart kaptak.",
       "hint": "by means of which",
       "answer": "amely által",
-      "english": "They elaborated a plan through which the safe renovation of the gangways can be implemented.",
+      "english": "They worked out a plan through which the residents got a new courtyard.",
       "teaches": [
         "b2-relative-postpositions"
       ]
@@ -157,10 +160,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A belső udvarra néző ____ a lakók kedvenc találkozóhelye volt nyaranta.",
+      "sentence": "A belső udvarra néző ____ a lakók kedvenc helye volt nyáron.",
       "hint": "open corridor",
       "answer": "körfolyosó",
-      "english": "The open corridor overlooking the inner courtyard was the residents' favorite meeting place in summers.",
+      "english": "The open corridor overlooking the inner courtyard was the residents' favourite place in summer.",
       "teaches": [
         "b2-urban-space-architecture-coexistence-vocab"
       ]
@@ -172,23 +175,21 @@
       "stage": "practice",
       "tiles": [
         "A",
+        "bérház",
         "felújított",
-        "homlokzat",
-        "díszíti",
-        "a",
-        "történelmi",
-        "utcát."
+        "homlokzata",
+        "nagyon",
+        "szép."
       ],
       "solution": [
         "A",
+        "bérház",
         "felújított",
-        "homlokzat",
-        "díszíti",
-        "a",
-        "történelmi",
-        "utcát."
+        "homlokzata",
+        "nagyon",
+        "szép."
       ],
-      "english": "The renovated facade decorates the historic street.",
+      "english": "The renovated facade of the apartment building is very beautiful.",
       "teaches": [
         "b2-urban-space-architecture-coexistence-vocab"
       ]
@@ -201,7 +202,7 @@
       "prompt": [
         {
           "speaker": "Építész",
-          "text": "Hogyan értékeled a belső udvar revitalizációját?"
+          "text": "Mit szólsz az új belső udvarhoz?"
         },
         {
           "speaker": "Várostervező",
@@ -209,14 +210,18 @@
         }
       ],
       "options": [
-        "Ez egy kiváló koncepció, amely által a lakóközösség egy valódi közösségi kerthez jutott.",
-        "Ez egy kiváló koncepció, amelyet által a lakóközösség egy valódi közösségi kerthez jutott.",
-        "Ez egy kiváló koncepció, amellyel által a lakóközösség egy valódi közösségi kerthez jutott."
+        "Ez egy jó terv, amely által a lakók közös kertet kaptak.",
+        "Ez egy jó terv, amelyet által a lakók közös kertet kaptak.",
+        "Ez egy jó terv, amellyel által a lakók közös kertet kaptak."
       ],
       "correct": 0,
       "teaches": [
         "b2-relative-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "vonatkozoi-nevmas-esetei",
+        "2": "vonatkozoi-nevmas-esetei"
+      }
     },
     {
       "id": "b2-23-01-dialogue-2",
@@ -234,14 +239,18 @@
         }
       ],
       "options": [
-        "Ez az az épület, amely mellett száz éven át generációk nőttek fel a körfolyosók védelmében.",
-        "Ez az az épület, amelyet mellett száz éven át generációk nőttek fel a körfolyosók védelmében.",
-        "Ez az az épület, aminek mellett száz éven át generációk nőttek fel a körfolyosók védelmében."
+        "Ez az az épület, amely mellett száz éven át gyerekek nőttek fel.",
+        "Ez az az épület, amelyet mellett száz éven át gyerekek nőttek fel.",
+        "Ez az az épület, aminek mellett száz éven át gyerekek nőttek fel."
       ],
       "correct": 0,
       "teaches": [
         "b2-relative-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "vonatkozoi-nevmas-esetei",
+        "2": "vonatkozoi-nevmas-esetei"
+      }
     },
     {
       "id": "b2-23-01-writing-1",
@@ -250,12 +259,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'amely mellett' describing an iconic architectural structure.",
-          "answer": "A régi Duna-parti palota, amely mellett naponta elsétálok, műemléki védelem alatt áll."
+          "prompt": "Say that the old apartment building you walk past every day is very beautiful.",
+          "answer": "A régi bérház, amely mellett naponta elmegyek, nagyon szép."
         }
       ],
       "teaches": [
-        "b2-relative-postpositions"
+        "b2-urban-space-architecture-coexistence-vocab"
       ]
     },
     {
@@ -270,7 +279,7 @@
         }
       ],
       "teaches": [
-        "b2-relative-postpositions"
+        "b2-urban-space-architecture-coexistence-vocab"
       ]
     },
     {
@@ -278,10 +287,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A Clark Ádám tér az a pont, ____ a budai hegyek alagútja vezet.",
+      "sentence": "Az udvar az a tér, ____ a lakások ablakai néznek.",
       "hint": "toward which",
       "answer": "amely felé",
-      "english": "Clark Ádám Square is the point toward which the Buda hill tunnel leads.",
+      "english": "The courtyard is the space toward which the windows of the flats look.",
       "teaches": [
         "b2-relative-postpositions"
       ]
@@ -295,7 +304,7 @@
       "options": [
         "körfolyosó",
         "homlokzat",
-        "alagsor"
+        "bérház"
       ],
       "correct": 0,
       "teaches": [

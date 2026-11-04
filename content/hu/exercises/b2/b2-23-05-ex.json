@@ -72,7 +72,7 @@
       "question": "Select the relative clause expressing institutional framework: 'Olyan tervet nyújtottak be, ____ megújulnak a terek':",
       "options": [
         "amelynek keretében",
-        "amely helyett",
+        "amelyhez képest",
         "amely nélkül"
       ],
       "correct": 0,
@@ -85,16 +85,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the sentence formulating an urban development proposal with a relative postposition:",
+      "question": "Choose the sentence that makes a proposal with a relative postposition:",
       "options": [
-        "Olyan zöldfelületeket kell kialakítani, amelyek mentén a családok nyugodtan pihenhetnek.",
-        "Olyan zöldfelületeket kell kialakítani, amelyeket mentén a családok nyugodtan pihenhetnek.",
-        "Olyan zöldfelületeket kell kialakítani, amelyek mentében a családok nyugodtan pihennének."
+        "Olyan parkokat kell építeni, amelyek mellett a családok nyugodtan ülnek.",
+        "Olyan parkokat kell építeni, amelyeket mellett a családok nyugodtan ülnek.",
+        "Olyan parkokat kell építeni, amely mellett a családok nyugodtan ülnek."
       ],
       "correct": 0,
       "teaches": [
         "b2-relative-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "vonatkozoi-nevmas-esetei",
+        "2": "relative-clauses-aki-ami-amely"
+      }
     },
     {
       "id": "b2-23-05-controlled-4",
@@ -114,12 +118,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Korszerű villamoshálózatot építenek, ____ gyorsabbá és környezetkímélőbbé válik a közlekedés.",
+      "sentence": "Új villamosvonalat építenek, ____ gyorsabb lesz az utazás.",
       "hint": "by means of which",
-      "answer": "amely révén",
-      "english": "They are building a modern tram network, thanks to which transportation becomes faster and more eco-friendly.",
+      "english": "They are building a new tram line, thanks to which travel will be faster.",
       "teaches": [
         "b2-relative-postpositions"
+      ],
+      "answers": [
+        "amelynek révén",
+        "amely révén"
       ]
     },
     {
@@ -159,10 +166,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A történelmi belvárosban kijelölt új ____ teljesen kitiltotta a gépjárműforgalmat.",
+      "sentence": "A városban új ____ lett, ahol nincs autó.",
       "hint": "pedestrian zone",
       "answer": "gyalogosövezet",
-      "english": "The new pedestrian zone designated in the historic city center completely banned motor vehicle traffic.",
+      "english": "There is a new pedestrian zone in the city where there are no cars.",
       "teaches": [
         "b2-urban-space-architecture-coexistence-vocab"
       ]
@@ -175,24 +182,24 @@
       "tiles": [
         "A",
         "zöldfelületek",
-        "bővítése",
-        "jelentősen",
-        "javítja",
+        "miatt",
+        "tisztább",
         "a",
-        "belváros",
-        "levegőminőségét."
+        "levegő",
+        "a",
+        "városban."
       ],
       "solution": [
         "A",
         "zöldfelületek",
-        "bővítése",
-        "jelentősen",
-        "javítja",
+        "miatt",
+        "tisztább",
         "a",
-        "belváros",
-        "levegőminőségét."
+        "levegő",
+        "a",
+        "városban."
       ],
-      "english": "Expanding green areas significantly improves downtown air quality.",
+      "english": "Because of the green areas the air in the city is cleaner.",
       "teaches": [
         "b2-urban-space-architecture-coexistence-vocab"
       ]
@@ -205,7 +212,7 @@
       "prompt": [
         {
           "speaker": "Várostervező",
-          "text": "Hogyan fogadják a polgárok a gépkocsiforgalom korlátozását?"
+          "text": "Mit szólnak a polgárok az új gyalogosövezethez?"
         },
         {
           "speaker": "Polgármester",
@@ -213,14 +220,18 @@
         }
       ],
       "options": [
-        "Az új gyalogosövezet, amely által csendesebbé vált a belváros, osztatlan sikert aratott a lakók körében.",
-        "Az új gyalogosövezet, amelyet által csendesebbé vált a belváros, osztatlan sikert aratott a lakók körében.",
-        "Az új gyalogosövezet, amellyel által csendesebbé vált a belváros, osztatlan sikert aratott a lakók körében."
+        "Az új gyalogosövezet, amely által csendesebb lett a város, a lakóknak tetszik.",
+        "Az új gyalogosövezet, amelyet által csendesebb lett a város, a lakóknak tetszik.",
+        "Az új gyalogosövezet, amellyel által csendesebb lett a város, a lakóknak tetszik."
       ],
       "correct": 0,
       "teaches": [
         "b2-relative-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "vonatkozoi-nevmas-esetei",
+        "2": "vonatkozoi-nevmas-esetei"
+      }
     },
     {
       "id": "b2-23-05-dialogue-2",
@@ -230,7 +241,7 @@
       "prompt": [
         {
           "speaker": "Környezetvédő",
-          "text": "Miért van szükség a zöldfelületek radikális növelésére?"
+          "text": "Milyen parkot javasoltok?"
         },
         {
           "speaker": "Ökológus",
@@ -238,14 +249,18 @@
         }
       ],
       "options": [
-        "Olyan mikroklímát kell teremtenünk, amelynek segítségével elviselhetővé válnak a nyári kánikulák a bérházakban.",
-        "Olyan mikroklímát kell teremtenünk, amely segítségével elviselhetővé válnak a nyári kánikulák a bérházakban.",
-        "Olyan mikroklímát kell teremtenünk, amelyet segítségével elviselhetővé válnak a nyári kánikulák a bérházakban."
+        "Olyan parkot javasolunk, amelynek központjában közösségi tér áll.",
+        "Olyan parkot javasolunk, amely központjában közösségi tér áll.",
+        "Olyan parkot javasolunk, amelyet központjában közösségi tér áll."
       ],
       "correct": 0,
       "teaches": [
         "b2-relative-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "relative-clauses-aki-ami-amely",
+        "2": "vonatkozoi-nevmas-esetei"
+      }
     },
     {
       "id": "b2-23-05-writing-1",
@@ -254,8 +269,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'amelynek központjában' formulating an urban renewal objective.",
-          "answer": "Olyan városfejlesztési programot javaslunk, amelynek központjában az élhetőség és a zöldfelületek bővítése áll."
+          "prompt": "Say that you propose a plan with livability at its centre.",
+          "answer": "Olyan tervet javaslunk, amelynek központjában az élhetőség áll."
         }
       ],
       "teaches": [
@@ -269,8 +284,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'amely által' defending public transport modernisation.",
-          "answer": "Korszerűsítettük a villamoshálózatot, amely által jelentősen csökkent a belvárosi károsanyag-kibocsátás."
+          "prompt": "Say that you built a nicer park, through which life in the city became better.",
+          "answer": "Szebb parkot építettünk, amely által jobb lett az élet a városban."
         }
       ],
       "teaches": [
@@ -282,10 +297,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "Kijelölték a kerékpárutakat, ____ a zöld parkok könnyen és biztonságosan elérhetők.",
+      "sentence": "Új utat építettek, ____ sok zöld fa áll.",
       "hint": "along which",
-      "answer": "amelyek mentén",
-      "english": "They designated the bike paths, along which green parks are easily and safely accessible.",
+      "answer": "amely mentén",
+      "english": "They built a new road along which many green trees stand.",
       "teaches": [
         "b2-relative-postpositions"
       ]
@@ -295,11 +310,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which compound noun denotes systemic investments into public transit infrastructure?",
+      "question": "Which noun means 'pedestrian zone'?",
       "options": [
-        "közlekedésfejlesztés",
-        "zajártalom",
-        "homlokzat"
+        "gyalogosövezet",
+        "városrehabilitáció",
+        "zöldfelület"
       ],
       "correct": 0,
       "teaches": [
@@ -311,11 +326,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen sajátosságot emel ki Bébé a régi budai bérházzal kapcsolatban?",
+      "question": "Mit lát Bébé a régi budai bérházon?",
       "options": [
-        "A rejtett arányait és a belső udvar fölé magasodó körfolyosóját.",
-        "A modern lift és a fényes üvegfelületek jelenlétét.",
-        "Az épület lebontására vonatkozó hatósági rendeletet."
+        "A rejtett arányokat és a körfolyosót.",
+        "A modern liftet és az üvegfelületeket.",
+        "A nagy autóforgalmat a bérház előtt."
       ],
       "correct": 0
     },
@@ -324,11 +339,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Hogyan értelmezi Medve Gábor a műemlékvédelmet és a városi tereket?",
+      "question": "Mit mond Medve Gábor a műemlékvédelemről?",
       "options": [
-        "Nem csupán téglák védelmeként, hanem az emberi emlékezet és belső geometria őrzéseként.",
-        "Kizárólag pénzügyi és turisztikai hasznot hozó beruházásként.",
-        "Olyan feladatként, amely gátolja a modern közlekedésfejlesztést."
+        "Nem csak a téglákról szól, hanem az emlékekről is.",
+        "A téglákról szól, az emlékek nem fontosak.",
+        "A pénzről szól, a téglák nem fontosak."
       ],
       "correct": 0
     },
@@ -337,11 +352,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen hangulat uralkodik a bérház belső udvarán?",
+      "question": "Milyen a csend az udvaron?",
       "options": [
-        "A külvilágtól védett, a múlt és jelen összefonódását tükröző mély csend.",
-        "Rendkívül hangos és zavaró utcai lárma.",
-        "Elhagyatott, teljesen romos és veszélyes pusztulás."
+        "Más, mint kint az utcán.",
+        "Ugyanolyan, mint kint az utcán.",
+        "Hangosabb, mint kint az utcán."
       ],
       "correct": 0
     }

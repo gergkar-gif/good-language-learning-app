@@ -8,7 +8,7 @@
       "stage": "introduce",
       "question": "What does 'lakóközösség' refer to in condominium administration?",
       "options": [
-        "the collective body of residents and property owners within an apartment building",
+        "the community of the residents of a building",
         "a municipal police department responsible for public order",
         "a construction company building suburban shopping centers"
       ],
@@ -101,10 +101,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Meglátogattuk a várat, ____ kilátó nyílik az egész budai völgyre.",
+      "sentence": "Meglátogattuk a várat, ____ kert van.",
       "hint": "on top of which",
       "answer": "amelynek tetején",
-      "english": "We visited the castle, on top of which a lookout terrace opens onto the whole Buda valley.",
+      "english": "We visited the castle, on top of which there is a garden.",
       "teaches": [
         "b2-relative-postpositions"
       ]
@@ -114,12 +114,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Olyan pályázatot nyertünk, ____ felújíthatjuk a ház belső udvarát.",
+      "sentence": "Olyan pályázatot nyertünk, ____ szép lett a ház udvara.",
       "hint": "thanks to which",
-      "answer": "amelynek révén",
-      "english": "We won a grant, thanks to which we can renovate the building's inner courtyard.",
+      "english": "We won a grant, thanks to which the courtyard of the building became beautiful.",
       "teaches": [
         "b2-relative-postpositions"
+      ],
+      "answers": [
+        "amelynek révén",
+        "amely révén"
       ]
     },
     {
@@ -134,9 +137,8 @@
         "udvarán",
         "szökőkút",
         "áll,",
-        "műemléki",
-        "védettséget",
-        "élvez."
+        "nagyon",
+        "szép."
       ],
       "solution": [
         "A",
@@ -145,11 +147,10 @@
         "udvarán",
         "szökőkút",
         "áll,",
-        "műemléki",
-        "védettséget",
-        "élvez."
+        "nagyon",
+        "szép."
       ],
-      "english": "The apartment building in whose courtyard a fountain stands enjoys monument protection.",
+      "english": "The apartment building in whose courtyard a fountain stands is very beautiful.",
       "teaches": [
         "b2-relative-postpositions"
       ]
@@ -174,10 +175,10 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "korszerű",
+        "jó",
         "térrendezés",
         "új",
-        "zöldterületeket",
+        "parkokat",
         "hoz",
         "létre",
         "a",
@@ -185,16 +186,16 @@
       ],
       "solution": [
         "A",
-        "korszerű",
+        "jó",
         "térrendezés",
         "új",
-        "zöldterületeket",
+        "parkokat",
         "hoz",
         "létre",
         "a",
         "lakóknak."
       ],
-      "english": "Modern spatial planning creates new green areas for residents.",
+      "english": "Good spatial planning creates new parks for the residents.",
       "teaches": [
         "b2-urban-space-architecture-coexistence-vocab"
       ]
@@ -207,7 +208,7 @@
       "prompt": [
         {
           "speaker": "Közös képviselő",
-          "text": "Hogyan sikerült finanszírozni a gangok megerősítését?"
+          "text": "Hogyan sikerült megjavítani a körfolyosót?"
         },
         {
           "speaker": "Számvizsgáló",
@@ -215,14 +216,18 @@
         }
       ],
       "options": [
-        "Olyan fővárosi támogatást kaptunk, amelynek segítségével a lakóközösség önerőből is el tudta végezni a munkát.",
-        "Olyan fővárosi támogatást kaptunk, amely segítségével a lakóközösség önerőből is el tudta végezni a munkát.",
-        "Olyan fővárosi támogatást kaptunk, amelyet segítségével a lakóközösség önerőből is el tudta végezni a munkát."
+        "Olyan pénzt kaptunk, amelynek segítségével a lakóközösség el tudta végezni a munkát.",
+        "Olyan pénzt kaptunk, amelyet segítségével a lakóközösség el tudta végezni a munkát.",
+        "Olyan pénzt kaptunk, amelyet segítségével a lakóközösség el tudta végezni a munkát."
       ],
       "correct": 0,
       "teaches": [
         "b2-relative-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "relative-clauses-aki-ami-amely",
+        "2": "vonatkozoi-nevmas-esetei"
+      }
     },
     {
       "id": "b2-23-02-dialogue-2",
@@ -232,7 +237,7 @@
       "prompt": [
         {
           "speaker": "Restaurátor",
-          "text": "Miért fontos a belső udvar eredeti kövezésének megóvása?"
+          "text": "Miért fontos a régi udvar?"
         },
         {
           "speaker": "Művészettörténész",
@@ -240,14 +245,18 @@
         }
       ],
       "options": [
-        "Mert ez az a tér, amelynek révén átélhetjük a tizenkilencedik századi polgári életforma hangulatát.",
-        "Mert ez az a tér, amely révén átélhetjük a tizenkilencedik századi polgári életforma hangulatát.",
-        "Mert ez az a tér, amelyet révén átélhetjük a tizenkilencedik századi polgári életforma hangulatát."
+        "Mert ez az a tér, amelynek révén látjuk, hogyan éltek régen az emberek.",
+        "Mert ez az a tér, amelyhez révén látjuk, hogyan éltek régen az emberek.",
+        "Mert ez az a tér, amelyet révén látjuk, hogyan éltek régen az emberek."
       ],
       "correct": 0,
       "teaches": [
         "b2-relative-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "relative-clauses-aki-ami-amely",
+        "2": "vonatkozoi-nevmas-esetei"
+      }
     },
     {
       "id": "b2-23-02-writing-1",
@@ -256,8 +265,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'amelynek udvarán' describing a community courtyard.",
-          "answer": "Olyan bérházban élünk, amelynek udvarán régi szökőkút és zöld növények teremtenek békét."
+          "prompt": "Say that you live in an apartment building with an old fountain in its courtyard.",
+          "answer": "Olyan bérházban lakunk, amelynek udvarán régi szökőkút áll."
         }
       ],
       "teaches": [
@@ -271,8 +280,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'amelynek révén' explaining civic development.",
-          "answer": "A kerület támogatást kapott, amelynek révén akadálymentesítették az összes középületet."
+          "prompt": "Say that the district got money, thanks to which they renovated the streets.",
+          "answer": "A kerület pénzt kapott, amelynek révén felújították az utcákat."
         }
       ],
       "teaches": [
@@ -284,10 +293,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "Elkészült az új közlekedési rend, ____ csökkent a belvárosi utcák zajterhelése.",
+      "sentence": "Új közlekedési rend lett, ____ csendesebb lett az utca.",
       "hint": "as a consequence of which",
       "answer": "amelynek következtében",
-      "english": "The new traffic plan was completed, as a consequence of which noise pollution in downtown streets decreased.",
+      "english": "A new traffic order was introduced, as a consequence of which the street became quieter.",
       "teaches": [
         "b2-relative-postpositions"
       ]

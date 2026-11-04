@@ -55,24 +55,27 @@
       "stage": "recognize",
       "question": "Which sentence demonstrates proper use of a spatial postposition with a non-human relative pronoun?",
       "options": [
-        "Megtekintettük a budai palotát, amely mellett egy lenyűgöző teraszkert húzódik.",
-        "Megtekintettük a budai palotát, aki mellett egy lenyűgöző teraszkert húzódik.",
-        "Megtekintettük a budai palotát, amely nélkül mindenki otthon maradt."
+        "Elmentünk a régi bérházhoz, amely mellett egy szép kert van.",
+        "Elmentünk a régi bérházhoz, aki mellett egy szép kert van.",
+        "Elmentünk a régi bérházhoz, amelyet mellett egy szép kert van."
       ],
       "correct": 0,
       "teaches": [
         "b2-relative-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "vonatkozoi-nevmas-esetei"
+      }
     },
     {
       "id": "b2-23-consolidation-4",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A történelmi belvárosban a szigorú ____ védi a régi bérházak homlokzatát.",
+      "sentence": "A történelmi városban a szigorú ____ védi a régi bérházak homlokzatát.",
       "hint": "monument protection",
       "answer": "műemlékvédelem",
-      "english": "In the historic downtown, strict monument protection guards the facades of old apartment buildings.",
+      "english": "In the historic city, strict monument protection guards the facades of old apartment buildings.",
       "teaches": [
         "b2-urban-space-architecture-coexistence-vocab"
       ]
@@ -82,12 +85,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "Az a lakóközösség nyert támogatást, ____ újították fel a belső körfolyosót.",
+      "sentence": "Az a lakóközösség nyert támogatást, ____ felújították a belső körfolyosót.",
       "hint": "thanks to which",
-      "answer": "amelynek révén",
       "english": "That residential community won support, thanks to which they renovated the inner open corridor.",
       "teaches": [
         "b2-relative-postpositions"
+      ],
+      "answers": [
+        "amelynek révén",
+        "amely révén"
       ]
     },
     {
@@ -110,14 +116,18 @@
       "stage": "in-context",
       "question": "Select the sentence using 'amely által' to express civic instrumental achievement:",
       "options": [
-        "Megvalósult az a felújítási program, amely által a lakók modern és csendes otthonokhoz jutottak.",
-        "Megvalósult az a felújítási program, amelyet által a lakók modern és csendes otthonokhoz jutottak.",
-        "Megvalósult az a felújítási program, aminek által a lakók modern és csendes otthonokhoz jutottak."
+        "Megvalósult az a terv, amely által a lakók modern és csendes otthonokhoz jutottak.",
+        "Megvalósult az a terv, amelyet által a lakók modern és csendes otthonokhoz jutottak.",
+        "Megvalósult az a terv, aminek által a lakók modern és csendes otthonokhoz jutottak."
       ],
       "correct": 0,
       "teaches": [
         "b2-relative-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "vonatkozoi-nevmas-esetei",
+        "2": "vonatkozoi-nevmas-esetei"
+      }
     },
     {
       "id": "b2-23-consolidation-8",
@@ -127,7 +137,7 @@
       "prompt": [
         {
           "speaker": "Fővárosi főépítész",
-          "text": "Mi a legnagyobb eredménye az új gyalogosövezet kialakításának?"
+          "text": "Mi a legnagyobb eredménye az új gyalogosövezetnek?"
         },
         {
           "speaker": "Kerületi polgármester",
@@ -135,30 +145,37 @@
         }
       ],
       "options": [
-        "Létrejött egy olyan élhető közösségi tér, amelynek köszönhetően a történelmi belváros visszanyerte békés polgári hangulatát.",
-        "Létrejött egy olyan élhető közösségi tér, amely köszönhetően a történelmi belváros visszanyerte békés polgári hangulatát.",
-        "Létrejött egy olyan élhető közösségi tér, amelyet köszönhetően a történelmi belváros visszanyerte békés polgári hangulatát."
+        "Létrejött egy olyan élhető közösségi tér, amelynek köszönhetően a történelmi város visszanyerte békés hangulatát.",
+        "Létrejött egy olyan élhető közösségi tér, amely köszönhetően a történelmi város visszanyerte békés hangulatát.",
+        "Létrejött egy olyan élhető közösségi tér, amelyet köszönhetően a történelmi város visszanyerte békés hangulatát."
       ],
       "correct": 0,
       "teaches": [
         "b2-relative-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "relative-clauses-aki-ami-amely",
+        "2": "vonatkozoi-nevmas-esetei"
+      }
     },
     {
       "id": "b2-23-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'amely mellett' required instead of 'ami mellett' in 'A bérház, amely mellett elsétáltunk...'?",
+      "question": "Choose the correct sentence: the building next to which we walked is old.",
       "options": [
-        "Because the antecedent is a specific, definite concrete noun ('a bérház'), requiring the literary relative pronoun 'amely'.",
-        "Because 'ami' cannot be followed by postpositions under any circumstances.",
-        "Because 'bérház' is an irregular plural noun in literary Hungarian."
+        "A bérház, amely mellett elmentünk, régi.",
+        "A bérház, aki mellett elmentünk, régi.",
+        "A bérház, amelyet mellett elmentünk, régi."
       ],
       "correct": 0,
       "teaches": [
         "b2-relative-postpositions"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "vonatkozoi-nevmas-esetei"
+      }
     },
     {
       "id": "b2-23-consolidation-10",
@@ -203,10 +220,8 @@
         "akikkel",
         "együtt",
         "élünk,",
-        "valódi",
-        "összetartó",
-        "közösséget",
-        "alkotnak."
+        "jó",
+        "szomszédok."
       ],
       "solution": [
         "A",
@@ -214,12 +229,10 @@
         "akikkel",
         "együtt",
         "élünk,",
-        "valódi",
-        "összetartó",
-        "közösséget",
-        "alkotnak."
+        "jó",
+        "szomszédok."
       ],
-      "english": "The residents with whom we live together form a genuinely cohesive community.",
+      "english": "The residents with whom we live together are good neighbours.",
       "teaches": [
         "b2-relative-postpositions"
       ]
@@ -231,8 +244,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause urban renewal proposal combining 'amelynek keretében', 'amely által', and 'amelynek köszönhetően'.",
-          "answer": "Olyan átfogó városrehabilitációs tervet fogadtak el, amelynek keretében megújítják a bérházak homlokzatát; egy új gyalogosövezetet hoznak létre, amely által csökken a belvárosi forgalom; és amelynek köszönhetően az egész kerület élhetősége számottevően javulni fog."
+          "prompt": "Say that you propose a plan thanks to which the district will be more beautiful, and next to which there will be a big park.",
+          "answer": "Olyan tervet javaslunk, amelynek révén szebb lesz a kerület, és amely mellett nagy park lesz."
         }
       ],
       "teaches": [

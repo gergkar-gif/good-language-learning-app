@@ -73,7 +73,7 @@
       "options": [
         "jogosult",
         "jogosultan",
-        "jogosulni"
+        "jogosultak"
       ],
       "correct": 0,
       "teaches": [
@@ -85,26 +85,30 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the prescriptive participle for: 'a határidőn belül ____ feladatok' (tasks to be fulfilled):",
+      "question": "Choose the prescriptive participle for: 'a határidőn belül ____ szabályok' (rules to be observed):",
       "options": [
-        "teljesítendő",
-        "teljesített",
-        "teljesítő"
+        "betartandó",
+        "betartott",
+        "betartó"
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
-      ]
+        "future-participle-ando"
+      ],
+      "distractor_skills": {
+        "1": "past-participle-adjective",
+        "2": "present-participle"
+      }
     },
     {
       "id": "b2-25-02-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szerződő felek ____ egymást haladéktalanul értesíteni a változásokról.",
+      "sentence": "A szerződő felek ____ betartani a határidőt.",
       "hint": "obligated / duty-bound",
       "answer": "kötelesek",
-      "english": "The contracting parties are obligated to notify each other of changes without delay.",
+      "english": "The contracting parties are obliged to keep the deadline.",
       "teaches": [
         "formal-obligation"
       ]
@@ -114,12 +118,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A jelen jogvitában kizárólag a magyar polgári jog szabályai ____.",
+      "sentence": "A vitás kérdések eldöntésére a magyar polgári jog szabályai ____.",
       "hint": "applicable / to be applied",
       "answer": "alkalmazandók",
-      "english": "In the present dispute, exclusively the rules of Hungarian civil law are applicable.",
+      "english": "For the resolution of disputed questions, the rules of Hungarian civil law are applicable.",
       "teaches": [
-        "formal-obligation"
+        "future-participle-ando"
       ]
     },
     {
@@ -128,24 +132,22 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "A",
-        "panaszos",
+        "Az",
+        "ügyfél",
         "jogosult",
-        "jogi",
-        "képviselőt",
-        "igénybe",
-        "venni."
+        "megismerni",
+        "az",
+        "iratokat."
       ],
       "solution": [
-        "A",
-        "panaszos",
+        "Az",
+        "ügyfél",
         "jogosult",
-        "jogi",
-        "képviselőt",
-        "igénybe",
-        "venni."
+        "megismerni",
+        "az",
+        "iratokat."
       ],
-      "english": "The complainant is entitled to retain legal counsel.",
+      "english": "The client is entitled to inspect the documents.",
       "teaches": [
         "formal-obligation"
       ]
@@ -155,10 +157,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A vállalkozó a szerződésben vállalt ____ hiánytalanul teljesítette.",
-      "hint": "statutory obligations / duties",
-      "answer": "kötelezettségeit",
-      "english": "The contractor fully performed the obligations undertaken in the contract.",
+      "sentence": "A szerződésben rögzített ____ késedelem nélkül teljesítendők.",
+      "hint": "obligations",
+      "answer": "kötelezettségek",
+      "english": "The obligations established in the contract are to be fulfilled without delay.",
       "teaches": [
         "b2-law-justice-constitutional-principles-vocab"
       ]
@@ -199,7 +201,7 @@
       "prompt": [
         {
           "speaker": "Bíró",
-          "text": "Milyen jogcímen követeli a felperes a kártérítés megfizetését?"
+          "text": "Miért jogosult az ügyfele kártérítésre?"
         },
         {
           "speaker": "Ügyvéd",
@@ -213,7 +215,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "verb-government-ra-re"
       ]
     },
     {
@@ -223,8 +225,8 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Közjegyző",
-          "text": "Tájékoztatta az örökösöket a hagyatéki eljárás menetéről?"
+          "speaker": "Ügyvéd",
+          "text": "Elmondta az ügyfeleknek, mit kell tenniük?"
         },
         {
           "speaker": "Asszisztens",
@@ -232,13 +234,13 @@
         }
       ],
       "options": [
-        "Igen, részletesen ismertettem velük a benyújtandó okiratokat és a teljesítendő kötelezettségeket.",
-        "Igen, részletesen ismertettem velük a benyújtandó okiratokat és a teljesítendő kötelezettségekkel.",
-        "Igen, részletesen ismertettem velük a benyújtandó okiratokat és a teljesítendő kötelezettségekre."
+        "Igen, megmondtam nekik a betartandó szabályokat és a teljesítendő kötelezettségeket.",
+        "Igen, megmondtam nekik a betartandó szabályokat és a teljesítendő kötelezettségekkel.",
+        "Igen, megmondtam nekik a betartandó szabályokat és a teljesítendő kötelezettségekre."
       ],
       "correct": 0,
       "teaches": [
-        "formal-obligation"
+        "how-the-accusative-t-works"
       ]
     },
     {
@@ -249,7 +251,7 @@
       "template": [
         {
           "prompt": "Write a contractual clause using 'köteles' and 'biztosítani' regarding workplace safety.",
-          "answer": "A munkáltató köteles biztosítani a biztonságos és egészséget nem veszélyeztető munkafeltételeket."
+          "answer": "A munkáltató köteles biztosítani a biztonságos munkafeltételeket."
         }
       ],
       "teaches": [
@@ -268,7 +270,7 @@
         }
       ],
       "teaches": [
-        "formal-obligation"
+        "future-participle-ando"
       ]
     },
     {
@@ -276,10 +278,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A sértett a nyomozati szakaszban is ____ másolatot kérni az ügy iratairól.",
+      "sentence": "Az ügyfél is ____ másolatot kérni az iratokról.",
       "hint": "entitled",
       "answer": "jogosult",
-      "english": "The victim is entitled to request a copy of the case files during the investigation phase as well.",
+      "english": "The client, too, is entitled to ask for a copy of the documents.",
       "teaches": [
         "formal-obligation"
       ]
@@ -289,11 +291,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which verbal noun denotes a legally enforceable duty or liability in civil relations?",
+      "question": "Which word means 'obligation' (a legal duty)?",
       "options": [
         "kötelezettség",
-        "véletlen",
-        "engedmény"
+        "alkalmazandó",
+        "teljesítendő"
       ],
       "correct": 0,
       "teaches": [

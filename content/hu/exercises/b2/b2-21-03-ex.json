@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What is 'fedezet' in loan contracts and financial transactions?",
       "options": [
-        "collateral or financial assets pledged as security for repayment of a loan",
-        "a decorative signature inscribed on a corporate invoice",
-        "a commemorative plaque mounted in a bank lobby"
+        "an asset pledged as security for a loan",
+        "the interest rate charged on a loan",
+        "a bank's fee for opening an account"
       ],
       "correct": 0,
       "teaches": [
@@ -26,7 +26,7 @@
       "options": [
         "a felére csökken",
         "kétszer akkora",
-        "ötszörösére nő"
+        "négyszeresére nő"
       ],
       "correct": 0,
       "teaches": [
@@ -65,7 +65,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the correct magnitude comparison: 'Az új gyár kapacitása ____, mint a régi üzemé volt.'",
+      "question": "Choose the correct magnitude comparison: 'Az új gyár ____, mint a régi volt.'",
       "options": [
         "kétszer akkora",
         "kétszeresére",
@@ -97,10 +97,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szigorú költségvetési fegyelemnek köszönhetően a vállalat vesztesége a ____ apadt.",
+      "sentence": "Egy év alatt a cég vesztesége a ____ apadt.",
       "hint": "to half",
       "answer": "felére",
-      "english": "Thanks to strict budgetary discipline, the company's loss contracted to half.",
+      "english": "The company's loss shrank to half in one year.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -110,10 +110,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A válságos hónapokban a tőzsdei árfolyamok a korábbi szint ____ zuhantak.",
+      "sentence": "A forint árfolyama egy év alatt a korábbi szint ____ esett.",
       "hint": "to a third",
       "answer": "harmadára",
-      "english": "During the crisis months, stock exchange prices plunged to a third of their former level.",
+      "english": "The forint's exchange rate fell to a third of its earlier level in one year.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -125,8 +125,8 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "vállalat",
-        "adósságállománya",
+        "cég",
+        "adóssága",
         "kétszer",
         "akkora",
         "volt,",
@@ -137,8 +137,8 @@
       ],
       "solution": [
         "A",
-        "vállalat",
-        "adósságállománya",
+        "cég",
+        "adóssága",
         "kétszer",
         "akkora",
         "volt,",
@@ -147,7 +147,7 @@
         "éves",
         "bevétele."
       ],
-      "english": "The company's debt portfolio was twice as large as its annual revenue.",
+      "english": "The company's debt was twice as large as its annual revenue.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -157,10 +157,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A magas jegybanki ____ miatt a lakossági hitelek kamatai jelentősen megemelkedtek.",
+      "sentence": "Ha magas a ____, a hitel drága.",
       "hint": "interest rate",
       "answer": "kamatláb",
-      "english": "Due to the high central bank interest rate, residential loan rates rose significantly.",
+      "english": "If the interest rate is high, the loan is expensive.",
       "teaches": [
         "b2-economic-cycles-crisis-adaptation-vocab"
       ]
@@ -172,31 +172,29 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "hitel",
-        "rendszeres",
-        "és",
-        "pontos",
-        "törlesztése",
-        "elengedhetetlen",
+        "cégnek",
+        "minden",
+        "hónapban",
+        "ki",
+        "kell",
+        "fizetnie",
         "a",
-        "hitelezői",
-        "bizalom",
-        "fenntartásához."
+        "hitel",
+        "törlesztését."
       ],
       "solution": [
         "A",
-        "hitel",
-        "rendszeres",
-        "és",
-        "pontos",
-        "törlesztése",
-        "elengedhetetlen",
+        "cégnek",
+        "minden",
+        "hónapban",
+        "ki",
+        "kell",
+        "fizetnie",
         "a",
-        "hitelezői",
-        "bizalom",
-        "fenntartásához."
+        "hitel",
+        "törlesztését."
       ],
-      "english": "Regular and punctual repayment of the loan is essential to maintaining creditor trust.",
+      "english": "The company has to pay the loan repayment every month.",
       "teaches": [
         "b2-economic-cycles-crisis-adaptation-vocab"
       ]
@@ -209,7 +207,7 @@
       "prompt": [
         {
           "speaker": "Hitelbíráló",
-          "text": "Tud a vállalkozás megfelelő fedezetet nyújtani a beruházási kölcsönhöz?"
+          "text": "Van elég fedezete a cégnek a hitelhez?"
         },
         {
           "speaker": "Pénzügyi igazgató",
@@ -217,14 +215,18 @@
         }
       ],
       "options": [
-        "Igen, az ingatlanvagyonunk értéke kétszer akkora, mint az igényelt hitel teljes összege.",
-        "Igen, az ingatlanvagyonunk értéke kétszeres akkora, mint az igényelt hitel teljes összege.",
-        "Igen, az ingatlanvagyonunk értéke kétszer akkorára, mint az igényelt hitel teljes összege."
+        "Igen, a gyár értéke kétszer akkora, mint a hitel összege.",
+        "Igen, a gyár értéke kétszer akkorára, mint a hitel összege.",
+        "Igen, a gyár értéke kétszer akkora, mint a hitel összegét."
       ],
       "correct": 0,
       "teaches": [
         "b2-proportional-rates"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "ra-re",
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-21-03-dialogue-2",
@@ -258,8 +260,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'kétszer akkora, mint' comparing corporate revenues across two fiscal years.",
-          "answer": "Az idei exportbevétel kétszer akkora volt, mint az előző pénzügyi év azonos negyedévében rögzített eredmény."
+          "prompt": "Say that this year's revenue was twice as large as last year's.",
+          "answer": "Az idei bevétel kétszer akkora volt, mint tavaly."
         }
       ],
       "teaches": [
@@ -273,8 +275,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'a felére csökkent' describing energy consumption after efficiency retrofitting.",
-          "answer": "A gyárépület korszerű szigetelése után a fűtési energiafelhasználás a felére csökkent."
+          "prompt": "Say that the company's costs fell to half in one year.",
+          "answer": "A cég költségei egy év alatt a felére csökkentek."
         }
       ],
       "teaches": [

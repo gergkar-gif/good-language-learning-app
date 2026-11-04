@@ -114,10 +114,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Évtizedek ____ ismerték csak fel a demográfiai változások valódi súlyát.",
+      "sentence": "Évek ____ a város nagyon megváltozott.",
       "hint": "after the passing of",
       "answer": "múltával",
-      "english": "Only after the passing of decades did they recognize the true weight of the demographic changes.",
+      "english": "With the passing of years, the city changed a lot.",
       "teaches": [
         "b2-temporal-framing"
       ]
@@ -132,7 +132,7 @@
         "év",
         "folyamán",
         "több",
-        "generációs",
+        "családi",
         "találkozót",
         "szerveztek."
       ],
@@ -141,11 +141,11 @@
         "év",
         "folyamán",
         "több",
-        "generációs",
+        "családi",
         "találkozót",
         "szerveztek."
       ],
-      "english": "Over the course of the year, they organized several generational meetings.",
+      "english": "Over the course of the year, they organized several family gatherings.",
       "teaches": [
         "b2-temporal-framing"
       ]
@@ -155,10 +155,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A szociológus az emberi ____ különböző szakaszait elemezte a tanulmányában.",
+      "sentence": "Mindenkinek más az ____.",
       "hint": "life course",
       "answer": "életút",
-      "english": "The sociologist analyzed the different stages of the human life course in his study.",
+      "english": "Everyone has a different life course.",
       "teaches": [
         "b2-demographics-generations-life-course-vocab"
       ]
@@ -199,7 +199,7 @@
       "prompt": [
         {
           "speaker": "Szociológus",
-          "text": "Hogyan értékelné a családpolitikai intézkedések hatását?"
+          "text": "Mit tudtak meg a kutatók?"
         },
         {
           "speaker": "Kutató",
@@ -207,14 +207,18 @@
         }
       ],
       "options": [
-        "A felmérés során világossá vált, hogy az évtizedek folyamán a családi struktúrák teljesen átalakultak.",
-        "A felmérés sorában világossá vált, hogy az évtizedek folyamában a családi struktúrák teljesen átalakultak.",
-        "A felmérést során világossá vált, hogy az évtizedek folyamán a családi struktúrák teljesen átalakultak volna."
+        "A felmérés során kiderült, hogy a családok megváltoztak.",
+        "A felmérést során kiderült, hogy a családok megváltoztak.",
+        "A felmérésben során kiderült, hogy a családok megváltoztak."
       ],
       "correct": 0,
       "teaches": [
         "b2-temporal-framing"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b2-22-01-dialogue-2",
@@ -224,7 +228,7 @@
       "prompt": [
         {
           "speaker": "Pályaválasztási tanácsadó",
-          "text": "Milyen kihívásokkal szembesülnek ma a fiatal diplomások?"
+          "text": "Hogyan érzik magukat a fiatalok ma?"
         },
         {
           "speaker": "Egyetemi oktató",
@@ -232,14 +236,18 @@
         }
       ],
       "options": [
-        "A felnőttkor küszöbén állva sokan bizonytalanok a munkaerőpiaci elvárások miatt.",
-        "A felnőttkor küszöbébe állva sokan bizonytalanok a munkaerőpiaci elvárások miatt.",
-        "A felnőttkort küszöbén állva sokan bizonytalanok lennének a munkaerőpiaci elvárások végett."
+        "A felnőttkor küszöbén állva sokan bizonytalanok.",
+        "A felnőttkor küszöbébe állva sokan bizonytalanok.",
+        "A felnőttkort küszöbén állva sokan bizonytalanok."
       ],
       "correct": 0,
       "teaches": [
         "b2-temporal-framing"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "movement-with-ba-be",
+        "2": "how-the-accusative-t-works"
+      }
     },
     {
       "id": "b2-22-01-writing-1",
@@ -248,8 +256,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'folyamán' to describe economic shifts over past decades.",
-          "answer": "Az elmúlt évtizedek folyamán jelentősen megváltoztak a munkavállalási szokások."
+          "prompt": "Say that over the past decades families have changed a lot.",
+          "answer": "Az elmúlt évtizedek folyamán a családok nagyon megváltoztak."
         }
       ],
       "teaches": [
@@ -263,8 +271,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'múltával' to describe understanding arriving after long years.",
-          "answer": "Hosszú évek múltával az ember jobban értékeli a családi kötelékeket."
+          "prompt": "Say that with the passing of long years a person knows his or her family better.",
+          "answer": "Hosszú évek múltával az ember jobban ismeri a családját."
         }
       ],
       "teaches": [
@@ -276,10 +284,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "Egy új technológiai korszak ____ állva fel kell készülnünk a kihívásokra.",
+      "sentence": "Egy új korszak ____ állva fel kell készülnünk a változásra.",
       "hint": "on the threshold of",
       "answer": "küszöbén",
-      "english": "Standing on the threshold of a new technological era, we must prepare for the challenges.",
+      "english": "Standing on the threshold of a new era, we must prepare for the change.",
       "teaches": [
         "b2-temporal-framing"
       ]
@@ -292,8 +300,8 @@
       "question": "Which noun refers to the full trajectory of a person's life across time?",
       "options": [
         "életút",
-        "járda",
-        "ösvény"
+        "hétvége",
+        "születésnap"
       ],
       "correct": 0,
       "teaches": [

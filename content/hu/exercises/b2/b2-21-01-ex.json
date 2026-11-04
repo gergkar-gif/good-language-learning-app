@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Which verb expresses expanding manifold or multiplying significantly in size?",
+      "question": "Which expression means 'to multiply many times over'?",
       "options": [
         "megsokszorozódik",
-        "leépül",
-        "stagnál"
+        "arányban áll",
+        "növekedési ütem"
       ],
       "correct": 0,
       "teaches": [
@@ -65,7 +65,7 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Choose the correct multiplier construction: 'Az export volumene az elmúlt öt évben a ____ emelkedett.' (threefold)",
+      "question": "Choose the correct multiplier construction: 'Az export öt év alatt a ____ emelkedett.' (threefold)",
       "options": [
         "háromszorosára",
         "háromszorostól",
@@ -84,8 +84,8 @@
       "question": "Which phrase denotes being directly proportional: 'A termelés hatékonysága ____ a dolgozók képzettségével'?",
       "options": [
         "egyenes arányban áll",
-        "szemben áll",
-        "függetlenül áll"
+        "fordított arányban áll",
+        "szemben áll"
       ],
       "correct": 0,
       "teaches": [
@@ -97,10 +97,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A vállalat éves nyeresége a tavalyi évhez képest a ____ nőtt.",
+      "sentence": "A cég nyeresége egy év alatt a ____ nőtt.",
       "hint": "to double / twice its size",
       "answer": "kétszeresére",
-      "english": "The company's annual profit grew to twice its size compared to last year.",
+      "english": "The company's profit grew to twice its size in one year.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -110,10 +110,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A digitális fejlesztések révén a rendelések száma a ____ duzzadt.",
+      "sentence": "A digitális átállás révén a cég bevétele az ____ nőtt.",
       "hint": "fivefold / to five times",
       "answer": "ötszörösére",
-      "english": "Through digital developments, the number of orders swelled fivefold.",
+      "english": "Through the digital transition, the company's revenue grew fivefold.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -126,7 +126,6 @@
       "tiles": [
         "A",
         "termelés",
-        "volumene",
         "egyenes",
         "arányban",
         "áll",
@@ -137,7 +136,6 @@
       "solution": [
         "A",
         "termelés",
-        "volumene",
         "egyenes",
         "arányban",
         "áll",
@@ -145,7 +143,7 @@
         "piaci",
         "kereslettel."
       ],
-      "english": "The volume of production stands in direct proportion to market demand.",
+      "english": "Production stands in direct proportion to market demand.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -155,10 +153,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A válság idején az államadósság mértéke hirtelen ____.",
-      "hint": "multiplied manifold",
-      "answer": "megsokszorozódott",
-      "english": "During the crisis, the scale of public debt suddenly multiplied manifold.",
+      "sentence": "Ha a gyár rosszul működik, a költség gyorsan ____.",
+      "hint": "to multiply manifold",
+      "answer": "megsokszorozódik",
+      "english": "If the factory runs badly, the cost multiplies quickly.",
       "teaches": [
         "b2-economic-cycles-crisis-adaptation-vocab"
       ]
@@ -170,27 +168,25 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "nemzetgazdaság",
+        "gazdaság",
         "növekedési",
         "üteme",
-        "jelentősen",
-        "meghaladta",
-        "az",
-        "elemzők",
-        "várakozásait."
+        "most",
+        "gyorsabb,",
+        "mint",
+        "tavaly."
       ],
       "solution": [
         "A",
-        "nemzetgazdaság",
+        "gazdaság",
         "növekedési",
         "üteme",
-        "jelentősen",
-        "meghaladta",
-        "az",
-        "elemzők",
-        "várakozásait."
+        "most",
+        "gyorsabb,",
+        "mint",
+        "tavaly."
       ],
-      "english": "The national economy's growth rate significantly exceeded analysts' expectations.",
+      "english": "The economy's growth rate is faster now than last year.",
       "teaches": [
         "b2-economic-cycles-crisis-adaptation-vocab"
       ]
@@ -203,7 +199,7 @@
       "prompt": [
         {
           "speaker": "Pénzügyi elemző",
-          "text": "Hogyan alakult a vállalat bevétele az új technológia bevezetése után?"
+          "text": "Hogyan alakult a cég bevétele az új gép után?"
         },
         {
           "speaker": "Vezérigazgató",
@@ -211,14 +207,18 @@
         }
       ],
       "options": [
-        "A kapacitások bővülésével az exportárbevételünk alig két év alatt a négyszeresére nőtt.",
-        "A kapacitások bővülésével az exportárbevételünk alig két év alatt a négyszeresére nőtte.",
-        "A kapacitások bővülésével az exportárbevételünk alig két év alatt a négyszereséig nőtt."
+        "A bevételünk két év alatt a négyszeresére nőtt.",
+        "A bevételünk két év alatt a négyszeresét nőtt.",
+        "A bevételünk két év alatt a négyszeresén nőtt."
       ],
       "correct": 0,
       "teaches": [
         "b2-proportional-rates"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "on-en-on"
+      }
     },
     {
       "id": "b2-21-01-dialogue-2",
@@ -228,7 +228,7 @@
       "prompt": [
         {
           "speaker": "Befektető",
-          "text": "Milyen összefüggés van a kockázatvállalás és a várható hozam között?"
+          "text": "Milyen összefüggés van a kockázat és a jövedelem között?"
         },
         {
           "speaker": "Portfóliókezelő",
@@ -236,14 +236,18 @@
         }
       ],
       "options": [
-        "A pénzügyi piacokon a magasabb kockázat szinte mindig egyenes arányban áll a magasabb hozamlehetőséggel.",
-        "A pénzügyi piacokon a magasabb kockázat szinte mindig egyenes arányban áll a magasabb hozamlehetőséghez.",
-        "A pénzügyi piacokon a magasabb kockázat szinte mindig egyenes arányba áll a magasabb hozamlehetőséget."
+        "A kockázat szinte mindig egyenes arányban áll a jövedelemmel.",
+        "A kockázat szinte mindig egyenes arányban áll a jövedelemhez.",
+        "A kockázat szinte mindig egyenes arányba áll a jövedelemmel."
       ],
       "correct": 0,
       "teaches": [
         "b2-proportional-rates"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "hoz-suffix",
+        "2": "movement-with-ba-be"
+      }
     },
     {
       "id": "b2-21-01-writing-1",
@@ -252,8 +256,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using '-szorosára nő' describing rapid startup expansion.",
-          "answer": "A sikeres tőkebevonás után a technológiai startup ügyfélköre a tízszeresére nőtt néhány hónap leforgása alatt."
+          "prompt": "Say that a company's revenue grew tenfold in a few months.",
+          "answer": "A cég bevétele néhány hónap alatt a tízszeresére nőtt."
         }
       ],
       "teaches": [
@@ -267,8 +271,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'egyenes arányban áll' linking educational investment to economic productivity.",
-          "answer": "A modern gazdaságban a hozzáadott érték nagysága egyenes arányban áll a kutatás-fejlesztésre fordított ráfordításokkal."
+          "prompt": "Say that income is almost always directly proportional to expertise.",
+          "answer": "A jövedelem szinte mindig egyenes arányban áll a szaktudással."
         }
       ],
       "teaches": [
@@ -280,10 +284,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A modernizációs beruházásoknak köszönhetően a gyár kibocsátása a ____ emelkedett.",
+      "sentence": "Az új gépeknek köszönhetően a gyár termelése a ____ emelkedett.",
       "hint": "threefold / to three times",
       "answer": "háromszorosára",
-      "english": "Thanks to modernization investments, the factory's output rose threefold.",
+      "english": "Thanks to the new machines, the factory's output rose threefold.",
       "teaches": [
         "b2-proportional-rates"
       ]
@@ -296,8 +300,8 @@
       "question": "Which adjective denotes a magnitude that is four times as large?",
       "options": [
         "négyszeres",
-        "fele",
-        "aránytalan"
+        "háromszoros",
+        "ötszörös"
       ],
       "correct": 0,
       "teaches": [
