@@ -456,6 +456,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 11-04 | HU B2 core 41, 43, 45, 47, 49, 51 | paired read, 3 core units/reader; both stopped by the 5-hour Sonnet limit, resumed after the reset | | A 414,362, B 405,537 as reported on resume (~136k a unit if cumulative) | 569 proposed (101 / 86 / 86 / 103 / 100 / 93), 2 rejected and rewritten (an unescaped quote, a *mindig* tell); Claude changed ~20 items (a duplicate option of its own caught by check-content), listed 32 words, fixed 6 recap units | ~95 fixes/unit, the most in B2 so far; 1 skill moved by the user (relative postpositions to b2-23-01), 4 later-skill items rewritten (figurative preverbs); a category/tag mismatch and a bare restitch, both scripted; walk 36/36 |
 | 11-04 | HU B2 core 53, 55, 57, 59, 61, 63 | paired read, 3 core units/reader, no limit; a worker restart mid-review lost nothing | | A 438,701, B 446,836 (~148k a unit) | 612 proposed (117 / 85 / 107 / 82 / 122 / 99), 6 rejected and rewritten (3 length, a tell, a non-form, a ds on its own skill); Claude changed ~35 items (21 second right answers in two-form skills), listed 47 words | the most expensive B2 batch per unit; tags were the generator's worst here (every grammar item on the unit skill); walk 36/36 |
 | 11-04 | HU B2 core 65, 67, 69, 71 (last core batch) | paired read, 2 core units/reader, no limit | | A 385,337, B 441,755 (~207k a unit at two per reader) | 423 proposed (94 / 101 / 125 / 103), 6 rejected and rewritten (3 tells, 2 length, an answer in the prompt); Claude changed ~15 items (7 second right answers), listed 27 words | **core track done: 36/36 frozen**; reader B rewrote whole screens, so 224 of 228 went to review; walk 24/24 |
+| 11-04 | HU B2 culture 2, 4, 6, 8 (first culture batch) | paired read, 2 culture units/reader, text first with facts files; both stopped by the 5-hour limit after one unit, resumed | | A 369,157, B 380,867 on resume (~187k a unit if cumulative) | 362 proposed (88 / 59 / 94 / 121), 1 rejected and rewritten; ~95 facts flagged "check", 2 of the readers' own corrections wrong (emblem, museum) | culture units: whole-unit retagging again (every item on the unit skill); walk 24/24 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1631,3 +1632,17 @@ The user took the four recommended options:
   culture focus file must carry the C1 list as the core one did.
 - **A recap that names a later unit passes `check_unit_refs.py`** (*mindazonáltal* "Unit 32" for
   Unit 31): read every recap's unit against the sheet, not only the script's flags.
+
+### 2026-11-04: HU B2 culture Units 2–8 (first culture batch)
+
+- **The readers' facts files work, but their corrections need the same check as the text:**
+  two "fixes" were confidently wrong (Nyugat's emblem as Kőműves Kelemen, the Museum of Applied
+  Arts as renewed) and one doubt was unfounded (*árny* < *árnyék*). Verify a reader's replacement
+  claim, not only the claim it replaces.
+- **Present-day claims about buildings need a news search**, not memory: the museum decision
+  came a week before this batch (27 October 2026).
+- **Hosts outside the allowlist** (hu.wikipedia.org, en.wiktionary.org, njt.jog.gov.hu) slow
+  the facts check; WebSearch's extended mode reaches their snippets. Allowing them would let
+  the reviewer read the pages.
+- **A blanket text replace in my own fixes broke a fix's `old` text and a deliberate wrong
+  option**; edit fixes by field and item, never by string across a list.
