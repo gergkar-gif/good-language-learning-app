@@ -69,12 +69,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A számítás pontos, ____, hogy a kiindulási adatok hibátlanok.",
-      "hint": "assuming",
-      "answer": "feltéve",
-      "english": "The calculation is accurate, assuming that the initial data are flawless.",
+      "sentence": "____ az adatok pontosak, akkor a számítás is jó.",
+      "hint": "if",
+      "answer": "Ha",
+      "english": "If the data are accurate, then the calculation is good too.",
       "teaches": [
-        "correlative-minel-annal"
+        "ha-clause"
       ]
     },
     {
@@ -139,27 +139,27 @@
     {
       "id": "b2-07-01-practice-2",
       "type": "substitution",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "base_sentence": "A modell működik, feltéve, hogy a nyomás állandó marad.",
-      "base_word": "feltéve, hogy",
-      "base_gloss": "The model works, assuming that the pressure remains constant.",
+      "base_sentence": "A kísérlet sikerül, ha az adatok pontosak.",
+      "base_word": "ha",
+      "base_gloss": "The experiment succeeds if the data are accurate.",
       "options": [
         {
           "word": "amennyiben",
           "inflected": "amennyiben",
-          "sentence": "A modell működik, amennyiben a nyomás állandó marad.",
+          "sentence": "A kísérlet sikerül, amennyiben az adatok pontosak.",
           "gloss": "provided that"
         },
         {
           "word": "abban az esetben, ha",
           "inflected": "abban az esetben, ha",
-          "sentence": "A modell működik, abban az esetben, ha a nyomás állandó marad.",
+          "sentence": "A kísérlet sikerül, abban az esetben, ha az adatok pontosak.",
           "gloss": "in the case that"
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "b2-scientific-discovery-hypothesis-vocab"
       ]
     },
     {
@@ -199,21 +199,21 @@
       "prompt": [
         {
           "speaker": "Professzor",
-          "text": "Közzétehetjük már a kísérleti eredményeket a folyóiratban?"
+          "text": "Elkezdhetjük már a kísérletet?"
         },
         {
           "speaker": "Kutató",
-          "text": "_____"
+          "text": "____"
         }
       ],
       "options": [
-        "Igen, feltéve, hogy a független ellenőrzés is megerősíti az adatokat.",
-        "Igen, mert a kísérlet még el sem kezdődött.",
-        "Nem, habár minden adatunk tökéletesen pontos."
+        "Igen, amennyiben minden adat pontos.",
+        "Igen, annak ellenére, hogy minden adat pontos.",
+        "Igen, abban az esetben minden adat pontos."
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
+        "b2-scientific-discovery-hypothesis-vocab"
       ]
     },
     {
@@ -263,12 +263,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write that the experiment succeeds assuming that every prerequisite is fulfilled.",
-          "answer": "A kísérlet sikerül, feltéve, hogy minden előfeltétel teljesül."
+          "prompt": "Write that the experiment succeeds provided that every figure is accurate.",
+          "answer": "A kísérlet sikerül, amennyiben minden adat pontos."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "b2-scientific-discovery-hypothesis-vocab"
       ]
     },
     {

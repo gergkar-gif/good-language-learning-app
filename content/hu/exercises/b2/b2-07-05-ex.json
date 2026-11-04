@@ -69,12 +69,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az elme megőrzi szabadságát, ____, hogy nem fél szembenézni a valósággal.",
-      "hint": "assuming",
-      "answer": "feltéve",
-      "english": "The mind preserves its freedom, assuming that it is not afraid to face reality.",
+      "sentence": "____ az adatok pontosak, akkor a kísérlet sikerül.",
+      "hint": "if",
+      "answer": "Ha",
+      "english": "If the data are accurate, then the experiment succeeds.",
       "teaches": [
-        "correlative-minel-annal"
+        "ha-clause"
       ]
     },
     {
@@ -139,27 +139,27 @@
     {
       "id": "b2-07-05-practice-2",
       "type": "substitution",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "base_sentence": "A műtét sikerül, amennyiben a sebész pontosan követi a tervet.",
+      "base_sentence": "A kezelés sikerül, amennyiben az orvos pontosan követi a tervet.",
       "base_word": "amennyiben",
-      "base_gloss": "The operation succeeds, provided that the surgeon follows the plan accurately.",
+      "base_gloss": "The treatment succeeds, provided that the doctor follows the plan accurately.",
       "options": [
         {
-          "word": "feltéve, hogy",
-          "inflected": "feltéve, hogy",
-          "sentence": "A műtét sikerül, feltéve, hogy a sebész pontosan követi a tervet.",
-          "gloss": "assuming that"
+          "word": "ha",
+          "inflected": "ha",
+          "sentence": "A kezelés sikerül, ha az orvos pontosan követi a tervet.",
+          "gloss": "if"
         },
         {
           "word": "abban az esetben, ha",
           "inflected": "abban az esetben, ha",
-          "sentence": "A műtét sikerül, abban az esetben, ha a sebész pontosan követi a tervet.",
+          "sentence": "A kezelés sikerül, abban az esetben, ha az orvos pontosan követi a tervet.",
           "gloss": "in the event that"
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "b2-scientific-discovery-hypothesis-vocab"
       ]
     },
     {
@@ -263,12 +263,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write: Self-awareness preserves its sovereignty, assuming that the mind faces reality.",
-          "answer": "Az öntudat megőrzi szuverenitását, feltéve, hogy az elme szembenéz a valósággal."
+          "prompt": "Write: Self-awareness keeps its strength if the mind is not afraid.",
+          "answer": "Az öntudat megőrzi az erejét, ha az elme nem fél."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "ha-clause"
       ]
     },
     {
@@ -292,12 +292,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A kezelés hatékonysága ____ függően változik, hogy milyen korán ismerik fel a betegséget.",
-      "hint": "depending on",
-      "answer": "attól",
-      "english": "The effectiveness of the treatment varies depending on how early the illness is recognized.",
+      "sentence": "Az eredmény az ____ függően változik.",
+      "hint": "orvos",
+      "answer": "orvostól",
+      "english": "The result varies depending on the doctor.",
       "teaches": [
-        "correlative-minel-annal"
+        "tol-tol"
       ]
     },
     {
@@ -322,7 +322,7 @@
       "options": [
         "Minél pontosabban figyelünk, annál kevésbé félünk.",
         "Minél többet jegyzetelünk, annál jobban félünk.",
-        "A pontos figyelés semmit sem segít a félelem ellen."
+        "A pontos figyelés semmit sem segít, ha félünk."
       ],
       "correct": 0
     },
