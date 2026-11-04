@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What is 'önirónia' in conversational and literary contexts?",
       "options": [
-        "the ability to mock or laugh at one's own shortcomings with humorous detachment",
-        "an aggressive personal insult aimed at an adversary",
-        "a strictly formal grammatical rule of punctuation"
+        "laughing in a light way at one's own faults",
+        "an angry insult aimed at an opponent",
+        "a joke that another person makes about you"
       ],
       "correct": 0,
       "teaches": [
@@ -77,85 +77,77 @@
       ],
       "correct": 0,
       "teaches": [
-        "twin-words-colloquial"
+        "on-en-on"
       ]
     },
     {
       "id": "b2-34-05-controlled-3",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "question": "What role does 'kétértelműség' play in satirical Hungarian literature?",
+      "question": "What can 'kétértelműség' do in a joke?",
       "options": [
-        "It allows authors to express subversive political critique or humor under censorship.",
-        "It prevents readers from understanding any part of the story.",
-        "It is strictly forbidden by standard Hungarian orthography."
+        "it lets one sentence mean two things at once",
+        "it makes every sentence mean the opposite",
+        "it makes the joke shorter and easier to say"
       ],
       "correct": 0,
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
       "id": "b2-34-05-controlled-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
       "sentence": "A diákok jókedvűen ____ a professzor különös szokásain.",
       "hint": "bantered / teased",
       "answer": "élcelődtek",
       "english": "The students bantered good-naturedly about the professor's peculiar habits.",
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
       "id": "b2-34-05-practice-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A vitában nem a harag, hanem a finom ____ segített elviselni a kritikát.",
+      "sentence": "A vitában a finom ____ segített elviselni a kritikát.",
       "hint": "self-irony",
       "answer": "önirónia",
-      "english": "In the debate, not anger but subtle self-irony helped endure the criticism.",
+      "english": "In the debate, subtle self-irony helped endure the criticism.",
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
       "id": "b2-34-05-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "A",
-        "szónok",
-        "rendkívül",
+        "Rendkívül",
         "szellemes",
-        "megjegyzéssel",
-        "oldotta",
-        "fel",
+        "választ",
+        "adott",
         "a",
-        "teremben",
-        "a",
-        "feszültséget."
+        "riporter",
+        "kérdésére."
       ],
       "solution": [
-        "A",
-        "szónok",
-        "rendkívül",
+        "Rendkívül",
         "szellemes",
-        "megjegyzéssel",
-        "oldotta",
-        "fel",
+        "választ",
+        "adott",
         "a",
-        "teremben",
-        "a",
-        "feszültséget."
+        "riporter",
+        "kérdésére."
       ],
-      "english": "The speaker relieved the tension in the hall with an extremely witty remark.",
+      "english": "He gave an extremely witty answer to the reporter's question.",
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
@@ -163,10 +155,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Rejtő Jenő stílusa tele van bravúros ____, amelyek ma is megnevettetik az olvasókat.",
+      "sentence": "Karinthy művei tele vannak zseniális ____.",
       "hint": "puns / plays on words",
       "answer": "szójátékokkal",
-      "english": "Jenő Rejtő's style is full of brilliant puns that still make readers laugh today.",
+      "english": "Karinthy's works are full of brilliant puns.",
       "teaches": [
         "b2-slang-register-vocab"
       ]
@@ -211,7 +203,7 @@
       "prompt": [
         {
           "speaker": "Gergő",
-          "text": "Hogy bírod elviselni a sok kellemetlenséget a munkahelyeden?"
+          "text": "Hogy viseled el a sok gondot a munkahelyeden?"
         },
         {
           "speaker": "Bori",
@@ -219,14 +211,18 @@
         }
       ],
       "options": [
-        "Némi öniróniával és humorral: ha az ember képes nevetni a nehézségeken, minden könnyebb.",
-        "Némi öniróniával és humorral: ha az ember képes nevetni a nehézségekben, minden könnyebb.",
-        "Némi öniróniával és humorral: ha az ember képes nevetni a nehézségekre, minden könnyebb volna."
+        "Egy kis öniróniával és humorral: ha az ember képes nevetni a nehézségeken, minden könnyebb.",
+        "Egy kis öniróniával és humorral: ha az ember képes nevetni a nehézségekben, minden könnyebb.",
+        "Egy kis öniróniával és humorral: ha az ember képes nevetni a nehézségekre, minden könnyebb."
       ],
       "correct": 0,
       "teaches": [
-        "twin-words-colloquial"
-      ]
+        "on-en-on"
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "ra-re"
+      }
     },
     {
       "id": "b2-34-05-dialogue-2",
@@ -244,14 +240,18 @@
         }
       ],
       "options": [
-        "Nagyon, a főszereplő szellemes dialógusai és bravúros szójátékai lenyűgözték a közönséget.",
-        "Nagyon, a főszereplő szellemes dialógusaira és bravúros szójátékai lenyűgözték a közönséget.",
-        "Nagyon, a főszereplő szellemes dialógusai és bravúros szójátékai lenyűgözték volna a közönségben."
+        "Nagyon, a főszereplő szellemes szójátékai tetszettek a közönségnek.",
+        "Nagyon, a főszereplő szellemes szójátékai tetszettek a közönséget.",
+        "Nagyon, a főszereplő szellemes szójátékai tetszettek a közönségen."
       ],
       "correct": 0,
       "teaches": [
-        "twin-words-colloquial"
-      ]
+        "verb-government-nak-nek"
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "on-en-on"
+      }
     },
     {
       "id": "b2-34-05-writing-1",
@@ -261,11 +261,11 @@
       "template": [
         {
           "prompt": "Write a sentence using 'szellemes' and 'szójáték' describing an entertaining writer or orator.",
-          "answer": "A népszerű író szellemes előadásában számtalan bravúros szójátékkal szórakoztatta a hallgatóságot."
+          "answer": "Az író szellemes szójátékokat használt az előadásán."
         }
       ],
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
@@ -275,25 +275,25 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'önirónia' in a personal reflection about handling failure.",
-          "answer": "Kudarc esetén az egészséges önirónia segít abban, hogy ne veszítsük el önbizalmunkat és optimizmusunkat."
+          "prompt": "Write a sentence using 'önirónia' to say that it helps in hard moments.",
+          "answer": "Az egészséges önirónia segít elviselni a nehéz pillanatokat."
         }
       ],
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
       "id": "b2-34-05-check-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "sentence": "A humorista virtuóz ____ kápráztatta el a kabaré nézőit.",
+      "sentence": "A kabaré tele volt zseniális ____.",
       "hint": "plays on words / puns",
       "answer": "szójátékokkal",
-      "english": "The comedian dazzled the cabaret audience with virtuoso wordplays.",
+      "english": "The cabaret was full of brilliant puns.",
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
@@ -319,9 +319,9 @@
       "stage": "reading",
       "question": "Miért figyelmezteti Piszkos Fred Fülig Jimmyt a kikötői ivóban?",
       "options": [
-        "Mert tart attól, hogy Jimmy felelőtlen csínytevése felkelti a hatóságok figyelmét és lebuknak.",
-        "Mert Jimmy nem akarta kifizetni a pultosnak a rendelt italokat.",
-        "Mert Fred azonnal el akarta adni Jimmy gőzhajóját egy kereskedőnek."
+        "Azért, mert fél, hogy bajba kerülnek a rendőrségen.",
+        "Azért, mert Jimmy nem fizette ki a számlát.",
+        "Azért, mert Fred el akarja adni Jimmy autóját."
       ],
       "correct": 0
     },
@@ -330,11 +330,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Mit állít Fülig Jimmy a gyanús tengeri láda tartalmáról?",
+      "question": "Mit állít Fülig Jimmy a poggyász tartalmáról?",
       "options": [
-        "Hogy arany helyett csupán értéktelen limlom és néhány csecsebecse lapult benne.",
-        "Hogy a láda tele volt a sziget kormányzójának szánt kincsekkel.",
-        "Hogy a ládát a viharban elveszítették a tenger mélyén."
+        "Hogy csak régi limlom és néhány csecsebecse volt benne.",
+        "Hogy sok arany és sok drága dolog volt benne.",
+        "Hogy a poggyászt egy barátjától kapta ajándékba."
       ],
       "correct": 0
     },
@@ -343,11 +343,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen túlélési stratégiát tükröz a szereplők viselkedése a nehéz helyzetekben?",
+      "question": "Mi jelenti a hősök túlélésének zálogát a történet szerint?",
       "options": [
-        "A fanyar humort, a vagány talpraesettséget és a laza stílusrétegek magabiztos kezelését.",
-        "A hatóságok előtti megalázkodást és a szigorú bűnbánatot.",
-        "A teljes csendet és a társalgás teljes elkerülését."
+        "Az, hogy van humoruk és gyors válaszuk.",
+        "Az, hogy segítséget kérnek a rendőrségtől.",
+        "Az, hogy gyorsan elhagyják a várost."
       ],
       "correct": 0
     }

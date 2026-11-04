@@ -37,11 +37,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "recognize",
-      "question": "What does 'bűnbakképzés' designate in political analysis?",
+      "question": "What is 'bűnbakképzés'?",
       "options": [
-        "the psychological and political scapegoating of a group to divert blame from systemic failures",
-        "an official legal process for pardoning convicted political prisoners",
-        "a statistical method used in demographic census analysis"
+        "blaming a group to avoid taking responsibility oneself",
+        "choosing a group to represent the people in a vote",
+        "giving a group the right to make laws alone"
       ],
       "correct": 0,
       "teaches": [
@@ -55,9 +55,9 @@
       "stage": "recognize",
       "question": "Which sentence correctly combines cleft identification with an abstract causal syntagm?",
       "options": [
-        "Bibó szerint a politikai hisztéria az nem más, mint kollektív önbecsapás, amely abból adódik, hogy a félelem megbénítja a józan észt.",
-        "Bibó szerint a politikai hisztéria az nem más hogy önbecsapás, amely azzal adódik ha a félelem bénít.",
-        "Bibó szerint a politikai hisztéria az nem más mint ha önbecsapás lenne, amely annak adódik mert a félelem bénít."
+        "A politikai hisztéria az nem más, mint kollektív önbecsapás, amely abból adódott, hogy a társadalom félelemből a téveszméket választotta.",
+        "A politikai hisztéria az nem más, hogy kollektív önbecsapás, amely abból adódott, hogy a társadalom félelemből a téveszméket választotta.",
+        "A politikai hisztéria az nem más, mint kollektív önbecsapás, amely annak adódott, hogy a társadalom félelemből a téveszméket választotta."
       ],
       "correct": 0,
       "teaches": [
@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A demokratikus intézmények stabilitásához elengedhetetlen a hatalom gyakorlóinak nyilvános ____ és felelősségvállalása.",
+      "sentence": "A demokratikus intézmények stabilitásához elengedhetetlen a vezetők nyilvános ____.",
       "hint": "accountability",
       "answer": "elszámoltathatósága",
-      "english": "For the stability of democratic institutions, the public accountability and responsibility of powerholders is indispensable.",
+      "english": "For the stability of democratic institutions, the public accountability of leaders is indispensable.",
       "teaches": [
         "b2-political-philosophy-vocab"
       ]
@@ -82,12 +82,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A társadalmi polarizáció mélyülése nagyrészt abból ____, hogy hiányzott a párbeszéd a szemben álló felek között.",
+      "sentence": "A feszültség abból ____, hogy hiányzott a párbeszéd a felek között.",
       "hint": "arose / stemmed",
       "answer": "adódott",
-      "english": "The deepening of social polarization largely arose from the fact that dialogue was missing between the opposing parties.",
+      "english": "The tension arose from the fact that dialogue was missing between the parties.",
       "teaches": [
-        "b2-cleft-identification"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -108,11 +108,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'az nem más, mint...' preferred over a simple copular sentence in philosophical definitions?",
+      "question": "Why is 'az nem más, mint...' used in a philosophical definition?",
       "options": [
-        "Because it provides emphatic identificational focus, elevating the statement into an authoritative thesis.",
-        "Because Hungarian grammar does not allow copular verbs in the present tense under any circumstances.",
-        "Because 'mint' can only be used with demonstrative pronouns in academic texts."
+        "It stresses the definition and makes it a firm claim.",
+        "It is the only way to say 'is' in the present tense.",
+        "It makes the sentence shorter than a plain statement."
       ],
       "correct": 0,
       "teaches": [
@@ -127,7 +127,7 @@
       "prompt": [
         {
           "speaker": "Filozófiatanár",
-          "text": "Hogyan foglalná össze Bibó István demokráciafelfogását egyetlen mondatban?"
+          "text": "Hogyan foglalná össze egyetlen mondatban a demokrácia lényegét?"
         },
         {
           "speaker": "Egyetemi hallgató",
@@ -137,7 +137,7 @@
       "options": [
         "A demokrácia lényege az nem más, mint az emberi méltóság feltétlen tisztelete és a félelem nélküli élet intézményes biztosítása.",
         "A demokrácia lényege az nem más, hogy az emberi méltóság feltétlen tisztelete és a félelem nélküli élet intézményes biztosítása.",
-        "A demokrácia lényege az nem más, minthogy az emberi méltóság feltétlen tisztelete és a félelem nélküli élet intézményes biztosítása."
+        "A demokrácia lényege az nem más, mintha az emberi méltóság feltétlen tisztelete és a félelem nélküli élet intézményes biztosítása."
       ],
       "correct": 0,
       "teaches": [
@@ -149,15 +149,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Select the sentence where 'annak tulajdoníthatóan' is applied with syntactic and stylistic accuracy:",
+      "question": "Which sentence is correct?",
       "options": [
-        "A konszenzus létrejötte annak volt tulajdonítható, hogy a felek tiszteletben tartották az alkotmányos fékeket és egyensúlyokat.",
-        "A konszenzus létrejötte abból volt tulajdonítható, hogy a felek tiszteletben tartották a fékeket.",
-        "A konszenzus létrejötte azzal volt tulajdonítható, hogy a felek tiszteletben tartották a fékeket."
+        "A béke annak volt tulajdonítható, hogy a felek kompromisszumot kötöttek.",
+        "A béke abból volt tulajdonítható, hogy a felek kompromisszumot kötöttek.",
+        "A béke azzal volt tulajdonítható, hogy a felek kompromisszumot kötöttek."
       ],
       "correct": 0,
       "teaches": [
-        "b2-cleft-identification"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -199,27 +199,21 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "történelmi",
-        "katasztrófa",
+        "hisztéria",
         "a",
-        "józan",
-        "valóságérzék",
-        "elvesztéséből",
+        "félelemből",
         "adódott."
       ],
       "solution": [
         "A",
-        "történelmi",
-        "katasztrófa",
+        "hisztéria",
         "a",
-        "józan",
-        "valóságérzék",
-        "elvesztéséből",
+        "félelemből",
         "adódott."
       ],
-      "english": "The historical catastrophe arose from the loss of a sober sense of reality.",
+      "english": "Hysteria arose from fear.",
       "teaches": [
-        "b2-cleft-identification"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -229,8 +223,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a philosophical paragraph synthesizing cleft identification ('az nem más, mint') and formal causal deduction ('abból adódóan, hogy').",
-          "answer": "A demokratikus érettség az nem más, mint a kollektív félelmek leküzdése; a történelmi hisztéria elkerülése abból adódik, hogy a polgárok a bűnbakképzés helyett az intézményes elszámoltathatóságot választják."
+          "prompt": "Write two short sentences: one with 'az nem más, mint', one with 'abból adódott, hogy'.",
+          "answer": "A demokrácia az nem más, mint a hatalom korlátozása; a baj abból adódott, hogy a polgárok a bűnbakképzést választották."
         }
       ],
       "teaches": [

@@ -36,17 +36,17 @@
     {
       "id": "b2-34-consolidation-3",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recognize",
-      "question": "Which sentence demonstrates proper register shifting from informal to formal Hungarian?",
+      "question": "Which sentence shows a shift from slang to formal Hungarian?",
       "options": [
-        "A bizalmas 'A haverom befuccsolt a melóval' helyett a hivatalos 'A kolléga munkája meghiúsult' használatos.",
-        "A hivatalos iratban a 'kiakadt a miniszter' a legudvariasabb megfogalmazás.",
-        "A köznyelvi beszédben kizárólag latin jogi szakkifejezésekkel szabad válaszolni."
+        "A 'befuccsol' helyett hivatalos levélben 'meghiúsul' áll.",
+        "A hivatalos levélben a 'befuccsol' jobb, mint a 'meghiúsul'.",
+        "A 'meghiúsul' szleng, a 'befuccsol' hivatalos szó."
       ],
       "correct": 0,
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
@@ -54,10 +54,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Mielőtt elköltöznénk, ki kell dobnunk a pincében heverő sok felesleges ____.",
+      "sentence": "Mielőtt az új lakásba költöznénk, meg kell szabadulnunk a felesleges ____.",
       "hint": "junk / clutter",
-      "answer": "limlomot",
-      "english": "Before we move, we must throw out the lots of unnecessary junk lying in the cellar.",
+      "answer": "limlomtól",
+      "english": "Before moving into the new apartment, we must get rid of the unnecessary junk.",
       "teaches": [
         "b2-slang-register-vocab"
       ]
@@ -67,41 +67,44 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "Nem kell aggódnod a vizsga miatt, ____ alaposan felkészültél minden tételből.",
+      "sentence": "Nem kell aggódnod a vizsga miatt, ____ alaposan felkészültél.",
       "hint": "after all",
-      "answer": "elvégre",
-      "english": "You don't need to worry about the exam; after all, you prepared thoroughly for every topic.",
+      "english": "You don't need to worry about the exam; after all, you prepared thoroughly.",
       "teaches": [
-        "twin-words-colloquial"
+        "discourse-particles"
+      ],
+      "answers": [
+        "elvégre",
+        "hiszen"
       ]
     },
     {
       "id": "b2-34-consolidation-6",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A jogi beadványban az ügyvéd rendkívül szabatosan ____ meg az ügyfele követelését.",
+      "sentence": "A jogi beadványban az ügyvéd rendkívül szabatosan ____ az ügyfele követelését.",
       "hint": "formulated / drafted",
-      "answer": "fogalmazta",
+      "answer": "megfogalmazta",
       "english": "In the legal submission, the lawyer formulated his client's claim extremely accurately.",
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
       "id": "b2-34-consolidation-7",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "in-context",
-      "question": "Why is 'Ugyan már' preferred in friendly banter over 'Határozottan cáfolom'?",
+      "question": "When do you say 'Ugyan már'?",
       "options": [
-        "Because it conveys conversational informality, friendly dismissal of an overstatement, and natural rapport.",
-        "Because 'cáfolom' cannot be used in spoken Hungarian under any circumstances.",
-        "Because 'Ugyan már' is an ancient military command."
+        "To a friend, to wave away an exaggeration.",
+        "To an official, to ask for a document.",
+        "In a formal letter, to thank an office."
       ],
       "correct": 0,
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
@@ -112,7 +115,7 @@
       "prompt": [
         {
           "speaker": "Kolléga",
-          "text": "Hogyan élted túl a hosszas várakozást a földhivatalban?"
+          "text": "Hogyan viselted el a sok várakozást a hivatalban?"
         },
         {
           "speaker": "Ügyfél",
@@ -120,35 +123,43 @@
         }
       ],
       "options": [
-        "Némi öniróniával és türelemmel: a bürokratikus hercehurcát csak humorral lehet elviselni.",
-        "Némi öniróniával és türelemmel: a bürokratikus hercehurcának csak humorral lehet elviselni.",
-        "Némi öniróniával és türelemmel: a bürokratikus hercehurcát csak humorra lehetne elviselni."
+        "Egy kis öniróniával és türelemmel: a hivatali hercehurcát csak humorral lehet elviselni.",
+        "Egy kis öniróniával és türelemmel: a hivatali hercehurcának csak humorral lehet elviselni.",
+        "Egy kis öniróniával és türelemmel: a hivatali hercehurcát csak humorra lehet elviselni."
       ],
       "correct": 0,
       "teaches": [
-        "twin-words-colloquial"
-      ]
+        "how-the-accusative-t-works"
+      ],
+      "distractor_skills": {
+        "1": "verb-government-nak-nek",
+        "2": "ra-re"
+      }
     },
     {
       "id": "b2-34-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Select the sentence where 'rákattan' is used correctly in contemporary colloquial discourse:",
+      "question": "Select the sentence where 'rákattan' is used correctly:",
       "options": [
-        "A diák annyira rákattant a sakkozásra, hogy egész éjszaka nagymesterek partijait elemezte.",
-        "A könyvtáros rákattant a villanykapcsolóra a falon egy kalapáccsal.",
-        "A vonat rákattant a peronra a menetrend szerint délelőtt."
+        "A diák annyira rákattant a focira, hogy minden este focizott.",
+        "A diák annyira rákattant a focin, hogy minden este focizott.",
+        "A diák annyira rákattant a focitól, hogy minden este focizott."
       ],
       "correct": 0,
       "teaches": [
-        "twin-words-colloquial"
-      ]
+        "verb-government-ra-re"
+      ],
+      "distractor_skills": {
+        "1": "on-en-on",
+        "2": "tol-tol"
+      }
     },
     {
       "id": "b2-34-consolidation-10",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "A",
@@ -158,7 +169,6 @@
         "bevállalta",
         "az",
         "új",
-        "fejlesztési",
         "projekt",
         "vezetését."
       ],
@@ -170,19 +180,18 @@
         "bevállalta",
         "az",
         "új",
-        "fejlesztési",
         "projekt",
         "vezetését."
       ],
-      "english": "The young engineer boldly took on leading the new development project.",
+      "english": "The young engineer boldly took on leading the new project.",
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
       "id": "b2-34-consolidation-11",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "produce",
       "tiles": [
         "A",
@@ -208,7 +217,7 @@
       ],
       "english": "The negotiating parties essentially reached a successful agreement on every disputed issue.",
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
@@ -218,12 +227,12 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause reflection explaining how mastery of different stylistic registers ('stílusrétegek') and self-irony ('önirónia') enriches communication.",
-          "answer": "A különböző stílusrétegek magabiztos uralása lehetővé teszi, hogy a kötetlen köznyelvi fordulatoktól a hivatalos érvelésig mindig a helyzethez illően fejezzük ki magunkat; ráadásul az egészséges önirónia és a finom humor még a legfeszültebb vitákban is segít megőrizni az emberi közvetlenséget és a kölcsönös tiszteletet."
+          "prompt": "Write two short sentences: one about which style you use in an official letter and with friends, and one about self-irony.",
+          "answer": "A hivatalos levélben hivatalos stílust használunk, a barátainkkal pedig köznyelvi szavakat. Az egészséges önirónia segít elviselni a nehéz pillanatokat."
         }
       ],
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     }
   ]

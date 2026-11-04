@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What does the Hungarian twin-word 'limlom' designate?",
+      "question": "What does the twin-word 'limlom' mean?",
       "options": [
-        "worthless clutter, discarded junk, or miscellaneous bric-a-brac",
-        "a prestigious high-society formal dinner party",
-        "an official government stamp on legal certificates"
+        "old useless things that fill a space",
+        "weeds that grow in a neglected garden",
+        "the hassle of dealing with an office"
       ],
       "correct": 0,
       "teaches": [
@@ -83,7 +83,7 @@
     {
       "id": "b2-34-01-controlled-3",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
       "question": "What attitude is conveyed by the adverbial expression 'ímmel-ámmal dolgozik'?",
       "options": [
@@ -93,39 +93,39 @@
       ],
       "correct": 0,
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
       "id": "b2-34-01-controlled-4",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A telek sarkát teljesen benőtte a száraz ____.",
+      "sentence": "A telek végében teljesen elszaporodott a száraz ____.",
       "hint": "weeds / wild scrub",
       "answer": "gizgaz",
-      "english": "The corner of the lot was completely overgrown with dry weeds.",
+      "english": "The dry weeds had spread completely at the end of the lot.",
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
       "id": "b2-34-01-practice-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "sentence": "Nem éri meg az a rengeteg hivatali ____, amibe a beadvány kerülne.",
       "hint": "hassle / fuss",
       "answer": "hercehurca",
       "english": "The enormous amount of bureaucratic hassle that the submission would entail is not worth it.",
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
       "id": "b2-34-01-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
@@ -135,7 +135,6 @@
         "végezte",
         "el",
         "a",
-        "rábízott",
         "feladatot."
       ],
       "solution": [
@@ -146,12 +145,11 @@
         "végezte",
         "el",
         "a",
-        "rábízott",
         "feladatot."
       ],
-      "english": "The boy performed the entrusted task only half-heartedly.",
+      "english": "The boy did the task only half-heartedly.",
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
@@ -159,10 +157,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A költözéskor három doboznyi felesleges ____ dobtunk ki a lomtalanításkor.",
+      "sentence": "Hétvégén kidobjuk a pincéből a felesleges ____.",
       "hint": "junk / clutter",
       "answer": "limlomot",
-      "english": "When moving, we threw out three boxes of unnecessary junk during clearance.",
+      "english": "At the weekend we will throw the unnecessary junk out of the cellar.",
       "teaches": [
         "b2-slang-register-vocab"
       ]
@@ -177,7 +175,6 @@
         "polc",
         "tele",
         "volt",
-        "mindenféle",
         "csillogó",
         "csecsebecsével."
       ],
@@ -186,11 +183,10 @@
         "polc",
         "tele",
         "volt",
-        "mindenféle",
         "csillogó",
         "csecsebecsével."
       ],
-      "english": "The shelf was full of all kinds of glittering trinkets.",
+      "english": "The shelf was full of glittering trinkets.",
       "teaches": [
         "b2-slang-register-vocab"
       ]
@@ -203,7 +199,7 @@
       "prompt": [
         {
           "speaker": "Gábor",
-          "text": "Végre sikerült elintézned az építési engedélyt a telekre?"
+          "text": "Végre elintézted az adóbevallást?"
         },
         {
           "speaker": "Eszter",
@@ -211,14 +207,18 @@
         }
       ],
       "options": [
-        "Igen, de olyan elképesztő hercehurca volt a hivatalban, hogy majdnem feladtam.",
-        "Igen, de olyan elképesztő hercehurcát volt a hivatalban, hogy majdnem feladtam.",
-        "Igen, de olyan elképesztő hercehurcával volt a hivatalban, hogy majdnem feladtam."
+        "Igen, de olyan nagy hercehurca volt a hivatalban, hogy alig vártam a végét.",
+        "Igen, de olyan nagy hercehurcát volt a hivatalban, hogy alig vártam a végét.",
+        "Igen, de olyan nagy hercehurcával volt a hivatalban, hogy alig vártam a végét."
       ],
       "correct": 0,
       "teaches": [
         "twin-words-colloquial"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "val-vel"
+      }
     },
     {
       "id": "b2-34-01-dialogue-2",
@@ -228,7 +228,7 @@
       "prompt": [
         {
           "speaker": "Mihály",
-          "text": "Miért haladsz ilyen lassan a fordítással?"
+          "text": "Miért haladsz ilyen lassan a munkával?"
         },
         {
           "speaker": "Katalin",
@@ -242,7 +242,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
@@ -253,7 +253,7 @@
       "template": [
         {
           "prompt": "Write a sentence using 'limlom' in the accusative (-ot) to describe clearing out a cluttered space.",
-          "answer": "Hétvégén végre rászántuk magunkat, és elszállíttattuk a padláson összegyűlt limlomot."
+          "answer": "Hétvégén kidobjuk a padláson felgyülemlett limlomot."
         }
       ],
       "teaches": [
@@ -268,7 +268,7 @@
       "template": [
         {
           "prompt": "Write a sentence using 'hercehurca' describing a complicated administrative procedure.",
-          "answer": "Senki sem számított arra, hogy az útlevél megújítása ilyen hosszas hercehurcával fog járni."
+          "answer": "Senki sem számított arra, hogy az útlevél megújítása ilyen nagy hercehurcával fog járni."
         }
       ],
       "teaches": [
@@ -278,14 +278,14 @@
     {
       "id": "b2-34-01-check-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "sentence": "A nagymama vitrinjében számtalan apró porcelán ____ sorakozott.",
+      "sentence": "A polcon sok apró ____ állt.",
       "hint": "trinket / knick-knack",
       "answer": "csecsebecse",
-      "english": "Countless tiny porcelain trinkets lined the grandmother's display cabinet.",
+      "english": "Many tiny trinkets stood on the shelf.",
       "teaches": [
-        "twin-words-colloquial"
+        "b2-slang-register-vocab"
       ]
     },
     {
