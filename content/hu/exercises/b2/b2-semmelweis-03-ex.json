@@ -7,9 +7,9 @@
       "category": "vocabulary",
       "question": "Miért jelentett óriási áttörést a szegedi paprika vizsgálata Szent-Györgyi Albert kutatásában?",
       "options": [
-        "Mert a paprikából néhány nap alatt több kilónyi tiszta aszkorbinsavat (C-vitamint) tudtak kivonni.",
-        "Mert a paprika csípőssége meggyógyította a gyermekágyi lázat.",
-        "Mert a paprikából vonták ki először a penicillint."
+        "Mert a paprikából egy hét alatt több kilónyi tiszta aszkorbinsavat (C-vitamint) tudtak kivonni.",
+        "Mert a paprika csípős anyagából sikerült előállítani az első hatékony fájdalomcsillapítót.",
+        "Mert a paprika magjából sikerült kivonni azt a baktériumot, amely a skorbutot okozza."
       ],
       "correct": 0,
       "teaches": [
@@ -33,7 +33,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "sentence": "A szegedi paprika nélkül Szent-Györgyi nem _____ volna elegendő C-vitamint küldeni a külföldi laboratóriumoknak.",
-      "hint": "could [not] have been able — tudott",
+      "hint": "tud (be able), past 3sg",
       "answer": "tudott",
       "english": "Without Szeged paprika, Szent-Györgyi could not have sent enough vitamin C to foreign laboratories.",
       "teaches": [
@@ -43,17 +43,20 @@
     {
       "id": "b2-semmelweis-03.ex04",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "Mi a jelentésbeli különbség az 'érezhetett' és az 'érezhetett volna' között?",
+      "category": "vocabulary",
+      "question": "Which sentence means 'Szent-Györgyi was probably very excited that night'?",
       "options": [
-        "Az 'érezhetett' múltbeli valószínűséget (bizonyára érzett), az 'érezhetett volna' pedig meg nem valósult lehetőséget fejez ki.",
-        "Mindkettő jövő idejű parancsot fejez ki.",
-        "Az 'érezhetett volna' azt jelenti, hogy biztosan megtörtént az esemény."
+        "Szent-Györgyi valószínűleg nagy izgalmat érzett azon az éjszakán.",
+        "Szent-Györgyi valószínűleg nagy izgalmat fog érezni azon az éjszakán.",
+        "Szent-Györgyi valószínűleg nagy izgalmat érzett volna azon az éjszakán."
       ],
       "correct": 0,
       "teaches": [
-        "kellett-volna"
-      ]
+        "b2-medical-pioneers-vocab"
+      ],
+      "distractor_skills": {
+        "2": "past-conditional-volna"
+      }
     },
     {
       "id": "b2-semmelweis-03.ex05",
@@ -94,9 +97,9 @@
       "category": "reading",
       "question": "Milyen másik alapvető biokémiai felfedezés született Szent-Györgyi szegedi intézetében Straub F. Brunóval közösen?",
       "options": [
-        "Az izom-összehúzódásért felelős fehérjék, az aktin és a miozin felfedezése.",
-        "A DNS kettős spiráljának röntgensugaras lefényképezése.",
-        "Az első elektronikus mikroszkóp megépítése."
+        "Az izom-összehúzódás egyik alapvető fehérjéjének, az aktinnak a felfedezése.",
+        "A DNS kettős spiráljának szerkezeti leírása röntgensugaras vizsgálatokkal.",
+        "Az első elektronmikroszkóp megépítése és a sejtmag szerkezetének feltárása."
       ],
       "correct": 0
     },
@@ -140,11 +143,11 @@
       "template": [
         {
           "prompt": "State what Szent-Györgyi could not have done in Cambridge without Szeged paprika using 'nem tudott volna'.",
-          "answer": "A szegedi paprika nélkül Szent-Györgyi Cambridge-ben nem tudott volna néhány nap alatt több kilónyi aszkorbinsavat kivonni."
+          "answer": "A szegedi paprika nélkül Szent-Györgyi Cambridge-ben nem tudott volna egy hét alatt több kilónyi aszkorbinsavat kivonni."
         },
         {
-          "prompt": "Express a deduction about how surprised Szent-Györgyi must have been that evening using '-hatott/-hetett' (without volna).",
-          "answer": "Szent-Györgyi óriási meglepetést érezhetett, amikor az éjszakai kísérlet során kimutatta a paprikában a rengeteg C-vitamint."
+          "prompt": "Express a deduction about how surprised Szent-Györgyi probably was that evening using 'valószínűleg'.",
+          "answer": "Szent-Györgyi valószínűleg óriási meglepetést érzett, amikor az éjszakai kísérlet során kimutatta a paprikában a rengeteg C-vitamint."
         }
       ],
       "teaches": [

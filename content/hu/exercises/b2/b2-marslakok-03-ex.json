@@ -8,8 +8,8 @@
       "question": "Miért adta át Szilárd Leó az 1930-as években a láncreakció szabadalmát a brit Admiralitásnak?",
       "options": [
         "Hogy titkosítsák a felfedezést, és a náci Németország fizikusai ne építhessenek belőle fegyvert.",
-        "Hogy nagy összegű kereskedelmi jutalékot kapjon az erőművektől.",
-        "Mert nem érdekelte többé a fizika."
+        "Hogy a brit haditengerészet nyilvánosságra hozza, és a világ kutatói szabadon felhasználhassák.",
+        "Hogy az Admiralitás megvásárolja, és a pénzből Szilárd új kutatóintézetet építhessen Londonban."
       ],
       "correct": 0,
       "teaches": [
@@ -32,27 +32,27 @@
       "id": "b2-marslakok-03.ex03",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "_____ létezik egy két neutront kibocsátó elem, az atomenergia felszabadítható.",
-      "hint": "Assuming that / Provided that — two words with comma",
-      "answer": "Feltéve, hogy",
-      "english": "Provided that an element emitting two neutrons exists, atomic energy can be released.",
+      "sentence": "A szabadalmat _____ a feltétellel adta át, hogy szigorúan titkosítják.",
+      "hint": "that (demonstrative), with",
+      "answer": "azzal",
+      "english": "He handed over the patent on the condition that it be kept strictly secret.",
       "teaches": [
-        "correlative-minel-annal"
+        "demonstrative-case-agreement"
       ]
     },
     {
       "id": "b2-marslakok-03.ex04",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat szórendje helyes az 'azzal a feltétellel' szerkezettel?",
+      "question": "Melyik mondat helyes?",
       "options": [
         "Szilárd a szabadalmat azzal a feltétellel adta át, hogy szigorúan titkosítják.",
-        "Szilárd a szabadalmat azzal a feltétellel átadta, hogy szigorúan titkosítják.",
-        "Szilárd a szabadalmat feltétellel azzal átadta, hogy szigorúan titkosítják."
+        "Szilárd a szabadalmat azzal feltétellel adta át, hogy szigorúan titkosítják.",
+        "Szilárd a szabadalmat azzal a feltételt adta át, hogy szigorúan titkosítják."
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
+        "demonstrative-case-agreement"
       ]
     },
     {
@@ -61,50 +61,52 @@
       "category": "grammar",
       "tiles": [
         "A",
-        "kutatók",
+        "tudós",
         "csak",
         "azzal",
         "a",
         "feltétellel",
-        "írták",
+        "írta",
         "alá",
         "a",
         "levelet,",
         "hogy",
-        "megelőzik",
         "a",
-        "veszélyt."
+        "kutatás",
+        "titokban",
+        "marad."
       ],
       "solution": [
         "A",
-        "kutatók",
+        "tudós",
         "csak",
         "azzal",
         "a",
         "feltétellel",
-        "írták",
+        "írta",
         "alá",
         "a",
         "levelet,",
         "hogy",
-        "megelőzik",
         "a",
-        "veszélyt."
+        "kutatás",
+        "titokban",
+        "marad."
       ],
-      "english": "The researchers signed the letter only on the condition that they prevent the danger.",
+      "english": "The scientist signed the letter only on the condition that the research remain secret.",
       "teaches": [
-        "correlative-minel-annal"
+        "b2-focus-inversion"
       ]
     },
     {
       "id": "b2-marslakok-03.ex06",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hogyan viszonyult Szilárd Leó az atombomba bevetéséhez 1945 tavaszán, Németország legyőzése után?",
+      "question": "Hogyan viszonyult Szilárd Leó az atombomba bevetéséhez 1945-ben, Németország legyőzése után?",
       "options": [
-        "Petícióban tiltakozott az ellen, hogy a bombát figyelmeztetés nélkül japán városok ellen vessék be.",
-        "Követelte, hogy azonnal dobják le a bombát több nagyvárosra is.",
-        "Visszaköltözött Berlinbe oktatni."
+        "Petícióban tiltakozott az ellen, hogy a bombát figyelmeztetés nélkül vessék be Japán ellen.",
+        "Azt javasolta, hogy a bombát figyelmeztetés nélkül vessék be, mert így gyorsabban véget érhet a háború.",
+        "Azt kérte, hogy a bombát Németország ellen is bevessék, mielőtt a háború véget ér."
       ],
       "correct": 0
     },
@@ -145,16 +147,16 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "State Szilárd's scientific hypothesis in 1933 using 'Feltéve, hogy...'.",
-          "answer": "Feltéve, hogy egy atommag hasadásakor két újabb neutron szabadul fel, önfenntartó láncreakció jöhet létre."
+          "prompt": "State Szilárd's scientific hypothesis in 1933 using 'Amennyiben...'.",
+          "answer": "Amennyiben egy atommag hasadásakor két újabb neutron szabadul fel, önfenntartó láncreakció jöhet létre."
         },
         {
-          "prompt": "Explain under what condition Szilárd supported the Manhattan Project using 'csak azzal a feltétellel..., hogy'.",
-          "answer": "Szilárd csak azzal a feltétellel támogatta a kutatást, hogy a fegyver kizárólag az elrettentést szolgálja."
+          "prompt": "Explain under what condition Szilárd handed over the patent to the Admiralty using 'csak azzal a feltétellel..., hogy'.",
+          "answer": "Szilárd csak azzal a feltétellel engedte át a szabadalmat a brit Admiralitásnak, hogy szigorúan titkosítják."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "b2-the-martians-vocab"
       ]
     }
   ]
