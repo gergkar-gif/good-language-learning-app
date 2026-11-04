@@ -24,9 +24,9 @@
       "stage": "introduce",
       "question": "What is the difference between 'koppan' and 'kopogtat'?",
       "options": [
-        "'koppan' is a single thud/tap, while 'kopogtat' is knocking repeatedly (e.g., at a door).",
-        "'koppan' is loud, while 'kopogtat' is silent.",
-        "They are exact synonyms with no difference in aspect."
+        "'koppan' is a single tap, 'kopogtat' is repeated knocking.",
+        "'koppan' is loud, while 'kopogtat' is quiet and soft.",
+        "'koppan' is about doors, while 'kopogtat' is about floors."
       ],
       "correct": 0,
       "teaches": [
@@ -81,10 +81,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A vándor bekopogott: háromszor is ____ a nehéz tölgyfa ajtón.",
+      "sentence": "Valaki jött: háromszor is ____ az ajtón.",
       "hint": "kopog -> -tat 3sg past",
       "answer": "kopogtatott",
-      "english": "The wanderer knocked: he rapped three times on the heavy oak door.",
+      "english": "Someone came: he knocked on the door three times.",
       "teaches": [
         "b2-frequentative-verbs"
       ]
@@ -94,10 +94,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "Az élő ____ összeköti a múltat a jelennel.",
+      "sentence": "Az élő ____ összeköti a régit és az újat.",
       "hint": "tradition",
       "answer": "hagyomány",
-      "english": "Living tradition connects the past with the present.",
+      "english": "Living tradition connects the old and the new.",
       "teaches": [
         "b2-roots-tradition-collective-memory-vocab"
       ]
@@ -137,10 +137,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A sötétben egyetlen pillanatra ____ egy gyufa lángja.",
+      "sentence": "A sötétben egyetlen pillanatra ____ egy fény.",
       "hint": "felvillan / villog -> 3sg past",
       "answer": "felvillant",
-      "english": "In the dark, the flame of a match flashed for a single moment.",
+      "english": "In the dark a light flashed for a single moment.",
       "teaches": [
         "b2-frequentative-verbs"
       ]
@@ -197,17 +197,17 @@
       "prompt": [
         {
           "speaker": "Ábel",
-          "text": "Hallottad ezt a hangot odakintről, édesapám?"
+          "text": "Hallottad ezt a hangot, apám?"
         },
         {
           "speaker": "Ábel apja",
-          "text": "____"
+          "text": "_____"
         }
       ],
       "options": [
-        "Csak egy fenyőtoboz koppant a tetőn, meg a szél zörgeti a vén fák ágait.",
-        "Csak egy fenyőtoboz egész éjjel kopogtat a tetőn egyetlen pillanat alatt.",
-        "Csak a szél zördült egyet egész éjszaka folyamatosan."
+        "Csak egy fenyőtoboz koppant a tetőn, meg a szél zörgeti az ágakat.",
+        "Csak egy fenyőtoboz koppant a tetőn, meg a szél zördült az ágakat.",
+        "Csak egy fenyőtoboz koppant a tetőn, meg a szél zörgetem az ágakat."
       ],
       "correct": 0,
       "teaches": [
@@ -222,17 +222,17 @@
       "prompt": [
         {
           "speaker": "Tanítvány",
-          "text": "Hogyan tanulta meg a mester ezt a bonyolult fafaragást?"
+          "text": "Hogyan tanultad meg ezt a szép munkát, mester?"
         },
         {
-          "speaker": "Fafaragó",
-          "text": "____"
+          "speaker": "Mester",
+          "text": "_____"
         }
       ],
       "options": [
-        "Gyerekkoromban órákig nézegettem nagyapám kezét, ahogy aprólékosan farigcsálta a mintákat.",
-        "Gyerekkoromban egyetlen pillantást vetettem rá, ahogy farigcsálta.",
-        "Gyerekkoromban órákig pillantottam egyet a kezére."
+        "Gyerekkoromban órákig nézegettem a nagyapám kezét.",
+        "Gyerekkoromban órákig pillantottam a nagyapám kezére.",
+        "Gyerekkoromban órákig nézegetem a nagyapám kezét."
       ],
       "correct": 0,
       "teaches": [
@@ -247,11 +247,11 @@
       "template": [
         {
           "prompt": "Write a sentence contrasting a single glance ('pillant') with looking over something fondly ('nézeget').",
-          "answer": "Először csak futólag pillantott a régi térképre, aztán órákig nézegette a hegyek neveit."
+          "answer": "Először csak egyet pillantott a régi térképre, aztán órákig nézegette."
         },
         {
-          "prompt": "Write a sentence describing how someone knocked softly on the wooden door (use 'kopogtat').",
-          "answer": "Egy késői vándor halkan kopogtatott a faajtón."
+          "prompt": "Write a sentence describing how someone knocked softly on the door (use 'kopogtat').",
+          "answer": "Valaki halkan kopogtatott az ajtón."
         }
       ],
       "teaches": [
@@ -265,8 +265,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence about the autumn wind rattling the window shutters all night (use 'zörget').",
-          "answer": "Az őszi szél egész éjjel zörgette a spalettákat."
+          "prompt": "Write a sentence about the autumn wind rattling the window all night (use 'zörget').",
+          "answer": "Az őszi szél egész éjjel zörgette az ablakot."
         }
       ],
       "teaches": [
@@ -278,10 +278,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A távolban egy világítótorony fénye ____ az éjszakában.",
+      "sentence": "A távolban egy fény ____ az éjszakában.",
       "hint": "villan [once] vs. villog [repeatedly] -> 3sg past",
       "answer": "villogott",
-      "english": "In the distance, the light of a lighthouse kept flashing in the night.",
+      "english": "In the distance a light kept flashing in the night.",
       "teaches": [
         "b2-frequentative-verbs"
       ]
@@ -295,7 +295,7 @@
       "options": [
         "pillant",
         "nézeget",
-        "bámészkodik"
+        "üldögél"
       ],
       "correct": 0,
       "teaches": [

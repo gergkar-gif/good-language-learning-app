@@ -35,7 +35,7 @@
       "stage": "recognize",
       "question": "What does 'apránként' mean?",
       "options": [
-        "little by little / bit by bit",
+        "little by little",
         "suddenly / all at once",
         "in vain"
       ],
@@ -65,10 +65,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Az inas éveken át leste a mesterség ____.",
+      "sentence": "A fiú éveken át tanulta a mester ____.",
       "hint": "secrets of the craft - acc. pl.",
       "answer": "fortélyait",
-      "english": "For years the apprentice watched to learn the secrets of the craft.",
+      "english": "For years the boy learned the master's secrets.",
       "teaches": [
         "b2-roots-tradition-collective-memory-vocab"
       ]
@@ -78,10 +78,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "Nagyapám esténként a fotelben ____, és régi újságokat lapozgatott.",
+      "sentence": "Nagyapám esténként a ház előtt ____, és régi könyveket lapozgatott.",
       "hint": "ül -> -dögél 3sg past",
       "answer": "üldögélt",
-      "english": "In the evenings my grandfather sat quietly in the armchair and leafed through old newspapers.",
+      "english": "In the evenings my grandfather sat quietly in front of the house and leafed through old books.",
       "teaches": [
         "b2-frequentative-verbs"
       ]
@@ -105,9 +105,9 @@
       "stage": "in-context",
       "question": "Choose the sentence where the verbal aspect matches 'all night long':",
       "options": [
-        "A viharos szél egész éjjel zörgette a fenyves ágait.",
-        "A viharos szél egész éjjel egyetlenegyszer megzördült.",
-        "A viharos szél egész éjjel felvillant egy szempillantásra."
+        "A szél egész éjjel zörgette az ablakot.",
+        "A szél egész éjjel megzörrent egyet.",
+        "A szél egész éjjel felvillant egyet."
       ],
       "correct": 0,
       "teaches": [
@@ -122,17 +122,17 @@
       "prompt": [
         {
           "speaker": "Utazó",
-          "text": "Mivel tölti az idejét az öreg erdész a nyugdíjas éveiben?"
+          "text": "Mit csinál az öreg ember most?"
         },
         {
           "speaker": "Helybeli",
-          "text": "____"
+          "text": "_____"
         }
       ],
       "options": [
-        "Békésen éldegél a völgyben, farigcsálja a sétapálcákat, és komótosan mendegél az erdei utakon.",
-        "Békésen élget a völgyben, és megyget az erdei utakon.",
-        "Békésen éldegélni a völgyben, és mendegélni!"
+        "Békésen éldegél a faluban, és komótosan mendegél az utakon.",
+        "Békésen éldegél a faluban, és megyget az utakon.",
+        "Békésen éldegélni a faluban, és mendegélni az utakon."
       ],
       "correct": 0,
       "teaches": [
@@ -144,11 +144,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "What is the exact difference between 'olvastat' and 'olvasgat'?",
+      "question": "What is the exact difference between 'olvas' and 'olvasgat'?",
       "options": [
-        "'olvastat' is causative ('makes someone read'), while 'olvasgat' is frequentative/attenuative ('reads casually at leisure').",
-        "'olvasgat' is causative ('makes someone read'), while 'olvastat' is frequentative/attenuative ('reads casually at leisure').",
-        "Both forms are causative suffixes, differing only in whether the action is performed by one person or a group."
+        "'olvasgat' is casual, repeated reading; 'olvas' is plain reading.",
+        "'olvasgat' is very fast reading; 'olvas' is slow reading.",
+        "'olvasgat' is reading aloud; 'olvas' is reading silently."
       ],
       "correct": 0,
       "teaches": [
@@ -165,20 +165,24 @@
         "hagyományok",
         "nemzedékről",
         "nemzedékre",
-        "öröklődnek",
+        "mennek",
+        "tovább",
         "a",
-        "közösségben."
+        "közösségben",
+        "."
       ],
       "solution": [
         "A",
         "hagyományok",
         "nemzedékről",
         "nemzedékre",
-        "öröklődnek",
+        "mennek",
+        "tovább",
         "a",
-        "közösségben."
+        "közösségben",
+        "."
       ],
-      "english": "Traditions are inherited from generation to generation in the community.",
+      "english": "Traditions pass on from generation to generation in the community.",
       "teaches": [
         "b2-frequentative-verbs"
       ]
@@ -192,23 +196,25 @@
         "Sokáig",
         "nézegettük",
         "a",
-        "faragott",
+        "régi",
         "kaput,",
         "majd",
         "tovább",
-        "mendegéltünk."
+        "mendegéltünk",
+        "."
       ],
       "solution": [
         "Sokáig",
         "nézegettük",
         "a",
-        "faragott",
+        "régi",
         "kaput,",
         "majd",
         "tovább",
-        "mendegéltünk."
+        "mendegéltünk",
+        "."
       ],
-      "english": "We looked fondly at the carved gate for a long time, then ambled on.",
+      "english": "We looked fondly at the old gate for a long time, then ambled on.",
       "teaches": [
         "b2-frequentative-verbs"
       ]
@@ -221,7 +227,7 @@
       "template": [
         {
           "prompt": "Write a short two-sentence reflection on a family or cultural tradition, using at least one -gat/-get or -dogál/-degél verb and 'nemzedékről nemzedékre'.",
-          "answer": "Ünnepnapokon a nagyapám műhelyében üldögéltünk, és nézegettük a régi szerszámokat. Ez a mesterség nemzedékről nemzedékre szállt a családunkban."
+          "answer": "Ünnepnapokon a nagyapám házában üldögéltünk, és nézegettük a régi képeket. Ez a szokás nemzedékről nemzedékre ment tovább a családunkban."
         }
       ],
       "teaches": [

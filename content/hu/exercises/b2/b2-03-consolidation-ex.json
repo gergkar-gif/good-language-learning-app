@@ -8,9 +8,9 @@
       "stage": "recognize",
       "question": "In 'a kötet átütő sikerének a titka', why does 'sikerének' take the suffix -nek?",
       "options": [
-        "Because it is the middle possessor in a double possessive chain governing 'a titka'.",
-        "Because it is the indirect object of 'rejlett'.",
-        "Because 'siker' is a plural noun."
+        "Because it is the possessor of 'titka' in a possessive chain.",
+        "Because it is the indirect object of the verb 'rejlett' (lay).",
+        "Because 'siker' is a plural noun, so it needs the dative."
       ],
       "correct": 0,
       "teaches": [
@@ -82,7 +82,7 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A görbe tükör felmutatása ____ a kritika sohasem vált rosszindulatúvá.",
+      "sentence": "A görbe tükör felmutatása ____ a kritika soha nem vált rosszindulatúvá.",
       "hint": "in the course of",
       "answer": "során",
       "english": "In the course of holding up the curved mirror, the criticism never became malicious.",
@@ -111,7 +111,7 @@
       "prompt": [
         {
           "speaker": "Szerkesztő",
-          "text": "Hogyan fogalmazzuk át ezt a túl bonyolult bekezdést?"
+          "text": "Hogyan írjuk át ezt a nehéz mondatot?"
         },
         {
           "speaker": "Író",
@@ -119,9 +119,9 @@
         }
       ],
       "options": [
-        "A nyakatekert főnévi láncok felbontása révén sokkal élénkebbé tehetjük a szöveget.",
-        "A nyakatekert főnévi láncok felbontást révén sokkal élénkebbé tehetjük a szöveget.",
-        "A nyakatekert főnévi láncok felbontása révén sokkal élénkebb tehetjük a szöveget."
+        "A mondat átfogalmazása révén jobb lesz a szöveg.",
+        "A mondat átfogalmazást révén jobb lesz a szöveg.",
+        "A mondatot átfogalmazása révén jobb lesz a szöveg."
       ],
       "correct": 0,
       "teaches": [
@@ -133,11 +133,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Which verbal clause best unpacks 'A kérdés megválaszolása előtt gondolkodott'?",
+      "question": "Which verbal clause best unpacks 'A könyv elolvasása előtt gondolkodott'?",
       "options": [
-        "Mielőtt megválaszolta a kérdést, gondolkodott.",
-        "Miután megválaszolta a kérdést, gondolkodott.",
-        "A kérdést megválaszolva nem gondolkodott."
+        "Mielőtt elolvasta a könyvet, gondolkodott.",
+        "Miután elolvasta a könyvet, gondolkodott.",
+        "Mielőtt elolvasta a könyv, gondolkodott."
       ],
       "correct": 0,
       "teaches": [
@@ -153,7 +153,7 @@
       "options": [
         "körmondatainak",
         "rakpartjainak",
-        "ingaóráinak"
+        "szobáinak"
       ],
       "correct": 0,
       "teaches": [
@@ -197,27 +197,27 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "kötet",
+        "könyv",
         "sikerének",
         "a",
         "titka",
         "a",
-        "humorban",
+        "munkában",
         "rejlett",
         "."
       ],
       "solution": [
         "A",
-        "kötet",
+        "könyv",
         "sikerének",
         "a",
         "titka",
         "a",
-        "humorban",
+        "munkában",
         "rejlett",
         "."
       ],
-      "english": "The secret of the volume's success lay in humor.",
+      "english": "The secret of the book's success lay in the work.",
       "teaches": [
         "nominalization"
       ]

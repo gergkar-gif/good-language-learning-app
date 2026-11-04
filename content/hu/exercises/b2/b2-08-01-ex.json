@@ -25,8 +25,8 @@
       "question": "Which structure means 'should not have been done' (violated prohibition)?",
       "options": [
         "nem szabadott volna + infinitive",
-        "nem szokott + infinitive",
-        "nem fog + infinitive"
+        "nem szokott volna + infinitive",
+        "nem kellene + infinitive"
       ],
       "correct": 0,
       "teaches": [
@@ -95,11 +95,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the correct inflected infinitive: 'Az orvosnak azonnal ____ kellett volna.'",
+      "question": "Choose the correct form: 'A betegnek azonnal ____ kellett volna.'",
       "options": [
-        "intézkednie",
-        "intézkedik",
-        "intézkedett"
+        "pihennie",
+        "pihen",
+        "pihent"
       ],
       "correct": 0,
       "teaches": [
@@ -141,21 +141,21 @@
       "type": "substitution",
       "category": "grammar",
       "stage": "practice",
-      "base_sentence": "Nekünk hamarabb kellett volna értesítenünk a családot.",
-      "base_word": "Nekünk hamarabb kellett volna értesítenünk",
-      "base_gloss": "We should have notified the family sooner.",
+      "base_sentence": "Nekünk korábban kellett volna szólnunk a családnak.",
+      "base_word": "Nekünk korábban kellett volna szólnunk",
+      "base_gloss": "We should have told the family earlier.",
       "options": [
         {
           "word": "Neked",
-          "inflected": "Neked hamarabb kellett volna értesítened",
-          "sentence": "Neked hamarabb kellett volna értesítened a családot.",
-          "gloss": "You should have notified"
+          "inflected": "Neked korábban kellett volna szólnod",
+          "sentence": "Neked korábban kellett volna szólnod a családnak.",
+          "gloss": "You should have told"
         },
         {
           "word": "Nekik",
-          "inflected": "Nekik hamarabb kellett volna értesíteniük",
-          "sentence": "Nekik hamarabb kellett volna értesíteniük a családot.",
-          "gloss": "They should have notified"
+          "inflected": "Nekik korábban kellett volna szólniuk",
+          "sentence": "Nekik korábban kellett volna szólniuk a családnak.",
+          "gloss": "They should have told"
         }
       ],
       "teaches": [
@@ -167,10 +167,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Nelli egész éjjel a saját ____ viaskodott a betegágy mellett.",
-      "hint": "lelkiismeret, her, instrumental",
-      "answer": "lelkiismeretével",
-      "english": "All night Nelli wrestled with her own conscience beside the sickbed.",
+      "sentence": "A jó orvos a saját ____ szerint dönt.",
+      "hint": "lelkiismeret, his/her",
+      "answer": "lelkiismerete",
+      "english": "A good doctor decides according to his own conscience.",
       "teaches": [
         "b2-medicine-ethics-responsibility-vocab"
       ]
@@ -182,8 +182,8 @@
       "stage": "practice",
       "question": "Which sentence expresses that an action was morally forbidden in the past?",
       "options": [
-        "Nem szabadott volna eltitkolni a kockázatokat a beteg elől.",
-        "Nem kellett volna ma reggel korán felkelnem.",
+        "Nem szabadott volna halogatni a kezelést.",
+        "Nem kellett volna olyan korán felkelnem.",
         "Nem tudok válaszolni erre a kérdésre."
       ],
       "correct": 0,
@@ -199,17 +199,17 @@
       "prompt": [
         {
           "speaker": "Főorvos",
-          "text": "Miért került a beteg ilyen válságos állapotba?"
+          "text": "Miért került a beteg ilyen rossz állapotba?"
         },
         {
           "speaker": "Ügyeletes",
-          "text": "_____"
+          "text": "____"
         }
       ],
       "options": [
-        "Már három nappal ezelőtt kórházba kellett volna szállítani.",
-        "Később fogjuk megvizsgálni a beteget.",
-        "Mert minden előírást pontosan betartott."
+        "Már három nappal ezelőtt kórházba kellett volna vinni.",
+        "Már három nappal ezelőtt kórházba kellett volna vinnie.",
+        "Már három nappal ezelőtt kórházba kellett vinni volna."
       ],
       "correct": 0,
       "teaches": [
@@ -224,17 +224,17 @@
       "prompt": [
         {
           "speaker": "Nelli",
-          "text": "Én vagyok a hibás, amiért kiment a szélbe lovagolni?"
+          "text": "A férjem a hideg szélben sétált, amikor beteg volt. Én vagyok a hibás?"
         },
         {
           "speaker": "Orvos",
-          "text": "_____"
+          "text": "____"
         }
       ],
       "options": [
-        "Nem, asszonyom, a férjének nem szabadott volna figyelmen kívül hagynia a lázat.",
-        "Igen, önnek kellett volna lovagolnia a földeken.",
-        "Nem, mert a láz nagyon egészséges volt."
+        "Nem, asszonyom, a férjének nem szabadott volna sétálnia, amikor beteg volt.",
+        "Nem, asszonyom, a férje nem szabadott volna sétálnia, amikor beteg volt.",
+        "Igen, asszonyom, a férjének nem szabadott volna sétálnia, amikor beteg volt."
       ],
       "correct": 0,
       "teaches": [
@@ -248,8 +248,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write: We should have called the doctor sooner.",
-          "answer": "Hamarabb kellett volna hívnunk az orvost."
+          "prompt": "Write: We should have called the doctor earlier.",
+          "answer": "Korábban kellett volna hívnunk az orvost."
         }
       ],
       "teaches": [

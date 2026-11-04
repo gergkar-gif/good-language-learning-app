@@ -54,10 +54,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "Az új kísérleti adatok végleg ____ a korábbi téves feltevést.",
+      "sentence": "Az új adatok ____ a régi feltevést.",
       "hint": "refuted",
       "answer": "megcáfolták",
-      "english": "The new experimental data definitively refuted the earlier mistaken hypothesis.",
+      "english": "The new data refuted the old hypothesis.",
       "teaches": [
         "b2-scientific-discovery-hypothesis-vocab"
       ]
@@ -67,10 +67,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "Minél pontosabb a mérés, ____ megbízhatóbb a levont következtetés.",
+      "sentence": "Minél pontosabb a munka, ____ jobb a következtetés.",
       "hint": "the [more]",
       "answer": "annál",
-      "english": "The more accurate the measurement, the more reliable the drawn conclusion.",
+      "english": "The more accurate the work, the better the conclusion.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -91,42 +91,42 @@
     {
       "id": "b2-07-consolidation-7",
       "type": "dialogue-complete",
-      "category": "dialogue",
+      "category": "vocabulary",
       "stage": "in-context",
       "prompt": [
         {
           "speaker": "Kutató",
-          "text": "Mikor tekinthetjük bizonyítottnak ezt az összefüggést?"
+          "text": "Mikor lehet biztos az eredmény?"
         },
         {
           "speaker": "Professzor",
-          "text": "_____"
+          "text": "____"
         }
       ],
       "options": [
-        "Csak abban az esetben, amennyiben minden független mérés ugyanazt az eredményt hozza.",
-        "Akkor, ha még egyetlen kísérletet sem végeztünk el.",
-        "Jóllehet az adatok egymásnak ellentmondanak."
+        "Csak abban az esetben, ha minden kísérlet ilyen eredményt ad.",
+        "Csak abban az esetben, hogy minden kísérlet ilyen eredményt ad.",
+        "Csak abban az esetben, ha minden kísérlet ilyen eredményt adni."
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
+        "b2-scientific-discovery-hypothesis-vocab"
       ]
     },
     {
       "id": "b2-07-consolidation-8",
       "type": "multiple-choice",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "in-context",
       "question": "Which sentence uses 'oly módon, hogy' accurately in a medical context?",
       "options": [
-        "A sebész oly módon végezte a műtétet, hogy a beteg végig eszméleténél maradt.",
-        "A sebész oly módon végezte a műtétet, hogy a beteg végig eszméleténél maradjon.",
-        "A sebész oly módon végezte a műtétet, mintha a beteg végig eszméleténél nem maradna."
+        "Az orvos oly módon kezelte a beteget, hogy a beteg nem félt.",
+        "Az orvos oly módon kezelte a beteget, hogy a beteg nem félni.",
+        "Az orvos oly módon kezelte a beteget, mert a beteg nem félt."
       ],
       "correct": 0,
       "teaches": [
-        "correlative-minel-annal"
+        "b2-scientific-discovery-hypothesis-vocab"
       ]
     },
     {
@@ -134,11 +134,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "in-context",
-      "question": "Which adjective fits: 'A ____ megfigyelés kizárja a szubjektív elfogultságot'?",
+      "question": "Which adjective fits: 'A ____ ember csak a tényeket mondja el.'?",
       "options": [
         "tárgyilagos",
-        "kimondatlan",
-        "időleges"
+        "módszeres",
+        "kísérleti"
       ],
       "correct": 0,
       "teaches": [
@@ -189,8 +189,6 @@
         "annál",
         "kevésbé",
         "félünk",
-        "az",
-        "ismeretlentől",
         "."
       ],
       "solution": [
@@ -200,11 +198,9 @@
         "annál",
         "kevésbé",
         "félünk",
-        "az",
-        "ismeretlentől",
         "."
       ],
-      "english": "The more we know, the less we fear the unknown.",
+      "english": "The more we know, the less afraid we are.",
       "teaches": [
         "correlative-minel-annal"
       ]
@@ -212,16 +208,16 @@
     {
       "id": "b2-07-consolidation-12",
       "type": "structured-writing",
-      "category": "writing",
+      "category": "vocabulary",
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a B2 sentence using 'amennyiben' and 'beigazolódik': The hypothesis proves true provided that the experiment is repeatable.",
-          "answer": "A feltevés beigazolódik, amennyiben a kísérlet megismételhető."
+          "prompt": "Write a B2 sentence using 'amennyiben' and 'beigazolódik': The hypothesis proves true provided that the experiment succeeds.",
+          "answer": "A feltevés beigazolódik, amennyiben a kísérlet sikerül."
         }
       ],
       "teaches": [
-        "correlative-minel-annal"
+        "b2-scientific-discovery-hypothesis-vocab"
       ]
     }
   ]

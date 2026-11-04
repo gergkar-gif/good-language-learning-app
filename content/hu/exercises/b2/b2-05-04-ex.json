@@ -73,7 +73,7 @@
       ],
       "correct": 0,
       "teaches": [
-        "b2-frequentative-verbs"
+        "ra-re"
       ]
     },
     {
@@ -81,10 +81,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A mester ____ adogatta át a tudását a fiatal tanítványoknak.",
+      "sentence": "A mester ____ adogatta át a fortélyait a fiataloknak.",
       "hint": "little by little",
       "answer": "apránként",
-      "english": "Little by little, the master passed on his knowledge to the young apprentices.",
+      "english": "Little by little, the master passed on his craft secrets to the young.",
       "teaches": [
         "b2-frequentative-verbs"
       ]
@@ -94,10 +94,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A népi ____ ápolása összetartja a falusi közösséget.",
+      "sentence": "A népi ____ fontosak a falunak.",
       "hint": "customs - pl.",
       "answer": "szokások",
-      "english": "Nurturing folk customs holds the village community together.",
+      "english": "Folk customs are important for the village.",
       "teaches": [
         "b2-roots-tradition-collective-memory-vocab"
       ]
@@ -113,7 +113,8 @@
         "fortélyai",
         "nemzedékről",
         "nemzedékre",
-        "szálltak",
+        "mentek",
+        "tovább",
         "a",
         "családban."
       ],
@@ -123,13 +124,14 @@
         "fortélyai",
         "nemzedékről",
         "nemzedékre",
-        "szálltak",
+        "mentek",
+        "tovább",
         "a",
         "családban."
       ],
-      "english": "The secrets of the craft passed from generation to generation in the family.",
+      "english": "The secrets of the craft passed on from generation to generation in the family.",
       "teaches": [
-        "b2-frequentative-verbs"
+        "delative-rol-rel"
       ]
     },
     {
@@ -137,12 +139,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A betlehemesek ____ házra jártak, és jókívánságokat énekelgettek.",
+      "sentence": "A gyerekek ____ házra jártak, és énekelgettek.",
       "hint": "from house to house",
       "answer": "házról",
-      "english": "The nativity players went from house to house, singing good wishes.",
+      "english": "The children went from house to house and sang.",
       "teaches": [
-        "b2-frequentative-verbs"
+        "delative-rol-rel"
       ]
     },
     {
@@ -199,17 +201,17 @@
       "prompt": [
         {
           "speaker": "Néprajzkutató",
-          "text": "Hogyan maradtak fenn ezek az ősi székely mesék könyvek nélkül is?"
+          "text": "Hogyan maradtak meg ezek a mesék könyvek nélkül?"
         },
         {
           "speaker": "Adatközlő",
-          "text": "____"
+          "text": "_____"
         }
       ],
       "options": [
-        "Téli estéken a fonóban mesélgették őket, így szálltak szájról szájra, nemzedékről nemzedékre.",
-        "Téli estéken a fonóban egyetlenegyszer elmondták a nemzedékről a nemzedékig.",
-        "Téli estéken szájból szájba mesélni őket!"
+        "Esténként mesélgették őket, így mentek szájról szájra, nemzedékről nemzedékre.",
+        "Esténként mesélgették őket, így mentek szájról szájra, nemzedékről nemzedékig.",
+        "Esténként mesélgették őket, így mentek szájról szájra, nemzedékről a nemzedékre."
       ],
       "correct": 0,
       "teaches": [
@@ -224,17 +226,17 @@
       "prompt": [
         {
           "speaker": "Inas",
-          "text": "Mikor fogom én is olyan gyorsan korongozni a korsót, mint a mester?"
+          "text": "Mikor leszek én is olyan jó, mint a mester?"
         },
         {
           "speaker": "Fazekas",
-          "text": "____"
+          "text": "_____"
         }
       ],
       "options": [
-        "Ne türelmetlenkedj: apránként, napról napra gyakorolgasd a mozdulatot, és a kezedbe áll majd az agyag!",
-        "Ne türelmetlenkedj: egyetlen szempillantás alatt gyakorolgasd meg az egészet!",
-        "Ne türelmetlenkedj: napokban napokra gyakorolni!"
+        "Ne siess: apránként, napról napra gyakorolgasd, és menni fog!",
+        "Ne siess: apránként, napról napra gyakorolgasz, és menni fog!",
+        "Ne siess: apránként, napról napnak gyakorolgasd, és menni fog!"
       ],
       "correct": 0,
       "teaches": [
@@ -248,12 +250,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence explaining how a family recipe or craft was passed down from generation to generation (use 'nemzedékről nemzedékre').",
-          "answer": "Ez a különleges családi recept nemzedékről nemzedékre öröklődött a nagyszüleinktől."
+          "prompt": "Write a sentence explaining how a family recipe was passed on from generation to generation (use 'nemzedékről nemzedékre').",
+          "answer": "Ez a recept nemzedékről nemzedékre ment tovább a családban."
         },
         {
           "prompt": "Write a sentence about learning the secrets of a craft little by little (use 'apránként' and 'fortély').",
-          "answer": "Apránként sajátítottam el a mesterség legfontosabb fortélyait."
+          "answer": "Apránként tanultam meg a mesterség fortélyait."
         }
       ],
       "teaches": [
@@ -267,8 +269,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence describing how folk ballads spread by word of mouth ('szájról szájra') across the centuries.",
-          "answer": "A régi népballadák évszázadokon át szájról szájra terjedtek a falvakban."
+          "prompt": "Write a sentence describing how old songs spread by word of mouth ('szájról szájra') across the centuries.",
+          "answer": "A régi dalok évszázadokon át szájról szájra terjedtek."
         }
       ],
       "teaches": [
@@ -280,11 +282,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A kórus tagjai évről ____ visszatérnek erre a fesztiválra.",
+      "sentence": "A vendégek évről ____ visszajönnek a faluba.",
       "answer": "évre",
-      "english": "From year to year, the members of the choir return to this festival.",
+      "english": "From year to year the guests come back to the village.",
       "teaches": [
-        "b2-frequentative-verbs"
+        "ra-re"
       ]
     },
     {

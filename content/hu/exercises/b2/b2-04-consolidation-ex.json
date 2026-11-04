@@ -51,9 +51,9 @@
       "stage": "recognize",
       "question": "Which sentence correctly uses 'nehogy'?",
       "options": [
-        "Leírta a beszéd vázlatát, nehogy kihagyjon egyetlen fontos érvet is.",
-        "Leírta a beszéd vázlatát, nehogy ne hagyjon ki egyetlen fontos érvet is.",
-        "Leírta a beszéd vázlatát, nehogy kihagy egyetlen fontos érvet is."
+        "Felírta a szöveget, nehogy elfelejtsen egyetlen szót is.",
+        "Felírta a szöveget, nehogy ne felejtsen el egyetlen szót is.",
+        "Felírta a szöveget, nehogy elfelejt egyetlen szót is."
       ],
       "correct": 0,
       "teaches": [
@@ -65,10 +65,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A védőbeszéd minden ____ vádat tételesen megcáfolt.",
+      "sentence": "A védőbeszéd minden ____ vádat cáfolt.",
       "hint": "baseless",
       "answer": "alaptalan",
-      "english": "The defense speech refuted every baseless accusation point by point.",
+      "english": "The defense speech refuted every baseless accusation.",
       "teaches": [
         "b2-performance-drama-persuasion-vocab"
       ]
@@ -78,11 +78,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A rendező nyomatékosan arra kérte a színészeket, hogy ____ késsenek el a főpróbáról.",
+      "sentence": "A rendező nyomatékosan arra kérte a színészeket, hogy ____ késsenek el a próbáról.",
       "answer": "ne",
-      "english": "The director emphatically asked the actors not to be late for the dress rehearsal.",
+      "english": "The director emphatically asked the actors not to be late for the rehearsal.",
       "teaches": [
-        "nehogy-purpose"
+        "hogy-jon-jen"
       ]
     },
     {
@@ -91,11 +91,11 @@
       "category": "grammar",
       "stage": "recall",
       "sentence": "____ bármilyen nehéz is a próbatétel, nem adjuk fel az elveinket!",
-      "hint": "lesz/van -> Legyen",
+      "hint": "lesz/van, 3sg subjunctive",
       "answer": "Legyen",
       "english": "No matter how difficult the ordeal may be, we will not give up our principles!",
       "teaches": [
-        "nehogy-purpose"
+        "hogy-jon-jen"
       ]
     },
     {
@@ -103,15 +103,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Choose the deliberative subjunctive question that fits a moment of moral crisis:",
+      "question": "Which question means 'Whom should I turn to if even the judge stays silent?'",
       "options": [
-        "Kihez forduljak, ha még a legfőbb bíró is hallgat?",
-        "Kihez fordulok, amikor a bíró hallgatott?",
-        "Kihez fordulni, ha a bíró hallgat?"
+        "Kihez forduljak, ha még a bíró is hallgat?",
+        "Kihez fordulok, ha még a bíró is hallgat?",
+        "Kihez forduljon, ha még a bíró is hallgat?"
       ],
       "correct": 0,
       "teaches": [
-        "nehogy-purpose"
+        "mit-csinaljak"
       ]
     },
     {
@@ -122,17 +122,17 @@
       "prompt": [
         {
           "speaker": "Politikus",
-          "text": "Miért nem válaszoltál azonnal a provokatív kérdésre?"
+          "text": "Miért nem válaszoltál azonnal a kérdésre?"
         },
         {
           "speaker": "Szóvivő",
-          "text": "____"
+          "text": "_____"
         }
       ],
       "options": [
-        "Visszafogtam magam, nehogy egy elhamarkodott kijelentéssel botrányt robbantsak ki.",
-        "Visszafogtam magam, nehogy egy elhamarkodott kijelentéssel nem robbantok ki botrányt.",
-        "Visszafogtam magam, hogy nehogy robbantsak ki botrányt nem."
+        "Visszafogtam magam, nehogy elhamarkodottan válaszoljak.",
+        "Visszafogtam magam, nehogy elhamarkodottan válaszolok.",
+        "Visszafogtam magam, nehogy ne válaszoljak elhamarkodottan."
       ],
       "correct": 0,
       "teaches": [
@@ -146,13 +146,13 @@
       "stage": "in-context",
       "question": "What does 'Kerüljön bármibe is, kiderítjük az igazságot!' express?",
       "options": [
-        "Unconditional resolve ('Whatever it may cost, we will uncover the truth!').",
+        "Resolve: whatever it costs, we will find out.",
         "Fear that uncovering the truth will be too expensive.",
         "A polite request to calculate the expenses first."
       ],
       "correct": 0,
       "teaches": [
-        "nehogy-purpose"
+        "concessive-indefinites"
       ]
     },
     {
@@ -166,9 +166,11 @@
         "attól,",
         "hogy",
         "elhamarkodottan",
-        "ítélj,",
+        "válaszolj,",
         "nehogy",
-        "megbánd!"
+        "bajba",
+        "kerülj",
+        "!"
       ],
       "solution": [
         "Óva",
@@ -176,11 +178,13 @@
         "attól,",
         "hogy",
         "elhamarkodottan",
-        "ítélj,",
+        "válaszolj,",
         "nehogy",
-        "megbánd!"
+        "bajba",
+        "kerülj",
+        "!"
       ],
-      "english": "I warn you against judging hastily, lest you regret it!",
+      "english": "I warn you against answering hastily, lest you get into trouble!",
       "teaches": [
         "nehogy-purpose"
       ]
@@ -216,7 +220,7 @@
       ],
       "english": "Whoever may try to distort our words, we will stand by the truth.",
       "teaches": [
-        "nehogy-purpose"
+        "hogy-jon-jen"
       ]
     },
     {
@@ -227,7 +231,7 @@
       "template": [
         {
           "prompt": "Write a two-part persuasive statement: first concede a difficulty with 'Legyen bármilyen ... is', then warn the audience with 'nehogy + subjunctive'.",
-          "answer": "Legyen bármilyen fárasztó is a vita, őrizzük meg a nyugalmunkat, nehogy elveszítsük a hallgatóság rokonszenvét."
+          "answer": "Legyen bármilyen fárasztó is a vita, őrizzük meg a nyugalmunkat, nehogy elveszítsük a közönség rokonszenvét."
         }
       ],
       "teaches": [

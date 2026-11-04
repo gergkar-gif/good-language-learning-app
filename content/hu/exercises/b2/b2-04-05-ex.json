@@ -67,9 +67,9 @@
       "stage": "controlled",
       "question": "Which sentence combines an indirect command with a negative purpose clause correctly?",
       "options": [
-        "Arra kérte a tanúkat, hogy írják alá a jegyzőkönyvet, nehogy bárki elferdítse a szavaikat.",
-        "Arra kérte a tanúkat, hogy aláírják a jegyzőkönyvet, nehogy bárki nem ferdíti el a szavaikat.",
-        "Arra kérte a tanúkat, hogy írni alá a jegyzőkönyvet, nehogy ferdítse el a szavaikat."
+        "Arra kérte a tanúkat, hogy írják alá a jegyzőkönyvet, nehogy valaki elferdítse a szavaikat.",
+        "Arra kérte a tanúkat, hogy írják alá a jegyzőkönyvet, nehogy valaki elferdíti a szavaikat.",
+        "Arra kérte a tanúkat, hogy írják alá a jegyzőkönyvet, nehogy valaki ne elferdítse a szavaikat."
       ],
       "correct": 0,
       "teaches": [
@@ -81,9 +81,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Arra szólítok fel mindenkit, hogy őrizze meg a békét, ____ a viszály romlásba döntse a hazát!",
+      "sentence": "Arra szólítok fel mindenkit, hogy őrizze meg a békét, ____ a viszály gyengítse a hazát!",
       "answer": "nehogy",
-      "english": "I call upon everyone to preserve the peace, lest discord plunge the homeland into ruin!",
+      "english": "I call upon everyone to preserve the peace, lest discord weaken the homeland!",
       "teaches": [
         "nehogy-purpose"
       ]
@@ -93,10 +93,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "Bánk bán ebben a ____ órában nem hallgathatott tovább.",
+      "sentence": "Bánk bán ebben a ____ órában már nem tudott hallgatni.",
       "hint": "fateful",
       "answer": "sorsdöntő",
-      "english": "In this fateful hour, Bánk bán could no longer remain silent.",
+      "english": "In this fateful hour, Bánk bán could no longer stay silent.",
       "teaches": [
         "b2-performance-drama-persuasion-vocab"
       ]
@@ -113,9 +113,10 @@
         "is",
         "az",
         "igazság,",
-        "nem",
-        "hallgathatjuk",
-        "el."
+        "ki",
+        "kell",
+        "mondanunk",
+        "."
       ],
       "solution": [
         "Legyen",
@@ -124,13 +125,14 @@
         "is",
         "az",
         "igazság,",
-        "nem",
-        "hallgathatjuk",
-        "el."
+        "ki",
+        "kell",
+        "mondanunk",
+        "."
       ],
-      "english": "No matter how painful the truth may be, we cannot conceal it.",
+      "english": "No matter how painful the truth may be, we must say it.",
       "teaches": [
-        "nehogy-purpose"
+        "hogy-jon-jen"
       ]
     },
     {
@@ -138,12 +140,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Bárki ____ is elferdíteni a tényeket, a dokumentumok bizonyítják az igazunkat.",
+      "sentence": "Bárki ____ is elferdíteni a tényeket, mi az igazat mondjuk.",
       "hint": "próbál - 3sg subjunctive def.",
       "answer": "próbálja",
-      "english": "Whoever may try to distort the facts, the documents prove that we are right.",
+      "english": "Whoever may try to distort the facts, we will tell the truth.",
       "teaches": [
-        "nehogy-purpose"
+        "hogy-jon-jen"
       ]
     },
     {
@@ -165,29 +167,31 @@
     {
       "id": "b2-04-05-practice-4",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "practice",
       "tiles": [
         "Nem",
-        "hagyhatjuk,",
+        "akarjuk,",
         "hogy",
         "elferdítsék",
         "a",
         "történelmi",
-        "tényeket."
+        "tényeket",
+        "."
       ],
       "solution": [
         "Nem",
-        "hagyhatjuk,",
+        "akarjuk,",
         "hogy",
         "elferdítsék",
         "a",
         "történelmi",
-        "tényeket."
+        "tényeket",
+        "."
       ],
-      "english": "We cannot let them distort the historical facts.",
+      "english": "We do not want them to distort the historical facts.",
       "teaches": [
-        "b2-performance-drama-persuasion-vocab"
+        "hogy-jon-jen"
       ]
     },
     {
@@ -198,17 +202,17 @@
       "prompt": [
         {
           "speaker": "Tiborc",
-          "text": "Nagyuram, meddig tűrjük még az udvaroncok jogtalanságait?"
+          "text": "Nagyuram, meddig várjunk még?"
         },
         {
           "speaker": "Bánk bán",
-          "text": "____"
+          "text": "_____"
         }
       ],
       "options": [
-        "Arra kérlek, tartsatok ki még egy keveset, nehogy a vak indulat még nagyobb bajt hozzon rátok!",
-        "Arra kérlek, kitartotok még egy keveset, nehogy a vak indulat nem hoz bajt!",
-        "Arra kérlek, hogy kitartani, nehogy hozzon bajt a vak indulat!"
+        "Arra kérlek, várjatok még egy keveset, nehogy baj legyen belőle!",
+        "Arra kérlek, vártok még egy keveset, nehogy baj legyen belőle!",
+        "Arra kérlek, várjatok még egy keveset, nehogy baj van belőle!"
       ],
       "correct": 0,
       "teaches": [
@@ -223,17 +227,17 @@
       "prompt": [
         {
           "speaker": "Színész",
-          "text": "Hogyan formáljam meg Bánk bán monológjának csúcspontját?"
+          "text": "Hogyan mondjam el ezt a szöveget?"
         },
         {
           "speaker": "Rendező",
-          "text": "____"
+          "text": "_____"
         }
       ],
       "options": [
-        "Éreztesd a belső meghasonlást, de fogd vissza a hangerőt, nehogy puszta kiabálássá váljon a jelenet!",
-        "Éreztesd a belső meghasonlást, de fogd vissza a hangerőt, nehogy váljon kiabálássá nem a jelenet!",
-        "Érezteted a belső meghasonlást, hogy nem válik kiabálássá!"
+        "Mondd lassan, nehogy elfelejtsd a szöveget!",
+        "Mondd lassan, nehogy elfelejted a szöveget!",
+        "Mondd lassan, nehogy nem felejtsd el a szöveget!"
       ],
       "correct": 0,
       "teaches": [
@@ -271,7 +275,7 @@
         }
       ],
       "teaches": [
-        "nehogy-purpose"
+        "hogy-jon-jen"
       ]
     },
     {
@@ -279,9 +283,9 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "Óvatosan fogalmazta meg a bírálatot, ____ megsértse a társulat tagjait.",
+      "sentence": "Óvatosan beszélt, ____ bajba kerüljön.",
       "answer": "nehogy",
-      "english": "He phrased the critique carefully lest he offend the members of the company.",
+      "english": "He spoke carefully lest he get into trouble.",
       "teaches": [
         "nehogy-purpose"
       ]
@@ -307,11 +311,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Miért keresi fel Tiborc az éj leple alatt Bánk bánt a királyi palotában?",
+      "question": "Miért megy Tiborc éjjel Bánk bánhoz?",
       "options": [
-        "Hogy elpanaszolja a nép nyomorúságát, és segítséget kérjen.",
-        "Hogy meghívja a nádort az udvaroncok fényes lakomájára.",
-        "Hogy jelentse a király váratlan hazatérését a hadjáratból."
+        "Mert a szegény emberek nagyon rosszul élnek, és segítséget kér.",
+        "Mert Bánk bán hívta, hogy együtt vacsorázzanak a palotában.",
+        "Mert a király hazajött, és ezt el akarja mondani neki."
       ],
       "correct": 0
     },
@@ -320,11 +324,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen figyelmeztetéssel látja el Bánk bán Tiborcot a beszélgetés során?",
+      "question": "Mit kér Bánk bán Tiborctól?",
       "options": [
-        "Óva inti attól, hogy önbíráskodásra vetemedjen, nehogy a törvény sújtson le rájuk.",
-        "Azt tanácsolja neki, hogy azonnal hagyja el az országot a családjával.",
-        "Megtiltja neki, hogy valaha is újra a szemébe nézzen."
+        "Hogy a nép ne keljen fel fegyverrel.",
+        "Hogy hagyja el az országot a családjával.",
+        "Hogy ne jöjjön többet a palotába."
       ],
       "correct": 0
     },
@@ -333,11 +337,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Mit határoz el Bánk bán, miután Tiborc távozik a teremből?",
+      "question": "Mit ígér Bánk bán Tiborcnak?",
       "options": [
-        "Hogy a királyné elé áll, és követeli a fosztogatás beszüntetését, kerüljön bármibe is az igazság kimondása.",
-        "Hogy lemond nádori tisztségéről, és visszavonul a birtokára.",
-        "Hogy titokban elhagyja a palotát, mielőtt a lakoma véget érne."
+        "Hogy még ma éjjel a királyné elé áll.",
+        "Hogy másnap elhagyja a palotát, és hazamegy.",
+        "Hogy még ma éjjel hazaviszi Tiborcot a faluba."
       ],
       "correct": 0
     }

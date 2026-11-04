@@ -8,8 +8,8 @@
       "stage": "introduce",
       "question": "What does the noun 'megszállottság' mean in the context of artistic creation?",
       "options": [
-        "obsession / intense creative devotion",
-        "indifference / boredom",
+        "obsession / creative devotion",
+        "total indifference / boredom",
         "commercial success"
       ],
       "correct": 0,
@@ -68,8 +68,8 @@
       "question": "Which sentence correctly combines a causal '-ván/-vén' participle with a stative 'van + -va/-ve' clause?",
       "options": [
         "Látván, hogy a kapu nincs bezárva, a festő belépett a kertbe.",
-        "Látva volt, hogy a kapu nem bezárván, a festő belépett a kertbe.",
-        "Látván, hogy a kapu bezárni van, a festő belépett a kertbe."
+        "Látván, hogy a kapu nincs bezárni, a festő belépett a kertbe.",
+        "Látni, hogy a kapu nincs bezárva, a festő belépett a kertbe."
       ],
       "correct": 0,
       "teaches": [
@@ -94,10 +94,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A festő a látható világ mögött a láthatatlan ____ kereste.",
-      "hint": "harmony - acc.",
+      "sentence": "A festő a külső világ mögött a belső ____ kereste.",
+      "hint": "harmónia, object",
       "answer": "harmóniát",
-      "english": "Behind the visible world, the painter sought the invisible harmony.",
+      "english": "Behind the outer world, the painter sought the inner harmony.",
       "teaches": [
         "b2-aesthetics-vision-creative-obsession-vocab"
       ]
@@ -109,29 +109,23 @@
       "stage": "practice",
       "tiles": [
         "Műtermébe",
-        "visszatérve",
-        "hajnalig",
-        "megállás",
-        "nélkül",
+        "visszatérve,",
+        "sokáig",
         "dolgozva",
-        "alkotta",
-        "meg",
+        "befejezte",
         "a",
         "remekművet."
       ],
       "solution": [
         "Műtermébe",
-        "visszatérve",
-        "hajnalig",
-        "megállás",
-        "nélkül",
+        "visszatérve,",
+        "sokáig",
         "dolgozva",
-        "alkotta",
-        "meg",
+        "befejezte",
         "a",
         "remekművet."
       ],
-      "english": "Returning to his studio and working nonstop until dawn, he created the masterpiece.",
+      "english": "Returning to his studio and working for a long time, he finished the masterpiece.",
       "teaches": [
         "participle-actions"
       ]
@@ -141,10 +135,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A külső zajoktól ____ figyelt a belső látomásra.",
-      "hint": "lecsendesedik -> -va/-ve",
+      "sentence": "A mester ____ figyelte a kertet.",
+      "hint": "lecsendesedik",
       "answer": "lecsendesedve",
-      "english": "Growing quiet from external noises, he paid attention to the inner vision.",
+      "english": "Growing quiet, the master watched the garden.",
       "teaches": [
         "participle-actions"
       ]
@@ -171,32 +165,28 @@
       "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "alkotói",
-        "megszállottság",
+        "Megszállottság",
         "nélkül",
         "nem",
-        "születhetett",
+        "festette",
         "volna",
         "meg",
-        "ez",
+        "ezt",
         "a",
-        "remekmű."
+        "remekművet."
       ],
       "solution": [
-        "Az",
-        "alkotói",
-        "megszállottság",
+        "Megszállottság",
         "nélkül",
         "nem",
-        "születhetett",
+        "festette",
         "volna",
         "meg",
-        "ez",
+        "ezt",
         "a",
-        "remekmű."
+        "remekművet."
       ],
-      "english": "Without creative obsession, this masterpiece could not have been born.",
+      "english": "Without obsession, he would not have painted this masterpiece.",
       "teaches": [
         "b2-aesthetics-vision-creative-obsession-vocab"
       ]
@@ -209,7 +199,7 @@
       "prompt": [
         {
           "speaker": "A festő",
-          "text": "Miért nem sikerült eddig megragadnom a kert igazi hangulatát?"
+          "text": "Miért nem sikerült eddig megfestenem a kert hangulatát?"
         },
         {
           "speaker": "A mester",
@@ -217,9 +207,9 @@
         }
       ],
       "options": [
-        "Mert a külső részleteket gépiesen másolva elfeledkeztél arról a belső fényről, amelyből a harmónia fakad.",
-        "Mert a külső részleteket gépiesen másolni voltál elfeledkezve a belső fényről.",
-        "Mert a külső részletek másolván elfeledkezni a belső fényről!"
+        "Mert csak másolva dolgoztál, és nem néztél a belső fényre.",
+        "Mert csak másolni dolgoztál, és nem néztél a belső fényre.",
+        "Mert csak másolve dolgoztál, és nem néztél a belső fényre."
       ],
       "correct": 0,
       "teaches": [
@@ -233,18 +223,18 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Irodalomtörténész",
-          "text": "Hogyan hatott a festészet Csáth Géza novelláinak stílusára?"
+          "speaker": "Tanár",
+          "text": "Hogyan dolgozott a festő az éjszaka a műteremben?"
         },
         {
-          "speaker": "Esztéta",
+          "speaker": "Diák",
           "text": "____"
         }
       ],
       "options": [
-        "Kiváló rajzoló és zenész lévén Csáth minden jelenetet úgy komponált meg, mintha a szavak színekből lennének szőve.",
-        "Kiváló rajzoló lenni Csáth minden jelenetet úgy komponált, mintha szőni a szavakat.",
-        "Kiváló rajzoló volt lévén, a szavakat szőve csinálta."
+        "Lecsendesedve figyelt, aztán új látomással eltelve festett egész éjjel.",
+        "Lecsendesedni figyelt, aztán új látomással eltelve festett egész éjjel.",
+        "Lecsendesedve figyelt, aztán új látomással eltelva festett egész éjjel."
       ],
       "correct": 0,
       "teaches": [
@@ -258,12 +248,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence describing how the painter, filled with a new vision, returned to his studio and created a masterpiece.",
-          "answer": "Új látomással eltelve tért vissza a műtermébe, és hajnalig dolgozva megalkotta élete remekművét."
+          "prompt": "Write a sentence describing how the painter, filled with a new vision, returned to his studio and painted the masterpiece.",
+          "answer": "Új látomással eltelve visszatért a műtermébe, és egész éjjel dolgozva megfestette a remekművet."
         },
         {
           "prompt": "Write a sentence using both a '-ván/-vén' clause and a '-va/-ve' manner participle.",
-          "answer": "Tudván, hogy a pillanat megismételhetetlen, a festő lélegzet-visszafojtva figyelte a kert fényeit."
+          "answer": "Tudván, hogy a fény hamar eltűnik, a festő lecsendesedve figyelte a kertet."
         }
       ],
       "teaches": [
@@ -277,8 +267,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a critical observation stating that the garden's gate was left slightly open as if waiting for the artist.",
-          "answer": "A varázsló kertjének kapuja résnyire nyitva volt hagyva, mintha a látomást kereső művészt várta volna."
+          "prompt": "Write a sentence saying that the garden gate was not locked, only pulled shut, and the painter walked in.",
+          "answer": "A kapu nem volt zárva, csak be volt hajtva, ezért a festő belépett."
         }
       ],
       "teaches": [
@@ -290,10 +280,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A külső formákat háttérbe ____ a belső harmóniát vitte vászonra.",
-      "hint": "szorít -> -va/-ve",
+      "sentence": "A részleteket háttérbe ____ a belső harmóniát festette meg.",
+      "hint": "szorít",
       "answer": "szorítva",
-      "english": "Pushing external forms into the background, he brought inner harmony onto the canvas.",
+      "english": "Pushing the details into the background, he painted the inner harmony.",
       "teaches": [
         "participle-actions"
       ]
@@ -321,9 +311,9 @@
       "stage": "reading",
       "question": "Milyen állapotban találja a fiatal festő a titokzatos kert kovácsoltvas kapuját?",
       "options": [
-        "A kapu nem volt bezárva, csupán résnyire behajtva várta az arra tévedőket.",
-        "Vastag lánccal és lakattal volt lezárva.",
-        "Teljesen le volt döntve a földre."
+        "A kapu nem volt zárva, csak be volt hajtva.",
+        "A kapu zárva volt, a festő nem tudott bemenni.",
+        "A kapu nyitva volt, de egy őr állt előtte."
       ],
       "correct": 0
     },
@@ -334,9 +324,9 @@
       "stage": "reading",
       "question": "Mit tanácsol az idős mester a festőnek a művészi látásmódról?",
       "options": [
-        "Hogy lecsendesedve figyeljen, és ne pusztán a külső tárgyakat másolja, hanem a lélek rezdüléseit vigye vászonra.",
-        "Hogy csak fényes nappal, geometriai pontossággal rajzolja le a növényeket.",
-        "Hogy hagyjon fel a festészettel, és inkább szobrászattal foglalkozzon."
+        "Hogy lecsendesedve figyeljen, és a belső fényt fesse meg.",
+        "Hogy pontosan másolja le a kert minden virágát.",
+        "Hogy gyorsan fessen, és sok vázlatot készítsen."
       ],
       "correct": 0
     },
@@ -347,9 +337,9 @@
       "stage": "reading",
       "question": "Mit tesz a festő, miután visszatér a műtermébe az éjszakai találkozás után?",
       "options": [
-        "Új látomással eltelve, hajnali órákig megállás nélkül dolgozva vászonra viszi a kert emlékét.",
-        "Elégeti a vázlatfüzetét, és soha többé nem vesz ecsetet a kezébe.",
-        "Reggelig alszik, és elfelejti a kertben látottakat."
+        "Egész éjjel dolgozik a műtermében, és megfesti a kertet.",
+        "Eladja a régi képeit, és soha többé nem fest semmit.",
+        "Lefekszik aludni, és másnap elfelejti a kertet."
       ],
       "correct": 0
     }

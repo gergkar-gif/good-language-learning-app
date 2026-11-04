@@ -8,9 +8,9 @@
       "stage": "introduce",
       "question": "What does the verb 'dudorászik' mean?",
       "options": [
-        "to hum softly to oneself",
-        "to shout angrily",
-        "to knock on a door"
+        "to hum quietly",
+        "to shout loudly",
+        "to knock at a door"
       ],
       "correct": 0,
       "teaches": [
@@ -67,9 +67,9 @@
       "stage": "controlled",
       "question": "Which sentence best layers a leisurely background habit with a sudden foreground event?",
       "options": [
-        "Ábel a tűz mellett üldögélt és olvasgatott, amikor hirtelen megzörrent a kilincs.",
-        "Ábel a tűz mellett ült egyetlen pillanatra, amikor egész éjjel üldögélt a kilincs.",
-        "Ábel olvasgatni a tűznél, amikor zörgetni a kilincs."
+        "Ábel a tűz mellett üldögélt, amikor hirtelen megzörrent a kilincs.",
+        "Ábel a tűz mellett üldögélt, amikor hirtelen zörgette a kilincs.",
+        "Ábel a tűz mellett üldögélt, amikor hirtelen megzörgette a kilincs."
       ],
       "correct": 0,
       "teaches": [
@@ -81,10 +81,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A fiú eleinte bátortalanul ____ a hegyi kunyhót.",
+      "sentence": "A fiú félve ____ a kunyhót.",
       "hint": "kerül -> frequentative 3sg past def.",
       "answer": "kerülgette",
-      "english": "At first the boy cautiously circled around the mountain hut.",
+      "english": "The boy, afraid, circled around the hut.",
       "teaches": [
         "b2-frequentative-verbs"
       ]
@@ -94,10 +94,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A népmesékben évszázadok ____ sűrűsödik össze.",
+      "sentence": "Az öreg ember ____ sokat ér.",
       "hint": "bölcsesség, its",
       "answer": "bölcsessége",
-      "english": "The wisdom of centuries is condensed in folk tales.",
+      "english": "The old man's wisdom is worth a lot.",
       "teaches": [
         "b2-roots-tradition-collective-memory-vocab"
       ]
@@ -108,24 +108,26 @@
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Rakosgatta",
+        "Ábel",
+        "rakosgatja",
         "a",
         "fát,",
         "és",
         "közben",
-        "félhangosan",
-        "dudorászott."
+        "dudorászik",
+        "."
       ],
       "solution": [
-        "Rakosgatta",
+        "Ábel",
+        "rakosgatja",
         "a",
         "fát,",
         "és",
         "közben",
-        "félhangosan",
-        "dudorászott."
+        "dudorászik",
+        "."
       ],
-      "english": "He was arranging the wood piece by piece, humming softly to himself the while.",
+      "english": "Ábel is arranging the wood piece by piece and humming meanwhile.",
       "teaches": [
         "b2-frequentative-verbs"
       ]
@@ -135,11 +137,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Az ősök tudása ____ nemzedékre szállva adott erőt a közösségnek.",
+      "sentence": "Az ősök bölcsessége ____ nemzedékre ment tovább.",
       "answer": "nemzedékről",
-      "english": "Passing from generation to generation, the ancestors' knowledge gave strength to the community.",
+      "english": "The ancestors' wisdom passed on from generation to generation.",
       "teaches": [
-        "b2-frequentative-verbs"
+        "delative-rol-rel"
       ]
     },
     {
@@ -198,17 +200,17 @@
       "prompt": [
         {
           "speaker": "Ábel",
-          "text": "Hogyan tudtak az őseink ilyen zord teleket is átvészelni a Hargitán?"
+          "text": "Hogyan éltek régen az emberek a hegyen télen?"
         },
         {
           "speaker": "Ábel apja",
-          "text": "____"
+          "text": "_____"
         }
       ],
       "options": [
-        "Úgy, hogy nem kapkodtak: apránként végezték a dolgukat, és nemzedékről nemzedékre átadták a rengeteg bölcsességét.",
-        "Úgy, hogy elhamarkodottan kapkodtak: nem építettek menedéket, és hamar feladták a téli küzdelmet.",
-        "Úgy, hogy válogatás nélkül mindent feléltek: nem gyűjtögettek készletet a zord hónapok hidegére."
+        "Nem kapkodtak: apránként végezték a dolgukat, és nemzedékről nemzedékre átadták a bölcsességüket.",
+        "Nem kapkodtak: apránként végezték a dolgukat, és nemzedékről nemzedékig átadták a bölcsességüket.",
+        "Nem kapkodtak: apránként végezték a dolgukat, és nemzedékről nemzedékre átadtak a bölcsességüket."
       ],
       "correct": 0,
       "teaches": [
@@ -223,17 +225,17 @@
       "prompt": [
         {
           "speaker": "Olvasó",
-          "text": "Mi adja Tamási Áron prózájának különleges, derűs ritmusát?"
+          "text": "Mitől olyan csendes a regény hangja?"
         },
         {
           "speaker": "Irodalomtörténész",
-          "text": "____"
+          "text": "_____"
         }
       ],
       "options": [
-        "Az, ahogy a szereplők komótosan mendegélnek, üldögélnek, és ízlelgetik a székely nyelv kifejezéseit.",
-        "Az, hogy egyetlen gyakorító vagy kicsinyítő igeképzőt sem használ a regényben.",
-        "Az, hogy minden mondatban hivatalos jogi kifejezéseket halmoz."
+        "Attól, hogy a szereplők komótosan mendegélnek, üldögélnek, és nézegetik a világot.",
+        "Attól, hogy a szereplők komótosan mendegélnek, üldögélnek, és nézegetnek a világot.",
+        "Attól, hogy a szereplők komótosan mendegélnek, üldögélnek, és nézegetik a világnak."
       ],
       "correct": 0,
       "teaches": [
@@ -247,8 +249,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a narrative sentence combining 'üldögél' or 'mendegél' with a '-gat/-get' verb to evoke a peaceful evening in nature.",
-          "answer": "A verandán üldögéltünk, és miközben a csillagokat nézegettük, régi történeteket mesélgettünk egymásnak."
+          "prompt": "Write a narrative sentence combining 'üldögél' with a '-gat/-get' verb to evoke a peaceful evening.",
+          "answer": "A kunyhó előtt üldögéltünk, és miközben a tüzet nézegettük, régi történeteket mesélgettünk egymásnak."
         },
         {
           "prompt": "Write a reflective sentence about the sustaining power of traditions passed down from generation to generation.",
@@ -266,8 +268,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence describing Ábel humming to himself while arranging firewood by his forest cabin.",
-          "answer": "Ábel félhangosan dudorászott, miközben a tűzifát rakosgatta a kunyhó falánál."
+          "prompt": "Write a sentence describing Ábel humming while he arranges the wood by his cabin (present tense).",
+          "answer": "Ábel dudorászik, miközben a fát rakosgatja a kunyhó mellett."
         }
       ],
       "teaches": [
@@ -308,11 +310,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen feladattal bízzák meg Ábelt a Hargita fenyveseiben?",
+      "question": "Mi lesz Ábel munkája a hegyen?",
       "options": [
-        "Erdőpásztorként kell őriznie és árulnia a fát a hegyi kunyhóban.",
-        "Vadászként kell befognia a falubamerészkedő medvéket.",
-        "Tanítóként kell írni-olvasni tanítania a hegyi pásztorokat."
+        "Ő vigyáz a fára, és eladja az embereknek.",
+        "Ő a falu gyerekeit tanítja a hegyen.",
+        "Ő a hegyen új házat épít a falunak."
       ],
       "correct": 0
     },
@@ -321,11 +323,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Milyen híres gondolattal foglalja össze Ábel apja az ember földi hivatását?",
+      "question": "Mit mond Ábel apja arról, miért vagyunk a világon?",
       "options": [
-        "„Azért vagyunk a világon, hogy valahol otthon legyünk benne!”",
-        "„Aki nem dolgozik, ne is egyék!”",
-        "„Mindenki a maga szerencséjének a kovácsa!”"
+        "„Azért vagyunk a világon, hogy valahol otthon legyünk benne.”",
+        "„Azért vagyunk a világon, hogy minél több pénzt gyűjtsünk.”",
+        "„Azért vagyunk a világon, hogy a hegyen magányosan éljünk.”"
       ],
       "correct": 0
     },
@@ -334,11 +336,11 @@
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Hogyan küzdi le Ábel a magányt az első napokban, miután az apja hazatér a faluba?",
+      "question": "Mit csinál Ábel egyedül a kunyhónál?",
       "options": [
-        "Rakosgatja a hasábfákat, dudorászik, és humoros öniróniával biztatja magát.",
-        "Azonnal visszaszalad a faluba az édesapja után.",
-        "Bezárkózik a kunyhóba, és napokig ki sem mer nézni az ablakon."
+        "Rakosgatja a fát, dudorászik, és beszél magához.",
+        "Azonnal lemegy a faluba az apja után.",
+        "Nem mozdul ki az ágyból, és csak alszik."
       ],
       "correct": 0
     }

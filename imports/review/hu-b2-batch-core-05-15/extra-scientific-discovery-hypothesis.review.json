@@ -1,0 +1,566 @@
+[
+ {
+  "file": "content/hu/exercises/b2/b2-07-01-ex.json",
+  "id": "b2-07-01-controlled-2",
+  "set": {
+   "sentence": "____ az adatok pontosak, akkor a számítás is jó.",
+   "hint": "if",
+   "answer": "Ha",
+   "english": "If the data are accurate, then the calculation is good too.",
+   "teaches": [
+    "ha-clause"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-01-ex.json",
+  "id": "b2-07-01-practice-2",
+  "set": {
+   "base_sentence": "A kísérlet sikerül, ha az adatok pontosak.",
+   "base_word": "ha",
+   "base_gloss": "The experiment succeeds if the data are accurate.",
+   "options": [
+    {
+     "word": "amennyiben",
+     "inflected": "amennyiben",
+     "sentence": "A kísérlet sikerül, amennyiben az adatok pontosak.",
+     "gloss": "provided that"
+    },
+    {
+     "word": "abban az esetben, ha",
+     "inflected": "abban az esetben, ha",
+     "sentence": "A kísérlet sikerül, abban az esetben, ha az adatok pontosak.",
+     "gloss": "in the case that"
+    }
+   ],
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-01-ex.json",
+  "id": "b2-07-01-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Professzor",
+     "text": "Elkezdhetjük már a kísérletet?"
+    },
+    {
+     "speaker": "Kutató",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Igen, amennyiben minden adat pontos.",
+    "Igen, annak ellenére, hogy minden adat pontos.",
+    "Igen, abban az esetben minden adat pontos."
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ]
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-01-ex.json",
+  "id": "b2-07-01-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write that the experiment succeeds provided that every figure is accurate.",
+     "answer": "A kísérlet sikerül, amennyiben minden adat pontos."
+    }
+   ],
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ]
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-consolidation-ex.json",
+  "id": "b2-07-consolidation-1",
+  "set": {
+   "question": "Which phrase means 'in the event that'?",
+   "options": [
+    "abban az esetben, ha",
+    "annak ellenére, hogy",
+    "mielőtt"
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-consolidation-ex.json",
+  "id": "b2-07-consolidation-10",
+  "set": {
+   "tiles": [
+    "A",
+    "feltevés",
+    "helytálló,",
+    "amennyiben",
+    "az",
+    "adatok",
+    "pontosak",
+    "."
+   ],
+   "solution": [
+    "A",
+    "feltevés",
+    "helytálló,",
+    "amennyiben",
+    "az",
+    "adatok",
+    "pontosak",
+    "."
+   ],
+   "english": "The hypothesis is valid, provided that the data are accurate.",
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-02-ex.json",
+  "id": "b2-07-02-controlled-4",
+  "set": {
+   "question": "Choose the correct form: 'A kezelés hatása a ____ függően változik.'",
+   "options": [
+    "betegtől",
+    "betegről",
+    "beteghez"
+   ],
+   "correct": 0,
+   "teaches": [
+    "tol-tol"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-02-ex.json",
+  "id": "b2-07-02-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kutató",
+     "text": "Miért változik ennyire az eredmény?"
+    },
+    {
+     "speaker": "Asszisztens",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Az adatoktól függően változik.",
+    "Az adatokról függően változik.",
+    "Az adatok függően változik."
+   ],
+   "correct": 0,
+   "teaches": [
+    "tol-tol"
+   ]
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-02-ex.json",
+  "id": "b2-07-02-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write: The result varies depending on the data.",
+     "answer": "Az eredmény változik, az adatoktól függően."
+    }
+   ],
+   "teaches": [
+    "tol-tol"
+   ]
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-03-ex.json",
+  "id": "b2-07-03-intro-2",
+  "set": {
+   "question": "What does 'a méret szerint' express in an analytical text?",
+   "options": [
+    "according to size",
+    "in spite of its size",
+    "only because of size"
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-03-ex.json",
+  "id": "b2-07-03-controlled-2",
+  "set": {
+   "sentence": "A betegeket az állapotuk ____ csoportosítjuk.",
+   "hint": "according to",
+   "answer": "szerint",
+   "english": "We group the patients according to their condition.",
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-03-ex.json",
+  "id": "b2-07-03-practice-2",
+  "set": {
+   "base_sentence": "A betegeket az állapotuk szerint kezeljük.",
+   "base_word": "az állapotuk szerint",
+   "base_gloss": "We treat the patients according to their condition.",
+   "options": [
+    {
+     "word": "a koruk szerint",
+     "inflected": "a koruk szerint",
+     "sentence": "A betegeket a koruk szerint kezeljük.",
+     "gloss": "according to their age"
+    },
+    {
+     "word": "oly módon, hogy",
+     "inflected": "oly módon, hogy",
+     "sentence": "A betegeket oly módon kezeljük, hogy az állapotuk javul.",
+     "gloss": "in such a way that"
+    }
+   ],
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-03-ex.json",
+  "id": "b2-07-03-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Laborvezető",
+     "text": "Hogyan rendeztétek a betegeket?"
+    },
+    {
+     "speaker": "Kutató",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Az állapotuk szerint rendeztük őket.",
+    "Az állapotukra szerint rendeztük őket.",
+    "Az állapotuk szerinti rendeztük őket."
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ]
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-03-ex.json",
+  "id": "b2-07-03-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write: We classify the phenomena according to the light.",
+     "answer": "A jelenségeket a fény szerint osztályozzuk."
+    }
+   ],
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ]
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-04-ex.json",
+  "id": "b2-07-04-controlled-4",
+  "set": {
+   "question": "Choose the logical completion: 'Ha minden hibaforrást kizártunk, akkor ____.'",
+   "options": [
+    "a következtetés helytálló",
+    "a kísérlet még nem kezdődött el",
+    "az eredmény nem biztos"
+   ],
+   "correct": 0,
+   "teaches": [
+    "ha-clause"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-04-ex.json",
+  "id": "b2-07-04-practice-2",
+  "set": {
+   "base_sentence": "A következtetés helytálló, amennyiben kizárjuk a hibát.",
+   "base_word": "amennyiben",
+   "base_gloss": "The deduction is valid, provided that we rule out the error.",
+   "options": [
+    {
+     "word": "ha",
+     "inflected": "ha",
+     "sentence": "A következtetés helytálló, ha kizárjuk a hibát.",
+     "gloss": "if"
+    },
+    {
+     "word": "abban az esetben, ha",
+     "inflected": "abban az esetben, ha",
+     "sentence": "A következtetés helytálló, abban az esetben, ha kizárjuk a hibát.",
+     "gloss": "in the event that"
+    }
+   ],
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-04-ex.json",
+  "id": "b2-07-04-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Bíráló",
+     "text": "Honnan tudja, hogy ez nem egyszerű fáradtság?"
+    },
+    {
+     "speaker": "Orvos",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Amennyiben a beteg jól pihent, akkor más oka van a bajnak.",
+    "Amennyiben a beteg jól pihenni, akkor más oka van a bajnak.",
+    "Mielőtt a beteg jól pihent, akkor más oka van a bajnak."
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ]
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-05-ex.json",
+  "id": "b2-07-05-controlled-2",
+  "set": {
+   "sentence": "____ az adatok pontosak, akkor a kísérlet sikerül.",
+   "hint": "if",
+   "answer": "Ha",
+   "english": "If the data are accurate, then the experiment succeeds.",
+   "teaches": [
+    "ha-clause"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-05-ex.json",
+  "id": "b2-07-05-practice-2",
+  "set": {
+   "base_sentence": "A kezelés sikerül, amennyiben az orvos pontosan követi a tervet.",
+   "base_word": "amennyiben",
+   "base_gloss": "The treatment succeeds, provided that the doctor follows the plan accurately.",
+   "options": [
+    {
+     "word": "ha",
+     "inflected": "ha",
+     "sentence": "A kezelés sikerül, ha az orvos pontosan követi a tervet.",
+     "gloss": "if"
+    },
+    {
+     "word": "abban az esetben, ha",
+     "inflected": "abban az esetben, ha",
+     "sentence": "A kezelés sikerül, abban az esetben, ha az orvos pontosan követi a tervet.",
+     "gloss": "in the event that"
+    }
+   ],
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-05-ex.json",
+  "id": "b2-07-05-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write: Self-awareness keeps its strength if the mind is not afraid.",
+     "answer": "Az öntudat megőrzi az erejét, ha az elme nem fél."
+    }
+   ],
+   "teaches": [
+    "ha-clause"
+   ]
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-05-ex.json",
+  "id": "b2-07-05-check-2",
+  "set": {
+   "sentence": "Az eredmény az ____ függően változik.",
+   "hint": "orvos",
+   "answer": "orvostól",
+   "english": "The result varies depending on the doctor.",
+   "teaches": [
+    "tol-tol"
+   ],
+   "category": "grammar"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-07-consolidation-ex.json",
+  "id": "b2-07-consolidation-3",
+  "set": {
+   "question": "What does 'a méret szerint' express?",
+   "options": [
+    "according to size",
+    "in spite of its size",
+    "only because of size"
+   ],
+   "correct": 0,
+   "teaches": [
+    "b2-scientific-discovery-hypothesis-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-01-a-gr.json",
+  "old": "feltéve, hogy + indicative",
+  "new": "ha ... akkor ... + indicative",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-01-a-gr.json",
+  "old": "azzal a feltétellel, hogy...",
+  "new": "csak akkor, ha...",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-01-a-gr.json",
+  "old": "Az eredmény érvényes marad, feltéve, hogy a hőmérséklet nem változik.",
+  "new": "Ha a hőmérséklet nem változik, akkor az eredmény érvényes marad.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-02-a-gr.json",
+  "old": "attól függően, hogy milyen gyorsan...",
+  "new": "az eredménytől függően",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-02-a-gr.json",
+  "old": "attól függően, hogy változik-e a nyomás",
+  "new": "Az eredmény a módszertől függ.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-02-a-gr.json",
+  "old": "A gyógyszer hatása változik, attól függően, hogy mikor veszi be a beteg.",
+  "new": "A gyógyszer hatása a betegtől függően változik.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-03-a-gr.json",
+  "old": "aszerint, ahogy a reflexek válaszolnak",
+  "new": "a fény szerint",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-03-a-gr.json",
+  "old": "aszerint, hogy melyik csoportba tartozik",
+  "new": "az állapotuk szerint",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-03-a-gr.json",
+  "old": "A jelenségeket aszerint osztályozzuk, ahogy a fényre reagálnak.",
+  "new": "A jelenségeket a fény szerint osztályozzuk.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-03-a-gr.json",
+  "old": "A kezelést aszerint módosítják, hogy milyen gyorsan javul az állapot.",
+  "new": "A kezelést az állapot szerint módosítják.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-04-a-gr.json",
+  "old": "Attól függően igazolódik be, hogy...",
+  "new": "Az eredménytől függően igazolódik be a feltevés.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-04-a-gr.json",
+  "old": "Feltéve, hogy a mérés pontos, az következik, hogy...",
+  "new": "Ha a mérés pontos, akkor az következik, hogy...",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-04-a-gr.json",
+  "old": "Feltéve, hogy kizártuk a véletlent, az eredmény egyértelmű bizonyítéknak számít.",
+  "new": "Ha kizártuk a véletlent, akkor az eredmény egyértelmű bizonyítéknak számít.",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-05-a-gr.json",
+  "old": "('Amennyiben / Feltéve, hogy...')",
+  "new": "('Amennyiben / Ha ... akkor ...')",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-05-a-gr.json",
+  "old": "('oly módon, hogy... / aszerint, ahogy...')",
+  "new": "('oly módon, hogy... / ... szerint')",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-05-a-gr.json",
+  "old": "('attól függően, hogy...', 'minél pontosabban..., annál kevésbé...')",
+  "new": "('az eredménytől függően', 'minél pontosabban..., annál kevésbé...')",
+  "kind": "hungarian"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-07-05-a-gr.json",
+  "old": "Az agy működése aszerint változik, ahogy az idegpályák alkalmazkodnak az új helyzethez.",
+  "new": "Az agy működése a helyzet szerint változik.",
+  "kind": "hungarian"
+ }
+]

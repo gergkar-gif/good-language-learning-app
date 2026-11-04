@@ -69,10 +69,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A paródia elolvasása ____ a költő is elmosolyodott.",
+      "sentence": "A paródia elolvasása ____ a költő is megértette a kritikát.",
       "hint": "after",
       "answer": "után",
-      "english": "After reading the parody, even the poet smiled.",
+      "english": "After reading the parody, even the poet understood the criticism.",
       "teaches": [
         "nominalization"
       ]
@@ -82,10 +82,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A szövegek elemzése ____ sok rejtett hibára bukkantak.",
+      "sentence": "A szövegek elemzése ____ sok hibát találtak.",
       "hint": "in the course of",
       "answer": "során",
-      "english": "In the course of analyzing the texts, they came across many hidden flaws.",
+      "english": "In the course of analyzing the texts, they found many mistakes.",
       "teaches": [
         "nominalization"
       ]
@@ -143,20 +143,20 @@
       "type": "substitution",
       "category": "grammar",
       "stage": "practice",
-      "base_sentence": "A könyv megírása előtt alaposan átolvasta a verseket.",
+      "base_sentence": "A könyv megírása előtt sokat olvasott.",
       "base_word": "megírása előtt",
-      "base_gloss": "Before writing the book, he thoroughly read through the poems.",
+      "base_gloss": "Before writing the book, he read a lot.",
       "options": [
         {
           "word": "kiadása után",
           "inflected": "kiadása után",
-          "sentence": "A könyv kiadása után alaposan átolvasta a verseket.",
+          "sentence": "A könyv kiadása után sokat olvasott.",
           "gloss": "after its publication"
         },
         {
           "word": "szerkesztése során",
           "inflected": "szerkesztése során",
-          "sentence": "A könyv szerkesztése során alaposan átolvasta a verseket.",
+          "sentence": "A könyv szerkesztése során sokat olvasott.",
           "gloss": "in the course of editing it"
         }
       ],
@@ -201,7 +201,7 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Hogyan tudta Karinthy ilyen pontosan utánozni a kortársait?"
+          "text": "Hogyan értette meg Karinthy a kortársait?"
         },
         {
           "speaker": "Irodalomtörténész",
@@ -209,9 +209,9 @@
         }
       ],
       "options": [
-        "A mondatfűzésük és szókincsük tudatos elemzése révén.",
-        "Mert elemzés révén a mondatfűzésüket.",
-        "Mert nem olvasta el a könyveiket."
+        "A könyveik elolvasása révén értette meg őket.",
+        "A könyveik elolvasás révén értette meg őket.",
+        "A könyveiket elolvasása révén értette meg őket."
       ],
       "correct": 0,
       "teaches": [
@@ -226,7 +226,7 @@
       "prompt": [
         {
           "speaker": "Könyvkiadó",
-          "text": "Mikor derült ki, hogy a kötet hatalmas siker lesz?"
+          "text": "Mikor látták az emberek, hogy ez a könyv nagy siker lesz?"
         },
         {
           "speaker": "Szerkesztő",
@@ -234,9 +234,9 @@
         }
       ],
       "options": [
-        "Már közvetlenül az első kiadás megjelenése után.",
-        "Megjelenés után az első kiadást.",
-        "Amikor legközelebb megjelenik."
+        "Már a könyv elolvasása után.",
+        "Már a könyv elolvasás után.",
+        "Már a könyvet elolvasása után."
       ],
       "correct": 0,
       "teaches": [
@@ -250,8 +250,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Rewrite 'Miután elolvasta a paródiát, elmosolyodott' using 'elolvasása után'.",
-          "answer": "A paródia elolvasása után elmosolyodott."
+          "prompt": "Rewrite 'Miután elolvasta a paródiát, nevetett' using 'elolvasása után'.",
+          "answer": "A paródia elolvasása után nevetett."
         }
       ],
       "teaches": [
@@ -265,8 +265,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write using 'során': In the course of writing the book, he analyzed their style.",
-          "answer": "A könyv megírása során elemezte a stílusukat."
+          "prompt": "Write using 'során': In the course of writing the book, he read a lot.",
+          "answer": "A könyv megírása során sokat olvasott."
         }
       ],
       "teaches": [
@@ -294,10 +294,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "A tudatos gyakorlás ____ bárki fejlesztheti a stílusát.",
+      "sentence": "A sok gyakorlás ____ mindenki jobban ír.",
       "hint": "by means of / through",
       "answer": "révén",
-      "english": "By means of conscious practice, anyone can improve their style.",
+      "english": "Through lots of practice, everyone writes better.",
       "teaches": [
         "nominalization"
       ]
