@@ -47,8 +47,8 @@
       "question": "Melyik Bartók-mű ér véget azzal a jelképes üzenettel, hogy a szarvassá változott fiúk már csak „tiszta forrásból” ihatnak?",
       "options": [
         "A Cantata Profana (A kilenc csodaszarvas).",
-        "A kékszakállú herceg vára.",
-        "A csárdáskirálynő."
+        "A csodálatos mandarin (egyfelvonásos táncjáték).",
+        "A kékszakállú herceg vára (egyfelvonásos opera)."
       ],
       "correct": 0
     },
@@ -60,7 +60,7 @@
       "teaches": [
         "b2-bartok-kodaly-vocab"
       ],
-      "sentence": "A csodálatos mandarin 1926-os kölni _____-ja után a polgármester betiltotta a darabot.",
+      "sentence": "A csodálatos mandarin 1926-os kölni _____ után a polgármester betiltotta a darabot.",
       "answer": "ősbemutató",
       "english": "After the 1926 Cologne world premiere of The Miraculous Mandarin, the mayor banned the piece."
     },
@@ -144,10 +144,13 @@
       ],
       "options": [
         "Ahogy faluról falura járogatott, az ősi pentaton hangközöket és ritmusokat beépítette a modern zenébe.",
-        "Ahogy faluról falura eljárt egyszer, az ősi pentaton hangközöket és ritmusokat beépítette a modern zenébe.",
-        "Ahogy faluról falura járogatna, az ősi pentaton hangközöket és ritmusokat beépítené a modern zenében."
+        "Ahogy faluról falura járogatott, az ősi pentaton hangközöket és ritmusokat beépített a modern zenébe.",
+        "Ahogy faluról falura járogatott, az ősi pentaton hangközöket és ritmusokat beépítené a modern zenébe."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "b2-bartokkodaly-03.ex08",
@@ -156,9 +159,9 @@
       "stage": "reading",
       "question": "Miért hagyta el Bartók Béla Magyarországot 1940-ben?",
       "options": [
-        "Az európai fasizmus előretörése elleni erkölcsi tiltakozásul emigrált az Egyesült Államokba.",
-        "Mert kinevezték a kölni operaház főigazgatójává.",
-        "Mert nem érdekelték többé a Kárpát-medencei népdalok."
+        "Tiltakozásul a fasizmus európai előretörése ellen.",
+        "Mert Kölnben akart végleg letelepedni a bemutató után.",
+        "Mert befejezte a népdalgyűjtést, és új hazát keresett."
       ],
       "correct": 0
     }

@@ -46,9 +46,9 @@
       ],
       "question": "Mi volt a nagybányai művésztelep (1896) legfontosabb festészeti újítása?",
       "options": [
-        "A sötét akadémiai műtermek helyett a szabad ég alatt (plein air) festették a napfényt és a természetet.",
-        "Betiltották a tájképek festését, és csak fekete-fehér fotókat készítettek.",
-        "Kizárólag középkori templomi freskókat másoltak."
+        "A műtermek helyett a szabad ég alatt festették a napfényt és a természetet.",
+        "A történelmi jeleneteket továbbra is sötét tónusú műtermi képeken festették.",
+        "Csak templomi megrendelésre készítettek oltárképeket és freskókat."
       ],
       "correct": 0
     },
@@ -60,8 +60,8 @@
       "teaches": [
         "b2-visual-arts-modernism-vocab"
       ],
-      "sentence": "Hollósy Simon és Ferenczy Károly 1896-ban alapították meg a híres nagybányai _____-et.",
-      "answer": "művésztelep",
+      "sentence": "Hollósy Simon és társai 1896-ban alapították meg a híres nagybányai _____.",
+      "answer": "művésztelepet",
       "english": "Simon Hollósy and Károly Ferenczy founded the famous Nagybánya artists' colony in 1896."
     },
     {
@@ -74,10 +74,9 @@
       ],
       "question": "In 'Münchenből hazatérve megalapították a művésztelepet', what temporal relationship does 'hazatérve' express?",
       "options": [
-        "An completed anterior action ('Having returned home from Munich...').",
+        "A completed action before the main verb ('Having returned...').",
         "A future action that has not happened yet.",
-        "A passive prohibition.",
-        "A negative purpose clause."
+        "An action at the same time as the main verb ('while returning home')."
       ],
       "correct": 0
     },
@@ -89,10 +88,10 @@
       "teaches": [
         "participle-actions"
       ],
-      "sentence": "A korabeli igazságtalan bírálatoktól _____ Szinyei Merse évekig nem festett.",
+      "sentence": "A korabeli bírálatoktól _____ Szinyei Merse évekig alig festett.",
       "hint": "elkeseredik - adverbial participle",
       "answer": "elkeseredve",
-      "english": "Embittered by the unfair contemporary criticisms, Szinyei Merse did not paint for years."
+      "english": "Embittered by the contemporary criticisms, Szinyei Merse hardly painted for years."
     },
     {
       "id": "b2-festeszet-02.ex06",
@@ -146,10 +145,13 @@
       ],
       "options": [
         "A francia impresszionistáktól függetlenül, a tavaszi természet megfigyeléséből kiindulva festette meg a napsütötte domboldalt.",
-        "A francia impresszionistáktól függetlenül, a tavaszi természet megfigyeléséből kiindulván festette meg a napsütötte domboldalt.",
-        "A francia impresszionistáktól függetlenül, a tavaszi természet megfigyeléséből kiindulva festett volna a napsütötte domboldalon."
+        "A francia impresszionistáktól függetlenül, a tavaszi természet megfigyeléséből kiindulva festette volna meg a napsütötte domboldalt.",
+        "A francia impresszionistáktól függetlenül, a tavaszi természet megfigyeléséből kiindulva festett a napsütötte domboldalt."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "nek-conditional"
+      }
     },
     {
       "id": "b2-festeszet-02.ex08",
@@ -160,7 +162,7 @@
       "options": [
         "A zöld fűben hasaló, lila ruhás hölgy.",
         "Az asztalra támaszkodó betyár.",
-        "A libanoni magányos cédrus."
+        "A rőzsét cipelő, szegény sorsú asszony."
       ],
       "correct": 0
     }

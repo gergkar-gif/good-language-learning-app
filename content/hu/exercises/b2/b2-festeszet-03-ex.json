@@ -60,8 +60,8 @@
       "teaches": [
         "b2-visual-arts-modernism-vocab"
       ],
-      "sentence": "A Magányos cédrus egyszerre a magyar sors szimbóluma és a magányos művész szellemi _____-e.",
-      "answer": "önarckép",
+      "sentence": "A Magányos cédrus egyszerre a magyar sors szimbóluma és a magányos művész szellemi _____.",
+      "answer": "önarcképe",
       "english": "The Lonely Cedar is at once a symbol of Hungarian destiny and the spiritual self-portrait of the solitary artist."
     },
     {
@@ -90,7 +90,7 @@
         "participle-actions"
       ],
       "sentence": "_____ a veszélyt, hogy a képeket kocsiponyvának adják el, Gerlóczy azonnal megvásárolta az életművet.",
-      "hint": "lát - literary participle in -ván",
+      "hint": "lát, causal literary participle",
       "answer": "Látván",
       "english": "Seeing the danger that the paintings would be sold as wagon tarpaulins, Gerlóczy immediately bought the oeuvre."
     },
@@ -135,7 +135,7 @@
       "prompt": [
         {
           "speaker": "Látogató",
-          "text": "Miért dolgozott Csontváry még tíz évig gyógyszerészként, miután meghallotta az égi szózatot?"
+          "text": "Miért dolgozott Csontváry még évekig gyógyszerészként, miután meghallotta az égi szózatot?"
         },
         {
           "speaker": "Múzeumpedagógus",
@@ -144,21 +144,25 @@
       ],
       "options": [
         "Gyakorlatias ember lévén előbb biztosítani akarta az anyagi függetlenségét az utazásokhoz.",
-        "Gyakorlatias ember levén előbb biztosítani akarta az anyagi függetlenségét az utazásokhoz.",
-        "Gyakorlatias ember lévén előbb biztosítani akarta az anyagi függetlenségét az utazásokra volna."
+        "Gyakorlatias ember lévén előbb biztosítani akarná az anyagi függetlenségét az utazásokhoz.",
+        "Gyakorlatias ember lévén előbb biztosítani akarta az anyagi függetlenségét az utazásoktól."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "nek-conditional",
+        "2": "tol-tol"
+      }
     },
     {
       "id": "b2-festeszet-03.ex08",
       "type": "multiple-choice",
       "category": "reading",
       "stage": "reading",
-      "question": "Mit értett Csontváry Kosztka Tivadar a „napút” kifejezés alatt?",
+      "question": "Mivel kapcsolják össze gyakran Csontváry „napút” szavát?",
       "options": [
-        "Azt a ragyogó légköri fényjelenséget, amikor a nap izzó, mágikus színekbe öltözteti a tájat.",
-        "Egy vasútvonalat Budapest és Párizs között.",
-        "A fekete-fehér fotogramok készítésének technikáját."
+        "A napfény és a ragyogó, színes fény festésével.",
+        "Egy vasútvonal megtervezésével Budapest és Pécs között.",
+        "A fekete-fehér fotogramok készítésének technikájával."
       ],
       "correct": 0
     }

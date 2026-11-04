@@ -47,11 +47,16 @@
       "question": "Which suffix pair expresses a peaceful, leisurely, contemplative ongoing action such as 'sitting quietly' (üldögél) or 'ambling along' (mendegél)?",
       "options": [
         "-dogál / -degél / -dögél",
-        "-tat / -tet",
-        "-hat / -het",
-        "-na / -ne"
+        "-nként / -onként / -enként",
+        "-ul / -ül / -ként",
+        "-hat / -het (ability)"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "1": "distributive-nkent",
+        "2": "ul-ul-essive-modal",
+        "3": "potential-hat-het"
+      }
     },
     {
       "id": "b2-bartokkodaly-consolidation.ex03",
@@ -78,9 +83,10 @@
       "teaches": [
         "b2-bartok-kodaly-vocab"
       ],
-      "sentence": "A Kodály-módszerben a gyerekek _____-ekkel mutatják a hangközöket éneklés közben.",
-      "answer": "kézjel",
-      "english": "In the Kodály method, children show the musical intervals with hand signs while singing."
+      "sentence": "A Kodály-módszerben a gyerekek _____ mutatják a hangközöket éneklés közben.",
+      "answer": "kézjelekkel",
+      "english": "In the Kodály method, children show the musical intervals with hand signs while singing.",
+      "hint": "kézjel (hand sign), with"
     },
     {
       "id": "b2-bartokkodaly-consolidation.ex05",
@@ -128,10 +134,13 @@
       ],
       "options": [
         "Éveken át hangról hangra kottázgatták és rendszerezgették a viaszhengerek felvételeit.",
-        "Éveken át hangról hangra lekottázták egyszer és lerendszerezték a viaszhengerek felvételeit.",
-        "Éveken át hangról hangra kottázgatnák és rendszerezgetnének a viaszhengerek felvételeiben."
+        "Éveken át hangról hangra kottázgattak és rendszerezgettek a viaszhengerek felvételeit.",
+        "Éveken át hangról hangra kottázgatnák és rendszerezgetnék a viaszhengerek felvételeit."
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "b2-bartokkodaly-consolidation.ex08",
@@ -144,9 +153,8 @@
       "question": "Select the sentence that combines a distributive phrase with an iterative verb:",
       "options": [
         "A zeneszerző faluról falura járogatva gyűjtötte az ősi pentaton dallamokat.",
-        "A zeneszerző egy faluban járt.",
-        "A zeneszerző elment a faluba, hogy aludjon.",
-        "A zeneszerzők megérkeztek a Zeneakadémiára."
+        "A zeneszerző minden évben egyetlen faluban gyűjtötte az ősi dallamokat.",
+        "A zeneszerző a Zeneakadémián tanította az ősi pentaton dallamokat."
       ],
       "correct": 0
     },
@@ -170,10 +178,13 @@
       ],
       "options": [
         "Dehogy baj, gyere csak, itt mindenki estéről estére próbálgatja a figurákat!",
-        "Dehogy baj, gyere csak, itt mindenki estéről estére kipróbálja egyszer a figurákat!",
-        "Dehogy baj, gyere csak, itt mindenki estéről estére próbálgatná a figurákban!"
+        "Dehogy baj, gyere csak, itt mindenki estéről estére próbálgat a figurákat!",
+        "Dehogy baj, gyere csak, itt mindenki estéről estére próbálgatná a figurákat!"
       ],
-      "correct": 0
+      "correct": 0,
+      "distractor_skills": {
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "b2-bartokkodaly-consolidation.ex10",
