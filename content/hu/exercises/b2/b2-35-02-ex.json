@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is a 'forgatókönyv' in technology forecasting and risk management?",
+      "question": "Which word means 'consequence'?",
       "options": [
-        "a structured scenario or hypothetical projection plan modeling possible future events",
-        "a physical receipt given to a customer at a grocery store",
-        "a medical prescription for antibiotics"
+        "következmény",
+        "forgatókönyv",
+        "szimuláció"
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Which adjective describes consequences that could not have been predicted in advance?",
+      "question": "Which word means 'risk'?",
       "options": [
-        "előre nem látható",
+        "kockázat",
         "szimuláció",
-        "kockázat"
+        "következmény"
       ],
       "correct": 0,
       "teaches": [
@@ -69,42 +69,48 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which grammatical auxiliary creates the past counterfactual conditional mood in Hungarian?",
+      "question": "Which word completes the sentence? Ha időben észrevették ____ a hibát, a gép ma is működne.",
       "options": [
         "volna",
         "lenne",
-        "kellene"
+        "lett"
       ],
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "irregular-nek-conditional"
+      }
     },
     {
       "id": "b2-35-02-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the correct concessive counterfactual construction:",
+      "question": "Which sentence means 'Even if they had warned the scientists, they would not have listened to them'?",
       "options": [
-        "Még ha a szimuláció pontos lett volna is, akkor sem küszöbölhette volna ki az emberi tényezőt.",
-        "Még ha a szimuláció pontos lenne is, akkor sem küszöbölhette volna ki az emberi tényezőt.",
-        "Még ha a szimuláció pontos lett volna is, akkor is küszöbölte volna ki az emberi tényezőt."
+        "Még ha figyelmeztették volna is a tudósokat, akkor sem hallgattak volna rájuk.",
+        "Még ha figyelmeztették volna is a tudósokat, akkor is hallgattak volna rájuk.",
+        "Még ha figyelmeztetnék is a tudósokat, akkor sem hallgatnának rájuk."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
-      ]
+        "even-if-ha-is"
+      ],
+      "distractor_skills": {
+        "2": "nek-conditional"
+      }
     },
     {
       "id": "b2-35-02-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Ha a mérnökök időben észrevették volna a hibát, a reaktor nem ____ le.",
-      "hint": "would not have shut down",
-      "answer": "állt volna",
-      "english": "Had the engineers noticed the defect in time, the reactor would not have shut down.",
+      "sentence": "Ha a mérnökök időben észrevették volna a hibát, a gép nem ____ volna el.",
+      "hint": "romlik, 3sg past",
+      "answer": "romlott",
+      "english": "Had the engineers noticed the error in time, the machine would not have broken down.",
       "teaches": [
         "past-conditional-volna"
       ]
@@ -114,12 +120,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Még ha időben figyelmeztették volna is a közvéleményt, a pánikot akkor sem lehetett volna ____.",
-      "hint": "avoided / prevented",
+      "sentence": "Még ha időben figyelmeztették volna is a tudósokat, a balesetet akkor sem lehetett volna ____.",
+      "hint": "elkerül, infinitive",
       "answer": "elkerülni",
-      "english": "Even had they warned the public in time, the panic could not have been avoided anyway.",
+      "english": "Even if the scientists had been warned in time, the accident could not have been avoided anyway.",
       "teaches": [
-        "past-conditional-volna"
+        "kellett-volna"
       ]
     },
     {
@@ -130,36 +136,30 @@
       "tiles": [
         "Ha",
         "nem",
-        "végezték",
+        "csinálták",
         "volna",
-        "el",
+        "meg",
         "a",
         "szimulációt,",
-        "súlyos",
-        "kockázatnak",
-        "tették",
-        "volna",
-        "ki",
-        "a",
-        "rendszert."
+        "nagy",
+        "kockázatot",
+        "vállaltak",
+        "volna."
       ],
       "solution": [
         "Ha",
         "nem",
-        "végezték",
+        "csinálták",
         "volna",
-        "el",
+        "meg",
         "a",
         "szimulációt,",
-        "súlyos",
-        "kockázatnak",
-        "tették",
-        "volna",
-        "ki",
-        "a",
-        "rendszert."
+        "nagy",
+        "kockázatot",
+        "vállaltak",
+        "volna."
       ],
-      "english": "Had they not carried out the simulation, they would have exposed the system to grave risk.",
+      "english": "Had they not done the simulation, they would have taken a big risk.",
       "teaches": [
         "past-conditional-volna"
       ]
@@ -169,10 +169,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A kutatóintézet három különböző ____ dolgozott ki a globális energiaátmenet lehetséges kimeneteleire.",
-      "hint": "scenarios / roadmaps",
+      "sentence": "A tudósok három különböző ____ készítettek a jövőre.",
+      "hint": "scenario",
       "answer": "forgatókönyvet",
-      "english": "The research institute developed three different scenarios for the possible outcomes of the global energy transition.",
+      "english": "The scientists prepared three different scenarios for the future.",
       "teaches": [
         "b2-technology-futurism-human-agency-vocab"
       ]
@@ -184,10 +184,8 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "váratlan",
-        "technológiai",
         "hiba",
-        "számos",
+        "több",
         "előre",
         "nem",
         "látható",
@@ -196,17 +194,15 @@
       ],
       "solution": [
         "A",
-        "váratlan",
-        "technológiai",
         "hiba",
-        "számos",
+        "több",
         "előre",
         "nem",
         "látható",
         "következménnyel",
         "járt."
       ],
-      "english": "The unexpected technological glitch entailed numerous unforeseen consequences.",
+      "english": "The error had several unforeseen consequences.",
       "teaches": [
         "b2-technology-futurism-human-agency-vocab"
       ]
@@ -219,22 +215,25 @@
       "prompt": [
         {
           "speaker": "Elemző",
-          "text": "Megelőzhető lett volna a hatalmas szerverleállás a múlt héten?"
+          "text": "Megelőzhető lett volna a baleset?"
         },
         {
-          "speaker": "Rendszergazda",
+          "speaker": "Mérnök",
           "text": "____"
         }
       ],
       "options": [
-        "Igen, ha a tesztkörnyezetben elvégezték volna a terhelési szimulációt, a hiba azonnal kiderült volna.",
-        "Igen, ha a tesztkörnyezetben elvégeznék a terhelési szimulációt, a hiba azonnal kiderült volna.",
-        "Igen, ha a tesztkörnyezetben elvégezték volna a terhelési szimulációt, a hiba azonnal kiderülne volt."
+        "Igen, ha időben megjavították volna a gépet, a baleset nem történt volna meg.",
+        "Igen, ha időben megjavítanák a gépet, a baleset nem történt volna meg.",
+        "Igen, ha időben megjavították volna a gépet, a baleset nem volna történt meg."
       ],
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "nek-conditional"
+      }
     },
     {
       "id": "b2-35-02-dialogue-2",
@@ -244,7 +243,7 @@
       "prompt": [
         {
           "speaker": "Újságíró",
-          "text": "Milyen következményei lettek volna, ha az állam nem avatkozik be a válság idején?"
+          "text": "Mi lett volna a várossal, ha nem építették volna meg a gyárat?"
         },
         {
           "speaker": "Közgazdász",
@@ -252,14 +251,17 @@
         }
       ],
       "options": [
-        "Ha nem avatkoztak volna be, a bankrendszer összeomlott volna, és ma sokkal mélyebb recesszióban élnénk.",
-        "Ha nem avatkoznának be, a bankrendszer összeomlott volna, és ma sokkal mélyebb recesszióban éltünk volna.",
-        "Ha nem avatkoztak volna be, a bankrendszer összeomolna, és ma sokkal mélyebb recesszióban élnénk volna."
+        "Ha nem építették volna meg a gyárat, nem lett volna munkahely, és ma sokan messze laknának.",
+        "Ha nem építenék meg a gyárat, nem lett volna munkahely, és ma sokan messze laknának.",
+        "Ha nem építették volna meg a gyárat, nem lett volna munkahely, és ma sokan messze laktak volna."
       ],
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "nek-conditional"
+      }
     },
     {
       "id": "b2-35-02-writing-1",
@@ -268,12 +270,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a multi-clause counterfactual sentence evaluating a missed opportunity in scientific research.",
-          "answer": "Ha a laboratórium időben megkapta volna a kért támogatást, a kutatók már tavaly befejezhették volna az ígéretes gyógyszerkísérletet."
+          "prompt": "Write a sentence with 'ha ... volna' about an error the engineers could have prevented.",
+          "answer": "Ha a mérnökök megcsinálták volna a szimulációt, időben észrevették volna a hibát."
         }
       ],
       "teaches": [
-        "past-conditional-volna"
+        "b2-technology-futurism-human-agency-vocab"
       ]
     },
     {
@@ -283,25 +285,25 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using 'még ha ... volna is, akkor sem' assessing technological risk.",
-          "answer": "Még ha a vállalat megduplázta volna is a biztonsági költségvetést, az emberi mulasztást akkor sem zárhatta volna ki teljesen."
+          "prompt": "Write a sentence with 'még ha ... volna is, akkor sem' about a risk.",
+          "answer": "Még ha a mérnökök megcsinálták volna is a szimulációt, akkor sem lehetett volna elkerülni minden kockázatot."
         }
       ],
       "teaches": [
-        "past-conditional-volna"
+        "b2-technology-futurism-human-agency-vocab"
       ]
     },
     {
       "id": "b2-35-02-check-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "sentence": "Ha a katasztrófavédelem nem lépett volna közbe azonnal, a gátszakadás beláthatatlan ____ járt volna.",
-      "hint": "consequences",
-      "answer": "következményekkel",
-      "english": "Had disaster management not intervened immediately, the dam burst would have entailed incalculable consequences.",
+      "sentence": "Ha a mérnökök nem állították volna le a gépet, a hibának súlyos ____ lettek volna.",
+      "hint": "consequence",
+      "answer": "következményei",
+      "english": "Had the engineers not stopped the machine, the error would have had serious consequences.",
       "teaches": [
-        "past-conditional-volna"
+        "b2-technology-futurism-human-agency-vocab"
       ]
     },
     {
@@ -309,10 +311,10 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which noun denotes the probability of adverse outcomes or hazard in technological design?",
+      "question": "Which word means 'simulation'?",
       "options": [
-        "kockázat",
         "szimuláció",
+        "kockázat",
         "forgatókönyv"
       ],
       "correct": 0,

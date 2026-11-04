@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is 'bioetika' primarily concerned with?",
+      "question": "Which word means 'bioethics'?",
       "options": [
-        "the ethical, philosophical, and legal dilemmas arising from biomedical and genetic sciences",
-        "the design of computer software for accounting firms",
-        "the historical architecture of medieval cathedrals"
+        "bioetika",
+        "beavatkozás",
+        "génmódosítás"
       ],
       "correct": 0,
       "teaches": [
@@ -22,9 +22,9 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Which expression denotes the total environmental resource demand imposed by human activity?",
+      "question": "Which word means 'sustainability'?",
       "options": [
-        "ökológiai lábnyom",
+        "fenntarthatóság",
         "génmódosítás",
         "beavatkozás"
       ],
@@ -69,44 +69,53 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which sentence correctly articulates a normative ethical boundary conditional?",
+      "question": "Which question asks whether it is allowed to treat a patient by gene modification?",
       "options": [
-        "Erkölcsileg megengedhető volna-e a genetikai beavatkozás, ha azzal súlyos örökletes betegségeket előznénk meg?",
-        "A fenntarthatóság elment a piacra és vásárolt három almát.",
-        "Gátat kell szabni a bioetikának, mert túl sokat alszik délután."
+        "Szabad-e génmódosítással gyógyítani egy beteget?",
+        "Kell-e génmódosítással gyógyítani egy beteget?",
+        "Tilos-e génmódosítással gyógyítani egy beteget?"
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
-      ]
+        "szabad-infinitive"
+      ],
+      "distractor_skills": {
+        "1": "kell-infinitive"
+      }
     },
     {
       "id": "b2-35-04-controlled-3",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the postposition that commonly pairs with 'érdekében' in sustainability discourse:",
+      "question": "Which phrase means 'for the protection of the patients'?",
       "options": [
-        "a fenntarthatóság érdekében (in the interest of sustainability)",
-        "a fenntarthatóság nélkül",
-        "a fenntarthatóság helyett"
+        "a betegek védelme érdekében",
+        "a betegek védelme ellenére",
+        "a betegek védelme miatt"
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
-      ]
+        "formal-purpose"
+      ],
+      "distractor_skills": {
+        "1": "concessive-postpositions"
+      }
     },
     {
       "id": "b2-35-04-controlled-4",
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A tudománynak szigorú etikai korlátokat kell felállítania a felelőtlen emberi ____ megelőzése végett.",
-      "hint": "intervention",
-      "answer": "beavatkozás",
-      "english": "Science must establish strict ethical limits in order to prevent irresponsible human intervention.",
+      "sentence": "A természet védelme ____ az ökológiai lábnyomunk nem lehet túl nagy.",
+      "hint": "for the sake of",
+      "english": "To protect nature, our ecological footprint must not be too big.",
       "teaches": [
-        "past-conditional-volna"
+        "formal-purpose"
+      ],
+      "answers": [
+        "érdekében",
+        "végett"
       ]
     },
     {
@@ -114,48 +123,40 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "A jövő nemzedékek érdekeit szem előtt tartva gátat kell ____ a természet kizsákmányolásának.",
-      "hint": "to set / impose a limit",
-      "answer": "szabni",
-      "english": "Keeping in mind the interests of future generations, limits must be set on the exploitation of nature.",
+      "sentence": "Ez veszélyes beavatkozás, ezért ____ csinálni.",
+      "hint": "forbidden",
+      "answer": "tilos",
+      "english": "This is a dangerous intervention, so it is forbidden to do it.",
       "teaches": [
-        "past-conditional-volna"
+        "szabad-infinitive"
       ]
     },
     {
       "id": "b2-35-04-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
         "A",
-        "génmódosítás",
-        "alkalmazása",
-        "során",
-        "kiemelt",
-        "figyelmet",
-        "kell",
-        "fordítani",
-        "a",
-        "bioetikai",
-        "elvekre."
+        "bioetika",
+        "azt",
+        "kérdezi,",
+        "mit",
+        "szabad",
+        "megtenni."
       ],
       "solution": [
         "A",
-        "génmódosítás",
-        "alkalmazása",
-        "során",
-        "kiemelt",
-        "figyelmet",
-        "kell",
-        "fordítani",
-        "a",
-        "bioetikai",
-        "elvekre."
+        "bioetika",
+        "azt",
+        "kérdezi,",
+        "mit",
+        "szabad",
+        "megtenni."
       ],
-      "english": "During the application of genetic modification, priority attention must be paid to bioethical principles.",
+      "english": "Bioethics asks what it is allowed to do.",
       "teaches": [
-        "past-conditional-volna"
+        "b2-technology-futurism-human-agency-vocab"
       ]
     },
     {
@@ -163,10 +164,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Az energiahatékony technológiák révén jelentősen csökkenthetjük intézményünk ____.",
-      "hint": "ecological footprint",
-      "answer": "ökológiai lábnyomát",
-      "english": "Through energy-efficient technologies, we can significantly reduce our institution's ecological footprint.",
+      "sentence": "Az ökológiai ____ megmutatja, mennyit használunk a természetből.",
+      "hint": "footprint",
+      "answer": "lábnyom",
+      "english": "The ecological footprint shows how much we take from nature.",
       "teaches": [
         "b2-technology-futurism-human-agency-vocab"
       ]
@@ -178,27 +179,21 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "valódi",
         "fenntarthatóság",
-        "megköveteli",
         "a",
-        "természeti",
-        "erőforrások",
-        "felelősségteljes",
-        "használatát."
+        "természet",
+        "védelmét",
+        "jelenti."
       ],
       "solution": [
         "A",
-        "valódi",
         "fenntarthatóság",
-        "megköveteli",
         "a",
-        "természeti",
-        "erőforrások",
-        "felelősségteljes",
-        "használatát."
+        "természet",
+        "védelmét",
+        "jelenti."
       ],
-      "english": "Genuine sustainability demands the responsible use of natural resources.",
+      "english": "Sustainability means the protection of nature.",
       "teaches": [
         "b2-technology-futurism-human-agency-vocab"
       ]
@@ -211,7 +206,7 @@
       "prompt": [
         {
           "speaker": "Biológus",
-          "text": "Szabadna-e módosítani az emberi embriók génállományát a betegségek kiküszöbölésére?"
+          "text": "Szabad-e génmódosítással gyógyítani a betegségeket?"
         },
         {
           "speaker": "Bioetikus",
@@ -219,14 +214,17 @@
         }
       ],
       "options": [
-        "Ez rendkívül kényes kérdés: megengedhető volna gyógyítási célból, de gátat kell szabni az embertervezés kísértésének.",
-        "Ez rendkívül kényes kérdés: megengedhető volna gyógyítási célból, de gátat kell szabni az embertervezés kísértésére.",
-        "Ez rendkívül kényes kérdés: megengedhető lenne gyógyítási célra, de gátat kell szabni az embertervezést kísértésében."
+        "Szabad lenne, de szigorú szabályokra van szükség.",
+        "Szabad lenne, de szigorú szabályok van szükség.",
+        "Szabad lenne, de szigorú szabályokkal van szükség."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
-      ]
+        "verb-government-ra-re"
+      ],
+      "distractor_skills": {
+        "2": "val-vel"
+      }
     },
     {
       "id": "b2-35-04-dialogue-2",
@@ -236,7 +234,7 @@
       "prompt": [
         {
           "speaker": "Környezetvédő",
-          "text": "Hogyan mérhető reálisan a gazdasági növekedés környezeti terhelése?"
+          "text": "Mit mutat meg az ökológiai lábnyom?"
         },
         {
           "speaker": "Ökológus",
@@ -244,14 +242,17 @@
         }
       ],
       "options": [
-        "Az ökológiai lábnyom számításával, amely világosan megmutatja, túlléptük-e a bolygó regenerációs határait.",
-        "Az ökológiai lábnyom számításával, amelyet világosan megmutatja, túlléptük-e a bolygó regenerációs határait.",
-        "Az ökológiai lábnyom számításában, amely világosan megmutatná, vajon túlléptük-e a bolygó regenerációs határait."
+        "Azt mutatja meg, hogy mennyit használunk a természetből.",
+        "Azt mutatja meg, hogy mennyit használunk a természetnek.",
+        "Azt mutatja meg, hogy mennyit használunk a természetre."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
-      ]
+        "elative-bol-bel"
+      ],
+      "distractor_skills": {
+        "2": "ra-re"
+      }
     },
     {
       "id": "b2-35-04-writing-1",
@@ -260,12 +261,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence arguing for ethical caution regarding 'génmódosítás'.",
-          "answer": "Bár a génmódosítás forradalmasíthatja a gyógyászatot, az eljárás előre nem látható kockázatai miatt szigorú bioetikai felügyelet szükséges."
+          "prompt": "Write a sentence arguing for caution about 'génmódosítás'.",
+          "answer": "A génmódosítás veszélyes lehet, ezért szigorú szabályok kellenek."
         }
       ],
       "teaches": [
-        "past-conditional-volna"
+        "b2-technology-futurism-human-agency-vocab"
       ]
     },
     {
@@ -275,25 +276,25 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence linking 'ökológiai lábnyom' with 'fenntarthatóság'.",
-          "answer": "A hosszú távú fenntarthatóság megvalósításának alapvető feltétele az ipari társadalmak túlzott ökológiai lábnyomának drasztikus mérséklése."
+          "prompt": "Write a sentence linking 'ökológiai lábnyom' and 'fenntarthatóság'.",
+          "answer": "A fenntarthatóság érdekében az ökológiai lábnyomunk nem lehet túl nagy."
         }
       ],
       "teaches": [
-        "past-conditional-volna"
+        "b2-technology-futurism-human-agency-vocab"
       ]
     },
     {
       "id": "b2-35-04-check-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "check",
-      "sentence": "A környezeti katasztrófák elkerülése végett szigorú korlátok közé kell szorítani a természetbe való emberi ____.",
+      "sentence": "Az orvosi ____ veszélyes lehet, ezért az orvosnak nagyon óvatosnak kell lennie.",
       "hint": "intervention",
-      "answer": "beavatkozást",
-      "english": "In order to avoid environmental catastrophes, human intervention into nature must be kept within strict limits.",
+      "answer": "beavatkozás",
+      "english": "A medical intervention can be dangerous, so the doctor must be very careful.",
       "teaches": [
-        "past-conditional-volna"
+        "b2-technology-futurism-human-agency-vocab"
       ]
     },
     {
@@ -301,10 +302,10 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which noun denotes the discipline examining ethical dilemmas of biological and medical advancements?",
+      "question": "Which word means 'intervention'?",
       "options": [
+        "beavatkozás",
         "bioetika",
-        "fenntarthatóság",
         "génmódosítás"
       ],
       "correct": 0,

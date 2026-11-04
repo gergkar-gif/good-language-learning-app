@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is 'szintaktikai sűrítés' in advanced Hungarian stylistic register?",
+      "question": "Which word means 'syntactic compression'?",
       "options": [
-        "condensing subordinate clauses into compact participial and nominal structures",
-        "cutting a sentence in half to create an incomplete thought",
-        "erasing all vowels from a written document"
+        "szintaktikai sűrítés",
+        "melléknévi igenév",
+        "névszói szerkezet"
       ],
       "correct": 0,
       "teaches": [
@@ -69,32 +69,40 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "How is the relative clause 'a stratégia, amelyet a kutatók dolgoztak ki' condensed into a left-branching participial phrase?",
+      "question": "Which phrase condenses 'a stratégia, amelyet a kutatók dolgoztak ki'?",
       "options": [
         "a kutatók által kidolgozott stratégia",
-        "a stratégia ami kidolgozott a kutatóktól",
-        "kidolgoztak a kutatók egy stratégiát"
+        "a kutatók által kidolgozó stratégia",
+        "a kutatók által kidolgozandó stratégia"
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "present-participle",
+        "2": "future-participle-ando"
+      }
     },
     {
       "id": "b2-36-02-controlled-3",
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "controlled",
-      "question": "Which word functions as a deductive consequential connector equivalent to 'ezért / ennek következtében'?",
+      "question": "Which word fits? A határidő lejárt; ____ a kérelem érvénytelen.",
       "options": [
         "következésképp",
         "mindazonáltal",
-        "elvégre"
+        "holott"
       ],
       "correct": 0,
       "teaches": [
         "b2-mastery-voice-vocab"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "contrastive-discourse-markers",
+        "2": "contrastive-discourse-markers"
+      }
     },
     {
       "id": "b2-36-02-controlled-4",
@@ -102,11 +110,15 @@
       "category": "grammar",
       "stage": "controlled",
       "sentence": "A gazdasági helyzet kétségkívül súlyos; ____ nem szabad elveszítenünk a reményt.",
-      "hint": "nevertheless / nonetheless",
-      "answer": "mindazonáltal",
+      "hint": "nevertheless",
       "english": "The economic situation is undoubtedly grave; nevertheless, we must not lose hope.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "mindazonáltal",
+        "azonban",
+        "viszont"
       ]
     },
     {
@@ -114,12 +126,15 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A felek nem tudtak megegyezni, ____ a döntőbizottságnak kell határozatot hoznia az ügyben.",
-      "hint": "consequently / as a result",
-      "answer": "következésképp",
-      "english": "The parties could not agree; consequently, the arbitration committee must make a decision on the matter.",
+      "sentence": "A felek nem tudtak megegyezni, ____ a döntőbizottságnak kell határozatot hoznia.",
+      "hint": "consequently",
+      "english": "The parties could not agree; consequently, the arbitration committee must make a decision.",
       "teaches": [
         "b2-mastery-voice-vocab"
+      ],
+      "answers": [
+        "következésképp",
+        "ezért"
       ]
     },
     {
@@ -131,27 +146,21 @@
         "A",
         "bizottság",
         "által",
-        "tavaly",
         "elfogadott",
         "határozat",
-        "minden",
-        "tagállamra",
-        "nézve",
+        "mindenkire",
         "kötelező."
       ],
       "solution": [
         "A",
         "bizottság",
         "által",
-        "tavaly",
         "elfogadott",
         "határozat",
-        "minden",
-        "tagállamra",
-        "nézve",
+        "mindenkire",
         "kötelező."
       ],
-      "english": "The resolution adopted last year by the committee is binding on all member states.",
+      "english": "The resolution adopted by the committee is binding on everyone.",
       "teaches": [
         "participial-clauses"
       ]
@@ -159,14 +168,14 @@
     {
       "id": "b2-36-02-practice-3",
       "type": "fill-blank",
-      "category": "vocabulary",
+      "category": "grammar",
       "stage": "practice",
-      "sentence": "A balra ágazó ____ használata elegáns és tömör kifejezést biztosít az akadémiai értekezésekben.",
-      "hint": "adjectival participles",
-      "answer": "melléknévi igenevek",
-      "english": "The use of left-branching adjectival participles provides elegant and concise expression in academic dissertations.",
+      "sentence": "A szabályok ____ nehéz feladat.",
+      "hint": "megváltoztat, noun in -ás/-és, 3sg possessor",
+      "answer": "megváltoztatása",
+      "english": "Changing the rules is a difficult task.",
       "teaches": [
-        "b2-mastery-voice-vocab"
+        "nominalization"
       ]
     },
     {
@@ -179,28 +188,22 @@
         "szintaktikai",
         "sűrítés",
         "révén",
+        "rövidebb",
+        "lesz",
         "a",
-        "szerző",
-        "rendkívül",
-        "tömören",
-        "fogalmazta",
-        "meg",
-        "mondanivalóját."
+        "mondat."
       ],
       "solution": [
         "A",
         "szintaktikai",
         "sűrítés",
         "révén",
+        "rövidebb",
+        "lesz",
         "a",
-        "szerző",
-        "rendkívül",
-        "tömören",
-        "fogalmazta",
-        "meg",
-        "mondanivalóját."
+        "mondat."
       ],
-      "english": "Through syntactic compression, the author formulated his message extremely concisely.",
+      "english": "Through syntactic compression the sentence becomes shorter.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]
@@ -213,7 +216,7 @@
       "prompt": [
         {
           "speaker": "Egyetemi hallgató",
-          "text": "Hogyan tehetem érettebbé és professzionálisabbá a szakdolgozatom stílusát?"
+          "text": "Hogyan tehetem rövidebbé a mondataimat?"
         },
         {
           "speaker": "Konzulens",
@@ -221,14 +224,18 @@
         }
       ],
       "options": [
-        "Alkalmazz szintaktikai sűrítést: cseréld a nehézkes mellékmondatokat elegáns melléknévi igeneves szerkezetekre és használj pontos kötőszókat.",
-        "Alkalmazz szintaktikai sűrítést: cseréld a nehézkes mellékmondatokat elegáns melléknévi igeneves szerkezetekben és használj pontos kötőszókat.",
-        "Alkalmazz szintaktikai sűrítést: cseréld a nehézkes mellékmondatokat elegáns melléknévi igeneves szerkezetekre és használj pontos kötőszókra."
+        "Cseréld a mellékmondatokat melléknévi igeneves szerkezetekre.",
+        "Cseréld a mellékmondatokat melléknévi igeneves szerkezetekben.",
+        "Cseréld a mellékmondatokat melléknévi igeneves szerkezetekről."
       ],
       "correct": 0,
       "teaches": [
-        "b2-mastery-voice-vocab"
-      ]
+        "verb-government-ra-re"
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "delative-rol-rel"
+      }
     },
     {
       "id": "b2-36-02-dialogue-2",
@@ -238,7 +245,7 @@
       "prompt": [
         {
           "speaker": "Szerkesztő",
-          "text": "Nem érzed úgy, hogy ez a két bekezdés kissé szétesik logikailag?"
+          "text": "A két bekezdés között nincs kapcsolat. Mit tehetnénk?"
         },
         {
           "speaker": "Újságíró",
@@ -246,13 +253,13 @@
         }
       ],
       "options": [
-        "Igazad van, beillesztem a 'mindazonáltal' kötőszót az elejére, hogy világos legyen az ellentétes gondolatmenet.",
-        "Igazad van, beillesztem a 'mindazonáltal' kötőszót az elejébe, hogy világos legyen az ellentétes gondolatmenet.",
-        "Igazad van, beillesztem a 'mindazonáltal' kötőszót az elejére, hogy világos lenne az ellentétes gondolatmenetet."
+        "Beírom az elejére a 'mindazonáltal' szót, hogy világos legyen az ellentét.",
+        "Beírom az elejére a 'mindazonáltal' szót, hogy világos van az ellentét.",
+        "Beírom az elejére a 'mindazonáltal' szót, hogy világosan legyen az ellentét."
       ],
       "correct": 0,
       "teaches": [
-        "b2-mastery-voice-vocab"
+        "hogy-jon-jen"
       ]
     },
     {
@@ -262,8 +269,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Rewrite the relative clause 'A jelentés, amelyet a minisztérium készített a válságról' into a compressed left-branching participial phrase.",
-          "answer": "A minisztérium által a válságról készített átfogó jelentés világosan feltárta a problémák gyökerét."
+          "prompt": "Write a sentence with a participial phrase before the noun and 'által'.",
+          "answer": "A bizottság által elfogadott szabály mindenkire érvényes."
         }
       ],
       "teaches": [
@@ -277,8 +284,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a cohesive two-clause analytical sentence using 'mindazonáltal'.",
-          "answer": "A reformtervezet bevezetése komoly költségvetési áldozatokat követel; mindazonáltal a hosszú távú gazdasági versenyképesség megőrzése érdekében elkerülhetetlen."
+          "prompt": "Write a sentence with 'mindazonáltal'.",
+          "answer": "A terv kockázatos; mindazonáltal érdemes megcsinálni."
         }
       ],
       "teaches": [
@@ -290,12 +297,15 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "check",
-      "sentence": "A pályázati feltételek nem teljesültek, ____ az eljárást érvénytelennek kell nyilvánítani.",
+      "sentence": "A felek nem tudtak megegyezni, ____ nem lesz szerződés.",
       "hint": "consequently",
-      "answer": "következésképp",
-      "english": "The application conditions were not fulfilled; consequently, the procedure must be declared invalid.",
+      "english": "The parties could not agree; consequently there will be no contract.",
       "teaches": [
         "b2-mastery-voice-vocab"
+      ],
+      "answers": [
+        "következésképp",
+        "ezért"
       ]
     },
     {

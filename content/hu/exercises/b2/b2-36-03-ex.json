@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is 'tompítás' (hedging) in pragmatic linguistics and rhetoric?",
+      "question": "Which word means 'hedging, softening'?",
       "options": [
-        "the diplomatic mitigation or softening of assertions to avoid sounding overly dogmatic or offensive",
-        "speaking in a whisper so nobody in the room can hear",
-        "repeating every word twice for emphasis"
+        "tompítás",
+        "cáfolat",
+        "álláspont"
       ],
       "correct": 0,
       "teaches": [
@@ -69,11 +69,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which phrase serves as a polite conditional hedge to soften a critical observation?",
+      "question": "Which sentence softens the criticism 'This plan is bad'?",
       "options": [
-        "Ha szabad úgy fogalmaznom, a döntés kissé elhamarkodottnak tűnik.",
-        "Mindenki tudja, hogy Ön egyáltalán nem ért a dologhoz!",
-        "Azonnal vonja vissza a javaslatát, mert nevetséges!"
+        "Célszerű lenne még egyszer átgondolni ezt a tervet.",
+        "Célszerű van még egyszer átgondolni ezt a tervet.",
+        "Célszerű volt még egyszer átgondolni ezt a tervet."
       ],
       "correct": 0,
       "teaches": [
@@ -85,11 +85,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "How can the aggressive statement 'Ez a tanulmány tele van tévedésekkel' be refined diplomatically?",
+      "question": "Which sentence softens 'Ezt a döntést meg kell változtatni'?",
       "options": [
-        "Indokolt volna a tanulmány egyes módszertani feltételezéseit újra megvizsgálni.",
-        "Indokolt lenne a tanulmány egyes módszertani feltételezéseit újra megvizsgáltunk volna.",
-        "Indokolt volna a tanulmány egyes módszertani feltételezéseiben újra megvizsgálni."
+        "Indokolt volna megváltoztatni ezt a döntést.",
+        "Indokolt volna megváltoztat ezt a döntést.",
+        "Indokolt volna megváltoztatni ezt a döntésnek."
       ],
       "correct": 0,
       "teaches": [
@@ -101,10 +101,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A történész részletes és megdönthetetlen ____ adott a korábbi téves elméletre.",
-      "hint": "refutation / rebuttal",
+      "sentence": "A történész részletes ____ adott a téves elméletre.",
+      "hint": "rebuttal",
       "answer": "cáfolatot",
-      "english": "The historian gave a detailed and irrefutable refutation of the previous erroneous theory.",
+      "english": "The historian gave a detailed rebuttal of the false theory.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]
@@ -114,10 +114,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A konferencián a felszólaló rendkívül ____ és meggyőző álláspontot fejtett ki.",
-      "hint": "nuanced / subtle",
+      "sentence": "A tanár nagyon ____ álláspontot képviselt a vitában.",
+      "hint": "nuanced",
       "answer": "árnyalt",
-      "english": "At the conference, the speaker articulated an extremely nuanced and convincing stance.",
+      "english": "The teacher took a very nuanced position in the debate.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]
@@ -159,10 +159,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "Bár a reformtervezet rendkívül ____ téma a közéletben, a párbeszédet folytatni kell.",
-      "hint": "controversial / disputed",
+      "sentence": "Bár a reform ____ kérdés, a párbeszédet folytatni kell.",
+      "hint": "disputed",
       "answer": "vitatott",
-      "english": "Although the reform proposal is a highly controversial topic in public life, the dialogue must be continued.",
+      "english": "Although the reform is a disputed question, the dialogue must continue.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]
@@ -209,7 +209,7 @@
       "prompt": [
         {
           "speaker": "Vitavezető",
-          "text": "Hogyan foglalná össze a javaslattal kapcsolatos aggályait?"
+          "text": "Mi a véleménye a javaslatról?"
         },
         {
           "speaker": "Szakértő",
@@ -217,14 +217,17 @@
         }
       ],
       "options": [
-        "Ha szabad úgy fogalmaznom, a célkitűzésekkel egyetértünk, de indokolt volna a végrehajtás ütemezését átgondolni.",
-        "Ha szabad úgy fogalmaznom, a célkitűzésekben egyetértünk, de indokolt volna a végrehajtás ütemezését átgondolni.",
-        "Ha szabad úgy fogalmaznom, a célkitűzésekkel egyetértünk, de indokolt lenne a végrehajtás ütemezését átgondolnánk volna."
+        "A célokkal egyetértünk, de indokolt volna a tervet még egyszer átgondolni.",
+        "A célokban egyetértünk, de indokolt volna a tervet még egyszer átgondolni.",
+        "A célokkal egyetértünk, de indokolt volna a tervet még egyszer átgondoltuk."
       ],
       "correct": 0,
       "teaches": [
-        "b2-mastery-voice-vocab"
-      ]
+        "verb-government-val-vel"
+      ],
+      "distractor_skills": {
+        "1": "verb-government-ban-ben"
+      }
     },
     {
       "id": "b2-36-03-dialogue-2",
@@ -234,7 +237,7 @@
       "prompt": [
         {
           "speaker": "Résztvevő",
-          "text": "Nem tartja sértőnek az ellenfele kemény kritikáját?"
+          "text": "Miről szól ez a vita?"
         },
         {
           "speaker": "Előadó",
@@ -242,16 +245,17 @@
         }
       ],
       "options": [
-        "Egyáltalán nem: a vita vitatott kérdésekről szól, és a higgadt, logikus cáfolat mindig előreviszi az igazság keresését.",
-        "Egyáltalán nem: a vita vitatott kérdésekre szól, és a higgadt, logikus cáfolat mindig előreviszi az igazság keresését.",
-        "Egyáltalán nem: a vita vitatott kérdésekről szól, és a higgadt, logikus cáfolat mindig előreviszi az igazságot keresésére."
+        "Ez a vita vitatott kérdésekről szól, és nyugodt cáfolatra van szükség.",
+        "Ez a vita vitatott kérdésekre szól, és nyugodt cáfolatra van szükség.",
+        "Ez a vita vitatott kérdésekben szól, és nyugodt cáfolatra van szükség."
       ],
       "correct": 0,
       "teaches": [
         "verb-government-rol-rel"
       ],
       "distractor_skills": {
-        "1": "verb-government-ra-re"
+        "1": "verb-government-ra-re",
+        "2": "verb-government-ban-ben"
       }
     },
     {
@@ -261,8 +265,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a diplomatically hedged counter-argument beginning with 'Indokolt volna megfontolni...'.",
-          "answer": "Indokolt volna megfontolni a döntés hosszú távú társadalmi következményeit, mielőtt végleges kötelezettséget vállalnánk a projekt mellett."
+          "prompt": "Write a softened sentence with 'indokolt volna' about a plan.",
+          "answer": "Indokolt volna még egyszer ellenőrizni a tervet."
         }
       ],
       "teaches": [
@@ -276,8 +280,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence presenting an 'árnyalt álláspont' on a contentious debate.",
-          "answer": "Az egyetem vezetése árnyalt álláspontot alakított ki, amely egyaránt tekintettel van a hallgatók igényeire és az akadémiai minőség megőrzésére."
+          "prompt": "Write a sentence with 'mindazonáltal' that grants a point and then objects.",
+          "answer": "Az érvnek van alapja; mindazonáltal a számok mást mutatnak."
         }
       ],
       "teaches": [
@@ -289,10 +293,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "check",
-      "sentence": "A diplomáciában a finom ____ művészete elengedhetetlen a felesleges konfliktusok elkerüléséhez.",
-      "hint": "hedging / mitigation",
+      "sentence": "A finom ____ segít elkerülni a vitát.",
+      "hint": "hedging",
       "answer": "tompítás",
-      "english": "In diplomacy, the art of subtle hedging is indispensable for avoiding unnecessary conflicts.",
+      "english": "Subtle hedging helps to avoid an argument.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]

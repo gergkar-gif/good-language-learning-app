@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What is the grammatical role of the 'fókuszpozíció' in Hungarian syntax?",
+      "question": "Which word means 'focus position'?",
       "options": [
-        "the preverbal slot that carries primary stress and identifies exhaustive prominence",
-        "the final punctuation mark at the end of an exclamatory sentence",
-        "a grammatical prefix attached to comparative adjectives"
+        "fókuszpozíció",
+        "mondatszerkezet",
+        "kifejezőerő"
       ],
       "correct": 0,
       "teaches": [
@@ -69,11 +69,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "What happens to the verbal preverb when an argument occupies the preverbal focus position?",
+      "question": "Which sentence means 'It was the professor who read the study'?",
       "options": [
-        "The preverb moves behind the conjugated verb (preverb-verb inversion).",
-        "The preverb disappears entirely from the sentence.",
-        "The preverb duplicates before and after the verb."
+        "A PROFESSZOR olvasta el a tanulmányt.",
+        "A PROFESSZOR elolvasta a tanulmányt.",
+        "A professzor elolvasta a TANULMÁNYT."
       ],
       "correct": 0,
       "teaches": [
@@ -85,11 +85,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the sentence where exhaustive focus on 'Péter' causes correct inversion:",
+      "question": "Which sentence is correct? (The professor did not read the task.)",
       "options": [
-        "PÉTER oldotta meg a legnehezebb feladatot a vizsgán.",
-        "Péter megoldotta a legnehezebb feladatot.",
-        "Megoldotta Péter a feladatot este csendben."
+        "A professzor nem olvasta el a feladatot.",
+        "A professzor nem elolvasta a feladatot.",
+        "A professzor elnem olvasta a feladatot."
       ],
       "correct": 0,
       "teaches": [
@@ -101,10 +101,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "controlled",
-      "sentence": "A magyar nyelvben a finom ____ alapvetően megváltoztathatja a mondat közlési célját.",
+      "sentence": "Ez a ____ nem változtat a szavakon, mégis megváltoztatja a mondat értelmét.",
       "hint": "shift of emphasis",
       "answer": "hangsúlyeltolódás",
-      "english": "In Hungarian, a subtle shift of emphasis can fundamentally alter the communicative intent of the sentence.",
+      "english": "This shift of emphasis changes none of the words, yet it changes the meaning of the sentence.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]
@@ -114,10 +114,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "practice",
-      "sentence": "Nem a dékán, hanem a miniszter ____ alá a nemzetközi megállapodást.",
-      "hint": "signed - with inversion",
-      "answer": "írta",
-      "english": "Not the dean, but the minister signed the international agreement.",
+      "sentence": "Nem a tanár, hanem a diák ____ meg a feladatot.",
+      "hint": "solve (megold), 3sg past definite",
+      "answer": "oldotta",
+      "english": "Not the teacher but the student solved the task.",
       "teaches": [
         "b2-focus-inversion"
       ]
@@ -129,27 +129,23 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "magyar",
-        "nyelv",
-        "rendkívüli",
+        "költő",
+        "nagy",
         "kifejezőerővel",
-        "képes",
-        "megragadni",
-        "az",
-        "érzelmeket."
+        "ír",
+        "a",
+        "természetről."
       ],
       "solution": [
         "A",
-        "magyar",
-        "nyelv",
-        "rendkívüli",
+        "költő",
+        "nagy",
         "kifejezőerővel",
-        "képes",
-        "megragadni",
-        "az",
-        "érzelmeket."
+        "ír",
+        "a",
+        "természetről."
       ],
-      "english": "The Hungarian language is capable of capturing emotions with extraordinary expressive power.",
+      "english": "The poet writes about nature with great expressive power.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]
@@ -159,10 +155,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A szónok változatos ____ tették dinamikussá és élvezetessé a beszédet.",
-      "hint": "sentence structures",
+      "sentence": "A költő ____ nagyon egyszerűek, ezért mindenki érti őket.",
+      "hint": "sentence structure, 3sg possessor, plural",
       "answer": "mondatszerkezetei",
-      "english": "The speaker's varied sentence structures made the address dynamic and enjoyable.",
+      "english": "The poet's sentence structures are very simple, so everyone understands them.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]
@@ -173,30 +169,26 @@
       "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "A",
-        "műfordító",
+        "Az",
+        "író",
         "minden",
-        "rejtett",
         "nyelvi",
         "finomságra",
-        "kínosan",
-        "ügyelt",
+        "figyel",
         "a",
         "szövegben."
       ],
       "solution": [
-        "A",
-        "műfordító",
+        "Az",
+        "író",
         "minden",
-        "rejtett",
         "nyelvi",
         "finomságra",
-        "kínosan",
-        "ügyelt",
+        "figyel",
         "a",
         "szövegben."
       ],
-      "english": "The literary translator painstakingly attended to every hidden linguistic nuance in the text.",
+      "english": "The writer pays attention to every linguistic nuance in the text.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]
@@ -209,7 +201,7 @@
       "prompt": [
         {
           "speaker": "Nyelvész",
-          "text": "Miért okoz nehézséget a magyar fókuszszerkezet a külföldi tanulóknak?"
+          "text": "Miért nehéz a magyar szórend a külföldi tanulóknak?"
         },
         {
           "speaker": "Tanár",
@@ -217,14 +209,17 @@
         }
       ],
       "options": [
-        "Mert a hangsúlyeltolódás azonnal megváltoztatja az igekötő helyét és a mondat logikai hangsúlyát.",
-        "Mert a hangsúlyeltolódás azonnal megváltoztatja az igekötő helyére és a mondat logikai hangsúlyát.",
-        "Mert a hangsúlyeltolódás azonnal megváltoztatná az igekötőt helyét és a mondat logikai hangsúlyában."
+        "Mert a hangsúlyeltolódás megváltoztatja az igekötő helyét is.",
+        "Mert a hangsúlyeltolódás megváltoztatja az igekötő helyére is.",
+        "Mert a hangsúlyeltolódás megváltoztatja az igekötő helyének is."
       ],
       "correct": 0,
       "teaches": [
-        "b2-mastery-voice-vocab"
-      ]
+        "acc-poss"
+      ],
+      "distractor_skills": {
+        "1": "verb-government-ra-re"
+      }
     },
     {
       "id": "b2-36-01-dialogue-2",
@@ -234,7 +229,7 @@
       "prompt": [
         {
           "speaker": "Költő",
-          "text": "Hogyan éred el, hogy a prózád zeneinek hasson felolvasáskor?"
+          "text": "Mivel éred el, hogy a prózád zenei legyen?"
         },
         {
           "speaker": "Író",
@@ -242,14 +237,18 @@
         }
       ],
       "options": [
-        "A topik-fókusz ritmusával játszom, és a mondatszerkezetek tudatos variálásával adok lüktetést a gondolatoknak.",
-        "A topik-fókusz ritmusára játszom, és a mondatszerkezetek tudatos variálásával adok lüktetést a gondolatoknak.",
-        "A topik-fókusz ritmusával játszom, és a mondatszerkezetek tudatos variálásában adok lüktetésre a gondolatoknak."
+        "A mondatok ritmusával, és azzal, hogy máshová teszem a hangsúlyt.",
+        "A mondatok ritmusára, és azzal, hogy máshová teszem a hangsúlyt.",
+        "A mondatok ritmusában, és azzal, hogy máshová teszem a hangsúlyt."
       ],
       "correct": 0,
       "teaches": [
-        "b2-mastery-voice-vocab"
-      ]
+        "verb-government-val-vel"
+      ],
+      "distractor_skills": {
+        "1": "verb-government-ra-re",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b2-36-01-writing-1",
@@ -258,8 +257,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence using contrastive focus (Nem X, hanem Y + inverted verb) on the subject.",
-          "answer": "Nem a bizottság elnöke, hanem a független szakértő tárta fel a vizsgálat során a rendszer súlyos hiányosságait."
+          "prompt": "Write a sentence with a focused time word before the verb and the preverb behind it.",
+          "answer": "Tegnap olvastam el a könyvet."
         }
       ],
       "teaches": [
@@ -273,8 +272,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence reflecting on the 'kifejezőerő' and 'nyelvi finomság' of Hungarian.",
-          "answer": "A magyar nyelv páratlan kifejezőereje a szóképzés gazdagságában és a mondatszerkesztés számtalan finomságában nyilvánul meg."
+          "prompt": "Write a sentence with 'nem' and a verb that has a preverb.",
+          "answer": "Péter nem jött el a találkozóra."
         }
       ],
       "teaches": [
@@ -286,10 +285,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "Az igazi mester tisztában van a magyar szórend minden rejtett ____.",
-      "hint": "nuance / subtlety",
+      "sentence": "Az író tisztában van a mondat minden rejtett ____.",
+      "hint": "nuance, with",
       "answer": "finomságával",
-      "english": "The true master is aware of every hidden subtlety of Hungarian word order.",
+      "english": "The writer is aware of every hidden nuance of the sentence.",
       "teaches": [
         "verb-government-val-vel"
       ]

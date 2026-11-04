@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What does 'szépirodalom' encompass in Hungarian cultural life?",
+      "question": "Which word means 'literary fiction, belles-lettres'?",
       "options": [
-        "high-quality imaginative literature, belles-lettres, including novels, poetry, and drama",
-        "technical instructions for household electronic appliances",
-        "weather bulletins broadcast on marine radios"
+        "szépirodalom",
+        "szövegkörnyezet",
+        "stíluseszköz"
       ],
       "correct": 0,
       "teaches": [
@@ -69,11 +69,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "controlled",
-      "question": "How should a reader approach archaic grammatical forms in 19th-century Hungarian novels?",
+      "question": "Ha egy régi szót nem ismersz, a ____ segít.",
       "options": [
-        "Infer meaning from the textual context without disrupting reading comprehension.",
-        "Close the book immediately and never read literature again.",
-        "Report the archaic words to the police as spelling errors."
+        "szövegkörnyezet",
+        "stíluseszköz",
+        "szépirodalom"
       ],
       "correct": 0,
       "teaches": [
@@ -85,11 +85,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "controlled",
-      "question": "Which case suffix is governed by 'értelmezés' when discussing the interpretation of a text?",
+      "question": "Which word means 'interpretation'?",
       "options": [
-        "genitive possessive (-nak/-nek az értelmezése)",
-        "ablative case suffix (-tól/-től: a szövegtől)",
-        "delative case suffix (-ról/-ről: a szövegről)"
+        "értelmezés",
+        "szövegkörnyezet",
+        "stíluseszköz"
       ],
       "correct": 0,
       "teaches": [
@@ -101,10 +101,10 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A regény sűrű nyelvezete többféle filozófiai ____ enged teret.",
-      "hint": "interpretation",
+      "sentence": "A jó regény több ____ is teret enged.",
+      "hint": "interpretation, dative",
       "answer": "értelmezésnek",
-      "english": "The dense language of the novel leaves room for multiple philosophical interpretations.",
+      "english": "A good novel leaves room for several interpretations.",
       "teaches": [
         "verb-government-nak-nek"
       ]
@@ -114,10 +114,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A ritka szó jelentése könnyen kikövetkeztethető a tágabb ____ alapján.",
-      "hint": "textual context",
+      "sentence": "A szó jelentése a ____ alapján is érthető.",
+      "hint": "context of a text",
       "answer": "szövegkörnyezet",
-      "english": "The meaning of the rare word can be easily deduced based on the broader textual context.",
+      "english": "The meaning of the word can be understood from the context too.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]
@@ -129,27 +129,25 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "klasszikus",
-        "magyar",
         "szépirodalom",
         "olvasása",
-        "fejleszti",
-        "az",
-        "esztétikai",
-        "érzéket."
+        "sokat",
+        "segít",
+        "a",
+        "magyar",
+        "tanulásban."
       ],
       "solution": [
         "A",
-        "klasszikus",
-        "magyar",
         "szépirodalom",
         "olvasása",
-        "fejleszti",
-        "az",
-        "esztétikai",
-        "érzéket."
+        "sokat",
+        "segít",
+        "a",
+        "magyar",
+        "tanulásban."
       ],
-      "english": "Reading classic Hungarian literature develops aesthetic sensibility.",
+      "english": "Reading literature helps a lot in learning Hungarian.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]
@@ -159,10 +157,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A 19. századi balladákban gyakran bukkannak fel ____ igealakok és régies fordulatok.",
+      "sentence": "Jókai regényeiben sok ____ szót találunk.",
       "hint": "archaic",
       "answer": "archaikus",
-      "english": "In 19th-century ballads, archaic verb forms and antiquated idioms frequently crop up.",
+      "english": "In Jókai's novels we find many archaic words.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]
@@ -209,7 +207,7 @@
       "prompt": [
         {
           "speaker": "Olvasó",
-          "text": "Nem túl nehéz egy B2 szintű tanulónak eredeti Kosztolányit vagy Krúdyt olvasni?"
+          "text": "Nehéz egy tanulónak eredeti Kosztolányit olvasni?"
         },
         {
           "speaker": "Irodalomtanár",
@@ -217,14 +215,18 @@
         }
       ],
       "options": [
-        "Egyáltalán nem: a nyelvtani alapok birtokában a szövegkörnyezet segít, a szépirodalom zeneisége pedig magával ragadja az olvasót.",
-        "Egyáltalán nem: a nyelvtani alapok birtokán a szövegkörnyezet segít, a szépirodalom zeneisége pedig magával ragadja az olvasót.",
-        "Egyáltalán nem: a nyelvtani alapok birtokában a szövegkörnyezet segít, a szépirodalom zeneisége pedig magával ragadja az olvasónak."
+        "Nem mindig: a szövegkörnyezet sokat segít az olvasónak, és a szépirodalom zenéje magával ragad.",
+        "Nem mindig: a szövegkörnyezet sokat segít az olvasót, és a szépirodalom zenéje magával ragad.",
+        "Nem mindig: a szövegkörnyezet sokat segít az olvasóval, és a szépirodalom zenéje magával ragad."
       ],
       "correct": 0,
       "teaches": [
-        "b2-mastery-voice-vocab"
-      ]
+        "verb-government-nak-nek"
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "verb-government-val-vel"
+      }
     },
     {
       "id": "b2-36-04-dialogue-2",
@@ -234,7 +236,7 @@
       "prompt": [
         {
           "speaker": "Diák",
-          "text": "Mit tegyek, ha egy archaikus kifejezést találok a novellában?"
+          "text": "Mit tegyek, ha egy régi szót találok a novellában?"
         },
         {
           "speaker": "Mentor",
@@ -242,16 +244,17 @@
         }
       ],
       "options": [
-        "Ne ess pánikba! Nézd meg a mondat cselekményét, támaszkodj a szövegkörnyezetre, és haladj bátran tovább.",
-        "Ne ess pánikba! Nézd meg a mondat cselekményét, támaszkodj a szövegkörnyezetben, és haladj bátran tovább.",
-        "Ne ess pánikba! Nézd meg a mondat cselekményét, támaszkodj a szövegkörnyezetre, és haladj bátran továbbá."
+        "Ne aggódj! Nézd meg a mondatot, támaszkodj a szövegkörnyezetre, és olvass tovább.",
+        "Ne aggódj! Nézd meg a mondatot, támaszkodj a szövegkörnyezetben, és olvass tovább.",
+        "Ne aggódj! Nézd meg a mondatot, támaszkodj a szövegkörnyezettől, és olvass tovább."
       ],
       "correct": 0,
       "teaches": [
         "verb-government-ra-re"
       ],
       "distractor_skills": {
-        "1": "verb-government-ban-ben"
+        "1": "verb-government-ban-ben",
+        "2": "tol-tol"
       }
     },
     {
@@ -261,8 +264,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence reflecting on the rewards of reading Hungarian 'szépirodalom'.",
-          "answer": "Az eredeti magyar szépirodalom rendszeres olvasása páratlan módon gazdagítja a szókincset és elmélyíti a kulturális empátiát."
+          "prompt": "Write a sentence about an unknown word and the 'szövegkörnyezet'.",
+          "answer": "Ha nem ismerek egy szót, a szövegkörnyezetből megértem."
         }
       ],
       "teaches": [
@@ -276,8 +279,8 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a sentence explaining how to deduce unfamiliar words from 'szövegkörnyezet'.",
-          "answer": "Ha ismeretlen kifejezéssel találkozunk, a szövegkörnyezet és a logikai összefüggések gondos elemzésével szinte mindig feltárható a helyes jelentés."
+          "prompt": "Write a sentence with 'stíluseszköz' about an author.",
+          "answer": "Az író a hasonlatot mint stíluseszközt használja a regényében."
         }
       ],
       "teaches": [
@@ -289,10 +292,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "check",
-      "sentence": "A költő zseniálisan alkalmazta a megszemélyesítés ____ a tájleírásban.",
+      "sentence": "Az író sok ____ használ a regényében.",
       "hint": "stylistic device",
-      "answer": "stíluseszközét",
-      "english": "The poet brilliantly applied the stylistic device of personification in the landscape description.",
+      "answer": "stíluseszközt",
+      "english": "The writer uses many stylistic devices in his novel.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]

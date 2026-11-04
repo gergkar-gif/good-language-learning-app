@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "recognize",
-      "question": "What does 'szintaktikai sűrítés' accomplish in academic and literary Hungarian?",
+      "question": "Which word means 'sentence structure'?",
       "options": [
-        "It condenses complex subordinate clauses into left-branching participial and nominal modifiers.",
-        "It shortens words by omitting all vowels from the text.",
-        "It transforms all verbs into the imperative mood."
+        "mondatszerkezet",
+        "szépirodalom",
+        "retorika"
       ],
       "correct": 0,
       "teaches": [
@@ -38,26 +38,29 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Which sentence exemplifies complete B2 synthesis of topic-focus architecture and participial compression?",
+      "question": "Which sentence is correct? (Yesterday the parliament adopted the proposal that the ministry prepared.)",
       "options": [
-        "A minisztérium által kidolgozott javaslatot TEGNAP fogadta el a parlament, nem a múlt heti ülésen.",
-        "Tegnap a parlament elfogadta a javaslatot ami a minisztérium készített régen.",
-        "Elfogadta a minisztérium tegnap a javaslatot gyorsan este."
+        "A minisztérium által kidolgozott javaslatot TEGNAP fogadta el a parlament.",
+        "A minisztérium által kidolgozott javaslatot TEGNAP elfogadta a parlament.",
+        "A minisztérium által kidolgozó javaslatot TEGNAP fogadta el a parlament."
       ],
       "correct": 0,
       "teaches": [
         "b2-focus-inversion"
-      ]
+      ],
+      "distractor_skills": {
+        "2": "present-participle"
+      }
     },
     {
       "id": "b2-36-consolidation-4",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A diplomáciai tárgyalások során a finom ____ segített elkerülni a személyeskedő konfliktusokat.",
-      "hint": "hedging / mitigation",
+      "sentence": "A tárgyalásokon a finom ____ segített elkerülni a vitát.",
+      "hint": "hedging",
       "answer": "tompítás",
-      "english": "During diplomatic negotiations, subtle hedging helped avoid personal conflicts.",
+      "english": "At the negotiations subtle hedging helped to avoid an argument.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]
@@ -67,12 +70,16 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "A reformtervezet vitatott kérdéseket érint; ____ elkerülhetetlen a társadalmi egyeztetés megkezdése.",
-      "hint": "nevertheless / nonetheless",
-      "answer": "mindazonáltal",
-      "english": "The reform plan touches upon controversial issues; nevertheless, the launch of social consultation is inevitable.",
+      "sentence": "A terv vitatott; ____ érdemes megbeszélni.",
+      "hint": "nevertheless",
+      "english": "The plan is disputed; nevertheless it is worth discussing.",
       "teaches": [
         "contrastive-discourse-markers"
+      ],
+      "answers": [
+        "mindazonáltal",
+        "azonban",
+        "viszont"
       ]
     },
     {
@@ -80,12 +87,15 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A tárgyalások megszakadtak, ____ a felek nem tudták aláírni a tervezett békeszerződést.",
-      "hint": "consequently / as a result",
-      "answer": "következésképp",
-      "english": "The negotiations were broken off; consequently, the parties were unable to sign the planned peace treaty.",
+      "sentence": "A tárgyalások megszakadtak, ____ a felek nem tudták aláírni a békeszerződést.",
+      "hint": "consequently",
+      "english": "The negotiations broke down; consequently the parties could not sign the peace treaty.",
       "teaches": [
         "b2-mastery-voice-vocab"
+      ],
+      "answers": [
+        "következésképp",
+        "ezért"
       ]
     },
     {
@@ -93,11 +103,11 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'Indokolt volna megfontolni' preferred over 'Azonnal meg kell fontolni' in intellectual debates?",
+      "question": "Which sentence softens 'Ezt azonnal meg kell változtatni'?",
       "options": [
-        "Because the conditional mood diplomatically softens the assertion, demonstrating respectful academic debate.",
-        "Because 'kell' is illegal in written Hungarian.",
-        "Because 'indokolt volna' only applies to financial accounting."
+        "Indokolt volna ezt megváltoztatni.",
+        "Indokolt volna ezt megváltoztat.",
+        "Indokolt volna ezt megváltoztatni volna."
       ],
       "correct": 0,
       "teaches": [
@@ -112,7 +122,7 @@
       "prompt": [
         {
           "speaker": "Kolléga",
-          "text": "Hogyan élted meg a B2 záróvizsga szóbeli részét?"
+          "text": "Hogy sikerült a nyelvvizsga szóbeli része?"
         },
         {
           "speaker": "Vizsgázó",
@@ -120,30 +130,38 @@
         }
       ],
       "options": [
-        "Felejthetetlen élmény volt: a felkészültségemnek köszönhetően sikerült megtalálnom a saját hangomat, és árnyaltan érvelhettem a bizottság előtt.",
-        "Felejthetetlen élmény volt: a felkészültségemnek köszönhetően sikerült megtalálnom a saját hangomban, és árnyaltan érvelhettem a bizottság előtt.",
-        "Felejthetetlen élmény volt: a felkészültségemet köszönhetően sikerült megtalálnom a saját hangomat, és árnyaltan érvelhettem volna a bizottság elé."
+        "Jól: a felkészültségemnek köszönhetően megtaláltam a saját hangomat, és árnyaltan tudtam beszélni a bizottság előtt.",
+        "Jól: a felkészültségemet köszönhetően megtaláltam a saját hangomat, és árnyaltan tudtam beszélni a bizottság előtt.",
+        "Jól: a felkészültségemnek köszönhetően megtaláltam a saját hangomban, és árnyaltan tudtam beszélni a bizottság előtt."
       ],
       "correct": 0,
       "teaches": [
-        "b2-mastery-voice-vocab"
-      ]
+        "verb-government-nak-nek"
+      ],
+      "distractor_skills": {
+        "1": "acc-poss",
+        "2": "ban-ben-in"
+      }
     },
     {
       "id": "b2-36-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Select the sentence where left-branching participial compression is used with perfect syntactic elegance:",
+      "question": "Which sentence is correct? (The studies carried out by the researchers for years support the hypothesis.)",
       "options": [
-        "A nemzetközi kutatócsoport által évek óta végzett vizsgálatok egyértelműen alátámasztják a hipotézist.",
-        "A nemzetközi kutatócsoport által évek óta végzett vizsgálatokat egyértelműen alátámasztanak a hipotézist.",
-        "A nemzetközi kutatócsoportot által évek óta végzett vizsgálatok egyértelműen alátámasztanák a hipotézisben."
+        "A kutatók által évek óta végzett vizsgálatok igazolják a hipotézist.",
+        "A kutatók által évek óta végzett vizsgálatokat igazolják a hipotézist.",
+        "A kutatók által évek óta végző vizsgálatok igazolják a hipotézist."
       ],
       "correct": 0,
       "teaches": [
         "participial-clauses"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "how-the-accusative-t-works",
+        "2": "present-participle"
+      }
     },
     {
       "id": "b2-36-consolidation-10",
@@ -186,31 +204,27 @@
       "stage": "produce",
       "tiles": [
         "A",
-        "klasszikus",
-        "magyar",
         "szépirodalom",
         "olvasása",
-        "mély",
-        "bepillantást",
-        "enged",
+        "sokat",
+        "segít",
         "a",
-        "nemzet",
-        "történelmébe."
+        "magyar",
+        "kultúra",
+        "megértésében."
       ],
       "solution": [
         "A",
-        "klasszikus",
-        "magyar",
         "szépirodalom",
         "olvasása",
-        "mély",
-        "bepillantást",
-        "enged",
+        "sokat",
+        "segít",
         "a",
-        "nemzet",
-        "történelmébe."
+        "magyar",
+        "kultúra",
+        "megértésében."
       ],
-      "english": "Reading classic Hungarian literature allows a deep insight into the nation's history.",
+      "english": "Reading literature helps a lot in understanding Hungarian culture.",
       "teaches": [
         "b2-mastery-voice-vocab"
       ]
@@ -222,8 +236,8 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause B2 capstone synthesis essay excerpt uniting left-branching participial compression, cohesive connectors ('mindazonáltal'), and finding one's authentic voice ('saját hang').",
-          "answer": "Bár a magyar nyelv bonyolult topik-fókusz architektúrája és a balra ágazó igeneves szerkezetek elsajátítása komoly szellemi erőfeszítést igényelt; mindazonáltal a kitartó tanulás meghozta gyümölcsét, hiszen a B2 szint zárásaként ma már nem csupán megértem a klasszikus szépirodalom legfinomabb rétegeit, hanem büszkén és magabiztosan szólalhatok meg a saját egyéni hangomon ezen a csodálatos anyanyelven."
+          "prompt": "Write a closing sentence for a speech with 'végül' and 'saját hang'.",
+          "answer": "Végül azt szeretném mondani, hogy mindenkinek meg kell találnia a saját hangját."
         }
       ],
       "teaches": [

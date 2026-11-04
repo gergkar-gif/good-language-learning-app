@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "recognize",
-      "question": "What does 'ökológiai lábnyom' measure in environmental science?",
+      "question": "A ____ azt jelenti, hogy az ember dönt, nem a gép.",
       "options": [
-        "the total human demand on ecological assets and natural resource capacity",
-        "the depth of soil erosion caused by winter frost",
-        "the physical footprints left by animals in a national park"
+        "cselekvőképesség",
+        "automatizálás",
+        "fenntarthatóság"
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "recognize",
-      "question": "Which phrase denotes a profound, historic shift in fundamental scientific concepts?",
+      "question": "Which word means 'paradigm shift'?",
       "options": [
         "paradigmaváltás",
-        "szimuláció",
-        "hipotézis"
+        "technológiai ugrás",
+        "fenntarthatóság"
       ],
       "correct": 0,
       "teaches": [
@@ -38,26 +38,29 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "recognize",
-      "question": "Which sentence displays correct multi-clause counterfactual syntax in Hungarian?",
+      "question": "Which sentence is correct?",
       "options": [
-        "Ha a döntéshozók időben reagáltak volna, a környezeti katasztrófa megelőzhető lett volna, és ma nem fenyegetné a térséget az ivóvízhiány.",
-        "Ha a döntéshozók időben reagálnának, a környezeti katasztrófa megelőzhető lett volna, és ma nem fenyegeti a térséget az ivóvízhiány.",
-        "Ha a döntéshozók időben reagáltak volna, a környezeti katasztrófa megelőzhető lenne, és ma nem fenyegetett volna a térséget az ivóvízhiány."
+        "Ha időben megjavították volna a gépet, a baleset nem történt volna meg, és ma nem lenne gond.",
+        "Ha időben megjavítanák a gépet, a baleset nem történt volna meg, és ma nem lenne gond.",
+        "Ha időben megjavították volna a gépet, a baleset nem történt volna meg, és ma nem volt volna gond."
       ],
       "correct": 0,
       "teaches": [
         "past-conditional-volna"
-      ]
+      ],
+      "distractor_skills": {
+        "1": "nek-conditional"
+      }
     },
     {
       "id": "b2-35-consolidation-4",
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "recall",
-      "sentence": "A gazdasági elemzők három különböző ____ vázoltak fel a munkaerőpiac várható alakulására.",
-      "hint": "scenarios / projections",
+      "sentence": "A tudósok három ____ készítettek a jövőre: egy jót, egy rosszat és egy közepeset.",
+      "hint": "scenario",
       "answer": "forgatókönyvet",
-      "english": "The economic analysts outlined three different scenarios for the expected development of the labor market.",
+      "english": "The scientists prepared three scenarios for the future: a good one, a bad one and a middling one.",
       "teaches": [
         "b2-technology-futurism-human-agency-vocab"
       ]
@@ -67,12 +70,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "Még ha a vállalat minden biztonsági előírást betartott ____ is, a váratlan kibertámadást akkor sem lehetett volna teljesen kivédeni.",
-      "hint": "would have - counterfactual auxiliary",
-      "answer": "volna",
-      "english": "Even had the company complied with every security protocol, the unexpected cyberattack could not have been completely repelled anyway.",
+      "sentence": "Még ha időben észrevették volna is a hibát, ____ sem lehetett volna elkerülni a balesetet.",
+      "hint": "then",
+      "answer": "akkor",
+      "english": "Even if they had noticed the error in time, the accident could not have been avoided anyway.",
       "teaches": [
-        "past-conditional-volna"
+        "even-if-ha-is"
       ]
     },
     {
@@ -80,12 +83,15 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "recall",
-      "sentence": "____ a kutatás megbízható eredményt hoz, úgy sor kerülhet a nemzetközi szabadalom bejegyzésére.",
-      "hint": "In the event that / Insofar as",
-      "answer": "Amennyiben",
-      "english": "In the event that the research yields a reliable result, registration of the international patent can take place.",
+      "sentence": "Abban az esetben, ha az előrejelzés igaz, ____ a gyár új gépeket vesz.",
+      "hint": "then",
+      "english": "In the event that the forecast is true, the factory will buy new machines.",
       "teaches": [
-        "past-conditional-volna"
+        "b2-cataphoric-clauses"
+      ],
+      "answers": [
+        "úgy",
+        "akkor"
       ]
     },
     {
@@ -93,16 +99,20 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Why is 'amennyiben..., úgy...' preferred in official policy forecasts over conversational 'ha'?",
+      "question": "Which sentence says 'The new tasks are being automated too' without naming a doer?",
       "options": [
-        "Because it conveys formal procedural causality, institutional authority, and clear legal conditioning.",
-        "Because 'ha' cannot be used with future verbs in written Hungarian.",
-        "Because 'amennyiben' was invented in 2020 specifically for computer algorithms."
+        "A gyárban az új feladatok is automatizálásra kerülnek.",
+        "A gyárban az új feladatok is automatizálásban kerülnek.",
+        "A gyárban az új feladatok is automatizálásról kerülnek."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
-      ]
+        "agentless-constructions"
+      ],
+      "distractor_skills": {
+        "1": "ban-ben-in",
+        "2": "elative-bol-bel"
+      }
     },
     {
       "id": "b2-35-consolidation-8",
@@ -112,7 +122,7 @@
       "prompt": [
         {
           "speaker": "Egyetemi hallgató",
-          "text": "Miért olyan fontos az etikai szabályozás a mesterséges intelligencia fejlesztésekor?"
+          "text": "Miért fontos a szabályozás az új gépeknél?"
         },
         {
           "speaker": "Professzor",
@@ -120,30 +130,36 @@
         }
       ],
       "options": [
-        "Mert ha az algoritmusok felelősségvállalás nélkül hoznának döntéseket, súlyosan sérülne az emberi méltóság és cselekvőképesség.",
-        "Mert ha az algoritmusok felelősségvállalás nélkül hoztak volna döntéseket, súlyosan sérül az emberi méltóság és cselekvőképesség.",
-        "Mert ha az algoritmusok felelősségvállalás nélkül hoznának döntéseket, súlyosan sérült volna az emberi méltóság és cselekvőképesség."
+        "Mert ha a gépek szabályozás nélkül döntenének, az emberek elveszítenék a cselekvőképességüket.",
+        "Mert ha a gépek szabályozás nélkül döntenének, az emberek elveszítették volna a cselekvőképességüket.",
+        "Mert ha a gépek szabályozás nélkül döntenek volna, az emberek elveszítenék a cselekvőképességüket."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
-      ]
+        "hypothetical-ha-conditional"
+      ],
+      "distractor_skills": {
+        "1": "past-conditional-volna"
+      }
     },
     {
       "id": "b2-35-consolidation-9",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "in-context",
-      "question": "Select the sentence where normative modality is applied appropriately to environmental boundaries:",
+      "question": "Which sentence means 'On the one hand the machines solve many tasks, on the other hand people need new jobs'?",
       "options": [
-        "A természeti erőforrások kimerülése miatt határozott gátat kell szabni a féktelen ipari terjeszkedésnek.",
-        "A természet engedélyezte a fák kivágását a városi parkban.",
-        "A bolygó regenerációja azonnal megírta a tiltakozó levelet a hivatalnak."
+        "Egyrészt a gépek sok feladatot megoldanak, másrészt az embereknek új munkák kellenek.",
+        "Egyrészt a gépek sok feladatot megoldanak, hanem az embereknek új munkák kellenek.",
+        "Egyrészt a gépek sok feladatot megoldanak, ezért az embereknek új munkák kellenek."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
-      ]
+        "egyreszt-masreszt"
+      ],
+      "distractor_skills": {
+        "1": "basic-connectors"
+      }
     },
     {
       "id": "b2-35-consolidation-10",
@@ -151,34 +167,30 @@
       "category": "grammar",
       "stage": "produce",
       "tiles": [
-        "A",
-        "tudományos",
-        "innováció",
-        "megvalósulhat,",
-        "feltéve,",
-        "ha",
+        "Ha",
+        "időben",
+        "megjavították",
+        "volna",
         "a",
-        "társadalom",
-        "biztosítja",
-        "a",
-        "szükséges",
-        "forrásokat."
+        "gépet,",
+        "nem",
+        "történt",
+        "volna",
+        "baleset."
       ],
       "solution": [
-        "A",
-        "tudományos",
-        "innováció",
-        "megvalósulhat,",
-        "feltéve,",
-        "ha",
+        "Ha",
+        "időben",
+        "megjavították",
+        "volna",
         "a",
-        "társadalom",
-        "biztosítja",
-        "a",
-        "szükséges",
-        "forrásokat."
+        "gépet,",
+        "nem",
+        "történt",
+        "volna",
+        "baleset."
       ],
-      "english": "Scientific innovation can be realized, provided that society provides the necessary resources.",
+      "english": "Had they repaired the machine in time, there would have been no accident.",
       "teaches": [
         "past-conditional-volna"
       ]
@@ -189,40 +201,32 @@
       "category": "grammar",
       "stage": "produce",
       "tiles": [
-        "Ha",
-        "a",
-        "kutatók",
+        "A",
+        "fenntarthatóság",
+        "érdekében",
         "nem",
-        "ismerték",
-        "volna",
-        "fel",
+        "szabad",
+        "túl",
+        "sokat",
+        "használni",
         "a",
-        "kockázatokat,",
-        "beláthatatlan",
-        "környezeti",
-        "károk",
-        "keletkeztek",
-        "volna."
+        "természetből."
       ],
       "solution": [
-        "Ha",
-        "a",
-        "kutatók",
+        "A",
+        "fenntarthatóság",
+        "érdekében",
         "nem",
-        "ismerték",
-        "volna",
-        "fel",
+        "szabad",
+        "túl",
+        "sokat",
+        "használni",
         "a",
-        "kockázatokat,",
-        "beláthatatlan",
-        "környezeti",
-        "károk",
-        "keletkeztek",
-        "volna."
+        "természetből."
       ],
-      "english": "Had the researchers not recognized the risks, incalculable environmental damage would have occurred.",
+      "english": "For the sake of sustainability we must not take too much from nature.",
       "teaches": [
-        "past-conditional-volna"
+        "formal-purpose"
       ]
     },
     {
@@ -232,12 +236,12 @@
       "stage": "produce",
       "template": [
         {
-          "prompt": "Write a three-clause future forecast essay excerpt linking 'technológiai ugrás', speculative conditionals ('amennyiben..., úgy...'), and human 'cselekvőképesség'.",
-          "answer": "Bár a mesterséges intelligencia ugrásszerű fejlődése történelmi technológiai ugrást hoz a termelékenységben, amennyiben az algoritmusok felügyelet nélkül döntenek emberi sorsokról, úgy helyrehozhatatlan csorbát szenved az egyéni cselekvőképesség; éppen ezért a társadalomnak már ma szigorú etikai és jogi garanciákat kell teremtenie a jövő technológiái köré."
+          "prompt": "Write a sentence with 'amennyiben ..., úgy ...' and 'cselekvőképesség' about machines and human decisions.",
+          "answer": "Amennyiben a gépek döntenek az emberek helyett, úgy az emberek elveszítik a cselekvőképességüket."
         }
       ],
       "teaches": [
-        "past-conditional-volna"
+        "b2-technology-futurism-human-agency-vocab"
       ]
     }
   ]

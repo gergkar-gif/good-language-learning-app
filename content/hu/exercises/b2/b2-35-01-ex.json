@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "What does 'amennyiben' express in formal academic discourse?",
+      "question": "Which word means 'condition' (something that must be true first)?",
       "options": [
-        "in the event that (introducing a formal condition)",
-        "an informal greeting exchanged between coworkers in a hallway",
-        "a strictly past-tense historical marker of time"
+        "feltétel",
+        "hipotézis",
+        "előrejelzés"
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Which noun designates a scientific assumption or working premise that requires verification?",
+      "question": "Which word means 'hypothesis'?",
       "options": [
         "hipotézis",
-        "előrejelzés",
-        "feltétel"
+        "kísérlet",
+        "amennyiben"
       ],
       "correct": 0,
       "teaches": [
@@ -40,12 +40,8 @@
       "stage": "controlled",
       "pairs": [
         [
-          "feltéve",
-          "provided that / supposing"
-        ],
-        [
           "amennyiben",
-          "in the event that / insofar as"
+          "if / in the event that"
         ],
         [
           "feltétel",
@@ -53,11 +49,15 @@
         ],
         [
           "hipotézis",
-          "hypothesis / assumption"
+          "hypothesis"
         ],
         [
           "előrejelzés",
-          "forecast / projection"
+          "forecast"
+        ],
+        [
+          "kísérlet",
+          "experiment"
         ]
       ],
       "teaches": [
@@ -69,15 +69,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Which correlative word standardly introduces the main clause after 'Amennyiben...' in formal prose?",
+      "question": "Which sentence is correct? (The scientists work on the condition that the machine is safe.)",
       "options": [
-        "úgy / abban az esetben",
-        "pedig / de",
-        "hiszen / ugyanis"
+        "A tudósok azzal a feltétellel dolgoznak, hogy a gép biztonságos.",
+        "A tudósok arra a feltétellel dolgoznak, hogy a gép biztonságos.",
+        "A tudósok azzal a feltétel dolgoznak, hogy a gép biztonságos."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -85,15 +85,15 @@
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "controlled",
-      "question": "Select the sentence where 'feltéve, ha' introduces a speculative scientific hypothesis correctly:",
+      "question": "Which sentence is correct? (If the forecast is true, the factory buys new machines.)",
       "options": [
-        "Az autonóm járművek elterjedhetnek, feltéve, ha a jogi szabályozás garantálja a biztonságot.",
-        "Feltéve, ha megérkezett a villamos az állomásra háromkor.",
-        "A hipotézis feltéve ha megitta az összes tejet a hűtőszekrényből."
+        "Abban az esetben, ha az előrejelzés igaz, a gyár új gépeket vesz.",
+        "Abban az esetben, hogy az előrejelzés igaz, a gyár új gépeket vesz.",
+        "Abba az esetben, ha az előrejelzés igaz, a gyár új gépeket vesz."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -101,61 +101,55 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A kísérletet engedélyezték, azzal a ____, hogy a kutatók folyamatosan tájékoztatják az etikai bizottságot.",
+      "sentence": "A kísérletet azzal a ____ engedélyezték, hogy a tudósok minden eredményt ellenőriznek.",
       "hint": "condition",
       "answer": "feltétellel",
-      "english": "The experiment was authorized, on the condition that the researchers continuously inform the ethics committee.",
+      "english": "The experiment was approved on the condition that the scientists check every result.",
       "teaches": [
-        "past-conditional-volna"
+        "b2-cataphoric-clauses"
       ]
     },
     {
       "id": "b2-35-01-practice-1",
       "type": "fill-blank",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
-      "sentence": "____ a számítógépes modell megbízhatónak bizonyul, úgy megkezdődhet a klinikai tesztelés.",
-      "hint": "In the event that / Insofar as",
+      "sentence": "____ az előrejelzés igaz, úgy a gyár jövőre új gépeket vásárol.",
+      "hint": "if, formal",
       "answer": "Amennyiben",
-      "english": "In the event that the computer model proves reliable, clinical testing may begin.",
+      "english": "If the forecast is true, the factory will buy new machines next year.",
       "teaches": [
-        "past-conditional-volna"
+        "b2-technology-futurism-human-agency-vocab"
       ]
     },
     {
       "id": "b2-35-01-practice-2",
       "type": "sentence-builder",
-      "category": "grammar",
+      "category": "vocabulary",
       "stage": "practice",
       "tiles": [
-        "A",
-        "technológiai",
-        "áttörés",
-        "megvalósulhat,",
-        "feltéve,",
-        "ha",
-        "elegendő",
-        "támogatást",
-        "kap",
+        "Amennyiben",
         "a",
-        "laboratórium."
+        "kísérlet",
+        "sikerül,",
+        "úgy",
+        "a",
+        "gép",
+        "elindulhat."
       ],
       "solution": [
-        "A",
-        "technológiai",
-        "áttörés",
-        "megvalósulhat,",
-        "feltéve,",
-        "ha",
-        "elegendő",
-        "támogatást",
-        "kap",
+        "Amennyiben",
         "a",
-        "laboratórium."
+        "kísérlet",
+        "sikerül,",
+        "úgy",
+        "a",
+        "gép",
+        "elindulhat."
       ],
-      "english": "The technological breakthrough can be realized, provided that the laboratory receives sufficient funding.",
+      "english": "If the experiment succeeds, the machine can start.",
       "teaches": [
-        "past-conditional-volna"
+        "b2-technology-futurism-human-agency-vocab"
       ]
     },
     {
@@ -163,10 +157,10 @@
       "type": "fill-blank",
       "category": "vocabulary",
       "stage": "practice",
-      "sentence": "A legfrissebb gazdasági ____ szerint a mesterséges intelligencia átalakítja az ipari termelést.",
-      "hint": "forecasts / projections",
-      "answer": "előrejelzések",
-      "english": "According to the latest economic forecasts, artificial intelligence will transform industrial production.",
+      "sentence": "Az ____ szerint a jövőben sok gép dolgozik a gyárakban.",
+      "hint": "forecast",
+      "answer": "előrejelzés",
+      "english": "According to the forecast, many machines will work in the factories in the future.",
       "teaches": [
         "b2-technology-futurism-human-agency-vocab"
       ]
@@ -178,27 +172,21 @@
       "stage": "practice",
       "tiles": [
         "A",
-        "kutatók",
-        "számos",
+        "tudósok",
         "kísérlettel",
-        "ellenőrizték",
-        "az",
-        "új",
-        "tudományos",
+        "ellenőrzik",
+        "a",
         "hipotézist."
       ],
       "solution": [
         "A",
-        "kutatók",
-        "számos",
+        "tudósok",
         "kísérlettel",
-        "ellenőrizték",
-        "az",
-        "új",
-        "tudományos",
+        "ellenőrzik",
+        "a",
         "hipotézist."
       ],
-      "english": "The researchers verified the new scientific hypothesis with numerous experiments.",
+      "english": "The scientists check the hypothesis by experiment.",
       "teaches": [
         "b2-technology-futurism-human-agency-vocab"
       ]
@@ -210,22 +198,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Futurológus",
-          "text": "Mikor válhatnak az önvezető autók a mindennapi közlekedés általános részévé?"
+          "speaker": "Mérnök",
+          "text": "Mikor indulhat el az új gép?"
         },
         {
-          "speaker": "Mérnök",
+          "speaker": "Tudós",
           "text": "____"
         }
       ],
       "options": [
-        "Feltéve, ha a digitális infrastruktúra kellően fejletté válik, már a következő évtizedben elterjedhetnek.",
-        "Feltéve, hogy ha a digitális infrastruktúra kellően fejletté válna is, már a következő évtizedben elterjednének volna.",
-        "Feltéve, ha a digitális infrastruktúra kellően fejletté váljon, már a következő évtizedben elterjedhetnének."
+        "Amennyiben a kísérlet sikerül, úgy jövő héten elindulhat.",
+        "Amennyiben ha a kísérlet sikerül, úgy jövő héten elindulhat.",
+        "Amennyiben a kísérlet sikerül, ugyanis jövő héten elindulhat."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "b2-technology-futurism-human-agency-vocab"
       ]
     },
     {
@@ -235,22 +223,22 @@
       "stage": "dialogue",
       "prompt": [
         {
-          "speaker": "Kutató",
-          "text": "Hogyan reagál a tudományos közösség erre a forradalmi elméletre?"
+          "speaker": "Mérnök",
+          "text": "Elindulhat a gép?"
         },
         {
-          "speaker": "Professzor",
+          "speaker": "Tudós",
           "text": "____"
         }
       ],
       "options": [
-        "A hipotézist izgalmasnak tartják, azzal a feltétellel, hogy független laboratóriumok is megerősítik az eredményeket.",
-        "A hipotézist izgalmasnak tartják, arra a feltétellel, hogy független laboratóriumok is megerősítik az eredményeket.",
-        "A hipotézist izgalmasnak tartják, abban a feltételben, hogy független laboratóriumok is megerősítik az eredményeket."
+        "Igen, azzal a feltétellel, hogy minden eredményt ellenőrzünk.",
+        "Igen, arra a feltétellel, hogy minden eredményt ellenőrzünk.",
+        "Igen, azzal a feltétellel, minden eredményt ellenőrzünk."
       ],
       "correct": 0,
       "teaches": [
-        "past-conditional-volna"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -260,12 +248,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a formal sentence using 'amennyiben..., úgy...' framing a conditional technological regulation.",
-          "answer": "Amennyiben az algoritmus emberi beavatkozás nélkül hoz döntést, úgy a fejlesztő vállalatot terheli a jogi felelősség."
+          "prompt": "Write a sentence with 'amennyiben ..., úgy ...' about when a machine can start.",
+          "answer": "Amennyiben a gép biztonságos, úgy holnap elindulhat."
         }
       ],
       "teaches": [
-        "past-conditional-volna"
+        "b2-technology-futurism-human-agency-vocab"
       ]
     },
     {
@@ -275,12 +263,12 @@
       "stage": "production",
       "template": [
         {
-          "prompt": "Write a speculative forecast sentence using 'feltéve, ha' concerning renewable energy.",
-          "answer": "A fosszilis tüzelőanyagok teljes kivezetése lehetségessé válik 2040-re, feltéve, ha az akkumulátoros energiatárolás hatékonysága megduplázódik."
+          "prompt": "Write a sentence with 'azzal a feltétellel, hogy' about an experiment.",
+          "answer": "A tudósok azzal a feltétellel kezdik el a kísérletet, hogy a gép biztonságos."
         }
       ],
       "teaches": [
-        "past-conditional-volna"
+        "b2-technology-futurism-human-agency-vocab"
       ]
     },
     {
@@ -288,12 +276,12 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "check",
-      "sentence": "____ a teszt sikeres lesz, úgy haladéktalanul megindítjuk a sorozatgyártást.",
-      "hint": "In the event that / Insofar as",
-      "answer": "Amennyiben",
-      "english": "In the event that the test is successful, we will launch serial production without delay.",
+      "sentence": "Abban az ____, ha a kísérlet sikerül, a tudósok elkezdik a gyártást.",
+      "hint": "case, instance",
+      "answer": "esetben",
+      "english": "In the event that the experiment succeeds, the scientists will start production.",
       "teaches": [
-        "past-conditional-volna"
+        "b2-cataphoric-clauses"
       ]
     },
     {
@@ -301,11 +289,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "check",
-      "question": "Which noun means a prerequisite or necessary condition in formal Hungarian?",
+      "question": "Which word means 'experiment'?",
       "options": [
-        "feltétel",
-        "hipotézis",
-        "előrejelzés"
+        "kísérlet",
+        "előrejelzés",
+        "hipotézis"
       ],
       "correct": 0,
       "teaches": [
