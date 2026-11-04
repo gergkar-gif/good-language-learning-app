@@ -1,0 +1,1147 @@
+[
+ {
+  "file": "content/hu/exercises/b2/b2-30-01-ex.json",
+  "id": "b2-30-01-intro-1",
+  "set": {
+   "teaches": [
+    "verb-government-hoz-hez"
+   ],
+   "category": "grammar"
+  },
+  "why": "tests which case ragaszkodik takes: its grammar skill, not the unit vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-01-ex.json",
+  "id": "b2-30-01-intro-2",
+  "set": {
+   "options": [
+    "the right to challenge a decision of an authority",
+    "a fee paid when a request is submitted",
+    "the record kept of a public hearing"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away 86 vs 58; absurd wrong options (medical prescription, apology) replaced by plausible ones"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-01-ex.json",
+  "id": "b2-30-01-controlled-2",
+  "set": {
+   "question": "Select the correct case suffix governed by 'eltekint': 'A hivatal eltekintett a határidő____.'",
+   "options": [
+    "-től",
+    "-höz",
+    "-re"
+   ],
+   "correct": 0,
+   "teaches": [
+    "tol-tol"
+   ],
+   "category": "grammar",
+   "distractor_skills": {
+    "1": "verb-government-hoz-hez",
+    "2": "verb-government-ra-re"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet bírság, méltányosságból; tests the -tól form, so tol-tol (grammar)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-01-ex.json",
+  "id": "b2-30-01-practice-1",
+  "set": {
+   "sentence": "A hivatal nem járult ____ a kérelem elfogadásához.",
+   "hint": "did not consent",
+   "answer": "hozzá",
+   "english": "The office did not consent to the acceptance of the request."
+  },
+  "kind": "hungarian",
+  "why": "unmet környezetvédelmi"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-01-ex.json",
+  "id": "b2-30-01-practice-2",
+  "set": {
+   "tiles": [
+    "Az",
+    "ügyfél",
+    "jogosult",
+    "a",
+    "jogorvoslatra."
+   ],
+   "solution": [
+    "Az",
+    "ügyfél",
+    "jogosult",
+    "a",
+    "jogorvoslatra."
+   ],
+   "english": "The client is entitled to legal remedy."
+  },
+  "kind": "hungarian",
+  "why": "unmet hatékony, igénybevételére"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-01-ex.json",
+  "id": "b2-30-01-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Ügyfél",
+     "text": "Kérhetem, hogy tekintsenek el a határidőtől?"
+    },
+    {
+     "speaker": "Hivatali ügyintéző",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Igen, ha a hivatal elfogadja a kérelmét, eltekint a határidőtől.",
+    "Igen, ha a hivatal elfogadja a kérelmét, eltekint a határidőre.",
+    "Igen, ha a hivatal elfogadja a kérelmét, eltekint a határidőben."
+   ],
+   "correct": 0,
+   "teaches": [
+    "tol-tol"
+   ],
+   "distractor_skills": {
+    "1": "verb-government-ra-re",
+    "2": "verb-government-ban-ben"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet méltányossági, nyújthat, eltekinthet, pótlék, körülmények; item tests the -tól government of eltekint"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-01-ex.json",
+  "id": "b2-30-01-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Civil aktivista",
+     "text": "Mit csináljunk, ha a hatóság nem járul hozzá a kérelmünkhöz?"
+    },
+    {
+     "speaker": "Jogvédő",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Ragaszkodjunk a jogainkhoz, és forduljunk a bírósághoz.",
+    "Ragaszkodjunk a jogainkban, és forduljunk a bírósághoz.",
+    "Ragaszkodjunk a jogainkra, és forduljunk a bírósághoz."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet közérdekű (lesson 3 word), élve, indíthatunk"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-01-ex.json",
+  "id": "b2-30-01-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a formal sentence using 'ragaszkodik' (+ -hoz/-hez/-höz) to assert a citizen's procedural right.",
+     "answer": "A panaszos határozottan ragaszkodik ahhoz, hogy a hatóság írásban válaszoljon."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet indokolja"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-01-ex.json",
+  "id": "b2-30-01-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence using 'eltekint' (+ -tól/-től) in an official administrative context.",
+     "answer": "A hivatal eltekintett a határidőtől, mert az ügyfél kérte."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet alapos, szabálysértési"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-01-ex.json",
+  "id": "b2-30-01-check-1",
+  "set": {
+   "sentence": "A hivatal dolgozói kötelesek ____ a nyilatkozatoktól.",
+   "hint": "to refrain",
+   "answer": "tartózkodni",
+   "english": "Office staff are obliged to refrain from making statements."
+  },
+  "kind": "hungarian",
+  "why": "unmet tevékenységtől, összeférhetetlen"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-30-01-a-gr.json",
+  "old": "\"content\": \"In Hungarian public and legal administration, verbs expressing",
+  "new": "\"content\": \"You know verbs that take *-hoz/-hez/-höz* from B1 Unit 9 and the ending *-tól/-től* from A1 Unit 31; what is new here are the formal verbs below. In Hungarian public and legal administration, verbs expressing",
+  "kind": "hungarian",
+  "why": "screen presented the B1 -hoz government and the A1 -tól as new"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-30-01-a-gr.json",
+  "old": "When a governed verb introduces a subordinate clause, use the correlating demonstrative:",
+  "new": "You know this pattern (*ahhoz, hogy* and the like) from B2 Unit 17. When a governed verb introduces a subordinate clause, use the correlating demonstrative:",
+  "kind": "hungarian",
+  "why": "cataphoric clause recap (b2-cataphoric-clauses, Unit 17)"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-01.json",
+  "old": "Mikszáth Kálmán 'Különös házasság' című remekműve pedig a jogi és intézményi önkénnyel szembeni küzdelem örök dilemmáit mutatja be.",
+  "new": "Az olvasmány Buttler János gróf jogi küzdelmét mutatja be egy ügyvédi irodában; a jelenet Mikszáth Kálmán 'Különös házasság' című regénye nyomán készült.",
+  "kind": "hungarian",
+  "why": "intro calls the story the novel's masterwork showing its \"eternal dilemmas\": it is an adapted scene"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-02-ex.json",
+  "id": "b2-30-02-intro-1",
+  "set": {
+   "teaches": [
+    "verb-government-ra-re"
+   ],
+   "category": "grammar"
+  },
+  "why": "tests the case hivatkozik takes (grammar skill)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-02-ex.json",
+  "id": "b2-30-02-intro-2",
+  "set": {
+   "options": [
+    "a written request or complaint sent to an authority",
+    "the written decision an authority sends in reply",
+    "the minutes taken at a public hearing"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "absurd wrong options (stationery receipt, identity badge) replaced"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-02-ex.json",
+  "id": "b2-30-02-controlled-4",
+  "set": {
+   "sentence": "A beadvány szerzője a törvényre ____.",
+   "hint": "referred / cited",
+   "answer": "hivatkozott",
+   "english": "The author of the petition cited the law."
+  },
+  "kind": "hungarian",
+  "why": "unmet garantáló"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-02-ex.json",
+  "id": "b2-30-02-practice-1",
+  "set": {
+   "sentence": "A polgármester a jelentésében külön ____ a lakosok kérdéseire.",
+   "hint": "touched upon",
+   "answer": "kitért",
+   "english": "In his report the mayor specifically addressed the residents' questions."
+  },
+  "kind": "hungarian",
+  "why": "unmet lakossági, megalapozottságára"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-02-ex.json",
+  "id": "b2-30-02-practice-4",
+  "set": {
+   "tiles": [
+    "A",
+    "jegyző",
+    "személyesen",
+    "meggyőződött",
+    "a",
+    "tényekről."
+   ],
+   "solution": [
+    "A",
+    "jegyző",
+    "személyesen",
+    "meggyőződött",
+    "a",
+    "tényekről."
+   ],
+   "english": "The town clerk personally made sure of the facts."
+  },
+  "kind": "hungarian",
+  "why": "unmet ellenőrök, győződtek (split preverb)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-02-ex.json",
+  "id": "b2-30-02-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Állampolgár",
+     "text": "Mit írjak a beadványomba?"
+    },
+    {
+     "speaker": "Ügyvéd",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Hivatkozzon a törvényre, és számoljon be a tényekről.",
+    "Hivatkozzon a törvényben, és számoljon be a tényekről.",
+    "Hivatkozzon a törvényre, és számoljon be a tényekben."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "verb-government-ban-ben",
+    "2": "verb-government-ban-ben"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet indokoljam, elvére, körülményekről"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-02-ex.json",
+  "id": "b2-30-02-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Bizottsági elnök",
+     "text": "Mit írt a jelentés?"
+    },
+    {
+     "speaker": "Főfelügyelő",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "A jegyző meggyőződött a szabályok betartásáról, és a jelentés kitért a panaszokra.",
+    "A jegyző meggyőződött a szabályok betartásában, és a jelentés kitért a panaszokra.",
+    "A jegyző meggyőződött a szabályok betartásáról, és a jelentés kitért a panaszokról."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet győződtek, biztonsági, hiányosságokra"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-02-ex.json",
+  "id": "b2-30-02-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence using 'hivatkozik' (+ -ra/-re) citing a law in an administrative context.",
+     "answer": "A beadványában az ügyfél a törvényre hivatkozott."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet közigazgatási"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-02-ex.json",
+  "id": "b2-30-02-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence using 'meggyőződik' (+ -ról/-ről) verifying factual accuracy.",
+     "answer": "A hivatalvezető a döntés előtt személyesen meggyőződött a tényekről."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet valódiságáról, győződött"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-02-ex.json",
+  "id": "b2-30-02-check-1",
+  "set": {
+   "sentence": "A polgármester a beszédében nem ____ a lakosok panaszaira.",
+   "hint": "did not touch upon",
+   "answer": "tért ki",
+   "english": "In his speech the mayor did not address the residents' complaints."
+  },
+  "kind": "hungarian",
+  "why": "unmet lakossági, kiváltó"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-30-02-a-gr.json",
+  "old": "\"content\": \"Verbs pointing towards an authority",
+  "new": "\"content\": \"You know verbs that take *-ra/-re* from B1 Unit 3 and *-ról/-ről* from B1 Unit 9; what is new here are the formal verbs below. Verbs pointing towards an authority",
+  "kind": "hungarian",
+  "why": "screen presented the B1 -ra/-ról government as new"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-30-02-a-gr.json",
+  "old": "Watch the correlating demonstrative forms:",
+  "new": "You know *arra, hogy* and *arról, hogy* from B2 Unit 17. Watch the correlating demonstrative forms:",
+  "kind": "hungarian",
+  "why": "cataphoric clause recap"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-02.json",
+  "old": "\n    \"I can draft an administrative petition (beadvány) applying these governed verbs correctly\"",
+  "new": "\n    \"I can write a sentence for a petition (beadvány) with these governed verbs\"",
+  "why": "promised drafting a petition; the lesson practises single sentences"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-02.json",
+  "old": "s\",\n      \"items\": [\n        \"I can use sublative-governing verbs like hivatkozik and kitér to cite regulations and touch upon issues\",\n        \"I can use delative-governing verbs like beszámol and meggyőződik to report on and verify facts\",\n        \"I can draft an administrative petition (beadvány) applying these governed verbs correctly\"",
+  "new": "s\",\n      \"items\": [\n        \"I can use sublative-governing verbs like hivatkozik and kitér to cite regulations and touch upon issues\",\n        \"I can use delative-governing verbs like beszámol and meggyőződik to report on and verify facts\",\n        \"I can write a sentence for a petition (beadvány) with these governed verbs\"",
+  "why": "promised drafting a petition; the lesson practises single sentences"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-02.json",
+  "old": "\"I can draft an administrative petition (beadvány) applying these governed verbs correctly\"",
+  "new": "\"I can write a sentence for a petition (beadvány) with these governed verbs\"",
+  "why": "promised drafting a petition; the lesson practises single sentences"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-03-ex.json",
+  "id": "b2-30-03-intro-1",
+  "set": {
+   "options": [
+    "a commissioner elected by parliament to protect fundamental rights",
+    "a judge who decides disputes between citizens and offices",
+    "a minister who leads the government's daily work"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away 110 vs 63; absurd options (traffic fines, bank manager); present-day office: check"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-03-ex.json",
+  "id": "b2-30-03-controlled-4",
+  "set": {
+   "sentence": "A civil szervezet pert indított a bíróságon a megtagadott közérdekű adatok kiadása ____."
+  },
+  "kind": "hungarian",
+  "why": "unmet keresetet"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-03-ex.json",
+  "id": "b2-30-03-practice-1",
+  "set": {
+   "sentence": "A hivatal köteles biztosítani a döntések teljes ____.",
+   "hint": "transparency",
+   "answer": "átláthatóságát",
+   "english": "The office is obliged to ensure the full transparency of its decisions."
+  },
+  "kind": "hungarian",
+  "why": "unmet közintézmények, költségvetési"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-03-ex.json",
+  "id": "b2-30-03-practice-3",
+  "set": {
+   "sentence": "A polgármester ____ erősíti a lakosok bizalmát.",
+   "hint": "accountability",
+   "answer": "elszámoltathatósága",
+   "english": "The mayor's accountability strengthens the residents' trust."
+  },
+  "kind": "hungarian",
+  "why": "unmet korrupció, visszaszorításának, leghatékonyabb, döntéshozók"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-03-ex.json",
+  "id": "b2-30-03-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Újságíró",
+     "text": "Mit csináljunk, ha a minisztérium nem adja ki az adatokat?"
+    },
+    {
+     "speaker": "Jogvédő jogász",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Forduljunk az ombudsmanhoz, és kérjük az átláthatóságot.",
+    "Forduljunk az ombudsmannál, és kérjük az átláthatóságot.",
+    "Forduljunk az ombudsmannak, és kérjük az átláthatóságot."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "nal-nel",
+    "2": "verb-government-nak-nek"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet indíthatunk, fordulhatunk, hozatalát; the old wrong option 3 had two faults (ombudsmannak is one; érvényesítésében végett another)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-03-ex.json",
+  "id": "b2-30-03-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Panaszos",
+     "text": "Mikor lehet az ombudsmanhoz fordulni?"
+    },
+    {
+     "speaker": "Hivatali tanácsadó",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Akkor, ha a hatóság nem tartja be a törvényt.",
+    "Akkor, ha a hatóság nem tartja be a törvénynek.",
+    "Akkor, ha a hatóság nem tartja be a törvényben."
+   ],
+   "correct": 0,
+   "teaches": [
+    "how-the-accusative-t-works"
+   ],
+   "distractor_skills": {
+    "2": "ban-ben-in"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet tevékenysége, sért, jogorvoslati, kimerítették; old wrong option 2 changed mood (volna) and was a long sentence; now tests the accusative of betart"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-03-ex.json",
+  "id": "b2-30-03-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence using 'közérdekű adat' asserting access to information.",
+     "answer": "Az önkormányzat köteles tizenöt napon belül kiadni a polgárok által kért közérdekű adatokat."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "check: the information-request deadline is 15 days (extendable), not 30",
+  "sure": false
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-03-ex.json",
+  "id": "b2-30-03-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence using 'elszámoltathatóság' in the context of democratic governance.",
+     "answer": "A képviselők elszámoltathatósága fontos a demokráciában."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet tisztségviselők, átlátható, felhasználása, sarokköve"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-03-ex.json",
+  "id": "b2-30-03-check-1",
+  "set": {
+   "sentence": "Az ombudsman a panasz után ____ indított az ügyben.",
+   "hint": "inquiry",
+   "answer": "kivizsgálást",
+   "english": "After the complaint, the ombudsman launched an inquiry in the case."
+  },
+  "kind": "hungarian",
+  "why": "unmet alapos, rendőri, jogszerűségének, felülvizsgálatára"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-30-03-a-gr.json",
+  "old": "Note that 'ombudsman' is typically used with the allative case",
+  "new": "You know *-hoz/-hez/-höz* with *fordul* from B1 Unit 9. Note that 'ombudsman' is typically used with the allative case",
+  "kind": "hungarian",
+  "why": "recap of the known -hoz government"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-03.json",
+  "old": "\n    \"I can formulate inquiries to the parliamentary commissioner / ombudsman\"",
+  "new": "\n    \"I can say that someone turns to the ombudsman (az ombudsmanhoz fordul)\"",
+  "why": "promised formulating inquiries; the lesson only practises turning to the ombudsman"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-03.json",
+  "old": "s\",\n      \"items\": [\n        \"I can discuss public sector transparency (átláthatóság) and institutional accountability (elszámoltathatóság)\",\n        \"I can formulate inquiries to the parliamentary commissioner / ombudsman\"",
+  "new": "s\",\n      \"items\": [\n        \"I can discuss public sector transparency (átláthatóság) and institutional accountability (elszámoltathatóság)\",\n        \"I can say that someone turns to the ombudsman (az ombudsmanhoz fordul)\"",
+  "why": "promised formulating inquiries; the lesson only practises turning to the ombudsman"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-03.json",
+  "old": "\"I can formulate inquiries to the parliamentary commissioner / ombudsman\"",
+  "new": "\"I can say that someone turns to the ombudsman (az ombudsmanhoz fordul)\"",
+  "why": "promised formulating inquiries; the lesson only practises turning to the ombudsman"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-04-ex.json",
+  "id": "b2-30-04-intro-2",
+  "set": {
+   "options": [
+    "a formal written decision of an authority",
+    "a written request sent to an authority",
+    "the minutes taken at a public hearing"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "absurd wrong options (informal phone inquiry, cafeteria pass)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-04-ex.json",
+  "id": "b2-30-04-controlled-2",
+  "set": {
+   "question": "Select the correct phrasing for lodging an administrative complaint: 'Az ügyfél hivatalos ____ a hivatalvezetőnél.'",
+   "options": [
+    "panasszal élt",
+    "panaszt élt",
+    "panasszal tett"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet panaszkodott, tönkre; old wrong options were nonsense"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-04-ex.json",
+  "id": "b2-30-04-practice-1",
+  "set": {
+   "sentence": "A panaszos határidőn belül ____ a hatóság határozata ellen.",
+   "hint": "appealed",
+   "answer": "fellebbezett",
+   "english": "The complainant appealed within the deadline against the authority's decision."
+  },
+  "kind": "hungarian",
+  "why": "unmet építési, elmarasztaló"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-04-ex.json",
+  "id": "b2-30-04-practice-3",
+  "set": {
+   "sentence": "Az ügyfél hivatalos ____ élt a jegyző eljárása miatt.",
+   "hint": "complaint",
+   "answer": "panasszal",
+   "english": "The client lodged an official complaint because of the clerk's procedure."
+  },
+  "kind": "hungarian",
+  "why": "unmet vállalkozó"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-04-ex.json",
+  "id": "b2-30-04-practice-4",
+  "set": {
+   "tiles": [
+    "A",
+    "kormányhivatal",
+    "megsemmisítette",
+    "a",
+    "törvénysértő",
+    "határozatot."
+   ],
+   "solution": [
+    "A",
+    "kormányhivatal",
+    "megsemmisítette",
+    "a",
+    "törvénysértő",
+    "határozatot."
+   ],
+   "english": "The government office annulled the unlawful decision."
+  },
+  "kind": "hungarian",
+  "why": "unmet másodfokon"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-04-ex.json",
+  "id": "b2-30-04-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Ügyfél",
+     "text": "A hivatal elutasította a kérelmemet. Mit csináljak?"
+    },
+    {
+     "speaker": "Ügyvéd",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Fellebbezzen a határozat ellen tizenöt napon belül.",
+    "Fellebbezzen a határozat mellett tizenöt napon belül.",
+    "Fellebbezzen ellen a határozat tizenöt napon belül."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "postpositions-basic"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet igazságtalan, tehetek, fellebbezhet, terjeszthet; old wrong option 2 (határozatnak ellen) and 3 (felettes szervhez) mixed faults; 15-day appeal period: check"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-04-ex.json",
+  "id": "b2-30-04-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Hivatali ellenőr",
+     "text": "Mi történt a határozattal?"
+    },
+    {
+     "speaker": "Jegyző",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "A kormányhivatal megsemmisítette, mert eljárási hiba történt.",
+    "A kormányhivatal megsemmisítette, mert eljárási hibát történt.",
+    "A kormányhivatal megsemmisítette, mert eljárási hiba történtek."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "how-the-accusative-t-works"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet indok, semmisítették; old option 2 sorában vs során was a second right answer (sorában is a literary variant)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-04-ex.json",
+  "id": "b2-30-04-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a formal sentence using 'fellebbez' (+ ellen) challenging an administrative decree.",
+     "answer": "A kérelmező az ügyvédje útján fellebbezett a hivatal határozata ellen."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet környezetvédelmi"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-04-ex.json",
+  "id": "b2-30-04-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence combining 'eljárási hiba' and 'panasszal él'.",
+     "answer": "Az ügyfél panasszal élt az eljárási hiba miatt."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet felperes, megfosztotta"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-04-ex.json",
+  "id": "b2-30-04-check-1",
+  "set": {
+   "sentence": "Az ügyfél jogosult fellebbezést benyújtani a törvénysértő döntések ____.",
+   "hint": "against",
+   "answer": "ellen",
+   "english": "The client is entitled to submit an appeal against unlawful decisions."
+  },
+  "kind": "hungarian",
+  "why": "unmet közigazgatási"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-30-04-a-gr.json",
+  "old": "the idiom 'panasszal él' (literally 'lives with a complaint' = formally files a complaint) is paired with 'szemben' or takes a dative-infinitive complement.",
+  "new": "the idiom 'panasszal él' (literally 'lives with a complaint' = formally files a complaint) is followed by 'miatt' and the reason: 'panasszal él az eljárási hiba miatt'.",
+  "kind": "hungarian",
+  "why": "false rule: panasszal él does not take a dative-infinitive complement"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-04.json",
+  "old": "\n    \"I can formulate a formal complaint using panasszal él with postpositional government\"",
+  "new": "\n    \"I can lodge a complaint with panasszal él and give the reason with miatt\"",
+  "why": "goal promised postpositional government that the screen never teaches"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-04.json",
+  "old": "s\",\n      \"items\": [\n        \"I can lodge an official appeal against a ruling using fellebbez (-ellen)\",\n        \"I can formulate a formal complaint using panasszal él with postpositional government\"",
+  "new": "s\",\n      \"items\": [\n        \"I can lodge an official appeal against a ruling using fellebbez (-ellen)\",\n        \"I can lodge a complaint with panasszal él and give the reason with miatt\"",
+  "why": "goal promised postpositional government that the screen never teaches"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-04.json",
+  "old": "\"I can formulate a formal complaint using panasszal él with postpositional government\"",
+  "new": "\"I can lodge a complaint with panasszal él and give the reason with miatt\"",
+  "why": "goal promised postpositional government that the screen never teaches"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-05-ex.json",
+  "id": "b2-30-05-intro-1",
+  "set": {
+   "options": [
+    "an open meeting where residents speak to the officials",
+    "a vote in which residents choose a mayor",
+    "a report an office writes about its own work"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away 86 vs 60; absurd options (hearing test, opera)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-05-ex.json",
+  "id": "b2-30-05-intro-2",
+  "set": {
+   "options": [
+    "érdekérvényesítés",
+    "elszámoltathatóság",
+    "hatásvizsgálat"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away 17 vs 13"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-05-ex.json",
+  "id": "b2-30-05-controlled-2",
+  "set": {
+   "question": "Which suffix fits best: 'A lakosok a hatásvizsgálat eredményei____ hivatkoztak a közmeghallgatáson'?"
+  },
+  "kind": "hungarian",
+  "why": "unmet vita (question stem)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-05-ex.json",
+  "id": "b2-30-05-practice-1",
+  "set": {
+   "sentence": "A tervet társadalmi ____ kell bocsátani, mielőtt a parlament dönt.",
+   "hint": "consultation",
+   "answer": "egyeztetésre",
+   "english": "The plan must be put to public consultation before parliament decides.",
+   "teaches": [
+    "b2-civic-participation-advocacy-public-vocab"
+   ],
+   "category": "vocabulary"
+  },
+  "kind": "hungarian",
+  "why": "unmet széles, körű; tested word is egyeztetés (vocabulary), not a verb government"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-05-ex.json",
+  "id": "b2-30-05-practice-3",
+  "set": {
+   "sentence": "A civil szervezetek jó ____ révén elérték az erdő megóvását.",
+   "hint": "advocacy",
+   "answer": "érdekérvényesítés",
+   "english": "Through good advocacy, civil organizations achieved the protection of the forest."
+  },
+  "kind": "hungarian",
+  "why": "unmet hatékony"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-05-ex.json",
+  "id": "b2-30-05-dialogue-1",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Önkormányzati képviselő",
+     "text": "Hogyan erősítsük a lakosok bizalmát a tervek iránt?"
+    },
+    {
+     "speaker": "Civil koordinátor",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Közmeghallgatást kell szervezni, ahol a lakosok hivatkoznak a hatásvizsgálatra.",
+    "Közmeghallgatást kell szervezni, ahol a lakosok hivatkoznak a hatásvizsgálatban.",
+    "Közmeghallgatást kell szervezni, ahol a lakosok hivatkoznak a hatásvizsgálathoz."
+   ],
+   "correct": 0,
+   "teaches": [
+    "verb-government-ra-re"
+   ],
+   "distractor_skills": {
+    "1": "verb-government-ban-ben",
+    "2": "verb-government-hoz-hez"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet növelhetjük, városfejlesztési, hozzászólhatnak"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-05-ex.json",
+  "id": "b2-30-05-dialogue-2",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Helyi lakos",
+     "text": "Érdemes elmenni a holnapi közmeghallgatásra?"
+    },
+    {
+     "speaker": "Környezetvédő",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "Feltétlenül, hiszen az érdekérvényesítés révén hatással lehetünk a döntésre.",
+    "Feltétlenül, hiszen az érdekérvényesítés révén hatással lehetünk a döntésben.",
+    "Feltétlenül, hiszen az érdekérvényesítés révén hatással lehetünk a döntéshez."
+   ],
+   "correct": 0,
+   "teaches": [
+    "verb-government-ra-re"
+   ],
+   "distractor_skills": {
+    "1": "verb-government-ban-ben",
+    "2": "verb-government-hoz-hez"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet befolyásolhatjuk; old wrong option 3 had two faults (befolyásolhatnánk and -ban)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-05-ex.json",
+  "id": "b2-30-05-writing-1",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence using 'társadalmi egyeztetés' in a legislative reform context.",
+     "answer": "A kormány a törvény elfogadása előtt társadalmi egyeztetést ígért."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet széles, körű"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-05-ex.json",
+  "id": "b2-30-05-writing-2",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence combining 'közmeghallgatás' and 'hatásvizsgálat'.",
+     "answer": "A közmeghallgatáson a lakosok beszéltek a hatásvizsgálat eredményeiről."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet megállapításait"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-05-ex.json",
+  "id": "b2-30-05-reading-1",
+  "set": {
+   "question": "Miért utasította el az egyházi bíróság Buttler János kérelmét a szöveg szerint?",
+   "options": [
+    "Mert az előírásokhoz ragaszkodtak, és eltekintettek a tényektől.",
+    "Mert Buttler nem tartotta be a határidőt, ezért elutasították.",
+    "Mert az ügyvéd elfelejtette beadni a kérelmet a bíróságon."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "unmet formai, kényszerítés, listáját; the story: ragaszkodnak a formai előírásokhoz, eltekintenek a tanúvallomásoktól"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-05-ex.json",
+  "id": "b2-30-05-reading-2",
+  "set": {
+   "question": "Mit javasol az ügyvéd a további lépésekre?",
+   "options": [
+    "Hogy hivatkozzanak a törvényre, és számoljanak be az eljárási hibákról.",
+    "Hogy fogadják el a döntést, és ne fellebbezzenek tovább.",
+    "Hogy menjenek külföldre, és ott keressenek másik bíróságot."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "tell-absolute soha; unmet jogorvoslati, betűjére, visszaélésekről, házasság, érvényességét"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-05-ex.json",
+  "id": "b2-30-05-reading-3",
+  "set": {
+   "question": "Mit mond Buttler gróf a nyilvánosságról?",
+   "options": [
+    "Hogy a hatalom csak akkor hátrál meg, ha a nyilvánosság kényszeríti.",
+    "Hogy az egyházi bíróság gyorsan dönt, ha az ügyvéd kéri.",
+    "Hogy az ügyvédre nincs szükség, mert a gróf maga dönt."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "tell-absolute mindig; \"döbbent rá a per elhúzódása során\" is not in the story; the story has him say he is convinced (meggyőződtem arról) that power gives way only to publicity"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-consolidation-ex.json",
+  "id": "b2-30-consolidation-2",
+  "set": {
+   "question": "What does 'panasszal él' mean in an official dispute?",
+   "options": [
+    "to formally file a complaint with an authority",
+    "to ask an authority for a small favour",
+    "to withdraw a request after the decision"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "why": "length give-away 99 vs 64; absurd options"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-consolidation-ex.json",
+  "id": "b2-30-consolidation-3",
+  "set": {
+   "question": "Which sentence uses both 'ragaszkodik' and 'eltekint' correctly?",
+   "options": [
+    "Az ügyfél ragaszkodik a jogaihoz, de a hivatal eltekint a határidőtől.",
+    "Az ügyfél ragaszkodik a jogaitól, de a hivatal eltekint a határidőtől.",
+    "Az ügyfél ragaszkodik a jogaihoz, de a hivatal eltekint a határidőhöz."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "tol-tol"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet felperes, bírságtól, bírsághoz, bírságban; the old wrong options had two or three faults"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-consolidation-ex.json",
+  "id": "b2-30-consolidation-4",
+  "set": {
+   "sentence": "A képviselők ____ elengedhetetlen a demokráciához.",
+   "hint": "accountability",
+   "answer": "elszámoltathatósága",
+   "english": "The accountability of the representatives is indispensable for democracy."
+  },
+  "kind": "hungarian",
+  "why": "unmet döntéshozók, átlátható"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-consolidation-ex.json",
+  "id": "b2-30-consolidation-5",
+  "set": {
+   "sentence": "Az ügyfél tizenöt napon belül ____ az első határozat ellen.",
+   "hint": "appealed",
+   "answer": "fellebbezett",
+   "english": "The client appealed against the first decision within fifteen days."
+  },
+  "kind": "hungarian",
+  "why": "unmet kézhezvételtől"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-consolidation-ex.json",
+  "id": "b2-30-consolidation-7",
+  "set": {
+   "question": "Which sentence uses 'fellebbez' correctly?",
+   "options": [
+    "Az ügyfél fellebbezett a határozat ellen.",
+    "Az ügyfél fellebbezett a határozat mellett.",
+    "Az ügyfél fellebbezett a határozatot."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "postpositions-basic",
+    "2": "how-the-accusative-t-works"
+   }
+  },
+  "kind": "hungarian",
+  "why": "length give-away 104 vs 75; meta question with absurd options (\"határozat cannot take case suffixes\"); suspect option-language"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-consolidation-ex.json",
+  "id": "b2-30-consolidation-8",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Irodalomtörténész",
+     "text": "Mit mutat a történet Buttler Jánosról?"
+    },
+    {
+     "speaker": "Egyetemi hallgató",
+     "text": "____"
+    }
+   ],
+   "options": [
+    "A hatóságok ragaszkodnak az előírásokhoz, eltekintenek az igazságtól, és Buttler fellebbez a döntés ellen.",
+    "A hatóságok ragaszkodnak az előírásokban, eltekintenek az igazságtól, és Buttler fellebbez a döntés ellen.",
+    "A hatóságok ragaszkodnak az előírásokhoz, eltekintenek az igazságra, és Buttler fellebbez a döntés ellen."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "verb-government-ban-ben",
+    "2": "verb-government-ra-re"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet jelenik, formaságokhoz, házasságában; \"in Mikszáth Különös házasság\" is not confirmed: the story is an adapted scene; old wrong option 3 had two faults"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-consolidation-ex.json",
+  "id": "b2-30-consolidation-9",
+  "set": {
+   "question": "Select the sentence where 'meggyőződik' has the correct government:",
+   "options": [
+    "A jegyző a helyszínen meggyőződött a tényekről.",
+    "A jegyző a helyszínen meggyőződött a tényekre.",
+    "A jegyző a helyszínen meggyőződött a tényekhez."
+   ],
+   "correct": 0,
+   "distractor_skills": {
+    "1": "verb-government-ra-re",
+    "2": "verb-government-hoz-hez"
+   }
+  },
+  "kind": "hungarian",
+  "why": "unmet győződött (split preverb), valódiságáról"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-30-consolidation-ex.json",
+  "id": "b2-30-consolidation-12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a three-clause administrative argument using 'ragaszkodik' (-hoz), 'hivatkozik' (-ra), and 'fellebbez' (ellen).",
+     "answer": "Az ügyfél ragaszkodik a jogaihoz, a beadványában a törvényre hivatkozik, és fellebbez a határozat ellen."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "why": "unmet elmarasztaló; answer used a conditional kerülne"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-consolidation.json",
+  "old": "s\",\n      \"items\": [\n        \"I can confidently apply allative and ablative abstract verb case governments (ragaszkodik -hoz, eltekint -tól)\"",
+  "new": "s\",\n      \"items\": [\n        \"I can use verbs that take -hoz/-hez/-höz or -tól/-től (ragaszkodik, eltekint)\"",
+  "why": "\"confidently apply ... case governments\" is vague"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-consolidation.json",
+  "old": "\"I can confidently apply allative and ablative abstract verb case governments (ragaszkodik -hoz, eltekint -tól)\"",
+  "new": "\"I can use verbs that take -hoz/-hez/-höz or -tól/-től (ragaszkodik, eltekint)\"",
+  "why": "\"confidently apply ... case governments\" is vague"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-consolidation.json",
+  "old": "s\",\n      \"items\": [\n        \"I can use verbs that take -hoz/-hez/-höz or -tól/-től (ragaszkodik, eltekint)\",\n        \"I can master sublative and delative verb case governments (hivatkozik -ra, beszámol -ról, meggyőződik -ról)\"",
+  "new": "s\",\n      \"items\": [\n        \"I can use verbs that take -hoz/-hez/-höz or -tól/-től (ragaszkodik, eltekint)\",\n        \"I can use verbs that take -ra/-re or -ról/-ről (hivatkozik, beszámol, meggyőződik)\"",
+  "why": "\"master\" overclaims"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-consolidation.json",
+  "old": "\"I can master sublative and delative verb case governments (hivatkozik -ra, beszámol -ról, meggyőződik -ról)\"",
+  "new": "\"I can use verbs that take -ra/-re or -ról/-ről (hivatkozik, beszámol, meggyőződik)\"",
+  "why": "\"master\" overclaims"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-consolidation.json",
+  "old": "s\",\n      \"items\": [\n        \"I can use verbs that take -hoz/-hez/-höz or -tól/-től (ragaszkodik, eltekint)\",\n        \"I can use verbs that take -ra/-re or -ról/-ről (hivatkozik, beszámol, meggyőződik)\",\n        \"I can draft petitions, administrative appeals, and participate in civic consultations in sophisticated B2 Hungarian\"",
+  "new": "s\",\n      \"items\": [\n        \"I can use verbs that take -hoz/-hez/-höz or -tól/-től (ragaszkodik, eltekint)\",\n        \"I can use verbs that take -ra/-re or -ról/-ről (hivatkozik, beszámol, meggyőződik)\",\n        \"I can write short sentences about petitions, appeals and public hearings\"",
+  "why": "promised drafting petitions and taking part in consultations; the unit practises single sentences"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-30-consolidation.json",
+  "old": "\"I can draft petitions, administrative appeals, and participate in civic consultations in sophisticated B2 Hungarian\"",
+  "new": "\"I can write short sentences about petitions, appeals and public hearings\"",
+  "why": "promised drafting petitions and taking part in consultations; the unit practises single sentences"
+ },
+ {
+  "file": "content/hu/stories/classics/b2/b2-30-kulonoshazassag.json",
+  "old": "Mi ellen folytat elszánt küzdelmet Buttler János gróf a regényrészletben?",
+  "new": "Mi ellen folytat elszánt küzdelmet Buttler János gróf a történetben?",
+  "kind": "hungarian",
+  "why": "the story is an adapted scene, not an excerpt of the novel"
+ }
+]
