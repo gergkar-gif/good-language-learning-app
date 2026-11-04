@@ -450,6 +450,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-30 | HU B1 citizenship 71, 73, 74, 75 | paired read, 2 units/reader; both hit the 5-hour limit after one unit and were resumed | | A 305k, B 275k (resumed runs) | 300 proposed (71 / 95 / 71 / 63), 5 rejected and rewritten; Claude changed 25, plus 31 glued blanks by script | ~145k a unit; HU B1 75/75 frozen; walk 24/24 |
 | 10-30 | HU B1 walk + level checklist | Claude, no agents | | | 0 walk failures (450/450) | ~9 min of walking; check-content 0/0, no B1 validator warning (`imports/review/hu-b1-level-check/summary.md`) |
 | 10-30 | **HU B2 pilot**: core Unit 1 `nuance-focus-emphasis-narrative` ∥ Unit 3 `memory-nostalgia-sensory-description` | 1 unit per reader; both stopped by the 5-hour limit before any file, resumed | | A 201,538, 4.3; B 190,621, 3.8 (resumed runs) | 157 proposed (70 / 87), 2 rejected and rewritten; Claude changed 3 dialogue items, 3 challenges (invented facts), 1 recap unit, 4 unmet words | **~200k a unit** at one per reader; Unit 3 built on Unit 4's `participial-clauses` (66 `taught-later`), Unit 1 lesson 3 on Unit 2's `b2-contrastive-topic`: for the user; check-content 0/0; walk 12/12 |
+| 11-04 | HU B2 core 5, 7, 9, 11, 13, 15 | paired read, 3 core units/reader; both stopped by the weekly limit mid-batch, resumed after the reset; reader B resumed again for the C1 rewrites | | A 413,177; B 340,419 + 398,629 (resumed runs) | 475 proposed (74 / 88 / 81 / 77 / 85 / 70) + 137 C1 rewrites, 6 rejected and rewritten; Claude changed ~25 items, 29 arrow hints, ~15 unmet words, a story line | ~140k a unit before the rewrites; 2 C1 lessons rewritten (Units 13, 15); 2 skills moved by the user (`concessive-indefinites` to Unit 7, `sag-seg-nouns` to B2 Unit 5); 2 classics relabelled as original; walk 36/36 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1527,3 +1528,25 @@ The user took the four recommended options:
   the core lessons that teach them first (Unit 3, Unit 1 lesson 3); 47 items
   retagged, both units frozen. Expect the same pattern in later core units:
   bring each case to the user, don't move a `taught_in` without sign-off.
+
+### 2026-11-04: HU B2 core Units 5–15
+
+- **The order defect recurs in every batch:** Unit 7 drilled `concessive-indefinites`
+  (Unit 17) and Unit 5 the C1 `sag-seg-nouns`; the user moved both skills to the
+  units that teach them first, as with the pilot's two. Units 13 and 15 built whole
+  lessons on C1 skills (*feltéve, hogy*; epistemic past modals): rewritten, the user's
+  "no C1 forms" rule. Expect one such case per unit or two: the focus file now asks
+  readers to rewrite C1 forms and report later-B2 ones with a count.
+- **Reader resumes work well for follow-up rewrites:** reader B, with the units still in
+  context, wrote 137 C1 rewrites as extra lists against its own fixed text (stage 2),
+  1 rejected. Apply in two stages: the base lists (minus the ids the extras replace),
+  then the extras.
+- **Arrow hints scripted** (`hint-suffix`, B2 and "X -> -ending"); several Unit 9
+  hints gave the answer word itself (*rak -> rakosgat*).
+- **Invented classics:** two of six core stories are original scenes under a book's
+  name (Csáth, Németh) and one claims an unconfirmed parody (Krúdy in *Így írtok
+  ti*). The reviewer's story read while readers run catches these; check every
+  batch's classics against the book.
+- **Cost:** ~140k a unit at three per reader (resumed runs only), about the B1 core
+  rate; the weekly limit, not tokens, set the pace (four days' wait).
+

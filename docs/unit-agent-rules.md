@@ -301,6 +301,15 @@ participles *-ó/-ő* and *-t/-tt* are B1 (Units 11 and 3): recap them. Write a
 recap with the recapped word in italics (*viszont*), or the reviewer's check can't
 read it. Challenge targets state only what the story states (no invented dress,
 habit or dislike).
+**HU B2 core 5–15 (2026-11-04).** C1 forms in B2 lessons are rewritten, never kept:
+*feltéve, hogy* / *kivéve, ha* (use *amennyiben*, *abban az esetben, ha*), the epistemic
+past modals (*kellett, hogy legyen*, epistemic *-hatott*: use *biztosan*, *valószínűleg*,
+*lehet, hogy*). Moved by the user: `concessive-indefinites` is taught in b2-04-04
+(Unit 7), `sag-seg-nouns` is B2, taught in b2-03-01 (Unit 5). A cataphoric clause
+(*attól függően, hogy*, *aszerint, hogy*) waits for Unit 35; *arra kér, hogy* is B1
+(reported commands). A hint names the base verb and the role (*rak, frequentative,
+3sg past*), never "X -> ending" or the answer form. A classic labelled "inspired by"
+is an original story: never present it as the book's plot.
 
 ### 6c. Spanish (es-es, es-latam; written 2026-10-16 before the Spanish pass, from the files and ROADMAP 148/150; add what the pass finds)
 
