@@ -310,6 +310,7 @@ past modals (*kellett, hogy legyen*, epistemic *-hatott*: use *biztosan*, *való
 (reported commands). A hint names the base verb and the role (*rak, frequentative,
 3sg past*), never "X -> ending" or the answer form. A classic labelled "inspired by"
 is an original story: never present it as the book's plot.
+A dialogue `prompt` fix is a list of turns, `[{"speaker": "…", "text": "…"}, {"speaker": "…", "text": "____"}]`, never the rendered "Speaker: text / Speaker: ____" string. A hint never equals the answer ("álhír, base form" for *álhír*: write the English, "fake news"). Moved by the user (2026-11-04): `b2-cataphoric-clauses` is taught in b2-09-04 (Unit 17), `causative-verbal-derivations` in b2-10-01, `b2-relational-compounds` in b2-20-01.
 
 ### 6c. Spanish (es-es, es-latam; written 2026-10-16 before the Spanish pass, from the files and ROADMAP 148/150; add what the pass finds)
 

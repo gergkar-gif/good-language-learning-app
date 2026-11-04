@@ -452,6 +452,7 @@ Report concisely: files created, word list, per-lesson topic and screens, check 
 | 10-30 | **HU B2 pilot**: core Unit 1 `nuance-focus-emphasis-narrative` ∥ Unit 3 `memory-nostalgia-sensory-description` | 1 unit per reader; both stopped by the 5-hour limit before any file, resumed | | A 201,538, 4.3; B 190,621, 3.8 (resumed runs) | 157 proposed (70 / 87), 2 rejected and rewritten; Claude changed 3 dialogue items, 3 challenges (invented facts), 1 recap unit, 4 unmet words | **~200k a unit** at one per reader; Unit 3 built on Unit 4's `participial-clauses` (66 `taught-later`), Unit 1 lesson 3 on Unit 2's `b2-contrastive-topic`: for the user; check-content 0/0; walk 12/12 |
 | 11-04 | HU B2 core 5, 7, 9, 11, 13, 15 | paired read, 3 core units/reader; both stopped by the weekly limit mid-batch, resumed after the reset; reader B resumed again for the C1 rewrites | | A 413,177; B 340,419 + 398,629 (resumed runs) | 475 proposed (74 / 88 / 81 / 77 / 85 / 70) + 137 C1 rewrites, 6 rejected and rewritten; Claude changed ~25 items, 29 arrow hints, ~15 unmet words, a story line | ~140k a unit before the rewrites; 2 C1 lessons rewritten (Units 13, 15); 2 skills moved by the user (`concessive-indefinites` to Unit 7, `sag-seg-nouns` to B2 Unit 5); 2 classics relabelled as original; walk 36/36 |
 | 11-04 | HU B2 core 17, 19, 21, 23, 25, 27 | paired read, 3 core units/reader, no limit hit | | A 352,680, 17 min; B 348,797, 17 min | 503 proposed (72 / 77 / 96 / 79 / 90 / 89), 8 rejected (6 rewritten, 2 goal lines done by script); Claude changed ~15 items, listed 20 words | **~117k a unit, cheapest B2 batch**; 2 skills moved by the user (causatives within Unit 19, cataphoric clauses to Unit 17); walk 36/36 |
+| 11-04 | HU B2 core 29, 31, 33, 35, 37, 39 | paired read, 3 core units/reader, no limit; a container restart lost reader A's completion notice | | A not reported (restart); B 345,347, 15 min | 494 proposed (68 / 95 / 84 / 70 / 86 / 91), 13 rejected and rewritten; Claude changed ~10 items, listed 11 words | ~115k a unit (B); 32 dialogue prompts as text, now converted by `check_fixes.py`; 1 skill moved by the user (relational compounds within Unit 39); walk 36/36 |
 
 Reads before unit 9's second read used the full docs (brief, AGENTS, spec, registry).
 
@@ -1567,4 +1568,18 @@ The user took the four recommended options:
 - **Common words on no earlier list** (*természetes*, *tűnik*, *előző*, *hisz*): listing
   them on the first lesson that uses them is cheaper than rewriting connector items
   around them; 20 this batch.
+
+### 2026-11-04: HU B2 core Units 29–39
+
+- **A new fix-list slip, scripted at once:** a dialogue `prompt` written as the rendered
+  string ("Speaker: text / Speaker: ____"), 32 times from one reader, crashed check-content.
+  `check_fixes.py` converts it to turns (and refuses a turn without a speaker head).
+- **The order defect inside a unit:** Units 19 and 39 both registered a skill in the unit's
+  last lesson while lessons 01–04 taught it; the user moved both to the first lesson.
+  Before a batch, a `taught_in` that is a unit's lesson 04 or 05 is worth checking against
+  the unit's first screen.
+- **Rejections are mostly length give-aways and hints that equal the answer** ("álhír, base
+  form" for *álhír*): 13 this batch, all from the readers' own new items.
+- **A container restart lost a finished reader's notice** but not its files: copy each
+  reader's files from the worktree as soon as they appear, as § Best practices says.
 
