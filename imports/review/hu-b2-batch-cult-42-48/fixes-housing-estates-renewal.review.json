@@ -1,0 +1,938 @@
+[
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-01-gangosberhaz.json",
+  "old": "a világ egyik leggyorsabban növekvő metropoliszává vált",
+  "new": "a kor egyik leggyorsabban növekvő európai nagyvárosává vált",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"the world's fastest-growing\" is an unverifiable superlative; hedged to a period/European claim (check)"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-01-gangosberhaz.json",
+  "old": "kisiparosok, cselédek és szegény bérlők osztoztak a szoba-konyhás helyiségeken",
+  "new": "kisiparosok, cselédek és szegény bérlők zsúfolódtak össze a szoba-konyhás lakásokban",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"osztoztak a ... helyiségeken\" is unnatural"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-01-gangosberhaz.json",
+  "old": "a kapualjban lakó házmester volt, a kapu, amely mellett hivatali szobája állt, este tíz órakor kulcsra zárult.",
+  "new": "a kapualjban lakó házmester volt; a kapu, amely mellett a lakása állt, este tíz órakor kulcsra zárult.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "comma splice (\"volt, a kapu, amely ...\") and a caretaker has a lakás by the gate, not a \"hivatali szoba\""
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-02-wekerletelep.json",
+  "old": "több mint ötvenezer fát ültettek el, széles sugárutakkal, különálló kertes házakkal és önálló közintézményekkel — iskolákkal, orvosi rendelőkkel, rendőrséggel és piaccal — büszkélkedhetett.",
+  "new": "sok ezer fát ültettek el, fákkal szegélyezett utcákkal, kertes ikerházakkal és sorházakkal, valamint önálló közintézményekkel — iskolákkal, orvosi rendelőkkel és piaccal — büszkélkedhetett.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "round figure \"több mint ötvenezer fa\" unverifiable; Wekerle houses were semi-detached/row houses, not \"különálló\"; \"széles sugárutak\" and \"rendőrség\" unverified (check)"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-02-wekerletelep.json",
+  "old": "a tér, amelynek mentén Kós Károly és az erdélyi népi motívumokból építkező „Fiatalok” építészcsoportja megalkotta a magyar népi szecesszió remekműveit. A faragott fa kapubélletek, a zömök tornyok és a meredek tetősíkok a kalotaszegi és székelyföldi erődtemplomok világát idézték fel a pesti síkságon.",
+  "new": "a tér, amely körül Kós Károly és az erdélyi népi motívumokból építkező „Fiatalok” építészcsoportja a magyar népi szecesszió jellegzetes épületeit megalkotta. A faragott fa kapuk, a zömök tornyok és a meredek tetősíkok az erdélyi népi építészet világát idézték fel a pesti síkságon.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"amelynek mentén\" is not the standard relative form of mentén (amely mentén / amely körül); \"remekművek\" is a judgement; the \"erődtemplomok\" comparison and the carved-gate/tower details are unverified (check)"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-02-wekerletelep.json",
+  "old": "saját kertrész tartozott, amelynek udvarán a bérlők gyümölcsfákat gondoztak",
+  "new": "saját kertrész tartozott, amelyben a bérlők gyümölcsfákat gondoztak",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "a garden plot has no \"udvar\"; the sentence was incoherent"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-02-wekerletelep.json",
+  "old": "Ez a közvetlen földkapcsolat és a tiszta levegő hozzájárult ahhoz, hogy a telepen lakók egészségi állapota és gyermekhalandósága lényegesen jobb volt a belső kerületek átlagánál.",
+  "new": "A kertváros-mozgalom hívei szerint a közvetlen földkapcsolat és a tiszta levegő az egészségnek is kedvezett.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "unsourced statistical/causal claim (child mortality \"lényegesen jobb\") stated as fact; reduced to the movement's own argument (check)"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-02-wekerletelep.json",
+  "old": "A telep máig megőrizte varázslatos, falusias jellegét és erős közösségi kohézióját. Wekerletelep védettséget élvező épületei azt bizonyítják, hogy a méltó és emberléptékű lakhatás megteremtése a modern várostervezés legsikeresebb és legtartósabb befektetése lehet.",
+  "new": "A telep máig megőrizte falusias jellegét, épületeinek nagy része ma védettséget élvez. Sokan a magyar kertvárosi tervezés egyik legismertebb példájának tartják.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "promotional judgement (\"a legsikeresebb és legtartósabb befektetés\") removed; present-day protection status is a \"check\" claim"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-03-lakotelepek.json",
+  "old": "A Kádár-korszak vezetése felismerte, hogy a hagyományos téglás építkezés képtelen lépést tartani a lakásigényekkel, ezért 1960-ban meghirdették a tizenöt éves lakásépítési tervet, amely egymillió új otthon felépítését tűzte ki célul.",
+  "new": "A hagyományos téglás építkezés nem tudott lépést tartani a lakásigényekkel, ezért a Kádár-korszak vezetése 1960-ban tizenöt éves lakásépítési tervet hirdetett meg, amely egymillió új lakás felépítését tűzte ki célul.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "mind-reading \"felismerte\" removed (check the 1960 date and the one-million target)"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-03-lakotelepek.json",
+  "old": "A megoldást a szovjet és dán licenc alapján létrehozott állami házgyárak jelentették.",
+  "new": "A megoldást a külföldi, többek között szovjet és dán licencek alapján létrehozott állami házgyárak jelentették.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "the licences were not only Soviet and Danish (French too); hedged (check)"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-03-lakotelepek.json",
+  "old": "Budapesten Óbuda, Újpalota, Békásmegyer és Kelenföld, vidéken pedig Miskolc, Debrecen és Pécs alakult át gyökeresen.",
+  "new": "Budapesten például Óbudán, Újpalotán, Békásmegyeren és Kelenföldön, vidéken pedig többek között Miskolcon, Debrecenben és Pécsett.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "whole towns did not \"alakult át gyökeresen\"; verbless list after the colon now matches \"új városrészek születtek\"; list made \"például/többek között\""
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-03-lakotelepek.json",
+  "old": "jelentett, a régi komfort nélküli szoba-konyhás albérletekhez képest, amelyekhez képest az új lakások központi távfűtést, állandó meleg vizet, beépített konyhabútort és tiszta, saját fürdőszobát kínáltak.",
+  "new": "jelentett: a régi, komfort nélküli szoba-konyhás albérletek, amelyekhez képest az új lakások központi távfűtést, meleg vizet és saját fürdőszobát kínáltak, sokak szemében a múlthoz tartoztak.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"albérletekhez képest, amelyekhez képest\" repeats képest and breaks the syntax; \"beépített konyhabútor\" is unverified for panel flats (check)"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-03-lakotelepek.json",
+  "old": "a sivár beton terek pedig lassan alakultak át valódi zöldellő közösségi környezetté.",
+  "new": "a lakótelepek sivár betonterein pedig sokáig alig volt zöldfelület.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "the clause is meant as a downside but described a positive change; also \"valódi zöldellő\" is unnatural"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-03-lakotelepek.json",
+  "old": "ahol máig a magyar lakosság közel egyötöde éli mindennapjait.",
+  "new": "ahol máig a magyar lakosság jelentős része él.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"közel egyötöde\" is an unverified share (estimates vary); removed the figure (check)"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-04-romkocsmak.json",
+  "old": "2001 körül azonban fiatal művészek és vállalkozók felismerték az elhagyott terekben rejlő szabadságot. Megnyitották az első romkocsmákat — köztük a legendás Szimpla Kertet —, amely",
+  "new": "2001 körül azonban fiatal művészek és vállalkozók elkezdték használni az elhagyott tereket. Megnyíltak az első romkocsmák — köztük a Szimpla Kert —, amely",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "mind-reading \"felismerték\" and \"legendás\" removed; the exact year and the \"first ruin bars\" status of the Szimpla Kert are disputed/unverified (check)"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-04-romkocsmak.json",
+  "old": "a budapesti kulturális reneszánsz jelképévé vált",
+  "new": "sokak szemében a budapesti kulturális megújulás jelképévé vált",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "a judgement stated as fact; attributed"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-04-romkocsmak.json",
+  "old": "olyan bohém atmoszférát teremtettek, a kezdeményezés, amely köré gyorsan",
+  "new": "olyan bohém atmoszférát teremtettek, amely köré gyorsan",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "comma splice: \"teremtettek, a kezdeményezés, amely köré\" is ungrammatical"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-04-romkocsmak.json",
+  "old": "A romkocsmák napközben termelői piacoknak",
+  "new": "Egyes romkocsmák napközben termelői piacoknak",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "not every ruin bar hosted these; hedged (the lesson ex08 also says \"egyes\")"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-04-romkocsmak.json",
+  "old": "A szűk utcák, amelyeken keresztül a látogatók az udvarokba áramlottak, a világ minden tájáról vonzották az alternatív városi kultúrára fogékony utazókat.",
+  "new": "A szűk utcák, amelyeken keresztül a látogatók az udvarokba áramlottak, hamarosan a világ minden tájáról érkező, az alternatív városi kultúrára fogékony utazókkal teltek meg.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "the streets do not attract travellers (the bars do); the clause now makes sense"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-04-romkocsmak.json",
+  "old": "A spontán siker azonban hamarosan konfliktusokhoz vezetett. A rohamosan terjedő buliturizmus, az éjszakai zajártalom és a rövid távú lakáskiadás kiszorította a régi helyi lakosokat, éles vitát robbantva ki a műemlékvédelem, az élhető lakókörnyezet és a szórakoztatóipar érdekei között.",
+  "new": "A siker azonban hamarosan konfliktusokhoz vezetett. Egyes helyi lakók szerint a rohamosan terjedő buliturizmus, az éjszakai zajártalom és a rövid távú lakáskiadás miatt egyre nehezebb lett az élet a környéken, és éles vita bontakozott ki a műemlékvédelem, az élhető lakókörnyezet és a szórakoztatóipar érdekei között.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "contested claim (displacement of residents) stated as fact; attributed to residents and the dispute named in one line"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-05-varoseletjovoje.json",
+  "old": "A huszonegyedik század harmadik évtizedére a magyar főváros lakáspiacán komoly lakhatási válság bontakozott ki. A négyzetméterárak és a bérleti díjak ugrásszerű növekedése miatt a fiatal pályakezdők és az alacsonyabb jövedelmű családok számára a belvárosi lakásbérlés szinte megfizethetetlenné vált.",
+  "new": "A huszonegyedik század harmadik évtizedére sokak szerint komoly lakhatási válság bontakozott ki a magyar főváros lakáspiacán. A négyzetméterárak és a bérleti díjak jelentős növekedése miatt a fiatal pályakezdők és az alacsonyabb jövedelmű családok számára a belvárosi lakásbérlés nehezen megfizethetővé vált.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "present-day, politically argued claim (\"válság\", \"szinte megfizethetetlen\") attributed/softened (check)"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-05-varoseletjovoje.json",
+  "old": "Ennek közvetlen következményeként felgyorsult a szuburbanizáció: családok tízezrei költöztek ki a Budapest körüli agglomerációs településekre a zöldebb környezet és a megfizethetőbb kertes házak reményében. A tömeges kiköltözés azonban a bevezető utakon mindennapos közlekedési dugókat, a kistelepüléseken pedig súlyos óvodai és iskolai férőhelyhiányt idézett elő.",
+  "new": "A szakértők szerint ez is hozzájárult ahhoz, hogy felgyorsult a szuburbanizáció: egyre több család költözött ki a Budapest körüli agglomerációs településekre a zöldebb környezet és a megfizethetőbb kertes házak reményében. Több elemzés szerint a kiköltözés a bevezető utakon mindennapos közlekedési dugókat, a kistelepüléseken pedig óvodai és iskolai férőhelyhiányt okozott.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "unverified round figure (\"családok tízezrei\"), \"közvetlen következmény\" and causal claims stated as fact; attributed (check)"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-05-varoseletjovoje.json",
+  "old": "hogy a valódi megoldást a meglévő városi szövet megújítása jelenti.",
+  "new": "hogy a megoldás egyik fontos eleme a meglévő városi szövet megújítása.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"the real solution\" is a policy judgement; softened (attributed to urbanists already)"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-05-varoseletjovoje.json",
+  "old": "amelyek mentén új lakónegyedek épülnek, és amelyek területén modern parkokat alakítanak ki, hatékonyan tehermentesíthetik a zsúfolt belvárost a zöldterületek feláldozása nélkül.",
+  "new": "amelyeknek a területén új lakónegyedek épülnek, és amelyek mellett modern parkokat alakítanak ki, az urbanisták szerint tehermentesíthetik a zsúfolt belvárost a zöldterületek feláldozása nélkül.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"amelyek területén\" breaks the unit's own rule (possessive chain needs amelyeknek); new neighbourhoods are built on, not along, the brownfields; claim attributed"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-05-varoseletjovoje.json",
+  "old": "hatalmas fűtési energiát pazarolnak el, így az energiahatékonyság javítása nemcsak rezsicsökkentési, hanem klímavédelmi kötelesség is.",
+  "new": "sok fűtési energiát pazarolnak el, így az energiahatékonyság javítása nemcsak költségcsökkentési, hanem klímavédelmi feladat is.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"rezsicsökkentés\" is the name of a government programme (political loading); \"kötelesség\" overstated"
+ },
+ {
+  "file": "content/hu/stories/world/b2/b2-lakhatas-05-varoseletjovoje.json",
+  "old": "A jövő fenntartható Budapestje olyan átfogó bérlakásrendszerre és városrehabilitációra épülhet, amely a gazdasági innovációt, a műemléki örökség tiszteletét és a szociális biztonságot egyszerre garantálja minden városlakó számára.",
+  "new": "A bérlakásrendszer és a városrehabilitáció szerepéről, valamint a műemléki örökség védelmének módjáról ma is élénk szakmai és politikai vita folyik.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "policy advocacy (\"garantálja minden városlakó számára\") replaced by naming the dispute in one line (present-day, check)"
+ },
+ {
+  "file": "content/hu/lessons/b2/b2-lakhatas-01.json",
+  "old": "wander the peaceful lime-tree avenues of Wekerletelep",
+  "new": "wander the tree-lined streets of Wekerletelep",
+  "kind": "english",
+  "sure": false,
+  "why": "\"lime-tree avenues\" is not supported (the grammar table has plane trees, the story only says trees)"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-lakhatas-02-a-gr.json",
+  "old": "'A Fő tér, amelynek mentén épületek állnak' (The Main Square along which buildings stand)",
+  "new": "'A Fő tér, amelynek szélén épületek állnak' (The Main Square on whose edge buildings stand)",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "*mentén* takes a bare noun (amely mentén); amelynek mentén is not the standard possessive chain"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-lakhatas-02-a-gr.json",
+  "old": "A sugárút, amelynek mentén platánok állnak, a Fő térre vezet.",
+  "new": "A sugárút, amelynek szélén platánok állnak, a Fő térre vezet.",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "same as above (amelynek mentén)"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-lakhatas-02-a-gr.json",
+  "old": "The boulevard along which plane trees stand leads to the Main Square.",
+  "new": "The boulevard on whose edge plane trees stand leads to the Main Square.",
+  "kind": "english",
+  "sure": false,
+  "why": "matches the Hungarian row"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-lakhatas-03-a-gr.json",
+  "old": "A panel lakás összkomfortot nyújtott",
+  "new": "A panellakás összkomfortot nyújtott",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "spelling: panellakás is one word"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-lakhatas-03-a-gr.json",
+  "old": "A szürke beton tömbökkel szemben a mai lakótelepek színesek és parkosítottak.",
+  "new": "A téglaépítés, amellyel szemben a panelépítés gyorsabb volt, lassúnak bizonyult.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "not a relative clause (the lesson teaches amely + postposition), \"szürke beton tömbök\" should be one word, and today's estates being \"színesek és parkosítottak\" contradicts the story (this line is also a speaking prompt)"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-lakhatas-05-a-gr.json",
+  "old": "'A városrész, amelynek mentén villamosvonal fut, és amelyben modern parkokat terveztek...'",
+  "new": "'A városrész, amelynek szélén villamosvonal fut, és amelyben modern parkokat terveztek...'",
+  "kind": "hungarian",
+  "sure": false,
+  "why": "amelynek mentén, see lesson 2"
+ },
+ {
+  "file": "content/hu/grammar/b2/b2-lakhatas-05-a-gr.json",
+  "old": "Az új bérlakásrendszer, amelyhez képest a piaci albérlet drága, biztonságot nyújt.",
+  "new": "A bérlakásrendszer, amelyhez képest a piaci albérlet drágább, sok család számára fontos kérdés.",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "judgement on a present-day housing policy (\"biztonságot nyújt\") removed"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-01-ex.json",
+  "id": "b2-lakhatas-01.ex02",
+  "set": {
+   "options": [
+    "Ügyelt a rendre, este zárta a bejárati kaput, beszedte a kapupénzt, és felügyelte a lakóközösséget.",
+    "Ügyelt a rendre, este zárta a bejárati kaput, de a későn érkezőktől nem kért kapupénzt.",
+    "Csak a lépcsőházat takarította, a kaput nem zárta, és a lakók életébe nem szólt bele."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (99 vs 63) and \"Kizárólag\" tell; the two absurd options (blueprints, theatre tickets) replaced by plausible options that contradict the story"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-01-ex.json",
+  "id": "b2-lakhatas-01.ex03",
+  "set": {
+   "sentence": "A belső udvar körül futó nyitott _____ a lakók mindennapi találkozásainak és pletykáinak fő színtere volt.",
+   "english": "The open gallery running around the inner yard was the main scene of the residents' daily encounters and gossip."
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "a gang runs around the courtyard, not \"above\" it (story: körülölelő)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-01-ex.json",
+  "id": "b2-lakhatas-01.ex04",
+  "set": {
+   "options": [
+    "amely mellett",
+    "amelynek mellett",
+    "amelyet mellett",
+    "amellyel mellett"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (13 vs 8); wrong options built with cases that cannot stand before a postposition (a wrong option must not be a possible answer: amely mögött would fit)"
+ },
+ {
+  "file": "content/hu/vocabulary/b2/b2-lakhatas-01-voc.json",
+  "old": "      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "new": "      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"színtér\",\n      \"translation\": \"scene / setting (of events)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"felerősít\",\n      \"translation\": \"to amplify\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"megreped\",\n      \"translation\": \"to crack\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"egyfajta\",\n      \"translation\": \"a kind of\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"jellemez\",\n      \"translation\": \"to characterise / describe\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"gangos\",\n      \"translation\": \"with a gang (open gallery)\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"osztozik\",\n      \"translation\": \"to share (with others)\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"beszed\",\n      \"translation\": \"to collect (money)\",\n      \"pos\": \"verb\"\n    }\n  ]\n}\n",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet words of this lesson (and later items) added to the lesson vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-02-ex.json",
+  "id": "b2-lakhatas-02.ex01",
+  "set": {
+   "pairs": [
+    [
+     "kertváros",
+     "garden suburb / garden city"
+    ],
+    [
+     "főépítész",
+     "chief architect"
+    ],
+    [
+     "népi szecesszió",
+     "vernacular Art Nouveau / folk Secession"
+    ],
+    [
+     "mintatelep",
+     "model settlement estate"
+    ],
+    [
+     "zöldövezet",
+     "green zone"
+    ],
+    [
+     "közösségkovácsoló",
+     "community-building force"
+    ]
+   ]
+  },
+  "kind": "english",
+  "sure": false,
+  "why": "\"zöldövezet\" is a green zone, not a \"green belt\" (a different planning term)"
+ },
+ {
+  "file": "content/hu/vocabulary/b2/b2-lakhatas-02-voc.json",
+  "old": "\"translation\": \"green belt / green zone\"",
+  "new": "\"translation\": \"green zone / green area\"",
+  "kind": "english",
+  "sure": false,
+  "why": "a green belt is a different planning term"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-02-ex.json",
+  "id": "b2-lakhatas-02.ex02",
+  "set": {
+   "options": [
+    "Kós Károly és a Fiatalok által megteremtett erdélyi gyökerű magyar népi szecessziót.",
+    "Az eklektikus bérházak díszes, stukkós homlokzatait, amelyek a Nagykörút mentén sorakoznak.",
+    "Az angol kertváros-mozgalom egyforma, egyszerű házait, erdélyi motívumok nélkül."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (84 vs 64); the two absurd options (Soviet brutalism, Versailles baroque) replaced"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-02-ex.json",
+  "id": "b2-lakhatas-02.ex04",
+  "set": {
+   "question": "Melyik birtokos vonatkozó kifejezés fejezi be helyesen a mondatot? 'A telep, _____ sok fát ültettek, zöld volt.'",
+   "options": [
+    "amelynek területén",
+    "amelyet területén",
+    "amellyel területén",
+    "amelyre területén"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "*amelynek mentén* is not the standard form of mentén, and the wrong option *amelyen* (\"on which\") also fits the sentence (a possible right answer); length give-away (15 vs 8)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-02-ex.json",
+  "id": "b2-lakhatas-02.ex05",
+  "set": {
+   "answers": [
+    "amelynek udvarán",
+    "amelynek az udvarán"
+   ],
+   "answer": null
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "*amelynek az udvarán* is equally correct (two equal forms)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-02-ex.json",
+  "id": "b2-lakhatas-02.ex06",
+  "set": {
+   "tiles": [
+    "A",
+    "telep,",
+    "amelynek",
+    "területén",
+    "iskola",
+    "és",
+    "piac",
+    "működött,",
+    "kertváros",
+    "volt."
+   ],
+   "solution": [
+    "A",
+    "telep,",
+    "amelynek",
+    "területén",
+    "iskola",
+    "és",
+    "piac",
+    "működött,",
+    "kertváros",
+    "volt."
+   ],
+   "english": "The estate on the territory of which a school and a market operated was a garden city."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"önellátó\" (self-sufficient) is not in the story and overstates it"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-02-ex.json",
+  "id": "b2-lakhatas-02.ex07",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Várostervező",
+     "text": "Miért számított különlegesnek Wekerletelep a korabeli Budapesten?"
+    },
+    {
+     "speaker": "Építészettörténész",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Mert olyan átgondolt kertváros épült, amelynek zöldövezetében kertes házak és népi szecessziós épületek álltak.",
+    "Mert olyan átgondolt kertváros épült, amely zöldövezetében kertes házak és népi szecessziós épületek álltak.",
+    "Mert olyan átgondolt kertváros épült, amelyet zöldövezetében kertes házak és népi szecessziós épületek álltak."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"a korabeli Európában\" is an unverified superlative; the answer was long and used \"jólét\" (unmet) with an empty \"harmonikusan egyesült\""
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-02-ex.json",
+  "id": "b2-lakhatas-02.ex08",
+  "set": {
+   "question": "Mi tartozott a szöveg szerint minden wekerletelepi lakóházhoz?",
+   "options": [
+    "Saját kertrész, ahol a bérlők gyümölcsfákat gondoztak és zöldséget termesztettek.",
+    "Közös konyha és közös fürdőszoba, ahol a szomszédok együtt főztek és mosakodtak.",
+    "Saját műhely a ház alatt, ahol a bérlők kisipari munkát végeztek és árut árultak."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "the old item asked about child mortality, a claim removed from the story; the new one asks what the story says"
+ },
+ {
+  "file": "content/hu/vocabulary/b2/b2-lakhatas-02-voc.json",
+  "old": "      \"pos\": \"adjective\"\n    }\n  ]\n}\n",
+  "new": "      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"gyökerű\",\n      \"translation\": \"-rooted / with roots in\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"kertes\",\n      \"translation\": \"with a garden\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"lakóház\",\n      \"translation\": \"residential house\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"gyümölcsfa\",\n      \"translation\": \"fruit tree\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"telep\",\n      \"translation\": \"estate / settlement\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kertrész\",\n      \"translation\": \"garden plot\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"gondoz\",\n      \"translation\": \"to tend / look after\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"termeszt\",\n      \"translation\": \"to grow (crops)\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"zöldség\",\n      \"translation\": \"vegetable(s)\",\n      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet words of this lesson (and later items) added to the lesson vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-03-ex.json",
+  "id": "b2-lakhatas-03.ex02",
+  "set": {
+   "options": [
+    "Mert összkomfortos lakást kaptak központi távfűtéssel, folyó meleg vízzel és saját fürdőszobával.",
+    "Mert tágas kertes házat kaptak a falu szélén, saját gyümölcsfákkal és kerttel.",
+    "Mert a lakás közös konyhával és közös fürdőszobával készült, ezért olcsóbb volt."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "tell (\"semmilyen\") and two absurd options (free car and holiday home, no electricity bill)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-03-ex.json",
+  "id": "b2-lakhatas-03.ex04",
+  "set": {
+   "options": [
+    "amelyhez képest",
+    "amelyet képest",
+    "amellyel képest",
+    "amelynek képest"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "*amellyel szemben* (\"in contrast to which\") also fits the sentence, and the lesson table itself uses it that way: a possible second right answer; wrong options now use cases that cannot stand before képest"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-03-ex.json",
+  "id": "b2-lakhatas-03.ex05",
+  "set": {
+   "answers": [
+    "amelynek révén",
+    "amelynek a révén",
+    "amely révén"
+   ],
+   "answer": null
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "three equal forms (révén takes the bare noun or the -nak/-nek form, with or without the article)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-03-ex.json",
+  "id": "b2-lakhatas-03.ex08",
+  "set": {
+   "question": "Mi történt a legtöbb panellakással a rendszerváltás után?",
+   "options": [
+    "A lakók többsége megvásárolta a lakását, amelyet addig az államtól bérelt.",
+    "A lakók többsége bérlő maradt, mert az állam a lakásokat nem adta el nekik.",
+    "A lakókat az állam kitelepítette, a lakásokat pedig külföldi cégeknek adta el."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"rendkívül kedvezményes áron\" is not in the story; the two wrong options (forced leaving, luxury hotels) were absurd; length give-away (78 vs 53)"
+ },
+ {
+  "file": "content/hu/vocabulary/b2/b2-lakhatas-03-voc.json",
+  "old": "      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "new": "      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"energetikai\",\n      \"translation\": \"energy (adj.) / relating to energy\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"hőszigetelés\",\n      \"translation\": \"thermal insulation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"kényelem\",\n      \"translation\": \"comfort\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"összkomfort\",\n      \"translation\": \"full modern conveniences\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"egyhangú\",\n      \"translation\": \"monotonous\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"betontömb\",\n      \"translation\": \"concrete block\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"megfogalmazódik\",\n      \"translation\": \"to be voiced / put into words\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"százezer\",\n      \"translation\": \"hundred thousand\",\n      \"pos\": \"number\"\n    },\n    {\n      \"lemma\": \"lakhatási\",\n      \"translation\": \"housing (adj.) / of housing\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"megítél\",\n      \"translation\": \"to judge / assess\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"megvásárol\",\n      \"translation\": \"to buy / purchase\",\n      \"pos\": \"verb\"\n    }\n  ]\n}\n",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet words of this lesson (and later items) added to the lesson vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-04-ex.json",
+  "id": "b2-lakhatas-04.ex02",
+  "set": {
+   "options": [
+    "Lomtalanítások során megmentett régi bútorok és tárgyak kreatív újrahasznosításával.",
+    "Egységes, modern bútorok és lámpák rendelésével egy nagy belvárosi bútorgyárból.",
+    "Egyforma, új asztalok és székek tömeges vásárlásával egy nagy áruházból."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (112 vs 75) and \"Kizárólag\" tell; absurd options (royal thrones) replaced; \"vintage\"/\"retró\" avoided"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-04-ex.json",
+  "id": "b2-lakhatas-04.ex03",
+  "set": {
+   "sentence": "A történelmi épületek eredeti homlokzatának megőrzését az állami _____ biztosítja.",
+   "english": "The preservation of the original façade of historic buildings is ensured by state monument protection."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"hivatott\" is C1-register; the old sentence also claimed the law preserves the \"hangulat\""
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-04-ex.json",
+  "id": "b2-lakhatas-04.ex04",
+  "set": {
+   "question": "Melyik illik a mondatba? 'A romkocsma olyan kulturális központtá vált, _____ sok fiatal alkotó gyűlt össze.'",
+   "options": [
+    "amely köré",
+    "amelyet köré",
+    "amellyel köré",
+    "amelynek köré"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "stem used grammar words (irányhármassági névutós); length give-away (15 vs 8); *amely alól* is C1 and *amely mellett* would be a possible answer, so wrong options use cases that cannot stand before köré"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-04-ex.json",
+  "id": "b2-lakhatas-04.ex05",
+  "set": {
+   "answers": [
+    "amelyeken keresztül",
+    "amelyeken át"
+   ],
+   "answer": null
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "*amelyeken át* is an equal form (the lesson goal names át/keresztül)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-04-ex.json",
+  "id": "b2-lakhatas-04.ex06",
+  "set": {
+   "tiles": [
+    "A",
+    "kezdeményezés,",
+    "amely",
+    "köré",
+    "művészek",
+    "gyűltek,",
+    "népszerű",
+    "lett."
+   ],
+   "solution": [
+    "A",
+    "kezdeményezés,",
+    "amely",
+    "köré",
+    "művészek",
+    "gyűltek,",
+    "népszerű",
+    "lett."
+   ],
+   "english": "The initiative around which artists gathered became popular."
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "\"világhírű\" is an unverified superlative"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-04-ex.json",
+  "id": "b2-lakhatas-04.ex07",
+  "set": {
+   "options": [
+    "Nehezen, mert egyes lakók szerint a buliturizmus, amely felé a negyed eltolódott, komoly zajterhelést okoz, miközben a kulturális funkció háttérbe szorult.",
+    "Nehezen, mert egyes lakók szerint a buliturizmus, amelyet felé a negyed eltolódott, komoly zajterhelést okoz, miközben a kulturális funkció háttérbe szorult.",
+    "Nehezen, mert egyes lakók szerint a buliturizmus, aminek felé a negyed eltolódott, komoly zajterhelést okoz, miközben a kulturális funkció háttérbe szorult."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "a contested claim (noise burden, culture pushed back) given as plain fact: attributed to residents in all three options"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-04-ex.json",
+  "id": "b2-lakhatas-04.ex08",
+  "set": {
+   "options": [
+    "Termelői piacoknak, civil kerekasztaloknak és független színházi előadásoknak adtak teret.",
+    "Nappal éttermként működtek, ahol minden nap ingyen osztottak meleg ételt a lakóknak.",
+    "Nappal iskolai órákat tartottak bennük, esténként pedig szórakozóhelyként működtek."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (90 vs 58) and \"Kizárólag\" tell; absurd options (car assembly, party offices) replaced"
+ },
+ {
+  "file": "content/hu/vocabulary/b2/b2-lakhatas-04-voc.json",
+  "old": "      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "new": "      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"megőrzés\",\n      \"translation\": \"preservation\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"átjáróház\",\n      \"translation\": \"passage house (building with a through-passage)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"gyalogos\",\n      \"translation\": \"pedestrian\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"átvág\",\n      \"translation\": \"to cut across\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"igazi\",\n      \"translation\": \"real / genuine\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"különlegesség\",\n      \"translation\": \"speciality / curiosity\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"eltolódik\",\n      \"translation\": \"to shift\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"zajterhelés\",\n      \"translation\": \"noise burden\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"egyeztethető\",\n      \"translation\": \"reconcilable / can be arranged\",\n      \"pos\": \"adjective\"\n    }\n  ]\n}\n",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet words of this lesson (and later items) added to the lesson vocabulary"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-05-ex.json",
+  "id": "b2-lakhatas-05.ex02",
+  "set": {
+   "question": "Milyen gondokat okozott a szöveg szerint a Budapestről kiköltözők nagy száma?",
+   "options": [
+    "Mindennapos dugókat a bevezető utakon, és férőhelyhiányt az óvodákban és az iskolákban.",
+    "Üresen maradt óvodákat és iskolákat a kistelepüléseken, mert kevesen költöztek oda.",
+    "Kevesebb dugót a bevezető utakon, és több szabad helyet az óvodákban és az iskolákban."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (89 vs 55); the two absurd options (no electricity, ban on entering the centre) replaced; \"azok a családok, akik a szuburbanizáció révén ... költöznek\" was awkward"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-05-ex.json",
+  "id": "b2-lakhatas-05.ex03",
+  "set": {
+   "sentence": "A használaton kívüli vasúti és ipari telephelyek, vagyis a _____, helyet adhatnak új, zöld lakónegyedeknek.",
+   "english": "Disused railway and industrial sites, that is, brownfield zones, can provide space for new green residential districts."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"kiváló terepet nyújtanak\" is promotional; \"volt rozsdaövezetek\" contradicts \"használaton kívüli\""
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-05-ex.json",
+  "id": "b2-lakhatas-05.ex04",
+  "set": {
+   "options": [
+    "amelynek keretében",
+    "amelyet keretében",
+    "amellyel keretében",
+    "amelyhez keretében"
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "*amely alól* is a C1 postposition; wrong options now use cases that cannot stand before keretében"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-05-ex.json",
+  "id": "b2-lakhatas-05.ex05",
+  "set": {
+   "answers": [
+    "amelynek falai közé",
+    "amelynek a falai közé"
+   ],
+   "answer": null
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "article after amelynek is optional"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-05-ex.json",
+  "id": "b2-lakhatas-05.ex07",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Urbanista",
+     "text": "Mit javasolnak egyes szakemberek a budapesti lakhatási válság hosszú távú kezelésére?"
+    },
+    {
+     "speaker": "Szakértő",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Olyan bérlakásprogramot, amelynek révén megfizethető otthonok létesülnek a volt rozsdaövezetekben, és amelyhez képest a piaci albérletárak drágának tűnnek.",
+    "Olyan bérlakásprogramot, amelyet révén megfizethető otthonok létesülnek a volt rozsdaövezetekben, és amelyhez képest a piaci albérletárak drágának tűnnek.",
+    "Olyan bérlakásprogramot, amelynek révén megfizethető otthonok létesülnek a volt rozsdaövezetekben, és amelyet képest a piaci albérletárak drágának tűnnek."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "*amelyhez képest ... mérséklődhetnek* is nonsense (képest compares, it does not cause); *amely révén* was a correct wrong option; each wrong option had two faults; a mayor giving policy advice is a present-day political opinion: now \"egyes szakemberek\""
+ },
+ {
+  "file": "content/hu/vocabulary/b2/b2-lakhatas-05-voc.json",
+  "old": "      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "new": "      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"mindennapos\",\n      \"translation\": \"everyday / daily\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"dugó\",\n      \"translation\": \"traffic jam\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"bevezető\",\n      \"translation\": \"approach (road) / introductory\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"férőhelyhiány\",\n      \"translation\": \"shortage of places\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"lakónegyed\",\n      \"translation\": \"residential district\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"lényegesen\",\n      \"translation\": \"significantly\",\n      \"pos\": \"adverb\"\n    },\n    {\n      \"lemma\": \"kevesebb\",\n      \"translation\": \"less / fewer\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"fogyaszt\",\n      \"translation\": \"to consume\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"bérlakásprogram\",\n      \"translation\": \"rental housing programme\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"megfizethető\",\n      \"translation\": \"affordable\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"létesül\",\n      \"translation\": \"to be established\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"albérletár\",\n      \"translation\": \"rent price (for sublet)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"mérséklődik\",\n      \"translation\": \"to ease / moderate\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"oldható\",\n      \"translation\": \"solvable\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"táv\",\n      \"translation\": \"distance / term (hosszú távon: in the long run)\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szigetelt\",\n      \"translation\": \"insulated\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"pazarol\",\n      \"translation\": \"to waste\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"beépítés\",\n      \"translation\": \"building-in / development of land\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"fenntartási\",\n      \"translation\": \"maintenance (adj.)\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"növekszik\",\n      \"translation\": \"to grow / increase\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"bérbe\",\n      \"translation\": \"for rent (adv.)\",\n      \"pos\": \"adverb\"\n    },\n    {\n      \"lemma\": \"ezredforduló\",\n      \"translation\": \"turn of the millennium\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"szoba-konyhás\",\n      \"translation\": \"with one room and a kitchen\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"sikátor\",\n      \"translation\": \"alley\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"macskaköves\",\n      \"translation\": \"cobbled\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"megóv\",\n      \"translation\": \"to protect / preserve\",\n      \"pos\": \"verb\"\n    },\n    {\n      \"lemma\": \"külvárosi\",\n      \"translation\": \"suburban\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"természeti\",\n      \"translation\": \"natural (adj.)\",\n      \"pos\": \"adjective\"\n    },\n    {\n      \"lemma\": \"zóna\",\n      \"translation\": \"zone\",\n      \"pos\": \"noun\"\n    },\n    {\n      \"lemma\": \"komfort\",\n      \"translation\": \"comfort / amenities\",\n      \"pos\": \"noun\"\n    }\n  ]\n}\n",
+  "kind": "hungarian",
+  "sure": true,
+  "why": "unmet words of lesson 5 and of the consolidation items (the consolidation has no list of its own)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-consolidation-ex.json",
+  "id": "b2-lakhatas-consolidation.ex03",
+  "set": {
+   "question": "Kinek a tervei alapján épültek fel a kispesti Wekerletelep Fő terének népi szecessziós épületei?",
+   "category": "reading",
+   "teaches": null
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"székely kapus\" is not in the story; a question about who designed the buildings tests the story, not a word: category reading, no teaches"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-consolidation-ex.json",
+  "id": "b2-lakhatas-consolidation.ex04",
+  "set": {
+   "sentence": "A klasszikus pesti bérházban este tíz óra után a későn hazatérőknek _____ kellett fizetniük a házmesternek.",
+   "english": "In the classic Pest tenement, those coming home late after ten at night had to pay a gate fee to the caretaker."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "*gondnok* is not the unit's word (házmester); \"a bérlőknek ... kellett fizetniük\" said every tenant paid, the story says latecomers"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-consolidation-ex.json",
+  "id": "b2-lakhatas-consolidation.ex05",
+  "set": {
+   "sentence": "A belső udvar, _____ nyitott körfolyosók húzódtak, a ház életének központja volt.",
+   "english": "The inner courtyard around which open galleries ran was the centre of the life of the house."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"társasági\" is a later (C1) word"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-consolidation-ex.json",
+  "id": "b2-lakhatas-consolidation.ex06",
+  "set": {
+   "sentence": "A panellakás kényelmes otthont adott, _____ a régi szoba-konyhás lakások sötétnek bizonyultak.",
+   "english": "The panel flat provided a comfortable home, compared to which the old room-and-kitchen flats proved dark."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"A panel\" for panellakás"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-consolidation-ex.json",
+  "id": "b2-lakhatas-consolidation.ex07",
+  "set": {
+   "options": [
+    "A zsidónegyed elhagyott bérházaiban nyíltak meg, amelyeknek az udvarán művészek és fiatalok alakítottak ki egyedi közösségi tereket újrahasznosított tárgyakból.",
+    "A zsidónegyed elhagyott bérházaiban nyíltak meg, amelyeken az udvarán művészek és fiatalok alakítottak ki egyedi közösségi tereket újrahasznosított tárgyakból.",
+    "A zsidónegyed elhagyott bérházaiban nyíltak meg, amelyeket az udvarán művészek és fiatalok alakítottak ki egyedi közösségi tereket újrahasznosított tárgyakból."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "*amelyek udvarán* breaks the unit's own rule (plural possessor: amelyeknek az udvarán); the wrong options keep one fault each"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-consolidation-ex.json",
+  "id": "b2-lakhatas-consolidation.ex08",
+  "set": {
+   "options": [
+    "A szűk sikátorok, amelyeken keresztül a vendégek az udvarba jutottak, macskakövesek voltak.",
+    "A szűk sikátorok, amelyek keresztül a vendégek az udvarba jutottak, macskakövesek voltak.",
+    "A szűk sikátor, amelyeken keresztül a vendégek az udvarba jutottak, macskaköves volt.",
+    "A szűk sikátorok, amelyeket keresztül a vendégek az udvarba jutottak, macskakövesek voltak."
+   ],
+   "correct": 0
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (91 vs 68); the wrong options had several faults each (garbled word order)"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-consolidation-ex.json",
+  "id": "b2-lakhatas-consolidation.ex09",
+  "set": {
+   "prompt": [
+    {
+     "speaker": "Kutató",
+     "text": "Milyen előnyei vannak a rozsdaövezetek beépítésének a zöldterületek beépítésével szemben?"
+    },
+    {
+     "speaker": "Urbanista",
+     "text": "_____"
+    }
+   ],
+   "options": [
+    "Az urbanisták szerint a volt ipari rozsdaövezetek, amelyeknek a területén új negyedek épülnek, már rendelkeznek közlekedési kapcsolatokkal, és megóvják a külvárosi természeti zónákat.",
+    "Az urbanisták szerint a volt ipari rozsdaövezetek, amelyeken a területén új negyedek épülnek, már rendelkeznek közlekedési kapcsolatokkal, és megóvják a külvárosi természeti zónákat.",
+    "Az urbanisták szerint a volt ipari rozsdaövezetek, amelyeket a területén új negyedek épülnek, már rendelkeznek közlekedési kapcsolatokkal, és megóvják a külvárosi természeti zónákat."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "*barnamezős / zöldmezős* are unexplained terms; *amelyek területén* breaks the unit's own rule; an unattributed advantage claim now attributed"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-consolidation-ex.json",
+  "id": "b2-lakhatas-consolidation.ex11",
+  "set": {
+   "tiles": [
+    "A",
+    "program,",
+    "amelynek",
+    "révén",
+    "a",
+    "házak",
+    "hőszigetelést",
+    "kaptak,",
+    "az",
+    "ezredfordulón",
+    "indult."
+   ],
+   "solution": [
+    "A",
+    "program,",
+    "amelynek",
+    "révén",
+    "a",
+    "házak",
+    "hőszigetelést",
+    "kaptak,",
+    "az",
+    "ezredfordulón",
+    "indult."
+   ],
+   "english": "The programme through which the houses received thermal insulation started around the turn of the millennium."
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "\"szigeteltek\" has no object (unnatural) and \"nagyon sikeres\" is a judgement; the new sentence uses the story's facts"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-consolidation-ex.json",
+  "id": "b2-lakhatas-consolidation.ex12",
+  "set": {
+   "template": [
+    {
+     "prompt": "Write a sentence describing the architecture of Wekerletelep using a possessive relative clause (use 'amelynek területén').",
+     "answer": "Wekerletelep állami mintatelep, amelynek területén Kós Károly népi szecessziós épületei és kertes házak állnak."
+    },
+    {
+     "prompt": "Write a sentence comparing panel apartments with pre-war tenements using a comparative relative construction (use 'amelyhez képest').",
+     "answer": "A panellakás összkomfortot és távfűtést nyújtott, amelyhez képest a régi, komfort nélküli szoba-konyhás lakások sötétnek bizonyultak."
+    }
+   ]
+  },
+  "kind": "hungarian",
+  "sure": false,
+  "why": "*amelynek mentén* dropped (see lesson 2); \"egyedülálló\" (unique) is a C1 word and an unverified claim; \"bérházi\" and \"hidegnek\" were unmet / invented; the answers must pin one sentence"
+ },
+ {
+  "file": "content/hu/exercises/b2/b2-lakhatas-01-ex.json",
+  "id": "b2-lakhatas-01.ex08",
+  "set": {
+   "options": [
+    "A lakáshiány miatt társbérletekké darabolták őket, ahol idegen családok osztoztak a helyiségeken.",
+    "Egy-egy család saját lakásában maradt, és a háború után sem költöztek be hozzájuk mások.",
+    "Irodákká alakították át őket, mert a lakók a háború után a vidéki kertvárosokba költöztek."
+   ]
+  },
+  "kind": "hungarian",
+  "sure": true,
+  "why": "length give-away (97 vs 73), \"Kizárólag\" tell, absurd options (farmland, embassies) (reviewer: senki tell removed)"
+ }
+]
